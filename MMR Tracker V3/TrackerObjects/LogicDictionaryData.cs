@@ -16,8 +16,24 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string GameCode { get; set; }
             public int DefaultWalletCapacity { get; set; } = 99;
             public List<DictionaryLocationEntries> LocationList { get; set; } = new List<DictionaryLocationEntries>();
-            public List<DictionaryMacroEntries> MacroList { get; set; } = new List<DictionaryMacroEntries>();
             public List<DictionaryItemEntries> ItemList { get; set; } = new List<DictionaryItemEntries>();
+
+            public static LogicDictionary FromJson(string json)
+            {
+                return Newtonsoft.Json.JsonConvert.DeserializeObject<LogicDictionary>(json, _NewtonsoftJsonSerializerOptions);
+                //return JsonSerializer.Deserialize<LogicFile>(json, _jsonSerializerOptions);
+            }
+            public override string ToString()
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(this, _NewtonsoftJsonSerializerOptions);
+                //return JsonSerializer.Serialize(this, _jsonSerializerOptions);
+            }
+            private readonly static Newtonsoft.Json.JsonSerializerSettings _NewtonsoftJsonSerializerOptions = new Newtonsoft.Json.JsonSerializerSettings
+            {
+                Formatting = Newtonsoft.Json.Formatting.Indented,
+                NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore,
+                Converters = { new Newtonsoft.Json.Converters.StringEnumConverter() }
+            };
 
         }
 
@@ -25,16 +41,10 @@ namespace MMR_Tracker_V3.TrackerObjects
         {
             public string ID { get; set; }
             public string Name { get; set; }
+            public string OriginalItem { get; set; }
             public string[] AltNames { get; set; } = Array.Empty<string>();
             public string Area { get; set; }
             public string[] ValidItemTypes { get; set; } = Array.Empty<string>();
-
-        }
-
-        public class DictionaryMacroEntries
-        {
-            public string ID { get; set; }
-            public string LogicShufflePairing { get; set; }
 
         }
 
@@ -44,11 +54,10 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string Name { get; set; }
             public string[] AltNames { get; set; } = Array.Empty<string>();
             public int? WalletCapacity { get; set; } = null;
+            public int MaxAmountInWorld { get; set; } = -1;
             public bool ValidStartingItem { get; set; }
             public KeyType KeyType { get; set; } = KeyType.None;
             public string[] ItemTypes { get; set; } = Array.Empty<string>();
-
-            public ProgressiveItemData ProgressiveItemData = new ProgressiveItemData();
 
         }
     }

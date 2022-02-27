@@ -9,16 +9,6 @@ namespace MMR_Tracker_V3.TrackerObjects
 {
     public class MiscData
     {
-        public class ProgressiveItemData
-        {
-            public List<ItemObject> ItemSet;
-            public int AmountNeeded;
-            public bool IsProgressive()
-            {
-                return ItemSet != null && ItemSet.Any();
-            }
-        }
-
         public enum CheckState
         {
             Checked = 0,
@@ -46,6 +36,12 @@ namespace MMR_Tracker_V3.TrackerObjects
             star = 0,
             set = 1
         }
+
+        public enum MacroType
+        {
+            User = 0,
+            Randomizer = 1
+        }
         public enum TimeOfDay
         {
             None,
@@ -55,6 +51,12 @@ namespace MMR_Tracker_V3.TrackerObjects
             Night2 = 8,
             Day3 = 16,
             Night3 = 32,
+        }
+        public enum LogicEntryType
+        {
+            item,
+            macro,
+            error
         }
     }
 }

@@ -18,14 +18,28 @@ namespace MMR_Tracker_V3
             public MacroData Macros { get; set; } = new MacroData();
             public LogicDictionary LogicDictionary { get; set; } = new LogicDictionary();
             public Options Options { get; set; } = new Options();
-            public InstanceReference InstanceReference { get; set; } = new InstanceReference();
+            public InstanceReference InstanceReference { get; set; } = new InstanceReference(); 
+            public static TrackerInstance FromJson(string json)
+            {
+                return Newtonsoft.Json.JsonConvert.DeserializeObject<TrackerInstance>(json, _NewtonsoftJsonSerializerOptions);
+                //return JsonSerializer.Deserialize<LogicFile>(json, _jsonSerializerOptions);
+            }
+            public override string ToString()
+            {
+                return Newtonsoft.Json.JsonConvert.SerializeObject(this, _NewtonsoftJsonSerializerOptions);
+                //return JsonSerializer.Serialize(this, _jsonSerializerOptions);
+            }
+            private readonly static Newtonsoft.Json.JsonSerializerSettings _NewtonsoftJsonSerializerOptions = new Newtonsoft.Json.JsonSerializerSettings
+            {
+                Formatting = Newtonsoft.Json.Formatting.Indented,
+                NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore,
+                Converters = { new Newtonsoft.Json.Converters.StringEnumConverter() }
+            };
         }
 
         public class InstanceReference
         {
-            public Dictionary<string, string> EntrancePairs { get; set; } = new Dictionary<string, string>();
-            public Dictionary<string, int> IDtoIndex { get; set; } = new Dictionary<string, int>();
-            public Dictionary<string, string> EntranceAreaDic { get; set; } = new Dictionary<string, string>();
+            public Dictionary<string, LogicMapping> LogicDataMappings = new Dictionary<string, LogicMapping>();
             public Keydata Keydata { get; set; } = new Keydata();
         }
 
@@ -34,6 +48,44 @@ namespace MMR_Tracker_V3
             public List<string> SmallKeys { get; set; } = new List<string>();
             public List<string> BossKeys { get; set; } = new List<string>();
             public List<string> LocationWithKeysInLogic { get; set; } = new List<string>();
+        }
+
+        public class LogicMapping
+        {
+            public LogicEntryType logicEntryType { get; set; }
+            public int IndexInList { get; set; }
+
+            public bool GetMappedEntryUsable(TrackerInstance instance, int AmmountNeeded = 1)
+            {
+                if (logicEntryType == LogicEntryType.item)
+                {
+                    return instance.ItemPool.CurrentPool[IndexInList].Useable(AmmountNeeded);
+                }
+                else if (logicEntryType == LogicEntryType.macro)
+                {
+                    return instance.Macros.MacroList[IndexInList].Aquired;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+            public object GetMappedEntry(TrackerInstance instance)
+            {
+                if (logicEntryType == LogicEntryType.item)
+                {
+                    return instance.ItemPool.CurrentPool[IndexInList];
+                }
+                else if (logicEntryType == LogicEntryType.macro)
+                {
+                    return instance.Macros.MacroList[IndexInList];
+                }
+                else
+                {
+                    return false;
+                }
+            }
         }
 
         public class Options

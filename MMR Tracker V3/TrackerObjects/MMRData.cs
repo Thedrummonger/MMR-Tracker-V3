@@ -24,25 +24,13 @@ namespace MMR_Tracker_V3.TrackerObjects
             private string _trickCategory;
             public string TrickTooltip
             {
-                get
-                {
-                    return IsTrick ? _trickTooltip : null;
-                }
-                set
-                {
-                    _trickTooltip = value;
-                }
+                get { return IsTrick ? _trickTooltip : null; }
+                set { _trickTooltip = value; }
             }
             public string TrickCategory
             {
-                get
-                {
-                    return IsTrick ? _trickCategory : null;
-                }
-                set
-                {
-                    _trickCategory = value;
-                }
+                get { return IsTrick ? _trickCategory : null; }
+                set { _trickCategory = value; }
             }
         }
 

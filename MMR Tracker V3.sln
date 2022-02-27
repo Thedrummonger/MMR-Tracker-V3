@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MMR Tracker V3", "MMR Tracker V3\MMR Tracker V3.csproj", "{C0F9BEFF-09C8-4166-BDC0-915ED8BC34A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MMR Tracker V3", "MMR Tracker V3\MMR Tracker V3.csproj", "{C0F9BEFF-09C8-4166-BDC0-915ED8BC34A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Windows Form Frontend", "Windows Form Frontend\Windows Form Frontend.csproj", "{AF5298A1-5B11-4789-8574-B298445B14CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Windows Form Frontend", "Windows Form Frontend\Windows Form Frontend.csproj", "{AF5298A1-5B11-4789-8574-B298445B14CD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleDebugger", "ConsoleDebugger\ConsoleDebugger.csproj", "{8D57DD8F-3E92-471C-A955-62265B9D870C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{AF5298A1-5B11-4789-8574-B298445B14CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF5298A1-5B11-4789-8574-B298445B14CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF5298A1-5B11-4789-8574-B298445B14CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D57DD8F-3E92-471C-A955-62265B9D870C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D57DD8F-3E92-471C-A955-62265B9D870C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D57DD8F-3E92-471C-A955-62265B9D870C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D57DD8F-3E92-471C-A955-62265B9D870C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
