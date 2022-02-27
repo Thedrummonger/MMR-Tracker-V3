@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,20 +13,24 @@ namespace MMR_Tracker_V3
 {
     public static class TrackerInstanceCreation
     {
-        public static InstanceState PopulateTrackerObject(string LogicFile, string DictionaryFile, LogicObjects.TrackerInstance Instance)
+        public static InstanceState ApplyLogicAndDict(LogicObjects.TrackerInstance Instance, string LogicFile)
         {
-            MMRData.LogicFile MMRLogicFile;
             try
             {
-                MMRLogicFile = MMRData.LogicFile.FromJson(LogicFile);
+                Instance.LogicFile = MMRData.LogicFile.FromJson(LogicFile);
             }
             catch { return InstanceState.LogicFailure; }
             try
             {
+                string DictionaryFile = File.ReadAllText(Dictionaryhandeling.GetJSONDictionaryPathForLogicFile(Instance.LogicFile));
                 Instance.LogicDictionary = LogicDictionaryData.LogicDictionary.FromJson(DictionaryFile);
             }
             catch { return InstanceState.DictionaryFailure; }
+            return InstanceState.Success;
+        }
 
+        public static bool PopulateTrackerObject(LogicObjects.TrackerInstance Instance)
+        {
             List<ItemData.ItemObject> ItemPool = new List<ItemData.ItemObject>();
             foreach(var i in Instance.LogicDictionary.ItemList)
             {
@@ -39,7 +44,7 @@ namespace MMR_Tracker_V3
             }
             Instance.ItemPool.CurrentPool = ItemPool.ToArray();
 
-            foreach (var i in MMRLogicFile.Logic)
+            foreach (var i in Instance.LogicFile.Logic)
             {
                 if (Instance.LogicDictionary.LocationList.Any(x => x.ID == i.Id))
                 {
@@ -64,9 +69,9 @@ namespace MMR_Tracker_V3
 
             }
 
-            CreateLogicMapping(MMRLogicFile, Instance);
+            CreateLogicMapping(Instance.LogicFile, Instance);
 
-            return InstanceState.Success;
+            return true; ;
         }
 
         public static void CreateLogicMapping(MMRData.LogicFile logicFile, TrackerInstance instance)

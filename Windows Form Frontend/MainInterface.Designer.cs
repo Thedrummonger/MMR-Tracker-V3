@@ -52,6 +52,10 @@ namespace Windows_Form_Frontend
             this.TXTLocSearch = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolMenuStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.NewToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.LoadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SavetoolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.SaveAsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,6 +133,7 @@ namespace Windows_Form_Frontend
             this.LBValidLocations.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.LBValidLocations.Size = new System.Drawing.Size(87, 109);
             this.LBValidLocations.TabIndex = 37;
+            this.LBValidLocations.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.LBValidLocations_DrawItem);
             // 
             // CMBEnd
             // 
@@ -299,9 +304,39 @@ namespace Windows_Form_Frontend
             // 
             // fileToolMenuStrip
             // 
+            this.fileToolMenuStrip.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.NewToolStripMenuItem1,
+            this.LoadToolStripMenuItem,
+            this.SavetoolStripMenuItem1,
+            this.SaveAsToolStripMenuItem1});
             this.fileToolMenuStrip.Name = "fileToolMenuStrip";
             this.fileToolMenuStrip.Size = new System.Drawing.Size(37, 20);
             this.fileToolMenuStrip.Text = "File";
+            // 
+            // NewToolStripMenuItem1
+            // 
+            this.NewToolStripMenuItem1.Name = "NewToolStripMenuItem1";
+            this.NewToolStripMenuItem1.Size = new System.Drawing.Size(114, 22);
+            this.NewToolStripMenuItem1.Text = "New";
+            this.NewToolStripMenuItem1.Click += new System.EventHandler(this.NewToolStripMenuItem1_Click);
+            // 
+            // LoadToolStripMenuItem
+            // 
+            this.LoadToolStripMenuItem.Name = "LoadToolStripMenuItem";
+            this.LoadToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.LoadToolStripMenuItem.Text = "Load";
+            // 
+            // SavetoolStripMenuItem1
+            // 
+            this.SavetoolStripMenuItem1.Name = "SavetoolStripMenuItem1";
+            this.SavetoolStripMenuItem1.Size = new System.Drawing.Size(114, 22);
+            this.SavetoolStripMenuItem1.Text = "Save";
+            // 
+            // SaveAsToolStripMenuItem1
+            // 
+            this.SaveAsToolStripMenuItem1.Name = "SaveAsToolStripMenuItem1";
+            this.SaveAsToolStripMenuItem1.Size = new System.Drawing.Size(114, 22);
+            this.SaveAsToolStripMenuItem1.Text = "Save As";
             // 
             // MainInterface
             // 
@@ -335,6 +370,8 @@ namespace Windows_Form_Frontend
             this.Name = "MainInterface";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MainInterface_Load);
+            this.ResizeEnd += new System.EventHandler(this.MainInterface_ResizeEnd);
+            this.Resize += new System.EventHandler(this.MainInterface_Resize);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -366,6 +403,10 @@ namespace Windows_Form_Frontend
         public System.Windows.Forms.TextBox TXTLocSearch;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem NewToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem LoadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SavetoolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem SaveAsToolStripMenuItem1;
     }
 }
 

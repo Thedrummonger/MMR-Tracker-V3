@@ -46,60 +46,16 @@ namespace ConsoleDebugger
             }
         }
 
-        public static string GetLogicPath()
-        {
-            var testFolder = @"D:\Testing";
-            var LogicFile = Path.Combine(testFolder, "Logic.txt");
-            if (File.Exists(LogicFile))
-            {
-                return LogicFile;
-            }
-            Console.WriteLine("Enter Logic Path");
-            return Console.ReadLine();
-        }
-
-        public static string GetDictPath()
-        {
-            var testFolder = @"D:\Testing";
-            var DictionaryFile = Path.Combine(testFolder, "NewDict.json");
-            if (File.Exists(DictionaryFile))
-            {
-                return DictionaryFile;
-            }
-            Console.WriteLine("Enter Dictionary Path");
-            return Console.ReadLine();
-        }
-
-        public static string GetSavePath(bool Loading)
-        {
-            var testFolder = @"D:\Testing";
-            var SaveFile = @"D:\Testing\Save.json";
-            if (Loading)
-            {
-                if (File.Exists(SaveFile)) { return SaveFile; }
-                else
-                {
-                    Console.WriteLine("Enter Save File Path");
-                    return Console.ReadLine();
-                }
-            }
-            else
-            {
-                if (Directory.Exists(testFolder)) { return SaveFile; }
-                else
-                {
-                    Console.WriteLine("Enter Save File Path");
-                    return Console.ReadLine();
-                }
-            }
-        }
-
         static void PrintMappingDict()
         {
 
             MMR_Tracker_V3.LogicObjects.TrackerInstance NewTrackerInstance = new();
 
-            MMR_Tracker_V3.TrackerInstanceCreation.PopulateTrackerObject(File.ReadAllText(GetLogicPath()), File.ReadAllText(GetDictPath()), NewTrackerInstance);
+            string Logic = File.ReadAllText(Testing.GetLogicPath());
+
+            var Result = TrackerInstanceCreation.ApplyLogicAndDict(NewTrackerInstance, Logic);
+
+            TrackerInstanceCreation.PopulateTrackerObject(NewTrackerInstance);
 
             Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(NewTrackerInstance.InstanceReference.LogicDataMappings, _NewtonsoftJsonSerializerOptions));
         }
@@ -179,7 +135,7 @@ namespace ConsoleDebugger
 
         static void LoadSave()
         {
-            LogicObjects.TrackerInstance NewTrackerInstance = LogicObjects.TrackerInstance.FromJson(File.ReadAllText(GetSavePath(true)));
+            LogicObjects.TrackerInstance NewTrackerInstance = LogicObjects.TrackerInstance.FromJson(File.ReadAllText(Testing.GetSavePath(true)));
 
             LoopLocationSelet(NewTrackerInstance);
         }
@@ -189,7 +145,11 @@ namespace ConsoleDebugger
 
             MMR_Tracker_V3.LogicObjects.TrackerInstance NewTrackerInstance = new();
 
-            MMR_Tracker_V3.TrackerInstanceCreation.PopulateTrackerObject(File.ReadAllText(GetLogicPath()), File.ReadAllText(GetDictPath()), NewTrackerInstance);
+            string Logic = File.ReadAllText(Testing.GetLogicPath());
+
+            var Result = TrackerInstanceCreation.ApplyLogicAndDict(NewTrackerInstance, Logic);
+
+            TrackerInstanceCreation.PopulateTrackerObject(NewTrackerInstance);
 
             LoopLocationSelet(NewTrackerInstance);
 
@@ -304,7 +264,7 @@ namespace ConsoleDebugger
 
         private static void SaveInstance(LogicObjects.TrackerInstance newTrackerInstance)
         {
-            File.WriteAllText(GetSavePath(false), newTrackerInstance.ToString());
+            File.WriteAllText(Testing.GetSavePath(false), newTrackerInstance.ToString());
         }
 
         public static void LoopItemSelect(MMR_Tracker_V3.TrackerObjects.LocationData.LocationObject SelectedObject, MMR_Tracker_V3.LogicObjects.TrackerInstance NewTrackerInstance)

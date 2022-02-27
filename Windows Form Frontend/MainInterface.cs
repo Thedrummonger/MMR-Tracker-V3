@@ -1,9 +1,12 @@
 ﻿using MMR_Tracker_V3;
+using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +16,12 @@ namespace Windows_Form_Frontend
 {
     public partial class MainInterface : Form
     {
-        public static MMR_Tracker_V3.LogicObjects.TrackerInstance MainUITrackerInstance = null;
+        public static MMR_Tracker_V3.LogicObjects.TrackerInstance MainUITrackerInstance = new LogicObjects.TrackerInstance();
+
+        public static MainInterface CurrentProgram;
+
+        private bool FormIsMaximized = false;
+
         public MainInterface()
         {
             InitializeComponent();
@@ -21,7 +29,7 @@ namespace Windows_Form_Frontend
 
         private void MainInterface_Load(object sender, EventArgs e)
         {
-
+            AlignUI();
         }
 
         private void AlignUI()
@@ -37,12 +45,12 @@ namespace Windows_Form_Frontend
             var FormWidth = this.Width - 18;
             var FormHalfHeight = FormHeight / 2;
             var FormHalfWidth = FormWidth / 2;
-
             var locX = 2;
             var locY = 2 + Menuhieght;
 
-            if (MainUITrackerInstance == null)
+            if (MainUITrackerInstance.LogicFile == null || MainUITrackerInstance.LogicFile.Version < 0)
             {
+                Debug.WriteLine("InstanceNull");
                 SetObjectVisibility(false, false);
             }
             else if (MainUITrackerInstance.Options.EntranceRadnoEnabled)
@@ -163,6 +171,110 @@ namespace Windows_Form_Frontend
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void MainInterface_ResizeEnd(object sender, EventArgs e)
+        {
+            AlignUI();
+        }
+
+        private void MainInterface_Resize(object sender, EventArgs e)
+        {
+            //Maximizing and unmaximizing does not trigger ResizeEnd which should be used normally since it doesn't constantly run while resizing.
+            //so run this code only if the form becomes maximized or becomes un maximized.
+            if (WindowState == FormWindowState.Maximized)
+            {
+                AlignUI();
+                FormIsMaximized = true;
+            }
+            else if (FormIsMaximized)
+            {
+                AlignUI();
+                FormIsMaximized = false;
+            }
+        }
+
+        private void PrintToListBox()
+        {
+            TypeConverter converter = TypeDescriptor.GetConverter(typeof(Font));
+            if (string.IsNullOrWhiteSpace(MainUITrackerInstance.Options.WinformData.FormFont))
+            {
+                MainUITrackerInstance.Options.WinformData.FormFont = converter.ConvertToString(System.Drawing.SystemFonts.DefaultFont);
+            }
+            Font F = (Font)converter.ConvertFromString(MainUITrackerInstance.Options.WinformData.FormFont);
+
+            LBValidLocations.ItemHeight = Convert.ToInt32(F.Size * 1.8);
+            LBValidEntrances.ItemHeight = Convert.ToInt32(F.Size * 1.8);
+            LBCheckedLocations.ItemHeight = Convert.ToInt32(F.Size * 1.8);
+
+            int counter = -1;
+
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+            LogicCalculation.CalculateLogic(MainUITrackerInstance);
+            stopwatch.Stop();
+
+            foreach (var i in MainUITrackerInstance.LocationPool.Locations)
+            {
+                counter++;
+                if (!i.TrackerData.Available) { continue; }
+                if (string.IsNullOrWhiteSpace(i.UIData.LocationName) || !i.UIData.LocationName.ToLower().Contains(TXTLocSearch.Text.ToLower())) { continue; }
+                if (i.TrackerData.CheckState == MMR_Tracker_V3.TrackerObjects.MiscData.CheckState.Checked) { continue; }
+
+                if (i.TrackerData.CheckState == MMR_Tracker_V3.TrackerObjects.MiscData.CheckState.Marked && i.TrackerData.RandomizedItem != null)
+                {
+                    LBValidLocations.Items.Add(i);
+                }
+                else
+                {
+                    LBValidLocations.Items.Add(i);
+                }
+
+            }
+        }
+
+        private void NewToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            string Logic = File.ReadAllText(Testing.GetLogicPath());
+
+            var Result = TrackerInstanceCreation.ApplyLogicAndDict(MainUITrackerInstance, Logic);
+
+            TrackerInstanceCreation.PopulateTrackerObject(MainUITrackerInstance);
+
+            if (Result == TrackerInstanceCreation.InstanceState.LogicFailure)
+            {
+                MessageBox.Show("Failed To Load Logic");
+            }
+            if (Result == TrackerInstanceCreation.InstanceState.DictionaryFailure)
+            {
+                MessageBox.Show("Failed To Load Dict");
+            }
+            AlignUI();
+            PrintToListBox();
+        }
+
+        private void LBValidLocations_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            TypeConverter converter = TypeDescriptor.GetConverter(typeof(Font));
+
+            var LB = sender as ListBox;
+            if (e.Index < 0) { return; }
+            e.DrawBackground();
+            Font F = (Font)converter.ConvertFromString(MainUITrackerInstance.Options.WinformData.FormFont);
+            Brush brush = ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? Brushes.White : Brushes.Black;
+            if (LB.Items[e.Index] is LocationData.LocationObject ListEntry && sender != LBPathFinder)
+            {
+                var item = ListEntry;
+                if (item.TrackerData.CheckState == MiscData.CheckState.Marked && !item.TrackerData.Available && item.UIData.Starred) 
+                { F = new Font(F.FontFamily, F.Size, FontStyle.Bold | FontStyle.Strikeout); }
+                else if (item.UIData.Starred) 
+                { F = new Font(F.FontFamily, F.Size, FontStyle.Bold); }
+                else if (item.TrackerData.CheckState == MiscData.CheckState.Marked && !item.TrackerData.Available) 
+                { F = new Font(F.FontFamily, F.Size, FontStyle.Strikeout); }
+            }
+            e.Graphics.DrawString(LB.Items[e.Index].ToString(), F, brush, e.Bounds);
+
+            e.DrawFocusRectangle();
         }
     }
 }

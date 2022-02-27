@@ -17,6 +17,7 @@ namespace MMR_Tracker_V3
             public ItemPool ItemPool { get; set; } = new ItemPool();
             public MacroData Macros { get; set; } = new MacroData();
             public LogicDictionary LogicDictionary { get; set; } = new LogicDictionary();
+            public MMRData.LogicFile LogicFile { get; set; } = new MMRData.LogicFile();
             public Options Options { get; set; } = new Options();
             public InstanceReference InstanceReference { get; set; } = new InstanceReference(); 
             public static TrackerInstance FromJson(string json)
@@ -39,7 +40,7 @@ namespace MMR_Tracker_V3
 
         public class InstanceReference
         {
-            public Dictionary<string, LogicMapping> LogicDataMappings = new Dictionary<string, LogicMapping>();
+            public Dictionary<string, LogicMapping> LogicDataMappings { get; set; } = new Dictionary<string, LogicMapping>();
             public Keydata Keydata { get; set; } = new Keydata();
         }
 

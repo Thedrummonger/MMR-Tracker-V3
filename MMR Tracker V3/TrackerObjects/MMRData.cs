@@ -78,8 +78,16 @@ namespace MMR_Tracker_V3.TrackerObjects
 
         public class LogicFile
         {
-            public int Version { get; set; }
-            public string GameCode { get; set; } = null;
+            public int Version { get; set; } = -1;
+
+            private string _GameCode = null;
+
+            public string GameCode 
+            { 
+                get { return _GameCode == null ? "MMR" : _GameCode; } 
+                set { _GameCode = value == "MMR" ? null : value; } 
+            }
+
             public List<JsonFormatLogicItem> Logic { get; set; }
 
             public override string ToString()
