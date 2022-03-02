@@ -16,6 +16,7 @@ namespace MMR_Tracker_V3
             public static readonly string BaseDictionaryPath = BaseProgramPath + @"Recources\Dictionaries";
             public static readonly string BaseLogicPresetPath = BaseProgramPath + @"Recources\Other Files\Custom Logic Presets";
             public static readonly string BaseOtherGameLogic = BaseProgramPath + @"Recources\Other Files\Other Game Premade Logic";
+            public static readonly string CategoryTextFile = BaseProgramPath + @"Recources\Categories.txt";
         }
         public static class WindowsPaths
         {

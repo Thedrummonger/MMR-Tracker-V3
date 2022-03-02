@@ -107,6 +107,9 @@ namespace Windows_Form_Frontend
             this.LBCheckedLocations.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.LBCheckedLocations.Size = new System.Drawing.Size(87, 109);
             this.LBCheckedLocations.TabIndex = 39;
+            this.LBCheckedLocations.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.LBCheckedLocations_DrawItem);
+            this.LBCheckedLocations.DoubleClick += new System.EventHandler(this.LBValidEntrances_DoubleClick);
+            this.LBCheckedLocations.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LBValidLocations_MouseUp);
             // 
             // LBValidEntrances
             // 
@@ -120,6 +123,8 @@ namespace Windows_Form_Frontend
             this.LBValidEntrances.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.LBValidEntrances.Size = new System.Drawing.Size(87, 109);
             this.LBValidEntrances.TabIndex = 38;
+            this.LBValidEntrances.DoubleClick += new System.EventHandler(this.LBValidEntrances_DoubleClick);
+            this.LBValidEntrances.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LBValidLocations_MouseUp);
             // 
             // LBValidLocations
             // 
@@ -134,6 +139,8 @@ namespace Windows_Form_Frontend
             this.LBValidLocations.Size = new System.Drawing.Size(87, 109);
             this.LBValidLocations.TabIndex = 37;
             this.LBValidLocations.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.LBValidLocations_DrawItem);
+            this.LBValidLocations.DoubleClick += new System.EventHandler(this.LBValidEntrances_DoubleClick);
+            this.LBValidLocations.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LBValidLocations_MouseUp);
             // 
             // CMBEnd
             // 
@@ -272,6 +279,7 @@ namespace Windows_Form_Frontend
             this.TXTCheckedSearch.Name = "TXTCheckedSearch";
             this.TXTCheckedSearch.Size = new System.Drawing.Size(116, 23);
             this.TXTCheckedSearch.TabIndex = 25;
+            this.TXTCheckedSearch.TextChanged += new System.EventHandler(this.TXTLocSearch_TextChanged);
             // 
             // TXTEntSearch
             // 
@@ -281,6 +289,7 @@ namespace Windows_Form_Frontend
             this.TXTEntSearch.Name = "TXTEntSearch";
             this.TXTEntSearch.Size = new System.Drawing.Size(116, 23);
             this.TXTEntSearch.TabIndex = 24;
+            this.TXTEntSearch.TextChanged += new System.EventHandler(this.TXTLocSearch_TextChanged);
             // 
             // TXTLocSearch
             // 
@@ -290,6 +299,7 @@ namespace Windows_Form_Frontend
             this.TXTLocSearch.Name = "TXTLocSearch";
             this.TXTLocSearch.Size = new System.Drawing.Size(116, 23);
             this.TXTLocSearch.TabIndex = 23;
+            this.TXTLocSearch.TextChanged += new System.EventHandler(this.TXTLocSearch_TextChanged);
             // 
             // menuStrip1
             // 

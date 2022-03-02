@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -6,6 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="..\MMR Tracker V3\Recources\Categories.txt" Link="Recources\Categories.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="..\MMR Tracker V3\Recources\Dictionaries\MMR V11.json" Link="Recources\Dictionaries\MMR V11.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

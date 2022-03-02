@@ -17,6 +17,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public int DefaultWalletCapacity { get; set; } = 99;
             public List<DictionaryLocationEntries> LocationList { get; set; } = new List<DictionaryLocationEntries>();
             public List<DictionaryItemEntries> ItemList { get; set; } = new List<DictionaryItemEntries>();
+            public List<DictionaryMacroEntry> MacroList { get; set; } = new List<DictionaryMacroEntry>();
 
             public static LogicDictionary FromJson(string json)
             {
@@ -59,6 +60,12 @@ namespace MMR_Tracker_V3.TrackerObjects
             public KeyType KeyType { get; set; } = KeyType.None;
             public string[] ItemTypes { get; set; } = Array.Empty<string>();
 
+        }
+
+        public class DictionaryMacroEntry
+        {
+            public string ID { get; set; }
+            public dynamicLogicData DynamicLogicData { get; set; } = null;
         }
     }
 }

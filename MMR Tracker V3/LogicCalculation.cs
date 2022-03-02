@@ -35,7 +35,10 @@ namespace MMR_Tracker_V3
         {
             while (true)
             {
-                if (!CalculateMacros(instance) && !CheckUrandomizedLocations(instance))
+                bool MacroChanged = CalculateMacros(instance);
+                bool UnrandomizedItemAquired = CheckUrandomizedLocations(instance);
+
+                if (!MacroChanged && !UnrandomizedItemAquired)
                 {
                     break;
                 }
@@ -51,7 +54,17 @@ namespace MMR_Tracker_V3
             bool MacroStateChanged = false;
             foreach(var i in instance.Macros.MacroList)
             {
-                bool MacroValid = RequirementsMet(i.LogicData.RequiredItems, instance) && ConditionalsMet(i.LogicData.ConditionalItems, instance);
+                var MacroData = i;
+                if (i.DynamicLogic != null)
+                {
+                    MacroData = HandleDynamicLogic(instance, i);
+                    if (MacroData == null) { continue; }
+                }
+
+                bool MacroValid = RequirementsMet(MacroData.LogicData.RequiredItems, instance) && ConditionalsMet(MacroData.LogicData.ConditionalItems, instance);
+
+                if (!i.TrickEnabled) { MacroValid = false; }
+
                 if (MacroValid != i.Aquired)
                 {
                     MacroStateChanged = true;
@@ -60,6 +73,20 @@ namespace MMR_Tracker_V3
             }
             return MacroStateChanged;
         }
+
+        public static TrackerObjects.MacroObject HandleDynamicLogic(LogicObjects.TrackerInstance instance, TrackerObjects.MacroObject i)
+        {
+            var LocationToCompare = instance.LocationPool.Locations.Find(x => x.LogicData.Id == i.DynamicLogic.LocationToCompare);
+            foreach (var arg in i.DynamicLogic.Arguments)
+            {
+                if (LocationToCompare.TrackerData.RandomizedItem == arg.ItemAtLocation)
+                {
+                    return (TrackerObjects.MacroObject)instance.InstanceReference.LogicDataMappings[arg.LogicToUse].GetMappedEntry(instance);
+                }
+            }
+            return null;
+        }
+
         public static bool CheckUrandomizedLocations(LogicObjects.TrackerInstance instance)
         {
             bool ItemStateChanged = false;

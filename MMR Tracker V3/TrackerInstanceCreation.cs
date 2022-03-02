@@ -64,7 +64,14 @@ namespace MMR_Tracker_V3
                 }
                 else
                 {
-                    Instance.Macros.MacroList.Add(new MacroObject { LogicData = i });
+                    var NewMacro = new MacroObject { LogicData = i };
+
+                    if (Instance.LogicDictionary.MacroList.Any(x => x.ID == i.Id))
+                    {
+                        NewMacro.DynamicLogic = Instance.LogicDictionary.MacroList.Find(x => x.ID == i.Id).DynamicLogicData;
+                    }
+
+                    Instance.Macros.MacroList.Add(NewMacro);
                 }
 
             }
@@ -80,7 +87,7 @@ namespace MMR_Tracker_V3
 
             foreach(var i in logicFile.Logic)
             {
-                foreach(var j in FlattenLogic(i))
+                foreach(var j in GetAllItemsUsedInLogic(i))
                 {
                     if (!mappingDict.ContainsKey(j))
                     {
@@ -107,7 +114,7 @@ namespace MMR_Tracker_V3
             instance.InstanceReference.LogicDataMappings = mappingDict;
         }
 
-        public static List<string> FlattenLogic(MMRData.JsonFormatLogicItem item)
+        public static List<string> GetAllItemsUsedInLogic(MMRData.JsonFormatLogicItem item)
         {
             List<string> FlattenedList = new List<string>();
             foreach (var i in item.RequiredItems)

@@ -1,0 +1,108 @@
+﻿//The tracker will sort location areas in the same order you list them in this file
+//Using "#GAMECODESTART: 'Your Games Game Code'" will make the following categories be ignored if the corrisponding game code is not loaded
+//Multiple gamecodes can be defined in a comma seperated lits ex: (#GAMECODESTART:MMR,OOTR)
+//Using "#GAMECODEEND:" will exit the game code restriction
+
+#GAMECODESTART: MMR
+Clock Town
+North Clock Town
+East Clock Town
+South Clock Town
+West Clock Town
+Stock Pot Inn
+Laundry Pool
+Beneath Clocktown
+Termina
+Termina Field
+Astral Observatory
+Milk Road
+Romani Ranch
+Swamp
+Road to Southern Swamp
+Southern Swamp
+Swamp Skull House
+Deku Palace
+Woodfall
+Woodfall Temple
+Woodfall Temple Fairies
+Mountains
+Path to Mountain Village
+Mountain Village
+Twin Islands
+Goron Village
+Path to Snowhead
+Snowhead
+Snowhead Temple
+Snowhead Temple Fairies
+Bay
+Great Bay Coast
+Great Bay Cape
+Zora Cape
+Ocean Skull House
+Zora Hall
+Pinnacle Rock
+Great Bay Temple
+Great Bay Temple Fairies
+Pirate Fortress
+Pirates' Fortress Exterior
+Pirates' Fortress Interior
+Pirates' Fortress Sewer
+Canyon
+Road to Ikana
+Ikana Graveyard
+Ikana Canyon
+Secret Shrine
+Beneath the Well
+Ikana Castle
+Stone 
+Stone Tower
+Stone Tower Temple
+Inverted Stone Tower Temple
+Stone Tower Temple Fairies
+Tingle Map
+Bottle Catch
+Dungeon Entrance
+The Moon
+Owl Warp
+Interior
+Grottos
+#GAMECODEEND:
+
+#GAMECODESTART: SSR
+%Options%
+%Required Dungeons%
+Skyloft
+Sky
+Skyloft Silent Realm
+Skykeep
+Thunderhead
+Sealed Grounds
+Faron Woods
+Skyview
+Faron Silent Realm
+Flooded Faron Woods
+Lake Floria
+Ancient Cistern
+Eldin Volcano
+Mogma Turf
+Earth Temple
+Eldin Silent Realm
+Volcano Summit
+Fire Dragon Room
+Fire Sanctuary
+Lanayru Mines
+Lanayru
+Lanayru Mining Facility
+Lanyru Silent Realm
+Lanayru Caves
+Lanayru Gorge
+Lanayru Sand Sea
+Sandship
+Goddess Cubes
+Single Gratitude Crystal
+#GAMECODEEND:
+
+Misc
+Gossip Stone
+Multiworld
+Starting Items

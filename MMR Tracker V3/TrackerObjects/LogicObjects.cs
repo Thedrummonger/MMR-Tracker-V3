@@ -10,7 +10,6 @@ namespace MMR_Tracker_V3
 {
     public class LogicObjects
     {
-        #region TrackerInstance
         public class TrackerInstance
         {
             public LocationPool LocationPool { get; set; } = new LocationPool();
@@ -56,37 +55,6 @@ namespace MMR_Tracker_V3
             public LogicEntryType logicEntryType { get; set; }
             public int IndexInList { get; set; }
 
-            public bool GetMappedEntryUsable(TrackerInstance instance, int AmmountNeeded = 1)
-            {
-                if (logicEntryType == LogicEntryType.item)
-                {
-                    return instance.ItemPool.CurrentPool[IndexInList].Useable(AmmountNeeded);
-                }
-                else if (logicEntryType == LogicEntryType.macro)
-                {
-                    return instance.Macros.MacroList[IndexInList].Aquired;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-
-            public object GetMappedEntry(TrackerInstance instance)
-            {
-                if (logicEntryType == LogicEntryType.item)
-                {
-                    return instance.ItemPool.CurrentPool[IndexInList];
-                }
-                else if (logicEntryType == LogicEntryType.macro)
-                {
-                    return instance.Macros.MacroList[IndexInList];
-                }
-                else
-                {
-                    return false;
-                }
-            }
         }
 
         public class Options
@@ -106,7 +74,6 @@ namespace MMR_Tracker_V3
             public MiddleClickFunction MiddleClickFunction { get; set; } = MiddleClickFunction.set;
             public bool ShowEntryNameTooltip { get; set; } = true;
         }
-        #endregion TrackerInstance
 
     }
 }

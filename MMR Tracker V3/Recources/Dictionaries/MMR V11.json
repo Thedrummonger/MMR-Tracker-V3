@@ -9736,6 +9736,104 @@
       ]
     }
   ],
+  "MacroList": [
+    {
+      "ID": "AreaWoodFallTempleClear",
+      "DynamicLogicData": {
+        "LocationToCompare": "AreaWoodFallTempleAccess",
+        "Arguments": [
+          {
+            "ItemAtLocation": "AreaWoodFallTempleAccess",
+            "LogicToUse": "AreaWoodFallTempleClear"
+          },
+          {
+            "ItemAtLocation": "AreaSnowheadTempleAccess",
+            "LogicToUse": "AreaSnowheadTempleClear"
+          },
+          {
+            "ItemAtLocation": "AreaGreatBayTempleAccess",
+            "LogicToUse": "AreaGreatBayTempleClear"
+          },
+          {
+            "ItemAtLocation": "AreaInvertedStoneTowerTempleAccess",
+            "LogicToUse": "AreaStoneTowerClear"
+          }
+        ]
+      }
+    },
+    {
+      "ID": "AreaSnowheadTempleClear",
+      "DynamicLogicData": {
+        "LocationToCompare": "AreaSnowheadTempleAccess",
+        "Arguments": [
+          {
+            "ItemAtLocation": "AreaWoodFallTempleAccess",
+            "LogicToUse": "AreaWoodFallTempleClear"
+          },
+          {
+            "ItemAtLocation": "AreaSnowheadTempleAccess",
+            "LogicToUse": "AreaSnowheadTempleClear"
+          },
+          {
+            "ItemAtLocation": "AreaGreatBayTempleAccess",
+            "LogicToUse": "AreaGreatBayTempleClear"
+          },
+          {
+            "ItemAtLocation": "AreaInvertedStoneTowerTempleAccess",
+            "LogicToUse": "AreaStoneTowerClear"
+          }
+        ]
+      }
+    },
+    {
+      "ID": "AreaGreatBayTempleClear",
+      "DynamicLogicData": {
+        "LocationToCompare": "AreaGreatBayTempleAccess",
+        "Arguments": [
+          {
+            "ItemAtLocation": "AreaWoodFallTempleAccess",
+            "LogicToUse": "AreaWoodFallTempleClear"
+          },
+          {
+            "ItemAtLocation": "AreaSnowheadTempleAccess",
+            "LogicToUse": "AreaSnowheadTempleClear"
+          },
+          {
+            "ItemAtLocation": "AreaGreatBayTempleAccess",
+            "LogicToUse": "AreaGreatBayTempleClear"
+          },
+          {
+            "ItemAtLocation": "AreaInvertedStoneTowerTempleAccess",
+            "LogicToUse": "AreaStoneTowerClear"
+          }
+        ]
+      }
+    },
+    {
+      "ID": "AreaStoneTowerClear",
+      "DynamicLogicData": {
+        "LocationToCompare": "AreaInvertedStoneTowerTempleAccess",
+        "Arguments": [
+          {
+            "ItemAtLocation": "AreaWoodFallTempleAccess",
+            "LogicToUse": "AreaWoodFallTempleClear"
+          },
+          {
+            "ItemAtLocation": "AreaSnowheadTempleAccess",
+            "LogicToUse": "AreaSnowheadTempleClear"
+          },
+          {
+            "ItemAtLocation": "AreaGreatBayTempleAccess",
+            "LogicToUse": "AreaGreatBayTempleClear"
+          },
+          {
+            "ItemAtLocation": "AreaInvertedStoneTowerTempleAccess",
+            "LogicToUse": "AreaStoneTowerClear"
+          }
+        ]
+      }
+    }
+  ],
   "ItemList": [
     {
       "ID": "MaskDeku",

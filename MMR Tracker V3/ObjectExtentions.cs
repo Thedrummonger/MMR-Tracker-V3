@@ -1,9 +1,11 @@
 ﻿using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static MMR_Tracker_V3.LogicObjects;
 using static MMR_Tracker_V3.TrackerObjects.ItemData;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
@@ -31,7 +33,13 @@ namespace MMR_Tracker_V3
 
         public static int GetTotalUsable(this ItemObject itemObject)
         {
-            return itemObject.AmountAquiredLocally + itemObject.AmountAquiredOnline + itemObject.AmountInStartingpool;
+            var AmountAquiredOnline = 0;
+            foreach(var i in itemObject.AmountAquiredOnline)
+            {
+                AmountAquiredOnline += i.Value;
+            }
+
+            return itemObject.AmountAquiredLocally + AmountAquiredOnline + itemObject.AmountInStartingpool;
         }
 
         public static bool Useable(this ItemObject itemObject, int Amount = 1)
@@ -73,14 +81,11 @@ namespace MMR_Tracker_V3
             }
             else if (NewState == CheckState.Checked)
             {
-                if (!CheckItem(data, NewState, Instance))
-                {
-                    return;
-                }
+                if (!CheckItem(data, NewState, Instance)) { return; }
             }
             else
             {
-                ToggleMarked(data, NewState, Instance);
+                if (!ToggleMarked(data, NewState, Instance)) { return; }
             }
             data.CheckState = NewState;
         }
@@ -88,6 +93,7 @@ namespace MMR_Tracker_V3
         {
             var ItemObjectToAltar = Instance.ItemPool.GetItemByString(data.AlteredItem);
             ItemObjectToAltar.ChangeLocalItemAmounts(data, -1);
+            data.AlteredItem = null;
 
             if (NewState == CheckState.Unchecked)
             {
@@ -99,22 +105,22 @@ namespace MMR_Tracker_V3
         }
         public static bool CheckItem(this LocationData.LocationObjectData data, CheckState NewState, LogicObjects.TrackerInstance Instance)
         {
-            var ItemToAlter = data.GetItemAtCheck();
+            if (string.IsNullOrWhiteSpace(data.RandomizedItem)) { return false; }
 
-            var ItemObjectToAltar = Instance.ItemPool.GetItemByString(ItemToAlter);
+            var ItemObjectToAltar = Instance.ItemPool.GetItemByString(data.RandomizedItem);
 
             if (ItemObjectToAltar == null) { return false; }
 
             ItemObjectToAltar.ChangeLocalItemAmounts(data, 1);
-            data.AlteredItem = ItemToAlter;
+            data.AlteredItem = data.RandomizedItem;
 
             return true;
         }
         public static bool ToggleMarked(this LocationData.LocationObjectData data, CheckState NewState, LogicObjects.TrackerInstance Instance)
         {
-            if (NewState == CheckState.Marked)
+            if (NewState == CheckState.Marked && string.IsNullOrWhiteSpace(data.RandomizedItem))
             {
-                data.RandomizedItem = data.GetItemAtCheck();
+                return false;
             }
             else if (NewState == CheckState.Unchecked)
             {
@@ -139,6 +145,42 @@ namespace MMR_Tracker_V3
                 ItemAtCheck = data.AlteredItem;
             }
             return ItemAtCheck;
+        }
+
+        //Logic Map
+
+        public static bool GetMappedEntryUsable(this LogicMapping mapping, TrackerInstance instance, int AmmountNeeded = 1)
+        {
+            if (mapping.logicEntryType == LogicEntryType.item)
+            {
+                var Item = instance.ItemPool.CurrentPool[mapping.IndexInList];
+                return Item.Useable(AmmountNeeded);
+            }
+            else if (mapping.logicEntryType == LogicEntryType.macro)
+            {
+                var Macro = instance.Macros.MacroList[mapping.IndexInList];
+                return Macro.Aquired;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static object GetMappedEntry(this LogicMapping mapping, TrackerInstance instance)
+        {
+            if (mapping.logicEntryType == LogicEntryType.item)
+            {
+                return instance.ItemPool.CurrentPool[mapping.IndexInList];
+            }
+            else if (mapping.logicEntryType == LogicEntryType.macro)
+            {
+                return instance.Macros.MacroList[mapping.IndexInList];
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
