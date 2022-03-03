@@ -65,67 +65,109 @@ namespace MMR_Tracker_V3
                 else
                 {
                     var NewMacro = new MacroObject { LogicData = i };
-
-                    if (Instance.LogicDictionary.MacroList.Any(x => x.ID == i.Id))
-                    {
-                        NewMacro.DynamicLogic = Instance.LogicDictionary.MacroList.Find(x => x.ID == i.Id).DynamicLogicData;
-                    }
-
                     Instance.Macros.MacroList.Add(NewMacro);
                 }
 
             }
 
-            CreateLogicMapping(Instance.LogicFile, Instance);
+            foreach(var i in Instance.LogicDictionary.MacroList)
+            {
+                if (!Instance.Macros.MacroList.Any(x => x.LogicData.Id == i.ID))
+                {
+                    if (!i.Static) { continue; }
+                    var NewMacro = new MacroObject();
+                    NewMacro.LogicData = new MMRData.JsonFormatLogicItem
+                    {
+                        Id = i.ID,
+                        ConditionalItems = new List<List<string>>(),
+                        RequiredItems = new List<string>(),
+                        IsTrick = false,
+                        TimeAvailable = TimeOfDay.None,
+                        TimeNeeded = TimeOfDay.None,
+                        TimeSetup = TimeOfDay.None
+                    };
+                    Instance.Macros.MacroList.Add(NewMacro);
+                }
+                var MacroObject = Instance.Macros.MacroList.Find(x => x.LogicData.Id == i.ID);
+                if (i.DynamicLogicData != null) { MacroObject.DynamicLogic = i.DynamicLogicData; }
+                if (i.RequiredItemsOverride != null) { MacroObject.LogicData.RequiredItems = i.RequiredItemsOverride; }
+                if (i.ConditionalItemsOverride != null) { MacroObject.LogicData.ConditionalItems = i.ConditionalItemsOverride; }
+            }
 
-            return true; ;
+            CreateLogicItemMapping(Instance);
+            CreateLogicLocationMapping(Instance);
+
+            return true;
         }
 
-        public static void CreateLogicMapping(MMRData.LogicFile logicFile, TrackerInstance instance)
+        public static void CreateLogicItemMapping(TrackerInstance instance)
         {
             Dictionary<string, LogicMapping> mappingDict = new Dictionary<string, LogicMapping>();
 
-            foreach(var i in logicFile.Logic)
+            int Index = 0;
+            foreach(var i in instance.Macros.MacroList)
             {
-                foreach(var j in GetAllItemsUsedInLogic(i))
-                {
-                    if (!mappingDict.ContainsKey(j))
-                    {
-                        LogicMapping mapping = new LogicMapping();
-                        mapping.logicEntryType = logicEntryType(instance, j, out object FoundObject);
-
-                        if (mapping.logicEntryType == LogicEntryType.item)
-                        {
-                            mapping.IndexInList = Array.IndexOf(instance.ItemPool.CurrentPool, (ItemData.ItemObject)FoundObject);
-                        }
-                        else if (mapping.logicEntryType == LogicEntryType.macro)
-                        {
-                            mapping.IndexInList = instance.Macros.MacroList.IndexOf((MacroObject)FoundObject);
-                        }
-                        else
-                        {
-                            mapping.IndexInList = -1;
-                        }
-
-                        mappingDict.Add(j, mapping);
-                    }
-                }
+                LogicMapping MacroMap = new LogicMapping();
+                MacroMap.IndexInList = Index;
+                MacroMap.logicEntryType = LogicEntryType.macro;
+                mappingDict.Add(i.LogicData.Id, MacroMap);
+                Index++;
             }
-            instance.InstanceReference.LogicDataMappings = mappingDict;
+            Index = 0;
+            foreach (var i in instance.ItemPool.CurrentPool)
+            {
+                LogicMapping ItemMap = new LogicMapping();
+                ItemMap.IndexInList = Index;
+                ItemMap.logicEntryType = LogicEntryType.item;
+                mappingDict.Add($"'{i.Id}'", ItemMap);
+                if (!mappingDict.ContainsKey(i.Id)) { mappingDict.Add(i.Id, ItemMap); }
+                Index++;
+            }
+
+            instance.InstanceReference.LogicItemMappings = mappingDict;
+        }
+        public static void CreateLogicLocationMapping(TrackerInstance instance)
+        {
+            Dictionary<string, LogicMapping> mappingDict = new Dictionary<string, LogicMapping>();
+
+            int Index = 0;
+            foreach (var i in instance.Macros.MacroList)
+            {
+                LogicMapping MacroMap = new LogicMapping();
+                MacroMap.IndexInList = Index;
+                MacroMap.logicEntryType = LogicEntryType.macro;
+                mappingDict.Add(i.LogicData.Id, MacroMap);
+                Index++;
+            }
+            Index = 0;
+            foreach (var i in instance.LocationPool.Locations)
+            {
+                LogicMapping ItemMap = new LogicMapping();
+                ItemMap.IndexInList = Index;
+                ItemMap.logicEntryType = LogicEntryType.location;
+                mappingDict.Add($"'{i.LogicData.Id}'", ItemMap);
+                if (!mappingDict.ContainsKey(i.LogicData.Id)) { mappingDict.Add(i.LogicData.Id, ItemMap); }
+                Index++;
+            }
+
+            instance.InstanceReference.LogicLocationMappings = mappingDict;
         }
 
-        public static List<string> GetAllItemsUsedInLogic(MMRData.JsonFormatLogicItem item)
+        public static List<string> GetAllItemsUsedInLogic(MMRData.LogicFile logicFile)
         {
             List<string> FlattenedList = new List<string>();
-            foreach (var i in item.RequiredItems)
+            foreach (var item in logicFile.Logic)
             {
-                FlattenedList.Add(i);
-            }
-            foreach(var con in item.ConditionalItems)
-            {
-                foreach (var i in con)
+                foreach (var i in item.RequiredItems)
                 {
                     FlattenedList.Add(i);
+                }
+                foreach (var con in item.ConditionalItems)
+                {
+                    foreach (var i in con)
+                    {
+                        FlattenedList.Add(i);
+                    }
                 }
             }
             return FlattenedList.Distinct().ToList();
@@ -146,9 +188,9 @@ namespace MMR_Tracker_V3
                 Object = MacroObject;
                 return LogicEntryType.macro;
             }
-            else if (instance.ItemPool.GetItemByString(Entry) != null)
+            else if (instance.ItemPool.SearchPoolForMatchingItem(Entry) != null)
             {
-                var itemObject = instance.ItemPool.GetItemByString(Entry);
+                var itemObject = instance.ItemPool.SearchPoolForMatchingItem(Entry);
                 Object = itemObject;
                 return LogicEntryType.item;
             }

@@ -14,15 +14,23 @@ namespace MMR_Tracker_V3
     public static class ObjectExtentions
     {
         //ItemData
-        public static ItemObject GetItemByString(this ItemPool itemPool, string item)
+        public static ItemObject SearchPoolForMatchingItem(this ItemPool itemPool, string item)
         {
-            var Item = itemPool.CurrentPool.First(x => item == x.Id || item == x.ItemName || x.AltItemNames.Contains(item));
+            var Item = itemPool.CurrentPool.FirstOrDefault(x => item == x.Id || x.AltItemNames.Contains(item));
             return Item;
+        }
+        public static LogicMapping GetLogicItemMapping(this TrackerInstance Instance, string entry)
+        {
+            if (Instance.InstanceReference.LogicItemMappings.ContainsKey(entry))
+            {
+                return Instance.InstanceReference.LogicItemMappings[entry];
+            }
+            return null;
         }
 
         public static int GetAmountPlaced(this ItemObject itemObject, LogicObjects.TrackerInstance Instance)
         {
-            return Instance.LocationPool.Locations.Where(x => x.TrackerData.RandomizedItem != null && Instance.ItemPool.GetItemByString(x.TrackerData.RandomizedItem) == itemObject).Count();
+            return Instance.LocationPool.Locations.Where(x => x.TrackerData.RandomizedItem != null && Instance.ItemPool.SearchPoolForMatchingItem(x.TrackerData.RandomizedItem) == itemObject).Count();
         }
 
         public static bool CanBePlaced(this ItemObject itemObject, LogicObjects.TrackerInstance Instance)
@@ -67,6 +75,14 @@ namespace MMR_Tracker_V3
         }
 
         //Location Data
+        public static LogicMapping GetLogicLocationMapping(this TrackerInstance Instance, string entry)
+        {
+            if (Instance.InstanceReference.LogicLocationMappings.ContainsKey(entry))
+            {
+                return Instance.InstanceReference.LogicLocationMappings[entry];
+            }
+            return null;
+        }
 
         public static void ToggleChecked(this LocationData.LocationObjectData data, CheckState NewState, LogicObjects.TrackerInstance Instance)
         {
@@ -91,14 +107,18 @@ namespace MMR_Tracker_V3
         }
         public static bool UncheckItem(this LocationData.LocationObjectData data, CheckState NewState, LogicObjects.TrackerInstance Instance)
         {
-            var ItemObjectToAltar = Instance.ItemPool.GetItemByString(data.AlteredItem);
-            ItemObjectToAltar.ChangeLocalItemAmounts(data, -1);
+            var ItemObjectToAltar = Instance.ItemPool.SearchPoolForMatchingItem(data.AlteredItem);
             data.AlteredItem = null;
 
+            if (ItemObjectToAltar != null)
+            {
+                ItemObjectToAltar.ChangeLocalItemAmounts(data, -1);
+            }
             if (NewState == CheckState.Unchecked)
             {
                 data.RandomizedItem = null;
             }
+
 
             return true;
 
@@ -107,12 +127,13 @@ namespace MMR_Tracker_V3
         {
             if (string.IsNullOrWhiteSpace(data.RandomizedItem)) { return false; }
 
-            var ItemObjectToAltar = Instance.ItemPool.GetItemByString(data.RandomizedItem);
+            var ItemObjectToAltar = Instance.ItemPool.SearchPoolForMatchingItem(data.RandomizedItem);
 
-            if (ItemObjectToAltar == null) { return false; }
-
-            ItemObjectToAltar.ChangeLocalItemAmounts(data, 1);
-            data.AlteredItem = data.RandomizedItem;
+            if (ItemObjectToAltar != null)
+            {
+                ItemObjectToAltar.ChangeLocalItemAmounts(data, 1);
+                data.AlteredItem = data.RandomizedItem;
+            }
 
             return true;
         }
@@ -166,12 +187,47 @@ namespace MMR_Tracker_V3
                 return false;
             }
         }
+        public static bool GetMappedEntryAvailable(this LogicMapping mapping, TrackerInstance instance, int AmmountNeeded = 1)
+        {
+            if (mapping.logicEntryType == LogicEntryType.location)
+            {
+                var Item = instance.LocationPool.Locations[mapping.IndexInList];
+                return Item.TrackerData.Available;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public static string GetMappedEntryID(this LogicMapping mapping, TrackerInstance instance, int AmmountNeeded = 1)
+        {
+            if (mapping.logicEntryType == LogicEntryType.item)
+            {
+                return instance.ItemPool.CurrentPool[mapping.IndexInList].Id;
+            }
+            else if (mapping.logicEntryType == LogicEntryType.location)
+            {
+                return instance.LocationPool.Locations[mapping.IndexInList].LogicData.Id;
+            }
+            else if (mapping.logicEntryType == LogicEntryType.macro)
+            {
+                return instance.Macros.MacroList[mapping.IndexInList].LogicData.Id;
+            }
+            else
+            {
+                return null;
+            }
+        }
 
         public static object GetMappedEntry(this LogicMapping mapping, TrackerInstance instance)
         {
             if (mapping.logicEntryType == LogicEntryType.item)
             {
                 return instance.ItemPool.CurrentPool[mapping.IndexInList];
+            }
+            else if (mapping.logicEntryType == LogicEntryType.location)
+            {
+                return instance.LocationPool.Locations[mapping.IndexInList];
             }
             else if (mapping.logicEntryType == LogicEntryType.macro)
             {

@@ -5,6 +5,7 @@ using static MMR_Tracker_V3.TrackerObjects.ItemData;
 using static MMR_Tracker_V3.TrackerObjects.LocationData;
 using static MMR_Tracker_V3.TrackerObjects.LogicDictionaryData;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
+using static MMR_Tracker_V3.TrackerObjects.OptionData;
 
 namespace MMR_Tracker_V3
 {
@@ -15,6 +16,7 @@ namespace MMR_Tracker_V3
             public LocationPool LocationPool { get; set; } = new LocationPool();
             public ItemPool ItemPool { get; set; } = new ItemPool();
             public MacroData Macros { get; set; } = new MacroData();
+            public TrackerOptions TrackerOptions { get; set; } = new TrackerOptions();
             public LogicDictionary LogicDictionary { get; set; } = new LogicDictionary();
             public MMRData.LogicFile LogicFile { get; set; } = new MMRData.LogicFile();
             public Options Options { get; set; } = new Options();
@@ -39,7 +41,8 @@ namespace MMR_Tracker_V3
 
         public class InstanceReference
         {
-            public Dictionary<string, LogicMapping> LogicDataMappings { get; set; } = new Dictionary<string, LogicMapping>();
+            public Dictionary<string, LogicMapping> LogicItemMappings { get; set; } = new Dictionary<string, LogicMapping>();
+            public Dictionary<string, LogicMapping> LogicLocationMappings { get; set; } = new Dictionary<string, LogicMapping>();
             public Keydata Keydata { get; set; } = new Keydata();
         }
 

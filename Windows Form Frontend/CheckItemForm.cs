@@ -30,6 +30,17 @@ namespace Windows_Form_Frontend
                 this.Close();
                 return;
             }
+
+            bool Multiworld = true;
+            if (!Multiworld)
+            {
+                int OldSearchLength = textBox1.Width;
+                textBox1.Width = listBox1.Width;
+                button1.Location = new Point(button1.Location.X + (textBox1.Width - OldSearchLength), button1.Location.Y);
+                numericUpDown1.Visible = false;
+                label2.Visible = false;
+            }
+
             SelectNextItem();
         }
 
@@ -58,6 +69,25 @@ namespace Windows_Form_Frontend
         private void listBox1_DoubleClick(object sender, EventArgs e)
         {
             _CheckList[0].TrackerData.RandomizedItem = ((ItemData.ItemObject)listBox1.SelectedItem).Id;
+            _CheckList.RemoveAt(0);
+            if (_CheckList.Any())
+            {
+                SelectNextItem();
+            }
+            else
+            {
+                this.Close();
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            writeItems();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            _CheckList[0].TrackerData.RandomizedItem = "JUNK";
             _CheckList.RemoveAt(0);
             if (_CheckList.Any())
             {

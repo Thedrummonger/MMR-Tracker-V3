@@ -43,11 +43,9 @@ namespace MMR_Tracker_V3.TrackerObjects
         public class LocationFrontendData
         {
             public string LocationName { get; set; }
-            public string JunkItemType { get; set; }
             public bool Starred { get; set; }
             public string LocationArea { get; set; }
             public string DisplayName { get; set; }
-            public bool RandomizedItemRevealed { get; set; } = false;
         }
     }
 }

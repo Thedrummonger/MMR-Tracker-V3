@@ -54,6 +54,7 @@ namespace Windows_Form_Frontend
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(270, 23);
             this.textBox1.TabIndex = 1;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -72,6 +73,7 @@ namespace Windows_Form_Frontend
             this.button1.TabIndex = 3;
             this.button1.Text = "Junk";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // numericUpDown1
             // 

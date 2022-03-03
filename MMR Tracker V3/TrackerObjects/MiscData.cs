@@ -55,6 +55,7 @@ namespace MMR_Tracker_V3.TrackerObjects
         public enum LogicEntryType
         {
             item,
+            location,
             macro,
             error
         }

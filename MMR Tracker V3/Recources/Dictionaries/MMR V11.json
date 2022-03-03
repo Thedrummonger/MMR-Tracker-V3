@@ -9832,6 +9832,222 @@
           }
         ]
       }
+    },
+    {
+      "ID": "MMRTSmallKeysy",
+      "Static": true
+    },
+    {
+      "ID": "MMRTBossKeysy",
+      "Static": true
+    },
+    {
+      "ID": "MMRTProgressiveBombBag",
+      "Static": true,
+      "ConditionalItemsOverride": [
+        [
+          "ItemBombBag"
+        ],
+        [
+          "UpgradeBigBombBag"
+        ],
+        [
+          "UpgradeBiggestBombBag"
+        ]
+      ]
+    },
+    {
+      "ID": "MMRTProgressiveBombBagX2",
+      "Static": true,
+      "ConditionalItemsOverride": [
+        [
+          "ItemBombBag",
+          "UpgradeBigBombBag"
+        ],
+        [
+          "ItemBombBag",
+          "UpgradeBiggestBombBag"
+        ],
+        [
+          "UpgradeBigBombBag",
+          "UpgradeBiggestBombBag"
+        ]
+      ]
+    },
+    {
+      "ID": "MMRTProgressiveBombBagX3",
+      "Static": true,
+      "RequiredItemsOverride": [
+        "ItemBombBag",
+        "UpgradeBigBombBag",
+        "UpgradeBiggestBombBag"
+      ]
+    },
+    {
+      "ID": "MMRTProgressiveQuiver",
+      "Static": true,
+      "ConditionalItemsOverride": [
+        [
+          "ItemBow"
+        ],
+        [
+          "UpgradeBigQuiver"
+        ],
+        [
+          "UpgradeBiggestQuiver"
+        ]
+      ]
+    },
+    {
+      "ID": "MMRTProgressiveQuiverX2",
+      "Static": true,
+      "ConditionalItemsOverride": [
+        [
+          "ItemBow",
+          "UpgradeBigQuiver"
+        ],
+        [
+          "ItemBow",
+          "UpgradeBiggestQuiver"
+        ],
+        [
+          "UpgradeBigQuiver",
+          "UpgradeBiggestQuiver"
+        ]
+      ]
+    },
+    {
+      "ID": "MMRTProgressiveQuiverX3",
+      "Static": true,
+      "RequiredItemsOverride": [
+        "ItemBow",
+        "UpgradeBigQuiver",
+        "UpgradeBiggestQuiver"
+      ]
+    },
+    {
+      "ID": "MMRTProgressiveSword",
+      "Static": true,
+      "ConditionalItemsOverride": [
+        [
+          "StartingSword"
+        ],
+        [
+          "UpgradeRazorSword"
+        ],
+        [
+          "UpgradeGildedSword"
+        ]
+      ]
+    },
+    {
+      "ID": "MMRTProgressiveSwordX2",
+      "Static": true,
+      "ConditionalItemsOverride": [
+        [
+          "StartingSword",
+          "UpgradeRazorSword"
+        ],
+        [
+          "StartingSword",
+          "UpgradeGildedSword"
+        ],
+        [
+          "UpgradeRazorSword",
+          "UpgradeGildedSword"
+        ]
+      ]
+    },
+    {
+      "ID": "MMRTProgressiveSwordX3",
+      "Static": true,
+      "RequiredItemsOverride": [
+        "StartingSword",
+        "UpgradeRazorSword",
+        "UpgradeGildedSword"
+      ]
+    },
+    {
+      "ID": "MMRTProgressiveWallet",
+      "Static": true,
+      "ConditionalItemsOverride": [
+        [
+          "UpgradeAdultWallet"
+        ],
+        [
+          "UpgradeGiantWallet"
+        ],
+        [
+          "UpgradeRoyalWallet"
+        ]
+      ]
+    },
+    {
+      "ID": "MMRTProgressiveWalletX2",
+      "Static": true,
+      "ConditionalItemsOverride": [
+        [
+          "UpgradeAdultWallet",
+          "UpgradeGiantWallet"
+        ],
+        [
+          "UpgradeAdultWallet",
+          "UpgradeRoyalWallet"
+        ],
+        [
+          "UpgradeGiantWallet",
+          "UpgradeRoyalWallet"
+        ]
+      ]
+    },
+    {
+      "ID": "MMRTProgressiveWalletX3",
+      "Static": true,
+      "RequiredItemsOverride": [
+        "UpgradeAdultWallet",
+        "UpgradeGiantWallet",
+        "UpgradeRoyalWallet"
+      ]
+    },
+    {
+      "ID": "MMRTProgressiveMagic",
+      "Static": true,
+      "ConditionalItemsOverride": [
+        [
+          "FairyMagic"
+        ],
+        [
+          "FairyDoubleMagic"
+        ]
+      ]
+    },
+    {
+      "ID": "MMRTProgressiveMagicX2",
+      "Static": true,
+      "RequiredItemsOverride": [
+        "FairyMagic",
+        "FairyDoubleMagic"
+      ]
+    },
+    {
+      "ID": "MMRTProgressiveMagic",
+      "Static": true,
+      "ConditionalItemsOverride": [
+        [
+          "FairyMagic"
+        ],
+        [
+          "FairyDoubleMagic"
+        ]
+      ]
+    },
+    {
+      "ID": "MMRTProgressiveMagicX2",
+      "Static": true,
+      "RequiredItemsOverride": [
+        "FairyMagic",
+        "FairyDoubleMagic"
+      ]
     }
   ],
   "ItemList": [

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -159,6 +160,47 @@ namespace MMR_Tracker_V3
                 }
 
             }
+        }
+
+        public static Dictionary<string, int> GetCategoriesFromFile(LogicObjects.TrackerInstance Instance)
+        {
+            Dictionary<string, int> Groups = new Dictionary<string, int>();
+            if (File.Exists(References.Globalpaths.CategoryTextFile))
+            {
+                //Groups = File.ReadAllLines(@"Recources\Other Files\Categories.txt")
+                //    .Select(x => x.ToLower().Trim()).Distinct()
+                //    .Select((value, index) => new { value, index })
+                //    .ToDictionary(pair => pair.value, pair => pair.index);
+
+                bool AtGame = true;
+                foreach (var i in File.ReadAllLines(References.Globalpaths.CategoryTextFile))
+                {
+                    var x = i.ToLower().Trim();
+                    if (string.IsNullOrWhiteSpace(x) || x.StartsWith("//")) { continue; }
+                    if (x.StartsWith("#gamecodestart:"))
+                    {
+                        AtGame = x.Replace("#gamecodestart:", "").Trim().Split(',')
+                            .Select(y => y.Trim()).Contains(Instance.LogicFile.GameCode.ToLower());
+                        continue;
+                    }
+                    if (x.StartsWith("#gamecodeend:")) { AtGame = true; continue; }
+
+                    //Console.WriteLine($"{x} Is Valid {AtGame}");
+
+                    if (!Groups.ContainsKey(x) && AtGame)
+                    {
+                        Groups.Add(x, Groups.Count());
+                    }
+                }
+                return Groups;
+            }
+            else { return new Dictionary<string, int>(); }
+        }
+
+        public static void DeepCloneLogic(List<string> Requirements, List<List<string>> Conditionals, out List<string> NewRequirements, out List<List<string>> NewConditionals)
+        {
+            NewRequirements = Requirements.ConvertAll(o => (string)o.Clone());
+            NewConditionals = Conditionals.ConvertAll(p => p.ConvertAll(o => (string)o.Clone()));
         }
     }
 }

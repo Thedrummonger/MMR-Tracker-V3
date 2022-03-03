@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MMR_Tracker_V3.TrackerObjects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,23 +12,33 @@ namespace MMR_Tracker_V3
 {
     public static class LogicCalculation
     {
-        public static bool RequirementsMet(List<string> Requirements, LogicObjects.TrackerInstance instance)
+        private static bool RequirementsMet(List<string> Requirements, LogicObjects.TrackerInstance instance, IEnumerable<OptionData.TrackerOption> OptionData)
         {
-            foreach(var i in Requirements)
+            foreach(string i in Requirements)
             {
-                if (!instance.InstanceReference.LogicDataMappings[i].GetMappedEntryUsable(instance))
+                string LogicItem = i;
+                int NeededAmount = 1;
+
+                if (bool.TryParse(LogicItem, out bool BoolEntry) && !BoolEntry) { return false; }
+
+                if (MultipleItemEntry(i, out string MultiItem, out int Amount))
                 {
-                    return false;
+                    LogicItem = MultiItem;
+                    NeededAmount = Amount;
                 }
+
+                var Mapping = instance.GetLogicItemMapping(LogicItem);
+                if (Mapping == null) { return false; }
+                if (!Mapping.GetMappedEntryUsable(instance, NeededAmount)) { return false; }
             }
             return true;
         }
-        public static bool ConditionalsMet(List<List<string>> Conditionals, LogicObjects.TrackerInstance instance)
+        private static bool ConditionalsMet(List<List<string>> Conditionals, LogicObjects.TrackerInstance instance, IEnumerable<OptionData.TrackerOption> OptionData)
         {
             if (!Conditionals.Any()) { return true; }
             foreach (var i in Conditionals)
             {
-                if (RequirementsMet(i, instance)) { return true; }
+                if (RequirementsMet(i, instance, OptionData)) { return true; }
             }
             return false;
         }
@@ -37,31 +48,53 @@ namespace MMR_Tracker_V3
             {
                 bool MacroChanged = CalculateMacros(instance);
                 bool UnrandomizedItemAquired = CheckUrandomizedLocations(instance);
-
-                if (!MacroChanged && !UnrandomizedItemAquired)
-                {
-                    break;
-                }
+                if (!MacroChanged && !UnrandomizedItemAquired) { break; }
             }
             foreach (var i in instance.LocationPool.Locations.Where(x => x.TrackerData.RandomizedState != RandomizedState.Unrandomized))
             {
-                i.TrackerData.Available = RequirementsMet(i.LogicData.RequiredItems, instance) && ConditionalsMet(i.LogicData.ConditionalItems, instance);
+                i.TrackerData.Available = CheckRequirementAndConditionals(instance, i.LogicData.ConditionalItems, i.LogicData.RequiredItems, i.LogicData.Id);
             }
 
         }
+
+        public static bool CheckRequirementAndConditionals(LogicObjects.TrackerInstance instance, List<List<string>> Conditionals, List<string> Requirements, string ID)
+        {
+            var CurrentObject = instance.GetLogicLocationMapping(ID);
+
+            Utility.DeepCloneLogic(Requirements, Conditionals, out List<string> newRequirements, out List<List<string>> newConditionals);
+
+            if (CurrentObject.logicEntryType == LogicEntryType.macro)
+            {
+                var MacroObject = (MacroObject)CurrentObject.GetMappedEntry(instance);
+                if (MacroObject.DynamicLogic != null)
+                {
+                    var ReplacementMacro = HandleDynamicLogic(instance, MacroObject);
+                    if (ReplacementMacro == null) { return false; }
+                    Utility.DeepCloneLogic(ReplacementMacro.LogicData.RequiredItems, ReplacementMacro.LogicData.ConditionalItems, out newRequirements, out newConditionals);
+                }
+            }
+
+            var ValidOptions = instance.TrackerOptions.Options.Where(x => x.LocationValid(ID) && x.Enabled);
+
+            if (ValidOptions.Any())
+            {
+                foreach (var i in ValidOptions)
+                {
+                    //Do Option Edits
+                }
+            }
+
+            return RequirementsMet(newRequirements, instance, ValidOptions) && ConditionalsMet(newConditionals, instance, ValidOptions);
+        }
+
         public static bool CalculateMacros(LogicObjects.TrackerInstance instance)
         {
             bool MacroStateChanged = false;
             foreach(var i in instance.Macros.MacroList)
             {
                 var MacroData = i;
-                if (i.DynamicLogic != null)
-                {
-                    MacroData = HandleDynamicLogic(instance, i);
-                    if (MacroData == null) { continue; }
-                }
 
-                bool MacroValid = RequirementsMet(MacroData.LogicData.RequiredItems, instance) && ConditionalsMet(MacroData.LogicData.ConditionalItems, instance);
+                bool MacroValid = CheckRequirementAndConditionals(instance, MacroData.LogicData.ConditionalItems, MacroData.LogicData.RequiredItems, i.LogicData.Id);
 
                 if (!i.TrickEnabled) { MacroValid = false; }
 
@@ -76,12 +109,13 @@ namespace MMR_Tracker_V3
 
         public static TrackerObjects.MacroObject HandleDynamicLogic(LogicObjects.TrackerInstance instance, TrackerObjects.MacroObject i)
         {
-            var LocationToCompare = instance.LocationPool.Locations.Find(x => x.LogicData.Id == i.DynamicLogic.LocationToCompare);
+            var LocationToCompare = instance.GetLogicLocationMapping(i.DynamicLogic.LocationToCompare);
+            if (LocationToCompare == null || LocationToCompare.logicEntryType != LogicEntryType.location) { return null; }
             foreach (var arg in i.DynamicLogic.Arguments)
             {
-                if (LocationToCompare.TrackerData.RandomizedItem == arg.ItemAtLocation)
+                if (((LocationObject)LocationToCompare.GetMappedEntry(instance)).TrackerData.RandomizedItem == arg.ItemAtLocation)
                 {
-                    return (TrackerObjects.MacroObject)instance.InstanceReference.LogicDataMappings[arg.LogicToUse].GetMappedEntry(instance);
+                    return (TrackerObjects.MacroObject)instance.GetLogicItemMapping(arg.LogicToUse).GetMappedEntry(instance);
                 }
             }
             return null;
@@ -92,7 +126,7 @@ namespace MMR_Tracker_V3
             bool ItemStateChanged = false;
             foreach (var i in instance.LocationPool.Locations.Where(x => x.TrackerData.RandomizedState == RandomizedState.Unrandomized))
             {
-                bool LocationAvailable = RequirementsMet(i.LogicData.RequiredItems, instance) && ConditionalsMet(i.LogicData.ConditionalItems, instance);
+                bool LocationAvailable = CheckRequirementAndConditionals(instance, i.LogicData.ConditionalItems, i.LogicData.RequiredItems, i.LogicData.Id);
                 if (LocationAvailable != i.TrackerData.Available)
                 {
                     ItemStateChanged = true;
@@ -102,6 +136,17 @@ namespace MMR_Tracker_V3
                 }
             }
             return ItemStateChanged;
+        }
+
+        public static bool MultipleItemEntry(string Entry, out string Item, out int Amount)
+        {
+            Item = null;
+            Amount = -1;
+            if (!Entry.Contains(",")) { return false; }
+            var data = Entry.Split(',');
+            Item = data[0];
+            if(!int.TryParse(data[1].Trim(), out Amount)) { return false; }
+            return true;
         }
     }
 }

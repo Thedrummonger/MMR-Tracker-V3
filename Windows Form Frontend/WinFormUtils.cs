@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -29,6 +30,26 @@ namespace Windows_Form_Frontend
                 marks++;
             }
             return Divider;
+        }
+
+        public static Font GetFontFromString(string Font)
+        {
+            TypeConverter converter = TypeDescriptor.GetConverter(typeof(Font));
+            if (string.IsNullOrWhiteSpace(Font))
+            {
+                return System.Drawing.SystemFonts.DefaultFont;
+            }
+            return (Font)converter.ConvertFromString(Font);
+        }
+        public static string ConvertFontToString(Font Font)
+        {
+            if (Font == null)
+            {
+                Font = System.Drawing.SystemFonts.DefaultFont;
+            }
+
+            TypeConverter converter = TypeDescriptor.GetConverter(typeof(Font));
+            return converter.ConvertToString(Font);
         }
     }
 }

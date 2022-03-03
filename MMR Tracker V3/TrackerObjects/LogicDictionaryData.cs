@@ -65,6 +65,9 @@ namespace MMR_Tracker_V3.TrackerObjects
         public class DictionaryMacroEntry
         {
             public string ID { get; set; }
+            public bool Static { get; set; } = false;
+            public List<string> RequiredItemsOverride { get; set; } = null;
+            public List<List<string>> ConditionalItemsOverride { get; set; } = null;
             public dynamicLogicData DynamicLogicData { get; set; } = null;
         }
     }

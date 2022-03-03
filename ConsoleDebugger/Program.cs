@@ -94,7 +94,7 @@ namespace ConsoleDebugger
 
             TrackerInstanceCreation.PopulateTrackerObject(NewTrackerInstance);
 
-            Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(NewTrackerInstance.InstanceReference.LogicDataMappings, _NewtonsoftJsonSerializerOptions));
+            Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(NewTrackerInstance.InstanceReference.LogicItemMappings, _NewtonsoftJsonSerializerOptions));
         }
 
         private readonly static Newtonsoft.Json.JsonSerializerSettings _NewtonsoftJsonSerializerOptions = new Newtonsoft.Json.JsonSerializerSettings
@@ -245,7 +245,7 @@ namespace ConsoleDebugger
                     i.UIData.DisplayName = i.UIData.LocationName ?? i.LogicData.Id;
                     if (i.TrackerData.CheckState == MiscData.CheckState.Marked)
                     {
-                        var RandomizedItem = NewTrackerInstance.ItemPool.GetItemByString(i.TrackerData.RandomizedItem);
+                        var RandomizedItem = (ItemData.ItemObject)NewTrackerInstance.GetLogicItemMapping(i.TrackerData.RandomizedItem).GetMappedEntry(NewTrackerInstance);
                         i.UIData.DisplayName += $": {RandomizedItem.ItemName ?? RandomizedItem.Id}";
                     }
                     if (!Utility.FilterSearch(i, Filter, i.UIData.DisplayName)) { continue; }
@@ -430,7 +430,7 @@ namespace ConsoleDebugger
                 Console.Clear();
                 foreach (var i in CheckedLocations)
                 {
-                    var RandomizedItem = NewTrackerInstance.ItemPool.GetItemByString(i.TrackerData.RandomizedItem);
+                    var RandomizedItem = (ItemData.ItemObject)NewTrackerInstance.GetLogicItemMapping(i.TrackerData.RandomizedItem).GetMappedEntry(NewTrackerInstance);
                     i.UIData.DisplayName = $"{RandomizedItem.ItemName ?? RandomizedItem.Id}: {i.UIData.LocationName ?? i.LogicData.Id}";
 
                     if (!Utility.FilterSearch(i, Filter, i.UIData.DisplayName)) { continue; }

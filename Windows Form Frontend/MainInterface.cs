@@ -198,49 +198,13 @@ namespace Windows_Form_Frontend
         {
             if (ToUpdate == null) { ToUpdate = new List<ListBox> { LBCheckedLocations, LBValidEntrances, LBValidLocations }; }
 
-            TypeConverter converter = TypeDescriptor.GetConverter(typeof(Font));
-            if (string.IsNullOrWhiteSpace(MainUITrackerInstance.Options.WinformData.FormFont))
-            {
-                MainUITrackerInstance.Options.WinformData.FormFont = converter.ConvertToString(System.Drawing.SystemFonts.DefaultFont);
-            }
-            Font F = (Font)converter.ConvertFromString(MainUITrackerInstance.Options.WinformData.FormFont);
-
             foreach (var i in ToUpdate)
             {
                 i.Items.Clear();
-                i.ItemHeight = Convert.ToInt32(F.Size * 1.8);
+                i.ItemHeight = Convert.ToInt32(WinFormUtils.GetFontFromString(MainUITrackerInstance.Options.WinformData.FormFont).Size * 1.8);
             }
 
-            Dictionary<string, int> Groups = new Dictionary<string, int>();
-            if (File.Exists(References.Globalpaths.CategoryTextFile))
-            {
-                //Groups = File.ReadAllLines(@"Recources\Other Files\Categories.txt")
-                //    .Select(x => x.ToLower().Trim()).Distinct()
-                //    .Select((value, index) => new { value, index })
-                //    .ToDictionary(pair => pair.value, pair => pair.index);
-
-                bool AtGame = true;
-                foreach (var i in File.ReadAllLines(References.Globalpaths.CategoryTextFile))
-                {
-                    var x = i.ToLower().Trim();
-                    if (string.IsNullOrWhiteSpace(x) || x.StartsWith("//")) { continue; }
-                    if (x.StartsWith("#gamecodestart:"))
-                    {
-                        AtGame = x.Replace("#gamecodestart:", "").Trim().Split(',')
-                            .Select(y => y.Trim()).Contains(MainUITrackerInstance.LogicFile.GameCode.ToLower());
-                        continue;
-                    }
-                    if (x.StartsWith("#gamecodeend:")) { AtGame = true; continue; }
-
-                    //Console.WriteLine($"{x} Is Valid {AtGame}");
-
-                    if (!Groups.ContainsKey(x) && AtGame)
-                    {
-                        Groups.Add(x, Groups.Count());
-                    }
-                }
-
-            }
+            Dictionary<string, int> Groups = Utility.GetCategoriesFromFile(MainUITrackerInstance);
 
             var DataSets = TrackerDataHandeling.PopulateDataSets(MainUITrackerInstance);
 
@@ -261,8 +225,10 @@ namespace Windows_Form_Frontend
                 i.UIData.DisplayName = i.UIData.LocationName ?? i.LogicData.Id;
                 if (i.TrackerData.CheckState == MiscData.CheckState.Marked)
                 {
-                    var RandomizedItem = MainUITrackerInstance.ItemPool.GetItemByString(i.TrackerData.RandomizedItem);
-                    i.UIData.DisplayName += $": {RandomizedItem.ItemName ?? RandomizedItem.Id}";
+                    string RandomizedItemDisplay = i.TrackerData.RandomizedItem;
+                    var RandomizedItem = MainUITrackerInstance.ItemPool.SearchPoolForMatchingItem(i.TrackerData.RandomizedItem);
+                    if (RandomizedItem != null) { RandomizedItemDisplay = RandomizedItem.ItemName ?? RandomizedItem.Id; }
+                    i.UIData.DisplayName += $": {RandomizedItemDisplay}";
                 }
                 if (!Utility.FilterSearch(i, TXTLocSearch.Text, i.UIData.DisplayName)) { continue; }
 
@@ -279,8 +245,10 @@ namespace Windows_Form_Frontend
             {
                 if (!ToUpdate.Contains(LBCheckedLocations)) { break; }
 
-                var RandomizedItem = MainUITrackerInstance.ItemPool.GetItemByString(i.TrackerData.RandomizedItem);
-                i.UIData.DisplayName = $"{RandomizedItem.ItemName ?? RandomizedItem.Id}: {i.UIData.LocationName ?? i.LogicData.Id}";
+                string RandomizedItemDisplay = i.TrackerData.RandomizedItem;
+                var RandomizedItem = MainUITrackerInstance.ItemPool.SearchPoolForMatchingItem(i.TrackerData.RandomizedItem);
+                if (RandomizedItem != null) { RandomizedItemDisplay = RandomizedItem.ItemName ?? RandomizedItem.Id; }
+                i.UIData.DisplayName = $"{RandomizedItemDisplay}: {i.UIData.LocationName ?? i.LogicData.Id}";
 
                 if (!Utility.FilterSearch(i, TXTCheckedSearch.Text, i.UIData.DisplayName)) { continue; }
 
@@ -321,25 +289,10 @@ namespace Windows_Form_Frontend
         private void NewToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
-
             fileDialog.ShowDialog();
-
-
             string Logic = File.ReadAllText(fileDialog.FileName);
 
-            var Result = TrackerInstanceCreation.ApplyLogicAndDict(MainUITrackerInstance, Logic);
-
-            TrackerInstanceCreation.PopulateTrackerObject(MainUITrackerInstance);
-
-            if (Result == TrackerInstanceCreation.InstanceState.LogicFailure)
-            {
-                MessageBox.Show("Failed To Load Logic");
-            }
-            if (Result == TrackerInstanceCreation.InstanceState.DictionaryFailure)
-            {
-                MessageBox.Show("Failed To Load Dict");
-            }
-
+            WinFormInstanceCreation.CreateWinFormInstance(Logic);
             LogicCalculation.CalculateLogic(MainUITrackerInstance);
             AlignUI();
             PrintToListBox();
@@ -347,12 +300,10 @@ namespace Windows_Form_Frontend
 
         private void LBValidLocations_DrawItem(object sender, DrawItemEventArgs e)
         {
-            TypeConverter converter = TypeDescriptor.GetConverter(typeof(Font));
-
             var LB = sender as ListBox;
             if (e.Index < 0) { return; }
             e.DrawBackground();
-            Font F = (Font)converter.ConvertFromString(MainUITrackerInstance.Options.WinformData.FormFont);
+            Font F = WinFormUtils.GetFontFromString(MainUITrackerInstance.Options.WinformData.FormFont);
             Brush brush = ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? Brushes.White : Brushes.Black;
             if (LB.Items[e.Index] is LocationData.LocationObject ListEntry && sender != LBPathFinder)
             {
@@ -371,12 +322,10 @@ namespace Windows_Form_Frontend
 
         private void LBCheckedLocations_DrawItem(object sender, DrawItemEventArgs e)
         {
-            TypeConverter converter = TypeDescriptor.GetConverter(typeof(Font));
-
             var LB = sender as ListBox;
             if (e.Index < 0) { return; }
             e.DrawBackground();
-            Font F = (Font)converter.ConvertFromString(MainUITrackerInstance.Options.WinformData.FormFont);
+            Font F = WinFormUtils.GetFontFromString(MainUITrackerInstance.Options.WinformData.FormFont);
             Brush brush = ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? Brushes.White : Brushes.Black;
             if (LB.Items[e.Index] is LocationData.LocationObject ListEntry && sender != LBPathFinder)
             {
