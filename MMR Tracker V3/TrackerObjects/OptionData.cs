@@ -16,14 +16,38 @@ namespace MMR_Tracker_V3.TrackerObjects
         {
             public string ID { get; set; }
             public string DisplayName { get; set; }
-            public bool Enabled { get; set; } = false;
+            public string CurrentValue { get; set; } = "";
+            public Dictionary<string, actions> Values { get; set; } = new Dictionary<string, actions>();
+            public actions GetActions()
+            {
+                return Values[CurrentValue];
+            }
+            public bool IsToggleOption()
+            {
+                return Values.Count == 2 && Values.ContainsKey("enabled") && Values.ContainsKey("disabled");
+            }
+            public void ToggleOption()
+            {
+                if (!this.IsToggleOption()) { return; }
+                if (CurrentValue == "enabled")
+                {
+                    CurrentValue = "disabled";
+                }
+                else
+                {
+                    CurrentValue = "enabled";
+                }
+            }
+        }
+
+        public class actions
+        {
             public LogicReplacement[] LogicReplacements { get; set; } = Array.Empty<LogicReplacement>();
             public AdditionalLogic[] AdditionalLogic { get; set; } = Array.Empty<AdditionalLogic>();
             public bool LocationValid(string ID)
             {
                 return LogicReplacements.Any(x => x.LocationValid(ID)) || AdditionalLogic.Any(x => x.LocationValid(ID));
             }
-
         }
 
         public class AdditionalLogic

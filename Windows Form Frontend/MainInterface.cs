@@ -30,6 +30,7 @@ namespace Windows_Form_Frontend
         private void MainInterface_Load(object sender, EventArgs e)
         {
             AlignUI();
+            Testing.CreateOptionsJson();
         }
 
         private void AlignUI()
@@ -136,6 +137,7 @@ namespace Windows_Form_Frontend
             //PrintToListBox();
             this.Refresh();
         }
+
         public void SetObjectVisibility(bool item, bool location)
         {
             var UpperLeftLBL = label1;
@@ -281,23 +283,26 @@ namespace Windows_Form_Frontend
             RandomizerOptionsToolStripMenuItem1.DropDownItems.Clear();
             foreach (var i in MainUITrackerInstance.TrackerOptions.Options)
             {
-                ToolStripMenuItem menuItem = new ToolStripMenuItem();
-                menuItem.Checked = i.Enabled;
-                menuItem.Text = i.DisplayName;
-                menuItem.Click += delegate (object sender, EventArgs e) { MenuItem_Click(sender, e, i); };
+                if (i.IsToggleOption())
+                {
+                    ToolStripMenuItem menuItem = new ToolStripMenuItem();
+                    menuItem.Checked = i.CurrentValue == "enabled";
+                    menuItem.Text = i.DisplayName;
+                    menuItem.Click += delegate (object sender, EventArgs e) { ToggleRandomizerOption_Click(sender, e, i); };
+                    RandomizerOptionsToolStripMenuItem1.DropDownItems.Add(menuItem);
+                }
 
-                RandomizerOptionsToolStripMenuItem1.DropDownItems.Add(menuItem);
             }
         }
 
-        private void MenuItem_Click(object sender, EventArgs e, OptionData.TrackerOption Option)
+        private void ToggleRandomizerOption_Click(object sender, EventArgs e, OptionData.TrackerOption Option)
         {
-            Option.Enabled = !Option.Enabled;
-            ((ToolStripMenuItem)sender).Checked = Option.Enabled;
+            Option.ToggleOption();
+            ((ToolStripMenuItem)sender).Checked = Option.CurrentValue == "enabled";
             LogicCalculation.CalculateLogic(MainUITrackerInstance);
             PrintToListBox();
             Debug.WriteLine(Option.ID);
-            Debug.WriteLine(Option.Enabled);
+            Debug.WriteLine(Option.CurrentValue);
         }
 
         private void LBValidLocations_DrawItem(object sender, DrawItemEventArgs e)

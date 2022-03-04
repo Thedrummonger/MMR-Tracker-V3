@@ -69,138 +69,183 @@ namespace MMR_Tracker_V3
                 {
                     ID = "ProgressiveItems",
                     DisplayName = "Progressive Items",
-                    LogicReplacements = new LogicReplacement[]
+                    CurrentValue = "disabled",
+                    Values = new Dictionary<string, actions>
                     {
-                        new LogicReplacement
-                        {
+                        {"enabled", new actions
+                            {
+                                LogicReplacements = new LogicReplacement[]
+                                {
+                                    new LogicReplacement
+                                    {
 
-                            LocationBlacklist = new string[]
-                            {
-                                "MMRTProgressiveBombBag",
-                                "MMRTProgressiveBombBagX2",
-                                "MMRTProgressiveBombBagX3",
-                                "MMRTProgressiveQuiver",
-                                "MMRTProgressiveQuiverX2",
-                                "MMRTProgressiveQuiverX3",
-                                "MMRTProgressiveSword",
-                                "MMRTProgressiveSwordX2",
-                                "MMRTProgressiveSwordX3",
-                                "MMRTProgressiveWallet",
-                                "MMRTProgressiveWalletX2",
-                                "MMRTProgressiveWalletX3",
-                                "MMRTProgressiveMagic",
-                                "MMRTProgressiveMagicX2"
-                            },
-                            ReplacementList = new OptionData.LogicReplacementData[]
-                            {
-                                new OptionData.LogicReplacementData{Target = "ItemBombBag", Replacement = "MMRTProgressiveBombBag"},
-                                new OptionData.LogicReplacementData{Target = "UpgradeBigBombBag", Replacement = "MMRTProgressiveBombBagX2"},
-                                new OptionData.LogicReplacementData{Target = "UpgradeBiggestBombBag", Replacement = "MMRTProgressiveBombBagX3"},
-                                new OptionData.LogicReplacementData{Target = "ItemBow", Replacement = "MMRTProgressiveQuiver"},
-                                new OptionData.LogicReplacementData{Target = "UpgradeBigQuiver", Replacement = "MMRTProgressiveQuiverX2"},
-                                new OptionData.LogicReplacementData{Target = "UpgradeBiggestQuiver", Replacement = "MMRTProgressiveQuiverX3"},
-                                new OptionData.LogicReplacementData{Target = "StartingSword", Replacement = "MMRTProgressiveSword"},
-                                new OptionData.LogicReplacementData{Target = "UpgradeRazorSword", Replacement = "MMRTProgressiveSwordX2"},
-                                new OptionData.LogicReplacementData{Target = "UpgradeGildedSword", Replacement = "MMRTProgressiveSwordX3"},
-                                new OptionData.LogicReplacementData{Target = "UpgradeAdultWallet", Replacement = "MMRTProgressiveWallet"},
-                                new OptionData.LogicReplacementData{Target = "UpgradeGiantWallet", Replacement = "MMRTProgressiveWalletX2"},
-                                new OptionData.LogicReplacementData{Target = "UpgradeRoyalWallet", Replacement = "MMRTProgressiveWalletX3"},
-                                new OptionData.LogicReplacementData{Target = "FairyMagic", Replacement = "MMRTProgressiveMagic"},
-                                new OptionData.LogicReplacementData{Target = "FairyDoubleMagic", Replacement = "MMRTProgressiveMagicX2"},
-                            }
-                        }
+                                        LocationBlacklist = new string[]
+                                        {
+                                            "MMRTProgressiveBombBag",
+                                            "MMRTProgressiveBombBagX2",
+                                            "MMRTProgressiveBombBagX3",
+                                            "MMRTProgressiveQuiver",
+                                            "MMRTProgressiveQuiverX2",
+                                            "MMRTProgressiveQuiverX3",
+                                            "MMRTProgressiveSword",
+                                            "MMRTProgressiveSwordX2",
+                                            "MMRTProgressiveSwordX3",
+                                            "MMRTProgressiveWallet",
+                                            "MMRTProgressiveWalletX2",
+                                            "MMRTProgressiveWalletX3",
+                                            "MMRTProgressiveMagic",
+                                            "MMRTProgressiveMagicX2"
+                                        },
+                                        ReplacementList = new OptionData.LogicReplacementData[]
+                                        {
+                                            new OptionData.LogicReplacementData{Target = "ItemBombBag", Replacement = "MMRTProgressiveBombBag"},
+                                            new OptionData.LogicReplacementData{Target = "UpgradeBigBombBag", Replacement = "MMRTProgressiveBombBagX2"},
+                                            new OptionData.LogicReplacementData{Target = "UpgradeBiggestBombBag", Replacement = "MMRTProgressiveBombBagX3"},
+                                            new OptionData.LogicReplacementData{Target = "ItemBow", Replacement = "MMRTProgressiveQuiver"},
+                                            new OptionData.LogicReplacementData{Target = "UpgradeBigQuiver", Replacement = "MMRTProgressiveQuiverX2"},
+                                            new OptionData.LogicReplacementData{Target = "UpgradeBiggestQuiver", Replacement = "MMRTProgressiveQuiverX3"},
+                                            new OptionData.LogicReplacementData{Target = "StartingSword", Replacement = "MMRTProgressiveSword"},
+                                            new OptionData.LogicReplacementData{Target = "UpgradeRazorSword", Replacement = "MMRTProgressiveSwordX2"},
+                                            new OptionData.LogicReplacementData{Target = "UpgradeGildedSword", Replacement = "MMRTProgressiveSwordX3"},
+                                            new OptionData.LogicReplacementData{Target = "UpgradeAdultWallet", Replacement = "MMRTProgressiveWallet"},
+                                            new OptionData.LogicReplacementData{Target = "UpgradeGiantWallet", Replacement = "MMRTProgressiveWalletX2"},
+                                            new OptionData.LogicReplacementData{Target = "UpgradeRoyalWallet", Replacement = "MMRTProgressiveWalletX3"},
+                                            new OptionData.LogicReplacementData{Target = "FairyMagic", Replacement = "MMRTProgressiveMagic"},
+                                            new OptionData.LogicReplacementData{Target = "FairyDoubleMagic", Replacement = "MMRTProgressiveMagicX2"},
+                                        }
+                                    }
+                                }
+                            } 
+                        },
+                        { "disabled", new actions() }
                     }
                 },
                 new TrackerOption
                 {
                     ID = "SmallKeysy",
                     DisplayName = "Small Key Doors Unlocked",
-                    LogicReplacements = new LogicReplacement[]
+                    CurrentValue = "disabled",
+                    Values = new Dictionary<string, actions>
                     {
-                        new LogicReplacement
-                        {
-                             ReplacementList = new OptionData.LogicReplacementData[]
-                             {
-                                 new OptionData.LogicReplacementData{Target = "ItemWoodfallKey1", Replacement = "MMRTSmallKeysy"},
-                                 new OptionData.LogicReplacementData{Target = "ItemSnowheadKey1", Replacement = "MMRTSmallKeysy"},
-                                 new OptionData.LogicReplacementData{Target = "ItemSnowheadKey2", Replacement = "MMRTSmallKeysy"},
-                                 new OptionData.LogicReplacementData{Target = "ItemSnowheadKey3", Replacement = "MMRTSmallKeysy"},
-                                 new OptionData.LogicReplacementData{Target = "ItemGreatBayKey1", Replacement = "MMRTSmallKeysy"},
-                                 new OptionData.LogicReplacementData{Target = "ItemStoneTowerKey1", Replacement = "MMRTSmallKeysy"},
-                                 new OptionData.LogicReplacementData{Target = "ItemStoneTowerKey2", Replacement = "MMRTSmallKeysy"},
-                                 new OptionData.LogicReplacementData{Target = "ItemStoneTowerKey3", Replacement = "MMRTSmallKeysy"},
-                                 new OptionData.LogicReplacementData{Target = "ItemStoneTowerKey4", Replacement = "MMRTSmallKeysy"}
-                             }
-                        }
+                        {"enabled", new actions
+                            {
+                                LogicReplacements = new LogicReplacement[]
+                                {
+                                    new LogicReplacement
+                                    {
+                                         ReplacementList = new OptionData.LogicReplacementData[]
+                                         {
+                                             new OptionData.LogicReplacementData{Target = "ItemWoodfallKey1", Replacement = "MMRTSmallKeysy"},
+                                             new OptionData.LogicReplacementData{Target = "ItemSnowheadKey1", Replacement = "MMRTSmallKeysy"},
+                                             new OptionData.LogicReplacementData{Target = "ItemSnowheadKey2", Replacement = "MMRTSmallKeysy"},
+                                             new OptionData.LogicReplacementData{Target = "ItemSnowheadKey3", Replacement = "MMRTSmallKeysy"},
+                                             new OptionData.LogicReplacementData{Target = "ItemGreatBayKey1", Replacement = "MMRTSmallKeysy"},
+                                             new OptionData.LogicReplacementData{Target = "ItemStoneTowerKey1", Replacement = "MMRTSmallKeysy"},
+                                             new OptionData.LogicReplacementData{Target = "ItemStoneTowerKey2", Replacement = "MMRTSmallKeysy"},
+                                             new OptionData.LogicReplacementData{Target = "ItemStoneTowerKey3", Replacement = "MMRTSmallKeysy"},
+                                             new OptionData.LogicReplacementData{Target = "ItemStoneTowerKey4", Replacement = "MMRTSmallKeysy"}
+                                         }
+                                    }
+                                }
+                            }
+                        },
+                        { "disabled", new actions() }
                     }
                 },
                 new TrackerOption
                 {
                     ID = "BossKeysy",
                     DisplayName = "Boss Key Doors Unlocked",
-                    LogicReplacements = new LogicReplacement[]
+                    CurrentValue = "disabled",
+                    Values = new Dictionary<string, actions>
                     {
-                        new LogicReplacement
-                        {
-                             ReplacementList = new OptionData.LogicReplacementData[]
-                             {
-                                 new OptionData.LogicReplacementData{Target = "ItemWoodfallBossKey", Replacement = "MMRTBossKeysy"},
-                                 new OptionData.LogicReplacementData{Target = "ItemSnowheadBossKey", Replacement = "MMRTBossKeysy"},
-                                 new OptionData.LogicReplacementData{Target = "ItemGreatBayBossKey", Replacement = "MMRTBossKeysy"},
-                                 new OptionData.LogicReplacementData{Target = "ItemStoneTowerBossKey", Replacement = "MMRTBossKeysy"},
-                             }
-                        }
+                        {"enabled", new actions
+                            {
+                                LogicReplacements = new LogicReplacement[]
+                                {
+                                    new LogicReplacement
+                                    {
+                                         ReplacementList = new OptionData.LogicReplacementData[]
+                                         {
+                                             new OptionData.LogicReplacementData{Target = "ItemWoodfallBossKey", Replacement = "MMRTBossKeysy"},
+                                             new OptionData.LogicReplacementData{Target = "ItemSnowheadBossKey", Replacement = "MMRTBossKeysy"},
+                                             new OptionData.LogicReplacementData{Target = "ItemGreatBayBossKey", Replacement = "MMRTBossKeysy"},
+                                             new OptionData.LogicReplacementData{Target = "ItemStoneTowerBossKey", Replacement = "MMRTBossKeysy"},
+                                         }
+                                    }
+                                }
+                            }
+                        },
+                        { "disabled", new actions() }
                     }
                 },
                 new TrackerOption
                 {
                     ID = "NoSafteyLogic",
                     DisplayName = "Ignore Trade ItemSaftey Logic",
-                    LogicReplacements = new LogicReplacement[]
+                    CurrentValue = "enabled",
+                    Values = new Dictionary<string, actions>
                     {
-                        new LogicReplacement
-                        {
-                            LocationWhitelist = new string[]
+                        {"enabled", new actions
                             {
-                                "UpgradeBigBombBag",
-                                "MaskBlast"
-                            },
-                             ReplacementList = new OptionData.LogicReplacementData[]
-                             {
-                                 new OptionData.LogicReplacementData{Target = "ItemWoodfallBossKey", Replacement = "MMRTBossKeysy"},
-                                 new OptionData.LogicReplacementData{Target = "ItemSnowheadBossKey", Replacement = "MMRTBossKeysy"},
-                                 new OptionData.LogicReplacementData{Target = "ItemGreatBayBossKey", Replacement = "MMRTBossKeysy"},
-                                 new OptionData.LogicReplacementData{Target = "ItemStoneTowerBossKey", Replacement = "MMRTBossKeysy"},
-                             }
-                        }
+                                LogicReplacements = new LogicReplacement[]
+                                {
+                                    new LogicReplacement
+                                    {
+                                        LocationWhitelist = new string[]
+                                        {
+                                            "UpgradeBigBombBag",
+                                            "MaskBlast"
+                                        },
+                                        ReplacementList = new OptionData.LogicReplacementData[]
+                                        {
+                                            new OptionData.LogicReplacementData{Target = "ItemWoodfallBossKey", Replacement = "MMRTBossKeysy"},
+                                            new OptionData.LogicReplacementData{Target = "ItemSnowheadBossKey", Replacement = "MMRTBossKeysy"},
+                                            new OptionData.LogicReplacementData{Target = "ItemGreatBayBossKey", Replacement = "MMRTBossKeysy"},
+                                            new OptionData.LogicReplacementData{Target = "ItemStoneTowerBossKey", Replacement = "MMRTBossKeysy"},
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        { "disabled", new actions() }
                     }
                 },
                 new TrackerOption
                 {
                     ID = "BYOA",
                     DisplayName = "Bring Your Own Ammo",
-                    AdditionalLogic = new AdditionalLogic[]
+                    CurrentValue = "disabled",
+                    Values = new Dictionary<string, actions>
                     {
-                        new AdditionalLogic
-                        {
-                            LocationWhitelist = new string[]{ "UpgradeBigQuiver", "UpgradeBiggestQuiver", "HeartPieceSwampArchery" },
-                            AdditionalRequirements = new string[] { "MMRTarrows40" }
+                        {"enabled", new actions
+                            {
+                                AdditionalLogic = new AdditionalLogic[]
+                                {
+                                    new AdditionalLogic
+                                    {
+                                        LocationWhitelist = new string[]{ "UpgradeBigQuiver", "UpgradeBiggestQuiver", "HeartPieceSwampArchery" },
+                                        AdditionalRequirements = new string[] { "MMRTarrows40" }
+                                    },
+                                    new AdditionalLogic
+                                    {
+                                        LocationWhitelist = new string[]{ "HeartPieceTownArchery" },
+                                        AdditionalRequirements = new string[] { "MMRTarrows50" }
+                                    },
+                                    new AdditionalLogic
+                                    {
+                                        LocationWhitelist = new string[]{ "HeartPieceHoneyAndDarling" },
+                                        AdditionalRequirements = new string[] { "MMRTbombchu10" }
+                                    },
+                                    new AdditionalLogic
+                                    {
+                                        LocationWhitelist = new string[]{ "MaskRomani" },
+                                        AdditionalRequirements = new string[] { "MMRTescortCremia" }
+                                    }
+                                }
+                            }
                         },
-                        new AdditionalLogic
-                        {
-                            LocationWhitelist = new string[]{ "HeartPieceTownArchery" },
-                            AdditionalRequirements = new string[] { "MMRTarrows50" }
-                        },
-                        new AdditionalLogic
-                        {
-                            LocationWhitelist = new string[]{ "HeartPieceHoneyAndDarling" },
-                            AdditionalRequirements = new string[] { "MMRTbombchu10" }
-                        },
-                        new AdditionalLogic
-                        {
-                            LocationWhitelist = new string[]{ "MaskRomani" },
-                            AdditionalRequirements = new string[] { "MMRTescortCremia" }
-                        }
+                        { "disabled", new actions() }
                     }
                 }
             };

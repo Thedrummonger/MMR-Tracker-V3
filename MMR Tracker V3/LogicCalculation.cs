@@ -95,17 +95,20 @@ namespace MMR_Tracker_V3
                 Debug.WriteLine(string.Join(",", newRequirements));
             }
 
-            var ValidOptions = instance.TrackerOptions.Options.Where(x => x.LocationValid(ID) && x.Enabled);
+            var ValidOptions = instance.TrackerOptions.Options.Where(x => x.GetActions().LocationValid(ID));
 
             if (ValidOptions.Any())
             {
                 foreach (var option in ValidOptions)
                 {
-                    foreach(var replacements in option.LogicReplacements)
+                    if (LogItem) { Debug.WriteLine($"Checking Option {option.ID}"); }
+                    foreach (var replacements in option.GetActions().LogicReplacements)
                     {
                         if (!replacements.LocationValid(ID)) { continue; }
+                        if (LogItem) { Debug.WriteLine($"Applying {replacements.ReplacementList.Length} Replacements"); }
                         foreach (var i in replacements.ReplacementList)
                         {
+                            if (LogItem) { Debug.WriteLine($"Replacing {i.Target} With {i.Replacement}"); }
                             newRequirements = newRequirements
                                 .Select(x => x == i.Target ? x.Replace(i.Target, i.Replacement) : x.Replace(" ", " ")).ToList();
                             for (var p = 0; p < newConditionals.Count; p++)
@@ -115,7 +118,7 @@ namespace MMR_Tracker_V3
                             }
                         }
                     }
-                    foreach(var additionalSet in option.AdditionalLogic)
+                    foreach(var additionalSet in option.GetActions().AdditionalLogic)
                     {
                         if (!additionalSet.LocationValid(ID)) { continue; }
                         foreach(var i in additionalSet.AdditionalRequirements)
