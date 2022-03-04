@@ -20,6 +20,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public List<DictionaryItemEntries> ItemList { get; set; } = new List<DictionaryItemEntries>();
             public List<DictionaryMacroEntry> MacroList { get; set; } = new List<DictionaryMacroEntry>(); 
             public List<TrackerOption> Options { get; set; } = new List<TrackerOption>();
+            public List<DictionaryHintEntries> HintSpots { get; set; } = new List<DictionaryHintEntries>();
 
             public static LogicDictionary FromJson(string json)
             {
@@ -59,7 +60,6 @@ namespace MMR_Tracker_V3.TrackerObjects
             public int? WalletCapacity { get; set; } = null;
             public int MaxAmountInWorld { get; set; } = -1;
             public bool ValidStartingItem { get; set; }
-            public KeyType KeyType { get; set; } = KeyType.None;
             public string[] ItemTypes { get; set; } = Array.Empty<string>();
 
         }
@@ -71,6 +71,13 @@ namespace MMR_Tracker_V3.TrackerObjects
             public List<string> RequiredItemsOverride { get; set; } = null;
             public List<List<string>> ConditionalItemsOverride { get; set; } = null;
             public dynamicLogicData DynamicLogicData { get; set; } = null;
+        }
+
+        public class DictionaryHintEntries
+        {
+            public string ID { get; set; }
+            public string Name { get; set; }
+
         }
     }
 }

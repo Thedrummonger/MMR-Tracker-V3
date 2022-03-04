@@ -38,7 +38,15 @@ namespace MMR_Tracker_V3
 
         public static int GetAmountPlaced(this ItemObject itemObject, LogicObjects.TrackerInstance Instance)
         {
-            return Instance.LocationPool.Locations.Where(x => x.TrackerData.RandomizedItem != null && Instance.ItemPool.SearchPoolForMatchingItem(x.TrackerData.RandomizedItem) == itemObject).Count();
+            int AmountAquired = itemObject.GetTotalUsable();
+            int AmountSetAtLocation = 0;
+            foreach(var x in Instance.LocationPool.Locations.Where(x => x.TrackerData.CheckState != CheckState.Checked))
+            {
+                var SetItem = x.TrackerData.GetItemAtCheck();
+                if (SetItem != null && SetItem == itemObject.Id) { AmountSetAtLocation++; }
+            }
+
+            return AmountAquired + AmountSetAtLocation;
         }
 
         public static bool CanBePlaced(this ItemObject itemObject, LogicObjects.TrackerInstance Instance)
@@ -240,6 +248,10 @@ namespace MMR_Tracker_V3
             else if (mapping.logicEntryType == LogicEntryType.macro)
             {
                 return instance.Macros.MacroList[mapping.IndexInList];
+            }
+            else if (mapping.logicEntryType == LogicEntryType.Hint)
+            {
+                return instance.HintPool.Hints[mapping.IndexInList];
             }
             else
             {

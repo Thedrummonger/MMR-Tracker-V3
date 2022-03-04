@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,8 +9,22 @@ using static MMR_Tracker_V3.TrackerObjects.ItemData;
 
 namespace MMR_Tracker_V3.TrackerObjects
 {
-    public class MiscData
+    public static class MiscData
     {
+
+        public class Areaheader
+        {
+            public string Area { get; set; }
+            public bool ForceUpper { get; set; } = true;
+            public bool AddColon { get; set; } = true;
+            public override string ToString()
+            {
+                string Display = Area;
+                if (ForceUpper) { Display = Display.ToUpper(); }
+                if (AddColon) { Display += ":"; }
+                return Display;
+            }
+        }
         public enum CheckState
         {
             Checked = 0,
@@ -18,18 +34,16 @@ namespace MMR_Tracker_V3.TrackerObjects
 
         public enum RandomizedState
         {
+            [Description("Rand")]
             Randomized = 0,
+            [Description("UnRand")]
             Unrandomized = 1,
+            [Description("Manual")]
             UnrandomizedManual = 2,
+            [Description("Junk")]
             ForcedJunk = 3
         }
 
-        public enum KeyType
-        {
-            None = 0,
-            Small = 1,
-            Boss = 2
-        }
 
         public enum MiddleClickFunction
         {
@@ -57,7 +71,34 @@ namespace MMR_Tracker_V3.TrackerObjects
             item,
             location,
             macro,
+            Hint,
             error
+        }
+        public static string GetDescription<T>(this T e) where T : IConvertible
+        {
+            if (e is Enum)
+            {
+                Type type = e.GetType();
+                Array values = System.Enum.GetValues(type);
+
+                foreach (int val in values)
+                {
+                    if (val == e.ToInt32(CultureInfo.InvariantCulture))
+                    {
+                        var memInfo = type.GetMember(type.GetEnumName(val));
+                        var descriptionAttribute = memInfo[0]
+                            .GetCustomAttributes(typeof(DescriptionAttribute), false)
+                            .FirstOrDefault() as DescriptionAttribute;
+
+                        if (descriptionAttribute != null)
+                        {
+                            return descriptionAttribute.Description;
+                        }
+                    }
+                }
+            }
+
+            return null; // could also return string.Empty
         }
     }
 }

@@ -9482,258 +9482,6 @@
       "ValidItemTypes": [
         "Item"
       ]
-    },
-    {
-      "ID": "GossipTerminaSouth",
-      "Name": "Termina South",
-      "OriginalItem": "GossipTerminaSouth",
-      "Area": "Gossip Stone",
-      "ValidItemTypes": [
-        "GossipTerminaSouth"
-      ]
-    },
-    {
-      "ID": "GossipSwampPotionShop",
-      "Name": "Swamp Near Potion Shop",
-      "OriginalItem": "GossipSwampPotionShop",
-      "Area": "Gossip Stone",
-      "ValidItemTypes": [
-        "GossipSwampPotionShop"
-      ]
-    },
-    {
-      "ID": "GossipMountainSpringPath",
-      "Name": "Mountain Path Spring",
-      "OriginalItem": "GossipMountainSpringPath",
-      "Area": "Gossip Stone",
-      "ValidItemTypes": [
-        "GossipMountainSpringPath"
-      ]
-    },
-    {
-      "ID": "GossipMountainPath",
-      "Name": "Mountain Path",
-      "OriginalItem": "GossipMountainPath",
-      "Area": "Gossip Stone",
-      "ValidItemTypes": [
-        "GossipMountainPath"
-      ]
-    },
-    {
-      "ID": "GossipOceanZoraGame",
-      "Name": "Ocean Near Zora Game",
-      "OriginalItem": "GossipOceanZoraGame",
-      "Area": "Gossip Stone",
-      "ValidItemTypes": [
-        "GossipOceanZoraGame"
-      ]
-    },
-    {
-      "ID": "GossipCanyonRoad",
-      "Name": "Canyon Road",
-      "OriginalItem": "GossipCanyonRoad",
-      "Area": "Gossip Stone",
-      "ValidItemTypes": [
-        "GossipCanyonRoad"
-      ]
-    },
-    {
-      "ID": "GossipCanyonDock",
-      "Name": "Canyon Dock",
-      "OriginalItem": "GossipCanyonDock",
-      "Area": "Gossip Stone",
-      "ValidItemTypes": [
-        "GossipCanyonDock"
-      ]
-    },
-    {
-      "ID": "GossipCanyonSpiritHouse",
-      "Name": "Canyon Poe Hut",
-      "OriginalItem": "GossipCanyonSpiritHouse",
-      "Area": "Gossip Stone",
-      "ValidItemTypes": [
-        "GossipCanyonSpiritHouse"
-      ]
-    },
-    {
-      "ID": "GossipTerminaMilk",
-      "Name": "Termina Near Milk Road",
-      "OriginalItem": "GossipTerminaMilk",
-      "Area": "Gossip Stone",
-      "ValidItemTypes": [
-        "GossipTerminaMilk"
-      ]
-    },
-    {
-      "ID": "GossipTerminaWest",
-      "Name": "Termina West",
-      "OriginalItem": "GossipTerminaWest",
-      "Area": "Gossip Stone",
-      "ValidItemTypes": [
-        "GossipTerminaWest"
-      ]
-    },
-    {
-      "ID": "GossipTerminaNorth",
-      "Name": "Termina North",
-      "OriginalItem": "GossipTerminaNorth",
-      "Area": "Gossip Stone",
-      "ValidItemTypes": [
-        "GossipTerminaNorth"
-      ]
-    },
-    {
-      "ID": "GossipTerminaEast",
-      "Name": "Termina East",
-      "OriginalItem": "GossipTerminaEast",
-      "Area": "Gossip Stone",
-      "ValidItemTypes": [
-        "GossipTerminaEast"
-      ]
-    },
-    {
-      "ID": "GossipRanchTree",
-      "Name": "Racnh Near Tree",
-      "OriginalItem": "GossipRanchTree",
-      "Area": "Gossip Stone",
-      "ValidItemTypes": [
-        "GossipRanchTree"
-      ]
-    },
-    {
-      "ID": "GossipRanchBarn",
-      "Name": "Ranch Near Barn",
-      "OriginalItem": "GossipRanchBarn",
-      "Area": "Gossip Stone",
-      "ValidItemTypes": [
-        "GossipRanchBarn"
-      ]
-    },
-    {
-      "ID": "GossipMilkRoad",
-      "Name": "Milk Road",
-      "OriginalItem": "GossipMilkRoad",
-      "Area": "Gossip Stone",
-      "ValidItemTypes": [
-        "GossipMilkRoad"
-      ]
-    },
-    {
-      "ID": "GossipOceanFortress",
-      "Name": "Coast Near Pirates Fortress",
-      "OriginalItem": "GossipOceanFortress",
-      "Area": "Gossip Stone",
-      "ValidItemTypes": [
-        "GossipOceanFortress"
-      ]
-    },
-    {
-      "ID": "GossipSwampRoad",
-      "Name": "Swamp Road",
-      "OriginalItem": "GossipSwampRoad",
-      "Area": "Gossip Stone",
-      "ValidItemTypes": [
-        "GossipSwampRoad"
-      ]
-    },
-    {
-      "ID": "GossipTerminaObservatory",
-      "Name": "Termina Near Observatory",
-      "OriginalItem": "GossipTerminaObservatory",
-      "Area": "Gossip Stone",
-      "ValidItemTypes": [
-        "GossipTerminaObservatory"
-      ]
-    },
-    {
-      "ID": "GossipRanchCuccoShack",
-      "Name": "Ranch Near Cucco Shack",
-      "OriginalItem": "GossipRanchCuccoShack",
-      "Area": "Gossip Stone",
-      "ValidItemTypes": [
-        "GossipRanchCuccoShack"
-      ]
-    },
-    {
-      "ID": "GossipRanchRacetrack",
-      "Name": "Ranch Near Dog Race",
-      "OriginalItem": "GossipRanchRacetrack",
-      "Area": "Gossip Stone",
-      "ValidItemTypes": [
-        "GossipRanchRacetrack"
-      ]
-    },
-    {
-      "ID": "GossipRanchEntrance",
-      "Name": "Ranch Near Entrance",
-      "OriginalItem": "GossipRanchEntrance",
-      "Area": "Gossip Stone",
-      "ValidItemTypes": [
-        "GossipRanchEntrance"
-      ]
-    },
-    {
-      "ID": "GossipCanyonRavine",
-      "Name": "Ikana Canyon Across Ravine",
-      "OriginalItem": "GossipCanyonRavine",
-      "Area": "Gossip Stone",
-      "ValidItemTypes": [
-        "GossipCanyonRavine"
-      ]
-    },
-    {
-      "ID": "GossipMountainSpringFrog",
-      "Name": "Mountain Near Frogs Spring",
-      "OriginalItem": "GossipMountainSpringFrog",
-      "Area": "Gossip Stone",
-      "ValidItemTypes": [
-        "GossipMountainSpringFrog"
-      ]
-    },
-    {
-      "ID": "GossipSwampSpiderHouse",
-      "Name": "Swamp Spider House",
-      "OriginalItem": "GossipSwampSpiderHouse",
-      "Area": "Gossip Stone",
-      "ValidItemTypes": [
-        "GossipSwampSpiderHouse"
-      ]
-    },
-    {
-      "ID": "GossipTerminaGossipLarge",
-      "Name": "Four Gossip Grotto 1",
-      "OriginalItem": "GossipTerminaGossipLarge",
-      "Area": "Gossip Stone",
-      "ValidItemTypes": [
-        "GossipTerminaGossipLarge"
-      ]
-    },
-    {
-      "ID": "GossipTerminaGossipGuitar",
-      "Name": "Four Gossip Grotto 2",
-      "OriginalItem": "GossipTerminaGossipGuitar",
-      "Area": "Gossip Stone",
-      "ValidItemTypes": [
-        "GossipTerminaGossipGuitar"
-      ]
-    },
-    {
-      "ID": "GossipTerminaGossipPipes",
-      "Name": "Four Gossip Grotto 3",
-      "OriginalItem": "GossipTerminaGossipPipes",
-      "Area": "Gossip Stone",
-      "ValidItemTypes": [
-        "GossipTerminaGossipPipes"
-      ]
-    },
-    {
-      "ID": "GossipTerminaGossipDrums",
-      "Name": "Four Gossip Grotto 4",
-      "OriginalItem": "GossipTerminaGossipDrums",
-      "Area": "Gossip Stone",
-      "ValidItemTypes": [
-        "GossipTerminaGossipDrums"
-      ]
     }
   ],
   "MacroList": [
@@ -20937,258 +20685,6 @@
       ]
     },
     {
-      "ID": "GossipTerminaSouth",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": false,
-      "KeyType": "None",
-      "ItemTypes": [
-        "GossipTerminaSouth"
-      ]
-    },
-    {
-      "ID": "GossipSwampPotionShop",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": false,
-      "KeyType": "None",
-      "ItemTypes": [
-        "GossipSwampPotionShop"
-      ]
-    },
-    {
-      "ID": "GossipMountainSpringPath",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": false,
-      "KeyType": "None",
-      "ItemTypes": [
-        "GossipMountainSpringPath"
-      ]
-    },
-    {
-      "ID": "GossipMountainPath",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": false,
-      "KeyType": "None",
-      "ItemTypes": [
-        "GossipMountainPath"
-      ]
-    },
-    {
-      "ID": "GossipOceanZoraGame",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": false,
-      "KeyType": "None",
-      "ItemTypes": [
-        "GossipOceanZoraGame"
-      ]
-    },
-    {
-      "ID": "GossipCanyonRoad",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": false,
-      "KeyType": "None",
-      "ItemTypes": [
-        "GossipCanyonRoad"
-      ]
-    },
-    {
-      "ID": "GossipCanyonDock",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": false,
-      "KeyType": "None",
-      "ItemTypes": [
-        "GossipCanyonDock"
-      ]
-    },
-    {
-      "ID": "GossipCanyonSpiritHouse",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": false,
-      "KeyType": "None",
-      "ItemTypes": [
-        "GossipCanyonSpiritHouse"
-      ]
-    },
-    {
-      "ID": "GossipTerminaMilk",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": false,
-      "KeyType": "None",
-      "ItemTypes": [
-        "GossipTerminaMilk"
-      ]
-    },
-    {
-      "ID": "GossipTerminaWest",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": false,
-      "KeyType": "None",
-      "ItemTypes": [
-        "GossipTerminaWest"
-      ]
-    },
-    {
-      "ID": "GossipTerminaNorth",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": false,
-      "KeyType": "None",
-      "ItemTypes": [
-        "GossipTerminaNorth"
-      ]
-    },
-    {
-      "ID": "GossipTerminaEast",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": false,
-      "KeyType": "None",
-      "ItemTypes": [
-        "GossipTerminaEast"
-      ]
-    },
-    {
-      "ID": "GossipRanchTree",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": false,
-      "KeyType": "None",
-      "ItemTypes": [
-        "GossipRanchTree"
-      ]
-    },
-    {
-      "ID": "GossipRanchBarn",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": false,
-      "KeyType": "None",
-      "ItemTypes": [
-        "GossipRanchBarn"
-      ]
-    },
-    {
-      "ID": "GossipMilkRoad",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": false,
-      "KeyType": "None",
-      "ItemTypes": [
-        "GossipMilkRoad"
-      ]
-    },
-    {
-      "ID": "GossipOceanFortress",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": false,
-      "KeyType": "None",
-      "ItemTypes": [
-        "GossipOceanFortress"
-      ]
-    },
-    {
-      "ID": "GossipSwampRoad",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": false,
-      "KeyType": "None",
-      "ItemTypes": [
-        "GossipSwampRoad"
-      ]
-    },
-    {
-      "ID": "GossipTerminaObservatory",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": false,
-      "KeyType": "None",
-      "ItemTypes": [
-        "GossipTerminaObservatory"
-      ]
-    },
-    {
-      "ID": "GossipRanchCuccoShack",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": false,
-      "KeyType": "None",
-      "ItemTypes": [
-        "GossipRanchCuccoShack"
-      ]
-    },
-    {
-      "ID": "GossipRanchRacetrack",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": false,
-      "KeyType": "None",
-      "ItemTypes": [
-        "GossipRanchRacetrack"
-      ]
-    },
-    {
-      "ID": "GossipRanchEntrance",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": false,
-      "KeyType": "None",
-      "ItemTypes": [
-        "GossipRanchEntrance"
-      ]
-    },
-    {
-      "ID": "GossipCanyonRavine",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": false,
-      "KeyType": "None",
-      "ItemTypes": [
-        "GossipCanyonRavine"
-      ]
-    },
-    {
-      "ID": "GossipMountainSpringFrog",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": false,
-      "KeyType": "None",
-      "ItemTypes": [
-        "GossipMountainSpringFrog"
-      ]
-    },
-    {
-      "ID": "GossipSwampSpiderHouse",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": false,
-      "KeyType": "None",
-      "ItemTypes": [
-        "GossipSwampSpiderHouse"
-      ]
-    },
-    {
-      "ID": "GossipTerminaGossipLarge",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": false,
-      "KeyType": "None",
-      "ItemTypes": [
-        "GossipTerminaGossipLarge"
-      ]
-    },
-    {
-      "ID": "GossipTerminaGossipGuitar",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": false,
-      "KeyType": "None",
-      "ItemTypes": [
-        "GossipTerminaGossipGuitar"
-      ]
-    },
-    {
-      "ID": "GossipTerminaGossipPipes",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": false,
-      "KeyType": "None",
-      "ItemTypes": [
-        "GossipTerminaGossipPipes"
-      ]
-    },
-    {
-      "ID": "GossipTerminaGossipDrums",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": false,
-      "KeyType": "None",
-      "ItemTypes": [
-        "GossipTerminaGossipDrums"
-      ]
-    },
-    {
       "ID": "IceTrap",
       "Name": "Ice Trap",
       "AltNames": [],
@@ -21209,6 +20705,120 @@
       "ItemTypes": [
         "Item"
       ]
+    }
+  ],
+  "HintSpots": [
+    {
+      "ID": "GossipTerminaSouth",
+      "Name": "Termina South"
+    },
+    {
+      "ID": "GossipSwampPotionShop",
+      "Name": "Swamp Near Potion Shop"
+    },
+    {
+      "ID": "GossipMountainSpringPath",
+      "Name": "Mountain Path Spring"
+    },
+    {
+      "ID": "GossipMountainPath",
+      "Name": "Mountain Path"
+    },
+    {
+      "ID": "GossipOceanZoraGame",
+      "Name": "Ocean Near Zora Game"
+    },
+    {
+      "ID": "GossipCanyonRoad",
+      "Name": "Canyon Road"
+    },
+    {
+      "ID": "GossipCanyonDock",
+      "Name": "Canyon Dock"
+    },
+    {
+      "ID": "GossipCanyonSpiritHouse",
+      "Name": "Canyon Poe Hut"
+    },
+    {
+      "ID": "GossipTerminaMilk",
+      "Name": "Termina Near Milk Road"
+    },
+    {
+      "ID": "GossipTerminaWest",
+      "Name": "Termina West"
+    },
+    {
+      "ID": "GossipTerminaNorth",
+      "Name": "Termina North"
+    },
+    {
+      "ID": "GossipTerminaEast",
+      "Name": "Termina East"
+    },
+    {
+      "ID": "GossipRanchTree",
+      "Name": "Racnh Near Tree"
+    },
+    {
+      "ID": "GossipRanchBarn",
+      "Name": "Ranch Near Barn"
+    },
+    {
+      "ID": "GossipMilkRoad",
+      "Name": "Milk Road"
+    },
+    {
+      "ID": "GossipOceanFortress",
+      "Name": "Coast Near Pirates Fortress"
+    },
+    {
+      "ID": "GossipSwampRoad",
+      "Name": "Swamp Road"
+    },
+    {
+      "ID": "GossipTerminaObservatory",
+      "Name": "Termina Near Observatory"
+    },
+    {
+      "ID": "GossipRanchCuccoShack",
+      "Name": "Ranch Near Cucco Shack"
+    },
+    {
+      "ID": "GossipRanchRacetrack",
+      "Name": "Ranch Near Dog Race"
+    },
+    {
+      "ID": "GossipRanchEntrance",
+      "Name": "Ranch Near Entrance"
+    },
+    {
+      "ID": "GossipCanyonRavine",
+      "Name": "Ikana Canyon Across Ravine"
+    },
+    {
+      "ID": "GossipMountainSpringFrog",
+      "Name": "Mountain Near Frogs Spring"
+    },
+    {
+      "ID": "GossipSwampSpiderHouse",
+      "Name": "Swamp Spider House"
+    },
+    {
+      "ID": "GossipTerminaGossipLarge",
+      "Name": "Four Gossip Grotto 1"
+    },
+    {
+      "ID": "GossipTerminaGossipGuitar",
+      "Name": "Four Gossip Grotto 2"
+    },
+    {
+      "ID": "GossipTerminaGossipPipes",
+      "Name": "Four Gossip Grotto 3"
+    },
+    {
+      "ID": "GossipTerminaGossipDrums",
+      "Name": "Four Gossip Grotto 4"
     }
   ]
 }

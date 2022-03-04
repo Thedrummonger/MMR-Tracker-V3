@@ -1,4 +1,5 @@
-﻿using MMR_Tracker_V3;
+﻿using Microsoft.VisualBasic;
+using MMR_Tracker_V3;
 using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
@@ -29,11 +30,11 @@ namespace Windows_Form_Frontend
 
         private void MainInterface_Load(object sender, EventArgs e)
         {
-            AlignUI();
+            UpdateUI();
             Testing.CreateOptionsJson();
         }
 
-        private void AlignUI()
+        private void UpdateUI()
         {
             var UpperLeftLBL = label1;
             var UpperRightLBL = label3;
@@ -53,6 +54,7 @@ namespace Windows_Form_Frontend
             {
                 Debug.WriteLine("InstanceNull");
                 SetObjectVisibility(false, false);
+                return;
             }
             else if (MainUITrackerInstance.Options.EntranceRadnoEnabled)
             {
@@ -134,7 +136,7 @@ namespace Windows_Form_Frontend
                     LBCheckedLocations.Height = FormHalfHeight - UpperLeftLBL.Height - TXTCheckedSearch.Height - 8;
                 }
             }
-            //PrintToListBox();
+            PrintToListBox();
             this.Refresh();
         }
 
@@ -177,7 +179,7 @@ namespace Windows_Form_Frontend
 
         private void MainInterface_ResizeEnd(object sender, EventArgs e)
         {
-            AlignUI();
+            UpdateUI();
         }
 
         private void MainInterface_Resize(object sender, EventArgs e)
@@ -186,24 +188,29 @@ namespace Windows_Form_Frontend
             //so run this code only if the form becomes maximized or becomes un maximized.
             if (WindowState == FormWindowState.Maximized)
             {
-                AlignUI();
+                UpdateUI();
                 FormIsMaximized = true;
             }
             else if (FormIsMaximized)
             {
-                AlignUI();
+                UpdateUI();
                 FormIsMaximized = false;
             }
         }
 
         private void PrintToListBox(List<ListBox> ToUpdate = null)
         {
+            var lbLocTop = LBValidLocations.TopIndex;
+            var lbEntTop = LBValidEntrances.TopIndex;
+            var lbCheckTop = LBCheckedLocations.TopIndex;
+
             if (ToUpdate == null) { ToUpdate = new List<ListBox> { LBCheckedLocations, LBValidEntrances, LBValidLocations }; }
 
             foreach (var i in ToUpdate)
             {
                 i.Items.Clear();
                 i.ItemHeight = Convert.ToInt32(WinFormUtils.GetFontFromString(MainUITrackerInstance.Options.WinformData.FormFont).Size * 1.8);
+                i.Font = WinFormUtils.GetFontFromString(MainUITrackerInstance.Options.WinformData.FormFont);
             }
 
             Dictionary<string, int> Groups = Utility.GetCategoriesFromFile(MainUITrackerInstance);
@@ -224,6 +231,8 @@ namespace Windows_Form_Frontend
             {
                 if (!ToUpdate.Contains(LBValidLocations)) { break; }
 
+                if (i.TrackerData.RandomizedState == MiscData.RandomizedState.ForcedJunk) { continue; }
+
                 i.UIData.DisplayName = i.UIData.LocationName ?? i.LogicData.Id;
                 if (i.TrackerData.CheckState == MiscData.CheckState.Marked)
                 {
@@ -237,7 +246,7 @@ namespace Windows_Form_Frontend
                 if (CurrentLocation != i.UIData.LocationArea)
                 {
                     if (LBValidLocations.Items.Count > 0) { LBValidLocations.Items.Add(WinFormUtils.CreateDivider(LBValidLocations)); }
-                    LBValidLocations.Items.Add(i.UIData.LocationArea.ToUpper() + ":");
+                    LBValidLocations.Items.Add(new MiscData.Areaheader { Area = i.UIData.LocationArea });
                     CurrentLocation = i.UIData.LocationArea;
                 }
                 LBValidLocations.Items.Add(i);
@@ -246,6 +255,8 @@ namespace Windows_Form_Frontend
             foreach (var i in CheckedLocations)
             {
                 if (!ToUpdate.Contains(LBCheckedLocations)) { break; }
+
+                if (i.TrackerData.RandomizedState == MiscData.RandomizedState.Unrandomized) { continue; }
 
                 string RandomizedItemDisplay = i.TrackerData.RandomizedItem;
                 var RandomizedItem = MainUITrackerInstance.ItemPool.SearchPoolForMatchingItem(i.TrackerData.RandomizedItem);
@@ -256,13 +267,37 @@ namespace Windows_Form_Frontend
 
                 if (CurrentLocation != i.UIData.LocationArea)
                 {
-                    if (LBCheckedLocations.Items.Count > 0) { LBCheckedLocations.Items.Add(WinFormUtils.CreateDivider(LBValidLocations)); }
-                    LBCheckedLocations.Items.Add(i.UIData.LocationArea.ToUpper() + ":");
+                    if (LBCheckedLocations.Items.Count > 0) { LBCheckedLocations.Items.Add(WinFormUtils.CreateDivider(LBCheckedLocations)); }
+                    LBCheckedLocations.Items.Add(new MiscData.Areaheader { Area = i.UIData.LocationArea });
                     CurrentLocation = i.UIData.LocationArea;
                 }
                 LBCheckedLocations.Items.Add(i);
             }
 
+            if (DataSets.AvailableHints.Any())
+            {
+                if (LBValidLocations.Items.Count > 0) { LBValidLocations.Items.Add(WinFormUtils.CreateDivider(LBValidLocations)); }
+                LBValidLocations.Items.Add("HINTS:");
+                foreach (var i in DataSets.AvailableHints)
+                {
+                    i.DisplayName = (i.CheckState == MiscData.CheckState.Marked) ? $"{i.Name}: {i.HintText}" : i.Name;
+                    LBValidLocations.Items.Add(i);
+                }
+            }
+            if (DataSets.CheckedHints.Any())
+            {
+                if (LBCheckedLocations.Items.Count > 0) { LBCheckedLocations.Items.Add(WinFormUtils.CreateDivider(LBCheckedLocations)); }
+                LBCheckedLocations.Items.Add("HINTS:");
+                foreach (var i in DataSets.CheckedHints)
+                {
+                    i.DisplayName = $"{i.Name}: {i.HintText}";
+                    LBCheckedLocations.Items.Add(i);
+                }
+            }
+
+            if (ToUpdate.Contains(LBValidLocations)) { LBValidLocations.TopIndex = lbLocTop; }
+            if (ToUpdate.Contains(LBValidEntrances)) { LBValidEntrances.TopIndex = lbEntTop; }
+            if (ToUpdate.Contains(LBCheckedLocations)) { LBCheckedLocations.TopIndex = lbCheckTop; }
         }
 
         private void NewToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -273,8 +308,7 @@ namespace Windows_Form_Frontend
 
             WinFormInstanceCreation.CreateWinFormInstance(Logic);
             LogicCalculation.CalculateLogic(MainUITrackerInstance);
-            AlignUI();
-            PrintToListBox();
+            UpdateUI();
             PopulateTrackerOptions();
         }
 
@@ -300,7 +334,7 @@ namespace Windows_Form_Frontend
             Option.ToggleOption();
             ((ToolStripMenuItem)sender).Checked = Option.CurrentValue == "enabled";
             LogicCalculation.CalculateLogic(MainUITrackerInstance);
-            PrintToListBox();
+            UpdateUI();
             Debug.WriteLine(Option.ID);
             Debug.WriteLine(Option.CurrentValue);
         }
@@ -385,8 +419,12 @@ namespace Windows_Form_Frontend
 
         private void HandleItemSelect(List<object> Items, MiscData.CheckState checkState)
         {
+            List<LocationData.LocationObject> locationObjects = Items.Where(x => x is LocationData.LocationObject).Select(x => x as LocationData.LocationObject).ToList();
+            List<HintData.HintObject> HintObjects = Items.Where(x => x is HintData.HintObject).Select(x => x as HintData.HintObject).ToList();
+
+            //Items =====================================
             List<LocationData.LocationObject> ManualChecks = new List<LocationData.LocationObject>();
-            foreach (LocationData.LocationObject LocationObject in Items.Where(x => x is LocationData.LocationObject))
+            foreach (LocationData.LocationObject LocationObject in locationObjects)
             {
                 if (LocationObject.TrackerData.CheckState != MiscData.CheckState.Unchecked) { continue; }
                 if (LocationObject.TrackerData.RandomizedItem == null)
@@ -405,14 +443,35 @@ namespace Windows_Form_Frontend
                 checkItemForm.ShowDialog();
             }
 
-            foreach (LocationData.LocationObject LocationObject in Items.Where(x => x is LocationData.LocationObject))
+            foreach (LocationData.LocationObject LocationObject in locationObjects)
             {
                 var Action = (checkState == MiscData.CheckState.Marked && LocationObject.TrackerData.CheckState == MiscData.CheckState.Marked) ? MiscData.CheckState.Unchecked : checkState;
                 LocationObject.TrackerData.ToggleChecked(Action, MainUITrackerInstance);
             }
 
+            //Hints======================================
+
+            foreach(HintData.HintObject hintObject in HintObjects)
+            {
+                if (hintObject.CheckState == MiscData.CheckState.Unchecked)
+                {
+                    if (hintObject.SpoilerHintText == null)
+                    {
+                        string input = Interaction.InputBox("Input Hint Text", hintObject.Name);
+                        hintObject.HintText = input;
+                    }
+                    else
+                    {
+                        hintObject.HintText = hintObject.SpoilerHintText;
+                    }
+                }
+                var CheckAction = (checkState == MiscData.CheckState.Marked && hintObject.CheckState == MiscData.CheckState.Marked) ? MiscData.CheckState.Unchecked : checkState;
+                hintObject.CheckState = CheckAction;
+                hintObject.HintText = CheckAction == MiscData.CheckState.Unchecked ? null : hintObject.HintText;
+            }
+
             LogicCalculation.CalculateLogic(MainUITrackerInstance);
-            PrintToListBox();
+            UpdateUI();
 
         }
 
@@ -423,6 +482,23 @@ namespace Windows_Form_Frontend
             if (sender == TXTEntSearch) { ToUpdate.Add(LBValidEntrances); }
             if (sender == TXTCheckedSearch) { ToUpdate.Add(LBCheckedLocations); }
             PrintToListBox(ToUpdate);
+        }
+
+        private void logicOptionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RandomizedStateEditor editor = new RandomizedStateEditor(MainUITrackerInstance);
+            editor.ShowDialog();
+
+            LogicCalculation.CalculateLogic(MainUITrackerInstance);
+            UpdateUI();
+
+            foreach(var i in MainUITrackerInstance.LocationPool.Locations)
+            {
+                if (i.TrackerData.RandomizedState == MiscData.RandomizedState.Unrandomized)
+                {
+                    Debug.WriteLine(i.LogicData.Id + " Is Unrandomized");
+                }
+            }
         }
     }
 }

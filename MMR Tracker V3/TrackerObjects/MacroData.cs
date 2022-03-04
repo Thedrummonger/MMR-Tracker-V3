@@ -18,7 +18,6 @@ namespace MMR_Tracker_V3.TrackerObjects
         public JsonFormatLogicItem LogicData { get; set; } = new JsonFormatLogicItem();
         public bool Aquired { get; set; } = false;
         public dynamicLogicData DynamicLogic { get; set; } = null;
-
         private bool _trickEnabled = true;
         public bool TrickEnabled
         {

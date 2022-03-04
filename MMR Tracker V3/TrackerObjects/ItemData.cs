@@ -21,6 +21,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string[] AltItemNames { get; set; }
 
             public int AmountAquiredLocally { get; set; } = 0;
+            public bool CanBeStartingItem { get; set; } = true;
             public int AmountInStartingpool { get; set; } = 0;
             public Dictionary<int, int> AmountAquiredOnline { get; set; } = new Dictionary<int, int>();
             public Dictionary<int, int> AmountSentToPlayer { get; set; } = new Dictionary<int, int>();

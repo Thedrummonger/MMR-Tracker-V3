@@ -59,6 +59,7 @@ namespace Windows_Form_Frontend
             this.OptionstoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ImportSpoilerLogToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.RandomizerOptionsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.logicOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -330,33 +331,34 @@ namespace Windows_Form_Frontend
             // NewToolStripMenuItem1
             // 
             this.NewToolStripMenuItem1.Name = "NewToolStripMenuItem1";
-            this.NewToolStripMenuItem1.Size = new System.Drawing.Size(114, 22);
+            this.NewToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.NewToolStripMenuItem1.Text = "New";
             this.NewToolStripMenuItem1.Click += new System.EventHandler(this.NewToolStripMenuItem1_Click);
             // 
             // LoadToolStripMenuItem
             // 
             this.LoadToolStripMenuItem.Name = "LoadToolStripMenuItem";
-            this.LoadToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.LoadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.LoadToolStripMenuItem.Text = "Load";
             // 
             // SavetoolStripMenuItem1
             // 
             this.SavetoolStripMenuItem1.Name = "SavetoolStripMenuItem1";
-            this.SavetoolStripMenuItem1.Size = new System.Drawing.Size(114, 22);
+            this.SavetoolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.SavetoolStripMenuItem1.Text = "Save";
             // 
             // SaveAsToolStripMenuItem1
             // 
             this.SaveAsToolStripMenuItem1.Name = "SaveAsToolStripMenuItem1";
-            this.SaveAsToolStripMenuItem1.Size = new System.Drawing.Size(114, 22);
+            this.SaveAsToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.SaveAsToolStripMenuItem1.Text = "Save As";
             // 
             // OptionstoolStripMenuItem
             // 
             this.OptionstoolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ImportSpoilerLogToolStripMenuItem1,
-            this.RandomizerOptionsToolStripMenuItem1});
+            this.RandomizerOptionsToolStripMenuItem1,
+            this.logicOptionsToolStripMenuItem});
             this.OptionstoolStripMenuItem.Name = "OptionstoolStripMenuItem";
             this.OptionstoolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.OptionstoolStripMenuItem.Text = "Options";
@@ -364,14 +366,21 @@ namespace Windows_Form_Frontend
             // ImportSpoilerLogToolStripMenuItem1
             // 
             this.ImportSpoilerLogToolStripMenuItem1.Name = "ImportSpoilerLogToolStripMenuItem1";
-            this.ImportSpoilerLogToolStripMenuItem1.Size = new System.Drawing.Size(179, 22);
+            this.ImportSpoilerLogToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.ImportSpoilerLogToolStripMenuItem1.Text = "Import Spoiler Log";
             // 
             // RandomizerOptionsToolStripMenuItem1
             // 
             this.RandomizerOptionsToolStripMenuItem1.Name = "RandomizerOptionsToolStripMenuItem1";
-            this.RandomizerOptionsToolStripMenuItem1.Size = new System.Drawing.Size(179, 22);
+            this.RandomizerOptionsToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.RandomizerOptionsToolStripMenuItem1.Text = "RandomizerOptions";
+            // 
+            // logicOptionsToolStripMenuItem
+            // 
+            this.logicOptionsToolStripMenuItem.Name = "logicOptionsToolStripMenuItem";
+            this.logicOptionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logicOptionsToolStripMenuItem.Text = "Logic Options";
+            this.logicOptionsToolStripMenuItem.Click += new System.EventHandler(this.logicOptionsToolStripMenuItem_Click);
             // 
             // MainInterface
             // 
@@ -445,6 +454,7 @@ namespace Windows_Form_Frontend
         private System.Windows.Forms.ToolStripMenuItem OptionstoolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ImportSpoilerLogToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem RandomizerOptionsToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem logicOptionsToolStripMenuItem;
     }
 }
 

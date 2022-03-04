@@ -20,6 +20,7 @@ namespace MMR_Tracker_V3
             public LogicDictionary LogicDictionary { get; set; } = new LogicDictionary();
             public MMRData.LogicFile LogicFile { get; set; } = new MMRData.LogicFile();
             public Options Options { get; set; } = new Options();
+            public HintData.HintPool HintPool { get; set; } = new HintData.HintPool();
             public InstanceReference InstanceReference { get; set; } = new InstanceReference(); 
             public static TrackerInstance FromJson(string json)
             {

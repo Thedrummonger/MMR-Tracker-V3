@@ -40,6 +40,7 @@ namespace MMR_Tracker_V3
                 NewEntry.AltItemNames = i.AltNames;
                 NewEntry.ItemTypes = i.ItemTypes;
                 NewEntry.MaxAmountInPool = i.MaxAmountInWorld;
+                NewEntry.CanBeStartingItem = i.ValidStartingItem;
                 ItemPool.Add(NewEntry);
             }
             Instance.ItemPool.CurrentPool = ItemPool.ToArray();
@@ -61,6 +62,12 @@ namespace MMR_Tracker_V3
                     }
 
                     Instance.LocationPool.Locations.Add(NewEntry);
+                }
+                else if (Instance.LogicDictionary.HintSpots.Any(x => x.ID == i.Id))
+                {
+                    var DictReference = Instance.LogicDictionary.HintSpots.Find(x => x.ID == i.Id);
+                    HintData.HintObject NewEntry = new() { LogicData = i, Name = DictReference.Name };
+                    Instance.HintPool.Hints.Add(NewEntry);
                 }
                 else
                 {
@@ -151,6 +158,17 @@ namespace MMR_Tracker_V3
                 LogicMapping ItemMap = new LogicMapping();
                 ItemMap.IndexInList = Index;
                 ItemMap.logicEntryType = LogicEntryType.location;
+                if (MacroNames.Contains(i.LogicData.Id)) { mappingDict.Add($"'{i.LogicData.Id}'", ItemMap); }
+                else { mappingDict.Add(i.LogicData.Id, ItemMap); }
+                Index++;
+            }
+            Index = 0;
+            foreach (var i in instance.HintPool.Hints)
+            {
+                LogicMapping ItemMap = new LogicMapping();
+                ItemMap.IndexInList = Index;
+
+                ItemMap.logicEntryType = LogicEntryType.Hint;
                 mappingDict.Add($"'{i.LogicData.Id}'", ItemMap);
                 if (MacroNames.Contains(i.LogicData.Id)) { mappingDict.Add($"'{i.LogicData.Id}'", ItemMap); }
                 else { mappingDict.Add(i.LogicData.Id, ItemMap); }

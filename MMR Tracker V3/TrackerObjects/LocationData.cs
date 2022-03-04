@@ -36,7 +36,23 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string RandomizedItem { get; set; } = null;
             public string SpoilerLogGivenItem { get; set; } = null;
             public string AlteredItem { get; set; } = null; //The Item that was altered when this was checked. null if the item is not checked
-            public RandomizedState RandomizedState { get; set; } = RandomizedState.Randomized;
+            private RandomizedState _RandomizedState = RandomizedState.Randomized;
+            public bool CanBeRandomized { get; set; } = true;
+            public RandomizedState RandomizedState { 
+                get 
+                {
+                    if (!CanBeRandomized) 
+                    { 
+                        if (_RandomizedState == RandomizedState.Randomized) { return RandomizedState.UnrandomizedManual; }
+                        if (_RandomizedState == RandomizedState.ForcedJunk) { return RandomizedState.Unrandomized; }
+                    }
+                    return _RandomizedState;
+                } 
+                set 
+                {
+                    _RandomizedState = value;
+                } 
+            }
             public string[] ValidItemTypes { get; set; } = Array.Empty<string>();
         }
 

@@ -70,6 +70,10 @@ namespace MMR_Tracker_V3
             {
                 i.TrackerData.Available = CheckRequirementAndConditionals(instance, i.LogicData.ConditionalItems, i.LogicData.RequiredItems, i.LogicData.Id);
             }
+            foreach(var i in instance.HintPool.Hints)
+            {
+                i.Available = CheckRequirementAndConditionals(instance, i.LogicData.ConditionalItems, i.LogicData.RequiredItems, i.LogicData.Id);
+            }
 
         }
 
@@ -180,12 +184,20 @@ namespace MMR_Tracker_V3
             bool ItemStateChanged = false;
             foreach (var i in instance.LocationPool.Locations.Where(x => x.TrackerData.RandomizedState == RandomizedState.Unrandomized))
             {
+                Debug.WriteLine($"Setting {i.LogicData.Id}");
                 bool LocationAvailable = CheckRequirementAndConditionals(instance, i.LogicData.ConditionalItems, i.LogicData.RequiredItems, i.LogicData.Id);
-                if (LocationAvailable != i.TrackerData.Available)
+
+                bool ShouldBeChecked = LocationAvailable && i.TrackerData.CheckState != CheckState.Checked;
+                bool ShouldBeUnChecked = !LocationAvailable && i.TrackerData.CheckState != CheckState.Unchecked;
+
+                if (ShouldBeChecked || ShouldBeUnChecked)
                 {
                     ItemStateChanged = true;
                     i.TrackerData.Available = LocationAvailable;
                     CheckState checkState = i.TrackerData.Available ? CheckState.Checked : CheckState.Unchecked;
+                    if (checkState == CheckState.Unchecked) { i.TrackerData.RandomizedItem = null; }
+                    if (checkState == CheckState.Checked) { i.TrackerData.RandomizedItem = i.TrackerData.GetItemAtCheck(); }
+
                     i.TrackerData.ToggleChecked(checkState, instance);
                 }
             }
