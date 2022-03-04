@@ -10104,6 +10104,29 @@
           "AdditionalLogic": []
         }
       }
+    },
+    {
+      "ID": "Test",
+      "DisplayName": "Test Multi Option",
+      "CurrentValue": "Item1",
+      "Values": {
+        "Item1": {
+          "LogicReplacements": [],
+          "AdditionalLogic": []
+        },
+        "Item2": {
+          "LogicReplacements": [],
+          "AdditionalLogic": []
+        },
+        "Item3": {
+          "LogicReplacements": [],
+          "AdditionalLogic": []
+        },
+        "Item4": {
+          "LogicReplacements": [],
+          "AdditionalLogic": []
+        }
+      }
     }
   ],
   "ItemList": [

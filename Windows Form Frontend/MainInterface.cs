@@ -30,8 +30,17 @@ namespace Windows_Form_Frontend
 
         private void MainInterface_Load(object sender, EventArgs e)
         {
+            //Since only one instance of the main interface should ever be open, We can store that instance in a variable to be called from static code.
+            if (CurrentProgram != null) { Close(); return; }
+            CurrentProgram = this;
+
+            //Ensure the current directory is always the base directory in case the application is opened from a MMRTSave file elsewhere on the system
+            System.IO.Directory.SetCurrentDirectory(AppDomain.CurrentDomain.BaseDirectory);
+
+            Testing.ISDebugging = ((Control.ModifierKeys != Keys.Control) && Debugger.IsAttached);
+            Testing.ViewAsUserMode = ((Control.ModifierKeys == Keys.Control) && Debugger.IsAttached);
+
             UpdateUI();
-            Testing.CreateOptionsJson();
         }
 
         private void UpdateUI()
@@ -49,6 +58,8 @@ namespace Windows_Form_Frontend
             var FormHalfWidth = FormWidth / 2;
             var locX = 2;
             var locY = 2 + Menuhieght;
+
+            FormatMenuItems();
 
             if (MainUITrackerInstance.LogicFile == null || MainUITrackerInstance.LogicFile.Version < 0)
             {
@@ -325,7 +336,16 @@ namespace Windows_Form_Frontend
                     menuItem.Click += delegate (object sender, EventArgs e) { ToggleRandomizerOption_Click(sender, e, i); };
                     RandomizerOptionsToolStripMenuItem1.DropDownItems.Add(menuItem);
                 }
-
+                else if (i.Values.Keys.Count > 2)
+                {
+                    ToolStripComboBox toolStripComboBox = new();
+                    toolStripComboBox.Text = i.DisplayName;
+                    foreach (var j in i.Values.Keys)
+                    {
+                        toolStripComboBox.Items.Add(j);
+                    }
+                    RandomizerOptionsToolStripMenuItem1.DropDownItems.Add(toolStripComboBox);
+                }
             }
         }
 
@@ -413,7 +433,50 @@ namespace Windows_Form_Frontend
             {
                 LB.SelectedItems.Clear();
                 LB.SetSelected(index, true);
-                this.ActiveControl = LB;
+                ShowContextMenu(LB);
+            }
+        }
+
+        private void ShowContextMenu(ListBox listBox)
+        {
+            ContextMenuStrip contextMenuStrip = new();
+            //Refresh List Box
+            ToolStripItem RefreshContextItem = contextMenuStrip.Items.Add("Refresh");
+            RefreshContextItem.Click += (sender, e) => { PrintToListBox(new List<ListBox> { listBox }); };
+
+            if (listBox.SelectedItem is LocationData.LocationObject)
+            {
+                var itemObject = (listBox.SelectedItem as LocationData.LocationObject);
+
+                //Star Item
+                string StarFunction = itemObject.UIData.Starred ? "UnStar Location" : "Star Location";
+                ToolStripItem StarContextItem = contextMenuStrip.Items.Add(StarFunction);
+                StarContextItem.Click += (sender, e) => { itemObject.UIData.Starred = !itemObject.UIData.Starred; PrintToListBox(new List<ListBox> { listBox }); };
+
+                if (listBox == LBValidLocations)
+                {
+                    //Check Item
+                    ToolStripItem CheckContextItem = contextMenuStrip.Items.Add("Check Location");
+                    CheckContextItem.Click += (sender, e) => { HandleItemSelect(new List<object> { listBox.SelectedItem }, MiscData.CheckState.Checked); };
+                    //Mark\UnMark Item
+                    string MarkFunction = itemObject.TrackerData.CheckState == MiscData.CheckState.Marked ? "UnMark Location" : "Mark Location";
+                    ToolStripItem MarkContextItem = contextMenuStrip.Items.Add(MarkFunction);
+                    MarkContextItem.Click += (sender, e) => { HandleItemSelect(new List<object> { listBox.SelectedItem }, MiscData.CheckState.Marked); };
+                }
+                else if (listBox == LBCheckedLocations)
+                {
+                    //UnCheck Item
+                    ToolStripItem CheckContextItem = contextMenuStrip.Items.Add("UnCheck Location");
+                    CheckContextItem.Click += (sender, e) => { HandleItemSelect(new List<object> { listBox.SelectedItem }, MiscData.CheckState.Unchecked); };
+                    //Uncheck and Mark Item
+                    ToolStripItem MarkContextItem = contextMenuStrip.Items.Add("UnCheck and Mark Location");
+                    MarkContextItem.Click += (sender, e) => { HandleItemSelect(new List<object> { listBox.SelectedItem }, MiscData.CheckState.Marked); };
+                }
+            }
+
+            if (contextMenuStrip.Items.Count > 0)
+            {
+                contextMenuStrip.Show(Cursor.Position);
             }
         }
 
@@ -499,6 +562,32 @@ namespace Windows_Form_Frontend
                     Debug.WriteLine(i.LogicData.Id + " Is Unrandomized");
                 }
             }
+        }
+
+        public void FormatMenuItems()
+        {
+            SaveAsToolStripMenuItem1.Visible = (References.CurrentSavePath != "");
+            importSpoilerLogToolStripMenuItem.Text = (Utility.CheckforSpoilerLog(MainUITrackerInstance)) ? "Remove Spoiler Log" : "Import Spoiler Log";
+            OptionstoolStripMenuItem.Visible = (MainUITrackerInstance.LogicFile.Version > 0);
+            undoToolStripMenuItem.Visible = (MainUITrackerInstance.LogicFile.Version > 0);
+            redoToolStripMenuItem.Visible = (MainUITrackerInstance.LogicFile.Version > 0);
+            refreshToolStripMenuItem.Visible = (MainUITrackerInstance.LogicFile.Version > 0);
+            SavetoolStripMenuItem1.Visible = (MainUITrackerInstance.LogicFile.Version > 0);
+            spoilerLogToolsToolStripMenuItem.Visible = (MainUITrackerInstance.LogicFile.Version > 0);
+            importSpoilerLogToolStripMenuItem.Visible = (MainUITrackerInstance.LogicFile.Version > 0);
+
+            //Manage Dev Menus
+            devToolsToolStripMenuItem.Visible = Testing.ISDebugging || Testing.ViewAsUserMode;
+            devToolsToolStripMenuItem.Text = (Testing.ViewAsUserMode) ? "Run as Dev" : "Dev Options";
+            foreach (ToolStripDropDownItem i in devToolsToolStripMenuItem.DropDownItems) { i.Visible = Testing.ISDebugging; }
+            viewAsUserToolStripMenuItem.Checked = Testing.ViewAsUserMode;
+
+        }
+
+        private void TXTLocSearch_MouseUp(object sender, MouseEventArgs e)
+        {
+            var TB = sender as TextBox;
+            if (e.Button == MouseButtons.Middle) { TB.Clear(); }
         }
     }
 }

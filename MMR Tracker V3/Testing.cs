@@ -12,6 +12,8 @@ namespace MMR_Tracker_V3
 {
     public class Testing
     {
+        public static bool ViewAsUserMode = false;
+        public static bool ISDebugging = false;
 
         public static string GetLogicPath()
         {

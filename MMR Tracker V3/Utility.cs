@@ -202,5 +202,10 @@ namespace MMR_Tracker_V3
             NewRequirements = Requirements.ConvertAll(o => (string)o.Clone());
             NewConditionals = Conditionals.ConvertAll(p => p.ConvertAll(o => (string)o.Clone()));
         }
+
+        public static bool CheckforSpoilerLog(LogicObjects.TrackerInstance logic)
+        {
+            return logic.LocationPool.Locations.Any(x => !string.IsNullOrWhiteSpace(x.TrackerData.SpoilerLogGivenItem));
+        }
     }
 }
