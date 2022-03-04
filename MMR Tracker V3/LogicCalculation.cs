@@ -1,6 +1,7 @@
 ﻿using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,14 +13,27 @@ namespace MMR_Tracker_V3
 {
     public static class LogicCalculation
     {
-        private static bool RequirementsMet(List<string> Requirements, LogicObjects.TrackerInstance instance, IEnumerable<OptionData.TrackerOption> OptionData)
+        static bool LogItem = false;
+        private static bool RequirementsMet(List<string> Requirements, LogicObjects.TrackerInstance instance)
         {
             foreach(string i in Requirements)
             {
+                if (LogItem) { Debug.WriteLine($"Checking Requirement {i}"); }
+
                 string LogicItem = i;
                 int NeededAmount = 1;
+                
+                if (bool.TryParse(LogicItem, out bool BoolEntry)) 
+                { 
+                    if (BoolEntry) { continue; }
+                    else { return false; }
+                }
 
-                if (bool.TryParse(LogicItem, out bool BoolEntry) && !BoolEntry) { return false; }
+                if (LogicOptionEntry(instance, LogicItem, out bool OptionEntryValid))
+                {
+                    if (OptionEntryValid) { continue; }
+                    else { return false; }
+                }
 
                 if (MultipleItemEntry(i, out string MultiItem, out int Amount))
                 {
@@ -31,14 +45,16 @@ namespace MMR_Tracker_V3
                 if (Mapping == null) { return false; }
                 if (!Mapping.GetMappedEntryUsable(instance, NeededAmount)) { return false; }
             }
+            if (LogItem) { Debug.WriteLine($"Entry was valid"); }
             return true;
         }
-        private static bool ConditionalsMet(List<List<string>> Conditionals, LogicObjects.TrackerInstance instance, IEnumerable<OptionData.TrackerOption> OptionData)
+
+        private static bool ConditionalsMet(List<List<string>> Conditionals, LogicObjects.TrackerInstance instance)
         {
             if (!Conditionals.Any()) { return true; }
             foreach (var i in Conditionals)
             {
-                if (RequirementsMet(i, instance, OptionData)) { return true; }
+                if (RequirementsMet(i, instance)) { return true; }
             }
             return false;
         }
@@ -74,17 +90,52 @@ namespace MMR_Tracker_V3
                 }
             }
 
+            if (LogItem)
+            {
+                Debug.WriteLine(string.Join(",", newRequirements));
+            }
+
             var ValidOptions = instance.TrackerOptions.Options.Where(x => x.LocationValid(ID) && x.Enabled);
 
             if (ValidOptions.Any())
             {
-                foreach (var i in ValidOptions)
+                foreach (var option in ValidOptions)
                 {
-                    //Do Option Edits
+                    foreach(var replacements in option.LogicReplacements)
+                    {
+                        if (!replacements.LocationValid(ID)) { continue; }
+                        foreach (var i in replacements.ReplacementList)
+                        {
+                            newRequirements = newRequirements
+                                .Select(x => x == i.Target ? x.Replace(i.Target, i.Replacement) : x.Replace(" ", " ")).ToList();
+                            for (var p = 0; p < newConditionals.Count; p++)
+                            {
+                                newConditionals[p] = newConditionals[p]
+                                    .Select(x => x == i.Target ? x.Replace(i.Target, i.Replacement) : x.Replace(" ", " ")).ToList();
+                            }
+                        }
+                    }
+                    foreach(var additionalSet in option.AdditionalLogic)
+                    {
+                        if (!additionalSet.LocationValid(ID)) { continue; }
+                        foreach(var i in additionalSet.AdditionalRequirements)
+                        {
+                            newRequirements.Add(i);
+                        }
+                        foreach (var i in additionalSet.AdditionalConditionals)
+                        {
+                            newConditionals.Add(i);
+                        }
+                    }
                 }
             }
 
-            return RequirementsMet(newRequirements, instance, ValidOptions) && ConditionalsMet(newConditionals, instance, ValidOptions);
+            if (LogItem)
+            {
+                Debug.WriteLine(string.Join(",", newRequirements));
+            }
+
+            return RequirementsMet(newRequirements, instance) && ConditionalsMet(newConditionals, instance);
         }
 
         public static bool CalculateMacros(LogicObjects.TrackerInstance instance)
@@ -147,6 +198,23 @@ namespace MMR_Tracker_V3
             Item = data[0];
             if(!int.TryParse(data[1].Trim(), out Amount)) { return false; }
             return true;
+        }
+
+        private static bool LogicOptionEntry(LogicObjects.TrackerInstance instance, string i, out bool optionEntryValid)
+        {
+            optionEntryValid = false;
+            if (!i.Contains("==") && !i.Contains("!=")) { return false; }
+
+            bool inverse = i.Contains("!=");
+            string[] data = inverse ? i.Split("!=") : i.Split("==");
+            optionEntryValid = checkOptionEntry(instance, data, inverse);
+            return true;
+        }
+
+        private static bool checkOptionEntry(LogicObjects.TrackerInstance instance, string[] data, bool inverse)
+        {
+            //todo
+            return false;
         }
     }
 }

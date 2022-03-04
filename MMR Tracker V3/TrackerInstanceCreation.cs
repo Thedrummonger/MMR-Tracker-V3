@@ -94,6 +94,8 @@ namespace MMR_Tracker_V3
                 if (i.ConditionalItemsOverride != null) { MacroObject.LogicData.ConditionalItems = i.ConditionalItemsOverride; }
             }
 
+            Instance.TrackerOptions.Options = Instance.LogicDictionary.Options;
+
             CreateLogicItemMapping(Instance);
             CreateLogicLocationMapping(Instance);
 
@@ -103,6 +105,7 @@ namespace MMR_Tracker_V3
         public static void CreateLogicItemMapping(TrackerInstance instance)
         {
             Dictionary<string, LogicMapping> mappingDict = new Dictionary<string, LogicMapping>();
+            List<string> MacroNames = new List<string>();
 
             int Index = 0;
             foreach(var i in instance.Macros.MacroList)
@@ -111,6 +114,7 @@ namespace MMR_Tracker_V3
                 MacroMap.IndexInList = Index;
                 MacroMap.logicEntryType = LogicEntryType.macro;
                 mappingDict.Add(i.LogicData.Id, MacroMap);
+                MacroNames.Add(i.LogicData.Id);
                 Index++;
             }
             Index = 0;
@@ -119,8 +123,8 @@ namespace MMR_Tracker_V3
                 LogicMapping ItemMap = new LogicMapping();
                 ItemMap.IndexInList = Index;
                 ItemMap.logicEntryType = LogicEntryType.item;
-                mappingDict.Add($"'{i.Id}'", ItemMap);
-                if (!mappingDict.ContainsKey(i.Id)) { mappingDict.Add(i.Id, ItemMap); }
+                if (MacroNames.Contains(i.Id)) { mappingDict.Add($"'{i.Id}'", ItemMap); }
+                else { mappingDict.Add(i.Id, ItemMap); }
                 Index++;
             }
 
@@ -129,6 +133,7 @@ namespace MMR_Tracker_V3
         public static void CreateLogicLocationMapping(TrackerInstance instance)
         {
             Dictionary<string, LogicMapping> mappingDict = new Dictionary<string, LogicMapping>();
+            List<string> MacroNames = new List<string>();
 
             int Index = 0;
             foreach (var i in instance.Macros.MacroList)
@@ -137,6 +142,7 @@ namespace MMR_Tracker_V3
                 MacroMap.IndexInList = Index;
                 MacroMap.logicEntryType = LogicEntryType.macro;
                 mappingDict.Add(i.LogicData.Id, MacroMap);
+                MacroNames.Add(i.LogicData.Id);
                 Index++;
             }
             Index = 0;
@@ -146,7 +152,8 @@ namespace MMR_Tracker_V3
                 ItemMap.IndexInList = Index;
                 ItemMap.logicEntryType = LogicEntryType.location;
                 mappingDict.Add($"'{i.LogicData.Id}'", ItemMap);
-                if (!mappingDict.ContainsKey(i.LogicData.Id)) { mappingDict.Add(i.LogicData.Id, ItemMap); }
+                if (MacroNames.Contains(i.LogicData.Id)) { mappingDict.Add($"'{i.LogicData.Id}'", ItemMap); }
+                else { mappingDict.Add(i.LogicData.Id, ItemMap); }
                 Index++;
             }
 

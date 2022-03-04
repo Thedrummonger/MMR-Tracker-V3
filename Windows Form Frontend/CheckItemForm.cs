@@ -31,7 +31,7 @@ namespace Windows_Form_Frontend
                 return;
             }
 
-            bool Multiworld = true;
+            bool Multiworld = false;
             if (!Multiworld)
             {
                 int OldSearchLength = textBox1.Width;

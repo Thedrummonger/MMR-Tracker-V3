@@ -56,6 +56,9 @@ namespace Windows_Form_Frontend
             this.LoadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SavetoolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveAsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.OptionstoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ImportSpoilerLogToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.RandomizerOptionsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -304,7 +307,8 @@ namespace Windows_Form_Frontend
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolMenuStrip});
+            this.fileToolMenuStrip,
+            this.OptionstoolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(541, 24);
@@ -347,6 +351,27 @@ namespace Windows_Form_Frontend
             this.SaveAsToolStripMenuItem1.Name = "SaveAsToolStripMenuItem1";
             this.SaveAsToolStripMenuItem1.Size = new System.Drawing.Size(114, 22);
             this.SaveAsToolStripMenuItem1.Text = "Save As";
+            // 
+            // OptionstoolStripMenuItem
+            // 
+            this.OptionstoolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ImportSpoilerLogToolStripMenuItem1,
+            this.RandomizerOptionsToolStripMenuItem1});
+            this.OptionstoolStripMenuItem.Name = "OptionstoolStripMenuItem";
+            this.OptionstoolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.OptionstoolStripMenuItem.Text = "Options";
+            // 
+            // ImportSpoilerLogToolStripMenuItem1
+            // 
+            this.ImportSpoilerLogToolStripMenuItem1.Name = "ImportSpoilerLogToolStripMenuItem1";
+            this.ImportSpoilerLogToolStripMenuItem1.Size = new System.Drawing.Size(179, 22);
+            this.ImportSpoilerLogToolStripMenuItem1.Text = "Import Spoiler Log";
+            // 
+            // RandomizerOptionsToolStripMenuItem1
+            // 
+            this.RandomizerOptionsToolStripMenuItem1.Name = "RandomizerOptionsToolStripMenuItem1";
+            this.RandomizerOptionsToolStripMenuItem1.Size = new System.Drawing.Size(179, 22);
+            this.RandomizerOptionsToolStripMenuItem1.Text = "RandomizerOptions";
             // 
             // MainInterface
             // 
@@ -417,6 +442,9 @@ namespace Windows_Form_Frontend
         private System.Windows.Forms.ToolStripMenuItem LoadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SavetoolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem SaveAsToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem OptionstoolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ImportSpoilerLogToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem RandomizerOptionsToolStripMenuItem1;
     }
 }
 

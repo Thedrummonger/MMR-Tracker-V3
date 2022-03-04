@@ -261,29 +261,6 @@ namespace Windows_Form_Frontend
                 LBCheckedLocations.Items.Add(i);
             }
 
-            if (DataSets.LocalObtainedItems.Any())
-                Debug.WriteLine($"Items Aquired Locally====================================");
-            foreach (var i in DataSets.LocalObtainedItems)
-            {
-                Debug.WriteLine($"{i.ItemName} X{i.AmountAquiredLocally}");
-            }
-            if (DataSets.StartingItems.Any())
-                Debug.WriteLine($"Items Aquired Locally====================================");
-            foreach (var i in DataSets.StartingItems)
-            {
-                Debug.WriteLine($"{i.ItemName} X{i.AmountInStartingpool}");
-            }
-            if (DataSets.OnlineObtainedItems.Any())
-                Debug.WriteLine($"Items Aquired Online====================================");
-            foreach (var i in DataSets.OnlineObtainedItems)
-            {
-                Debug.WriteLine($"{i.ItemName}");
-                foreach(var j in i.AmountAquiredOnline)
-                {
-                    Debug.WriteLine($"Player {j.Key}: X{j.Value}");
-                }
-            }
-
         }
 
         private void NewToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -296,6 +273,31 @@ namespace Windows_Form_Frontend
             LogicCalculation.CalculateLogic(MainUITrackerInstance);
             AlignUI();
             PrintToListBox();
+            PopulateTrackerOptions();
+        }
+
+        private void PopulateTrackerOptions()
+        {
+            RandomizerOptionsToolStripMenuItem1.DropDownItems.Clear();
+            foreach (var i in MainUITrackerInstance.TrackerOptions.Options)
+            {
+                ToolStripMenuItem menuItem = new ToolStripMenuItem();
+                menuItem.Checked = i.Enabled;
+                menuItem.Text = i.DisplayName;
+                menuItem.Click += delegate (object sender, EventArgs e) { MenuItem_Click(sender, e, i); };
+
+                RandomizerOptionsToolStripMenuItem1.DropDownItems.Add(menuItem);
+            }
+        }
+
+        private void MenuItem_Click(object sender, EventArgs e, OptionData.TrackerOption Option)
+        {
+            Option.Enabled = !Option.Enabled;
+            ((ToolStripMenuItem)sender).Checked = Option.Enabled;
+            LogicCalculation.CalculateLogic(MainUITrackerInstance);
+            PrintToListBox();
+            Debug.WriteLine(Option.ID);
+            Debug.WriteLine(Option.Enabled);
         }
 
         private void LBValidLocations_DrawItem(object sender, DrawItemEventArgs e)

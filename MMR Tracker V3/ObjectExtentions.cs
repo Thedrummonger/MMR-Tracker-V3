@@ -25,6 +25,14 @@ namespace MMR_Tracker_V3
             {
                 return Instance.InstanceReference.LogicItemMappings[entry];
             }
+            else if(entry.StartsWith("'") && entry.EndsWith("'"))
+            {
+                string CleanedEntry = entry[1..^1];
+                if (Instance.InstanceReference.LogicItemMappings.ContainsKey(CleanedEntry))
+                {
+                    return Instance.InstanceReference.LogicItemMappings[CleanedEntry];
+                }
+            }
             return null;
         }
 

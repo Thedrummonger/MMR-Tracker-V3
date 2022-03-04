@@ -10030,23 +10030,291 @@
       ]
     },
     {
-      "ID": "MMRTProgressiveMagic",
+      "ID": "MMRTbombchu10",
       "Static": true,
       "ConditionalItemsOverride": [
         [
-          "FairyMagic"
+          "ChestInvertedStoneTowerBombchu10"
         ],
         [
-          "FairyDoubleMagic"
+          "ChestLinkTrialBombchu10"
+        ],
+        [
+          "ShopItemBombsBombchu10"
         ]
       ]
     },
     {
-      "ID": "MMRTProgressiveMagicX2",
+      "ID": "MMRTarrows40",
+      "Static": true,
+      "ConditionalItemsOverride": [
+        [
+          "UpgradeBigQuiver"
+        ],
+        [
+          "UpgradeBiggestQuiver"
+        ]
+      ]
+    },
+    {
+      "ID": "MMRTarrows50",
       "Static": true,
       "RequiredItemsOverride": [
-        "FairyMagic",
-        "FairyDoubleMagic"
+        "UpgradeBiggestQuiver"
+      ]
+    },
+    {
+      "ID": "MMRTescortCremia",
+      "Static": true,
+      "ConditionalItemsOverride": [
+        [
+          "OtherArrow"
+        ],
+        [
+          "MaskCircusLeader"
+        ]
+      ]
+    }
+  ],
+  "Options": [
+    {
+      "ID": "ProgressiveItems",
+      "DisplayName": "Progressive Items",
+      "Enabled": false,
+      "LogicReplacements": [
+        {
+          "LocationWhitelist": [],
+          "LocationBlacklist": [
+            "MMRTProgressiveBombBag",
+            "MMRTProgressiveBombBagX2",
+            "MMRTProgressiveBombBagX3",
+            "MMRTProgressiveQuiver",
+            "MMRTProgressiveQuiverX2",
+            "MMRTProgressiveQuiverX3",
+            "MMRTProgressiveSword",
+            "MMRTProgressiveSwordX2",
+            "MMRTProgressiveSwordX3",
+            "MMRTProgressiveWallet",
+            "MMRTProgressiveWalletX2",
+            "MMRTProgressiveWalletX3",
+            "MMRTProgressiveMagic",
+            "MMRTProgressiveMagicX2"
+          ],
+          "ReplacementList": [
+            {
+              "Target": "ItemBombBag",
+              "Replacement": "MMRTProgressiveBombBag"
+            },
+            {
+              "Target": "UpgradeBigBombBag",
+              "Replacement": "MMRTProgressiveBombBagX2"
+            },
+            {
+              "Target": "UpgradeBiggestBombBag",
+              "Replacement": "MMRTProgressiveBombBagX3"
+            },
+            {
+              "Target": "ItemBow",
+              "Replacement": "MMRTProgressiveQuiver"
+            },
+            {
+              "Target": "UpgradeBigQuiver",
+              "Replacement": "MMRTProgressiveQuiverX2"
+            },
+            {
+              "Target": "UpgradeBiggestQuiver",
+              "Replacement": "MMRTProgressiveQuiverX3"
+            },
+            {
+              "Target": "StartingSword",
+              "Replacement": "MMRTProgressiveSword"
+            },
+            {
+              "Target": "UpgradeRazorSword",
+              "Replacement": "MMRTProgressiveSwordX2"
+            },
+            {
+              "Target": "UpgradeGildedSword",
+              "Replacement": "MMRTProgressiveSwordX3"
+            },
+            {
+              "Target": "UpgradeAdultWallet",
+              "Replacement": "MMRTProgressiveWallet"
+            },
+            {
+              "Target": "UpgradeGiantWallet",
+              "Replacement": "MMRTProgressiveWalletX2"
+            },
+            {
+              "Target": "UpgradeRoyalWallet",
+              "Replacement": "MMRTProgressiveWalletX3"
+            },
+            {
+              "Target": "FairyMagic",
+              "Replacement": "MMRTProgressiveMagic"
+            },
+            {
+              "Target": "FairyDoubleMagic",
+              "Replacement": "MMRTProgressiveMagicX2"
+            }
+          ]
+        }
+      ],
+      "AdditionalLogic": []
+    },
+    {
+      "ID": "SmallKeysy",
+      "DisplayName": "Small Key Doors Unlocked",
+      "Enabled": false,
+      "LogicReplacements": [
+        {
+          "LocationWhitelist": [],
+          "LocationBlacklist": [],
+          "ReplacementList": [
+            {
+              "Target": "ItemWoodfallKey1",
+              "Replacement": "MMRTSmallKeysy"
+            },
+            {
+              "Target": "ItemSnowheadKey1",
+              "Replacement": "MMRTSmallKeysy"
+            },
+            {
+              "Target": "ItemSnowheadKey2",
+              "Replacement": "MMRTSmallKeysy"
+            },
+            {
+              "Target": "ItemSnowheadKey3",
+              "Replacement": "MMRTSmallKeysy"
+            },
+            {
+              "Target": "ItemGreatBayKey1",
+              "Replacement": "MMRTSmallKeysy"
+            },
+            {
+              "Target": "ItemStoneTowerKey1",
+              "Replacement": "MMRTSmallKeysy"
+            },
+            {
+              "Target": "ItemStoneTowerKey2",
+              "Replacement": "MMRTSmallKeysy"
+            },
+            {
+              "Target": "ItemStoneTowerKey3",
+              "Replacement": "MMRTSmallKeysy"
+            },
+            {
+              "Target": "ItemStoneTowerKey4",
+              "Replacement": "MMRTSmallKeysy"
+            }
+          ]
+        }
+      ],
+      "AdditionalLogic": []
+    },
+    {
+      "ID": "BossKeysy",
+      "DisplayName": "Boss Key Doors Unlocked",
+      "Enabled": false,
+      "LogicReplacements": [
+        {
+          "LocationWhitelist": [],
+          "LocationBlacklist": [],
+          "ReplacementList": [
+            {
+              "Target": "ItemWoodfallBossKey",
+              "Replacement": "MMRTBossKeysy"
+            },
+            {
+              "Target": "ItemSnowheadBossKey",
+              "Replacement": "MMRTBossKeysy"
+            },
+            {
+              "Target": "ItemGreatBayBossKey",
+              "Replacement": "MMRTBossKeysy"
+            },
+            {
+              "Target": "ItemStoneTowerBossKey",
+              "Replacement": "MMRTBossKeysy"
+            }
+          ]
+        }
+      ],
+      "AdditionalLogic": []
+    },
+    {
+      "ID": "NoSafteyLogic",
+      "DisplayName": "Ignore Trade Item Saftey Logic",
+      "Enabled": true,
+      "LogicReplacements": [
+        {
+          "LocationWhitelist": [
+            "UpgradeBigBombBag",
+            "MaskBlast"
+          ],
+          "LocationBlacklist": [],
+          "ReplacementList": [
+            {
+              "Target": "TradeItemKafeiLetter",
+              "Replacement": "true"
+            },
+            {
+              "Target": "TradeItemPendant",
+              "Replacement": "true"
+            }
+          ]
+        }
+      ],
+      "AdditionalLogic": []
+    },
+    {
+      "ID": "BYOA",
+      "DisplayName": "Bring Your Own Ammo",
+      "Enabled": false,
+      "LogicReplacements": [],
+      "AdditionalLogic": [
+        {
+          "LocationWhitelist": [
+            "UpgradeBigQuiver",
+            "UpgradeBiggestQuiver",
+            "HeartPieceSwampArchery"
+          ],
+          "LocationBlacklist": [],
+          "AdditionalRequirements": [
+            "MMRTarrows40"
+          ],
+          "AdditionalConditionals": []
+        },
+        {
+          "LocationWhitelist": [
+            "HeartPieceTownArchery"
+          ],
+          "LocationBlacklist": [],
+          "AdditionalRequirements": [
+            "MMRTarrows50"
+          ],
+          "AdditionalConditionals": []
+        },
+        {
+          "LocationWhitelist": [
+            "HeartPieceHoneyAndDarling"
+          ],
+          "LocationBlacklist": [],
+          "AdditionalRequirements": [
+            "MMRTbombchu10"
+          ],
+          "AdditionalConditionals": []
+        },
+        {
+          "LocationWhitelist": [
+            "MaskRomani"
+          ],
+          "LocationBlacklist": [],
+          "AdditionalRequirements": [
+            "MMRTescortCremia"
+          ],
+          "AdditionalConditionals": []
+        }
       ]
     }
   ],

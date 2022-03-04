@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
+using static MMR_Tracker_V3.TrackerObjects.OptionData;
 
 namespace MMR_Tracker_V3.TrackerObjects
 {
@@ -17,7 +18,8 @@ namespace MMR_Tracker_V3.TrackerObjects
             public int DefaultWalletCapacity { get; set; } = 99;
             public List<DictionaryLocationEntries> LocationList { get; set; } = new List<DictionaryLocationEntries>();
             public List<DictionaryItemEntries> ItemList { get; set; } = new List<DictionaryItemEntries>();
-            public List<DictionaryMacroEntry> MacroList { get; set; } = new List<DictionaryMacroEntry>();
+            public List<DictionaryMacroEntry> MacroList { get; set; } = new List<DictionaryMacroEntry>(); 
+            public List<TrackerOption> Options { get; set; } = new List<TrackerOption>();
 
             public static LogicDictionary FromJson(string json)
             {
