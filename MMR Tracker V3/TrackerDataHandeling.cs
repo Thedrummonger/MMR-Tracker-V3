@@ -33,22 +33,22 @@ namespace MMR_Tracker_V3
         {
             DataSets dataSets = new DataSets();
 
-            dataSets.UncheckedLocations = instance.LocationPool.Locations.Where(x => x.TrackerData.CheckState == MiscData.CheckState.Unchecked).ToList();
-            dataSets.MarkedLocations = instance.LocationPool.Locations.Where(x => x.TrackerData.CheckState == MiscData.CheckState.Marked).ToList();
-            dataSets.CheckedLocations = instance.LocationPool.Locations.Where(x => x.TrackerData.CheckState == MiscData.CheckState.Checked).ToList();
-            dataSets.AvailableLocations = instance.LocationPool.Locations.Where(x => x.TrackerData.CheckState != MiscData.CheckState.Checked && x.TrackerData.Available).ToList();
+            dataSets.UncheckedLocations = instance.LocationPool.Where(x => x.CheckState == MiscData.CheckState.Unchecked).ToList();
+            dataSets.MarkedLocations = instance.LocationPool.Where(x => x.CheckState == MiscData.CheckState.Marked).ToList();
+            dataSets.CheckedLocations = instance.LocationPool.Where(x => x.CheckState == MiscData.CheckState.Checked).ToList();
+            dataSets.AvailableLocations = instance.LocationPool.Where(x => x.CheckState != MiscData.CheckState.Checked && x.Available).ToList();
 
-            dataSets.UnheckedHints = instance.HintPool.Hints.Where(x => x.CheckState == MiscData.CheckState.Unchecked).ToList();
-            dataSets.MarkedHints = instance.HintPool.Hints.Where(x => x.CheckState == MiscData.CheckState.Marked).ToList();
-            dataSets.CheckedHints = instance.HintPool.Hints.Where(x => x.CheckState == MiscData.CheckState.Checked).ToList();
-            dataSets.AvailableHints = instance.HintPool.Hints.Where(x => x.CheckState != MiscData.CheckState.Checked && x.Available).ToList();
+            dataSets.UnheckedHints = instance.HintPool.Where(x => x.CheckState == MiscData.CheckState.Unchecked).ToList();
+            dataSets.MarkedHints = instance.HintPool.Where(x => x.CheckState == MiscData.CheckState.Marked).ToList();
+            dataSets.CheckedHints = instance.HintPool.Where(x => x.CheckState == MiscData.CheckState.Checked).ToList();
+            dataSets.AvailableHints = instance.HintPool.Where(x => x.CheckState != MiscData.CheckState.Checked && x.Available).ToList();
 
-            dataSets.Tricks = instance.Macros.MacroList.Where(x => x.LogicData.IsTrick).ToList();
-            dataSets.AvailableStartingItems = instance.ItemPool.CurrentPool.Where(x => x.CanBeStartingItem).ToList();
+            dataSets.Tricks = instance.MacroPool.Where(x => x.isTrick(instance)).ToList();
+            dataSets.AvailableStartingItems = instance.ItemPool.Where(x => x.ValidStartingItem(instance)).ToList();
 
-            dataSets.LocalObtainedItems = instance.ItemPool.CurrentPool.Where(x => x.AmountAquiredLocally > 0).ToList();
-            dataSets.CurrentStartingItems = instance.ItemPool.CurrentPool.Where(x => x.AmountInStartingpool > 0).ToList();
-            dataSets.OnlineObtainedItems = instance.ItemPool.CurrentPool.Where(x => x.AmountAquiredOnline.Any(x => x.Value > 0)).ToList();
+            dataSets.LocalObtainedItems = instance.ItemPool.Where(x => x.AmountAquiredLocally > 0).ToList();
+            dataSets.CurrentStartingItems = instance.ItemPool.Where(x => x.AmountInStartingpool > 0).ToList();
+            dataSets.OnlineObtainedItems = instance.ItemPool.Where(x => x.AmountAquiredOnline.Any(x => x.Value > 0)).ToList();
             return dataSets;
         }
     }

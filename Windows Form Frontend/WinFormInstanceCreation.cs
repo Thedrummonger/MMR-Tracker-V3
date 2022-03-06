@@ -11,7 +11,7 @@ namespace Windows_Form_Frontend
 {
     public class WinFormInstanceCreation
     {
-        public static void CreateWinFormInstance(string Logic = null)
+        public static bool CreateWinFormInstance(string Logic = null)
         {
             MainInterface.MainUITrackerInstance = new MMR_Tracker_V3.LogicObjects.TrackerInstance();
             if (Logic == null)
@@ -23,18 +23,22 @@ namespace Windows_Form_Frontend
 
             var Result = TrackerInstanceCreation.ApplyLogicAndDict(MainInterface.MainUITrackerInstance, Logic);
 
+            if (Result == TrackerInstanceCreation.InstanceState.LogicFailure || MainInterface.MainUITrackerInstance.LogicFile.Logic == null)
+            {
+                MessageBox.Show("Failed To Load Logic");
+                return false;
+            }
+            if (Result == TrackerInstanceCreation.InstanceState.DictionaryFailure || MainInterface.MainUITrackerInstance.LogicDictionary == null)
+            {
+                MessageBox.Show("Failed To Load Dict");
+                return false;
+            }
+
             TrackerInstanceCreation.PopulateTrackerObject(MainInterface.MainUITrackerInstance);
 
             ApplyWinFormSpecificDat(MainInterface.MainUITrackerInstance);
 
-            if (Result == TrackerInstanceCreation.InstanceState.LogicFailure)
-            {
-                MessageBox.Show("Failed To Load Logic");
-            }
-            if (Result == TrackerInstanceCreation.InstanceState.DictionaryFailure)
-            {
-                MessageBox.Show("Failed To Load Dict");
-            }
+            return true;
         }
 
         public static void ApplyWinFormSpecificDat(LogicObjects.TrackerInstance instance)

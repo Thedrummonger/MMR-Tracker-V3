@@ -29,6 +29,7 @@ namespace Windows_Form_Frontend
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RandomizedStateEditor));
             this.lvLocationList = new System.Windows.Forms.ListView();
             this.columnHeaderEntry = new System.Windows.Forms.ColumnHeader();
             this.columnHeaderVanilla = new System.Windows.Forms.ColumnHeader();
@@ -152,6 +153,8 @@ namespace Windows_Form_Frontend
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(13, 6);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 15);
@@ -161,6 +164,8 @@ namespace Windows_Form_Frontend
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(473, 6);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(131, 15);
@@ -188,6 +193,8 @@ namespace Windows_Form_Frontend
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(706, 5);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 15);
@@ -237,6 +244,8 @@ namespace Windows_Form_Frontend
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(706, 397);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(87, 15);
@@ -246,6 +255,8 @@ namespace Windows_Form_Frontend
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(821, 397);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(87, 15);
@@ -262,6 +273,8 @@ namespace Windows_Form_Frontend
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(821, 441);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(114, 15);
@@ -278,6 +291,8 @@ namespace Windows_Form_Frontend
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(706, 441);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(109, 15);
@@ -294,6 +309,8 @@ namespace Windows_Form_Frontend
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(706, 485);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(65, 15);
@@ -319,53 +336,61 @@ namespace Windows_Form_Frontend
             // chkShowRand
             // 
             this.chkShowRand.AutoSize = true;
+            this.chkShowRand.BackColor = System.Drawing.Color.Transparent;
             this.chkShowRand.Checked = true;
             this.chkShowRand.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkShowRand.ForeColor = System.Drawing.Color.White;
             this.chkShowRand.Location = new System.Drawing.Point(13, 57);
             this.chkShowRand.Name = "chkShowRand";
             this.chkShowRand.Size = new System.Drawing.Size(121, 19);
             this.chkShowRand.TabIndex = 31;
             this.chkShowRand.Text = "Show randomized";
-            this.chkShowRand.UseVisualStyleBackColor = true;
+            this.chkShowRand.UseVisualStyleBackColor = false;
             this.chkShowRand.CheckedChanged += new System.EventHandler(this.TxtLocationSearch_TextChanged);
             // 
             // chkShowJunk
             // 
             this.chkShowJunk.AutoSize = true;
+            this.chkShowJunk.BackColor = System.Drawing.Color.Transparent;
             this.chkShowJunk.Checked = true;
             this.chkShowJunk.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkShowJunk.ForeColor = System.Drawing.Color.White;
             this.chkShowJunk.Location = new System.Drawing.Point(140, 57);
             this.chkShowJunk.Name = "chkShowJunk";
             this.chkShowJunk.Size = new System.Drawing.Size(82, 19);
             this.chkShowJunk.TabIndex = 32;
             this.chkShowJunk.Text = "Show Junk";
-            this.chkShowJunk.UseVisualStyleBackColor = true;
+            this.chkShowJunk.UseVisualStyleBackColor = false;
             this.chkShowJunk.CheckedChanged += new System.EventHandler(this.TxtLocationSearch_TextChanged);
             // 
             // chkShowManual
             // 
             this.chkShowManual.AutoSize = true;
+            this.chkShowManual.BackColor = System.Drawing.Color.Transparent;
             this.chkShowManual.Checked = true;
             this.chkShowManual.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkShowManual.ForeColor = System.Drawing.Color.White;
             this.chkShowManual.Location = new System.Drawing.Point(369, 56);
             this.chkShowManual.Name = "chkShowManual";
             this.chkShowManual.Size = new System.Drawing.Size(98, 19);
             this.chkShowManual.TabIndex = 34;
             this.chkShowManual.Text = "Show Manual";
-            this.chkShowManual.UseVisualStyleBackColor = true;
+            this.chkShowManual.UseVisualStyleBackColor = false;
             this.chkShowManual.CheckedChanged += new System.EventHandler(this.TxtLocationSearch_TextChanged);
             // 
             // chkShowUnrand
             // 
             this.chkShowUnrand.AutoSize = true;
+            this.chkShowUnrand.BackColor = System.Drawing.Color.Transparent;
             this.chkShowUnrand.Checked = true;
             this.chkShowUnrand.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkShowUnrand.ForeColor = System.Drawing.Color.White;
             this.chkShowUnrand.Location = new System.Drawing.Point(228, 57);
             this.chkShowUnrand.Name = "chkShowUnrand";
             this.chkShowUnrand.Size = new System.Drawing.Size(135, 19);
             this.chkShowUnrand.TabIndex = 33;
             this.chkShowUnrand.Text = "Show unrandomized";
-            this.chkShowUnrand.UseVisualStyleBackColor = true;
+            this.chkShowUnrand.UseVisualStyleBackColor = false;
             this.chkShowUnrand.CheckedChanged += new System.EventHandler(this.TxtLocationSearch_TextChanged);
             // 
             // lbAvailableStarting
@@ -393,6 +418,8 @@ namespace Windows_Form_Frontend
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(474, 281);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(123, 15);
@@ -421,6 +448,8 @@ namespace Windows_Form_Frontend
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(939, 530);
             this.Controls.Add(this.chkShowManual);
             this.Controls.Add(this.chkShowUnrand);

@@ -57,32 +57,34 @@ namespace Windows_Form_Frontend
         private void PrintLocationData()
         {
             List<ListViewItem> TempList = new List<ListViewItem>();
-            foreach (var i in _Instance.LocationPool.Locations)
+            foreach (var i in _Instance.LocationPool)
             {
-                if (i.TrackerData.RandomizedState == MiscData.RandomizedState.Randomized && !chkShowRand.Checked) { continue; }
-                if (i.TrackerData.RandomizedState == MiscData.RandomizedState.Unrandomized && !chkShowUnrand.Checked) { continue; }
-                if (i.TrackerData.RandomizedState == MiscData.RandomizedState.UnrandomizedManual && !chkShowManual.Checked) { continue; }
-                if (i.TrackerData.RandomizedState == MiscData.RandomizedState.ForcedJunk && !chkShowJunk.Checked) { continue; }
-                i.UIData.DisplayName = i.UIData.LocationName ?? i.LogicData.Id;
-                if (!Utility.FilterSearch(i, TxtLocationSearch.Text, i.UIData.DisplayName)) { continue; }
+                if (i.RandomizedState == MiscData.RandomizedState.Randomized && !chkShowRand.Checked) { continue; }
+                if (i.RandomizedState == MiscData.RandomizedState.Unrandomized && !chkShowUnrand.Checked) { continue; }
+                if (i.RandomizedState == MiscData.RandomizedState.UnrandomizedManual && !chkShowManual.Checked) { continue; }
+                if (i.RandomizedState == MiscData.RandomizedState.ForcedJunk && !chkShowJunk.Checked) { continue; }
+                i.DisplayName = i.GetDictEntry(_Instance).Name ?? i.ID;
+                if (!Utility.FilterSearch(_Instance, i, TxtLocationSearch.Text, i.DisplayName)) { continue; }
                 string VanillaItemText = "";
-                if (i.TrackerData.VanillaItem != null)
+                if (i.GetDictEntry(_Instance).OriginalItem != null)
                 {
-                    var VanillaItemObject = _Instance.GetLogicItemMapping(i.TrackerData.VanillaItem);
-                    if (VanillaItemObject != null && VanillaItemObject.GetMappedEntry(_Instance) is ItemData.ItemObject)
+                    var VanillaItem = i.GetDictEntry(_Instance).OriginalItem;
+                    if (_Instance.InstanceReference.ItemDictionaryMapping.ContainsKey(VanillaItem))
                     {
-                        VanillaItemText  = $"{((ItemData.ItemObject)VanillaItemObject.GetMappedEntry(_Instance)).ItemName} [{i.TrackerData.VanillaItem}])";
+                        var VanillaItemDictIndex = _Instance.InstanceReference.ItemDictionaryMapping[VanillaItem];
+                        var VanillaItemObject = _Instance.LogicDictionary.ItemList[VanillaItemDictIndex];
+                        VanillaItemText  = $"{VanillaItemObject.Name} [{VanillaItem}])";
                     }
                     else
                     {
-                        VanillaItemText = $"{i.TrackerData.VanillaItem})";
+                        VanillaItemText = $"{VanillaItem})";
                     }
                 }
 
-                string[] row = { i.UIData.DisplayName, VanillaItemText, i.TrackerData.RandomizedState.GetDescription() };
+                string[] row = { i.DisplayName, VanillaItemText, i.RandomizedState.GetDescription() };
                 ListViewItem listViewItem = new ListViewItem(row) { Tag = i };
                 listViewItem.Checked = CheckedLocationItems.Contains(i);
-                listViewItem.ToolTipText = $"Location: {i.UIData.DisplayName} \nVanilla Item: {VanillaItemText} \nRandomized State: {i.TrackerData.RandomizedState}";
+                listViewItem.ToolTipText = $"Location: {i.DisplayName} \nVanilla Item: {VanillaItemText} \nRandomized State: {i.RandomizedState}";
                 TempList.Add(listViewItem);
             }
             lvLocationList.Items.AddRange(TempList.ToArray());
@@ -98,7 +100,7 @@ namespace Windows_Form_Frontend
             {
                 if (i.CanBePlaced(_Instance))
                 {
-                    i.DisplayName = i.ItemName ?? i.Id;
+                    i.DisplayName = i.GetDictEntry(_Instance).Name ?? i.Id;
                     if (i.DisplayName.ToLower().Contains(txtSearchAvailableStarting.Text.ToLower()))
                     {
                         lbAvailableStarting.Items.Add(i);
@@ -107,7 +109,7 @@ namespace Windows_Form_Frontend
             }
             foreach (var i in _DataSets.CurrentStartingItems)
             {
-                i.DisplayName = (i.ItemName ?? i.Id) + $": X{i.AmountInStartingpool}";
+                i.DisplayName = (i.GetDictEntry(_Instance).Name ?? i.Id) + $": X{i.AmountInStartingpool}";
                 if (i.DisplayName.ToLower().Contains(txtSearchCurrentStarting.Text.ToLower()))
                 {
                     lbCurrentStarting.Items.Add(i);
@@ -123,19 +125,19 @@ namespace Windows_Form_Frontend
             lvTricks.CheckBoxes = true;
             lvTricks.ShowItemToolTips = true;
             string CurrentCategory = string.Empty;
-            foreach (var i in _DataSets.Tricks.OrderBy(x => _DataSets.Tricks.IndexOf(_DataSets.Tricks.First(y => y.LogicData.TrickCategory == x.LogicData.TrickCategory))))
+            foreach (var i in _DataSets.Tricks.OrderBy(x => _DataSets.Tricks.IndexOf(_DataSets.Tricks.First(y => _Instance.GetOriginalLogic(y.ID).TrickCategory == _Instance.GetOriginalLogic(x.ID).TrickCategory))))
             {
-                if (!i.LogicData.Id.ToLower().Contains(txtTrickSearch.Text.ToLower())) { continue; }
-                if (CurrentCategory != i.LogicData.TrickCategory)
+                if (!i.ID.ToLower().Contains(txtTrickSearch.Text.ToLower())) { continue; }
+                if (CurrentCategory != _Instance.GetOriginalLogic(i.ID).TrickCategory)
                 {
-                    lvTricks.Items.Add(i.LogicData.TrickCategory.ToUpper());
-                    CurrentCategory = i.LogicData.TrickCategory;
+                    lvTricks.Items.Add(_Instance.GetOriginalLogic(i.ID).TrickCategory.ToUpper());
+                    CurrentCategory = _Instance.GetOriginalLogic(i.ID).TrickCategory;
                 }
 
-                string[] row = { i.LogicData.Id };
+                string[] row = { i.ID };
                 ListViewItem listViewItem = new ListViewItem(row) { Tag = i };
                 listViewItem.Checked = i.TrickEnabled;
-                listViewItem.ToolTipText = i.LogicData.TrickTooltip;
+                listViewItem.ToolTipText = _Instance.GetOriginalLogic(i.ID).TrickTooltip;
                 lvTricks.Items.Add(listViewItem);
             }
             Updating = false;
@@ -200,10 +202,10 @@ namespace Windows_Form_Frontend
             Button button = (Button)sender;
             foreach (var i in CheckedLocationItems)
             {
-                if (button == btnSetRandomized) { i.TrackerData.RandomizedState = MiscData.RandomizedState.Randomized; }
-                if (button == btnSetUnRandomized) { i.TrackerData.RandomizedState = MiscData.RandomizedState.Unrandomized; }
-                if (button == btnSetManual) { i.TrackerData.RandomizedState = MiscData.RandomizedState.UnrandomizedManual; }
-                if (button == btnSetJunk) { i.TrackerData.RandomizedState = MiscData.RandomizedState.ForcedJunk; }
+                if (button == btnSetRandomized) { i.RandomizedState = MiscData.RandomizedState.Randomized; }
+                if (button == btnSetUnRandomized) { i.RandomizedState = MiscData.RandomizedState.Unrandomized; }
+                if (button == btnSetManual) { i.RandomizedState = MiscData.RandomizedState.UnrandomizedManual; }
+                if (button == btnSetJunk) { i.RandomizedState = MiscData.RandomizedState.ForcedJunk; }
             }
             CheckedLocationItems.Clear();
             UpdateItemSets();

@@ -46,29 +46,30 @@ namespace Windows_Form_Frontend
 
         private void SelectNextItem()
         {
-            this.Text = "Select Item at " + _CheckList[0].UIData.LocationName ?? _CheckList[0].LogicData.Id;
+            this.Text = "Select Item at " + _CheckList[0].GetDictEntry(_Instance).Name ?? _CheckList[0].ID;
             writeItems();
         }
 
         private void writeItems()
         {
             var Names = new List<string>();
-            var EnteredItems = new List<MMR_Tracker_V3.TrackerObjects.ItemData.ItemObject>();
-            foreach (var i in _Instance.ItemPool.CurrentPool)
+            var EnteredItems = new List<ItemData.ItemObject>();
+            foreach (var i in _Instance.ItemPool)
             {
-                if (string.IsNullOrWhiteSpace(i.ItemName) || !i.ItemName.ToLower().Contains(textBox1.Text.ToLower())) { continue; }
-                if (i.CanBePlaced(_Instance) && i.ItemTypes.Intersect(_CheckList[0].TrackerData.ValidItemTypes).Any() && !EnteredItems.Contains(i) && !Names.Contains(i.ToString()))
+                if (string.IsNullOrWhiteSpace(i.GetDictEntry(_Instance).Name) || !i.GetDictEntry(_Instance).Name.ToLower().Contains(textBox1.Text.ToLower())) { continue; }
+                i.DisplayName = i.GetDictEntry(_Instance).Name;
+                if (i.CanBePlaced(_Instance) && i.GetDictEntry(_Instance).ItemTypes.Intersect(_CheckList[0].GetDictEntry(_Instance).ValidItemTypes).Any() && !EnteredItems.Contains(i) && !Names.Contains(i.ToString()))
                 {
                     Names.Add(i.ToString());
                     EnteredItems.Add(i);
                 }
             }
-            listBox1.DataSource = EnteredItems.OrderBy(x => x.ItemName).ToList();
+            listBox1.DataSource = EnteredItems.OrderBy(x => x.GetDictEntry(_Instance).Name).ToList();
         }
 
         private void listBox1_DoubleClick(object sender, EventArgs e)
         {
-            _CheckList[0].TrackerData.RandomizedItem = ((ItemData.ItemObject)listBox1.SelectedItem).Id;
+            _CheckList[0].Randomizeditem.Item = ((ItemData.ItemObject)listBox1.SelectedItem).Id;
             _CheckList.RemoveAt(0);
             if (_CheckList.Any())
             {
@@ -87,7 +88,7 @@ namespace Windows_Form_Frontend
 
         private void button1_Click(object sender, EventArgs e)
         {
-            _CheckList[0].TrackerData.RandomizedItem = "JUNK";
+            _CheckList[0].Randomizeditem.Item = "JUNK";
             _CheckList.RemoveAt(0);
             if (_CheckList.Any())
             {

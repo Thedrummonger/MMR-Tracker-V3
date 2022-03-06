@@ -8,10 +8,7 @@ namespace MMR_Tracker_V3.TrackerObjects
 {
     public class OptionData
     {
-        public class TrackerOptions
-        {
-            public List<TrackerOption> Options { get; set; } = new List<TrackerOption>();
-        }
+        [Serializable]
         public class TrackerOption
         {
             public string ID { get; set; }
@@ -40,6 +37,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
         }
 
+        [Serializable]
         public class actions
         {
             public LogicReplacement[] LogicReplacements { get; set; } = Array.Empty<LogicReplacement>();
@@ -50,6 +48,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
         }
 
+        [Serializable]
         public class AdditionalLogic
         {
             public string[] LocationWhitelist { get; set; } = Array.Empty<string>();
@@ -62,6 +61,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
         }
 
+        [Serializable]
         public class LogicReplacement
         {
             public string[] LocationWhitelist { get; set; } = Array.Empty<string>();
@@ -73,6 +73,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
         }
 
+        [Serializable]
         public class LogicReplacementData
         {
             public string Target { get; set; }

@@ -14,15 +14,16 @@ namespace MMR_Tracker_V3
     public static class LogicCalculation
     {
         static bool LogItem = false;
+
         private static bool RequirementsMet(List<string> Requirements, LogicObjects.TrackerInstance instance)
         {
             foreach(string i in Requirements)
             {
                 if (LogItem) { Debug.WriteLine($"Checking Requirement {i}"); }
 
-                string LogicItem = i;
+                bool Literal = i.IsLiteralID(out string LogicItem);
                 int NeededAmount = 1;
-                
+
                 if (bool.TryParse(LogicItem, out bool BoolEntry)) 
                 { 
                     if (BoolEntry) { continue; }
@@ -41,11 +42,23 @@ namespace MMR_Tracker_V3
                     NeededAmount = Amount;
                 }
 
-                var Mapping = instance.GetLogicItemMapping(LogicItem);
-                if (Mapping == null) { return false; }
-                if (!Mapping.GetMappedEntryUsable(instance, NeededAmount)) { return false; }
+                var type = instance.GetItemEntryType(LogicItem, Literal);
+                if (type == LogicEntryType.item) 
+                {
+                    var ItemObject = instance.GetItemByID(LogicItem);
+                    if (!ItemObject.Useable(NeededAmount)) { return false; }
+                }
+                else if (type == LogicEntryType.macro)
+                {
+                    var MacroObject = instance.GetMacroByID(LogicItem);
+                    if (!MacroObject.Aquired) { return false; }
+                }
+                else
+                {
+                    Debug.WriteLine($"{LogicItem}: {type}");
+                    return false;
+                }
             }
-            if (LogItem) { Debug.WriteLine($"Entry was valid"); }
             return true;
         }
 
@@ -60,145 +73,71 @@ namespace MMR_Tracker_V3
         }
         public static void CalculateLogic(LogicObjects.TrackerInstance instance)
         {
+            Stopwatch stopwatch = new Stopwatch();
+
+            Utility.TimeCodeExecution(stopwatch);
             while (true)
             {
                 bool MacroChanged = CalculateMacros(instance);
                 bool UnrandomizedItemAquired = CheckUrandomizedLocations(instance);
                 if (!MacroChanged && !UnrandomizedItemAquired) { break; }
             }
-            foreach (var i in instance.LocationPool.Locations.Where(x => x.TrackerData.RandomizedState != RandomizedState.Unrandomized))
+            Utility.TimeCodeExecution(stopwatch, "Macro and Unrandomized Item Calculation", 1);
+            foreach (var i in instance.LocationPool.Where(x => x.RandomizedState != RandomizedState.Unrandomized))
             {
-                i.TrackerData.Available = CheckRequirementAndConditionals(instance, i.LogicData.ConditionalItems, i.LogicData.RequiredItems, i.LogicData.Id);
+                var Logic = instance.GetLogic(i.ID);
+                i.Available = RequirementsMet(Logic.RequiredItems, instance) && ConditionalsMet(Logic.ConditionalItems, instance);
             }
-            foreach(var i in instance.HintPool.Hints)
+            Utility.TimeCodeExecution(stopwatch, "Location Calculation", 1);
+            foreach (var i in instance.HintPool)
             {
-                i.Available = CheckRequirementAndConditionals(instance, i.LogicData.ConditionalItems, i.LogicData.RequiredItems, i.LogicData.Id);
+                var Logic = instance.GetLogic(i.ID);
+                i.Available = RequirementsMet(Logic.RequiredItems, instance) && ConditionalsMet(Logic.ConditionalItems, instance);
             }
+            Utility.TimeCodeExecution(stopwatch, "Hint Location Calculation", 1);
 
-        }
-
-        public static bool CheckRequirementAndConditionals(LogicObjects.TrackerInstance instance, List<List<string>> Conditionals, List<string> Requirements, string ID)
-        {
-            var CurrentObject = instance.GetLogicLocationMapping(ID);
-
-            Utility.DeepCloneLogic(Requirements, Conditionals, out List<string> newRequirements, out List<List<string>> newConditionals);
-
-            if (CurrentObject.logicEntryType == LogicEntryType.macro)
-            {
-                var MacroObject = (MacroObject)CurrentObject.GetMappedEntry(instance);
-                if (MacroObject.DynamicLogic != null)
-                {
-                    var ReplacementMacro = HandleDynamicLogic(instance, MacroObject);
-                    if (ReplacementMacro == null) { return false; }
-                    Utility.DeepCloneLogic(ReplacementMacro.LogicData.RequiredItems, ReplacementMacro.LogicData.ConditionalItems, out newRequirements, out newConditionals);
-                }
-            }
-
-            if (LogItem)
-            {
-                Debug.WriteLine(string.Join(",", newRequirements));
-            }
-
-            var ValidOptions = instance.TrackerOptions.Options.Where(x => x.GetActions().LocationValid(ID));
-
-            if (ValidOptions.Any())
-            {
-                foreach (var option in ValidOptions)
-                {
-                    if (LogItem) { Debug.WriteLine($"Checking Option {option.ID}"); }
-                    foreach (var replacements in option.GetActions().LogicReplacements)
-                    {
-                        if (!replacements.LocationValid(ID)) { continue; }
-                        if (LogItem) { Debug.WriteLine($"Applying {replacements.ReplacementList.Length} Replacements"); }
-                        foreach (var i in replacements.ReplacementList)
-                        {
-                            if (LogItem) { Debug.WriteLine($"Replacing {i.Target} With {i.Replacement}"); }
-                            newRequirements = newRequirements
-                                .Select(x => x == i.Target ? x.Replace(i.Target, i.Replacement) : x.Replace(" ", " ")).ToList();
-                            for (var p = 0; p < newConditionals.Count; p++)
-                            {
-                                newConditionals[p] = newConditionals[p]
-                                    .Select(x => x == i.Target ? x.Replace(i.Target, i.Replacement) : x.Replace(" ", " ")).ToList();
-                            }
-                        }
-                    }
-                    foreach(var additionalSet in option.GetActions().AdditionalLogic)
-                    {
-                        if (!additionalSet.LocationValid(ID)) { continue; }
-                        foreach(var i in additionalSet.AdditionalRequirements)
-                        {
-                            newRequirements.Add(i);
-                        }
-                        foreach (var i in additionalSet.AdditionalConditionals)
-                        {
-                            newConditionals.Add(i);
-                        }
-                    }
-                }
-            }
-
-            if (LogItem)
-            {
-                Debug.WriteLine(string.Join(",", newRequirements));
-            }
-
-            return RequirementsMet(newRequirements, instance) && ConditionalsMet(newConditionals, instance);
         }
 
         public static bool CalculateMacros(LogicObjects.TrackerInstance instance)
         {
             bool MacroStateChanged = false;
-            foreach(var i in instance.Macros.MacroList)
+            foreach(var i in instance.MacroPool)
             {
-                var MacroData = i;
+                var Logic = instance.GetLogic(i.ID);
+                var Available = RequirementsMet(Logic.RequiredItems, instance) && ConditionalsMet(Logic.ConditionalItems, instance);
 
-                bool MacroValid = CheckRequirementAndConditionals(instance, MacroData.LogicData.ConditionalItems, MacroData.LogicData.RequiredItems, i.LogicData.Id);
+                if (Logic.IsTrick && !i.TrickEnabled) { Available = false; }
 
-                if (!i.TrickEnabled) { MacroValid = false; }
-
-                if (MacroValid != i.Aquired)
+                if (Available != i.Aquired)
                 {
                     MacroStateChanged = true;
-                    i.Aquired = MacroValid;
+                    i.Aquired = Available;
                 }
             }
             return MacroStateChanged;
         }
 
-        public static TrackerObjects.MacroObject HandleDynamicLogic(LogicObjects.TrackerInstance instance, TrackerObjects.MacroObject i)
-        {
-            var LocationToCompare = instance.GetLogicLocationMapping(i.DynamicLogic.LocationToCompare);
-            if (LocationToCompare == null || LocationToCompare.logicEntryType != LogicEntryType.location) { return null; }
-            foreach (var arg in i.DynamicLogic.Arguments)
-            {
-                if (((LocationObject)LocationToCompare.GetMappedEntry(instance)).TrackerData.RandomizedItem == arg.ItemAtLocation)
-                {
-                    return (TrackerObjects.MacroObject)instance.GetLogicItemMapping(arg.LogicToUse).GetMappedEntry(instance);
-                }
-            }
-            return null;
-        }
 
         public static bool CheckUrandomizedLocations(LogicObjects.TrackerInstance instance)
         {
             bool ItemStateChanged = false;
-            foreach (var i in instance.LocationPool.Locations.Where(x => x.TrackerData.RandomizedState == RandomizedState.Unrandomized))
+            foreach (var i in instance.LocationPool.Where(x => x.RandomizedState == RandomizedState.Unrandomized))
             {
-                Debug.WriteLine($"Setting {i.LogicData.Id}");
-                bool LocationAvailable = CheckRequirementAndConditionals(instance, i.LogicData.ConditionalItems, i.LogicData.RequiredItems, i.LogicData.Id);
+                var Logic = instance.GetLogic(i.ID);
+                var Available = RequirementsMet(Logic.RequiredItems, instance) && ConditionalsMet(Logic.ConditionalItems, instance);
 
-                bool ShouldBeChecked = LocationAvailable && i.TrackerData.CheckState != CheckState.Checked;
-                bool ShouldBeUnChecked = !LocationAvailable && i.TrackerData.CheckState != CheckState.Unchecked;
+                bool ShouldBeChecked = Available && i.CheckState != CheckState.Checked;
+                bool ShouldBeUnChecked = !Available && i.CheckState != CheckState.Unchecked;
 
                 if (ShouldBeChecked || ShouldBeUnChecked)
                 {
                     ItemStateChanged = true;
-                    i.TrackerData.Available = LocationAvailable;
-                    CheckState checkState = i.TrackerData.Available ? CheckState.Checked : CheckState.Unchecked;
-                    if (checkState == CheckState.Unchecked) { i.TrackerData.RandomizedItem = null; }
-                    if (checkState == CheckState.Checked) { i.TrackerData.RandomizedItem = i.TrackerData.GetItemAtCheck(); }
+                    i.Available = Available;
+                    CheckState checkState = i.Available ? CheckState.Checked : CheckState.Unchecked;
+                    if (checkState == CheckState.Unchecked) { i.Randomizeditem.Item = null; }
+                    if (checkState == CheckState.Checked) { i.Randomizeditem.Item = i.GetItemAtCheck(instance); }
 
-                    i.TrackerData.ToggleChecked(checkState, instance);
+                    i.ToggleChecked(checkState, instance);
                 }
             }
             return ItemStateChanged;
@@ -206,8 +145,8 @@ namespace MMR_Tracker_V3
 
         public static bool MultipleItemEntry(string Entry, out string Item, out int Amount)
         {
-            Item = null;
-            Amount = -1;
+            Item = Entry;
+            Amount = 1;
             if (!Entry.Contains(",")) { return false; }
             var data = Entry.Split(',');
             Item = data[0];
@@ -215,7 +154,7 @@ namespace MMR_Tracker_V3
             return true;
         }
 
-        private static bool LogicOptionEntry(LogicObjects.TrackerInstance instance, string i, out bool optionEntryValid)
+        public static bool LogicOptionEntry(LogicObjects.TrackerInstance instance, string i, out bool optionEntryValid)
         {
             optionEntryValid = false;
             if (!i.Contains("==") && !i.Contains("!=")) { return false; }
@@ -228,8 +167,12 @@ namespace MMR_Tracker_V3
 
         private static bool checkOptionEntry(LogicObjects.TrackerInstance instance, string[] data, bool inverse)
         {
-            //todo
-            return false;
+            string CleanedOptionName = data[0].Trim().Replace("'", "");
+            string CleanedOptionValue = data[1].Trim().Replace("'", "");
+
+            var Option = instance.TrackerOptions.Find(x => x.ID == CleanedOptionName);
+            if (Option == null) { return false; }
+            return (Option.CurrentValue == CleanedOptionValue) == !inverse;
         }
     }
 }

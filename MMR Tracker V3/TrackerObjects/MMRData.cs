@@ -10,6 +10,7 @@ namespace MMR_Tracker_V3.TrackerObjects
     public class MMRData
     {
 
+        [Serializable]
         public class JsonFormatLogicItem
         {
             public string Id { get; set; }
@@ -34,11 +35,13 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
         }
 
+        [Serializable]
         public class Configuration
         {
             public GameplaySettings GameplaySettings { get; set; }
         }
 
+        [Serializable]
         public class GameplaySettings
         {
             public bool UseCustomItemList { get; set; } = true;
@@ -76,6 +79,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public List<string> EnabledTricks { get; set; } = new List<string>();
         }
 
+        [Serializable]
         public class LogicFile
         {
             public int Version { get; set; } = -1;

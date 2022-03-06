@@ -2,8 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,7 +15,7 @@ namespace MMR_Tracker_V3
     {
         private static string CurrentString = "";
         private static bool CurrentStringIsError = false;
-        public static bool FilterSearch(LocationData.LocationObject logic, string searchTerm, string NameToCompare)
+        public static bool FilterSearch(LogicObjects.TrackerInstance Instance, LocationData.LocationObject logic, string searchTerm, string NameToCompare)
         {
             //Since filter search is usually called a large number of times at once, we can cut down on lag by checking first if we've already compared against the given string
             //If we have and that string was a malformed term, skip all subsequent searches until the text changes.
@@ -33,7 +35,7 @@ namespace MMR_Tracker_V3
                 if (searchTerm[0] == '*') { StarredOnly = true; }
                 searchTerm = searchTerm.Substring(1);
             }
-            if (StarredOnly && !logic.UIData.Starred) { return false; }
+            if (StarredOnly && !logic.Starred) { return false; }
             if (string.IsNullOrWhiteSpace(searchTerm)) { return true; }
 
             List<string> ExpandedExptression = GetEntries(searchTerm);
@@ -80,39 +82,39 @@ namespace MMR_Tracker_V3
                 {
                     case '_': //Search By Randomized Item
                         if (subterm.Substring(1) == "") { return "1"; }
-                        if (logic.TrackerData.RandomizedItem == null) { return "0"; }
-                        if (Perfect && logic.TrackerData.RandomizedItem.ToLower() == subterm.Substring(1).ToLower() == Inverse) { return "0"; }
-                        else if (!Perfect && logic.TrackerData.RandomizedItem.ToLower().Contains(subterm.Substring(1).ToLower()) == Inverse) { return "0"; }
+                        if (logic.Randomizeditem.Item == null) { return "0"; }
+                        if (Perfect && logic.Randomizeditem.Item.ToLower() == subterm.Substring(1).ToLower() == Inverse) { return "0"; }
+                        else if (!Perfect && logic.Randomizeditem.Item.ToLower().Contains(subterm.Substring(1).ToLower()) == Inverse) { return "0"; }
                         break;
                     case '#'://Search By Location Area
                         if (subterm.Substring(1) == "") { return "1"; }
-                        if (logic.UIData.LocationArea == null) { return "0"; }
-                        if (Perfect && logic.UIData.LocationArea.ToLower() == subterm.Substring(1).ToLower() == Inverse) { return "0"; }
-                        else if (!Perfect && logic.UIData.LocationArea.ToLower().Contains(subterm.Substring(1).ToLower()) == Inverse) { return "0"; }
+                        if (logic.GetDictEntry(Instance).Area == null) { return "0"; }
+                        if (Perfect && logic.GetDictEntry(Instance).Area.ToLower() == subterm.Substring(1).ToLower() == Inverse) { return "0"; }
+                        else if (!Perfect && logic.GetDictEntry(Instance).Area.ToLower().Contains(subterm.Substring(1).ToLower()) == Inverse) { return "0"; }
                         break;
                     case '@'://Search By Item Type
                         if (subterm.Substring(1) == "") { return "1"; }
-                        if (logic.TrackerData.ValidItemTypes == null) { return "0"; }
-                        if (Perfect && logic.TrackerData.ValidItemTypes.Select(x => x.ToLower()).Contains(subterm.Substring(1).ToLower()) == Inverse) { return "0"; }
-                        else if ((!Perfect && logic.TrackerData.ValidItemTypes.Select(x => x.ToLower()).Any(x => x.Contains(subterm.Substring(1).ToLower()))) == Inverse) { return "0"; }
+                        if (logic.GetDictEntry(Instance).ValidItemTypes == null) { return "0"; }
+                        if (Perfect && logic.GetDictEntry(Instance).ValidItemTypes.Select(x => x.ToLower()).Contains(subterm.Substring(1).ToLower()) == Inverse) { return "0"; }
+                        else if ((!Perfect && logic.GetDictEntry(Instance).ValidItemTypes.Select(x => x.ToLower()).Any(x => x.Contains(subterm.Substring(1).ToLower()))) == Inverse) { return "0"; }
                         break;
                     case '~'://Search By Dictionary Name
                         if (subterm.Substring(1) == "") { return "1"; }
-                        if (logic.LogicData.Id == null) { return "0"; }
-                        if (Perfect && logic.LogicData.Id.ToLower() == subterm.Substring(1).ToLower() == Inverse) { return "0"; }
-                        else if ((!Perfect && logic.LogicData.Id.ToLower().Contains(subterm.Substring(1).ToLower())) == Inverse) { return "0"; }
+                        if (logic.ID == null) { return "0"; }
+                        if (Perfect && logic.ID.ToLower() == subterm.Substring(1).ToLower() == Inverse) { return "0"; }
+                        else if ((!Perfect && logic.ID.ToLower().Contains(subterm.Substring(1).ToLower())) == Inverse) { return "0"; }
                         break;
-                    case '$'://Search By Item Name
+                    case '$'://Search By Original Item Name
                         if (subterm.Substring(1) == "") { return "1"; }
-                        if (logic.UIData == null) { return "0"; }
-                        if (Perfect && logic.TrackerData.VanillaItem.ToLower() == subterm.Substring(1).ToLower() == Inverse) { return "0"; }
-                        else if (!Perfect && logic.TrackerData.VanillaItem.ToLower().Contains(subterm.Substring(1).ToLower()) == Inverse) { return "0"; }
+                        if (logic.GetDictEntry(Instance).OriginalItem == null) { return "0"; }
+                        if (Perfect && logic.GetDictEntry(Instance).OriginalItem.ToLower() == subterm.Substring(1).ToLower() == Inverse) { return "0"; }
+                        else if (!Perfect && logic.GetDictEntry(Instance).OriginalItem.ToLower().Contains(subterm.Substring(1).ToLower()) == Inverse) { return "0"; }
                         break;
                     case '%'://Search By Location Name
                         if (subterm.Substring(1) == "") { return "1"; }
-                        if (logic.UIData.LocationName == null) { return "0"; }
-                        if (Perfect && logic.UIData.LocationName.ToLower() == subterm.Substring(1).ToLower() == Inverse) { return "0"; }
-                        else if (!Perfect && logic.UIData.LocationName.ToLower().Contains(subterm.Substring(1).ToLower()) == Inverse) { return "0"; }
+                        if (logic.GetDictEntry(Instance).Name == null) { return "0"; }
+                        if (Perfect && logic.GetDictEntry(Instance).Name.ToLower() == subterm.Substring(1).ToLower() == Inverse) { return "0"; }
+                        else if (!Perfect && logic.GetDictEntry(Instance).Name.ToLower().Contains(subterm.Substring(1).ToLower()) == Inverse) { return "0"; }
                         break;
                     default: //Search By "NameToCompare" variable
                         if (Perfect && NameToCompare.ToLower() == subterm.ToLower() == Inverse) { return "0"; }
@@ -205,7 +207,46 @@ namespace MMR_Tracker_V3
 
         public static bool CheckforSpoilerLog(LogicObjects.TrackerInstance logic)
         {
-            return logic.LocationPool.Locations.Any(x => !string.IsNullOrWhiteSpace(x.TrackerData.SpoilerLogGivenItem));
+            return logic.LocationPool.Any(x => !string.IsNullOrWhiteSpace(x.Randomizeditem.SpoilerLogGivenItem));
+        }
+
+        public static void TimeCodeExecution(Stopwatch stopwatch, string CodeTimed = "", int Action = 0)
+        {
+            if (Action == 0)
+            {
+                stopwatch.Start();
+            }
+            else
+            {
+                Debug.WriteLine($"{CodeTimed} took {stopwatch.ElapsedMilliseconds} m/s");
+                stopwatch.Stop();
+                stopwatch.Reset();
+                if (Action == 1) { stopwatch.Start(); }
+            }
+        }
+
+        public static MMRData.JsonFormatLogicItem CreateInaccessableLogic(string ID)
+        {
+            return new MMRData.JsonFormatLogicItem()
+            {
+                Id = ID,
+                RequiredItems = new List<string> { "false" },
+                ConditionalItems = new List<List<string>>(),
+                IsTrick = false
+            };
+        }
+    }
+    public static class GenericCopier<T>
+    {
+        public static T DeepCopy(object objectToCopy)
+        {
+            using (MemoryStream memoryStream = new MemoryStream())
+            {
+                BinaryFormatter binaryFormatter = new BinaryFormatter();
+                binaryFormatter.Serialize(memoryStream, objectToCopy);
+                memoryStream.Seek(0, SeekOrigin.Begin);
+                return (T)binaryFormatter.Deserialize(memoryStream);
+            }
         }
     }
 }

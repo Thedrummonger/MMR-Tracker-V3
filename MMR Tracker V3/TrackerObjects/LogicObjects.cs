@@ -1,26 +1,30 @@
 ﻿using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
+using static MMR_Tracker_V3.TrackerObjects.HintData;
 using static MMR_Tracker_V3.TrackerObjects.ItemData;
 using static MMR_Tracker_V3.TrackerObjects.LocationData;
 using static MMR_Tracker_V3.TrackerObjects.LogicDictionaryData;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
+using static MMR_Tracker_V3.TrackerObjects.MMRData;
 using static MMR_Tracker_V3.TrackerObjects.OptionData;
 
 namespace MMR_Tracker_V3
 {
     public class LogicObjects
     {
+        [Serializable]
         public class TrackerInstance
         {
-            public LocationPool LocationPool { get; set; } = new LocationPool();
-            public ItemPool ItemPool { get; set; } = new ItemPool();
-            public MacroData Macros { get; set; } = new MacroData();
-            public TrackerOptions TrackerOptions { get; set; } = new TrackerOptions();
+            public List<LocationObject> LocationPool { get; set; } = new List<LocationObject>();
+            public List<HintObject> HintPool { get; set; } = new List<HintObject>();
+            public List<MacroObject> MacroPool { get; set; } = new List<MacroObject>();
+            public List<ItemObject> ItemPool { get; set; } = new List<ItemObject>();
+            public List<TrackerOption> TrackerOptions { get; set; } = new List<TrackerOption>();
             public LogicDictionary LogicDictionary { get; set; } = new LogicDictionary();
-            public MMRData.LogicFile LogicFile { get; set; } = new MMRData.LogicFile();
+            public LogicFile LogicFile { get; set; } = new MMRData.LogicFile();
+            public Dictionary<string, JsonFormatLogicItem> LogicOverride { get; set; } = new Dictionary<string, JsonFormatLogicItem>();
             public Options Options { get; set; } = new Options();
-            public HintData.HintPool HintPool { get; set; } = new HintData.HintPool();
             public InstanceReference InstanceReference { get; set; } = new InstanceReference(); 
             public static TrackerInstance FromJson(string json)
             {
@@ -40,20 +44,18 @@ namespace MMR_Tracker_V3
             };
         }
 
+        [Serializable]
         public class InstanceReference
         {
-            public Dictionary<string, LogicMapping> LogicItemMappings { get; set; } = new Dictionary<string, LogicMapping>();
-            public Dictionary<string, LogicMapping> LogicLocationMappings { get; set; } = new Dictionary<string, LogicMapping>();
-            public Keydata Keydata { get; set; } = new Keydata();
+            public Dictionary<string, int> LocationDictionaryMapping { get; set; } = new Dictionary<string, int>();
+            public Dictionary<string, int> ItemDictionaryMapping { get; set; } = new Dictionary<string, int>();
+            public Dictionary<string, int> MacroDictionaryMapping { get; set; } = new Dictionary<string, int>();
+            public Dictionary<string, int> TrackerOptionDictionaryMapping { get; set; } = new Dictionary<string, int>();
+            public Dictionary<string, int> HintDictionaryMapping { get; set; } = new Dictionary<string, int>();
+            public Dictionary<string, int> LogicFileMapping { get; set; } = new Dictionary<string, int>();
         }
 
-        public class Keydata
-        {
-            public List<string> SmallKeys { get; set; } = new List<string>();
-            public List<string> BossKeys { get; set; } = new List<string>();
-            public List<string> LocationWithKeysInLogic { get; set; } = new List<string>();
-        }
-
+        [Serializable]
         public class LogicMapping
         {
             public LogicEntryType logicEntryType { get; set; }
@@ -61,6 +63,7 @@ namespace MMR_Tracker_V3
 
         }
 
+        [Serializable]
         public class Options
         {
             public bool EntranceRadnoEnabled { get; set; } = false;
@@ -70,6 +73,7 @@ namespace MMR_Tracker_V3
             public WinformData WinformData { get; set; } = new WinformData();
         }
 
+        [Serializable]
         public class WinformData
         {
             public string FormFont { get; set; } = string.Empty;

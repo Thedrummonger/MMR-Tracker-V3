@@ -12,6 +12,7 @@ namespace MMR_Tracker_V3.TrackerObjects
     public static class MiscData
     {
 
+        [Serializable]
         public class Areaheader
         {
             public string Area { get; set; }
@@ -25,6 +26,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return Display;
             }
         }
+        [Serializable]
         public enum CheckState
         {
             Checked = 0,
@@ -32,6 +34,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             Unchecked = 2
         }
 
+        [Serializable]
         public enum RandomizedState
         {
             [Description("Rand")]
@@ -44,18 +47,20 @@ namespace MMR_Tracker_V3.TrackerObjects
             ForcedJunk = 3
         }
 
-
+        [Serializable]
         public enum MiddleClickFunction
         {
             star = 0,
             set = 1
         }
 
+        [Serializable]
         public enum MacroType
         {
             User = 0,
             Randomizer = 1
         }
+        [Serializable]
         public enum TimeOfDay
         {
             None,
@@ -66,12 +71,15 @@ namespace MMR_Tracker_V3.TrackerObjects
             Day3 = 16,
             Night3 = 32,
         }
+        [Serializable]
         public enum LogicEntryType
         {
             item,
             location,
             macro,
             Hint,
+            Bool,
+            Option,
             error
         }
         public static string GetDescription<T>(this T e) where T : IConvertible

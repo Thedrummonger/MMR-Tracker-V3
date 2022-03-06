@@ -10,6 +10,7 @@ namespace MMR_Tracker_V3.TrackerObjects
 {
     public class LogicDictionaryData
     {
+        [Serializable]
         public class LogicDictionary
         {
             public int LogicVersion { get; set; }
@@ -41,6 +42,7 @@ namespace MMR_Tracker_V3.TrackerObjects
 
         }
 
+        [Serializable]
         public class DictionaryLocationEntries
         {
             public string ID { get; set; }
@@ -52,18 +54,19 @@ namespace MMR_Tracker_V3.TrackerObjects
 
         }
 
+        [Serializable]
         public class DictionaryItemEntries
         {
             public string ID { get; set; }
             public string Name { get; set; }
-            public string[] AltNames { get; set; } = Array.Empty<string>();
             public int? WalletCapacity { get; set; } = null;
-            public int MaxAmountInWorld { get; set; } = -1;
-            public bool ValidStartingItem { get; set; }
+            public int? MaxAmountInWorld { get; set; } = -1;
+            public bool? ValidStartingItem { get; set; }
             public string[] ItemTypes { get; set; } = Array.Empty<string>();
 
         }
 
+        [Serializable]
         public class DictionaryMacroEntry
         {
             public string ID { get; set; }
@@ -73,6 +76,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public dynamicLogicData DynamicLogicData { get; set; } = null;
         }
 
+        [Serializable]
         public class DictionaryHintEntries
         {
             public string ID { get; set; }

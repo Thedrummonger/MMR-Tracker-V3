@@ -67,6 +67,7 @@ namespace Windows_Form_Frontend
             this.spoilerLogToolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.devToolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewAsUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CodeTestingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -190,6 +191,7 @@ namespace Windows_Form_Frontend
             this.CHKShowAll.TabIndex = 34;
             this.CHKShowAll.Text = "Show All";
             this.CHKShowAll.UseVisualStyleBackColor = false;
+            this.CHKShowAll.CheckedChanged += new System.EventHandler(this.CHKShowAll_CheckedChanged);
             // 
             // BTNSetEntrance
             // 
@@ -438,7 +440,8 @@ namespace Windows_Form_Frontend
             // devToolsToolStripMenuItem
             // 
             this.devToolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.viewAsUserToolStripMenuItem});
+            this.viewAsUserToolStripMenuItem,
+            this.CodeTestingToolStripMenuItem});
             this.devToolsToolStripMenuItem.Name = "devToolsToolStripMenuItem";
             this.devToolsToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.devToolsToolStripMenuItem.Text = "DevTools";
@@ -446,26 +449,36 @@ namespace Windows_Form_Frontend
             // viewAsUserToolStripMenuItem
             // 
             this.viewAsUserToolStripMenuItem.Name = "viewAsUserToolStripMenuItem";
-            this.viewAsUserToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.viewAsUserToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.viewAsUserToolStripMenuItem.Text = "View as User";
+            // 
+            // CodeTestingToolStripMenuItem
+            // 
+            this.CodeTestingToolStripMenuItem.Name = "CodeTestingToolStripMenuItem";
+            this.CodeTestingToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.CodeTestingToolStripMenuItem.Text = "Code Testing";
+            this.CodeTestingToolStripMenuItem.Click += new System.EventHandler(this.CodeTestingToolStripMenuItem_Click);
             // 
             // undoToolStripMenuItem
             // 
+            this.undoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("undoToolStripMenuItem.Image")));
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
-            this.undoToolStripMenuItem.Text = "undo";
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
+            this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
             // 
             // redoToolStripMenuItem
             // 
+            this.redoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("redoToolStripMenuItem.Image")));
             this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.redoToolStripMenuItem.Text = "redo";
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
+            this.redoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
             // 
             // refreshToolStripMenuItem
             // 
+            this.refreshToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("refreshToolStripMenuItem.Image")));
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
-            this.refreshToolStripMenuItem.Text = "refresh";
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
+            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
             // 
             // MainInterface
             // 
@@ -550,6 +563,7 @@ namespace Windows_Form_Frontend
         private System.Windows.Forms.ToolStripMenuItem redoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewAsUserToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem CodeTestingToolStripMenuItem;
     }
 }
 
