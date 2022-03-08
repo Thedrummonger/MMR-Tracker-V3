@@ -20457,7 +20457,23 @@
               ]
             }
           ],
-          "AdditionalLogic": []
+          "AdditionalLogic": [],
+          "ItemNameOverride": {
+            "ItemBow": "Progressive Bow",
+            "UpgradeBigQuiver": "Progressive Bow",
+            "UpgradeBiggestQuiver": "Progressive Bow",
+            "ItemBombBag": "Progressive Bomb Bag",
+            "UpgradeBigBombBag": "Progressive Bomb Bag",
+            "UpgradeBiggestBombBag": "Progressive Bomb Bag",
+            "UpgradeAdultWallet": "Progressive Wallet",
+            "UpgradeGiantWallet": "Progressive Wallet",
+            "UpgradeRoyalWallet": "Progressive Wallet",
+            "StartingSword": "Progressive Sword",
+            "UpgradeRazorSword": "Progressive Sword",
+            "UpgradeGildedSword": "Progressive Sword",
+            "FairyMagic": "Progressive Magic",
+            "FairyDoubleMagic": "Progressive Magic"
+          }
         },
         "disabled": {
           "LogicReplacements": [],

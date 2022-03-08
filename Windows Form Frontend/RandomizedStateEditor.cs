@@ -74,7 +74,7 @@ namespace Windows_Form_Frontend
                     {
                         var VanillaItemDictIndex = _Instance.InstanceReference.ItemDictionaryMapping[VanillaItem];
                         var VanillaItemObject = _Instance.LogicDictionary.ItemList[VanillaItemDictIndex];
-                        VanillaItemText  = $"{VanillaItemObject.Name} [{VanillaItem}])";
+                        VanillaItemText  = $"{VanillaItemObject.GetItemName(_Instance)} [{VanillaItem}])";
                     }
                     else
                     {
@@ -101,7 +101,7 @@ namespace Windows_Form_Frontend
             {
                 if (i.CanBePlaced(_Instance))
                 {
-                    i.DisplayName = i.GetDictEntry(_Instance).Name ?? i.Id;
+                    i.DisplayName = i.GetDictEntry(_Instance).GetItemName(_Instance) ?? i.Id;
                     if (i.DisplayName.ToLower().Contains(txtSearchAvailableStarting.Text.ToLower()))
                     {
                         lbAvailableStarting.Items.Add(i);
@@ -110,7 +110,7 @@ namespace Windows_Form_Frontend
             }
             foreach (var i in _DataSets.CurrentStartingItems)
             {
-                i.DisplayName = (i.GetDictEntry(_Instance).Name ?? i.Id) + $": X{i.AmountInStartingpool}";
+                i.DisplayName = (i.GetDictEntry(_Instance).GetItemName(_Instance) ?? i.Id) + $": X{i.AmountInStartingpool}";
                 if (i.DisplayName.ToLower().Contains(txtSearchCurrentStarting.Text.ToLower()))
                 {
                     lbCurrentStarting.Items.Add(i);

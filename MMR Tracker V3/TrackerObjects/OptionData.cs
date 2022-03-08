@@ -42,6 +42,7 @@ namespace MMR_Tracker_V3.TrackerObjects
         {
             public LogicReplacement[] LogicReplacements { get; set; } = Array.Empty<LogicReplacement>();
             public AdditionalLogic[] AdditionalLogic { get; set; } = Array.Empty<AdditionalLogic>();
+            public Dictionary<string, string> ItemNameOverride { get; set; } = new Dictionary<string, string>();
             public bool LocationValid(string ID)
             {
                 return LogicReplacements.Any(x => x.LocationValid(ID)) || AdditionalLogic.Any(x => x.LocationValid(ID));

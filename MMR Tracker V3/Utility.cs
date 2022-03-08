@@ -88,7 +88,7 @@ namespace MMR_Tracker_V3
                 {
                     string RandomizedItemDisplay = i.Randomizeditem.Item;
                     var RandomizedItem = instance.GetItemByID(i.Randomizeditem.Item);
-                    if (RandomizedItem != null) { RandomizedItemDisplay = RandomizedItem.GetDictEntry(instance).Name ?? RandomizedItem.Id; }
+                    if (RandomizedItem != null) { RandomizedItemDisplay = RandomizedItem.GetDictEntry(instance).GetItemName(instance) ?? RandomizedItem.Id; }
                     Displayname += $": {RandomizedItemDisplay}";
                 }
             }
@@ -96,7 +96,7 @@ namespace MMR_Tracker_V3
             {
                 Displayname = i.Randomizeditem.Item;
                 var RandomizedItem = instance.GetItemByID(i.Randomizeditem.Item);
-                if (RandomizedItem != null) { Displayname = RandomizedItem.GetDictEntry(instance).Name ?? RandomizedItem.Id; }
+                if (RandomizedItem != null) { Displayname = RandomizedItem.GetDictEntry(instance).GetItemName(instance) ?? RandomizedItem.Id; }
                 Displayname = $"{Displayname}: {i.GetDictEntry(instance).Name ?? i.ID}";
             }
             return Displayname;

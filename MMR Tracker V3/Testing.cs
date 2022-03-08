@@ -258,7 +258,7 @@ namespace MMR_Tracker_V3
 
         public static void CodeTesting(LogicObjects.TrackerInstance instance)
         {
-            File.WriteAllText(@"D:\Testing\ExportedDict.json", instance.LogicDictionary.ToString());
+
         }
 
         public readonly static Newtonsoft.Json.JsonSerializerSettings _NewtonsoftJsonSerializerOptions = new Newtonsoft.Json.JsonSerializerSettings

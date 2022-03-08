@@ -64,6 +64,13 @@ namespace MMR_Tracker_V3.TrackerObjects
             public bool? ValidStartingItem { get; set; } = null;
             public string[] ItemTypes { get; set; } = Array.Empty<string>();
 
+            public string GetItemName(LogicObjects.TrackerInstance instance)
+            {
+                var NameReplaceOption = instance.UserOptions.Values.FirstOrDefault(x => x.GetActions().ItemNameOverride.ContainsKey(ID));
+                if (NameReplaceOption != null) { return NameReplaceOption.GetActions().ItemNameOverride[ID]; }
+                return Name ?? ID;
+            }
+
         }
 
         [Serializable]
