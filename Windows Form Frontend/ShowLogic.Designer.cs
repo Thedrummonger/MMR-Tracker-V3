@@ -61,6 +61,7 @@ namespace Windows_Form_Frontend
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
+            this.listBox1.HorizontalScrollbar = true;
             this.listBox1.ItemHeight = 15;
             this.listBox1.Location = new System.Drawing.Point(13, 28);
             this.listBox1.Name = "listBox1";
@@ -70,6 +71,7 @@ namespace Windows_Form_Frontend
             // listBox2
             // 
             this.listBox2.FormattingEnabled = true;
+            this.listBox2.HorizontalScrollbar = true;
             this.listBox2.ItemHeight = 15;
             this.listBox2.Location = new System.Drawing.Point(197, 27);
             this.listBox2.Name = "listBox2";
@@ -79,6 +81,7 @@ namespace Windows_Form_Frontend
             // listBox3
             // 
             this.listBox3.FormattingEnabled = true;
+            this.listBox3.HorizontalScrollbar = true;
             this.listBox3.ItemHeight = 15;
             this.listBox3.Location = new System.Drawing.Point(508, 27);
             this.listBox3.Name = "listBox3";
@@ -133,6 +136,7 @@ namespace Windows_Form_Frontend
             // listBox4
             // 
             this.listBox4.FormattingEnabled = true;
+            this.listBox4.HorizontalScrollbar = true;
             this.listBox4.ItemHeight = 15;
             this.listBox4.Location = new System.Drawing.Point(508, 169);
             this.listBox4.Name = "listBox4";
@@ -395,6 +399,7 @@ namespace Windows_Form_Frontend
             this.Controls.Add(this.listBox3);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.listBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ShowLogic";
             this.Text = "ShowLogic";
             this.Load += new System.EventHandler(this.ShowLogic_Load);

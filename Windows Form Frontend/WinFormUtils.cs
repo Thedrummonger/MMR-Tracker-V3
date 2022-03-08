@@ -11,11 +11,27 @@ namespace Windows_Form_Frontend
 {
     class WinFormUtils
     {
-        public static string CreateDivider(ListBox container, string DividerText = "")
+        public static string CreateDivider(object containerObject, string DividerText = "")
         {
-            Font font = container.Font;
-            int width = container.Width;
-            Graphics g = container.CreateGraphics();
+            Font font;
+            Graphics g;
+            int width;
+            if (containerObject is ListView LVcontainer)
+            {
+                font = LVcontainer.Font;
+                width = LVcontainer.Width - (LVcontainer.CheckBoxes ? 45 : 0);
+                g = LVcontainer.CreateGraphics();
+            }
+            else if (containerObject is ListBox LBcontainer)
+            {
+                font = LBcontainer.Font;
+                width = LBcontainer.Width;
+                g = LBcontainer.CreateGraphics();
+            }
+            else
+            {
+                return DividerText;
+            }
 
             int marks = 1;
             string Divider = "";

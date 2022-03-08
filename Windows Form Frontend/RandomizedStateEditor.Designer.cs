@@ -42,7 +42,6 @@ namespace Windows_Form_Frontend
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lvTricks = new System.Windows.Forms.ListView();
-            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.label4 = new System.Windows.Forms.Label();
             this.txtSearchAvailableStarting = new System.Windows.Forms.TextBox();
             this.TxtLocationSearch = new System.Windows.Forms.TextBox();
@@ -68,6 +67,7 @@ namespace Windows_Form_Frontend
             this.label2 = new System.Windows.Forms.Label();
             this.btnRemoveStartingItem = new System.Windows.Forms.Button();
             this.txtSearchCurrentStarting = new System.Windows.Forms.TextBox();
+            this.Tricks = new System.Windows.Forms.ColumnHeader();
             this.SuspendLayout();
             // 
             // lvLocationList
@@ -88,7 +88,7 @@ namespace Windows_Form_Frontend
             // columnHeaderEntry
             // 
             this.columnHeaderEntry.Text = "Entry";
-            this.columnHeaderEntry.Width = 240;
+            this.columnHeaderEntry.Width = 233;
             // 
             // columnHeaderVanilla
             // 
@@ -112,7 +112,7 @@ namespace Windows_Form_Frontend
             // 
             // btnSetUnRandomized
             // 
-            this.btnSetUnRandomized.Location = new System.Drawing.Point(247, 32);
+            this.btnSetUnRandomized.Location = new System.Drawing.Point(247, 27);
             this.btnSetUnRandomized.Name = "btnSetUnRandomized";
             this.btnSetUnRandomized.Size = new System.Drawing.Size(110, 23);
             this.btnSetUnRandomized.TabIndex = 2;
@@ -122,7 +122,7 @@ namespace Windows_Form_Frontend
             // 
             // btnSetManual
             // 
-            this.btnSetManual.Location = new System.Drawing.Point(357, 32);
+            this.btnSetManual.Location = new System.Drawing.Point(357, 27);
             this.btnSetManual.Name = "btnSetManual";
             this.btnSetManual.Size = new System.Drawing.Size(110, 23);
             this.btnSetManual.TabIndex = 4;
@@ -175,7 +175,7 @@ namespace Windows_Form_Frontend
             // lvTricks
             // 
             this.lvTricks.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1});
+            this.Tricks});
             this.lvTricks.HideSelection = false;
             this.lvTricks.Location = new System.Drawing.Point(706, 56);
             this.lvTricks.Name = "lvTricks";
@@ -184,11 +184,6 @@ namespace Windows_Form_Frontend
             this.lvTricks.UseCompatibleStateImageBehavior = false;
             this.lvTricks.View = System.Windows.Forms.View.Details;
             this.lvTricks.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvTricks_ItemChecked);
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Entry";
-            this.columnHeader1.Width = 215;
             // 
             // label4
             // 
@@ -445,6 +440,10 @@ namespace Windows_Form_Frontend
             this.txtSearchCurrentStarting.TabIndex = 18;
             this.txtSearchCurrentStarting.TextChanged += new System.EventHandler(this.txtSearchCurrentStarting_TextChanged);
             // 
+            // Tricks
+            // 
+            this.Tricks.Width = 203;
+            // 
             // RandomizedStateEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -486,6 +485,7 @@ namespace Windows_Form_Frontend
             this.Controls.Add(this.btnSetUnRandomized);
             this.Controls.Add(this.btnSetRandomized);
             this.Controls.Add(this.lvLocationList);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RandomizedStateEditor";
             this.Text = "RandomizedStateEditor";
             this.Load += new System.EventHandler(this.RandomizedStateEditor_Load);
@@ -507,7 +507,6 @@ namespace Windows_Form_Frontend
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListView lvTricks;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtSearchAvailableStarting;
         private System.Windows.Forms.TextBox TxtLocationSearch;
@@ -534,5 +533,6 @@ namespace Windows_Form_Frontend
         private System.Windows.Forms.Button btnRemoveStartingItem;
         private System.Windows.Forms.TextBox txtSearchCurrentStarting;
         private System.Windows.Forms.ColumnHeader columnHeaderVanilla;
+        private System.Windows.Forms.ColumnHeader Tricks;
     }
 }

@@ -226,114 +226,33 @@ namespace Windows_Form_Frontend
             foreach (var i in ToUpdate)
             {
                 i.Items.Clear();
-                i.ItemHeight = Convert.ToInt32(WinFormUtils.GetFontFromString(MainUITrackerInstance.StaticOptions.WinformData.FormFont).Size * 1.8);
                 i.Font = WinFormUtils.GetFontFromString(MainUITrackerInstance.StaticOptions.WinformData.FormFont);
+                i.ItemHeight = Convert.ToInt32(i.Font.Size * 1.8);
                 i.BeginUpdate();
             }
 
             Dictionary<string, int> Groups = Utility.GetCategoriesFromFile(MainUITrackerInstance);
-
             var DataSets = TrackerDataHandeling.PopulateDataSets(MainUITrackerInstance);
 
-            var AvailableLocations = DataSets.AvailableLocations;
-            if (TXTLocSearch.Text.StartsWith("^") || CHKShowAll.Checked)
+            if (ToUpdate.Contains(LBValidLocations)) 
             {
-                AvailableLocations = DataSets.UncheckedLocations;
+                var Entries = TrackerDataHandeling.PrintToLocationList(Groups, DataSets, WinFormUtils.CreateDivider(LBCheckedLocations), MainUITrackerInstance, TXTCheckedSearch.Text, CHKShowAll.Checked);
+                foreach(var i in Entries) { LBValidLocations.Items.Add(i); }
+                LBValidLocations.TopIndex = lbLocTop; 
+            }
+            if (ToUpdate.Contains(LBValidEntrances)) 
+            {
+                //PrintToEntranceList(Groups, DataSets);
+                LBValidEntrances.TopIndex = lbEntTop; 
+            }
+            if (ToUpdate.Contains(LBCheckedLocations)) 
+            {
+                var Entries = TrackerDataHandeling.PrintToCheckedList(Groups, DataSets, WinFormUtils.CreateDivider(LBCheckedLocations), MainUITrackerInstance, TXTCheckedSearch.Text);
+                foreach (var i in Entries) { LBCheckedLocations.Items.Add(i); }
+                LBCheckedLocations.TopIndex = lbCheckTop; 
             }
 
-            var CheckedLocations = DataSets.CheckedLocations;
-
-            AvailableLocations = AvailableLocations.Concat(DataSets.MarkedLocations)
-                .OrderBy(x => (Groups.ContainsKey(x.GetDictEntry(MainUITrackerInstance).Area.ToLower().Trim()) ? Groups[x.GetDictEntry(MainUITrackerInstance).Area.ToLower().Trim()] : DataSets.AvailableLocations.Count() + 1))
-                .ThenBy(x => x.GetDictEntry(MainUITrackerInstance).Area)
-                .ThenBy(x => Utility.GetDisplayName(0, x, MainUITrackerInstance)).ToList();
-            CheckedLocations = CheckedLocations
-                .OrderBy(x => (Groups.ContainsKey(x.GetDictEntry(MainUITrackerInstance).Area.ToLower().Trim()) ? Groups[x.GetDictEntry(MainUITrackerInstance).Area.ToLower().Trim()] : DataSets.CheckedLocations.Count() + 1))
-                .ThenBy(x => x.GetDictEntry(MainUITrackerInstance).Area)
-                .ThenBy(x => Utility.GetDisplayName(1, x, MainUITrackerInstance)).ToList();
-
-            string CurrentLocation = "";
-            foreach(var i in AvailableLocations)
-            {
-                if (!ToUpdate.Contains(LBValidLocations)) { break; }
-
-                if (i.RandomizedState == MiscData.RandomizedState.ForcedJunk) { continue; }
-
-                i.DisplayName = Utility.GetDisplayName(0, i, MainUITrackerInstance);
-
-                if (!SearchStringParser.FilterSearch(MainUITrackerInstance, i, TXTLocSearch.Text, i.DisplayName)) { continue; }
-
-                if (CurrentLocation != i.GetDictEntry(MainUITrackerInstance).Area)
-                {
-                    if (LBValidLocations.Items.Count > 0) { LBValidLocations.Items.Add(WinFormUtils.CreateDivider(LBValidLocations)); }
-                    LBValidLocations.Items.Add(new MiscData.Areaheader { Area = i.GetDictEntry(MainUITrackerInstance).Area });
-                    CurrentLocation = i.GetDictEntry(MainUITrackerInstance).Area;
-                }
-                LBValidLocations.Items.Add(i);
-            }
-            CurrentLocation = "";
-            foreach (var i in CheckedLocations)
-            {
-                if (!ToUpdate.Contains(LBCheckedLocations)) { break; }
-
-                if (i.RandomizedState == MiscData.RandomizedState.Unrandomized) { continue; }
-
-                i.DisplayName = Utility.GetDisplayName(1, i, MainUITrackerInstance);
-
-                if (!SearchStringParser.FilterSearch(MainUITrackerInstance, i, TXTCheckedSearch.Text, i.DisplayName)) { continue; }
-
-                if (CurrentLocation != i.GetDictEntry(MainUITrackerInstance).Area)
-                {
-                    if (LBCheckedLocations.Items.Count > 0) { LBCheckedLocations.Items.Add(WinFormUtils.CreateDivider(LBCheckedLocations)); }
-                    LBCheckedLocations.Items.Add(new MiscData.Areaheader { Area = i.GetDictEntry(MainUITrackerInstance).Area });
-                    CurrentLocation = i.GetDictEntry(MainUITrackerInstance).Area;
-                }
-                LBCheckedLocations.Items.Add(i);
-            }
-
-            var AvailableHints = DataSets.AvailableHints;
-            if (TXTLocSearch.Text.StartsWith("^") || CHKShowAll.Checked)
-            {
-                AvailableHints = DataSets.UnheckedHints;
-            }
-
-            if (AvailableHints.Any())
-            {
-                bool DividerCreated = false;
-                foreach (var i in AvailableHints)
-                {
-                    i.DisplayName = (i.CheckState == MiscData.CheckState.Marked) ? $"{i.GetDictEntry(MainUITrackerInstance).Name}: {i.HintText}" : i.GetDictEntry(MainUITrackerInstance).Name;
-                    if (!i.DisplayName.ToLower().Contains(TXTLocSearch.Text.ToLower())) { continue; }
-                    if (!DividerCreated)
-                    {
-                        if (LBValidLocations.Items.Count > 0) { LBValidLocations.Items.Add(WinFormUtils.CreateDivider(LBValidLocations)); }
-                        LBValidLocations.Items.Add("HINTS:");
-                        DividerCreated = true;
-                    }
-                    LBValidLocations.Items.Add(i);
-                }
-            }
-            if (DataSets.CheckedHints.Any())
-            {
-                bool DividerCreated = false;
-                foreach (var i in DataSets.CheckedHints)
-                {
-                    i.DisplayName = $"{i.GetDictEntry(MainUITrackerInstance).Name}: {i.HintText}";
-                    if (!i.DisplayName.ToLower().Contains(TXTCheckedSearch.Text.ToLower())) { continue; }
-                    if (!DividerCreated)
-                    {
-                        if (LBCheckedLocations.Items.Count > 0) { LBCheckedLocations.Items.Add(WinFormUtils.CreateDivider(LBCheckedLocations)); }
-                        LBCheckedLocations.Items.Add("HINTS:");
-                        DividerCreated = true;
-                    }
-                    LBCheckedLocations.Items.Add(i);
-                }
-            }
             foreach (var i in ToUpdate) { i.EndUpdate(); }
-
-            if (ToUpdate.Contains(LBValidLocations)) { LBValidLocations.TopIndex = lbLocTop; }
-            if (ToUpdate.Contains(LBValidEntrances)) { LBValidEntrances.TopIndex = lbEntTop; }
-            if (ToUpdate.Contains(LBCheckedLocations)) { LBCheckedLocations.TopIndex = lbCheckTop; }
         }
 
         private void NewToolStripMenuItem1_Click(object sender, EventArgs e)

@@ -27,14 +27,24 @@ namespace Windows_Form_Frontend
 
         private void RandomizedStateEditor_Load(object sender, EventArgs e)
         {
-            var DataSets = TrackerDataHandeling.PopulateDataSets(_Instance);
-
             cmbLocationType.Items.Add("Item Locations");
             cmbLocationType.SelectedIndex = 0;
 
             PrintToLocationList(); 
             PrintStartingItemData();
             PrinttrickData();
+            UpdatedSettingStrings();
+        }
+
+        private void UpdatedSettingStrings()
+        {
+            var LocationList = _Instance.LocationPool.Values.Where(x => !x.GetDictEntry(_Instance).IgnoreForSettingString ?? true).ToList();
+            var StartingItems = GetStartingItemList(_Instance).ToList();
+            var TrickList = _Instance.MacroPool.Values.Where(x => x.isTrick(_Instance)).ToList();
+            txtLocString.Text = CreateSettingString(LocationList, LocationList.Where(x => !x.IsUnrandomized()).ToList());
+            txtjunkString.Text = CreateSettingString(LocationList, LocationList.Where(x => x.RandomizedState == MiscData.RandomizedState.ForcedJunk).ToList());
+            txtStartString.Text = CreateSettingString(StartingItems, StartingItems.Where(x => x.AmountInStartingpool > 0).ToList());
+            txtTrickString.Text = CreateSettingString(TrickList, TrickList.Where(x => x.TrickEnabled).ToList());
         }
 
         private void PrintToLocationList()
@@ -42,7 +52,7 @@ namespace Windows_Form_Frontend
             Updating = true;
             lvLocationList.ShowItemToolTips = true;
             lvLocationList.Items.Clear();
-            if (cmbLocationType.SelectedItem == "Item Locations")
+            if (cmbLocationType.SelectedItem is string selection && selection == "Item Locations")
             {
                 PrintLocationData();
             }
@@ -91,6 +101,7 @@ namespace Windows_Form_Frontend
             lvLocationList.Items.AddRange(TempList.ToArray());
             lvLocationList.CheckBoxes = true;
         }
+
         private void PrintStartingItemData()
         {
             Updating = true;
@@ -131,7 +142,7 @@ namespace Windows_Form_Frontend
                 if (!i.ID.ToLower().Contains(txtTrickSearch.Text.ToLower())) { continue; }
                 if (CurrentCategory != _Instance.GetOriginalLogic(i.ID).TrickCategory)
                 {
-                    lvTricks.Items.Add(_Instance.GetOriginalLogic(i.ID).TrickCategory.ToUpper());
+                    lvTricks.Items.Add(WinFormUtils.CreateDivider(lvTricks, _Instance.GetOriginalLogic(i.ID).TrickCategory.ToUpper()));
                     CurrentCategory = _Instance.GetOriginalLogic(i.ID).TrickCategory;
                 }
 
@@ -155,7 +166,8 @@ namespace Windows_Form_Frontend
             }
             var trick = (MacroObject)e.Item.Tag;
             trick.TrickEnabled = e.Item.Checked;
-            UpdateItemSets();
+            UpdateItemSets(); 
+            UpdatedSettingStrings();
         }
         private void btnAddStartingItem_Click(object sender, EventArgs e)
         {
@@ -166,6 +178,7 @@ namespace Windows_Form_Frontend
             }
             UpdateItemSets();
             PrintStartingItemData();
+            UpdatedSettingStrings();
         }
 
         private void btnRemoveStartingItem_Click(object sender, EventArgs e)
@@ -177,6 +190,7 @@ namespace Windows_Form_Frontend
             }
             UpdateItemSets();
             PrintStartingItemData();
+            UpdatedSettingStrings();
         }
 
         private void lvLocationList_ItemChecked(object sender, ItemCheckedEventArgs e)
@@ -210,7 +224,8 @@ namespace Windows_Form_Frontend
             }
             CheckedLocationItems.Clear();
             UpdateItemSets();
-            PrintToLocationList();
+            PrintToLocationList(); 
+            UpdatedSettingStrings();
         }
 
         private void cmbLocationType_SelectedValueChanged(object sender, EventArgs e)
@@ -244,6 +259,8 @@ namespace Windows_Form_Frontend
             PrintToLocationList();
             PrintStartingItemData();
             PrinttrickData();
+
+            UpdatedSettingStrings();
         }
 
         private bool ParseLocationString(string LocationString)
@@ -318,6 +335,23 @@ namespace Windows_Form_Frontend
                 Index++;
             }
             return true;
+        }
+
+        private static string CreateSettingString(IEnumerable<object> MasterList, IEnumerable<object> SubList)
+        {
+            var ItemGroupCount = (int)Math.Ceiling(MasterList.Count() / 32.0);
+
+            int[] n = new int[ItemGroupCount];
+            string[] ns = new string[ItemGroupCount];
+            foreach (var item in SubList)
+            {
+                var i = MasterList.ToList().IndexOf(item);
+                int j = i / 32;
+                int k = i % 32;
+                n[j] |= (int)(1 << k);
+                ns[j] = Convert.ToString(n[j], 16);
+            }
+            return string.Join("-", ns.Reverse());
         }
 
         private List<ItemData.ItemObject> GetStartingItemList(LogicObjects.TrackerInstance Instance)
