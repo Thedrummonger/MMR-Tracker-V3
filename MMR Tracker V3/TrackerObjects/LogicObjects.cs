@@ -55,6 +55,9 @@ namespace MMR_Tracker_V3
 
             //Logic File References
             public Dictionary<string, int> LogicFileMapping { get; set; } = new Dictionary<string, int>();
+
+            //Cleaned Item names
+            public Dictionary<string, string> CleanedItemMames { get; set; } = new Dictionary<string, string>();
         }
 
         [Serializable]

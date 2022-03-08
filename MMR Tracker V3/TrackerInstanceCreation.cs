@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using static MMR_Tracker_V3.LogicObjects;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
@@ -84,15 +85,29 @@ namespace MMR_Tracker_V3
                 }
             }
 
+            foreach(var i in Instance.ItemPool)
+            {
+                var newString = i.Key;
+                newString = newString.Replace(" ", "_");
+                newString = Regex.Replace(newString, @"[^0-9a-zA-Z\._]", "");
+                if (newString == i.Key) { continue; }
+                Instance.InstanceReference.CleanedItemMames.Add(newString, i.Key);
+                Debug.WriteLine($"Cleaned [{i.Value.GetDictEntry(Instance).Name}] to [{newString}]");
+            }
+
             //Wallet and Price Data
 
             string CanAffordString = $"MMRTCanAfford{Instance.LogicDictionary.DefaultWalletCapacity}";
             Instance.MacroPool.Add(CanAffordString, new() { ID = CanAffordString });
             Instance.PriceData.CapacityMap.Add(Instance.LogicDictionary.DefaultWalletCapacity, CanAffordString);
             Instance.PriceData.WalletEntries = Utility.GetAllWalletLogicEntries(Instance);
-            Instance.PriceData.Wallets = Instance.LogicDictionary.ItemList
+            var ItemWallets = Instance.LogicDictionary.ItemList
                 .Where(x => x.WalletCapacity != null && (int)x.WalletCapacity > -1)
                 .ToDictionary(x => x.ID, x => (int)x.WalletCapacity);
+            var MacroWallets = Instance.LogicDictionary.MacroList
+                .Where(x => x.WalletCapacity != null && (int)x.WalletCapacity > -1)
+                .ToDictionary(x => x.ID, x => (int)x.WalletCapacity);
+            Instance.PriceData.Wallets = ItemWallets.Concat(MacroWallets).ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
 
             foreach (var i in Instance.PriceData.Wallets)
             {
