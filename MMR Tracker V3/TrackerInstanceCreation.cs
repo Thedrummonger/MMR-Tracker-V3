@@ -32,10 +32,12 @@ namespace MMR_Tracker_V3
 
         public static bool PopulateTrackerObject(LogicObjects.TrackerInstance Instance)
         {
+            Instance.UserOptions = Instance.LogicDictionary.Options.ToDictionary(x => x.ID, y => y);
+
             int Index = 0;
             foreach(var i in Instance.LogicDictionary.ItemList)
             {
-                Instance.ItemPool.Add(new() { Id = i.ID });
+                Instance.ItemPool.Add(i.ID, new() { Id = i.ID });
                 Instance.InstanceReference.ItemDictionaryMapping.Add(i.ID, Instance.ItemPool.Count - 1);
             }
 
@@ -45,17 +47,19 @@ namespace MMR_Tracker_V3
                 Instance.InstanceReference.LogicFileMapping.Add(i.Id, Index);
                 if (Instance.LogicDictionary.LocationList.Any(x => x.ID == i.Id))
                 {
-                    Instance.LocationPool.Add(new() { ID = i.Id });
-                    Instance.InstanceReference.LocationDictionaryMapping.Add(i.Id, Instance.LocationPool.Count - 1);
+                    var DictEntry = Instance.LogicDictionary.LocationList.First(x => x.ID == i.Id);
+                    Instance.LocationPool.Add(i.Id, new() { ID = i.Id });
+                    Instance.InstanceReference.LocationDictionaryMapping.Add(i.Id, Instance.LogicDictionary.LocationList.IndexOf(DictEntry));
                 }
                 else if (Instance.LogicDictionary.HintSpots.Any(x => x.ID == i.Id))
                 {
-                    Instance.HintPool.Add(new() { ID = i.Id });
-                    Instance.InstanceReference.HintDictionaryMapping.Add(i.Id, Instance.HintPool.Count - 1);
+                    var DictEntry = Instance.LogicDictionary.HintSpots.First(x => x.ID == i.Id);
+                    Instance.HintPool.Add(i.Id, new() { ID = i.Id });
+                    Instance.InstanceReference.HintDictionaryMapping.Add(i.Id, Instance.LogicDictionary.HintSpots.IndexOf(DictEntry));
                 }
                 else
                 {
-                    Instance.MacroPool.Add(new() { ID = i.Id });
+                    Instance.MacroPool.Add(i.Id, new() { ID = i.Id });
                 }
                 Index++;
             }
@@ -65,9 +69,9 @@ namespace MMR_Tracker_V3
             {
                 Instance.InstanceReference.MacroDictionaryMapping.Add(i.ID, Index);
                 Index++;
-                if (i.Static && !Instance.MacroPool.Any(x => x.ID == i.ID))
+                if (i.Static && !Instance.MacroPool.ContainsKey(i.ID))
                 {
-                    Instance.MacroPool.Add(new() { ID = i.ID });
+                    Instance.MacroPool.Add(i.ID, new() { ID = i.ID });
                 }
                 if (i.RequiredItemsOverride != null || i.ConditionalItemsOverride != null)
                 {
@@ -80,7 +84,33 @@ namespace MMR_Tracker_V3
                 }
             }
 
-            Instance.TrackerOptions = Instance.LogicDictionary.Options;
+            //Wallet and Price Data
+
+            string CanAffordString = $"MMRTCanAfford{Instance.LogicDictionary.DefaultWalletCapacity}";
+            Instance.MacroPool.Add(CanAffordString, new() { ID = CanAffordString });
+            Instance.PriceData.CapacityMap.Add(Instance.LogicDictionary.DefaultWalletCapacity, CanAffordString);
+            Instance.PriceData.WalletEntries = Utility.GetAllWalletLogicEntries(Instance);
+            Instance.PriceData.Wallets = Instance.LogicDictionary.ItemList
+                .Where(x => x.WalletCapacity != null && (int)x.WalletCapacity > -1)
+                .ToDictionary(x => x.ID, x => (int)x.WalletCapacity);
+
+            foreach (var i in Instance.PriceData.Wallets)
+            {
+                CanAffordString = $"MMRTCanAfford{i.Value}";
+                Instance.MacroPool.Add(CanAffordString, new() { ID = CanAffordString });
+                Instance.PriceData.CapacityMap.Add(i.Value, CanAffordString);
+                Instance.LogicOverride.Add(CanAffordString, new MMRData.JsonFormatLogicItem
+                {
+                    Id = CanAffordString,
+                    RequiredItems = new List<string>(),
+                    ConditionalItems = Instance.PriceData.Wallets.Where(x => x.Value >= i.Value).Select(x => new List<string> { x.Key }).ToList()
+                });
+            }
+            Instance.PriceData.Initialized = true;
+
+            Debug.WriteLine(JsonConvert.SerializeObject(Instance.PriceData.WalletEntries, Testing._NewtonsoftJsonSerializerOptions));
+            Debug.WriteLine(JsonConvert.SerializeObject(Instance.PriceData.CapacityMap, Testing._NewtonsoftJsonSerializerOptions));
+            Debug.WriteLine(JsonConvert.SerializeObject(Instance.PriceData.Wallets, Testing._NewtonsoftJsonSerializerOptions));
 
             return true;
         }

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -59,16 +60,16 @@ namespace Windows_Form_Frontend
             List<ListViewItem> TempList = new List<ListViewItem>();
             foreach (var i in _Instance.LocationPool)
             {
-                if (i.RandomizedState == MiscData.RandomizedState.Randomized && !chkShowRand.Checked) { continue; }
-                if (i.RandomizedState == MiscData.RandomizedState.Unrandomized && !chkShowUnrand.Checked) { continue; }
-                if (i.RandomizedState == MiscData.RandomizedState.UnrandomizedManual && !chkShowManual.Checked) { continue; }
-                if (i.RandomizedState == MiscData.RandomizedState.ForcedJunk && !chkShowJunk.Checked) { continue; }
-                i.DisplayName = i.GetDictEntry(_Instance).Name ?? i.ID;
-                if (!Utility.FilterSearch(_Instance, i, TxtLocationSearch.Text, i.DisplayName)) { continue; }
+                if (i.Value.RandomizedState == MiscData.RandomizedState.Randomized && !chkShowRand.Checked) { continue; }
+                if (i.Value.RandomizedState == MiscData.RandomizedState.Unrandomized && !chkShowUnrand.Checked) { continue; }
+                if (i.Value.RandomizedState == MiscData.RandomizedState.UnrandomizedManual && !chkShowManual.Checked) { continue; }
+                if (i.Value.RandomizedState == MiscData.RandomizedState.ForcedJunk && !chkShowJunk.Checked) { continue; }
+                i.Value.DisplayName = i.Value.GetDictEntry(_Instance).Name ?? i.Key;
+                if (!SearchStringParser.FilterSearch(_Instance, i.Value, TxtLocationSearch.Text, i.Value.DisplayName)) { continue; }
                 string VanillaItemText = "";
-                if (i.GetDictEntry(_Instance).OriginalItem != null)
+                if (i.Value.GetDictEntry(_Instance).OriginalItem != null)
                 {
-                    var VanillaItem = i.GetDictEntry(_Instance).OriginalItem;
+                    var VanillaItem = i.Value.GetDictEntry(_Instance).OriginalItem;
                     if (_Instance.InstanceReference.ItemDictionaryMapping.ContainsKey(VanillaItem))
                     {
                         var VanillaItemDictIndex = _Instance.InstanceReference.ItemDictionaryMapping[VanillaItem];
@@ -81,10 +82,10 @@ namespace Windows_Form_Frontend
                     }
                 }
 
-                string[] row = { i.DisplayName, VanillaItemText, i.RandomizedState.GetDescription() };
-                ListViewItem listViewItem = new ListViewItem(row) { Tag = i };
-                listViewItem.Checked = CheckedLocationItems.Contains(i);
-                listViewItem.ToolTipText = $"Location: {i.DisplayName} \nVanilla Item: {VanillaItemText} \nRandomized State: {i.RandomizedState}";
+                string[] row = { i.Value.DisplayName, VanillaItemText, i.Value.RandomizedState.GetDescription() };
+                ListViewItem listViewItem = new ListViewItem(row) { Tag = i.Value };
+                listViewItem.Checked = CheckedLocationItems.Contains(i.Value);
+                listViewItem.ToolTipText = $"Location: {i.Value.DisplayName} \nVanilla Item: {VanillaItemText} \nRandomized State: {i.Value.RandomizedState}";
                 TempList.Add(listViewItem);
             }
             lvLocationList.Items.AddRange(TempList.ToArray());
@@ -230,6 +231,112 @@ namespace Windows_Form_Frontend
         private void txtTrickSearch_TextChanged(object sender, EventArgs e)
         {
             PrinttrickData();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            var SuccessLoc = ParseLocationString(txtLocString.Text);
+            var SuncessJunk = ParseJunkString(txtjunkString.Text);
+            var SuncessStart = ParseStartingItemString(txtStartString.Text);
+
+            UpdateItemSets();
+
+            PrintToLocationList();
+            PrintStartingItemData();
+            PrinttrickData();
+        }
+
+        private bool ParseLocationString(string LocationString)
+        {
+            var LocationPool = _Instance.LocationPool.Values.Where(x => !x.GetDictEntry(_Instance).IgnoreForSettingString ?? true).ToList();
+
+            var ItemGroupCount = (int)Math.Ceiling(LocationPool.Count / 32.0);
+
+            var RandomizedItemIndexs = Utility.ParseLocationAndJunkSettingString(LocationString, ItemGroupCount, "Location");
+            if (RandomizedItemIndexs == null) { return false; }
+
+            int Index = 0;
+            foreach(var i in LocationPool)
+            {
+                bool IsRandomized = RandomizedItemIndexs.Contains(Index);
+                if (IsRandomized && i.IsUnrandomized())
+                {
+                    i.RandomizedState = MiscData.RandomizedState.Randomized;
+                }
+                else if (!IsRandomized && !i.IsUnrandomized())
+                {
+                    i.RandomizedState = MiscData.RandomizedState.Unrandomized;
+                }
+                Index++;
+            }
+            return true;
+        }
+        private bool ParseJunkString(string LocationString)
+        {
+            var LocationPool = _Instance.LocationPool.Values.Where(x => !x.GetDictEntry(_Instance).IgnoreForSettingString ?? true).ToList();
+
+            var ItemGroupCount = (int)Math.Ceiling(LocationPool.Count / 32.0);
+
+            var JunkItemIndexes = Utility.ParseLocationAndJunkSettingString(LocationString, ItemGroupCount, "Location");
+            if (JunkItemIndexes == null) { return false; }
+
+            int Index = 0;
+            foreach (var i in LocationPool)
+            {
+                bool IsJunk = JunkItemIndexes.Contains(Index);
+                if (IsJunk && i.RandomizedState == MiscData.RandomizedState.Randomized)
+                {
+                    i.RandomizedState = MiscData.RandomizedState.ForcedJunk;
+                }
+                else if (!IsJunk && i.RandomizedState == MiscData.RandomizedState.ForcedJunk)
+                {
+                    i.RandomizedState = MiscData.RandomizedState.Randomized;
+                }
+                Index++;
+            }
+            return true;
+        }
+        private bool ParseStartingItemString(string ItemString)
+        {
+            var StartingItems = GetStartingItemList(_Instance);
+
+            var ItemGroupCount = (int)Math.Ceiling(StartingItems.Count / 32.0);
+
+            var StartingItemIndexes = Utility.ParseLocationAndJunkSettingString(ItemString, ItemGroupCount, "Location");
+            if (StartingItemIndexes == null) { return false; }
+
+            foreach (var i in StartingItems.Distinct())
+            {
+                i.AmountInStartingpool = 0;
+            }
+
+            int Index = 0;
+            foreach (var i in StartingItems)
+            {
+                bool AddStartingItem = StartingItemIndexes.Contains(Index);
+                if (AddStartingItem) { i.AmountInStartingpool++; }
+                Index++;
+            }
+            return true;
+        }
+
+        private List<ItemData.ItemObject> GetStartingItemList(LogicObjects.TrackerInstance Instance)
+        {
+            List<ItemData.ItemObject> StartingItems = new List<ItemData.ItemObject>();
+            foreach (var i in Instance.ItemPool.Values)
+            {
+                var DictEntry = i.GetDictEntry(Instance);
+                bool ValidStartingItem = DictEntry.ValidStartingItem ?? true;
+                if (!ValidStartingItem) { continue; }
+                int MaxInWorld = DictEntry.MaxAmountInWorld ?? -1;
+                if (MaxInWorld > 5 || MaxInWorld < 0) { MaxInWorld = 5; }
+
+                for (var j = 0; j < MaxInWorld; j++)
+                {
+                    StartingItems.Add(i);
+                }
+            }
+            return StartingItems;
         }
     }
 }

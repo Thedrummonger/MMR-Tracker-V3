@@ -16,25 +16,24 @@ namespace MMR_Tracker_V3
         [Serializable]
         public class TrackerInstance
         {
-            public List<LocationObject> LocationPool { get; set; } = new List<LocationObject>();
-            public List<HintObject> HintPool { get; set; } = new List<HintObject>();
-            public List<MacroObject> MacroPool { get; set; } = new List<MacroObject>();
-            public List<ItemObject> ItemPool { get; set; } = new List<ItemObject>();
-            public List<TrackerOption> TrackerOptions { get; set; } = new List<TrackerOption>();
+            public Dictionary<string, LocationObject> LocationPool { get; set; } = new Dictionary<string, LocationObject>();
+            public Dictionary<string, HintObject> HintPool { get; set; } = new Dictionary<string, HintObject>();
+            public Dictionary<string, MacroObject> MacroPool { get; set; } = new Dictionary<string, MacroObject>();
+            public Dictionary<string, ItemObject> ItemPool { get; set; } = new Dictionary<string, ItemObject>();
+            public Dictionary<string, TrackerOption> UserOptions { get; set; } = new Dictionary<string, TrackerOption>();
             public LogicDictionary LogicDictionary { get; set; } = new LogicDictionary();
             public LogicFile LogicFile { get; set; } = new MMRData.LogicFile();
             public Dictionary<string, JsonFormatLogicItem> LogicOverride { get; set; } = new Dictionary<string, JsonFormatLogicItem>();
-            public Options Options { get; set; } = new Options();
+            public Options StaticOptions { get; set; } = new Options();
+            public PriceData PriceData { get; set; } = new PriceData();
             public InstanceReference InstanceReference { get; set; } = new InstanceReference(); 
             public static TrackerInstance FromJson(string json)
             {
                 return Newtonsoft.Json.JsonConvert.DeserializeObject<TrackerInstance>(json, _NewtonsoftJsonSerializerOptions);
-                //return JsonSerializer.Deserialize<LogicFile>(json, _jsonSerializerOptions);
             }
             public override string ToString()
             {
                 return Newtonsoft.Json.JsonConvert.SerializeObject(this, _NewtonsoftJsonSerializerOptions);
-                //return JsonSerializer.Serialize(this, _jsonSerializerOptions);
             }
             private readonly static Newtonsoft.Json.JsonSerializerSettings _NewtonsoftJsonSerializerOptions = new Newtonsoft.Json.JsonSerializerSettings
             {
@@ -47,11 +46,14 @@ namespace MMR_Tracker_V3
         [Serializable]
         public class InstanceReference
         {
+            //Dict References
             public Dictionary<string, int> LocationDictionaryMapping { get; set; } = new Dictionary<string, int>();
             public Dictionary<string, int> ItemDictionaryMapping { get; set; } = new Dictionary<string, int>();
             public Dictionary<string, int> MacroDictionaryMapping { get; set; } = new Dictionary<string, int>();
             public Dictionary<string, int> TrackerOptionDictionaryMapping { get; set; } = new Dictionary<string, int>();
             public Dictionary<string, int> HintDictionaryMapping { get; set; } = new Dictionary<string, int>();
+
+            //Logic File References
             public Dictionary<string, int> LogicFileMapping { get; set; } = new Dictionary<string, int>();
         }
 
@@ -81,6 +83,14 @@ namespace MMR_Tracker_V3
             public bool MoveMarkedToBottom { get; set; } = false;
             public MiddleClickFunction MiddleClickFunction { get; set; } = MiddleClickFunction.set;
             public bool ShowEntryNameTooltip { get; set; } = true;
+        }
+
+        public class PriceData
+        {
+            public bool Initialized { get; set; } = false;
+            public List<string> WalletEntries { get; set; } = new List<string>();
+            public Dictionary<string, int> Wallets { get; set; } = new Dictionary<string, int>();
+            public Dictionary<int,string> CapacityMap { get; set; } = new Dictionary<int, string>();
         }
 
     }

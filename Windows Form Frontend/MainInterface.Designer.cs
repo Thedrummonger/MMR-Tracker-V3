@@ -361,18 +361,21 @@ namespace Windows_Form_Frontend
             this.LoadToolStripMenuItem.Name = "LoadToolStripMenuItem";
             this.LoadToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.LoadToolStripMenuItem.Text = "Load";
+            this.LoadToolStripMenuItem.Click += new System.EventHandler(this.LoadToolStripMenuItem_Click);
             // 
             // SavetoolStripMenuItem1
             // 
             this.SavetoolStripMenuItem1.Name = "SavetoolStripMenuItem1";
             this.SavetoolStripMenuItem1.Size = new System.Drawing.Size(114, 22);
             this.SavetoolStripMenuItem1.Text = "Save";
+            this.SavetoolStripMenuItem1.Click += new System.EventHandler(this.SavetoolStripMenuItem1_Click);
             // 
             // SaveAsToolStripMenuItem1
             // 
             this.SaveAsToolStripMenuItem1.Name = "SaveAsToolStripMenuItem1";
             this.SaveAsToolStripMenuItem1.Size = new System.Drawing.Size(114, 22);
             this.SaveAsToolStripMenuItem1.Text = "Save As";
+            this.SaveAsToolStripMenuItem1.Click += new System.EventHandler(this.SavetoolStripMenuItem1_Click);
             // 
             // presetsToolStripMenuItem
             // 

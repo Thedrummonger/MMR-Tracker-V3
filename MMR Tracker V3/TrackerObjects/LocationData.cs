@@ -15,14 +15,14 @@ namespace MMR_Tracker_V3.TrackerObjects
         public class LocationObject
         {
             public string ID { get; set; }
-            public RandomizeditemData Randomizeditem = new RandomizeditemData();
+            public RandomizeditemData Randomizeditem { get; set; } = new RandomizeditemData();
             public bool Available { get; set; } = false;
             public CheckState CheckState { get; set; } = CheckState.Unchecked;
             public bool Starred { get; set; }
             public int CheckPrice { get; set; } = -1;
-            private RandomizedState _RandomizedState = RandomizedState.Randomized;
             public bool CanBeRandomized { get; set; } = true;
             public string DisplayName { get; set; }
+            private RandomizedState _RandomizedState = RandomizedState.Randomized;
             public RandomizedState RandomizedState
             {
                 get

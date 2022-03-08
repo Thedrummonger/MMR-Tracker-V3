@@ -332,6 +332,7 @@ namespace Windows_Form_Frontend
             this.button8.TabIndex = 30;
             this.button8.Text = "Apply Strings";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // chkShowRand
             // 

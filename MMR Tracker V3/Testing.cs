@@ -255,68 +255,13 @@ namespace MMR_Tracker_V3
             System.Diagnostics.Debug.WriteLine(JsonConvert.SerializeObject(Options, _NewtonsoftJsonSerializerOptions));
         }
 
-        public static void GetAllWalletLogicEntries(LogicObjects.TrackerInstance instance)
-        {
-            List<string> WalletEntries = new List<string>();
-            foreach(var i in instance.ItemPool)
-            {
-                if (i.GetDictEntry(instance).WalletCapacity != null)
-                {
-                    WalletEntries.Add(i.Id);
-                }
-            }
-
-            while (true)
-            {
-                if (!ScanMacros()) { break; }
-            }
-
-            foreach(var i in WalletEntries)
-            {
-                Debug.WriteLine(i);
-            }
-
-            bool ScanMacros()
-            {
-                bool NewWalletFound = false;
-                foreach (var i in instance.MacroPool)
-                {
-                    if (WalletEntries.Contains(i.ID)) { continue; }
-                    var Logic = instance.GetLogic(i.ID);
-                    if (IsWalletmacro(Logic))
-                    {
-                        WalletEntries.Add(i.ID);
-                        NewWalletFound = true;
-                    }
-                }
-                return NewWalletFound;
-            }
-
-            bool IsWalletmacro(MMRData.JsonFormatLogicItem Logic)
-            {
-                if (!Logic.RequiredItems.Any() && !Logic.ConditionalItems.Any()) { return false; }
-                foreach(var i in Logic.RequiredItems)
-                {
-                    if (!WalletEntries.Contains(i)) { return false; }
-                }
-                foreach(var cond in Logic.ConditionalItems)
-                {
-                    foreach (var i in cond)
-                    {
-                        if (!WalletEntries.Contains(i)) { return false; }
-                    }
-                }
-                return true;
-            }
-
-        }
 
         public static void CodeTesting(LogicObjects.TrackerInstance instance)
         {
-            GetAllWalletLogicEntries(instance);
+            File.WriteAllText(@"D:\Testing\ExportedDict.json", instance.LogicDictionary.ToString());
         }
 
-        private readonly static Newtonsoft.Json.JsonSerializerSettings _NewtonsoftJsonSerializerOptions = new Newtonsoft.Json.JsonSerializerSettings
+        public readonly static Newtonsoft.Json.JsonSerializerSettings _NewtonsoftJsonSerializerOptions = new Newtonsoft.Json.JsonSerializerSettings
         {
             Formatting = Newtonsoft.Json.Formatting.Indented,
             NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore,

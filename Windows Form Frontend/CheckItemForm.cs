@@ -37,6 +37,7 @@ namespace Windows_Form_Frontend
                 int OldSearchLength = textBox1.Width;
                 textBox1.Width = listBox1.Width;
                 button1.Location = new Point(button1.Location.X + (textBox1.Width - OldSearchLength), button1.Location.Y);
+                numericUpDown1.Value = -1;
                 numericUpDown1.Visible = false;
                 label2.Visible = false;
             }
@@ -54,7 +55,7 @@ namespace Windows_Form_Frontend
         {
             var Names = new List<string>();
             var EnteredItems = new List<ItemData.ItemObject>();
-            foreach (var i in _Instance.ItemPool)
+            foreach (var i in _Instance.ItemPool.Values)
             {
                 if (string.IsNullOrWhiteSpace(i.GetDictEntry(_Instance).Name) || !i.GetDictEntry(_Instance).Name.ToLower().Contains(textBox1.Text.ToLower())) { continue; }
                 i.DisplayName = i.GetDictEntry(_Instance).Name;
@@ -70,6 +71,7 @@ namespace Windows_Form_Frontend
         private void listBox1_DoubleClick(object sender, EventArgs e)
         {
             _CheckList[0].Randomizeditem.Item = ((ItemData.ItemObject)listBox1.SelectedItem).Id;
+            _CheckList[0].Randomizeditem.OwningPlayer = (int)numericUpDown1.Value;
             _CheckList.RemoveAt(0);
             if (_CheckList.Any())
             {

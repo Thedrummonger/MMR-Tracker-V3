@@ -43,9 +43,9 @@ namespace Windows_Form_Frontend
 
         public static void ApplyWinFormSpecificDat(LogicObjects.TrackerInstance instance)
         {
-            if (string.IsNullOrWhiteSpace(instance.Options.WinformData.FormFont))
+            if (string.IsNullOrWhiteSpace(instance.StaticOptions.WinformData.FormFont))
             {
-                instance.Options.WinformData.FormFont = WinFormUtils.ConvertFontToString(null);
+                instance.StaticOptions.WinformData.FormFont = WinFormUtils.ConvertFontToString(null);
             }
         } 
     }

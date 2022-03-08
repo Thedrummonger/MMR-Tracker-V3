@@ -78,9 +78,19 @@ namespace Windows_Form_Frontend
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(289, 28);
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(42, 23);
             this.numericUpDown1.TabIndex = 4;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
             // 
             // label2
             // 

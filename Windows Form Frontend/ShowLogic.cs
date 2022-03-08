@@ -17,12 +17,14 @@ namespace Windows_Form_Frontend
     {
         public string CurrentID;
         private readonly LogicObjects.TrackerInstance instance;
-        private List<string> GoBackList = new List<string>();
+        private readonly int ReqLBHeight;
+        private readonly List<string> GoBackList = new();
         public ShowLogic(String id, LogicObjects.TrackerInstance _instance)
         {
             InitializeComponent();
             CurrentID = id;
             instance = _instance;
+            ReqLBHeight = listBox1.Height;
         }
 
         private void ShowLogic_Load(object sender, EventArgs e)
@@ -36,26 +38,21 @@ namespace Windows_Form_Frontend
         private void PrintAllLocations()
         {
             listBox4.Items.Clear();
-            foreach (var i in instance.LocationPool)
+            foreach (var i in instance.LocationPool.Values)
             {
                 if (!i.ID.ToLower().Contains(textBox1.Text.ToLower())) { continue; }
                 listBox4.Items.Add(i.ID);
             }
-            foreach (var i in instance.MacroPool)
+            foreach (var i in instance.MacroPool.Values)
             {
                 if (!i.ID.ToLower().Contains(textBox1.Text.ToLower())) { continue; }
                 listBox4.Items.Add(i.ID);
             }
-        }
-        public static bool checkEquality<T>(T[] first, T[] second)
-        {
-            return Enumerable.SequenceEqual(first, second);
         }
 
         private void PrintData()
         {
             button1.Enabled = GoBackList.Any();
-            this.Text = $"{CurrentID} Available: {GetAvailable(CurrentID)}";
             listBox1.Items.Clear();
             listBox2.Items.Clear();
             listBox3.Items.Clear();
@@ -65,59 +62,68 @@ namespace Windows_Form_Frontend
             bool ReqEqual = OriginalLogic.RequiredItems.SequenceEqual(AlteredLogic.RequiredItems);
             bool ConEqual = OriginalLogic.ConditionalItems.SelectMany(x => x).SequenceEqual(AlteredLogic.ConditionalItems.SelectMany(x => x));
 
-            checkBox1.Visible = !ReqEqual || !ConEqual;
+            bool WasAltered = !ReqEqual || !ConEqual;
+            checkBox1.Visible = WasAltered;
+
+            this.Text = $"{CurrentID} | Available: {GetAvailable(CurrentID)} | Logic Altered: {WasAltered}";
 
             var Logic = checkBox1.Checked ? OriginalLogic : AlteredLogic;
             foreach(var i in Logic.RequiredItems)
             {
-                bool Literal = i.IsLiteralID(out string ID);
-                LogicEntryType entryType = instance.GetLocationEntryType(ID, Literal);
-                if (entryType == LogicEntryType.macro && !listBox3.Items.Contains(i))
-                {
-                    listBox3.Items.Add(i);
-                }
-
-                string Display = i;
-                if (entryType == LogicEntryType.macro)
-                {
-                    Display += instance.GetMacroByID(ID).Aquired;
-                }
-                else if (entryType == LogicEntryType.item)
-                {
-                    Display += instance.GetItemByID(ID).Useable(1);
-                }
                 listBox1.Items.Add(GetDisplayName(i));
+                AddToGotoList(i);
             }
             foreach (var cond in Logic.ConditionalItems)
             {
                 listBox2.Items.Add(string.Join(", ", cond.Select(x => GetDisplayName(x)))); 
-                foreach (var i in cond)
+                foreach (var i in cond) { AddToGotoList(i); }
+            }
+            UpdateTimeCheckboxes(OriginalLogic);
+        }
+
+        private void UpdateTimeCheckboxes(MMR_Tracker_V3.TrackerObjects.MMRData.JsonFormatLogicItem OriginalLogic)
+        {
+            List<CheckBox> TimeCheckBoxes = new() { ND1, NN1, ND2, NN2, ND3, NN3, SD1, SN1, SD2, SN2, SD3, SN3 };
+            bool hasTimeLogic = OriginalLogic.TimeAvailable != TimeOfDay.None || OriginalLogic.TimeSetup != TimeOfDay.None;
+            bool ShowTimeLogic = hasTimeLogic && checkBox2.Checked;
+            checkBox2.Visible = hasTimeLogic;
+            label5.Visible = ShowTimeLogic;
+            label6.Visible = ShowTimeLogic;
+            listBox1.Height = ShowTimeLogic ? ReqLBHeight : listBox2.Height;
+            int Index = 0;
+            foreach (var i in TimeCheckBoxes)
+            {
+                i.Visible = ShowTimeLogic;
+                if (ShowTimeLogic)
                 {
-                    bool Literal = i.IsLiteralID(out string ID);
-                    LogicEntryType entryType = instance.GetLocationEntryType(ID, Literal);
-                    if (entryType == LogicEntryType.macro && !listBox3.Items.Contains(i))
-                    {
-                        listBox3.Items.Add(i);
-                    }
+                    if (Index < 6) { i.Checked = ((((int)OriginalLogic.TimeAvailable >> Index) & 1) == 1); }
+                    else { i.Checked = ((((int)OriginalLogic.TimeSetup >> Index - 6) & 1) == 1); }
                 }
+                Index++;
             }
         }
 
-        public bool GetAvailable(String i)
+        private void AddToGotoList(string i)
+        {
+            bool Literal = i.IsLiteralID(out string ID);
+            LogicEntryType entryType = instance.GetLocationEntryType(ID, Literal);
+            if (entryType == LogicEntryType.macro && !listBox3.Items.Contains(i)) { listBox3.Items.Add(i); }
+        }
+
+        public bool GetAvailable(string i)
         {
             bool Literal = i.IsLiteralID(out string LogicItem);
-            var type = instance.GetItemEntryType(LogicItem, Literal);
-            if (type == LogicEntryType.item)
+            var type = instance.GetLocationEntryType(LogicItem, Literal);
+            Debug.WriteLine($"{i} {type}");
+            if (type == LogicEntryType.location)
             {
-                var ItemObject = instance.GetItemByID(LogicItem);
-                if (!ItemObject.Useable(1)) { return false; }
+                return instance.GetLocationByID(LogicItem).Available;
             }
             else if (type == LogicEntryType.macro)
             {
-                var MacroObject = instance.GetMacroByID(LogicItem);
-                if (!MacroObject.Aquired) { return false; }
+                return instance.GetMacroByID(LogicItem).Aquired;
             }
-            return true;
+            return false;
         }
 
         private string GetDisplayName(string i)
