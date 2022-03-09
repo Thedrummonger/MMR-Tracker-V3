@@ -236,7 +236,7 @@ namespace Windows_Form_Frontend
 
             if (ToUpdate.Contains(LBValidLocations)) 
             {
-                var Entries = TrackerDataHandeling.PrintToLocationList(Groups, DataSets, WinFormUtils.CreateDivider(LBCheckedLocations), MainUITrackerInstance, TXTCheckedSearch.Text, CHKShowAll.Checked);
+                var Entries = TrackerDataHandeling.PrintToLocationList(Groups, DataSets, WinFormUtils.CreateDivider(LBValidLocations), MainUITrackerInstance, TXTLocSearch.Text, CHKShowAll.Checked);
                 foreach(var i in Entries) { LBValidLocations.Items.Add(i); }
                 LBValidLocations.TopIndex = lbLocTop; 
             }

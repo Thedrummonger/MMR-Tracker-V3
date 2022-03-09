@@ -89,7 +89,7 @@ namespace MMR_Tracker_V3
                 }
             }
 
-            void WriteHints(TrackerDataHandeling.DataSets DataSets)
+            void WriteHints(DataSets DataSets)
             {
                 if (DataSets.CheckedHints.Any())
                 {
@@ -97,7 +97,7 @@ namespace MMR_Tracker_V3
                     foreach (var i in DataSets.CheckedHints)
                     {
                         i.DisplayName = $"{i.GetDictEntry(Instance).Name}: {i.HintText}";
-                        if (!i.DisplayName.ToLower().Contains(Filter.ToLower())) { continue; }
+                        if (!SearchStringParser.FilterSearch(Instance, i, Filter, i.DisplayName)) { continue; }
                         if (!DividerCreated)
                         {
                             if (DataSource.Count > 0) { DataSource.Add(Divider); }
@@ -109,7 +109,7 @@ namespace MMR_Tracker_V3
                 }
             }
 
-            void WriteStartingAndOnlineItems(TrackerDataHandeling.DataSets DataSets)
+            void WriteStartingAndOnlineItems(DataSets DataSets)
             {
                 if (DataSets.CurrentStartingItems.Any())
                 {
@@ -117,7 +117,9 @@ namespace MMR_Tracker_V3
                     DataSource.Add(new MiscData.Areaheader { Area = "Starting Items" });
                     foreach (var i in DataSets.CurrentStartingItems)
                     {
-                        DataSource.Add($"{i.GetDictEntry(Instance).GetItemName(Instance)} X{i.AmountInStartingpool}");
+                        string Display = $"{i.GetDictEntry(Instance).GetItemName(Instance)} X{i.AmountInStartingpool}";
+                        if (!SearchStringParser.FilterSearch(Instance, i, Filter, Display)) { continue; }
+                        DataSource.Add(Display);
                     }
                 }
 
@@ -129,14 +131,16 @@ namespace MMR_Tracker_V3
                     {
                         foreach (var j in i.AmountAquiredOnline)
                         {
-                            DataSource.Add($"{i.GetDictEntry(Instance).GetItemName(Instance)} X{j.Value}: Player {j.Key}");
+                            string Display = $"{i.GetDictEntry(Instance).GetItemName(Instance)} X{j.Value}: Player {j.Key}";
+                            if (!SearchStringParser.FilterSearch(Instance, i, Filter, Display)) { continue; }
+                            DataSource.Add(Display);
                         }
                     }
                 }
             }
         }
 
-        public static List<object> PrintToLocationList(Dictionary<string, int> Groups, TrackerDataHandeling.DataSets DataSets, string Divider, LogicObjects.TrackerInstance Instance, string Filter, bool All)
+        public static List<object> PrintToLocationList(Dictionary<string, int> Groups, DataSets DataSets, string Divider, LogicObjects.TrackerInstance Instance, string Filter, bool All)
         {
             List<object> DataSource = new List<object>();
 
@@ -187,7 +191,7 @@ namespace MMR_Tracker_V3
                     foreach (var i in AvailableHints)
                     {
                         i.DisplayName = (i.CheckState == MiscData.CheckState.Marked) ? $"{i.GetDictEntry(Instance).Name}: {i.HintText}" : i.GetDictEntry(Instance).Name;
-                        if (!i.DisplayName.ToLower().Contains(Filter.ToLower())) { continue; }
+                        if (!SearchStringParser.FilterSearch(Instance, i, Filter, i.DisplayName)) { continue; }
                         if (!DividerCreated)
                         {
                             if (DataSource.Count > 0) { DataSource.Add(Divider); }

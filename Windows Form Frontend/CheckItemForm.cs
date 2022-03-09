@@ -57,8 +57,9 @@ namespace Windows_Form_Frontend
             var EnteredItems = new List<ItemData.ItemObject>();
             foreach (var i in _Instance.ItemPool.Values)
             {
-                if (string.IsNullOrWhiteSpace(i.GetDictEntry(_Instance).GetItemName(_Instance)) || !i.GetDictEntry(_Instance).GetItemName(_Instance).ToLower().Contains(textBox1.Text.ToLower())) { continue; }
+                if (string.IsNullOrWhiteSpace(i.GetDictEntry(_Instance).GetItemName(_Instance))) { continue; }
                 i.DisplayName = i.GetDictEntry(_Instance).GetItemName(_Instance);
+                if (!SearchStringParser.FilterSearch(_Instance, i, textBox1.Text, i.DisplayName)) { continue; }
                 if (i.CanBePlaced(_Instance) && i.GetDictEntry(_Instance).ItemTypes.Intersect(_CheckList[0].GetDictEntry(_Instance).ValidItemTypes).Any() && !EnteredItems.Contains(i) && !Names.Contains(i.ToString()))
                 {
                     Names.Add(i.ToString());

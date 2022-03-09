@@ -108,24 +108,17 @@ namespace Windows_Form_Frontend
             lbAvailableStarting.Items.Clear();
             lbCurrentStarting.Items.Clear();
 
-            foreach(var i in _DataSets.AvailableStartingItems)
+            foreach(var i in _DataSets.AvailableStartingItems.Where(x => x.CanBePlaced(_Instance)))
             {
-                if (i.CanBePlaced(_Instance))
-                {
-                    i.DisplayName = i.GetDictEntry(_Instance).GetItemName(_Instance) ?? i.Id;
-                    if (i.DisplayName.ToLower().Contains(txtSearchAvailableStarting.Text.ToLower()))
-                    {
-                        lbAvailableStarting.Items.Add(i);
-                    }
-                }
+                i.DisplayName = i.GetDictEntry(_Instance).GetItemName(_Instance) ?? i.Id;
+                if (!SearchStringParser.FilterSearch(_Instance, i, txtSearchAvailableStarting.Text, i.DisplayName)) { continue; }
+                lbAvailableStarting.Items.Add(i);
             }
             foreach (var i in _DataSets.CurrentStartingItems)
             {
                 i.DisplayName = (i.GetDictEntry(_Instance).GetItemName(_Instance) ?? i.Id) + $": X{i.AmountInStartingpool}";
-                if (i.DisplayName.ToLower().Contains(txtSearchCurrentStarting.Text.ToLower()))
-                {
-                    lbCurrentStarting.Items.Add(i);
-                }
+                if (!SearchStringParser.FilterSearch(_Instance, i, txtSearchCurrentStarting.Text, i.DisplayName)) { continue; }
+                lbCurrentStarting.Items.Add(i);
             }
 
             Updating = false;
@@ -139,7 +132,7 @@ namespace Windows_Form_Frontend
             string CurrentCategory = string.Empty;
             foreach (var i in _DataSets.Tricks.OrderBy(x => _DataSets.Tricks.IndexOf(_DataSets.Tricks.First(y => _Instance.GetOriginalLogic(y.ID).TrickCategory == _Instance.GetOriginalLogic(x.ID).TrickCategory))))
             {
-                if (!i.ID.ToLower().Contains(txtTrickSearch.Text.ToLower())) { continue; }
+                if (!SearchStringParser.FilterSearch(_Instance, i, txtTrickSearch.Text, i.ID)) { continue; }
                 if (CurrentCategory != _Instance.GetOriginalLogic(i.ID).TrickCategory)
                 {
                     lvTricks.Items.Add(WinFormUtils.CreateDivider(lvTricks, _Instance.GetOriginalLogic(i.ID).TrickCategory.ToUpper()));
