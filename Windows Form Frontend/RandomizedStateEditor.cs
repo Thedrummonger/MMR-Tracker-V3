@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,12 +40,12 @@ namespace Windows_Form_Frontend
         private void UpdatedSettingStrings()
         {
             var LocationList = _Instance.LocationPool.Values.Where(x => !x.GetDictEntry(_Instance).IgnoreForSettingString ?? true).ToList();
-            var StartingItems = GetStartingItemList(_Instance).ToList();
+            var StartingItems = SpoilerLogTools.GetStartingItemList(_Instance).ToList();
             var TrickList = _Instance.MacroPool.Values.Where(x => x.isTrick(_Instance)).ToList();
-            txtLocString.Text = CreateSettingString(LocationList, LocationList.Where(x => !x.IsUnrandomized()).ToList());
-            txtjunkString.Text = CreateSettingString(LocationList, LocationList.Where(x => x.RandomizedState == MiscData.RandomizedState.ForcedJunk).ToList());
-            txtStartString.Text = CreateSettingString(StartingItems, StartingItems.Where(x => x.AmountInStartingpool > 0).ToList());
-            txtTrickString.Text = CreateSettingString(TrickList, TrickList.Where(x => x.TrickEnabled).ToList());
+            txtLocString.Text = SpoilerLogTools.CreateSettingString(LocationList, LocationList.Where(x => !x.IsUnrandomized()).ToList());
+            txtjunkString.Text = SpoilerLogTools.CreateSettingString(LocationList, LocationList.Where(x => x.RandomizedState == MiscData.RandomizedState.ForcedJunk).ToList());
+            txtStartString.Text = SpoilerLogTools.CreateSettingString(StartingItems, StartingItems.Where(x => x.AmountInStartingpool > 0).ToList());
+            //txtTrickString.Text = CreateSettingString(TrickList, TrickList.Where(x => x.TrickEnabled).ToList());
         }
 
         private void PrintToLocationList()
@@ -211,13 +212,23 @@ namespace Windows_Form_Frontend
             foreach (var i in CheckedLocationItems)
             {
                 if (button == btnSetRandomized) { i.RandomizedState = MiscData.RandomizedState.Randomized; }
-                if (button == btnSetUnRandomized) { i.RandomizedState = MiscData.RandomizedState.Unrandomized; }
-                if (button == btnSetManual) { i.RandomizedState = MiscData.RandomizedState.UnrandomizedManual; }
+                if (button == btnSetUnRandomized) 
+                { 
+                    if (!i.CanBeUnrandomized(_Instance)) { Debug.WriteLine($"{i.ID} Could not be unrandomized"); continue; }
+                    i.RandomizedState = MiscData.RandomizedState.Unrandomized; 
+                }
+                if (button == btnSetManual)
+                {
+                    if (!i.CanBeUnrandomized(_Instance)) { Debug.WriteLine($"{i.ID} Could not be unrandomized"); continue; }
+                    i.RandomizedState = MiscData.RandomizedState.UnrandomizedManual; 
+                }
                 if (button == btnSetJunk) { i.RandomizedState = MiscData.RandomizedState.ForcedJunk; }
             }
             CheckedLocationItems.Clear();
+            
             UpdateItemSets();
-            PrintToLocationList(); 
+            PrintToLocationList();
+            PrintStartingItemData();
             UpdatedSettingStrings();
         }
 
@@ -243,9 +254,9 @@ namespace Windows_Form_Frontend
 
         private void button8_Click(object sender, EventArgs e)
         {
-            var SuccessLoc = ParseLocationString(txtLocString.Text);
-            var SuncessJunk = ParseJunkString(txtjunkString.Text);
-            var SuncessStart = ParseStartingItemString(txtStartString.Text);
+            var SuccessLoc = SpoilerLogTools.ApplyLocationString(txtLocString.Text, _Instance);
+            var SuncessJunk = SpoilerLogTools.ApplyJunkString(txtjunkString.Text, _Instance);
+            var SuncessStart = SpoilerLogTools.ApplyStartingItemString(txtStartString.Text, _Instance);
 
             UpdateItemSets();
 
@@ -256,114 +267,33 @@ namespace Windows_Form_Frontend
             UpdatedSettingStrings();
         }
 
-        private bool ParseLocationString(string LocationString)
+        private void button1_Click(object sender, EventArgs e)
         {
-            var LocationPool = _Instance.LocationPool.Values.Where(x => !x.GetDictEntry(_Instance).IgnoreForSettingString ?? true).ToList();
-
-            var ItemGroupCount = (int)Math.Ceiling(LocationPool.Count / 32.0);
-
-            var RandomizedItemIndexs = Utility.ParseLocationAndJunkSettingString(LocationString, ItemGroupCount, "Location");
-            if (RandomizedItemIndexs == null) { return false; }
-
-            int Index = 0;
-            foreach(var i in LocationPool)
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            var Result = fileDialog.ShowDialog();
+            if (Result == DialogResult.Cancel || !File.Exists(fileDialog.FileName)) { return; }
+            try
             {
-                bool IsRandomized = RandomizedItemIndexs.Contains(Index);
-                if (IsRandomized && i.IsUnrandomized())
+                MMRData.SpoilerLogData configuration = Newtonsoft.Json.JsonConvert.DeserializeObject<MMRData.SpoilerLogData>(File.ReadAllText(fileDialog.FileName));
+                if (configuration.GameplaySettings == null)
                 {
-                    i.RandomizedState = MiscData.RandomizedState.Randomized;
+                    MessageBox.Show("Setting File Invalid!");
+                    return;
                 }
-                else if (!IsRandomized && !i.IsUnrandomized())
-                {
-                    i.RandomizedState = MiscData.RandomizedState.Unrandomized;
-                }
-                Index++;
+                txtLocString.Text = configuration.GameplaySettings.CustomItemListString;
+                txtjunkString.Text = configuration.GameplaySettings.CustomJunkLocationsString;
+                txtStartString.Text = configuration.GameplaySettings.CustomStartingItemListString;
+                _Instance.ApplyRandoSettings(configuration);
+
+                UpdateItemSets();
+
+                PrintToLocationList();
+                PrintStartingItemData();
+                PrinttrickData();
+
+                UpdatedSettingStrings();
             }
-            return true;
-        }
-        private bool ParseJunkString(string LocationString)
-        {
-            var LocationPool = _Instance.LocationPool.Values.Where(x => !x.GetDictEntry(_Instance).IgnoreForSettingString ?? true).ToList();
-
-            var ItemGroupCount = (int)Math.Ceiling(LocationPool.Count / 32.0);
-
-            var JunkItemIndexes = Utility.ParseLocationAndJunkSettingString(LocationString, ItemGroupCount, "Location");
-            if (JunkItemIndexes == null) { return false; }
-
-            int Index = 0;
-            foreach (var i in LocationPool)
-            {
-                bool IsJunk = JunkItemIndexes.Contains(Index);
-                if (IsJunk && i.RandomizedState == MiscData.RandomizedState.Randomized)
-                {
-                    i.RandomizedState = MiscData.RandomizedState.ForcedJunk;
-                }
-                else if (!IsJunk && i.RandomizedState == MiscData.RandomizedState.ForcedJunk)
-                {
-                    i.RandomizedState = MiscData.RandomizedState.Randomized;
-                }
-                Index++;
-            }
-            return true;
-        }
-        private bool ParseStartingItemString(string ItemString)
-        {
-            var StartingItems = GetStartingItemList(_Instance);
-
-            var ItemGroupCount = (int)Math.Ceiling(StartingItems.Count / 32.0);
-
-            var StartingItemIndexes = Utility.ParseLocationAndJunkSettingString(ItemString, ItemGroupCount, "Location");
-            if (StartingItemIndexes == null) { return false; }
-
-            foreach (var i in StartingItems.Distinct())
-            {
-                i.AmountInStartingpool = 0;
-            }
-
-            int Index = 0;
-            foreach (var i in StartingItems)
-            {
-                bool AddStartingItem = StartingItemIndexes.Contains(Index);
-                if (AddStartingItem) { i.AmountInStartingpool++; }
-                Index++;
-            }
-            return true;
-        }
-
-        private static string CreateSettingString(IEnumerable<object> MasterList, IEnumerable<object> SubList)
-        {
-            var ItemGroupCount = (int)Math.Ceiling(MasterList.Count() / 32.0);
-
-            int[] n = new int[ItemGroupCount];
-            string[] ns = new string[ItemGroupCount];
-            foreach (var item in SubList)
-            {
-                var i = MasterList.ToList().IndexOf(item);
-                int j = i / 32;
-                int k = i % 32;
-                n[j] |= (int)(1 << k);
-                ns[j] = Convert.ToString(n[j], 16);
-            }
-            return string.Join("-", ns.Reverse());
-        }
-
-        private List<ItemData.ItemObject> GetStartingItemList(LogicObjects.TrackerInstance Instance)
-        {
-            List<ItemData.ItemObject> StartingItems = new List<ItemData.ItemObject>();
-            foreach (var i in Instance.ItemPool.Values)
-            {
-                var DictEntry = i.GetDictEntry(Instance);
-                bool ValidStartingItem = DictEntry.ValidStartingItem ?? true;
-                if (!ValidStartingItem) { continue; }
-                int MaxInWorld = DictEntry.MaxAmountInWorld ?? -1;
-                if (MaxInWorld > 5 || MaxInWorld < 0) { MaxInWorld = 5; }
-
-                for (var j = 0; j < MaxInWorld; j++)
-                {
-                    StartingItems.Add(i);
-                }
-            }
-            return StartingItems;
+            catch { MessageBox.Show("Setting File Invalid!"); }
         }
     }
 }

@@ -137,7 +137,7 @@ namespace Windows_Form_Frontend
             }
             else if (entryType == LogicEntryType.item)
             {
-                Display += instance.GetItemByID(ID).Useable() ? "*" : "";
+                Display += instance.GetItemByID(ID, "GetDisplayName").Useable() ? "*" : "";
             }
             return Display;
         }

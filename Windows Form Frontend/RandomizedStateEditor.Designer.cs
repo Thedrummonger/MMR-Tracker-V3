@@ -42,6 +42,7 @@ namespace Windows_Form_Frontend
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lvTricks = new System.Windows.Forms.ListView();
+            this.Tricks = new System.Windows.Forms.ColumnHeader();
             this.label4 = new System.Windows.Forms.Label();
             this.txtSearchAvailableStarting = new System.Windows.Forms.TextBox();
             this.TxtLocationSearch = new System.Windows.Forms.TextBox();
@@ -55,8 +56,6 @@ namespace Windows_Form_Frontend
             this.txtjunkString = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtStartString = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtTrickString = new System.Windows.Forms.TextBox();
             this.button8 = new System.Windows.Forms.Button();
             this.chkShowRand = new System.Windows.Forms.CheckBox();
             this.chkShowJunk = new System.Windows.Forms.CheckBox();
@@ -67,7 +66,7 @@ namespace Windows_Form_Frontend
             this.label2 = new System.Windows.Forms.Label();
             this.btnRemoveStartingItem = new System.Windows.Forms.Button();
             this.txtSearchCurrentStarting = new System.Windows.Forms.TextBox();
-            this.Tricks = new System.Windows.Forms.ColumnHeader();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lvLocationList
@@ -179,11 +178,15 @@ namespace Windows_Form_Frontend
             this.lvTricks.HideSelection = false;
             this.lvTricks.Location = new System.Drawing.Point(706, 56);
             this.lvTricks.Name = "lvTricks";
-            this.lvTricks.Size = new System.Drawing.Size(225, 338);
+            this.lvTricks.Size = new System.Drawing.Size(225, 353);
             this.lvTricks.TabIndex = 12;
             this.lvTricks.UseCompatibleStateImageBehavior = false;
             this.lvTricks.View = System.Windows.Forms.View.Details;
             this.lvTricks.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.lvTricks_ItemChecked);
+            // 
+            // Tricks
+            // 
+            this.Tricks.Width = 203;
             // 
             // label4
             // 
@@ -222,7 +225,7 @@ namespace Windows_Form_Frontend
             // 
             // txtLocString
             // 
-            this.txtLocString.Location = new System.Drawing.Point(706, 415);
+            this.txtLocString.Location = new System.Drawing.Point(706, 430);
             this.txtLocString.Name = "txtLocString";
             this.txtLocString.Size = new System.Drawing.Size(112, 23);
             this.txtLocString.TabIndex = 19;
@@ -241,7 +244,7 @@ namespace Windows_Form_Frontend
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(706, 397);
+            this.label5.Location = new System.Drawing.Point(706, 412);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(87, 15);
             this.label5.TabIndex = 21;
@@ -252,7 +255,7 @@ namespace Windows_Form_Frontend
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(821, 397);
+            this.label6.Location = new System.Drawing.Point(821, 412);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(87, 15);
             this.label6.TabIndex = 23;
@@ -260,7 +263,7 @@ namespace Windows_Form_Frontend
             // 
             // txtEntString
             // 
-            this.txtEntString.Location = new System.Drawing.Point(821, 415);
+            this.txtEntString.Location = new System.Drawing.Point(821, 430);
             this.txtEntString.Name = "txtEntString";
             this.txtEntString.Size = new System.Drawing.Size(110, 23);
             this.txtEntString.TabIndex = 22;
@@ -270,7 +273,7 @@ namespace Windows_Form_Frontend
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(821, 441);
+            this.label7.Location = new System.Drawing.Point(821, 456);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(114, 15);
             this.label7.TabIndex = 27;
@@ -278,7 +281,7 @@ namespace Windows_Form_Frontend
             // 
             // txtjunkString
             // 
-            this.txtjunkString.Location = new System.Drawing.Point(821, 459);
+            this.txtjunkString.Location = new System.Drawing.Point(821, 474);
             this.txtjunkString.Name = "txtjunkString";
             this.txtjunkString.Size = new System.Drawing.Size(110, 23);
             this.txtjunkString.TabIndex = 26;
@@ -288,7 +291,7 @@ namespace Windows_Form_Frontend
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(706, 441);
+            this.label8.Location = new System.Drawing.Point(706, 456);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(109, 15);
             this.label8.TabIndex = 25;
@@ -296,32 +299,14 @@ namespace Windows_Form_Frontend
             // 
             // txtStartString
             // 
-            this.txtStartString.Location = new System.Drawing.Point(706, 459);
+            this.txtStartString.Location = new System.Drawing.Point(706, 474);
             this.txtStartString.Name = "txtStartString";
             this.txtStartString.Size = new System.Drawing.Size(112, 23);
             this.txtStartString.TabIndex = 24;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(706, 485);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(65, 15);
-            this.label9.TabIndex = 29;
-            this.label9.Text = "Trick String";
-            // 
-            // txtTrickString
-            // 
-            this.txtTrickString.Location = new System.Drawing.Point(706, 503);
-            this.txtTrickString.Name = "txtTrickString";
-            this.txtTrickString.Size = new System.Drawing.Size(112, 23);
-            this.txtTrickString.TabIndex = 28;
-            // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(821, 503);
+            this.button8.Location = new System.Drawing.Point(708, 503);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(110, 23);
             this.button8.TabIndex = 30;
@@ -440,9 +425,15 @@ namespace Windows_Form_Frontend
             this.txtSearchCurrentStarting.TabIndex = 18;
             this.txtSearchCurrentStarting.TextChanged += new System.EventHandler(this.txtSearchCurrentStarting_TextChanged);
             // 
-            // Tricks
+            // button1
             // 
-            this.Tricks.Width = 203;
+            this.button1.Location = new System.Drawing.Point(821, 503);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(110, 23);
+            this.button1.TabIndex = 35;
+            this.button1.Text = "Load Setting File";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // RandomizedStateEditor
             // 
@@ -451,13 +442,12 @@ namespace Windows_Form_Frontend
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(939, 530);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.chkShowManual);
             this.Controls.Add(this.chkShowUnrand);
             this.Controls.Add(this.chkShowJunk);
             this.Controls.Add(this.chkShowRand);
             this.Controls.Add(this.button8);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.txtTrickString);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtjunkString);
             this.Controls.Add(this.label8);
@@ -520,8 +510,6 @@ namespace Windows_Form_Frontend
         private System.Windows.Forms.TextBox txtjunkString;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtStartString;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtTrickString;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.CheckBox chkShowRand;
         private System.Windows.Forms.CheckBox chkShowJunk;
@@ -534,5 +522,6 @@ namespace Windows_Form_Frontend
         private System.Windows.Forms.TextBox txtSearchCurrentStarting;
         private System.Windows.Forms.ColumnHeader columnHeaderVanilla;
         private System.Windows.Forms.ColumnHeader Tricks;
+        private System.Windows.Forms.Button button1;
     }
 }

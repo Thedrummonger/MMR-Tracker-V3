@@ -15,6 +15,7 @@ namespace MMR_Tracker_V3.TrackerObjects
         {
             public string ID { get; set; }
             public CheckState CheckState { get; set; } = CheckState.Unchecked;
+            public RandomizedState RandomizedState { get; set; } = RandomizedState.Randomized;
             public bool Available { get; set; }
             public string HintText { get; set; }
             public string SpoilerHintText { get; set; }

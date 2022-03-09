@@ -38,7 +38,7 @@ namespace MMR_Tracker_V3
                 }
                 else if(type == LogicEntryType.item)
                 {
-                    if (!instance.GetItemByID(LogicItem).Useable(Amount)) { return false; }
+                    if (!instance.GetItemByID(LogicItem, "RequirementsMet").Useable(Amount)) { return false; }
                 }
                 else if (type == LogicEntryType.macro)
                 {
@@ -228,8 +228,8 @@ namespace MMR_Tracker_V3
                 var Logic = instance.GetLogic(i.Key);
                 var Available = RequirementsMet(Logic.RequiredItems, instance) && ConditionalsMet(Logic.ConditionalItems, instance);
 
-                bool ShouldBeChecked = Available && i.Value.CheckState != CheckState.Checked;
-                bool ShouldBeUnChecked = !Available && i.Value.CheckState != CheckState.Unchecked;
+                bool ShouldBeChecked = Available && i.Value.CheckState == CheckState.Unchecked;
+                bool ShouldBeUnChecked = !Available && i.Value.CheckState == CheckState.Checked;
 
                 if (ShouldBeChecked || ShouldBeUnChecked)
                 {
@@ -260,21 +260,30 @@ namespace MMR_Tracker_V3
         {
             optionEntryValid = false;
             if (!i.Contains("==") && !i.Contains("!=")) { return false; }
-
             bool inverse = i.Contains("!=");
             string[] data = inverse ? i.Split("!=") : i.Split("==");
+            if (data.Length != 2) { return false; }
             optionEntryValid = checkOptionEntry(instance, data, inverse);
             return true;
         }
 
         private static bool checkOptionEntry(LogicObjects.TrackerInstance instance, string[] data, bool inverse)
         {
-            string CleanedOptionName = data[0].Trim().Replace("'", "");
-            string CleanedOptionValue = data[1].Trim().Replace("'", "");
+            bool LiteralOption = data[0].Trim().IsLiteralID(out string CleanedOptionName);
+            bool LiteralValue = data[1].Trim().IsLiteralID(out string CleanedOptionValue);
+            var OptionType = instance.GetLocationEntryType(CleanedOptionName, LiteralOption);
 
-            if (!instance.UserOptions.ContainsKey(CleanedOptionName)) { return false; }
-            var Option = instance.UserOptions[CleanedOptionName];
-            return (Option.CurrentValue == CleanedOptionValue) == !inverse;
+            if (OptionType == LogicEntryType.Option)
+            {
+                var Option = instance.UserOptions[CleanedOptionName];
+                return (Option.CurrentValue == CleanedOptionValue) == !inverse;
+            }
+            else if (OptionType == LogicEntryType.location)
+            {
+                var Location = instance.LocationPool[CleanedOptionName];
+                return (Location.GetItemAtCheck(instance) == CleanedOptionValue) == !inverse;
+            }
+            return false;
         }
 
         public static MMRData.JsonFormatLogicItem GetOriginalLogic(this LogicObjects.TrackerInstance instance, string ID, bool copy = false)
@@ -312,7 +321,7 @@ namespace MMR_Tracker_V3
                 var LocationToCompare = instance.LocationPool[MacroDictObject.DynamicLogicData.LocationToCompare];
                 foreach (var arg in MacroDictObject.DynamicLogicData.Arguments)
                 {
-                    if (LocationToCompare.Randomizeditem.Item == arg.ItemAtLocation)
+                    if (LocationToCompare.GetItemAtCheck(instance) == arg.ItemAtLocation)
                     {
                         return arg.LogicToUse;
                     }

@@ -52,15 +52,27 @@ namespace MMR_Tracker_V3
             return dataSets;
         }
 
-        public static List<object> PrintToCheckedList(Dictionary<string, int> Groups, TrackerDataHandeling.DataSets DataSets, string Divider, LogicObjects.TrackerInstance Instance, string Filter)
+        public static List<object> PrintToCheckedList(Dictionary<string, int> Groups, DataSets DataSets, string Divider, LogicObjects.TrackerInstance Instance, string Filter, bool reverse = false)
         {
+            if (Groups == null) { Groups = Utility.GetCategoriesFromFile(Instance); }
+            if (DataSets == null) { DataSets = PopulateDataSets(Instance); }
+
             List<object> DataSource = new List<object>();
 
             var CheckedLocations = DataSets.CheckedLocations;
             CheckedLocations = CheckedLocations
-                .OrderBy(x => (Groups.ContainsKey(x.GetDictEntry(Instance).Area.ToLower().Trim()) ? Groups[x.GetDictEntry(Instance).Area.ToLower().Trim()] : DataSets.CheckedLocations.Count() + 1))
+                .OrderBy(x => (Groups.ContainsKey(x.GetDictEntry(Instance).Area.ToLower().Trim()) ? Groups[x.GetDictEntry(Instance).Area.ToLower().Trim()] : DataSets.CheckedLocations.Count + 1))
                 .ThenBy(x => x.GetDictEntry(Instance).Area)
                 .ThenBy(x => Utility.GetDisplayName(1, x, Instance)).ToList();
+
+            if (reverse)
+            {
+                CheckedLocations.Reverse();
+                WriteStartingAndOnlineItems(DataSets);
+                WriteHints(DataSets);
+                WriteLocations(CheckedLocations);
+                return DataSource;
+            }
 
             WriteLocations(CheckedLocations);
             WriteHints(DataSets);
@@ -73,7 +85,7 @@ namespace MMR_Tracker_V3
                 string CurrentLocation = "";
                 foreach (var i in CheckedLocations)
                 {
-                    if (i.RandomizedState == MiscData.RandomizedState.Unrandomized) { continue; }
+                    if (!LocationAppearsinListbox(i, Instance)) { continue; }
 
                     i.DisplayName = Utility.GetDisplayName(1, i, Instance);
 
@@ -140,7 +152,7 @@ namespace MMR_Tracker_V3
             }
         }
 
-        public static List<object> PrintToLocationList(Dictionary<string, int> Groups, DataSets DataSets, string Divider, LogicObjects.TrackerInstance Instance, string Filter, bool All)
+        public static List<object> PrintToLocationList(Dictionary<string, int> Groups, DataSets DataSets, string Divider, LogicObjects.TrackerInstance Instance, string Filter, bool All, bool reverse = false)
         {
             List<object> DataSource = new List<object>();
 
@@ -152,6 +164,14 @@ namespace MMR_Tracker_V3
                 .ThenBy(x => x.GetDictEntry(Instance).Area)
                 .ThenBy(x => Utility.GetDisplayName(0, x, Instance)).ToList();
 
+            if (reverse)
+            {
+                AvailableLocations.Reverse();
+                WriteHints(DataSets);
+                WriteLocations(AvailableLocations);
+                return DataSource;
+            }
+
             WriteLocations(AvailableLocations);
             WriteHints(DataSets);
 
@@ -162,7 +182,7 @@ namespace MMR_Tracker_V3
                 string CurrentLocation = "";
                 foreach (var i in AvailableLocations)
                 {
-                    if (i.RandomizedState == MiscData.RandomizedState.ForcedJunk) { continue; }
+                    if (!LocationAppearsinListbox(i, Instance)) { continue; }
 
                     i.DisplayName = Utility.GetDisplayName(0, i, Instance);
 
@@ -178,7 +198,7 @@ namespace MMR_Tracker_V3
                 }
             }
 
-            void WriteHints(TrackerDataHandeling.DataSets DataSets)
+            void WriteHints(DataSets DataSets)
             {
                 var AvailableHints = DataSets.AvailableHints;
                 if (Filter.StartsWith("^") || All)
@@ -202,6 +222,14 @@ namespace MMR_Tracker_V3
                     }
                 }
             }
+        }
+
+        private static bool LocationAppearsinListbox(LocationData.LocationObject Location, LogicObjects.TrackerInstance Instance)
+        {
+            return
+                Location.RandomizedState != MiscData.RandomizedState.ForcedJunk &&
+                Location.RandomizedState != MiscData.RandomizedState.Unrandomized &&
+                !string.IsNullOrWhiteSpace(Location.GetDictEntry(Instance).Name);
         }
     }
 }

@@ -87,7 +87,7 @@ namespace MMR_Tracker_V3
                 if (i.CheckState == MiscData.CheckState.Marked)
                 {
                     string RandomizedItemDisplay = i.Randomizeditem.Item;
-                    var RandomizedItem = instance.GetItemByID(i.Randomizeditem.Item);
+                    var RandomizedItem = instance.GetItemByID(i.Randomizeditem.Item, "GetDisplayName Available Locations");
                     if (RandomizedItem != null) { RandomizedItemDisplay = RandomizedItem.GetDictEntry(instance).GetItemName(instance) ?? RandomizedItem.Id; }
                     Displayname += $": {RandomizedItemDisplay}";
                 }
@@ -95,7 +95,7 @@ namespace MMR_Tracker_V3
             else if (Function == 1) //Checked Locations
             {
                 Displayname = i.Randomizeditem.Item;
-                var RandomizedItem = instance.GetItemByID(i.Randomizeditem.Item);
+                var RandomizedItem = instance.GetItemByID(i.Randomizeditem.Item, "GetDisplayName Checked Locations");
                 if (RandomizedItem != null) { Displayname = RandomizedItem.GetDictEntry(instance).GetItemName(instance) ?? RandomizedItem.Id; }
                 Displayname = $"{Displayname}: {i.GetDictEntry(instance).Name ?? i.ID}";
             }

@@ -63,6 +63,7 @@ namespace Windows_Form_Frontend
             var locY = 2 + Menuhieght;
 
             FormatMenuItems();
+            PopulateTrackerOptions();
 
             redoToolStripMenuItem.Enabled = RedoStringList.Any();
             undoToolStripMenuItem.Enabled = UndoStringList.Any();
@@ -270,7 +271,6 @@ namespace Windows_Form_Frontend
 
             LogicCalculation.CalculateLogic(MainUITrackerInstance);
             UpdateUI();
-            PopulateTrackerOptions();
         }
 
         private void PopulateTrackerOptions()
@@ -407,6 +407,7 @@ namespace Windows_Form_Frontend
             ToolStripItem RefreshContextItem = contextMenuStrip.Items.Add("Refresh");
             RefreshContextItem.Click += (sender, e) => { PrintToListBox(new List<ListBox> { listBox }); };
 
+
             if (listBox.SelectedItem is LocationData.LocationObject)
             {
                 var itemObject = (listBox.SelectedItem as LocationData.LocationObject);
@@ -422,6 +423,13 @@ namespace Windows_Form_Frontend
                 {
                     ShowLogic showLogic = new ShowLogic(itemObject.ID, MainUITrackerInstance);
                     showLogic.Show();
+                };
+
+                ToolStripItem ShowDevData = contextMenuStrip.Items.Add("Show Dev Data");
+                ShowDevData.Click += (sender, e) =>
+                {
+                    Debug.WriteLine(JsonConvert.SerializeObject(itemObject, Testing._NewtonsoftJsonSerializerOptions));
+                    Debug.WriteLine(JsonConvert.SerializeObject(itemObject.GetDictEntry(MainUITrackerInstance), Testing._NewtonsoftJsonSerializerOptions));
                 };
 
                 if (listBox == LBValidLocations)
@@ -512,6 +520,7 @@ namespace Windows_Form_Frontend
 
             foreach (LocationData.LocationObject LocationObject in locationObjects)
             {
+                Debug.WriteLine($"Unchecking {LocationObject.Randomizeditem.Item} At Location {LocationObject.ID}");
                 var Action = (checkState == MiscData.CheckState.Marked && LocationObject.CheckState == MiscData.CheckState.Marked) ? MiscData.CheckState.Unchecked : checkState;
                 LocationObject.ToggleChecked(Action, MainUITrackerInstance);
             }
@@ -550,6 +559,12 @@ namespace Windows_Form_Frontend
             UpdateUI();
             Utility.TimeCodeExecution(TimeItemSelect, "Update UI", -1);
             Utility.TimeCodeExecution(TimeTotalItemSelect, "Total Check Item Action", -1);
+
+            Debug.WriteLine("Aquired Items");
+            foreach (var i in MainUITrackerInstance.ItemPool)
+            {
+                if (i.Value.AmountAquiredLocally > 0) { Debug.WriteLine(i.Value.Id); }
+            }
 
         }
 
