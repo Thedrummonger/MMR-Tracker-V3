@@ -15,7 +15,7 @@ namespace MMR_Tracker_V3
 {
     public static class TrackerInstanceCreation
     {
-        public static InstanceState ApplyLogicAndDict(LogicObjects.TrackerInstance Instance, string LogicFile)
+        public static InstanceState ApplyLogicAndDict(LogicObjects.TrackerInstance Instance, string LogicFile, string DictionaryFile = null)
         {
             try
             {
@@ -24,7 +24,10 @@ namespace MMR_Tracker_V3
             catch { return InstanceState.LogicFailure; }
             try
             {
-                string DictionaryFile = File.ReadAllText(Dictionaryhandeling.GetJSONDictionaryPathForLogicFile(Instance.LogicFile));
+                if (DictionaryFile == null)
+                {
+                    DictionaryFile = File.ReadAllText(Dictionaryhandeling.GetJSONDictionaryPathForLogicFile(Instance.LogicFile));
+                }
                 Instance.LogicDictionary = LogicDictionaryData.LogicDictionary.FromJson(DictionaryFile);
             }
             catch { return InstanceState.DictionaryFailure; }

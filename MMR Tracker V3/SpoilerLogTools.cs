@@ -13,7 +13,6 @@ namespace MMR_Tracker_V3
 
         public static bool ApplyLocationString(string LocationString, LogicObjects.TrackerInstance Instance)
         {
-            Debug.WriteLine($"Applying String {LocationString}");
             var LocationPool = Instance.LocationPool.Values.Where(x => !x.GetDictEntry(Instance).IgnoreForSettingString ?? true).ToList();
 
             var ItemGroupCount = (int)Math.Ceiling(LocationPool.Count / 32.0);
@@ -146,7 +145,7 @@ namespace MMR_Tracker_V3
 
                 if (!string.IsNullOrWhiteSpace(line) && line.Contains("->"))
                 {
-                    var Entry = line.Split(new string[] { "->" }, StringSplitOptions.None);
+                    var Entry = line.Split(new string[] { "->" }, StringSplitOptions.None).Select(x => x.Replace("*","").Replace("^", "")).ToArray();
                     if ((CurrentSection == "Location" || CurrentSection == "Dungeon") && !spoilerLog.LocationLog.ContainsKey(Entry[0].Trim()))
                     {
                         spoilerLog.LocationLog.Add(Entry[0].Trim(), Entry[1].Trim());
@@ -168,19 +167,23 @@ namespace MMR_Tracker_V3
         public static void ApplyMMRandoSettings(this LogicObjects.TrackerInstance instance, MMRData.SpoilerLogData Log)
         {
             //Apply setting strings and enable tricks
+            Debug.WriteLine($"Applying Setting Strings");
             ApplyLocationString(Log.GameplaySettings.CustomItemListString, instance);
             ApplyJunkString(Log.GameplaySettings.CustomJunkLocationsString, instance);
             ApplyStartingItemString(Log.GameplaySettings.CustomStartingItemListString, instance);
+            Debug.WriteLine($"setting Tricks");
             foreach (var i in instance.MacroPool.Values.Where(x => x.isTrick(instance)))
             {
                 i.TrickEnabled = Log.GameplaySettings.EnabledTricks.Contains(i.ID);
             }
             //If hints are vanilla no need to track them
+            Debug.WriteLine($"Enabling Hints");
             foreach (var i in instance.HintPool)
             {
                 i.Value.RandomizedState = Log.GameplaySettings.GossipHintStyle == "Default" ? MiscData.RandomizedState.ForcedJunk : MiscData.RandomizedState.Randomized;
             }
             //If no StartingItemMode = None, starting locations should be junk. SongHealing is only junked if songs are mixed with items
+            Debug.WriteLine($"Handeling MM Starting Locations");
             List<string> StartingItems = new() { "StartingSword", "StartingShield", "StartingHeartContainer1", "StartingHeartContainer2", "MaskDeku" };
             if (Log.GameplaySettings.AddSongs) { StartingItems.Add("SongHealing"); }
             foreach (var i in StartingItems)
@@ -190,6 +193,7 @@ namespace MMR_Tracker_V3
                 if (!Entry.IsUnrandomized()) { Entry.RandomizedState = MiscData.RandomizedState.ForcedJunk; }
             }
 
+            Debug.WriteLine($"Handeling Dungeon Entrances");
             //Dungeon entrances are not tracked in the CustomItemListString and should instead be randomized based on the RandomizeDungeonEntrances setting
             instance.GetLocationByID("AreaWoodFallTempleAccess").RandomizedState = Log.GameplaySettings.RandomizeDungeonEntrances ? 
                 MiscData.RandomizedState.Randomized : MiscData.RandomizedState.Unrandomized;
@@ -200,6 +204,7 @@ namespace MMR_Tracker_V3
             instance.GetLocationByID("AreaInvertedStoneTowerTempleAccess").RandomizedState = Log.GameplaySettings.RandomizeDungeonEntrances ? 
                 MiscData.RandomizedState.Randomized : MiscData.RandomizedState.Unrandomized;
 
+            Debug.WriteLine($"Handeling Options");
             //These options are not hard coded to the tracker, but set them if they exist.
             if (instance.UserOptions.ContainsKey("ProgressiveItems"))
             {
@@ -218,8 +223,10 @@ namespace MMR_Tracker_V3
                 instance.UserOptions["BYOA"].CurrentValue = Log.GameplaySettings.ByoAmmo ? "enabled" : "disabled";
             }
 
+            Debug.WriteLine($"Getting all Logic Items");
             var AllLogicItems = instance.LogicFile.GetAllItemsUsedInLogic();
-            foreach(var i in instance.LocationPool)
+            Debug.WriteLine($"Making Unrandomized Items Manual and Junking Unrandomized Starting Items");
+            foreach (var i in instance.LocationPool)
             {   
                 //Any unrandomized locations with items that effect logic should be made Manual to track obtaining the item and updating logic
                 if (i.Value.RandomizedState == MiscData.RandomizedState.Unrandomized && AllLogicItems.Contains(i.Value.GetDictEntry(instance).OriginalItem))
@@ -229,12 +236,13 @@ namespace MMR_Tracker_V3
                 //If a location is unrandomized, but it's unrandomized item is a starting item it will contain junk. This is MMR sepcific
                 if (i.Value.IsUnrandomized() && instance.GetItemByID(i.Value.GetDictEntry(instance).OriginalItem).AmountInStartingpool > 0)
                 {
+                    if (StartingItems.Contains(i.Key)) { continue; } //Don't do this for starting items since you automatcially get them
                     i.Value.RandomizedState = MiscData.RandomizedState.ForcedJunk;
                 }
             }
         }
 
-        public static void ApplyMMRandoSpoilerLogSettings(this LogicObjects.TrackerInstance instance, MMRData.SpoilerLogData Log)
+        public static void ApplyMMRandoSpoilerLog(this LogicObjects.TrackerInstance instance, MMRData.SpoilerLogData Log)
         {
             foreach(var i in instance.LocationPool.Values)
             {
@@ -242,11 +250,14 @@ namespace MMR_Tracker_V3
                 var MatchingLocation = Log.LocationLog.Where(x => DictEntry.SpoilerData.SpoilerLogNames.Contains(x.Key));
                 if (!MatchingLocation.Any()) 
                 {
-                    Debug.WriteLine($"{i.ID} was not found in the spoiler log");
+                    if (i.RandomizedState == MiscData.RandomizedState.Randomized)
+                    {
+                        Debug.WriteLine($"{i.ID} was not found in the spoiler log and was randomized");
+                    }
                     continue; 
                 }
                 var ItemName = MatchingLocation.First().Value;
-                var MatchingItems = instance.ItemPool.Values.Where(x => x.SpoilerData.SpoilerLogNames.Contains(ItemName));
+                var MatchingItems = instance.ItemPool.Values.Where(x => x.GetDictEntry(instance).SpoilerData.SpoilerLogNames.Contains(ItemName));
                 var PlaceablegItems = MatchingItems.Where(x => x.CanBePlaced(instance));
                 if (!MatchingItems.Any())
                 {
@@ -266,21 +277,35 @@ namespace MMR_Tracker_V3
                 var MatchingLocations = Log.PriceLog.Where(x => DictEntry.SpoilerData.PriceDataNames.Contains(x.Key));
                 if (!MatchingLocations.Any())
                 {
-                    Debug.WriteLine($"{i.ID} was not found in the Price log");
+                    //Debug.WriteLine($"{i.ID} was not found in the Price log");
                     continue;
                 }
                 i.CheckPrice = MatchingLocations.Select(x => x.Value).Min();
+                Debug.WriteLine($"{i.ID} was assigned a price of {i.CheckPrice}");
             }
             foreach (var i in instance.HintPool.Values)
             {
                 var DictEntry = i.GetDictEntry(instance);
-                var MatchingLocation = Log.GossipLog.Where(x => DictEntry.SpoilerData.GossipHintNames.Contains(x.Key));
+                var MatchingLocation = Log.GossipLog.Where(x => DictEntry.SpoilerData.SpoilerLogNames.Contains(x.Key));
                 if (!MatchingLocation.Any())
                 {
                     Debug.WriteLine($"{i.ID} was not found in the hint log");
                     continue;
                 }
                 i.SpoilerHintText = MatchingLocation.First().Value;
+            }
+        }
+
+        public static void RemoveSpoilerData(this LogicObjects.TrackerInstance instance)
+        {
+            foreach (var i in instance.LocationPool.Values)
+            {
+                i.Randomizeditem.SpoilerLogGivenItem = null;
+                i.CheckPrice = -1;
+            }
+            foreach (var i in instance.HintPool.Values)
+            {
+                i.SpoilerHintText = null;
             }
         }
     }

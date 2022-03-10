@@ -18,7 +18,7 @@ namespace Windows_Form_Frontend
 {
     public partial class MainInterface : Form
     {
-        public static MMR_Tracker_V3.LogicObjects.TrackerInstance MainUITrackerInstance = new LogicObjects.TrackerInstance();
+        public static MMR_Tracker_V3.LogicObjects.TrackerInstance CurrentTrackerInstance = new LogicObjects.TrackerInstance();
         public static List<string> UndoStringList = new();
         public static List<string> RedoStringList = new();
 
@@ -30,6 +30,8 @@ namespace Windows_Form_Frontend
         {
             InitializeComponent();
         }
+
+        //MainForm Actions
 
         private void MainInterface_Load(object sender, EventArgs e)
         {
@@ -44,9 +46,275 @@ namespace Windows_Form_Frontend
             Testing.ViewAsUserMode = ((Control.ModifierKeys == Keys.Control) && Debugger.IsAttached);
 
             UpdateUI();
+            WinFormInstanceCreation.ApplyUserPretLogic();
         }
 
-        private void UpdateUI()
+        private void MainInterface_ResizeEnd(object sender, EventArgs e)
+        {
+            UpdateUI();
+        }
+
+        private void MainInterface_Resize(object sender, EventArgs e)
+        {
+            //Maximizing and unmaximizing does not trigger ResizeEnd which should be used normally since it doesn't constantly run while resizing.
+            //so run this code only if the form becomes maximized or becomes un maximized.
+            if (WindowState == FormWindowState.Maximized)
+            {
+                UpdateUI();
+                FormIsMaximized = true;
+            }
+            else if (FormIsMaximized)
+            {
+                UpdateUI();
+                FormIsMaximized = false;
+            }
+        }
+
+        //Menu Strip
+
+        private void UndoRedo_Click(object sender, EventArgs e)
+        {
+            Stopwatch TimeTotalItemSelect = new Stopwatch();
+            Utility.TimeCodeExecution(TimeTotalItemSelect, "Saving Tracker State (UTF8)", 1);
+            if (sender == undoToolStripMenuItem)
+            {
+                string CurrentState = Utf8Json.JsonSerializer.ToJsonString(CurrentTrackerInstance);
+                CurrentTrackerInstance = LogicObjects.TrackerInstance.FromJson(UndoStringList[^1]);
+                RedoStringList.Add(CurrentState);
+                UndoStringList.RemoveAt(UndoStringList.Count - 1);
+            }
+            else if (sender == redoToolStripMenuItem)
+            {
+                string CurrentState = Utf8Json.JsonSerializer.ToJsonString(CurrentTrackerInstance);
+                CurrentTrackerInstance = LogicObjects.TrackerInstance.FromJson(RedoStringList[^1]);
+                UndoStringList.Add(CurrentState);
+                RedoStringList.RemoveAt(RedoStringList.Count - 1);
+            }
+            Utility.TimeCodeExecution(TimeTotalItemSelect, "Undo/Redo Action", -1);
+
+            LogicCalculation.CalculateLogic(CurrentTrackerInstance);
+            UpdateUI();
+        }
+
+        //Menu Strip => File
+
+        private void NewToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            var Result = fileDialog.ShowDialog();
+            if (Result == DialogResult.Cancel || !File.Exists(fileDialog.FileName)) { return; }
+            string Logic = File.ReadAllText(fileDialog.FileName);
+            WinFormInstanceCreation.CreateWinFormInstance(Logic);
+        }
+
+        private void SavetoolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            bool SaveAs = (sender is ToolStripMenuItem item && item == SaveAsToolStripMenuItem1);
+            if (File.Exists(References.CurrentSavePath) && !SaveAs)
+            {
+                File.WriteAllText(References.CurrentSavePath, CurrentTrackerInstance.ToString());
+            }
+            else
+            {
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "MMRT Save File|*.mmrtsav";
+                saveFileDialog.Title = "Save Tracker";
+                saveFileDialog.ShowDialog();
+                if (saveFileDialog.FileName != "")
+                {
+                    File.WriteAllText(saveFileDialog.FileName, CurrentTrackerInstance.ToString());
+                    References.CurrentSavePath = saveFileDialog.FileName;
+                }
+            }
+        }
+
+        private void LoadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "MMRT Save File|*.mmrtsav";
+            openFileDialog.Title = "Load Tracker Save";
+            openFileDialog.ShowDialog();
+            if (openFileDialog.FileName != "")
+            {
+                LogicObjects.TrackerInstance NewTrackerInstance;
+                try
+                {
+                    NewTrackerInstance = LogicObjects.TrackerInstance.FromJson(File.ReadAllText(openFileDialog.FileName));
+                }
+                catch { MessageBox.Show("Save File Not Valid"); return; }
+                CurrentTrackerInstance = NewTrackerInstance;
+                LogicCalculation.CalculateLogic(CurrentTrackerInstance);
+                UpdateUI();
+                PopulateTrackerOptions();
+            }
+        }
+
+        //Menu Strip => Options
+
+        private void ToggleRandomizerOption_Click(object sender, EventArgs e, OptionData.TrackerOption Option, Object Selection = null)
+        {
+            if (Selection == null)
+            {
+                Option.ToggleOption();
+                ((ToolStripMenuItem)sender).Checked = Option.CurrentValue == "enabled";
+            }
+            else
+            {
+                Option.CurrentValue = (string)Selection;
+            }
+            LogicCalculation.CalculateLogic(CurrentTrackerInstance);
+            UpdateUI();
+        }
+
+        private void logicOptionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RandomizedStateEditor editor = new RandomizedStateEditor(CurrentTrackerInstance);
+            editor.ShowDialog();
+
+            LogicCalculation.CalculateLogic(CurrentTrackerInstance);
+            UpdateUI();
+        }
+
+        //Menu Strip => Tools
+
+        private void importSpoilerLogToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (CurrentTrackerInstance.SpoilerLog == null)
+            {
+                OpenFileDialog openFileDialog = new()
+                {
+                    Filter = "MMR Text Spoiler Log|*.txt",
+                    Title = "Load Text Spoiler Log"
+                };
+                openFileDialog.ShowDialog();
+                if (openFileDialog.FileName != "" && File.Exists(openFileDialog.FileName))
+                {
+                    var ToUpdate = new List<ListBox> { LBCheckedLocations, LBValidEntrances, LBValidLocations };
+                    foreach(var i in ToUpdate) { i.Items.Clear(); i.Items.Add("Importing Spoiler Log"); i.Items.Add("Please Wait..."); i.Items.Add("Reading Spoiler Log.."); i.Refresh(); }
+                    CurrentTrackerInstance.SpoilerLog = SpoilerLogTools.ReadSpoilerLog(File.ReadAllLines(openFileDialog.FileName));
+                    foreach (var i in ToUpdate) { i.Items.Add("Applying Settings..."); i.Refresh(); }
+                    SpoilerLogTools.ApplyMMRandoSettings(CurrentTrackerInstance, CurrentTrackerInstance.SpoilerLog);
+                    foreach (var i in ToUpdate) { i.Items.Add("Applying Spoiler Data..."); i.Refresh(); }
+                    SpoilerLogTools.ApplyMMRandoSpoilerLog(CurrentTrackerInstance, CurrentTrackerInstance.SpoilerLog);
+                }
+            }
+            else
+            {
+                SpoilerLogTools.RemoveSpoilerData(CurrentTrackerInstance);
+                CurrentTrackerInstance.SpoilerLog = null;
+            }
+            LogicCalculation.CalculateLogic(CurrentTrackerInstance);
+            UpdateUI();
+        }
+
+        //Menu Strip => Dev
+
+        private void CodeTestingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Testing.CodeTesting(CurrentTrackerInstance);
+
+        }
+
+        //ListBoxes
+
+        private void LBValidLocations_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            var LB = sender as ListBox;
+            if (e.Index < 0) { return; }
+            e.DrawBackground();
+            Font F = WinFormUtils.GetFontFromString(CurrentTrackerInstance.StaticOptions.WinformData.FormFont);
+            Brush brush = ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? Brushes.White : Brushes.Black;
+            if (LB.Items[e.Index] is LocationData.LocationObject ListEntry && sender != LBPathFinder)
+            {
+                var item = ListEntry;
+                if (item.CheckState == MiscData.CheckState.Marked && !item.Available && item.Starred)
+                { F = new Font(F.FontFamily, F.Size, FontStyle.Bold | FontStyle.Strikeout); }
+                else if (item.Starred)
+                { F = new Font(F.FontFamily, F.Size, FontStyle.Bold); }
+                else if (item.CheckState == MiscData.CheckState.Marked && !item.Available)
+                { F = new Font(F.FontFamily, F.Size, FontStyle.Strikeout); }
+            }
+            e.Graphics.DrawString(LB.Items[e.Index].ToString(), F, brush, e.Bounds);
+
+            e.DrawFocusRectangle();
+        }
+
+        private void LBCheckedLocations_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            var LB = sender as ListBox;
+            if (e.Index < 0) { return; }
+            e.DrawBackground();
+            Font F = WinFormUtils.GetFontFromString(CurrentTrackerInstance.StaticOptions.WinformData.FormFont);
+            Brush brush = ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? Brushes.White : Brushes.Black;
+            if (LB.Items[e.Index] is LocationData.LocationObject ListEntry && sender != LBPathFinder)
+            {
+                var item = ListEntry;
+                if (!item.Available && item.Starred)
+                { F = new Font(F.FontFamily, F.Size, FontStyle.Bold | FontStyle.Strikeout); }
+                else if (item.Starred)
+                { F = new Font(F.FontFamily, F.Size, FontStyle.Bold); }
+                else if (!item.Available)
+                { F = new Font(F.FontFamily, F.Size, FontStyle.Strikeout); }
+            }
+            e.Graphics.DrawString(LB.Items[e.Index].ToString(), F, brush, e.Bounds);
+
+            e.DrawFocusRectangle();
+        }
+
+        private void LBValidEntrances_DoubleClick(object sender, EventArgs e)
+        {
+            MiscData.CheckState action = MiscData.CheckState.Unchecked;
+            if (sender == LBValidLocations || sender == LBValidEntrances) { action = MiscData.CheckState.Checked; }
+            if (sender == LBCheckedLocations) { action = MiscData.CheckState.Unchecked; }
+
+            HandleItemSelect((sender as ListBox).SelectedItems.Cast<object>().ToList(), action);
+        }
+
+        private void LBValidLocations_MouseUp(object sender, MouseEventArgs e)
+        {
+            var LB = sender as ListBox;
+            int index = LB.IndexFromPoint(e.Location);
+            if (index < 0) { return; }
+            if (e.Button == MouseButtons.Middle)
+            {
+                if ((ModifierKeys & Keys.Control) != Keys.Control) { LB.SelectedItems.Clear(); }
+                LB.SetSelected(index, true);
+
+                MiscData.CheckState action = MiscData.CheckState.Unchecked;
+                if (sender == LBValidLocations || sender == LBValidEntrances) { action = MiscData.CheckState.Marked; }
+                if (sender == LBCheckedLocations) { action = MiscData.CheckState.Marked; }
+
+                HandleItemSelect((sender as ListBox).SelectedItems.Cast<object>().ToList(), action);
+
+            }
+            else if (e.Button == MouseButtons.Right)
+            {
+                LB.SelectedItems.Clear();
+                LB.SetSelected(index, true);
+                ShowContextMenu(LB);
+            }
+        }
+
+        //TextBoxes
+
+        private void TXTLocSearch_TextChanged(object sender, EventArgs e)
+        {
+            List<ListBox> ToUpdate = new List<ListBox>();
+            if (sender == TXTLocSearch) { ToUpdate.Add(LBValidLocations); }
+            if (sender == TXTEntSearch) { ToUpdate.Add(LBValidEntrances); }
+            if (sender == TXTCheckedSearch) { ToUpdate.Add(LBCheckedLocations); }
+            PrintToListBox(ToUpdate);
+        }
+
+        private void TXTLocSearch_MouseUp(object sender, MouseEventArgs e)
+        {
+            var TB = sender as TextBox;
+            if (e.Button == MouseButtons.Middle) { TB.Clear(); }
+        }
+
+        //UI Updates
+
+        public void UpdateUI()
         {
             var UpperLeftLBL = label1;
             var UpperRightLBL = label3;
@@ -68,13 +336,13 @@ namespace Windows_Form_Frontend
             redoToolStripMenuItem.Enabled = RedoStringList.Any();
             undoToolStripMenuItem.Enabled = UndoStringList.Any();
 
-            if (MainUITrackerInstance.LogicFile == null || MainUITrackerInstance.LogicFile.Version < 0)
+            if (CurrentTrackerInstance.LogicFile == null || CurrentTrackerInstance.LogicFile.Version < 0)
             {
                 Debug.WriteLine("InstanceNull");
                 SetObjectVisibility(false, false);
                 return;
             }
-            else if (MainUITrackerInstance.StaticOptions.EntranceRadnoEnabled)
+            else if (CurrentTrackerInstance.StaticOptions.EntranceRadnoEnabled)
             {
                 SetObjectVisibility(true, true);
                 UpperLeftLBL.Location = new Point(locX, locY + 2);
@@ -117,7 +385,7 @@ namespace Windows_Form_Frontend
             else
             {
                 SetObjectVisibility(true, false);
-                if (MainUITrackerInstance.StaticOptions.WinformData.HorizontalLayout)
+                if (CurrentTrackerInstance.StaticOptions.WinformData.HorizontalLayout)
                 {
                     UpperLeftLBL.Location = new Point(locX, locY + 2);
                     BTNSetItem.Location = new Point(FormHalfWidth - BTNSetItem.Width, Menuhieght + 1);
@@ -190,32 +458,6 @@ namespace Windows_Form_Frontend
             lblSwapPathfinder.Visible = location;
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void MainInterface_ResizeEnd(object sender, EventArgs e)
-        {
-            UpdateUI();
-        }
-
-        private void MainInterface_Resize(object sender, EventArgs e)
-        {
-            //Maximizing and unmaximizing does not trigger ResizeEnd which should be used normally since it doesn't constantly run while resizing.
-            //so run this code only if the form becomes maximized or becomes un maximized.
-            if (WindowState == FormWindowState.Maximized)
-            {
-                UpdateUI();
-                FormIsMaximized = true;
-            }
-            else if (FormIsMaximized)
-            {
-                UpdateUI();
-                FormIsMaximized = false;
-            }
-        }
-
         private void PrintToListBox(List<ListBox> ToUpdate = null)
         {
             var lbLocTop = LBValidLocations.TopIndex;
@@ -227,17 +469,17 @@ namespace Windows_Form_Frontend
             foreach (var i in ToUpdate)
             {
                 i.Items.Clear();
-                i.Font = WinFormUtils.GetFontFromString(MainUITrackerInstance.StaticOptions.WinformData.FormFont);
+                i.Font = WinFormUtils.GetFontFromString(CurrentTrackerInstance.StaticOptions.WinformData.FormFont);
                 i.ItemHeight = Convert.ToInt32(i.Font.Size * 1.8);
                 i.BeginUpdate();
             }
 
-            Dictionary<string, int> Groups = Utility.GetCategoriesFromFile(MainUITrackerInstance);
-            var DataSets = TrackerDataHandeling.PopulateDataSets(MainUITrackerInstance);
+            Dictionary<string, int> Groups = Utility.GetCategoriesFromFile(CurrentTrackerInstance);
+            var DataSets = TrackerDataHandeling.PopulateDataSets(CurrentTrackerInstance);
 
             if (ToUpdate.Contains(LBValidLocations)) 
             {
-                var Entries = TrackerDataHandeling.PrintToLocationList(Groups, DataSets, WinFormUtils.CreateDivider(LBValidLocations), MainUITrackerInstance, TXTLocSearch.Text, CHKShowAll.Checked);
+                var Entries = TrackerDataHandeling.PrintToLocationList(Groups, DataSets, WinFormUtils.CreateDivider(LBValidLocations), CurrentTrackerInstance, TXTLocSearch.Text, CHKShowAll.Checked);
                 foreach(var i in Entries) { LBValidLocations.Items.Add(i); }
                 LBValidLocations.TopIndex = lbLocTop; 
             }
@@ -248,7 +490,7 @@ namespace Windows_Form_Frontend
             }
             if (ToUpdate.Contains(LBCheckedLocations)) 
             {
-                var Entries = TrackerDataHandeling.PrintToCheckedList(Groups, DataSets, WinFormUtils.CreateDivider(LBCheckedLocations), MainUITrackerInstance, TXTCheckedSearch.Text);
+                var Entries = TrackerDataHandeling.PrintToCheckedList(Groups, DataSets, WinFormUtils.CreateDivider(LBCheckedLocations), CurrentTrackerInstance, TXTCheckedSearch.Text);
                 foreach (var i in Entries) { LBCheckedLocations.Items.Add(i); }
                 LBCheckedLocations.TopIndex = lbCheckTop; 
             }
@@ -256,27 +498,30 @@ namespace Windows_Form_Frontend
             foreach (var i in ToUpdate) { i.EndUpdate(); }
         }
 
-        private void NewToolStripMenuItem1_Click(object sender, EventArgs e)
+        public void FormatMenuItems()
         {
-            OpenFileDialog fileDialog = new OpenFileDialog();
-            var Result = fileDialog.ShowDialog();
-            if (Result == DialogResult.Cancel || !File.Exists(fileDialog.FileName)) { return; }
-            string Logic = File.ReadAllText(fileDialog.FileName);
+            SaveAsToolStripMenuItem1.Visible = (File.Exists(References.CurrentSavePath));
+            importSpoilerLogToolStripMenuItem.Text = (CurrentTrackerInstance.SpoilerLog != null) ? "Remove Spoiler Log" : "Import Spoiler Log";
+            OptionstoolStripMenuItem.Visible = (CurrentTrackerInstance.LogicFile.Version > 0);
+            undoToolStripMenuItem.Visible = (CurrentTrackerInstance.LogicFile.Version > 0);
+            redoToolStripMenuItem.Visible = (CurrentTrackerInstance.LogicFile.Version > 0);
+            refreshToolStripMenuItem.Visible = (CurrentTrackerInstance.LogicFile.Version > 0);
+            SavetoolStripMenuItem1.Visible = (CurrentTrackerInstance.LogicFile.Version > 0);
+            spoilerLogToolsToolStripMenuItem.Visible = (CurrentTrackerInstance.LogicFile.Version > 0);
+            importSpoilerLogToolStripMenuItem.Visible = (CurrentTrackerInstance.LogicFile.Version > 0);
 
-            if (!WinFormInstanceCreation.CreateWinFormInstance(Logic))
-            {
-                MainUITrackerInstance = new LogicObjects.TrackerInstance();
-                return;
-            }
+            //Manage Dev Menus
+            devToolsToolStripMenuItem.Visible = Testing.ISDebugging || Testing.ViewAsUserMode;
+            devToolsToolStripMenuItem.Text = (Testing.ViewAsUserMode) ? "Run as Dev" : "Dev Options";
+            foreach (ToolStripDropDownItem i in devToolsToolStripMenuItem.DropDownItems) { i.Visible = Testing.ISDebugging; }
+            viewAsUserToolStripMenuItem.Checked = Testing.ViewAsUserMode;
 
-            LogicCalculation.CalculateLogic(MainUITrackerInstance);
-            UpdateUI();
         }
 
         private void PopulateTrackerOptions()
         {
             RandomizerOptionsToolStripMenuItem1.DropDownItems.Clear();
-            foreach (var i in MainUITrackerInstance.UserOptions.Values)
+            foreach (var i in CurrentTrackerInstance.UserOptions.Values)
             {
                 if (i.IsToggleOption())
                 {
@@ -298,106 +543,25 @@ namespace Windows_Form_Frontend
                         toolStripComboBox.Items.Add(j.Key);
                     }
                     toolStripComboBox.SelectedIndex = toolStripComboBox.Items.IndexOf(i.CurrentValue);
-                    toolStripComboBox.SelectedIndexChanged += delegate (object sender, EventArgs e) 
+                    toolStripComboBox.SelectedIndexChanged += delegate (object sender, EventArgs e)
                     {
-                        ToggleRandomizerOption_Click(sender, e, i, toolStripComboBox.SelectedItem); 
+                        ToggleRandomizerOption_Click(sender, e, i, toolStripComboBox.SelectedItem);
                     };
                     menuItem.DropDownItems.Add(toolStripComboBox);
                 }
             }
         }
 
-        private void ToggleRandomizerOption_Click(object sender, EventArgs e, OptionData.TrackerOption Option, Object Selection = null)
+        //Context Menus
+
+        private void SetCheckPrice(LocationData.LocationObject itemObject)
         {
-            if (Selection == null)
-            {
-                Option.ToggleOption();
-                ((ToolStripMenuItem)sender).Checked = Option.CurrentValue == "enabled";
-            }
-            else
-            {
-                Option.CurrentValue = (string)Selection;
-            }
-            LogicCalculation.CalculateLogic(MainUITrackerInstance);
+            StartPosition:
+            string input = Interaction.InputBox("Set Check Price", $"{itemObject.GetDictEntry(CurrentTrackerInstance).Name}");
+            if (!int.TryParse(input, out int Price)) { goto StartPosition; }
+            itemObject.CheckPrice = Price;
+            LogicCalculation.CalculateLogic(CurrentTrackerInstance);
             UpdateUI();
-        }
-
-        private void LBValidLocations_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            var LB = sender as ListBox;
-            if (e.Index < 0) { return; }
-            e.DrawBackground();
-            Font F = WinFormUtils.GetFontFromString(MainUITrackerInstance.StaticOptions.WinformData.FormFont);
-            Brush brush = ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? Brushes.White : Brushes.Black;
-            if (LB.Items[e.Index] is LocationData.LocationObject ListEntry && sender != LBPathFinder)
-            {
-                var item = ListEntry;
-                if (item.CheckState == MiscData.CheckState.Marked && !item.Available && item.Starred) 
-                { F = new Font(F.FontFamily, F.Size, FontStyle.Bold | FontStyle.Strikeout); }
-                else if (item.Starred) 
-                { F = new Font(F.FontFamily, F.Size, FontStyle.Bold); }
-                else if (item.CheckState == MiscData.CheckState.Marked && !item.Available) 
-                { F = new Font(F.FontFamily, F.Size, FontStyle.Strikeout); }
-            }
-            e.Graphics.DrawString(LB.Items[e.Index].ToString(), F, brush, e.Bounds);
-
-            e.DrawFocusRectangle();
-        }
-
-        private void LBCheckedLocations_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            var LB = sender as ListBox;
-            if (e.Index < 0) { return; }
-            e.DrawBackground();
-            Font F = WinFormUtils.GetFontFromString(MainUITrackerInstance.StaticOptions.WinformData.FormFont);
-            Brush brush = ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? Brushes.White : Brushes.Black;
-            if (LB.Items[e.Index] is LocationData.LocationObject ListEntry && sender != LBPathFinder)
-            {
-                var item = ListEntry;
-                if (!item.Available && item.Starred)
-                { F = new Font(F.FontFamily, F.Size, FontStyle.Bold | FontStyle.Strikeout); }
-                else if (item.Starred)
-                { F = new Font(F.FontFamily, F.Size, FontStyle.Bold); }
-                else if (!item.Available)
-                { F = new Font(F.FontFamily, F.Size, FontStyle.Strikeout); }
-            }
-            e.Graphics.DrawString(LB.Items[e.Index].ToString(), F, brush, e.Bounds);
-
-            e.DrawFocusRectangle();
-        }
-
-        private void LBValidEntrances_DoubleClick(object sender, EventArgs e)
-        {
-            MiscData.CheckState action = MiscData.CheckState.Unchecked;
-            if (sender == LBValidLocations || sender == LBValidEntrances) { action = MiscData.CheckState.Checked; }
-            if (sender == LBCheckedLocations) { action = MiscData.CheckState.Unchecked; }
-
-            HandleItemSelect((sender as ListBox).SelectedItems.Cast<object>().ToList(), action);
-        }
-
-        private void LBValidLocations_MouseUp(object sender, MouseEventArgs e)
-        {
-            var LB = sender as ListBox;
-            int index = LB.IndexFromPoint(e.Location);
-            if (index < 0) { return; }
-            if (e.Button == MouseButtons.Middle)
-            {
-                if ((ModifierKeys & Keys.Control) != Keys.Control) { LB.SelectedItems.Clear(); }
-                LB.SetSelected(index, true);
-
-                MiscData.CheckState action = MiscData.CheckState.Unchecked;
-                if (sender == LBValidLocations || sender == LBValidEntrances) { action = MiscData.CheckState.Marked; }
-                if (sender == LBCheckedLocations) { action = MiscData.CheckState.Marked; }
-
-                HandleItemSelect((sender as ListBox).SelectedItems.Cast<object>().ToList(), action);
-
-            }
-            else if (e.Button == MouseButtons.Right)
-            {
-                LB.SelectedItems.Clear();
-                LB.SetSelected(index, true);
-                ShowContextMenu(LB);
-            }
         }
 
         private void ShowContextMenu(ListBox listBox)
@@ -419,9 +583,9 @@ namespace Windows_Form_Frontend
 
                 //ShowLogic
                 ToolStripItem ShowLogicFunction = contextMenuStrip.Items.Add("Show Logic");
-                ShowLogicFunction.Click += (sender, e) => 
+                ShowLogicFunction.Click += (sender, e) =>
                 {
-                    ShowLogic showLogic = new ShowLogic(itemObject.ID, MainUITrackerInstance);
+                    ShowLogic showLogic = new ShowLogic(itemObject.ID, CurrentTrackerInstance);
                     showLogic.Show();
                 };
 
@@ -429,7 +593,7 @@ namespace Windows_Form_Frontend
                 ShowDevData.Click += (sender, e) =>
                 {
                     Debug.WriteLine(JsonConvert.SerializeObject(itemObject, Testing._NewtonsoftJsonSerializerOptions));
-                    Debug.WriteLine(JsonConvert.SerializeObject(itemObject.GetDictEntry(MainUITrackerInstance), Testing._NewtonsoftJsonSerializerOptions));
+                    Debug.WriteLine(JsonConvert.SerializeObject(itemObject.GetDictEntry(CurrentTrackerInstance), Testing._NewtonsoftJsonSerializerOptions));
                 };
 
                 if (listBox == LBValidLocations)
@@ -444,7 +608,7 @@ namespace Windows_Form_Frontend
                     //Set Item Price
                     string SetPriceText = itemObject.CheckPrice > -1 ? "Clear Price" : "Set Price";
                     ToolStripItem SetPrice = contextMenuStrip.Items.Add(SetPriceText);
-                    SetPrice.Click += (sender, e) => 
+                    SetPrice.Click += (sender, e) =>
                     {
                         if (itemObject.CheckPrice > -1) { itemObject.CheckPrice = -1; }
                         else { SetCheckPrice(itemObject); }
@@ -467,38 +631,30 @@ namespace Windows_Form_Frontend
             }
         }
 
-        private void SetCheckPrice(LocationData.LocationObject itemObject)
-        {
-            StartPosition:
-            string input = Interaction.InputBox("Set Check Price", $"{itemObject.GetDictEntry(MainUITrackerInstance).Name}");
-            if (!int.TryParse(input, out int Price)) { goto StartPosition; }
-            itemObject.CheckPrice = Price;
-            LogicCalculation.CalculateLogic(MainUITrackerInstance);
-            UpdateUI();
-        }
+        //ListboxObject Handeling
 
         private void HandleItemSelect(List<object> Items, MiscData.CheckState checkState)
         {
-            string CurrentState = Utf8Json.JsonSerializer.ToJsonString(MainUITrackerInstance);
+            string CurrentState = Utf8Json.JsonSerializer.ToJsonString(CurrentTrackerInstance);
 
             List<LocationData.LocationObject> locationObjects = Items.Where(x => x is LocationData.LocationObject).Select(x => x as LocationData.LocationObject).ToList();
             List<LocationData.LocationObject> UncheckedlocationObjects = locationObjects.Where(x => x.CheckState == MiscData.CheckState.Unchecked).ToList();
 
             foreach (LocationData.LocationObject LocationObject in UncheckedlocationObjects)
             {
-                LocationObject.Randomizeditem.Item = LocationObject.GetItemAtCheck(MainUITrackerInstance);
+                LocationObject.Randomizeditem.Item = LocationObject.GetItemAtCheck(CurrentTrackerInstance);
             }
             var ManualChecks = UncheckedlocationObjects.Where(x => x.Randomizeditem.Item == null);
             if (ManualChecks.Any())
             {
-                CheckItemForm checkItemForm = new CheckItemForm(ManualChecks, MainUITrackerInstance);
+                CheckItemForm checkItemForm = new CheckItemForm(ManualChecks, CurrentTrackerInstance);
                 checkItemForm.ShowDialog();
             }
 
             foreach (LocationData.LocationObject LocationObject in locationObjects)
             {
                 var Action = (checkState == MiscData.CheckState.Marked && LocationObject.CheckState == MiscData.CheckState.Marked) ? MiscData.CheckState.Unchecked : checkState;
-                LocationObject.ToggleChecked(Action, MainUITrackerInstance);
+                LocationObject.ToggleChecked(Action, CurrentTrackerInstance);
             }
 
             //Hints======================================
@@ -511,7 +667,7 @@ namespace Windows_Form_Frontend
                 {
                     if (hintObject.SpoilerHintText == null)
                     {
-                        string input = Interaction.InputBox("Input Hint Text", hintObject.GetDictEntry(MainUITrackerInstance).Name);
+                        string input = Interaction.InputBox("Input Hint Text", hintObject.GetDictEntry(CurrentTrackerInstance).Name);
                         hintObject.HintText = input;
                     }
                     else
@@ -526,55 +682,16 @@ namespace Windows_Form_Frontend
 
             UpdateUndoList(CurrentState);
 
-            LogicCalculation.CalculateLogic(MainUITrackerInstance);
+            LogicCalculation.CalculateLogic(CurrentTrackerInstance);
 
             UpdateUI();
 
 
         }
 
-        private void TXTLocSearch_TextChanged(object sender, EventArgs e)
+        private void CHKShowAll_CheckedChanged(object sender, EventArgs e)
         {
-            List<ListBox> ToUpdate = new List<ListBox>();
-            if (sender == TXTLocSearch) { ToUpdate.Add(LBValidLocations); }
-            if (sender == TXTEntSearch) { ToUpdate.Add(LBValidEntrances); }
-            if (sender == TXTCheckedSearch) { ToUpdate.Add(LBCheckedLocations); }
-            PrintToListBox(ToUpdate);
-        }
-
-        private void logicOptionsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RandomizedStateEditor editor = new RandomizedStateEditor(MainUITrackerInstance);
-            editor.ShowDialog();
-
-            LogicCalculation.CalculateLogic(MainUITrackerInstance);
-            UpdateUI();
-        }
-
-        public void FormatMenuItems()
-        {
-            SaveAsToolStripMenuItem1.Visible = (File.Exists(References.CurrentSavePath));
-            importSpoilerLogToolStripMenuItem.Text = (Utility.CheckforSpoilerLog(MainUITrackerInstance)) ? "Remove Spoiler Log" : "Import Spoiler Log";
-            OptionstoolStripMenuItem.Visible = (MainUITrackerInstance.LogicFile.Version > 0);
-            undoToolStripMenuItem.Visible = (MainUITrackerInstance.LogicFile.Version > 0);
-            redoToolStripMenuItem.Visible = (MainUITrackerInstance.LogicFile.Version > 0);
-            refreshToolStripMenuItem.Visible = (MainUITrackerInstance.LogicFile.Version > 0);
-            SavetoolStripMenuItem1.Visible = (MainUITrackerInstance.LogicFile.Version > 0);
-            spoilerLogToolsToolStripMenuItem.Visible = (MainUITrackerInstance.LogicFile.Version > 0);
-            importSpoilerLogToolStripMenuItem.Visible = (MainUITrackerInstance.LogicFile.Version > 0);
-
-            //Manage Dev Menus
-            devToolsToolStripMenuItem.Visible = Testing.ISDebugging || Testing.ViewAsUserMode;
-            devToolsToolStripMenuItem.Text = (Testing.ViewAsUserMode) ? "Run as Dev" : "Dev Options";
-            foreach (ToolStripDropDownItem i in devToolsToolStripMenuItem.DropDownItems) { i.Visible = Testing.ISDebugging; }
-            viewAsUserToolStripMenuItem.Checked = Testing.ViewAsUserMode;
-
-        }
-
-        private void TXTLocSearch_MouseUp(object sender, MouseEventArgs e)
-        {
-            var TB = sender as TextBox;
-            if (e.Button == MouseButtons.Middle) { TB.Clear(); }
+            PrintToListBox();
         }
 
         private void UpdateUndoList(string State)
@@ -585,85 +702,5 @@ namespace Windows_Form_Frontend
             undoToolStripMenuItem.Enabled = UndoStringList.Any();
         }
 
-        private void undoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Stopwatch TimeTotalItemSelect = new Stopwatch();
-            Utility.TimeCodeExecution(TimeTotalItemSelect, "Saving Tracker State (UTF8)", 1);
-            if (sender == undoToolStripMenuItem)
-            {
-                string CurrentState = Utf8Json.JsonSerializer.ToJsonString(MainUITrackerInstance);
-                MainUITrackerInstance = LogicObjects.TrackerInstance.FromJson(UndoStringList[^1]);
-                RedoStringList.Add(CurrentState);
-                UndoStringList.RemoveAt(UndoStringList.Count - 1);
-            }
-            else if (sender == redoToolStripMenuItem)
-            {
-                string CurrentState = Utf8Json.JsonSerializer.ToJsonString(MainUITrackerInstance);
-                MainUITrackerInstance = LogicObjects.TrackerInstance.FromJson(RedoStringList[^1]);
-                UndoStringList.Add(CurrentState);
-                RedoStringList.RemoveAt(RedoStringList.Count - 1);
-            }
-            Utility.TimeCodeExecution(TimeTotalItemSelect, "Undo/Redo Action", -1);
-
-            LogicCalculation.CalculateLogic(MainUITrackerInstance);
-            UpdateUI();
-        }
-
-        private void CodeTestingToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //Testing.CodeTesting(MainUITrackerInstance);
-
-            MMRData.SpoilerLogData logData = SpoilerLogTools.ReadSpoilerLog(File.ReadAllLines(@"D:\Testing\MM-Randomizer-v1.15.0.13-beta\output\MMR-1.15.0.13-2022-03-09T23-45-15.4287684Z_SpoilerLog.txt"));
-
-            Clipboard.SetText(JsonConvert.SerializeObject(logData, Testing._NewtonsoftJsonSerializerOptions));
-
-        }
-
-        private void CHKShowAll_CheckedChanged(object sender, EventArgs e)
-        {
-            PrintToListBox();
-        }
-
-        private void SavetoolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            bool SaveAs = (sender is ToolStripMenuItem item && item == SaveAsToolStripMenuItem1);
-            if (File.Exists(References.CurrentSavePath) && !SaveAs)
-            {
-                File.WriteAllText(References.CurrentSavePath, MainUITrackerInstance.ToString());
-            }
-            else
-            {
-                SaveFileDialog saveFileDialog = new SaveFileDialog();
-                saveFileDialog.Filter = "MMRT Save File|*.mmrtsav";
-                saveFileDialog.Title = "Save Tracker";
-                saveFileDialog.ShowDialog(); 
-                if (saveFileDialog.FileName != "")
-                {
-                    File.WriteAllText(saveFileDialog.FileName, MainUITrackerInstance.ToString());
-                    References.CurrentSavePath = saveFileDialog.FileName;
-                }
-            }
-        }
-
-        private void LoadToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "MMRT Save File|*.mmrtsav";
-            openFileDialog.Title = "Load Tracker Save";
-            openFileDialog.ShowDialog();
-            if (openFileDialog.FileName != "")
-            {
-                LogicObjects.TrackerInstance NewTrackerInstance;
-                try
-                {
-                    NewTrackerInstance = LogicObjects.TrackerInstance.FromJson(File.ReadAllText(openFileDialog.FileName));
-                }
-                catch { MessageBox.Show("Save File Not Valid"); return; }
-                MainUITrackerInstance = NewTrackerInstance;
-                LogicCalculation.CalculateLogic(MainUITrackerInstance);
-                UpdateUI();
-                PopulateTrackerOptions();
-            }
-        }
     }
 }

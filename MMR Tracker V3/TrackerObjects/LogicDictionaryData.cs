@@ -63,6 +63,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public int? MaxAmountInWorld { get; set; } = null;
             public bool? ValidStartingItem { get; set; } = null;
             public string[] ItemTypes { get; set; } = Array.Empty<string>();
+            public SpoilerlogReference SpoilerData { get; set; } = new SpoilerlogReference();
 
             public string GetItemName(LogicObjects.TrackerInstance instance)
             {
@@ -82,6 +83,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public List<string> RequiredItemsOverride { get; set; } = null;
             public List<List<string>> ConditionalItemsOverride { get; set; } = null;
             public dynamicLogicData DynamicLogicData { get; set; } = null;
+            public SpoilerlogReference SpoilerData { get; set; } = new SpoilerlogReference();
         }
 
         [Serializable]

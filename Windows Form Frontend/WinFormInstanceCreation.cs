@@ -1,9 +1,11 @@
 ﻿using MMR_Tracker_V3;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -11,9 +13,15 @@ namespace Windows_Form_Frontend
 {
     public class WinFormInstanceCreation
     {
-        public static bool CreateWinFormInstance(string Logic = null)
+        public class PresetlogicData
         {
-            MainInterface.MainUITrackerInstance = new MMR_Tracker_V3.LogicObjects.TrackerInstance();
+            public string Name { get; set; } = null;
+            public string DictionaryString { get; set; } = null;
+            public string LogicString { get; set; } = null;
+        }
+        public static bool CreateWinFormInstance(string Logic = null, string Dictionary = null)
+        {
+            var NewInstance = new LogicObjects.TrackerInstance();
             if (Logic == null)
             {
                 OpenFileDialog fileDialog = new OpenFileDialog();
@@ -21,22 +29,26 @@ namespace Windows_Form_Frontend
                 Logic = File.ReadAllText(fileDialog.FileName);
             }
 
-            var Result = TrackerInstanceCreation.ApplyLogicAndDict(MainInterface.MainUITrackerInstance, Logic);
+            var Result = TrackerInstanceCreation.ApplyLogicAndDict(NewInstance, Logic, Dictionary);
 
-            if (Result == TrackerInstanceCreation.InstanceState.LogicFailure || MainInterface.MainUITrackerInstance.LogicFile.Logic == null)
+            if (Result == TrackerInstanceCreation.InstanceState.LogicFailure || NewInstance.LogicFile.Logic == null)
             {
                 MessageBox.Show("Failed To Load Logic");
                 return false;
             }
-            if (Result == TrackerInstanceCreation.InstanceState.DictionaryFailure || MainInterface.MainUITrackerInstance.LogicDictionary == null)
+            if (Result == TrackerInstanceCreation.InstanceState.DictionaryFailure || NewInstance.LogicDictionary == null)
             {
                 MessageBox.Show("Failed To Load Dict");
                 return false;
             }
 
-            TrackerInstanceCreation.PopulateTrackerObject(MainInterface.MainUITrackerInstance);
+            TrackerInstanceCreation.PopulateTrackerObject(NewInstance);
 
-            ApplyWinFormSpecificDat(MainInterface.MainUITrackerInstance);
+            MainInterface.CurrentTrackerInstance = NewInstance;
+
+            ApplyWinFormSpecificDat(NewInstance);
+            LogicCalculation.CalculateLogic(NewInstance);
+            MainInterface.CurrentProgram.UpdateUI();
 
             return true;
         }
@@ -48,5 +60,48 @@ namespace Windows_Form_Frontend
                 instance.StaticOptions.WinformData.FormFont = WinFormUtils.ConvertFontToString(null);
             }
         } 
+
+        public static void ApplyUserPretLogic()
+        {
+            MainInterface.CurrentProgram.presetsToolStripMenuItem.DropDownItems.Clear();
+            PresetlogicData PresetEntry = new PresetlogicData();
+            List<PresetlogicData> Entries = new List<PresetlogicData>();
+            if (File.Exists(References.Globalpaths.WebPresets))
+            {
+                System.Net.WebClient wc = new System.Net.WebClient();
+                foreach (var i in File.ReadAllLines(References.Globalpaths.WebPresets))
+                {
+                    if (i.StartsWith("Name:"))
+                    {
+                        PresetEntry = new PresetlogicData();
+                        PresetEntry.Name = Regex.Replace(i, "Name:", "", RegexOptions.IgnoreCase).Trim();
+                    }
+                    if (i.StartsWith("Dictionary:"))
+                    {
+                        PresetEntry.DictionaryString = wc.DownloadString(Regex.Replace(i, "Dictionary:", "", RegexOptions.IgnoreCase).Trim());
+                    }
+                    if (i.StartsWith("Address:"))
+                    {
+                        PresetEntry.LogicString = wc.DownloadString(Regex.Replace(i, "Address:", "", RegexOptions.IgnoreCase).Trim());
+                        Entries.Add(PresetEntry);
+                    }
+                }
+            }
+            foreach (var i in Directory.GetFiles(References.Globalpaths.PresetFolder).Where(x => x != References.Globalpaths.WebPresets))
+            {
+                PresetEntry = new PresetlogicData();
+                PresetEntry.Name = Path.GetFileNameWithoutExtension(i);
+                PresetEntry.LogicString = File.ReadAllText(i);
+                Entries.Add(PresetEntry);
+            }
+            foreach (var i in Entries)
+            {
+                Debug.WriteLine($"Adding Preset {i.Name}");
+                ToolStripMenuItem menuItem = new ToolStripMenuItem();
+                menuItem.Text = i.Name;
+                menuItem.Click += (s, ee) => { CreateWinFormInstance(i.LogicString, i.DictionaryString); };
+                MainInterface.CurrentProgram.presetsToolStripMenuItem.DropDownItems.Add(menuItem);
+            }
+        }
     }
 }

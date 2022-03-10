@@ -1,0 +1,19 @@
+﻿//To add a new Preset, start by adding the "Name:" line to define the presets name.
+//Next the "Address:" line followed by the web address containing the logic files raw Text.
+//Each new entry is defined by the "Name:" line
+//
+//Example:
+//Name: Example Logic
+//Address: https://pastebin.com/raw/ExAmPlElOgIc123
+//
+//You can define a custom dictionary for your logic by adding the "Dictionary" line and the link to the dictionary file
+//Example:
+//Name: Skyward Sword
+//Dictionary: https://raw.githubusercontent.com/Thedrummonger/MMR-Tracker/master/Recources/Dictionaries/Other%20Games/SSR%20V1%20json%20Logic%20Dictionary.json
+//Address: https://raw.githubusercontent.com/Thedrummonger/MMR-Tracker/master/Recources/Other%20Files/Other%20Game%20Premade%20Logic/Skyward%20Sword%20Rando%20Casual%20(Beta).txt
+
+Name: MMR Casual
+Address: https://raw.githubusercontent.com/ZoeyZolotova/mm-rando/dev/MMR.Randomizer/Resources/REQ_CASUAL.txt
+
+Name: MMR Glitched
+Address: https://raw.githubusercontent.com/ZoeyZolotova/mm-rando/dev/MMR.Randomizer/Resources/REQ_GLITCH.txt

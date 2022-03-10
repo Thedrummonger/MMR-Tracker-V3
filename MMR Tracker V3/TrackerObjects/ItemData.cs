@@ -18,7 +18,6 @@ namespace MMR_Tracker_V3.TrackerObjects
             public int AmountInStartingpool { get; set; } = 0;
             public Dictionary<int, int> AmountAquiredOnline { get; set; } = new Dictionary<int, int>();
             public Dictionary<int, int> AmountSentToPlayer { get; set; } = new Dictionary<int, int>();
-            public SpoilerlogReference SpoilerData { get; set; } = new SpoilerlogReference();
             public string DisplayName { get; set; }
 
             public override string ToString()

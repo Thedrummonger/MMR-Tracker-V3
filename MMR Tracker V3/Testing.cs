@@ -258,7 +258,41 @@ namespace MMR_Tracker_V3
 
         public static void CodeTesting(LogicObjects.TrackerInstance instance)
         {
-
+            V2Porting.LegacyFunctions.LogicDictionary LegacyDict = JsonConvert.DeserializeObject<V2Porting.LegacyFunctions.LogicDictionary>(File.ReadAllText(@"C:\Users\ttalbot\Documents\VS CODE STUFF\MMRT\Recources\Dictionaries\MMR V11 json Logic Dictionary.json"));
+            foreach(var i in instance.LogicDictionary.LocationList)
+            {
+                var LegacyEntry = LegacyDict.LogicDictionaryList.Find(x => x.DictionaryName == i.ID);
+                if (LegacyEntry == null) { i.SpoilerData = null; continue; }
+                i.SpoilerData.SpoilerLogNames = LegacyEntry.SpoilerLocation;
+                i.SpoilerData.PriceDataNames = LegacyEntry.SpoilerPriceLocations;
+                i.SpoilerData.GossipHintNames = LegacyEntry.GossipLocation;
+            }
+            foreach (var i in instance.LogicDictionary.ItemList)
+            {
+                var LegacyEntry = LegacyDict.LogicDictionaryList.Find(x => x.DictionaryName == i.ID);
+                if (LegacyEntry == null) { i.SpoilerData = null; continue; }
+                i.SpoilerData.SpoilerLogNames = LegacyEntry.SpoilerItem;
+                i.SpoilerData.PriceDataNames = null;
+                i.SpoilerData.GossipHintNames = LegacyEntry.GossipLocation;
+            }
+            foreach (var i in instance.LogicDictionary.HintSpots)
+            {
+                var LegacyEntry = LegacyDict.LogicDictionaryList.Find(x => x.DictionaryName == i.ID);
+                if (LegacyEntry == null) { i.SpoilerData = null; continue; }
+                i.SpoilerData.SpoilerLogNames = new string[] { LegacyEntry.DictionaryName[6..] };
+                i.SpoilerData.PriceDataNames = null;
+                i.SpoilerData.GossipHintNames = null;
+            }
+            foreach (var i in instance.LogicDictionary.MacroList)
+            {
+                var LegacyEntry = LegacyDict.LogicDictionaryList.Find(x => x.DictionaryName == i.ID);
+                if (LegacyEntry == null) { i.SpoilerData = null; continue; }
+                i.SpoilerData.SpoilerLogNames = null;
+                i.SpoilerData.PriceDataNames = LegacyEntry.SpoilerPriceLocations;
+                i.SpoilerData.GossipHintNames = null;
+            }
+            string SavePath = @"C:\Users\ttalbot\Downloads\Tracker Testing\NewDict.json";
+            File.WriteAllText(SavePath, JsonConvert.SerializeObject(instance.LogicDictionary, Testing._NewtonsoftJsonSerializerOptions));
         }
 
         public readonly static Newtonsoft.Json.JsonSerializerSettings _NewtonsoftJsonSerializerOptions = new Newtonsoft.Json.JsonSerializerSettings

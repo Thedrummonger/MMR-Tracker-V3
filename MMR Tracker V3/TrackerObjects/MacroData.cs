@@ -15,7 +15,6 @@ namespace MMR_Tracker_V3.TrackerObjects
         public bool Aquired { get; set; } = false;
         public bool TrickEnabled { get; set; } = true;
         public int MacroPrice { get; set; } = -1;
-        public SpoilerlogReference SpoilerData { get; set; } = new SpoilerlogReference();
 
         public LogicDictionaryData.DictionaryMacroEntry GetDictEntry(LogicObjects.TrackerInstance Instance)
         {

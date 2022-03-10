@@ -20,6 +20,8 @@ namespace MMR_Tracker_V3
             public static readonly string BaseLogicPresetPath = BaseProgramPath + @"Recources\Other Files\Custom Logic Presets";
             public static readonly string BaseOtherGameLogic = BaseProgramPath + @"Recources\Other Files\Other Game Premade Logic";
             public static readonly string CategoryTextFile = BaseProgramPath + @"Recources\Categories.txt";
+            public static readonly string PresetFolder = BaseProgramPath + @"Recources\Presets";
+            public static readonly string WebPresets = PresetFolder + @"\WebPresets.txt";
         }
         public static class WindowsPaths
         {

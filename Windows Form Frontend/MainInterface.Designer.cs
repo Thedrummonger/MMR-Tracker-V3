@@ -335,7 +335,6 @@ namespace Windows_Form_Frontend
             this.menuStrip1.Size = new System.Drawing.Size(390, 24);
             this.menuStrip1.TabIndex = 43;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // fileToolMenuStrip
             // 
@@ -352,35 +351,35 @@ namespace Windows_Form_Frontend
             // NewToolStripMenuItem1
             // 
             this.NewToolStripMenuItem1.Name = "NewToolStripMenuItem1";
-            this.NewToolStripMenuItem1.Size = new System.Drawing.Size(114, 22);
+            this.NewToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.NewToolStripMenuItem1.Text = "New";
             this.NewToolStripMenuItem1.Click += new System.EventHandler(this.NewToolStripMenuItem1_Click);
             // 
             // LoadToolStripMenuItem
             // 
             this.LoadToolStripMenuItem.Name = "LoadToolStripMenuItem";
-            this.LoadToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.LoadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.LoadToolStripMenuItem.Text = "Load";
             this.LoadToolStripMenuItem.Click += new System.EventHandler(this.LoadToolStripMenuItem_Click);
             // 
             // SavetoolStripMenuItem1
             // 
             this.SavetoolStripMenuItem1.Name = "SavetoolStripMenuItem1";
-            this.SavetoolStripMenuItem1.Size = new System.Drawing.Size(114, 22);
+            this.SavetoolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.SavetoolStripMenuItem1.Text = "Save";
             this.SavetoolStripMenuItem1.Click += new System.EventHandler(this.SavetoolStripMenuItem1_Click);
             // 
             // SaveAsToolStripMenuItem1
             // 
             this.SaveAsToolStripMenuItem1.Name = "SaveAsToolStripMenuItem1";
-            this.SaveAsToolStripMenuItem1.Size = new System.Drawing.Size(114, 22);
+            this.SaveAsToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.SaveAsToolStripMenuItem1.Text = "Save As";
             this.SaveAsToolStripMenuItem1.Click += new System.EventHandler(this.SavetoolStripMenuItem1_Click);
             // 
             // presetsToolStripMenuItem
             // 
             this.presetsToolStripMenuItem.Name = "presetsToolStripMenuItem";
-            this.presetsToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.presetsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.presetsToolStripMenuItem.Text = "Presets";
             // 
             // OptionstoolStripMenuItem
@@ -433,6 +432,7 @@ namespace Windows_Form_Frontend
             this.importSpoilerLogToolStripMenuItem.Name = "importSpoilerLogToolStripMenuItem";
             this.importSpoilerLogToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.importSpoilerLogToolStripMenuItem.Text = "Import Spoiler Log";
+            this.importSpoilerLogToolStripMenuItem.Click += new System.EventHandler(this.importSpoilerLogToolStripMenuItem_Click);
             // 
             // spoilerLogToolsToolStripMenuItem
             // 
@@ -467,21 +467,21 @@ namespace Windows_Form_Frontend
             this.undoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("undoToolStripMenuItem.Image")));
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
             this.undoToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
-            this.undoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
+            this.undoToolStripMenuItem.Click += new System.EventHandler(this.UndoRedo_Click);
             // 
             // redoToolStripMenuItem
             // 
             this.redoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("redoToolStripMenuItem.Image")));
             this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
             this.redoToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
-            this.redoToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
+            this.redoToolStripMenuItem.Click += new System.EventHandler(this.UndoRedo_Click);
             // 
             // refreshToolStripMenuItem
             // 
             this.refreshToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("refreshToolStripMenuItem.Image")));
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
             this.refreshToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
-            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.undoToolStripMenuItem_Click);
+            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.UndoRedo_Click);
             // 
             // MainInterface
             // 
@@ -556,7 +556,6 @@ namespace Windows_Form_Frontend
         private System.Windows.Forms.ToolStripMenuItem OptionstoolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem RandomizerOptionsToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem logicOptionsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem presetsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem miscOptionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logicEditorToolStripMenuItem;
@@ -568,6 +567,7 @@ namespace Windows_Form_Frontend
         private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewAsUserToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem CodeTestingToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem presetsToolStripMenuItem;
     }
 }
 

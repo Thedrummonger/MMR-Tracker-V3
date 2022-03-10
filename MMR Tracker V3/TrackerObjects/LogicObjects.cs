@@ -23,6 +23,7 @@ namespace MMR_Tracker_V3
             public Dictionary<string, TrackerOption> UserOptions { get; set; } = new Dictionary<string, TrackerOption>();
             public LogicDictionary LogicDictionary { get; set; } = new LogicDictionary();
             public LogicFile LogicFile { get; set; } = new MMRData.LogicFile();
+            public MMRData.SpoilerLogData SpoilerLog { get; set; } = null;
             public Dictionary<string, JsonFormatLogicItem> LogicOverride { get; set; } = new Dictionary<string, JsonFormatLogicItem>();
             public Options StaticOptions { get; set; } = new Options();
             public PriceData PriceData { get; set; } = new PriceData();

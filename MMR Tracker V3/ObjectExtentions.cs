@@ -155,7 +155,6 @@ namespace MMR_Tracker_V3
 
         public static bool UncheckItem(this LocationData.LocationObject data, CheckState NewState, LogicObjects.TrackerInstance Instance)
         {
-            Debug.WriteLine($"Unchecking: {data.ID} With Random item: {data.Randomizeditem.Item}");
             var ItemObjectToAltar = Instance.GetItemByID(data.Randomizeditem.Item);
 
             if (ItemObjectToAltar != null)
@@ -174,7 +173,6 @@ namespace MMR_Tracker_V3
 
         public static bool CheckItem(this LocationData.LocationObject data, CheckState NewState, LogicObjects.TrackerInstance Instance)
         {
-            Debug.WriteLine($"Checking: {data.ID} With Random item: {data.Randomizeditem.Item}");
             if (string.IsNullOrWhiteSpace(data.Randomizeditem.Item)) { return false; }
 
             var ItemObjectToAltar = Instance.GetItemByID(data.Randomizeditem.Item);
