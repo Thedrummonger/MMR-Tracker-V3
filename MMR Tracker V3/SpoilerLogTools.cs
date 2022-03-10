@@ -133,8 +133,8 @@ namespace MMR_Tracker_V3
             {
                 if (line.Trim().StartsWith("Settings:")) { CurrentSection = "Settings"; continue; }
                 if (line.Trim().StartsWith("Seed:")) { CurrentSection = "Seed"; continue; }
-                if (line.Trim().StartsWith("Entrance")) { CurrentSection = "Entrance"; continue; }
-                if (line.Trim().StartsWith("Location")) { CurrentSection = "Location"; continue; }
+                if (line.Trim().StartsWith("Entrance") && line.Contains("Destination")) { CurrentSection = "Dungeon"; continue; }
+                if (line.Trim().StartsWith("Location") && line.Contains("Item")) { CurrentSection = "Location"; continue; }
                 if (line.Trim().StartsWith("Gossip Stone") && line.Contains("Message")) { CurrentSection = "Gossip"; continue; }
                 if (line.Trim().StartsWith("Name") && line.Contains("Cost")) { CurrentSection = "Price"; continue; }
 
@@ -147,19 +147,15 @@ namespace MMR_Tracker_V3
                 if (!string.IsNullOrWhiteSpace(line) && line.Contains("->"))
                 {
                     var Entry = line.Split(new string[] { "->" }, StringSplitOptions.None);
-                    if (CurrentSection == "Entrance")
-                    {
-                        spoilerLog.DungeonLog.Add(Entry[0].Trim(), Entry[1].Trim());
-                    }
-                    else if (CurrentSection == "Location")
+                    if ((CurrentSection == "Location" || CurrentSection == "Dungeon") && !spoilerLog.LocationLog.ContainsKey(Entry[0].Trim()))
                     {
                         spoilerLog.LocationLog.Add(Entry[0].Trim(), Entry[1].Trim());
                     }
-                    else if (CurrentSection == "Price")
+                    else if (CurrentSection == "Price" && !spoilerLog.PriceLog.ContainsKey(Entry[0].Trim()))
                     {
                         spoilerLog.PriceLog.Add(Entry[0].Trim(), int.Parse(Entry[1].Trim()));
                     }
-                    else if (CurrentSection == "Gossip")
+                    else if (CurrentSection == "Gossip" && !spoilerLog.GossipLog.ContainsKey(Entry[0].Trim()))
                     {
                         spoilerLog.GossipLog.Add(Entry[0].Trim(), Entry[1].Trim());
                     }
@@ -169,8 +165,9 @@ namespace MMR_Tracker_V3
             return spoilerLog;
         }
 
-        public static void ApplyRandoSettings(this LogicObjects.TrackerInstance instance, MMRData.SpoilerLogData Log)
+        public static void ApplyMMRandoSettings(this LogicObjects.TrackerInstance instance, MMRData.SpoilerLogData Log)
         {
+            //Apply setting strings and enable tricks
             ApplyLocationString(Log.GameplaySettings.CustomItemListString, instance);
             ApplyJunkString(Log.GameplaySettings.CustomJunkLocationsString, instance);
             ApplyStartingItemString(Log.GameplaySettings.CustomStartingItemListString, instance);
@@ -178,7 +175,12 @@ namespace MMR_Tracker_V3
             {
                 i.TrickEnabled = Log.GameplaySettings.EnabledTricks.Contains(i.ID);
             }
-
+            //If hints are vanilla no need to track them
+            foreach (var i in instance.HintPool)
+            {
+                i.Value.RandomizedState = Log.GameplaySettings.GossipHintStyle == "Default" ? MiscData.RandomizedState.ForcedJunk : MiscData.RandomizedState.Randomized;
+            }
+            //If no StartingItemMode = None, starting locations should be junk. SongHealing is only junked if songs are mixed with items
             List<string> StartingItems = new() { "StartingSword", "StartingShield", "StartingHeartContainer1", "StartingHeartContainer2", "MaskDeku" };
             if (Log.GameplaySettings.AddSongs) { StartingItems.Add("SongHealing"); }
             foreach (var i in StartingItems)
@@ -188,11 +190,17 @@ namespace MMR_Tracker_V3
                 if (!Entry.IsUnrandomized()) { Entry.RandomizedState = MiscData.RandomizedState.ForcedJunk; }
             }
 
-            instance.GetLocationByID("AreaWoodFallTempleAccess").RandomizedState = Log.GameplaySettings.RandomizeDungeonEntrances ? MiscData.RandomizedState.Randomized : MiscData.RandomizedState.Unrandomized;
-            instance.GetLocationByID("AreaSnowheadTempleAccess").RandomizedState = Log.GameplaySettings.RandomizeDungeonEntrances ? MiscData.RandomizedState.Randomized : MiscData.RandomizedState.Unrandomized;
-            instance.GetLocationByID("AreaGreatBayTempleAccess").RandomizedState = Log.GameplaySettings.RandomizeDungeonEntrances ? MiscData.RandomizedState.Randomized : MiscData.RandomizedState.Unrandomized;
-            instance.GetLocationByID("AreaInvertedStoneTowerTempleAccess").RandomizedState = Log.GameplaySettings.RandomizeDungeonEntrances ? MiscData.RandomizedState.Randomized : MiscData.RandomizedState.Unrandomized;
+            //Dungeon entrances are not tracked in the CustomItemListString and should instead be randomized based on the RandomizeDungeonEntrances setting
+            instance.GetLocationByID("AreaWoodFallTempleAccess").RandomizedState = Log.GameplaySettings.RandomizeDungeonEntrances ? 
+                MiscData.RandomizedState.Randomized : MiscData.RandomizedState.Unrandomized;
+            instance.GetLocationByID("AreaSnowheadTempleAccess").RandomizedState = Log.GameplaySettings.RandomizeDungeonEntrances ? 
+                MiscData.RandomizedState.Randomized : MiscData.RandomizedState.Unrandomized;
+            instance.GetLocationByID("AreaGreatBayTempleAccess").RandomizedState = Log.GameplaySettings.RandomizeDungeonEntrances ? 
+                MiscData.RandomizedState.Randomized : MiscData.RandomizedState.Unrandomized;
+            instance.GetLocationByID("AreaInvertedStoneTowerTempleAccess").RandomizedState = Log.GameplaySettings.RandomizeDungeonEntrances ? 
+                MiscData.RandomizedState.Randomized : MiscData.RandomizedState.Unrandomized;
 
+            //These options are not hard coded to the tracker, but set them if they exist.
             if (instance.UserOptions.ContainsKey("ProgressiveItems"))
             {
                 instance.UserOptions["ProgressiveItems"].CurrentValue = Log.GameplaySettings.ProgressiveUpgrades ? "enabled" : "disabled";
@@ -209,11 +217,71 @@ namespace MMR_Tracker_V3
             {
                 instance.UserOptions["BYOA"].CurrentValue = Log.GameplaySettings.ByoAmmo ? "enabled" : "disabled";
             }
-            foreach(var i in instance.HintPool)
-            {
-                i.Value.RandomizedState = Log.GameplaySettings.GossipHintStyle == "Default" ? MiscData.RandomizedState.ForcedJunk : MiscData.RandomizedState.Randomized;
-            }
 
+            var AllLogicItems = instance.LogicFile.GetAllItemsUsedInLogic();
+            foreach(var i in instance.LocationPool)
+            {   
+                //Any unrandomized locations with items that effect logic should be made Manual to track obtaining the item and updating logic
+                if (i.Value.RandomizedState == MiscData.RandomizedState.Unrandomized && AllLogicItems.Contains(i.Value.GetDictEntry(instance).OriginalItem))
+                {
+                    i.Value.RandomizedState = MiscData.RandomizedState.UnrandomizedManual;
+                }
+                //If a location is unrandomized, but it's unrandomized item is a starting item it will contain junk. This is MMR sepcific
+                if (i.Value.IsUnrandomized() && instance.GetItemByID(i.Value.GetDictEntry(instance).OriginalItem).AmountInStartingpool > 0)
+                {
+                    i.Value.RandomizedState = MiscData.RandomizedState.ForcedJunk;
+                }
+            }
+        }
+
+        public static void ApplyMMRandoSpoilerLogSettings(this LogicObjects.TrackerInstance instance, MMRData.SpoilerLogData Log)
+        {
+            foreach(var i in instance.LocationPool.Values)
+            {
+                var DictEntry = i.GetDictEntry(instance);
+                var MatchingLocation = Log.LocationLog.Where(x => DictEntry.SpoilerData.SpoilerLogNames.Contains(x.Key));
+                if (!MatchingLocation.Any()) 
+                {
+                    Debug.WriteLine($"{i.ID} was not found in the spoiler log");
+                    continue; 
+                }
+                var ItemName = MatchingLocation.First().Value;
+                var MatchingItems = instance.ItemPool.Values.Where(x => x.SpoilerData.SpoilerLogNames.Contains(ItemName));
+                var PlaceablegItems = MatchingItems.Where(x => x.CanBePlaced(instance));
+                if (!MatchingItems.Any())
+                {
+                    Debug.WriteLine($"{ItemName} Could not placed at {i.ID}: No items match name {ItemName}");
+                    continue;
+                }
+                else if (!PlaceablegItems.Any())
+                {
+                    Debug.WriteLine($"{ItemName} Could not placed at {i.ID}: No items {ItemName} could be placed");
+                    continue;
+                }
+                i.Randomizeditem.SpoilerLogGivenItem = PlaceablegItems.First().Id;
+            }
+            foreach (var i in instance.LocationPool.Values)
+            {
+                var DictEntry = i.GetDictEntry(instance);
+                var MatchingLocations = Log.PriceLog.Where(x => DictEntry.SpoilerData.PriceDataNames.Contains(x.Key));
+                if (!MatchingLocations.Any())
+                {
+                    Debug.WriteLine($"{i.ID} was not found in the Price log");
+                    continue;
+                }
+                i.CheckPrice = MatchingLocations.Select(x => x.Value).Min();
+            }
+            foreach (var i in instance.HintPool.Values)
+            {
+                var DictEntry = i.GetDictEntry(instance);
+                var MatchingLocation = Log.GossipLog.Where(x => DictEntry.SpoilerData.GossipHintNames.Contains(x.Key));
+                if (!MatchingLocation.Any())
+                {
+                    Debug.WriteLine($"{i.ID} was not found in the hint log");
+                    continue;
+                }
+                i.SpoilerHintText = MatchingLocation.First().Value;
+            }
         }
     }
 }

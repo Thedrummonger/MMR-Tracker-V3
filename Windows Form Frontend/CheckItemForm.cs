@@ -16,10 +16,10 @@ namespace Windows_Form_Frontend
     {
         List<LocationData.LocationObject> _CheckList;
         LogicObjects.TrackerInstance _Instance;
-        public CheckItemForm(List<LocationData.LocationObject> ManualChecks, LogicObjects.TrackerInstance Instance)
+        public CheckItemForm(IEnumerable<LocationData.LocationObject> ManualChecks, LogicObjects.TrackerInstance Instance)
         {
             InitializeComponent();
-            _CheckList = ManualChecks;
+            _CheckList = ManualChecks.ToList();
             _Instance = Instance;
         }
 

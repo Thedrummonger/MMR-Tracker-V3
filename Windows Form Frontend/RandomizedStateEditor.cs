@@ -252,48 +252,43 @@ namespace Windows_Form_Frontend
             PrinttrickData();
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void btnApplySettingStrings_Click(object sender, EventArgs e)
         {
-            var SuccessLoc = SpoilerLogTools.ApplyLocationString(txtLocString.Text, _Instance);
-            var SuncessJunk = SpoilerLogTools.ApplyJunkString(txtjunkString.Text, _Instance);
-            var SuncessStart = SpoilerLogTools.ApplyStartingItemString(txtStartString.Text, _Instance);
+            SpoilerLogTools.ApplyLocationString(txtLocString.Text, _Instance);
+            SpoilerLogTools.ApplyJunkString(txtjunkString.Text, _Instance);
+            SpoilerLogTools.ApplyStartingItemString(txtStartString.Text, _Instance);
 
             UpdateItemSets();
-
             PrintToLocationList();
             PrintStartingItemData();
             PrinttrickData();
-
             UpdatedSettingStrings();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnLoadSettingFile_Click(object sender, EventArgs e)
         {
+            MMRData.SpoilerLogData configuration;
             OpenFileDialog fileDialog = new OpenFileDialog();
             var Result = fileDialog.ShowDialog();
             if (Result == DialogResult.Cancel || !File.Exists(fileDialog.FileName)) { return; }
-            try
-            {
-                MMRData.SpoilerLogData configuration = Newtonsoft.Json.JsonConvert.DeserializeObject<MMRData.SpoilerLogData>(File.ReadAllText(fileDialog.FileName));
-                if (configuration.GameplaySettings == null)
-                {
-                    MessageBox.Show("Setting File Invalid!");
-                    return;
-                }
-                txtLocString.Text = configuration.GameplaySettings.CustomItemListString;
-                txtjunkString.Text = configuration.GameplaySettings.CustomJunkLocationsString;
-                txtStartString.Text = configuration.GameplaySettings.CustomStartingItemListString;
-                _Instance.ApplyRandoSettings(configuration);
-
-                UpdateItemSets();
-
-                PrintToLocationList();
-                PrintStartingItemData();
-                PrinttrickData();
-
-                UpdatedSettingStrings();
+            //Parse as MMR Settings File
+            try { configuration = Newtonsoft.Json.JsonConvert.DeserializeObject<MMRData.SpoilerLogData>(File.ReadAllText(fileDialog.FileName)); }
+            catch
+            {   //Parse as Spoiler Log File
+                try { configuration = SpoilerLogTools.ReadSpoilerLog(File.ReadAllLines(fileDialog.FileName)); }
+                catch { MessageBox.Show("Setting File Invalid!"); return; }
             }
-            catch { MessageBox.Show("Setting File Invalid!"); }
+            if (configuration.GameplaySettings == null) { MessageBox.Show("Setting File Invalid!"); return; }
+            txtLocString.Text = configuration.GameplaySettings.CustomItemListString;
+            txtjunkString.Text = configuration.GameplaySettings.CustomJunkLocationsString;
+            txtStartString.Text = configuration.GameplaySettings.CustomStartingItemListString;
+            _Instance.ApplyMMRandoSettings(configuration);
+
+            UpdateItemSets();
+            PrintToLocationList();
+            PrintStartingItemData();
+            PrinttrickData();
+            UpdatedSettingStrings();
         }
     }
 }

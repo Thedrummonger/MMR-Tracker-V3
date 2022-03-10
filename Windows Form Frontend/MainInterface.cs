@@ -479,55 +479,32 @@ namespace Windows_Form_Frontend
 
         private void HandleItemSelect(List<object> Items, MiscData.CheckState checkState)
         {
-            Stopwatch TimeItemSelect = new Stopwatch();
-            Utility.TimeCodeExecution(TimeItemSelect);
-            Stopwatch TimeTotalItemSelect = new Stopwatch();
-            Utility.TimeCodeExecution(TimeTotalItemSelect);
-
-            Debug.WriteLine("===================================");
-
             string CurrentState = Utf8Json.JsonSerializer.ToJsonString(MainUITrackerInstance);
-            Utility.TimeCodeExecution(TimeItemSelect, "Saving Tracker State (UTF8)", 1);
 
             List<LocationData.LocationObject> locationObjects = Items.Where(x => x is LocationData.LocationObject).Select(x => x as LocationData.LocationObject).ToList();
-            List<HintData.HintObject> HintObjects = Items.Where(x => x is HintData.HintObject).Select(x => x as HintData.HintObject).ToList();
-            Utility.TimeCodeExecution(TimeItemSelect, "Get Selected Data", 1);
+            List<LocationData.LocationObject> UncheckedlocationObjects = locationObjects.Where(x => x.CheckState == MiscData.CheckState.Unchecked).ToList();
 
-            //Items =====================================
-            List<LocationData.LocationObject> ManualChecks = new List<LocationData.LocationObject>();
-            foreach (LocationData.LocationObject LocationObject in locationObjects)
+            foreach (LocationData.LocationObject LocationObject in UncheckedlocationObjects)
             {
-                if (LocationObject.CheckState != MiscData.CheckState.Unchecked) { continue; }
-                if (LocationObject.Randomizeditem.Item == null)
-                {
-                    LocationObject.Randomizeditem.Item = LocationObject.GetItemAtCheck(MainUITrackerInstance);
-                    if (LocationObject.Randomizeditem.Item == null)
-                    {
-                        ManualChecks.Add(LocationObject);
-                    }
-                }
+                LocationObject.Randomizeditem.Item = LocationObject.GetItemAtCheck(MainUITrackerInstance);
             }
-            Utility.TimeCodeExecution(TimeItemSelect, "Get Manual Checks", 1);
-
-            TimeTotalItemSelect.Stop();
+            var ManualChecks = UncheckedlocationObjects.Where(x => x.Randomizeditem.Item == null);
             if (ManualChecks.Any())
             {
                 CheckItemForm checkItemForm = new CheckItemForm(ManualChecks, MainUITrackerInstance);
                 checkItemForm.ShowDialog();
             }
-            Utility.TimeCodeExecution(TimeItemSelect, "Check Item Form", 1);
-            TimeTotalItemSelect.Start();
 
             foreach (LocationData.LocationObject LocationObject in locationObjects)
             {
-                Debug.WriteLine($"Unchecking {LocationObject.Randomizeditem.Item} At Location {LocationObject.ID}");
                 var Action = (checkState == MiscData.CheckState.Marked && LocationObject.CheckState == MiscData.CheckState.Marked) ? MiscData.CheckState.Unchecked : checkState;
                 LocationObject.ToggleChecked(Action, MainUITrackerInstance);
             }
-            Utility.TimeCodeExecution(TimeItemSelect, "Check Items", 1);
 
             //Hints======================================
 
+
+            List<HintData.HintObject> HintObjects = Items.Where(x => x is HintData.HintObject).Select(x => x as HintData.HintObject).ToList();
             foreach (HintData.HintObject hintObject in HintObjects)
             {
                 if (hintObject.CheckState == MiscData.CheckState.Unchecked)
@@ -546,25 +523,13 @@ namespace Windows_Form_Frontend
                 hintObject.CheckState = CheckAction;
                 hintObject.HintText = CheckAction == MiscData.CheckState.Unchecked ? null : hintObject.HintText;
             }
-            Utility.TimeCodeExecution(TimeItemSelect, "Check Hints", 1);
 
             UpdateUndoList(CurrentState);
-            Utility.TimeCodeExecution(TimeItemSelect, "Adding to undo List", 1);
 
-            Debug.WriteLine("---Logic Code Start---");
             LogicCalculation.CalculateLogic(MainUITrackerInstance);
-            Utility.TimeCodeExecution(TimeItemSelect, "Entire Logic Calculation", 1);
-            Debug.WriteLine("---Logic Code End---");
 
             UpdateUI();
-            Utility.TimeCodeExecution(TimeItemSelect, "Update UI", -1);
-            Utility.TimeCodeExecution(TimeTotalItemSelect, "Total Check Item Action", -1);
 
-            Debug.WriteLine("Aquired Items");
-            foreach (var i in MainUITrackerInstance.ItemPool)
-            {
-                if (i.Value.AmountAquiredLocally > 0) { Debug.WriteLine(i.Value.Id); }
-            }
 
         }
 
@@ -646,7 +611,12 @@ namespace Windows_Form_Frontend
 
         private void CodeTestingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Testing.CodeTesting(MainUITrackerInstance);
+            //Testing.CodeTesting(MainUITrackerInstance);
+
+            MMRData.SpoilerLogData logData = SpoilerLogTools.ReadSpoilerLog(File.ReadAllLines(@"D:\Testing\MM-Randomizer-v1.15.0.13-beta\output\MMR-1.15.0.13-2022-03-09T23-45-15.4287684Z_SpoilerLog.txt"));
+
+            Clipboard.SetText(JsonConvert.SerializeObject(logData, Testing._NewtonsoftJsonSerializerOptions));
+
         }
 
         private void CHKShowAll_CheckedChanged(object sender, EventArgs e)

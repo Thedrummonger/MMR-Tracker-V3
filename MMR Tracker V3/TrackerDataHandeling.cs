@@ -13,6 +13,7 @@ namespace MMR_Tracker_V3
         {
             public List<LocationData.LocationObject> UncheckedLocations { get; set; } = new List<LocationData.LocationObject>();
             public List<LocationData.LocationObject> AvailableLocations { get; set; } = new List<LocationData.LocationObject>();
+            public List<LocationData.LocationObject> AllAvailableLocations { get; set; } = new List<LocationData.LocationObject>();
             public List<LocationData.LocationObject> MarkedLocations { get; set; } = new List<LocationData.LocationObject>();
             public List<LocationData.LocationObject> CheckedLocations { get; set; } = new List<LocationData.LocationObject>();
 
@@ -36,7 +37,8 @@ namespace MMR_Tracker_V3
             dataSets.UncheckedLocations = instance.LocationPool.Values.Where(x => x.CheckState == MiscData.CheckState.Unchecked).ToList();
             dataSets.MarkedLocations = instance.LocationPool.Values.Where(x => x.CheckState == MiscData.CheckState.Marked).ToList();
             dataSets.CheckedLocations = instance.LocationPool.Values.Where(x => x.CheckState == MiscData.CheckState.Checked).ToList();
-            dataSets.AvailableLocations = instance.LocationPool.Values.Where(x => x.CheckState != MiscData.CheckState.Checked && x.Available).ToList();
+            dataSets.AllAvailableLocations = instance.LocationPool.Values.Where(x => x.CheckState != MiscData.CheckState.Checked).ToList();
+            dataSets.AvailableLocations = dataSets.AllAvailableLocations.Where(x => x.Available).ToList();
 
             dataSets.UnheckedHints = instance.HintPool.Values.Where(x => x.CheckState == MiscData.CheckState.Unchecked).ToList();
             dataSets.MarkedHints = instance.HintPool.Values.Where(x => x.CheckState == MiscData.CheckState.Marked).ToList();
@@ -157,9 +159,9 @@ namespace MMR_Tracker_V3
             List<object> DataSource = new List<object>();
 
             var AvailableLocations = DataSets.AvailableLocations;
-            if (Filter.StartsWith("^") || All) { AvailableLocations = DataSets.UncheckedLocations; }
+            if (Filter.StartsWith("^") || All) { AvailableLocations = DataSets.AllAvailableLocations; }
 
-            AvailableLocations = AvailableLocations.Concat(DataSets.MarkedLocations)
+            AvailableLocations = AvailableLocations
                 .OrderBy(x => (Groups.ContainsKey(x.GetDictEntry(Instance).Area.ToLower().Trim()) ? Groups[x.GetDictEntry(Instance).Area.ToLower().Trim()] : DataSets.AvailableLocations.Count() + 1))
                 .ThenBy(x => x.GetDictEntry(Instance).Area)
                 .ThenBy(x => Utility.GetDisplayName(0, x, Instance)).ToList();

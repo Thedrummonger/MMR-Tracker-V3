@@ -15,10 +15,9 @@ namespace MMR_Tracker_V3
     public static class LogicCalculation
     {
         static bool LogItem = false;
-
         static List<int> AverageTime = new List<int>();
 
-        private static bool RequirementsMet(List<string> Requirements, LogicObjects.TrackerInstance instance)
+        private static bool RequirementsMet(List<string> Requirements, TrackerInstance instance)
         {
             foreach (string i in Requirements)
             {
@@ -38,7 +37,7 @@ namespace MMR_Tracker_V3
                 }
                 else if(type == LogicEntryType.item)
                 {
-                    if (!instance.GetItemByID(LogicItem, "RequirementsMet").Useable(Amount)) { return false; }
+                    if (!instance.GetItemByID(LogicItem).Useable(Amount)) { return false; }
                 }
                 else if (type == LogicEntryType.macro)
                 {
@@ -54,7 +53,7 @@ namespace MMR_Tracker_V3
             return true;
         }
 
-        private static bool ConditionalsMet(List<List<string>> Conditionals, LogicObjects.TrackerInstance instance)
+        private static bool ConditionalsMet(List<List<string>> Conditionals, TrackerInstance instance)
         {
             if (!Conditionals.Any()) { return true; }
             foreach (var i in Conditionals)
@@ -64,35 +63,27 @@ namespace MMR_Tracker_V3
             return false;
         }
 
-        public static void CalculateLogic(LogicObjects.TrackerInstance instance)
+        public static void CalculateLogic(TrackerInstance instance)
         {
-            Stopwatch stopwatch = new Stopwatch();
-            AverageTime = new List<int>();
-
-            Utility.TimeCodeExecution(stopwatch);
             while (true)
             {
                 bool MacroChanged = CalculateMacros(instance);
                 bool UnrandomizedItemAquired = CheckUrandomizedLocations(instance);
                 if (!MacroChanged && !UnrandomizedItemAquired) { break; }
             }
-            Utility.TimeCodeExecution(stopwatch, "Macro and Unrandomized Item Calculation", 1);
-            foreach (var i in instance.LocationPool.Values.Where(x => x.RandomizedState != RandomizedState.Unrandomized))
+            foreach (var i in instance.LocationPool.Values.Where(x => x.RandomizedState != RandomizedState.Unrandomized && x.RandomizedState != RandomizedState.ForcedJunk))
             {
                 var Logic = instance.GetLogic(i.ID);
                 i.Available = RequirementsMet(Logic.RequiredItems, instance) && ConditionalsMet(Logic.ConditionalItems, instance);
             }
-            Utility.TimeCodeExecution(stopwatch, "Location Calculation", 1);
             foreach (var i in instance.HintPool)
             {
                 var Logic = instance.GetLogic(i.Key);
                 i.Value.Available = RequirementsMet(Logic.RequiredItems, instance) && ConditionalsMet(Logic.ConditionalItems, instance);
             }
-            Utility.TimeCodeExecution(stopwatch, "Hint Location Calculation", 1);
-            Debug.WriteLine($"MultiItem Check took {AverageTime.Sum() / TimeSpan.TicksPerMillisecond}");
         }
 
-        public static bool CalculateMacros(LogicObjects.TrackerInstance instance)
+        public static bool CalculateMacros(TrackerInstance instance)
         {
             bool MacroStateChanged = false;
             foreach(var i in instance.MacroPool)
@@ -111,7 +102,7 @@ namespace MMR_Tracker_V3
             return MacroStateChanged;
         }
 
-        public static MMRData.JsonFormatLogicItem GetLogic(this LogicObjects.TrackerInstance instance, string OriginalID)
+        public static MMRData.JsonFormatLogicItem GetLogic(this TrackerInstance instance, string OriginalID)
         {
 
             bool Literal = OriginalID.IsLiteralID(out string ID);
@@ -212,15 +203,12 @@ namespace MMR_Tracker_V3
                     }
                 }
             }
-            else
-            {
-                Requirements.Add(NewWallet);
-            }
+            else { Requirements.Add(NewWallet); }
             NewRequirements = Requirements;
             NewConditionals = Conditionals;
         }
 
-        public static bool CheckUrandomizedLocations(LogicObjects.TrackerInstance instance)
+        public static bool CheckUrandomizedLocations(TrackerInstance instance)
         {
             bool ItemStateChanged = false;
             foreach (var i in instance.LocationPool.Where(x => x.Value.RandomizedState == RandomizedState.Unrandomized))
@@ -228,7 +216,7 @@ namespace MMR_Tracker_V3
                 var Logic = instance.GetLogic(i.Key);
                 var Available = RequirementsMet(Logic.RequiredItems, instance) && ConditionalsMet(Logic.ConditionalItems, instance);
 
-                bool ShouldBeChecked = Available && i.Value.CheckState == CheckState.Unchecked;
+                bool ShouldBeChecked = Available && i.Value.CheckState != CheckState.Checked;
                 bool ShouldBeUnChecked = !Available && i.Value.CheckState == CheckState.Checked;
 
                 if (ShouldBeChecked || ShouldBeUnChecked)
@@ -236,9 +224,7 @@ namespace MMR_Tracker_V3
                     ItemStateChanged = true;
                     i.Value.Available = Available;
                     CheckState checkState = i.Value.Available ? CheckState.Checked : CheckState.Unchecked;
-                    if (checkState == CheckState.Unchecked) { i.Value.Randomizeditem.Item = null; }
-                    if (checkState == CheckState.Checked) { i.Value.Randomizeditem.Item = i.Value.GetItemAtCheck(instance); }
-
+                    if (checkState == CheckState.Checked) { i.Value.Randomizeditem.Item = i.Value.GetDictEntry(instance).OriginalItem; }
                     i.Value.ToggleChecked(checkState, instance);
                 }
             }
@@ -256,7 +242,7 @@ namespace MMR_Tracker_V3
             return true;
         }
 
-        public static bool LogicOptionEntry(LogicObjects.TrackerInstance instance, string i, out bool optionEntryValid)
+        public static bool LogicOptionEntry(TrackerInstance instance, string i, out bool optionEntryValid)
         {
             optionEntryValid = false;
             if (!i.Contains("==") && !i.Contains("!=")) { return false; }
@@ -267,7 +253,7 @@ namespace MMR_Tracker_V3
             return true;
         }
 
-        private static bool checkOptionEntry(LogicObjects.TrackerInstance instance, string[] data, bool inverse)
+        private static bool checkOptionEntry(TrackerInstance instance, string[] data, bool inverse)
         {
             bool LiteralOption = data[0].Trim().IsLiteralID(out string CleanedOptionName);
             bool LiteralValue = data[1].Trim().IsLiteralID(out string CleanedOptionValue);
@@ -286,7 +272,7 @@ namespace MMR_Tracker_V3
             return false;
         }
 
-        public static MMRData.JsonFormatLogicItem GetOriginalLogic(this LogicObjects.TrackerInstance instance, string ID, bool copy = false)
+        public static MMRData.JsonFormatLogicItem GetOriginalLogic(this TrackerInstance instance, string ID, bool copy = false)
         {
             bool Literal = ID.IsLiteralID(out ID);
 

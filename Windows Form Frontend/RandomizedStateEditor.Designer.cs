@@ -312,7 +312,7 @@ namespace Windows_Form_Frontend
             this.button8.TabIndex = 30;
             this.button8.Text = "Apply Strings";
             this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.button8.Click += new System.EventHandler(this.btnApplySettingStrings_Click);
             // 
             // chkShowRand
             // 
@@ -433,7 +433,7 @@ namespace Windows_Form_Frontend
             this.button1.TabIndex = 35;
             this.button1.Text = "Load Setting File";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.btnLoadSettingFile_Click);
             // 
             // RandomizedStateEditor
             // 

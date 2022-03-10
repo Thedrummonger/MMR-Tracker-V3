@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
+using static MMR_Tracker_V3.TrackerObjects.MMRData;
 using static MMR_Tracker_V3.TrackerObjects.OptionData;
 
 namespace MMR_Tracker_V3.TrackerObjects
@@ -48,10 +49,10 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string ID { get; set; }
             public string Name { get; set; }
             public string OriginalItem { get; set; }
-            public string[] AltNames { get; set; } = Array.Empty<string>();
             public string Area { get; set; }
             public string[] ValidItemTypes { get; set; } = Array.Empty<string>();
             public bool? IgnoreForSettingString { get; set; } = null;
+            public SpoilerlogReference SpoilerData { get; set; } = new SpoilerlogReference();
         }
 
         [Serializable]
@@ -89,6 +90,7 @@ namespace MMR_Tracker_V3.TrackerObjects
         {
             public string ID { get; set; }
             public string Name { get; set; }
+            public SpoilerlogReference SpoilerData { get; set; } = new SpoilerlogReference();
 
         }
     }

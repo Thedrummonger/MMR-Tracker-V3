@@ -14,7 +14,7 @@ namespace MMR_Tracker_V3
     public static class ObjectExtentions
     {
         //ItemData
-        public static ItemObject GetItemByID(this LogicObjects.TrackerInstance instance, string item, string Source)
+        public static ItemObject GetItemByID(this LogicObjects.TrackerInstance instance, string item, string Source = "")
         {
             if (item == null) { Debug.WriteLine(Source); }
             if (!instance.ItemPool.ContainsKey(item)) { return null; }
@@ -43,7 +43,7 @@ namespace MMR_Tracker_V3
         {
             if (locationObject.IsUnrandomized()) { return true; }
             string OriginalItem = locationObject.GetDictEntry(instance).OriginalItem ?? "";
-            var OriginalItemObject = instance.GetItemByID(OriginalItem, "CanBeUnrandomized");
+            var OriginalItemObject = instance.GetItemByID(OriginalItem);
             if (OriginalItemObject == null) { return false; }
             return OriginalItemObject.CanBePlaced(instance);
         }
@@ -140,14 +140,7 @@ namespace MMR_Tracker_V3
             }
             else if (CurrentState == CheckState.Checked)
             {
-                if (data.Randomizeditem.Item != null)
-                {
-                    Debug.WriteLine($"Warining {data.ID} was checked but had no item");
-                }
-                else
-                {
-                    UncheckItem(data, NewState, Instance);
-                }
+                UncheckItem(data, NewState, Instance);
             }
             else if (NewState == CheckState.Checked)
             {
@@ -162,8 +155,8 @@ namespace MMR_Tracker_V3
 
         public static bool UncheckItem(this LocationData.LocationObject data, CheckState NewState, LogicObjects.TrackerInstance Instance)
         {
-            Debug.WriteLine($"Unchecking : {data.Randomizeditem.Item}");
-            var ItemObjectToAltar = Instance.GetItemByID(data.Randomizeditem.Item, "UncheckItem");
+            Debug.WriteLine($"Unchecking: {data.ID} With Random item: {data.Randomizeditem.Item}");
+            var ItemObjectToAltar = Instance.GetItemByID(data.Randomizeditem.Item);
 
             if (ItemObjectToAltar != null)
             {
@@ -181,9 +174,10 @@ namespace MMR_Tracker_V3
 
         public static bool CheckItem(this LocationData.LocationObject data, CheckState NewState, LogicObjects.TrackerInstance Instance)
         {
+            Debug.WriteLine($"Checking: {data.ID} With Random item: {data.Randomizeditem.Item}");
             if (string.IsNullOrWhiteSpace(data.Randomizeditem.Item)) { return false; }
 
-            var ItemObjectToAltar = Instance.GetItemByID(data.Randomizeditem.Item, "CheckItem");
+            var ItemObjectToAltar = Instance.GetItemByID(data.Randomizeditem.Item);
             if (ItemObjectToAltar != null) { ItemObjectToAltar.ChangeLocalItemAmounts(data, 1); }
 
             return true;

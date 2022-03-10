@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -39,7 +40,6 @@ namespace MMR_Tracker_V3.TrackerObjects
         public class SpoilerLogData
         {
             public GameplaySettings GameplaySettings { get; set; }
-            public Dictionary<string, string> DungeonLog { get; set; } = new Dictionary<string, string>();
             public Dictionary<string, string> LocationLog { get; set; } = new Dictionary<string, string>();
             public Dictionary<string, string> GossipLog { get; set; } = new Dictionary<string, string>();
             public Dictionary<string, int> PriceLog { get; set; } = new Dictionary<string, int>();
@@ -48,35 +48,17 @@ namespace MMR_Tracker_V3.TrackerObjects
         [Serializable]
         public class GameplaySettings
         {
-            public bool UseCustomItemList { get; set; } = true;
-            public string[] CategoriesRandomized { get; set; } = null;
-            public bool AddDungeonItems { get; set; } = false;
-            public bool AddShopItems { get; set; } = false;
-            public bool AddMoonItems { get; set; } = false;
-            public bool AddFairyRewards { get; set; } = false;
-            public bool AddOther { get; set; } = false;
-            public bool AddNutChest { get; set; } = false;
-            public bool CrazyStartingItems { get; set; } = false;
-            public bool AddCowMilk { get; set; } = false;
-            public bool AddSkulltulaTokens { get; set; } = false;
-            public bool AddStrayFairies { get; set; } = false;
-            public bool AddMundaneRewards { get; set; } = false;
-            public bool RandomizeBottleCatchContents { get; set; } = false;
-            public bool ExcludeSongOfSoaring { get; set; } = false;
             public bool RandomizeDungeonEntrances { get; set; } = false;
-            public bool NoStartingItems { get; set; } = false;
             public string StartingItemMode { get; set; } = "";
             public string Logic { get; set; } = "";
             public bool AddSongs { get; set; } = false;
             public bool ProgressiveUpgrades { get; set; } = false;
             public bool ByoAmmo { get; set; } = false;
-            public bool DecoupleEntrances { get; set; } = false;
             public string SmallKeyMode { get; set; } = "Default";
             public string BossKeyMode { get; set; } = "Default";
             public string LogicMode { get; set; } = "Casual";
             public string UserLogicFileName { get; set; } = "";
             public string CustomItemListString { get; set; } = "";
-            public string RandomizedEntrancesString { get; set; } = "";
             public string CustomJunkLocationsString { get; set; } = "";
             public string CustomStartingItemListString { get; set; } = "";
             public string GossipHintStyle { get; set; } = "Default";
@@ -92,7 +74,7 @@ namespace MMR_Tracker_V3.TrackerObjects
 
             public string GameCode 
             { 
-                get { return _GameCode == null ? "MMR" : _GameCode; } 
+                get { return _GameCode ?? "MMR"; } 
                 set { _GameCode = value == "MMR" ? null : value; } 
             }
 
@@ -116,6 +98,20 @@ namespace MMR_Tracker_V3.TrackerObjects
                 NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore,
                 Converters = { new Newtonsoft.Json.Converters.StringEnumConverter() }
             };
+
+            public IEnumerable<string> GetAllItemsUsedInLogic()
+            {
+                var AllReq = Logic.Select(x => x.RequiredItems).SelectMany(x => x).Distinct();
+                var allCond = Logic.Select(x => x.ConditionalItems.SelectMany(x => x).Distinct()).SelectMany(x => x).Distinct();
+                return AllReq.Concat(allCond).Distinct();
+            }
+        }
+
+        public class SpoilerlogReference
+        {
+            public string[] SpoilerLogNames { get; set; } = Array.Empty<string>();
+            public string[] GossipHintNames { get; set; } = Array.Empty<string>();
+            public string[] PriceDataNames { get; set; } = Array.Empty<string>();
         }
     }
 }
