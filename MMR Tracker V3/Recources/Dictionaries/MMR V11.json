@@ -2,7 +2,6 @@
   "LogicVersion": 11,
   "LogicFormat": "json",
   "GameCode": "MMR",
-  "DefaultWalletCapacity": 99,
   "LocationList": [
     {
       "ID": "MaskDeku",
@@ -20135,6 +20134,11 @@
     {
       "ID": "MMRTBossKeysy",
       "Static": true
+    },
+    {
+      "ID": "MMRTDefaultWallet",
+      "Static": true,
+      "WalletCapacity": 99
     },
     {
       "ID": "MMRTProgressiveBombBag",

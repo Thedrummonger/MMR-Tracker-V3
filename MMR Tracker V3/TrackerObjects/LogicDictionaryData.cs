@@ -17,7 +17,6 @@ namespace MMR_Tracker_V3.TrackerObjects
             public int LogicVersion { get; set; }
             public string LogicFormat { get; set; }
             public string GameCode { get; set; }
-            public int DefaultWalletCapacity { get; set; } = 99;
             public List<DictionaryLocationEntries> LocationList { get; set; } = new List<DictionaryLocationEntries>();
             public List<DictionaryItemEntries> ItemList { get; set; } = new List<DictionaryItemEntries>();
             public List<DictionaryMacroEntry> MacroList { get; set; } = new List<DictionaryMacroEntry>(); 

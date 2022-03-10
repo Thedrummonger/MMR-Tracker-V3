@@ -97,9 +97,6 @@ namespace MMR_Tracker_V3
 
             //Wallet and Price Data
 
-            string CanAffordString = $"MMRTCanAfford{Instance.LogicDictionary.DefaultWalletCapacity}";
-            Instance.MacroPool.Add(CanAffordString, new() { ID = CanAffordString });
-            Instance.PriceData.CapacityMap.Add(Instance.LogicDictionary.DefaultWalletCapacity, CanAffordString);
             Instance.PriceData.WalletEntries = Utility.GetAllWalletLogicEntries(Instance);
             var ItemWallets = Instance.LogicDictionary.ItemList
                 .Where(x => x.WalletCapacity != null && (int)x.WalletCapacity > -1)
@@ -111,7 +108,8 @@ namespace MMR_Tracker_V3
 
             foreach (var i in Instance.PriceData.Wallets)
             {
-                CanAffordString = $"MMRTCanAfford{i.Value}";
+                string CanAffordString = $"MMRTCanAfford{i.Value}";
+                Debug.WriteLine($"Adding Wallet {CanAffordString}");
                 Instance.MacroPool.Add(CanAffordString, new() { ID = CanAffordString });
                 Instance.PriceData.CapacityMap.Add(i.Value, CanAffordString);
                 Instance.LogicOverride.Add(CanAffordString, new MMRData.JsonFormatLogicItem
