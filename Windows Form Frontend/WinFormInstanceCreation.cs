@@ -69,21 +69,28 @@ namespace Windows_Form_Frontend
             if (File.Exists(References.Globalpaths.WebPresets))
             {
                 System.Net.WebClient wc = new System.Net.WebClient();
+                bool ErrorEntry = false;
                 foreach (var i in File.ReadAllLines(References.Globalpaths.WebPresets))
                 {
                     if (i.StartsWith("Name:"))
                     {
+                        ErrorEntry = false;
                         PresetEntry = new PresetlogicData();
                         PresetEntry.Name = Regex.Replace(i, "Name:", "", RegexOptions.IgnoreCase).Trim();
                     }
-                    if (i.StartsWith("Dictionary:"))
+                    if (i.StartsWith("Dictionary:") && !ErrorEntry)
                     {
-                        PresetEntry.DictionaryString = wc.DownloadString(Regex.Replace(i, "Dictionary:", "", RegexOptions.IgnoreCase).Trim());
+                        try { PresetEntry.DictionaryString = wc.DownloadString(Regex.Replace(i, "Dictionary:", "", RegexOptions.IgnoreCase).Trim()); }
+                        catch { ErrorEntry = true; }
                     }
-                    if (i.StartsWith("Address:"))
+                    if (i.StartsWith("Address:") && !ErrorEntry)
                     {
-                        PresetEntry.LogicString = wc.DownloadString(Regex.Replace(i, "Address:", "", RegexOptions.IgnoreCase).Trim());
-                        Entries.Add(PresetEntry);
+                        try 
+                        {
+                            PresetEntry.LogicString = wc.DownloadString(Regex.Replace(i, "Address:", "", RegexOptions.IgnoreCase).Trim());
+                            Entries.Add(PresetEntry);
+                        }
+                        catch { ErrorEntry = true; }
                     }
                 }
             }
@@ -99,7 +106,11 @@ namespace Windows_Form_Frontend
                 Debug.WriteLine($"Adding Preset {i.Name}");
                 ToolStripMenuItem menuItem = new ToolStripMenuItem();
                 menuItem.Text = i.Name;
-                menuItem.Click += (s, ee) => { CreateWinFormInstance(i.LogicString, i.DictionaryString); };
+                menuItem.Click += (s, ee) =>
+                {
+                    if (!MainInterface.CurrentProgram.PromptSave()) { return; }
+                    CreateWinFormInstance(i.LogicString, i.DictionaryString); 
+                };
                 MainInterface.CurrentProgram.presetsToolStripMenuItem.DropDownItems.Add(menuItem);
             }
         }

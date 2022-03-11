@@ -19,6 +19,7 @@ namespace Windows_Form_Frontend
         LogicObjects.TrackerInstance _Instance;
         private TrackerDataHandeling.DataSets _DataSets;
         private bool Updating = false;
+        public bool ChangesMade = false;
         public RandomizedStateEditor(LogicObjects.TrackerInstance instance)
         {
             InitializeComponent();
@@ -162,6 +163,7 @@ namespace Windows_Form_Frontend
             trick.TrickEnabled = e.Item.Checked;
             UpdateItemSets(); 
             UpdatedSettingStrings();
+            ChangesMade = true;
         }
         private void btnAddStartingItem_Click(object sender, EventArgs e)
         {
@@ -173,6 +175,7 @@ namespace Windows_Form_Frontend
             UpdateItemSets();
             PrintStartingItemData();
             UpdatedSettingStrings();
+            ChangesMade = true;
         }
 
         private void btnRemoveStartingItem_Click(object sender, EventArgs e)
@@ -185,6 +188,7 @@ namespace Windows_Form_Frontend
             UpdateItemSets();
             PrintStartingItemData();
             UpdatedSettingStrings();
+            ChangesMade = true;
         }
 
         private void lvLocationList_ItemChecked(object sender, ItemCheckedEventArgs e)
@@ -206,7 +210,7 @@ namespace Windows_Form_Frontend
             PrintToLocationList();
         }
 
-        private void btnSetManual_Click(object sender, EventArgs e)
+        private void ChangeRandomizationState(object sender, EventArgs e)
         {
             Button button = (Button)sender;
             foreach (var i in CheckedLocationItems)
@@ -230,6 +234,7 @@ namespace Windows_Form_Frontend
             PrintToLocationList();
             PrintStartingItemData();
             UpdatedSettingStrings();
+            ChangesMade = true;
         }
 
         private void cmbLocationType_SelectedValueChanged(object sender, EventArgs e)
@@ -263,6 +268,7 @@ namespace Windows_Form_Frontend
             PrintStartingItemData();
             PrinttrickData();
             UpdatedSettingStrings();
+            ChangesMade = true;
         }
 
         private void btnLoadSettingFile_Click(object sender, EventArgs e)
@@ -289,6 +295,7 @@ namespace Windows_Form_Frontend
             PrintStartingItemData();
             PrinttrickData();
             UpdatedSettingStrings();
+            ChangesMade = true;
         }
     }
 }

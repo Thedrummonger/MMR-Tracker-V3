@@ -31,23 +31,23 @@ namespace MMR_Tracker_V3
                 bool Literal = LogicItem.IsLiteralID(out LogicItem);
                 var type = instance.GetItemEntryType(LogicItem, Literal);
 
-                if (type == LogicEntryType.Bool)
+                switch (type)
                 {
-                    if (bool.TryParse(LogicItem, out bool BoolEntry) && !BoolEntry) { return false; }
-                }
-                else if(type == LogicEntryType.item)
-                {
-                    if (!instance.GetItemByID(LogicItem).Useable(Amount)) { return false; }
-                }
-                else if (type == LogicEntryType.macro)
-                {
-                    var MacroObject = instance.GetMacroByID(LogicItem);
-                    if (!MacroObject.Aquired) { return false; }
-                }
-                else 
-                {
-                    Debug.WriteLine($"{LogicItem} Was not a valid Item");
-                    return false; 
+                    case LogicEntryType.Bool:
+                        if (!bool.Parse(LogicItem)) { return false; }
+                        break;
+                    case LogicEntryType.item:
+                        if (!instance.GetItemByID(LogicItem).Useable(Amount)) { return false; }
+                        break;
+                    case LogicEntryType.macro:
+                        if (!instance.GetMacroByID(LogicItem).Aquired) { return false; }
+                        break;
+                    case LogicEntryType.Area:
+                        if (!AreaReached(LogicItem, instance)) { return false; }
+                        break;
+                    default:
+                        Debug.WriteLine($"{LogicItem} Was not a valid Item");
+                        return false;
                 }
             }
             return true;
@@ -63,6 +63,12 @@ namespace MMR_Tracker_V3
             return false;
         }
 
+        private static bool AreaReached(string Area, TrackerInstance instance)
+        {
+            if (Area == null || Area == instance.EntrancePool.RootArea) { return true; }
+            return instance.EntrancePool.AreaAccessTable.ContainsKey(Area) && instance.EntrancePool.AreaAccessTable[Area] > 0;
+        }
+
         public static void CalculateLogic(TrackerInstance instance)
         {
             while (true)
@@ -74,12 +80,18 @@ namespace MMR_Tracker_V3
             foreach (var i in instance.LocationPool.Values.Where(x => x.RandomizedState != RandomizedState.Unrandomized && x.RandomizedState != RandomizedState.ForcedJunk))
             {
                 var Logic = instance.GetLogic(i.ID);
-                i.Available = RequirementsMet(Logic.RequiredItems, instance) && ConditionalsMet(Logic.ConditionalItems, instance);
+                i.Available = 
+                    RequirementsMet(Logic.RequiredItems, instance) && 
+                    ConditionalsMet(Logic.ConditionalItems, instance) && 
+                    AreaReached(Logic.RequiredArea, instance);
             }
             foreach (var i in instance.HintPool)
             {
                 var Logic = instance.GetLogic(i.Key);
-                i.Value.Available = RequirementsMet(Logic.RequiredItems, instance) && ConditionalsMet(Logic.ConditionalItems, instance);
+                i.Value.Available = 
+                    RequirementsMet(Logic.RequiredItems, instance) && 
+                    ConditionalsMet(Logic.ConditionalItems, instance) &&
+                    AreaReached(Logic.RequiredArea, instance);
             }
         }
 
@@ -91,7 +103,13 @@ namespace MMR_Tracker_V3
                 var Logic = instance.GetLogic(i.Key);
                 bool Available;
                 if (Logic.IsTrick && !i.Value.TrickEnabled) { Available = false; }
-                else { Available = RequirementsMet(Logic.RequiredItems, instance) && ConditionalsMet(Logic.ConditionalItems, instance); }
+                else 
+                { 
+                    Available = 
+                        RequirementsMet(Logic.RequiredItems, instance) && 
+                        ConditionalsMet(Logic.ConditionalItems, instance) &&
+                        AreaReached(Logic.RequiredArea, instance); 
+                }
 
                 if (Available != i.Value.Aquired)
                 {
@@ -100,6 +118,32 @@ namespace MMR_Tracker_V3
                 }
             }
             return MacroStateChanged;
+        }
+
+        public static bool CheckUrandomizedLocations(TrackerInstance instance)
+        {
+            bool ItemStateChanged = false;
+            foreach (var i in instance.LocationPool.Where(x => x.Value.RandomizedState == RandomizedState.Unrandomized))
+            {
+                var Logic = instance.GetLogic(i.Key);
+                var Available = 
+                    RequirementsMet(Logic.RequiredItems, instance) && 
+                    ConditionalsMet(Logic.ConditionalItems, instance) &&
+                    AreaReached(Logic.RequiredArea, instance);
+
+                bool ShouldBeChecked = Available && i.Value.CheckState != CheckState.Checked;
+                bool ShouldBeUnChecked = !Available && i.Value.CheckState == CheckState.Checked;
+
+                if (ShouldBeChecked || ShouldBeUnChecked)
+                {
+                    ItemStateChanged = true;
+                    i.Value.Available = Available;
+                    CheckState checkState = i.Value.Available ? CheckState.Checked : CheckState.Unchecked;
+                    if (checkState == CheckState.Checked) { i.Value.Randomizeditem.Item = i.Value.GetDictEntry(instance).OriginalItem; }
+                    i.Value.ToggleChecked(checkState, instance);
+                }
+            }
+            return ItemStateChanged;
         }
 
         public static MMRData.JsonFormatLogicItem GetLogic(this TrackerInstance instance, string OriginalID)
@@ -206,29 +250,6 @@ namespace MMR_Tracker_V3
             else { Requirements.Add(NewWallet); }
             NewRequirements = Requirements;
             NewConditionals = Conditionals;
-        }
-
-        public static bool CheckUrandomizedLocations(TrackerInstance instance)
-        {
-            bool ItemStateChanged = false;
-            foreach (var i in instance.LocationPool.Where(x => x.Value.RandomizedState == RandomizedState.Unrandomized))
-            {
-                var Logic = instance.GetLogic(i.Key);
-                var Available = RequirementsMet(Logic.RequiredItems, instance) && ConditionalsMet(Logic.ConditionalItems, instance);
-
-                bool ShouldBeChecked = Available && i.Value.CheckState != CheckState.Checked;
-                bool ShouldBeUnChecked = !Available && i.Value.CheckState == CheckState.Checked;
-
-                if (ShouldBeChecked || ShouldBeUnChecked)
-                {
-                    ItemStateChanged = true;
-                    i.Value.Available = Available;
-                    CheckState checkState = i.Value.Available ? CheckState.Checked : CheckState.Unchecked;
-                    if (checkState == CheckState.Checked) { i.Value.Randomizeditem.Item = i.Value.GetDictEntry(instance).OriginalItem; }
-                    i.Value.ToggleChecked(checkState, instance);
-                }
-            }
-            return ItemStateChanged;
         }
 
         public static bool MultipleItemEntry(string Entry, out string Item, out int Amount)

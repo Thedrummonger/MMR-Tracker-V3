@@ -107,7 +107,7 @@ namespace Windows_Form_Frontend
             this.btnSetRandomized.TabIndex = 1;
             this.btnSetRandomized.Text = "Randomize";
             this.btnSetRandomized.UseVisualStyleBackColor = true;
-            this.btnSetRandomized.Click += new System.EventHandler(this.btnSetManual_Click);
+            this.btnSetRandomized.Click += new System.EventHandler(this.ChangeRandomizationState);
             // 
             // btnSetUnRandomized
             // 
@@ -117,7 +117,7 @@ namespace Windows_Form_Frontend
             this.btnSetUnRandomized.TabIndex = 2;
             this.btnSetUnRandomized.Text = "Unrandomize";
             this.btnSetUnRandomized.UseVisualStyleBackColor = true;
-            this.btnSetUnRandomized.Click += new System.EventHandler(this.btnSetManual_Click);
+            this.btnSetUnRandomized.Click += new System.EventHandler(this.ChangeRandomizationState);
             // 
             // btnSetManual
             // 
@@ -127,7 +127,7 @@ namespace Windows_Form_Frontend
             this.btnSetManual.TabIndex = 4;
             this.btnSetManual.Text = "UnRand Manual";
             this.btnSetManual.UseVisualStyleBackColor = true;
-            this.btnSetManual.Click += new System.EventHandler(this.btnSetManual_Click);
+            this.btnSetManual.Click += new System.EventHandler(this.ChangeRandomizationState);
             // 
             // btnSetJunk
             // 
@@ -137,7 +137,7 @@ namespace Windows_Form_Frontend
             this.btnSetJunk.TabIndex = 3;
             this.btnSetJunk.Text = "Force Junk";
             this.btnSetJunk.UseVisualStyleBackColor = true;
-            this.btnSetJunk.Click += new System.EventHandler(this.btnSetManual_Click);
+            this.btnSetJunk.Click += new System.EventHandler(this.ChangeRandomizationState);
             // 
             // btnAddStartingItem
             // 

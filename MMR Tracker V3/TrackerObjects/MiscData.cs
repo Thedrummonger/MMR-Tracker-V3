@@ -80,6 +80,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             Hint,
             Bool,
             Option,
+            Area,
             error
         }
         public static string GetDescription<T>(this T e) where T : IConvertible

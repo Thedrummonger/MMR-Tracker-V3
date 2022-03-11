@@ -18,13 +18,12 @@ namespace Windows_Form_Frontend
 {
     public partial class MainInterface : Form
     {
-        public static MMR_Tracker_V3.LogicObjects.TrackerInstance CurrentTrackerInstance = new LogicObjects.TrackerInstance();
+        public static LogicObjects.TrackerInstance CurrentTrackerInstance;
         public static List<string> UndoStringList = new();
         public static List<string> RedoStringList = new();
-
         public static MainInterface CurrentProgram;
-
         private bool FormIsMaximized = false;
+        private bool UnsavedChanges = false;
 
         public MainInterface()
         {
@@ -38,6 +37,7 @@ namespace Windows_Form_Frontend
             //Since only one instance of the main interface should ever be open, We can store that instance in a variable to be called from static code.
             if (CurrentProgram != null) { Close(); return; }
             CurrentProgram = this;
+            this.Text = "MMR Tracker";
 
             //Ensure the current directory is always the base directory in case the application is opened from a MMRTSave file elsewhere on the system
             System.IO.Directory.SetCurrentDirectory(AppDomain.CurrentDomain.BaseDirectory);
@@ -70,6 +70,11 @@ namespace Windows_Form_Frontend
             }
         }
 
+        private void MainInterface_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!PromptSave()) { e.Cancel = true; }
+        }
+
         //Menu Strip
 
         private void UndoRedo_Click(object sender, EventArgs e)
@@ -100,6 +105,7 @@ namespace Windows_Form_Frontend
 
         private void NewToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            if (!PromptSave()) { return; }
             OpenFileDialog fileDialog = new OpenFileDialog();
             var Result = fileDialog.ShowDialog();
             if (Result == DialogResult.Cancel || !File.Exists(fileDialog.FileName)) { return; }
@@ -112,6 +118,7 @@ namespace Windows_Form_Frontend
             bool SaveAs = (sender is ToolStripMenuItem item && item == SaveAsToolStripMenuItem1);
             if (File.Exists(References.CurrentSavePath) && !SaveAs)
             {
+                UnsavedChanges = false;
                 File.WriteAllText(References.CurrentSavePath, CurrentTrackerInstance.ToString());
             }
             else
@@ -122,14 +129,17 @@ namespace Windows_Form_Frontend
                 saveFileDialog.ShowDialog();
                 if (saveFileDialog.FileName != "")
                 {
+                    UnsavedChanges = false;
                     File.WriteAllText(saveFileDialog.FileName, CurrentTrackerInstance.ToString());
                     References.CurrentSavePath = saveFileDialog.FileName;
                 }
             }
+            UpdateUI();
         }
 
         private void LoadToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!PromptSave()) { return; }
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "MMRT Save File|*.mmrtsav";
             openFileDialog.Title = "Load Tracker Save";
@@ -145,7 +155,7 @@ namespace Windows_Form_Frontend
                 CurrentTrackerInstance = NewTrackerInstance;
                 LogicCalculation.CalculateLogic(CurrentTrackerInstance);
                 UpdateUI();
-                PopulateTrackerOptions();
+                UpdateDynamicUserOptions();
             }
         }
 
@@ -168,8 +178,10 @@ namespace Windows_Form_Frontend
 
         private void logicOptionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            string CurrentState = Utf8Json.JsonSerializer.ToJsonString(CurrentTrackerInstance);
             RandomizedStateEditor editor = new RandomizedStateEditor(CurrentTrackerInstance);
             editor.ShowDialog();
+            if (editor.ChangesMade) { SaveTrackerState(CurrentState); }
 
             LogicCalculation.CalculateLogic(CurrentTrackerInstance);
             UpdateUI();
@@ -189,6 +201,7 @@ namespace Windows_Form_Frontend
                 openFileDialog.ShowDialog();
                 if (openFileDialog.FileName != "" && File.Exists(openFileDialog.FileName))
                 {
+                    SaveTrackerState();
                     var ToUpdate = new List<ListBox> { LBCheckedLocations, LBValidEntrances, LBValidLocations };
                     foreach(var i in ToUpdate) { i.Items.Clear(); i.Items.Add("Importing Spoiler Log"); i.Items.Add("Please Wait..."); i.Items.Add("Reading Spoiler Log.."); i.Refresh(); }
                     CurrentTrackerInstance.SpoilerLog = SpoilerLogTools.ReadSpoilerLog(File.ReadAllLines(openFileDialog.FileName));
@@ -200,6 +213,7 @@ namespace Windows_Form_Frontend
             }
             else
             {
+                SaveTrackerState();
                 SpoilerLogTools.RemoveSpoilerData(CurrentTrackerInstance);
                 CurrentTrackerInstance.SpoilerLog = null;
             }
@@ -316,69 +330,72 @@ namespace Windows_Form_Frontend
 
         public void UpdateUI()
         {
-            var UpperLeftLBL = label1;
-            var UpperRightLBL = label3;
-            var LowerLeftLBL = label2;
-            var LowerRightLBL = label4;
-            var LowerRight2LBL = label5;
-            var LowerRight3LBL = label6;
-            var Menuhieght = menuStrip1.Height;
-            var FormHeight = this.Height - 40 - Menuhieght;
+            AlignUIElements();
+            FormatMenuItems();
+            if (CurrentTrackerInstance == null) { return; }
+
+            this.Text = CurrentTrackerInstance.LogicFile.GameCode + " Tracker" + (UnsavedChanges ? "*" : "");
+
+            CurrentTrackerInstance.EntrancePool.IsEntranceRando = CurrentTrackerInstance.EntrancePool.CheckForRandomEntrances();
+            redoToolStripMenuItem.Enabled = RedoStringList.Any();
+            undoToolStripMenuItem.Enabled = UndoStringList.Any();
+
+            UpdateDynamicUserOptions();
+            PrintToListBox();
+            this.Refresh();
+        }
+
+        private void AlignUIElements()
+        {
+            var MenuHeight = menuStrip1.Height;
+            var FormHeight = this.Height - 40 - MenuHeight;
             var FormWidth = this.Width - 18;
             var FormHalfHeight = FormHeight / 2;
             var FormHalfWidth = FormWidth / 2;
             var locX = 2;
-            var locY = 2 + Menuhieght;
-
-            FormatMenuItems();
-            PopulateTrackerOptions();
-
-            redoToolStripMenuItem.Enabled = RedoStringList.Any();
-            undoToolStripMenuItem.Enabled = UndoStringList.Any();
-
-            if (CurrentTrackerInstance.LogicFile == null || CurrentTrackerInstance.LogicFile.Version < 0)
+            var locY = 2 + MenuHeight;
+            if (CurrentTrackerInstance == null)
             {
-                Debug.WriteLine("InstanceNull");
                 SetObjectVisibility(false, false);
                 return;
             }
-            else if (CurrentTrackerInstance.StaticOptions.EntranceRadnoEnabled)
+            else if (CurrentTrackerInstance.StaticOptions.EntranceRandoFeatures && CurrentTrackerInstance.EntrancePool.IsEntranceRando)
             {
                 SetObjectVisibility(true, true);
-                UpperLeftLBL.Location = new Point(locX, locY + 2);
-                BTNSetItem.Location = new Point(FormHalfWidth - BTNSetItem.Width, Menuhieght + 1);
-                TXTLocSearch.Location = new Point(locX, locY + UpperLeftLBL.Height + 6);
+                lblAvailableLocation.Location = new Point(locX, locY + 2);
+                BTNSetItem.Location = new Point(FormHalfWidth - BTNSetItem.Width, MenuHeight + 1);
+                TXTLocSearch.Location = new Point(locX, locY + lblAvailableLocation.Height + 6);
                 TXTLocSearch.Width = FormHalfWidth - 2;
-                LBValidLocations.Location = new Point(locX, locY + UpperLeftLBL.Height + TXTLocSearch.Height + 8);
+                LBValidLocations.Location = new Point(locX, locY + lblAvailableLocation.Height + TXTLocSearch.Height + 8);
                 LBValidLocations.Width = FormHalfWidth - 2;
-                LBValidLocations.Height = FormHalfHeight - UpperLeftLBL.Height - TXTLocSearch.Height - 14;
+                LBValidLocations.Height = FormHalfHeight - lblAvailableLocation.Height - TXTLocSearch.Height - 14;
 
-                UpperRightLBL.Location = new Point(FormHalfWidth + locX, locY + 2);
-                BTNSetEntrance.Location = new Point(FormWidth - BTNSetEntrance.Width, Menuhieght + 1);
-                TXTEntSearch.Location = new Point(FormHalfWidth + locX, locY + UpperRightLBL.Height + 6);
+                label3.Location = new Point(FormHalfWidth + locX, locY + 2);
+                BTNSetEntrance.Location = new Point(FormWidth - BTNSetEntrance.Width, MenuHeight + 1);
+                TXTEntSearch.Location = new Point(FormHalfWidth + locX, locY + label3.Height + 6);
                 TXTEntSearch.Width = FormHalfWidth - 2;
-                LBValidEntrances.Location = new Point(FormHalfWidth + locX, locY + UpperRightLBL.Height + TXTEntSearch.Height + 8);
+                LBValidEntrances.Location = new Point(FormHalfWidth + locX, locY + label3.Height + TXTEntSearch.Height + 8);
                 LBValidEntrances.Width = FormHalfWidth - 2;
-                LBValidEntrances.Height = FormHalfHeight - UpperRightLBL.Height - TXTEntSearch.Height - 14;
+                LBValidEntrances.Height = FormHalfHeight - label3.Height - TXTEntSearch.Height - 14;
 
-                LowerLeftLBL.Location = new Point(locX, FormHalfHeight + locY - 2);
-                CHKShowAll.Location = new Point(FormHalfWidth - CHKShowAll.Width, Menuhieght + FormHalfHeight - 2);
-                TXTCheckedSearch.Location = new Point(locX, locY + UpperLeftLBL.Height + 2 + FormHalfHeight);
+                lblCheckedLocation.Location = new Point(locX, FormHalfHeight + locY - 2);
+                CHKShowAll.Location = new Point(FormHalfWidth - CHKShowAll.Width, MenuHeight + FormHalfHeight - 2);
+                TXTCheckedSearch.Location = new Point(locX, locY + lblAvailableLocation.Height + 2 + FormHalfHeight);
                 TXTCheckedSearch.Width = FormHalfWidth - 2;
-                LBCheckedLocations.Location = new Point(locX, locY + UpperLeftLBL.Height + TXTCheckedSearch.Height + 4 + FormHalfHeight);
+                LBCheckedLocations.Location = new Point(locX, locY + lblAvailableLocation.Height + TXTCheckedSearch.Height + 4 + FormHalfHeight);
                 LBCheckedLocations.Width = FormHalfWidth - 2;
-                LBCheckedLocations.Height = FormHalfHeight - UpperLeftLBL.Height - TXTCheckedSearch.Height - 8;
+                LBCheckedLocations.Height = FormHalfHeight - lblAvailableLocation.Height - TXTCheckedSearch.Height - 8;
 
-                LowerRightLBL.Location = new Point(FormHalfWidth + locX, FormHalfHeight + locY - 2);
-                BTNFindPath.Location = new Point(FormWidth - BTNFindPath.Width, Menuhieght + FormHalfHeight - 3);
-                LowerRight2LBL.Location = new Point(FormHalfWidth + locX, FormHalfHeight + locY + LowerRightLBL.Height + 6);
-                lblSwapPathfinder.Location = new Point(LowerRight2LBL.Location.X + LowerRight2LBL.Width + 4, LowerRight2LBL.Location.Y - 3);
-                LowerRight3LBL.Location = new Point(FormHalfWidth + locX, FormHalfHeight + locY + LowerRightLBL.Height + 7 + CMBStart.Height);
-                CMBStart.Location = new Point(FormHalfWidth + locX + LowerRight3LBL.Width + 2, FormHalfHeight + locY + LowerRightLBL.Height + 2);
-                CMBEnd.Location = new Point(FormHalfWidth + locX + LowerRight3LBL.Width + 2, FormHalfHeight + locY + LowerRightLBL.Height + CMBStart.Height + 5);
-                CMBStart.Width = FormHalfWidth - LowerRight3LBL.Width - 4;
-                CMBEnd.Width = FormHalfWidth - LowerRight3LBL.Width - 4;
-                LBPathFinder.Location = new Point(locX + FormHalfWidth, FormHalfHeight + locY + 8 + LowerRightLBL.Height + CMBStart.Height + CMBEnd.Height);
+                label4.Location = new Point(FormHalfWidth + locX, FormHalfHeight + locY - 2);
+                BTNFindPath.Location = new Point(FormWidth - BTNFindPath.Width, MenuHeight + FormHalfHeight - 3);
+                label5.Location = new Point(FormHalfWidth + locX, FormHalfHeight + locY + label4.Height + 6);
+                lblSwapPathfinder.Location = new Point(label5.Location.X + label5.Width + 4, label5.Location.Y - 3);
+                label6.Location = new Point(FormHalfWidth + locX, FormHalfHeight + locY + label4.Height + 7 + CMBStart.Height);
+                CMBStart.Location = new Point(FormHalfWidth + locX + label6.Width + 2, FormHalfHeight + locY + label4.Height + 2);
+                CMBEnd.Location = new Point(FormHalfWidth + locX + label6.Width + 2, FormHalfHeight + locY + label4.Height + CMBStart.Height + 5);
+                CMBStart.Width = FormHalfWidth - label6.Width - 4;
+                CMBEnd.Width = FormHalfWidth - label6.Width - 4;
+                LBPathFinder.Location = new Point(locX + FormHalfWidth, FormHalfHeight + locY + 8 + label4.Height + CMBStart.Height + CMBEnd.Height);
                 LBPathFinder.Width = FormHalfWidth - 2;
                 LBPathFinder.Height = LBCheckedLocations.Height - CMBEnd.Height - 5;
             }
@@ -387,50 +404,48 @@ namespace Windows_Form_Frontend
                 SetObjectVisibility(true, false);
                 if (CurrentTrackerInstance.StaticOptions.WinformData.HorizontalLayout)
                 {
-                    UpperLeftLBL.Location = new Point(locX, locY + 2);
-                    BTNSetItem.Location = new Point(FormHalfWidth - BTNSetItem.Width, Menuhieght + 1);
-                    TXTLocSearch.Location = new Point(locX, locY + UpperLeftLBL.Height + 6);
+                    lblAvailableLocation.Location = new Point(locX, locY + 2);
+                    BTNSetItem.Location = new Point(FormHalfWidth - BTNSetItem.Width, MenuHeight + 1);
+                    TXTLocSearch.Location = new Point(locX, locY + lblAvailableLocation.Height + 6);
                     TXTLocSearch.Width = FormHalfWidth - 2;
-                    LBValidLocations.Location = new Point(locX, locY + UpperLeftLBL.Height + TXTLocSearch.Height + 8);
+                    LBValidLocations.Location = new Point(locX, locY + lblAvailableLocation.Height + TXTLocSearch.Height + 8);
                     LBValidLocations.Width = FormHalfWidth - 2;
-                    LBValidLocations.Height = FormHeight - UpperLeftLBL.Height - TXTLocSearch.Height - 14;
+                    LBValidLocations.Height = FormHeight - lblAvailableLocation.Height - TXTLocSearch.Height - 14;
 
-                    LowerLeftLBL.Location = new Point(FormHalfWidth + locX, locY + 2);
-                    CHKShowAll.Location = new Point(FormWidth - CHKShowAll.Width, Menuhieght + 3);
-                    TXTCheckedSearch.Location = new Point(FormHalfWidth + locX, locY + UpperRightLBL.Height + 6);
+                    lblCheckedLocation.Location = new Point(FormHalfWidth + locX, locY + 2);
+                    CHKShowAll.Location = new Point(FormWidth - CHKShowAll.Width, MenuHeight + 3);
+                    TXTCheckedSearch.Location = new Point(FormHalfWidth + locX, locY + label3.Height + 6);
                     TXTCheckedSearch.Width = FormHalfWidth - 2;
-                    LBCheckedLocations.Location = new Point(FormHalfWidth + locX, locY + UpperRightLBL.Height + TXTEntSearch.Height + 8);
+                    LBCheckedLocations.Location = new Point(FormHalfWidth + locX, locY + label3.Height + TXTEntSearch.Height + 8);
                     LBCheckedLocations.Width = FormHalfWidth - 2;
-                    LBCheckedLocations.Height = FormHeight - UpperRightLBL.Height - TXTEntSearch.Height - 14;
+                    LBCheckedLocations.Height = FormHeight - label3.Height - TXTEntSearch.Height - 14;
                 }
                 else
                 {
-                    UpperLeftLBL.Location = new Point(locX, locY + 2);
-                    BTNSetItem.Location = new Point(FormWidth - BTNSetItem.Width, Menuhieght + 1);
-                    TXTLocSearch.Location = new Point(locX, locY + UpperLeftLBL.Height + 6);
+                    lblAvailableLocation.Location = new Point(locX, locY + 2);
+                    BTNSetItem.Location = new Point(FormWidth - BTNSetItem.Width, MenuHeight + 1);
+                    TXTLocSearch.Location = new Point(locX, locY + lblAvailableLocation.Height + 6);
                     TXTLocSearch.Width = FormWidth - 2;
-                    LBValidLocations.Location = new Point(locX, locY + UpperLeftLBL.Height + TXTLocSearch.Height + 8);
+                    LBValidLocations.Location = new Point(locX, locY + lblAvailableLocation.Height + TXTLocSearch.Height + 8);
                     LBValidLocations.Width = FormWidth - 2;
-                    LBValidLocations.Height = FormHalfHeight - UpperLeftLBL.Height - TXTLocSearch.Height - 14;
+                    LBValidLocations.Height = FormHalfHeight - lblAvailableLocation.Height - TXTLocSearch.Height - 14;
 
-                    LowerLeftLBL.Location = new Point(locX, FormHalfHeight + locY - 2);
-                    CHKShowAll.Location = new Point(FormWidth - CHKShowAll.Width, Menuhieght + FormHalfHeight - 2);
-                    TXTCheckedSearch.Location = new Point(locX, locY + UpperLeftLBL.Height + 2 + FormHalfHeight);
+                    lblCheckedLocation.Location = new Point(locX, FormHalfHeight + locY - 2);
+                    CHKShowAll.Location = new Point(FormWidth - CHKShowAll.Width, MenuHeight + FormHalfHeight - 2);
+                    TXTCheckedSearch.Location = new Point(locX, locY + lblAvailableLocation.Height + 2 + FormHalfHeight);
                     TXTCheckedSearch.Width = FormWidth - 2;
-                    LBCheckedLocations.Location = new Point(locX, locY + UpperLeftLBL.Height + TXTCheckedSearch.Height + 4 + FormHalfHeight);
+                    LBCheckedLocations.Location = new Point(locX, locY + lblAvailableLocation.Height + TXTCheckedSearch.Height + 4 + FormHalfHeight);
                     LBCheckedLocations.Width = FormWidth - 2;
-                    LBCheckedLocations.Height = FormHalfHeight - UpperLeftLBL.Height - TXTCheckedSearch.Height - 8;
+                    LBCheckedLocations.Height = FormHalfHeight - lblAvailableLocation.Height - TXTCheckedSearch.Height - 8;
                 }
             }
-            PrintToListBox();
-            this.Refresh();
         }
 
         public void SetObjectVisibility(bool item, bool location)
         {
-            var UpperLeftLBL = label1;
+            var UpperLeftLBL = lblAvailableLocation;
             var UpperRightLBL = label3;
-            var LowerLeftLBL = label2;
+            var LowerLeftLBL = lblCheckedLocation;
             var LowerRightLBL = label4;
             var LowerRight2LBL = label5;
             var LowerRight3LBL = label6;
@@ -479,8 +494,9 @@ namespace Windows_Form_Frontend
 
             if (ToUpdate.Contains(LBValidLocations)) 
             {
-                var Entries = TrackerDataHandeling.PrintToLocationList(Groups, DataSets, WinFormUtils.CreateDivider(LBValidLocations), CurrentTrackerInstance, TXTLocSearch.Text, CHKShowAll.Checked);
-                foreach(var i in Entries) { LBValidLocations.Items.Add(i); }
+                var Entries = TrackerDataHandeling.PrintToLocationList(Groups, DataSets, WinFormUtils.CreateDivider(LBValidLocations), CurrentTrackerInstance, TXTLocSearch.Text, CHKShowAll.Checked, out int x, out int y);
+                lblAvailableLocation.Text = $"Available Locations: {y}" + (x != y ? $"/{x}" : "");
+                foreach (var i in Entries) { LBValidLocations.Items.Add(i); }
                 LBValidLocations.TopIndex = lbLocTop; 
             }
             if (ToUpdate.Contains(LBValidEntrances)) 
@@ -490,7 +506,8 @@ namespace Windows_Form_Frontend
             }
             if (ToUpdate.Contains(LBCheckedLocations)) 
             {
-                var Entries = TrackerDataHandeling.PrintToCheckedList(Groups, DataSets, WinFormUtils.CreateDivider(LBCheckedLocations), CurrentTrackerInstance, TXTCheckedSearch.Text);
+                var Entries = TrackerDataHandeling.PrintToCheckedList(Groups, DataSets, WinFormUtils.CreateDivider(LBCheckedLocations), CurrentTrackerInstance, TXTCheckedSearch.Text, out int x, out int y);
+                lblCheckedLocation.Text = $"Checked Locations: {y}" + (x != y ? $"/{x}" : "");
                 foreach (var i in Entries) { LBCheckedLocations.Items.Add(i); }
                 LBCheckedLocations.TopIndex = lbCheckTop; 
             }
@@ -500,15 +517,18 @@ namespace Windows_Form_Frontend
 
         public void FormatMenuItems()
         {
+            OptionstoolStripMenuItem.Visible = (CurrentTrackerInstance != null);
+            undoToolStripMenuItem.Visible = (CurrentTrackerInstance != null);
+            redoToolStripMenuItem.Visible = (CurrentTrackerInstance != null);
+            refreshToolStripMenuItem.Visible = (CurrentTrackerInstance != null);
+            SavetoolStripMenuItem1.Visible = (CurrentTrackerInstance != null);
+            spoilerLogToolsToolStripMenuItem.Visible = (CurrentTrackerInstance != null);
+            importSpoilerLogToolStripMenuItem.Visible = (CurrentTrackerInstance != null);
+
+            if (CurrentTrackerInstance == null) { return; }
+
             SaveAsToolStripMenuItem1.Visible = (File.Exists(References.CurrentSavePath));
             importSpoilerLogToolStripMenuItem.Text = (CurrentTrackerInstance.SpoilerLog != null) ? "Remove Spoiler Log" : "Import Spoiler Log";
-            OptionstoolStripMenuItem.Visible = (CurrentTrackerInstance.LogicFile.Version > 0);
-            undoToolStripMenuItem.Visible = (CurrentTrackerInstance.LogicFile.Version > 0);
-            redoToolStripMenuItem.Visible = (CurrentTrackerInstance.LogicFile.Version > 0);
-            refreshToolStripMenuItem.Visible = (CurrentTrackerInstance.LogicFile.Version > 0);
-            SavetoolStripMenuItem1.Visible = (CurrentTrackerInstance.LogicFile.Version > 0);
-            spoilerLogToolsToolStripMenuItem.Visible = (CurrentTrackerInstance.LogicFile.Version > 0);
-            importSpoilerLogToolStripMenuItem.Visible = (CurrentTrackerInstance.LogicFile.Version > 0);
 
             //Manage Dev Menus
             devToolsToolStripMenuItem.Visible = Testing.ISDebugging || Testing.ViewAsUserMode;
@@ -518,7 +538,7 @@ namespace Windows_Form_Frontend
 
         }
 
-        private void PopulateTrackerOptions()
+        private void UpdateDynamicUserOptions()
         {
             RandomizerOptionsToolStripMenuItem1.DropDownItems.Clear();
             foreach (var i in CurrentTrackerInstance.UserOptions.Values)
@@ -635,6 +655,7 @@ namespace Windows_Form_Frontend
 
         private void HandleItemSelect(List<object> Items, MiscData.CheckState checkState)
         {
+            bool ChangesMade = false;
             string CurrentState = Utf8Json.JsonSerializer.ToJsonString(CurrentTrackerInstance);
 
             List<LocationData.LocationObject> locationObjects = Items.Where(x => x is LocationData.LocationObject).Select(x => x as LocationData.LocationObject).ToList();
@@ -654,7 +675,7 @@ namespace Windows_Form_Frontend
             foreach (LocationData.LocationObject LocationObject in locationObjects)
             {
                 var Action = (checkState == MiscData.CheckState.Marked && LocationObject.CheckState == MiscData.CheckState.Marked) ? MiscData.CheckState.Unchecked : checkState;
-                LocationObject.ToggleChecked(Action, CurrentTrackerInstance);
+                if (LocationObject.ToggleChecked(Action, CurrentTrackerInstance)) { ChangesMade = true; }
             }
 
             //Hints======================================
@@ -663,6 +684,7 @@ namespace Windows_Form_Frontend
             List<HintData.HintObject> HintObjects = Items.Where(x => x is HintData.HintObject).Select(x => x as HintData.HintObject).ToList();
             foreach (HintData.HintObject hintObject in HintObjects)
             {
+                ChangesMade = true;
                 if (hintObject.CheckState == MiscData.CheckState.Unchecked)
                 {
                     if (hintObject.SpoilerHintText == null)
@@ -680,7 +702,10 @@ namespace Windows_Form_Frontend
                 hintObject.HintText = CheckAction == MiscData.CheckState.Unchecked ? null : hintObject.HintText;
             }
 
-            UpdateUndoList(CurrentState);
+            if (ChangesMade)
+            {
+                SaveTrackerState(CurrentState);
+            }
 
             LogicCalculation.CalculateLogic(CurrentTrackerInstance);
 
@@ -702,5 +727,29 @@ namespace Windows_Form_Frontend
             undoToolStripMenuItem.Enabled = UndoStringList.Any();
         }
 
+        //Other
+
+        private void SaveTrackerState(string PreviousState = null)
+        {
+            if (PreviousState == null) { UpdateUndoList(Utf8Json.JsonSerializer.ToJsonString(CurrentTrackerInstance)); }
+            else { UpdateUndoList(PreviousState); }
+            UnsavedChanges = true;
+        }
+
+        public bool PromptSave()
+        {
+            if (CurrentTrackerInstance == null || !UnsavedChanges) { return true; }
+            var result = MessageBox.Show("You have unsaved Changes. Would you Like to Save?", "Unsaved Changes", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            switch (result)
+            {
+                case DialogResult.No:
+                    return true;
+                case DialogResult.Yes:
+                    SavetoolStripMenuItem1_Click(SavetoolStripMenuItem1, null);
+                    return true;
+                default:
+                    return false;
+            }
+        }
     }
 }

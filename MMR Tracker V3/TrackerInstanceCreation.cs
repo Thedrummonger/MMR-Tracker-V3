@@ -38,6 +38,8 @@ namespace MMR_Tracker_V3
         {
             Instance.UserOptions = Instance.LogicDictionary.Options.ToDictionary(x => x.ID, y => y);
 
+            Instance.EntrancePool.IsEntranceRando = Instance.EntrancePool.CheckForRandomEntrances();
+
             int Index = 0;
             foreach(var i in Instance.LogicDictionary.ItemList)
             {

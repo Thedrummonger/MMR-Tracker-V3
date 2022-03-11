@@ -75,8 +75,10 @@ namespace MMR_Tracker_V3
         {
             LogicCalculation.MultipleItemEntry(OriginalID, out string ID, out _);
             if (literal && instance.ItemPool.ContainsKey(ID)) { return LogicEntryType.item; }
+            if (literal && instance.EntrancePool.AreaList.ContainsKey(ID)) { return LogicEntryType.Area; }
             if (instance.MacroPool.ContainsKey(ID)) { return LogicEntryType.macro; }
             if (!literal && instance.ItemPool.ContainsKey(ID)) { return LogicEntryType.item; }
+            if (!literal && instance.EntrancePool.AreaList.ContainsKey(ID)) { return LogicEntryType.Area; }
             if (bool.TryParse(ID, out _)) { return LogicEntryType.Bool; }
             if (LogicCalculation.LogicOptionEntry(instance, ID, out _)) { return LogicEntryType.Option; }
             return LogicEntryType.error;
@@ -131,12 +133,12 @@ namespace MMR_Tracker_V3
             }
         }
 
-        public static void ToggleChecked(this LocationData.LocationObject data, CheckState NewState, LogicObjects.TrackerInstance Instance)
+        public static bool ToggleChecked(this LocationData.LocationObject data, CheckState NewState, LogicObjects.TrackerInstance Instance)
         {
             CheckState CurrentState = data.CheckState;
             if (CurrentState == NewState) 
             {
-                return; 
+                return false; 
             }
             else if (CurrentState == CheckState.Checked)
             {
@@ -144,13 +146,14 @@ namespace MMR_Tracker_V3
             }
             else if (NewState == CheckState.Checked)
             {
-                if (!CheckItem(data, NewState, Instance)) { return; }
+                if (!CheckItem(data, NewState, Instance)) { return false; }
             }
             else
             {
-                if (!ToggleMarked(data, NewState, Instance)) { return; }
+                if (!ToggleMarked(data, NewState, Instance)) { return false; }
             }
             data.CheckState = NewState;
+            return true;
         }
 
         public static bool UncheckItem(this LocationData.LocationObject data, CheckState NewState, LogicObjects.TrackerInstance Instance)

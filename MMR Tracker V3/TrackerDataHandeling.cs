@@ -54,7 +54,7 @@ namespace MMR_Tracker_V3
             return dataSets;
         }
 
-        public static List<object> PrintToCheckedList(Dictionary<string, int> Groups, DataSets DataSets, string Divider, LogicObjects.TrackerInstance Instance, string Filter, bool reverse = false)
+        public static List<object> PrintToCheckedList(Dictionary<string, int> Groups, DataSets DataSets, string Divider, LogicObjects.TrackerInstance Instance, string Filter, out int OutItemsInListBox, out int OutItemsInListBoxFiltered, bool reverse = false)
         {
             if (Groups == null) { Groups = Utility.GetCategoriesFromFile(Instance); }
             if (DataSets == null) { DataSets = PopulateDataSets(Instance); }
@@ -67,19 +67,26 @@ namespace MMR_Tracker_V3
                 .ThenBy(x => x.GetDictEntry(Instance).Area)
                 .ThenBy(x => Utility.GetDisplayName(1, x, Instance)).ToList();
 
+            var ItemsInListBox = 0;
+            var ItemsInListBoxFiltered = 0;
+
             if (reverse)
             {
                 CheckedLocations.Reverse();
                 WriteStartingAndOnlineItems(DataSets);
                 WriteHints(DataSets);
                 WriteLocations(CheckedLocations);
-                return DataSource;
+            }
+            else
+            {
+                WriteLocations(CheckedLocations);
+                WriteHints(DataSets);
+                WriteStartingAndOnlineItems(DataSets);
             }
 
-            WriteLocations(CheckedLocations);
-            WriteHints(DataSets);
-            WriteStartingAndOnlineItems(DataSets);
 
+            OutItemsInListBox = ItemsInListBox;
+            OutItemsInListBoxFiltered = ItemsInListBoxFiltered;
             return DataSource;
 
             void WriteLocations(List<LocationData.LocationObject> CheckedLocations)
@@ -91,8 +98,9 @@ namespace MMR_Tracker_V3
 
                     i.DisplayName = Utility.GetDisplayName(1, i, Instance);
 
+                    ItemsInListBox++;
                     if (!SearchStringParser.FilterSearch(Instance, i, Filter, i.DisplayName)) { continue; }
-
+                    ItemsInListBoxFiltered++;
                     if (CurrentLocation != i.GetDictEntry(Instance).Area)
                     {
                         if (DataSource.Count > 0) { DataSource.Add(Divider); }
@@ -111,7 +119,9 @@ namespace MMR_Tracker_V3
                     foreach (var i in DataSets.CheckedHints)
                     {
                         i.DisplayName = $"{i.GetDictEntry(Instance).Name}: {i.HintText}";
+                        ItemsInListBox++;
                         if (!SearchStringParser.FilterSearch(Instance, i, Filter, i.DisplayName)) { continue; }
+                        ItemsInListBoxFiltered++;
                         if (!DividerCreated)
                         {
                             if (DataSource.Count > 0) { DataSource.Add(Divider); }
@@ -132,7 +142,9 @@ namespace MMR_Tracker_V3
                     foreach (var i in DataSets.CurrentStartingItems)
                     {
                         string Display = $"{i.GetDictEntry(Instance).GetItemName(Instance)} X{i.AmountInStartingpool}";
+                        ItemsInListBox++;
                         if (!SearchStringParser.FilterSearch(Instance, i, Filter, Display)) { continue; }
+                        ItemsInListBoxFiltered++;
                         DataSource.Add(Display);
                     }
                 }
@@ -146,7 +158,9 @@ namespace MMR_Tracker_V3
                         foreach (var j in i.AmountAquiredOnline)
                         {
                             string Display = $"{i.GetDictEntry(Instance).GetItemName(Instance)} X{j.Value}: Player {j.Key}";
+                            ItemsInListBox++;
                             if (!SearchStringParser.FilterSearch(Instance, i, Filter, Display)) { continue; }
+                            ItemsInListBoxFiltered++;
                             DataSource.Add(Display);
                         }
                     }
@@ -154,7 +168,7 @@ namespace MMR_Tracker_V3
             }
         }
 
-        public static List<object> PrintToLocationList(Dictionary<string, int> Groups, DataSets DataSets, string Divider, LogicObjects.TrackerInstance Instance, string Filter, bool All, bool reverse = false)
+        public static List<object> PrintToLocationList(Dictionary<string, int> Groups, DataSets DataSets, string Divider, LogicObjects.TrackerInstance Instance, string Filter, bool All, out int OutItemsInListBox, out int OutItemsInListBoxFiltered, bool reverse = false)
         {
             List<object> DataSource = new List<object>();
 
@@ -166,17 +180,29 @@ namespace MMR_Tracker_V3
                 .ThenBy(x => x.GetDictEntry(Instance).Area)
                 .ThenBy(x => Utility.GetDisplayName(0, x, Instance)).ToList();
 
+            var AvailableHints = DataSets.AvailableHints;
+            if (Filter.StartsWith("^") || All)
+            {
+                AvailableHints = DataSets.UnheckedHints;
+            }
+
+            var ItemsInListBox = 0;
+            var ItemsInListBoxFiltered = 0;
+
             if (reverse)
             {
                 AvailableLocations.Reverse();
                 WriteHints(DataSets);
                 WriteLocations(AvailableLocations);
-                return DataSource;
+            }
+            else
+            {
+                WriteLocations(AvailableLocations);
+                WriteHints(DataSets);
             }
 
-            WriteLocations(AvailableLocations);
-            WriteHints(DataSets);
-
+            OutItemsInListBox = ItemsInListBox;
+            OutItemsInListBoxFiltered = ItemsInListBoxFiltered;
             return DataSource;
 
             void WriteLocations(List<LocationData.LocationObject> AvailableLocations)
@@ -188,7 +214,9 @@ namespace MMR_Tracker_V3
 
                     i.DisplayName = Utility.GetDisplayName(0, i, Instance);
 
+                    ItemsInListBox++;
                     if (!SearchStringParser.FilterSearch(Instance, i, Filter, i.DisplayName)) { continue; }
+                    ItemsInListBoxFiltered++;
 
                     if (CurrentLocation != i.GetDictEntry(Instance).Area)
                     {
@@ -202,18 +230,15 @@ namespace MMR_Tracker_V3
 
             void WriteHints(DataSets DataSets)
             {
-                var AvailableHints = DataSets.AvailableHints;
-                if (Filter.StartsWith("^") || All)
-                {
-                    AvailableHints = DataSets.UnheckedHints;
-                }
                 if (AvailableHints.Any())
                 {
                     bool DividerCreated = false;
                     foreach (var i in AvailableHints)
                     {
                         i.DisplayName = (i.CheckState == MiscData.CheckState.Marked) ? $"{i.GetDictEntry(Instance).Name}: {i.HintText}" : i.GetDictEntry(Instance).Name;
+                        ItemsInListBox++;
                         if (!SearchStringParser.FilterSearch(Instance, i, Filter, i.DisplayName)) { continue; }
+                        ItemsInListBoxFiltered++;
                         if (!DividerCreated)
                         {
                             if (DataSource.Count > 0) { DataSource.Add(Divider); }

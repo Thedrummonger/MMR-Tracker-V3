@@ -45,8 +45,8 @@ namespace Windows_Form_Frontend
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblCheckedLocation = new System.Windows.Forms.Label();
+            this.lblAvailableLocation = new System.Windows.Forms.Label();
             this.TXTCheckedSearch = new System.Windows.Forms.TextBox();
             this.TXTEntSearch = new System.Windows.Forms.TextBox();
             this.TXTLocSearch = new System.Windows.Forms.TextBox();
@@ -263,29 +263,29 @@ namespace Windows_Form_Frontend
             this.label3.TabIndex = 28;
             this.label3.Text = "Available Entrances";
             // 
-            // label2
+            // lblCheckedLocation
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(137, 72);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 15);
-            this.label2.TabIndex = 27;
-            this.label2.Text = "Checked locations";
+            this.lblCheckedLocation.AutoSize = true;
+            this.lblCheckedLocation.BackColor = System.Drawing.Color.Transparent;
+            this.lblCheckedLocation.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblCheckedLocation.Location = new System.Drawing.Point(137, 72);
+            this.lblCheckedLocation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCheckedLocation.Name = "lblCheckedLocation";
+            this.lblCheckedLocation.Size = new System.Drawing.Size(104, 15);
+            this.lblCheckedLocation.TabIndex = 27;
+            this.lblCheckedLocation.Text = "Checked locations";
             // 
-            // label1
+            // lblAvailableLocation
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(137, 42);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 15);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "Available Locations";
+            this.lblAvailableLocation.AutoSize = true;
+            this.lblAvailableLocation.BackColor = System.Drawing.Color.Transparent;
+            this.lblAvailableLocation.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblAvailableLocation.Location = new System.Drawing.Point(137, 42);
+            this.lblAvailableLocation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAvailableLocation.Name = "lblAvailableLocation";
+            this.lblAvailableLocation.Size = new System.Drawing.Size(109, 15);
+            this.lblAvailableLocation.TabIndex = 26;
+            this.lblAvailableLocation.Text = "Available Locations";
             // 
             // TXTCheckedSearch
             // 
@@ -351,35 +351,35 @@ namespace Windows_Form_Frontend
             // NewToolStripMenuItem1
             // 
             this.NewToolStripMenuItem1.Name = "NewToolStripMenuItem1";
-            this.NewToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.NewToolStripMenuItem1.Size = new System.Drawing.Size(114, 22);
             this.NewToolStripMenuItem1.Text = "New";
             this.NewToolStripMenuItem1.Click += new System.EventHandler(this.NewToolStripMenuItem1_Click);
             // 
             // LoadToolStripMenuItem
             // 
             this.LoadToolStripMenuItem.Name = "LoadToolStripMenuItem";
-            this.LoadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.LoadToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.LoadToolStripMenuItem.Text = "Load";
             this.LoadToolStripMenuItem.Click += new System.EventHandler(this.LoadToolStripMenuItem_Click);
             // 
             // SavetoolStripMenuItem1
             // 
             this.SavetoolStripMenuItem1.Name = "SavetoolStripMenuItem1";
-            this.SavetoolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.SavetoolStripMenuItem1.Size = new System.Drawing.Size(114, 22);
             this.SavetoolStripMenuItem1.Text = "Save";
             this.SavetoolStripMenuItem1.Click += new System.EventHandler(this.SavetoolStripMenuItem1_Click);
             // 
             // SaveAsToolStripMenuItem1
             // 
             this.SaveAsToolStripMenuItem1.Name = "SaveAsToolStripMenuItem1";
-            this.SaveAsToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.SaveAsToolStripMenuItem1.Size = new System.Drawing.Size(114, 22);
             this.SaveAsToolStripMenuItem1.Text = "Save As";
             this.SaveAsToolStripMenuItem1.Click += new System.EventHandler(this.SavetoolStripMenuItem1_Click);
             // 
             // presetsToolStripMenuItem
             // 
             this.presetsToolStripMenuItem.Name = "presetsToolStripMenuItem";
-            this.presetsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.presetsToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.presetsToolStripMenuItem.Text = "Presets";
             // 
             // OptionstoolStripMenuItem
@@ -505,8 +505,8 @@ namespace Windows_Form_Frontend
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblCheckedLocation);
+            this.Controls.Add(this.lblAvailableLocation);
             this.Controls.Add(this.TXTCheckedSearch);
             this.Controls.Add(this.TXTEntSearch);
             this.Controls.Add(this.TXTLocSearch);
@@ -515,6 +515,7 @@ namespace Windows_Form_Frontend
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainInterface";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainInterface_FormClosing);
             this.Load += new System.EventHandler(this.MainInterface_Load);
             this.ResizeEnd += new System.EventHandler(this.MainInterface_ResizeEnd);
             this.Resize += new System.EventHandler(this.MainInterface_Resize);
@@ -542,8 +543,8 @@ namespace Windows_Form_Frontend
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblCheckedLocation;
+        private System.Windows.Forms.Label lblAvailableLocation;
         public System.Windows.Forms.TextBox TXTCheckedSearch;
         public System.Windows.Forms.TextBox TXTEntSearch;
         public System.Windows.Forms.TextBox TXTLocSearch;

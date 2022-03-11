@@ -21,13 +21,14 @@ namespace MMR_Tracker_V3
             public Dictionary<string, MacroObject> MacroPool { get; set; } = new Dictionary<string, MacroObject>();
             public Dictionary<string, ItemObject> ItemPool { get; set; } = new Dictionary<string, ItemObject>();
             public Dictionary<string, TrackerOption> UserOptions { get; set; } = new Dictionary<string, TrackerOption>();
+            public EntranceData EntrancePool { get; set; } = new EntranceData();
             public LogicDictionary LogicDictionary { get; set; } = new LogicDictionary();
             public LogicFile LogicFile { get; set; } = new MMRData.LogicFile();
             public MMRData.SpoilerLogData SpoilerLog { get; set; } = null;
             public Dictionary<string, JsonFormatLogicItem> LogicOverride { get; set; } = new Dictionary<string, JsonFormatLogicItem>();
             public Options StaticOptions { get; set; } = new Options();
             public PriceData PriceData { get; set; } = new PriceData();
-            public InstanceReference InstanceReference { get; set; } = new InstanceReference(); 
+            public InstanceReference InstanceReference { get; set; } = new InstanceReference();
             public static TrackerInstance FromJson(string json)
             {
                 return Newtonsoft.Json.JsonConvert.DeserializeObject<TrackerInstance>(json, _NewtonsoftJsonSerializerOptions);
@@ -72,9 +73,7 @@ namespace MMR_Tracker_V3
         [Serializable]
         public class Options
         {
-            public bool EntranceRadnoEnabled { get; set; } = false;
-            public bool CoupleEntrances { get; set; } = true;
-            public bool ShowAdditionalStats { get; set; } = false;
+            public bool EntranceRandoFeatures { get; set; } = true;
             public bool CheckForUpdate { get; set; } = true;
             public WinformData WinformData { get; set; } = new WinformData();
         }

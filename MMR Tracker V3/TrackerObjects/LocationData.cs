@@ -20,25 +20,8 @@ namespace MMR_Tracker_V3.TrackerObjects
             public CheckState CheckState { get; set; } = CheckState.Unchecked;
             public bool Starred { get; set; }
             public int CheckPrice { get; set; } = -1;
-            public bool CanBeRandomized { get; set; } = true;
             public string DisplayName { get; set; }
-            private RandomizedState _RandomizedState = RandomizedState.Randomized;
-            public RandomizedState RandomizedState
-            {
-                get
-                {
-                    if (!CanBeRandomized)
-                    {
-                        if (_RandomizedState == RandomizedState.Randomized) { return RandomizedState.UnrandomizedManual; }
-                        if (_RandomizedState == RandomizedState.ForcedJunk) { return RandomizedState.Unrandomized; }
-                    }
-                    return _RandomizedState;
-                }
-                set
-                {
-                    _RandomizedState = value;
-                }
-            }
+            public RandomizedState RandomizedState { get; set; } = RandomizedState.Randomized;
             public override string ToString()
             {
                 return DisplayName ?? ID;
