@@ -166,7 +166,6 @@ namespace Windows_Form_Frontend
             if (Selection == null)
             {
                 Option.ToggleOption();
-                ((ToolStripMenuItem)sender).Checked = Option.CurrentValue == "enabled";
             }
             else
             {
@@ -541,6 +540,14 @@ namespace Windows_Form_Frontend
         private void UpdateDynamicUserOptions()
         {
             RandomizerOptionsToolStripMenuItem1.DropDownItems.Clear();
+            ToolStripMenuItem ListBoxDisplay = new ToolStripMenuItem();
+            ListBoxDisplay.Text = "Display In List Box";
+            ToolStripComboBox ListBoxDisplayOptions = new ToolStripComboBox();
+            ListBoxDisplayOptions.Items.AddRange(new string[] { "None", "Available Locations", "Checked Locations" });
+            ListBoxDisplay.Text = "Display In List Box";
+            ListBoxDisplay.DropDownItems.Add(ListBoxDisplayOptions);
+            RandomizerOptionsToolStripMenuItem1.DropDownItems.Add(ListBoxDisplay);
+            RandomizerOptionsToolStripMenuItem1.DropDownItems.Add(new ToolStripSeparator());
             foreach (var i in CurrentTrackerInstance.UserOptions.Values)
             {
                 if (i.IsToggleOption())
@@ -700,6 +707,16 @@ namespace Windows_Form_Frontend
                 var CheckAction = (checkState == MiscData.CheckState.Marked && hintObject.CheckState == MiscData.CheckState.Marked) ? MiscData.CheckState.Unchecked : checkState;
                 hintObject.CheckState = CheckAction;
                 hintObject.HintText = CheckAction == MiscData.CheckState.Unchecked ? null : hintObject.HintText;
+            }
+
+            List<OptionData.TrackerOption> OptionObjects = Items.Where(x => x is OptionData.TrackerOption).Select(x => x as OptionData.TrackerOption).ToList();
+
+            foreach(var i in OptionObjects)
+            {
+                if (i.IsToggleOption())
+                {
+                    ToggleRandomizerOption_Click(null, null, i);
+                }
             }
 
             if (ChangesMade)

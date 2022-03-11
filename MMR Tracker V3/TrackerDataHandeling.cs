@@ -73,15 +73,17 @@ namespace MMR_Tracker_V3
             if (reverse)
             {
                 CheckedLocations.Reverse();
-                WriteStartingAndOnlineItems(DataSets);
-                WriteHints(DataSets);
-                WriteLocations(CheckedLocations);
+                WriteStartingAndOnlineItems();
+                WriteOptions();
+                WriteHints();
+                WriteLocations();
             }
             else
             {
-                WriteLocations(CheckedLocations);
-                WriteHints(DataSets);
-                WriteStartingAndOnlineItems(DataSets);
+                WriteLocations();
+                WriteHints();
+                WriteOptions();
+                WriteStartingAndOnlineItems();
             }
 
 
@@ -89,7 +91,26 @@ namespace MMR_Tracker_V3
             OutItemsInListBoxFiltered = ItemsInListBoxFiltered;
             return DataSource;
 
-            void WriteLocations(List<LocationData.LocationObject> CheckedLocations)
+            void WriteOptions()
+            {
+                bool DividerCreated = false;
+                foreach(var i in Instance.UserOptions.Where(x => x.Value.IsToggleOption()))
+                {
+                    ItemsInListBox++;
+                    i.Value.DisplayName = i.Value.DisplayName;
+                    if (!SearchStringParser.FilterSearch(Instance, i.Value, Filter, i.Value.DisplayName)) { continue; }
+                    if (!DividerCreated)
+                    {
+                        if (DataSource.Count > 0) { DataSource.Add(Divider); }
+                        DataSource.Add(new MiscData.Areaheader { Area = "Toggle Options" });
+                        DividerCreated = true;
+                    }
+                    ItemsInListBoxFiltered++;
+                    DataSource.Add(i.Value);
+                }
+            }
+
+            void WriteLocations()
             {
                 string CurrentLocation = "";
                 foreach (var i in CheckedLocations)
@@ -111,7 +132,7 @@ namespace MMR_Tracker_V3
                 }
             }
 
-            void WriteHints(DataSets DataSets)
+            void WriteHints()
             {
                 if (DataSets.CheckedHints.Any())
                 {
@@ -133,17 +154,22 @@ namespace MMR_Tracker_V3
                 }
             }
 
-            void WriteStartingAndOnlineItems(DataSets DataSets)
+            void WriteStartingAndOnlineItems()
             {
                 if (DataSets.CurrentStartingItems.Any())
                 {
-                    if (DataSource.Count > 0) { DataSource.Add(Divider); }
-                    DataSource.Add(new MiscData.Areaheader { Area = "Starting Items" });
+                    bool DividerCreated = false;
                     foreach (var i in DataSets.CurrentStartingItems)
                     {
                         string Display = $"{i.GetDictEntry(Instance).GetItemName(Instance)} X{i.AmountInStartingpool}";
                         ItemsInListBox++;
                         if (!SearchStringParser.FilterSearch(Instance, i, Filter, Display)) { continue; }
+                        if (!DividerCreated)
+                        {
+                            if (DataSource.Count > 0) { DataSource.Add(Divider); }
+                            DataSource.Add(new MiscData.Areaheader { Area = "Starting Items" });
+                            DividerCreated = true;
+                        }
                         ItemsInListBoxFiltered++;
                         DataSource.Add(Display);
                     }
@@ -151,8 +177,7 @@ namespace MMR_Tracker_V3
 
                 if (DataSets.OnlineObtainedItems.Any())
                 {
-                    if (DataSource.Count > 0) { DataSource.Add(Divider); }
-                    DataSource.Add(new MiscData.Areaheader { Area = "MultiWorld Items" });
+                    bool DividerCreated = false;
                     foreach (var i in DataSets.OnlineObtainedItems)
                     {
                         foreach (var j in i.AmountAquiredOnline)
@@ -160,6 +185,12 @@ namespace MMR_Tracker_V3
                             string Display = $"{i.GetDictEntry(Instance).GetItemName(Instance)} X{j.Value}: Player {j.Key}";
                             ItemsInListBox++;
                             if (!SearchStringParser.FilterSearch(Instance, i, Filter, Display)) { continue; }
+                            if (!DividerCreated)
+                            {
+                                if (DataSource.Count > 0) { DataSource.Add(Divider); }
+                                DataSource.Add(new MiscData.Areaheader { Area = "MultiWorld Items" });
+                                DividerCreated = true;
+                            }
                             ItemsInListBoxFiltered++;
                             DataSource.Add(Display);
                         }

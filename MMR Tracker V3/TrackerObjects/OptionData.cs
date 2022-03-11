@@ -8,6 +8,14 @@ namespace MMR_Tracker_V3.TrackerObjects
 {
     public class OptionData
     {
+        public static readonly Dictionary<string, string> ToggleValues = new()
+        {
+            {"yes", "no" },
+            {"enabled", "disabled" },
+            {"true", "false" },
+            {"on", "off" },
+        };
+    
         [Serializable]
         public class TrackerOption
         {
@@ -21,19 +29,20 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
             public bool IsToggleOption()
             {
-                return Values.Count == 2 && Values.ContainsKey("enabled") && Values.ContainsKey("disabled");
+                return 
+                    Values.Count == 2 &&
+                    Values.Keys.Select(x => x.ToLower()).Intersect(ToggleValues.Keys).Any() && 
+                    Values.Keys.Select(x => x.ToLower()).Intersect(ToggleValues.Values).Any();
             }
             public void ToggleOption()
             {
                 if (!this.IsToggleOption()) { return; }
-                if (CurrentValue == "enabled")
-                {
-                    CurrentValue = "disabled";
-                }
-                else
-                {
-                    CurrentValue = "enabled";
-                }
+                CurrentValue = Values.Keys.First(x => x != CurrentValue);
+            }
+
+            public override string ToString()
+            {
+                return DisplayName + ": " + CurrentValue;
             }
         }
 
