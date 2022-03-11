@@ -17,7 +17,6 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string Id { get; set; }
             public List<string> RequiredItems { get; set; } = new List<string>();
             public List<List<string>> ConditionalItems { get; set; } = new List<List<string>>();
-            public string RequiredArea { get; set; } = null;
             public TimeOfDay TimeNeeded { get; set; }
             public TimeOfDay TimeAvailable { get; set; }
             public TimeOfDay TimeSetup { get; set; }

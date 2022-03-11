@@ -15,7 +15,9 @@ namespace MMR_Tracker_V3.TrackerObjects
             {"true", "false" },
             {"on", "off" },
         };
-    
+
+        public static readonly string[] DisplayListBoxes = { "None", "Available Locations", "Checked Locations" };
+
         [Serializable]
         public class TrackerOption
         {

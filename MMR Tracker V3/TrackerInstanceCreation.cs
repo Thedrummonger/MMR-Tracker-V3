@@ -96,7 +96,6 @@ namespace MMR_Tracker_V3
                 newString = newString.Replace(" ", "_");
                 newString = Regex.Replace(newString, @"[^0-9a-zA-Z\._]", "");
                 if (newString == i.Key) { continue; }
-                Instance.InstanceReference.CleanedItemMames.Add(newString, i.Key);
                 Debug.WriteLine($"Cleaned [{i.Value.GetDictEntry(Instance).GetItemName(Instance)}] to [{newString}]");
             }
 

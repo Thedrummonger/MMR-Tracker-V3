@@ -94,5 +94,17 @@ namespace MMR_Tracker_V3.TrackerObjects
             public SpoilerlogReference SpoilerData { get; set; } = new SpoilerlogReference();
 
         }
+
+        [Serializable]
+        public class DictionaryEntranceEntries
+        {
+            public string ID { get; set; }
+            public string Area { get; set; }
+            public string Exit { get; set; }
+            public string EntrancePairID { get; set; }
+            public bool RandomizableEntrance { get; set; }
+            public bool AlwaysAccessable { get; set; } = false;
+            public bool DestinationHasSingleEntrance { get; set; } = false;
+        }
     }
 }

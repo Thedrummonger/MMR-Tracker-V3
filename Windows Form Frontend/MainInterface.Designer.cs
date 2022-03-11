@@ -29,6 +29,7 @@ namespace Windows_Form_Frontend
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainInterface));
             this.lblSwapPathfinder = new System.Windows.Forms.Label();
             this.BTNFindPath = new System.Windows.Forms.Button();
@@ -71,6 +72,7 @@ namespace Windows_Form_Frontend
             this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -124,6 +126,7 @@ namespace Windows_Form_Frontend
             this.LBCheckedLocations.TabIndex = 39;
             this.LBCheckedLocations.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.LBCheckedLocations_DrawItem);
             this.LBCheckedLocations.DoubleClick += new System.EventHandler(this.LBValidEntrances_DoubleClick);
+            this.LBCheckedLocations.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateToolTip);
             this.LBCheckedLocations.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LBValidLocations_MouseUp);
             // 
             // LBValidEntrances
@@ -139,6 +142,7 @@ namespace Windows_Form_Frontend
             this.LBValidEntrances.Size = new System.Drawing.Size(87, 109);
             this.LBValidEntrances.TabIndex = 38;
             this.LBValidEntrances.DoubleClick += new System.EventHandler(this.LBValidEntrances_DoubleClick);
+            this.LBValidEntrances.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateToolTip);
             this.LBValidEntrances.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LBValidLocations_MouseUp);
             // 
             // LBValidLocations
@@ -155,6 +159,7 @@ namespace Windows_Form_Frontend
             this.LBValidLocations.TabIndex = 37;
             this.LBValidLocations.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.LBValidLocations_DrawItem);
             this.LBValidLocations.DoubleClick += new System.EventHandler(this.LBValidEntrances_DoubleClick);
+            this.LBValidLocations.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateToolTip);
             this.LBValidLocations.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LBValidLocations_MouseUp);
             // 
             // CMBEnd
@@ -203,6 +208,8 @@ namespace Windows_Form_Frontend
             this.BTNSetEntrance.TabIndex = 33;
             this.BTNSetEntrance.Text = "Mark Entrance";
             this.BTNSetEntrance.UseVisualStyleBackColor = false;
+            this.BTNSetEntrance.Click += new System.EventHandler(this.BTNSetItem_Click);
+            this.BTNSetEntrance.MouseUp += new System.Windows.Forms.MouseEventHandler(this.BTNSetEntrance_MouseUp);
             // 
             // BTNSetItem
             // 
@@ -214,6 +221,8 @@ namespace Windows_Form_Frontend
             this.BTNSetItem.TabIndex = 32;
             this.BTNSetItem.Text = "Mark Item";
             this.BTNSetItem.UseVisualStyleBackColor = false;
+            this.BTNSetItem.Click += new System.EventHandler(this.BTNSetItem_Click);
+            this.BTNSetItem.MouseUp += new System.Windows.Forms.MouseEventHandler(this.BTNSetEntrance_MouseUp);
             // 
             // label6
             // 
@@ -483,6 +492,12 @@ namespace Windows_Form_Frontend
             this.refreshToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
             this.refreshToolStripMenuItem.Click += new System.EventHandler(this.UndoRedo_Click);
             // 
+            // toolTip1
+            // 
+            this.toolTip1.AutoPopDelay = 50000;
+            this.toolTip1.InitialDelay = 10;
+            this.toolTip1.ReshowDelay = 100;
+            // 
             // MainInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -569,6 +584,7 @@ namespace Windows_Form_Frontend
         private System.Windows.Forms.ToolStripMenuItem viewAsUserToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem CodeTestingToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem presetsToolStripMenuItem;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

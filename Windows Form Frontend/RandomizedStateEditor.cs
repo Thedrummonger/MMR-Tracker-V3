@@ -137,7 +137,7 @@ namespace Windows_Form_Frontend
                 if (!SearchStringParser.FilterSearch(_Instance, i, txtTrickSearch.Text, i.ID)) { continue; }
                 if (CurrentCategory != _Instance.GetOriginalLogic(i.ID).TrickCategory)
                 {
-                    lvTricks.Items.Add(WinFormUtils.CreateDivider(lvTricks, _Instance.GetOriginalLogic(i.ID).TrickCategory.ToUpper()));
+                    lvTricks.Items.Add(WinFormUtils.CreateDivider(lvTricks, _Instance.GetOriginalLogic(i.ID).TrickCategory.ToUpper()).ToString());
                     CurrentCategory = _Instance.GetOriginalLogic(i.ID).TrickCategory;
                 }
 

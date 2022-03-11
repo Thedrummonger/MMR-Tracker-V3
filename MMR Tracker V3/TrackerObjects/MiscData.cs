@@ -26,6 +26,14 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return Display;
             }
         }
+        public class Divider
+        {
+            public string Display { get; set; }
+            public override string ToString()
+            {
+                return Display;
+            }
+        }
         [Serializable]
         public enum CheckState
         {

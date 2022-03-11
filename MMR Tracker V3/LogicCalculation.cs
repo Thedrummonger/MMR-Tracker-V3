@@ -65,8 +65,8 @@ namespace MMR_Tracker_V3
 
         private static bool AreaReached(string Area, TrackerInstance instance)
         {
-            if (Area == null || Area == instance.EntrancePool.RootArea) { return true; }
-            return instance.EntrancePool.AreaAccessTable.ContainsKey(Area) && instance.EntrancePool.AreaAccessTable[Area] > 0;
+            if (Area == instance.EntrancePool.RootArea) { return true; }
+            return instance.EntrancePool.AreaList.ContainsKey(Area) && instance.EntrancePool.AreaList[Area].ExitsAcessibleFrom > 0;
         }
 
         public static void CalculateLogic(TrackerInstance instance)
@@ -80,18 +80,16 @@ namespace MMR_Tracker_V3
             foreach (var i in instance.LocationPool.Values.Where(x => x.RandomizedState != RandomizedState.Unrandomized && x.RandomizedState != RandomizedState.ForcedJunk))
             {
                 var Logic = instance.GetLogic(i.ID);
-                i.Available = 
-                    RequirementsMet(Logic.RequiredItems, instance) && 
-                    ConditionalsMet(Logic.ConditionalItems, instance) && 
-                    AreaReached(Logic.RequiredArea, instance);
+                i.Available =
+                    RequirementsMet(Logic.RequiredItems, instance) &&
+                    ConditionalsMet(Logic.ConditionalItems, instance);
             }
             foreach (var i in instance.HintPool)
             {
                 var Logic = instance.GetLogic(i.Key);
-                i.Value.Available = 
-                    RequirementsMet(Logic.RequiredItems, instance) && 
-                    ConditionalsMet(Logic.ConditionalItems, instance) &&
-                    AreaReached(Logic.RequiredArea, instance);
+                i.Value.Available =
+                    RequirementsMet(Logic.RequiredItems, instance) &&
+                    ConditionalsMet(Logic.ConditionalItems, instance);
             }
         }
 
@@ -104,11 +102,10 @@ namespace MMR_Tracker_V3
                 bool Available;
                 if (Logic.IsTrick && !i.Value.TrickEnabled) { Available = false; }
                 else 
-                { 
-                    Available = 
-                        RequirementsMet(Logic.RequiredItems, instance) && 
-                        ConditionalsMet(Logic.ConditionalItems, instance) &&
-                        AreaReached(Logic.RequiredArea, instance); 
+                {
+                    Available =
+                        RequirementsMet(Logic.RequiredItems, instance) &&
+                        ConditionalsMet(Logic.ConditionalItems, instance);
                 }
 
                 if (Available != i.Value.Aquired)
@@ -126,10 +123,9 @@ namespace MMR_Tracker_V3
             foreach (var i in instance.LocationPool.Where(x => x.Value.RandomizedState == RandomizedState.Unrandomized))
             {
                 var Logic = instance.GetLogic(i.Key);
-                var Available = 
-                    RequirementsMet(Logic.RequiredItems, instance) && 
-                    ConditionalsMet(Logic.ConditionalItems, instance) &&
-                    AreaReached(Logic.RequiredArea, instance);
+                var Available =
+                    RequirementsMet(Logic.RequiredItems, instance) &&
+                    ConditionalsMet(Logic.ConditionalItems, instance);
 
                 bool ShouldBeChecked = Available && i.Value.CheckState != CheckState.Checked;
                 bool ShouldBeUnChecked = !Available && i.Value.CheckState == CheckState.Checked;

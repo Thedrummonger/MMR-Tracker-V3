@@ -9,54 +9,82 @@ namespace MMR_Tracker_V3.TrackerObjects
 {
     public class EntranceData
     {
-        //All Areas in the game and the exits they contain
-        public Dictionary<string, EntranceRandoArea> AreaList { get; set; } = new Dictionary<string, EntranceRandoArea>();
-        //A list of each area and how many times it has been made available when checking an exit
-        public Dictionary<string, int> AreaAccessTable { get; set; } = new Dictionary<string, int>();
-        //A table Mapping an Exit to its logic name
-        public Dictionary<string, string> ExitLogicMap { get; set; } = new Dictionary<string, string>();
-        //The area accessable from the beggining of the game
-        public string RootArea { get; set; } = "root";
-        public bool DecoupleEntrances { get; set; } = false;
-        public bool IsEntranceRando { get; set; } = false;
+        public class EntrancePool
+        {
+            //All Areas in the game and the exits they contain
+            public Dictionary<string, EntranceRandoArea> AreaList { get; set; } = new Dictionary<string, EntranceRandoArea>();
+            //A table Mapping an Exit to its logic name
+            public Dictionary<string, string> ExitLogicMap { get; set; } = new Dictionary<string, string>();
+            //The area accessable from the beggining of the game
+            public string RootArea { get; set; } = "root";
+            public bool IsEntranceRando { get; set; } = false;
 
-        public string GetLogicName(EntranceRandoExit Exit)
-        {
-            return ExitLogicMap[$"{Exit.ParentAreaID}:{Exit.ID}"];
+            public EntranceRandoExit GetEntrancePairOfDestination(EntranceRandoDestination destination)
+            {
+                var DestinationAsExit = AreaList[destination.from].GetExit(destination.region);
+                var EntrancePair = DestinationAsExit.EntrancePair;
+                return AreaList[EntrancePair.Area].GetExit(EntrancePair.Exit);
+            }
+            public string GetLogicNameFromExit(EntranceAreaPair Exit)
+            {
+                return ExitLogicMap[$"{Exit.Area}:{Exit.Exit}"];
+            }
+            public void AddLogicExitReference(EntranceAreaPair Exit, string LogicName)
+            {
+                ExitLogicMap.Add($"{Exit.Area}:{Exit.Exit}", LogicName);
+            }
+            public bool CheckForRandomEntrances()
+            {
+                return AreaList.Any(x => x.Value.LoadingZoneExits.Any(x => x.Value.RandomizedState == RandomizedState.Randomized));
+            }
         }
-        public void AddLogicReference(string LogicName, EntranceRandoExit Exit)
+        public class EntranceRandoArea
         {
-            ExitLogicMap.Add($"{Exit.ParentAreaID}:{Exit.ID}", LogicName);
+            public string ID { get; set; }
+            public int ExitsAcessibleFrom { get; set; } = 0;
+            public Dictionary<string, EntranceRandoExit> LoadingZoneExits { get; set; } = new Dictionary<string, EntranceRandoExit>();
+            public Dictionary<string, EntranceRandoExit> MacroExits { get; set; } = new Dictionary<string, EntranceRandoExit>();
+            public EntranceRandoExit GetExit(string ID)
+            {
+                if (LoadingZoneExits.ContainsKey(ID)) { return LoadingZoneExits[ID]; }
+                if (MacroExits.ContainsKey(ID)) { return MacroExits[ID]; }
+                return null;
+            }
         }
-        public bool CheckForRandomEntrances()
+        public class EntranceRandoExit
         {
-            return AreaList.Any(x => x.Value.LoadingZoneExits.Any(x => x.Value.RandomizedState == RandomizedState.Randomized));
+            public string ID { get; set; }
+            public string ParentAreaID { get; set; }
+            public bool RandomizableLoadingZone { get; set; } = false;
+            public bool Available { get; set; } = false;
+            public CheckState CheckState { get; set; } = CheckState.Unchecked;
+            public RandomizedState RandomizedState { get; set; } = RandomizedState.Randomized;
+            public EntranceRandoDestination DestinationExit { get; set; }
+            public EntranceRandoDestination SpoilerDefinedDestinationExit { get; set; }
+            public EntranceAreaPair EntrancePair { get; set; }
+            public EntranceRandoDestination GetVanillaDestination()
+            {
+                return new EntranceRandoDestination { region = ID, from = ParentAreaID };
+            }
+            public bool IsOneWay(LogicObjects.TrackerInstance instance)
+            {
+                return EntrancePair == null || instance.StaticOptions.DecoupleEntrances;
+            }
+            public EntranceRandoDestination GetDestnationFromEntrancePair()
+            {
+                return new EntranceRandoDestination { region = EntrancePair.Exit, from = EntrancePair.Area };
+            }
         }
-    }
-    public class EntranceRandoArea
-    {
-        public string ID { get; set; }
-        public Dictionary<string, EntranceRandoExit> LoadingZoneExits { get; set; } = new Dictionary<string, EntranceRandoExit>();
-        public Dictionary<string, EntranceRandoExit> MacroExits { get; set; } = new Dictionary<string, EntranceRandoExit>();
-    }
-    public class EntranceRandoExit
-    {
-        //MMR Example: "EntranceEastClockTownFromStockPotInnLower"
-        //OOTR Example: "Kokiri Forest" (The parent area differentiates it from other exits with this name)
-        public string ID { get; set; }
-        public string ParentAreaID { get; set; }
-        public bool RandomizableLoadingZone { get; set; } = false;
-        public bool Available { get; set; } = false;
-        public CheckState CheckState { get; set; } = CheckState.Unchecked;
-        public RandomizedState RandomizedState { get; set; } = RandomizedState.Randomized;
-        public string DestinationArea { get; set; }
-        public string SpoilerDefinedDestinationArea { get; set; }
-        public EntrancePair EntrancePair { get; set; }
-    }
-    public class EntrancePair
-    {
-        public string Area { get; set; }
-        public string Exit { get; set; }
+        public class EntranceRandoDestination
+        {
+            public string region { get; set; }
+            public string from { get; set; }
+        }
+        public class EntranceAreaPair
+        {
+            public string Area { get; set; }
+            public string Exit { get; set; }
+        }
     }
 
     /* With MMRs current entrance rando system it will be handled as follows

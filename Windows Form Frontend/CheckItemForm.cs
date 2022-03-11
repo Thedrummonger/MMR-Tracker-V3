@@ -14,9 +14,9 @@ namespace Windows_Form_Frontend
 {
     public partial class CheckItemForm : Form
     {
-        List<LocationData.LocationObject> _CheckList;
+        List<object> _CheckList;
         LogicObjects.TrackerInstance _Instance;
-        public CheckItemForm(IEnumerable<LocationData.LocationObject> ManualChecks, LogicObjects.TrackerInstance Instance)
+        public CheckItemForm(IEnumerable<object> ManualChecks, LogicObjects.TrackerInstance Instance)
         {
             InitializeComponent();
             _CheckList = ManualChecks.ToList();
@@ -30,8 +30,11 @@ namespace Windows_Form_Frontend
                 this.Close();
                 return;
             }
+            WriteNextItem();
+        }
 
-            bool Multiworld = false;
+        private void FormatUIItems(bool Multiworld, bool Button, string ButtonText)
+        {
             if (!Multiworld)
             {
                 int OldSearchLength = textBox1.Width;
@@ -41,18 +44,48 @@ namespace Windows_Form_Frontend
                 numericUpDown1.Visible = false;
                 label2.Visible = false;
             }
-
-            SelectNextItem();
+            button1.Visible = Button;
+            button1.Text = ButtonText;
         }
 
-        private void SelectNextItem()
+        private void WriteNextItem()
         {
-            this.Text = "Select Item at " + _CheckList[0].GetDictEntry(_Instance).Name ?? _CheckList[0].ID;
-            writeItems();
+            if (!_CheckList.Any())
+            {
+                this.Close();
+                return;
+            }
+            if (_CheckList[0] is LocationData.LocationObject LocationObject)
+            {
+                writeItemObjectsAtLocation(LocationObject);
+            }
+            else if (_CheckList[0] is OptionData.TrackerOption OptionObject)
+            {
+                WriteTrackerOption(OptionObject);
+            }
+            else
+            {
+                _CheckList.RemoveAt(0); 
+                WriteNextItem();
+            }
         }
 
-        private void writeItems()
+        private void WriteTrackerOption(OptionData.TrackerOption Option)
         {
+            FormatUIItems(false, false, "");
+            var EnteredItems = new List<string>();
+            this.Text = "Select Value for Option " + Option.DisplayName;
+            foreach(var i in Option.Values.Keys)
+            {
+                EnteredItems.Add(i);
+            }
+            listBox1.DataSource = EnteredItems;
+        }
+
+        private void writeItemObjectsAtLocation(LocationData.LocationObject Location)
+        {
+            FormatUIItems(false, true, "Set Junk");
+            this.Text = "Select Item at " + Location.GetDictEntry(_Instance).Name ?? Location.ID;
             var Names = new List<string>();
             var EnteredItems = new List<ItemData.ItemObject>();
             foreach (var i in _Instance.ItemPool.Values)
@@ -60,7 +93,7 @@ namespace Windows_Form_Frontend
                 if (string.IsNullOrWhiteSpace(i.GetDictEntry(_Instance).GetItemName(_Instance))) { continue; }
                 i.DisplayName = i.GetDictEntry(_Instance).GetItemName(_Instance);
                 if (!SearchStringParser.FilterSearch(_Instance, i, textBox1.Text, i.DisplayName)) { continue; }
-                if (i.CanBePlaced(_Instance) && i.GetDictEntry(_Instance).ItemTypes.Intersect(_CheckList[0].GetDictEntry(_Instance).ValidItemTypes).Any() && !EnteredItems.Contains(i) && !Names.Contains(i.ToString()))
+                if (i.CanBePlaced(_Instance) && i.GetDictEntry(_Instance).ItemTypes.Intersect(Location.GetDictEntry(_Instance).ValidItemTypes).Any() && !EnteredItems.Contains(i) && !Names.Contains(i.ToString()))
                 {
                     Names.Add(i.ToString());
                     EnteredItems.Add(i);
@@ -69,38 +102,41 @@ namespace Windows_Form_Frontend
             listBox1.DataSource = EnteredItems.OrderBy(x => x.GetDictEntry(_Instance).GetItemName(_Instance)).ToList();
         }
 
-        private void listBox1_DoubleClick(object sender, EventArgs e)
+        private void ApplySelection(bool ButtonClick = false)
         {
-            _CheckList[0].Randomizeditem.Item = ((ItemData.ItemObject)listBox1.SelectedItem).Id;
-            _CheckList[0].Randomizeditem.OwningPlayer = (int)numericUpDown1.Value;
+            if (_CheckList[0] is LocationData.LocationObject LocationObject)
+            {
+                if (ButtonClick)
+                {
+                    LocationObject.Randomizeditem.Item = "JUNK";
+                }
+                else
+                {
+                    LocationObject.Randomizeditem.Item = ((ItemData.ItemObject)listBox1.SelectedItem).Id;
+                    LocationObject.Randomizeditem.OwningPlayer = (int)numericUpDown1.Value;
+                }
+            }
+            else if (_CheckList[0] is OptionData.TrackerOption OptionObject)
+            {
+                OptionObject.CurrentValue = listBox1.SelectedItem.ToString();
+            }
             _CheckList.RemoveAt(0);
-            if (_CheckList.Any())
-            {
-                SelectNextItem();
-            }
-            else
-            {
-                this.Close();
-            }
+            WriteNextItem();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            writeItems();
+            WriteNextItem();
+        }
+
+        private void listBox1_DoubleClick(object sender, EventArgs e)
+        {
+            ApplySelection();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            _CheckList[0].Randomizeditem.Item = "JUNK";
-            _CheckList.RemoveAt(0);
-            if (_CheckList.Any())
-            {
-                SelectNextItem();
-            }
-            else
-            {
-                this.Close();
-            }
+            ApplySelection(true);
         }
     }
 }

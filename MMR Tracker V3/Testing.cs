@@ -255,21 +255,36 @@ namespace MMR_Tracker_V3
             System.Diagnostics.Debug.WriteLine(JsonConvert.SerializeObject(Options, _NewtonsoftJsonSerializerOptions));
         }
 
+        public class EntranceTable
+        {
+            public string[] CoupledEntrances { get; set; }
+            public string[] OneWayEntrances { get; set; }
+        }
 
         public static void CodeTesting(LogicObjects.TrackerInstance instance)
         {
-            EntranceData testData = new EntranceData();
-            testData.AddLogicReference("Test1", new EntranceRandoExit { ID = "test1ID", ParentAreaID = "Test1Area" });
-            testData.AddLogicReference("Test2", new EntranceRandoExit { ID = "test2ID", ParentAreaID = "Test2Area" });
-            testData.AddLogicReference("Test3", new EntranceRandoExit { ID = "test3ID", ParentAreaID = "Test3Area" });
-            testData.AddLogicReference("Test4", new EntranceRandoExit { ID = "test4ID", ParentAreaID = "Test4Area" });
-            testData.AddLogicReference("Test5", new EntranceRandoExit { ID = "test5ID", ParentAreaID = "Test5Area" });
-            testData.AddLogicReference("Test6", new EntranceRandoExit { ID = "test6ID", ParentAreaID = "Test6Area" });
-            testData.AddLogicReference("Test7", new EntranceRandoExit { ID = "test7ID", ParentAreaID = "Test7Area" });
+            EntranceTable TestTable = new EntranceTable();
+            TestTable = JsonConvert.DeserializeObject<EntranceTable>(File.ReadAllText(@"C:\Users\ttalbot\Documents\VS CODE STUFF\MMR Tracker V3\MMR Tracker V3\TestingFiles\OOTREntranceReference.json"));
 
-            Debug.WriteLine(testData.GetLogicName(new EntranceRandoExit { ID = "test4ID", ParentAreaID = "Test4Area" }));
+            List<EntranceData.EntranceRandoExit> exits = new List<EntranceData.EntranceRandoExit>();
 
-            Debug.WriteLine(JsonConvert.SerializeObject(testData, _NewtonsoftJsonSerializerOptions));
+            foreach(var i in TestTable.CoupledEntrances)
+            {
+                EntranceData.EntranceRandoExit Exit = new EntranceData.EntranceRandoExit();
+                var data = i.Split(new string[] { "->" }, StringSplitOptions.None).Select(x => x.Trim()).ToArray();
+                Exit.ParentAreaID = data[0];
+                Exit.ID = data[1];
+                exits.Add(Exit);
+
+            }
+            foreach(var i in exits)
+            {
+                if (exits.Where(x => x.ID == i.ID).Count() == 1)
+                {
+                    Debug.WriteLine($"[{i.ID}]                       Only has one entrance");
+                }
+            }
+
         }
 
         public readonly static Newtonsoft.Json.JsonSerializerSettings _NewtonsoftJsonSerializerOptions = new Newtonsoft.Json.JsonSerializerSettings

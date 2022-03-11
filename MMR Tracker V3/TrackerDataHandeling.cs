@@ -54,10 +54,10 @@ namespace MMR_Tracker_V3
             return dataSets;
         }
 
-        public static List<object> PrintToCheckedList(Dictionary<string, int> Groups, DataSets DataSets, string Divider, LogicObjects.TrackerInstance Instance, string Filter, out int OutItemsInListBox, out int OutItemsInListBoxFiltered, bool reverse = false)
+        public static List<object> PopulateCheckedLocationList(MiscData.Divider Divider, LogicObjects.TrackerInstance Instance, string Filter, out int OutItemsInListBox, out int OutItemsInListBoxFiltered, bool reverse = false)
         {
-            if (Groups == null) { Groups = Utility.GetCategoriesFromFile(Instance); }
-            if (DataSets == null) { DataSets = PopulateDataSets(Instance); }
+            var Groups = Utility.GetCategoriesFromFile(Instance);
+            var DataSets = PopulateDataSets(Instance);
 
             List<object> DataSource = new List<object>();
 
@@ -93,8 +93,9 @@ namespace MMR_Tracker_V3
 
             void WriteOptions()
             {
+                if (Instance.StaticOptions.ShowOptionsInListBox == null || Instance.StaticOptions.ShowOptionsInListBox != OptionData.DisplayListBoxes[2]) { return; }
                 bool DividerCreated = false;
-                foreach(var i in Instance.UserOptions.Where(x => x.Value.IsToggleOption()))
+                foreach (var i in Instance.UserOptions)
                 {
                     ItemsInListBox++;
                     i.Value.DisplayName = i.Value.DisplayName;
@@ -199,12 +200,14 @@ namespace MMR_Tracker_V3
             }
         }
 
-        public static List<object> PrintToLocationList(Dictionary<string, int> Groups, DataSets DataSets, string Divider, LogicObjects.TrackerInstance Instance, string Filter, bool All, out int OutItemsInListBox, out int OutItemsInListBoxFiltered, bool reverse = false)
+        public static List<object> PopulateAvailableLocationList(MiscData.Divider Divider, LogicObjects.TrackerInstance Instance, string Filter, bool ShowUnavailable, out int OutItemsInListBox, out int OutItemsInListBoxFiltered, bool reverse = false)
         {
+            var Groups = Utility.GetCategoriesFromFile(Instance);
+            var DataSets = PopulateDataSets(Instance);
             List<object> DataSource = new List<object>();
 
             var AvailableLocations = DataSets.AvailableLocations;
-            if (Filter.StartsWith("^") || All) { AvailableLocations = DataSets.AllAvailableLocations; }
+            if (Filter.StartsWith("^") || ShowUnavailable) { AvailableLocations = DataSets.AllAvailableLocations; }
 
             AvailableLocations = AvailableLocations
                 .OrderBy(x => (Groups.ContainsKey(x.GetDictEntry(Instance).Area.ToLower().Trim()) ? Groups[x.GetDictEntry(Instance).Area.ToLower().Trim()] : DataSets.AvailableLocations.Count() + 1))
@@ -212,7 +215,7 @@ namespace MMR_Tracker_V3
                 .ThenBy(x => Utility.GetDisplayName(0, x, Instance)).ToList();
 
             var AvailableHints = DataSets.AvailableHints;
-            if (Filter.StartsWith("^") || All)
+            if (Filter.StartsWith("^") || ShowUnavailable)
             {
                 AvailableHints = DataSets.UnheckedHints;
             }
@@ -223,6 +226,7 @@ namespace MMR_Tracker_V3
             if (reverse)
             {
                 AvailableLocations.Reverse();
+                WriteOptions();
                 WriteHints(DataSets);
                 WriteLocations(AvailableLocations);
             }
@@ -230,11 +234,32 @@ namespace MMR_Tracker_V3
             {
                 WriteLocations(AvailableLocations);
                 WriteHints(DataSets);
+                WriteOptions();
             }
 
             OutItemsInListBox = ItemsInListBox;
             OutItemsInListBoxFiltered = ItemsInListBoxFiltered;
             return DataSource;
+
+            void WriteOptions()
+            {
+                if (Instance.StaticOptions.ShowOptionsInListBox == null || Instance.StaticOptions.ShowOptionsInListBox != OptionData.DisplayListBoxes[1]) { return; }
+                bool DividerCreated = false;
+                foreach (var i in Instance.UserOptions)
+                {
+                    ItemsInListBox++;
+                    i.Value.DisplayName = i.Value.DisplayName;
+                    if (!SearchStringParser.FilterSearch(Instance, i.Value, Filter, i.Value.DisplayName)) { continue; }
+                    if (!DividerCreated)
+                    {
+                        if (DataSource.Count > 0) { DataSource.Add(Divider); }
+                        DataSource.Add(new MiscData.Areaheader { Area = "Toggle Options" });
+                        DividerCreated = true;
+                    }
+                    ItemsInListBoxFiltered++;
+                    DataSource.Add(i.Value);
+                }
+            }
 
             void WriteLocations(List<LocationData.LocationObject> AvailableLocations)
             {

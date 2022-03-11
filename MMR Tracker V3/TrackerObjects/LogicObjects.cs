@@ -21,7 +21,7 @@ namespace MMR_Tracker_V3
             public Dictionary<string, MacroObject> MacroPool { get; set; } = new Dictionary<string, MacroObject>();
             public Dictionary<string, ItemObject> ItemPool { get; set; } = new Dictionary<string, ItemObject>();
             public Dictionary<string, TrackerOption> UserOptions { get; set; } = new Dictionary<string, TrackerOption>();
-            public EntranceData EntrancePool { get; set; } = new EntranceData();
+            public EntranceData.EntrancePool EntrancePool { get; set; } = new EntranceData.EntrancePool();
             public LogicDictionary LogicDictionary { get; set; } = new LogicDictionary();
             public LogicFile LogicFile { get; set; } = new MMRData.LogicFile();
             public MMRData.SpoilerLogData SpoilerLog { get; set; } = null;
@@ -52,29 +52,26 @@ namespace MMR_Tracker_V3
             public Dictionary<string, int> LocationDictionaryMapping { get; set; } = new Dictionary<string, int>();
             public Dictionary<string, int> ItemDictionaryMapping { get; set; } = new Dictionary<string, int>();
             public Dictionary<string, int> MacroDictionaryMapping { get; set; } = new Dictionary<string, int>();
-            public Dictionary<string, int> TrackerOptionDictionaryMapping { get; set; } = new Dictionary<string, int>();
             public Dictionary<string, int> HintDictionaryMapping { get; set; } = new Dictionary<string, int>();
 
             //Logic File References
             public Dictionary<string, int> LogicFileMapping { get; set; } = new Dictionary<string, int>();
-
-            //Cleaned Item names
-            public Dictionary<string, string> CleanedItemMames { get; set; } = new Dictionary<string, string>();
-        }
-
-        [Serializable]
-        public class LogicMapping
-        {
-            public LogicEntryType logicEntryType { get; set; }
-            public int IndexInList { get; set; }
-
         }
 
         [Serializable]
         public class Options
         {
+            public string ShowOptionsInListBox { get; set; } = OptionData.DisplayListBoxes[0];
+            public bool DecoupleEntrances { get; set; } = false;
             public bool EntranceRandoFeatures { get; set; } = true;
+            public OptionFile OptionFile { get; set; } = new OptionFile();
+        }
+
+        [Serializable]
+        public class OptionFile
+        {
             public bool CheckForUpdate { get; set; } = true;
+            public bool MoveMarkedToBottom { get; set; } = false;
             public WinformData WinformData { get; set; } = new WinformData();
         }
 
@@ -83,11 +80,10 @@ namespace MMR_Tracker_V3
         {
             public string FormFont { get; set; } = string.Empty;
             public bool HorizontalLayout { get; set; } = false;
-            public bool MoveMarkedToBottom { get; set; } = false;
-            public MiddleClickFunction MiddleClickFunction { get; set; } = MiddleClickFunction.set;
             public bool ShowEntryNameTooltip { get; set; } = true;
         }
 
+        [Serializable]
         public class PriceData
         {
             public bool Initialized { get; set; } = false;

@@ -11,7 +11,7 @@ namespace Windows_Form_Frontend
 {
     class WinFormUtils
     {
-        public static string CreateDivider(object containerObject, string DividerText = "")
+        public static MMR_Tracker_V3.TrackerObjects.MiscData.Divider CreateDivider(object containerObject, string DividerText = "")
         {
             Font font;
             Graphics g;
@@ -30,7 +30,7 @@ namespace Windows_Form_Frontend
             }
             else
             {
-                return DividerText;
+                return new MMR_Tracker_V3.TrackerObjects.MiscData.Divider { Display = DividerText };
             }
 
             int marks = 1;
@@ -45,7 +45,7 @@ namespace Windows_Form_Frontend
                 Divider = Section + DividerText + Section;
                 marks++;
             }
-            return Divider;
+            return new MMR_Tracker_V3.TrackerObjects.MiscData.Divider { Display = Divider };
         }
 
         public static Font GetFontFromString(string Font)
