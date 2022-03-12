@@ -5,8 +5,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static MMR_Tracker_V3.TrackerObjects.OptionData;
 
 namespace MMR_Tracker_V3
@@ -263,6 +261,12 @@ namespace MMR_Tracker_V3
 
         public static void CodeTesting(LogicObjects.TrackerInstance instance)
         {
+            string test = "disable_trade_revert or can_blast_or_smash or 'Stop GC Rolling Goron as Adult' or (logic_dmt_climb_hovers and can_use(Hover_Boots)) or (logic_biggoron_bolero and not warp_songs and can_play(Bolero_of_Fire) and at('DMC Central Local', can_use(Hookshot) or can_use(Hover_Boots) or can_plant_bean))";
+            var NewConditional = LogicStringParser.ConvertLogicStringToConditional(test);
+
+            Debug.WriteLine(string.Join("\n", NewConditional.Select(x => string.Join(", ", x))));
+
+            return;
             EntranceTable TestTable = new EntranceTable();
             TestTable = JsonConvert.DeserializeObject<EntranceTable>(File.ReadAllText(@"C:\Users\ttalbot\Documents\VS CODE STUFF\MMR Tracker V3\MMR Tracker V3\TestingFiles\OOTREntranceReference.json"));
 
