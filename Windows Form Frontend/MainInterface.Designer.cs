@@ -45,7 +45,7 @@ namespace Windows_Form_Frontend
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblAvailableEntrances = new System.Windows.Forms.Label();
             this.lblCheckedLocation = new System.Windows.Forms.Label();
             this.lblAvailableLocation = new System.Windows.Forms.Label();
             this.TXTCheckedSearch = new System.Windows.Forms.TextBox();
@@ -141,6 +141,7 @@ namespace Windows_Form_Frontend
             this.LBValidEntrances.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.LBValidEntrances.Size = new System.Drawing.Size(87, 109);
             this.LBValidEntrances.TabIndex = 38;
+            this.LBValidEntrances.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.LBValidEntrances_DrawItem);
             this.LBValidEntrances.DoubleClick += new System.EventHandler(this.LBValidEntrances_DoubleClick);
             this.LBValidEntrances.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateToolTip);
             this.LBValidEntrances.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LBValidLocations_MouseUp);
@@ -260,17 +261,17 @@ namespace Windows_Form_Frontend
             this.label4.TabIndex = 29;
             this.label4.Text = "Path Finder";
             // 
-            // label3
+            // lblAvailableEntrances
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(137, 102);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 15);
-            this.label3.TabIndex = 28;
-            this.label3.Text = "Available Entrances";
+            this.lblAvailableEntrances.AutoSize = true;
+            this.lblAvailableEntrances.BackColor = System.Drawing.Color.Transparent;
+            this.lblAvailableEntrances.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblAvailableEntrances.Location = new System.Drawing.Point(137, 102);
+            this.lblAvailableEntrances.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAvailableEntrances.Name = "lblAvailableEntrances";
+            this.lblAvailableEntrances.Size = new System.Drawing.Size(109, 15);
+            this.lblAvailableEntrances.TabIndex = 28;
+            this.lblAvailableEntrances.Text = "Available Entrances";
             // 
             // lblCheckedLocation
             // 
@@ -519,7 +520,7 @@ namespace Windows_Form_Frontend
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblAvailableEntrances);
             this.Controls.Add(this.lblCheckedLocation);
             this.Controls.Add(this.lblAvailableLocation);
             this.Controls.Add(this.TXTCheckedSearch);
@@ -557,7 +558,7 @@ namespace Windows_Form_Frontend
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblAvailableEntrances;
         private System.Windows.Forms.Label lblCheckedLocation;
         private System.Windows.Forms.Label lblAvailableLocation;
         public System.Windows.Forms.TextBox TXTCheckedSearch;

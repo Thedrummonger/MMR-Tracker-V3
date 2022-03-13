@@ -17,6 +17,12 @@ namespace MMR_Tracker_V3
             public List<LocationData.LocationObject> MarkedLocations { get; set; } = new List<LocationData.LocationObject>();
             public List<LocationData.LocationObject> CheckedLocations { get; set; } = new List<LocationData.LocationObject>();
 
+            public List<EntranceData.EntranceRandoExit> UncheckedEntrances { get; set; } = new List<EntranceData.EntranceRandoExit>();
+            public List<EntranceData.EntranceRandoExit> AvailableEntrances { get; set; } = new List<EntranceData.EntranceRandoExit>();
+            public List<EntranceData.EntranceRandoExit> AllAvailableEntrances { get; set; } = new List<EntranceData.EntranceRandoExit>();
+            public List<EntranceData.EntranceRandoExit> MarkedEntrances { get; set; } = new List<EntranceData.EntranceRandoExit>();
+            public List<EntranceData.EntranceRandoExit> CheckedEntrances { get; set; } = new List<EntranceData.EntranceRandoExit>();
+
             public List<HintData.HintObject> AvailableHints { get; set; } = new List<HintData.HintObject>();
             public List<HintData.HintObject> UnheckedHints { get; set; } = new List<HintData.HintObject>();
             public List<HintData.HintObject> CheckedHints { get; set; } = new List<HintData.HintObject>();
@@ -39,6 +45,12 @@ namespace MMR_Tracker_V3
             dataSets.CheckedLocations = instance.LocationPool.Values.Where(x => x.CheckState == MiscData.CheckState.Checked).ToList();
             dataSets.AllAvailableLocations = instance.LocationPool.Values.Where(x => x.CheckState != MiscData.CheckState.Checked).ToList();
             dataSets.AvailableLocations = dataSets.AllAvailableLocations.Where(x => x.Available).ToList();
+
+            dataSets.UncheckedEntrances = instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values.Where(x => x.CheckState == MiscData.CheckState.Unchecked)).ToList();
+            dataSets.MarkedEntrances = instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values.Where(x => x.CheckState == MiscData.CheckState.Checked)).ToList();
+            dataSets.CheckedEntrances = instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values.Where(x => x.CheckState == MiscData.CheckState.Marked)).ToList();
+            dataSets.AllAvailableEntrances = instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values.Where(x => x.CheckState != MiscData.CheckState.Checked)).ToList();
+            dataSets.AvailableEntrances = instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values.Where(x => x.Available)).ToList();
 
             dataSets.UnheckedHints = instance.HintPool.Values.Where(x => x.CheckState == MiscData.CheckState.Unchecked).ToList();
             dataSets.MarkedHints = instance.HintPool.Values.Where(x => x.CheckState == MiscData.CheckState.Marked).ToList();
@@ -76,11 +88,13 @@ namespace MMR_Tracker_V3
                 WriteStartingAndOnlineItems();
                 WriteOptions();
                 WriteHints();
+                WriteEntrances();
                 WriteLocations();
             }
             else
             {
                 WriteLocations();
+                WriteEntrances();
                 WriteHints();
                 WriteOptions();
                 WriteStartingAndOnlineItems();
@@ -130,6 +144,23 @@ namespace MMR_Tracker_V3
                         CurrentLocation = i.GetDictEntry(Instance).Area;
                     }
                     DataSource.Add(i);
+                }
+            }
+
+            void WriteEntrances()
+            {
+                foreach (var area in Instance.EntrancePool.AreaList)
+                {
+                    var CheckLoadingZoneExits = area.Value.LoadingZoneExits.Where(x => x.Value.CheckState == MiscData.CheckState.Checked);
+                    var FilteredCheckedExits = CheckLoadingZoneExits.Where(x => SearchStringParser.FilterSearch(Instance, x, Filter, $"{x.Value.ID}"));
+                    if (!FilteredCheckedExits.Any()) { continue; }
+                    if (DataSource.Count > 0) { DataSource.Add(Divider); }
+                    DataSource.Add(new MiscData.Areaheader { Area = $"{area.Key} Exits" });
+                    foreach (var i in FilteredCheckedExits)
+                    {
+                        i.Value.DisplayName = $"{i.Value.ID}: {i.Value.DestinationExit.region} <= {i.Value.DestinationExit.region}";
+                        DataSource.Add(i.Value);
+                    }
                 }
             }
 
@@ -298,13 +329,45 @@ namespace MMR_Tracker_V3
                         if (!DividerCreated)
                         {
                             if (DataSource.Count > 0) { DataSource.Add(Divider); }
-                            DataSource.Add("HINTS:");
+                            DataSource.Add(new MiscData.Areaheader { Area = "HINTS:" });
                             DividerCreated = true;
                         }
                         DataSource.Add(i);
                     }
                 }
             }
+        }
+
+        public static List<object> PopulateAvailableEntraceList(MiscData.Divider Divider, LogicObjects.TrackerInstance Instance, string Filter, bool ShowUnavailable, out int OutItemsInListBox, out int OutItemsInListBoxFiltered, bool reverse = false)
+        {
+            var Groups = Utility.GetCategoriesFromFile(Instance);
+            var DataSets = PopulateDataSets(Instance);
+            List<object> DataSource = new List<object>();
+            OutItemsInListBox = 0;
+            OutItemsInListBoxFiltered = 0;
+            foreach (var area in Instance.EntrancePool.AreaList)
+            {
+                var AvailableExits = area.Value.LoadingZoneExits.Where(x => (x.Value.Available || ShowUnavailable) && x.Value.CheckState != MiscData.CheckState.Checked);
+                var FilteredAvailableExits = AvailableExits.Where(x => SearchStringParser.FilterSearch(Instance, area, Filter, $"{x.Value.ID}"));
+
+                OutItemsInListBox += AvailableExits.Count();
+                OutItemsInListBoxFiltered += FilteredAvailableExits.Count();
+                if (!FilteredAvailableExits.Any()) { continue; }
+
+                if (DataSource.Count > 0) { DataSource.Add(Divider); }
+                DataSource.Add(new MiscData.Areaheader { Area = area.Key });
+                foreach(var i in AvailableExits)
+                {
+                    i.Value.DisplayName = $"{i.Value.ID}";
+                    if (i.Value.CheckState == MiscData.CheckState.Marked) 
+                    {
+                        i.Value.DisplayName += $": {i.Value.DestinationExit.region} <= {i.Value.DestinationExit.region}";
+                    }
+                    DataSource.Add(i.Value);
+                }
+            }
+            return DataSource;
+
         }
 
         private static bool LocationAppearsinListbox(LocationData.LocationObject Location, LogicObjects.TrackerInstance Instance)

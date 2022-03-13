@@ -132,16 +132,19 @@ namespace Windows_Form_Frontend
             lvTricks.CheckBoxes = true;
             lvTricks.ShowItemToolTips = true;
             string CurrentCategory = string.Empty;
-            foreach (var i in _DataSets.Tricks.OrderBy(x => _DataSets.Tricks.IndexOf(_DataSets.Tricks.First(y => _Instance.GetOriginalLogic(y.ID).TrickCategory == _Instance.GetOriginalLogic(x.ID).TrickCategory))))
+            var TrickList = _DataSets.Tricks.OrderBy(x => _DataSets.Tricks.IndexOf(_DataSets.Tricks.First(y => _Instance.GetOriginalLogic(y.ID).TrickCategory == _Instance.GetOriginalLogic(x.ID).TrickCategory)));
+            foreach (var i in TrickList)
             {
-                if (!SearchStringParser.FilterSearch(_Instance, i, txtTrickSearch.Text, i.ID)) { continue; }
-                if (CurrentCategory != _Instance.GetOriginalLogic(i.ID).TrickCategory)
+                var DictEntry = i.GetDictEntry(_Instance);
+                string DisplayName = DictEntry.Name ?? i.ID;
+                if (!SearchStringParser.FilterSearch(_Instance, i, txtTrickSearch.Text, DisplayName)) { continue; }
+                if (CurrentCategory != (_Instance.GetOriginalLogic(i.ID).TrickCategory??""))
                 {
                     lvTricks.Items.Add(WinFormUtils.CreateDivider(lvTricks, _Instance.GetOriginalLogic(i.ID).TrickCategory.ToUpper()).ToString());
                     CurrentCategory = _Instance.GetOriginalLogic(i.ID).TrickCategory;
                 }
 
-                string[] row = { i.ID };
+                string[] row = { DisplayName };
                 ListViewItem listViewItem = new ListViewItem(row) { Tag = i };
                 listViewItem.Checked = i.TrickEnabled;
                 listViewItem.ToolTipText = _Instance.GetOriginalLogic(i.ID).TrickTooltip;

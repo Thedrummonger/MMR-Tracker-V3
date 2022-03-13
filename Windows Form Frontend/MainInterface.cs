@@ -161,7 +161,7 @@ namespace Windows_Form_Frontend
 
         //Menu Strip => Options
 
-        private void ToggleRandomizerOption_Click(object sender, EventArgs e, OptionData.TrackerOption Option, Object Selection = null)
+        private void ToggleRandomizerOption_Click(object sender, EventArgs e, OptionData.TrackerOption Option, Object Selection = null, bool update = true)
         {
             if (Selection == null)
             {
@@ -171,8 +171,11 @@ namespace Windows_Form_Frontend
             {
                 Option.CurrentValue = (string)Selection;
             }
-            LogicCalculation.CalculateLogic(CurrentTrackerInstance);
-            UpdateUI();
+            if (update)
+            {
+                LogicCalculation.CalculateLogic(CurrentTrackerInstance);
+                UpdateUI();
+            }
         }
 
         private void logicOptionsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -224,7 +227,8 @@ namespace Windows_Form_Frontend
 
         private void CodeTestingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Testing.CodeTesting(CurrentTrackerInstance);
+            MMR_Tracker_V3.OtherGames.OOTRTools.ReadEntranceRefFile(out string Logic, out string Dict);
+            WinFormInstanceCreation.CreateWinFormInstance(Logic, Dict);
 
         }
 
@@ -269,6 +273,19 @@ namespace Windows_Form_Frontend
                 else if (!item.Available)
                 { F = new Font(F.FontFamily, F.Size, FontStyle.Strikeout); }
             }
+            e.Graphics.DrawString(LB.Items[e.Index].ToString(), F, brush, e.Bounds);
+
+            e.DrawFocusRectangle();
+        }
+
+        private void LBValidEntrances_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            var LB = sender as ListBox;
+            if (e.Index < 0) { return; }
+            e.DrawBackground();
+            Font F = WinFormUtils.GetFontFromString(CurrentTrackerInstance.StaticOptions.OptionFile.WinformData.FormFont);
+            Brush brush = ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? Brushes.White : Brushes.Black;
+
             e.Graphics.DrawString(LB.Items[e.Index].ToString(), F, brush, e.Bounds);
 
             e.DrawFocusRectangle();
@@ -381,13 +398,13 @@ namespace Windows_Form_Frontend
                 LBValidLocations.Width = FormHalfWidth - 2;
                 LBValidLocations.Height = FormHalfHeight - lblAvailableLocation.Height - TXTLocSearch.Height - 14;
 
-                label3.Location = new Point(FormHalfWidth + locX, locY + 2);
+                lblAvailableEntrances.Location = new Point(FormHalfWidth + locX, locY + 2);
                 BTNSetEntrance.Location = new Point(FormWidth - BTNSetEntrance.Width, MenuHeight + 1);
-                TXTEntSearch.Location = new Point(FormHalfWidth + locX, locY + label3.Height + 6);
+                TXTEntSearch.Location = new Point(FormHalfWidth + locX, locY + lblAvailableEntrances.Height + 6);
                 TXTEntSearch.Width = FormHalfWidth - 2;
-                LBValidEntrances.Location = new Point(FormHalfWidth + locX, locY + label3.Height + TXTEntSearch.Height + 8);
+                LBValidEntrances.Location = new Point(FormHalfWidth + locX, locY + lblAvailableEntrances.Height + TXTEntSearch.Height + 8);
                 LBValidEntrances.Width = FormHalfWidth - 2;
-                LBValidEntrances.Height = FormHalfHeight - label3.Height - TXTEntSearch.Height - 14;
+                LBValidEntrances.Height = FormHalfHeight - lblAvailableEntrances.Height - TXTEntSearch.Height - 14;
 
                 lblCheckedLocation.Location = new Point(locX, FormHalfHeight + locY - 2);
                 CHKShowAll.Location = new Point(FormHalfWidth - CHKShowAll.Width, MenuHeight + FormHalfHeight - 2);
@@ -425,11 +442,11 @@ namespace Windows_Form_Frontend
 
                     lblCheckedLocation.Location = new Point(FormHalfWidth + locX, locY + 2);
                     CHKShowAll.Location = new Point(FormWidth - CHKShowAll.Width, MenuHeight + 3);
-                    TXTCheckedSearch.Location = new Point(FormHalfWidth + locX, locY + label3.Height + 6);
+                    TXTCheckedSearch.Location = new Point(FormHalfWidth + locX, locY + lblAvailableEntrances.Height + 6);
                     TXTCheckedSearch.Width = FormHalfWidth - 2;
-                    LBCheckedLocations.Location = new Point(FormHalfWidth + locX, locY + label3.Height + TXTEntSearch.Height + 8);
+                    LBCheckedLocations.Location = new Point(FormHalfWidth + locX, locY + lblAvailableEntrances.Height + TXTEntSearch.Height + 8);
                     LBCheckedLocations.Width = FormHalfWidth - 2;
-                    LBCheckedLocations.Height = FormHeight - label3.Height - TXTEntSearch.Height - 14;
+                    LBCheckedLocations.Height = FormHeight - lblAvailableEntrances.Height - TXTEntSearch.Height - 14;
                 }
                 else
                 {
@@ -455,7 +472,7 @@ namespace Windows_Form_Frontend
         public void SetObjectVisibility(bool item, bool location)
         {
             var UpperLeftLBL = lblAvailableLocation;
-            var UpperRightLBL = label3;
+            var UpperRightLBL = lblAvailableEntrances;
             var LowerLeftLBL = lblCheckedLocation;
             var LowerRightLBL = label4;
             var LowerRight2LBL = label5;
@@ -509,7 +526,9 @@ namespace Windows_Form_Frontend
             }
             if (ToUpdate.Contains(LBValidEntrances)) 
             {
-                //PrintToEntranceList(Groups, DataSets);
+                var Entries = TrackerDataHandeling.PopulateAvailableEntraceList(WinFormUtils.CreateDivider(LBValidEntrances), CurrentTrackerInstance, TXTEntSearch.Text, CHKShowAll.Checked, out int x, out int y);
+                lblAvailableEntrances.Text = $"Available Entrances: {y}" + (x != y ? $"/{x}" : "");
+                foreach (var i in Entries) { LBValidEntrances.Items.Add(i); }
                 LBValidEntrances.TopIndex = lbEntTop; 
             }
             if (ToUpdate.Contains(LBCheckedLocations)) 
@@ -567,7 +586,7 @@ namespace Windows_Form_Frontend
             {
                 if (i.IsToggleOption())
                 {
-                    ToolStripMenuItem menuItem = new() { Checked = OptionData.ToggleValues.Keys.Contains(i.CurrentValue), Text = i.DisplayName };
+                    ToolStripMenuItem menuItem = new() { Checked = OptionData.ToggleValues.Keys.Select(x => x.ToLower()).Contains(i.CurrentValue.ToLower()), Text = i.DisplayName };
                     menuItem.Click += delegate (object sender, EventArgs e) { ToggleRandomizerOption_Click(sender, e, i); };
                     RandomizerOptionsToolStripMenuItem1.DropDownItems.Add(menuItem);
                 }
@@ -676,7 +695,9 @@ namespace Windows_Form_Frontend
             bool ChangesMade = false;
             string CurrentState = Utf8Json.JsonSerializer.ToJsonString(CurrentTrackerInstance);
 
+            //Search for valid Object types in the list of selected Objects and sort them into lists
             IEnumerable<LocationData.LocationObject> locationObjects = Items.Where(x => x is LocationData.LocationObject).Select(x => x as LocationData.LocationObject);
+            IEnumerable<EntranceData.EntranceRandoExit> ExitObjects = Items.Where(x => x is EntranceData.EntranceRandoExit).Select(x => x as EntranceData.EntranceRandoExit);
             IEnumerable<OptionData.TrackerOption> OptionObjects = Items.Where(x => x is OptionData.TrackerOption).Select(x => x as OptionData.TrackerOption);
 
             //If we are performing an uncheck action there should be no unchecked locations in the list and even if there are nothing will be done to them anyway
@@ -684,14 +705,23 @@ namespace Windows_Form_Frontend
             IEnumerable<LocationData.LocationObject> UncheckedlocationObjects = (checkState == MiscData.CheckState.Unchecked) ?
                 new List<LocationData.LocationObject>() :
                 locationObjects.Where(x => x.CheckState == MiscData.CheckState.Unchecked);
+            IEnumerable<EntranceData.EntranceRandoExit> UncheckedExitObjects = (checkState == MiscData.CheckState.Unchecked) ?
+                new List<EntranceData.EntranceRandoExit>() :
+                ExitObjects.Where(x => x.CheckState == MiscData.CheckState.Unchecked);
 
             //For any Locations with no randomized item, check if an item can be automatically assigned.
             foreach (LocationData.LocationObject LocationObject in UncheckedlocationObjects)
             {
                 LocationObject.Randomizeditem.Item = LocationObject.GetItemAtCheck(CurrentTrackerInstance);
             }
+            foreach (EntranceData.EntranceRandoExit ExitObject in UncheckedExitObjects)
+            {
+                ExitObject.DestinationExit = ExitObject.GetDestinationAtExit(CurrentTrackerInstance);
+            }
+
             //Get Entries that need a value manually assigned and pass them to the "CheckItemForm" to be assigned.
             IEnumerable<object> ManualChecks = UncheckedlocationObjects.Where(x => x.Randomizeditem.Item == null); //Locations with no item
+            ManualChecks = ManualChecks.Concat(UncheckedExitObjects.Where(x => x.DestinationExit == null)); //Exits With No Destination
             ManualChecks = ManualChecks.Concat(OptionObjects.Where(x => !x.IsToggleOption())); //Non Toggle Options
             if (ManualChecks.Any())
             {
@@ -700,25 +730,29 @@ namespace Windows_Form_Frontend
                 ChangesMade = true;
             }
 
-            foreach (var i in OptionObjects.Where(x => x.IsToggleOption()))
-            {
-                ToggleRandomizerOption_Click(null, null, i);
-            }
+            //Options======================================
+            foreach (var i in OptionObjects.Where(x => x.IsToggleOption())) { i.ToggleOption(); }
+            //Items======================================
             foreach (LocationData.LocationObject LocationObject in locationObjects)
             {
                 //When we mark a location, the action is always sent as Marked, but if the location is already marked we should instead Unchecked it unless EnforceMarkAction is true.
                 var Action = (checkState == MiscData.CheckState.Marked && LocationObject.CheckState == MiscData.CheckState.Marked) && !EnforceMarkAction ? MiscData.CheckState.Unchecked : checkState;
                 if (LocationObject.ToggleChecked(Action, CurrentTrackerInstance)) { ChangesMade = true; }
             }
+            //Exits======================================
+            foreach (EntranceData.EntranceRandoExit ExitObject in ExitObjects)
+            {
+                var Action = (checkState == MiscData.CheckState.Marked && ExitObject.CheckState == MiscData.CheckState.Marked) && !EnforceMarkAction ? MiscData.CheckState.Unchecked : checkState;
+                if (ExitObject.ToggleExitChecked(Action, CurrentTrackerInstance)) { ChangesMade = true; }
+            }
 
             //Hints======================================
-
             List<HintData.HintObject> HintObjects = Items.Where(x => x is HintData.HintObject).Select(x => x as HintData.HintObject).ToList();
             foreach (HintData.HintObject hintObject in HintObjects)
             {
                 ChangesMade = true;
                 if (hintObject.CheckState == MiscData.CheckState.Unchecked)
-                {
+                {   //Hints don't use the check item form so we can handle unknown hint assignment seperately
                     hintObject.HintText = hintObject.SpoilerHintText ?? Interaction.InputBox("Input Hint Text", hintObject.GetDictEntry(CurrentTrackerInstance).Name);
                 }
                 var CheckAction = (checkState == MiscData.CheckState.Marked && hintObject.CheckState == MiscData.CheckState.Marked) && !EnforceMarkAction ? MiscData.CheckState.Unchecked : checkState;

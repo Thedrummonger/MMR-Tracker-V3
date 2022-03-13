@@ -19,6 +19,8 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string GameCode { get; set; }
             public List<DictionaryLocationEntries> LocationList { get; set; } = new List<DictionaryLocationEntries>();
             public List<DictionaryItemEntries> ItemList { get; set; } = new List<DictionaryItemEntries>();
+            public List<DictionaryEntranceEntries> EntranceList { get; set; } = new List<DictionaryEntranceEntries>();
+            public List<string> AreaList { get; set; } = new List<string>();
             public List<DictionaryMacroEntry> MacroList { get; set; } = new List<DictionaryMacroEntry>(); 
             public List<TrackerOption> Options { get; set; } = new List<TrackerOption>();
             public List<DictionaryHintEntries> HintSpots { get; set; } = new List<DictionaryHintEntries>();
@@ -78,6 +80,7 @@ namespace MMR_Tracker_V3.TrackerObjects
         public class DictionaryMacroEntry
         {
             public string ID { get; set; }
+            public string Name { get; set; }
             public bool Static { get; set; } = false;
             public int? WalletCapacity { get; set; } = null;
             public List<string> RequiredItemsOverride { get; set; } = null;
@@ -101,7 +104,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string ID { get; set; }
             public string Area { get; set; }
             public string Exit { get; set; }
-            public string EntrancePairID { get; set; }
+            public EntranceData.EntranceAreaPair EntrancePairID { get; set; }
             public bool RandomizableEntrance { get; set; }
             public bool AlwaysAccessable { get; set; } = false;
             public bool DestinationHasSingleEntrance { get; set; } = false;

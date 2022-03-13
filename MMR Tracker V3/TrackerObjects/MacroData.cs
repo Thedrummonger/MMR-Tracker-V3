@@ -25,6 +25,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             return new LogicDictionaryData.DictionaryMacroEntry
             {
                 ID = ID,
+                Name = null,
                 DynamicLogicData = null,
                 ConditionalItemsOverride = null,
                 RequiredItemsOverride = null,

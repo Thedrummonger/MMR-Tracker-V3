@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -63,11 +64,34 @@ namespace Windows_Form_Frontend
             {
                 WriteTrackerOption(OptionObject);
             }
+            else if (_CheckList[0] is EntranceData.EntranceRandoExit ExitObject)
+            {
+                WriteTrackerExits(ExitObject);
+            }
             else
             {
                 _CheckList.RemoveAt(0); 
                 WriteNextItem();
             }
+        }
+
+        private void WriteTrackerExits(EntranceData.EntranceRandoExit exitObject)
+        {
+            FormatUIItems(false, false, "");
+            this.Text = $"Select Destination of Exit {exitObject.ParentAreaID} -> {exitObject.ID}";
+            var Names = new List<string>();
+            var EnteredItems = new List<object>();
+            foreach (var area in _Instance.EntrancePool.AreaList.Values.Where(x => x.LoadingZoneExits.Any()).ToList().SelectMany(x => x.LoadingZoneExits).OrderBy(x => x.Value.ID))
+            {
+                var Entry = new EntranceData.EntranceRandoDestination
+                {
+                    region = area.Value.ID,
+                    from = area.Value.ParentAreaID,
+                };
+                if (!SearchStringParser.FilterSearch(_Instance, Entry, textBox1.Text, Entry.ToString())) { continue; }
+                EnteredItems.Add(Entry);
+            }
+            listBox1.DataSource = EnteredItems;
         }
 
         private void WriteTrackerOption(OptionData.TrackerOption Option)
@@ -104,6 +128,7 @@ namespace Windows_Form_Frontend
 
         private void ApplySelection(bool ButtonClick = false)
         {
+            if ((listBox1.SelectedIndex < 0 || listBox1.SelectedItem is MiscData.Areaheader || listBox1.SelectedItem is MiscData.Divider) && !ButtonClick) { return; }
             if (_CheckList[0] is LocationData.LocationObject LocationObject)
             {
                 if (ButtonClick)
@@ -119,6 +144,10 @@ namespace Windows_Form_Frontend
             else if (_CheckList[0] is OptionData.TrackerOption OptionObject)
             {
                 OptionObject.CurrentValue = listBox1.SelectedItem.ToString();
+            }
+            else if (_CheckList[0] is EntranceData.EntranceRandoExit ExitObject)
+            {
+                ExitObject.DestinationExit = (EntranceData.EntranceRandoDestination)listBox1.SelectedItem;
             }
             _CheckList.RemoveAt(0);
             WriteNextItem();

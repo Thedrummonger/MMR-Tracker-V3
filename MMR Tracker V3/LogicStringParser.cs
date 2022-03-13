@@ -14,14 +14,18 @@ namespace MMR_Tracker_V3
         public static readonly string[] OROperators = { "||", "|", " or ", " OR ", " Or " };
         public static readonly string[] AndOperators = { "&&", "&", " and ", " AND ", " And " };
 
-        public static List<List<string>> ConvertLogicStringToConditional(string InLogic)
+        public static List<List<string>> ConvertLogicStringToConditional(string InLogic, bool Logging = false)
         {
             //This should probably not happen here.
-            InLogic = LogicStringParser.HandleOOTRandoBadEntries(InLogic);
-
+            if (Logging) { Debug.WriteLine(InLogic); }
+            //string InLogic = LogicStringParser.HandleOOTRandoBadEntries(InLogic2, Logging);
+            if (Logging) { Debug.WriteLine(InLogic); }
             InLogic = LogicStringParser.ReplaceLogicOperatorsWithMathOperators(InLogic);
+            if (Logging) { Debug.WriteLine(InLogic); }
             var LogicEntries = LogicStringParser.SplitLogicString(InLogic);
+            if (Logging) { Debug.WriteLine(string.Join("\n", LogicEntries)); }
             var PrepedLogic = LogicStringParser.ReplaceEntryWithLetter(LogicEntries, out Dictionary<string, string> ReplacementDict);
+            if (Logging) { Debug.WriteLine(PrepedLogic); }
             var Conditional = LogicStringParser.ExpandLogicString(PrepedLogic);
             return Conditional.Select(y => y.Select(x => ReplacementDict[x]).ToList()).ToList();
         }
@@ -64,13 +68,13 @@ namespace MMR_Tracker_V3
 
         public static List<string> SplitLogicString(string LogicString)
         {
-            string LastChar = "";
+            string LastChar = null;
             string currentItem = "";
             int InIgnoredComma = 0;
             List<string> BrokenString = new List<string>();
             foreach(var i in LogicString)
             {
-                if (InIgnoredComma > 0 || (i == '(' && !LastChar[0].ISLogicChar()))
+                if (InIgnoredComma > 0 || (i == '(' && LastChar != null && !LastChar[0].ISLogicChar()))
                 {
                     currentItem += i.ToString();
                     if (i == ')') { InIgnoredComma--; }
@@ -139,42 +143,84 @@ namespace MMR_Tracker_V3
             }
             return sb.ToString(offset, DigitMax - offset);
         }
+    }
 
-        public static string HandleOOTRandoBadEntries(string InLogic)
+    public static class logicCleaner
+    {
+        public static void MoveRequirementsToConditionals(TrackerObjects.MMRData.JsonFormatLogicItem entry)
         {
-            string RebuiltString = "";
-            int CommaDepth = 0;
-            string CurrentBadActor = "";
-            string CurrentReplacementActor = "";
-            Dictionary<string, string> Replacements = new Dictionary<string, string>();
-            foreach (var i in InLogic)
+            if (!entry.ConditionalItems.Any()) { entry.ConditionalItems = new List<List<string>> { entry.RequiredItems }; }
+            else
             {
-                RebuiltString += i;
-                if (RebuiltString.EndsWith(" at("))
+                var NewConditionals = entry.ConditionalItems.Select(x => x.ToList()).ToList();
+                foreach (var i in NewConditionals)
                 {
-                    CommaDepth++;
-                    CurrentBadActor = " at";
-                    CurrentReplacementActor = " ";
+                    i.AddRange(entry.RequiredItems.ToList());
                 }
-                if (CommaDepth > 0)
+                entry.ConditionalItems = NewConditionals.Select(x => x.ToList()).ToList();
+            }
+            entry.RequiredItems = new List<string>(); ;
+        }
+        public static void RemoveRedundantConditionals(TrackerObjects.MMRData.JsonFormatLogicItem entry)
+        {
+            var cleanedConditionals = entry.ConditionalItems.Select(x => x.Distinct().ToList()).ToList();
+
+            bool Clear = false;
+            while (!Clear)
+            {
+                var test = cleanedConditionals.Where(i => IsRedundant(i, cleanedConditionals)).ToList();
+                if (test.Any())
                 {
-                    CurrentBadActor += i;
-                    if (i == ',') { CurrentReplacementActor += " and ("; }
-                    else { CurrentReplacementActor += i; }
-                    if (i == '(') { CommaDepth++; }
-                    if (i == ')') { CommaDepth--; }
-                    if (CommaDepth == 0)
+                    var TempCond = cleanedConditionals;
+                    TempCond.Remove(test[0]);
+                    cleanedConditionals = TempCond;
+                }
+                else { Clear = true; }
+            }
+
+            List<List<string>> TempConditionals = cleanedConditionals;
+            if (entry.RequiredItems.Any())
+            {
+                var NewConditionals = cleanedConditionals;
+                foreach (var i in NewConditionals)
+                {
+                    i.RemoveAll(x => entry.RequiredItems.Contains(x));
+                }
+                TempConditionals = NewConditionals.ToList();
+                TempConditionals.RemoveAll(x => !x.Any());
+            }
+            entry.ConditionalItems = TempConditionals;
+
+            bool IsRedundant(List<string> FocusedList, List<List<string>> CheckingList)
+            {
+                foreach (var i in CheckingList)
+                {
+                    if (!i.Equals(FocusedList) && i.All(j => FocusedList.Contains(j)))
                     {
-                        CurrentReplacementActor += ")";
-                        Replacements.Add(CurrentBadActor, CurrentReplacementActor);
+                        return true;
                     }
                 }
+                return false;
             }
-            foreach(var i in Replacements)
+        }
+        public static void MakeCommonConditionalsRequirements(TrackerObjects.MMRData.JsonFormatLogicItem entry)
+        {
+            List<string> ConsistantConditionals =
+                entry.ConditionalItems.SelectMany(x => x).Distinct().Where(i => entry.ConditionalItems.All(x => x.Contains(i))).ToList();
+
+            bool changesMade = ConsistantConditionals.Any();
+
+            var NewRequirements = (entry.RequiredItems ?? new List<string>()).ToList();
+            NewRequirements.AddRange(ConsistantConditionals);
+            entry.RequiredItems = NewRequirements.Distinct().ToList();
+
+            var NewConditionals = entry.ConditionalItems.Select(x => x.ToList()).ToList();
+            foreach (var i in NewConditionals)
             {
-                RebuiltString = RebuiltString.Replace(i.Key, i.Value);
+                i.RemoveAll(x => ConsistantConditionals.Contains(x));
             }
-            return RebuiltString;
+            NewConditionals.RemoveAll(x => !x.Any());
+            entry.ConditionalItems = NewConditionals;
         }
     }
 }

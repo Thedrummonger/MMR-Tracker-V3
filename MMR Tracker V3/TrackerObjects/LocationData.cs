@@ -22,6 +22,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public int CheckPrice { get; set; } = -1;
             public string DisplayName { get; set; }
             public RandomizedState RandomizedState { get; set; } = RandomizedState.Randomized;
+            public string SingleValidItem { get; set; } = null;
             public override string ToString()
             {
                 return DisplayName ?? ID;
@@ -31,6 +32,10 @@ namespace MMR_Tracker_V3.TrackerObjects
                 if ((Include == 0 || Include == 1) && RandomizedState == RandomizedState.Unrandomized) { return true; }
                 if ((Include == 0 || Include == 2) && RandomizedState == RandomizedState.UnrandomizedManual) { return true; }
                 return false;
+            }
+            public bool AutoMarked()
+            {
+                return IsUnrandomized(1) || SingleValidItem != null;
             }
             public LogicDictionaryData.DictionaryLocationEntries GetDictEntry(LogicObjects.TrackerInstance Instance)
             {

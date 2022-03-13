@@ -65,7 +65,9 @@ namespace Windows_Form_Frontend
             bool WasAltered = !ReqEqual || !ConEqual;
             checkBox1.Visible = WasAltered;
 
-            this.Text = $"{CurrentID} | Available: {GetAvailable(CurrentID)} | Logic Altered: {WasAltered}";
+            bool Literal = CurrentID.IsLiteralID(out string LogicItem);
+            var type = instance.GetLocationEntryType(LogicItem, Literal);
+            this.Text = $"{CurrentID} | Available: {GetAvailable(CurrentID)} | Logic Altered: {WasAltered} | Type: {type}";
 
             var Logic = checkBox1.Checked ? OriginalLogic : AlteredLogic;
             foreach(var i in Logic.RequiredItems)
@@ -137,7 +139,8 @@ namespace Windows_Form_Frontend
             }
             else if (entryType == LogicEntryType.item)
             {
-                Display += instance.GetItemByID(ID).Useable() ? "*" : "";
+                if (instance.GetItemByID(ID) == null) { Display += " (Error) "; }
+                else { Display += instance.GetItemByID(ID).Useable() ? "*" : ""; }
             }
             return Display;
         }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using static MMR_Tracker_V3.LogicObjects;
 using static MMR_Tracker_V3.TrackerObjects.ItemData;
@@ -17,7 +18,7 @@ namespace MMR_Tracker_V3
         static bool LogItem = false;
         static List<int> AverageTime = new List<int>();
 
-        private static bool RequirementsMet(List<string> Requirements, TrackerInstance instance)
+        public static bool RequirementsMet(List<string> Requirements, TrackerInstance instance)
         {
             foreach (string i in Requirements)
             {
@@ -71,18 +72,31 @@ namespace MMR_Tracker_V3
 
         public static void CalculateLogic(TrackerInstance instance)
         {
+            ResetAutoObtainedItems(instance);
             while (true)
             {
+                bool EntranceChanges = CalculateEntranceMacros(instance);
                 bool MacroChanged = CalculateMacros(instance);
                 bool UnrandomizedItemAquired = CheckUrandomizedLocations(instance);
-                if (!MacroChanged && !UnrandomizedItemAquired) { break; }
+                if (!MacroChanged && !UnrandomizedItemAquired && !EntranceChanges) { break; }
             }
-            foreach (var i in instance.LocationPool.Values.Where(x => x.RandomizedState != RandomizedState.Unrandomized && x.RandomizedState != RandomizedState.ForcedJunk))
+            foreach (var i in instance.LocationPool.Values.Where(x => !x.IsUnrandomized(1) && x.RandomizedState != RandomizedState.ForcedJunk))
             {
                 var Logic = instance.GetLogic(i.ID);
                 i.Available =
                     RequirementsMet(Logic.RequiredItems, instance) &&
                     ConditionalsMet(Logic.ConditionalItems, instance);
+            }
+            foreach (var Area in instance.EntrancePool.AreaList)
+            {
+                foreach (var i in Area.Value.LoadingZoneExits)
+                {
+                    var Logic = instance.GetLogic(instance.EntrancePool.GetLogicNameFromExit(i.Value));
+                    i.Value.Available =
+                        AreaReached(Area.Key, instance) &&
+                        RequirementsMet(Logic.RequiredItems, instance) &&
+                        ConditionalsMet(Logic.ConditionalItems, instance);
+                }
             }
             foreach (var i in instance.HintPool)
             {
@@ -91,6 +105,60 @@ namespace MMR_Tracker_V3
                     RequirementsMet(Logic.RequiredItems, instance) &&
                     ConditionalsMet(Logic.ConditionalItems, instance);
             }
+        }
+
+        private static void ResetAutoObtainedItems(TrackerInstance instance)
+        {
+            foreach (var Area in instance.EntrancePool.AreaList)
+            {
+                foreach (var i in Area.Value.MacroExits)
+                {
+                    if (i.Value.CheckState == CheckState.Checked)
+                    {
+                        i.Value.CheckState = CheckState.Unchecked;
+                        var Destination = instance.EntrancePool.AreaList[i.Value.ID];
+                        Destination.ExitsAcessibleFrom--;
+                    }
+                }
+            }
+            foreach(var i in instance.LocationPool.Where(x => x.Value.IsUnrandomized(1)))
+            {
+                if (i.Value.CheckState == CheckState.Checked)
+                {
+                    i.Value.ToggleChecked(CheckState.Unchecked, instance);
+                }
+            }
+        }
+
+        private static bool CalculateEntranceMacros(TrackerInstance instance)
+        {
+            bool MacroStateChanged = false; 
+            foreach (var Area in instance.EntrancePool.AreaList)
+            {
+                foreach (var i in Area.Value.MacroExits)
+                {
+                    var Logic = instance.GetLogic(instance.EntrancePool.GetLogicNameFromExit(i.Value));
+                    bool Available =
+                        AreaReached(Area.Key, instance) &&
+                        RequirementsMet(Logic.RequiredItems, instance) && 
+                        ConditionalsMet(Logic.ConditionalItems, instance);
+                    if (Available && i.Value.CheckState != CheckState.Checked)
+                    {
+                        MacroStateChanged = true;
+                        i.Value.CheckState = CheckState.Checked;
+                        var Destination = instance.EntrancePool.AreaList[i.Value.ID];
+                        Destination.ExitsAcessibleFrom++;
+                    }
+                    else if (!Available && i.Value.CheckState == CheckState.Checked)
+                    {
+                        MacroStateChanged = true;
+                        i.Value.CheckState = CheckState.Unchecked;
+                        var Destination = instance.EntrancePool.AreaList[i.Value.ID];
+                        Destination.ExitsAcessibleFrom--;
+                    }
+                }
+            }
+            return MacroStateChanged;
         }
 
         public static bool CalculateMacros(TrackerInstance instance)
@@ -120,7 +188,7 @@ namespace MMR_Tracker_V3
         public static bool CheckUrandomizedLocations(TrackerInstance instance)
         {
             bool ItemStateChanged = false;
-            foreach (var i in instance.LocationPool.Where(x => x.Value.RandomizedState == RandomizedState.Unrandomized))
+            foreach (var i in instance.LocationPool.Where(x => x.Value.IsUnrandomized(1)))
             {
                 var Logic = instance.GetLogic(i.Key);
                 var Available =
@@ -266,15 +334,15 @@ namespace MMR_Tracker_V3
             bool inverse = i.Contains("!=");
             string[] data = inverse ? i.Split("!=") : i.Split("==");
             if (data.Length != 2) { return false; }
-            optionEntryValid = checkOptionEntry(instance, data, inverse);
+            optionEntryValid = checkOptionEntry(instance, data, inverse, i);
             return true;
         }
 
-        private static bool checkOptionEntry(TrackerInstance instance, string[] data, bool inverse)
+        private static bool checkOptionEntry(TrackerInstance instance, string[] data, bool inverse, string OriginalText)
         {
             bool LiteralOption = data[0].Trim().IsLiteralID(out string CleanedOptionName);
             bool LiteralValue = data[1].Trim().IsLiteralID(out string CleanedOptionValue);
-            var OptionType = instance.GetLocationEntryType(CleanedOptionName, LiteralOption);
+            var OptionType = instance.GetOptionEntryType(CleanedOptionName, LiteralOption);
 
             if (OptionType == LogicEntryType.Option)
             {
@@ -285,6 +353,22 @@ namespace MMR_Tracker_V3
             {
                 var Location = instance.LocationPool[CleanedOptionName];
                 return (Location.GetItemAtCheck(instance) == CleanedOptionValue) == !inverse;
+            }
+            else
+            {
+                Debug.WriteLine(OriginalText + " Was not a valid Option");
+            }
+            return false;
+        }
+
+        private static bool CheckVariableEntry(string Entry)
+        {
+            var FunctionLogic = Regex.Matches(Entry, @"(.*?)\((.*?)\)");
+            foreach (Match match in FunctionLogic)
+            {
+                Debug.WriteLine("=======");
+                Debug.WriteLine(match.Groups[1].Value);
+                Debug.WriteLine(match.Groups[2].Value);
             }
             return false;
         }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static MMR_Tracker_V3.LogicObjects;
+using static MMR_Tracker_V3.TrackerObjects.EntranceData;
 using static MMR_Tracker_V3.TrackerObjects.ItemData;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
@@ -71,6 +72,14 @@ namespace MMR_Tracker_V3
             return LogicEntryType.error;
         }
 
+        public static LogicEntryType GetOptionEntryType(this LogicObjects.TrackerInstance instance, string ID, bool literal = false)
+        {
+            if (literal && instance.UserOptions.ContainsKey(ID)) { return LogicEntryType.Option; }
+            if (instance.LocationPool.ContainsKey(ID)) { return LogicEntryType.location; }
+            if (!literal && instance.UserOptions.ContainsKey(ID)) { return LogicEntryType.Option; }
+            return LogicEntryType.error;
+        }
+
         public static LogicEntryType GetItemEntryType(this LogicObjects.TrackerInstance instance, string OriginalID, bool literal = false)
         {
             LogicCalculation.MultipleItemEntry(OriginalID, out string ID, out _);
@@ -131,6 +140,34 @@ namespace MMR_Tracker_V3
                     itemObject.AmountAquiredLocally += Amount;
                 }
             }
+        }
+
+        public static bool ToggleExitChecked(this EntranceData.EntranceRandoExit data, CheckState NewState, LogicObjects.TrackerInstance Instance)
+        {
+            CheckState CurrentState = data.CheckState;
+            if (CurrentState == NewState)
+            {
+                return false;
+            }
+            else if (CurrentState == CheckState.Checked)
+            {
+                var Destination = Instance.EntrancePool.AreaList[data.DestinationExit.region];
+                Destination.ExitsAcessibleFrom--;
+            }
+            else if (NewState == CheckState.Checked)
+            {
+                if (data.DestinationExit == null) { return false; }
+                var Destination = Instance.EntrancePool.AreaList[data.DestinationExit.region];
+                Destination.ExitsAcessibleFrom++;
+            }
+            else if (CurrentState == CheckState.Unchecked && NewState == CheckState.Marked)
+            {
+                if (data.DestinationExit == null) { return false; }
+            }
+
+            if (NewState == CheckState.Unchecked) { data.DestinationExit = null; }
+            data.CheckState = NewState;
+            return true;
         }
 
         public static bool ToggleChecked(this LocationData.LocationObject data, CheckState NewState, LogicObjects.TrackerInstance Instance)
@@ -200,6 +237,10 @@ namespace MMR_Tracker_V3
         public static string GetItemAtCheck(this LocationData.LocationObject data, LogicObjects.TrackerInstance Instance)
         {
             var ItemAtCheck = data.Randomizeditem.Item;
+            if (data.SingleValidItem != null)
+            {
+                ItemAtCheck = data.SingleValidItem;
+            }
             if (data.Randomizeditem.SpoilerLogGivenItem != null)
             {
                 ItemAtCheck = data.Randomizeditem.SpoilerLogGivenItem;
@@ -209,6 +250,20 @@ namespace MMR_Tracker_V3
                 ItemAtCheck = data.GetDictEntry(Instance).OriginalItem;
             }
             return ItemAtCheck;
+        }
+
+        public static EntranceRandoDestination GetDestinationAtExit(this EntranceRandoExit Exit, LogicObjects.TrackerInstance currentTrackerInstance)
+        {
+            var DestinationAtCheck = Exit.DestinationExit;
+            if (Exit.SpoilerDefinedDestinationExit != null)
+            {
+                DestinationAtCheck = Exit.SpoilerDefinedDestinationExit;
+            }
+            if ((Exit.IsUnrandomized()))
+            {
+                DestinationAtCheck = new EntranceRandoDestination { region = Exit.ID, from = Exit.ParentAreaID };
+            }
+            return DestinationAtCheck;
         }
     }
 }

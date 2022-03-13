@@ -47,6 +47,35 @@ namespace MMR_Tracker_V3
                 Instance.InstanceReference.ItemDictionaryMapping.Add(i.ID, Instance.ItemPool.Count - 1);
             }
 
+            foreach (var i in Instance.LogicDictionary.AreaList)
+            {
+                if (!Instance.EntrancePool.AreaList.ContainsKey(i)) { Instance.EntrancePool.AreaList.Add(i, new EntranceData.EntranceRandoArea()); }
+            }
+
+            foreach (var i in Instance.LogicDictionary.EntranceList)
+            {
+                Instance.EntrancePool.AddLogicExitReference(new EntranceData.EntranceAreaPair { Area = i.Area, Exit = i.Exit }, i.ID);
+                Instance.EntrancePool.AreaList[i.Area].ID = i.Area;
+                if (i.RandomizableEntrance)
+                {
+                    Instance.EntrancePool.AreaList[i.Area].LoadingZoneExits.Add(i.Exit, new EntranceData.EntranceRandoExit
+                    {
+                        ParentAreaID = i.Area,
+                        ID = i.Exit,
+                        EntrancePair = i.EntrancePairID
+                    });
+                }
+                else
+                {
+                    Instance.EntrancePool.AreaList[i.Area].MacroExits.Add(i.Exit, new EntranceData.EntranceRandoExit
+                    {
+                        ParentAreaID = i.Area,
+                        ID = i.Exit
+                    });
+                }
+
+            }
+
             Index = 0;
             foreach (var i in Instance.LogicFile.Logic)
             {
@@ -54,7 +83,12 @@ namespace MMR_Tracker_V3
                 if (Instance.LogicDictionary.LocationList.Any(x => x.ID == i.Id))
                 {
                     var DictEntry = Instance.LogicDictionary.LocationList.First(x => x.ID == i.Id);
-                    Instance.LocationPool.Add(i.Id, new() { ID = i.Id });
+                    var ValidItems = Instance.LogicDictionary.ItemList.Where(x => x.ItemTypes.Intersect(DictEntry.ValidItemTypes).Any());
+                    Instance.LocationPool.Add(i.Id, new()
+                    {
+                        ID = i.Id,
+                        SingleValidItem = ValidItems.Count() == 1 ? ValidItems.First().ID : null
+                    });
                     Instance.InstanceReference.LocationDictionaryMapping.Add(i.Id, Instance.LogicDictionary.LocationList.IndexOf(DictEntry));
                 }
                 else if (Instance.LogicDictionary.HintSpots.Any(x => x.ID == i.Id))
@@ -90,14 +124,6 @@ namespace MMR_Tracker_V3
                 }
             }
 
-            foreach(var i in Instance.ItemPool)
-            {
-                var newString = i.Key;
-                newString = newString.Replace(" ", "_");
-                newString = Regex.Replace(newString, @"[^0-9a-zA-Z\._]", "");
-                if (newString == i.Key) { continue; }
-                Debug.WriteLine($"Cleaned [{i.Value.GetDictEntry(Instance).GetItemName(Instance)}] to [{newString}]");
-            }
 
             //Wallet and Price Data
 
