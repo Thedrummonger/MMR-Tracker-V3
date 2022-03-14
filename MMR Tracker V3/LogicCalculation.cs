@@ -47,12 +47,14 @@ namespace MMR_Tracker_V3
                     return instance.GetMacroByID(LogicItem).Aquired; 
                 case LogicEntryType.Area:
                     return AreaReached(LogicItem, instance);
+                case LogicEntryType.variableString:
+                    return LogicEntryAquired(instance, instance.Variables[LogicItem].Value as string);
                 case LogicEntryType.variableList:
                     return ItemArrayUseable(instance, LogicItem, Amount);
                 case LogicEntryType.variableBool:
                     return instance.Variables[LogicItem].Value;
                 default:
-                    Debug.WriteLine($"{LogicItem} Was not a valid Item");
+                    Debug.WriteLine($"{LogicItem} Was not a valid Logic Entry");
                     return false;
             }
         }
@@ -61,15 +63,9 @@ namespace MMR_Tracker_V3
         {
             if (instance.Variables[LogicItem].Value is not List<string> ItemArray) { return false; }
             int UseableItems = 0;
-            Debug.WriteLine($"Need {amount} of {string.Join(", ", ItemArray)}");
             foreach (string i in ItemArray)
             {
-                Debug.WriteLine($"Checking Item {i}");
-                if (instance.GetItemByID(i).Useable())
-                {
-                    Debug.WriteLine($"{i} was useable");
-                    UseableItems ++;
-                }
+                if (LogicEntryAquired(instance, i)) { UseableItems ++; }
             }
             return UseableItems >= amount;
         }
@@ -378,25 +374,29 @@ namespace MMR_Tracker_V3
         {
             bool LiteralOption = data[0].Trim().IsLiteralID(out string CleanedOptionName);
             bool LiteralValue = data[1].Trim().IsLiteralID(out string CleanedOptionValue);
-            var OptionType = instance.GetOptionEntryType(CleanedOptionName, LiteralOption);
 
-            if (!LiteralValue && instance.Variables.ContainsKey(CleanedOptionValue)) { CleanedOptionValue = instance.Variables[CleanedOptionValue].ValueToString(); }
+            List<string> OptionList = new() { CleanedOptionName };
+            List<string> ValueList = new() { CleanedOptionValue };
 
-            if (OptionType == LogicEntryType.Option)
+            if (instance.Variables.ContainsKey(CleanedOptionName) && instance.Variables[CleanedOptionName].Value is List<string> VarOptionList) { OptionList = VarOptionList; }
+            if (instance.Variables.ContainsKey(CleanedOptionValue) && instance.Variables[CleanedOptionValue].Value is List<string> VarValueList) { ValueList = VarValueList; }
+
+            bool RequiremntMet = false;
+            foreach (var currentOption in OptionList)
             {
-                var Option = instance.UserOptions[CleanedOptionName];
-                return (Option.CurrentValue == CleanedOptionValue) == !inverse;
+                var CurrentOptionType = instance.GetOptionEntryType(currentOption, LiteralOption);
+                foreach (var CurrentValue in ValueList)
+                {
+                    string CheckValue = CurrentValue;
+                    if (!LiteralValue && instance.Variables.ContainsKey(CurrentValue)) { CheckValue = instance.Variables[CurrentValue].ValueToString(); }
+                    if (CurrentOptionType == LogicEntryType.Option && (instance.UserOptions[currentOption].CurrentValue == CheckValue)) { RequiremntMet = true; }
+                    //This should always return whatever value will result in false if the item is unknown. This is because checking a location should never 
+                    //result in another location becoming unavilable otherwise we could enter an infinite loop if both those location are checked automatically
+                    else if (CurrentOptionType == LogicEntryType.location && (instance.LocationPool[currentOption].GetItemAtCheck(instance) == null)) { RequiremntMet = inverse; }
+                    else if (CurrentOptionType == LogicEntryType.location && (instance.LocationPool[currentOption].GetItemAtCheck(instance) == CheckValue)) { RequiremntMet = true; }
+                }
             }
-            else if (OptionType == LogicEntryType.location)
-            {
-                var Location = instance.LocationPool[CleanedOptionName];
-                return (Location.GetItemAtCheck(instance) == CleanedOptionValue) == !inverse;
-            }
-            else
-            {
-                Debug.WriteLine(OriginalText + " Was not a valid Option");
-            }
-            return false;
+            return RequiremntMet != inverse;
         }
 
         private static bool CheckVariableEntry(string Entry)

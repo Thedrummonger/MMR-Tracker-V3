@@ -37361,16 +37361,6 @@
           "ItemNameOverride": {}
         }
       }
-    },
-    {
-      "ID": "Test",
-      "DisplayName": "Test Option",
-      "CurrentValue": "Option 1",
-      "Values": {
-        "Option 1": {},
-        "Option 2": {},
-        "Option 3": {}
-      }
     }
   ],
   "Variables": [],
