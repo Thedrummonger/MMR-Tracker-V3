@@ -53,6 +53,7 @@ namespace MMR_Tracker_V3
             public Dictionary<string, int> ItemDictionaryMapping { get; set; } = new Dictionary<string, int>();
             public Dictionary<string, int> MacroDictionaryMapping { get; set; } = new Dictionary<string, int>();
             public Dictionary<string, int> HintDictionaryMapping { get; set; } = new Dictionary<string, int>();
+            public Dictionary<string, EntranceData.EntranceAreaPair> EntranceLogicNameToEntryData { get; set; } = new Dictionary<string, EntranceData.EntranceAreaPair>();
 
             //Logic File References
             public Dictionary<string, int> LogicFileMapping { get; set; } = new Dictionary<string, int>();
@@ -63,6 +64,8 @@ namespace MMR_Tracker_V3
         {
             public string ShowOptionsInListBox { get; set; } = OptionData.DisplayListBoxes[0];
             public bool DecoupleEntrances { get; set; } = false;
+            public bool AutoCheckCoupleEntrances { get { return !DecoupleEntrances && _AutoCheckCoupleEntrances; } set { _AutoCheckCoupleEntrances = value; } }
+            private bool _AutoCheckCoupleEntrances = true;
             public bool EntranceRandoFeatures { get; set; } = true;
             public OptionFile OptionFile { get; set; } = new OptionFile();
         }

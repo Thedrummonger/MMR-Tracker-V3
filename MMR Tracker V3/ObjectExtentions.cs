@@ -64,9 +64,11 @@ namespace MMR_Tracker_V3
         public static LogicEntryType GetLocationEntryType(this LogicObjects.TrackerInstance instance, string ID, bool literal = false)
         {
             if (literal && instance.LocationPool.ContainsKey(ID)) { return LogicEntryType.location; }
+            if (literal && instance.InstanceReference.EntranceLogicNameToEntryData.ContainsKey(ID)) { return LogicEntryType.Exit; }
             if (literal && instance.HintPool.ContainsKey(ID)) { return LogicEntryType.Hint; }
             if (instance.MacroPool.ContainsKey(ID)) { return LogicEntryType.macro; }
             if (!literal && instance.LocationPool.ContainsKey(ID)) { return LogicEntryType.location; }
+            if (!literal && instance.InstanceReference.EntranceLogicNameToEntryData.ContainsKey(ID)) { return LogicEntryType.Exit; }
             if (!literal && instance.HintPool.ContainsKey(ID)) { return LogicEntryType.Hint; }
             if (instance.UserOptions.ContainsKey(ID)) { return LogicEntryType.Option; }
             return LogicEntryType.error;

@@ -158,7 +158,7 @@ namespace MMR_Tracker_V3
                     DataSource.Add(new MiscData.Areaheader { Area = $"{area.Key} Exits" });
                     foreach (var i in FilteredCheckedExits)
                     {
-                        i.Value.DisplayName = $"{i.Value.ID}: {i.Value.DestinationExit.region} <= {i.Value.DestinationExit.region}";
+                        i.Value.DisplayName = $"{i.Value.DestinationExit.region} From {i.Value.DestinationExit.from} : {i.Value.ID} Exit";
                         DataSource.Add(i.Value);
                     }
                 }
@@ -361,7 +361,7 @@ namespace MMR_Tracker_V3
                     i.Value.DisplayName = $"{i.Value.ID}";
                     if (i.Value.CheckState == MiscData.CheckState.Marked) 
                     {
-                        i.Value.DisplayName += $": {i.Value.DestinationExit.region} <= {i.Value.DestinationExit.region}";
+                        i.Value.DisplayName += $": {i.Value.DestinationExit.region} <= {i.Value.DestinationExit.from}";
                     }
                     DataSource.Add(i.Value);
                 }

@@ -43,6 +43,18 @@ namespace Windows_Form_Frontend
                 if (!i.ID.ToLower().Contains(textBox1.Text.ToLower())) { continue; }
                 listBox4.Items.Add(i.ID);
             }
+            foreach (var i in instance.EntrancePool.AreaList.SelectMany(x => x.Value.LoadingZoneExits))
+            {
+                var ID = instance.EntrancePool.GetLogicNameFromExit(i.Value);
+                if (!ID.ToLower().Contains(textBox1.Text.ToLower())) { continue; }
+                listBox4.Items.Add(ID);
+            }
+            foreach (var i in instance.EntrancePool.AreaList.SelectMany(x => x.Value.MacroExits))
+            {
+                var ID = instance.EntrancePool.GetLogicNameFromExit(i.Value);
+                if (!ID.ToLower().Contains(textBox1.Text.ToLower())) { continue; }
+                listBox4.Items.Add(ID);
+            }
             foreach (var i in instance.MacroPool.Values)
             {
                 if (!i.ID.ToLower().Contains(textBox1.Text.ToLower())) { continue; }
@@ -67,7 +79,8 @@ namespace Windows_Form_Frontend
 
             bool Literal = CurrentID.IsLiteralID(out string LogicItem);
             var type = instance.GetLocationEntryType(LogicItem, Literal);
-            this.Text = $"{CurrentID} | Available: {GetAvailable(CurrentID)} | Logic Altered: {WasAltered} | Type: {type}";
+            string Availablility = GetAvailable(AlteredLogic) ? "*" : "";
+            this.Text = $"{type}: {LogicItem}{Availablility}";
 
             var Logic = checkBox1.Checked ? OriginalLogic : AlteredLogic;
             foreach(var i in Logic.RequiredItems)
@@ -112,37 +125,14 @@ namespace Windows_Form_Frontend
             if (entryType == LogicEntryType.macro && !listBox3.Items.Contains(i)) { listBox3.Items.Add(i); }
         }
 
-        public bool GetAvailable(string i)
+        public bool GetAvailable(MMR_Tracker_V3.TrackerObjects.MMRData.JsonFormatLogicItem Logic)
         {
-            bool Literal = i.IsLiteralID(out string LogicItem);
-            var type = instance.GetLocationEntryType(LogicItem, Literal);
-            Debug.WriteLine($"{i} {type}");
-            if (type == LogicEntryType.location)
-            {
-                return instance.GetLocationByID(LogicItem).Available;
-            }
-            else if (type == LogicEntryType.macro)
-            {
-                return instance.GetMacroByID(LogicItem).Aquired;
-            }
-            return false;
+            return LogicCalculation.RequirementsMet(Logic.RequiredItems, instance) && LogicCalculation.ConditionalsMet(Logic.ConditionalItems, instance);
         }
 
         private string GetDisplayName(string i)
         {
-            bool Literal = i.IsLiteralID(out string ID);
-            LogicEntryType entryType = instance.GetItemEntryType(ID, Literal);
-            string Display = i;
-            if (entryType == LogicEntryType.macro)
-            {
-                Display += instance.GetMacroByID(ID).Aquired ? "*" : "";
-            }
-            else if (entryType == LogicEntryType.item)
-            {
-                if (instance.GetItemByID(ID) == null) { Display += " (Error) "; }
-                else { Display += instance.GetItemByID(ID).Useable() ? "*" : ""; }
-            }
-            return Display;
+            return i + (LogicCalculation.LogicEntryAquired(instance, i) ? "*": "");
         }
 
         private void listBox3_DoubleClick(object sender, EventArgs e)

@@ -762,8 +762,13 @@ namespace Windows_Form_Frontend
 
             //Cleanup======================================
 
-            if (ChangesMade) { SaveTrackerState(CurrentState); }
-            LogicCalculation.CalculateLogic(CurrentTrackerInstance);
+            if (ChangesMade)
+            {
+                SaveTrackerState(CurrentState);
+                LogicCalculation.CalculateLogic(CurrentTrackerInstance);
+                if (checkState == MiscData.CheckState.Checked && LogicCalculation.CheckEntrancePair(CurrentTrackerInstance) && CurrentTrackerInstance.StaticOptions.AutoCheckCoupleEntrances) 
+                { LogicCalculation.CalculateLogic(CurrentTrackerInstance); }
+            }
             UpdateUI();
         }
 

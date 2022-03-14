@@ -20,48 +20,37 @@ namespace MMR_Tracker_V3
 
         public static bool RequirementsMet(List<string> Requirements, TrackerInstance instance)
         {
-            foreach (string i in Requirements)
-            {
-                if (LogicOptionEntry(instance, i, out bool OptionEntryValid))
-                {
-                    if (OptionEntryValid) { continue; }
-                    else { return false; }
-                }
-
-                MultipleItemEntry(i, out string LogicItem, out int Amount);
-                bool Literal = LogicItem.IsLiteralID(out LogicItem);
-                var type = instance.GetItemEntryType(LogicItem, Literal);
-
-                switch (type)
-                {
-                    case LogicEntryType.Bool:
-                        if (!bool.Parse(LogicItem)) { return false; }
-                        break;
-                    case LogicEntryType.item:
-                        if (!instance.GetItemByID(LogicItem).Useable(Amount)) { return false; }
-                        break;
-                    case LogicEntryType.macro:
-                        if (!instance.GetMacroByID(LogicItem).Aquired) { return false; }
-                        break;
-                    case LogicEntryType.Area:
-                        if (!AreaReached(LogicItem, instance)) { return false; }
-                        break;
-                    default:
-                        Debug.WriteLine($"{LogicItem} Was not a valid Item");
-                        return false;
-                }
-            }
-            return true;
+            return Requirements.All(x => LogicEntryAquired(instance, x));
         }
 
-        private static bool ConditionalsMet(List<List<string>> Conditionals, TrackerInstance instance)
+        public static bool ConditionalsMet(List<List<string>> Conditionals, TrackerInstance instance)
         {
             if (!Conditionals.Any()) { return true; }
-            foreach (var i in Conditionals)
+            return Conditionals.Any(x => RequirementsMet(x, instance));
+        }
+
+        public static bool LogicEntryAquired(TrackerInstance instance, string i)
+        {
+            if (LogicOptionEntry(instance, i, out bool OptionEntryValid)) { return OptionEntryValid; }
+
+            MultipleItemEntry(i, out string LogicItem, out int Amount);
+            bool Literal = LogicItem.IsLiteralID(out LogicItem);
+            var type = instance.GetItemEntryType(LogicItem, Literal);
+
+            switch (type)
             {
-                if (RequirementsMet(i, instance)) { return true; }
+                case LogicEntryType.Bool:
+                    return bool.Parse(LogicItem);
+                case LogicEntryType.item:
+                    return instance.GetItemByID(LogicItem).Useable(Amount);
+                case LogicEntryType.macro:
+                    return instance.GetMacroByID(LogicItem).Aquired; 
+                case LogicEntryType.Area:
+                    return AreaReached(LogicItem, instance);
+                default:
+                    Debug.WriteLine($"{LogicItem} Was not a valid Item");
+                    return false;
             }
-            return false;
         }
 
         private static bool AreaReached(string Area, TrackerInstance instance)
@@ -371,6 +360,41 @@ namespace MMR_Tracker_V3
                 Debug.WriteLine(match.Groups[2].Value);
             }
             return false;
+        }
+
+        public static bool CheckEntrancePair(TrackerInstance instance)
+        {
+            bool ChangesMade = false;
+            foreach(var i in instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values))
+            {
+                if (i.CheckState == CheckState.Checked && i.EntrancePair != null)
+                {
+                    var EntrancePair = instance.EntrancePool.GetEntrancePairOfDestination(i.DestinationExit);
+                    if (EntrancePair.Available && EntrancePair.CheckState != CheckState.Checked)
+                    {
+                        EntrancePair.DestinationExit = i.GetDestnationFromEntrancePair();
+                        EntrancePair.ToggleExitChecked(CheckState.Checked, instance);
+                    }
+                }
+            }
+            return ChangesMade;
+        }
+        public static bool UnCheckEntrancePair(TrackerInstance instance)
+        {
+            bool ChangesMade = false;
+            foreach (var i in instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values))
+            {
+                if (i.CheckState != CheckState.Checked && i.EntrancePair != null)
+                {
+                    var EntrancePair = instance.EntrancePool.GetEntrancePairOfDestination(i.DestinationExit);
+                    if (EntrancePair.CheckState == CheckState.Checked)
+                    {
+                        EntrancePair.DestinationExit = i.GetDestnationFromEntrancePair();
+                        EntrancePair.ToggleExitChecked(CheckState.Unchecked, instance);
+                    }
+                }
+            }
+            return ChangesMade;
         }
 
         public static MMRData.JsonFormatLogicItem GetOriginalLogic(this TrackerInstance instance, string ID, bool copy = false)
