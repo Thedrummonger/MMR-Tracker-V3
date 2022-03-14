@@ -256,11 +256,6 @@ namespace MMR_Tracker_V3
 
         public static void CodeTesting(LogicObjects.TrackerInstance instance)
         {
-            string test = "Buy Bombs (5) [25]";
-
-
-            //LogicStringParser.ConvertLogicStringToConditional(test, true);
-
 
         }
 

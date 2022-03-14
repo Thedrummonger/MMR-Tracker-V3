@@ -26,11 +26,11 @@ namespace MMR_Tracker_V3
                 bool IsRandomized = RandomizedItemIndexs.Contains(Index);
                 if (IsRandomized && i.IsUnrandomized())
                 {
-                    i.RandomizedState = MiscData.RandomizedState.Randomized;
+                    i.SetRandomizedState(MiscData.RandomizedState.Randomized, Instance);
                 }
                 else if (!IsRandomized && !i.IsUnrandomized())
                 {
-                    i.RandomizedState = MiscData.RandomizedState.Unrandomized;
+                    i.SetRandomizedState(MiscData.RandomizedState.Unrandomized, Instance);
                 }
                 Index++;
             }
@@ -50,13 +50,13 @@ namespace MMR_Tracker_V3
             foreach (var i in LocationPool)
             {
                 bool IsJunk = JunkItemIndexes.Contains(Index);
-                if (IsJunk && i.RandomizedState == MiscData.RandomizedState.Randomized)
+                if (IsJunk && i.IsRandomized())
                 {
-                    i.RandomizedState = MiscData.RandomizedState.ForcedJunk;
+                    i.SetRandomizedState(MiscData.RandomizedState.ForcedJunk, Instance);
                 }
-                else if (!IsJunk && i.RandomizedState == MiscData.RandomizedState.ForcedJunk)
+                else if (!IsJunk && i.IsJunk())
                 {
-                    i.RandomizedState = MiscData.RandomizedState.Randomized;
+                    i.SetRandomizedState(MiscData.RandomizedState.Randomized, Instance);
                 }
                 Index++;
             }
@@ -190,19 +190,16 @@ namespace MMR_Tracker_V3
             {
                 if (Log.GameplaySettings.StartingItemMode != "None") { break; }
                 var Entry = instance.GetLocationByID(i);
-                if (!Entry.IsUnrandomized()) { Entry.RandomizedState = MiscData.RandomizedState.ForcedJunk; }
+                if (!Entry.IsUnrandomized()) { Entry.SetRandomizedState(MiscData.RandomizedState.ForcedJunk, instance); }
             }
 
             Debug.WriteLine($"Handeling Dungeon Entrances");
             //Dungeon entrances are not tracked in the CustomItemListString and should instead be randomized based on the RandomizeDungeonEntrances setting
-            instance.GetLocationByID("AreaWoodFallTempleAccess").RandomizedState = Log.GameplaySettings.RandomizeDungeonEntrances ? 
-                MiscData.RandomizedState.Randomized : MiscData.RandomizedState.Unrandomized;
-            instance.GetLocationByID("AreaSnowheadTempleAccess").RandomizedState = Log.GameplaySettings.RandomizeDungeonEntrances ? 
-                MiscData.RandomizedState.Randomized : MiscData.RandomizedState.Unrandomized;
-            instance.GetLocationByID("AreaGreatBayTempleAccess").RandomizedState = Log.GameplaySettings.RandomizeDungeonEntrances ? 
-                MiscData.RandomizedState.Randomized : MiscData.RandomizedState.Unrandomized;
-            instance.GetLocationByID("AreaInvertedStoneTowerTempleAccess").RandomizedState = Log.GameplaySettings.RandomizeDungeonEntrances ? 
-                MiscData.RandomizedState.Randomized : MiscData.RandomizedState.Unrandomized;
+            var DungeoneState = Log.GameplaySettings.RandomizeDungeonEntrances ? MiscData.RandomizedState.Randomized : MiscData.RandomizedState.Unrandomized;
+            instance.GetLocationByID("AreaWoodFallTempleAccess").SetRandomizedState(DungeoneState, instance);
+            instance.GetLocationByID("AreaSnowheadTempleAccess").SetRandomizedState(DungeoneState, instance);
+            instance.GetLocationByID("AreaGreatBayTempleAccess").SetRandomizedState(DungeoneState, instance);
+            instance.GetLocationByID("AreaInvertedStoneTowerTempleAccess").SetRandomizedState(DungeoneState, instance);
 
             Debug.WriteLine($"Handeling Options");
             //These options are not hard coded to the tracker, but set them if they exist.
@@ -229,15 +226,15 @@ namespace MMR_Tracker_V3
             foreach (var i in instance.LocationPool)
             {   
                 //Any unrandomized locations with items that effect logic should be made Manual to track obtaining the item and updating logic
-                if (i.Value.RandomizedState == MiscData.RandomizedState.Unrandomized && AllLogicItems.Contains(i.Value.GetDictEntry(instance).OriginalItem))
+                if (i.Value.IsUnrandomized(1) && AllLogicItems.Contains(i.Value.GetDictEntry(instance).OriginalItem))
                 {
-                    i.Value.RandomizedState = MiscData.RandomizedState.UnrandomizedManual;
+                    i.Value.SetRandomizedState(MiscData.RandomizedState.UnrandomizedManual, instance);
                 }
                 //If a location is unrandomized, but it's unrandomized item is a starting item it will contain junk. This is MMR sepcific
                 if (i.Value.IsUnrandomized() && instance.GetItemByID(i.Value.GetDictEntry(instance).OriginalItem).AmountInStartingpool > 0)
                 {
                     if (StartingItems.Contains(i.Key)) { continue; } //Don't do this for starting items since you automatcially get them
-                    i.Value.RandomizedState = MiscData.RandomizedState.ForcedJunk;
+                    i.Value.SetRandomizedState(MiscData.RandomizedState.ForcedJunk, instance);
                 }
             }
         }
@@ -250,7 +247,7 @@ namespace MMR_Tracker_V3
                 var MatchingLocation = Log.LocationLog.Where(x => DictEntry.SpoilerData.SpoilerLogNames.Contains(x.Key));
                 if (!MatchingLocation.Any()) 
                 {
-                    if (i.RandomizedState == MiscData.RandomizedState.Randomized)
+                    if (i.IsRandomized())
                     {
                         Debug.WriteLine($"{i.ID} was not found in the spoiler log and was randomized");
                     }

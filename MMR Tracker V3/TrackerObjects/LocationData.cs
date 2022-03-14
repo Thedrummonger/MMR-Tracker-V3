@@ -27,11 +27,26 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 return DisplayName ?? ID;
             }
+
+            public void SetRandomizedState(RandomizedState Newstate, LogicObjects.TrackerInstance Instance)
+            {
+                if (Newstate == RandomizedState) { return; }
+                RandomizedState = Newstate;
+            }
+
             public bool IsUnrandomized(int Include = 0)
             {
                 if ((Include == 0 || Include == 1) && RandomizedState == RandomizedState.Unrandomized) { return true; }
                 if ((Include == 0 || Include == 2) && RandomizedState == RandomizedState.UnrandomizedManual) { return true; }
                 return false;
+            }
+            public bool IsRandomized()
+            {
+                return RandomizedState == RandomizedState.Randomized;
+            }
+            public bool IsJunk()
+            {
+                return RandomizedState == RandomizedState.ForcedJunk;
             }
             public bool AutoMarked()
             {

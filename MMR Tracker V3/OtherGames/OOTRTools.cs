@@ -42,7 +42,19 @@ namespace MMR_Tracker_V3.OtherGames
             var Logic = GetDataFromWeb("Roman971/OoT-Randomizer/Dev-R");
 
             EntranceTable TestTable = new EntranceTable();
-            TestTable = JsonConvert.DeserializeObject<EntranceTable>(File.ReadAllText(@"D:\Visual Studio Code Stuff\MMR-Tracker-V3\MMR Tracker V3\OtherGames\OOTREntranceReference.json"));
+
+            string OOTRHelperFile = @"D:\Visual Studio Code Stuff\MMR-Tracker-V3\MMR Tracker V3\OtherGames\OOTREntranceReference.json";
+
+            if (File.Exists(OOTRHelperFile))
+            {
+                TestTable = JsonConvert.DeserializeObject<EntranceTable>(File.ReadAllText(OOTRHelperFile));
+            }
+            else
+            {
+                System.Net.WebClient wc = new System.Net.WebClient();
+                TestTable = JsonConvert.DeserializeObject<EntranceTable>(wc.DownloadString(@"https://raw.githubusercontent.com/Thedrummonger/MMR-Tracker-V3/master/MMR%20Tracker%20V3/OtherGames/OOTREntranceReference.json"));
+            }
+
 
             LogicDictionaryData.LogicDictionary OORTDict = new LogicDictionaryData.LogicDictionary();
 
@@ -305,15 +317,19 @@ namespace MMR_Tracker_V3.OtherGames
 
             OutLogic = JsonConvert.SerializeObject(OORTLogic, Testing._NewtonsoftJsonSerializerOptions);
             OutDict = JsonConvert.SerializeObject(OORTDict, Testing._NewtonsoftJsonSerializerOptions);
-
-            File.WriteAllText(@"D:\Testing\OOTRDict.json", OutDict);
-            File.WriteAllText(@"D:\Testing\OOTRLogic.json", OutLogic);
-            //return;
-
             LogicObjects.TrackerInstance OOTRInstance = new LogicObjects.TrackerInstance();
             TrackerInstanceCreation.ApplyLogicAndDict(OOTRInstance, JsonConvert.SerializeObject(OORTLogic, Testing._NewtonsoftJsonSerializerOptions), JsonConvert.SerializeObject(OORTDict, Testing._NewtonsoftJsonSerializerOptions));
             TrackerInstanceCreation.PopulateTrackerObject(OOTRInstance);
-            File.WriteAllText(@"D:\Testing\OOTRSaveFile.json", JsonConvert.SerializeObject(OOTRInstance, Testing._NewtonsoftJsonSerializerOptions));
+
+            try
+            {
+                File.WriteAllText(@"D:\Testing\OOTRDict.json", OutDict);
+                File.WriteAllText(@"D:\Testing\OOTRLogic.json", OutLogic);
+                File.WriteAllText(@"D:\Testing\OOTRSaveFile.json", JsonConvert.SerializeObject(OOTRInstance, Testing._NewtonsoftJsonSerializerOptions));
+            }
+            catch { }
+            //return;
+
 
             Debug.WriteLine("===============================");
 

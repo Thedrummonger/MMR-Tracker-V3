@@ -1224,77 +1224,77 @@
       "adult"
     ],
     "skip_child_zelda": [
-      "True",
-      "False"
+      "False",
+      "True"
     ],
     "free_scarecrow": [
-      "True",
-      "False"
+      "False",
+      "True"
     ],
     "open_door_of_time": [
-      "True",
-      "False"
+      "False",
+      "True"
     ],
     "complete_mask_quest": [
-      "True",
-      "False"
+      "False",
+      "True"
     ],
     "bombchus_in_logic": [
-      "True",
-      "False"
+      "False",
+      "True"
     ],
     "plant_beans": [
-      "True",
-      "False"
+      "False",
+      "True"
     ],
     "Deku_tree_Shortcuts": [
-      "Enabled",
-      "Disabled"
+      "Disabled",
+      "Enabled"
     ],
     "Dodongos_Cavern_Shortcuts": [
-      "Enabled",
-      "Disabled"
+      "Disabled",
+      "Enabled"
     ],
     "Jabu_Jabus_Belly_Shortcuts": [
-      "Enabled",
-      "Disabled"
+      "Disabled",
+      "Enabled"
     ],
     "Forest_Temple_Shortcuts": [
-      "Enabled",
-      "Disabled"
+      "Disabled",
+      "Enabled"
     ],
     "Fire_Temple_Shortcuts": [
-      "Enabled",
-      "Disabled"
+      "Disabled",
+      "Enabled"
     ],
     "Water_Temple_Shortcuts": [
-      "Enabled",
-      "Disabled"
+      "Disabled",
+      "Enabled"
     ],
     "Shadow_Temple_Shortcuts": [
-      "Enabled",
-      "Disabled"
+      "Disabled",
+      "Enabled"
     ],
     "Spirit_Temple_Shortcuts": [
-      "Enabled",
-      "Disabled"
+      "Disabled",
+      "Enabled"
     ],
     "hints": [
+      "none",
       "mask",
       "agony",
-      "nothing",
-      "none"
+      "nothing"
     ],
     "damage_multiplier": [
-      "half",
       "normal",
+      "half",
       "double",
       "quadruple",
       "ohko"
     ],
     "gerudo_fortress": [
-      "fast",
       "normal",
+      "fast",
       "open"
     ],
     "lacs_condition": [
@@ -1311,21 +1311,22 @@
       "off"
     ],
     "open_forest": [
-      "open",
       "closed",
+      "open",
       "Deku"
     ],
     "zora_fountain": [
-      "open",
       "closed",
+      "open",
       "adult"
     ],
     "open_kakariko": [
-      "open",
       "closed",
+      "open",
       "Letter"
     ],
     "shuffle_ganon_bosskey": [
+      "randomized",
       "dungeons",
       "medallions",
       "stones",
@@ -1334,10 +1335,11 @@
       "Remove"
     ],
     "bridge": [
-      "dungeons",
       "medallions",
+      "dungeons",
       "stones",
       "tokens",
+      "vanilla",
       "open"
     ]
   },

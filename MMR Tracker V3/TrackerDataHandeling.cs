@@ -372,10 +372,7 @@ namespace MMR_Tracker_V3
 
         private static bool LocationAppearsinListbox(LocationData.LocationObject Location, LogicObjects.TrackerInstance Instance)
         {
-            return
-                Location.RandomizedState != MiscData.RandomizedState.ForcedJunk &&
-                Location.RandomizedState != MiscData.RandomizedState.Unrandomized &&
-                !string.IsNullOrWhiteSpace(Location.GetDictEntry(Instance).Name);
+            return !Location.IsJunk() && !Location.IsUnrandomized(1) && !string.IsNullOrWhiteSpace(Location.GetDictEntry(Instance).Name);
         }
     }
 }

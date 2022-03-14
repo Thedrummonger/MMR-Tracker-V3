@@ -229,6 +229,8 @@ namespace Windows_Form_Frontend
         {
             MMR_Tracker_V3.OtherGames.OOTRTools.ReadEntranceRefFile(out string Logic, out string Dict);
             WinFormInstanceCreation.CreateWinFormInstance(Logic, Dict);
+            UpdateUI();
+            Testing.CodeTesting(CurrentTrackerInstance);
 
         }
 
@@ -297,7 +299,7 @@ namespace Windows_Form_Frontend
             if (sender == LBValidLocations || sender == LBValidEntrances) { action = MiscData.CheckState.Checked; }
             if (sender == LBCheckedLocations) { action = MiscData.CheckState.Unchecked; }
 
-            HandleItemSelect((sender as ListBox).SelectedItems.Cast<object>().ToList(), action);
+            HandleItemSelect((sender as ListBox).SelectedItems.Cast<object>().ToList(), action, LB: sender);
         }
 
         private void LBValidLocations_MouseUp(object sender, MouseEventArgs e)
@@ -314,7 +316,7 @@ namespace Windows_Form_Frontend
                 if (sender == LBValidLocations || sender == LBValidEntrances) { action = MiscData.CheckState.Marked; }
                 if (sender == LBCheckedLocations) { action = MiscData.CheckState.Marked; }
 
-                HandleItemSelect((sender as ListBox).SelectedItems.Cast<object>().ToList(), action);
+                HandleItemSelect((sender as ListBox).SelectedItems.Cast<object>().ToList(), action, LB: sender);
 
             }
             else if (e.Button == MouseButtons.Right)
@@ -657,11 +659,11 @@ namespace Windows_Form_Frontend
                 {
                     //Check Item
                     ToolStripItem CheckContextItem = contextMenuStrip.Items.Add("Check Location");
-                    CheckContextItem.Click += (sender, e) => { HandleItemSelect(new List<object> { listBox.SelectedItem }, MiscData.CheckState.Checked); };
+                    CheckContextItem.Click += (sender, e) => { HandleItemSelect(new List<object> { listBox.SelectedItem }, MiscData.CheckState.Checked, LB: listBox); };
                     //Mark\UnMark Item
                     string MarkFunction = itemObject.CheckState == MiscData.CheckState.Marked ? "UnMark Location" : "Mark Location";
                     ToolStripItem MarkContextItem = contextMenuStrip.Items.Add(MarkFunction);
-                    MarkContextItem.Click += (sender, e) => { HandleItemSelect(new List<object> { listBox.SelectedItem }, MiscData.CheckState.Marked); };
+                    MarkContextItem.Click += (sender, e) => { HandleItemSelect(new List<object> { listBox.SelectedItem }, MiscData.CheckState.Marked, LB: listBox); };
                     //Set Item Price
                     string SetPriceText = itemObject.CheckPrice > -1 ? "Clear Price" : "Set Price";
                     ToolStripItem SetPrice = contextMenuStrip.Items.Add(SetPriceText);
@@ -675,10 +677,10 @@ namespace Windows_Form_Frontend
                 {
                     //UnCheck Item
                     ToolStripItem CheckContextItem = contextMenuStrip.Items.Add("UnCheck Location");
-                    CheckContextItem.Click += (sender, e) => { HandleItemSelect(new List<object> { listBox.SelectedItem }, MiscData.CheckState.Unchecked); };
+                    CheckContextItem.Click += (sender, e) => { HandleItemSelect(new List<object> { listBox.SelectedItem }, MiscData.CheckState.Unchecked, LB: listBox); };
                     //Uncheck and Mark Item
                     ToolStripItem MarkContextItem = contextMenuStrip.Items.Add("UnCheck and Mark Location");
-                    MarkContextItem.Click += (sender, e) => { HandleItemSelect(new List<object> { listBox.SelectedItem }, MiscData.CheckState.Marked); };
+                    MarkContextItem.Click += (sender, e) => { HandleItemSelect(new List<object> { listBox.SelectedItem }, MiscData.CheckState.Marked, LB: listBox); };
                 }
             }
 
@@ -690,15 +692,34 @@ namespace Windows_Form_Frontend
 
         //ListboxObject Handeling
 
-        private void HandleItemSelect(IEnumerable<object> Items, MiscData.CheckState checkState, bool EnforceMarkAction = false)
+        private void HandleItemSelect(IEnumerable<object> Items, MiscData.CheckState checkState, bool EnforceMarkAction = false, object LB = null)
         {
+            if (Items.Count() == 1)
+            {
+                if (Items.First() is MiscData.Divider) { return; }
+                else if (Items.First() is MiscData.Areaheader header && LB != null) 
+                { 
+                    if (LB == LBValidLocations) { TXTLocSearch.Text = "#" + header.Area; }
+                    else if (LB == LBValidEntrances) { TXTEntSearch.Text = "#" + header.Area; }
+                    else if (LB == LBCheckedLocations) { TXTCheckedSearch.Text = "#" + header.Area; }
+                    return;
+                }
+            }
+            Debug.WriteLine("Checking Item===========================================================");
+            Stopwatch TotalTime = new Stopwatch();
+            Stopwatch FunctionTime = new Stopwatch();
+            Utility.TimeCodeExecution(TotalTime);
+            Utility.TimeCodeExecution(FunctionTime);
+
             bool ChangesMade = false;
             string CurrentState = Utf8Json.JsonSerializer.ToJsonString(CurrentTrackerInstance);
+            Utility.TimeCodeExecution(FunctionTime, "Saving Current State", 1);
 
             //Search for valid Object types in the list of selected Objects and sort them into lists
             IEnumerable<LocationData.LocationObject> locationObjects = Items.Where(x => x is LocationData.LocationObject).Select(x => x as LocationData.LocationObject);
             IEnumerable<EntranceData.EntranceRandoExit> ExitObjects = Items.Where(x => x is EntranceData.EntranceRandoExit).Select(x => x as EntranceData.EntranceRandoExit);
             IEnumerable<OptionData.TrackerOption> OptionObjects = Items.Where(x => x is OptionData.TrackerOption).Select(x => x as OptionData.TrackerOption);
+            Utility.TimeCodeExecution(FunctionTime, "Sorting Selected Items", 1);
 
             //If we are performing an uncheck action there should be no unchecked locations in the list and even if there are nothing will be done to them anyway
             //This check is neccessary for the "UnMark Only" action and also provides a bit more efficiency.
@@ -708,6 +729,7 @@ namespace Windows_Form_Frontend
             IEnumerable<EntranceData.EntranceRandoExit> UncheckedExitObjects = (checkState == MiscData.CheckState.Unchecked) ?
                 new List<EntranceData.EntranceRandoExit>() :
                 ExitObjects.Where(x => x.CheckState == MiscData.CheckState.Unchecked);
+            Utility.TimeCodeExecution(FunctionTime, "Getting Unchecked Entries", 1);
 
             //For any Locations with no randomized item, check if an item can be automatically assigned.
             foreach (LocationData.LocationObject LocationObject in UncheckedlocationObjects)
@@ -718,6 +740,7 @@ namespace Windows_Form_Frontend
             {
                 ExitObject.DestinationExit = ExitObject.GetDestinationAtExit(CurrentTrackerInstance);
             }
+            Utility.TimeCodeExecution(FunctionTime, "Checking for Randmomized item data", 1);
 
             //Get Entries that need a value manually assigned and pass them to the "CheckItemForm" to be assigned.
             IEnumerable<object> ManualChecks = UncheckedlocationObjects.Where(x => x.Randomizeditem.Item == null); //Locations with no item
@@ -725,13 +748,17 @@ namespace Windows_Form_Frontend
             ManualChecks = ManualChecks.Concat(OptionObjects.Where(x => !x.IsToggleOption())); //Non Toggle Options
             if (ManualChecks.Any())
             {
+                TotalTime.Stop();
                 CheckItemForm checkItemForm = new CheckItemForm(ManualChecks, CurrentTrackerInstance);
                 checkItemForm.ShowDialog();
                 ChangesMade = true;
+                TotalTime.Start();
             }
+            Utility.TimeCodeExecution(FunctionTime, "Manual Check Form", 1);
 
             //Options======================================
             foreach (var i in OptionObjects.Where(x => x.IsToggleOption())) { i.ToggleOption(); }
+            Utility.TimeCodeExecution(FunctionTime, "Toggling Options", 1);
             //Items======================================
             foreach (LocationData.LocationObject LocationObject in locationObjects)
             {
@@ -739,12 +766,14 @@ namespace Windows_Form_Frontend
                 var Action = (checkState == MiscData.CheckState.Marked && LocationObject.CheckState == MiscData.CheckState.Marked) && !EnforceMarkAction ? MiscData.CheckState.Unchecked : checkState;
                 if (LocationObject.ToggleChecked(Action, CurrentTrackerInstance)) { ChangesMade = true; }
             }
+            Utility.TimeCodeExecution(FunctionTime, "Checking Locations", 1);
             //Exits======================================
             foreach (EntranceData.EntranceRandoExit ExitObject in ExitObjects)
             {
                 var Action = (checkState == MiscData.CheckState.Marked && ExitObject.CheckState == MiscData.CheckState.Marked) && !EnforceMarkAction ? MiscData.CheckState.Unchecked : checkState;
                 if (ExitObject.ToggleExitChecked(Action, CurrentTrackerInstance)) { ChangesMade = true; }
             }
+            Utility.TimeCodeExecution(FunctionTime, "Checking Entrances", 1);
 
             //Hints======================================
             List<HintData.HintObject> HintObjects = Items.Where(x => x is HintData.HintObject).Select(x => x as HintData.HintObject).ToList();
@@ -753,23 +782,33 @@ namespace Windows_Form_Frontend
                 ChangesMade = true;
                 if (hintObject.CheckState == MiscData.CheckState.Unchecked)
                 {   //Hints don't use the check item form so we can handle unknown hint assignment seperately
+                    TotalTime.Stop();
                     hintObject.HintText = hintObject.SpoilerHintText ?? Interaction.InputBox("Input Hint Text", hintObject.GetDictEntry(CurrentTrackerInstance).Name);
+                    TotalTime.Start();
                 }
                 var CheckAction = (checkState == MiscData.CheckState.Marked && hintObject.CheckState == MiscData.CheckState.Marked) && !EnforceMarkAction ? MiscData.CheckState.Unchecked : checkState;
                 hintObject.CheckState = CheckAction;
                 hintObject.HintText = CheckAction == MiscData.CheckState.Unchecked ? null : hintObject.HintText;
             }
+            Utility.TimeCodeExecution(FunctionTime, "Setting Hints", 1);
 
             //Cleanup======================================
 
             if (ChangesMade)
             {
                 SaveTrackerState(CurrentState);
+                Utility.TimeCodeExecution(FunctionTime, "Committng Save State", 1);
                 LogicCalculation.CalculateLogic(CurrentTrackerInstance);
+                Utility.TimeCodeExecution(FunctionTime, "Calculating Logic", 1);
                 if (checkState == MiscData.CheckState.Checked && LogicCalculation.CheckEntrancePair(CurrentTrackerInstance) && CurrentTrackerInstance.StaticOptions.AutoCheckCoupleEntrances) 
-                { LogicCalculation.CalculateLogic(CurrentTrackerInstance); }
+                { 
+                    LogicCalculation.CalculateLogic(CurrentTrackerInstance);
+                    Utility.TimeCodeExecution(FunctionTime, "Chcking Entrance Pairs", 1);
+                }
             }
             UpdateUI();
+            Utility.TimeCodeExecution(FunctionTime, "Updating UI", -1);
+            Utility.TimeCodeExecution(TotalTime, "Total Check Action", -1);
         }
 
         private void CHKShowAll_CheckedChanged(object sender, EventArgs e)
@@ -814,7 +853,7 @@ namespace Windows_Form_Frontend
         {
             ListBox LB = (sender == BTNSetItem) ? LBValidLocations : LBValidEntrances;
             if (LB.SelectedItems.Count < 1) { return; }
-            HandleItemSelect(LB.SelectedItems.Cast<object>().ToList(), MiscData.CheckState.Marked);
+            HandleItemSelect(LB.SelectedItems.Cast<object>().ToList(), MiscData.CheckState.Marked, LB: LB);
         }
 
         private void BTNSetEntrance_MouseUp(object sender, MouseEventArgs e)
@@ -826,12 +865,12 @@ namespace Windows_Form_Frontend
                 ToolStripItem MarkOnly = contextMenuStrip.Items.Add("Mark Only");
                 MarkOnly.Click += (sender, e) => 
                 {
-                    HandleItemSelect(LB.SelectedItems.Cast<object>().ToList(), MiscData.CheckState.Marked, true);
+                    HandleItemSelect(LB.SelectedItems.Cast<object>().ToList(), MiscData.CheckState.Marked, true, LB);
                 };
                 ToolStripItem UnMarkOnly = contextMenuStrip.Items.Add("UnMark Only");
                 UnMarkOnly.Click += (sender, e) =>
                 {
-                    HandleItemSelect(LB.SelectedItems.Cast<object>().ToList(), MiscData.CheckState.Unchecked);
+                    HandleItemSelect(LB.SelectedItems.Cast<object>().ToList(), MiscData.CheckState.Unchecked, LB: LB);
                 };
                 contextMenuStrip.Show(Cursor.Position);
             }

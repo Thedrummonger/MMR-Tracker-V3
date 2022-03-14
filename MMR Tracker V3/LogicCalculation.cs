@@ -59,23 +59,32 @@ namespace MMR_Tracker_V3
             return instance.EntrancePool.AreaList.ContainsKey(Area) && instance.EntrancePool.AreaList[Area].ExitsAcessibleFrom > 0;
         }
 
-        public static void CalculateLogic(TrackerInstance instance)
+        public static void CalculateLogic(TrackerInstance instance, bool log = false)
         {
+            Debug.WriteLine("Logic Calculation ----------------------");
+            Stopwatch LogicTime = new Stopwatch();
+            Utility.TimeCodeExecution(LogicTime);
             ResetAutoObtainedItems(instance);
+            Utility.TimeCodeExecution(LogicTime, "Resetting Auto checked Items", 1);
+            int Itterations = 0;
             while (true)
             {
                 bool EntranceChanges = CalculateEntranceMacros(instance);
+                bool UnrandomizedItemChecked = CheckUrandomizedLocations(instance);
                 bool MacroChanged = CalculateMacros(instance);
-                bool UnrandomizedItemAquired = CheckUrandomizedLocations(instance);
-                if (!MacroChanged && !UnrandomizedItemAquired && !EntranceChanges) { break; }
+                Itterations++;
+                if (!MacroChanged && !EntranceChanges && !UnrandomizedItemChecked) { break; }
             }
-            foreach (var i in instance.LocationPool.Values.Where(x => !x.IsUnrandomized(1) && x.RandomizedState != RandomizedState.ForcedJunk))
+            Debug.WriteLine($"Auto Item calculation took {Itterations} Itterations");
+            Utility.TimeCodeExecution(LogicTime, "Calculating Auto Checked Items", 1);
+            foreach (var i in instance.LocationPool.Values.Where(x => !x.IsUnrandomized(1) && !x.IsJunk()))
             {
                 var Logic = instance.GetLogic(i.ID);
                 i.Available =
                     RequirementsMet(Logic.RequiredItems, instance) &&
                     ConditionalsMet(Logic.ConditionalItems, instance);
             }
+            Utility.TimeCodeExecution(LogicTime, "Calculating Locations", 1);
             foreach (var Area in instance.EntrancePool.AreaList)
             {
                 foreach (var i in Area.Value.LoadingZoneExits)
@@ -87,6 +96,7 @@ namespace MMR_Tracker_V3
                         ConditionalsMet(Logic.ConditionalItems, instance);
                 }
             }
+            Utility.TimeCodeExecution(LogicTime, "Caclulating Exits", 1);
             foreach (var i in instance.HintPool)
             {
                 var Logic = instance.GetLogic(i.Key);
@@ -94,6 +104,8 @@ namespace MMR_Tracker_V3
                     RequirementsMet(Logic.RequiredItems, instance) &&
                     ConditionalsMet(Logic.ConditionalItems, instance);
             }
+            Utility.TimeCodeExecution(LogicTime, "Calculating Hints", 1);
+            Debug.WriteLine("----------------------------------------");
         }
 
         private static void ResetAutoObtainedItems(TrackerInstance instance)
@@ -177,8 +189,9 @@ namespace MMR_Tracker_V3
         public static bool CheckUrandomizedLocations(TrackerInstance instance)
         {
             bool ItemStateChanged = false;
-            foreach (var i in instance.LocationPool.Where(x => x.Value.IsUnrandomized(1)))
+            foreach (var i in instance.LocationPool)
             {
+                if (!i.Value.IsUnrandomized(1)) { continue; }
                 var Logic = instance.GetLogic(i.Key);
                 var Available =
                     RequirementsMet(Logic.RequiredItems, instance) &&
