@@ -71,6 +71,13 @@ namespace MMR_Tracker_V3
             if (!literal && instance.InstanceReference.EntranceLogicNameToEntryData.ContainsKey(ID)) { return LogicEntryType.Exit; }
             if (!literal && instance.HintPool.ContainsKey(ID)) { return LogicEntryType.Hint; }
             if (instance.UserOptions.ContainsKey(ID)) { return LogicEntryType.Option; }
+            if (instance.Variables.ContainsKey(ID))
+            {
+                if (instance.Variables[ID].Value is string) { return LogicEntryType.variableString; }
+                if (instance.Variables[ID].Value is bool) { return LogicEntryType.variableBool; }
+                if (instance.Variables[ID].Value is Int64) { return LogicEntryType.variableInt; }
+                if (instance.Variables[ID].Value is Newtonsoft.Json.Linq.JArray) { return LogicEntryType.variableList; }
+            }
             return LogicEntryType.error;
         }
 
@@ -84,12 +91,19 @@ namespace MMR_Tracker_V3
 
         public static LogicEntryType GetItemEntryType(this LogicObjects.TrackerInstance instance, string OriginalID, bool literal = false)
         {
-            LogicCalculation.MultipleItemEntry(OriginalID, out string ID, out _);
+            LogicCalculation.MultipleItemEntry(instance, OriginalID, out string ID, out _);
             if (literal && instance.ItemPool.ContainsKey(ID)) { return LogicEntryType.item; }
             if (literal && instance.EntrancePool.AreaList.ContainsKey(ID)) { return LogicEntryType.Area; }
             if (instance.MacroPool.ContainsKey(ID)) { return LogicEntryType.macro; }
             if (!literal && instance.ItemPool.ContainsKey(ID)) { return LogicEntryType.item; }
             if (!literal && instance.EntrancePool.AreaList.ContainsKey(ID)) { return LogicEntryType.Area; }
+            if (instance.Variables.ContainsKey(ID))
+            {
+                if (instance.Variables[ID].Value is string) { return LogicEntryType.variableString; }
+                if (instance.Variables[ID].Value is bool) { return LogicEntryType.variableBool; }
+                if (instance.Variables[ID].Value is Int64) { return LogicEntryType.variableInt; }
+                if (instance.Variables[ID].Value is List<string>) { return LogicEntryType.variableList; }
+            }
             if (bool.TryParse(ID, out _)) { return LogicEntryType.Bool; }
             if (LogicCalculation.LogicOptionEntry(instance, ID, out _)) { return LogicEntryType.Option; }
             return LogicEntryType.error;

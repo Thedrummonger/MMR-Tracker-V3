@@ -37,6 +37,7 @@ namespace MMR_Tracker_V3
         public static bool PopulateTrackerObject(LogicObjects.TrackerInstance Instance)
         {
             Instance.UserOptions = Instance.LogicDictionary.Options.ToDictionary(x => x.ID, y => y);
+            Instance.Variables = Instance.LogicDictionary.Variables.ToDictionary(x => x.ID, y => y);
 
             Instance.EntrancePool.IsEntranceRando = Instance.EntrancePool.CheckForRandomEntrances();
 

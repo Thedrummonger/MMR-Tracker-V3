@@ -33,7 +33,7 @@ namespace MMR_Tracker_V3
         {
             if (LogicOptionEntry(instance, i, out bool OptionEntryValid)) { return OptionEntryValid; }
 
-            MultipleItemEntry(i, out string LogicItem, out int Amount);
+            MultipleItemEntry(instance, i, out string LogicItem, out int Amount);
             bool Literal = LogicItem.IsLiteralID(out LogicItem);
             var type = instance.GetItemEntryType(LogicItem, Literal);
 
@@ -47,10 +47,31 @@ namespace MMR_Tracker_V3
                     return instance.GetMacroByID(LogicItem).Aquired; 
                 case LogicEntryType.Area:
                     return AreaReached(LogicItem, instance);
+                case LogicEntryType.variableList:
+                    return ItemArrayUseable(instance, LogicItem, Amount);
+                case LogicEntryType.variableBool:
+                    return instance.Variables[LogicItem].Value;
                 default:
                     Debug.WriteLine($"{LogicItem} Was not a valid Item");
                     return false;
             }
+        }
+
+        private static bool ItemArrayUseable(TrackerInstance instance, string LogicItem, int amount)
+        {
+            if (instance.Variables[LogicItem].Value is not List<string> ItemArray) { return false; }
+            int UseableItems = 0;
+            Debug.WriteLine($"Need {amount} of {string.Join(", ", ItemArray)}");
+            foreach (string i in ItemArray)
+            {
+                Debug.WriteLine($"Checking Item {i}");
+                if (instance.GetItemByID(i).Useable())
+                {
+                    Debug.WriteLine($"{i} was useable");
+                    UseableItems ++;
+                }
+            }
+            return UseableItems >= amount;
         }
 
         private static bool AreaReached(string Area, TrackerInstance instance)
@@ -318,15 +339,28 @@ namespace MMR_Tracker_V3
             NewConditionals = Conditionals;
         }
 
-        public static bool MultipleItemEntry(string Entry, out string Item, out int Amount)
+        public static bool MultipleItemEntry(LogicObjects.TrackerInstance instance, string Entry, out string Item, out int Amount)
         {
             Item = Entry;
             Amount = 1;
             if (!Entry.Contains(",")) { return false; }
-            var data = Entry.Split(',');
+            var data = Entry.Split(',').Select(x => x.Trim()).ToArray();
             Item = data[0];
-            if(!int.TryParse(data[1].Trim(), out Amount)) { return false; }
-            return true;
+            if (data.Length < 2) { return false; }
+            if (int.TryParse(data[1].Trim(), out Amount))
+            {
+                return true;
+            }
+            else if (instance.Variables.ContainsKey(data[1]) && instance.Variables[data[1]].Value is Int64 amount)
+            {
+                Amount = (int)amount;
+                return true;
+            }
+            else
+            {
+                Amount = 1;
+                return false;
+            }
         }
 
         public static bool LogicOptionEntry(TrackerInstance instance, string i, out bool optionEntryValid)
@@ -345,6 +379,8 @@ namespace MMR_Tracker_V3
             bool LiteralOption = data[0].Trim().IsLiteralID(out string CleanedOptionName);
             bool LiteralValue = data[1].Trim().IsLiteralID(out string CleanedOptionValue);
             var OptionType = instance.GetOptionEntryType(CleanedOptionName, LiteralOption);
+
+            if (!LiteralValue && instance.Variables.ContainsKey(CleanedOptionValue)) { CleanedOptionValue = instance.Variables[CleanedOptionValue].ValueToString(); }
 
             if (OptionType == LogicEntryType.Option)
             {

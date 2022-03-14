@@ -23,6 +23,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public List<string> AreaList { get; set; } = new List<string>();
             public List<DictionaryMacroEntry> MacroList { get; set; } = new List<DictionaryMacroEntry>(); 
             public List<TrackerOption> Options { get; set; } = new List<TrackerOption>();
+            public List<TrackerVariable> Variables { get; set; } = new List<TrackerVariable>();
             public List<DictionaryHintEntries> HintSpots { get; set; } = new List<DictionaryHintEntries>();
 
             public static LogicDictionary FromJson(string json)
@@ -108,6 +109,40 @@ namespace MMR_Tracker_V3.TrackerObjects
             public bool RandomizableEntrance { get; set; }
             public bool AlwaysAccessable { get; set; } = false;
             public bool DestinationHasSingleEntrance { get; set; } = false;
+        }
+
+        public class TrackerVariable
+        {
+            public string ID { get; set; }
+            private dynamic _value;
+            public dynamic Value
+            {
+                get
+                {
+                    List<string> JsonList = new List<string>();
+                    if ((_value is Newtonsoft.Json.Linq.JArray))
+                    {
+                        foreach(string i in _value) { JsonList.Add(i); }
+                        return JsonList;
+                    }
+                    return _value;
+                }
+                set => _value = value;
+            }
+            public override string ToString()
+            {
+                return ID + ": " + ValueToString();
+            }
+            public string ValueToString()
+            {
+                string DisplayValue = null;
+                if (Value is string valString) { DisplayValue = valString; }
+                if (Value is Int64 valint) { DisplayValue = valint.ToString(); }
+                if (Value is bool valbool) { DisplayValue = valbool.ToString(); }
+                if (Value is List<string> valListString) { DisplayValue = string.Join(", ", valListString); }
+                if (DisplayValue == null) { DisplayValue = $"{Value.GetType().ToString()}"; }
+                return DisplayValue;
+            }
         }
     }
 }

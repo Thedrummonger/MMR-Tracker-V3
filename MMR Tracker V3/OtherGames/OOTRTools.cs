@@ -80,7 +80,7 @@ namespace MMR_Tracker_V3.OtherGames
                 OORTDict.Options.Add(new OptionData.TrackerOption
                 {
                     ID = i.Key,
-                    DisplayName = i.Key,
+                    DisplayName = Regex.Replace(i.Key.Replace("_", " "), @"(^\w)|(\s\w)", m => m.Value.ToUpper()),
                     CurrentValue = i.Value[0],
                     Values = i.Value.ToDictionary(x => x, x => new OptionData.actions())
                 });
