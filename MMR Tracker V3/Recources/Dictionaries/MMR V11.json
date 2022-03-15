@@ -36543,107 +36543,95 @@
   ],
   "MacroList": [
     {
-      "ID": "AreaWoodFallTempleClear",
-      "Static": false,
-      "DynamicLogicData": {
-        "LocationToCompare": "AreaWoodFallTempleAccess",
-        "Arguments": [
-          {
-            "ItemAtLocation": "AreaWoodFallTempleAccess",
-            "LogicToUse": "AreaWoodFallTempleClear"
-          },
-          {
-            "ItemAtLocation": "AreaSnowheadTempleAccess",
-            "LogicToUse": "AreaSnowheadTempleClear"
-          },
-          {
-            "ItemAtLocation": "AreaGreatBayTempleAccess",
-            "LogicToUse": "AreaGreatBayTempleClear"
-          },
-          {
-            "ItemAtLocation": "AreaInvertedStoneTowerTempleAccess",
-            "LogicToUse": "AreaStoneTowerClear"
-          }
+      "ID": "CanClearDungeonAtWoodfall",
+      "Static": true,
+      "ConditionalItemsOverride": [
+        [
+          "AreaWoodFallTempleAccess == AreaWoodFallTempleAccess",
+          "AreaWoodFallTempleClear"
+        ],
+        [
+          "AreaWoodFallTempleAccess == AreaSnowheadTempleAccess",
+          "AreaSnowheadTempleClear"
+        ],
+        [
+          "AreaWoodFallTempleAccess == AreaGreatBayTempleAccess",
+          "AreaGreatBayTempleClear"
+        ],
+        [
+          "AreaWoodFallTempleAccess == AreaInvertedStoneTowerTempleAccess",
+          "AreaStoneTowerClear"
         ]
-      },
+      ],
       "SpoilerData": {}
     },
     {
-      "ID": "AreaSnowheadTempleClear",
-      "Static": false,
-      "DynamicLogicData": {
-        "LocationToCompare": "AreaSnowheadTempleAccess",
-        "Arguments": [
-          {
-            "ItemAtLocation": "AreaWoodFallTempleAccess",
-            "LogicToUse": "AreaWoodFallTempleClear"
-          },
-          {
-            "ItemAtLocation": "AreaSnowheadTempleAccess",
-            "LogicToUse": "AreaSnowheadTempleClear"
-          },
-          {
-            "ItemAtLocation": "AreaGreatBayTempleAccess",
-            "LogicToUse": "AreaGreatBayTempleClear"
-          },
-          {
-            "ItemAtLocation": "AreaInvertedStoneTowerTempleAccess",
-            "LogicToUse": "AreaStoneTowerClear"
-          }
+      "ID": "CanClearDungeonAtSnowhead",
+      "Static": true,
+      "ConditionalItemsOverride": [
+        [
+          "AreaSnowheadTempleAccess == AreaWoodFallTempleAccess",
+          "AreaWoodFallTempleClear"
+        ],
+        [
+          "AreaSnowheadTempleAccess == AreaSnowheadTempleAccess",
+          "AreaSnowheadTempleClear"
+        ],
+        [
+          "AreaSnowheadTempleAccess == AreaGreatBayTempleAccess",
+          "AreaGreatBayTempleClear"
+        ],
+        [
+          "AreaSnowheadTempleAccess == AreaInvertedStoneTowerTempleAccess",
+          "AreaStoneTowerClear"
         ]
-      },
+      ],
       "SpoilerData": {}
     },
     {
-      "ID": "AreaGreatBayTempleClear",
-      "Static": false,
-      "DynamicLogicData": {
-        "LocationToCompare": "AreaGreatBayTempleAccess",
-        "Arguments": [
-          {
-            "ItemAtLocation": "AreaWoodFallTempleAccess",
-            "LogicToUse": "AreaWoodFallTempleClear"
-          },
-          {
-            "ItemAtLocation": "AreaSnowheadTempleAccess",
-            "LogicToUse": "AreaSnowheadTempleClear"
-          },
-          {
-            "ItemAtLocation": "AreaGreatBayTempleAccess",
-            "LogicToUse": "AreaGreatBayTempleClear"
-          },
-          {
-            "ItemAtLocation": "AreaInvertedStoneTowerTempleAccess",
-            "LogicToUse": "AreaStoneTowerClear"
-          }
+      "ID": "CanClearDungeonAtGreatBay",
+      "Static": true,
+      "ConditionalItemsOverride": [
+        [
+          "AreaGreatBayTempleAccess == AreaWoodFallTempleAccess",
+          "AreaWoodFallTempleClear"
+        ],
+        [
+          "AreaGreatBayTempleAccess == AreaSnowheadTempleAccess",
+          "AreaSnowheadTempleClear"
+        ],
+        [
+          "AreaGreatBayTempleAccess == AreaGreatBayTempleAccess",
+          "AreaGreatBayTempleClear"
+        ],
+        [
+          "AreaGreatBayTempleAccess == AreaInvertedStoneTowerTempleAccess",
+          "AreaStoneTowerClear"
         ]
-      },
+      ],
       "SpoilerData": {}
     },
     {
-      "ID": "AreaStoneTowerClear",
-      "Static": false,
-      "DynamicLogicData": {
-        "LocationToCompare": "AreaInvertedStoneTowerTempleAccess",
-        "Arguments": [
-          {
-            "ItemAtLocation": "AreaWoodFallTempleAccess",
-            "LogicToUse": "AreaWoodFallTempleClear"
-          },
-          {
-            "ItemAtLocation": "AreaSnowheadTempleAccess",
-            "LogicToUse": "AreaSnowheadTempleClear"
-          },
-          {
-            "ItemAtLocation": "AreaGreatBayTempleAccess",
-            "LogicToUse": "AreaGreatBayTempleClear"
-          },
-          {
-            "ItemAtLocation": "AreaInvertedStoneTowerTempleAccess",
-            "LogicToUse": "AreaStoneTowerClear"
-          }
+      "ID": "CanClearDungeonAtStoneTower",
+      "Static": true,
+      "ConditionalItemsOverride": [
+        [
+          "AreaInvertedStoneTowerTempleAccess == AreaWoodFallTempleAccess",
+          "AreaWoodFallTempleClear"
+        ],
+        [
+          "AreaInvertedStoneTowerTempleAccess == AreaSnowheadTempleAccess",
+          "AreaSnowheadTempleClear"
+        ],
+        [
+          "AreaInvertedStoneTowerTempleAccess == AreaGreatBayTempleAccess",
+          "AreaGreatBayTempleClear"
+        ],
+        [
+          "AreaInvertedStoneTowerTempleAccess == AreaInvertedStoneTowerTempleAccess",
+          "AreaStoneTowerClear"
         ]
-      },
+      ],
       "SpoilerData": {}
     },
     {
@@ -37057,6 +37045,35 @@
     }
   ],
   "Options": [
+    {
+      "ID": "DungeonShuffle",
+      "DisplayName": "DungeonShuffle",
+      "CurrentValue": "enabled",
+      "Values": {
+        "enabled": {
+          "LogicReplacements": [
+            {
+              "LocationWhitelist": [],
+              "LocationBlacklist": [
+                "CanClearDungeonAtWoodfall",
+                "CanClearDungeonAtSnowhead",
+                "CanClearDungeonAtGreatBay",
+                "CanClearDungeonAtStoneTower"
+              ],
+              "ReplacementList": {
+                "AreaWoodFallTempleClear": "CanClearDungeonAtWoodfall",
+                "AreaSnowheadTempleClear": "CanClearDungeonAtSnowhead",
+                "AreaGreatBayTempleClear": "CanClearDungeonAtGreatBay",
+                "AreaStoneTowerClear": "CanClearDungeonAtStoneTower"
+
+              }
+            }
+          ],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {}
+        }
+      }
+    },
     {
       "ID": "ProgressiveItems",
       "DisplayName": "Progressive Items",

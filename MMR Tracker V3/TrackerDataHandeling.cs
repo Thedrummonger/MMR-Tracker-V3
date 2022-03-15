@@ -109,7 +109,7 @@ namespace MMR_Tracker_V3
             {
                 if (Instance.StaticOptions.ShowOptionsInListBox == null || Instance.StaticOptions.ShowOptionsInListBox != OptionData.DisplayListBoxes[2]) { return; }
                 bool DividerCreated = false;
-                foreach (var i in Instance.UserOptions)
+                foreach (var i in Instance.UserOptions.Where(x => x.Value.Values.Count > 1))
                 {
                     ItemsInListBox++;
                     if (!SearchStringParser.FilterSearch(Instance, i.Value, Filter, i.Value.DisplayName)) { continue; }
@@ -294,7 +294,7 @@ namespace MMR_Tracker_V3
             {
                 if (Instance.StaticOptions.ShowOptionsInListBox == null || Instance.StaticOptions.ShowOptionsInListBox != OptionData.DisplayListBoxes[1]) { return; }
                 bool DividerCreated = false;
-                foreach (var i in Instance.UserOptions)
+                foreach (var i in Instance.UserOptions.Where(x => x.Value.Values.Count > 1))
                 {
                     ItemsInListBox++;
                     i.Value.DisplayName = i.Value.DisplayName;
