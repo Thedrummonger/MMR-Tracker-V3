@@ -26,7 +26,6 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 ID = ID,
                 Name = null,
-                DynamicLogicData = null,
                 ConditionalItemsOverride = null,
                 RequiredItemsOverride = null,
                 Static = false
@@ -46,20 +45,5 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
             return false;
         }
-    }
-    [Serializable]
-
-    public class dynamicLogicData
-    {
-        //If "LocationToCompare" has the randomized Item "ItemAtLocation" Use the logic of Macro "LogicToUse"
-        public string LocationToCompare { get; set; }
-        public List<DynamicLogicArguments> Arguments { get; set; } = new List<DynamicLogicArguments>();
-
-    }
-    [Serializable]
-    public class DynamicLogicArguments
-    {
-        public string ItemAtLocation { get; set; }
-        public string LogicToUse { get; set; }
     }
 }

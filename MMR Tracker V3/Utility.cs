@@ -410,7 +410,7 @@ namespace MMR_Tracker_V3
             {
                 bool Istrick = MacroObject.isTrick(instance);
                 var DictData = MacroObject.GetDictEntry(instance);
-                var LogicData = instance.GetOriginalLogic(MacroObject.ID);
+                var LogicData = instance.GetLogic(MacroObject.ID, false);
                 OutObject.ID = MacroObject.ID;
                 OutObject.Area = Istrick ? (LogicData.TrickCategory??"misc") : "macro";
                 OutObject.Name = MacroObject.ID;
@@ -420,7 +420,6 @@ namespace MMR_Tracker_V3
                 List<string> ItemTypes = new() { "macro" };
                 if (Istrick) { ItemTypes.Add("trick"); }
                 if (DictData.Static) { ItemTypes.Add("static"); }
-                if (DictData.DynamicLogicData != null) { ItemTypes.Add("dynamic"); }
                 OutObject.ValidItemTypes = ItemTypes.ToArray();
             }
             else if (Object is EntranceData.EntranceRandoExit ExitObject)

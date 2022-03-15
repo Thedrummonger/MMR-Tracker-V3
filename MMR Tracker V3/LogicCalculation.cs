@@ -236,55 +236,55 @@ namespace MMR_Tracker_V3
             return ItemStateChanged;
         }
 
-        public static MMRData.JsonFormatLogicItem GetLogic(this TrackerInstance instance, string OriginalID)
+        public static MMRData.JsonFormatLogicItem GetLogic(this TrackerInstance instance, string OriginalID, bool DoEdits = true)
         {
-
             bool Literal = OriginalID.IsLiteralID(out string ID);
-            var Logic = new MMRData.JsonFormatLogicItem() { Id = ID, IsTrick = false };
-            List<string> Requirements = new();
-            List<List<string>> Conditionals = new();
-            int CheckPrice = -1;
-
             LogicEntryType entryType = instance.GetLocationEntryType(ID, Literal);
+
+            bool HasLogicFile = instance.InstanceReference.LogicFileMapping.ContainsKey(ID);
+            bool HasOverride = instance.LogicOverride.ContainsKey(ID);
+
+            List<string> OriginalRequirements = 
+                HasOverride && instance.LogicOverride[ID].RequiredItems != null ? instance.LogicOverride[ID].RequiredItems : 
+                (HasLogicFile ? instance.LogicFile.Logic[instance.InstanceReference.LogicFileMapping[ID]].RequiredItems : new List<string>());
+            List <List<string>> OriginalConditionals =
+                HasOverride && instance.LogicOverride[ID].ConditionalItems != null ? instance.LogicOverride[ID].ConditionalItems :
+                (HasLogicFile ? instance.LogicFile.Logic[instance.InstanceReference.LogicFileMapping[ID]].ConditionalItems : new List<List<string>>());
+
+            Utility.DeepCloneLogic(OriginalRequirements, OriginalConditionals, out List<string> CopyRequirements, out List<List<string>> CopyConditionals);
+
             if (entryType == LogicEntryType.macro)
             {
                 var MacroData = instance.GetMacroByID(ID);
-                ID = GetDynamicLogicID(instance, ID);
-                if (ID == null) { return Utility.CreateInaccessableLogic(ID); }
-                if (MacroData.MacroPrice > -1 && !instance.PriceData.CapacityMap.Values.Contains(ID)) { CheckPrice = MacroData.MacroPrice; }
+                if (MacroData.MacroPrice > -1 && !instance.PriceData.CapacityMap.Values.Contains(ID) && DoEdits) 
+                {
+                    HandlePriceLogic(instance, MacroData.MacroPrice, CopyRequirements, CopyConditionals, out CopyRequirements, out CopyConditionals);
+                }
             }
             else if (entryType == LogicEntryType.location)
             {
                 var LocationData = instance.GetLocationByID(ID);
-                if (LocationData.CheckPrice > -1 && !instance.PriceData.CapacityMap.Values.Contains(ID)) { CheckPrice = LocationData.CheckPrice; }
+                if (LocationData.CheckPrice > -1 && !instance.PriceData.CapacityMap.Values.Contains(ID) && DoEdits)
+                {
+                    HandlePriceLogic(instance, LocationData.CheckPrice, CopyRequirements, CopyConditionals, out CopyRequirements, out CopyConditionals);
+                }
             }
 
-            if (instance.InstanceReference.LogicFileMapping.ContainsKey(ID))
+            if (DoEdits) { HandleOptionLogicEdits(instance.UserOptions.Values, ID, CopyRequirements, CopyConditionals, out CopyRequirements, out CopyConditionals); }
+
+            var LogicFileEntry = HasLogicFile ? instance.LogicFile.Logic[instance.InstanceReference.LogicFileMapping[ID]] : null;
+            return new MMRData.JsonFormatLogicItem
             {
-                int Index = instance.InstanceReference.LogicFileMapping[ID];
-                var LogicEntry = instance.LogicFile.Logic[Index];
-                Logic.IsTrick = LogicEntry.IsTrick;
-                Logic.TimeAvailable = LogicEntry.TimeAvailable;
-                Logic.TimeNeeded = LogicEntry.TimeNeeded;
-                Logic.TimeSetup = LogicEntry.TimeSetup;
-                Utility.DeepCloneLogic(LogicEntry.RequiredItems, LogicEntry.ConditionalItems, out Requirements, out Conditionals);
-            }
-            if (instance.LogicOverride.ContainsKey(ID))
-            {
-                List<string> OverrideRequirements = Requirements;
-                List<List<string>> OverrideConditionals = Conditionals;
-                if (instance.LogicOverride[ID].RequiredItems != null) { OverrideRequirements = instance.LogicOverride[ID].RequiredItems; }
-                if (instance.LogicOverride[ID].ConditionalItems != null) { OverrideConditionals = instance.LogicOverride[ID].ConditionalItems; }
-                Utility.DeepCloneLogic(OverrideRequirements, OverrideConditionals, out Requirements, out Conditionals);
-            }
-
-            HandleOptionLogicEdits(instance.UserOptions.Values, ID, Requirements, Conditionals, out Requirements, out Conditionals);
-
-            if (CheckPrice > -1) { HandlePriceLogic(instance, CheckPrice, Requirements, Conditionals, out Requirements, out Conditionals); }
-
-            Logic.RequiredItems = Requirements;
-            Logic.ConditionalItems = Conditionals;
-            return Logic;
+                Id = ID,
+                IsTrick = LogicFileEntry != null && LogicFileEntry.IsTrick,
+                RequiredItems = CopyRequirements,
+                ConditionalItems = CopyConditionals,
+                TimeAvailable = LogicFileEntry == null ? TimeOfDay.None : LogicFileEntry.TimeAvailable,
+                TimeNeeded = LogicFileEntry == null ? TimeOfDay.None : LogicFileEntry.TimeNeeded,
+                TimeSetup = LogicFileEntry == null ? TimeOfDay.None : LogicFileEntry.TimeSetup,
+                TrickCategory = LogicFileEntry?.TrickCategory,
+                TrickTooltip = LogicFileEntry?.TrickTooltip
+            };
         }
 
         public static void HandleOptionLogicEdits(IEnumerable<OptionData.TrackerOption> Options, string ID, List<string> InRequirements, List<List<string>> InConditionals, out List<string> OutRequirements, out List<List<string>> OutConditionals)
@@ -462,52 +462,5 @@ namespace MMR_Tracker_V3
             return ChangesMade;
         }
 
-        public static MMRData.JsonFormatLogicItem GetOriginalLogic(this TrackerInstance instance, string ID, bool copy = false)
-        {
-            bool Literal = ID.IsLiteralID(out ID);
-
-            List<string> Requirements = new();
-            List<List<string>> Conditionals = new();
-            if (instance.InstanceReference.LogicFileMapping.ContainsKey(ID))
-            {
-                int Index = instance.InstanceReference.LogicFileMapping[ID];
-                var LogicEntry = instance.LogicFile.Logic[Index];
-                if (!copy) { return LogicEntry; }
-                Utility.DeepCloneLogic(LogicEntry.RequiredItems, LogicEntry.ConditionalItems, out Requirements, out Conditionals);
-            }
-
-            var Logic = new MMRData.JsonFormatLogicItem()
-            {
-                Id = ID,
-                RequiredItems = Requirements,
-                ConditionalItems = Conditionals,
-                IsTrick = false
-            };
-
-            return Logic;
-        }
-
-        public static string GetDynamicLogicID(TrackerInstance instance, string ID)
-        {
-            var MacroObject = instance.GetMacroByID(ID);
-            var MacroDictObject = MacroObject.GetDictEntry(instance);
-            if (MacroDictObject.DynamicLogicData != null)
-            {
-                if (!instance.LocationPool.ContainsKey(MacroDictObject.DynamicLogicData.LocationToCompare)) { return ID; }
-                var LocationToCompare = instance.LocationPool[MacroDictObject.DynamicLogicData.LocationToCompare];
-                foreach (var arg in MacroDictObject.DynamicLogicData.Arguments)
-                {
-                    if (LocationToCompare.GetItemAtCheck(instance) == arg.ItemAtLocation)
-                    {
-                        return arg.LogicToUse;
-                    }
-                }
-                return null;
-            }
-            else
-            {
-                return ID;
-            }
-        }
     }
 }

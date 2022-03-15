@@ -68,7 +68,7 @@ namespace Windows_Form_Frontend
             listBox1.Items.Clear();
             listBox2.Items.Clear();
             listBox3.Items.Clear();
-            var OriginalLogic = instance.GetOriginalLogic(CurrentID);
+            var OriginalLogic = instance.GetLogic(CurrentID, false);
             var AlteredLogic = instance.GetLogic(CurrentID);
 
             bool ReqEqual = OriginalLogic.RequiredItems.SequenceEqual(AlteredLogic.RequiredItems);
@@ -80,7 +80,8 @@ namespace Windows_Form_Frontend
             bool Literal = CurrentID.IsLiteralID(out string LogicItem);
             var type = instance.GetLocationEntryType(LogicItem, Literal);
             string Availablility = GetAvailable(AlteredLogic, type, LogicItem) ? "*" : "";
-            this.Text = $"{type}: {LogicItem}{Availablility}";
+            string typeDisplay = type == LogicEntryType.macro && OriginalLogic.IsTrick ? "Trick" : type.ToString();
+            this.Text = $"{typeDisplay}: {LogicItem}{Availablility}";
 
             var Logic = checkBox1.Checked ? OriginalLogic : AlteredLogic;
             foreach(var i in Logic.RequiredItems)

@@ -86,7 +86,6 @@ namespace MMR_Tracker_V3.TrackerObjects
             public int? WalletCapacity { get; set; } = null;
             public List<string> RequiredItemsOverride { get; set; } = null;
             public List<List<string>> ConditionalItemsOverride { get; set; } = null;
-            public dynamicLogicData DynamicLogicData { get; set; } = null;
             public SpoilerlogReference SpoilerData { get; set; } = new SpoilerlogReference();
         }
 
