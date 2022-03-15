@@ -126,6 +126,8 @@ namespace Windows_Form_Frontend
             this.LBCheckedLocations.TabIndex = 39;
             this.LBCheckedLocations.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.LBCheckedLocations_DrawItem);
             this.LBCheckedLocations.DoubleClick += new System.EventHandler(this.LBValidEntrances_DoubleClick);
+            this.LBCheckedLocations.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LB_KeyDown);
+            this.LBCheckedLocations.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.preventKeyShortcuts);
             this.LBCheckedLocations.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateToolTip);
             this.LBCheckedLocations.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LBValidLocations_MouseUp);
             // 
@@ -143,6 +145,8 @@ namespace Windows_Form_Frontend
             this.LBValidEntrances.TabIndex = 38;
             this.LBValidEntrances.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.LBValidEntrances_DrawItem);
             this.LBValidEntrances.DoubleClick += new System.EventHandler(this.LBValidEntrances_DoubleClick);
+            this.LBValidEntrances.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LB_KeyDown);
+            this.LBValidEntrances.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.preventKeyShortcuts);
             this.LBValidEntrances.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateToolTip);
             this.LBValidEntrances.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LBValidLocations_MouseUp);
             // 
@@ -160,6 +164,8 @@ namespace Windows_Form_Frontend
             this.LBValidLocations.TabIndex = 37;
             this.LBValidLocations.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.LBValidLocations_DrawItem);
             this.LBValidLocations.DoubleClick += new System.EventHandler(this.LBValidEntrances_DoubleClick);
+            this.LBValidLocations.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LB_KeyDown);
+            this.LBValidLocations.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.preventKeyShortcuts);
             this.LBValidLocations.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateToolTip);
             this.LBValidLocations.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LBValidLocations_MouseUp);
             // 
@@ -528,12 +534,14 @@ namespace Windows_Form_Frontend
             this.Controls.Add(this.TXTLocSearch);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainInterface";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainInterface_FormClosing);
             this.Load += new System.EventHandler(this.MainInterface_Load);
             this.ResizeEnd += new System.EventHandler(this.MainInterface_ResizeEnd);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainInterface_KeyDown);
             this.Resize += new System.EventHandler(this.MainInterface_Resize);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

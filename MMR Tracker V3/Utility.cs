@@ -257,6 +257,7 @@ namespace MMR_Tracker_V3
         public static bool FilterSearch(LogicObjects.TrackerInstance Instance, object InObject, string searchTerm, string NameToCompare)
         {
             var searchObject = CreateSearchableObject(InObject, Instance);
+            if (searchObject == null) { return false; }
             //Debug.WriteLine($"{searchObject.ID}: {InObject.GetType()}" );
 
             //Since filter search is usually called a large number of times at once, we can cut down on lag by checking first if we've already compared against the given string
@@ -266,7 +267,7 @@ namespace MMR_Tracker_V3
                 CurrentString = searchTerm;
                 CurrentStringIsError = false;
             }
-            else if (CurrentStringIsError) { return true; }
+            else if (CurrentStringIsError) { return false; ; }
 
             if (string.IsNullOrWhiteSpace(searchTerm)) { return true; }
 
@@ -402,7 +403,7 @@ namespace MMR_Tracker_V3
                 OutObject.Name = DictData.Name;
                 OutObject.OriginalItem = DictData.Name;
                 OutObject.Randomizeditem = DictData.Name;
-                OutObject.Starred = true;
+                OutObject.Starred = false;
                 OutObject.ValidItemTypes = new string[] { "hint" };
             }
             else if (Object is MacroObject MacroObject)
@@ -420,6 +421,56 @@ namespace MMR_Tracker_V3
                 if (Istrick) { ItemTypes.Add("trick"); }
                 if (DictData.Static) { ItemTypes.Add("static"); }
                 if (DictData.DynamicLogicData != null) { ItemTypes.Add("dynamic"); }
+                OutObject.ValidItemTypes = ItemTypes.ToArray();
+            }
+            else if (Object is EntranceData.EntranceRandoExit ExitObject)
+            {
+                OutObject.ID = instance.EntrancePool.GetLogicNameFromExit(ExitObject);
+                OutObject.Area = ExitObject.ParentAreaID;
+                OutObject.Name = ExitObject.ID;
+                OutObject.OriginalItem = ExitObject.EntrancePair == null ? "One Way" : $"{ExitObject.EntrancePair.Area} To {ExitObject.EntrancePair.Exit}";
+                OutObject.Randomizeditem = ExitObject.DestinationExit == null ? null : $"{ExitObject.DestinationExit.region} From {ExitObject.DestinationExit.from}";
+                OutObject.Starred = ExitObject.Starred;
+                List<string> ItemTypes = new() { "exit" };
+                if (ExitObject.EntrancePair == null) { ItemTypes.Add("One Way"); }
+                OutObject.ValidItemTypes = ItemTypes.ToArray();
+            }
+            else if (Object is OptionData.TrackerOption OptionObject)
+            {
+                OutObject.ID = OptionObject.ID;
+                OutObject.Area = "Options";
+                OutObject.Name = OptionObject.DisplayName;
+                OutObject.OriginalItem = OptionObject.CurrentValue;
+                OutObject.Randomizeditem = OptionObject.CurrentValue;
+                OutObject.Starred = OptionObject.IsToggleOption();
+                List<string> ItemTypes = new() { "Option" };
+                if (OptionObject.IsToggleOption()) { ItemTypes.Add("Toggle"); }
+                OutObject.ValidItemTypes = ItemTypes.ToArray();
+            }
+            else if (Object is LogicDictionaryData.TrackerVariable VariableObject)
+            {
+                OutObject.ID = VariableObject.ID;
+                OutObject.Area = "Variable";
+                OutObject.Name = VariableObject.Name;
+                OutObject.OriginalItem = VariableObject.ValueToString();
+                OutObject.Randomizeditem = VariableObject.ValueToString();
+                OutObject.Starred = !VariableObject.Static;
+                List<string> ItemTypes = new() { "Variable" };
+                if (VariableObject.Value is string) { ItemTypes.Add("string"); }
+                if (VariableObject.Value is Int64) { ItemTypes.Add("Number"); }
+                if (VariableObject.Value is bool) { ItemTypes.Add("Bool"); }
+                if (VariableObject.Value is List<string>) { ItemTypes.Add("List"); }
+                OutObject.ValidItemTypes = ItemTypes.ToArray();
+            }
+            else if (Object is EntranceData.EntranceRandoDestination DestinationObject)
+            {
+                OutObject.ID = DestinationObject.region;
+                OutObject.Area = DestinationObject.from;
+                OutObject.Name = DestinationObject.region;
+                OutObject.OriginalItem = DestinationObject.from;
+                OutObject.Randomizeditem = DestinationObject.from;
+                OutObject.Starred = true;
+                List<string> ItemTypes = new() { "Destination" };
                 OutObject.ValidItemTypes = ItemTypes.ToArray();
             }
             else

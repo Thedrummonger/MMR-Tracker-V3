@@ -29,6 +29,14 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 return ExitLogicMap[$"{Exit.ParentAreaID} X {Exit.ID}"];
             }
+            public string GetLogicNameFromExit(EntranceAreaPair Exit)
+            {
+                return ExitLogicMap[$"{Exit.Area} X {Exit.Exit}"];
+            }
+            public string GetLogicNameFromExit(EntranceRandoDestination Exit)
+            {
+                return ExitLogicMap[$"{Exit.region} X {Exit.from}"];
+            }
             public void AddLogicExitReference(EntranceAreaPair Exit, string LogicName)
             {
                 ExitLogicMap.Add($"{Exit.Area} X {Exit.Exit}", LogicName);
@@ -56,6 +64,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string ParentAreaID { get; set; }
             public string ID { get; set; }
             public bool Available { get; set; } = false;
+            public bool Starred { get; set; } = false;
             public CheckState CheckState { get; set; } = CheckState.Unchecked;
             public RandomizedState RandomizedState { get; set; } = RandomizedState.Randomized;
             public EntranceRandoDestination DestinationExit { get; set; }

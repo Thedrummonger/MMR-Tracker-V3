@@ -56,6 +56,7 @@ namespace Windows_Form_Frontend
             this.textBox1.Size = new System.Drawing.Size(270, 23);
             this.textBox1.TabIndex = 1;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.textBox1_MouseUp);
             // 
             // label1
             // 
@@ -117,6 +118,7 @@ namespace Windows_Form_Frontend
             this.Name = "CheckItemForm";
             this.Text = "CheckItemForm";
             this.Load += new System.EventHandler(this.CheckItemForm_Load);
+            this.Shown += new System.EventHandler(this.CheckItemForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

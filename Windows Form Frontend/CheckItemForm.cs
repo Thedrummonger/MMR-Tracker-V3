@@ -29,6 +29,12 @@ namespace Windows_Form_Frontend
             WriteNextItem();
         }
 
+        private void CheckItemForm_Shown(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            textBox1.Focus();
+        }
+
         private void FormatUIItems(bool Multiworld, bool Button, string ButtonText)
         {
             if (!Multiworld)
@@ -51,6 +57,13 @@ namespace Windows_Form_Frontend
                 this.Close();
                 return;
             }
+            textBox1.Text = "";
+            textBox1.Focus();
+            PrintItems();
+        }
+
+        private void PrintItems()
+        {
             if (_CheckList[0] is LocationData.LocationObject LocationObject)
             {
                 writeItemObjectsAtLocation(LocationObject);
@@ -65,7 +78,7 @@ namespace Windows_Form_Frontend
             }
             else
             {
-                _CheckList.RemoveAt(0); 
+                _CheckList.RemoveAt(0);
                 WriteNextItem();
             }
         }
@@ -150,7 +163,7 @@ namespace Windows_Form_Frontend
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            WriteNextItem();
+            PrintItems();
         }
 
         private void listBox1_DoubleClick(object sender, EventArgs e)
@@ -161,6 +174,14 @@ namespace Windows_Form_Frontend
         private void button1_Click(object sender, EventArgs e)
         {
             ApplySelection(true);
+        }
+
+        private void textBox1_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Middle)
+            {
+                textBox1.Text = "";
+            }
         }
     }
 }

@@ -116,7 +116,7 @@ namespace MMR_Tracker_V3
                     if (!DividerCreated)
                     {
                         if (DataSource.Count > 0) { DataSource.Add(Divider); }
-                        DataSource.Add(new MiscData.Areaheader { Area = "Toggle Options" });
+                        DataSource.Add(new MiscData.Areaheader { Area = "Options" });
                         DividerCreated = true;
                     }
                     ItemsInListBoxFiltered++;
@@ -129,7 +129,7 @@ namespace MMR_Tracker_V3
                     if (!DividerCreated)
                     {
                         if (DataSource.Count > 0) { DataSource.Add(Divider); }
-                        DataSource.Add(new MiscData.Areaheader { Area = "Toggle Options" });
+                        DataSource.Add(new MiscData.Areaheader { Area = "Options" });
                         DividerCreated = true;
                     }
                     ItemsInListBoxFiltered++;
@@ -143,7 +143,6 @@ namespace MMR_Tracker_V3
                 foreach (var i in CheckedLocations)
                 {
                     if (!LocationAppearsinListbox(i, Instance)) { continue; }
-
                     i.DisplayName = Utility.GetDisplayName(1, i, Instance);
 
                     ItemsInListBox++;
@@ -164,15 +163,22 @@ namespace MMR_Tracker_V3
                 foreach (var area in Instance.EntrancePool.AreaList)
                 {
                     var CheckLoadingZoneExits = area.Value.LoadingZoneExits.Where(x => x.Value.CheckState == MiscData.CheckState.Checked);
-                    var FilteredCheckedExits = CheckLoadingZoneExits.Where(x => SearchStringParser.FilterSearch(Instance, x, Filter, $"{x.Value.ID}"));
+                    var FilteredCheckedExits = CheckLoadingZoneExits.Where(x => SearchStringParser.FilterSearch(Instance, x.Value, Filter, ExitDisplayName(x.Value)));
+
+                    ItemsInListBox += CheckLoadingZoneExits.Count();
+                    ItemsInListBoxFiltered += FilteredCheckedExits.Count();
                     if (!FilteredCheckedExits.Any()) { continue; }
                     if (DataSource.Count > 0) { DataSource.Add(Divider); }
                     DataSource.Add(new MiscData.Areaheader { Area = $"{area.Key} Exits" });
                     foreach (var i in FilteredCheckedExits)
                     {
-                        i.Value.DisplayName = $"{i.Value.DestinationExit.region} From {i.Value.DestinationExit.from} : {i.Value.ID} Exit";
+                        i.Value.DisplayName = ExitDisplayName(i.Value);
                         DataSource.Add(i.Value);
                     }
+                }
+                string ExitDisplayName(EntranceData.EntranceRandoExit Exit)
+                {
+                    return $"{Exit.DestinationExit.region} From {Exit.DestinationExit.from} : {Exit.ID} Exit";
                 }
             }
 
@@ -296,7 +302,7 @@ namespace MMR_Tracker_V3
                     if (!DividerCreated)
                     {
                         if (DataSource.Count > 0) { DataSource.Add(Divider); }
-                        DataSource.Add(new MiscData.Areaheader { Area = "Toggle Options" });
+                        DataSource.Add(new MiscData.Areaheader { Area = "Options" });
                         DividerCreated = true;
                     }
                     ItemsInListBoxFiltered++;
@@ -309,7 +315,7 @@ namespace MMR_Tracker_V3
                     if (!DividerCreated)
                     {
                         if (DataSource.Count > 0) { DataSource.Add(Divider); }
-                        DataSource.Add(new MiscData.Areaheader { Area = "Toggle Options" });
+                        DataSource.Add(new MiscData.Areaheader { Area = "Options" });
                         DividerCreated = true;
                     }
                     ItemsInListBoxFiltered++;
@@ -373,7 +379,7 @@ namespace MMR_Tracker_V3
             foreach (var area in Instance.EntrancePool.AreaList)
             {
                 var AvailableExits = area.Value.LoadingZoneExits.Where(x => (x.Value.Available || ShowUnavailable) && x.Value.CheckState != MiscData.CheckState.Checked);
-                var FilteredAvailableExits = AvailableExits.Where(x => SearchStringParser.FilterSearch(Instance, area, Filter, $"{x.Value.ID}"));
+                var FilteredAvailableExits = AvailableExits.Where(x => SearchStringParser.FilterSearch(Instance, x.Value, Filter, ExitDisplayName(x.Value)));
 
                 OutItemsInListBox += AvailableExits.Count();
                 OutItemsInListBoxFiltered += FilteredAvailableExits.Count();
@@ -381,18 +387,20 @@ namespace MMR_Tracker_V3
 
                 if (DataSource.Count > 0) { DataSource.Add(Divider); }
                 DataSource.Add(new MiscData.Areaheader { Area = area.Key });
-                foreach(var i in AvailableExits)
+                foreach(var i in FilteredAvailableExits)
                 {
-                    i.Value.DisplayName = $"{i.Value.ID}";
-                    if (i.Value.CheckState == MiscData.CheckState.Marked) 
-                    {
-                        i.Value.DisplayName += $": {i.Value.DestinationExit.region} <= {i.Value.DestinationExit.from}";
-                    }
+                    i.Value.DisplayName = ExitDisplayName(i.Value);
                     DataSource.Add(i.Value);
                 }
             }
             return DataSource;
 
+            string ExitDisplayName(EntranceData.EntranceRandoExit Exit)
+            {
+                var Name = $"{Exit.ID}";
+                if (Exit.CheckState == MiscData.CheckState.Marked) { Name += $": {Exit.DestinationExit.region} <= {Exit.DestinationExit.from}"; }
+                return Name;
+            }
         }
 
         private static bool LocationAppearsinListbox(LocationData.LocationObject Location, LogicObjects.TrackerInstance Instance)

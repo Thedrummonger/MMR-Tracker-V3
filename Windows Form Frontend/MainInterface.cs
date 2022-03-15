@@ -81,14 +81,14 @@ namespace Windows_Form_Frontend
         {
             Stopwatch TimeTotalItemSelect = new Stopwatch();
             Utility.TimeCodeExecution(TimeTotalItemSelect, "Saving Tracker State (UTF8)", 1);
-            if (sender == undoToolStripMenuItem)
+            if (sender == undoToolStripMenuItem && UndoStringList.Any())
             {
                 string CurrentState = Utf8Json.JsonSerializer.ToJsonString(CurrentTrackerInstance);
                 CurrentTrackerInstance = LogicObjects.TrackerInstance.FromJson(UndoStringList[^1]);
                 RedoStringList.Add(CurrentState);
                 UndoStringList.RemoveAt(UndoStringList.Count - 1);
             }
-            else if (sender == redoToolStripMenuItem)
+            else if (sender == redoToolStripMenuItem && RedoStringList.Any())
             {
                 string CurrentState = Utf8Json.JsonSerializer.ToJsonString(CurrentTrackerInstance);
                 CurrentTrackerInstance = LogicObjects.TrackerInstance.FromJson(RedoStringList[^1]);
@@ -153,6 +153,7 @@ namespace Windows_Form_Frontend
                 }
                 catch { MessageBox.Show("Save File Not Valid"); return; }
                 CurrentTrackerInstance = NewTrackerInstance;
+                References.CurrentSavePath = openFileDialog.FileName;
                 LogicCalculation.CalculateLogic(CurrentTrackerInstance);
                 UpdateUI();
                 UpdateDynamicUserOptions();
@@ -636,8 +637,28 @@ namespace Windows_Form_Frontend
             ToolStripItem RefreshContextItem = contextMenuStrip.Items.Add("Refresh");
             RefreshContextItem.Click += (sender, e) => { PrintToListBox(new List<ListBox> { listBox }); };
 
-
-            if (listBox.SelectedItem is LocationData.LocationObject)
+            if (listBox.SelectedItem is EntranceData.EntranceRandoExit)
+            {
+                var exitObject = (listBox.SelectedItem as EntranceData.EntranceRandoExit);
+                //Star Item
+                string StarFunction = exitObject.Starred ? "UnStar Location" : "Star Location";
+                ToolStripItem StarContextItem = contextMenuStrip.Items.Add(StarFunction);
+                StarContextItem.Click += (sender, e) => { exitObject.Starred = !exitObject.Starred; PrintToListBox(new List<ListBox> { listBox }); };
+                //ShowLogic
+                ToolStripItem ShowLogicFunction = contextMenuStrip.Items.Add("Show Logic");
+                ShowLogicFunction.Click += (sender, e) =>
+                {
+                    ShowLogic showLogic = new ShowLogic(CurrentTrackerInstance.EntrancePool.GetLogicNameFromExit(exitObject), CurrentTrackerInstance);
+                    showLogic.Show();
+                };
+                //DevData
+                ToolStripItem ShowDevData = contextMenuStrip.Items.Add("Show Dev Data");
+                ShowDevData.Click += (sender, e) =>
+                {
+                    Debug.WriteLine(JsonConvert.SerializeObject(exitObject, Testing._NewtonsoftJsonSerializerOptions));
+                };
+            }
+            else if (listBox.SelectedItem is LocationData.LocationObject)
             {
                 var itemObject = (listBox.SelectedItem as LocationData.LocationObject);
 
@@ -645,7 +666,6 @@ namespace Windows_Form_Frontend
                 string StarFunction = itemObject.Starred ? "UnStar Location" : "Star Location";
                 ToolStripItem StarContextItem = contextMenuStrip.Items.Add(StarFunction);
                 StarContextItem.Click += (sender, e) => { itemObject.Starred = !itemObject.Starred; PrintToListBox(new List<ListBox> { listBox }); };
-
                 //ShowLogic
                 ToolStripItem ShowLogicFunction = contextMenuStrip.Items.Add("Show Logic");
                 ShowLogicFunction.Click += (sender, e) =>
@@ -653,7 +673,7 @@ namespace Windows_Form_Frontend
                     ShowLogic showLogic = new ShowLogic(itemObject.ID, CurrentTrackerInstance);
                     showLogic.Show();
                 };
-
+                //DevData
                 ToolStripItem ShowDevData = contextMenuStrip.Items.Add("Show Dev Data");
                 ShowDevData.Click += (sender, e) =>
                 {
@@ -887,6 +907,55 @@ namespace Windows_Form_Frontend
                 };
                 contextMenuStrip.Show(Cursor.Position);
             }
+        }
+
+        private void MainInterface_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Modifiers == Keys.Control)
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.S:
+                        SavetoolStripMenuItem1_Click(SavetoolStripMenuItem1, e);
+                        break;
+                    case Keys.Z:
+                        UndoRedo_Click(undoToolStripMenuItem, e);
+                        break;
+                    case Keys.Y:
+                        UndoRedo_Click(redoToolStripMenuItem, e);
+                        break;
+                }
+            }
+            if (e.KeyCode == Keys.F5)
+            {
+                UndoRedo_Click(refreshToolStripMenuItem, e);
+            }
+        }
+
+        //Key Press Handeling
+
+        private void LB_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (Control.ModifierKeys == Keys.Control)
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.A:
+                        (sender as ListBox).BeginUpdate();
+                        for (int i = 0; i < (sender as ListBox).Items.Count; i++) { (sender as ListBox).SetSelected(i, true); }
+                        (sender as ListBox).EndUpdate();
+                        break;
+                }
+            }
+        }
+
+        private void preventKeyShortcuts(object sender, KeyPressEventArgs e)
+        {
+            if (Control.ModifierKeys == Keys.Control &&
+                this.ActiveControl != TXTLocSearch &&
+                this.ActiveControl != TXTEntSearch &&
+                this.ActiveControl != TXTCheckedSearch)
+            { e.Handled = true; }
         }
     }
 }
