@@ -70,17 +70,23 @@ namespace MMR_Tracker_V3
             return UseableItems >= amount;
         }
 
-        private static bool AreaReached(string Area, TrackerInstance instance)
+        public static bool AreaReached(string Area, TrackerInstance instance)
         {
             if (Area == instance.EntrancePool.RootArea) { return true; }
             return instance.EntrancePool.AreaList.ContainsKey(Area) && instance.EntrancePool.AreaList[Area].ExitsAcessibleFrom > 0;
         }
 
+        private static Dictionary<string, MMRData.JsonFormatLogicItem> LogicMap = new Dictionary<string, MMRData.JsonFormatLogicItem>();
         public static void CalculateLogic(TrackerInstance instance, bool log = false)
         {
             Debug.WriteLine("Logic Calculation ----------------------");
             Stopwatch LogicTime = new Stopwatch();
             Utility.TimeCodeExecution(LogicTime);
+
+            foreach(var i in instance.MacroPool) { LogicMap[i.Key] = instance.GetLogic(i.Key); }
+            foreach (var i in instance.LocationPool) { LogicMap[i.Key] = instance.GetLogic(i.Key); }
+            Utility.TimeCodeExecution(LogicTime, "Getting Logic", 1);
+
             ResetAutoObtainedItems(instance);
             Utility.TimeCodeExecution(LogicTime, "Resetting Auto checked Items", 1);
             int Itterations = 0;
@@ -96,7 +102,8 @@ namespace MMR_Tracker_V3
             Utility.TimeCodeExecution(LogicTime, "Calculating Auto Checked Items", 1);
             foreach (var i in instance.LocationPool.Values.Where(x => !x.IsUnrandomized(1) && !x.IsJunk()))
             {
-                var Logic = instance.GetLogic(i.ID);
+                //var Logic = instance.GetLogic(i.Key);
+                var Logic = LogicMap[i.ID];
                 i.Available =
                     RequirementsMet(Logic.RequiredItems, instance) &&
                     ConditionalsMet(Logic.ConditionalItems, instance);
@@ -121,7 +128,7 @@ namespace MMR_Tracker_V3
                     RequirementsMet(Logic.RequiredItems, instance) &&
                     ConditionalsMet(Logic.ConditionalItems, instance);
             }
-            Utility.TimeCodeExecution(LogicTime, "Calculating Hints", 1);
+            Utility.TimeCodeExecution(LogicTime, "Calculating Hints", -1);
             Debug.WriteLine("----------------------------------------");
         }
 
@@ -179,19 +186,18 @@ namespace MMR_Tracker_V3
             return MacroStateChanged;
         }
 
-        public static bool CalculateMacros(TrackerInstance instance)
+        private static bool CalculateMacros(TrackerInstance instance)
         {
             bool MacroStateChanged = false;
             foreach(var i in instance.MacroPool)
             {
-                var Logic = instance.GetLogic(i.Key);
-                bool Available;
+                //var Logic = instance.GetLogic(i.Key);
+                var Logic = LogicMap[i.Key];
+                bool Available = false;
                 if (Logic.IsTrick && !i.Value.TrickEnabled) { Available = false; }
                 else 
                 {
-                    Available =
-                        RequirementsMet(Logic.RequiredItems, instance) &&
-                        ConditionalsMet(Logic.ConditionalItems, instance);
+                    Available = RequirementsMet(Logic.RequiredItems, instance) && ConditionalsMet(Logic.ConditionalItems, instance);
                 }
 
                 if (Available != i.Value.Aquired)
@@ -209,7 +215,8 @@ namespace MMR_Tracker_V3
             foreach (var i in instance.LocationPool)
             {
                 if (!i.Value.IsUnrandomized(1)) { continue; }
-                var Logic = instance.GetLogic(i.Key);
+                //var Logic = instance.GetLogic(i.Key);
+                var Logic = LogicMap[i.Key];
                 var Available =
                     RequirementsMet(Logic.RequiredItems, instance) &&
                     ConditionalsMet(Logic.ConditionalItems, instance);
@@ -271,8 +278,7 @@ namespace MMR_Tracker_V3
                 Utility.DeepCloneLogic(OverrideRequirements, OverrideConditionals, out Requirements, out Conditionals);
             }
 
-            var ValidOptions = instance.UserOptions.Values.Where(x => x.GetActions().LocationValid(ID));
-            if (ValidOptions.Any()) { HandleOptionLogicEdits(ValidOptions, ID, Requirements, Conditionals, out Requirements, out Conditionals); }
+            HandleOptionLogicEdits(instance.UserOptions.Values, ID, Requirements, Conditionals, out Requirements, out Conditionals);
 
             if (CheckPrice > -1) { HandlePriceLogic(instance, CheckPrice, Requirements, Conditionals, out Requirements, out Conditionals); }
 
@@ -287,25 +293,15 @@ namespace MMR_Tracker_V3
             List<List<string>> Conditionals = InConditionals;
             foreach (var option in Options)
             {
-                foreach (var replacements in option.GetActions().LogicReplacements)
+                foreach (var replacements in option.GetActions().LogicReplacements.Where(x => x.LocationValid(ID)))
                 {
-                    if (!replacements.LocationValid(ID)) { continue; }
-                    foreach (var i in replacements.ReplacementList)
-                    {
-                        Requirements = Requirements
-                            .Select(x => x == i.Target ? x.Replace(i.Target, i.Replacement) : x.Replace(" ", " ")).ToList();
-                        for (var p = 0; p < Conditionals.Count; p++)
-                        {
-                            Conditionals[p] = Conditionals[p]
-                                .Select(x => x == i.Target ? x.Replace(i.Target, i.Replacement) : x.Replace(" ", " ")).ToList();
-                        }
-                    }
+                    Requirements = Requirements.Select(x => replacements.ReplacementList.ContainsKey(x) ? replacements.ReplacementList[x] : x).ToList();
+                    Conditionals = Conditionals.Select(set => set.Select(x => replacements.ReplacementList.ContainsKey(x) ? replacements.ReplacementList[x] : x).ToList()).ToList();
                 }
-                foreach (var additionalSet in option.GetActions().AdditionalLogic)
+                foreach (var additionalSet in option.GetActions().AdditionalLogic.Where(x => x.LocationValid(ID)))
                 {
-                    if (!additionalSet.LocationValid(ID)) { continue; }
-                    foreach (var i in additionalSet.AdditionalRequirements) { Requirements.Add(i); }
-                    foreach (var i in additionalSet.AdditionalConditionals) { Conditionals.Add(i); }
+                    Requirements = Requirements.Concat(additionalSet.AdditionalRequirements).ToList();
+                    Conditionals = Conditionals.Concat(additionalSet.AdditionalConditionals).ToList();
                 }
             }
             OutRequirements = Requirements;
@@ -447,6 +443,7 @@ namespace MMR_Tracker_V3
             }
             return ChangesMade;
         }
+
         public static bool UnCheckEntrancePair(TrackerInstance instance)
         {
             bool ChangesMade = false;

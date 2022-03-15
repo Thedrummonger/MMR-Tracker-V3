@@ -79,7 +79,7 @@ namespace Windows_Form_Frontend
 
             bool Literal = CurrentID.IsLiteralID(out string LogicItem);
             var type = instance.GetLocationEntryType(LogicItem, Literal);
-            string Availablility = GetAvailable(AlteredLogic) ? "*" : "";
+            string Availablility = GetAvailable(AlteredLogic, type, LogicItem) ? "*" : "";
             this.Text = $"{type}: {LogicItem}{Availablility}";
 
             var Logic = checkBox1.Checked ? OriginalLogic : AlteredLogic;
@@ -125,9 +125,10 @@ namespace Windows_Form_Frontend
             if (entryType == LogicEntryType.macro && !listBox3.Items.Contains(i)) { listBox3.Items.Add(i); }
         }
 
-        public bool GetAvailable(MMR_Tracker_V3.TrackerObjects.MMRData.JsonFormatLogicItem Logic)
+        public bool GetAvailable(MMR_Tracker_V3.TrackerObjects.MMRData.JsonFormatLogicItem Logic, LogicEntryType type, string id)
         {
-            return LogicCalculation.RequirementsMet(Logic.RequiredItems, instance) && LogicCalculation.ConditionalsMet(Logic.ConditionalItems, instance);
+            bool AreaReached = type == LogicEntryType.Exit ? LogicCalculation.AreaReached(instance.InstanceReference.EntranceLogicNameToEntryData[id].Area, instance) : true;
+            return LogicCalculation.RequirementsMet(Logic.RequiredItems, instance) && LogicCalculation.ConditionalsMet(Logic.ConditionalItems, instance) && AreaReached;
         }
 
         private string GetDisplayName(string i)

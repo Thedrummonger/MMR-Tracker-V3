@@ -37082,64 +37082,22 @@
                 "MMRTProgressiveMagic",
                 "MMRTProgressiveMagicX2"
               ],
-              "ReplacementList": [
-                {
-                  "Target": "ItemBombBag",
-                  "Replacement": "MMRTProgressiveBombBag"
-                },
-                {
-                  "Target": "UpgradeBigBombBag",
-                  "Replacement": "MMRTProgressiveBombBagX2"
-                },
-                {
-                  "Target": "UpgradeBiggestBombBag",
-                  "Replacement": "MMRTProgressiveBombBagX3"
-                },
-                {
-                  "Target": "ItemBow",
-                  "Replacement": "MMRTProgressiveQuiver"
-                },
-                {
-                  "Target": "UpgradeBigQuiver",
-                  "Replacement": "MMRTProgressiveQuiverX2"
-                },
-                {
-                  "Target": "UpgradeBiggestQuiver",
-                  "Replacement": "MMRTProgressiveQuiverX3"
-                },
-                {
-                  "Target": "StartingSword",
-                  "Replacement": "MMRTProgressiveSword"
-                },
-                {
-                  "Target": "UpgradeRazorSword",
-                  "Replacement": "MMRTProgressiveSwordX2"
-                },
-                {
-                  "Target": "UpgradeGildedSword",
-                  "Replacement": "MMRTProgressiveSwordX3"
-                },
-                {
-                  "Target": "UpgradeAdultWallet",
-                  "Replacement": "MMRTProgressiveWallet"
-                },
-                {
-                  "Target": "UpgradeGiantWallet",
-                  "Replacement": "MMRTProgressiveWalletX2"
-                },
-                {
-                  "Target": "UpgradeRoyalWallet",
-                  "Replacement": "MMRTProgressiveWalletX3"
-                },
-                {
-                  "Target": "FairyMagic",
-                  "Replacement": "MMRTProgressiveMagic"
-                },
-                {
-                  "Target": "FairyDoubleMagic",
-                  "Replacement": "MMRTProgressiveMagicX2"
-                }
-              ]
+              "ReplacementList": {
+                "ItemBombBag": "MMRTProgressiveBombBag",
+                "UpgradeBigBombBag": "MMRTProgressiveBombBagX2",
+                "UpgradeBiggestBombBag": "MMRTProgressiveBombBagX3",
+                "ItemBow": "MMRTProgressiveQuiver",
+                "UpgradeBigQuiver": "MMRTProgressiveQuiverX2",
+                "UpgradeBiggestQuiver": "MMRTProgressiveQuiverX3",
+                "StartingSword": "MMRTProgressiveSword",
+                "UpgradeRazorSword": "MMRTProgressiveSwordX2",
+                "UpgradeGildedSword": "MMRTProgressiveSwordX3",
+                "UpgradeAdultWallet": "MMRTProgressiveWallet",
+                "UpgradeGiantWallet": "MMRTProgressiveWalletX2",
+                "UpgradeRoyalWallet": "MMRTProgressiveWalletX3",
+                "FairyMagic": "MMRTProgressiveMagic",
+                "FairyDoubleMagic": "MMRTProgressiveMagicX2"
+              }
             }
           ],
           "AdditionalLogic": [],
@@ -37177,44 +37135,18 @@
             {
               "LocationWhitelist": [],
               "LocationBlacklist": [],
-              "ReplacementList": [
-                {
-                  "Target": "ItemWoodfallKey1",
-                  "Replacement": "MMRTSmallKeysy"
-                },
-                {
-                  "Target": "ItemSnowheadKey1",
-                  "Replacement": "MMRTSmallKeysy"
-                },
-                {
-                  "Target": "ItemSnowheadKey2",
-                  "Replacement": "MMRTSmallKeysy"
-                },
-                {
-                  "Target": "ItemSnowheadKey3",
-                  "Replacement": "MMRTSmallKeysy"
-                },
-                {
-                  "Target": "ItemGreatBayKey1",
-                  "Replacement": "MMRTSmallKeysy"
-                },
-                {
-                  "Target": "ItemStoneTowerKey1",
-                  "Replacement": "MMRTSmallKeysy"
-                },
-                {
-                  "Target": "ItemStoneTowerKey2",
-                  "Replacement": "MMRTSmallKeysy"
-                },
-                {
-                  "Target": "ItemStoneTowerKey3",
-                  "Replacement": "MMRTSmallKeysy"
-                },
-                {
-                  "Target": "ItemStoneTowerKey4",
-                  "Replacement": "MMRTSmallKeysy"
-                }
-              ]
+              "ReplacementList": {
+                "ItemWoodfallKey1": "MMRTSmallKeysy",
+                "ItemSnowheadKey1": "MMRTSmallKeysy",
+                "ItemSnowheadKey2": "MMRTSmallKeysy",
+                "ItemSnowheadKey3": "MMRTSmallKeysy",
+                "ItemGreatBayKey1": "MMRTSmallKeysy",
+                "ItemStoneTowerKey1": "MMRTSmallKeysy",
+                "ItemStoneTowerKey2": "MMRTSmallKeysy",
+                "ItemStoneTowerKey3": "MMRTSmallKeysy",
+                "ItemStoneTowerKey4": "MMRTSmallKeysy"
+
+              }
             }
           ],
           "AdditionalLogic": [],
@@ -37237,24 +37169,13 @@
             {
               "LocationWhitelist": [],
               "LocationBlacklist": [],
-              "ReplacementList": [
-                {
-                  "Target": "ItemWoodfallBossKey",
-                  "Replacement": "MMRTBossKeysy"
-                },
-                {
-                  "Target": "ItemSnowheadBossKey",
-                  "Replacement": "MMRTBossKeysy"
-                },
-                {
-                  "Target": "ItemGreatBayBossKey",
-                  "Replacement": "MMRTBossKeysy"
-                },
-                {
-                  "Target": "ItemStoneTowerBossKey",
-                  "Replacement": "MMRTBossKeysy"
-                }
-              ]
+              "ReplacementList": {
+                "ItemWoodfallBossKey": "MMRTBossKeysy",
+                "ItemSnowheadBossKey": "MMRTBossKeysy",
+                "ItemGreatBayBossKey": "MMRTBossKeysy",
+                "ItemStoneTowerBossKey": "MMRTBossKeysy"
+
+              }
             }
           ],
           "AdditionalLogic": [],
@@ -37280,16 +37201,10 @@
                 "MaskBlast"
               ],
               "LocationBlacklist": [],
-              "ReplacementList": [
-                {
-                  "Target": "TradeItemKafeiLetter",
-                  "Replacement": "true"
-                },
-                {
-                  "Target": "TradeItemPendant",
-                  "Replacement": "true"
-                }
-              ]
+              "ReplacementList": {
+                "TradeItemKafeiLetter": "true",
+                "TradeItemPendant": "true"
+              }
             }
           ],
           "AdditionalLogic": [],

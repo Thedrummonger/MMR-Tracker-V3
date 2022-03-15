@@ -78,18 +78,11 @@ namespace MMR_Tracker_V3.TrackerObjects
         {
             public string[] LocationWhitelist { get; set; } = Array.Empty<string>();
             public string[] LocationBlacklist { get; set; } = Array.Empty<string>();
-            public LogicReplacementData[] ReplacementList { get; set; } = Array.Empty<LogicReplacementData>();
+            public Dictionary<string, string> ReplacementList { get; set; } = new Dictionary<string, string>();
             public bool LocationValid(string ID)
             {
                 return (!LocationWhitelist.Any() || LocationWhitelist.Contains(ID)) && !LocationBlacklist.Contains(ID);
             }
-        }
-
-        [Serializable]
-        public class LogicReplacementData
-        {
-            public string Target { get; set; }
-            public string Replacement { get; set; }
         }
     }
 }
