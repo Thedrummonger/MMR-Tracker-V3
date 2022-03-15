@@ -310,6 +310,12 @@ namespace MMR_Tracker_V3
 
         private static void HandlePriceLogic(TrackerInstance instance, int Price, List<string> Requirements, List<List<string>> Conditionals, out List<string> NewRequirements, out List<List<string>> NewConditionals)
         {
+            if (!instance.PriceData.CapacityMap.Any())
+            {
+                NewRequirements = Requirements;
+                NewConditionals = Conditionals;
+                return; 
+            }
             var ValidWallets = instance.PriceData.CapacityMap.Keys.Where(item => item >= Price);
             var MinValue = ValidWallets.Any() ? ValidWallets.Min() : instance.PriceData.CapacityMap.Keys.Max();
             var NewWallet = instance.PriceData.CapacityMap[MinValue];

@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic;
 using MMR_Tracker_V3;
+using MMR_Tracker_V3.OtherGames;
 using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
 using System;
@@ -198,20 +199,28 @@ namespace Windows_Form_Frontend
             {
                 OpenFileDialog openFileDialog = new()
                 {
-                    Filter = "MMR Text Spoiler Log|*.txt",
+                    Filter = "MMR Text Spoiler Log|*.txt|Json Spoiler Log (*.json)|*.json",
                     Title = "Load Text Spoiler Log"
                 };
                 openFileDialog.ShowDialog();
                 if (openFileDialog.FileName != "" && File.Exists(openFileDialog.FileName))
                 {
-                    SaveTrackerState();
-                    var ToUpdate = new List<ListBox> { LBCheckedLocations, LBValidEntrances, LBValidLocations };
-                    foreach(var i in ToUpdate) { i.Items.Clear(); i.Items.Add("Importing Spoiler Log"); i.Items.Add("Please Wait..."); i.Items.Add("Reading Spoiler Log.."); i.Refresh(); }
-                    CurrentTrackerInstance.SpoilerLog = SpoilerLogTools.ReadSpoilerLog(File.ReadAllLines(openFileDialog.FileName));
-                    foreach (var i in ToUpdate) { i.Items.Add("Applying Settings..."); i.Refresh(); }
-                    SpoilerLogTools.ApplyMMRandoSettings(CurrentTrackerInstance, CurrentTrackerInstance.SpoilerLog);
-                    foreach (var i in ToUpdate) { i.Items.Add("Applying Spoiler Data..."); i.Refresh(); }
-                    SpoilerLogTools.ApplyMMRandoSpoilerLog(CurrentTrackerInstance, CurrentTrackerInstance.SpoilerLog);
+                    if (CurrentTrackerInstance.LogicFile.GameCode == "OOTR")
+                    {
+                        OOTRTools.HandleOOTRSpoilerLog(File.ReadAllText(openFileDialog.FileName), CurrentTrackerInstance);
+                        return;
+                    }
+                    else
+                    {
+                        SaveTrackerState();
+                        var ToUpdate = new List<ListBox> { LBCheckedLocations, LBValidEntrances, LBValidLocations };
+                        foreach (var i in ToUpdate) { i.Items.Clear(); i.Items.Add("Importing Spoiler Log"); i.Items.Add("Please Wait..."); i.Items.Add("Reading Spoiler Log.."); i.Refresh(); }
+                        CurrentTrackerInstance.SpoilerLog = SpoilerLogTools.ReadSpoilerLog(File.ReadAllLines(openFileDialog.FileName));
+                        foreach (var i in ToUpdate) { i.Items.Add("Applying Settings..."); i.Refresh(); }
+                        SpoilerLogTools.ApplyMMRandoSettings(CurrentTrackerInstance, CurrentTrackerInstance.SpoilerLog);
+                        foreach (var i in ToUpdate) { i.Items.Add("Applying Spoiler Data..."); i.Refresh(); }
+                        SpoilerLogTools.ApplyMMRandoSpoilerLog(CurrentTrackerInstance, CurrentTrackerInstance.SpoilerLog);
+                    }
                 }
             }
             else
@@ -833,7 +842,7 @@ namespace Windows_Form_Frontend
                 Utility.TimeCodeExecution(FunctionTime, "Committng Save State", 1);
                 LogicCalculation.CalculateLogic(CurrentTrackerInstance);
                 Utility.TimeCodeExecution(FunctionTime, "Calculating Logic", 1);
-                if (checkState == MiscData.CheckState.Checked && LogicCalculation.CheckEntrancePair(CurrentTrackerInstance) && CurrentTrackerInstance.StaticOptions.AutoCheckCoupleEntrances) 
+                if (checkState == MiscData.CheckState.Checked && CurrentTrackerInstance.StaticOptions.AutoCheckCoupleEntrances && !CurrentTrackerInstance.StaticOptions.DecoupleEntrances && LogicCalculation.CheckEntrancePair(CurrentTrackerInstance)) 
                 { 
                     LogicCalculation.CalculateLogic(CurrentTrackerInstance);
                     Utility.TimeCodeExecution(FunctionTime, "Chcking Entrance Pairs", 1);

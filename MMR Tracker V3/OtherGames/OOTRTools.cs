@@ -20,6 +20,33 @@ namespace MMR_Tracker_V3.OtherGames
         public Dictionary<string, string> locations { get; set; } = new Dictionary<string, string>();
         public Dictionary<string, string> exits { get; set; } = new Dictionary<string, string>();
     }
+    public class OOTRGossip
+    {
+        public string text = "";
+        public string[] colors = null;
+    }
+    public class SpoilerLogPriceData
+    {
+        public string item = "";
+        public int price = 0;
+    }
+    public class RegionExit
+    {
+        public string region = "";
+        public string from = "";
+    }
+    public class SpoilerLog
+    {
+        public Dictionary<string, dynamic> settings = new Dictionary<string, dynamic>();
+        public Dictionary<string, dynamic> randomized_settings = new Dictionary<string, dynamic>();
+        public Dictionary<string, string> dungeons = new Dictionary<string, string>();
+        public Dictionary<string, dynamic> entrances = new Dictionary<string, dynamic>();
+        public Dictionary<string, dynamic> locations = new Dictionary<string, dynamic>();
+        public Dictionary<string, int> item_pool = new Dictionary<string, int>();
+        public Dictionary<string, string> trials = new Dictionary<string, string>();
+        public Dictionary<string, int> starting_items = new Dictionary<string, int>();
+        public Dictionary<string, OOTRGossip> gossip_stones = new Dictionary<string, OOTRGossip>();
+    }
     public class EntranceTable
     {
         public string[] CoupledEntrances { get; set; }
@@ -456,6 +483,114 @@ namespace MMR_Tracker_V3.OtherGames
             string input = Regex.Replace(Item, @"\[.*?\]", String.Empty).Trim();
             input = input.Replace(" ", "_").Replace("(", "").Replace(")", "").Replace("'", "");
             return input;
+        }
+
+        public static void HandleOOTRSpoilerLog(string SpoilerLog, LogicObjects.TrackerInstance Instance)
+        {
+            var Log = JsonConvert.DeserializeObject<SpoilerLog>(SpoilerLog, Testing._NewtonsoftJsonSerializerOptions);
+
+            Instance.StaticOptions.DecoupleEntrances = Log.settings.ContainsKey("decouple_entrances") && Log.settings["decouple_entrances"];
+
+            if (Log.settings.ContainsKey("shuffle_ganon_bosskey"))
+            {
+                Instance.UserOptions["shuffle_ganon_bosskey"].CurrentValue = Log.settings["shuffle_ganon_bosskey"].ToString();
+            }
+            if (Log.settings.ContainsKey("Starting_age"))
+            {
+                Instance.UserOptions["Starting_age"].CurrentValue = Log.settings["Starting_age"].ToString();
+            }
+            if (Log.settings.ContainsKey("skip_child_zelda"))
+            {
+                Instance.UserOptions["skip_child_zelda"].CurrentValue = Log.settings["skip_child_zelda"].ToString();
+            }
+            if (Log.settings.ContainsKey("free_scarecrow"))
+            {
+                Instance.UserOptions["free_scarecrow"].CurrentValue = Log.settings["free_scarecrow"].ToString();
+            }
+            if (Log.settings.ContainsKey("open_door_of_time"))
+            {
+                Instance.UserOptions["open_door_of_time"].CurrentValue = Log.settings["open_door_of_time"].ToString();
+            }
+
+            foreach (var i in Log.locations)
+            {
+                string Locations = i.Key;
+                string Item = "";
+                int Price = -1;
+
+                Type T = i.Value.GetType();
+                if (T == typeof(string)) { Item = CleanItem(i.Value.ToString()); }
+                else
+                {
+                    SpoilerLogPriceData Data = i.Value.ToObject<SpoilerLogPriceData>();
+                    Item = CleanItem(Data.item);
+                    Price = Data.price;
+                }
+                if (Instance.LocationPool.ContainsKey(Locations))
+                {
+                    if (!Instance.ItemPool.ContainsKey(Item)) { Debug.WriteLine(Item + " Was an unknown item."); }
+                    Instance.LocationPool[Locations].Randomizeditem.SpoilerLogGivenItem = Item;
+                    if (Price > 0) { Instance.LocationPool[Locations].CheckPrice = Price; }
+                }
+                else
+                {
+                    Debug.WriteLine(Locations + " Was an unknown Locations.");
+                }
+            }
+            foreach (var i in Log.entrances)
+            {
+                var EntranceData = i.Key.Split(new string[] { " -> " }, StringSplitOptions.None).Select(x => x.Trim()).ToArray();
+                EntranceData.EntranceAreaPair Entrance = new() { Area = EntranceData[0], Exit = EntranceData[1] };
+                EntranceData.EntranceRandoDestination destination = new EntranceData.EntranceRandoDestination();
+                string sValue = i.Value as string;
+                if (sValue != null)
+                {
+                    destination.region = sValue;
+                    var AllExits = Instance.EntrancePool.AreaList.SelectMany(x => x.Value.LoadingZoneExits.Values);
+                    destination.from = AllExits.First(x => x.ID == sValue).ParentAreaID;
+                }
+                else
+                {
+                    RegionExit R = i.Value.ToObject<RegionExit>();
+                    destination.region = R.region;
+                    destination.from = R.from;
+                }
+                Instance.EntrancePool.AreaList[Entrance.Area].LoadingZoneExits[Entrance.Exit].SpoilerDefinedDestinationExit = destination;
+            }
+            foreach (var i in Log.starting_items)
+            {
+                var item = CleanItem(i.Key);
+                if (Instance.ItemPool.ContainsKey(item))
+                {
+                    Instance.ItemPool[item].AmountInStartingpool = i.Value;
+                }
+            }
+            foreach (var i in Log.settings)
+            {
+                if (i.Key == "disabled_locations")
+                {
+                    foreach(string junk in i.Value)
+                    {
+                        if (Instance.LocationPool.ContainsKey(junk)) { Instance.LocationPool[junk].SetRandomizedState(MiscData.RandomizedState.ForcedJunk, Instance); }
+                    }
+                }
+                if (i.Key == "allowed_tricks")
+                {
+                    List<string> EnabledTricks = new List<string>();
+                    foreach(string val in i.Value) { EnabledTricks.Add(val); }
+                    foreach(var trick in Instance.MacroPool.Where(x => x.Value.isTrick(Instance))) 
+                    { 
+                        trick.Value.TrickEnabled = EnabledTricks.Contains(trick.Key); 
+                    }
+                }
+            }
+            foreach(var i in Instance.LocationPool.Values)
+            {
+                if (i.Randomizeditem.SpoilerLogGivenItem == null && i.SingleValidItem == null && !i.ID.Contains(" MQ ") && !i.ID.Contains(" GS "))
+                {
+                    Debug.WriteLine(i.ID + " Did not get Spoiler Data.");
+                }
+            }
         }
 
     }
