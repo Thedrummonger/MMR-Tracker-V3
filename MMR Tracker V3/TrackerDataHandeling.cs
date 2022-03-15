@@ -112,7 +112,6 @@ namespace MMR_Tracker_V3
                 foreach (var i in Instance.UserOptions)
                 {
                     ItemsInListBox++;
-                    i.Value.DisplayName = i.Value.DisplayName;
                     if (!SearchStringParser.FilterSearch(Instance, i.Value, Filter, i.Value.DisplayName)) { continue; }
                     if (!DividerCreated)
                     {
@@ -122,6 +121,19 @@ namespace MMR_Tracker_V3
                     }
                     ItemsInListBoxFiltered++;
                     DataSource.Add(i.Value);
+                }
+                foreach (var i in Instance.Variables.Values.Where(x => !x.Static))
+                {
+                    ItemsInListBox++;
+                    if (!SearchStringParser.FilterSearch(Instance, i, Filter, i.ToString())) { continue; }
+                    if (!DividerCreated)
+                    {
+                        if (DataSource.Count > 0) { DataSource.Add(Divider); }
+                        DataSource.Add(new MiscData.Areaheader { Area = "Toggle Options" });
+                        DividerCreated = true;
+                    }
+                    ItemsInListBoxFiltered++;
+                    DataSource.Add(i);
                 }
             }
 
@@ -289,6 +301,19 @@ namespace MMR_Tracker_V3
                     }
                     ItemsInListBoxFiltered++;
                     DataSource.Add(i.Value);
+                }
+                foreach (var i in Instance.Variables.Values.Where(x => !x.Static))
+                {
+                    ItemsInListBox++;
+                    if (!SearchStringParser.FilterSearch(Instance, i, Filter, i.ToString())) { continue; }
+                    if (!DividerCreated)
+                    {
+                        if (DataSource.Count > 0) { DataSource.Add(Divider); }
+                        DataSource.Add(new MiscData.Areaheader { Area = "Toggle Options" });
+                        DividerCreated = true;
+                    }
+                    ItemsInListBoxFiltered++;
+                    DataSource.Add(i);
                 }
             }
 

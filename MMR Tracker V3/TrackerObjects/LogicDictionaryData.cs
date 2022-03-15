@@ -114,6 +114,8 @@ namespace MMR_Tracker_V3.TrackerObjects
         public class TrackerVariable
         {
             public string ID { get; set; }
+            public string Name { get; set; }
+            public bool Static  { get; set; } = true;
             private dynamic _value;
             public dynamic Value
             {
@@ -131,7 +133,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
             public override string ToString()
             {
-                return ID + ": " + ValueToString();
+                return (Name??ID) + ": " + ValueToString();
             }
             public string ValueToString()
             {

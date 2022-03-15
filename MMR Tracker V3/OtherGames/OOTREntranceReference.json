@@ -1216,7 +1216,10 @@
     "_is_child_item(item)": "False",
     "_is_magic_arrow(item)": "False",
     "has_projectile(for_age)": "False",
-    "is_starting_age": "True"
+    "is_starting_age": "True",
+    "can_build_rainbow_bridge": "((bridge == 'open') or (bridge == 'vanilla' and Shadow_Medallion and Spirit_Medallion and Light_Arrows) or (bridge == 'stones' and has_stones(bridge_stones)) or (bridge == 'medallions' and has_medallions(bridge_medallions)) or (bridge == 'dungeons' and has_dungeon_rewards(bridge_rewards)) or (bridge == 'tokens' and (Gold_Skulltula_Token, bridge_amount)))",
+    "can_trigger_lacs": "((lacs_condition == 'vanilla' and Shadow_Medallion and Spirit_Medallion) or (lacs_condition == 'stones' and has_stones(lacs_stones)) or (lacs_condition == 'medallions' and has_medallions(lacs_medallions)) or (lacs_condition == 'dungeons' and has_dungeon_rewards(lacs_rewards)) or (lacs_condition == 'tokens' and (Gold_Skulltula_Token, lacs_amount)))",
+    "can_receive_ganon_bosskey": "((shuffle_ganon_bosskey == 'stones' and has_stones(ganon_bosskey_stones)) or (shuffle_ganon_bosskey == 'medallions' and has_medallions(ganon_bosskey_medallions)) or (shuffle_ganon_bosskey == 'dungeons' and has_dungeon_rewards(ganon_bosskey_rewards)) or (shuffle_ganon_bosskey == 'tokens' and (Gold_Skulltula_Token, ganon_key_amount)))"
   },
   "Options": {
     "Starting_age": [
@@ -1297,13 +1300,6 @@
       "fast",
       "open"
     ],
-    "lacs_condition": [
-      "dungeons",
-      "medallions",
-      "stones",
-      "tokens",
-      "vanilla"
-    ],
     "logic_rules": [
       "glitchless"
     ],
@@ -1325,6 +1321,21 @@
       "open",
       "Letter"
     ],
+    "bridge": [
+      "medallions",
+      "dungeons",
+      "stones",
+      "tokens",
+      "vanilla",
+      "open"
+    ],
+    "lacs_condition": [
+      "dungeons",
+      "medallions",
+      "stones",
+      "tokens",
+      "vanilla"
+    ],
     "shuffle_ganon_bosskey": [
       "randomized",
       "dungeons",
@@ -1333,14 +1344,6 @@
       "tokens",
       "vanilla",
       "Remove"
-    ],
-    "bridge": [
-      "medallions",
-      "dungeons",
-      "stones",
-      "tokens",
-      "vanilla",
-      "open"
     ]
   },
   "StaticMacros": {
@@ -1349,8 +1352,8 @@
     "at_dampe_time": "True",
     "had_night_start": "True",
     "disable_trade_revert": "True",
-    "shuffle_dungeon_entrances": "False",
-    "shuffle_overworld_entrances": "False",
+    "shuffle_dungeon_entrances": "True",
+    "shuffle_overworld_entrances": "True",
     "not entrance_shuffle": "True",
     "not shuffle_weird_egg": "True",
     "not keysanity": "True",
@@ -1422,7 +1425,16 @@
     "skipped_trials[Water]": "Water Trial Status == Inactive",
     "skipped_trials[Light]": "Light Trial Status == Inactive",
     "skipped_trials[Shadow]": "Shadow Trial Status == Inactive",
-    "skipped_trials[Spirit]": "Spirit Trial Status == Inactive"
+    "skipped_trials[Spirit]": "Spirit Trial Status == Inactive",
+    "has_stones(bridge_stones)": "all_stones, bridge_amount",
+    "has_medallions(bridge_medallions)": "all_medallions, bridge_amount",
+    "has_dungeon_rewards(bridge_rewards)": "all_dungeon_rewards, bridge_amount",
+    "has_stones(lacs_stones)": "all_stones, lacs_amount",
+    "has_medallions(lacs_medallions)": "all_medallions, lacs_amount",
+    "has_dungeon_rewards(lacs_rewards)": "all_dungeon_rewards, lacs_amount",
+    "has_stones(ganon_bosskey_stones)": "all_stones, ganon_key_amount",
+    "has_medallions(ganon_bosskey_medallions)": "all_medallions, ganon_key_amount",
+    "has_dungeon_rewards(ganon_bosskey_rewards)": "all_dungeon_rewards, ganon_key_amount"
   },
   "StaticLocations": {
     "Ganons Castle Layout": [ "Dungeon Layout", "Ganons Castle Lobby" ],
@@ -1450,6 +1462,44 @@
     "Active": "Trial Status",
     "Inactive": "Trial Status"
   },
+  "Variables": [
+    {
+      "ID": "all_stones",
+      "Name": "",
+      "Static": true,
+      "Value": [ "Kokiri_Emerald", "Goron_Ruby", "Zora_Sapphire" ]
+    },
+    {
+      "ID": "all_medallions",
+      "Name": "",
+      "Static": true,
+      "Value": [ "Forest_Medallion", "Fire_Medallion", "Water_Medallion", "Spirit_Medallion", "Shadow_Medallion", "Light_Medallion" ]
+    },
+    {
+      "ID": "all_dungeon_rewards",
+      "Name": "",
+      "Static": true,
+      "Value": [ "Kokiri_Emerald", "Goron_Ruby", "Zora_Sapphire", "Forest_Medallion", "Fire_Medallion", "Water_Medallion", "Spirit_Medallion", "Shadow_Medallion", "Light_Medallion" ]
+    },
+    {
+      "ID": "bridge_amount",
+      "Name": "Amount Needed for Bridge",
+      "Static": false,
+      "Value": 6
+    },
+    {
+      "ID": "lacs_amount",
+      "Name": "Amount Needed for LACS",
+      "Static": false,
+      "Value": 9
+    },
+    {
+      "ID": "ganon_key_amount",
+      "Name": "Amount Needed for Ganon Boss key",
+      "Static": false,
+      "Value": 0
+    }
+  ],
   "LogicTricks": {
     "logic_fewer_tunic_requirements": [ "Fewer Tunic Requirements", "Allows the following possible without Tunics: - Enter Water Temple. The key below the center pillar still requires Zora Tunic. - Enter Fire Temple. Only the first floor is accessible, and not Volvagia. - Zora's Fountain Bottom Freestanding PoH. Might not have enough health to resurface. - Gerudo Training Ground Underwater Silver Rupee Chest. May need to make multiple trips." ],
 

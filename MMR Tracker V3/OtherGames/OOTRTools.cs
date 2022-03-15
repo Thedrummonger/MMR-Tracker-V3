@@ -34,6 +34,7 @@ namespace MMR_Tracker_V3.OtherGames
         public Dictionary<string, string[]> StaticLocations { get; set; } = new Dictionary<string, string[]>();
         public Dictionary<string, string> StaticItems { get; set; } = new Dictionary<string, string>();
         public Dictionary<string, string[]> LogicTricks { get; set; } = new Dictionary<string, string[]>();
+        public List<LogicDictionaryData.TrackerVariable> Variables { get; set; } = new List<LogicDictionaryData.TrackerVariable>();
     }
     public class OOTRTools
     {
@@ -60,6 +61,7 @@ namespace MMR_Tracker_V3.OtherGames
 
             OORTDict.GameCode = "OOTR";
             OORTDict.LogicVersion = 1;
+            OORTDict.Variables = TestTable.Variables;
 
             string EntranceSeperator = " X ";
 

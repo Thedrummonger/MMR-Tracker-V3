@@ -54,20 +54,6 @@ namespace MMR_Tracker_V3.TrackerObjects
             [Description("Junk")]
             ForcedJunk = 3
         }
-
-        [Serializable]
-        public enum MiddleClickFunction
-        {
-            star = 0,
-            set = 1
-        }
-
-        [Serializable]
-        public enum MacroType
-        {
-            User = 0,
-            Randomizer = 1
-        }
         [Serializable]
         public enum TimeOfDay
         {

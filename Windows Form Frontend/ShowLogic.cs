@@ -90,7 +90,7 @@ namespace Windows_Form_Frontend
             }
             foreach (var cond in Logic.ConditionalItems)
             {
-                listBox2.Items.Add(string.Join(", ", cond.Select(x => GetDisplayName(x)))); 
+                listBox2.Items.Add(string.Join(" | ", cond.Select(x => GetDisplayName(x)))); 
                 foreach (var i in cond) { AddToGotoList(i); }
             }
             UpdateTimeCheckboxes(OriginalLogic);
@@ -121,7 +121,7 @@ namespace Windows_Form_Frontend
         private void AddToGotoList(string i)
         {
             bool Literal = i.IsLiteralID(out string ID);
-            LogicEntryType entryType = instance.GetLocationEntryType(ID, Literal);
+            LogicEntryType entryType = instance.GetItemEntryType(ID, Literal);
             if (entryType == LogicEntryType.macro && !listBox3.Items.Contains(i)) { listBox3.Items.Add(i); }
         }
 

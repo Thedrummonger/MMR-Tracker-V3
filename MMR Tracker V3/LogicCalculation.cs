@@ -378,7 +378,26 @@ namespace MMR_Tracker_V3
             List<string> OptionList = new() { CleanedOptionName };
             List<string> ValueList = new() { CleanedOptionValue };
 
-            if (instance.Variables.ContainsKey(CleanedOptionName) && instance.Variables[CleanedOptionName].Value is List<string> VarOptionList) { OptionList = VarOptionList; }
+            if (instance.Variables.ContainsKey(CleanedOptionName)) 
+            { 
+                if (instance.Variables[CleanedOptionName].Value is List<string> VarOptionList)
+                {
+                    OptionList = VarOptionList;
+                }
+                else if (instance.Variables[CleanedOptionName].Value is string VarOptionString)
+                {
+                    return (VarOptionString == CleanedOptionValue) != inverse;
+                }
+                else if (instance.Variables[CleanedOptionName].Value is Int64 VarOptionInt)
+                {
+                    return (int.TryParse(CleanedOptionValue, out int TryParseValue) && (int)VarOptionInt == TryParseValue) != inverse;
+                }
+                else if (instance.Variables[CleanedOptionName].Value is bool VarOptionBool)
+                {
+                    return (bool.TryParse(CleanedOptionValue, out bool TryParseBool) && (bool)VarOptionBool == TryParseBool) != inverse;
+                }
+            }
+
             if (instance.Variables.ContainsKey(CleanedOptionValue) && instance.Variables[CleanedOptionValue].Value is List<string> VarValueList) { ValueList = VarValueList; }
 
             bool RequiremntMet = false;

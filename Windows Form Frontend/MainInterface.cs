@@ -609,6 +609,12 @@ namespace Windows_Form_Frontend
                     RandomizerOptionsToolStripMenuItem1.DropDownItems.Add(menuItem);
                 }
             }
+            foreach(var i in CurrentTrackerInstance.Variables.Values.Where(x => !x.Static))
+            {
+                ToolStripMenuItem menuItem = new() { Text = i.ToString() };
+                menuItem.Click += delegate (object sender, EventArgs e) { HandleItemSelect(new List<LogicDictionaryData.TrackerVariable> { i }, MiscData.CheckState.Checked); };
+                RandomizerOptionsToolStripMenuItem1.DropDownItems.Add(menuItem);
+            }
         }
 
         //Context Menus
@@ -757,7 +763,7 @@ namespace Windows_Form_Frontend
             Utility.TimeCodeExecution(FunctionTime, "Manual Check Form", 1);
 
             //Options======================================
-            foreach (var i in OptionObjects.Where(x => x.IsToggleOption())) { i.ToggleOption(); }
+            foreach (var i in OptionObjects.Where(x => x.IsToggleOption())) { i.ToggleOption(); ChangesMade = true; }
             Utility.TimeCodeExecution(FunctionTime, "Toggling Options", 1);
             //Items======================================
             foreach (LocationData.LocationObject LocationObject in locationObjects)
@@ -777,15 +783,22 @@ namespace Windows_Form_Frontend
 
             //Hints======================================
             List<HintData.HintObject> HintObjects = Items.Where(x => x is HintData.HintObject).Select(x => x as HintData.HintObject).ToList();
+            List<LogicDictionaryData.TrackerVariable> VariableObjects = Items.Where(x => x is LogicDictionaryData.TrackerVariable).Select(x => x as LogicDictionaryData.TrackerVariable).ToList();
+
+            IEnumerable<object> UncheckedVariableObjects = HintObjects.Where(x => x.CheckState == MiscData.CheckState.Unchecked);
+            UncheckedVariableObjects = UncheckedVariableObjects.Concat(VariableObjects.Where(x => x.Value is not bool));
+            if (UncheckedVariableObjects.Any())
+            {
+                TotalTime.Stop();
+                VariableInputWindow variableInputWindow = new VariableInputWindow(UncheckedVariableObjects, CurrentTrackerInstance);
+                variableInputWindow.ShowDialog();
+                ChangesMade = true;
+                TotalTime.Start();
+            }
+            foreach(var i in VariableObjects.Where(x => x.Value is bool)) { i.Value = !i.Value; ChangesMade = true; }
             foreach (HintData.HintObject hintObject in HintObjects)
             {
                 ChangesMade = true;
-                if (hintObject.CheckState == MiscData.CheckState.Unchecked)
-                {   //Hints don't use the check item form so we can handle unknown hint assignment seperately
-                    TotalTime.Stop();
-                    hintObject.HintText = hintObject.SpoilerHintText ?? Interaction.InputBox("Input Hint Text", hintObject.GetDictEntry(CurrentTrackerInstance).Name);
-                    TotalTime.Start();
-                }
                 var CheckAction = (checkState == MiscData.CheckState.Marked && hintObject.CheckState == MiscData.CheckState.Marked) && !EnforceMarkAction ? MiscData.CheckState.Unchecked : checkState;
                 hintObject.CheckState = CheckAction;
                 hintObject.HintText = CheckAction == MiscData.CheckState.Unchecked ? null : hintObject.HintText;

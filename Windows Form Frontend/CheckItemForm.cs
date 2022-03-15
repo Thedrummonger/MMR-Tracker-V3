@@ -26,11 +26,6 @@ namespace Windows_Form_Frontend
 
         private void CheckItemForm_Load(object sender, EventArgs e)
         {
-            if (!_CheckList.Any())
-            {
-                this.Close();
-                return;
-            }
             WriteNextItem();
         }
 
