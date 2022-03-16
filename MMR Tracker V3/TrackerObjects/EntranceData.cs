@@ -23,6 +23,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 var DestinationAsExit = AreaList[destination.from].GetExit(destination.region);
                 var EntrancePair = DestinationAsExit.EntrancePair;
+                if (EntrancePair == null) { return null; }
                 return AreaList[EntrancePair.Area].GetExit(EntrancePair.Exit);
             }
             public string GetLogicNameFromExit(EntranceRandoExit Exit)

@@ -53,7 +53,7 @@ namespace MMR_Tracker_V3.OtherGames
         public string[] OneWayEntrances { get; set; }
         public Dictionary<string, string> VanillaLocations { get; set; }
         public Dictionary<string, string> UnrandomizableLocations { get; set; }
-        public string[] GossipStones { get; set; }
+        public Dictionary<string, string> GossipStones { get; set; }
         public string[] ItemPool { get; set; }
         public Dictionary<string, string> LogicOverrides { get; set; }
         public Dictionary<string, string> StaticMacros { get; set; }
@@ -171,12 +171,12 @@ namespace MMR_Tracker_V3.OtherGames
                 }
                 foreach(var l in i.locations)
                 {
-                    if (TestTable.GossipStones.Contains(l.Key))
+                    if (TestTable.GossipStones.ContainsKey(l.Key))
                     {
                         LogicDictionaryData.DictionaryHintEntries hintEntry = new LogicDictionaryData.DictionaryHintEntries();
                         hintEntry.ID = l.Key;
-                        hintEntry.Name = l.Key;
-                        hintEntry.SpoilerData.SpoilerLogNames = new string[] { l.Key, "TODO" };
+                        hintEntry.Name = TestTable.GossipStones[l.Key];
+                        hintEntry.SpoilerData.SpoilerLogNames = new string[] { l.Key, TestTable.GossipStones[l.Key] };
                         OORTDict.HintSpots.Add(hintEntry);
                     }
                     else
@@ -529,6 +529,26 @@ namespace MMR_Tracker_V3.OtherGames
                 Instance.LocationPool["Gift from Sages"].SetRandomizedState(MiscData.RandomizedState.ForcedJunk, Instance);
             }
 
+            Instance.LocationPool["Forest Trial Status"].Randomizeditem.SpoilerLogGivenItem = char.ToUpper(Log.trials["Forest"][0]) + Log.trials["Forest"][1..];
+            Instance.LocationPool["Fire Trial Status"].Randomizeditem.SpoilerLogGivenItem = char.ToUpper(Log.trials["Fire"][0]) + Log.trials["Fire"][1..];
+            Instance.LocationPool["Water Trial Status"].Randomizeditem.SpoilerLogGivenItem = char.ToUpper(Log.trials["Water"][0]) + Log.trials["Water"][1..];
+            Instance.LocationPool["Spirit Trial Status"].Randomizeditem.SpoilerLogGivenItem = char.ToUpper(Log.trials["Spirit"][0]) + Log.trials["Spirit"][1..];
+            Instance.LocationPool["Shadow Trial Status"].Randomizeditem.SpoilerLogGivenItem = char.ToUpper(Log.trials["Shadow"][0]) + Log.trials["Shadow"][1..];
+            Instance.LocationPool["Light Trial Status"].Randomizeditem.SpoilerLogGivenItem = char.ToUpper(Log.trials["Light"][0]) + Log.trials["Light"][1..];
+
+            Instance.LocationPool["Ganons Castle Layout"].Randomizeditem.SpoilerLogGivenItem = Log.dungeons["Ganons Castle"] != "mq" ? "Vanilla" : "Master Quest";
+            Instance.LocationPool["Bottom of the Well Layout"].Randomizeditem.SpoilerLogGivenItem = Log.dungeons["Bottom of the Well"] != "mq" ? "Vanilla" : "Master Quest";
+            Instance.LocationPool["Deku Tree Layout"].Randomizeditem.SpoilerLogGivenItem = Log.dungeons["Deku Tree"] != "mq" ? "Vanilla" : "Master Quest";
+            Instance.LocationPool["Dodongos Cavern Layout"].Randomizeditem.SpoilerLogGivenItem = Log.dungeons["Dodongos Cavern"] != "mq" ? "Vanilla" : "Master Quest";
+            Instance.LocationPool["Fire Temple Layout"].Randomizeditem.SpoilerLogGivenItem = Log.dungeons["Fire Temple"] != "mq" ? "Vanilla" : "Master Quest";
+            Instance.LocationPool["Forest Temple Layout"].Randomizeditem.SpoilerLogGivenItem = Log.dungeons["Forest Temple"] != "mq" ? "Vanilla" : "Master Quest";
+            Instance.LocationPool["Gerudo Training Ground Layout"].Randomizeditem.SpoilerLogGivenItem = Log.dungeons["Gerudo Training Ground"] != "mq" ? "Vanilla" : "Master Quest";
+            Instance.LocationPool["Ice Cavern Layout"].Randomizeditem.SpoilerLogGivenItem = Log.dungeons["Ice Cavern"] != "mq" ? "Vanilla" : "Master Quest";
+            Instance.LocationPool["Jabu Jabus Belly Layout"].Randomizeditem.SpoilerLogGivenItem = Log.dungeons["Jabu Jabus Belly"] != "mq" ? "Vanilla" : "Master Quest";
+            Instance.LocationPool["Shadow Temple Layout"].Randomizeditem.SpoilerLogGivenItem = Log.dungeons["Shadow Temple"] != "mq" ? "Vanilla" : "Master Quest";
+            Instance.LocationPool["Spirit Temple Layout"].Randomizeditem.SpoilerLogGivenItem = Log.dungeons["Spirit Temple"] != "mq" ? "Vanilla" : "Master Quest";
+            Instance.LocationPool["Water Temple Layout"].Randomizeditem.SpoilerLogGivenItem = Log.dungeons["Water Temple"] != "mq" ? "Vanilla" : "Master Quest";
+
             foreach (var i in Log.locations)
             {
                 string Locations = i.Key;
@@ -554,17 +574,31 @@ namespace MMR_Tracker_V3.OtherGames
                     Debug.WriteLine(Locations + " Was an unknown Locations.");
                 }
             }
+            foreach (var i in Log.gossip_stones)
+            {
+                var GossipLocation = Instance.HintPool.Values.FirstOrDefault(x => x.GetDictEntry(Instance).SpoilerData.SpoilerLogNames.Contains(i.Key));
+                if (GossipLocation == null)
+                {
+                    Debug.WriteLine(i.Key + " Was an unknown Hint Location.");
+                    continue;
+                }
+                GossipLocation.SpoilerHintText = i.Value.text;
+            }
             foreach (var i in Log.entrances)
             {
+                Debug.WriteLine($"==================================================");
                 var EntranceData = i.Key.Split(new string[] { " -> " }, StringSplitOptions.None).Select(x => x.Trim()).ToArray();
                 EntranceData.EntranceAreaPair Entrance = new() { Area = EntranceData[0], Exit = EntranceData[1] };
+                var Exit = Instance.EntrancePool.AreaList[Entrance.Area].LoadingZoneExits[Entrance.Exit];
                 EntranceData.EntranceRandoDestination destination = new EntranceData.EntranceRandoDestination();
+                Debug.WriteLine($"Assigning Spoiler Data to {Exit.ParentAreaID} -> {Exit.ID}");
                 string sValue = i.Value as string;
                 if (sValue != null)
                 {
                     destination.region = sValue;
-                    var AllExits = Instance.EntrancePool.AreaList.SelectMany(x => x.Value.LoadingZoneExits.Values);
-                    destination.from = AllExits.First(x => x.ID == sValue).ParentAreaID;
+                    var AllExits = Instance.EntrancePool.AreaList.SelectMany(x => x.Value.LoadingZoneExits.Values).First(x => x.ID == sValue && x.EntrancePair != null);
+                    Debug.WriteLine($"Region {sValue} Did not have a From Region. Assuming full exit to be {AllExits.ID} <= {AllExits.ParentAreaID}");
+                    destination.from = AllExits.ParentAreaID;
                 }
                 else
                 {
@@ -572,14 +606,21 @@ namespace MMR_Tracker_V3.OtherGames
                     destination.region = R.region;
                     destination.from = R.from;
                 }
-                var Exit = Instance.EntrancePool.AreaList[Entrance.Area].LoadingZoneExits[Entrance.Exit];
                 Exit.SpoilerDefinedDestinationExit = destination;
-                if (!Instance.StaticOptions.DecoupleEntrances && false)
+                Debug.WriteLine($"{Exit.ParentAreaID} > {Exit.ID} Was Set To {destination.region} < {destination.from}");
+                if (!Instance.StaticOptions.DecoupleEntrances)
                 {
+                    Debug.WriteLine($"Settng Paired Entrance of {Exit.ParentAreaID} -> {Exit.ID} = {destination.region} <- {destination.from}");
+                    Debug.WriteLine($"Destination Was exit {destination.region} > {destination.from}");
                     var DestinationPairedExit = Instance.EntrancePool.GetEntrancePairOfDestination(destination);
+                    if (DestinationPairedExit == null) { continue; }
+                    Debug.WriteLine($"Entrance Pair of Destnation was {DestinationPairedExit.ParentAreaID} -> {DestinationPairedExit.ID}");
                     var OriginalEntrancePairedExit = Exit.EntrancePair;
+                    if (OriginalEntrancePairedExit == null) { continue; }
+                    Debug.WriteLine($"Entrance Pair of Original Exit was {OriginalEntrancePairedExit.Area} -> {OriginalEntrancePairedExit.Exit}");
                     var OriginalEntrancePairedExitAsDestination = new EntranceData.EntranceRandoDestination { from = OriginalEntrancePairedExit.Area, region = OriginalEntrancePairedExit.Exit };
                     DestinationPairedExit.SpoilerDefinedDestinationExit = OriginalEntrancePairedExitAsDestination;
+                    Debug.WriteLine($"{DestinationPairedExit.ParentAreaID} -> {DestinationPairedExit.ID} Was Set To {OriginalEntrancePairedExitAsDestination.region} <- {OriginalEntrancePairedExitAsDestination.from} ");
                 }
             }
             foreach (var i in Log.starting_items)
@@ -611,6 +652,7 @@ namespace MMR_Tracker_V3.OtherGames
                 if (i.Key == "dungeon_shortcuts")
                 {
                     List<string> DungeonShortcuts = new List<string>();
+                    foreach (string val in i.Value) { DungeonShortcuts.Add(val); }
                     Instance.UserOptions["Deku_tree_Shortcuts"].CurrentValue = DungeonShortcuts.Contains("deku_tree") ? "Enabled" : "Disabled";
                     Instance.UserOptions["Dodongos_Cavern_Shortcuts"].CurrentValue = DungeonShortcuts.Contains("dodongos_cavern") ? "Enabled" : "Disabled";
                     Instance.UserOptions["Jabu_Jabus_Belly_Shortcuts"].CurrentValue = DungeonShortcuts.Contains("jabu_jabus_belly") ? "Enabled" : "Disabled";
@@ -635,7 +677,7 @@ namespace MMR_Tracker_V3.OtherGames
             {
                 if (i.SpoilerDefinedDestinationExit == null)
                 {
-                    Debug.WriteLine($"{i.ParentAreaID} => {i.ID} Was not found in spoiler log, Unrandomizing.");
+                    Debug.WriteLine($"{i.ParentAreaID} -> {i.ID} Was not found in spoiler log, Unrandomizing.");
                     i.SpoilerDefinedDestinationExit = i.GetVanillaDestination();
                 }
             }
