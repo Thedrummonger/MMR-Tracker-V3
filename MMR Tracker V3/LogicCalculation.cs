@@ -96,7 +96,7 @@ namespace MMR_Tracker_V3
                 bool UnrandomizedItemChecked = CheckUrandomizedLocations(instance);
                 bool MacroChanged = CalculateMacros(instance);
                 Itterations++;
-                if (!MacroChanged && !EntranceChanges && !UnrandomizedItemChecked) { break; }
+                 if (!MacroChanged && !EntranceChanges && !UnrandomizedItemChecked) { break; }
             }
             Debug.WriteLine($"Auto Item calculation took {Itterations} Itterations");
             Utility.TimeCodeExecution(LogicTime, "Calculating Auto Checked Items", 1);
@@ -214,6 +214,7 @@ namespace MMR_Tracker_V3
             bool ItemStateChanged = false;
             foreach (var i in instance.LocationPool)
             {
+                if (string.IsNullOrWhiteSpace(i.Value.GetDictEntry(instance).OriginalItem)) { continue; }
                 if (!i.Value.IsUnrandomized(1)) { continue; }
                 //var Logic = instance.GetLogic(i.Key);
                 var Logic = LogicMap[i.Key];
