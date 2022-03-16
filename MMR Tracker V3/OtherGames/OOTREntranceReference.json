@@ -1250,6 +1250,74 @@
       "False",
       "True"
     ],
+    "hints": [
+      "always",
+      "none",
+      "mask",
+      "agony"
+    ],
+    "damage_multiplier": [
+      "normal",
+      "half",
+      "double",
+      "quadruple",
+      "ohko"
+    ],
+    "gerudo_fortress": [
+      "normal",
+      "fast",
+      "open"
+    ],
+    "logic_rules": [
+      "glitchless"
+    ],
+    "shuffle_scrubs": [
+      "off"
+    ],
+    "open_forest": [
+      "closed",
+      "open",
+      "closed_deku"
+    ],
+    "zora_fountain": [
+      "closed",
+      "adult",
+      "open"
+    ],
+    "open_kakariko": [
+      "closed",
+      "open",
+      "zelda"
+    ],
+    "bridge": [
+      "medallions",
+      "dungeons",
+      "stones",
+      "tokens",
+      "vanilla",
+      "open",
+      "random"
+    ],
+    "lacs_condition": [
+      "dungeons",
+      "medallions",
+      "stones",
+      "tokens",
+      "vanilla"
+    ],
+    "shuffle_ganon_bosskey": [
+      "dungeon",
+      "remove",
+      "vanilla",
+      "overworld",
+      "any_dungeon",
+      "keysanity",
+      "on_lacs",
+      "stones",
+      "medallions",
+      "dungeons",
+      "tokens"
+    ],
     "Deku_tree_Shortcuts": [
       "Disabled",
       "Enabled"
@@ -1281,69 +1349,6 @@
     "Spirit_Temple_Shortcuts": [
       "Disabled",
       "Enabled"
-    ],
-    "hints": [
-      "none",
-      "mask",
-      "agony",
-      "nothing"
-    ],
-    "damage_multiplier": [
-      "normal",
-      "half",
-      "double",
-      "quadruple",
-      "ohko"
-    ],
-    "gerudo_fortress": [
-      "normal",
-      "fast",
-      "open"
-    ],
-    "logic_rules": [
-      "glitchless"
-    ],
-    "shuffle_scrubs": [
-      "off"
-    ],
-    "open_forest": [
-      "closed",
-      "open",
-      "Deku"
-    ],
-    "zora_fountain": [
-      "closed",
-      "open",
-      "adult"
-    ],
-    "open_kakariko": [
-      "closed",
-      "open",
-      "Letter"
-    ],
-    "bridge": [
-      "medallions",
-      "dungeons",
-      "stones",
-      "tokens",
-      "vanilla",
-      "open"
-    ],
-    "lacs_condition": [
-      "dungeons",
-      "medallions",
-      "stones",
-      "tokens",
-      "vanilla"
-    ],
-    "shuffle_ganon_bosskey": [
-      "randomized",
-      "dungeons",
-      "medallions",
-      "stones",
-      "tokens",
-      "vanilla",
-      "Remove"
     ]
   },
   "StaticMacros": {

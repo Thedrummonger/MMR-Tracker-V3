@@ -491,25 +491,16 @@ namespace MMR_Tracker_V3.OtherGames
 
             Instance.StaticOptions.DecoupleEntrances = Log.settings.ContainsKey("decouple_entrances") && Log.settings["decouple_entrances"];
 
-            if (Log.settings.ContainsKey("shuffle_ganon_bosskey"))
+            string[] SpoilerLogSettings = new string[] { "Starting_age", "skip_child_zelda", "free_scarecrow", "open_door_of_time", "complete_mask_quest", "bombchus_in_logic", "plant_beans", 
+                "hints", "damage_multiplier", "gerudo_fortress", "open_forest", "zora_fountain", "open_kakariko", "bridge", "lacs_condition", "shuffle_ganon_bosskey" };
+
+
+            foreach(var setting in SpoilerLogSettings)
             {
-                Instance.UserOptions["shuffle_ganon_bosskey"].CurrentValue = Log.settings["shuffle_ganon_bosskey"].ToString();
-            }
-            if (Log.settings.ContainsKey("Starting_age"))
-            {
-                Instance.UserOptions["Starting_age"].CurrentValue = Log.settings["Starting_age"].ToString();
-            }
-            if (Log.settings.ContainsKey("skip_child_zelda"))
-            {
-                Instance.UserOptions["skip_child_zelda"].CurrentValue = Log.settings["skip_child_zelda"].ToString();
-            }
-            if (Log.settings.ContainsKey("free_scarecrow"))
-            {
-                Instance.UserOptions["free_scarecrow"].CurrentValue = Log.settings["free_scarecrow"].ToString();
-            }
-            if (Log.settings.ContainsKey("open_door_of_time"))
-            {
-                Instance.UserOptions["open_door_of_time"].CurrentValue = Log.settings["open_door_of_time"].ToString();
+                if (Log.settings.ContainsKey(setting) && Instance.UserOptions.ContainsKey(setting))
+                {
+                    Instance.UserOptions[setting].CurrentValue = Log.settings[setting].ToString();
+                }
             }
 
             foreach (var i in Log.locations)
@@ -555,7 +546,15 @@ namespace MMR_Tracker_V3.OtherGames
                     destination.region = R.region;
                     destination.from = R.from;
                 }
-                Instance.EntrancePool.AreaList[Entrance.Area].LoadingZoneExits[Entrance.Exit].SpoilerDefinedDestinationExit = destination;
+                var Exit = Instance.EntrancePool.AreaList[Entrance.Area].LoadingZoneExits[Entrance.Exit];
+                Exit.SpoilerDefinedDestinationExit = destination;
+                if (!Instance.StaticOptions.DecoupleEntrances && false)
+                {
+                    var DestinationPairedExit = Instance.EntrancePool.GetEntrancePairOfDestination(destination);
+                    var OriginalEntrancePairedExit = Exit.EntrancePair;
+                    var OriginalEntrancePairedExitAsDestination = new EntranceData.EntranceRandoDestination { from = OriginalEntrancePairedExit.Area, region = OriginalEntrancePairedExit.Exit };
+                    DestinationPairedExit.SpoilerDefinedDestinationExit = OriginalEntrancePairedExitAsDestination;
+                }
             }
             foreach (var i in Log.starting_items)
             {
@@ -583,12 +582,33 @@ namespace MMR_Tracker_V3.OtherGames
                         trick.Value.TrickEnabled = EnabledTricks.Contains(trick.Key); 
                     }
                 }
-            }
-            foreach(var i in Instance.LocationPool.Values)
-            {
-                if (i.Randomizeditem.SpoilerLogGivenItem == null && i.SingleValidItem == null && !i.ID.Contains(" MQ ") && !i.ID.Contains(" GS "))
+                if (i.Key == "dungeon_shortcuts")
                 {
-                    Debug.WriteLine(i.ID + " Did not get Spoiler Data.");
+                    List<string> DungeonShortcuts = new List<string>();
+                    Instance.UserOptions["Deku_tree_Shortcuts"].CurrentValue = DungeonShortcuts.Contains("deku_tree") ? "Enabled" : "Disabled";
+                    Instance.UserOptions["Dodongos_Cavern_Shortcuts"].CurrentValue = DungeonShortcuts.Contains("dodongos_cavern") ? "Enabled" : "Disabled";
+                    Instance.UserOptions["Jabu_Jabus_Belly_Shortcuts"].CurrentValue = DungeonShortcuts.Contains("jabu_jabus_belly") ? "Enabled" : "Disabled";
+                    Instance.UserOptions["Forest_Temple_Shortcuts"].CurrentValue = DungeonShortcuts.Contains("forest_temple") ? "Enabled" : "Disabled";
+                    Instance.UserOptions["Fire_Temple_Shortcuts"].CurrentValue = DungeonShortcuts.Contains("fire_temple") ? "Enabled" : "Disabled";
+                    Instance.UserOptions["Water_Temple_Shortcuts"].CurrentValue = DungeonShortcuts.Contains("water_temple") ? "Enabled" : "Disabled";
+                    Instance.UserOptions["Shadow_Temple_Shortcuts"].CurrentValue = DungeonShortcuts.Contains("shadow_temple") ? "Enabled" : "Disabled";
+                    Instance.UserOptions["Spirit_Temple_Shortcuts"].CurrentValue = DungeonShortcuts.Contains("spirit_temple") ? "Enabled" : "Disabled";
+                }
+            }
+            Debug.WriteLine("Locations ================================");
+            foreach (var i in Instance.LocationPool.Values)
+            {
+                if (i.Randomizeditem.SpoilerLogGivenItem == null)
+                {
+                    i.SetRandomizedState(MiscData.RandomizedState.Unrandomized, Instance);
+                }
+            }
+            Debug.WriteLine("Locations ================================");
+            foreach (var i in Instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values))
+            {
+                if (i.SpoilerDefinedDestinationExit == null)
+                {
+                    i.SpoilerDefinedDestinationExit = i.GetVanillaDestination();
                 }
             }
         }
