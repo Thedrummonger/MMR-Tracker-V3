@@ -286,6 +286,7 @@ namespace MMR_Tracker_V3.OtherGames
             {
                 Condesedlogic.Add(i.Key, i.Value[1]);
                 LogicDictionaryData.DictionaryLocationEntries locationObject = new LogicDictionaryData.DictionaryLocationEntries();
+                locationObject.OriginalItem = i.Value[2];
                 locationObject.Area = i.Value[0];
                 locationObject.ID = i.Key;
                 locationObject.Name = i.Key;
@@ -498,6 +499,7 @@ namespace MMR_Tracker_V3.OtherGames
             {
                 if (Log.settings.ContainsKey(setting) && Instance.UserOptions.ContainsKey(setting))
                 {
+                    Debug.WriteLine($"Settng {Instance.UserOptions[setting].ID} To {Log.settings[setting].ToString()}");
                     Instance.UserOptions[setting].CurrentValue = Log.settings[setting].ToString();
                 }
             }
@@ -508,14 +510,16 @@ namespace MMR_Tracker_V3.OtherGames
             {
                 if (Log.settings.ContainsKey(setting) && Instance.Variables.ContainsKey("bridge_amount"))
                 {
-                    Instance.Variables["bridge_amount"] = Log.settings[setting];
+                    Debug.WriteLine($"Settng {Instance.Variables["bridge_amount"].ID} To {Log.settings[setting]}");
+                    Instance.Variables["bridge_amount"].Value = Log.settings[setting];
                 }
             }
             foreach (var setting in GanonCount)
             {
                 if (Log.settings.ContainsKey(setting) && Instance.Variables.ContainsKey("ganon_key_amount"))
                 {
-                    Instance.Variables["ganon_key_amount"] = Log.settings[setting];
+                    Debug.WriteLine($"Settng {Instance.Variables["ganon_key_amount"].ID} To {Log.settings[setting]}");
+                    Instance.Variables["ganon_key_amount"].Value = Log.settings[setting];
                 }
             }
 
@@ -622,6 +626,7 @@ namespace MMR_Tracker_V3.OtherGames
             {
                 if (i.Randomizeditem.SpoilerLogGivenItem == null)
                 {
+                    Debug.WriteLine($"{i.ID} Was not found in spoiler log, Unrandomizing.");
                     i.SetRandomizedState(MiscData.RandomizedState.Unrandomized, Instance);
                 }
             }
@@ -630,6 +635,7 @@ namespace MMR_Tracker_V3.OtherGames
             {
                 if (i.SpoilerDefinedDestinationExit == null)
                 {
+                    Debug.WriteLine($"{i.ParentAreaID} => {i.ID} Was not found in spoiler log, Unrandomizing.");
                     i.SpoilerDefinedDestinationExit = i.GetVanillaDestination();
                 }
             }
