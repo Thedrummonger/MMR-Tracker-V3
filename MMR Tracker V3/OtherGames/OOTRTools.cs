@@ -492,8 +492,7 @@ namespace MMR_Tracker_V3.OtherGames
             Instance.StaticOptions.DecoupleEntrances = Log.settings.ContainsKey("decouple_entrances") && Log.settings["decouple_entrances"];
 
             string[] SpoilerLogSettings = new string[] { "Starting_age", "skip_child_zelda", "free_scarecrow", "open_door_of_time", "complete_mask_quest", "bombchus_in_logic", "plant_beans", 
-                "hints", "damage_multiplier", "gerudo_fortress", "open_forest", "zora_fountain", "open_kakariko", "bridge", "lacs_condition", "shuffle_ganon_bosskey" };
-
+                "hints", "damage_multiplier", "gerudo_fortress", "open_forest", "zora_fountain", "open_kakariko", "bridge", "shuffle_ganon_bosskey" };
 
             foreach(var setting in SpoilerLogSettings)
             {
@@ -501,6 +500,29 @@ namespace MMR_Tracker_V3.OtherGames
                 {
                     Instance.UserOptions[setting].CurrentValue = Log.settings[setting].ToString();
                 }
+            }
+
+            string[] BridgeCount = new string[] { "bridge_stones", "bridge_medallions", "bridge_rewards", "bridge_tokens" };
+            string[] GanonCount = new string[] { "ganon_bosskey_stones", "ganon_bosskey_medallions", "ganon_bosskey_rewards", "ganon_bosskey_tokens" };
+            foreach(var setting in BridgeCount)
+            {
+                if (Log.settings.ContainsKey(setting) && Instance.Variables.ContainsKey("bridge_amount"))
+                {
+                    Instance.Variables["bridge_amount"] = Log.settings[setting];
+                }
+            }
+            foreach (var setting in GanonCount)
+            {
+                if (Log.settings.ContainsKey(setting) && Instance.Variables.ContainsKey("ganon_key_amount"))
+                {
+                    Instance.Variables["ganon_key_amount"] = Log.settings[setting];
+                }
+            }
+
+            string[] SageGiftActive = new string[] { "stones", "medallions", "dungeons", "tokens" };
+            if (SageGiftActive.Contains(Instance.UserOptions["shuffle_ganon_bosskey"].CurrentValue))
+            {
+                Instance.LocationPool["Gift from Sages"].SetRandomizedState(MiscData.RandomizedState.ForcedJunk, Instance);
             }
 
             foreach (var i in Log.locations)

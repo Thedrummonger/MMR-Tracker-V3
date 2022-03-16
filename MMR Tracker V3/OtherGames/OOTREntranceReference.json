@@ -257,7 +257,7 @@
     "Bongo Bongo": "Shadow Medallion",
     "Twinrova": "Spirit Medallion",
     "Ganon": "Triforce",
-    "Gift from Sages": "Rupee (1)",
+    "Gift from Sages": "Boss Key (Ganons Castle)",
     "Song from Impa": "Zeldas Lullaby",
     "Song from Malon": "Eponas Song",
     "Song from Saria": "Sarias Song",
@@ -1298,13 +1298,6 @@
       "open",
       "random"
     ],
-    "lacs_condition": [
-      "dungeons",
-      "medallions",
-      "stones",
-      "tokens",
-      "vanilla"
-    ],
     "shuffle_ganon_bosskey": [
       "dungeon",
       "remove",
@@ -1491,12 +1484,6 @@
       "Name": "Amount Needed for Bridge",
       "Static": false,
       "Value": 6
-    },
-    {
-      "ID": "lacs_amount",
-      "Name": "Amount Needed for LACS",
-      "Static": false,
-      "Value": 9
     },
     {
       "ID": "ganon_key_amount",
