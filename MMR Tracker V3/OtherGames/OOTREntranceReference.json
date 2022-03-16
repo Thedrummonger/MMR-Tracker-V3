@@ -987,7 +987,8 @@
     "ZF Jabu Gossip Stone": "ZF (Jabu)",
     "ZR Near Domain Gossip Stone": "ZR (Near Domain)",
     "ZR Near Grottos Gossip Stone": "ZR (Near Grottos)",
-    "ZR Open Grotto Gossip Stone": "ZR (Open Grotto)"
+    "ZR Open Grotto Gossip Stone": "ZR (Open Grotto)",
+    "Ganondorf Hint": "Ganondorf Hint"
   },
   "ItemPool": [
     "Bombs (5)",
@@ -1461,6 +1462,13 @@
     "Master Quest": "Dungeon Layout",
     "Active": "Trial Status",
     "Inactive": "Trial Status"
+  },
+  "Wallets": {
+    "Progressive Wallet": [ "true", -1 ],
+    "Starting Wallet": [ "true", 99 ],
+    "Adult Wallet": [ "Progressive Wallet, 1", 200 ],
+    "Giant Wallet": [ "Progressive Wallet, 2", 500 ],
+    "Tycoon Wallet": [ "Progressive Wallet, 3", 999 ]
   },
   "Variables": [
     {

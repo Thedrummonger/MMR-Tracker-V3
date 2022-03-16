@@ -61,6 +61,7 @@ namespace MMR_Tracker_V3.OtherGames
         public Dictionary<string, string[]> StaticLocations { get; set; } = new Dictionary<string, string[]>();
         public Dictionary<string, string> StaticItems { get; set; } = new Dictionary<string, string>();
         public Dictionary<string, string[]> LogicTricks { get; set; } = new Dictionary<string, string[]>();
+        public Dictionary<string, dynamic[]> Wallets { get; set; } = new Dictionary<string, dynamic[]>();
         public List<LogicDictionaryData.TrackerVariable> Variables { get; set; } = new List<LogicDictionaryData.TrackerVariable>();
     }
     public class OOTRTools
@@ -282,6 +283,23 @@ namespace MMR_Tracker_V3.OtherGames
                 Condesedlogic.Add(i.Key, i.Value);
             }
 
+            foreach(var i in TestTable.Wallets)
+            {
+                var ItemEntry = OORTDict.ItemList.Find(x => x.ID == CleanItem(i.Key));
+                if (ItemEntry == null)
+                {
+                    Condesedlogic.Add(i.Key, i.Value[0]);
+                    LogicDictionaryData.DictionaryMacroEntry WalletMacro = new LogicDictionaryData.DictionaryMacroEntry();
+                    WalletMacro.ID = i.Key;
+                    WalletMacro.WalletCapacity = (int)i.Value[1];
+                    OORTDict.MacroList.Add(WalletMacro);
+                }
+                else
+                {
+                    ItemEntry.WalletCapacity = (int)i.Value[1];
+                }
+            }
+
             foreach (var i in TestTable.StaticLocations)
             {
                 Condesedlogic.Add(i.Key, i.Value[1]);
@@ -314,9 +332,10 @@ namespace MMR_Tracker_V3.OtherGames
                 }
                 MMRData.JsonFormatLogicItem logicItem = new MMRData.JsonFormatLogicItem();
                 logicItem.Id = i.Key;
-                logicItem.ConditionalItems = CleanLogic( LogicStringParser.ConvertLogicStringToConditional(CurrentLogic) );
+                logicItem.ConditionalItems = CleanLogic(LogicStringParser.ConvertLogicStringToConditional(CurrentLogic));
                 logicCleaner.RemoveRedundantConditionals(logicItem);
                 logicCleaner.MakeCommonConditionalsRequirements(logicItem);
+                logicItem.RequiredItems = logicItem.RequiredItems.Where(x => x.ToLower() != "true").ToList();
                 OORTLogic.Logic.Add(logicItem);
             }
             foreach (var i in TestTable.LogicTricks)
@@ -423,7 +442,11 @@ namespace MMR_Tracker_V3.OtherGames
                     var CleanedLogic = RemoveCommentsFromJSON(ItemDataLines);
                     var tempLogic = JsonConvert.DeserializeObject<List<OOTRLogicObject>>(CleanedLogic, new JsonSerializerSettings() { MissingMemberHandling = MissingMemberHandling.Ignore });
 
-                    if (MQData) { foreach (var t in tempLogic) { t.MQ = true; } }
+                    foreach (var t in tempLogic) 
+                    { 
+                        t.MQ = MQData; 
+                        if (t.region_name == "Ganons Castle Tower") { t.Dungeon = null; }
+                    }
                     Logic.AddRange(tempLogic);
                 }
             }
@@ -549,6 +572,7 @@ namespace MMR_Tracker_V3.OtherGames
             Instance.LocationPool["Spirit Temple Layout"].Randomizeditem.SpoilerLogGivenItem = Log.dungeons["Spirit Temple"] != "mq" ? "Vanilla" : "Master Quest";
             Instance.LocationPool["Water Temple Layout"].Randomizeditem.SpoilerLogGivenItem = Log.dungeons["Water Temple"] != "mq" ? "Vanilla" : "Master Quest";
 
+            string LightArrowLocation = "";
             foreach (var i in Log.locations)
             {
                 string Locations = i.Key;
@@ -568,6 +592,7 @@ namespace MMR_Tracker_V3.OtherGames
                     if (!Instance.ItemPool.ContainsKey(Item)) { Debug.WriteLine(Item + " Was an unknown item."); }
                     Instance.LocationPool[Locations].Randomizeditem.SpoilerLogGivenItem = Item;
                     if (Price > 0) { Instance.LocationPool[Locations].CheckPrice = Price; }
+                    if (Item == "Light_Arrows") { LightArrowLocation = Instance.LocationPool[Locations].GetDictEntry(Instance).Area; }
                 }
                 else
                 {
@@ -584,6 +609,9 @@ namespace MMR_Tracker_V3.OtherGames
                 }
                 GossipLocation.SpoilerHintText = i.Value.text;
             }
+            
+            Instance.HintPool["Ganondorf Hint"].SpoilerHintText = $"Ha ha ha... You'll never beat me by reflecting my lightning bolts and unleashing the arrows" + ((bool)Log.settings["misc_hints"] ? $" from {LightArrowLocation}."  : ".");
+
             foreach (var i in Log.entrances)
             {
                 Debug.WriteLine($"==================================================");
