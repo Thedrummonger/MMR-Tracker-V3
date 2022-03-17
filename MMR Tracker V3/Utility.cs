@@ -90,6 +90,7 @@ namespace MMR_Tracker_V3
                     var RandomizedItem = instance.GetItemByID(i.Randomizeditem.Item);
                     if (RandomizedItem != null) { RandomizedItemDisplay = RandomizedItem.GetDictEntry(instance).GetItemName(instance) ?? RandomizedItem.Id; }
                     Displayname += $": {RandomizedItemDisplay}";
+                    if (i.CheckPrice > -1) { Displayname += $" [${i.CheckPrice}]"; }
                 }
             }
             else if (Function == 1) //Checked Locations
@@ -98,6 +99,7 @@ namespace MMR_Tracker_V3
                 var RandomizedItem = instance.GetItemByID(i.Randomizeditem.Item);
                 if (RandomizedItem != null) { Displayname = RandomizedItem.GetDictEntry(instance).GetItemName(instance) ?? RandomizedItem.Id; }
                 Displayname = $"{Displayname}: {i.GetDictEntry(instance).Name ?? i.ID}";
+                if (i.CheckPrice > -1) { Displayname += $" [${i.CheckPrice}]"; }
             }
             return Displayname;
         }

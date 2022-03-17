@@ -24,6 +24,7 @@ namespace MMR_Tracker_V3
             public List<EntranceData.EntranceRandoExit> CheckedEntrances { get; set; } = new List<EntranceData.EntranceRandoExit>();
 
             public List<HintData.HintObject> AvailableHints { get; set; } = new List<HintData.HintObject>();
+            public List<HintData.HintObject> AllAvailableHints { get; set; } = new List<HintData.HintObject>();
             public List<HintData.HintObject> UnheckedHints { get; set; } = new List<HintData.HintObject>();
             public List<HintData.HintObject> CheckedHints { get; set; } = new List<HintData.HintObject>();
             public List<HintData.HintObject> MarkedHints { get; set; } = new List<HintData.HintObject>();
@@ -44,18 +45,20 @@ namespace MMR_Tracker_V3
             dataSets.MarkedLocations = instance.LocationPool.Values.Where(x => x.CheckState == MiscData.CheckState.Marked).ToList();
             dataSets.CheckedLocations = instance.LocationPool.Values.Where(x => x.CheckState == MiscData.CheckState.Checked).ToList();
             dataSets.AllAvailableLocations = instance.LocationPool.Values.Where(x => x.CheckState != MiscData.CheckState.Checked).ToList();
-            dataSets.AvailableLocations = dataSets.AllAvailableLocations.Where(x => x.Available).ToList();
+            dataSets.AvailableLocations = dataSets.AllAvailableLocations.Where(x => x.Available || x.CheckState == MiscData.CheckState.Marked).ToList();
 
-            dataSets.UncheckedEntrances = instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values.Where(x => x.CheckState == MiscData.CheckState.Unchecked)).ToList();
-            dataSets.MarkedEntrances = instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values.Where(x => x.CheckState == MiscData.CheckState.Checked)).ToList();
-            dataSets.CheckedEntrances = instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values.Where(x => x.CheckState == MiscData.CheckState.Marked)).ToList();
-            dataSets.AllAvailableEntrances = instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values.Where(x => x.CheckState != MiscData.CheckState.Checked)).ToList();
-            dataSets.AvailableEntrances = instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values.Where(x => x.Available)).ToList();
+            var AllExits = instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values);
+            dataSets.UncheckedEntrances = AllExits.Where(x => x.CheckState == MiscData.CheckState.Unchecked).ToList();
+            dataSets.MarkedEntrances = AllExits.Where(x => x.CheckState == MiscData.CheckState.Checked).ToList();
+            dataSets.CheckedEntrances = AllExits.Where(x => x.CheckState == MiscData.CheckState.Marked).ToList();
+            dataSets.AllAvailableEntrances = AllExits.Where(x => x.CheckState != MiscData.CheckState.Checked).ToList();
+            dataSets.AvailableEntrances = AllExits.Where(x => x.Available || x.CheckState == MiscData.CheckState.Marked).ToList();
 
             dataSets.UnheckedHints = instance.HintPool.Values.Where(x => x.CheckState == MiscData.CheckState.Unchecked).ToList();
             dataSets.MarkedHints = instance.HintPool.Values.Where(x => x.CheckState == MiscData.CheckState.Marked).ToList();
             dataSets.CheckedHints = instance.HintPool.Values.Where(x => x.CheckState == MiscData.CheckState.Checked).ToList();
-            dataSets.AvailableHints = instance.HintPool.Values.Where(x => x.CheckState != MiscData.CheckState.Checked && x.Available).ToList();
+            dataSets.AllAvailableHints = instance.HintPool.Values.Where(x => x.CheckState != MiscData.CheckState.Checked).ToList();
+            dataSets.AvailableHints = dataSets.AllAvailableHints.Where(x => x.Available || x.CheckState == MiscData.CheckState.Marked).ToList();
 
             dataSets.Tricks = instance.MacroPool.Values.Where(x => x.isTrick(instance)).ToList();
             dataSets.AvailableStartingItems = instance.ItemPool.Values.Where(x => x.ValidStartingItem(instance)).ToList();
@@ -162,7 +165,7 @@ namespace MMR_Tracker_V3
             {
                 foreach (var area in Instance.EntrancePool.AreaList)
                 {
-                    var CheckLoadingZoneExits = area.Value.LoadingZoneExits.Where(x => x.Value.CheckState == MiscData.CheckState.Checked);
+                    var CheckLoadingZoneExits = area.Value.LoadingZoneExits.Where(x => x.Value.CheckState == MiscData.CheckState.Checked && EntranceAppearsinListbox(x.Value, Instance));
                     var FilteredCheckedExits = CheckLoadingZoneExits.Where(x => SearchStringParser.FilterSearch(Instance, x.Value, Filter, ExitDisplayName(x.Value)));
 
                     ItemsInListBox += CheckLoadingZoneExits.Count();
@@ -266,7 +269,7 @@ namespace MMR_Tracker_V3
             var AvailableHints = DataSets.AvailableHints;
             if (Filter.StartsWith("^") || ShowUnavailable)
             {
-                AvailableHints = DataSets.UnheckedHints;
+                AvailableHints = DataSets.AllAvailableHints;
             }
 
             var ItemsInListBox = 0;
@@ -378,7 +381,10 @@ namespace MMR_Tracker_V3
             OutItemsInListBoxFiltered = 0;
             foreach (var area in Instance.EntrancePool.AreaList)
             {
-                var AvailableExits = area.Value.LoadingZoneExits.Where(x => (x.Value.Available || ShowUnavailable) && x.Value.CheckState != MiscData.CheckState.Checked);
+                var AvailableExits = area.Value.LoadingZoneExits.Where(x => 
+                (x.Value.Available || x.Value.CheckState == MiscData.CheckState.Marked || ShowUnavailable || Filter.StartsWith("^")) && 
+                x.Value.CheckState != MiscData.CheckState.Checked && EntranceAppearsinListbox(x.Value, Instance));
+
                 var FilteredAvailableExits = AvailableExits.Where(x => SearchStringParser.FilterSearch(Instance, x.Value, Filter, ExitDisplayName(x.Value)));
 
                 OutItemsInListBox += AvailableExits.Count();
@@ -406,6 +412,10 @@ namespace MMR_Tracker_V3
         private static bool LocationAppearsinListbox(LocationData.LocationObject Location, LogicObjects.TrackerInstance Instance)
         {
             return !Location.IsJunk() && !Location.IsUnrandomized(1) && !string.IsNullOrWhiteSpace(Location.GetDictEntry(Instance).Name);
+        }
+        private static bool EntranceAppearsinListbox(EntranceData.EntranceRandoExit Location, LogicObjects.TrackerInstance Instance)
+        {
+            return !Location.IsJunk() && !Location.IsUnrandomized(1);
         }
     }
 }

@@ -43,7 +43,7 @@ namespace Windows_Form_Frontend
             }
             else if (_InputItems[0] is LogicDictionaryData.TrackerVariable IntVariableObject)
             {
-                if (IntVariableObject.Value is Int64)
+                if (IntVariableObject.Value is Int64||IntVariableObject.Value is Int32||IntVariableObject.Value is Int16||IntVariableObject.Value is int)
                 {
                     SetUIElements(false, $"Set value for {IntVariableObject.Name??IntVariableObject.ID}", "Set Value", "Integer: " + IntVariableObject.Name ?? IntVariableObject.ID);
                     numericUpDown1.Value = IntVariableObject.Value;

@@ -426,6 +426,7 @@ namespace Windows_Form_Frontend
             this.miscOptionsToolStripMenuItem.Name = "miscOptionsToolStripMenuItem";
             this.miscOptionsToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.miscOptionsToolStripMenuItem.Text = "Misc Options";
+            this.miscOptionsToolStripMenuItem.Click += new System.EventHandler(this.miscOptionsToolStripMenuItem_Click);
             // 
             // toolsToolStripMenuItem
             // 
@@ -533,6 +534,7 @@ namespace Windows_Form_Frontend
             this.Controls.Add(this.TXTEntSearch);
             this.Controls.Add(this.TXTLocSearch);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;

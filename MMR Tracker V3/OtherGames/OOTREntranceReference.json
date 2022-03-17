@@ -1464,11 +1464,11 @@
     "Inactive": "Trial Status"
   },
   "Wallets": {
-    "Progressive Wallet": [ "true", -1 ],
+    "Progressive_Wallet": [ "true", -1 ],
     "Starting Wallet": [ "true", 99 ],
-    "Adult Wallet": [ "Progressive Wallet, 1", 200 ],
-    "Giant Wallet": [ "Progressive Wallet, 2", 500 ],
-    "Tycoon Wallet": [ "Progressive Wallet, 3", 999 ]
+    "Adult Wallet": [ "Progressive_Wallet, 1", 200 ],
+    "Giant Wallet": [ "Progressive_Wallet, 2", 500 ],
+    "Tycoon Wallet": [ "Progressive_Wallet, 3", 999 ]
   },
   "Variables": [
     {

@@ -94,6 +94,14 @@ namespace MMR_Tracker_V3.TrackerObjects
                 if ((Include == 0 || Include == 2) && RandomizedState == RandomizedState.UnrandomizedManual) { return true; }
                 return false;
             }
+            public bool IsRandomized()
+            {
+                return RandomizedState == RandomizedState.Randomized;
+            }
+            public bool IsJunk()
+            {
+                return RandomizedState == RandomizedState.ForcedJunk;
+            }
         }
         public class EntranceRandoDestination
         {

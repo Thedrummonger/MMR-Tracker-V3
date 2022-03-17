@@ -30,6 +30,10 @@ namespace Windows_Form_Frontend
         private void RandomizedStateEditor_Load(object sender, EventArgs e)
         {
             cmbLocationType.Items.Add("Item Locations");
+            if (_Instance.EntrancePool.AreaList.Any())
+            {
+                cmbLocationType.Items.Add("Entrances");
+            }
             cmbLocationType.SelectedIndex = 0;
 
             PrintToLocationList(); 
@@ -54,9 +58,16 @@ namespace Windows_Form_Frontend
             Updating = true;
             lvLocationList.ShowItemToolTips = true;
             lvLocationList.Items.Clear();
-            if (cmbLocationType.SelectedItem is string selection && selection == "Item Locations")
+            if (cmbLocationType.SelectedItem is string selection)
             {
-                PrintLocationData();
+                if (selection == "Item Locations")
+                {
+                    PrintLocationData();
+                }
+                else if (selection == "Entrances")
+                {
+                    PrintExitData();
+                }
             }
             Updating = false;
         }
@@ -97,8 +108,35 @@ namespace Windows_Form_Frontend
                 string[] row = { i.Value.DisplayName, VanillaItemText, i.Value.RandomizedState.GetDescription() };
                 ListViewItem listViewItem = new ListViewItem(row) { Tag = i.Value };
                 listViewItem.Checked = CheckedLocationItems.Contains(i.Value);
-                listViewItem.ToolTipText = $"Location: {i.Value.DisplayName} \nVanilla Item: {VanillaItemText} \nRandomized State: {i.Value.RandomizedState}";
+                listViewItem.ToolTipText = $"Exit: {i.Value.DisplayName} \nVanilla Destination: {VanillaItemText} \nRandomized State: {i.Value.RandomizedState}";
                 TempList.Add(listViewItem);
+            }
+            lvLocationList.Items.AddRange(TempList.ToArray());
+            lvLocationList.CheckBoxes = true;
+        }
+
+        private List<EntranceData.EntranceRandoExit> CheckedExitItems = new List<EntranceData.EntranceRandoExit>();
+        private void PrintExitData()
+        {
+            List<ListViewItem> TempList = new List<ListViewItem>();
+            foreach (var area in _Instance.EntrancePool.AreaList)
+            {
+                foreach(var i in area.Value.LoadingZoneExits)
+                {
+                    if (i.Value.IsRandomized() && !chkShowRand.Checked) { continue; }
+                    if (i.Value.IsUnrandomized(1) && !chkShowUnrand.Checked) { continue; }
+                    if (i.Value.IsUnrandomized(2) && !chkShowManual.Checked) { continue; }
+                    if (i.Value.IsJunk() && !chkShowJunk.Checked) { continue; }
+                    i.Value.DisplayName = i.Value.ParentAreaID + " => " + i.Value.ID;
+                    if (!SearchStringParser.FilterSearch(_Instance, i.Value, TxtLocationSearch.Text, i.Value.DisplayName)) { continue; }
+                    string VanillaItemText = i.Value.ID + " <= " + i.Value.ParentAreaID;
+
+                    string[] row = { i.Value.DisplayName, VanillaItemText, i.Value.RandomizedState.GetDescription() };
+                    ListViewItem listViewItem = new ListViewItem(row) { Tag = i.Value };
+                    listViewItem.Checked = CheckedExitItems.Contains(i.Value);
+                    listViewItem.ToolTipText = $"Location: {i.Value.DisplayName} \nVanilla Item: {VanillaItemText} \nRandomized State: {i.Value.RandomizedState}";
+                    TempList.Add(listViewItem);
+                }
             }
             lvLocationList.Items.AddRange(TempList.ToArray());
             lvLocationList.CheckBoxes = true;
@@ -197,15 +235,17 @@ namespace Windows_Form_Frontend
         private void lvLocationList_ItemChecked(object sender, ItemCheckedEventArgs e)
         {
             if (Updating) { return; }
-            var item = (LocationData.LocationObject)e.Item.Tag;
-            if (e.Item.Checked)
+            if (e.Item.Tag is LocationData.LocationObject LocationObject)
             {
-                CheckedLocationItems.Add(item);
+                if (e.Item.Checked) { CheckedLocationItems.Add(LocationObject); }
+                else { CheckedLocationItems.Remove(LocationObject); }
             }
-            else
+            else if (e.Item.Tag is EntranceData.EntranceRandoExit ExitObject)
             {
-                CheckedLocationItems.Remove(item);
+                if (e.Item.Checked) { CheckedExitItems.Add(ExitObject); }
+                else { CheckedExitItems.Remove(ExitObject); }
             }
+
         }
 
         private void TxtLocationSearch_TextChanged(object sender, EventArgs e)
@@ -232,7 +272,15 @@ namespace Windows_Form_Frontend
                 if (button == btnSetJunk) { i.SetRandomizedState(MiscData.RandomizedState.ForcedJunk, _Instance); }
             }
             CheckedLocationItems.Clear();
-            
+            foreach (var i in CheckedExitItems)
+            {
+                if (button == btnSetRandomized) { i.RandomizedState = MiscData.RandomizedState.Randomized; }
+                if (button == btnSetUnRandomized) { i.RandomizedState = MiscData.RandomizedState.Unrandomized; }
+                if (button == btnSetManual) { i.RandomizedState = MiscData.RandomizedState.UnrandomizedManual; }
+                if (button == btnSetJunk) { i.RandomizedState = MiscData.RandomizedState.ForcedJunk; }
+            }
+            CheckedExitItems.Clear();
+
             UpdateItemSets();
             PrintToLocationList();
             PrintStartingItemData();

@@ -94,9 +94,10 @@ namespace MMR_Tracker_V3
             {
                 bool EntranceChanges = CalculateEntranceMacros(instance);
                 bool UnrandomizedItemChecked = CheckUrandomizedLocations(instance);
+                bool UnrandomizedExitChecked = CheckUrandomizedExits(instance);
                 bool MacroChanged = CalculateMacros(instance);
                 Itterations++;
-                 if (!MacroChanged && !EntranceChanges && !UnrandomizedItemChecked) { break; }
+                 if (!MacroChanged && !EntranceChanges && !UnrandomizedItemChecked && !UnrandomizedExitChecked) { break; }
             }
             Debug.WriteLine($"Auto Item calculation took {Itterations} Itterations");
             Utility.TimeCodeExecution(LogicTime, "Calculating Auto Checked Items", 1);
@@ -111,7 +112,7 @@ namespace MMR_Tracker_V3
             Utility.TimeCodeExecution(LogicTime, "Calculating Locations", 1);
             foreach (var Area in instance.EntrancePool.AreaList)
             {
-                foreach (var i in Area.Value.LoadingZoneExits)
+                foreach (var i in Area.Value.LoadingZoneExits.Where(x => !x.Value.IsUnrandomized(1) && !x.Value.IsJunk()))
                 {
                     var Logic = instance.GetLogic(instance.EntrancePool.GetLogicNameFromExit(i.Value));
                     i.Value.Available =
@@ -130,6 +131,33 @@ namespace MMR_Tracker_V3
             }
             Utility.TimeCodeExecution(LogicTime, "Calculating Hints", -1);
             Debug.WriteLine("----------------------------------------");
+        }
+
+        private static bool CheckUrandomizedExits(TrackerInstance instance)
+        {
+            bool ItemStateChanged = false;
+            foreach (var Area in instance.EntrancePool.AreaList)
+            {
+                foreach (var i in Area.Value.LoadingZoneExits.Where(x => x.Value.IsUnrandomized(1)))
+                {
+                    var Logic = instance.GetLogic(instance.EntrancePool.GetLogicNameFromExit(i.Value));
+                    var Available =
+                        AreaReached(Area.Key, instance) &&
+                        RequirementsMet(Logic.RequiredItems, instance) &&
+                        ConditionalsMet(Logic.ConditionalItems, instance);
+                    bool ShouldBeChecked = Available && i.Value.CheckState != CheckState.Checked;
+                    bool ShouldBeUnChecked = !Available && i.Value.CheckState == CheckState.Checked;
+                    if (ShouldBeChecked || ShouldBeUnChecked)
+                    {
+                        ItemStateChanged = true;
+                        i.Value.Available = Available;
+                        CheckState checkState = i.Value.Available ? CheckState.Checked : CheckState.Unchecked;
+                        if (checkState == CheckState.Checked) { i.Value.DestinationExit = i.Value.GetVanillaDestination(); }
+                        i.Value.ToggleExitChecked(checkState, instance);
+                    }
+                }
+            }
+            return ItemStateChanged;
         }
 
         private static void ResetAutoObtainedItems(TrackerInstance instance)

@@ -1,4 +1,5 @@
 ﻿using MMR_Tracker_V3;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -43,6 +44,11 @@ namespace Windows_Form_Frontend
             }
 
             TrackerInstanceCreation.PopulateTrackerObject(NewInstance);
+
+            if (File.Exists(References.WindowsPaths.OptionFile))
+            {
+                NewInstance.StaticOptions.OptionFile = JsonConvert.DeserializeObject<LogicObjects.OptionFile>(File.ReadAllText(References.WindowsPaths.OptionFile));
+            }
 
             MainInterface.CurrentTrackerInstance = NewInstance;
 

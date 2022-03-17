@@ -75,7 +75,6 @@ namespace MMR_Tracker_V3
         public class OptionFile
         {
             public bool CheckForUpdate { get; set; } = true;
-            public bool MoveMarkedToBottom { get; set; } = false;
             public WinformData WinformData { get; set; } = new WinformData();
         }
 

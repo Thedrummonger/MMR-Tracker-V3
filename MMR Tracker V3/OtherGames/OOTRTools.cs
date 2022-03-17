@@ -515,6 +515,8 @@ namespace MMR_Tracker_V3.OtherGames
 
             Instance.StaticOptions.DecoupleEntrances = Log.settings.ContainsKey("decouple_entrances") && Log.settings["decouple_entrances"];
 
+            Instance.LocationPool["Ganon"].Randomizeditem.SpoilerLogGivenItem = Instance.LocationPool["Ganon"].GetDictEntry(Instance).OriginalItem;
+
             string[] SpoilerLogSettings = new string[] { "Starting_age", "skip_child_zelda", "free_scarecrow", "open_door_of_time", "complete_mask_quest", "bombchus_in_logic", "plant_beans", 
                 "hints", "damage_multiplier", "gerudo_fortress", "open_forest", "zora_fountain", "open_kakariko", "bridge", "shuffle_ganon_bosskey" };
 
@@ -552,25 +554,52 @@ namespace MMR_Tracker_V3.OtherGames
                 Instance.LocationPool["Gift from Sages"].SetRandomizedState(MiscData.RandomizedState.ForcedJunk, Instance);
             }
 
-            Instance.LocationPool["Forest Trial Status"].Randomizeditem.SpoilerLogGivenItem = char.ToUpper(Log.trials["Forest"][0]) + Log.trials["Forest"][1..];
-            Instance.LocationPool["Fire Trial Status"].Randomizeditem.SpoilerLogGivenItem = char.ToUpper(Log.trials["Fire"][0]) + Log.trials["Fire"][1..];
-            Instance.LocationPool["Water Trial Status"].Randomizeditem.SpoilerLogGivenItem = char.ToUpper(Log.trials["Water"][0]) + Log.trials["Water"][1..];
-            Instance.LocationPool["Spirit Trial Status"].Randomizeditem.SpoilerLogGivenItem = char.ToUpper(Log.trials["Spirit"][0]) + Log.trials["Spirit"][1..];
-            Instance.LocationPool["Shadow Trial Status"].Randomizeditem.SpoilerLogGivenItem = char.ToUpper(Log.trials["Shadow"][0]) + Log.trials["Shadow"][1..];
-            Instance.LocationPool["Light Trial Status"].Randomizeditem.SpoilerLogGivenItem = char.ToUpper(Log.trials["Light"][0]) + Log.trials["Light"][1..];
-
-            Instance.LocationPool["Ganons Castle Layout"].Randomizeditem.SpoilerLogGivenItem = Log.dungeons["Ganons Castle"] != "mq" ? "Vanilla" : "Master Quest";
-            Instance.LocationPool["Bottom of the Well Layout"].Randomizeditem.SpoilerLogGivenItem = Log.dungeons["Bottom of the Well"] != "mq" ? "Vanilla" : "Master Quest";
-            Instance.LocationPool["Deku Tree Layout"].Randomizeditem.SpoilerLogGivenItem = Log.dungeons["Deku Tree"] != "mq" ? "Vanilla" : "Master Quest";
-            Instance.LocationPool["Dodongos Cavern Layout"].Randomizeditem.SpoilerLogGivenItem = Log.dungeons["Dodongos Cavern"] != "mq" ? "Vanilla" : "Master Quest";
-            Instance.LocationPool["Fire Temple Layout"].Randomizeditem.SpoilerLogGivenItem = Log.dungeons["Fire Temple"] != "mq" ? "Vanilla" : "Master Quest";
-            Instance.LocationPool["Forest Temple Layout"].Randomizeditem.SpoilerLogGivenItem = Log.dungeons["Forest Temple"] != "mq" ? "Vanilla" : "Master Quest";
-            Instance.LocationPool["Gerudo Training Ground Layout"].Randomizeditem.SpoilerLogGivenItem = Log.dungeons["Gerudo Training Ground"] != "mq" ? "Vanilla" : "Master Quest";
-            Instance.LocationPool["Ice Cavern Layout"].Randomizeditem.SpoilerLogGivenItem = Log.dungeons["Ice Cavern"] != "mq" ? "Vanilla" : "Master Quest";
-            Instance.LocationPool["Jabu Jabus Belly Layout"].Randomizeditem.SpoilerLogGivenItem = Log.dungeons["Jabu Jabus Belly"] != "mq" ? "Vanilla" : "Master Quest";
-            Instance.LocationPool["Shadow Temple Layout"].Randomizeditem.SpoilerLogGivenItem = Log.dungeons["Shadow Temple"] != "mq" ? "Vanilla" : "Master Quest";
-            Instance.LocationPool["Spirit Temple Layout"].Randomizeditem.SpoilerLogGivenItem = Log.dungeons["Spirit Temple"] != "mq" ? "Vanilla" : "Master Quest";
-            Instance.LocationPool["Water Temple Layout"].Randomizeditem.SpoilerLogGivenItem = Log.dungeons["Water Temple"] != "mq" ? "Vanilla" : "Master Quest";
+            Dictionary<string, string> DungeonLayouts = new Dictionary<string, string>
+            {
+                { "Ganons Castle Layout", "Ganons Castle" },
+                { "Bottom of the Well Layout", "Bottom of the Well" },
+                { "Deku Tree Layout", "Deku Tree" },
+                { "Dodongos Cavern Layout", "Dodongos Cavern" },
+                { "Fire Temple Layout", "Fire Temple" },
+                { "Forest Temple Layout", "Forest Temple" },
+                { "Gerudo Training Ground Layout", "Gerudo Training Ground" },
+                { "Ice Cavern Layout", "Ice Cavern" },
+                { "Jabu Jabus Belly Layout", "Jabu Jabus Belly" },
+                { "Shadow Temple Layout", "Shadow Temple" },
+                { "Spirit Temple Layout", "Spirit Temple" },
+                { "Water Temple Layout", "Water Temple" },
+            };
+            Dictionary<string, string> TrialStatus = new Dictionary<string, string>
+            {
+                { "Forest Trial Status", "Forest" },
+                { "Fire Trial Status", "Fire" },
+                { "Water Trial Status", "Water" },
+                { "Spirit Trial Status", "Spirit" },
+                { "Shadow Trial Status", "Shadow" },
+                { "Light Trial Status", "Light" },
+            };
+            foreach(var i in TrialStatus)
+            {
+                if (Log.settings.ContainsKey("trials_random") && !Log.settings["trials_random"] && Log.settings["trials"] == 6)
+                {
+                    Instance.LocationPool[i.Key].RandomizedState = MiscData.RandomizedState.Unrandomized;
+                }
+                else
+                {
+                    Instance.LocationPool[i.Key].Randomizeditem.SpoilerLogGivenItem = char.ToUpper(Log.trials[i.Value][0]) + Log.trials[i.Value][1..];
+                }
+            }
+            foreach (var i in DungeonLayouts)
+            {
+                if (Log.settings.ContainsKey("mq_dungeons_mode") && (Log.settings["mq_dungeons_mode"] == "vanilla" || (Log.settings["mq_dungeons_mode"] == "count" && Log.settings["mq_dungeons_count"] == 0))) 
+                { 
+                    Instance.LocationPool[i.Key].RandomizedState = MiscData.RandomizedState.Unrandomized; 
+                }
+                else
+                {
+                    Instance.LocationPool[i.Key].Randomizeditem.SpoilerLogGivenItem = Log.dungeons[i.Value] == "mq" ? "Master Quest" : "Vanilla";
+                }
+            }
 
             string LightArrowLocation = "";
             foreach (var i in Log.locations)
@@ -706,7 +735,7 @@ namespace MMR_Tracker_V3.OtherGames
                 if (i.SpoilerDefinedDestinationExit == null)
                 {
                     Debug.WriteLine($"{i.ParentAreaID} -> {i.ID} Was not found in spoiler log, Unrandomizing.");
-                    i.SpoilerDefinedDestinationExit = i.GetVanillaDestination();
+                    i.RandomizedState = MiscData.RandomizedState.Unrandomized;
                 }
             }
         }

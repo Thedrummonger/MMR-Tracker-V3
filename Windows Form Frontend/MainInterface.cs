@@ -631,10 +631,11 @@ namespace Windows_Form_Frontend
 
         private void SetCheckPrice(LocationData.LocationObject itemObject)
         {
-            StartPosition:
-            string input = Interaction.InputBox("Set Check Price", $"{itemObject.GetDictEntry(CurrentTrackerInstance).Name}");
-            if (!int.TryParse(input, out int Price)) { goto StartPosition; }
-            itemObject.CheckPrice = Price;
+            string Identifier = itemObject.GetDictEntry(CurrentTrackerInstance).Name + " Price";
+            var PriceContainer = new List<LogicDictionaryData.TrackerVariable>() { new() { ID = Identifier, Value = 0 } };
+            VariableInputWindow PriceInput = new(PriceContainer, CurrentTrackerInstance);
+            PriceInput.ShowDialog();
+            itemObject.CheckPrice = (int)PriceContainer.First().Value;
             LogicCalculation.CalculateLogic(CurrentTrackerInstance);
             UpdateUI();
         }
@@ -968,6 +969,13 @@ namespace Windows_Form_Frontend
                 this.ActiveControl != TXTEntSearch &&
                 this.ActiveControl != TXTCheckedSearch)
             { e.Handled = true; }
+        }
+
+        private void miscOptionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StaticOptionSelect staticOptionSelect = new StaticOptionSelect(CurrentTrackerInstance);
+            staticOptionSelect.ShowDialog();
+            UpdateUI();
         }
     }
 }
