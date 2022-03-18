@@ -199,27 +199,18 @@ namespace Windows_Form_Frontend
             {
                 OpenFileDialog openFileDialog = new()
                 {
-                    Filter = "MMR Text Spoiler Log|*.txt|Json Spoiler Log (*.json)|*.json",
+                    Filter = SpoilerLogTools.GetSpoilerLogFilter(CurrentTrackerInstance),
                     Title = "Load Text Spoiler Log"
                 };
                 openFileDialog.ShowDialog();
                 if (openFileDialog.FileName != "" && File.Exists(openFileDialog.FileName))
                 {
-                    if (CurrentTrackerInstance.LogicFile.GameCode == "OOTR")
+                    string CurrentState = Utf8Json.JsonSerializer.ToJsonString(CurrentTrackerInstance);
+                    var ToUpdate = new List<ListBox> { LBCheckedLocations, LBValidEntrances, LBValidLocations };
+                    foreach (var i in ToUpdate) { i.Items.Clear(); i.Items.Add("Importing Spoiler Log"); i.Items.Add("Please Wait..."); i.Items.Add("Reading Spoiler Log.."); i.Refresh(); }
+                    if (SpoilerLogTools.ImportSpoilerLog(File.ReadAllLines(openFileDialog.FileName), CurrentTrackerInstance))
                     {
-                        OOTRTools.HandleOOTRSpoilerLog(File.ReadAllText(openFileDialog.FileName), CurrentTrackerInstance);
-                        return;
-                    }
-                    else
-                    {
-                        SaveTrackerState();
-                        var ToUpdate = new List<ListBox> { LBCheckedLocations, LBValidEntrances, LBValidLocations };
-                        foreach (var i in ToUpdate) { i.Items.Clear(); i.Items.Add("Importing Spoiler Log"); i.Items.Add("Please Wait..."); i.Items.Add("Reading Spoiler Log.."); i.Refresh(); }
-                        CurrentTrackerInstance.SpoilerLog = SpoilerLogTools.ReadSpoilerLog(File.ReadAllLines(openFileDialog.FileName));
-                        foreach (var i in ToUpdate) { i.Items.Add("Applying Settings..."); i.Refresh(); }
-                        SpoilerLogTools.ApplyMMRandoSettings(CurrentTrackerInstance, CurrentTrackerInstance.SpoilerLog);
-                        foreach (var i in ToUpdate) { i.Items.Add("Applying Spoiler Data..."); i.Refresh(); }
-                        SpoilerLogTools.ApplyMMRandoSpoilerLog(CurrentTrackerInstance, CurrentTrackerInstance.SpoilerLog);
+                        SaveTrackerState(CurrentState);
                     }
                 }
             }
@@ -730,131 +721,46 @@ namespace Windows_Form_Frontend
 
         private void HandleItemSelect(IEnumerable<object> Items, MiscData.CheckState checkState, bool EnforceMarkAction = false, object LB = null)
         {
+            Debug.WriteLine("Starting Check Action===================================");
             if (Items.Count() == 1)
             {
                 if (Items.First() is MiscData.Divider) { return; }
-                else if (Items.First() is MiscData.Areaheader header && LB != null) 
-                { 
+                else if (Items.First() is MiscData.Areaheader header && LB != null)
+                {
                     if (LB == LBValidLocations) { TXTLocSearch.Text = "#" + header.Area; }
                     else if (LB == LBValidEntrances) { TXTEntSearch.Text = "#" + header.Area; }
                     else if (LB == LBCheckedLocations) { TXTCheckedSearch.Text = "#" + header.Area; }
                     return;
                 }
             }
-            Debug.WriteLine("Checking Item===========================================================");
-            Stopwatch TotalTime = new Stopwatch();
-            Stopwatch FunctionTime = new Stopwatch();
-            Utility.TimeCodeExecution(TotalTime);
-            Utility.TimeCodeExecution(FunctionTime);
-
-            bool ChangesMade = false;
+            Stopwatch FullCodeTimer = new Stopwatch();
+            Utility.TimeCodeExecution(FullCodeTimer);
+            Stopwatch CodeTimer = new Stopwatch();
+            Utility.TimeCodeExecution(CodeTimer);
             string CurrentState = Utf8Json.JsonSerializer.ToJsonString(CurrentTrackerInstance);
-            Utility.TimeCodeExecution(FunctionTime, "Saving Current State", 1);
+            Utility.TimeCodeExecution(CodeTimer, "Saving tracker State", 1);
 
-            //Search for valid Object types in the list of selected Objects and sort them into lists
-            IEnumerable<LocationData.LocationObject> locationObjects = Items.Where(x => x is LocationData.LocationObject).Select(x => x as LocationData.LocationObject);
-            IEnumerable<EntranceData.EntranceRandoExit> ExitObjects = Items.Where(x => x is EntranceData.EntranceRandoExit).Select(x => x as EntranceData.EntranceRandoExit);
-            IEnumerable<OptionData.TrackerOption> OptionObjects = Items.Where(x => x is OptionData.TrackerOption).Select(x => x as OptionData.TrackerOption);
-            Utility.TimeCodeExecution(FunctionTime, "Sorting Selected Items", 1);
+            bool ChangesMade = TrackerDataHandeling.CheckSelectedItems(Items, checkState, CurrentTrackerInstance, HandleUnassignedChecks, HandleUnassignedVariables, EnforceMarkAction, FullCodeTimer);
+            Utility.TimeCodeExecution(CodeTimer, "---TOTAL Checking Selected Objects", 1);
 
-            //If we are performing an uncheck action there should be no unchecked locations in the list and even if there are nothing will be done to them anyway
-            //This check is neccessary for the "UnMark Only" action and also provides a bit more efficiency.
-            IEnumerable<LocationData.LocationObject> UncheckedlocationObjects = (checkState == MiscData.CheckState.Unchecked) ?
-                new List<LocationData.LocationObject>() :
-                locationObjects.Where(x => x.CheckState == MiscData.CheckState.Unchecked);
-            IEnumerable<EntranceData.EntranceRandoExit> UncheckedExitObjects = (checkState == MiscData.CheckState.Unchecked) ?
-                new List<EntranceData.EntranceRandoExit>() :
-                ExitObjects.Where(x => x.CheckState == MiscData.CheckState.Unchecked);
-            Utility.TimeCodeExecution(FunctionTime, "Getting Unchecked Entries", 1);
-
-            //For any Locations with no randomized item, check if an item can be automatically assigned.
-            foreach (LocationData.LocationObject LocationObject in UncheckedlocationObjects)
-            {
-                LocationObject.Randomizeditem.Item = LocationObject.GetItemAtCheck(CurrentTrackerInstance);
-            }
-            foreach (EntranceData.EntranceRandoExit ExitObject in UncheckedExitObjects)
-            {
-                ExitObject.DestinationExit = ExitObject.GetDestinationAtExit(CurrentTrackerInstance);
-            }
-            Utility.TimeCodeExecution(FunctionTime, "Checking for Randmomized item data", 1);
-
-            //Get Entries that need a value manually assigned and pass them to the "CheckItemForm" to be assigned.
-            IEnumerable<object> ManualChecks = UncheckedlocationObjects.Where(x => x.Randomizeditem.Item == null); //Locations with no item
-            ManualChecks = ManualChecks.Concat(UncheckedExitObjects.Where(x => x.DestinationExit == null)); //Exits With No Destination
-            ManualChecks = ManualChecks.Concat(OptionObjects.Where(x => !x.IsToggleOption())); //Non Toggle Options
-            if (ManualChecks.Any())
-            {
-                TotalTime.Stop();
-                CheckItemForm checkItemForm = new CheckItemForm(ManualChecks, CurrentTrackerInstance);
-                checkItemForm.ShowDialog();
-                ChangesMade = true;
-                TotalTime.Start();
-            }
-            Utility.TimeCodeExecution(FunctionTime, "Manual Check Form", 1);
-
-            //Options======================================
-            foreach (var i in OptionObjects.Where(x => x.IsToggleOption())) { i.ToggleOption(); ChangesMade = true; }
-            Utility.TimeCodeExecution(FunctionTime, "Toggling Options", 1);
-            //Items======================================
-            foreach (LocationData.LocationObject LocationObject in locationObjects)
-            {
-                //When we mark a location, the action is always sent as Marked, but if the location is already marked we should instead Unchecked it unless EnforceMarkAction is true.
-                var Action = (checkState == MiscData.CheckState.Marked && LocationObject.CheckState == MiscData.CheckState.Marked) && !EnforceMarkAction ? MiscData.CheckState.Unchecked : checkState;
-                if (LocationObject.ToggleChecked(Action, CurrentTrackerInstance)) { ChangesMade = true; }
-            }
-            Utility.TimeCodeExecution(FunctionTime, "Checking Locations", 1);
-            //Exits======================================
-            foreach (EntranceData.EntranceRandoExit ExitObject in ExitObjects)
-            {
-                var Action = (checkState == MiscData.CheckState.Marked && ExitObject.CheckState == MiscData.CheckState.Marked) && !EnforceMarkAction ? MiscData.CheckState.Unchecked : checkState;
-                if (ExitObject.ToggleExitChecked(Action, CurrentTrackerInstance)) { ChangesMade = true; }
-            }
-            Utility.TimeCodeExecution(FunctionTime, "Checking Entrances", 1);
-
-            //Hints======================================
-            List<HintData.HintObject> HintObjects = Items.Where(x => x is HintData.HintObject).Select(x => x as HintData.HintObject).ToList();
-            List<LogicDictionaryData.TrackerVariable> VariableObjects = Items.Where(x => x is LogicDictionaryData.TrackerVariable).Select(x => x as LogicDictionaryData.TrackerVariable).ToList();
-
-            var UncheckedHintObjects = HintObjects.Where(x => x.CheckState == MiscData.CheckState.Unchecked);
-            foreach(var i in UncheckedHintObjects.Where(x => !string.IsNullOrWhiteSpace(x.SpoilerHintText))) { i.HintText = i.SpoilerHintText; }
-
-            IEnumerable<object> UncheckedVariableObjects = UncheckedHintObjects.Where(x => string.IsNullOrWhiteSpace(x.HintText));
-            UncheckedVariableObjects = UncheckedVariableObjects.Concat(VariableObjects.Where(x => x.Value is not bool));
-            if (UncheckedVariableObjects.Any())
-            {
-                TotalTime.Stop();
-                VariableInputWindow variableInputWindow = new VariableInputWindow(UncheckedVariableObjects, CurrentTrackerInstance);
-                variableInputWindow.ShowDialog();
-                ChangesMade = true;
-                TotalTime.Start();
-            }
-            foreach(var i in VariableObjects.Where(x => x.Value is bool)) { i.Value = !i.Value; ChangesMade = true; }
-            foreach (HintData.HintObject hintObject in HintObjects)
-            {
-                ChangesMade = true;
-                var CheckAction = (checkState == MiscData.CheckState.Marked && hintObject.CheckState == MiscData.CheckState.Marked) && !EnforceMarkAction ? MiscData.CheckState.Unchecked : checkState;
-                hintObject.CheckState = CheckAction;
-                hintObject.HintText = CheckAction == MiscData.CheckState.Unchecked ? null : hintObject.HintText;
-            }
-            Utility.TimeCodeExecution(FunctionTime, "Setting Hints", 1);
-
-            //Cleanup======================================
-
-            if (ChangesMade)
-            {
-                SaveTrackerState(CurrentState);
-                Utility.TimeCodeExecution(FunctionTime, "Committng Save State", 1);
-                LogicCalculation.CalculateLogic(CurrentTrackerInstance);
-                Utility.TimeCodeExecution(FunctionTime, "Calculating Logic", 1);
-                if (checkState == MiscData.CheckState.Checked && CurrentTrackerInstance.StaticOptions.AutoCheckCoupleEntrances && !CurrentTrackerInstance.StaticOptions.DecoupleEntrances && LogicCalculation.CheckEntrancePair(CurrentTrackerInstance)) 
-                { 
-                    LogicCalculation.CalculateLogic(CurrentTrackerInstance);
-                    Utility.TimeCodeExecution(FunctionTime, "Chcking Entrance Pairs", 1);
-                }
-            }
+            if (ChangesMade) { SaveTrackerState(CurrentState); }
+            Utility.TimeCodeExecution(CodeTimer, "Commiting Save State", 1);
             UpdateUI();
-            Utility.TimeCodeExecution(FunctionTime, "Updating UI", -1);
-            Utility.TimeCodeExecution(TotalTime, "Total Check Action", -1);
+            Utility.TimeCodeExecution(CodeTimer, "Updating UI", -1);
+            Utility.TimeCodeExecution(FullCodeTimer, "Full Check Action", -1);
+        }
+
+        private bool HandleUnassignedChecks(IEnumerable<object> Checks, LogicObjects.TrackerInstance Instance)
+        {
+            CheckItemForm checkItemForm = new CheckItemForm(Checks, Instance);
+            checkItemForm.ShowDialog();
+            return true;
+        }
+        private bool HandleUnassignedVariables(IEnumerable<object> Checks, LogicObjects.TrackerInstance Instance)
+        {
+            VariableInputWindow variableInputWindow = new VariableInputWindow(Checks, Instance);
+            variableInputWindow.ShowDialog();
+            return true;
         }
 
         private void CHKShowAll_CheckedChanged(object sender, EventArgs e)
