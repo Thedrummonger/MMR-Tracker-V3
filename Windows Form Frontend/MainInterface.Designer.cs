@@ -73,6 +73,7 @@ namespace Windows_Form_Frontend
             this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.PathFinderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -112,6 +113,8 @@ namespace Windows_Form_Frontend
             this.LBPathFinder.Name = "LBPathFinder";
             this.LBPathFinder.Size = new System.Drawing.Size(87, 109);
             this.LBPathFinder.TabIndex = 40;
+            this.LBPathFinder.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.LBPathFinder_DrawItem);
+            this.LBPathFinder.DoubleClick += new System.EventHandler(this.LBPathFinder_DoubleClick);
             // 
             // LBCheckedLocations
             // 
@@ -434,7 +437,8 @@ namespace Windows_Form_Frontend
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.logicEditorToolStripMenuItem,
             this.importSpoilerLogToolStripMenuItem,
-            this.spoilerLogToolsToolStripMenuItem});
+            this.spoilerLogToolsToolStripMenuItem,
+            this.PathFinderToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
@@ -506,6 +510,13 @@ namespace Windows_Form_Frontend
             this.toolTip1.AutoPopDelay = 50000;
             this.toolTip1.InitialDelay = 10;
             this.toolTip1.ReshowDelay = 100;
+            // 
+            // PathFinderToolStripMenuItem
+            // 
+            this.PathFinderToolStripMenuItem.Name = "PathFinderToolStripMenuItem";
+            this.PathFinderToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.PathFinderToolStripMenuItem.Text = "Path Finder";
+            this.PathFinderToolStripMenuItem.Click += new System.EventHandler(this.PathFinderToolStripMenuItem_Click);
             // 
             // MainInterface
             // 
@@ -597,6 +608,7 @@ namespace Windows_Form_Frontend
         private System.Windows.Forms.ToolStripMenuItem CodeTestingToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem presetsToolStripMenuItem;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolStripMenuItem PathFinderToolStripMenuItem;
     }
 }
 

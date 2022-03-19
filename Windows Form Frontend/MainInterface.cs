@@ -23,6 +23,7 @@ namespace Windows_Form_Frontend
         public static List<string> UndoStringList = new();
         public static List<string> RedoStringList = new();
         public static MainInterface CurrentProgram;
+        Pathfinder MainInterfacepathfinder = new Pathfinder();
         private bool FormIsMaximized = false;
         private bool UnsavedChanges = false;
 
@@ -282,6 +283,19 @@ namespace Windows_Form_Frontend
         }
 
         private void LBValidEntrances_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            var LB = sender as ListBox;
+            if (e.Index < 0) { return; }
+            e.DrawBackground();
+            Font F = WinFormUtils.GetFontFromString(CurrentTrackerInstance.StaticOptions.OptionFile.WinformData.FormFont);
+            Brush brush = ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? Brushes.White : Brushes.Black;
+
+            e.Graphics.DrawString(LB.Items[e.Index].ToString(), F, brush, e.Bounds);
+
+            e.DrawFocusRectangle();
+        }
+
+        private void LBPathFinder_DrawItem(object sender, DrawItemEventArgs e)
         {
             var LB = sender as ListBox;
             if (e.Index < 0) { return; }
@@ -891,18 +905,59 @@ namespace Windows_Form_Frontend
         private void BTNFindPath_Click(object sender, EventArgs e)
         {
             if (CMBStart.SelectedIndex < 0 || CMBEnd.SelectedIndex < 0) { return; }
+            LBPathFinder.Font = WinFormUtils.GetFontFromString(CurrentTrackerInstance.StaticOptions.OptionFile.WinformData.FormFont);
+            LBPathFinder.ItemHeight = Convert.ToInt32(LBPathFinder.Font.Size * 1.8);
             LBPathFinder.DataSource = new List<string> { "Finding path" };
-            Pathfinder pathfinder = new Pathfinder();
-            pathfinder.FindPath(CurrentTrackerInstance, (string)CMBStart.SelectedItem, (string)CMBEnd.SelectedItem, new List<string>(), new Dictionary<string, string>());
-            if (pathfinder.FinalPath == null)
+            MainInterfacepathfinder = new Pathfinder();
+            MainInterfacepathfinder.FindPath(CurrentTrackerInstance, (string)CMBStart.SelectedItem, (string)CMBEnd.SelectedItem, new List<string>(), new Dictionary<string, string>());
+            MainInterfacepathfinder.FinalPath = MainInterfacepathfinder.FinalPath.OrderBy(x => x.Count).ToList();
+            if (!MainInterfacepathfinder.FinalPath.Any())
             {
                 LBPathFinder.DataSource = new List<string> { "No Path Found" };
             }
             else
             {
-                var PathList = pathfinder.FinalPath.Select(x => $"{x.Key} => {x.Value}");
-                LBPathFinder.DataSource = PathList;
+                PrintPaths();
             }
+        }
+
+        private void PrintPaths()
+        {
+            List<object> Results = new List<object>();
+            int index = 0;
+            foreach (var i in MainInterfacepathfinder.FinalPath)
+            {
+                Results.Add(WinFormUtils.CreateDivider(LBPathFinder));
+                Results.Add(new Pathfinder.PathfinderPath { Display = $"Path {index+1}: {i.Count} Stops", Index = index });
+                var PathList = i.Select(x => new Pathfinder.PathfinderPath { Display = $"{x.Key} => {x.Value}", Index = index });
+                Results = Results.Concat(PathList).ToList();
+                index++;
+            }
+            LBPathFinder.DataSource = Results;
+        }
+
+        private void LBPathFinder_DoubleClick(object sender, EventArgs e)
+        {
+            if (((ListBox)sender).SelectedItem is Pathfinder.PathfinderPath path)
+            {
+                if (path.Focused)
+                {
+                    PrintPaths();
+                }
+                else
+                {
+                    List<object> Results = new List<object>();
+                    Results.Add(new Pathfinder.PathfinderPath { Display = $"Path {path.Index + 1}: {MainInterfacepathfinder.FinalPath[path.Index].Count} Stops", Index = path.Index });
+                    Results = Results.Concat(MainInterfacepathfinder.FinalPath[path.Index].Select(x => new Pathfinder.PathfinderPath { Display = $"{x.Key} => {x.Value}", Index = path.Index, Focused = true })).ToList();
+                    LBPathFinder.DataSource = Results.ToList();
+                }
+            }
+        }
+
+        private void PathFinderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PopoutPathfinder popoutPathfinder = new PopoutPathfinder(CurrentTrackerInstance);
+            popoutPathfinder.Show();
         }
     }
 }

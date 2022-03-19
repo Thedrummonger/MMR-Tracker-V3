@@ -101,8 +101,8 @@ namespace MMR_Tracker_V3.OtherGames
                 $"Requiem of Spirit Warp{EntranceSeperator}Desert Colossus",
                 $"Nocturne of Shadow Warp{EntranceSeperator}Graveyard Warp Pad Region",
                 $"Prelude of Light Warp{EntranceSeperator}Temple of Time",
-                $"Root Exits{EntranceSeperator}Child Spawn",
-                $"Root Exits{EntranceSeperator}Adult Spawn",
+                $"Child Spawn{EntranceSeperator}KF Links House",
+                $"Adult Spawn{EntranceSeperator}Temple of Time",
             };
 
             foreach(var i in TestTable.Options)
@@ -209,7 +209,7 @@ namespace MMR_Tracker_V3.OtherGames
                 }
             }
 
-            foreach(var i in TestTable.VanillaLocations)
+            foreach (var i in TestTable.VanillaLocations)
             {
                 //Debug.WriteLine($"Setting {i.Value} at {i.Key}");
                 var location = OORTDict.LocationList.Find(x => x.ID == i.Key);

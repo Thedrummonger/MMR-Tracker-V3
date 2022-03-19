@@ -190,21 +190,23 @@ namespace MMR_Tracker_V3
                 foreach (var i in Area.Value.MacroExits)
                 {
                     var Logic = instance.GetLogic(instance.EntrancePool.GetLogicNameFromExit(i.Value));
-                    bool Available =
+                    i.Value.Available =
                         AreaReached(Area.Key, instance) &&
                         RequirementsMet(Logic.RequiredItems, instance) && 
                         ConditionalsMet(Logic.ConditionalItems, instance);
-                    if (Available && i.Value.CheckState != CheckState.Checked)
+                    if (i.Value.Available && i.Value.CheckState != CheckState.Checked)
                     {
                         MacroStateChanged = true;
                         i.Value.CheckState = CheckState.Checked;
+                        i.Value.DestinationExit = i.Value.GetVanillaDestination();
                         var Destination = instance.EntrancePool.AreaList[i.Value.ID];
                         Destination.ExitsAcessibleFrom++;
                     }
-                    else if (!Available && i.Value.CheckState == CheckState.Checked)
+                    else if (!i.Value.Available && i.Value.CheckState == CheckState.Checked)
                     {
                         MacroStateChanged = true;
                         i.Value.CheckState = CheckState.Unchecked;
+                        i.Value.DestinationExit = null;
                         var Destination = instance.EntrancePool.AreaList[i.Value.ID];
                         Destination.ExitsAcessibleFrom--;
                     }
