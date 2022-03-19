@@ -10,6 +10,33 @@ namespace MMR_Tracker_V3
 {
     public static class SpoilerLogTools
     {
+        public static string GetSpoilerLogFilter(LogicObjects.TrackerInstance Instance)
+        {
+            switch (Instance.LogicFile.GameCode)
+            {
+                case "OOTR":
+                    return "OOTR Spoiler Log (*.json)|*.json";
+                default:
+                    return "MMR Text Spoiler Log|*.txt";
+            }
+        }
+
+        public static bool ImportSpoilerLog(string[] spoilerLog, LogicObjects.TrackerInstance Instance)
+        {
+            switch (Instance.LogicFile.GameCode)
+            {
+                case "OOTR":
+                    OtherGames.OOTRTools.HandleOOTRSpoilerLog(string.Join("", spoilerLog), Instance);
+                    return true;
+                case "MMR":
+                    Instance.SpoilerLog = SpoilerLogTools.ReadSpoilerLog(spoilerLog);
+                    SpoilerLogTools.ApplyMMRandoSettings(Instance, Instance.SpoilerLog);
+                    SpoilerLogTools.ApplyMMRandoSpoilerLog(Instance, Instance.SpoilerLog);
+                    return true;
+                default:
+                    return false;
+            }
+        }
 
         public static bool ApplyLocationString(string LocationString, LogicObjects.TrackerInstance Instance)
         {

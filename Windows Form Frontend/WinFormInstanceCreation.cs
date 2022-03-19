@@ -43,6 +43,8 @@ namespace Windows_Form_Frontend
                 return false;
             }
 
+            References.CurrentSavePath = "";
+
             TrackerInstanceCreation.PopulateTrackerObject(NewInstance);
 
             if (File.Exists(References.WindowsPaths.OptionFile))

@@ -1,6 +1,7 @@
 ﻿using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,6 +36,115 @@ namespace MMR_Tracker_V3
             public List<ItemData.ItemObject> LocalObtainedItems { get; set; } = new List<ItemData.ItemObject>();
             public List<ItemData.ItemObject> CurrentStartingItems { get; set; } = new List<ItemData.ItemObject>();
             public List<ItemData.ItemObject> OnlineObtainedItems { get; set; } = new List<ItemData.ItemObject>();
+        }
+
+        public static bool CheckSelectedItems(IEnumerable<object> Items, MiscData.CheckState checkState, LogicObjects.TrackerInstance Instance, Func<IEnumerable<object>, LogicObjects.TrackerInstance, bool> CheckUnassignedLocations, Func<IEnumerable<object>, LogicObjects.TrackerInstance, bool> CheckUnassignedVariable, bool EnforceMarkAction = false, Stopwatch CodeTimer = null)
+        {
+            Debug.WriteLine("Checking Item-----------------------------");
+            Stopwatch FunctionTime = new Stopwatch();
+            Utility.TimeCodeExecution(FunctionTime);
+
+            bool ChangesMade = false;
+            Utility.TimeCodeExecution(FunctionTime, "Saving Current State", 1);
+
+            //Search for valid Object types in the list of selected Objects and sort them into lists
+            IEnumerable<LocationData.LocationObject> locationObjects = Items.Where(x => x is LocationData.LocationObject).Select(x => x as LocationData.LocationObject);
+            IEnumerable<EntranceData.EntranceRandoExit> ExitObjects = Items.Where(x => x is EntranceData.EntranceRandoExit).Select(x => x as EntranceData.EntranceRandoExit);
+            IEnumerable<OptionData.TrackerOption> OptionObjects = Items.Where(x => x is OptionData.TrackerOption).Select(x => x as OptionData.TrackerOption);
+            Utility.TimeCodeExecution(FunctionTime, "Sorting Selected Items", 1);
+
+            //If we are performing an uncheck action there should be no unchecked locations in the list and even if there are nothing will be done to them anyway
+            //This check is neccessary for the "UnMark Only" action and also provides a bit more efficiency.
+            IEnumerable<LocationData.LocationObject> UncheckedlocationObjects = (checkState == MiscData.CheckState.Unchecked) ?
+                new List<LocationData.LocationObject>() :
+                locationObjects.Where(x => x.CheckState == MiscData.CheckState.Unchecked);
+            IEnumerable<EntranceData.EntranceRandoExit> UncheckedExitObjects = (checkState == MiscData.CheckState.Unchecked) ?
+                new List<EntranceData.EntranceRandoExit>() :
+                ExitObjects.Where(x => x.CheckState == MiscData.CheckState.Unchecked);
+            Utility.TimeCodeExecution(FunctionTime, "Getting Unchecked Entries", 1);
+
+            //For any Locations with no randomized item, check if an item can be automatically assigned.
+            foreach (LocationData.LocationObject LocationObject in UncheckedlocationObjects)
+            {
+                LocationObject.Randomizeditem.Item = LocationObject.GetItemAtCheck(Instance);
+            }
+            foreach (EntranceData.EntranceRandoExit ExitObject in UncheckedExitObjects)
+            {
+                ExitObject.DestinationExit = ExitObject.GetDestinationAtExit(Instance);
+            }
+            Utility.TimeCodeExecution(FunctionTime, "Checking for Randmomized item data", 1);
+
+            //Get Entries that need a value manually assigned and pass them to given method to be assigned.
+            IEnumerable<object> ManualChecks = UncheckedlocationObjects.Where(x => x.Randomizeditem.Item == null); //Locations with no item
+            ManualChecks = ManualChecks.Concat(UncheckedExitObjects.Where(x => x.DestinationExit == null)); //Exits With No Destination
+            ManualChecks = ManualChecks.Concat(OptionObjects.Where(x => !x.IsToggleOption())); //Non Toggle Options
+            if (ManualChecks.Any())
+            {
+                if (CodeTimer != null) { CodeTimer.Stop(); }
+                CheckUnassignedLocations(ManualChecks, Instance);
+                ChangesMade = true;
+                if (CodeTimer != null) { CodeTimer.Start(); }
+            }
+            Utility.TimeCodeExecution(FunctionTime, "Manual Check Form", 1);
+
+            //Options======================================
+            foreach (var i in OptionObjects.Where(x => x.IsToggleOption())) { i.ToggleOption(); ChangesMade = true; }
+            Utility.TimeCodeExecution(FunctionTime, "Toggling Options", 1);
+            //Items======================================
+            foreach (LocationData.LocationObject LocationObject in locationObjects)
+            {
+                //When we mark a location, the action is always sent as Marked, but if the location is already marked we should instead Unchecked it unless EnforceMarkAction is true.
+                var Action = (checkState == MiscData.CheckState.Marked && LocationObject.CheckState == MiscData.CheckState.Marked) && !EnforceMarkAction ? MiscData.CheckState.Unchecked : checkState;
+                if (LocationObject.ToggleChecked(Action, Instance)) { ChangesMade = true; }
+            }
+            Utility.TimeCodeExecution(FunctionTime, "Checking Locations", 1);
+            //Exits======================================
+            foreach (EntranceData.EntranceRandoExit ExitObject in ExitObjects)
+            {
+                var Action = (checkState == MiscData.CheckState.Marked && ExitObject.CheckState == MiscData.CheckState.Marked) && !EnforceMarkAction ? MiscData.CheckState.Unchecked : checkState;
+                if (ExitObject.ToggleExitChecked(Action, Instance)) { ChangesMade = true; }
+            }
+            Utility.TimeCodeExecution(FunctionTime, "Checking Entrances", 1);
+
+            //Hints======================================
+            List<HintData.HintObject> HintObjects = Items.Where(x => x is HintData.HintObject).Select(x => x as HintData.HintObject).ToList();
+            List<LogicDictionaryData.TrackerVariable> VariableObjects = Items.Where(x => x is LogicDictionaryData.TrackerVariable).Select(x => x as LogicDictionaryData.TrackerVariable).ToList();
+
+            var UncheckedHintObjects = HintObjects.Where(x => x.CheckState == MiscData.CheckState.Unchecked);
+            foreach (var i in UncheckedHintObjects.Where(x => !string.IsNullOrWhiteSpace(x.SpoilerHintText))) { i.HintText = i.SpoilerHintText; }
+
+            IEnumerable<object> UncheckedVariableObjects = UncheckedHintObjects.Where(x => string.IsNullOrWhiteSpace(x.HintText));
+            UncheckedVariableObjects = UncheckedVariableObjects.Concat(VariableObjects.Where(x => x.Value is not bool));
+            if (UncheckedVariableObjects.Any())
+            {
+                if (CodeTimer != null) { CodeTimer.Stop(); }
+                CheckUnassignedVariable(UncheckedVariableObjects, Instance);
+                ChangesMade = true;
+                if (CodeTimer != null) { CodeTimer.Start(); }
+            }
+            foreach (var i in VariableObjects.Where(x => x.Value is bool)) { i.Value = !i.Value; ChangesMade = true; }
+            foreach (HintData.HintObject hintObject in HintObjects)
+            {
+                ChangesMade = true;
+                var CheckAction = (checkState == MiscData.CheckState.Marked && hintObject.CheckState == MiscData.CheckState.Marked) && !EnforceMarkAction ? MiscData.CheckState.Unchecked : checkState;
+                hintObject.CheckState = CheckAction;
+                hintObject.HintText = CheckAction == MiscData.CheckState.Unchecked ? null : hintObject.HintText;
+            }
+            Utility.TimeCodeExecution(FunctionTime, "Setting Hints", 1);
+
+            //Cleanup======================================
+
+            if (ChangesMade)
+            {
+                LogicCalculation.CalculateLogic(Instance);
+                Utility.TimeCodeExecution(FunctionTime, "---TOTAL Calculating Logic", 1);
+                if (checkState == MiscData.CheckState.Checked && Instance.StaticOptions.AutoCheckCoupleEntrances && !Instance.StaticOptions.DecoupleEntrances && LogicCalculation.CheckEntrancePair(Instance))
+                {
+                    LogicCalculation.CalculateLogic(Instance);
+                    Utility.TimeCodeExecution(FunctionTime, "Chcking Entrance Pairs", 1);
+                }
+            }
+            return ChangesMade;
         }
 
         public static DataSets PopulateDataSets(LogicObjects.TrackerInstance instance)

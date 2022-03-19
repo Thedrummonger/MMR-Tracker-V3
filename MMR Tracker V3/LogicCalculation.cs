@@ -130,7 +130,6 @@ namespace MMR_Tracker_V3
                     ConditionalsMet(Logic.ConditionalItems, instance);
             }
             Utility.TimeCodeExecution(LogicTime, "Calculating Hints", -1);
-            Debug.WriteLine("----------------------------------------");
         }
 
         private static bool CheckUrandomizedExits(TrackerInstance instance)
