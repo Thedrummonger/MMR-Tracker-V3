@@ -380,6 +380,10 @@ namespace Windows_Form_Frontend
             redoToolStripMenuItem.Enabled = RedoStringList.Any();
             undoToolStripMenuItem.Enabled = UndoStringList.Any();
 
+            var AccessableAreas = CurrentTrackerInstance.EntrancePool.AreaList.Values.Where(x => x.ExitsAcessibleFrom > 0).Select(x => x.ID);
+            CMBStart.DataSource = AccessableAreas.ToList();
+            CMBEnd.DataSource = AccessableAreas.ToList();
+
             UpdateDynamicUserOptions();
             PrintToListBox();
             this.Refresh();
@@ -976,6 +980,23 @@ namespace Windows_Form_Frontend
             StaticOptionSelect staticOptionSelect = new StaticOptionSelect(CurrentTrackerInstance);
             staticOptionSelect.ShowDialog();
             UpdateUI();
+        }
+
+        private void BTNFindPath_Click(object sender, EventArgs e)
+        {
+            if (CMBStart.SelectedIndex < 0 || CMBEnd.SelectedIndex < 0) { return; }
+            LBPathFinder.DataSource = new List<string> { "Finding path" };
+            Pathfinder pathfinder = new Pathfinder();
+            pathfinder.FindPath(CurrentTrackerInstance, (string)CMBStart.SelectedItem, (string)CMBEnd.SelectedItem, new List<string>(), new Dictionary<string, string>());
+            if (pathfinder.FinalPath == null)
+            {
+                LBPathFinder.DataSource = new List<string> { "No Path Found" };
+            }
+            else
+            {
+                var PathList = pathfinder.FinalPath.Select(x => $"{x.Key} => {x.Value}");
+                LBPathFinder.DataSource = PathList;
+            }
         }
     }
 }

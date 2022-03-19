@@ -99,6 +99,7 @@ namespace Windows_Form_Frontend
             this.BTNFindPath.TabIndex = 41;
             this.BTNFindPath.Text = "Find Path";
             this.BTNFindPath.UseVisualStyleBackColor = false;
+            this.BTNFindPath.Click += new System.EventHandler(this.BTNFindPath_Click);
             // 
             // LBPathFinder
             // 

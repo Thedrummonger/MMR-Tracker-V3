@@ -85,7 +85,8 @@ namespace MMR_Tracker_V3
                     {
                         ParentAreaID = DictEntry.Area,
                         ID = DictEntry.Exit,
-                        EntrancePair = DictEntry.RandomizableEntrance ? DictEntry.EntrancePairID : null
+                        EntrancePair = DictEntry.RandomizableEntrance ? DictEntry.EntrancePairID : null,
+                        IsWarp = DictEntry.AlwaysAccessable
                     });
                 }
                 else
