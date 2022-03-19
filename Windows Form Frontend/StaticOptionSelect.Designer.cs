@@ -48,6 +48,8 @@ namespace Windows_Form_Frontend
             this.button2 = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.button3 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudFontSize)).BeginInit();
             this.SuspendLayout();
             // 
@@ -247,11 +249,30 @@ namespace Windows_Form_Frontend
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(112, 150);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 24);
+            this.textBox1.TabIndex = 19;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(12, 155);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(92, 16);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "Font Example:";
+            // 
             // StaticOptionSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(221, 148);
+            this.ClientSize = new System.Drawing.Size(221, 185);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -299,5 +320,7 @@ namespace Windows_Form_Frontend
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label9;
     }
 }

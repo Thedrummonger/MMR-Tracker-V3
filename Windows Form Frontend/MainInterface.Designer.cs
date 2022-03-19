@@ -66,6 +66,7 @@ namespace Windows_Form_Frontend
             this.logicEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importSpoilerLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.spoilerLogToolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PathFinderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.devToolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewAsUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CodeTestingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,7 +74,8 @@ namespace Windows_Form_Frontend
             this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.PathFinderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ExportCheckedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ImportCheckedToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,6 +91,7 @@ namespace Windows_Form_Frontend
             this.lblSwapPathfinder.Size = new System.Drawing.Size(23, 16);
             this.lblSwapPathfinder.TabIndex = 42;
             this.lblSwapPathfinder.Text = "↑↓";
+            this.lblSwapPathfinder.Click += new System.EventHandler(this.lblSwapPathfinder_Click);
             // 
             // BTNFindPath
             // 
@@ -462,11 +465,20 @@ namespace Windows_Form_Frontend
             this.spoilerLogToolsToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.spoilerLogToolsToolStripMenuItem.Text = "Spoiler Log Tools";
             // 
+            // PathFinderToolStripMenuItem
+            // 
+            this.PathFinderToolStripMenuItem.Name = "PathFinderToolStripMenuItem";
+            this.PathFinderToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.PathFinderToolStripMenuItem.Text = "Path Finder";
+            this.PathFinderToolStripMenuItem.Click += new System.EventHandler(this.PathFinderToolStripMenuItem_Click);
+            // 
             // devToolsToolStripMenuItem
             // 
             this.devToolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.viewAsUserToolStripMenuItem,
-            this.CodeTestingToolStripMenuItem});
+            this.CodeTestingToolStripMenuItem,
+            this.ExportCheckedToolStripMenuItem,
+            this.ImportCheckedToolStripMenuItem1});
             this.devToolsToolStripMenuItem.Name = "devToolsToolStripMenuItem";
             this.devToolsToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.devToolsToolStripMenuItem.Text = "DevTools";
@@ -474,13 +486,13 @@ namespace Windows_Form_Frontend
             // viewAsUserToolStripMenuItem
             // 
             this.viewAsUserToolStripMenuItem.Name = "viewAsUserToolStripMenuItem";
-            this.viewAsUserToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.viewAsUserToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.viewAsUserToolStripMenuItem.Text = "View as User";
             // 
             // CodeTestingToolStripMenuItem
             // 
             this.CodeTestingToolStripMenuItem.Name = "CodeTestingToolStripMenuItem";
-            this.CodeTestingToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.CodeTestingToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.CodeTestingToolStripMenuItem.Text = "Code Testing";
             this.CodeTestingToolStripMenuItem.Click += new System.EventHandler(this.CodeTestingToolStripMenuItem_Click);
             // 
@@ -511,12 +523,19 @@ namespace Windows_Form_Frontend
             this.toolTip1.InitialDelay = 10;
             this.toolTip1.ReshowDelay = 100;
             // 
-            // PathFinderToolStripMenuItem
+            // ExportCheckedToolStripMenuItem
             // 
-            this.PathFinderToolStripMenuItem.Name = "PathFinderToolStripMenuItem";
-            this.PathFinderToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.PathFinderToolStripMenuItem.Text = "Path Finder";
-            this.PathFinderToolStripMenuItem.Click += new System.EventHandler(this.PathFinderToolStripMenuItem_Click);
+            this.ExportCheckedToolStripMenuItem.Name = "ExportCheckedToolStripMenuItem";
+            this.ExportCheckedToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.ExportCheckedToolStripMenuItem.Text = "Export Checked";
+            this.ExportCheckedToolStripMenuItem.Click += new System.EventHandler(this.ExportCheckedToolStripMenuItem_Click);
+            // 
+            // ImportCheckedToolStripMenuItem1
+            // 
+            this.ImportCheckedToolStripMenuItem1.Name = "ImportCheckedToolStripMenuItem1";
+            this.ImportCheckedToolStripMenuItem1.Size = new System.Drawing.Size(159, 22);
+            this.ImportCheckedToolStripMenuItem1.Text = "Import Checked";
+            this.ImportCheckedToolStripMenuItem1.Click += new System.EventHandler(this.ImportCheckedToolStripMenuItem1_Click);
             // 
             // MainInterface
             // 
@@ -609,6 +628,8 @@ namespace Windows_Form_Frontend
         public System.Windows.Forms.ToolStripMenuItem presetsToolStripMenuItem;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ToolStripMenuItem PathFinderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ExportCheckedToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ImportCheckedToolStripMenuItem1;
     }
 }
 

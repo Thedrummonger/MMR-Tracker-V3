@@ -41,17 +41,13 @@ namespace MMR_Tracker_V3
             }
             foreach (var i in validExits)
             {
-                if (SeenAreas.Contains(i.DestinationExit.region))
-                {
-                    continue;
-                }
+                if (SeenAreas.Contains(i.DestinationExit.region)) { continue; }
                 var PathCopy = Path.ToDictionary(entry => entry.Key, entry => entry.Value);
                 var SeenAreasCopy = SeenAreas.Select(entry => entry);
                 if (!validMacroExits.Contains(i) || instance.StaticOptions.ShowMacroExitsPathfinder) 
                 { 
                     if (WarpExits.Contains(i)) { PathCopy.Add(i.ParentAreaID, i.ID); }
                     else { PathCopy.Add(CurrentArea, i.ID); }
-
                 }
                 var PathFound = FindPath(instance, i.DestinationExit.region, Goal, SeenAreasCopy.ToList(), PathCopy, false);
                 if (PathFound) { return false; }

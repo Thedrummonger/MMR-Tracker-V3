@@ -12,6 +12,9 @@
     <Content Include="..\MMR Tracker V3\Recources\Dictionaries\MMR V11.json" Link="Recources\Dictionaries\MMR V11.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="..\MMR Tracker V3\Recources\Dictionaries\OOTR V1.json" Link="Recources\Dictionaries\OOTR V1.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="..\MMR Tracker V3\Recources\Presets\WebPresets.txt" Link="Recources\Presets\WebPresets.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

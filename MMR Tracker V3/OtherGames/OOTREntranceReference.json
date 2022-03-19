@@ -1206,8 +1206,8 @@
   ],
   "LogicOverrides": {
     "Root X Root Exits": "True",
-    "is_child": "Starting_age == child | Time_Travel",
-    "is_adult": "Starting_age == adult | Time_Travel",
+    "is_child": "(Starting_age == child | Time_Travel) & (age_filter == child | age_filter == both)",
+    "is_adult": "(Starting_age == adult | Time_Travel) & (age_filter == adult | age_filter == both)",
     "Blue_Fire": "'Blue_Fire' or Buy_Blue_Fire",
     "can_use(item)": "False",
     "can_play(song)": "False",
@@ -1222,6 +1222,11 @@
     "can_receive_ganon_bosskey": "((shuffle_ganon_bosskey == 'stones' and has_stones(ganon_bosskey_stones)) or (shuffle_ganon_bosskey == 'medallions' and has_medallions(ganon_bosskey_medallions)) or (shuffle_ganon_bosskey == 'dungeons' and has_dungeon_rewards(ganon_bosskey_rewards)) or (shuffle_ganon_bosskey == 'tokens' and (Gold_Skulltula_Token, ganon_key_amount)))"
   },
   "Options": {
+    "age_filter": [
+      "both",
+      "child",
+      "adult"
+    ],
     "Starting_age": [
       "child",
       "adult"

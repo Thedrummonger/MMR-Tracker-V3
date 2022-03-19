@@ -245,7 +245,7 @@ namespace Windows_Form_Frontend
             e.DrawBackground();
             Font F = WinFormUtils.GetFontFromString(CurrentTrackerInstance.StaticOptions.OptionFile.WinformData.FormFont);
             Brush brush = ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? Brushes.White : Brushes.Black;
-            if (LB.Items[e.Index] is LocationData.LocationObject ListEntry && sender != LBPathFinder)
+            if (LB.Items[e.Index] is LocationData.LocationObject ListEntry)
             {
                 var item = ListEntry;
                 if (item.CheckState == MiscData.CheckState.Marked && !item.Available && item.Starred)
@@ -267,7 +267,7 @@ namespace Windows_Form_Frontend
             e.DrawBackground();
             Font F = WinFormUtils.GetFontFromString(CurrentTrackerInstance.StaticOptions.OptionFile.WinformData.FormFont);
             Brush brush = ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? Brushes.White : Brushes.Black;
-            if (LB.Items[e.Index] is LocationData.LocationObject ListEntry && sender != LBPathFinder)
+            if (LB.Items[e.Index] is LocationData.LocationObject ListEntry)
             {
                 var item = ListEntry;
                 if (!item.Available && item.Starred)
@@ -289,6 +289,16 @@ namespace Windows_Form_Frontend
             e.DrawBackground();
             Font F = WinFormUtils.GetFontFromString(CurrentTrackerInstance.StaticOptions.OptionFile.WinformData.FormFont);
             Brush brush = ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? Brushes.White : Brushes.Black;
+            if (LB.Items[e.Index] is EntranceData.EntranceRandoExit ListEntry && sender != LBPathFinder)
+            {
+                var item = ListEntry;
+                if (item.CheckState == MiscData.CheckState.Marked && !item.Available && item.Starred)
+                { F = new Font(F.FontFamily, F.Size, FontStyle.Bold | FontStyle.Strikeout); }
+                else if (item.Starred)
+                { F = new Font(F.FontFamily, F.Size, FontStyle.Bold); }
+                else if (!item.Available)
+                { F = new Font(F.FontFamily, F.Size, FontStyle.Strikeout); }
+            }
 
             e.Graphics.DrawString(LB.Items[e.Index].ToString(), F, brush, e.Bounds);
 
@@ -382,12 +392,17 @@ namespace Windows_Form_Frontend
             this.Text = CurrentTrackerInstance.LogicFile.GameCode + " Tracker" + (UnsavedChanges ? "*" : "");
 
             CurrentTrackerInstance.EntrancePool.IsEntranceRando = CurrentTrackerInstance.EntrancePool.CheckForRandomEntrances();
+
             redoToolStripMenuItem.Enabled = RedoStringList.Any();
             undoToolStripMenuItem.Enabled = UndoStringList.Any();
 
-            var AccessableAreas = CurrentTrackerInstance.EntrancePool.AreaList.Values.Where(x => x.ExitsAcessibleFrom > 0).Select(x => x.ID);
-            CMBStart.DataSource = AccessableAreas.ToList();
-            CMBEnd.DataSource = AccessableAreas.ToList();
+            string CurrentStart = (string)CMBStart.SelectedItem ?? "";
+            string CurrentEnd = (string)CMBEnd.SelectedItem ?? "";
+            var AccessableAreas = CurrentTrackerInstance.EntrancePool.AreaList.Values.Where(x => x.ExitsAcessibleFrom > 0 && x.LoadingZoneExits.Any()).Select(x => x.ID);
+            CMBStart.DataSource = AccessableAreas.OrderBy(x => x).ToList();
+            CMBEnd.DataSource = AccessableAreas.OrderBy(x => x).ToList();
+            if (CMBStart.Items.Contains(CurrentStart)) { CMBStart.SelectedIndex = CMBStart.Items.IndexOf(CurrentStart); }
+            if (CMBEnd.Items.Contains(CurrentEnd)) { CMBEnd.SelectedIndex = CMBEnd.Items.IndexOf(CurrentEnd); }
 
             UpdateDynamicUserOptions();
             PrintToListBox();
@@ -408,7 +423,7 @@ namespace Windows_Form_Frontend
                 SetObjectVisibility(false, false);
                 return;
             }
-            else if (CurrentTrackerInstance.StaticOptions.EntranceRandoFeatures && CurrentTrackerInstance.EntrancePool.IsEntranceRando)
+            else if (CurrentTrackerInstance.StaticOptions.EntranceRandoFeatures && (CurrentTrackerInstance.EntrancePool.IsEntranceRando || CurrentTrackerInstance.EntrancePool.CheckForRandomEntrances()))
             {
                 SetObjectVisibility(true, true);
                 lblAvailableLocation.Location = new Point(locX, locY + 2);
@@ -656,9 +671,24 @@ namespace Windows_Form_Frontend
             ToolStripItem RefreshContextItem = contextMenuStrip.Items.Add("Refresh");
             RefreshContextItem.Click += (sender, e) => { PrintToListBox(new List<ListBox> { listBox }); };
 
-            if (listBox.SelectedItem is EntranceData.EntranceRandoExit)
+            if (listBox.SelectedItem is MiscData.Areaheader AreaObject)
             {
-                var exitObject = (listBox.SelectedItem as EntranceData.EntranceRandoExit);
+                if (CurrentTrackerInstance.EntrancePool.AreaList.ContainsKey(AreaObject.Area) && CurrentTrackerInstance.EntrancePool.IsEntranceRando)
+                {
+                    ToolStripItem NavigateHereContextItem = contextMenuStrip.Items.Add("Navigate To this area");
+                    NavigateHereContextItem.Click += (sender, e) => { CMBEnd.SelectedItem = AreaObject.Area; };
+                }
+                ToolStripItem FilterHereContextItem = contextMenuStrip.Items.Add("Navigate To this area");
+                FilterHereContextItem.Click += (sender, e) => 
+                { 
+                    if (listBox == LBValidLocations) { TXTLocSearch.Text = "#" + AreaObject.Area; }
+                    if (listBox == LBValidEntrances) { TXTEntSearch.Text = "#" + AreaObject.Area; }
+                    if (listBox == LBCheckedLocations) { TXTCheckedSearch.Text = "#" + AreaObject.Area; }
+                };
+            }
+
+            if (listBox.SelectedItem is EntranceData.EntranceRandoExit exitObject)
+            {
                 //Star Item
                 string StarFunction = exitObject.Starred ? "UnStar Location" : "Star Location";
                 ToolStripItem StarContextItem = contextMenuStrip.Items.Add(StarFunction);
@@ -904,21 +934,15 @@ namespace Windows_Form_Frontend
 
         private void BTNFindPath_Click(object sender, EventArgs e)
         {
-            if (CMBStart.SelectedIndex < 0 || CMBEnd.SelectedIndex < 0) { return; }
+            if (CMBStart.SelectedIndex < 0 || CMBEnd.SelectedIndex < 0 || CMBStart.SelectedItem.ToString() == CMBEnd.SelectedItem.ToString()) { return; }
             LBPathFinder.Font = WinFormUtils.GetFontFromString(CurrentTrackerInstance.StaticOptions.OptionFile.WinformData.FormFont);
             LBPathFinder.ItemHeight = Convert.ToInt32(LBPathFinder.Font.Size * 1.8);
             LBPathFinder.DataSource = new List<string> { "Finding path" };
             MainInterfacepathfinder = new Pathfinder();
             MainInterfacepathfinder.FindPath(CurrentTrackerInstance, (string)CMBStart.SelectedItem, (string)CMBEnd.SelectedItem, new List<string>(), new Dictionary<string, string>());
             MainInterfacepathfinder.FinalPath = MainInterfacepathfinder.FinalPath.OrderBy(x => x.Count).ToList();
-            if (!MainInterfacepathfinder.FinalPath.Any())
-            {
-                LBPathFinder.DataSource = new List<string> { "No Path Found" };
-            }
-            else
-            {
-                PrintPaths();
-            }
+            if (!MainInterfacepathfinder.FinalPath.Any()) { LBPathFinder.DataSource = new List<string> { "No Path Found" }; }
+            else { PrintPaths(); }
         }
 
         private void PrintPaths()
@@ -927,9 +951,10 @@ namespace Windows_Form_Frontend
             int index = 0;
             foreach (var i in MainInterfacepathfinder.FinalPath)
             {
+                if (index >= 20) { break; }
                 Results.Add(WinFormUtils.CreateDivider(LBPathFinder));
-                Results.Add(new Pathfinder.PathfinderPath { Display = $"Path {index+1}: {i.Count} Stops", Index = index });
-                var PathList = i.Select(x => new Pathfinder.PathfinderPath { Display = $"{x.Key} => {x.Value}", Index = index });
+                Results.Add(new Pathfinder.PathfinderPath { Display = $"Path {index+1}: {i.Count - 1} Stops", Index = index });
+                var PathList = i.Select(x => new Pathfinder.PathfinderPath { Display = x.Value == "" ? x.Key : $"{x.Key} => {x.Value}", Index = index });
                 Results = Results.Concat(PathList).ToList();
                 index++;
             }
@@ -940,15 +965,12 @@ namespace Windows_Form_Frontend
         {
             if (((ListBox)sender).SelectedItem is Pathfinder.PathfinderPath path)
             {
-                if (path.Focused)
-                {
-                    PrintPaths();
-                }
+                if (path.Focused) { PrintPaths(); }
                 else
                 {
                     List<object> Results = new List<object>();
-                    Results.Add(new Pathfinder.PathfinderPath { Display = $"Path {path.Index + 1}: {MainInterfacepathfinder.FinalPath[path.Index].Count} Stops", Index = path.Index });
-                    Results = Results.Concat(MainInterfacepathfinder.FinalPath[path.Index].Select(x => new Pathfinder.PathfinderPath { Display = $"{x.Key} => {x.Value}", Index = path.Index, Focused = true })).ToList();
+                    Results.Add(new Pathfinder.PathfinderPath { Display = $"Path {path.Index + 1}: {MainInterfacepathfinder.FinalPath[path.Index].Count - 1} Stops", Index = path.Index });
+                    Results = Results.Concat(MainInterfacepathfinder.FinalPath[path.Index].Select(x => new Pathfinder.PathfinderPath { Display = x.Value == "" ? x.Key : $"{x.Key} => {x.Value}", Index = path.Index, Focused = true })).ToList();
                     LBPathFinder.DataSource = Results.ToList();
                 }
             }
@@ -958,6 +980,53 @@ namespace Windows_Form_Frontend
         {
             PopoutPathfinder popoutPathfinder = new PopoutPathfinder(CurrentTrackerInstance);
             popoutPathfinder.Show();
+        }
+
+        private void lblSwapPathfinder_Click(object sender, EventArgs e)
+        {
+            if (CMBStart.SelectedIndex < 0 || CMBEnd.SelectedIndex < 0 || CMBStart.SelectedItem.ToString() == CMBEnd.SelectedItem.ToString()) { return; }
+            string Start = (string)CMBStart.SelectedItem;
+            string end = (string)CMBEnd.SelectedItem;
+            CMBStart.SelectedItem = end;
+            CMBEnd.SelectedItem = Start;
+        }
+
+        private void ExportCheckedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            List<string> CheckedObjects = new List<string>();
+            foreach(var i in CurrentTrackerInstance.LocationPool)
+            {
+                if (i.Value.CheckState == MiscData.CheckState.Checked) { CheckedObjects.Add(i.Key); }
+            }
+            foreach (var i in CurrentTrackerInstance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values))
+            {
+                if (i.CheckState == MiscData.CheckState.Checked) { CheckedObjects.Add($"{i.ParentAreaID} | {i.ID}"); }
+            }
+            foreach (var i in CurrentTrackerInstance.HintPool)
+            {
+                if (i.Value.CheckState == MiscData.CheckState.Checked) { CheckedObjects.Add(i.Key); }
+            }
+            Clipboard.SetText(JsonConvert.SerializeObject(CheckedObjects, Testing._NewtonsoftJsonSerializerOptions));
+        }
+
+        private void ImportCheckedToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            List<object> ToCheck = new List<object>();
+            List<string> CheckedObjects = JsonConvert.DeserializeObject<List<string>>(Clipboard.GetText());
+            foreach(var i in CheckedObjects)
+            {
+                if (CurrentTrackerInstance.LocationPool.ContainsKey(i)) { ToCheck.Add(CurrentTrackerInstance.LocationPool[i]); }
+                else if (CurrentTrackerInstance.HintPool.ContainsKey(i)) { ToCheck.Add(CurrentTrackerInstance.HintPool[i]); }
+                else if (i.Contains(" | "))
+                {
+                    var data = i.Split('|').Select(x => x.Trim()).ToArray();
+                    if (CurrentTrackerInstance.EntrancePool.AreaList.ContainsKey(data[0]) && CurrentTrackerInstance.EntrancePool.AreaList[data[0]].LoadingZoneExits.ContainsKey(data[1]))
+                    {
+                        ToCheck.Add(CurrentTrackerInstance.EntrancePool.AreaList[data[0]].LoadingZoneExits[data[1]]);
+                    }
+                }
+            }
+            HandleItemSelect(ToCheck, MiscData.CheckState.Checked);
         }
     }
 }

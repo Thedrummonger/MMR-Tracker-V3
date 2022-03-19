@@ -41,11 +41,14 @@ namespace Windows_Form_Frontend
                 counter++;
             }
             nudFontSize.Value = (decimal)CurrentFont.Size;
+            textBox1.Text = "Example";
+            textBox1.Font = CurrentFont;
             ValuesUpdating = false;
         }
 
         private void chkUpdates_CheckStateChanged(object sender, EventArgs e)
         {
+            if (ValuesUpdating) { return; }
             TempOptionFile.WinformData.HorizontalLayout = chkHorizontal.Checked;
             TempOptionFile.WinformData.ShowEntryNameTooltip = chkTooltips.Checked;
             TempOptionFile.CheckForUpdate = chkUpdates.Checked;
@@ -53,17 +56,20 @@ namespace Windows_Form_Frontend
 
         private void nudFontSize_ValueChanged(object sender, EventArgs e)
         {
+            if (ValuesUpdating) { return; }
             UpdateFont();
         }
 
         private void cmbFontStyle_SelectedValueChanged(object sender, EventArgs e)
         {
+            if (ValuesUpdating) { return; }
             UpdateFont();
         }
 
         private void UpdateFont()
         {
             TempOptionFile.WinformData.FormFont = WinFormUtils.ConvertFontToString(new Font(familyName: cmbFontStyle.SelectedItem.ToString(), (float)nudFontSize.Value, FontStyle.Regular));
+            textBox1.Font = new Font(familyName: cmbFontStyle.SelectedItem.ToString(), (float)nudFontSize.Value, FontStyle.Regular);
         }
 
         private void button1_Click(object sender, EventArgs e)
