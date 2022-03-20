@@ -36539,6 +36539,20 @@
           "Blue Rupee"
         ]
       }
+    },
+    {
+      "ID": "JunkSingleBombchu",
+      "Name": "Bombchu",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": false,
+      "ItemTypes": [
+        "Item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "Bombchu"
+        ]
+      }
     }
   ],
   "MacroList": [

@@ -706,29 +706,42 @@ namespace Windows_Form_Frontend
                 {
                     Debug.WriteLine(JsonConvert.SerializeObject(exitObject, Testing._NewtonsoftJsonSerializerOptions));
                 };
-            }
-            else if (listBox.SelectedItem is LocationData.LocationObject)
-            {
-                var itemObject = (listBox.SelectedItem as LocationData.LocationObject);
 
+                string ExitID = $"{exitObject.ParentAreaID} X {exitObject.ID}";
+                if (LogicCalculation.UnlockData.ContainsKey(ExitID))
+                {
+                    //What Unlocked This
+                    ToolStripItem WhatUnlockedThis = contextMenuStrip.Items.Add("What Unlocked This");
+                    WhatUnlockedThis.Click += (sender, e) => { ShowUnlockData(ExitID); };
+                }
+            }
+            else if (listBox.SelectedItem is LocationData.LocationObject LocationObject)
+            {
                 //Star Item
-                string StarFunction = itemObject.Starred ? "UnStar Location" : "Star Location";
+                string StarFunction = LocationObject.Starred ? "UnStar Location" : "Star Location";
                 ToolStripItem StarContextItem = contextMenuStrip.Items.Add(StarFunction);
-                StarContextItem.Click += (sender, e) => { itemObject.Starred = !itemObject.Starred; PrintToListBox(new List<ListBox> { listBox }); };
+                StarContextItem.Click += (sender, e) => { LocationObject.Starred = !LocationObject.Starred; PrintToListBox(new List<ListBox> { listBox }); };
                 //ShowLogic
                 ToolStripItem ShowLogicFunction = contextMenuStrip.Items.Add("Show Logic");
                 ShowLogicFunction.Click += (sender, e) =>
                 {
-                    ShowLogic showLogic = new ShowLogic(itemObject.ID, CurrentTrackerInstance);
+                    ShowLogic showLogic = new ShowLogic(LocationObject.ID, CurrentTrackerInstance);
                     showLogic.Show();
                 };
                 //DevData
                 ToolStripItem ShowDevData = contextMenuStrip.Items.Add("Show Dev Data");
                 ShowDevData.Click += (sender, e) =>
                 {
-                    Debug.WriteLine(JsonConvert.SerializeObject(itemObject, Testing._NewtonsoftJsonSerializerOptions));
-                    Debug.WriteLine(JsonConvert.SerializeObject(itemObject.GetDictEntry(CurrentTrackerInstance), Testing._NewtonsoftJsonSerializerOptions));
+                    Debug.WriteLine(JsonConvert.SerializeObject(LocationObject, Testing._NewtonsoftJsonSerializerOptions));
+                    Debug.WriteLine(JsonConvert.SerializeObject(LocationObject.GetDictEntry(CurrentTrackerInstance), Testing._NewtonsoftJsonSerializerOptions));
                 };
+
+                if (LogicCalculation.UnlockData.ContainsKey(LocationObject.ID))
+                {
+                    //What Unlocked This
+                    ToolStripItem WhatUnlockedThis = contextMenuStrip.Items.Add("What Unlocked This");
+                    WhatUnlockedThis.Click += (sender, e) => { ShowUnlockData(LocationObject.ID); };
+                }
 
                 if (listBox == LBValidLocations)
                 {
@@ -736,16 +749,16 @@ namespace Windows_Form_Frontend
                     ToolStripItem CheckContextItem = contextMenuStrip.Items.Add("Check Location");
                     CheckContextItem.Click += (sender, e) => { HandleItemSelect(new List<object> { listBox.SelectedItem }, MiscData.CheckState.Checked, LB: listBox); };
                     //Mark\UnMark Item
-                    string MarkFunction = itemObject.CheckState == MiscData.CheckState.Marked ? "UnMark Location" : "Mark Location";
+                    string MarkFunction = LocationObject.CheckState == MiscData.CheckState.Marked ? "UnMark Location" : "Mark Location";
                     ToolStripItem MarkContextItem = contextMenuStrip.Items.Add(MarkFunction);
                     MarkContextItem.Click += (sender, e) => { HandleItemSelect(new List<object> { listBox.SelectedItem }, MiscData.CheckState.Marked, LB: listBox); };
                     //Set Item Price
-                    string SetPriceText = itemObject.CheckPrice > -1 ? "Clear Price" : "Set Price";
+                    string SetPriceText = LocationObject.CheckPrice > -1 ? "Clear Price" : "Set Price";
                     ToolStripItem SetPrice = contextMenuStrip.Items.Add(SetPriceText);
                     SetPrice.Click += (sender, e) =>
                     {
-                        if (itemObject.CheckPrice > -1) { itemObject.CheckPrice = -1; }
-                        else { SetCheckPrice(itemObject); }
+                        if (LocationObject.CheckPrice > -1) { LocationObject.CheckPrice = -1; }
+                        else { SetCheckPrice(LocationObject); }
                     };
                 }
                 else if (listBox == LBCheckedLocations)
@@ -763,6 +776,13 @@ namespace Windows_Form_Frontend
             {
                 contextMenuStrip.Show(Cursor.Position);
             }
+        }
+
+        private void ShowUnlockData(string iD)
+        {
+            if (!LogicCalculation.UnlockData.ContainsKey(iD)) { return; }
+            var AdvancedUnlockData = PlaythroughTools.GetAdvancedUnlockData(iD, LogicCalculation.UnlockData, CurrentTrackerInstance);
+            MessageBox.Show(JsonConvert.SerializeObject(AdvancedUnlockData, Testing._NewtonsoftJsonSerializerOptions), $"{iD}");
         }
 
         //ListboxObject Handeling

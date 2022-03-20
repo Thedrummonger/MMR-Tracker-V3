@@ -12,12 +12,14 @@ namespace MMR_Tracker_V3
     {
         public List<Dictionary<string, string>> FinalPath = new List<Dictionary<string, string>>();
         public bool FindPath(
-            LogicObjects.TrackerInstance instance, 
-            string CurrentArea, 
-            string Goal, 
+            LogicObjects.TrackerInstance instance,
+            string CurrentArea,
+            string Goal,
             List<string> SeenAreas,
-            Dictionary<string, string> Path, 
-            bool Root = true
+            Dictionary<string, string> Path,
+            bool Root = true,
+            bool IncludeMacroExits = false,
+            bool StopAtFirstPath = false
         )
         {
             if (Root) { FinalPath.Clear(); }
@@ -30,7 +32,7 @@ namespace MMR_Tracker_V3
             if (validExits.Any(x => x.DestinationExit.region == Goal))
             {
                 var DestinationExit = validExits.First(x => x.DestinationExit.region == Goal);
-                if (!validMacroExits.Contains(DestinationExit) || instance.StaticOptions.ShowMacroExitsPathfinder)
+                if (!validMacroExits.Contains(DestinationExit) || IncludeMacroExits)
                 {
                     if (WarpExits.Contains(DestinationExit)) { Path.Add(DestinationExit.ParentAreaID, DestinationExit.ID); }
                     else { Path.Add(CurrentArea, DestinationExit.ID); }
@@ -44,13 +46,13 @@ namespace MMR_Tracker_V3
                 if (SeenAreas.Contains(i.DestinationExit.region)) { continue; }
                 var PathCopy = Path.ToDictionary(entry => entry.Key, entry => entry.Value);
                 var SeenAreasCopy = SeenAreas.Select(entry => entry);
-                if (!validMacroExits.Contains(i) || instance.StaticOptions.ShowMacroExitsPathfinder) 
+                if (!validMacroExits.Contains(i) || IncludeMacroExits) 
                 { 
                     if (WarpExits.Contains(i)) { PathCopy.Add(i.ParentAreaID, i.ID); }
                     else { PathCopy.Add(CurrentArea, i.ID); }
                 }
-                var PathFound = FindPath(instance, i.DestinationExit.region, Goal, SeenAreasCopy.ToList(), PathCopy, false);
-                if (PathFound) { return false; }
+                var PathFound = FindPath(instance, i.DestinationExit.region, Goal, SeenAreasCopy.ToList(), PathCopy, false, IncludeMacroExits, StopAtFirstPath);
+                if (PathFound) { return StopAtFirstPath; }
             }
             return false;
         }

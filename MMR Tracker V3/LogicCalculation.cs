@@ -17,7 +17,7 @@ namespace MMR_Tracker_V3
     {
         static bool LogItem = false;
         static List<int> AverageTime = new List<int>();
-        static Dictionary<string, List<string>> UnlockData = new Dictionary<string, List<string>>();
+        public static Dictionary<string, List<string>> UnlockData = new Dictionary<string, List<string>>();
 
         public static bool RequirementsMet(List<string> Requirements, TrackerInstance instance, string ID = null, Dictionary<string, List<string>> UnlockData = null)
         {
