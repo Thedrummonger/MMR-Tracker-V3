@@ -17,16 +17,29 @@ namespace MMR_Tracker_V3
     {
         static bool LogItem = false;
         static List<int> AverageTime = new List<int>();
+        static Dictionary<string, List<string>> UnlockData = new Dictionary<string, List<string>>();
 
-        public static bool RequirementsMet(List<string> Requirements, TrackerInstance instance)
+        public static bool RequirementsMet(List<string> Requirements, TrackerInstance instance, string ID = null, Dictionary<string, List<string>> UnlockData = null)
         {
-            return Requirements.All(x => LogicEntryAquired(instance, x));
+            bool reqMet = Requirements.All(x => LogicEntryAquired(instance, x));
+            if (ID != null && UnlockData != null && reqMet)
+            {
+                if (!UnlockData.ContainsKey(ID)) { UnlockData.Add(ID, new List<string>()); }
+                UnlockData[ID] = UnlockData[ID].Concat(Requirements).ToList();
+            }
+            return reqMet;
         }
 
-        public static bool ConditionalsMet(List<List<string>> Conditionals, TrackerInstance instance)
+        public static bool ConditionalsMet(List<List<string>> Conditionals, TrackerInstance instance, string ID = null, Dictionary<string, List<string>> UnlockData = null)
         {
             if (!Conditionals.Any()) { return true; }
-            return Conditionals.Any(x => RequirementsMet(x, instance));
+            var CondMet = Conditionals.FirstOrDefault(x => RequirementsMet(x, instance, ID));
+            if (ID != null && UnlockData != null && CondMet != null)
+            {
+                if (!UnlockData.ContainsKey(ID)) { UnlockData.Add(ID, new List<string>()); }
+                UnlockData[ID] = UnlockData[ID].Concat(CondMet).ToList();
+            }
+            return CondMet != null;
         }
 
         public static bool LogicEntryAquired(TrackerInstance instance, string i)
@@ -79,6 +92,7 @@ namespace MMR_Tracker_V3
         private static Dictionary<string, MMRData.JsonFormatLogicItem> LogicMap = new Dictionary<string, MMRData.JsonFormatLogicItem>();
         public static void CalculateLogic(TrackerInstance instance, bool log = false)
         {
+            UnlockData.Clear();
             Debug.WriteLine("Logic Calculation ----------------------");
             Stopwatch LogicTime = new Stopwatch();
             Utility.TimeCodeExecution(LogicTime);
@@ -106,8 +120,9 @@ namespace MMR_Tracker_V3
                 //var Logic = instance.GetLogic(i.Key);
                 var Logic = LogicMap[i.ID];
                 i.Available =
-                    RequirementsMet(Logic.RequiredItems, instance) &&
-                    ConditionalsMet(Logic.ConditionalItems, instance);
+                    RequirementsMet(Logic.RequiredItems, instance, i.ID, UnlockData) &&
+                    ConditionalsMet(Logic.ConditionalItems, instance, i.ID, UnlockData);
+                if (!i.Available && UnlockData.ContainsKey(i.ID)) { UnlockData.Remove(i.ID); }
             }
             Utility.TimeCodeExecution(LogicTime, "Calculating Locations", 1);
             foreach (var Area in instance.EntrancePool.AreaList)
@@ -117,8 +132,9 @@ namespace MMR_Tracker_V3
                     var Logic = instance.GetLogic(instance.EntrancePool.GetLogicNameFromExit(i.Value));
                     i.Value.Available =
                         AreaReached(Area.Key, instance) &&
-                        RequirementsMet(Logic.RequiredItems, instance) &&
-                        ConditionalsMet(Logic.ConditionalItems, instance);
+                        RequirementsMet(Logic.RequiredItems, instance, $"{i.Value.ParentAreaID} X {i.Value.ID}", UnlockData) &&
+                        ConditionalsMet(Logic.ConditionalItems, instance, $"{i.Value.ParentAreaID} X {i.Value.ID}", UnlockData);
+                    if (!i.Value.Available && UnlockData.ContainsKey($"{i.Value.ParentAreaID} X {i.Value.ID}")) { UnlockData.Remove($"{i.Value.ParentAreaID} X {i.Value.ID}"); }
                 }
             }
             Utility.TimeCodeExecution(LogicTime, "Caclulating Exits", 1);
@@ -126,8 +142,9 @@ namespace MMR_Tracker_V3
             {
                 var Logic = instance.GetLogic(i.Key);
                 i.Value.Available =
-                    RequirementsMet(Logic.RequiredItems, instance) &&
-                    ConditionalsMet(Logic.ConditionalItems, instance);
+                    RequirementsMet(Logic.RequiredItems, instance, i.Key, UnlockData) &&
+                    ConditionalsMet(Logic.ConditionalItems, instance, i.Key, UnlockData);
+                if (!i.Value.Available && UnlockData.ContainsKey(i.Key)) { UnlockData.Remove(i.Key); }
             }
             Utility.TimeCodeExecution(LogicTime, "Calculating Hints", -1);
         }
@@ -142,8 +159,9 @@ namespace MMR_Tracker_V3
                     var Logic = instance.GetLogic(instance.EntrancePool.GetLogicNameFromExit(i.Value));
                     var Available =
                         AreaReached(Area.Key, instance) &&
-                        RequirementsMet(Logic.RequiredItems, instance) &&
-                        ConditionalsMet(Logic.ConditionalItems, instance);
+                        RequirementsMet(Logic.RequiredItems, instance, $"{i.Value.ParentAreaID} X {i.Value.ID}", UnlockData) &&
+                        ConditionalsMet(Logic.ConditionalItems, instance, $"{i.Value.ParentAreaID} X {i.Value.ID}", UnlockData);
+                    if (!i.Value.Available && UnlockData.ContainsKey($"{i.Value.ParentAreaID} X {i.Value.ID}")) { UnlockData.Remove($"{i.Value.ParentAreaID} X {i.Value.ID}"); }
                     bool ShouldBeChecked = Available && i.Value.CheckState != CheckState.Checked;
                     bool ShouldBeUnChecked = !Available && i.Value.CheckState == CheckState.Checked;
                     if (ShouldBeChecked || ShouldBeUnChecked)
@@ -192,8 +210,9 @@ namespace MMR_Tracker_V3
                     var Logic = instance.GetLogic(instance.EntrancePool.GetLogicNameFromExit(i.Value));
                     i.Value.Available =
                         AreaReached(Area.Key, instance) &&
-                        RequirementsMet(Logic.RequiredItems, instance) && 
-                        ConditionalsMet(Logic.ConditionalItems, instance);
+                        RequirementsMet(Logic.RequiredItems, instance, $"{i.Value.ParentAreaID} X {i.Value.ID}", UnlockData) && 
+                        ConditionalsMet(Logic.ConditionalItems, instance, $"{i.Value.ParentAreaID} X {i.Value.ID}", UnlockData);
+                    if (!i.Value.Available && UnlockData.ContainsKey($"{i.Value.ParentAreaID} X {i.Value.ID}")) { UnlockData.Remove($"{i.Value.ParentAreaID} X {i.Value.ID}"); }
                     if (i.Value.Available && i.Value.CheckState != CheckState.Checked)
                     {
                         MacroStateChanged = true;
@@ -226,7 +245,8 @@ namespace MMR_Tracker_V3
                 if (Logic.IsTrick && !i.Value.TrickEnabled) { Available = false; }
                 else 
                 {
-                    Available = RequirementsMet(Logic.RequiredItems, instance) && ConditionalsMet(Logic.ConditionalItems, instance);
+                    Available = RequirementsMet(Logic.RequiredItems, instance, i.Key, UnlockData) && ConditionalsMet(Logic.ConditionalItems, instance, i.Key, UnlockData);
+                    if (!Available && UnlockData.ContainsKey(i.Key)) { UnlockData.Remove(i.Key); }
                 }
 
                 if (Available != i.Value.Aquired)
@@ -248,8 +268,9 @@ namespace MMR_Tracker_V3
                 //var Logic = instance.GetLogic(i.Key);
                 var Logic = LogicMap[i.Key];
                 var Available =
-                    RequirementsMet(Logic.RequiredItems, instance) &&
-                    ConditionalsMet(Logic.ConditionalItems, instance);
+                    RequirementsMet(Logic.RequiredItems, instance, i.Key, UnlockData) &&
+                    ConditionalsMet(Logic.ConditionalItems, instance, i.Key, UnlockData);
+                if (!Available && UnlockData.ContainsKey(i.Key)) { UnlockData.Remove(i.Key); }
 
                 bool ShouldBeChecked = Available && i.Value.CheckState != CheckState.Checked;
                 bool ShouldBeUnChecked = !Available && i.Value.CheckState == CheckState.Checked;
