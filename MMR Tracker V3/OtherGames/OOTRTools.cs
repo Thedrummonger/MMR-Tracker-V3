@@ -706,18 +706,19 @@ namespace MMR_Tracker_V3.OtherGames
                         trick.Value.TrickEnabled = EnabledTricks.Contains(trick.Key); 
                     }
                 }
-                if (i.Key == "dungeon_shortcuts")
+                if (i.Key == "dungeon_shortcuts" || (i.Key == "dungeon_shortcuts_choice" && i.Value == "all"))
                 {
+                    bool AllShortcuts = (i.Key == "dungeon_shortcuts_choice" && i.Value == "all");
                     List<string> DungeonShortcuts = new List<string>();
-                    foreach (string val in i.Value) { DungeonShortcuts.Add(val); }
-                    Instance.UserOptions["Deku_tree_Shortcuts"].CurrentValue = DungeonShortcuts.Contains("deku_tree") ? "Enabled" : "Disabled";
-                    Instance.UserOptions["Dodongos_Cavern_Shortcuts"].CurrentValue = DungeonShortcuts.Contains("dodongos_cavern") ? "Enabled" : "Disabled";
-                    Instance.UserOptions["Jabu_Jabus_Belly_Shortcuts"].CurrentValue = DungeonShortcuts.Contains("jabu_jabus_belly") ? "Enabled" : "Disabled";
-                    Instance.UserOptions["Forest_Temple_Shortcuts"].CurrentValue = DungeonShortcuts.Contains("forest_temple") ? "Enabled" : "Disabled";
-                    Instance.UserOptions["Fire_Temple_Shortcuts"].CurrentValue = DungeonShortcuts.Contains("fire_temple") ? "Enabled" : "Disabled";
-                    Instance.UserOptions["Water_Temple_Shortcuts"].CurrentValue = DungeonShortcuts.Contains("water_temple") ? "Enabled" : "Disabled";
-                    Instance.UserOptions["Shadow_Temple_Shortcuts"].CurrentValue = DungeonShortcuts.Contains("shadow_temple") ? "Enabled" : "Disabled";
-                    Instance.UserOptions["Spirit_Temple_Shortcuts"].CurrentValue = DungeonShortcuts.Contains("spirit_temple") ? "Enabled" : "Disabled";
+                    if (!AllShortcuts) { foreach (string val in i.Value) { DungeonShortcuts.Add(val); } }
+                    Instance.UserOptions["Deku_tree_Shortcuts"].CurrentValue = DungeonShortcuts.Contains("deku_tree") || AllShortcuts ? "Enabled" : "Disabled";
+                    Instance.UserOptions["Dodongos_Cavern_Shortcuts"].CurrentValue = DungeonShortcuts.Contains("dodongos_cavern") || AllShortcuts ? "Enabled" : "Disabled";
+                    Instance.UserOptions["Jabu_Jabus_Belly_Shortcuts"].CurrentValue = DungeonShortcuts.Contains("jabu_jabus_belly") || AllShortcuts ? "Enabled" : "Disabled";
+                    Instance.UserOptions["Forest_Temple_Shortcuts"].CurrentValue = DungeonShortcuts.Contains("forest_temple") || AllShortcuts ? "Enabled" : "Disabled";
+                    Instance.UserOptions["Fire_Temple_Shortcuts"].CurrentValue = DungeonShortcuts.Contains("fire_temple") || AllShortcuts ? "Enabled" : "Disabled";
+                    Instance.UserOptions["Water_Temple_Shortcuts"].CurrentValue = DungeonShortcuts.Contains("water_temple") || AllShortcuts ? "Enabled" : "Disabled";
+                    Instance.UserOptions["Shadow_Temple_Shortcuts"].CurrentValue = DungeonShortcuts.Contains("shadow_temple") || AllShortcuts ? "Enabled" : "Disabled";
+                    Instance.UserOptions["Spirit_Temple_Shortcuts"].CurrentValue = DungeonShortcuts.Contains("spirit_temple") || AllShortcuts ? "Enabled" : "Disabled";
                 }
             }
             Debug.WriteLine("Locations ================================");

@@ -1361,7 +1361,7 @@
     "shuffle_dungeon_entrances": "True",
     "shuffle_overworld_entrances": "True",
     "not entrance_shuffle": "True",
-    "not shuffle_weird_egg": "True",
+    "not shuffle_weird_egg": "False",
     "not keysanity": "True",
     "not warp_songs": "True",
     "not free_scarecrow": "free_scarecrow == False",
