@@ -292,15 +292,18 @@ namespace MMR_Tracker_V3
             bool Literal = OriginalID.IsLiteralID(out string ID);
             LogicEntryType entryType = instance.GetLocationEntryType(ID, Literal);
 
+            bool HasAdditionalLogicFile = instance.InstanceReference.AdditionalLogicFileMapping.ContainsKey(ID);
             bool HasLogicFile = instance.InstanceReference.LogicFileMapping.ContainsKey(ID);
             bool HasOverride = instance.LogicOverride.ContainsKey(ID);
 
             List<string> OriginalRequirements = 
                 HasOverride && instance.LogicOverride[ID].RequiredItems != null ? instance.LogicOverride[ID].RequiredItems : 
-                (HasLogicFile ? instance.LogicFile.Logic[instance.InstanceReference.LogicFileMapping[ID]].RequiredItems : new List<string>());
+                (HasLogicFile ? instance.LogicFile.Logic[instance.InstanceReference.LogicFileMapping[ID]].RequiredItems : 
+                (HasAdditionalLogicFile ? instance.LogicDictionary.AdditionalLogic[instance.InstanceReference.AdditionalLogicFileMapping[ID]].RequiredItems : new List<string>()));
             List <List<string>> OriginalConditionals =
                 HasOverride && instance.LogicOverride[ID].ConditionalItems != null ? instance.LogicOverride[ID].ConditionalItems :
-                (HasLogicFile ? instance.LogicFile.Logic[instance.InstanceReference.LogicFileMapping[ID]].ConditionalItems : new List<List<string>>());
+                (HasLogicFile ? instance.LogicFile.Logic[instance.InstanceReference.LogicFileMapping[ID]].ConditionalItems : 
+                (HasAdditionalLogicFile ? instance.LogicDictionary.AdditionalLogic[instance.InstanceReference.AdditionalLogicFileMapping[ID]].ConditionalItems : new List<List<string>>()));
 
             Utility.DeepCloneLogic(OriginalRequirements, OriginalConditionals, out List<string> CopyRequirements, out List<List<string>> CopyConditionals);
 
@@ -323,7 +326,9 @@ namespace MMR_Tracker_V3
 
             if (DoEdits) { HandleOptionLogicEdits(instance.UserOptions.Values, ID, CopyRequirements, CopyConditionals, out CopyRequirements, out CopyConditionals); }
 
-            var LogicFileEntry = HasLogicFile ? instance.LogicFile.Logic[instance.InstanceReference.LogicFileMapping[ID]] : null;
+            var LogicFileEntry = 
+                HasLogicFile ? instance.LogicFile.Logic[instance.InstanceReference.LogicFileMapping[ID]] : 
+                (HasAdditionalLogicFile ? instance.LogicDictionary.AdditionalLogic[instance.InstanceReference.AdditionalLogicFileMapping[ID]] : null);
             return new MMRData.JsonFormatLogicItem
             {
                 Id = ID,

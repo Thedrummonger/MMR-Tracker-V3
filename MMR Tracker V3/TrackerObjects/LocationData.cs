@@ -48,10 +48,6 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 return RandomizedState == RandomizedState.ForcedJunk;
             }
-            public bool AutoMarked()
-            {
-                return IsUnrandomized(1) || SingleValidItem != null;
-            }
             public LogicDictionaryData.DictionaryLocationEntries GetDictEntry(LogicObjects.TrackerInstance Instance)
             {
                 return Instance.LogicDictionary.LocationList[Instance.InstanceReference.LocationDictionaryMapping[ID]];

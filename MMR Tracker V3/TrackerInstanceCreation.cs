@@ -34,7 +34,7 @@ namespace MMR_Tracker_V3
             return InstanceState.Success;
         }
 
-        public static bool PopulateTrackerObject(LogicObjects.TrackerInstance Instance)
+        public static bool PopulateTrackerObject(TrackerInstance Instance)
         {
             Instance.UserOptions = Instance.LogicDictionary.Options.ToDictionary(x => x.ID, y => y);
             Instance.Variables = Instance.LogicDictionary.Variables.ToDictionary(x => x.ID, y => y);
@@ -50,13 +50,26 @@ namespace MMR_Tracker_V3
 
             foreach (var i in Instance.LogicDictionary.AreaList)
             {
-                if (!Instance.EntrancePool.AreaList.ContainsKey(i)) { Instance.EntrancePool.AreaList.Add(i, new EntranceData.EntranceRandoArea()); }
+                if (!Instance.EntrancePool.AreaList.ContainsKey(i)) { Instance.EntrancePool.AreaList.Add(i, new EntranceData.EntranceRandoArea() { ID = i }); }
             }
 
             Index = 0;
             foreach (var i in Instance.LogicFile.Logic)
             {
                 Instance.InstanceReference.LogicFileMapping.Add(i.Id, Index);
+                ParseLogicItem(i);
+                Index++;
+            }
+            Index = 0;
+            foreach (var i in Instance.LogicDictionary.AdditionalLogic)
+            {
+                Instance.InstanceReference.AdditionalLogicFileMapping.Add(i.Id, Index);
+                ParseLogicItem(i);
+                Index++;
+            }
+
+            void ParseLogicItem(MMRData.JsonFormatLogicItem i)
+            {
                 if (Instance.LogicDictionary.LocationList.Any(x => x.ID == i.Id))
                 {
                     var DictEntry = Instance.LogicDictionary.LocationList.First(x => x.ID == i.Id);
@@ -79,7 +92,6 @@ namespace MMR_Tracker_V3
                     var DictEntry = Instance.LogicDictionary.EntranceList.First(x => x.ID == i.Id);
                     Instance.InstanceReference.EntranceLogicNameToEntryData.Add(i.Id, new EntranceData.EntranceAreaPair { Area = DictEntry.Area, Exit = DictEntry.Exit });
                     Instance.EntrancePool.AddLogicExitReference(new EntranceData.EntranceAreaPair { Area = DictEntry.Area, Exit = DictEntry.Exit }, i.Id);
-                    Instance.EntrancePool.AreaList[DictEntry.Area].ID = DictEntry.Area;
                     var DestinationList = DictEntry.RandomizableEntrance ? Instance.EntrancePool.AreaList[DictEntry.Area].LoadingZoneExits : Instance.EntrancePool.AreaList[DictEntry.Area].MacroExits;
                     DestinationList.Add(DictEntry.Exit, new EntranceData.EntranceRandoExit
                     {
@@ -93,7 +105,6 @@ namespace MMR_Tracker_V3
                 {
                     Instance.MacroPool.Add(i.Id, new() { ID = i.Id });
                 }
-                Index++;
             }
 
             Index = 0;

@@ -44,6 +44,11 @@ namespace Windows_Form_Frontend
             //Ensure the current directory is always the base directory in case the application is opened from a MMRTSave file elsewhere on the system
             System.IO.Directory.SetCurrentDirectory(AppDomain.CurrentDomain.BaseDirectory);
 
+            if (!Directory.Exists(References.WindowsPaths.BaseAppdataPath))
+            {
+                Directory.CreateDirectory(References.WindowsPaths.BaseAppdataPath);
+            }
+
             Testing.ISDebugging = ((Control.ModifierKeys != Keys.Control) && Debugger.IsAttached);
             Testing.ViewAsUserMode = ((Control.ModifierKeys == Keys.Control) && Debugger.IsAttached);
 
@@ -389,9 +394,14 @@ namespace Windows_Form_Frontend
             FormatMenuItems();
             if (CurrentTrackerInstance == null) { return; }
 
+            spoilerLogToolsToolStripMenuItem.Visible = false;
+            logicEditorToolStripMenuItem.Visible = false;
+
             this.Text = CurrentTrackerInstance.LogicFile.GameCode + " Tracker" + (UnsavedChanges ? "*" : "");
 
             CurrentTrackerInstance.EntrancePool.IsEntranceRando = CurrentTrackerInstance.EntrancePool.CheckForRandomEntrances();
+
+            PathFinderToolStripMenuItem.Visible = CurrentTrackerInstance.EntrancePool.IsEntranceRando;
 
             redoToolStripMenuItem.Enabled = RedoStringList.Any();
             undoToolStripMenuItem.Enabled = UndoStringList.Any();
@@ -700,12 +710,15 @@ namespace Windows_Form_Frontend
                     ShowLogic showLogic = new ShowLogic(CurrentTrackerInstance.EntrancePool.GetLogicNameFromExit(exitObject), CurrentTrackerInstance);
                     showLogic.Show();
                 };
-                //DevData
-                ToolStripItem ShowDevData = contextMenuStrip.Items.Add("Show Dev Data");
-                ShowDevData.Click += (sender, e) =>
+                if (Testing.ISDebugging)
                 {
-                    Debug.WriteLine(JsonConvert.SerializeObject(exitObject, Testing._NewtonsoftJsonSerializerOptions));
-                };
+                    //DevData
+                    ToolStripItem ShowDevData = contextMenuStrip.Items.Add("Show Dev Data");
+                    ShowDevData.Click += (sender, e) =>
+                    {
+                        Debug.WriteLine(JsonConvert.SerializeObject(exitObject, Testing._NewtonsoftJsonSerializerOptions));
+                    };
+                }
 
                 string ExitID = $"{exitObject.ParentAreaID} X {exitObject.ID}";
                 if (LogicCalculation.UnlockData.ContainsKey(ExitID))
@@ -728,13 +741,16 @@ namespace Windows_Form_Frontend
                     ShowLogic showLogic = new ShowLogic(LocationObject.ID, CurrentTrackerInstance);
                     showLogic.Show();
                 };
-                //DevData
-                ToolStripItem ShowDevData = contextMenuStrip.Items.Add("Show Dev Data");
-                ShowDevData.Click += (sender, e) =>
+                if (Testing.ISDebugging)
                 {
-                    Debug.WriteLine(JsonConvert.SerializeObject(LocationObject, Testing._NewtonsoftJsonSerializerOptions));
-                    Debug.WriteLine(JsonConvert.SerializeObject(LocationObject.GetDictEntry(CurrentTrackerInstance), Testing._NewtonsoftJsonSerializerOptions));
-                };
+                    //DevData
+                    ToolStripItem ShowDevData = contextMenuStrip.Items.Add("Show Dev Data");
+                    ShowDevData.Click += (sender, e) =>
+                    {
+                        Debug.WriteLine(JsonConvert.SerializeObject(LocationObject, Testing._NewtonsoftJsonSerializerOptions));
+                        Debug.WriteLine(JsonConvert.SerializeObject(LocationObject.GetDictEntry(CurrentTrackerInstance), Testing._NewtonsoftJsonSerializerOptions));
+                    };
+                }
 
                 if (LogicCalculation.UnlockData.ContainsKey(LocationObject.ID))
                 {

@@ -18285,6 +18285,19 @@
           "a masked evil"
         ]
       }
+    },
+    {
+      "ID": "DefeatMajora",
+      "Name": "Majora",
+      "OriginalItem": "MajorasMask",
+      "Area": "The Moon",
+      "ValidItemTypes": [
+        "MajorasMask"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": []
+      }
     }
   ],
   "ItemList": [
@@ -36553,112 +36566,24 @@
           "Bombchu"
         ]
       }
+    },
+    {
+      "ID": "MajorasMask",
+      "Name": "Majoras Mask",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": false,
+      "ItemTypes": [
+        "MajorasMask"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": []
+      }
     }
   ],
   "MacroList": [
     {
-      "ID": "CanClearDungeonAtWoodfall",
-      "Static": true,
-      "ConditionalItemsOverride": [
-        [
-          "AreaWoodFallTempleAccess == AreaWoodFallTempleAccess",
-          "AreaWoodFallTempleClear"
-        ],
-        [
-          "AreaWoodFallTempleAccess == AreaSnowheadTempleAccess",
-          "AreaSnowheadTempleClear"
-        ],
-        [
-          "AreaWoodFallTempleAccess == AreaGreatBayTempleAccess",
-          "AreaGreatBayTempleClear"
-        ],
-        [
-          "AreaWoodFallTempleAccess == AreaInvertedStoneTowerTempleAccess",
-          "AreaStoneTowerClear"
-        ]
-      ],
-      "SpoilerData": {}
-    },
-    {
-      "ID": "CanClearDungeonAtSnowhead",
-      "Static": true,
-      "ConditionalItemsOverride": [
-        [
-          "AreaSnowheadTempleAccess == AreaWoodFallTempleAccess",
-          "AreaWoodFallTempleClear"
-        ],
-        [
-          "AreaSnowheadTempleAccess == AreaSnowheadTempleAccess",
-          "AreaSnowheadTempleClear"
-        ],
-        [
-          "AreaSnowheadTempleAccess == AreaGreatBayTempleAccess",
-          "AreaGreatBayTempleClear"
-        ],
-        [
-          "AreaSnowheadTempleAccess == AreaInvertedStoneTowerTempleAccess",
-          "AreaStoneTowerClear"
-        ]
-      ],
-      "SpoilerData": {}
-    },
-    {
-      "ID": "CanClearDungeonAtGreatBay",
-      "Static": true,
-      "ConditionalItemsOverride": [
-        [
-          "AreaGreatBayTempleAccess == AreaWoodFallTempleAccess",
-          "AreaWoodFallTempleClear"
-        ],
-        [
-          "AreaGreatBayTempleAccess == AreaSnowheadTempleAccess",
-          "AreaSnowheadTempleClear"
-        ],
-        [
-          "AreaGreatBayTempleAccess == AreaGreatBayTempleAccess",
-          "AreaGreatBayTempleClear"
-        ],
-        [
-          "AreaGreatBayTempleAccess == AreaInvertedStoneTowerTempleAccess",
-          "AreaStoneTowerClear"
-        ]
-      ],
-      "SpoilerData": {}
-    },
-    {
-      "ID": "CanClearDungeonAtStoneTower",
-      "Static": true,
-      "ConditionalItemsOverride": [
-        [
-          "AreaInvertedStoneTowerTempleAccess == AreaWoodFallTempleAccess",
-          "AreaWoodFallTempleClear"
-        ],
-        [
-          "AreaInvertedStoneTowerTempleAccess == AreaSnowheadTempleAccess",
-          "AreaSnowheadTempleClear"
-        ],
-        [
-          "AreaInvertedStoneTowerTempleAccess == AreaGreatBayTempleAccess",
-          "AreaGreatBayTempleClear"
-        ],
-        [
-          "AreaInvertedStoneTowerTempleAccess == AreaInvertedStoneTowerTempleAccess",
-          "AreaStoneTowerClear"
-        ]
-      ],
-      "SpoilerData": {}
-    },
-    {
-      "ID": "MMRTSmallKeysy",
-      "Static": true
-    },
-    {
-      "ID": "MMRTBossKeysy",
-      "Static": true
-    },
-    {
       "ID": "MMRTDefaultWallet",
-      "Static": true,
+      "Static": false,
       "WalletCapacity": 99
     },
     {
@@ -36822,11 +36747,118 @@
           "Stone Tower Map Purchase (InOcean)"
         ]
       }
+    }
+  ],
+  "AdditionalLogic": [
+    {
+      "Id": "CanClearDungeonAtWoodfall",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "AreaWoodFallTempleAccess == AreaWoodFallTempleAccess",
+          "AreaWoodFallTempleClear"
+        ],
+        [
+          "AreaWoodFallTempleAccess == AreaSnowheadTempleAccess",
+          "AreaSnowheadTempleClear"
+        ],
+        [
+          "AreaWoodFallTempleAccess == AreaGreatBayTempleAccess",
+          "AreaGreatBayTempleClear"
+        ],
+        [
+          "AreaWoodFallTempleAccess == AreaInvertedStoneTowerTempleAccess",
+          "AreaStoneTowerClear"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
     },
     {
-      "ID": "MMRTProgressiveBombBag",
-      "Static": true,
-      "ConditionalItemsOverride": [
+      "Id": "CanClearDungeonAtSnowhead",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "AreaSnowheadTempleAccess == AreaWoodFallTempleAccess",
+          "AreaWoodFallTempleClear"
+        ],
+        [
+          "AreaSnowheadTempleAccess == AreaSnowheadTempleAccess",
+          "AreaSnowheadTempleClear"
+        ],
+        [
+          "AreaSnowheadTempleAccess == AreaGreatBayTempleAccess",
+          "AreaGreatBayTempleClear"
+        ],
+        [
+          "AreaSnowheadTempleAccess == AreaInvertedStoneTowerTempleAccess",
+          "AreaStoneTowerClear"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CanClearDungeonAtGreatBay",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "AreaGreatBayTempleAccess == AreaWoodFallTempleAccess",
+          "AreaWoodFallTempleClear"
+        ],
+        [
+          "AreaGreatBayTempleAccess == AreaSnowheadTempleAccess",
+          "AreaSnowheadTempleClear"
+        ],
+        [
+          "AreaGreatBayTempleAccess == AreaGreatBayTempleAccess",
+          "AreaGreatBayTempleClear"
+        ],
+        [
+          "AreaGreatBayTempleAccess == AreaInvertedStoneTowerTempleAccess",
+          "AreaStoneTowerClear"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CanClearDungeonAtStoneTower",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "AreaInvertedStoneTowerTempleAccess == AreaWoodFallTempleAccess",
+          "AreaWoodFallTempleClear"
+        ],
+        [
+          "AreaInvertedStoneTowerTempleAccess == AreaSnowheadTempleAccess",
+          "AreaSnowheadTempleClear"
+        ],
+        [
+          "AreaInvertedStoneTowerTempleAccess == AreaGreatBayTempleAccess",
+          "AreaGreatBayTempleClear"
+        ],
+        [
+          "AreaInvertedStoneTowerTempleAccess == AreaInvertedStoneTowerTempleAccess",
+          "AreaStoneTowerClear"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+
+    {
+      "Id": "MMRTProgressiveBombBag",
+      "RequiredItems": [],
+      "ConditionalItems": [
         [
           "ItemBombBag"
         ],
@@ -36836,12 +36868,16 @@
         [
           "UpgradeBiggestBombBag"
         ]
-      ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
     },
     {
-      "ID": "MMRTProgressiveBombBagX2",
-      "Static": true,
-      "ConditionalItemsOverride": [
+      "Id": "MMRTProgressiveBombBagX2",
+      "RequiredItems": [],
+      "ConditionalItems": [
         [
           "ItemBombBag",
           "UpgradeBigBombBag"
@@ -36854,21 +36890,29 @@
           "UpgradeBigBombBag",
           "UpgradeBiggestBombBag"
         ]
-      ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
     },
     {
-      "ID": "MMRTProgressiveBombBagX3",
-      "Static": true,
-      "RequiredItemsOverride": [
+      "Id": "MMRTProgressiveBombBagX3",
+      "RequiredItems": [
         "ItemBombBag",
         "UpgradeBigBombBag",
         "UpgradeBiggestBombBag"
-      ]
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
     },
     {
-      "ID": "MMRTProgressiveQuiver",
-      "Static": true,
-      "ConditionalItemsOverride": [
+      "Id": "MMRTProgressiveQuiver",
+      "RequiredItems": [],
+      "ConditionalItems": [
         [
           "ItemBow"
         ],
@@ -36878,12 +36922,16 @@
         [
           "UpgradeBiggestQuiver"
         ]
-      ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
     },
     {
-      "ID": "MMRTProgressiveQuiverX2",
-      "Static": true,
-      "ConditionalItemsOverride": [
+      "Id": "MMRTProgressiveQuiverX2",
+      "RequiredItems": [],
+      "ConditionalItems": [
         [
           "ItemBow",
           "UpgradeBigQuiver"
@@ -36896,21 +36944,29 @@
           "UpgradeBigQuiver",
           "UpgradeBiggestQuiver"
         ]
-      ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
     },
     {
-      "ID": "MMRTProgressiveQuiverX3",
-      "Static": true,
-      "RequiredItemsOverride": [
+      "Id": "MMRTProgressiveQuiverX3",
+      "RequiredItems": [
         "ItemBow",
         "UpgradeBigQuiver",
         "UpgradeBiggestQuiver"
-      ]
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
     },
     {
-      "ID": "MMRTProgressiveSword",
-      "Static": true,
-      "ConditionalItemsOverride": [
+      "Id": "MMRTProgressiveSword",
+      "RequiredItems": [],
+      "ConditionalItems": [
         [
           "StartingSword"
         ],
@@ -36920,12 +36976,16 @@
         [
           "UpgradeGildedSword"
         ]
-      ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
     },
     {
-      "ID": "MMRTProgressiveSwordX2",
-      "Static": true,
-      "ConditionalItemsOverride": [
+      "Id": "MMRTProgressiveSwordX2",
+      "RequiredItems": [],
+      "ConditionalItems": [
         [
           "StartingSword",
           "UpgradeRazorSword"
@@ -36938,21 +36998,29 @@
           "UpgradeRazorSword",
           "UpgradeGildedSword"
         ]
-      ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
     },
     {
-      "ID": "MMRTProgressiveSwordX3",
-      "Static": true,
-      "RequiredItemsOverride": [
+      "Id": "MMRTProgressiveSwordX3",
+      "RequiredItems": [
         "StartingSword",
         "UpgradeRazorSword",
         "UpgradeGildedSword"
-      ]
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
     },
     {
-      "ID": "MMRTProgressiveWallet",
-      "Static": true,
-      "ConditionalItemsOverride": [
+      "Id": "MMRTProgressiveWallet",
+      "RequiredItems": [],
+      "ConditionalItems": [
         [
           "UpgradeAdultWallet"
         ],
@@ -36962,12 +37030,16 @@
         [
           "UpgradeRoyalWallet"
         ]
-      ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
     },
     {
-      "ID": "MMRTProgressiveWalletX2",
-      "Static": true,
-      "ConditionalItemsOverride": [
+      "Id": "MMRTProgressiveWalletX2",
+      "RequiredItems": [],
+      "ConditionalItems": [
         [
           "UpgradeAdultWallet",
           "UpgradeGiantWallet"
@@ -36980,41 +37052,57 @@
           "UpgradeGiantWallet",
           "UpgradeRoyalWallet"
         ]
-      ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
     },
     {
-      "ID": "MMRTProgressiveWalletX3",
-      "Static": true,
-      "RequiredItemsOverride": [
+      "Id": "MMRTProgressiveWalletX3",
+      "RequiredItems": [
         "UpgradeAdultWallet",
         "UpgradeGiantWallet",
         "UpgradeRoyalWallet"
-      ]
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
     },
     {
-      "ID": "MMRTProgressiveMagic",
-      "Static": true,
-      "ConditionalItemsOverride": [
+      "Id": "MMRTProgressiveMagic",
+      "RequiredItems": [],
+      "ConditionalItems": [
         [
           "FairyMagic"
         ],
         [
           "FairyDoubleMagic"
         ]
-      ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
     },
     {
-      "ID": "MMRTProgressiveMagicX2",
-      "Static": true,
-      "RequiredItemsOverride": [
+      "Id": "MMRTProgressiveMagicX2",
+      "RequiredItems": [
         "FairyMagic",
         "FairyDoubleMagic"
-      ]
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
     },
     {
-      "ID": "MMRTbombchu10",
-      "Static": true,
-      "ConditionalItemsOverride": [
+      "Id": "MMRTbombchu10",
+      "RequiredItems": [],
+      "ConditionalItems": [
         [
           "ChestInvertedStoneTowerBombchu10"
         ],
@@ -37024,38 +37112,90 @@
         [
           "ShopItemBombsBombchu10"
         ]
-      ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
     },
     {
-      "ID": "MMRTarrows40",
-      "Static": true,
-      "ConditionalItemsOverride": [
+      "Id": "MMRTarrows40",
+      "RequiredItems": [],
+      "ConditionalItems": [
         [
           "UpgradeBigQuiver"
         ],
         [
           "UpgradeBiggestQuiver"
         ]
-      ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
     },
     {
-      "ID": "MMRTarrows50",
-      "Static": true,
-      "RequiredItemsOverride": [
+      "Id": "MMRTarrows50",
+      "RequiredItems": [
         "UpgradeBiggestQuiver"
-      ]
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
     },
     {
-      "ID": "MMRTescortCremia",
-      "Static": true,
-      "ConditionalItemsOverride": [
+      "Id": "MMRTescortCremia",
+      "RequiredItems": [],
+      "ConditionalItems": [
         [
           "OtherArrow"
         ],
         [
           "MaskCircusLeader"
         ]
-      ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MMRTSmallKeysy",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MMRTBossKeysy",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MMRTDefaultWallet",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "DefeatMajora",
+      "RequiredItems": [ "AreaMoonAccess" ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
     }
   ],
   "Options": [

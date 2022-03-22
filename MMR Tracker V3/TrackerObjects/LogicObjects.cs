@@ -58,6 +58,7 @@ namespace MMR_Tracker_V3
 
             //Logic File References
             public Dictionary<string, int> LogicFileMapping { get; set; } = new Dictionary<string, int>();
+            public Dictionary<string, int> AdditionalLogicFileMapping { get; set; } = new Dictionary<string, int>();
         }
 
         [Serializable]

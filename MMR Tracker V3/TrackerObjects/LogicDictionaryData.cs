@@ -21,7 +21,8 @@ namespace MMR_Tracker_V3.TrackerObjects
             public List<DictionaryItemEntries> ItemList { get; set; } = new List<DictionaryItemEntries>();
             public List<DictionaryEntranceEntries> EntranceList { get; set; } = new List<DictionaryEntranceEntries>();
             public List<string> AreaList { get; set; } = new List<string>();
-            public List<DictionaryMacroEntry> MacroList { get; set; } = new List<DictionaryMacroEntry>(); 
+            public List<DictionaryMacroEntry> MacroList { get; set; } = new List<DictionaryMacroEntry>();
+            public List<JsonFormatLogicItem> AdditionalLogic { get; set; } = new List<JsonFormatLogicItem>();
             public List<TrackerOption> Options { get; set; } = new List<TrackerOption>();
             public List<TrackerVariable> Variables { get; set; } = new List<TrackerVariable>();
             public List<DictionaryHintEntries> HintSpots { get; set; } = new List<DictionaryHintEntries>();
