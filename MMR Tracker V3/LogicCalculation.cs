@@ -294,14 +294,14 @@ namespace MMR_Tracker_V3
 
             bool HasAdditionalLogicFile = instance.InstanceReference.AdditionalLogicFileMapping.ContainsKey(ID);
             bool HasLogicFile = instance.InstanceReference.LogicFileMapping.ContainsKey(ID);
-            bool HasOverride = instance.LogicOverride.ContainsKey(ID);
+            bool HasRuntimelogic = instance.RuntimeLogic.ContainsKey(ID);
 
             List<string> OriginalRequirements = 
-                HasOverride && instance.LogicOverride[ID].RequiredItems != null ? instance.LogicOverride[ID].RequiredItems : 
+                HasRuntimelogic && instance.RuntimeLogic[ID].RequiredItems != null ? instance.RuntimeLogic[ID].RequiredItems : 
                 (HasLogicFile ? instance.LogicFile.Logic[instance.InstanceReference.LogicFileMapping[ID]].RequiredItems : 
                 (HasAdditionalLogicFile ? instance.LogicDictionary.AdditionalLogic[instance.InstanceReference.AdditionalLogicFileMapping[ID]].RequiredItems : new List<string>()));
             List <List<string>> OriginalConditionals =
-                HasOverride && instance.LogicOverride[ID].ConditionalItems != null ? instance.LogicOverride[ID].ConditionalItems :
+                HasRuntimelogic && instance.RuntimeLogic[ID].ConditionalItems != null ? instance.RuntimeLogic[ID].ConditionalItems :
                 (HasLogicFile ? instance.LogicFile.Logic[instance.InstanceReference.LogicFileMapping[ID]].ConditionalItems : 
                 (HasAdditionalLogicFile ? instance.LogicDictionary.AdditionalLogic[instance.InstanceReference.AdditionalLogicFileMapping[ID]].ConditionalItems : new List<List<string>>()));
 

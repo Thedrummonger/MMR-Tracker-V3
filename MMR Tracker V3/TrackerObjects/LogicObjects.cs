@@ -26,7 +26,7 @@ namespace MMR_Tracker_V3
             public LogicDictionary LogicDictionary { get; set; } = new LogicDictionary();
             public LogicFile LogicFile { get; set; } = new MMRData.LogicFile();
             public MMRData.SpoilerLogData SpoilerLog { get; set; } = null;
-            public Dictionary<string, JsonFormatLogicItem> LogicOverride { get; set; } = new Dictionary<string, JsonFormatLogicItem>();
+            public Dictionary<string, JsonFormatLogicItem> RuntimeLogic { get; set; } = new Dictionary<string, JsonFormatLogicItem>();
             public Options StaticOptions { get; set; } = new Options();
             public PriceData PriceData { get; set; } = new PriceData();
             public InstanceReference InstanceReference { get; set; } = new InstanceReference();
@@ -93,7 +93,6 @@ namespace MMR_Tracker_V3
         {
             public bool Initialized { get; set; } = false;
             public List<string> WalletEntries { get; set; } = new List<string>();
-            public Dictionary<string, int> Wallets { get; set; } = new Dictionary<string, int>();
             public Dictionary<int,string> CapacityMap { get; set; } = new Dictionary<int, string>();
         }
 

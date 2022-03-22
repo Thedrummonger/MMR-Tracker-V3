@@ -119,32 +119,31 @@ namespace MMR_Tracker_V3
             //Wallet and Price Data
 
             Instance.PriceData.WalletEntries = Utility.GetAllWalletLogicEntries(Instance);
-            var ItemWallets = Instance.LogicDictionary.ItemList
+            Dictionary<string, int> ItemWallets = Instance.LogicDictionary.ItemList
                 .Where(x => x.WalletCapacity != null && (int)x.WalletCapacity > -1)
                 .ToDictionary(x => x.ID, x => (int)x.WalletCapacity);
-            var MacroWallets = Instance.LogicDictionary.MacroList
+            Dictionary<string, int> MacroWallets = Instance.LogicDictionary.MacroList
                 .Where(x => x.WalletCapacity != null && (int)x.WalletCapacity > -1)
                 .ToDictionary(x => x.ID, x => (int)x.WalletCapacity);
-            Instance.PriceData.Wallets = ItemWallets.Concat(MacroWallets).ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
+            Dictionary<string, int> AllWallets = ItemWallets.Concat(MacroWallets).ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
 
-            foreach (var i in Instance.PriceData.Wallets)
+            foreach (var i in AllWallets)
             {
                 string CanAffordString = $"MMRTCanAfford{i.Value}";
                 Debug.WriteLine($"Adding Wallet {CanAffordString}");
                 Instance.MacroPool.Add(CanAffordString, new() { ID = CanAffordString });
                 Instance.PriceData.CapacityMap.Add(i.Value, CanAffordString);
-                Instance.LogicOverride.Add(CanAffordString, new MMRData.JsonFormatLogicItem
+                Instance.RuntimeLogic.Add(CanAffordString, new MMRData.JsonFormatLogicItem
                 {
                     Id = CanAffordString,
                     RequiredItems = new List<string>(),
-                    ConditionalItems = Instance.PriceData.Wallets.Where(x => x.Value >= i.Value).Select(x => new List<string> { x.Key }).ToList()
+                    ConditionalItems = AllWallets.Where(x => x.Value >= i.Value).Select(x => new List<string> { x.Key }).ToList()
                 });
             }
             Instance.PriceData.Initialized = true;
 
             Debug.WriteLine(JsonConvert.SerializeObject(Instance.PriceData.WalletEntries, Testing._NewtonsoftJsonSerializerOptions));
             Debug.WriteLine(JsonConvert.SerializeObject(Instance.PriceData.CapacityMap, Testing._NewtonsoftJsonSerializerOptions));
-            Debug.WriteLine(JsonConvert.SerializeObject(Instance.PriceData.Wallets, Testing._NewtonsoftJsonSerializerOptions));
 
             return true;
         }

@@ -31,16 +31,7 @@ namespace MMR_Tracker_V3.TrackerObjects
 
         public bool isTrick(LogicObjects.TrackerInstance Instance)
         {
-            if (Instance.LogicOverride.ContainsKey(ID))
-            {
-                return Instance.LogicOverride[ID].IsTrick;
-            }
-            if (Instance.InstanceReference.LogicFileMapping.ContainsKey(ID))
-            {
-                int Index = Instance.InstanceReference.LogicFileMapping[ID];
-                return Instance.LogicFile.Logic[Index].IsTrick;
-            }
-            return false;
+            return Instance.GetLogic(ID, false).IsTrick;
         }
     }
 }
