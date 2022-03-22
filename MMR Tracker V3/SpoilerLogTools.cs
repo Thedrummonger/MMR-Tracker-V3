@@ -177,9 +177,18 @@ namespace MMR_Tracker_V3
                     {
                         spoilerLog.LocationLog.Add(Entry[0].Trim(), Entry[1].Trim());
                     }
-                    else if (CurrentSection == "Price" && !spoilerLog.PriceLog.ContainsKey(Entry[0].Trim()))
+                    else if (CurrentSection == "Price")
                     {
-                        spoilerLog.PriceLog.Add(Entry[0].Trim(), int.Parse(Entry[1].Trim()));
+                        string Location = Entry[0].Trim();
+                        int Price = int.Parse(Entry[1].Trim());
+                        if (spoilerLog.PriceLog.ContainsKey(Location))
+                        {
+                            if (spoilerLog.PriceLog[Location] > Price) { spoilerLog.PriceLog[Location] = Price; }
+                        }
+                        else
+                        {
+                            spoilerLog.PriceLog.Add(Location, Price);
+                        }
                     }
                     else if (CurrentSection == "Gossip" && !spoilerLog.GossipLog.ContainsKey(Entry[0].Trim()))
                     {
@@ -306,6 +315,18 @@ namespace MMR_Tracker_V3
                 }
                 i.CheckPrice = MatchingLocations.Select(x => x.Value).Min();
                 Debug.WriteLine($"{i.ID} was assigned a price of {i.CheckPrice}");
+            }
+            foreach (var i in instance.MacroPool.Values)
+            {
+                var DictEntry = i.GetDictEntry(instance);
+                var MatchingLocations = Log.PriceLog.Where(x => DictEntry.SpoilerData.PriceDataNames.Contains(x.Key));
+                if (!MatchingLocations.Any())
+                {
+                    //Debug.WriteLine($"{i.ID} was not found in the Price log");
+                    continue;
+                }
+                i.MacroPrice = MatchingLocations.Select(x => x.Value).Min();
+                Debug.WriteLine($"{i.ID} was assigned a price of {i.MacroPrice}");
             }
             foreach (var i in instance.HintPool.Values)
             {

@@ -26,9 +26,6 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 ID = ID,
                 Name = null,
-                ConditionalItemsOverride = null,
-                RequiredItemsOverride = null,
-                Static = false
             };
         }
 

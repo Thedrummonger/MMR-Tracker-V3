@@ -415,13 +415,12 @@ namespace MMR_Tracker_V3
                 var LogicData = instance.GetLogic(MacroObject.ID, false);
                 OutObject.ID = MacroObject.ID;
                 OutObject.Area = Istrick ? (LogicData.TrickCategory??"misc") : "macro";
-                OutObject.Name = MacroObject.ID;
+                OutObject.Name = DictData.Name ?? MacroObject.ID;
                 OutObject.OriginalItem = MacroObject.ID;
                 OutObject.Randomizeditem = MacroObject.ID;
                 OutObject.Starred = Istrick;
                 List<string> ItemTypes = new() { "macro" };
                 if (Istrick) { ItemTypes.Add("trick"); }
-                if (DictData.Static) { ItemTypes.Add("static"); }
                 OutObject.ValidItemTypes = ItemTypes.ToArray();
             }
             else if (Object is EntranceData.EntranceRandoExit ExitObject)

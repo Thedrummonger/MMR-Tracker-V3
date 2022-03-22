@@ -68,6 +68,12 @@ namespace MMR_Tracker_V3
                 ParseLogicItem(i);
                 Index++;
             }
+            Index = 0;
+            foreach (var i in Instance.LogicDictionary.MacroList)
+            {
+                Instance.InstanceReference.MacroDictionaryMapping.Add(i.ID, Index);
+                Index++;
+            }
 
             void ParseLogicItem(MMRData.JsonFormatLogicItem i)
             {
@@ -108,25 +114,6 @@ namespace MMR_Tracker_V3
                 }
             }
 
-            Index = 0;
-            foreach (var i in Instance.LogicDictionary.MacroList)
-            {
-                Instance.InstanceReference.MacroDictionaryMapping.Add(i.ID, Index);
-                Index++;
-                if (i.Static && !Instance.MacroPool.ContainsKey(i.ID))
-                {
-                    Instance.MacroPool.Add(i.ID, new() { ID = i.ID });
-                }
-                if (i.RequiredItemsOverride != null || i.ConditionalItemsOverride != null)
-                {
-                    Instance.LogicOverride.Add(i.ID, new MMRData.JsonFormatLogicItem
-                    {
-                        Id = i.ID,
-                        RequiredItems = i.RequiredItemsOverride,
-                        ConditionalItems = i.ConditionalItemsOverride
-                    });
-                }
-            }
 
 
             //Wallet and Price Data
