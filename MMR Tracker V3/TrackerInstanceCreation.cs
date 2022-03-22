@@ -63,6 +63,7 @@ namespace MMR_Tracker_V3
             Index = 0;
             foreach (var i in Instance.LogicDictionary.AdditionalLogic)
             {
+                if (Instance.LogicFile.Logic.Any(x => x.Id == i.Id)) { continue; }
                 Instance.InstanceReference.AdditionalLogicFileMapping.Add(i.Id, Index);
                 ParseLogicItem(i);
                 Index++;
