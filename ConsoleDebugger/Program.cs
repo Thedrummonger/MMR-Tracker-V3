@@ -16,7 +16,8 @@ namespace ConsoleDebugger
         {
             "1. Convert Old Dict",
             "2. New",
-            "3. Load"
+            "3. Preset",
+            "4. Load"
         };
         static List<string> UndoStringList = new();
         static List<string> RedoStringList = new();
@@ -42,9 +43,39 @@ namespace ConsoleDebugger
                         break;
                     case ConsoleKey.D3:
                     case ConsoleKey.NumPad3:
+                        LoadPreset();
+                        break;
+                    case ConsoleKey.D4:
+                    case ConsoleKey.NumPad4:
                         LoadSave();
                         break;
                 }
+            }
+        }
+
+        private static void LoadPreset()
+        {
+            LogicObjects.TrackerInstance NewTrackerInstance = new();
+        SelectPreset:
+            var Presets = LogicPresetHandeling.GetLogicPresets();
+            var PresetsDict = Presets.ToDictionary(x => Presets.IndexOf(x), x => x);
+            foreach (var i in PresetsDict)
+            {
+                Console.WriteLine($"{i.Key}. {i.Value.Name}");
+            }
+            Console.WriteLine($"Enter index of Preset to Load");
+            var selection = Console.ReadLine();
+            if (int.TryParse(selection, out int ind) && PresetsDict.ContainsKey(ind))
+            {
+                TrackerInstanceCreation.ApplyLogicAndDict(NewTrackerInstance, PresetsDict[ind].LogicString, PresetsDict[ind].DictionaryString);
+                TrackerInstanceCreation.PopulateTrackerObject(NewTrackerInstance);
+                newTrackerInstance = NewTrackerInstance;
+                LoopLocationList();
+            }
+            else
+            {
+                Console.WriteLine($"Preset Invalid");
+                goto SelectPreset;
             }
         }
 
@@ -89,9 +120,7 @@ namespace ConsoleDebugger
 
             TrackerInstanceCreation.ApplyLogicAndDict(NewTrackerInstance, Logic);
             TrackerInstanceCreation.PopulateTrackerObject(NewTrackerInstance);
-
             newTrackerInstance = NewTrackerInstance;
-
             LoopLocationList();
         }
 
@@ -321,11 +350,9 @@ namespace ConsoleDebugger
         {
             if (!File.Exists(References.CurrentSavePath))
             {
-            getpath:
-                Console.WriteLine("Enter Setting/Spoiler Log File Path");
+                Console.WriteLine("Enter Save File Path");
                 string path = Console.ReadLine();
                 path = path.Replace("\"", "");
-                if (!File.Exists(path)) { Console.WriteLine("Path Invalid!"); goto getpath; }
                 References.CurrentSavePath = path;
             }
             File.WriteAllText(References.CurrentSavePath, newTrackerInstance.ToString());
