@@ -394,9 +394,6 @@ namespace Windows_Form_Frontend
             FormatMenuItems();
             if (CurrentTrackerInstance == null) { return; }
 
-            spoilerLogToolsToolStripMenuItem.Visible = false;
-            logicEditorToolStripMenuItem.Visible = false;
-
             this.Text = CurrentTrackerInstance.LogicFile.GameCode + " Tracker" + (UnsavedChanges ? "*" : "");
 
             CurrentTrackerInstance.EntrancePool.IsEntranceRando = CurrentTrackerInstance.EntrancePool.CheckForRandomEntrances();
@@ -591,12 +588,17 @@ namespace Windows_Form_Frontend
         public void FormatMenuItems()
         {
             OptionstoolStripMenuItem.Visible = (CurrentTrackerInstance != null);
+            toolsToolStripMenuItem.Visible = (CurrentTrackerInstance != null);
             undoToolStripMenuItem.Visible = (CurrentTrackerInstance != null);
             redoToolStripMenuItem.Visible = (CurrentTrackerInstance != null);
             refreshToolStripMenuItem.Visible = (CurrentTrackerInstance != null);
             SavetoolStripMenuItem1.Visible = (CurrentTrackerInstance != null);
             spoilerLogToolsToolStripMenuItem.Visible = (CurrentTrackerInstance != null);
             importSpoilerLogToolStripMenuItem.Visible = (CurrentTrackerInstance != null);
+            PathFinderToolStripMenuItem.Visible = (CurrentTrackerInstance != null && CurrentTrackerInstance.EntrancePool.IsEntranceRando);
+
+            spoilerLogToolsToolStripMenuItem.Visible = false;
+            logicEditorToolStripMenuItem.Visible = false;
 
             if (CurrentTrackerInstance == null) { return; }
 
