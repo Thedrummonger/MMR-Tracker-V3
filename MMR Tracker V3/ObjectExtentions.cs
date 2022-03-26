@@ -76,7 +76,7 @@ namespace MMR_Tracker_V3
                 if (instance.Variables[ID].Value is string) { return LogicEntryType.variableString; }
                 if (instance.Variables[ID].Value is bool) { return LogicEntryType.variableBool; }
                 if (instance.Variables[ID].Value is Int64) { return LogicEntryType.variableInt; }
-                if (instance.Variables[ID].Value is Newtonsoft.Json.Linq.JArray) { return LogicEntryType.variableList; }
+                if (instance.Variables[ID].Value is Newtonsoft.Json.Linq.JArray || instance.Variables[ID].Value is List<string>) { return LogicEntryType.variableList; }
             }
             return LogicEntryType.error;
         }
@@ -102,7 +102,7 @@ namespace MMR_Tracker_V3
                 if (instance.Variables[ID].Value is string) { return LogicEntryType.variableString; }
                 if (instance.Variables[ID].Value is bool) { return LogicEntryType.variableBool; }
                 if (instance.Variables[ID].Value is Int64) { return LogicEntryType.variableInt; }
-                if (instance.Variables[ID].Value is List<string>) { return LogicEntryType.variableList; }
+                if (instance.Variables[ID].Value is Newtonsoft.Json.Linq.JArray || instance.Variables[ID].Value is List<string>) { return LogicEntryType.variableList; }
             }
             if (bool.TryParse(ID, out _)) { return LogicEntryType.Bool; }
             if (LogicCalculation.LogicOptionEntry(instance, ID, out _)) { return LogicEntryType.Option; }
@@ -141,20 +141,18 @@ namespace MMR_Tracker_V3
 
         public static void ChangeLocalItemAmounts(this ItemObject itemObject, LocationData.LocationObject location, int Amount)
         {
-            if (Amount != 0)
+            if (Amount == 0) { return; }
+            if (location.Randomizeditem.OwningPlayer != -1)
             {
-                if (location.Randomizeditem.OwningPlayer != -1)
+                if (!itemObject.AmountSentToPlayer.ContainsKey(location.Randomizeditem.OwningPlayer))
                 {
-                    if (!itemObject.AmountSentToPlayer.ContainsKey(location.Randomizeditem.OwningPlayer)) 
-                    { 
-                        itemObject.AmountSentToPlayer.Add(location.Randomizeditem.OwningPlayer, 0); 
-                    }
-                    itemObject.AmountSentToPlayer[location.Randomizeditem.OwningPlayer] += Amount;
+                    itemObject.AmountSentToPlayer.Add(location.Randomizeditem.OwningPlayer, 0);
                 }
-                else
-                {
-                    itemObject.AmountAquiredLocally += Amount;
-                }
+                itemObject.AmountSentToPlayer[location.Randomizeditem.OwningPlayer] += Amount;
+            }
+            else
+            {
+                itemObject.AmountAquiredLocally += Amount;
             }
         }
 
@@ -209,31 +207,35 @@ namespace MMR_Tracker_V3
             return true;
         }
 
-        public static bool UncheckItem(this LocationData.LocationObject data, CheckState NewState, LogicObjects.TrackerInstance Instance)
+        public static bool UncheckItem(this LocationData.LocationObject LocationContainingItem, CheckState NewState, LogicObjects.TrackerInstance Instance)
         {
-            var ItemObjectToAltar = Instance.GetItemByID(data.Randomizeditem.Item);
+            var ItemAtCheck = Instance.GetItemByID(LocationContainingItem.Randomizeditem.Item);
 
-            if (ItemObjectToAltar != null)
+            if (ItemAtCheck != null)
             {
-                ItemObjectToAltar.ChangeLocalItemAmounts(data, -1);
+                ItemAtCheck.ParseItemRefernce(-1, Instance, out ItemObject ItemToAlter, out int AmountToAlter);
+                ItemToAlter.ChangeLocalItemAmounts(LocationContainingItem, AmountToAlter);
+                Debug.WriteLine($"{ItemToAlter.Id} Was altered: Local:{ItemToAlter.AmountAquiredLocally}");
             }
             if (NewState == CheckState.Unchecked)
             {
-                data.Randomizeditem.Item = null;
+                LocationContainingItem.Randomizeditem.Item = null;
             }
-
-
             return true;
 
         }
 
-        public static bool CheckItem(this LocationData.LocationObject data, CheckState NewState, LogicObjects.TrackerInstance Instance)
+        public static bool CheckItem(this LocationData.LocationObject LocationContainingItem, CheckState NewState, LogicObjects.TrackerInstance Instance)
         {
-            if (string.IsNullOrWhiteSpace(data.Randomizeditem.Item)) { return false; }
+            if (string.IsNullOrWhiteSpace(LocationContainingItem.Randomizeditem.Item)) { return false; }
 
-            var ItemObjectToAltar = Instance.GetItemByID(data.Randomizeditem.Item);
-            if (ItemObjectToAltar != null) { ItemObjectToAltar.ChangeLocalItemAmounts(data, 1); }
-
+            var ItemAtCheck = Instance.GetItemByID(LocationContainingItem.Randomizeditem.Item);
+            if (ItemAtCheck != null)
+            {
+                ItemAtCheck.ParseItemRefernce(1, Instance, out ItemObject ItemToAlter, out int AmountToAlter);
+                ItemToAlter.ChangeLocalItemAmounts(LocationContainingItem, AmountToAlter);
+                Debug.WriteLine($"{ItemToAlter.Id} Was altered: Local:{ItemToAlter.AmountAquiredLocally}");
+            }
             return true;
         }
 
@@ -248,6 +250,21 @@ namespace MMR_Tracker_V3
                 data.Randomizeditem.Item = null;
             }
             return true;
+        }
+
+        public static void ParseItemRefernce(this ItemObject itemObject, int BaseAmount, LogicObjects.TrackerInstance Instance, out ItemObject RefItemObject, out int Amount)
+        {
+            var dictEntry = itemObject.GetDictEntry(Instance);
+            RefItemObject = itemObject;
+            Amount = BaseAmount;
+            if (dictEntry.ItemReference != null && Instance.GetItemByID(dictEntry.ItemReference) != null)
+            {
+                RefItemObject = Instance.GetItemByID(dictEntry.ItemReference);
+            }
+            if (dictEntry.AmountWorth != null)
+            {
+                Amount = (int)dictEntry.AmountWorth * BaseAmount;
+            }
         }
 
         public static string GetItemAtCheck(this LocationData.LocationObject data, LogicObjects.TrackerInstance Instance)

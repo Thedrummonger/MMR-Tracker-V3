@@ -64,6 +64,8 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string ID { get; set; }
             public string Name { get; set; }
             public int? WalletCapacity { get; set; } = null;
+            public string ItemReference { get; set; } = null;
+            public int? AmountWorth { get; set; } = null;
             public int? MaxAmountInWorld { get; set; } = null;
             public bool? ValidStartingItem { get; set; } = null;
             public string[] ItemTypes { get; set; } = Array.Empty<string>();
