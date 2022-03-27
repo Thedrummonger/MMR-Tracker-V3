@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,8 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string DisplayName { get; set; }
             public RandomizedState RandomizedState { get; set; } = RandomizedState.Randomized;
             public string SingleValidItem { get; set; } = null;
+
+
             public override string ToString()
             {
                 return DisplayName ?? ID;
@@ -51,6 +54,96 @@ namespace MMR_Tracker_V3.TrackerObjects
             public LogicDictionaryData.DictionaryLocationEntries GetDictEntry(LogicObjects.TrackerInstance Instance)
             {
                 return Instance.LogicDictionary.LocationList[Instance.InstanceReference.LocationDictionaryMapping[ID]];
+            }
+            public bool CanBeUnrandomized(LogicObjects.TrackerInstance instance)
+            {
+                if (IsUnrandomized()) { return true; }
+                string OriginalItem = GetDictEntry(instance).OriginalItem ?? "";
+                var OriginalItemObject = instance.GetItemByID(OriginalItem);
+                if (OriginalItemObject == null) { return false; }
+                return OriginalItemObject.CanBePlaced(instance);
+            }
+
+            public bool ToggleChecked(CheckState NewState, LogicObjects.TrackerInstance Instance)
+            {
+                CheckState CurrentState = CheckState;
+                if (CurrentState == NewState)
+                {
+                    return false;
+                }
+                else if (CurrentState == CheckState.Checked)
+                {
+                    UncheckItem(NewState, Instance);
+                }
+                else if (NewState == CheckState.Checked)
+                {
+                    if (!CheckItem(NewState, Instance)) { return false; }
+                }
+                else
+                {
+                    if (!ToggleMarked(NewState, Instance)) { return false; }
+                }
+                CheckState = NewState;
+                return true;
+            }
+
+            public bool UncheckItem(CheckState NewState, LogicObjects.TrackerInstance Instance)
+            {
+                var ItemAtCheck = Instance.GetItemByID(Randomizeditem.Item);
+
+                if (ItemAtCheck != null)
+                {
+                    ItemAtCheck.ChangeLocalItemAmounts(Instance, this, -1);
+                }
+                if (NewState == CheckState.Unchecked)
+                {
+                    Randomizeditem.Item = null;
+                }
+                return true;
+
+            }
+
+            public bool CheckItem(CheckState NewState, LogicObjects.TrackerInstance Instance)
+            {
+                if (string.IsNullOrWhiteSpace(Randomizeditem.Item)) { return false; }
+
+                var ItemAtCheck = Instance.GetItemByID(Randomizeditem.Item);
+                if (ItemAtCheck != null)
+                {
+                    ItemAtCheck.ChangeLocalItemAmounts(Instance, this, 1);
+                }
+                return true;
+            }
+
+            public bool ToggleMarked(CheckState NewState, LogicObjects.TrackerInstance Instance)
+            {
+                if (NewState == CheckState.Marked && string.IsNullOrWhiteSpace(Randomizeditem.Item))
+                {
+                    return false;
+                }
+                else if (NewState == CheckState.Unchecked)
+                {
+                    Randomizeditem.Item = null;
+                }
+                return true;
+            }
+
+            public string GetItemAtCheck(LogicObjects.TrackerInstance Instance)
+            {
+                var ItemAtCheck = Randomizeditem.Item;
+                if (SingleValidItem != null)
+                {
+                    ItemAtCheck = SingleValidItem;
+                }
+                if (Randomizeditem.SpoilerLogGivenItem != null)
+                {
+                    ItemAtCheck = Randomizeditem.SpoilerLogGivenItem;
+                }
+                if ((IsUnrandomized()) && GetDictEntry(Instance).OriginalItem != null)
+                {
+                    ItemAtCheck = GetDictEntry(Instance).OriginalItem;
+                }
+                return ItemAtCheck;
             }
 
         }

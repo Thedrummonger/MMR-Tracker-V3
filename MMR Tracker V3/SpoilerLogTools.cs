@@ -290,16 +290,19 @@ namespace MMR_Tracker_V3
                     continue; 
                 }
                 var ItemName = MatchingLocation.First().Value;
+                if (ItemName.StartsWith("Ice Trap ")) { ItemName = "Ice Trap"; }
                 var MatchingItems = instance.ItemPool.Values.Where(x => x.GetDictEntry(instance).SpoilerData.SpoilerLogNames.Contains(ItemName));
                 var PlaceablegItems = MatchingItems.Where(x => x.CanBePlaced(instance));
                 if (!MatchingItems.Any())
                 {
                     Debug.WriteLine($"{ItemName} Could not placed at {i.ID}: No items match name {ItemName}");
+                    i.Randomizeditem.SpoilerLogGivenItem = ItemName;
                     continue;
                 }
                 else if (!PlaceablegItems.Any())
                 {
                     Debug.WriteLine($"{ItemName} Could not placed at {i.ID}: No items {ItemName} could be placed");
+                    i.Randomizeditem.SpoilerLogGivenItem = ItemName;
                     continue;
                 }
                 i.Randomizeditem.SpoilerLogGivenItem = PlaceablegItems.First().Id;

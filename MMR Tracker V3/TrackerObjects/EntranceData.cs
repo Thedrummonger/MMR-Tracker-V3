@@ -73,6 +73,8 @@ namespace MMR_Tracker_V3.TrackerObjects
             public EntranceRandoDestination SpoilerDefinedDestinationExit { get; set; }
             public EntranceAreaPair EntrancePair { get; set; }
             public string DisplayName { get; set; }
+
+
             public override string ToString()
             {
                 return DisplayName ?? ID;
@@ -102,6 +104,48 @@ namespace MMR_Tracker_V3.TrackerObjects
             public bool IsJunk()
             {
                 return RandomizedState == RandomizedState.ForcedJunk;
+            }
+
+            public EntranceRandoDestination GetDestinationAtExit(LogicObjects.TrackerInstance currentTrackerInstance)
+            {
+                var DestinationAtCheck = DestinationExit;
+                if (SpoilerDefinedDestinationExit != null)
+                {
+                    DestinationAtCheck = SpoilerDefinedDestinationExit;
+                }
+                if ((IsUnrandomized()))
+                {
+                    DestinationAtCheck = new EntranceRandoDestination { region = ID, from = ParentAreaID };
+                }
+                return DestinationAtCheck;
+            }
+
+            public bool ToggleExitChecked(CheckState NewState, LogicObjects.TrackerInstance Instance)
+            {
+                CheckState CurrentState = CheckState;
+                if (CurrentState == NewState)
+                {
+                    return false;
+                }
+                else if (CurrentState == CheckState.Checked)
+                {
+                    var Destination = Instance.EntrancePool.AreaList[DestinationExit.region];
+                    Destination.ExitsAcessibleFrom--;
+                }
+                else if (NewState == CheckState.Checked)
+                {
+                    if (DestinationExit == null) { return false; }
+                    var Destination = Instance.EntrancePool.AreaList[DestinationExit.region];
+                    Destination.ExitsAcessibleFrom++;
+                }
+                else if (CurrentState == CheckState.Unchecked && NewState == CheckState.Marked)
+                {
+                    if (DestinationExit == null) { return false; }
+                }
+
+                if (NewState == CheckState.Unchecked) { DestinationExit = null; }
+                CheckState = NewState;
+                return true;
             }
         }
         public class EntranceRandoDestination

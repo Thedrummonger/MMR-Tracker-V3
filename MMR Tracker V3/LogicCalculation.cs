@@ -55,7 +55,7 @@ namespace MMR_Tracker_V3
                 case LogicEntryType.Bool:
                     return bool.Parse(LogicItem);
                 case LogicEntryType.item:
-                    return instance.GetItemByID(LogicItem).Useable(Amount);
+                    return instance.GetItemByID(LogicItem).Useable(instance, Amount);
                 case LogicEntryType.macro:
                     return instance.GetMacroByID(LogicItem).Aquired; 
                 case LogicEntryType.Area:

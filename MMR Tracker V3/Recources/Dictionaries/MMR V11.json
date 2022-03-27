@@ -36484,90 +36484,6 @@
       }
     },
     {
-      "ID": "JunkGoldRupee",
-      "Name": "Gold Rupee",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": false,
-      "ItemTypes": [
-        "Item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "Gold Rupee"
-        ]
-      }
-    },
-    {
-      "ID": "JunkSilverRupee",
-      "Name": "Silver Rupee",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": false,
-      "ItemTypes": [
-        "Item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "Silver Rupee"
-        ]
-      }
-    },
-    {
-      "ID": "JunkPurpleRupee",
-      "Name": "Purple Rupee",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": false,
-      "ItemTypes": [
-        "Item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "Purple Rupee"
-        ]
-      }
-    },
-    {
-      "ID": "JunkRedRupee",
-      "Name": "Red Rupee",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": false,
-      "ItemTypes": [
-        "Item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "Red Rupee"
-        ]
-      }
-    },
-    {
-      "ID": "JunkBlueRupee",
-      "Name": "Blue Rupee",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": false,
-      "ItemTypes": [
-        "Item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "Blue Rupee"
-        ]
-      }
-    },
-    {
-      "ID": "JunkSingleBombchu",
-      "Name": "Bombchu",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": false,
-      "ItemTypes": [
-        "Item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "Bombchu"
-        ]
-      }
-    },
-    {
       "ID": "MajorasMask",
       "Name": "Majoras Mask",
       "MaxAmountInWorld": 1,
@@ -37361,7 +37277,7 @@
     },
     {
       "ID": "NoSafteyLogic",
-      "DisplayName": "Ignore Trade Item Saftey Logic",
+      "DisplayName": "Ignore Rando Saftey Logic",
       "CurrentValue": "enabled",
       "Values": {
         "enabled": {
@@ -37375,6 +37291,13 @@
               "ReplacementList": {
                 "TradeItemKafeiLetter": "true",
                 "TradeItemPendant": "true"
+              }
+            },
+            {
+              "LocationWhitelist": [],
+              "LocationBlacklist": [],
+              "ReplacementList": {
+                "Exit Great Bay Temple": "true"
               }
             }
           ],

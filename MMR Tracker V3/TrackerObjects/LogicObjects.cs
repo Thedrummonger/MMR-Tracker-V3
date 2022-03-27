@@ -1,6 +1,7 @@
 ﻿using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using static MMR_Tracker_V3.TrackerObjects.HintData;
 using static MMR_Tracker_V3.TrackerObjects.ItemData;
 using static MMR_Tracker_V3.TrackerObjects.LocationData;
@@ -44,6 +45,76 @@ namespace MMR_Tracker_V3
                 NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore,
                 Converters = { new Newtonsoft.Json.Converters.StringEnumConverter() }
             };
+            public ItemObject GetItemByID(string item)
+            {
+                if (!ItemPool.ContainsKey(item)) { return null; }
+                return ItemPool[item];
+            }
+            public LocationObject GetLocationByID(string item)
+            {
+                if (!LocationPool.ContainsKey(item)) { return null; }
+                return LocationPool[item];
+            }
+
+            public MacroObject GetMacroByID(string item)
+            {
+                if (!MacroPool.ContainsKey(item)) { return null; }
+                return MacroPool[item];
+            }
+
+            public TrackerOption GetTrackerOptionByID(string item)
+            {
+                if (!UserOptions.ContainsKey(item)) { return null; }
+                return UserOptions[item];
+            }
+
+            public LogicEntryType GetLocationEntryType(string ID, bool literal = false)
+            {
+                if (literal && LocationPool.ContainsKey(ID)) { return LogicEntryType.location; }
+                if (literal && InstanceReference.EntranceLogicNameToEntryData.ContainsKey(ID)) { return LogicEntryType.Exit; }
+                if (literal && HintPool.ContainsKey(ID)) { return LogicEntryType.Hint; }
+                if (MacroPool.ContainsKey(ID)) { return LogicEntryType.macro; }
+                if (!literal && LocationPool.ContainsKey(ID)) { return LogicEntryType.location; }
+                if (!literal && InstanceReference.EntranceLogicNameToEntryData.ContainsKey(ID)) { return LogicEntryType.Exit; }
+                if (!literal && HintPool.ContainsKey(ID)) { return LogicEntryType.Hint; }
+                if (UserOptions.ContainsKey(ID)) { return LogicEntryType.Option; }
+                if (Variables.ContainsKey(ID))
+                {
+                    if (Variables[ID].Value is string) { return LogicEntryType.variableString; }
+                    if (Variables[ID].Value is bool) { return LogicEntryType.variableBool; }
+                    if (Variables[ID].Value is Int64) { return LogicEntryType.variableInt; }
+                    if (Variables[ID].Value is Newtonsoft.Json.Linq.JArray || Variables[ID].Value is List<string>) { return LogicEntryType.variableList; }
+                }
+                return LogicEntryType.error;
+            }
+
+            public LogicEntryType GetOptionEntryType(string ID, bool literal = false)
+            {
+                if (literal && UserOptions.ContainsKey(ID)) { return LogicEntryType.Option; }
+                if (LocationPool.ContainsKey(ID)) { return LogicEntryType.location; }
+                if (!literal && UserOptions.ContainsKey(ID)) { return LogicEntryType.Option; }
+                return LogicEntryType.error;
+            }
+
+            public LogicEntryType GetItemEntryType(string OriginalID, bool literal = false)
+            {
+                LogicCalculation.MultipleItemEntry(this, OriginalID, out string ID, out _);
+                if (literal && ItemPool.ContainsKey(ID)) { return LogicEntryType.item; }
+                if (literal && EntrancePool.AreaList.ContainsKey(ID)) { return LogicEntryType.Area; }
+                if (MacroPool.ContainsKey(ID)) { return LogicEntryType.macro; }
+                if (!literal && ItemPool.ContainsKey(ID)) { return LogicEntryType.item; }
+                if (!literal && EntrancePool.AreaList.ContainsKey(ID)) { return LogicEntryType.Area; }
+                if (Variables.ContainsKey(ID))
+                {
+                    if (Variables[ID].Value is string) { return LogicEntryType.variableString; }
+                    if (Variables[ID].Value is bool) { return LogicEntryType.variableBool; }
+                    if (Variables[ID].Value is Int64) { return LogicEntryType.variableInt; }
+                    if (Variables[ID].Value is Newtonsoft.Json.Linq.JArray || Variables[ID].Value is List<string>) { return LogicEntryType.variableList; }
+                }
+                if (bool.TryParse(ID, out _)) { return LogicEntryType.Bool; }
+                if (LogicCalculation.LogicOptionEntry(this, ID, out _)) { return LogicEntryType.Option; }
+                return LogicEntryType.error;
+            }
         }
 
         [Serializable]
