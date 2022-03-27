@@ -52,8 +52,7 @@ namespace MMR_Tracker_V3.TrackerObjects
 
             public int GetAmountInStartingPool(LogicObjects.TrackerInstance Instance)
             {
-                int AmountWorth = GetDictEntry(Instance).AmountWorth ?? 1;
-                return AmountInStartingpool * AmountWorth;
+                return AmountInStartingpool;
             }
 
             public bool CanBePlaced(LogicObjects.TrackerInstance Instance)
@@ -75,36 +74,17 @@ namespace MMR_Tracker_V3.TrackerObjects
             public void ChangeLocalItemAmounts(LogicObjects.TrackerInstance Instance, LocationData.LocationObject location, int Amount)
             {
                 if (Amount == 0) { return; }
-                ParseItemRefernce(Amount, Instance, out ItemObject ItemToAlter, out int AmountToAlter);
                 if (location.Randomizeditem.OwningPlayer != -1)
                 {
-                    if (!ItemToAlter.AmountSentToPlayer.ContainsKey(location.Randomizeditem.OwningPlayer))
+                    if (!AmountSentToPlayer.ContainsKey(location.Randomizeditem.OwningPlayer))
                     {
-                        ItemToAlter.AmountSentToPlayer.Add(location.Randomizeditem.OwningPlayer, 0);
+                        AmountSentToPlayer.Add(location.Randomizeditem.OwningPlayer, 0);
                     }
-                    ItemToAlter.AmountSentToPlayer[location.Randomizeditem.OwningPlayer] += AmountToAlter;
+                    AmountSentToPlayer[location.Randomizeditem.OwningPlayer] += Amount;
                 }
                 else
                 {
-                    //Debug.WriteLine($"{location.ID} Was checked for {AmountToAlter} and contained {this.Id}");
-                    //Debug.WriteLine($"{ItemToAlter.Id} Will be altered. Current Amount {ItemToAlter.AmountAquiredLocally}");
-                    ItemToAlter.AmountAquiredLocally += AmountToAlter;
-                    //Debug.WriteLine($"{ItemToAlter.Id} altered. New Amount {ItemToAlter.AmountAquiredLocally}");
-                }
-            }
-
-            public void ParseItemRefernce(int BaseAmount, LogicObjects.TrackerInstance Instance, out ItemObject RefItemObject, out int Amount)
-            {
-                var dictEntry = GetDictEntry(Instance);
-                RefItemObject = this;
-                Amount = BaseAmount;
-                if (dictEntry.ItemReference != null && Instance.GetItemByID(dictEntry.ItemReference) != null)
-                {
-                    RefItemObject = Instance.GetItemByID(dictEntry.ItemReference);
-                }
-                if (dictEntry.AmountWorth != null)
-                {
-                    Amount = (int)dictEntry.AmountWorth * BaseAmount;
+                    AmountAquiredLocally += Amount;
                 }
             }
         }
