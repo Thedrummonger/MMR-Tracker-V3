@@ -65,7 +65,7 @@ namespace MMR_Tracker_V3.OtherGames
         public List<LogicDictionaryData.TrackerVariable> Variables { get; set; } = new List<LogicDictionaryData.TrackerVariable>();
     }
     public class OOTRTools
-    {
+    { 
         public static void ReadEntranceRefFile(out string OutLogic, out string OutDict)
         {
             var Logic = GetDataFromWeb("Roman971/OoT-Randomizer/Dev-R");
@@ -333,6 +333,7 @@ namespace MMR_Tracker_V3.OtherGames
                 MMRData.JsonFormatLogicItem logicItem = new MMRData.JsonFormatLogicItem();
                 logicItem.Id = i.Key;
                 logicItem.ConditionalItems = CleanLogic(LogicStringParser.ConvertLogicStringToConditional(CurrentLogic));
+                logicItem.ConditionalItems = AddKeyRingLogic(logicItem.ConditionalItems);
                 logicCleaner.RemoveRedundantConditionals(logicItem);
                 logicCleaner.MakeCommonConditionalsRequirements(logicItem);
                 logicItem.RequiredItems = logicItem.RequiredItems.Where(x => x.ToLower() != "true").ToList();
@@ -387,6 +388,30 @@ namespace MMR_Tracker_V3.OtherGames
                 LogicCalculation.RequirementsMet(new List<string> { i }, OOTRInstance);
             }
 
+        }
+
+        private static List<List<string>> AddKeyRingLogic(List<List<string>> conditionalItems)
+        {
+            List<List<string>> NewConditionals = new List<List<string>>();
+            foreach (var cond in conditionalItems)
+            {
+                List<string> NewConditional = new List<string>();
+                foreach (var i in cond)
+                {
+                    if (i.Contains("Small_Key") && i.Contains(","))
+                    {
+                        string NewLogicLine = i + " | ";
+                        string KeyRingEntry = i.Replace("Small_Key_", "Small_Key_Ring_");
+                        KeyRingEntry = KeyRingEntry.Substring(0, KeyRingEntry.IndexOf(","));
+                        NewLogicLine += KeyRingEntry;
+                        NewConditional.Add($"({NewLogicLine})");
+                    }
+                    else { NewConditional.Add(i); }
+                }
+                NewConditionals.Add(NewConditional);
+            }
+            string NewLogicString = $"({string.Join(") | (", NewConditionals.Select(x => string.Join(" & ", x)))})";
+            return LogicStringParser.ConvertLogicStringToConditional(NewLogicString);
         }
 
         public static List<OOTRLogicObject> GetDataFromWeb(string Branch = "TestRunnerSRL/OoT-Randomizer/Dev")
@@ -462,6 +487,7 @@ namespace MMR_Tracker_V3.OtherGames
             Logic.Add(HelperLogic);
             return Logic;
         }
+
         public static string RemoveCommentsFromJSON(string[] ItemDataLines)
         {
             string CleanedLogic = "";
