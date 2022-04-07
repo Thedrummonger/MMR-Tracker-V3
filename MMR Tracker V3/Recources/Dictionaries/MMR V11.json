@@ -19,7 +19,22 @@
           "a quest's inception",
           "a new file"
         ]
-      }
+      },
+      "LocationProxys": [
+        {
+          "ReferenceID": "MaskDeku",
+          "ID": "MaskDeku1",
+          "Name": "Deku Mask in area 1",
+          "Area": "Misc"
+        },
+        {
+          "ReferenceID": "MaskDeku",
+          "ID": "MaskDeku2",
+          "Name": "Deku Mask in area 2",
+          "Area": "Woodfall Temple",
+          "LogicInheritance": "ItemNotebook"
+        }
+      ]
     },
     {
       "ID": "ItemBow",

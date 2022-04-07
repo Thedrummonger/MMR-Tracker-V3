@@ -155,5 +155,42 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string SpoilerLogGivenItem { get; set; } = null;
             public string[] ValidItemTypes { get; set; } = Array.Empty<string>();
         }
+
+        public class LocationProxyData
+        {
+            public Dictionary<string, List<string>> LocationsWithProxys { get; set; } = new Dictionary<string, List<string>>();
+            public Dictionary<string, LocationProxy> LocationProxies { get; set; } = new Dictionary<string, LocationProxy>();
+
+        }
+
+        public class LocationProxy
+        {
+            public string ReferenceID { get; set; }
+            public string ID { get; set; }
+            public string Name { get; set; }
+            public string Area { get; set; }
+            public string LogicInheritance { get; set; } = null;
+            public string DisplayName { get; set; }
+            public override string ToString()
+            {
+                return DisplayName??Name;
+            }
+            public bool ProxyAvailable(LogicObjects.TrackerInstance instance)
+            {
+                var LogicId = LogicInheritance ?? ReferenceID;
+                bool Literal = LogicId.IsLiteralID(out LogicId);
+                var type = instance.GetLocationEntryType(LogicId, Literal);
+                switch (type)
+                {
+                    case LogicEntryType.location: return instance.LocationPool[LogicId].Available;
+                    case LogicEntryType.macro: return instance.LocationPool[LogicId].Available;
+                    default: return false;
+                }
+            }
+            public LocationObject GetReferenceLocation(LogicObjects.TrackerInstance instance)
+            {
+                return (instance.LocationPool[ReferenceID]);
+            }
+        }
     }
 }

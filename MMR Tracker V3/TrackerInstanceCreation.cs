@@ -87,6 +87,13 @@ namespace MMR_Tracker_V3
                         SingleValidItem = ValidItems.Count() == 1 ? ValidItems.First().ID : null
                     });
                     Instance.InstanceReference.LocationDictionaryMapping.Add(i.Id, Instance.LogicDictionary.LocationList.IndexOf(DictEntry));
+
+                    if (DictEntry.LocationProxys.Any())
+                    {
+                        if (!Instance.LocationProxyData.LocationsWithProxys.ContainsKey(i.Id)) { Instance.LocationProxyData.LocationsWithProxys.Add(i.Id, new List<string>()); }
+                        Instance.LocationProxyData.LocationsWithProxys[i.Id].AddRange(DictEntry.LocationProxys.Select(x => x.Name));
+                        foreach(var proxy in DictEntry.LocationProxys) { Instance.LocationProxyData.LocationProxies.Add(proxy.ID, proxy.ToInstanceData(DictEntry)); }
+                    }
                 }
                 else if (Instance.LogicDictionary.HintSpots.Any(x => x.ID == i.Id))
                 {

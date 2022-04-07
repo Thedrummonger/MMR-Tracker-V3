@@ -18,6 +18,10 @@ namespace MMR_Tracker_V3
             public List<LocationData.LocationObject> MarkedLocations { get; set; } = new List<LocationData.LocationObject>();
             public List<LocationData.LocationObject> CheckedLocations { get; set; } = new List<LocationData.LocationObject>();
 
+            public List<LocationData.LocationProxy> AvailableProxies { get; set; } = new List<LocationData.LocationProxy>();
+            public List<LocationData.LocationProxy> AllAvailableProxies { get; set; } = new List<LocationData.LocationProxy>();
+            public List<LocationData.LocationProxy> MarkedProxies { get; set; } = new List<LocationData.LocationProxy>();
+
             public List<EntranceData.EntranceRandoExit> UncheckedEntrances { get; set; } = new List<EntranceData.EntranceRandoExit>();
             public List<EntranceData.EntranceRandoExit> AvailableEntrances { get; set; } = new List<EntranceData.EntranceRandoExit>();
             public List<EntranceData.EntranceRandoExit> AllAvailableEntrances { get; set; } = new List<EntranceData.EntranceRandoExit>();
@@ -49,6 +53,7 @@ namespace MMR_Tracker_V3
 
             //Search for valid Object types in the list of selected Objects and sort them into lists
             IEnumerable<LocationData.LocationObject> locationObjects = Items.Where(x => x is LocationData.LocationObject).Select(x => x as LocationData.LocationObject);
+            locationObjects = locationObjects.Concat(Items.Where(x => x is LocationData.LocationProxy).Select(x => Instance.LocationPool[(x as LocationData.LocationProxy).ReferenceID]));
             IEnumerable<EntranceData.EntranceRandoExit> ExitObjects = Items.Where(x => x is EntranceData.EntranceRandoExit).Select(x => x as EntranceData.EntranceRandoExit);
             IEnumerable<OptionData.TrackerOption> OptionObjects = Items.Where(x => x is OptionData.TrackerOption).Select(x => x as OptionData.TrackerOption);
             Utility.TimeCodeExecution(FunctionTime, "Sorting Selected Items", 1);
@@ -156,6 +161,10 @@ namespace MMR_Tracker_V3
             dataSets.CheckedLocations = instance.LocationPool.Values.Where(x => x.CheckState == MiscData.CheckState.Checked).ToList();
             dataSets.AllAvailableLocations = instance.LocationPool.Values.Where(x => x.CheckState != MiscData.CheckState.Checked).ToList();
             dataSets.AvailableLocations = dataSets.AllAvailableLocations.Where(x => x.Available || x.CheckState == MiscData.CheckState.Marked).ToList();
+
+            dataSets.MarkedProxies = instance.LocationProxyData.LocationProxies.Values.Where(x => x.GetReferenceLocation(instance).CheckState == MiscData.CheckState.Marked).ToList();
+            dataSets.AllAvailableProxies = instance.LocationProxyData.LocationProxies.Values.Where(x => x.GetReferenceLocation(instance).CheckState != MiscData.CheckState.Checked).ToList();
+            dataSets.AvailableProxies = dataSets.AllAvailableProxies.Where(x => x.ProxyAvailable(instance) || x.GetReferenceLocation(instance).CheckState == MiscData.CheckState.Marked).ToList();
 
             var AllExits = instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values);
             dataSets.UncheckedEntrances = AllExits.Where(x => x.CheckState == MiscData.CheckState.Unchecked).ToList();
@@ -368,6 +377,9 @@ namespace MMR_Tracker_V3
             var DataSets = PopulateDataSets(Instance);
             List<object> DataSource = new List<object>();
 
+            var AvailableProxies = DataSets.AvailableProxies;
+            if (Filter.StartsWith("^") || ShowUnavailable) { AvailableProxies = DataSets.AllAvailableProxies; }
+
             var AvailableLocations = DataSets.AvailableLocations;
             if (Filter.StartsWith("^") || ShowUnavailable) { AvailableLocations = DataSets.AllAvailableLocations; }
 
@@ -390,11 +402,11 @@ namespace MMR_Tracker_V3
                 AvailableLocations.Reverse();
                 WriteOptions();
                 WriteHints(DataSets);
-                WriteLocations(AvailableLocations);
+                WriteLocations(AvailableLocations, AvailableProxies);
             }
             else
             {
-                WriteLocations(AvailableLocations);
+                WriteLocations(AvailableLocations, AvailableProxies);
                 WriteHints(DataSets);
                 WriteOptions();
             }
@@ -436,26 +448,40 @@ namespace MMR_Tracker_V3
                 }
             }
 
-            void WriteLocations(List<LocationData.LocationObject> AvailableLocations)
+            void WriteLocations(List<LocationData.LocationObject> AvailableLocations, List<LocationData.LocationProxy> AvailableProxies)
             {
+                var AllAvailable = new List<object>().Concat(AvailableLocations.Where(x => !x.GetDictEntry(Instance).LocationProxys.Any())).Concat(AvailableProxies);
                 string CurrentLocation = "";
-                foreach (var i in AvailableLocations)
+                foreach (var obj in AllAvailable)
                 {
-                    if (!LocationAppearsinListbox(i, Instance)) { continue; }
-
-                    i.DisplayName = Utility.GetDisplayName(0, i, Instance);
-
-                    ItemsInListBox++;
-                    if (!SearchStringParser.FilterSearch(Instance, i, Filter, i.DisplayName)) { continue; }
-                    ItemsInListBoxFiltered++;
-
-                    if (CurrentLocation != i.GetDictEntry(Instance).Area)
+                    var CurrentArea = "";
+                    if (obj is LocationData.LocationObject i)
+                    {
+                        if (!LocationAppearsinListbox(i, Instance)) { continue; }
+                        i.DisplayName = Utility.GetDisplayName(0, i, Instance);
+                        ItemsInListBox++;
+                        if (!SearchStringParser.FilterSearch(Instance, i, Filter, i.DisplayName)) { continue; }
+                        ItemsInListBoxFiltered++;
+                        CurrentArea = i.GetDictEntry(Instance).Area;
+                    }
+                    else if (obj is LocationData.LocationProxy p)
+                    {
+                        var ProxyLoc = Instance.LocationPool[p.ReferenceID];
+                        if (!LocationAppearsinListbox(ProxyLoc, Instance)) { continue; }
+                        p.DisplayName = p.Name;
+                        ItemsInListBox++;
+                        if (!SearchStringParser.FilterSearch(Instance, ProxyLoc, Filter, p.DisplayName)) { continue; }
+                        ItemsInListBoxFiltered++;
+                        CurrentArea = p.Area;
+                    }
+                    else { continue; }
+                    if (CurrentLocation != CurrentArea)
                     {
                         if (DataSource.Count > 0) { DataSource.Add(Divider); }
-                        DataSource.Add(new MiscData.Areaheader { Area = i.GetDictEntry(Instance).Area });
-                        CurrentLocation = i.GetDictEntry(Instance).Area;
+                        DataSource.Add(new MiscData.Areaheader { Area = CurrentArea });
+                        CurrentLocation = CurrentArea;
                     }
-                    DataSource.Add(i);
+                    DataSource.Add(obj);
                 }
             }
 

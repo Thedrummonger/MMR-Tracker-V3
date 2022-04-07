@@ -56,6 +56,27 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string[] ValidItemTypes { get; set; } = Array.Empty<string>();
             public bool? IgnoreForSettingString { get; set; } = null;
             public SpoilerlogReference SpoilerData { get; set; } = new SpoilerlogReference();
+            public List<DictLocationProxy> LocationProxys { get; set; } = new List<DictLocationProxy>();
+        }
+
+        public class DictLocationProxy
+        {
+            public string ID { get; set; }
+            public string Name { get; set; }
+            public string Area { get; set; }
+            public string LogicInheritance { get; set; } = null;
+            public LocationData.LocationProxy ToInstanceData(DictionaryLocationEntries Parent)
+            {
+                return new LocationData.LocationProxy
+                {
+                    ID = ID,
+                    ReferenceID = Parent.ID,
+                    Area = Area,
+                    LogicInheritance = LogicInheritance,
+                    Name = Name
+                };
+            }
+
         }
 
         [Serializable]
