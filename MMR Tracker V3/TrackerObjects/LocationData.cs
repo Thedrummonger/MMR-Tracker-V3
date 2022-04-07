@@ -180,12 +180,12 @@ namespace MMR_Tracker_V3.TrackerObjects
                 var LogicId = LogicInheritance ?? ReferenceID;
                 bool Literal = LogicId.IsLiteralID(out LogicId);
                 var type = instance.GetLocationEntryType(LogicId, Literal);
-                switch (type)
+                return type switch
                 {
-                    case LogicEntryType.location: return instance.LocationPool[LogicId].Available;
-                    case LogicEntryType.macro: return instance.LocationPool[LogicId].Available;
-                    default: return false;
-                }
+                    LogicEntryType.location => instance.LocationPool[LogicId].Available,
+                    LogicEntryType.macro => instance.MacroPool[LogicId].Aquired,
+                    _ => false,
+                };
             }
             public LocationObject GetReferenceLocation(LogicObjects.TrackerInstance instance)
             {

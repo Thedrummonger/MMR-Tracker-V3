@@ -54,6 +54,7 @@ namespace MMR_Tracker_V3
             //Search for valid Object types in the list of selected Objects and sort them into lists
             IEnumerable<LocationData.LocationObject> locationObjects = Items.Where(x => x is LocationData.LocationObject).Select(x => x as LocationData.LocationObject);
             locationObjects = locationObjects.Concat(Items.Where(x => x is LocationData.LocationProxy).Select(x => Instance.LocationPool[(x as LocationData.LocationProxy).ReferenceID]));
+            locationObjects = locationObjects.Distinct();
             IEnumerable<EntranceData.EntranceRandoExit> ExitObjects = Items.Where(x => x is EntranceData.EntranceRandoExit).Select(x => x as EntranceData.EntranceRandoExit);
             IEnumerable<OptionData.TrackerOption> OptionObjects = Items.Where(x => x is OptionData.TrackerOption).Select(x => x as OptionData.TrackerOption);
             Utility.TimeCodeExecution(FunctionTime, "Sorting Selected Items", 1);
@@ -371,6 +372,13 @@ namespace MMR_Tracker_V3
             }
         }
 
+        public static string GetLocationEntryArea(object Entry, LogicObjects.TrackerInstance Instance)
+        {
+            if (Entry is LocationData.LocationObject l) { return l.GetDictEntry(Instance).Area; }
+            else if (Entry is LocationData.LocationProxy p) { return p.Area; }
+            return "Error";
+        }
+
         public static List<object> PopulateAvailableLocationList(MiscData.Divider Divider, LogicObjects.TrackerInstance Instance, string Filter, bool ShowUnavailable, out int OutItemsInListBox, out int OutItemsInListBoxFiltered, bool reverse = false)
         {
             var Groups = Utility.GetCategoriesFromFile(Instance);
@@ -383,9 +391,10 @@ namespace MMR_Tracker_V3
             var AvailableLocations = DataSets.AvailableLocations;
             if (Filter.StartsWith("^") || ShowUnavailable) { AvailableLocations = DataSets.AllAvailableLocations; }
 
-            AvailableLocations = AvailableLocations
-                .OrderBy(x => (Groups.ContainsKey(x.GetDictEntry(Instance).Area.ToLower().Trim()) ? Groups[x.GetDictEntry(Instance).Area.ToLower().Trim()] : DataSets.AvailableLocations.Count() + 1))
-                .ThenBy(x => x.GetDictEntry(Instance).Area)
+            IEnumerable<object> AvailableLocationsEntries = AvailableLocations.Where(x => !Instance.LocationProxyData.LocationsWithProxys.ContainsKey(x.ID));
+            AvailableLocationsEntries = AvailableLocationsEntries.Concat(AvailableProxies);
+            AvailableLocationsEntries = AvailableLocationsEntries.OrderBy(x => (Groups.ContainsKey(GetLocationEntryArea(x, Instance).ToLower().Trim()) ? Groups[GetLocationEntryArea(x, Instance).ToLower().Trim()] : DataSets.AvailableLocations.Count() + 1))
+                .ThenBy(x => GetLocationEntryArea(x, Instance))
                 .ThenBy(x => Utility.GetDisplayName(0, x, Instance)).ToList();
 
             var AvailableHints = DataSets.AvailableHints;
@@ -402,11 +411,11 @@ namespace MMR_Tracker_V3
                 AvailableLocations.Reverse();
                 WriteOptions();
                 WriteHints(DataSets);
-                WriteLocations(AvailableLocations, AvailableProxies);
+                WriteLocations(AvailableLocationsEntries);
             }
             else
             {
-                WriteLocations(AvailableLocations, AvailableProxies);
+                WriteLocations(AvailableLocationsEntries);
                 WriteHints(DataSets);
                 WriteOptions();
             }
@@ -448,9 +457,8 @@ namespace MMR_Tracker_V3
                 }
             }
 
-            void WriteLocations(List<LocationData.LocationObject> AvailableLocations, List<LocationData.LocationProxy> AvailableProxies)
+            void WriteLocations(IEnumerable<object> AllAvailable)
             {
-                var AllAvailable = new List<object>().Concat(AvailableLocations.Where(x => !x.GetDictEntry(Instance).LocationProxys.Any())).Concat(AvailableProxies);
                 string CurrentLocation = "";
                 foreach (var obj in AllAvailable)
                 {
@@ -466,11 +474,10 @@ namespace MMR_Tracker_V3
                     }
                     else if (obj is LocationData.LocationProxy p)
                     {
-                        var ProxyLoc = Instance.LocationPool[p.ReferenceID];
-                        if (!LocationAppearsinListbox(ProxyLoc, Instance)) { continue; }
-                        p.DisplayName = p.Name;
+                        if (!LocationAppearsinListbox(Instance.LocationPool[p.ReferenceID], Instance)) { continue; }
+                        p.DisplayName = Utility.GetDisplayName(0, p, Instance);
                         ItemsInListBox++;
-                        if (!SearchStringParser.FilterSearch(Instance, ProxyLoc, Filter, p.DisplayName)) { continue; }
+                        if (!SearchStringParser.FilterSearch(Instance, p, Filter, p.DisplayName)) { continue; }
                         ItemsInListBoxFiltered++;
                         CurrentArea = p.Area;
                     }

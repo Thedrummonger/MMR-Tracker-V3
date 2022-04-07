@@ -78,30 +78,53 @@ namespace MMR_Tracker_V3
             };
         }
 
-        public static string GetDisplayName(int Function, LocationData.LocationObject i, LogicObjects.TrackerInstance instance)
+        public static string GetDisplayName(int Function, object obj, LogicObjects.TrackerInstance instance)
         {
             string Displayname = "";
-            if (Function == 0) //Available Locations
-            { 
-                Displayname = i.GetDictEntry(instance).Name ?? i.ID;
-                if (i.CheckState == MiscData.CheckState.Marked)
+            if (obj is LocationData.LocationObject i)
+            {
+                if (Function == 0) //Available Locations
                 {
-                    string RandomizedItemDisplay = i.Randomizeditem.Item;
+                    Displayname = i.GetDictEntry(instance).Name ?? i.ID;
+                    if (i.CheckState == MiscData.CheckState.Marked)
+                    {
+                        string RandomizedItemDisplay = i.Randomizeditem.Item;
+                        var RandomizedItem = instance.GetItemByID(i.Randomizeditem.Item);
+                        if (RandomizedItem != null) { RandomizedItemDisplay = RandomizedItem.GetDictEntry(instance).GetItemName(instance) ?? RandomizedItem.Id; }
+                        Displayname += $": {RandomizedItemDisplay}";
+                        if (i.CheckPrice > -1) { Displayname += $" [${i.CheckPrice}]"; }
+                    }
+                }
+                else if (Function == 1) //Checked Locations
+                {
+                    Displayname = i.Randomizeditem.Item;
                     var RandomizedItem = instance.GetItemByID(i.Randomizeditem.Item);
-                    if (RandomizedItem != null) { RandomizedItemDisplay = RandomizedItem.GetDictEntry(instance).GetItemName(instance) ?? RandomizedItem.Id; }
-                    Displayname += $": {RandomizedItemDisplay}";
+                    if (RandomizedItem != null) { Displayname = RandomizedItem.GetDictEntry(instance).GetItemName(instance) ?? RandomizedItem.Id; }
+                    Displayname = $"{Displayname}: {i.GetDictEntry(instance).Name ?? i.ID}";
                     if (i.CheckPrice > -1) { Displayname += $" [${i.CheckPrice}]"; }
                 }
+                return Displayname;
             }
-            else if (Function == 1) //Checked Locations
+            else if (obj is LocationData.LocationProxy p)
             {
-                Displayname = i.Randomizeditem.Item;
-                var RandomizedItem = instance.GetItemByID(i.Randomizeditem.Item);
-                if (RandomizedItem != null) { Displayname = RandomizedItem.GetDictEntry(instance).GetItemName(instance) ?? RandomizedItem.Id; }
-                Displayname = $"{Displayname}: {i.GetDictEntry(instance).Name ?? i.ID}";
-                if (i.CheckPrice > -1) { Displayname += $" [${i.CheckPrice}]"; }
+                var refLoc = instance.LocationPool[p.ReferenceID];
+                if (Function == 0) //Available Locations
+                {
+                    Displayname = p.Name??p.ID;
+                    if (refLoc.CheckState == MiscData.CheckState.Marked)
+                    {
+                        string RandomizedItemDisplay = refLoc.Randomizeditem.Item;
+                        var RandomizedItem = instance.GetItemByID(refLoc.Randomizeditem.Item);
+                        if (RandomizedItem != null) { RandomizedItemDisplay = RandomizedItem.GetDictEntry(instance).GetItemName(instance) ?? RandomizedItem.Id; }
+                        Displayname += $": {RandomizedItemDisplay}";
+                        if (refLoc.CheckPrice > -1) { Displayname += $" [${refLoc.CheckPrice}]"; }
+                        else if (p.LogicInheritance != null && instance.MacroPool.ContainsKey(p.LogicInheritance) && instance.MacroPool[p.LogicInheritance].MacroPrice > -1) 
+                        { Displayname += $" [${instance.MacroPool[p.LogicInheritance].MacroPrice}]"; }
+                    }
+                }
+                return Displayname;
             }
-            return Displayname;
+            else { return obj.ToString(); }
         }
 
         public static List<int> ParseLocationAndJunkSettingString(string c, int ItemCount, string ParseType)
@@ -381,6 +404,18 @@ namespace MMR_Tracker_V3
                 OutObject.OriginalItem = DictData.OriginalItem;
                 OutObject.Randomizeditem = locationObject.Randomizeditem.Item;
                 OutObject.Starred = locationObject.Starred;
+                OutObject.ValidItemTypes = DictData.ValidItemTypes;
+            }
+            if (Object is LocationData.LocationProxy locationProxy)
+            {
+                var LocReference = instance.LocationPool[locationProxy.ReferenceID];
+                var DictData = LocReference.GetDictEntry(instance);
+                OutObject.ID = locationProxy.ID;
+                OutObject.Area = locationProxy.Area;
+                OutObject.Name = locationProxy.Name;
+                OutObject.OriginalItem = DictData.OriginalItem;
+                OutObject.Randomizeditem = LocReference.Randomizeditem.Item;
+                OutObject.Starred = LocReference.Starred;
                 OutObject.ValidItemTypes = DictData.ValidItemTypes;
             }
             else if (Object is ItemData.ItemObject ItemObject)
