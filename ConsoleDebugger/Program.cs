@@ -159,7 +159,7 @@ namespace ConsoleDebugger
                 foreach (var i in Entries) 
                 {
                     string Print = i.ToString();
-                    if ((i is LocationData.LocationObject || i is HintData.HintObject || i is EntranceData.EntranceRandoExit)) 
+                    if ((i is LocationData.LocationObject || i is HintData.HintObject || i is EntranceData.EntranceRandoExit || i is LocationData.LocationProxy)) 
                     {
                         Print = $"{reference.Count}. {i}";
                         reference.Add(reference.Count, i);
