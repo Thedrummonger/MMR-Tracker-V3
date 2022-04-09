@@ -469,8 +469,8 @@ namespace MMR_Tracker_V3
                     if (CurrentOptionType == LogicEntryType.Option && (instance.UserOptions[currentOption].CurrentValue == CheckValue)) { RequiremntMet = true; }
                     //This should always return whatever value will result in false if the item is unknown. This is because checking a location should never 
                     //result in another location becoming unavilable otherwise we could enter an infinite loop if both those location are checked automatically
-                    else if (CurrentOptionType == LogicEntryType.location && (instance.LocationPool[currentOption].GetItemAtCheck(instance) == null)) { RequiremntMet = inverse; }
-                    else if (CurrentOptionType == LogicEntryType.location && (instance.LocationPool[currentOption].GetItemAtCheck(instance) == CheckValue)) { RequiremntMet = true; }
+                    else if (CurrentOptionType == LogicEntryType.location && (instance.GetLocationByID(currentOption)?.GetItemAtCheck(instance) == null)) { RequiremntMet = inverse; }
+                    else if (CurrentOptionType == LogicEntryType.location && (instance.GetLocationByID(currentOption)?.GetItemAtCheck(instance) == CheckValue)) { RequiremntMet = true; }
                 }
             }
             return RequiremntMet != inverse;

@@ -48,23 +48,27 @@ namespace MMR_Tracker_V3
             };
             public ItemObject GetItemByID(string item)
             {
+                if (item is null) { return null; }
                 if (!ItemPool.ContainsKey(item)) { return null; }
                 return ItemPool[item];
             }
             public LocationObject GetLocationByID(string item)
             {
+                if (item is null) { return null; }
                 if (!LocationPool.ContainsKey(item)) { return null; }
                 return LocationPool[item];
             }
 
             public MacroObject GetMacroByID(string item)
             {
+                if (item is null) { return null; }
                 if (!MacroPool.ContainsKey(item)) { return null; }
                 return MacroPool[item];
             }
 
             public TrackerOption GetTrackerOptionByID(string item)
             {
+                if (item is null) { return null; }
                 if (!UserOptions.ContainsKey(item)) { return null; }
                 return UserOptions[item];
             }

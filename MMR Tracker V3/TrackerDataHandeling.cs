@@ -53,7 +53,7 @@ namespace MMR_Tracker_V3
 
             //Search for valid Object types in the list of selected Objects and sort them into lists
             IEnumerable<LocationData.LocationObject> locationObjects = Items.Where(x => x is LocationData.LocationObject).Select(x => x as LocationData.LocationObject);
-            locationObjects = locationObjects.Concat(Items.Where(x => x is LocationData.LocationProxy).Select(x => Instance.LocationPool[(x as LocationData.LocationProxy).ReferenceID]));
+            locationObjects = locationObjects.Concat(Items.Where(x => x is LocationData.LocationProxy).Select(x => (x as LocationData.LocationProxy).GetReferenceLocation(Instance)));
             locationObjects = locationObjects.Distinct();
             IEnumerable<EntranceData.EntranceRandoExit> ExitObjects = Items.Where(x => x is EntranceData.EntranceRandoExit).Select(x => x as EntranceData.EntranceRandoExit);
             IEnumerable<OptionData.TrackerOption> OptionObjects = Items.Where(x => x is OptionData.TrackerOption).Select(x => x as OptionData.TrackerOption);
@@ -200,7 +200,7 @@ namespace MMR_Tracker_V3
             CheckedLocations = CheckedLocations
                 .OrderBy(x => (Groups.ContainsKey(x.GetDictEntry(Instance).Area.ToLower().Trim()) ? Groups[x.GetDictEntry(Instance).Area.ToLower().Trim()] : DataSets.CheckedLocations.Count + 1))
                 .ThenBy(x => x.GetDictEntry(Instance).Area)
-                .ThenBy(x => Utility.GetDisplayName(1, x, Instance)).ToList();
+                .ThenBy(x => Utility.GetLocationDisplayName(x, Instance)).ToList();
 
             var ItemsInListBox = 0;
             var ItemsInListBoxFiltered = 0;
@@ -266,7 +266,7 @@ namespace MMR_Tracker_V3
                 foreach (var i in CheckedLocations)
                 {
                     if (!LocationAppearsinListbox(i, Instance)) { continue; }
-                    i.DisplayName = Utility.GetDisplayName(1, i, Instance);
+                    i.DisplayName = Utility.GetLocationDisplayName(i, Instance);
 
                     ItemsInListBox++;
                     if (!SearchStringParser.FilterSearch(Instance, i, Filter, i.DisplayName)) { continue; }
@@ -286,7 +286,7 @@ namespace MMR_Tracker_V3
                 foreach (var area in Instance.EntrancePool.AreaList)
                 {
                     var CheckLoadingZoneExits = area.Value.LoadingZoneExits.Where(x => x.Value.CheckState == MiscData.CheckState.Checked && EntranceAppearsinListbox(x.Value, Instance));
-                    var FilteredCheckedExits = CheckLoadingZoneExits.Where(x => SearchStringParser.FilterSearch(Instance, x.Value, Filter, ExitDisplayName(x.Value)));
+                    var FilteredCheckedExits = CheckLoadingZoneExits.Where(x => SearchStringParser.FilterSearch(Instance, x.Value, Filter, Utility.GetEntranceDisplayName(x.Value, Instance)));
 
                     ItemsInListBox += CheckLoadingZoneExits.Count();
                     ItemsInListBoxFiltered += FilteredCheckedExits.Count();
@@ -295,13 +295,9 @@ namespace MMR_Tracker_V3
                     DataSource.Add(new MiscData.Areaheader { Area = $"{area.Key} Exits" });
                     foreach (var i in FilteredCheckedExits)
                     {
-                        i.Value.DisplayName = ExitDisplayName(i.Value);
+                        i.Value.DisplayName = Utility.GetEntranceDisplayName(i.Value, Instance);
                         DataSource.Add(i.Value);
                     }
-                }
-                string ExitDisplayName(EntranceData.EntranceRandoExit Exit)
-                {
-                    return $"{Exit.DestinationExit.region} From {Exit.DestinationExit.from} : {Exit.ID} Exit";
                 }
             }
 
@@ -395,7 +391,7 @@ namespace MMR_Tracker_V3
             AvailableLocationsEntries = AvailableLocationsEntries.Concat(AvailableProxies);
             AvailableLocationsEntries = AvailableLocationsEntries.OrderBy(x => (Groups.ContainsKey(GetLocationEntryArea(x, Instance).ToLower().Trim()) ? Groups[GetLocationEntryArea(x, Instance).ToLower().Trim()] : DataSets.AvailableLocations.Count() + 1))
                 .ThenBy(x => GetLocationEntryArea(x, Instance))
-                .ThenBy(x => Utility.GetDisplayName(0, x, Instance)).ToList();
+                .ThenBy(x => Utility.GetLocationDisplayName(x, Instance)).ToList();
 
             var AvailableHints = DataSets.AvailableHints;
             if (Filter.StartsWith("^") || ShowUnavailable)
@@ -466,7 +462,7 @@ namespace MMR_Tracker_V3
                     if (obj is LocationData.LocationObject i)
                     {
                         if (!LocationAppearsinListbox(i, Instance)) { continue; }
-                        i.DisplayName = Utility.GetDisplayName(0, i, Instance);
+                        i.DisplayName = Utility.GetLocationDisplayName(i, Instance);
                         ItemsInListBox++;
                         if (!SearchStringParser.FilterSearch(Instance, i, Filter, i.DisplayName)) { continue; }
                         ItemsInListBoxFiltered++;
@@ -474,8 +470,8 @@ namespace MMR_Tracker_V3
                     }
                     else if (obj is LocationData.LocationProxy p)
                     {
-                        if (!LocationAppearsinListbox(Instance.LocationPool[p.ReferenceID], Instance)) { continue; }
-                        p.DisplayName = Utility.GetDisplayName(0, p, Instance);
+                        if (!LocationAppearsinListbox(p.GetReferenceLocation(Instance), Instance)) { continue; }
+                        p.DisplayName = Utility.GetLocationDisplayName(p, Instance);
                         ItemsInListBox++;
                         if (!SearchStringParser.FilterSearch(Instance, p, Filter, p.DisplayName)) { continue; }
                         ItemsInListBoxFiltered++;
@@ -528,7 +524,7 @@ namespace MMR_Tracker_V3
                 (x.Value.Available || x.Value.CheckState == MiscData.CheckState.Marked || ShowUnavailable || Filter.StartsWith("^")) && 
                 x.Value.CheckState != MiscData.CheckState.Checked && EntranceAppearsinListbox(x.Value, Instance));
 
-                var FilteredAvailableExits = AvailableExits.Where(x => SearchStringParser.FilterSearch(Instance, x.Value, Filter, ExitDisplayName(x.Value)));
+                var FilteredAvailableExits = AvailableExits.Where(x => SearchStringParser.FilterSearch(Instance, x.Value, Filter, Utility.GetEntranceDisplayName(x.Value, Instance)));
 
                 OutItemsInListBox += AvailableExits.Count();
                 OutItemsInListBoxFiltered += FilteredAvailableExits.Count();
@@ -538,18 +534,11 @@ namespace MMR_Tracker_V3
                 DataSource.Add(new MiscData.Areaheader { Area = area.Key });
                 foreach(var i in FilteredAvailableExits)
                 {
-                    i.Value.DisplayName = ExitDisplayName(i.Value);
+                    i.Value.DisplayName = Utility.GetEntranceDisplayName(i.Value, Instance);
                     DataSource.Add(i.Value);
                 }
             }
             return DataSource;
-
-            string ExitDisplayName(EntranceData.EntranceRandoExit Exit)
-            {
-                var Name = $"{Exit.ID}";
-                if (Exit.CheckState == MiscData.CheckState.Marked) { Name += $": {Exit.DestinationExit.region} <= {Exit.DestinationExit.from}"; }
-                return Name;
-            }
         }
 
         private static bool LocationAppearsinListbox(LocationData.LocationObject Location, LogicObjects.TrackerInstance Instance)

@@ -243,19 +243,18 @@ namespace Windows_Form_Frontend
 
         //ListBoxes
 
-        public void GetListObjectData(object entry, out MiscData.CheckState checkState, out bool starred, out bool Available)
+        public void GetListObjectData(dynamic entry, out MiscData.CheckState checkState, out bool starred, out bool Available)
         {
-            if (entry is LocationData.LocationObject lo) { checkState = lo.CheckState; starred = lo.Starred; Available = lo.Available; return; }
-            else if (entry is LocationData.LocationProxy po) 
-            { 
-                checkState = CurrentTrackerInstance.LocationPool[po.ReferenceID].CheckState; 
+            if (entry is LocationData.LocationProxy po) { 
+                checkState = CurrentTrackerInstance.GetLocationByID(po.ReferenceID)?.CheckState ?? MiscData.CheckState.Checked; 
                 starred = po.Starred;
                 Available = po.ProxyAvailable(CurrentTrackerInstance);
-                return; 
             }
-            else if (entry is HintData.HintObject ho) { checkState = ho.CheckState; starred = ho.Starred; Available = ho.Available; return; }
-            else if (entry is EntranceData.EntranceRandoExit eo) { checkState = eo.CheckState; starred = eo.Starred; Available = eo.Available; return; }
-            else { checkState = MiscData.CheckState.Checked; starred = false; Available = true; return; }
+            else {
+                checkState = Utility.DynamicPropertyExist(entry, "CheckState") ? entry.CheckState : MiscData.CheckState.Checked; 
+                starred = Utility.DynamicPropertyExist(entry, "Starred") ? entry.Starred : false; 
+                Available = Utility.DynamicPropertyExist(entry, "Available") ? entry.Available : true; 
+            }
         }
 
         private void LBValidLocations_DrawItem(object sender, DrawItemEventArgs e)
@@ -672,9 +671,12 @@ namespace Windows_Form_Frontend
             if (LogicID is not null)
             {
                 dynamic obj = listBox.SelectedItem;
-                string StarFunction = obj.Starred ? "UnStar Location" : "Star Location";
-                ToolStripItem StarContextItem = contextMenuStrip.Items.Add(StarFunction);
-                StarContextItem.Click += (sender, e) => { obj.Starred = !obj.Starred; PrintToListBox(new List<ListBox> { listBox }); };
+                if (Utility.DynamicPropertyExist(obj, "Starred"))
+                {
+                    string StarFunction = obj.Starred ? "UnStar Location" : "Star Location";
+                    ToolStripItem StarContextItem = contextMenuStrip.Items.Add(StarFunction);
+                    StarContextItem.Click += (sender, e) => { obj.Starred = !obj.Starred; PrintToListBox(new List<ListBox> { listBox }); };
+                }
             }
 
             //Show Logic
@@ -695,12 +697,14 @@ namespace Windows_Form_Frontend
             if ((LogicID is not null) && (listBox == LBValidLocations || listBox == LBValidEntrances))
             {
                 dynamic TargetLocationObject = listBox.SelectedItem;
-                if (listBox.SelectedItem is LocationData.LocationProxy tp) { TargetLocationObject = CurrentTrackerInstance.LocationPool[tp.ReferenceID]; }
+                if (listBox.SelectedItem is LocationData.LocationProxy tp) { TargetLocationObject = CurrentTrackerInstance.GetLocationByID(tp.ReferenceID); }
                 //Check Item
                 ToolStripItem CheckContextItem = contextMenuStrip.Items.Add("Check Location");
                 CheckContextItem.Click += (sender, e) => { HandleItemSelect(new List<object> { listBox.SelectedItem }, MiscData.CheckState.Checked, LB: listBox); };
                 //Mark\UnMark Item
-                string MarkFunction = TargetLocationObject.CheckState == MiscData.CheckState.Marked ? "UnMark Location" : "Mark Location";
+                string MarkFunction = "Toggle Checked";
+                if (Utility.DynamicPropertyExist(TargetLocationObject, "CheckState"))
+                { MarkFunction = TargetLocationObject.CheckState == MiscData.CheckState.Marked ? "UnMark Location" : "Mark Location"; }
                 ToolStripItem MarkContextItem = contextMenuStrip.Items.Add(MarkFunction);
                 MarkContextItem.Click += (sender, e) => { HandleItemSelect(new List<object> { listBox.SelectedItem }, MiscData.CheckState.Marked, LB: listBox); };
             }
@@ -712,7 +716,7 @@ namespace Windows_Form_Frontend
                 ToolStripItem CheckContextItem = contextMenuStrip.Items.Add("UnCheck entry");
                 CheckContextItem.Click += (sender, e) => { HandleItemSelect(new List<object> { listBox.SelectedItem }, MiscData.CheckState.Unchecked, LB: listBox); };
                 //Uncheck and Mark Item
-                ToolStripItem MarkContextItem = contextMenuStrip.Items.Add("UnCheck and Mark entry");
+                ToolStripItem MarkContextItem = contextMenuStrip.Items.Add("Mark entry");
                 MarkContextItem.Click += (sender, e) => { HandleItemSelect(new List<object> { listBox.SelectedItem }, MiscData.CheckState.Marked, LB: listBox); };
             }
 
@@ -725,18 +729,11 @@ namespace Windows_Form_Frontend
             }
 
             //Object Price Edit
-            if (listBox.SelectedItem is LocationData.LocationProxy || listBox.SelectedItem is LocationData.LocationObject)
+            dynamic Target = null;
+            if (listBox.SelectedItem is LocationData.LocationProxy ProxyPriceSet) { Target = ProxyPriceSet.GetLogicInheritance(CurrentTrackerInstance); }
+            else if (listBox.SelectedItem is LocationData.LocationObject LocPriceSet) { Target = LocPriceSet; }
+            if (Utility.DynamicPropertyExist(Target, "Price"))
             {
-                dynamic Target = null;
-                if (listBox.SelectedItem is LocationData.LocationProxy ProxyPriceSet)
-                {
-                    if (ProxyPriceSet.LogicInheritance != null && CurrentTrackerInstance.MacroPool.ContainsKey(ProxyPriceSet.LogicInheritance)){ 
-                        Target = CurrentTrackerInstance.MacroPool[ProxyPriceSet.LogicInheritance];
-                    }
-                    else { Target = CurrentTrackerInstance.LocationPool[ProxyPriceSet.ReferenceID]; }
-                }
-                else if (listBox.SelectedItem is LocationData.LocationObject LocPriceSet) { Target = LocPriceSet; }
-
                 string SetPriceText = Target.Price > -1 ? "Clear Price" : "Set Price";
                 ToolStripItem SetPrice = contextMenuStrip.Items.Add(SetPriceText);
                 SetPrice.Click += (sender, e) =>
@@ -760,9 +757,9 @@ namespace Windows_Form_Frontend
                     }
                     if (listBox.SelectedItem is LocationData.LocationProxy DebugProxyObj)
                     {
-                        var ProxyRef = CurrentTrackerInstance.LocationPool[DebugProxyObj.ReferenceID];
+                        var ProxyRef = CurrentTrackerInstance.GetLocationByID(DebugProxyObj.ReferenceID);
                         Debug.WriteLine(JsonConvert.SerializeObject(ProxyRef, Testing._NewtonsoftJsonSerializerOptions));
-                        Debug.WriteLine(JsonConvert.SerializeObject(ProxyRef.GetDictEntry(CurrentTrackerInstance), Testing._NewtonsoftJsonSerializerOptions));
+                        Debug.WriteLine(JsonConvert.SerializeObject(ProxyRef?.GetDictEntry(CurrentTrackerInstance), Testing._NewtonsoftJsonSerializerOptions));
                     }
                 };
             }

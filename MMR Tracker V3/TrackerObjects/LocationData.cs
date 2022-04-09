@@ -183,14 +183,19 @@ namespace MMR_Tracker_V3.TrackerObjects
                 var type = instance.GetLocationEntryType(LogicId, Literal);
                 return type switch
                 {
-                    LogicEntryType.location => instance.LocationPool[LogicId].Available,
-                    LogicEntryType.macro => instance.MacroPool[LogicId].Aquired,
+                    LogicEntryType.location => instance.GetLocationByID(LogicId).Available,
+                    LogicEntryType.macro => instance.GetMacroByID(LogicId).Aquired,
                     _ => false,
                 };
             }
             public LocationObject GetReferenceLocation(LogicObjects.TrackerInstance instance)
             {
-                return (instance.LocationPool[ReferenceID]);
+                return (instance.GetLocationByID(ReferenceID));
+            }
+            public object GetLogicInheritance(LogicObjects.TrackerInstance instance)
+            {
+                if (LogicInheritance is null) { return GetReferenceLocation(instance); }
+                return (instance.GetMacroByID(LogicInheritance));
             }
         }
     }
