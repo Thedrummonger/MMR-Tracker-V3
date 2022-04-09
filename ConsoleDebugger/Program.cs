@@ -127,10 +127,13 @@ namespace ConsoleDebugger
         private static void LoopLocationList()
         {
             //0: Available Loc  1: Checked Loc 2: Available Ent
+            bool ShowHelp = true;
             int EntryType = 0;
             string Filter = "";
             while (true)
             {
+                newTrackerInstance.EntrancePool.IsEntranceRando = newTrackerInstance.EntrancePool.CheckForRandomEntrances();
+                bool er = newTrackerInstance.EntrancePool.IsEntranceRando;
                 Console.Title = newTrackerInstance.LogicFile.GameCode + " Tracker" + (UnsavedChanges ? "*" : "");
                 Console.Clear();
                 LogicCalculation.CalculateLogic(newTrackerInstance);
@@ -139,42 +142,58 @@ namespace ConsoleDebugger
                 int y = 0;
                 string CurrentType = "";
                 MiscData.CheckState CheckAction = MiscData.CheckState.Checked;
-                if (EntryType == 0)
+                switch (EntryType)
                 {
-                    Entries = TrackerDataHandeling.PopulateAvailableLocationList(CreateDivider(Console.WindowWidth), newTrackerInstance, Filter, false, out  x, out  y, true);
-                    CurrentType = "Available Locations";
-                }
-                else if (EntryType == 1)
-                {
-                    Entries = TrackerDataHandeling.PopulateCheckedLocationList(CreateDivider(Console.WindowWidth), newTrackerInstance, Filter, out  x, out  y, true);
-                    CurrentType = "Checked Locations";
-                    CheckAction = MiscData.CheckState.Unchecked;
-                }
-                else if (EntryType == 2)
-                {
-                    Entries = TrackerDataHandeling.PopulateAvailableEntraceList(CreateDivider(Console.WindowWidth), newTrackerInstance, Filter, false, out  x, out  y, true);
-                    CurrentType = "Available Entrances";
+                    case 0:
+                        Entries = TrackerDataHandeling.PopulateAvailableLocationList(CreateDivider(Console.WindowWidth), newTrackerInstance, Filter, false, out x, out y, true);
+                        CurrentType = "Available Locations";
+                        break;
+                    case 1:
+                        Entries = TrackerDataHandeling.PopulateCheckedLocationList(CreateDivider(Console.WindowWidth), newTrackerInstance, Filter, out x, out y, true);
+                        CurrentType = "Checked Locations";
+                        CheckAction = MiscData.CheckState.Unchecked;
+                        break;
+                    case 2:
+                        Entries = TrackerDataHandeling.PopulateAvailableEntraceList(CreateDivider(Console.WindowWidth), newTrackerInstance, Filter, false, out x, out y, true);
+                        CurrentType = "Available Entrances";
+                        break;
                 }
                 Dictionary<int, object> reference = new Dictionary<int, object>();
                 foreach (var i in Entries) 
                 {
+                    dynamic DynamicEntry = i;
                     string Print = i.ToString();
                     if ((i is LocationData.LocationObject || i is HintData.HintObject || i is EntranceData.EntranceRandoExit || i is LocationData.LocationProxy)) 
                     {
-                        Print = $"{reference.Count}. {i}";
+                        bool entrystarred = DynamicEntry.GetType().GetProperty("Starred") != null && DynamicEntry.Starred;
+                        Print = $"{reference.Count}. {i + (entrystarred ? "*" : "")}";
                         reference.Add(reference.Count, i);
                     }
                     Console.WriteLine(Print); 
                 }
                 Console.WriteLine(CreateDivider(Console.WindowWidth));
                 Console.WriteLine($"{CurrentType}: {y}" + (x != y ? $"/{x}" : ""));
-                Console.WriteLine($"Actions:");
-                Console.WriteLine($"0-{y-1} = check corresponding location| type # before the number to mark");
-                Console.WriteLine($"^ = apply spoiler log or settings file");
-                Console.WriteLine($"z = undo | y = redo");
-                Console.WriteLine($"s = save");
-                Console.WriteLine($"l = show available location | c = show Checked location | e = show Available Entrances");
-                Console.WriteLine($"\\ + search term = filter locations by search term");
+                if (ShowHelp)
+                {
+                    Console.WriteLine(CreateDivider(Console.WindowWidth));
+                    Console.WriteLine($"Check Actions:");
+                    Console.WriteLine($"Type and index (0-{y - 1}) to {(EntryType == 1? "un" : "")}check the corresponding entry");
+                    Console.WriteLine($"type # before an index to mark the entry");
+                    Console.WriteLine($"type * before an index to star the entry");
+                    Console.WriteLine($"type $ before an index to edit the checks Price");
+                    Console.WriteLine(CreateDivider(Console.WindowWidth));
+                    Console.WriteLine($"Other Actions:");
+                    Console.WriteLine($"f = apply spoiler log or settings file");
+                    Console.WriteLine($"z = undo | y = redo");
+                    Console.WriteLine($"s = save");
+                    Console.WriteLine($"l = show available location | c = show Checked location{(er ? " | e = show Available Entrances" : "" )}");
+                    Console.WriteLine($"h = Hide command list");
+                    Console.WriteLine($"\\ + search term = filter locations by search term");
+                }
+                else
+                {
+                    Console.WriteLine($"enter h to show commands");
+                }
                 var input = Console.ReadLine();
 
                 if (input.StartsWith("#")) 
@@ -183,7 +202,24 @@ namespace ConsoleDebugger
                     input = input[1..];
                 }
 
-                if (int.TryParse(input, out int index) && reference.ContainsKey(index))
+                if (input.StartsWith("*") && int.TryParse(input[1..], out int starindex) && reference.ContainsKey(starindex))
+                {
+                    string CurrentState = Newtonsoft.Json.JsonConvert.SerializeObject(newTrackerInstance);
+                    dynamic Selection = reference[starindex];
+                    if (Selection.GetType().GetProperty("Starred") != null) { Selection.Starred = !Selection.Starred; }
+                    UnsavedChanges = true;
+                    RedoStringList.Clear();
+                    UndoStringList.Add(CurrentState);
+                }
+                else if (input.StartsWith("$") && int.TryParse(input[1..], out int SetPriceIndex) && reference.ContainsKey(SetPriceIndex))
+                {
+                    string CurrentState = Newtonsoft.Json.JsonConvert.SerializeObject(newTrackerInstance);
+                    SetPrice(reference[SetPriceIndex]);
+                    UnsavedChanges = true;
+                    RedoStringList.Clear();
+                    UndoStringList.Add(CurrentState);
+                }
+                else if (int.TryParse(input, out int index) && reference.ContainsKey(index))
                 {
                     string CurrentState = Newtonsoft.Json.JsonConvert.SerializeObject(newTrackerInstance);
                     TrackerDataHandeling.CheckSelectedItems(new List<object> { reference[index] }, CheckAction, newTrackerInstance, HandleUnAssignedLocations, HandleUnAssignedVariables);
@@ -195,20 +231,36 @@ namespace ConsoleDebugger
                 {
                     Filter = input[1..];
                 }
-                else if (input == "^") 
-                { 
+                else if (input == "f")
+                {
+                    string CurrentState = Newtonsoft.Json.JsonConvert.SerializeObject(newTrackerInstance);
                     LoadSettingFile();
                     RedoStringList.Clear();
-                    UndoStringList.Add(Newtonsoft.Json.JsonConvert.SerializeObject(newTrackerInstance));
+                    UndoStringList.Add(CurrentState);
                     UnsavedChanges = true;
                 }
                 else if (input == "l") { EntryType = 0; }
-                else if (input == "e") { EntryType = 2; }
+                else if (input == "e" && er) { EntryType = 2; }
                 else if (input == "c") { EntryType = 1; }
                 else if (input == "z") { undoredo("undo"); }
                 else if (input == "y") { undoredo("redo"); }
                 else if (input == "s") { SaveInstance(); }
+                else if (input == "h") { ShowHelp = !ShowHelp; }
 
+            }
+        }
+
+        private static void SetPrice(dynamic entry)
+        {
+            if (entry.Price > -1) { entry.Price = -1; return; }
+            var DictEntry = entry.GetDictEntry(newTrackerInstance);
+            Console.Clear();
+            while (entry.Price == -1)
+            {
+                Console.WriteLine($"Enter Price for {DictEntry.Name ?? DictEntry.ID}");
+                var input = Console.ReadLine();
+                if (int.TryParse(input, out int newPrice) && newPrice > -1) { entry.Price = newPrice; }
+                else { Console.WriteLine($"{input} is not a valid price. Price must be a positive number"); }
             }
         }
 
