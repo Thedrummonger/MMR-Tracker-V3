@@ -92,7 +92,7 @@ namespace MMR_Tracker_V3
                         var RandomizedItem = instance.GetItemByID(i.Randomizeditem.Item);
                         if (RandomizedItem != null) { RandomizedItemDisplay = RandomizedItem.GetDictEntry(instance).GetItemName(instance) ?? RandomizedItem.Id; }
                         Displayname += $": {RandomizedItemDisplay}";
-                        if (i.CheckPrice > -1) { Displayname += $" [${i.CheckPrice}]"; }
+                        if (i.Price > -1) { Displayname += $" [${i.Price}]"; }
                     }
                 }
                 else if (Function == 1) //Checked Locations
@@ -101,7 +101,7 @@ namespace MMR_Tracker_V3
                     var RandomizedItem = instance.GetItemByID(i.Randomizeditem.Item);
                     if (RandomizedItem != null) { Displayname = RandomizedItem.GetDictEntry(instance).GetItemName(instance) ?? RandomizedItem.Id; }
                     Displayname = $"{Displayname}: {i.GetDictEntry(instance).Name ?? i.ID}";
-                    if (i.CheckPrice > -1) { Displayname += $" [${i.CheckPrice}]"; }
+                    if (i.Price > -1) { Displayname += $" [${i.Price}]"; }
                 }
                 return Displayname;
             }
@@ -117,9 +117,9 @@ namespace MMR_Tracker_V3
                         var RandomizedItem = instance.GetItemByID(refLoc.Randomizeditem.Item);
                         if (RandomizedItem != null) { RandomizedItemDisplay = RandomizedItem.GetDictEntry(instance).GetItemName(instance) ?? RandomizedItem.Id; }
                         Displayname += $": {RandomizedItemDisplay}";
-                        if (refLoc.CheckPrice > -1) { Displayname += $" [${refLoc.CheckPrice}]"; }
-                        else if (p.LogicInheritance != null && instance.MacroPool.ContainsKey(p.LogicInheritance) && instance.MacroPool[p.LogicInheritance].MacroPrice > -1) 
-                        { Displayname += $" [${instance.MacroPool[p.LogicInheritance].MacroPrice}]"; }
+                        if (refLoc.Price > -1) { Displayname += $" [${refLoc.Price}]"; }
+                        else if (p.LogicInheritance != null && instance.MacroPool.ContainsKey(p.LogicInheritance) && instance.MacroPool[p.LogicInheritance].Price > -1) 
+                        { Displayname += $" [${instance.MacroPool[p.LogicInheritance].Price}]"; }
                     }
                 }
                 return Displayname;
@@ -406,7 +406,7 @@ namespace MMR_Tracker_V3
                 OutObject.Starred = locationObject.Starred;
                 OutObject.ValidItemTypes = DictData.ValidItemTypes;
             }
-            if (Object is LocationData.LocationProxy locationProxy)
+            else if (Object is LocationData.LocationProxy locationProxy)
             {
                 var LocReference = instance.LocationPool[locationProxy.ReferenceID];
                 var DictData = LocReference.GetDictEntry(instance);

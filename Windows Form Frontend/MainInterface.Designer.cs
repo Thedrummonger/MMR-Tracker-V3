@@ -70,12 +70,12 @@ namespace Windows_Form_Frontend
             this.devToolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewAsUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CodeTestingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ExportCheckedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ImportCheckedToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.ExportCheckedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ImportCheckedToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -131,7 +131,7 @@ namespace Windows_Form_Frontend
             this.LBCheckedLocations.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.LBCheckedLocations.Size = new System.Drawing.Size(87, 109);
             this.LBCheckedLocations.TabIndex = 39;
-            this.LBCheckedLocations.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.LBCheckedLocations_DrawItem);
+            this.LBCheckedLocations.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.LBValidLocations_DrawItem);
             this.LBCheckedLocations.DoubleClick += new System.EventHandler(this.LBValidEntrances_DoubleClick);
             this.LBCheckedLocations.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LB_KeyDown);
             this.LBCheckedLocations.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.preventKeyShortcuts);
@@ -150,7 +150,7 @@ namespace Windows_Form_Frontend
             this.LBValidEntrances.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.LBValidEntrances.Size = new System.Drawing.Size(87, 109);
             this.LBValidEntrances.TabIndex = 38;
-            this.LBValidEntrances.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.LBValidEntrances_DrawItem);
+            this.LBValidEntrances.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.LBValidLocations_DrawItem);
             this.LBValidEntrances.DoubleClick += new System.EventHandler(this.LBValidEntrances_DoubleClick);
             this.LBValidEntrances.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LB_KeyDown);
             this.LBValidEntrances.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.preventKeyShortcuts);
@@ -496,6 +496,20 @@ namespace Windows_Form_Frontend
             this.CodeTestingToolStripMenuItem.Text = "Code Testing";
             this.CodeTestingToolStripMenuItem.Click += new System.EventHandler(this.CodeTestingToolStripMenuItem_Click);
             // 
+            // ExportCheckedToolStripMenuItem
+            // 
+            this.ExportCheckedToolStripMenuItem.Name = "ExportCheckedToolStripMenuItem";
+            this.ExportCheckedToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.ExportCheckedToolStripMenuItem.Text = "Export Checked";
+            this.ExportCheckedToolStripMenuItem.Click += new System.EventHandler(this.ExportCheckedToolStripMenuItem_Click);
+            // 
+            // ImportCheckedToolStripMenuItem1
+            // 
+            this.ImportCheckedToolStripMenuItem1.Name = "ImportCheckedToolStripMenuItem1";
+            this.ImportCheckedToolStripMenuItem1.Size = new System.Drawing.Size(159, 22);
+            this.ImportCheckedToolStripMenuItem1.Text = "Import Checked";
+            this.ImportCheckedToolStripMenuItem1.Click += new System.EventHandler(this.ImportCheckedToolStripMenuItem1_Click);
+            // 
             // undoToolStripMenuItem
             // 
             this.undoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("undoToolStripMenuItem.Image")));
@@ -522,20 +536,6 @@ namespace Windows_Form_Frontend
             this.toolTip1.AutoPopDelay = 50000;
             this.toolTip1.InitialDelay = 10;
             this.toolTip1.ReshowDelay = 100;
-            // 
-            // ExportCheckedToolStripMenuItem
-            // 
-            this.ExportCheckedToolStripMenuItem.Name = "ExportCheckedToolStripMenuItem";
-            this.ExportCheckedToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
-            this.ExportCheckedToolStripMenuItem.Text = "Export Checked";
-            this.ExportCheckedToolStripMenuItem.Click += new System.EventHandler(this.ExportCheckedToolStripMenuItem_Click);
-            // 
-            // ImportCheckedToolStripMenuItem1
-            // 
-            this.ImportCheckedToolStripMenuItem1.Name = "ImportCheckedToolStripMenuItem1";
-            this.ImportCheckedToolStripMenuItem1.Size = new System.Drawing.Size(159, 22);
-            this.ImportCheckedToolStripMenuItem1.Text = "Import Checked";
-            this.ImportCheckedToolStripMenuItem1.Click += new System.EventHandler(this.ImportCheckedToolStripMenuItem1_Click);
             // 
             // MainInterface
             // 

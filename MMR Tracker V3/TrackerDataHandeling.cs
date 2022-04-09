@@ -506,7 +506,7 @@ namespace MMR_Tracker_V3
                         if (!DividerCreated)
                         {
                             if (DataSource.Count > 0) { DataSource.Add(Divider); }
-                            DataSource.Add(new MiscData.Areaheader { Area = "HINTS:" });
+                            DataSource.Add(new MiscData.Areaheader { Area = "HINTS" });
                             DividerCreated = true;
                         }
                         DataSource.Add(i);

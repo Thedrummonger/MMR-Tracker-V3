@@ -646,7 +646,7 @@ namespace MMR_Tracker_V3.OtherGames
                 {
                     if (!Instance.ItemPool.ContainsKey(Item)) { Debug.WriteLine(Item + " Was an unknown item."); }
                     Instance.LocationPool[Locations].Randomizeditem.SpoilerLogGivenItem = Item;
-                    if (Price > 0) { Instance.LocationPool[Locations].CheckPrice = Price; }
+                    if (Price > 0) { Instance.LocationPool[Locations].Price = Price; }
                     if (Item == "Light_Arrows") { LightArrowLocation = Instance.LocationPool[Locations].GetDictEntry(Instance).Area; }
                 }
                 else

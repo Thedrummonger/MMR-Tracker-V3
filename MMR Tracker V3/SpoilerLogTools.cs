@@ -316,8 +316,8 @@ namespace MMR_Tracker_V3
                     //Debug.WriteLine($"{i.ID} was not found in the Price log");
                     continue;
                 }
-                i.CheckPrice = MatchingLocations.Select(x => x.Value).Min();
-                Debug.WriteLine($"{i.ID} was assigned a price of {i.CheckPrice}");
+                i.Price = MatchingLocations.Select(x => x.Value).Min();
+                Debug.WriteLine($"{i.ID} was assigned a price of {i.Price}");
             }
             foreach (var i in instance.MacroPool.Values)
             {
@@ -328,8 +328,8 @@ namespace MMR_Tracker_V3
                     //Debug.WriteLine($"{i.ID} was not found in the Price log");
                     continue;
                 }
-                i.MacroPrice = MatchingLocations.Select(x => x.Value).Min();
-                Debug.WriteLine($"{i.ID} was assigned a price of {i.MacroPrice}");
+                i.Price = MatchingLocations.Select(x => x.Value).Min();
+                Debug.WriteLine($"{i.ID} was assigned a price of {i.Price}");
             }
             foreach (var i in instance.HintPool.Values)
             {
@@ -349,7 +349,7 @@ namespace MMR_Tracker_V3
             foreach (var i in instance.LocationPool.Values)
             {
                 i.Randomizeditem.SpoilerLogGivenItem = null;
-                i.CheckPrice = -1;
+                i.Price = -1;
             }
             foreach (var i in instance.HintPool.Values)
             {

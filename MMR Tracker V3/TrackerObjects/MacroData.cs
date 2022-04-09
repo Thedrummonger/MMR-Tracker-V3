@@ -14,7 +14,7 @@ namespace MMR_Tracker_V3.TrackerObjects
         public string ID { get; set; }
         public bool Aquired { get; set; } = false;
         public bool TrickEnabled { get; set; } = true;
-        public int MacroPrice { get; set; } = -1;
+        public int Price { get; set; } = -1;
 
         public LogicDictionaryData.DictionaryMacroEntry GetDictEntry(LogicObjects.TrackerInstance Instance)
         {
