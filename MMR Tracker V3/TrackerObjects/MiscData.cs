@@ -41,6 +41,13 @@ namespace MMR_Tracker_V3.TrackerObjects
             Marked = 1,
             Unchecked = 2
         }
+        [Serializable]
+        public enum LogicFileType
+        {
+            Logic = 0,
+            Additional = 1,
+            Runtime = 2
+        }
 
         [Serializable]
         public enum RandomizedState

@@ -142,19 +142,20 @@ namespace ConsoleDebugger
                 int y = 0;
                 string CurrentType = "";
                 MiscData.CheckState CheckAction = MiscData.CheckState.Checked;
+                var dataset = TrackerDataHandeling.PopulateDataSets(newTrackerInstance);
                 switch (EntryType)
                 {
                     case 0:
-                        Entries = TrackerDataHandeling.PopulateAvailableLocationList(CreateDivider(Console.WindowWidth), newTrackerInstance, Filter, false, out x, out y, true);
+                        Entries = TrackerDataHandeling.PopulateAvailableLocationList(dataset, CreateDivider(Console.WindowWidth), newTrackerInstance, Filter, false, out x, out y, true);
                         CurrentType = "Available Locations";
                         break;
                     case 1:
-                        Entries = TrackerDataHandeling.PopulateCheckedLocationList(CreateDivider(Console.WindowWidth), newTrackerInstance, Filter, out x, out y, true);
+                        Entries = TrackerDataHandeling.PopulateCheckedLocationList(dataset, CreateDivider(Console.WindowWidth), newTrackerInstance, Filter, out x, out y, true);
                         CurrentType = "Checked Locations";
                         CheckAction = MiscData.CheckState.Unchecked;
                         break;
                     case 2:
-                        Entries = TrackerDataHandeling.PopulateAvailableEntraceList(CreateDivider(Console.WindowWidth), newTrackerInstance, Filter, false, out x, out y, true);
+                        Entries = TrackerDataHandeling.PopulateAvailableEntraceList(dataset, CreateDivider(Console.WindowWidth), newTrackerInstance, Filter, false, out x, out y, true);
                         CurrentType = "Available Entrances";
                         break;
                 }

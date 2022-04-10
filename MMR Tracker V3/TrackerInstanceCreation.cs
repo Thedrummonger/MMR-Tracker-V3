@@ -44,8 +44,8 @@ namespace MMR_Tracker_V3
             int Index = 0;
             foreach(var i in Instance.LogicDictionary.ItemList)
             {
-                Instance.ItemPool.Add(i.ID, new() { Id = i.ID });
-                Instance.InstanceReference.ItemDictionaryMapping.Add(i.ID, Instance.ItemPool.Count - 1);
+                Instance.ItemPool.Add(i.ID, new() { Id = i.ID, referenceData = new ReferenceData { DictIndex = Index } });
+                Index++;
             }
 
             foreach (var i in Instance.LogicDictionary.AreaList)
@@ -57,7 +57,7 @@ namespace MMR_Tracker_V3
             foreach (var i in Instance.LogicFile.Logic)
             {
                 Instance.InstanceReference.LogicFileMapping.Add(i.Id, Index);
-                ParseLogicItem(i);
+                ParseLogicItem(i, Index, LogicFileType.Logic);
                 Index++;
             }
             Index = 0;
@@ -65,17 +65,20 @@ namespace MMR_Tracker_V3
             {
                 if (Instance.LogicFile.Logic.Any(x => x.Id == i.Id)) { continue; }
                 Instance.InstanceReference.AdditionalLogicFileMapping.Add(i.Id, Index);
-                ParseLogicItem(i);
+                ParseLogicItem(i, Index, LogicFileType.Additional);
                 Index++;
             }
             Index = 0;
             foreach (var i in Instance.LogicDictionary.MacroList)
             {
-                Instance.InstanceReference.MacroDictionaryMapping.Add(i.ID, Index);
+                if (Instance.MacroPool.ContainsKey(i.ID))
+                {
+                    Instance.MacroPool[i.ID].referenceData.DictIndex = Index;
+                }
                 Index++;
             }
 
-            void ParseLogicItem(MMRData.JsonFormatLogicItem i)
+            void ParseLogicItem(MMRData.JsonFormatLogicItem i, int Index, LogicFileType Source)
             {
                 if (Instance.LogicDictionary.LocationList.Any(x => x.ID == i.Id))
                 {
@@ -84,9 +87,9 @@ namespace MMR_Tracker_V3
                     Instance.LocationPool.Add(i.Id, new()
                     {
                         ID = i.Id,
-                        SingleValidItem = ValidItems.Count() == 1 ? ValidItems.First().ID : null
+                        SingleValidItem = ValidItems.Count() == 1 ? ValidItems.First().ID : null,
+                        referenceData = new ReferenceData { LogicIndex = Index, DictIndex = Instance.LogicDictionary.LocationList.IndexOf(DictEntry), LogicList = Source }
                     });
-                    Instance.InstanceReference.LocationDictionaryMapping.Add(i.Id, Instance.LogicDictionary.LocationList.IndexOf(DictEntry));
 
                     if (DictEntry.LocationProxys.Any())
                     {
@@ -98,26 +101,34 @@ namespace MMR_Tracker_V3
                 else if (Instance.LogicDictionary.HintSpots.Any(x => x.ID == i.Id))
                 {
                     var DictEntry = Instance.LogicDictionary.HintSpots.First(x => x.ID == i.Id);
-                    Instance.HintPool.Add(i.Id, new() { ID = i.Id });
-                    Instance.InstanceReference.HintDictionaryMapping.Add(i.Id, Instance.LogicDictionary.HintSpots.IndexOf(DictEntry));
+                    Instance.HintPool.Add(i.Id, new() 
+                    { 
+                        ID = i.Id,
+                        referenceData = new ReferenceData { LogicIndex = Index, DictIndex = Instance.LogicDictionary.HintSpots.IndexOf(DictEntry), LogicList = Source }
+                    });
                 }
                 else if (Instance.LogicDictionary.EntranceList.Any(x => x.ID == i.Id))
                 {
                     var DictEntry = Instance.LogicDictionary.EntranceList.First(x => x.ID == i.Id);
                     Instance.InstanceReference.EntranceLogicNameToEntryData.Add(i.Id, new EntranceData.EntranceAreaPair { Area = DictEntry.Area, Exit = DictEntry.Exit });
-                    Instance.EntrancePool.AddLogicExitReference(new EntranceData.EntranceAreaPair { Area = DictEntry.Area, Exit = DictEntry.Exit }, i.Id);
+                    Instance.AddLogicExitReference(new EntranceData.EntranceAreaPair { Area = DictEntry.Area, Exit = DictEntry.Exit }, i.Id);
                     var DestinationList = DictEntry.RandomizableEntrance ? Instance.EntrancePool.AreaList[DictEntry.Area].LoadingZoneExits : Instance.EntrancePool.AreaList[DictEntry.Area].MacroExits;
                     DestinationList.Add(DictEntry.Exit, new EntranceData.EntranceRandoExit
                     {
                         ParentAreaID = DictEntry.Area,
                         ID = DictEntry.Exit,
                         EntrancePair = DictEntry.RandomizableEntrance ? DictEntry.EntrancePairID : null,
-                        IsWarp = DictEntry.AlwaysAccessable
+                        IsWarp = DictEntry.AlwaysAccessable,
+                        referenceData = new ReferenceData { LogicIndex = Index, DictIndex = Instance.LogicDictionary.EntranceList.IndexOf(DictEntry), LogicList = Source }
                     });
                 }
                 else
                 {
-                    Instance.MacroPool.Add(i.Id, new() { ID = i.Id });
+                    Instance.MacroPool.Add(i.Id, new() 
+                    { 
+                        ID = i.Id,
+                        referenceData = new ReferenceData { LogicIndex = Index, DictIndex = -1, LogicList = Source }
+                    });
                 }
             }
 
@@ -138,7 +149,10 @@ namespace MMR_Tracker_V3
             {
                 string CanAffordString = $"MMRTCanAfford{i.Value}";
                 Debug.WriteLine($"Adding Wallet {CanAffordString}");
-                Instance.MacroPool.Add(CanAffordString, new() { ID = CanAffordString });
+                Instance.MacroPool.Add(CanAffordString, new() { 
+                    ID = CanAffordString,
+                    referenceData = new ReferenceData { LogicIndex = Index, DictIndex = -1, LogicList = LogicFileType.Runtime }
+                });
                 Instance.PriceData.CapacityMap.Add(i.Value, CanAffordString);
                 Instance.RuntimeLogic.Add(CanAffordString, new MMRData.JsonFormatLogicItem
                 {

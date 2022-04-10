@@ -20,6 +20,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public Dictionary<int, int> AmountAquiredOnline { get; set; } = new Dictionary<int, int>();
             public Dictionary<int, int> AmountSentToPlayer { get; set; } = new Dictionary<int, int>();
             public string DisplayName { get; set; }
+            public LogicObjects.ReferenceData referenceData { get; set; } = new LogicObjects.ReferenceData();
 
 
             public override string ToString()
@@ -28,12 +29,12 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
             public LogicDictionaryData.DictionaryItemEntries GetDictEntry(LogicObjects.TrackerInstance Instance)
             {
-                return Instance.LogicDictionary.ItemList[Instance.InstanceReference.ItemDictionaryMapping[Id]];
+                return Instance.LogicDictionary.ItemList[referenceData.DictIndex];
             }
             public bool ValidStartingItem(LogicObjects.TrackerInstance Instance)
             {
-                var ItemIndex = Instance.InstanceReference.ItemDictionaryMapping[Id];
-                var DictEntry = Instance.LogicDictionary.ItemList[ItemIndex];
+                var ItemIndex = Instance.GetItemByID(Id);
+                var DictEntry = ItemIndex.GetDictEntry(Instance);
                 return DictEntry.ValidStartingItem != null && (bool)DictEntry.ValidStartingItem;
             }
 

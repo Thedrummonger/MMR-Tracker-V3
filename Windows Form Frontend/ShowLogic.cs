@@ -45,13 +45,13 @@ namespace Windows_Form_Frontend
             }
             foreach (var i in instance.EntrancePool.AreaList.SelectMany(x => x.Value.LoadingZoneExits))
             {
-                var ID = instance.EntrancePool.GetLogicNameFromExit(i.Value);
+                var ID = instance.GetLogicNameFromExit(i.Value);
                 if (!ID.ToLower().Contains(textBox1.Text.ToLower())) { continue; }
                 listBox4.Items.Add(ID);
             }
             foreach (var i in instance.EntrancePool.AreaList.SelectMany(x => x.Value.MacroExits))
             {
-                var ID = instance.EntrancePool.GetLogicNameFromExit(i.Value);
+                var ID = instance.GetLogicNameFromExit(i.Value);
                 if (!ID.ToLower().Contains(textBox1.Text.ToLower())) { continue; }
                 listBox4.Items.Add(ID);
             }
@@ -78,7 +78,7 @@ namespace Windows_Form_Frontend
             checkBox1.Visible = WasAltered;
 
             bool Literal = CurrentID.IsLiteralID(out string LogicItem);
-            var type = instance.GetLocationEntryType(LogicItem, Literal);
+            var type = instance.GetLocationEntryType(LogicItem, Literal, out _);
             string Availablility = GetAvailable(AlteredLogic, type, LogicItem) ? "*" : "";
             string typeDisplay = type == LogicEntryType.macro && OriginalLogic.IsTrick ? "Trick" : type.ToString();
             this.Text = $"{typeDisplay}: {LogicItem}{Availablility}";
@@ -122,13 +122,13 @@ namespace Windows_Form_Frontend
         private void AddToGotoList(string i)
         {
             bool Literal = i.IsLiteralID(out string ID);
-            LogicEntryType entryType = instance.GetItemEntryType(ID, Literal);
+            LogicEntryType entryType = instance.GetItemEntryType(ID, Literal, out _);
             if (entryType == LogicEntryType.macro && !listBox3.Items.Contains(i)) { listBox3.Items.Add(i); }
         }
 
         public bool GetAvailable(MMR_Tracker_V3.TrackerObjects.MMRData.JsonFormatLogicItem Logic, LogicEntryType type, string id)
         {
-            bool AreaReached = type == LogicEntryType.Exit ? LogicCalculation.AreaReached(instance.InstanceReference.EntranceLogicNameToEntryData[id].Area, instance) : true;
+            bool AreaReached = type != LogicEntryType.Exit || LogicCalculation.AreaReached(instance.InstanceReference.EntranceLogicNameToEntryData[id].Area, instance);
             return LogicCalculation.RequirementsMet(Logic.RequiredItems, instance) && LogicCalculation.ConditionalsMet(Logic.ConditionalItems, instance) && AreaReached;
         }
 

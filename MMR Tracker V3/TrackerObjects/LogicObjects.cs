@@ -73,50 +73,69 @@ namespace MMR_Tracker_V3
                 return UserOptions[item];
             }
 
-            public LogicEntryType GetLocationEntryType(string ID, bool literal = false)
+            public LogicEntryType GetLocationEntryType(string ID, bool literal, out object Obj)
             {
-                if (literal && LocationPool.ContainsKey(ID)) { return LogicEntryType.location; }
-                if (literal && InstanceReference.EntranceLogicNameToEntryData.ContainsKey(ID)) { return LogicEntryType.Exit; }
-                if (literal && HintPool.ContainsKey(ID)) { return LogicEntryType.Hint; }
-                if (MacroPool.ContainsKey(ID)) { return LogicEntryType.macro; }
-                if (!literal && LocationPool.ContainsKey(ID)) { return LogicEntryType.location; }
-                if (!literal && InstanceReference.EntranceLogicNameToEntryData.ContainsKey(ID)) { return LogicEntryType.Exit; }
-                if (!literal && HintPool.ContainsKey(ID)) { return LogicEntryType.Hint; }
-                if (UserOptions.ContainsKey(ID)) { return LogicEntryType.Option; }
+                if (literal && LocationPool.ContainsKey(ID)) { Obj = LocationPool[ID]; return LogicEntryType.location; }
+                if (literal && InstanceReference.EntranceLogicNameToEntryData.ContainsKey(ID)) 
+                {
+                    var EA = InstanceReference.EntranceLogicNameToEntryData[ID];
+                    Obj = EntrancePool.AreaList[EA.Area].LoadingZoneExits.ContainsKey(EA.Exit) ? 
+                        EntrancePool.AreaList[EA.Area].LoadingZoneExits[EA.Exit] : 
+                        EntrancePool.AreaList[EA.Area].MacroExits[EA.Exit]; 
+                    return LogicEntryType.Exit; 
+                }
+                if (literal && HintPool.ContainsKey(ID)) { Obj = HintPool[ID]; return LogicEntryType.Hint; }
+                if (MacroPool.ContainsKey(ID)) { Obj = MacroPool[ID]; return LogicEntryType.macro; }
+                if (!literal && LocationPool.ContainsKey(ID)) { Obj = LocationPool[ID]; return LogicEntryType.location; }
+                if (!literal && InstanceReference.EntranceLogicNameToEntryData.ContainsKey(ID))
+                {
+                    var EA = InstanceReference.EntranceLogicNameToEntryData[ID];
+                    Obj = EntrancePool.AreaList[EA.Area].LoadingZoneExits.ContainsKey(EA.Exit) ?
+                        EntrancePool.AreaList[EA.Area].LoadingZoneExits[EA.Exit] :
+                        EntrancePool.AreaList[EA.Area].MacroExits[EA.Exit]; 
+                    return LogicEntryType.Exit; 
+                }
+                if (!literal && HintPool.ContainsKey(ID)) { Obj = HintPool[ID]; return LogicEntryType.Hint; }
+                if (UserOptions.ContainsKey(ID)) { Obj = UserOptions[ID]; return LogicEntryType.Option; }
                 if (Variables.ContainsKey(ID))
                 {
+                    Obj = Variables[ID];
                     if (Variables[ID].Value is string) { return LogicEntryType.variableString; }
                     if (Variables[ID].Value is bool) { return LogicEntryType.variableBool; }
                     if (Variables[ID].Value is Int64) { return LogicEntryType.variableInt; }
                     if (Variables[ID].Value is Newtonsoft.Json.Linq.JArray || Variables[ID].Value is List<string>) { return LogicEntryType.variableList; }
                 }
+                Obj = null;
                 return LogicEntryType.error;
             }
 
-            public LogicEntryType GetOptionEntryType(string ID, bool literal = false)
+            public LogicEntryType GetOptionEntryType(string ID, bool literal, out object obj)
             {
-                if (literal && UserOptions.ContainsKey(ID)) { return LogicEntryType.Option; }
-                if (LocationPool.ContainsKey(ID)) { return LogicEntryType.location; }
-                if (!literal && UserOptions.ContainsKey(ID)) { return LogicEntryType.Option; }
+                if (literal && UserOptions.ContainsKey(ID)) { obj = UserOptions[ID]; return LogicEntryType.Option; }
+                if (LocationPool.ContainsKey(ID)) { obj = LocationPool[ID]; return LogicEntryType.location; }
+                if (!literal && UserOptions.ContainsKey(ID)) { obj = UserOptions[ID]; return LogicEntryType.Option; }
+                obj = null;
                 return LogicEntryType.error;
             }
 
-            public LogicEntryType GetItemEntryType(string OriginalID, bool literal = false)
+            public LogicEntryType GetItemEntryType(string OriginalID, bool literal, out object obj)
             {
                 LogicCalculation.MultipleItemEntry(this, OriginalID, out string ID, out _);
-                if (literal && ItemPool.ContainsKey(ID)) { return LogicEntryType.item; }
-                if (literal && EntrancePool.AreaList.ContainsKey(ID)) { return LogicEntryType.Area; }
-                if (MacroPool.ContainsKey(ID)) { return LogicEntryType.macro; }
-                if (!literal && ItemPool.ContainsKey(ID)) { return LogicEntryType.item; }
-                if (!literal && EntrancePool.AreaList.ContainsKey(ID)) { return LogicEntryType.Area; }
+                if (literal && ItemPool.ContainsKey(ID)) { obj = ItemPool[ID]; return LogicEntryType.item; }
+                if (literal && EntrancePool.AreaList.ContainsKey(ID)) { obj = EntrancePool.AreaList[ID]; return LogicEntryType.Area; }
+                if (MacroPool.ContainsKey(ID)) { obj = MacroPool[ID]; return LogicEntryType.macro; }
+                if (!literal && ItemPool.ContainsKey(ID)) { obj = ItemPool[ID]; return LogicEntryType.item; }
+                if (!literal && EntrancePool.AreaList.ContainsKey(ID)) { obj = EntrancePool.AreaList[ID]; return LogicEntryType.Area; }
                 if (Variables.ContainsKey(ID))
                 {
+                    obj = Variables[ID];
                     if (Variables[ID].Value is string) { return LogicEntryType.variableString; }
                     if (Variables[ID].Value is bool) { return LogicEntryType.variableBool; }
                     if (Variables[ID].Value is Int64) { return LogicEntryType.variableInt; }
                     if (Variables[ID].Value is Newtonsoft.Json.Linq.JArray || Variables[ID].Value is List<string>) { return LogicEntryType.variableList; }
                 }
-                if (bool.TryParse(ID, out _)) { return LogicEntryType.Bool; }
+                if (bool.TryParse(ID, out bool result)) { obj = result; return LogicEntryType.Bool; }
+                obj = null;
                 if (LogicCalculation.LogicOptionEntry(this, ID, out _)) { return LogicEntryType.Option; }
                 return LogicEntryType.error;
             }
@@ -125,13 +144,10 @@ namespace MMR_Tracker_V3
         [Serializable]
         public class InstanceReference
         {
-            //Dict References
-            public Dictionary<string, int> LocationDictionaryMapping { get; set; } = new Dictionary<string, int>();
-            public Dictionary<string, int> ItemDictionaryMapping { get; set; } = new Dictionary<string, int>();
-            public Dictionary<string, int> MacroDictionaryMapping { get; set; } = new Dictionary<string, int>();
-            public Dictionary<string, int> HintDictionaryMapping { get; set; } = new Dictionary<string, int>();
+            //A table mapping Logic names to an entrance area pair
             public Dictionary<string, EntranceData.EntranceAreaPair> EntranceLogicNameToEntryData { get; set; } = new Dictionary<string, EntranceData.EntranceAreaPair>();
-
+            //A table Mapping an Exit to its logic name
+            public Dictionary<string, string> ExitLogicMap { get; set; } = new Dictionary<string, string>();
             //Logic File References
             public Dictionary<string, int> LogicFileMapping { get; set; } = new Dictionary<string, int>();
             public Dictionary<string, int> AdditionalLogicFileMapping { get; set; } = new Dictionary<string, int>();
@@ -170,6 +186,13 @@ namespace MMR_Tracker_V3
             public bool Initialized { get; set; } = false;
             public List<string> WalletEntries { get; set; } = new List<string>();
             public Dictionary<int,string> CapacityMap { get; set; } = new Dictionary<int, string>();
+        }
+
+        public class ReferenceData
+        {
+            public LogicFileType LogicList { get; set; }
+            public int LogicIndex { get; set; }
+            public int DictIndex { get; set; }
         }
 
     }

@@ -467,7 +467,7 @@ namespace MMR_Tracker_V3
             }
             else if (Object is EntranceData.EntranceRandoExit ExitObject)
             {
-                OutObject.ID = instance.EntrancePool.GetLogicNameFromExit(ExitObject);
+                OutObject.ID = instance.GetLogicNameFromExit(ExitObject);
                 OutObject.Area = ExitObject.ParentAreaID;
                 OutObject.Name = ExitObject.ID;
                 OutObject.OriginalItem = ExitObject.EntrancePair == null ? "One Way" : $"{ExitObject.EntrancePair.Area} To {ExitObject.EntrancePair.Exit}";

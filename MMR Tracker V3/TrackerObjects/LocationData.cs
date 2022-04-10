@@ -24,6 +24,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string DisplayName { get; set; }
             public RandomizedState RandomizedState { get; set; } = RandomizedState.Randomized;
             public string SingleValidItem { get; set; } = null;
+            public LogicObjects.ReferenceData referenceData { get; set; } = new LogicObjects.ReferenceData();
 
 
             public override string ToString()
@@ -53,7 +54,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
             public LogicDictionaryData.DictionaryLocationEntries GetDictEntry(LogicObjects.TrackerInstance Instance)
             {
-                return Instance.LogicDictionary.LocationList[Instance.InstanceReference.LocationDictionaryMapping[ID]];
+                return Instance.LogicDictionary.LocationList[referenceData.DictIndex];
             }
             public bool CanBeUnrandomized(LogicObjects.TrackerInstance instance)
             {
@@ -180,7 +181,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 var LogicId = LogicInheritance ?? ReferenceID;
                 bool Literal = LogicId.IsLiteralID(out LogicId);
-                var type = instance.GetLocationEntryType(LogicId, Literal);
+                var type = instance.GetLocationEntryType(LogicId, Literal, out _);
                 return type switch
                 {
                     LogicEntryType.location => instance.GetLocationByID(LogicId).Available,

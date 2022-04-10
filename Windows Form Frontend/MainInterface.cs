@@ -528,23 +528,25 @@ namespace Windows_Form_Frontend
                 i.BeginUpdate();
             }
 
+            var dataset = TrackerDataHandeling.PopulateDataSets(CurrentTrackerInstance);
+
             if (ToUpdate.Contains(LBValidLocations)) 
             {
-                var Entries = TrackerDataHandeling.PopulateAvailableLocationList(WinFormUtils.CreateDivider(LBValidLocations), CurrentTrackerInstance, TXTLocSearch.Text, CHKShowAll.Checked, out int x, out int y);
+                var Entries = TrackerDataHandeling.PopulateAvailableLocationList(dataset, WinFormUtils.CreateDivider(LBValidLocations), CurrentTrackerInstance, TXTLocSearch.Text, CHKShowAll.Checked, out int x, out int y);
                 lblAvailableLocation.Text = $"Available Locations: {y}" + (x != y ? $"/{x}" : "");
                 foreach (var i in Entries) { LBValidLocations.Items.Add(i); }
                 LBValidLocations.TopIndex = lbLocTop; 
             }
             if (ToUpdate.Contains(LBValidEntrances)) 
             {
-                var Entries = TrackerDataHandeling.PopulateAvailableEntraceList(WinFormUtils.CreateDivider(LBValidEntrances), CurrentTrackerInstance, TXTEntSearch.Text, CHKShowAll.Checked, out int x, out int y);
+                var Entries = TrackerDataHandeling.PopulateAvailableEntraceList(dataset, WinFormUtils.CreateDivider(LBValidEntrances), CurrentTrackerInstance, TXTEntSearch.Text, CHKShowAll.Checked, out int x, out int y);
                 lblAvailableEntrances.Text = $"Available Entrances: {y}" + (x != y ? $"/{x}" : "");
                 foreach (var i in Entries) { LBValidEntrances.Items.Add(i); }
                 LBValidEntrances.TopIndex = lbEntTop; 
             }
             if (ToUpdate.Contains(LBCheckedLocations)) 
             {
-                var Entries = TrackerDataHandeling.PopulateCheckedLocationList(WinFormUtils.CreateDivider(LBCheckedLocations), CurrentTrackerInstance, TXTCheckedSearch.Text, out int x, out int y);
+                var Entries = TrackerDataHandeling.PopulateCheckedLocationList(dataset, WinFormUtils.CreateDivider(LBCheckedLocations), CurrentTrackerInstance, TXTCheckedSearch.Text, out int x, out int y);
                 lblCheckedLocation.Text = $"Checked Locations: {y}" + (x != y ? $"/{x}" : "");
                 foreach (var i in Entries) { LBCheckedLocations.Items.Add(i); }
                 LBCheckedLocations.TopIndex = lbCheckTop; 
@@ -636,7 +638,7 @@ namespace Windows_Form_Frontend
         private void ShowContextMenu(ListBox listBox)
         {
             string LogicID = null;
-            if (listBox.SelectedItem is EntranceData.EntranceRandoExit LogicexitObject) { LogicID = CurrentTrackerInstance.EntrancePool.GetLogicNameFromExit(LogicexitObject); }
+            if (listBox.SelectedItem is EntranceData.EntranceRandoExit LogicexitObject) { LogicID = CurrentTrackerInstance.GetLogicNameFromExit(LogicexitObject); }
             if (listBox.SelectedItem is LocationData.LocationObject LogicLocationObject) { LogicID = LogicLocationObject.ID; }
             if (listBox.SelectedItem is HintData.HintObject LogicHintObject) { LogicID = LogicHintObject.ID; }
             if (listBox.SelectedItem is LocationData.LocationProxy LogicProxyObject) { LogicID = LogicProxyObject.LogicInheritance ?? LogicProxyObject.ReferenceID; }

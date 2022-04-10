@@ -140,13 +140,13 @@ namespace MMR_Tracker_V3
 
             //Cleanup======================================
 
-            if (ChangesMade)
+            if (ChangesMade && checkState != MiscData.CheckState.Marked)
             {
-                LogicCalculation.CalculateLogic(Instance);
+                LogicCalculation.CalculateLogic(Instance, checkState);
                 Utility.TimeCodeExecution(FunctionTime, "---TOTAL Calculating Logic", 1);
                 if (checkState == MiscData.CheckState.Checked && Instance.StaticOptions.AutoCheckCoupleEntrances && !Instance.StaticOptions.DecoupleEntrances && LogicCalculation.CheckEntrancePair(Instance))
                 {
-                    LogicCalculation.CalculateLogic(Instance);
+                    LogicCalculation.CalculateLogic(Instance, checkState);
                     Utility.TimeCodeExecution(FunctionTime, "Chcking Entrance Pairs", 1);
                 }
             }
@@ -155,6 +155,8 @@ namespace MMR_Tracker_V3
 
         public static DataSets PopulateDataSets(LogicObjects.TrackerInstance instance)
         {
+            Stopwatch stopwatch = new Stopwatch();
+            Utility.TimeCodeExecution(stopwatch);
             DataSets dataSets = new DataSets();
 
             dataSets.UncheckedLocations = instance.LocationPool.Values.Where(x => x.CheckState == MiscData.CheckState.Unchecked).ToList();
@@ -186,13 +188,13 @@ namespace MMR_Tracker_V3
             dataSets.LocalObtainedItems = instance.ItemPool.Values.Where(x => x.AmountAquiredLocally > 0).ToList();
             dataSets.CurrentStartingItems = instance.ItemPool.Values.Where(x => x.AmountInStartingpool > 0).ToList();
             dataSets.OnlineObtainedItems = instance.ItemPool.Values.Where(x => x.AmountAquiredOnline.Any(x => x.Value > 0)).ToList();
+            Utility.TimeCodeExecution(stopwatch, "Get Data Sets", -1);
             return dataSets;
         }
 
-        public static List<object> PopulateCheckedLocationList(MiscData.Divider Divider, LogicObjects.TrackerInstance Instance, string Filter, out int OutItemsInListBox, out int OutItemsInListBoxFiltered, bool reverse = false)
+        public static List<object> PopulateCheckedLocationList(DataSets DataSets, MiscData.Divider Divider, LogicObjects.TrackerInstance Instance, string Filter, out int OutItemsInListBox, out int OutItemsInListBoxFiltered, bool reverse = false)
         {
             var Groups = Utility.GetCategoriesFromFile(Instance);
-            var DataSets = PopulateDataSets(Instance);
 
             List<object> DataSource = new List<object>();
 
@@ -375,10 +377,9 @@ namespace MMR_Tracker_V3
             return "Error";
         }
 
-        public static List<object> PopulateAvailableLocationList(MiscData.Divider Divider, LogicObjects.TrackerInstance Instance, string Filter, bool ShowUnavailable, out int OutItemsInListBox, out int OutItemsInListBoxFiltered, bool reverse = false)
+        public static List<object> PopulateAvailableLocationList(DataSets DataSets, MiscData.Divider Divider, LogicObjects.TrackerInstance Instance, string Filter, bool ShowUnavailable, out int OutItemsInListBox, out int OutItemsInListBoxFiltered, bool reverse = false)
         {
             var Groups = Utility.GetCategoriesFromFile(Instance);
-            var DataSets = PopulateDataSets(Instance);
             List<object> DataSource = new List<object>();
 
             var AvailableProxies = DataSets.AvailableProxies;
@@ -511,10 +512,9 @@ namespace MMR_Tracker_V3
             }
         }
 
-        public static List<object> PopulateAvailableEntraceList(MiscData.Divider Divider, LogicObjects.TrackerInstance Instance, string Filter, bool ShowUnavailable, out int OutItemsInListBox, out int OutItemsInListBoxFiltered, bool reverse = false)
+        public static List<object> PopulateAvailableEntraceList(DataSets DataSets, MiscData.Divider Divider, LogicObjects.TrackerInstance Instance, string Filter, bool ShowUnavailable, out int OutItemsInListBox, out int OutItemsInListBoxFiltered, bool reverse = false)
         {
             var Groups = Utility.GetCategoriesFromFile(Instance);
-            var DataSets = PopulateDataSets(Instance);
             List<object> DataSource = new List<object>();
             OutItemsInListBox = 0;
             OutItemsInListBoxFiltered = 0;

@@ -91,7 +91,7 @@ namespace MMR_Tracker_V3
             {
                 LogicCalculation.MultipleItemEntry(instance, SubID, out string LogicItem, out int Amount);
                 bool Literal = LogicItem.IsLiteralID(out LogicItem);
-                var type = instance.GetItemEntryType(LogicItem, Literal);
+                var type = instance.GetItemEntryType(LogicItem, Literal, out _);
 
                 if (type == MiscData.LogicEntryType.macro && !Data.MacrosUsed.Contains(LogicItem))
                 {
