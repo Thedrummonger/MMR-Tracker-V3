@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace MMR_Tracker_V3.OtherGames
@@ -32,7 +33,11 @@ namespace MMR_Tracker_V3.OtherGames
             public String GetArea(PaperMarioMasterData MasterData)
             {
                 var dat = map.Split("_");
-                return $"{MasterData.verbose_area_names[dat[0]]} - {MasterData.verbose_sub_area_names[map]}";
+                string area = MasterData.verbose_area_names[dat[0]];
+                string subArea = MasterData.verbose_sub_area_names[map];
+                area = Regex.Replace(area, "[^a-zA-Z0-9 _.]+", "", RegexOptions.Compiled);
+                subArea = Regex.Replace(subArea, "[^a-zA-Z0-9 _.]+", "", RegexOptions.Compiled);
+                return $"{area} - {subArea}";
             }
         }
 
@@ -67,6 +72,11 @@ namespace MMR_Tracker_V3.OtherGames
             public string ID;
         }
 
+        public static string CreateIDName(string Text)
+        {
+            return Regex.Replace(Text, "[^a-zA-Z0-9_.]+", "", RegexOptions.Compiled);
+        }
+
         public static void ReadLogicJson()
         {
             System.Net.WebClient wc = new System.Net.WebClient();
@@ -95,7 +105,7 @@ namespace MMR_Tracker_V3.OtherGames
                 if (i.to.id is string) //Item Location
                 {
                     PMRItemLocation NewItemLocation = new PMRItemLocation();
-                    NewItemLocation.ID = $"{i.from.GetArea(MasterReference)} - {MasterReference.verbose_item_locations[i.from.map][i.to.id]}";
+                    NewItemLocation.ID = CreateIDName($"{i.from.GetArea(MasterReference)}{MasterReference.verbose_item_locations[i.from.map][i.to.id]}");
                     NewItemLocation.Logic = LogicLine;
                     NewItemLocation.Area = $"{i.from.GetArea(MasterReference)}";
                     NewItemLocation.Name = MasterReference.verbose_item_locations[i.from.map][i.to.id];
@@ -125,9 +135,9 @@ namespace MMR_Tracker_V3.OtherGames
             Debug.WriteLine("EXITS:");
             foreach (var i in MasterData.MacroExits)
             {
-                //Debug.WriteLine("------------------------");
-                //Debug.WriteLine($"ID:{i.ParentAreaID} -> {i.ID}");
-                //Debug.WriteLine($"Logic:{i.Logic}");
+                Debug.WriteLine("------------------------");
+                Debug.WriteLine($"ID:{i.ParentAreaID} X {i.ID}");
+                Debug.WriteLine($"Logic:{i.Logic}");
             }
             Debug.WriteLine("============================");
             Debug.WriteLine("MACROS:");
