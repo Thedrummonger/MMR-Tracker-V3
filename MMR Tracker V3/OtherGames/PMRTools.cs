@@ -29,11 +29,10 @@ namespace MMR_Tracker_V3.OtherGames
         {
             public string map;
             public dynamic id;
-            public String GetArea(Dictionary<string, string> VerboseAreaMap)
+            public String GetArea(PaperMarioMasterData MasterData)
             {
                 var dat = map.Split("_");
-                string Name = VerboseAreaMap.ContainsKey(dat[0]) ? VerboseAreaMap[dat[0]] : dat[0];
-                return $"{Name} [{dat[1]}][{id}]";
+                return $"{MasterData.verbose_area_names[dat[0]]} - {MasterData.verbose_sub_area_names[map]}";
             }
         }
 
@@ -80,7 +79,7 @@ namespace MMR_Tracker_V3.OtherGames
                 //Debug.WriteLine($"{i.from.map}_{i.from.id}:{i.to.map}_{i.to.id}");
                 if (i.from.id is string || i.to.id is null || i.to.map is null) { continue; }
 
-                string LogicLine = GetLogicDetails(i, MasterReference.verbose_area_names);
+                string LogicLine = GetLogicDetails(i, MasterReference);
 
                 if (i.pseudoitems is not null && i.pseudoitems.Any())
                 {
@@ -96,18 +95,17 @@ namespace MMR_Tracker_V3.OtherGames
                 if (i.to.id is string) //Item Location
                 {
                     PMRItemLocation NewItemLocation = new PMRItemLocation();
-                    string areaName = i.from.map.Split("_")[0];
-                    NewItemLocation.ID = $"{MasterReference.verbose_area_names[areaName]} - {MasterReference.verbose_item_locations[i.from.map][i.to.id]}";
+                    NewItemLocation.ID = $"{i.from.GetArea(MasterReference)} - {MasterReference.verbose_item_locations[i.from.map][i.to.id]}";
                     NewItemLocation.Logic = LogicLine;
-                    NewItemLocation.Area = MasterReference.verbose_area_names.ContainsKey(areaName) ? MasterReference.verbose_area_names[areaName] : areaName;
+                    NewItemLocation.Area = $"{i.from.GetArea(MasterReference)}";
                     NewItemLocation.Name = MasterReference.verbose_item_locations[i.from.map][i.to.id];
                     MasterData.itemLocations.Add(NewItemLocation);
                 }
                 else if (i.to.id != i.from.id || i.to.map != i.from.map) //Exit
                 {
                     PMRExit NewExit = new PMRExit();
-                    NewExit.ParentAreaID = i.from.GetArea(MasterReference.verbose_area_names);
-                    NewExit.ID = i.to.GetArea(MasterReference.verbose_area_names);
+                    NewExit.ParentAreaID = i.from.GetArea(MasterReference);
+                    NewExit.ID = i.to.GetArea(MasterReference);
                     NewExit.Logic = LogicLine;
                     MasterData.MacroExits.Add(NewExit);
                 }
@@ -142,9 +140,9 @@ namespace MMR_Tracker_V3.OtherGames
 
         }
 
-        public static string GetLogicDetails(PaperMarioLogicJSON i, Dictionary<string, string> VerboseAreaMap)
+        public static string GetLogicDetails(PaperMarioLogicJSON i, PaperMarioMasterData masterData)
         {
-            List<List<string>> NewLogicSets = new List<List<string>>() { new List<string> { i.from.GetArea(VerboseAreaMap) } };
+            List<List<string>> NewLogicSets = new List<List<string>>() { new List<string> { i.from.GetArea(masterData) } };
             foreach (var req in i.reqs)
             {
                 List<string> set = new List<string>();
