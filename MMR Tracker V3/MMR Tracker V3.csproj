@@ -12,6 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="OtherGames\PaperMarioRandoLogic.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
     <None Update="Recources\Presets\WebPresets.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
