@@ -239,7 +239,11 @@ namespace Windows_Form_Frontend
             WinFormInstanceCreation.CreateWinFormInstance(Logic, Dict);
             UpdateUI();
             */
-            Testing.CodeTesting(CurrentTrackerInstance);
+            var Result = Testing.CodeTesting(CurrentTrackerInstance);
+
+
+            WinFormInstanceCreation.CreateWinFormInstance(Result.LogicFile.ToString(), Result.LogicDictionary.ToString());
+            UpdateUI();
 
         }
 

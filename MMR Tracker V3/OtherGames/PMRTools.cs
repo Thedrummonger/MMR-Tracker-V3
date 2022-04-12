@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -17,6 +18,8 @@ namespace MMR_Tracker_V3.OtherGames
             public Dictionary<string, string> verbose_area_names;
             public Dictionary<string, string> verbose_sub_area_names;
             public Dictionary<string, Dictionary<string, string>> verbose_item_locations;
+            public Dictionary<string, string> items;
+            public Dictionary<string, string> verbose_item_names;
         }
 
         public class PaperMarioLogicJSON
@@ -30,14 +33,16 @@ namespace MMR_Tracker_V3.OtherGames
         {
             public string map;
             public dynamic id;
-            public String GetArea(PaperMarioMasterData MasterData)
+            public String GetArea(PaperMarioMasterData MasterData, bool ID = true)
             {
                 var dat = map.Split("_");
                 string area = MasterData.verbose_area_names[dat[0]];
                 string subArea = MasterData.verbose_sub_area_names[map];
                 area = Regex.Replace(area, "[^a-zA-Z0-9 _.]+", "", RegexOptions.Compiled);
                 subArea = Regex.Replace(subArea, "[^a-zA-Z0-9 _.]+", "", RegexOptions.Compiled);
-                return $"{area} - {subArea}";
+                string FinalArea = $"{area} - {subArea}";
+                if (ID) { FinalArea += $" - {id}"; }
+                return FinalArea;
             }
         }
 
@@ -48,6 +53,14 @@ namespace MMR_Tracker_V3.OtherGames
             public List<PMRExit> MacroExits = new List<PMRExit>();
             public List<PMRArea> Areas = new List<PMRArea>();
             public List<PMRMacro> Macros = new List<PMRMacro>();
+            public List<PMRItemData> Items = new List<PMRItemData>();
+        }
+        public class PMRItemData
+        {
+            public string ID;
+            public string Name;
+            public List<string> Types = new List<string> { "item" };
+            public List<string> SpoilerNames = new List<string>();
         }
         public class PMRItemLocation
         {
@@ -55,6 +68,7 @@ namespace MMR_Tracker_V3.OtherGames
             public string Area;
             public string Logic;
             public string Name;
+            public List<string> SpoilerNames = new List<string>();
         }
         public class PMRExit
         {
@@ -77,12 +91,27 @@ namespace MMR_Tracker_V3.OtherGames
             return Regex.Replace(Text, "[^a-zA-Z0-9_.]+", "", RegexOptions.Compiled);
         }
 
-        public static void ReadLogicJson()
+        public static LogicObjects.TrackerInstance ReadLogicJson()
         {
             System.Net.WebClient wc = new System.Net.WebClient();
             PaperMarioMasterData MasterReference = JsonConvert.DeserializeObject<PaperMarioMasterData>(wc.DownloadString(@"https://raw.githubusercontent.com/Thedrummonger/MMR-Tracker-V3/master/MMR%20Tracker%20V3/OtherGames/PaperMarioRandoLogic.json"));
 
             PMRData MasterData = new PMRData();
+
+            foreach(var i in MasterReference.items)
+            {
+                PMRItemData NewItem = new PMRItemData();
+                NewItem.ID = i.Key;
+                NewItem.Types.Add(i.Value);
+                NewItem.Name = i.Key;
+                NewItem.SpoilerNames.Add(i.Key);
+                if (MasterReference.verbose_item_names.ContainsKey(i.Key))
+                {
+                    NewItem.Name = MasterReference.verbose_item_names[i.Key];
+                    NewItem.SpoilerNames.Add(MasterReference.verbose_item_names[i.Key]);
+                }
+                MasterData.Items.Add(NewItem);
+            }
 
             foreach (var i in MasterReference.Logic)
             {
@@ -107,8 +136,9 @@ namespace MMR_Tracker_V3.OtherGames
                     PMRItemLocation NewItemLocation = new PMRItemLocation();
                     NewItemLocation.ID = CreateIDName($"{i.from.GetArea(MasterReference)}{MasterReference.verbose_item_locations[i.from.map][i.to.id]}");
                     NewItemLocation.Logic = LogicLine;
-                    NewItemLocation.Area = $"{i.from.GetArea(MasterReference)}";
+                    NewItemLocation.Area = $"{i.from.GetArea(MasterReference, false)}";
                     NewItemLocation.Name = MasterReference.verbose_item_locations[i.from.map][i.to.id];
+                    NewItemLocation.SpoilerNames.Add($"{MasterReference.verbose_sub_area_names[i.from.map]} - {MasterReference.verbose_item_locations[i.from.map][i.to.id]}");
                     MasterData.itemLocations.Add(NewItemLocation);
                 }
                 else if (i.to.id != i.from.id || i.to.map != i.from.map) //Exit
@@ -121,33 +151,93 @@ namespace MMR_Tracker_V3.OtherGames
                 }
             }
 
-            Debug.WriteLine("============================");
-            Debug.WriteLine("ITEM LOCATIONS:");
-            foreach(var i in MasterData.itemLocations)
+            List<string> Areas = new List<string>();
+            foreach(var i in MasterData.MacroExits)
             {
-                Debug.WriteLine("------------------------");
-                Debug.WriteLine($"ID:{i.ID}");
-                Debug.WriteLine($"Name:{i.Name}");
-                Debug.WriteLine($"Area:{i.Area}");
-                Debug.WriteLine($"Logic:{i.Logic}");
+                if (!Areas.Contains(i.ParentAreaID)) { Areas.Add(i.ParentAreaID); }
+                if (!Areas.Contains(i.ID)) { Areas.Add(i.ID); }
             }
-            Debug.WriteLine("============================");
-            Debug.WriteLine("EXITS:");
+            foreach(var i in Areas.OrderBy(x => x)) { MasterData.Areas.Add(new PMRArea { ID = i }); }
+
+            TrackerObjects.LogicDictionaryData.LogicDictionary logicDictionary = new TrackerObjects.LogicDictionaryData.LogicDictionary
+            {
+                GameCode = "PMR",
+                LogicVersion = 1,
+                LogicFormat = "JSON",
+                LocationList = MasterData.itemLocations.Select(x => new TrackerObjects.LogicDictionaryData.DictionaryLocationEntries {
+                    ID = x.ID,
+                    Area = x.Area,
+                    Name = x.Name,
+                    OriginalItem = "Coin",
+                    SpoilerData = new TrackerObjects.MMRData.SpoilerlogReference { SpoilerLogNames = x.SpoilerNames.ToArray() },
+                    ValidItemTypes = new string[] { "item" }
+                }).ToList(),
+                AreaList = MasterData.Areas.Select(x => x.ID).ToList(),
+                EntranceList = MasterData.MacroExits.Select(x => new TrackerObjects.LogicDictionaryData.DictionaryEntranceEntries
+                {
+                    Area = x.ParentAreaID,
+                    Exit = x.ID,
+                    ID = $"{x.ParentAreaID} X {x.ID}",
+                    RandomizableEntrance = false
+                }).ToList(),
+                ItemList = MasterData.Items.Select(x => new TrackerObjects.LogicDictionaryData.DictionaryItemEntries()
+                {
+                    ID = x.ID,
+                    MaxAmountInWorld = x.ID == "Coin" ? -1 : 1,
+                    Name = x.Name,
+                    ItemTypes = x.Types.ToArray(),
+                    SpoilerData = new TrackerObjects.MMRData.SpoilerlogReference { SpoilerLogNames = x.SpoilerNames.ToArray() },
+                    ValidStartingItem = true
+                }).ToList()
+            };
+
+            TrackerObjects.MMRData.LogicFile logicFile = new TrackerObjects.MMRData.LogicFile
+            {
+                GameCode = "PMR",
+                Version = 1,
+                Logic = new List<TrackerObjects.MMRData.JsonFormatLogicItem>()
+            };
+
+            Dictionary<string, string> CondensedLogic = new Dictionary<string, string>();
+
+            foreach (var i in MasterData.itemLocations)
+            {
+                if (CondensedLogic.ContainsKey(i.ID)) { CondensedLogic[i.ID] += $" | ({i.Logic})"; }
+                else { CondensedLogic[i.ID] = $"({i.Logic})"; }
+            }
             foreach (var i in MasterData.MacroExits)
             {
-                Debug.WriteLine("------------------------");
-                Debug.WriteLine($"ID:{i.ParentAreaID} X {i.ID}");
-                Debug.WriteLine($"Logic:{i.Logic}");
+                var ID = $"{i.ParentAreaID} X {i.ID}";
+                if (CondensedLogic.ContainsKey(ID)) { CondensedLogic[ID] += $" | ({i.Logic})"; }
+                else { CondensedLogic[i.ID] = $"({i.Logic})"; }
             }
-            Debug.WriteLine("============================");
-            Debug.WriteLine("MACROS:");
             foreach (var i in MasterData.Macros)
             {
-                Debug.WriteLine("------------------------");
-                Debug.WriteLine($"ID:{i.ID}");
-                Debug.WriteLine($"Logic:{i.Logic}");
+                if (CondensedLogic.ContainsKey(i.ID)) { CondensedLogic[i.ID] += $" | ({i.Logic})"; }
+                else { CondensedLogic[i.ID] = $"({i.Logic})"; }
             }
 
+            foreach(var i in CondensedLogic)
+            {
+                TrackerObjects.MMRData.JsonFormatLogicItem logicItem = new TrackerObjects.MMRData.JsonFormatLogicItem();
+                logicItem.ConditionalItems = LogicStringParser.ConvertLogicStringToConditional(i.Value);
+                logicItem.Id = i.Key;
+                logicFile.Logic.Add(logicItem);
+            }
+
+            bool error = false;
+            foreach(var i in logicFile.Logic)
+            {
+                if (logicFile.Logic.Where(x => x.Id == i.Id).Count() > 1) { Debug.WriteLine(i.Id + " Exists in logic multiple times"); error = true; }
+            }
+            if (error) { throw new Exception(); }
+
+            LogicObjects.TrackerInstance TestInstance = new LogicObjects.TrackerInstance();
+            TestInstance.LogicFile = logicFile;
+            TestInstance.LogicDictionary = logicDictionary;
+            File.WriteAllText(@"C:\Testing\Logic.json", logicFile.ToString());
+            File.WriteAllText(@"C:\Testing\Dict.json", logicDictionary.ToString());
+            return TestInstance;
         }
 
         public static string GetLogicDetails(PaperMarioLogicJSON i, PaperMarioMasterData masterData)
