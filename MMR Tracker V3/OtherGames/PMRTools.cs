@@ -33,7 +33,7 @@ namespace MMR_Tracker_V3.OtherGames
         {
             public string map;
             public dynamic id;
-            public String GetArea(PaperMarioMasterData MasterData, bool ID = true)
+            public String GetFullArea(PaperMarioMasterData MasterData, bool ID = true)
             {
                 var dat = map.Split("_");
                 string area = MasterData.verbose_area_names[dat[0]];
@@ -43,6 +43,13 @@ namespace MMR_Tracker_V3.OtherGames
                 string FinalArea = $"{area} - {subArea}";
                 if (ID) { FinalArea += $" - {id}"; }
                 return FinalArea;
+            }
+            public String GetGeneralArea(PaperMarioMasterData MasterData)
+            {
+                var dat = map.Split("_");
+                string area = MasterData.verbose_area_names[dat[0]];
+                return area;
+            
             }
         }
 
@@ -79,6 +86,7 @@ namespace MMR_Tracker_V3.OtherGames
         public class PMRMacro
         {
             public string ID;
+            public string Area;
             public string Logic;
         }
         public class PMRArea
@@ -126,6 +134,11 @@ namespace MMR_Tracker_V3.OtherGames
                     {
                         PMRMacro NewMacro = new PMRMacro();
                         NewMacro.ID = Macro;
+                        if (NewMacro.ID == "EQUIPMENT_Hammer_Progressive" && i.from.map.StartsWith("ISK")) { NewMacro.ID += "_1"; }
+                        if (NewMacro.ID == "EQUIPMENT_Hammer_Progressive" && i.from.map.StartsWith("KZN")) { NewMacro.ID += "_2"; }
+                        if (NewMacro.ID == "EQUIPMENT_Hammer_Progressive" && i.from.map.StartsWith("OBK")) { NewMacro.ID += "_1"; }
+                        if (NewMacro.ID == "EQUIPMENT_Hammer_Progressive" && i.from.map.StartsWith("TIK")) { NewMacro.ID += "_2"; }
+                        NewMacro.Area = i.from.map;
                         NewMacro.Logic = LogicLine;
                         MasterData.Macros.Add(NewMacro);
                     }
@@ -134,24 +147,24 @@ namespace MMR_Tracker_V3.OtherGames
                 if (i.to.id is string) //Item Location
                 {
                     PMRItemLocation NewItemLocation = new PMRItemLocation();
-                    NewItemLocation.ID = CreateIDName($"{i.from.GetArea(MasterReference)}{MasterReference.verbose_item_locations[i.from.map][i.to.id]}");
+                    NewItemLocation.ID = CreateIDName($"{i.from.GetFullArea(MasterReference)}{MasterReference.verbose_item_locations[i.from.map][i.to.id]}{i.to.id}");
                     NewItemLocation.Logic = LogicLine;
-                    NewItemLocation.Area = $"{i.from.GetArea(MasterReference, false)}";
-                    NewItemLocation.Name = MasterReference.verbose_item_locations[i.from.map][i.to.id];
+                    NewItemLocation.Area = $"{i.from.GetGeneralArea(MasterReference)}";
+                    NewItemLocation.Name = $"{MasterReference.verbose_sub_area_names[i.from.map]} - {MasterReference.verbose_item_locations[i.from.map][i.to.id]}";
                     NewItemLocation.SpoilerNames.Add($"{MasterReference.verbose_sub_area_names[i.from.map]} - {MasterReference.verbose_item_locations[i.from.map][i.to.id]}");
                     MasterData.itemLocations.Add(NewItemLocation);
                 }
                 else if (i.to.id != i.from.id || i.to.map != i.from.map) //Exit
                 {
                     PMRExit NewExit = new PMRExit();
-                    NewExit.ParentAreaID = i.from.GetArea(MasterReference);
-                    NewExit.ID = i.to.GetArea(MasterReference);
+                    NewExit.ParentAreaID = i.from.GetFullArea(MasterReference);
+                    NewExit.ID = i.to.GetFullArea(MasterReference);
                     NewExit.Logic = LogicLine;
                     MasterData.MacroExits.Add(NewExit);
                 }
             }
 
-            List<string> Areas = new List<string>();
+            List<string> Areas = new List<string>() { "Root" };
             foreach(var i in MasterData.MacroExits)
             {
                 if (!Areas.Contains(i.ParentAreaID)) { Areas.Add(i.ParentAreaID); }
@@ -200,30 +213,86 @@ namespace MMR_Tracker_V3.OtherGames
 
             Dictionary<string, string> CondensedLogic = new Dictionary<string, string>();
 
+            //Add Root Entrances
+            CondensedLogic.Add("Root X Toad Town - Gate District - 4", "true");
+            logicDictionary.EntranceList.Add(new TrackerObjects.LogicDictionaryData.DictionaryEntranceEntries
+            {
+                AlwaysAccessable = true,
+                Area = "Root",
+                ID = "Root X Toad Town - Gate District - 4",
+                Exit = "Toad Town - Gate District - 4",
+                RandomizableEntrance = false
+            });
+
+            //Add Hard Coded Macros
+            CondensedLogic.Add("can_flip_panels", "boots, 1 | hammer, 2");
+            CondensedLogic.Add("can_shake_trees", "Bombette | hammer, 0");
+            CondensedLogic.Add("has_parakarry_3_letters", "letter, 3");
+
             foreach (var i in MasterData.itemLocations)
             {
-                if (CondensedLogic.ContainsKey(i.ID)) { CondensedLogic[i.ID] += $" | ({i.Logic})"; }
+                if (CondensedLogic.ContainsKey(i.ID)) { CondensedLogic[i.ID] += $" | ({i.Logic})"; Debug.WriteLine($"Duplicate Location Entry {i.ID}"); }
                 else { CondensedLogic[i.ID] = $"({i.Logic})"; }
             }
             foreach (var i in MasterData.MacroExits)
             {
                 var ID = $"{i.ParentAreaID} X {i.ID}";
-                if (CondensedLogic.ContainsKey(ID)) { CondensedLogic[ID] += $" | ({i.Logic})"; }
-                else { CondensedLogic[i.ID] = $"({i.Logic})"; }
+                if (CondensedLogic.ContainsKey(ID)) { CondensedLogic[ID] += $" | ({i.Logic})"; Debug.WriteLine($"Duplicate Exit Entry {ID}"); }
+                else { CondensedLogic[ID] = $"({i.Logic})"; }
             }
             foreach (var i in MasterData.Macros)
             {
-                if (CondensedLogic.ContainsKey(i.ID)) { CondensedLogic[i.ID] += $" | ({i.Logic})"; }
-                else { CondensedLogic[i.ID] = $"({i.Logic})"; }
+                string ID = i.ID;
+                if (CondensedLogic.ContainsKey(ID)) { CondensedLogic[ID] += $" | ({i.Logic})"; Debug.WriteLine($"Duplicate Macro Entry {ID}"); }
+                else { CondensedLogic[ID] = $"({i.Logic})"; }
             }
 
             foreach(var i in CondensedLogic)
             {
                 TrackerObjects.MMRData.JsonFormatLogicItem logicItem = new TrackerObjects.MMRData.JsonFormatLogicItem();
-                logicItem.ConditionalItems = LogicStringParser.ConvertLogicStringToConditional(i.Value);
+                logicItem.ConditionalItems = LogicStringParser.ConvertLogicStringToConditional(i.Value, true);
+                logicItem.ConditionalItems = DoPMRLogicEdits(logicItem.ConditionalItems);
+                logicCleaner.RemoveRedundantConditionals(logicItem);
+                logicCleaner.MakeCommonConditionalsRequirements(logicItem);
                 logicItem.Id = i.Key;
                 logicFile.Logic.Add(logicItem);
             }
+
+            logicDictionary.Variables.Add(new TrackerObjects.LogicDictionaryData.TrackerVariable
+            {
+                ID = "starspirits",
+                Name = "starspirits",
+                Static = true,
+                Value = new List<string> { "STARSPIRIT_1", "STARSPIRIT_2", "STARSPIRIT_3", "STARSPIRIT_4", "STARSPIRIT_5", "STARSPIRIT_6", "STARSPIRIT_7" }
+            });
+            logicDictionary.Variables.Add(new TrackerObjects.LogicDictionaryData.TrackerVariable
+            {
+                ID = "hammer",
+                Name = "hammer",
+                Static = true,
+                Value = new List<string> { "EQUIPMENT_Boots_Progressive_1", "EQUIPMENT_Boots_Progressive_2" }
+            });
+            logicDictionary.Variables.Add(new TrackerObjects.LogicDictionaryData.TrackerVariable
+            {
+                ID = "boots",
+                Name = "boots",
+                Static = true,
+                Value = new List<string> { "EQUIPMENT_Hammer_Progressive_1", "EQUIPMENT_Hammer_Progressive_2" }
+            });
+            logicDictionary.Variables.Add(new TrackerObjects.LogicDictionaryData.TrackerVariable
+            {
+                ID = "letter",
+                Name = "letter",
+                Static = true,
+                Value = new List<string> { "Letter01", "Letter02", "Letter03", "Letter04", "Letter05", "Letter06", "Letter07", "Letter08", "Letter09", "Letter10", "Letter11", "Letter12", "Letter13", "Letter14", "Letter15", "Letter16", "Letter17", "Letter18", "Letter19", "Letter20", "Letter21", "Letter22", "Letter23", "Letter24", "Letter25" }
+            });
+            logicDictionary.Variables.Add(new TrackerObjects.LogicDictionaryData.TrackerVariable
+            {
+                ID = "starpieces",
+                Name = "starpieces",
+                Static = true,
+                Value = new List<string> { "StarPiece00", "StarPiece01", "StarPiece02", "StarPiece03", "StarPiece04", "StarPiece05", "StarPiece06", "StarPiece07", "StarPiece08", "StarPiece09", "StarPiece0A", "StarPiece0B", "StarPiece0C", "StarPiece0D", "StarPiece0E", "StarPiece0F", "StarPiece10", "StarPiece11", "StarPiece12", "StarPiece13", "StarPiece14", "StarPiece15", "StarPiece16", "StarPiece17", "StarPiece18", "StarPiece19", "StarPiece1A", "StarPiece1B", "StarPiece1C", "StarPiece1D", "StarPiece1E", "StarPiece1F", "StarPiece20", "StarPiece21", "StarPiece22", "StarPiece23", "StarPiece24", "StarPiece25", "StarPiece26", "StarPiece27", "StarPiece28", "StarPiece29", "StarPiece2A", "StarPiece2B", "StarPiece2C", "StarPiece2D", "StarPiece2E", "StarPiece2F", "StarPiece30", "StarPiece31", "StarPiece32", "StarPiece33", "StarPiece34", "StarPiece35", "StarPiece36", "StarPiece37", "StarPiece38", "StarPiece39", "StarPiece3A", "StarPiece3B", "StarPiece3C", "StarPiece3D", "StarPiece3E", "StarPiece3F", "StarPiece40", "StarPiece41", "StarPiece42", "StarPiece43", "StarPiece44", "StarPiece45", "ThreeStarPieces0", "ThreeStarPieces1", "ThreeStarPieces2", "ThreeStarPieces3", "ThreeStarPieces4" }
+            });
 
             bool error = false;
             foreach(var i in logicFile.Logic)
@@ -235,14 +304,33 @@ namespace MMR_Tracker_V3.OtherGames
             LogicObjects.TrackerInstance TestInstance = new LogicObjects.TrackerInstance();
             TestInstance.LogicFile = logicFile;
             TestInstance.LogicDictionary = logicDictionary;
-            File.WriteAllText(@"C:\Testing\Logic.json", logicFile.ToString());
-            File.WriteAllText(@"C:\Testing\Dict.json", logicDictionary.ToString());
+
+            string testingdir = null;
+            if (Directory.Exists(@"C:\Testing\")) { testingdir = @"C:\Testing\"; }
+            if (Directory.Exists(@"D:\Testing\")) { testingdir = @"D:\Testing\"; }
+
+            File.WriteAllText(testingdir + @"PMRLogic.json", logicFile.ToString());
+            File.WriteAllText(testingdir + @"PMRDict.json", logicDictionary.ToString());
             return TestInstance;
+        }
+
+        public static List<List<string>> DoPMRLogicEdits(List<List<string>> Conditionals)
+        {
+            var NewCond = Conditionals.Select(x => x.Select(y => y));
+            //Fix Star Spirit Requirements
+            NewCond = NewCond.Select(x => x.Select(y => y.StartsWith("starspirits_") ? y.Replace("_", ", ") : y));
+            //Fix Star Piece Requirements
+            NewCond = NewCond.Select(x => x.Select(y => y.StartsWith("starpieces_") ? y.Replace("_", ", ") : y));
+            //Fix Boots Requirements
+            NewCond = NewCond.Select(x => x.Select(y => y.StartsWith("boots_") ? y.Replace("_", ", ") : y));
+            //Fix Hammer Requirements
+            NewCond = NewCond.Select(x => x.Select(y => y.StartsWith("hammer_") ? y.Replace("_", ", ") : y));
+            return NewCond.Select(x => x.ToList()).ToList();
         }
 
         public static string GetLogicDetails(PaperMarioLogicJSON i, PaperMarioMasterData masterData)
         {
-            List<List<string>> NewLogicSets = new List<List<string>>() { new List<string> { i.from.GetArea(masterData) } };
+            List<List<string>> NewLogicSets = new List<List<string>>() { new List<string> { i.from.GetFullArea(masterData) } };
             foreach (var req in i.reqs)
             {
                 List<string> set = new List<string>();

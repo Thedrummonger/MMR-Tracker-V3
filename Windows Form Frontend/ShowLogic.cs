@@ -33,6 +33,24 @@ namespace Windows_Form_Frontend
             PrintAllLocations();
             listBox3.Sorted = true;
             listBox4.Sorted = true;
+
+            int LongestWidth = 0;
+            Graphics graphics = listBox4.CreateGraphics();
+            foreach (var i in listBox4.Items)
+            {
+                int ItemWidth = (int)graphics.MeasureString(i.ToString(), listBox4.Font).Width;
+                if (ItemWidth > LongestWidth) { LongestWidth = ItemWidth; }
+            }
+            if (listBox4.Width < LongestWidth)
+            {
+                int diff = LongestWidth - listBox4.Width;
+                listBox4.Width += diff;
+                this.Width += diff;
+                listBox3.Width += diff;
+                textBox1.Width += diff;
+                button1.Width += diff;
+            }
+
         }
 
         private void PrintAllLocations()

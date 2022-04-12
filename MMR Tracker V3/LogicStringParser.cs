@@ -13,14 +13,16 @@ namespace MMR_Tracker_V3
     {
         public static readonly string[] OROperators = { "||", "|", " or ", " OR ", " Or " };
         public static readonly string[] AndOperators = { "&&", "&", " and ", " AND ", " And " };
+        public static readonly string[] StrictOROperators = { "||", "|" };
+        public static readonly string[] StrictAndOperators = { "&&", "&"};
 
-        public static List<List<string>> ConvertLogicStringToConditional(string InLogic, bool Logging = false)
+        public static List<List<string>> ConvertLogicStringToConditional(string InLogic, bool StrictOperators = false, bool Logging = false)
         {
             //This should probably not happen here.
             if (Logging) { Debug.WriteLine(InLogic); }
             //string InLogic = LogicStringParser.HandleOOTRandoBadEntries(InLogic2, Logging);
             if (Logging) { Debug.WriteLine(InLogic); }
-            InLogic = LogicStringParser.ReplaceLogicOperatorsWithMathOperators(InLogic);
+            InLogic = LogicStringParser.ReplaceLogicOperatorsWithMathOperators(InLogic, StrictOperators);
             if (Logging) { Debug.WriteLine(InLogic); }
             var LogicEntries = LogicStringParser.SplitLogicString(InLogic);
             if (Logging) { Debug.WriteLine(string.Join("\n", LogicEntries)); }
@@ -102,13 +104,21 @@ namespace MMR_Tracker_V3
             return BrokenString;
         }
 
-        public static string ReplaceLogicOperatorsWithMathOperators(string Input)
+        public static string ReplaceLogicOperatorsWithMathOperators(string Input, bool strict)
         {
             string[] parts = Input.Split('\'');
             for (int i = 0; i < parts.Length; i += 2)
             {
-                foreach (var j in OROperators) { parts[i] = parts[i].Replace(j, " + "); }
-                foreach (var j in AndOperators) { parts[i] = parts[i].Replace(j, " * "); }
+                if (strict)
+                {
+                    foreach (var j in StrictOROperators) { parts[i] = parts[i].Replace(j, " + "); }
+                    foreach (var j in StrictAndOperators) { parts[i] = parts[i].Replace(j, " * "); }
+                }
+                else
+                {
+                    foreach (var j in OROperators) { parts[i] = parts[i].Replace(j, " + "); }
+                    foreach (var j in AndOperators) { parts[i] = parts[i].Replace(j, " * "); }
+                }
             }
             return string.Join("'", parts);
         }

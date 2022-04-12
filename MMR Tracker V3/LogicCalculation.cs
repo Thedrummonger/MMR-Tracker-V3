@@ -131,15 +131,16 @@ namespace MMR_Tracker_V3
             FillLogicMap(instance, checkAction);
             Utility.TimeCodeExecution(LogicTime, "Getting Logic", 1);
 
-            ResetAutoObtainedItems(instance);
+            if (checkAction == CheckState.Unchecked) { ResetAutoObtainedItems(instance); }
+            
             Utility.TimeCodeExecution(LogicTime, "Resetting Auto checked Items", 1);
             int Itterations = 0;
             while (true)
             {
-                bool EntranceChanges = CalculateEntranceMacros(instance);
-                bool UnrandomizedItemChecked = CheckUrandomizedLocations(instance);
-                bool UnrandomizedExitChecked = CheckUrandomizedExits(instance);
-                bool MacroChanged = CalculateMacros(instance);
+                bool EntranceChanges = CalculateEntranceMacros(instance, checkAction);
+                bool UnrandomizedItemChecked = CheckUrandomizedLocations(instance, checkAction);
+                bool UnrandomizedExitChecked = CheckUrandomizedExits(instance, checkAction);
+                bool MacroChanged = CalculateMacros(instance, checkAction);
                 Itterations++;
                  if (!MacroChanged && !EntranceChanges && !UnrandomizedItemChecked && !UnrandomizedExitChecked) { break; }
             }
@@ -178,13 +179,14 @@ namespace MMR_Tracker_V3
             Utility.TimeCodeExecution(LogicTime, "Calculating Hints", -1);
         }
 
-        private static bool CheckUrandomizedExits(TrackerInstance instance)
+        private static bool CheckUrandomizedExits(TrackerInstance instance, MiscData.CheckState checkAction)
         {
             bool ItemStateChanged = false;
             foreach (var Area in instance.EntrancePool.AreaList)
             {
                 foreach (var i in Area.Value.LoadingZoneExits.Where(x => x.Value.IsUnrandomized(1)))
                 {
+                    if (i.Value.Available && checkAction == CheckState.Checked) { continue; }
                     var Logic = LogicMap[instance.GetLogicNameFromExit(i.Value)];
                     var Available =
                         AreaReached(Area.Key, instance) &&
@@ -229,13 +231,14 @@ namespace MMR_Tracker_V3
             }
         }
 
-        private static bool CalculateEntranceMacros(TrackerInstance instance)
+        private static bool CalculateEntranceMacros(TrackerInstance instance, MiscData.CheckState checkAction)
         {
             bool MacroStateChanged = false; 
             foreach (var Area in instance.EntrancePool.AreaList)
             {
                 foreach (var i in Area.Value.MacroExits)
                 {
+                    if (i.Value.Available && checkAction == CheckState.Checked) { continue; }
                     var Logic = LogicMap[instance.GetLogicNameFromExit(i.Value)];
                     i.Value.Available =
                         AreaReached(Area.Key, instance) &&
@@ -263,11 +266,12 @@ namespace MMR_Tracker_V3
             return MacroStateChanged;
         }
 
-        private static bool CalculateMacros(TrackerInstance instance)
+        private static bool CalculateMacros(TrackerInstance instance, MiscData.CheckState checkAction)
         {
             bool MacroStateChanged = false;
             foreach(var i in instance.MacroPool)
             {
+                if (i.Value.Aquired && checkAction == CheckState.Checked) { continue; }
                 var Logic = LogicMap[i.Key];
                 bool Available = false;
                 if (Logic.IsTrick && !i.Value.TrickEnabled) { Available = false; }
@@ -286,11 +290,12 @@ namespace MMR_Tracker_V3
             return MacroStateChanged;
         }
 
-        public static bool CheckUrandomizedLocations(TrackerInstance instance)
+        public static bool CheckUrandomizedLocations(TrackerInstance instance, MiscData.CheckState checkAction)
         {
             bool ItemStateChanged = false;
             foreach (var i in instance.LocationPool)
             {
+                if (i.Value.Available && checkAction == CheckState.Checked) { continue; }
                 if (string.IsNullOrWhiteSpace(i.Value.GetDictEntry(instance).OriginalItem)) { continue; }
                 if (!i.Value.IsUnrandomized(1)) { continue; }
                 var Logic = LogicMap[i.Key];
