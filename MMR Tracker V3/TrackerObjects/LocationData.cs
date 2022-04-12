@@ -20,10 +20,11 @@ namespace MMR_Tracker_V3.TrackerObjects
             public bool Available { get; set; } = false;
             public CheckState CheckState { get; set; } = CheckState.Unchecked;
             public bool Starred { get; set; }
-            public int CheckPrice { get; set; } = -1;
+            public int Price { get; set; } = -1;
             public string DisplayName { get; set; }
             public RandomizedState RandomizedState { get; set; } = RandomizedState.Randomized;
             public string SingleValidItem { get; set; } = null;
+            public LogicObjects.ReferenceData referenceData { get; set; } = new LogicObjects.ReferenceData();
 
 
             public override string ToString()
@@ -53,7 +54,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
             public LogicDictionaryData.DictionaryLocationEntries GetDictEntry(LogicObjects.TrackerInstance Instance)
             {
-                return Instance.LogicDictionary.LocationList[Instance.InstanceReference.LocationDictionaryMapping[ID]];
+                return Instance.LogicDictionary.LocationList[referenceData.DictIndex];
             }
             public bool CanBeUnrandomized(LogicObjects.TrackerInstance instance)
             {
@@ -168,6 +169,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string ReferenceID { get; set; }
             public string ID { get; set; }
             public string Name { get; set; }
+            public bool Starred { get; set; }
             public string Area { get; set; }
             public string LogicInheritance { get; set; } = null;
             public string DisplayName { get; set; }
@@ -179,17 +181,22 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 var LogicId = LogicInheritance ?? ReferenceID;
                 bool Literal = LogicId.IsLiteralID(out LogicId);
-                var type = instance.GetLocationEntryType(LogicId, Literal);
-                switch (type)
+                var type = instance.GetLocationEntryType(LogicId, Literal, out _);
+                return type switch
                 {
-                    case LogicEntryType.location: return instance.LocationPool[LogicId].Available;
-                    case LogicEntryType.macro: return instance.LocationPool[LogicId].Available;
-                    default: return false;
-                }
+                    LogicEntryType.location => instance.GetLocationByID(LogicId).Available,
+                    LogicEntryType.macro => instance.GetMacroByID(LogicId).Aquired,
+                    _ => false,
+                };
             }
             public LocationObject GetReferenceLocation(LogicObjects.TrackerInstance instance)
             {
-                return (instance.LocationPool[ReferenceID]);
+                return (instance.GetLocationByID(ReferenceID));
+            }
+            public object GetLogicInheritance(LogicObjects.TrackerInstance instance)
+            {
+                if (LogicInheritance is null) { return GetReferenceLocation(instance); }
+                return (instance.GetMacroByID(LogicInheritance));
             }
         }
     }

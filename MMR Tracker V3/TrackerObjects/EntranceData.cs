@@ -13,8 +13,6 @@ namespace MMR_Tracker_V3.TrackerObjects
         {
             //All Areas in the game and the exits they contain
             public Dictionary<string, EntranceRandoArea> AreaList { get; set; } = new Dictionary<string, EntranceRandoArea>();
-            //A table Mapping an Exit to its logic name
-            public Dictionary<string, string> ExitLogicMap { get; set; } = new Dictionary<string, string>();
             //The area accessable from the beggining of the game
             public string RootArea { get; set; } = "Root";
             public bool IsEntranceRando { get; set; } = false;
@@ -25,22 +23,6 @@ namespace MMR_Tracker_V3.TrackerObjects
                 var EntrancePair = DestinationAsExit.EntrancePair;
                 if (EntrancePair == null) { return null; }
                 return AreaList[EntrancePair.Area].GetExit(EntrancePair.Exit);
-            }
-            public string GetLogicNameFromExit(EntranceRandoExit Exit)
-            {
-                return ExitLogicMap[$"{Exit.ParentAreaID} X {Exit.ID}"];
-            }
-            public string GetLogicNameFromExit(EntranceAreaPair Exit)
-            {
-                return ExitLogicMap[$"{Exit.Area} X {Exit.Exit}"];
-            }
-            public string GetLogicNameFromExit(EntranceRandoDestination Exit)
-            {
-                return ExitLogicMap[$"{Exit.region} X {Exit.from}"];
-            }
-            public void AddLogicExitReference(EntranceAreaPair Exit, string LogicName)
-            {
-                ExitLogicMap.Add($"{Exit.Area} X {Exit.Exit}", LogicName);
             }
             public bool CheckForRandomEntrances()
             {
@@ -73,6 +55,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public EntranceRandoDestination SpoilerDefinedDestinationExit { get; set; }
             public EntranceAreaPair EntrancePair { get; set; }
             public string DisplayName { get; set; }
+            public LogicObjects.ReferenceData referenceData { get; set; } = new LogicObjects.ReferenceData();
 
 
             public override string ToString()

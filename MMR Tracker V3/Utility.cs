@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
+using System.Dynamic;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -78,30 +79,50 @@ namespace MMR_Tracker_V3
             };
         }
 
-        public static string GetDisplayName(int Function, LocationData.LocationObject i, LogicObjects.TrackerInstance instance)
+        public static string GetLocationDisplayName(dynamic obj, LogicObjects.TrackerInstance instance)
         {
-            string Displayname = "";
-            if (Function == 0) //Available Locations
-            { 
-                Displayname = i.GetDictEntry(instance).Name ?? i.ID;
-                if (i.CheckState == MiscData.CheckState.Marked)
-                {
-                    string RandomizedItemDisplay = i.Randomizeditem.Item;
-                    var RandomizedItem = instance.GetItemByID(i.Randomizeditem.Item);
-                    if (RandomizedItem != null) { RandomizedItemDisplay = RandomizedItem.GetDictEntry(instance).GetItemName(instance) ?? RandomizedItem.Id; }
-                    Displayname += $": {RandomizedItemDisplay}";
-                    if (i.CheckPrice > -1) { Displayname += $" [${i.CheckPrice}]"; }
-                }
-            }
-            else if (Function == 1) //Checked Locations
+            dynamic Location, PriceData;
+            string LocationDisplay, RandomizedItemDisplay, PriceDisplay, StarredDisplay;
+            if (obj is LocationData.LocationObject lo) 
             {
-                Displayname = i.Randomizeditem.Item;
-                var RandomizedItem = instance.GetItemByID(i.Randomizeditem.Item);
-                if (RandomizedItem != null) { Displayname = RandomizedItem.GetDictEntry(instance).GetItemName(instance) ?? RandomizedItem.Id; }
-                Displayname = $"{Displayname}: {i.GetDictEntry(instance).Name ?? i.ID}";
-                if (i.CheckPrice > -1) { Displayname += $" [${i.CheckPrice}]"; }
+                Location = lo;
+                PriceData = lo;
+                LocationDisplay = Location.GetDictEntry(instance)?.Name ?? Location.ID;
+                StarredDisplay = lo.Starred ? "*" : "";
             }
-            return Displayname;
+            else if (obj is LocationData.LocationProxy po)
+            {
+                Location = po.GetReferenceLocation(instance);
+                PriceData = po.GetLogicInheritance(instance);
+                LocationDisplay = po.Name ?? Location.GetDictEntry(instance)?.Name ?? Location.ID;
+                StarredDisplay = po.Starred ? "*" : "";
+            }
+            else { return obj.ToString(); }
+
+            PriceDisplay = PriceData.Price < 0 ? "" : $" [${PriceData.Price}]";
+            RandomizedItemDisplay = instance.GetItemByID(Location.Randomizeditem.Item)?.GetDictEntry(instance)?.Name ?? Location.Randomizeditem.Item;
+
+            return Location.CheckState switch
+            {
+                MiscData.CheckState.Marked => $"{LocationDisplay}: {RandomizedItemDisplay}{StarredDisplay}{PriceDisplay}",
+                MiscData.CheckState.Unchecked => $"{LocationDisplay}{StarredDisplay}",
+                MiscData.CheckState.Checked => $"{RandomizedItemDisplay}{PriceDisplay}: {LocationDisplay}{StarredDisplay}",
+                _ => obj.ToString(),
+            };
+        }
+        public static string GetEntranceDisplayName(EntranceData.EntranceRandoExit ExitObjectObject, LogicObjects.TrackerInstance instance)
+        {
+            var Destination = ExitObjectObject.GetDestinationAtExit(instance);
+            string StarredDisplay = ExitObjectObject.Starred ? "*" : "";
+            string RandomizedExitDisplay = Destination is null ? "" : $"{Destination.region} <- {Destination.from}";
+
+            return ExitObjectObject.CheckState switch
+            {
+                MiscData.CheckState.Marked => $"{ExitObjectObject.ID}: {RandomizedExitDisplay}{StarredDisplay}",
+                MiscData.CheckState.Unchecked => $"{ExitObjectObject.ID}{StarredDisplay}",
+                MiscData.CheckState.Checked => $"{RandomizedExitDisplay}: {ExitObjectObject.ID}{StarredDisplay}",
+                _ => ExitObjectObject.ToString(),
+            };
         }
 
         public static List<int> ParseLocationAndJunkSettingString(string c, int ItemCount, string ParseType)
@@ -198,6 +219,15 @@ namespace MMR_Tracker_V3
                 return true;
             }
 
+        }
+
+        public static bool DynamicPropertyExist(dynamic settings, string name)
+        {
+            if (settings is null) { return false; }
+            if (settings is ExpandoObject)
+                return ((IDictionary<string, object>)settings).ContainsKey(name);
+
+            return settings.GetType().GetProperty(name) != null;
         }
 
     }
@@ -383,6 +413,18 @@ namespace MMR_Tracker_V3
                 OutObject.Starred = locationObject.Starred;
                 OutObject.ValidItemTypes = DictData.ValidItemTypes;
             }
+            else if (Object is LocationData.LocationProxy locationProxy)
+            {
+                var LocReference = instance.GetLocationByID(locationProxy.ReferenceID);
+                var DictData = LocReference.GetDictEntry(instance);
+                OutObject.ID = locationProxy.ID;
+                OutObject.Area = locationProxy.Area;
+                OutObject.Name = locationProxy.Name;
+                OutObject.OriginalItem = DictData.OriginalItem;
+                OutObject.Randomizeditem = LocReference?.Randomizeditem.Item;
+                OutObject.Starred = LocReference?.Starred??false;
+                OutObject.ValidItemTypes = DictData.ValidItemTypes;
+            }
             else if (Object is ItemData.ItemObject ItemObject)
             {
                 var DictData = ItemObject.GetDictEntry(instance);
@@ -425,7 +467,7 @@ namespace MMR_Tracker_V3
             }
             else if (Object is EntranceData.EntranceRandoExit ExitObject)
             {
-                OutObject.ID = instance.EntrancePool.GetLogicNameFromExit(ExitObject);
+                OutObject.ID = instance.GetLogicNameFromExit(ExitObject);
                 OutObject.Area = ExitObject.ParentAreaID;
                 OutObject.Name = ExitObject.ID;
                 OutObject.OriginalItem = ExitObject.EntrancePair == null ? "One Way" : $"{ExitObject.EntrancePair.Area} To {ExitObject.EntrancePair.Exit}";

@@ -93,10 +93,9 @@ namespace Windows_Form_Frontend
                 if (i.Value.GetDictEntry(_Instance).OriginalItem != null)
                 {
                     var VanillaItem = i.Value.GetDictEntry(_Instance).OriginalItem;
-                    if (_Instance.InstanceReference.ItemDictionaryMapping.ContainsKey(VanillaItem))
+                    if (_Instance.GetItemByID(VanillaItem) != null)
                     {
-                        var VanillaItemDictIndex = _Instance.InstanceReference.ItemDictionaryMapping[VanillaItem];
-                        var VanillaItemObject = _Instance.LogicDictionary.ItemList[VanillaItemDictIndex];
+                        var VanillaItemObject = _Instance.GetItemByID(VanillaItem).GetDictEntry(_Instance);
                         VanillaItemText  = $"{VanillaItemObject.GetItemName(_Instance)} [{VanillaItem}])";
                     }
                     else

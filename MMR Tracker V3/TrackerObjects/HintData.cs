@@ -18,16 +18,18 @@ namespace MMR_Tracker_V3.TrackerObjects
             public CheckState CheckState { get; set; } = CheckState.Unchecked;
             public RandomizedState RandomizedState { get; set; } = RandomizedState.Randomized;
             public bool Available { get; set; }
+            public bool Starred { get; set; }
             public string HintText { get; set; }
             public string SpoilerHintText { get; set; }
             public string DisplayName { get; set; }
+            public LogicObjects.ReferenceData referenceData { get; set; } = new LogicObjects.ReferenceData();
             public override string ToString()
             {
                 return DisplayName ?? ID;
             }
             public LogicDictionaryData.DictionaryHintEntries GetDictEntry(LogicObjects.TrackerInstance Instance)
             {
-                return Instance.LogicDictionary.HintSpots[Instance.InstanceReference.HintDictionaryMapping[ID]];
+                return Instance.LogicDictionary.HintSpots[referenceData.DictIndex];
             }
         }
     }

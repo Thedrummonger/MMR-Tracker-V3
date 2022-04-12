@@ -19,22 +19,7 @@
           "a quest's inception",
           "a new file"
         ]
-      },
-      "LocationProxys": [
-        {
-          "ReferenceID": "MaskDeku",
-          "ID": "MaskDeku1",
-          "Name": "Deku Mask in area 1",
-          "Area": "Misc"
-        },
-        {
-          "ReferenceID": "MaskDeku",
-          "ID": "MaskDeku2",
-          "Name": "Deku Mask in area 2",
-          "Area": "Woodfall Temple",
-          "LogicInheritance": "ItemNotebook"
-        }
-      ]
+      }
     },
     {
       "ID": "ItemBow",
@@ -4265,7 +4250,21 @@
           "a forest fairy",
           "a map maker"
         ]
-      }
+      },
+      "LocationProxys": [
+        {
+          "ID": "ProxyTownMapTown",
+          "Name": "Clock Town Map Purchase (InTown)",
+          "Area": "North Clock Town",
+          "LogicInheritance": "ItemTingleMapTownInTown"
+        },
+        {
+          "ID": "ProxyTownMapCanyon",
+          "Name": "Clock Town Map Purchase (InCanyon)",
+          "Area": "Ikana Canyon",
+          "LogicInheritance": "ItemTingleMapTownInCanyon"
+        }
+      ]
     },
     {
       "ID": "ItemTingleMapWoodfall",
@@ -4283,7 +4282,21 @@
           "a forest fairy",
           "a map maker"
         ]
-      }
+      },
+      "LocationProxys": [
+        {
+          "ID": "ProxySwampMapSwamp",
+          "Name": "Woodfall Map Purchase (InSwamp)",
+          "Area": "Road to Southern Swamp",
+          "LogicInheritance": "ItemTingleMapWoodfallInSwamp"
+        },
+        {
+          "ID": "ProxySwampMapTown",
+          "Name": "Woodfall Map Purchase (InTown)",
+          "Area": "North Clock Town",
+          "LogicInheritance": "ItemTingleMapWoodfallInTown"
+        }
+      ]
     },
     {
       "ID": "ItemTingleMapSnowhead",
@@ -4301,7 +4314,21 @@
           "a forest fairy",
           "a map maker"
         ]
-      }
+      },
+      "LocationProxys": [
+        {
+          "ID": "ProxySnowheadMapSnowhead",
+          "Name": "Snowhead Map Purchase (InMountain)",
+          "Area": "Twin Islands",
+          "LogicInheritance": "ItemTingleMapSnowheadInMountain"
+        },
+        {
+          "ID": "ProxySnowheadMapSwamp",
+          "Name": "Snowhead Map Purchase (InSwamp)",
+          "Area": "Road to Southern Swamp",
+          "LogicInheritance": "ItemTingleMapSnowheadInSwamp"
+        }
+      ]
     },
     {
       "ID": "ItemTingleMapRanch",
@@ -4319,7 +4346,21 @@
           "a forest fairy",
           "a map maker"
         ]
-      }
+      },
+      "LocationProxys": [
+        {
+          "ID": "ProxyRanchMapRanch",
+          "Name": "Romani Ranch Map Purchase (InRanch)",
+          "Area": "Milk Road",
+          "LogicInheritance": "ItemTingleMapRanchInRanch"
+        },
+        {
+          "ID": "ProxyRanchMapSnowhead",
+          "Name": "Romani Ranch Map Purchase (InMountain)",
+          "Area": "Twin Islands",
+          "LogicInheritance": "ItemTingleMapRanchInMountain"
+        }
+      ]
     },
     {
       "ID": "ItemTingleMapGreatBay",
@@ -4337,7 +4378,21 @@
           "a forest fairy",
           "a map maker"
         ]
-      }
+      },
+      "LocationProxys": [
+        {
+          "ID": "ProxyBayMapBay",
+          "Name": "Great Bay Map Purchase (InOcean)",
+          "Area": "Great Bay Coast",
+          "LogicInheritance": "ItemTingleMapGreatBayInOcean"
+        },
+        {
+          "ID": "ProxyBayMapRanch",
+          "Name": "Great Bay Map Purchase (InRanch)",
+          "Area": "Milk Road",
+          "LogicInheritance": "ItemTingleMapGreatBayInRanch"
+        }
+      ]
     },
     {
       "ID": "ItemTingleMapStoneTower",
@@ -4355,7 +4410,21 @@
           "a forest fairy",
           "a map maker"
         ]
-      }
+      },
+      "LocationProxys": [
+        {
+          "ID": "ProxyIkanaMapIkana",
+          "Name": "Stone Tower Map Purchase (InCanyon)",
+          "Area": "Ikana Canyon",
+          "LogicInheritance": "ItemTingleMapStoneTowerInCanyon"
+        },
+        {
+          "ID": "ProxyIkanaMapBay",
+          "Name": "Stone Tower Map Purchase (InOcean)",
+          "Area": "Great Bay Coast",
+          "LogicInheritance": "ItemTingleMapStoneTowerInOcean"
+        }
+      ]
     },
     {
       "ID": "ChestToGoronRaceGrotto",

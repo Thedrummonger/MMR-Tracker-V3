@@ -48,7 +48,7 @@ namespace MMR_Tracker_V3
 
             MultipleItemEntry(instance, i, out string LogicItem, out int Amount);
             bool Literal = LogicItem.IsLiteralID(out LogicItem);
-            var type = instance.GetItemEntryType(LogicItem, Literal);
+            var type = instance.GetItemEntryType(LogicItem, Literal, out _);
 
             switch (type)
             {
@@ -90,15 +90,45 @@ namespace MMR_Tracker_V3
         }
 
         private static Dictionary<string, MMRData.JsonFormatLogicItem> LogicMap = new Dictionary<string, MMRData.JsonFormatLogicItem>();
-        public static void CalculateLogic(TrackerInstance instance, bool log = false)
+        private static void FillLogicMap(TrackerInstance instance, MiscData.CheckState checkAction)
+        {
+            foreach (var i in instance.MacroPool) 
+            { 
+                if (checkAction == CheckState.Checked && i.Value.Aquired) { continue; }
+                LogicMap[i.Key] = instance.GetLogic(i.Key); 
+            }
+            foreach (var i in instance.LocationPool)
+            {
+                if (checkAction == CheckState.Checked && i.Value.Available) { continue; }
+                LogicMap[i.Key] = instance.GetLogic(i.Key); 
+            }
+            foreach (var i in instance.HintPool)
+            {
+                if (checkAction == CheckState.Checked && i.Value.Available) { continue; }
+                LogicMap[i.Key] = instance.GetLogic(i.Key); 
+            }
+            foreach (var Area in instance.EntrancePool.AreaList)
+            {
+                foreach (var i in Area.Value.LoadingZoneExits)
+                {
+                    if (checkAction == CheckState.Checked && i.Value.Available) { continue; }
+                    LogicMap[instance.GetLogicNameFromExit(i.Value)] = instance.GetLogic(instance.GetLogicNameFromExit(i.Value));
+                }
+                foreach (var i in Area.Value.MacroExits)
+                {
+                    if (checkAction == CheckState.Checked && i.Value.Available) { continue; }
+                    LogicMap[instance.GetLogicNameFromExit(i.Value)] = instance.GetLogic(instance.GetLogicNameFromExit(i.Value));
+                }
+            }
+        }
+        public static void CalculateLogic(TrackerInstance instance, MiscData.CheckState checkAction = CheckState.Unchecked, bool log = false)
         {
             UnlockData.Clear();
             Debug.WriteLine("Logic Calculation ----------------------");
             Stopwatch LogicTime = new Stopwatch();
             Utility.TimeCodeExecution(LogicTime);
 
-            foreach(var i in instance.MacroPool) { LogicMap[i.Key] = instance.GetLogic(i.Key); }
-            foreach (var i in instance.LocationPool) { LogicMap[i.Key] = instance.GetLogic(i.Key); }
+            FillLogicMap(instance, checkAction);
             Utility.TimeCodeExecution(LogicTime, "Getting Logic", 1);
 
             ResetAutoObtainedItems(instance);
@@ -117,7 +147,6 @@ namespace MMR_Tracker_V3
             Utility.TimeCodeExecution(LogicTime, "Calculating Auto Checked Items", 1);
             foreach (var i in instance.LocationPool.Values.Where(x => !x.IsUnrandomized(1) && !x.IsJunk()))
             {
-                //var Logic = instance.GetLogic(i.Key);
                 var Logic = LogicMap[i.ID];
                 i.Available =
                     RequirementsMet(Logic.RequiredItems, instance, i.ID, UnlockData) &&
@@ -129,7 +158,7 @@ namespace MMR_Tracker_V3
             {
                 foreach (var i in Area.Value.LoadingZoneExits.Where(x => !x.Value.IsUnrandomized(1) && !x.Value.IsJunk()))
                 {
-                    var Logic = instance.GetLogic(instance.EntrancePool.GetLogicNameFromExit(i.Value));
+                    var Logic = LogicMap[instance.GetLogicNameFromExit(i.Value)];
                     i.Value.Available =
                         AreaReached(Area.Key, instance) &&
                         RequirementsMet(Logic.RequiredItems, instance, $"{i.Value.ParentAreaID} X {i.Value.ID}", UnlockData) &&
@@ -140,7 +169,7 @@ namespace MMR_Tracker_V3
             Utility.TimeCodeExecution(LogicTime, "Caclulating Exits", 1);
             foreach (var i in instance.HintPool)
             {
-                var Logic = instance.GetLogic(i.Key);
+                var Logic = LogicMap[i.Key];
                 i.Value.Available =
                     RequirementsMet(Logic.RequiredItems, instance, i.Key, UnlockData) &&
                     ConditionalsMet(Logic.ConditionalItems, instance, i.Key, UnlockData);
@@ -156,7 +185,7 @@ namespace MMR_Tracker_V3
             {
                 foreach (var i in Area.Value.LoadingZoneExits.Where(x => x.Value.IsUnrandomized(1)))
                 {
-                    var Logic = instance.GetLogic(instance.EntrancePool.GetLogicNameFromExit(i.Value));
+                    var Logic = LogicMap[instance.GetLogicNameFromExit(i.Value)];
                     var Available =
                         AreaReached(Area.Key, instance) &&
                         RequirementsMet(Logic.RequiredItems, instance, $"{i.Value.ParentAreaID} X {i.Value.ID}", UnlockData) &&
@@ -207,7 +236,7 @@ namespace MMR_Tracker_V3
             {
                 foreach (var i in Area.Value.MacroExits)
                 {
-                    var Logic = instance.GetLogic(instance.EntrancePool.GetLogicNameFromExit(i.Value));
+                    var Logic = LogicMap[instance.GetLogicNameFromExit(i.Value)];
                     i.Value.Available =
                         AreaReached(Area.Key, instance) &&
                         RequirementsMet(Logic.RequiredItems, instance, $"{i.Value.ParentAreaID} X {i.Value.ID}", UnlockData) && 
@@ -239,7 +268,6 @@ namespace MMR_Tracker_V3
             bool MacroStateChanged = false;
             foreach(var i in instance.MacroPool)
             {
-                //var Logic = instance.GetLogic(i.Key);
                 var Logic = LogicMap[i.Key];
                 bool Available = false;
                 if (Logic.IsTrick && !i.Value.TrickEnabled) { Available = false; }
@@ -265,7 +293,6 @@ namespace MMR_Tracker_V3
             {
                 if (string.IsNullOrWhiteSpace(i.Value.GetDictEntry(instance).OriginalItem)) { continue; }
                 if (!i.Value.IsUnrandomized(1)) { continue; }
-                //var Logic = instance.GetLogic(i.Key);
                 var Logic = LogicMap[i.Key];
                 var Available =
                     RequirementsMet(Logic.RequiredItems, instance, i.Key, UnlockData) &&
@@ -290,45 +317,45 @@ namespace MMR_Tracker_V3
         public static MMRData.JsonFormatLogicItem GetLogic(this TrackerInstance instance, string OriginalID, bool DoEdits = true)
         {
             bool Literal = OriginalID.IsLiteralID(out string ID);
-            LogicEntryType entryType = instance.GetLocationEntryType(ID, Literal);
+            LogicEntryType entryType = instance.GetLocationEntryType(ID, Literal, out dynamic Obj);
+            LogicFileType LogicFile = Obj.referenceData.LogicList;
+            int LogicFileIndex = Obj.referenceData.LogicIndex;
+            MMRData.JsonFormatLogicItem LogicFileEntry = null;
 
-            bool HasAdditionalLogicFile = instance.InstanceReference.AdditionalLogicFileMapping.ContainsKey(ID);
-            bool HasLogicFile = instance.InstanceReference.LogicFileMapping.ContainsKey(ID);
-            bool HasRuntimelogic = instance.RuntimeLogic.ContainsKey(ID);
+            switch (LogicFile)
+            {
+                case LogicFileType.Logic:
+                    LogicFileEntry = instance.LogicFile.Logic[LogicFileIndex];
+                    break;
+                case LogicFileType.Additional:
+                    LogicFileEntry = instance.LogicDictionary.AdditionalLogic[LogicFileIndex];
+                    break;
+                case LogicFileType.Runtime:
+                    LogicFileEntry = instance.RuntimeLogic[OriginalID];
+                    break;
+            }
 
-            List<string> OriginalRequirements = 
-                HasRuntimelogic && instance.RuntimeLogic[ID].RequiredItems != null ? instance.RuntimeLogic[ID].RequiredItems : 
-                (HasLogicFile ? instance.LogicFile.Logic[instance.InstanceReference.LogicFileMapping[ID]].RequiredItems : 
-                (HasAdditionalLogicFile ? instance.LogicDictionary.AdditionalLogic[instance.InstanceReference.AdditionalLogicFileMapping[ID]].RequiredItems : new List<string>()));
-            List <List<string>> OriginalConditionals =
-                HasRuntimelogic && instance.RuntimeLogic[ID].ConditionalItems != null ? instance.RuntimeLogic[ID].ConditionalItems :
-                (HasLogicFile ? instance.LogicFile.Logic[instance.InstanceReference.LogicFileMapping[ID]].ConditionalItems : 
-                (HasAdditionalLogicFile ? instance.LogicDictionary.AdditionalLogic[instance.InstanceReference.AdditionalLogicFileMapping[ID]].ConditionalItems : new List<List<string>>()));
-
-            Utility.DeepCloneLogic(OriginalRequirements, OriginalConditionals, out List<string> CopyRequirements, out List<List<string>> CopyConditionals);
+            Utility.DeepCloneLogic(LogicFileEntry.RequiredItems, LogicFileEntry.ConditionalItems, out List<string> CopyRequirements, out List<List<string>> CopyConditionals);
 
             if (entryType == LogicEntryType.macro)
             {
                 var MacroData = instance.GetMacroByID(ID);
-                if (MacroData.MacroPrice > -1 && !instance.PriceData.CapacityMap.Values.Contains(ID) && DoEdits) 
+                if (MacroData.Price > -1 && !instance.PriceData.CapacityMap.Values.Contains(ID) && DoEdits) 
                 {
-                    HandlePriceLogic(instance, MacroData.MacroPrice, CopyRequirements, CopyConditionals, out CopyRequirements, out CopyConditionals);
+                    HandlePriceLogic(instance, MacroData.Price, CopyRequirements, CopyConditionals, out CopyRequirements, out CopyConditionals);
                 }
             }
             else if (entryType == LogicEntryType.location)
             {
                 var LocationData = instance.GetLocationByID(ID);
-                if (LocationData.CheckPrice > -1 && !instance.PriceData.CapacityMap.Values.Contains(ID) && DoEdits)
+                if (LocationData.Price > -1 && !instance.PriceData.CapacityMap.Values.Contains(ID) && DoEdits)
                 {
-                    HandlePriceLogic(instance, LocationData.CheckPrice, CopyRequirements, CopyConditionals, out CopyRequirements, out CopyConditionals);
+                    HandlePriceLogic(instance, LocationData.Price, CopyRequirements, CopyConditionals, out CopyRequirements, out CopyConditionals);
                 }
             }
 
             if (DoEdits) { HandleOptionLogicEdits(instance.UserOptions.Values, ID, CopyRequirements, CopyConditionals, out CopyRequirements, out CopyConditionals); }
 
-            var LogicFileEntry = 
-                HasLogicFile ? instance.LogicFile.Logic[instance.InstanceReference.LogicFileMapping[ID]] : 
-                (HasAdditionalLogicFile ? instance.LogicDictionary.AdditionalLogic[instance.InstanceReference.AdditionalLogicFileMapping[ID]] : null);
             return new MMRData.JsonFormatLogicItem
             {
                 Id = ID,
@@ -461,7 +488,7 @@ namespace MMR_Tracker_V3
             bool RequiremntMet = false;
             foreach (var currentOption in OptionList)
             {
-                var CurrentOptionType = instance.GetOptionEntryType(currentOption, LiteralOption);
+                var CurrentOptionType = instance.GetOptionEntryType(currentOption, LiteralOption, out _);
                 foreach (var CurrentValue in ValueList)
                 {
                     string CheckValue = CurrentValue;
@@ -469,8 +496,8 @@ namespace MMR_Tracker_V3
                     if (CurrentOptionType == LogicEntryType.Option && (instance.UserOptions[currentOption].CurrentValue == CheckValue)) { RequiremntMet = true; }
                     //This should always return whatever value will result in false if the item is unknown. This is because checking a location should never 
                     //result in another location becoming unavilable otherwise we could enter an infinite loop if both those location are checked automatically
-                    else if (CurrentOptionType == LogicEntryType.location && (instance.LocationPool[currentOption].GetItemAtCheck(instance) == null)) { RequiremntMet = inverse; }
-                    else if (CurrentOptionType == LogicEntryType.location && (instance.LocationPool[currentOption].GetItemAtCheck(instance) == CheckValue)) { RequiremntMet = true; }
+                    else if (CurrentOptionType == LogicEntryType.location && (instance.GetLocationByID(currentOption)?.GetItemAtCheck(instance) == null)) { RequiremntMet = inverse; }
+                    else if (CurrentOptionType == LogicEntryType.location && (instance.GetLocationByID(currentOption)?.GetItemAtCheck(instance) == CheckValue)) { RequiremntMet = true; }
                 }
             }
             return RequiremntMet != inverse;

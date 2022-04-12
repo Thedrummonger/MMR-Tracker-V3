@@ -243,6 +243,20 @@ namespace Windows_Form_Frontend
 
         //ListBoxes
 
+        public void GetListObjectData(dynamic entry, out MiscData.CheckState checkState, out bool starred, out bool Available)
+        {
+            if (entry is LocationData.LocationProxy po) { 
+                checkState = CurrentTrackerInstance.GetLocationByID(po.ReferenceID)?.CheckState ?? MiscData.CheckState.Checked; 
+                starred = po.Starred;
+                Available = po.ProxyAvailable(CurrentTrackerInstance);
+            }
+            else {
+                checkState = Utility.DynamicPropertyExist(entry, "CheckState") ? entry.CheckState : MiscData.CheckState.Checked; 
+                starred = Utility.DynamicPropertyExist(entry, "Starred") ? entry.Starred : false; 
+                Available = Utility.DynamicPropertyExist(entry, "Available") ? entry.Available : true; 
+            }
+        }
+
         private void LBValidLocations_DrawItem(object sender, DrawItemEventArgs e)
         {
             var LB = sender as ListBox;
@@ -250,60 +264,14 @@ namespace Windows_Form_Frontend
             e.DrawBackground();
             Font F = WinFormUtils.GetFontFromString(CurrentTrackerInstance.StaticOptions.OptionFile.WinformData.FormFont);
             Brush brush = ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? Brushes.White : Brushes.Black;
-            if (LB.Items[e.Index] is LocationData.LocationObject ListEntry)
-            {
-                var item = ListEntry;
-                if (item.CheckState == MiscData.CheckState.Marked && !item.Available && item.Starred)
-                { F = new Font(F.FontFamily, F.Size, FontStyle.Bold | FontStyle.Strikeout); }
-                else if (item.Starred)
-                { F = new Font(F.FontFamily, F.Size, FontStyle.Bold); }
-                else if (item.CheckState == MiscData.CheckState.Marked && !item.Available)
-                { F = new Font(F.FontFamily, F.Size, FontStyle.Strikeout); }
-            }
-            e.Graphics.DrawString(LB.Items[e.Index].ToString(), F, brush, e.Bounds);
 
-            e.DrawFocusRectangle();
-        }
-
-        private void LBCheckedLocations_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            var LB = sender as ListBox;
-            if (e.Index < 0) { return; }
-            e.DrawBackground();
-            Font F = WinFormUtils.GetFontFromString(CurrentTrackerInstance.StaticOptions.OptionFile.WinformData.FormFont);
-            Brush brush = ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? Brushes.White : Brushes.Black;
-            if (LB.Items[e.Index] is LocationData.LocationObject ListEntry)
-            {
-                var item = ListEntry;
-                if (!item.Available && item.Starred)
-                { F = new Font(F.FontFamily, F.Size, FontStyle.Bold | FontStyle.Strikeout); }
-                else if (item.Starred)
-                { F = new Font(F.FontFamily, F.Size, FontStyle.Bold); }
-                else if (!item.Available)
-                { F = new Font(F.FontFamily, F.Size, FontStyle.Strikeout); }
-            }
-            e.Graphics.DrawString(LB.Items[e.Index].ToString(), F, brush, e.Bounds);
-
-            e.DrawFocusRectangle();
-        }
-
-        private void LBValidEntrances_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            var LB = sender as ListBox;
-            if (e.Index < 0) { return; }
-            e.DrawBackground();
-            Font F = WinFormUtils.GetFontFromString(CurrentTrackerInstance.StaticOptions.OptionFile.WinformData.FormFont);
-            Brush brush = ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? Brushes.White : Brushes.Black;
-            if (LB.Items[e.Index] is EntranceData.EntranceRandoExit ListEntry && sender != LBPathFinder)
-            {
-                var item = ListEntry;
-                if (item.CheckState == MiscData.CheckState.Marked && !item.Available && item.Starred)
-                { F = new Font(F.FontFamily, F.Size, FontStyle.Bold | FontStyle.Strikeout); }
-                else if (item.Starred)
-                { F = new Font(F.FontFamily, F.Size, FontStyle.Bold); }
-                else if (!item.Available)
-                { F = new Font(F.FontFamily, F.Size, FontStyle.Strikeout); }
-            }
+            GetListObjectData(LB.Items[e.Index], out MiscData.CheckState checkState, out bool starred, out bool available);
+            if (checkState == MiscData.CheckState.Marked && !available && starred)
+            { F = new Font(F.FontFamily, F.Size, FontStyle.Bold | FontStyle.Strikeout); }
+            else if (starred)
+            { F = new Font(F.FontFamily, F.Size, FontStyle.Bold); }
+            else if (checkState == MiscData.CheckState.Marked && !available)
+            { F = new Font(F.FontFamily, F.Size, FontStyle.Strikeout); }
 
             e.Graphics.DrawString(LB.Items[e.Index].ToString(), F, brush, e.Bounds);
 
@@ -560,23 +528,25 @@ namespace Windows_Form_Frontend
                 i.BeginUpdate();
             }
 
+            var dataset = TrackerDataHandeling.PopulateDataSets(CurrentTrackerInstance);
+
             if (ToUpdate.Contains(LBValidLocations)) 
             {
-                var Entries = TrackerDataHandeling.PopulateAvailableLocationList(WinFormUtils.CreateDivider(LBValidLocations), CurrentTrackerInstance, TXTLocSearch.Text, CHKShowAll.Checked, out int x, out int y);
+                var Entries = TrackerDataHandeling.PopulateAvailableLocationList(dataset, WinFormUtils.CreateDivider(LBValidLocations), CurrentTrackerInstance, TXTLocSearch.Text, CHKShowAll.Checked, out int x, out int y);
                 lblAvailableLocation.Text = $"Available Locations: {y}" + (x != y ? $"/{x}" : "");
                 foreach (var i in Entries) { LBValidLocations.Items.Add(i); }
                 LBValidLocations.TopIndex = lbLocTop; 
             }
             if (ToUpdate.Contains(LBValidEntrances)) 
             {
-                var Entries = TrackerDataHandeling.PopulateAvailableEntraceList(WinFormUtils.CreateDivider(LBValidEntrances), CurrentTrackerInstance, TXTEntSearch.Text, CHKShowAll.Checked, out int x, out int y);
+                var Entries = TrackerDataHandeling.PopulateAvailableEntraceList(dataset, WinFormUtils.CreateDivider(LBValidEntrances), CurrentTrackerInstance, TXTEntSearch.Text, CHKShowAll.Checked, out int x, out int y);
                 lblAvailableEntrances.Text = $"Available Entrances: {y}" + (x != y ? $"/{x}" : "");
                 foreach (var i in Entries) { LBValidEntrances.Items.Add(i); }
                 LBValidEntrances.TopIndex = lbEntTop; 
             }
             if (ToUpdate.Contains(LBCheckedLocations)) 
             {
-                var Entries = TrackerDataHandeling.PopulateCheckedLocationList(WinFormUtils.CreateDivider(LBCheckedLocations), CurrentTrackerInstance, TXTCheckedSearch.Text, out int x, out int y);
+                var Entries = TrackerDataHandeling.PopulateCheckedLocationList(dataset, WinFormUtils.CreateDivider(LBCheckedLocations), CurrentTrackerInstance, TXTCheckedSearch.Text, out int x, out int y);
                 lblCheckedLocation.Text = $"Checked Locations: {y}" + (x != y ? $"/{x}" : "");
                 foreach (var i in Entries) { LBCheckedLocations.Items.Add(i); }
                 LBCheckedLocations.TopIndex = lbCheckTop; 
@@ -665,135 +635,152 @@ namespace Windows_Form_Frontend
 
         //Context Menus
 
-        private void SetCheckPrice(LocationData.LocationObject itemObject)
-        {
-            string Identifier = itemObject.GetDictEntry(CurrentTrackerInstance).Name + " Price";
-            var PriceContainer = new List<LogicDictionaryData.TrackerVariable>() { new() { ID = Identifier, Value = 0 } };
-            VariableInputWindow PriceInput = new(PriceContainer, CurrentTrackerInstance);
-            PriceInput.ShowDialog();
-            itemObject.CheckPrice = (int)PriceContainer.First().Value;
-            LogicCalculation.CalculateLogic(CurrentTrackerInstance);
-            UpdateUI();
-        }
-
         private void ShowContextMenu(ListBox listBox)
         {
+            string LogicID = null;
+            if (listBox.SelectedItem is EntranceData.EntranceRandoExit LogicexitObject) { LogicID = CurrentTrackerInstance.GetLogicNameFromExit(LogicexitObject); }
+            if (listBox.SelectedItem is LocationData.LocationObject LogicLocationObject) { LogicID = LogicLocationObject.ID; }
+            if (listBox.SelectedItem is HintData.HintObject LogicHintObject) { LogicID = LogicHintObject.ID; }
+            if (listBox.SelectedItem is LocationData.LocationProxy LogicProxyObject) { LogicID = LogicProxyObject.LogicInheritance ?? LogicProxyObject.ReferenceID; }
+
             ContextMenuStrip contextMenuStrip = new();
+
             //Refresh List Box
             ToolStripItem RefreshContextItem = contextMenuStrip.Items.Add("Refresh");
             RefreshContextItem.Click += (sender, e) => { PrintToListBox(new List<ListBox> { listBox }); };
 
+            //Navigate to Area
+            if (listBox.SelectedItem is MiscData.Areaheader NavAreaObject && 
+                CurrentTrackerInstance.EntrancePool.AreaList.ContainsKey(NavAreaObject.Area) && 
+                CurrentTrackerInstance.EntrancePool.IsEntranceRando)
+            {
+                ToolStripItem NavigateHereContextItem = contextMenuStrip.Items.Add("Navigate To this area");
+                NavigateHereContextItem.Click += (sender, e) => { CMBEnd.SelectedItem = NavAreaObject.Area; };
+            }
+
+            //Filter By Area
             if (listBox.SelectedItem is MiscData.Areaheader AreaObject)
             {
-                if (CurrentTrackerInstance.EntrancePool.AreaList.ContainsKey(AreaObject.Area) && CurrentTrackerInstance.EntrancePool.IsEntranceRando)
-                {
-                    ToolStripItem NavigateHereContextItem = contextMenuStrip.Items.Add("Navigate To this area");
-                    NavigateHereContextItem.Click += (sender, e) => { CMBEnd.SelectedItem = AreaObject.Area; };
-                }
-                ToolStripItem FilterHereContextItem = contextMenuStrip.Items.Add("Navigate To this area");
+                var TagetTextBox = listBox == LBValidLocations ? TXTLocSearch : (listBox == LBValidEntrances ? TXTEntSearch : (listBox == LBCheckedLocations ? TXTCheckedSearch : null));
+                ToolStripItem FilterHereContextItem = contextMenuStrip.Items.Add("Filter By this area");
                 FilterHereContextItem.Click += (sender, e) => 
-                { 
-                    if (listBox == LBValidLocations) { TXTLocSearch.Text = "#" + AreaObject.Area; }
-                    if (listBox == LBValidEntrances) { TXTEntSearch.Text = "#" + AreaObject.Area; }
-                    if (listBox == LBCheckedLocations) { TXTCheckedSearch.Text = "#" + AreaObject.Area; }
+                {
+                    TagetTextBox.Text = "#" + AreaObject.Area;
                 };
             }
 
-            if (listBox.SelectedItem is EntranceData.EntranceRandoExit exitObject)
+            //Star Object
+            if (LogicID is not null)
             {
-                //Star Item
-                string StarFunction = exitObject.Starred ? "UnStar Location" : "Star Location";
-                ToolStripItem StarContextItem = contextMenuStrip.Items.Add(StarFunction);
-                StarContextItem.Click += (sender, e) => { exitObject.Starred = !exitObject.Starred; PrintToListBox(new List<ListBox> { listBox }); };
-                //ShowLogic
-                ToolStripItem ShowLogicFunction = contextMenuStrip.Items.Add("Show Logic");
-                ShowLogicFunction.Click += (sender, e) =>
+                dynamic obj = listBox.SelectedItem;
+                if (Utility.DynamicPropertyExist(obj, "Starred"))
                 {
-                    ShowLogic showLogic = new ShowLogic(CurrentTrackerInstance.EntrancePool.GetLogicNameFromExit(exitObject), CurrentTrackerInstance);
-                    showLogic.Show();
-                };
-                if (Testing.ISDebugging)
-                {
-                    //DevData
-                    ToolStripItem ShowDevData = contextMenuStrip.Items.Add("Show Dev Data");
-                    ShowDevData.Click += (sender, e) =>
-                    {
-                        Debug.WriteLine(JsonConvert.SerializeObject(exitObject, Testing._NewtonsoftJsonSerializerOptions));
-                    };
-                }
-
-                string ExitID = $"{exitObject.ParentAreaID} X {exitObject.ID}";
-                if (LogicCalculation.UnlockData.ContainsKey(ExitID))
-                {
-                    //What Unlocked This
-                    ToolStripItem WhatUnlockedThis = contextMenuStrip.Items.Add("What Unlocked This");
-                    WhatUnlockedThis.Click += (sender, e) => { ShowUnlockData(ExitID); };
+                    string StarFunction = obj.Starred ? "UnStar Location" : "Star Location";
+                    ToolStripItem StarContextItem = contextMenuStrip.Items.Add(StarFunction);
+                    StarContextItem.Click += (sender, e) => { obj.Starred = !obj.Starred; PrintToListBox(new List<ListBox> { listBox }); };
                 }
             }
-            else if (listBox.SelectedItem is LocationData.LocationObject LocationObject)
+
+            //Show Logic
+            if (LogicID is not null && CurrentTrackerInstance.InstanceReference.LogicFileMapping.ContainsKey(LogicID))
             {
-                //Star Item
-                string StarFunction = LocationObject.Starred ? "UnStar Location" : "Star Location";
-                ToolStripItem StarContextItem = contextMenuStrip.Items.Add(StarFunction);
-                StarContextItem.Click += (sender, e) => { LocationObject.Starred = !LocationObject.Starred; PrintToListBox(new List<ListBox> { listBox }); };
-                //ShowLogic
                 ToolStripItem ShowLogicFunction = contextMenuStrip.Items.Add("Show Logic");
-                ShowLogicFunction.Click += (sender, e) =>
+                ShowLogicFunction.Click += (sender, e) => { new ShowLogic(LogicID, CurrentTrackerInstance).Show(); };
+            }
+
+            //Show Unlock Data
+            if (LogicID is not null && LogicCalculation.UnlockData.ContainsKey(LogicID))
+            {
+                ToolStripItem WhatUnlockedThis = contextMenuStrip.Items.Add("What Unlocked This");
+                WhatUnlockedThis.Click += (sender, e) => { ShowUnlockData(LogicID); };
+            }
+
+            //Objects Check Functions
+            if ((LogicID is not null) && (listBox == LBValidLocations || listBox == LBValidEntrances))
+            {
+                dynamic TargetLocationObject = listBox.SelectedItem;
+                if (listBox.SelectedItem is LocationData.LocationProxy tp) { TargetLocationObject = CurrentTrackerInstance.GetLocationByID(tp.ReferenceID); }
+                //Check Item
+                ToolStripItem CheckContextItem = contextMenuStrip.Items.Add("Check Location");
+                CheckContextItem.Click += (sender, e) => { HandleItemSelect(new List<object> { listBox.SelectedItem }, MiscData.CheckState.Checked, LB: listBox); };
+                //Mark\UnMark Item
+                string MarkFunction = "Toggle Checked";
+                if (Utility.DynamicPropertyExist(TargetLocationObject, "CheckState"))
+                { MarkFunction = TargetLocationObject.CheckState == MiscData.CheckState.Marked ? "UnMark Location" : "Mark Location"; }
+                ToolStripItem MarkContextItem = contextMenuStrip.Items.Add(MarkFunction);
+                MarkContextItem.Click += (sender, e) => { HandleItemSelect(new List<object> { listBox.SelectedItem }, MiscData.CheckState.Marked, LB: listBox); };
+            }
+
+            //Objects Uncheck Functions
+            if ((LogicID is not null) && listBox == LBCheckedLocations)
+            {
+                //UnCheck Item
+                ToolStripItem CheckContextItem = contextMenuStrip.Items.Add("UnCheck entry");
+                CheckContextItem.Click += (sender, e) => { HandleItemSelect(new List<object> { listBox.SelectedItem }, MiscData.CheckState.Unchecked, LB: listBox); };
+                //Uncheck and Mark Item
+                ToolStripItem MarkContextItem = contextMenuStrip.Items.Add("Mark entry");
+                MarkContextItem.Click += (sender, e) => { HandleItemSelect(new List<object> { listBox.SelectedItem }, MiscData.CheckState.Marked, LB: listBox); };
+            }
+
+            //Variable and Option check Functions
+            if (listBox.SelectedItem is OptionData.TrackerOption || listBox.SelectedItem is LogicDictionaryData.TrackerVariable)
+            {
+                //UnCheck Item
+                ToolStripItem CheckContextItem = contextMenuStrip.Items.Add("Edit");
+                CheckContextItem.Click += (sender, e) => { HandleItemSelect(new List<object> { listBox.SelectedItem }, MiscData.CheckState.Unchecked, LB: listBox); };
+            }
+
+            //Object Price Edit
+            dynamic Target = null;
+            if (listBox.SelectedItem is LocationData.LocationProxy ProxyPriceSet) { Target = ProxyPriceSet.GetLogicInheritance(CurrentTrackerInstance); }
+            else if (listBox.SelectedItem is LocationData.LocationObject LocPriceSet) { Target = LocPriceSet; }
+            if (Utility.DynamicPropertyExist(Target, "Price"))
+            {
+                string SetPriceText = Target.Price > -1 ? "Clear Price" : "Set Price";
+                ToolStripItem SetPrice = contextMenuStrip.Items.Add(SetPriceText);
+                SetPrice.Click += (sender, e) =>
                 {
-                    ShowLogic showLogic = new ShowLogic(LocationObject.ID, CurrentTrackerInstance);
-                    showLogic.Show();
+                    if (Target.Price > -1) { Target.Price = -1; }
+                    else { SetCheckPrice(Target); }
                 };
-                if (Testing.ISDebugging)
-                {
-                    //DevData
-                    ToolStripItem ShowDevData = contextMenuStrip.Items.Add("Show Dev Data");
-                    ShowDevData.Click += (sender, e) =>
-                    {
-                        Debug.WriteLine(JsonConvert.SerializeObject(LocationObject, Testing._NewtonsoftJsonSerializerOptions));
-                        Debug.WriteLine(JsonConvert.SerializeObject(LocationObject.GetDictEntry(CurrentTrackerInstance), Testing._NewtonsoftJsonSerializerOptions));
-                    };
-                }
+            }
 
-                if (LogicCalculation.UnlockData.ContainsKey(LocationObject.ID))
+            //Debug Tools
+            if (Testing.ISDebugging)
+            {
+                //DevData
+                ToolStripItem ShowDevData = contextMenuStrip.Items.Add("Show Dev Data");
+                ShowDevData.Click += (sender, e) =>
                 {
-                    //What Unlocked This
-                    ToolStripItem WhatUnlockedThis = contextMenuStrip.Items.Add("What Unlocked This");
-                    WhatUnlockedThis.Click += (sender, e) => { ShowUnlockData(LocationObject.ID); };
-                }
-
-                if (listBox == LBValidLocations)
-                {
-                    //Check Item
-                    ToolStripItem CheckContextItem = contextMenuStrip.Items.Add("Check Location");
-                    CheckContextItem.Click += (sender, e) => { HandleItemSelect(new List<object> { listBox.SelectedItem }, MiscData.CheckState.Checked, LB: listBox); };
-                    //Mark\UnMark Item
-                    string MarkFunction = LocationObject.CheckState == MiscData.CheckState.Marked ? "UnMark Location" : "Mark Location";
-                    ToolStripItem MarkContextItem = contextMenuStrip.Items.Add(MarkFunction);
-                    MarkContextItem.Click += (sender, e) => { HandleItemSelect(new List<object> { listBox.SelectedItem }, MiscData.CheckState.Marked, LB: listBox); };
-                    //Set Item Price
-                    string SetPriceText = LocationObject.CheckPrice > -1 ? "Clear Price" : "Set Price";
-                    ToolStripItem SetPrice = contextMenuStrip.Items.Add(SetPriceText);
-                    SetPrice.Click += (sender, e) =>
+                    Debug.WriteLine(JsonConvert.SerializeObject(listBox.SelectedItem, Testing._NewtonsoftJsonSerializerOptions));
+                    if (listBox.SelectedItem is LocationData.LocationObject DebugLocObj)
                     {
-                        if (LocationObject.CheckPrice > -1) { LocationObject.CheckPrice = -1; }
-                        else { SetCheckPrice(LocationObject); }
-                    };
-                }
-                else if (listBox == LBCheckedLocations)
-                {
-                    //UnCheck Item
-                    ToolStripItem CheckContextItem = contextMenuStrip.Items.Add("UnCheck Location");
-                    CheckContextItem.Click += (sender, e) => { HandleItemSelect(new List<object> { listBox.SelectedItem }, MiscData.CheckState.Unchecked, LB: listBox); };
-                    //Uncheck and Mark Item
-                    ToolStripItem MarkContextItem = contextMenuStrip.Items.Add("UnCheck and Mark Location");
-                    MarkContextItem.Click += (sender, e) => { HandleItemSelect(new List<object> { listBox.SelectedItem }, MiscData.CheckState.Marked, LB: listBox); };
-                }
+                        Debug.WriteLine(JsonConvert.SerializeObject(DebugLocObj.GetDictEntry(CurrentTrackerInstance), Testing._NewtonsoftJsonSerializerOptions));
+                    }
+                    if (listBox.SelectedItem is LocationData.LocationProxy DebugProxyObj)
+                    {
+                        var ProxyRef = CurrentTrackerInstance.GetLocationByID(DebugProxyObj.ReferenceID);
+                        Debug.WriteLine(JsonConvert.SerializeObject(ProxyRef, Testing._NewtonsoftJsonSerializerOptions));
+                        Debug.WriteLine(JsonConvert.SerializeObject(ProxyRef?.GetDictEntry(CurrentTrackerInstance), Testing._NewtonsoftJsonSerializerOptions));
+                    }
+                };
             }
 
             if (contextMenuStrip.Items.Count > 0)
             {
                 contextMenuStrip.Show(Cursor.Position);
             }
+        }
+
+        private void SetCheckPrice(dynamic Object)
+        {
+            var DictEntry = Object.GetDictEntry(CurrentTrackerInstance);
+            var PriceContainer = new List<LogicDictionaryData.TrackerVariable>() { new() { ID = DictEntry.Name ?? DictEntry.ID, Value = 0 } };
+            VariableInputWindow PriceInput = new(PriceContainer, CurrentTrackerInstance);
+            PriceInput.ShowDialog();
+            Object.Price = (int)PriceContainer.First().Value;
+            LogicCalculation.CalculateLogic(CurrentTrackerInstance);
+            UpdateUI();
         }
 
         private void ShowUnlockData(string iD)

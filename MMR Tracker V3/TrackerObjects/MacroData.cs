@@ -14,13 +14,14 @@ namespace MMR_Tracker_V3.TrackerObjects
         public string ID { get; set; }
         public bool Aquired { get; set; } = false;
         public bool TrickEnabled { get; set; } = true;
-        public int MacroPrice { get; set; } = -1;
+        public int Price { get; set; } = -1;
+        public LogicObjects.ReferenceData referenceData { get; set; } = new LogicObjects.ReferenceData();
 
         public LogicDictionaryData.DictionaryMacroEntry GetDictEntry(LogicObjects.TrackerInstance Instance)
         {
-            if (Instance.InstanceReference.MacroDictionaryMapping.ContainsKey(ID))
+            if (referenceData.DictIndex > -1)
             {
-                return Instance.LogicDictionary.MacroList[Instance.InstanceReference.MacroDictionaryMapping[ID]];
+                return Instance.LogicDictionary.MacroList[referenceData.DictIndex];
             }
             return new LogicDictionaryData.DictionaryMacroEntry
             {

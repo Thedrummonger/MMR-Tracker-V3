@@ -45,19 +45,19 @@ namespace Windows_Form_Frontend
             {
                 if (IntVariableObject.Value is Int64||IntVariableObject.Value is Int32||IntVariableObject.Value is Int16||IntVariableObject.Value is int)
                 {
-                    SetUIElements(false, $"Set value for {IntVariableObject.Name??IntVariableObject.ID}", "Set Value", "Integer: " + IntVariableObject.Name ?? IntVariableObject.ID);
+                    SetUIElements(false, $"Set value for {IntVariableObject.Name??IntVariableObject.ID}", "Set Value", "Integer: " + (IntVariableObject.Name ?? IntVariableObject.ID));
                     numericUpDown1.Value = IntVariableObject.Value;
                     varType = VarType.Number;
                 }
                 else if (IntVariableObject.Value is string)
                 {
-                    SetUIElements(true, $"Set value for {IntVariableObject.Name ?? IntVariableObject.ID}", "Set Value", "String: " + IntVariableObject.Name ?? IntVariableObject.ID);
+                    SetUIElements(true, $"Set value for {IntVariableObject.Name ?? IntVariableObject.ID}", "Set Value", "String: " + (IntVariableObject.Name ?? IntVariableObject.ID));
                     textBox1.Text = IntVariableObject.Value;
                     varType = VarType.String;
                 }
                 else if (IntVariableObject.Value is List<string>)
                 {
-                    SetUIElements(true, $"Enter values as a comman seperated List", $"Set Values", "List: " + IntVariableObject.Name ?? IntVariableObject.ID);
+                    SetUIElements(true, $"Enter values as a comman seperated List", $"Set Values", "List: " + (IntVariableObject.Name ?? IntVariableObject.ID));
                     textBox1.Text = string.Join(",", IntVariableObject.Value);
                     varType = VarType.ListOf;
                 }

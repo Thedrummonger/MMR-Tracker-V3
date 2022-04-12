@@ -26,5 +26,21 @@ namespace MMR_Tracker_V3
             }
             return Literal;
         }
+        public static string GetLogicNameFromExit(this LogicObjects.TrackerInstance instance, EntranceRandoExit Exit)
+        {
+            return instance.InstanceReference.ExitLogicMap[$"{Exit.ParentAreaID} X {Exit.ID}"];
+        }
+        public static string GetLogicNameFromExit(this LogicObjects.TrackerInstance instance, EntranceAreaPair Exit)
+        {
+            return instance.InstanceReference.ExitLogicMap[$"{Exit.Area} X {Exit.Exit}"];
+        }
+        public static string GetLogicNameFromExit(this LogicObjects.TrackerInstance instance, EntranceRandoDestination Exit)
+        {
+            return instance.InstanceReference.ExitLogicMap[$"{Exit.region} X {Exit.from}"];
+        }
+        public static void AddLogicExitReference(this LogicObjects.TrackerInstance instance, EntranceAreaPair Exit, string LogicName)
+        {
+            instance.InstanceReference.ExitLogicMap.Add($"{Exit.Area} X {Exit.Exit}", LogicName);
+        }
     }
 }
