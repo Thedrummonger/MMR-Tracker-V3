@@ -214,7 +214,7 @@ namespace Windows_Form_Frontend
                     string CurrentState = Utf8Json.JsonSerializer.ToJsonString(CurrentTrackerInstance);
                     var ToUpdate = new List<ListBox> { LBCheckedLocations, LBValidEntrances, LBValidLocations };
                     foreach (var i in ToUpdate) { i.Items.Clear(); i.Items.Add("Importing Spoiler Log"); i.Items.Add("Please Wait..."); i.Items.Add("Reading Spoiler Log.."); i.Refresh(); }
-                    if (SpoilerLogTools.ImportSpoilerLog(File.ReadAllLines(openFileDialog.FileName), CurrentTrackerInstance))
+                    if (SpoilerLogTools.ImportSpoilerLog(File.ReadAllLines(openFileDialog.FileName), openFileDialog.FileName, CurrentTrackerInstance))
                     {
                         SaveTrackerState(CurrentState);
                     }

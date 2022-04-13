@@ -428,32 +428,20 @@ namespace ConsoleDebugger
 
             if (!File.Exists(path)) { Console.WriteLine("Path Invalid!"); goto getpath; }
 
-            if (newTrackerInstance.LogicFile.GameCode == "OOTR")
+
+            MMRData.SpoilerLogData SpoilerLogData = null;
+            try { SpoilerLogData = Newtonsoft.Json.JsonConvert.DeserializeObject<MMRData.SpoilerLogData>(File.ReadAllText(path)); }
+            catch { }
+
+            if (SpoilerLogData != null && newTrackerInstance.LogicFile.GameCode == "MMR")
             {
-                MMR_Tracker_V3.OtherGames.OOTRTools.HandleOOTRSpoilerLog(File.ReadAllText(path), newTrackerInstance);
-                return;
+                Console.WriteLine("Applying Settings File...");
+                SpoilerLogTools.ApplyMMRandoSettings(newTrackerInstance, SpoilerLogData);
             }
             else
             {
-                MMRData.SpoilerLogData SpoilerLogData = null;
-                try { SpoilerLogData = Newtonsoft.Json.JsonConvert.DeserializeObject<MMRData.SpoilerLogData>(File.ReadAllText(path)); }
-                catch { }
-
-                if (SpoilerLogData == null)
-                {
-                    Console.WriteLine("Importing Spoiler Log...");
-                    newTrackerInstance.SpoilerLog = SpoilerLogTools.ReadSpoilerLog(File.ReadAllLines(path));
-                    Console.WriteLine("Applying Settings File...");
-                    SpoilerLogTools.ApplyMMRandoSettings(newTrackerInstance, newTrackerInstance.SpoilerLog);
-                    Console.WriteLine("Applying Check Data...");
-                    SpoilerLogTools.ApplyMMRandoSpoilerLog(newTrackerInstance, newTrackerInstance.SpoilerLog);
-                }
-                else
-                {
-                    Console.WriteLine("Applying Settings File...");
-                    SpoilerLogTools.ApplyMMRandoSettings(newTrackerInstance, SpoilerLogData);
-                }
-                return;
+                Console.WriteLine("Importing Spoiler Log...");
+                SpoilerLogTools.ImportSpoilerLog(File.ReadAllLines(path), path, newTrackerInstance);
             }
         }
 

@@ -121,6 +121,17 @@ namespace MMR_Tracker_V3.OtherGames
             AddHardCodedMacros(CondensedLogic);//Add macros that are created by the randomizer at run time and don't exist in the logic
             MMRData.LogicFile logicFile = CreateLogicFile(CondensedLogic);//Create a logic file using the collected data
 
+            //Why
+            var StartpieceEntry = logicDictionary.ItemList.First(x => x.ID == "StarPiece");
+            StartpieceEntry.SpoilerData.SpoilerLogNames = StartpieceEntry.SpoilerData.SpoilerLogNames.Concat(new string[] { "Starpiece", "StarPiece21" }).ToArray();
+            var FPPlusEntry = logicDictionary.ItemList.First(x => x.ID == "FPPlus");
+            FPPlusEntry.SpoilerData.SpoilerLogNames = FPPlusEntry.SpoilerData.SpoilerLogNames.Concat(new string[] { "FPPlusC" }).ToArray();
+            var KPALowerJailYellowBlock = logicDictionary.LocationList.First(x => x.ID == "BowsersCastleOutsideLowerJailNoLava4YellowBlockYBlockA");
+            KPALowerJailYellowBlock.SpoilerData.SpoilerLogNames = KPALowerJailYellowBlock.SpoilerData.SpoilerLogNames.Concat(new string[] { "Outside Lower Jail - Yellow Block" }).ToArray();
+            var KPALowerJailKoopatrol= logicDictionary.LocationList.First(x => x.ID == "BowsersCastleOutisdeLowerJailLava0DefeatKoopatrolRewardItemA");
+            KPALowerJailKoopatrol.SpoilerData.SpoilerLogNames = KPALowerJailKoopatrol.SpoilerData.SpoilerLogNames.Concat(new string[] { "Outside Lower Jail - Defeat Koopatrol Reward" }).ToArray();
+            var FFHPPlusBlock = logicDictionary.LocationList.First(x => x.ID == "ForeverForestBeeHiveHPPlus1CentralBlockRBlockA");
+            FFHPPlusBlock.SpoilerData.SpoilerLogNames = FFHPPlusBlock.SpoilerData.SpoilerLogNames.Concat(new string[] { "Laughing Rock - Central Block" }).ToArray();
 
             LogicObjects.TrackerInstance TestInstance = new LogicObjects.TrackerInstance();
             TestInstance.LogicFile = logicFile;
@@ -137,7 +148,17 @@ namespace MMR_Tracker_V3.OtherGames
 
         private static void AddCustomLocations(LogicDictionaryData.LogicDictionary logicDictionary, Dictionary<string, string> condensedLogic)
         {
-
+            //This location is missed because of a strage techincallity in logic. The only way to this area is from an "item" area, which is skipped by this code
+            //And assumed to be just for item access, this looks to be the only instance of it but it may cme back to bite me later.
+            condensedLogic.Add("MtRuggedMtRugged20ParakarryLedgeItemA", "Mt Rugged - Mt Rugged 2 - 0 & CanUseParakarry");
+            logicDictionary.LocationList.Add(new LogicDictionaryData.DictionaryLocationEntries
+            {
+                ID = "MtRuggedMtRugged20ParakarryLedgeItemA",
+                Name = "Mt Rugged 2 - Parakarry Ledge",
+                Area = "Mt Rugged",
+                ValidItemTypes = new string[] { "item" },
+                SpoilerData =  new MMRData.SpoilerlogReference { SpoilerLogNames = new string[] { "Mt Rugged 2 - Parakarry Ledge" } }
+            });
         }
 
         private static MMRData.LogicFile CreateLogicFile(Dictionary<string, string> CondensedLogic)
@@ -177,9 +198,11 @@ namespace MMR_Tracker_V3.OtherGames
                 if (CondensedLogic.ContainsKey(ID)) { CondensedLogic[ID] += $" | ({i.Logic})"; Debug.WriteLine($"Duplicate Exit Entry {ID}"); }
                 else { CondensedLogic[ID] = $"({i.Logic})"; }
             }
+            int YoshiKidCounter = 1;
             foreach (var i in MasterData.Macros)
             {
                 string ID = i.ID;
+                if (ID == "RF_SavedYoshiKid") { ID = $"RF_SavedYoshiKid_{YoshiKidCounter}"; YoshiKidCounter++; }
                 if (CondensedLogic.ContainsKey(ID)) { CondensedLogic[ID] += $" | ({i.Logic})"; Debug.WriteLine($"Duplicate Macro Entry {ID}"); }
                 else { CondensedLogic[ID] = $"({i.Logic})"; }
             }
@@ -279,6 +302,8 @@ namespace MMR_Tracker_V3.OtherGames
         {
             foreach (var i in MasterReference.Logic)
             {
+                if (i.to.id is string && i.from.id is string) { Debug.WriteLine($"WARNING I DIDNT EXPECT THIS {i.to.map}:{i.to.id} -> {i.from.map}:{i.from.id}"); }
+
                 //Debug.WriteLine($"{i.from.map}_{i.from.id}:{i.to.map}_{i.to.id}");
                 if (i.from.id is string || i.to.id is null || i.to.map is null) { continue; }
 
@@ -312,6 +337,10 @@ namespace MMR_Tracker_V3.OtherGames
                     NewItemLocation.Area = $"{i.from.GetGeneralArea(MasterReference)}";
                     NewItemLocation.Name = $"{MasterReference.verbose_sub_area_names[i.from.map]} - {MasterReference.verbose_item_locations[i.from.map][i.to.id]}";
                     NewItemLocation.SpoilerNames.Add($"{MasterReference.verbose_sub_area_names[i.from.map]} - {MasterReference.verbose_item_locations[i.from.map][i.to.id]}");
+
+                    //Stupid edge case of an item being accessable from two different location resulting in the location existing twice
+                    if (NewItemLocation.ID == "DryDryRuinsSandDrainageRoom33OnLedgeItemA") { NewItemLocation.ID = "DryDryRuinsSandDrainageRoom32OnLedgeItemA"; }
+
                     MasterData.itemLocations.Add(NewItemLocation);
                 }
                 else if (i.to.id != i.from.id || i.to.map != i.from.map) //Exit
@@ -358,6 +387,16 @@ namespace MMR_Tracker_V3.OtherGames
         private static void AddHardCodedMacros(Dictionary<string, string> CondensedLogic)
         {
             //Add Hard Coded Macros
+            CondensedLogic.Add("RF_CanGetBombette", "starting_partner_Bombette == false");
+            CondensedLogic.Add("RF_CanGetBow", "starting_partner_Bow == false");
+            CondensedLogic.Add("RF_CanGetGoombario", "starting_partner_Goombario == false");
+            CondensedLogic.Add("RF_CanGetKooper", "starting_partner_Kooper == false");
+            CondensedLogic.Add("RF_CanGetLakilester", "starting_partner_Lakilester == false");
+            CondensedLogic.Add("RF_CanGetParakarry", "starting_partner_Parakarry == false");
+            CondensedLogic.Add("RF_CanGetSushie", "starting_partner_Sushie == false");
+            CondensedLogic.Add("RF_CanGetWatt", "starting_partner_Watt == false");
+            CondensedLogic.Add("RF_Missable", "true");
+            CondensedLogic.Add("saved_all_yoshikids", "RF_SavedYoshiKid_1 & RF_SavedYoshiKid_2 & RF_SavedYoshiKid_3 & RF_SavedYoshiKid_4 & RF_SavedYoshiKid_5");
             CondensedLogic.Add("can_flip_panels", "boots, 1 | hammer, 2");
             CondensedLogic.Add("can_shake_trees", "Bombette | hammer, 0");
             CondensedLogic.Add("has_parakarry_3_letters", "letter, 3");
@@ -514,12 +553,68 @@ namespace MMR_Tracker_V3.OtherGames
             return string.Join(" & ", NewLogicSets.Where(x => x.Any()).Select(x => "(" + string.Join(" | ", x) + ")"));
         }
 
-        public static void GetSettingObjectFromSeed(string SpoilerLogPath)
+        public static Dictionary<string, dynamic> GetSettingObjectFromSeed(string SpoilerLogPath)
         {
             string seed = Path.GetFileNameWithoutExtension(SpoilerLogPath).Replace("_spoiler", "");
-            string URL = $"https://paper-mario-randomizer-server.ue.r.appspot.com/randomizer_settings/3225145890/{seed}";
+            string URL = $"https://paper-mario-randomizer-server.ue.r.appspot.com/randomizer_settings/{seed}";
             System.Net.WebClient wc = new System.Net.WebClient();
             string SettingData = wc.DownloadString(URL);
+            Dictionary<string, dynamic> Settings = JsonConvert.DeserializeObject<Dictionary<string, dynamic>>(SettingData);
+            return Settings;
+        }
+
+        public static void ReadSpoilerLog(string[] spoilerLog, string OriginalFile, LogicObjects.TrackerInstance Instance)
+        {
+            List<string> AppliedLocations = new List<string>();
+            foreach(var i in spoilerLog)
+            {
+                string line = i;
+                if (!line.Contains(":")) { continue; }
+                var data = line.Split(new string[] { "):" }, StringSplitOptions.None).Select(x => x.Trim()).ToArray();
+                data[0] = data[0][1..];
+                if (data.Length < 2 || string.IsNullOrWhiteSpace(data[1])) { continue; }
+
+                if (data[1].StartsWith("ThreeStarPieces")) { data[1] = "StarPiece"; }
+
+                var Location = Instance.LocationPool.Values.FirstOrDefault(x => x.GetDictEntry(Instance).SpoilerData.SpoilerLogNames.Contains(data[0]) && !AppliedLocations.Contains(x.ID));
+                var Item = Instance.ItemPool.Values.FirstOrDefault(x => x.GetDictEntry(Instance).SpoilerData.SpoilerLogNames.Contains(data[1]));
+
+                if (Location == null) { Debug.WriteLine($"Could not find Location {data[0]}"); continue; }
+                if (Item == null) { Debug.WriteLine($"Could not find item {data[1]}"); continue; }
+                Location.Randomizeditem.SpoilerLogGivenItem = Item.Id;
+                AppliedLocations.Add(Location.ID);
+            }
+
+            foreach(var i in Instance.LocationPool)
+            {
+
+                if (i.Value.Randomizeditem.SpoilerLogGivenItem == null)
+                {
+                    if (i.Key.StartsWith("StarPiece_")) { i.Value.Randomizeditem.SpoilerLogGivenItem = "StarPiece"; }
+                    else
+                    {
+                        Debug.WriteLine($"{i.Value.GetDictEntry(Instance).Name} Did not have spoiler data");
+                    }
+                }
+            }
+            var SettingData = GetSettingObjectFromSeed(OriginalFile);
+
+            Instance.UserOptions["BlueHouseOpen"].CurrentValue = SettingData["BlueHouseOpen"].ToString().ToLower();
+            Instance.UserOptions["FlowerGateOpen"].CurrentValue = SettingData["FlowerGateOpen"].ToString().ToLower();
+            Instance.UserOptions["WhaleOpen"].CurrentValue = SettingData["WhaleOpen"].ToString().ToLower();
+            Instance.UserOptions["ToyboxOpen"].CurrentValue = SettingData["ToyboxOpen"].ToString().ToLower();
+            Instance.UserOptions["partners_always_usable"].CurrentValue = SettingData["PartnersAlwaysUsable"].ToString().ToLower();
+
+            Instance.UserOptions["HiddenBlocksVisible"].CurrentValue = ((int)SettingData["HiddenBlockMode"] == 3).ToString().ToLower();
+
+            Dictionary<int, string> StartingAreas = new Dictionary<int, string>() { { 257, "Goomba Village" }, { 65796, "Toad Town" }, { 590080, "Dry Dry Outpost"  }, { 1114882, "Yoshi Village" } };
+
+            var StartingAreaOption = Instance.UserOptions["starting_area"];
+            int SettingStartingMap = (int)SettingData["StartingMap"];
+            string MappedTrackerArea = StartingAreas[SettingStartingMap];
+
+            StartingAreaOption.CurrentValue = MappedTrackerArea;
+
         }
     }
 }

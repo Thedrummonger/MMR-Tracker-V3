@@ -21,7 +21,7 @@ namespace MMR_Tracker_V3
             }
         }
 
-        public static bool ImportSpoilerLog(string[] spoilerLog, LogicObjects.TrackerInstance Instance)
+        public static bool ImportSpoilerLog(string[] spoilerLog, string OriginalFile, LogicObjects.TrackerInstance Instance)
         {
             switch (Instance.LogicFile.GameCode)
             {
@@ -32,6 +32,9 @@ namespace MMR_Tracker_V3
                     Instance.SpoilerLog = SpoilerLogTools.ReadSpoilerLog(spoilerLog);
                     SpoilerLogTools.ApplyMMRandoSettings(Instance, Instance.SpoilerLog);
                     SpoilerLogTools.ApplyMMRandoSpoilerLog(Instance, Instance.SpoilerLog);
+                    return true;
+                case "PMR":
+                    OtherGames.PMRTools.ReadSpoilerLog(spoilerLog, OriginalFile, Instance);
                     return true;
                 default:
                     return false;
