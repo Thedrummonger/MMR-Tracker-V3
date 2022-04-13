@@ -117,6 +117,7 @@ namespace MMR_Tracker_V3.OtherGames
 
             Dictionary<string, string> CondensedLogic = CondenseLogic(MasterData);//Condence the logic combining all duplicate entries
             AddRootEntrances(logicDictionary, CondensedLogic);//Add entrance Macros that detail starting area access
+            AddCustomLocations(logicDictionary, CondensedLogic);//Add entrance Macros that detail starting area access
             AddHardCodedMacros(CondensedLogic);//Add macros that are created by the randomizer at run time and don't exist in the logic
             MMRData.LogicFile logicFile = CreateLogicFile(CondensedLogic);//Create a logic file using the collected data
 
@@ -134,6 +135,11 @@ namespace MMR_Tracker_V3.OtherGames
             return TestInstance;
         }
 
+        private static void AddCustomLocations(LogicDictionaryData.LogicDictionary logicDictionary, Dictionary<string, string> condensedLogic)
+        {
+
+        }
+
         private static MMRData.LogicFile CreateLogicFile(Dictionary<string, string> CondensedLogic)
         {
             TrackerObjects.MMRData.LogicFile logicFile = new TrackerObjects.MMRData.LogicFile
@@ -146,7 +152,7 @@ namespace MMR_Tracker_V3.OtherGames
             {
                 TrackerObjects.MMRData.JsonFormatLogicItem logicItem = new TrackerObjects.MMRData.JsonFormatLogicItem();
                 logicItem.ConditionalItems = LogicStringParser.ConvertLogicStringToConditional(i.Value, true);
-                logicItem.ConditionalItems = DoPMRLogicEdits(logicItem.ConditionalItems);
+                logicItem.ConditionalItems = DoPMRLogicEdits(logicItem.ConditionalItems, i.Key);
                 logicCleaner.RemoveRedundantConditionals(logicItem);
                 logicCleaner.MakeCommonConditionalsRequirements(logicItem);
                 logicItem.Id = i.Key;
@@ -335,14 +341,20 @@ namespace MMR_Tracker_V3.OtherGames
 
         private static void AddHardCodedMacros(Dictionary<string, string> CondensedLogic)
         {
-
-
             //Add Hard Coded Macros
             CondensedLogic.Add("can_flip_panels", "boots, 1 | hammer, 2");
             CondensedLogic.Add("can_shake_trees", "Bombette | hammer, 0");
             CondensedLogic.Add("has_parakarry_3_letters", "letter, 3");
             CondensedLogic.Add("RF_HiddenBlocksVisible", "HiddenBlocksVisible == true");
             CondensedLogic.Add("RF_ToyboxOpen", "ToyboxOpen == true");
+            CondensedLogic.Add("CanUseGoombario", "partners_always_usable == true | Goombario | starting_partner_Goombario == true");
+            CondensedLogic.Add("CanUseKooper", "partners_always_usable == true | Kooper | starting_partner_Kooper == true");
+            CondensedLogic.Add("CanUseBombette", "partners_always_usable == true | Bombette | starting_partner_Bombette == true");
+            CondensedLogic.Add("CanUseParakarry", "partners_always_usable == true | Parakarry | starting_partner_Parakarry == true");
+            CondensedLogic.Add("CanUseWatt", "partners_always_usable == true | Watt | starting_partner_Watt == true");
+            CondensedLogic.Add("CanUseSushie", "partners_always_usable == true | Sushie | starting_partner_Sushie == true");
+            CondensedLogic.Add("CanUseLakilester", "partners_always_usable == true | Lakilester | starting_partner_Lakilester == true");
+            CondensedLogic.Add("CanUseBow", "partners_always_usable == true | Bow | starting_partner_Bow == true");
         }
 
         private static void AddVariables(LogicDictionaryData.LogicDictionary logicDictionary)
@@ -386,97 +398,75 @@ namespace MMR_Tracker_V3.OtherGames
 
         private static void Addoptions(LogicDictionaryData.LogicDictionary logicDictionary)
         {
-            //Add options
-            logicDictionary.Options.Add(new TrackerObjects.OptionData.TrackerOption
+            AddOption("starting_area", "Toad Town", "Starting Area", new string[] { "Goomba Village", "Toad Town", "Dry Dry Outpost", "Yoshi Village" });
+
+            AddToggleOption("BlueHouseOpen", "false", "Open Blue House", CreateSimpleReplacementOption("GF_MAC02_UnlockedHouse"));
+            AddToggleOption("FlowerGateOpen", "false", "Open Flower Gate", CreateSimpleReplacementOption("RF_Ch6_FlowerGateOpen"));
+            AddToggleOption("WhaleOpen", "false", "Open Whale", CreateSimpleReplacementOption("RF_CanRideWhale"));
+            AddToggleOption("ToyboxOpen", "false", "Open Toy Box");
+
+            AddToggleOption("HiddenBlocksVisible", "true", "Hidden Blocks Always Visible");
+
+            AddStartingPartnerOption("Goombario");
+            AddStartingPartnerOption("Kooper");
+            AddStartingPartnerOption("Bombette");
+            AddStartingPartnerOption("Parakarry");
+            AddStartingPartnerOption("Watt");
+            AddStartingPartnerOption("Sushie");
+            AddStartingPartnerOption("Lakilester");
+            AddStartingPartnerOption("Bow");
+            AddToggleOption("partners_always_usable", "false", "Partners Always useable");
+
+
+            void AddStartingPartnerOption(string PartnerName) { AddToggleOption($"starting_partner_{PartnerName}", "false", $"Start With {PartnerName}"); }
+
+            void AddOption(string ID, string CurrentValue, string Name, string[] Values)
             {
-                ID = "starting_area",
-                CurrentValue = "Toad Town",
-                DisplayName = "Starting Area",
-                Values = new Dictionary<string, TrackerObjects.OptionData.actions>()
+                var option = new TrackerObjects.OptionData.TrackerOption
                 {
-                    { "Goomba Village", new TrackerObjects.OptionData.actions()},
-                    { "Toad Town", new TrackerObjects.OptionData.actions()},
-                    { "Dry Dry Outpost", new TrackerObjects.OptionData.actions()},
-                    { "Yoshi Village", new TrackerObjects.OptionData.actions()},
-                }
-            });
-            logicDictionary.Options.Add(new TrackerObjects.OptionData.TrackerOption
+                    ID = ID,
+                    CurrentValue = CurrentValue,
+                    DisplayName = Name,
+                    Values = Values.ToDictionary(x => x, x => new TrackerObjects.OptionData.actions())
+                };
+                logicDictionary.Options.Add(option);
+            }
+
+            void AddToggleOption(string ID, string CurrentValue, string Name, TrackerObjects.OptionData.actions trueAction = null)
             {
-                ID = "BlueHouseOpen",
-                CurrentValue = "false",
-                DisplayName = "Open Blue House",
-                Values = new Dictionary<string, TrackerObjects.OptionData.actions>()
+                var option = new TrackerObjects.OptionData.TrackerOption
                 {
-                    { "true",
-                        new TrackerObjects.OptionData.actions() {
-                            LogicReplacements = new TrackerObjects.OptionData.LogicReplacement[] {
-                                new TrackerObjects.OptionData.LogicReplacement { ReplacementList = new Dictionary<string, string>{{ "GF_MAC02_UnlockedHouse", "true"}} }
-                            }
-                        }
-                    },
-                    { "false", new TrackerObjects.OptionData.actions()}
-                }
-            });
-            logicDictionary.Options.Add(new TrackerObjects.OptionData.TrackerOption
+                    ID = ID,
+                    CurrentValue = CurrentValue,
+                    DisplayName = Name,
+                    Values = new Dictionary<string, TrackerObjects.OptionData.actions>()
+                    {
+                        { "true", trueAction is null ? new TrackerObjects.OptionData.actions() : trueAction},
+                        { "false", new TrackerObjects.OptionData.actions()}
+                    }
+                };
+                logicDictionary.Options.Add(option);
+            }
+
+            OptionData.actions CreateSimpleReplacementOption(string Replace, string with = "true")
             {
-                ID = "FlowerGateOpen",
-                CurrentValue = "false",
-                DisplayName = "Open Flower Gate",
-                Values = new Dictionary<string, TrackerObjects.OptionData.actions>()
-                {
-                    { "true",
-                        new TrackerObjects.OptionData.actions() {
-                            LogicReplacements = new TrackerObjects.OptionData.LogicReplacement[] {
-                                new TrackerObjects.OptionData.LogicReplacement { ReplacementList = new Dictionary<string, string>{{ "RF_Ch6_FlowerGateOpen", "true"}} }
-                            }
-                        }
-                    },
-                    { "false", new TrackerObjects.OptionData.actions()}
-                }
-            });
-            logicDictionary.Options.Add(new TrackerObjects.OptionData.TrackerOption
-            {
-                ID = "WhaleOpen",
-                CurrentValue = "false",
-                DisplayName = "Open Whale",
-                Values = new Dictionary<string, TrackerObjects.OptionData.actions>()
-                {
-                    { "true",
-                        new TrackerObjects.OptionData.actions() {
-                            LogicReplacements = new TrackerObjects.OptionData.LogicReplacement[] {
-                                new TrackerObjects.OptionData.LogicReplacement { ReplacementList = new Dictionary<string, string>{{ "RF_CanRideWhale", "true"}} }
-                            }
-                        }
-                    },
-                    { "false", new TrackerObjects.OptionData.actions()}
-                }
-            });
-            logicDictionary.Options.Add(new TrackerObjects.OptionData.TrackerOption
-            {
-                ID = "ToyboxOpen",
-                CurrentValue = "false",
-                DisplayName = "Open Toy Box",
-                Values = new Dictionary<string, TrackerObjects.OptionData.actions>()
-                {
-                    { "true", new TrackerObjects.OptionData.actions()},
-                    { "false", new TrackerObjects.OptionData.actions()}
-                }
-            });
-            logicDictionary.Options.Add(new TrackerObjects.OptionData.TrackerOption
-            {
-                ID = "HiddenBlocksVisible",
-                CurrentValue = "true",
-                DisplayName = "Hidden Blocks Visible",
-                Values = new Dictionary<string, TrackerObjects.OptionData.actions>()
-                {
-                    { "true", new TrackerObjects.OptionData.actions()},
-                    //{ "false", new TrackerObjects.OptionData.actions()}
-                }
-            });
+                return new TrackerObjects.OptionData.actions() { LogicReplacements = new TrackerObjects.OptionData.LogicReplacement[] { new TrackerObjects.OptionData.LogicReplacement { ReplacementList = new Dictionary<string, string> { { Replace, "true" } } } } };
+            }
         }
 
-        public static List<List<string>> DoPMRLogicEdits(List<List<string>> Conditionals)
+        public static List<List<string>> DoPMRLogicEdits(List<List<string>> Conditionals, string CheckID)
         {
+            Dictionary<string, string> PartnerOverrides = new Dictionary<string, string>{
+                { "Goombario", "CanUseGoombario" },
+                { "Kooper", "CanUseKooper" },
+                { "Bombette", "CanUseBombette" },
+                { "Parakarry", "CanUseParakarry" },
+                { "Watt", "CanUseWatt" },
+                { "Sushie", "CanUseSushie" },
+                { "Lakilester", "CanUseLakilester" },
+                { "Bow", "CanUseBow" },
+            };
+
             var NewCond = Conditionals.Select(x => x.Select(y => y));
             //Fix Star Spirit Requirements
             NewCond = NewCond.Select(x => x.Select(y => y.StartsWith("starspirits_") ? y.Replace("_", ", ") : y));
@@ -486,6 +476,8 @@ namespace MMR_Tracker_V3.OtherGames
             NewCond = NewCond.Select(x => x.Select(y => y.StartsWith("boots_") ? y.Replace("_", ", ") : y));
             //Fix Hammer Requirements
             NewCond = NewCond.Select(x => x.Select(y => y.StartsWith("hammer_") ? y.Replace("_", ", ") : y));
+            //Override Partner Entries to fix Issues
+            NewCond = NewCond.Select(x => x.Select(y => PartnerOverrides.ContainsKey(y) && CheckID != PartnerOverrides[y] ? PartnerOverrides[y] : y));
             return NewCond.Select(x => x.ToList()).ToList();
         }
 
@@ -511,6 +503,14 @@ namespace MMR_Tracker_V3.OtherGames
                 NewLogicSets.Add(set);
             }
             return string.Join(" & ", NewLogicSets.Where(x => x.Any()).Select(x => "(" + string.Join(" | ", x) + ")"));
+        }
+
+        public static void GetSettingObjectFromSeed(string SpoilerLogPath)
+        {
+            string seed = Path.GetFileNameWithoutExtension(SpoilerLogPath).Replace("_spoiler", "");
+            string URL = $"https://paper-mario-randomizer-server.ue.r.appspot.com/randomizer_settings/3225145890/{seed}";
+            System.Net.WebClient wc = new System.Net.WebClient();
+            string SettingData = wc.DownloadString(URL);
         }
     }
 }
