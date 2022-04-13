@@ -240,7 +240,7 @@ namespace MMR_Tracker_V3.OtherGames
                     ID = x.ID,
                     Area = x.Area,
                     Name = x.Name,
-                    OriginalItem = "Coin",
+                    OriginalItem = null,
                     SpoilerData = new TrackerObjects.MMRData.SpoilerlogReference { SpoilerLogNames = x.SpoilerNames.ToArray() },
                     ValidItemTypes = new string[] { "item" }
                 }).ToList(),
@@ -255,7 +255,7 @@ namespace MMR_Tracker_V3.OtherGames
                 ItemList = MasterData.Items.Select(x => new TrackerObjects.LogicDictionaryData.DictionaryItemEntries()
                 {
                     ID = x.ID,
-                    MaxAmountInWorld = x.ID == "Coin" ? -1 : 1,
+                    MaxAmountInWorld = -1,
                     Name = x.Name,
                     ItemTypes = x.Types.ToArray(),
                     SpoilerData = new TrackerObjects.MMRData.SpoilerlogReference { SpoilerLogNames = x.SpoilerNames.ToArray() },
