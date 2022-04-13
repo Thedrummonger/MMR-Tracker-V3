@@ -288,15 +288,19 @@ namespace MMR_Tracker_V3.OtherGames
                 {
                     foreach (var Macro in i.pseudoitems)
                     {
-                        PMRMacro NewMacro = new PMRMacro();
-                        NewMacro.ID = Macro;
-                        if (NewMacro.ID == "EQUIPMENT_Hammer_Progressive" && i.from.map.StartsWith("ISK")) { NewMacro.ID += "_1"; }
-                        if (NewMacro.ID == "EQUIPMENT_Hammer_Progressive" && i.from.map.StartsWith("KZN")) { NewMacro.ID += "_2"; }
-                        if (NewMacro.ID == "EQUIPMENT_Boots_Progressive" && i.from.map.StartsWith("OBK")) { NewMacro.ID += "_1"; }
-                        if (NewMacro.ID == "EQUIPMENT_Boots_Progressive" && i.from.map.StartsWith("TIK")) { NewMacro.ID += "_2"; }
-                        NewMacro.Area = i.from.map;
-                        NewMacro.Logic = LogicLine;
-                        MasterData.Macros.Add(NewMacro);
+                        if (Macro.StartsWith("StarPiece_")) { addChuckQuizmoCheck(Macro, i, LogicLine); }
+                        else
+                        {
+                            PMRMacro NewMacro = new PMRMacro();
+                            NewMacro.ID = Macro;
+                            if (NewMacro.ID == "EQUIPMENT_Hammer_Progressive" && i.from.map.StartsWith("ISK")) { NewMacro.ID += "_1"; }
+                            if (NewMacro.ID == "EQUIPMENT_Hammer_Progressive" && i.from.map.StartsWith("KZN")) { NewMacro.ID += "_2"; }
+                            if (NewMacro.ID == "EQUIPMENT_Boots_Progressive" && i.from.map.StartsWith("OBK")) { NewMacro.ID += "_1"; }
+                            if (NewMacro.ID == "EQUIPMENT_Boots_Progressive" && i.from.map.StartsWith("TIK")) { NewMacro.ID += "_2"; }
+                            NewMacro.Area = i.from.map;
+                            NewMacro.Logic = LogicLine;
+                            MasterData.Macros.Add(NewMacro);
+                        }
                     }
                 }
 
@@ -318,6 +322,18 @@ namespace MMR_Tracker_V3.OtherGames
                     NewExit.Logic = LogicLine;
                     MasterData.MacroExits.Add(NewExit);
                 }
+            }
+
+            void addChuckQuizmoCheck(string Name, PaperMarioLogicJSON i, string LogicLine)
+            {
+                var Sets = Name.Split("_");
+                PMRItemLocation NewItemLocation = new PMRItemLocation();
+                NewItemLocation.ID = Name;
+                NewItemLocation.Name = $"{MasterReference.verbose_sub_area_names[i.from.map]} - Chuck Quizmo Quiz {Sets[2]}";
+                NewItemLocation.Logic = LogicLine;
+                NewItemLocation.Area = $"{i.from.GetGeneralArea(MasterReference)}";
+                NewItemLocation.SpoilerNames.Add($"{MasterReference.verbose_sub_area_names[i.from.map]} - {i.to.id}");
+                MasterData.itemLocations.Add(NewItemLocation);
             }
         }
 
@@ -386,13 +402,6 @@ namespace MMR_Tracker_V3.OtherGames
                 Name = "letter",
                 Static = true,
                 Value = new List<string> { "Letter01", "Letter02", "Letter03", "Letter04", "Letter05", "Letter06", "Letter07", "Letter08", "Letter09", "Letter10", "Letter11", "Letter12", "Letter13", "Letter14", "Letter15", "Letter16", "Letter17", "Letter18", "Letter19", "Letter20", "Letter21", "Letter22", "Letter23", "Letter24", "Letter25" }
-            });
-            logicDictionary.Variables.Add(new TrackerObjects.LogicDictionaryData.TrackerVariable
-            {
-                ID = "starpieces",
-                Name = "starpieces",
-                Static = true,
-                Value = new List<string> { "StarPiece00", "StarPiece01", "StarPiece02", "StarPiece03", "StarPiece04", "StarPiece05", "StarPiece06", "StarPiece07", "StarPiece08", "StarPiece09", "StarPiece0A", "StarPiece0B", "StarPiece0C", "StarPiece0D", "StarPiece0E", "StarPiece0F", "StarPiece10", "StarPiece11", "StarPiece12", "StarPiece13", "StarPiece14", "StarPiece15", "StarPiece16", "StarPiece17", "StarPiece18", "StarPiece19", "StarPiece1A", "StarPiece1B", "StarPiece1C", "StarPiece1D", "StarPiece1E", "StarPiece1F", "StarPiece20", "StarPiece21", "StarPiece22", "StarPiece23", "StarPiece24", "StarPiece25", "StarPiece26", "StarPiece27", "StarPiece28", "StarPiece29", "StarPiece2A", "StarPiece2B", "StarPiece2C", "StarPiece2D", "StarPiece2E", "StarPiece2F", "StarPiece30", "StarPiece31", "StarPiece32", "StarPiece33", "StarPiece34", "StarPiece35", "StarPiece36", "StarPiece37", "StarPiece38", "StarPiece39", "StarPiece3A", "StarPiece3B", "StarPiece3C", "StarPiece3D", "StarPiece3E", "StarPiece3F", "StarPiece40", "StarPiece41", "StarPiece42", "StarPiece43", "StarPiece44", "StarPiece45", "ThreeStarPieces0", "ThreeStarPieces1", "ThreeStarPieces2", "ThreeStarPieces3", "ThreeStarPieces4" }
             });
         }
 
@@ -471,7 +480,7 @@ namespace MMR_Tracker_V3.OtherGames
             //Fix Star Spirit Requirements
             NewCond = NewCond.Select(x => x.Select(y => y.StartsWith("starspirits_") ? y.Replace("_", ", ") : y));
             //Fix Star Piece Requirements
-            NewCond = NewCond.Select(x => x.Select(y => y.StartsWith("starpieces_") ? y.Replace("_", ", ") : y));
+            NewCond = NewCond.Select(x => x.Select(y => y.StartsWith("starpieces_") ? y.Replace("_", ", ").Replace("starpieces", "StarPiece") : y));
             //Fix Boots Requirements
             NewCond = NewCond.Select(x => x.Select(y => y.StartsWith("boots_") ? y.Replace("_", ", ") : y));
             //Fix Hammer Requirements
