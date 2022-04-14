@@ -142,11 +142,11 @@ namespace MMR_Tracker_V3
 
             if (ChangesMade && checkState != MiscData.CheckState.Marked)
             {
-                LogicCalculation.CalculateLogic(Instance, checkState);
+                LogicCalculation.CalculateLogic(Instance, LogicCalculation.LogicUnlockData, checkState);
                 Utility.TimeCodeExecution(FunctionTime, "---TOTAL Calculating Logic", 1);
                 if (checkState == MiscData.CheckState.Checked && Instance.StaticOptions.AutoCheckCoupleEntrances && !Instance.StaticOptions.DecoupleEntrances && LogicCalculation.CheckEntrancePair(Instance))
                 {
-                    LogicCalculation.CalculateLogic(Instance, checkState);
+                    LogicCalculation.CalculateLogic(Instance, LogicCalculation.LogicUnlockData, checkState);
                     Utility.TimeCodeExecution(FunctionTime, "Chcking Entrance Pairs", 1);
                 }
             }

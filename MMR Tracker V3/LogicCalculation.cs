@@ -17,7 +17,8 @@ namespace MMR_Tracker_V3
     {
         static bool LogItem = false;
         static List<int> AverageTime = new List<int>();
-        public static Dictionary<string, List<string>> UnlockData = new Dictionary<string, List<string>>();
+        public static Dictionary<string, List<string>> LogicUnlockData = new Dictionary<string, List<string>>();
+        private static Dictionary<string, MMRData.JsonFormatLogicItem> LogicMap = new Dictionary<string, MMRData.JsonFormatLogicItem>();
 
         public static bool RequirementsMet(List<string> Requirements, TrackerInstance instance, string ID = null, Dictionary<string, List<string>> UnlockData = null)
         {
@@ -89,8 +90,7 @@ namespace MMR_Tracker_V3
             return instance.EntrancePool.AreaList.ContainsKey(Area) && instance.EntrancePool.AreaList[Area].ExitsAcessibleFrom > 0;
         }
 
-        private static Dictionary<string, MMRData.JsonFormatLogicItem> LogicMap = new Dictionary<string, MMRData.JsonFormatLogicItem>();
-        private static void FillLogicMap(TrackerInstance instance, MiscData.CheckState checkAction)
+        public static void FillLogicMap(TrackerInstance instance, MiscData.CheckState checkAction, Dictionary<string, MMRData.JsonFormatLogicItem> LogicMap)
         {
             foreach (var i in instance.MacroPool) 
             { 
@@ -121,26 +121,28 @@ namespace MMR_Tracker_V3
                 }
             }
         }
-        public static void CalculateLogic(TrackerInstance instance, MiscData.CheckState checkAction = CheckState.Unchecked, bool log = false)
+        public static void CalculateLogic(TrackerInstance instance, Dictionary<string, List<string>> UnlockData, MiscData.CheckState checkAction = CheckState.Unchecked)
         {
-            UnlockData.Clear();
             Debug.WriteLine("Logic Calculation ----------------------");
             Stopwatch LogicTime = new Stopwatch();
             Utility.TimeCodeExecution(LogicTime);
 
-            FillLogicMap(instance, checkAction);
+            FillLogicMap(instance, checkAction, LogicMap);
             Utility.TimeCodeExecution(LogicTime, "Getting Logic", 1);
 
-            if (checkAction == CheckState.Unchecked) { ResetAutoObtainedItems(instance); }
+            if (checkAction == CheckState.Unchecked) 
+            { 
+                ResetAutoObtainedItems(instance);
+            }
             
             Utility.TimeCodeExecution(LogicTime, "Resetting Auto checked Items", 1);
             int Itterations = 0;
             while (true)
             {
-                bool EntranceChanges = CalculateEntranceMacros(instance, checkAction);
-                bool UnrandomizedItemChecked = CheckUrandomizedLocations(instance, checkAction);
-                bool UnrandomizedExitChecked = CheckUrandomizedExits(instance, checkAction);
-                bool MacroChanged = CalculateMacros(instance, checkAction);
+                bool EntranceChanges = CalculateEntranceMacros(instance, checkAction, UnlockData);
+                bool UnrandomizedItemChecked = CheckUrandomizedLocations(instance, checkAction, UnlockData);
+                bool UnrandomizedExitChecked = CheckUrandomizedExits(instance, checkAction, UnlockData);
+                bool MacroChanged = CalculateMacros(instance, checkAction, UnlockData);
                 Itterations++;
                  if (!MacroChanged && !EntranceChanges && !UnrandomizedItemChecked && !UnrandomizedExitChecked) { break; }
             }
@@ -179,7 +181,7 @@ namespace MMR_Tracker_V3
             Utility.TimeCodeExecution(LogicTime, "Calculating Hints", -1);
         }
 
-        private static bool CheckUrandomizedExits(TrackerInstance instance, MiscData.CheckState checkAction)
+        private static bool CheckUrandomizedExits(TrackerInstance instance, MiscData.CheckState checkAction, Dictionary<string, List<string>> UnlockData)
         {
             bool ItemStateChanged = false;
             foreach (var Area in instance.EntrancePool.AreaList)
@@ -231,7 +233,7 @@ namespace MMR_Tracker_V3
             }
         }
 
-        private static bool CalculateEntranceMacros(TrackerInstance instance, MiscData.CheckState checkAction)
+        private static bool CalculateEntranceMacros(TrackerInstance instance, MiscData.CheckState checkAction, Dictionary<string, List<string>> UnlockData)
         {
             bool MacroStateChanged = false; 
             foreach (var Area in instance.EntrancePool.AreaList)
@@ -266,7 +268,7 @@ namespace MMR_Tracker_V3
             return MacroStateChanged;
         }
 
-        private static bool CalculateMacros(TrackerInstance instance, MiscData.CheckState checkAction)
+        private static bool CalculateMacros(TrackerInstance instance, MiscData.CheckState checkAction, Dictionary<string, List<string>> UnlockData)
         {
             bool MacroStateChanged = false;
             foreach(var i in instance.MacroPool)
@@ -290,7 +292,7 @@ namespace MMR_Tracker_V3
             return MacroStateChanged;
         }
 
-        public static bool CheckUrandomizedLocations(TrackerInstance instance, MiscData.CheckState checkAction)
+        public static bool CheckUrandomizedLocations(TrackerInstance instance, MiscData.CheckState checkAction, Dictionary<string, List<string>> UnlockData)
         {
             bool ItemStateChanged = false;
             foreach (var i in instance.LocationPool)

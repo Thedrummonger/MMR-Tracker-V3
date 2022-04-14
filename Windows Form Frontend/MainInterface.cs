@@ -104,7 +104,7 @@ namespace Windows_Form_Frontend
             }
             Utility.TimeCodeExecution(TimeTotalItemSelect, "Undo/Redo Action", -1);
 
-            LogicCalculation.CalculateLogic(CurrentTrackerInstance);
+            LogicCalculation.CalculateLogic(CurrentTrackerInstance, LogicCalculation.LogicUnlockData);
             UpdateUI();
         }
 
@@ -161,7 +161,7 @@ namespace Windows_Form_Frontend
                 catch { MessageBox.Show("Save File Not Valid"); return; }
                 CurrentTrackerInstance = NewTrackerInstance;
                 References.CurrentSavePath = openFileDialog.FileName;
-                LogicCalculation.CalculateLogic(CurrentTrackerInstance);
+                LogicCalculation.CalculateLogic(CurrentTrackerInstance, LogicCalculation.LogicUnlockData);
                 UpdateUI();
                 UpdateDynamicUserOptions();
             }
@@ -181,7 +181,7 @@ namespace Windows_Form_Frontend
             }
             if (update)
             {
-                LogicCalculation.CalculateLogic(CurrentTrackerInstance);
+                LogicCalculation.CalculateLogic(CurrentTrackerInstance, LogicCalculation.LogicUnlockData);
                 UpdateUI();
             }
         }
@@ -193,7 +193,7 @@ namespace Windows_Form_Frontend
             editor.ShowDialog();
             if (editor.ChangesMade) { SaveTrackerState(CurrentState); }
 
-            LogicCalculation.CalculateLogic(CurrentTrackerInstance);
+            LogicCalculation.CalculateLogic(CurrentTrackerInstance, LogicCalculation.LogicUnlockData);
             UpdateUI();
         }
 
@@ -226,7 +226,7 @@ namespace Windows_Form_Frontend
                 SpoilerLogTools.RemoveSpoilerData(CurrentTrackerInstance);
                 CurrentTrackerInstance.SpoilerLog = null;
             }
-            LogicCalculation.CalculateLogic(CurrentTrackerInstance);
+            LogicCalculation.CalculateLogic(CurrentTrackerInstance, LogicCalculation.LogicUnlockData);
             UpdateUI();
         }
 
@@ -234,16 +234,22 @@ namespace Windows_Form_Frontend
 
         private void CodeTestingToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //MMR_Tracker_V3.OtherGames.OOTRTools.ReadEntranceRefFile(out string Logic, out string Dict);
+            //WinFormInstanceCreation.CreateWinFormInstance(Logic, Dict);
+            //UpdateUI();
+
             /*
-            MMR_Tracker_V3.OtherGames.OOTRTools.ReadEntranceRefFile(out string Logic, out string Dict);
-            WinFormInstanceCreation.CreateWinFormInstance(Logic, Dict);
-            UpdateUI();
-            */
             var Result = Testing.CodeTesting(CurrentTrackerInstance);
-
-
             WinFormInstanceCreation.CreateWinFormInstance(Result.LogicFile.ToString(), Result.LogicDictionary.ToString());
             UpdateUI();
+            */
+
+            PlaythroughGenerator playthroughObject = new PlaythroughGenerator(CurrentTrackerInstance);
+            playthroughObject.GeneratePlaythrough();
+
+            var Path = PlaythroughTools.GetPathFromRandomizedEntrance("Water Temple Lobby", playthroughObject, CurrentTrackerInstance);
+
+            Debug.WriteLine(JsonConvert.SerializeObject(Path, Testing._NewtonsoftJsonSerializerOptions));
 
         }
 
@@ -695,7 +701,7 @@ namespace Windows_Form_Frontend
             }
 
             //Show Unlock Data
-            if (LogicID is not null && LogicCalculation.UnlockData.ContainsKey(LogicID))
+            if (LogicID is not null && LogicCalculation.LogicUnlockData.ContainsKey(LogicID))
             {
                 ToolStripItem WhatUnlockedThis = contextMenuStrip.Items.Add("What Unlocked This");
                 WhatUnlockedThis.Click += (sender, e) => { ShowUnlockData(LogicID); };
@@ -785,14 +791,14 @@ namespace Windows_Form_Frontend
             VariableInputWindow PriceInput = new(PriceContainer, CurrentTrackerInstance);
             PriceInput.ShowDialog();
             Object.Price = (int)PriceContainer.First().Value;
-            LogicCalculation.CalculateLogic(CurrentTrackerInstance);
+            LogicCalculation.CalculateLogic(CurrentTrackerInstance, LogicCalculation.LogicUnlockData);
             UpdateUI();
         }
 
         private void ShowUnlockData(string iD)
         {
-            if (!LogicCalculation.UnlockData.ContainsKey(iD)) { return; }
-            var AdvancedUnlockData = PlaythroughTools.GetAdvancedUnlockData(iD, LogicCalculation.UnlockData, CurrentTrackerInstance);
+            if (!LogicCalculation.LogicUnlockData.ContainsKey(iD)) { return; }
+            var AdvancedUnlockData = PlaythroughTools.GetAdvancedUnlockData(iD, LogicCalculation.LogicUnlockData, CurrentTrackerInstance);
             MessageBox.Show(JsonConvert.SerializeObject(AdvancedUnlockData, Testing._NewtonsoftJsonSerializerOptions), $"{iD}");
         }
 

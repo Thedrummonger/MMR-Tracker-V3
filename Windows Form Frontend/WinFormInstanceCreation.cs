@@ -49,7 +49,7 @@ namespace Windows_Form_Frontend
             MainInterface.CurrentTrackerInstance = NewInstance;
 
             ApplyWinFormSpecificDat(NewInstance);
-            LogicCalculation.CalculateLogic(NewInstance);
+            LogicCalculation.CalculateLogic(NewInstance, LogicCalculation.LogicUnlockData);
             MainInterface.CurrentProgram.UpdateUI();
 
             return true;

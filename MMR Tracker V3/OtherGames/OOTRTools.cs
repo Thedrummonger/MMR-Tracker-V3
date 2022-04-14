@@ -376,8 +376,18 @@ namespace MMR_Tracker_V3.OtherGames
                 File.WriteAllText(@"D:\Testing\OOTRDict.json", OutDict);
                 File.WriteAllText(@"D:\Testing\OOTRLogic.json", OutLogic);
                 File.WriteAllText(@"D:\Testing\OOTRSaveFile.json", JsonConvert.SerializeObject(OOTRInstance, Testing._NewtonsoftJsonSerializerOptions));
+
             }
-            catch { }
+            catch
+            {
+                try
+                {
+                    File.WriteAllText(@"C:\Testing\OOTRDict.json", OutDict);
+                    File.WriteAllText(@"C:\Testing\OOTRLogic.json", OutLogic);
+                    File.WriteAllText(@"C:\Testing\OOTRSaveFile.json", JsonConvert.SerializeObject(OOTRInstance, Testing._NewtonsoftJsonSerializerOptions));
+                }
+                catch { }
+            }
             //return;
 
 
