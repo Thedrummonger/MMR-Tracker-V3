@@ -150,6 +150,7 @@ namespace MMR_Tracker_V3
             Utility.TimeCodeExecution(LogicTime, "Calculating Auto Checked Items", 1);
             foreach (var i in instance.LocationPool.Values.Where(x => !x.IsUnrandomized(1) && !x.IsJunk()))
             {
+                if (i.Available && checkAction == CheckState.Checked) { continue; }
                 var Logic = LogicMap[i.ID];
                 i.Available =
                     RequirementsMet(Logic.RequiredItems, instance, i.ID, UnlockData) &&
@@ -161,6 +162,7 @@ namespace MMR_Tracker_V3
             {
                 foreach (var i in Area.Value.LoadingZoneExits.Where(x => !x.Value.IsUnrandomized(1) && !x.Value.IsJunk()))
                 {
+                    if (i.Value.Available && checkAction == CheckState.Checked) { continue; }
                     var Logic = LogicMap[instance.GetLogicNameFromExit(i.Value)];
                     i.Value.Available =
                         AreaReached(Area.Key, instance) &&
@@ -172,6 +174,7 @@ namespace MMR_Tracker_V3
             Utility.TimeCodeExecution(LogicTime, "Caclulating Exits", 1);
             foreach (var i in instance.HintPool)
             {
+                if (i.Value.Available && checkAction == CheckState.Checked) { continue; }
                 var Logic = LogicMap[i.Key];
                 i.Value.Available =
                     RequirementsMet(Logic.RequiredItems, instance, i.Key, UnlockData) &&

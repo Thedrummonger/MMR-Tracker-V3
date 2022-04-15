@@ -17,6 +17,9 @@
     <Content Include="..\MMR Tracker V3\Recources\Dictionaries\OOTR V1.json" Link="Recources\Dictionaries\OOTR V1.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="..\MMR Tracker V3\Recources\Dictionaries\PMRDict.json" Link="Recources\Dictionaries\PMRDict.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="..\MMR Tracker V3\Recources\Presets\WebPresets.txt" Link="Recources\Presets\WebPresets.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -27,7 +30,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Recources\Dictionaries\" />
     <Folder Include="Recources\Presets\" />
     <Folder Include="V2Porting\" />
   </ItemGroup>

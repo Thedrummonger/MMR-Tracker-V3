@@ -244,11 +244,13 @@ namespace Windows_Form_Frontend
             UpdateUI();
             */
 
+            /*
+            */
             PlaythroughGenerator playthroughObject = new PlaythroughGenerator(CurrentTrackerInstance);
             playthroughObject.GeneratePlaythrough();
 
-            playthroughObject.FilterImportantPlaythrough("DefeatMajora");
-            
+            playthroughObject.FilterImportantPlaythrough("YOUWIN");
+
             int CurrentSphere = -1;
             foreach (var i in playthroughObject.Playthrough.Where(x => x.Value.Important))
             {
@@ -264,7 +266,7 @@ namespace Windows_Form_Frontend
                 Debug.WriteLine($"Area: {string.Join(", ", i.Value.advancedUnlockData.AreasAccessed)}");
                 Debug.WriteLine($"Using: {string.Join(", ", i.Value.advancedUnlockData.RealItemsUsed)}");
             }
-            
+
         }
 
         //ListBoxes
