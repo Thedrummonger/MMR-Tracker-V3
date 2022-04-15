@@ -239,13 +239,12 @@ namespace Windows_Form_Frontend
             //UpdateUI();
 
             /*
+            */
             var Result = Testing.CodeTesting(CurrentTrackerInstance);
             WinFormInstanceCreation.CreateWinFormInstance(Result.LogicFile.ToString(), Result.LogicDictionary.ToString());
             UpdateUI();
-            */
 
             /*
-            */
             PlaythroughGenerator playthroughObject = new PlaythroughGenerator(CurrentTrackerInstance);
             playthroughObject.GeneratePlaythrough();
 
@@ -266,6 +265,8 @@ namespace Windows_Form_Frontend
                 Debug.WriteLine($"Area: {string.Join(", ", i.Value.advancedUnlockData.AreasAccessed)}");
                 Debug.WriteLine($"Using: {string.Join(", ", i.Value.advancedUnlockData.RealItemsUsed)}");
             }
+            */
+
 
         }
 

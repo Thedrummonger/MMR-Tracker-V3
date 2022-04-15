@@ -52,7 +52,7 @@ namespace MMR_Tracker_V3
                     else { PathCopy.Add(CurrentArea, i.ID); }
                 }
                 var PathFound = FindPath(instance, i.DestinationExit.region, Goal, SeenAreasCopy.ToList(), PathCopy, false, IncludeMacroExits, StopAtFirstPath);
-                if (PathFound) { return StopAtFirstPath; }
+                if (PathFound) { return (StopAtFirstPath || FinalPath.Count() > 100); }
             }
             return false;
         }

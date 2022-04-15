@@ -164,6 +164,23 @@
       "LocationProxys": []
     },
     {
+      "ID": "GustyGulchWindmillExterior0STARSPIRIT_3",
+      "Name": "Windmill Exterior - Star Spirit",
+      "OriginalItem": "Skolar",
+      "Area": "Gusty Gulch",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "Windmill Exterior - Star Spirit"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
       "ID": "TubbasCastleTableClockRoom12F4OnTableItemA",
       "Name": "Table/Clock Room (1/2F) - On Table",
       "Area": "Tubba's Castle",
@@ -470,13 +487,14 @@
     {
       "ID": "StarPiece_DRO_1",
       "Name": "Outpost 1 - Chuck Quizmo Quiz 1",
+      "OriginalItem": "StarPiece",
       "Area": "Dry Dry Outpost",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Outpost 1 - 0"
+          "Outpost 1 - Chuck Quizmo Quiz 1"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -486,13 +504,14 @@
     {
       "ID": "StarPiece_DRO_2",
       "Name": "Outpost 1 - Chuck Quizmo Quiz 2",
+      "OriginalItem": "StarPiece",
       "Area": "Dry Dry Outpost",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Outpost 1 - 0"
+          "Outpost 1 - Chuck Quizmo Quiz 2"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -502,13 +521,14 @@
     {
       "ID": "StarPiece_DRO_3",
       "Name": "Outpost 1 - Chuck Quizmo Quiz 3",
+      "OriginalItem": "StarPiece",
       "Area": "Dry Dry Outpost",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Outpost 1 - 0"
+          "Outpost 1 - Chuck Quizmo Quiz 3"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -518,13 +538,14 @@
     {
       "ID": "StarPiece_DRO_4",
       "Name": "Outpost 1 - Chuck Quizmo Quiz 4",
+      "OriginalItem": "StarPiece",
       "Area": "Dry Dry Outpost",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Outpost 1 - 0"
+          "Outpost 1 - Chuck Quizmo Quiz 4"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -534,13 +555,14 @@
     {
       "ID": "StarPiece_DRO_5",
       "Name": "Outpost 1 - Chuck Quizmo Quiz 5",
+      "OriginalItem": "StarPiece",
       "Area": "Dry Dry Outpost",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Outpost 1 - 0"
+          "Outpost 1 - Chuck Quizmo Quiz 5"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -550,13 +572,14 @@
     {
       "ID": "StarPiece_DRO_6",
       "Name": "Outpost 1 - Chuck Quizmo Quiz 6",
+      "OriginalItem": "StarPiece",
       "Area": "Dry Dry Outpost",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Outpost 1 - 0"
+          "Outpost 1 - Chuck Quizmo Quiz 6"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -566,13 +589,14 @@
     {
       "ID": "StarPiece_DRO_7",
       "Name": "Outpost 1 - Chuck Quizmo Quiz 7",
+      "OriginalItem": "StarPiece",
       "Area": "Dry Dry Outpost",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Outpost 1 - 0"
+          "Outpost 1 - Chuck Quizmo Quiz 7"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -582,13 +606,14 @@
     {
       "ID": "StarPiece_DRO_8",
       "Name": "Outpost 1 - Chuck Quizmo Quiz 8",
+      "OriginalItem": "StarPiece",
       "Area": "Dry Dry Outpost",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Outpost 1 - 0"
+          "Outpost 1 - Chuck Quizmo Quiz 8"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -662,13 +687,14 @@
     {
       "ID": "StarPiece_DRO_1",
       "Name": "Outpost 2 - Chuck Quizmo Quiz 1",
+      "OriginalItem": "StarPiece",
       "Area": "Dry Dry Outpost",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Outpost 2 - 0"
+          "Outpost 2 - Chuck Quizmo Quiz 1"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -678,13 +704,14 @@
     {
       "ID": "StarPiece_DRO_2",
       "Name": "Outpost 2 - Chuck Quizmo Quiz 2",
+      "OriginalItem": "StarPiece",
       "Area": "Dry Dry Outpost",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Outpost 2 - 0"
+          "Outpost 2 - Chuck Quizmo Quiz 2"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -694,13 +721,14 @@
     {
       "ID": "StarPiece_DRO_3",
       "Name": "Outpost 2 - Chuck Quizmo Quiz 3",
+      "OriginalItem": "StarPiece",
       "Area": "Dry Dry Outpost",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Outpost 2 - 0"
+          "Outpost 2 - Chuck Quizmo Quiz 3"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -710,13 +738,14 @@
     {
       "ID": "StarPiece_DRO_4",
       "Name": "Outpost 2 - Chuck Quizmo Quiz 4",
+      "OriginalItem": "StarPiece",
       "Area": "Dry Dry Outpost",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Outpost 2 - 0"
+          "Outpost 2 - Chuck Quizmo Quiz 4"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -726,13 +755,14 @@
     {
       "ID": "StarPiece_DRO_5",
       "Name": "Outpost 2 - Chuck Quizmo Quiz 5",
+      "OriginalItem": "StarPiece",
       "Area": "Dry Dry Outpost",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Outpost 2 - 0"
+          "Outpost 2 - Chuck Quizmo Quiz 5"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -742,13 +772,14 @@
     {
       "ID": "StarPiece_DRO_6",
       "Name": "Outpost 2 - Chuck Quizmo Quiz 6",
+      "OriginalItem": "StarPiece",
       "Area": "Dry Dry Outpost",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Outpost 2 - 0"
+          "Outpost 2 - Chuck Quizmo Quiz 6"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -758,13 +789,14 @@
     {
       "ID": "StarPiece_DRO_7",
       "Name": "Outpost 2 - Chuck Quizmo Quiz 7",
+      "OriginalItem": "StarPiece",
       "Area": "Dry Dry Outpost",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Outpost 2 - 0"
+          "Outpost 2 - Chuck Quizmo Quiz 7"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -774,13 +806,14 @@
     {
       "ID": "StarPiece_DRO_8",
       "Name": "Outpost 2 - Chuck Quizmo Quiz 8",
+      "OriginalItem": "StarPiece",
       "Area": "Dry Dry Outpost",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Outpost 2 - 0"
+          "Outpost 2 - Chuck Quizmo Quiz 8"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -1380,6 +1413,23 @@
       "LocationProxys": []
     },
     {
+      "ID": "FlowerFieldsHuffNPuffRoom0STARSPIRIT_6",
+      "Name": "Huff N Puff Room - Star Spirit",
+      "OriginalItem": "Klevar",
+      "Area": "Flower Fields",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "Huff N Puff Room - Star Spirit"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
       "ID": "ShootingStarSummitShootingStarPath0HiddenPanelHiddenPanel",
       "Name": "Shooting Star Path - Hidden Panel",
       "Area": "Shooting Star Summit",
@@ -1526,13 +1576,14 @@
     {
       "ID": "StarPiece_HOS_1",
       "Name": "Star Haven - Chuck Quizmo Quiz 1",
+      "OriginalItem": "StarPiece",
       "Area": "Shooting Star Summit",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Star Haven - 0"
+          "Star Haven - Chuck Quizmo Quiz 1"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -1542,13 +1593,14 @@
     {
       "ID": "StarPiece_HOS_2",
       "Name": "Star Haven - Chuck Quizmo Quiz 2",
+      "OriginalItem": "StarPiece",
       "Area": "Shooting Star Summit",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Star Haven - 0"
+          "Star Haven - Chuck Quizmo Quiz 2"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -1558,13 +1610,14 @@
     {
       "ID": "StarPiece_HOS_3",
       "Name": "Star Haven - Chuck Quizmo Quiz 3",
+      "OriginalItem": "StarPiece",
       "Area": "Shooting Star Summit",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Star Haven - 0"
+          "Star Haven - Chuck Quizmo Quiz 3"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -1574,13 +1627,14 @@
     {
       "ID": "StarPiece_HOS_4",
       "Name": "Star Haven - Chuck Quizmo Quiz 4",
+      "OriginalItem": "StarPiece",
       "Area": "Shooting Star Summit",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Star Haven - 0"
+          "Star Haven - Chuck Quizmo Quiz 4"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -1590,13 +1644,14 @@
     {
       "ID": "StarPiece_HOS_5",
       "Name": "Star Haven - Chuck Quizmo Quiz 5",
+      "OriginalItem": "StarPiece",
       "Area": "Shooting Star Summit",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Star Haven - 0"
+          "Star Haven - Chuck Quizmo Quiz 5"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -1606,13 +1661,14 @@
     {
       "ID": "StarPiece_HOS_6",
       "Name": "Star Haven - Chuck Quizmo Quiz 6",
+      "OriginalItem": "StarPiece",
       "Area": "Shooting Star Summit",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Star Haven - 0"
+          "Star Haven - Chuck Quizmo Quiz 6"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -1622,13 +1678,14 @@
     {
       "ID": "StarPiece_HOS_7",
       "Name": "Star Haven - Chuck Quizmo Quiz 7",
+      "OriginalItem": "StarPiece",
       "Area": "Shooting Star Summit",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Star Haven - 0"
+          "Star Haven - Chuck Quizmo Quiz 7"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -1638,13 +1695,14 @@
     {
       "ID": "StarPiece_HOS_8",
       "Name": "Star Haven - Chuck Quizmo Quiz 8",
+      "OriginalItem": "StarPiece",
       "Area": "Shooting Star Summit",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Star Haven - 0"
+          "Star Haven - Chuck Quizmo Quiz 8"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -2052,6 +2110,23 @@
       "LocationProxys": []
     },
     {
+      "ID": "DryDryRuinsSuperHammerRoom0EQUIPMENT_Hammer_Progressive",
+      "Name": "Super Hammer Room - Progressive Hammer",
+      "OriginalItem": "ProgressiveHammer",
+      "Area": "Dry Dry Ruins",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "Super Hammer Room - 0"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
       "ID": "DryDryRuinsSandDrainageRoom32OnLedgeItemA",
       "Name": "Sand Drainage Room 3 - On Ledge",
       "Area": "Dry Dry Ruins",
@@ -2109,6 +2184,23 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "Diamond Stone Room - On Pedestal"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "DryDryRuinsTutankoopaRoom0STARSPIRIT_2",
+      "Name": "Tutankoopa Room - Star Spirit",
+      "OriginalItem": "Mamar",
+      "Area": "Dry Dry Ruins",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "Tutankoopa Room - Star Spirit"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -2902,13 +2994,14 @@
     {
       "ID": "StarPiece_JAN_1",
       "Name": "Village Cove - Chuck Quizmo Quiz 1",
+      "OriginalItem": "StarPiece",
       "Area": "Jade Jungle",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Village Cove - 0"
+          "Village Cove - Chuck Quizmo Quiz 1"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -2918,13 +3011,14 @@
     {
       "ID": "StarPiece_JAN_2",
       "Name": "Village Cove - Chuck Quizmo Quiz 2",
+      "OriginalItem": "StarPiece",
       "Area": "Jade Jungle",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Village Cove - 0"
+          "Village Cove - Chuck Quizmo Quiz 2"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -2934,13 +3028,14 @@
     {
       "ID": "StarPiece_JAN_3",
       "Name": "Village Cove - Chuck Quizmo Quiz 3",
+      "OriginalItem": "StarPiece",
       "Area": "Jade Jungle",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Village Cove - 0"
+          "Village Cove - Chuck Quizmo Quiz 3"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -2950,13 +3045,14 @@
     {
       "ID": "StarPiece_JAN_4",
       "Name": "Village Cove - Chuck Quizmo Quiz 4",
+      "OriginalItem": "StarPiece",
       "Area": "Jade Jungle",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Village Cove - 0"
+          "Village Cove - Chuck Quizmo Quiz 4"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -2966,13 +3062,14 @@
     {
       "ID": "StarPiece_JAN_5",
       "Name": "Village Cove - Chuck Quizmo Quiz 5",
+      "OriginalItem": "StarPiece",
       "Area": "Jade Jungle",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Village Cove - 0"
+          "Village Cove - Chuck Quizmo Quiz 5"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -2982,13 +3079,14 @@
     {
       "ID": "StarPiece_JAN_6",
       "Name": "Village Cove - Chuck Quizmo Quiz 6",
+      "OriginalItem": "StarPiece",
       "Area": "Jade Jungle",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Village Cove - 0"
+          "Village Cove - Chuck Quizmo Quiz 6"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -2998,13 +3096,14 @@
     {
       "ID": "StarPiece_JAN_7",
       "Name": "Village Cove - Chuck Quizmo Quiz 7",
+      "OriginalItem": "StarPiece",
       "Area": "Jade Jungle",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Village Cove - 0"
+          "Village Cove - Chuck Quizmo Quiz 7"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -3014,13 +3113,14 @@
     {
       "ID": "StarPiece_JAN_8",
       "Name": "Village Cove - Chuck Quizmo Quiz 8",
+      "OriginalItem": "StarPiece",
       "Area": "Jade Jungle",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Village Cove - 0"
+          "Village Cove - Chuck Quizmo Quiz 8"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -3174,13 +3274,14 @@
     {
       "ID": "StarPiece_JAN_1",
       "Name": "Village Buildings - Chuck Quizmo Quiz 1",
+      "OriginalItem": "StarPiece",
       "Area": "Jade Jungle",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Village Buildings - 0"
+          "Village Buildings - Chuck Quizmo Quiz 1"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -3190,13 +3291,14 @@
     {
       "ID": "StarPiece_JAN_2",
       "Name": "Village Buildings - Chuck Quizmo Quiz 2",
+      "OriginalItem": "StarPiece",
       "Area": "Jade Jungle",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Village Buildings - 0"
+          "Village Buildings - Chuck Quizmo Quiz 2"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -3206,13 +3308,14 @@
     {
       "ID": "StarPiece_JAN_3",
       "Name": "Village Buildings - Chuck Quizmo Quiz 3",
+      "OriginalItem": "StarPiece",
       "Area": "Jade Jungle",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Village Buildings - 0"
+          "Village Buildings - Chuck Quizmo Quiz 3"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -3222,13 +3325,14 @@
     {
       "ID": "StarPiece_JAN_4",
       "Name": "Village Buildings - Chuck Quizmo Quiz 4",
+      "OriginalItem": "StarPiece",
       "Area": "Jade Jungle",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Village Buildings - 0"
+          "Village Buildings - Chuck Quizmo Quiz 4"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -3238,13 +3342,14 @@
     {
       "ID": "StarPiece_JAN_5",
       "Name": "Village Buildings - Chuck Quizmo Quiz 5",
+      "OriginalItem": "StarPiece",
       "Area": "Jade Jungle",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Village Buildings - 0"
+          "Village Buildings - Chuck Quizmo Quiz 5"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -3254,13 +3359,14 @@
     {
       "ID": "StarPiece_JAN_6",
       "Name": "Village Buildings - Chuck Quizmo Quiz 6",
+      "OriginalItem": "StarPiece",
       "Area": "Jade Jungle",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Village Buildings - 0"
+          "Village Buildings - Chuck Quizmo Quiz 6"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -3270,13 +3376,14 @@
     {
       "ID": "StarPiece_JAN_7",
       "Name": "Village Buildings - Chuck Quizmo Quiz 7",
+      "OriginalItem": "StarPiece",
       "Area": "Jade Jungle",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Village Buildings - 0"
+          "Village Buildings - Chuck Quizmo Quiz 7"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -3286,13 +3393,14 @@
     {
       "ID": "StarPiece_JAN_8",
       "Name": "Village Buildings - Chuck Quizmo Quiz 8",
+      "OriginalItem": "StarPiece",
       "Area": "Jade Jungle",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Village Buildings - 0"
+          "Village Buildings - Chuck Quizmo Quiz 8"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -3380,6 +3488,23 @@
       "LocationProxys": []
     },
     {
+      "ID": "JadeJungleSEJungleQuakeHammer3RF_SavedYoshiKid",
+      "Name": "SE Jungle (Quake Hammer) - Yoshi Kid",
+      "OriginalItem": "YoshiKid",
+      "Area": "Jade Jungle",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SE Jungle (Quake Hammer) - Yoshi Kid"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
       "ID": "JadeJungleNEJungleRavenStatue0UnderwaterItemA",
       "Name": "NE Jungle (Raven Statue) - Underwater",
       "Area": "Jade Jungle",
@@ -3389,6 +3514,23 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "NE Jungle (Raven Statue) - Underwater"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "JadeJungleSmallJungleLedge0RF_SavedYoshiKid",
+      "Name": "Small Jungle Ledge - Yoshi Kid",
+      "OriginalItem": "YoshiKid",
+      "Area": "Jade Jungle",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "Small Jungle Ledge - Yoshi Kid"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -3453,6 +3595,23 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "SW Jungle (Super Block) - Hidden Block"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "JadeJungleSWJungleSuperBlock0RF_SavedYoshiKid",
+      "Name": "SW Jungle (Super Block) - Yoshi Kid",
+      "OriginalItem": "YoshiKid",
+      "Area": "Jade Jungle",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SW Jungle (Super Block) - Yoshi Kid"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -3533,6 +3692,40 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "Western Dead End - Underwater"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "JadeJungleWesternDeadEnd0RF_SavedYoshiKid",
+      "Name": "Western Dead End - Yoshi Kid",
+      "OriginalItem": "YoshiKid",
+      "Area": "Jade Jungle",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "Western Dead End - Yoshi Kid"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "JadeJungleRootCavern0RF_SavedYoshiKid",
+      "Name": "Root Cavern - Yoshi Kid",
+      "OriginalItem": "YoshiKid",
+      "Area": "Jade Jungle",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "Root Cavern - Yoshi Kid"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -3677,6 +3870,23 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "Path to the Volcano - Behind Tree"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "JadeJunglePathtotheVolcano0STARSPIRIT_5",
+      "Name": "Path to the Volcano - Star Spirit",
+      "OriginalItem": "Misstar",
+      "Area": "Jade Jungle",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "Path to the Volcano - Star Spirit"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -3846,13 +4056,14 @@
     {
       "ID": "StarPiece_KMR_1",
       "Name": "Goomba Village - Chuck Quizmo Quiz 1",
+      "OriginalItem": "StarPiece",
       "Area": "Goomba Region",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Goomba Village - 1"
+          "Goomba Village - Chuck Quizmo Quiz 1"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -3862,13 +4073,14 @@
     {
       "ID": "StarPiece_KMR_2",
       "Name": "Goomba Village - Chuck Quizmo Quiz 2",
+      "OriginalItem": "StarPiece",
       "Area": "Goomba Region",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Goomba Village - 1"
+          "Goomba Village - Chuck Quizmo Quiz 2"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -3878,13 +4090,14 @@
     {
       "ID": "StarPiece_KMR_3",
       "Name": "Goomba Village - Chuck Quizmo Quiz 3",
+      "OriginalItem": "StarPiece",
       "Area": "Goomba Region",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Goomba Village - 1"
+          "Goomba Village - Chuck Quizmo Quiz 3"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -3894,13 +4107,14 @@
     {
       "ID": "StarPiece_KMR_4",
       "Name": "Goomba Village - Chuck Quizmo Quiz 4",
+      "OriginalItem": "StarPiece",
       "Area": "Goomba Region",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Goomba Village - 1"
+          "Goomba Village - Chuck Quizmo Quiz 4"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -3910,13 +4124,14 @@
     {
       "ID": "StarPiece_KMR_5",
       "Name": "Goomba Village - Chuck Quizmo Quiz 5",
+      "OriginalItem": "StarPiece",
       "Area": "Goomba Region",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Goomba Village - 1"
+          "Goomba Village - Chuck Quizmo Quiz 5"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -3926,13 +4141,14 @@
     {
       "ID": "StarPiece_KMR_6",
       "Name": "Goomba Village - Chuck Quizmo Quiz 6",
+      "OriginalItem": "StarPiece",
       "Area": "Goomba Region",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Goomba Village - 1"
+          "Goomba Village - Chuck Quizmo Quiz 6"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -3942,13 +4158,14 @@
     {
       "ID": "StarPiece_KMR_7",
       "Name": "Goomba Village - Chuck Quizmo Quiz 7",
+      "OriginalItem": "StarPiece",
       "Area": "Goomba Region",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Goomba Village - 1"
+          "Goomba Village - Chuck Quizmo Quiz 7"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -3958,13 +4175,14 @@
     {
       "ID": "StarPiece_KMR_8",
       "Name": "Goomba Village - Chuck Quizmo Quiz 8",
+      "OriginalItem": "StarPiece",
       "Area": "Goomba Region",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Goomba Village - 1"
+          "Goomba Village - Chuck Quizmo Quiz 8"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -4902,6 +5120,23 @@
       "LocationProxys": []
     },
     {
+      "ID": "MtLavalavaUltraHammerRoom0EQUIPMENT_Hammer_Progressive",
+      "Name": "Ultra Hammer Room - Progressive Hammer",
+      "OriginalItem": "ProgressiveHammer",
+      "Area": "Mt Lavalava",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "Ultra Hammer Room - 0"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
       "ID": "MtLavalavaDizzyStompRoom0InChestChestA",
       "Name": "Dizzy Stomp Room - In Chest",
       "Area": "Mt Lavalava",
@@ -5496,13 +5731,14 @@
     {
       "ID": "StarPiece_MAC_1",
       "Name": "Plaza District - Chuck Quizmo Quiz 1",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Plaza District - 0"
+          "Plaza District - Chuck Quizmo Quiz 1"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -5512,13 +5748,14 @@
     {
       "ID": "StarPiece_MAC_2",
       "Name": "Plaza District - Chuck Quizmo Quiz 2",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Plaza District - 0"
+          "Plaza District - Chuck Quizmo Quiz 2"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -5528,13 +5765,14 @@
     {
       "ID": "StarPiece_MAC_3",
       "Name": "Plaza District - Chuck Quizmo Quiz 3",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Plaza District - 0"
+          "Plaza District - Chuck Quizmo Quiz 3"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -5544,13 +5782,14 @@
     {
       "ID": "StarPiece_MAC_4",
       "Name": "Plaza District - Chuck Quizmo Quiz 4",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Plaza District - 0"
+          "Plaza District - Chuck Quizmo Quiz 4"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -5560,13 +5799,14 @@
     {
       "ID": "StarPiece_MAC_5",
       "Name": "Plaza District - Chuck Quizmo Quiz 5",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Plaza District - 0"
+          "Plaza District - Chuck Quizmo Quiz 5"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -5576,13 +5816,14 @@
     {
       "ID": "StarPiece_MAC_6",
       "Name": "Plaza District - Chuck Quizmo Quiz 6",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Plaza District - 0"
+          "Plaza District - Chuck Quizmo Quiz 6"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -5592,13 +5833,14 @@
     {
       "ID": "StarPiece_MAC_7",
       "Name": "Plaza District - Chuck Quizmo Quiz 7",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Plaza District - 0"
+          "Plaza District - Chuck Quizmo Quiz 7"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -5608,13 +5850,14 @@
     {
       "ID": "StarPiece_MAC_8",
       "Name": "Plaza District - Chuck Quizmo Quiz 8",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Plaza District - 0"
+          "Plaza District - Chuck Quizmo Quiz 8"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -5624,13 +5867,14 @@
     {
       "ID": "StarPiece_MAC_9",
       "Name": "Plaza District - Chuck Quizmo Quiz 9",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Plaza District - 0"
+          "Plaza District - Chuck Quizmo Quiz 9"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -5640,13 +5884,14 @@
     {
       "ID": "StarPiece_MAC_10",
       "Name": "Plaza District - Chuck Quizmo Quiz 10",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Plaza District - 0"
+          "Plaza District - Chuck Quizmo Quiz 10"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -5656,13 +5901,14 @@
     {
       "ID": "StarPiece_MAC_11",
       "Name": "Plaza District - Chuck Quizmo Quiz 11",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Plaza District - 0"
+          "Plaza District - Chuck Quizmo Quiz 11"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -5672,13 +5918,14 @@
     {
       "ID": "StarPiece_MAC_12",
       "Name": "Plaza District - Chuck Quizmo Quiz 12",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Plaza District - 0"
+          "Plaza District - Chuck Quizmo Quiz 12"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -5688,13 +5935,14 @@
     {
       "ID": "StarPiece_MAC_13",
       "Name": "Plaza District - Chuck Quizmo Quiz 13",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Plaza District - 0"
+          "Plaza District - Chuck Quizmo Quiz 13"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -5704,13 +5952,14 @@
     {
       "ID": "StarPiece_MAC_14",
       "Name": "Plaza District - Chuck Quizmo Quiz 14",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Plaza District - 0"
+          "Plaza District - Chuck Quizmo Quiz 14"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -5720,13 +5969,14 @@
     {
       "ID": "StarPiece_MAC_15",
       "Name": "Plaza District - Chuck Quizmo Quiz 15",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Plaza District - 0"
+          "Plaza District - Chuck Quizmo Quiz 15"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -5736,13 +5986,14 @@
     {
       "ID": "StarPiece_MAC_16",
       "Name": "Plaza District - Chuck Quizmo Quiz 16",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Plaza District - 0"
+          "Plaza District - Chuck Quizmo Quiz 16"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6024,13 +6275,14 @@
     {
       "ID": "StarPiece_MAC_1",
       "Name": "Residental District - Chuck Quizmo Quiz 1",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Residental District - 0"
+          "Residental District - Chuck Quizmo Quiz 1"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6040,13 +6292,14 @@
     {
       "ID": "StarPiece_MAC_2",
       "Name": "Residental District - Chuck Quizmo Quiz 2",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Residental District - 0"
+          "Residental District - Chuck Quizmo Quiz 2"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6056,13 +6309,14 @@
     {
       "ID": "StarPiece_MAC_3",
       "Name": "Residental District - Chuck Quizmo Quiz 3",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Residental District - 0"
+          "Residental District - Chuck Quizmo Quiz 3"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6072,13 +6326,14 @@
     {
       "ID": "StarPiece_MAC_4",
       "Name": "Residental District - Chuck Quizmo Quiz 4",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Residental District - 0"
+          "Residental District - Chuck Quizmo Quiz 4"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6088,13 +6343,14 @@
     {
       "ID": "StarPiece_MAC_5",
       "Name": "Residental District - Chuck Quizmo Quiz 5",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Residental District - 0"
+          "Residental District - Chuck Quizmo Quiz 5"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6104,13 +6360,14 @@
     {
       "ID": "StarPiece_MAC_6",
       "Name": "Residental District - Chuck Quizmo Quiz 6",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Residental District - 0"
+          "Residental District - Chuck Quizmo Quiz 6"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6120,13 +6377,14 @@
     {
       "ID": "StarPiece_MAC_7",
       "Name": "Residental District - Chuck Quizmo Quiz 7",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Residental District - 0"
+          "Residental District - Chuck Quizmo Quiz 7"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6136,13 +6394,14 @@
     {
       "ID": "StarPiece_MAC_8",
       "Name": "Residental District - Chuck Quizmo Quiz 8",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Residental District - 0"
+          "Residental District - Chuck Quizmo Quiz 8"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6152,13 +6411,14 @@
     {
       "ID": "StarPiece_MAC_9",
       "Name": "Residental District - Chuck Quizmo Quiz 9",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Residental District - 0"
+          "Residental District - Chuck Quizmo Quiz 9"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6168,13 +6428,14 @@
     {
       "ID": "StarPiece_MAC_10",
       "Name": "Residental District - Chuck Quizmo Quiz 10",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Residental District - 0"
+          "Residental District - Chuck Quizmo Quiz 10"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6184,13 +6445,14 @@
     {
       "ID": "StarPiece_MAC_11",
       "Name": "Residental District - Chuck Quizmo Quiz 11",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Residental District - 0"
+          "Residental District - Chuck Quizmo Quiz 11"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6200,13 +6462,14 @@
     {
       "ID": "StarPiece_MAC_12",
       "Name": "Residental District - Chuck Quizmo Quiz 12",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Residental District - 0"
+          "Residental District - Chuck Quizmo Quiz 12"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6216,13 +6479,14 @@
     {
       "ID": "StarPiece_MAC_13",
       "Name": "Residental District - Chuck Quizmo Quiz 13",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Residental District - 0"
+          "Residental District - Chuck Quizmo Quiz 13"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6232,13 +6496,14 @@
     {
       "ID": "StarPiece_MAC_14",
       "Name": "Residental District - Chuck Quizmo Quiz 14",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Residental District - 0"
+          "Residental District - Chuck Quizmo Quiz 14"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6248,13 +6513,14 @@
     {
       "ID": "StarPiece_MAC_15",
       "Name": "Residental District - Chuck Quizmo Quiz 15",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Residental District - 0"
+          "Residental District - Chuck Quizmo Quiz 15"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6264,13 +6530,14 @@
     {
       "ID": "StarPiece_MAC_16",
       "Name": "Residental District - Chuck Quizmo Quiz 16",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Residental District - 0"
+          "Residental District - Chuck Quizmo Quiz 16"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6328,13 +6595,14 @@
     {
       "ID": "StarPiece_MAC_1",
       "Name": "Port District - Chuck Quizmo Quiz 1",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Port District - 0"
+          "Port District - Chuck Quizmo Quiz 1"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6344,13 +6612,14 @@
     {
       "ID": "StarPiece_MAC_2",
       "Name": "Port District - Chuck Quizmo Quiz 2",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Port District - 0"
+          "Port District - Chuck Quizmo Quiz 2"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6360,13 +6629,14 @@
     {
       "ID": "StarPiece_MAC_3",
       "Name": "Port District - Chuck Quizmo Quiz 3",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Port District - 0"
+          "Port District - Chuck Quizmo Quiz 3"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6376,13 +6646,14 @@
     {
       "ID": "StarPiece_MAC_4",
       "Name": "Port District - Chuck Quizmo Quiz 4",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Port District - 0"
+          "Port District - Chuck Quizmo Quiz 4"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6392,13 +6663,14 @@
     {
       "ID": "StarPiece_MAC_5",
       "Name": "Port District - Chuck Quizmo Quiz 5",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Port District - 0"
+          "Port District - Chuck Quizmo Quiz 5"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6408,13 +6680,14 @@
     {
       "ID": "StarPiece_MAC_6",
       "Name": "Port District - Chuck Quizmo Quiz 6",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Port District - 0"
+          "Port District - Chuck Quizmo Quiz 6"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6424,13 +6697,14 @@
     {
       "ID": "StarPiece_MAC_7",
       "Name": "Port District - Chuck Quizmo Quiz 7",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Port District - 0"
+          "Port District - Chuck Quizmo Quiz 7"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6440,13 +6714,14 @@
     {
       "ID": "StarPiece_MAC_8",
       "Name": "Port District - Chuck Quizmo Quiz 8",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Port District - 0"
+          "Port District - Chuck Quizmo Quiz 8"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6456,13 +6731,14 @@
     {
       "ID": "StarPiece_MAC_9",
       "Name": "Port District - Chuck Quizmo Quiz 9",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Port District - 0"
+          "Port District - Chuck Quizmo Quiz 9"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6472,13 +6748,14 @@
     {
       "ID": "StarPiece_MAC_10",
       "Name": "Port District - Chuck Quizmo Quiz 10",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Port District - 0"
+          "Port District - Chuck Quizmo Quiz 10"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6488,13 +6765,14 @@
     {
       "ID": "StarPiece_MAC_11",
       "Name": "Port District - Chuck Quizmo Quiz 11",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Port District - 0"
+          "Port District - Chuck Quizmo Quiz 11"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6504,13 +6782,14 @@
     {
       "ID": "StarPiece_MAC_12",
       "Name": "Port District - Chuck Quizmo Quiz 12",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Port District - 0"
+          "Port District - Chuck Quizmo Quiz 12"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6520,13 +6799,14 @@
     {
       "ID": "StarPiece_MAC_13",
       "Name": "Port District - Chuck Quizmo Quiz 13",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Port District - 0"
+          "Port District - Chuck Quizmo Quiz 13"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6536,13 +6816,14 @@
     {
       "ID": "StarPiece_MAC_14",
       "Name": "Port District - Chuck Quizmo Quiz 14",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Port District - 0"
+          "Port District - Chuck Quizmo Quiz 14"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6552,13 +6833,14 @@
     {
       "ID": "StarPiece_MAC_15",
       "Name": "Port District - Chuck Quizmo Quiz 15",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Port District - 0"
+          "Port District - Chuck Quizmo Quiz 15"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6568,13 +6850,14 @@
     {
       "ID": "StarPiece_MAC_16",
       "Name": "Port District - Chuck Quizmo Quiz 16",
+      "OriginalItem": "StarPiece",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Port District - 0"
+          "Port District - Chuck Quizmo Quiz 16"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6889,13 +7172,14 @@
     {
       "ID": "StarPiece_NOK_1",
       "Name": "Koopa Village 1 - Chuck Quizmo Quiz 1",
+      "OriginalItem": "StarPiece",
       "Area": "Koopa Region",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Koopa Village 1 - 0"
+          "Koopa Village 1 - Chuck Quizmo Quiz 1"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6905,13 +7189,14 @@
     {
       "ID": "StarPiece_NOK_2",
       "Name": "Koopa Village 1 - Chuck Quizmo Quiz 2",
+      "OriginalItem": "StarPiece",
       "Area": "Koopa Region",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Koopa Village 1 - 0"
+          "Koopa Village 1 - Chuck Quizmo Quiz 2"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6921,13 +7206,14 @@
     {
       "ID": "StarPiece_NOK_3",
       "Name": "Koopa Village 1 - Chuck Quizmo Quiz 3",
+      "OriginalItem": "StarPiece",
       "Area": "Koopa Region",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Koopa Village 1 - 0"
+          "Koopa Village 1 - Chuck Quizmo Quiz 3"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6937,13 +7223,14 @@
     {
       "ID": "StarPiece_NOK_4",
       "Name": "Koopa Village 1 - Chuck Quizmo Quiz 4",
+      "OriginalItem": "StarPiece",
       "Area": "Koopa Region",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Koopa Village 1 - 0"
+          "Koopa Village 1 - Chuck Quizmo Quiz 4"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6953,13 +7240,14 @@
     {
       "ID": "StarPiece_NOK_5",
       "Name": "Koopa Village 1 - Chuck Quizmo Quiz 5",
+      "OriginalItem": "StarPiece",
       "Area": "Koopa Region",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Koopa Village 1 - 0"
+          "Koopa Village 1 - Chuck Quizmo Quiz 5"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6969,13 +7257,14 @@
     {
       "ID": "StarPiece_NOK_6",
       "Name": "Koopa Village 1 - Chuck Quizmo Quiz 6",
+      "OriginalItem": "StarPiece",
       "Area": "Koopa Region",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Koopa Village 1 - 0"
+          "Koopa Village 1 - Chuck Quizmo Quiz 6"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -6985,13 +7274,14 @@
     {
       "ID": "StarPiece_NOK_7",
       "Name": "Koopa Village 1 - Chuck Quizmo Quiz 7",
+      "OriginalItem": "StarPiece",
       "Area": "Koopa Region",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Koopa Village 1 - 0"
+          "Koopa Village 1 - Chuck Quizmo Quiz 7"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -7001,13 +7291,14 @@
     {
       "ID": "StarPiece_NOK_8",
       "Name": "Koopa Village 1 - Chuck Quizmo Quiz 8",
+      "OriginalItem": "StarPiece",
       "Area": "Koopa Region",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Koopa Village 1 - 0"
+          "Koopa Village 1 - Chuck Quizmo Quiz 8"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -7433,13 +7724,14 @@
     {
       "ID": "StarPiece_NOK_1",
       "Name": "Koopa Village 2 - Chuck Quizmo Quiz 1",
+      "OriginalItem": "StarPiece",
       "Area": "Koopa Region",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Koopa Village 2 - 0"
+          "Koopa Village 2 - Chuck Quizmo Quiz 1"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -7449,13 +7741,14 @@
     {
       "ID": "StarPiece_NOK_2",
       "Name": "Koopa Village 2 - Chuck Quizmo Quiz 2",
+      "OriginalItem": "StarPiece",
       "Area": "Koopa Region",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Koopa Village 2 - 0"
+          "Koopa Village 2 - Chuck Quizmo Quiz 2"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -7465,13 +7758,14 @@
     {
       "ID": "StarPiece_NOK_3",
       "Name": "Koopa Village 2 - Chuck Quizmo Quiz 3",
+      "OriginalItem": "StarPiece",
       "Area": "Koopa Region",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Koopa Village 2 - 0"
+          "Koopa Village 2 - Chuck Quizmo Quiz 3"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -7481,13 +7775,14 @@
     {
       "ID": "StarPiece_NOK_4",
       "Name": "Koopa Village 2 - Chuck Quizmo Quiz 4",
+      "OriginalItem": "StarPiece",
       "Area": "Koopa Region",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Koopa Village 2 - 0"
+          "Koopa Village 2 - Chuck Quizmo Quiz 4"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -7497,13 +7792,14 @@
     {
       "ID": "StarPiece_NOK_5",
       "Name": "Koopa Village 2 - Chuck Quizmo Quiz 5",
+      "OriginalItem": "StarPiece",
       "Area": "Koopa Region",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Koopa Village 2 - 0"
+          "Koopa Village 2 - Chuck Quizmo Quiz 5"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -7513,13 +7809,14 @@
     {
       "ID": "StarPiece_NOK_6",
       "Name": "Koopa Village 2 - Chuck Quizmo Quiz 6",
+      "OriginalItem": "StarPiece",
       "Area": "Koopa Region",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Koopa Village 2 - 0"
+          "Koopa Village 2 - Chuck Quizmo Quiz 6"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -7529,13 +7826,14 @@
     {
       "ID": "StarPiece_NOK_7",
       "Name": "Koopa Village 2 - Chuck Quizmo Quiz 7",
+      "OriginalItem": "StarPiece",
       "Area": "Koopa Region",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Koopa Village 2 - 0"
+          "Koopa Village 2 - Chuck Quizmo Quiz 7"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -7545,13 +7843,14 @@
     {
       "ID": "StarPiece_NOK_8",
       "Name": "Koopa Village 2 - Chuck Quizmo Quiz 8",
+      "OriginalItem": "StarPiece",
       "Area": "Koopa Region",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Koopa Village 2 - 0"
+          "Koopa Village 2 - Chuck Quizmo Quiz 8"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -8032,6 +8331,23 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "Basement - Shop Item 6"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "BoosMansionSuperBootsRoom0EQUIPMENT_Boots_Progressive",
+      "Name": "Super Boots Room - Progressive Boots",
+      "OriginalItem": "ProgressiveBoots",
+      "Area": "Boo's Mansion",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "Super Boots Room - 0"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -9319,6 +9635,23 @@
       "LocationProxys": []
     },
     {
+      "ID": "ShyGuysToyboxREDGeneralGuyRoom0STARSPIRIT_4",
+      "Name": "RED General Guy Room - Star Spirit",
+      "OriginalItem": "Muskular",
+      "Area": "Shy Guy's Toybox",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "RED General Guy Room - Star Spirit"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
       "ID": "ShyGuysToyboxPNKTracksHallway0YellowBlockSouthYBlockA",
       "Name": "PNK Tracks Hallway - Yellow Block South",
       "Area": "Shy Guy's Toybox",
@@ -9575,6 +9908,23 @@
       "LocationProxys": []
     },
     {
+      "ID": "CrystalPalaceCrystalSummit0STARSPIRIT_7",
+      "Name": "Crystal Summit - Star Spirit",
+      "OriginalItem": "Kalmar",
+      "Area": "Crystal Palace",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "Crystal Summit - Star Spirit"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
       "ID": "CrystalPalaceTripleDipRoom2InChestChestA",
       "Name": "Triple Dip Room - In Chest",
       "Area": "Crystal Palace",
@@ -9641,13 +9991,14 @@
     {
       "ID": "StarPiece_SAM_1",
       "Name": "Shiver City Mayor Area - Chuck Quizmo Quiz 1",
+      "OriginalItem": "StarPiece",
       "Area": "Shiver Mountain",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Shiver City Mayor Area - 0"
+          "Shiver City Mayor Area - Chuck Quizmo Quiz 1"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -9657,13 +10008,14 @@
     {
       "ID": "StarPiece_SAM_2",
       "Name": "Shiver City Mayor Area - Chuck Quizmo Quiz 2",
+      "OriginalItem": "StarPiece",
       "Area": "Shiver Mountain",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Shiver City Mayor Area - 0"
+          "Shiver City Mayor Area - Chuck Quizmo Quiz 2"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -9673,13 +10025,14 @@
     {
       "ID": "StarPiece_SAM_3",
       "Name": "Shiver City Mayor Area - Chuck Quizmo Quiz 3",
+      "OriginalItem": "StarPiece",
       "Area": "Shiver Mountain",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Shiver City Mayor Area - 0"
+          "Shiver City Mayor Area - Chuck Quizmo Quiz 3"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -9689,13 +10042,14 @@
     {
       "ID": "StarPiece_SAM_4",
       "Name": "Shiver City Mayor Area - Chuck Quizmo Quiz 4",
+      "OriginalItem": "StarPiece",
       "Area": "Shiver Mountain",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Shiver City Mayor Area - 0"
+          "Shiver City Mayor Area - Chuck Quizmo Quiz 4"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -9705,13 +10059,14 @@
     {
       "ID": "StarPiece_SAM_5",
       "Name": "Shiver City Mayor Area - Chuck Quizmo Quiz 5",
+      "OriginalItem": "StarPiece",
       "Area": "Shiver Mountain",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Shiver City Mayor Area - 0"
+          "Shiver City Mayor Area - Chuck Quizmo Quiz 5"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -9721,13 +10076,14 @@
     {
       "ID": "StarPiece_SAM_6",
       "Name": "Shiver City Mayor Area - Chuck Quizmo Quiz 6",
+      "OriginalItem": "StarPiece",
       "Area": "Shiver Mountain",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Shiver City Mayor Area - 0"
+          "Shiver City Mayor Area - Chuck Quizmo Quiz 6"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -9737,13 +10093,14 @@
     {
       "ID": "StarPiece_SAM_7",
       "Name": "Shiver City Mayor Area - Chuck Quizmo Quiz 7",
+      "OriginalItem": "StarPiece",
       "Area": "Shiver Mountain",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Shiver City Mayor Area - 0"
+          "Shiver City Mayor Area - Chuck Quizmo Quiz 7"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -9753,13 +10110,14 @@
     {
       "ID": "StarPiece_SAM_8",
       "Name": "Shiver City Mayor Area - Chuck Quizmo Quiz 8",
+      "OriginalItem": "StarPiece",
       "Area": "Shiver Mountain",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Shiver City Mayor Area - 0"
+          "Shiver City Mayor Area - Chuck Quizmo Quiz 8"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -9961,13 +10319,14 @@
     {
       "ID": "StarPiece_SAM_1",
       "Name": "Shiver City Center - Chuck Quizmo Quiz 1",
+      "OriginalItem": "StarPiece",
       "Area": "Shiver Mountain",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Shiver City Center - 0"
+          "Shiver City Center - Chuck Quizmo Quiz 1"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -9977,13 +10336,14 @@
     {
       "ID": "StarPiece_SAM_2",
       "Name": "Shiver City Center - Chuck Quizmo Quiz 2",
+      "OriginalItem": "StarPiece",
       "Area": "Shiver Mountain",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Shiver City Center - 0"
+          "Shiver City Center - Chuck Quizmo Quiz 2"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -9993,13 +10353,14 @@
     {
       "ID": "StarPiece_SAM_3",
       "Name": "Shiver City Center - Chuck Quizmo Quiz 3",
+      "OriginalItem": "StarPiece",
       "Area": "Shiver Mountain",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Shiver City Center - 0"
+          "Shiver City Center - Chuck Quizmo Quiz 3"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -10009,13 +10370,14 @@
     {
       "ID": "StarPiece_SAM_4",
       "Name": "Shiver City Center - Chuck Quizmo Quiz 4",
+      "OriginalItem": "StarPiece",
       "Area": "Shiver Mountain",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Shiver City Center - 0"
+          "Shiver City Center - Chuck Quizmo Quiz 4"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -10025,13 +10387,14 @@
     {
       "ID": "StarPiece_SAM_5",
       "Name": "Shiver City Center - Chuck Quizmo Quiz 5",
+      "OriginalItem": "StarPiece",
       "Area": "Shiver Mountain",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Shiver City Center - 0"
+          "Shiver City Center - Chuck Quizmo Quiz 5"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -10041,13 +10404,14 @@
     {
       "ID": "StarPiece_SAM_6",
       "Name": "Shiver City Center - Chuck Quizmo Quiz 6",
+      "OriginalItem": "StarPiece",
       "Area": "Shiver Mountain",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Shiver City Center - 0"
+          "Shiver City Center - Chuck Quizmo Quiz 6"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -10057,13 +10421,14 @@
     {
       "ID": "StarPiece_SAM_7",
       "Name": "Shiver City Center - Chuck Quizmo Quiz 7",
+      "OriginalItem": "StarPiece",
       "Area": "Shiver Mountain",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Shiver City Center - 0"
+          "Shiver City Center - Chuck Quizmo Quiz 7"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -10073,13 +10438,14 @@
     {
       "ID": "StarPiece_SAM_8",
       "Name": "Shiver City Center - Chuck Quizmo Quiz 8",
+      "OriginalItem": "StarPiece",
       "Area": "Shiver Mountain",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Shiver City Center - 0"
+          "Shiver City Center - Chuck Quizmo Quiz 8"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -10313,13 +10679,14 @@
     {
       "ID": "StarPiece_SAM_1",
       "Name": "Shiver City Pond Area - Chuck Quizmo Quiz 1",
+      "OriginalItem": "StarPiece",
       "Area": "Shiver Mountain",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Shiver City Pond Area - 0"
+          "Shiver City Pond Area - Chuck Quizmo Quiz 1"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -10329,13 +10696,14 @@
     {
       "ID": "StarPiece_SAM_2",
       "Name": "Shiver City Pond Area - Chuck Quizmo Quiz 2",
+      "OriginalItem": "StarPiece",
       "Area": "Shiver Mountain",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Shiver City Pond Area - 0"
+          "Shiver City Pond Area - Chuck Quizmo Quiz 2"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -10345,13 +10713,14 @@
     {
       "ID": "StarPiece_SAM_3",
       "Name": "Shiver City Pond Area - Chuck Quizmo Quiz 3",
+      "OriginalItem": "StarPiece",
       "Area": "Shiver Mountain",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Shiver City Pond Area - 0"
+          "Shiver City Pond Area - Chuck Quizmo Quiz 3"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -10361,13 +10730,14 @@
     {
       "ID": "StarPiece_SAM_4",
       "Name": "Shiver City Pond Area - Chuck Quizmo Quiz 4",
+      "OriginalItem": "StarPiece",
       "Area": "Shiver Mountain",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Shiver City Pond Area - 0"
+          "Shiver City Pond Area - Chuck Quizmo Quiz 4"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -10377,13 +10747,14 @@
     {
       "ID": "StarPiece_SAM_5",
       "Name": "Shiver City Pond Area - Chuck Quizmo Quiz 5",
+      "OriginalItem": "StarPiece",
       "Area": "Shiver Mountain",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Shiver City Pond Area - 0"
+          "Shiver City Pond Area - Chuck Quizmo Quiz 5"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -10393,13 +10764,14 @@
     {
       "ID": "StarPiece_SAM_6",
       "Name": "Shiver City Pond Area - Chuck Quizmo Quiz 6",
+      "OriginalItem": "StarPiece",
       "Area": "Shiver Mountain",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Shiver City Pond Area - 0"
+          "Shiver City Pond Area - Chuck Quizmo Quiz 6"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -10409,13 +10781,14 @@
     {
       "ID": "StarPiece_SAM_7",
       "Name": "Shiver City Pond Area - Chuck Quizmo Quiz 7",
+      "OriginalItem": "StarPiece",
       "Area": "Shiver Mountain",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Shiver City Pond Area - 0"
+          "Shiver City Pond Area - Chuck Quizmo Quiz 7"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -10425,13 +10798,14 @@
     {
       "ID": "StarPiece_SAM_8",
       "Name": "Shiver City Pond Area - Chuck Quizmo Quiz 8",
+      "OriginalItem": "StarPiece",
       "Area": "Shiver Mountain",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Shiver City Pond Area - 0"
+          "Shiver City Pond Area - Chuck Quizmo Quiz 8"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -11447,6 +11821,23 @@
       "LocationProxys": []
     },
     {
+      "ID": "ToadTownTunnelsUltraBootsRoomB30EQUIPMENT_Boots_Progressive",
+      "Name": "Ultra Boots Room (B3) - Progressive Boots",
+      "OriginalItem": "ProgressiveBoots",
+      "Area": "Toad Town Tunnels",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "Ultra Boots Room (B3) - 0"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
       "ID": "KoopaBrosFortressFortressExterior3ChestBehindFortressChestA",
       "Name": "Fortress Exterior - Chest Behind Fortress",
       "Area": "Koopa Bros Fortress",
@@ -11607,6 +11998,23 @@
       "LocationProxys": []
     },
     {
+      "ID": "KoopaBrosFortressBossBattleRoom0STARSPIRIT_1",
+      "Name": "Boss Battle Room - Star Spirit",
+      "OriginalItem": "Eldstar",
+      "Area": "Koopa Bros Fortress",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "Boss Battle Room - Star Spirit"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
       "ID": "MtRuggedMtRugged20ParakarryLedgeItemA",
       "Name": "Mt Rugged 2 - Parakarry Ledge",
       "Area": "Mt Rugged",
@@ -11625,8 +12033,8 @@
   ],
   "ItemList": [
     {
-      "ID": "Jump",
-      "Name": "Jump",
+      "ID": "ProgressiveBoots",
+      "Name": "ProgressiveBoots",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -11635,15 +12043,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Jump"
+          "ProgressiveBoots"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
     {
-      "ID": "SpinJump",
-      "Name": "SpinJump",
+      "ID": "ProgressiveHammer",
+      "Name": "ProgressiveHammer",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -11652,75 +12060,7 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "SpinJump"
-        ],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "TornadoJump",
-      "Name": "TornadoJump",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item",
-        "KEYITEM"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "TornadoJump"
-        ],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "Hammer",
-      "Name": "Hammer",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item",
-        "KEYITEM"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "Hammer"
-        ],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "SuperHammer",
-      "Name": "SuperHammer",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item",
-        "KEYITEM"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SuperHammer"
-        ],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "UltraHammer",
-      "Name": "UltraHammer",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item",
-        "KEYITEM"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "UltraHammer"
+          "ProgressiveHammer"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -13600,6 +13940,142 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "GoldCredit"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "YoshiKid",
+      "Name": "YoshiKid",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item",
+        "KEYITEM"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "YoshiKid"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "Eldstar",
+      "Name": "Eldstar",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item",
+        "STARSPIRIT"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "Eldstar"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "Mamar",
+      "Name": "Mamar",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item",
+        "STARSPIRIT"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "Mamar"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "Skolar",
+      "Name": "Skolar",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item",
+        "STARSPIRIT"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "Skolar"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "Muskular",
+      "Name": "Muskular",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item",
+        "STARSPIRIT"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "Muskular"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "Misstar",
+      "Name": "Misstar",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item",
+        "STARSPIRIT"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "Misstar"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "Klevar",
+      "Name": "Klevar",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item",
+        "STARSPIRIT"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "Klevar"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "Kalmar",
+      "Name": "Kalmar",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item",
+        "STARSPIRIT"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "Kalmar"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -35100,31 +35576,13 @@
       "Name": "starspirits",
       "Static": true,
       "Value": [
-        "STARSPIRIT_1",
-        "STARSPIRIT_2",
-        "STARSPIRIT_3",
-        "STARSPIRIT_4",
-        "STARSPIRIT_5",
-        "STARSPIRIT_6",
-        "STARSPIRIT_7"
-      ]
-    },
-    {
-      "ID": "hammer",
-      "Name": "hammer",
-      "Static": true,
-      "Value": [
-        "EQUIPMENT_Hammer_Progressive_1",
-        "EQUIPMENT_Hammer_Progressive_2"
-      ]
-    },
-    {
-      "ID": "boots",
-      "Name": "boots",
-      "Static": true,
-      "Value": [
-        "EQUIPMENT_Boots_Progressive_1",
-        "EQUIPMENT_Boots_Progressive_2"
+        "Eldstar",
+        "Mamar",
+        "Skolar",
+        "Muskular",
+        "Misstar",
+        "Klevar",
+        "Kalmar"
       ]
     },
     {

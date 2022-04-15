@@ -76,6 +76,7 @@ namespace MMR_Tracker_V3.OtherGames
             public string Area;
             public string Logic;
             public string Name;
+            public string OriginalItem;
             public List<string> SpoilerNames = new List<string>();
         }
         public class PMRExit
@@ -103,7 +104,8 @@ namespace MMR_Tracker_V3.OtherGames
         public static LogicObjects.TrackerInstance ReadLogicJson()
         {
             System.Net.WebClient wc = new System.Net.WebClient();
-            PaperMarioMasterData MasterReference = JsonConvert.DeserializeObject<PaperMarioMasterData>(wc.DownloadString(@"https://raw.githubusercontent.com/Thedrummonger/MMR-Tracker-V3/master/MMR%20Tracker%20V3/OtherGames/PaperMarioRandoLogic.json"));
+            //PaperMarioMasterData MasterReference = JsonConvert.DeserializeObject<PaperMarioMasterData>(wc.DownloadString(@"https://raw.githubusercontent.com/Thedrummonger/MMR-Tracker-V3/master/MMR%20Tracker%20V3/OtherGames/PaperMarioRandoLogic.json"));
+            PaperMarioMasterData MasterReference = JsonConvert.DeserializeObject<PaperMarioMasterData>(File.ReadAllText(@"D:\Visual Studio Code Stuff\MMR-Tracker-V3\MMR Tracker V3\OtherGames\PaperMarioRandoLogic.json"));
 
             PMRData MasterData = new PMRData();
 
@@ -198,11 +200,9 @@ namespace MMR_Tracker_V3.OtherGames
                 if (CondensedLogic.ContainsKey(ID)) { CondensedLogic[ID] += $" | ({i.Logic})"; Debug.WriteLine($"Duplicate Exit Entry {ID}"); }
                 else { CondensedLogic[ID] = $"({i.Logic})"; }
             }
-            int YoshiKidCounter = 1;
             foreach (var i in MasterData.Macros)
             {
                 string ID = i.ID;
-                if (ID == "RF_SavedYoshiKid") { ID = $"RF_SavedYoshiKid_{YoshiKidCounter}"; YoshiKidCounter++; }
                 if (CondensedLogic.ContainsKey(ID)) { CondensedLogic[ID] += $" | ({i.Logic})"; Debug.WriteLine($"Duplicate Macro Entry {ID}"); }
                 else { CondensedLogic[ID] = $"({i.Logic})"; }
             }
@@ -263,7 +263,7 @@ namespace MMR_Tracker_V3.OtherGames
                     ID = x.ID,
                     Area = x.Area,
                     Name = x.Name,
-                    OriginalItem = null,
+                    OriginalItem = x.OriginalItem,
                     SpoilerData = new TrackerObjects.MMRData.SpoilerlogReference { SpoilerLogNames = x.SpoilerNames.ToArray() },
                     ValidItemTypes = new string[] { "item" }
                 }).ToList(),
@@ -300,6 +300,7 @@ namespace MMR_Tracker_V3.OtherGames
 
         private static void GetDataFromLogicFile(PaperMarioMasterData MasterReference, PMRData MasterData)
         {
+            string[] starSpirits = new string[] { "Eldstar", "Mamar", "Skolar", "Muskular", "Misstar", "Klevar", "Kalmar" };
             foreach (var i in MasterReference.Logic)
             {
                 if (i.to.id is string && i.from.id is string) { Debug.WriteLine($"WARNING I DIDNT EXPECT THIS {i.to.map}:{i.to.id} -> {i.from.map}:{i.from.id}"); }
@@ -314,14 +315,13 @@ namespace MMR_Tracker_V3.OtherGames
                     foreach (var Macro in i.pseudoitems)
                     {
                         if (Macro.StartsWith("StarPiece_")) { addChuckQuizmoCheck(Macro, i, LogicLine); }
+                        else if (Macro == "EQUIPMENT_Hammer_Progressive" || Macro == "EQUIPMENT_Boots_Progressive") { addProgressiveEquipmenetCheck(Macro, i, LogicLine); }
+                        else if (Macro == "RF_SavedYoshiKid") { addYoshiKidCheck(Macro, i, LogicLine); }
+                        else if (Macro.StartsWith("STARSPIRIT_")) { addStarSpiritCheck(Macro, i, LogicLine); }
                         else
                         {
                             PMRMacro NewMacro = new PMRMacro();
                             NewMacro.ID = Macro;
-                            if (NewMacro.ID == "EQUIPMENT_Hammer_Progressive" && i.from.map.StartsWith("ISK")) { NewMacro.ID += "_1"; }
-                            if (NewMacro.ID == "EQUIPMENT_Hammer_Progressive" && i.from.map.StartsWith("KZN")) { NewMacro.ID += "_2"; }
-                            if (NewMacro.ID == "EQUIPMENT_Boots_Progressive" && i.from.map.StartsWith("OBK")) { NewMacro.ID += "_1"; }
-                            if (NewMacro.ID == "EQUIPMENT_Boots_Progressive" && i.from.map.StartsWith("TIK")) { NewMacro.ID += "_2"; }
                             NewMacro.Area = i.from.map;
                             NewMacro.Logic = LogicLine;
                             MasterData.Macros.Add(NewMacro);
@@ -361,7 +361,46 @@ namespace MMR_Tracker_V3.OtherGames
                 NewItemLocation.Name = $"{MasterReference.verbose_sub_area_names[i.from.map]} - Chuck Quizmo Quiz {Sets[2]}";
                 NewItemLocation.Logic = LogicLine;
                 NewItemLocation.Area = $"{i.from.GetGeneralArea(MasterReference)}";
+                NewItemLocation.SpoilerNames.Add($"{MasterReference.verbose_sub_area_names[i.from.map]} - Chuck Quizmo Quiz {Sets[2]}");
+                NewItemLocation.OriginalItem = $"StarPiece";
+                MasterData.itemLocations.Add(NewItemLocation);
+            }
+
+            void addProgressiveEquipmenetCheck(string Name, PaperMarioLogicJSON i, string LogicLine)
+            {
+                var Sets = Name.Split("_");
+                PMRItemLocation NewItemLocation = new PMRItemLocation();
+                NewItemLocation.ID = CreateIDName($"{i.from.GetFullArea(MasterReference)}{Name}");
+                NewItemLocation.Name = $"{MasterReference.verbose_sub_area_names[i.from.map]} - {Sets[2]} {Sets[1]}";
+                NewItemLocation.Logic = LogicLine;
+                NewItemLocation.Area = $"{i.from.GetGeneralArea(MasterReference)}";
                 NewItemLocation.SpoilerNames.Add($"{MasterReference.verbose_sub_area_names[i.from.map]} - {i.to.id}");
+                NewItemLocation.OriginalItem = $"{Sets[2]}{Sets[1]}";
+                MasterData.itemLocations.Add(NewItemLocation);
+            }
+
+            void addYoshiKidCheck(string Name, PaperMarioLogicJSON i, string LogicLine)
+            {
+                PMRItemLocation NewItemLocation = new PMRItemLocation();
+                NewItemLocation.ID = CreateIDName($"{i.from.GetFullArea(MasterReference)}{Name}");
+                NewItemLocation.Name = $"{MasterReference.verbose_sub_area_names[i.from.map]} - Yoshi Kid";
+                NewItemLocation.Logic = LogicLine;
+                NewItemLocation.Area = $"{i.from.GetGeneralArea(MasterReference)}";
+                NewItemLocation.SpoilerNames.Add($"{MasterReference.verbose_sub_area_names[i.from.map]} - Yoshi Kid");
+                NewItemLocation.OriginalItem = $"YoshiKid";
+                MasterData.itemLocations.Add(NewItemLocation);
+            }
+
+            void addStarSpiritCheck(string Name, PaperMarioLogicJSON i, string LogicLine)
+            {
+                var Sets = Name.Split("_");
+                PMRItemLocation NewItemLocation = new PMRItemLocation();
+                NewItemLocation.ID = CreateIDName($"{i.from.GetFullArea(MasterReference)}{Name}");
+                NewItemLocation.Name = $"{MasterReference.verbose_sub_area_names[i.from.map]} - Star Spirit";
+                NewItemLocation.Logic = LogicLine;
+                NewItemLocation.Area = $"{i.from.GetGeneralArea(MasterReference)}";
+                NewItemLocation.SpoilerNames.Add($"{MasterReference.verbose_sub_area_names[i.from.map]} - Star Spirit");
+                NewItemLocation.OriginalItem = starSpirits[int.Parse(Sets[1]) - 1];
                 MasterData.itemLocations.Add(NewItemLocation);
             }
         }
@@ -396,9 +435,9 @@ namespace MMR_Tracker_V3.OtherGames
             CondensedLogic.Add("RF_CanGetSushie", "starting_partner_Sushie == false");
             CondensedLogic.Add("RF_CanGetWatt", "starting_partner_Watt == false");
             CondensedLogic.Add("RF_Missable", "true");
-            CondensedLogic.Add("saved_all_yoshikids", "RF_SavedYoshiKid_1 & RF_SavedYoshiKid_2 & RF_SavedYoshiKid_3 & RF_SavedYoshiKid_4 & RF_SavedYoshiKid_5");
-            CondensedLogic.Add("can_flip_panels", "boots, 1 | hammer, 2");
-            CondensedLogic.Add("can_shake_trees", "Bombette | hammer, 0");
+            CondensedLogic.Add("saved_all_yoshikids", "YoshiKid, 5");
+            CondensedLogic.Add("can_flip_panels", "ProgressiveBoots, 1 | ProgressiveHammer, 2");
+            CondensedLogic.Add("can_shake_trees", "Bombette | ProgressiveHammer, 0");
             CondensedLogic.Add("has_parakarry_3_letters", "letter, 3");
             CondensedLogic.Add("RF_HiddenBlocksVisible", "HiddenBlocksVisible == true");
             CondensedLogic.Add("RF_ToyboxOpen", "ToyboxOpen == true");
@@ -419,21 +458,7 @@ namespace MMR_Tracker_V3.OtherGames
                 ID = "starspirits",
                 Name = "starspirits",
                 Static = true,
-                Value = new List<string> { "STARSPIRIT_1", "STARSPIRIT_2", "STARSPIRIT_3", "STARSPIRIT_4", "STARSPIRIT_5", "STARSPIRIT_6", "STARSPIRIT_7" }
-            });
-            logicDictionary.Variables.Add(new TrackerObjects.LogicDictionaryData.TrackerVariable
-            {
-                ID = "hammer",
-                Name = "hammer",
-                Static = true,
-                Value = new List<string> { "EQUIPMENT_Hammer_Progressive_1", "EQUIPMENT_Hammer_Progressive_2" }
-            });
-            logicDictionary.Variables.Add(new TrackerObjects.LogicDictionaryData.TrackerVariable
-            {
-                ID = "boots",
-                Name = "boots",
-                Static = true,
-                Value = new List<string> { "EQUIPMENT_Boots_Progressive_1", "EQUIPMENT_Boots_Progressive_2" }
+                Value = new List<string> { "Eldstar", "Mamar", "Skolar", "Muskular", "Misstar", "Klevar", "Kalmar" }
             });
             logicDictionary.Variables.Add(new TrackerObjects.LogicDictionaryData.TrackerVariable
             {
@@ -521,9 +546,9 @@ namespace MMR_Tracker_V3.OtherGames
             //Fix Star Piece Requirements
             NewCond = NewCond.Select(x => x.Select(y => y.StartsWith("starpieces_") ? y.Replace("_", ", ").Replace("starpieces", "StarPiece") : y));
             //Fix Boots Requirements
-            NewCond = NewCond.Select(x => x.Select(y => y.StartsWith("boots_") ? y.Replace("_", ", ") : y));
+            NewCond = NewCond.Select(x => x.Select(y => y.StartsWith("boots_") ? y.Replace("boots_", "ProgressiveBoots, ") : y));
             //Fix Hammer Requirements
-            NewCond = NewCond.Select(x => x.Select(y => y.StartsWith("hammer_") ? y.Replace("_", ", ") : y));
+            NewCond = NewCond.Select(x => x.Select(y => y.StartsWith("hammer_") ? y.Replace("hammer_", "ProgressiveHammer, ") : y));
             //Override Partner Entries to fix Issues
             NewCond = NewCond.Select(x => x.Select(y => PartnerOverrides.ContainsKey(y) && CheckID != PartnerOverrides[y] ? PartnerOverrides[y] : y));
             return NewCond.Select(x => x.ToList()).ToList();
@@ -565,6 +590,7 @@ namespace MMR_Tracker_V3.OtherGames
 
         public static void ReadSpoilerLog(string[] spoilerLog, string OriginalFile, LogicObjects.TrackerInstance Instance)
         {
+            var SettingData = GetSettingObjectFromSeed(OriginalFile);
             List<string> AppliedLocations = new List<string>();
             foreach(var i in spoilerLog)
             {
@@ -587,17 +613,28 @@ namespace MMR_Tracker_V3.OtherGames
 
             foreach(var i in Instance.LocationPool)
             {
+                if (i.Key.EndsWith("HiddenPanel") && !SettingData["IncludePanels"])
+                {
+                    i.Value.SetRandomizedState(MiscData.RandomizedState.ForcedJunk, Instance);
+                }
+                else if ((i.Key.Contains("DojoChan") || i.Key.Contains("DojoLee") || i.Key.Contains("DojoMaster")) && !SettingData["IncludeDojo"])
+                {
+                    i.Value.SetRandomizedState(MiscData.RandomizedState.ForcedJunk, Instance);
+                }
 
                 if (i.Value.Randomizeditem.SpoilerLogGivenItem == null)
                 {
                     if (i.Key.StartsWith("StarPiece_")) { i.Value.Randomizeditem.SpoilerLogGivenItem = "StarPiece"; }
+                    else if (i.Key.EndsWith("EQUIPMENT_Hammer_Progressive") || i.Key.EndsWith("EQUIPMENT_Boots_Progressive") || i.Key.EndsWith("RF_SavedYoshiKid") || i.Key.Contains("STARSPIRIT_")) 
+                    { 
+                        i.Value.SetRandomizedState(MiscData.RandomizedState.UnrandomizedManual, Instance); 
+                    }
                     else
                     {
                         Debug.WriteLine($"{i.Value.GetDictEntry(Instance).Name} Did not have spoiler data");
                     }
                 }
             }
-            var SettingData = GetSettingObjectFromSeed(OriginalFile);
 
             Instance.UserOptions["BlueHouseOpen"].CurrentValue = SettingData["BlueHouseOpen"].ToString().ToLower();
             Instance.UserOptions["FlowerGateOpen"].CurrentValue = SettingData["FlowerGateOpen"].ToString().ToLower();
