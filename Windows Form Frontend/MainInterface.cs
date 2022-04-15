@@ -247,10 +247,24 @@ namespace Windows_Form_Frontend
             PlaythroughGenerator playthroughObject = new PlaythroughGenerator(CurrentTrackerInstance);
             playthroughObject.GeneratePlaythrough();
 
-            var Path = PlaythroughTools.GetPathFromRandomizedEntrance("Water Temple Lobby", playthroughObject, CurrentTrackerInstance);
-
-            Debug.WriteLine(JsonConvert.SerializeObject(Path, Testing._NewtonsoftJsonSerializerOptions));
-
+            playthroughObject.FilterImportantPlaythrough("DefeatMajora");
+            
+            int CurrentSphere = -1;
+            foreach (var i in playthroughObject.Playthrough.Where(x => x.Value.Important))
+            {
+                if (i.Value.sphere != CurrentSphere)
+                {
+                    Debug.WriteLine("=============================================");
+                    Debug.WriteLine($"Sphere {i.Value.sphere}");
+                    CurrentSphere = i.Value.sphere;
+                }
+                Debug.WriteLine("---------------------------------------------");
+                Debug.WriteLine($"Check: {i.Key}");
+                Debug.WriteLine($"Obtain: {i.Value.ItemObtained}");
+                Debug.WriteLine($"Area: {string.Join(", ", i.Value.advancedUnlockData.AreasAccessed)}");
+                Debug.WriteLine($"Using: {string.Join(", ", i.Value.advancedUnlockData.RealItemsUsed)}");
+            }
+            
         }
 
         //ListBoxes

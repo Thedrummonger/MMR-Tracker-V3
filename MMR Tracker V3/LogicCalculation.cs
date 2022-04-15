@@ -130,8 +130,8 @@ namespace MMR_Tracker_V3
             FillLogicMap(instance, checkAction, LogicMap);
             Utility.TimeCodeExecution(LogicTime, "Getting Logic", 1);
 
-            if (checkAction == CheckState.Unchecked) 
-            { 
+            if (checkAction == CheckState.Unchecked)
+            {
                 ResetAutoObtainedItems(instance);
             }
             
@@ -194,7 +194,7 @@ namespace MMR_Tracker_V3
                         AreaReached(Area.Key, instance) &&
                         RequirementsMet(Logic.RequiredItems, instance, $"{i.Value.ParentAreaID} X {i.Value.ID}", UnlockData) &&
                         ConditionalsMet(Logic.ConditionalItems, instance, $"{i.Value.ParentAreaID} X {i.Value.ID}", UnlockData);
-                    if (!i.Value.Available && UnlockData.ContainsKey($"{i.Value.ParentAreaID} X {i.Value.ID}")) { UnlockData.Remove($"{i.Value.ParentAreaID} X {i.Value.ID}"); }
+                    if (!Available && UnlockData.ContainsKey($"{i.Value.ParentAreaID} X {i.Value.ID}")) { UnlockData.Remove($"{i.Value.ParentAreaID} X {i.Value.ID}"); }
                     bool ShouldBeChecked = Available && i.Value.CheckState != CheckState.Checked;
                     bool ShouldBeUnChecked = !Available && i.Value.CheckState == CheckState.Checked;
                     if (ShouldBeChecked || ShouldBeUnChecked)
@@ -215,6 +215,15 @@ namespace MMR_Tracker_V3
             foreach (var Area in instance.EntrancePool.AreaList)
             {
                 foreach (var i in Area.Value.MacroExits)
+                {
+                    if (i.Value.CheckState == CheckState.Checked)
+                    {
+                        i.Value.CheckState = CheckState.Unchecked;
+                        var Destination = instance.EntrancePool.AreaList[i.Value.ID];
+                        Destination.ExitsAcessibleFrom--;
+                    }
+                }
+                foreach (var i in Area.Value.LoadingZoneExits.Where(x => x.Value.IsUnrandomized(1)))
                 {
                     if (i.Value.CheckState == CheckState.Checked)
                     {

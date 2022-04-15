@@ -18539,7 +18539,8 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Pictobox"
+          "Pictobox",
+          "Pictograph Box"
         ],
         "GossipHintNames": [
           "a witch"
@@ -18677,7 +18678,8 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Bottle with Red Potion"
+          "Bottle with Red Potion",
+          "Bottle of Red Potion"
         ],
         "GossipHintNames": [
           "the sleeping witch"
@@ -18694,7 +18696,8 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Bottle with Milk"
+          "Bottle with Milk",
+          "Milk Bottle"
         ],
         "GossipHintNames": [
           "a good deed",
@@ -18712,7 +18715,8 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Bottle with Gold Dust"
+          "Bottle with Gold Dust",
+          "Bottle of Gold Dust"
         ],
         "GossipHintNames": [
           "a sporting event"
@@ -18763,7 +18767,8 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Bottle with Chateau Romani"
+          "Bottle with Chateau Romani",
+          "Bottle of Chateau Romani"
         ],
         "GossipHintNames": [
           "an important lady"
