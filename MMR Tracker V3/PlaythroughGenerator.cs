@@ -115,7 +115,7 @@ namespace MMR_Tracker_V3
             }
             Utility.TimeCodeExecution(stopwatch, "Generate Playthough", -1);
             GetRealItemData();
-            File.WriteAllText(@"D:\Testing\Playtrhough.txt", Newtonsoft.Json.JsonConvert.SerializeObject(Playthrough, Testing._NewtonsoftJsonSerializerOptions));
+            //File.WriteAllText(@"D:\Testing\Playtrhough.txt", Newtonsoft.Json.JsonConvert.SerializeObject(Playthrough, Testing._NewtonsoftJsonSerializerOptions));
         }
 
         public void FilterImportantPlaythrough(string WinID)
