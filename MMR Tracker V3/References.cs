@@ -32,6 +32,30 @@ namespace MMR_Tracker_V3
         {
             public static readonly string BaseAppdataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "MMRTracker");
             public static readonly string OptionFile = Path.Combine(BaseAppdataPath, "options.txt");
+            public static readonly string DevFile = Path.Combine(BaseAppdataPath, "devpc.ini");
+        }
+        public static class TestingPaths
+        {
+            public static Dictionary<string, string> GetDevINI() 
+            { 
+                if (!File.Exists(WindowsPaths.DevFile)) { return null; }
+                Dictionary<string, string> DevFile = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(WindowsPaths.DevFile));
+                return DevFile;
+            }
+            public static string GetDevTestingPath()
+            {
+                var DevINI = GetDevINI();
+                if (DevINI == null) { return null; }
+                if (!DevINI.ContainsKey("TestingFolder")) { return null; }
+                return DevINI["TestingFolder"];
+            }
+            public static string GetDevCodePath()
+            {
+                var DevINI = GetDevINI();
+                if (DevINI == null) { return null; }
+                if (!DevINI.ContainsKey("TrackerCodePath")) { return null; }
+                return DevINI["TrackerCodePath"];
+            }
         }
     }
 }

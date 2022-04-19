@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="OtherGames\PaperMarioRandoLogic.json">
+    <None Update="OtherGames\PaperMarioRando\PaperMarioRandoLogic.json">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
     <None Update="Recources\Presets\WebPresets.txt">

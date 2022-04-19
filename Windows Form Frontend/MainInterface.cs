@@ -49,8 +49,10 @@ namespace Windows_Form_Frontend
                 Directory.CreateDirectory(References.WindowsPaths.BaseAppdataPath);
             }
 
-            Testing.ISDebugging = ((Control.ModifierKeys != Keys.Control) && Debugger.IsAttached);
-            Testing.ViewAsUserMode = ((Control.ModifierKeys == Keys.Control) && Debugger.IsAttached);
+            bool isDevPC = File.Exists(References.WindowsPaths.DevFile);
+            Testing.ISDebugging  = (!Debugger.IsAttached && isDevPC && (Control.ModifierKeys == Keys.Control)) || (Debugger.IsAttached && (Control.ModifierKeys != Keys.Control));
+
+            Testing.ViewAsUserMode = ((Control.ModifierKeys == Keys.Alt) && Testing.ISDebugging);
 
             UpdateUI();
             WinFormInstanceCreation.ApplyUserPretLogic();
@@ -234,39 +236,7 @@ namespace Windows_Form_Frontend
 
         private void CodeTestingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //MMR_Tracker_V3.OtherGames.OOTRTools.ReadEntranceRefFile(out string Logic, out string Dict);
-            //WinFormInstanceCreation.CreateWinFormInstance(Logic, Dict);
-            //UpdateUI();
-
-            /*
-            */
-            var Result = Testing.CodeTesting(CurrentTrackerInstance);
-            WinFormInstanceCreation.CreateWinFormInstance(Result.LogicFile.ToString(), Result.LogicDictionary.ToString());
-            UpdateUI();
-
-            /*
-            PlaythroughGenerator playthroughObject = new PlaythroughGenerator(CurrentTrackerInstance);
-            playthroughObject.GeneratePlaythrough();
-
-            playthroughObject.FilterImportantPlaythrough("YOUWIN");
-
-            int CurrentSphere = -1;
-            foreach (var i in playthroughObject.Playthrough.Where(x => x.Value.Important))
-            {
-                if (i.Value.sphere != CurrentSphere)
-                {
-                    Debug.WriteLine("=============================================");
-                    Debug.WriteLine($"Sphere {i.Value.sphere}");
-                    CurrentSphere = i.Value.sphere;
-                }
-                Debug.WriteLine("---------------------------------------------");
-                Debug.WriteLine($"Check: {i.Key}");
-                Debug.WriteLine($"Obtain: {i.Value.ItemObtained}");
-                Debug.WriteLine($"Area: {string.Join(", ", i.Value.advancedUnlockData.AreasAccessed)}");
-                Debug.WriteLine($"Using: {string.Join(", ", i.Value.advancedUnlockData.RealItemsUsed)}");
-            }
-            */
-
+            PMRToolsV2.CreatePMRdata();
 
         }
 

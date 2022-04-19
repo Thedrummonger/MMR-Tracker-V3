@@ -654,4 +654,102 @@ namespace MMR_Tracker_V3.OtherGames
 
         }
     }
+
+    public static class PMRToolsV2
+    {
+        public class PaperMarioMasterData
+        {
+            public List<PaperMarioLogicJSON> Logic;
+            public Dictionary<string, string> verbose_area_names;
+            public Dictionary<string, string> verbose_sub_area_names;
+            public Dictionary<string, Dictionary<string, string>> verbose_item_locations;
+            public Dictionary<string, string> items;
+            public Dictionary<string, string> verbose_item_names;
+        }
+
+        public class PaperMarioLogicJSON
+        {
+            public PMRLogicArea from;
+            public PMRLogicArea to;
+            public List<dynamic> reqs;
+            public List<string> pseudoitems;
+        }
+        public class PMRLogicArea
+        {
+            public string map;
+            public dynamic id;
+            public String GetFullArea(PaperMarioMasterData MasterData, bool ID = true)
+            {
+                var dat = map.Split("_");
+                string area = MasterData.verbose_area_names[dat[0]];
+                string subArea = MasterData.verbose_sub_area_names[map];
+                area = Regex.Replace(area, "[^a-zA-Z0-9 _.]+", "", RegexOptions.Compiled);
+                subArea = Regex.Replace(subArea, "[^a-zA-Z0-9 _.]+", "", RegexOptions.Compiled);
+                string FinalArea = $"{area} - {subArea}";
+                if (ID) { FinalArea += $" - {id}"; }
+                return FinalArea;
+            }
+            public String GetGeneralArea(PaperMarioMasterData MasterData)
+            {
+                var dat = map.Split("_");
+                string area = MasterData.verbose_area_names[dat[0]];
+                return area;
+
+            }
+        }
+
+        public class PMRData
+        {
+            public List<PMRItemLocation> itemLocations = new List<PMRItemLocation>();
+            public List<PMRExit> RealExits = new List<PMRExit>();
+            public List<PMRExit> MacroExits = new List<PMRExit>();
+            public List<PMRArea> Areas = new List<PMRArea>();
+            public List<PMRMacro> Macros = new List<PMRMacro>();
+            public List<PMRItemData> Items = new List<PMRItemData>();
+        }
+        public class PMRItemData
+        {
+            public string ID;
+            public string Name;
+            public List<string> Types = new List<string> { "item" };
+            public List<string> SpoilerNames = new List<string>();
+        }
+        public class PMRItemLocation
+        {
+            public string ID;
+            public string Area;
+            public string Logic;
+            public string Name;
+            public string OriginalItem;
+            public List<string> SpoilerNames = new List<string>();
+        }
+        public class PMRExit
+        {
+            public string ParentAreaID;
+            public string ID;
+            public string Logic;
+        }
+        public class PMRMacro
+        {
+            public string ID;
+            public string Area;
+            public string Logic;
+        }
+        public class PMRArea
+        {
+            public string ID;
+        }
+
+        public static string CreateIDName(string Text)
+        {
+            return Regex.Replace(Text, "[^a-zA-Z0-9_.]+", "", RegexOptions.Compiled);
+        }
+
+        public static void CreatePMRdata()
+        {
+            string PaperMarioDataFile = Path.Combine(References.TestingPaths.GetDevCodePath(), "MMR Tracker V3", "OtherGames", "PaperMarioRando", "PaperMarioRandoLogic.json");
+
+            PaperMarioMasterData RefFileObject = JsonConvert.DeserializeObject<PaperMarioMasterData>(File.ReadAllText(PaperMarioDataFile));
+        }
+    }
 }
