@@ -41626,6 +41626,7 @@
     "KMR_02": {
       "GiftA": "Goompa Koopa Koot Favor",
       "GiftB": "Goompa Gift",
+      "GiftC": "Goombaria Dolly Reward",
       "ItemA": "On The Balcony",
       "Tree1_Drop1A": "Goomnut Tree",
       "Partner": "Goombario Partner"
@@ -41636,15 +41637,15 @@
       "ItemC": "Floating Coin 3",
       "ItemD": "Floating Coin 4",
       "ItemE": "Upper Ledge",
-      "ItemF": "In Tree",
+      "Tree1_Drop1A": "In Tree",
       "HiddenPanel": "Hidden Panel",
       "YBlockA": "Block On Ground",
       "HiddenYBlockA": "Above Stone Block"
     },
-    "KMR_04": { "ItemA": "In Tree" },
+    "KMR_04": { "Tree3_Drop1A": "In Tree" },
     "KMR_05": {
       "ItemA": "On Ledge",
-      "ItemB": "In Tree"
+      "Tree1_Drop1A": "In Tree"
     },
     "KMR_06": {
       "ItemA": "On the Sign",
@@ -41664,9 +41665,9 @@
       "YBlockA": "Hidden Yellow Block"
     },
     "KMR_20": { "GiftA": "Luigi Koopa Koot Favor" },
-
     "MAC_00": {
       "ItemA": "Sushie Island",
+      "GiftA": "Russ T. Dictionary Reward",
       "HiddenPanel": "Hidden Panel",
       "ShopItemA": "Shop Item 1",
       "ShopItemB": "Shop Item 2",
@@ -41683,6 +41684,7 @@
     "MAC_01": {
       "ItemA": "Merlon House Stomping",
       "GiftA": "Rowf's Calculator Reward",
+      "GiftB": "Postmaster MailBag Reward",
       "Tree1_Drop1A": "In Tree",
       "ShopBadgeA": "Rowf's Shop Set 1",
       "ShopBadgeB": "Rowf's Shop Set 1",
@@ -41729,7 +41731,6 @@
       "GiftB": "Poet Thanks For Melody",
       "HiddenPanel": "Hidden Panel"
     },
-
     "TIK_02": { "ChestA": "Blooper Fight Reward" },
     "TIK_03": {
       "YBlockA": "Yellow Block Center",
@@ -41754,7 +41755,7 @@
       "GiftH": "Rip Cheato Offer 8",
       "GiftI": "Rip Cheato Offer 9",
       "GiftJ": "Rip Cheato Offer 10",
-      "GiftK": "Rip Cheato Infinite Offer"
+      "GiftK": "Rip Cheato Offer 11"
     },
     "TIK_18": { "HiddenYBlockA": "Hidden Block" },
     "TIK_20": { "YBlockA": "Yellow Block" },
@@ -41776,14 +41777,12 @@
       "YBlockA": "Yellow Block Left",
       "YBlockB": "Yellow Block Right"
     },
-
     "KKJ_16": {
       "ItemA": "Upper Level",
       "ItemB": "Between Bookshelves"
     },
     "KKJ_17": { "ItemA": "On The Ground" },
     "KKJ_20": { "ChestA": "In Chest" },
-
     "HOS_00": { "HiddenPanel": "Hidden Panel" },
     "HOS_01": {
       "HiddenPanel": "Hidden Panel",
@@ -41816,7 +41815,6 @@
       "ShopBadgeN": "Merlow's Badges 14",
       "ShopBadgeO": "Merlow's Badges 15"
     },
-
     "NOK_01": {
       "Bush1_Drop1A": "Coin Bush 1",
       "Bush3_Drop1A": "Bush Left Front",
@@ -41837,6 +41835,7 @@
       "GiftA": "Kolorado's Wife (Koopa Koot Favor)",
       "GiftB": "Koopa Koot Silver Credit",
       "GiftC": "Koopa Koot Gold Credit",
+      "GiftD": "Kolorado Artifact Reward",
       "ItemA": "Push Block Puzzle",
       "Partner": "Kooper Partner",
       "KootGift00": "Koopa Koot Reward 1",
@@ -41888,7 +41887,6 @@
       "ItemF": "On Brick Block"
     },
     "NOK_15": { "Tree1_Drop1A": "In Tree" },
-
     "TRD_00": {
       "ChestA": "Chest Behind Fortress",
       "ChestB": "Chest On Ledge"
@@ -41905,7 +41903,6 @@
     "TRD_06": { "Partner": "Bombette Partner" },
     "TRD_08": { "ItemA": "On The Ground" },
     "TRD_09": { "YBlockA": "Block Behind Rock" },
-
     "IWA_00": {
       "ItemA": "On Slide 1",
       "ItemB": "On Slide 2",
@@ -41940,13 +41937,12 @@
     },
     "IWA_04": { "ItemA": "Bottom Of Cliff" },
     "IWA_10": {
-      "ItemA": "Bush 1",
-      "ItemB": "Bush 2",
-      "ItemC": "Bush 3",
-      "ItemD": "Bush Top",
+      "Bush1_Drop1": "Bush 1",
+      "Bush2_Drop1": "Bush 2",
+      "Bush3_Drop1": "Bush 3",
+      "Bush4_Drop1": "Bush Top",
       "Partner": "Parakarry Partner"
     },
-
     "DRO_01": {
       "GiftA": "Composer For Lyrics",
       "GiftB": "Store Legend",
@@ -41960,7 +41956,6 @@
       "HiddenPanel": "Hidden Panel",
       "ItemA": "Toad House Roof"
     },
-
     "SBK_00": {
       "YBlockA": "Yellow Block Left",
       "YBlockB": "Yellow Block Right"
@@ -42003,7 +41998,6 @@
     },
     "SBK_61": { "HiddenRBlockA": "Hidden Block" },
     "SBK_64": { "YBlockA": "Yellow Block" },
-
     "ISK_02": { "ItemA": "In Sarcophagus" },
     "ISK_03": { "ItemA": "On The Ground" },
     "ISK_05": { "ItemA": "On Pedestal" },
@@ -42019,16 +42013,14 @@
     "ISK_12": { "ItemA": "On Ledge" },
     "ISK_13": { "ItemA": "On Pedestal" },
     "ISK_14": { "ItemA": "On Pedestal" },
-
     "MIM_04": { "GiftA": "Bub-ulb Gift" },
     "MIM_08": { "RBlockA": "Central Block" },
     "MIM_09": { "RBlockA": "Central Block" },
     "MIM_11": {
-      "ItemA": "In Bush (Back Right)",
+      "Bush1_Drop1": "In Bush (Back Right)",
       "YBlockA": "Yellow Block"
     },
     "MIM_12": { "HiddenPanel": "Hidden Panel" },
-
     "OBK_01": {
       "GiftA": "From Boo (Koopa Koot Favor)",
       "HiddenPanel": "Hidden Panel"
@@ -42061,7 +42053,6 @@
       "ItemA": "Beat Boo Game"
     },
     "OBK_09": { "Partner": "Bow Partner" },
-
     "ARN_02": {
       "ItemA": "On Rock",
       "ItemB": "Infront Of Branch",
@@ -42078,7 +42069,6 @@
       "YBlockA": "Yellow Block Left",
       "YBlockB": "Yellow Block Right"
     },
-
     "DGB_03": { "ItemA": "On Table" },
     "DGB_06": { "ChestA": "In Chest" },
     "DGB_07": { "ItemA": "On Table" },
@@ -42095,7 +42085,6 @@
     },
     "DGB_14": { "YBlockA": "Yellow Block" },
     "DGB_16": { "ItemA": "On Pedestal" },
-
     "OMO_01": {
       "HiddenYBlockA": "Hidden Block 1",
       "HiddenYBlockB": "Hidden Block 2",
@@ -42195,7 +42184,6 @@
       "YBlockB": "Yellow Block North 1",
       "YBlockC": "Yellow Block North 2"
     },
-
     "JAN_00": {
       "ItemA": "Over Flower 1",
       "ItemB": "Over Flower 2",
@@ -42208,13 +42196,13 @@
       "ItemA": "On The Rocks",
       "ItemB": "Over Flower 1",
       "ItemC": "Over Flower 2",
-      "ItemD": "In Palm Tree 1",
-      "ItemE": "In Palm Tree 2",
-      "ItemF": "In Palm Tree 3",
-      "ItemG": "In Palm Tree 4",
-      "ItemH": "In Palm Tree 5",
-      "ItemI": "In Palm Tree 6",
-      "ItemJ": "In Palm Tree 6 2"
+      "Tree2_Drop1": "In Palm Tree 1",
+      "Tree3_Drop1": "In Palm Tree 2",
+      "Tree4_Drop1": "In Palm Tree 3",
+      "Tree5_Drop1": "In Palm Tree 4",
+      "Tree6_Drop1": "In Palm Tree 5",
+      "Tree7_Drop1A": "In Palm Tree 6",
+      "Tree7_Drop1B": "In Palm Tree 6 2"
     },
     "JAN_02": {
       "GiftA": "Village Leader Reward",
@@ -42248,20 +42236,20 @@
       "ItemC": "Underwater 3"
     },
     "JAN_09": {
-      "ItemA": "Bush 1",
-      "ItemB": "Bush 1",
-      "ItemC": "Bush 2",
-      "ItemD": "In Tree"
+      "Bush1_Drop1": "Bush 1",
+      "Bush6_Drop1": "Bush 2",
+      "Tree2_Drop1": "In Tree Right",
+      "Tree3_Drop1": "In Tree Top"
     },
     "JAN_10": { "ItemA": "Underwater" },
     "JAN_12": {
       "HiddenYBlockA": "Hidden Block",
-      "ItemA": "In Tree"
+      "Tree1_Drop1": "In Tree"
     },
     "JAN_13": { "HiddenYBlockA": "Hidden Block" },
     "JAN_14": {
-      "ItemA": "Tree Vine Second Left",
-      "ItemB": "Tree Vine Far Right"
+      "Tree2_Drop1": "Tree Vine Second Left",
+      "Tree5_Drop1": "Tree Vine Far Right"
     },
     "JAN_15": { "HiddenPanel": "Hidden Panel" },
     "JAN_18": { "ItemA": "End Of Vine" },
@@ -42269,7 +42257,6 @@
       "GiftA": "Raphael Gift",
       "ItemA": "Behind Tree"
     },
-
     "KZN_03": {
       "ItemA": "On Stone Pillar",
       "ItemB": "On Brick Block",
@@ -42286,7 +42273,6 @@
       "YBlockA": "Yellow Block Left",
       "YBlockB": "Yellow Block Right"
     },
-
     "FLO_03": {
       "GiftA": "Petunia Gift",
       "HiddenPanel": "Hidden Panel",
@@ -42304,8 +42290,8 @@
       "Tree1_Drop1B": "In Tree 2"
     },
     "FLO_09": {
-      "ItemA": "Tree Puzzle Reward",
-      "ItemB": "Leftmost Vine"
+      "Tree1_Drop1": "Tree Puzzle Reward",
+      "ItemA": "Leftmost Vine"
     },
     "FLO_10": {
       "GiftA": "Lily Reward For WaterStone",
@@ -42348,7 +42334,6 @@
       "Tree1_Drop1A": "In Tree 1",
       "Tree1_Drop1B": "In Tree 2"
     },
-
     "SAM_01": {
       "ChestA": "Chest In House",
       "GiftA": "Mayor Gift",
@@ -42370,8 +42355,8 @@
     },
     "SAM_04": {
       "HiddenPanel": "Hidden Panel",
-      "ItemA": "In Tree Left",
-      "ItemB": "Behind Tree Right"
+      "Tree2_Drop1": "In Tree Left",
+      "ItemA": "Behind Tree Right"
     },
     "SAM_05": {
       "HiddenPanel": "Hidden Panel",
@@ -42392,7 +42377,6 @@
     },
     "SAM_11": { "ItemA": "In Frozen Pond" },
     "SAM_12": { "ItemA": "On Pedestal" },
-
     "PRA_04": { "YBlockA": "Yellow Block" },
     "PRA_05": { "ChestA": "In Chest" },
     "PRA_06": { "ItemA": "On The Ground" },
@@ -42410,7 +42394,6 @@
     "PRA_27": { "ChestA": "In Chest" },
     "PRA_28": { "ChestA": "In Chest" },
     "PRA_35": { "ChestA": "In Chest" },
-
     "KPA_01": { "YBlockA": "Yellow Block" },
     "KPA_03": { "YBlockA": "Yellow Block" },
     "KPA_10": { "YBlockA": "Yellow Block" },
@@ -42450,7 +42433,6 @@
     "KPA_119": { "ItemA": "On The Ground" },
     "KPA_133": { "ItemA": "Top Left Ledge" },
     "KPA_134": { "HiddenYBlockA": "Hidden Block" },
-
     "OSR_02": { "HiddenYBlockA": "Hidden Block" }
   },
   "items": {
@@ -42762,7 +42744,8 @@
     "Watt": "PARTNER",
     "Sushie": "PARTNER",
     "Lakilester": "PARTNER",
-    "Bow": "PARTNER"
+    "Bow": "PARTNER",
+    "ItemPouch": "ITEMPOUCH"
   },
   "verbose_item_names": {
     "JellyShroom1": "JellyShroom",

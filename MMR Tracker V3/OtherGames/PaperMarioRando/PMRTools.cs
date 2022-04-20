@@ -659,7 +659,7 @@ namespace MMR_Tracker_V3.OtherGames
     {
         public class PaperMarioMasterData
         {
-            public List<PaperMarioLogicJSON> Logic;
+            public List<List<PaperMarioLogicJSON>> Logic;
             public Dictionary<string, string> verbose_area_names;
             public Dictionary<string, string> verbose_sub_area_names;
             public Dictionary<string, Dictionary<string, string>> verbose_item_locations;
@@ -671,7 +671,7 @@ namespace MMR_Tracker_V3.OtherGames
         {
             public PMRLogicArea from;
             public PMRLogicArea to;
-            public List<dynamic> reqs;
+            public List<List<string>> reqs;
             public List<string> pseudoitems;
         }
         public class PMRLogicArea
@@ -750,6 +750,194 @@ namespace MMR_Tracker_V3.OtherGames
             string PaperMarioDataFile = Path.Combine(References.TestingPaths.GetDevCodePath(), "MMR Tracker V3", "OtherGames", "PaperMarioRando", "PaperMarioRandoLogic.json");
 
             PaperMarioMasterData RefFileObject = JsonConvert.DeserializeObject<PaperMarioMasterData>(File.ReadAllText(PaperMarioDataFile));
+
+            LogicDictionaryData.LogicDictionary PRMDict = new LogicDictionaryData.LogicDictionary
+            {
+                GameCode = "PMR",
+                LogicVersion = 2,
+                LogicFormat = "JSON",
+            };
+            Dictionary<string, string> LogicMapping = new Dictionary<string, string>();
+
+            MakeAreaList(PRMDict, RefFileObject);
+            CreateEntranceList(PRMDict, RefFileObject, LogicMapping);
+            CreateLocationList(PRMDict, RefFileObject, LogicMapping);
+            CreateItemList(PRMDict, RefFileObject, LogicMapping);
+            SortMacros(PRMDict, RefFileObject, LogicMapping);
+
+
+            string OutputDict = Path.Combine(References.TestingPaths.GetDevTestingPath(), "PMRDict.json");
+            File.WriteAllText(OutputDict, JsonConvert.SerializeObject(PRMDict, Testing._NewtonsoftJsonSerializerOptions));
+
+            string OutputLogic = Path.Combine(References.TestingPaths.GetDevTestingPath(), "PMRLogic.json");
+            File.WriteAllText(OutputLogic, JsonConvert.SerializeObject(LogicMapping, Testing._NewtonsoftJsonSerializerOptions));
+
+        }
+
+        private static void SortMacros(LogicDictionaryData.LogicDictionary pRMDict, PaperMarioMasterData refFileObject, Dictionary<string, string> logicMapping)
+        {
+            string[] starSpirits = new string[] { "Twink", "Eldstar", "Mamar", "Skolar", "Muskular", "Misstar", "Klevar", "Kalmar" };
+            List<PaperMarioLogicJSON> Logic = refFileObject.Logic.SelectMany(x => x).ToList();
+            foreach (var entry in Logic.Where(x => x.pseudoitems is not null && x.pseudoitems.Any()))
+            {
+                string CurrentLogic = $"({refFileObject.verbose_area_names[GetBaseMap(entry.to.map)]} - {refFileObject.verbose_sub_area_names[entry.to.map]} - {entry.to.id})";
+                if (entry.reqs is not null && entry.reqs.Any()) { CurrentLogic += $" & ({string.Join(" & ", entry.reqs.Select(x => string.Join(" | ", x))) })"; }
+
+                foreach (var i in entry.pseudoitems)
+                {
+                    if (pRMDict.MacroList.Any(x => x.ID == i)) { Debug.WriteLine($"{i} Already existed in macro pool"); continue; }
+                    if (i.StartsWith("StarPiece_")) { AddMacroCheck(entry, i, "StarPiece", $"Chuck Quizmo Reward {i.Split("_")[2]}", CurrentLogic); }
+                    else if (i.StartsWith("EQUIPMENT_Hammer_Progressive")) { AddMacroCheck(entry, $"{entry.from.map}_ProgressiveHammer", "ProgressiveHammer", $"Progressive Hammer", CurrentLogic); }
+                    else if (i.StartsWith("EQUIPMENT_Boots_Progressive")) { AddMacroCheck(entry, $"{entry.from.map}_ProgressiveBoots", "ProgressiveBoots", $"Progressive Boots", CurrentLogic); }
+                    else if (i.StartsWith("RF_SavedYoshiKid")) { AddMacroCheck(entry, $"{entry.from.map}_YoshiKid", "YoshiKid", $"Yoshi Kid", CurrentLogic); }
+                    else if (i.StartsWith("STARSPIRIT_")) { AddMacroCheck(entry, $"{entry.from.map}_STARSPIRIT", $"{starSpirits[int.Parse(i.Split("_")[1])]}", $"Star Spirit", CurrentLogic); }
+                    else if (i == "MysticalKey") { AddMacroCheck(entry, $"{entry.from.map}_MysticalKey", $"MysticalKey", $"Mystical Key Chest", CurrentLogic); }
+                    else
+                    {
+                        logicMapping.Add(i, CurrentLogic);
+                        LogicDictionaryData.DictionaryMacroEntry macroEntry = new LogicDictionaryData.DictionaryMacroEntry { ID = i };
+                        pRMDict.MacroList.Add(macroEntry);
+                    }
+                }
+            }
+
+            void AddMacroCheck(PaperMarioLogicJSON entry, string ID, string OriginalItem, string Name, string CurrentLogic)
+            {
+                LogicDictionaryData.DictionaryLocationEntries LocationEntry = new LogicDictionaryData.DictionaryLocationEntries
+                {
+                    ID = ID,
+                    Area = $"{refFileObject.verbose_area_names[GetBaseMap(entry.from.map)]}",
+                    Name = $"{refFileObject.verbose_sub_area_names[entry.from.map]} - {Name}",
+                    OriginalItem = OriginalItem,
+                    ValidItemTypes =  new string[] { "ITEM" },
+                    SpoilerData = new MMRData.SpoilerlogReference { SpoilerLogNames = new string[] { $"{refFileObject.verbose_sub_area_names[entry.from.map]} - {Name}" } }
+                };
+                if (pRMDict.LocationList.Any(x => x.ID == LocationEntry.ID)) { return; }
+
+                logicMapping.Add(LocationEntry.ID, CurrentLogic);
+                pRMDict.LocationList.Add(LocationEntry);
+            }
+        }
+
+        private static void CreateItemList(LogicDictionaryData.LogicDictionary pRMDict, PaperMarioMasterData refFileObject, Dictionary<string, string> logicMapping)
+        {
+            List<LogicDictionaryData.DictionaryItemEntries> ItemList = new List<LogicDictionaryData.DictionaryItemEntries>();
+            foreach (var i in refFileObject.items)
+            {
+                LogicDictionaryData.DictionaryItemEntries ItemEntry = new LogicDictionaryData.DictionaryItemEntries
+                {
+                    ID = i.Key,
+                    MaxAmountInWorld = -1,
+                    ItemTypes = new string[] { "ITEM", i.Value },
+                    Name = CapitalizeItemName(refFileObject.verbose_item_names.ContainsKey(i.Key) ? refFileObject.verbose_item_names[i.Key] : i.Key),
+                    SpoilerData = new MMRData.SpoilerlogReference { SpoilerLogNames = refFileObject.verbose_item_names.ContainsKey(i.Key) ? new string[] { refFileObject.verbose_item_names[i.Key], i.Key } : new string[] { i.Key } },
+                    ValidStartingItem = true
+                };
+                ItemList.Add(ItemEntry);
+            }
+            pRMDict.ItemList = ItemList;
+        }
+
+        private static string CapitalizeItemName(string text, bool preserveAcronyms = true)
+        {
+            if (string.IsNullOrWhiteSpace(text))
+                return string.Empty;
+            StringBuilder newText = new StringBuilder(text.Length * 2);
+            newText.Append(text[0]);
+            for (int i = 1; i < text.Length; i++)
+            {
+                if (char.IsUpper(text[i]))
+                    if ((text[i - 1] != ' ' && !char.IsUpper(text[i - 1])) ||
+                        (preserveAcronyms && char.IsUpper(text[i - 1]) &&
+                         i < text.Length - 1 && !char.IsUpper(text[i + 1])))
+                        newText.Append(' ');
+                newText.Append(text[i]);
+            }
+            return newText.ToString();
+        }
+
+        private static void CreateLocationList(LogicDictionaryData.LogicDictionary pRMDict, PaperMarioMasterData refFileObject, Dictionary<string, string> logicMapping)
+        {
+            List<LogicDictionaryData.DictionaryLocationEntries> LocationList = new List<LogicDictionaryData.DictionaryLocationEntries>();
+            foreach (var area in refFileObject.verbose_item_locations)
+            {
+                foreach(var loc in area.Value)
+                {
+                    string ID = $"{area.Key}_{loc.Key}";
+                    if (LocationList.Any(x => x.ID == ID)) { Debug.WriteLine($"{ID} Already existed in macro pool"); continue; }
+
+                    string OriginalItem = null;
+                    if (ID.EndsWith("_HiddenPanel")) { OriginalItem = "StarPiece"; }
+                    if (ID.EndsWith("_Partner")) { OriginalItem = loc.Value.Replace(" Partner", ""); }
+
+                    LogicDictionaryData.DictionaryLocationEntries LocationEntry = new LogicDictionaryData.DictionaryLocationEntries
+                    {
+                        ID = ID,
+                        Area = $"{refFileObject.verbose_area_names[GetBaseMap(area.Key)]}",
+                        Name = $"{refFileObject.verbose_sub_area_names[area.Key]} - {loc.Value}",
+                        OriginalItem = OriginalItem,
+                        ValidItemTypes =  new string[] { "ITEM" },
+                        SpoilerData = new MMRData.SpoilerlogReference { SpoilerLogNames = new string[] { $"({refFileObject.verbose_sub_area_names[area.Key]} - {loc.Value})" } }
+                    };
+                    LocationList.Add(LocationEntry);
+
+                    var RequiredArea = $"{refFileObject.verbose_area_names[GetBaseMap(area.Key)]} - {refFileObject.verbose_sub_area_names[area.Key]} - {loc.Key}";
+                    if (!pRMDict.AreaList.Contains(RequiredArea)) { Debug.WriteLine($"{RequiredArea} Was not valid"); }
+                    else { logicMapping.Add(ID, RequiredArea); }
+                }
+            }
+            pRMDict.LocationList = LocationList;
+        }
+
+        private static void CreateEntranceList(LogicDictionaryData.LogicDictionary pRMDict, PaperMarioMasterData refFileObject, Dictionary<string, string> logicMapping)
+        {
+            List<LogicDictionaryData.DictionaryEntranceEntries> EntranceList = new List<LogicDictionaryData.DictionaryEntranceEntries>();
+            List<PaperMarioLogicJSON> Logic = refFileObject.Logic.SelectMany(x => x).ToList();
+            foreach (var i in Logic)
+            {
+                if (i.to.map == null) { continue; }
+                if (i.to.map == i.from.map && i.to.id.ToString() == i.from.id.ToString()) { continue; }
+                string ID = $"{i.from.ConvertToAreaName(refFileObject)} X {i.to.ConvertToAreaName(refFileObject)}";
+                if (EntranceList.Any(x => x.ID == ID)) { Debug.WriteLine($"{ID} Already existed in macro pool"); continue; }
+                LogicDictionaryData.DictionaryEntranceEntries entranceEntry = new LogicDictionaryData.DictionaryEntranceEntries
+                {
+                    ID = ID,
+                    AlwaysAccessable = false,
+                    Area = i.from.ConvertToAreaName(refFileObject),
+                    Exit = i.to.ConvertToAreaName(refFileObject),
+                    EntrancePairID = null,
+                    DestinationHasSingleEntrance = false,
+                    RandomizableEntrance = false
+                };
+                EntranceList.Add(entranceEntry);
+            }
+            pRMDict.EntranceList = EntranceList;
+        }
+
+        private static void MakeAreaList(LogicDictionaryData.LogicDictionary pRMDict, PaperMarioMasterData refFileObject)
+        {
+            List<string> MasterAreaList = new List<string>();
+            List<PaperMarioLogicJSON> Logic = refFileObject.Logic.SelectMany(x => x).ToList();
+            foreach(var i in Logic)
+            {
+                if (i.to.map == null) { continue; }
+                MasterAreaList.Add(i.from.ConvertToAreaName(refFileObject));
+                MasterAreaList.Add(i.to.ConvertToAreaName(refFileObject));
+            }
+            pRMDict.AreaList = MasterAreaList.Distinct().OrderBy(x => x).ToList();
+        }
+
+        private static string ConvertToAreaName(this PMRLogicArea area, PaperMarioMasterData refFileObject)
+        {
+            var BaseMap = GetBaseMap(area.map);
+            var SubMap = area.map;
+            var SubMapSection = area.id;
+            return $"{refFileObject.verbose_area_names[BaseMap]} - {refFileObject.verbose_sub_area_names[SubMap]} - {SubMapSection}";
+        }
+
+        private static string GetBaseMap(string map)
+        {
+            return map.Split('_')[0];
         }
     }
 }
