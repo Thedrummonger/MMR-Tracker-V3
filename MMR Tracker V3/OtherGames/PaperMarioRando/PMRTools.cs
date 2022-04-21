@@ -112,7 +112,7 @@ namespace MMR_Tracker_V3.OtherGames
 
                 if (EntranceList.Any(x => x.ID == ID))
                 {
-                    Debug.WriteLine($"{ID} Already existed in macro pool");
+                    Debug.WriteLine($"{ID} Already existed in Entrance pool");
                     logicMapping[ID] += $" | {CurrentLogic}";
                     continue;
                 }
@@ -140,7 +140,7 @@ namespace MMR_Tracker_V3.OtherGames
                 foreach (var loc in area.Value)
                 {
                     string ID = $"{area.Key}_{loc.Key}";
-                    if (LocationList.Any(x => x.ID == ID)) { Debug.WriteLine($"{ID} Already existed in macro pool"); continue; }
+                    if (LocationList.Any(x => x.ID == ID)) { Debug.WriteLine($"{ID} Already existed in Location pool"); continue; }
 
                     string OriginalItem = null;
                     if (ID.EndsWith("_HiddenPanel")) { OriginalItem = "StarPiece"; }
@@ -270,26 +270,14 @@ namespace MMR_Tracker_V3.OtherGames
         {
             AddOption("starting_area", "Toad Town", "Starting Area", new string[] { "Goomba Village", "Toad Town", "Dry Dry Outpost", "Yoshi Village" });
 
-            AddToggleOption("BlueHouseOpen", "false", "Open Blue House", CreateSimpleReplacementOption("GF_MAC02_UnlockedHouse"));
-            AddToggleOption("FlowerGateOpen", "false", "Open Flower Gate", CreateSimpleReplacementOption("RF_Ch6_FlowerGateOpen"));
-            AddToggleOption("WhaleOpen", "false", "Open Whale", CreateSimpleReplacementOption("RF_CanRideWhale"));
+            AddToggleOption("BlueHouseOpen", "false", "Open Blue House", CreateLogicReplacement(new string[] { "GF_MAC02_UnlockedHouse" }));
+            AddToggleOption("FlowerGateOpen", "false", "Open Flower Gate", CreateLogicReplacement(new string[] { "RF_Ch6_FlowerGateOpen" }));
+            AddToggleOption("WhaleOpen", "false", "Open Whale", CreateLogicReplacement(new string[] { "RF_CanRideWhale" }));
             AddToggleOption("ToyboxOpen", "false", "Open Toy Box");
 
             AddToggleOption("HiddenBlocksVisible", "true", "Hidden Blocks Always Visible");
 
-            //Partners Always usable option
-            var option = new TrackerObjects.OptionData.TrackerOption
-            {
-                ID = "partners_always_usable",
-                CurrentValue = "false",
-                DisplayName = "Partners Always useable",
-                Values = new Dictionary<string, TrackerObjects.OptionData.actions>()
-                    {
-                        { "true", new TrackerObjects.OptionData.actions() { LogicReplacements = new TrackerObjects.OptionData.LogicReplacement[] { new TrackerObjects.OptionData.LogicReplacement { ReplacementList = new Dictionary<string, string> { { "Goombario", "true" }, { "Kooper", "true" }, { "Bombette", "true" }, { "Parakarry", "true" }, { "Watt", "true" }, { "Sushie", "true" }, { "Lakilester", "true" }, { "Bow", "true" } } } }  } },
-                        { "false", new TrackerObjects.OptionData.actions()}
-                    }
-            };
-            logicDictionary.Options.Add(option);
+            AddToggleOption("partners_always_usable", "false", "Partners Always useable", CreateLogicReplacement(new string[] { "Goombario", "Kooper", "Bombette", "Parakarry", "Watt", "Sushie", "Lakilester", "Bow" }));
 
             void AddOption(string ID, string CurrentValue, string Name, string[] Values)
             {
@@ -298,30 +286,30 @@ namespace MMR_Tracker_V3.OtherGames
                     ID = ID,
                     CurrentValue = CurrentValue,
                     DisplayName = Name,
-                    Values = Values.ToDictionary(x => x, x => new TrackerObjects.OptionData.actions())
+                    Values = Values.ToDictionary(x => x, x => new OptionData.actions())
                 };
                 logicDictionary.Options.Add(option);
             }
 
-            void AddToggleOption(string ID, string CurrentValue, string Name, TrackerObjects.OptionData.actions trueAction = null)
+            void AddToggleOption(string ID, string CurrentValue, string Name, OptionData.actions trueAction = null)
             {
-                var option = new TrackerObjects.OptionData.TrackerOption
+                var option = new OptionData.TrackerOption
                 {
                     ID = ID,
                     CurrentValue = CurrentValue,
                     DisplayName = Name,
-                    Values = new Dictionary<string, TrackerObjects.OptionData.actions>()
+                    Values = new Dictionary<string, OptionData.actions>()
                     {
-                        { "true", trueAction is null ? new TrackerObjects.OptionData.actions() : trueAction},
+                        { "true", trueAction is null ? new OptionData.actions() : trueAction},
                         { "false", new TrackerObjects.OptionData.actions()}
                     }
                 };
                 logicDictionary.Options.Add(option);
             }
 
-            OptionData.actions CreateSimpleReplacementOption(string Replace, string with = "true")
+            OptionData.actions CreateLogicReplacement(string[] Replacements, string with = "true")
             {
-                return new TrackerObjects.OptionData.actions() { LogicReplacements = new TrackerObjects.OptionData.LogicReplacement[] { new TrackerObjects.OptionData.LogicReplacement { ReplacementList = new Dictionary<string, string> { { Replace, "true" } } } } };
+                return new OptionData.actions() { LogicReplacements = new OptionData.LogicReplacement[] { new OptionData.LogicReplacement { ReplacementList = Replacements.ToDictionary(x => x, x => "true") } } };
             }
         }
 
@@ -386,7 +374,7 @@ namespace MMR_Tracker_V3.OtherGames
                 var LogicEntry = new MMRData.JsonFormatLogicItem
                 {
                     Id = i.Key,
-                    ConditionalItems = LogicStringParser.ConvertLogicStringToConditional(i.Value.Replace("'", ""), true)
+                    ConditionalItems = LogicStringParser.ConvertLogicStringToConditional(i.Value, true)
                 };
                 logicCleaner.RemoveRedundantConditionals(LogicEntry);
                 logicCleaner.MakeCommonConditionalsRequirements(LogicEntry);
