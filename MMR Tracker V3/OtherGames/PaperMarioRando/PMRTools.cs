@@ -72,6 +72,7 @@ namespace MMR_Tracker_V3.OtherGames
                 Logic = new List<MMRData.JsonFormatLogicItem>()
             };
             CreateLogicFile(LogicMapping, PRMLogic);
+            TryFixKeys(LogicMapping);
 
             string OutputDict = Path.Combine(References.TestingPaths.GetDevTestingPath(), "PMRDict.json");
             File.WriteAllText(OutputDict, JsonConvert.SerializeObject(PRMDict, Testing._NewtonsoftJsonSerializerOptions));
@@ -432,6 +433,43 @@ namespace MMR_Tracker_V3.OtherGames
         private static string GetBaseMap(string map)
         {
             return map.Split('_')[0];
+        }
+
+
+        public static void TryFixKeys(Dictionary<string, string> CondensedLogic)
+        {
+            string[] KEYS = { "KoopaFortressKey", "RuinsKey", "TubbaCastleKey", "PrisonKey", "BowserCastleKey" };
+            Dictionary<string, string> KeyChecks = new()
+            {   //This is probably wrong I know nothing about this game
+                {"Tubbas Castle - Great Hall - 0 X Tubbas Castle - Great Hall - 2", "TubbaCastleKey, 1" },
+                {"Tubbas Castle - Table/Clock Room (1/2F) - 4 X Tubbas Castle - Table/Clock Room (1/2F) - 3", "TubbaCastleKey, 2" },
+                {"Tubbas Castle - West Hall (3F) - 0 X Tubbas Castle - West Hall (3F) - 1", "TubbaCastleKey, 3" },
+                {"Dry Dry Ruins - Sarcophagus Hall 1 - 0 X Dry Dry Ruins - Sarcophagus Hall 1 - 1", "RuinsKey, 1" },
+                {"Dry Dry Ruins - Descending Stairs 1 - 0 X Dry Dry Ruins - Descending Stairs 1 - 1", "RuinsKey, 2" },
+                {"Dry Dry Ruins - Sarcophagus Hall 2 - 1 X Dry Dry Ruins - Sarcophagus Hall 2 - 0", "RuinsKey, 3" },
+                {"Dry Dry Ruins - Stone Puzzle Room - 0 X Dry Dry Ruins - Stone Puzzle Room - 1", "RuinsKey, 4" },
+                {"Bowsers Castle - Lava Channel 3 - 0 X Bowsers Castle - Lava Channel 3 - 1", "BowserCastleKey, 1" },
+                {"Bowsers Castle - Split Level Hall - 0 X Bowsers Castle - Split Level Hall - 1", "BowserCastleKey, 2" },
+                {"Bowsers Castle - Front Door Exterior - 3 X Bowsers Castle - Front Door Exterior - 0", "BowserCastleKey, 3" },
+                {"Bowsers Castle - Room with Hidden Door 2 - 0 X Bowsers Castle - Room with Hidden Door 2 - 1", "BowserCastleKey, 4" },
+                {"Bowsers Castle - Right Water Puzzle - 0 X Bowsers Castle - Right Water Puzzle - 1", "BowserCastleKey, 5" },
+                {"Koopa Bros Fortress - Left Tower - 0 X Koopa Bros Fortress - Left Tower - 1", "KoopaFortressKey, 1" },
+                {"Koopa Bros Fortress - Left Stairway - 3 X Koopa Bros Fortress - Left Stairway - 2", "KoopaFortressKey, 2" },
+                {"Koopa Bros Fortress - Right Starway - 0 X Koopa Bros Fortress - Right Starway - 1", "KoopaFortressKey, 3" },
+                {"Koopa Bros Fortress - Right Starway - 3 X Koopa Bros Fortress - Right Starway - 2", "KoopaFortressKey, 4" }
+            };
+
+            foreach(var i in KeyChecks)
+            {
+                Debug.WriteLine("===================");
+                Debug.WriteLine(i.Key);
+                Debug.WriteLine(CondensedLogic[i.Key]);
+                foreach (var K in KEYS)
+                {
+                    CondensedLogic[i.Key] = CondensedLogic[i.Key].Replace(K, i.Value);
+                }
+                Debug.WriteLine(CondensedLogic[i.Key]);
+            }
         }
 
 
