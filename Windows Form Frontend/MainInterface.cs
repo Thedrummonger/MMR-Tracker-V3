@@ -236,7 +236,9 @@ namespace Windows_Form_Frontend
 
         private void CodeTestingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PMRToolsV2.CreatePMRdata();
+            var instance = PMRToolsV2.CreatePMRdata();
+
+            WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(instance.LogicFile), JsonConvert.SerializeObject(instance.LogicDictionary));
 
         }
 

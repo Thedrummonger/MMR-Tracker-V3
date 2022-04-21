@@ -34,7 +34,7 @@ namespace MMR_Tracker_V3
                     SpoilerLogTools.ApplyMMRandoSpoilerLog(Instance, Instance.SpoilerLog);
                     return true;
                 case "PMR":
-                    OtherGames.PMRTools.ReadSpoilerLog(spoilerLog, OriginalFile, Instance);
+                    OtherGames.PMRToolsV2.ReadSpoilerLog(spoilerLog, OriginalFile, Instance);
                     return true;
                 default:
                     return false;

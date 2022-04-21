@@ -19,8 +19,7 @@ namespace MMR_Tracker_V3
         public static List<List<string>> ConvertLogicStringToConditional(string InLogic, bool StrictOperators = false, bool Logging = false)
         {
             //This should probably not happen here.
-            if (Logging) { Debug.WriteLine(InLogic); }
-            //string InLogic = LogicStringParser.HandleOOTRandoBadEntries(InLogic2, Logging);
+            if (Logging) { Debug.WriteLine("====================================="); }
             if (Logging) { Debug.WriteLine(InLogic); }
             InLogic = LogicStringParser.ReplaceLogicOperatorsWithMathOperators(InLogic, StrictOperators);
             if (Logging) { Debug.WriteLine(InLogic); }

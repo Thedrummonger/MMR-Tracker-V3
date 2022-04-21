@@ -73,13 +73,22 @@ namespace MMR_Tracker_V3
             }
         }
 
-        private static bool ItemArrayUseable(TrackerInstance instance, string LogicItem, int amount)
+        private static bool ItemArrayUseable(TrackerInstance instance, string ArrVar, int amount)
         {
-            if (instance.Variables[LogicItem].Value is not List<string> ItemArray) { return false; }
+            if (instance.Variables[ArrVar].Value is not List<string> ItemArray) { return false; }
             int UseableItems = 0;
             foreach (string i in ItemArray)
             {
-                if (LogicEntryAquired(instance, i)) { UseableItems ++; }
+                if (LogicEntryAquired(instance, i))
+                {
+                    bool MultiItem = MultipleItemEntry(instance, i, out string LogicItem, out int Amount);
+                    bool Literal = LogicItem.IsLiteralID(out LogicItem);
+                    var type = instance.GetItemEntryType(LogicItem, Literal, out object ItemObj);
+
+                    if (type == LogicEntryType.item && !MultiItem) { UseableItems += (ItemObj as ItemObject).GetTotalUsable(instance); }
+                    else { UseableItems++; }
+
+                }
             }
             return UseableItems >= amount;
         }
