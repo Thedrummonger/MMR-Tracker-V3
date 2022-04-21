@@ -372,7 +372,7 @@ namespace Windows_Form_Frontend
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(648, 384);
+            this.ClientSize = new System.Drawing.Size(648, 385);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -400,9 +400,12 @@ namespace Windows_Form_Frontend
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.listBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(9000, 424);
+            this.MinimumSize = new System.Drawing.Size(664, 424);
             this.Name = "ShowLogic";
             this.Text = "ShowLogic";
             this.Load += new System.EventHandler(this.ShowLogic_Load);
+            this.ResizeEnd += new System.EventHandler(this.ShowLogic_ResizeEnd);
             this.ResumeLayout(false);
             this.PerformLayout();
 

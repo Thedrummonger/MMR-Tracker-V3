@@ -66,7 +66,7 @@ namespace MMR_Tracker_V3
 
         public static LogicObjects.TrackerInstance CodeTesting(LogicObjects.TrackerInstance instance)
         {
-            return MMR_Tracker_V3.OtherGames.PMRTools.ReadLogicJson();
+            return null;
         }
 
         public readonly static Newtonsoft.Json.JsonSerializerSettings _NewtonsoftJsonSerializerOptions = new Newtonsoft.Json.JsonSerializerSettings

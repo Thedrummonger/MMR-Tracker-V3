@@ -42736,6 +42736,7 @@
     "PartnerAttack": "BADGE",
     "Coin": "COIN",
     "StarPiece": "STARPIECE",
+    "ThreeStarPieces": "STARPIECE",
     "Goombario": "PARTNER",
     "Kooper": "PARTNER",
     "Bombette": "PARTNER",
@@ -42749,6 +42750,7 @@
   },
   "verbose_item_names": {
     "JellyShroom1": "JellyShroom",
+    "ThreeStarPieces": "Three Star Pieces",
     "Letter01": "Letter (To Merlon)",
     "Letter02": "Letter (To Goompa)",
     "Letter03": "Letter (To Mort T.)",

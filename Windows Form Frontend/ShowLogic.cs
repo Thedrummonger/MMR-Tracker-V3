@@ -18,6 +18,7 @@ namespace Windows_Form_Frontend
         public string CurrentID;
         private readonly LogicObjects.TrackerInstance instance;
         private readonly int ReqLBHeight;
+        private int WindowWidth;
         private readonly List<string> GoBackList = new();
         public ShowLogic(String id, LogicObjects.TrackerInstance _instance)
         {
@@ -25,6 +26,7 @@ namespace Windows_Form_Frontend
             CurrentID = id;
             instance = _instance;
             ReqLBHeight = listBox1.Height;
+            WindowWidth = this.Width;
         }
 
         private void ShowLogic_Load(object sender, EventArgs e)
@@ -34,6 +36,7 @@ namespace Windows_Form_Frontend
             listBox3.Sorted = true;
             listBox4.Sorted = true;
 
+            /*
             int LongestWidth = 0;
             Graphics graphics = listBox4.CreateGraphics();
             foreach (var i in listBox4.Items)
@@ -50,6 +53,18 @@ namespace Windows_Form_Frontend
                 textBox1.Width += diff;
                 button1.Width += diff;
             }
+            */
+
+        }
+
+        private void ShowLogic_ResizeEnd(object sender, EventArgs e)
+        {
+            var diff = this.Width - WindowWidth;
+            listBox4.Width += diff;
+            listBox3.Width += diff;
+            textBox1.Width += diff;
+            button1.Width += diff;
+            WindowWidth = this.Width;
 
         }
 
