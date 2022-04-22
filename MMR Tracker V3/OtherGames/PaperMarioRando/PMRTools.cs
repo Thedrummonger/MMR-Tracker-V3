@@ -280,6 +280,8 @@ namespace MMR_Tracker_V3.OtherGames
 
             AddToggleOption("partners_always_usable", "false", "Partners Always useable", CreateLogicReplacement(new string[] { "Goombario", "Kooper", "Bombette", "Parakarry", "Watt", "Sushie", "Lakilester", "Bow" }));
 
+            AddRealMerlowShopPriceOption(logicDictionary);
+
             void AddOption(string ID, string CurrentValue, string Name, string[] Values)
             {
                 var option = new TrackerObjects.OptionData.TrackerOption
@@ -470,6 +472,38 @@ namespace MMR_Tracker_V3.OtherGames
                 }
                 Debug.WriteLine(CondensedLogic[i.Key]);
             }
+        }
+
+        private static void AddRealMerlowShopPriceOption(LogicDictionaryData.LogicDictionary logicDictionary)
+        {
+            string LocationPrefix = "Shooting Star Summit - Merluvlees House - 0 X Shooting Star Summit - Merluvlees House - ShopBadge";
+            string[] LocationSuffix = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O" };
+            string[] ActualPrice = { "1", "1", "3", "5", "5", "8", "8", "10", "10", "12", "12", "15", "20", "25", "25" };
+            
+            List<OptionData.LogicReplacement> replacementData = new List<OptionData.LogicReplacement>();
+            for(var i =0; i < LocationSuffix.Count(); i++)
+            {
+                var ReplacementData = new OptionData.LogicReplacement
+                {
+                    LocationWhitelist = new string[] { $"{LocationPrefix}{LocationSuffix[i]}" },
+                    ReplacementList = new Dictionary<string, string> { { "starpieces, 60", $"starpieces, {ActualPrice[i]}" } }
+                };
+                replacementData.Add(ReplacementData);
+            }
+
+            var option = new OptionData.TrackerOption
+            {
+                ID = "RealMerlowPrice",
+                CurrentValue = "true",
+                DisplayName = "Uses Actual Merlow Prices",
+                Values = new Dictionary<string, OptionData.actions>()
+                    {
+                        { "true", new OptionData.actions() { LogicReplacements = replacementData.ToArray() } },
+                        { "false", new TrackerObjects.OptionData.actions()}
+                    }
+            };
+
+            logicDictionary.Options.Add(option);
         }
 
 

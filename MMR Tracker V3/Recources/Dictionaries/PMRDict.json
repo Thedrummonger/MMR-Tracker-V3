@@ -45750,6 +45750,159 @@
           "ItemNameOverride": {}
         }
       }
+    },
+    {
+      "ID": "RealMerlowPrice",
+      "DisplayName": "Uses Actual Merlow Prices",
+      "CurrentValue": "true",
+      "Values": {
+        "true": {
+          "LogicReplacements": [
+            {
+              "LocationWhitelist": [
+                "Shooting Star Summit - Merluvlees House - 0 X Shooting Star Summit - Merluvlees House - ShopBadgeA"
+              ],
+              "LocationBlacklist": [],
+              "ReplacementList": {
+                "starpieces, 60": "starpieces, 1"
+              }
+            },
+            {
+              "LocationWhitelist": [
+                "Shooting Star Summit - Merluvlees House - 0 X Shooting Star Summit - Merluvlees House - ShopBadgeB"
+              ],
+              "LocationBlacklist": [],
+              "ReplacementList": {
+                "starpieces, 60": "starpieces, 1"
+              }
+            },
+            {
+              "LocationWhitelist": [
+                "Shooting Star Summit - Merluvlees House - 0 X Shooting Star Summit - Merluvlees House - ShopBadgeC"
+              ],
+              "LocationBlacklist": [],
+              "ReplacementList": {
+                "starpieces, 60": "starpieces, 3"
+              }
+            },
+            {
+              "LocationWhitelist": [
+                "Shooting Star Summit - Merluvlees House - 0 X Shooting Star Summit - Merluvlees House - ShopBadgeD"
+              ],
+              "LocationBlacklist": [],
+              "ReplacementList": {
+                "starpieces, 60": "starpieces, 5"
+              }
+            },
+            {
+              "LocationWhitelist": [
+                "Shooting Star Summit - Merluvlees House - 0 X Shooting Star Summit - Merluvlees House - ShopBadgeE"
+              ],
+              "LocationBlacklist": [],
+              "ReplacementList": {
+                "starpieces, 60": "starpieces, 5"
+              }
+            },
+            {
+              "LocationWhitelist": [
+                "Shooting Star Summit - Merluvlees House - 0 X Shooting Star Summit - Merluvlees House - ShopBadgeF"
+              ],
+              "LocationBlacklist": [],
+              "ReplacementList": {
+                "starpieces, 60": "starpieces, 8"
+              }
+            },
+            {
+              "LocationWhitelist": [
+                "Shooting Star Summit - Merluvlees House - 0 X Shooting Star Summit - Merluvlees House - ShopBadgeG"
+              ],
+              "LocationBlacklist": [],
+              "ReplacementList": {
+                "starpieces, 60": "starpieces, 8"
+              }
+            },
+            {
+              "LocationWhitelist": [
+                "Shooting Star Summit - Merluvlees House - 0 X Shooting Star Summit - Merluvlees House - ShopBadgeH"
+              ],
+              "LocationBlacklist": [],
+              "ReplacementList": {
+                "starpieces, 60": "starpieces, 10"
+              }
+            },
+            {
+              "LocationWhitelist": [
+                "Shooting Star Summit - Merluvlees House - 0 X Shooting Star Summit - Merluvlees House - ShopBadgeI"
+              ],
+              "LocationBlacklist": [],
+              "ReplacementList": {
+                "starpieces, 60": "starpieces, 10"
+              }
+            },
+            {
+              "LocationWhitelist": [
+                "Shooting Star Summit - Merluvlees House - 0 X Shooting Star Summit - Merluvlees House - ShopBadgeJ"
+              ],
+              "LocationBlacklist": [],
+              "ReplacementList": {
+                "starpieces, 60": "starpieces, 12"
+              }
+            },
+            {
+              "LocationWhitelist": [
+                "Shooting Star Summit - Merluvlees House - 0 X Shooting Star Summit - Merluvlees House - ShopBadgeK"
+              ],
+              "LocationBlacklist": [],
+              "ReplacementList": {
+                "starpieces, 60": "starpieces, 12"
+              }
+            },
+            {
+              "LocationWhitelist": [
+                "Shooting Star Summit - Merluvlees House - 0 X Shooting Star Summit - Merluvlees House - ShopBadgeL"
+              ],
+              "LocationBlacklist": [],
+              "ReplacementList": {
+                "starpieces, 60": "starpieces, 15"
+              }
+            },
+            {
+              "LocationWhitelist": [
+                "Shooting Star Summit - Merluvlees House - 0 X Shooting Star Summit - Merluvlees House - ShopBadgeM"
+              ],
+              "LocationBlacklist": [],
+              "ReplacementList": {
+                "starpieces, 60": "starpieces, 20"
+              }
+            },
+            {
+              "LocationWhitelist": [
+                "Shooting Star Summit - Merluvlees House - 0 X Shooting Star Summit - Merluvlees House - ShopBadgeN"
+              ],
+              "LocationBlacklist": [],
+              "ReplacementList": {
+                "starpieces, 60": "starpieces, 25"
+              }
+            },
+            {
+              "LocationWhitelist": [
+                "Shooting Star Summit - Merluvlees House - 0 X Shooting Star Summit - Merluvlees House - ShopBadgeO"
+              ],
+              "LocationBlacklist": [],
+              "ReplacementList": {
+                "starpieces, 60": "starpieces, 25"
+              }
+            }
+          ],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {}
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {}
+        }
+      }
     }
   ],
   "Variables": [
