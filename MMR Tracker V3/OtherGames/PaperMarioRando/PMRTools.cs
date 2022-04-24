@@ -63,7 +63,8 @@ namespace MMR_Tracker_V3.OtherGames
             AddVariables(PRMDict);
             Addoptions(PRMDict);
             AddHardCodedMacrios(LogicMapping);
-            AddRootEntrances(PRMDict, LogicMapping);    
+            AddRootEntrances(PRMDict, LogicMapping);
+            TryFixKeys(LogicMapping);
 
             MMRData.LogicFile PRMLogic = new MMRData.LogicFile
             {
@@ -72,7 +73,6 @@ namespace MMR_Tracker_V3.OtherGames
                 Logic = new List<MMRData.JsonFormatLogicItem>()
             };
             CreateLogicFile(LogicMapping, PRMLogic);
-            TryFixKeys(LogicMapping);
 
             string OutputDict = Path.Combine(References.TestingPaths.GetDevTestingPath(), "PMRDict.json");
             File.WriteAllText(OutputDict, JsonConvert.SerializeObject(PRMDict, Testing._NewtonsoftJsonSerializerOptions));
