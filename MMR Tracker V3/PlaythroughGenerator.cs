@@ -15,7 +15,7 @@ namespace MMR_Tracker_V3
         public Dictionary<string, PlaythroughObject> Playthrough = new Dictionary<string, PlaythroughObject>();
         public Dictionary<string, MMRData.JsonFormatLogicItem> LogicMap = new Dictionary<string, MMRData.JsonFormatLogicItem>();
         public Dictionary<string, List<string>> PlaythroughUnlockData = new Dictionary<string, List<string>>();
-        public Dictionary<string, List<Tuple<object, PlaythroughObject>>> FirstObtainedDict = new Dictionary<string, List<Tuple<object, PlaythroughObject>>>();
+        public Dictionary<string, List<Tuple<object, PlaythroughObject, int>>> FirstObtainedDict = new Dictionary<string, List<Tuple<object, PlaythroughObject, int>>>();
         public PlaythroughGenerator(LogicObjects.TrackerInstance instance)
         {
             _Instance = Newtonsoft.Json.JsonConvert.DeserializeObject<LogicObjects.TrackerInstance>(Newtonsoft.Json.JsonConvert.SerializeObject(instance));
@@ -38,11 +38,12 @@ namespace MMR_Tracker_V3
             int Sphere = 0;
             PrepareInstance();
             Playthrough.Clear();
-            LogicCalculation.FillLogicMap(_Instance, MiscData.CheckState.Unchecked, LogicMap);
-            LogicCalculation.CalculateLogic(_Instance, PlaythroughUnlockData, MiscData.CheckState.Checked);
+            LogicCalculation.FillLogicMap(_Instance, LogicMap);
+            Dictionary<object, int> AutoObtainedObjects = new Dictionary<object, int>();
+            LogicCalculation.CalculateLogic(_Instance, PlaythroughUnlockData, AutoObtainedObjects);
 
             var AvailableLocations = _Instance.LocationPool.Values.Where(x => x.Available && x.CheckState == MiscData.CheckState.Unchecked && x.IsRandomized());
-            var AvailableEntrances = getAllAvailableEntrances(_Instance);
+            var AvailableEntrances = getAllAvailableEntrances(_Instance, AutoObtainedObjects);
             var AquiredMacros = _Instance.MacroPool.Values.Where(x => x.Aquired && !Playthrough.ContainsKey(x.ID));
 
             while (AvailableLocations.Any() || AvailableEntrances.Any())
@@ -67,8 +68,8 @@ namespace MMR_Tracker_V3
                         UsedItems = PlaythroughUnlockData[GetEntId(i)],
                         sphere = Sphere
                     };
-                    if (!FirstObtainedDict.ContainsKey(playthroughObject.ItemObtained)) { FirstObtainedDict.Add(playthroughObject.ItemObtained, new List<Tuple<object, PlaythroughObject>>()); }
-                    FirstObtainedDict[playthroughObject.ItemObtained].Add(new Tuple<object, PlaythroughObject>(i, playthroughObject));
+                    if (!FirstObtainedDict.ContainsKey(playthroughObject.ItemObtained)) { FirstObtainedDict.Add(playthroughObject.ItemObtained, new List<Tuple<object, PlaythroughObject, int>>()); }
+                    FirstObtainedDict[playthroughObject.ItemObtained].Add(new Tuple<object, PlaythroughObject, int>(i, playthroughObject, FirstObtainedDict[playthroughObject.ItemObtained].Count));
                     Playthrough.Add(GetEntId(i), playthroughObject);
                 }
                 foreach (var i in AvailableLocations)
@@ -87,8 +88,8 @@ namespace MMR_Tracker_V3
                         UsedItems = PlaythroughUnlockData[i.ID],
                         sphere = Sphere
                     };
-                    if (!FirstObtainedDict.ContainsKey(playthroughObject.ItemObtained)) { FirstObtainedDict.Add(playthroughObject.ItemObtained, new List<Tuple<object, PlaythroughObject>>()); }
-                    FirstObtainedDict[playthroughObject.ItemObtained].Add(new Tuple<object, PlaythroughObject>(i, playthroughObject));
+                    if (!FirstObtainedDict.ContainsKey(playthroughObject.ItemObtained)) { FirstObtainedDict.Add(playthroughObject.ItemObtained, new List<Tuple<object, PlaythroughObject, int>>()); }
+                    FirstObtainedDict[playthroughObject.ItemObtained].Add(new Tuple<object, PlaythroughObject, int>(i, playthroughObject, FirstObtainedDict[playthroughObject.ItemObtained].Count));
                     Playthrough.Add(i.ID, playthroughObject);
                 }
                 foreach (var i in AquiredMacros)
@@ -100,14 +101,14 @@ namespace MMR_Tracker_V3
                         UsedItems = PlaythroughUnlockData[i.ID],
                         sphere = Sphere
                     };
-                    if (!FirstObtainedDict.ContainsKey(playthroughObject.ItemObtained)) { FirstObtainedDict.Add(playthroughObject.ItemObtained, new List<Tuple<object, PlaythroughObject>>()); }
-                    FirstObtainedDict[playthroughObject.ItemObtained].Add(new Tuple<object, PlaythroughObject> ( i, playthroughObject ));
+                    if (!FirstObtainedDict.ContainsKey(playthroughObject.ItemObtained)) { FirstObtainedDict.Add(playthroughObject.ItemObtained, new List<Tuple<object, PlaythroughObject, int>>()); }
+                    FirstObtainedDict[playthroughObject.ItemObtained].Add(new Tuple<object, PlaythroughObject, int> ( i, playthroughObject, FirstObtainedDict[playthroughObject.ItemObtained].Count));
                     Playthrough.Add(i.ID, playthroughObject);
                 }
 
-                LogicCalculation.CalculateLogic(_Instance, PlaythroughUnlockData, MiscData.CheckState.Checked);
+                LogicCalculation.CalculateLogic(_Instance, PlaythroughUnlockData, AutoObtainedObjects);
                 AvailableLocations = _Instance.LocationPool.Values.Where(x => x.Available && x.CheckState == MiscData.CheckState.Unchecked && x.IsRandomized());
-                AvailableEntrances = getAllAvailableEntrances(_Instance);
+                AvailableEntrances = getAllAvailableEntrances(_Instance, AutoObtainedObjects);
                 AquiredMacros = _Instance.MacroPool.Values.Where(x => x.Aquired && !Playthrough.ContainsKey(x.ID));
 
 
@@ -167,12 +168,15 @@ namespace MMR_Tracker_V3
             }
         }
 
-        private List<EntranceData.EntranceRandoExit> getAllAvailableEntrances(LogicObjects.TrackerInstance instance)
+        private List<EntranceData.EntranceRandoExit> getAllAvailableEntrances(LogicObjects.TrackerInstance instance, Dictionary<object, int> AutoObtainedObjects)
         {
-            var AvailableEntrances = _Instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values.Where(x => x.Available && x.CheckState == MiscData.CheckState.Unchecked && x.IsRandomized()));
-            var AquiredEntranceMacros = _Instance.EntrancePool.AreaList.Values.SelectMany(x => x.MacroExits.Values.Where(x => x.CheckState == MiscData.CheckState.Checked && !Playthrough.ContainsKey(GetEntId(x))));
-            var UnrandEntranceMacros = _Instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values.Where(x => x.CheckState == MiscData.CheckState.Checked && !Playthrough.ContainsKey(GetEntId(x)) && x.IsUnrandomized()));
-            var AllEntrances = AvailableEntrances.Concat(AquiredEntranceMacros).Concat(UnrandEntranceMacros).ToList();
+            var AvailableEntrances = instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values.Where(x => x.Available && x.CheckState == MiscData.CheckState.Unchecked && x.IsRandomized()));
+            var AutoObtainedEntrance = AutoObtainedObjects.Keys.Where(x => x is EntranceData.EntranceRandoExit && !Playthrough.ContainsKey(GetEntId(x as EntranceData.EntranceRandoExit))).Select(x => x as EntranceData.EntranceRandoExit);
+            //var AquiredEntranceMacros = instance.EntrancePool.AreaList.Values.SelectMany(x => x.MacroExits.Values.Where(x => x.CheckState == MiscData.CheckState.Checked && !Playthrough.ContainsKey(GetEntId(x))));
+            //var UnrandEntranceMacros = instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values.Where(x => x.CheckState == MiscData.CheckState.Checked && !Playthrough.ContainsKey(GetEntId(x)) && x.IsUnrandomized()));
+            //var AllEntrances = AvailableEntrances.Concat(AquiredEntranceMacros).Concat(UnrandEntranceMacros).ToList();
+            var AllEntrances = AvailableEntrances.Concat(AutoObtainedEntrance).ToList();
+            Debug.WriteLine(AutoObtainedEntrance.Count());
             return AllEntrances;
         }
 

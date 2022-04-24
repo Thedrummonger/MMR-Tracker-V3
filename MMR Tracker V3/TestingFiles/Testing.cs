@@ -63,6 +63,11 @@ namespace MMR_Tracker_V3
             }
         }
 
+        public static string CretaeTestingFile(string Name, string Extention = "txt")
+        {
+            return Path.Combine(References.TestingPaths.GetDevTestingPath(), $"{Name}.{Extention}");
+        }
+
 
         public static LogicObjects.TrackerInstance CodeTesting(LogicObjects.TrackerInstance instance)
         {
