@@ -34,6 +34,15 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return Display;
             }
         }
+        public class StandardListBoxItem
+        {
+            public string Display { get; set; }
+            public object tag { get; set; }
+            public override string ToString()
+            {
+                return Display;
+            }
+        }
         [Serializable]
         public enum CheckState
         {

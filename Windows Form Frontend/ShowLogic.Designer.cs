@@ -118,9 +118,9 @@ namespace Windows_Form_Frontend
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
             this.label3.Location = new System.Drawing.Point(508, 7);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 15);
+            this.label3.Size = new System.Drawing.Size(95, 15);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Go to Macro";
+            this.label3.Text = "Goto Logic Entry";
             // 
             // label4
             // 
