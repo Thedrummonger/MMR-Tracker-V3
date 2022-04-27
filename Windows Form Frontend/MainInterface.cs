@@ -680,15 +680,12 @@ namespace Windows_Form_Frontend
             }
 
             //Star Object
-            if (LogicID is not null)
+            if (Utility.DynamicPropertyExist(listBox.SelectedItem as dynamic, "Starred"))
             {
                 dynamic obj = listBox.SelectedItem;
-                if (Utility.DynamicPropertyExist(obj, "Starred"))
-                {
-                    string StarFunction = obj.Starred ? "UnStar Location" : "Star Location";
-                    ToolStripItem StarContextItem = contextMenuStrip.Items.Add(StarFunction);
-                    StarContextItem.Click += (sender, e) => { obj.Starred = !obj.Starred; PrintToListBox(new List<ListBox> { listBox }); };
-                }
+                string StarFunction = obj.Starred ? "UnStar Location" : "Star Location";
+                ToolStripItem StarContextItem = contextMenuStrip.Items.Add(StarFunction);
+                StarContextItem.Click += (sender, e) => { obj.Starred = !obj.Starred; PrintToListBox(new List<ListBox> { listBox }); };
             }
 
             //Show Logic
