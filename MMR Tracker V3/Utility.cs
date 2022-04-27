@@ -81,7 +81,8 @@ namespace MMR_Tracker_V3
 
         public static string GetLocationDisplayName(dynamic obj, LogicObjects.TrackerInstance instance)
         {
-            dynamic Location, PriceData;
+            dynamic PriceData;
+            LocationData.LocationObject Location;
             string LocationDisplay, RandomizedItemDisplay, PriceDisplay, StarredDisplay;
             if (obj is LocationData.LocationObject lo) 
             {
@@ -100,7 +101,7 @@ namespace MMR_Tracker_V3
             else { return obj.ToString(); }
 
             PriceDisplay = PriceData.Price < 0 ? "" : $" [${PriceData.Price}]";
-            RandomizedItemDisplay = instance.GetItemByID(Location.Randomizeditem.Item)?.GetDictEntry(instance)?.Name ?? Location.Randomizeditem.Item;
+            RandomizedItemDisplay = instance.GetItemByID(Location.Randomizeditem.Item)?.GetDictEntry(instance)?.GetItemName(instance) ?? Location.Randomizeditem.Item;
 
             return Location.CheckState switch
             {
@@ -123,44 +124,6 @@ namespace MMR_Tracker_V3
                 MiscData.CheckState.Checked => $"{RandomizedExitDisplay}: {ExitObjectObject.ID}{StarredDisplay}",
                 _ => ExitObjectObject.ToString(),
             };
-        }
-
-        public static List<int> ParseLocationAndJunkSettingString(string c, int ItemCount, string ParseType)
-        {
-            var result = new List<int>();
-            if (string.IsNullOrWhiteSpace(c))
-            {
-                return result;
-            }
-
-            result.Clear();
-            string[] Sections = c.Split('-');
-            int[] NewSections = new int[ItemCount];
-            if (Sections.Length != NewSections.Length) 
-            { 
-                Debug.WriteLine($"{ParseType} String Didin't match {Sections.Length}, {NewSections.Length}"); 
-                return null; 
-            }
-
-            try
-            {
-                for (int i = 0; i < ItemCount; i++)
-                {
-                    if (Sections[(ItemCount - 1) - i] != "") { NewSections[i] = Convert.ToInt32(Sections[(ItemCount - 1) - i], 16); }
-                }
-                for (int i = 0; i < 32 * ItemCount; i++)
-                {
-                    int j = i / 32;
-                    int k = i % 32;
-                    if (((NewSections[j] >> k) & 1) > 0) { result.Add(i); }
-                }
-            }
-            catch (Exception e)
-            {
-                Debug.WriteLine($"It broke {e.Message}");
-                return null;
-            }
-            return result;
         }
 
         public static List<string> GetAllWalletLogicEntries(LogicObjects.TrackerInstance instance)

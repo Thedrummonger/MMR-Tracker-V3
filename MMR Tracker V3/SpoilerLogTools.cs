@@ -47,7 +47,7 @@ namespace MMR_Tracker_V3
 
             var ItemGroupCount = (int)Math.Ceiling(LocationPool.Count / 32.0);
 
-            var RandomizedItemIndexs = Utility.ParseLocationAndJunkSettingString(LocationString, ItemGroupCount, "Location");
+            var RandomizedItemIndexs = ParseMMRSettingString(LocationString, ItemGroupCount);
             if (RandomizedItemIndexs == null) { return false; }
 
             int Index = 0;
@@ -73,7 +73,7 @@ namespace MMR_Tracker_V3
 
             var ItemGroupCount = (int)Math.Ceiling(LocationPool.Count / 32.0);
 
-            var JunkItemIndexes = Utility.ParseLocationAndJunkSettingString(LocationString, ItemGroupCount, "Location");
+            var JunkItemIndexes = ParseMMRSettingString(LocationString, ItemGroupCount);
             if (JunkItemIndexes == null) { return false; }
 
             int Index = 0;
@@ -99,7 +99,7 @@ namespace MMR_Tracker_V3
 
             var ItemGroupCount = (int)Math.Ceiling(StartingItems.Count / 32.0);
 
-            var StartingItemIndexes = Utility.ParseLocationAndJunkSettingString(ItemString, ItemGroupCount, "Location");
+            var StartingItemIndexes = ParseMMRSettingString(ItemString, ItemGroupCount);
             if (StartingItemIndexes == null) { return false; }
 
             foreach (var i in StartingItems.Distinct())
@@ -151,6 +151,37 @@ namespace MMR_Tracker_V3
                 ns[j] = Convert.ToString(n[j], 16);
             }
             return string.Join("-", ns.Reverse());
+        }
+
+        public static List<int> ParseMMRSettingString(string SettingString, int ItemCount)
+        {
+            var result = new List<int>();
+            if (string.IsNullOrWhiteSpace(SettingString)) { return result; }
+
+            result.Clear();
+            string[] Sections = SettingString.Split('-');
+            int[] NewSections = new int[ItemCount];
+            if (Sections.Length != NewSections.Length) { return null; }
+
+            try
+            {
+                for (int i = 0; i < ItemCount; i++)
+                {
+                    if (Sections[(ItemCount - 1) - i] != "") { NewSections[i] = Convert.ToInt32(Sections[(ItemCount - 1) - i], 16); }
+                }
+                for (int i = 0; i < 32 * ItemCount; i++)
+                {
+                    int j = i / 32;
+                    int k = i % 32;
+                    if (((NewSections[j] >> k) & 1) > 0) { result.Add(i); }
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine($"It broke {e.Message}");
+                return null;
+            }
+            return result;
         }
 
         public static MMRData.SpoilerLogData ReadSpoilerLog(string[] File)
@@ -260,19 +291,18 @@ namespace MMR_Tracker_V3
             }
 
             Debug.WriteLine($"Getting all Logic Items");
-            var AllLogicItems = instance.LogicFile.GetAllItemsUsedInLogic();
+            var AllLogicItems = instance.LogicFile.GetAllItemsUsedInLogic().ToDictionary(x => x, x => "");
             Debug.WriteLine($"Making Unrandomized Items Manual and Junking Unrandomized Starting Items");
             foreach (var i in instance.LocationPool)
             {   
                 //Any unrandomized locations with items that effect logic should be made Manual to track obtaining the item and updating logic
-                if (i.Value.IsUnrandomized(1) && AllLogicItems.Contains(i.Value.GetDictEntry(instance).OriginalItem))
+                if (i.Value.IsUnrandomized(1) && AllLogicItems.ContainsKey(i.Value.GetDictEntry(instance).OriginalItem))
                 {
                     i.Value.SetRandomizedState(MiscData.RandomizedState.UnrandomizedManual, instance);
                 }
                 //If a location is unrandomized, but it's unrandomized item is a starting item it will contain junk. This is MMR sepcific
                 if (i.Value.IsUnrandomized() && instance.GetItemByID(i.Value.GetDictEntry(instance).OriginalItem).AmountInStartingpool > 0)
                 {
-                    if (StartingItems.Contains(i.Key)) { continue; } //Don't do this for starting items since you automatcially get them
                     i.Value.SetRandomizedState(MiscData.RandomizedState.ForcedJunk, instance);
                 }
             }
@@ -283,8 +313,8 @@ namespace MMR_Tracker_V3
             foreach(var i in instance.LocationPool.Values)
             {
                 var DictEntry = i.GetDictEntry(instance);
-                var MatchingLocation = Log.LocationLog.Where(x => DictEntry.SpoilerData.SpoilerLogNames.Contains(x.Key));
-                if (!MatchingLocation.Any()) 
+                var MatchingLogEntry = Log.LocationLog.Where(x => DictEntry.SpoilerData.SpoilerLogNames.Contains(x.Key));
+                if (!MatchingLogEntry.Any()) 
                 {
                     if (i.IsRandomized())
                     {
@@ -292,7 +322,7 @@ namespace MMR_Tracker_V3
                     }
                     continue; 
                 }
-                var ItemName = MatchingLocation.First().Value;
+                var ItemName = MatchingLogEntry.First().Value;
                 if (ItemName.StartsWith("Ice Trap ")) { ItemName = "Ice Trap"; }
                 var MatchingItems = instance.ItemPool.Values.Where(x => x.GetDictEntry(instance).SpoilerData.SpoilerLogNames.Contains(ItemName));
                 var PlaceablegItems = MatchingItems.Where(x => x.CanBePlaced(instance));
@@ -304,7 +334,7 @@ namespace MMR_Tracker_V3
                 }
                 else if (!PlaceablegItems.Any())
                 {
-                    Debug.WriteLine($"{ItemName} Could not placed at {i.ID}: No items {ItemName} could be placed");
+                    Debug.WriteLine($"{ItemName} Could not placed at {i.ID}: All Placeable {ItemName} have already been placed");
                     i.Randomizeditem.SpoilerLogGivenItem = ItemName;
                     continue;
                 }
@@ -320,7 +350,7 @@ namespace MMR_Tracker_V3
                     continue;
                 }
                 i.Price = MatchingLocations.Select(x => x.Value).Min();
-                Debug.WriteLine($"{i.ID} was assigned a price of {i.Price}");
+                //Debug.WriteLine($"{i.ID} was assigned a price of {i.Price}");
             }
             foreach (var i in instance.MacroPool.Values)
             {
@@ -332,7 +362,7 @@ namespace MMR_Tracker_V3
                     continue;
                 }
                 i.Price = MatchingLocations.Select(x => x.Value).Min();
-                Debug.WriteLine($"{i.ID} was assigned a price of {i.Price}");
+                //Debug.WriteLine($"{i.ID} was assigned a price of {i.Price}");
             }
             foreach (var i in instance.HintPool.Values)
             {
@@ -352,6 +382,10 @@ namespace MMR_Tracker_V3
             foreach (var i in instance.LocationPool.Values)
             {
                 i.Randomizeditem.SpoilerLogGivenItem = null;
+                i.Price = -1;
+            }
+            foreach (var i in instance.MacroPool.Values)
+            {
                 i.Price = -1;
             }
             foreach (var i in instance.HintPool.Values)
