@@ -17,22 +17,132 @@ namespace Windows_Form_Frontend
     {
         public string CurrentID;
         private readonly LogicObjects.TrackerInstance instance;
-        private readonly int ReqLBHeight;
-        private int WindowWidth;
+        private readonly ListBoxHeightData ReqLBHeightData;
+        private bool Updating = false;
+        private readonly List<CheckBox> TimeCheckBoxes;
         private readonly List<string> GoBackList = new();
-        public string state = "show";
+        private List<object> CurrentGotoData;
+        //0 = Show Logic; 1 = Goto Entry
+        public int state = 0;
         public ShowLogic(string id, LogicObjects.TrackerInstance _instance)
         {
             InitializeComponent();
             CurrentID = id;
             instance = _instance;
-            ReqLBHeight = listBox1.Height;
-            WindowWidth = this.Width;
+            ReqLBHeightData = new ListBoxHeightData() { 
+                Main = LBReq,
+                TopPosFull = lbCond.Location.Y,
+                TopPosCut = LBReq.Location.Y,
+                BottomPosFull = ND3.Location.Y + ND3.Height,
+                BottomPosCut = LBReq.Location.Y + LBReq.Height,
+            };
+            TimeCheckBoxes = new() { ND1, NN1, ND2, NN2, ND3, NN3, SD1, SN1, SD2, SN2, SD3, SN3 };
+        }
+
+        public class ListBoxHeightData
+        {
+            public ListBox Main;
+
+            public int TopPosFull;
+            public int TopPosCut;
+            public int BottomPosFull;
+            public int BottomPosCut;
+            public void ResizeLB(bool TopElement, bool BottomElement)
+            {
+                int StartingPos = TopElement ? TopPosCut : TopPosFull;
+                int FinalPos = BottomElement ? BottomPosCut : BottomPosFull;
+                Main.Location = new Point(Main.Location.X, StartingPos);
+                Main.Height = FinalPos - StartingPos;
+            }
+        }
+
+        private void UpdateUI()
+        {
+            Updating = true;
+            if (state == 0)
+            {
+                var AlteredLogic = instance.GetLogic(CurrentID, true);
+                var UnAlteredLogic = instance.GetLogic(CurrentID, false);
+                bool Literal = CurrentID.IsLiteralID(out string LogicItem);
+                var type = instance.GetLocationEntryType(LogicItem, Literal, out _);
+                string Availablility = GetAvailable(AlteredLogic, type, LogicItem) ? "*" : "";
+                string typeDisplay = type == LogicEntryType.macro && UnAlteredLogic.IsTrick ? "Trick" : type.ToString();
+                bool hasTimeLogic = UnAlteredLogic.TimeAvailable != TimeOfDay.None || UnAlteredLogic.TimeSetup != TimeOfDay.None;
+                bool ShowTimeLogic = hasTimeLogic && chkShowTime.Checked;
+                //Title
+                this.Text = $"{typeDisplay}: {LogicItem}{Availablility}";
+                //Text Changes
+                textBox1.Text = "";
+                label1.Text = "Requirements";
+                label2.Text = "Conditionals";
+                BTNGotTo.Text = "Go to";
+                //Hide/Show Items
+                textBox1.Visible = false;
+                chkShowTime.Visible = true;
+                chkShowUnaltered.Visible = true;
+                btnGoBack.Visible = true;
+                TimeCheckBoxes.ForEach(x => x.Visible = ShowTimeLogic);
+                label5.Visible = ShowTimeLogic;
+                label6.Visible = ShowTimeLogic;
+                BTNGotTo.Visible = true;
+                //Enable Items
+                textBox1.Enabled = false;
+                btnGoBack.Enabled = GoBackList.Any();
+                chkShowUnaltered.Enabled = !Utility.IsLogicEqual(AlteredLogic, UnAlteredLogic);
+                chkShowTime.Enabled = hasTimeLogic;
+                //Resize Items
+                ReqLBHeightData.ResizeLB(false, ShowTimeLogic);
+            }
+            else if (state == 1)
+            {
+                //Title
+                this.Text = $"Select Logic Entry";
+                //Text Changes
+                label1.Text = "All Logic Items";
+                label2.Text = "Logic Items in Selected Entry";
+                BTNGotTo.Text = "Cancel";
+                //Hide/Show Items
+                textBox1.Visible = true;
+                TimeCheckBoxes.ForEach(x => x.Visible = false);
+                chkShowTime.Visible = false;
+                chkShowUnaltered.Visible = false;
+                label5.Visible = false;
+                label6.Visible = false;
+                btnGoBack.Visible = false;
+                BTNGotTo.Visible = CurrentID is not null;
+                //Enable Items
+                textBox1.Enabled = true;
+                btnGoBack.Enabled = false;
+                chkShowUnaltered.Enabled = false;
+                chkShowTime.Enabled = false;
+                //Resize Items
+                ReqLBHeightData.ResizeLB(true, false);
+            }
+            Updating = false;
+        }
+
+        public bool GetAvailable(MMR_Tracker_V3.TrackerObjects.MMRData.JsonFormatLogicItem Logic, LogicEntryType type, string id)
+        {
+            bool AreaReached = type != LogicEntryType.Exit || LogicCalculation.AreaReached(instance.InstanceReference.EntranceLogicNameToEntryData[id].Area, instance);
+            return LogicCalculation.RequirementsMet(Logic.RequiredItems, instance) && LogicCalculation.ConditionalsMet(Logic.ConditionalItems, instance) && AreaReached;
         }
 
         private void ShowLogic_Load(object sender, EventArgs e)
         {
-            PrintData();
+            if (CurrentID is not null && instance.InstanceReference.LogicFileMapping.ContainsKey(CurrentID))
+            {
+                state = 0;
+                PrintLogicToLists();
+            }
+            else
+            {
+                state = 1;
+                List<string> ItemIds = instance.ItemPool.Keys.ToList();
+                List<string> MacroIds = instance.MacroPool.Keys.ToList();
+                List<string> AreaIds = instance.EntrancePool.AreaList.Keys.ToList();
+                PrintGotoData(CreatGotoList(ItemIds.Concat(MacroIds).Concat(AreaIds).ToList(), out _));
+            }
+            UpdateUI();
         }
 
         private void ShowLogic_ResizeEnd(object sender, EventArgs e)
@@ -40,149 +150,125 @@ namespace Windows_Form_Frontend
 
         }
 
-        private void PrintAllLocations()
+        public List<string> GetAllLogicItemsByFromID(string ID)
         {
-            listBox1.Items.Clear();
-            foreach (var i in instance.LocationPool.Values)
-            {
-                if (!i.ID.ToLower().Contains(textBox1.Text.ToLower())) { continue; }
-                listBox1.Items.Add(i.ID);
-            }
-            foreach (var i in instance.EntrancePool.AreaList.SelectMany(x => x.Value.LoadingZoneExits))
-            {
-                var ID = instance.GetLogicNameFromExit(i.Value);
-                if (!ID.ToLower().Contains(textBox1.Text.ToLower())) { continue; }
-                listBox1.Items.Add(ID);
-            }
-            foreach (var i in instance.EntrancePool.AreaList.SelectMany(x => x.Value.MacroExits))
-            {
-                var ID = instance.GetLogicNameFromExit(i.Value);
-                if (!ID.ToLower().Contains(textBox1.Text.ToLower())) { continue; }
-                listBox1.Items.Add(ID);
-            }
-            foreach (var i in instance.MacroPool.Values)
-            {
-                if (!i.ID.ToLower().Contains(textBox1.Text.ToLower())) { continue; }
-                listBox1.Items.Add(i.ID);
-            }
-        }
+            var OriginalLogic = instance.GetLogic(ID, false);
+            var AlteredLogic = instance.GetLogic(ID);
+            var Logic = chkShowUnaltered.Checked ? OriginalLogic : AlteredLogic;
 
-        private void PrintData()
-        {
-            listBox1.Items.Clear();
-            listBox2.Items.Clear();
-            if (state == "show")
-            {
-                label1.Text = "Requirements";
-                label2.Text = "Conditionals";
-                button2.Text = "Go To";
-                button1.Visible = true;
-
-                button1.Enabled = GoBackList.Any();
-                var OriginalLogic = instance.GetLogic(CurrentID, false);
-                var AlteredLogic = instance.GetLogic(CurrentID);
-
-                bool ReqEqual = OriginalLogic.RequiredItems.SequenceEqual(AlteredLogic.RequiredItems);
-                bool ConEqual = OriginalLogic.ConditionalItems.SelectMany(x => x).SequenceEqual(AlteredLogic.ConditionalItems.SelectMany(x => x));
-
-                bool WasAltered = !ReqEqual || !ConEqual;
-                checkBox1.Visible = WasAltered;
-
-                bool Literal = CurrentID.IsLiteralID(out string LogicItem);
-                var type = instance.GetLocationEntryType(LogicItem, Literal, out _);
-                string Availablility = GetAvailable(AlteredLogic, type, LogicItem) ? "*" : "";
-                string typeDisplay = type == LogicEntryType.macro && OriginalLogic.IsTrick ? "Trick" : type.ToString();
-                this.Text = $"{typeDisplay}: {LogicItem}{Availablility}";
-
-                var Logic = checkBox1.Checked ? OriginalLogic : AlteredLogic;
-                UpdateTimeCheckboxes(OriginalLogic);
-
-                foreach (var i in Logic.RequiredItems)
-                {
-                    StandardListBoxItem boxItem = new StandardListBoxItem() { Display = GetDisplayName(i), tag = i };
-                    listBox1.Items.Add(boxItem);
-                }
-                foreach (var cond in Logic.ConditionalItems)
-                {
-                    StandardListBoxItem boxItem = new StandardListBoxItem() { Display = string.Join(" | ", cond.Select(x => GetDisplayName(x))), tag = cond };
-                    listBox2.Items.Add(boxItem);
-                }
-
-            }
-            else
-            {
-                label1.Text = "All Logic Items";
-                label2.Text = "Logic Items used in this entry";
-                button2.Text = "Cancel";
-                button1.Visible = false;
-
-                PrintSelectedLogicItemsToGotoList();
-                PrintAllLocations();
-            }
-
-        }
-
-        public void PrintSelectedLogicItemsToGotoList()
-        {
-            var OriginalLogic = instance.GetLogic(CurrentID, false);
-            var AlteredLogic = instance.GetLogic(CurrentID);
-            var Logic = checkBox1.Checked ? OriginalLogic : AlteredLogic;
-
-            Dictionary<string, LogicEntryType> GotoList = new Dictionary<string, LogicEntryType>();
+            List<string> LogicItems = new List<string>();
 
             foreach (var i in Logic.RequiredItems)
             {
-                bool ReqItemIsLitteral = i.IsLiteralID(out string ReqLogicItem);
-                GotoList[i] = instance.GetItemEntryType(ReqLogicItem, ReqItemIsLitteral, out _);
+                if (LogicItems.Contains(i)) { continue; }
+                LogicItems.Add(i);
             }
             foreach (var cond in Logic.ConditionalItems)
             {
                 foreach (var i in cond)
                 {
-                    bool ReqItemIsLitteral = i.IsLiteralID(out string ReqLogicItem);
-                    GotoList[i] = instance.GetItemEntryType(ReqLogicItem, ReqItemIsLitteral, out _);
+                    if (LogicItems.Contains(i)) { continue; }
+                    LogicItems.Add(i);
                 }
             }
-            AddToGotoList(GotoList);
+            return LogicItems;
         }
 
-        private void UpdateTimeCheckboxes(MMR_Tracker_V3.TrackerObjects.MMRData.JsonFormatLogicItem OriginalLogic)
+        private void PrintLogicToLists()
         {
-            List<CheckBox> TimeCheckBoxes = new() { ND1, NN1, ND2, NN2, ND3, NN3, SD1, SN1, SD2, SN2, SD3, SN3 };
-            bool hasTimeLogic = OriginalLogic.TimeAvailable != TimeOfDay.None || OriginalLogic.TimeSetup != TimeOfDay.None;
-            bool ShowTimeLogic = hasTimeLogic && checkBox2.Checked;
-            checkBox2.Visible = hasTimeLogic;
-            label5.Visible = ShowTimeLogic;
-            label6.Visible = ShowTimeLogic;
-            listBox1.Height = ShowTimeLogic ? ReqLBHeight : listBox2.Height;
-            int Index = 0;
-            foreach (var i in TimeCheckBoxes)
+
+            LBReq.Items.Clear();
+            lbCond.Items.Clear();
+            var Logic = instance.GetLogic(CurrentID, !chkShowUnaltered.Checked);
+            bool Literal = CurrentID.IsLiteralID(out string LogicItem);
+            var type = instance.GetLocationEntryType(LogicItem, Literal, out _);
+            UpdateTimeCheckboxes(Logic);
+
+            foreach (var i in Logic.RequiredItems)
             {
-                i.Visible = ShowTimeLogic;
-                if (ShowTimeLogic)
-                {
-                    if (Index < 6) { i.Checked = ((((int)OriginalLogic.TimeAvailable >> Index) & 1) == 1); }
-                    else { i.Checked = ((((int)OriginalLogic.TimeSetup >> Index - 6) & 1) == 1); }
-                }
-                Index++;
+                StandardListBoxItem boxItem = new StandardListBoxItem() { Display = GetDisplayName(i), tag = i };
+                LBReq.Items.Add(boxItem);
+            }
+            foreach (var cond in Logic.ConditionalItems)
+            {
+                StandardListBoxItem boxItem = new StandardListBoxItem() { Display = string.Join(" | ", cond.Select(x => GetDisplayName(x))), tag = cond };
+                lbCond.Items.Add(boxItem);
             }
         }
 
-        private void AddToGotoList(Dictionary<string, LogicEntryType> GotoList)
+        private void PrintGotoData(List<object> GotoData, bool SearchGotoData = false)
+        {
+            LBReq.Items.Clear();
+            foreach (var i in instance.LocationPool.Values)
+            {
+                if (!i.ID.ToLower().Contains(textBox1.Text.ToLower())) { continue; }
+                LBReq.Items.Add(i.ID);
+            }
+            foreach (var i in instance.EntrancePool.AreaList.SelectMany(x => x.Value.LoadingZoneExits))
+            {
+                var ID = instance.GetLogicNameFromExit(i.Value);
+                if (!ID.ToLower().Contains(textBox1.Text.ToLower())) { continue; }
+                LBReq.Items.Add(ID);
+            }
+            foreach (var i in instance.EntrancePool.AreaList.SelectMany(x => x.Value.MacroExits))
+            {
+                var ID = instance.GetLogicNameFromExit(i.Value);
+                if (!ID.ToLower().Contains(textBox1.Text.ToLower())) { continue; }
+                LBReq.Items.Add(ID);
+            }
+            foreach (var i in instance.MacroPool.Values)
+            {
+                if (!i.ID.ToLower().Contains(textBox1.Text.ToLower())) { continue; }
+                LBReq.Items.Add(i.ID);
+            }
+            if (GotoData != null)
+            {
+                lbCond.Items.Clear();
+                foreach (var i in GotoData)
+                {
+                    lbCond.Items.Add(i);
+                }
+                CurrentGotoData = GotoData;
+            }
+            else if (CurrentGotoData != null && SearchGotoData)
+            {
+                lbCond.Items.Clear();
+                foreach (var i in CurrentGotoData)
+                {
+                    if (i is StandardListBoxItem SLI && !SLI.Display.ToLower().Contains(textBox1.Text.ToLower())) { continue; }
+                    lbCond.Items.Add(i);
+                }
+            }
+        }
+
+        private List<object> CreatGotoList(List<string> set, out List<object> DataEntriesOnly)
+        {
+            Dictionary<string, LogicEntryType> LogicItems = new Dictionary<string, LogicEntryType>();
+            foreach (var i in set)
+            {
+                bool ReqItemIsLitteral = i.IsLiteralID(out string ReqLogicItem);
+                LogicItems[i] = instance.GetItemEntryType(ReqLogicItem, ReqItemIsLitteral, out _);
+            }
+            var GotoData = CreateGotoDataFromList(LogicItems);
+            DataEntriesOnly = GotoData.Where(x => x is StandardListBoxItem).ToList();
+            return GotoData;
+        }
+
+        private List<object> CreateGotoDataFromList(Dictionary<string, LogicEntryType> GotoList)
         {
             GotoList = GotoList.OrderBy(x => x.Value).ThenBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
-
+            List<object> list = new List<object>();
             LogicEntryType CurrentType = LogicEntryType.location;
-            foreach(var i in GotoList)
+            foreach (var i in GotoList)
             {
                 var Checks = GetChecksContainingSelectedID(i.Key, out _, out string CleanedID);
                 if (!Checks.Any()) { continue; }
-                if (CurrentType != i.Value) 
+                if (CurrentType != i.Value)
                 {
-                    listBox2.Items.Add(WinFormUtils.CreateDivider(listBox2, $"{i.Value}"));
-                    CurrentType = i.Value; 
+                    list.Add(WinFormUtils.CreateDivider(lbCond, $"{i.Value}"));
+                    CurrentType = i.Value;
                 }
-                foreach(var c in Checks)
+                foreach (var c in Checks)
                 {
                     var LitEntry = new StandardListBoxItem();
                     switch (CurrentType)
@@ -201,48 +287,23 @@ namespace Windows_Form_Frontend
                             LitEntry.Display = CleanedID;
                             break;
                     }
-                    listBox2.Items.Add(LitEntry);
+                    list.Add(LitEntry);
                 }
             }
+            return list;
         }
-
-        public bool GetAvailable(MMR_Tracker_V3.TrackerObjects.MMRData.JsonFormatLogicItem Logic, LogicEntryType type, string id)
+        private void UpdateTimeCheckboxes(MMR_Tracker_V3.TrackerObjects.MMRData.JsonFormatLogicItem OriginalLogic)
         {
-            bool AreaReached = type != LogicEntryType.Exit || LogicCalculation.AreaReached(instance.InstanceReference.EntranceLogicNameToEntryData[id].Area, instance);
-            return LogicCalculation.RequirementsMet(Logic.RequiredItems, instance) && LogicCalculation.ConditionalsMet(Logic.ConditionalItems, instance) && AreaReached;
-        }
-
-        private string GetDisplayName(string i)
-        {
-            return i + (LogicCalculation.LogicEntryAquired(instance, i) ? "*": "");
-        }
-
-        private void listBox3_DoubleClick(object sender, EventArgs e)
-        {
-            if (state == "go")
+            Updating = true;
+            int Index = 0;
+            foreach (var i in TimeCheckBoxes)
             {
-                if (sender == listBox2 && listBox2.SelectedItem is StandardListBoxItem LBI)
-                {
-                    state = "show";
-                    GoBackList.Add(CurrentID);
-                    CurrentID = LBI.tag.ToString();
-                    PrintData();
-                }
-                else if (sender == listBox1 && listBox1.SelectedItem is string LBS)
-                {
-                    state = "show";
-                    GoBackList.Add(CurrentID);
-                    CurrentID = LBS;
-                    PrintData();
-                }
+                if (Index < 6) { i.Checked = ((((int)OriginalLogic.TimeAvailable >> Index) & 1) == 1); }
+                else { i.Checked = ((((int)OriginalLogic.TimeSetup >> Index - 6) & 1) == 1); }
+                Index++;
             }
-            else
-            {
-                state = "GO";
-                PrintData();
-            }
+            Updating = false;
         }
-
         private List<string> GetChecksContainingSelectedID(string ID, out LogicEntryType Type, out string OutCleanedID)
         {
             LogicCalculation.MultipleItemEntry(instance, ID, out string CleanedID, out int Amount);
@@ -265,29 +326,116 @@ namespace Windows_Form_Frontend
                     return new List<string>();
             }
         }
+        private string GetDisplayName(string i)
+        {
+            return i + (LogicCalculation.LogicEntryAquired(instance, i) ? "*" : "");
+        }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnGoTo_Click(object sender, EventArgs e)
+        {
+            Debug.WriteLine(state);
+            if (state == 0) 
+            { 
+                var GotoList = CreatGotoList(GetAllLogicItemsByFromID(CurrentID), out List<object> DataEntriesOnly); 
+                state = 1;
+                PrintGotoData(GotoList);
+            }
+            else if (state == 1) 
+            { 
+                PrintLogicToLists(); 
+                state = 0; 
+            }
+            UpdateUI();
+        }
+
+        private void btnGoBack_Click(object sender, EventArgs e)
         {
             CurrentID = GoBackList[^1];
             GoBackList.RemoveAt(GoBackList.Count -1);
-            PrintData();
+            PrintLogicToLists();
+            UpdateUI();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void LBCond_DoubleClick(object sender, EventArgs e)
         {
-            PrintData();
+            if (state == 0)
+            {
+                if (lbCond.SelectedItem is StandardListBoxItem SI && SI.tag is List<string> Cond)
+                {
+                    var GotoList = CreatGotoList(Cond, out List<object> DataEntriesOnly);
+                    if (!DataEntriesOnly.Any()) { return; }
+                    else if (DataEntriesOnly.Count == 1 && DataEntriesOnly.First() is StandardListBoxItem SLI && Cond.Count == 1)
+                    {
+                        GoBackList.Add(CurrentID);
+                        CurrentID = SLI.tag.ToString();
+                        PrintLogicToLists();
+                    }
+                    else
+                    {
+                        state = 1;
+                        PrintGotoData(GotoList);
+                    }
+                }
+            }
+            else if (state == 1)
+            {
+                if (lbCond.SelectedItem is StandardListBoxItem SI && SI.tag is string str)
+                {
+                    GoBackList.Add(CurrentID);
+                    CurrentID = str;
+                    PrintLogicToLists(); 
+                    state = 0;
+                }
+            }
+            UpdateUI();
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void lbReq_DoubleClick(object sender, EventArgs e)
         {
-            PrintData();
+            if (state == 0)
+            {
+                if (LBReq.SelectedItem is StandardListBoxItem SI && SI.tag is string req)
+                {
+                    var GotoList = CreatGotoList(new List<string> { req }, out List<object> DataEntriesOnly);
+                    if (!DataEntriesOnly.Any()) { return; }
+                    else if (DataEntriesOnly.Count == 1 && DataEntriesOnly.First() is StandardListBoxItem SLI)
+                    {
+                        GoBackList.Add(CurrentID);
+                        CurrentID = SLI.tag.ToString();
+                        PrintLogicToLists();
+                    }
+                    else
+                    {
+                        state = 1;
+                        PrintGotoData(GotoList);
+                    }
+                }
+            }
+            else if (state == 1)
+            {
+                if (LBReq.SelectedItem is string str)
+                {
+                    if (CurrentID is not null) { GoBackList.Add(CurrentID); }
+                    CurrentID = str;
+                    PrintLogicToLists(); 
+                    state = 0;
+                }
+            }
+            UpdateUI();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void lbReq_TextChanged(object sender, EventArgs e)
         {
-            if (state == "show") { state = "go"; }
-            else { state = "show"; }
-            PrintData();
+            if (Updating) { return; }
+            PrintGotoData(null);
+            UpdateUI();
+        }
+
+        private void miscChk_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Updating) { return; }
+            UpdateUI();
+            PrintLogicToLists();
         }
     }
 }

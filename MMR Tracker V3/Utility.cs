@@ -193,6 +193,13 @@ namespace MMR_Tracker_V3
             return settings.GetType().GetProperty(name) != null;
         }
 
+        public static bool IsLogicEqual(MMRData.JsonFormatLogicItem logicItem1, MMRData.JsonFormatLogicItem logicItem2)
+        {
+            bool ReqEqual = logicItem1.RequiredItems.SequenceEqual(logicItem2.RequiredItems);
+            bool ConEqual = logicItem1.ConditionalItems.SelectMany(x => x).SequenceEqual(logicItem2.ConditionalItems.SelectMany(x => x));
+            return ReqEqual && ConEqual;
+        }
+
     }
     public static class GenericCopier<T>
     {

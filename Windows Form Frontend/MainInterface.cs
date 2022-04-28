@@ -239,7 +239,7 @@ namespace Windows_Form_Frontend
             var instance = PMRToolsV2.CreatePMRdata();
 
             WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(instance.LogicFile), JsonConvert.SerializeObject(instance.LogicDictionary));
-
+            
             /*
             PlaythroughGenerator playthroughGenerator = new PlaythroughGenerator(CurrentTrackerInstance);
             playthroughGenerator.GeneratePlaythrough();
