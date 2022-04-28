@@ -236,17 +236,19 @@ namespace Windows_Form_Frontend
 
         private void CodeTestingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var instance = PMRToolsV2.CreatePMRdata();
 
-            WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(instance.LogicFile), JsonConvert.SerializeObject(instance.LogicDictionary));
-            
             /*
+            var instance = PMRToolsV2.CreatePMRdata();
+            WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(instance.LogicFile), JsonConvert.SerializeObject(instance.LogicDictionary));
+            */
+
             PlaythroughGenerator playthroughGenerator = new PlaythroughGenerator(CurrentTrackerInstance);
             playthroughGenerator.GeneratePlaythrough();
+            playthroughGenerator.FilterImportantPlaythrough("YOUWIN");
 
-            File.WriteAllText(Testing.CretaeTestingFile("PMRPlaythrough"), JsonConvert.SerializeObject(playthroughGenerator.Playthrough, Testing._NewtonsoftJsonSerializerOptions));
+            File.WriteAllText(Testing.CretaeTestingFile("Playthrough"), JsonConvert.SerializeObject(playthroughGenerator.Playthrough, Testing._NewtonsoftJsonSerializerOptions));
+            File.WriteAllText(Testing.CretaeTestingFile("ImportantPlaythrough"), JsonConvert.SerializeObject(playthroughGenerator.Playthrough.Where(x => x.Value.Important), Testing._NewtonsoftJsonSerializerOptions));
             File.WriteAllText(Testing.CretaeTestingFile("UnlockData"), JsonConvert.SerializeObject(playthroughGenerator.FirstObtainedDict, Testing._NewtonsoftJsonSerializerOptions));
-            */
 
 
         }

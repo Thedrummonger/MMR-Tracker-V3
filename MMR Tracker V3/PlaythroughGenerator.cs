@@ -25,6 +25,7 @@ namespace MMR_Tracker_V3
         {
             public string id { get; set; }
             public int sphere { get; set; }
+            public MiscData.LogicEntryType CheckType { get; set; }
             public string ItemObtained { get; set; }
             public List<string> UsedItems { get; set; }
             public bool Important { get; set; }
@@ -66,6 +67,7 @@ namespace MMR_Tracker_V3
                         id = GetEntId(i),
                         ItemObtained = i.GetDestinationAtExit(_Instance).region,
                         UsedItems = PlaythroughUnlockData[GetEntId(i)],
+                        CheckType = MiscData.LogicEntryType.Exit,
                         sphere = Sphere
                     };
                     if (!FirstObtainedDict.ContainsKey(playthroughObject.ItemObtained)) { FirstObtainedDict.Add(playthroughObject.ItemObtained, new List<Tuple<object, PlaythroughObject, int>>()); }
@@ -86,6 +88,7 @@ namespace MMR_Tracker_V3
                         id = i.ID,
                         ItemObtained = i.GetItemAtCheck(_Instance),
                         UsedItems = PlaythroughUnlockData[i.ID],
+                        CheckType = MiscData.LogicEntryType.location,
                         sphere = Sphere
                     };
                     if (!FirstObtainedDict.ContainsKey(playthroughObject.ItemObtained)) { FirstObtainedDict.Add(playthroughObject.ItemObtained, new List<Tuple<object, PlaythroughObject, int>>()); }
@@ -99,6 +102,7 @@ namespace MMR_Tracker_V3
                         id = i.ID,
                         ItemObtained = i.ID,
                         UsedItems = PlaythroughUnlockData[i.ID],
+                        CheckType = MiscData.LogicEntryType.macro,
                         sphere = Sphere
                     };
                     if (!FirstObtainedDict.ContainsKey(playthroughObject.ItemObtained)) { FirstObtainedDict.Add(playthroughObject.ItemObtained, new List<Tuple<object, PlaythroughObject, int>>()); }
