@@ -22,16 +22,17 @@ namespace MMR_Tracker_V3
 
         public static bool RequirementsMet(List<string> Requirements, TrackerInstance instance, string ID = null, Dictionary<string, List<string>> UnlockData = null)
         {
-            bool reqMet = Requirements.All(x => LogicEntryAquired(instance, x));
+            List<string> SubUnlockData = new List<string>();
+            bool reqMet = Requirements.All(x => LogicEntryAquired(instance, x, SubUnlockData));
             if (ID != null && UnlockData != null && reqMet)
             {
                 if (!UnlockData.ContainsKey(ID)) { UnlockData.Add(ID, new List<string>()); }
-                UnlockData[ID] = UnlockData[ID].Concat(Requirements).ToList();
+                UnlockData[ID] = UnlockData[ID].Concat(Requirements).Concat(SubUnlockData).ToList();
             }
             return reqMet;
         }
 
-        public static bool ConditionalsMet(List<List<string>> Conditionals, TrackerInstance instance, string ID = null, Dictionary<string, List<string>> UnlockData = null)
+        public static bool ConditionalsMet(List<List<string>> Conditionals, TrackerInstance instance, string ID, Dictionary<string, List<string>> UnlockData = null)
         {
             if (!Conditionals.Any()) { return true; }
             var CondMet = Conditionals.FirstOrDefault(x => RequirementsMet(x, instance, ID));
@@ -43,7 +44,7 @@ namespace MMR_Tracker_V3
             return CondMet != null;
         }
 
-        public static bool LogicEntryAquired(TrackerInstance instance, string i)
+        public static bool LogicEntryAquired(TrackerInstance instance, string i, List<string> SubUnlockData)
         {
             if (LogicOptionEntry(instance, i, out bool OptionEntryValid)) { return OptionEntryValid; }
 
@@ -62,9 +63,10 @@ namespace MMR_Tracker_V3
                 case LogicEntryType.Area:
                     return AreaReached(LogicItem, instance);
                 case LogicEntryType.variableString:
-                    return LogicEntryAquired(instance, instance.Variables[LogicItem].Value as string);
+                    return LogicEntryAquired(instance, instance.Variables[LogicItem].Value as string, SubUnlockData);
                 case LogicEntryType.variableList:
-                    return ItemArrayUseable(instance, LogicItem, Amount);
+                    Debug.WriteLine($"{LogicItem} Was a variable List");
+                    return ItemArrayUseable(instance, LogicItem, Amount, SubUnlockData);
                 case LogicEntryType.variableBool:
                     return instance.Variables[LogicItem].Value;
                 default:
@@ -73,23 +75,41 @@ namespace MMR_Tracker_V3
             }
         }
 
-        private static bool ItemArrayUseable(TrackerInstance instance, string ArrVar, int amount)
+        private static bool ItemArrayUseable(TrackerInstance instance, string ArrVar, int amount, List<string> SubUnlockData)
         {
             if (instance.Variables[ArrVar].Value is not List<string> ItemArray) { return false; }
             int UseableItems = 0;
+            Dictionary<string, int> UsedItems = new Dictionary<string, int>();
+            bool CountMet = false;
             foreach (string i in ItemArray)
             {
-                if (LogicEntryAquired(instance, i))
+                if (LogicEntryAquired(instance, i, SubUnlockData))
                 {
                     bool MultiItem = MultipleItemEntry(instance, i, out string LogicItem, out int Amount);
                     bool Literal = LogicItem.IsLiteralID(out LogicItem);
                     var type = instance.GetItemEntryType(LogicItem, Literal, out object ItemObj);
 
-                    if (type == LogicEntryType.item && !MultiItem) { UseableItems += (ItemObj as ItemObject).GetTotalUsable(instance); }
-                    else { UseableItems++; }
+                    if (type == LogicEntryType.item && !MultiItem) 
+                    {
+                        int Needed = 0;
+                        for(var j = 0; j < (ItemObj as ItemObject).GetTotalUsable(instance); j++)
+                        {
+                            if (!CountMet) { Needed++; }
+                            UseableItems++;
+                            if (UseableItems > amount) { CountMet = true; }
+                        }
+                        if (!CountMet && (!UsedItems.ContainsKey(LogicItem) || UsedItems[LogicItem] < Needed)) { UsedItems[LogicItem] = Needed; }
+                    }
+                    else 
+                    { 
+                        if (!CountMet && (!UsedItems.ContainsKey(LogicItem) || UsedItems[LogicItem] < Amount)) { UsedItems[LogicItem] = Amount; }
+                        UseableItems++;
+                        if (UseableItems > amount) { CountMet = true; }
+                    }
 
                 }
             }
+            foreach(var x in UsedItems) { SubUnlockData.Add($"{x.Key}, {x.Value}"); }
             return UseableItems >= amount;
         }
 

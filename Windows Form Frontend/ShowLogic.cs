@@ -124,7 +124,7 @@ namespace Windows_Form_Frontend
         public bool GetAvailable(MMR_Tracker_V3.TrackerObjects.MMRData.JsonFormatLogicItem Logic, LogicEntryType type, string id)
         {
             bool AreaReached = type != LogicEntryType.Exit || LogicCalculation.AreaReached(instance.InstanceReference.EntranceLogicNameToEntryData[id].Area, instance);
-            return LogicCalculation.RequirementsMet(Logic.RequiredItems, instance) && LogicCalculation.ConditionalsMet(Logic.ConditionalItems, instance) && AreaReached;
+            return LogicCalculation.RequirementsMet(Logic.RequiredItems, instance, id) && LogicCalculation.ConditionalsMet(Logic.ConditionalItems, instance, id) && AreaReached;
         }
 
         private void ShowLogic_Load(object sender, EventArgs e)
@@ -328,7 +328,7 @@ namespace Windows_Form_Frontend
         }
         private string GetDisplayName(string i)
         {
-            return i + (LogicCalculation.LogicEntryAquired(instance, i) ? "*" : "");
+            return i + (LogicCalculation.LogicEntryAquired(instance, i, new List<string>()) ? "*" : "");
         }
 
         private void btnGoTo_Click(object sender, EventArgs e)
