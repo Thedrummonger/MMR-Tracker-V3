@@ -27,7 +27,7 @@ namespace MMR_Tracker_V3
             if (ID != null && UnlockData != null && reqMet)
             {
                 if (!UnlockData.ContainsKey(ID)) { UnlockData.Add(ID, new List<string>()); }
-                UnlockData[ID] = UnlockData[ID].Concat(Requirements).Concat(SubUnlockData).ToList();
+                UnlockData[ID] = UnlockData[ID].Concat(SubUnlockData).ToList();
             }
             return reqMet;
         }
@@ -46,6 +46,7 @@ namespace MMR_Tracker_V3
 
         public static bool LogicEntryAquired(TrackerInstance instance, string i, List<string> SubUnlockData)
         {
+            SubUnlockData.Add(i);
             if (LogicOptionEntry(instance, i, out bool OptionEntryValid)) { return OptionEntryValid; }
 
             MultipleItemEntry(instance, i, out string LogicItem, out int Amount);
@@ -65,7 +66,6 @@ namespace MMR_Tracker_V3
                 case LogicEntryType.variableString:
                     return LogicEntryAquired(instance, instance.Variables[LogicItem].Value as string, SubUnlockData);
                 case LogicEntryType.variableList:
-                    Debug.WriteLine($"{LogicItem} Was a variable List");
                     return ItemArrayUseable(instance, LogicItem, Amount, SubUnlockData);
                 case LogicEntryType.variableBool:
                     return instance.Variables[LogicItem].Value;

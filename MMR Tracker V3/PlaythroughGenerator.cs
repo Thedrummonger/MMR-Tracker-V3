@@ -144,10 +144,12 @@ namespace MMR_Tracker_V3
             {
                 foreach(var i in ImportantCheck.advancedUnlockData.RealItemsUsed)
                 {
+                    int StartingAmount = _Instance.GetItemByID(i.Key)?.AmountInStartingpool??0;
                     if (FirstObtainedDict.ContainsKey(i.Key))
                     {
                         for(var j = 0; j < i.Value; j++)
                         {
+                            if (StartingAmount > 0) { StartingAmount--; continue; }
                             FirstObtainedDict[i.Key][j].Item2.Important = true;
                         }
                     }
