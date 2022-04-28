@@ -99,11 +99,13 @@ namespace Windows_Form_Frontend
 
                 foreach (var i in Logic.RequiredItems)
                 {
-                    listBox1.Items.Add(GetDisplayName(i));
+                    StandardListBoxItem boxItem = new StandardListBoxItem() { Display = GetDisplayName(i), tag = i };
+                    listBox1.Items.Add(boxItem);
                 }
                 foreach (var cond in Logic.ConditionalItems)
                 {
-                    listBox2.Items.Add(string.Join(" | ", cond.Select(x => GetDisplayName(x))));
+                    StandardListBoxItem boxItem = new StandardListBoxItem() { Display = string.Join(" | ", cond.Select(x => GetDisplayName(x))), tag = cond };
+                    listBox2.Items.Add(boxItem);
                 }
 
             }
@@ -219,14 +221,14 @@ namespace Windows_Form_Frontend
         {
             if (state == "go")
             {
-                if (listBox2.SelectedItem is StandardListBoxItem LBI)
+                if (sender == listBox2 && listBox2.SelectedItem is StandardListBoxItem LBI)
                 {
                     state = "show";
                     GoBackList.Add(CurrentID);
                     CurrentID = LBI.tag.ToString();
                     PrintData();
                 }
-                else if (listBox1.SelectedItem is string LBS)
+                else if (sender == listBox1 && listBox1.SelectedItem is string LBS)
                 {
                     state = "show";
                     GoBackList.Add(CurrentID);
@@ -236,7 +238,8 @@ namespace Windows_Form_Frontend
             }
             else
             {
-                button2_Click(sender, e);
+                state = "GO";
+                PrintData();
             }
         }
 
