@@ -28,6 +28,7 @@ namespace Windows_Form_Frontend
         {
             PopulateWinConCMB();
             PopulateSpoilerLogList();
+            listBox1_SelectedValueChanged(sender, e);
         }
 
         private void PopulateWinConCMB()
@@ -126,8 +127,8 @@ namespace Windows_Form_Frontend
                 {
                     LBI.Display = Item.GetDictEntry(_instance).GetItemName(_instance);
                 }
-                if (SearchStringParser.FilterSearch(_instance, Item, textBox2.Text, LBI.Display))
-                SpoilerList.Add(LBI);
+                if (SearchStringParser.FilterSearch(_instance, Item, textBox2.Text, LBI.Display)) { SpoilerList.Add(LBI); }
+                
             }
 
             Dictionary<string, List<LocationData.LocationObject>> CleanedEntries = new Dictionary<string, List<LocationData.LocationObject>>();
@@ -137,15 +138,29 @@ namespace Windows_Form_Frontend
                 CleanedEntries[spoiler.Display].Add(spoiler.tag as LocationData.LocationObject);
             }
             CleanedEntries = CleanedEntries.OrderBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
+            if (CleanedEntries.Any() && chkShowMacros.Checked) { listBox1.Items.Add(WinFormUtils.CreateDivider(listBox1, "Locations")); }
             foreach(var i in CleanedEntries)
             {
                 listBox1.Items.Add(new MiscData.StandardListBoxItem { Display = i.Key, tag = i.Value });
+            }
+
+            List<MiscData.StandardListBoxItem> MacroList = new List<MiscData.StandardListBoxItem>();
+            if (chkShowMacros.Checked)
+            {
+                foreach (var check in _instance.MacroPool.Values)
+                {
+                    MiscData.StandardListBoxItem LBI = new MiscData.StandardListBoxItem() { tag = check, Display = check.GetDictEntry(_instance).Name??check.ID };
+                    if (SearchStringParser.FilterSearch(_instance, check, textBox2.Text, LBI.Display)) { MacroList.Add(LBI); }
+                }
+                if (MacroList.Any()) { listBox1.Items.Add(WinFormUtils.CreateDivider(listBox1, "Macros")); }
+                foreach(var i in MacroList.OrderBy(x => x.Display)) { listBox1.Items.Add(i); }
             }
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             PopulateSpoilerLogList();
+            listBox1_SelectedValueChanged(sender, e);
         }
 
         private void btnArea_Click(object sender, EventArgs e)
@@ -203,6 +218,12 @@ namespace Windows_Form_Frontend
                         else { MessageBox.Show($"{SLI.Display} Can be obtained shpere {SpheresObtainable.Min()}");}
                     }
                 }
+                else if (SLI.tag is MacroObject MO)
+                {
+                    if (SpoilerLookupPlaythrough.Playthrough.ContainsKey(MO.ID)) { MessageBox.Show($"{SLI.Display} Can be obtained shpere {SpoilerLookupPlaythrough.Playthrough[MO.ID].sphere}"); }
+                    else if (MO.isTrick(_instance) && !MO.TrickEnabled) { MessageBox.Show($"{SLI.Display} Is a trick and is not enabled"); }
+                    else { MessageBox.Show($"{SLI.Display} Can not be obtained with known items"); }
+                }
             }
         }
 
@@ -225,6 +246,24 @@ namespace Windows_Form_Frontend
                         MessageBox.Show($"{SLI.Display} Can be found at these locations:\n\n-{string.Join("\n-", LLO.Select(x => x.GetDictEntry(_instance).Name??x.ID).Distinct().OrderBy(x => x))}");
                     }
                 }
+            }
+        }
+
+        private void listBox1_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedItem is MiscData.StandardListBoxItem SLI)
+            {
+                bool EnableLocation = SLI.tag is LocationData.LocationObject || SLI.tag is List<LocationData.LocationObject>;
+                bool EnableSphere = SLI.tag is MacroObject || SLI.tag is List<MacroObject>;
+                btnArea.Enabled = EnableLocation;
+                btnLocation.Enabled = EnableLocation;
+                btnSphere.Enabled = EnableLocation || EnableSphere;
+            }
+            else
+            {
+                btnArea.Enabled = false;
+                btnLocation.Enabled = false;
+                btnSphere.Enabled = false;
             }
         }
     }
