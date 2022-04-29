@@ -240,15 +240,19 @@ namespace Windows_Form_Frontend
             /*
             var instance = PMRToolsV2.CreatePMRdata();
             WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(instance.LogicFile), JsonConvert.SerializeObject(instance.LogicDictionary));
-            */
-
+            
             PlaythroughGenerator playthroughGenerator = new PlaythroughGenerator(CurrentTrackerInstance);
             playthroughGenerator.GeneratePlaythrough();
-            playthroughGenerator.FilterImportantPlaythrough("YOUWIN");
+            playthroughGenerator.FilterImportantPlaythrough("Ganon");
 
             File.WriteAllText(Testing.CretaeTestingFile("Playthrough"), JsonConvert.SerializeObject(playthroughGenerator.Playthrough, Testing._NewtonsoftJsonSerializerOptions));
             File.WriteAllText(Testing.CretaeTestingFile("ImportantPlaythrough"), JsonConvert.SerializeObject(playthroughGenerator.Playthrough.Where(x => x.Value.Important), Testing._NewtonsoftJsonSerializerOptions));
             File.WriteAllText(Testing.CretaeTestingFile("UnlockData"), JsonConvert.SerializeObject(playthroughGenerator.FirstObtainedDict, Testing._NewtonsoftJsonSerializerOptions));
+
+            */
+
+            SpoilerLogLookUp spoilerLogLookUp = new SpoilerLogLookUp(CurrentTrackerInstance);
+            spoilerLogLookUp.Show();
 
 
         }

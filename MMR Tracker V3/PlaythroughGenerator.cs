@@ -13,12 +13,14 @@ namespace MMR_Tracker_V3
     {
         public LogicObjects.TrackerInstance _Instance;
         public Dictionary<string, PlaythroughObject> Playthrough = new Dictionary<string, PlaythroughObject>();
+        public List<string> _IngoredChecks;
         public Dictionary<string, MMRData.JsonFormatLogicItem> LogicMap = new Dictionary<string, MMRData.JsonFormatLogicItem>();
         public Dictionary<string, List<string>> PlaythroughUnlockData = new Dictionary<string, List<string>>();
-        public Dictionary<string, List<Tuple<object, PlaythroughObject, int>>> FirstObtainedDict = new Dictionary<string, List<Tuple<object, PlaythroughObject, int>>>();
-        public PlaythroughGenerator(LogicObjects.TrackerInstance instance)
+        public Dictionary<string, List<Tuple<object, PlaythroughObject>>> FirstObtainedDict = new Dictionary<string, List<Tuple<object, PlaythroughObject>>>();
+        public PlaythroughGenerator(LogicObjects.TrackerInstance instance, List<string> IngoredChecks = null)
         {
             _Instance = Newtonsoft.Json.JsonConvert.DeserializeObject<LogicObjects.TrackerInstance>(Newtonsoft.Json.JsonConvert.SerializeObject(instance));
+            _IngoredChecks = IngoredChecks??new List<string>();
         }
 
         public class PlaythroughObject
@@ -64,15 +66,15 @@ namespace MMR_Tracker_V3
                     i.CheckState = MiscData.CheckState.Checked;
                     PlaythroughObject playthroughObject = new PlaythroughObject
                     {
-                        id = GetEntId(i),
+                        id = _Instance.GetLogicNameFromExit(i),
                         ItemObtained = i.GetDestinationAtExit(_Instance).region,
-                        UsedItems = PlaythroughUnlockData[GetEntId(i)],
+                        UsedItems = PlaythroughUnlockData[_Instance.GetLogicNameFromExit(i)],
                         CheckType = MiscData.LogicEntryType.Exit,
                         sphere = Sphere
                     };
-                    if (!FirstObtainedDict.ContainsKey(playthroughObject.ItemObtained)) { FirstObtainedDict.Add(playthroughObject.ItemObtained, new List<Tuple<object, PlaythroughObject, int>>()); }
-                    FirstObtainedDict[playthroughObject.ItemObtained].Add(new Tuple<object, PlaythroughObject, int>(i, playthroughObject, FirstObtainedDict[playthroughObject.ItemObtained].Count));
-                    Playthrough.Add(GetEntId(i), playthroughObject);
+                    if (!FirstObtainedDict.ContainsKey(playthroughObject.ItemObtained)) { FirstObtainedDict.Add(playthroughObject.ItemObtained, new List<Tuple<object, PlaythroughObject>>()); }
+                    FirstObtainedDict[playthroughObject.ItemObtained].Add(new Tuple<object, PlaythroughObject>(i, playthroughObject));
+                    Playthrough.Add(_Instance.GetLogicNameFromExit(i), playthroughObject);
                 }
                 foreach (var i in AvailableLocations)
                 {
@@ -91,8 +93,8 @@ namespace MMR_Tracker_V3
                         CheckType = MiscData.LogicEntryType.location,
                         sphere = Sphere
                     };
-                    if (!FirstObtainedDict.ContainsKey(playthroughObject.ItemObtained)) { FirstObtainedDict.Add(playthroughObject.ItemObtained, new List<Tuple<object, PlaythroughObject, int>>()); }
-                    FirstObtainedDict[playthroughObject.ItemObtained].Add(new Tuple<object, PlaythroughObject, int>(i, playthroughObject, FirstObtainedDict[playthroughObject.ItemObtained].Count));
+                    if (!FirstObtainedDict.ContainsKey(playthroughObject.ItemObtained)) { FirstObtainedDict.Add(playthroughObject.ItemObtained, new List<Tuple<object, PlaythroughObject>>()); }
+                    FirstObtainedDict[playthroughObject.ItemObtained].Add(new Tuple<object, PlaythroughObject>(i, playthroughObject));
                     Playthrough.Add(i.ID, playthroughObject);
                 }
                 foreach (var i in AquiredMacros)
@@ -105,8 +107,8 @@ namespace MMR_Tracker_V3
                         CheckType = MiscData.LogicEntryType.macro,
                         sphere = Sphere
                     };
-                    if (!FirstObtainedDict.ContainsKey(playthroughObject.ItemObtained)) { FirstObtainedDict.Add(playthroughObject.ItemObtained, new List<Tuple<object, PlaythroughObject, int>>()); }
-                    FirstObtainedDict[playthroughObject.ItemObtained].Add(new Tuple<object, PlaythroughObject, int> ( i, playthroughObject, FirstObtainedDict[playthroughObject.ItemObtained].Count));
+                    if (!FirstObtainedDict.ContainsKey(playthroughObject.ItemObtained)) { FirstObtainedDict.Add(playthroughObject.ItemObtained, new List<Tuple<object, PlaythroughObject>>()); }
+                    FirstObtainedDict[playthroughObject.ItemObtained].Add(new Tuple<object, PlaythroughObject> ( i, playthroughObject));
                     Playthrough.Add(i.ID, playthroughObject);
                 }
 
@@ -123,9 +125,41 @@ namespace MMR_Tracker_V3
             //File.WriteAllText(@"D:\Testing\Playtrhough.txt", Newtonsoft.Json.JsonConvert.SerializeObject(Playthrough, Testing._NewtonsoftJsonSerializerOptions));
         }
 
-        public void FilterImportantPlaythrough(string WinID)
+        public bool FilterImportantPlaythrough(object WinObj)
         {
-            var WinCon = Playthrough[WinID];
+            PlaythroughObject WinCon = null;
+            Debug.WriteLine(WinObj is LocationData.LocationObject);
+            Debug.WriteLine(WinObj is MacroObject);
+            Debug.WriteLine(WinObj is ItemData.ItemObject);
+            Debug.WriteLine(WinObj is EntranceData.EntranceRandoArea);
+            if (WinObj is LocationData.LocationObject LocWin && Playthrough.ContainsKey(LocWin.ID))
+            {
+                WinCon = Playthrough[LocWin.ID];
+            }
+            if (WinObj is MacroObject MacroWin && Playthrough.ContainsKey(MacroWin.ID))
+            {
+                WinCon = Playthrough[MacroWin.ID];
+            }
+            else if (WinObj is ItemData.ItemObject itemWin && FirstObtainedDict.ContainsKey(itemWin.Id))
+            {
+                WinCon = FirstObtainedDict[itemWin.Id].First().Item2;
+            }
+            else if (WinObj is EntranceData.EntranceRandoArea AreaWin && FirstObtainedDict.ContainsKey(AreaWin.ID))
+            {
+                WinCon = FirstObtainedDict[AreaWin.ID].First().Item2;
+            }
+            else
+            {
+                return false;
+            }
+
+            Debug.WriteLine($"Wincon is {WinCon.id}");
+
+            foreach(var i in Playthrough.Values)
+            {
+                i.Important = false;
+            }
+
             WinCon.Important = true;
 
             List<PlaythroughObject> HandledImportantChecks = new List<PlaythroughObject>();
@@ -164,6 +198,8 @@ namespace MMR_Tracker_V3
                 HandledImportantChecks.Add(ImportantCheck);
             }
 
+            return true;
+
         }
 
         private void GetRealItemData()
@@ -177,18 +213,13 @@ namespace MMR_Tracker_V3
         private List<EntranceData.EntranceRandoExit> getAllAvailableEntrances(LogicObjects.TrackerInstance instance, Dictionary<object, int> AutoObtainedObjects)
         {
             var AvailableEntrances = instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values.Where(x => x.Available && x.CheckState == MiscData.CheckState.Unchecked && x.IsRandomized()));
-            var AutoObtainedEntrance = AutoObtainedObjects.Keys.Where(x => x is EntranceData.EntranceRandoExit && !Playthrough.ContainsKey(GetEntId(x as EntranceData.EntranceRandoExit))).Select(x => x as EntranceData.EntranceRandoExit);
+            var AutoObtainedEntrance = AutoObtainedObjects.Keys.Where(x => x is EntranceData.EntranceRandoExit && !Playthrough.ContainsKey(_Instance.GetLogicNameFromExit(x as EntranceData.EntranceRandoExit))).Select(x => x as EntranceData.EntranceRandoExit);
             //var AquiredEntranceMacros = instance.EntrancePool.AreaList.Values.SelectMany(x => x.MacroExits.Values.Where(x => x.CheckState == MiscData.CheckState.Checked && !Playthrough.ContainsKey(GetEntId(x))));
             //var UnrandEntranceMacros = instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values.Where(x => x.CheckState == MiscData.CheckState.Checked && !Playthrough.ContainsKey(GetEntId(x)) && x.IsUnrandomized()));
             //var AllEntrances = AvailableEntrances.Concat(AquiredEntranceMacros).Concat(UnrandEntranceMacros).ToList();
             var AllEntrances = AvailableEntrances.Concat(AutoObtainedEntrance).ToList();
             Debug.WriteLine(AutoObtainedEntrance.Count());
             return AllEntrances;
-        }
-
-        public string GetEntId(EntranceData.EntranceRandoExit i)
-        {
-            return $"{i.ParentAreaID} X {i.ID}";
         }
 
         public void PrepareInstance()
@@ -211,6 +242,7 @@ namespace MMR_Tracker_V3
                     i.Randomizeditem.Item = i.GetItemAtCheck(_Instance);
                     i.RandomizedState = TrackerObjects.MiscData.RandomizedState.Randomized;
                 }
+                if (_IngoredChecks.Contains(i.ID)) { i.RandomizedState = TrackerObjects.MiscData.RandomizedState.ForcedJunk; }
             }
             foreach (var i in _Instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values))
             {
@@ -223,6 +255,7 @@ namespace MMR_Tracker_V3
                     if (i.RandomizedState == MiscData.RandomizedState.UnrandomizedManual) { i.RandomizedState = MiscData.RandomizedState.Randomized; }
                     //i.RandomizedState = TrackerObjects.MiscData.RandomizedState.Randomized;
                 }
+                if (_IngoredChecks.Contains(_Instance.GetLogicNameFromExit(i))) { i.RandomizedState = TrackerObjects.MiscData.RandomizedState.ForcedJunk; }
             }
             foreach (var i in _Instance.EntrancePool.AreaList.Values.SelectMany(x => x.MacroExits.Values))
             {
@@ -297,7 +330,7 @@ namespace MMR_Tracker_V3
                     if (!PathToUnrandomizedExit.Any())
                     {
                         var ReqArea = GetClosestRandomizedArea(LogicItem, playthroughObject, instance);
-                        Debug.WriteLine($"Path Was Empty Closet Unrand Area was {(ReqArea == null ? "root" : $"{Newtonsoft.Json.JsonConvert.SerializeObject(ReqArea)}")}");
+                        //Debug.WriteLine($"Path Was Empty Closet Unrand Area was {(ReqArea == null ? "root" : $"{Newtonsoft.Json.JsonConvert.SerializeObject(ReqArea)}")}");
                         if (ReqArea != null && !Data.AreasAccessed.Contains(ReqArea.DestinationExit.region)) { Data.AreasAccessed.Add(ReqArea.DestinationExit.region); }
                     }
                     else
@@ -305,10 +338,10 @@ namespace MMR_Tracker_V3
                         //Debug.WriteLine($"Path Contained {PathToUnrandomizedExit.Count} Steps");
                         foreach (var i in PathToUnrandomizedExit)
                         {
-                            if (UnlockData.ContainsKey($"{i.Area} X {i.Exit}"))
+                            if (UnlockData.ContainsKey(instance.GetLogicNameFromExit(i)))
                             {
                                 //Debug.WriteLine($"Parsing {$"{i.Area} X {i.Exit}"}");
-                                foreach (var j in UnlockData[$"{i.Area} X {i.Exit}"]) { ParseItem(j, false); }
+                                foreach (var j in UnlockData[instance.GetLogicNameFromExit(i)]) { ParseItem(j, false); }
                             }
                         }
                     }

@@ -35,12 +35,7 @@ namespace MMR_Tracker_V3
         public static bool ConditionalsMet(List<List<string>> Conditionals, TrackerInstance instance, string ID, Dictionary<string, List<string>> UnlockData = null)
         {
             if (!Conditionals.Any()) { return true; }
-            var CondMet = Conditionals.FirstOrDefault(x => RequirementsMet(x, instance, ID));
-            if (ID != null && UnlockData != null && CondMet != null)
-            {
-                if (!UnlockData.ContainsKey(ID)) { UnlockData.Add(ID, new List<string>()); }
-                UnlockData[ID] = UnlockData[ID].Concat(CondMet).ToList();
-            }
+            var CondMet = Conditionals.FirstOrDefault(x => RequirementsMet(x, instance, ID, UnlockData));
             return CondMet != null;
         }
 
@@ -119,6 +114,26 @@ namespace MMR_Tracker_V3
             return instance.EntrancePool.AreaList.ContainsKey(Area) && instance.EntrancePool.AreaList[Area].ExitsAcessibleFrom > 0;
         }
 
+        public static bool CalculatReqAndCond(MMRData.JsonFormatLogicItem Logic, TrackerInstance instance, string ID, string Area, Dictionary<string, List<string>> UnlockData)
+        {
+            Dictionary<string, List<string>> TempUnlockData = new Dictionary<string, List<string>>();
+            bool Available =
+                (Area == null || AreaReached(Area, instance)) &&
+                RequirementsMet(Logic.RequiredItems, instance, ID, TempUnlockData) &&
+                ConditionalsMet(Logic.ConditionalItems, instance, ID, TempUnlockData);
+
+            if (!UnlockData.ContainsKey(ID) && Available)
+            {
+                UnlockData[ID] = TempUnlockData[ID];
+            }
+            if (UnlockData.ContainsKey(ID) && !Available)
+            {
+                UnlockData.Remove(ID);
+            }
+
+            return Available;
+        }
+
         public static void FillLogicMap(TrackerInstance instance, Dictionary<string, MMRData.JsonFormatLogicItem> LogicMap)
         {
             foreach (var i in instance.MacroPool) 
@@ -155,7 +170,6 @@ namespace MMR_Tracker_V3
             Utility.TimeCodeExecution(LogicTime, "Getting Logic", 1);
 
             ResetAutoObtainedItems(instance);
-            UnlockData.Clear();
 
             Utility.TimeCodeExecution(LogicTime, "Resetting Auto checked Items", 1);
 
@@ -177,10 +191,7 @@ namespace MMR_Tracker_V3
             foreach (var i in instance.LocationPool.Values.Where(x => !x.IsUnrandomized(1) && !x.IsJunk()))
             {
                 var Logic = LogicMap[i.ID];
-                if (UnlockData.ContainsKey(i.ID)) { UnlockData.Remove(i.ID); }
-                i.Available =
-                    RequirementsMet(Logic.RequiredItems, instance, i.ID, UnlockData) &&
-                    ConditionalsMet(Logic.ConditionalItems, instance, i.ID, UnlockData);
+                i.Available = CalculatReqAndCond(Logic, instance, i.ID, null, UnlockData);
             }
             Utility.TimeCodeExecution(LogicTime, "Calculating Locations", 1);
             foreach (var Area in instance.EntrancePool.AreaList)
@@ -188,21 +199,14 @@ namespace MMR_Tracker_V3
                 foreach (var i in Area.Value.LoadingZoneExits.Where(x => !x.Value.IsUnrandomized(1) && !x.Value.IsJunk()))
                 {
                     var Logic = LogicMap[instance.GetLogicNameFromExit(i.Value)];
-                    if (UnlockData.ContainsKey($"{i.Value.ParentAreaID} X {i.Value.ID}")) { UnlockData.Remove($"{i.Value.ParentAreaID} X {i.Value.ID}"); }
-                    i.Value.Available =
-                        AreaReached(Area.Key, instance) &&
-                        RequirementsMet(Logic.RequiredItems, instance, $"{i.Value.ParentAreaID} X {i.Value.ID}", UnlockData) &&
-                        ConditionalsMet(Logic.ConditionalItems, instance, $"{i.Value.ParentAreaID} X {i.Value.ID}", UnlockData);
+                    i.Value.Available = CalculatReqAndCond(Logic, instance, instance.GetLogicNameFromExit(i.Value), Area.Key, UnlockData);
                 }
             }
             Utility.TimeCodeExecution(LogicTime, "Caclulating Exits", 1);
             foreach (var i in instance.HintPool)
             {
                 var Logic = LogicMap[i.Key];
-                if (UnlockData.ContainsKey(i.Key)) { UnlockData.Remove(i.Key); }
-                i.Value.Available =
-                    RequirementsMet(Logic.RequiredItems, instance, i.Key, UnlockData) &&
-                    ConditionalsMet(Logic.ConditionalItems, instance, i.Key, UnlockData);
+                i.Value.Available = CalculatReqAndCond(Logic, instance, i.Key, null, UnlockData);
             }
             Utility.TimeCodeExecution(LogicTime, "Calculating Hints", -1);
         }
@@ -215,11 +219,7 @@ namespace MMR_Tracker_V3
                 foreach (var i in Area.Value.LoadingZoneExits.Where(x => x.Value.IsUnrandomized(1)))
                 {
                     var Logic = LogicMap[instance.GetLogicNameFromExit(i.Value)];
-                    if (UnlockData.ContainsKey($"{i.Value.ParentAreaID} X {i.Value.ID}")) { UnlockData.Remove($"{i.Value.ParentAreaID} X {i.Value.ID}"); }
-                    var Available =
-                        AreaReached(Area.Key, instance) &&
-                        RequirementsMet(Logic.RequiredItems, instance, $"{i.Value.ParentAreaID} X {i.Value.ID}", UnlockData) &&
-                        ConditionalsMet(Logic.ConditionalItems, instance, $"{i.Value.ParentAreaID} X {i.Value.ID}", UnlockData);
+                    var Available = CalculatReqAndCond(Logic, instance, instance.GetLogicNameFromExit(i.Value), Area.Key, UnlockData);
                     bool ShouldBeChecked = Available && i.Value.CheckState != CheckState.Checked;
                     bool ShouldBeUnChecked = !Available && i.Value.CheckState == CheckState.Checked;
                     if (ShouldBeChecked || ShouldBeUnChecked)
@@ -276,11 +276,7 @@ namespace MMR_Tracker_V3
                 foreach (var i in Area.Value.MacroExits)
                 {
                     var Logic = LogicMap[instance.GetLogicNameFromExit(i.Value)];
-                    if (UnlockData.ContainsKey($"{i.Value.ParentAreaID} X {i.Value.ID}")) { UnlockData.Remove($"{i.Value.ParentAreaID} X {i.Value.ID}"); }
-                    i.Value.Available =
-                        AreaReached(Area.Key, instance) &&
-                        RequirementsMet(Logic.RequiredItems, instance, $"{i.Value.ParentAreaID} X {i.Value.ID}", UnlockData) && 
-                        ConditionalsMet(Logic.ConditionalItems, instance, $"{i.Value.ParentAreaID} X {i.Value.ID}", UnlockData);
+                    i.Value.Available = CalculatReqAndCond(Logic, instance, instance.GetLogicNameFromExit(i.Value), Area.Key, UnlockData);
                     if (i.Value.Available && i.Value.CheckState != CheckState.Checked)
                     {
                         MacroStateChanged = true;
@@ -313,8 +309,7 @@ namespace MMR_Tracker_V3
                 if (Logic.IsTrick && !i.Value.TrickEnabled) { Available = false; }
                 else
                 {
-                    if (UnlockData.ContainsKey(i.Key)) { UnlockData.Remove(i.Key); }
-                    Available = RequirementsMet(Logic.RequiredItems, instance, i.Key, UnlockData) && ConditionalsMet(Logic.ConditionalItems, instance, i.Key, UnlockData);
+                    Available = CalculatReqAndCond(Logic, instance, i.Key, null, UnlockData);
                     if (Available) { autoObtainedObjects[i.Value] = itterations; }
                 }
 
@@ -335,10 +330,7 @@ namespace MMR_Tracker_V3
                 if (string.IsNullOrWhiteSpace(i.Value.GetDictEntry(instance).OriginalItem)) { continue; }
                 if (!i.Value.IsUnrandomized(1)) { continue; }
                 var Logic = LogicMap[i.Key];
-                if (UnlockData.ContainsKey(i.Key)) { UnlockData.Remove(i.Key); }
-                var Available =
-                    RequirementsMet(Logic.RequiredItems, instance, i.Key, UnlockData) &&
-                    ConditionalsMet(Logic.ConditionalItems, instance, i.Key, UnlockData);
+                var Available = CalculatReqAndCond(Logic, instance, i.Key, null, UnlockData);
 
                 bool ShouldBeChecked = Available && i.Value.CheckState != CheckState.Checked;
                 bool ShouldBeUnChecked = !Available && i.Value.CheckState == CheckState.Checked;

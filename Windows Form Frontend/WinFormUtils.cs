@@ -28,6 +28,12 @@ namespace Windows_Form_Frontend
                 width = LBcontainer.Width;
                 g = LBcontainer.CreateGraphics();
             }
+            else if (containerObject is ComboBox cmb)
+            {
+                font = cmb.Font;
+                width = cmb.Width;
+                g = cmb.CreateGraphics();
+            }
             else
             {
                 return new MMR_Tracker_V3.TrackerObjects.MiscData.Divider { Display = DividerText };
