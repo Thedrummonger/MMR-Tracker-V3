@@ -18,6 +18,17 @@ namespace Windows_Form_Frontend
     {
         public LogicObjects.TrackerInstance _instance;
         public PlaythroughGenerator SpoilerLookupPlaythrough = null;
+
+        SeedCheckMode seedCheckMode = SeedCheckMode.view;
+        List<MiscData.StandardListBoxItem> SeedCheckResults = new List<MiscData.StandardListBoxItem>();
+        List<MiscData.StandardListBoxItem> SeedCheckRequiredItems = new List<MiscData.StandardListBoxItem>();
+        List<MiscData.StandardListBoxItem> SeedCheckIgnoredLocations = new List<MiscData.StandardListBoxItem>();
+        public enum SeedCheckMode
+        {
+            addReq,
+            addIgnore,
+            view
+        }
         public SpoilerLogLookUp(LogicObjects.TrackerInstance instance)
         {
             InitializeComponent();
@@ -29,6 +40,7 @@ namespace Windows_Form_Frontend
             PopulateWinConCMB();
             PopulateSpoilerLogList();
             listBox1_SelectedValueChanged(sender, e);
+            UpdateSeedChckUI();
         }
 
         private void PopulateWinConCMB()
@@ -271,6 +283,167 @@ namespace Windows_Form_Frontend
                 btnLocation.Enabled = false;
                 btnSphere.Enabled = false;
             }
+        }
+
+        private void UpdateSeedChckUI()
+        {
+            btnAddReq.Text = seedCheckMode == SeedCheckMode.addReq ? "X" : "Add";
+            btnAddIgnored.Text = seedCheckMode == SeedCheckMode.addIgnore ? "X" : "Add";
+            btnCheckSeed.Text = seedCheckMode == SeedCheckMode.view ? "Check Seed" : "Select";
+            labelSeedCheckResults.Text = seedCheckMode == SeedCheckMode.addReq ? "Items" : (seedCheckMode == SeedCheckMode.addIgnore ? "Locaitons" : "Results");
+
+            if (seedCheckMode == SeedCheckMode.addReq)
+            {
+                lbRequiredItems.Items.Clear();
+                LBIgnoredItems.Items.Clear();
+                lbObtainable.Items.Clear();
+                SeedCheckRequiredItems.ForEach(x => lbRequiredItems.Items.Add(x));
+                btnAddReq.Visible = true;
+                btnAddIgnored.Visible = false;
+                LabelSeedCheckItemsNeeded.Text = "Items Needed";
+                LabelSeedCheckChecksIgnored.Text = "Adding Needed Items";
+                WinFormUtils.PrintMessageToListBox(LBIgnoredItems, "Select Items Needed for seed Completion \n ----->");
+                foreach(var i in _instance.ItemPool.Values.OrderBy(x => x.GetDictEntry(_instance).GetItemName(_instance)))
+                {
+                    string displayName = i.GetDictEntry(_instance).GetItemName(_instance);
+                    if(SearchStringParser.FilterSearch(_instance, i, txtSeedCheckFilter.Text, displayName))
+                        lbObtainable.Items.Add(new MiscData.StandardListBoxItem { Display = displayName, tag = i.Id });
+                }
+            }
+            if (seedCheckMode == SeedCheckMode.addIgnore)
+            {
+                lbRequiredItems.Items.Clear();
+                LBIgnoredItems.Items.Clear();
+                lbObtainable.Items.Clear();
+                SeedCheckIgnoredLocations.ForEach(x => LBIgnoredItems.Items.Add(x));
+                btnAddReq.Visible = false;
+                btnAddIgnored.Visible = true;
+                LabelSeedCheckItemsNeeded.Text = "Adding Ignored checks";
+                LabelSeedCheckChecksIgnored.Text = "Ignored checks";
+                WinFormUtils.PrintMessageToListBox(lbRequiredItems, "Select checks that should be ignored when checking seed \n ----->");
+                foreach (var i in _instance.LocationPool.Values.OrderBy(x => x.GetDictEntry(_instance).Name??x.ID))
+                {
+                    string displayName = i.GetDictEntry(_instance).Name??i.ID;
+                    if (SearchStringParser.FilterSearch(_instance, i, txtSeedCheckFilter.Text, displayName))
+                        lbObtainable.Items.Add(new MiscData.StandardListBoxItem { Display = displayName, tag = i.ID });
+                }
+            }
+            if (seedCheckMode == SeedCheckMode.view)
+            {
+                btnAddReq.Visible = true;
+                btnAddIgnored.Visible = true;
+                LabelSeedCheckItemsNeeded.Text = "Items Needed";
+                LabelSeedCheckChecksIgnored.Text = "Ignored checks";
+                lbRequiredItems.Items.Clear();
+                LBIgnoredItems.Items.Clear();
+                lbObtainable.Items.Clear();
+                SeedCheckRequiredItems.ForEach(x => lbRequiredItems.Items.Add(x));
+                SeedCheckIgnoredLocations.ForEach(x => LBIgnoredItems.Items.Add(x));
+                var ObtainableItems = SeedCheckResults.Where(x => x.tag is bool obt && obt && SearchStringParser.FilterSearch(_instance, x.Display, txtSeedCheckFilter.Text, x.Display));
+                var UnObtainableItems = SeedCheckResults.Where(x => x.tag is bool obt && !obt && SearchStringParser.FilterSearch(_instance, x.Display, txtSeedCheckFilter.Text, x.Display));
+
+                if (chkShowObtainable.Checked)
+                {
+                    if (ObtainableItems.Any()) { lbObtainable.Items.Add(WinFormUtils.CreateDivider(lbObtainable, "Obtainable")); }
+                    foreach (var i in ObtainableItems) { lbObtainable.Items.Add(i); }
+                }
+                if (chkShowUnObtainable.Checked)
+                {
+                    if (UnObtainableItems.Any()) { lbObtainable.Items.Add(WinFormUtils.CreateDivider(lbObtainable, "UnObtainable")); }
+                    foreach (var i in UnObtainableItems) { lbObtainable.Items.Add(i); }
+                }
+            }
+        }
+
+        private void btnAddReq_Click(object sender, EventArgs e)
+        {
+            if (seedCheckMode != SeedCheckMode.addReq) { seedCheckMode = SeedCheckMode.addReq; }
+            else if (seedCheckMode == SeedCheckMode.addReq) { seedCheckMode = SeedCheckMode.view; }
+            txtSeedCheckFilter.Text = "";
+
+            UpdateSeedChckUI();
+        }
+
+        private void btnAddIgnored_Click(object sender, EventArgs e)
+        {
+            if (seedCheckMode != SeedCheckMode.addIgnore) { seedCheckMode = SeedCheckMode.addIgnore; }
+            else if (seedCheckMode == SeedCheckMode.addIgnore) { seedCheckMode = SeedCheckMode.view; }
+            txtSeedCheckFilter.Text = "";
+
+            UpdateSeedChckUI();
+        }
+
+        private void txtSeedCheckFilter_TextChanged(object sender, EventArgs e)
+        {
+            UpdateSeedChckUI();
+        }
+
+        private void btnCheckSeed_Click(object sender, EventArgs e)
+        {
+            if (seedCheckMode == SeedCheckMode.view)
+            {
+                if (sender == lbObtainable) { return; }
+                CheckSeed();
+                UpdateSeedChckUI();
+                return;
+            }
+
+            foreach(var item in lbObtainable.SelectedItems)
+            {
+                if (item is MiscData.StandardListBoxItem SLI)
+                {
+                    if (seedCheckMode == SeedCheckMode.addReq)
+                    {
+                        SeedCheckRequiredItems.Add(SLI);
+                    }
+                    else if (seedCheckMode == SeedCheckMode.addIgnore)
+                    {
+                        SeedCheckIgnoredLocations.Add(SLI);
+                    }
+                }
+            }
+            UpdateSeedChckUI();
+        }
+
+        private void CheckSeed()
+        {
+            var IgnoredChecks = SeedCheckIgnoredLocations.Select(x => x.tag).Select(x => x as string).ToList();
+            var requiredItems = SeedCheckRequiredItems.Select(x => x.tag).Select(x => x as string).ToList();
+            if (!SeedCheckRequiredItems.Any())
+            {
+                requiredItems = _instance.ItemPool.Values.Select(x => x.Id).ToList();
+            }
+            PlaythroughGenerator SeedCheckPlaytrhough = new PlaythroughGenerator(_instance, IgnoredChecks);
+            SeedCheckPlaytrhough.GeneratePlaythrough();
+            SeedCheckResults.Clear();
+            foreach(var i in requiredItems)
+            {
+                var item = _instance.GetItemByID(i);
+                string Dis = item?.GetDictEntry(_instance)?.GetItemName(_instance)??i;
+                bool ItemObtainable = SeedCheckPlaytrhough.FirstObtainedDict.ContainsKey(i) || (item?.AmountInStartingpool??0) > 0;
+
+                SeedCheckResults.Add(new MiscData.StandardListBoxItem { Display = Dis, tag = ItemObtainable });
+            }
+        }
+
+        private void lbRequiredItems_DoubleClick(object sender, EventArgs e)
+        {
+            if (seedCheckMode == SeedCheckMode.addIgnore) { return; }
+            if (lbRequiredItems.SelectedItem is MiscData.StandardListBoxItem SLI)
+            {
+                SeedCheckRequiredItems.Remove(SLI);
+            }
+            UpdateSeedChckUI();
+        }
+
+        private void LBIgnoredItems_DoubleClick(object sender, EventArgs e)
+        {
+            if (seedCheckMode == SeedCheckMode.addReq) { return; }
+            if (LBIgnoredItems.SelectedItem is MiscData.StandardListBoxItem SLI)
+            {
+                SeedCheckIgnoredLocations.Remove(SLI);
+            }
+            UpdateSeedChckUI();
         }
     }
 }

@@ -34,13 +34,13 @@
             this.lbObtainable = new System.Windows.Forms.ListBox();
             this.btnAddReq = new System.Windows.Forms.Button();
             this.btnAddIgnored = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.btnCheckSeed = new System.Windows.Forms.Button();
+            this.LabelSeedCheckChecksIgnored = new System.Windows.Forms.Label();
+            this.LabelSeedCheckItemsNeeded = new System.Windows.Forms.Label();
+            this.labelSeedCheckResults = new System.Windows.Forms.Label();
             this.chkShowObtainable = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.chkShowUnObtainable = new System.Windows.Forms.CheckBox();
+            this.txtSeedCheckFilter = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnGenPlaythrough = new System.Windows.Forms.Button();
             this.chkOnlyImportant = new System.Windows.Forms.CheckBox();
@@ -69,6 +69,7 @@
             this.lbRequiredItems.Name = "lbRequiredItems";
             this.lbRequiredItems.Size = new System.Drawing.Size(127, 64);
             this.lbRequiredItems.TabIndex = 0;
+            this.lbRequiredItems.DoubleClick += new System.EventHandler(this.lbRequiredItems_DoubleClick);
             // 
             // LBIgnoredItems
             // 
@@ -79,6 +80,7 @@
             this.LBIgnoredItems.Name = "LBIgnoredItems";
             this.LBIgnoredItems.Size = new System.Drawing.Size(127, 64);
             this.LBIgnoredItems.TabIndex = 1;
+            this.LBIgnoredItems.DoubleClick += new System.EventHandler(this.LBIgnoredItems_DoubleClick);
             // 
             // lbObtainable
             // 
@@ -89,6 +91,7 @@
             this.lbObtainable.Name = "lbObtainable";
             this.lbObtainable.Size = new System.Drawing.Size(139, 124);
             this.lbObtainable.TabIndex = 2;
+            this.lbObtainable.DoubleClick += new System.EventHandler(this.btnCheckSeed_Click);
             // 
             // btnAddReq
             // 
@@ -99,6 +102,7 @@
             this.btnAddReq.TabIndex = 4;
             this.btnAddReq.Text = "Add";
             this.btnAddReq.UseVisualStyleBackColor = true;
+            this.btnAddReq.Click += new System.EventHandler(this.btnAddReq_Click);
             // 
             // btnAddIgnored
             // 
@@ -109,52 +113,54 @@
             this.btnAddIgnored.TabIndex = 5;
             this.btnAddIgnored.Text = "Add";
             this.btnAddIgnored.UseVisualStyleBackColor = true;
+            this.btnAddIgnored.Click += new System.EventHandler(this.btnAddIgnored_Click);
             // 
-            // button1
+            // btnCheckSeed
             // 
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(195, 20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Check Seed";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCheckSeed.ForeColor = System.Drawing.Color.Black;
+            this.btnCheckSeed.Location = new System.Drawing.Point(195, 20);
+            this.btnCheckSeed.Name = "btnCheckSeed";
+            this.btnCheckSeed.Size = new System.Drawing.Size(84, 23);
+            this.btnCheckSeed.TabIndex = 6;
+            this.btnCheckSeed.Text = "Check Seed";
+            this.btnCheckSeed.UseVisualStyleBackColor = true;
+            this.btnCheckSeed.Click += new System.EventHandler(this.btnCheckSeed_Click);
             // 
-            // label1
+            // LabelSeedCheckChecksIgnored
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(6, 111);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 15);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Ignored Checks";
+            this.LabelSeedCheckChecksIgnored.AutoSize = true;
+            this.LabelSeedCheckChecksIgnored.BackColor = System.Drawing.Color.Transparent;
+            this.LabelSeedCheckChecksIgnored.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LabelSeedCheckChecksIgnored.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.LabelSeedCheckChecksIgnored.Location = new System.Drawing.Point(6, 111);
+            this.LabelSeedCheckChecksIgnored.Name = "LabelSeedCheckChecksIgnored";
+            this.LabelSeedCheckChecksIgnored.Size = new System.Drawing.Size(89, 15);
+            this.LabelSeedCheckChecksIgnored.TabIndex = 7;
+            this.LabelSeedCheckChecksIgnored.Text = "Ignored Checks";
             // 
-            // label2
+            // LabelSeedCheckItemsNeeded
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(6, 24);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 15);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Items Needed";
+            this.LabelSeedCheckItemsNeeded.AutoSize = true;
+            this.LabelSeedCheckItemsNeeded.BackColor = System.Drawing.Color.Transparent;
+            this.LabelSeedCheckItemsNeeded.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LabelSeedCheckItemsNeeded.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.LabelSeedCheckItemsNeeded.Location = new System.Drawing.Point(6, 24);
+            this.LabelSeedCheckItemsNeeded.Name = "LabelSeedCheckItemsNeeded";
+            this.LabelSeedCheckItemsNeeded.Size = new System.Drawing.Size(80, 15);
+            this.LabelSeedCheckItemsNeeded.TabIndex = 8;
+            this.LabelSeedCheckItemsNeeded.Text = "Items Needed";
             // 
-            // label3
+            // labelSeedCheckResults
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(139, 22);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 17);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Results";
+            this.labelSeedCheckResults.AutoSize = true;
+            this.labelSeedCheckResults.BackColor = System.Drawing.Color.Transparent;
+            this.labelSeedCheckResults.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelSeedCheckResults.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelSeedCheckResults.Location = new System.Drawing.Point(139, 22);
+            this.labelSeedCheckResults.Name = "labelSeedCheckResults";
+            this.labelSeedCheckResults.Size = new System.Drawing.Size(49, 17);
+            this.labelSeedCheckResults.TabIndex = 9;
+            this.labelSeedCheckResults.Text = "Results";
             // 
             // chkShowObtainable
             // 
@@ -169,43 +175,46 @@
             this.chkShowObtainable.TabIndex = 10;
             this.chkShowObtainable.Text = "Show Obtainable";
             this.chkShowObtainable.UseVisualStyleBackColor = false;
+            this.chkShowObtainable.CheckedChanged += new System.EventHandler(this.txtSeedCheckFilter_TextChanged);
             // 
-            // checkBox1
+            // chkShowUnObtainable
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox1.Location = new System.Drawing.Point(139, 195);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(131, 19);
-            this.checkBox1.TabIndex = 11;
-            this.checkBox1.Text = "Show UnObtainable";
-            this.checkBox1.UseVisualStyleBackColor = false;
+            this.chkShowUnObtainable.AutoSize = true;
+            this.chkShowUnObtainable.BackColor = System.Drawing.Color.Transparent;
+            this.chkShowUnObtainable.Checked = true;
+            this.chkShowUnObtainable.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkShowUnObtainable.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.chkShowUnObtainable.Location = new System.Drawing.Point(139, 195);
+            this.chkShowUnObtainable.Name = "chkShowUnObtainable";
+            this.chkShowUnObtainable.Size = new System.Drawing.Size(131, 19);
+            this.chkShowUnObtainable.TabIndex = 11;
+            this.chkShowUnObtainable.Text = "Show UnObtainable";
+            this.chkShowUnObtainable.UseVisualStyleBackColor = false;
+            this.chkShowUnObtainable.CheckedChanged += new System.EventHandler(this.txtSeedCheckFilter_TextChanged);
             // 
-            // textBox1
+            // txtSeedCheckFilter
             // 
-            this.textBox1.Location = new System.Drawing.Point(139, 44);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(139, 23);
-            this.textBox1.TabIndex = 13;
+            this.txtSeedCheckFilter.Location = new System.Drawing.Point(139, 44);
+            this.txtSeedCheckFilter.Name = "txtSeedCheckFilter";
+            this.txtSeedCheckFilter.Size = new System.Drawing.Size(139, 23);
+            this.txtSeedCheckFilter.TabIndex = 13;
+            this.txtSeedCheckFilter.TextChanged += new System.EventHandler(this.txtSeedCheckFilter_TextChanged);
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.LabelSeedCheckItemsNeeded);
             this.groupBox1.Controls.Add(this.lbRequiredItems);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtSeedCheckFilter);
             this.groupBox1.Controls.Add(this.LBIgnoredItems);
             this.groupBox1.Controls.Add(this.lbObtainable);
-            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.chkShowUnObtainable);
             this.groupBox1.Controls.Add(this.btnAddReq);
             this.groupBox1.Controls.Add(this.chkShowObtainable);
             this.groupBox1.Controls.Add(this.btnAddIgnored);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.labelSeedCheckResults);
+            this.groupBox1.Controls.Add(this.btnCheckSeed);
+            this.groupBox1.Controls.Add(this.LabelSeedCheckChecksIgnored);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
@@ -393,13 +402,13 @@
         private System.Windows.Forms.ListBox lbObtainable;
         private System.Windows.Forms.Button btnAddReq;
         private System.Windows.Forms.Button btnAddIgnored;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnCheckSeed;
+        private System.Windows.Forms.Label LabelSeedCheckChecksIgnored;
+        private System.Windows.Forms.Label LabelSeedCheckItemsNeeded;
+        private System.Windows.Forms.Label labelSeedCheckResults;
         private System.Windows.Forms.CheckBox chkShowObtainable;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.CheckBox chkShowUnObtainable;
+        private System.Windows.Forms.TextBox txtSeedCheckFilter;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnGenPlaythrough;
         private System.Windows.Forms.CheckBox chkOnlyImportant;
