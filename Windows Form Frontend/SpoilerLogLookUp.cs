@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MMR_Tracker_V3;
+using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
 
 namespace Windows_Form_Frontend
@@ -16,6 +17,7 @@ namespace Windows_Form_Frontend
     public partial class SpoilerLogLookUp : Form
     {
         public LogicObjects.TrackerInstance _instance;
+        public PlaythroughGenerator SpoilerLookupPlaythrough = null;
         public SpoilerLogLookUp(LogicObjects.TrackerInstance instance)
         {
             InitializeComponent();
@@ -25,6 +27,7 @@ namespace Windows_Form_Frontend
         private void SpoilerLogLookUp_Load(object sender, EventArgs e)
         {
             PopulateWinConCMB();
+            PopulateSpoilerLogList();
         }
 
         private void PopulateWinConCMB()
@@ -40,7 +43,7 @@ namespace Windows_Form_Frontend
                 cmbWinCon.Items.Add(WinFormUtils.CreateDivider(cmbWinCon, "Items"));
                 foreach (var i in Items)
                 {
-                    cmbWinCon.Items.Add(new MMR_Tracker_V3.TrackerObjects.MiscData.StandardListBoxItem { Display = i.GetDictEntry(_instance).GetItemName(_instance), tag = i });
+                    cmbWinCon.Items.Add(new MiscData.StandardListBoxItem { Display = i.GetDictEntry(_instance).GetItemName(_instance), tag = i });
                 }
             }
 
@@ -49,7 +52,7 @@ namespace Windows_Form_Frontend
                 cmbWinCon.Items.Add(WinFormUtils.CreateDivider(cmbWinCon, "Locations"));
                 foreach (var i in Locations)
                 {
-                    cmbWinCon.Items.Add(new MMR_Tracker_V3.TrackerObjects.MiscData.StandardListBoxItem { Display = i.GetDictEntry(_instance).Name??i.ID, tag = i });
+                    cmbWinCon.Items.Add(new MiscData.StandardListBoxItem { Display = i.GetDictEntry(_instance).Name??i.ID, tag = i });
                 }
             }
 
@@ -58,7 +61,7 @@ namespace Windows_Form_Frontend
                 cmbWinCon.Items.Add(WinFormUtils.CreateDivider(cmbWinCon, "Macros"));
                 foreach (var i in Macros)
                 {
-                    cmbWinCon.Items.Add(new MMR_Tracker_V3.TrackerObjects.MiscData.StandardListBoxItem { Display = i.GetDictEntry(_instance).Name??i.ID, tag = i });
+                    cmbWinCon.Items.Add(new MiscData.StandardListBoxItem { Display = i.GetDictEntry(_instance).Name??i.ID, tag = i });
                 }
             }
 
@@ -67,7 +70,7 @@ namespace Windows_Form_Frontend
                 cmbWinCon.Items.Add(WinFormUtils.CreateDivider(cmbWinCon, "Areas"));
                 foreach (var i in Areas)
                 {
-                    cmbWinCon.Items.Add(new MMR_Tracker_V3.TrackerObjects.MiscData.StandardListBoxItem { Display = i.ID, tag = i });
+                    cmbWinCon.Items.Add(new MiscData.StandardListBoxItem { Display = i.ID, tag = i });
                 }
             }
         }
@@ -81,14 +84,17 @@ namespace Windows_Form_Frontend
         {
             PlaythroughGenerator playthroughGenerator = new PlaythroughGenerator(_instance);
             playthroughGenerator.GeneratePlaythrough();
+            var SelectedItem = cmbWinCon.SelectedItem as MiscData.StandardListBoxItem;
 
-            if (chkOnlyImportant.Checked) 
-            { 
-                bool sucess = playthroughGenerator.FilterImportantPlaythrough((cmbWinCon.SelectedItem as MMR_Tracker_V3.TrackerObjects.MiscData.StandardListBoxItem).tag); 
-                if (!sucess) { MessageBox.Show($"Error"); }
+            bool FullPlaythrough = !chkOnlyImportant.Checked || SelectedItem?.tag == null;
+
+            if (!FullPlaythrough) 
+            {
+                bool sucess = playthroughGenerator.FilterImportantPlaythrough(SelectedItem.tag); 
+                if (!sucess) { MessageBox.Show($"Error {SelectedItem.tag} Could not be reached this seed"); return; }
             }
 
-            var Result = playthroughGenerator.Playthrough.Where(x => x.Value.Important || !chkOnlyImportant.Checked).ToDictionary(x => x.Key, x => x.Value);
+            var Result = playthroughGenerator.Playthrough.Where(x => x.Value.Important || (FullPlaythrough && x.Value.CheckType != MMR_Tracker_V3.TrackerObjects.MiscData.LogicEntryType.macro)).ToDictionary(x => x.Key, x => x.Value);
 
             SaveFileDialog dlg = new SaveFileDialog();
             dlg.FileName = "Playthrough";
@@ -100,6 +106,126 @@ namespace Windows_Form_Frontend
             File.WriteAllText(dlg.FileName, JsonConvert.SerializeObject(Result, Testing._NewtonsoftJsonSerializerOptions));
             File.WriteAllText(Testing.CretaeTestingFile("WTF"), JsonConvert.SerializeObject(playthroughGenerator.FirstObtainedDict, Testing._NewtonsoftJsonSerializerOptions));
             File.WriteAllText(Testing.CretaeTestingFile("Unlock"), JsonConvert.SerializeObject(playthroughGenerator.PlaythroughUnlockData, Testing._NewtonsoftJsonSerializerOptions));
+        }
+
+        private void PopulateSpoilerLogList()
+        {
+            listBox1.Items.Clear();
+            var SpoilerChecks = _instance.LocationPool.Values.Where(x => x.GetItemAtCheck(_instance) != null);
+            List<MiscData.StandardListBoxItem> SpoilerList = new List<MiscData.StandardListBoxItem>();
+            foreach (var check in SpoilerChecks) 
+            {
+                MiscData.StandardListBoxItem LBI = new MiscData.StandardListBoxItem() { tag = check };
+                dynamic Item = _instance.GetItemByID(check.GetItemAtCheck(_instance));
+                if (Item == null)
+                {
+                    Item = check.GetItemAtCheck(_instance);
+                    LBI.Display = check.GetItemAtCheck(_instance);
+                }
+                else
+                {
+                    LBI.Display = Item.GetDictEntry(_instance).GetItemName(_instance);
+                }
+                if (SearchStringParser.FilterSearch(_instance, Item, textBox2.Text, LBI.Display))
+                SpoilerList.Add(LBI);
+            }
+
+            Dictionary<string, List<LocationData.LocationObject>> CleanedEntries = new Dictionary<string, List<LocationData.LocationObject>>();
+            foreach(var spoiler in SpoilerList)
+            {
+                if (!CleanedEntries.ContainsKey(spoiler.Display)) { CleanedEntries[spoiler.Display] = new List<LocationData.LocationObject>(); }
+                CleanedEntries[spoiler.Display].Add(spoiler.tag as LocationData.LocationObject);
+            }
+            CleanedEntries = CleanedEntries.OrderBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
+            foreach(var i in CleanedEntries)
+            {
+                listBox1.Items.Add(new MiscData.StandardListBoxItem { Display = i.Key, tag = i.Value });
+            }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            PopulateSpoilerLogList();
+        }
+
+        private void btnArea_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedItem is MiscData.StandardListBoxItem SLI)
+            {
+                if (SLI.tag is LocationData.LocationObject LO)
+                {
+                    MessageBox.Show($"{SLI.Display} Can be found in\n\n-{LO.GetDictEntry(_instance).Area}");
+                }
+                else if (SLI.tag is List<LocationData.LocationObject> LLO)
+                {
+                    if (LLO.Count == 1)
+                    {
+                        MessageBox.Show($"{SLI.Display} Can be found in\n\n-{LLO.First().GetDictEntry(_instance).Area}");
+                    }
+                    else
+                    {
+                        MessageBox.Show($"{SLI.Display} Can be found in these areas:\n\n-{string.Join("\n-", LLO.Select(x => x.GetDictEntry(_instance).Area).Distinct().OrderBy(x => x))}");
+                    }
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedItem is MiscData.StandardListBoxItem SLI)
+            {
+                if (SpoilerLookupPlaythrough is null)
+                {
+                    SpoilerLookupPlaythrough =  new PlaythroughGenerator(_instance);
+                    SpoilerLookupPlaythrough.GeneratePlaythrough();
+                }
+
+                if (SLI.tag is LocationData.LocationObject LO)
+                {
+                    if (SpoilerLookupPlaythrough.Playthrough.ContainsKey(LO.ID)) { MessageBox.Show($"{SLI.Display} Can be obtained shpere {SpoilerLookupPlaythrough.Playthrough[LO.ID].sphere}"); }
+                    else { MessageBox.Show($"{SLI.Display} Can not be obtained with known items");}
+                }
+                else if (SLI.tag is List<LocationData.LocationObject> LLO)
+                {
+                    if (LLO.Count == 1)
+                    {
+                        if (SpoilerLookupPlaythrough.Playthrough.ContainsKey(LLO.First().ID)) { MessageBox.Show($"{SLI.Display} Can be obtained shpere {SpoilerLookupPlaythrough.Playthrough[LLO.First().ID].sphere}"); }
+                        else { MessageBox.Show($"{SLI.Display} Can not be obtained with known items"); }
+                    }
+                    else
+                    {
+                        List<int> SpheresObtainable = new List<int>();
+                        foreach(var i in LLO.Where(x => SpoilerLookupPlaythrough.Playthrough.ContainsKey(x.ID)))
+                        {
+                            SpheresObtainable.Add(SpoilerLookupPlaythrough.Playthrough[i.ID].sphere);
+                        }
+                        if (!SpheresObtainable.Any()) { MessageBox.Show($"{SLI.Display} Can not be obtained with known items"); }
+                        else { MessageBox.Show($"{SLI.Display} Can be obtained shpere {SpheresObtainable.Min()}");}
+                    }
+                }
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedItem is MiscData.StandardListBoxItem SLI)
+            {
+                if (SLI.tag is LocationData.LocationObject LO)
+                {
+                    MessageBox.Show($"{SLI.Display} Can be found at\n\n-{LO.GetDictEntry(_instance).Name??LO.ID}");
+                }
+                else if (SLI.tag is List<LocationData.LocationObject> LLO)
+                {
+                    if (LLO.Count == 1)
+                    {
+                        MessageBox.Show($"{SLI.Display} Can be found at\n\n-{LLO.First().GetDictEntry(_instance).Name??LLO.First().ID}");
+                    }
+                    else
+                    {
+                        MessageBox.Show($"{SLI.Display} Can be found at these locations:\n\n-{string.Join("\n-", LLO.Select(x => x.GetDictEntry(_instance).Name??x.ID).Distinct().OrderBy(x => x))}");
+                    }
+                }
+            }
         }
     }
 }

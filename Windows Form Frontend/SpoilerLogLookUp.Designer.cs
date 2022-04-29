@@ -367,6 +367,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(142, 23);
             this.textBox2.TabIndex = 4;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // button3
             // 
@@ -377,6 +378,7 @@
             this.button3.TabIndex = 3;
             this.button3.Text = "Location";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -387,6 +389,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Sphere";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnArea
             // 
@@ -397,6 +400,7 @@
             this.btnArea.TabIndex = 1;
             this.btnArea.Text = "Area";
             this.btnArea.UseVisualStyleBackColor = true;
+            this.btnArea.Click += new System.EventHandler(this.btnArea_Click);
             // 
             // listBox1
             // 

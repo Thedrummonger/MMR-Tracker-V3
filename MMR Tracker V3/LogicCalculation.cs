@@ -20,7 +20,7 @@ namespace MMR_Tracker_V3
         public static Dictionary<string, List<string>> LogicUnlockData = new Dictionary<string, List<string>>();
         private static Dictionary<string, MMRData.JsonFormatLogicItem> LogicMap = new Dictionary<string, MMRData.JsonFormatLogicItem>();
 
-        public static bool RequirementsMet(List<string> Requirements, TrackerInstance instance, string ID = null, Dictionary<string, List<string>> UnlockData = null)
+        public static bool RequirementsMet(List<string> Requirements, TrackerInstance instance, string ID, Dictionary<string, List<string>> UnlockData = null)
         {
             List<string> SubUnlockData = new List<string>();
             bool reqMet = Requirements.All(x => LogicEntryAquired(instance, x, SubUnlockData));

@@ -395,7 +395,7 @@ namespace MMR_Tracker_V3.OtherGames
 
             foreach(var i in OOTRInstance.LogicFile.GetAllItemsUsedInLogic().ToList())
             {
-                LogicCalculation.RequirementsMet(new List<string> { i }, OOTRInstance);
+
             }
 
         }

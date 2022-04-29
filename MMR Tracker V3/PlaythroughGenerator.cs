@@ -136,7 +136,7 @@ namespace MMR_Tracker_V3
             {
                 WinCon = Playthrough[LocWin.ID];
             }
-            if (WinObj is MacroObject MacroWin && Playthrough.ContainsKey(MacroWin.ID))
+            else if (WinObj is MacroObject MacroWin && Playthrough.ContainsKey(MacroWin.ID))
             {
                 WinCon = Playthrough[MacroWin.ID];
             }
