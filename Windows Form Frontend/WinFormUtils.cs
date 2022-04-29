@@ -39,19 +39,61 @@ namespace Windows_Form_Frontend
                 return new MMR_Tracker_V3.TrackerObjects.MiscData.Divider { Display = DividerText };
             }
 
-            int marks = 1;
-            string Divider = "";
-            while ((int)g.MeasureString(Divider, font).Width <= width)
+            string Divider = DividerText;
+            while (true)
             {
-                string Section = "";
-                for (var i = 0; i < marks; i++)
-                {
-                    Section += "=";
-                }
-                Divider = Section + DividerText + Section;
-                marks++;
+                string newDivider = Divider;
+                if (string.IsNullOrWhiteSpace(DividerText)) { newDivider += "="; }
+                else { newDivider = $"={newDivider}="; }
+                if ((int)g.MeasureString(newDivider, font).Width < width) { Divider = newDivider; }
+                else { break; }
             }
             return new MMR_Tracker_V3.TrackerObjects.MiscData.Divider { Display = Divider };
+        }
+
+        public static void PrintMessageToListBox(object containerObject, string Text = "")
+        {
+            Font font;
+            Graphics g;
+            int width;
+            dynamic container;
+            if (containerObject is ListView LVcontainer)
+            {
+                container = LVcontainer;
+                font = LVcontainer.Font;
+                width = LVcontainer.Width - (LVcontainer.CheckBoxes ? 45 : 0);
+                g = LVcontainer.CreateGraphics();
+            }
+            else if (containerObject is ListBox LBcontainer)
+            {
+                container = LBcontainer;
+                font = LBcontainer.Font;
+                width = LBcontainer.Width;
+                g = LBcontainer.CreateGraphics();
+            }
+            else { return; }
+
+            container.Items.Clear();
+            string CurrentMessage = "";
+            foreach(var c in Text.Split(" "))
+            {
+                if (c == "\n")
+                {
+                    container.Items.Add(CurrentMessage.Trim());
+                    CurrentMessage = "";
+                }
+                else if ((int)g.MeasureString($"{CurrentMessage} {c}", font).Width < width)
+                {
+                    CurrentMessage = $"{CurrentMessage} {c}";
+                }
+                else
+                {
+                    container.Items.Add(CurrentMessage.Trim());
+                    CurrentMessage = c;
+                }
+            }
+            container.Items.Add(CurrentMessage.Trim());
+            container.Refresh();
         }
 
         public static Font GetFontFromString(string Font)

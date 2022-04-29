@@ -191,8 +191,14 @@ namespace Windows_Form_Frontend
             {
                 if (SpoilerLookupPlaythrough is null)
                 {
+                    int currInd = listBox1.SelectedIndex;
+                    int TopInd = listBox1.TopIndex;
+                    WinFormUtils.PrintMessageToListBox(listBox1, "Generating Playthrough Data... \n \n This could take a while but will only happen once.");
                     SpoilerLookupPlaythrough =  new PlaythroughGenerator(_instance);
                     SpoilerLookupPlaythrough.GeneratePlaythrough();
+                    PopulateSpoilerLogList();
+                    listBox1.TopIndex = TopInd;
+                    listBox1.SelectedIndex = currInd;
                 }
 
                 if (SLI.tag is LocationData.LocationObject LO)
