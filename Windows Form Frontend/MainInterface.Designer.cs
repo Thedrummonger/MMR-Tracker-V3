@@ -449,26 +449,27 @@ namespace Windows_Form_Frontend
             // logicEditorToolStripMenuItem
             // 
             this.logicEditorToolStripMenuItem.Name = "logicEditorToolStripMenuItem";
-            this.logicEditorToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.logicEditorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logicEditorToolStripMenuItem.Text = "Logic Editor";
             // 
             // importSpoilerLogToolStripMenuItem
             // 
             this.importSpoilerLogToolStripMenuItem.Name = "importSpoilerLogToolStripMenuItem";
-            this.importSpoilerLogToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.importSpoilerLogToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.importSpoilerLogToolStripMenuItem.Text = "Import Spoiler Log";
             this.importSpoilerLogToolStripMenuItem.Click += new System.EventHandler(this.importSpoilerLogToolStripMenuItem_Click);
             // 
             // spoilerLogToolsToolStripMenuItem
             // 
             this.spoilerLogToolsToolStripMenuItem.Name = "spoilerLogToolsToolStripMenuItem";
-            this.spoilerLogToolsToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.spoilerLogToolsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.spoilerLogToolsToolStripMenuItem.Text = "Spoiler Log Tools";
+            this.spoilerLogToolsToolStripMenuItem.Click += new System.EventHandler(this.spoilerLogToolsToolStripMenuItem_Click);
             // 
             // PathFinderToolStripMenuItem
             // 
             this.PathFinderToolStripMenuItem.Name = "PathFinderToolStripMenuItem";
-            this.PathFinderToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.PathFinderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.PathFinderToolStripMenuItem.Text = "Path Finder";
             this.PathFinderToolStripMenuItem.Click += new System.EventHandler(this.PathFinderToolStripMenuItem_Click);
             // 

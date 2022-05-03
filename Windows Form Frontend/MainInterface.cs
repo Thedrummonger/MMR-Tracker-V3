@@ -251,9 +251,6 @@ namespace Windows_Form_Frontend
 
             */
 
-            SpoilerLogLookUp spoilerLogLookUp = new SpoilerLogLookUp(CurrentTrackerInstance);
-            spoilerLogLookUp.Show();
-
 
         }
 
@@ -583,7 +580,6 @@ namespace Windows_Form_Frontend
             importSpoilerLogToolStripMenuItem.Visible = (CurrentTrackerInstance != null);
             PathFinderToolStripMenuItem.Visible = (CurrentTrackerInstance != null && CurrentTrackerInstance.EntrancePool.IsEntranceRando);
 
-            spoilerLogToolsToolStripMenuItem.Visible = false;
             logicEditorToolStripMenuItem.Visible = false;
 
             if (CurrentTrackerInstance == null) { return; }
@@ -1065,6 +1061,12 @@ namespace Windows_Form_Frontend
                 }
             }
             HandleItemSelect(ToCheck, MiscData.CheckState.Checked);
+        }
+
+        private void spoilerLogToolsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SpoilerLogLookUp spoilerLogLookUp = new SpoilerLogLookUp(CurrentTrackerInstance);
+            spoilerLogLookUp.Show();
         }
     }
 }

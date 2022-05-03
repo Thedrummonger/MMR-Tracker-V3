@@ -267,6 +267,38 @@ namespace MMR_Tracker_V3
                 i.Aquired = false;
             }
         }
+
+        public List<string> CreateReadablePlaythrough(Dictionary<string, PlaythroughObject> FormatPlaythrough)
+        {
+            List<string> readablePlaythrough = new List<string>();
+            int sphere = -1;
+            foreach(var p in FormatPlaythrough)
+            {
+                if (sphere != p.Value.sphere) { 
+                    if (sphere > -1) { readablePlaythrough.Add(String.Empty); }
+                    readablePlaythrough.Add($"SPHERE: {p.Value.sphere}");
+                    sphere = p.Value.sphere; 
+                }
+                string LocationName = _Instance.GetLocationByID(p.Key)?.GetDictEntry(_Instance)?.Name??p.Key;
+                string ItemName = _Instance.GetItemByID(p.Value.ItemObtained)?.GetDictEntry(_Instance)?.GetItemName(_Instance)??p.Value.ItemObtained;
+                List<string> RealItems = new List<string>();
+
+                foreach(var i in p.Value.advancedUnlockData.RealItemsUsed)
+                {
+                    string display = _Instance.GetItemByID(i.Key)?.GetDictEntry(_Instance)?.GetItemName(_Instance)??i.Key;
+                    if (i.Value > 1) { display += $" X{i.Value}"; }
+                    RealItems.Add(display);
+                }
+
+                readablePlaythrough.Add($"Check [{LocationName.ToUpper()}] to obtain [{ItemName.ToUpper()}]");
+                if (RealItems.Any())
+                {
+                    readablePlaythrough.Add($"Using the following items:");
+                    readablePlaythrough.Add($"  -[{string.Join(", ", RealItems)}]");
+                }
+            }
+            return readablePlaythrough;
+        }
     }
     public static class PlaythroughTools
     {

@@ -8,6 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="V2Porting\**" />
+    <EmbeddedResource Remove="V2Porting\**" />
+    <None Remove="V2Porting\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="..\MMR Tracker V3\Recources\Categories.txt" Link="Recources\Categories.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -31,7 +37,6 @@
 
   <ItemGroup>
     <Folder Include="Recources\Presets\" />
-    <Folder Include="V2Porting\" />
   </ItemGroup>
 
   <ItemGroup>

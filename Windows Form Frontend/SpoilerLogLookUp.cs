@@ -116,9 +116,7 @@ namespace Windows_Form_Frontend
             dlg.ShowDialog();
             if (string.IsNullOrWhiteSpace(dlg.FileName)) { return; }
 
-            File.WriteAllText(dlg.FileName, JsonConvert.SerializeObject(Result, Testing._NewtonsoftJsonSerializerOptions));
-            File.WriteAllText(Testing.CretaeTestingFile("WTF"), JsonConvert.SerializeObject(playthroughGenerator.FirstObtainedDict, Testing._NewtonsoftJsonSerializerOptions));
-            File.WriteAllText(Testing.CretaeTestingFile("Unlock"), JsonConvert.SerializeObject(playthroughGenerator.PlaythroughUnlockData, Testing._NewtonsoftJsonSerializerOptions));
+            File.WriteAllLines(dlg.FileName, playthroughGenerator.CreateReadablePlaythrough(Result));
         }
 
         private void PopulateSpoilerLogList()
