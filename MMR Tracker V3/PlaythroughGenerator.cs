@@ -291,11 +291,7 @@ namespace MMR_Tracker_V3
                 }
 
                 readablePlaythrough.Add($"Check [{LocationName.ToUpper()}] to obtain [{ItemName.ToUpper()}]");
-                if (RealItems.Any())
-                {
-                    readablePlaythrough.Add($"Using the following items:");
-                    readablePlaythrough.Add($"  -[{string.Join(", ", RealItems)}]");
-                }
+                if (RealItems.Any()) { readablePlaythrough.Add($"Using: [{string.Join(", ", RealItems)}]"); }
             }
             return readablePlaythrough;
         }

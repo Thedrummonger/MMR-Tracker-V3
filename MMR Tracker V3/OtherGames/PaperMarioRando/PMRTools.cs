@@ -27,7 +27,7 @@ namespace MMR_Tracker_V3.OtherGames
         {
             public PMRLogicArea from;
             public PMRLogicArea to;
-            public List<List<string>> reqs;
+            public List<List<dynamic>> reqs;
             public List<string> pseudoitems;
         }
         public class PMRLogicArea
@@ -55,6 +55,7 @@ namespace MMR_Tracker_V3.OtherGames
             };
             Dictionary<string, string> LogicMapping = new Dictionary<string, string>();
 
+            CleanLogicReqs(RefFileObject);
             MakeAreaList(PRMDict, RefFileObject);
             CreateEntranceList(PRMDict, RefFileObject, LogicMapping);
             CreateLocationList(PRMDict, RefFileObject, LogicMapping);
@@ -64,7 +65,6 @@ namespace MMR_Tracker_V3.OtherGames
             Addoptions(PRMDict);
             AddHardCodedMacrios(LogicMapping);
             AddRootEntrances(PRMDict, LogicMapping);
-            TryFixKeys(LogicMapping);
 
             MMRData.LogicFile PRMLogic = new MMRData.LogicFile
             {
@@ -82,6 +82,30 @@ namespace MMR_Tracker_V3.OtherGames
 
             return new LogicObjects.TrackerInstance { LogicDictionary = PRMDict, LogicFile = PRMLogic };
 
+        }
+
+        private static void CleanLogicReqs(PaperMarioMasterData refFileObject)
+        {
+            foreach(var LogicArea in refFileObject.Logic)
+            {
+                foreach(var item in LogicArea)
+                {
+                    for(var i = 0; i< item.reqs.Count; i++)
+                    {
+                        item.reqs[i] = item.reqs[i].Select(x => GetLogicItem(x)).ToList();
+                    }
+                }
+            }
+            dynamic GetLogicItem(dynamic i)
+            {
+                if (i is string) { return i; }
+                else if (i is KeyValuePair<string, int> d) { return $"{d.Key}, {d.Value}"; }
+                else
+                {
+                    Dictionary<string, int> KVP = JsonConvert.DeserializeObject<Dictionary<string, int>>(JsonConvert.SerializeObject(i));
+                    return $"{KVP.First().Key}, {KVP.First().Value}";
+                }
+            }
         }
 
         private static void MakeAreaList(LogicDictionaryData.LogicDictionary pRMDict, PaperMarioMasterData refFileObject)
@@ -320,12 +344,18 @@ namespace MMR_Tracker_V3.OtherGames
         {
             logicMapping.Add("can_flip_panels", "ProgressiveBoots, 1 | ProgressiveHammer, 2");
             logicMapping.Add("can_shake_trees", "Bombette | ProgressiveHammer, 0");
-            logicMapping.Add("has_parakarry_3_letters", "letter, 3");
-            logicMapping.Add("RF_HiddenBlocksVisible", "HiddenBlocksVisible == true");
+            logicMapping.Add("can_hit_grounded_blocks", "Bombette | Kooper | ProgressiveHammer, 0 | ProgressiveBoots, 1");
+            logicMapping.Add("has_parakarry_letters", "letter, 3");
+            logicMapping.Add("can_see_hidden_blocks", "HiddenBlocksVisible == true || Watt");
             logicMapping.Add("RF_Missable", "true");
             logicMapping.Add("RF_OutOfLogic", "true");
             logicMapping.Add("RF_ToyboxOpen", "ToyboxOpen == true");
             logicMapping.Add("saved_all_yoshikids", "YoshiKid, 5");
+            logicMapping.Add("Hammer", "ProgressiveHammer, 0");
+            logicMapping.Add("SuperHammer", "ProgressiveHammer, 1");
+            logicMapping.Add("UltraHammer", "ProgressiveHammer, 2");
+            logicMapping.Add("SuperBoots", "ProgressiveBoots, 1");
+            logicMapping.Add("UltraBoots", "ProgressiveBoots, 2");
         }
 
         private static void AddRootEntrances(LogicDictionaryData.LogicDictionary logicDictionary, Dictionary<string, string> CondensedLogic)
@@ -391,14 +421,8 @@ namespace MMR_Tracker_V3.OtherGames
         {
             Dictionary<string, string> LogicReplacements = new Dictionary<string, string>
             {
-                { "boots, 1", "ProgressiveBoots, 0" },
-                { "boots, 2", "ProgressiveBoots, 1" },
-                { "boots, 3", "ProgressiveBoots, 2" },
-                { "hammer, 1", "ProgressiveHammer, 0" },
-                { "hammer, 2", "ProgressiveHammer, 1" },
-                { "hammer, 3", "ProgressiveHammer, 2" }
-            };
 
+            };
             foreach (var replacements in LogicReplacements)
             {
                 logicEntry.RequiredItems = logicEntry.RequiredItems.Select(x => LogicReplacements.ContainsKey(x) ? LogicReplacements[x] : x).ToList();
@@ -435,43 +459,6 @@ namespace MMR_Tracker_V3.OtherGames
         private static string GetBaseMap(string map)
         {
             return map.Split('_')[0];
-        }
-
-
-        public static void TryFixKeys(Dictionary<string, string> CondensedLogic)
-        {
-            string[] KEYS = { "KoopaFortressKey", "RuinsKey", "TubbaCastleKey", "PrisonKey", "BowserCastleKey" };
-            Dictionary<string, string> KeyChecks = new()
-            {   //This is probably wrong I know nothing about this game
-                {"Tubbas Castle - Great Hall - 0 X Tubbas Castle - Great Hall - 2", "TubbaCastleKey, 1" },
-                {"Tubbas Castle - Table/Clock Room (1/2F) - 4 X Tubbas Castle - Table/Clock Room (1/2F) - 3", "TubbaCastleKey, 2" },
-                {"Tubbas Castle - West Hall (3F) - 0 X Tubbas Castle - West Hall (3F) - 1", "TubbaCastleKey, 3" },
-                {"Dry Dry Ruins - Sarcophagus Hall 1 - 0 X Dry Dry Ruins - Sarcophagus Hall 1 - 1", "RuinsKey, 1" },
-                {"Dry Dry Ruins - Descending Stairs 1 - 0 X Dry Dry Ruins - Descending Stairs 1 - 1", "RuinsKey, 2" },
-                {"Dry Dry Ruins - Sarcophagus Hall 2 - 1 X Dry Dry Ruins - Sarcophagus Hall 2 - 0", "RuinsKey, 3" },
-                {"Dry Dry Ruins - Stone Puzzle Room - 0 X Dry Dry Ruins - Stone Puzzle Room - 1", "RuinsKey, 4" },
-                {"Bowsers Castle - Lava Channel 3 - 0 X Bowsers Castle - Lava Channel 3 - 1", "BowserCastleKey, 1" },
-                {"Bowsers Castle - Split Level Hall - 0 X Bowsers Castle - Split Level Hall - 1", "BowserCastleKey, 2" },
-                {"Bowsers Castle - Front Door Exterior - 3 X Bowsers Castle - Front Door Exterior - 0", "BowserCastleKey, 3" },
-                {"Bowsers Castle - Room with Hidden Door 2 - 0 X Bowsers Castle - Room with Hidden Door 2 - 1", "BowserCastleKey, 4" },
-                {"Bowsers Castle - Right Water Puzzle - 0 X Bowsers Castle - Right Water Puzzle - 1", "BowserCastleKey, 5" },
-                {"Koopa Bros Fortress - Left Tower - 0 X Koopa Bros Fortress - Left Tower - 1", "KoopaFortressKey, 1" },
-                {"Koopa Bros Fortress - Left Stairway - 3 X Koopa Bros Fortress - Left Stairway - 2", "KoopaFortressKey, 2" },
-                {"Koopa Bros Fortress - Right Starway - 0 X Koopa Bros Fortress - Right Starway - 1", "KoopaFortressKey, 3" },
-                {"Koopa Bros Fortress - Right Starway - 3 X Koopa Bros Fortress - Right Starway - 2", "KoopaFortressKey, 4" }
-            };
-
-            foreach(var i in KeyChecks)
-            {
-                Debug.WriteLine("===================");
-                Debug.WriteLine(i.Key);
-                Debug.WriteLine(CondensedLogic[i.Key]);
-                foreach (var K in KEYS)
-                {
-                    CondensedLogic[i.Key] = CondensedLogic[i.Key].Replace(K, i.Value);
-                }
-                Debug.WriteLine(CondensedLogic[i.Key]);
-            }
         }
 
         private static void AddRealMerlowShopPriceOption(LogicDictionaryData.LogicDictionary logicDictionary)
@@ -532,6 +519,7 @@ namespace MMR_Tracker_V3.OtherGames
                 data[1] = data[1].Replace("*", "");
 
                 if (data[1].StartsWith("ThreeStarPieces")) { data[1] = "ThreeStarPieces"; }
+                if (data[1].StartsWith("Pouch")) { data[1] = "ItemPouch"; }
                 if (data[1] == "Starpiece" || data[1] == "StarPiece21") { data[1] = "StarPiece"; }
                 if (data[0] == "Outside Lower Jail - Yellow Block") { data[0] = "Outside Lower Jail (No Lava) - Yellow Block"; }
                 if (data[0] == "Outside Lower Jail - Defeat Koopatrol Reward") { data[0] = "Outisde Lower Jail (Lava) - Defeat Koopatrol Reward"; }

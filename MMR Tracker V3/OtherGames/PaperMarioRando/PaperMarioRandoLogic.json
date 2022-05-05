@@ -541,7 +541,7 @@
         },
         "reqs": [
           [
-            "boots, 2"
+            "SuperBoots"
           ]
         ]
       },
@@ -917,7 +917,12 @@
         },
         "reqs": [
           [
-            "TubbaCastleKey"
+            {
+              "TubbaCastleKey": 1
+            }
+          ],
+          [
+            "Bow"
           ]
         ]
       },
@@ -1218,7 +1223,9 @@
         },
         "reqs": [
           [
-            "TubbaCastleKey"
+            {
+              "TubbaCastleKey": 2
+            }
           ]
         ]
       },
@@ -1343,7 +1350,7 @@
         },
         "reqs": [
           [
-            "boots, 2"
+            "SuperBoots"
           ]
         ]
       },
@@ -1663,7 +1670,7 @@
         },
         "reqs": [
           [
-            "boots, 2"
+            "SuperBoots"
           ]
         ]
       },
@@ -1689,7 +1696,7 @@
         },
         "reqs": [
           [
-            "boots, 2"
+            "SuperBoots"
           ]
         ]
       },
@@ -1715,7 +1722,7 @@
         },
         "reqs": [
           [
-            "boots, 2"
+            "SuperBoots"
           ]
         ]
       },
@@ -1895,7 +1902,8 @@
         },
         "reqs": [
           [
-            "Bow"
+            "Bow",
+            "Lakilester"
           ]
         ]
       },
@@ -2213,7 +2221,9 @@
         },
         "reqs": [
           [
-            "TubbaCastleKey"
+            {
+              "TubbaCastleKey": 3
+            }
           ]
         ]
       },
@@ -2606,6 +2616,27 @@
           "map": "DRO_01",
           "id": 0
         },
+        "reqs": [
+          [
+            "RF_MouserReturned"
+          ],
+          [
+            "RF_CanUseDROCode"
+          ]
+        ],
+        "pseudoitems": [
+          "RF_CanMeetMoustafa"
+        ]
+      },
+      {
+        "from": {
+          "map": "DRO_01",
+          "id": 0
+        },
+        "to": {
+          "map": "DRO_01",
+          "id": 0
+        },
         "reqs": [],
         "pseudoitems": [
           "RF_MouserLeftShop"
@@ -2680,7 +2711,7 @@
         },
         "reqs": [
           [
-            "RF_MouserReturned"
+            "RF_CanMeetMoustafa"
           ]
         ]
       },
@@ -2759,6 +2790,24 @@
         ],
         "pseudoitems": [
           "RF_MouserReturned"
+        ]
+      },
+      {
+        "from": {
+          "map": "DRO_02",
+          "id": 0
+        },
+        "to": {
+          "map": "DRO_02",
+          "id": 0
+        },
+        "reqs": [
+          [
+            "Lemon"
+          ]
+        ],
+        "pseudoitems": [
+          "RF_CanUseDROCode"
         ]
       },
       {
@@ -3072,7 +3121,7 @@
         },
         "reqs": [
           [
-            "boots, 2"
+            "SuperBoots"
           ],
           [
             "Lakilester"
@@ -3105,7 +3154,7 @@
         },
         "reqs": [
           [
-            "boots, 2"
+            "SuperBoots"
           ]
         ]
       },
@@ -3197,8 +3246,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -3257,7 +3305,7 @@
         },
         "reqs": [
           [
-            "hammer, 1",
+            "Hammer",
             "Bombette"
           ]
         ],
@@ -3811,8 +3859,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -4245,8 +4292,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -4272,8 +4318,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -4856,7 +4901,9 @@
         },
         "reqs": [
           [
-            "starspirits, 7"
+            {
+              "starspirits": 7
+            }
           ]
         ]
       },
@@ -5328,7 +5375,9 @@
         },
         "reqs": [
           [
-            "starpieces, 60"
+            {
+              "starpieces": 60
+            }
           ]
         ]
       },
@@ -5354,7 +5403,9 @@
         },
         "reqs": [
           [
-            "starpieces, 60"
+            {
+              "starpieces": 60
+            }
           ]
         ]
       },
@@ -5380,7 +5431,9 @@
         },
         "reqs": [
           [
-            "starpieces, 60"
+            {
+              "starpieces": 60
+            }
           ]
         ]
       },
@@ -5406,7 +5459,9 @@
         },
         "reqs": [
           [
-            "starpieces, 60"
+            {
+              "starpieces": 60
+            }
           ]
         ]
       },
@@ -5432,7 +5487,9 @@
         },
         "reqs": [
           [
-            "starpieces, 60"
+            {
+              "starpieces": 60
+            }
           ]
         ]
       },
@@ -5458,7 +5515,9 @@
         },
         "reqs": [
           [
-            "starpieces, 60"
+            {
+              "starpieces": 60
+            }
           ]
         ]
       },
@@ -5484,7 +5543,9 @@
         },
         "reqs": [
           [
-            "starpieces, 60"
+            {
+              "starpieces": 60
+            }
           ]
         ]
       },
@@ -5510,7 +5571,9 @@
         },
         "reqs": [
           [
-            "starpieces, 60"
+            {
+              "starpieces": 60
+            }
           ]
         ]
       },
@@ -5536,7 +5599,9 @@
         },
         "reqs": [
           [
-            "starpieces, 60"
+            {
+              "starpieces": 60
+            }
           ]
         ]
       },
@@ -5562,7 +5627,9 @@
         },
         "reqs": [
           [
-            "starpieces, 60"
+            {
+              "starpieces": 60
+            }
           ]
         ]
       },
@@ -5588,7 +5655,9 @@
         },
         "reqs": [
           [
-            "starpieces, 60"
+            {
+              "starpieces": 60
+            }
           ]
         ]
       },
@@ -5614,7 +5683,9 @@
         },
         "reqs": [
           [
-            "starpieces, 60"
+            {
+              "starpieces": 60
+            }
           ]
         ]
       },
@@ -5640,7 +5711,9 @@
         },
         "reqs": [
           [
-            "starpieces, 60"
+            {
+              "starpieces": 60
+            }
           ]
         ]
       },
@@ -5666,7 +5739,9 @@
         },
         "reqs": [
           [
-            "starpieces, 60"
+            {
+              "starpieces": 60
+            }
           ]
         ]
       },
@@ -5692,7 +5767,9 @@
         },
         "reqs": [
           [
-            "starpieces, 60"
+            {
+              "starpieces": 60
+            }
           ]
         ]
       },
@@ -5859,7 +5936,9 @@
         },
         "reqs": [
           [
-            "RuinsKey"
+            {
+              "RuinsKey": 1
+            }
           ]
         ]
       },
@@ -6079,7 +6158,9 @@
         },
         "reqs": [
           [
-            "RuinsKey"
+            {
+              "RuinsKey": 2
+            }
           ]
         ]
       },
@@ -6336,7 +6417,9 @@
         },
         "reqs": [
           [
-            "RuinsKey"
+            {
+              "RuinsKey": 3
+            }
           ]
         ]
       },
@@ -6698,7 +6781,9 @@
         },
         "reqs": [
           [
-            "RuinsKey"
+            {
+              "RuinsKey": 4
+            }
           ]
         ]
       },
@@ -6753,6 +6838,9 @@
           ],
           [
             "LunarStone"
+          ],
+          [
+            "RF_DrainedThirdSandRoomAndCanSolvePuzzle"
           ]
         ],
         "pseudoitems": [
@@ -6844,7 +6932,7 @@
         },
         "reqs": [
           [
-            "MF_ISK12_DrainedThirdSandRoom"
+            "RF_DrainedThirdSandRoomAndCanSolvePuzzle"
           ]
         ]
       },
@@ -6859,7 +6947,7 @@
         },
         "reqs": [
           [
-            "MF_ISK12_DrainedThirdSandRoom"
+            "RF_DrainedThirdSandRoomAndCanSolvePuzzle"
           ]
         ]
       },
@@ -6889,7 +6977,7 @@
         },
         "reqs": [],
         "pseudoitems": [
-          "MF_ISK12_DrainedThirdSandRoom"
+          "RF_DrainedThirdSandRoomAndCanSolvePuzzle"
         ]
       },
       {
@@ -6940,7 +7028,7 @@
         },
         "reqs": [
           [
-            "MF_ISK12_DrainedThirdSandRoom"
+            "RF_DrainedThirdSandRoomAndCanSolvePuzzle"
           ]
         ]
       },
@@ -7259,7 +7347,7 @@
         },
         "reqs": [
           [
-            "hammer, 1"
+            "Hammer"
           ],
           [
             "RF_Missable"
@@ -7884,10 +7972,7 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2",
-            "Kooper",
-            "Bombette"
+            "can_hit_grounded_blocks"
           ]
         ]
       },
@@ -7935,10 +8020,7 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2",
-            "Kooper",
-            "Bombette"
+            "can_hit_grounded_blocks"
           ]
         ]
       },
@@ -8166,7 +8248,7 @@
         },
         "reqs": [
           [
-            "has_parakarry_3_letters"
+            "has_parakarry_letters"
           ]
         ]
       },
@@ -8517,8 +8599,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -8544,8 +8625,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -9533,7 +9613,7 @@
         },
         "reqs": [
           [
-            "hammer, 1"
+            "Hammer"
           ]
         ],
         "pseudoitems": [
@@ -9584,7 +9664,7 @@
             "RF_YoshiKidsMissing"
           ],
           [
-            "hammer, 1"
+            "Hammer"
           ]
         ],
         "pseudoitems": [
@@ -9676,10 +9756,10 @@
         },
         "reqs": [
           [
-            "Sushie"
+            "JadeRaven"
           ],
           [
-            "JadeRaven"
+            "Sushie"
           ]
         ]
       },
@@ -9724,7 +9804,7 @@
         },
         "reqs": [
           [
-            "hammer, 1"
+            "Hammer"
           ]
         ],
         "pseudoitems": [
@@ -9972,8 +10052,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -10282,7 +10361,7 @@
             "Sushie"
           ],
           [
-            "hammer, 1"
+            "Hammer"
           ]
         ],
         "pseudoitems": [
@@ -10398,8 +10477,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -10469,8 +10547,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -12116,7 +12193,7 @@
         },
         "reqs": [
           [
-            "hammer, 1"
+            "Hammer"
           ]
         ]
       },
@@ -12131,7 +12208,7 @@
         },
         "reqs": [
           [
-            "hammer, 1"
+            "Hammer"
           ]
         ]
       },
@@ -12495,10 +12572,7 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2",
-            "Kooper",
-            "Bombette"
+            "can_hit_grounded_blocks"
           ]
         ]
       },
@@ -12576,11 +12650,10 @@
         },
         "reqs": [
           [
-            "hammer, 2"
+            "SuperHammer"
           ],
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -13138,10 +13211,7 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2",
-            "Kooper",
-            "Bombette"
+            "can_hit_grounded_blocks"
           ]
         ]
       },
@@ -14084,7 +14154,12 @@
         },
         "reqs": [
           [
-            "BowserCastleKey"
+            {
+              "BowserCastleKey": 2
+            }
+          ],
+          [
+            "GF_KPA16_ShutOffLava"
           ]
         ]
       },
@@ -14338,7 +14413,7 @@
         },
         "reqs": [
           [
-            "boots, 2"
+            "SuperBoots"
           ]
         ]
       },
@@ -14364,7 +14439,7 @@
         },
         "reqs": [
           [
-            "boots, 2"
+            "SuperBoots"
           ]
         ]
       },
@@ -14940,7 +15015,9 @@
         },
         "reqs": [
           [
-            "BowserCastleKey"
+            {
+              "BowserCastleKey": 5
+            }
           ]
         ]
       },
@@ -15307,7 +15384,9 @@
         },
         "reqs": [
           [
-            "BowserCastleKey"
+            {
+              "BowserCastleKey": 1
+            }
           ]
         ]
       },
@@ -16137,8 +16216,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -16241,7 +16319,9 @@
         },
         "reqs": [
           [
-            "BowserCastleKey"
+            {
+              "BowserCastleKey": 4
+            }
           ]
         ]
       },
@@ -16817,7 +16897,9 @@
         },
         "reqs": [
           [
-            "BowserCastleKey"
+            {
+              "BowserCastleKey": 3
+            }
           ]
         ]
       },
@@ -16873,7 +16955,7 @@
         },
         "reqs": [
           [
-            "boots, 3"
+            "UltraBoots"
           ]
         ]
       },
@@ -17158,8 +17240,8 @@
         },
         "reqs": [
           [
-            "boots, 3",
-            "Kooper"
+            "Kooper",
+            "UltraBoots"
           ]
         ]
       },
@@ -17419,8 +17501,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -18366,7 +18447,9 @@
         },
         "reqs": [
           [
-            "starspirits, 2"
+            {
+              "starspirits": 2
+            }
           ]
         ]
       },
@@ -18392,7 +18475,9 @@
         },
         "reqs": [
           [
-            "starspirits, 3"
+            {
+              "starspirits": 3
+            }
           ]
         ]
       },
@@ -18418,7 +18503,9 @@
         },
         "reqs": [
           [
-            "starspirits, 4"
+            {
+              "starspirits": 4
+            }
           ]
         ]
       },
@@ -18444,7 +18531,9 @@
         },
         "reqs": [
           [
-            "starspirits, 5"
+            {
+              "starspirits": 5
+            }
           ]
         ]
       },
@@ -18658,7 +18747,7 @@
         },
         "reqs": [
           [
-            "boots, 2"
+            "SuperBoots"
           ]
         ]
       },
@@ -18850,7 +18939,9 @@
         },
         "reqs": [
           [
-            "starspirits, 1"
+            {
+              "starspirits": 1
+            }
           ]
         ]
       },
@@ -18876,7 +18967,9 @@
         },
         "reqs": [
           [
-            "starspirits, 1"
+            {
+              "starspirits": 1
+            }
           ]
         ]
       },
@@ -18902,7 +18995,9 @@
         },
         "reqs": [
           [
-            "starspirits, 1"
+            {
+              "starspirits": 1
+            }
           ]
         ]
       },
@@ -18928,7 +19023,9 @@
         },
         "reqs": [
           [
-            "starspirits, 2"
+            {
+              "starspirits": 2
+            }
           ]
         ]
       },
@@ -18954,7 +19051,9 @@
         },
         "reqs": [
           [
-            "starspirits, 2"
+            {
+              "starspirits": 2
+            }
           ]
         ]
       },
@@ -18980,7 +19079,9 @@
         },
         "reqs": [
           [
-            "starspirits, 2"
+            {
+              "starspirits": 2
+            }
           ]
         ]
       },
@@ -19006,7 +19107,9 @@
         },
         "reqs": [
           [
-            "starspirits, 3"
+            {
+              "starspirits": 3
+            }
           ]
         ]
       },
@@ -19032,7 +19135,9 @@
         },
         "reqs": [
           [
-            "starspirits, 3"
+            {
+              "starspirits": 3
+            }
           ]
         ]
       },
@@ -19058,7 +19163,9 @@
         },
         "reqs": [
           [
-            "starspirits, 3"
+            {
+              "starspirits": 3
+            }
           ]
         ]
       },
@@ -19084,7 +19191,9 @@
         },
         "reqs": [
           [
-            "starspirits, 4"
+            {
+              "starspirits": 4
+            }
           ]
         ]
       },
@@ -19110,7 +19219,9 @@
         },
         "reqs": [
           [
-            "starspirits, 4"
+            {
+              "starspirits": 4
+            }
           ]
         ]
       },
@@ -19136,7 +19247,9 @@
         },
         "reqs": [
           [
-            "starspirits, 4"
+            {
+              "starspirits": 4
+            }
           ]
         ]
       },
@@ -19193,7 +19306,9 @@
         },
         "reqs": [
           [
-            "starspirits, 2"
+            {
+              "starspirits": 2
+            }
           ]
         ],
         "pseudoitems": [
@@ -19214,7 +19329,9 @@
         },
         "reqs": [
           [
-            "starspirits, 4"
+            {
+              "starspirits": 4
+            }
           ]
         ],
         "pseudoitems": [
@@ -19235,7 +19352,9 @@
         },
         "reqs": [
           [
-            "starspirits, 6"
+            {
+              "starspirits": 6
+            }
           ]
         ],
         "pseudoitems": [
@@ -20091,7 +20210,9 @@
         },
         "reqs": [
           [
-            "starspirits, 2"
+            {
+              "starspirits": 2
+            }
           ]
         ],
         "pseudoitems": [
@@ -20112,7 +20233,9 @@
         },
         "reqs": [
           [
-            "starspirits, 4"
+            {
+              "starspirits": 4
+            }
           ]
         ],
         "pseudoitems": [
@@ -20133,7 +20256,9 @@
         },
         "reqs": [
           [
-            "starspirits, 6"
+            {
+              "starspirits": 6
+            }
           ]
         ],
         "pseudoitems": [
@@ -20213,8 +20338,8 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2",
+            "Hammer",
+            "SuperBoots",
             "Bombette"
           ]
         ]
@@ -20332,7 +20457,9 @@
         },
         "reqs": [
           [
-            "starspirits, 2"
+            {
+              "starspirits": 2
+            }
           ]
         ],
         "pseudoitems": [
@@ -20353,7 +20480,9 @@
         },
         "reqs": [
           [
-            "starspirits, 4"
+            {
+              "starspirits": 4
+            }
           ]
         ],
         "pseudoitems": [
@@ -20374,7 +20503,9 @@
         },
         "reqs": [
           [
-            "starspirits, 6"
+            {
+              "starspirits": 6
+            }
           ]
         ],
         "pseudoitems": [
@@ -22342,6 +22473,7 @@
             "RF_Ch1_Fuzzies_Banished"
           ],
           [
+            "RF_CanVisitDesertCamp",
             "RF_Ch2_SavedStarSpirit"
           ]
         ]
@@ -22464,7 +22596,9 @@
             "FAVOR_1_02_done"
           ],
           [
-            "starspirits, 1"
+            {
+              "starspirits": 1
+            }
           ]
         ],
         "pseudoitems": [
@@ -22502,7 +22636,9 @@
             "FAVOR_2_01_done"
           ],
           [
-            "starspirits, 1"
+            {
+              "starspirits": 1
+            }
           ]
         ],
         "pseudoitems": [
@@ -22537,7 +22673,9 @@
             "FAVOR_2_02_done"
           ],
           [
-            "starspirits, 1"
+            {
+              "starspirits": 1
+            }
           ]
         ],
         "pseudoitems": [
@@ -22572,7 +22710,9 @@
             "FAVOR_2_03_done"
           ],
           [
-            "starspirits, 2"
+            {
+              "starspirits": 2
+            }
           ]
         ],
         "pseudoitems": [
@@ -22607,7 +22747,9 @@
             "FAVOR_3_01_done"
           ],
           [
-            "starspirits, 2"
+            {
+              "starspirits": 2
+            }
           ]
         ],
         "pseudoitems": [
@@ -22642,7 +22784,9 @@
             "FAVOR_3_02_done"
           ],
           [
-            "starspirits, 2"
+            {
+              "starspirits": 2
+            }
           ]
         ],
         "pseudoitems": [
@@ -22677,7 +22821,9 @@
             "FAVOR_3_03_done"
           ],
           [
-            "starspirits, 3"
+            {
+              "starspirits": 3
+            }
           ]
         ],
         "pseudoitems": [
@@ -22712,7 +22858,9 @@
             "FAVOR_4_01_done"
           ],
           [
-            "starspirits, 3"
+            {
+              "starspirits": 3
+            }
           ]
         ],
         "pseudoitems": [
@@ -22776,7 +22924,9 @@
             "FAVOR_4_02_done"
           ],
           [
-            "starspirits, 3"
+            {
+              "starspirits": 3
+            }
           ]
         ],
         "pseudoitems": [
@@ -22808,7 +22958,9 @@
             "FAVOR_4_03_done"
           ],
           [
-            "starspirits, 4"
+            {
+              "starspirits": 4
+            }
           ]
         ],
         "pseudoitems": [
@@ -22843,7 +22995,9 @@
             "FAVOR_5_01_done"
           ],
           [
-            "starspirits, 4"
+            {
+              "starspirits": 4
+            }
           ]
         ],
         "pseudoitems": [
@@ -22881,7 +23035,9 @@
             "FAVOR_5_02_done"
           ],
           [
-            "starspirits, 4"
+            {
+              "starspirits": 4
+            }
           ]
         ],
         "pseudoitems": [
@@ -22916,7 +23072,9 @@
             "FAVOR_5_03_done"
           ],
           [
-            "starspirits, 5"
+            {
+              "starspirits": 5
+            }
           ]
         ],
         "pseudoitems": [
@@ -22951,7 +23109,9 @@
             "FAVOR_6_01_done"
           ],
           [
-            "starspirits, 5"
+            {
+              "starspirits": 5
+            }
           ]
         ],
         "pseudoitems": [
@@ -22989,7 +23149,9 @@
             "FAVOR_6_02_done"
           ],
           [
-            "starspirits, 5"
+            {
+              "starspirits": 5
+            }
           ]
         ],
         "pseudoitems": [
@@ -23024,7 +23186,9 @@
             "FAVOR_6_03_done"
           ],
           [
-            "starspirits, 6"
+            {
+              "starspirits": 6
+            }
           ]
         ],
         "pseudoitems": [
@@ -23059,7 +23223,9 @@
             "FAVOR_7_01_done"
           ],
           [
-            "starspirits, 6"
+            {
+              "starspirits": 6
+            }
           ]
         ],
         "pseudoitems": [
@@ -23094,7 +23260,9 @@
             "FAVOR_7_02_done"
           ],
           [
-            "starspirits, 6"
+            {
+              "starspirits": 6
+            }
           ]
         ]
       },
@@ -23141,7 +23309,9 @@
             "FAVOR_1_02_done"
           ],
           [
-            "starspirits, 1"
+            {
+              "starspirits": 1
+            }
           ]
         ],
         "pseudoitems": [
@@ -23162,7 +23332,9 @@
             "FAVOR_2_02_done"
           ],
           [
-            "starspirits, 1"
+            {
+              "starspirits": 1
+            }
           ]
         ],
         "pseudoitems": [
@@ -23183,7 +23355,9 @@
             "FAVOR_2_03_done"
           ],
           [
-            "starspirits, 2"
+            {
+              "starspirits": 2
+            }
           ]
         ],
         "pseudoitems": [
@@ -23204,7 +23378,9 @@
             "FAVOR_3_02_done"
           ],
           [
-            "starspirits, 2"
+            {
+              "starspirits": 2
+            }
           ]
         ],
         "pseudoitems": [
@@ -23225,7 +23401,9 @@
             "FAVOR_5_01_done"
           ],
           [
-            "starspirits, 4"
+            {
+              "starspirits": 4
+            }
           ]
         ],
         "pseudoitems": [
@@ -23246,7 +23424,9 @@
             "FAVOR_5_03_done"
           ],
           [
-            "starspirits, 5"
+            {
+              "starspirits": 5
+            }
           ]
         ],
         "pseudoitems": [
@@ -23267,7 +23447,9 @@
             "FAVOR_6_03_done"
           ],
           [
-            "starspirits, 6"
+            {
+              "starspirits": 6
+            }
           ]
         ],
         "pseudoitems": [
@@ -23388,7 +23570,7 @@
         },
         "reqs": [
           [
-            "hammer, 1"
+            "Hammer"
           ]
         ],
         "pseudoitems": [
@@ -23792,10 +23974,7 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2",
-            "Kooper",
-            "Bombette"
+            "can_hit_grounded_blocks"
           ]
         ]
       },
@@ -24042,7 +24221,7 @@
         "reqs": [
           [
             "Kooper",
-            "boots, 3"
+            "UltraBoots"
           ]
         ]
       },
@@ -24068,8 +24247,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -24724,7 +24902,7 @@
         },
         "reqs": [
           [
-            "boots, 2"
+            "SuperBoots"
           ]
         ]
       },
@@ -24906,7 +25084,7 @@
         },
         "reqs": [
           [
-            "boots, 2"
+            "SuperBoots"
           ]
         ],
         "pseudoitems": [
@@ -24946,7 +25124,7 @@
         },
         "reqs": [
           [
-            "boots, 2"
+            "SuperBoots"
           ]
         ]
       },
@@ -24986,7 +25164,7 @@
         },
         "reqs": [
           [
-            "boots, 2"
+            "SuperBoots"
           ]
         ]
       },
@@ -25060,7 +25238,7 @@
         },
         "reqs": [
           [
-            "boots, 2"
+            "SuperBoots"
           ],
           [
             "Bombette"
@@ -25089,7 +25267,7 @@
         },
         "reqs": [
           [
-            "boots, 2"
+            "SuperBoots"
           ]
         ]
       },
@@ -25115,7 +25293,7 @@
         },
         "reqs": [
           [
-            "boots, 2"
+            "SuperBoots"
           ]
         ]
       },
@@ -25178,7 +25356,7 @@
         },
         "reqs": [
           [
-            "boots, 2"
+            "SuperBoots"
           ]
         ]
       },
@@ -25559,8 +25737,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -25586,8 +25763,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -25687,8 +25863,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -25715,16 +25890,15 @@
         "reqs": [
           [
             "Kooper",
-            "boots, 3"
+            "UltraBoots"
           ],
           [
-            "hammer, 1",
-            "boots, 2"
+            "Hammer",
+            "SuperBoots"
           ],
           [
-            "Watt",
-            "RF_HiddenBlocksVisible",
-            "boots, 3"
+            "can_see_hidden_blocks",
+            "UltraBoots"
           ]
         ]
       },
@@ -25939,8 +26113,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -25977,8 +26150,8 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2"
+            "Hammer",
+            "SuperBoots"
           ]
         ]
       },
@@ -26004,8 +26177,8 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2"
+            "Hammer",
+            "SuperBoots"
           ]
         ]
       },
@@ -26031,8 +26204,8 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2"
+            "Hammer",
+            "SuperBoots"
           ]
         ]
       },
@@ -26058,8 +26231,8 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2"
+            "Hammer",
+            "SuperBoots"
           ]
         ]
       },
@@ -26085,8 +26258,8 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2"
+            "Hammer",
+            "SuperBoots"
           ]
         ]
       },
@@ -26112,8 +26285,8 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2"
+            "Hammer",
+            "SuperBoots"
           ]
         ]
       },
@@ -26139,8 +26312,8 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2"
+            "Hammer",
+            "SuperBoots"
           ]
         ]
       },
@@ -26166,8 +26339,8 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2"
+            "Hammer",
+            "SuperBoots"
           ]
         ]
       },
@@ -26193,8 +26366,8 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2"
+            "Hammer",
+            "SuperBoots"
           ]
         ]
       },
@@ -26220,8 +26393,8 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2"
+            "Hammer",
+            "SuperBoots"
           ]
         ]
       },
@@ -26247,8 +26420,8 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2"
+            "Hammer",
+            "SuperBoots"
           ]
         ]
       },
@@ -26274,8 +26447,8 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2"
+            "Hammer",
+            "SuperBoots"
           ]
         ]
       },
@@ -26301,8 +26474,8 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2"
+            "Hammer",
+            "SuperBoots"
           ]
         ]
       },
@@ -26328,8 +26501,8 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2"
+            "Hammer",
+            "SuperBoots"
           ],
           [
             "Parakarry"
@@ -26358,8 +26531,8 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2"
+            "Hammer",
+            "SuperBoots"
           ]
         ]
       },
@@ -26507,8 +26680,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -26534,8 +26706,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -26757,8 +26928,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -26809,8 +26979,8 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2"
+            "Hammer",
+            "SuperBoots"
           ]
         ]
       },
@@ -26836,8 +27006,8 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2"
+            "Hammer",
+            "SuperBoots"
           ]
         ]
       },
@@ -26863,8 +27033,8 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2"
+            "Hammer",
+            "SuperBoots"
           ]
         ]
       },
@@ -26890,8 +27060,8 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2"
+            "Hammer",
+            "SuperBoots"
           ]
         ]
       },
@@ -26917,8 +27087,8 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2"
+            "Hammer",
+            "SuperBoots"
           ]
         ]
       },
@@ -27051,8 +27221,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -27087,7 +27256,7 @@
             "Dictionary"
           ],
           [
-            "hammer, 1"
+            "Hammer"
           ]
         ],
         "pseudoitems": [
@@ -27650,8 +27819,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -27721,8 +27889,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -27748,8 +27915,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -27819,8 +27985,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -27857,7 +28022,7 @@
         },
         "reqs": [
           [
-            "hammer, 1",
+            "Hammer",
             "Kooper",
             "Bombette"
           ]
@@ -27986,8 +28151,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -28330,8 +28494,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -28472,7 +28635,7 @@
             "BlueKey"
           ],
           [
-            "boots, 2"
+            "SuperBoots"
           ]
         ]
       },
@@ -28505,7 +28668,7 @@
             "BlueKey"
           ],
           [
-            "boots, 2"
+            "SuperBoots"
           ]
         ]
       },
@@ -28781,7 +28944,7 @@
         },
         "reqs": [
           [
-            "boots, 2"
+            "SuperBoots"
           ]
         ],
         "pseudoitems": [
@@ -28923,7 +29086,7 @@
             "Bombette"
           ],
           [
-            "hammer, 1"
+            "Hammer"
           ]
         ]
       },
@@ -29452,7 +29615,7 @@
             "Kooper"
           ],
           [
-            "hammer, 1"
+            "Hammer"
           ]
         ]
       },
@@ -29673,7 +29836,7 @@
         },
         "reqs": [
           [
-            "boots, 3"
+            "UltraBoots"
           ]
         ]
       },
@@ -29783,11 +29946,10 @@
         },
         "reqs": [
           [
-            "boots, 3"
+            "UltraBoots"
           ],
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -31268,7 +31430,7 @@
         },
         "reqs": [
           [
-            "hammer, 1"
+            "Hammer"
           ]
         ]
       },
@@ -31382,8 +31544,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -31467,7 +31628,7 @@
         },
         "reqs": [
           [
-            "boots, 2"
+            "SuperBoots"
           ]
         ]
       },
@@ -31482,7 +31643,7 @@
         },
         "reqs": [
           [
-            "boots, 2"
+            "SuperBoots"
           ]
         ]
       },
@@ -31497,7 +31658,7 @@
         },
         "reqs": [
           [
-            "boots, 3"
+            "UltraBoots"
           ]
         ]
       },
@@ -31571,7 +31732,7 @@
         },
         "reqs": [
           [
-            "hammer, 1"
+            "Hammer"
           ]
         ],
         "pseudoitems": [
@@ -31592,7 +31753,7 @@
             "Kooper"
           ],
           [
-            "hammer, 1"
+            "Hammer"
           ]
         ],
         "pseudoitems": [
@@ -31949,7 +32110,7 @@
         "reqs": [
           [
             "Bombette",
-            "boots, 2"
+            "SuperBoots"
           ],
           [
             "Sushie"
@@ -32081,10 +32242,7 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2",
-            "Kooper",
-            "Bombette"
+            "can_hit_grounded_blocks"
           ]
         ]
       },
@@ -32110,10 +32268,7 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2",
-            "Kooper",
-            "Bombette"
+            "can_hit_grounded_blocks"
           ]
         ]
       },
@@ -32737,8 +32892,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -33237,10 +33391,7 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2",
-            "Kooper",
-            "Bombette"
+            "can_hit_grounded_blocks"
           ]
         ]
       },
@@ -33266,10 +33417,7 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2",
-            "Kooper",
-            "Bombette"
+            "can_hit_grounded_blocks"
           ]
         ]
       },
@@ -33559,10 +33707,7 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2",
-            "Kooper",
-            "Bombette"
+            "can_hit_grounded_blocks"
           ]
         ]
       },
@@ -33588,10 +33733,7 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2",
-            "Kooper",
-            "Bombette"
+            "can_hit_grounded_blocks"
           ]
         ]
       },
@@ -33617,10 +33759,7 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2",
-            "Kooper",
-            "Bombette"
+            "can_hit_grounded_blocks"
           ]
         ]
       },
@@ -33866,10 +34005,7 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2",
-            "Kooper",
-            "Bombette"
+            "can_hit_grounded_blocks"
           ]
         ]
       },
@@ -33895,10 +34031,7 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2",
-            "Kooper",
-            "Bombette"
+            "can_hit_grounded_blocks"
           ]
         ]
       },
@@ -33924,10 +34057,7 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2",
-            "Kooper",
-            "Bombette"
+            "can_hit_grounded_blocks"
           ]
         ]
       },
@@ -33953,10 +34083,7 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2",
-            "Kooper",
-            "Bombette"
+            "can_hit_grounded_blocks"
           ]
         ]
       },
@@ -33982,10 +34109,7 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2",
-            "Kooper",
-            "Bombette"
+            "can_hit_grounded_blocks"
           ]
         ]
       },
@@ -34297,8 +34421,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -34638,6 +34761,20 @@
           "id": 0
         },
         "reqs": []
+      },
+      {
+        "from": {
+          "map": "SBK_30",
+          "id": 0
+        },
+        "to": {
+          "map": "SBK_30",
+          "id": 0
+        },
+        "reqs": [],
+        "pseudoitems": [
+          "RF_CanVisitDesertCamp"
+        ]
       },
       {
         "from": {
@@ -35868,10 +36005,7 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2",
-            "Kooper",
-            "Bombette"
+            "can_hit_grounded_blocks"
           ]
         ]
       },
@@ -36139,8 +36273,8 @@
         },
         "reqs": [
           [
-            "boots, 3",
-            "Kooper"
+            "Kooper",
+            "UltraBoots"
           ]
         ]
       },
@@ -36265,8 +36399,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -36292,10 +36425,7 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2",
-            "Kooper",
-            "Bombette"
+            "can_hit_grounded_blocks"
           ]
         ]
       },
@@ -37253,8 +37383,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -37511,10 +37640,7 @@
         },
         "reqs": [
           [
-            "hammer, 1",
-            "boots, 2",
-            "Kooper",
-            "Bombette"
+            "can_hit_grounded_blocks"
           ]
         ]
       },
@@ -38217,7 +38343,7 @@
         },
         "reqs": [
           [
-            "hammer, 2"
+            "SuperHammer"
           ]
         ]
       },
@@ -38243,7 +38369,7 @@
         },
         "reqs": [
           [
-            "hammer, 1"
+            "Hammer"
           ]
         ]
       },
@@ -38269,7 +38395,7 @@
         },
         "reqs": [
           [
-            "boots, 2"
+            "SuperBoots"
           ]
         ]
       },
@@ -38651,8 +38777,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -38678,8 +38803,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -38705,8 +38829,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -39189,8 +39312,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -39312,7 +39434,7 @@
         },
         "reqs": [
           [
-            "boots, 3"
+            "UltraBoots"
           ]
         ]
       },
@@ -39415,7 +39537,7 @@
         },
         "reqs": [
           [
-            "boots, 2"
+            "SuperBoots"
           ]
         ]
       },
@@ -39441,7 +39563,7 @@
         },
         "reqs": [
           [
-            "boots, 2"
+            "SuperBoots"
           ]
         ]
       },
@@ -39467,7 +39589,7 @@
         },
         "reqs": [
           [
-            "boots, 2"
+            "SuperBoots"
           ]
         ]
       },
@@ -39493,7 +39615,7 @@
         },
         "reqs": [
           [
-            "boots, 2"
+            "SuperBoots"
           ]
         ]
       },
@@ -39519,7 +39641,7 @@
         },
         "reqs": [
           [
-            "boots, 2"
+            "SuperBoots"
           ]
         ]
       },
@@ -39622,7 +39744,7 @@
         },
         "reqs": [
           [
-            "hammer, 2"
+            "SuperHammer"
           ]
         ]
       },
@@ -39637,8 +39759,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -39664,8 +39785,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -39691,8 +39811,7 @@
         },
         "reqs": [
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -39773,7 +39892,7 @@
         },
         "reqs": [
           [
-            "hammer, 3"
+            "UltraHammer"
           ]
         ]
       },
@@ -39788,11 +39907,10 @@
         },
         "reqs": [
           [
-            "boots, 3"
+            "UltraBoots"
           ],
           [
-            "Watt",
-            "RF_HiddenBlocksVisible"
+            "can_see_hidden_blocks"
           ]
         ]
       },
@@ -39818,7 +39936,7 @@
         },
         "reqs": [
           [
-            "boots, 3"
+            "UltraBoots"
           ]
         ]
       },
@@ -39844,7 +39962,7 @@
         },
         "reqs": [
           [
-            "boots, 3"
+            "UltraBoots"
           ]
         ]
       },
@@ -40066,7 +40184,9 @@
         },
         "reqs": [
           [
-            "KoopaFortressKey"
+            {
+              "KoopaFortressKey": 1
+            }
           ]
         ]
       },
@@ -40297,7 +40417,9 @@
         },
         "reqs": [
           [
-            "KoopaFortressKey"
+            {
+              "KoopaFortressKey": 4
+            }
           ]
         ]
       },
@@ -40627,7 +40749,9 @@
         },
         "reqs": [
           [
-            "KoopaFortressKey"
+            {
+              "KoopaFortressKey": 2
+            }
           ]
         ]
       },
@@ -40716,7 +40840,9 @@
         },
         "reqs": [
           [
-            "KoopaFortressKey"
+            {
+              "KoopaFortressKey": 3
+            }
           ]
         ]
       },
