@@ -51,12 +51,25 @@ namespace Windows_Form_Frontend
             var Macros = _instance.MacroPool.Values.Where(x => SearchStringParser.FilterSearch(_instance, x, txtWinConFilter.Text, x.GetDictEntry(_instance).Name??x.ID)).OrderBy(x => x.GetDictEntry(_instance).Name??x.ID);
             var Areas = _instance.EntrancePool.AreaList.Values.Where(x => SearchStringParser.FilterSearch(_instance, x, txtWinConFilter.Text, x.ID)).OrderBy(x => x.ID);
 
+            int CMBWidth = cmbWinCon.DropDownWidth;
+            var Graphic = cmbWinCon.CreateGraphics();
+
             if (Items.Any())
             {
                 cmbWinCon.Items.Add(WinFormUtils.CreateDivider(cmbWinCon, "Items"));
+                Dictionary<string, int> DisplayCounts = new Dictionary<string, int>();  
                 foreach (var i in Items)
                 {
-                    cmbWinCon.Items.Add(new MiscData.StandardListBoxItem { Display = i.GetDictEntry(_instance).GetItemName(_instance), tag = i });
+                    string Dis = i.GetDictEntry(_instance).GetItemName(_instance);
+                    if (!DisplayCounts.ContainsKey(Dis)) { DisplayCounts[Dis] = 0; }
+                    DisplayCounts[Dis]++;
+                }
+                foreach (var i in Items)
+                {
+                    string Dis = i.GetDictEntry(_instance).GetItemName(_instance);
+                    if (DisplayCounts.ContainsKey(Dis) && DisplayCounts[Dis] > 1) { Dis = $"{Dis} [{i.Id}]"; }
+                    cmbWinCon.Items.Add(new MiscData.StandardListBoxItem { Display = Dis, tag = i });
+                    if (Graphic.MeasureString(Dis, cmbWinCon.Font).Width > CMBWidth) { CMBWidth = (int)Graphic.MeasureString(Dis, cmbWinCon.Font).Width; }
                 }
             }
 
@@ -65,7 +78,9 @@ namespace Windows_Form_Frontend
                 cmbWinCon.Items.Add(WinFormUtils.CreateDivider(cmbWinCon, "Locations"));
                 foreach (var i in Locations)
                 {
-                    cmbWinCon.Items.Add(new MiscData.StandardListBoxItem { Display = i.GetDictEntry(_instance).Name??i.ID, tag = i });
+                    string Dis = i.GetDictEntry(_instance).Name??i.ID;
+                    cmbWinCon.Items.Add(new MiscData.StandardListBoxItem { Display = Dis, tag = i });
+                    if (Graphic.MeasureString(Dis, cmbWinCon.Font).Width > CMBWidth) { CMBWidth = (int)Graphic.MeasureString(Dis, cmbWinCon.Font).Width; }
                 }
             }
 
@@ -74,7 +89,9 @@ namespace Windows_Form_Frontend
                 cmbWinCon.Items.Add(WinFormUtils.CreateDivider(cmbWinCon, "Macros"));
                 foreach (var i in Macros)
                 {
-                    cmbWinCon.Items.Add(new MiscData.StandardListBoxItem { Display = i.GetDictEntry(_instance).Name??i.ID, tag = i });
+                    string Dis = i.GetDictEntry(_instance).Name??i.ID;
+                    cmbWinCon.Items.Add(new MiscData.StandardListBoxItem { Display = Dis, tag = i });
+                    if (Graphic.MeasureString(Dis, cmbWinCon.Font).Width > CMBWidth) { CMBWidth = (int)Graphic.MeasureString(Dis, cmbWinCon.Font).Width; }
                 }
             }
 
@@ -83,9 +100,12 @@ namespace Windows_Form_Frontend
                 cmbWinCon.Items.Add(WinFormUtils.CreateDivider(cmbWinCon, "Areas"));
                 foreach (var i in Areas)
                 {
-                    cmbWinCon.Items.Add(new MiscData.StandardListBoxItem { Display = i.ID, tag = i });
+                    string Dis = i.ID;
+                    cmbWinCon.Items.Add(new MiscData.StandardListBoxItem { Display = Dis, tag = i });
+                    if (Graphic.MeasureString(Dis, cmbWinCon.Font).Width > CMBWidth) { CMBWidth = (int)Graphic.MeasureString(Dis, cmbWinCon.Font).Width; }
                 }
             }
+            cmbWinCon.DropDownWidth = CMBWidth;
         }
 
         private void txtWinConFilter_TextChanged(object sender, EventArgs e)

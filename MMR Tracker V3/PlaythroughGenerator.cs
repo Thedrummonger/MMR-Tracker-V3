@@ -277,9 +277,11 @@ namespace MMR_Tracker_V3
                 if (sphere != p.Value.sphere) { 
                     if (sphere > -1) { readablePlaythrough.Add(String.Empty); }
                     readablePlaythrough.Add($"SPHERE: {p.Value.sphere}");
-                    sphere = p.Value.sphere; 
+                    sphere = p.Value.sphere;
                 }
+                string AreaName = (_Instance.GetLocationByID(p.Key)?.GetDictEntry(_Instance)?.Area);
                 string LocationName = _Instance.GetLocationByID(p.Key)?.GetDictEntry(_Instance)?.Name??p.Key;
+                string LocationDisplay = AreaName is null ? LocationName : $"{AreaName} - {LocationName}";
                 string ItemName = _Instance.GetItemByID(p.Value.ItemObtained)?.GetDictEntry(_Instance)?.GetItemName(_Instance)??p.Value.ItemObtained;
                 List<string> RealItems = new List<string>();
 
@@ -290,7 +292,7 @@ namespace MMR_Tracker_V3
                     RealItems.Add(display);
                 }
 
-                readablePlaythrough.Add($"Check [{LocationName.ToUpper()}] to obtain [{ItemName.ToUpper()}]");
+                readablePlaythrough.Add($"Check [{LocationDisplay.ToUpper()}] to obtain [{ItemName.ToUpper()}]");
                 if (RealItems.Any()) { readablePlaythrough.Add($"Using: [{string.Join(", ", RealItems)}]"); }
             }
             return readablePlaythrough;
