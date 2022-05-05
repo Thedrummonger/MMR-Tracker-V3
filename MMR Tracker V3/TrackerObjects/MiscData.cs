@@ -57,6 +57,13 @@ namespace MMR_Tracker_V3.TrackerObjects
             Additional = 1,
             Runtime = 2
         }
+        public enum DebugMode
+        {
+            Verbose = 0,
+            Debugging = 1,
+            UserView = 2,
+            Off = 3
+        }
 
         [Serializable]
         public enum RandomizedState

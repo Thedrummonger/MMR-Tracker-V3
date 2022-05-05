@@ -50,9 +50,17 @@ namespace Windows_Form_Frontend
             }
 
             bool isDevPC = File.Exists(References.WindowsPaths.DevFile);
-            Testing.ISDebugging  = (!Debugger.IsAttached && isDevPC && (Control.ModifierKeys == Keys.Control)) || (Debugger.IsAttached && (Control.ModifierKeys != Keys.Control));
+            bool IsDubugger = Debugger.IsAttached;
+            bool Modifier = ModifierKeys == Keys.Control;
 
-            Testing.ViewAsUserMode = ((Control.ModifierKeys == Keys.Alt) && Testing.ISDebugging);
+            if (IsDubugger && !Modifier)
+            {
+                Testing.DebugMode = MiscData.DebugMode.Debugging;
+            }
+            else if (isDevPC && Modifier)
+            {
+                Testing.DebugMode = MiscData.DebugMode.UserView;
+            }
 
             UpdateUI();
             WinFormInstanceCreation.ApplyUserPretLogic();
@@ -588,10 +596,10 @@ namespace Windows_Form_Frontend
             importSpoilerLogToolStripMenuItem.Text = (CurrentTrackerInstance.SpoilerLog != null) ? "Remove Spoiler Log" : "Import Spoiler Log";
 
             //Manage Dev Menus
-            devToolsToolStripMenuItem.Visible = Testing.ISDebugging || Testing.ViewAsUserMode;
-            devToolsToolStripMenuItem.Text = (Testing.ViewAsUserMode) ? "Run as Dev" : "Dev Options";
-            foreach (ToolStripDropDownItem i in devToolsToolStripMenuItem.DropDownItems) { i.Visible = Testing.ISDebugging; }
-            viewAsUserToolStripMenuItem.Checked = Testing.ViewAsUserMode;
+            devToolsToolStripMenuItem.Visible = Testing.IsDevUser();
+            devToolsToolStripMenuItem.Text = (Testing.UserView()) ? "Run as Dev" : "Dev Options";
+            foreach (ToolStripDropDownItem i in devToolsToolStripMenuItem.DropDownItems) { i.Visible = Testing.Debugging(); }
+            viewAsUserToolStripMenuItem.Checked = Testing.UserView();
 
         }
 
@@ -755,7 +763,7 @@ namespace Windows_Form_Frontend
             }
 
             //Debug Tools
-            if (Testing.ISDebugging)
+            if (Testing.Debugging())
             {
                 //DevData
                 ToolStripItem ShowDevData = contextMenuStrip.Items.Add("Show Dev Data");
@@ -1067,6 +1075,19 @@ namespace Windows_Form_Frontend
         {
             SpoilerLogLookUp spoilerLogLookUp = new SpoilerLogLookUp(CurrentTrackerInstance);
             spoilerLogLookUp.Show();
+        }
+
+        private void viewAsUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Testing.DebugMode = MiscData.DebugMode.UserView;
+            UpdateUI();
+        }
+
+        private void devToolsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(!Testing.UserView()) { return; }
+            Testing.DebugMode = MiscData.DebugMode.Debugging;
+            UpdateUI();
         }
     }
 }

@@ -12,8 +12,24 @@ namespace MMR_Tracker_V3
 {
     public class Testing
     {
-        public static bool ViewAsUserMode = false;
-        public static bool ISDebugging = false;
+        public static MiscData.DebugMode DebugMode = MiscData.DebugMode.Off;
+
+        public static bool Debugging()
+        {
+            return DebugMode == MiscData.DebugMode.Debugging;
+        }
+        public static bool UserView()
+        {
+            return DebugMode == MiscData.DebugMode.UserView;
+        }
+        public static bool IsDevUser()
+        {
+            return Debugging() || UserView();
+        }
+        public static bool StandardUser()
+        {
+            return DebugMode == MiscData.DebugMode.Off;
+        }
 
         public static string GetLogicPath()
         {
