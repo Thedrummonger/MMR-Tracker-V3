@@ -10874,7 +10874,9 @@
     },
     {
       "Id": "Bowsers Castle - Lower Grand Hall - 0 X Bowsers Castle - Guard Door 1 - 2",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "ShortenBowsersCastle == false"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -10982,7 +10984,9 @@
     },
     {
       "Id": "Bowsers Castle - Upper Grand Hall - 2 X Bowsers Castle - Split Level Hall - 0",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "ShortenBowsersCastle == false"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -11216,7 +11220,9 @@
     },
     {
       "Id": "Bowsers Castle - Hall to Guard Door 1 - 1 X Bowsers Castle - Guard Door 1 - 0",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "ShortenBowsersCastle == false"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -11252,7 +11258,9 @@
     },
     {
       "Id": "Bowsers Castle - Hall to Water Puzzle - 1 X Bowsers Castle - Left Water Puzzle - 0",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "ShortenBowsersCastle == false"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -11416,7 +11424,9 @@
     },
     {
       "Id": "Bowsers Castle - Battlement - 0 X Bowsers Castle - Guard Door 2 - 1",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "ShortenBowsersCastle == false"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -11819,7 +11829,9 @@
     },
     {
       "Id": "Bowsers Castle - Guard Door 2 - 0 X Bowsers Castle - Room with Hidden Door 2 - 1",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "ShortenBowsersCastle == false"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -11828,7 +11840,9 @@
     },
     {
       "Id": "Bowsers Castle - Guard Door 2 - 1 X Bowsers Castle - Battlement - 0",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "ShortenBowsersCastle == false"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -12188,7 +12202,9 @@
     },
     {
       "Id": "Bowsers Castle - Blue Fire Bridge - 0 X Bowsers Castle - Maze Room - 2",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "ShortenBowsersCastle == false"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -12307,7 +12323,9 @@
     },
     {
       "Id": "Bowsers Castle - Hidden Passage 1 - 1 X Bowsers Castle - Room with Hidden Door 2 - 0",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "ShortenBowsersCastle == false"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -12642,7 +12660,9 @@
     },
     {
       "Id": "Bowsers Castle - Bill Blaster Hall - 0 X Bowsers Castle - Right Water Puzzle - 1",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "ShortenBowsersCastle == false"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -31242,6 +31262,116 @@
     {
       "Id": "Koopa Bros Fortress - Boss Battle Room - 0 X Koopa Bros Fortress - Battlement - 1",
       "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Bowsers Castle - Lower Grand Hall - 0 X Bowsers Castle - Guard Door 2 - 1",
+      "RequiredItems": [
+        "ShortenBowsersCastle == true"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Bowsers Castle - Upper Grand Hall - 2 X Bowsers Castle - Blue Fire Bridge - 0",
+      "RequiredItems": [
+        "ShortenBowsersCastle == true"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Bowsers Castle - Hall to Guard Door 1 - 1 X Bowsers Castle - Guard Door 2 - 0",
+      "RequiredItems": [
+        "ShortenBowsersCastle == true"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Bowsers Castle - Hall to Water Puzzle - 1 X Bowsers Castle - Bill Blaster Hall - 0",
+      "RequiredItems": [
+        "ShortenBowsersCastle == true"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Bowsers Castle - Battlement - 0 X Bowsers Castle - Hidden Passage 1 - 1",
+      "RequiredItems": [
+        "ShortenBowsersCastle == true"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Bowsers Castle - Guard Door 2 - 0 X Bowsers Castle - Hall to Guard Door 1 - 1",
+      "RequiredItems": [
+        "ShortenBowsersCastle == true"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Bowsers Castle - Guard Door 2 - 1 X Bowsers Castle - Lower Grand Hall - 0",
+      "RequiredItems": [
+        "ShortenBowsersCastle == true"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Bowsers Castle - Blue Fire Bridge - 0 X Bowsers Castle - Upper Grand Hall - 2",
+      "RequiredItems": [
+        "ShortenBowsersCastle == true"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Bowsers Castle - Hidden Passage 1 - 1 X Bowsers Castle - Battlement - 0",
+      "RequiredItems": [
+        "ShortenBowsersCastle == true"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Bowsers Castle - Bill Blaster Hall - 0 X Bowsers Castle - Hall to Water Puzzle - 1",
+      "RequiredItems": [
+        "ShortenBowsersCastle == true"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",

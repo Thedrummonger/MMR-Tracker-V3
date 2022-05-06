@@ -42940,5 +42940,209 @@
     "PowerPlusB": "PowerPlus",
     "PowerSmash1": "PowerSmash",
     "SJumpChg": "SJumpCharge"
-  }
+  },
+  "ShortenBowsersCastleAdd": [
+    {
+      "from": {
+        "map": "KPA_32",
+        "id": 0
+      },
+      "to": {
+        "map": "KPA_82",
+        "id": 1
+      }
+    },
+    {
+      "from": {
+        "map": "KPA_33",
+        "id": 2
+      },
+      "to": {
+        "map": "KPA_102",
+        "id": 0
+      }
+    },
+    {
+      "from": {
+        "map": "KPA_50",
+        "id": 1
+      },
+      "to": {
+        "map": "KPA_82",
+        "id": 0
+      }
+    },
+    {
+      "from": {
+        "map": "KPA_51",
+        "id": 1
+      },
+      "to": {
+        "map": "KPA_130",
+        "id": 0
+      }
+    },
+    {
+      "from": {
+        "map": "KPA_61",
+        "id": 0
+      },
+      "to": {
+        "map": "KPA_112",
+        "id": 1
+      }
+    },
+    {
+      "from": {
+        "map": "KPA_82",
+        "id": 0
+      },
+      "to": {
+        "map": "KPA_50",
+        "id": 1
+      }
+    },
+    {
+      "from": {
+        "map": "KPA_82",
+        "id": 1
+      },
+      "to": {
+        "map": "KPA_32",
+        "id": 0
+      }
+    },
+    {
+      "from": {
+        "map": "KPA_102",
+        "id": 0
+      },
+      "to": {
+        "map": "KPA_33",
+        "id": 2
+      }
+    },
+    {
+      "from": {
+        "map": "KPA_112",
+        "id": 1
+      },
+      "to": {
+        "map": "KPA_61",
+        "id": 0
+      }
+    },
+    {
+      "from": {
+        "map": "KPA_130",
+        "id": 0
+      },
+      "to": {
+        "map": "KPA_51",
+        "id": 1
+      }
+    }
+  ],
+  "ShortenBowsersCastleRemove": [
+    {
+      "from": {
+        "map": "KPA_32",
+        "id": 0
+      },
+      "to": {
+        "map": "KPA_81",
+        "id": 2
+      }
+    },
+    {
+      "from": {
+        "map": "KPA_33",
+        "id": 2
+      },
+      "to": {
+        "map": "KPA_52",
+        "id": 0
+      }
+    },
+    {
+      "from": {
+        "map": "KPA_50",
+        "id": 1
+      },
+      "to": {
+        "map": "KPA_81",
+        "id": 0
+      }
+    },
+    {
+      "from": {
+        "map": "KPA_51",
+        "id": 1
+      },
+      "to": {
+        "map": "KPA_133",
+        "id": 0
+      }
+    },
+    {
+      "from": {
+        "map": "KPA_61",
+        "id": 0
+      },
+      "to": {
+        "map": "KPA_82",
+        "id": 1
+      }
+    },
+    {
+      "from": {
+        "map": "KPA_82",
+        "id": 0
+      },
+      "to": {
+        "map": "KPA_113",
+        "id": 1
+      }
+    },
+    {
+      "from": {
+        "map": "KPA_82",
+        "id": 1
+      },
+      "to": {
+        "map": "KPA_61",
+        "id": 0
+      }
+    },
+    {
+      "from": {
+        "map": "KPA_102",
+        "id": 0
+      },
+      "to": {
+        "map": "KPA_41",
+        "id": 2
+      }
+    },
+    {
+      "from": {
+        "map": "KPA_112",
+        "id": 1
+      },
+      "to": {
+        "map": "KPA_113",
+        "id": 0
+      }
+    },
+    {
+      "from": {
+        "map": "KPA_130",
+        "id": 0
+      },
+      "to": {
+        "map": "KPA_134",
+        "id": 1
+      }
+    }
+  ]
 }

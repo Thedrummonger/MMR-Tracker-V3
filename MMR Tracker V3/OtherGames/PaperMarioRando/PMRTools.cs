@@ -21,6 +21,9 @@ namespace MMR_Tracker_V3.OtherGames
             public Dictionary<string, Dictionary<string, string>> verbose_item_locations;
             public Dictionary<string, string> items;
             public Dictionary<string, string> verbose_item_names;
+            public List<PaperMarioLogicJSON> ShortenBowsersCastleAdd;
+            public List<PaperMarioLogicJSON> ShortenBowsersCastleRemove;
+
         }
 
         public class PaperMarioLogicJSON
@@ -66,6 +69,8 @@ namespace MMR_Tracker_V3.OtherGames
             Addoptions(PRMDict);
             AddHardCodedMacrios(LogicMapping);
             AddRootEntrances(PRMDict, LogicMapping);
+            AddShortenBowsersCastleLogic(RefFileObject, LogicMapping);
+
 
             MMRData.LogicFile PRMLogic = new MMRData.LogicFile
             {
@@ -83,6 +88,20 @@ namespace MMR_Tracker_V3.OtherGames
 
             return new LogicObjects.TrackerInstance { LogicDictionary = PRMDict, LogicFile = PRMLogic };
 
+        }
+
+        private static void AddShortenBowsersCastleLogic(PaperMarioMasterData refFileObject, Dictionary<string, string> logicMapping)
+        {
+            foreach(var i in refFileObject.ShortenBowsersCastleAdd)
+            {
+                string ID = $"{i.from.ConvertToAreaName(refFileObject)} X {i.to.ConvertToAreaName(refFileObject)}";
+                if (logicMapping.ContainsKey(ID)) { logicMapping[ID] += " & (ShortenBowsersCastle == true)"; }
+            }
+            foreach (var i in refFileObject.ShortenBowsersCastleRemove)
+            {
+                string ID = $"{i.from.ConvertToAreaName(refFileObject)} X {i.to.ConvertToAreaName(refFileObject)}";
+                if (logicMapping.ContainsKey(ID)) { logicMapping[ID] += " & (ShortenBowsersCastle == false)"; }
+            }
         }
 
         private static void CleanLogicReqs(PaperMarioMasterData refFileObject)
@@ -128,8 +147,18 @@ namespace MMR_Tracker_V3.OtherGames
             List<PaperMarioLogicJSON> Logic = refFileObject.Logic.SelectMany(x => x).ToList();
             foreach (var i in Logic)
             {
-                if (i.to.map == null) { continue; }
-                if (i.to.map == i.from.map && i.to.id.ToString() == i.from.id.ToString()) { continue; }
+                AddEntrance(i);
+            }
+            foreach (var i in refFileObject.ShortenBowsersCastleAdd)
+            {
+                AddEntrance(i);
+            }
+            pRMDict.EntranceList = EntranceList;
+
+            void AddEntrance(PaperMarioLogicJSON i)
+            {
+                if (i.to.map == null) { return; }
+                if (i.to.map == i.from.map && i.to.id.ToString() == i.from.id.ToString()) { return; }
                 string ID = $"{i.from.ConvertToAreaName(refFileObject)} X {i.to.ConvertToAreaName(refFileObject)}";
 
                 string CurrentLogic = $"True";
@@ -141,7 +170,7 @@ namespace MMR_Tracker_V3.OtherGames
                 {
                     Debug.WriteLine($"{ID} Already existed in Entrance pool");
                     logicMapping[ID] += $" | {CurrentLogic}";
-                    continue;
+                    return;
                 }
                 LogicDictionaryData.DictionaryEntranceEntries entranceEntry = new LogicDictionaryData.DictionaryEntranceEntries
                 {
@@ -156,7 +185,6 @@ namespace MMR_Tracker_V3.OtherGames
                 logicMapping.Add(ID, CurrentLogic);
                 EntranceList.Add(entranceEntry);
             }
-            pRMDict.EntranceList = EntranceList;
         }
 
         private static void CreateLocationList(LogicDictionaryData.LogicDictionary pRMDict, PaperMarioMasterData refFileObject, Dictionary<string, string> logicMapping)
@@ -301,6 +329,7 @@ namespace MMR_Tracker_V3.OtherGames
             AddToggleOption("FlowerGateOpen", "false", "Open Flower Gate", CreateLogicReplacement(new string[] { "RF_Ch6_FlowerGateOpen" }));
             AddToggleOption("WhaleOpen", "false", "Open Whale", CreateLogicReplacement(new string[] { "RF_CanRideWhale" }));
             AddToggleOption("ToyboxOpen", "false", "Open Toy Box");
+            AddToggleOption("ShortenBowsersCastle", "true", "Shorten Bowsers Castle", CreateLogicReplacement(new string[] { "BowserCastleKey, 1" }, Whitelist: new string[] { "Bowsers Castle - Front Door Exterior - 3 X Bowsers Castle - Front Door Exterior - 0" }));
 
             AddToggleOption("HiddenBlocksVisible", "true", "Hidden Blocks Always Visible");
 
@@ -336,9 +365,16 @@ namespace MMR_Tracker_V3.OtherGames
                 logicDictionary.Options.Add(option);
             }
 
-            OptionData.actions CreateLogicReplacement(string[] Replacements, string with = "true")
+            OptionData.actions CreateLogicReplacement(string[] Replacements, string with = "true", string[] Whitelist = null)
             {
-                return new OptionData.actions() { LogicReplacements = new OptionData.LogicReplacement[] { new OptionData.LogicReplacement { ReplacementList = Replacements.ToDictionary(x => x, x => "true") } } };
+                return new OptionData.actions() { 
+                    LogicReplacements = new OptionData.LogicReplacement[] { 
+                        new OptionData.LogicReplacement { 
+                            LocationWhitelist = Whitelist,
+                            ReplacementList = Replacements.ToDictionary(x => x, x => "true") 
+                        } 
+                    } 
+                };
             }
         }
 

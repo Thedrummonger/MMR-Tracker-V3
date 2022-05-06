@@ -43228,6 +43228,86 @@
       "DestinationHasSingleEntrance": false
     },
     {
+      "ID": "Bowsers Castle - Lower Grand Hall - 0 X Bowsers Castle - Guard Door 2 - 1",
+      "Area": "Bowsers Castle - Lower Grand Hall - 0",
+      "Exit": "Bowsers Castle - Guard Door 2 - 1",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "Bowsers Castle - Upper Grand Hall - 2 X Bowsers Castle - Blue Fire Bridge - 0",
+      "Area": "Bowsers Castle - Upper Grand Hall - 2",
+      "Exit": "Bowsers Castle - Blue Fire Bridge - 0",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "Bowsers Castle - Hall to Guard Door 1 - 1 X Bowsers Castle - Guard Door 2 - 0",
+      "Area": "Bowsers Castle - Hall to Guard Door 1 - 1",
+      "Exit": "Bowsers Castle - Guard Door 2 - 0",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "Bowsers Castle - Hall to Water Puzzle - 1 X Bowsers Castle - Bill Blaster Hall - 0",
+      "Area": "Bowsers Castle - Hall to Water Puzzle - 1",
+      "Exit": "Bowsers Castle - Bill Blaster Hall - 0",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "Bowsers Castle - Battlement - 0 X Bowsers Castle - Hidden Passage 1 - 1",
+      "Area": "Bowsers Castle - Battlement - 0",
+      "Exit": "Bowsers Castle - Hidden Passage 1 - 1",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "Bowsers Castle - Guard Door 2 - 0 X Bowsers Castle - Hall to Guard Door 1 - 1",
+      "Area": "Bowsers Castle - Guard Door 2 - 0",
+      "Exit": "Bowsers Castle - Hall to Guard Door 1 - 1",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "Bowsers Castle - Guard Door 2 - 1 X Bowsers Castle - Lower Grand Hall - 0",
+      "Area": "Bowsers Castle - Guard Door 2 - 1",
+      "Exit": "Bowsers Castle - Lower Grand Hall - 0",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "Bowsers Castle - Blue Fire Bridge - 0 X Bowsers Castle - Upper Grand Hall - 2",
+      "Area": "Bowsers Castle - Blue Fire Bridge - 0",
+      "Exit": "Bowsers Castle - Upper Grand Hall - 2",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "Bowsers Castle - Hidden Passage 1 - 1 X Bowsers Castle - Battlement - 0",
+      "Area": "Bowsers Castle - Hidden Passage 1 - 1",
+      "Exit": "Bowsers Castle - Battlement - 0",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "Bowsers Castle - Bill Blaster Hall - 0 X Bowsers Castle - Hall to Water Puzzle - 1",
+      "Area": "Bowsers Castle - Bill Blaster Hall - 0",
+      "Exit": "Bowsers Castle - Hall to Water Puzzle - 1",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
       "ID": "Root X Toad Town - Gate District - 4",
       "Area": "Root",
       "Exit": "Toad Town - Gate District - 4",
@@ -45643,7 +45723,6 @@
         "true": {
           "LogicReplacements": [
             {
-              "LocationWhitelist": [],
               "LocationBlacklist": [],
               "ReplacementList": {
                 "GF_MAC02_UnlockedHouse": "true"
@@ -45668,7 +45747,6 @@
         "true": {
           "LogicReplacements": [
             {
-              "LocationWhitelist": [],
               "LocationBlacklist": [],
               "ReplacementList": {
                 "RF_Ch6_FlowerGateOpen": "true"
@@ -45693,7 +45771,6 @@
         "true": {
           "LogicReplacements": [
             {
-              "LocationWhitelist": [],
               "LocationBlacklist": [],
               "ReplacementList": {
                 "RF_CanRideWhale": "true"
@@ -45717,6 +45794,33 @@
       "Values": {
         "true": {
           "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {}
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {}
+        }
+      }
+    },
+    {
+      "ID": "ShortenBowsersCastle",
+      "DisplayName": "Shorten Bowsers Castle",
+      "CurrentValue": "true",
+      "Values": {
+        "true": {
+          "LogicReplacements": [
+            {
+              "LocationWhitelist": [
+                "Bowsers Castle - Front Door Exterior - 3 X Bowsers Castle - Front Door Exterior - 0"
+              ],
+              "LocationBlacklist": [],
+              "ReplacementList": {
+                "BowserCastleKey, 1": "true"
+              }
+            }
+          ],
           "AdditionalLogic": [],
           "ItemNameOverride": {}
         },
@@ -45752,7 +45856,6 @@
         "true": {
           "LogicReplacements": [
             {
-              "LocationWhitelist": [],
               "LocationBlacklist": [],
               "ReplacementList": {
                 "Goombario": "true",
