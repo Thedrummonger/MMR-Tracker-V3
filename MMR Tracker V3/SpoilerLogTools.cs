@@ -16,6 +16,8 @@ namespace MMR_Tracker_V3
             {
                 case "OOTR":
                     return "OOTR Spoiler Log (*.json)|*.json";
+                case "PMR":
+                    return "PMR Text Spoiler Log|*.txt";
                 default:
                     return "MMR Text Spoiler Log|*.txt";
             }
@@ -26,14 +28,16 @@ namespace MMR_Tracker_V3
             switch (Instance.LogicFile.GameCode)
             {
                 case "OOTR":
+                    Instance.SpoilerLog = new MMRData.SpoilerLogData();
                     OtherGames.OOTRTools.HandleOOTRSpoilerLog(string.Join("", spoilerLog), Instance);
                     return true;
                 case "MMR":
-                    Instance.SpoilerLog = SpoilerLogTools.ReadSpoilerLog(spoilerLog);
-                    SpoilerLogTools.ApplyMMRandoSettings(Instance, Instance.SpoilerLog);
-                    SpoilerLogTools.ApplyMMRandoSpoilerLog(Instance, Instance.SpoilerLog);
+                    Instance.SpoilerLog = ReadSpoilerLog(spoilerLog);
+                    ApplyMMRandoSettings(Instance, Instance.SpoilerLog);
+                    ApplyMMRandoSpoilerLog(Instance, Instance.SpoilerLog);
                     return true;
                 case "PMR":
+                    Instance.SpoilerLog = new MMRData.SpoilerLogData();
                     OtherGames.PMRToolsV2.ReadSpoilerLog(spoilerLog, OriginalFile, Instance);
                     return true;
                 default:

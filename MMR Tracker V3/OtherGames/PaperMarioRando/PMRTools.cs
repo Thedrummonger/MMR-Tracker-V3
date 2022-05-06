@@ -466,16 +466,16 @@ namespace MMR_Tracker_V3.OtherGames
         private static void AddRealMerlowShopPriceOption(LogicDictionaryData.LogicDictionary logicDictionary)
         {
             string LocationPrefix = "Shooting Star Summit - Merluvlees House - 0 X Shooting Star Summit - Merluvlees House - ShopBadge";
-            string[] LocationSuffix = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O" };
-            string[] ActualPrice = { "1", "1", "3", "5", "5", "8", "8", "10", "10", "12", "12", "15", "20", "25", "25" };
+            string[][] LocationSuffix = { new string[]{ "A", "B", "C" }, new string[] { "D", "E", "F" }, new string[] { "G", "H", "I" }, new string[] { "J", "K", "L" }, new string[] { "M", "N", "O" } };
+            string[] ActualPrice = { "2", "3", "4", "5", "6" };
             
             List<OptionData.LogicReplacement> replacementData = new List<OptionData.LogicReplacement>();
-            for(var i =0; i < LocationSuffix.Count(); i++)
+            foreach (var nw in LocationSuffix.Zip(ActualPrice, Tuple.Create))
             {
                 var ReplacementData = new OptionData.LogicReplacement
                 {
-                    LocationWhitelist = new string[] { $"{LocationPrefix}{LocationSuffix[i]}" },
-                    ReplacementList = new Dictionary<string, string> { { "starpieces, 60", $"starpieces, {ActualPrice[i]}" } }
+                    LocationWhitelist = nw.Item1.Select(x => $"{LocationPrefix}{x}").ToArray(),
+                    ReplacementList = new Dictionary<string, string> { { "starpieces, 60", $"starpieces, {nw.Item2}" } }
                 };
                 replacementData.Add(ReplacementData);
             }
@@ -488,7 +488,7 @@ namespace MMR_Tracker_V3.OtherGames
                 Values = new Dictionary<string, OptionData.actions>()
                     {
                         { "true", new OptionData.actions() { LogicReplacements = replacementData.ToArray() } },
-                        { "false", new TrackerObjects.OptionData.actions()}
+                        { "false", new OptionData.actions()}
                     }
             };
 
@@ -501,9 +501,16 @@ namespace MMR_Tracker_V3.OtherGames
             string seed = Path.GetFileNameWithoutExtension(SpoilerLogPath).Replace("_spoiler", "");
             string URL = $"https://paper-mario-randomizer-server.ue.r.appspot.com/randomizer_settings/{seed}";
             System.Net.WebClient wc = new System.Net.WebClient();
-            string SettingData = wc.DownloadString(URL);
-            Dictionary<string, dynamic> Settings = JsonConvert.DeserializeObject<Dictionary<string, dynamic>>(SettingData);
-            return Settings;
+            try
+            {
+                string SettingData = wc.DownloadString(URL);
+                Dictionary<string, dynamic> Settings = JsonConvert.DeserializeObject<Dictionary<string, dynamic>>(SettingData);
+                return Settings;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
 
         public static void ReadSpoilerLog(string[] spoilerLog, string OriginalFile, LogicObjects.TrackerInstance Instance)
@@ -539,13 +546,16 @@ namespace MMR_Tracker_V3.OtherGames
                 AppliedLocations.Add(Location.ID);
             }
 
+            bool IncludeDojo = SettingData is null || !SettingData.ContainsKey("IncludeDojo") ? true : SettingData["IncludeDojo"];
+            bool IncludePanels = SettingData is null || !SettingData.ContainsKey("IncludePanels") ? true : SettingData["IncludePanels"];
+
             foreach (var i in Instance.LocationPool)
             {
-                if (i.Key.EndsWith("HiddenPanel") && !SettingData["IncludePanels"])
+                if (i.Key.EndsWith("HiddenPanel") && !IncludePanels)
                 {
                     i.Value.SetRandomizedState(MiscData.RandomizedState.ForcedJunk, Instance);
                 }
-                else if ((i.Key.Contains("DojoChan") || i.Key.Contains("DojoLee") || i.Key.Contains("DojoMaster")) && !SettingData["IncludeDojo"])
+                else if ((i.Key.Contains("DojoChan") || i.Key.Contains("DojoLee") || i.Key.Contains("DojoMaster")) && !IncludeDojo)
                 {
                     i.Value.SetRandomizedState(MiscData.RandomizedState.ForcedJunk, Instance);
                 }
@@ -563,21 +573,26 @@ namespace MMR_Tracker_V3.OtherGames
                 }
             }
 
-            Instance.UserOptions["BlueHouseOpen"].CurrentValue = SettingData["BlueHouseOpen"].ToString().ToLower();
-            Instance.UserOptions["FlowerGateOpen"].CurrentValue = SettingData["FlowerGateOpen"].ToString().ToLower();
-            Instance.UserOptions["WhaleOpen"].CurrentValue = SettingData["WhaleOpen"].ToString().ToLower();
-            Instance.UserOptions["ToyboxOpen"].CurrentValue = SettingData["ToyboxOpen"].ToString().ToLower();
-            Instance.UserOptions["partners_always_usable"].CurrentValue = SettingData["PartnersAlwaysUsable"].ToString().ToLower();
+            if (SettingData is null) { return; }
+            try
+            {
+                Instance.UserOptions["BlueHouseOpen"].CurrentValue = SettingData["BlueHouseOpen"].ToString().ToLower();
+                Instance.UserOptions["FlowerGateOpen"].CurrentValue = SettingData["FlowerGateOpen"].ToString().ToLower();
+                Instance.UserOptions["WhaleOpen"].CurrentValue = SettingData["WhaleOpen"].ToString().ToLower();
+                Instance.UserOptions["ToyboxOpen"].CurrentValue = SettingData["ToyboxOpen"].ToString().ToLower();
+                Instance.UserOptions["partners_always_usable"].CurrentValue = SettingData["PartnersAlwaysUsable"].ToString().ToLower();
 
-            Instance.UserOptions["HiddenBlocksVisible"].CurrentValue = ((int)SettingData["HiddenBlockMode"] == 3).ToString().ToLower();
+                Instance.UserOptions["HiddenBlocksVisible"].CurrentValue = ((int)SettingData["HiddenBlockMode"] == 3).ToString().ToLower();
 
-            Dictionary<int, string> StartingAreas = new Dictionary<int, string>() { { 257, "Goomba Village" }, { 65796, "Toad Town" }, { 590080, "Dry Dry Outpost" }, { 1114882, "Yoshi Village" } };
+                Dictionary<int, string> StartingAreas = new Dictionary<int, string>() { { 257, "Goomba Village" }, { 65796, "Toad Town" }, { 590080, "Dry Dry Outpost" }, { 1114882, "Yoshi Village" } };
 
-            var StartingAreaOption = Instance.UserOptions["starting_area"];
-            int SettingStartingMap = (int)SettingData["StartingMap"];
-            string MappedTrackerArea = StartingAreas[SettingStartingMap];
+                var StartingAreaOption = Instance.UserOptions["starting_area"];
+                int SettingStartingMap = (int)SettingData["StartingMap"];
+                string MappedTrackerArea = StartingAreas[SettingStartingMap];
 
-            StartingAreaOption.CurrentValue = MappedTrackerArea;
+                StartingAreaOption.CurrentValue = MappedTrackerArea;
+            }
+            catch (Exception ex) { }
 
         }
     }
