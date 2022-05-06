@@ -58,6 +58,10 @@ namespace MMR_Tracker_V3.TrackerObjects
             public bool? IgnoreForSettingString { get; set; } = null;
             public SpoilerlogReference SpoilerData { get; set; } = new SpoilerlogReference();
             public List<DictLocationProxy> LocationProxys { get; set; } = new List<DictLocationProxy>();
+            public string GetName(LogicObjects.TrackerInstance instance)
+            {
+                return Name ?? ID;
+            }
         }
 
         public class DictLocationProxy
@@ -91,7 +95,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string[] ItemTypes { get; set; } = Array.Empty<string>();
             public SpoilerlogReference SpoilerData { get; set; } = new SpoilerlogReference();
 
-            public string GetItemName(LogicObjects.TrackerInstance instance)
+            public string GetName(LogicObjects.TrackerInstance instance)
             {
                 var NameReplaceOption = instance.UserOptions.Values.FirstOrDefault(x => x.GetActions().ItemNameOverride.ContainsKey(ID));
                 if (NameReplaceOption != null) { return NameReplaceOption.GetActions().ItemNameOverride[ID]; }

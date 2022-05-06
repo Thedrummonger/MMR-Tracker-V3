@@ -136,7 +136,7 @@ namespace ConsoleDebugger
                 bool er = newTrackerInstance.EntrancePool.IsEntranceRando;
                 Console.Title = newTrackerInstance.LogicFile.GameCode + " Tracker" + (UnsavedChanges ? "*" : "");
                 Console.Clear();
-                LogicCalculation.CalculateLogic(newTrackerInstance);
+                LogicCalculation.CalculateLogic(newTrackerInstance, new Dictionary<string, List<string>>());
                 List<object> Entries = null;
                 int x = 0;
                 int y = 0;
@@ -305,8 +305,8 @@ namespace ConsoleDebugger
                 var EnteredItems = new Dictionary<int, ItemData.ItemObject>();
                 foreach (var i in newTrackerInstance.ItemPool.Values)
                 {
-                    if (string.IsNullOrWhiteSpace(i.GetDictEntry(newTrackerInstance).GetItemName(newTrackerInstance))) { continue; }
-                    i.DisplayName = i.GetDictEntry(newTrackerInstance).GetItemName(newTrackerInstance);
+                    if (string.IsNullOrWhiteSpace(i.GetDictEntry(newTrackerInstance).GetName(newTrackerInstance))) { continue; }
+                    i.DisplayName = i.GetDictEntry(newTrackerInstance).GetName(newTrackerInstance);
                     if (!SearchStringParser.FilterSearch(newTrackerInstance, i, Fiter, i.DisplayName)) { continue; }
                     if (i.CanBePlaced(newTrackerInstance) && i.GetDictEntry(newTrackerInstance).ItemTypes.Intersect(Location.GetDictEntry(newTrackerInstance).ValidItemTypes).Any() && !EnteredItems.Values.Contains(i) && !Names.Contains(i.ToString()))
                     {
@@ -317,7 +317,7 @@ namespace ConsoleDebugger
                     }
                 }
                 Console.WriteLine(CreateDivider(Console.WindowWidth));
-                Console.WriteLine("Select Item at " + Location.GetDictEntry(newTrackerInstance).Name ?? Location.ID);
+                Console.WriteLine("Select Item at " + Location.GetDictEntry(newTrackerInstance).GetName(Instance));
                 var input = Console.ReadLine();
                 if (int.TryParse(input, out int index) && EnteredItems.ContainsKey(index))
                 {

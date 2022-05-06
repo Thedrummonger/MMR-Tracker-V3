@@ -87,7 +87,7 @@ namespace Windows_Form_Frontend
                 if (i.Value.IsUnrandomized(1) && !chkShowUnrand.Checked) { continue; }
                 if (i.Value.IsUnrandomized(2) && !chkShowManual.Checked) { continue; }
                 if (i.Value.IsJunk() && !chkShowJunk.Checked) { continue; }
-                i.Value.DisplayName = i.Value.GetDictEntry(_Instance).Name ?? i.Key;
+                i.Value.DisplayName = i.Value.GetDictEntry(_Instance).GetName(_Instance);
                 if (!SearchStringParser.FilterSearch(_Instance, i.Value, TxtLocationSearch.Text, i.Value.DisplayName)) { continue; }
                 string VanillaItemText = "";
                 if (i.Value.GetDictEntry(_Instance).OriginalItem != null)
@@ -96,7 +96,7 @@ namespace Windows_Form_Frontend
                     if (_Instance.GetItemByID(VanillaItem) != null)
                     {
                         var VanillaItemObject = _Instance.GetItemByID(VanillaItem).GetDictEntry(_Instance);
-                        VanillaItemText  = $"{VanillaItemObject.GetItemName(_Instance)} [{VanillaItem}])";
+                        VanillaItemText  = $"{VanillaItemObject.GetName(_Instance)} [{VanillaItem}])";
                     }
                     else
                     {
@@ -149,13 +149,13 @@ namespace Windows_Form_Frontend
 
             foreach(var i in _DataSets.AvailableStartingItems.Where(x => x.CanBePlaced(_Instance)))
             {
-                i.DisplayName = i.GetDictEntry(_Instance).GetItemName(_Instance) ?? i.Id;
+                i.DisplayName = i.GetDictEntry(_Instance).GetName(_Instance) ?? i.Id;
                 if (!SearchStringParser.FilterSearch(_Instance, i, txtSearchAvailableStarting.Text, i.DisplayName)) { continue; }
                 lbAvailableStarting.Items.Add(i);
             }
             foreach (var i in _DataSets.CurrentStartingItems)
             {
-                i.DisplayName = (i.GetDictEntry(_Instance).GetItemName(_Instance) ?? i.Id) + $": X{i.AmountInStartingpool}";
+                i.DisplayName = (i.GetDictEntry(_Instance).GetName(_Instance) ?? i.Id) + $": X{i.AmountInStartingpool}";
                 if (!SearchStringParser.FilterSearch(_Instance, i, txtSearchCurrentStarting.Text, i.DisplayName)) { continue; }
                 lbCurrentStarting.Items.Add(i);
             }

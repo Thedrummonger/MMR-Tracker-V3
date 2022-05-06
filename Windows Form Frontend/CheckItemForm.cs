@@ -117,13 +117,13 @@ namespace Windows_Form_Frontend
         private void writeItemObjectsAtLocation(LocationData.LocationObject Location)
         {
             FormatUIItems(false, true, "Set Junk");
-            this.Text = "Select Item at " + Location.GetDictEntry(_Instance).Name ?? Location.ID;
+            this.Text = "Select Item at " + Location.GetDictEntry(_Instance).GetName(_Instance);
             var Names = new List<string>();
             var EnteredItems = new List<ItemData.ItemObject>();
             foreach (var i in _Instance.ItemPool.Values)
             {
-                if (string.IsNullOrWhiteSpace(i.GetDictEntry(_Instance).GetItemName(_Instance))) { continue; }
-                i.DisplayName = i.GetDictEntry(_Instance).GetItemName(_Instance);
+                if (string.IsNullOrWhiteSpace(i.GetDictEntry(_Instance).GetName(_Instance))) { continue; }
+                i.DisplayName = i.GetDictEntry(_Instance).GetName(_Instance);
                 if (!SearchStringParser.FilterSearch(_Instance, i, textBox1.Text, i.DisplayName)) { continue; }
                 if (i.CanBePlaced(_Instance) && i.GetDictEntry(_Instance).ItemTypes.Intersect(Location.GetDictEntry(_Instance).ValidItemTypes).Any() && !EnteredItems.Contains(i) && !Names.Contains(i.ToString()))
                 {
@@ -131,7 +131,7 @@ namespace Windows_Form_Frontend
                     EnteredItems.Add(i);
                 }
             }
-            listBox1.DataSource = EnteredItems.OrderBy(x => x.GetDictEntry(_Instance).GetItemName(_Instance)).ToList();
+            listBox1.DataSource = EnteredItems.OrderBy(x => x.GetDictEntry(_Instance).GetName(_Instance)).ToList();
         }
 
         private void ApplySelection(bool ButtonClick = false)

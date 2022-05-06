@@ -132,7 +132,8 @@ namespace MMR_Tracker_V3.OtherGames
                 if (i.to.map == i.from.map && i.to.id.ToString() == i.from.id.ToString()) { continue; }
                 string ID = $"{i.from.ConvertToAreaName(refFileObject)} X {i.to.ConvertToAreaName(refFileObject)}";
 
-                string CurrentLogic = $"({i.from.ConvertToAreaName(refFileObject)})";
+                string CurrentLogic = $"True";
+                //string CurrentLogic = $"({i.from.ConvertToAreaName(refFileObject)})";
                 if (i.reqs is not null && i.reqs.Any()) { CurrentLogic += $" & ({string.Join(" & ", i.reqs.Select(x => string.Join(" | ", x))) })"; }
                 CurrentLogic = $"({CurrentLogic})";
 

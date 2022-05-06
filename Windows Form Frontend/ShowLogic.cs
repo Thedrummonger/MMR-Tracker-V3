@@ -1,4 +1,5 @@
 ﻿using MMR_Tracker_V3;
+using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -181,12 +182,17 @@ namespace Windows_Form_Frontend
             lbCond.Items.Clear();
             var Logic = instance.GetLogic(CurrentID, !chkShowUnaltered.Checked);
             bool Literal = CurrentID.IsLiteralID(out string LogicItem);
-            var type = instance.GetLocationEntryType(LogicItem, Literal, out _);
+            var type = instance.GetLocationEntryType(LogicItem, Literal, out object LocationObject);
             UpdateTimeCheckboxes(Logic);
 
             foreach (var i in Logic.RequiredItems)
             {
                 StandardListBoxItem boxItem = new StandardListBoxItem() { Display = GetDisplayName(i), tag = i };
+                LBReq.Items.Add(boxItem);
+            }
+            if (LocationObject is EntranceData.EntranceRandoExit EO && !Logic.RequiredItems.Contains(EO.ParentAreaID))
+            {
+                StandardListBoxItem boxItem = new StandardListBoxItem() { Display = GetDisplayName(EO.ParentAreaID), tag = EO.ParentAreaID };
                 LBReq.Items.Add(boxItem);
             }
             foreach (var cond in Logic.ConditionalItems)
@@ -279,7 +285,7 @@ namespace Windows_Form_Frontend
                             break;
                         case LogicEntryType.item:
                             LitEntry.tag = c;
-                            LitEntry.Display = $"{instance.GetItemByID(CleanedID)?.GetDictEntry(instance)?.GetItemName(instance)??CleanedID}: {c}";
+                            LitEntry.Display = $"{instance.GetItemByID(CleanedID)?.GetDictEntry(instance)?.GetName(instance)??CleanedID}: {c}";
                             break;
                         case LogicEntryType.macro:
                         default:

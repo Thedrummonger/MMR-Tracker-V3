@@ -95,8 +95,8 @@ namespace Windows_Form_Frontend
         private void PopulateWinConCMB()
         {
             cmbWinCon.Items.Clear();
-            var Items = _instance.ItemPool.Values.Where(x => SearchStringParser.FilterSearch(_instance, x, txtWinConFilter.Text, x.GetDictEntry(_instance).GetItemName(_instance))).OrderBy(x => x.GetDictEntry(_instance).GetItemName(_instance));
-            var Locations = _instance.LocationPool.Values.Where(x => SearchStringParser.FilterSearch(_instance, x, txtWinConFilter.Text, x.GetDictEntry(_instance).Name??x.ID)).OrderBy(x => x.GetDictEntry(_instance).Name??x.ID);
+            var Items = _instance.ItemPool.Values.Where(x => SearchStringParser.FilterSearch(_instance, x, txtWinConFilter.Text, x.GetDictEntry(_instance).GetName(_instance))).OrderBy(x => x.GetDictEntry(_instance).GetName(_instance));
+            var Locations = _instance.LocationPool.Values.Where(x => SearchStringParser.FilterSearch(_instance, x, txtWinConFilter.Text, x.GetDictEntry(_instance).GetName(_instance))).OrderBy(x => x.GetDictEntry(_instance).GetName(_instance));
             var Macros = _instance.MacroPool.Values.Where(x => SearchStringParser.FilterSearch(_instance, x, txtWinConFilter.Text, x.GetDictEntry(_instance).Name??x.ID)).OrderBy(x => x.GetDictEntry(_instance).Name??x.ID);
             var Areas = _instance.EntrancePool.AreaList.Values.Where(x => SearchStringParser.FilterSearch(_instance, x, txtWinConFilter.Text, x.ID)).OrderBy(x => x.ID);
 
@@ -109,13 +109,13 @@ namespace Windows_Form_Frontend
                 Dictionary<string, int> DisplayCounts = new Dictionary<string, int>();  
                 foreach (var i in Items)
                 {
-                    string Dis = i.GetDictEntry(_instance).GetItemName(_instance);
+                    string Dis = i.GetDictEntry(_instance).GetName(_instance);
                     if (!DisplayCounts.ContainsKey(Dis)) { DisplayCounts[Dis] = 0; }
                     DisplayCounts[Dis]++;
                 }
                 foreach (var i in Items)
                 {
-                    string Dis = i.GetDictEntry(_instance).GetItemName(_instance);
+                    string Dis = i.GetDictEntry(_instance).GetName(_instance);
                     if (DisplayCounts.ContainsKey(Dis) && DisplayCounts[Dis] > 1) { Dis = $"{Dis} [{i.Id}]"; }
                     cmbWinCon.Items.Add(new MiscData.StandardListBoxItem { Display = Dis, tag = i });
                     if (Graphic.MeasureString(Dis, cmbWinCon.Font).Width > CMBWidth) { CMBWidth = (int)Graphic.MeasureString(Dis, cmbWinCon.Font).Width; }
@@ -127,7 +127,7 @@ namespace Windows_Form_Frontend
                 cmbWinCon.Items.Add(WinFormUtils.CreateDivider(cmbWinCon, "Locations"));
                 foreach (var i in Locations)
                 {
-                    string Dis = i.GetDictEntry(_instance).Name??i.ID;
+                    string Dis = i.GetDictEntry(_instance).GetName(_instance);
                     cmbWinCon.Items.Add(new MiscData.StandardListBoxItem { Display = Dis, tag = i });
                     if (Graphic.MeasureString(Dis, cmbWinCon.Font).Width > CMBWidth) { CMBWidth = (int)Graphic.MeasureString(Dis, cmbWinCon.Font).Width; }
                 }
@@ -204,7 +204,7 @@ namespace Windows_Form_Frontend
                 }
                 else
                 {
-                    LBI.Display = Item.GetDictEntry(_instance).GetItemName(_instance);
+                    LBI.Display = Item.GetDictEntry(_instance).GetName(_instance);
                 }
                 if (SearchStringParser.FilterSearch(_instance, Item, textBox2.Text, LBI.Display)) { SpoilerList.Add(LBI); }
                 
@@ -318,17 +318,17 @@ namespace Windows_Form_Frontend
             {
                 if (SLI.tag is LocationData.LocationObject LO)
                 {
-                    MessageBox.Show($"{SLI.Display} Can be found at\n\n-{LO.GetDictEntry(_instance).Name??LO.ID}");
+                    MessageBox.Show($"{SLI.Display} Can be found at\n\n-{LO.GetDictEntry(_instance).GetName(_instance)}");
                 }
                 else if (SLI.tag is List<LocationData.LocationObject> LLO)
                 {
                     if (LLO.Count == 1)
                     {
-                        MessageBox.Show($"{SLI.Display} Can be found at\n\n-{LLO.First().GetDictEntry(_instance).Name??LLO.First().ID}");
+                        MessageBox.Show($"{SLI.Display} Can be found at\n\n-{LLO.First().GetDictEntry(_instance).GetName(_instance)}");
                     }
                     else
                     {
-                        MessageBox.Show($"{SLI.Display} Can be found at these locations:\n\n-{string.Join("\n-", LLO.Select(x => x.GetDictEntry(_instance).Name??x.ID).Distinct().OrderBy(x => x))}");
+                        MessageBox.Show($"{SLI.Display} Can be found at these locations:\n\n-{string.Join("\n-", LLO.Select(x => x.GetDictEntry(_instance).GetName(_instance)).Distinct().OrderBy(x => x))}");
                     }
                 }
             }
@@ -370,9 +370,9 @@ namespace Windows_Form_Frontend
                 LabelSeedCheckItemsNeeded.Text = "Items Needed";
                 LabelSeedCheckChecksIgnored.Text = "Adding Needed Items";
                 WinFormUtils.PrintMessageToListBox(LBIgnoredItems, "Select Items Needed for seed Completion \n ----->");
-                foreach(var i in _instance.ItemPool.Values.OrderBy(x => x.GetDictEntry(_instance).GetItemName(_instance)))
+                foreach(var i in _instance.ItemPool.Values.OrderBy(x => x.GetDictEntry(_instance).GetName(_instance)))
                 {
-                    string displayName = i.GetDictEntry(_instance).GetItemName(_instance);
+                    string displayName = i.GetDictEntry(_instance).GetName(_instance);
                     if(SearchStringParser.FilterSearch(_instance, i, txtSeedCheckFilter.Text, displayName))
                         lbObtainable.Items.Add(new MiscData.StandardListBoxItem { Display = displayName, tag = i.Id });
                 }
@@ -388,9 +388,9 @@ namespace Windows_Form_Frontend
                 LabelSeedCheckItemsNeeded.Text = "Adding Ignored checks";
                 LabelSeedCheckChecksIgnored.Text = "Ignored checks";
                 WinFormUtils.PrintMessageToListBox(lbRequiredItems, "Select checks that should be ignored when checking seed \n ----->");
-                foreach (var i in _instance.LocationPool.Values.OrderBy(x => x.GetDictEntry(_instance).Name??x.ID))
+                foreach (var i in _instance.LocationPool.Values.OrderBy(x => x.GetDictEntry(_instance).GetName(_instance)))
                 {
-                    string displayName = i.GetDictEntry(_instance).Name??i.ID;
+                    string displayName = i.GetDictEntry(_instance).GetName(_instance);
                     if (SearchStringParser.FilterSearch(_instance, i, txtSeedCheckFilter.Text, displayName))
                         lbObtainable.Items.Add(new MiscData.StandardListBoxItem { Display = displayName, tag = i.ID });
                 }
@@ -486,7 +486,7 @@ namespace Windows_Form_Frontend
             foreach(var i in requiredItems)
             {
                 var item = _instance.GetItemByID(i);
-                string Dis = item?.GetDictEntry(_instance)?.GetItemName(_instance)??i;
+                string Dis = item?.GetDictEntry(_instance)?.GetName(_instance)??i;
                 bool ItemObtainable = SeedCheckPlaytrhough.FirstObtainedDict.ContainsKey(i) || (item?.AmountInStartingpool??0) > 0;
 
                 SeedCheckResults.Add(new MiscData.StandardListBoxItem { Display = Dis, tag = ItemObtainable });

@@ -88,20 +88,20 @@ namespace MMR_Tracker_V3
             {
                 Location = lo;
                 PriceData = lo;
-                LocationDisplay = Location.GetDictEntry(instance)?.Name ?? Location.ID;
+                LocationDisplay = Location.GetDictEntry(instance)?.GetName(instance);
                 StarredDisplay = lo.Starred ? "*" : "";
             }
             else if (obj is LocationData.LocationProxy po)
             {
                 Location = po.GetReferenceLocation(instance);
                 PriceData = po.GetLogicInheritance(instance);
-                LocationDisplay = po.Name ?? Location.GetDictEntry(instance)?.Name ?? Location.ID;
+                LocationDisplay = po.Name ?? Location.GetDictEntry(instance)?.GetName(instance);
                 StarredDisplay = po.Starred ? "*" : "";
             }
             else { return obj.ToString(); }
 
             PriceDisplay = PriceData.Price < 0 ? "" : $" [${PriceData.Price}]";
-            RandomizedItemDisplay = instance.GetItemByID(Location.Randomizeditem.Item)?.GetDictEntry(instance)?.GetItemName(instance) ?? Location.Randomizeditem.Item;
+            RandomizedItemDisplay = instance.GetItemByID(Location.Randomizeditem.Item)?.GetDictEntry(instance)?.GetName(instance) ?? Location.Randomizeditem.Item;
 
             return Location.CheckState switch
             {
@@ -377,7 +377,7 @@ namespace MMR_Tracker_V3
                 var DictData = locationObject.GetDictEntry(instance);
                 OutObject.ID = locationObject.ID;
                 OutObject.Area = DictData.Area;
-                OutObject.Name = DictData.Name;
+                OutObject.Name = DictData.GetName(instance);
                 OutObject.OriginalItem = DictData.OriginalItem;
                 OutObject.Randomizeditem = locationObject.Randomizeditem.Item;
                 OutObject.Starred = locationObject.Starred;
@@ -403,9 +403,9 @@ namespace MMR_Tracker_V3
                 if (ItemObject.AmountInStartingpool > 0) { OutObject.Area += "starting "; }
                 if (ItemObject.AmountAquiredOnline.Any(x => x.Value > 0)) { OutObject.Area += "online "; }
                 OutObject.Area += "item";
-                OutObject.Name = DictData.Name;
-                OutObject.OriginalItem = DictData.Name;
-                OutObject.Randomizeditem = DictData.Name;
+                OutObject.Name = DictData.GetName(instance);
+                OutObject.OriginalItem = DictData.GetName(instance);
+                OutObject.Randomizeditem = DictData.GetName(instance);
                 OutObject.Starred = false;
                 OutObject.ValidItemTypes = DictData.ItemTypes;
             }

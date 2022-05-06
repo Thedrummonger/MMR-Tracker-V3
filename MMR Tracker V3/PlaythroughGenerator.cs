@@ -280,14 +280,14 @@ namespace MMR_Tracker_V3
                     sphere = p.Value.sphere;
                 }
                 string AreaName = (_Instance.GetLocationByID(p.Key)?.GetDictEntry(_Instance)?.Area);
-                string LocationName = _Instance.GetLocationByID(p.Key)?.GetDictEntry(_Instance)?.Name??p.Key;
+                string LocationName = _Instance.GetLocationByID(p.Key)?.GetDictEntry(_Instance)?.GetName(_Instance);
                 string LocationDisplay = AreaName is null ? LocationName : $"{AreaName} - {LocationName}";
-                string ItemName = _Instance.GetItemByID(p.Value.ItemObtained)?.GetDictEntry(_Instance)?.GetItemName(_Instance)??p.Value.ItemObtained;
+                string ItemName = _Instance.GetItemByID(p.Value.ItemObtained)?.GetDictEntry(_Instance)?.GetName(_Instance)??p.Value.ItemObtained;
                 List<string> RealItems = new List<string>();
 
                 foreach(var i in p.Value.advancedUnlockData.RealItemsUsed)
                 {
-                    string display = _Instance.GetItemByID(i.Key)?.GetDictEntry(_Instance)?.GetItemName(_Instance)??i.Key;
+                    string display = _Instance.GetItemByID(i.Key)?.GetDictEntry(_Instance)?.GetName(_Instance)??i.Key;
                     if (i.Value > 1) { display += $" X{i.Value}"; }
                     RealItems.Add(display);
                 }

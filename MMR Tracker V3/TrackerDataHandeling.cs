@@ -332,7 +332,7 @@ namespace MMR_Tracker_V3
                     bool DividerCreated = false;
                     foreach (var i in DataSets.CurrentStartingItems)
                     {
-                        string Display = $"{i.GetDictEntry(Instance).GetItemName(Instance)} X{i.AmountInStartingpool}";
+                        string Display = $"{i.GetDictEntry(Instance).GetName(Instance)} X{i.AmountInStartingpool}";
                         ItemsInListBox++;
                         if (!SearchStringParser.FilterSearch(Instance, i, Filter, Display)) { continue; }
                         if (!DividerCreated)
@@ -353,7 +353,7 @@ namespace MMR_Tracker_V3
                     {
                         foreach (var j in i.AmountAquiredOnline)
                         {
-                            string Display = $"{i.GetDictEntry(Instance).GetItemName(Instance)} X{j.Value}: Player {j.Key}";
+                            string Display = $"{i.GetDictEntry(Instance).GetName(Instance)} X{j.Value}: Player {j.Key}";
                             ItemsInListBox++;
                             if (!SearchStringParser.FilterSearch(Instance, i, Filter, Display)) { continue; }
                             if (!DividerCreated)
@@ -543,7 +543,7 @@ namespace MMR_Tracker_V3
 
         private static bool LocationAppearsinListbox(LocationData.LocationObject Location, LogicObjects.TrackerInstance Instance)
         {
-            return !Location.IsJunk() && !Location.IsUnrandomized(1) && !string.IsNullOrWhiteSpace(Location.GetDictEntry(Instance).Name);
+            return !Location.IsJunk() && !Location.IsUnrandomized(1) && !string.IsNullOrWhiteSpace(Location.GetDictEntry(Instance).GetName(Instance));
         }
         private static bool EntranceAppearsinListbox(EntranceData.EntranceRandoExit Location, LogicObjects.TrackerInstance Instance)
         {

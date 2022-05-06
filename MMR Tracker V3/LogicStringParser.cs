@@ -220,7 +220,7 @@ namespace MMR_Tracker_V3
             bool changesMade = ConsistantConditionals.Any();
 
             var NewRequirements = (entry.RequiredItems ?? new List<string>()).ToList();
-            NewRequirements.AddRange(ConsistantConditionals);
+            NewRequirements.AddRange(ConsistantConditionals.Where(x => !bool.TryParse(x, out bool BoolEntry) || !BoolEntry));
             entry.RequiredItems = NewRequirements.Distinct().ToList();
 
             var NewConditionals = entry.ConditionalItems.Select(x => x.ToList()).ToList();
