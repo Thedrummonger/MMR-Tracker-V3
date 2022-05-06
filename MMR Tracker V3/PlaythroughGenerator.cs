@@ -280,7 +280,7 @@ namespace MMR_Tracker_V3
                     sphere = p.Value.sphere;
                 }
                 string AreaName = (_Instance.GetLocationByID(p.Key)?.GetDictEntry(_Instance)?.Area);
-                string LocationName = _Instance.GetLocationByID(p.Key)?.GetDictEntry(_Instance)?.GetName(_Instance);
+                string LocationName = _Instance.GetLocationByID(p.Key)?.GetDictEntry(_Instance)?.GetName(_Instance)??p.Key;
                 string LocationDisplay = AreaName is null ? LocationName : $"{AreaName} - {LocationName}";
                 string ItemName = _Instance.GetItemByID(p.Value.ItemObtained)?.GetDictEntry(_Instance)?.GetName(_Instance)??p.Value.ItemObtained;
                 List<string> RealItems = new List<string>();
