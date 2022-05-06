@@ -3631,7 +3631,7 @@
     {
       "Id": "Shooting Star Summit - Shooting Star Summit - 0 X Shooting Star Summit - Shooting Star Summit - 1",
       "RequiredItems": [
-        "starspirits, 7"
+        "starspirits, StarWaySpiritsNeeded"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",

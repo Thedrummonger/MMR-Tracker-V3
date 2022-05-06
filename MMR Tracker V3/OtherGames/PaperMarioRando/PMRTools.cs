@@ -319,6 +319,13 @@ namespace MMR_Tracker_V3.OtherGames
                 Static = true,
                 Value = new List<string> { "StarPiece", "ThreeStarPieces", "ThreeStarPieces", "ThreeStarPieces" }
             });
+            logicDictionary.Variables.Add(new TrackerObjects.LogicDictionaryData.TrackerVariable
+            {
+                ID = "StarWaySpiritsNeeded",
+                Name = "Star Spirits Needed",
+                Static = false,
+                Value = 7
+            });
         }
 
         private static void Addoptions(LogicDictionaryData.LogicDictionary logicDictionary)
@@ -449,13 +456,13 @@ namespace MMR_Tracker_V3.OtherGames
                 };
                 logicCleaner.RemoveRedundantConditionals(LogicEntry);
                 logicCleaner.MakeCommonConditionalsRequirements(LogicEntry);
-                DoPMRLogicEdits(LogicEntry);
+                DoPMRLogicEdits(LogicEntry, i.Key);
                 PRMLogic.Logic.Add(LogicEntry);
             }
         }
 
 
-        private static void DoPMRLogicEdits(MMRData.JsonFormatLogicItem logicEntry)
+        private static void DoPMRLogicEdits(MMRData.JsonFormatLogicItem logicEntry, string ID)
         {
             Dictionary<string, string> LogicReplacements = new Dictionary<string, string>
             {
@@ -465,6 +472,10 @@ namespace MMR_Tracker_V3.OtherGames
             {
                 logicEntry.RequiredItems = logicEntry.RequiredItems.Select(x => LogicReplacements.ContainsKey(x) ? LogicReplacements[x] : x).ToList();
                 logicEntry.ConditionalItems = logicEntry.ConditionalItems.Select(set => set.Select(x => LogicReplacements.ContainsKey(x) ? LogicReplacements[x] : x).ToList()).ToList();
+            }
+            if (ID == "Shooting Star Summit - Shooting Star Summit - 0 X Shooting Star Summit - Shooting Star Summit - 1")
+            {
+                logicEntry.RequiredItems = logicEntry.RequiredItems.Select(x => x == "starspirits, 7" ? "starspirits, StarWaySpiritsNeeded" : x).ToList();
             }
         }
 
@@ -617,6 +628,8 @@ namespace MMR_Tracker_V3.OtherGames
                 Instance.UserOptions["WhaleOpen"].CurrentValue = SettingData["WhaleOpen"].ToString().ToLower();
                 Instance.UserOptions["ToyboxOpen"].CurrentValue = SettingData["ToyboxOpen"].ToString().ToLower();
                 Instance.UserOptions["partners_always_usable"].CurrentValue = SettingData["PartnersAlwaysUsable"].ToString().ToLower();
+                Instance.UserOptions["ShortenBowsersCastle"].CurrentValue = SettingData["ShortenBowsersCastle"].ToString().ToLower();
+                Instance.Variables["StarWaySpiritsNeeded"].Value = (Int64)SettingData["StarWaySpiritsNeeded"];
 
                 Instance.UserOptions["HiddenBlocksVisible"].CurrentValue = ((int)SettingData["HiddenBlockMode"] == 3).ToString().ToLower();
 

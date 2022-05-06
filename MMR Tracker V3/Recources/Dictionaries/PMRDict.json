@@ -46010,6 +46010,12 @@
         "ThreeStarPieces",
         "ThreeStarPieces"
       ]
+    },
+    {
+      "ID": "StarWaySpiritsNeeded",
+      "Name": "Star Spirits Needed",
+      "Static": false,
+      "Value": 7
     }
   ],
   "HintSpots": []
