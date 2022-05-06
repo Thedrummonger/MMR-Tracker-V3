@@ -83,15 +83,32 @@ namespace Windows_Form_Frontend
                     }
                 }
 
-                if (ItemOut != null && Itemtype == MiscData.LogicEntryType.item)
+                if (ItemOut != null && ItemOut is ItemData.ItemObject ItemObject)
                 {
-                    var ItemObject = ItemOut as ItemData.ItemObject;
                     string displayName = ItemObject.GetDictEntry(_instance).Name??ItemObject.Id;
                     SeedCheckRequiredItems.Add(new MiscData.StandardListBoxItem { Display = displayName, tag = ItemObject.Id });
+                }
+                else if (ItemOut != null && ItemOut is MacroObject MacroObject)
+                {
+                    string displayName = MacroObject.GetDictEntry(_instance).Name??MacroObject.ID;
+                    SeedCheckRequiredItems.Add(new MiscData.StandardListBoxItem { Display = displayName, tag = MacroObject.ID });
                 }
             }
         }
 
+        private Dictionary<string, int> GetDuplicateItemNames(IEnumerable<ItemData.ItemObject> Items)
+        {
+            Dictionary<string, int> DisplayCounts = new Dictionary<string, int>();
+            foreach (var i in Items)
+            {
+                string Dis = i.GetDictEntry(_instance).GetName(_instance);
+                if (!DisplayCounts.ContainsKey(Dis)) { DisplayCounts[Dis] = 0; }
+                DisplayCounts[Dis]++;
+            }
+            return DisplayCounts;
+        }
+
+        #region PlaythroughGenerator
         private void PopulateWinConCMB()
         {
             cmbWinCon.Items.Clear();
@@ -106,13 +123,7 @@ namespace Windows_Form_Frontend
             if (Items.Any())
             {
                 cmbWinCon.Items.Add(WinFormUtils.CreateDivider(cmbWinCon, "Items"));
-                Dictionary<string, int> DisplayCounts = new Dictionary<string, int>();  
-                foreach (var i in Items)
-                {
-                    string Dis = i.GetDictEntry(_instance).GetName(_instance);
-                    if (!DisplayCounts.ContainsKey(Dis)) { DisplayCounts[Dis] = 0; }
-                    DisplayCounts[Dis]++;
-                }
+                Dictionary<string, int> DisplayCounts = GetDuplicateItemNames(_instance.ItemPool.Values);
                 foreach (var i in Items)
                 {
                     string Dis = i.GetDictEntry(_instance).GetName(_instance);
@@ -187,7 +198,9 @@ namespace Windows_Form_Frontend
 
             File.WriteAllLines(dlg.FileName, playthroughGenerator.CreateReadablePlaythrough(Result));
         }
+        #endregion PlaythroughGenerator
 
+        #region SpoilerLogLookup
         private void PopulateSpoilerLogList()
         {
             listBox1.Items.Clear();
@@ -351,7 +364,9 @@ namespace Windows_Form_Frontend
                 btnSphere.Enabled = false;
             }
         }
+        #endregion SpoilerLogLookup
 
+        #region SeedChecker
         private void UpdateSeedChckUI()
         {
             btnAddReq.Text = seedCheckMode == SeedCheckMode.addReq ? "X" : "Add";
@@ -370,11 +385,19 @@ namespace Windows_Form_Frontend
                 LabelSeedCheckItemsNeeded.Text = "Items Needed";
                 LabelSeedCheckChecksIgnored.Text = "Adding Needed Items";
                 WinFormUtils.PrintMessageToListBox(LBIgnoredItems, "Select Items Needed for seed Completion \n ----->");
-                foreach(var i in _instance.ItemPool.Values.OrderBy(x => x.GetDictEntry(_instance).GetName(_instance)))
+                Dictionary<string, int> DisplayCounts = GetDuplicateItemNames(_instance.ItemPool.Values);
+                foreach (var i in _instance.ItemPool.Values.OrderBy(x => x.GetDictEntry(_instance).GetName(_instance)))
                 {
                     string displayName = i.GetDictEntry(_instance).GetName(_instance);
-                    if(SearchStringParser.FilterSearch(_instance, i, txtSeedCheckFilter.Text, displayName))
+                    if (DisplayCounts.ContainsKey(displayName) && DisplayCounts[displayName] > 1) { displayName = $"{displayName} [{i.Id}]"; }
+                    if (SearchStringParser.FilterSearch(_instance, i, txtSeedCheckFilter.Text, displayName))
                         lbObtainable.Items.Add(new MiscData.StandardListBoxItem { Display = displayName, tag = i.Id });
+                }
+                foreach (var i in _instance.MacroPool.Values.OrderBy(x => x.GetDictEntry(_instance).Name??x.ID))
+                {
+                    string displayName = i.GetDictEntry(_instance).Name??i.ID;
+                    if (SearchStringParser.FilterSearch(_instance, i, txtSeedCheckFilter.Text, displayName))
+                        lbObtainable.Items.Add(new MiscData.StandardListBoxItem { Display = displayName, tag = i.ID });
                 }
             }
             if (seedCheckMode == SeedCheckMode.addIgnore)
@@ -512,5 +535,6 @@ namespace Windows_Form_Frontend
             }
             UpdateSeedChckUI();
         }
+        #endregion SeedChecker
     }
 }

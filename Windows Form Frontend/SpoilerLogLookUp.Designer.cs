@@ -118,9 +118,9 @@
             // btnCheckSeed
             // 
             this.btnCheckSeed.ForeColor = System.Drawing.Color.Black;
-            this.btnCheckSeed.Location = new System.Drawing.Point(195, 20);
+            this.btnCheckSeed.Location = new System.Drawing.Point(194, 20);
             this.btnCheckSeed.Name = "btnCheckSeed";
-            this.btnCheckSeed.Size = new System.Drawing.Size(84, 23);
+            this.btnCheckSeed.Size = new System.Drawing.Size(85, 23);
             this.btnCheckSeed.TabIndex = 6;
             this.btnCheckSeed.Text = "Check Seed";
             this.btnCheckSeed.UseVisualStyleBackColor = true;
@@ -272,6 +272,7 @@
             // 
             this.txtWinConFilter.Location = new System.Drawing.Point(62, 22);
             this.txtWinConFilter.Name = "txtWinConFilter";
+            this.txtWinConFilter.PlaceholderText = "filter win con";
             this.txtWinConFilter.Size = new System.Drawing.Size(102, 23);
             this.txtWinConFilter.TabIndex = 20;
             this.txtWinConFilter.TextChanged += new System.EventHandler(this.txtWinConFilter_TextChanged);
