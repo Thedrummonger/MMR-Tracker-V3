@@ -24,7 +24,7 @@ namespace MMR_Tracker_V3
         {
             List<string> SubUnlockData = new List<string>();
             bool reqMet = Requirements.All(x => LogicEntryAquired(instance, x, SubUnlockData));
-            if (UnlockData != null && reqMet)
+            if (UnlockData != null && reqMet && !UnlockData.ContainsKey(ID))
             {
                 if (!UnlockData.ContainsKey(ID)) { UnlockData.Add(ID, new List<string>()); }
                 UnlockData[ID] = UnlockData[ID].Concat(Requirements).Concat(SubUnlockData).ToList();
