@@ -2,6 +2,8 @@
   "LogicVersion": 2,
   "LogicFormat": "JSON",
   "GameCode": "PMR",
+  "RootArea": "Root",
+  "WinCondition": "YOUWIN",
   "LocationList": [
     {
       "ID": "KMR_00_HiddenPanel",
@@ -44877,6 +44879,14 @@
       }
     },
     {
+      "ID": "RF_CanMeetMoustafa",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
       "ID": "RF_MouserLeftShop",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -44886,6 +44896,14 @@
     },
     {
       "ID": "RF_MouserReturned",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "RF_CanUseDROCode",
       "SpoilerData": {
         "SpoilerLogNames": [],
         "GossipHintNames": [],
@@ -44989,7 +45007,7 @@
       }
     },
     {
-      "ID": "MF_ISK12_DrainedThirdSandRoom",
+      "ID": "RF_DrainedThirdSandRoomAndCanSolvePuzzle",
       "SpoilerData": {
         "SpoilerLogNames": [],
         "GossipHintNames": [],
@@ -45534,6 +45552,14 @@
     },
     {
       "ID": "RF_Ch7_SpokeWithHerringway",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "RF_CanVisitDesertCamp",
       "SpoilerData": {
         "SpoilerLogNames": [],
         "GossipHintNames": [],

@@ -15,7 +15,7 @@ namespace MMR_Tracker_V3
 {
     public static class TrackerInstanceCreation
     {
-        public static InstanceState ApplyLogicAndDict(LogicObjects.TrackerInstance Instance, string LogicFile, string DictionaryFile = null)
+        public static InstanceState ApplyLogicAndDict(TrackerInstance Instance, string LogicFile, string DictionaryFile = null)
         {
             try
             {
@@ -56,6 +56,7 @@ namespace MMR_Tracker_V3
             Index = 0;
             foreach (var i in Instance.LogicFile.Logic)
             {
+                if (Instance.LogicDictionary.AdditionalLogic.Any(x => x.Id == i.Id)) { Index++; continue; }
                 Instance.InstanceReference.LogicFileMapping.Add(i.Id, Index);
                 ParseLogicItem(i, Index, LogicFileType.Logic);
                 Index++;
@@ -63,7 +64,6 @@ namespace MMR_Tracker_V3
             Index = 0;
             foreach (var i in Instance.LogicDictionary.AdditionalLogic)
             {
-                if (Instance.LogicFile.Logic.Any(x => x.Id == i.Id)) { continue; }
                 Instance.InstanceReference.AdditionalLogicFileMapping.Add(i.Id, Index);
                 ParseLogicItem(i, Index, LogicFileType.Additional);
                 Index++;
@@ -162,6 +162,8 @@ namespace MMR_Tracker_V3
                 });
             }
             Instance.PriceData.Initialized = true;
+
+            Instance.EntrancePool.RootArea = Instance.LogicDictionary.RootArea??"Root";
 
             Debug.WriteLine(JsonConvert.SerializeObject(Instance.PriceData.WalletEntries, Testing._NewtonsoftJsonSerializerOptions));
             Debug.WriteLine(JsonConvert.SerializeObject(Instance.PriceData.CapacityMap, Testing._NewtonsoftJsonSerializerOptions));

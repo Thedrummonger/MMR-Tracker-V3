@@ -15,8 +15,9 @@ namespace MMR_Tracker_V3.TrackerObjects
         public class LogicDictionary
         {
             public int LogicVersion { get; set; }
-            public string LogicFormat { get; set; }
             public string GameCode { get; set; }
+            public string RootArea { get; set; }
+            public string WinCondition { get; set; }
             public List<DictionaryLocationEntries> LocationList { get; set; } = new List<DictionaryLocationEntries>();
             public List<DictionaryItemEntries> ItemList { get; set; } = new List<DictionaryItemEntries>();
             public List<DictionaryEntranceEntries> EntranceList { get; set; } = new List<DictionaryEntranceEntries>();

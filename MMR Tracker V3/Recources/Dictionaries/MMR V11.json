@@ -2,6 +2,7 @@
   "LogicVersion": 11,
   "LogicFormat": "json",
   "GameCode": "MMR",
+  "WinCondition": "MajorasMask",
   "LocationList": [
     {
       "ID": "MaskDeku",
@@ -36756,6 +36757,42 @@
   ],
   "AdditionalLogic": [
     {
+      "Id": "OtherOneMask",
+      "RequiredItems": [ "NonTransformationMasks, 1" ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OtherTwoMasks",
+      "RequiredItems": [ "NonTransformationMasks, 2" ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OtherThreeMasks",
+      "RequiredItems": [ "NonTransformationMasks, 3" ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OtherFourMasks",
+      "RequiredItems": [ "NonTransformationMasks, 4" ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "CanClearDungeonAtWoodfall",
       "RequiredItems": [],
       "ConditionalItems": [
@@ -37461,7 +37498,35 @@
       }
     }
   ],
-  "Variables": [],
+  "Variables": [
+    {
+      "ID": "NonTransformationMasks",
+      "Name": "NonTransformationMasks",
+      "Static": true,
+      "Value": [
+        "MaskPostmanHat",
+        "MaskAllNight",
+        "MaskBlast",
+        "MaskStone",
+        "MaskGreatFairy",
+        "MaskKeaton",
+        "MaskBremen",
+        "MaskBunnyHood",
+        "MaskDonGero",
+        "MaskScents",
+        "MaskRomani",
+        "MaskCircusLeader",
+        "MaskKafei",
+        "MaskCouple",
+        "MaskTruth",
+        "MaskKamaro",
+        "MaskGibdo",
+        "MaskGaro",
+        "MaskCaptainHat",
+        "MaskGiant"
+      ]
+    }
+  ],
   "HintSpots": [
     {
       "ID": "GossipTerminaSouth",

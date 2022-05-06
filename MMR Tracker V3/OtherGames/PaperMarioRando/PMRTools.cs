@@ -51,7 +51,8 @@ namespace MMR_Tracker_V3.OtherGames
             {
                 GameCode = "PMR",
                 LogicVersion = 2,
-                LogicFormat = "JSON",
+                RootArea = "Root",
+                WinCondition = "YOUWIN"
             };
             Dictionary<string, string> LogicMapping = new Dictionary<string, string>();
 

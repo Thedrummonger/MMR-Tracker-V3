@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -40,7 +41,55 @@ namespace Windows_Form_Frontend
             PopulateWinConCMB();
             PopulateSpoilerLogList();
             listBox1_SelectedValueChanged(sender, e);
+            SetDefaultWinCon();
             UpdateSeedChckUI();
+
+        }
+
+        private void SetDefaultWinCon()
+        {
+            if (_instance.LogicDictionary.WinCondition is not null)
+            {
+                var wincon = _instance.LogicDictionary.WinCondition;
+                bool Literal = wincon.IsLiteralID(out string ParsedWinCon);
+                var Itemtype = _instance.GetItemEntryType(ParsedWinCon, Literal, out object ItemOut);
+                var Locationtype = _instance.GetItemEntryType(ParsedWinCon, Literal, out object LocationOut);
+                var outitem = ItemOut??LocationOut??null;
+
+                foreach (var i in cmbWinCon.Items)
+                {
+                    if (i is MiscData.StandardListBoxItem LBI && outitem is not null)
+                    {
+                        if (outitem is ItemData.ItemObject && LBI.tag is ItemData.ItemObject IO && IO.Id == ParsedWinCon)
+                        {
+                            cmbWinCon.SelectedItem = i;
+                            break;
+                        }
+                        else if (outitem is LocationData.LocationObject &&  LBI.tag is LocationData.LocationObject LO && LO.ID == ParsedWinCon)
+                        {
+                            cmbWinCon.SelectedItem = i;
+                            break;
+                        }
+                        else if (outitem is MacroObject &&  LBI.tag is MacroObject MO && MO.ID == ParsedWinCon)
+                        {
+                            cmbWinCon.SelectedItem = i;
+                            break;
+                        }
+                        else if (outitem is EntranceData.EntranceRandoArea &&  LBI.tag is EntranceData.EntranceRandoArea AO && AO.ID == ParsedWinCon)
+                        {
+                            cmbWinCon.SelectedItem = i;
+                            break;
+                        }
+                    }
+                }
+
+                if (ItemOut != null && Itemtype == MiscData.LogicEntryType.item)
+                {
+                    var ItemObject = ItemOut as ItemData.ItemObject;
+                    string displayName = ItemObject.GetDictEntry(_instance).Name??ItemObject.Id;
+                    SeedCheckRequiredItems.Add(new MiscData.StandardListBoxItem { Display = displayName, tag = ItemObject.Id });
+                }
+            }
         }
 
         private void PopulateWinConCMB()
