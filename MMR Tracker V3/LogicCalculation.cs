@@ -19,6 +19,7 @@ namespace MMR_Tracker_V3
         public Dictionary<string, List<string>> LogicUnlockData = new Dictionary<string, List<string>>();
         public Dictionary<string, MMRData.JsonFormatLogicItem> LogicMap = new Dictionary<string, MMRData.JsonFormatLogicItem>();
         public Dictionary<object, int> AutoObtainedObjects = new Dictionary<object, int>();
+        public Dictionary<string, int> IDsAltered = new Dictionary<string, int>();
 
         public LogicCalculation(InstanceContainer _container)
         {
@@ -165,6 +166,7 @@ namespace MMR_Tracker_V3
                 }
             }
         }
+
         public void CalculateLogic(CheckState checkState = CheckState.Unchecked)
         {
             Debug.WriteLine("Logic Calculation ----------------------");
@@ -179,8 +181,8 @@ namespace MMR_Tracker_V3
             Debug.WriteLine(checkState);
             Utility.TimeCodeExecution(LogicTime, "Resetting Auto checked Items", 1);
 
-            if (AutoObtainedObjects is null) { AutoObtainedObjects = new Dictionary<object, int>(); }
             AutoObtainedObjects.Clear();
+            IDsAltered.Clear();
 
             int Itterations = 0;
             while (true)
@@ -287,6 +289,7 @@ namespace MMR_Tracker_V3
             {
                 foreach (var i in Area.Value.LoadingZoneExits.Where(x => x.Value.IsUnrandomized(1)))
                 {
+                    if (IDsAltered.ContainsKey(container.Instance.GetLogicNameFromExit(i.Value))) { continue; }
                     var Logic = LogicMap[container.Instance.GetLogicNameFromExit(i.Value)];
                     var Available = CalculatReqAndCond(Logic, container.Instance.GetLogicNameFromExit(i.Value), Area.Key);
                     bool ShouldBeChecked = Available && i.Value.CheckState != CheckState.Checked;
@@ -299,6 +302,7 @@ namespace MMR_Tracker_V3
                         if (checkState == CheckState.Checked) { i.Value.DestinationExit = i.Value.GetVanillaDestination(); }
                         i.Value.ToggleExitChecked(checkState, container.Instance);
                         if (Available) { AutoObtainedObjects[i.Value] = itterations; }
+                        IDsAltered[container.Instance.GetLogicNameFromExit(i.Value)] = itterations;
                     }
                 }
             }
@@ -312,6 +316,7 @@ namespace MMR_Tracker_V3
             {
                 foreach (var i in Area.Value.MacroExits)
                 {
+                    if (IDsAltered.ContainsKey(container.Instance.GetLogicNameFromExit(i.Value))) { continue; }
                     var Logic = LogicMap[container.Instance.GetLogicNameFromExit(i.Value)];
                     i.Value.Available = CalculatReqAndCond(Logic, container.Instance.GetLogicNameFromExit(i.Value), Area.Key);
                     if (i.Value.Available && i.Value.CheckState != CheckState.Checked)
@@ -322,6 +327,7 @@ namespace MMR_Tracker_V3
                         var Destination = container.Instance.EntrancePool.AreaList[i.Value.ID];
                         Destination.ExitsAcessibleFrom++;
                         AutoObtainedObjects[i.Value] = itterations;
+                        IDsAltered[container.Instance.GetLogicNameFromExit(i.Value)] = itterations;
                     }
                     else if (!i.Value.Available && i.Value.CheckState == CheckState.Checked)
                     {
@@ -330,6 +336,7 @@ namespace MMR_Tracker_V3
                         i.Value.DestinationExit = null;
                         var Destination = container.Instance.EntrancePool.AreaList[i.Value.ID];
                         Destination.ExitsAcessibleFrom--;
+                        IDsAltered[container.Instance.GetLogicNameFromExit(i.Value)] = itterations;
                     }
                 }
             }
@@ -341,6 +348,7 @@ namespace MMR_Tracker_V3
             bool MacroStateChanged = false;
             foreach(var i in container.Instance.MacroPool)
             {
+                if (IDsAltered.ContainsKey(i.Key)) { continue; }
                 var Logic = LogicMap[i.Key];
                 bool Available = false;
                 if (Logic.IsTrick && !i.Value.TrickEnabled) { Available = false; }
@@ -348,22 +356,25 @@ namespace MMR_Tracker_V3
                 {
                     Available = CalculatReqAndCond(Logic, i.Key, null);
                     if (Available) { AutoObtainedObjects[i.Value] = itterations; }
+                    IDsAltered[i.Key] = itterations;
                 }
 
                 if (Available != i.Value.Aquired)
                 {
                     MacroStateChanged = true;
                     i.Value.Aquired = Available;
+                    IDsAltered[i.Key] = itterations;
                 }
             }
             return MacroStateChanged;
         }
 
-        public bool CheckUrandomizedLocations(int itterations)
+        private bool CheckUrandomizedLocations(int itterations)
         {
             bool ItemStateChanged = false;
             foreach (var i in container.Instance.LocationPool)
             {
+                if (IDsAltered.ContainsKey(i.Key)) { continue; }
                 if (string.IsNullOrWhiteSpace(i.Value.GetDictEntry(container.Instance).OriginalItem)) { continue; }
                 if (!i.Value.IsUnrandomized(1)) { continue; }
                 var Logic = LogicMap[i.Key];
@@ -380,6 +391,7 @@ namespace MMR_Tracker_V3
                     if (checkState == CheckState.Checked) { i.Value.Randomizeditem.Item = i.Value.GetDictEntry(container.Instance).OriginalItem; }
                     i.Value.ToggleChecked(checkState, container.Instance);
                     if (Available) { AutoObtainedObjects[i.Value] = itterations; }
+                    IDsAltered[i.Key] = itterations;
                 }
             }
             return ItemStateChanged;
