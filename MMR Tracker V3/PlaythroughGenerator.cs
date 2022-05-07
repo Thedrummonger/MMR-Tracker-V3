@@ -43,7 +43,7 @@ namespace MMR_Tracker_V3
             Playthrough.Clear();
             LogicCalculation.FillLogicMap(_Instance, LogicMap);
             Dictionary<object, int> AutoObtainedObjects = new Dictionary<object, int>();
-            LogicCalculation.CalculateLogic(_Instance, PlaythroughUnlockData, AutoObtainedObjects);
+            LogicCalculation.CalculateLogic(_Instance, PlaythroughUnlockData, MiscData.CheckState.Checked, AutoObtainedObjects);
 
             var AvailableLocations = _Instance.LocationPool.Values.Where(x => x.Available && x.CheckState == MiscData.CheckState.Unchecked && x.IsRandomized());
             var AvailableEntrances = getAllAvailableEntrances(_Instance, AutoObtainedObjects);
@@ -112,7 +112,7 @@ namespace MMR_Tracker_V3
                     Playthrough.Add(i.ID, playthroughObject);
                 }
 
-                LogicCalculation.CalculateLogic(_Instance, PlaythroughUnlockData, AutoObtainedObjects);
+                LogicCalculation.CalculateLogic(_Instance, PlaythroughUnlockData, MiscData.CheckState.Checked, AutoObtainedObjects);
                 AvailableLocations = _Instance.LocationPool.Values.Where(x => x.Available && x.CheckState == MiscData.CheckState.Unchecked && x.IsRandomized());
                 AvailableEntrances = getAllAvailableEntrances(_Instance, AutoObtainedObjects);
                 AquiredMacros = _Instance.MacroPool.Values.Where(x => x.Aquired && !Playthrough.ContainsKey(x.ID));

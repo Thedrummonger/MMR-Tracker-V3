@@ -24,7 +24,7 @@ namespace MMR_Tracker_V3
         {
             List<string> SubUnlockData = new List<string>();
             bool reqMet = Requirements.All(x => LogicEntryAquired(instance, x, SubUnlockData));
-            if (UnlockData != null && reqMet && !UnlockData.ContainsKey(ID))
+            if (UnlockData != null && reqMet)
             {
                 if (!UnlockData.ContainsKey(ID)) { UnlockData.Add(ID, new List<string>()); }
                 UnlockData[ID] = UnlockData[ID].Concat(Requirements).Concat(SubUnlockData).ToList();
@@ -130,10 +130,6 @@ namespace MMR_Tracker_V3
             {
                 UnlockData[ID] = TempUnlockData[ID];
             }
-            if (UnlockData.ContainsKey(ID) && !Available)
-            {
-                UnlockData.Remove(ID);
-            }
 
             return Available;
         }
@@ -164,7 +160,7 @@ namespace MMR_Tracker_V3
                 }
             }
         }
-        public static void CalculateLogic(TrackerInstance instance, Dictionary<string, List<string>> UnlockData, Dictionary<object, int> AutoObtainedObjects =  null)
+        public static void CalculateLogic(TrackerInstance instance, Dictionary<string, List<string>> UnlockData, CheckState checkState =  CheckState.Unchecked, Dictionary<object, int> AutoObtainedObjects =  null)
         {
             Debug.WriteLine("Logic Calculation ----------------------");
             Stopwatch LogicTime = new Stopwatch();
@@ -173,8 +169,9 @@ namespace MMR_Tracker_V3
             FillLogicMap(instance, LogicMap);
             Utility.TimeCodeExecution(LogicTime, "Getting Logic", 1);
 
-            ResetAutoObtainedItems(instance);
+            if (checkState == CheckState.Unchecked) { ResetAutoObtainedItems(instance); }
 
+            Debug.WriteLine(checkState);
             Utility.TimeCodeExecution(LogicTime, "Resetting Auto checked Items", 1);
 
             if (AutoObtainedObjects is null) { AutoObtainedObjects = new Dictionary<object, int>(); }
@@ -212,7 +209,38 @@ namespace MMR_Tracker_V3
                 var Logic = LogicMap[i.Key];
                 i.Value.Available = CalculatReqAndCond(Logic, instance, i.Key, null, UnlockData);
             }
-            Utility.TimeCodeExecution(LogicTime, "Calculating Hints", -1);
+            Utility.TimeCodeExecution(LogicTime, "Calculating Hints", 1);
+
+            if (checkState == CheckState.Unchecked) { CleanUnlockData(instance, UnlockData); }
+            
+            Utility.TimeCodeExecution(LogicTime, "Clean Unlock Data", -1);
+        }
+
+        private static void CleanUnlockData(TrackerInstance instance, Dictionary<string, List<string>> unlockData)
+        {
+            //If an entry in the unlock data is no longer available, remove it from the unlock data.
+            //This has to be done all at once after all logic calculations are done because unrandomized items and macros
+            //become unckecked and rechecked during logic calculation and we don't want them resetting their unlock data when this happens.
+            foreach (var i in instance.LocationPool.Values)
+            {
+                if (!i.Available && unlockData.ContainsKey(i.ID)) { unlockData.Remove(i.ID); }
+            }
+            foreach (var Area in instance.EntrancePool.AreaList)
+            {
+                foreach (var i in Area.Value.LoadingZoneExits.Values.Concat(Area.Value.MacroExits.Values))
+                {
+                    var ID = instance.GetLogicNameFromExit(i);
+                    if (!i.Available && unlockData.ContainsKey(ID)) { unlockData.Remove(ID); }
+                }
+            }
+            foreach (var i in instance.HintPool.Values)
+            {
+                if (!i.Available && unlockData.ContainsKey(i.ID)) { unlockData.Remove(i.ID); }
+            }
+            foreach (var i in instance.MacroPool.Values)
+            {
+                if (!i.Aquired && unlockData.ContainsKey(i.ID)) { unlockData.Remove(i.ID); }
+            }
         }
 
         private static bool CheckUrandomizedExits(TrackerInstance instance, Dictionary<string, List<string>> UnlockData, int itterations, Dictionary<object, int> autoObtainedObjects)
