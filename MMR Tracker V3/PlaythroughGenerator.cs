@@ -40,7 +40,6 @@ namespace MMR_Tracker_V3
             int Sphere = 0;
             PrepareInstance();
             Playthrough.Clear();
-            _Instance.logicCalculation.FillLogicMap();
             _Instance.logicCalculation.CalculateLogic(MiscData.CheckState.Checked);
 
             var AvailableLocations = _Instance.Instance.LocationPool.Values.Where(x => x.Available && x.CheckState == MiscData.CheckState.Unchecked && x.IsRandomized());

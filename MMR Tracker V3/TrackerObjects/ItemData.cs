@@ -51,7 +51,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return AmountAquired + AmountSetAtLocation;
             }
 
-            public int GetAmountInStartingPool(LogicObjects.TrackerInstance Instance)
+            public int GetAmountInStartingPool()
             {
                 return AmountInStartingpool;
             }
@@ -64,7 +64,7 @@ namespace MMR_Tracker_V3.TrackerObjects
 
             public int GetTotalUsable(LogicObjects.TrackerInstance Instance)
             {
-                return AmountAquiredLocally + AmountAquiredOnline.Values.Sum() + GetAmountInStartingPool(Instance);
+                return AmountAquiredLocally + AmountAquiredOnline.Values.Sum() + GetAmountInStartingPool();
             }
 
             public bool Useable(LogicObjects.TrackerInstance Instance, int Amount = 1)

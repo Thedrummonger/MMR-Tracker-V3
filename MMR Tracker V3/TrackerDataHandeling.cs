@@ -144,7 +144,7 @@ namespace MMR_Tracker_V3
             {
                 instanceContainer.logicCalculation.CalculateLogic(checkState);
                 Utility.TimeCodeExecution(FunctionTime, "---TOTAL Calculating Logic", 1);
-                if (checkState == MiscData.CheckState.Checked && instanceContainer.Instance.StaticOptions.AutoCheckCoupleEntrances && !instanceContainer.Instance.StaticOptions.DecoupleEntrances && instanceContainer.logicCalculation.CheckEntrancePair())
+                if (checkState == MiscData.CheckState.Checked && instanceContainer.Instance.StaticOptions.AutoCheckCoupleEntrances && !instanceContainer.Instance.StaticOptions.DecoupleEntrances && instanceContainer.Instance.CheckEntrancePair())
                 {
                     instanceContainer.logicCalculation.CalculateLogic(checkState);
                     Utility.TimeCodeExecution(FunctionTime, "Chcking Entrance Pairs", 1);
