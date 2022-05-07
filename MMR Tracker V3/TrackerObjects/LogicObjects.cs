@@ -120,7 +120,7 @@ namespace MMR_Tracker_V3
 
             public LogicEntryType GetItemEntryType(string OriginalID, bool literal, out object obj)
             {
-                LogicCalculation.MultipleItemEntry(this, OriginalID, out string ID, out _);
+                this.MultipleItemEntry(OriginalID, out string ID, out _);
                 if (literal && ItemPool.ContainsKey(ID)) { obj = ItemPool[ID]; return LogicEntryType.item; }
                 if (literal && EntrancePool.AreaList.ContainsKey(ID)) { obj = EntrancePool.AreaList[ID]; return LogicEntryType.Area; }
                 if (MacroPool.ContainsKey(ID)) { obj = MacroPool[ID]; return LogicEntryType.macro; }
@@ -136,7 +136,7 @@ namespace MMR_Tracker_V3
                 }
                 if (bool.TryParse(ID, out bool result)) { obj = result; return LogicEntryType.Bool; }
                 obj = null;
-                if (LogicCalculation.LogicOptionEntry(this, ID, out _)) { return LogicEntryType.Option; }
+                if (this.LogicOptionEntry(ID, out _)) { return LogicEntryType.Option; }
                 return LogicEntryType.error;
             }
         }

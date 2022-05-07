@@ -46,10 +46,10 @@ namespace Windows_Form_Frontend
                 NewInstance.StaticOptions.OptionFile = JsonConvert.DeserializeObject<LogicObjects.OptionFile>(File.ReadAllText(References.WindowsPaths.OptionFile));
             }
 
-            MainInterface.CurrentTrackerInstance = NewInstance;
+            MainInterface.InstanceContainer.Instance = NewInstance;
 
             ApplyWinFormSpecificDat(NewInstance);
-            LogicCalculation.CalculateLogic(NewInstance, LogicCalculation.LogicUnlockData);
+            MainInterface.InstanceContainer.logicCalculation.CalculateLogic();
             MainInterface.CurrentProgram.UpdateUI();
 
             return true;

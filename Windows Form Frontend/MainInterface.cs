@@ -19,17 +19,15 @@ namespace Windows_Form_Frontend
 {
     public partial class MainInterface : Form
     {
-        public static LogicObjects.TrackerInstance CurrentTrackerInstance;
-        public static List<string> UndoStringList = new();
-        public static List<string> RedoStringList = new();
+        public static MiscData.InstanceContainer InstanceContainer = new MiscData.InstanceContainer();
         public static MainInterface CurrentProgram;
         Pathfinder MainInterfacepathfinder = new Pathfinder();
         private bool FormIsMaximized = false;
-        private bool UnsavedChanges = false;
 
         public MainInterface()
         {
             InitializeComponent();
+            InstanceContainer.logicCalculation = new LogicCalculation(InstanceContainer);
         }
 
         //MainForm Actions
@@ -98,23 +96,23 @@ namespace Windows_Form_Frontend
         {
             Stopwatch TimeTotalItemSelect = new Stopwatch();
             Utility.TimeCodeExecution(TimeTotalItemSelect, "Saving Tracker State (UTF8)", 1);
-            if (sender == undoToolStripMenuItem && UndoStringList.Any())
+            if (sender == undoToolStripMenuItem && InstanceContainer.UndoStringList.Any())
             {
-                string CurrentState = Utf8Json.JsonSerializer.ToJsonString(CurrentTrackerInstance);
-                CurrentTrackerInstance = LogicObjects.TrackerInstance.FromJson(UndoStringList[^1]);
-                RedoStringList.Add(CurrentState);
-                UndoStringList.RemoveAt(UndoStringList.Count - 1);
+                string CurrentState = Utf8Json.JsonSerializer.ToJsonString(InstanceContainer.Instance);
+                InstanceContainer.Instance = LogicObjects.TrackerInstance.FromJson(InstanceContainer.UndoStringList[^1]);
+                InstanceContainer.RedoStringList.Add(CurrentState);
+                InstanceContainer.UndoStringList.RemoveAt(InstanceContainer.UndoStringList.Count - 1);
             }
-            else if (sender == redoToolStripMenuItem && RedoStringList.Any())
+            else if (sender == redoToolStripMenuItem && InstanceContainer.RedoStringList.Any())
             {
-                string CurrentState = Utf8Json.JsonSerializer.ToJsonString(CurrentTrackerInstance);
-                CurrentTrackerInstance = LogicObjects.TrackerInstance.FromJson(RedoStringList[^1]);
-                UndoStringList.Add(CurrentState);
-                RedoStringList.RemoveAt(RedoStringList.Count - 1);
+                string CurrentState = Utf8Json.JsonSerializer.ToJsonString(InstanceContainer.Instance);
+                InstanceContainer.Instance = LogicObjects.TrackerInstance.FromJson(InstanceContainer.RedoStringList[^1]);
+                InstanceContainer.UndoStringList.Add(CurrentState);
+                InstanceContainer.RedoStringList.RemoveAt(InstanceContainer.RedoStringList.Count - 1);
             }
             Utility.TimeCodeExecution(TimeTotalItemSelect, "Undo/Redo Action", -1);
 
-            LogicCalculation.CalculateLogic(CurrentTrackerInstance, LogicCalculation.LogicUnlockData);
+            InstanceContainer.logicCalculation.CalculateLogic();
             UpdateUI();
         }
 
@@ -135,8 +133,8 @@ namespace Windows_Form_Frontend
             bool SaveAs = (sender is ToolStripMenuItem item && item == SaveAsToolStripMenuItem1);
             if (File.Exists(References.CurrentSavePath) && !SaveAs)
             {
-                UnsavedChanges = false;
-                File.WriteAllText(References.CurrentSavePath, CurrentTrackerInstance.ToString());
+                InstanceContainer.UnsavedChanges = false;
+                File.WriteAllText(References.CurrentSavePath, InstanceContainer.Instance.ToString());
             }
             else
             {
@@ -146,8 +144,8 @@ namespace Windows_Form_Frontend
                 saveFileDialog.ShowDialog();
                 if (saveFileDialog.FileName != "")
                 {
-                    UnsavedChanges = false;
-                    File.WriteAllText(saveFileDialog.FileName, CurrentTrackerInstance.ToString());
+                    InstanceContainer.UnsavedChanges = false;
+                    File.WriteAllText(saveFileDialog.FileName, InstanceContainer.Instance.ToString());
                     References.CurrentSavePath = saveFileDialog.FileName;
                 }
             }
@@ -169,9 +167,9 @@ namespace Windows_Form_Frontend
                     NewTrackerInstance = LogicObjects.TrackerInstance.FromJson(File.ReadAllText(openFileDialog.FileName));
                 }
                 catch { MessageBox.Show("Save File Not Valid"); return; }
-                CurrentTrackerInstance = NewTrackerInstance;
+                InstanceContainer.Instance = NewTrackerInstance;
                 References.CurrentSavePath = openFileDialog.FileName;
-                LogicCalculation.CalculateLogic(CurrentTrackerInstance, LogicCalculation.LogicUnlockData);
+                InstanceContainer.logicCalculation.CalculateLogic();
                 UpdateUI();
                 UpdateDynamicUserOptions();
             }
@@ -191,19 +189,19 @@ namespace Windows_Form_Frontend
             }
             if (update)
             {
-                LogicCalculation.CalculateLogic(CurrentTrackerInstance, LogicCalculation.LogicUnlockData);
+                InstanceContainer.logicCalculation.CalculateLogic();
                 UpdateUI();
             }
         }
 
         private void logicOptionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string CurrentState = Utf8Json.JsonSerializer.ToJsonString(CurrentTrackerInstance);
-            RandomizedStateEditor editor = new RandomizedStateEditor(CurrentTrackerInstance);
+            string CurrentState = Utf8Json.JsonSerializer.ToJsonString(InstanceContainer.Instance);
+            RandomizedStateEditor editor = new RandomizedStateEditor(InstanceContainer.Instance);
             editor.ShowDialog();
             if (editor.ChangesMade) { SaveTrackerState(CurrentState); }
 
-            LogicCalculation.CalculateLogic(CurrentTrackerInstance, LogicCalculation.LogicUnlockData);
+            InstanceContainer.logicCalculation.CalculateLogic();
             UpdateUI();
         }
 
@@ -211,20 +209,20 @@ namespace Windows_Form_Frontend
 
         private void importSpoilerLogToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (CurrentTrackerInstance.SpoilerLog == null)
+            if (InstanceContainer.Instance.SpoilerLog == null)
             {
                 OpenFileDialog openFileDialog = new()
                 {
-                    Filter = SpoilerLogTools.GetSpoilerLogFilter(CurrentTrackerInstance),
+                    Filter = SpoilerLogTools.GetSpoilerLogFilter(InstanceContainer.Instance),
                     Title = "Load Text Spoiler Log"
                 };
                 openFileDialog.ShowDialog();
                 if (openFileDialog.FileName != "" && File.Exists(openFileDialog.FileName))
                 {
-                    string CurrentState = Utf8Json.JsonSerializer.ToJsonString(CurrentTrackerInstance);
+                    string CurrentState = Utf8Json.JsonSerializer.ToJsonString(InstanceContainer.Instance);
                     var ToUpdate = new List<ListBox> { LBCheckedLocations, LBValidEntrances, LBValidLocations };
                     foreach (var i in ToUpdate) { WinFormUtils.PrintMessageToListBox(i, "Importing Spoiler Log \n Please Wait..."); }
-                    if (SpoilerLogTools.ImportSpoilerLog(File.ReadAllLines(openFileDialog.FileName), openFileDialog.FileName, CurrentTrackerInstance))
+                    if (SpoilerLogTools.ImportSpoilerLog(File.ReadAllLines(openFileDialog.FileName), openFileDialog.FileName, InstanceContainer.Instance))
                     {
                         SaveTrackerState(CurrentState);
                     }
@@ -233,10 +231,10 @@ namespace Windows_Form_Frontend
             else
             {
                 SaveTrackerState();
-                SpoilerLogTools.RemoveSpoilerData(CurrentTrackerInstance);
-                CurrentTrackerInstance.SpoilerLog = null;
+                SpoilerLogTools.RemoveSpoilerData(InstanceContainer.Instance);
+                InstanceContainer.Instance.SpoilerLog = null;
             }
-            LogicCalculation.CalculateLogic(CurrentTrackerInstance, LogicCalculation.LogicUnlockData);
+            InstanceContainer.logicCalculation.CalculateLogic();
             UpdateUI();
         }
 
@@ -267,9 +265,9 @@ namespace Windows_Form_Frontend
         public void GetListObjectData(dynamic entry, out MiscData.CheckState checkState, out bool starred, out bool Available)
         {
             if (entry is LocationData.LocationProxy po) { 
-                checkState = CurrentTrackerInstance.GetLocationByID(po.ReferenceID)?.CheckState ?? MiscData.CheckState.Checked; 
+                checkState = InstanceContainer.Instance.GetLocationByID(po.ReferenceID)?.CheckState ?? MiscData.CheckState.Checked; 
                 starred = po.Starred;
-                Available = po.ProxyAvailable(CurrentTrackerInstance);
+                Available = po.ProxyAvailable(InstanceContainer.Instance);
             }
             else {
                 checkState = Utility.DynamicPropertyExist(entry, "CheckState") ? entry.CheckState : MiscData.CheckState.Checked; 
@@ -283,7 +281,7 @@ namespace Windows_Form_Frontend
             var LB = sender as ListBox;
             if (e.Index < 0) { return; }
             e.DrawBackground();
-            Font F = WinFormUtils.GetFontFromString(CurrentTrackerInstance.StaticOptions.OptionFile.WinformData.FormFont);
+            Font F = WinFormUtils.GetFontFromString(InstanceContainer.Instance.StaticOptions.OptionFile.WinformData.FormFont);
             Brush brush = ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? Brushes.White : Brushes.Black;
 
             GetListObjectData(LB.Items[e.Index], out MiscData.CheckState checkState, out bool starred, out bool available);
@@ -304,7 +302,7 @@ namespace Windows_Form_Frontend
             var LB = sender as ListBox;
             if (e.Index < 0) { return; }
             e.DrawBackground();
-            Font F = WinFormUtils.GetFontFromString(CurrentTrackerInstance.StaticOptions.OptionFile.WinformData.FormFont);
+            Font F = WinFormUtils.GetFontFromString(InstanceContainer.Instance.StaticOptions.OptionFile.WinformData.FormFont);
             Brush brush = ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? Brushes.White : Brushes.Black;
 
             e.Graphics.DrawString(LB.Items[e.Index].ToString(), F, brush, e.Bounds);
@@ -349,7 +347,7 @@ namespace Windows_Form_Frontend
         private void UpdateToolTip(object sender, MouseEventArgs e)
         {
             ListBox lb = sender as ListBox;
-            if (!CurrentTrackerInstance.StaticOptions.OptionFile.WinformData.ShowEntryNameTooltip) { toolTip1.Hide(lb); return; }
+            if (!InstanceContainer.Instance.StaticOptions.OptionFile.WinformData.ShowEntryNameTooltip) { toolTip1.Hide(lb); return; }
             int index = lb.IndexFromPoint(e.Location);
             if (index < 0) { return; }
             string DisplayName = lb.Items[index].ToString();
@@ -381,20 +379,20 @@ namespace Windows_Form_Frontend
         {
             AlignUIElements();
             FormatMenuItems();
-            if (CurrentTrackerInstance == null) { return; }
+            if (InstanceContainer is null || InstanceContainer.Instance is null) { return; }
 
-            this.Text = CurrentTrackerInstance.LogicFile.GameCode + " Tracker" + (UnsavedChanges ? "*" : "");
+            this.Text = InstanceContainer.Instance.LogicFile.GameCode + " Tracker" + (InstanceContainer.UnsavedChanges ? "*" : "");
 
-            CurrentTrackerInstance.EntrancePool.IsEntranceRando = CurrentTrackerInstance.EntrancePool.CheckForRandomEntrances();
+            InstanceContainer.Instance.EntrancePool.IsEntranceRando = InstanceContainer.Instance.EntrancePool.CheckForRandomEntrances();
 
-            PathFinderToolStripMenuItem.Visible = CurrentTrackerInstance.EntrancePool.IsEntranceRando;
+            PathFinderToolStripMenuItem.Visible = InstanceContainer.Instance.EntrancePool.IsEntranceRando;
 
-            redoToolStripMenuItem.Enabled = RedoStringList.Any();
-            undoToolStripMenuItem.Enabled = UndoStringList.Any();
+            redoToolStripMenuItem.Enabled = InstanceContainer.RedoStringList.Any();
+            undoToolStripMenuItem.Enabled = InstanceContainer.UndoStringList.Any();
 
             string CurrentStart = (string)CMBStart.SelectedItem ?? "";
             string CurrentEnd = (string)CMBEnd.SelectedItem ?? "";
-            var AccessableAreas = CurrentTrackerInstance.EntrancePool.AreaList.Values.Where(x => x.ExitsAcessibleFrom > 0 && x.LoadingZoneExits.Any()).Select(x => x.ID);
+            var AccessableAreas = InstanceContainer.Instance.EntrancePool.AreaList.Values.Where(x => x.ExitsAcessibleFrom > 0 && x.LoadingZoneExits.Any()).Select(x => x.ID);
             CMBStart.DataSource = AccessableAreas.OrderBy(x => x).ToList();
             CMBEnd.DataSource = AccessableAreas.OrderBy(x => x).ToList();
             if (CMBStart.Items.Contains(CurrentStart)) { CMBStart.SelectedIndex = CMBStart.Items.IndexOf(CurrentStart); }
@@ -414,12 +412,12 @@ namespace Windows_Form_Frontend
             var FormHalfWidth = FormWidth / 2;
             var locX = 2;
             var locY = 2 + MenuHeight;
-            if (CurrentTrackerInstance == null)
+            if (InstanceContainer == null || InstanceContainer.Instance == null)
             {
                 SetObjectVisibility(false, false);
                 return;
             }
-            else if (CurrentTrackerInstance.StaticOptions.EntranceRandoFeatures && (CurrentTrackerInstance.EntrancePool.IsEntranceRando || CurrentTrackerInstance.EntrancePool.CheckForRandomEntrances()))
+            else if (InstanceContainer.Instance.StaticOptions.EntranceRandoFeatures && (InstanceContainer.Instance.EntrancePool.IsEntranceRando || InstanceContainer.Instance.EntrancePool.CheckForRandomEntrances()))
             {
                 SetObjectVisibility(true, true);
                 lblAvailableLocation.Location = new Point(locX, locY + 2);
@@ -462,7 +460,7 @@ namespace Windows_Form_Frontend
             else
             {
                 SetObjectVisibility(true, false);
-                if (CurrentTrackerInstance.StaticOptions.OptionFile.WinformData.HorizontalLayout)
+                if (InstanceContainer.Instance.StaticOptions.OptionFile.WinformData.HorizontalLayout)
                 {
                     lblAvailableLocation.Location = new Point(locX, locY + 2);
                     BTNSetItem.Location = new Point(FormHalfWidth - BTNSetItem.Width, MenuHeight + 1);
@@ -544,30 +542,30 @@ namespace Windows_Form_Frontend
             foreach (var i in ToUpdate)
             {
                 i.Items.Clear();
-                i.Font = WinFormUtils.GetFontFromString(CurrentTrackerInstance.StaticOptions.OptionFile.WinformData.FormFont);
+                i.Font = WinFormUtils.GetFontFromString(InstanceContainer.Instance.StaticOptions.OptionFile.WinformData.FormFont);
                 i.ItemHeight = Convert.ToInt32(i.Font.Size * 1.8);
                 i.BeginUpdate();
             }
 
-            var dataset = TrackerDataHandeling.PopulateDataSets(CurrentTrackerInstance);
+            var dataset = TrackerDataHandeling.PopulateDataSets(InstanceContainer.Instance);
 
             if (ToUpdate.Contains(LBValidLocations)) 
             {
-                var Entries = TrackerDataHandeling.PopulateAvailableLocationList(dataset, WinFormUtils.CreateDivider(LBValidLocations), CurrentTrackerInstance, TXTLocSearch.Text, CHKShowAll.Checked, out int x, out int y);
+                var Entries = TrackerDataHandeling.PopulateAvailableLocationList(dataset, WinFormUtils.CreateDivider(LBValidLocations), InstanceContainer.Instance, TXTLocSearch.Text, CHKShowAll.Checked, out int x, out int y);
                 lblAvailableLocation.Text = $"Available Locations: {y}" + (x != y ? $"/{x}" : "");
                 foreach (var i in Entries) { LBValidLocations.Items.Add(i); }
                 LBValidLocations.TopIndex = lbLocTop; 
             }
             if (ToUpdate.Contains(LBValidEntrances)) 
             {
-                var Entries = TrackerDataHandeling.PopulateAvailableEntraceList(dataset, WinFormUtils.CreateDivider(LBValidEntrances), CurrentTrackerInstance, TXTEntSearch.Text, CHKShowAll.Checked, out int x, out int y);
+                var Entries = TrackerDataHandeling.PopulateAvailableEntraceList(dataset, WinFormUtils.CreateDivider(LBValidEntrances), InstanceContainer.Instance, TXTEntSearch.Text, CHKShowAll.Checked, out int x, out int y);
                 lblAvailableEntrances.Text = $"Available Entrances: {y}" + (x != y ? $"/{x}" : "");
                 foreach (var i in Entries) { LBValidEntrances.Items.Add(i); }
                 LBValidEntrances.TopIndex = lbEntTop; 
             }
             if (ToUpdate.Contains(LBCheckedLocations)) 
             {
-                var Entries = TrackerDataHandeling.PopulateCheckedLocationList(dataset, WinFormUtils.CreateDivider(LBCheckedLocations), CurrentTrackerInstance, TXTCheckedSearch.Text, out int x, out int y);
+                var Entries = TrackerDataHandeling.PopulateCheckedLocationList(dataset, WinFormUtils.CreateDivider(LBCheckedLocations), InstanceContainer.Instance, TXTCheckedSearch.Text, out int x, out int y);
                 lblCheckedLocation.Text = $"Checked Locations: {y}" + (x != y ? $"/{x}" : "");
                 foreach (var i in Entries) { LBCheckedLocations.Items.Add(i); }
                 LBCheckedLocations.TopIndex = lbCheckTop; 
@@ -578,22 +576,22 @@ namespace Windows_Form_Frontend
 
         public void FormatMenuItems()
         {
-            OptionstoolStripMenuItem.Visible = (CurrentTrackerInstance != null);
-            toolsToolStripMenuItem.Visible = (CurrentTrackerInstance != null);
-            undoToolStripMenuItem.Visible = (CurrentTrackerInstance != null);
-            redoToolStripMenuItem.Visible = (CurrentTrackerInstance != null);
-            refreshToolStripMenuItem.Visible = (CurrentTrackerInstance != null);
-            SavetoolStripMenuItem1.Visible = (CurrentTrackerInstance != null);
-            spoilerLogToolsToolStripMenuItem.Visible = (CurrentTrackerInstance != null);
-            importSpoilerLogToolStripMenuItem.Visible = (CurrentTrackerInstance != null);
-            PathFinderToolStripMenuItem.Visible = (CurrentTrackerInstance != null && CurrentTrackerInstance.EntrancePool.IsEntranceRando);
+            OptionstoolStripMenuItem.Visible = (InstanceContainer.Instance != null);
+            toolsToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
+            undoToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
+            redoToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
+            refreshToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
+            SavetoolStripMenuItem1.Visible = (InstanceContainer.Instance != null);
+            spoilerLogToolsToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
+            importSpoilerLogToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
+            PathFinderToolStripMenuItem.Visible = (InstanceContainer.Instance != null && InstanceContainer.Instance.EntrancePool.IsEntranceRando);
 
             logicEditorToolStripMenuItem.Visible = false;
 
-            if (CurrentTrackerInstance == null) { return; }
+            if (InstanceContainer.Instance == null) { return; }
 
             SaveAsToolStripMenuItem1.Visible = (File.Exists(References.CurrentSavePath));
-            importSpoilerLogToolStripMenuItem.Text = (CurrentTrackerInstance.SpoilerLog != null) ? "Remove Spoiler Log" : "Import Spoiler Log";
+            importSpoilerLogToolStripMenuItem.Text = (InstanceContainer.Instance.SpoilerLog != null) ? "Remove Spoiler Log" : "Import Spoiler Log";
 
             //Manage Dev Menus
             devToolsToolStripMenuItem.Visible = Testing.IsDevUser();
@@ -609,10 +607,10 @@ namespace Windows_Form_Frontend
             //Create List Box Toggle
             ToolStripComboBox ListBoxDisplayOptions = new();
             ListBoxDisplayOptions.Items.AddRange(OptionData.DisplayListBoxes);
-            ListBoxDisplayOptions.SelectedIndex = OptionData.DisplayListBoxes.ToList().IndexOf(CurrentTrackerInstance.StaticOptions.ShowOptionsInListBox);
+            ListBoxDisplayOptions.SelectedIndex = OptionData.DisplayListBoxes.ToList().IndexOf(InstanceContainer.Instance.StaticOptions.ShowOptionsInListBox);
             ListBoxDisplayOptions.SelectedIndexChanged += delegate (object sender, EventArgs e)
             {
-                CurrentTrackerInstance.StaticOptions.ShowOptionsInListBox = ((ToolStripComboBox)sender).SelectedItem.ToString();
+                InstanceContainer.Instance.StaticOptions.ShowOptionsInListBox = ((ToolStripComboBox)sender).SelectedItem.ToString();
                 PrintToListBox();
             };
             ToolStripMenuItem ListBoxDisplay = new() { Text = "Display In List Box" };
@@ -620,7 +618,7 @@ namespace Windows_Form_Frontend
             RandomizerOptionsToolStripMenuItem1.DropDownItems.Add(ListBoxDisplay);
             RandomizerOptionsToolStripMenuItem1.DropDownItems.Add(new ToolStripSeparator());
             //Add User Options
-            foreach (var i in CurrentTrackerInstance.UserOptions.Values)
+            foreach (var i in InstanceContainer.Instance.UserOptions.Values)
             {
                 if (i.IsToggleOption())
                 {
@@ -645,7 +643,7 @@ namespace Windows_Form_Frontend
                     RandomizerOptionsToolStripMenuItem1.DropDownItems.Add(menuItem);
                 }
             }
-            foreach(var i in CurrentTrackerInstance.Variables.Values.Where(x => !x.Static))
+            foreach(var i in InstanceContainer.Instance.Variables.Values.Where(x => !x.Static))
             {
                 ToolStripMenuItem menuItem = new() { Text = i.ToString() };
                 menuItem.Click += delegate (object sender, EventArgs e) { HandleItemSelect(new List<LogicDictionaryData.TrackerVariable> { i }, MiscData.CheckState.Checked); };
@@ -658,7 +656,7 @@ namespace Windows_Form_Frontend
         private void ShowContextMenu(ListBox listBox)
         {
             string LogicID = null;
-            if (listBox.SelectedItem is EntranceData.EntranceRandoExit LogicexitObject) { LogicID = CurrentTrackerInstance.GetLogicNameFromExit(LogicexitObject); }
+            if (listBox.SelectedItem is EntranceData.EntranceRandoExit LogicexitObject) { LogicID = InstanceContainer.Instance.GetLogicNameFromExit(LogicexitObject); }
             if (listBox.SelectedItem is LocationData.LocationObject LogicLocationObject) { LogicID = LogicLocationObject.ID; }
             if (listBox.SelectedItem is HintData.HintObject LogicHintObject) { LogicID = LogicHintObject.ID; }
             if (listBox.SelectedItem is LocationData.LocationProxy LogicProxyObject) { LogicID = LogicProxyObject.LogicInheritance ?? LogicProxyObject.ReferenceID; }
@@ -670,9 +668,9 @@ namespace Windows_Form_Frontend
             RefreshContextItem.Click += (sender, e) => { PrintToListBox(new List<ListBox> { listBox }); };
 
             //Navigate to Area
-            if (listBox.SelectedItem is MiscData.Areaheader NavAreaObject && 
-                CurrentTrackerInstance.EntrancePool.AreaList.ContainsKey(NavAreaObject.Area) && 
-                CurrentTrackerInstance.EntrancePool.IsEntranceRando)
+            if (listBox.SelectedItem is MiscData.Areaheader NavAreaObject &&
+                InstanceContainer.Instance.EntrancePool.AreaList.ContainsKey(NavAreaObject.Area) &&
+                InstanceContainer.Instance.EntrancePool.IsEntranceRando)
             {
                 ToolStripItem NavigateHereContextItem = contextMenuStrip.Items.Add("Navigate To this area");
                 NavigateHereContextItem.Click += (sender, e) => { CMBEnd.SelectedItem = NavAreaObject.Area; };
@@ -699,14 +697,14 @@ namespace Windows_Form_Frontend
             }
 
             //Show Logic
-            if (LogicID is not null && CurrentTrackerInstance.InstanceReference.LogicFileMapping.ContainsKey(LogicID))
+            if (LogicID is not null && InstanceContainer.Instance.InstanceReference.LogicFileMapping.ContainsKey(LogicID))
             {
                 ToolStripItem ShowLogicFunction = contextMenuStrip.Items.Add("Show Logic");
-                ShowLogicFunction.Click += (sender, e) => { new ShowLogic(LogicID, CurrentTrackerInstance).Show(); };
+                ShowLogicFunction.Click += (sender, e) => { new ShowLogic(LogicID, InstanceContainer.Instance).Show(); };
             }
 
             //Show Unlock Data
-            if (LogicID is not null && LogicCalculation.LogicUnlockData.ContainsKey(LogicID))
+            if (LogicID is not null && InstanceContainer.logicCalculation.LogicUnlockData.ContainsKey(LogicID))
             {
                 ToolStripItem WhatUnlockedThis = contextMenuStrip.Items.Add("What Unlocked This");
                 WhatUnlockedThis.Click += (sender, e) => { ShowUnlockData(LogicID); };
@@ -716,7 +714,7 @@ namespace Windows_Form_Frontend
             if ((LogicID is not null) && (listBox == LBValidLocations || listBox == LBValidEntrances))
             {
                 dynamic TargetLocationObject = listBox.SelectedItem;
-                if (listBox.SelectedItem is LocationData.LocationProxy tp) { TargetLocationObject = CurrentTrackerInstance.GetLocationByID(tp.ReferenceID); }
+                if (listBox.SelectedItem is LocationData.LocationProxy tp) { TargetLocationObject = InstanceContainer.Instance.GetLocationByID(tp.ReferenceID); }
                 //Check Item
                 ToolStripItem CheckContextItem = contextMenuStrip.Items.Add("Check Location");
                 CheckContextItem.Click += (sender, e) => { HandleItemSelect(new List<object> { listBox.SelectedItem }, MiscData.CheckState.Checked, LB: listBox); };
@@ -749,7 +747,7 @@ namespace Windows_Form_Frontend
 
             //Object Price Edit
             dynamic Target = null;
-            if (listBox.SelectedItem is LocationData.LocationProxy ProxyPriceSet) { Target = ProxyPriceSet.GetLogicInheritance(CurrentTrackerInstance); }
+            if (listBox.SelectedItem is LocationData.LocationProxy ProxyPriceSet) { Target = ProxyPriceSet.GetLogicInheritance(InstanceContainer.Instance); }
             else if (listBox.SelectedItem is LocationData.LocationObject LocPriceSet) { Target = LocPriceSet; }
             if (Utility.DynamicPropertyExist(Target, "Price"))
             {
@@ -772,13 +770,13 @@ namespace Windows_Form_Frontend
                     Debug.WriteLine(JsonConvert.SerializeObject(listBox.SelectedItem, Testing._NewtonsoftJsonSerializerOptions));
                     if (listBox.SelectedItem is LocationData.LocationObject DebugLocObj)
                     {
-                        Debug.WriteLine(JsonConvert.SerializeObject(DebugLocObj.GetDictEntry(CurrentTrackerInstance), Testing._NewtonsoftJsonSerializerOptions));
+                        Debug.WriteLine(JsonConvert.SerializeObject(DebugLocObj.GetDictEntry(InstanceContainer.Instance), Testing._NewtonsoftJsonSerializerOptions));
                     }
                     if (listBox.SelectedItem is LocationData.LocationProxy DebugProxyObj)
                     {
-                        var ProxyRef = CurrentTrackerInstance.GetLocationByID(DebugProxyObj.ReferenceID);
+                        var ProxyRef = InstanceContainer.Instance.GetLocationByID(DebugProxyObj.ReferenceID);
                         Debug.WriteLine(JsonConvert.SerializeObject(ProxyRef, Testing._NewtonsoftJsonSerializerOptions));
-                        Debug.WriteLine(JsonConvert.SerializeObject(ProxyRef?.GetDictEntry(CurrentTrackerInstance), Testing._NewtonsoftJsonSerializerOptions));
+                        Debug.WriteLine(JsonConvert.SerializeObject(ProxyRef?.GetDictEntry(InstanceContainer.Instance), Testing._NewtonsoftJsonSerializerOptions));
                     }
                 };
             }
@@ -791,19 +789,19 @@ namespace Windows_Form_Frontend
 
         private void SetCheckPrice(dynamic Object)
         {
-            var DictEntry = Object.GetDictEntry(CurrentTrackerInstance);
+            var DictEntry = Object.GetDictEntry(InstanceContainer.Instance);
             var PriceContainer = new List<LogicDictionaryData.TrackerVariable>() { new() { ID = DictEntry.Name ?? DictEntry.ID, Value = 0 } };
-            VariableInputWindow PriceInput = new(PriceContainer, CurrentTrackerInstance);
+            VariableInputWindow PriceInput = new(PriceContainer, InstanceContainer.Instance);
             PriceInput.ShowDialog();
             Object.Price = (int)PriceContainer.First().Value;
-            LogicCalculation.CalculateLogic(CurrentTrackerInstance, LogicCalculation.LogicUnlockData);
+            InstanceContainer.logicCalculation.CalculateLogic();
             UpdateUI();
         }
 
         private void ShowUnlockData(string iD)
         {
-            if (!LogicCalculation.LogicUnlockData.ContainsKey(iD)) { return; }
-            var AdvancedUnlockData = PlaythroughTools.GetAdvancedUnlockData(iD, LogicCalculation.LogicUnlockData, CurrentTrackerInstance);
+            if (!InstanceContainer.logicCalculation.LogicUnlockData.ContainsKey(iD)) { return; }
+            var AdvancedUnlockData = PlaythroughTools.GetAdvancedUnlockData(iD, InstanceContainer.logicCalculation.LogicUnlockData, InstanceContainer.Instance);
             MessageBox.Show(JsonConvert.SerializeObject(AdvancedUnlockData, Testing._NewtonsoftJsonSerializerOptions), $"{iD}");
         }
 
@@ -827,10 +825,10 @@ namespace Windows_Form_Frontend
             Utility.TimeCodeExecution(FullCodeTimer);
             Stopwatch CodeTimer = new Stopwatch();
             Utility.TimeCodeExecution(CodeTimer);
-            string CurrentState = Utf8Json.JsonSerializer.ToJsonString(CurrentTrackerInstance);
+            string CurrentState = Utf8Json.JsonSerializer.ToJsonString(InstanceContainer.Instance);
             Utility.TimeCodeExecution(CodeTimer, "Saving tracker State", 1);
 
-            bool ChangesMade = TrackerDataHandeling.CheckSelectedItems(Items, checkState, CurrentTrackerInstance, HandleUnassignedChecks, HandleUnassignedVariables, EnforceMarkAction, FullCodeTimer);
+            bool ChangesMade = TrackerDataHandeling.CheckSelectedItems(Items, checkState, InstanceContainer, HandleUnassignedChecks, HandleUnassignedVariables, EnforceMarkAction, FullCodeTimer);
             Utility.TimeCodeExecution(CodeTimer, "---TOTAL Checking Selected Objects", 1);
 
             if (ChangesMade) { SaveTrackerState(CurrentState); }
@@ -860,24 +858,24 @@ namespace Windows_Form_Frontend
 
         private void UpdateUndoList(string State)
         {
-            RedoStringList.Clear();
-            UndoStringList.Add(State);
-            redoToolStripMenuItem.Enabled = RedoStringList.Any();
-            undoToolStripMenuItem.Enabled = UndoStringList.Any();
+            InstanceContainer.RedoStringList.Clear();
+            InstanceContainer.UndoStringList.Add(State);
+            redoToolStripMenuItem.Enabled = InstanceContainer.RedoStringList.Any();
+            undoToolStripMenuItem.Enabled = InstanceContainer.UndoStringList.Any();
         }
 
         //Other
 
         private void SaveTrackerState(string PreviousState = null)
         {
-            if (PreviousState == null) { UpdateUndoList(Utf8Json.JsonSerializer.ToJsonString(CurrentTrackerInstance)); }
+            if (PreviousState == null) { UpdateUndoList(Utf8Json.JsonSerializer.ToJsonString(InstanceContainer.Instance)); }
             else { UpdateUndoList(PreviousState); }
-            UnsavedChanges = true;
+            InstanceContainer.UnsavedChanges = true;
         }
 
         public bool PromptSave()
         {
-            if (CurrentTrackerInstance == null || !UnsavedChanges) { return true; }
+            if (InstanceContainer.Instance == null || !InstanceContainer.UnsavedChanges) { return true; }
             var result = MessageBox.Show("You have unsaved Changes. Would you Like to Save?", "Unsaved Changes", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
             switch (result)
             {
@@ -969,7 +967,7 @@ namespace Windows_Form_Frontend
 
         private void miscOptionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            StaticOptionSelect staticOptionSelect = new StaticOptionSelect(CurrentTrackerInstance);
+            StaticOptionSelect staticOptionSelect = new StaticOptionSelect(InstanceContainer.Instance);
             staticOptionSelect.ShowDialog();
             UpdateUI();
         }
@@ -977,11 +975,11 @@ namespace Windows_Form_Frontend
         private void BTNFindPath_Click(object sender, EventArgs e)
         {
             if (CMBStart.SelectedIndex < 0 || CMBEnd.SelectedIndex < 0 || CMBStart.SelectedItem.ToString() == CMBEnd.SelectedItem.ToString()) { return; }
-            LBPathFinder.Font = WinFormUtils.GetFontFromString(CurrentTrackerInstance.StaticOptions.OptionFile.WinformData.FormFont);
+            LBPathFinder.Font = WinFormUtils.GetFontFromString(InstanceContainer.Instance.StaticOptions.OptionFile.WinformData.FormFont);
             LBPathFinder.ItemHeight = Convert.ToInt32(LBPathFinder.Font.Size * 1.8);
             LBPathFinder.DataSource = new List<string> { "Finding path" };
             MainInterfacepathfinder = new Pathfinder();
-            MainInterfacepathfinder.FindPath(CurrentTrackerInstance, (string)CMBStart.SelectedItem, (string)CMBEnd.SelectedItem, new List<string>(), new Dictionary<string, string>());
+            MainInterfacepathfinder.FindPath(InstanceContainer.Instance, (string)CMBStart.SelectedItem, (string)CMBEnd.SelectedItem, new List<string>(), new Dictionary<string, string>());
             MainInterfacepathfinder.FinalPath = MainInterfacepathfinder.FinalPath.OrderBy(x => x.Count).ToList();
             if (!MainInterfacepathfinder.FinalPath.Any()) { LBPathFinder.DataSource = new List<string> { "No Path Found" }; }
             else { PrintPaths(); }
@@ -1020,7 +1018,7 @@ namespace Windows_Form_Frontend
 
         private void PathFinderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            PopoutPathfinder popoutPathfinder = new PopoutPathfinder(CurrentTrackerInstance);
+            PopoutPathfinder popoutPathfinder = new PopoutPathfinder(InstanceContainer.Instance);
             popoutPathfinder.Show();
         }
 
@@ -1036,15 +1034,15 @@ namespace Windows_Form_Frontend
         private void ExportCheckedToolStripMenuItem_Click(object sender, EventArgs e)
         {
             List<string> CheckedObjects = new List<string>();
-            foreach(var i in CurrentTrackerInstance.LocationPool)
+            foreach(var i in InstanceContainer.Instance.LocationPool)
             {
                 if (i.Value.CheckState == MiscData.CheckState.Checked) { CheckedObjects.Add(i.Key); }
             }
-            foreach (var i in CurrentTrackerInstance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values))
+            foreach (var i in InstanceContainer.Instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values))
             {
                 if (i.CheckState == MiscData.CheckState.Checked) { CheckedObjects.Add($"{i.ParentAreaID} | {i.ID}"); }
             }
-            foreach (var i in CurrentTrackerInstance.HintPool)
+            foreach (var i in InstanceContainer.Instance.HintPool)
             {
                 if (i.Value.CheckState == MiscData.CheckState.Checked) { CheckedObjects.Add(i.Key); }
             }
@@ -1057,14 +1055,14 @@ namespace Windows_Form_Frontend
             List<string> CheckedObjects = JsonConvert.DeserializeObject<List<string>>(Clipboard.GetText());
             foreach(var i in CheckedObjects)
             {
-                if (CurrentTrackerInstance.LocationPool.ContainsKey(i)) { ToCheck.Add(CurrentTrackerInstance.LocationPool[i]); }
-                else if (CurrentTrackerInstance.HintPool.ContainsKey(i)) { ToCheck.Add(CurrentTrackerInstance.HintPool[i]); }
+                if (InstanceContainer.Instance.LocationPool.ContainsKey(i)) { ToCheck.Add(InstanceContainer.Instance.LocationPool[i]); }
+                else if (InstanceContainer.Instance.HintPool.ContainsKey(i)) { ToCheck.Add(InstanceContainer.Instance.HintPool[i]); }
                 else if (i.Contains(" | "))
                 {
                     var data = i.Split('|').Select(x => x.Trim()).ToArray();
-                    if (CurrentTrackerInstance.EntrancePool.AreaList.ContainsKey(data[0]) && CurrentTrackerInstance.EntrancePool.AreaList[data[0]].LoadingZoneExits.ContainsKey(data[1]))
+                    if (InstanceContainer.Instance.EntrancePool.AreaList.ContainsKey(data[0]) && InstanceContainer.Instance.EntrancePool.AreaList[data[0]].LoadingZoneExits.ContainsKey(data[1]))
                     {
-                        ToCheck.Add(CurrentTrackerInstance.EntrancePool.AreaList[data[0]].LoadingZoneExits[data[1]]);
+                        ToCheck.Add(InstanceContainer.Instance.EntrancePool.AreaList[data[0]].LoadingZoneExits[data[1]]);
                     }
                 }
             }
@@ -1073,7 +1071,7 @@ namespace Windows_Form_Frontend
 
         private void spoilerLogToolsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SpoilerLogLookUp spoilerLogLookUp = new SpoilerLogLookUp(CurrentTrackerInstance);
+            SpoilerLogLookUp spoilerLogLookUp = new SpoilerLogLookUp(InstanceContainer.Instance);
             spoilerLogLookUp.Show();
         }
 

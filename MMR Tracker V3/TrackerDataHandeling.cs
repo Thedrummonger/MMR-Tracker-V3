@@ -42,7 +42,7 @@ namespace MMR_Tracker_V3
             public List<ItemData.ItemObject> OnlineObtainedItems { get; set; } = new List<ItemData.ItemObject>();
         }
 
-        public static bool CheckSelectedItems(IEnumerable<object> Items, MiscData.CheckState checkState, LogicObjects.TrackerInstance Instance, Func<IEnumerable<object>, LogicObjects.TrackerInstance, bool> CheckUnassignedLocations, Func<IEnumerable<object>, LogicObjects.TrackerInstance, bool> CheckUnassignedVariable, bool EnforceMarkAction = false, Stopwatch CodeTimer = null)
+        public static bool CheckSelectedItems(IEnumerable<object> Items, MiscData.CheckState checkState, MiscData.InstanceContainer instanceContainer, Func<IEnumerable<object>, LogicObjects.TrackerInstance, bool> CheckUnassignedLocations, Func<IEnumerable<object>, LogicObjects.TrackerInstance, bool> CheckUnassignedVariable, bool EnforceMarkAction = false, Stopwatch CodeTimer = null)
         {
             Debug.WriteLine("Checking Item-----------------------------");
             Stopwatch FunctionTime = new Stopwatch();
@@ -53,7 +53,7 @@ namespace MMR_Tracker_V3
 
             //Search for valid Object types in the list of selected Objects and sort them into lists
             IEnumerable<LocationData.LocationObject> locationObjects = Items.Where(x => x is LocationData.LocationObject).Select(x => x as LocationData.LocationObject);
-            locationObjects = locationObjects.Concat(Items.Where(x => x is LocationData.LocationProxy).Select(x => (x as LocationData.LocationProxy).GetReferenceLocation(Instance)));
+            locationObjects = locationObjects.Concat(Items.Where(x => x is LocationData.LocationProxy).Select(x => (x as LocationData.LocationProxy).GetReferenceLocation(instanceContainer.Instance)));
             locationObjects = locationObjects.Distinct();
             IEnumerable<EntranceData.EntranceRandoExit> ExitObjects = Items.Where(x => x is EntranceData.EntranceRandoExit).Select(x => x as EntranceData.EntranceRandoExit);
             IEnumerable<OptionData.TrackerOption> OptionObjects = Items.Where(x => x is OptionData.TrackerOption).Select(x => x as OptionData.TrackerOption);
@@ -72,11 +72,11 @@ namespace MMR_Tracker_V3
             //For any Locations with no randomized item, check if an item can be automatically assigned.
             foreach (LocationData.LocationObject LocationObject in UncheckedlocationObjects)
             {
-                LocationObject.Randomizeditem.Item = LocationObject.GetItemAtCheck(Instance);
+                LocationObject.Randomizeditem.Item = LocationObject.GetItemAtCheck(instanceContainer.Instance);
             }
             foreach (EntranceData.EntranceRandoExit ExitObject in UncheckedExitObjects)
             {
-                ExitObject.DestinationExit = ExitObject.GetDestinationAtExit(Instance);
+                ExitObject.DestinationExit = ExitObject.GetDestinationAtExit(instanceContainer.Instance);
             }
             Utility.TimeCodeExecution(FunctionTime, "Checking for Randmomized item data", 1);
 
@@ -87,7 +87,7 @@ namespace MMR_Tracker_V3
             if (ManualChecks.Any())
             {
                 if (CodeTimer != null) { CodeTimer.Stop(); }
-                CheckUnassignedLocations(ManualChecks, Instance);
+                CheckUnassignedLocations(ManualChecks, instanceContainer.Instance);
                 ChangesMade = true;
                 if (CodeTimer != null) { CodeTimer.Start(); }
             }
@@ -101,14 +101,14 @@ namespace MMR_Tracker_V3
             {
                 //When we mark a location, the action is always sent as Marked, but if the location is already marked we should instead Unchecked it unless EnforceMarkAction is true.
                 var Action = (checkState == MiscData.CheckState.Marked && LocationObject.CheckState == MiscData.CheckState.Marked) && !EnforceMarkAction ? MiscData.CheckState.Unchecked : checkState;
-                if (LocationObject.ToggleChecked(Action, Instance)) { ChangesMade = true; }
+                if (LocationObject.ToggleChecked(Action, instanceContainer.Instance)) { ChangesMade = true; }
             }
             Utility.TimeCodeExecution(FunctionTime, "Checking Locations", 1);
             //Exits======================================
             foreach (EntranceData.EntranceRandoExit ExitObject in ExitObjects)
             {
                 var Action = (checkState == MiscData.CheckState.Marked && ExitObject.CheckState == MiscData.CheckState.Marked) && !EnforceMarkAction ? MiscData.CheckState.Unchecked : checkState;
-                if (ExitObject.ToggleExitChecked(Action, Instance)) { ChangesMade = true; }
+                if (ExitObject.ToggleExitChecked(Action, instanceContainer.Instance)) { ChangesMade = true; }
             }
             Utility.TimeCodeExecution(FunctionTime, "Checking Entrances", 1);
 
@@ -124,7 +124,7 @@ namespace MMR_Tracker_V3
             if (UncheckedVariableObjects.Any())
             {
                 if (CodeTimer != null) { CodeTimer.Stop(); }
-                CheckUnassignedVariable(UncheckedVariableObjects, Instance);
+                CheckUnassignedVariable(UncheckedVariableObjects, instanceContainer.Instance);
                 ChangesMade = true;
                 if (CodeTimer != null) { CodeTimer.Start(); }
             }
@@ -142,11 +142,11 @@ namespace MMR_Tracker_V3
 
             if (ChangesMade && checkState != MiscData.CheckState.Marked)
             {
-                LogicCalculation.CalculateLogic(Instance, LogicCalculation.LogicUnlockData, checkState);
+                instanceContainer.logicCalculation.CalculateLogic(checkState);
                 Utility.TimeCodeExecution(FunctionTime, "---TOTAL Calculating Logic", 1);
-                if (checkState == MiscData.CheckState.Checked && Instance.StaticOptions.AutoCheckCoupleEntrances && !Instance.StaticOptions.DecoupleEntrances && LogicCalculation.CheckEntrancePair(Instance))
+                if (checkState == MiscData.CheckState.Checked && instanceContainer.Instance.StaticOptions.AutoCheckCoupleEntrances && !instanceContainer.Instance.StaticOptions.DecoupleEntrances && instanceContainer.logicCalculation.CheckEntrancePair())
                 {
-                    LogicCalculation.CalculateLogic(Instance, LogicCalculation.LogicUnlockData, checkState);
+                    instanceContainer.logicCalculation.CalculateLogic(checkState);
                     Utility.TimeCodeExecution(FunctionTime, "Chcking Entrance Pairs", 1);
                 }
             }

@@ -43,6 +43,14 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return Display;
             }
         }
+        public class InstanceContainer
+        {
+            public LogicObjects.TrackerInstance Instance { get; set; }
+            public LogicCalculation logicCalculation { get; set; }
+            public List<string> UndoStringList { get; set; } = new List<string>();
+            public List<string> RedoStringList { get; set; } = new List<string>();
+            public bool UnsavedChanges { get; set; } = false;
+        }
         [Serializable]
         public enum CheckState
         {

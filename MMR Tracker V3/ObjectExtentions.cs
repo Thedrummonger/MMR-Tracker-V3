@@ -42,5 +42,85 @@ namespace MMR_Tracker_V3
         {
             instance.InstanceReference.ExitLogicMap.Add($"{Exit.Area} X {Exit.Exit}", LogicName);
         }
+        public static MMRData.JsonFormatLogicItem GetLogic(this TrackerInstance instance, string OriginalID, bool DoEdits = true)
+        {
+            bool Literal = OriginalID.IsLiteralID(out string ID);
+            LogicEntryType entryType = instance.GetLocationEntryType(ID, Literal, out dynamic Obj);
+            LogicFileType LogicFile = Obj.referenceData.LogicList;
+            int LogicFileIndex = Obj.referenceData.LogicIndex;
+            MMRData.JsonFormatLogicItem LogicFileEntry = null;
+
+            switch (LogicFile)
+            {
+                case LogicFileType.Logic:
+                    LogicFileEntry = instance.LogicFile.Logic[LogicFileIndex];
+                    break;
+                case LogicFileType.Additional:
+                    LogicFileEntry = instance.LogicDictionary.AdditionalLogic[LogicFileIndex];
+                    break;
+                case LogicFileType.Runtime:
+                    LogicFileEntry = instance.RuntimeLogic[OriginalID];
+                    break;
+            }
+
+            Utility.DeepCloneLogic(LogicFileEntry.RequiredItems, LogicFileEntry.ConditionalItems, out List<string> CopyRequirements, out List<List<string>> CopyConditionals);
+
+            if (entryType == LogicEntryType.macro)
+            {
+                var MacroData = instance.GetMacroByID(ID);
+                if (MacroData.Price > -1 && !instance.PriceData.CapacityMap.Values.Contains(ID) && DoEdits)
+                {
+                    LogicEditing.HandlePriceLogic(instance, MacroData.Price, CopyRequirements, CopyConditionals, out CopyRequirements, out CopyConditionals);
+                }
+            }
+            else if (entryType == LogicEntryType.location)
+            {
+                var LocationData = instance.GetLocationByID(ID);
+                if (LocationData.Price > -1 && !instance.PriceData.CapacityMap.Values.Contains(ID) && DoEdits)
+                {
+                    LogicEditing.HandlePriceLogic(instance, LocationData.Price, CopyRequirements, CopyConditionals, out CopyRequirements, out CopyConditionals);
+                }
+            }
+
+            if (DoEdits) { LogicEditing.HandleOptionLogicEdits(instance.UserOptions.Values, ID, CopyRequirements, CopyConditionals, out CopyRequirements, out CopyConditionals); }
+
+            return new MMRData.JsonFormatLogicItem
+            {
+                Id = ID,
+                IsTrick = LogicFileEntry != null && LogicFileEntry.IsTrick,
+                RequiredItems = CopyRequirements,
+                ConditionalItems = CopyConditionals,
+                TimeAvailable = LogicFileEntry == null ? TimeOfDay.None : LogicFileEntry.TimeAvailable,
+                TimeNeeded = LogicFileEntry == null ? TimeOfDay.None : LogicFileEntry.TimeNeeded,
+                TimeSetup = LogicFileEntry == null ? TimeOfDay.None : LogicFileEntry.TimeSetup,
+                TrickCategory = LogicFileEntry?.TrickCategory,
+                TrickTooltip = LogicFileEntry?.TrickTooltip
+            };
+        }
+
+
+        public static bool MultipleItemEntry(this LogicObjects.TrackerInstance instance, string Entry, out string Item, out int Amount)
+        {
+            Item = Entry;
+            Amount = 1;
+            if (!Entry.Contains(",")) { return false; }
+            var data = Entry.Split(',').Select(x => x.Trim()).ToArray();
+            Item = data[0];
+            if (data.Length < 2) { return false; }
+            if (int.TryParse(data[1].Trim(), out Amount))
+            {
+                return true;
+            }
+            else if (instance.Variables.ContainsKey(data[1]) && instance.Variables[data[1]].Value is Int64 amount)
+            {
+                Amount = (int)amount;
+                return true;
+            }
+            else
+            {
+                Amount = 1;
+                return false;
+            }
+        }
     }
 }

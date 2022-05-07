@@ -23,6 +23,7 @@ namespace Windows_Form_Frontend
         private readonly List<CheckBox> TimeCheckBoxes;
         private readonly List<string> GoBackList = new();
         private List<object> CurrentGotoData;
+        private LogicCalculation LogicCalculation;
         //0 = Show Logic; 1 = Goto Entry
         public int state = 0;
         public ShowLogic(string id, LogicObjects.TrackerInstance _instance)
@@ -38,6 +39,7 @@ namespace Windows_Form_Frontend
                 BottomPosCut = LBReq.Location.Y + LBReq.Height,
             };
             TimeCheckBoxes = new() { ND1, NN1, ND2, NN2, ND3, NN3, SD1, SN1, SD2, SN2, SD3, SN3 };
+            LogicCalculation = new LogicCalculation(new InstanceContainer { Instance = instance });
         }
 
         public class ListBoxHeightData
@@ -124,8 +126,8 @@ namespace Windows_Form_Frontend
 
         public bool GetAvailable(MMR_Tracker_V3.TrackerObjects.MMRData.JsonFormatLogicItem Logic, LogicEntryType type, string id)
         {
-            bool AreaReached = type != LogicEntryType.Exit || LogicCalculation.AreaReached(instance.InstanceReference.EntranceLogicNameToEntryData[id].Area, instance);
-            return LogicCalculation.RequirementsMet(Logic.RequiredItems, instance, id) && LogicCalculation.ConditionalsMet(Logic.ConditionalItems, instance, id) && AreaReached;
+            string Area = type == LogicEntryType.Exit ? instance.InstanceReference.EntranceLogicNameToEntryData[id].Area : null;
+            return LogicCalculation.CalculatReqAndCond(Logic, id, Area);
         }
 
         private void ShowLogic_Load(object sender, EventArgs e)
@@ -312,7 +314,7 @@ namespace Windows_Form_Frontend
         }
         private List<string> GetChecksContainingSelectedID(string ID, out LogicEntryType Type, out string OutCleanedID)
         {
-            LogicCalculation.MultipleItemEntry(instance, ID, out string CleanedID, out int Amount);
+            instance.MultipleItemEntry(ID, out string CleanedID, out int Amount);
             bool ItemIsLitteral = CleanedID.IsLiteralID(out CleanedID);
             Type = instance.GetItemEntryType(CleanedID, ItemIsLitteral, out _);
             OutCleanedID = CleanedID;
@@ -334,7 +336,7 @@ namespace Windows_Form_Frontend
         }
         private string GetDisplayName(string i)
         {
-            return i + (LogicCalculation.LogicEntryAquired(instance, i, new List<string>()) ? "*" : "");
+            return i + (LogicCalculation.LogicEntryAquired( i, new List<string>()) ? "*" : "");
         }
 
         private void btnGoTo_Click(object sender, EventArgs e)
