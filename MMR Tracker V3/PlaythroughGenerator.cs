@@ -310,7 +310,9 @@ namespace MMR_Tracker_V3
         {
             if (playthroughObject == null)
             {
-                playthroughObject = new PlaythroughGenerator(instance);
+                var UncheckedLocations = GetUncheckedLocations(instance);
+                UncheckedLocations.Remove(ID);
+                playthroughObject = new PlaythroughGenerator(instance, UncheckedLocations);
                 playthroughObject.GeneratePlaythrough();
             }
 
@@ -350,9 +352,8 @@ namespace MMR_Tracker_V3
                 }
                 else if (type == MiscData.LogicEntryType.Area)
                 {
+                    if (!Data.AreasAccessed.Contains(LogicItem)) { Data.AreasAccessed.Add(LogicItem); }
                     if (AreasParsed.Contains(LogicItem)) { return; }
-                    Data.AreasAccessed.Add(LogicItem);
-                    if (!root) { return; }
                     AreasParsed.Add(LogicItem);
                     var PathToUnrandomizedExit = GetPathFromRandomizedEntrance(LogicItem, playthroughObject, instance);
                     if (!PathToUnrandomizedExit.Any())
@@ -364,6 +365,7 @@ namespace MMR_Tracker_V3
                     {
                         foreach (var i in PathToUnrandomizedExit)
                         {
+                            AreasParsed.Add(i.Area);
                             if (UnlockData.ContainsKey(instance.GetLogicNameFromExit(i)))
                             {
                                 foreach (var j in UnlockData[instance.GetLogicNameFromExit(i)]) { ParseItem(j, false); }
@@ -385,6 +387,20 @@ namespace MMR_Tracker_V3
 
             }
 
+        }
+
+        private static List<string> GetUncheckedLocations(LogicObjects.TrackerInstance instance)
+        {
+            List<string> Uncheckedlocations = new List<string>();
+            foreach (var i in instance.LocationPool.Values)
+            {
+                if (i.CheckState != MiscData.CheckState.Checked) { Uncheckedlocations.Add(i.ID); }
+            }
+            foreach (var i in instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values))
+            {
+                if (i.CheckState != MiscData.CheckState.Checked) { Uncheckedlocations.Add(instance.GetLogicNameFromExit(i)); }
+            }
+            return Uncheckedlocations;
         }
 
         public static List<EntranceData.EntranceAreaPair> GetPathFromRoot(string area, PlaythroughGenerator playthroughObject)
