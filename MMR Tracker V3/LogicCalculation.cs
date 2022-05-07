@@ -61,7 +61,7 @@ namespace MMR_Tracker_V3
                 case LogicEntryType.macro:
                     return container.Instance.GetMacroByID(LogicItem).Aquired; 
                 case LogicEntryType.Area:
-                    return AreaReached(LogicItem);
+                    return AreaReached(LogicItem, "");
                 case LogicEntryType.variableString:
                     return LogicEntryAquired(container.Instance.Variables[LogicItem].Value as string, SubUnlockData);
                 case LogicEntryType.variableList:
@@ -116,23 +116,30 @@ namespace MMR_Tracker_V3
             return CountMet;
         }
 
-        private bool AreaReached(string Area)
+        private bool AreaReached(string Area, string ID, Dictionary<string, List<string>> TempUnlockData = null)
         {
-            if (Area == container.Instance.EntrancePool.RootArea) { return true; }
-            return container.Instance.EntrancePool.AreaList.ContainsKey(Area) && container.Instance.EntrancePool.AreaList[Area].ExitsAcessibleFrom > 0;
+            bool IsRoot = Area is null || Area == container.Instance.EntrancePool.RootArea;
+            string TargetArea = (Area == null) ? container.Instance.EntrancePool.RootArea : Area;
+            bool Reachable = IsRoot || container.Instance.EntrancePool.AreaList.ContainsKey(Area) && container.Instance.EntrancePool.AreaList[Area].ExitsAcessibleFrom > 0;
+            if (TempUnlockData != null && Reachable)
+            {
+                if (!TempUnlockData.ContainsKey(ID)) { TempUnlockData.Add(ID, new List<string>()); }
+                TempUnlockData[ID].Add(TargetArea);
+            }
+            return Reachable;
         }
 
         public bool CalculatReqAndCond(MMRData.JsonFormatLogicItem Logic, string ID, string Area)
         {
             Dictionary<string, List<string>> TempUnlockData = new Dictionary<string, List<string>>();
             bool Available =
-                (Area == null || AreaReached(Area)) &&
+                (Area == null || AreaReached(Area, ID, TempUnlockData)) &&
                 RequirementsMet(Logic.RequiredItems, ID, TempUnlockData) &&
                 ConditionalsMet(Logic.ConditionalItems, ID, TempUnlockData);
 
             if (!LogicUnlockData.ContainsKey(ID) && Available)
             {
-                LogicUnlockData[ID] = TempUnlockData[ID];
+                LogicUnlockData[ID] = TempUnlockData[ID].Distinct().ToList();
             }
 
             return Available;

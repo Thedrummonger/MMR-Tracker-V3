@@ -187,7 +187,7 @@ namespace Windows_Form_Frontend
                 if (!sucess) { MessageBox.Show($"Error {SelectedItem.tag} Could not be reached this seed"); return; }
             }
 
-            var Result = playthroughGenerator.Playthrough.Where(x => x.Value.Important || (FullPlaythrough && x.Value.CheckType != MMR_Tracker_V3.TrackerObjects.MiscData.LogicEntryType.macro)).ToDictionary(x => x.Key, x => x.Value);
+            var Result = playthroughGenerator.Playthrough.Where(x => x.Value.Important || (FullPlaythrough && x.Value.CheckType != MiscData.LogicEntryType.macro)).ToDictionary(x => x.Key, x => x.Value);
 
             SaveFileDialog dlg = new SaveFileDialog();
             dlg.FileName = "Playthrough";
@@ -197,6 +197,8 @@ namespace Windows_Form_Frontend
             if (string.IsNullOrWhiteSpace(dlg.FileName)) { return; }
 
             File.WriteAllLines(dlg.FileName, playthroughGenerator.CreateReadablePlaythrough(Result));
+            if (Testing.IsDevUser()) { File.WriteAllText(Testing.CretaeTestingFile("UnlockData"), JsonConvert.SerializeObject(playthroughGenerator._Instance.logicCalculation.LogicUnlockData, Testing._NewtonsoftJsonSerializerOptions)); }
+            
         }
         #endregion PlaythroughGenerator
 

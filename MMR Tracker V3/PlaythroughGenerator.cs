@@ -351,23 +351,21 @@ namespace MMR_Tracker_V3
                 else if (type == MiscData.LogicEntryType.Area)
                 {
                     if (AreasParsed.Contains(LogicItem)) { return; }
+                    Data.AreasAccessed.Add(LogicItem);
+                    if (!root) { return; }
                     AreasParsed.Add(LogicItem);
-                    //Debug.WriteLine($"Geting Path to {LogicItem}");
                     var PathToUnrandomizedExit = GetPathFromRandomizedEntrance(LogicItem, playthroughObject, instance);
                     if (!PathToUnrandomizedExit.Any())
                     {
                         var ReqArea = GetClosestRandomizedArea(LogicItem, playthroughObject, instance);
-                        //Debug.WriteLine($"Path Was Empty Closet Unrand Area was {(ReqArea == null ? "root" : $"{Newtonsoft.Json.JsonConvert.SerializeObject(ReqArea)}")}");
                         if (ReqArea != null && !Data.AreasAccessed.Contains(ReqArea.DestinationExit.region)) { Data.AreasAccessed.Add(ReqArea.DestinationExit.region); }
                     }
                     else
                     {
-                        //Debug.WriteLine($"Path Contained {PathToUnrandomizedExit.Count} Steps");
                         foreach (var i in PathToUnrandomizedExit)
                         {
                             if (UnlockData.ContainsKey(instance.GetLogicNameFromExit(i)))
                             {
-                                //Debug.WriteLine($"Parsing {$"{i.Area} X {i.Exit}"}");
                                 foreach (var j in UnlockData[instance.GetLogicNameFromExit(i)]) { ParseItem(j, false); }
                             }
                         }
