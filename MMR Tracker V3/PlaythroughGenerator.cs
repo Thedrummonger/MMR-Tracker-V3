@@ -297,9 +297,9 @@ namespace MMR_Tracker_V3
     }
     public static class PlaythroughTools
     {
-        public static Dictionary<string, List<EntranceData.EntranceAreaPair>> PAthingMap = new Dictionary<string, List<EntranceData.EntranceAreaPair>>();
         public class AdvancedUnlockData
         {
+            public string Name { get; set; }
             public List<string> LogicUsed { get; set; } = new List<string>();
             public Dictionary<string, int> RealItemsUsed { get; set; } = new Dictionary<string, int>();
             public List<string> MacrosUsed { get; set; } = new List<string>();
@@ -323,7 +323,7 @@ namespace MMR_Tracker_V3
 
             var AreasParsed = new List<string>();
 
-            AdvancedUnlockData Data = new AdvancedUnlockData();
+            AdvancedUnlockData Data = new AdvancedUnlockData() { Name = ID };
             if (!UnlockData.ContainsKey(ID)) { return Data; }
             foreach (var Entry in UnlockData[ID])
             {
@@ -458,6 +458,41 @@ namespace MMR_Tracker_V3
                 { return instance.EntrancePool.AreaList[i.Area].LoadingZoneExits[i.Exit]; }
             }
             return null;
+        }
+
+        public static List<dynamic> FormatAdvancedUnlockData(AdvancedUnlockData ADVUnlockData, Dictionary<string, List<string>> UnlockData)
+        {
+            List<dynamic> ReturnList = new List<dynamic>();
+            ReturnList.Add(ADVUnlockData.Name);
+            ReturnList.Add(string.Empty);
+            ReturnList.Add("LOGIC USED:");
+            foreach (var i in ADVUnlockData.LogicUsed)
+            {
+                ReturnList.Add(i);
+            }
+            ReturnList.Add(string.Empty);
+            ReturnList.Add("REAL ITEMS USED:");
+            foreach (var i in ADVUnlockData.RealItemsUsed)
+            {
+                ReturnList.Add(i);
+            }
+            ReturnList.Add(string.Empty);
+            ReturnList.Add("MACROS USED:");
+            foreach (var i in ADVUnlockData.MacrosUsed)
+            {
+                ReturnList.Add(i);
+                if (!UnlockData.ContainsKey(i) || !UnlockData[i].Any()) { continue; }
+                ReturnList.Add($"    Unlocked With: {string.Join(" | ", UnlockData[i])}");
+            }
+            ReturnList.Add(string.Empty);
+            ReturnList.Add("MACRO EXITS TAKEN:");
+            foreach (var i in ADVUnlockData.ExitsTaken)
+            {
+                ReturnList.Add(i);
+                if (!UnlockData.ContainsKey(i) || !UnlockData[i].Any()) { continue; }
+                ReturnList.Add($"    Unlocked With: {string.Join(" | ", UnlockData[i])}");
+            }
+            return ReturnList;
         }
     }
 }

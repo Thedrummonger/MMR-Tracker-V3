@@ -802,7 +802,9 @@ namespace Windows_Form_Frontend
         {
             if (!InstanceContainer.logicCalculation.LogicUnlockData.ContainsKey(iD)) { return; }
             var AdvancedUnlockData = PlaythroughTools.GetAdvancedUnlockData(iD, InstanceContainer.logicCalculation.LogicUnlockData, InstanceContainer.Instance);
-            MessageBox.Show(JsonConvert.SerializeObject(AdvancedUnlockData, Testing._NewtonsoftJsonSerializerOptions), $"{iD}");
+            BasicDisplay basicDisplay = new BasicDisplay(PlaythroughTools.FormatAdvancedUnlockData(AdvancedUnlockData, InstanceContainer.logicCalculation.LogicUnlockData));
+            basicDisplay.Text = $"Unlock Data for {iD}";
+            basicDisplay.Show();
         }
 
         //ListboxObject Handeling
