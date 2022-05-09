@@ -304,6 +304,7 @@ namespace MMR_Tracker_V3
             public Dictionary<string, int> RealItemsUsed { get; set; } = new Dictionary<string, int>();
             public List<string> MacrosUsed { get; set; } = new List<string>();
             public List<string> AreasAccessed { get; set; } = new List<string>();
+            public List<string> ExitsTaken { get; set; } = new List<string>();
             public List<string> OptionsUsed { get; set; } = new List<string>();
         }
         public static AdvancedUnlockData GetAdvancedUnlockData(string ID, Dictionary<string, List<string>> UnlockData, LogicObjects.TrackerInstance instance, PlaythroughGenerator playthroughObject = null)
@@ -366,6 +367,7 @@ namespace MMR_Tracker_V3
                         foreach (var i in PathToUnrandomizedExit)
                         {
                             AreasParsed.Add(i.Area);
+                            if (!Data.ExitsTaken.Contains(instance.GetLogicNameFromExit(i))) { Data.ExitsTaken.Add(instance.GetLogicNameFromExit(i)); }
                             if (UnlockData.ContainsKey(instance.GetLogicNameFromExit(i)))
                             {
                                 foreach (var j in UnlockData[instance.GetLogicNameFromExit(i)]) { ParseItem(j, false); }
