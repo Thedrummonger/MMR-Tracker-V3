@@ -1064,40 +1064,14 @@ namespace Windows_Form_Frontend
 
         private void ExportCheckedToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            List<string> CheckedObjects = new List<string>();
-            foreach(var i in InstanceContainer.Instance.LocationPool)
-            {
-                if (i.Value.CheckState == MiscData.CheckState.Checked) { CheckedObjects.Add(i.Key); }
-            }
-            foreach (var i in InstanceContainer.Instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values))
-            {
-                if (i.CheckState == MiscData.CheckState.Checked) { CheckedObjects.Add($"{i.ParentAreaID} | {i.ID}"); }
-            }
-            foreach (var i in InstanceContainer.Instance.HintPool)
-            {
-                if (i.Value.CheckState == MiscData.CheckState.Checked) { CheckedObjects.Add(i.Key); }
-            }
-            Clipboard.SetText(JsonConvert.SerializeObject(CheckedObjects, Testing._NewtonsoftJsonSerializerOptions));
+            InstanceContainer.LogicRecreation.SaveTrackerState(InstanceContainer);
+            MessageBox.Show("Instance Saved");
         }
 
         private void ImportCheckedToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            List<object> ToCheck = new List<object>();
-            List<string> CheckedObjects = JsonConvert.DeserializeObject<List<string>>(Clipboard.GetText());
-            foreach(var i in CheckedObjects)
-            {
-                if (InstanceContainer.Instance.LocationPool.ContainsKey(i)) { ToCheck.Add(InstanceContainer.Instance.LocationPool[i]); }
-                else if (InstanceContainer.Instance.HintPool.ContainsKey(i)) { ToCheck.Add(InstanceContainer.Instance.HintPool[i]); }
-                else if (i.Contains(" | "))
-                {
-                    var data = i.Split('|').Select(x => x.Trim()).ToArray();
-                    if (InstanceContainer.Instance.EntrancePool.AreaList.ContainsKey(data[0]) && InstanceContainer.Instance.EntrancePool.AreaList[data[0]].LoadingZoneExits.ContainsKey(data[1]))
-                    {
-                        ToCheck.Add(InstanceContainer.Instance.EntrancePool.AreaList[data[0]].LoadingZoneExits[data[1]]);
-                    }
-                }
-            }
-            HandleItemSelect(ToCheck, MiscData.CheckState.Checked);
+            InstanceContainer.LogicRecreation.LoadTrackerState(InstanceContainer);
+            UpdateUI();
         }
 
         private void spoilerLogToolsToolStripMenuItem_Click(object sender, EventArgs e)
