@@ -38,6 +38,7 @@ namespace MMR_Tracker_V3.TrackerObjects
         {
             public string Display { get; set; }
             public object tag { get; set; }
+            public Func<dynamic, dynamic> tagFunc { get; set; }
             public override string ToString()
             {
                 return Display;

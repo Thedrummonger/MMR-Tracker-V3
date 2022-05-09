@@ -460,32 +460,32 @@ namespace MMR_Tracker_V3
             return null;
         }
 
-        public static List<dynamic> FormatAdvancedUnlockData(AdvancedUnlockData ADVUnlockData, Dictionary<string, List<string>> UnlockData)
+        public static List<dynamic> FormatAdvancedUnlockData(AdvancedUnlockData ADVUnlockData, Dictionary<string, List<string>> UnlockData, string Divider = "")
         {
             List<dynamic> ReturnList = new List<dynamic>();
             ReturnList.Add(ADVUnlockData.Name);
-            ReturnList.Add(string.Empty);
-            ReturnList.Add("LOGIC USED:");
+            ReturnList.Add(new MiscData.Divider() { Display = Divider });
+            ReturnList.Add(new MiscData.Divider(){ Display = "LOGIC USED:" });
             foreach (var i in ADVUnlockData.LogicUsed)
             {
                 ReturnList.Add(i);
             }
-            ReturnList.Add(string.Empty);
-            ReturnList.Add("REAL ITEMS USED:");
+            ReturnList.Add(new MiscData.Divider() { Display = Divider });
+            ReturnList.Add(new MiscData.Divider() { Display = "REAL ITEMS USED:" });
             foreach (var i in ADVUnlockData.RealItemsUsed)
             {
                 ReturnList.Add(i);
             }
-            ReturnList.Add(string.Empty);
-            ReturnList.Add("MACROS USED:");
+            ReturnList.Add(new MiscData.Divider() { Display = Divider });
+            ReturnList.Add(new MiscData.Divider() { Display = "MACROS USED:" });
             foreach (var i in ADVUnlockData.MacrosUsed)
             {
                 ReturnList.Add(i);
                 if (!UnlockData.ContainsKey(i) || !UnlockData[i].Any()) { continue; }
                 ReturnList.Add($"    Unlocked With: {string.Join(" | ", UnlockData[i])}");
             }
-            ReturnList.Add(string.Empty);
-            ReturnList.Add("MACRO EXITS TAKEN:");
+            ReturnList.Add(new MiscData.Divider() { Display = Divider });
+            ReturnList.Add(new MiscData.Divider() { Display = "EXITS TAKEN:" });
             foreach (var i in ADVUnlockData.ExitsTaken)
             {
                 ReturnList.Add(i);

@@ -802,9 +802,38 @@ namespace Windows_Form_Frontend
         {
             if (!InstanceContainer.logicCalculation.LogicUnlockData.ContainsKey(iD)) { return; }
             var AdvancedUnlockData = PlaythroughTools.GetAdvancedUnlockData(iD, InstanceContainer.logicCalculation.LogicUnlockData, InstanceContainer.Instance);
-            BasicDisplay basicDisplay = new BasicDisplay(PlaythroughTools.FormatAdvancedUnlockData(AdvancedUnlockData, InstanceContainer.logicCalculation.LogicUnlockData));
+            var DataDisplay = PlaythroughTools.FormatAdvancedUnlockData(AdvancedUnlockData, InstanceContainer.logicCalculation.LogicUnlockData);
+
+            List<dynamic> Items = new List<dynamic>();
+            foreach(var i in DataDisplay)
+            {
+                var FLI = new MiscData.StandardListBoxItem
+                {
+                    Display = i is MiscData.Divider DVIx ? DVIx.Display : i.ToString(),
+                    tag = i is MiscData.Divider DVIy ? DVIy : i.ToString(),
+                    tagFunc = i is MiscData.Divider ? ShowUnlockSubFunction : null
+                };
+                Items.Add(FLI);
+            }
+
+            BasicDisplay basicDisplay = new BasicDisplay(Items);
             basicDisplay.Text = $"Unlock Data for {iD}";
             basicDisplay.Show();
+        }
+
+        private dynamic ShowUnlockSubFunction(dynamic dynamic)
+        {
+            if (dynamic is not ValueTuple<List<ValueTuple<object, bool>>, object> TO || TO.Item2 is not MiscData.Divider DIV) { return null; }
+            List<ValueTuple<object, bool>> Return = new();
+            bool Toggleing = false;
+            foreach (var i in TO.Item1)
+            {
+                bool IsDivider = i.Item1 is MiscData.StandardListBoxItem FLI && FLI.tag is MiscData.Divider;
+                Toggleing = IsDivider ? ((i.Item1 as MiscData.StandardListBoxItem).tag as MiscData.Divider).Display == DIV.Display : Toggleing;
+                bool Shown = (Toggleing ? !i.Item2 : i.Item2) || IsDivider;
+                Return.Add((i.Item1, Shown));
+            }
+            return Return;
         }
 
         //ListboxObject Handeling
