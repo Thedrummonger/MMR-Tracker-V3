@@ -51,6 +51,7 @@
             this.Name = "BasicDisplay";
             this.Text = "BasicDisplay";
             this.Shown += new System.EventHandler(this.BasicDisplay_Shown);
+            this.ResizeEnd += new System.EventHandler(this.BasicDisplay_ResizeEnd);
             this.ResumeLayout(false);
 
         }

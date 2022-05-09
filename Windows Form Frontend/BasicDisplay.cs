@@ -47,6 +47,7 @@ namespace Windows_Form_Frontend
 
         private void BasicDisplay_Shown(object sender, EventArgs e)
         {
+            ResizeListBox();
             listBox1.HorizontalScrollbar = true;
             updateDisplay();
         }
@@ -59,6 +60,20 @@ namespace Windows_Form_Frontend
                 CreateDisplayItems(output);
                 updateDisplay();
             }
+        }
+
+        private void BasicDisplay_ResizeEnd(object sender, EventArgs e)
+        {
+            ResizeListBox();
+        }
+
+        private void ResizeListBox()
+        {
+            Rectangle screenRectangle = this.RectangleToScreen(this.ClientRectangle);
+            int titleHeight = screenRectangle.Top - this.Top;
+            listBox1.Location = new Point(4, 4);
+            listBox1.Height = this.Height - titleHeight - 16;
+            listBox1.Width = this.Width - 24;
         }
     }
 }
