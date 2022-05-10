@@ -42,26 +42,35 @@ namespace Windows_Form_Frontend
             //Ensure the current directory is always the base directory in case the application is opened from a MMRTSave file elsewhere on the system
             System.IO.Directory.SetCurrentDirectory(AppDomain.CurrentDomain.BaseDirectory);
 
-            if (!Directory.Exists(References.WindowsPaths.BaseAppdataPath))
+            if (!Directory.Exists(References.Globalpaths.BaseAppdataPath))
             {
-                Directory.CreateDirectory(References.WindowsPaths.BaseAppdataPath);
+                Directory.CreateDirectory(References.Globalpaths.BaseAppdataPath);
             }
+            doDevCheck();
+            UpdateUI();
+            WinFormInstanceCreation.ApplyUserPretLogic();
+        }
 
-            bool isDevPC = File.Exists(References.WindowsPaths.DevFile);
-            bool IsDubugger = Debugger.IsAttached;
+        private void doDevCheck(bool? forceDevState = null)
+        {
+            bool ForceDev = forceDevState is not null && (bool)forceDevState;
+            bool ForceUser = forceDevState is not null && !(bool)forceDevState;
+            bool isDevPC = File.Exists(References.Globalpaths.DevFile) || ForceDev;
+            bool IsDubugger = Debugger.IsAttached || ForceDev;
             bool Modifier = ModifierKeys == Keys.Control;
 
-            if (IsDubugger && !Modifier)
+            if (IsDubugger && !Modifier && !ForceUser)
             {
                 Testing.DebugMode = MiscData.DebugMode.Debugging;
             }
-            else if (isDevPC && Modifier)
+            else if (isDevPC && Modifier && !ForceUser)
             {
                 Testing.DebugMode = MiscData.DebugMode.UserView;
             }
-
-            UpdateUI();
-            WinFormInstanceCreation.ApplyUserPretLogic();
+            else
+            {
+                Testing.DebugMode = MiscData.DebugMode.Off;
+            }
         }
 
         private void MainInterface_ResizeEnd(object sender, EventArgs e)
@@ -586,7 +595,7 @@ namespace Windows_Form_Frontend
             importSpoilerLogToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
             PathFinderToolStripMenuItem.Visible = (InstanceContainer.Instance != null && InstanceContainer.Instance.EntrancePool.IsEntranceRando);
 
-            logicEditorToolStripMenuItem.Visible = false;
+            logicEditorToolStripMenuItem.Visible = Testing.Debugging();
 
             if (InstanceContainer.Instance == null) { return; }
 
@@ -649,6 +658,7 @@ namespace Windows_Form_Frontend
                 menuItem.Click += delegate (object sender, EventArgs e) { HandleItemSelect(new List<LogicDictionaryData.TrackerVariable> { i }, MiscData.CheckState.Checked); };
                 RandomizerOptionsToolStripMenuItem1.DropDownItems.Add(menuItem);
             }
+            RandomizerOptionsToolStripMenuItem1.Visible = RandomizerOptionsToolStripMenuItem1.DropDownItems.Count > 1;
         }
 
         //Context Menus
@@ -922,6 +932,14 @@ namespace Windows_Form_Frontend
 
         private void BTNSetItem_Click(object sender, EventArgs e)
         {
+            if (TXTLocSearch.Text == "toggledev")
+            {
+                if (Testing.IsDevUser()) { doDevCheck(false); }
+                else if (Testing.StandardUser()) { doDevCheck(true); }
+                TXTLocSearch.Text = "";
+                UpdateUI();
+                return;
+            }
             ListBox LB = (sender == BTNSetItem) ? LBValidLocations : LBValidEntrances;
             if (LB.SelectedItems.Count < 1) { return; }
             HandleItemSelect(LB.SelectedItems.Cast<object>().ToList(), MiscData.CheckState.Marked, LB: LB);

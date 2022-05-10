@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,7 +13,13 @@ namespace MMR_Tracker_V3
         public static string trackerVersion = "V0.3";
         public static int TrackerVersionStatus = 0;
 
-        public static String CurrentSavePath = "";
+        public static string CurrentSavePath = "";
+
+        public static OSPlatform? CurrentOS = 
+            RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? OSPlatform.Windows : 
+            (RuntimeInformation.IsOSPlatform(OSPlatform.OSX) ? OSPlatform.OSX :
+            (RuntimeInformation.IsOSPlatform(OSPlatform.Linux) ? OSPlatform.Linux : 
+            (RuntimeInformation.IsOSPlatform(OSPlatform.FreeBSD) ? OSPlatform.FreeBSD : null)));
 
         public static class Globalpaths
         {
@@ -27,9 +34,7 @@ namespace MMR_Tracker_V3
             public static readonly string BaseLogicPresetPath = Path.Combine(OtherFilesFolder, "Custom Logic Presets");
             public static readonly string BaseOtherGameLogic = Path.Combine(OtherFilesFolder, "Other Game Premade Logic");
             public static readonly string WebPresets = Path.Combine(PresetFolder, "WebPresets.txt");
-        }
-        public static class WindowsPaths
-        {
+
             public static readonly string BaseAppdataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "MMRTracker");
             public static readonly string OptionFile = Path.Combine(BaseAppdataPath, "options.txt");
             public static readonly string DevFile = Path.Combine(BaseAppdataPath, "devpc.ini");
@@ -38,8 +43,8 @@ namespace MMR_Tracker_V3
         {
             public static Dictionary<string, string> GetDevINI() 
             { 
-                if (!File.Exists(WindowsPaths.DevFile)) { return null; }
-                Dictionary<string, string> DevFile = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(WindowsPaths.DevFile));
+                if (!File.Exists(Globalpaths.DevFile)) { return null; }
+                Dictionary<string, string> DevFile = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(Globalpaths.DevFile));
                 return DevFile;
             }
             public static string GetDevTestingPath()

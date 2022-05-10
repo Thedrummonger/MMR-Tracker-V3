@@ -41,9 +41,9 @@ namespace Windows_Form_Frontend
 
             TrackerInstanceCreation.PopulateTrackerObject(NewInstance);
 
-            if (File.Exists(References.WindowsPaths.OptionFile))
+            if (File.Exists(References.Globalpaths.OptionFile))
             {
-                NewInstance.StaticOptions.OptionFile = JsonConvert.DeserializeObject<LogicObjects.OptionFile>(File.ReadAllText(References.WindowsPaths.OptionFile));
+                NewInstance.StaticOptions.OptionFile = JsonConvert.DeserializeObject<LogicObjects.OptionFile>(File.ReadAllText(References.Globalpaths.OptionFile));
             }
 
             MainInterface.InstanceContainer.Instance = NewInstance;
