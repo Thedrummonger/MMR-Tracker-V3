@@ -13,8 +13,6 @@ namespace MMR_Tracker_V3
         public static string trackerVersion = "V0.3";
         public static int TrackerVersionStatus = 0;
 
-        public static string CurrentSavePath = "";
-
         public static OSPlatform? CurrentOS = 
             RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? OSPlatform.Windows : 
             (RuntimeInformation.IsOSPlatform(OSPlatform.OSX) ? OSPlatform.OSX :
