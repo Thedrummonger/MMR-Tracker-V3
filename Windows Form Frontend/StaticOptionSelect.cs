@@ -80,7 +80,7 @@ namespace Windows_Form_Frontend
 
         private void button2_Click(object sender, EventArgs e)
         {
-            File.WriteAllText(References.WindowsPaths.OptionFile, JsonConvert.SerializeObject(TempOptionFile, Testing._NewtonsoftJsonSerializerOptions));
+            File.WriteAllText(References.Globalpaths.OptionFile, JsonConvert.SerializeObject(TempOptionFile, Testing._NewtonsoftJsonSerializerOptions));
         }
 
         private void button3_Click(object sender, EventArgs e)

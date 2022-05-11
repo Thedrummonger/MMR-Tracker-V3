@@ -154,7 +154,6 @@ namespace MMR_Tracker_V3.TrackerObjects
             public int OwningPlayer { get; set; } = -1;
             public string Item { get; set; } = null;
             public string SpoilerLogGivenItem { get; set; } = null;
-            public string[] ValidItemTypes { get; set; } = Array.Empty<string>();
         }
 
         public class LocationProxyData

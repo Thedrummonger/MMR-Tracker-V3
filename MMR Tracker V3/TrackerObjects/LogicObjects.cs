@@ -26,7 +26,7 @@ namespace MMR_Tracker_V3
             public EntranceData.EntrancePool EntrancePool { get; set; } = new EntranceData.EntrancePool();
             public LogicDictionary LogicDictionary { get; set; } = new LogicDictionary();
             public LogicFile LogicFile { get; set; } = new MMRData.LogicFile();
-            public MMRData.SpoilerLogData SpoilerLog { get; set; } = null;
+            public SpoilerLogFileData SpoilerLog { get; set; } = null;
             public Dictionary<string, JsonFormatLogicItem> RuntimeLogic { get; set; } = new Dictionary<string, JsonFormatLogicItem>();
             public LocationProxyData LocationProxyData { get; set; } = new LocationProxyData();
             public Options StaticOptions { get; set; } = new Options();
@@ -193,6 +193,12 @@ namespace MMR_Tracker_V3
             public LogicFileType LogicList { get; set; }
             public int LogicIndex { get; set; }
             public int DictIndex { get; set; }
+        }
+        [Serializable]
+        public class SpoilerLogFileData
+        {
+            public string FileName { get; set; }
+            public string[] Log { get; set; }
         }
 
     }

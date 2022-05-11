@@ -28,16 +28,17 @@ namespace MMR_Tracker_V3
             switch (Instance.LogicFile.GameCode)
             {
                 case "OOTR":
-                    Instance.SpoilerLog = new MMRData.SpoilerLogData();
+                    Instance.SpoilerLog = new LogicObjects.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
                     OtherGames.OOTRTools.HandleOOTRSpoilerLog(string.Join("", spoilerLog), Instance);
                     return true;
                 case "MMR":
-                    Instance.SpoilerLog = ReadSpoilerLog(spoilerLog);
-                    ApplyMMRandoSettings(Instance, Instance.SpoilerLog);
-                    ApplyMMRandoSpoilerLog(Instance, Instance.SpoilerLog);
+                    Instance.SpoilerLog = new LogicObjects.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
+                    MMRData.SpoilerLogData LogData = ReadSpoilerLog(spoilerLog);
+                    ApplyMMRandoSettings(Instance, LogData);
+                    ApplyMMRandoSpoilerLog(Instance, LogData);
                     return true;
                 case "PMR":
-                    Instance.SpoilerLog = new MMRData.SpoilerLogData();
+                    Instance.SpoilerLog = new LogicObjects.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
                     OtherGames.PMRToolsV2.ReadSpoilerLog(spoilerLog, OriginalFile, Instance);
                     return true;
                 default:

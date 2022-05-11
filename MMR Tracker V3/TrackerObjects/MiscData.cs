@@ -38,6 +38,7 @@ namespace MMR_Tracker_V3.TrackerObjects
         {
             public string Display { get; set; }
             public object tag { get; set; }
+            public Func<dynamic, dynamic> tagFunc { get; set; }
             public override string ToString()
             {
                 return Display;
@@ -47,6 +48,7 @@ namespace MMR_Tracker_V3.TrackerObjects
         {
             public LogicObjects.TrackerInstance Instance { get; set; }
             public LogicCalculation logicCalculation { get; set; }
+            public LogicRecreation LogicRecreation { get; set; } = new LogicRecreation();
             public List<string> UndoStringList { get; set; } = new List<string>();
             public List<string> RedoStringList { get; set; } = new List<string>();
             public string CurrentSavePath { get; set; } = "";

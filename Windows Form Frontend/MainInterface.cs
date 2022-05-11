@@ -42,26 +42,35 @@ namespace Windows_Form_Frontend
             //Ensure the current directory is always the base directory in case the application is opened from a MMRTSave file elsewhere on the system
             System.IO.Directory.SetCurrentDirectory(AppDomain.CurrentDomain.BaseDirectory);
 
-            if (!Directory.Exists(References.WindowsPaths.BaseAppdataPath))
+            if (!Directory.Exists(References.Globalpaths.BaseAppdataPath))
             {
-                Directory.CreateDirectory(References.WindowsPaths.BaseAppdataPath);
+                Directory.CreateDirectory(References.Globalpaths.BaseAppdataPath);
             }
+            doDevCheck();
+            UpdateUI();
+            WinFormInstanceCreation.ApplyUserPretLogic();
+        }
 
-            bool isDevPC = File.Exists(References.WindowsPaths.DevFile);
-            bool IsDubugger = Debugger.IsAttached;
+        private void doDevCheck(bool? forceDevState = null)
+        {
+            bool ForceDev = forceDevState is not null && (bool)forceDevState;
+            bool ForceUser = forceDevState is not null && !(bool)forceDevState;
+            bool isDevPC = File.Exists(References.Globalpaths.DevFile) || ForceDev;
+            bool IsDubugger = Debugger.IsAttached || ForceDev;
             bool Modifier = ModifierKeys == Keys.Control;
 
-            if (IsDubugger && !Modifier)
+            if (IsDubugger && !Modifier && !ForceUser)
             {
                 Testing.DebugMode = MiscData.DebugMode.Debugging;
             }
-            else if (isDevPC && Modifier)
+            else if (isDevPC && Modifier && !ForceUser)
             {
                 Testing.DebugMode = MiscData.DebugMode.UserView;
             }
-
-            UpdateUI();
-            WinFormInstanceCreation.ApplyUserPretLogic();
+            else
+            {
+                Testing.DebugMode = MiscData.DebugMode.Off;
+            }
         }
 
         private void MainInterface_ResizeEnd(object sender, EventArgs e)
@@ -586,7 +595,7 @@ namespace Windows_Form_Frontend
             importSpoilerLogToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
             PathFinderToolStripMenuItem.Visible = (InstanceContainer.Instance != null && InstanceContainer.Instance.EntrancePool.IsEntranceRando);
 
-            logicEditorToolStripMenuItem.Visible = false;
+            logicEditorToolStripMenuItem.Visible = Testing.Debugging();
 
             if (InstanceContainer.Instance == null) { return; }
 
@@ -649,6 +658,7 @@ namespace Windows_Form_Frontend
                 menuItem.Click += delegate (object sender, EventArgs e) { HandleItemSelect(new List<LogicDictionaryData.TrackerVariable> { i }, MiscData.CheckState.Checked); };
                 RandomizerOptionsToolStripMenuItem1.DropDownItems.Add(menuItem);
             }
+            RandomizerOptionsToolStripMenuItem1.Visible = RandomizerOptionsToolStripMenuItem1.DropDownItems.Count > 1;
         }
 
         //Context Menus
@@ -802,7 +812,38 @@ namespace Windows_Form_Frontend
         {
             if (!InstanceContainer.logicCalculation.LogicUnlockData.ContainsKey(iD)) { return; }
             var AdvancedUnlockData = PlaythroughTools.GetAdvancedUnlockData(iD, InstanceContainer.logicCalculation.LogicUnlockData, InstanceContainer.Instance);
-            MessageBox.Show(JsonConvert.SerializeObject(AdvancedUnlockData, Testing._NewtonsoftJsonSerializerOptions), $"{iD}");
+            var DataDisplay = PlaythroughTools.FormatAdvancedUnlockData(AdvancedUnlockData, InstanceContainer.logicCalculation.LogicUnlockData);
+
+            List<dynamic> Items = new List<dynamic>();
+            foreach(var i in DataDisplay)
+            {
+                var FLI = new MiscData.StandardListBoxItem
+                {
+                    Display = i is MiscData.Divider DVIx ? DVIx.Display : i.ToString(),
+                    tag = i is MiscData.Divider DVIy ? DVIy : i.ToString(),
+                    tagFunc = i is MiscData.Divider ? ShowUnlockSubFunction : null
+                };
+                Items.Add(FLI);
+            }
+
+            BasicDisplay basicDisplay = new BasicDisplay(Items);
+            basicDisplay.Text = $"Unlock Data for {iD}";
+            basicDisplay.Show();
+        }
+
+        private dynamic ShowUnlockSubFunction(dynamic dynamic)
+        {
+            if (dynamic is not ValueTuple<List<ValueTuple<object, bool>>, object> TO || TO.Item2 is not MiscData.Divider DIV) { return null; }
+            List<ValueTuple<object, bool>> Return = new();
+            bool Toggleing = false;
+            foreach (var i in TO.Item1)
+            {
+                bool IsDivider = i.Item1 is MiscData.StandardListBoxItem FLI && FLI.tag is MiscData.Divider;
+                Toggleing = IsDivider ? ((i.Item1 as MiscData.StandardListBoxItem).tag as MiscData.Divider).Display == DIV.Display : Toggleing;
+                bool Shown = (Toggleing ? !i.Item2 : i.Item2) || IsDivider;
+                Return.Add((i.Item1, Shown));
+            }
+            return Return;
         }
 
         //ListboxObject Handeling
@@ -891,6 +932,14 @@ namespace Windows_Form_Frontend
 
         private void BTNSetItem_Click(object sender, EventArgs e)
         {
+            if (TXTLocSearch.Text == "toggledev")
+            {
+                if (Testing.IsDevUser()) { doDevCheck(false); }
+                else if (Testing.StandardUser()) { doDevCheck(true); }
+                TXTLocSearch.Text = "";
+                UpdateUI();
+                return;
+            }
             ListBox LB = (sender == BTNSetItem) ? LBValidLocations : LBValidEntrances;
             if (LB.SelectedItems.Count < 1) { return; }
             HandleItemSelect(LB.SelectedItems.Cast<object>().ToList(), MiscData.CheckState.Marked, LB: LB);
@@ -1033,40 +1082,14 @@ namespace Windows_Form_Frontend
 
         private void ExportCheckedToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            List<string> CheckedObjects = new List<string>();
-            foreach(var i in InstanceContainer.Instance.LocationPool)
-            {
-                if (i.Value.CheckState == MiscData.CheckState.Checked) { CheckedObjects.Add(i.Key); }
-            }
-            foreach (var i in InstanceContainer.Instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values))
-            {
-                if (i.CheckState == MiscData.CheckState.Checked) { CheckedObjects.Add($"{i.ParentAreaID} | {i.ID}"); }
-            }
-            foreach (var i in InstanceContainer.Instance.HintPool)
-            {
-                if (i.Value.CheckState == MiscData.CheckState.Checked) { CheckedObjects.Add(i.Key); }
-            }
-            Clipboard.SetText(JsonConvert.SerializeObject(CheckedObjects, Testing._NewtonsoftJsonSerializerOptions));
+            InstanceContainer.LogicRecreation.SaveTrackerState(InstanceContainer);
+            MessageBox.Show("Instance Saved");
         }
 
         private void ImportCheckedToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            List<object> ToCheck = new List<object>();
-            List<string> CheckedObjects = JsonConvert.DeserializeObject<List<string>>(Clipboard.GetText());
-            foreach(var i in CheckedObjects)
-            {
-                if (InstanceContainer.Instance.LocationPool.ContainsKey(i)) { ToCheck.Add(InstanceContainer.Instance.LocationPool[i]); }
-                else if (InstanceContainer.Instance.HintPool.ContainsKey(i)) { ToCheck.Add(InstanceContainer.Instance.HintPool[i]); }
-                else if (i.Contains(" | "))
-                {
-                    var data = i.Split('|').Select(x => x.Trim()).ToArray();
-                    if (InstanceContainer.Instance.EntrancePool.AreaList.ContainsKey(data[0]) && InstanceContainer.Instance.EntrancePool.AreaList[data[0]].LoadingZoneExits.ContainsKey(data[1]))
-                    {
-                        ToCheck.Add(InstanceContainer.Instance.EntrancePool.AreaList[data[0]].LoadingZoneExits[data[1]]);
-                    }
-                }
-            }
-            HandleItemSelect(ToCheck, MiscData.CheckState.Checked);
+            InstanceContainer.LogicRecreation.LoadTrackerState(InstanceContainer);
+            UpdateUI();
         }
 
         private void spoilerLogToolsToolStripMenuItem_Click(object sender, EventArgs e)
