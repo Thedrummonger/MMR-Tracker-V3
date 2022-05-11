@@ -184,13 +184,13 @@ namespace MMR_Tracker_V3
 
         }
 
-        public static bool DynamicPropertyExist(dynamic settings, string name)
+        public static bool DynamicPropertyExist(dynamic Object, string name)
         {
-            if (settings is null) { return false; }
-            if (settings is ExpandoObject)
-                return ((IDictionary<string, object>)settings).ContainsKey(name);
+            if (Object is null) { return false; }
+            if (Object is ExpandoObject)
+                return ((IDictionary<string, object>)Object).ContainsKey(name);
 
-            return settings.GetType().GetProperty(name) != null;
+            return Object.GetType().GetProperty(name) != null;
         }
 
         public static bool IsLogicEqual(MMRData.JsonFormatLogicItem logicItem1, MMRData.JsonFormatLogicItem logicItem2)

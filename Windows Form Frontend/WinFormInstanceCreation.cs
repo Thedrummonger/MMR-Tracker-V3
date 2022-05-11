@@ -37,7 +37,7 @@ namespace Windows_Form_Frontend
                 return false;
             }
 
-            References.CurrentSavePath = "";
+            MainInterface.InstanceContainer.CurrentSavePath = "";
 
             TrackerInstanceCreation.PopulateTrackerObject(NewInstance);
 

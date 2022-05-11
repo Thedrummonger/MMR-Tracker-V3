@@ -49,6 +49,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public LogicCalculation logicCalculation { get; set; }
             public List<string> UndoStringList { get; set; } = new List<string>();
             public List<string> RedoStringList { get; set; } = new List<string>();
+            public string CurrentSavePath { get; set; } = "";
             public bool UnsavedChanges { get; set; } = false;
         }
         [Serializable]

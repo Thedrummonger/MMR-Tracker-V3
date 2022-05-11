@@ -131,10 +131,10 @@ namespace Windows_Form_Frontend
         private void SavetoolStripMenuItem1_Click(object sender, EventArgs e)
         {
             bool SaveAs = (sender is ToolStripMenuItem item && item == SaveAsToolStripMenuItem1);
-            if (File.Exists(References.CurrentSavePath) && !SaveAs)
+            if (File.Exists(InstanceContainer.CurrentSavePath) && !SaveAs)
             {
                 InstanceContainer.UnsavedChanges = false;
-                File.WriteAllText(References.CurrentSavePath, InstanceContainer.Instance.ToString());
+                File.WriteAllText(InstanceContainer.CurrentSavePath, InstanceContainer.Instance.ToString());
             }
             else
             {
@@ -146,7 +146,7 @@ namespace Windows_Form_Frontend
                 {
                     InstanceContainer.UnsavedChanges = false;
                     File.WriteAllText(saveFileDialog.FileName, InstanceContainer.Instance.ToString());
-                    References.CurrentSavePath = saveFileDialog.FileName;
+                    InstanceContainer.CurrentSavePath = saveFileDialog.FileName;
                 }
             }
             UpdateUI();
@@ -168,7 +168,7 @@ namespace Windows_Form_Frontend
                 }
                 catch { MessageBox.Show("Save File Not Valid"); return; }
                 InstanceContainer.Instance = NewTrackerInstance;
-                References.CurrentSavePath = openFileDialog.FileName;
+                InstanceContainer.CurrentSavePath = openFileDialog.FileName;
                 InstanceContainer.logicCalculation.CalculateLogic();
                 UpdateUI();
                 UpdateDynamicUserOptions();
@@ -590,7 +590,7 @@ namespace Windows_Form_Frontend
 
             if (InstanceContainer.Instance == null) { return; }
 
-            SaveAsToolStripMenuItem1.Visible = (File.Exists(References.CurrentSavePath));
+            SaveAsToolStripMenuItem1.Visible = (File.Exists(InstanceContainer.CurrentSavePath));
             importSpoilerLogToolStripMenuItem.Text = (InstanceContainer.Instance.SpoilerLog != null) ? "Remove Spoiler Log" : "Import Spoiler Log";
 
             //Manage Dev Menus

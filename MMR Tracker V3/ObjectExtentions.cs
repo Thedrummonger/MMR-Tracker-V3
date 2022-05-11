@@ -122,5 +122,51 @@ namespace MMR_Tracker_V3
                 return false;
             }
         }
+
+        public static bool CanContainItem(this LocationData.LocationObject loc, ItemData.ItemObject item, TrackerInstance instance, bool EmptyIsWildcard = true)
+        {
+            var LocTypes = loc?.GetDictEntry(instance)?.ValidItemTypes;
+            var itemTypes = item?.GetDictEntry(instance)?.ItemTypes;
+            if (LocTypes is null || itemTypes is null) { return EmptyIsWildcard; }
+            return LocTypes.Intersect(itemTypes).Any();
+        }
+
+        public static List<ItemData.ItemObject> GetValidItemsForLocation(this LogicObjects.TrackerInstance _Instance, LocationData.LocationObject Location, string Filter = "")
+        {
+            var EnteredItems = new List<ItemData.ItemObject>();
+            var Names = new List<string>();
+            foreach (var i in _Instance.ItemPool.Values)
+            {
+                if (string.IsNullOrWhiteSpace(i.GetDictEntry(_Instance).GetName(_Instance))) { continue; }
+                i.DisplayName = i.GetDictEntry(_Instance).GetName(_Instance);
+                if (!SearchStringParser.FilterSearch(_Instance, i, Filter, i.DisplayName)) { continue; }
+                if (i.CanBePlaced(_Instance) && Location.CanContainItem(i, _Instance) && !EnteredItems.Contains(i) && !Names.Contains(i.ToString()))
+                {
+                    Names.Add(i.ToString());
+                    EnteredItems.Add(i);
+                }
+            }
+
+            return EnteredItems.OrderBy(x => x.GetDictEntry(_Instance).GetName(_Instance)).ToList();
+        }
+
+
+        public static List<EntranceData.EntranceRandoDestination> GetAllLoadingZoneDestinations(this LogicObjects.TrackerInstance _Instance, string Filter = "")
+        {
+            var Names = new List<string>();
+            var EnteredItems = new List<EntranceRandoDestination>();
+            foreach (var area in _Instance.EntrancePool.AreaList.Values.Where(x => x.LoadingZoneExits.Any()).ToList().SelectMany(x => x.LoadingZoneExits).OrderBy(x => x.Value.ID))
+            {
+                var Entry = new EntranceRandoDestination
+                {
+                    region = area.Value.ID,
+                    from = area.Value.ParentAreaID,
+                };
+                if (!SearchStringParser.FilterSearch(_Instance, Entry, Filter, Entry.ToString())) { continue; }
+                EnteredItems.Add(Entry);
+            }
+
+            return EnteredItems;
+        }
     }
 }

@@ -12,8 +12,6 @@ namespace MMR_Tracker_V3
         public static string trackerVersion = "V0.3";
         public static int TrackerVersionStatus = 0;
 
-        public static String CurrentSavePath = "";
-
         public static class Globalpaths
         {
             public static readonly string BaseProgramPath = AppDomain.CurrentDomain.BaseDirectory;

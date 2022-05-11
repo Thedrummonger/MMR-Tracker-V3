@@ -19,13 +19,14 @@ namespace ConsoleDebugger
             "3. Preset",
             "4. Load"
         };
-        static List<string> UndoStringList = new();
-        static List<string> RedoStringList = new();
-        static LogicObjects.TrackerInstance newTrackerInstance;
-        static bool UnsavedChanges = false;
+        static MiscData.InstanceContainer newTrackerInstance = new MiscData.InstanceContainer();
 
         static void Main(string[] args)
         {
+            newTrackerInstance.logicCalculation = new LogicCalculation(newTrackerInstance);
+            newTrackerInstance.UndoStringList = new List<string>();
+            newTrackerInstance.RedoStringList = new List<string>();
+            newTrackerInstance.UnsavedChanges = false;
             while (true)
             {
                 Console.WriteLine("Commands\n" + string.Join("\n", CommandList));
@@ -69,7 +70,7 @@ namespace ConsoleDebugger
             {
                 TrackerInstanceCreation.ApplyLogicAndDict(NewTrackerInstance, PresetsDict[ind].LogicString, PresetsDict[ind].DictionaryString);
                 TrackerInstanceCreation.PopulateTrackerObject(NewTrackerInstance);
-                newTrackerInstance = NewTrackerInstance;
+                newTrackerInstance.Instance = NewTrackerInstance;
                 LoopLocationList();
             }
             else
@@ -100,8 +101,8 @@ namespace ConsoleDebugger
 
             if (!File.Exists(path)) { Console.WriteLine("Path Invalid!"); goto getpath; }
 
-            newTrackerInstance = LogicObjects.TrackerInstance.FromJson(File.ReadAllText(path));
-            References.CurrentSavePath = path;
+            newTrackerInstance.Instance = LogicObjects.TrackerInstance.FromJson(File.ReadAllText(path));
+            newTrackerInstance.CurrentSavePath = path;
             LoopLocationList();
         }
 
@@ -120,7 +121,7 @@ namespace ConsoleDebugger
 
             TrackerInstanceCreation.ApplyLogicAndDict(NewTrackerInstance, Logic);
             TrackerInstanceCreation.PopulateTrackerObject(NewTrackerInstance);
-            newTrackerInstance = NewTrackerInstance;
+            newTrackerInstance.Instance = NewTrackerInstance;
             LoopLocationList();
         }
 
@@ -132,30 +133,31 @@ namespace ConsoleDebugger
             string Filter = "";
             while (true)
             {
-                newTrackerInstance.EntrancePool.IsEntranceRando = newTrackerInstance.EntrancePool.CheckForRandomEntrances();
-                bool er = newTrackerInstance.EntrancePool.IsEntranceRando;
-                Console.Title = newTrackerInstance.LogicFile.GameCode + " Tracker" + (UnsavedChanges ? "*" : "");
+                newTrackerInstance.Instance.EntrancePool.IsEntranceRando = newTrackerInstance.Instance.EntrancePool.CheckForRandomEntrances();
+                bool er = newTrackerInstance.Instance.EntrancePool.IsEntranceRando;
+                Console.Title = newTrackerInstance.Instance.LogicFile.GameCode + " Tracker" + (newTrackerInstance.UnsavedChanges ? "*" : "");
                 Console.Clear();
-                LogicCalculation.CalculateLogic(newTrackerInstance, new Dictionary<string, List<string>>());
+                newTrackerInstance.logicCalculation.CalculateLogic();
                 List<object> Entries = null;
                 int x = 0;
                 int y = 0;
                 string CurrentType = "";
                 MiscData.CheckState CheckAction = MiscData.CheckState.Checked;
-                var dataset = TrackerDataHandeling.PopulateDataSets(newTrackerInstance);
+                string Action = null;
+                var dataset = TrackerDataHandeling.PopulateDataSets(newTrackerInstance.Instance);
                 switch (EntryType)
                 {
                     case 0:
-                        Entries = TrackerDataHandeling.PopulateAvailableLocationList(dataset, CreateDivider(Console.WindowWidth), newTrackerInstance, Filter, false, out x, out y, true);
+                        Entries = TrackerDataHandeling.PopulateAvailableLocationList(dataset, CreateDivider(Console.WindowWidth), newTrackerInstance.Instance, Filter, false, out x, out y, true);
                         CurrentType = "Available Locations";
                         break;
                     case 1:
-                        Entries = TrackerDataHandeling.PopulateCheckedLocationList(dataset, CreateDivider(Console.WindowWidth), newTrackerInstance, Filter, out x, out y, true);
+                        Entries = TrackerDataHandeling.PopulateCheckedLocationList(dataset, CreateDivider(Console.WindowWidth), newTrackerInstance.Instance, Filter, out x, out y, true);
                         CurrentType = "Checked Locations";
                         CheckAction = MiscData.CheckState.Unchecked;
                         break;
                     case 2:
-                        Entries = TrackerDataHandeling.PopulateAvailableEntraceList(dataset, CreateDivider(Console.WindowWidth), newTrackerInstance, Filter, false, out x, out y, true);
+                        Entries = TrackerDataHandeling.PopulateAvailableEntraceList(dataset, CreateDivider(Console.WindowWidth), newTrackerInstance.Instance, Filter, false, out x, out y, true);
                         CurrentType = "Available Entrances";
                         break;
                 }
@@ -166,8 +168,7 @@ namespace ConsoleDebugger
                     string Print = i.ToString();
                     if ((i is LocationData.LocationObject || i is HintData.HintObject || i is EntranceData.EntranceRandoExit || i is LocationData.LocationProxy)) 
                     {
-                        bool entrystarred = DynamicEntry.GetType().GetProperty("Starred") != null && DynamicEntry.Starred;
-                        Print = $"{reference.Count}. {i + (entrystarred ? "*" : "")}";
+                        Print = $"{reference.Count}. {i}";
                         reference.Add(reference.Count, i);
                     }
                     Console.WriteLine(Print); 
@@ -189,7 +190,7 @@ namespace ConsoleDebugger
                     Console.WriteLine($"s = save");
                     Console.WriteLine($"l = show available location | c = show Checked location{(er ? " | e = show Available Entrances" : "" )}");
                     Console.WriteLine($"h = Hide command list");
-                    Console.WriteLine($"\\ + search term = filter locations by search term");
+                    Console.WriteLine(@"\ + search term = filter locations by search term");
                 }
                 else
                 {
@@ -197,36 +198,21 @@ namespace ConsoleDebugger
                 }
                 var input = Console.ReadLine();
 
-                if (input.StartsWith("#")) 
-                { 
+                if (input.StartsWith("#"))
+                {
+                    Action = "check";
                     CheckAction = MiscData.CheckState.Marked;
                     input = input[1..];
                 }
-
-                if (input.StartsWith("*") && int.TryParse(input[1..], out int starindex) && reference.ContainsKey(starindex))
+                else if (input.StartsWith("*"))
                 {
-                    string CurrentState = Newtonsoft.Json.JsonConvert.SerializeObject(newTrackerInstance);
-                    dynamic Selection = reference[starindex];
-                    if (Selection.GetType().GetProperty("Starred") != null) { Selection.Starred = !Selection.Starred; }
-                    UnsavedChanges = true;
-                    RedoStringList.Clear();
-                    UndoStringList.Add(CurrentState);
+                    Action = "star";
+                    input = input[1..];
                 }
-                else if (input.StartsWith("$") && int.TryParse(input[1..], out int SetPriceIndex) && reference.ContainsKey(SetPriceIndex))
+                else if (input.StartsWith("$"))
                 {
-                    string CurrentState = Newtonsoft.Json.JsonConvert.SerializeObject(newTrackerInstance);
-                    SetPrice(reference[SetPriceIndex]);
-                    UnsavedChanges = true;
-                    RedoStringList.Clear();
-                    UndoStringList.Add(CurrentState);
-                }
-                else if (int.TryParse(input, out int index) && reference.ContainsKey(index))
-                {
-                    string CurrentState = Newtonsoft.Json.JsonConvert.SerializeObject(newTrackerInstance);
-                    TrackerDataHandeling.CheckSelectedItems(new List<object> { reference[index] }, CheckAction, newTrackerInstance, HandleUnAssignedLocations, HandleUnAssignedVariables);
-                    UnsavedChanges = true;
-                    RedoStringList.Clear();
-                    UndoStringList.Add(CurrentState);
+                    Action = "price";
+                    input = input[1..];
                 }
                 else if (input.StartsWith(@"\"))
                 {
@@ -234,21 +220,65 @@ namespace ConsoleDebugger
                 }
                 else if (input == "f")
                 {
-                    string CurrentState = Newtonsoft.Json.JsonConvert.SerializeObject(newTrackerInstance);
+                    string CurrentState1 = Newtonsoft.Json.JsonConvert.SerializeObject(newTrackerInstance.Instance);
                     LoadSettingFile();
-                    RedoStringList.Clear();
-                    UndoStringList.Add(CurrentState);
-                    UnsavedChanges = true;
+                    HandleChanges(CurrentState1);
                 }
-                else if (input == "l") { EntryType = 0; }
-                else if (input == "e" && er) { EntryType = 2; }
-                else if (input == "c") { EntryType = 1; }
-                else if (input == "z") { undoredo("undo"); }
-                else if (input == "y") { undoredo("redo"); }
-                else if (input == "s") { SaveInstance(); }
-                else if (input == "h") { ShowHelp = !ShowHelp; }
+                else if (input == "l") { EntryType = 0;  }
+                else if (input == "e" && er) { EntryType = 2;  }
+                else if (input == "c") { EntryType = 1;  }
+                else if (input == "z") { undoredo("undo");  }
+                else if (input == "y") { undoredo("redo");  }
+                else if (input == "s") { SaveInstance();  }
+                else if (input == "h") { ShowHelp = !ShowHelp;  }
+                else { Action = "check"; }
+
+                if (Action is null) { continue; }
+                List<int> Indexes =  new List<int>();
+                var sections = input.Split(',').Select(x => x.Trim());
+                foreach (var i in sections)
+                {
+                    if (i.Contains('-') && i.Split('-').Length == 2 && int.TryParse(i.Split('-')[0], out int I1) && int.TryParse(i.Split('-')[1], out int I2))
+                    {
+                        int min = Math.Min(I1, I2);
+                        int max = Math.Max(I1, I2);
+                        for (var q = min; q <= max; q++) { Indexes.Add(q); }
+                    }
+                    else if (int.TryParse(i, out int I3))
+                    {
+                        Indexes.Add(I3);
+                    }
+                }
+                List<object> CheckObjects = Indexes.Where(x => reference.ContainsKey(x)).Select(x => reference[x]).ToList();
+                if (!CheckObjects.Any()) { continue; }
+                string CurrentState = Newtonsoft.Json.JsonConvert.SerializeObject(newTrackerInstance.Instance);
+
+                switch (Action)
+                {
+                    case "star":
+                        foreach(var co in CheckObjects)
+                        {
+                            dynamic obj = co;
+                            if (Utility.DynamicPropertyExist(obj, "Starred")) { obj.Starred = !obj.Starred; }
+                        }
+                        break;
+                    case "price":
+                        CheckObjects.ForEach(x => SetPrice(x));
+                        break;
+                    case "check":
+                        TrackerDataHandeling.CheckSelectedItems(CheckObjects, CheckAction, newTrackerInstance, HandleUnAssignedLocations, HandleUnAssignedVariables);
+                        break;
+                }
+                HandleChanges(CurrentState);
 
             }
+        }
+
+        private static void HandleChanges(string CurrentState)
+        {
+            newTrackerInstance.RedoStringList.Clear();
+            newTrackerInstance.UndoStringList.Add(CurrentState);
+            newTrackerInstance.UnsavedChanges = true;
         }
 
         private static void SetPrice(dynamic entry)
@@ -271,11 +301,11 @@ namespace ConsoleDebugger
             {
                 if (i is LocationData.LocationObject)
                 {
-                    return LoopItemSelect(new List<object> { i }, Instance);
+                    LoopItemSelect(new List<object> { i }, Instance);
                 }
                 if (i is EntranceData.EntranceRandoExit)
                 {
-                    return LoopEntranceSelect(new List<object> { i }, Instance);
+                    LoopEntranceSelect(new List<object> { i }, Instance);
                 }
             }
             return false;
@@ -287,7 +317,7 @@ namespace ConsoleDebugger
             {
                 if (i is HintData.HintObject)
                 {
-                    return LoopHintSelect(new List<object> { i }, Instance);
+                    LoopHintSelect(new List<object> { i }, Instance);
                 }
             }
             return false;
@@ -300,24 +330,16 @@ namespace ConsoleDebugger
             while (true)
             {
                 Console.Clear();
-                var Names = new List<string>();
                 var Counter = 0;
                 var EnteredItems = new Dictionary<int, ItemData.ItemObject>();
-                foreach (var i in newTrackerInstance.ItemPool.Values)
+                foreach (var i in Instance.GetValidItemsForLocation(Location, Fiter))
                 {
-                    if (string.IsNullOrWhiteSpace(i.GetDictEntry(newTrackerInstance).GetName(newTrackerInstance))) { continue; }
-                    i.DisplayName = i.GetDictEntry(newTrackerInstance).GetName(newTrackerInstance);
-                    if (!SearchStringParser.FilterSearch(newTrackerInstance, i, Fiter, i.DisplayName)) { continue; }
-                    if (i.CanBePlaced(newTrackerInstance) && i.GetDictEntry(newTrackerInstance).ItemTypes.Intersect(Location.GetDictEntry(newTrackerInstance).ValidItemTypes).Any() && !EnteredItems.Values.Contains(i) && !Names.Contains(i.ToString()))
-                    {
-                        Names.Add(i.ToString());
-                        EnteredItems.Add(Counter, i);
-                        Console.WriteLine(Counter + ": " + i);
-                        Counter++;
-                    }
+                    EnteredItems.Add(Counter, i);
+                    Console.WriteLine(Counter + ": " + i);
+                    Counter++;
                 }
                 Console.WriteLine(CreateDivider(Console.WindowWidth));
-                Console.WriteLine("Select Item at " + Location.GetDictEntry(newTrackerInstance).GetName(Instance));
+                Console.WriteLine("Select Item at " + Location.GetDictEntry(newTrackerInstance.Instance).GetName(Instance));
                 var input = Console.ReadLine();
                 if (int.TryParse(input, out int index) && EnteredItems.ContainsKey(index))
                 {
@@ -339,17 +361,10 @@ namespace ConsoleDebugger
             while (true)
             {
                 Console.Clear();
-                var Names = new List<string>();
                 var Counter = 0;
                 var EnteredItems = new Dictionary<int, EntranceData.EntranceRandoDestination>();
-                foreach (var area in Instance.EntrancePool.AreaList.Values.Where(x => x.LoadingZoneExits.Any()).ToList().SelectMany(x => x.LoadingZoneExits).OrderBy(x => x.Value.ID))
+                foreach (var Entry in Instance.GetAllLoadingZoneDestinations(Fiter))
                 {
-                    var Entry = new EntranceData.EntranceRandoDestination
-                    {
-                        region = area.Value.ID,
-                        from = area.Value.ParentAreaID,
-                    };
-                    if (!SearchStringParser.FilterSearch(Instance, Entry, Fiter, Entry.ToString())) { continue; }
                     EnteredItems.Add(Counter, Entry);
                     Console.WriteLine(Counter + ": " + Entry);
                     Counter++;
@@ -382,34 +397,34 @@ namespace ConsoleDebugger
 
         private static void undoredo(string action)
         {
-            if (action == "undo" && UndoStringList.Any())
+            if (action == "undo" && newTrackerInstance.UndoStringList.Any())
             {
-                string CurrentState = Newtonsoft.Json.JsonConvert.SerializeObject(newTrackerInstance);
-                newTrackerInstance = LogicObjects.TrackerInstance.FromJson(UndoStringList[^1]);
-                RedoStringList.Add(CurrentState);
-                UndoStringList.RemoveAt(UndoStringList.Count - 1); 
-                UnsavedChanges = true;
+                string CurrentState = Newtonsoft.Json.JsonConvert.SerializeObject(newTrackerInstance.Instance);
+                newTrackerInstance.Instance = LogicObjects.TrackerInstance.FromJson(newTrackerInstance.UndoStringList[^1]);
+                newTrackerInstance.RedoStringList.Add(CurrentState);
+                newTrackerInstance.UndoStringList.RemoveAt(newTrackerInstance.UndoStringList.Count - 1);
+                newTrackerInstance.UnsavedChanges = true;
             }
-            else if (action == "redo" && RedoStringList.Any())
+            else if (action == "redo" && newTrackerInstance.RedoStringList.Any())
             {
-                string CurrentState = Newtonsoft.Json.JsonConvert.SerializeObject(newTrackerInstance);
-                newTrackerInstance = LogicObjects.TrackerInstance.FromJson(RedoStringList[^1]);
-                UndoStringList.Add(CurrentState);
-                RedoStringList.RemoveAt(RedoStringList.Count - 1);
-                UnsavedChanges = true;
+                string CurrentState = Newtonsoft.Json.JsonConvert.SerializeObject(newTrackerInstance.Instance);
+                newTrackerInstance.Instance = LogicObjects.TrackerInstance.FromJson(newTrackerInstance.RedoStringList[^1]);
+                newTrackerInstance.UndoStringList.Add(CurrentState);
+                newTrackerInstance.RedoStringList.RemoveAt(newTrackerInstance.RedoStringList.Count - 1);
+                newTrackerInstance.UnsavedChanges = true;
             }
         }
         private static void SaveInstance()
         {
-            if (!File.Exists(References.CurrentSavePath))
+            if (!File.Exists(newTrackerInstance.CurrentSavePath))
             {
                 Console.WriteLine("Enter Save File Path");
                 string path = Console.ReadLine();
                 path = path.Replace("\"", "");
-                References.CurrentSavePath = path;
+                newTrackerInstance.CurrentSavePath = path;
             }
-            File.WriteAllText(References.CurrentSavePath, newTrackerInstance.ToString());
-            UnsavedChanges = false;
+            File.WriteAllText(newTrackerInstance.CurrentSavePath, newTrackerInstance.ToString());
+            newTrackerInstance.UnsavedChanges = false;
         }
 
         private static MiscData.Divider CreateDivider(int Width, string key = "=")
@@ -433,15 +448,15 @@ namespace ConsoleDebugger
             try { SpoilerLogData = Newtonsoft.Json.JsonConvert.DeserializeObject<MMRData.SpoilerLogData>(File.ReadAllText(path)); }
             catch { }
 
-            if (SpoilerLogData != null && newTrackerInstance.LogicFile.GameCode == "MMR")
+            if (SpoilerLogData != null && newTrackerInstance.Instance.LogicFile.GameCode == "MMR")
             {
                 Console.WriteLine("Applying Settings File...");
-                SpoilerLogTools.ApplyMMRandoSettings(newTrackerInstance, SpoilerLogData);
+                SpoilerLogTools.ApplyMMRandoSettings(newTrackerInstance.Instance, SpoilerLogData);
             }
             else
             {
                 Console.WriteLine("Importing Spoiler Log...");
-                SpoilerLogTools.ImportSpoilerLog(File.ReadAllLines(path), path, newTrackerInstance);
+                SpoilerLogTools.ImportSpoilerLog(File.ReadAllLines(path), path, newTrackerInstance.Instance);
             }
         }
 

@@ -87,18 +87,7 @@ namespace Windows_Form_Frontend
         {
             FormatUIItems(false, false, "");
             this.Text = $"Select Destination of Exit {exitObject.ParentAreaID} -> {exitObject.ID}";
-            var Names = new List<string>();
-            var EnteredItems = new List<object>();
-            foreach (var area in _Instance.EntrancePool.AreaList.Values.Where(x => x.LoadingZoneExits.Any()).ToList().SelectMany(x => x.LoadingZoneExits).OrderBy(x => x.Value.ID))
-            {
-                var Entry = new EntranceData.EntranceRandoDestination
-                {
-                    region = area.Value.ID,
-                    from = area.Value.ParentAreaID,
-                };
-                if (!SearchStringParser.FilterSearch(_Instance, Entry, textBox1.Text, Entry.ToString())) { continue; }
-                EnteredItems.Add(Entry);
-            }
+            List<EntranceData.EntranceRandoDestination> EnteredItems = _Instance.GetAllLoadingZoneDestinations(textBox1.Text);
             listBox1.DataSource = EnteredItems;
         }
 
@@ -118,20 +107,8 @@ namespace Windows_Form_Frontend
         {
             FormatUIItems(false, true, "Set Junk");
             this.Text = "Select Item at " + Location.GetDictEntry(_Instance).GetName(_Instance);
-            var Names = new List<string>();
-            var EnteredItems = new List<ItemData.ItemObject>();
-            foreach (var i in _Instance.ItemPool.Values)
-            {
-                if (string.IsNullOrWhiteSpace(i.GetDictEntry(_Instance).GetName(_Instance))) { continue; }
-                i.DisplayName = i.GetDictEntry(_Instance).GetName(_Instance);
-                if (!SearchStringParser.FilterSearch(_Instance, i, textBox1.Text, i.DisplayName)) { continue; }
-                if (i.CanBePlaced(_Instance) && i.GetDictEntry(_Instance).ItemTypes.Intersect(Location.GetDictEntry(_Instance).ValidItemTypes).Any() && !EnteredItems.Contains(i) && !Names.Contains(i.ToString()))
-                {
-                    Names.Add(i.ToString());
-                    EnteredItems.Add(i);
-                }
-            }
-            listBox1.DataSource = EnteredItems.OrderBy(x => x.GetDictEntry(_Instance).GetName(_Instance)).ToList();
+            List<ItemData.ItemObject> EnteredItems = _Instance.GetValidItemsForLocation(Location, textBox1.Text);
+            listBox1.DataSource = EnteredItems;
         }
 
         private void ApplySelection(bool ButtonClick = false)
