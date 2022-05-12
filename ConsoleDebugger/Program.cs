@@ -423,7 +423,7 @@ namespace ConsoleDebugger
                 path = path.Replace("\"", "");
                 newTrackerInstance.CurrentSavePath = path;
             }
-            File.WriteAllText(newTrackerInstance.CurrentSavePath, newTrackerInstance.ToString());
+            File.WriteAllText(newTrackerInstance.CurrentSavePath, newTrackerInstance.Instance.ToString());
             newTrackerInstance.UnsavedChanges = false;
         }
 
