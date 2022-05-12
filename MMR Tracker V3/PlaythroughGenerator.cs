@@ -187,7 +187,7 @@ namespace MMR_Tracker_V3
                 }
                 foreach (var i in ImportantCheck.advancedUnlockData.AreasAccessed)
                 {
-                    if (FirstObtainedDict.ContainsKey(i))
+                    if (FirstObtainedDict.ContainsKey(i) && FirstObtainedDict[i].First().Item1 is EntranceData.EntranceRandoExit ere && !ere.isMacroExit(_Instance.Instance) && (ere.IsRandomized() || ere.IsUnrandomized(2)))
                     {
                         FirstObtainedDict[i].First().Item2.Important = true;
                     }
@@ -317,81 +317,77 @@ namespace MMR_Tracker_V3
                 playthroughObject = new PlaythroughGenerator(instance, UncheckedLocations);
                 playthroughObject.GeneratePlaythrough();
             }
-
-            var MacroExits = instance.EntrancePool.AreaList.Values.SelectMany(x => x.MacroExits.Values).Where(x => x.CheckState == MiscData.CheckState.Checked);
-            MacroExits = MacroExits.Concat(instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values).Where(x => x.CheckState == MiscData.CheckState.Checked && x.IsUnrandomized()));
-            var LoadingZoneExits = instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values).Where(x => x.CheckState == MiscData.CheckState.Checked && x.RandomizedState == MiscData.RandomizedState.Randomized);
-
-            var AreasParsed = new List<string>();
-
             AdvancedUnlockData Data = new AdvancedUnlockData() { Name = ID };
             if (!UnlockData.ContainsKey(ID)) { return Data; }
-            foreach (var Entry in UnlockData[ID])
-            {
-                Data.LogicUsed.Add(Entry);
-                ParseItem(Entry);
-            }
-
+            Data.LogicUsed = UnlockData[ID];
+            ParseRequirements(ID);
             return Data;
 
-            void ParseItem(string SubID, bool root = true)
+            void ParseRequirements(string SubID)
             {
-                instance.MultipleItemEntry(SubID, out string LogicItem, out int Amount);
-                bool Literal = LogicItem.IsLiteralID(out LogicItem);
-                var type = instance.GetItemEntryType(LogicItem, Literal, out _);
-
-                if (type == MiscData.LogicEntryType.macro && !Data.MacrosUsed.Contains(LogicItem))
+                if (!UnlockData.ContainsKey(SubID)) { return; }
+                foreach (var i in UnlockData[SubID])
                 {
-                    Data.MacrosUsed.Add(LogicItem);
-                    if (UnlockData.ContainsKey(LogicItem))
+                    instance.MultipleItemEntry(i, out string LogicItem, out int Amount);
+                    bool Literal = LogicItem.IsLiteralID(out LogicItem);
+                    var type = instance.GetItemEntryType(LogicItem, Literal, out _);
+                    if (type == MiscData.LogicEntryType.macro && !Data.MacrosUsed.Contains(LogicItem))
                     {
-                        foreach (var i in UnlockData[LogicItem]) { ParseItem(i, false); }
+                        Data.MacrosUsed.Add(LogicItem);
+                        ParseRequirements(LogicItem);
                     }
-                }
-                else if (type == MiscData.LogicEntryType.Option && !Data.OptionsUsed.Contains(LogicItem))
-                {
-                    Data.OptionsUsed.Add(LogicItem);
-                }
-                else if (type == MiscData.LogicEntryType.Area)
-                {
-                    if (!Data.AreasAccessed.Contains(LogicItem)) { Data.AreasAccessed.Add(LogicItem); }
-                    if (AreasParsed.Contains(LogicItem)) { return; }
-                    AreasParsed.Add(LogicItem);
-                    var PathToUnrandomizedExit = GetPathFromRandomizedEntrance(LogicItem, playthroughObject, instance);
-                    if (!PathToUnrandomizedExit.Any())
+                    else if (type == MiscData.LogicEntryType.Option && !Data.OptionsUsed.Contains(LogicItem))
                     {
-                        var ReqArea = GetClosestRandomizedArea(LogicItem, playthroughObject, instance);
-                        if (ReqArea != null && !Data.AreasAccessed.Contains(ReqArea.DestinationExit.region)) { Data.AreasAccessed.Add(ReqArea.DestinationExit.region); Data.Rootareas.Add(ReqArea.DestinationExit.region); }
-                        else { Data.Rootareas.Add(LogicItem); }
+                        Data.OptionsUsed.Add(LogicItem);
                     }
-                    else
+                    else if (type == MiscData.LogicEntryType.item)
                     {
-                        Data.Rootareas.Add(PathToUnrandomizedExit.Last().Area);
-                        foreach (var i in PathToUnrandomizedExit)
+                        if (Data.RealItemsUsed.ContainsKey(LogicItem)) { if (Amount > Data.RealItemsUsed[LogicItem]) { Data.RealItemsUsed[LogicItem] = Amount; } }
+                        else { Data.RealItemsUsed.Add(LogicItem, Amount); }
+                    }
+                    else if (type == MiscData.LogicEntryType.Area && !Data.AreasAccessed.Contains(LogicItem))
+                    {
+                        GetAreaData(LogicItem, playthroughObject, instance, out List<EntranceData.EntranceAreaPair> path, out List<string> areasVisited);
+                        Data.AreasAccessed.AddRange(areasVisited);
+                        foreach(var p in path)
                         {
-                            AreasParsed.Add(i.Area);
-                            if (!Data.ExitsTaken.Contains(instance.GetLogicNameFromExit(i))) { Data.ExitsTaken.Add(instance.GetLogicNameFromExit(i)); }
-                            if (UnlockData.ContainsKey(instance.GetLogicNameFromExit(i)))
+                            string PathID = instance.GetLogicNameFromExit(p);
+                            if (!Data.ExitsTaken.Contains(PathID))
                             {
-                                foreach (var j in UnlockData[instance.GetLogicNameFromExit(i)]) { ParseItem(j, false); }
+                                Data.ExitsTaken.Add(PathID);
+                                ParseRequirements(PathID);
                             }
                         }
                     }
                 }
-                else if (type == MiscData.LogicEntryType.item)
-                {
-                    if (Data.RealItemsUsed.ContainsKey(LogicItem))
-                    {
-                        if (Amount > Data.RealItemsUsed[LogicItem]) { Data.RealItemsUsed[LogicItem] = Amount; }
-                    }
-                    else
-                    {
-                        Data.RealItemsUsed.Add(LogicItem, Amount);
-                    }
-                }
-
             }
+        }
 
+        public static void GetAreaData(string area,  PlaythroughGenerator playthroughObject, LogicObjects.TrackerInstance instance, out List<EntranceData.EntranceAreaPair> outPath, out List<string> outAreasVisited)
+        {
+            List<EntranceData.EntranceAreaPair> path = new List<EntranceData.EntranceAreaPair>();
+            List<string> areasVisited = new List<string>();
+            CheckArea(area);
+
+            void CheckArea(string area)
+            {
+                areasVisited.Add(area);
+                if (!playthroughObject.FirstObtainedDict.ContainsKey(area) || instance.EntrancePool.RootArea == area) { return; }
+                foreach (var i in playthroughObject.FirstObtainedDict[area])
+                {
+                    if (i.Item1 is not EntranceData.EntranceRandoExit eo || areasVisited.Contains(eo.ParentAreaID) || !instance.EntrancePool.AreaList.ContainsKey(eo.ParentAreaID)) { continue; }
+                    
+                    bool ExitIsRandom = instance.EntrancePool.AreaList[eo.ParentAreaID].LoadingZoneExits.ContainsKey(eo.ID) && instance.EntrancePool.AreaList[eo.ParentAreaID].LoadingZoneExits[eo.ID].IsRandomized();
+                    if (ExitIsRandom) { return; }
+                    path.Add(new EntranceData.EntranceAreaPair() { Area = eo.ParentAreaID, Exit = eo.ID });
+                    CheckArea(eo.ParentAreaID);
+                    break;
+                }
+            }
+            outPath = path;
+            outAreasVisited = areasVisited;
+            outPath.Reverse();
+            outAreasVisited.Reverse();
         }
 
         private static List<string> GetUncheckedLocations(LogicObjects.TrackerInstance instance)
@@ -406,61 +402,6 @@ namespace MMR_Tracker_V3
                 if (i.CheckState != MiscData.CheckState.Checked) { Uncheckedlocations.Add(instance.GetLogicNameFromExit(i)); }
             }
             return Uncheckedlocations;
-        }
-
-        public static List<EntranceData.EntranceAreaPair> GetPathFromRoot(string area, PlaythroughGenerator playthroughObject)
-        {
-            List<EntranceData.EntranceAreaPair> path = new List<EntranceData.EntranceAreaPair>();
-            List<string> areasViited = new List<string>();
-            while (true)
-            {
-                if (playthroughObject.FirstObtainedDict.ContainsKey(area))
-                {
-                    bool NewAreaFound = false;
-                    foreach(var i in playthroughObject.FirstObtainedDict[area])
-                    {
-                        if (i.Item1 is EntranceData.EntranceRandoExit eo && !areasViited.Contains(eo.ParentAreaID))
-                        {
-                            areasViited.Add(eo.ParentAreaID);
-                            area = eo.ParentAreaID;
-                            path.Add(new EntranceData.EntranceAreaPair() { Area = eo.ParentAreaID, Exit = eo.ID });
-                            NewAreaFound = true;
-                            break;
-                        }
-                    }
-                    if (!NewAreaFound) { break; }
-                }
-                else { break; }
-            }
-            path.Reverse();
-            return path;
-        }
-        public static List<EntranceData.EntranceAreaPair> GetPathFromRandomizedEntrance(string area, PlaythroughGenerator playthroughObject, LogicObjects.TrackerInstance instance)
-        {
-            List<EntranceData.EntranceAreaPair> NewPath = new List<EntranceData.EntranceAreaPair>();
-            var path = GetPathFromRoot(area, playthroughObject);
-            path.Reverse();
-            foreach(var i in path)
-            {
-                if (instance.EntrancePool.AreaList[i.Area].LoadingZoneExits.ContainsKey(i.Exit) && 
-                    (instance.EntrancePool.AreaList[i.Area].LoadingZoneExits[i.Exit].IsRandomized())) { break; }
-                else { NewPath.Add(i); }
-            }
-            NewPath.Reverse();
-            return NewPath;
-        }
-        public static EntranceData.EntranceRandoExit GetClosestRandomizedArea(string area, PlaythroughGenerator playthroughObject, LogicObjects.TrackerInstance instance)
-        {
-            List<EntranceData.EntranceAreaPair> NewPath = new List<EntranceData.EntranceAreaPair>();
-            var path = GetPathFromRoot(area, playthroughObject);
-            path.Reverse();
-            foreach (var i in path)
-            {
-                if (instance.EntrancePool.AreaList[i.Area].LoadingZoneExits.ContainsKey(i.Exit) &&
-                    (instance.EntrancePool.AreaList[i.Area].LoadingZoneExits[i.Exit].IsRandomized()))
-                { return instance.EntrancePool.AreaList[i.Area].LoadingZoneExits[i.Exit]; }
-            }
-            return null;
         }
 
         public static List<dynamic> FormatAdvancedUnlockData(AdvancedUnlockData ADVUnlockData, Dictionary<string, List<string>> UnlockData, string Divider = "")

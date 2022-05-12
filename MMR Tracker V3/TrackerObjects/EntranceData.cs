@@ -62,6 +62,13 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 return DisplayName ?? ID;
             }
+
+            public bool isMacroExit(LogicObjects.TrackerInstance currentTrackerInstance)
+            {
+                if (!currentTrackerInstance.EntrancePool.AreaList.ContainsKey(ParentAreaID)) { return false; }
+                return currentTrackerInstance.EntrancePool.AreaList[ParentAreaID].MacroExits.ContainsKey(ID);
+            }
+
             public EntranceRandoDestination GetVanillaDestination()
             {
                 return new EntranceRandoDestination { region = ID, from = ParentAreaID };
