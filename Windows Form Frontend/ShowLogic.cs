@@ -132,7 +132,7 @@ namespace Windows_Form_Frontend
 
         private void ShowLogic_Load(object sender, EventArgs e)
         {
-            if (CurrentID is not null && instance.InstanceReference.LogicFileMapping.ContainsKey(CurrentID))
+            if (CurrentID is not null && instance.GetLogic(CurrentID) is not null)
             {
                 state = 0;
                 PrintLogicToLists();

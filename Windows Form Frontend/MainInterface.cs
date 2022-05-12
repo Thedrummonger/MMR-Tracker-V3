@@ -707,7 +707,7 @@ namespace Windows_Form_Frontend
             }
 
             //Show Logic
-            if (LogicID is not null && InstanceContainer.Instance.InstanceReference.LogicFileMapping.ContainsKey(LogicID))
+            if (LogicID is not null && InstanceContainer.Instance.GetLogic(LogicID) is not null)
             {
                 ToolStripItem ShowLogicFunction = contextMenuStrip.Items.Add("Show Logic");
                 ShowLogicFunction.Click += (sender, e) => { new ShowLogic(LogicID, InstanceContainer.Instance).Show(); };

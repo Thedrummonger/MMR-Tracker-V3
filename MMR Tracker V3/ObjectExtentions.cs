@@ -46,6 +46,7 @@ namespace MMR_Tracker_V3
         {
             bool Literal = OriginalID.IsLiteralID(out string ID);
             LogicEntryType entryType = instance.GetLocationEntryType(ID, Literal, out dynamic Obj);
+            if (entryType == LogicEntryType.error || Obj is null || !Utility.DynamicPropertyExist(Obj, "referenceData")) { return null; }
             LogicFileType LogicFile = Obj.referenceData.LogicList;
             int LogicFileIndex = Obj.referenceData.LogicIndex;
             MMRData.JsonFormatLogicItem LogicFileEntry = null;

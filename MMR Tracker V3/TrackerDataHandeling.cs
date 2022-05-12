@@ -407,13 +407,13 @@ namespace MMR_Tracker_V3
             {
                 AvailableLocations.Reverse();
                 WriteOptions();
-                WriteHints(DataSets);
-                WriteLocations(AvailableLocationsEntries);
+                WriteHints();
+                WriteLocations();
             }
             else
             {
-                WriteLocations(AvailableLocationsEntries);
-                WriteHints(DataSets);
+                WriteLocations();
+                WriteHints();
                 WriteOptions();
             }
 
@@ -454,10 +454,10 @@ namespace MMR_Tracker_V3
                 }
             }
 
-            void WriteLocations(IEnumerable<object> AllAvailable)
+            void WriteLocations()
             {
                 string CurrentLocation = "";
-                foreach (var obj in AllAvailable)
+                foreach (var obj in AvailableLocationsEntries)
                 {
                     var CurrentArea = "";
                     if (obj is LocationData.LocationObject i)
@@ -489,7 +489,7 @@ namespace MMR_Tracker_V3
                 }
             }
 
-            void WriteHints(DataSets DataSets)
+            void WriteHints()
             {
                 if (AvailableHints.Any())
                 {

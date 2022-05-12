@@ -148,9 +148,6 @@ namespace MMR_Tracker_V3
             public Dictionary<string, EntranceData.EntranceAreaPair> EntranceLogicNameToEntryData { get; set; } = new Dictionary<string, EntranceData.EntranceAreaPair>();
             //A table Mapping an Exit to its logic name
             public Dictionary<string, string> ExitLogicMap { get; set; } = new Dictionary<string, string>();
-            //Logic File References
-            public Dictionary<string, int> LogicFileMapping { get; set; } = new Dictionary<string, int>();
-            public Dictionary<string, int> AdditionalLogicFileMapping { get; set; } = new Dictionary<string, int>();
         }
 
         [Serializable]
