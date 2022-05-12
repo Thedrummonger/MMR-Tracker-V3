@@ -304,6 +304,7 @@ namespace MMR_Tracker_V3
             public Dictionary<string, int> RealItemsUsed { get; set; } = new Dictionary<string, int>();
             public List<string> MacrosUsed { get; set; } = new List<string>();
             public List<string> AreasAccessed { get; set; } = new List<string>();
+            public List<string> Rootareas { get; set; } = new List<string>();
             public List<string> ExitsTaken { get; set; } = new List<string>();
             public List<string> OptionsUsed { get; set; } = new List<string>();
         }
@@ -360,10 +361,12 @@ namespace MMR_Tracker_V3
                     if (!PathToUnrandomizedExit.Any())
                     {
                         var ReqArea = GetClosestRandomizedArea(LogicItem, playthroughObject, instance);
-                        if (ReqArea != null && !Data.AreasAccessed.Contains(ReqArea.DestinationExit.region)) { Data.AreasAccessed.Add(ReqArea.DestinationExit.region); }
+                        if (ReqArea != null && !Data.AreasAccessed.Contains(ReqArea.DestinationExit.region)) { Data.AreasAccessed.Add(ReqArea.DestinationExit.region); Data.Rootareas.Add(ReqArea.DestinationExit.region); }
+                        else { Data.Rootareas.Add(LogicItem); }
                     }
                     else
                     {
+                        Data.Rootareas.Add(PathToUnrandomizedExit.Last().Area);
                         foreach (var i in PathToUnrandomizedExit)
                         {
                             AreasParsed.Add(i.Area);
@@ -493,6 +496,32 @@ namespace MMR_Tracker_V3
                 ReturnList.Add($"    Unlocked With: {string.Join(" | ", UnlockData[i])}");
             }
             return ReturnList;
+        }
+
+        public static List<string> GetMissingItems(string logicID, LogicObjects.TrackerInstance Instance)
+        {
+            PlaythroughGenerator playthroughGenerator = new PlaythroughGenerator(Instance);
+            playthroughGenerator.GeneratePlaythrough();
+            if (!playthroughGenerator.Playthrough.ContainsKey(logicID)) { return null; }
+            var AdvancedUnlockData = GetAdvancedUnlockData(logicID, playthroughGenerator._Instance.logicCalculation.LogicUnlockData, playthroughGenerator._Instance.Instance, playthroughGenerator);
+            if (AdvancedUnlockData == null) { return null; }
+            List<string> NeededItems = new List<string>();
+            foreach (var item in AdvancedUnlockData.RealItemsUsed)
+            {
+                var ItemObj = Instance.GetItemByID(item.Key);
+                if (ItemObj is null || ItemObj.Useable(Instance, item.Value)) { continue; }
+                int MissingAmunt = item.Value - ItemObj.GetTotalUsable(Instance);
+                NeededItems.Add($"{ItemObj.GetDictEntry(Instance).GetName(Instance)} x{MissingAmunt}");
+            }
+            foreach (var item in AdvancedUnlockData.Rootareas)
+            {
+                if (!Instance.EntrancePool.IsEntranceRando) { break; }
+                if (Instance.EntrancePool.AreaList.ContainsKey(item) && Instance.EntrancePool.AreaList[item].ExitsAcessibleFrom < 1)
+                {
+                    NeededItems.Add(item);
+                }
+            }
+            return NeededItems;
         }
     }
 }

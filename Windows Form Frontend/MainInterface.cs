@@ -720,6 +720,18 @@ namespace Windows_Form_Frontend
                 WhatUnlockedThis.Click += (sender, e) => { ShowUnlockData(LogicID); };
             }
 
+            //Show Whats Missing
+            if (LogicID is not null && !InstanceContainer.logicCalculation.LogicUnlockData.ContainsKey(LogicID) && InstanceContainer.Instance.SpoilerLog is not null)
+            {
+                ToolStripItem WhatsMissing = contextMenuStrip.Items.Add("Show Missing Items");
+                WhatsMissing.Click += (sender, e) => 
+                {
+                    var missingitems = PlaythroughTools.GetMissingItems(LogicID, InstanceContainer.Instance);
+                    if (missingitems == null) { MessageBox.Show($"{LogicID} Can not be obtained"); return; }
+                    MessageBox.Show($"The Following items are still needed for {LogicID}\n\n{string.Join("\n", missingitems)}");
+                };
+            }
+
             //Objects Check Functions
             if ((LogicID is not null) && (listBox == LBValidLocations || listBox == LBValidEntrances))
             {
