@@ -253,9 +253,13 @@ namespace MMR_Tracker_V3
             }
             //If hints are vanilla no need to track them
             Debug.WriteLine($"Enabling Hints");
-            foreach (var i in instance.HintPool)
+            foreach (var i in instance.HintPool.Where(x => x.Key.StartsWith("Gossip")))
             {
                 i.Value.RandomizedState = Log.GameplaySettings.GossipHintStyle == "Default" ? MiscData.RandomizedState.ForcedJunk : MiscData.RandomizedState.Randomized;
+            }
+            foreach (var i in instance.HintPool.Where(x => x.Key.StartsWith("HintGaro")))
+            {
+                i.Value.RandomizedState = Log.GameplaySettings.GaroHintStyle == "Default" ? MiscData.RandomizedState.ForcedJunk : MiscData.RandomizedState.Randomized;
             }
             //If no StartingItemMode = None, starting locations should be junk. SongHealing is only junked if songs are mixed with items
             Debug.WriteLine($"Handeling MM Starting Locations");
@@ -293,6 +297,14 @@ namespace MMR_Tracker_V3
             if (instance.UserOptions.ContainsKey("BYOA"))
             {
                 instance.UserOptions["BYOA"].CurrentValue = Log.GameplaySettings.ByoAmmo ? "enabled" : "disabled";
+            }
+            if (instance.UserOptions.ContainsKey("FreeHints"))
+            {
+                instance.UserOptions["FreeHints"].CurrentValue = Log.GameplaySettings.FreeHints.ToString().ToLower();
+            }
+            if (instance.UserOptions.ContainsKey("FreeGaroHints"))
+            {
+                instance.UserOptions["FreeGaroHints"].CurrentValue = Log.GameplaySettings.FreeGaroHints.ToString().ToLower();
             }
 
             Debug.WriteLine($"Getting all Logic Items");

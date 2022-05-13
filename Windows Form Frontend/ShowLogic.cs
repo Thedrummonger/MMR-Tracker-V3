@@ -187,7 +187,7 @@ namespace Windows_Form_Frontend
             var type = instance.GetLocationEntryType(LogicItem, Literal, out object LocationObject);
             UpdateTimeCheckboxes(Logic);
 
-            foreach (var i in Logic.RequiredItems)
+            foreach (var i in Logic.RequiredItems.Where(x => !bool.TryParse(x, out bool bout) || !bout))
             {
                 StandardListBoxItem boxItem = new StandardListBoxItem() { Display = GetDisplayName(i), tag = i };
                 LBReq.Items.Add(boxItem);
@@ -209,24 +209,29 @@ namespace Windows_Form_Frontend
             LBReq.Items.Clear();
             foreach (var i in instance.LocationPool.Values)
             {
-                if (!i.ID.ToLower().Contains(textBox1.Text.ToLower())) { continue; }
+                if (!SearchStringParser.FilterSearch(instance, i, textBox1.Text, i.ID)) { continue; }
                 LBReq.Items.Add(i.ID);
             }
             foreach (var i in instance.EntrancePool.AreaList.SelectMany(x => x.Value.LoadingZoneExits))
             {
                 var ID = instance.GetLogicNameFromExit(i.Value);
-                if (!ID.ToLower().Contains(textBox1.Text.ToLower())) { continue; }
+                if (!SearchStringParser.FilterSearch(instance, i, textBox1.Text, ID)) { continue; }
                 LBReq.Items.Add(ID);
             }
             foreach (var i in instance.EntrancePool.AreaList.SelectMany(x => x.Value.MacroExits))
             {
                 var ID = instance.GetLogicNameFromExit(i.Value);
-                if (!ID.ToLower().Contains(textBox1.Text.ToLower())) { continue; }
+                if (!SearchStringParser.FilterSearch(instance, i, textBox1.Text, ID)) { continue; }
                 LBReq.Items.Add(ID);
+            }
+            foreach (var i in instance.HintPool.Values)
+            {
+                if (!SearchStringParser.FilterSearch(instance, i, textBox1.Text, i.ID)) { continue; }
+                LBReq.Items.Add(i.ID);
             }
             foreach (var i in instance.MacroPool.Values)
             {
-                if (!i.ID.ToLower().Contains(textBox1.Text.ToLower())) { continue; }
+                if (!SearchStringParser.FilterSearch(instance, i, textBox1.Text, i.ID)) { continue; }
                 LBReq.Items.Add(i.ID);
             }
             if (GotoData != null)

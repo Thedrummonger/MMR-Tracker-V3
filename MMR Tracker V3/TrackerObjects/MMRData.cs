@@ -62,6 +62,9 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string CustomJunkLocationsString { get; set; } = "";
             public string CustomStartingItemListString { get; set; } = "";
             public string GossipHintStyle { get; set; } = "Default";
+            public string GaroHintStyle { get; set; } = "Default";
+            public bool FreeHints { get; set; } = false;
+            public bool FreeGaroHints { get; set; } = false;
             public List<string> EnabledTricks { get; set; } = new List<string>();
         }
 

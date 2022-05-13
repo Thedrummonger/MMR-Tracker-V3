@@ -37496,6 +37496,102 @@
           "ItemNameOverride": {}
         }
       }
+    },
+    {
+      "ID": "FreeHints",
+      "DisplayName": "Free Gossip Hints",
+      "CurrentValue": "true",
+      "Values": {
+        "true": {
+          "LogicReplacements": [
+            {
+              "LocationWhitelist": [
+                "GossipTerminaSouth",
+                "GossipSwampPotionShop",
+                "GossipMountainSpringPath",
+                "GossipMountainPath",
+                "GossipOceanZoraGame",
+                "GossipCanyonRoad",
+                "GossipCanyonDock",
+                "GossipCanyonSpiritHouse",
+                "GossipTerminaMilk",
+                "GossipTerminaWest",
+                "GossipTerminaNorth",
+                "GossipTerminaEast",
+                "GossipRanchTree",
+                "GossipRanchBarn",
+                "GossipMilkRoad",
+                "GossipOceanFortress",
+                "GossipSwampRoad",
+                "GossipTerminaObservatory",
+                "GossipRanchCuccoShack",
+                "GossipRanchRacetrack",
+                "GossipRanchEntrance",
+                "GossipCanyonRavine",
+                "GossipMountainSpringFrog",
+                "GossipSwampSpiderHouse",
+                "GossipTerminaGossipLarge",
+                "GossipTerminaGossipGuitar",
+                "GossipTerminaGossipPipes",
+                "GossipTerminaGossipDrums"
+              ],
+              "LocationBlacklist": [],
+              "ReplacementList": {
+                "MaskTruth": "true"
+              }
+            }
+          ],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {}
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {}
+        }
+      }
+    },
+    {
+      "ID": "FreeGaroHints",
+      "DisplayName": "Free Garo Hints",
+      "CurrentValue": "true",
+      "Values": {
+        "true": {
+          "LogicReplacements": [
+            {
+              "LocationWhitelist": [
+                "HintGaroCanyonLower1",
+                "HintGaroCanyonLower2",
+                "HintGaroWithIgosDefeated",
+                "HintGaroCanyonUpper1",
+                "HintGaroCanyonUpper2",
+                "HintGaroCanyonUpper3",
+                "HintGaroCanyonUpper4",
+                "HintGaroCanyonUpper1WithStorms",
+                "HintGaroCanyonUpper2WithStorms",
+                "HintGaroCanyonUpper3WithStorms",
+                "HintGaroCanyonUpper4WithStorms",
+                "HintGaroCastleLower1",
+                "HintGaroCastleLower2",
+                "HintGaroCastleLower3",
+                "HintGaroCastleUpper",
+                "HintGaroMaster"
+              ],
+              "LocationBlacklist": [],
+              "ReplacementList": {
+                "MaskGaro": "true"
+              }
+            }
+          ],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {}
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {}
+        }
+      }
     }
   ],
   "Variables": [
@@ -37777,6 +37873,150 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "TerminaGossipDrums"
+        ]
+      }
+    },
+    {
+      "ID": "HintGaroCanyonLower1",
+      "Name": "Garo Canyon Lower 1",
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "GaroCanyonLower1"
+        ]
+      }
+    },
+    {
+      "ID": "HintGaroCanyonLower2",
+      "Name": "Garo Canyon Lower 2",
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "GaroCanyonLower2"
+        ]
+      }
+    },
+    {
+      "ID": "HintGaroWithIgosDefeated",
+      "Name": "Garo With Igos Defeated",
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "GaroWithIgosDefeated"
+        ]
+      }
+    },
+    {
+      "ID": "HintGaroCanyonUpper1",
+      "Name": "Garo Canyon Upper 1",
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "GaroCanyonUpper1"
+        ]
+      }
+    },
+    {
+      "ID": "HintGaroCanyonUpper2",
+      "Name": "Garo Canyon Upper 2",
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "GaroCanyonUpper2"
+        ]
+      }
+    },
+    {
+      "ID": "HintGaroCanyonUpper3",
+      "Name": "Garo Canyon Upper 3",
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "GaroCanyonUpper3"
+        ]
+      }
+    },
+    {
+      "ID": "HintGaroCanyonUpper4",
+      "Name": "Garo Canyon Upper 4",
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "GaroCanyonUpper4"
+        ]
+      }
+    },
+    {
+      "ID": "HintGaroCanyonUpper1WithStorms",
+      "Name": "Garo Canyon Upper 1 With Storms",
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "GaroCanyonUpper1WithStorms"
+        ]
+      }
+    },
+    {
+      "ID": "HintGaroCanyonUpper2WithStorms",
+      "Name": "Garo Canyon Upper 2 With Storms",
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "GaroCanyonUpper2WithStorms"
+        ]
+      }
+    },
+    {
+      "ID": "HintGaroCanyonUpper3WithStorms",
+      "Name": "Garo Canyon Upper 3 With Storms",
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "GaroCanyonUpper3WithStorms"
+        ]
+      }
+    },
+    {
+      "ID": "HintGaroCanyonUpper4WithStorms",
+      "Name": "Garo Canyon Upper 4 With Storms",
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "GaroCanyonUpper4WithStorms"
+        ]
+      }
+    },
+    {
+      "ID": "HintGaroCastleLower1",
+      "Name": "Garo Castle Lower 1",
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "GaroCastleLower1"
+        ]
+      }
+    },
+    {
+      "ID": "HintGaroCastleLower2",
+      "Name": "Garo Castle Lower 2",
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "GaroCastleLower2"
+        ]
+      }
+    },
+    {
+      "ID": "HintGaroCastleLower3",
+      "Name": "Garo Castle Lower 3",
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "GaroCastleLower3"
+        ]
+      }
+    },
+    {
+      "ID": "HintGaroCastleUpper",
+      "Name": "Garo Castle Upper",
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "GaroCastleUpper"
+        ]
+      }
+    },
+    {
+      "ID": "HintGaroMaster",
+      "Name": "Garo Master",
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "GaroMaster"
         ]
       }
     }
