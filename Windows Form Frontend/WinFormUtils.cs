@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using MMR_Tracker_V3;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -114,6 +116,16 @@ namespace Windows_Form_Frontend
 
             TypeConverter converter = TypeDescriptor.GetConverter(typeof(Font));
             return converter.ConvertToString(Font);
+        }
+
+        public static string PromptforPastebinKey()
+        {
+            string input = Interaction.InputBox("A Pastebin Developer Key is required to paste to Pastebin.\n\n" +
+                $"You will only need to enter this once, the key will then be stored in {References.Globalpaths.UserData}\n" +
+                $"This key should be kept private and only be stored on your local machine.\n\n" +
+                $"Visit this link for information on how to obtain your key https://pastebin.com/doc_api#1", "Enter Pastebin Key", "Default");
+            if (!string.IsNullOrWhiteSpace(input)) { return input; }
+            return null;
         }
     }
 }

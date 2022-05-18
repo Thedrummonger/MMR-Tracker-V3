@@ -36,6 +36,7 @@ namespace MMR_Tracker_V3
             public static readonly string BaseAppdataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "MMRTracker");
             public static readonly string OptionFile = Path.Combine(BaseAppdataPath, "options.txt");
             public static readonly string DevFile = Path.Combine(BaseAppdataPath, "devpc.ini");
+            public static readonly string UserData = Path.Combine(BaseAppdataPath, "UserData.ini");
         }
         public static class TestingPaths
         {

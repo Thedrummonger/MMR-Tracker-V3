@@ -44,6 +44,12 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return Display;
             }
         }
+        public class userData
+        {
+            public string PastebinAPIKey { get; set; }
+            public string PastebinUsername { get; set; }
+            public string PastebinPassword { get; set; }
+        }
         public class InstanceContainer
         {
             public LogicObjects.TrackerInstance Instance { get; set; }
