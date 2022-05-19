@@ -117,11 +117,15 @@ namespace ConsoleDebugger
 
             if (!File.Exists(path)) { Console.WriteLine("Path Invalid!"); goto getpath; }
 
-            string Logic = File.ReadAllText(path);
+            string Logic = string.Join("", LogicFileParser.GetLogicData(path, out bool WasSpoilerLog));
 
             TrackerInstanceCreation.ApplyLogicAndDict(NewTrackerInstance, Logic);
             TrackerInstanceCreation.PopulateTrackerObject(NewTrackerInstance);
             newTrackerInstance.Instance = NewTrackerInstance;
+            if (newTrackerInstance.Instance.LogicFile.GameCode == "MMR" && WasSpoilerLog)
+            {
+                SpoilerLogTools.ImportSpoilerLog(File.ReadAllLines(path), path, newTrackerInstance.Instance);
+            }
             LoopLocationList();
         }
 
