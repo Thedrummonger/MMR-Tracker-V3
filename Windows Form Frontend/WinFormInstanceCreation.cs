@@ -14,7 +14,7 @@ namespace Windows_Form_Frontend
 {
     public class WinFormInstanceCreation
     {
-        public static bool CreateWinFormInstance(string Logic = null, string Dictionary = null)
+        public static bool CreateWinFormInstance(string Logic = null, string Dictionary = null, string SpoilerLog = null)
         {
             var NewInstance = new LogicObjects.TrackerInstance();
             if (Logic == null)
@@ -50,6 +50,10 @@ namespace Windows_Form_Frontend
 
             ApplyWinFormSpecificDat(NewInstance);
             MainInterface.InstanceContainer.logicCalculation.CalculateLogic();
+            if (MainInterface.InstanceContainer.Instance.LogicFile.GameCode == "MMR" && SpoilerLog is not null)
+            {
+                SpoilerLogTools.ImportSpoilerLog(File.ReadAllLines(SpoilerLog), SpoilerLog, MainInterface.InstanceContainer.Instance);
+            }
             MainInterface.CurrentProgram.UpdateUI();
 
             return true;

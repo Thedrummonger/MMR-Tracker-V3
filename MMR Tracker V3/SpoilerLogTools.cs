@@ -235,12 +235,17 @@ namespace MMR_Tracker_V3
                     }
                 }
             }
-            spoilerLog.GameplaySettings = Newtonsoft.Json.JsonConvert.DeserializeObject<MMRData.GameplaySettings>(SettingString);
+            try
+            {
+                spoilerLog.GameplaySettings = Newtonsoft.Json.JsonConvert.DeserializeObject<MMRData.GameplaySettings>(SettingString);
+            }
+            catch { spoilerLog.GameplaySettings = null; }
             return spoilerLog;
         }
 
         public static void ApplyMMRandoSettings(this LogicObjects.TrackerInstance instance, MMRData.SpoilerLogData Log)
         {
+            if (Log.GameplaySettings is null) { return; }
             //Apply setting strings and enable tricks
             Debug.WriteLine($"Applying Setting Strings");
             ApplyLocationString(Log.GameplaySettings.CustomItemListString, instance);

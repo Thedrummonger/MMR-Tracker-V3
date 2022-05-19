@@ -133,8 +133,8 @@ namespace Windows_Form_Frontend
             OpenFileDialog fileDialog = new OpenFileDialog();
             var Result = fileDialog.ShowDialog();
             if (Result == DialogResult.Cancel || !File.Exists(fileDialog.FileName)) { return; }
-            string Logic = File.ReadAllText(fileDialog.FileName);
-            WinFormInstanceCreation.CreateWinFormInstance(Logic);
+            string Logic = string.Join("", LogicFileParser.GetLogicData(fileDialog.FileName, out bool WasSpoilerLog));
+            WinFormInstanceCreation.CreateWinFormInstance(Logic, SpoilerLog: (WasSpoilerLog ? fileDialog.FileName : null) );
         }
 
         private void SavetoolStripMenuItem1_Click(object sender, EventArgs e)
