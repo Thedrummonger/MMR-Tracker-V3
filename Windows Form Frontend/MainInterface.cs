@@ -133,7 +133,9 @@ namespace Windows_Form_Frontend
             OpenFileDialog fileDialog = new OpenFileDialog();
             var Result = fileDialog.ShowDialog();
             if (Result == DialogResult.Cancel || !File.Exists(fileDialog.FileName)) { return; }
-            string Logic = string.Join("", LogicFileParser.GetLogicData(fileDialog.FileName, out bool WasSpoilerLog));
+            var LogicData = LogicFileParser.GetLogicData(fileDialog.FileName, out bool WasSpoilerLog);
+            if (LogicData is null) { MessageBox.Show("Invalid File\nPlease select either a logic file or MMR spoiler log"); return; }
+            string Logic = string.Join("", LogicData);
             WinFormInstanceCreation.CreateWinFormInstance(Logic, SpoilerLog: (WasSpoilerLog ? fileDialog.FileName : null) );
         }
 
