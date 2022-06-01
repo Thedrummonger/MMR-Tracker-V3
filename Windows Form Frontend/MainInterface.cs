@@ -46,9 +46,33 @@ namespace Windows_Form_Frontend
             {
                 Directory.CreateDirectory(References.Globalpaths.BaseAppdataPath);
             }
+            DoUpdateCheck();
             doDevCheck();
             UpdateUI();
             WinFormInstanceCreation.ApplyUserPretLogic();
+        }
+
+        public void DoUpdateCheck()
+        {
+            References.TrackerVersionStatus = UpdateManager.GetTrackerVersionStatus();
+            if (References.TrackerVersionStatus.VersionStatus == UpdateManager.versionStatus.outdated)
+            {
+                var Download = MessageBox.Show($"Your tracker version { References.trackerVersion } is out of Date. Would you like to download the latest version { References.TrackerVersionStatus.LatestVersion.TagName }?\n\nTo disable this message click \"cancel\" or disable \"Check for Updates\" in the options file", "Tracker Out of Date", MessageBoxButtons.YesNoCancel);
+                if (Download == DialogResult.Yes) { { System.Diagnostics.Process.Start("explorer.exe", References.TrackerVersionStatus.LatestVersion.HtmlUrl); this.Close(); return; } }
+                else if (Download == DialogResult.Cancel)
+                {
+                    LogicObjects.OptionFile options = new LogicObjects.OptionFile();
+                    if (File.Exists(References.Globalpaths.OptionFile))
+                    {
+                        try { options = JsonConvert.DeserializeObject<LogicObjects.OptionFile>(File.ReadAllText(References.Globalpaths.OptionFile)); }
+                        catch { Debug.WriteLine("could not parse options.txt"); }
+                    }
+                    options.CheckForUpdate = false;
+                    References.TrackerVersionStatus.DoUpdateCheck = false;
+                    try { File.WriteAllText(References.Globalpaths.OptionFile, JsonConvert.SerializeObject(options, Testing._NewtonsoftJsonSerializerOptions)); }
+                    catch (Exception ex) { Debug.WriteLine($"could not write to options.txt {ex}"); }
+                }
+            }
         }
 
         private void doDevCheck(bool? forceDevState = null)
@@ -386,13 +410,25 @@ namespace Windows_Form_Frontend
 
         //UI Updates
 
+        public void SetTrackerTitle()
+        {
+            string GameCode = InstanceContainer?.Instance?.LogicFile?.GameCode is null ? "MMR" : InstanceContainer.Instance.LogicFile.GameCode;
+            string UsavedChanges = InstanceContainer?.UnsavedChanges is not null &&  InstanceContainer.UnsavedChanges ? "*" : "";
+            string TrackerStatus = "";
+            if (References.TrackerVersionStatus.VersionStatus == UpdateManager.versionStatus.outdated) { TrackerStatus = " (outdated)"; }
+            else if (References.TrackerVersionStatus.VersionStatus == UpdateManager.versionStatus.dev) { TrackerStatus = " (dev)"; }
+            TrackerStatus = References.TrackerVersionStatus.DoUpdateCheck ? TrackerStatus : "";
+            this.Text = GameCode + " Tracker" + UsavedChanges + TrackerStatus;
+        }
+
         public void UpdateUI()
         {
             AlignUIElements();
             FormatMenuItems();
+            SetTrackerTitle();
+
             if (InstanceContainer is null || InstanceContainer.Instance is null) { return; }
 
-            this.Text = InstanceContainer.Instance.LogicFile.GameCode + " Tracker" + (InstanceContainer.UnsavedChanges ? "*" : "");
 
             InstanceContainer.Instance.EntrancePool.IsEntranceRando = InstanceContainer.Instance.EntrancePool.CheckForRandomEntrances();
 
