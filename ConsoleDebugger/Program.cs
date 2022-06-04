@@ -288,7 +288,7 @@ namespace ConsoleDebugger
         private static void SetPrice(dynamic entry)
         {
             if (entry.Price > -1) { entry.Price = -1; return; }
-            var DictEntry = entry.GetDictEntry(newTrackerInstance);
+            var DictEntry = entry.GetDictEntry(newTrackerInstance.Instance);
             Console.Clear();
             while (entry.Price == -1)
             {
