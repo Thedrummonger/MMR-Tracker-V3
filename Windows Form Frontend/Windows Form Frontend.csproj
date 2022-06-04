@@ -6,6 +6,7 @@
     <RootNamespace>Windows_Form_Frontend</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
     <AssemblyName>MMR Tracker</AssemblyName>
+    <ApplicationIcon>Moon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -30,6 +31,7 @@
     <Content Include="..\MMR Tracker V3\Recources\Presets\WebPresets.txt" Link="Recources\Presets\WebPresets.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Moon.ico" />
   </ItemGroup>
 
   <ItemGroup>

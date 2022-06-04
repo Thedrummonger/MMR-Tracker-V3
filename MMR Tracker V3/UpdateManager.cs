@@ -30,7 +30,7 @@ namespace MMR_Tracker_V3
             try
             {
                 var client = new GitHubClient(new ProductHeaderValue("MMR-Tracker-V3"));
-                VersionStatus.LatestVersion = client.Repository.Release.GetLatest("Thedrummonger", "MMR-Tracker").Result;
+                VersionStatus.LatestVersion = client.Repository.Release.GetLatest("Thedrummonger", "MMR-Tracker-V3").Result;
                 var VersionSatus = CompareVersions(VersionStatus.LatestVersion.TagName, References.trackerVersion);
 
                 Debug.WriteLine($"Latest Version: { VersionStatus.LatestVersion.TagName } Current Version { References.trackerVersion }");

@@ -10,7 +10,7 @@ namespace MMR_Tracker_V3
 {
     public static class References
     {
-        public static string trackerVersion = "V1.0";
+        public static string trackerVersion = "V1.1.0";
         public static UpdateManager.TrackerVersionStatus TrackerVersionStatus = new UpdateManager.TrackerVersionStatus();
 
         public static OSPlatform? CurrentOS = 

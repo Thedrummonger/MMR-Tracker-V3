@@ -292,6 +292,7 @@ namespace Windows_Form_Frontend
 
             */
 
+            Debug.WriteLine(UpdateManager.CompareVersions("V1.0", "V1.0.0"));
 
         }
 
