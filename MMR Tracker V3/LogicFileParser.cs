@@ -50,8 +50,8 @@ namespace MMR_Tracker_V3
             Logic = null;
             MMRData.SpoilerLogData LogData = SpoilerLogTools.ReadSpoilerLog(LogFile);
             if ( LogData is null || LogData.GameplaySettings is null || LogData.GameplaySettings.LogicMode is null) { return false; }
-            if (LogData.GameplaySettings.LogicMode == "UserLogic") 
-            { 
+            if (LogData.GameplaySettings.LogicMode == "UserLogic")
+            {
                 if (!File.Exists(LogData.GameplaySettings.UserLogicFileName)) { return false; }
                 var UserLogicFile = File.ReadAllLines(LogData.GameplaySettings.UserLogicFileName);
                 if (TestLogicFileValid(UserLogicFile)) { Logic = UserLogicFile; return true; }
@@ -74,7 +74,7 @@ namespace MMR_Tracker_V3
                 WebClient wc = new WebClient();
                 try
                 {
-                    string Paste = wc.DownloadString("https://raw.githubusercontent.com/ZoeyZolotova/mm-rando/dev/MMR.Randomizer/Resources/REQ_GLITCHED.txt");
+                    string Paste = wc.DownloadString("https://raw.githubusercontent.com/ZoeyZolotova/mm-rando/dev/MMR.Randomizer/Resources/REQ_GLITCH.txt");
                     var UserLogicFile = Paste.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
                     if (TestLogicFileValid(UserLogicFile)) { Logic = UserLogicFile; return true; }
                     return false;

@@ -18602,7 +18602,7 @@
     },
     {
       "ID": "FairySpinAttack",
-      "Name": "Spin Attack",
+      "Name": "Spin Attack Mastery",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -18610,7 +18610,8 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Spin Attack"
+          "Spin Attack",
+          "Spin Attack Mastery"
         ],
         "GossipHintNames": [
           "a magical being"
