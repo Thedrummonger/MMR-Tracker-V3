@@ -75,7 +75,6 @@ namespace Windows_Form_Frontend
             this.columnHeaderEntry,
             this.columnHeaderVanilla,
             this.columnHeaderRandomizedState});
-            this.lvLocationList.HideSelection = false;
             this.lvLocationList.Location = new System.Drawing.Point(12, 81);
             this.lvLocationList.Name = "lvLocationList";
             this.lvLocationList.Size = new System.Drawing.Size(455, 445);
@@ -175,7 +174,6 @@ namespace Windows_Form_Frontend
             // 
             this.lvTricks.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Tricks});
-            this.lvTricks.HideSelection = false;
             this.lvTricks.Location = new System.Drawing.Point(706, 56);
             this.lvTricks.Name = "lvTricks";
             this.lvTricks.Size = new System.Drawing.Size(225, 353);
@@ -186,6 +184,7 @@ namespace Windows_Form_Frontend
             // 
             // Tricks
             // 
+            this.Tricks.Text = "Trick List";
             this.Tricks.Width = 203;
             // 
             // label4
