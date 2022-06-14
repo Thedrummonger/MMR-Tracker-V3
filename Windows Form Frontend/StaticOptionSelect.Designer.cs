@@ -74,7 +74,7 @@ namespace Windows_Form_Frontend
             this.label2.Size = new System.Drawing.Size(17, 18);
             this.label2.TabIndex = 1;
             this.label2.Text = "?";
-            this.toolTip1.SetToolTip(this.label2, "Should the tracker check for updates and notify you when a new on is available?");
+            this.toolTip1.SetToolTip(this.label2, "Should the tracker check for updates and notify you when a new one is available?");
             // 
             // chkUpdates
             // 
