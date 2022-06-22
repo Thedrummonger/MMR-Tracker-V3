@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using static MMR_Tracker_V3.LogicObjects;
 using static MMR_Tracker_V3.TrackerObjects.ItemData;
 using static MMR_Tracker_V3.TrackerObjects.LocationData;
+using static MMR_Tracker_V3.TrackerObjects.LogicDictionaryData;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
 namespace MMR_Tracker_V3
@@ -65,7 +66,7 @@ namespace MMR_Tracker_V3
                 case LogicEntryType.variableString:
                     return LogicEntryAquired(container.Instance.Variables[LogicItem].Value as string, SubUnlockData);
                 case LogicEntryType.variableList:
-                    return ItemArrayUseable(LogicItem, Amount, SubUnlockData);
+                    return checkItemArray(LogicItem, Amount, SubUnlockData, out int _);
                 case LogicEntryType.variableBool:
                     return container.Instance.Variables[LogicItem].Value;
                 default:
@@ -74,46 +75,40 @@ namespace MMR_Tracker_V3
             }
         }
 
-        private bool ItemArrayUseable(string ArrVar, int amount, List<string> SubUnlockData)
+        public bool checkItemArray(string ArrVar, int amount, List<string> SubUnlockData, out int TotalUsable)
         {
+            TotalUsable = 0;
             if (container.Instance.Variables[ArrVar].Value is not List<string> VariableEntries) { return false; }
-            int UseableItems = 0;
-            List<string> UsedMacros = new List<string>();
+            List<string> UsableItems = new List<string>();
             Dictionary<string, int> ItemTracking = new Dictionary<string, int>();
-            bool CountMet = false;
-            foreach (string i in VariableEntries)
+            LoopVarEntry(VariableEntries);
+            bool CountMet = UsableItems.Count >= amount;
+            TotalUsable = UsableItems.Count;
+
+            foreach (var i in UsableItems.Take(amount))
             {
-                if (UseableItems >= amount) { CountMet = true; break; }
-                if (LogicEntryAquired(i, SubUnlockData))
+                if (!ItemTracking.ContainsKey(i)) { ItemTracking.Add(i, 0); }
+                ItemTracking[i]++;
+            }
+            if (CountMet) { foreach (var x in ItemTracking) { SubUnlockData.Add($"{x.Key}, {x.Value}"); } }
+            return CountMet;
+
+            void LoopVarEntry(List<string> VarList)
+            {
+                foreach (var i in VarList)
                 {
                     bool MultiItem = container.Instance.MultipleItemEntry(i, out string LogicItem, out int Amount);
                     bool Literal = LogicItem.IsLiteralID(out LogicItem);
                     var type = container.Instance.GetItemEntryType(LogicItem, Literal, out object ItemObj);
-
-                    if (type == LogicEntryType.item && !MultiItem)
-                    {
-                        for (var j = 0; j < (ItemObj as ItemObject).GetTotalUsable(container.Instance); j++)
-                        {
-                            if (!ItemTracking.ContainsKey(LogicItem)) { ItemTracking.Add(LogicItem, 0); }
-                            ItemTracking[LogicItem]++;
-                            UseableItems++;
-                            if (UseableItems >= amount) { CountMet = true; break; }
-                        }
-                    }
+                    if (type == LogicEntryType.variableList) { LoopVarEntry((ItemObj as TrackerVariable).Value as List<string>); }
                     else
                     {
-                        UsedMacros.Add(i);
-                        UseableItems++;
+                        if (type == LogicEntryType.item && !MultiItem)
+                        { UsableItems.AddRange(Enumerable.Repeat(LogicItem, (ItemObj as ItemObject).GetTotalUsable(container.Instance))); }
+                        else if (LogicEntryAquired(i, SubUnlockData)) { UsableItems.Add(i); }
                     }
-
                 }
             }
-            if (CountMet)
-            {
-                foreach (var x in UsedMacros) { SubUnlockData.Add(x); }
-                foreach (var x in ItemTracking) { SubUnlockData.Add($"{x.Key}, {x.Value}"); }
-            }
-            return CountMet;
         }
 
         private bool AreaReached(string Area, string ID, Dictionary<string, List<string>> TempUnlockData = null)

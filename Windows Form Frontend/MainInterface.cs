@@ -277,23 +277,14 @@ namespace Windows_Form_Frontend
 
         private void CodeTestingToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            List<string> UnlockData = new List<string>();
+            InstanceContainer.logicCalculation.checkItemArray("NonTransformationMasks", 3, UnlockData, out int Total);
 
-            /*
-            var instance = PMRToolsV2.CreatePMRdata();
-            WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(instance.LogicFile), JsonConvert.SerializeObject(instance.LogicDictionary));
+            Debug.WriteLine($"Total Masks {Total}");
+            Debug.WriteLine($"Unlock Data {JsonConvert.SerializeObject(UnlockData, Testing._NewtonsoftJsonSerializerOptions)}");
 
-            PlaythroughGenerator playthroughGenerator = new PlaythroughGenerator(CurrentTrackerInstance);
-            playthroughGenerator.GeneratePlaythrough();
-            playthroughGenerator.FilterImportantPlaythrough("Ganon");
-
-            File.WriteAllText(Testing.CretaeTestingFile("Playthrough"), JsonConvert.SerializeObject(playthroughGenerator.Playthrough, Testing._NewtonsoftJsonSerializerOptions));
-            File.WriteAllText(Testing.CretaeTestingFile("ImportantPlaythrough"), JsonConvert.SerializeObject(playthroughGenerator.Playthrough.Where(x => x.Value.Important), Testing._NewtonsoftJsonSerializerOptions));
-            File.WriteAllText(Testing.CretaeTestingFile("UnlockData"), JsonConvert.SerializeObject(playthroughGenerator.FirstObtainedDict, Testing._NewtonsoftJsonSerializerOptions));
-
-            */
-
-            Debug.WriteLine(UpdateManager.CompareVersions("V1.0", "V1.0.0"));
-
+            var HeartPieces = InstanceContainer.Instance.ItemPool.Values.Where(x => x.GetDictEntry(InstanceContainer.Instance).GetName(InstanceContainer.Instance) == "Heart Container").Select(x => x.Id);
+            //Debug.WriteLine($"Unlock Data {JsonConvert.SerializeObject(HeartPieces, Testing._NewtonsoftJsonSerializerOptions)}");
         }
 
         //ListBoxes
