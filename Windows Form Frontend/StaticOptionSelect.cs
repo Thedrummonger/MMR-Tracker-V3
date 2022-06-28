@@ -34,7 +34,7 @@ namespace Windows_Form_Frontend
             chkUpdates.Checked = TempOptionFile.CheckForUpdate;
             int counter = 0;
             var CurrentFont = WinFormUtils.GetFontFromString(TempOptionFile.WinformData.FormFont);
-            foreach (FontFamily font in System.Drawing.FontFamily.Families)
+            foreach (FontFamily font in FontFamily.Families)
             {
                 cmbFontStyle.Items.Add(font.Name);
                 if (font.Name == CurrentFont.FontFamily.Name) { cmbFontStyle.SelectedIndex = counter; }
@@ -85,7 +85,13 @@ namespace Windows_Form_Frontend
 
         private void button3_Click(object sender, EventArgs e)
         {
-            TempOptionFile.WinformData.FormFont = WinFormUtils.ConvertFontToString( System.Drawing.SystemFonts.DefaultFont);
+            ValuesUpdating = true;
+            nudFontSize.Value = (decimal)SystemFonts.DefaultFont.Size;
+            int SelectedFont = cmbFontStyle.Items.IndexOf(SystemFonts.DefaultFont.FontFamily.Name);
+            cmbFontStyle.SelectedIndex = SelectedFont > -1 ? SelectedFont : cmbFontStyle.SelectedIndex;
+            TempOptionFile.WinformData.FormFont = WinFormUtils.ConvertFontToString(SystemFonts.DefaultFont);
+            ValuesUpdating = false;
+            UpdateFont();
         }
     }
 }
