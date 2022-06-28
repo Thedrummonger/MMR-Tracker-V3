@@ -621,6 +621,7 @@ namespace Windows_Form_Frontend
             redoToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
             refreshToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
             SavetoolStripMenuItem1.Visible = (InstanceContainer.Instance != null);
+            SaveAsToolStripMenuItem1.Visible = (InstanceContainer.Instance != null) && !string.IsNullOrWhiteSpace(InstanceContainer.CurrentSavePath);
             spoilerLogToolsToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
             importSpoilerLogToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
             PathFinderToolStripMenuItem.Visible = (InstanceContainer.Instance != null && InstanceContainer.Instance.EntrancePool.IsEntranceRando);
