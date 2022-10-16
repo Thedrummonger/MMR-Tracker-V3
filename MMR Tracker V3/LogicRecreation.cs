@@ -63,7 +63,7 @@ namespace MMR_Tracker_V3
         public void LoadTrackerState(MiscData.InstanceContainer InstanceContainer)
         {
             if (CurrentSaveState is null) { return; }
-            if (CurrentSaveState.SpoilerData is not null)
+            if (CurrentSaveState.SpoilerData is not null && InstanceContainer.Instance.SpoilerLog is null)
             {
                 SpoilerLogTools.ImportSpoilerLog(CurrentSaveState.SpoilerData.Log, CurrentSaveState.SpoilerData.FileName, InstanceContainer.Instance);
             }

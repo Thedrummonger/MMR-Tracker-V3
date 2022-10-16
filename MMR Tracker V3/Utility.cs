@@ -84,6 +84,7 @@ namespace MMR_Tracker_V3
             dynamic PriceData;
             LocationData.LocationObject Location;
             string LocationDisplay, RandomizedItemDisplay, PriceDisplay, StarredDisplay;
+            bool Available;
             if (obj is LocationData.LocationObject lo) 
             {
                 Location = lo;
@@ -100,7 +101,11 @@ namespace MMR_Tracker_V3
             }
             else { return obj.ToString(); }
 
-            PriceDisplay = PriceData.Price < 0 ? "" : $" [${PriceData.Price}]";
+            if (Utility.DynamicPropertyExist(PriceData, "Available")) { Available = PriceData.Available; }
+            else if(Utility.DynamicPropertyExist(PriceData, "Aquired")) { Available = PriceData.Aquired; }
+            else { Available = false; ; }
+
+            PriceDisplay = PriceData.Price < 0 || (!Available) ? "" : $" [${PriceData.Price}]";
             RandomizedItemDisplay = instance.GetItemByID(Location.Randomizeditem.Item)?.GetDictEntry(instance)?.GetName(instance) ?? Location.Randomizeditem.Item;
 
             return Location.CheckState switch

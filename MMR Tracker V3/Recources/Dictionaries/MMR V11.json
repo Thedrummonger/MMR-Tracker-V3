@@ -2651,7 +2651,21 @@
           "a bored goron",
           "a northern merchant"
         ]
-      }
+      },
+      "LocationProxys": [
+        {
+          "ID": "ProxyShopItemGoronBomb10Winter",
+          "Name": "Goron Shop 10 Bombs (Winter)",
+          "Area": "Goron Village",
+          "LogicInheritance": "ShopItemGoronBomb10InWinter"
+        },
+        {
+          "ID": "ProxyShopItemGoronBomb10Spring",
+          "Name": "Goron Shop 10 Bombs (Spring)",
+          "Area": "Goron Village",
+          "LogicInheritance": "ShopItemGoronBomb10InSpring"
+        }
+      ]
     },
     {
       "ID": "ShopItemGoronArrow10",
@@ -2669,7 +2683,21 @@
           "a bored goron",
           "a northern merchant"
         ]
-      }
+      },
+      "LocationProxys": [
+        {
+          "ID": "ProxyShopItemGoronArrow10Winter",
+          "Name": "Goron Shop 10 Arrows (Winter)",
+          "Area": "Goron Village",
+          "LogicInheritance": "ShopItemGoronArrow10InWinter"
+        },
+        {
+          "ID": "ProxyShopItemGoronArrow10Spring",
+          "Name": "Goron Shop 10 Arrows (Spring)",
+          "Area": "Goron Village",
+          "LogicInheritance": "ShopItemGoronArrow10InSpring"
+        }
+      ]
     },
     {
       "ID": "ShopItemGoronRedPotion",
@@ -2687,7 +2715,21 @@
           "a bored goron",
           "a northern merchant"
         ]
-      }
+      },
+      "LocationProxys": [
+        {
+          "ID": "ProxyShopItemGoronRedPotionWinter",
+          "Name": "Goron Shop Red Potion (Winter)",
+          "Area": "Goron Village",
+          "LogicInheritance": "ShopItemGoronRedPotionInWinter"
+        },
+        {
+          "ID": "ProxyShopItemGoronRedPotionSpring",
+          "Name": "Goron Shop Red Potion (Spring)",
+          "Area": "Goron Village",
+          "LogicInheritance": "ShopItemGoronRedPotionInSpring"
+        }
+      ]
     },
     {
       "ID": "ShopItemZoraShield",
