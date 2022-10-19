@@ -428,9 +428,7 @@ namespace MMR_Tracker_V3
 
             void WriteHiddenLocations()
             {
-                if (!HiddenLocations.Any()) { return; }
-                if (DataSource.Count > 0) { DataSource.Add(Divider); }
-                DataSource.Add(new MiscData.Areaheader { Area = "Hidden Locations" });
+                List<object> TempDataSource = new List<object>();
                 foreach (var obj in HiddenLocations)
                 {
                     var CurrentArea = "";
@@ -453,7 +451,13 @@ namespace MMR_Tracker_V3
                         CurrentArea = p.Area;
                     }
                     else { continue; }
-                    DataSource.Add(obj);
+                    TempDataSource.Add(obj);
+                }
+                if (TempDataSource.Any())
+                {
+                    if (DataSource.Count > 0) { DataSource.Add(Divider); }
+                    DataSource.Add(new MiscData.Areaheader { Area = "Hidden Locations" });
+                    DataSource.AddRange(TempDataSource);
                 }
             }
 
