@@ -20,6 +20,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public bool Available { get; set; } = false;
             public CheckState CheckState { get; set; } = CheckState.Unchecked;
             public bool Starred { get; set; }
+            public bool Hidden { get; set; } = false;
             public int Price { get; set; } = -1;
             public string DisplayName { get; set; }
             public RandomizedState RandomizedState { get; set; } = RandomizedState.Randomized;
@@ -169,6 +170,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string ID { get; set; }
             public string Name { get; set; }
             public bool Starred { get; set; }
+            public bool Hidden { get; set; } = false;
             public string Area { get; set; }
             public string LogicInheritance { get; set; } = null;
             public string DisplayName { get; set; }

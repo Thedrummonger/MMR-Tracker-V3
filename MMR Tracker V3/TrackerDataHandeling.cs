@@ -394,6 +394,9 @@ namespace MMR_Tracker_V3
                 .ThenBy(x => GetLocationEntryArea(x, Instance))
                 .ThenBy(x => Utility.GetLocationDisplayName(x, Instance)).ToList();
 
+            IEnumerable<object> HiddenLocations = AvailableLocationsEntries.Where(x => Utility.DynamicPropertyExist(x, "Hidden") && (x as dynamic).Hidden).OrderBy(x => Utility.GetLocationDisplayName(x, Instance));
+            AvailableLocationsEntries = AvailableLocationsEntries.Where(x => !Utility.DynamicPropertyExist(x, "Hidden") || !(x as dynamic).Hidden);
+
             var AvailableHints = DataSets.AvailableHints;
             if (Filter.StartsWith("^") || ShowUnavailable)
             {
@@ -406,6 +409,7 @@ namespace MMR_Tracker_V3
             if (reverse)
             {
                 AvailableLocations.Reverse();
+                WriteHiddenLocations();
                 WriteOptions();
                 WriteHints();
                 WriteLocations();
@@ -415,11 +419,43 @@ namespace MMR_Tracker_V3
                 WriteLocations();
                 WriteHints();
                 WriteOptions();
+                WriteHiddenLocations();
             }
 
             OutItemsInListBox = ItemsInListBox;
             OutItemsInListBoxFiltered = ItemsInListBoxFiltered;
             return DataSource;
+
+            void WriteHiddenLocations()
+            {
+                if (!HiddenLocations.Any()) { return; }
+                if (DataSource.Count > 0) { DataSource.Add(Divider); }
+                DataSource.Add(new MiscData.Areaheader { Area = "Hidden Locations" });
+                foreach (var obj in HiddenLocations)
+                {
+                    var CurrentArea = "";
+                    if (obj is LocationData.LocationObject i)
+                    {
+                        if (!LocationAppearsinListbox(i, Instance)) { continue; }
+                        i.DisplayName = Utility.GetLocationDisplayName(i, Instance);
+                        ItemsInListBox++;
+                        if (!SearchStringParser.FilterSearch(Instance, i, Filter, i.DisplayName)) { continue; }
+                        ItemsInListBoxFiltered++;
+                        CurrentArea = i.GetDictEntry(Instance).Area;
+                    }
+                    else if (obj is LocationData.LocationProxy p)
+                    {
+                        if (!LocationAppearsinListbox(p.GetReferenceLocation(Instance), Instance)) { continue; }
+                        p.DisplayName = Utility.GetLocationDisplayName(p, Instance);
+                        ItemsInListBox++;
+                        if (!SearchStringParser.FilterSearch(Instance, p, Filter, p.DisplayName)) { continue; }
+                        ItemsInListBoxFiltered++;
+                        CurrentArea = p.Area;
+                    }
+                    else { continue; }
+                    DataSource.Add(obj);
+                }
+            }
 
             void WriteOptions()
             {

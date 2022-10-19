@@ -813,6 +813,16 @@ namespace Windows_Form_Frontend
                 };
             }
 
+            //Hide Item
+            if (Utility.DynamicPropertyExist(listBox.SelectedItem, "Hidden"))
+            {
+                dynamic HiddenItem = listBox.SelectedItem;
+                string HiddenText = HiddenItem.Hidden ? "Unhide" : "Hide";
+                ToolStripItem SetHidden = contextMenuStrip.Items.Add(HiddenText);
+                SetHidden.Click += (sender, e) => { HiddenItem.Hidden = !HiddenItem.Hidden; PrintToListBox(new List<ListBox> { listBox }); };
+
+            }
+
             //Debug Tools
             if (Testing.Debugging())
             {
