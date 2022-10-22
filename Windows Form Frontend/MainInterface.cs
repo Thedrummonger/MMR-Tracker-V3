@@ -24,6 +24,7 @@ namespace Windows_Form_Frontend
         Pathfinder MainInterfacepathfinder = new Pathfinder();
         private bool FormIsMaximized = false;
 
+        Dictionary<string, bool> MinimizedHeader = new Dictionary<string, bool>();
         public MainInterface()
         {
             InitializeComponent();
@@ -289,12 +290,19 @@ namespace Windows_Form_Frontend
 
         //ListBoxes
 
-        public void GetListObjectData(dynamic entry, out MiscData.CheckState checkState, out bool starred, out bool Available)
+        public void GetListObjectData(ListBox LB, dynamic entry, out MiscData.CheckState checkState, out bool starred, out bool Available)
         {
             if (entry is LocationData.LocationProxy po) { 
                 checkState = InstanceContainer.Instance.GetLocationByID(po.ReferenceID)?.CheckState ?? MiscData.CheckState.Checked; 
                 starred = po.Starred;
                 Available = po.ProxyAvailable(InstanceContainer.Instance);
+            }
+            else if (entry is MiscData.Areaheader ah)
+            {
+                bool IsMinimizedArea = MinimizedHeader.ContainsKey(ah.Area + ":::" + LB.Name);
+                checkState = MiscData.CheckState.Marked;
+                starred = IsMinimizedArea;
+                Available = !IsMinimizedArea;
             }
             else {
                 checkState = Utility.DynamicPropertyExist(entry, "CheckState") ? entry.CheckState : MiscData.CheckState.Checked; 
@@ -311,7 +319,7 @@ namespace Windows_Form_Frontend
             Font F = WinFormUtils.GetFontFromString(InstanceContainer.Instance.StaticOptions.OptionFile.WinformData.FormFont);
             Brush brush = ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? Brushes.White : Brushes.Black;
 
-            GetListObjectData(LB.Items[e.Index], out MiscData.CheckState checkState, out bool starred, out bool available);
+            GetListObjectData(LB, LB.Items[e.Index], out MiscData.CheckState checkState, out bool starred, out bool available);
             if (checkState == MiscData.CheckState.Marked && !available && starred)
             { F = new Font(F.FontFamily, F.Size, FontStyle.Bold | FontStyle.Strikeout); }
             else if (starred)
@@ -353,6 +361,15 @@ namespace Windows_Form_Frontend
             if (index < 0) { return; }
             if (e.Button == MouseButtons.Middle)
             {
+                if (LB.Items[index] is MiscData.Areaheader ah)
+                {
+                    string Area = ah.Area + ":::" + (sender as ListBox).Name;
+                    if (MinimizedHeader.ContainsKey(Area)) { MinimizedHeader.Remove(Area); }
+                    else { MinimizedHeader[Area] = true; }
+                    PrintToListBox();
+                    return;
+                }
+
                 if ((ModifierKeys & Keys.Control) != Keys.Control) { LB.SelectedItems.Clear(); }
                 LB.SetSelected(index, true);
 
@@ -588,25 +605,42 @@ namespace Windows_Form_Frontend
 
             var dataset = TrackerDataHandeling.PopulateDataSets(InstanceContainer.Instance);
 
-            if (ToUpdate.Contains(LBValidLocations)) 
+            bool InMinimized = false;
+
+            if (ToUpdate.Contains(LBValidLocations))
             {
                 var Entries = TrackerDataHandeling.PopulateAvailableLocationList(dataset, WinFormUtils.CreateDivider(LBValidLocations), InstanceContainer.Instance, TXTLocSearch.Text, CHKShowAll.Checked, out int x, out int y);
                 lblAvailableLocation.Text = $"Available Locations: {y}" + (x != y ? $"/{x}" : "");
-                foreach (var i in Entries) { LBValidLocations.Items.Add(i); }
-                LBValidLocations.TopIndex = lbLocTop; 
+                foreach (var i in Entries) 
+                { 
+                    if (i is MiscData.Areaheader area){ InMinimized = MinimizedHeader.ContainsKey(area.Area+ ":::" + (LBValidLocations).Name); }
+                    if (InMinimized && i is not MiscData.Areaheader) { continue; }
+                    LBValidLocations.Items.Add(i);
+                }
+                LBValidLocations.TopIndex = lbLocTop;
             }
             if (ToUpdate.Contains(LBValidEntrances)) 
             {
                 var Entries = TrackerDataHandeling.PopulateAvailableEntraceList(dataset, WinFormUtils.CreateDivider(LBValidEntrances), InstanceContainer.Instance, TXTEntSearch.Text, CHKShowAll.Checked, out int x, out int y);
                 lblAvailableEntrances.Text = $"Available Entrances: {y}" + (x != y ? $"/{x}" : "");
-                foreach (var i in Entries) { LBValidEntrances.Items.Add(i); }
+                foreach (var i in Entries)
+                {
+                    if (i is MiscData.Areaheader area) { InMinimized = MinimizedHeader.ContainsKey(area.Area+ ":::" + (LBValidEntrances).Name); }
+                    if (InMinimized && i is not MiscData.Areaheader) { continue; }
+                    LBValidEntrances.Items.Add(i); 
+                }
                 LBValidEntrances.TopIndex = lbEntTop; 
             }
             if (ToUpdate.Contains(LBCheckedLocations)) 
             {
                 var Entries = TrackerDataHandeling.PopulateCheckedLocationList(dataset, WinFormUtils.CreateDivider(LBCheckedLocations), InstanceContainer.Instance, TXTCheckedSearch.Text, out int x, out int y);
                 lblCheckedLocation.Text = $"Checked Locations: {y}" + (x != y ? $"/{x}" : "");
-                foreach (var i in Entries) { LBCheckedLocations.Items.Add(i); }
+                foreach (var i in Entries)
+                {
+                    if (i is MiscData.Areaheader area) { InMinimized = MinimizedHeader.ContainsKey(area.Area+ ":::" + (LBCheckedLocations).Name); }
+                    if (InMinimized && i is not MiscData.Areaheader) { continue; }
+                    LBCheckedLocations.Items.Add(i); 
+                }
                 LBCheckedLocations.TopIndex = lbCheckTop; 
             }
 
@@ -717,14 +751,24 @@ namespace Windows_Form_Frontend
                 NavigateHereContextItem.Click += (sender, e) => { CMBEnd.SelectedItem = NavAreaObject.Area; };
             }
 
-            //Filter By Area
+            //Area Object Functions
             if (listBox.SelectedItem is MiscData.Areaheader AreaObject)
             {
+                //Filter By Area
                 var TagetTextBox = listBox == LBValidLocations ? TXTLocSearch : (listBox == LBValidEntrances ? TXTEntSearch : (listBox == LBCheckedLocations ? TXTCheckedSearch : null));
                 ToolStripItem FilterHereContextItem = contextMenuStrip.Items.Add("Filter By this area");
-                FilterHereContextItem.Click += (sender, e) => 
+                FilterHereContextItem.Click += (sender, e) =>
                 {
                     TagetTextBox.Text = "#" + AreaObject.Area;
+                };
+                string Area = AreaObject.Area + ":::" + listBox.Name;
+                string HideAction = MinimizedHeader.ContainsKey(Area) ? "Expand Area" : "Minimize Area";
+                ToolStripItem HideAreaContextItem = contextMenuStrip.Items.Add(HideAction);
+                HideAreaContextItem.Click += (sender, e) =>
+                {
+                    if (MinimizedHeader.ContainsKey(Area)) { MinimizedHeader.Remove(Area); }
+                    else { MinimizedHeader[Area] = true; }
+                    PrintToListBox();
                 };
             }
 
