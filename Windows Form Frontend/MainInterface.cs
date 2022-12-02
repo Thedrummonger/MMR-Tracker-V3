@@ -1,6 +1,5 @@
 ﻿using Microsoft.VisualBasic;
 using MMR_Tracker_V3;
-using MMR_Tracker_V3.OtherGames;
 using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
 using System;
@@ -12,6 +11,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 

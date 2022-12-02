@@ -11,17 +11,38 @@ namespace MMR_Tracker_V3
 {
     public static class LogicStringParser
     {
-        public static readonly string[] OROperators = { "||", "|", " or ", " OR ", " Or " };
-        public static readonly string[] AndOperators = { "&&", "&", " and ", " AND ", " And " };
-        public static readonly string[] StrictOROperators = { "||", "|" };
-        public static readonly string[] StrictAndOperators = { "&&", "&"};
+        public class OperatorList
+        {
+            public string[] AndOperator;
+            public string[] OrOperator;
+            public OperatorList(string[] andOp, string[] orOp)
+            {
+                AndOperator = andOp;
+                OrOperator = orOp;
+            }
+        }
+        public class LogicFunction
+        {
+            public string Funtion;
+            public string Parameters;
+            public LogicFunction(string func, string parm)
+            {
+                Funtion = func;
+                Parameters = parm;
+            }
+        }
 
-        public static List<List<string>> ConvertLogicStringToConditional(string InLogic, bool StrictOperators = false, bool Logging = false)
+        public static string TestLogicLine =
+            "has_bombchus and (Small_Key_Spirit_Temple, 7) and Slingshot and (can_use(Dins_Fire) or " +
+            "at('Adult Spirit Temple', (can_use(Fire_Arrows) or (logic_spirit_mq_frozen_eye and can_use(Bow) and can_play(Song_of_Time))))) and " +
+            "(has(MASK_DEKU) and has(MAGIC_UPGRADE))";
+
+        public static List<List<string>> ConvertLogicStringToConditional(string InLogic, OperatorList Operators, bool Logging = false)
         {
             //This should probably not happen here.
             if (Logging) { Debug.WriteLine("====================================="); }
             if (Logging) { Debug.WriteLine(InLogic); }
-            InLogic = LogicStringParser.ReplaceLogicOperatorsWithMathOperators(InLogic, StrictOperators);
+            InLogic = LogicStringParser.ReplaceLogicOperatorsWithMathOperators(InLogic, Operators.OrOperator, Operators.AndOperator);
             if (Logging) { Debug.WriteLine(InLogic); }
             var LogicEntries = LogicStringParser.SplitLogicString(InLogic);
             if (Logging) { Debug.WriteLine(string.Join("\n", LogicEntries)); }
@@ -29,6 +50,46 @@ namespace MMR_Tracker_V3
             if (Logging) { Debug.WriteLine(PrepedLogic); }
             var Conditional = LogicStringParser.ExpandLogicString(PrepedLogic);
             return Conditional.Select(y => y.Select(x => ReplacementDict[x]).ToList()).ToList();
+        }
+
+        public static List<LogicFunction> GetFunctionsFromLogicString(string LogicString)
+        {
+            List<LogicFunction> LogicFunctions = new List<LogicFunction>();
+            string currentString = "";
+            int ParLevel = 0;
+            bool LastCharWasLetter = false;
+            foreach(var i in LogicString)
+            {
+                if (ParLevel > 0){
+                    if (i == '(') { ParLevel++; }
+                    if (i == ')') { ParLevel--; }
+                    currentString += i;
+                    if (ParLevel == 0) { 
+                        LogicFunctions.Add(SplitFuntion(currentString)); 
+                        currentString = ""; 
+                    }
+                    continue;
+                }
+                if (char.IsLetter(i) || i == '_') { 
+                    LastCharWasLetter = true; 
+                    currentString += i; 
+                }
+                else if (LastCharWasLetter && i == '(') { 
+                    ParLevel = 1; 
+                    currentString += i; 
+                }
+                else { 
+                    LastCharWasLetter = false; 
+                    currentString = ""; 
+                }
+            }
+            return LogicFunctions; 
+            
+            LogicFunction SplitFuntion(string Function)
+            {
+                int paramStart = Function.IndexOf('(');
+                return new LogicFunction(Function[..paramStart], Function[paramStart..]);
+            }
         }
 
         public static List<List<string>> ExpandLogicString(string InLogic)
@@ -103,21 +164,13 @@ namespace MMR_Tracker_V3
             return BrokenString;
         }
 
-        public static string ReplaceLogicOperatorsWithMathOperators(string Input, bool strict)
+        public static string ReplaceLogicOperatorsWithMathOperators(string Input, string[] orList, string[] andList)
         {
             string[] parts = Input.Split('\'');
             for (int i = 0; i < parts.Length; i += 2)
             {
-                if (strict)
-                {
-                    foreach (var j in StrictOROperators) { parts[i] = parts[i].Replace(j, " + "); }
-                    foreach (var j in StrictAndOperators) { parts[i] = parts[i].Replace(j, " * "); }
-                }
-                else
-                {
-                    foreach (var j in OROperators) { parts[i] = parts[i].Replace(j, " + "); }
-                    foreach (var j in AndOperators) { parts[i] = parts[i].Replace(j, " * "); }
-                }
+                foreach (var j in orList) { parts[i] = parts[i].Replace(j, " + "); }
+                foreach (var j in andList) { parts[i] = parts[i].Replace(j, " * "); }
             }
             return string.Join("'", parts);
         }
