@@ -113,6 +113,14 @@ namespace MMR_Tracker_V3
             {
                 if (literal && UserOptions.ContainsKey(ID)) { obj = UserOptions[ID]; return LogicEntryType.Option; }
                 if (LocationPool.ContainsKey(ID)) { obj = LocationPool[ID]; return LogicEntryType.location; }
+                if (InstanceReference.EntranceLogicNameToEntryData.ContainsKey(ID))
+                {
+                    var EA = InstanceReference.EntranceLogicNameToEntryData[ID];
+                    obj = EntrancePool.AreaList[EA.Area].LoadingZoneExits.ContainsKey(EA.Exit) ?
+                        EntrancePool.AreaList[EA.Area].LoadingZoneExits[EA.Exit] :
+                        EntrancePool.AreaList[EA.Area].MacroExits[EA.Exit];
+                    return LogicEntryType.Exit;
+                }
                 if (!literal && UserOptions.ContainsKey(ID)) { obj = UserOptions[ID]; return LogicEntryType.Option; }
                 obj = null;
                 return LogicEntryType.error;

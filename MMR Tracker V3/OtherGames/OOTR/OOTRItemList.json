@@ -1,0 +1,1773 @@
+﻿{
+  "Bombs (5)": [
+    "Item",
+    null,
+    1,
+    {
+      "junk": 8
+    }
+  ],
+  "Deku Nuts (5)": [
+    "Item",
+    null,
+    2,
+    {
+      "junk": 5
+    }
+  ],
+  "Bombchus (10)": [
+    "Item",
+    true,
+    3,
+    null
+  ],
+  "Boomerang": [
+    "Item",
+    true,
+    6,
+    null
+  ],
+  "Deku Stick (1)": [
+    "Item",
+    null,
+    7,
+    {
+      "junk": 5
+    }
+  ],
+  "Lens of Truth": [
+    "Item",
+    true,
+    10,
+    null
+  ],
+  "Megaton Hammer": [
+    "Item",
+    true,
+    13,
+    null
+  ],
+  "Cojiro": [
+    "Item",
+    true,
+    14,
+    {
+      "trade": true
+    }
+  ],
+  "Bottle": [
+    "Item",
+    true,
+    15,
+    {
+      "bottle": "Infinity"
+    }
+  ],
+  "Bottle with Milk": [
+    "Item",
+    true,
+    20,
+    {
+      "bottle": "Infinity"
+    }
+  ],
+  "Rutos Letter": [
+    "Item",
+    true,
+    21,
+    null
+  ],
+  "Deliver Letter": [
+    "Item",
+    true,
+    null,
+    {
+      "bottle": "Infinity"
+    }
+  ],
+  "Sell Big Poe": [
+    "Item",
+    true,
+    null,
+    {
+      "bottle": "Infinity"
+    }
+  ],
+  "Magic Bean": [
+    "Item",
+    true,
+    22,
+    {
+      "progressive": 10
+    }
+  ],
+  "Skull Mask": [
+    "Item",
+    null,
+    23,
+    {
+      "trade": true
+    }
+  ],
+  "Spooky Mask": [
+    "Item",
+    null,
+    24,
+    {
+      "trade": true
+    }
+  ],
+  "Keaton Mask": [
+    "Item",
+    null,
+    26,
+    {
+      "trade": true
+    }
+  ],
+  "Bunny Hood": [
+    "Item",
+    null,
+    27,
+    {
+      "trade": true
+    }
+  ],
+  "Mask of Truth": [
+    "Item",
+    null,
+    28,
+    {
+      "trade": true
+    }
+  ],
+  "Pocket Egg": [
+    "Item",
+    true,
+    29,
+    {
+      "trade": true
+    }
+  ],
+  "Pocket Cucco": [
+    "Item",
+    true,
+    30,
+    {
+      "trade": true
+    }
+  ],
+  "Odd Mushroom": [
+    "Item",
+    true,
+    31,
+    {
+      "trade": true
+    }
+  ],
+  "Odd Potion": [
+    "Item",
+    true,
+    32,
+    {
+      "trade": true
+    }
+  ],
+  "Poachers Saw": [
+    "Item",
+    true,
+    33,
+    {
+      "trade": true
+    }
+  ],
+  "Broken Sword": [
+    "Item",
+    true,
+    34,
+    {
+      "trade": true
+    }
+  ],
+  "Prescription": [
+    "Item",
+    true,
+    35,
+    {
+      "trade": true
+    }
+  ],
+  "Eyeball Frog": [
+    "Item",
+    true,
+    36,
+    {
+      "trade": true
+    }
+  ],
+  "Eyedrops": [
+    "Item",
+    true,
+    37,
+    {
+      "trade": true
+    }
+  ],
+  "Claim Check": [
+    "Item",
+    true,
+    38,
+    {
+      "trade": true
+    }
+  ],
+  "Kokiri Sword": [
+    "Item",
+    true,
+    39,
+    null
+  ],
+  "Giants Knife": [
+    "Item",
+    null,
+    40,
+    null
+  ],
+  "Deku Shield": [
+    "Item",
+    null,
+    41,
+    null
+  ],
+  "Hylian Shield": [
+    "Item",
+    null,
+    42,
+    null
+  ],
+  "Mirror Shield": [
+    "Item",
+    true,
+    43,
+    null
+  ],
+  "Goron Tunic": [
+    "Item",
+    true,
+    44,
+    null
+  ],
+  "Zora Tunic": [
+    "Item",
+    true,
+    45,
+    null
+  ],
+  "Iron Boots": [
+    "Item",
+    true,
+    46,
+    null
+  ],
+  "Hover Boots": [
+    "Item",
+    true,
+    47,
+    null
+  ],
+  "Stone of Agony": [
+    "Item",
+    true,
+    57,
+    null
+  ],
+  "Gerudo Membership Card": [
+    "Item",
+    true,
+    58,
+    null
+  ],
+  "Heart Container": [
+    "Item",
+    true,
+    61,
+    {
+      "alias": [
+        "Piece of Heart",
+        4
+      ],
+      "progressive": "Infinity"
+    }
+  ],
+  "Piece of Heart": [
+    "Item",
+    true,
+    62,
+    {
+      "progressive": "Infinity"
+    }
+  ],
+  "Boss Key": [
+    "BossKey",
+    true,
+    63,
+    null
+  ],
+  "Compass": [
+    "Compass",
+    null,
+    64,
+    null
+  ],
+  "Map": [
+    "Map",
+    null,
+    65,
+    null
+  ],
+  "Small Key": [
+    "SmallKey",
+    true,
+    66,
+    {
+      "progressive": "Infinity"
+    }
+  ],
+  "Weird Egg": [
+    "Item",
+    true,
+    71,
+    {
+      "trade": true
+    }
+  ],
+  "Recovery Heart": [
+    "Item",
+    null,
+    72,
+    {
+      "junk": 0
+    }
+  ],
+  "Arrows (5)": [
+    "Item",
+    null,
+    73,
+    {
+      "junk": 8
+    }
+  ],
+  "Arrows (10)": [
+    "Item",
+    null,
+    74,
+    {
+      "junk": 2
+    }
+  ],
+  "Arrows (30)": [
+    "Item",
+    null,
+    75,
+    {
+      "junk": 0
+    }
+  ],
+  "Rupee (1)": [
+    "Item",
+    null,
+    76,
+    {
+      "junk": -1
+    }
+  ],
+  "Rupees (5)": [
+    "Item",
+    null,
+    77,
+    {
+      "junk": 10
+    }
+  ],
+  "Rupees (20)": [
+    "Item",
+    null,
+    78,
+    {
+      "junk": 4
+    }
+  ],
+  "Milk": [
+    "Item",
+    null,
+    80,
+    null
+  ],
+  "Goron Mask": [
+    "Item",
+    null,
+    81,
+    null
+  ],
+  "Zora Mask": [
+    "Item",
+    null,
+    82,
+    null
+  ],
+  "Gerudo Mask": [
+    "Item",
+    null,
+    83,
+    null
+  ],
+  "Rupees (50)": [
+    "Item",
+    null,
+    85,
+    {
+      "junk": 1
+    }
+  ],
+  "Rupees (200)": [
+    "Item",
+    null,
+    86,
+    {
+      "junk": 0
+    }
+  ],
+  "Biggoron Sword": [
+    "Item",
+    null,
+    87,
+    null
+  ],
+  "Fire Arrows": [
+    "Item",
+    true,
+    88,
+    null
+  ],
+  "Ice Arrows": [
+    "Item",
+    true,
+    89,
+    null
+  ],
+  "Blue Fire Arrows": [
+    "Item",
+    true,
+    89,
+    null
+  ],
+  "Light Arrows": [
+    "Item",
+    true,
+    90,
+    null
+  ],
+  "Gold Skulltula Token": [
+    "Token",
+    true,
+    91,
+    {
+      "progressive": "Infinity"
+    }
+  ],
+  "Dins Fire": [
+    "Item",
+    true,
+    92,
+    null
+  ],
+  "Nayrus Love": [
+    "Item",
+    true,
+    94,
+    null
+  ],
+  "Farores Wind": [
+    "Item",
+    true,
+    93,
+    null
+  ],
+  "Deku Nuts (10)": [
+    "Item",
+    null,
+    100,
+    {
+      "junk": 0
+    }
+  ],
+  "Bombs (10)": [
+    "Item",
+    null,
+    102,
+    {
+      "junk": 2
+    }
+  ],
+  "Bombs (20)": [
+    "Item",
+    null,
+    103,
+    {
+      "junk": 0
+    }
+  ],
+  "Deku Seeds (30)": [
+    "Item",
+    null,
+    105,
+    {
+      "junk": 5
+    }
+  ],
+  "Bombchus (5)": [
+    "Item",
+    true,
+    106,
+    null
+  ],
+  "Bombchus (20)": [
+    "Item",
+    true,
+    107,
+    null
+  ],
+  "Rupee (Treasure Chest Game)": [
+    "Item",
+    null,
+    114,
+    null
+  ],
+  "Piece of Heart (Treasure Chest Game)": [
+    "Item",
+    true,
+    118,
+    {
+      "alias": [
+        "Piece of Heart",
+        1
+      ],
+      "progressive": "Infinity"
+    }
+  ],
+  "Ice Trap": [
+    "Item",
+    null,
+    124,
+    {
+      "junk": 0
+    }
+  ],
+  "Progressive Hookshot": [
+    "Item",
+    true,
+    128,
+    {
+      "progressive": 2
+    }
+  ],
+  "Progressive Strength Upgrade": [
+    "Item",
+    true,
+    129,
+    {
+      "progressive": 3
+    }
+  ],
+  "Bomb Bag": [
+    "Item",
+    true,
+    130,
+    null
+  ],
+  "Bow": [
+    "Item",
+    true,
+    131,
+    null
+  ],
+  "Slingshot": [
+    "Item",
+    true,
+    132,
+    null
+  ],
+  "Progressive Wallet": [
+    "Item",
+    true,
+    133,
+    {
+      "progressive": 3
+    }
+  ],
+  "Progressive Scale": [
+    "Item",
+    true,
+    134,
+    {
+      "progressive": 2
+    }
+  ],
+  "Deku Nut Capacity": [
+    "Item",
+    null,
+    135,
+    null
+  ],
+  "Deku Stick Capacity": [
+    "Item",
+    null,
+    136,
+    null
+  ],
+  "Bombchus": [
+    "Item",
+    true,
+    137,
+    null
+  ],
+  "Magic Meter": [
+    "Item",
+    true,
+    138,
+    null
+  ],
+  "Ocarina": [
+    "Item",
+    true,
+    139,
+    null
+  ],
+  "Bottle with Red Potion": [
+    "Item",
+    true,
+    140,
+    {
+      "bottle": true,
+      "shop_object": 15
+    }
+  ],
+  "Bottle with Green Potion": [
+    "Item",
+    true,
+    141,
+    {
+      "bottle": true,
+      "shop_object": 15
+    }
+  ],
+  "Bottle with Blue Potion": [
+    "Item",
+    true,
+    142,
+    {
+      "bottle": true,
+      "shop_object": 15
+    }
+  ],
+  "Bottle with Fairy": [
+    "Item",
+    true,
+    143,
+    {
+      "bottle": true,
+      "shop_object": 15
+    }
+  ],
+  "Bottle with Fish": [
+    "Item",
+    true,
+    144,
+    {
+      "bottle": true,
+      "shop_object": 15
+    }
+  ],
+  "Bottle with Blue Fire": [
+    "Item",
+    true,
+    145,
+    {
+      "bottle": true,
+      "shop_object": 15
+    }
+  ],
+  "Bottle with Bugs": [
+    "Item",
+    true,
+    146,
+    {
+      "bottle": true,
+      "shop_object": 15
+    }
+  ],
+  "Bottle with Big Poe": [
+    "Item",
+    true,
+    147,
+    {
+      "shop_object": 15
+    }
+  ],
+  "Bottle with Poe": [
+    "Item",
+    true,
+    148,
+    {
+      "bottle": true,
+      "shop_object": 15
+    }
+  ],
+  "Boss Key (Forest Temple)": [
+    "BossKey",
+    true,
+    149,
+    null
+  ],
+  "Boss Key (Fire Temple)": [
+    "BossKey",
+    true,
+    150,
+    null
+  ],
+  "Boss Key (Water Temple)": [
+    "BossKey",
+    true,
+    151,
+    null
+  ],
+  "Boss Key (Spirit Temple)": [
+    "BossKey",
+    true,
+    152,
+    null
+  ],
+  "Boss Key (Shadow Temple)": [
+    "BossKey",
+    true,
+    153,
+    null
+  ],
+  "Boss Key (Ganons Castle)": [
+    "GanonBossKey",
+    true,
+    154,
+    null
+  ],
+  "Compass (Deku Tree)": [
+    "Compass",
+    false,
+    155,
+    null
+  ],
+  "Compass (Dodongos Cavern)": [
+    "Compass",
+    false,
+    156,
+    null
+  ],
+  "Compass (Jabu Jabus Belly)": [
+    "Compass",
+    false,
+    157,
+    null
+  ],
+  "Compass (Forest Temple)": [
+    "Compass",
+    false,
+    158,
+    null
+  ],
+  "Compass (Fire Temple)": [
+    "Compass",
+    false,
+    159,
+    null
+  ],
+  "Compass (Water Temple)": [
+    "Compass",
+    false,
+    160,
+    null
+  ],
+  "Compass (Spirit Temple)": [
+    "Compass",
+    false,
+    161,
+    null
+  ],
+  "Compass (Shadow Temple)": [
+    "Compass",
+    false,
+    162,
+    null
+  ],
+  "Compass (Bottom of the Well)": [
+    "Compass",
+    false,
+    163,
+    null
+  ],
+  "Compass (Ice Cavern)": [
+    "Compass",
+    false,
+    164,
+    null
+  ],
+  "Map (Deku Tree)": [
+    "Map",
+    false,
+    165,
+    null
+  ],
+  "Map (Dodongos Cavern)": [
+    "Map",
+    false,
+    166,
+    null
+  ],
+  "Map (Jabu Jabus Belly)": [
+    "Map",
+    false,
+    167,
+    null
+  ],
+  "Map (Forest Temple)": [
+    "Map",
+    false,
+    168,
+    null
+  ],
+  "Map (Fire Temple)": [
+    "Map",
+    false,
+    169,
+    null
+  ],
+  "Map (Water Temple)": [
+    "Map",
+    false,
+    170,
+    null
+  ],
+  "Map (Spirit Temple)": [
+    "Map",
+    false,
+    171,
+    null
+  ],
+  "Map (Shadow Temple)": [
+    "Map",
+    false,
+    172,
+    null
+  ],
+  "Map (Bottom of the Well)": [
+    "Map",
+    false,
+    173,
+    null
+  ],
+  "Map (Ice Cavern)": [
+    "Map",
+    false,
+    174,
+    null
+  ],
+  "Small Key (Forest Temple)": [
+    "SmallKey",
+    true,
+    175,
+    {
+      "progressive": "Infinity"
+    }
+  ],
+  "Small Key (Fire Temple)": [
+    "SmallKey",
+    true,
+    176,
+    {
+      "progressive": "Infinity"
+    }
+  ],
+  "Small Key (Water Temple)": [
+    "SmallKey",
+    true,
+    177,
+    {
+      "progressive": "Infinity"
+    }
+  ],
+  "Small Key (Spirit Temple)": [
+    "SmallKey",
+    true,
+    178,
+    {
+      "progressive": "Infinity"
+    }
+  ],
+  "Small Key (Shadow Temple)": [
+    "SmallKey",
+    true,
+    179,
+    {
+      "progressive": "Infinity"
+    }
+  ],
+  "Small Key (Bottom of the Well)": [
+    "SmallKey",
+    true,
+    180,
+    {
+      "progressive": "Infinity"
+    }
+  ],
+  "Small Key (Gerudo Training Ground)": [
+    "SmallKey",
+    true,
+    181,
+    {
+      "progressive": "Infinity"
+    }
+  ],
+  "Small Key (Thieves Hideout)": [
+    "HideoutSmallKey",
+    true,
+    182,
+    {
+      "progressive": "Infinity"
+    }
+  ],
+  "Small Key (Ganons Castle)": [
+    "SmallKey",
+    true,
+    183,
+    {
+      "progressive": "Infinity"
+    }
+  ],
+  "Double Defense": [
+    "Item",
+    null,
+    184,
+    null
+  ],
+  "Buy Magic Bean": [
+    "Item",
+    true,
+    22,
+    {
+      "alias": [
+        "Magic Bean",
+        10
+      ],
+      "progressive": 10
+    }
+  ],
+  "Magic Bean Pack": [
+    "Item",
+    true,
+    201,
+    {
+      "alias": [
+        "Magic Bean",
+        10
+      ],
+      "progressive": 10
+    }
+  ],
+  "Triforce Piece": [
+    "Item",
+    true,
+    202,
+    {
+      "progressive": "Infinity"
+    }
+  ],
+  "Zeldas Letter": [
+    "Item",
+    true,
+    11,
+    {
+      "trade": true
+    }
+  ],
+  "Time Travel": [
+    "Event",
+    true,
+    null,
+    null
+  ],
+  "Scarecrow Song": [
+    "Event",
+    true,
+    null,
+    null
+  ],
+  "Triforce": [
+    "Event",
+    true,
+    null,
+    null
+  ],
+  "Small Key Ring (Forest Temple)": [
+    "SmallKey",
+    true,
+    203,
+    {
+      "alias": [
+        "Small Key (Forest Temple)",
+        10
+      ],
+      "progressive": "Infinity"
+    }
+  ],
+  "Small Key Ring (Fire Temple)": [
+    "SmallKey",
+    true,
+    204,
+    {
+      "alias": [
+        "Small Key (Fire Temple)",
+        10
+      ],
+      "progressive": "Infinity"
+    }
+  ],
+  "Small Key Ring (Water Temple)": [
+    "SmallKey",
+    true,
+    205,
+    {
+      "alias": [
+        "Small Key (Water Temple)",
+        10
+      ],
+      "progressive": "Infinity"
+    }
+  ],
+  "Small Key Ring (Spirit Temple)": [
+    "SmallKey",
+    true,
+    206,
+    {
+      "alias": [
+        "Small Key (Spirit Temple)",
+        10
+      ],
+      "progressive": "Infinity"
+    }
+  ],
+  "Small Key Ring (Shadow Temple)": [
+    "SmallKey",
+    true,
+    207,
+    {
+      "alias": [
+        "Small Key (Shadow Temple)",
+        10
+      ],
+      "progressive": "Infinity"
+    }
+  ],
+  "Small Key Ring (Bottom of the Well)": [
+    "SmallKey",
+    true,
+    208,
+    {
+      "alias": [
+        "Small Key (Bottom of the Well)",
+        10
+      ],
+      "progressive": "Infinity"
+    }
+  ],
+  "Small Key Ring (Gerudo Training Ground)": [
+    "SmallKey",
+    true,
+    209,
+    {
+      "alias": [
+        "Small Key (Gerudo Training Ground)",
+        10
+      ],
+      "progressive": "Infinity"
+    }
+  ],
+  "Small Key Ring (Thieves Hideout)": [
+    "HideoutSmallKey",
+    true,
+    210,
+    {
+      "alias": [
+        "Small Key (Thieves Hideout)",
+        10
+      ],
+      "progressive": "Infinity"
+    }
+  ],
+  "Small Key Ring (Ganons Castle)": [
+    "SmallKey",
+    true,
+    211,
+    {
+      "alias": [
+        "Small Key (Ganons Castle)",
+        10
+      ],
+      "progressive": "Infinity"
+    }
+  ],
+  "Water Temple Clear": [
+    "Event",
+    true,
+    null,
+    null
+  ],
+  "Forest Trial Clear": [
+    "Event",
+    true,
+    null,
+    null
+  ],
+  "Fire Trial Clear": [
+    "Event",
+    true,
+    null,
+    null
+  ],
+  "Water Trial Clear": [
+    "Event",
+    true,
+    null,
+    null
+  ],
+  "Shadow Trial Clear": [
+    "Event",
+    true,
+    null,
+    null
+  ],
+  "Spirit Trial Clear": [
+    "Event",
+    true,
+    null,
+    null
+  ],
+  "Light Trial Clear": [
+    "Event",
+    true,
+    null,
+    null
+  ],
+  "Deku Stick Drop": [
+    "Drop",
+    true,
+    null,
+    null
+  ],
+  "Deku Nut Drop": [
+    "Drop",
+    true,
+    null,
+    null
+  ],
+  "Blue Fire": [
+    "Drop",
+    true,
+    null,
+    null
+  ],
+  "Fairy": [
+    "Drop",
+    true,
+    null,
+    null
+  ],
+  "Fish": [
+    "Drop",
+    true,
+    null,
+    null
+  ],
+  "Bugs": [
+    "Drop",
+    true,
+    null,
+    null
+  ],
+  "Big Poe": [
+    "Drop",
+    true,
+    null,
+    null
+  ],
+  "Bombchu Drop": [
+    "Drop",
+    true,
+    null,
+    null
+  ],
+  "Deku Shield Drop": [
+    "Drop",
+    true,
+    null,
+    null
+  ],
+  "Arrows": [
+    "Refill",
+    null,
+    null,
+    null
+  ],
+  "Bombs": [
+    "Refill",
+    null,
+    null,
+    null
+  ],
+  "Deku Seeds": [
+    "Refill",
+    null,
+    null,
+    null
+  ],
+  "Deku Sticks": [
+    "Refill",
+    null,
+    null,
+    null
+  ],
+  "Deku Nuts": [
+    "Refill",
+    null,
+    null,
+    null
+  ],
+  "Rupees": [
+    "Refill",
+    null,
+    null,
+    null
+  ],
+  "Minuet of Forest": [
+    "Song",
+    true,
+    187,
+    {
+      "text_id": 115,
+      "song_id": 2,
+      "item_id": 90
+    }
+  ],
+  "Bolero of Fire": [
+    "Song",
+    true,
+    188,
+    {
+      "text_id": 116,
+      "song_id": 3,
+      "item_id": 91
+    }
+  ],
+  "Serenade of Water": [
+    "Song",
+    true,
+    189,
+    {
+      "text_id": 117,
+      "song_id": 4,
+      "item_id": 92
+    }
+  ],
+  "Requiem of Spirit": [
+    "Song",
+    true,
+    190,
+    {
+      "text_id": 118,
+      "song_id": 5,
+      "item_id": 93
+    }
+  ],
+  "Nocturne of Shadow": [
+    "Song",
+    true,
+    191,
+    {
+      "text_id": 119,
+      "song_id": 6,
+      "item_id": 94
+    }
+  ],
+  "Prelude of Light": [
+    "Song",
+    true,
+    192,
+    {
+      "text_id": 120,
+      "song_id": 7,
+      "item_id": 95
+    }
+  ],
+  "Zeldas Lullaby": [
+    "Song",
+    true,
+    193,
+    {
+      "text_id": 212,
+      "song_id": 10,
+      "item_id": 96
+    }
+  ],
+  "Eponas Song": [
+    "Song",
+    true,
+    194,
+    {
+      "text_id": 210,
+      "song_id": 9,
+      "item_id": 97
+    }
+  ],
+  "Sarias Song": [
+    "Song",
+    true,
+    195,
+    {
+      "text_id": 209,
+      "song_id": 8,
+      "item_id": 98
+    }
+  ],
+  "Suns Song": [
+    "Song",
+    true,
+    196,
+    {
+      "text_id": 211,
+      "song_id": 11,
+      "item_id": 99
+    }
+  ],
+  "Song of Time": [
+    "Song",
+    true,
+    197,
+    {
+      "text_id": 213,
+      "song_id": 12,
+      "item_id": 100
+    }
+  ],
+  "Song of Storms": [
+    "Song",
+    true,
+    198,
+    {
+      "text_id": 214,
+      "song_id": 13,
+      "item_id": 101
+    }
+  ],
+  "Buy Deku Nut (5)": [
+    "Shop",
+    true,
+    0,
+    {
+      "object": 187,
+      "price": 15
+    }
+  ],
+  "Buy Arrows (30)": [
+    "Shop",
+    false,
+    1,
+    {
+      "object": 216,
+      "price": 60
+    }
+  ],
+  "Buy Arrows (50)": [
+    "Shop",
+    false,
+    2,
+    {
+      "object": 216,
+      "price": 90
+    }
+  ],
+  "Buy Bombs (5) for 25 Rupees": [
+    "Shop",
+    false,
+    3,
+    {
+      "object": 206,
+      "price": 25
+    }
+  ],
+  "Buy Deku Nut (10)": [
+    "Shop",
+    true,
+    4,
+    {
+      "object": 187,
+      "price": 30
+    }
+  ],
+  "Buy Deku Stick (1)": [
+    "Shop",
+    true,
+    5,
+    {
+      "object": 199,
+      "price": 10
+    }
+  ],
+  "Buy Bombs (10)": [
+    "Shop",
+    false,
+    6,
+    {
+      "object": 206,
+      "price": 50
+    }
+  ],
+  "Buy Fish": [
+    "Shop",
+    true,
+    7,
+    {
+      "object": 244,
+      "price": 200
+    }
+  ],
+  "Buy Red Potion for 30 Rupees": [
+    "Shop",
+    false,
+    8,
+    {
+      "object": 235,
+      "price": 30
+    }
+  ],
+  "Buy Green Potion": [
+    "Shop",
+    false,
+    9,
+    {
+      "object": 235,
+      "price": 30
+    }
+  ],
+  "Buy Blue Potion": [
+    "Shop",
+    false,
+    10,
+    {
+      "object": 235,
+      "price": 100
+    }
+  ],
+  "Buy Hylian Shield": [
+    "Shop",
+    true,
+    12,
+    {
+      "object": 220,
+      "price": 80
+    }
+  ],
+  "Buy Deku Shield": [
+    "Shop",
+    true,
+    13,
+    {
+      "object": 203,
+      "price": 40
+    }
+  ],
+  "Buy Goron Tunic": [
+    "Shop",
+    true,
+    14,
+    {
+      "object": 242,
+      "price": 200
+    }
+  ],
+  "Buy Zora Tunic": [
+    "Shop",
+    true,
+    15,
+    {
+      "object": 242,
+      "price": 300
+    }
+  ],
+  "Buy Heart": [
+    "Shop",
+    false,
+    16,
+    {
+      "object": 183,
+      "price": 10
+    }
+  ],
+  "Buy Bombchu (10)": [
+    "Shop",
+    true,
+    21,
+    {
+      "object": 217,
+      "price": 99
+    }
+  ],
+  "Buy Bombchu (20)": [
+    "Shop",
+    true,
+    22,
+    {
+      "object": 217,
+      "price": 180
+    }
+  ],
+  "Buy Bombchu (5)": [
+    "Shop",
+    true,
+    24,
+    {
+      "object": 217,
+      "price": 60
+    }
+  ],
+  "Buy Deku Seeds (30)": [
+    "Shop",
+    false,
+    29,
+    {
+      "object": 281,
+      "price": 30
+    }
+  ],
+  "Sold Out": [
+    "Shop",
+    false,
+    38,
+    {
+      "object": 328
+    }
+  ],
+  "Buy Blue Fire": [
+    "Shop",
+    true,
+    39,
+    {
+      "object": 371,
+      "price": 300
+    }
+  ],
+  "Buy Bottle Bug": [
+    "Shop",
+    true,
+    40,
+    {
+      "object": 372,
+      "price": 50
+    }
+  ],
+  "Buy Poe": [
+    "Shop",
+    false,
+    42,
+    {
+      "object": 374,
+      "price": 30
+    }
+  ],
+  "Buy Fairy's Spirit": [
+    "Shop",
+    true,
+    43,
+    {
+      "object": 375,
+      "price": 50
+    }
+  ],
+  "Buy Arrows (10)": [
+    "Shop",
+    false,
+    44,
+    {
+      "object": 216,
+      "price": 20
+    }
+  ],
+  "Buy Bombs (20)": [
+    "Shop",
+    false,
+    45,
+    {
+      "object": 206,
+      "price": 80
+    }
+  ],
+  "Buy Bombs (30)": [
+    "Shop",
+    false,
+    46,
+    {
+      "object": 206,
+      "price": 120
+    }
+  ],
+  "Buy Bombs (5) for 35 Rupees": [
+    "Shop",
+    false,
+    47,
+    {
+      "object": 206,
+      "price": 35
+    }
+  ],
+  "Buy Red Potion for 40 Rupees": [
+    "Shop",
+    false,
+    48,
+    {
+      "object": 235,
+      "price": 40
+    }
+  ],
+  "Buy Red Potion for 50 Rupees": [
+    "Shop",
+    false,
+    49,
+    {
+      "object": 235,
+      "price": 50
+    }
+  ],
+  "Kokiri Emerald": [
+    "DungeonReward",
+    true,
+    null,
+    {
+      "stone": true,
+      "addr2_data": 128,
+      "bit_mask": 262144,
+      "item_id": 108,
+      "actor_type": 19,
+      "object_id": 173
+    }
+  ],
+  "Goron Ruby": [
+    "DungeonReward",
+    true,
+    null,
+    {
+      "stone": true,
+      "addr2_data": 129,
+      "bit_mask": 524288,
+      "item_id": 109,
+      "actor_type": 20,
+      "object_id": 173
+    }
+  ],
+  "Zora Sapphire": [
+    "DungeonReward",
+    true,
+    null,
+    {
+      "stone": true,
+      "addr2_data": 130,
+      "bit_mask": 1048576,
+      "item_id": 110,
+      "actor_type": 21,
+      "object_id": 173
+    }
+  ],
+  "Forest Medallion": [
+    "DungeonReward",
+    true,
+    null,
+    {
+      "medallion": true,
+      "addr2_data": 62,
+      "bit_mask": 1,
+      "item_id": 102,
+      "actor_type": 11,
+      "object_id": 186
+    }
+  ],
+  "Fire Medallion": [
+    "DungeonReward",
+    true,
+    null,
+    {
+      "medallion": true,
+      "addr2_data": 60,
+      "bit_mask": 2,
+      "item_id": 103,
+      "actor_type": 9,
+      "object_id": 186
+    }
+  ],
+  "Water Medallion": [
+    "DungeonReward",
+    true,
+    null,
+    {
+      "medallion": true,
+      "addr2_data": 61,
+      "bit_mask": 4,
+      "item_id": 104,
+      "actor_type": 10,
+      "object_id": 186
+    }
+  ],
+  "Spirit Medallion": [
+    "DungeonReward",
+    true,
+    null,
+    {
+      "medallion": true,
+      "addr2_data": 63,
+      "bit_mask": 8,
+      "item_id": 105,
+      "actor_type": 12,
+      "object_id": 186
+    }
+  ],
+  "Shadow Medallion": [
+    "DungeonReward",
+    true,
+    null,
+    {
+      "medallion": true,
+      "addr2_data": 65,
+      "bit_mask": 16,
+      "item_id": 106,
+      "actor_type": 13,
+      "object_id": 186
+    }
+  ],
+  "Light Medallion": [
+    "DungeonReward",
+    true,
+    null,
+    {
+      "medallion": true,
+      "addr2_data": 64,
+      "bit_mask": 32,
+      "item_id": 107,
+      "actor_type": 14,
+      "object_id": 186
+    }
+  ]
+}

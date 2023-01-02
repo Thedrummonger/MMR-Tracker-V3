@@ -278,14 +278,7 @@ namespace Windows_Form_Frontend
 
         private void CodeTestingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            List<string> UnlockData = new List<string>();
-            InstanceContainer.logicCalculation.checkItemArray("NonTransformationMasks", 3, UnlockData, out int Total);
-
-            Debug.WriteLine($"Total Masks {Total}");
-            Debug.WriteLine($"Unlock Data {JsonConvert.SerializeObject(UnlockData, Testing._NewtonsoftJsonSerializerOptions)}");
-
-            var HeartPieces = InstanceContainer.Instance.ItemPool.Values.Where(x => x.GetDictEntry(InstanceContainer.Instance).GetName(InstanceContainer.Instance) == "Heart Container").Select(x => x.Id);
-            //Debug.WriteLine($"Unlock Data {JsonConvert.SerializeObject(HeartPieces, Testing._NewtonsoftJsonSerializerOptions)}");
+            MMR_Tracker_V3.OtherGames.OOTR.ReadOOTRItemsAndLocations.Read();
         }
 
         //ListBoxes

@@ -13,6 +13,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="OtherGames\OOTR\OOTRItemList.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Update="OtherGames\OOTR\OOTRLocationList.Json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
     <None Update="Recources\Presets\WebPresets.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

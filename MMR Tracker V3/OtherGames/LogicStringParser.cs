@@ -25,6 +25,11 @@ namespace MMR_Tracker_V3
         {
             public string Funtion;
             public string Parameters;
+            public string ParametersTrimmed { get { return Parameters.TrimStart('(').TrimEnd(')'); } }
+            public override string ToString()
+            {
+                return Funtion + Parameters;
+            }
             public LogicFunction(string func, string parm)
             {
                 Funtion = func;

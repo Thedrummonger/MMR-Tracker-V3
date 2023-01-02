@@ -428,7 +428,7 @@ namespace MMR_Tracker_V3
             bool RequiremntMet = false;
             foreach (var currentOption in OptionList)
             {
-                var CurrentOptionType = instance.GetOptionEntryType(currentOption, LiteralOption, out _);
+                var CurrentOptionType = instance.GetOptionEntryType(currentOption, LiteralOption, out object CurrentOptionEntry);
                 foreach (var CurrentValue in ValueList)
                 {
                     string CheckValue = CurrentValue;
@@ -438,9 +438,18 @@ namespace MMR_Tracker_V3
                     //result in another location becoming unavilable otherwise we could enter an infinite loop if both those location are checked automatically
                     else if (CurrentOptionType == LogicEntryType.location && (instance.GetLocationByID(currentOption)?.GetItemAtCheck(instance) == null)) { RequiremntMet = inverse; }
                     else if (CurrentOptionType == LogicEntryType.location && (instance.GetLocationByID(currentOption)?.GetItemAtCheck(instance) == CheckValue)) { RequiremntMet = true; }
+                    else if (CurrentOptionType == LogicEntryType.Exit && (CurrentOptionEntry as EntranceData.EntranceRandoExit)?.EntrancePair == null) { RequiremntMet = inverse; }
+                    else if (CurrentOptionType == LogicEntryType.Exit && ExitLeadsToArea(CurrentOptionEntry, CheckValue)) { RequiremntMet = true; }
                 }
             }
             return RequiremntMet != inverse;
+        }
+
+        private static bool ExitLeadsToArea(object Exit, string Area)
+        {
+            EntranceData.EntranceRandoExit Entrance = Exit as EntranceData.EntranceRandoExit;
+            if (Entrance.DestinationExit is not null && Entrance.DestinationExit.region == Area) { return true; }
+            return false;
         }
 
         public static bool CheckEntrancePair(this TrackerInstance instance)
