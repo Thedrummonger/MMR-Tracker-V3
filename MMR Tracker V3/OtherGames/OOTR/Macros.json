@@ -31,14 +31,13 @@
   "can_cut_shrubs": "is_adult or Sticks or Kokiri_Sword or Boomerang or has_explosives",
   "can_dive": "Progressive_Scale",
   "can_leave_forest": "open_forest != 'closed' or is_adult or is_glitched or Deku_Tree_Clear",
-  "can_plant_bugs": "is_child and (Bugs or Buy_Bottle_Bug))",
+  "can_plant_bugs": "is_child and (Bugs or Buy_Bottle_Bug)",
   "can_ride_epona": "is_adult and Epona and (can_play(Eponas_Song) or (is_glitched and can_hover))",
   "can_stun_deku": "is_adult or (Slingshot or Boomerang or Sticks or Kokiri_Sword or has_explosives or can_use(Dins_Fire) or Nuts or Deku_Shield)",
   "can_summon_gossip_fairy": "Ocarina and (Zeldas_Lullaby or Eponas_Song or Song_of_Time or Suns_Song)",
   "can_summon_gossip_fairy_without_suns": "Ocarina and (Zeldas_Lullaby or Eponas_Song or Song_of_Time)",
   "can_take_damage": "damage_multiplier != 'ohko' or Fairy or can_use(Nayrus_Love)",
   "can_plant_bean": "plant_beans or (is_child and (Magic_Bean, 10))",
-  "can_play(song)": "Ocarina and song",
   "can_open_bomb_grotto": "can_blast_or_smash and (Stone_of_Agony or logic_grottos_without_agony)",
   "can_open_storm_grotto": "can_play(Song_of_Storms) and (Stone_of_Agony or logic_grottos_without_agony)",
   "can_use_projectile": "has_explosives or (is_adult and (Bow or Hookshot)) or (is_child and (Slingshot or Boomerang))",
@@ -53,7 +52,7 @@
   "has_fire_source": "can_use(Dins_Fire) or can_use(Fire_Arrows)",
   "has_fire_source_with_torch": "has_fire_source or (is_child and Sticks)",
 
-  "can_finish_GerudoFortress": "(gerudo_fortress == 'normal' and 'Hideout 1 Torch Jail Carpenter' and 'Hideout 2 Torches Jail Carpenter' and 'Hideout 3 Torches Jail Carpenter' and 'Hideout 4 Torches Jail Carpenter')or (gerudo_fortress == 'fast' and 'Hideout 1 Torch Jail Carpenter')or (gerudo_fortress != 'normal' and gerudo_fortress != 'fast')",
+  "can_finish_GerudoFortress": "(gerudo_fortress == 'normal' and 'Hideout 1 Torch Jail Carpenter' and 'Hideout 2 Torches Jail Carpenter' and 'Hideout 3 Torches Jail Carpenter' and 'Hideout 4 Torches Jail Carpenter') or (gerudo_fortress == 'fast' and 'Hideout 1 Torch Jail Carpenter') or (gerudo_fortress != 'normal' and gerudo_fortress != 'fast')",
   "has_shield": "(is_adult and Hylian_Shield) or (is_child and Deku_Shield)",
   "can_shield": "(is_adult and (Hylian_Shield or Mirror_Shield)) or (is_child and Deku_Shield)",
   "can_mega": "has_explosives and can_shield",
@@ -76,5 +75,22 @@
   "king_dodongo_shortcuts_water": "Water Temple Boss Door => Morpha Boss Room == King Dodongo Boss Room and water_temple_shortcuts",
   "king_dodongo_shortcuts_shadow": "Shadow Temple Boss Door => Bongo Bongo Boss Room == King Dodongo Boss Room and shadow_temple_shortcuts",
   "king_dodongo_shortcuts_spirit": "Spirit Temple Boss Door => Twinrova Boss Room == King Dodongo Boss Room and spirit_temple_shortcuts",
-  "king_dodongo_shortcuts": "king_dodongo_shortcuts_deku or king_dodongo_shortcuts_dc or king_dodongo_shortcuts_jabu or king_dodongo_shortcuts_forest or king_dodongo_shortcuts_fire or king_dodongo_shortcuts_water or king_dodongo_shortcuts_shadow or king_dodongo_shortcuts_spirit"
+  "king_dodongo_shortcuts": "king_dodongo_shortcuts_deku or king_dodongo_shortcuts_dc or king_dodongo_shortcuts_jabu or king_dodongo_shortcuts_forest or king_dodongo_shortcuts_fire or king_dodongo_shortcuts_water or king_dodongo_shortcuts_shadow or king_dodongo_shortcuts_spirit",
+
+  "has_bottle": "((Rutos_Letter, 2) or (Deliver Rutos Letter)) or Bottle_with_Milk or Bottle_with_Red_Potion or Bottle_with_Green_Potion or Bottle_with_Blue_Potion or Bottle_with_Fairy or Bottle_with_Fish or Bottle_with_Blue_Fire or Bottle_with_Bugs or Bottle_with_Big_Poe or Bottle_with_Poe",
+  "not entrance_shuffle": "shuffle_interior_entrances == off and shuffle_overworld_entrances == off",
+  "at_night": true,
+  "at_day": true,
+  "had_night_start": true,
+  "at_dampe_time": true,
+
+  "not deku_tree_shortcuts": "deku_tree_shortcuts == false",
+  "not dodongos_cavern_shortcuts": "dodongos_cavern_shortcuts == false",
+  "not jabu_shortcuts": "jabu_shortcuts == false",
+  "not forest_temple_shortcuts": "forest_temple_shortcuts == false",
+  "not fire_temple_shortcuts": "fire_temple_shortcuts == false",
+  "not shadow_temple_shortcuts": "shadow_temple_shortcuts == false",
+  "not spirit_temple_shortcuts": "spirit_temple_shortcuts == false",
+
+  "fix_broken_drops":  true
 }

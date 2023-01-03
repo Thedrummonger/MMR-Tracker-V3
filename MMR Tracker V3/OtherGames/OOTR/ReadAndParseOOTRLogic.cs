@@ -12,10 +12,18 @@ namespace MMR_Tracker_V3.OtherGames.OOTR
     public static class ReadAndParseOOTRLogic
     {
         public static string TestFolder = References.TestingPaths.GetDevTestingPath();
-        public static string Logicdata = Path.Combine(TestFolder, @"OoT-Randomizer-Dev-R\data");
+        public static string Logicdata = Path.Combine(TestFolder, @"OoT-Randomizer-Dev-R", "data");
         public static string CasualLogic = Path.Combine(Logicdata, "World");
         public static string GlitchedLogic = Path.Combine(Logicdata, "Glitched World");
         public static string[] AllLogicFiles = Directory.GetFiles(CasualLogic);
+
+        public static string CodeFolder = References.TestingPaths.GetDevCodePath();
+        public static string OOTRCode = Path.Combine(CodeFolder, @"MMR Tracker V3", "OtherGames", "OOTR");
+        public static string OOTRMacroFile = Path.Combine(OOTRCode, @"Macros.json");
+        public static string OOTRTricksFile = Path.Combine(OOTRCode, @"LogicTricks.json");
+        public static string OOTRItemFile = Path.Combine(OOTRCode, @"OOTRItemList.json");
+        public static string OOTRLocationFile = Path.Combine(OOTRCode, @"OOTRLocationList.json");
+        public static string OOTRVariableFile = Path.Combine(OOTRCode, @"Variables.json");
 
         public static Dictionary<string, string> has_projectile = new Dictionary<string, string>
         {
@@ -76,6 +84,15 @@ namespace MMR_Tracker_V3.OtherGames.OOTR
                 logicFile.LogicalRegions = Newtonsoft.Json.JsonConvert.DeserializeObject<List<OOTRObjects.LogicalRegion>>(string.Join("", Data));
                 LogicFiles.Add(logicFile);
             }
+
+            OOTRObjects.LogicFile MacroFile = new OOTRObjects.LogicFile();
+            MacroFile.FilePath = OOTRMacroFile;
+            OOTRObjects.LogicalRegion MacroRegion = new OOTRObjects.LogicalRegion { 
+                region_name = null, 
+                events = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(OOTRMacroFile)) 
+            };
+            MacroFile.LogicalRegions = new List<OOTRObjects.LogicalRegion> { MacroRegion };
+            LogicFiles.Add(MacroFile);
             return LogicFiles;
         }
 
@@ -95,13 +112,13 @@ namespace MMR_Tracker_V3.OtherGames.OOTR
             {
                 foreach (var loc in List?.Keys?.ToList() ?? new List<string>())
                 {
-                    if (Region.dungeon is not null)
+                    if (Region.dungeon is not null && !File.FilePath.EndsWith("Bosses.json"))
                     {
                         string Layout = File.IsMQ ? "MQ" : "Vanilla";
                         string DungeonArea = $"{Region.dungeon} Layout == {Layout}";
                         List[loc] = $"{DungeonArea} and ({List[loc]})";
                     }
-                    if (!isExit) { List[loc] = $"{Region.region_name} and ({List[loc]})"; }
+                    if (!isExit && Region.region_name is not null) { List[loc] = $"{Region.region_name} and ({List[loc]})"; }
                     List[loc] = LogicStringParser.ReplaceLogicOperatorsWithMathOperators(List[loc], new string[] { " or " }, new string[] { " and " });
                     List[loc] = List[loc].Replace("'", "");
                 }
@@ -130,6 +147,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTR
                         SplitATFunction(function.Parameters, out string area, out string logic, out string NewLogic);
                         if (logic == "True") { List[loc] = List[loc].Replace(function.ToString(), area); }
                         else { List[loc] = List[loc].Replace(function.ToString(), NewLogic); }
+                        Debug.WriteLine($"At Function: {function.ToString()}");
                     }
                 }
             }
@@ -139,7 +157,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTR
                 int FirstComma = Params.IndexOf(',');
                 //var pieces = Params.Split(new[] { ',' }, 2);
                 Area = Params[..FirstComma].Trim()[1..].Trim('\'');
-                logic = Params[FirstComma..].Trim()[..1];
+                logic = Params[FirstComma..].Trim()[1..].Trim()[0..^1];
                 Cleaned = $"({Area} and ({logic}))";
             }
         }
@@ -162,21 +180,38 @@ namespace MMR_Tracker_V3.OtherGames.OOTR
                     var functions = LogicStringParser.GetFunctionsFromLogicString(List[loc]);
                     foreach (var function in functions)
                     {
-                        if (function.Funtion == "here") 
-                        { 
+                        if (function.Funtion == "here")
+                        {
+                            Debug.WriteLine($"Here Function: {function.ToString()}");
+                            Debug.WriteLine($"  -Params: {function.Parameters}");
                             List[loc] = List[loc].Replace(function.ToString(), function.Parameters); 
                         }
-                        if (function.Funtion == "can_play") 
-                        { 
-                            List[loc] = List[loc].Replace(function.ToString(), $"(Ocarina and {function.ParametersTrimmed})"); 
+                    }
+                    functions = LogicStringParser.GetFunctionsFromLogicString(List[loc]);
+                    foreach (var function in functions)
+                    {
+                        if (function.Funtion == "can_play")
+                        {
+                            Debug.WriteLine($"Can_play Function: {function.ToString()}");
+                            List[loc] = List[loc].Replace(function.ToString(), $"(Ocarina and {function.ParametersTrimmed})");
                         }
+                    }
+                    functions = LogicStringParser.GetFunctionsFromLogicString(List[loc]);
+                    foreach (var function in functions)
+                    {
                         if (function.Funtion == "has_projectile" && has_projectile.ContainsKey(function.ParametersTrimmed))
                         {
+                            Debug.WriteLine($"Has projectile Function: {function.ToString()}");
                             List[loc] = List[loc].Replace(function.ToString(), has_projectile[function.ParametersTrimmed]);
                         }
+                    }
+                    functions = LogicStringParser.GetFunctionsFromLogicString(List[loc]);
+                    foreach (var function in functions)
+                    {
                         if (function.Funtion == "can_use" && can_use.ContainsKey(function.ParametersTrimmed))
                         {
-                            List[loc] = List[loc].Replace(function.ToString(), $"({function.ParametersTrimmed} and {can_use[function.ParametersTrimmed]})" );
+                            Debug.WriteLine($"Can Use Function: {function.ToString()}");
+                            List[loc] = List[loc].Replace(function.ToString(), $"({function.ParametersTrimmed} and {can_use[function.ParametersTrimmed]})");
                         }
                     }
                 }
