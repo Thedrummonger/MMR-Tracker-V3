@@ -25,5 +25,12 @@ namespace MMR_Tracker_V3.OtherGames.OOTR
             public bool IsMQ { get { return FilePath.EndsWith(" MQ.json"); } }
             public string FileName { get { return System.IO.Path.GetFileNameWithoutExtension(FilePath); } }
         }
+
+        public class trickdata
+        {
+            public string name { get; set; }
+            public string[] tags { get; set; }
+            public string tooltip { get; set; }
+        }
     }
 }
