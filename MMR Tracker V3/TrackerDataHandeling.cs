@@ -135,6 +135,15 @@ namespace MMR_Tracker_V3
                 var CheckAction = (checkState == MiscData.CheckState.Marked && hintObject.CheckState == MiscData.CheckState.Marked) && !EnforceMarkAction ? MiscData.CheckState.Unchecked : checkState;
                 hintObject.CheckState = CheckAction;
                 hintObject.HintText = CheckAction == MiscData.CheckState.Unchecked ? null : hintObject.HintText;
+                if (CheckAction == MiscData.CheckState.Checked)
+                {
+                    TryMarkHintedCheck(hintObject, instanceContainer, out LocationData.LocationObject Location, out ItemData.ItemObject Item);
+                    if (instanceContainer.Instance.StaticOptions.OptionFile.CheckHintMarkItem && Location is not null && Item is not null && Location.CheckState == MiscData.CheckState.Unchecked)
+                    {
+                        Location.Randomizeditem.Item = Location.GetItemAtCheck(instanceContainer.Instance);
+                        if (Location.ToggleChecked(MiscData.CheckState.Marked, instanceContainer.Instance)) { ChangesMade = true; }
+                    }
+                }
             }
             Utility.TimeCodeExecution(FunctionTime, "Setting Hints", 1);
 
@@ -151,6 +160,84 @@ namespace MMR_Tracker_V3
                 }
             }
             return ChangesMade;
+        }
+
+        private static void TryMarkHintedCheck(HintData.HintObject hintObject, MiscData.InstanceContainer instanceContainer, out LocationData.LocationObject LocationObj, out ItemData.ItemObject ItemObj)
+        {
+            LocationObj = null;
+            ItemObj = null;
+            Debug.WriteLine(instanceContainer.Instance.LogicDictionary.GameCode);
+            if (instanceContainer.Instance.LogicDictionary.GameCode != "MMR") { return; }
+            List<string> MessageStartSentences = new List<string>(new string[]
+            {
+                "They say",
+                "I hear",
+                "It seems",
+                "Apparently,",
+                "Apparently",
+                "It appears"
+            });
+
+            List<string> MessageMidSentences = new List<string>(new string[]
+            {
+                "leads to",
+                "yields",
+                "brings",
+                "holds",
+                "conceals",
+                "possesses"
+            });
+
+            string CleanedHint = hintObject.HintText.Replace("...", "");
+            foreach (var i in MessageMidSentences)
+            {
+                if (CleanedHint.Contains(i)) { CleanedHint = CleanedHint.Replace(i, "|"); }
+            }
+            foreach (var i in MessageStartSentences)
+            {
+                if (CleanedHint.Contains(i)) { CleanedHint = CleanedHint.Replace(i, ""); }
+            }
+
+            Debug.WriteLine($"------------------------------------------------");
+            Debug.WriteLine($"Parsing Gossip Hint{CleanedHint}");
+
+            var messageSegments = CleanedHint.Split('|').Select(x => x.Trim()).ToArray();
+            string Location = messageSegments[0];
+            string Item = messageSegments[1];
+
+            if (Item.StartsWith("a ")) { Item = Item[2..].Trim(); }
+            if (Item.StartsWith("an ")) { Item = Item[3..].Trim(); }
+            if (Item.StartsWith("the ")) { Item = Item[4..].Trim(); }
+
+            Debug.WriteLine($"Hint claims [{Location}] contains [{Item}]");
+
+            var ValidItems = instanceContainer.Instance.ItemPool
+                .Where(x => x.Value.GetDictEntry(instanceContainer.Instance)?.GetName(instanceContainer.Instance) != null)
+                .Select(x => x.Value)
+                .Where(x => x.GetDictEntry(instanceContainer.Instance).GetName(instanceContainer.Instance) == Item || x.GetDictEntry(instanceContainer.Instance).SpoilerData.SpoilerLogNames.Contains(Item));
+
+
+            var ValidLocations= instanceContainer.Instance.LocationPool
+                .Where(x => x.Value.GetDictEntry(instanceContainer.Instance)?.GetName(instanceContainer.Instance) != null)
+                .Select(x => x.Value)
+                .Where(x => x.GetDictEntry(instanceContainer.Instance).GetName(instanceContainer.Instance) == Location || x.GetDictEntry(instanceContainer.Instance).SpoilerData.SpoilerLogNames.Contains(Location));
+
+            Debug.WriteLine($"{ValidLocations.Count()} Locations found with the name [{Location}]");
+            Debug.WriteLine($"{ValidItems.Count()} Items found with the name [{Item}]");
+
+            foreach(var l in ValidLocations)
+            {
+                foreach(var i in ValidItems)
+                {
+                    if (l.Randomizeditem.SpoilerLogGivenItem == i.Id)
+                    {
+                        Debug.WriteLine($"Location [{l.ID}] Contained [{i.Id}]");
+                        LocationObj = l;
+                        ItemObj = i;
+                        return;
+                    }
+                }
+            }
         }
 
         public static DataSets PopulateDataSets(LogicObjects.TrackerInstance instance)
