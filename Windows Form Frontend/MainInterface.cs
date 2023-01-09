@@ -23,8 +23,6 @@ namespace Windows_Form_Frontend
         public static MainInterface CurrentProgram;
         Pathfinder MainInterfacepathfinder = new Pathfinder();
         private bool FormIsMaximized = false;
-
-        Dictionary<string, bool> MinimizedHeader = new Dictionary<string, bool>();
         public MainInterface()
         {
             InitializeComponent();
@@ -292,7 +290,7 @@ namespace Windows_Form_Frontend
             }
             else if (entry is MiscData.Areaheader ah)
             {
-                bool IsMinimizedArea = MinimizedHeader.ContainsKey(ah.Area + ":::" + LB.Name);
+                bool IsMinimizedArea = InstanceContainer.Instance.StaticOptions.MinimizedHeader.ContainsKey(ah.Area + ":::" + LB.Name);
                 checkState = MiscData.CheckState.Marked;
                 starred = IsMinimizedArea;
                 Available = !IsMinimizedArea;
@@ -357,8 +355,8 @@ namespace Windows_Form_Frontend
                 if (LB.Items[index] is MiscData.Areaheader ah)
                 {
                     string Area = ah.Area + ":::" + (sender as ListBox).Name;
-                    if (MinimizedHeader.ContainsKey(Area)) { MinimizedHeader.Remove(Area); }
-                    else { MinimizedHeader[Area] = true; }
+                    if (InstanceContainer.Instance.StaticOptions.MinimizedHeader.ContainsKey(Area)) { InstanceContainer.Instance.StaticOptions.MinimizedHeader.Remove(Area); }
+                    else { InstanceContainer.Instance.StaticOptions.MinimizedHeader[Area] = true; Debug.WriteLine($"Minimizing Area[{Area}]"); }
                     PrintToListBox();
                     return;
                 }
@@ -606,7 +604,7 @@ namespace Windows_Form_Frontend
                 lblAvailableLocation.Text = $"Available Locations: {y}" + (x != y ? $"/{x}" : "");
                 foreach (var i in Entries) 
                 { 
-                    if (i is MiscData.Areaheader area){ InMinimized = MinimizedHeader.ContainsKey(area.Area+ ":::" + (LBValidLocations).Name); }
+                    if (i is MiscData.Areaheader area){ InMinimized = InstanceContainer.Instance.StaticOptions.MinimizedHeader.ContainsKey(area.Area+ ":::" + (LBValidLocations).Name); }
                     if (InMinimized && i is not MiscData.Areaheader) { continue; }
                     LBValidLocations.Items.Add(i);
                 }
@@ -618,7 +616,7 @@ namespace Windows_Form_Frontend
                 lblAvailableEntrances.Text = $"Available Entrances: {y}" + (x != y ? $"/{x}" : "");
                 foreach (var i in Entries)
                 {
-                    if (i is MiscData.Areaheader area) { InMinimized = MinimizedHeader.ContainsKey(area.Area+ ":::" + (LBValidEntrances).Name); }
+                    if (i is MiscData.Areaheader area) { InMinimized = InstanceContainer.Instance.StaticOptions.MinimizedHeader.ContainsKey(area.Area+ ":::" + (LBValidEntrances).Name); }
                     if (InMinimized && i is not MiscData.Areaheader) { continue; }
                     LBValidEntrances.Items.Add(i); 
                 }
@@ -630,7 +628,7 @@ namespace Windows_Form_Frontend
                 lblCheckedLocation.Text = $"Checked Locations: {y}" + (x != y ? $"/{x}" : "");
                 foreach (var i in Entries)
                 {
-                    if (i is MiscData.Areaheader area) { InMinimized = MinimizedHeader.ContainsKey(area.Area+ ":::" + (LBCheckedLocations).Name); }
+                    if (i is MiscData.Areaheader area) { InMinimized = InstanceContainer.Instance.StaticOptions.MinimizedHeader.ContainsKey(area.Area+ ":::" + (LBCheckedLocations).Name); }
                     if (InMinimized && i is not MiscData.Areaheader) { continue; }
                     LBCheckedLocations.Items.Add(i); 
                 }
@@ -755,12 +753,12 @@ namespace Windows_Form_Frontend
                     TagetTextBox.Text = "#" + AreaObject.Area;
                 };
                 string Area = AreaObject.Area + ":::" + listBox.Name;
-                string HideAction = MinimizedHeader.ContainsKey(Area) ? "Expand Area" : "Minimize Area";
+                string HideAction = InstanceContainer.Instance.StaticOptions.MinimizedHeader.ContainsKey(Area) ? "Expand Area" : "Minimize Area";
                 ToolStripItem HideAreaContextItem = contextMenuStrip.Items.Add(HideAction);
                 HideAreaContextItem.Click += (sender, e) =>
                 {
-                    if (MinimizedHeader.ContainsKey(Area)) { MinimizedHeader.Remove(Area); }
-                    else { MinimizedHeader[Area] = true; }
+                    if (InstanceContainer.Instance.StaticOptions.MinimizedHeader.ContainsKey(Area)) { InstanceContainer.Instance.StaticOptions.MinimizedHeader.Remove(Area); }
+                    else { InstanceContainer.Instance.StaticOptions.MinimizedHeader[Area] = true; }
                     PrintToListBox();
                 };
             }

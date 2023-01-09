@@ -167,6 +167,8 @@ namespace MMR_Tracker_V3
             public bool AutoCheckCoupleEntrances { get { return !DecoupleEntrances && _AutoCheckCoupleEntrances; } set { _AutoCheckCoupleEntrances = value; } }
             private bool _AutoCheckCoupleEntrances = true;
             public bool EntranceRandoFeatures { get; set; } = true;
+
+            public Dictionary<string, bool> MinimizedHeader { get; set; } = new Dictionary<string, bool>();
             public OptionFile OptionFile { get; set; } = new OptionFile();
         }
 

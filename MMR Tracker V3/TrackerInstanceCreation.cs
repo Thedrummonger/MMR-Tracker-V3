@@ -163,6 +163,8 @@ namespace MMR_Tracker_V3
 
             Instance.EntrancePool.RootArea = Instance.LogicDictionary.RootArea??"Root";
 
+            Instance.StaticOptions.MinimizedHeader.Add("Hidden Locations:::LBValidLocations", true);
+
             Debug.WriteLine(JsonConvert.SerializeObject(Instance.PriceData.WalletEntries, Testing._NewtonsoftJsonSerializerOptions));
             Debug.WriteLine(JsonConvert.SerializeObject(Instance.PriceData.CapacityMap, Testing._NewtonsoftJsonSerializerOptions));
 
