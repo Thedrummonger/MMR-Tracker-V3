@@ -102,6 +102,68 @@ Goddess Cubes
 Single Gratitude Crystal
 #GAMECODEEND:
 
+#GAMECODESTART: OOTMM
+
+Kokiri Forest
+Deku Tree
+Lost Woods
+Forest Temple
+Hyrule Field
+Lon Lon Ranch
+Castle Town
+Hyrule Castle
+Kakariko Village
+Bottom of the Well
+Kakariko Graveyard
+Shadow Temple
+Death Mountain
+Goron City
+Dodongos Cavern
+Death Mountain Crater
+Fire Temple
+Zoras River
+Zoras Domain
+Jabu Jabu
+Ice Cavern
+Lake Hylia
+Water Temple
+Gerudo Valley
+Gerudo Fortress
+Gerudo Training Grounds
+Desert Colossus
+Spirit Temple
+Ganons Castle
+
+Clock Town
+North Clock Town
+East Clock Town
+South Clock Town
+West Clock Town
+Termina Field
+Romani Ranch
+Southern Swamp
+Deku Palace
+Woodfall
+Woodfall Temple
+Swamp Spider House
+Mountain Village
+Twin Islands
+Goron Village
+Snowhead
+Snowhead Temple
+Great Bay
+Zora Cape
+Pirates Fortress
+Great Bay Temple
+Ocean Spider House
+Ikana Road
+Ikana Canyon
+Stone Tower
+Stone Tower Temple
+The Moon
+
+#GAMECODEEND:
+
 Misc
 Gossip Stone
 Multiworld

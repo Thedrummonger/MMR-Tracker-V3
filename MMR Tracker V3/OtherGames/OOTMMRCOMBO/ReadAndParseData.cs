@@ -22,10 +22,12 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
         public static string OOTMMChecks = Path.Combine(OOTMMCode, @"checks.json");
         public static string OOTMMItems = Path.Combine(OOTMMCode, @"items.json");
         public static string OOTMMTricks = Path.Combine(OOTMMCode, @"tricks.json");
+        public static string OOTMMArea = Path.Combine(OOTMMCode, @"AreaNames.json");
 
         public static Dictionary<string, dynamic> OOTRCheckDict = JsonConvert.DeserializeObject<Dictionary<string, dynamic>>(File.ReadAllText(OOTMMChecks));
         public static Dictionary<string, dynamic> OOTRItemsDict = JsonConvert.DeserializeObject<Dictionary<string, dynamic>>(File.ReadAllText(OOTMMItems));
         public static Dictionary<string, string> OOTRTricksDict = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(OOTMMTricks));
+        public static Dictionary<string, string> OOTRAreaDict = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(OOTMMArea));
 
         public class MMROOTLocation
         {
@@ -199,7 +201,9 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 dictEntry.SpoilerData = new TrackerObjects.MMRData.SpoilerlogReference { SpoilerLogNames = new string[] { i } };
                 dictEntry.Name = i;
                 dictEntry.ValidItemTypes = new string[] { "item" };
-                dictEntry.Area = DictValue[0];
+                if (OOTRAreaDict.ContainsKey(i)) { dictEntry.Area = OOTRAreaDict[i]; }
+                else if (OOTRAreaDict.ContainsKey(DictValue[0])) { dictEntry.Area = OOTRAreaDict[DictValue[0]]; }
+                else { dictEntry.Area = DictValue[0]; }
                 dictEntry.OriginalItem = DictValue[1];
                 logicDictionary.LocationList.Add(dictEntry);
             }

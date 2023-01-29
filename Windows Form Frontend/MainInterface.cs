@@ -256,6 +256,18 @@ namespace Windows_Form_Frontend
         {
 
             MMR_Tracker_V3.OtherGames.OOTMMRCOMBO.ReadAndParseData.ScrapeLocationData();
+            return;
+            List<string> areas = new List<string>();
+            foreach(var i in InstanceContainer.Instance.LocationPool.Values)
+            {
+                var area = i.GetDictEntry(InstanceContainer.Instance).Area;
+                var loc = i.GetDictEntry(InstanceContainer.Instance).GetName(InstanceContainer.Instance);
+                if (!areas.Contains(area))
+                    areas.Add(area);
+            }
+
+            areas.OrderBy(x => x).ToList().ForEach(x => Debug.WriteLine(x));
+
         }
 
         //ListBoxes
