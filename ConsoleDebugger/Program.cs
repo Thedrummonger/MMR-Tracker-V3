@@ -312,15 +312,18 @@ namespace ConsoleDebugger
 
         private static void SetPrice(dynamic entry)
         {
-            if (entry.Price > -1) { entry.Price = -1; return; }
+            if (!Utility.DynamicPropertyExist(entry, "Price") && !Utility.TestForPriceData(entry)) { return; }
+            entry.GetPrice(out int p, out char c);
+            if (p > -1) { entry.SetPrice(-1); return; }
             var DictEntry = entry.GetDictEntry(newTrackerInstance.Instance);
             Console.Clear();
-            while (entry.Price == -1)
+            while (p == -1)
             {
                 Console.WriteLine($"Enter Price for {DictEntry.Name ?? DictEntry.ID}");
                 var input = Console.ReadLine();
-                if (int.TryParse(input, out int newPrice) && newPrice > -1) { entry.Price = newPrice; }
+                if (int.TryParse(input, out int newPrice) && newPrice > -1) { entry.SetPrice(newPrice); }
                 else { Console.WriteLine($"{input} is not a valid price. Price must be a positive number"); }
+                entry.GetPrice(out p, out c);
             }
         }
 

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using static MMR_Tracker_V3.TrackerObjects.HintData;
 using static MMR_Tracker_V3.TrackerObjects.ItemData;
 using static MMR_Tracker_V3.TrackerObjects.LocationData;
@@ -146,6 +147,30 @@ namespace MMR_Tracker_V3
                 obj = null;
                 if (this.LogicOptionEntry(ID, out _)) { return LogicEntryType.Option; }
                 return LogicEntryType.error;
+            }
+
+            public ItemObject GetItemToPlace(string Item, bool SpoilerName = true, bool Starting = false)
+            {
+                ItemObject ValidItem;
+                if (SpoilerName)
+                {
+                    ValidItem = ItemPool.Values.FirstOrDefault(x =>
+                        x.GetDictEntry(this)?.SpoilerData?.SpoilerLogNames != null &&
+                        x.GetDictEntry(this).SpoilerData.SpoilerLogNames.Contains(Item) &&
+                        x.CanBePlaced(this) && (x.ValidStartingItem(this) || !Starting));
+                }
+                else
+                {
+                    ValidItem = ItemPool.Values.FirstOrDefault(x =>
+                        x.GetDictEntry(this)?.Name != null && x.GetDictEntry(this).Name == Item &&
+                        x.CanBePlaced(this) && (x.ValidStartingItem(this) || !Starting));
+                }
+                return ValidItem;
+            }
+
+            public void ToggleAllTricks(bool state)
+            {
+                foreach(var i in MacroPool.Values.Where(x => x.isTrick(this))) { i.TrickEnabled = state; }
             }
         }
 

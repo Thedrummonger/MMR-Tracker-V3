@@ -105,7 +105,9 @@ namespace MMR_Tracker_V3
             else if(Utility.DynamicPropertyExist(PriceData, "Aquired")) { Available = PriceData.Aquired; }
             else { Available = false; ; }
 
-            PriceDisplay = PriceData.Price < 0 || (!Available) ? "" : $" [${PriceData.Price}]";
+
+            PriceData.GetPrice(out int p, out char c);
+            PriceDisplay = p < 0 || (!Available) ? "" : $" [{c}{p}]";
             RandomizedItemDisplay = instance.GetItemByID(Location.Randomizeditem.Item)?.GetDictEntry(instance)?.GetName(instance) ?? Location.Randomizeditem.Item;
 
             return Location.CheckState switch
@@ -196,6 +198,21 @@ namespace MMR_Tracker_V3
                 return ((IDictionary<string, object>)Object).ContainsKey(name);
 
             return Object.GetType().GetProperty(name) != null;
+        }
+
+        public static bool TestForPriceData(dynamic Object)
+        {
+            try
+            {
+                Object.GetPrice(out int p, out char c);
+                Debug.WriteLine("Had Price Function");
+                return true;
+            }
+            catch (Exception e) {
+
+                Debug.WriteLine($"NOT Had Price Function {e}"); 
+                return false; 
+            }
         }
 
         public static bool IsLogicEqual(MMRData.JsonFormatLogicItem logicItem1, MMRData.JsonFormatLogicItem logicItem2)

@@ -12412,6 +12412,54 @@
       }
     },
     {
+      "ID": "MM_ARROWS_10",
+      "Name": "MM 10 Arrows",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_ARROWS_10"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "MM_ARROWS_30",
+      "Name": "MM 30 Arrows",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_ARROWS_30"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "MM_ARROWS_5",
+      "Name": "MM 5 Arrows",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_ARROWS_5"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
       "ID": "MM_BOMB_BAG",
       "Name": "MM Bomb Bag",
       "MaxAmountInWorld": -1,
@@ -14496,7 +14544,7 @@
     },
     {
       "ID": "OOT_HEART_PIECE",
-      "Name": "OOT Hert Piece",
+      "Name": "OOT Heart Piece",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -15770,7 +15818,125 @@
   ],
   "EntranceList": [],
   "AreaList": [],
-  "MacroList": [],
+  "MacroList": [
+    {
+      "ID": "OOT_LENS",
+      "Name": "Fewer Lens Requirements",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_TUNICS",
+      "Name": "Fewer Tunic Requirements",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_HIDDEN_GROTTOS",
+      "Name": "Hidden Grottos Without Stone of Agony",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_MIDO_SKIP",
+      "Name": "Backflip Over Mido",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_MAN_ON_ROOF",
+      "Name": "Man On Roof With Nothing",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_BLIND_WASTELAND",
+      "Name": "Blind Wasteland Crossing",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_NIGHT_GS",
+      "Name": "Nighttime Skulltulas Without Suns Song",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "MM_LENS",
+      "Name": "Fewer Lens Requirements",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "MM_GORON_BOMB_JUMP",
+      "Name": "Bomb Jump Fences as Goron",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "MM_NO_SEAHORSE",
+      "Name": "Pinnacle Rock Without Seahors",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "MM_ZORA_HALL_HUMAN",
+      "Name": "Swim to Zora Hall as Human",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "MM_ICELESS_IKANA",
+      "Name": "Climb Ikana Canyon Without Ice Arrows",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "MM_ONE_MASK_STONE_TOWER",
+      "Name": "Climb Stone Tower With One Mask",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    }
+  ],
   "AdditionalLogic": [],
   "Options": [],
   "Variables": [],

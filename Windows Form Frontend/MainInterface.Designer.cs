@@ -418,20 +418,20 @@ namespace Windows_Form_Frontend
             // RandomizerOptionsToolStripMenuItem1
             // 
             this.RandomizerOptionsToolStripMenuItem1.Name = "RandomizerOptionsToolStripMenuItem1";
-            this.RandomizerOptionsToolStripMenuItem1.Size = new System.Drawing.Size(179, 22);
+            this.RandomizerOptionsToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.RandomizerOptionsToolStripMenuItem1.Text = "RandomizerOptions";
             // 
             // logicOptionsToolStripMenuItem
             // 
             this.logicOptionsToolStripMenuItem.Name = "logicOptionsToolStripMenuItem";
-            this.logicOptionsToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
-            this.logicOptionsToolStripMenuItem.Text = "Logic Options";
+            this.logicOptionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logicOptionsToolStripMenuItem.Text = "Item Pool Options";
             this.logicOptionsToolStripMenuItem.Click += new System.EventHandler(this.logicOptionsToolStripMenuItem_Click);
             // 
             // miscOptionsToolStripMenuItem
             // 
             this.miscOptionsToolStripMenuItem.Name = "miscOptionsToolStripMenuItem";
-            this.miscOptionsToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.miscOptionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.miscOptionsToolStripMenuItem.Text = "Misc Options";
             this.miscOptionsToolStripMenuItem.Click += new System.EventHandler(this.miscOptionsToolStripMenuItem_Click);
             // 
@@ -488,28 +488,28 @@ namespace Windows_Form_Frontend
             // viewAsUserToolStripMenuItem
             // 
             this.viewAsUserToolStripMenuItem.Name = "viewAsUserToolStripMenuItem";
-            this.viewAsUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.viewAsUserToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.viewAsUserToolStripMenuItem.Text = "View as User";
             this.viewAsUserToolStripMenuItem.Click += new System.EventHandler(this.viewAsUserToolStripMenuItem_Click);
             // 
             // CodeTestingToolStripMenuItem
             // 
             this.CodeTestingToolStripMenuItem.Name = "CodeTestingToolStripMenuItem";
-            this.CodeTestingToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.CodeTestingToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.CodeTestingToolStripMenuItem.Text = "Code Testing";
             this.CodeTestingToolStripMenuItem.Click += new System.EventHandler(this.CodeTestingToolStripMenuItem_Click);
             // 
             // ExportCheckedToolStripMenuItem
             // 
             this.ExportCheckedToolStripMenuItem.Name = "ExportCheckedToolStripMenuItem";
-            this.ExportCheckedToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ExportCheckedToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.ExportCheckedToolStripMenuItem.Text = "Export Checked";
             this.ExportCheckedToolStripMenuItem.Click += new System.EventHandler(this.ExportCheckedToolStripMenuItem_Click);
             // 
             // ImportCheckedToolStripMenuItem1
             // 
             this.ImportCheckedToolStripMenuItem1.Name = "ImportCheckedToolStripMenuItem1";
-            this.ImportCheckedToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.ImportCheckedToolStripMenuItem1.Size = new System.Drawing.Size(159, 22);
             this.ImportCheckedToolStripMenuItem1.Text = "Import Checked";
             this.ImportCheckedToolStripMenuItem1.Click += new System.EventHandler(this.ImportCheckedToolStripMenuItem1_Click);
             // 

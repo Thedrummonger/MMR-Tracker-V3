@@ -816,13 +816,14 @@ namespace Windows_Form_Frontend
             dynamic Target = null;
             if (listBox.SelectedItem is LocationData.LocationProxy ProxyPriceSet) { Target = ProxyPriceSet.GetLogicInheritance(InstanceContainer.Instance); }
             else if (listBox.SelectedItem is LocationData.LocationObject LocPriceSet) { Target = LocPriceSet; }
-            if (Utility.DynamicPropertyExist(Target, "Price"))
+            if (Utility.DynamicPropertyExist(Target, "Price") || Utility.TestForPriceData(Target))
             {
-                string SetPriceText = Target.Price > -1 ? "Clear Price" : "Set Price";
+                Target.GetPrice(out int p, out char c);
+                string SetPriceText = p > -1 ? "Clear Price" : "Set Price";
                 ToolStripItem SetPrice = contextMenuStrip.Items.Add(SetPriceText);
                 SetPrice.Click += (sender, e) =>
                 {
-                    if (Target.Price > -1) { Target.Price = -1; }
+                    if (p > -1) { Target.SetPrice(-1); }
                     else { SetCheckPrice(Target); }
                 };
             }
@@ -870,7 +871,7 @@ namespace Windows_Form_Frontend
             var PriceContainer = new List<LogicDictionaryData.TrackerVariable>() { new() { ID = DictEntry.Name ?? DictEntry.ID, Value = 0 } };
             VariableInputWindow PriceInput = new(PriceContainer, InstanceContainer.Instance);
             PriceInput.ShowDialog();
-            Object.Price = (int)PriceContainer.First().Value;
+            Object.SetPrice((int)PriceContainer.First().Value);
             InstanceContainer.logicCalculation.CalculateLogic();
             UpdateUI();
         }

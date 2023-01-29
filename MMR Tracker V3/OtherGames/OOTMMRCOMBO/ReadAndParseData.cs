@@ -21,9 +21,11 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
         public static string OOTMMCode = Path.Combine(CodeFolder, @"MMR Tracker V3", "OtherGames", "OOTMMRCOMBO");
         public static string OOTMMChecks = Path.Combine(OOTMMCode, @"checks.json");
         public static string OOTMMItems = Path.Combine(OOTMMCode, @"items.json");
+        public static string OOTMMTricks = Path.Combine(OOTMMCode, @"tricks.json");
 
         public static Dictionary<string, dynamic> OOTRCheckDict = JsonConvert.DeserializeObject<Dictionary<string, dynamic>>(File.ReadAllText(OOTMMChecks));
         public static Dictionary<string, dynamic> OOTRItemsDict = JsonConvert.DeserializeObject<Dictionary<string, dynamic>>(File.ReadAllText(OOTMMItems));
+        public static Dictionary<string, string> OOTRTricksDict = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(OOTMMTricks));
 
         public class MMROOTLocation
         {
@@ -32,10 +34,86 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             public string item;
         }
 
-        public static void GetLocationsAndItems()
+        public static void readAndApplySpoilerLog(LogicObjects.TrackerInstance Instance)
         {
+            Instance.ToggleAllTricks(false);
+            Dictionary<string, bool> spoilerFileLocation =
+                new Dictionary<string, bool> { { "Settings", false }, { "Tricks", false }, { "Starting Items", false }, { "Hints", false } };
+            foreach(var l in Instance.SpoilerLog.Log)
+            {
+                if (string.IsNullOrWhiteSpace(l)){ continue; }
+                if (l == "Settings") {
+                    foreach (var k in spoilerFileLocation.Keys) { spoilerFileLocation[k] = false; }
+                    spoilerFileLocation["Settings"] = true;
+                    continue;
+                }
+                if (l == "Tricks")
+                {
+                    foreach (var k in spoilerFileLocation.Keys) { spoilerFileLocation[k] = false; }
+                    spoilerFileLocation["Tricks"] = true;
+                    continue;
+                }
+                if (l == "Starting Items") {
+                    foreach (var k in spoilerFileLocation.Keys) { spoilerFileLocation[k] = false; }
+                    spoilerFileLocation["Starting Items"] = true;
+                    continue;
+                }
+                if (l == "Foolish Regions")
+                {
+                    foreach (var k in spoilerFileLocation.Keys) { spoilerFileLocation[k] = false; }
+                    continue;
+                }
+                if (l == "Hints")
+                {
+                    foreach (var k in spoilerFileLocation.Keys) { spoilerFileLocation[k] = false; }
+                    spoilerFileLocation["Hints"] = true;
+                    continue;
+                }
+                if (l == "Sphere 0") { break; }
+                string Line = l.Trim();
+                if (spoilerFileLocation["Settings"])
+                {
+                    //Handle Settings at some point
+                }
+                if (spoilerFileLocation["Tricks"])
+                {
+                    var trick = Instance.MacroPool.Values.FirstOrDefault(x => x.isTrick(Instance) && x.ID == Line);
+                    if (trick is not null) { trick.TrickEnabled = true; }
+                    else { Debug.WriteLine($"{Line} Could notbe found in the trick list!"); }
+                }
+                if (spoilerFileLocation["Starting Items"])
+                {
+                    var startingItemData = Line.Split(":").Select(x => x.Trim()).ToArray();
+                    if (startingItemData.Length < 2 || !int.TryParse(startingItemData[1], out int tr) || tr < 1) { continue; }
+                    for (var i = 0; i < int.Parse(startingItemData[1]); i++)
+                    {
+                        var ValidItem = Instance.GetItemToPlace(startingItemData[0], true, true);
+                        if (ValidItem is not null) { ValidItem.AmountInStartingpool++; }
+                        else { Debug.WriteLine($"{startingItemData[1]} Could not be made a starting item!"); }
+                    }
+                }
+                if (spoilerFileLocation["Hints"])
+                {
+                    //Handle Hints at some point
+                }
+            }
 
+            var ReleventData = GetReleventSpoilerLines(Instance.SpoilerLog.Log);
+            foreach (var i in ReleventData)
+            {
+                var entryData = i.Split(':').Select(x => x.Trim()).ToArray();
+
+                TrackerObjects.LocationData.LocationObject location = null;
+                TrackerObjects.ItemData.ItemObject item = Instance.GetItemToPlace(entryData[1]);
+
+                if (Instance.LocationPool.ContainsKey(entryData[0])) { location = Instance.LocationPool[entryData[0]]; }
+                else { Debug.WriteLine($"{entryData[0]} was not a valid location!"); }
+                if (item is null) { Debug.WriteLine($"{entryData[1]} was not a valid Item or no more of this could be placed!"); }
+                if (location is not null) { location.Randomizeditem.SpoilerLogGivenItem = item?.Id ?? entryData[1]; }
+
+            }
         }
+
 
         public static void GetSpoilerLog()
         {
@@ -156,6 +234,16 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 ExtraSpoilerNames.ForEach(x => dictItem.SpoilerData.SpoilerLogNames = dictItem.SpoilerData.SpoilerLogNames.Append(x).ToArray());
                 dictItem.ItemTypes = new string[] { "item" };
                 logicDictionary.ItemList.Add(dictItem);
+            }
+
+            foreach(var i in OOTRTricksDict.Keys)
+            {
+                TrackerObjects.LogicDictionaryData.DictionaryMacroEntry TrickObject = new TrackerObjects.LogicDictionaryData.DictionaryMacroEntry();
+                TrickObject.ID = i;
+                TrickObject.Name = OOTRTricksDict[i].Split(":")[1];
+                logicDictionary.MacroList.Add(TrickObject);
+
+                logicFile.Logic.Add(new TrackerObjects.MMRData.JsonFormatLogicItem() { Id = i, IsTrick = true, TrickCategory = OOTRTricksDict[i].Split(":")[0] });
             }
 
             File.WriteAllText(Path.Combine(TestFolder, @"OOTMMLogic.json"), JsonConvert.SerializeObject(logicFile, Testing._NewtonsoftJsonSerializerOptions));

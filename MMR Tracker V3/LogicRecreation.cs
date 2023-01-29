@@ -32,9 +32,10 @@ namespace MMR_Tracker_V3
             state.SpoilerData = InstanceContainer.Instance.SpoilerLog is null ? null : GenericCopier<LogicObjects.SpoilerLogFileData>.DeepCopy(InstanceContainer.Instance.SpoilerLog);
             foreach (var i in InstanceContainer.Instance.LocationPool)
             {
+                i.Value.GetPrice(out int P, out char C);
                 state.Locations.Add(i.Key, new RecData() { 
                     CheckState = i.Value.CheckState, 
-                    Price = i.Value.Price, 
+                    Price = P, 
                     randomizedEntry = i.Value.Randomizeditem.Item ,
                     SpoilerEntry = i.Value.Randomizeditem.SpoilerLogGivenItem,
                     OwningPlayer = i.Value.Randomizeditem.OwningPlayer
@@ -72,7 +73,7 @@ namespace MMR_Tracker_V3
                 if (InstanceContainer.Instance.LocationPool.ContainsKey(i.Key))
                 {
                     var loc = InstanceContainer.Instance.LocationPool[i.Key];
-                    loc.Price = i.Value.Price;
+                    loc.SetPrice(i.Value.Price);
                     loc.Randomizeditem.OwningPlayer = i.Value.OwningPlayer;
                     loc.Randomizeditem.Item = loc.GetItemAtCheck(InstanceContainer.Instance)??i.Value.randomizedEntry;
                     loc.ToggleChecked(i.Value.CheckState, InstanceContainer.Instance);

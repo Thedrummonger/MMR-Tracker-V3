@@ -14,8 +14,21 @@ namespace MMR_Tracker_V3.TrackerObjects
         public string ID { get; set; }
         public bool Aquired { get; set; } = false;
         public bool TrickEnabled { get; set; } = true;
-        public int Price { get; set; } = -1;
+        public string Price = null;
         public LogicObjects.ReferenceData referenceData { get; set; } = new LogicObjects.ReferenceData();
+
+        public void GetPrice(out int outPrice, out char outCurrency)
+        {
+            if (Price is null || Price.Length < 1) { outPrice = -1; outCurrency = '*'; return; }
+            if (char.IsDigit(Price[0])) { outPrice = int.Parse(Price); outCurrency = '*'; return; }
+            else { outPrice = int.Parse(Price[1..]); outCurrency = Price[0]; return; }
+        }
+        public void SetPrice(int inPrice, char inCurrency = '*')
+        {
+            if (inPrice == -1) { Price = null; return; }
+            if (inCurrency == '*') { Price = inPrice.ToString(); return; }
+            else { Price = $"{inCurrency}{inPrice}"; return; }
+        }
 
         public LogicDictionaryData.DictionaryMacroEntry GetDictEntry(LogicObjects.TrackerInstance Instance)
         {

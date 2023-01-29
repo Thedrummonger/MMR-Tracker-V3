@@ -16,6 +16,8 @@ namespace MMR_Tracker_V3
             {
                 case "OOTR":
                     return "OOTR Spoiler Log (*.json)|*.json";
+                case "OOTMM":
+                    return "OOTMM Spoiler Log (*.txt)|*.txt";
                 case "PMR":
                     return "PMR Text Spoiler Log|*.txt";
                 default:
@@ -29,6 +31,10 @@ namespace MMR_Tracker_V3
             {
                 //case "OOTR":
                 //case "PMR":
+                case "OOTMM":
+                    Instance.SpoilerLog = new LogicObjects.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
+                    OtherGames.OOTMMRCOMBO.ReadAndParseData.readAndApplySpoilerLog(Instance);
+                    return true;
                 case "MMR":
                     Instance.SpoilerLog = new LogicObjects.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
                     MMRData.SpoilerLogData LogData = ReadSpoilerLog(spoilerLog);
@@ -366,7 +372,7 @@ namespace MMR_Tracker_V3
                     //Debug.WriteLine($"{i.ID} was not found in the Price log");
                     continue;
                 }
-                i.Price = MatchingLocations.Select(x => x.Value).Min();
+                i.SetPrice(MatchingLocations.Select(x => x.Value).Min());
                 //Debug.WriteLine($"{i.ID} was assigned a price of {i.Price}");
             }
             foreach (var i in instance.MacroPool.Values)
@@ -378,7 +384,7 @@ namespace MMR_Tracker_V3
                     //Debug.WriteLine($"{i.ID} was not found in the Price log");
                     continue;
                 }
-                i.Price = MatchingLocations.Select(x => x.Value).Min();
+                i.SetPrice(MatchingLocations.Select(x => x.Value).Min());
                 //Debug.WriteLine($"{i.ID} was assigned a price of {i.Price}");
             }
             foreach (var i in instance.HintPool.Values)
@@ -399,11 +405,11 @@ namespace MMR_Tracker_V3
             foreach (var i in instance.LocationPool.Values)
             {
                 i.Randomizeditem.SpoilerLogGivenItem = null;
-                i.Price = -1;
+                i.SetPrice(-1);
             }
             foreach (var i in instance.MacroPool.Values)
             {
-                i.Price = -1;
+                i.SetPrice(-1);
             }
             foreach (var i in instance.HintPool.Values)
             {
