@@ -1,5 +1,6 @@
 ﻿using MMR_Tracker_V3;
 using MMR_Tracker_V3.TrackerObjects;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -23,6 +24,8 @@ namespace ConsoleDebugger
 
         static void Main(string[] args)
         {
+            Testing.doDevCheck();
+            if (Testing.IsDevUser()) { CommandList = CommandList.Append("5. Debugging").ToArray(); }
             newTrackerInstance.logicCalculation = new LogicCalculation(newTrackerInstance);
             newTrackerInstance.UndoStringList = new List<string>();
             newTrackerInstance.RedoStringList = new List<string>();
@@ -50,8 +53,17 @@ namespace ConsoleDebugger
                     case ConsoleKey.NumPad4:
                         LoadSave();
                         break;
+                    case ConsoleKey.D5:
+                    case ConsoleKey.NumPad5:
+                        if (Testing.IsDevUser()) { Debugging(); }
+                        break;
                 }
             }
+        }
+
+        private static void Debugging()
+        {
+            MMR_Tracker_V3.OtherGames.OOTMMRCOMBO.ReadAndParseData.ScrapeLocationData();
         }
 
         private static void LoadPreset()
@@ -186,6 +198,7 @@ namespace ConsoleDebugger
                     Console.WriteLine($"Type and index (0-{y - 1}) to {(EntryType == 1? "un" : "")}check the corresponding entry");
                     Console.WriteLine($"type # before an index to mark the entry");
                     Console.WriteLine($"type * before an index to star the entry");
+                    Console.WriteLine($"type ! before an index to hide the entry");
                     Console.WriteLine($"type $ before an index to edit the checks Price");
                     Console.WriteLine(CreateDivider(Console.WindowWidth));
                     Console.WriteLine($"Other Actions:");
@@ -206,6 +219,11 @@ namespace ConsoleDebugger
                 {
                     Action = "check";
                     CheckAction = MiscData.CheckState.Marked;
+                    input = input[1..];
+                }
+                else if (input.StartsWith("!"))
+                {
+                    Action = "hide";
                     input = input[1..];
                 }
                 else if (input.StartsWith("*"))
@@ -255,7 +273,7 @@ namespace ConsoleDebugger
                 }
                 List<object> CheckObjects = Indexes.Where(x => reference.ContainsKey(x)).Select(x => reference[x]).ToList();
                 if (!CheckObjects.Any()) { continue; }
-                string CurrentState = Newtonsoft.Json.JsonConvert.SerializeObject(newTrackerInstance.Instance);
+                string CurrentState = JsonConvert.SerializeObject(newTrackerInstance.Instance);
 
                 switch (Action)
                 {
@@ -271,6 +289,13 @@ namespace ConsoleDebugger
                         break;
                     case "check":
                         TrackerDataHandeling.CheckSelectedItems(CheckObjects, CheckAction, newTrackerInstance, HandleUnAssignedLocations, HandleUnAssignedVariables);
+                        break;
+                    case "hide":
+                        foreach (var co in CheckObjects)
+                        {
+                            dynamic obj = co;
+                            if (Utility.DynamicPropertyExist(obj, "Hidden")) { obj.Hidden = !obj.Hidden; }
+                        }
                         break;
                 }
                 HandleChanges(CurrentState);

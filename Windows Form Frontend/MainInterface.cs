@@ -46,7 +46,7 @@ namespace Windows_Form_Frontend
                 Directory.CreateDirectory(References.Globalpaths.BaseAppdataPath);
             }
             DoUpdateCheck();
-            doDevCheck();
+            Testing.doDevCheck(Modifier: ModifierKeys == Keys.Control);
             UpdateUI();
             WinFormInstanceCreation.ApplyUserPretLogic();
         }
@@ -71,28 +71,6 @@ namespace Windows_Form_Frontend
                     try { File.WriteAllText(References.Globalpaths.OptionFile, JsonConvert.SerializeObject(options, Testing._NewtonsoftJsonSerializerOptions)); }
                     catch (Exception ex) { Debug.WriteLine($"could not write to options.txt {ex}"); }
                 }
-            }
-        }
-
-        private void doDevCheck(bool? forceDevState = null)
-        {
-            bool ForceDev = forceDevState is not null && (bool)forceDevState;
-            bool ForceUser = forceDevState is not null && !(bool)forceDevState;
-            bool isDevPC = File.Exists(References.Globalpaths.DevFile) || ForceDev;
-            bool IsDubugger = Debugger.IsAttached || ForceDev;
-            bool Modifier = ModifierKeys == Keys.Control;
-
-            if (IsDubugger && !Modifier && !ForceUser)
-            {
-                Testing.DebugMode = MiscData.DebugMode.Debugging;
-            }
-            else if (isDevPC && Modifier && !ForceUser)
-            {
-                Testing.DebugMode = MiscData.DebugMode.UserView;
-            }
-            else
-            {
-                Testing.DebugMode = MiscData.DebugMode.Off;
             }
         }
 
@@ -276,7 +254,8 @@ namespace Windows_Form_Frontend
 
         private void CodeTestingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MMR_Tracker_V3.OtherGames.OOTR.ReadOOTRItemsAndLocations.Read();
+
+            MMR_Tracker_V3.OtherGames.OOTMMRCOMBO.ReadAndParseData.ScrapeLocationData();
         }
 
         //ListBoxes
@@ -1022,8 +1001,8 @@ namespace Windows_Form_Frontend
         {
             if (TXTLocSearch.Text == "toggledev")
             {
-                if (Testing.IsDevUser()) { doDevCheck(false); }
-                else if (Testing.StandardUser()) { doDevCheck(true); }
+                if (Testing.IsDevUser()) { Testing.doDevCheck(false); }
+                else if (Testing.StandardUser()) { Testing.doDevCheck(true); }
                 TXTLocSearch.Text = "";
                 UpdateUI();
                 return;
