@@ -3,71 +3,6 @@
 //Multiple gamecodes can be defined in a comma seperated lits ex: (#GAMECODESTART:MMR,OOTR)
 //Using "#GAMECODEEND:" will exit the game code restriction
 
-#GAMECODESTART: MMR
-Clock Town
-North Clock Town
-East Clock Town
-South Clock Town
-West Clock Town
-Stock Pot Inn
-Laundry Pool
-Beneath Clocktown
-Termina
-Termina Field
-Astral Observatory
-Milk Road
-Romani Ranch
-Swamp
-Road to Southern Swamp
-Southern Swamp
-Swamp Skull House
-Deku Palace
-Woodfall
-Woodfall Temple
-Woodfall Temple Fairies
-Mountains
-Path to Mountain Village
-Mountain Village
-Twin Islands
-Goron Village
-Path to Snowhead
-Snowhead
-Snowhead Temple
-Snowhead Temple Fairies
-Bay
-Great Bay Coast
-Great Bay Cape
-Zora Cape
-Ocean Skull House
-Zora Hall
-Pinnacle Rock
-Great Bay Temple
-Great Bay Temple Fairies
-Pirate Fortress
-Pirates' Fortress Exterior
-Pirates' Fortress Interior
-Pirates' Fortress Sewer
-Canyon
-Road to Ikana
-Ikana Graveyard
-Ikana Canyon
-Secret Shrine
-Beneath the Well
-Ikana Castle
-Stone 
-Stone Tower
-Stone Tower Temple
-Inverted Stone Tower Temple
-Stone Tower Temple Fairies
-Tingle Map
-Bottle Catch
-Dungeon Entrance
-The Moon
-Owl Warp
-Interior
-Grottos
-#GAMECODEEND:
-
 #GAMECODESTART: SSR
 %Options%
 %Required Dungeons%
@@ -102,7 +37,7 @@ Goddess Cubes
 Single Gratitude Crystal
 #GAMECODEEND:
 
-#GAMECODESTART: OOTMM
+#GAMECODESTART: OOTMM,MMR
 
 Kokiri Forest
 Deku Tree
@@ -139,28 +74,73 @@ North Clock Town
 East Clock Town
 South Clock Town
 West Clock Town
+Stock Pot Inn
+Laundry Pool
+Beneath Clocktown
+Termina
 Termina Field
+Astral Observatory
+Milk Road
 Romani Ranch
+Swamp
+Road to Southern Swamp
 Southern Swamp
+Swamp Skull House
+Swamp Spider House
 Deku Palace
 Woodfall
 Woodfall Temple
-Swamp Spider House
+Woodfall Temple Fairies
+Woodfall Temple Stray Fairies
+Mountains
+Path to Mountain Village
 Mountain Village
 Twin Islands
 Goron Village
+Path to Snowhead
 Snowhead
 Snowhead Temple
+Snowhead Temple Fairies
+Snowhead Temple Stray Fairies
+Bay
 Great Bay
+Great Bay Coast
+Great Bay Cape
 Zora Cape
-Pirates Fortress
-Great Bay Temple
+Ocean Skull House
 Ocean Spider House
+Zora Hall
+Pinnacle Rock
+Great Bay 
+Great Bay Temple
+Great Bay Temple Fairies
+Great Bay Temple Stray Fairies
+Pirate Fortress
+Pirates Fortress
+Pirates' Fortress Exterior
+Pirates' Fortress Interior
+Pirates' Fortress Sewer
+Canyon
 Ikana Road
+Road to Ikana
+Ikana Graveyard
 Ikana Canyon
+Secret Shrine
+Beneath the Well
+Ikana Castle
+Stone 
 Stone Tower
 Stone Tower Temple
+Inverted Stone Tower Temple
+Stone Tower Temple Fairies
+Stone Tower Temple Stray Fairies
+Tingle Map
+Bottle Catch
+Dungeon Entrance
 The Moon
+Owl Warp
+Interior
+Grottos
 
 #GAMECODEEND:
 
