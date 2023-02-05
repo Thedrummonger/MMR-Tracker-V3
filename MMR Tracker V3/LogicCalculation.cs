@@ -397,6 +397,9 @@ namespace MMR_Tracker_V3
 
         private static bool checkOptionEntry(TrackerInstance instance, string[] data, bool inverse, string OriginalText)
         {
+            bool WasSetting = true;
+            bool WasCompare = true;
+
             bool LiteralOption = data[0].Trim().IsLiteralID(out string CleanedOptionName);
             bool LiteralValue = data[1].Trim().IsLiteralID(out string CleanedOptionValue);
 
@@ -422,6 +425,7 @@ namespace MMR_Tracker_V3
                     return (bool.TryParse(CleanedOptionValue, out bool TryParseBool) && (bool)VarOptionBool == TryParseBool) != inverse;
                 }
             }
+            else { WasSetting = false; }
 
             if (instance.Variables.ContainsKey(CleanedOptionValue) && instance.Variables[CleanedOptionValue].Value is List<string> VarValueList) { ValueList = VarValueList; }
 
@@ -429,6 +433,7 @@ namespace MMR_Tracker_V3
             foreach (var currentOption in OptionList)
             {
                 var CurrentOptionType = instance.GetOptionEntryType(currentOption, LiteralOption, out object CurrentOptionEntry);
+                if (CurrentOptionType != LogicEntryType.Option && CurrentOptionType != LogicEntryType.location && CurrentOptionType != LogicEntryType.Exit) { WasCompare = false; }
                 foreach (var CurrentValue in ValueList)
                 {
                     string CheckValue = CurrentValue;
@@ -442,6 +447,7 @@ namespace MMR_Tracker_V3
                     else if (CurrentOptionType == LogicEntryType.Exit && ExitLeadsToArea(CurrentOptionEntry, CheckValue)) { RequiremntMet = true; }
                 }
             }
+            if (!WasCompare && !WasSetting) { Debug.WriteLine($"{OriginalText} may not be a valid Option Entry"); }
             return RequiremntMet != inverse;
         }
 

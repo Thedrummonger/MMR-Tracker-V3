@@ -63,7 +63,7 @@ namespace ConsoleDebugger
 
         private static void Debugging()
         {
-            MMR_Tracker_V3.OtherGames.OOTMMRCOMBO.ReadAndParseData.ScrapeLocationData();
+
         }
 
         private static void LoadPreset()

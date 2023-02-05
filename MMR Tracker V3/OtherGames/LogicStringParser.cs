@@ -1,4 +1,5 @@
 ﻿using MathNet.Symbolics;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -25,7 +26,19 @@ namespace MMR_Tracker_V3
         {
             public string Funtion;
             public string Parameters;
-            public string ParametersTrimmed { get { return Parameters.TrimStart('(').TrimEnd(')'); } }
+            public string ParametersTrimmed { get 
+                {
+                    if (Parameters.StartsWith("(") && Parameters.EndsWith(")"))
+                    {
+                        return Parameters[1..(Parameters.Length - 1)];
+                    }
+                    else
+                    {
+                        return Parameters;
+                    }
+                    
+                } 
+            }
             public override string ToString()
             {
                 return Funtion + Parameters;
@@ -131,6 +144,13 @@ namespace MMR_Tracker_V3
             }
             ReplacementMap = DictionaryStringMap;
             return string.Join("", ReplacementBrokenLogic);
+        }
+
+        public static string ConvertYamlStringToJsonString(string YAML)
+        {
+            var deserializer = new YamlDotNet.Serialization.DeserializerBuilder().Build();
+            object yamlIsDumb = deserializer.Deserialize<object>(YAML);
+            return JsonConvert.SerializeObject(yamlIsDumb);
         }
 
         public static List<string> SplitLogicString(string LogicString)

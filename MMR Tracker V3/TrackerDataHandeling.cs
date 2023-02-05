@@ -499,11 +499,13 @@ namespace MMR_Tracker_V3
                 WriteHiddenLocations();
                 WriteOptions();
                 WriteHints();
+                WriteEntrances();
                 WriteLocations();
             }
             else
             {
                 WriteLocations();
+                WriteEntrances();
                 WriteHints();
                 WriteOptions();
                 WriteHiddenLocations();
@@ -512,6 +514,15 @@ namespace MMR_Tracker_V3
             OutItemsInListBox = ItemsInListBox;
             OutItemsInListBoxFiltered = ItemsInListBoxFiltered;
             return DataSource;
+
+            void WriteEntrances()
+            {
+                if (Instance.StaticOptions.EntranceRandoFeatures) { return; }
+                var Entrances = PopulateAvailableEntraceList(DataSets, Divider, Instance, Filter, ShowUnavailable, out int EntCount, out int EntCountFiltered, reverse);
+                DataSource.AddRange(Entrances);
+                ItemsInListBox += EntCount;
+                ItemsInListBoxFiltered += EntCountFiltered;
+            }
 
             void WriteHiddenLocations()
             {
@@ -641,6 +652,8 @@ namespace MMR_Tracker_V3
 
         public static List<object> PopulateAvailableEntraceList(DataSets DataSets, MiscData.Divider Divider, LogicObjects.TrackerInstance Instance, string Filter, bool ShowUnavailable, out int OutItemsInListBox, out int OutItemsInListBoxFiltered, bool reverse = false)
         {
+            bool InLocationBox = !Instance.StaticOptions.EntranceRandoFeatures;
+
             var Groups = Utility.GetCategoriesFromFile(Instance);
             List<object> DataSource = new List<object>();
             OutItemsInListBox = 0;
@@ -658,7 +671,7 @@ namespace MMR_Tracker_V3
                 if (!FilteredAvailableExits.Any()) { continue; }
 
                 if (DataSource.Count > 0) { DataSource.Add(Divider); }
-                DataSource.Add(new MiscData.Areaheader { Area = area.Key });
+                DataSource.Add(new MiscData.Areaheader { Area = InLocationBox ? $"{area.Key} Entrances" : area.Key });
                 foreach(var i in FilteredAvailableExits)
                 {
                     i.Value.DisplayName = Utility.GetEntranceDisplayName(i.Value, Instance);

@@ -254,19 +254,19 @@ namespace Windows_Form_Frontend
 
         private void CodeTestingToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            MMR_Tracker_V3.OtherGames.OOTMMRCOMBO.ReadAndParseData.CreateFiles(out MMR_Tracker_V3.TrackerObjects.MMRData.LogicFile Logic, out MMR_Tracker_V3.TrackerObjects.LogicDictionaryData.LogicDictionary dictionary);
 
-            MMR_Tracker_V3.OtherGames.OOTMMRCOMBO.ReadAndParseData.ScrapeLocationData();
-            return;
-            List<string> areas = new List<string>();
-            foreach(var i in InstanceContainer.Instance.LocationPool.Values)
+            WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(Logic), JsonConvert.SerializeObject(dictionary));
+
+            foreach(var i in InstanceContainer.Instance.LogicFile.Logic)
             {
-                var area = i.GetDictEntry(InstanceContainer.Instance).Area;
-                var loc = i.GetDictEntry(InstanceContainer.Instance).GetName(InstanceContainer.Instance);
-                if (!areas.Contains(area))
-                    areas.Add(area);
-            }
+                var logicitems = i.ConditionalItems.SelectMany(x => x).ToArray();
+                foreach(var l in logicitems)
+                {
+                    InstanceContainer.logicCalculation.LogicEntryAquired(l, new List<string>()) ;
+                }
 
-            areas.OrderBy(x => x).ToList().ForEach(x => Debug.WriteLine(x));
+            }
 
         }
 
@@ -648,6 +648,9 @@ namespace Windows_Form_Frontend
 
             SaveAsToolStripMenuItem1.Visible = (File.Exists(InstanceContainer.CurrentSavePath));
             importSpoilerLogToolStripMenuItem.Text = (InstanceContainer.Instance.SpoilerLog != null) ? "Remove Spoiler Log" : "Import Spoiler Log";
+            entranceRandoFeaturesToolStripMenuItem.Checked = InstanceContainer.Instance.StaticOptions.EntranceRandoFeatures;
+            entranceRandoFeaturesToolStripMenuItem.Visible = InstanceContainer.Instance.EntrancePool.IsEntranceRando || InstanceContainer.Instance.EntrancePool.CheckForRandomEntrances();
+
 
             //Manage Dev Menus
             devToolsToolStripMenuItem.Visible = Testing.IsDevUser();
@@ -1188,6 +1191,12 @@ namespace Windows_Form_Frontend
         {
             if(!Testing.UserView()) { return; }
             Testing.DebugMode = MiscData.DebugMode.Debugging;
+            UpdateUI();
+        }
+
+        private void entranceRandoFeaturesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InstanceContainer.Instance.StaticOptions.EntranceRandoFeatures = !InstanceContainer.Instance.StaticOptions.EntranceRandoFeatures;
             UpdateUI();
         }
     }

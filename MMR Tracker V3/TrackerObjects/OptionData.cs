@@ -42,6 +42,8 @@ namespace MMR_Tracker_V3.TrackerObjects
                 CurrentValue = Values.Keys.First(x => x != CurrentValue);
             }
 
+            public void CreateSimpleValues(string[] SimpleValues) { Values = SimpleValues.ToDictionary(x => x, x => new actions()); }
+
             public override string ToString()
             {
                 return DisplayName + ": " + CurrentValue;

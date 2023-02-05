@@ -75,15 +75,9 @@
   "MM_RUPEE_PURPLE": "Purple Rupee",
   "MM_RUPEE_RED": "Red Rupee",
   "MM_RUPEE_SILVER": "Silver Rupee",
-  "MM_SHIELD": false,
-  "MM_SHIELD_HERO": [
-    "Hero Shield",
-    [ "MM_SHIELD" ]
-  ],
-  "MM_SHIELD_MIRROR": [
-    "Mirror Shield",
-    [ "MM_SHIELD" ]
-  ],
+  "MM_SHIELD": "Progressive Sheild",
+  "MM_SHIELD_HERO": "Hero Shield",
+  "MM_SHIELD_MIRROR": "Mirror Shield",
   "MM_SMALL_KEY_GB": "Great Bay Small Key",
   "MM_SMALL_KEY_SH": "Snowhead Small Key",
   "MM_SMALL_KEY_ST": "Stone Tower Small Key",
@@ -91,11 +85,8 @@
   "MM_SONG_AWAKENING": "Sonata of Awakening",
   "MM_SONG_EMPTINESS": "Elegy of Emptiness",
   "MM_SONG_EPONA": "Eponas Song",
-  "MM_SONG_GORON_HALF": "Gorons Lullaby",
-  "MM_SONG_GORON": [
-    "Goron's Lullaby",
-    [ "MM_SONG_GORON_HALF" ]
-  ],
+  "MM_SONG_GORON_HALF": "Goron's Lullaby",
+  "MM_SONG_GORON": "Goron's Lullaby",
   "MM_SONG_HEALING": "Song of Healing",
   "MM_SONG_ORDER": "Oath to Order",
   "MM_SONG_SOARING": "Song of Soaring",
@@ -182,19 +173,10 @@
   "OOT_RUPEE_RED": "Red Rupee",
   "OOT_RUTO_LETTER": "Rutos Letter",
   "OOT_SCALE": "Scale",
-  "OOT_SHIELD": false,
-  "OOT_SHIELD_DEKU": [
-    "Deku Shield",
-    [ "OOT_SHIELD" ]
-  ],
-  "OOT_SHIELD_HYLIAN": [
-    "Hylian Shield",
-    [ "OOT_SHIELD" ]
-  ],
-  "OOT_SHIELD_MIRROR": [
-    "Mirror Shield",
-    [ "OOT_SHIELD" ]
-  ],
+  "OOT_SHIELD": "Progressive Shield",
+  "OOT_SHIELD_DEKU": "Deku Shield",
+  "OOT_SHIELD_HYLIAN": "Hylian Shield",
+  "OOT_SHIELD_MIRROR": "Mirror Shield",
   "OOT_SLINGSHOT": "Slingshot",
   "OOT_SMALL_KEY_BOTW": "Bottom of the Well Small Key",
   "OOT_SMALL_KEY_FIRE": "Fire Temple Small Key",
@@ -226,24 +208,12 @@
   "OOT_STONE_RUBY": "Goron Ruby",
   "OOT_STONE_SAPPHIRE": "Zora Sapphire",
   "OOT_STRENGTH": "Strength",
-  "OOT_SWORD": false,
-  "OOT_SWORD_GORON": false,
-  "OOT_SWORD_KOKIRI": [
-    "Kokiri Sword",
-    [ "OOT_SWORD" ]
-  ],
-  "OOT_SWORD_MASTER": [
-    "Master Sword",
-    [ "OOT_SWORD" ]
-  ],
-  "OOT_SWORD_KNIFE": [
-    "Giants Knife",
-    [ "OOT_SWORD", "OOT_SWORD_GORON" ]
-  ],
-  "OOT_SWORD_BIGGORON": [
-    "Biggorn Sword",
-    [ "OOT_SWORD", "OOT_SWORD_GORON" ]
-  ],
+  "OOT_SWORD": "Progressive Sword",
+  "OOT_SWORD_GORON": "Progressive Goron Sword",
+  "OOT_SWORD_KOKIRI": "Kokiri Sword",
+  "OOT_SWORD_MASTER": "Master Sword",
+  "OOT_SWORD_KNIFE": "Giants Knife",
+  "OOT_SWORD_BIGGORON": "Biggorn Sword",
   "OOT_TUNIC_GORON": "Goron Tunic",
   "OOT_TUNIC_ZORA": "Zora Tunic",
   "OOT_WALLET": "Wallet",
