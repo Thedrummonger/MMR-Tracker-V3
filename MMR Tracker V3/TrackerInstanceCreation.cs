@@ -39,8 +39,6 @@ namespace MMR_Tracker_V3
             Instance.UserOptions = Instance.LogicDictionary.Options.ToDictionary(x => x.ID, y => y);
             Instance.Variables = Instance.LogicDictionary.Variables.ToDictionary(x => x.ID, y => y);
 
-            Instance.EntrancePool.IsEntranceRando = Instance.EntrancePool.CheckForRandomEntrances();
-
             int Index = 0;
             foreach(var i in Instance.LogicDictionary.ItemList)
             {
@@ -159,14 +157,22 @@ namespace MMR_Tracker_V3
                     ConditionalItems = AllWallets.Where(x => x.Value >= i.Value).Select(x => new List<string> { x.Key }).ToList()
                 });
             }
+
+            Instance.EntrancePool.IsEntranceRando = Instance.EntrancePool.CheckForRandomEntrances();
+
             Instance.PriceData.Initialized = true;
 
             Instance.EntrancePool.RootArea = Instance.LogicDictionary.RootArea??"Root";
 
             Instance.StaticOptions.MinimizedHeader.Add("Hidden Locations:::LBValidLocations", true);
 
-            Debug.WriteLine(JsonConvert.SerializeObject(Instance.PriceData.WalletEntries, Testing._NewtonsoftJsonSerializerOptions));
-            Debug.WriteLine(JsonConvert.SerializeObject(Instance.PriceData.CapacityMap, Testing._NewtonsoftJsonSerializerOptions));
+            if (Instance.EntrancePool.IsEntranceRando)
+            {
+                Instance.StaticOptions.EntranceRandoFeatures = Instance.EntrancePool.GetAmountOfRandomizedEntrances() >= 20;
+            }
+
+            //Debug.WriteLine(JsonConvert.SerializeObject(Instance.PriceData.WalletEntries, Testing._NewtonsoftJsonSerializerOptions));
+            //Debug.WriteLine(JsonConvert.SerializeObject(Instance.PriceData.CapacityMap, Testing._NewtonsoftJsonSerializerOptions));
 
             return true;
         }

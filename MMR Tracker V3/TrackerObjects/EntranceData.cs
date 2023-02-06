@@ -28,6 +28,10 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 return AreaList.Any(x => x.Value.LoadingZoneExits.Any(x => x.Value.RandomizedState == RandomizedState.Randomized));
             }
+            public int GetAmountOfRandomizedEntrances()
+            {
+                return AreaList.SelectMany(x => x.Value.LoadingZoneExits.Where(y => y.Value.IsRandomized())).Count();
+            }
         }
         public class EntranceRandoArea
         {

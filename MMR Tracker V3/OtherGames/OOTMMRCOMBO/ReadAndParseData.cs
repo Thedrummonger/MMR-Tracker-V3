@@ -31,6 +31,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             public Dictionary<string, string> exits =  new Dictionary<string, string>();
             public Dictionary<string, string> locations = new Dictionary<string, string>();
             public Dictionary<string, string> events = new Dictionary<string, string>();
+            public Dictionary<string, string> gossip = new Dictionary<string, string>();
         }
 
         public static void CreateFiles(out TrackerObjects.MMRData.LogicFile Logic, out TrackerObjects.LogicDictionaryData.LogicDictionary dictionary)
@@ -173,7 +174,25 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         var LogicFileEntry = LogicFile.Logic.Find(x => x.Id == i || x.Id == $"{Game} {i}" || x.Id == $"{Game}_{i}");
                         if (LogicFileEntry is not null)
                         {
-                            string Logic = $"({FileOBJ[key].events[i]}) && {Game} {key}";
+                            string Logic = $"(({FileOBJ[key].events[i]}) && {Game} {key})";
+                            if (LogicFileEntry.ConditionalItems.Any() || LogicFileEntry.RequiredItems.Any())
+                            {
+                                Debug.WriteLine($"{key} {i} Duplicate Logic Entry");
+                                logicCleaner.MoveRequirementsToConditionals(LogicFileEntry);
+                                string CurrentLogic = $" || ({string.Join(" || ", LogicFileEntry.ConditionalItems.Select(x => string.Join(" && ", x)))})";
+                                Logic += CurrentLogic;
+                            }
+                            LogicFileEntry.ConditionalItems = ParselogicLine(Logic, Game);
+                            logicCleaner.RemoveRedundantConditionals(LogicFileEntry);
+                            logicCleaner.MakeCommonConditionalsRequirements(LogicFileEntry);
+                        }
+                    }
+                    foreach (var i in FileOBJ[key].gossip?.Keys.ToArray()??new string[0])
+                    {
+                        var LogicFileEntry = LogicFile.Logic.Find(x => x.Id == i || x.Id == $"{Game} {i}" || x.Id == $"{Game}_{i}");
+                        if (LogicFileEntry is not null)
+                        {
+                            string Logic = $"({FileOBJ[key].gossip[i]}) && {Game} {key}";
                             LogicFileEntry.ConditionalItems = ParselogicLine(Logic, Game);
                             logicCleaner.RemoveRedundantConditionals(LogicFileEntry);
                             logicCleaner.MakeCommonConditionalsRequirements(LogicFileEntry);
@@ -386,6 +405,21 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                                 LogicFile.Logic.Add(new TrackerObjects.MMRData.JsonFormatLogicItem { Id = TrueMacroName });
                             }
                         }
+                        foreach (var hint in LogicObject[l]?.gossip?.Keys?.ToList()??new List<string>())
+                        {
+                            string TrueHintName = $"{Game} {hint}";
+                            if (LogicFile.Logic.Find(x => x.Id == TrueHintName) == null)
+                            {
+                                LogicFile.Logic.Add(new TrackerObjects.MMRData.JsonFormatLogicItem { Id = TrueHintName });
+                            }
+                            if (dictionaryFile.HintSpots.Find(x => x.ID == TrueHintName) == null)
+                            {
+                                LogicDictionaryData.DictionaryHintEntries dictionaryHint = new LogicDictionaryData.DictionaryHintEntries();
+                                dictionaryHint.ID = TrueHintName;
+                                dictionaryHint.Name = TrueHintName;
+                                dictionaryFile.HintSpots.Add(dictionaryHint);
+                            }
+                        }
                     }
                 }
             }
@@ -395,8 +429,12 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
         public static void readAndApplySpoilerLog(LogicObjects.TrackerInstance Instance)
         {
             Instance.ToggleAllTricks(false);
+            foreach (var i in Instance.EntrancePool.AreaList.SelectMany(x => x.Value.LoadingZoneExits))
+            {
+                i.Value.RandomizedState = MiscData.RandomizedState.Unrandomized;
+            }
             Dictionary<string, bool> spoilerFileLocation =
-                new Dictionary<string, bool> { { "Settings", false }, { "Tricks", false }, { "Starting Items", false }, { "Hints", false } };
+                new Dictionary<string, bool> { { "Settings", false }, { "Tricks", false }, { "Starting Items", false }, { "Entrances", false }, { "Hints", false } };
             foreach(var l in Instance.SpoilerLog.Log)
             {
                 if (string.IsNullOrWhiteSpace(l)){ continue; }
@@ -416,6 +454,12 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                     spoilerFileLocation["Starting Items"] = true;
                     continue;
                 }
+                if (l == "Entrances")
+                {
+                    foreach (var k in spoilerFileLocation.Keys) { spoilerFileLocation[k] = false; }
+                    spoilerFileLocation["Entrances"] = true;
+                    continue;
+                }
                 if (l == "Foolish Regions")
                 {
                     foreach (var k in spoilerFileLocation.Keys) { spoilerFileLocation[k] = false; }
@@ -431,7 +475,19 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 string Line = l.Trim();
                 if (spoilerFileLocation["Settings"])
                 {
-                    //Handle Settings at some point
+                    var SettingLineData = Line.Split(":").Select(x => x.Trim()).ToArray();
+                    if (SettingLineData.Length < 2) { continue; }
+                    if (Instance.UserOptions.ContainsKey(SettingLineData[0]))
+                    {
+                        Instance.UserOptions[SettingLineData[0]].CurrentValue = SettingLineData[1];
+                    }
+                    else if (SettingLineData[0] == "erBoss" && SettingLineData[1] != "none")
+                    {
+                        foreach(var i in Instance.EntrancePool.AreaList.SelectMany(x => x.Value.LoadingZoneExits))
+                        {
+                            i.Value.RandomizedState = MiscData.RandomizedState.Randomized;
+                        }
+                    }
                 }
                 if (spoilerFileLocation["Tricks"])
                 {
@@ -442,8 +498,9 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 if (spoilerFileLocation["Starting Items"])
                 {
                     var startingItemData = Line.Split(":").Select(x => x.Trim()).ToArray();
-                    if (startingItemData.Length < 2 || !int.TryParse(startingItemData[1], out int tr) || tr < 1) { continue; }
-                    for (var i = 0; i < int.Parse(startingItemData[1]); i++)
+                    if (startingItemData.Length < 2 || !int.TryParse(startingItemData[1], out int tr)) { continue; }
+                    if (tr < 1) { tr = 1; }
+                    for (var i = 0; i < tr; i++)
                     {
                         var ValidItem = Instance.GetItemToPlace(startingItemData[0], true, true);
                         if (ValidItem is not null) { ValidItem.AmountInStartingpool++; }
@@ -452,7 +509,48 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 }
                 if (spoilerFileLocation["Hints"])
                 {
-                    //Handle Hints at some point
+                    var pieces = Line.Split(new[] { ':' }, 2).Select(x => x.Trim()).ToArray();
+                    var GossipStone = pieces[0];
+                    if (!Instance.HintPool.ContainsKey(GossipStone)) { continue; }
+                    var GossipStoneEntry = Instance.HintPool[GossipStone];
+                    var Data = pieces[1].Split(new[] { ',' }, 2).Select(x => x.Trim()).ToArray();
+                    var HintType = Data[0];
+                    var HintData = Data[1].Replace(")", "").Split("(").Select(x => x.Trim()).ToArray();
+                    string LocationName = HintData[0].ToLower().Replace("_", " ");
+                    LocationName = Regex.Replace(LocationName, @"(^\w)|(\s\w)", m => m.Value.ToUpper()).Replace("Mm", "MM").Replace("Oot", "OOT");
+                    switch (HintType)
+                    {
+                        case "Item-Exact":
+                        case "Item-Region":
+                            Func<ItemData.ItemObject, bool> predicate = x => x.GetDictEntry(Instance).SpoilerData.GossipHintNames.Contains(HintData[1]) || x.Id == HintData[1];
+                            string ItemName = Instance.ItemPool.Values.FirstOrDefault(predicate)?.GetDictEntry(Instance)?.GetName(Instance)??HintData[1];
+                            GossipStoneEntry.SpoilerHintText = $"{LocationName}: {ItemName}";
+                            break;
+                        case "Hero":
+                            GossipStoneEntry.SpoilerHintText = $"{LocationName}: Hero";
+                            break;
+                        case "Foolish":
+                            GossipStoneEntry.SpoilerHintText = $"{LocationName}: foolish";
+                            break;
+                    }
+                }
+                if (spoilerFileLocation["Entrances"])
+                {
+                    var EntranceData = Line.Split(new string[] { "->" }, StringSplitOptions.None).Select(x => x.Trim()).ToArray();
+                    var Source = EntranceData[0].Split('/');
+                    var Destination = EntranceData[1].Split('/');
+                    if (Instance.EntrancePool.AreaList.ContainsKey(Source[0]) && 
+                        Instance.EntrancePool.AreaList[Source[0]].LoadingZoneExits.ContainsKey(Source[1]) &&
+                        Instance.EntrancePool.AreaList.ContainsKey(Destination[0]) &&
+                        Instance.EntrancePool.AreaList[Destination[0]].LoadingZoneExits.ContainsKey(Destination[1]))
+                    {
+                        Instance.EntrancePool.AreaList[Source[0]].LoadingZoneExits[Source[1]].SpoilerDefinedDestinationExit = new EntranceData.EntranceRandoDestination
+                        {
+                            region = Destination[1],
+                            from = Destination[0]
+                        };
+                    }
+                    else { Debug.WriteLine($"{Line} Could not be mapped to an entrance!"); }
                 }
             }
 
@@ -570,7 +668,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 logicFile.Logic.Add(new TrackerObjects.MMRData.JsonFormatLogicItem() { Id = i });
                 TrackerObjects.LogicDictionaryData.DictionaryLocationEntries dictEntry = new TrackerObjects.LogicDictionaryData.DictionaryLocationEntries();
                 dictEntry.ID = i;
-                dictEntry.SpoilerData = new TrackerObjects.MMRData.SpoilerlogReference { SpoilerLogNames = new string[] { i } };
+                dictEntry.SpoilerData = new TrackerObjects.MMRData.SpoilerlogReference { SpoilerLogNames = new string[] { i }, GossipHintNames = new string[] { i } };
                 dictEntry.Name = i;
                 dictEntry.ValidItemTypes = new string[] { "item" };
                 if (OOTRAreaDict.ContainsKey(i)) { dictEntry.Area = OOTRAreaDict[i]; }
@@ -606,7 +704,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 dictItem.MaxAmountInWorld = -1;
                 dictItem.ValidStartingItem = true;
                 dictItem.ID = i;
-                dictItem.SpoilerData = new TrackerObjects.MMRData.SpoilerlogReference { SpoilerLogNames = new string[] { i } };
+                dictItem.SpoilerData = new TrackerObjects.MMRData.SpoilerlogReference { SpoilerLogNames = new string[] { i }, GossipHintNames =  new string[] { i, ItemName } };
                 ExtraSpoilerNames.ForEach(x => dictItem.SpoilerData.SpoilerLogNames = dictItem.SpoilerData.SpoilerLogNames.Append(x).ToArray());
                 dictItem.ItemTypes = new string[] { "item" };
                 logicDictionary.ItemList.Add(dictItem);

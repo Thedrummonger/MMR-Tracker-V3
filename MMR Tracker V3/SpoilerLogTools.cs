@@ -34,12 +34,14 @@ namespace MMR_Tracker_V3
                 case "OOTMM":
                     Instance.SpoilerLog = new LogicObjects.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
                     OtherGames.OOTMMRCOMBO.ReadAndParseData.readAndApplySpoilerLog(Instance);
+                    Instance.EntrancePool.IsEntranceRando = Instance.EntrancePool.CheckForRandomEntrances();
                     return true;
                 case "MMR":
                     Instance.SpoilerLog = new LogicObjects.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
                     MMRData.SpoilerLogData LogData = ReadSpoilerLog(spoilerLog);
                     ApplyMMRandoSettings(Instance, LogData);
                     ApplyMMRandoSpoilerLog(Instance, LogData);
+                    Instance.EntrancePool.IsEntranceRando = Instance.EntrancePool.CheckForRandomEntrances();
                     return true;
 
                 default:

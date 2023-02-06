@@ -519,6 +519,7 @@ namespace MMR_Tracker_V3
             {
                 if (Instance.StaticOptions.EntranceRandoFeatures) { return; }
                 var Entrances = PopulateAvailableEntraceList(DataSets, Divider, Instance, Filter, ShowUnavailable, out int EntCount, out int EntCountFiltered, reverse);
+                if (Entrances.Any() && DataSource.Any()) { DataSource.Add(Divider); }
                 DataSource.AddRange(Entrances);
                 ItemsInListBox += EntCount;
                 ItemsInListBoxFiltered += EntCountFiltered;
