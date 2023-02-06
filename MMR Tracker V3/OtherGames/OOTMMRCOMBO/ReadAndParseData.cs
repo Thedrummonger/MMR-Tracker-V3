@@ -499,7 +499,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 {
                     var startingItemData = Line.Split(":").Select(x => x.Trim()).ToArray();
                     if (startingItemData.Length < 2 || !int.TryParse(startingItemData[1], out int tr)) { continue; }
-                    if (tr < 1) { tr = 1; }
+                    if (tr < 1) { continue; }
                     for (var i = 0; i < tr; i++)
                     {
                         var ValidItem = Instance.GetItemToPlace(startingItemData[0], true, true);

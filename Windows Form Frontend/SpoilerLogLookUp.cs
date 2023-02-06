@@ -297,14 +297,14 @@ namespace Windows_Form_Frontend
 
                 if (SLI.tag is LocationData.LocationObject LO)
                 {
-                    if (SpoilerLookupPlaythrough.Playthrough.ContainsKey(LO.ID)) { MessageBox.Show($"{SLI.Display} Can be obtained shpere {SpoilerLookupPlaythrough.Playthrough[LO.ID].sphere}"); }
+                    if (SpoilerLookupPlaythrough.Playthrough.ContainsKey(LO.ID)) { MessageBox.Show($"{SLI.Display} Can be obtained sphere {SpoilerLookupPlaythrough.Playthrough[LO.ID].sphere}"); }
                     else { MessageBox.Show($"{SLI.Display} Can not be obtained with known items");}
                 }
                 else if (SLI.tag is List<LocationData.LocationObject> LLO)
                 {
                     if (LLO.Count == 1)
                     {
-                        if (SpoilerLookupPlaythrough.Playthrough.ContainsKey(LLO.First().ID)) { MessageBox.Show($"{SLI.Display} Can be obtained shpere {SpoilerLookupPlaythrough.Playthrough[LLO.First().ID].sphere}"); }
+                        if (SpoilerLookupPlaythrough.Playthrough.ContainsKey(LLO.First().ID)) { MessageBox.Show($"{SLI.Display} Can be obtained sphere {SpoilerLookupPlaythrough.Playthrough[LLO.First().ID].sphere}"); }
                         else { MessageBox.Show($"{SLI.Display} Can not be obtained with known items"); }
                     }
                     else
@@ -315,12 +315,12 @@ namespace Windows_Form_Frontend
                             SpheresObtainable.Add(SpoilerLookupPlaythrough.Playthrough[i.ID].sphere);
                         }
                         if (!SpheresObtainable.Any()) { MessageBox.Show($"{SLI.Display} Can not be obtained with known items"); }
-                        else { MessageBox.Show($"{SLI.Display} Can be obtained shpere {SpheresObtainable.Min()}");}
+                        else { MessageBox.Show($"{SLI.Display} Can be obtained sphere {SpheresObtainable.Min()}");}
                     }
                 }
                 else if (SLI.tag is MacroObject MO)
                 {
-                    if (SpoilerLookupPlaythrough.Playthrough.ContainsKey(MO.ID)) { MessageBox.Show($"{SLI.Display} Can be obtained shpere {SpoilerLookupPlaythrough.Playthrough[MO.ID].sphere}"); }
+                    if (SpoilerLookupPlaythrough.Playthrough.ContainsKey(MO.ID)) { MessageBox.Show($"{SLI.Display} Can be obtained sphere {SpoilerLookupPlaythrough.Playthrough[MO.ID].sphere}"); }
                     else if (MO.isTrick(_instance) && !MO.TrickEnabled) { MessageBox.Show($"{SLI.Display} Is a trick and is not enabled"); }
                     else { MessageBox.Show($"{SLI.Display} Can not be obtained with known items"); }
                 }
@@ -371,8 +371,8 @@ namespace Windows_Form_Frontend
         #region SeedChecker
         private void UpdateSeedChckUI()
         {
-            btnAddReq.Text = seedCheckMode == SeedCheckMode.addReq ? "X" : "Add";
-            btnAddIgnored.Text = seedCheckMode == SeedCheckMode.addIgnore ? "X" : "Add";
+            btnAddReq.Text = seedCheckMode == SeedCheckMode.addReq ? "✓" : "Add";
+            btnAddIgnored.Text = seedCheckMode == SeedCheckMode.addIgnore ? "✓" : "Add";
             btnCheckSeed.Text = seedCheckMode == SeedCheckMode.view ? "Check Seed" : "Select";
             labelSeedCheckResults.Text = seedCheckMode == SeedCheckMode.addReq ? "Items" : (seedCheckMode == SeedCheckMode.addIgnore ? "Locaitons" : "Results");
 
