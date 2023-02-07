@@ -334,17 +334,17 @@ namespace MMR_Tracker_V3
 
     public static class LogicEditing
     {
-        public static void HandlePriceLogic(TrackerInstance instance, int Price, List<string> Requirements, List<List<string>> Conditionals, out List<string> NewRequirements, out List<List<string>> NewConditionals)
+        public static void HandlePriceLogic(TrackerInstance instance, int Price, char Currency, List<string> Requirements, List<List<string>> Conditionals, out List<string> NewRequirements, out List<List<string>> NewConditionals)
         {
-            if (!instance.PriceData.CapacityMap.Any())
+            if (!instance.PriceData.GetCapacityMap(Currency).Any())
             {
                 NewRequirements = Requirements;
                 NewConditionals = Conditionals;
                 return;
             }
-            var ValidWallets = instance.PriceData.CapacityMap.Keys.Where(item => item >= Price);
-            var MinValue = ValidWallets.Any() ? ValidWallets.Min() : instance.PriceData.CapacityMap.Keys.Max();
-            var NewWallet = instance.PriceData.CapacityMap[MinValue];
+            var ValidWallets = instance.PriceData.GetCapacityMap(Currency).Keys.Where(item => item >= Price);
+            var MinValue = ValidWallets.Any() ? ValidWallets.Min() : instance.PriceData.GetCapacityMap(Currency).Keys.Max();
+            var NewWallet = instance.PriceData.GetCapacityMap(Currency)[MinValue];
 
             var FlattenedLogic = Requirements.Concat(Conditionals.SelectMany(x => x));
             if (FlattenedLogic.Any(x => instance.PriceData.WalletEntries.Contains(x)))

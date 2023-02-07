@@ -254,7 +254,7 @@ namespace Windows_Form_Frontend
 
         private void CodeTestingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MMR_Tracker_V3.OtherGames.OOTMMRCOMBO.ReadAndParseData.CreateFiles(out MMR_Tracker_V3.TrackerObjects.MMRData.LogicFile Logic, out MMR_Tracker_V3.TrackerObjects.LogicDictionaryData.LogicDictionary dictionary);
+            MMR_Tracker_V3.OtherGames.OOTMMRCOMBO.ReadAndParseData.CreateFiles(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary);
 
             WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(Logic), JsonConvert.SerializeObject(dictionary));
 
@@ -857,19 +857,38 @@ namespace Windows_Form_Frontend
             if (Testing.Debugging())
             {
                 //DevData
+                string RandomizedItem = null;
                 ToolStripItem ShowDevData = contextMenuStrip.Items.Add("Show Dev Data");
                 ShowDevData.Click += (sender, e) =>
                 {
+                    Debug.WriteLine($"Data for {listBox.SelectedItem}=========================================================");
                     Debug.WriteLine(JsonConvert.SerializeObject(listBox.SelectedItem, Testing._NewtonsoftJsonSerializerOptions));
                     if (listBox.SelectedItem is LocationData.LocationObject DebugLocObj)
                     {
+                        Debug.WriteLine($"Dictionary Entry");
                         Debug.WriteLine(JsonConvert.SerializeObject(DebugLocObj.GetDictEntry(InstanceContainer.Instance), Testing._NewtonsoftJsonSerializerOptions));
+                        RandomizedItem = DebugLocObj.Randomizeditem.Item;
+                        
                     }
                     if (listBox.SelectedItem is LocationData.LocationProxy DebugProxyObj)
                     {
                         var ProxyRef = InstanceContainer.Instance.GetLocationByID(DebugProxyObj.ReferenceID);
+                        Debug.WriteLine($"Proxied Entry");
                         Debug.WriteLine(JsonConvert.SerializeObject(ProxyRef, Testing._NewtonsoftJsonSerializerOptions));
+                        Debug.WriteLine($"Dictionary Entry");
                         Debug.WriteLine(JsonConvert.SerializeObject(ProxyRef?.GetDictEntry(InstanceContainer.Instance), Testing._NewtonsoftJsonSerializerOptions));
+                        RandomizedItem = ProxyRef.Randomizeditem.Item;
+                    }
+                    if (RandomizedItem !=null)
+                    {
+                        var Item = InstanceContainer.Instance.GetItemByID(RandomizedItem);
+                        if (Item is not null)
+                        {
+                            Debug.WriteLine($"Randomized Item");
+                            Debug.WriteLine(JsonConvert.SerializeObject(Item, Testing._NewtonsoftJsonSerializerOptions));
+                            Debug.WriteLine($"Randomized Item Dictionary Entry");
+                            Debug.WriteLine(JsonConvert.SerializeObject(Item?.GetDictEntry(InstanceContainer.Instance), Testing._NewtonsoftJsonSerializerOptions));
+                        }
                     }
                 };
             }

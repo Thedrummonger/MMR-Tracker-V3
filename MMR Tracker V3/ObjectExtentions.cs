@@ -70,18 +70,18 @@ namespace MMR_Tracker_V3
             {
                 var MacroData = instance.GetMacroByID(ID);
                 MacroData.GetPrice(out int p, out char c);
-                if (p > -1 && !instance.PriceData.CapacityMap.ContainsValue(ID)&& DoEdits)
+                if (p > -1 && !instance.PriceData.GetCapacityMap(c).ContainsValue(ID)&& DoEdits)
                 {
-                    LogicEditing.HandlePriceLogic(instance, p, CopyRequirements, CopyConditionals, out CopyRequirements, out CopyConditionals);
+                    LogicEditing.HandlePriceLogic(instance, p, c, CopyRequirements, CopyConditionals, out CopyRequirements, out CopyConditionals);
                 }
             }
             else if (entryType == LogicEntryType.location)
             {
                 var LocationData = instance.GetLocationByID(ID);
                 LocationData.GetPrice(out int p, out char c);
-                if (p > -1 && !instance.PriceData.CapacityMap.ContainsValue(ID)&& DoEdits)
+                if (p > -1 && !instance.PriceData.GetCapacityMap(c).ContainsValue(ID)&& DoEdits)
                 {
-                    LogicEditing.HandlePriceLogic(instance, p, CopyRequirements, CopyConditionals, out CopyRequirements, out CopyConditionals);
+                    LogicEditing.HandlePriceLogic(instance, p, c, CopyRequirements, CopyConditionals, out CopyRequirements, out CopyConditionals);
                 }
             }
 

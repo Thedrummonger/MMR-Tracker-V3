@@ -70,6 +70,7 @@ namespace MMR_Tracker_V3
                 if (Instance.MacroPool.ContainsKey(i.ID))
                 {
                     Instance.MacroPool[i.ID].referenceData.DictIndex = Index;
+                    Instance.MacroPool[i.ID].Currency = i.WalletCurrency;
                 }
                 Index++;
             }
@@ -83,6 +84,7 @@ namespace MMR_Tracker_V3
                     Instance.LocationPool.Add(i.Id, new()
                     {
                         ID = i.Id,
+                        Currency = DictEntry.WalletCurrency,
                         SingleValidItem = ValidItems.Count() == 1 ? ValidItems.First().ID : null,
                         referenceData = new ReferenceData { LogicIndex = Index, DictIndex = Instance.LogicDictionary.LocationList.IndexOf(DictEntry), LogicList = Source }
                     });
@@ -128,33 +130,34 @@ namespace MMR_Tracker_V3
                 }
             }
 
-
-
             //Wallet and Price Data
 
             Instance.PriceData.WalletEntries = Utility.GetAllWalletLogicEntries(Instance);
-            Dictionary<string, int> ItemWallets = Instance.LogicDictionary.ItemList
+            Dictionary<string, Tuple<char, int>> ItemWallets = Instance.LogicDictionary.ItemList
                 .Where(x => x.WalletCapacity != null && (int)x.WalletCapacity > -1)
-                .ToDictionary(x => x.ID, x => (int)x.WalletCapacity);
-            Dictionary<string, int> MacroWallets = Instance.LogicDictionary.MacroList
+                .ToDictionary(x => x.ID, x => new Tuple<char, int>(x.WalletCurrency??'*', (int)x.WalletCapacity ) );
+            Dictionary<string, Tuple<char, int>> MacroWallets = Instance.LogicDictionary.MacroList
                 .Where(x => x.WalletCapacity != null && (int)x.WalletCapacity > -1)
-                .ToDictionary(x => x.ID, x => (int)x.WalletCapacity);
-            Dictionary<string, int> AllWallets = ItemWallets.Concat(MacroWallets).ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
+                .ToDictionary(x => x.ID, x => new Tuple<char, int>(x.WalletCurrency??'*', (int)x.WalletCapacity));
+            Dictionary<string, Tuple<char, int>> AllWallets = ItemWallets.Concat(MacroWallets).ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
 
             foreach (var i in AllWallets)
             {
-                string CanAffordString = $"MMRTCanAfford{i.Value}";
+                string AffordStringChar = (i.Value.Item1 == '*' ? "" : i.Value.Item1.ToString());
+                string CanAffordString = $"MMRTCanAfford{AffordStringChar}{i.Value.Item2}";
                 Debug.WriteLine($"Adding Wallet {CanAffordString}");
                 Instance.MacroPool.Add(CanAffordString, new() { 
                     ID = CanAffordString,
                     referenceData = new ReferenceData { LogicIndex = Index, DictIndex = -1, LogicList = LogicFileType.Runtime }
                 });
-                Instance.PriceData.CapacityMap.Add(i.Value, CanAffordString);
+                if (!Instance.PriceData.CapacityMap.ContainsKey(i.Value.Item1))
+                    Instance.PriceData.CapacityMap.Add(i.Value.Item1, new Dictionary<int, string>());
+                Instance.PriceData.CapacityMap[i.Value.Item1].Add(i.Value.Item2, CanAffordString);
                 Instance.RuntimeLogic.Add(CanAffordString, new MMRData.JsonFormatLogicItem
                 {
                     Id = CanAffordString,
                     RequiredItems = new List<string>(),
-                    ConditionalItems = AllWallets.Where(x => x.Value >= i.Value).Select(x => new List<string> { x.Key }).ToList()
+                    ConditionalItems = AllWallets.Where(x => x.Value.Item2 >= i.Value.Item2 && (x.Value.Item1 == '*' || x.Value.Item1 == i.Value.Item1)).Select(x => new List<string> { x.Key }).ToList()
                 });
             }
 
@@ -171,8 +174,8 @@ namespace MMR_Tracker_V3
                 Instance.StaticOptions.EntranceRandoFeatures = Instance.EntrancePool.GetAmountOfRandomizedEntrances() >= 20;
             }
 
-            //Debug.WriteLine(JsonConvert.SerializeObject(Instance.PriceData.WalletEntries, Testing._NewtonsoftJsonSerializerOptions));
-            //Debug.WriteLine(JsonConvert.SerializeObject(Instance.PriceData.CapacityMap, Testing._NewtonsoftJsonSerializerOptions));
+            Debug.WriteLine(JsonConvert.SerializeObject(Instance.PriceData.WalletEntries, Testing._NewtonsoftJsonSerializerOptions));
+            Debug.WriteLine(JsonConvert.SerializeObject(Instance.PriceData.CapacityMap, Testing._NewtonsoftJsonSerializerOptions));
 
             return true;
         }

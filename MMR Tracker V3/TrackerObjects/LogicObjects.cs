@@ -172,6 +172,11 @@ namespace MMR_Tracker_V3
             {
                 foreach(var i in MacroPool.Values.Where(x => x.isTrick(this))) { i.TrickEnabled = state; }
             }
+
+            public List<char> GetAllCurrencies(bool all = false)
+            {
+                return PriceData.CapacityMap.Keys.Where(x => x != '*' || all).ToList();
+            }
         }
 
         [Serializable]
@@ -218,7 +223,22 @@ namespace MMR_Tracker_V3
         {
             public bool Initialized { get; set; } = false;
             public List<string> WalletEntries { get; set; } = new List<string>();
-            public Dictionary<int,string> CapacityMap { get; set; } = new Dictionary<int, string>();
+            public Dictionary<char, Dictionary<int, string>>  CapacityMap { get; set; } = new Dictionary<char, Dictionary<int, string>>();
+            public Dictionary<int, string> GetCapacityMap(char Currency)
+            {
+                if (Currency == '*') { return CapacityMap.SelectMany(kvp => kvp.Value).ToDictionary(x => x.Key, x => x.Value); }
+
+                Dictionary<int, string> SubcapacityMap = new Dictionary<int, string>();
+                if (CapacityMap.ContainsKey('*')) 
+                { 
+                    foreach(var i in CapacityMap['*']) { SubcapacityMap.Add(i.Key, i.Value); }
+                }
+                if (CapacityMap.ContainsKey(Currency))
+                {
+                    foreach (var i in CapacityMap[Currency]) { SubcapacityMap.Add(i.Key, i.Value); }
+                }
+                return CapacityMap[Currency];
+            }
         }
 
         public class ReferenceData

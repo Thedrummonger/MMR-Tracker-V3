@@ -53,6 +53,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string ID { get; set; }
             public string Name { get; set; }
             public string OriginalItem { get; set; }
+            public char? WalletCurrency { get; set; } = null;
             public string Area { get; set; }
             public string[] ValidItemTypes { get; set; } = Array.Empty<string>();
             public bool? IgnoreForSettingString { get; set; } = null;
@@ -90,6 +91,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string ID { get; set; }
             public string Name { get; set; }
             public int? WalletCapacity { get; set; } = null;
+            public char? WalletCurrency { get; set; } = null;
             public int? MaxAmountInWorld { get; set; } = null;
             public bool? ValidStartingItem { get; set; } = null;
             public string[] ItemTypes { get; set; } = Array.Empty<string>();
@@ -110,6 +112,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string ID { get; set; }
             public string Name { get; set; }
             public int? WalletCapacity { get; set; } = null;
+            public char? WalletCurrency { get; set; } = null;
             public SpoilerlogReference SpoilerData { get; set; } = new SpoilerlogReference();
         }
 
