@@ -443,43 +443,62 @@ namespace ConsoleDebugger
                 promptForSave:
                 Console.WriteLine("Enter Save File Path");
                 string path = Console.ReadLine();
-                path = path.Replace("\"", "");
-                string PathWithRoot = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, path);
-                path = CheckForFolderPath(path);
-                PathWithRoot = CheckForFolderPath(PathWithRoot);
-                path = CheckForMissingExtention(path);
-                PathWithRoot = CheckForMissingExtention(PathWithRoot);
-                path = FinalCheck(path, PathWithRoot);
-                Debug.WriteLine(path);
-                if (path is null)
-                {
-                    Debug.WriteLine($"Path Inavlid!");
-                    goto promptForSave;
-                }
-                newTrackerInstance.CurrentSavePath = path;
-            }
-            File.WriteAllText(newTrackerInstance.CurrentSavePath, newTrackerInstance.Instance.ToString());
-            newTrackerInstance.UnsavedChanges = false;
 
-            string CheckForMissingExtention(string path)
-            {
-                if (File.Exists(path)) { return path; }
-                string ext = Path.GetExtension(path);
-                if (string.IsNullOrEmpty(path) || ext.ToUpper() != ".MMRTSAV") { path += ".MMRTSAV"; }
-                return path;
+                if (string.IsNullOrWhiteSpace(path)) 
+                {
+                    path = AppDomain.CurrentDomain.BaseDirectory;
+                }
+
+                string Drive = Path.GetPathRoot(path);
+                string Folder = Path.GetDirectoryName(path);
+                string fileName = Path.GetFileNameWithoutExtension(path);
+                string Extention = Path.GetExtension(path);
+
+                if (string.IsNullOrEmpty(fileName))
+                {
+                    fileName = "Save";
+                }
+                if (string.IsNullOrEmpty(Drive))
+                {
+                    Folder = string.IsNullOrEmpty(Folder) ? AppDomain.CurrentDomain.BaseDirectory : Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Folder);
+                }
+                else if (!string.IsNullOrEmpty(Drive) && string.IsNullOrEmpty(Folder))
+                {
+                    Folder = Drive;
+                }
+                if (Extention != ".MMRTSAV")
+                {
+                    if (Extention.ToUpper() != ".MMRTSAV")
+                        fileName += Extention;
+                    Extention = ".MMRTSAV";
+                }
+
+                try
+                {
+                    var FinalPath = Path.Combine(Folder, fileName + Extention);
+                    Console.WriteLine($"Save to following path? (y/n) \n{FinalPath}");
+                    readConfirmKey:
+                    var key = Console.ReadKey();
+                    if (key.Key == ConsoleKey.N) { Console.WriteLine($""); goto promptForSave; }
+                    else if (key.Key != ConsoleKey.Y) { goto readConfirmKey; }
+                    if (!Directory.Exists(Folder)) { Directory.CreateDirectory(Folder); }
+                    File.WriteAllText(FinalPath, newTrackerInstance.Instance.ToString());
+                    newTrackerInstance.CurrentSavePath = FinalPath;
+                    Debug.WriteLine($"{FinalPath}");
+                }
+                catch
+                {
+                    Console.WriteLine("\nSave Path Invalid!");
+                    Console.ReadKey();
+                    goto promptForSave;
+                }  
             }
-            string CheckForFolderPath(string path)
+            else
             {
-                if (File.Exists(path)) { return path; }
-                if (Directory.Exists(path)) { path = Path.Combine(path, "Save.MMRTSAV"); }
-                return path;
+                File.WriteAllText(newTrackerInstance.CurrentSavePath, newTrackerInstance.Instance.ToString());
             }
-            string FinalCheck(string Path, string PathWithRoot)
-            {
-                if (File.Exists(Path)) { return Path; }
-                if (!File.Exists(PathWithRoot)) { return PathWithRoot; }
-                return null;
-            }
+
+            newTrackerInstance.UnsavedChanges = false;
         }
 
         private static MiscData.Divider CreateDivider(int Width, string key = "=")
