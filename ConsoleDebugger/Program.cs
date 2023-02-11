@@ -20,16 +20,12 @@ namespace ConsoleDebugger
             "3. Preset",
             "4. Load"
         };
-        static MiscData.InstanceContainer newTrackerInstance = new MiscData.InstanceContainer();
+        static MiscData.InstanceContainer newTrackerInstance = new MiscData.InstanceContainer() { Instance = new LogicObjects.TrackerInstance() };
 
         static void Main(string[] args)
         {
             Testing.doDevCheck();
             if (Testing.IsDevUser()) { CommandList = CommandList.Append("5. Debugging").ToArray(); }
-            newTrackerInstance.logicCalculation = new LogicCalculation(newTrackerInstance);
-            newTrackerInstance.UndoStringList = new List<string>();
-            newTrackerInstance.RedoStringList = new List<string>();
-            newTrackerInstance.UnsavedChanges = false;
             while (true)
             {
                 Console.WriteLine("Commands\n" + string.Join("\n", CommandList));
@@ -43,7 +39,7 @@ namespace ConsoleDebugger
                         break;
                     case ConsoleKey.D2:
                     case ConsoleKey.NumPad2:
-                        TestItemOutput();
+                        CreateNewInstance();
                         break;
                     case ConsoleKey.D3:
                     case ConsoleKey.NumPad3:
@@ -68,7 +64,6 @@ namespace ConsoleDebugger
 
         private static void LoadPreset()
         {
-            LogicObjects.TrackerInstance NewTrackerInstance = new();
         SelectPreset:
             var Presets = LogicPresetHandeling.GetLogicPresets();
             var PresetsDict = Presets.ToDictionary(x => Presets.IndexOf(x), x => x);
@@ -80,9 +75,7 @@ namespace ConsoleDebugger
             var selection = Console.ReadLine();
             if (int.TryParse(selection, out int ind) && PresetsDict.ContainsKey(ind))
             {
-                TrackerInstanceCreation.ApplyLogicAndDict(NewTrackerInstance, PresetsDict[ind].LogicString, PresetsDict[ind].DictionaryString);
-                TrackerInstanceCreation.PopulateTrackerObject(NewTrackerInstance);
-                newTrackerInstance.Instance = NewTrackerInstance;
+                newTrackerInstance.Instance.GenerateInstance(PresetsDict[ind].LogicString, PresetsDict[ind].DictionaryString);
                 LoopLocationList();
             }
             else
@@ -112,16 +105,14 @@ namespace ConsoleDebugger
             path = path.Replace("\"", "");
 
             if (!File.Exists(path)) { Console.WriteLine("Path Invalid!"); goto getpath; }
+            if (!newTrackerInstance.LoadSave(path)) { Console.WriteLine("Save Invalid!"); goto getpath; }
 
-            newTrackerInstance.Instance = LogicObjects.TrackerInstance.FromJson(File.ReadAllText(path));
             newTrackerInstance.CurrentSavePath = path;
             LoopLocationList();
         }
 
-        static void TestItemOutput()
+        static void CreateNewInstance()
         {
-            LogicObjects.TrackerInstance NewTrackerInstance = new();
-
         getpath:
             Console.WriteLine("Enter Logic Path");
             string path = Console.ReadLine();
@@ -129,14 +120,13 @@ namespace ConsoleDebugger
 
             if (!File.Exists(path)) { Console.WriteLine("Path Invalid!"); goto getpath; }
 
-            string Logic = string.Join("", LogicFileParser.GetLogicData(path, out bool WasSpoilerLog));
+            string[] LogicData = LogicFileParser.GetLogicData(path, out bool WasSpoilerLog);
 
-            TrackerInstanceCreation.ApplyLogicAndDict(NewTrackerInstance, Logic);
-            TrackerInstanceCreation.PopulateTrackerObject(NewTrackerInstance);
-            newTrackerInstance.Instance = NewTrackerInstance;
+            newTrackerInstance.Instance.GenerateInstance(LogicData);
+
             if (newTrackerInstance.Instance.LogicFile.GameCode == "MMR" && WasSpoilerLog)
             {
-                SpoilerLogTools.ImportSpoilerLog(File.ReadAllLines(path), path, newTrackerInstance.Instance);
+                SpoilerLogTools.ImportSpoilerLog(path, newTrackerInstance.Instance);
             }
             LoopLocationList();
         }
@@ -450,13 +440,46 @@ namespace ConsoleDebugger
         {
             if (!File.Exists(newTrackerInstance.CurrentSavePath))
             {
+                promptForSave:
                 Console.WriteLine("Enter Save File Path");
                 string path = Console.ReadLine();
                 path = path.Replace("\"", "");
+                string PathWithRoot = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, path);
+                path = CheckForFolderPath(path);
+                PathWithRoot = CheckForFolderPath(PathWithRoot);
+                path = CheckForMissingExtention(path);
+                PathWithRoot = CheckForMissingExtention(PathWithRoot);
+                path = FinalCheck(path, PathWithRoot);
+                Debug.WriteLine(path);
+                if (path is null)
+                {
+                    Debug.WriteLine($"Path Inavlid!");
+                    goto promptForSave;
+                }
                 newTrackerInstance.CurrentSavePath = path;
             }
             File.WriteAllText(newTrackerInstance.CurrentSavePath, newTrackerInstance.Instance.ToString());
             newTrackerInstance.UnsavedChanges = false;
+
+            string CheckForMissingExtention(string path)
+            {
+                if (File.Exists(path)) { return path; }
+                string ext = Path.GetExtension(path);
+                if (string.IsNullOrEmpty(path) || ext.ToUpper() != ".MMRTSAV") { path += ".MMRTSAV"; }
+                return path;
+            }
+            string CheckForFolderPath(string path)
+            {
+                if (File.Exists(path)) { return path; }
+                if (Directory.Exists(path)) { path = Path.Combine(path, "Save.MMRTSAV"); }
+                return path;
+            }
+            string FinalCheck(string Path, string PathWithRoot)
+            {
+                if (File.Exists(Path)) { return Path; }
+                if (!File.Exists(PathWithRoot)) { return PathWithRoot; }
+                return null;
+            }
         }
 
         private static MiscData.Divider CreateDivider(int Width, string key = "=")

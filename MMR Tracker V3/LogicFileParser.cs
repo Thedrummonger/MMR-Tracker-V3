@@ -12,10 +12,22 @@ namespace MMR_Tracker_V3
 {
     public class LogicFileParser
     {
+        /// <summary>
+        /// Reads the logic data from a logic file or spoiler log.
+        /// </summary>
+        /// <param name="File">The lines of the spoiler log as an array</param>
+        /// <param name="WasSpoilerLog">returns true if the file was a spoiler log and conatined spoiler data</param>
+        /// <returns>The Logic data as a string array</returns>
         public static string[] GetLogicData(string[] File, out bool WasSpoilerLog)
         {
             return ParseFile(File, out WasSpoilerLog);
         }
+        /// <summary>
+        /// Reads the logic data from a logic file or spoiler log.
+        /// </summary>
+        /// <param name="LogicFile">Either the file path to the logicfile/spoiler log or the contents of the file as a string.</param>
+        /// <param name="WasSpoilerLog">returns true if the file was a spoiler log and conatined spoiler data</param>
+        /// <returns>The Logic data as a string array</returns>
         public static string[] GetLogicData(string LogicFile, out bool WasSpoilerLog)
         {
             if (File.Exists(LogicFile))

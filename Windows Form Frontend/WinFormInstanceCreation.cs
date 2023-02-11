@@ -24,7 +24,7 @@ namespace Windows_Form_Frontend
                 Logic = File.ReadAllText(fileDialog.FileName);
             }
 
-            var Result = TrackerInstanceCreation.ApplyLogicAndDict(NewInstance, Logic, Dictionary);
+            var Result = NewInstance.ApplyLogicAndDict(Logic, Dictionary);
 
             if (Result == TrackerInstanceCreation.InstanceState.LogicFailure || NewInstance.LogicFile.Logic == null)
             {
@@ -37,18 +37,18 @@ namespace Windows_Form_Frontend
                 return false;
             }
 
-            MainInterface.InstanceContainer.CurrentSavePath = "";
+            //If all checks pass overrite the current instance
+            MainInterface.InstanceContainer.Instance = NewInstance;
 
-            TrackerInstanceCreation.PopulateTrackerObject(NewInstance);
+            MainInterface.InstanceContainer.CurrentSavePath = "";
+            MainInterface.InstanceContainer.Instance.GenerateInstance();
 
             if (File.Exists(References.Globalpaths.OptionFile))
             {
-                NewInstance.StaticOptions.OptionFile = JsonConvert.DeserializeObject<LogicObjects.OptionFile>(File.ReadAllText(References.Globalpaths.OptionFile));
+                MainInterface.InstanceContainer.Instance.StaticOptions.OptionFile = JsonConvert.DeserializeObject<LogicObjects.OptionFile>(File.ReadAllText(References.Globalpaths.OptionFile));
             }
 
-            MainInterface.InstanceContainer.Instance = NewInstance;
-
-            ApplyWinFormSpecificDat(NewInstance);
+            ApplyWinFormSpecificData(MainInterface.InstanceContainer.Instance);
             MainInterface.InstanceContainer.logicCalculation.CalculateLogic();
             if (MainInterface.InstanceContainer.Instance.LogicFile.GameCode == "MMR" && SpoilerLog is not null)
             {
@@ -59,7 +59,7 @@ namespace Windows_Form_Frontend
             return true;
         }
 
-        public static void ApplyWinFormSpecificDat(LogicObjects.TrackerInstance instance)
+        public static void ApplyWinFormSpecificData(LogicObjects.TrackerInstance instance)
         {
             if (string.IsNullOrWhiteSpace(instance.StaticOptions.OptionFile.WinformData.FormFont))
             {

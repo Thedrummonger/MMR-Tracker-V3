@@ -15,7 +15,20 @@ namespace MMR_Tracker_V3
 {
     public static class TrackerInstanceCreation
     {
-        public static InstanceState ApplyLogicAndDict(TrackerInstance Instance, string LogicFile, string DictionaryFile = null)
+
+        public static InstanceState ApplyLogicAndDict(this TrackerInstance Instance, string[] LogicFile, string DictionaryFile = null)
+        {
+            return Instance.ApplyLogicAndDict(string.Join("", LogicFile), DictionaryFile);
+        }
+        public static InstanceState ApplyLogicAndDict(this TrackerInstance Instance, string[] LogicFile, string[] DictionaryFile)
+        {
+            return Instance.ApplyLogicAndDict(string.Join("", LogicFile), string.Join("", DictionaryFile));
+        }
+        public static InstanceState ApplyLogicAndDict(this TrackerInstance Instance, string LogicFile, string[] DictionaryFile)
+        {
+            return Instance.ApplyLogicAndDict(LogicFile, string.Join("", DictionaryFile));
+        }
+        public static InstanceState ApplyLogicAndDict(this TrackerInstance Instance, string LogicFile, string DictionaryFile = null)
         {
             try
             {
@@ -33,8 +46,27 @@ namespace MMR_Tracker_V3
             catch { return InstanceState.DictionaryFailure; }
             return InstanceState.Success;
         }
+        public static InstanceState GenerateInstance(this TrackerInstance Instance, string[] LogicFile, string[] DictionaryFile)
+        {
+            return Instance.GenerateInstance(string.Join("", LogicFile), DictionaryFile);
+        }
+        public static InstanceState GenerateInstance(this TrackerInstance Instance, string LogicFile, string[] DictionaryFile)
+        {
+            return Instance.GenerateInstance(string.Join("", LogicFile), string.Join("", DictionaryFile));
+        }
+        public static InstanceState GenerateInstance(this TrackerInstance Instance, string[] LogicFile, string DictionaryFile = null)
+        {
+            return Instance.GenerateInstance(LogicFile, string.Join("", DictionaryFile));
+        }
+        public static InstanceState GenerateInstance(this TrackerInstance Instance, string LogicFile, string DictionaryFile = null)
+        {
+            var Apply = Instance.ApplyLogicAndDict(LogicFile, DictionaryFile);
+            if (Apply != InstanceState.Success) { return Apply; }
+            Instance.GenerateInstance();
+            return Apply;
+        }
 
-        public static bool PopulateTrackerObject(TrackerInstance Instance)
+        public static bool GenerateInstance(this TrackerInstance Instance)
         {
             Instance.UserOptions = Instance.LogicDictionary.Options.ToDictionary(x => x.ID, y => y);
             Instance.Variables = Instance.LogicDictionary.Variables.ToDictionary(x => x.ID, y => y);

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,6 +53,10 @@ namespace MMR_Tracker_V3.TrackerObjects
         }
         public class InstanceContainer
         {
+            public InstanceContainer()
+            {
+                logicCalculation = new LogicCalculation(this);
+            }
             public LogicObjects.TrackerInstance Instance { get; set; }
             public LogicCalculation logicCalculation { get; set; }
             public LogicRecreation LogicRecreation { get; set; } = new LogicRecreation();
@@ -59,6 +64,22 @@ namespace MMR_Tracker_V3.TrackerObjects
             public List<string> RedoStringList { get; set; } = new List<string>();
             public string CurrentSavePath { get; set; } = "";
             public bool UnsavedChanges { get; set; } = false;
+
+            public bool LoadSave(string[] Save) { return LoadSave(string.Join("", Save)); }
+            public bool LoadSave(string Save)
+            {
+                if (File.Exists(Save))
+                {
+                    try { Instance = LogicObjects.TrackerInstance.FromJson(File.ReadAllText(Save)); }
+                    catch { return false; }
+                }
+                else
+                {
+                    try { Instance = LogicObjects.TrackerInstance.FromJson(Save); }
+                    catch { return false; }
+                }
+                return true;
+            }
         }
         [Serializable]
         public enum CheckState

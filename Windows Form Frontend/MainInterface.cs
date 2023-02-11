@@ -26,7 +26,6 @@ namespace Windows_Form_Frontend
         public MainInterface()
         {
             InitializeComponent();
-            InstanceContainer.logicCalculation = new LogicCalculation(InstanceContainer);
         }
 
         //MainForm Actions
@@ -173,13 +172,11 @@ namespace Windows_Form_Frontend
             openFileDialog.ShowDialog();
             if (openFileDialog.FileName != "")
             {
-                LogicObjects.TrackerInstance NewTrackerInstance;
-                try
+                if (!InstanceContainer.LoadSave(openFileDialog.FileName))
                 {
-                    NewTrackerInstance = LogicObjects.TrackerInstance.FromJson(File.ReadAllText(openFileDialog.FileName));
+                    MessageBox.Show("Save File Not Valid"); 
+                    return;
                 }
-                catch { MessageBox.Show("Save File Not Valid"); return; }
-                InstanceContainer.Instance = NewTrackerInstance;
                 InstanceContainer.CurrentSavePath = openFileDialog.FileName;
                 InstanceContainer.logicCalculation.CalculateLogic();
                 UpdateUI();

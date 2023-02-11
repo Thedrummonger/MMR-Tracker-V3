@@ -16,7 +16,7 @@ namespace MMR_Tracker_V3
 {
     public class LogicCalculation
     {
-        public readonly InstanceContainer container = new InstanceContainer();
+        public readonly InstanceContainer container;
         public Dictionary<string, List<string>> LogicUnlockData = new Dictionary<string, List<string>>();
         public Dictionary<string, MMRData.JsonFormatLogicItem> LogicMap = new Dictionary<string, MMRData.JsonFormatLogicItem>();
         public Dictionary<object, int> AutoObtainedObjects = new Dictionary<object, int>();

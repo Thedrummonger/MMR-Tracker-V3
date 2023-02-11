@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,31 @@ namespace MMR_Tracker_V3
                     return "PMR Text Spoiler Log|*.txt";
                 default:
                     return "MMR Text Spoiler Log|*.txt";
+            }
+        }
+
+        public static bool ImportSpoilerLog(string spoilerLog, LogicObjects.TrackerInstance Instance)
+        {
+            if (File.Exists(spoilerLog))
+            {
+                return ImportSpoilerLog(File.ReadLines(spoilerLog).ToArray(), spoilerLog, Instance);
+            }
+            else
+            {
+                string[] lines = spoilerLog.Split(new string[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
+                return ImportSpoilerLog(lines, spoilerLog, Instance);
+            }
+        }
+        public static bool ImportSpoilerLog(string spoilerLog, string OriginalFile, LogicObjects.TrackerInstance Instance)
+        {
+            if (File.Exists(spoilerLog))
+            {
+                return ImportSpoilerLog(File.ReadLines(spoilerLog).ToArray(), OriginalFile, Instance);
+            }
+            else
+            {
+                string[] lines = spoilerLog.Split( new string[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
+                return ImportSpoilerLog(lines, OriginalFile, Instance);
             }
         }
 
