@@ -10,6 +10,7 @@ using System.Net;
 using YamlDotNet.Serialization.NamingConventions;
 using System.Text.RegularExpressions;
 using MMR_Tracker_V3.TrackerObjects;
+using System.Collections;
 
 namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 {
@@ -47,12 +48,28 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
             AddVariablesandOptions(dictionaryFile);
 
+            RemoveGameFromNames(dictionaryFile);
+
             Logic = LogicFile;
             dictionary = dictionaryFile;
             File.WriteAllText(FinalLogicFile, JsonConvert.SerializeObject(LogicFile, Testing._NewtonsoftJsonSerializerOptions));
             File.WriteAllText(FinalDictFile, JsonConvert.SerializeObject(dictionaryFile, Testing._NewtonsoftJsonSerializerOptions));
 
 
+        }
+
+        private static void RemoveGameFromNames(LogicDictionaryData.LogicDictionary dictionaryFile)
+        {
+            foreach(var i in dictionaryFile.ItemList)
+            {
+                i.Name = i.Name.Replace("OOT ", "").Replace("MM ", "");
+                i.SpoilerData.SpoilerLogNames = i.SpoilerData.SpoilerLogNames.Append(i.Name).Distinct().ToArray();
+                i.SpoilerData.GossipHintNames = i.SpoilerData.GossipHintNames.Append(i.Name).Distinct().ToArray();
+            }
+            foreach (var i in dictionaryFile.LocationList)
+            {
+                i.Name = i.Name.Replace("OOT ", "").Replace("MM ", "");
+            }
         }
 
         private static void AddVariablesandOptions(LogicDictionaryData.LogicDictionary dictionaryFile)
@@ -148,6 +165,13 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         if (LogicFileEntry is not null)
                         {
                             string Logic = $"({FileOBJ[key].locations[i]}) && {Game} {key}";
+                            if (LogicFileEntry.ConditionalItems.Any() || LogicFileEntry.RequiredItems.Any())
+                            {
+                                Debug.WriteLine($"{key} {i} Duplicate Logic Entry");
+                                logicCleaner.MoveRequirementsToConditionals(LogicFileEntry);
+                                string CurrentLogic = $" || ({string.Join(" || ", LogicFileEntry.ConditionalItems.Select(x => string.Join(" && ", x)))})";
+                                Logic += CurrentLogic;
+                            }
                             LogicFileEntry.ConditionalItems = ParselogicLine(Logic, Game);
                             logicCleaner.RemoveRedundantConditionals(LogicFileEntry);
                             logicCleaner.MakeCommonConditionalsRequirements(LogicFileEntry);
@@ -536,9 +560,17 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 }
                 if (spoilerFileLocation["Entrances"])
                 {
-                    var EntranceData = Line.Split(new string[] { "->" }, StringSplitOptions.None).Select(x => x.Trim()).ToArray();
+                    string NewLine = Line;
+
+                    foreach(var i in SpolierNameChanges["Exits"])
+                    {
+                        NewLine = NewLine.Replace(i.Key, i.Value);
+                    }
+
+                    var EntranceData = NewLine.Split(new string[] { "->" }, StringSplitOptions.None).Select(x => x.Trim()).ToArray();
                     var Source = EntranceData[0].Split('/');
                     var Destination = EntranceData[1].Split('/');
+                    Debug.WriteLine($"[{Source[0]}] [{Source[1]}]");
                     if (Instance.EntrancePool.AreaList.ContainsKey(Source[0]) && 
                         Instance.EntrancePool.AreaList[Source[0]].LoadingZoneExits.ContainsKey(Source[1]) &&
                         Instance.EntrancePool.AreaList.ContainsKey(Destination[0]) &&
@@ -550,7 +582,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                             from = Destination[0]
                         };
                     }
-                    else { Debug.WriteLine($"{Line} Could not be mapped to an entrance!"); }
+                    else { Debug.WriteLine($"{NewLine} Could not be mapped to an entrance!"); }
                 }
             }
 
@@ -566,9 +598,15 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 else { Debug.WriteLine($"{entryData[0]} was not a valid location!"); }
                 if (item is null) { Debug.WriteLine($"{entryData[1]} was not a valid Item or no more of this could be placed!"); }
                 if (location is not null) { location.Randomizeditem.SpoilerLogGivenItem = item?.Id ?? entryData[1]; }
-
             }
         }
+
+        public static Dictionary<string, Dictionary<string, string>> SpolierNameChanges = new Dictionary<string, Dictionary<string, string>>
+        {
+            { "Exits", new Dictionary<string, string> { 
+                    { "OOT Dodongo Cavern Pre Boss", "OOT Dodongo Cavern Skull" } 
+            }}
+        };
 
 
         public static void GetSpoilerLog()
