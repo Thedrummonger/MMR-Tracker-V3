@@ -416,7 +416,11 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                                 entranceEntry.Exit = TrueExitName;
                                 entranceEntry.AlwaysAccessable = false;
                                 if (FullexitName.StartsWith("OOT SPAWN => ")) { entranceEntry.AlwaysAccessable = true; }
-                                if (RandoEntrances.ContainsKey(exit) && RandoEntrances[exit] == l) { entranceEntry.RandomizableEntrance = true; }
+                                if (RandoEntrances.ContainsKey(exit) && RandoEntrances[exit] == l) 
+                                { 
+                                    entranceEntry.RandomizableEntrance = true;
+                                    entranceEntry.DisplayArea = "Boss Room";
+                                }
 
                                 dictionaryFile.EntranceList.Add(entranceEntry);
                             }

@@ -372,6 +372,7 @@ namespace MMR_Tracker_V3
 
             void WriteEntrances()
             {
+                List<EntranceData.EntranceRandoExit> ValidExits = new List<EntranceData.EntranceRandoExit>();
                 foreach (var area in Instance.EntrancePool.AreaList)
                 {
                     var CheckLoadingZoneExits = area.Value.LoadingZoneExits.Where(x => x.Value.CheckState == MiscData.CheckState.Checked && EntranceAppearsinListbox(x.Value, Instance));
@@ -380,13 +381,24 @@ namespace MMR_Tracker_V3
                     ItemsInListBox += CheckLoadingZoneExits.Count();
                     ItemsInListBoxFiltered += FilteredCheckedExits.Count();
                     if (!FilteredCheckedExits.Any()) { continue; }
-                    if (DataSource.Count > 0) { DataSource.Add(Divider); }
-                    DataSource.Add(new MiscData.Areaheader { Area = $"{area.Key} Exits" });
                     foreach (var i in FilteredCheckedExits)
                     {
                         i.Value.DisplayName = Utility.GetEntranceDisplayName(i.Value, Instance);
-                        DataSource.Add(i.Value);
+                        ValidExits.Add(i.Value);
                     }
+                }
+                ValidExits = ValidExits.OrderBy(x => x.Area??x.ParentAreaID).ThenBy(x => x.DisplayName).ToList();
+                string CurrentArea = "";
+                foreach (var i in ValidExits)
+                {
+                    string ItemArea =  $"{i.Area??i.ParentAreaID} Exits";
+                    if (CurrentArea != ItemArea)
+                    {
+                        CurrentArea = ItemArea;
+                        if (DataSource.Count > 0) { DataSource.Add(Divider); }
+                        DataSource.Add(new MiscData.Areaheader { Area = CurrentArea });
+                    }
+                    DataSource.Add(i);
                 }
             }
 
@@ -659,6 +671,9 @@ namespace MMR_Tracker_V3
             List<object> DataSource = new List<object>();
             OutItemsInListBox = 0;
             OutItemsInListBoxFiltered = 0;
+
+            List<EntranceData.EntranceRandoExit> ValidExits = new List<EntranceData.EntranceRandoExit>();
+
             foreach (var area in Instance.EntrancePool.AreaList)
             {
                 var AvailableExits = area.Value.LoadingZoneExits.Where(x => 
@@ -671,13 +686,26 @@ namespace MMR_Tracker_V3
                 OutItemsInListBoxFiltered += FilteredAvailableExits.Count();
                 if (!FilteredAvailableExits.Any()) { continue; }
 
-                if (DataSource.Count > 0) { DataSource.Add(Divider); }
-                DataSource.Add(new MiscData.Areaheader { Area = InLocationBox ? $"{area.Key} Entrances" : area.Key });
                 foreach(var i in FilteredAvailableExits)
                 {
                     i.Value.DisplayName = Utility.GetEntranceDisplayName(i.Value, Instance);
-                    DataSource.Add(i.Value);
+                    ValidExits.Add(i.Value);
+
                 }
+            }
+
+            ValidExits = ValidExits.OrderBy(x => x.Area??x.ParentAreaID).ThenBy(x => x.DisplayName).ToList();
+            string CurrentArea = "";
+            foreach(var i in ValidExits)
+            {
+                string ItemArea = InLocationBox ? $"{i.Area??i.ParentAreaID} Entrances" : i.Area??i.ParentAreaID;
+                if (CurrentArea != ItemArea)
+                {
+                    CurrentArea = ItemArea;
+                    if (DataSource.Count > 0) { DataSource.Add(Divider); }
+                    DataSource.Add(new MiscData.Areaheader { Area = CurrentArea });
+                }
+                DataSource.Add(i);
             }
             return DataSource;
         }

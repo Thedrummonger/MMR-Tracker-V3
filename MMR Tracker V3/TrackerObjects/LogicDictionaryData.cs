@@ -131,6 +131,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string ID { get; set; }
             public string Area { get; set; }
             public string Exit { get; set; }
+            public string DisplayArea { get; set; } = null;
             public EntranceData.EntranceAreaPair EntrancePairID { get; set; }
             public bool RandomizableEntrance { get; set; }
             public bool AlwaysAccessable { get; set; } = false;

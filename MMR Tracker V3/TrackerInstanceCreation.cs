@@ -146,6 +146,7 @@ namespace MMR_Tracker_V3
                     DestinationList.Add(DictEntry.Exit, new EntranceData.EntranceRandoExit
                     {
                         ParentAreaID = DictEntry.Area,
+                        Area= DictEntry.DisplayArea??DictEntry.Area,
                         ID = DictEntry.Exit,
                         EntrancePair = DictEntry.RandomizableEntrance ? DictEntry.EntrancePairID : null,
                         IsWarp = DictEntry.AlwaysAccessable,

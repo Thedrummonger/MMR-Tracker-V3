@@ -18974,6 +18974,7 @@
       "ID": "OOT Deku Tree Before Boss => OOT Deku Tree Boss",
       "Area": "OOT Deku Tree Before Boss",
       "Exit": "OOT Deku Tree Boss",
+      "DisplayArea": "Boss Room",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -19238,6 +19239,7 @@
       "ID": "OOT Dodongo Cavern Skull => OOT Dodongo Cavern Boss",
       "Area": "OOT Dodongo Cavern Skull",
       "Exit": "OOT Dodongo Cavern Boss",
+      "DisplayArea": "Boss Room",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -19270,6 +19272,7 @@
       "ID": "OOT Fire Temple Entrance => OOT Fire Temple Boss",
       "Area": "OOT Fire Temple Entrance",
       "Exit": "OOT Fire Temple Boss",
+      "DisplayArea": "Boss Room",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -19654,6 +19657,7 @@
       "ID": "OOT Forest Temple Antichamber => OOT Forest Temple Boss",
       "Area": "OOT Forest Temple Antichamber",
       "Exit": "OOT Forest Temple Boss",
+      "DisplayArea": "Boss Room",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -19894,6 +19898,7 @@
       "ID": "OOT Jabu-Jabu Main => OOT Jabu-Jabu Boss",
       "Area": "OOT Jabu-Jabu Main",
       "Exit": "OOT Jabu-Jabu Boss",
+      "DisplayArea": "Boss Room",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -21062,6 +21067,7 @@
       "ID": "OOT Shadow Temple Boat => OOT Shadow Temple Boss",
       "Area": "OOT Shadow Temple Boat",
       "Exit": "OOT Shadow Temple Boss",
+      "DisplayArea": "Boss Room",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -21206,6 +21212,7 @@
       "ID": "OOT Spirit Temple Statue => OOT Spirit Temple Boss",
       "Area": "OOT Spirit Temple Statue",
       "Exit": "OOT Spirit Temple Boss",
+      "DisplayArea": "Boss Room",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -21502,6 +21509,7 @@
       "ID": "OOT Water Temple Antichamber => OOT Water Temple Boss",
       "Area": "OOT Water Temple Antichamber",
       "Exit": "OOT Water Temple Boss",
+      "DisplayArea": "Boss Room",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -21990,6 +21998,7 @@
       "ID": "MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss",
       "Area": "MM Great Bay Temple Pre-Boss",
       "Exit": "MM Great Bay Temple Boss",
+      "DisplayArea": "Boss Room",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -24958,6 +24967,7 @@
       "ID": "MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss",
       "Area": "MM Snowhead Temple Center Level 4",
       "Exit": "MM Snowhead Temple Boss",
+      "DisplayArea": "Boss Room",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -25286,6 +25296,7 @@
       "ID": "MM Stone Tower Temple Inverted Bridge 2 => MM Stone Tower Temple Boss",
       "Area": "MM Stone Tower Temple Inverted Bridge 2",
       "Exit": "MM Stone Tower Temple Boss",
+      "DisplayArea": "Boss Room",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -25542,6 +25553,7 @@
       "ID": "MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss",
       "Area": "MM Woodfall Temple Pre-Boss",
       "Exit": "MM Woodfall Temple Boss",
+      "DisplayArea": "Boss Room",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false

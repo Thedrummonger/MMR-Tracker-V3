@@ -49,6 +49,7 @@ namespace MMR_Tracker_V3.TrackerObjects
         public class EntranceRandoExit
         {
             public string ParentAreaID { get; set; }
+            public string Area { get; set; }
             public string ID { get; set; }
             public bool Available { get; set; } = false;
             public bool Starred { get; set; } = false;
