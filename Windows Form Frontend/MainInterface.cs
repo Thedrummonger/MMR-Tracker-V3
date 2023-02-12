@@ -949,7 +949,6 @@ namespace Windows_Form_Frontend
 
         private void HandleItemSelect(IEnumerable<object> Items, MiscData.CheckState checkState, bool EnforceMarkAction = false, object LB = null)
         {
-            Debug.WriteLine("Starting Check Action===================================");
             if (Items.Count() == 1)
             {
                 if (Items.First() is MiscData.Divider) { return; }
@@ -961,21 +960,12 @@ namespace Windows_Form_Frontend
                     return;
                 }
             }
-            Stopwatch FullCodeTimer = new Stopwatch();
-            Utility.TimeCodeExecution(FullCodeTimer);
-            Stopwatch CodeTimer = new Stopwatch();
-            Utility.TimeCodeExecution(CodeTimer);
             string CurrentState = Utf8Json.JsonSerializer.ToJsonString(InstanceContainer.Instance);
-            Utility.TimeCodeExecution(CodeTimer, "Saving tracker State", 1);
 
-            bool ChangesMade = TrackerDataHandeling.CheckSelectedItems(Items, checkState, InstanceContainer, HandleUnassignedChecks, HandleUnassignedVariables, EnforceMarkAction, FullCodeTimer);
-            Utility.TimeCodeExecution(CodeTimer, "---TOTAL Checking Selected Objects", 1);
+            bool ChangesMade = TrackerDataHandeling.CheckSelectedItems(Items, checkState, InstanceContainer, HandleUnassignedChecks, HandleUnassignedVariables, EnforceMarkAction);
 
             if (ChangesMade) { SaveTrackerState(CurrentState); }
-            Utility.TimeCodeExecution(CodeTimer, "Commiting Save State", 1);
             UpdateUI();
-            Utility.TimeCodeExecution(CodeTimer, "Updating UI", -1);
-            Utility.TimeCodeExecution(FullCodeTimer, "Full Check Action", -1);
         }
 
         private bool HandleUnassignedChecks(IEnumerable<object> Checks, LogicObjects.TrackerInstance Instance)

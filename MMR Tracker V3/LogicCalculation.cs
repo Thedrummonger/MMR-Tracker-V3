@@ -165,18 +165,8 @@ namespace MMR_Tracker_V3
 
         public void CalculateLogic(CheckState checkState = CheckState.Unchecked)
         {
-            Debug.WriteLine("Logic Calculation ----------------------");
-            Stopwatch LogicTime = new Stopwatch();
-            Utility.TimeCodeExecution(LogicTime);
-
             FillLogicMap();
-            Utility.TimeCodeExecution(LogicTime, "Getting Logic", 1);
-
             if (checkState == CheckState.Unchecked) { ResetAutoObtainedItems(); }
-
-            Debug.WriteLine(checkState);
-            Utility.TimeCodeExecution(LogicTime, "Resetting Auto checked Items", 1);
-
             AutoObtainedObjects.Clear();
 
             int Itterations = 0;
@@ -188,14 +178,11 @@ namespace MMR_Tracker_V3
                 Itterations++;
                  if (!MacroChanged && !UnrandomizedItemChecked && !UnrandomizedExitChecked) { break; }
             }
-            Debug.WriteLine($"Auto Item calculation took {Itterations} Itterations");
-            Utility.TimeCodeExecution(LogicTime, "Calculating Auto Checked Items", 1);
             foreach (var i in container.Instance.LocationPool.Values.Where(x => !x.IsUnrandomized(1) && !x.IsJunk()))
             {
                 var Logic = LogicMap[i.ID];
                 i.Available = CalculatReqAndCond(Logic, i.ID, null);
             }
-            Utility.TimeCodeExecution(LogicTime, "Calculating Locations", 1);
             foreach (var Area in container.Instance.EntrancePool.AreaList)
             {
                 foreach (var i in Area.Value.LoadingZoneExits.Where(x => !x.Value.IsUnrandomized(1) && !x.Value.IsJunk()))
@@ -204,17 +191,13 @@ namespace MMR_Tracker_V3
                     i.Value.Available = CalculatReqAndCond(Logic, container.Instance.GetLogicNameFromExit(i.Value), Area.Key);
                 }
             }
-            Utility.TimeCodeExecution(LogicTime, "Caclulating Exits", 1);
             foreach (var i in container.Instance.HintPool)
             {
                 var Logic = LogicMap[i.Key];
                 i.Value.Available = CalculatReqAndCond(Logic, i.Key, null);
             }
-            Utility.TimeCodeExecution(LogicTime, "Calculating Hints", 1);
 
             if (checkState == CheckState.Unchecked) { CleanUnlockData(); }
-            
-            Utility.TimeCodeExecution(LogicTime, "Clean Unlock Data", -1);
         }
 
         private void CleanUnlockData()

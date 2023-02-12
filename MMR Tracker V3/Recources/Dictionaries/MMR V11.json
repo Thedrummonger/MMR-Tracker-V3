@@ -550,7 +550,8 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Bank Reward #1"
+          "Bank Reward #1",
+          "Bank Reward 1"
         ],
         "GossipHintNames": [
           "a keeper of wealth"
@@ -3947,7 +3948,8 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Bank Reward #3"
+          "Bank Reward #3",
+          "Bank Reward 3"
         ],
         "GossipHintNames": [
           "being rich"
@@ -6934,7 +6936,8 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "Bank Reward #2"
+          "Bank Reward #2",
+          "Bank Reward 2"
         ],
         "GossipHintNames": [
           "interest"

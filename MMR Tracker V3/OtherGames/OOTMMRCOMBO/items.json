@@ -238,7 +238,9 @@
 
   "OOT_SWORD": "Progressive Sword (OOT)",
   "OOT_SHIELD": "Progressive Shield (OOT)",
+  "OOT_BOSS_KEY_GANON": "Boss Key (Ganon)",
+
   "MM_SHIELD": "Progressive Shield (MM)",
   "MM_SONG_GORON": "Goron's Lullaby",
-  "OOT_BOSS_KEY_GANON": "Boss Key (Ganon)"
+  "MM_ARROWS_30": "30 Arrows (MM)"
 }

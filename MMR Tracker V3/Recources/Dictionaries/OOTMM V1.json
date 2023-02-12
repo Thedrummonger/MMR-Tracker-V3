@@ -13822,7 +13822,7 @@
     {
       "ID": "MM_ARROW_FIRE",
       "Name": "Fire Arrows (MM)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -13834,7 +13834,6 @@
         ],
         "GossipHintNames": [
           "MM_ARROW_FIRE",
-          "MM Fire Arrows (MM)",
           "Fire Arrows (MM)"
         ],
         "PriceDataNames": []
@@ -13843,7 +13842,7 @@
     {
       "ID": "MM_ARROW_ICE",
       "Name": "Ice Arrows (MM)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -13855,7 +13854,6 @@
         ],
         "GossipHintNames": [
           "MM_ARROW_ICE",
-          "MM Ice Arrows (MM)",
           "Ice Arrows (MM)"
         ],
         "PriceDataNames": []
@@ -13864,7 +13862,7 @@
     {
       "ID": "MM_ARROW_LIGHT",
       "Name": "Light Arrows (MM)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -13876,7 +13874,6 @@
         ],
         "GossipHintNames": [
           "MM_ARROW_LIGHT",
-          "MM Light Arrows (MM)",
           "Light Arrows (MM)"
         ],
         "PriceDataNames": []
@@ -13897,7 +13894,6 @@
         ],
         "GossipHintNames": [
           "MM_BOMBCHU",
-          "MM 1 Bombchu (MM)",
           "1 Bombchu (MM)"
         ],
         "PriceDataNames": []
@@ -13918,7 +13914,6 @@
         ],
         "GossipHintNames": [
           "MM_BOMBCHU_10",
-          "MM 10 Bombchu (MM)",
           "10 Bombchu (MM)"
         ],
         "PriceDataNames": []
@@ -13939,7 +13934,6 @@
         ],
         "GossipHintNames": [
           "MM_BOMBCHU_5",
-          "MM 5 Bombchu (MM)",
           "5 Bombchu (MM)"
         ],
         "PriceDataNames": []
@@ -13948,7 +13942,7 @@
     {
       "ID": "MM_BOMBER_NOTEBOOK",
       "Name": "Bomber's Notebook",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -13960,7 +13954,6 @@
         ],
         "GossipHintNames": [
           "MM_BOMBER_NOTEBOOK",
-          "MM Bomber's Notebook",
           "Bomber's Notebook"
         ],
         "PriceDataNames": []
@@ -13969,7 +13962,7 @@
     {
       "ID": "MM_BOMB_BAG",
       "Name": "Bomb Bag (MM)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 3,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -13981,7 +13974,6 @@
         ],
         "GossipHintNames": [
           "MM_BOMB_BAG",
-          "MM Bomb Bag (MM)",
           "Bomb Bag (MM)"
         ],
         "PriceDataNames": []
@@ -13990,7 +13982,7 @@
     {
       "ID": "MM_BOSS_KEY_GB",
       "Name": "Boss Key (Great Bay Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14002,7 +13994,6 @@
         ],
         "GossipHintNames": [
           "MM_BOSS_KEY_GB",
-          "MM Boss Key (Great Bay Temple)",
           "Boss Key (Great Bay Temple)"
         ],
         "PriceDataNames": []
@@ -14011,7 +14002,7 @@
     {
       "ID": "MM_BOSS_KEY_SH",
       "Name": "Boss Key (Snowhead Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14023,7 +14014,6 @@
         ],
         "GossipHintNames": [
           "MM_BOSS_KEY_SH",
-          "MM Boss Key (Snowhead Temple)",
           "Boss Key (Snowhead Temple)"
         ],
         "PriceDataNames": []
@@ -14032,7 +14022,7 @@
     {
       "ID": "MM_BOSS_KEY_ST",
       "Name": "Boss Key (Stone Tower Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14044,7 +14034,6 @@
         ],
         "GossipHintNames": [
           "MM_BOSS_KEY_ST",
-          "MM Boss Key (Stone Tower Temple)",
           "Boss Key (Stone Tower Temple)"
         ],
         "PriceDataNames": []
@@ -14053,7 +14042,7 @@
     {
       "ID": "MM_BOSS_KEY_WF",
       "Name": "Boss Key (Woodfall Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14065,7 +14054,6 @@
         ],
         "GossipHintNames": [
           "MM_BOSS_KEY_WF",
-          "MM Boss Key (Woodfall Temple)",
           "Boss Key (Woodfall Temple)"
         ],
         "PriceDataNames": []
@@ -14074,7 +14062,7 @@
     {
       "ID": "MM_BOTTLED_CHATEAU_ROMANI",
       "Name": "Bottle - Chateau Romani (MM)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14086,7 +14074,6 @@
         ],
         "GossipHintNames": [
           "MM_BOTTLED_CHATEAU_ROMANI",
-          "MM Bottle - Chateau Romani (MM)",
           "Bottle - Chateau Romani (MM)"
         ],
         "PriceDataNames": []
@@ -14095,7 +14082,7 @@
     {
       "ID": "MM_BOTTLED_GOLD_DUST",
       "Name": "Bottle - Gold Dust (MM)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14107,7 +14094,6 @@
         ],
         "GossipHintNames": [
           "MM_BOTTLED_GOLD_DUST",
-          "MM Bottle - Gold Dust (MM)",
           "Bottle - Gold Dust (MM)"
         ],
         "PriceDataNames": []
@@ -14116,7 +14102,7 @@
     {
       "ID": "MM_BOTTLED_MILK",
       "Name": "Bottle - Milk (MM)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14128,7 +14114,6 @@
         ],
         "GossipHintNames": [
           "MM_BOTTLED_MILK",
-          "MM Bottle - Milk (MM)",
           "Bottle - Milk (MM)"
         ],
         "PriceDataNames": []
@@ -14137,7 +14122,7 @@
     {
       "ID": "MM_BOTTLED_POTION_RED",
       "Name": "Bottle - Red Potion (MM)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14149,7 +14134,6 @@
         ],
         "GossipHintNames": [
           "MM_BOTTLED_POTION_RED",
-          "MM Bottle - Red Potion (MM)",
           "Bottle - Red Potion (MM)"
         ],
         "PriceDataNames": []
@@ -14158,7 +14142,7 @@
     {
       "ID": "MM_BOW",
       "Name": "Bow (MM)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 3,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14170,7 +14154,6 @@
         ],
         "GossipHintNames": [
           "MM_BOW",
-          "MM Bow (MM)",
           "Bow (MM)"
         ],
         "PriceDataNames": []
@@ -14179,7 +14162,7 @@
     {
       "ID": "MM_COMPASS_GB",
       "Name": "Compass (Great Bay Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14191,7 +14174,6 @@
         ],
         "GossipHintNames": [
           "MM_COMPASS_GB",
-          "MM Compass (Great Bay Temple)",
           "Compass (Great Bay Temple)"
         ],
         "PriceDataNames": []
@@ -14200,7 +14182,7 @@
     {
       "ID": "MM_COMPASS_SH",
       "Name": "Compass (Snowhead Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14212,7 +14194,6 @@
         ],
         "GossipHintNames": [
           "MM_COMPASS_SH",
-          "MM Compass (Snowhead Temple)",
           "Compass (Snowhead Temple)"
         ],
         "PriceDataNames": []
@@ -14221,7 +14202,7 @@
     {
       "ID": "MM_COMPASS_ST",
       "Name": "Compass (Stone Tower Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14233,7 +14214,6 @@
         ],
         "GossipHintNames": [
           "MM_COMPASS_ST",
-          "MM Compass (Stone Tower Temple)",
           "Compass (Stone Tower Temple)"
         ],
         "PriceDataNames": []
@@ -14242,7 +14222,7 @@
     {
       "ID": "MM_COMPASS_WF",
       "Name": "Compass (Woodfall Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14254,7 +14234,6 @@
         ],
         "GossipHintNames": [
           "MM_COMPASS_WF",
-          "MM Compass (Woodfall Temple)",
           "Compass (Woodfall Temple)"
         ],
         "PriceDataNames": []
@@ -14263,7 +14242,7 @@
     {
       "ID": "MM_DEED_LAND",
       "Name": "Land Title Deed",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14275,7 +14254,6 @@
         ],
         "GossipHintNames": [
           "MM_DEED_LAND",
-          "MM Land Title Deed",
           "Land Title Deed"
         ],
         "PriceDataNames": []
@@ -14284,7 +14262,7 @@
     {
       "ID": "MM_DEED_MOUNTAIN",
       "Name": "Mountain Title Deed",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14296,7 +14274,6 @@
         ],
         "GossipHintNames": [
           "MM_DEED_MOUNTAIN",
-          "MM Mountain Title Deed",
           "Mountain Title Deed"
         ],
         "PriceDataNames": []
@@ -14305,7 +14282,7 @@
     {
       "ID": "MM_DEED_OCEAN",
       "Name": "Ocean Title Deed",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14317,7 +14294,6 @@
         ],
         "GossipHintNames": [
           "MM_DEED_OCEAN",
-          "MM Ocean Title Deed",
           "Ocean Title Deed"
         ],
         "PriceDataNames": []
@@ -14326,7 +14302,7 @@
     {
       "ID": "MM_DEED_SWAMP",
       "Name": "Swamp Title Deed",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14338,7 +14314,6 @@
         ],
         "GossipHintNames": [
           "MM_DEED_SWAMP",
-          "MM Swamp Title Deed",
           "Swamp Title Deed"
         ],
         "PriceDataNames": []
@@ -14347,7 +14322,7 @@
     {
       "ID": "MM_DEFENSE_UPGRADE",
       "Name": "Double Defense (MM)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14359,7 +14334,6 @@
         ],
         "GossipHintNames": [
           "MM_DEFENSE_UPGRADE",
-          "MM Double Defense (MM)",
           "Double Defense (MM)"
         ],
         "PriceDataNames": []
@@ -14368,7 +14342,7 @@
     {
       "ID": "MM_EMPTY_BOTTLE",
       "Name": "Bottle - Empty (MM)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14380,7 +14354,6 @@
         ],
         "GossipHintNames": [
           "MM_EMPTY_BOTTLE",
-          "MM Bottle - Empty (MM)",
           "Bottle - Empty (MM)"
         ],
         "PriceDataNames": []
@@ -14389,7 +14362,7 @@
     {
       "ID": "MM_GREAT_FAIRY_SWORD",
       "Name": "Great Fairy Sword",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14401,7 +14374,6 @@
         ],
         "GossipHintNames": [
           "MM_GREAT_FAIRY_SWORD",
-          "MM Great Fairy Sword",
           "Great Fairy Sword"
         ],
         "PriceDataNames": []
@@ -14410,7 +14382,7 @@
     {
       "ID": "MM_GS_TOKEN_OCEAN",
       "Name": "Ocean Spider Token",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 30,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14422,7 +14394,6 @@
         ],
         "GossipHintNames": [
           "MM_GS_TOKEN_OCEAN",
-          "MM Ocean Spider Token",
           "Ocean Spider Token"
         ],
         "PriceDataNames": []
@@ -14431,7 +14402,7 @@
     {
       "ID": "MM_GS_TOKEN_SWAMP",
       "Name": "Swamp Spider Token",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 30,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14443,7 +14414,6 @@
         ],
         "GossipHintNames": [
           "MM_GS_TOKEN_SWAMP",
-          "MM Swamp Spider Token",
           "Swamp Spider Token"
         ],
         "PriceDataNames": []
@@ -14452,7 +14422,7 @@
     {
       "ID": "MM_HEART_CONTAINER",
       "Name": "Heart Container (MM)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 4,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14464,7 +14434,6 @@
         ],
         "GossipHintNames": [
           "MM_HEART_CONTAINER",
-          "MM Heart Container (MM)",
           "Heart Container (MM)"
         ],
         "PriceDataNames": []
@@ -14473,7 +14442,7 @@
     {
       "ID": "MM_HEART_PIECE",
       "Name": "Heart Piece (MM)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 52,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14485,7 +14454,6 @@
         ],
         "GossipHintNames": [
           "MM_HEART_PIECE",
-          "MM Heart Piece (MM)",
           "Heart Piece (MM)"
         ],
         "PriceDataNames": []
@@ -14494,7 +14462,7 @@
     {
       "ID": "MM_HOOKSHOT",
       "Name": "Hookshot (MM)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14506,7 +14474,6 @@
         ],
         "GossipHintNames": [
           "MM_HOOKSHOT",
-          "MM Hookshot (MM)",
           "Hookshot (MM)"
         ],
         "PriceDataNames": []
@@ -14515,7 +14482,7 @@
     {
       "ID": "MM_LENS",
       "Name": "Lens of Truth (MM)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14527,7 +14494,6 @@
         ],
         "GossipHintNames": [
           "MM_LENS",
-          "MM Lens of Truth (MM)",
           "Lens of Truth (MM)"
         ],
         "PriceDataNames": []
@@ -14536,7 +14502,7 @@
     {
       "ID": "MM_LETTER_TO_KAFEI",
       "Name": "Letter to Kafei",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14548,7 +14514,6 @@
         ],
         "GossipHintNames": [
           "MM_LETTER_TO_KAFEI",
-          "MM Letter to Kafei",
           "Letter to Kafei"
         ],
         "PriceDataNames": []
@@ -14557,7 +14522,7 @@
     {
       "ID": "MM_LETTER_TO_MAMA",
       "Name": "Express Mail to Mama",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14569,7 +14534,6 @@
         ],
         "GossipHintNames": [
           "MM_LETTER_TO_MAMA",
-          "MM Express Mail to Mama",
           "Express Mail to Mama"
         ],
         "PriceDataNames": []
@@ -14578,7 +14542,7 @@
     {
       "ID": "MM_MAGIC_BEAN",
       "Name": "Magic Bean (MM)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14590,7 +14554,6 @@
         ],
         "GossipHintNames": [
           "MM_MAGIC_BEAN",
-          "MM Magic Bean (MM)",
           "Magic Bean (MM)"
         ],
         "PriceDataNames": []
@@ -14599,7 +14562,7 @@
     {
       "ID": "MM_MAGIC_UPGRADE",
       "Name": "Magic Upgrade (MM)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14611,7 +14574,6 @@
         ],
         "GossipHintNames": [
           "MM_MAGIC_UPGRADE",
-          "MM Magic Upgrade (MM)",
           "Magic Upgrade (MM)"
         ],
         "PriceDataNames": []
@@ -14620,7 +14582,7 @@
     {
       "ID": "MM_MAP_GB",
       "Name": "Map (Great Bay Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14632,7 +14594,6 @@
         ],
         "GossipHintNames": [
           "MM_MAP_GB",
-          "MM Map (Great Bay Temple)",
           "Map (Great Bay Temple)"
         ],
         "PriceDataNames": []
@@ -14641,7 +14602,7 @@
     {
       "ID": "MM_MAP_SH",
       "Name": "Map (Snowhead Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14653,7 +14614,6 @@
         ],
         "GossipHintNames": [
           "MM_MAP_SH",
-          "MM Map (Snowhead Temple)",
           "Map (Snowhead Temple)"
         ],
         "PriceDataNames": []
@@ -14662,7 +14622,7 @@
     {
       "ID": "MM_MAP_ST",
       "Name": "Map (Stone Tower Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14674,7 +14634,6 @@
         ],
         "GossipHintNames": [
           "MM_MAP_ST",
-          "MM Map (Stone Tower Temple)",
           "Map (Stone Tower Temple)"
         ],
         "PriceDataNames": []
@@ -14683,7 +14642,7 @@
     {
       "ID": "MM_MAP_WF",
       "Name": "Map (Woodfall Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14695,7 +14654,6 @@
         ],
         "GossipHintNames": [
           "MM_MAP_WF",
-          "MM Map (Woodfall Temple)",
           "Map (Woodfall Temple)"
         ],
         "PriceDataNames": []
@@ -14704,7 +14662,7 @@
     {
       "ID": "MM_MASK_ALL_NIGHT",
       "Name": "All Night's Mask",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14716,7 +14674,6 @@
         ],
         "GossipHintNames": [
           "MM_MASK_ALL_NIGHT",
-          "MM All Night's Mask",
           "All Night's Mask"
         ],
         "PriceDataNames": []
@@ -14725,7 +14682,7 @@
     {
       "ID": "MM_MASK_BLAST",
       "Name": "Blast Mask",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14737,7 +14694,6 @@
         ],
         "GossipHintNames": [
           "MM_MASK_BLAST",
-          "MM Blast Mask",
           "Blast Mask"
         ],
         "PriceDataNames": []
@@ -14746,7 +14702,7 @@
     {
       "ID": "MM_MASK_BREMEN",
       "Name": "Bremen Mask",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14758,7 +14714,6 @@
         ],
         "GossipHintNames": [
           "MM_MASK_BREMEN",
-          "MM Bremen Mask",
           "Bremen Mask"
         ],
         "PriceDataNames": []
@@ -14767,7 +14722,7 @@
     {
       "ID": "MM_MASK_BUNNY",
       "Name": "Bunny Hood (MM)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14779,7 +14734,6 @@
         ],
         "GossipHintNames": [
           "MM_MASK_BUNNY",
-          "MM Bunny Hood (MM)",
           "Bunny Hood (MM)"
         ],
         "PriceDataNames": []
@@ -14788,7 +14742,7 @@
     {
       "ID": "MM_MASK_CAPTAIN",
       "Name": "Captain's Hat",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14800,7 +14754,6 @@
         ],
         "GossipHintNames": [
           "MM_MASK_CAPTAIN",
-          "MM Captain's Hat",
           "Captain's Hat"
         ],
         "PriceDataNames": []
@@ -14809,7 +14762,7 @@
     {
       "ID": "MM_MASK_COUPLE",
       "Name": "Couple's Mask",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14821,7 +14774,6 @@
         ],
         "GossipHintNames": [
           "MM_MASK_COUPLE",
-          "MM Couple's Mask",
           "Couple's Mask"
         ],
         "PriceDataNames": []
@@ -14830,7 +14782,7 @@
     {
       "ID": "MM_MASK_DEKU",
       "Name": "Deku Mask",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14842,7 +14794,6 @@
         ],
         "GossipHintNames": [
           "MM_MASK_DEKU",
-          "MM Deku Mask",
           "Deku Mask"
         ],
         "PriceDataNames": []
@@ -14851,7 +14802,7 @@
     {
       "ID": "MM_MASK_DON_GERO",
       "Name": "Don Gero Mask",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14863,7 +14814,6 @@
         ],
         "GossipHintNames": [
           "MM_MASK_DON_GERO",
-          "MM Don Gero Mask",
           "Don Gero Mask"
         ],
         "PriceDataNames": []
@@ -14872,7 +14822,7 @@
     {
       "ID": "MM_MASK_FIERCE_DEITY",
       "Name": "Fierce Diety Mask",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14884,7 +14834,6 @@
         ],
         "GossipHintNames": [
           "MM_MASK_FIERCE_DEITY",
-          "MM Fierce Diety Mask",
           "Fierce Diety Mask"
         ],
         "PriceDataNames": []
@@ -14893,7 +14842,7 @@
     {
       "ID": "MM_MASK_GARO",
       "Name": "Garo Mask",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14905,7 +14854,6 @@
         ],
         "GossipHintNames": [
           "MM_MASK_GARO",
-          "MM Garo Mask",
           "Garo Mask"
         ],
         "PriceDataNames": []
@@ -14914,7 +14862,7 @@
     {
       "ID": "MM_MASK_GIANT",
       "Name": "Giant's Mask",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14926,7 +14874,6 @@
         ],
         "GossipHintNames": [
           "MM_MASK_GIANT",
-          "MM Giant's Mask",
           "Giant's Mask"
         ],
         "PriceDataNames": []
@@ -14935,7 +14882,7 @@
     {
       "ID": "MM_MASK_GIBDO",
       "Name": "Gibdo Mask",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14947,7 +14894,6 @@
         ],
         "GossipHintNames": [
           "MM_MASK_GIBDO",
-          "MM Gibdo Mask",
           "Gibdo Mask"
         ],
         "PriceDataNames": []
@@ -14956,7 +14902,7 @@
     {
       "ID": "MM_MASK_GORON",
       "Name": "Goron Mask (MM)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14968,7 +14914,6 @@
         ],
         "GossipHintNames": [
           "MM_MASK_GORON",
-          "MM Goron Mask (MM)",
           "Goron Mask (MM)"
         ],
         "PriceDataNames": []
@@ -14977,7 +14922,7 @@
     {
       "ID": "MM_MASK_GREAT_FAIRY",
       "Name": "Great Fairy Mask",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14989,7 +14934,6 @@
         ],
         "GossipHintNames": [
           "MM_MASK_GREAT_FAIRY",
-          "MM Great Fairy Mask",
           "Great Fairy Mask"
         ],
         "PriceDataNames": []
@@ -14998,7 +14942,7 @@
     {
       "ID": "MM_MASK_KAFEI",
       "Name": "Kafei's Mask",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15010,7 +14954,6 @@
         ],
         "GossipHintNames": [
           "MM_MASK_KAFEI",
-          "MM Kafei's Mask",
           "Kafei's Mask"
         ],
         "PriceDataNames": []
@@ -15019,7 +14962,7 @@
     {
       "ID": "MM_MASK_KAMARO",
       "Name": "Kamaro Mask",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15031,7 +14974,6 @@
         ],
         "GossipHintNames": [
           "MM_MASK_KAMARO",
-          "MM Kamaro Mask",
           "Kamaro Mask"
         ],
         "PriceDataNames": []
@@ -15040,7 +14982,7 @@
     {
       "ID": "MM_MASK_KEATON",
       "Name": "Keaton Mask",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15052,7 +14994,6 @@
         ],
         "GossipHintNames": [
           "MM_MASK_KEATON",
-          "MM Keaton Mask",
           "Keaton Mask"
         ],
         "PriceDataNames": []
@@ -15061,7 +15002,7 @@
     {
       "ID": "MM_MASK_POSTMAN",
       "Name": "Postman's Hat",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15073,7 +15014,6 @@
         ],
         "GossipHintNames": [
           "MM_MASK_POSTMAN",
-          "MM Postman's Hat",
           "Postman's Hat"
         ],
         "PriceDataNames": []
@@ -15082,7 +15022,7 @@
     {
       "ID": "MM_MASK_ROMANI",
       "Name": "Romani Mask",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15094,7 +15034,6 @@
         ],
         "GossipHintNames": [
           "MM_MASK_ROMANI",
-          "MM Romani Mask",
           "Romani Mask"
         ],
         "PriceDataNames": []
@@ -15103,7 +15042,7 @@
     {
       "ID": "MM_MASK_SCENTS",
       "Name": "Mask of Scents",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15115,7 +15054,6 @@
         ],
         "GossipHintNames": [
           "MM_MASK_SCENTS",
-          "MM Mask of Scents",
           "Mask of Scents"
         ],
         "PriceDataNames": []
@@ -15124,7 +15062,7 @@
     {
       "ID": "MM_MASK_STONE",
       "Name": "Stone Mask",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15136,7 +15074,6 @@
         ],
         "GossipHintNames": [
           "MM_MASK_STONE",
-          "MM Stone Mask",
           "Stone Mask"
         ],
         "PriceDataNames": []
@@ -15145,7 +15082,7 @@
     {
       "ID": "MM_MASK_TROUPE_LEADER",
       "Name": "Circus Leader's Mask",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15157,7 +15094,6 @@
         ],
         "GossipHintNames": [
           "MM_MASK_TROUPE_LEADER",
-          "MM Circus Leader's Mask",
           "Circus Leader's Mask"
         ],
         "PriceDataNames": []
@@ -15166,7 +15102,7 @@
     {
       "ID": "MM_MASK_TRUTH",
       "Name": "Mask of Truth (MM)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15178,7 +15114,6 @@
         ],
         "GossipHintNames": [
           "MM_MASK_TRUTH",
-          "MM Mask of Truth (MM)",
           "Mask of Truth (MM)"
         ],
         "PriceDataNames": []
@@ -15187,7 +15122,7 @@
     {
       "ID": "MM_MASK_ZORA",
       "Name": "Zora Mask (MM)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15199,7 +15134,6 @@
         ],
         "GossipHintNames": [
           "MM_MASK_ZORA",
-          "MM Zora Mask (MM)",
           "Zora Mask (MM)"
         ],
         "PriceDataNames": []
@@ -15208,7 +15142,7 @@
     {
       "ID": "MM_MOON_TEAR",
       "Name": "Moon Tear",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15220,7 +15154,6 @@
         ],
         "GossipHintNames": [
           "MM_MOON_TEAR",
-          "MM Moon Tear",
           "Moon Tear"
         ],
         "PriceDataNames": []
@@ -15229,7 +15162,7 @@
     {
       "ID": "MM_OCARINA",
       "Name": "Ocarina (MM)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15241,7 +15174,6 @@
         ],
         "GossipHintNames": [
           "MM_OCARINA",
-          "MM Ocarina (MM)",
           "Ocarina (MM)"
         ],
         "PriceDataNames": []
@@ -15250,7 +15182,7 @@
     {
       "ID": "MM_PENDANT_OF_MEMORIES",
       "Name": "Pendant of Memories",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15262,7 +15194,6 @@
         ],
         "GossipHintNames": [
           "MM_PENDANT_OF_MEMORIES",
-          "MM Pendant of Memories",
           "Pendant of Memories"
         ],
         "PriceDataNames": []
@@ -15271,7 +15202,7 @@
     {
       "ID": "MM_PICTOGRAPH_BOX",
       "Name": "Pictograph Box",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15283,7 +15214,6 @@
         ],
         "GossipHintNames": [
           "MM_PICTOGRAPH_BOX",
-          "MM Pictograph Box",
           "Pictograph Box"
         ],
         "PriceDataNames": []
@@ -15292,7 +15222,7 @@
     {
       "ID": "MM_POWDER_KEG",
       "Name": "Powder Keg",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15304,7 +15234,6 @@
         ],
         "GossipHintNames": [
           "MM_POWDER_KEG",
-          "MM Powder Keg",
           "Powder Keg"
         ],
         "PriceDataNames": []
@@ -15313,7 +15242,7 @@
     {
       "ID": "MM_REMAINS_GOHT",
       "Name": "Goht's Remains",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15325,7 +15254,6 @@
         ],
         "GossipHintNames": [
           "MM_REMAINS_GOHT",
-          "MM Goht's Remains",
           "Goht's Remains"
         ],
         "PriceDataNames": []
@@ -15334,7 +15262,7 @@
     {
       "ID": "MM_REMAINS_GYORG",
       "Name": "Gyorg's Remains",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15346,7 +15274,6 @@
         ],
         "GossipHintNames": [
           "MM_REMAINS_GYORG",
-          "MM Gyorg's Remains",
           "Gyorg's Remains"
         ],
         "PriceDataNames": []
@@ -15355,7 +15282,7 @@
     {
       "ID": "MM_REMAINS_ODOLWA",
       "Name": "Odolwa's Remains",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15367,7 +15294,6 @@
         ],
         "GossipHintNames": [
           "MM_REMAINS_ODOLWA",
-          "MM Odolwa's Remains",
           "Odolwa's Remains"
         ],
         "PriceDataNames": []
@@ -15376,7 +15302,7 @@
     {
       "ID": "MM_REMAINS_TWINMOLD",
       "Name": "Twinmold's Remains",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15388,7 +15314,6 @@
         ],
         "GossipHintNames": [
           "MM_REMAINS_TWINMOLD",
-          "MM Twinmold's Remains",
           "Twinmold's Remains"
         ],
         "PriceDataNames": []
@@ -15397,7 +15322,7 @@
     {
       "ID": "MM_ROOM_KEY",
       "Name": "Room Key",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15409,7 +15334,6 @@
         ],
         "GossipHintNames": [
           "MM_ROOM_KEY",
-          "MM Room Key",
           "Room Key"
         ],
         "PriceDataNames": []
@@ -15430,7 +15354,6 @@
         ],
         "GossipHintNames": [
           "MM_RUPEE_BLUE",
-          "MM Blue Rupee (MM)",
           "Blue Rupee (MM)"
         ],
         "PriceDataNames": []
@@ -15451,7 +15374,6 @@
         ],
         "GossipHintNames": [
           "MM_RUPEE_GOLD",
-          "MM Gold Rupee (MM)",
           "Gold Rupee (MM)"
         ],
         "PriceDataNames": []
@@ -15472,7 +15394,6 @@
         ],
         "GossipHintNames": [
           "MM_RUPEE_PURPLE",
-          "MM Purple Rupee (MM)",
           "Purple Rupee (MM)"
         ],
         "PriceDataNames": []
@@ -15493,7 +15414,6 @@
         ],
         "GossipHintNames": [
           "MM_RUPEE_RED",
-          "MM Red Rupee (MM)",
           "Red Rupee (MM)"
         ],
         "PriceDataNames": []
@@ -15514,7 +15434,6 @@
         ],
         "GossipHintNames": [
           "MM_RUPEE_SILVER",
-          "MM Silver Rupee (MM)",
           "Silver Rupee (MM)"
         ],
         "PriceDataNames": []
@@ -15523,7 +15442,7 @@
     {
       "ID": "MM_SHIELD_MIRROR",
       "Name": "Mirror Shield (MM)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15535,7 +15454,6 @@
         ],
         "GossipHintNames": [
           "MM_SHIELD_MIRROR",
-          "MM Mirror Shield (MM)",
           "Mirror Shield (MM)"
         ],
         "PriceDataNames": []
@@ -15544,7 +15462,7 @@
     {
       "ID": "MM_SMALL_KEY_GB",
       "Name": "Small Key (Great Bay Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15556,7 +15474,6 @@
         ],
         "GossipHintNames": [
           "MM_SMALL_KEY_GB",
-          "MM Small Key (Great Bay Temple)",
           "Small Key (Great Bay Temple)"
         ],
         "PriceDataNames": []
@@ -15565,7 +15482,7 @@
     {
       "ID": "MM_SMALL_KEY_SH",
       "Name": "Small Key (Snowhead Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 3,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15577,7 +15494,6 @@
         ],
         "GossipHintNames": [
           "MM_SMALL_KEY_SH",
-          "MM Small Key (Snowhead Temple)",
           "Small Key (Snowhead Temple)"
         ],
         "PriceDataNames": []
@@ -15586,7 +15502,7 @@
     {
       "ID": "MM_SMALL_KEY_ST",
       "Name": "Small Key (Stone Tower Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 4,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15598,7 +15514,6 @@
         ],
         "GossipHintNames": [
           "MM_SMALL_KEY_ST",
-          "MM Small Key (Stone Tower Temple)",
           "Small Key (Stone Tower Temple)"
         ],
         "PriceDataNames": []
@@ -15607,7 +15522,7 @@
     {
       "ID": "MM_SMALL_KEY_WF",
       "Name": "Small Key (Woodfall Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15619,7 +15534,6 @@
         ],
         "GossipHintNames": [
           "MM_SMALL_KEY_WF",
-          "MM Small Key (Woodfall Temple)",
           "Small Key (Woodfall Temple)"
         ],
         "PriceDataNames": []
@@ -15628,7 +15542,7 @@
     {
       "ID": "MM_SONG_AWAKENING",
       "Name": "Sonata of Awakening",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15640,7 +15554,6 @@
         ],
         "GossipHintNames": [
           "MM_SONG_AWAKENING",
-          "MM Sonata of Awakening",
           "Sonata of Awakening"
         ],
         "PriceDataNames": []
@@ -15649,7 +15562,7 @@
     {
       "ID": "MM_SONG_EMPTINESS",
       "Name": "Elegy of Emptiness",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15661,7 +15574,6 @@
         ],
         "GossipHintNames": [
           "MM_SONG_EMPTINESS",
-          "MM Elegy of Emptiness",
           "Elegy of Emptiness"
         ],
         "PriceDataNames": []
@@ -15670,7 +15582,7 @@
     {
       "ID": "MM_SONG_EPONA",
       "Name": "Epona's Song (MM)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15682,7 +15594,6 @@
         ],
         "GossipHintNames": [
           "MM_SONG_EPONA",
-          "MM Epona's Song (MM)",
           "Epona's Song (MM)"
         ],
         "PriceDataNames": []
@@ -15691,7 +15602,7 @@
     {
       "ID": "MM_SONG_GORON_HALF",
       "Name": "Progressive Goron Lullaby",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15703,7 +15614,6 @@
         ],
         "GossipHintNames": [
           "MM_SONG_GORON_HALF",
-          "MM Progressive Goron Lullaby",
           "Progressive Goron Lullaby"
         ],
         "PriceDataNames": []
@@ -15712,7 +15622,7 @@
     {
       "ID": "MM_SONG_HEALING",
       "Name": "Song of Healing",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15724,7 +15634,6 @@
         ],
         "GossipHintNames": [
           "MM_SONG_HEALING",
-          "MM Song of Healing",
           "Song of Healing"
         ],
         "PriceDataNames": []
@@ -15733,7 +15642,7 @@
     {
       "ID": "MM_SONG_ORDER",
       "Name": "Oath to Order",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15745,7 +15654,6 @@
         ],
         "GossipHintNames": [
           "MM_SONG_ORDER",
-          "MM Oath to Order",
           "Oath to Order"
         ],
         "PriceDataNames": []
@@ -15754,7 +15662,7 @@
     {
       "ID": "MM_SONG_SOARING",
       "Name": "Song of Soaring",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15766,7 +15674,6 @@
         ],
         "GossipHintNames": [
           "MM_SONG_SOARING",
-          "MM Song of Soaring",
           "Song of Soaring"
         ],
         "PriceDataNames": []
@@ -15775,7 +15682,7 @@
     {
       "ID": "MM_SONG_STORMS",
       "Name": "Song of Storms (MM)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15787,7 +15694,6 @@
         ],
         "GossipHintNames": [
           "MM_SONG_STORMS",
-          "MM Song of Storms (MM)",
           "Song of Storms (MM)"
         ],
         "PriceDataNames": []
@@ -15796,7 +15702,7 @@
     {
       "ID": "MM_SONG_TIME",
       "Name": "Song of Time (MM)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15808,7 +15714,6 @@
         ],
         "GossipHintNames": [
           "MM_SONG_TIME",
-          "MM Song of Time (MM)",
           "Song of Time (MM)"
         ],
         "PriceDataNames": []
@@ -15817,7 +15722,7 @@
     {
       "ID": "MM_SONG_ZORA",
       "Name": "New Wave Bossa Nova",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15829,7 +15734,6 @@
         ],
         "GossipHintNames": [
           "MM_SONG_ZORA",
-          "MM New Wave Bossa Nova",
           "New Wave Bossa Nova"
         ],
         "PriceDataNames": []
@@ -15838,7 +15742,7 @@
     {
       "ID": "MM_SPIN_UPGRADE",
       "Name": "Spin Attack",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15850,7 +15754,6 @@
         ],
         "GossipHintNames": [
           "MM_SPIN_UPGRADE",
-          "MM Spin Attack",
           "Spin Attack"
         ],
         "PriceDataNames": []
@@ -15859,7 +15762,7 @@
     {
       "ID": "MM_STRAY_FAIRY_GB",
       "Name": "Stray Fairy (Great Bay Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 15,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15871,7 +15774,6 @@
         ],
         "GossipHintNames": [
           "MM_STRAY_FAIRY_GB",
-          "MM Stray Fairy (Great Bay Temple)",
           "Stray Fairy (Great Bay Temple)"
         ],
         "PriceDataNames": []
@@ -15880,7 +15782,7 @@
     {
       "ID": "MM_STRAY_FAIRY_SH",
       "Name": "Stray Fairy (Snowhead Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 15,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15892,7 +15794,6 @@
         ],
         "GossipHintNames": [
           "MM_STRAY_FAIRY_SH",
-          "MM Stray Fairy (Snowhead Temple)",
           "Stray Fairy (Snowhead Temple)"
         ],
         "PriceDataNames": []
@@ -15901,7 +15802,7 @@
     {
       "ID": "MM_STRAY_FAIRY_ST",
       "Name": "Stray Fairy (Stone Tower Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 15,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15913,7 +15814,6 @@
         ],
         "GossipHintNames": [
           "MM_STRAY_FAIRY_ST",
-          "MM Stray Fairy (Stone Tower Temple)",
           "Stray Fairy (Stone Tower Temple)"
         ],
         "PriceDataNames": []
@@ -15922,7 +15822,7 @@
     {
       "ID": "MM_STRAY_FAIRY_TOWN",
       "Name": "Stray Fairy (Clocktown)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15934,7 +15834,6 @@
         ],
         "GossipHintNames": [
           "MM_STRAY_FAIRY_TOWN",
-          "MM Stray Fairy (Clocktown)",
           "Stray Fairy (Clocktown)"
         ],
         "PriceDataNames": []
@@ -15943,7 +15842,7 @@
     {
       "ID": "MM_STRAY_FAIRY_WF",
       "Name": "Stray Fairy (Woodfall Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 15,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15955,7 +15854,6 @@
         ],
         "GossipHintNames": [
           "MM_STRAY_FAIRY_WF",
-          "MM Stray Fairy (Woodfall Temple)",
           "Stray Fairy (Woodfall Temple)"
         ],
         "PriceDataNames": []
@@ -15964,7 +15862,7 @@
     {
       "ID": "MM_SWORD",
       "Name": "Progressive Sword (MM)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 3,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15976,7 +15874,6 @@
         ],
         "GossipHintNames": [
           "MM_SWORD",
-          "MM Progressive Sword (MM)",
           "Progressive Sword (MM)"
         ],
         "PriceDataNames": []
@@ -15985,7 +15882,7 @@
     {
       "ID": "MM_WALLET",
       "Name": "Progressive Wallet (MM)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 3,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -15997,7 +15894,6 @@
         ],
         "GossipHintNames": [
           "MM_WALLET",
-          "MM Progressive Wallet (MM)",
           "Progressive Wallet (MM)"
         ],
         "PriceDataNames": []
@@ -16018,7 +15914,6 @@
         ],
         "GossipHintNames": [
           "OOT_ARROWS_10",
-          "OOT 10 Arrows (OOT)",
           "10 Arrows (OOT)"
         ],
         "PriceDataNames": []
@@ -16039,7 +15934,6 @@
         ],
         "GossipHintNames": [
           "OOT_ARROWS_30",
-          "OOT 30 Arrows (OOT)",
           "30 Arrows (OOT)"
         ],
         "PriceDataNames": []
@@ -16060,7 +15954,6 @@
         ],
         "GossipHintNames": [
           "OOT_ARROWS_5",
-          "OOT 5 Arrows (OOT)",
           "5 Arrows (OOT)"
         ],
         "PriceDataNames": []
@@ -16069,7 +15962,7 @@
     {
       "ID": "OOT_ARROW_FIRE",
       "Name": "Fire Arrows (OOT)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16081,7 +15974,6 @@
         ],
         "GossipHintNames": [
           "OOT_ARROW_FIRE",
-          "OOT Fire Arrows (OOT)",
           "Fire Arrows (OOT)"
         ],
         "PriceDataNames": []
@@ -16090,7 +15982,7 @@
     {
       "ID": "OOT_ARROW_ICE",
       "Name": "Ice Arrows (OOT)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16102,7 +15994,6 @@
         ],
         "GossipHintNames": [
           "OOT_ARROW_ICE",
-          "OOT Ice Arrows (OOT)",
           "Ice Arrows (OOT)"
         ],
         "PriceDataNames": []
@@ -16111,7 +16002,7 @@
     {
       "ID": "OOT_ARROW_LIGHT",
       "Name": "Light Arrows (OOT)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16123,7 +16014,6 @@
         ],
         "GossipHintNames": [
           "OOT_ARROW_LIGHT",
-          "OOT Light Arrows (OOT)",
           "Light Arrows (OOT)"
         ],
         "PriceDataNames": []
@@ -16144,7 +16034,6 @@
         ],
         "GossipHintNames": [
           "OOT_BOMBCHU_10",
-          "OOT 10 Bombchu (OOT)",
           "10 Bombchu (OOT)"
         ],
         "PriceDataNames": []
@@ -16165,7 +16054,6 @@
         ],
         "GossipHintNames": [
           "OOT_BOMBCHU_20",
-          "OOT 20 Bombchu (OOT)",
           "20 Bombchu (OOT)"
         ],
         "PriceDataNames": []
@@ -16186,7 +16074,6 @@
         ],
         "GossipHintNames": [
           "OOT_BOMBCHU_5",
-          "OOT 5 Bombchu (OOT)",
           "5 Bombchu (OOT)"
         ],
         "PriceDataNames": []
@@ -16195,7 +16082,7 @@
     {
       "ID": "OOT_BOMB_BAG",
       "Name": "Bomb Bag (OoT)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 3,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16207,7 +16094,6 @@
         ],
         "GossipHintNames": [
           "OOT_BOMB_BAG",
-          "OOT Bomb Bag (OoT)",
           "Bomb Bag (OoT)"
         ],
         "PriceDataNames": []
@@ -16228,7 +16114,6 @@
         ],
         "GossipHintNames": [
           "OOT_BOMBS_10",
-          "OOT 10 Bombs (OOT)",
           "10 Bombs (OOT)"
         ],
         "PriceDataNames": []
@@ -16249,7 +16134,6 @@
         ],
         "GossipHintNames": [
           "OOT_BOMBS_20",
-          "OOT 20 Bombs (OOT)",
           "20 Bombs (OOT)"
         ],
         "PriceDataNames": []
@@ -16270,7 +16154,6 @@
         ],
         "GossipHintNames": [
           "OOT_BOMBS_5",
-          "OOT 5 Bombs (OOT)",
           "5 Bombs (OOT)"
         ],
         "PriceDataNames": []
@@ -16279,7 +16162,7 @@
     {
       "ID": "OOT_BOOMERANG",
       "Name": "Boomerang",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16291,7 +16174,6 @@
         ],
         "GossipHintNames": [
           "OOT_BOOMERANG",
-          "OOT Boomerang",
           "Boomerang"
         ],
         "PriceDataNames": []
@@ -16300,7 +16182,7 @@
     {
       "ID": "OOT_BOOTS_HOVER",
       "Name": "Hover Boots",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16312,7 +16194,6 @@
         ],
         "GossipHintNames": [
           "OOT_BOOTS_HOVER",
-          "OOT Hover Boots",
           "Hover Boots"
         ],
         "PriceDataNames": []
@@ -16321,7 +16202,7 @@
     {
       "ID": "OOT_BOOTS_IRON",
       "Name": "Iron Boots",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16333,7 +16214,6 @@
         ],
         "GossipHintNames": [
           "OOT_BOOTS_IRON",
-          "OOT Iron Boots",
           "Iron Boots"
         ],
         "PriceDataNames": []
@@ -16342,7 +16222,7 @@
     {
       "ID": "OOT_BOSS_KEY_FIRE",
       "Name": "Boss Key (Fire Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16354,7 +16234,6 @@
         ],
         "GossipHintNames": [
           "OOT_BOSS_KEY_FIRE",
-          "OOT Boss Key (Fire Temple)",
           "Boss Key (Fire Temple)"
         ],
         "PriceDataNames": []
@@ -16363,7 +16242,7 @@
     {
       "ID": "OOT_BOSS_KEY_FOREST",
       "Name": "Boss Key (Forest Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16375,7 +16254,6 @@
         ],
         "GossipHintNames": [
           "OOT_BOSS_KEY_FOREST",
-          "OOT Boss Key (Forest Temple)",
           "Boss Key (Forest Temple)"
         ],
         "PriceDataNames": []
@@ -16384,7 +16262,7 @@
     {
       "ID": "OOT_BOSS_KEY_SHADOW",
       "Name": "Boss Key (Shadow Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16396,7 +16274,6 @@
         ],
         "GossipHintNames": [
           "OOT_BOSS_KEY_SHADOW",
-          "OOT Boss Key (Shadow Temple)",
           "Boss Key (Shadow Temple)"
         ],
         "PriceDataNames": []
@@ -16405,7 +16282,7 @@
     {
       "ID": "OOT_BOSS_KEY_SPIRIT",
       "Name": "Boss Key (Spirit Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16417,7 +16294,6 @@
         ],
         "GossipHintNames": [
           "OOT_BOSS_KEY_SPIRIT",
-          "OOT Boss Key (Spirit Temple)",
           "Boss Key (Spirit Temple)"
         ],
         "PriceDataNames": []
@@ -16426,7 +16302,7 @@
     {
       "ID": "OOT_BOSS_KEY_WATER",
       "Name": "Boss Key (Water Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16438,7 +16314,6 @@
         ],
         "GossipHintNames": [
           "OOT_BOSS_KEY_WATER",
-          "OOT Boss Key (Water Temple)",
           "Boss Key (Water Temple)"
         ],
         "PriceDataNames": []
@@ -16447,7 +16322,7 @@
     {
       "ID": "OOT_BOW",
       "Name": "Bow (OOT)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 3,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16459,7 +16334,6 @@
         ],
         "GossipHintNames": [
           "OOT_BOW",
-          "OOT Bow (OOT)",
           "Bow (OOT)"
         ],
         "PriceDataNames": []
@@ -16468,7 +16342,7 @@
     {
       "ID": "OOT_BROKEN_GORON_SWORD",
       "Name": "Broken Goron Sword",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16480,7 +16354,6 @@
         ],
         "GossipHintNames": [
           "OOT_BROKEN_GORON_SWORD",
-          "OOT Broken Goron Sword",
           "Broken Goron Sword"
         ],
         "PriceDataNames": []
@@ -16489,7 +16362,7 @@
     {
       "ID": "OOT_CHICKEN",
       "Name": "Chicken",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16501,7 +16374,6 @@
         ],
         "GossipHintNames": [
           "OOT_CHICKEN",
-          "OOT Chicken",
           "Chicken"
         ],
         "PriceDataNames": []
@@ -16510,7 +16382,7 @@
     {
       "ID": "OOT_CLAIM_CHECK",
       "Name": "Claim Check",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16522,7 +16394,6 @@
         ],
         "GossipHintNames": [
           "OOT_CLAIM_CHECK",
-          "OOT Claim Check",
           "Claim Check"
         ],
         "PriceDataNames": []
@@ -16531,7 +16402,7 @@
     {
       "ID": "OOT_COJIRO",
       "Name": "Cojiro",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16543,7 +16414,6 @@
         ],
         "GossipHintNames": [
           "OOT_COJIRO",
-          "OOT Cojiro",
           "Cojiro"
         ],
         "PriceDataNames": []
@@ -16552,7 +16422,7 @@
     {
       "ID": "OOT_COMPASS_BOTW",
       "Name": "Compass (Bottom of the Well)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16564,7 +16434,6 @@
         ],
         "GossipHintNames": [
           "OOT_COMPASS_BOTW",
-          "OOT Compass (Bottom of the Well)",
           "Compass (Bottom of the Well)"
         ],
         "PriceDataNames": []
@@ -16573,7 +16442,7 @@
     {
       "ID": "OOT_COMPASS_DC",
       "Name": "Compass (Dodongo's Cavern)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16585,7 +16454,6 @@
         ],
         "GossipHintNames": [
           "OOT_COMPASS_DC",
-          "OOT Compass (Dodongo's Cavern)",
           "Compass (Dodongo's Cavern)"
         ],
         "PriceDataNames": []
@@ -16594,7 +16462,7 @@
     {
       "ID": "OOT_COMPASS_DT",
       "Name": "Compass (Deku Tree)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16606,7 +16474,6 @@
         ],
         "GossipHintNames": [
           "OOT_COMPASS_DT",
-          "OOT Compass (Deku Tree)",
           "Compass (Deku Tree)"
         ],
         "PriceDataNames": []
@@ -16615,7 +16482,7 @@
     {
       "ID": "OOT_COMPASS_FIRE",
       "Name": "Compass (Fire Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16627,7 +16494,6 @@
         ],
         "GossipHintNames": [
           "OOT_COMPASS_FIRE",
-          "OOT Compass (Fire Temple)",
           "Compass (Fire Temple)"
         ],
         "PriceDataNames": []
@@ -16636,7 +16502,7 @@
     {
       "ID": "OOT_COMPASS_FOREST",
       "Name": "Compass (Forest Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16648,7 +16514,6 @@
         ],
         "GossipHintNames": [
           "OOT_COMPASS_FOREST",
-          "OOT Compass (Forest Temple)",
           "Compass (Forest Temple)"
         ],
         "PriceDataNames": []
@@ -16657,7 +16522,7 @@
     {
       "ID": "OOT_COMPASS_IC",
       "Name": "Compass (Ice Cavern)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16669,7 +16534,6 @@
         ],
         "GossipHintNames": [
           "OOT_COMPASS_IC",
-          "OOT Compass (Ice Cavern)",
           "Compass (Ice Cavern)"
         ],
         "PriceDataNames": []
@@ -16678,7 +16542,7 @@
     {
       "ID": "OOT_COMPASS_JJ",
       "Name": "Compass (Jabu Jabu's Belly)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16690,7 +16554,6 @@
         ],
         "GossipHintNames": [
           "OOT_COMPASS_JJ",
-          "OOT Compass (Jabu Jabu's Belly)",
           "Compass (Jabu Jabu's Belly)"
         ],
         "PriceDataNames": []
@@ -16699,7 +16562,7 @@
     {
       "ID": "OOT_COMPASS_SHADOW",
       "Name": "Compass (Shadow Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16711,7 +16574,6 @@
         ],
         "GossipHintNames": [
           "OOT_COMPASS_SHADOW",
-          "OOT Compass (Shadow Temple)",
           "Compass (Shadow Temple)"
         ],
         "PriceDataNames": []
@@ -16720,7 +16582,7 @@
     {
       "ID": "OOT_COMPASS_SPIRIT",
       "Name": "Compass (Spirit Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16732,7 +16594,6 @@
         ],
         "GossipHintNames": [
           "OOT_COMPASS_SPIRIT",
-          "OOT Compass (Spirit Temple)",
           "Compass (Spirit Temple)"
         ],
         "PriceDataNames": []
@@ -16741,7 +16602,7 @@
     {
       "ID": "OOT_COMPASS_WATER",
       "Name": "Compass (Water Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16753,7 +16614,6 @@
         ],
         "GossipHintNames": [
           "OOT_COMPASS_WATER",
-          "OOT Compass (Water Temple)",
           "Compass (Water Temple)"
         ],
         "PriceDataNames": []
@@ -16762,7 +16622,7 @@
     {
       "ID": "OOT_DEFENSE_UPGRADE",
       "Name": "Double Defense (OOT)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16774,7 +16634,6 @@
         ],
         "GossipHintNames": [
           "OOT_DEFENSE_UPGRADE",
-          "OOT Double Defense (OOT)",
           "Double Defense (OOT)"
         ],
         "PriceDataNames": []
@@ -16783,7 +16642,7 @@
     {
       "ID": "OOT_EMPTY_BOTTLE",
       "Name": "Bottle - Empty (OOT)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16795,7 +16654,6 @@
         ],
         "GossipHintNames": [
           "OOT_EMPTY_BOTTLE",
-          "OOT Bottle - Empty (OOT)",
           "Bottle - Empty (OOT)"
         ],
         "PriceDataNames": []
@@ -16804,7 +16662,7 @@
     {
       "ID": "OOT_EYEBALL_FROG",
       "Name": "Eyeball Frog",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16816,7 +16674,6 @@
         ],
         "GossipHintNames": [
           "OOT_EYEBALL_FROG",
-          "OOT Eyeball Frog",
           "Eyeball Frog"
         ],
         "PriceDataNames": []
@@ -16825,7 +16682,7 @@
     {
       "ID": "OOT_EYE_DROPS",
       "Name": "Eye Drops",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16837,7 +16694,6 @@
         ],
         "GossipHintNames": [
           "OOT_EYE_DROPS",
-          "OOT Eye Drops",
           "Eye Drops"
         ],
         "PriceDataNames": []
@@ -16846,7 +16702,7 @@
     {
       "ID": "OOT_GERUDO_CARD",
       "Name": "Gerudo Card",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16858,7 +16714,6 @@
         ],
         "GossipHintNames": [
           "OOT_GERUDO_CARD",
-          "OOT Gerudo Card",
           "Gerudo Card"
         ],
         "PriceDataNames": []
@@ -16867,7 +16722,7 @@
     {
       "ID": "OOT_GS_TOKEN",
       "Name": "Golden Skulltula Token",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 100,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16879,7 +16734,6 @@
         ],
         "GossipHintNames": [
           "OOT_GS_TOKEN",
-          "OOT Golden Skulltula Token",
           "Golden Skulltula Token"
         ],
         "PriceDataNames": []
@@ -16888,7 +16742,7 @@
     {
       "ID": "OOT_HAMMER",
       "Name": "Hammer",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16900,7 +16754,6 @@
         ],
         "GossipHintNames": [
           "OOT_HAMMER",
-          "OOT Hammer",
           "Hammer"
         ],
         "PriceDataNames": []
@@ -16909,7 +16762,7 @@
     {
       "ID": "OOT_HEART_CONTAINER",
       "Name": "Heart Container (OOT)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 8,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16921,7 +16774,6 @@
         ],
         "GossipHintNames": [
           "OOT_HEART_CONTAINER",
-          "OOT Heart Container (OOT)",
           "Heart Container (OOT)"
         ],
         "PriceDataNames": []
@@ -16930,7 +16782,7 @@
     {
       "ID": "OOT_HEART_PIECE",
       "Name": "Piece of Heart (OOT)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 40,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16942,7 +16794,6 @@
         ],
         "GossipHintNames": [
           "OOT_HEART_PIECE",
-          "OOT Piece of Heart (OOT)",
           "Piece of Heart (OOT)"
         ],
         "PriceDataNames": []
@@ -16951,7 +16802,7 @@
     {
       "ID": "OOT_HOOKSHOT",
       "Name": "Progressive Hookshot (OOT)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16963,7 +16814,6 @@
         ],
         "GossipHintNames": [
           "OOT_HOOKSHOT",
-          "OOT Progressive Hookshot (OOT)",
           "Progressive Hookshot (OOT)"
         ],
         "PriceDataNames": []
@@ -16984,7 +16834,6 @@
         ],
         "GossipHintNames": [
           "OOT_ICE_TRAP",
-          "OOT Ice Trap (OOT)",
           "Ice Trap (OOT)"
         ],
         "PriceDataNames": []
@@ -16993,7 +16842,7 @@
     {
       "ID": "OOT_LENS",
       "Name": "Lens of Truth (OOT)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17005,7 +16854,6 @@
         ],
         "GossipHintNames": [
           "OOT_LENS",
-          "OOT Lens of Truth (OOT)",
           "Lens of Truth (OOT)"
         ],
         "PriceDataNames": []
@@ -17014,7 +16862,7 @@
     {
       "ID": "OOT_MAGIC_BEAN",
       "Name": "Magic Beans (OOT)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17026,7 +16874,6 @@
         ],
         "GossipHintNames": [
           "OOT_MAGIC_BEAN",
-          "OOT Magic Beans (OOT)",
           "Magic Beans (OOT)"
         ],
         "PriceDataNames": []
@@ -17035,7 +16882,7 @@
     {
       "ID": "OOT_MAGIC_UPGRADE",
       "Name": "Magic Upgrade (OOT)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17047,7 +16894,6 @@
         ],
         "GossipHintNames": [
           "OOT_MAGIC_UPGRADE",
-          "OOT Magic Upgrade (OOT)",
           "Magic Upgrade (OOT)"
         ],
         "PriceDataNames": []
@@ -17056,7 +16902,7 @@
     {
       "ID": "OOT_MAP_BOTW",
       "Name": "Map (Bottom of the Well)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17068,7 +16914,6 @@
         ],
         "GossipHintNames": [
           "OOT_MAP_BOTW",
-          "OOT Map (Bottom of the Well)",
           "Map (Bottom of the Well)"
         ],
         "PriceDataNames": []
@@ -17077,7 +16922,7 @@
     {
       "ID": "OOT_MAP_DC",
       "Name": "Map (Dodongo's Cavern)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17089,7 +16934,6 @@
         ],
         "GossipHintNames": [
           "OOT_MAP_DC",
-          "OOT Map (Dodongo's Cavern)",
           "Map (Dodongo's Cavern)"
         ],
         "PriceDataNames": []
@@ -17098,7 +16942,7 @@
     {
       "ID": "OOT_MAP_DT",
       "Name": "Map (Deku Tree)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17110,7 +16954,6 @@
         ],
         "GossipHintNames": [
           "OOT_MAP_DT",
-          "OOT Map (Deku Tree)",
           "Map (Deku Tree)"
         ],
         "PriceDataNames": []
@@ -17119,7 +16962,7 @@
     {
       "ID": "OOT_MAP_FIRE",
       "Name": "Map (Fire Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17131,7 +16974,6 @@
         ],
         "GossipHintNames": [
           "OOT_MAP_FIRE",
-          "OOT Map (Fire Temple)",
           "Map (Fire Temple)"
         ],
         "PriceDataNames": []
@@ -17140,7 +16982,7 @@
     {
       "ID": "OOT_MAP_FOREST",
       "Name": "Map (Forest Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17152,7 +16994,6 @@
         ],
         "GossipHintNames": [
           "OOT_MAP_FOREST",
-          "OOT Map (Forest Temple)",
           "Map (Forest Temple)"
         ],
         "PriceDataNames": []
@@ -17161,7 +17002,7 @@
     {
       "ID": "OOT_MAP_IC",
       "Name": "Map (Ice Cavern)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17173,7 +17014,6 @@
         ],
         "GossipHintNames": [
           "OOT_MAP_IC",
-          "OOT Map (Ice Cavern)",
           "Map (Ice Cavern)"
         ],
         "PriceDataNames": []
@@ -17182,7 +17022,7 @@
     {
       "ID": "OOT_MAP_JJ",
       "Name": "Map (Jabu Jabu's Belly)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17194,7 +17034,6 @@
         ],
         "GossipHintNames": [
           "OOT_MAP_JJ",
-          "OOT Map (Jabu Jabu's Belly)",
           "Map (Jabu Jabu's Belly)"
         ],
         "PriceDataNames": []
@@ -17203,7 +17042,7 @@
     {
       "ID": "OOT_MAP_SHADOW",
       "Name": "Map (Shadow Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17215,7 +17054,6 @@
         ],
         "GossipHintNames": [
           "OOT_MAP_SHADOW",
-          "OOT Map (Shadow Temple)",
           "Map (Shadow Temple)"
         ],
         "PriceDataNames": []
@@ -17224,7 +17062,7 @@
     {
       "ID": "OOT_MAP_SPIRIT",
       "Name": "Map (Spirit Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17236,7 +17074,6 @@
         ],
         "GossipHintNames": [
           "OOT_MAP_SPIRIT",
-          "OOT Map (Spirit Temple)",
           "Map (Spirit Temple)"
         ],
         "PriceDataNames": []
@@ -17245,7 +17082,7 @@
     {
       "ID": "OOT_MAP_WATER",
       "Name": "Map (Water Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17257,7 +17094,6 @@
         ],
         "GossipHintNames": [
           "OOT_MAP_WATER",
-          "OOT Map (Water Temple)",
           "Map (Water Temple)"
         ],
         "PriceDataNames": []
@@ -17266,7 +17102,7 @@
     {
       "ID": "OOT_MASK_BUNNY",
       "Name": "Bunny Hood (OOT)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17278,7 +17114,6 @@
         ],
         "GossipHintNames": [
           "OOT_MASK_BUNNY",
-          "OOT Bunny Hood (OOT)",
           "Bunny Hood (OOT)"
         ],
         "PriceDataNames": []
@@ -17287,7 +17122,7 @@
     {
       "ID": "OOT_MASK_GERUDO",
       "Name": "Gerudo Mask",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17299,7 +17134,6 @@
         ],
         "GossipHintNames": [
           "OOT_MASK_GERUDO",
-          "OOT Gerudo Mask",
           "Gerudo Mask"
         ],
         "PriceDataNames": []
@@ -17308,7 +17142,7 @@
     {
       "ID": "OOT_MASK_GORON",
       "Name": "Goron Mask (OOT)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17320,7 +17154,6 @@
         ],
         "GossipHintNames": [
           "OOT_MASK_GORON",
-          "OOT Goron Mask (OOT)",
           "Goron Mask (OOT)"
         ],
         "PriceDataNames": []
@@ -17329,7 +17162,7 @@
     {
       "ID": "OOT_MASK_KEATON",
       "Name": "Keaton Mask (OOT)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17341,7 +17174,6 @@
         ],
         "GossipHintNames": [
           "OOT_MASK_KEATON",
-          "OOT Keaton Mask (OOT)",
           "Keaton Mask (OOT)"
         ],
         "PriceDataNames": []
@@ -17350,7 +17182,7 @@
     {
       "ID": "OOT_MASK_SKULL",
       "Name": "Skull Mask",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17362,7 +17194,6 @@
         ],
         "GossipHintNames": [
           "OOT_MASK_SKULL",
-          "OOT Skull Mask",
           "Skull Mask"
         ],
         "PriceDataNames": []
@@ -17371,7 +17202,7 @@
     {
       "ID": "OOT_MASK_SPOOKY",
       "Name": "Spooky Mask",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17383,7 +17214,6 @@
         ],
         "GossipHintNames": [
           "OOT_MASK_SPOOKY",
-          "OOT Spooky Mask",
           "Spooky Mask"
         ],
         "PriceDataNames": []
@@ -17392,7 +17222,7 @@
     {
       "ID": "OOT_MASK_TRUTH",
       "Name": "Mask of Truth (OOT)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17404,7 +17234,6 @@
         ],
         "GossipHintNames": [
           "OOT_MASK_TRUTH",
-          "OOT Mask of Truth (OOT)",
           "Mask of Truth (OOT)"
         ],
         "PriceDataNames": []
@@ -17413,7 +17242,7 @@
     {
       "ID": "OOT_MASK_ZORA",
       "Name": "Zora Mask (OOT)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17425,7 +17254,6 @@
         ],
         "GossipHintNames": [
           "OOT_MASK_ZORA",
-          "OOT Zora Mask (OOT)",
           "Zora Mask (OOT)"
         ],
         "PriceDataNames": []
@@ -17434,7 +17262,7 @@
     {
       "ID": "OOT_MEDALLION_FIRE",
       "Name": "Fire Medallion",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17446,7 +17274,6 @@
         ],
         "GossipHintNames": [
           "OOT_MEDALLION_FIRE",
-          "OOT Fire Medallion",
           "Fire Medallion"
         ],
         "PriceDataNames": []
@@ -17455,7 +17282,7 @@
     {
       "ID": "OOT_MEDALLION_FOREST",
       "Name": "Forest Medallion",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17467,7 +17294,6 @@
         ],
         "GossipHintNames": [
           "OOT_MEDALLION_FOREST",
-          "OOT Forest Medallion",
           "Forest Medallion"
         ],
         "PriceDataNames": []
@@ -17476,7 +17302,7 @@
     {
       "ID": "OOT_MEDALLION_LIGHT",
       "Name": "Light Medallion",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17488,7 +17314,6 @@
         ],
         "GossipHintNames": [
           "OOT_MEDALLION_LIGHT",
-          "OOT Light Medallion",
           "Light Medallion"
         ],
         "PriceDataNames": []
@@ -17497,7 +17322,7 @@
     {
       "ID": "OOT_MEDALLION_SHADOW",
       "Name": "Shadow Medallion",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17509,7 +17334,6 @@
         ],
         "GossipHintNames": [
           "OOT_MEDALLION_SHADOW",
-          "OOT Shadow Medallion",
           "Shadow Medallion"
         ],
         "PriceDataNames": []
@@ -17518,7 +17342,7 @@
     {
       "ID": "OOT_MEDALLION_SPIRIT",
       "Name": "Spirit Medallion",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17530,7 +17354,6 @@
         ],
         "GossipHintNames": [
           "OOT_MEDALLION_SPIRIT",
-          "OOT Spirit Medallion",
           "Spirit Medallion"
         ],
         "PriceDataNames": []
@@ -17539,7 +17362,7 @@
     {
       "ID": "OOT_MEDALLION_WATER",
       "Name": "Water Medallion",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17551,7 +17374,6 @@
         ],
         "GossipHintNames": [
           "OOT_MEDALLION_WATER",
-          "OOT Water Medallion",
           "Water Medallion"
         ],
         "PriceDataNames": []
@@ -17560,7 +17382,7 @@
     {
       "ID": "OOT_MILK_BOTTLE",
       "Name": "Bottle - Milk (OOT)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17572,7 +17394,6 @@
         ],
         "GossipHintNames": [
           "OOT_MILK_BOTTLE",
-          "OOT Bottle - Milk (OOT)",
           "Bottle - Milk (OOT)"
         ],
         "PriceDataNames": []
@@ -17593,7 +17414,6 @@
         ],
         "GossipHintNames": [
           "OOT_NUTS_10",
-          "OOT 10 Deku Nuts",
           "10 Deku Nuts"
         ],
         "PriceDataNames": []
@@ -17602,7 +17422,7 @@
     {
       "ID": "OOT_NUT_UPGRADE",
       "Name": "Deku Nut Upgrade",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17614,7 +17434,6 @@
         ],
         "GossipHintNames": [
           "OOT_NUT_UPGRADE",
-          "OOT Deku Nut Upgrade",
           "Deku Nut Upgrade"
         ],
         "PriceDataNames": []
@@ -17623,7 +17442,7 @@
     {
       "ID": "OOT_OCARINA",
       "Name": "Progressive Ocarina (OOT)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17635,7 +17454,6 @@
         ],
         "GossipHintNames": [
           "OOT_OCARINA",
-          "OOT Progressive Ocarina (OOT)",
           "Progressive Ocarina (OOT)"
         ],
         "PriceDataNames": []
@@ -17644,7 +17462,7 @@
     {
       "ID": "OOT_ODD_MUSHROOM",
       "Name": "Odd Mushroom",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17656,7 +17474,6 @@
         ],
         "GossipHintNames": [
           "OOT_ODD_MUSHROOM",
-          "OOT Odd Mushroom",
           "Odd Mushroom"
         ],
         "PriceDataNames": []
@@ -17665,7 +17482,7 @@
     {
       "ID": "OOT_ODD_POTION",
       "Name": "Odd Potion",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17677,7 +17494,6 @@
         ],
         "GossipHintNames": [
           "OOT_ODD_POTION",
-          "OOT Odd Potion",
           "Odd Potion"
         ],
         "PriceDataNames": []
@@ -17686,7 +17502,7 @@
     {
       "ID": "OOT_POACHER_SAW",
       "Name": "Poacher's Saw",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17698,7 +17514,6 @@
         ],
         "GossipHintNames": [
           "OOT_POACHER_SAW",
-          "OOT Poacher's Saw",
           "Poacher's Saw"
         ],
         "PriceDataNames": []
@@ -17707,7 +17522,7 @@
     {
       "ID": "OOT_POCKET_CUCCO",
       "Name": "Pocket Cucco",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17719,7 +17534,6 @@
         ],
         "GossipHintNames": [
           "OOT_POCKET_CUCCO",
-          "OOT Pocket Cucco",
           "Pocket Cucco"
         ],
         "PriceDataNames": []
@@ -17728,7 +17542,7 @@
     {
       "ID": "OOT_PRESCRIPTION",
       "Name": "Prescription",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17740,7 +17554,6 @@
         ],
         "GossipHintNames": [
           "OOT_PRESCRIPTION",
-          "OOT Prescription",
           "Prescription"
         ],
         "PriceDataNames": []
@@ -17761,7 +17574,6 @@
         ],
         "GossipHintNames": [
           "OOT_RECOVERY_HEART",
-          "OOT Recovery Heart (OOT)",
           "Recovery Heart (OOT)"
         ],
         "PriceDataNames": []
@@ -17782,7 +17594,6 @@
         ],
         "GossipHintNames": [
           "OOT_RUPEE_BLUE",
-          "OOT Blue Rupee (OOT)",
           "Blue Rupee (OOT)"
         ],
         "PriceDataNames": []
@@ -17803,7 +17614,6 @@
         ],
         "GossipHintNames": [
           "OOT_RUPEE_GREEN",
-          "OOT Green Rupee (OOT)",
           "Green Rupee (OOT)"
         ],
         "PriceDataNames": []
@@ -17824,7 +17634,6 @@
         ],
         "GossipHintNames": [
           "OOT_RUPEE_HUGE",
-          "OOT Gold Rupee (OOT)",
           "Gold Rupee (OOT)"
         ],
         "PriceDataNames": []
@@ -17845,7 +17654,6 @@
         ],
         "GossipHintNames": [
           "OOT_RUPEE_PURPLE",
-          "OOT Purple Rupee (OOT)",
           "Purple Rupee (OOT)"
         ],
         "PriceDataNames": []
@@ -17866,7 +17674,6 @@
         ],
         "GossipHintNames": [
           "OOT_RUPEE_RED",
-          "OOT Red Rupee (OOT)",
           "Red Rupee (OOT)"
         ],
         "PriceDataNames": []
@@ -17875,7 +17682,7 @@
     {
       "ID": "OOT_RUTO_LETTER",
       "Name": "Ruto's Letter",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17887,7 +17694,6 @@
         ],
         "GossipHintNames": [
           "OOT_RUTO_LETTER",
-          "OOT Ruto's Letter",
           "Ruto's Letter"
         ],
         "PriceDataNames": []
@@ -17896,7 +17702,7 @@
     {
       "ID": "OOT_SCALE",
       "Name": "Progressive Scale",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17908,7 +17714,6 @@
         ],
         "GossipHintNames": [
           "OOT_SCALE",
-          "OOT Progressive Scale",
           "Progressive Scale"
         ],
         "PriceDataNames": []
@@ -17929,7 +17734,6 @@
         ],
         "GossipHintNames": [
           "OOT_SHIELD_DEKU",
-          "OOT Deku Shield",
           "Deku Shield"
         ],
         "PriceDataNames": []
@@ -17950,7 +17754,6 @@
         ],
         "GossipHintNames": [
           "OOT_SHIELD_HYLIAN",
-          "OOT Hylian Shield",
           "Hylian Shield"
         ],
         "PriceDataNames": []
@@ -17959,7 +17762,7 @@
     {
       "ID": "OOT_SHIELD_MIRROR",
       "Name": "Mirror Shield",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17971,7 +17774,6 @@
         ],
         "GossipHintNames": [
           "OOT_SHIELD_MIRROR",
-          "OOT Mirror Shield",
           "Mirror Shield"
         ],
         "PriceDataNames": []
@@ -17980,7 +17782,7 @@
     {
       "ID": "OOT_SLINGSHOT",
       "Name": "Slingshot",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 3,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17992,7 +17794,6 @@
         ],
         "GossipHintNames": [
           "OOT_SLINGSHOT",
-          "OOT Slingshot",
           "Slingshot"
         ],
         "PriceDataNames": []
@@ -18001,7 +17802,7 @@
     {
       "ID": "OOT_SMALL_KEY_BOTW",
       "Name": "Small Key (Bottom of the Well)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 3,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18013,7 +17814,6 @@
         ],
         "GossipHintNames": [
           "OOT_SMALL_KEY_BOTW",
-          "OOT Small Key (Bottom of the Well)",
           "Small Key (Bottom of the Well)"
         ],
         "PriceDataNames": []
@@ -18022,7 +17822,7 @@
     {
       "ID": "OOT_SMALL_KEY_FIRE",
       "Name": "Small Key (Fire Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 8,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18034,7 +17834,6 @@
         ],
         "GossipHintNames": [
           "OOT_SMALL_KEY_FIRE",
-          "OOT Small Key (Fire Temple)",
           "Small Key (Fire Temple)"
         ],
         "PriceDataNames": []
@@ -18043,7 +17842,7 @@
     {
       "ID": "OOT_SMALL_KEY_FOREST",
       "Name": "Small Key (Forest Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 5,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18055,7 +17854,6 @@
         ],
         "GossipHintNames": [
           "OOT_SMALL_KEY_FOREST",
-          "OOT Small Key (Forest Temple)",
           "Small Key (Forest Temple)"
         ],
         "PriceDataNames": []
@@ -18064,7 +17862,7 @@
     {
       "ID": "OOT_SMALL_KEY_GANON",
       "Name": "Small Key (Ganon's Castle)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18076,7 +17874,6 @@
         ],
         "GossipHintNames": [
           "OOT_SMALL_KEY_GANON",
-          "OOT Small Key (Ganon's Castle)",
           "Small Key (Ganon's Castle)"
         ],
         "PriceDataNames": []
@@ -18085,7 +17882,7 @@
     {
       "ID": "OOT_SMALL_KEY_GF",
       "Name": "Small Key (Gerudo Fortress)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 4,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18097,7 +17894,6 @@
         ],
         "GossipHintNames": [
           "OOT_SMALL_KEY_GF",
-          "OOT Small Key (Gerudo Fortress)",
           "Small Key (Gerudo Fortress)"
         ],
         "PriceDataNames": []
@@ -18106,7 +17902,7 @@
     {
       "ID": "OOT_SMALL_KEY_GTG",
       "Name": "Small Key (Gerudo Training Ground)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 9,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18118,7 +17914,6 @@
         ],
         "GossipHintNames": [
           "OOT_SMALL_KEY_GTG",
-          "OOT Small Key (Gerudo Training Ground)",
           "Small Key (Gerudo Training Ground)"
         ],
         "PriceDataNames": []
@@ -18127,7 +17922,7 @@
     {
       "ID": "OOT_SMALL_KEY_SHADOW",
       "Name": "Small Key (Shadow Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 5,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18139,7 +17934,6 @@
         ],
         "GossipHintNames": [
           "OOT_SMALL_KEY_SHADOW",
-          "OOT Small Key (Shadow Temple)",
           "Small Key (Shadow Temple)"
         ],
         "PriceDataNames": []
@@ -18148,7 +17942,7 @@
     {
       "ID": "OOT_SMALL_KEY_SPIRIT",
       "Name": "Small Key (Spirit Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 5,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18160,7 +17954,6 @@
         ],
         "GossipHintNames": [
           "OOT_SMALL_KEY_SPIRIT",
-          "OOT Small Key (Spirit Temple)",
           "Small Key (Spirit Temple)"
         ],
         "PriceDataNames": []
@@ -18169,7 +17962,7 @@
     {
       "ID": "OOT_SMALL_KEY_WATER",
       "Name": "Small Key (Water Temple)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 5,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18181,7 +17974,6 @@
         ],
         "GossipHintNames": [
           "OOT_SMALL_KEY_WATER",
-          "OOT Small Key (Water Temple)",
           "Small Key (Water Temple)"
         ],
         "PriceDataNames": []
@@ -18190,7 +17982,7 @@
     {
       "ID": "OOT_SONG_EPONA",
       "Name": "Epona's Song (OOT)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18202,7 +17994,6 @@
         ],
         "GossipHintNames": [
           "OOT_SONG_EPONA",
-          "OOT Epona's Song (OOT)",
           "Epona's Song (OOT)"
         ],
         "PriceDataNames": []
@@ -18211,7 +18002,7 @@
     {
       "ID": "OOT_SONG_SARIA",
       "Name": "Saria's Song",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18223,7 +18014,6 @@
         ],
         "GossipHintNames": [
           "OOT_SONG_SARIA",
-          "OOT Saria's Song",
           "Saria's Song"
         ],
         "PriceDataNames": []
@@ -18232,7 +18022,7 @@
     {
       "ID": "OOT_SONG_STORMS",
       "Name": "Song of Storms (OOT)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18244,7 +18034,6 @@
         ],
         "GossipHintNames": [
           "OOT_SONG_STORMS",
-          "OOT Song of Storms (OOT)",
           "Song of Storms (OOT)"
         ],
         "PriceDataNames": []
@@ -18253,7 +18042,7 @@
     {
       "ID": "OOT_SONG_SUN",
       "Name": "Sun's Song",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18265,7 +18054,6 @@
         ],
         "GossipHintNames": [
           "OOT_SONG_SUN",
-          "OOT Sun's Song",
           "Sun's Song"
         ],
         "PriceDataNames": []
@@ -18274,7 +18062,7 @@
     {
       "ID": "OOT_SONG_TIME",
       "Name": "Song of Time (OOT)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18286,7 +18074,6 @@
         ],
         "GossipHintNames": [
           "OOT_SONG_TIME",
-          "OOT Song of Time (OOT)",
           "Song of Time (OOT)"
         ],
         "PriceDataNames": []
@@ -18295,7 +18082,7 @@
     {
       "ID": "OOT_SONG_TP_FIRE",
       "Name": "Bolero of Fire",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18307,7 +18094,6 @@
         ],
         "GossipHintNames": [
           "OOT_SONG_TP_FIRE",
-          "OOT Bolero of Fire",
           "Bolero of Fire"
         ],
         "PriceDataNames": []
@@ -18316,7 +18102,7 @@
     {
       "ID": "OOT_SONG_TP_FOREST",
       "Name": "Minuet of Forest",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18328,7 +18114,6 @@
         ],
         "GossipHintNames": [
           "OOT_SONG_TP_FOREST",
-          "OOT Minuet of Forest",
           "Minuet of Forest"
         ],
         "PriceDataNames": []
@@ -18337,7 +18122,7 @@
     {
       "ID": "OOT_SONG_TP_LIGHT",
       "Name": "Prelude of Light",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18349,7 +18134,6 @@
         ],
         "GossipHintNames": [
           "OOT_SONG_TP_LIGHT",
-          "OOT Prelude of Light",
           "Prelude of Light"
         ],
         "PriceDataNames": []
@@ -18358,7 +18142,7 @@
     {
       "ID": "OOT_SONG_TP_SHADOW",
       "Name": "Nocturne of Shadow",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18370,7 +18154,6 @@
         ],
         "GossipHintNames": [
           "OOT_SONG_TP_SHADOW",
-          "OOT Nocturne of Shadow",
           "Nocturne of Shadow"
         ],
         "PriceDataNames": []
@@ -18379,7 +18162,7 @@
     {
       "ID": "OOT_SONG_TP_SPIRIT",
       "Name": "Requiem of Spirit",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18391,7 +18174,6 @@
         ],
         "GossipHintNames": [
           "OOT_SONG_TP_SPIRIT",
-          "OOT Requiem of Spirit",
           "Requiem of Spirit"
         ],
         "PriceDataNames": []
@@ -18400,7 +18182,7 @@
     {
       "ID": "OOT_SONG_TP_WATER",
       "Name": "Serenade of Water",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18412,7 +18194,6 @@
         ],
         "GossipHintNames": [
           "OOT_SONG_TP_WATER",
-          "OOT Serenade of Water",
           "Serenade of Water"
         ],
         "PriceDataNames": []
@@ -18421,7 +18202,7 @@
     {
       "ID": "OOT_SONG_ZELDA",
       "Name": "Zelda's Lullaby",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18433,7 +18214,6 @@
         ],
         "GossipHintNames": [
           "OOT_SONG_ZELDA",
-          "OOT Zelda's Lullaby",
           "Zelda's Lullaby"
         ],
         "PriceDataNames": []
@@ -18442,7 +18222,7 @@
     {
       "ID": "OOT_SPELL_FIRE",
       "Name": "Din's Fire",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18454,7 +18234,6 @@
         ],
         "GossipHintNames": [
           "OOT_SPELL_FIRE",
-          "OOT Din's Fire",
           "Din's Fire"
         ],
         "PriceDataNames": []
@@ -18463,7 +18242,7 @@
     {
       "ID": "OOT_SPELL_LOVE",
       "Name": "Nayru's Love",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18475,7 +18254,6 @@
         ],
         "GossipHintNames": [
           "OOT_SPELL_LOVE",
-          "OOT Nayru's Love",
           "Nayru's Love"
         ],
         "PriceDataNames": []
@@ -18484,7 +18262,7 @@
     {
       "ID": "OOT_SPELL_WIND",
       "Name": "Farore's Wind",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18496,7 +18274,6 @@
         ],
         "GossipHintNames": [
           "OOT_SPELL_WIND",
-          "OOT Farore's Wind",
           "Farore's Wind"
         ],
         "PriceDataNames": []
@@ -18505,7 +18282,7 @@
     {
       "ID": "OOT_STICK_UPGRADE",
       "Name": "Deku Stick Upgrade",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18517,7 +18294,6 @@
         ],
         "GossipHintNames": [
           "OOT_STICK_UPGRADE",
-          "OOT Deku Stick Upgrade",
           "Deku Stick Upgrade"
         ],
         "PriceDataNames": []
@@ -18526,7 +18302,7 @@
     {
       "ID": "OOT_STONE_EMERALD",
       "Name": "Kokiri Emerald",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18538,7 +18314,6 @@
         ],
         "GossipHintNames": [
           "OOT_STONE_EMERALD",
-          "OOT Kokiri Emerald",
           "Kokiri Emerald"
         ],
         "PriceDataNames": []
@@ -18547,7 +18322,7 @@
     {
       "ID": "OOT_STONE_OF_AGONY",
       "Name": "Stone of Agony",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18559,7 +18334,6 @@
         ],
         "GossipHintNames": [
           "OOT_STONE_OF_AGONY",
-          "OOT Stone of Agony",
           "Stone of Agony"
         ],
         "PriceDataNames": []
@@ -18568,7 +18342,7 @@
     {
       "ID": "OOT_STONE_RUBY",
       "Name": "Goron Ruby",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18580,7 +18354,6 @@
         ],
         "GossipHintNames": [
           "OOT_STONE_RUBY",
-          "OOT Goron Ruby",
           "Goron Ruby"
         ],
         "PriceDataNames": []
@@ -18589,7 +18362,7 @@
     {
       "ID": "OOT_STONE_SAPPHIRE",
       "Name": "Zora Sapphire",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18601,7 +18374,6 @@
         ],
         "GossipHintNames": [
           "OOT_STONE_SAPPHIRE",
-          "OOT Zora Sapphire",
           "Zora Sapphire"
         ],
         "PriceDataNames": []
@@ -18610,7 +18382,7 @@
     {
       "ID": "OOT_STRENGTH",
       "Name": "Progressive Strength",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 3,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18622,7 +18394,6 @@
         ],
         "GossipHintNames": [
           "OOT_STRENGTH",
-          "OOT Progressive Strength",
           "Progressive Strength"
         ],
         "PriceDataNames": []
@@ -18631,7 +18402,7 @@
     {
       "ID": "OOT_SWORD_GORON",
       "Name": "Progressive Goron Sword",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18643,7 +18414,6 @@
         ],
         "GossipHintNames": [
           "OOT_SWORD_GORON",
-          "OOT Progressive Goron Sword",
           "Progressive Goron Sword"
         ],
         "PriceDataNames": []
@@ -18652,7 +18422,7 @@
     {
       "ID": "OOT_SWORD_KOKIRI",
       "Name": "Kokiri Sword (OOT)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18664,7 +18434,6 @@
         ],
         "GossipHintNames": [
           "OOT_SWORD_KOKIRI",
-          "OOT Kokiri Sword (OOT)",
           "Kokiri Sword (OOT)"
         ],
         "PriceDataNames": []
@@ -18673,7 +18442,7 @@
     {
       "ID": "OOT_SWORD_MASTER",
       "Name": "Master Sword",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18685,7 +18454,6 @@
         ],
         "GossipHintNames": [
           "OOT_SWORD_MASTER",
-          "OOT Master Sword",
           "Master Sword"
         ],
         "PriceDataNames": []
@@ -18706,7 +18474,6 @@
         ],
         "GossipHintNames": [
           "OOT_TUNIC_GORON",
-          "OOT Goron Tunic",
           "Goron Tunic"
         ],
         "PriceDataNames": []
@@ -18727,7 +18494,6 @@
         ],
         "GossipHintNames": [
           "OOT_TUNIC_ZORA",
-          "OOT Zora Tunic",
           "Zora Tunic"
         ],
         "PriceDataNames": []
@@ -18736,7 +18502,7 @@
     {
       "ID": "OOT_WALLET",
       "Name": "Progressive Wallet (OOT)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 3,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18748,7 +18514,6 @@
         ],
         "GossipHintNames": [
           "OOT_WALLET",
-          "OOT Progressive Wallet (OOT)",
           "Progressive Wallet (OOT)"
         ],
         "PriceDataNames": []
@@ -18757,7 +18522,7 @@
     {
       "ID": "OOT_ZELDA_LETTER",
       "Name": "Zelda's Letter",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18769,7 +18534,6 @@
         ],
         "GossipHintNames": [
           "OOT_ZELDA_LETTER",
-          "OOT Zelda's Letter",
           "Zelda's Letter"
         ],
         "PriceDataNames": []
@@ -18778,7 +18542,7 @@
     {
       "ID": "OOT_SWORD",
       "Name": "Progressive Sword (OOT)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 4,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18790,7 +18554,6 @@
         ],
         "GossipHintNames": [
           "OOT_SWORD",
-          "OOT Progressive Sword (OOT)",
           "Progressive Sword (OOT)"
         ],
         "PriceDataNames": []
@@ -18811,8 +18574,27 @@
         ],
         "GossipHintNames": [
           "OOT_SHIELD",
-          "OOT Progressive Shield (OOT)",
           "Progressive Shield (OOT)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_BOSS_KEY_GANON",
+      "Name": "Boss Key (Ganon)",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_BOSS_KEY_GANON",
+          "Boss Key (Ganon)"
+        ],
+        "GossipHintNames": [
+          "OOT_BOSS_KEY_GANON",
+          "Boss Key (Ganon)"
         ],
         "PriceDataNames": []
       }
@@ -18832,7 +18614,6 @@
         ],
         "GossipHintNames": [
           "MM_SHIELD",
-          "MM Progressive Shield (MM)",
           "Progressive Shield (MM)"
         ],
         "PriceDataNames": []
@@ -18841,7 +18622,7 @@
     {
       "ID": "MM_SONG_GORON",
       "Name": "Goron's Lullaby",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18853,15 +18634,14 @@
         ],
         "GossipHintNames": [
           "MM_SONG_GORON",
-          "MM Goron's Lullaby",
           "Goron's Lullaby"
         ],
         "PriceDataNames": []
       }
     },
     {
-      "ID": "OOT_BOSS_KEY_GANON",
-      "Name": "Boss Key (Ganon)",
+      "ID": "MM_ARROWS_30",
+      "Name": "30 Arrows (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -18869,13 +18649,12 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_BOSS_KEY_GANON",
-          "Boss Key (Ganon)"
+          "MM_ARROWS_30",
+          "30 Arrows (MM)"
         ],
         "GossipHintNames": [
-          "OOT_BOSS_KEY_GANON",
-          "OOT Boss Key (Ganon)",
-          "Boss Key (Ganon)"
+          "MM_ARROWS_30",
+          "30 Arrows (MM)"
         ],
         "PriceDataNames": []
       }

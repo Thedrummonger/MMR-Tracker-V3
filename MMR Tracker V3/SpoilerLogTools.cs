@@ -6,6 +6,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static FParsec.ErrorMessage;
+using static MMR_Tracker_V3.TrackerObjects.HintData;
+using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
 namespace MMR_Tracker_V3
 {
@@ -59,7 +62,7 @@ namespace MMR_Tracker_V3
                 //case "PMR":
                 case "OOTMM":
                     Instance.SpoilerLog = new LogicObjects.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
-                    OtherGames.OOTMMRCOMBO.ReadAndParseData.readAndApplySpoilerLog(Instance);
+                    OtherGames.OOTMMRCOMBO.OOTMMSpoilerParser.readAndApplySpoilerLog(Instance);
                     Instance.EntrancePool.IsEntranceRando = Instance.EntrancePool.CheckForRandomEntrances();
                     return true;
                 case "MMR":
@@ -425,6 +428,77 @@ namespace MMR_Tracker_V3
                     continue;
                 }
                 i.SpoilerHintText = MatchingLocation.First().Value;
+                ParseHintData(instance, i);
+            }
+        }
+
+        public static void ParseHintData(LogicObjects.TrackerInstance instance, HintObject Hint)
+        {
+            if (Hint.SpoilerHintText is null) { return; }
+            List<string> MessageStartSentences = new List<string>(new string[]
+            {
+                "They say",
+                "I hear",
+                "It seems",
+                "Apparently,",
+                "Apparently",
+                "It appears"
+            });
+
+            List<string> MessageMidSentences = new List<string>(new string[]
+            {
+                "leads to",
+                "yields",
+                "brings",
+                "holds",
+                "conceals",
+                "possesses"
+            });
+            string CleanedHint = Hint.SpoilerHintText.Replace("...", "");
+            foreach (var i in MessageMidSentences)
+            {
+                if (CleanedHint.Contains(i)) { CleanedHint = CleanedHint.Replace(i, "|"); }
+            }
+            foreach (var i in MessageStartSentences)
+            {
+                if (CleanedHint.Contains(i)) { CleanedHint = CleanedHint.Replace(i, ""); }
+            }
+
+            Debug.WriteLine($"------------------------------------------------");
+            Debug.WriteLine($"Parsing Gossip Hint{CleanedHint}");
+
+            var messageSegments = CleanedHint.Split('|').Select(x => x.Trim()).ToArray();
+            string Location = messageSegments[0];
+            string Item = messageSegments[1];
+
+            if (Item.StartsWith("a ")) { Item = Item[2..].Trim(); }
+            if (Item.StartsWith("an ")) { Item = Item[3..].Trim(); }
+            if (Item.StartsWith("the ")) { Item = Item[4..].Trim(); }
+
+            Debug.WriteLine($"Hint claims [{Location}] contains [{Item}]");
+
+            var ValidItems = instance.ItemPool
+            .Where(x => x.Value.GetDictEntry(instance)?.GetName(instance) != null)
+            .Select(x => x.Value)
+            .Where(x => x.GetDictEntry(instance).GetName(instance) == Item || x.GetDictEntry(instance).SpoilerData.SpoilerLogNames.Contains(Item));
+            var ValidLocations = instance.LocationPool
+            .Where(x => x.Value.GetDictEntry(instance)?.GetName(instance) != null)
+            .Select(x => x.Value)
+            .Where(x => x.GetDictEntry(instance).GetName(instance) == Location || x.GetDictEntry(instance).SpoilerData.SpoilerLogNames.Contains(Location));
+            Debug.WriteLine($"{ValidLocations.Count()} Locations found with the name [{Location}]");
+            Debug.WriteLine($"{ValidItems.Count()} Items found with the name [{Item}]");
+
+            foreach (var l in ValidLocations)
+            {
+                foreach (var i in ValidItems)
+                {
+                    if (l.Randomizeditem.SpoilerLogGivenItem == i.Id)
+                    {
+                        Debug.WriteLine($"Location [{l.ID}] Contained [{i.Id}]");
+                        Hint.ParsedHintData[l.ID] = i.Id;
+                        return;
+                    }
+                }
             }
         }
 

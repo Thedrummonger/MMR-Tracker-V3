@@ -1,10 +1,12 @@
 ﻿using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static MMR_Tracker_V3.TrackerObjects.LocationData;
 
 namespace MMR_Tracker_V3
 {
@@ -42,35 +44,28 @@ namespace MMR_Tracker_V3
             public List<ItemData.ItemObject> OnlineObtainedItems { get; set; } = new List<ItemData.ItemObject>();
         }
 
-        public static bool CheckSelectedItems(IEnumerable<object> Items, MiscData.CheckState checkState, MiscData.InstanceContainer instanceContainer, Func<IEnumerable<object>, LogicObjects.TrackerInstance, bool> CheckUnassignedLocations, Func<IEnumerable<object>, LogicObjects.TrackerInstance, bool> CheckUnassignedVariable, bool EnforceMarkAction = false, Stopwatch CodeTimer = null)
+        public static bool CheckSelectedItems(IEnumerable<object> Items, MiscData.CheckState checkState, MiscData.InstanceContainer instanceContainer, Func<IEnumerable<object>, LogicObjects.TrackerInstance, bool> CheckUnassignedLocations, Func<IEnumerable<object>, LogicObjects.TrackerInstance, bool> CheckUnassignedVariable, bool EnforceMarkAction = false)
         {
-            Debug.WriteLine("Checking Item-----------------------------");
-            Stopwatch FunctionTime = new Stopwatch();
-            Utility.TimeCodeExecution(FunctionTime);
-
             bool ChangesMade = false;
-            Utility.TimeCodeExecution(FunctionTime, "Saving Current State", 1);
 
             //Search for valid Object types in the list of selected Objects and sort them into lists
-            IEnumerable<LocationData.LocationObject> locationObjects = Items.Where(x => x is LocationData.LocationObject).Select(x => x as LocationData.LocationObject);
-            locationObjects = locationObjects.Concat(Items.Where(x => x is LocationData.LocationProxy).Select(x => (x as LocationData.LocationProxy).GetReferenceLocation(instanceContainer.Instance)));
+            IEnumerable<LocationObject> locationObjects = Items.Where(x => x is LocationObject).Select(x => x as LocationObject);
+            locationObjects = locationObjects.Concat(Items.Where(x => x is LocationProxy).Select(x => (x as LocationProxy).GetReferenceLocation(instanceContainer.Instance)));
             locationObjects = locationObjects.Distinct();
             IEnumerable<EntranceData.EntranceRandoExit> ExitObjects = Items.Where(x => x is EntranceData.EntranceRandoExit).Select(x => x as EntranceData.EntranceRandoExit);
             IEnumerable<OptionData.TrackerOption> OptionObjects = Items.Where(x => x is OptionData.TrackerOption).Select(x => x as OptionData.TrackerOption);
-            Utility.TimeCodeExecution(FunctionTime, "Sorting Selected Items", 1);
 
             //If we are performing an uncheck action there should be no unchecked locations in the list and even if there are nothing will be done to them anyway
             //This check is neccessary for the "UnMark Only" action and also provides a bit more efficiency.
-            IEnumerable<LocationData.LocationObject> UncheckedlocationObjects = (checkState == MiscData.CheckState.Unchecked) ?
-                new List<LocationData.LocationObject>() :
+            IEnumerable<LocationObject> UncheckedlocationObjects = (checkState == MiscData.CheckState.Unchecked) ?
+                new List<LocationObject>() :
                 locationObjects.Where(x => x.CheckState == MiscData.CheckState.Unchecked);
             IEnumerable<EntranceData.EntranceRandoExit> UncheckedExitObjects = (checkState == MiscData.CheckState.Unchecked) ?
                 new List<EntranceData.EntranceRandoExit>() :
                 ExitObjects.Where(x => x.CheckState == MiscData.CheckState.Unchecked);
-            Utility.TimeCodeExecution(FunctionTime, "Getting Unchecked Entries", 1);
 
             //For any Locations with no randomized item, check if an item can be automatically assigned.
-            foreach (LocationData.LocationObject LocationObject in UncheckedlocationObjects)
+            foreach (LocationObject LocationObject in UncheckedlocationObjects)
             {
                 LocationObject.Randomizeditem.Item = LocationObject.GetItemAtCheck(instanceContainer.Instance);
             }
@@ -78,7 +73,6 @@ namespace MMR_Tracker_V3
             {
                 ExitObject.DestinationExit = ExitObject.GetDestinationAtExit(instanceContainer.Instance);
             }
-            Utility.TimeCodeExecution(FunctionTime, "Checking for Randmomized item data", 1);
 
             //Get Entries that need a value manually assigned and pass them to given method to be assigned.
             IEnumerable<object> ManualChecks = UncheckedlocationObjects.Where(x => x.Randomizeditem.Item == null); //Locations with no item
@@ -86,31 +80,25 @@ namespace MMR_Tracker_V3
             ManualChecks = ManualChecks.Concat(OptionObjects.Where(x => !x.IsToggleOption())); //Non Toggle Options
             if (ManualChecks.Any())
             {
-                if (CodeTimer != null) { CodeTimer.Stop(); }
                 CheckUnassignedLocations(ManualChecks, instanceContainer.Instance);
                 ChangesMade = true;
-                if (CodeTimer != null) { CodeTimer.Start(); }
             }
-            Utility.TimeCodeExecution(FunctionTime, "Manual Check Form", 1);
 
             //Options======================================
             foreach (var i in OptionObjects.Where(x => x.IsToggleOption())) { i.ToggleOption(); ChangesMade = true; }
-            Utility.TimeCodeExecution(FunctionTime, "Toggling Options", 1);
             //Items======================================
-            foreach (LocationData.LocationObject LocationObject in locationObjects)
+            foreach (LocationObject LocationObject in locationObjects)
             {
                 //When we mark a location, the action is always sent as Marked, but if the location is already marked we should instead Unchecked it unless EnforceMarkAction is true.
                 var Action = (checkState == MiscData.CheckState.Marked && LocationObject.CheckState == MiscData.CheckState.Marked) && !EnforceMarkAction ? MiscData.CheckState.Unchecked : checkState;
                 if (LocationObject.ToggleChecked(Action, instanceContainer.Instance)) { ChangesMade = true; }
             }
-            Utility.TimeCodeExecution(FunctionTime, "Checking Locations", 1);
             //Exits======================================
             foreach (EntranceData.EntranceRandoExit ExitObject in ExitObjects)
             {
                 var Action = (checkState == MiscData.CheckState.Marked && ExitObject.CheckState == MiscData.CheckState.Marked) && !EnforceMarkAction ? MiscData.CheckState.Unchecked : checkState;
                 if (ExitObject.ToggleExitChecked(Action, instanceContainer.Instance)) { ChangesMade = true; }
             }
-            Utility.TimeCodeExecution(FunctionTime, "Checking Entrances", 1);
 
             //Hints======================================
             List<HintData.HintObject> HintObjects = Items.Where(x => x is HintData.HintObject).Select(x => x as HintData.HintObject).ToList();
@@ -123,10 +111,8 @@ namespace MMR_Tracker_V3
             UncheckedVariableObjects = UncheckedVariableObjects.Concat(VariableObjects.Where(x => x.Value is not bool));
             if (UncheckedVariableObjects.Any())
             {
-                if (CodeTimer != null) { CodeTimer.Stop(); }
                 CheckUnassignedVariable(UncheckedVariableObjects, instanceContainer.Instance);
                 ChangesMade = true;
-                if (CodeTimer != null) { CodeTimer.Start(); }
             }
             foreach (var i in VariableObjects.Where(x => x.Value is bool)) { i.Value = !i.Value; ChangesMade = true; }
             foreach (HintData.HintObject hintObject in HintObjects)
@@ -135,115 +121,43 @@ namespace MMR_Tracker_V3
                 var CheckAction = (checkState == MiscData.CheckState.Marked && hintObject.CheckState == MiscData.CheckState.Marked) && !EnforceMarkAction ? MiscData.CheckState.Unchecked : checkState;
                 hintObject.CheckState = CheckAction;
                 hintObject.HintText = CheckAction == MiscData.CheckState.Unchecked ? null : hintObject.HintText;
-                if (CheckAction == MiscData.CheckState.Checked)
+                if (instanceContainer.Instance.StaticOptions.OptionFile.CheckHintMarkItem && CheckAction == MiscData.CheckState.Checked)
                 {
-                    TryMarkHintedCheck(hintObject, instanceContainer, out LocationData.LocationObject Location, out ItemData.ItemObject Item);
-                    if (instanceContainer.Instance.StaticOptions.OptionFile.CheckHintMarkItem && Location is not null && Item is not null && Location.CheckState == MiscData.CheckState.Unchecked)
-                    {
-                        Location.Randomizeditem.Item = Location.GetItemAtCheck(instanceContainer.Instance);
-                        if (Location.ToggleChecked(MiscData.CheckState.Marked, instanceContainer.Instance)) { ChangesMade = true; }
-                    }
+                    if (TryMarkHintedCheck(hintObject, instanceContainer)) { ChangesMade = true; }
                 }
             }
-            Utility.TimeCodeExecution(FunctionTime, "Setting Hints", 1);
 
             //Cleanup======================================
 
             if (ChangesMade && checkState != MiscData.CheckState.Marked)
             {
                 instanceContainer.logicCalculation.CalculateLogic(checkState);
-                Utility.TimeCodeExecution(FunctionTime, "---TOTAL Calculating Logic", 1);
                 if (checkState == MiscData.CheckState.Checked && instanceContainer.Instance.StaticOptions.AutoCheckCoupleEntrances && !instanceContainer.Instance.StaticOptions.DecoupleEntrances && instanceContainer.Instance.CheckEntrancePair())
                 {
                     instanceContainer.logicCalculation.CalculateLogic(checkState);
-                    Utility.TimeCodeExecution(FunctionTime, "Chcking Entrance Pairs", 1);
                 }
             }
             return ChangesMade;
         }
 
-        private static void TryMarkHintedCheck(HintData.HintObject hintObject, MiscData.InstanceContainer instanceContainer, out LocationData.LocationObject LocationObj, out ItemData.ItemObject ItemObj)
+        private static bool TryMarkHintedCheck(HintData.HintObject hintObject, MiscData.InstanceContainer instanceContainer)
         {
-            LocationObj = null;
-            ItemObj = null;
-            Debug.WriteLine(instanceContainer.Instance.LogicDictionary.GameCode);
-            if (instanceContainer.Instance.LogicDictionary.GameCode != "MMR") { return; }
-            List<string> MessageStartSentences = new List<string>(new string[]
+            bool ChangesMade = false;
+            foreach(var i in hintObject.ParsedHintData)
             {
-                "They say",
-                "I hear",
-                "It seems",
-                "Apparently,",
-                "Apparently",
-                "It appears"
-            });
-
-            List<string> MessageMidSentences = new List<string>(new string[]
-            {
-                "leads to",
-                "yields",
-                "brings",
-                "holds",
-                "conceals",
-                "possesses"
-            });
-
-            string CleanedHint = hintObject.HintText.Replace("...", "");
-            foreach (var i in MessageMidSentences)
-            {
-                if (CleanedHint.Contains(i)) { CleanedHint = CleanedHint.Replace(i, "|"); }
-            }
-            foreach (var i in MessageStartSentences)
-            {
-                if (CleanedHint.Contains(i)) { CleanedHint = CleanedHint.Replace(i, ""); }
-            }
-
-            Debug.WriteLine($"------------------------------------------------");
-            Debug.WriteLine($"Parsing Gossip Hint{CleanedHint}");
-
-            var messageSegments = CleanedHint.Split('|').Select(x => x.Trim()).ToArray();
-            string Location = messageSegments[0];
-            string Item = messageSegments[1];
-
-            if (Item.StartsWith("a ")) { Item = Item[2..].Trim(); }
-            if (Item.StartsWith("an ")) { Item = Item[3..].Trim(); }
-            if (Item.StartsWith("the ")) { Item = Item[4..].Trim(); }
-
-            Debug.WriteLine($"Hint claims [{Location}] contains [{Item}]");
-
-            var ValidItems = instanceContainer.Instance.ItemPool
-                .Where(x => x.Value.GetDictEntry(instanceContainer.Instance)?.GetName(instanceContainer.Instance) != null)
-                .Select(x => x.Value)
-                .Where(x => x.GetDictEntry(instanceContainer.Instance).GetName(instanceContainer.Instance) == Item || x.GetDictEntry(instanceContainer.Instance).SpoilerData.SpoilerLogNames.Contains(Item));
-
-
-            var ValidLocations= instanceContainer.Instance.LocationPool
-                .Where(x => x.Value.GetDictEntry(instanceContainer.Instance)?.GetName(instanceContainer.Instance) != null)
-                .Select(x => x.Value)
-                .Where(x => x.GetDictEntry(instanceContainer.Instance).GetName(instanceContainer.Instance) == Location || x.GetDictEntry(instanceContainer.Instance).SpoilerData.SpoilerLogNames.Contains(Location));
-
-            Debug.WriteLine($"{ValidLocations.Count()} Locations found with the name [{Location}]");
-            Debug.WriteLine($"{ValidItems.Count()} Items found with the name [{Item}]");
-
-            foreach(var l in ValidLocations)
-            {
-                foreach(var i in ValidItems)
+                var Location = instanceContainer.Instance.GetLocationByID(i.Key);
+                var Item = instanceContainer.Instance.GetItemByID(i.Value);
+                if (Location is not null && Item is not null && Location.CheckState == MiscData.CheckState.Unchecked && !string.IsNullOrWhiteSpace(Location.Randomizeditem.SpoilerLogGivenItem))
                 {
-                    if (l.Randomizeditem.SpoilerLogGivenItem == i.Id)
-                    {
-                        Debug.WriteLine($"Location [{l.ID}] Contained [{i.Id}]");
-                        LocationObj = l;
-                        ItemObj = i;
-                        return;
-                    }
+                    Location.Randomizeditem.Item = Location.GetItemAtCheck(instanceContainer.Instance);
+                    if (Location.ToggleChecked(MiscData.CheckState.Marked, instanceContainer.Instance)) { ChangesMade = true; }
                 }
             }
+            return ChangesMade;
         }
 
         public static DataSets PopulateDataSets(LogicObjects.TrackerInstance instance)
         {
-            Stopwatch stopwatch = new Stopwatch();
-            Utility.TimeCodeExecution(stopwatch);
             DataSets dataSets = new DataSets();
 
             dataSets.UncheckedLocations = instance.LocationPool.Values.Where(x => x.CheckState == MiscData.CheckState.Unchecked).ToList();
@@ -275,7 +189,6 @@ namespace MMR_Tracker_V3
             dataSets.LocalObtainedItems = instance.ItemPool.Values.Where(x => x.AmountAquiredLocally > 0).ToList();
             dataSets.CurrentStartingItems = instance.ItemPool.Values.Where(x => x.AmountInStartingpool > 0).ToList();
             dataSets.OnlineObtainedItems = instance.ItemPool.Values.Where(x => x.AmountAquiredOnline.Any(x => x.Value > 0)).ToList();
-            Utility.TimeCodeExecution(stopwatch, "Get Data Sets", -1);
             return dataSets;
         }
 

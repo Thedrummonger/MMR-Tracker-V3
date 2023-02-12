@@ -20,6 +20,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public bool Available { get; set; }
             public bool Starred { get; set; }
             public string HintText { get; set; }
+            public Dictionary<string, string> ParsedHintData { get; set; } = new Dictionary<string, string>();
             public string SpoilerHintText { get; set; }
             public string DisplayName { get; set; }
             public LogicObjects.ReferenceData referenceData { get; set; } = new LogicObjects.ReferenceData();
