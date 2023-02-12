@@ -168,15 +168,15 @@ namespace MMR_Tracker_V3
             Instance.PriceData.WalletEntries = Utility.GetAllWalletLogicEntries(Instance);
             Dictionary<string, Tuple<char, int>> ItemWallets = Instance.LogicDictionary.ItemList
                 .Where(x => x.WalletCapacity != null && (int)x.WalletCapacity > -1)
-                .ToDictionary(x => x.ID, x => new Tuple<char, int>(x.WalletCurrency??'*', (int)x.WalletCapacity ) );
+                .ToDictionary(x => x.ID, x => new Tuple<char, int>(x.WalletCurrency??'$', (int)x.WalletCapacity ) );
             Dictionary<string, Tuple<char, int>> MacroWallets = Instance.LogicDictionary.MacroList
                 .Where(x => x.WalletCapacity != null && (int)x.WalletCapacity > -1)
-                .ToDictionary(x => x.ID, x => new Tuple<char, int>(x.WalletCurrency??'*', (int)x.WalletCapacity));
+                .ToDictionary(x => x.ID, x => new Tuple<char, int>(x.WalletCurrency??'$', (int)x.WalletCapacity));
             Dictionary<string, Tuple<char, int>> AllWallets = ItemWallets.Concat(MacroWallets).ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
 
             foreach (var i in AllWallets)
             {
-                string AffordStringChar = (i.Value.Item1 == '*' ? "" : i.Value.Item1.ToString());
+                string AffordStringChar = i.Value.Item1.ToString();
                 string CanAffordString = $"MMRTCanAfford{AffordStringChar}{i.Value.Item2}";
                 Debug.WriteLine($"Adding Wallet {CanAffordString}");
                 Instance.MacroPool.Add(CanAffordString, new() { 
@@ -190,7 +190,7 @@ namespace MMR_Tracker_V3
                 {
                     Id = CanAffordString,
                     RequiredItems = new List<string>(),
-                    ConditionalItems = AllWallets.Where(x => x.Value.Item2 >= i.Value.Item2 && (x.Value.Item1 == '*' || x.Value.Item1 == i.Value.Item1)).Select(x => new List<string> { x.Key }).ToList()
+                    ConditionalItems = AllWallets.Where(x => x.Value.Item2 >= i.Value.Item2 && (x.Value.Item1 == i.Value.Item1)).Select(x => new List<string> { x.Key }).ToList()
                 });
             }
 

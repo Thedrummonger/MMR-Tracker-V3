@@ -226,18 +226,8 @@ namespace MMR_Tracker_V3
             public Dictionary<char, Dictionary<int, string>>  CapacityMap { get; set; } = new Dictionary<char, Dictionary<int, string>>();
             public Dictionary<int, string> GetCapacityMap(char Currency)
             {
-                if (Currency == '*') { return CapacityMap.SelectMany(kvp => kvp.Value).ToDictionary(x => x.Key, x => x.Value); }
-
-                Dictionary<int, string> SubcapacityMap = new Dictionary<int, string>();
-                if (CapacityMap.ContainsKey('*')) 
-                { 
-                    foreach(var i in CapacityMap['*']) { SubcapacityMap.Add(i.Key, i.Value); }
-                }
-                if (CapacityMap.ContainsKey(Currency))
-                {
-                    foreach (var i in CapacityMap[Currency]) { SubcapacityMap.Add(i.Key, i.Value); }
-                }
-                return CapacityMap[Currency];
+                if (CapacityMap.ContainsKey(Currency)) { return CapacityMap[Currency]; }
+                return new Dictionary<int, string>();
             }
         }
 

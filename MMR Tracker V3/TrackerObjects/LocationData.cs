@@ -31,10 +31,10 @@ namespace MMR_Tracker_V3.TrackerObjects
             public void GetPrice(out int outPrice, out char outCurrency)
             {
                 outPrice = Price??-1;
-                outCurrency = Currency??'*';
+                outCurrency = Currency??'$';
                 return;
             }
-            public void SetPrice(int inPrice, char inCurrency = '*')
+            public void SetPrice(int inPrice, char inCurrency = '$')
             {
                 Price = inPrice < 0 ? null : inPrice;
                 Currency = inCurrency;
