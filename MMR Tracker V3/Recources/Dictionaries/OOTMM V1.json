@@ -15440,6 +15440,26 @@
       }
     },
     {
+      "ID": "MM_SHIELD",
+      "Name": "Progressive Shield (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_SHIELD",
+          "Progressive Shield (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_SHIELD",
+          "Progressive Shield (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
       "ID": "MM_SHIELD_MIRROR",
       "Name": "Mirror Shield (MM)",
       "MaxAmountInWorld": 1,
@@ -15595,6 +15615,26 @@
         "GossipHintNames": [
           "MM_SONG_EPONA",
           "Epona's Song (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "MM_SONG_GORON",
+      "Name": "Goron Lullaby",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_SONG_GORON",
+          "Goron Lullaby"
+        ],
+        "GossipHintNames": [
+          "MM_SONG_GORON",
+          "Goron Lullaby"
         ],
         "PriceDataNames": []
       }
@@ -15901,7 +15941,7 @@
     },
     {
       "ID": "OOT_ARROWS_10",
-      "Name": "10 Arrows (OOT)",
+      "Name": "10 Arrows (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -15910,18 +15950,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_ARROWS_10",
-          "10 Arrows (OOT)"
+          "10 Arrows (OoT)"
         ],
         "GossipHintNames": [
           "OOT_ARROWS_10",
-          "10 Arrows (OOT)"
+          "10 Arrows (OoT)"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "OOT_ARROWS_30",
-      "Name": "30 Arrows (OOT)",
+      "Name": "30 Arrows (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -15930,18 +15970,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_ARROWS_30",
-          "30 Arrows (OOT)"
+          "30 Arrows (OoT)"
         ],
         "GossipHintNames": [
           "OOT_ARROWS_30",
-          "30 Arrows (OOT)"
+          "30 Arrows (OoT)"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "OOT_ARROWS_5",
-      "Name": "5 Arrows (OOT)",
+      "Name": "5 Arrows (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -15950,18 +15990,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_ARROWS_5",
-          "5 Arrows (OOT)"
+          "5 Arrows (OoT)"
         ],
         "GossipHintNames": [
           "OOT_ARROWS_5",
-          "5 Arrows (OOT)"
+          "5 Arrows (OoT)"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "OOT_ARROW_FIRE",
-      "Name": "Fire Arrows (OOT)",
+      "Name": "Fire Arrows (OoT)",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -15970,18 +16010,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_ARROW_FIRE",
-          "Fire Arrows (OOT)"
+          "Fire Arrows (OoT)"
         ],
         "GossipHintNames": [
           "OOT_ARROW_FIRE",
-          "Fire Arrows (OOT)"
+          "Fire Arrows (OoT)"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "OOT_ARROW_ICE",
-      "Name": "Ice Arrows (OOT)",
+      "Name": "Ice Arrows (OoT)",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -15990,18 +16030,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_ARROW_ICE",
-          "Ice Arrows (OOT)"
+          "Ice Arrows (OoT)"
         ],
         "GossipHintNames": [
           "OOT_ARROW_ICE",
-          "Ice Arrows (OOT)"
+          "Ice Arrows (OoT)"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "OOT_ARROW_LIGHT",
-      "Name": "Light Arrows (OOT)",
+      "Name": "Light Arrows (OoT)",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -16010,18 +16050,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_ARROW_LIGHT",
-          "Light Arrows (OOT)"
+          "Light Arrows (OoT)"
         ],
         "GossipHintNames": [
           "OOT_ARROW_LIGHT",
-          "Light Arrows (OOT)"
+          "Light Arrows (OoT)"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "OOT_BOMBCHU_10",
-      "Name": "10 Bombchu (OOT)",
+      "Name": "10 Bombchu (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -16030,18 +16070,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_BOMBCHU_10",
-          "10 Bombchu (OOT)"
+          "10 Bombchu (OoT)"
         ],
         "GossipHintNames": [
           "OOT_BOMBCHU_10",
-          "10 Bombchu (OOT)"
+          "10 Bombchu (OoT)"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "OOT_BOMBCHU_20",
-      "Name": "20 Bombchu (OOT)",
+      "Name": "20 Bombchu (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -16050,18 +16090,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_BOMBCHU_20",
-          "20 Bombchu (OOT)"
+          "20 Bombchu (OoT)"
         ],
         "GossipHintNames": [
           "OOT_BOMBCHU_20",
-          "20 Bombchu (OOT)"
+          "20 Bombchu (OoT)"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "OOT_BOMBCHU_5",
-      "Name": "5 Bombchu (OOT)",
+      "Name": "5 Bombchu (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -16070,11 +16110,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_BOMBCHU_5",
-          "5 Bombchu (OOT)"
+          "5 Bombchu (OoT)"
         ],
         "GossipHintNames": [
           "OOT_BOMBCHU_5",
-          "5 Bombchu (OOT)"
+          "5 Bombchu (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -16101,7 +16141,7 @@
     },
     {
       "ID": "OOT_BOMBS_10",
-      "Name": "10 Bombs (OOT)",
+      "Name": "10 Bombs (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -16110,18 +16150,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_BOMBS_10",
-          "10 Bombs (OOT)"
+          "10 Bombs (OoT)"
         ],
         "GossipHintNames": [
           "OOT_BOMBS_10",
-          "10 Bombs (OOT)"
+          "10 Bombs (OoT)"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "OOT_BOMBS_20",
-      "Name": "20 Bombs (OOT)",
+      "Name": "20 Bombs (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -16130,18 +16170,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_BOMBS_20",
-          "20 Bombs (OOT)"
+          "20 Bombs (OoT)"
         ],
         "GossipHintNames": [
           "OOT_BOMBS_20",
-          "20 Bombs (OOT)"
+          "20 Bombs (OoT)"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "OOT_BOMBS_5",
-      "Name": "5 Bombs (OOT)",
+      "Name": "5 Bombs (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -16150,11 +16190,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_BOMBS_5",
-          "5 Bombs (OOT)"
+          "5 Bombs (OoT)"
         ],
         "GossipHintNames": [
           "OOT_BOMBS_5",
-          "5 Bombs (OOT)"
+          "5 Bombs (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -16321,7 +16361,7 @@
     },
     {
       "ID": "OOT_BOW",
-      "Name": "Bow (OOT)",
+      "Name": "Bow (OoT)",
       "MaxAmountInWorld": 3,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -16330,11 +16370,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_BOW",
-          "Bow (OOT)"
+          "Bow (OoT)"
         ],
         "GossipHintNames": [
           "OOT_BOW",
-          "Bow (OOT)"
+          "Bow (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -16621,7 +16661,7 @@
     },
     {
       "ID": "OOT_DEFENSE_UPGRADE",
-      "Name": "Double Defense (OOT)",
+      "Name": "Double Defense (OoT)",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -16630,19 +16670,19 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_DEFENSE_UPGRADE",
-          "Double Defense (OOT)"
+          "Double Defense (OoT)"
         ],
         "GossipHintNames": [
           "OOT_DEFENSE_UPGRADE",
-          "Double Defense (OOT)"
+          "Double Defense (OoT)"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "OOT_EMPTY_BOTTLE",
-      "Name": "Bottle - Empty (OOT)",
-      "MaxAmountInWorld": 1,
+      "Name": "Bottle - Empty (OoT)",
+      "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16650,11 +16690,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_EMPTY_BOTTLE",
-          "Bottle - Empty (OOT)"
+          "Bottle - Empty (OoT)"
         ],
         "GossipHintNames": [
           "OOT_EMPTY_BOTTLE",
-          "Bottle - Empty (OOT)"
+          "Bottle - Empty (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -16761,7 +16801,7 @@
     },
     {
       "ID": "OOT_HEART_CONTAINER",
-      "Name": "Heart Container (OOT)",
+      "Name": "Heart Container (OoT)",
       "MaxAmountInWorld": 8,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -16770,18 +16810,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_HEART_CONTAINER",
-          "Heart Container (OOT)"
+          "Heart Container (OoT)"
         ],
         "GossipHintNames": [
           "OOT_HEART_CONTAINER",
-          "Heart Container (OOT)"
+          "Heart Container (OoT)"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "OOT_HEART_PIECE",
-      "Name": "Piece of Heart (OOT)",
+      "Name": "Piece of Heart (OoT)",
       "MaxAmountInWorld": 40,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -16790,18 +16830,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_HEART_PIECE",
-          "Piece of Heart (OOT)"
+          "Piece of Heart (OoT)"
         ],
         "GossipHintNames": [
           "OOT_HEART_PIECE",
-          "Piece of Heart (OOT)"
+          "Piece of Heart (OoT)"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "OOT_HOOKSHOT",
-      "Name": "Progressive Hookshot (OOT)",
+      "Name": "Progressive Hookshot (OoT)",
       "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -16810,18 +16850,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_HOOKSHOT",
-          "Progressive Hookshot (OOT)"
+          "Progressive Hookshot (OoT)"
         ],
         "GossipHintNames": [
           "OOT_HOOKSHOT",
-          "Progressive Hookshot (OOT)"
+          "Progressive Hookshot (OoT)"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "OOT_ICE_TRAP",
-      "Name": "Ice Trap (OOT)",
+      "Name": "Ice Trap (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -16830,18 +16870,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_ICE_TRAP",
-          "Ice Trap (OOT)"
+          "Ice Trap (OoT)"
         ],
         "GossipHintNames": [
           "OOT_ICE_TRAP",
-          "Ice Trap (OOT)"
+          "Ice Trap (OoT)"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "OOT_LENS",
-      "Name": "Lens of Truth (OOT)",
+      "Name": "Lens of Truth (OoT)",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -16850,18 +16890,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_LENS",
-          "Lens of Truth (OOT)"
+          "Lens of Truth (OoT)"
         ],
         "GossipHintNames": [
           "OOT_LENS",
-          "Lens of Truth (OOT)"
+          "Lens of Truth (OoT)"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "OOT_MAGIC_BEAN",
-      "Name": "Magic Beans (OOT)",
+      "Name": "Magic Beans (OoT)",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -16870,18 +16910,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_MAGIC_BEAN",
-          "Magic Beans (OOT)"
+          "Magic Beans (OoT)"
         ],
         "GossipHintNames": [
           "OOT_MAGIC_BEAN",
-          "Magic Beans (OOT)"
+          "Magic Beans (OoT)"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "OOT_MAGIC_UPGRADE",
-      "Name": "Magic Upgrade (OOT)",
+      "Name": "Magic Upgrade (OoT)",
       "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -16890,11 +16930,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_MAGIC_UPGRADE",
-          "Magic Upgrade (OOT)"
+          "Magic Upgrade (OoT)"
         ],
         "GossipHintNames": [
           "OOT_MAGIC_UPGRADE",
-          "Magic Upgrade (OOT)"
+          "Magic Upgrade (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -17101,7 +17141,7 @@
     },
     {
       "ID": "OOT_MASK_BUNNY",
-      "Name": "Bunny Hood (OOT)",
+      "Name": "Bunny Hood (OoT)",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -17110,11 +17150,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_MASK_BUNNY",
-          "Bunny Hood (OOT)"
+          "Bunny Hood (OoT)"
         ],
         "GossipHintNames": [
           "OOT_MASK_BUNNY",
-          "Bunny Hood (OOT)"
+          "Bunny Hood (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -17141,7 +17181,7 @@
     },
     {
       "ID": "OOT_MASK_GORON",
-      "Name": "Goron Mask (OOT)",
+      "Name": "Goron Mask (OoT)",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -17150,18 +17190,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_MASK_GORON",
-          "Goron Mask (OOT)"
+          "Goron Mask (OoT)"
         ],
         "GossipHintNames": [
           "OOT_MASK_GORON",
-          "Goron Mask (OOT)"
+          "Goron Mask (OoT)"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "OOT_MASK_KEATON",
-      "Name": "Keaton Mask (OOT)",
+      "Name": "Keaton Mask (OoT)",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -17170,11 +17210,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_MASK_KEATON",
-          "Keaton Mask (OOT)"
+          "Keaton Mask (OoT)"
         ],
         "GossipHintNames": [
           "OOT_MASK_KEATON",
-          "Keaton Mask (OOT)"
+          "Keaton Mask (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -17221,7 +17261,7 @@
     },
     {
       "ID": "OOT_MASK_TRUTH",
-      "Name": "Mask of Truth (OOT)",
+      "Name": "Mask of Truth (OoT)",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -17230,18 +17270,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_MASK_TRUTH",
-          "Mask of Truth (OOT)"
+          "Mask of Truth (OoT)"
         ],
         "GossipHintNames": [
           "OOT_MASK_TRUTH",
-          "Mask of Truth (OOT)"
+          "Mask of Truth (OoT)"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "OOT_MASK_ZORA",
-      "Name": "Zora Mask (OOT)",
+      "Name": "Zora Mask (OoT)",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -17250,11 +17290,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_MASK_ZORA",
-          "Zora Mask (OOT)"
+          "Zora Mask (OoT)"
         ],
         "GossipHintNames": [
           "OOT_MASK_ZORA",
-          "Zora Mask (OOT)"
+          "Zora Mask (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -17381,7 +17421,7 @@
     },
     {
       "ID": "OOT_MILK_BOTTLE",
-      "Name": "Bottle - Milk (OOT)",
+      "Name": "Bottle - Milk (OoT)",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -17390,11 +17430,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_MILK_BOTTLE",
-          "Bottle - Milk (OOT)"
+          "Bottle - Milk (OoT)"
         ],
         "GossipHintNames": [
           "OOT_MILK_BOTTLE",
-          "Bottle - Milk (OOT)"
+          "Bottle - Milk (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -17441,7 +17481,7 @@
     },
     {
       "ID": "OOT_OCARINA",
-      "Name": "Progressive Ocarina (OOT)",
+      "Name": "Progressive Ocarina (OoT)",
       "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -17450,11 +17490,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_OCARINA",
-          "Progressive Ocarina (OOT)"
+          "Progressive Ocarina (OoT)"
         ],
         "GossipHintNames": [
           "OOT_OCARINA",
-          "Progressive Ocarina (OOT)"
+          "Progressive Ocarina (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -17561,7 +17601,7 @@
     },
     {
       "ID": "OOT_RECOVERY_HEART",
-      "Name": "Recovery Heart (OOT)",
+      "Name": "Recovery Heart (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -17570,18 +17610,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_RECOVERY_HEART",
-          "Recovery Heart (OOT)"
+          "Recovery Heart (OoT)"
         ],
         "GossipHintNames": [
           "OOT_RECOVERY_HEART",
-          "Recovery Heart (OOT)"
+          "Recovery Heart (OoT)"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "OOT_RUPEE_BLUE",
-      "Name": "Blue Rupee (OOT)",
+      "Name": "Blue Rupee (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -17590,18 +17630,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_RUPEE_BLUE",
-          "Blue Rupee (OOT)"
+          "Blue Rupee (OoT)"
         ],
         "GossipHintNames": [
           "OOT_RUPEE_BLUE",
-          "Blue Rupee (OOT)"
+          "Blue Rupee (OoT)"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "OOT_RUPEE_GREEN",
-      "Name": "Green Rupee (OOT)",
+      "Name": "Green Rupee (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -17610,18 +17650,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_RUPEE_GREEN",
-          "Green Rupee (OOT)"
+          "Green Rupee (OoT)"
         ],
         "GossipHintNames": [
           "OOT_RUPEE_GREEN",
-          "Green Rupee (OOT)"
+          "Green Rupee (OoT)"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "OOT_RUPEE_HUGE",
-      "Name": "Gold Rupee (OOT)",
+      "Name": "Gold Rupee (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -17630,18 +17670,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_RUPEE_HUGE",
-          "Gold Rupee (OOT)"
+          "Gold Rupee (OoT)"
         ],
         "GossipHintNames": [
           "OOT_RUPEE_HUGE",
-          "Gold Rupee (OOT)"
+          "Gold Rupee (OoT)"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "OOT_RUPEE_PURPLE",
-      "Name": "Purple Rupee (OOT)",
+      "Name": "Purple Rupee (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -17650,18 +17690,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_RUPEE_PURPLE",
-          "Purple Rupee (OOT)"
+          "Purple Rupee (OoT)"
         ],
         "GossipHintNames": [
           "OOT_RUPEE_PURPLE",
-          "Purple Rupee (OOT)"
+          "Purple Rupee (OoT)"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "OOT_RUPEE_RED",
-      "Name": "Red Rupee (OOT)",
+      "Name": "Red Rupee (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -17670,11 +17710,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_RUPEE_RED",
-          "Red Rupee (OOT)"
+          "Red Rupee (OoT)"
         ],
         "GossipHintNames": [
           "OOT_RUPEE_RED",
-          "Red Rupee (OOT)"
+          "Red Rupee (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -17715,6 +17755,26 @@
         "GossipHintNames": [
           "OOT_SCALE",
           "Progressive Scale"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_SHIELD",
+      "Name": "Progressive Shield (OoT)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SHIELD",
+          "Progressive Shield (OoT)"
+        ],
+        "GossipHintNames": [
+          "OOT_SHIELD",
+          "Progressive Shield (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -17981,7 +18041,7 @@
     },
     {
       "ID": "OOT_SONG_EPONA",
-      "Name": "Epona's Song (OOT)",
+      "Name": "Epona's Song (OoT)",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -17990,11 +18050,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_SONG_EPONA",
-          "Epona's Song (OOT)"
+          "Epona's Song (OoT)"
         ],
         "GossipHintNames": [
           "OOT_SONG_EPONA",
-          "Epona's Song (OOT)"
+          "Epona's Song (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -18021,7 +18081,7 @@
     },
     {
       "ID": "OOT_SONG_STORMS",
-      "Name": "Song of Storms (OOT)",
+      "Name": "Song of Storms (OoT)",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -18030,11 +18090,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_SONG_STORMS",
-          "Song of Storms (OOT)"
+          "Song of Storms (OoT)"
         ],
         "GossipHintNames": [
           "OOT_SONG_STORMS",
-          "Song of Storms (OOT)"
+          "Song of Storms (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -18061,7 +18121,7 @@
     },
     {
       "ID": "OOT_SONG_TIME",
-      "Name": "Song of Time (OOT)",
+      "Name": "Song of Time (OoT)",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -18070,11 +18130,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_SONG_TIME",
-          "Song of Time (OOT)"
+          "Song of Time (OoT)"
         ],
         "GossipHintNames": [
           "OOT_SONG_TIME",
-          "Song of Time (OOT)"
+          "Song of Time (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -18400,28 +18460,28 @@
       }
     },
     {
-      "ID": "OOT_SWORD_GORON",
-      "Name": "Progressive Goron Sword",
-      "MaxAmountInWorld": 2,
+      "ID": "OOT_SWORD",
+      "Name": "Progressive Sword (OoT)",
+      "MaxAmountInWorld": 4,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SWORD_GORON",
-          "Progressive Goron Sword"
+          "OOT_SWORD",
+          "Progressive Sword (OoT)"
         ],
         "GossipHintNames": [
-          "OOT_SWORD_GORON",
-          "Progressive Goron Sword"
+          "OOT_SWORD",
+          "Progressive Sword (OoT)"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "OOT_SWORD_KOKIRI",
-      "Name": "Kokiri Sword (OOT)",
+      "Name": "Kokiri Sword (OoT)",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -18430,11 +18490,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_SWORD_KOKIRI",
-          "Kokiri Sword (OOT)"
+          "Kokiri Sword (OoT)"
         ],
         "GossipHintNames": [
           "OOT_SWORD_KOKIRI",
-          "Kokiri Sword (OOT)"
+          "Kokiri Sword (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -18455,6 +18515,66 @@
         "GossipHintNames": [
           "OOT_SWORD_MASTER",
           "Master Sword"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_SWORD_GORON",
+      "Name": "Progressive Goron Sword",
+      "MaxAmountInWorld": 2,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SWORD_GORON",
+          "Progressive Goron Sword"
+        ],
+        "GossipHintNames": [
+          "OOT_SWORD_GORON",
+          "Progressive Goron Sword"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_SWORD_KNIFE",
+      "Name": "Giant's Knife",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SWORD_KNIFE",
+          "Giant's Knife"
+        ],
+        "GossipHintNames": [
+          "OOT_SWORD_KNIFE",
+          "Giant's Knife"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_SWORD_BIGGORON",
+      "Name": "Biggoron Sword",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SWORD_BIGGORON",
+          "Biggoron Sword"
+        ],
+        "GossipHintNames": [
+          "OOT_SWORD_BIGGORON",
+          "Biggoron Sword"
         ],
         "PriceDataNames": []
       }
@@ -18501,7 +18621,7 @@
     },
     {
       "ID": "OOT_WALLET",
-      "Name": "Progressive Wallet (OOT)",
+      "Name": "Progressive Wallet (OoT)",
       "MaxAmountInWorld": 3,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -18510,11 +18630,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_WALLET",
-          "Progressive Wallet (OOT)"
+          "Progressive Wallet (OoT)"
         ],
         "GossipHintNames": [
           "OOT_WALLET",
-          "Progressive Wallet (OOT)"
+          "Progressive Wallet (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -18540,46 +18660,6 @@
       }
     },
     {
-      "ID": "OOT_SWORD",
-      "Name": "Progressive Sword (OOT)",
-      "MaxAmountInWorld": 4,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "OOT_SWORD",
-          "Progressive Sword (OOT)"
-        ],
-        "GossipHintNames": [
-          "OOT_SWORD",
-          "Progressive Sword (OOT)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "OOT_SHIELD",
-      "Name": "Progressive Shield (OOT)",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "OOT_SHIELD",
-          "Progressive Shield (OOT)"
-        ],
-        "GossipHintNames": [
-          "OOT_SHIELD",
-          "Progressive Shield (OOT)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
       "ID": "OOT_BOSS_KEY_GANON",
       "Name": "Boss Key (Ganon)",
       "MaxAmountInWorld": 1,
@@ -18595,46 +18675,6 @@
         "GossipHintNames": [
           "OOT_BOSS_KEY_GANON",
           "Boss Key (Ganon)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "MM_SHIELD",
-      "Name": "Progressive Shield (MM)",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "MM_SHIELD",
-          "Progressive Shield (MM)"
-        ],
-        "GossipHintNames": [
-          "MM_SHIELD",
-          "Progressive Shield (MM)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "MM_SONG_GORON",
-      "Name": "Goron's Lullaby",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "MM_SONG_GORON",
-          "Goron's Lullaby"
-        ],
-        "GossipHintNames": [
-          "MM_SONG_GORON",
-          "Goron's Lullaby"
         ],
         "PriceDataNames": []
       }
