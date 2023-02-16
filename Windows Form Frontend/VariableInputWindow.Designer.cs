@@ -29,6 +29,7 @@ namespace Windows_Form_Frontend
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VariableInputWindow));
             this.button1 = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -88,6 +89,7 @@ namespace Windows_Form_Frontend
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.button1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "VariableInputWindow";
             this.Load += new System.EventHandler(this.VariableInputWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();

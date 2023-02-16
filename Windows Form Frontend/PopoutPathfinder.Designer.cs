@@ -29,6 +29,7 @@ namespace Windows_Form_Frontend
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PopoutPathfinder));
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -104,6 +105,7 @@ namespace Windows_Form_Frontend
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.listBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PopoutPathfinder";
             this.Text = "PopoutPathfinder";
             this.Load += new System.EventHandler(this.PopoutPathfinder_Load);
