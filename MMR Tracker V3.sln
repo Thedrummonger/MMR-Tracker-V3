@@ -14,7 +14,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestFolder", "TestFolder", 
 		Test.txt = Test.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiFrontEnd", "MauiFrontEnd\MauiFrontEnd.csproj", "{48832705-C2F9-4FA1-BF39-BB725D895E78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiFrontEnd", "MauiFrontEnd\MauiFrontEnd.csproj", "{48832705-C2F9-4FA1-BF39-BB725D895E78}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{22511695-39CC-47E4-9DD9-D8CB68C2A517}"
+	ProjectSection(SolutionItems) = preProject
+		WorkAround10150.bat = WorkAround10150.bat
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

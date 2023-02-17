@@ -17,14 +17,12 @@
 	{
 		System.Net.WebClient wc = new System.Net.WebClient();
 		var Logic = wc.DownloadString("https://raw.githubusercontent.com/ZoeyZolotova/mm-rando/dev/MMR.Randomizer/Resources/REQ_CASUAL.txt");
+		System.Diagnostics.Debug.WriteLine("Downloaded Logic");
 
-		var DevCode = MMR_Tracker_V3.References.TestingPaths.GetDevCodePath();
-		var Dictionary = Path.Combine(DevCode, "MMR Tracker V3", "Recources", "Dictionaries", "MMR V11.json");
+		var Dictionary = wc.DownloadString("https://raw.githubusercontent.com/Thedrummonger/MMR-Tracker-V3/master/MMR%20Tracker%20V3/Recources/Dictionaries/MMR%20V11.json");
+		System.Diagnostics.Debug.WriteLine("Downloaded Dict");
 
-		System.Diagnostics.Debug.WriteLine(Dictionary);
-		System.Diagnostics.Debug.WriteLine(File.Exists(Dictionary));
-
-		InstanceContainer.Instance.GenerateInstance(Logic, File.ReadAllText(Dictionary));
+		InstanceContainer.Instance.GenerateInstance(Logic, Dictionary);
 
 		InstanceContainer.logicCalculation.CalculateLogic();
 
