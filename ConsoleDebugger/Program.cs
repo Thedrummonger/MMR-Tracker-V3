@@ -59,8 +59,8 @@ namespace ConsoleDebugger
 
         private static void Debugging()
         {
-
-        }
+    
+		}
 
         private static void LoadPreset()
         {

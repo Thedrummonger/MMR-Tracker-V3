@@ -1,0 +1,67 @@
+﻿@page "/fetchdata"
+
+@using MMR_Tracker_V3;
+@using MauiFrontEnd.Data
+@inject WeatherForecastService ForecastService
+
+<h1>Weather forecast</h1>
+
+<p>This component demonstrates fetching data from a service.</p>
+
+@if (InstanceContainer == null || InstanceContainer.Instance == null)
+{
+	<p><em>Loading...</em></p>
+}
+else
+{
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Location</th>
+				<th>Item</th>
+				<th>Area</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var forecast in DataSets.AvailableLocations.OrderBy(x => x.GetDictEntry(InstanceContainer.Instance).Area))
+			{
+				<tr>
+					<td>@forecast.GetDictEntry(InstanceContainer.Instance).GetName(InstanceContainer.Instance)</td>
+					<td>@GetDisplayeName(forecast.Randomizeditem.Item)</td>
+					<td>@forecast.GetDictEntry(InstanceContainer.Instance).Area</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+}
+
+@code {
+	private MMR_Tracker_V3.TrackerObjects.MiscData.InstanceContainer InstanceContainer = new();
+
+	private MMR_Tracker_V3.TrackerDataHandeling.DataSets DataSets = new();
+
+	string UnknownItem = "?????";
+
+	protected override async Task OnInitializedAsync()
+	{
+		System.Net.WebClient wc = new System.Net.WebClient();
+		var Logic = wc.DownloadString("https://raw.githubusercontent.com/ZoeyZolotova/mm-rando/dev/MMR.Randomizer/Resources/REQ_CASUAL.txt");
+
+		var DevCode = MMR_Tracker_V3.References.TestingPaths.GetDevCodePath();
+		var Dictionary = Path.Combine(DevCode, "MMR Tracker V3", "Recources", "Dictionaries", "MMR V11.json");
+
+		System.Diagnostics.Debug.WriteLine(Dictionary);
+		System.Diagnostics.Debug.WriteLine(File.Exists(Dictionary));
+
+		InstanceContainer.Instance.GenerateInstance(Logic, File.ReadAllText(Dictionary));
+
+		InstanceContainer.logicCalculation.CalculateLogic();
+
+		DataSets = MMR_Tracker_V3.TrackerDataHandeling.PopulateDataSets(InstanceContainer.Instance);
+	}
+
+	private string GetDisplayeName(string Item)
+	{
+		return string.IsNullOrWhiteSpace(Item) ? "???" : Item;
+	}
+}
