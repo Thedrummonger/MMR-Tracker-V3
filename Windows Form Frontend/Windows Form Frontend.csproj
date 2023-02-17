@@ -16,33 +16,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="..\MMR Tracker V3\Recources\Categories.txt" Link="Recources\Categories.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\MMR Tracker V3\Recources\Dictionaries\MMR V11.json" Link="Recources\Dictionaries\MMR V11.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\MMR Tracker V3\Recources\Dictionaries\OOTMM V1.json" Link="Recources\Dictionaries\OOTMM V1.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\MMR Tracker V3\Recources\Dictionaries\OOTR V1.json" Link="Recources\Dictionaries\OOTR V1.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\MMR Tracker V3\Recources\Dictionaries\PMRDict.json" Link="Recources\Dictionaries\PMRDict.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\MMR Tracker V3\Recources\Presets\WebPresets.txt" Link="Recources\Presets\WebPresets.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Moon.ico" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\MMR Tracker V3\MMR Tracker V3.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Recources\Presets\" />
   </ItemGroup>
 
   <ItemGroup>
