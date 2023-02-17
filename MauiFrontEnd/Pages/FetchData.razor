@@ -4,9 +4,7 @@
 @using MauiFrontEnd.Data
 @inject WeatherForecastService ForecastService
 
-<h1>Weather forecast</h1>
-
-<p>This component demonstrates fetching data from a service.</p>
+<h1>Available Locations</h1>
 
 @if (InstanceContainer == null || InstanceContainer.Instance == null)
 {
@@ -23,12 +21,12 @@ else
 			</tr>
 		</thead>
 		<tbody>
-			@foreach (var forecast in DataSets.AvailableLocations.OrderBy(x => x.GetDictEntry(InstanceContainer.Instance).Area))
+			@foreach (var Entry in DataSets.AvailableLocations)
 			{
 				<tr>
-					<td>@forecast.GetDictEntry(InstanceContainer.Instance).GetName(InstanceContainer.Instance)</td>
-					<td>@GetDisplayeName(forecast.Randomizeditem.Item)</td>
-					<td>@forecast.GetDictEntry(InstanceContainer.Instance).Area</td>
+					<td>@Entry.GetDictEntry(InstanceContainer.Instance).GetName(InstanceContainer.Instance)</td>
+					<td>@GetDisplayeName(Entry.Randomizeditem.Item)</td>
+					<td>@Entry.GetDictEntry(InstanceContainer.Instance).Area</td>
 				</tr>
 			}
 		</tbody>
@@ -36,7 +34,7 @@ else
 }
 
 @code {
-	private MMR_Tracker_V3.TrackerObjects.MiscData.InstanceContainer InstanceContainer = new();
+	private MMR_Tracker_V3.TrackerObjects.MiscData.InstanceContainer InstanceContainer = new() { Instance = new() };
 
 	private MMR_Tracker_V3.TrackerDataHandeling.DataSets DataSets = new();
 
@@ -51,7 +49,10 @@ else
 		var Dictionary = wc.DownloadString("https://raw.githubusercontent.com/Thedrummonger/MMR-Tracker-V3/master/MMR%20Tracker%20V3/Recources/Dictionaries/MMR%20V11.json");
 		System.Diagnostics.Debug.WriteLine("Downloaded Dict");
 
-		InstanceContainer.Instance.GenerateInstance(Logic, File.ReadAllText(Dictionary));
+		MMR_Tracker_V3.LogicObjects.TrackerInstance TempInstance = new LogicObjects.TrackerInstance();
+		TempInstance.GenerateInstance(Logic, Dictionary);
+
+		InstanceContainer.Instance = TempInstance;
 
 		InstanceContainer.logicCalculation.CalculateLogic();
 

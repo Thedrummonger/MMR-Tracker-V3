@@ -56,7 +56,6 @@ namespace MMR_Tracker_V3.TrackerObjects
             public InstanceContainer()
             {
                 logicCalculation = new LogicCalculation(this);
-                Instance ??= new LogicObjects.TrackerInstance();
             }
             public LogicObjects.TrackerInstance Instance { get; set; }
             public LogicCalculation logicCalculation { get; set; }

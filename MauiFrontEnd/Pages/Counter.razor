@@ -10,7 +10,7 @@
 @code {
 	private string currentCount = "No Data";
 
-	private MMR_Tracker_V3.TrackerObjects.MiscData.InstanceContainer InstanceContainer = new MMR_Tracker_V3.TrackerObjects.MiscData.InstanceContainer();
+	private MMR_Tracker_V3.TrackerObjects.MiscData.InstanceContainer InstanceContainer = new() { Instance = new() };
 	private TrackerDataHandeling.DataSets DataSets = new();
 
 	private void IncrementCount()
@@ -22,7 +22,10 @@
 		var Dictionary = wc.DownloadString("https://raw.githubusercontent.com/Thedrummonger/MMR-Tracker-V3/master/MMR%20Tracker%20V3/Recources/Dictionaries/MMR%20V11.json");
 		System.Diagnostics.Debug.WriteLine("Downloaded Dict");
 
-		InstanceContainer.Instance.GenerateInstance(Logic, Dictionary);
+		MMR_Tracker_V3.LogicObjects.TrackerInstance TempInstance = new LogicObjects.TrackerInstance();
+		TempInstance.GenerateInstance(Logic, Dictionary);
+
+		InstanceContainer.Instance = TempInstance;
 
 		InstanceContainer.logicCalculation.CalculateLogic();
 
