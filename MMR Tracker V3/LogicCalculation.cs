@@ -426,7 +426,7 @@ namespace MMR_Tracker_V3
                     //result in another location becoming unavilable otherwise we could enter an infinite loop if both those location are checked automatically
                     else if (CurrentOptionType == LogicEntryType.location && (instance.GetLocationByID(currentOption)?.GetItemAtCheck(instance) == null)) { RequiremntMet = inverse; }
                     else if (CurrentOptionType == LogicEntryType.location && (instance.GetLocationByID(currentOption)?.GetItemAtCheck(instance) == CheckValue)) { RequiremntMet = true; }
-                    else if (CurrentOptionType == LogicEntryType.Exit && (CurrentOptionEntry as EntranceData.EntranceRandoExit)?.EntrancePair == null) { RequiremntMet = inverse; }
+                    else if (CurrentOptionType == LogicEntryType.Exit && (CurrentOptionEntry as EntranceData.EntranceRandoExit)?.DestinationExit == null) { RequiremntMet = inverse; }
                     else if (CurrentOptionType == LogicEntryType.Exit && ExitLeadsToArea(CurrentOptionEntry, CheckValue)) { RequiremntMet = true; }
                 }
             }

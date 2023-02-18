@@ -50,6 +50,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
             RemoveGameFromNames(dictionaryFile);
 
+            FixAreaClearLogic(LogicFile);
+
             Logic = LogicFile;
             dictionary = dictionaryFile;
             File.WriteAllText(FinalLogicFile, JsonConvert.SerializeObject(LogicFile, Testing._NewtonsoftJsonSerializerOptions));
@@ -571,6 +573,34 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             }
 
             return JsonConvert.SerializeObject(listObjResult, Testing._NewtonsoftJsonSerializerOptions);
+        }
+
+        public static void FixAreaClearLogic(MMRData.LogicFile Logic)
+        {
+            var MM_BOSS_GREAT_BAY = Logic.Logic.First(x => x.Id == "MM_BOSS_GREAT_BAY");
+            var MM_BOSS_SNOWHEAD = Logic.Logic.First(x => x.Id == "MM_BOSS_SNOWHEAD");
+            var MM_CLEAN_SWAMP = Logic.Logic.First(x => x.Id == "MM_CLEAN_SWAMP");
+
+            string CodeFolder = References.TestingPaths.GetDevCodePath();
+            string OOTMMRandoAreaClear = Path.Combine(CodeFolder, @"MMR Tracker V3", "OtherGames", "OOTMMRCOMBO", @"AfterBossMacroFixing.json");
+            Dictionary<string, string> RandoAreaClear = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(OOTMMRandoAreaClear));
+
+            CreateLogic(MM_BOSS_GREAT_BAY, "MM Great Bay Temple Pre-Boss", "MM Great Bay Temple Boss");
+            CreateLogic(MM_BOSS_SNOWHEAD, "MM Snowhead Temple Center Level 4", "MM Snowhead Temple Boss");
+            CreateLogic(MM_CLEAN_SWAMP, "MM Woodfall Temple Pre-Boss", "MM Woodfall Temple Boss");
+
+            void CreateLogic(MMRData.JsonFormatLogicItem Item, string DungeonArea, string BossDoor)
+            {
+                Item.RequiredItems = new List<string>();
+                Item.ConditionalItems = new List<List<string>>();
+                foreach (var i in RandoAreaClear)
+                {
+                    List<string> list = new List<string>();
+                    list.Add($"{DungeonArea} => {BossDoor} == {i.Key}");
+                    list.Add(i.Value);
+                    Item.ConditionalItems.Add(list);
+                }
+            }
         }
     }
 }

@@ -290,7 +290,7 @@ namespace Windows_Form_Frontend
             File.WriteAllText(DecompByteSave, SaveCompressor.Decompress(ReadByteFile));
             File.WriteAllText(DecompStringSave, SaveCompressor.Decompress(ReadByteStringFile));
 
-
+            
 
         }
 

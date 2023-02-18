@@ -96,18 +96,21 @@ namespace Windows_Form_Frontend
                     if (_Instance.GetItemByID(VanillaItem) != null)
                     {
                         var VanillaItemObject = _Instance.GetItemByID(VanillaItem).GetDictEntry(_Instance);
-                        VanillaItemText  = $"{VanillaItemObject.GetName(_Instance)} [{VanillaItem}])";
+                        VanillaItemText  = $"{VanillaItemObject.GetName(_Instance)} [{VanillaItem}]";
                     }
                     else
                     {
-                        VanillaItemText = $"{VanillaItem})";
+                        VanillaItemText = $"{VanillaItem}";
                     }
                 }
 
                 string[] row = { i.Value.DisplayName, VanillaItemText, i.Value.RandomizedState.GetDescription() };
-                ListViewItem listViewItem = new ListViewItem(row) { Tag = i.Value };
-                listViewItem.Checked = CheckedLocationItems.Contains(i.Value);
-                listViewItem.ToolTipText = $"Exit: {i.Value.DisplayName} \nVanilla Destination: {VanillaItemText} \nRandomized State: {i.Value.RandomizedState}";
+                ListViewItem listViewItem = new(row)
+                {
+                    Tag = i.Value,
+                    Checked = CheckedLocationItems.Contains(i.Value),
+                    ToolTipText = $"Exit: {i.Value.DisplayName} \nVanilla Destination: {VanillaItemText} \nRandomized State: {i.Value.RandomizedState}"
+                };
                 TempList.Add(listViewItem);
             }
             lvLocationList.Items.AddRange(TempList.ToArray());
@@ -131,9 +134,12 @@ namespace Windows_Form_Frontend
                     string VanillaItemText = i.Value.ID + " <= " + i.Value.ParentAreaID;
 
                     string[] row = { i.Value.DisplayName, VanillaItemText, i.Value.RandomizedState.GetDescription() };
-                    ListViewItem listViewItem = new ListViewItem(row) { Tag = i.Value };
-                    listViewItem.Checked = CheckedExitItems.Contains(i.Value);
-                    listViewItem.ToolTipText = $"Location: {i.Value.DisplayName} \nVanilla Item: {VanillaItemText} \nRandomized State: {i.Value.RandomizedState}";
+                    ListViewItem listViewItem = new(row)
+                    {
+                        Tag = i.Value,
+                        Checked = CheckedExitItems.Contains(i.Value),
+                        ToolTipText = $"Location: {i.Value.DisplayName} \nVanilla Item: {VanillaItemText} \nRandomized State: {i.Value.RandomizedState}"
+                    };
                     TempList.Add(listViewItem);
                 }
             }

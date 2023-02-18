@@ -153,7 +153,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 var HintType = HintText[0];
                 var HintData = HintText[1].Replace(")", "").Split("(").Select(x => x.Trim()).ToArray();
                 var HintLocation = HintData[0];
-                var HintItem = HintData[1];
+                var HintItem = HintData.Count() > 1 ? HintData[1] : string.Empty;
                 string PrettyLocationName = HintData[0].ToLower().Replace("_", " ");
                 PrettyLocationName = Regex.Replace(PrettyLocationName, @"(^\w)|(\s\w)", m => m.Value.ToUpper()).Replace("Mm", "MM").Replace("Oot", "OOT");
                 switch (HintType)
