@@ -1,12 +1,15 @@
 ﻿using MMR_Tracker_V3.TrackerObjects;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
 using System.Dynamic;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -234,6 +237,72 @@ namespace MMR_Tracker_V3
                 memoryStream.Seek(0, SeekOrigin.Begin);
                 return (T)binaryFormatter.Deserialize(memoryStream);
             }
+        }
+    }
+
+    public static class SaveCompressor
+    {
+        public class CompressedSave
+        {
+            public byte[] Bytes { get; }
+            public CompressedSave(string Save)
+            {
+                Bytes = Compress(Save);
+            }
+            public override string ToString()
+            {
+                return GetBytesAsString(Bytes);
+            }
+        }
+
+        public static string Decompress(byte[] dataToDeCompress)
+        {
+            byte[] decompressedData = DecompressByte(dataToDeCompress);
+            return Encoding.UTF8.GetString(decompressedData);
+        }
+
+        public static string Decompress(string String)
+        {
+            return Decompress(Convert.FromBase64String(String));
+        }
+
+        private static byte[] CompressByte(byte[] bytes)
+        {
+            using (var memoryStream = new MemoryStream())
+            {
+                using (var gzipStream = new GZipStream(memoryStream, CompressionLevel.SmallestSize))
+                {
+                    gzipStream.Write(bytes, 0, bytes.Length);
+                }
+                return memoryStream.ToArray();
+            }
+        }
+        private static byte[] DecompressByte(byte[] bytes)
+        {
+            using (var memoryStream = new MemoryStream(bytes))
+            {
+
+                using (var outputStream = new MemoryStream())
+                {
+                    using (var decompressStream = new GZipStream(memoryStream, CompressionMode.Decompress))
+                    {
+                        decompressStream.CopyTo(outputStream);
+                    }
+                    return outputStream.ToArray();
+                }
+            }
+        }
+
+        private static byte[] Compress(string String)
+        {
+            byte[] dataToCompress = Encoding.UTF8.GetBytes(String);
+            byte[] compressedData = CompressByte(dataToCompress);
+            return compressedData;
+        }
+
+        private static string GetBytesAsString(byte[] byteData)
+        {
+            return Convert.ToBase64String(byteData);
         }
     }
 

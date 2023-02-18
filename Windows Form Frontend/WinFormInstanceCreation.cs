@@ -69,9 +69,21 @@ namespace Windows_Form_Frontend
 
         public static void ApplyUserPretLogic()
         {
-            MainInterface.CurrentProgram.presetsToolStripMenuItem.DropDownItems.Clear();
+            MainInterface.CurrentProgram.NewToolStripMenuItem1.DropDownItems.Clear();
 
-            foreach (var i in LogicPresetHandeling.GetLogicPresets())
+            var LogicPresets = LogicPresetHandeling.GetLogicPresets();
+
+            if (LogicPresets.Any())
+            {
+                ToolStripMenuItem DefaultMenuItem = new() { Text = "From File" };
+                DefaultMenuItem.Click += (s, ee) =>
+                {
+                    MainInterface.CurrentProgram.NewToolStripMenuItem1_Click(s, ee);
+                };
+                MainInterface.CurrentProgram.NewToolStripMenuItem1.DropDownItems.Add(DefaultMenuItem);
+            }
+
+            foreach (var i in LogicPresets)
             {
                 Debug.WriteLine($"Adding Preset {i.Name}");
                 ToolStripMenuItem menuItem = new() { Text = i.Name };
@@ -80,7 +92,7 @@ namespace Windows_Form_Frontend
                     if (!MainInterface.CurrentProgram.PromptSave()) { return; }
                     CreateWinFormInstance(i.LogicString, i.DictionaryString); 
                 };
-                MainInterface.CurrentProgram.presetsToolStripMenuItem.DropDownItems.Add(menuItem);
+                MainInterface.CurrentProgram.NewToolStripMenuItem1.DropDownItems.Add(menuItem);
             }
         }
     }

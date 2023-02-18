@@ -47,9 +47,8 @@ namespace MMR_Tracker_V3.TrackerObjects
         }
         public class userData
         {
-            public string PastebinAPIKey { get; set; }
-            public string PastebinUsername { get; set; }
-            public string PastebinPassword { get; set; }
+            public string CloudSaveAPIKey { get; set; }
+
         }
         public class InstanceContainer
         {

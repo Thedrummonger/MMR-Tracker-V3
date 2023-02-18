@@ -10,6 +10,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -127,8 +128,9 @@ namespace Windows_Form_Frontend
 
         //Menu Strip => File
 
-        private void NewToolStripMenuItem1_Click(object sender, EventArgs e)
+        public void NewToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            fileToolMenuStrip.HideDropDown();
             if (!PromptSave()) { return; }
             OpenFileDialog fileDialog = new OpenFileDialog();
             var Result = fileDialog.ShowDialog();
@@ -141,7 +143,7 @@ namespace Windows_Form_Frontend
 
         private void SavetoolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            bool SaveAs = (sender is ToolStripMenuItem item && item == SaveAsToolStripMenuItem1);
+            bool SaveAs = (sender is ToolStripMenuItem item && item == SaveAsToolStripMenuItem);
             if (File.Exists(InstanceContainer.CurrentSavePath) && !SaveAs)
             {
                 InstanceContainer.UnsavedChanges = false;
@@ -264,6 +266,31 @@ namespace Windows_Form_Frontend
                 }
 
             }
+
+            var TestingFolder = References.TestingPaths.GetDevTestingPath();
+            var SaveTestingFolder = Path.Combine(TestingFolder, "SaveTesting");
+            if (!Directory.Exists(SaveTestingFolder)) { Directory.CreateDirectory(SaveTestingFolder); }
+            var BaseSaveFile = Path.Combine(SaveTestingFolder, "BaseSave.txt");
+            var ByteSaveFile = Path.Combine(SaveTestingFolder, "ByteSave.txt");
+            var ByteStringSaveFile = Path.Combine(SaveTestingFolder, "ByteStringSave.txt");
+            var DecompByteSave = Path.Combine(SaveTestingFolder, "DecompByteSave.txt");
+            var DecompStringSave = Path.Combine(SaveTestingFolder, "DecompStringSave.txt");
+
+            string SaveData = InstanceContainer.Instance.ToString();
+            File.WriteAllText(BaseSaveFile, SaveData);
+
+            var CompressedSave = new SaveCompressor.CompressedSave(SaveData);
+
+            File.WriteAllBytes(ByteSaveFile, CompressedSave.Bytes);
+            File.WriteAllText(ByteStringSaveFile, CompressedSave.ToString());
+
+            byte[] ReadByteFile = File.ReadAllBytes(ByteSaveFile);
+            string ReadByteStringFile = File.ReadAllText(ByteStringSaveFile);
+
+            File.WriteAllText(DecompByteSave, SaveCompressor.Decompress(ReadByteFile));
+            File.WriteAllText(DecompStringSave, SaveCompressor.Decompress(ReadByteStringFile));
+
+
 
         }
 
@@ -633,8 +660,8 @@ namespace Windows_Form_Frontend
             undoToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
             redoToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
             refreshToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
-            SavetoolStripMenuItem1.Visible = (InstanceContainer.Instance != null);
-            SaveAsToolStripMenuItem1.Visible = (InstanceContainer.Instance != null) && !string.IsNullOrWhiteSpace(InstanceContainer.CurrentSavePath);
+            SavetoolStripMenuItem.Visible = (InstanceContainer.Instance != null);
+            SaveAsToolStripMenuItem.Visible = (InstanceContainer.Instance != null) && !string.IsNullOrWhiteSpace(InstanceContainer.CurrentSavePath);
             spoilerLogToolsToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
             importSpoilerLogToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
             PathFinderToolStripMenuItem.Visible = (InstanceContainer.Instance != null && InstanceContainer.Instance.EntrancePool.IsEntranceRando);
@@ -643,7 +670,7 @@ namespace Windows_Form_Frontend
 
             if (InstanceContainer.Instance == null) { return; }
 
-            SaveAsToolStripMenuItem1.Visible = (File.Exists(InstanceContainer.CurrentSavePath));
+            SaveAsToolStripMenuItem.Visible = (File.Exists(InstanceContainer.CurrentSavePath));
             importSpoilerLogToolStripMenuItem.Text = (InstanceContainer.Instance.SpoilerLog != null) ? "Remove Spoiler Log" : "Import Spoiler Log";
             entranceRandoFeaturesToolStripMenuItem.Checked = InstanceContainer.Instance.StaticOptions.EntranceRandoFeatures;
             entranceRandoFeaturesToolStripMenuItem.Visible = InstanceContainer.Instance.EntrancePool.IsEntranceRando || InstanceContainer.Instance.EntrancePool.CheckForRandomEntrances();
@@ -1012,7 +1039,7 @@ namespace Windows_Form_Frontend
                 case DialogResult.No:
                     return true;
                 case DialogResult.Yes:
-                    SavetoolStripMenuItem1_Click(SavetoolStripMenuItem1, null);
+                    SavetoolStripMenuItem1_Click(SavetoolStripMenuItem, null);
                     return true;
                 default:
                     return false;
@@ -1061,7 +1088,7 @@ namespace Windows_Form_Frontend
                 switch (e.KeyCode)
                 {
                     case Keys.S:
-                        SavetoolStripMenuItem1_Click(SavetoolStripMenuItem1, e);
+                        SavetoolStripMenuItem1_Click(SavetoolStripMenuItem, e);
                         break;
                     case Keys.Z:
                         UndoRedo_Click(undoToolStripMenuItem, e);
