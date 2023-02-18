@@ -13,7 +13,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 {
 	internal class OOTMMSpoilerParser
 	{
-        public static Dictionary<string, dynamic> SpoilerNames = new Dictionary<string, dynamic>() {
+        public static Dictionary<string, dynamic> HintNames = new Dictionary<string, dynamic>() {
             { "OOT_FROGS_FINAL", "OOT Zora River Frogs Game"},
             { "OOT_FISHING", new string[] { "OOT Fishing Pond Child", "OOT Fishing Pond Adult" }},
             { "OOT_RAVAGED_VILLAGE", "OOT Kakariko Song Shadow"},
@@ -54,8 +54,16 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             {
                 i.Value.RandomizedState = MiscData.RandomizedState.Unrandomized;
             }
+            foreach (var i in Instance.LocationPool.Values)
+            {
+                i.RandomizedState = MiscData.RandomizedState.Randomized;
+            }
+            foreach (var i in Instance.ItemPool.Values)
+            {
+                i.AmountInStartingpool = 0;
+            }
             Dictionary<string, bool> spoilerFileLocation =
-                new Dictionary<string, bool> { { "Settings", false }, { "Tricks", false }, { "Starting Items", false }, { "Entrances", false }, { "Hints", false } };
+                new Dictionary<string, bool> { { "Settings", false }, { "Tricks", false }, { "Starting Items", false }, { "Junk Locations", false }, { "Entrances", false }, { "Hints", false } };
             foreach (var l in Instance.SpoilerLog.Log)
             {
                 if (string.IsNullOrWhiteSpace(l)) { continue; }
@@ -100,6 +108,16 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         i.Value.RandomizedState = MiscData.RandomizedState.Randomized;
                     }
                 }
+                else if(SettingLineData[0] == "mapCompassShuffle" && SettingLineData[1] == "starting")
+                {
+                    var MapsCompasses = Instance.ItemPool.Values.Where(x => 
+                    x.Id.StartsWith("MM_MAP_") || 
+                    x.Id.StartsWith("OOT_MAP_") || 
+                    x.Id.StartsWith("MM_COMPASS_") || 
+                    x.Id.StartsWith("OOT_COMPASS_"));
+
+                    foreach(var i in MapsCompasses) { i.AmountInStartingpool= 1; }
+                }
             }
             if (spoilerFileLocation["Tricks"])
             {
@@ -119,34 +137,41 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                     else { Debug.WriteLine($"{startingItemData[1]} Could not be made a starting item!"); }
                 }
             }
+            if (spoilerFileLocation["Junk Locations"])
+            {
+                var junkLOC = Instance.LocationPool.Values.FirstOrDefault(x => x.ID == Line);
+                if (junkLOC is not null) { junkLOC.SetRandomizedState(MiscData.RandomizedState.ForcedJunk, Instance); }
+                else { Debug.WriteLine($"{Line} Was not a valid Location!"); }
+            }
             if (spoilerFileLocation["Hints"])
             {
                 var pieces = Line.Split(new[] { ':' }, 2).Select(x => x.Trim()).ToArray();
                 var GossipStone = pieces[0];
                 if (!Instance.HintPool.ContainsKey(GossipStone)) { return false; }
                 var GossipStoneEntry = Instance.HintPool[GossipStone];
-                var Data = pieces[1].Split(new[] { ',' }, 2).Select(x => x.Trim()).ToArray();
-                var HintType = Data[0];
-                var HintData = Data[1].Replace(")", "").Split("(").Select(x => x.Trim()).ToArray();
-                string LocationName = HintData[0].ToLower().Replace("_", " ");
-                LocationName = Regex.Replace(LocationName, @"(^\w)|(\s\w)", m => m.Value.ToUpper()).Replace("Mm", "MM").Replace("Oot", "OOT");
+                var HintText = pieces[1].Split(new[] { ',' }, 2).Select(x => x.Trim()).ToArray();
+                var HintType = HintText[0];
+                var HintData = HintText[1].Replace(")", "").Split("(").Select(x => x.Trim()).ToArray();
+                var HintLocation = HintData[0];
+                var HintItem = HintData[1];
+                string PrettyLocationName = HintData[0].ToLower().Replace("_", " ");
+                PrettyLocationName = Regex.Replace(PrettyLocationName, @"(^\w)|(\s\w)", m => m.Value.ToUpper()).Replace("Mm", "MM").Replace("Oot", "OOT");
                 switch (HintType)
                 {
                     case "Item-Exact":
-                        var HintLocation = HintData[0];
-                        var hintLocationsDYN = !SpoilerNames.ContainsKey(HintLocation) ? null : SpoilerNames[HintLocation];
+                        var hintLocationsDYN = !HintNames.ContainsKey(HintLocation) ? null : HintNames[HintLocation];
 
-                        List<string> HintedLocations = new List<string>();
-                        List<string> HintedItems = HintData[1].Split(",").Select(x => x.Trim()).ToList();
+                        List<string> HintedLocations = new();
+                        List<string> HintedItems = HintItem.Split(",").Select(x => x.Trim()).ToList();
 
                         if (hintLocationsDYN is not null)
                         {
                             if (hintLocationsDYN is string) { HintedLocations.Add(hintLocationsDYN); }
                             else { HintedLocations.AddRange(hintLocationsDYN); }
                         }
-                        GossipStoneEntry.SpoilerHintText = $"{LocationName} contains {string.Join(" and ", HintedItems.Select(x => GetItemName(x, Instance)))}";
+                        GossipStoneEntry.SpoilerHintText = $"{PrettyLocationName} contains {string.Join(" and ", HintedItems.Select(x => GetItemName(x, Instance)))}";
 
-                        if (HintedLocations.Any() && HintedLocations.Count() == HintedItems.Count())
+                        if (HintedLocations.Any() && HintedLocations.Count == HintedItems.Count)
                         {
                             for (var c = 0; c < HintedItems.Count; c++)
                             {
@@ -158,13 +183,13 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         }
                         break;
                     case "Item-Region":
-                        GossipStoneEntry.SpoilerHintText = $"{LocationName} contains {GetItemName(HintData[1], Instance)}";
+                        GossipStoneEntry.SpoilerHintText = $"{PrettyLocationName} contains {GetItemName(HintItem, Instance)}";
                         break;
                     case "Hero":
-                        GossipStoneEntry.SpoilerHintText = $"{LocationName} is Way of the Hero";
+                        GossipStoneEntry.SpoilerHintText = $"{PrettyLocationName} is Way of the Hero";
                         break;
                     case "Foolish":
-                        GossipStoneEntry.SpoilerHintText = $"{LocationName} is Foolish";
+                        GossipStoneEntry.SpoilerHintText = $"{PrettyLocationName} is Foolish";
                         break;
                 }
             }
@@ -225,6 +250,12 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             {
                 foreach (var k in spoilerFileLocation.Keys) { spoilerFileLocation[k] = false; }
                 spoilerFileLocation["Starting Items"] = true;
+                return true;
+            }
+            if (l == "Junk Locations")
+            {
+                foreach (var k in spoilerFileLocation.Keys) { spoilerFileLocation[k] = false; }
+                spoilerFileLocation["Junk Locations"] = true;
                 return true;
             }
             if (l == "Entrances")

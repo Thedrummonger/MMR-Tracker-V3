@@ -18758,6 +18758,14 @@
       "DestinationHasSingleEntrance": false
     },
     {
+      "ID": "OOT Deku Tree Basement => OOT Deku Tree Basement Ledge",
+      "Area": "OOT Deku Tree Basement",
+      "Exit": "OOT Deku Tree Basement Ledge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
       "ID": "OOT Deku Tree Basement Back Room => OOT Deku Tree Basement Ledge",
       "Area": "OOT Deku Tree Basement Back Room",
       "Exit": "OOT Deku Tree Basement Ledge",
@@ -25016,6 +25024,22 @@
       "DestinationHasSingleEntrance": false
     },
     {
+      "ID": "MM Stone Tower Temple Inverted East => MM Stone Tower Temple Inverted Bridge",
+      "Area": "MM Stone Tower Temple Inverted East",
+      "Exit": "MM Stone Tower Temple Inverted Bridge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "MM Stone Tower Temple Inverted East => MM Stone Tower Temple Inverted Boss Key Room",
+      "Area": "MM Stone Tower Temple Inverted East",
+      "Exit": "MM Stone Tower Temple Inverted Boss Key Room",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
       "ID": "MM Stone Tower Temple Inverted Wizzrobe => MM Stone Tower Temple Inverted Wizzrobe Ledge",
       "Area": "MM Stone Tower Temple Inverted Wizzrobe",
       "Exit": "MM Stone Tower Temple Inverted Wizzrobe Ledge",
@@ -25107,6 +25131,22 @@
       "ID": "MM Stone Tower Temple Inverted Bridge => MM Stone Tower Temple Inverted Bridge 2",
       "Area": "MM Stone Tower Temple Inverted Bridge",
       "Exit": "MM Stone Tower Temple Inverted Bridge 2",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "MM Stone Tower Temple Inverted Bridge => MM Stone Tower Temple Inverted Boss Key Room",
+      "Area": "MM Stone Tower Temple Inverted Bridge",
+      "Exit": "MM Stone Tower Temple Inverted Boss Key Room",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "MM Stone Tower Temple Inverted Bridge => MM Stone Tower Temple Inverted Center",
+      "Area": "MM Stone Tower Temple Inverted Bridge",
+      "Exit": "MM Stone Tower Temple Inverted Center",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -25899,6 +25939,51 @@
       }
     },
     {
+      "ID": "OOT_DEKU_SKIP",
+      "Name": "Deku Tree B1 Skip",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_VOLCANO_HOVERS",
+      "Name": "Volcano Item with Hover Boots",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_HAMMER_WALLS",
+      "Name": "Hammer Through Walls",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_DC_JUMP",
+      "Name": "Dodongo's Cavern Upper Adult Jump",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_FOREST_HOOK",
+      "Name": "Forest Temple Garden Vines with Hookshot",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
       "ID": "MM_LENS",
       "Name": "Fewer Lens Requirements",
       "SpoilerData": {
@@ -25946,6 +26031,60 @@
     {
       "ID": "MM_ONE_MASK_STONE_TOWER",
       "Name": "Climb Stone Tower With One Mask",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "MM_SCT_NOTHING",
+      "Name": "South Clock Town Chest with Nothing",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "MM_CAPTAIN_SKIP",
+      "Name": "Guess Oceanside Spider House Code",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "MM_BOMBER_SKIP",
+      "Name": "Guess Bomber Code",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "MM_DARMANI_WALL",
+      "Name": "Climb Mountain Village Wall Blind",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "MM_WFT_HOOKSHOT",
+      "Name": "Woodfall Temple 2F with Hookshot",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "MM_ISTT_EYEGORE",
+      "Name": "Inverted Stone Tower Temple Eyegore Skips",
       "SpoilerData": {
         "SpoilerLogNames": [],
         "GossipHintNames": [],
