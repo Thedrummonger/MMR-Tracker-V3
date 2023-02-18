@@ -42,4 +42,8 @@
     </None>
   </ItemGroup>
 
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="call ..\WorkAround10150.bat" />
+  </Target>
+
 </Project>
