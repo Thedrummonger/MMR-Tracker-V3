@@ -326,12 +326,12 @@ namespace Windows_Form_Frontend
             switch (Type)
             {
                 case LogicEntryType.Area:
-                    var ValidLoadingZoneExits = instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values.Where(x => x.DestinationExit is not null  && x.DestinationExit.region == CleanedID));
-                    var ValidMacroExits = instance.EntrancePool.AreaList.Values.SelectMany(x => x.MacroExits.Values.Where(x => x.DestinationExit is not null  && x.DestinationExit.region == CleanedID));
+                    var ValidLoadingZoneExits = instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values.Where(x => (x.DestinationExit is not null  && x.DestinationExit.region == CleanedID) || ((x.IsUnrandomized()) && x.GetVanillaDestination().region == CleanedID)));
+                    var ValidMacroExits = instance.EntrancePool.AreaList.Values.SelectMany(x => x.MacroExits.Values.Where(x => (x.DestinationExit is not null  && x.DestinationExit.region == CleanedID) || x.GetVanillaDestination().region == CleanedID));
                     var ValidExits = ValidLoadingZoneExits.Concat(ValidMacroExits);
                     return ValidExits.Select(x => instance.GetLogicNameFromExit(x)).ToList();
                 case LogicEntryType.item:
-                    var ValidLocations = instance.LocationPool.Values.Where(x => x.Randomizeditem.Item is not null && x.Randomizeditem.Item == CleanedID && x.CheckState != MiscData.CheckState.Unchecked);
+                    var ValidLocations = instance.LocationPool.Values.Where(x => x.Randomizeditem.Item is not null && x.Randomizeditem.Item == CleanedID && (x.CheckState != MiscData.CheckState.Unchecked || x.IsUnrandomized()));
                     return ValidLocations.Select(x => x.ID).ToList();
                 case LogicEntryType.macro:
                     return new List<string> { CleanedID };
