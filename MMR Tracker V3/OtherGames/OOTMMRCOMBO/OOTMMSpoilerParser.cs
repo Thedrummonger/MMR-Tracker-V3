@@ -8,6 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Linq;
+using MathNet.Numerics;
 
 namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 {
@@ -121,9 +122,11 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             }
             if (spoilerFileLocation["Tricks"])
             {
-                var trick = Instance.MacroPool.Values.FirstOrDefault(x => x.isTrick(Instance) && x.ID == Line);
+                var TrickName = "TRICK_" + Line;
+                var trick = Instance.MacroPool.Values.FirstOrDefault(x => x.isTrick(Instance) && x.ID == TrickName);
+                if (trick == null) { }
                 if (trick is not null) { trick.TrickEnabled = true; }
-                else { Debug.WriteLine($"{Line} Could notbe found in the trick list!"); }
+                else { Debug.WriteLine($"{TrickName} Could notbe found in the trick list!"); }
             }
             if (spoilerFileLocation["Starting Items"])
             {

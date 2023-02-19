@@ -331,7 +331,7 @@ namespace Windows_Form_Frontend
                     var ValidExits = ValidLoadingZoneExits.Concat(ValidMacroExits);
                     return ValidExits.Select(x => instance.GetLogicNameFromExit(x)).ToList();
                 case LogicEntryType.item:
-                    var ValidLocations = instance.LocationPool.Values.Where(x => x.Randomizeditem.Item is not null && x.Randomizeditem.Item == CleanedID);
+                    var ValidLocations = instance.LocationPool.Values.Where(x => x.Randomizeditem.Item is not null && x.Randomizeditem.Item == CleanedID && x.CheckState != MiscData.CheckState.Unchecked);
                     return ValidLocations.Select(x => x.ID).ToList();
                 case LogicEntryType.macro:
                     return new List<string> { CleanedID };
