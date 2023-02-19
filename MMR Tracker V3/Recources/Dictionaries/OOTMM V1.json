@@ -25876,7 +25876,7 @@
   ],
   "MacroList": [
     {
-      "ID": "OOT_LENS",
+      "ID": "TRICK_OOT_LENS",
       "Name": "Fewer Lens Requirements",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -25885,7 +25885,7 @@
       }
     },
     {
-      "ID": "OOT_TUNICS",
+      "ID": "TRICK_OOT_TUNICS",
       "Name": "Fewer Tunic Requirements",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -25894,7 +25894,7 @@
       }
     },
     {
-      "ID": "OOT_HIDDEN_GROTTOS",
+      "ID": "TRICK_OOT_HIDDEN_GROTTOS",
       "Name": "Hidden Grottos Without Stone of Agony",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -25903,7 +25903,7 @@
       }
     },
     {
-      "ID": "OOT_MIDO_SKIP",
+      "ID": "TRICK_OOT_MIDO_SKIP",
       "Name": "Backflip Over Mido",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -25912,7 +25912,7 @@
       }
     },
     {
-      "ID": "OOT_MAN_ON_ROOF",
+      "ID": "TRICK_OOT_MAN_ON_ROOF",
       "Name": "Man On Roof With Nothing",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -25921,7 +25921,7 @@
       }
     },
     {
-      "ID": "OOT_BLIND_WASTELAND",
+      "ID": "TRICK_OOT_BLIND_WASTELAND",
       "Name": "Blind Wasteland Crossing",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -25930,7 +25930,7 @@
       }
     },
     {
-      "ID": "OOT_NIGHT_GS",
+      "ID": "TRICK_OOT_NIGHT_GS",
       "Name": "Nighttime Skulltulas Without Suns Song",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -25939,7 +25939,7 @@
       }
     },
     {
-      "ID": "OOT_DEKU_SKIP",
+      "ID": "TRICK_OOT_DEKU_SKIP",
       "Name": "Deku Tree B1 Skip",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -25948,7 +25948,7 @@
       }
     },
     {
-      "ID": "OOT_VOLCANO_HOVERS",
+      "ID": "TRICK_OOT_VOLCANO_HOVERS",
       "Name": "Volcano Item with Hover Boots",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -25957,7 +25957,7 @@
       }
     },
     {
-      "ID": "OOT_HAMMER_WALLS",
+      "ID": "TRICK_OOT_HAMMER_WALLS",
       "Name": "Hammer Through Walls",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -25966,7 +25966,7 @@
       }
     },
     {
-      "ID": "OOT_DC_JUMP",
+      "ID": "TRICK_OOT_DC_JUMP",
       "Name": "Dodongo's Cavern Upper Adult Jump",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -25975,7 +25975,7 @@
       }
     },
     {
-      "ID": "OOT_FOREST_HOOK",
+      "ID": "TRICK_OOT_FOREST_HOOK",
       "Name": "Forest Temple Garden Vines with Hookshot",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -25984,7 +25984,7 @@
       }
     },
     {
-      "ID": "MM_LENS",
+      "ID": "TRICK_MM_LENS",
       "Name": "Fewer Lens Requirements",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -25993,7 +25993,7 @@
       }
     },
     {
-      "ID": "MM_GORON_BOMB_JUMP",
+      "ID": "TRICK_MM_GORON_BOMB_JUMP",
       "Name": "Bomb Jump Fences as Goron",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -26002,7 +26002,7 @@
       }
     },
     {
-      "ID": "MM_NO_SEAHORSE",
+      "ID": "TRICK_MM_NO_SEAHORSE",
       "Name": "Pinnacle Rock Without Seahors",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -26011,7 +26011,7 @@
       }
     },
     {
-      "ID": "MM_ZORA_HALL_HUMAN",
+      "ID": "TRICK_MM_ZORA_HALL_HUMAN",
       "Name": "Swim to Zora Hall as Human",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -26020,7 +26020,7 @@
       }
     },
     {
-      "ID": "MM_ICELESS_IKANA",
+      "ID": "TRICK_MM_ICELESS_IKANA",
       "Name": "Climb Ikana Canyon Without Ice Arrows",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -26029,7 +26029,7 @@
       }
     },
     {
-      "ID": "MM_ONE_MASK_STONE_TOWER",
+      "ID": "TRICK_MM_ONE_MASK_STONE_TOWER",
       "Name": "Climb Stone Tower With One Mask",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -26038,7 +26038,7 @@
       }
     },
     {
-      "ID": "MM_SCT_NOTHING",
+      "ID": "TRICK_MM_SCT_NOTHING",
       "Name": "South Clock Town Chest with Nothing",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -26047,7 +26047,7 @@
       }
     },
     {
-      "ID": "MM_CAPTAIN_SKIP",
+      "ID": "TRICK_MM_CAPTAIN_SKIP",
       "Name": "Guess Oceanside Spider House Code",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -26056,7 +26056,7 @@
       }
     },
     {
-      "ID": "MM_BOMBER_SKIP",
+      "ID": "TRICK_MM_BOMBER_SKIP",
       "Name": "Guess Bomber Code",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -26065,7 +26065,7 @@
       }
     },
     {
-      "ID": "MM_DARMANI_WALL",
+      "ID": "TRICK_MM_DARMANI_WALL",
       "Name": "Climb Mountain Village Wall Blind",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -26074,7 +26074,7 @@
       }
     },
     {
-      "ID": "MM_WFT_HOOKSHOT",
+      "ID": "TRICK_MM_WFT_HOOKSHOT",
       "Name": "Woodfall Temple 2F with Hookshot",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -26083,7 +26083,7 @@
       }
     },
     {
-      "ID": "MM_ISTT_EYEGORE",
+      "ID": "TRICK_MM_ISTT_EYEGORE",
       "Name": "Inverted Stone Tower Temple Eyegore Skips",
       "SpoilerData": {
         "SpoilerLogNames": [],

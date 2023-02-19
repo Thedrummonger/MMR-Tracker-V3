@@ -52,6 +52,11 @@ namespace MMR_Tracker_V3
             {
                 PresetEntry = new PresetlogicData();
                 PresetEntry.Name = Path.GetFileNameWithoutExtension(i);
+                if (PresetEntry.Name.ToLower().StartsWith("dev-"))
+                {
+                    if (Testing.IsDevUser()) { PresetEntry.Name = PresetEntry.Name[4..]; }
+                    else { continue; }
+                }
                 PresetEntry.LogicString = File.ReadAllText(i);
                 Entries.Add(PresetEntry);
             }

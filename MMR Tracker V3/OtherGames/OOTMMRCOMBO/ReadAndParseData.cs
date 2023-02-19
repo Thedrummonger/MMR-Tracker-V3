@@ -37,9 +37,9 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
         public static void CreateFiles(out TrackerObjects.MMRData.LogicFile Logic, out TrackerObjects.LogicDictionaryData.LogicDictionary dictionary)
         {
-            string TestFolder = References.TestingPaths.GetDevTestingPath();
-            string FinalLogicFile = Path.Combine(TestFolder, @"OOTMMLogic.json");
-            string FinalDictFile = Path.Combine(TestFolder, @"OOTMMDict.json");
+            string TestFolder = Path.Combine(References.TestingPaths.GetDevCodePath(), "MMR Tracker V3", "Recources");
+            string FinalDictFile = Path.Combine(TestFolder, "Dictionaries", @"OOTMM V1.json");
+            string FinalLogicFile = Path.Combine(TestFolder, "Presets", @"DEV-OOTMM Casual.json");
 
             AddEntriesFromItemPools(out TrackerObjects.MMRData.LogicFile LogicFile, out TrackerObjects.LogicDictionaryData.LogicDictionary dictionaryFile);
             AddEntriesFromLogicFiles(LogicFile, dictionaryFile);
@@ -296,7 +296,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 switch (f.Funtion)
                 {
                     case "trick":
-                        line = line.Replace(f.ToString(), $"{f.ParametersTrimmed}");
+                        line = line.Replace(f.ToString(), $"TRICK_{f.ParametersTrimmed}");
                         break;
                     case "has":
                     case "event":
@@ -536,12 +536,13 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
             foreach(var i in OOTRTricksDict.Keys)
             {
+                string TrickID = "TRICK_" + i;
                 TrackerObjects.LogicDictionaryData.DictionaryMacroEntry TrickObject = new TrackerObjects.LogicDictionaryData.DictionaryMacroEntry();
-                TrickObject.ID = i;
+                TrickObject.ID = TrickID;
                 TrickObject.Name = OOTRTricksDict[i].Split(":")[1];
                 logicDictionary.MacroList.Add(TrickObject);
 
-                logicFile.Logic.Add(new TrackerObjects.MMRData.JsonFormatLogicItem() { Id = i, IsTrick = true, TrickCategory = OOTRTricksDict[i].Split(":")[0] });
+                logicFile.Logic.Add(new TrackerObjects.MMRData.JsonFormatLogicItem() { Id = TrickID, IsTrick = true, TrickCategory = OOTRTricksDict[i].Split(":")[0] });
             }
 
             Logic = logicFile;
@@ -595,10 +596,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 Item.ConditionalItems = new List<List<string>>();
                 foreach (var i in RandoAreaClear)
                 {
-                    List<string> list = new List<string>();
-                    list.Add($"{DungeonArea} => {BossDoor} == {i.Key}");
-                    list.Add(i.Value);
-                    Item.ConditionalItems.Add(list);
+                    Item.ConditionalItems.Add(new() { $"{DungeonArea} => {BossDoor} == {i.Key}", i.Value });
                 }
             }
         }
