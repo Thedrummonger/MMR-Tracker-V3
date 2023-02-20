@@ -118,6 +118,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 
             }
 
+            Instance.StaticOptions.EntranceRandoFeatures = false;
+
         }
 
         public static bool ApplySettings(string l, Dictionary<string, bool> spoilerFileLocation, LogicObjects.TrackerInstance Instance)

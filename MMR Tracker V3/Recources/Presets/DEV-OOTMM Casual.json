@@ -579,15 +579,20 @@
     {
       "Id": "MM Deku Palace Grotto Chest",
       "RequiredItems": [
-        "MM_MASK_DEKU",
         "MM Deku Palace"
       ],
       "ConditionalItems": [
         [
+          "MM_MASK_DEKU",
           "MM_can_use_beans"
         ],
         [
+          "MM_MASK_DEKU",
           "MM_HOOKSHOT"
+        ],
+        [
+          "MM_CLEAN_SWAMP",
+          "MM_can_use_beans"
         ]
       ],
       "TimeNeeded": "None",
@@ -598,10 +603,17 @@
     {
       "Id": "MM Deku Palace HP",
       "RequiredItems": [
-        "MM_MASK_DEKU",
         "MM Deku Palace"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_MASK_DEKU"
+        ],
+        [
+          "MM_CLEAN_SWAMP",
+          "MM_can_use_beans"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -612,10 +624,16 @@
       "RequiredItems": [
         "MM_MASK_DEKU",
         "MM_OCARINA",
-        "MM_can_use_beans",
         "MM Deku Palace"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_can_use_beans"
+        ],
+        [
+          "TRICK_MM_PALACE_BEAN_SKIP"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -648,6 +666,8 @@
     {
       "Id": "MM Deku Shrine Mask of Scents",
       "RequiredItems": [
+        "MM_DEKU_PRINCESS",
+        "MM_has_weapon_range",
         "MM Deku Shrine"
       ],
       "ConditionalItems": [],
@@ -10008,7 +10028,7 @@
       "TrickCategory": "Majoras Mask"
     },
     {
-      "Id": "TRICK_MM_WFT_HOOKSHOT",
+      "Id": "TRICK_MM_PALACE_BEAN_SKIP",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -18191,8 +18211,7 @@
     {
       "Id": "MM Deku Palace => MM Deku Shrine",
       "RequiredItems": [
-        "MM_MASK_DEKU",
-        "MM_DEKU_PRINCESS",
+        "MM_CLEAN_SWAMP",
         "MM Deku Palace"
       ],
       "ConditionalItems": [],
@@ -23160,7 +23179,6 @@
           "MM_WOODFALL_TEMPLE_MAIN_LADDER"
         ],
         [
-          "TRICK_MM_WFT_HOOKSHOT",
           "MM_HOOKSHOT"
         ]
       ],
