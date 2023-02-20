@@ -41,13 +41,6 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             { "MM_SECRET_SHRINE_HP", "MM Secret Shrine HP Chest"}
         };
 
-
-        public static Dictionary<string, Dictionary<string, string>> SpolierNameChanges = new Dictionary<string, Dictionary<string, string>>
-        {
-            { "Exits", new Dictionary<string, string> {
-                    { "OOT Dodongo Cavern Pre Boss", "OOT Dodongo Cavern Skull" }
-            }}
-        };
         public static void readAndApplySpoilerLog(LogicObjects.TrackerInstance Instance)
         {
             Instance.ToggleAllTricks(false);
@@ -57,7 +50,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             }
             foreach (var i in Instance.LocationPool.Values)
             {
-                i.RandomizedState = MiscData.RandomizedState.Randomized;
+                i.SetRandomizedState(MiscData.RandomizedState.Randomized, Instance);
             }
             foreach (var i in Instance.ItemPool.Values)
             {
@@ -76,19 +69,55 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 if (!ApplySettings(l, spoilerFileLocation, Instance)) { continue; }
             }
 
+            List<LocationData.LocationObject> LocationsInspoilerLog= new List<LocationData.LocationObject>();
+
             var ReleventData = GetReleventSpoilerLines(Instance.SpoilerLog.Log);
             foreach (var i in ReleventData)
             {
                 var entryData = i.Split(':').Select(x => x.Trim()).ToArray();
 
-                TrackerObjects.LocationData.LocationObject location = null;
-                TrackerObjects.ItemData.ItemObject item = Instance.GetItemToPlace(entryData[1]);
+                var location = Instance.LocationPool.ContainsKey(entryData[0]) ? Instance.LocationPool[entryData[0]] : null;
 
-                if (Instance.LocationPool.ContainsKey(entryData[0])) { location = Instance.LocationPool[entryData[0]]; }
-                else { Debug.WriteLine($"{entryData[0]} was not a valid location!"); }
-                if (item is null) { Debug.WriteLine($"{entryData[1]} was not a valid Item or no more of this could be placed!"); }
-                if (location is not null) { location.Randomizeditem.SpoilerLogGivenItem = item?.Id ?? entryData[1]; }
+                if (location is not null)
+                {
+                    LocationsInspoilerLog.Add(location);
+                    ItemData.ItemObject item = Instance.GetItemToPlace(entryData[1]);
+                    if (item is null) { Debug.WriteLine($"{entryData[1]} was not a valid Item or no more of this could be placed!"); }
+                    location.Randomizeditem.SpoilerLogGivenItem = item?.Id ?? entryData[1];
+                }
+                else
+                {
+                    Debug.WriteLine($"{entryData[0]} was not a valid location!");
+                }
             }
+
+            List<string> ManualTrackItems = new()
+            {
+                "OOT_GS_TOKEN",
+                "MM_GS_TOKEN_OCEAN",
+                "MM_GS_TOKEN_SWAMP",
+                "MM_STRAY_FAIRY_GB",
+                "MM_STRAY_FAIRY_SH",
+                "MM_STRAY_FAIRY_ST",
+                "MM_STRAY_FAIRY_WF"
+            };
+
+            foreach(var i in Instance.LocationPool.Values)
+            {
+                if (!LocationsInspoilerLog.Contains(i)) 
+                {
+                    if (ManualTrackItems.Contains(i.GetDictEntry(Instance).OriginalItem))
+                    {
+                        i.SetRandomizedState(MiscData.RandomizedState.UnrandomizedManual, Instance);
+                    }
+                    else
+                    {
+                        i.SetRandomizedState(MiscData.RandomizedState.Unrandomized, Instance);
+                    }
+                }
+                
+            }
+
         }
 
         public static bool ApplySettings(string l, Dictionary<string, bool> spoilerFileLocation, LogicObjects.TrackerInstance Instance)
@@ -201,11 +230,6 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             {
                 string NewLine = Line;
 
-                foreach (var i in SpolierNameChanges["Exits"])
-                {
-                    NewLine = NewLine.Replace(i.Key, i.Value);
-                }
-
                 var EntranceData = NewLine.Split(new string[] { "->" }, StringSplitOptions.None).Select(x => x.Trim()).ToArray();
                 var Source = EntranceData[0].Split('/');
                 var Destination = EntranceData[1].Split('/');
@@ -213,7 +237,6 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 Instance.EntrancePool.EntranceIsValid(Source[0], Source[1], false, out bool SourceArea, out bool SourceExit);
                 Instance.EntrancePool.EntranceIsValid(Destination[0], Destination[1], false, out bool DestArea, out bool DestExit);
 
-                Debug.WriteLine($"[{Source[0]}] [{Source[1]}]");
                 if (SourceArea && SourceExit && DestArea && DestExit)
                 {
                     var CurExit = Instance.EntrancePool.AreaList[Source[0]].LoadingZoneExits[Source[1]];
@@ -296,7 +319,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 spoilerFileLocation["Hints"] = true;
                 return true;
             }
-            if (l == "Sphere 0") { EndOfOptions = true; return true; }
+            if (l == "Spheres") { EndOfOptions = true; return true; }
             return false;
         }
 
@@ -306,7 +329,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             var ReleventSpoilerlines = new List<string>();
             foreach (var x in Data)
             {
-                if (x == "Kokiri Forest:") { AtLocationData = true; continue; }
+                if (x == "Location List") { AtLocationData = true; continue; }
                 if (!AtLocationData || string.IsNullOrWhiteSpace(x)) { continue; }
                 var LineParts = x.Split(':').Select(x => x.Trim()).ToArray();
                 if (LineParts.Count() > 1 && !string.IsNullOrWhiteSpace(LineParts[1]))
