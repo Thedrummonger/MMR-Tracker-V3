@@ -16,7 +16,7 @@ namespace Windows_Form_Frontend
     {
         public static bool CreateWinFormInstance(string Logic = null, string Dictionary = null, string SpoilerLog = null)
         {
-            var NewInstance = new LogicObjects.TrackerInstance();
+            var NewInstance = new MMR_Tracker_V3.TrackerObjects.MiscData.InstanceContainer();
             if (Logic == null)
             {
                 OpenFileDialog fileDialog = new OpenFileDialog();
@@ -26,22 +26,22 @@ namespace Windows_Form_Frontend
 
             var Result = NewInstance.ApplyLogicAndDict(Logic, Dictionary);
 
-            if (Result == TrackerInstanceCreation.InstanceState.LogicFailure || NewInstance.LogicFile.Logic == null)
+            if (Result == TrackerInstanceCreation.InstanceState.LogicFailure || NewInstance.Instance.LogicFile.Logic == null)
             {
                 MessageBox.Show("Failed To Load Logic");
                 return false;
             }
-            if (Result == TrackerInstanceCreation.InstanceState.DictionaryFailure || NewInstance.LogicDictionary == null)
+            if (Result == TrackerInstanceCreation.InstanceState.DictionaryFailure || NewInstance.Instance.LogicDictionary == null)
             {
                 MessageBox.Show("Failed To Load Dict");
                 return false;
             }
 
             //If all checks pass overrite the current instance
-            MainInterface.InstanceContainer.Instance = NewInstance;
+            MainInterface.InstanceContainer.Instance = NewInstance.Instance;
 
             MainInterface.InstanceContainer.CurrentSavePath = "";
-            MainInterface.InstanceContainer.Instance.GenerateInstance();
+            MainInterface.InstanceContainer.GenerateInstance();
 
             if (File.Exists(References.Globalpaths.OptionFile))
             {

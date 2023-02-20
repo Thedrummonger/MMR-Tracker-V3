@@ -22812,6 +22812,14 @@
       "DestinationHasSingleEntrance": false
     },
     {
+      "ID": "MM Swamp Back => MM Swamp Canopy Back",
+      "Area": "MM Swamp Back",
+      "Exit": "MM Swamp Canopy Back",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
       "ID": "MM Woods of Mystery => MM Swamp Front",
       "Area": "MM Woods of Mystery",
       "Exit": "MM Swamp Front",
@@ -22836,9 +22844,9 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "MM Deku Palace => MM Swamp Canopy",
+      "ID": "MM Deku Palace => MM Swamp Canopy Front",
       "Area": "MM Deku Palace",
-      "Exit": "MM Swamp Canopy",
+      "Exit": "MM Swamp Canopy Front",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -22852,33 +22860,57 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "MM Swamp Canopy => MM Swamp Back",
-      "Area": "MM Swamp Canopy",
+      "ID": "MM Swamp Canopy Front => MM Swamp Back",
+      "Area": "MM Swamp Canopy Front",
       "Exit": "MM Swamp Back",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "MM Swamp Canopy => MM Deku Palace",
-      "Area": "MM Swamp Canopy",
+      "ID": "MM Swamp Canopy Front => MM Deku Palace",
+      "Area": "MM Swamp Canopy Front",
       "Exit": "MM Deku Palace",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "MM Swamp Canopy => MM Woodfall",
-      "Area": "MM Swamp Canopy",
+      "ID": "MM Swamp Canopy Front => MM Swamp Canopy Back",
+      "Area": "MM Swamp Canopy Front",
+      "Exit": "MM Swamp Canopy Back",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "MM Swamp Canopy Back => MM Swamp Back",
+      "Area": "MM Swamp Canopy Back",
+      "Exit": "MM Swamp Back",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "MM Swamp Canopy Back => MM Woodfall",
+      "Area": "MM Swamp Canopy Back",
       "Exit": "MM Woodfall",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "MM Woodfall => MM Swamp Canopy",
+      "ID": "MM Swamp Canopy Back => MM Swamp Canopy Front",
+      "Area": "MM Swamp Canopy Back",
+      "Exit": "MM Swamp Canopy Front",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "MM Woodfall => MM Swamp Canopy Back",
       "Area": "MM Woodfall",
-      "Exit": "MM Swamp Canopy",
+      "Exit": "MM Swamp Canopy Back",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -22924,6 +22956,14 @@
       "ID": "MM Woodfall Front of Temple => MM Woodfall Shrine",
       "Area": "MM Woodfall Front of Temple",
       "Exit": "MM Woodfall Shrine",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "MM Woodfall Front of Temple => MM Woodfall",
+      "Area": "MM Woodfall Front of Temple",
+      "Exit": "MM Woodfall",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -26045,7 +26085,8 @@
     "MM Woods of Mystery",
     "MM Swamp Potion Shop",
     "MM Deku Palace",
-    "MM Swamp Canopy",
+    "MM Swamp Canopy Front",
+    "MM Swamp Canopy Back",
     "MM Woodfall",
     "MM Woodfall Front of Temple",
     "MM Woodfall Shrine",

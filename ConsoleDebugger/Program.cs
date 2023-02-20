@@ -75,7 +75,7 @@ namespace ConsoleDebugger
             var selection = Console.ReadLine();
             if (int.TryParse(selection, out int ind) && PresetsDict.ContainsKey(ind))
             {
-                newTrackerInstance.Instance.GenerateInstance(PresetsDict[ind].LogicString, PresetsDict[ind].DictionaryString);
+                newTrackerInstance.GenerateInstance(PresetsDict[ind].LogicString, PresetsDict[ind].DictionaryString);
                 LoopLocationList();
             }
             else
@@ -122,7 +122,7 @@ namespace ConsoleDebugger
 
             string[] LogicData = LogicFileParser.GetLogicData(path, out bool WasSpoilerLog);
 
-            newTrackerInstance.Instance.GenerateInstance(LogicData);
+            newTrackerInstance.GenerateInstance(LogicData);
 
             if (newTrackerInstance.Instance.LogicFile.GameCode == "MMR" && WasSpoilerLog)
             {

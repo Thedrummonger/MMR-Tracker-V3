@@ -2872,7 +2872,7 @@
       "Id": "MM Southern Swamp Song of Soaring",
       "RequiredItems": [
         "MM_MASK_DEKU",
-        "MM Swamp Canopy"
+        "MM Swamp Canopy Back"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4222,17 +4222,20 @@
     },
     {
       "Id": "MM Woodfall Near Owl Chest",
-      "RequiredItems": [
-        "MM Woodfall Shrine"
-      ],
+      "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_MASK_DEKU"
+          "MM_MASK_DEKU",
+          "MM Woodfall Shrine"
         ],
         [
           "MM_HOOKSHOT",
-          "MM_OCARINA",
-          "MM_SONG_SOARING"
+          "MM Woodfall Shrine"
+        ],
+        [
+          "MM_HOOKSHOT",
+          "MM_CLEAN_SWAMP",
+          "MM Woodfall"
         ]
       ],
       "TimeNeeded": "None",
@@ -17924,15 +17927,18 @@
           "MM_BOAT_RIDE"
         ],
         [
+          "MM_MASK_ZORA"
+        ],
+        [
+          "MM_CLEAN_SWAMP"
+        ],
+        [
           "MM_MASK_DEKU",
           "MM_BOW"
         ],
         [
           "MM_MASK_DEKU",
           "MM_HOOKSHOT"
-        ],
-        [
-          "MM_MASK_ZORA"
         ]
       ],
       "TimeNeeded": "None",
@@ -18026,12 +18032,19 @@
           "MM_BOAT_RIDE"
         ],
         [
+          "MM_CLEAN_SWAMP"
+        ],
+        [
           "MM_BOW",
           "MM_MASK_DEKU"
         ],
         [
           "MM_BOW",
           "MM_MASK_ZORA"
+        ],
+        [
+          "MM_BOW",
+          "MM_MASK_GORON"
         ]
       ],
       "TimeNeeded": "None",
@@ -18063,6 +18076,18 @@
           "MM_MASK_ZORA"
         ]
       ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Swamp Back => MM Swamp Canopy Back",
+      "RequiredItems": [
+        "MM_CLEAN_SWAMP",
+        "MM Swamp Back"
+      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -18152,7 +18177,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Deku Palace => MM Swamp Canopy",
+      "Id": "MM Deku Palace => MM Swamp Canopy Front",
       "RequiredItems": [
         "MM_MASK_DEKU",
         "MM Deku Palace"
@@ -18189,9 +18214,9 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Swamp Canopy => MM Swamp Back",
+      "Id": "MM Swamp Canopy Front => MM Swamp Back",
       "RequiredItems": [
-        "MM Swamp Canopy"
+        "MM Swamp Canopy Front"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -18200,9 +18225,9 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Swamp Canopy => MM Deku Palace",
+      "Id": "MM Swamp Canopy Front => MM Deku Palace",
       "RequiredItems": [
-        "MM Swamp Canopy"
+        "MM Swamp Canopy Front"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -18211,10 +18236,10 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Swamp Canopy => MM Woodfall",
+      "Id": "MM Swamp Canopy Front => MM Swamp Canopy Back",
       "RequiredItems": [
         "MM_MASK_DEKU",
-        "MM Swamp Canopy"
+        "MM Swamp Canopy Front"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -18223,7 +18248,51 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Woodfall => MM Swamp Canopy",
+      "Id": "MM Swamp Canopy Back => MM Swamp Back",
+      "RequiredItems": [
+        "MM Swamp Canopy Back"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_MASK_DEKU"
+        ],
+        [
+          "MM_MASK_ZORA"
+        ],
+        [
+          "MM_CLEAN_SWAMP"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Swamp Canopy Back => MM Woodfall",
+      "RequiredItems": [
+        "MM Swamp Canopy Back"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Swamp Canopy Back => MM Swamp Canopy Front",
+      "RequiredItems": [
+        "MM_MASK_DEKU",
+        "MM Swamp Canopy Back"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Woodfall => MM Swamp Canopy Back",
       "RequiredItems": [
         "MM Woodfall"
       ],
@@ -18248,11 +18317,17 @@
     {
       "Id": "MM Woodfall => MM Woodfall Near Great Fairy Fountain",
       "RequiredItems": [
-        "MM_HOOKSHOT",
-        "MM_MASK_DEKU",
         "MM Woodfall"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_HOOKSHOT",
+          "MM_MASK_DEKU"
+        ],
+        [
+          "MM_CLEAN_SWAMP"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -18296,10 +18371,10 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Woodfall Shrine => MM Woodfall",
+      "Id": "MM Woodfall Front of Temple => MM Woodfall",
       "RequiredItems": [
-        "MM_MASK_DEKU",
-        "MM Woodfall Shrine"
+        "MM_CLEAN_SWAMP",
+        "MM Woodfall Front of Temple"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -18308,12 +18383,36 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Woodfall Shrine => MM Woodfall Near Great Fairy Fountain",
+      "Id": "MM Woodfall Shrine => MM Woodfall",
       "RequiredItems": [
-        "MM_MASK_DEKU",
         "MM Woodfall Shrine"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_MASK_DEKU"
+        ],
+        [
+          "MM_CLEAN_SWAMP"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Woodfall Shrine => MM Woodfall Near Great Fairy Fountain",
+      "RequiredItems": [
+        "MM Woodfall Shrine"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_MASK_DEKU"
+        ],
+        [
+          "MM_CLEAN_SWAMP"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -18359,10 +18458,16 @@
     {
       "Id": "MM Woodfall Near Great Fairy Fountain => MM Woodfall",
       "RequiredItems": [
-        "MM_MASK_DEKU",
         "MM Woodfall Near Great Fairy Fountain"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_MASK_DEKU"
+        ],
+        [
+          "MM_CLEAN_SWAMP"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -18437,6 +18542,9 @@
         ],
         [
           "MM_can_use_fire_arrows"
+        ],
+        [
+          "MM_BOSS_SNOWHEAD"
         ]
       ],
       "TimeNeeded": "None",
@@ -18466,6 +18574,9 @@
         ],
         [
           "MM_can_use_fire_arrows"
+        ],
+        [
+          "MM_BOSS_SNOWHEAD"
         ]
       ],
       "TimeNeeded": "None",
@@ -18972,10 +19083,16 @@
     {
       "Id": "MM_OPEN_SNOWHEAD_TEMPLE",
       "RequiredItems": [
-        "MM_can_lullaby",
         "MM Snowhead Entrance"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_can_lullaby"
+        ],
+        [
+          "MM_BOSS_SNOWHEAD"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
