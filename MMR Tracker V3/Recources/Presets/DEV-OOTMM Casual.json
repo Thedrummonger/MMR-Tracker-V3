@@ -16341,7 +16341,6 @@
     {
       "Id": "MM Great Bay Temple Boss => MM Great Bay Temple After Boss",
       "RequiredItems": [
-        "MM_TIME_TRAVEL",
         "MM_MAGIC_UPGRADE",
         "MM_BOW",
         "MM Great Bay Temple Boss"
@@ -22128,7 +22127,6 @@
     {
       "Id": "MM Snowhead Temple Boss => MM Snowhead Temple After Boss",
       "RequiredItems": [
-        "MM_TIME_TRAVEL",
         "MM_can_use_fire_arrows",
         "MM Snowhead Temple Boss"
       ],
@@ -22873,7 +22871,6 @@
     {
       "Id": "MM Stone Tower Temple Boss => MM Stone Tower After Boss",
       "RequiredItems": [
-        "MM_TIME_TRAVEL",
         "MM_MAGIC_UPGRADE",
         "MM Stone Tower Temple Boss"
       ],
@@ -23415,7 +23412,6 @@
     {
       "Id": "MM Woodfall Temple Boss => MM Woodfall Temple After Boss",
       "RequiredItems": [
-        "MM_TIME_TRAVEL",
         "MM Woodfall Temple Boss"
       ],
       "ConditionalItems": [
