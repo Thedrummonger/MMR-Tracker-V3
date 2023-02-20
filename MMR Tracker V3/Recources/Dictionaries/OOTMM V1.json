@@ -18705,14 +18705,32 @@
       "ID": "OOT Bottom of the Well => OOT Kakariko",
       "Area": "OOT Bottom of the Well",
       "Exit": "OOT Kakariko",
-      "RandomizableEntrance": false,
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "OOT Kakariko",
+        "Exit": "OOT Bottom of the Well"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Deku Tree Lobby => OOT Kokiri Forest",
-      "Area": "OOT Deku Tree Lobby",
+      "ID": "OOT Deku Tree => OOT Kokiri Forest",
+      "Area": "OOT Deku Tree",
       "Exit": "OOT Kokiri Forest",
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "OOT Kokiri Forest",
+        "Exit": "OOT Deku Tree"
+      },
+      "RandomizableEntrance": true,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Deku Tree => OOT Deku Tree Lobby",
+      "Area": "OOT Deku Tree",
+      "Exit": "OOT Deku Tree Lobby",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -18807,25 +18825,30 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Dodongo Cavern Entrance => OOT Death Mountain",
-      "Area": "OOT Dodongo Cavern Entrance",
+      "ID": "OOT Dodongo Cavern => OOT Death Mountain",
+      "Area": "OOT Dodongo Cavern",
       "Exit": "OOT Death Mountain",
-      "RandomizableEntrance": false,
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "OOT Death Mountain",
+        "Exit": "OOT Dodongo Cavern"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Dodongo Cavern Entrance => OOT Dodongo Cavern Main",
-      "Area": "OOT Dodongo Cavern Entrance",
+      "ID": "OOT Dodongo Cavern => OOT Dodongo Cavern Main",
+      "Area": "OOT Dodongo Cavern",
       "Exit": "OOT Dodongo Cavern Main",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Dodongo Cavern Main => OOT Dodongo Cavern Entrance",
+      "ID": "OOT Dodongo Cavern Main => OOT Dodongo Cavern",
       "Area": "OOT Dodongo Cavern Main",
-      "Exit": "OOT Dodongo Cavern Entrance",
+      "Exit": "OOT Dodongo Cavern",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -19080,24 +19103,29 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Fire Temple Entrance => OOT Death Mountain Crater Bottom",
-      "Area": "OOT Fire Temple Entrance",
-      "Exit": "OOT Death Mountain Crater Bottom",
-      "RandomizableEntrance": false,
+      "ID": "OOT Fire Temple => OOT Death Mountain Crater Warp",
+      "Area": "OOT Fire Temple",
+      "Exit": "OOT Death Mountain Crater Warp",
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "OOT Death Mountain Crater Warp",
+        "Exit": "OOT Fire Temple"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Fire Temple Entrance => OOT Fire Temple Lava Room",
-      "Area": "OOT Fire Temple Entrance",
+      "ID": "OOT Fire Temple => OOT Fire Temple Lava Room",
+      "Area": "OOT Fire Temple",
       "Exit": "OOT Fire Temple Lava Room",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Fire Temple Entrance => OOT Fire Temple Boss",
-      "Area": "OOT Fire Temple Entrance",
+      "ID": "OOT Fire Temple => OOT Fire Temple Boss",
+      "Area": "OOT Fire Temple",
       "Exit": "OOT Fire Temple Boss",
       "DisplayArea": "Boss Room",
       "RandomizableEntrance": true,
@@ -19105,8 +19133,8 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Fire Temple Entrance => OOT Fire Temple Boss Key Loop",
-      "Area": "OOT Fire Temple Entrance",
+      "ID": "OOT Fire Temple => OOT Fire Temple Boss Key Loop",
+      "Area": "OOT Fire Temple",
       "Exit": "OOT Fire Temple Boss Key Loop",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
@@ -19121,9 +19149,9 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Fire Temple After Elevator => OOT Fire Temple Entrance",
+      "ID": "OOT Fire Temple After Elevator => OOT Fire Temple",
       "Area": "OOT Fire Temple After Elevator",
-      "Exit": "OOT Fire Temple Entrance",
+      "Exit": "OOT Fire Temple",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -19217,25 +19245,30 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Forest Temple Entrance => OOT Sacred Meadow",
-      "Area": "OOT Forest Temple Entrance",
+      "ID": "OOT Forest Temple => OOT Sacred Meadow",
+      "Area": "OOT Forest Temple",
       "Exit": "OOT Sacred Meadow",
-      "RandomizableEntrance": false,
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "OOT Sacred Meadow",
+        "Exit": "OOT Forest Temple"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Forest Temple Entrance => OOT Forest Temple Main",
-      "Area": "OOT Forest Temple Entrance",
+      "ID": "OOT Forest Temple => OOT Forest Temple Main",
+      "Area": "OOT Forest Temple",
       "Exit": "OOT Forest Temple Main",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Forest Temple Main => OOT Forest Temple Entrance",
+      "ID": "OOT Forest Temple Main => OOT Forest Temple",
       "Area": "OOT Forest Temple Main",
-      "Exit": "OOT Forest Temple Entrance",
+      "Exit": "OOT Forest Temple",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -19570,32 +19603,37 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Gerudo Training Grounds Entrance => OOT Gerudo Fortress",
-      "Area": "OOT Gerudo Training Grounds Entrance",
-      "Exit": "OOT Gerudo Fortress",
-      "RandomizableEntrance": false,
+      "ID": "OOT Gerudo Training Grounds => OOT Gerudo Fortress Exterior",
+      "Area": "OOT Gerudo Training Grounds",
+      "Exit": "OOT Gerudo Fortress Exterior",
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "OOT Gerudo Fortress Exterior",
+        "Exit": "OOT Gerudo Training Grounds"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Gerudo Training Grounds Entrance => OOT Gerudo Training Grounds Left Side",
-      "Area": "OOT Gerudo Training Grounds Entrance",
+      "ID": "OOT Gerudo Training Grounds => OOT Gerudo Training Grounds Left Side",
+      "Area": "OOT Gerudo Training Grounds",
       "Exit": "OOT Gerudo Training Grounds Left Side",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Gerudo Training Grounds Entrance => OOT Gerudo Training Grounds Right Side",
-      "Area": "OOT Gerudo Training Grounds Entrance",
+      "ID": "OOT Gerudo Training Grounds => OOT Gerudo Training Grounds Right Side",
+      "Area": "OOT Gerudo Training Grounds",
       "Exit": "OOT Gerudo Training Grounds Right Side",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Gerudo Training Grounds Entrance => OOT Gerudo Training Grounds Maze",
-      "Area": "OOT Gerudo Training Grounds Entrance",
+      "ID": "OOT Gerudo Training Grounds => OOT Gerudo Training Grounds Maze",
+      "Area": "OOT Gerudo Training Grounds",
       "Exit": "OOT Gerudo Training Grounds Maze",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
@@ -19690,33 +19728,43 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Ice Cavern Entrance => OOT Zora Fountain",
-      "Area": "OOT Ice Cavern Entrance",
-      "Exit": "OOT Zora Fountain",
-      "RandomizableEntrance": false,
+      "ID": "OOT Ice Cavern => OOT Zora Fountain Frozen",
+      "Area": "OOT Ice Cavern",
+      "Exit": "OOT Zora Fountain Frozen",
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "OOT Zora Fountain Frozen",
+        "Exit": "OOT Ice Cavern"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Jabu-Jabu Entrance => OOT Zora Fountain",
-      "Area": "OOT Jabu-Jabu Entrance",
+      "ID": "OOT Jabu-Jabu => OOT Zora Fountain",
+      "Area": "OOT Jabu-Jabu",
       "Exit": "OOT Zora Fountain",
-      "RandomizableEntrance": false,
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "OOT Zora Fountain",
+        "Exit": "OOT Jabu-Jabu"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Jabu-Jabu Entrance => OOT Jabu-Jabu Main",
-      "Area": "OOT Jabu-Jabu Entrance",
+      "ID": "OOT Jabu-Jabu => OOT Jabu-Jabu Main",
+      "Area": "OOT Jabu-Jabu",
       "Exit": "OOT Jabu-Jabu Main",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Jabu-Jabu Main => OOT Jabu-Jabu Entrance",
+      "ID": "OOT Jabu-Jabu Main => OOT Jabu-Jabu",
       "Area": "OOT Jabu-Jabu Main",
-      "Exit": "OOT Jabu-Jabu Entrance",
+      "Exit": "OOT Jabu-Jabu",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -19835,10 +19883,15 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Kokiri Forest => OOT Deku Tree Lobby",
+      "ID": "OOT Kokiri Forest => OOT Deku Tree",
       "Area": "OOT Kokiri Forest",
-      "Exit": "OOT Deku Tree Lobby",
-      "RandomizableEntrance": false,
+      "Exit": "OOT Deku Tree",
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "OOT Deku Tree",
+        "Exit": "OOT Kokiri Forest"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -20259,10 +20312,15 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Sacred Meadow => OOT Forest Temple Entrance",
+      "ID": "OOT Sacred Meadow => OOT Forest Temple",
       "Area": "OOT Sacred Meadow",
-      "Exit": "OOT Forest Temple Entrance",
-      "RandomizableEntrance": false,
+      "Exit": "OOT Forest Temple",
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "OOT Forest Temple",
+        "Exit": "OOT Sacred Meadow"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -20294,7 +20352,12 @@
       "ID": "OOT Kakariko => OOT Bottom of the Well",
       "Area": "OOT Kakariko",
       "Exit": "OOT Bottom of the Well",
-      "RandomizableEntrance": false,
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "OOT Bottom of the Well",
+        "Exit": "OOT Kakariko"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -20363,10 +20426,15 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Graveyard Upper => OOT Shadow Temple Entrance",
+      "ID": "OOT Graveyard Upper => OOT Shadow Temple",
       "Area": "OOT Graveyard Upper",
-      "Exit": "OOT Shadow Temple Entrance",
-      "RandomizableEntrance": false,
+      "Exit": "OOT Shadow Temple",
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "OOT Shadow Temple",
+        "Exit": "OOT Graveyard Upper"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -20395,10 +20463,15 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Death Mountain => OOT Dodongo Cavern Entrance",
+      "ID": "OOT Death Mountain => OOT Dodongo Cavern",
       "Area": "OOT Death Mountain",
-      "Exit": "OOT Dodongo Cavern Entrance",
-      "RandomizableEntrance": false,
+      "Exit": "OOT Dodongo Cavern",
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "OOT Dodongo Cavern",
+        "Exit": "OOT Death Mountain"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -20587,10 +20660,15 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Lake Hylia => OOT Water Temple Entrance",
+      "ID": "OOT Lake Hylia => OOT Water Temple",
       "Area": "OOT Lake Hylia",
-      "Exit": "OOT Water Temple Entrance",
-      "RandomizableEntrance": false,
+      "Exit": "OOT Water Temple",
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "OOT Water Temple",
+        "Exit": "OOT Lake Hylia"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -20627,18 +20705,44 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Zora Fountain => OOT Jabu-Jabu Entrance",
+      "ID": "OOT Zora Fountain => OOT Jabu-Jabu",
       "Area": "OOT Zora Fountain",
-      "Exit": "OOT Jabu-Jabu Entrance",
+      "Exit": "OOT Jabu-Jabu",
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "OOT Jabu-Jabu",
+        "Exit": "OOT Zora Fountain"
+      },
+      "RandomizableEntrance": true,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Zora Fountain => OOT Zora Fountain Frozen",
+      "Area": "OOT Zora Fountain",
+      "Exit": "OOT Zora Fountain Frozen",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Zora Fountain => OOT Ice Cavern Entrance",
-      "Area": "OOT Zora Fountain",
-      "Exit": "OOT Ice Cavern Entrance",
+      "ID": "OOT Zora Fountain Frozen => OOT Zora Fountain",
+      "Area": "OOT Zora Fountain Frozen",
+      "Exit": "OOT Zora Fountain",
       "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Zora Fountain Frozen => OOT Ice Cavern",
+      "Area": "OOT Zora Fountain Frozen",
+      "Exit": "OOT Ice Cavern",
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "OOT Ice Cavern",
+        "Exit": "OOT Zora Fountain Frozen"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -20715,10 +20819,15 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Death Mountain Crater Warp => OOT Fire Temple Entrance",
+      "ID": "OOT Death Mountain Crater Warp => OOT Fire Temple",
       "Area": "OOT Death Mountain Crater Warp",
-      "Exit": "OOT Fire Temple Entrance",
-      "RandomizableEntrance": false,
+      "Exit": "OOT Fire Temple",
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "OOT Fire Temple",
+        "Exit": "OOT Death Mountain Crater Warp"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -20795,10 +20904,15 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Gerudo Fortress Exterior => OOT Gerudo Training Grounds Entrance",
+      "ID": "OOT Gerudo Fortress Exterior => OOT Gerudo Training Grounds",
       "Area": "OOT Gerudo Fortress Exterior",
-      "Exit": "OOT Gerudo Training Grounds Entrance",
-      "RandomizableEntrance": false,
+      "Exit": "OOT Gerudo Training Grounds",
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "OOT Gerudo Training Grounds",
+        "Exit": "OOT Gerudo Fortress Exterior"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -20827,10 +20941,15 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Desert Colossus => OOT Spirit Temple Entrance",
+      "ID": "OOT Desert Colossus => OOT Spirit Temple",
       "Area": "OOT Desert Colossus",
-      "Exit": "OOT Spirit Temple Entrance",
-      "RandomizableEntrance": false,
+      "Exit": "OOT Spirit Temple",
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "OOT Spirit Temple",
+        "Exit": "OOT Desert Colossus"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -20843,16 +20962,21 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Shadow Temple Entrance => OOT Graveyard Upper",
-      "Area": "OOT Shadow Temple Entrance",
+      "ID": "OOT Shadow Temple => OOT Graveyard Upper",
+      "Area": "OOT Shadow Temple",
       "Exit": "OOT Graveyard Upper",
-      "RandomizableEntrance": false,
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "OOT Graveyard Upper",
+        "Exit": "OOT Shadow Temple"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Shadow Temple Entrance => OOT Shadow Temple Pit",
-      "Area": "OOT Shadow Temple Entrance",
+      "ID": "OOT Shadow Temple => OOT Shadow Temple Pit",
+      "Area": "OOT Shadow Temple",
       "Exit": "OOT Shadow Temple Pit",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
@@ -20908,33 +21032,38 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Spirit Temple Entrance => OOT Desert Colossus",
-      "Area": "OOT Spirit Temple Entrance",
+      "ID": "OOT Spirit Temple => OOT Desert Colossus",
+      "Area": "OOT Spirit Temple",
       "Exit": "OOT Desert Colossus",
-      "RandomizableEntrance": false,
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "OOT Desert Colossus",
+        "Exit": "OOT Spirit Temple"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Spirit Temple Entrance => OOT Spirit Temple Child Entrance",
-      "Area": "OOT Spirit Temple Entrance",
+      "ID": "OOT Spirit Temple => OOT Spirit Temple Child Entrance",
+      "Area": "OOT Spirit Temple",
       "Exit": "OOT Spirit Temple Child Entrance",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Spirit Temple Entrance => OOT Spirit Temple Adult Entrance",
-      "Area": "OOT Spirit Temple Entrance",
+      "ID": "OOT Spirit Temple => OOT Spirit Temple Adult Entrance",
+      "Area": "OOT Spirit Temple",
       "Exit": "OOT Spirit Temple Adult Entrance",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Spirit Temple Child Entrance => OOT Spirit Temple Entrance",
+      "ID": "OOT Spirit Temple Child Entrance => OOT Spirit Temple",
       "Area": "OOT Spirit Temple Child Entrance",
-      "Exit": "OOT Spirit Temple Entrance",
+      "Exit": "OOT Spirit Temple",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -21117,17 +21246,30 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Water Temple Entrance => OOT Lake Hylia",
-      "Area": "OOT Water Temple Entrance",
+      "ID": "OOT Water Temple => OOT Lake Hylia",
+      "Area": "OOT Water Temple",
       "Exit": "OOT Lake Hylia",
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "OOT Lake Hylia",
+        "Exit": "OOT Water Temple"
+      },
+      "RandomizableEntrance": true,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Water Temple => OOT Water Temple Main",
+      "Area": "OOT Water Temple",
+      "Exit": "OOT Water Temple Main",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Water Temple Entrance => OOT Water Temple Main",
-      "Area": "OOT Water Temple Entrance",
-      "Exit": "OOT Water Temple Main",
+      "ID": "OOT Water Temple Main => OOT Water Temple",
+      "Area": "OOT Water Temple Main",
+      "Exit": "OOT Water Temple",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -21614,9 +21756,30 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "MM Great Bay Temple Entrance => MM Zora Cape Peninsula",
-      "Area": "MM Great Bay Temple Entrance",
+      "ID": "MM Great Bay Temple => MM Great Bay Temple Entrance",
+      "Area": "MM Great Bay Temple",
+      "Exit": "MM Great Bay Temple Entrance",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "MM Great Bay Temple => MM Zora Cape Peninsula",
+      "Area": "MM Great Bay Temple",
       "Exit": "MM Zora Cape Peninsula",
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "MM Zora Cape Peninsula",
+        "Exit": "MM Great Bay Temple"
+      },
+      "RandomizableEntrance": true,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "MM Great Bay Temple Entrance => MM Great Bay Temple Entrance",
+      "Area": "MM Great Bay Temple Entrance",
+      "Exit": "MM Great Bay Temple Entrance",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -22039,9 +22202,30 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "MM Ocean Spider House Front => MM Great Bay Coast",
-      "Area": "MM Ocean Spider House Front",
+      "ID": "MM Ocean Spider House => MM Ocean Spider House Front",
+      "Area": "MM Ocean Spider House",
+      "Exit": "MM Ocean Spider House Front",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "MM Ocean Spider House => MM Great Bay Coast",
+      "Area": "MM Ocean Spider House",
       "Exit": "MM Great Bay Coast",
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "MM Great Bay Coast",
+        "Exit": "MM Ocean Spider House"
+      },
+      "RandomizableEntrance": true,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "MM Ocean Spider House Front => MM Ocean Spider House",
+      "Area": "MM Ocean Spider House Front",
+      "Exit": "MM Ocean Spider House",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -22055,9 +22239,9 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "MM Ocean Spider House Back => MM Ocean Spider House Front",
+      "ID": "MM Ocean Spider House Back => MM Ocean Spider House",
       "Area": "MM Ocean Spider House Back",
-      "Exit": "MM Ocean Spider House Front",
+      "Exit": "MM Ocean Spider House",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -22618,7 +22802,12 @@
       "ID": "MM Swamp Back => MM Swamp Spider House",
       "Area": "MM Swamp Back",
       "Exit": "MM Swamp Spider House",
-      "RandomizableEntrance": false,
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "MM Swamp Spider House",
+        "Exit": "MM Swamp Back"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -22719,10 +22908,15 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "MM Woodfall Front of Temple => MM Woodfall Temple Entrance",
+      "ID": "MM Woodfall Front of Temple => MM Woodfall Temple",
       "Area": "MM Woodfall Front of Temple",
-      "Exit": "MM Woodfall Temple Entrance",
-      "RandomizableEntrance": false,
+      "Exit": "MM Woodfall Temple",
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "MM Woodfall Temple",
+        "Exit": "MM Woodfall Front of Temple"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -23047,10 +23241,15 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "MM Snowhead => MM Snowhead Temple Entrance",
+      "ID": "MM Snowhead => MM Snowhead Temple",
       "Area": "MM Snowhead",
-      "Exit": "MM Snowhead Temple Entrance",
-      "RandomizableEntrance": false,
+      "Exit": "MM Snowhead Temple",
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "MM Snowhead Temple",
+        "Exit": "MM Snowhead"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -23231,10 +23430,15 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "MM Great Bay Coast => MM Ocean Spider House Front",
+      "ID": "MM Great Bay Coast => MM Ocean Spider House",
       "Area": "MM Great Bay Coast",
-      "Exit": "MM Ocean Spider House Front",
-      "RandomizableEntrance": false,
+      "Exit": "MM Ocean Spider House",
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "MM Ocean Spider House",
+        "Exit": "MM Great Bay Coast"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -23423,10 +23627,15 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "MM Zora Cape Peninsula => MM Great Bay Temple Entrance",
+      "ID": "MM Zora Cape Peninsula => MM Great Bay Temple",
       "Area": "MM Zora Cape Peninsula",
-      "Exit": "MM Great Bay Temple Entrance",
-      "RandomizableEntrance": false,
+      "Exit": "MM Great Bay Temple",
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "MM Great Bay Temple",
+        "Exit": "MM Zora Cape Peninsula"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -23759,18 +23968,28 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "MM Stone Tower Front of Temple => MM Stone Tower Temple Entrance",
+      "ID": "MM Stone Tower Front of Temple => MM Stone Tower Temple",
       "Area": "MM Stone Tower Front of Temple",
-      "Exit": "MM Stone Tower Temple Entrance",
-      "RandomizableEntrance": false,
+      "Exit": "MM Stone Tower Temple",
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "MM Stone Tower Temple",
+        "Exit": "MM Stone Tower Front of Temple"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "MM Stone Tower Top Inverted => MM Stone Tower Temple Inverted Entrance",
+      "ID": "MM Stone Tower Top Inverted => MM Stone Tower Temple Inverted",
       "Area": "MM Stone Tower Top Inverted",
-      "Exit": "MM Stone Tower Temple Inverted Entrance",
-      "RandomizableEntrance": false,
+      "Exit": "MM Stone Tower Temple Inverted",
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "MM Stone Tower Temple Inverted",
+        "Exit": "MM Stone Tower Top Inverted"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -24271,9 +24490,30 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "MM Snowhead Temple Entrance => MM Snowhead",
-      "Area": "MM Snowhead Temple Entrance",
+      "ID": "MM Snowhead Temple => MM Snowhead Temple Entrance",
+      "Area": "MM Snowhead Temple",
+      "Exit": "MM Snowhead Temple Entrance",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "MM Snowhead Temple => MM Snowhead",
+      "Area": "MM Snowhead Temple",
       "Exit": "MM Snowhead",
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "MM Snowhead",
+        "Exit": "MM Snowhead Temple"
+      },
+      "RandomizableEntrance": true,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "MM Snowhead Temple Entrance => MM Snowhead Temple",
+      "Area": "MM Snowhead Temple Entrance",
+      "Exit": "MM Snowhead Temple",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -24832,9 +25072,30 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "MM Stone Tower Temple Entrance => MM Stone Tower Front of Temple",
-      "Area": "MM Stone Tower Temple Entrance",
+      "ID": "MM Stone Tower Temple => MM Stone Tower Temple Entrance",
+      "Area": "MM Stone Tower Temple",
+      "Exit": "MM Stone Tower Temple Entrance",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "MM Stone Tower Temple => MM Stone Tower Front of Temple",
+      "Area": "MM Stone Tower Temple",
       "Exit": "MM Stone Tower Front of Temple",
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "MM Stone Tower Front of Temple",
+        "Exit": "MM Stone Tower Temple"
+      },
+      "RandomizableEntrance": true,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "MM Stone Tower Temple Entrance => MM Stone Tower Temple",
+      "Area": "MM Stone Tower Temple Entrance",
+      "Exit": "MM Stone Tower Temple",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -24992,9 +25253,30 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "MM Stone Tower Temple Inverted Entrance => MM Stone Tower Top Inverted",
-      "Area": "MM Stone Tower Temple Inverted Entrance",
+      "ID": "MM Stone Tower Temple Inverted => MM Stone Tower Temple Inverted Entrance",
+      "Area": "MM Stone Tower Temple Inverted",
+      "Exit": "MM Stone Tower Temple Inverted Entrance",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "MM Stone Tower Temple Inverted => MM Stone Tower Top Inverted",
+      "Area": "MM Stone Tower Temple Inverted",
       "Exit": "MM Stone Tower Top Inverted",
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "MM Stone Tower Top Inverted",
+        "Exit": "MM Stone Tower Temple Inverted"
+      },
+      "RandomizableEntrance": true,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "MM Stone Tower Temple Inverted Entrance => MM Stone Tower Temple Inverted",
+      "Area": "MM Stone Tower Temple Inverted Entrance",
+      "Exit": "MM Stone Tower Temple Inverted",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -25180,14 +25462,56 @@
       "ID": "MM Swamp Spider House => MM Swamp Back",
       "Area": "MM Swamp Spider House",
       "Exit": "MM Swamp Back",
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "MM Swamp Back",
+        "Exit": "MM Swamp Spider House"
+      },
+      "RandomizableEntrance": true,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "MM Swamp Spider House => MM Swamp Spider House Main",
+      "Area": "MM Swamp Spider House",
+      "Exit": "MM Swamp Spider House Main",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "MM Woodfall Temple Entrance => MM Woodfall Front of Temple",
-      "Area": "MM Woodfall Temple Entrance",
+      "ID": "MM Swamp Spider House Main => MM Swamp Spider House",
+      "Area": "MM Swamp Spider House Main",
+      "Exit": "MM Swamp Spider House",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "MM Woodfall Temple => MM Woodfall Front of Temple",
+      "Area": "MM Woodfall Temple",
       "Exit": "MM Woodfall Front of Temple",
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "MM Woodfall Front of Temple",
+        "Exit": "MM Woodfall Temple"
+      },
+      "RandomizableEntrance": true,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "MM Woodfall Temple => MM Woodfall Temple Entrance",
+      "Area": "MM Woodfall Temple",
+      "Exit": "MM Woodfall Temple Entrance",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "MM Woodfall Temple Entrance => MM Woodfall Temple",
+      "Area": "MM Woodfall Temple Entrance",
+      "Exit": "MM Woodfall Temple",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -25201,9 +25525,9 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "MM Woodfall Temple Main => MM Woodfall Temple Entrance",
+      "ID": "MM Woodfall Temple Main => MM Woodfall Temple",
       "Area": "MM Woodfall Temple Main",
-      "Exit": "MM Woodfall Temple Entrance",
+      "Exit": "MM Woodfall Temple",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -25452,6 +25776,7 @@
   ],
   "AreaList": [
     "OOT Bottom of the Well",
+    "OOT Deku Tree",
     "OOT Deku Tree Lobby",
     "OOT Deku Tree Slingshot Room",
     "OOT Deku Tree Basement",
@@ -25459,7 +25784,7 @@
     "OOT Deku Tree Basement Ledge",
     "OOT Deku Tree Before Boss",
     "OOT Deku Tree Boss",
-    "OOT Dodongo Cavern Entrance",
+    "OOT Dodongo Cavern",
     "OOT Dodongo Cavern Main",
     "OOT Dodongo Cavern Right Corridor",
     "OOT Dodongo Cavern Side Room",
@@ -25476,7 +25801,7 @@
     "OOT Dodongo Cavern Skull",
     "OOT Dodongo Cavern Boss",
     "OOT Dodongo Cavern After Boss",
-    "OOT Fire Temple Entrance",
+    "OOT Fire Temple",
     "OOT Fire Temple Boss Key Loop",
     "OOT Fire Temple Lava Room",
     "OOT Fire Temple After Elevator",
@@ -25487,7 +25812,7 @@
     "OOT Fire Temple Scarecrow",
     "OOT Fire Temple Boss",
     "OOT Fire Temple After Boss",
-    "OOT Forest Temple Entrance",
+    "OOT Forest Temple",
     "OOT Forest Temple Main",
     "OOT Forest Temple Mini-Boss",
     "OOT Forest Temple Garden West",
@@ -25521,7 +25846,7 @@
     "OOT Ganon Castle Tower",
     "OOT Ganon Castle Tower Boss",
     "OOT Gerudo Fortress",
-    "OOT Gerudo Training Grounds Entrance",
+    "OOT Gerudo Training Grounds",
     "OOT Gerudo Training Grounds Left Side",
     "OOT Gerudo Training Grounds After Block",
     "OOT Gerudo Training Grounds Upper",
@@ -25532,8 +25857,8 @@
     "OOT Gerudo Training Grounds Hammer",
     "OOT Gerudo Training Grounds Statue",
     "OOT Gerudo Training Grounds Maze",
-    "OOT Ice Cavern Entrance",
-    "OOT Jabu-Jabu Entrance",
+    "OOT Ice Cavern",
+    "OOT Jabu-Jabu",
     "OOT Jabu-Jabu Main",
     "OOT Jabu-Jabu Boss",
     "OOT Jabu-Jabu After Boss",
@@ -25579,6 +25904,7 @@
     "OOT Laboratory",
     "OOT Fishing Pond",
     "OOT Zora Fountain",
+    "OOT Zora Fountain Frozen",
     "OOT Temple of Time",
     "OOT Sacred Realm",
     "OOT Death Mountain Crater Top",
@@ -25590,7 +25916,7 @@
     "OOT Haunted Wasteland Start",
     "OOT Haunted Wasteland Structure",
     "OOT Desert Colossus",
-    "OOT Shadow Temple Entrance",
+    "OOT Shadow Temple",
     "OOT Shadow Temple Pit",
     "OOT Shadow Temple Main",
     "OOT Shadow Temple Open",
@@ -25598,7 +25924,7 @@
     "OOT Shadow Temple Boat",
     "OOT Shadow Temple Boss",
     "OOT Shadow Temple After Boss",
-    "OOT Spirit Temple Entrance",
+    "OOT Spirit Temple",
     "OOT Spirit Temple Child Entrance",
     "OOT Spirit Temple Child Climb",
     "OOT Spirit Temple Child Upper",
@@ -25613,7 +25939,7 @@
     "OOT Spirit Temple Adult Climb 2",
     "OOT Spirit Temple Boss",
     "OOT Spirit Temple After Boss",
-    "OOT Water Temple Entrance",
+    "OOT Water Temple",
     "OOT Water Temple Main",
     "OOT Water Temple Main Ledge",
     "OOT Water Temple Ruto Room",
@@ -25654,6 +25980,7 @@
     "MM Beneath the Well North Section",
     "MM Beneath the Well East Section",
     "MM Beneath the Well End",
+    "MM Great Bay Temple",
     "MM Great Bay Temple Entrance",
     "MM Great Bay Temple Water Wheel",
     "MM Great Bay Temple Central Room",
@@ -25682,6 +26009,7 @@
     "MM Moon Trial Link Rest 3",
     "MM Moon Trial Link Exit",
     "MM Moon Boss",
+    "MM Ocean Spider House",
     "MM Ocean Spider House Front",
     "MM Ocean Spider House Back",
     "MM SPAWN",
@@ -25809,6 +26137,7 @@
     "MM Secret Shrine Boss 2",
     "MM Secret Shrine Boss 3",
     "MM Secret Shrine Boss 4",
+    "MM Snowhead Temple",
     "MM Snowhead Temple Entrance",
     "MM Snowhead Temple Main",
     "MM Snowhead Temple Bridge Front",
@@ -25833,6 +26162,7 @@
     "MM Snowhead Temple Center Level 4",
     "MM Snowhead Temple Boss",
     "MM Snowhead Temple After Boss",
+    "MM Stone Tower Temple",
     "MM Stone Tower Temple Entrance",
     "MM Stone Tower Temple West",
     "MM Stone Tower Temple West Garden",
@@ -25844,6 +26174,7 @@
     "MM Stone Tower Temple Light Arrow Room",
     "MM Stone Tower Temple Before Water Bridge",
     "MM Stone Tower Temple Water Bridge",
+    "MM Stone Tower Temple Inverted",
     "MM Stone Tower Temple Inverted Entrance",
     "MM Stone Tower Temple Inverted East",
     "MM Stone Tower Temple Inverted Wizzrobe",
@@ -25857,6 +26188,8 @@
     "MM Stone Tower Temple Boss",
     "MM Stone Tower After Boss",
     "MM Swamp Spider House",
+    "MM Swamp Spider House Main",
+    "MM Woodfall Temple",
     "MM Woodfall Temple Entrance",
     "MM Woodfall Temple Main",
     "MM Woodfall Temple Water Room",

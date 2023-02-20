@@ -32,6 +32,17 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 return AreaList.SelectMany(x => x.Value.LoadingZoneExits.Where(y => y.Value.IsRandomized())).Count();
             }
+            public bool EntranceIsValid(string Area, string Exit, bool Macros, out bool AreaValid, out bool ExitValid)
+            {
+                AreaValid = false; ExitValid = false;
+                if (AreaList.ContainsKey(Area))
+                {
+                    AreaValid = true;
+                    var ExitList = Macros ? AreaList[Area].MacroExits : AreaList[Area].LoadingZoneExits;
+                    ExitValid = ExitList.ContainsKey(Exit);
+                }
+                return AreaValid && ExitValid;
+            }
         }
         public class EntranceRandoArea
         {

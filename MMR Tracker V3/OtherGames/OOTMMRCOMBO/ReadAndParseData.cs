@@ -52,12 +52,41 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
             FixAreaClearLogic(LogicFile);
 
+            FixLogicErrors(LogicFile, dictionaryFile);
+
+            CreateEntrancePairs(dictionaryFile);
+
             Logic = LogicFile;
             dictionary = dictionaryFile;
             File.WriteAllText(FinalLogicFile, JsonConvert.SerializeObject(LogicFile, Testing._NewtonsoftJsonSerializerOptions));
             File.WriteAllText(FinalDictFile, JsonConvert.SerializeObject(dictionaryFile, Testing._NewtonsoftJsonSerializerOptions));
 
 
+        }
+
+        private static void CreateEntrancePairs(LogicDictionaryData.LogicDictionary dictionaryFile)
+        {
+            var RandomizedEntrances = dictionaryFile.EntranceList.Where(x => x.RandomizableEntrance);
+
+            foreach(var i in RandomizedEntrances)
+            {
+                string PairId = $"{i.Exit} => {i.Area}";
+                if (RandomizedEntrances.Any(x => x.ID == PairId))
+                {
+                    i.EntrancePairID = new EntranceData.EntranceAreaPair { Area= i.Exit, Exit = i.Area };
+                }
+            }
+        }
+
+        private static void FixLogicErrors(MMRData.LogicFile logicFile, LogicDictionaryData.LogicDictionary dictionaryFile)
+        {
+            var IceCavernZoraFountainDict = dictionaryFile.EntranceList.Find(x => x.Area == "OOT Ice Cavern" && x.Exit == "OOT Zora Fountain");
+            IceCavernZoraFountainDict.ID = "OOT Ice Cavern => OOT Zora Fountain Frozen";
+            IceCavernZoraFountainDict.Exit = "OOT Zora Fountain Frozen";
+            IceCavernZoraFountainDict.DisplayArea = "Dungeon";
+            IceCavernZoraFountainDict.RandomizableEntrance = true;
+            var IceCavernZoraFountainLogic = logicFile.Logic.Find(x => x.Id == "OOT Ice Cavern => OOT Zora Fountain");
+            IceCavernZoraFountainLogic.Id = "OOT Ice Cavern => OOT Zora Fountain Frozen";
         }
 
         private static void RemoveGameFromNames(LogicDictionaryData.LogicDictionary dictionaryFile)
@@ -421,7 +450,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                                 if (RandoEntrances.ContainsKey(exit) && RandoEntrances[exit] == l) 
                                 { 
                                     entranceEntry.RandomizableEntrance = true;
-                                    entranceEntry.DisplayArea = "Boss Room";
+                                    entranceEntry.DisplayArea = TrueExitName.EndsWith(" Boss") ? "Boss Room" : "Dungeon";
                                 }
 
                                 dictionaryFile.EntranceList.Add(entranceEntry);

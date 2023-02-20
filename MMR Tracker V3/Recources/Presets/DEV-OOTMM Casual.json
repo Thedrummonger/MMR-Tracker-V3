@@ -310,10 +310,16 @@
     {
       "Id": "MM Clock Town Bomber Notebook",
       "RequiredItems": [
-        "MM_BOMBER_CODE",
         "MM Clock Town North"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_BOMBER_CODE"
+        ],
+        [
+          "MM_GUESS_BOMBER"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -2822,10 +2828,16 @@
     {
       "Id": "MM Southern Swamp Grotto",
       "RequiredItems": [
-        "MM_MASK_DEKU",
         "MM Swamp Back"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_MASK_DEKU"
+        ],
+        [
+          "MM_MASK_ZORA"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3431,7 +3443,7 @@
       "Id": "MM Swamp Skulltula Gold Room Hive",
       "RequiredItems": [
         "MM_has_weapon_range",
-        "MM Swamp Spider House"
+        "MM Swamp Spider House Main"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3442,7 +3454,7 @@
     {
       "Id": "MM Swamp Skulltula Gold Room Near Ceiling",
       "RequiredItems": [
-        "MM Swamp Spider House"
+        "MM Swamp Spider House Main"
       ],
       "ConditionalItems": [
         [
@@ -3463,7 +3475,7 @@
     {
       "Id": "MM Swamp Skulltula Gold Room Pillar",
       "RequiredItems": [
-        "MM Swamp Spider House"
+        "MM Swamp Spider House Main"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3474,7 +3486,7 @@
     {
       "Id": "MM Swamp Skulltula Gold Room Wall",
       "RequiredItems": [
-        "MM Swamp Spider House"
+        "MM Swamp Spider House Main"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3485,7 +3497,7 @@
     {
       "Id": "MM Swamp Skulltula Main Room Jar",
       "RequiredItems": [
-        "MM Swamp Spider House"
+        "MM Swamp Spider House Main"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3497,7 +3509,7 @@
       "Id": "MM Swamp Skulltula Main Room Lower Left Soft Soil",
       "RequiredItems": [
         "MM_has_bottle",
-        "MM Swamp Spider House"
+        "MM Swamp Spider House Main"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3509,7 +3521,7 @@
       "Id": "MM Swamp Skulltula Main Room Lower Right Soft Soil",
       "RequiredItems": [
         "MM_has_bottle",
-        "MM Swamp Spider House"
+        "MM Swamp Spider House Main"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3520,7 +3532,7 @@
     {
       "Id": "MM Swamp Skulltula Main Room Near Ceiling",
       "RequiredItems": [
-        "MM Swamp Spider House"
+        "MM Swamp Spider House Main"
       ],
       "ConditionalItems": [
         [
@@ -3550,7 +3562,7 @@
     {
       "Id": "MM Swamp Skulltula Main Room Pillar",
       "RequiredItems": [
-        "MM Swamp Spider House"
+        "MM Swamp Spider House Main"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3561,7 +3573,7 @@
     {
       "Id": "MM Swamp Skulltula Main Room Upper Pillar",
       "RequiredItems": [
-        "MM Swamp Spider House"
+        "MM Swamp Spider House Main"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3573,7 +3585,7 @@
       "Id": "MM Swamp Skulltula Main Room Upper Soft Soil",
       "RequiredItems": [
         "MM_has_bottle",
-        "MM Swamp Spider House"
+        "MM Swamp Spider House Main"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3584,7 +3596,7 @@
     {
       "Id": "MM Swamp Skulltula Main Room Water",
       "RequiredItems": [
-        "MM Swamp Spider House"
+        "MM Swamp Spider House Main"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3595,7 +3607,7 @@
     {
       "Id": "MM Swamp Skulltula Monument Room Crate 1",
       "RequiredItems": [
-        "MM Swamp Spider House"
+        "MM Swamp Spider House Main"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3606,7 +3618,7 @@
     {
       "Id": "MM Swamp Skulltula Monument Room Crate 2",
       "RequiredItems": [
-        "MM Swamp Spider House"
+        "MM Swamp Spider House Main"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3617,7 +3629,7 @@
     {
       "Id": "MM Swamp Skulltula Monument Room Lower Wall",
       "RequiredItems": [
-        "MM Swamp Spider House"
+        "MM Swamp Spider House Main"
       ],
       "ConditionalItems": [
         [
@@ -3639,7 +3651,7 @@
     {
       "Id": "MM Swamp Skulltula Monument Room On Monument",
       "RequiredItems": [
-        "MM Swamp Spider House"
+        "MM Swamp Spider House Main"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3650,7 +3662,7 @@
     {
       "Id": "MM Swamp Skulltula Monument Room Torch",
       "RequiredItems": [
-        "MM Swamp Spider House"
+        "MM Swamp Spider House Main"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3662,7 +3674,7 @@
       "Id": "MM Swamp Skulltula Pot Room Behind Vines",
       "RequiredItems": [
         "MM_has_weapon",
-        "MM Swamp Spider House"
+        "MM Swamp Spider House Main"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3674,7 +3686,7 @@
       "Id": "MM Swamp Skulltula Pot Room Hive 1",
       "RequiredItems": [
         "MM_has_weapon_range",
-        "MM Swamp Spider House"
+        "MM Swamp Spider House Main"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3686,7 +3698,7 @@
       "Id": "MM Swamp Skulltula Pot Room Hive 2",
       "RequiredItems": [
         "MM_has_weapon_range",
-        "MM Swamp Spider House"
+        "MM Swamp Spider House Main"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3697,7 +3709,7 @@
     {
       "Id": "MM Swamp Skulltula Pot Room Jar",
       "RequiredItems": [
-        "MM Swamp Spider House"
+        "MM Swamp Spider House Main"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3708,7 +3720,7 @@
     {
       "Id": "MM Swamp Skulltula Pot Room Pot 1",
       "RequiredItems": [
-        "MM Swamp Spider House"
+        "MM Swamp Spider House Main"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3719,7 +3731,7 @@
     {
       "Id": "MM Swamp Skulltula Pot Room Pot 2",
       "RequiredItems": [
-        "MM Swamp Spider House"
+        "MM Swamp Spider House Main"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3730,7 +3742,7 @@
     {
       "Id": "MM Swamp Skulltula Pot Room Wall",
       "RequiredItems": [
-        "MM Swamp Spider House"
+        "MM Swamp Spider House Main"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3741,7 +3753,7 @@
     {
       "Id": "MM Swamp Skulltula Tree Room Grass 1",
       "RequiredItems": [
-        "MM Swamp Spider House"
+        "MM Swamp Spider House Main"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3752,7 +3764,7 @@
     {
       "Id": "MM Swamp Skulltula Tree Room Grass 2",
       "RequiredItems": [
-        "MM Swamp Spider House"
+        "MM Swamp Spider House Main"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3764,7 +3776,7 @@
       "Id": "MM Swamp Skulltula Tree Room Hive",
       "RequiredItems": [
         "MM_has_weapon_range",
-        "MM Swamp Spider House"
+        "MM Swamp Spider House Main"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3775,7 +3787,7 @@
     {
       "Id": "MM Swamp Skulltula Tree Room Tree 1",
       "RequiredItems": [
-        "MM Swamp Spider House"
+        "MM Swamp Spider House Main"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3786,7 +3798,7 @@
     {
       "Id": "MM Swamp Skulltula Tree Room Tree 2",
       "RequiredItems": [
-        "MM Swamp Spider House"
+        "MM Swamp Spider House Main"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3797,7 +3809,7 @@
     {
       "Id": "MM Swamp Skulltula Tree Room Tree 3",
       "RequiredItems": [
-        "MM Swamp Spider House"
+        "MM Swamp Spider House Main"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3809,7 +3821,7 @@
       "Id": "MM Swamp Spider House Mask of Truth",
       "RequiredItems": [
         "MM_GS_TOKEN_SWAMP, 30",
-        "MM Swamp Spider House"
+        "MM Swamp Spider House Main"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5719,7 +5731,7 @@
     {
       "Id": "OOT Fire Temple Jail 1 Chest",
       "RequiredItems": [
-        "OOT Fire Temple Entrance"
+        "OOT Fire Temple"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5977,7 +5989,7 @@
     {
       "Id": "OOT Forest Temple GS Entrance",
       "RequiredItems": [
-        "OOT Forest Temple Entrance"
+        "OOT Forest Temple"
       ],
       "ConditionalItems": [
         [
@@ -6089,7 +6101,7 @@
     {
       "Id": "OOT Forest Temple Tree Small Key",
       "RequiredItems": [
-        "OOT Forest Temple Entrance"
+        "OOT Forest Temple"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -6540,7 +6552,7 @@
     {
       "Id": "OOT Gerudo Training Grounds Entrance 1",
       "RequiredItems": [
-        "OOT Gerudo Training Grounds Entrance"
+        "OOT Gerudo Training Grounds"
       ],
       "ConditionalItems": [
         [
@@ -6558,7 +6570,7 @@
     {
       "Id": "OOT Gerudo Training Grounds Entrance 2",
       "RequiredItems": [
-        "OOT Gerudo Training Grounds Entrance"
+        "OOT Gerudo Training Grounds"
       ],
       "ConditionalItems": [
         [
@@ -6634,7 +6646,7 @@
       "Id": "OOT Gerudo Training Grounds Stalfos",
       "RequiredItems": [
         "OOT_has_weapon",
-        "OOT Gerudo Training Grounds Entrance"
+        "OOT Gerudo Training Grounds"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -7394,7 +7406,7 @@
       "Id": "OOT Ice Cavern Compass",
       "RequiredItems": [
         "OOT_BLUE_FIRE",
-        "OOT Ice Cavern Entrance"
+        "OOT Ice Cavern"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -7407,7 +7419,7 @@
       "RequiredItems": [
         "OOT_BLUE_FIRE",
         "OOT_can_hookshot",
-        "OOT Ice Cavern Entrance"
+        "OOT Ice Cavern"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -7420,7 +7432,7 @@
       "RequiredItems": [
         "OOT_BLUE_FIRE",
         "OOT_can_hookshot",
-        "OOT Ice Cavern Entrance"
+        "OOT Ice Cavern"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -7433,7 +7445,7 @@
       "RequiredItems": [
         "OOT_BLUE_FIRE",
         "OOT_can_hookshot",
-        "OOT Ice Cavern Entrance"
+        "OOT Ice Cavern"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -7445,7 +7457,7 @@
       "Id": "OOT Ice Cavern HP",
       "RequiredItems": [
         "OOT_BLUE_FIRE",
-        "OOT Ice Cavern Entrance"
+        "OOT Ice Cavern"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -7457,7 +7469,7 @@
       "Id": "OOT Ice Cavern Iron Boots",
       "RequiredItems": [
         "OOT_BLUE_FIRE",
-        "OOT Ice Cavern Entrance"
+        "OOT Ice Cavern"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -7469,7 +7481,7 @@
       "Id": "OOT Ice Cavern Map",
       "RequiredItems": [
         "OOT_BLUE_FIRE",
-        "OOT Ice Cavern Entrance"
+        "OOT Ice Cavern"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -7481,7 +7493,7 @@
       "Id": "OOT Ice Cavern Sheik Song",
       "RequiredItems": [
         "OOT_BLUE_FIRE",
-        "OOT Ice Cavern Entrance"
+        "OOT Ice Cavern"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -10024,9 +10036,20 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Deku Tree Lobby => OOT Kokiri Forest",
+      "Id": "OOT Deku Tree => OOT Kokiri Forest",
       "RequiredItems": [
-        "OOT Deku Tree Lobby"
+        "OOT Deku Tree"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Deku Tree => OOT Deku Tree Lobby",
+      "RequiredItems": [
+        "OOT Deku Tree"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -10162,9 +10185,9 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Dodongo Cavern Entrance => OOT Death Mountain",
+      "Id": "OOT Dodongo Cavern => OOT Death Mountain",
       "RequiredItems": [
-        "OOT Dodongo Cavern Entrance"
+        "OOT Dodongo Cavern"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -10173,9 +10196,9 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Dodongo Cavern Entrance => OOT Dodongo Cavern Main",
+      "Id": "OOT Dodongo Cavern => OOT Dodongo Cavern Main",
       "RequiredItems": [
-        "OOT Dodongo Cavern Entrance"
+        "OOT Dodongo Cavern"
       ],
       "ConditionalItems": [
         [
@@ -10191,7 +10214,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Dodongo Cavern Main => OOT Dodongo Cavern Entrance",
+      "Id": "OOT Dodongo Cavern Main => OOT Dodongo Cavern",
       "RequiredItems": [
         "OOT Dodongo Cavern Main"
       ],
@@ -10626,9 +10649,9 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Fire Temple Entrance => OOT Death Mountain Crater Bottom",
+      "Id": "OOT Fire Temple => OOT Death Mountain Crater Warp",
       "RequiredItems": [
-        "OOT Fire Temple Entrance"
+        "OOT Fire Temple"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -10637,9 +10660,9 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Fire Temple Entrance => OOT Fire Temple Lava Room",
+      "Id": "OOT Fire Temple => OOT Fire Temple Lava Room",
       "RequiredItems": [
-        "OOT Fire Temple Entrance"
+        "OOT Fire Temple"
       ],
       "ConditionalItems": [
         [
@@ -10657,11 +10680,11 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Fire Temple Entrance => OOT Fire Temple Boss",
+      "Id": "OOT Fire Temple => OOT Fire Temple Boss",
       "RequiredItems": [
         "OOT_BOSS_KEY_FIRE",
         "OOT_has_tunic_goron_strict",
-        "OOT Fire Temple Entrance"
+        "OOT Fire Temple"
       ],
       "ConditionalItems": [
         [
@@ -10677,9 +10700,9 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Fire Temple Entrance => OOT Fire Temple Boss Key Loop",
+      "Id": "OOT Fire Temple => OOT Fire Temple Boss Key Loop",
       "RequiredItems": [
-        "OOT Fire Temple Entrance"
+        "OOT Fire Temple"
       ],
       "ConditionalItems": [
         [
@@ -10728,7 +10751,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Fire Temple After Elevator => OOT Fire Temple Entrance",
+      "Id": "OOT Fire Temple After Elevator => OOT Fire Temple",
       "RequiredItems": [
         "OOT Fire Temple After Elevator"
       ],
@@ -10906,9 +10929,9 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Forest Temple Entrance => OOT Sacred Meadow",
+      "Id": "OOT Forest Temple => OOT Sacred Meadow",
       "RequiredItems": [
-        "OOT Forest Temple Entrance"
+        "OOT Forest Temple"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -10917,9 +10940,9 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Forest Temple Entrance => OOT Forest Temple Main",
+      "Id": "OOT Forest Temple => OOT Forest Temple Main",
       "RequiredItems": [
-        "OOT Forest Temple Entrance"
+        "OOT Forest Temple"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -10928,7 +10951,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Forest Temple Main => OOT Forest Temple Entrance",
+      "Id": "OOT Forest Temple Main => OOT Forest Temple",
       "RequiredItems": [
         "OOT Forest Temple Main"
       ],
@@ -11551,7 +11574,7 @@
       ],
       "ConditionalItems": [
         [
-          "OOT Ice Cavern Entrance"
+          "OOT Ice Cavern"
         ],
         [
           "OOT Ganon Castle Water"
@@ -11677,9 +11700,9 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Gerudo Training Grounds Entrance => OOT Gerudo Fortress",
+      "Id": "OOT Gerudo Training Grounds => OOT Gerudo Fortress Exterior",
       "RequiredItems": [
-        "OOT Gerudo Training Grounds Entrance"
+        "OOT Gerudo Training Grounds"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11688,11 +11711,11 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Gerudo Training Grounds Entrance => OOT Gerudo Training Grounds Left Side",
+      "Id": "OOT Gerudo Training Grounds => OOT Gerudo Training Grounds Left Side",
       "RequiredItems": [
         "OOT_can_hookshot",
         "OOT_has_weapon",
-        "OOT Gerudo Training Grounds Entrance"
+        "OOT Gerudo Training Grounds"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11701,11 +11724,11 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Gerudo Training Grounds Entrance => OOT Gerudo Training Grounds Right Side",
+      "Id": "OOT Gerudo Training Grounds => OOT Gerudo Training Grounds Right Side",
       "RequiredItems": [
         "OOT_has_explosives",
         "OOT_has_weapon",
-        "OOT Gerudo Training Grounds Entrance"
+        "OOT Gerudo Training Grounds"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11714,9 +11737,9 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Gerudo Training Grounds Entrance => OOT Gerudo Training Grounds Maze",
+      "Id": "OOT Gerudo Training Grounds => OOT Gerudo Training Grounds Maze",
       "RequiredItems": [
-        "OOT Gerudo Training Grounds Entrance"
+        "OOT Gerudo Training Grounds"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11876,9 +11899,9 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Ice Cavern Entrance => OOT Zora Fountain",
+      "Id": "OOT Ice Cavern => OOT Zora Fountain Frozen",
       "RequiredItems": [
-        "OOT Ice Cavern Entrance"
+        "OOT Ice Cavern"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11887,9 +11910,9 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Jabu-Jabu Entrance => OOT Zora Fountain",
+      "Id": "OOT Jabu-Jabu => OOT Zora Fountain",
       "RequiredItems": [
-        "OOT Jabu-Jabu Entrance"
+        "OOT Jabu-Jabu"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11898,9 +11921,9 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Jabu-Jabu Entrance => OOT Jabu-Jabu Main",
+      "Id": "OOT Jabu-Jabu => OOT Jabu-Jabu Main",
       "RequiredItems": [
-        "OOT Jabu-Jabu Entrance"
+        "OOT Jabu-Jabu"
       ],
       "ConditionalItems": [
         [
@@ -11916,7 +11939,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Jabu-Jabu Main => OOT Jabu-Jabu Entrance",
+      "Id": "OOT Jabu-Jabu Main => OOT Jabu-Jabu",
       "RequiredItems": [
         "OOT Jabu-Jabu Main"
       ],
@@ -12138,7 +12161,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Kokiri Forest => OOT Deku Tree Lobby",
+      "Id": "OOT Kokiri Forest => OOT Deku Tree",
       "RequiredItems": [
         "OOT_is_child",
         "OOT Kokiri Forest"
@@ -13050,7 +13073,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Sacred Meadow => OOT Forest Temple Entrance",
+      "Id": "OOT Sacred Meadow => OOT Forest Temple",
       "RequiredItems": [
         "OOT_can_hookshot",
         "OOT Sacred Meadow"
@@ -13271,9 +13294,8 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Graveyard Upper => OOT Shadow Temple Entrance",
+      "Id": "OOT Graveyard Upper => OOT Shadow Temple",
       "RequiredItems": [
-        "OOT_is_adult",
         "OOT_can_use_din",
         "OOT Graveyard Upper"
       ],
@@ -13328,7 +13350,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Death Mountain => OOT Dodongo Cavern Entrance",
+      "Id": "OOT Death Mountain => OOT Dodongo Cavern",
       "RequiredItems": [
         "OOT Death Mountain"
       ],
@@ -13819,7 +13841,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Lake Hylia => OOT Water Temple Entrance",
+      "Id": "OOT Lake Hylia => OOT Water Temple",
       "RequiredItems": [
         "OOT_has_iron_boots",
         "OOT_has_tunic_zora",
@@ -13962,7 +13984,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Zora Fountain => OOT Jabu-Jabu Entrance",
+      "Id": "OOT Zora Fountain => OOT Jabu-Jabu",
       "RequiredItems": [
         "OOT_is_child",
         "OOT_has_bottle",
@@ -13975,7 +13997,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Zora Fountain => OOT Ice Cavern Entrance",
+      "Id": "OOT Zora Fountain => OOT Zora Fountain Frozen",
       "RequiredItems": [
         "OOT_is_adult",
         "OOT Zora Fountain"
@@ -14001,6 +14023,28 @@
       "Id": "OOT Zora Fountain Gossip Near Fairy",
       "RequiredItems": [
         "OOT Zora Fountain"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Zora Fountain Frozen => OOT Zora Fountain",
+      "RequiredItems": [
+        "OOT Zora Fountain Frozen"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Zora Fountain Frozen => OOT Ice Cavern",
+      "RequiredItems": [
+        "OOT Zora Fountain Frozen"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -14197,7 +14241,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Death Mountain Crater Warp => OOT Fire Temple Entrance",
+      "Id": "OOT Death Mountain Crater Warp => OOT Fire Temple",
       "RequiredItems": [
         "OOT_has_tunic_goron",
         "OOT Death Mountain Crater Warp"
@@ -14352,7 +14396,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Gerudo Fortress Exterior => OOT Gerudo Training Grounds Entrance",
+      "Id": "OOT Gerudo Fortress Exterior => OOT Gerudo Training Grounds",
       "RequiredItems": [
         "OOT_GERUDO_CARD",
         "OOT_is_adult",
@@ -14412,7 +14456,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Desert Colossus => OOT Spirit Temple Entrance",
+      "Id": "OOT Desert Colossus => OOT Spirit Temple",
       "RequiredItems": [
         "OOT Desert Colossus"
       ],
@@ -14458,9 +14502,9 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Shadow Temple Entrance => OOT Graveyard Upper",
+      "Id": "OOT Shadow Temple => OOT Graveyard Upper",
       "RequiredItems": [
-        "OOT Shadow Temple Entrance"
+        "OOT Shadow Temple"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -14469,9 +14513,9 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Shadow Temple Entrance => OOT Shadow Temple Pit",
+      "Id": "OOT Shadow Temple => OOT Shadow Temple Pit",
       "RequiredItems": [
-        "OOT Shadow Temple Entrance"
+        "OOT Shadow Temple"
       ],
       "ConditionalItems": [
         [
@@ -14581,9 +14625,9 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Spirit Temple Entrance => OOT Desert Colossus",
+      "Id": "OOT Spirit Temple => OOT Desert Colossus",
       "RequiredItems": [
-        "OOT Spirit Temple Entrance"
+        "OOT Spirit Temple"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -14592,10 +14636,10 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Spirit Temple Entrance => OOT Spirit Temple Child Entrance",
+      "Id": "OOT Spirit Temple => OOT Spirit Temple Child Entrance",
       "RequiredItems": [
         "OOT_is_child",
-        "OOT Spirit Temple Entrance"
+        "OOT Spirit Temple"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -14604,10 +14648,10 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Spirit Temple Entrance => OOT Spirit Temple Adult Entrance",
+      "Id": "OOT Spirit Temple => OOT Spirit Temple Adult Entrance",
       "RequiredItems": [
         "OOT_can_lift_silver",
-        "OOT Spirit Temple Entrance"
+        "OOT Spirit Temple"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -14620,7 +14664,7 @@
       "RequiredItems": [
         "OOT_is_child",
         "OOT_SMALL_KEY_SPIRIT, 5",
-        "OOT Spirit Temple Entrance"
+        "OOT Spirit Temple"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -14633,7 +14677,7 @@
       "RequiredItems": [
         "OOT_SMALL_KEY_SPIRIT, 3",
         "OOT_can_lift_silver",
-        "OOT Spirit Temple Entrance"
+        "OOT Spirit Temple"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -14642,7 +14686,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Spirit Temple Child Entrance => OOT Spirit Temple Entrance",
+      "Id": "OOT Spirit Temple Child Entrance => OOT Spirit Temple",
       "RequiredItems": [
         "OOT_is_child",
         "OOT Spirit Temple Child Entrance"
@@ -14926,9 +14970,9 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Water Temple Entrance => OOT Lake Hylia",
+      "Id": "OOT Water Temple => OOT Lake Hylia",
       "RequiredItems": [
-        "OOT Water Temple Entrance"
+        "OOT Water Temple"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -14937,9 +14981,20 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Water Temple Entrance => OOT Water Temple Main",
+      "Id": "OOT Water Temple => OOT Water Temple Main",
       "RequiredItems": [
-        "OOT Water Temple Entrance"
+        "OOT Water Temple"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Water Temple Main => OOT Water Temple",
+      "RequiredItems": [
+        "OOT Water Temple Main"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -15873,9 +15928,32 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Great Bay Temple Entrance => MM Zora Cape Peninsula",
+      "Id": "MM Great Bay Temple => MM Great Bay Temple Entrance",
+      "RequiredItems": [
+        "MM_TIME_TRAVEL",
+        "MM Great Bay Temple"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Great Bay Temple => MM Zora Cape Peninsula",
       "RequiredItems": [
         "MM_HOOKSHOT",
+        "MM Great Bay Temple"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Great Bay Temple Entrance => MM Great Bay Temple Entrance",
+      "RequiredItems": [
         "MM Great Bay Temple Entrance"
       ],
       "ConditionalItems": [],
@@ -16755,7 +16833,30 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Ocean Spider House Front => MM Great Bay Coast",
+      "Id": "MM Ocean Spider House => MM Ocean Spider House Front",
+      "RequiredItems": [
+        "MM_TIME_TRAVEL",
+        "MM Ocean Spider House"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Ocean Spider House => MM Great Bay Coast",
+      "RequiredItems": [
+        "MM Ocean Spider House"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Ocean Spider House Front => MM Ocean Spider House",
       "RequiredItems": [
         "MM Ocean Spider House Front"
       ],
@@ -16785,7 +16886,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Ocean Spider House Back => MM Ocean Spider House Front",
+      "Id": "MM Ocean Spider House Back => MM Ocean Spider House",
       "RequiredItems": [
         "MM Ocean Spider House Back"
       ],
@@ -17174,6 +17275,18 @@
           "TRICK_MM_BOMBER_SKIP"
         ]
       ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_GUESS_BOMBER",
+      "RequiredItems": [
+        "TRICK_MM_BOMBER_SKIP",
+        "MM Clock Town East"
+      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -17820,7 +17933,6 @@
           "MM_HOOKSHOT"
         ],
         [
-          "MM_MASK_DEKU",
           "MM_MASK_ZORA"
         ]
       ],
@@ -17915,8 +18027,12 @@
           "MM_BOAT_RIDE"
         ],
         [
-          "MM_MASK_DEKU",
-          "MM_BOW"
+          "MM_BOW",
+          "MM_MASK_DEKU"
+        ],
+        [
+          "MM_BOW",
+          "MM_MASK_ZORA"
         ]
       ],
       "TimeNeeded": "None",
@@ -17938,10 +18054,16 @@
     {
       "Id": "MM Swamp Back => MM Swamp Spider House",
       "RequiredItems": [
-        "MM_MASK_DEKU",
         "MM Swamp Back"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_MASK_DEKU"
+        ],
+        [
+          "MM_MASK_ZORA"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -18151,7 +18273,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Woodfall Front of Temple => MM Woodfall Temple Entrance",
+      "Id": "MM Woodfall Front of Temple => MM Woodfall Temple",
       "RequiredItems": [
         "MM_has_weapon",
         "MM Woodfall Front of Temple"
@@ -18873,7 +18995,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Snowhead => MM Snowhead Temple Entrance",
+      "Id": "MM Snowhead => MM Snowhead Temple",
       "RequiredItems": [
         "MM Snowhead"
       ],
@@ -19214,7 +19336,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Great Bay Coast => MM Ocean Spider House Front",
+      "Id": "MM Great Bay Coast => MM Ocean Spider House",
       "RequiredItems": [
         "MM Great Bay Coast"
       ],
@@ -19566,7 +19688,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Zora Cape Peninsula => MM Great Bay Temple Entrance",
+      "Id": "MM Zora Cape Peninsula => MM Great Bay Temple",
       "RequiredItems": [
         "MM_MASK_ZORA",
         "MM_HOOKSHOT",
@@ -20188,7 +20310,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Stone Tower Front of Temple => MM Stone Tower Temple Entrance",
+      "Id": "MM Stone Tower Front of Temple => MM Stone Tower Temple",
       "RequiredItems": [
         "MM Stone Tower Front of Temple"
       ],
@@ -20199,7 +20321,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Stone Tower Top Inverted => MM Stone Tower Temple Inverted Entrance",
+      "Id": "MM Stone Tower Top Inverted => MM Stone Tower Temple Inverted",
       "RequiredItems": [
         "MM Stone Tower Top Inverted"
       ],
@@ -21064,7 +21186,30 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Snowhead Temple Entrance => MM Snowhead",
+      "Id": "MM Snowhead Temple => MM Snowhead Temple Entrance",
+      "RequiredItems": [
+        "MM_TIME_TRAVEL",
+        "MM Snowhead Temple"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Snowhead Temple => MM Snowhead",
+      "RequiredItems": [
+        "MM Snowhead Temple"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Snowhead Temple Entrance => MM Snowhead Temple",
       "RequiredItems": [
         "MM Snowhead Temple Entrance"
       ],
@@ -22063,7 +22208,30 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Stone Tower Temple Entrance => MM Stone Tower Front of Temple",
+      "Id": "MM Stone Tower Temple => MM Stone Tower Temple Entrance",
+      "RequiredItems": [
+        "MM_TIME_TRAVEL",
+        "MM Stone Tower Temple"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Stone Tower Temple => MM Stone Tower Front of Temple",
+      "RequiredItems": [
+        "MM Stone Tower Temple"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Stone Tower Temple Entrance => MM Stone Tower Temple",
       "RequiredItems": [
         "MM Stone Tower Temple Entrance"
       ],
@@ -22375,7 +22543,30 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Stone Tower Temple Inverted Entrance => MM Stone Tower Top Inverted",
+      "Id": "MM Stone Tower Temple Inverted => MM Stone Tower Temple Inverted Entrance",
+      "RequiredItems": [
+        "MM_TIME_TRAVEL",
+        "MM Stone Tower Temple Inverted"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Stone Tower Temple Inverted => MM Stone Tower Top Inverted",
+      "RequiredItems": [
+        "MM Stone Tower Temple Inverted"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Stone Tower Temple Inverted Entrance => MM Stone Tower Temple Inverted",
       "RequiredItems": [
         "MM Stone Tower Temple Inverted Entrance"
       ],
@@ -22400,6 +22591,7 @@
     {
       "Id": "MM Stone Tower Temple Inverted East => MM Stone Tower Temple Inverted Entrance",
       "RequiredItems": [
+        "MM_can_use_light_arrows",
         "MM Stone Tower Temple Inverted East"
       ],
       "ConditionalItems": [],
@@ -22722,8 +22914,9 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Swamp Spider House Gossip",
+      "Id": "MM Swamp Spider House => MM Swamp Spider House Main",
       "RequiredItems": [
+        "MM_TIME_TRAVEL",
         "MM Swamp Spider House"
       ],
       "ConditionalItems": [],
@@ -22733,7 +22926,52 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Woodfall Temple Entrance => MM Woodfall Front of Temple",
+      "Id": "MM Swamp Spider House Main => MM Swamp Spider House",
+      "RequiredItems": [
+        "MM Swamp Spider House Main"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Swamp Spider House Gossip",
+      "RequiredItems": [
+        "MM Swamp Spider House Main"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Woodfall Temple => MM Woodfall Front of Temple",
+      "RequiredItems": [
+        "MM Woodfall Temple"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Woodfall Temple => MM Woodfall Temple Entrance",
+      "RequiredItems": [
+        "MM_TIME_TRAVEL",
+        "MM Woodfall Temple"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Woodfall Temple Entrance => MM Woodfall Temple",
       "RequiredItems": [
         "MM Woodfall Temple Entrance"
       ],
@@ -22762,7 +23000,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Woodfall Temple Main => MM Woodfall Temple Entrance",
+      "Id": "MM Woodfall Temple Main => MM Woodfall Temple",
       "RequiredItems": [
         "MM Woodfall Temple Main"
       ],

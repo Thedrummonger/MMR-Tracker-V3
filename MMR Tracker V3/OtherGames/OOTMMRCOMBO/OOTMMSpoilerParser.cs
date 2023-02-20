@@ -68,7 +68,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             foreach (var l in Instance.SpoilerLog.Log)
             {
                 if (string.IsNullOrWhiteSpace(l)) { continue; }
-                if (GetCurrentSpoilerLogline(l, spoilerFileLocation, out bool EOO)) 
+                if (GetCurrentSettingLine(l, spoilerFileLocation, out bool EOO)) 
                 {
                     if (EOO) { break; }
                     continue;
@@ -106,7 +106,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 {
                     foreach (var i in Instance.EntrancePool.AreaList.SelectMany(x => x.Value.LoadingZoneExits))
                     {
-                        i.Value.RandomizedState = MiscData.RandomizedState.Randomized;
+                        //For now just randomize them if their found in the spoiler log
+                        //i.Value.RandomizedState = MiscData.RandomizedState.Randomized;
                     }
                 }
                 else if(SettingLineData[0] == "mapCompassShuffle" && SettingLineData[1] == "starting")
@@ -208,19 +209,36 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 var EntranceData = NewLine.Split(new string[] { "->" }, StringSplitOptions.None).Select(x => x.Trim()).ToArray();
                 var Source = EntranceData[0].Split('/');
                 var Destination = EntranceData[1].Split('/');
+
+                Instance.EntrancePool.EntranceIsValid(Source[0], Source[1], false, out bool SourceArea, out bool SourceExit);
+                Instance.EntrancePool.EntranceIsValid(Destination[0], Destination[1], false, out bool DestArea, out bool DestExit);
+
                 Debug.WriteLine($"[{Source[0]}] [{Source[1]}]");
-                if (Instance.EntrancePool.AreaList.ContainsKey(Source[0]) &&
-                    Instance.EntrancePool.AreaList[Source[0]].LoadingZoneExits.ContainsKey(Source[1]) &&
-                    Instance.EntrancePool.AreaList.ContainsKey(Destination[0]) &&
-                    Instance.EntrancePool.AreaList[Destination[0]].LoadingZoneExits.ContainsKey(Destination[1]))
+                if (SourceArea && SourceExit && DestArea && DestExit)
                 {
-                    Instance.EntrancePool.AreaList[Source[0]].LoadingZoneExits[Source[1]].SpoilerDefinedDestinationExit = new EntranceData.EntranceRandoDestination
+                    var CurExit = Instance.EntrancePool.AreaList[Source[0]].LoadingZoneExits[Source[1]];
+                    CurExit.SpoilerDefinedDestinationExit = new EntranceData.EntranceRandoDestination
                     {
                         region = Destination[1],
                         from = Destination[0]
                     };
+                    CurExit.RandomizedState = MiscData.RandomizedState.Randomized;
+                    //Probaly not needed but just incase they remove dungeon => overworld from the log
+                    var PairArea = CurExit.EntrancePair?.Area;
+                    var PairExit = CurExit.EntrancePair?.Exit;
+                    if (PairArea is not null && PairExit is not null)
+                    {
+                        Instance.EntrancePool.AreaList[PairArea].LoadingZoneExits[PairExit].RandomizedState = MiscData.RandomizedState.Randomized;
+                    }
                 }
-                else { Debug.WriteLine($"{NewLine} Could not be mapped to an entrance!"); }
+                else 
+                { 
+                    Debug.WriteLine($"{NewLine} Could not be mapped to an entrance!");
+                    Debug.WriteLine($"{Source[0]}: {SourceArea}");
+                    Debug.WriteLine($"{Source[1]}: {SourceExit}");
+                    Debug.WriteLine($"{Destination[0]}: {DestArea}");
+                    Debug.WriteLine($"{Destination[1]}: {DestExit}");
+                }
             }
             return true;
         }
@@ -234,7 +252,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             return dictEntry.GetName(Instance);
         }
 
-        public static bool GetCurrentSpoilerLogline(string l, Dictionary<string, bool> spoilerFileLocation, out bool EndOfOptions)
+        public static bool GetCurrentSettingLine(string l, Dictionary<string, bool> spoilerFileLocation, out bool EndOfOptions)
         {
             EndOfOptions = false;
             if (l == "Settings")
@@ -284,10 +302,21 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
         public static List<string> GetReleventSpoilerLines(string[] Data)
         {
+            bool AtLocationData = false;
             var ReleventSpoilerlines = new List<string>();
+            foreach (var x in Data)
+            {
+                if (x == "Kokiri Forest:") { AtLocationData = true; continue; }
+                if (!AtLocationData || string.IsNullOrWhiteSpace(x)) { continue; }
+                var LineParts = x.Split(':').Select(x => x.Trim()).ToArray();
+                if (LineParts.Count() > 1 && !string.IsNullOrWhiteSpace(LineParts[1]))
+                {
+                    ReleventSpoilerlines.Add(x);
+                }
+            }
+            return ReleventSpoilerlines;
             bool AtSphereData = false;
             bool CurrentLineEmpty = false;
-            bool AtLocationData = false;
             foreach (var x in Data)
             {
                 bool SphereLine;
