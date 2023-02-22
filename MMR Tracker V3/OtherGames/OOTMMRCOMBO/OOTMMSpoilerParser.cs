@@ -180,51 +180,37 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             }
             if (spoilerFileLocation["Hints"])
             {
-                var pieces = Line.Split(new[] { ':' }, 2).Select(x => x.Trim()).ToArray();
-                var GossipStone = pieces[0];
-                if (!Instance.HintPool.ContainsKey(GossipStone)) { return false; }
-                var GossipStoneEntry = Instance.HintPool[GossipStone];
-                var HintText = pieces[1].Split(new[] { ',' }, 2).Select(x => x.Trim()).ToArray();
-                var HintType = HintText[0];
-                var HintData = HintText[1].Replace(")", "").Split("(").Select(x => x.Trim()).ToArray();
-                var HintLocation = HintData[0];
-                var HintItem = HintData.Count() > 1 ? HintData[1] : string.Empty;
-                string PrettyLocationName = HintData[0].ToLower().Replace("_", " ");
-                PrettyLocationName = Regex.Replace(PrettyLocationName, @"(^\w)|(\s\w)", m => m.Value.ToUpper()).Replace("Mm", "MM").Replace("Oot", "OOT");
-                switch (HintType)
+                var HintData = ParseHintLine(Line);
+                if (HintData is null) { return false; }
+                if (!Instance.HintPool.TryGetValue(HintData.HintStoneName, out var GossipStoneEntry))
                 {
-                    case "Item-Exact":
-                        var hintLocationsDYN = !HintNames.ContainsKey(HintLocation) ? null : HintNames[HintLocation];
-
-                        List<string> HintedLocations = new();
-                        List<string> HintedItems = HintItem.Split(",").Select(x => x.Trim()).ToList();
-
-                        if (hintLocationsDYN is not null)
+                    Debug.WriteLine($"{HintData.HintStoneName} Was not a valid Hint Entry");
+                    return false;
+                }
+                
+                switch (HintData.HintType)
+                {
+                    case HintType.ItemRegion:
+                    case HintType.ItemExact:
+                        if (HintData.HintedLocations.Length == HintData.HintedItems.Length && HintData.HintType == HintType.ItemExact)
                         {
-                            if (hintLocationsDYN is string) { HintedLocations.Add(hintLocationsDYN); }
-                            else { HintedLocations.AddRange(hintLocationsDYN); }
-                        }
-                        GossipStoneEntry.SpoilerHintText = $"{PrettyLocationName} contains {string.Join(" and ", HintedItems.Select(x => GetItemName(x, Instance)))}";
-
-                        if (HintedLocations.Any() && HintedLocations.Count == HintedItems.Count)
-                        {
-                            for (var c = 0; c < HintedItems.Count; c++)
+                            for(var i = 0; i < HintData.HintedLocations.Length; i++)
                             {
-                                if (Instance.GetLocationByID(HintedLocations[c]) != null)
+                                var Item = Instance.ItemPool.Values.FirstOrDefault(x => x.GetDictEntry(Instance).SpoilerData.SpoilerLogNames.Contains(HintData.HintedItems[i]));
+                                var Location = Instance.LocationPool.Values.FirstOrDefault(x => x.GetDictEntry(Instance).SpoilerData.SpoilerLogNames.Contains(HintData.HintedLocations[i]));
+                                if (Item is not null && Location is not null)
                                 {
-                                    GossipStoneEntry.ParsedHintData[HintedLocations[c]] = HintedItems[c];
+                                    GossipStoneEntry.ParsedHintData.Add(Location.ID, Item.Id);
                                 }
                             }
                         }
+                        GossipStoneEntry.SpoilerHintText = $"{HintData.PrettyLocationText} contains {string.Join(" and ", HintData.HintedItems)}";
                         break;
-                    case "Item-Region":
-                        GossipStoneEntry.SpoilerHintText = $"{PrettyLocationName} contains {GetItemName(HintItem, Instance)}";
+                    case HintType.Hero:
+                        GossipStoneEntry.SpoilerHintText = $"{HintData.PrettyLocationText} is Way of the Hero";
                         break;
-                    case "Hero":
-                        GossipStoneEntry.SpoilerHintText = $"{PrettyLocationName} is Way of the Hero";
-                        break;
-                    case "Foolish":
-                        GossipStoneEntry.SpoilerHintText = $"{PrettyLocationName} is Foolish";
+                    case HintType.Foolish:
+                        GossipStoneEntry.SpoilerHintText = $"{HintData.PrettyLocationText} is Foolish";
                         break;
                 }
             }
@@ -268,14 +254,66 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             return true;
         }
 
-        public static string GetItemName(string Item, LogicObjects.TrackerInstance Instance)
+        public class SpoilerHintData
         {
-            var LogicItem = Instance.GetItemByID(Item);
-            if (LogicItem is null) { return Item; }
-            var dictEntry = LogicItem.GetDictEntry(Instance);
-            if (dictEntry is null) { return Item; }
-            return dictEntry.GetName(Instance);
+            public string HintStoneName;
+            public HintType HintType;
+            public string HintedLocationText;
+            public string PrettyLocationText;
+            public string[] HintedLocations;
+            public string[] HintedItems;
         }
+
+        public enum HintType
+        {
+            ItemExact,
+            ItemRegion,
+            Hero,
+            Foolish,
+            none
+        }
+
+        public static SpoilerHintData ParseHintLine(string line)
+        {
+            Debug.WriteLine(line);
+            SpoilerHintData result = new SpoilerHintData();
+            if (string.IsNullOrEmpty(line) || line.StartsWith("=")) { return null; }  
+            result.HintStoneName = line.Split(':')[0];
+            string SpoilerHintType = line.Split(':')[1].Split(',')[0].Trim();
+            result.HintType = OOTMMSpoilerParser.HintType.none;
+            switch (SpoilerHintType)
+            {
+                case "Item-Exact":
+                    result.HintType = HintType.ItemExact;
+                    break;
+                case "Item-Region":
+                    result.HintType = HintType.ItemRegion;
+                    break;
+                case "Hero":
+                    result.HintType = HintType.Hero;
+                    break;
+                case "Foolish":
+                    result.HintType = HintType.Foolish;
+                    break;
+            }
+            string LocationAnditemData = line.Replace($"{result.HintStoneName}: {SpoilerHintType}, ", "");
+            result.HintedLocationText = LocationAnditemData.Split(new[] { '(' }, 2)[0].Trim();
+            result.PrettyLocationText = result.HintedLocationText.ToLower().Replace("_", " ");
+            result.PrettyLocationText = Regex.Replace(result.PrettyLocationText, @"(^\w)|(\s\w)", m => m.Value.ToUpper()).Replace("Mm", "MM").Replace("Oot", "OOT");
+            if (result.HintType == HintType.ItemExact || result.HintType == HintType.ItemRegion)
+            {
+                if (HintNames.ContainsKey(result.HintedLocationText))
+                {
+                    if (HintNames[result.HintedLocationText] is string) { result.HintedLocations = new string[] { HintNames[result.HintedLocationText] }; }
+                    else { result.HintedLocations = HintNames[result.HintedLocationText]; }
+                }
+                string itemData = LocationAnditemData.Replace($"{result.HintedLocationText} ", "");
+                itemData = itemData[1..^1];
+                result.HintedItems = itemData.Split(",").Select(x => x.Trim()).ToArray();
+            }
+            return result;
+        }
+
 
         public static bool GetCurrentSettingLine(string l, Dictionary<string, bool> spoilerFileLocation, out bool EndOfOptions)
         {
