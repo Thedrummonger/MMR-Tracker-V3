@@ -191,6 +191,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 switch (HintData.HintType)
                 {
                     case HintType.ItemRegion:
+                        GossipStoneEntry.SpoilerHintText = $"{HintData.PrettyLocationText} contains {string.Join(" and ", HintData.HintedItems)}";
+                        break;
                     case HintType.ItemExact:
                         if (HintData.HintedLocations.Length == HintData.HintedItems.Length && HintData.HintType == HintType.ItemExact)
                         {
@@ -300,6 +302,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             result.HintedLocationText = LocationAnditemData.Split(new[] { '(' }, 2)[0].Trim();
             result.PrettyLocationText = result.HintedLocationText.ToLower().Replace("_", " ");
             result.PrettyLocationText = Regex.Replace(result.PrettyLocationText, @"(^\w)|(\s\w)", m => m.Value.ToUpper()).Replace("Mm", "MM").Replace("Oot", "OOT");
+            result.HintedLocations = Array.Empty<string>();
             if (result.HintType == HintType.ItemExact || result.HintType == HintType.ItemRegion)
             {
                 if (HintNames.ContainsKey(result.HintedLocationText))
