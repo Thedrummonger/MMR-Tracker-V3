@@ -179,8 +179,7 @@ namespace MMR_Tracker_V3
 
             foreach (var i in AllWallets)
             {
-                string AffordStringChar = i.Value.Item1.ToString();
-                string CanAffordString = $"MMRTCanAfford{AffordStringChar}{i.Value.Item2}";
+                string CanAffordString = $"MMRTCanAfford{i.Value.Item1}{i.Value.Item2}";
                 Debug.WriteLine($"Adding Wallet {CanAffordString}");
                 Instance.MacroPool.Add(CanAffordString, new() { 
                     ID = CanAffordString,
@@ -205,9 +204,13 @@ namespace MMR_Tracker_V3
 
             Instance.StaticOptions.MinimizedHeader.Add("Hidden Locations:::LBValidLocations", true);
 
+            //If the number of randomized entrances is less than 10% of the number of randomized locations, show the entrances in the location box
             if (Instance.EntrancePool.IsEntranceRando)
             {
-                Instance.StaticOptions.EntranceRandoFeatures = Instance.EntrancePool.GetAmountOfRandomizedEntrances() >= 20;
+                double EntrancesRandomized = Instance.EntrancePool.GetAmountOfRandomizedEntrances();
+                double Locationsrandomized = Instance.LocationPool.Where(x => x.Value.AppearsinListbox(Instance)).Count();
+                double LocationEntranceRatio = Math.Round(EntrancesRandomized / Locationsrandomized, 2);
+                Instance.StaticOptions.EntranceRandoFeatures = LocationEntranceRatio >= .1;
             }
 
             Debug.WriteLine(JsonConvert.SerializeObject(Instance.PriceData.WalletEntries, Testing._NewtonsoftJsonSerializerOptions));

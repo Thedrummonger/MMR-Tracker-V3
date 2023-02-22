@@ -1,5 +1,5 @@
 {
-  "LogicVersion": 11,
+  "LogicVersion": 12,
   "LogicFormat": "json",
   "GameCode": "MMR",
   "WinCondition": "MajorasMask",

@@ -16,25 +16,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="OtherGames\OOTR\OOTRItemList.json">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Update="OtherGames\OOTR\OOTRLocationList.Json">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
     <None Update="Recources\Categories.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Recources\Dictionaries\MMR V11.json">
+    <None Update="Recources\Dictionaries\MMR V12.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Recources\Dictionaries\OOTMM V1.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Recources\Dictionaries\OOTR V1.json">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Update="Recources\Dictionaries\PMRDict.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Recources\Presets\DEV-OOTMM Casual.json">

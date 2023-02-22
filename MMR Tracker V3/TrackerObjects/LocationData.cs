@@ -78,6 +78,10 @@ namespace MMR_Tracker_V3.TrackerObjects
                 if (OriginalItemObject == null) { return false; }
                 return OriginalItemObject.CanBePlaced(instance);
             }
+            public bool AppearsinListbox(LogicObjects.TrackerInstance Instance)
+            {
+                return !IsJunk() && !IsUnrandomized(1) && !string.IsNullOrWhiteSpace(GetDictEntry(Instance).GetName(Instance));
+            }
 
             public bool ToggleChecked(CheckState NewState, LogicObjects.TrackerInstance Instance)
             {

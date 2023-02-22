@@ -267,7 +267,7 @@ namespace MMR_Tracker_V3
                 string CurrentLocation = "";
                 foreach (var i in CheckedLocations)
                 {
-                    if (!LocationAppearsinListbox(i, Instance)) { continue; }
+                    if (!i.AppearsinListbox(Instance)) { continue; }
                     i.DisplayName = Utility.GetLocationDisplayName(i, Instance);
 
                     ItemsInListBox++;
@@ -458,7 +458,7 @@ namespace MMR_Tracker_V3
                     var CurrentArea = "";
                     if (obj is LocationData.LocationObject i)
                     {
-                        if (!LocationAppearsinListbox(i, Instance)) { continue; }
+                        if (!i.AppearsinListbox(Instance)) { continue; }
                         i.DisplayName = Utility.GetLocationDisplayName(i, Instance);
                         ItemsInListBox++;
                         if (!SearchStringParser.FilterSearch(Instance, i, Filter, i.DisplayName)) { continue; }
@@ -467,7 +467,7 @@ namespace MMR_Tracker_V3
                     }
                     else if (obj is LocationData.LocationProxy p)
                     {
-                        if (!LocationAppearsinListbox(p.GetReferenceLocation(Instance), Instance)) { continue; }
+                        if (!p.GetReferenceLocation(Instance).AppearsinListbox(Instance)) { continue; }
                         p.DisplayName = Utility.GetLocationDisplayName(p, Instance);
                         ItemsInListBox++;
                         if (!SearchStringParser.FilterSearch(Instance, p, Filter, p.DisplayName)) { continue; }
@@ -526,7 +526,7 @@ namespace MMR_Tracker_V3
                     var CurrentArea = "";
                     if (obj is LocationData.LocationObject i)
                     {
-                        if (!LocationAppearsinListbox(i, Instance)) { continue; }
+                        if (!i.AppearsinListbox(Instance)) { continue; }
                         i.DisplayName = Utility.GetLocationDisplayName(i, Instance);
                         ItemsInListBox++;
                         if (!SearchStringParser.FilterSearch(Instance, i, Filter, i.DisplayName)) { continue; }
@@ -535,7 +535,7 @@ namespace MMR_Tracker_V3
                     }
                     else if (obj is LocationData.LocationProxy p)
                     {
-                        if (!LocationAppearsinListbox(p.GetReferenceLocation(Instance), Instance)) { continue; }
+                        if (!p.GetReferenceLocation(Instance).AppearsinListbox(Instance)) { continue; }
                         p.DisplayName = Utility.GetLocationDisplayName(p, Instance);
                         ItemsInListBox++;
                         if (!SearchStringParser.FilterSearch(Instance, p, Filter, p.DisplayName)) { continue; }
@@ -623,10 +623,6 @@ namespace MMR_Tracker_V3
             return DataSource;
         }
 
-        private static bool LocationAppearsinListbox(LocationData.LocationObject Location, LogicObjects.TrackerInstance Instance)
-        {
-            return !Location.IsJunk() && !Location.IsUnrandomized(1) && !string.IsNullOrWhiteSpace(Location.GetDictEntry(Instance).GetName(Instance));
-        }
         private static bool EntranceAppearsinListbox(EntranceData.EntranceRandoExit Location, LogicObjects.TrackerInstance Instance)
         {
             return !Location.IsJunk() && !Location.IsUnrandomized(1);
