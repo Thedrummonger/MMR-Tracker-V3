@@ -80,13 +80,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
         private static void FixLogicErrors(MMRData.LogicFile logicFile, LogicDictionaryData.LogicDictionary dictionaryFile)
         {
-            var IceCavernZoraFountainDict = dictionaryFile.EntranceList.Find(x => x.Area == "OOT Ice Cavern" && x.Exit == "OOT Zora Fountain");
-            IceCavernZoraFountainDict.ID = "OOT Ice Cavern => OOT Zora Fountain Frozen";
-            IceCavernZoraFountainDict.Exit = "OOT Zora Fountain Frozen";
-            IceCavernZoraFountainDict.DisplayArea = "Dungeon";
-            IceCavernZoraFountainDict.RandomizableEntrance = true;
-            var IceCavernZoraFountainLogic = logicFile.Logic.Find(x => x.Id == "OOT Ice Cavern => OOT Zora Fountain");
-            IceCavernZoraFountainLogic.Id = "OOT Ice Cavern => OOT Zora Fountain Frozen";
+            //No logic errors!
         }
 
         private static void RemoveGameFromNames(LogicDictionaryData.LogicDictionary dictionaryFile)

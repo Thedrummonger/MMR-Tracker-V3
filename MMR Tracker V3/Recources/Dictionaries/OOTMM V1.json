@@ -18715,6 +18715,22 @@
       "DestinationHasSingleEntrance": false
     },
     {
+      "ID": "OOT Bottom of the Well => OOT Bottom of the Well Main",
+      "Area": "OOT Bottom of the Well",
+      "Exit": "OOT Bottom of the Well Main",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Bottom of the Well Main => OOT Bottom of the Well",
+      "Area": "OOT Bottom of the Well Main",
+      "Exit": "OOT Bottom of the Well",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
       "ID": "OOT Deku Tree => OOT Kokiri Forest",
       "Area": "OOT Deku Tree",
       "Exit": "OOT Kokiri Forest",
@@ -18942,6 +18958,14 @@
       "DestinationHasSingleEntrance": false
     },
     {
+      "ID": "OOT Dodongo Cavern Green Room => OOT Dodongo Cavern Green Side Room",
+      "Area": "OOT Dodongo Cavern Green Room",
+      "Exit": "OOT Dodongo Cavern Green Side Room",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
       "ID": "OOT Dodongo Cavern Green Room => OOT Dodongo Cavern Main Ledge",
       "Area": "OOT Dodongo Cavern Green Room",
       "Exit": "OOT Dodongo Cavern Main Ledge",
@@ -18950,9 +18974,25 @@
       "DestinationHasSingleEntrance": false
     },
     {
+      "ID": "OOT Dodongo Cavern Green Side Room => OOT Dodongo Cavern Green Room",
+      "Area": "OOT Dodongo Cavern Green Side Room",
+      "Exit": "OOT Dodongo Cavern Green Room",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
       "ID": "OOT Dodongo Cavern Main Ledge => OOT Dodongo Cavern Main",
       "Area": "OOT Dodongo Cavern Main Ledge",
       "Exit": "OOT Dodongo Cavern Main",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Dodongo Cavern Main Ledge => OOT Dodongo Cavern Green Room",
+      "Area": "OOT Dodongo Cavern Main Ledge",
+      "Exit": "OOT Dodongo Cavern Green Room",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -19025,6 +19065,22 @@
       "ID": "OOT Dodongo Cavern Bomb Bag Room 1 => OOT Dodongo Cavern Miniboss 2",
       "Area": "OOT Dodongo Cavern Bomb Bag Room 1",
       "Exit": "OOT Dodongo Cavern Miniboss 2",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Dodongo Cavern Bomb Bag Room 1 => OOT Dodongo Cavern Bomb Bag Side Room",
+      "Area": "OOT Dodongo Cavern Bomb Bag Room 1",
+      "Exit": "OOT Dodongo Cavern Bomb Bag Side Room",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Dodongo Cavern Bomb Bag Side Room => OOT Dodongo Cavern Bomb Bag Room 1",
+      "Area": "OOT Dodongo Cavern Bomb Bag Side Room",
+      "Exit": "OOT Dodongo Cavern Bomb Bag Room 1",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -19141,41 +19197,33 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Fire Temple Lava Room => OOT Fire Temple After Elevator",
+      "ID": "OOT Fire Temple Lava Room => OOT Fire Temple Maze",
       "Area": "OOT Fire Temple Lava Room",
-      "Exit": "OOT Fire Temple After Elevator",
+      "Exit": "OOT Fire Temple Maze",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Fire Temple After Elevator => OOT Fire Temple",
-      "Area": "OOT Fire Temple After Elevator",
-      "Exit": "OOT Fire Temple",
+      "ID": "OOT Fire Temple Maze => OOT Fire Temple Maze Upper",
+      "Area": "OOT Fire Temple Maze",
+      "Exit": "OOT Fire Temple Maze Upper",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Fire Temple After Elevator => OOT Fire Temple Ring",
-      "Area": "OOT Fire Temple After Elevator",
+      "ID": "OOT Fire Temple Maze Upper => OOT Fire Temple Ring",
+      "Area": "OOT Fire Temple Maze Upper",
       "Exit": "OOT Fire Temple Ring",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Fire Temple After Elevator => OOT Fire Temple Scarecrow",
-      "Area": "OOT Fire Temple After Elevator",
+      "ID": "OOT Fire Temple Maze Upper => OOT Fire Temple Scarecrow",
+      "Area": "OOT Fire Temple Maze Upper",
       "Exit": "OOT Fire Temple Scarecrow",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    {
-      "ID": "OOT Fire Temple Ring => OOT Fire Temple After Elevator",
-      "Area": "OOT Fire Temple Ring",
-      "Exit": "OOT Fire Temple After Elevator",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -19349,6 +19397,14 @@
       "ID": "OOT Forest Temple Garden West Ledge => OOT Forest Temple Floormaster",
       "Area": "OOT Forest Temple Garden West Ledge",
       "Exit": "OOT Forest Temple Floormaster",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Forest Temple Garden West Ledge => OOT Forest Temple Maze",
+      "Area": "OOT Forest Temple Garden West Ledge",
+      "Exit": "OOT Forest Temple Maze",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -19704,6 +19760,14 @@
       "DestinationHasSingleEntrance": false
     },
     {
+      "ID": "OOT Gerudo Training Grounds Maze Side => OOT Gerudo Training Grounds Lava",
+      "Area": "OOT Gerudo Training Grounds Maze Side",
+      "Exit": "OOT Gerudo Training Grounds Lava",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
       "ID": "OOT Gerudo Training Grounds Hammer => OOT Gerudo Training Grounds Lava",
       "Area": "OOT Gerudo Training Grounds Hammer",
       "Exit": "OOT Gerudo Training Grounds Lava",
@@ -19723,6 +19787,14 @@
       "ID": "OOT Gerudo Training Grounds Statue => OOT Gerudo Training Grounds Hammer",
       "Area": "OOT Gerudo Training Grounds Statue",
       "Exit": "OOT Gerudo Training Grounds Hammer",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Gerudo Training Grounds Maze => OOT Gerudo Training Grounds Maze Side",
+      "Area": "OOT Gerudo Training Grounds Maze",
+      "Exit": "OOT Gerudo Training Grounds Maze Side",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -21283,9 +21355,17 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Water Temple Main => OOT Water Temple Center",
+      "ID": "OOT Water Temple Main => OOT Water Temple Center Bottom",
       "Area": "OOT Water Temple Main",
-      "Exit": "OOT Water Temple Center",
+      "Exit": "OOT Water Temple Center Bottom",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Water Temple Main => OOT Water Temple Center Middle",
+      "Area": "OOT Water Temple Main",
+      "Exit": "OOT Water Temple Center Middle",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -21387,9 +21467,25 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Water Temple Center => OOT Water Temple Under Center",
-      "Area": "OOT Water Temple Center",
+      "ID": "OOT Water Temple Center Bottom => OOT Water Temple Under Center",
+      "Area": "OOT Water Temple Center Bottom",
       "Exit": "OOT Water Temple Under Center",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Water Temple Center Bottom => OOT Water Temple Center Middle",
+      "Area": "OOT Water Temple Center Bottom",
+      "Exit": "OOT Water Temple Center Middle",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Water Temple Center Middle => OOT Water Temple Center Bottom",
+      "Area": "OOT Water Temple Center Middle",
+      "Exit": "OOT Water Temple Center Bottom",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -25816,6 +25912,7 @@
   ],
   "AreaList": [
     "OOT Bottom of the Well",
+    "OOT Bottom of the Well Main",
     "OOT Deku Tree",
     "OOT Deku Tree Lobby",
     "OOT Deku Tree Slingshot Room",
@@ -25830,11 +25927,13 @@
     "OOT Dodongo Cavern Side Room",
     "OOT Dodongo Cavern Miniboss 1",
     "OOT Dodongo Cavern Green Room",
+    "OOT Dodongo Cavern Green Side Room",
     "OOT Dodongo Cavern Main Ledge",
     "OOT Dodongo Cavern Stairs",
     "OOT Dodongo Cavern Stairs Top",
     "OOT Dodongo Cavern Compass Room",
     "OOT Dodongo Cavern Bomb Bag Room 1",
+    "OOT Dodongo Cavern Bomb Bag Side Room",
     "OOT Dodongo Cavern Miniboss 2",
     "OOT Dodongo Cavern Bomb Bag Room 2",
     "OOT Dodongo Cavern Main Bridge",
@@ -25844,12 +25943,13 @@
     "OOT Fire Temple",
     "OOT Fire Temple Boss Key Loop",
     "OOT Fire Temple Lava Room",
-    "OOT Fire Temple After Elevator",
+    "OOT Fire Temple Maze",
+    "OOT Fire Temple Maze Upper",
+    "OOT Fire Temple Scarecrow",
     "OOT Fire Temple Ring",
     "OOT Fire Temple Before Miniboss",
     "OOT Fire Temple Pillar Ledge",
     "OOT Fire Temple After Miniboss",
-    "OOT Fire Temple Scarecrow",
     "OOT Fire Temple Boss",
     "OOT Fire Temple After Boss",
     "OOT Forest Temple",
@@ -25985,7 +26085,8 @@
     "OOT Water Temple Ruto Room",
     "OOT Water Temple Map Room",
     "OOT Water Temple Shell Room",
-    "OOT Water Temple Center",
+    "OOT Water Temple Center Bottom",
+    "OOT Water Temple Center Middle",
     "OOT Water Temple Under Center",
     "OOT Water Temple Compass Room",
     "OOT Water Temple Dragon Room",
