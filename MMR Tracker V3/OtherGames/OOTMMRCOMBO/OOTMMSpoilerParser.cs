@@ -302,7 +302,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             result.HintedLocationText = LocationAnditemData.Split(new[] { '(' }, 2)[0].Trim();
             result.PrettyLocationText = result.HintedLocationText.ToLower().Replace("_", " ");
             result.PrettyLocationText = Regex.Replace(result.PrettyLocationText, @"(^\w)|(\s\w)", m => m.Value.ToUpper()).Replace("Mm", "MM").Replace("Oot", "OOT");
-            result.HintedLocations = Array.Empty<string>();
+            
             if (result.HintType == HintType.ItemExact || result.HintType == HintType.ItemRegion)
             {
                 if (HintNames.ContainsKey(result.HintedLocationText))
@@ -310,6 +310,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                     if (HintNames[result.HintedLocationText] is string) { result.HintedLocations = new string[] { HintNames[result.HintedLocationText] }; }
                     else { result.HintedLocations = HintNames[result.HintedLocationText]; }
                 }
+                else { result.HintedLocations = Array.Empty<string>(); }
                 string itemData = LocationAnditemData.Replace($"{result.HintedLocationText} ", "");
                 itemData = itemData[1..^1];
                 result.HintedItems = itemData.Split(",").Select(x => x.Trim()).ToArray();
