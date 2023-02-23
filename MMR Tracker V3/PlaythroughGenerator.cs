@@ -308,6 +308,12 @@ namespace MMR_Tracker_V3
             public List<string> ExitsTaken { get; set; } = new List<string>();
             public List<string> OptionsUsed { get; set; } = new List<string>();
         }
+        public class ShpereCompletionData
+        {
+            public int ChecksInSphere { get; set; }
+            public double PercentageAvailable { get; set; }
+            public double PercentageAquired { get; set; }
+        }
         public static AdvancedUnlockData GetAdvancedUnlockData(string ID, Dictionary<string, List<string>> UnlockData, LogicObjects.TrackerInstance instance, PlaythroughGenerator playthroughObject = null)
         {
             if (playthroughObject == null)
@@ -463,6 +469,33 @@ namespace MMR_Tracker_V3
                 }
             }
             return NeededItems;
+        }
+
+        public static Dictionary<int, ShpereCompletionData> GetShpereCompletionData(LogicObjects.TrackerInstance Instance)
+        {
+            Dictionary<int, ShpereCompletionData> Results = new();
+            PlaythroughGenerator playthroughGenerator = new(Instance);
+            playthroughGenerator.GeneratePlaythrough();
+
+            Dictionary<int, List<LocationData.LocationObject>> ShereBreakdown = new();
+
+            foreach (var i in playthroughGenerator.Playthrough)
+            {
+                var Location = Instance.GetLocationEntryType(i.Value.id, false, out object OBJ);
+                if (OBJ is null || OBJ is not LocationData.LocationObject loc) { continue; }
+                if (!ShereBreakdown.ContainsKey(i.Value.sphere)) { ShereBreakdown[i.Value.sphere] = new List<LocationData.LocationObject>(); }
+                ShereBreakdown[i.Value.sphere].Add(loc);
+            }
+
+            foreach (var i in ShereBreakdown.Keys)
+            {
+                if (!ShereBreakdown[i].Any(x => x.Available) && !ShereBreakdown[i].Any(x => x.CheckState == MiscData.CheckState.Checked)) { break; }
+
+                double PrecentUnlocked = (double)ShereBreakdown[i].Where(x => x.Available).Count() / (double)ShereBreakdown[i].Count();
+                double PrecentAquired = (double)ShereBreakdown[i].Where(x => x.CheckState == MiscData.CheckState.Checked).Count() / (double)ShereBreakdown[i].Count();
+                Results[i] = new ShpereCompletionData { PercentageAquired= Math.Round(PrecentAquired*100, 2), PercentageAvailable = Math.Round(PrecentUnlocked*100, 2), ChecksInSphere = i };
+            }
+            return Results;
         }
     }
 }

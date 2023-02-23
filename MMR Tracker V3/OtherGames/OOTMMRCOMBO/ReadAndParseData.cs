@@ -20,7 +20,10 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
         public class MMROOTLocation
         {
             public string location;
+            public string type;
+            public string hint;
             public string scene;
+            public string id;
             public string item;
         }
 
@@ -485,13 +488,11 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             string OOTMMCode = Path.Combine(CodeFolder, @"MMR Tracker V3", "OtherGames", "OOTMMRCOMBO");
             string MMpool = Path.Combine(References.TestingPaths.GetDevTestingPath(), @"core-develop", "data", "mm", "pool.csv");
             string OOTpool = Path.Combine(References.TestingPaths.GetDevTestingPath(), @"core-develop", "data", "oot", "pool.csv");
-            string OOTMMChecks = Path.Combine(OOTMMCode, @"checks.json");
             string OOTMMItems = Path.Combine(OOTMMCode, @"items.json");
             string OOTMMTricks = Path.Combine(OOTMMCode, @"tricks.json");
             string OOTMMArea = Path.Combine(OOTMMCode, @"AreaNames.json");
             string OOTMMCounts = Path.Combine(OOTMMCode, @"itemCounts.json");
 
-            Dictionary<string, dynamic> OOTRCheckDict = JsonConvert.DeserializeObject<Dictionary<string, dynamic>>(File.ReadAllText(OOTMMChecks));
             Dictionary<string, string> OOTRItemsDict = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(OOTMMItems));
             Dictionary<string, string> OOTRTricksDict = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(OOTMMTricks));
             Dictionary<string, string> OOTRAreaDict = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(OOTMMArea));
@@ -505,35 +506,54 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             var ootPool = ConvertCsvFileToJsonObject(OOTPoolWebData.Where(x => !string.IsNullOrWhiteSpace(x)).ToArray());
             var ootPoolObj = JsonConvert.DeserializeObject<List<MMROOTLocation>>(ootPool);
 
-            foreach(var i in OOTRCheckDict.Keys)
+            Dictionary<string, string[]> OOTRCheckDict = new Dictionary<string, string[]>();
+
+            Dictionary<string, List<string>> HintNameData = new Dictionary<string, List<string>>();
+
+            foreach (var i in ootPoolObj)
             {
-                var OOTCheck = ootPoolObj.Find(x => $"OOT {x.location}" == i);
-                var MMRCheck = mmPoolObj.Find(x => $"MM {x.location}" == i);
-                if (OOTCheck is not null)
-                    OOTRCheckDict[i] = new string[] { OOTCheck.scene, $"OOT_{OOTCheck.item}" };
-                else if (MMRCheck is not null)
-                    OOTRCheckDict[i] = new string[] { MMRCheck.scene, $"MM_{MMRCheck.item}" };
+                OOTRCheckDict.Add($"OOT {i.location}", new string[] { i.scene, $"OOT_{i.item}" });
+                if (i.hint != "NONE")
+                {
+                    if (!HintNameData.ContainsKey($"OOT {i.hint}")) { HintNameData[$"OOT {i.hint}"] = new List<string>(); }
+                    HintNameData[$"OOT {i.hint}"].Add($"OOT {i.location}");
+                }
+            }
+            foreach (var i in mmPoolObj)
+            {
+                OOTRCheckDict.Add($"MM {i.location}", new string[] { i.scene, $"MM_{i.item}" });
+                if (i.hint != "NONE")
+                {
+                    if (!HintNameData.ContainsKey($"MM {i.hint}")) { HintNameData[$"MM {i.hint}"] = new List<string>(); }
+                    HintNameData[$"MM {i.hint}"].Add($"MM {i.location}");
+                }
             }
 
-            TrackerObjects.MMRData.LogicFile logicFile = new TrackerObjects.MMRData.LogicFile();
-            logicFile.Version = 1;
-            logicFile.GameCode = "OOTMM";
-            logicFile.Logic = new List<TrackerObjects.MMRData.JsonFormatLogicItem>();
+            Debug.WriteLine(JsonConvert.SerializeObject(HintNameData));
 
-            TrackerObjects.LogicDictionaryData.LogicDictionary logicDictionary = new TrackerObjects.LogicDictionaryData.LogicDictionary();
-            logicDictionary.LogicVersion = 1;
-            logicDictionary.GameCode = "OOTMM";
-            logicDictionary.RootArea = "OOT SPAWN";
-            logicDictionary.LocationList = new List<TrackerObjects.LogicDictionaryData.DictionaryLocationEntries>();
-            logicDictionary.ItemList = new List<TrackerObjects.LogicDictionaryData.DictionaryItemEntries>();
+            MMRData.LogicFile logicFile = new()
+            {
+                Version = 1,
+                GameCode = "OOTMM",
+                Logic = new List<MMRData.JsonFormatLogicItem>()
+            };
+
+            LogicDictionaryData.LogicDictionary logicDictionary = new()
+            {
+                LogicVersion = 1,
+                GameCode = "OOTMM",
+                RootArea = "OOT SPAWN",
+                LocationList = new List<LogicDictionaryData.DictionaryLocationEntries>(),
+                ItemList = new List<LogicDictionaryData.DictionaryItemEntries>()
+            };
 
             foreach (var i in OOTRCheckDict.Keys)
             {
-                string[] DictValue = OOTRCheckDict[i] as string[];
-                logicFile.Logic.Add(new TrackerObjects.MMRData.JsonFormatLogicItem() { Id = i });
-                TrackerObjects.LogicDictionaryData.DictionaryLocationEntries dictEntry = new TrackerObjects.LogicDictionaryData.DictionaryLocationEntries();
+                string[] DictValue = OOTRCheckDict[i];
+                logicFile.Logic.Add(new MMRData.JsonFormatLogicItem() { Id = i });
+                LogicDictionaryData.DictionaryLocationEntries dictEntry = new LogicDictionaryData.DictionaryLocationEntries();
                 dictEntry.ID = i;
-                dictEntry.SpoilerData = new TrackerObjects.MMRData.SpoilerlogReference { SpoilerLogNames = new string[] { i }, GossipHintNames = new string[] { i } };
+                dictEntry.SpoilerData = new MMRData.SpoilerlogReference { SpoilerLogNames = new string[] { i }, GossipHintNames = new string[] { i } };
                 dictEntry.Name = i;
                 dictEntry.ValidItemTypes = new string[] { "item" };
                 if (OOTRAreaDict.ContainsKey(i)) { dictEntry.Area = OOTRAreaDict[i]; }

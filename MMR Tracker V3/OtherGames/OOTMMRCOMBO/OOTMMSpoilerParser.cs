@@ -14,32 +14,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 {
 	internal class OOTMMSpoilerParser
 	{
-        public static Dictionary<string, dynamic> HintNames = new Dictionary<string, dynamic>() {
-            { "OOT_FROGS_FINAL", "OOT Zora River Frogs Game"},
-            { "OOT_FISHING", new string[] { "OOT Fishing Pond Child", "OOT Fishing Pond Adult" }},
-            { "OOT_RAVAGED_VILLAGE", "OOT Kakariko Song Shadow"},
-            { "OOT_ZORA_KING", new string[]{ "OOT Zora Domain Tunic", "OOT Zora Domain Eyeball Frog"}},
-            { "OOT_GANON_FAIRY", "OOT Great Fairy Defense Upgrade"},
-            { "OOT_TEMPLE_FIRE_HAMMER", "OOT Fire Temple Hammer"},
-            { "OOT_TEMPLE_FIRE_SCARECROW", "OOT Fire Temple Scarecrow Chest"},
-            { "OOT_GTG_WATER", "OOT Gerudo Training Water"},
-            { "OOT_HAUNTED_WASTELAND", "OOT Haunted Wasteland Chest"},
-            { "OOT_GERUDO_ARCHERY", new string[] { "OOT Gerudo Fortress Archery Reward 1", "OOT Gerudo Fortress Archery Reward 2" }},
-            { "MM_RANCH_DEFENSE", new string[]{ "MM Romani Ranch Aliens", "MM Romani Ranch Cremia Escort" }},
-            { "MM_BUTLER_RACE", "MM Deku Shrine Mask of Scents"},
-            { "MM_COUPLE_MASK", "MM Stock Pot Inn Couple's Mask"},
-            { "MM_DON_GERO_CHOIR", "MM Mountain Village Frog Choir HP"},
-            { "MM_GORON_RACE", "MM Goron Race Reward"},
-            { "MM_GRAVEYARD_NIGHT3", "MM Beneath The Graveyard Dampe Chest"},
-            { "MM_BANK_3", "MM Clock Town Bank Reward 3"},
-            { "MM_SOUND_CHECK", "MM Milk Bar Troupe Leader Mask"},
-            { "MM_BOAT_ARCHERY", "MM Tourist Information Boat Cruise"},
-            { "MM_OSH_CHEST", "MM Ocean Spider House Chest HP"},
-            { "MM_PINNACLE_ROCK_HP", "MM Pinnacle Rock HP"},
-            { "MM_FISHERMAN_GAME", "MM Great Bay Coast Fisherman HP"},
-            { "MM_SONG_ELEGY", "MM Ancient Castle of Ikana Song Emptiness"},
-            { "MM_SECRET_SHRINE_HP", "MM Secret Shrine HP Chest"}
-        };
+        public static string Hintnamedata = "{\r\n  \"OOT RAVAGED_VILLAGE\": [\r\n    \"OOT Kakariko Song Shadow\"\r\n  ],\r\n  \"OOT FROGS_FINAL\": [\r\n    \"OOT Zora River Frogs Game\"\r\n  ],\r\n  \"OOT ZORA_KING\": [\r\n    \"OOT Zora Domain Tunic\",\r\n    \"OOT Zora Domain Eyeball Frog\"\r\n  ],\r\n  \"OOT FISHING\": [\r\n    \"OOT Fishing Pond Child\",\r\n    \"OOT Fishing Pond Adult\"\r\n  ],\r\n  \"OOT GERUDO_ARCHERY\": [\r\n    \"OOT Gerudo Fortress Archery Reward 1\",\r\n    \"OOT Gerudo Fortress Archery Reward 2\"\r\n  ],\r\n  \"OOT HAUNTED_WASTELAND\": [\r\n    \"OOT Haunted Wasteland Chest\"\r\n  ],\r\n  \"OOT GANON_FAIRY\": [\r\n    \"OOT Great Fairy Defense Upgrade\"\r\n  ],\r\n  \"OOT TEMPLE_FIRE_HAMMER\": [\r\n    \"OOT Fire Temple Hammer\"\r\n  ],\r\n  \"OOT TEMPLE_FIRE_SCARECROW\": [\r\n    \"OOT Fire Temple Scarecrow Chest\"\r\n  ],\r\n  \"OOT GTG_WATER\": [\r\n    \"OOT Gerudo Training Water\"\r\n  ],\r\n  \"MM BANK_3\": [\r\n    \"MM Clock Town Bank Reward 3\"\r\n  ],\r\n  \"MM SOUND_CHECK\": [\r\n    \"MM Milk Bar Troupe Leader Mask\"\r\n  ],\r\n  \"MM COUPLE_MASK\": [\r\n    \"MM Stock Pot Inn Couple's Mask\"\r\n  ],\r\n  \"MM BOAT_ARCHERY\": [\r\n    \"MM Tourist Information Boat Cruise\"\r\n  ],\r\n  \"MM BUTLER_RACE\": [\r\n    \"MM Deku Shrine Mask of Scents\"\r\n  ],\r\n  \"MM DON_GERO_CHOIR\": [\r\n    \"MM Mountain Village Frog Choir HP\"\r\n  ],\r\n  \"MM GORON_RACE\": [\r\n    \"MM Goron Race Reward\"\r\n  ],\r\n  \"MM RANCH_DEFENSE\": [\r\n    \"MM Romani Ranch Aliens\",\r\n    \"MM Romani Ranch Cremia Escort\"\r\n  ],\r\n  \"MM FISHERMAN_GAME\": [\r\n    \"MM Great Bay Coast Fisherman HP\"\r\n  ],\r\n  \"MM PINNACLE_ROCK_HP\": [\r\n    \"MM Pinnacle Rock HP\"\r\n  ],\r\n  \"MM OSH_CHEST\": [\r\n    \"MM Ocean Spider House Chest HP\"\r\n  ],\r\n  \"MM GRAVEYARD_NIGHT3\": [\r\n    \"MM Beneath The Graveyard Dampe Chest\"\r\n  ],\r\n  \"MM SONG_ELEGY\": [\r\n    \"MM Ancient Castle of Ikana Song Emptiness\"\r\n  ],\r\n  \"MM SECRET_SHRINE_WART_HP\": [\r\n    \"MM Secret Shrine Boss 4 Chest\",\r\n    \"MM Secret Shrine HP Chest\"\r\n  ]\r\n}";
 
         public static void readAndApplySpoilerLog(LogicObjects.TrackerInstance Instance)
         {
@@ -277,6 +252,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
         public static SpoilerHintData ParseHintLine(string line)
         {
+            var HintNames = new Dictionary<string, string[]>();
+            HintNames = JsonConvert.DeserializeObject<Dictionary<string, string[]>>(Hintnamedata);
             Debug.WriteLine(line);
             SpoilerHintData result = new SpoilerHintData();
             if (string.IsNullOrEmpty(line) || line.StartsWith("=")) { return null; }  
@@ -307,8 +284,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             {
                 if (HintNames.ContainsKey(result.HintedLocationText))
                 {
-                    if (HintNames[result.HintedLocationText] is string) { result.HintedLocations = new string[] { HintNames[result.HintedLocationText] }; }
-                    else { result.HintedLocations = HintNames[result.HintedLocationText]; }
+                    result.HintedLocations = HintNames[result.HintedLocationText];
                 }
                 else { result.HintedLocations = Array.Empty<string>(); }
                 string itemData = LocationAnditemData.Replace($"{result.HintedLocationText} ", "");
