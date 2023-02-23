@@ -254,7 +254,6 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
         {
             var HintNames = new Dictionary<string, string[]>();
             HintNames = JsonConvert.DeserializeObject<Dictionary<string, string[]>>(Hintnamedata);
-            Debug.WriteLine(line);
             SpoilerHintData result = new SpoilerHintData();
             if (string.IsNullOrEmpty(line) || line.StartsWith("=")) { return null; }  
             result.HintStoneName = line.Split(':')[0];
