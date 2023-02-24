@@ -18698,6 +18698,186 @@
         ],
         "PriceDataNames": []
       }
+    },
+    {
+      "ID": "SHARED_BOW",
+      "Name": "Bow",
+      "MaxAmountInWorld": 3,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_BOW",
+          "Bow"
+        ],
+        "GossipHintNames": [
+          "SHARED_BOW",
+          "Bow"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_ARROWS_10",
+      "Name": "10 Arrows",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_ARROWS_10",
+          "10 Arrows"
+        ],
+        "GossipHintNames": [
+          "SHARED_ARROWS_10",
+          "10 Arrows"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_ARROWS_30",
+      "Name": "30 Arrows",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_ARROWS_30",
+          "30 Arrows"
+        ],
+        "GossipHintNames": [
+          "SHARED_ARROWS_30",
+          "30 Arrows"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_ARROWS_5",
+      "Name": "5 Arrows",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_ARROWS_5",
+          "5 Arrows"
+        ],
+        "GossipHintNames": [
+          "SHARED_ARROWS_5",
+          "5 Arrows"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_BOMB_BAG",
+      "Name": "Bomb Bag",
+      "MaxAmountInWorld": 3,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_BOMB_BAG",
+          "Bomb Bag"
+        ],
+        "GossipHintNames": [
+          "SHARED_BOMB_BAG",
+          "Bomb Bag"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_BOMBS_5",
+      "Name": "5 Bombs",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_BOMBS_5",
+          "5 Bombs"
+        ],
+        "GossipHintNames": [
+          "SHARED_BOMBS_5",
+          "5 Bombs"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_BOMBS_10",
+      "Name": "10 Bombs",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_BOMBS_10",
+          "10 Bombs"
+        ],
+        "GossipHintNames": [
+          "SHARED_BOMBS_10",
+          "10 Bombs"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_BOMBS_20",
+      "Name": "20 Bombs",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_BOMBS_20",
+          "20 Bombs"
+        ],
+        "GossipHintNames": [
+          "SHARED_BOMBS_20",
+          "20 Bombs"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_BOMBS_30",
+      "Name": "30 Bombs",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_BOMBS_30",
+          "30 Bombs"
+        ],
+        "GossipHintNames": [
+          "SHARED_BOMBS_30",
+          "30 Bombs"
+        ],
+        "PriceDataNames": []
+      }
     }
   ],
   "EntranceList": [

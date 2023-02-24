@@ -2449,7 +2449,7 @@
           "OOT_can_use_din"
         ],
         [
-          "OOT_BOMB_BAG"
+          "USE_OOT_BOMB_BAG"
         ]
       ],
       "TimeNeeded": "None",
@@ -5430,7 +5430,7 @@
     {
       "Id": "MM Town Archery Reward 1",
       "RequiredItems": [
-        "MM_BOW",
+        "USE_MM_BOW",
         "MM Town Archery"
       ],
       "ConditionalItems": [],
@@ -5442,7 +5442,7 @@
     {
       "Id": "MM Town Archery Reward 2",
       "RequiredItems": [
-        "MM_BOW",
+        "USE_MM_BOW",
         "MM Town Archery"
       ],
       "ConditionalItems": [],
@@ -5470,10 +5470,10 @@
       ],
       "ConditionalItems": [
         [
-          "MM_BOW"
+          "USE_MM_BOW"
         ],
         [
-          "MM_BOMB_BAG"
+          "USE_MM_BOMB_BAG"
         ],
         [
           "MM_can_use_deku_bubble"
@@ -5487,8 +5487,8 @@
     {
       "Id": "MM Honey & Darling Reward 2",
       "RequiredItems": [
-        "MM_BOW",
-        "MM_BOMB_BAG",
+        "USE_MM_BOW",
+        "USE_MM_BOMB_BAG",
         "MM Honey & Darling Game"
       ],
       "ConditionalItems": [],
@@ -5829,7 +5829,7 @@
           "MM_can_fight"
         ],
         [
-          "MM_BOW"
+          "USE_MM_BOW"
         ],
         [
           "MM_MASK_DEKU"
@@ -5850,13 +5850,13 @@
           "MM_has_weapon"
         ],
         [
-          "MM_BOMB_BAG"
+          "USE_MM_BOMB_BAG"
         ],
         [
           "MM_MASK_GORON"
         ],
         [
-          "MM_BOW"
+          "USE_MM_BOW"
         ]
       ],
       "TimeNeeded": "None",
@@ -6008,7 +6008,7 @@
     {
       "Id": "MM Swamp Archery Reward 1",
       "RequiredItems": [
-        "MM_BOW",
+        "USE_MM_BOW",
         "MM Swamp Archery"
       ],
       "ConditionalItems": [],
@@ -6020,7 +6020,7 @@
     {
       "Id": "MM Swamp Archery Reward 2",
       "RequiredItems": [
-        "MM_BOW",
+        "USE_MM_BOW",
         "MM Swamp Archery"
       ],
       "ConditionalItems": [],
@@ -6063,7 +6063,7 @@
       "RequiredItems": [
         "MM_KOUME",
         "MM_CLEAN_SWAMP",
-        "MM_BOW",
+        "USE_MM_BOW",
         "MM Tourist Information"
       ],
       "ConditionalItems": [],
@@ -6257,7 +6257,7 @@
         ],
         [
           "MM_MASK_DEKU",
-          "MM_BOW"
+          "USE_MM_BOW"
         ],
         [
           "MM_MASK_DEKU",
@@ -6265,7 +6265,7 @@
         ],
         [
           "MM_MASK_DEKU",
-          "MM_BOMB_BAG"
+          "USE_MM_BOMB_BAG"
         ]
       ],
       "TimeNeeded": "None",
@@ -6981,7 +6981,7 @@
       "Id": "MM Romani Ranch Aliens",
       "RequiredItems": [
         "MM_can_use_keg",
-        "MM_BOW",
+        "USE_MM_BOW",
         "MM Romani Ranch"
       ],
       "ConditionalItems": [],
@@ -6994,7 +6994,7 @@
       "Id": "MM Romani Ranch Cremia Escort",
       "RequiredItems": [
         "MM_can_use_keg",
-        "MM_BOW",
+        "USE_MM_BOW",
         "MM Romani Ranch"
       ],
       "ConditionalItems": [],
@@ -7304,7 +7304,7 @@
     {
       "Id": "MM Ocean Spider House Chest HP",
       "RequiredItems": [
-        "MM_BOW",
+        "USE_MM_BOW",
         "MM Ocean Spider House Back"
       ],
       "ConditionalItems": [
@@ -7531,7 +7531,7 @@
         ],
         [
           "MM_MASK_GORON",
-          "MM_BOW"
+          "USE_MM_BOW"
         ],
         [
           "MM_MASK_GORON",
@@ -7633,7 +7633,7 @@
           "MM_HOOKSHOT"
         ],
         [
-          "MM_BOW"
+          "USE_MM_BOW"
         ],
         [
           "MM_MASK_ZORA"
@@ -7734,7 +7734,7 @@
         ],
         [
           "MM_MASK_GORON",
-          "MM_BOW"
+          "USE_MM_BOW"
         ],
         [
           "MM_MASK_GORON",
@@ -7836,7 +7836,7 @@
       "RequiredItems": [
         "MM_OCARINA",
         "MM_SONG_AWAKENING",
-        "MM_BOW",
+        "USE_MM_BOW",
         "MM_can_fight",
         "MM Ikana Graveyard"
       ],
@@ -7871,7 +7871,7 @@
           "MM_has_explosives"
         ],
         [
-          "MM_BOW"
+          "USE_MM_BOW"
         ],
         [
           "MM_HOOKSHOT"
@@ -7986,7 +7986,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_BOW"
+          "USE_MM_BOW"
         ],
         [
           "MM_HOOKSHOT"
@@ -8158,7 +8158,7 @@
           "MM_can_fight"
         ],
         [
-          "MM_BOW"
+          "USE_MM_BOW"
         ]
       ],
       "TimeNeeded": "None",
@@ -8231,7 +8231,7 @@
           "MM_can_fight"
         ],
         [
-          "MM_BOW"
+          "USE_MM_BOW"
         ],
         [
           "MM_can_use_deku_bubble"
@@ -8265,7 +8265,7 @@
       "ConditionalItems": [
         [
           "MM_MASK_GREAT_FAIRY",
-          "MM_BOW"
+          "USE_MM_BOW"
         ],
         [
           "MM_MASK_GREAT_FAIRY",
@@ -8287,14 +8287,14 @@
       ],
       "ConditionalItems": [
         [
-          "MM_BOW"
+          "USE_MM_BOW"
         ],
         [
           "MM_can_use_deku_bubble"
         ],
         [
           "MM_MASK_GREAT_FAIRY",
-          "MM_BOMB_BAG"
+          "USE_MM_BOMB_BAG"
         ],
         [
           "MM_MASK_GREAT_FAIRY",
@@ -8354,7 +8354,7 @@
       "Id": "MM Woodfall Temple SF Pre-Boss Pillar",
       "RequiredItems": [
         "MM_MASK_DEKU",
-        "MM_BOW",
+        "USE_MM_BOW",
         "MM Woodfall Temple Pre-Boss"
       ],
       "ConditionalItems": [],
@@ -8539,7 +8539,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_BOW",
+          "USE_MM_BOW",
           "MM_can_break_boulders"
         ],
         [
@@ -8600,7 +8600,7 @@
           "MM Snowhead Temple Bridge Back"
         ],
         [
-          "MM_BOW",
+          "USE_MM_BOW",
           "MM Snowhead Temple Bridge Front"
         ],
         [
@@ -8622,7 +8622,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_BOW"
+          "USE_MM_BOW"
         ],
         [
           "MM_HOOKSHOT"
@@ -8660,7 +8660,7 @@
         ],
         [
           "MM_MASK_GREAT_FAIRY",
-          "MM_BOMB_BAG"
+          "USE_MM_BOMB_BAG"
         ]
       ],
       "TimeNeeded": "None",
@@ -8672,7 +8672,7 @@
       "Id": "MM Snowhead Temple SF Dual Switches",
       "RequiredItems": [
         "MM_can_use_lens",
-        "MM_BOW",
+        "USE_MM_BOW",
         "MM_MASK_GREAT_FAIRY",
         "MM Snowhead Temple Dual Switches"
       ],
@@ -8691,7 +8691,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_BOW"
+          "USE_MM_BOW"
         ],
         [
           "MM_HOOKSHOT"
@@ -9037,7 +9037,7 @@
         ],
         [
           "MM_MASK_GREAT_FAIRY",
-          "MM_BOW"
+          "USE_MM_BOW"
         ],
         [
           "MM_MASK_GREAT_FAIRY",
@@ -9081,7 +9081,7 @@
           "MM_MASK_ZORA"
         ],
         [
-          "MM_BOW",
+          "USE_MM_BOW",
           "MM_MASK_GREAT_FAIRY"
         ]
       ],
@@ -9135,7 +9135,7 @@
         ],
         [
           "MM_MASK_GREAT_FAIRY",
-          "MM_BOW"
+          "USE_MM_BOW"
         ],
         [
           "MM_MASK_GREAT_FAIRY",
@@ -9231,7 +9231,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_BOW"
+          "USE_MM_BOW"
         ],
         [
           "MM_HOOKSHOT"
@@ -9256,7 +9256,7 @@
     {
       "Id": "MM Stone Tower Temple Entrance Chest",
       "RequiredItems": [
-        "MM_BOW",
+        "USE_MM_BOW",
         "MM Stone Tower Temple Entrance"
       ],
       "ConditionalItems": [],
@@ -9566,7 +9566,7 @@
           "MM Stone Tower Temple Inverted Wizzrobe Ledge"
         ],
         [
-          "MM_BOW",
+          "USE_MM_BOW",
           "MM Stone Tower Temple Inverted Wizzrobe Ledge"
         ],
         [
@@ -9575,7 +9575,7 @@
           "MM Stone Tower Temple Inverted Wizzrobe"
         ],
         [
-          "MM_BOW",
+          "USE_MM_BOW",
           "MM_HOOKSHOT",
           "MM Stone Tower Temple Inverted Wizzrobe"
         ]
@@ -9762,7 +9762,7 @@
           "MM_can_fight"
         ],
         [
-          "MM_BOMB_BAG"
+          "USE_MM_BOMB_BAG"
         ]
       ],
       "TimeNeeded": "None",
@@ -15971,7 +15971,7 @@
           "MM_can_fight"
         ],
         [
-          "MM_BOW"
+          "USE_MM_BOW"
         ]
       ],
       "TimeNeeded": "None",
@@ -16155,12 +16155,12 @@
       "RequiredItems": [
         "MM_MASK_GIBDO",
         "MM_has_bottle",
-        "MM_BOMB_BAG",
+        "USE_MM_BOMB_BAG",
         "MM Beneath the Well East Section"
       ],
       "ConditionalItems": [
         [
-          "MM_BOW"
+          "USE_MM_BOW"
         ],
         [
           "MM_ZORA"
@@ -16615,7 +16615,7 @@
       "Id": "MM Great Bay Temple Boss => MM Great Bay Temple After Boss",
       "RequiredItems": [
         "MM_MAGIC_UPGRADE",
-        "MM_BOW",
+        "USE_MM_BOW",
         "MM Great Bay Temple Boss"
       ],
       "ConditionalItems": [
@@ -16917,7 +16917,7 @@
           "MM_can_fight"
         ],
         [
-          "MM_BOW"
+          "USE_MM_BOW"
         ]
       ],
       "TimeNeeded": "None",
@@ -16938,7 +16938,7 @@
           "MM_can_use_deku_bubble"
         ],
         [
-          "MM_BOW"
+          "USE_MM_BOW"
         ]
       ],
       "TimeNeeded": "None",
@@ -16957,7 +16957,7 @@
           "MM_can_fight"
         ],
         [
-          "MM_BOW"
+          "USE_MM_BOW"
         ]
       ],
       "TimeNeeded": "None",
@@ -16975,7 +16975,7 @@
           "MM_can_fight"
         ],
         [
-          "MM_BOW"
+          "USE_MM_BOW"
         ]
       ],
       "TimeNeeded": "None",
@@ -16987,7 +16987,7 @@
       "Id": "MM Moon Trial Link Rest 2 => MM Moon Trial Link Rest 3",
       "RequiredItems": [
         "MM_has_bombchu",
-        "MM_BOW",
+        "USE_MM_BOW",
         "MM Moon Trial Link Rest 2"
       ],
       "ConditionalItems": [],
@@ -17006,7 +17006,7 @@
           "MM_can_fight"
         ],
         [
-          "MM_BOMB_BAG"
+          "USE_MM_BOMB_BAG"
         ]
       ],
       "TimeNeeded": "None",
@@ -17067,7 +17067,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_BOW"
+          "USE_MM_BOW"
         ],
         [
           "MM_MASK_ZORA"
@@ -17943,7 +17943,7 @@
     {
       "Id": "MM Termina Field => MM Mountain Village Path Lower",
       "RequiredItems": [
-        "MM_BOW",
+        "USE_MM_BOW",
         "MM Termina Field"
       ],
       "ConditionalItems": [],
@@ -18204,7 +18204,7 @@
         ],
         [
           "MM_MASK_DEKU",
-          "MM_BOW"
+          "USE_MM_BOW"
         ],
         [
           "MM_MASK_DEKU",
@@ -18305,15 +18305,15 @@
           "MM_CLEAN_SWAMP"
         ],
         [
-          "MM_BOW",
+          "USE_MM_BOW",
           "MM_MASK_DEKU"
         ],
         [
-          "MM_BOW",
+          "USE_MM_BOW",
           "MM_MASK_ZORA"
         ],
         [
-          "MM_BOW",
+          "USE_MM_BOW",
           "MM_MASK_GORON"
         ]
       ],
@@ -18791,7 +18791,7 @@
     {
       "Id": "MM Mountain Village Path Lower => MM Termina Field",
       "RequiredItems": [
-        "MM_BOW",
+        "USE_MM_BOW",
         "MM Mountain Village Path Lower"
       ],
       "ConditionalItems": [],
@@ -20977,7 +20977,7 @@
         [
           "MM_MASK_STONE",
           "MM_HOOKSHOT",
-          "MM_BOW",
+          "USE_MM_BOW",
           "MM Pirate Fortress Hookshot Room Lower"
         ],
         [
@@ -20987,7 +20987,7 @@
           "MM Pirate Fortress Hookshot Room Lower"
         ],
         [
-          "MM_BOW",
+          "USE_MM_BOW",
           "MM Pirate Fortress Hookshot Room Upper"
         ],
         [
@@ -23003,7 +23003,7 @@
       "RequiredItems": [
         "TRICK_MM_ISTT_EYEGORE",
         "MM_has_shield",
-        "MM_BOMB_BAG",
+        "USE_MM_BOMB_BAG",
         "MM Stone Tower Temple Inverted East"
       ],
       "ConditionalItems": [],
@@ -23054,7 +23054,7 @@
           "MM_can_fight"
         ],
         [
-          "MM_BOW"
+          "USE_MM_BOW"
         ]
       ],
       "TimeNeeded": "None",
@@ -23442,7 +23442,7 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_BOW",
+          "USE_MM_BOW",
           "MM Woodfall Temple Main Ledge"
         ],
         [
@@ -23487,7 +23487,7 @@
     {
       "Id": "MM Woodfall Temple Water Room => MM Woodfall Temple Water Room Upper",
       "RequiredItems": [
-        "MM_BOW",
+        "USE_MM_BOW",
         "MM_MASK_DEKU",
         "MM Woodfall Temple Water Room"
       ],
@@ -23633,7 +23633,7 @@
     {
       "Id": "MM Woodfall Temple Main Ledge => MM Woodfall Temple Pre-Boss",
       "RequiredItems": [
-        "MM_BOW",
+        "USE_MM_BOW",
         "MM Woodfall Temple Main Ledge"
       ],
       "ConditionalItems": [],
@@ -23689,7 +23689,7 @@
     {
       "Id": "MM Woodfall Temple Water Room Upper => MM Woodfall Temple Boss Key Room",
       "RequiredItems": [
-        "MM_BOW",
+        "USE_MM_BOW",
         "MM_MASK_DEKU",
         "MM Woodfall Temple Water Room Upper"
       ],
@@ -23709,7 +23709,7 @@
           "MM_can_fight"
         ],
         [
-          "MM_BOW"
+          "USE_MM_BOW"
         ]
       ],
       "TimeNeeded": "None",
@@ -23804,7 +23804,7 @@
           "MM_MASK_FIERCE_DEITY"
         ],
         [
-          "MM_BOW",
+          "USE_MM_BOW",
           "MM_has_weapon"
         ]
       ],
@@ -23908,7 +23908,7 @@
     {
       "Id": "OOT_has_explosives",
       "RequiredItems": [
-        "OOT_BOMB_BAG"
+        "USE_OOT_BOMB_BAG"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -23948,7 +23948,7 @@
       "Id": "OOT_can_use_bow",
       "RequiredItems": [
         "OOT_is_adult",
-        "OOT_BOW"
+        "USE_OOT_BOW"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -24091,7 +24091,7 @@
       "ConditionalItems": [
         [
           "OOT_is_adult",
-          "OOT_BOW",
+          "USE_OOT_BOW",
           "OOT_ARROW_FIRE"
         ],
         [
@@ -24110,7 +24110,7 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_BOW",
+          "USE_OOT_BOW",
           "OOT_ARROW_FIRE",
           "OOT_has_explosives"
         ],
@@ -24119,7 +24119,7 @@
           "OOT_has_explosives"
         ],
         [
-          "OOT_BOW",
+          "USE_OOT_BOW",
           "OOT_ARROW_FIRE",
           "OOT_SMALL_KEY_SPIRIT, 2"
         ],
@@ -24269,11 +24269,11 @@
         ],
         [
           "OOT_SLINGSHOT",
-          "OOT_BOW"
+          "USE_OOT_BOW"
         ],
         [
           "OOT_BOOMERANG",
-          "OOT_BOW"
+          "USE_OOT_BOW"
         ]
       ],
       "TimeNeeded": "None",
@@ -24319,7 +24319,7 @@
       "Id": "OOT_has_light_arrows",
       "RequiredItems": [
         "OOT_is_adult",
-        "OOT_BOW",
+        "USE_OOT_BOW",
         "OOT_ARROW_LIGHT",
         "OOT_MAGIC_UPGRADE"
       ],
@@ -24333,7 +24333,7 @@
       "Id": "OOT_has_fire_arrows",
       "RequiredItems": [
         "OOT_is_adult",
-        "OOT_BOW",
+        "USE_OOT_BOW",
         "OOT_ARROW_FIRE",
         "OOT_MAGIC_UPGRADE"
       ],
@@ -24378,7 +24378,7 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_BOMB_BAG"
+          "USE_OOT_BOMB_BAG"
         ],
         [
           "OOT_can_hammer"
@@ -24663,7 +24663,7 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_BOW"
+          "USE_OOT_BOW"
         ],
         [
           "OOT_HOOKSHOT"
@@ -24765,7 +24765,7 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_BOMB_BAG"
+          "USE_MM_BOMB_BAG"
         ],
         [
           "MM_MASK_BLAST",
@@ -24781,7 +24781,7 @@
       "Id": "MM_can_use_fire_arrows",
       "RequiredItems": [
         "MM_MAGIC_UPGRADE",
-        "MM_BOW",
+        "USE_MM_BOW",
         "MM_ARROW_FIRE"
       ],
       "ConditionalItems": [],
@@ -24794,7 +24794,7 @@
       "Id": "MM_can_use_ice_arrows",
       "RequiredItems": [
         "MM_MAGIC_UPGRADE",
-        "MM_BOW",
+        "USE_MM_BOW",
         "MM_ARROW_ICE"
       ],
       "ConditionalItems": [],
@@ -24807,7 +24807,7 @@
       "Id": "MM_can_use_light_arrows",
       "RequiredItems": [
         "MM_MAGIC_UPGRADE",
-        "MM_BOW",
+        "USE_MM_BOW",
         "MM_ARROW_LIGHT"
       ],
       "ConditionalItems": [],
@@ -24892,7 +24892,7 @@
     {
       "Id": "MM_has_bombchu",
       "RequiredItems": [
-        "MM_BOMB_BAG"
+        "USE_MM_BOMB_BAG"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -24992,7 +24992,7 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_BOW"
+          "USE_MM_BOW"
         ],
         [
           "MM_HOOKSHOT"
@@ -25134,7 +25134,7 @@
           "MM_has_weapon"
         ],
         [
-          "MM_BOW"
+          "USE_MM_BOW"
         ],
         [
           "MM_HOOKSHOT"
@@ -25156,7 +25156,7 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_BOW"
+          "USE_MM_BOW"
         ],
         [
           "MM_HOOKSHOT"
@@ -25200,9 +25200,73 @@
       "RequiredItems": [
         "TRICK_MM_GORON_BOMB_JUMP",
         "MM_MASK_GORON",
-        "MM_BOMB_BAG"
+        "USE_MM_BOMB_BAG"
       ],
       "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "USE_OOT_BOW",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "SHARED_BOW"
+        ],
+        [
+          "OOT_BOW"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "USE_MM_BOW",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "SHARED_BOW"
+        ],
+        [
+          "MM_BOW"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "USE_OOT_BOMB_BAG",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "SHARED_BOMB_BAG"
+        ],
+        [
+          "OOT_BOMB_BAG"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "USE_MM_BOMB_BAG",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "SHARED_BOMB_BAG"
+        ],
+        [
+          "MM_BOMB_BAG"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",

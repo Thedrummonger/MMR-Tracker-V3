@@ -59,12 +59,38 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
             CreateEntrancePairs(dictionaryFile);
 
+            AddSharedItemMacros(LogicFile);
+
             Logic = LogicFile;
             dictionary = dictionaryFile;
             File.WriteAllText(FinalLogicFile, JsonConvert.SerializeObject(LogicFile, Testing._NewtonsoftJsonSerializerOptions));
             File.WriteAllText(FinalDictFile, JsonConvert.SerializeObject(dictionaryFile, Testing._NewtonsoftJsonSerializerOptions));
 
 
+        }
+
+        private static void AddSharedItemMacros(MMRData.LogicFile LogicFile)
+        {
+            string MMOOTCodeSharedItems = Path.Combine(References.TestingPaths.GetDevCodePath(), @"MMR Tracker V3", "OtherGames", "OOTMMRCOMBO", @"SharedItems.json");
+            List<string> SharedItems = JsonConvert.DeserializeObject<List<string>>(File.ReadAllText(MMOOTCodeSharedItems));
+            foreach (string SharedItem in SharedItems)
+            {
+                LogicFile.Logic.Add(createSharedEntry("OOT", SharedItem));
+                LogicFile.Logic.Add(createSharedEntry("MM", SharedItem));
+            }
+
+            MMRData.JsonFormatLogicItem createSharedEntry(string Game, string SharedItem)
+            {
+                return new MMRData.JsonFormatLogicItem()
+                {
+                    Id = $"USE_{Game}_{SharedItem}",
+                    ConditionalItems = new List<List<string>>
+                    {
+                        new List<string> { $"SHARED_{SharedItem}" },
+                        new List<string> { $"{Game}_{SharedItem}" }
+                    }
+                };
+            }
         }
 
         private static void CreateEntrancePairs(LogicDictionaryData.LogicDictionary dictionaryFile)
@@ -313,6 +339,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
         public static string ParseFunction(string LogicLine, string Game)
         {
+            string MMOOTCodeSharedItems = Path.Combine(References.TestingPaths.GetDevCodePath(), @"MMR Tracker V3", "OtherGames", "OOTMMRCOMBO", @"SharedItems.json");
+            List<string> SharedItems = JsonConvert.DeserializeObject<List<string>>(File.ReadAllText(MMOOTCodeSharedItems));
             string line = LogicLine;
             var FunctionsFound = LogicStringParser.GetFunctionsFromLogicString(line);
 
@@ -325,6 +353,9 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         line = line.Replace(f.ToString(), $"TRICK_{f.ParametersTrimmed}");
                         break;
                     case "has":
+                        if (SharedItems.Contains(f.ParametersTrimmed)) { line = line.Replace(f.ToString(), $"USE_{Game}_{f.ParametersTrimmed}"); }
+                        else { line = line.Replace(f.ToString(), $"{Game}_{f.ParametersTrimmed}"); }
+                        break;
                     case "event":
                         line = line.Replace(f.ToString(), $"{Game}_{f.ParametersTrimmed}");
                         break;
