@@ -1279,7 +1279,7 @@
           "OOT_has_ranged_weapon_adult"
         ],
         [
-          "OOT_MAGIC_UPGRADE"
+          "USE_OOT_MAGIC_UPGRADE"
         ]
       ],
       "TimeNeeded": "None",
@@ -6261,7 +6261,7 @@
         ],
         [
           "MM_MASK_DEKU",
-          "MM_MAGIC_UPGRADE"
+          "USE_MM_MAGIC_UPGRADE"
         ],
         [
           "MM_MASK_DEKU",
@@ -9344,16 +9344,16 @@
           "MM_has_explosives"
         ],
         [
-          "MM_MAGIC_UPGRADE",
+          "USE_MM_MAGIC_UPGRADE",
           "MM_has_weapon",
           "MM_SPIN_UPGRADE"
         ],
         [
-          "MM_MAGIC_UPGRADE",
+          "USE_MM_MAGIC_UPGRADE",
           "MM_SWORD, 3"
         ],
         [
-          "MM_MAGIC_UPGRADE",
+          "USE_MM_MAGIC_UPGRADE",
           "MM_GREAT_FAIRY_SWORD"
         ]
       ],
@@ -16614,7 +16614,7 @@
     {
       "Id": "MM Great Bay Temple Boss => MM Great Bay Temple After Boss",
       "RequiredItems": [
-        "MM_MAGIC_UPGRADE",
+        "USE_MM_MAGIC_UPGRADE",
         "USE_MM_BOW",
         "MM Great Bay Temple Boss"
       ],
@@ -17074,7 +17074,7 @@
         ],
         [
           "MM_MASK_FIERCE_DEITY",
-          "MM_MAGIC_UPGRADE"
+          "USE_MM_MAGIC_UPGRADE"
         ]
       ],
       "TimeNeeded": "None",
@@ -19219,7 +19219,7 @@
       "Id": "MM_GORON_FOOD",
       "RequiredItems": [
         "MM_MASK_GORON",
-        "MM_MAGIC_UPGRADE",
+        "USE_MM_MAGIC_UPGRADE",
         "MM Goron Shrine"
       ],
       "ConditionalItems": [
@@ -23257,7 +23257,7 @@
     {
       "Id": "MM Stone Tower Temple Boss => MM Stone Tower After Boss",
       "RequiredItems": [
-        "MM_MAGIC_UPGRADE",
+        "USE_MM_MAGIC_UPGRADE",
         "MM Stone Tower Temple Boss"
       ],
       "ConditionalItems": [
@@ -24086,7 +24086,7 @@
     {
       "Id": "OOT_has_fire",
       "RequiredItems": [
-        "OOT_MAGIC_UPGRADE"
+        "USE_OOT_MAGIC_UPGRADE"
       ],
       "ConditionalItems": [
         [
@@ -24106,7 +24106,7 @@
     {
       "Id": "OOT_has_fire_spirit",
       "RequiredItems": [
-        "OOT_MAGIC_UPGRADE"
+        "USE_OOT_MAGIC_UPGRADE"
       ],
       "ConditionalItems": [
         [
@@ -24152,7 +24152,7 @@
     {
       "Id": "OOT_has_lens_strict",
       "RequiredItems": [
-        "OOT_MAGIC_UPGRADE",
+        "USE_OOT_MAGIC_UPGRADE",
         "OOT_LENS"
       ],
       "ConditionalItems": [],
@@ -24183,7 +24183,7 @@
     {
       "Id": "OOT_can_use_din",
       "RequiredItems": [
-        "OOT_MAGIC_UPGRADE",
+        "USE_OOT_MAGIC_UPGRADE",
         "OOT_SPELL_FIRE"
       ],
       "ConditionalItems": [],
@@ -24321,7 +24321,7 @@
         "OOT_is_adult",
         "USE_OOT_BOW",
         "OOT_ARROW_LIGHT",
-        "OOT_MAGIC_UPGRADE"
+        "USE_OOT_MAGIC_UPGRADE"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -24335,7 +24335,7 @@
         "OOT_is_adult",
         "USE_OOT_BOW",
         "OOT_ARROW_FIRE",
-        "OOT_MAGIC_UPGRADE"
+        "USE_OOT_MAGIC_UPGRADE"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -24751,7 +24751,7 @@
     {
       "Id": "MM_can_use_lens_strict",
       "RequiredItems": [
-        "MM_MAGIC_UPGRADE",
+        "USE_MM_MAGIC_UPGRADE",
         "MM_LENS"
       ],
       "ConditionalItems": [],
@@ -24780,7 +24780,7 @@
     {
       "Id": "MM_can_use_fire_arrows",
       "RequiredItems": [
-        "MM_MAGIC_UPGRADE",
+        "USE_MM_MAGIC_UPGRADE",
         "USE_MM_BOW",
         "MM_ARROW_FIRE"
       ],
@@ -24793,7 +24793,7 @@
     {
       "Id": "MM_can_use_ice_arrows",
       "RequiredItems": [
-        "MM_MAGIC_UPGRADE",
+        "USE_MM_MAGIC_UPGRADE",
         "USE_MM_BOW",
         "MM_ARROW_ICE"
       ],
@@ -24806,7 +24806,7 @@
     {
       "Id": "MM_can_use_light_arrows",
       "RequiredItems": [
-        "MM_MAGIC_UPGRADE",
+        "USE_MM_MAGIC_UPGRADE",
         "USE_MM_BOW",
         "MM_ARROW_LIGHT"
       ],
@@ -24967,7 +24967,7 @@
       "Id": "MM_goron_fast_roll",
       "RequiredItems": [
         "MM_MASK_GORON",
-        "MM_MAGIC_UPGRADE"
+        "USE_MM_MAGIC_UPGRADE"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -24979,7 +24979,7 @@
       "Id": "MM_can_use_deku_bubble",
       "RequiredItems": [
         "MM_MASK_DEKU",
-        "MM_MAGIC_UPGRADE"
+        "USE_MM_MAGIC_UPGRADE"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -25265,6 +25265,38 @@
         ],
         [
           "MM_BOMB_BAG"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "USE_OOT_MAGIC_UPGRADE",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "SHARED_MAGIC_UPGRADE"
+        ],
+        [
+          "OOT_MAGIC_UPGRADE"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "USE_MM_MAGIC_UPGRADE",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "SHARED_MAGIC_UPGRADE"
+        ],
+        [
+          "MM_MAGIC_UPGRADE"
         ]
       ],
       "TimeNeeded": "None",

@@ -18720,6 +18720,26 @@
       }
     },
     {
+      "ID": "SHARED_ARROWS_5",
+      "Name": "5 Arrows",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_ARROWS_5",
+          "5 Arrows"
+        ],
+        "GossipHintNames": [
+          "SHARED_ARROWS_5",
+          "5 Arrows"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
       "ID": "SHARED_ARROWS_10",
       "Name": "10 Arrows",
       "MaxAmountInWorld": -1,
@@ -18760,8 +18780,8 @@
       }
     },
     {
-      "ID": "SHARED_ARROWS_5",
-      "Name": "5 Arrows",
+      "ID": "SHARED_ARROWS_40",
+      "Name": "40 Arrows",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -18769,12 +18789,12 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "SHARED_ARROWS_5",
-          "5 Arrows"
+          "SHARED_ARROWS_40",
+          "40 Arrows"
         ],
         "GossipHintNames": [
-          "SHARED_ARROWS_5",
-          "5 Arrows"
+          "SHARED_ARROWS_40",
+          "40 Arrows"
         ],
         "PriceDataNames": []
       }
@@ -18795,6 +18815,26 @@
         "GossipHintNames": [
           "SHARED_BOMB_BAG",
           "Bomb Bag"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_BOMB",
+      "Name": "1 Bomb",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_BOMB",
+          "1 Bomb"
+        ],
+        "GossipHintNames": [
+          "SHARED_BOMB",
+          "1 Bomb"
         ],
         "PriceDataNames": []
       }
@@ -18875,6 +18915,26 @@
         "GossipHintNames": [
           "SHARED_BOMBS_30",
           "30 Bombs"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_MAGIC_UPGRADE",
+      "Name": "Magic Upgrade",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_MAGIC_UPGRADE",
+          "Magic Upgrade"
+        ],
+        "GossipHintNames": [
+          "SHARED_MAGIC_UPGRADE",
+          "Magic Upgrade"
         ],
         "PriceDataNames": []
       }
