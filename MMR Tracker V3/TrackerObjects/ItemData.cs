@@ -58,8 +58,8 @@ namespace MMR_Tracker_V3.TrackerObjects
 
             public bool CanBePlaced(LogicObjects.TrackerInstance Instance)
             {
-                if (GetDictEntry(Instance).MaxAmountInWorld < 0) { return true; }
-                return GetAmountPlaced(Instance) < GetDictEntry(Instance).MaxAmountInWorld;
+                if (GetDictEntry(Instance).GetMaxAmountInWorld(Instance) < 0) { return true; }
+                return GetAmountPlaced(Instance) < GetDictEntry(Instance).GetMaxAmountInWorld(Instance);
             }
 
             public int GetTotalUsable(LogicObjects.TrackerInstance Instance)

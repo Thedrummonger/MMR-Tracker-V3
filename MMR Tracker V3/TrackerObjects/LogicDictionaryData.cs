@@ -104,6 +104,18 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return Name ?? ID;
             }
 
+            public int GetMaxAmountInWorld(LogicObjects.TrackerInstance instance)
+            {
+                var OptionsEffectingThisItem = instance.UserOptions.Values.Where(x => x.GetActions().ItemMaxAmountEdit.ContainsKey(ID));
+                if (!OptionsEffectingThisItem.Any()) { return MaxAmountInWorld ?? -1; }
+                int FinalValue = MaxAmountInWorld is null ? -1 : (int)MaxAmountInWorld;
+                foreach(var i in OptionsEffectingThisItem)
+                {
+                    FinalValue += i.GetActions().ItemMaxAmountEdit[ID];
+                }
+                return FinalValue;
+            }
+
         }
 
         [Serializable]

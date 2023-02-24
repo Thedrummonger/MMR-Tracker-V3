@@ -26952,17 +26952,20 @@
         "both": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
-          "ItemNameOverride": {}
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
         },
         "adult": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
-          "ItemNameOverride": {}
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
         },
         "child": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
-          "ItemNameOverride": {}
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
         }
       }
     },
@@ -26974,12 +26977,14 @@
         "open": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
-          "ItemNameOverride": {}
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
         },
         "closed": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
-          "ItemNameOverride": {}
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
         }
       }
     },
@@ -26991,22 +26996,26 @@
         "removed": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
-          "ItemNameOverride": {}
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
         },
         "vanilla": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
-          "ItemNameOverride": {}
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
         },
         "ganon": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
-          "ItemNameOverride": {}
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
         },
         "anywhere": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
-          "ItemNameOverride": {}
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
         }
       }
     },
@@ -27018,12 +27027,14 @@
         "ownDungeon": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
-          "ItemNameOverride": {}
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
         },
         "anywhere": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
-          "ItemNameOverride": {}
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
         }
       }
     }

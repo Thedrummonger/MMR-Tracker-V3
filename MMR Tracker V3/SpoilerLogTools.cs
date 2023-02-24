@@ -162,7 +162,7 @@ namespace MMR_Tracker_V3
                 var DictEntry = i.GetDictEntry(Instance);
                 bool ValidStartingItem = DictEntry.ValidStartingItem ?? true;
                 if (!ValidStartingItem) { continue; }
-                int MaxInWorld = DictEntry.MaxAmountInWorld ?? -1;
+                int MaxInWorld = DictEntry.GetMaxAmountInWorld(Instance);
                 if (MaxInWorld > 5 || MaxInWorld < 0) { MaxInWorld = 5; }
 
                 for (var j = 0; j < MaxInWorld; j++)

@@ -8353,11 +8353,16 @@
     {
       "Id": "MM Woodfall Temple SF Pre-Boss Pillar",
       "RequiredItems": [
-        "MM_MASK_DEKU",
-        "USE_MM_BOW",
         "MM Woodfall Temple Pre-Boss"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_MASK_DEKU"
+        ],
+        [
+          "MM_MASK_GREAT_FAIRY"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
