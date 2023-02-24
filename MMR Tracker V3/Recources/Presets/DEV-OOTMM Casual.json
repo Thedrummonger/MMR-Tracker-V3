@@ -24092,7 +24092,7 @@
         [
           "OOT_is_adult",
           "USE_OOT_BOW",
-          "OOT_ARROW_FIRE"
+          "USE_OOT_ARROW_FIRE"
         ],
         [
           "OOT_SPELL_FIRE"
@@ -24111,7 +24111,7 @@
       "ConditionalItems": [
         [
           "USE_OOT_BOW",
-          "OOT_ARROW_FIRE",
+          "USE_OOT_ARROW_FIRE",
           "OOT_has_explosives"
         ],
         [
@@ -24120,7 +24120,7 @@
         ],
         [
           "USE_OOT_BOW",
-          "OOT_ARROW_FIRE",
+          "USE_OOT_ARROW_FIRE",
           "OOT_SMALL_KEY_SPIRIT, 2"
         ],
         [
@@ -24320,7 +24320,7 @@
       "RequiredItems": [
         "OOT_is_adult",
         "USE_OOT_BOW",
-        "OOT_ARROW_LIGHT",
+        "USE_OOT_ARROW_LIGHT",
         "USE_OOT_MAGIC_UPGRADE"
       ],
       "ConditionalItems": [],
@@ -24334,7 +24334,7 @@
       "RequiredItems": [
         "OOT_is_adult",
         "USE_OOT_BOW",
-        "OOT_ARROW_FIRE",
+        "USE_OOT_ARROW_FIRE",
         "USE_OOT_MAGIC_UPGRADE"
       ],
       "ConditionalItems": [],
@@ -24669,10 +24669,10 @@
           "OOT_HOOKSHOT"
         ],
         [
-          "OOT_ARROW_FIRE"
+          "USE_OOT_ARROW_FIRE"
         ],
         [
-          "OOT_ARROW_LIGHT"
+          "USE_OOT_ARROW_LIGHT"
         ]
       ],
       "TimeNeeded": "None",
@@ -24782,7 +24782,7 @@
       "RequiredItems": [
         "USE_MM_MAGIC_UPGRADE",
         "USE_MM_BOW",
-        "MM_ARROW_FIRE"
+        "USE_MM_ARROW_FIRE"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -24795,7 +24795,7 @@
       "RequiredItems": [
         "USE_MM_MAGIC_UPGRADE",
         "USE_MM_BOW",
-        "MM_ARROW_ICE"
+        "USE_MM_ARROW_ICE"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -24808,7 +24808,7 @@
       "RequiredItems": [
         "USE_MM_MAGIC_UPGRADE",
         "USE_MM_BOW",
-        "MM_ARROW_LIGHT"
+        "USE_MM_ARROW_LIGHT"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -25297,6 +25297,102 @@
         ],
         [
           "MM_MAGIC_UPGRADE"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "USE_OOT_ARROW_FIRE",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "SHARED_ARROW_FIRE"
+        ],
+        [
+          "OOT_ARROW_FIRE"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "USE_MM_ARROW_FIRE",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "SHARED_ARROW_FIRE"
+        ],
+        [
+          "MM_ARROW_FIRE"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "USE_OOT_ARROW_ICE",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "SHARED_ARROW_ICE"
+        ],
+        [
+          "OOT_ARROW_ICE"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "USE_MM_ARROW_ICE",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "SHARED_ARROW_ICE"
+        ],
+        [
+          "MM_ARROW_ICE"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "USE_OOT_ARROW_LIGHT",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "SHARED_ARROW_LIGHT"
+        ],
+        [
+          "OOT_ARROW_LIGHT"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "USE_MM_ARROW_LIGHT",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "SHARED_ARROW_LIGHT"
+        ],
+        [
+          "MM_ARROW_LIGHT"
         ]
       ],
       "TimeNeeded": "None",

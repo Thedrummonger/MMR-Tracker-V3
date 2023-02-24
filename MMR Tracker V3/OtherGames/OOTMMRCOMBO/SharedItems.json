@@ -1,5 +1,8 @@
 ﻿[
   "BOW",
   "BOMB_BAG",
-  "MAGIC_UPGRADE"
+  "MAGIC_UPGRADE",
+  "ARROW_FIRE",
+  "ARROW_ICE",
+  "ARROW_LIGHT"
 ]

@@ -18922,7 +18922,7 @@
     {
       "ID": "SHARED_MAGIC_UPGRADE",
       "Name": "Magic Upgrade",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -18935,6 +18935,66 @@
         "GossipHintNames": [
           "SHARED_MAGIC_UPGRADE",
           "Magic Upgrade"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_ARROW_FIRE",
+      "Name": "Fire Arrows",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_ARROW_FIRE",
+          "Fire Arrows"
+        ],
+        "GossipHintNames": [
+          "SHARED_ARROW_FIRE",
+          "Fire Arrows"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_ARROW_ICE",
+      "Name": "Ice Arrows",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_ARROW_ICE",
+          "Ice Arrows"
+        ],
+        "GossipHintNames": [
+          "SHARED_ARROW_ICE",
+          "Ice Arrows"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_ARROW_LIGHT",
+      "Name": "Light Arrows",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_ARROW_LIGHT",
+          "Light Arrows"
+        ],
+        "GossipHintNames": [
+          "SHARED_ARROW_LIGHT",
+          "Light Arrows"
         ],
         "PriceDataNames": []
       }
