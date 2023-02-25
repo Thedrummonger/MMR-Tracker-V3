@@ -27259,6 +27259,167 @@
       }
     },
     {
+      "ID": "progressiveShieldsOot",
+      "DisplayName": "Progressive OoT Shields",
+      "CurrentValue": "true",
+      "Values": {
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "OOT_SHIELD": {
+              "action": "set",
+              "amount": 0
+            }
+          }
+        },
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "OOT_SHIELD_DEKU": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_SHIELD_HYLIAN": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_SHIELD_MIRROR": {
+              "action": "set",
+              "amount": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "ID": "progressiveSwordsOot",
+      "DisplayName": "Progressive OoT Swords",
+      "CurrentValue": "separate",
+      "Values": {
+        "separate": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "OOT_SWORD": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_SWORD_GORON": {
+              "action": "set",
+              "amount": 0
+            }
+          }
+        },
+        "progressive": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "OOT_SWORD_KOKIRI": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_SWORD_MASTER": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_SWORD_GORON": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_SWORD_KNIFE": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_SWORD_BIGGORON": {
+              "action": "set",
+              "amount": 0
+            }
+          }
+        },
+        "goron": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "OOT_SWORD": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_SWORD_KNIFE": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_SWORD_BIGGORON": {
+              "action": "set",
+              "amount": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "ID": "progressiveShieldsMm",
+      "DisplayName": "Progressive MM Shields",
+      "CurrentValue": "true",
+      "Values": {
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "MM_SHIELD": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_SONG_GORON_HALF": {
+              "action": "set",
+              "amount": 0
+            }
+          }
+        },
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "MM_SHIELD_MIRROR": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_SONG_GORON": {
+              "action": "set",
+              "amount": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "ID": "progressiveGoronLullaby",
+      "DisplayName": "Progressive MM Goron Lullaby",
+      "CurrentValue": "true",
+      "Values": {
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
+        },
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
+        }
+      }
+    },
+    {
       "ID": "sharedBOW",
       "DisplayName": "Shared Bow",
       "CurrentValue": "false",

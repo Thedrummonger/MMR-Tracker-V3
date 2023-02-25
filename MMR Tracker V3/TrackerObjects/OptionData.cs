@@ -62,24 +62,15 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return LogicReplacements.Any(x => x.LocationValid(ID)) || AdditionalLogic.Any(x => x.LocationValid(ID));
             }
 
-            public void AddMaxAmountEdit(string Item, MathOP mathOP, int amount)
+            public void AddMaxAmountEdit(string Item, MiscData.MathOP mathOP, int amount)
             {
                 ItemMaxAmountEdit.Add(Item, new MaxAmountSetData { action = mathOP, amount = amount});
             }
         }
 
-        public enum MathOP
-        {
-            add,
-            subtract,
-            multiply,
-            divide,
-            set
-        }
-
         public class MaxAmountSetData
         {
-            public MathOP action { get; set; } = MathOP.add;
+            public MiscData.MathOP action { get; set; } = MiscData.MathOP.add;
             public int amount { get; set; } = 0;
         }
 

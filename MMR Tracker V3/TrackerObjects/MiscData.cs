@@ -101,6 +101,14 @@ namespace MMR_Tracker_V3.TrackerObjects
             UserView = 2,
             Off = 3
         }
+        public enum MathOP
+        {
+            add,
+            subtract,
+            multiply,
+            divide,
+            set
+        }
 
         [Serializable]
         public enum RandomizedState

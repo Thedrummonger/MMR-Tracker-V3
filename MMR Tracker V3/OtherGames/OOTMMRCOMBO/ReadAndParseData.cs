@@ -178,6 +178,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             GanonBossKey.DisplayName = "Ganon's Boss Key";
             GanonBossKey.CurrentValue = "ganon";
             GanonBossKey.CreateSimpleValues(new string[] { "removed", "vanilla", "ganon", "anywhere" });
+            GanonBossKey.Values["removed"].AddMaxAmountEdit("OOT_BOSS_KEY_GANON", MiscData.MathOP.set, 0);
             dictionaryFile.Options.Add(GanonBossKey);
 
             OptionData.TrackerOption SmallKey = new OptionData.TrackerOption();
@@ -186,6 +187,52 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             SmallKey.CurrentValue = "anywhere";
             SmallKey.CreateSimpleValues(new string[] { "ownDungeon", "anywhere" });
             dictionaryFile.Options.Add(SmallKey);
+
+            OptionData.TrackerOption ProgressiveShieldsOOT = new OptionData.TrackerOption();
+            ProgressiveShieldsOOT.ID = "progressiveShieldsOot";
+            ProgressiveShieldsOOT.DisplayName = "Progressive OoT Shields";
+            ProgressiveShieldsOOT.CurrentValue = "true";
+            ProgressiveShieldsOOT.CreateSimpleValues(new string[] { "false", "true" });
+            ProgressiveShieldsOOT.Values["false"].AddMaxAmountEdit("OOT_SHIELD", MiscData.MathOP.set, 0);
+            ProgressiveShieldsOOT.Values["true"].AddMaxAmountEdit("OOT_SHIELD_DEKU", MiscData.MathOP.set, 0);
+            ProgressiveShieldsOOT.Values["true"].AddMaxAmountEdit("OOT_SHIELD_HYLIAN", MiscData.MathOP.set, 0);
+            ProgressiveShieldsOOT.Values["true"].AddMaxAmountEdit("OOT_SHIELD_MIRROR", MiscData.MathOP.set, 0);
+            dictionaryFile.Options.Add(ProgressiveShieldsOOT);
+
+            OptionData.TrackerOption ProgressiveSwordsOOT = new OptionData.TrackerOption();
+            ProgressiveSwordsOOT.ID = "progressiveSwordsOot";
+            ProgressiveSwordsOOT.DisplayName = "Progressive OoT Swords";
+            ProgressiveSwordsOOT.CurrentValue = "separate";
+            ProgressiveSwordsOOT.CreateSimpleValues(new string[] { "separate", "progressive", "goron" });
+            ProgressiveSwordsOOT.Values["separate"].AddMaxAmountEdit("OOT_SWORD", MiscData.MathOP.set, 0);
+            ProgressiveSwordsOOT.Values["separate"].AddMaxAmountEdit("OOT_SWORD_GORON", MiscData.MathOP.set, 0);
+            ProgressiveSwordsOOT.Values["progressive"].AddMaxAmountEdit("OOT_SWORD_KOKIRI", MiscData.MathOP.set, 0);
+            ProgressiveSwordsOOT.Values["progressive"].AddMaxAmountEdit("OOT_SWORD_MASTER", MiscData.MathOP.set, 0);
+            ProgressiveSwordsOOT.Values["progressive"].AddMaxAmountEdit("OOT_SWORD_GORON", MiscData.MathOP.set, 0);
+            ProgressiveSwordsOOT.Values["progressive"].AddMaxAmountEdit("OOT_SWORD_KNIFE", MiscData.MathOP.set, 0);
+            ProgressiveSwordsOOT.Values["progressive"].AddMaxAmountEdit("OOT_SWORD_BIGGORON", MiscData.MathOP.set, 0);
+            ProgressiveSwordsOOT.Values["goron"].AddMaxAmountEdit("OOT_SWORD", MiscData.MathOP.set, 0);
+            ProgressiveSwordsOOT.Values["goron"].AddMaxAmountEdit("OOT_SWORD_KNIFE", MiscData.MathOP.set, 0);
+            ProgressiveSwordsOOT.Values["goron"].AddMaxAmountEdit("OOT_SWORD_BIGGORON", MiscData.MathOP.set, 0);
+            dictionaryFile.Options.Add(ProgressiveSwordsOOT);
+
+            OptionData.TrackerOption ProgressiveShieldsMM = new OptionData.TrackerOption();
+            ProgressiveShieldsMM.ID = "progressiveShieldsMm";
+            ProgressiveShieldsMM.DisplayName = "Progressive MM Shields";
+            ProgressiveShieldsMM.CurrentValue = "true";
+            ProgressiveShieldsMM.CreateSimpleValues(new string[] { "false", "true" });
+            ProgressiveShieldsMM.Values["false"].AddMaxAmountEdit("MM_SHIELD", MiscData.MathOP.set, 0);
+            ProgressiveShieldsMM.Values["true"].AddMaxAmountEdit("MM_SHIELD_MIRROR", MiscData.MathOP.set, 0);
+            dictionaryFile.Options.Add(ProgressiveShieldsMM);
+
+            OptionData.TrackerOption ProgressiveLullabyMM = new OptionData.TrackerOption();
+            ProgressiveLullabyMM.ID = "progressiveGoronLullaby";
+            ProgressiveLullabyMM.DisplayName = "Progressive MM Goron Lullaby";
+            ProgressiveLullabyMM.CurrentValue = "true";
+            ProgressiveLullabyMM.CreateSimpleValues(new string[] { "false", "true" });
+            ProgressiveShieldsMM.Values["false"].AddMaxAmountEdit("MM_SONG_GORON_HALF", MiscData.MathOP.set, 0);
+            ProgressiveShieldsMM.Values["true"].AddMaxAmountEdit("MM_SONG_GORON", MiscData.MathOP.set, 0);
+            dictionaryFile.Options.Add(ProgressiveLullabyMM);
 
             //Game Clear
             dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "Game_Clear", RequiredItems = new List<string> { "OOT_GANON", "MM_MAJORA" } });
@@ -217,11 +264,11 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 }
 
                 OptionData.actions onAction = new() { LogicReplacements = new OptionData.LogicReplacement[] { OnActionReplacementData } };
-                onAction.AddMaxAmountEdit($"OOT_{Item}", OptionData.MathOP.set, 0);
-                onAction.AddMaxAmountEdit($"MM_{Item}", OptionData.MathOP.set, 0);
+                onAction.AddMaxAmountEdit($"OOT_{Item}", MiscData.MathOP.set, 0);
+                onAction.AddMaxAmountEdit($"MM_{Item}", MiscData.MathOP.set, 0);
 
                 OptionData.actions offAction = new();
-                offAction.AddMaxAmountEdit($"SHARED_{Item}", OptionData.MathOP.set, 0);
+                offAction.AddMaxAmountEdit($"SHARED_{Item}", MiscData.MathOP.set, 0);
 
                 OptionData.TrackerOption SharedItem = new()
                 {
