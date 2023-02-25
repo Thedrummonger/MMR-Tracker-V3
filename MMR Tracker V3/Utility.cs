@@ -242,6 +242,13 @@ namespace MMR_Tracker_V3
 
     public static class SaveCompressor
     {
+        public enum SaveType
+        {
+            Standard,
+            Compressed,
+            CompressedByte,
+            error
+        }
         public class CompressedSave
         {
             public byte[] Bytes { get; }
@@ -303,6 +310,46 @@ namespace MMR_Tracker_V3
         private static string GetBytesAsString(byte[] byteData)
         {
             return Convert.ToBase64String(byteData);
+        }
+
+        public static SaveType TestFileType(string FilePath)
+        {
+            try
+            {
+                Debug.WriteLine("Trying to load Standard Save");
+                var Instance = LogicObjects.TrackerInstance.FromJson(File.ReadAllText(FilePath));
+                Debug.WriteLine("Success!");
+                return SaveType.Standard;
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine($"Failure! {e}");
+            }
+            try
+            {
+                Debug.WriteLine("Trying to load Compressed Save");
+                var DecompSave = Decompress(File.ReadAllText(FilePath));
+                var Instance = LogicObjects.TrackerInstance.FromJson(DecompSave);
+                Debug.WriteLine("Success!");
+                return SaveType.Compressed;
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine($"Failure! {e}");
+            }
+            try
+            {
+                Debug.WriteLine("Trying to load Compressed Byte Save");
+                var DecompSave = Decompress(File.ReadAllBytes(FilePath));
+                var Instance = LogicObjects.TrackerInstance.FromJson(DecompSave);
+                Debug.WriteLine("Success!");
+                return SaveType.CompressedByte;
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine($"Failure! {e}");
+            }
+            return SaveType.error;
         }
     }
 

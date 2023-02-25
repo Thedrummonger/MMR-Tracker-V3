@@ -69,8 +69,21 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 if (File.Exists(Save))
                 {
-                    try { Instance = LogicObjects.TrackerInstance.FromJson(File.ReadAllText(Save)); }
-                    catch { return false; }
+                    switch (SaveCompressor.TestFileType(Save))
+                    {
+                        case SaveCompressor.SaveType.Standard:
+                            Instance = LogicObjects.TrackerInstance.FromJson(File.ReadAllText(Save));
+                            return true;
+                        case SaveCompressor.SaveType.Compressed:
+                            var Decomp = SaveCompressor.Decompress(File.ReadAllText(Save));
+                            Instance = LogicObjects.TrackerInstance.FromJson(Decomp);
+                            return true;
+                        case SaveCompressor.SaveType.CompressedByte:
+                            var ByteDecomp = SaveCompressor.Decompress(File.ReadAllBytes(Save));
+                            Instance = LogicObjects.TrackerInstance.FromJson(ByteDecomp);
+                            return true;
+                        case SaveCompressor.SaveType.error: return false;
+                    }
                 }
                 else
                 {

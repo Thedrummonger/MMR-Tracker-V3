@@ -270,11 +270,11 @@ namespace Windows_Form_Frontend
             var TestingFolder = References.TestingPaths.GetDevTestingPath();
             var SaveTestingFolder = Path.Combine(TestingFolder, "SaveTesting");
             if (!Directory.Exists(SaveTestingFolder)) { Directory.CreateDirectory(SaveTestingFolder); }
-            var BaseSaveFile = Path.Combine(SaveTestingFolder, "BaseSave.txt");
-            var ByteSaveFile = Path.Combine(SaveTestingFolder, "ByteSave.txt");
-            var ByteStringSaveFile = Path.Combine(SaveTestingFolder, "ByteStringSave.txt");
-            var DecompByteSave = Path.Combine(SaveTestingFolder, "DecompByteSave.txt");
-            var DecompStringSave = Path.Combine(SaveTestingFolder, "DecompStringSave.txt");
+            var BaseSaveFile = Path.Combine(SaveTestingFolder, "BaseSave.MMRTSAV");
+            var ByteSaveFile = Path.Combine(SaveTestingFolder, "ByteSave.MMRTSAV");
+            var ByteStringSaveFile = Path.Combine(SaveTestingFolder, "ByteStringSave.MMRTSAV");
+            var DecompByteSave = Path.Combine(SaveTestingFolder, "DecompByteSave.MMRTSAV");
+            var DecompStringSave = Path.Combine(SaveTestingFolder, "DecompStringSave.MMRTSAV");
 
             string SaveData = InstanceContainer.Instance.ToString();
             File.WriteAllText(BaseSaveFile, SaveData);
