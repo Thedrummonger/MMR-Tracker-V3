@@ -57,6 +57,12 @@ namespace MMR_Tracker_V3
             return Path.Combine(References.TestingPaths.GetDevTestingPath(), $"{Name}.{Extention}");
         }
 
+        public static void PrintObjectToConsole(object o)
+        {
+            string JsonString = JsonConvert.SerializeObject(o, _NewtonsoftJsonSerializerOptions);
+            Debug.WriteLine(JsonString);
+        }
+
         public readonly static Newtonsoft.Json.JsonSerializerSettings _NewtonsoftJsonSerializerOptions = new Newtonsoft.Json.JsonSerializerSettings
         {
             Formatting = Newtonsoft.Json.Formatting.Indented,

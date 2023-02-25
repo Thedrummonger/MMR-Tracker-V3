@@ -290,7 +290,18 @@ namespace Windows_Form_Frontend
             File.WriteAllText(DecompByteSave, SaveCompressor.Decompress(ReadByteFile));
             File.WriteAllText(DecompStringSave, SaveCompressor.Decompress(ReadByteStringFile));
 
-            
+            var Groups = Utility.GetCategoriesFromFile(InstanceContainer.Instance);
+            List<string> MissingAreas = new List<string>();
+
+            foreach (var i in InstanceContainer.Instance.LocationPool.Values)
+            {
+                string LocArea = i.GetDictEntry(InstanceContainer.Instance).Area;
+                if (!Groups.ContainsKey(LocArea.ToLower()) && !MissingAreas.Contains(LocArea))
+                {
+                    MissingAreas.Add(LocArea);
+                }
+            }
+            Testing.PrintObjectToConsole(MissingAreas);
 
         }
 

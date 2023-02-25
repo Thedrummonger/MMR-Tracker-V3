@@ -37,7 +37,7 @@ namespace MMR_Tracker_V3
 
                     if (!Groups.ContainsKey(Line) && AtGame)
                     {
-                        Groups.Add(Line, Groups.Count);
+                        Groups.Add(Line.Trim(), Groups.Count);
                     }
                 }
                 return Groups;

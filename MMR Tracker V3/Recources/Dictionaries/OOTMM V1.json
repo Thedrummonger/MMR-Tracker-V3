@@ -502,7 +502,7 @@
       "ID": "OOT Saria's Song",
       "Name": "Saria's Song",
       "OriginalItem": "OOT_SONG_SARIA",
-      "Area": "Lost Woods",
+      "Area": "Sacred Forest Meadow",
       "ValidItemTypes": [
         "item"
       ],
@@ -521,7 +521,7 @@
       "ID": "OOT Sacred Meadow Sheik Song",
       "Name": "Sacred Meadow Sheik Song",
       "OriginalItem": "OOT_SONG_TP_FOREST",
-      "Area": "Lost Woods",
+      "Area": "Sacred Forest Meadow",
       "ValidItemTypes": [
         "item"
       ],
@@ -540,7 +540,7 @@
       "ID": "OOT Sacred Meadow Grotto",
       "Name": "Sacred Meadow Grotto",
       "OriginalItem": "OOT_RUPEE_PURPLE",
-      "Area": "Lost Woods",
+      "Area": "Sacred Forest Meadow",
       "ValidItemTypes": [
         "item"
       ],
@@ -559,7 +559,7 @@
       "ID": "OOT Sacred Meadow GS Night Adult",
       "Name": "Sacred Meadow GS Night Adult",
       "OriginalItem": "OOT_GS_TOKEN",
-      "Area": "Lost Woods",
+      "Area": "Sacred Forest Meadow",
       "ValidItemTypes": [
         "item"
       ],
@@ -578,7 +578,7 @@
       "ID": "OOT Kakariko Anju Bottle",
       "Name": "Kakariko Anju Bottle",
       "OriginalItem": "OOT_EMPTY_BOTTLE",
-      "Area": "Kakariko Village",
+      "Area": "Kakariko",
       "ValidItemTypes": [
         "item"
       ],
@@ -597,7 +597,7 @@
       "ID": "OOT Kakariko Anju Egg",
       "Name": "Kakariko Anju Egg",
       "OriginalItem": "OOT_POCKET_CUCCO",
-      "Area": "Kakariko Village",
+      "Area": "Kakariko",
       "ValidItemTypes": [
         "item"
       ],
@@ -616,7 +616,7 @@
       "ID": "OOT Kakariko Anju Cojiro",
       "Name": "Kakariko Anju Cojiro",
       "OriginalItem": "OOT_COJIRO",
-      "Area": "Kakariko Village",
+      "Area": "Kakariko",
       "ValidItemTypes": [
         "item"
       ],
@@ -635,7 +635,7 @@
       "ID": "OOT Kakariko Song Shadow",
       "Name": "Kakariko Song Shadow",
       "OriginalItem": "OOT_SONG_TP_SHADOW",
-      "Area": "Kakariko Village",
+      "Area": "Kakariko",
       "ValidItemTypes": [
         "item"
       ],
@@ -654,7 +654,7 @@
       "ID": "OOT Kakariko Man on Roof",
       "Name": "Kakariko Man on Roof",
       "OriginalItem": "OOT_HEART_PIECE",
-      "Area": "Kakariko Village",
+      "Area": "Kakariko",
       "ValidItemTypes": [
         "item"
       ],
@@ -673,7 +673,7 @@
       "ID": "OOT Kakariko Impa House HP",
       "Name": "Kakariko Impa House HP",
       "OriginalItem": "OOT_HEART_PIECE",
-      "Area": "Kakariko Village",
+      "Area": "Kakariko",
       "ValidItemTypes": [
         "item"
       ],
@@ -692,7 +692,7 @@
       "ID": "OOT Kakariko Grotto Front",
       "Name": "Kakariko Grotto Front",
       "OriginalItem": "OOT_RUPEE_HUGE",
-      "Area": "Kakariko Village",
+      "Area": "Kakariko",
       "ValidItemTypes": [
         "item"
       ],
@@ -711,7 +711,7 @@
       "ID": "OOT Kakariko Grotto Back",
       "Name": "Kakariko Grotto Back",
       "OriginalItem": "OOT_RUPEE_RED",
-      "Area": "Kakariko Village",
+      "Area": "Kakariko",
       "ValidItemTypes": [
         "item"
       ],
@@ -730,7 +730,7 @@
       "ID": "OOT Kakariko GS Roof",
       "Name": "Kakariko GS Roof",
       "OriginalItem": "OOT_GS_TOKEN",
-      "Area": "Kakariko Village",
+      "Area": "Kakariko",
       "ValidItemTypes": [
         "item"
       ],
@@ -749,7 +749,7 @@
       "ID": "OOT Kakariko GS Shooting Gallery",
       "Name": "Kakariko GS Shooting Gallery",
       "OriginalItem": "OOT_GS_TOKEN",
-      "Area": "Kakariko Village",
+      "Area": "Kakariko",
       "ValidItemTypes": [
         "item"
       ],
@@ -768,7 +768,7 @@
       "ID": "OOT Kakariko GS Tree",
       "Name": "Kakariko GS Tree",
       "OriginalItem": "OOT_GS_TOKEN",
-      "Area": "Kakariko Village",
+      "Area": "Kakariko",
       "ValidItemTypes": [
         "item"
       ],
@@ -787,7 +787,7 @@
       "ID": "OOT Kakariko GS House of Skulltula",
       "Name": "Kakariko GS House of Skulltula",
       "OriginalItem": "OOT_GS_TOKEN",
-      "Area": "Kakariko Village",
+      "Area": "Kakariko",
       "ValidItemTypes": [
         "item"
       ],
@@ -806,7 +806,7 @@
       "ID": "OOT Kakariko GS Bazaar",
       "Name": "Kakariko GS Bazaar",
       "OriginalItem": "OOT_GS_TOKEN",
-      "Area": "Kakariko Village",
+      "Area": "Kakariko",
       "ValidItemTypes": [
         "item"
       ],
@@ -825,7 +825,7 @@
       "ID": "OOT Kakariko GS Ladder",
       "Name": "Kakariko GS Ladder",
       "OriginalItem": "OOT_GS_TOKEN",
-      "Area": "Kakariko Village",
+      "Area": "Kakariko",
       "ValidItemTypes": [
         "item"
       ],
@@ -844,7 +844,7 @@
       "ID": "OOT Kakariko Potion Shop Odd Potion",
       "Name": "Kakariko Potion Shop Odd Potion",
       "OriginalItem": "OOT_ODD_POTION",
-      "Area": "Kakariko Village",
+      "Area": "Kakariko",
       "ValidItemTypes": [
         "item"
       ],
@@ -863,7 +863,7 @@
       "ID": "OOT Graveyard Dampe Game",
       "Name": "Graveyard Dampe Game",
       "OriginalItem": "OOT_HEART_PIECE",
-      "Area": "Kakariko Graveyard",
+      "Area": "Graveyard",
       "ValidItemTypes": [
         "item"
       ],
@@ -882,7 +882,7 @@
       "ID": "OOT Graveyard ReDead Tomb",
       "Name": "Graveyard ReDead Tomb",
       "OriginalItem": "OOT_HEART_PIECE",
-      "Area": "Kakariko Graveyard",
+      "Area": "Graveyard",
       "ValidItemTypes": [
         "item"
       ],
@@ -901,7 +901,7 @@
       "ID": "OOT Graveyard Royal Tomb Song",
       "Name": "Graveyard Royal Tomb Song",
       "OriginalItem": "OOT_SONG_SUN",
-      "Area": "Kakariko Graveyard",
+      "Area": "Graveyard",
       "ValidItemTypes": [
         "item"
       ],
@@ -920,7 +920,7 @@
       "ID": "OOT Graveyard Royal Tomb Chest",
       "Name": "Graveyard Royal Tomb Chest",
       "OriginalItem": "OOT_BOMBS_5",
-      "Area": "Kakariko Graveyard",
+      "Area": "Graveyard",
       "ValidItemTypes": [
         "item"
       ],
@@ -939,7 +939,7 @@
       "ID": "OOT Graveyard Fairy Tomb",
       "Name": "Graveyard Fairy Tomb",
       "OriginalItem": "OOT_SHIELD_HYLIAN",
-      "Area": "Kakariko Graveyard",
+      "Area": "Graveyard",
       "ValidItemTypes": [
         "item"
       ],
@@ -958,7 +958,7 @@
       "ID": "OOT Graveyard Dampe Tomb Reward 1",
       "Name": "Graveyard Dampe Tomb Reward 1",
       "OriginalItem": "OOT_HOOKSHOT",
-      "Area": "Kakariko Graveyard",
+      "Area": "Graveyard",
       "ValidItemTypes": [
         "item"
       ],
@@ -977,7 +977,7 @@
       "ID": "OOT Graveyard Dampe Tomb Reward 2",
       "Name": "Graveyard Dampe Tomb Reward 2",
       "OriginalItem": "OOT_HEART_PIECE",
-      "Area": "Kakariko Graveyard",
+      "Area": "Graveyard",
       "ValidItemTypes": [
         "item"
       ],
@@ -996,7 +996,7 @@
       "ID": "OOT Graveyard Crate HP",
       "Name": "Graveyard Crate HP",
       "OriginalItem": "OOT_HEART_PIECE",
-      "Area": "Kakariko Graveyard",
+      "Area": "Graveyard",
       "ValidItemTypes": [
         "item"
       ],
@@ -1015,7 +1015,7 @@
       "ID": "OOT Graveyard GS Soil",
       "Name": "Graveyard GS Soil",
       "OriginalItem": "OOT_GS_TOKEN",
-      "Area": "Kakariko Graveyard",
+      "Area": "Graveyard",
       "ValidItemTypes": [
         "item"
       ],
@@ -1034,7 +1034,7 @@
       "ID": "OOT Graveyard GS Wall",
       "Name": "Graveyard GS Wall",
       "OriginalItem": "OOT_GS_TOKEN",
-      "Area": "Kakariko Graveyard",
+      "Area": "Graveyard",
       "ValidItemTypes": [
         "item"
       ],
@@ -1053,7 +1053,7 @@
       "ID": "OOT Death Mountain Chest",
       "Name": "Death Mountain Chest",
       "OriginalItem": "OOT_RUPEE_PURPLE",
-      "Area": "Death Mountain",
+      "Area": "Death Mountain Trail",
       "ValidItemTypes": [
         "item"
       ],
@@ -1072,7 +1072,7 @@
       "ID": "OOT Death Mountain HP",
       "Name": "Death Mountain HP",
       "OriginalItem": "OOT_HEART_PIECE",
-      "Area": "Death Mountain",
+      "Area": "Death Mountain Trail",
       "ValidItemTypes": [
         "item"
       ],
@@ -1091,7 +1091,7 @@
       "ID": "OOT Death Mountain Prescription",
       "Name": "Death Mountain Prescription",
       "OriginalItem": "OOT_PRESCRIPTION",
-      "Area": "Death Mountain",
+      "Area": "Death Mountain Trail",
       "ValidItemTypes": [
         "item"
       ],
@@ -1110,7 +1110,7 @@
       "ID": "OOT Death Mountain Claim Check",
       "Name": "Death Mountain Claim Check",
       "OriginalItem": "OOT_CLAIM_CHECK",
-      "Area": "Death Mountain",
+      "Area": "Death Mountain Trail",
       "ValidItemTypes": [
         "item"
       ],
@@ -1129,7 +1129,7 @@
       "ID": "OOT Death Mountain Biggoron Sword",
       "Name": "Death Mountain Biggoron Sword",
       "OriginalItem": "OOT_SWORD_BIGGORON",
-      "Area": "Death Mountain",
+      "Area": "Death Mountain Trail",
       "ValidItemTypes": [
         "item"
       ],
@@ -1148,7 +1148,7 @@
       "ID": "OOT Death Mountain Grotto",
       "Name": "Death Mountain Grotto",
       "OriginalItem": "OOT_RUPEE_HUGE",
-      "Area": "Death Mountain",
+      "Area": "Death Mountain Trail",
       "ValidItemTypes": [
         "item"
       ],
@@ -1167,7 +1167,7 @@
       "ID": "OOT Death Mountain GS Entrance",
       "Name": "Death Mountain GS Entrance",
       "OriginalItem": "OOT_GS_TOKEN",
-      "Area": "Death Mountain",
+      "Area": "Death Mountain Trail",
       "ValidItemTypes": [
         "item"
       ],
@@ -1186,7 +1186,7 @@
       "ID": "OOT Death Mountain GS Soil",
       "Name": "Death Mountain GS Soil",
       "OriginalItem": "OOT_GS_TOKEN",
-      "Area": "Death Mountain",
+      "Area": "Death Mountain Trail",
       "ValidItemTypes": [
         "item"
       ],
@@ -1205,7 +1205,7 @@
       "ID": "OOT Death Mountain GS Above Dodongo",
       "Name": "Death Mountain GS Above Dodongo",
       "OriginalItem": "OOT_GS_TOKEN",
-      "Area": "Death Mountain",
+      "Area": "Death Mountain Trail",
       "ValidItemTypes": [
         "item"
       ],
@@ -1224,7 +1224,7 @@
       "ID": "OOT Death Mountain GS Before Climb",
       "Name": "Death Mountain GS Before Climb",
       "OriginalItem": "OOT_GS_TOKEN",
-      "Area": "Death Mountain",
+      "Area": "Death Mountain Trail",
       "ValidItemTypes": [
         "item"
       ],
@@ -1547,7 +1547,7 @@
       "ID": "OOT Zora River HP Pillar",
       "Name": "Zora River HP Pillar",
       "OriginalItem": "OOT_HEART_PIECE",
-      "Area": "Zoras River",
+      "Area": "Zora's River",
       "ValidItemTypes": [
         "item"
       ],
@@ -1566,7 +1566,7 @@
       "ID": "OOT Zora River HP Platform",
       "Name": "Zora River HP Platform",
       "OriginalItem": "OOT_HEART_PIECE",
-      "Area": "Zoras River",
+      "Area": "Zora's River",
       "ValidItemTypes": [
         "item"
       ],
@@ -1585,7 +1585,7 @@
       "ID": "OOT Zora River Bean Seller",
       "Name": "Zora River Bean Seller",
       "OriginalItem": "OOT_MAGIC_BEAN",
-      "Area": "Zoras River",
+      "Area": "Zora's River",
       "ValidItemTypes": [
         "item"
       ],
@@ -1604,7 +1604,7 @@
       "ID": "OOT Zora River Frogs Storms",
       "Name": "Zora River Frogs Storms",
       "OriginalItem": "OOT_HEART_PIECE",
-      "Area": "Zoras River",
+      "Area": "Zora's River",
       "ValidItemTypes": [
         "item"
       ],
@@ -1623,7 +1623,7 @@
       "ID": "OOT Zora River Frogs Game",
       "Name": "Zora River Frogs Game",
       "OriginalItem": "OOT_HEART_PIECE",
-      "Area": "Zoras River",
+      "Area": "Zora's River",
       "ValidItemTypes": [
         "item"
       ],
@@ -1642,7 +1642,7 @@
       "ID": "OOT Zora River Grotto",
       "Name": "Zora River Grotto",
       "OriginalItem": "OOT_RUPEE_RED",
-      "Area": "Zoras River",
+      "Area": "Zora's River",
       "ValidItemTypes": [
         "item"
       ],
@@ -1661,7 +1661,7 @@
       "ID": "OOT Zora River GS Tree",
       "Name": "Zora River GS Tree",
       "OriginalItem": "OOT_GS_TOKEN",
-      "Area": "Zoras River",
+      "Area": "Zora's River",
       "ValidItemTypes": [
         "item"
       ],
@@ -1680,7 +1680,7 @@
       "ID": "OOT Zora River GS Ladder",
       "Name": "Zora River GS Ladder",
       "OriginalItem": "OOT_GS_TOKEN",
-      "Area": "Zoras River",
+      "Area": "Zora's River",
       "ValidItemTypes": [
         "item"
       ],
@@ -1699,7 +1699,7 @@
       "ID": "OOT Zora River GS Near Grotto",
       "Name": "Zora River GS Near Grotto",
       "OriginalItem": "OOT_GS_TOKEN",
-      "Area": "Zoras River",
+      "Area": "Zora's River",
       "ValidItemTypes": [
         "item"
       ],
@@ -1718,7 +1718,7 @@
       "ID": "OOT Zora River GS Near Bridge",
       "Name": "Zora River GS Near Bridge",
       "OriginalItem": "OOT_GS_TOKEN",
-      "Area": "Zoras River",
+      "Area": "Zora's River",
       "ValidItemTypes": [
         "item"
       ],
@@ -1737,7 +1737,7 @@
       "ID": "OOT Zora Domain Waterfall Chest",
       "Name": "Zora Domain Waterfall Chest",
       "OriginalItem": "OOT_HEART_PIECE",
-      "Area": "Zoras Domain",
+      "Area": "Zora's Domain",
       "ValidItemTypes": [
         "item"
       ],
@@ -1756,7 +1756,7 @@
       "ID": "OOT Zora Domain Diving Game",
       "Name": "Zora Domain Diving Game",
       "OriginalItem": "OOT_SCALE",
-      "Area": "Zoras Domain",
+      "Area": "Zora's Domain",
       "ValidItemTypes": [
         "item"
       ],
@@ -1775,7 +1775,7 @@
       "ID": "OOT Zora Domain Tunic",
       "Name": "Zora Domain Tunic",
       "OriginalItem": "OOT_TUNIC_ZORA",
-      "Area": "Zoras Domain",
+      "Area": "Zora's Domain",
       "ValidItemTypes": [
         "item"
       ],
@@ -1794,7 +1794,7 @@
       "ID": "OOT Zora Domain Eyeball Frog",
       "Name": "Zora Domain Eyeball Frog",
       "OriginalItem": "OOT_EYEBALL_FROG",
-      "Area": "Zoras Domain",
+      "Area": "Zora's Domain",
       "ValidItemTypes": [
         "item"
       ],
@@ -1813,7 +1813,7 @@
       "ID": "OOT Zora Domain GS Waterfall",
       "Name": "Zora Domain GS Waterfall",
       "OriginalItem": "OOT_GS_TOKEN",
-      "Area": "Zoras Domain",
+      "Area": "Zora's Domain",
       "ValidItemTypes": [
         "item"
       ],
@@ -1832,7 +1832,7 @@
       "ID": "OOT Zora Fountain Iceberg HP",
       "Name": "Zora Fountain Iceberg HP",
       "OriginalItem": "OOT_HEART_PIECE",
-      "Area": "Zoras Domain",
+      "Area": "Zora's Fountain",
       "ValidItemTypes": [
         "item"
       ],
@@ -1851,7 +1851,7 @@
       "ID": "OOT Zora Fountain Bottom HP",
       "Name": "Zora Fountain Bottom HP",
       "OriginalItem": "OOT_HEART_PIECE",
-      "Area": "Zoras Domain",
+      "Area": "Zora's Fountain",
       "ValidItemTypes": [
         "item"
       ],
@@ -1870,7 +1870,7 @@
       "ID": "OOT Zora Fountain GS Wall",
       "Name": "Zora Fountain GS Wall",
       "OriginalItem": "OOT_GS_TOKEN",
-      "Area": "Zoras Domain",
+      "Area": "Zora's Fountain",
       "ValidItemTypes": [
         "item"
       ],
@@ -1889,7 +1889,7 @@
       "ID": "OOT Zora Fountain GS Tree",
       "Name": "Zora Fountain GS Tree",
       "OriginalItem": "OOT_GS_TOKEN",
-      "Area": "Zoras Domain",
+      "Area": "Zora's Fountain",
       "ValidItemTypes": [
         "item"
       ],
@@ -1908,7 +1908,7 @@
       "ID": "OOT Zora Fountain GS Upper",
       "Name": "Zora Fountain GS Upper",
       "OriginalItem": "OOT_GS_TOKEN",
-      "Area": "Zoras Domain",
+      "Area": "Zora's Fountain",
       "ValidItemTypes": [
         "item"
       ],
@@ -2459,7 +2459,7 @@
       "ID": "OOT Market Dog Lady HP",
       "Name": "Market Dog Lady HP",
       "OriginalItem": "OOT_HEART_PIECE",
-      "Area": "Castle Town",
+      "Area": "Market",
       "ValidItemTypes": [
         "item"
       ],
@@ -2478,7 +2478,7 @@
       "ID": "OOT Market Pot House Big Poes",
       "Name": "Market Pot House Big Poes",
       "OriginalItem": "OOT_EMPTY_BOTTLE",
-      "Area": "Castle Town",
+      "Area": "Market",
       "ValidItemTypes": [
         "item"
       ],
@@ -2497,7 +2497,7 @@
       "ID": "OOT Market Pot House GS",
       "Name": "Market Pot House GS",
       "OriginalItem": "OOT_GS_TOKEN",
-      "Area": "Castle Town",
+      "Area": "Market",
       "ValidItemTypes": [
         "item"
       ],
@@ -2516,7 +2516,7 @@
       "ID": "OOT Bombchu Bowling Reward 1",
       "Name": "Bombchu Bowling Reward 1",
       "OriginalItem": "OOT_BOMB_BAG",
-      "Area": "Castle Town",
+      "Area": "Market",
       "ValidItemTypes": [
         "item"
       ],
@@ -2535,7 +2535,7 @@
       "ID": "OOT Bombchu Bowling Reward 2",
       "Name": "Bombchu Bowling Reward 2",
       "OriginalItem": "OOT_HEART_PIECE",
-      "Area": "Castle Town",
+      "Area": "Market",
       "ValidItemTypes": [
         "item"
       ],
@@ -2554,7 +2554,7 @@
       "ID": "OOT Treasure Game HP",
       "Name": "Treasure Game HP",
       "OriginalItem": "OOT_HEART_PIECE",
-      "Area": "Castle Town",
+      "Area": "Market",
       "ValidItemTypes": [
         "item"
       ],
@@ -2573,7 +2573,7 @@
       "ID": "OOT Shooting Gallery Child",
       "Name": "Shooting Gallery Child",
       "OriginalItem": "OOT_SLINGSHOT",
-      "Area": "Castle Town",
+      "Area": "Market",
       "ValidItemTypes": [
         "item"
       ],
@@ -2592,7 +2592,7 @@
       "ID": "OOT Shooting Gallery Adult",
       "Name": "Shooting Gallery Adult",
       "OriginalItem": "OOT_BOW",
-      "Area": "Kakariko Village",
+      "Area": "Kakariko",
       "ValidItemTypes": [
         "item"
       ],
@@ -2649,7 +2649,7 @@
       "ID": "OOT Ganon Castle Exterior GS",
       "Name": "Ganon Castle Exterior GS",
       "OriginalItem": "OOT_GS_TOKEN",
-      "Area": "Hyrule Castle",
+      "Area": "Outside Ganon's Castle",
       "ValidItemTypes": [
         "item"
       ],
@@ -2668,7 +2668,7 @@
       "ID": "OOT Temple of Time Master Sword",
       "Name": "Temple of Time Master Sword",
       "OriginalItem": "OOT_SWORD_MASTER",
-      "Area": "Castle Town",
+      "Area": "Temple of Time",
       "ValidItemTypes": [
         "item"
       ],
@@ -2687,7 +2687,7 @@
       "ID": "OOT Temple of Time Medallion",
       "Name": "Temple of Time Medallion",
       "OriginalItem": "OOT_MEDALLION_LIGHT",
-      "Area": "Castle Town",
+      "Area": "Sacred Realm",
       "ValidItemTypes": [
         "item"
       ],
@@ -2706,7 +2706,7 @@
       "ID": "OOT Temple of Time Sheik Song",
       "Name": "Temple of Time Sheik Song",
       "OriginalItem": "OOT_SONG_TP_LIGHT",
-      "Area": "Castle Town",
+      "Area": "Temple of Time",
       "ValidItemTypes": [
         "item"
       ],
@@ -2725,7 +2725,7 @@
       "ID": "OOT Temple of Time Light Arrows",
       "Name": "Temple of Time Light Arrows",
       "OriginalItem": "OOT_ARROW_LIGHT",
-      "Area": "Castle Town",
+      "Area": "Temple of Time",
       "ValidItemTypes": [
         "item"
       ],
@@ -2744,7 +2744,7 @@
       "ID": "OOT Windmill HP",
       "Name": "Windmill HP",
       "OriginalItem": "OOT_HEART_PIECE",
-      "Area": "Kakariko Graveyard",
+      "Area": "Kakariko",
       "ValidItemTypes": [
         "item"
       ],
@@ -2763,7 +2763,7 @@
       "ID": "OOT Windmill Song of Storms",
       "Name": "Windmill Song of Storms",
       "OriginalItem": "OOT_SONG_STORMS",
-      "Area": "Kakariko Graveyard",
+      "Area": "Kakariko",
       "ValidItemTypes": [
         "item"
       ],
@@ -3029,7 +3029,7 @@
       "ID": "OOT Haunted Wasteland Chest",
       "Name": "Haunted Wasteland Chest",
       "OriginalItem": "OOT_RUPEE_PURPLE",
-      "Area": "Desert Colossus",
+      "Area": "Haunted Wasteland",
       "ValidItemTypes": [
         "item"
       ],
@@ -3048,7 +3048,7 @@
       "ID": "OOT Haunted Wasteland GS",
       "Name": "Haunted Wasteland GS",
       "OriginalItem": "OOT_GS_TOKEN",
-      "Area": "Desert Colossus",
+      "Area": "Haunted Wasteland",
       "ValidItemTypes": [
         "item"
       ],
@@ -3162,7 +3162,7 @@
       "ID": "OOT Skulltula House 10 Tokens",
       "Name": "Skulltula House 10 Tokens",
       "OriginalItem": "OOT_WALLET",
-      "Area": "Kakariko Village",
+      "Area": "Kakariko",
       "ValidItemTypes": [
         "item"
       ],
@@ -3181,7 +3181,7 @@
       "ID": "OOT Skulltula House 20 Tokens",
       "Name": "Skulltula House 20 Tokens",
       "OriginalItem": "OOT_STONE_OF_AGONY",
-      "Area": "Kakariko Village",
+      "Area": "Kakariko",
       "ValidItemTypes": [
         "item"
       ],
@@ -3200,7 +3200,7 @@
       "ID": "OOT Skulltula House 30 Tokens",
       "Name": "Skulltula House 30 Tokens",
       "OriginalItem": "OOT_WALLET",
-      "Area": "Kakariko Village",
+      "Area": "Kakariko",
       "ValidItemTypes": [
         "item"
       ],
@@ -3219,7 +3219,7 @@
       "ID": "OOT Skulltula House 40 Tokens",
       "Name": "Skulltula House 40 Tokens",
       "OriginalItem": "OOT_BOMBCHU_10",
-      "Area": "Kakariko Village",
+      "Area": "Kakariko",
       "ValidItemTypes": [
         "item"
       ],
@@ -3238,7 +3238,7 @@
       "ID": "OOT Skulltula House 50 Tokens",
       "Name": "Skulltula House 50 Tokens",
       "OriginalItem": "OOT_HEART_PIECE",
-      "Area": "Kakariko Village",
+      "Area": "Kakariko",
       "ValidItemTypes": [
         "item"
       ],
@@ -3257,7 +3257,7 @@
       "ID": "OOT Great Fairy Magic Upgrade",
       "Name": "Great Fairy Magic Upgrade",
       "OriginalItem": "OOT_MAGIC_UPGRADE",
-      "Area": "Death Mountain",
+      "Area": "Death Mountain Trail",
       "ValidItemTypes": [
         "item"
       ],
@@ -3295,7 +3295,7 @@
       "ID": "OOT Great Fairy Defense Upgrade",
       "Name": "Great Fairy Defense Upgrade",
       "OriginalItem": "OOT_DEFENSE_UPGRADE",
-      "Area": "Hyrule Castle",
+      "Area": "Outside Ganon's Castle",
       "ValidItemTypes": [
         "item"
       ],
@@ -3333,7 +3333,7 @@
       "ID": "OOT Great Fairy Farore's Wind",
       "Name": "Great Fairy Farore's Wind",
       "OriginalItem": "OOT_SPELL_WIND",
-      "Area": "Zoras Domain",
+      "Area": "Zora's Fountain",
       "ValidItemTypes": [
         "item"
       ],
@@ -3599,7 +3599,7 @@
       "ID": "OOT Dodongo Cavern Map Chest",
       "Name": "Dodongo Cavern Map Chest",
       "OriginalItem": "OOT_MAP_DC",
-      "Area": "Dodongos Cavern",
+      "Area": "Dodongo's Cavern",
       "ValidItemTypes": [
         "item"
       ],
@@ -3618,7 +3618,7 @@
       "ID": "OOT Dodongo Cavern Compass Chest",
       "Name": "Dodongo Cavern Compass Chest",
       "OriginalItem": "OOT_COMPASS_DC",
-      "Area": "Dodongos Cavern",
+      "Area": "Dodongo's Cavern",
       "ValidItemTypes": [
         "item"
       ],
@@ -3637,7 +3637,7 @@
       "ID": "OOT Dodongo Cavern Bomb Bag Side Chest",
       "Name": "Dodongo Cavern Bomb Bag Side Chest",
       "OriginalItem": "OOT_RUPEE_RED",
-      "Area": "Dodongos Cavern",
+      "Area": "Dodongo's Cavern",
       "ValidItemTypes": [
         "item"
       ],
@@ -3656,7 +3656,7 @@
       "ID": "OOT Dodongo Cavern Bomb Bag Chest",
       "Name": "Dodongo Cavern Bomb Bag Chest",
       "OriginalItem": "OOT_BOMB_BAG",
-      "Area": "Dodongos Cavern",
+      "Area": "Dodongo's Cavern",
       "ValidItemTypes": [
         "item"
       ],
@@ -3675,7 +3675,7 @@
       "ID": "OOT Dodongo Cavern Bridge Chest",
       "Name": "Dodongo Cavern Bridge Chest",
       "OriginalItem": "OOT_SHIELD_DEKU",
-      "Area": "Dodongos Cavern",
+      "Area": "Dodongo's Cavern",
       "ValidItemTypes": [
         "item"
       ],
@@ -3694,7 +3694,7 @@
       "ID": "OOT Dodongo Cavern GS Side Room",
       "Name": "Dodongo Cavern GS Side Room",
       "OriginalItem": "OOT_GS_TOKEN",
-      "Area": "Dodongos Cavern",
+      "Area": "Dodongo's Cavern",
       "ValidItemTypes": [
         "item"
       ],
@@ -3713,7 +3713,7 @@
       "ID": "OOT Dodongo Cavern GS Stairs Vines",
       "Name": "Dodongo Cavern GS Stairs Vines",
       "OriginalItem": "OOT_GS_TOKEN",
-      "Area": "Dodongos Cavern",
+      "Area": "Dodongo's Cavern",
       "ValidItemTypes": [
         "item"
       ],
@@ -3732,7 +3732,7 @@
       "ID": "OOT Dodongo Cavern GS Stairs Top",
       "Name": "Dodongo Cavern GS Stairs Top",
       "OriginalItem": "OOT_GS_TOKEN",
-      "Area": "Dodongos Cavern",
+      "Area": "Dodongo's Cavern",
       "ValidItemTypes": [
         "item"
       ],
@@ -3751,7 +3751,7 @@
       "ID": "OOT Dodongo Cavern GS Scarecrow",
       "Name": "Dodongo Cavern GS Scarecrow",
       "OriginalItem": "OOT_GS_TOKEN",
-      "Area": "Dodongos Cavern",
+      "Area": "Dodongo's Cavern",
       "ValidItemTypes": [
         "item"
       ],
@@ -3770,7 +3770,7 @@
       "ID": "OOT Dodongo Cavern GS Near Boss",
       "Name": "Dodongo Cavern GS Near Boss",
       "OriginalItem": "OOT_GS_TOKEN",
-      "Area": "Dodongos Cavern",
+      "Area": "Dodongo's Cavern",
       "ValidItemTypes": [
         "item"
       ],
@@ -3789,7 +3789,7 @@
       "ID": "OOT Dodongo Cavern Boss Chest",
       "Name": "Dodongo Cavern Boss Chest",
       "OriginalItem": "OOT_BOMBS_10",
-      "Area": "Dodongos Cavern",
+      "Area": "Dodongo's Cavern",
       "ValidItemTypes": [
         "item"
       ],
@@ -3808,7 +3808,7 @@
       "ID": "OOT Dodongo Cavern Boss Container",
       "Name": "Dodongo Cavern Boss Container",
       "OriginalItem": "OOT_HEART_CONTAINER",
-      "Area": "Dodongos Cavern",
+      "Area": "Dodongo's Cavern",
       "ValidItemTypes": [
         "item"
       ],
@@ -3827,7 +3827,7 @@
       "ID": "OOT Dodongo Cavern Boss",
       "Name": "Dodongo Cavern Boss",
       "OriginalItem": "OOT_STONE_RUBY",
-      "Area": "Dodongos Cavern",
+      "Area": "Dodongo's Cavern",
       "ValidItemTypes": [
         "item"
       ],
@@ -3846,7 +3846,7 @@
       "ID": "OOT Jabu-Jabu Map Chest",
       "Name": "Jabu-Jabu Map Chest",
       "OriginalItem": "OOT_MAP_JJ",
-      "Area": "Jabu Jabu",
+      "Area": "Jabu Jabu's Belly",
       "ValidItemTypes": [
         "item"
       ],
@@ -3865,7 +3865,7 @@
       "ID": "OOT Jabu-Jabu Compass Chest",
       "Name": "Jabu-Jabu Compass Chest",
       "OriginalItem": "OOT_COMPASS_JJ",
-      "Area": "Jabu Jabu",
+      "Area": "Jabu Jabu's Belly",
       "ValidItemTypes": [
         "item"
       ],
@@ -3884,7 +3884,7 @@
       "ID": "OOT Jabu-Jabu Boomerang Chest",
       "Name": "Jabu-Jabu Boomerang Chest",
       "OriginalItem": "OOT_BOOMERANG",
-      "Area": "Jabu Jabu",
+      "Area": "Jabu Jabu's Belly",
       "ValidItemTypes": [
         "item"
       ],
@@ -3903,7 +3903,7 @@
       "ID": "OOT Jabu-Jabu GS Water Switch",
       "Name": "Jabu-Jabu GS Water Switch",
       "OriginalItem": "OOT_GS_TOKEN",
-      "Area": "Jabu Jabu",
+      "Area": "Jabu Jabu's Belly",
       "ValidItemTypes": [
         "item"
       ],
@@ -3922,7 +3922,7 @@
       "ID": "OOT Jabu-Jabu GS Bottom Lower",
       "Name": "Jabu-Jabu GS Bottom Lower",
       "OriginalItem": "OOT_GS_TOKEN",
-      "Area": "Jabu Jabu",
+      "Area": "Jabu Jabu's Belly",
       "ValidItemTypes": [
         "item"
       ],
@@ -3941,7 +3941,7 @@
       "ID": "OOT Jabu-Jabu GS Bottom Upper",
       "Name": "Jabu-Jabu GS Bottom Upper",
       "OriginalItem": "OOT_GS_TOKEN",
-      "Area": "Jabu Jabu",
+      "Area": "Jabu Jabu's Belly",
       "ValidItemTypes": [
         "item"
       ],
@@ -3960,7 +3960,7 @@
       "ID": "OOT Jabu-Jabu GS Near Boss",
       "Name": "Jabu-Jabu GS Near Boss",
       "OriginalItem": "OOT_GS_TOKEN",
-      "Area": "Jabu Jabu",
+      "Area": "Jabu Jabu's Belly",
       "ValidItemTypes": [
         "item"
       ],
@@ -3979,7 +3979,7 @@
       "ID": "OOT Jabu-Jabu Boss Container",
       "Name": "Jabu-Jabu Boss Container",
       "OriginalItem": "OOT_HEART_CONTAINER",
-      "Area": "Jabu Jabu",
+      "Area": "Jabu Jabu's Belly",
       "ValidItemTypes": [
         "item"
       ],
@@ -3998,7 +3998,7 @@
       "ID": "OOT Jabu-Jabu Boss",
       "Name": "Jabu-Jabu Boss",
       "OriginalItem": "OOT_STONE_SAPPHIRE",
-      "Area": "Jabu Jabu",
+      "Area": "Jabu Jabu's Belly",
       "ValidItemTypes": [
         "item"
       ],
@@ -6050,7 +6050,7 @@
       "ID": "OOT Gerudo Fortress Jail 1",
       "Name": "Gerudo Fortress Jail 1",
       "OriginalItem": "OOT_SMALL_KEY_GF",
-      "Area": "Gerudo Fortress",
+      "Area": "Thieves' Hideout",
       "ValidItemTypes": [
         "item"
       ],
@@ -6069,7 +6069,7 @@
       "ID": "OOT Gerudo Fortress Jail 2",
       "Name": "Gerudo Fortress Jail 2",
       "OriginalItem": "OOT_SMALL_KEY_GF",
-      "Area": "Gerudo Fortress",
+      "Area": "Thieves' Hideout",
       "ValidItemTypes": [
         "item"
       ],
@@ -6088,7 +6088,7 @@
       "ID": "OOT Gerudo Fortress Jail 3",
       "Name": "Gerudo Fortress Jail 3",
       "OriginalItem": "OOT_SMALL_KEY_GF",
-      "Area": "Gerudo Fortress",
+      "Area": "Thieves' Hideout",
       "ValidItemTypes": [
         "item"
       ],
@@ -6107,7 +6107,7 @@
       "ID": "OOT Gerudo Fortress Jail 4",
       "Name": "Gerudo Fortress Jail 4",
       "OriginalItem": "OOT_SMALL_KEY_GF",
-      "Area": "Gerudo Fortress",
+      "Area": "Thieves' Hideout",
       "ValidItemTypes": [
         "item"
       ],
@@ -6126,7 +6126,7 @@
       "ID": "OOT Gerudo Member Card",
       "Name": "Gerudo Member Card",
       "OriginalItem": "OOT_GERUDO_CARD",
-      "Area": "Gerudo Fortress",
+      "Area": "Thieves' Hideout",
       "ValidItemTypes": [
         "item"
       ],
@@ -6563,7 +6563,7 @@
       "ID": "OOT Spirit Temple Silver Gauntlets",
       "Name": "Spirit Temple Silver Gauntlets",
       "OriginalItem": "OOT_STRENGTH",
-      "Area": "Desert Colossus",
+      "Area": "Spirit Temple",
       "ValidItemTypes": [
         "item"
       ],
@@ -6582,7 +6582,7 @@
       "ID": "OOT Spirit Temple Mirror Shield",
       "Name": "Spirit Temple Mirror Shield",
       "OriginalItem": "OOT_SHIELD_MIRROR",
-      "Area": "Desert Colossus",
+      "Area": "Spirit Temple",
       "ValidItemTypes": [
         "item"
       ],
@@ -6639,7 +6639,7 @@
       "ID": "OOT Gerudo Training Grounds Entrance 1",
       "Name": "Gerudo Training Grounds Entrance 1",
       "OriginalItem": "OOT_ARROWS_10",
-      "Area": "Gerudo Training Grounds",
+      "Area": "Gerudo Training Ground",
       "ValidItemTypes": [
         "item"
       ],
@@ -6658,7 +6658,7 @@
       "ID": "OOT Gerudo Training Grounds Entrance 2",
       "Name": "Gerudo Training Grounds Entrance 2",
       "OriginalItem": "OOT_RUPEE_BLUE",
-      "Area": "Gerudo Training Grounds",
+      "Area": "Gerudo Training Ground",
       "ValidItemTypes": [
         "item"
       ],
@@ -6677,7 +6677,7 @@
       "ID": "OOT Gerudo Training Grounds Stalfos",
       "Name": "Gerudo Training Grounds Stalfos",
       "OriginalItem": "OOT_SMALL_KEY_GTG",
-      "Area": "Gerudo Training Grounds",
+      "Area": "Gerudo Training Ground",
       "ValidItemTypes": [
         "item"
       ],
@@ -6696,7 +6696,7 @@
       "ID": "OOT Gerudo Training Grounds Near Block",
       "Name": "Gerudo Training Grounds Near Block",
       "OriginalItem": "OOT_ARROWS_30",
-      "Area": "Gerudo Training Grounds",
+      "Area": "Gerudo Training Ground",
       "ValidItemTypes": [
         "item"
       ],
@@ -6715,7 +6715,7 @@
       "ID": "OOT Gerudo Training Grounds Behind Block Invisible",
       "Name": "Gerudo Training Grounds Behind Block Invisible",
       "OriginalItem": "OOT_SMALL_KEY_GTG",
-      "Area": "Gerudo Training Grounds",
+      "Area": "Gerudo Training Ground",
       "ValidItemTypes": [
         "item"
       ],
@@ -6734,7 +6734,7 @@
       "ID": "OOT Gerudo Training Grounds Behind Block Visible 1",
       "Name": "Gerudo Training Grounds Behind Block Visible 1",
       "OriginalItem": "OOT_ICE_TRAP",
-      "Area": "Gerudo Training Grounds",
+      "Area": "Gerudo Training Ground",
       "ValidItemTypes": [
         "item"
       ],
@@ -6753,7 +6753,7 @@
       "ID": "OOT Gerudo Training Grounds Behind Block Visible 2",
       "Name": "Gerudo Training Grounds Behind Block Visible 2",
       "OriginalItem": "OOT_RUPEE_BLUE",
-      "Area": "Gerudo Training Grounds",
+      "Area": "Gerudo Training Ground",
       "ValidItemTypes": [
         "item"
       ],
@@ -6772,7 +6772,7 @@
       "ID": "OOT Gerudo Training Grounds Behind Block Visible 3",
       "Name": "Gerudo Training Grounds Behind Block Visible 3",
       "OriginalItem": "OOT_RUPEE_HUGE",
-      "Area": "Gerudo Training Grounds",
+      "Area": "Gerudo Training Ground",
       "ValidItemTypes": [
         "item"
       ],
@@ -6791,7 +6791,7 @@
       "ID": "OOT Gerudo Training Grounds Eye Statue",
       "Name": "Gerudo Training Grounds Eye Statue",
       "OriginalItem": "OOT_SMALL_KEY_GTG",
-      "Area": "Gerudo Training Grounds",
+      "Area": "Gerudo Training Ground",
       "ValidItemTypes": [
         "item"
       ],
@@ -6810,7 +6810,7 @@
       "ID": "OOT Gerudo Training Grounds Hammer Room Switch",
       "Name": "Gerudo Training Grounds Hammer Room Switch",
       "OriginalItem": "OOT_SMALL_KEY_GTG",
-      "Area": "Gerudo Training Grounds",
+      "Area": "Gerudo Training Ground",
       "ValidItemTypes": [
         "item"
       ],
@@ -6829,7 +6829,7 @@
       "ID": "OOT Gerudo Training Grounds Hammer Room",
       "Name": "Gerudo Training Grounds Hammer Room",
       "OriginalItem": "OOT_ARROWS_10",
-      "Area": "Gerudo Training Grounds",
+      "Area": "Gerudo Training Ground",
       "ValidItemTypes": [
         "item"
       ],
@@ -6848,7 +6848,7 @@
       "ID": "OOT Gerudo Training Grounds Lizalfos",
       "Name": "Gerudo Training Grounds Lizalfos",
       "OriginalItem": "OOT_SMALL_KEY_GTG",
-      "Area": "Gerudo Training Grounds",
+      "Area": "Gerudo Training Ground",
       "ValidItemTypes": [
         "item"
       ],
@@ -6867,7 +6867,7 @@
       "ID": "OOT Gerudo Training Water",
       "Name": "Gerudo Training Water",
       "OriginalItem": "OOT_SMALL_KEY_GTG",
-      "Area": "Gerudo Training Grounds",
+      "Area": "Gerudo Training Ground",
       "ValidItemTypes": [
         "item"
       ],
@@ -6886,7 +6886,7 @@
       "ID": "OOT Gerudo Training Freestanding Key",
       "Name": "Gerudo Training Freestanding Key",
       "OriginalItem": "OOT_SMALL_KEY_GTG",
-      "Area": "Gerudo Training Grounds",
+      "Area": "Gerudo Training Ground",
       "ValidItemTypes": [
         "item"
       ],
@@ -6905,7 +6905,7 @@
       "ID": "OOT Gerudo Training Maze Upper Cage",
       "Name": "Gerudo Training Maze Upper Cage",
       "OriginalItem": "OOT_SMALL_KEY_GTG",
-      "Area": "Gerudo Training Grounds",
+      "Area": "Gerudo Training Ground",
       "ValidItemTypes": [
         "item"
       ],
@@ -6924,7 +6924,7 @@
       "ID": "OOT Gerudo Training Maze Upper Fake Ceiling",
       "Name": "Gerudo Training Maze Upper Fake Ceiling",
       "OriginalItem": "OOT_SMALL_KEY_GTG",
-      "Area": "Gerudo Training Grounds",
+      "Area": "Gerudo Training Ground",
       "ValidItemTypes": [
         "item"
       ],
@@ -6943,7 +6943,7 @@
       "ID": "OOT Gerudo Training Maze Side Chest 1",
       "Name": "Gerudo Training Maze Side Chest 1",
       "OriginalItem": "OOT_BOMBCHU_5",
-      "Area": "Gerudo Training Grounds",
+      "Area": "Gerudo Training Ground",
       "ValidItemTypes": [
         "item"
       ],
@@ -6962,7 +6962,7 @@
       "ID": "OOT Gerudo Training Maze Side Chest 2",
       "Name": "Gerudo Training Maze Side Chest 2",
       "OriginalItem": "OOT_ARROWS_30",
-      "Area": "Gerudo Training Grounds",
+      "Area": "Gerudo Training Ground",
       "ValidItemTypes": [
         "item"
       ],
@@ -6981,7 +6981,7 @@
       "ID": "OOT Gerudo Training Maze Chest 1",
       "Name": "Gerudo Training Maze Chest 1",
       "OriginalItem": "OOT_RUPEE_PURPLE",
-      "Area": "Gerudo Training Grounds",
+      "Area": "Gerudo Training Ground",
       "ValidItemTypes": [
         "item"
       ],
@@ -7000,7 +7000,7 @@
       "ID": "OOT Gerudo Training Maze Chest 2",
       "Name": "Gerudo Training Maze Chest 2",
       "OriginalItem": "OOT_RUPEE_RED",
-      "Area": "Gerudo Training Grounds",
+      "Area": "Gerudo Training Ground",
       "ValidItemTypes": [
         "item"
       ],
@@ -7019,7 +7019,7 @@
       "ID": "OOT Gerudo Training Maze Chest 3",
       "Name": "Gerudo Training Maze Chest 3",
       "OriginalItem": "OOT_ARROWS_30",
-      "Area": "Gerudo Training Grounds",
+      "Area": "Gerudo Training Ground",
       "ValidItemTypes": [
         "item"
       ],
@@ -7038,7 +7038,7 @@
       "ID": "OOT Gerudo Training Maze Chest 4",
       "Name": "Gerudo Training Maze Chest 4",
       "OriginalItem": "OOT_ARROW_ICE",
-      "Area": "Gerudo Training Grounds",
+      "Area": "Gerudo Training Ground",
       "ValidItemTypes": [
         "item"
       ],
@@ -7057,7 +7057,7 @@
       "ID": "OOT Ganon Castle Water Chest 1",
       "Name": "Ganon Castle Water Chest 1",
       "OriginalItem": "OOT_RECOVERY_HEART",
-      "Area": "Ganons Castle",
+      "Area": "Ganon's Castle",
       "ValidItemTypes": [
         "item"
       ],
@@ -7076,7 +7076,7 @@
       "ID": "OOT Ganon Castle Water Chest 2",
       "Name": "Ganon Castle Water Chest 2",
       "OriginalItem": "OOT_ICE_TRAP",
-      "Area": "Ganons Castle",
+      "Area": "Ganon's Castle",
       "ValidItemTypes": [
         "item"
       ],
@@ -7095,7 +7095,7 @@
       "ID": "OOT Ganon Castle Forest Chest",
       "Name": "Ganon Castle Forest Chest",
       "OriginalItem": "OOT_RUPEE_BLUE",
-      "Area": "Ganons Castle",
+      "Area": "Ganon's Castle",
       "ValidItemTypes": [
         "item"
       ],
@@ -7114,7 +7114,7 @@
       "ID": "OOT Ganon Castle Light Chest Center",
       "Name": "Ganon Castle Light Chest Center",
       "OriginalItem": "OOT_SMALL_KEY_GANON",
-      "Area": "Ganons Castle",
+      "Area": "Ganon's Castle",
       "ValidItemTypes": [
         "item"
       ],
@@ -7133,7 +7133,7 @@
       "ID": "OOT Ganon Castle Light Chest Around 1",
       "Name": "Ganon Castle Light Chest Around 1",
       "OriginalItem": "OOT_ARROWS_30",
-      "Area": "Ganons Castle",
+      "Area": "Ganon's Castle",
       "ValidItemTypes": [
         "item"
       ],
@@ -7152,7 +7152,7 @@
       "ID": "OOT Ganon Castle Light Chest Around 2",
       "Name": "Ganon Castle Light Chest Around 2",
       "OriginalItem": "OOT_ICE_TRAP",
-      "Area": "Ganons Castle",
+      "Area": "Ganon's Castle",
       "ValidItemTypes": [
         "item"
       ],
@@ -7171,7 +7171,7 @@
       "ID": "OOT Ganon Castle Light Chest Around 3",
       "Name": "Ganon Castle Light Chest Around 3",
       "OriginalItem": "OOT_RUPEE_BLUE",
-      "Area": "Ganons Castle",
+      "Area": "Ganon's Castle",
       "ValidItemTypes": [
         "item"
       ],
@@ -7190,7 +7190,7 @@
       "ID": "OOT Ganon Castle Light Chest Around 4",
       "Name": "Ganon Castle Light Chest Around 4",
       "OriginalItem": "OOT_RECOVERY_HEART",
-      "Area": "Ganons Castle",
+      "Area": "Ganon's Castle",
       "ValidItemTypes": [
         "item"
       ],
@@ -7209,7 +7209,7 @@
       "ID": "OOT Ganon Castle Light Chest Around 5",
       "Name": "Ganon Castle Light Chest Around 5",
       "OriginalItem": "OOT_ICE_TRAP",
-      "Area": "Ganons Castle",
+      "Area": "Ganon's Castle",
       "ValidItemTypes": [
         "item"
       ],
@@ -7228,7 +7228,7 @@
       "ID": "OOT Ganon Castle Light Chest Around 6",
       "Name": "Ganon Castle Light Chest Around 6",
       "OriginalItem": "OOT_ICE_TRAP",
-      "Area": "Ganons Castle",
+      "Area": "Ganon's Castle",
       "ValidItemTypes": [
         "item"
       ],
@@ -7247,7 +7247,7 @@
       "ID": "OOT Ganon Castle Light Chest Lullaby",
       "Name": "Ganon Castle Light Chest Lullaby",
       "OriginalItem": "OOT_SMALL_KEY_GANON",
-      "Area": "Ganons Castle",
+      "Area": "Ganon's Castle",
       "ValidItemTypes": [
         "item"
       ],
@@ -7266,7 +7266,7 @@
       "ID": "OOT Ganon Castle Shadow Chest 1",
       "Name": "Ganon Castle Shadow Chest 1",
       "OriginalItem": "OOT_RUPEE_BLUE",
-      "Area": "Ganons Castle",
+      "Area": "Ganon's Castle",
       "ValidItemTypes": [
         "item"
       ],
@@ -7285,7 +7285,7 @@
       "ID": "OOT Ganon Castle Shadow Chest 2",
       "Name": "Ganon Castle Shadow Chest 2",
       "OriginalItem": "OOT_STRENGTH",
-      "Area": "Ganons Castle",
+      "Area": "Ganon's Castle",
       "ValidItemTypes": [
         "item"
       ],
@@ -7304,7 +7304,7 @@
       "ID": "OOT Ganon Castle Spirit Chest 1",
       "Name": "Ganon Castle Spirit Chest 1",
       "OriginalItem": "OOT_BOMBCHU_20",
-      "Area": "Ganons Castle",
+      "Area": "Ganon's Castle",
       "ValidItemTypes": [
         "item"
       ],
@@ -7323,7 +7323,7 @@
       "ID": "OOT Ganon Castle Spirit Chest 2",
       "Name": "Ganon Castle Spirit Chest 2",
       "OriginalItem": "OOT_ARROWS_10",
-      "Area": "Ganons Castle",
+      "Area": "Ganon's Castle",
       "ValidItemTypes": [
         "item"
       ],
@@ -7342,7 +7342,7 @@
       "ID": "OOT Ganon Castle Boss Key",
       "Name": "Ganon Castle Boss Key",
       "OriginalItem": "OOT_BOSS_KEY_GANON",
-      "Area": "Ganons Castle",
+      "Area": "Ganon's Castle",
       "ValidItemTypes": [
         "item"
       ],
@@ -7665,7 +7665,7 @@
       "ID": "MM Clock Town Guru Guru Mask Bremen",
       "Name": "Clock Town Guru Guru Mask Bremen",
       "OriginalItem": "MM_MASK_BREMEN",
-      "Area": "South Clock Town",
+      "Area": "Laundry Pool",
       "ValidItemTypes": [
         "item"
       ],
@@ -7684,7 +7684,7 @@
       "ID": "MM Clock Town Stray Fairy",
       "Name": "Clock Town Stray Fairy",
       "OriginalItem": "MM_STRAY_FAIRY_TOWN",
-      "Area": "South Clock Town",
+      "Area": "Laundry Pool",
       "ValidItemTypes": [
         "item"
       ],
@@ -7741,7 +7741,7 @@
       "ID": "MM Clock Tower Roof Skull Kid Ocarina",
       "Name": "Clock Tower Roof Skull Kid Ocarina",
       "OriginalItem": "MM_OCARINA",
-      "Area": "South Clock Town",
+      "Area": "Clock Tower Roof",
       "ValidItemTypes": [
         "item"
       ],
@@ -7760,7 +7760,7 @@
       "ID": "MM Clock Tower Roof Skull Kid Song of Time",
       "Name": "Clock Tower Roof Skull Kid Song of Time",
       "OriginalItem": "MM_SONG_TIME",
-      "Area": "South Clock Town",
+      "Area": "Clock Tower Roof",
       "ValidItemTypes": [
         "item"
       ],
@@ -7950,7 +7950,7 @@
       "ID": "MM Stock Pot Inn Guest Room Chest",
       "Name": "Stock Pot Inn Guest Room Chest",
       "OriginalItem": "MM_RUPEE_SILVER",
-      "Area": "East Clock Town",
+      "Area": "Stock Pot Inn",
       "ValidItemTypes": [
         "item"
       ],
@@ -7969,7 +7969,7 @@
       "ID": "MM Stock Pot Inn Staff Room Chest",
       "Name": "Stock Pot Inn Staff Room Chest",
       "OriginalItem": "MM_RUPEE_SILVER",
-      "Area": "East Clock Town",
+      "Area": "Stock Pot Inn",
       "ValidItemTypes": [
         "item"
       ],
@@ -7988,7 +7988,7 @@
       "ID": "MM Stock Pot Inn Room Key",
       "Name": "Stock Pot Inn Room Key",
       "OriginalItem": "MM_ROOM_KEY",
-      "Area": "East Clock Town",
+      "Area": "Stock Pot Inn",
       "ValidItemTypes": [
         "item"
       ],
@@ -8007,7 +8007,7 @@
       "ID": "MM Stock Pot Inn Letter to Kafei",
       "Name": "Stock Pot Inn Letter to Kafei",
       "OriginalItem": "MM_LETTER_TO_KAFEI",
-      "Area": "East Clock Town",
+      "Area": "Stock Pot Inn",
       "ValidItemTypes": [
         "item"
       ],
@@ -8026,7 +8026,7 @@
       "ID": "MM Stock Pot Inn Couple's Mask",
       "Name": "Stock Pot Inn Couple's Mask",
       "OriginalItem": "MM_MASK_COUPLE",
-      "Area": "East Clock Town",
+      "Area": "Stock Pot Inn",
       "ValidItemTypes": [
         "item"
       ],
@@ -8045,7 +8045,7 @@
       "ID": "MM Stock Pot Inn Grandma HP 1",
       "Name": "Stock Pot Inn Grandma HP 1",
       "OriginalItem": "MM_HEART_PIECE",
-      "Area": "East Clock Town",
+      "Area": "Stock Pot Inn",
       "ValidItemTypes": [
         "item"
       ],
@@ -8064,7 +8064,7 @@
       "ID": "MM Stock Pot Inn Grandma HP 2",
       "Name": "Stock Pot Inn Grandma HP 2",
       "OriginalItem": "MM_HEART_PIECE",
-      "Area": "East Clock Town",
+      "Area": "Stock Pot Inn",
       "ValidItemTypes": [
         "item"
       ],
@@ -8083,7 +8083,7 @@
       "ID": "MM Stock Pot Inn ??? HP",
       "Name": "Stock Pot Inn ??? HP",
       "OriginalItem": "MM_HEART_PIECE",
-      "Area": "East Clock Town",
+      "Area": "Stock Pot Inn",
       "ValidItemTypes": [
         "item"
       ],
@@ -8102,7 +8102,7 @@
       "ID": "MM Astral Observatory Passage Chest",
       "Name": "Astral Observatory Passage Chest",
       "OriginalItem": "MM_RUPEE_SILVER",
-      "Area": "Termina Field",
+      "Area": "East Clock Town",
       "ValidItemTypes": [
         "item"
       ],
@@ -8197,7 +8197,7 @@
       "ID": "MM Curiosity Shop Back Room Pendant of Memories",
       "Name": "Curiosity Shop Back Room Pendant of Memories",
       "OriginalItem": "MM_PENDANT_OF_MEMORIES",
-      "Area": "West Clock Town",
+      "Area": "Laundry Pool",
       "ValidItemTypes": [
         "item"
       ],
@@ -8216,7 +8216,7 @@
       "ID": "MM Curiosity Shop Back Room Owner Reward 1",
       "Name": "Curiosity Shop Back Room Owner Reward 1",
       "OriginalItem": "MM_MASK_KEATON",
-      "Area": "West Clock Town",
+      "Area": "Laundry Pool",
       "ValidItemTypes": [
         "item"
       ],
@@ -8235,7 +8235,7 @@
       "ID": "MM Curiosity Shop Back Room Owner Reward 2",
       "Name": "Curiosity Shop Back Room Owner Reward 2",
       "OriginalItem": "MM_LETTER_TO_MAMA",
-      "Area": "West Clock Town",
+      "Area": "Laundry Pool",
       "ValidItemTypes": [
         "item"
       ],
@@ -8539,7 +8539,7 @@
       "ID": "MM Road to Southern Swamp HP",
       "Name": "Road to Southern Swamp HP",
       "OriginalItem": "MM_HEART_PIECE",
-      "Area": "Southern Swamp",
+      "Area": "Road to Southern Swamp",
       "ValidItemTypes": [
         "item"
       ],
@@ -8558,7 +8558,7 @@
       "ID": "MM Road to Southern Swamp Grotto",
       "Name": "Road to Southern Swamp Grotto",
       "OriginalItem": "MM_RUPEE_RED",
-      "Area": "Southern Swamp",
+      "Area": "Road to Southern Swamp",
       "ValidItemTypes": [
         "item"
       ],
@@ -8672,7 +8672,7 @@
       "ID": "MM Swamp Archery Reward 1",
       "Name": "Swamp Archery Reward 1",
       "OriginalItem": "MM_BOW",
-      "Area": "Southern Swamp",
+      "Area": "Road to Southern Swamp",
       "ValidItemTypes": [
         "item"
       ],
@@ -8691,7 +8691,7 @@
       "ID": "MM Swamp Archery Reward 2",
       "Name": "Swamp Archery Reward 2",
       "OriginalItem": "MM_HEART_PIECE",
-      "Area": "Southern Swamp",
+      "Area": "Road to Southern Swamp",
       "ValidItemTypes": [
         "item"
       ],
@@ -9907,7 +9907,7 @@
       "ID": "MM Path to Snowhead HP",
       "Name": "Path to Snowhead HP",
       "OriginalItem": "MM_HEART_PIECE",
-      "Area": "Snowhead",
+      "Area": "Path to Snowhead",
       "ValidItemTypes": [
         "item"
       ],
@@ -9926,7 +9926,7 @@
       "ID": "MM Path to Snowhead Grotto",
       "Name": "Path to Snowhead Grotto",
       "OriginalItem": "MM_RUPEE_RED",
-      "Area": "Snowhead",
+      "Area": "Path to Snowhead",
       "ValidItemTypes": [
         "item"
       ],
@@ -10097,7 +10097,7 @@
       "ID": "MM Great Bay Coast Zora Mask",
       "Name": "Great Bay Coast Zora Mask",
       "OriginalItem": "MM_MASK_ZORA",
-      "Area": "Great Bay",
+      "Area": "Great Bay Coast",
       "ValidItemTypes": [
         "item"
       ],
@@ -10116,7 +10116,7 @@
       "ID": "MM Great Bay Coast HP",
       "Name": "Great Bay Coast HP",
       "OriginalItem": "MM_HEART_PIECE",
-      "Area": "Great Bay",
+      "Area": "Great Bay Coast",
       "ValidItemTypes": [
         "item"
       ],
@@ -10135,7 +10135,7 @@
       "ID": "MM Great Bay Coast Fisherman HP",
       "Name": "Great Bay Coast Fisherman HP",
       "OriginalItem": "MM_HEART_PIECE",
-      "Area": "Great Bay",
+      "Area": "Great Bay Coast",
       "ValidItemTypes": [
         "item"
       ],
@@ -10154,7 +10154,7 @@
       "ID": "MM Great Bay Coast Fisherman Grotto",
       "Name": "Great Bay Coast Fisherman Grotto",
       "OriginalItem": "MM_RUPEE_RED",
-      "Area": "Great Bay",
+      "Area": "Great Bay Coast",
       "ValidItemTypes": [
         "item"
       ],
@@ -10268,7 +10268,7 @@
       "ID": "MM Great Bay Great Fairy",
       "Name": "Great Bay Great Fairy",
       "OriginalItem": "MM_DEFENSE_UPGRADE",
-      "Area": "Great Bay",
+      "Area": "Zora Cape",
       "ValidItemTypes": [
         "item"
       ],
@@ -10287,7 +10287,7 @@
       "ID": "MM Zora Hall Scrub Deed",
       "Name": "Zora Hall Scrub Deed",
       "OriginalItem": "MM_DEED_OCEAN",
-      "Area": "Zora Cape",
+      "Area": "Zora Hall",
       "ValidItemTypes": [
         "item"
       ],
@@ -10306,7 +10306,7 @@
       "ID": "MM Zora Hall Scrub HP",
       "Name": "Zora Hall Scrub HP",
       "OriginalItem": "MM_HEART_PIECE",
-      "Area": "Zora Cape",
+      "Area": "Zora Hall",
       "ValidItemTypes": [
         "item"
       ],
@@ -10325,7 +10325,7 @@
       "ID": "MM Zora Hall Evan HP",
       "Name": "Zora Hall Evan HP",
       "OriginalItem": "MM_HEART_PIECE",
-      "Area": "Zora Cape",
+      "Area": "Zora Hall",
       "ValidItemTypes": [
         "item"
       ],
@@ -10344,7 +10344,7 @@
       "ID": "MM Zora Hall Scene Lights",
       "Name": "Zora Hall Scene Lights",
       "OriginalItem": "MM_RUPEE_BLUE",
-      "Area": "Zora Cape",
+      "Area": "Zora Hall",
       "ValidItemTypes": [
         "item"
       ],
@@ -10363,7 +10363,7 @@
       "ID": "MM Pinnacle Rock Chest 1",
       "Name": "Pinnacle Rock Chest 1",
       "OriginalItem": "MM_RUPEE_RED",
-      "Area": "Great Bay",
+      "Area": "Pinnacle Rock",
       "ValidItemTypes": [
         "item"
       ],
@@ -10382,7 +10382,7 @@
       "ID": "MM Pinnacle Rock Chest 2",
       "Name": "Pinnacle Rock Chest 2",
       "OriginalItem": "MM_RUPEE_RED",
-      "Area": "Great Bay",
+      "Area": "Pinnacle Rock",
       "ValidItemTypes": [
         "item"
       ],
@@ -10401,7 +10401,7 @@
       "ID": "MM Pinnacle Rock HP",
       "Name": "Pinnacle Rock HP",
       "OriginalItem": "MM_HEART_PIECE",
-      "Area": "Great Bay",
+      "Area": "Pinnacle Rock",
       "ValidItemTypes": [
         "item"
       ],
@@ -10420,7 +10420,7 @@
       "ID": "MM Laboratory Zora Song",
       "Name": "Laboratory Zora Song",
       "OriginalItem": "MM_SONG_ZORA",
-      "Area": "Great Bay",
+      "Area": "Great Bay Coast",
       "ValidItemTypes": [
         "item"
       ],
@@ -10439,7 +10439,7 @@
       "ID": "MM Laboratory Fish HP",
       "Name": "Laboratory Fish HP",
       "OriginalItem": "MM_HEART_PIECE",
-      "Area": "Great Bay",
+      "Area": "Great Bay Coast",
       "ValidItemTypes": [
         "item"
       ],
@@ -11066,7 +11066,7 @@
       "ID": "MM Waterfall Rapids Beaver Race 1",
       "Name": "Waterfall Rapids Beaver Race 1",
       "OriginalItem": "MM_EMPTY_BOTTLE",
-      "Area": "Zora Cap",
+      "Area": "Zora Cape",
       "ValidItemTypes": [
         "item"
       ],
@@ -11085,7 +11085,7 @@
       "ID": "MM Waterfall Rapids Beaver Race 2",
       "Name": "Waterfall Rapids Beaver Race 2",
       "OriginalItem": "MM_HEART_PIECE",
-      "Area": "Zora Cap",
+      "Area": "Zora Cape",
       "ValidItemTypes": [
         "item"
       ],
@@ -11104,7 +11104,7 @@
       "ID": "MM Road to Ikana Chest",
       "Name": "Road to Ikana Chest",
       "OriginalItem": "MM_RUPEE_RED",
-      "Area": "Ikana Road",
+      "Area": "Road to Ikana",
       "ValidItemTypes": [
         "item"
       ],
@@ -11123,7 +11123,7 @@
       "ID": "MM Road to Ikana Grotto",
       "Name": "Road to Ikana Grotto",
       "OriginalItem": "MM_BOMBCHU",
-      "Area": "Ikana Road",
+      "Area": "Road to Ikana",
       "ValidItemTypes": [
         "item"
       ],
@@ -11142,7 +11142,7 @@
       "ID": "MM Road to Ikana Stone Mask",
       "Name": "Road to Ikana Stone Mask",
       "OriginalItem": "MM_MASK_STONE",
-      "Area": "Ikana Road",
+      "Area": "Road to Ikana",
       "ValidItemTypes": [
         "item"
       ],
@@ -11161,7 +11161,7 @@
       "ID": "MM Gorman Track Garo Mask",
       "Name": "Gorman Track Garo Mask",
       "OriginalItem": "MM_MASK_GARO",
-      "Area": "Termina Field",
+      "Area": "Milk Road",
       "ValidItemTypes": [
         "item"
       ],
@@ -11180,7 +11180,7 @@
       "ID": "MM Ikana Graveyard Captain Mask",
       "Name": "Ikana Graveyard Captain Mask",
       "OriginalItem": "MM_MASK_CAPTAIN",
-      "Area": "Ikana Road",
+      "Area": "Ikana Graveyard",
       "ValidItemTypes": [
         "item"
       ],
@@ -11199,7 +11199,7 @@
       "ID": "MM Ikana Graveyard Grotto",
       "Name": "Ikana Graveyard Grotto",
       "OriginalItem": "MM_BOMBCHU_5",
-      "Area": "Ikana Road",
+      "Area": "Ikana Graveyard",
       "ValidItemTypes": [
         "item"
       ],
@@ -11218,7 +11218,7 @@
       "ID": "MM Beneath The Graveyard Chest",
       "Name": "Beneath The Graveyard Chest",
       "OriginalItem": "MM_RUPEE_PURPLE",
-      "Area": "Ikana Road",
+      "Area": "Ikana Graveyard",
       "ValidItemTypes": [
         "item"
       ],
@@ -11237,7 +11237,7 @@
       "ID": "MM Beneath The Graveyard Song of Storms",
       "Name": "Beneath The Graveyard Song of Storms",
       "OriginalItem": "MM_SONG_STORMS",
-      "Area": "Ikana Road",
+      "Area": "Ikana Graveyard",
       "ValidItemTypes": [
         "item"
       ],
@@ -11256,7 +11256,7 @@
       "ID": "MM Beneath The Graveyard HP",
       "Name": "Beneath The Graveyard HP",
       "OriginalItem": "MM_HEART_PIECE",
-      "Area": "Ikana Road",
+      "Area": "Ikana Graveyard",
       "ValidItemTypes": [
         "item"
       ],
@@ -11275,7 +11275,7 @@
       "ID": "MM Beneath The Graveyard Dampe Chest",
       "Name": "Beneath The Graveyard Dampe Chest",
       "OriginalItem": "MM_EMPTY_BOTTLE",
-      "Area": "Ikana Road",
+      "Area": "Ikana Graveyard",
       "ValidItemTypes": [
         "item"
       ],
@@ -11465,7 +11465,7 @@
       "ID": "MM Oath to Order",
       "Name": "Oath to Order",
       "OriginalItem": "MM_SONG_ORDER",
-      "Area": "Woodfall Temple",
+      "Area": "Giant's Dream",
       "ValidItemTypes": [
         "item"
       ],
@@ -12358,7 +12358,7 @@
       "ID": "MM Pirate Fortress Entrance Chest 1",
       "Name": "Pirate Fortress Entrance Chest 1",
       "OriginalItem": "MM_RUPEE_RED",
-      "Area": "Pirates Fortress",
+      "Area": "Pirates' Fortress Exterior",
       "ValidItemTypes": [
         "item"
       ],
@@ -12377,7 +12377,7 @@
       "ID": "MM Pirate Fortress Entrance Chest 2",
       "Name": "Pirate Fortress Entrance Chest 2",
       "OriginalItem": "MM_RUPEE_RED",
-      "Area": "Pirates Fortress",
+      "Area": "Pirates' Fortress Exterior",
       "ValidItemTypes": [
         "item"
       ],
@@ -12396,7 +12396,7 @@
       "ID": "MM Pirate Fortress Entrance Chest 3",
       "Name": "Pirate Fortress Entrance Chest 3",
       "OriginalItem": "MM_RUPEE_RED",
-      "Area": "Pirates Fortress",
+      "Area": "Pirates' Fortress Exterior",
       "ValidItemTypes": [
         "item"
       ],
@@ -12415,7 +12415,7 @@
       "ID": "MM Pirate Fortress Sewers Chest 1",
       "Name": "Pirate Fortress Sewers Chest 1",
       "OriginalItem": "MM_RUPEE_RED",
-      "Area": "Pirates Fortress",
+      "Area": "Pirates' Fortress Sewers",
       "ValidItemTypes": [
         "item"
       ],
@@ -12434,7 +12434,7 @@
       "ID": "MM Pirate Fortress Sewers Chest 2",
       "Name": "Pirate Fortress Sewers Chest 2",
       "OriginalItem": "MM_RUPEE_RED",
-      "Area": "Pirates Fortress",
+      "Area": "Pirates' Fortress Sewers",
       "ValidItemTypes": [
         "item"
       ],
@@ -12453,7 +12453,7 @@
       "ID": "MM Pirate Fortress Sewers Chest 3",
       "Name": "Pirate Fortress Sewers Chest 3",
       "OriginalItem": "MM_RUPEE_BLUE",
-      "Area": "Pirates Fortress",
+      "Area": "Pirates' Fortress Sewers",
       "ValidItemTypes": [
         "item"
       ],
@@ -12472,7 +12472,7 @@
       "ID": "MM Pirate Fortress Sewers HP",
       "Name": "Pirate Fortress Sewers HP",
       "OriginalItem": "MM_HEART_PIECE",
-      "Area": "Pirates Fortress",
+      "Area": "Pirates' Fortress Sewers",
       "ValidItemTypes": [
         "item"
       ],
@@ -12491,7 +12491,7 @@
       "ID": "MM Pirate Fortress Interior Hookshot",
       "Name": "Pirate Fortress Interior Hookshot",
       "OriginalItem": "MM_HOOKSHOT",
-      "Area": "Pirates Fortress",
+      "Area": "Pirates' Fortress Interior",
       "ValidItemTypes": [
         "item"
       ],
@@ -12510,7 +12510,7 @@
       "ID": "MM Pirate Fortress Interior Aquarium",
       "Name": "Pirate Fortress Interior Aquarium",
       "OriginalItem": "MM_RUPEE_RED",
-      "Area": "Pirates Fortress",
+      "Area": "Pirates' Fortress Interior",
       "ValidItemTypes": [
         "item"
       ],
@@ -12529,7 +12529,7 @@
       "ID": "MM Pirate Fortress Interior Silver Rupee Chest",
       "Name": "Pirate Fortress Interior Silver Rupee Chest",
       "OriginalItem": "MM_RUPEE_SILVER",
-      "Area": "Pirates Fortress",
+      "Area": "Pirates' Fortress Interior",
       "ValidItemTypes": [
         "item"
       ],
@@ -12548,7 +12548,7 @@
       "ID": "MM Pirate Fortress Interior Lower Chest",
       "Name": "Pirate Fortress Interior Lower Chest",
       "OriginalItem": "MM_RUPEE_RED",
-      "Area": "Pirates Fortress",
+      "Area": "Pirates' Fortress Interior",
       "ValidItemTypes": [
         "item"
       ],
@@ -12567,7 +12567,7 @@
       "ID": "MM Pirate Fortress Interior Upper Chest",
       "Name": "Pirate Fortress Interior Upper Chest",
       "OriginalItem": "MM_RUPEE_RED",
-      "Area": "Pirates Fortress",
+      "Area": "Pirates' Fortress Interior",
       "ValidItemTypes": [
         "item"
       ],
@@ -13004,7 +13004,7 @@
       "ID": "MM Beneath the Well Skulltulla Chest",
       "Name": "Beneath the Well Skulltulla Chest",
       "OriginalItem": "MM_RUPEE_PURPLE",
-      "Area": "Ikana Canyon",
+      "Area": "Beneath the Well",
       "ValidItemTypes": [
         "item"
       ],
@@ -13023,7 +13023,7 @@
       "ID": "MM Beneath the Well Keese Chest",
       "Name": "Beneath the Well Keese Chest",
       "OriginalItem": "MM_RUPEE_PURPLE",
-      "Area": "Ikana Canyon",
+      "Area": "Beneath the Well",
       "ValidItemTypes": [
         "item"
       ],
@@ -13042,7 +13042,7 @@
       "ID": "MM Beneath the Well Mirror Shield",
       "Name": "Beneath the Well Mirror Shield",
       "OriginalItem": "MM_SHIELD_MIRROR",
-      "Area": "Ikana Canyon",
+      "Area": "Beneath the Well",
       "ValidItemTypes": [
         "item"
       ],
@@ -13061,7 +13061,7 @@
       "ID": "MM Ancient Castle of Ikana HP",
       "Name": "Ancient Castle of Ikana HP",
       "OriginalItem": "MM_HEART_PIECE",
-      "Area": "Ikana Canyon",
+      "Area": "Ikana Castle",
       "ValidItemTypes": [
         "item"
       ],
@@ -13080,7 +13080,7 @@
       "ID": "MM Ancient Castle of Ikana Song Emptiness",
       "Name": "Ancient Castle of Ikana Song Emptiness",
       "OriginalItem": "MM_SONG_EMPTINESS",
-      "Area": "Ikana Canyon",
+      "Area": "Ikana Castle",
       "ValidItemTypes": [
         "item"
       ],
@@ -13593,7 +13593,7 @@
       "ID": "MM Secret Shrine Boss 1 Chest",
       "Name": "Secret Shrine Boss 1 Chest",
       "OriginalItem": "MM_RUPEE_SILVER",
-      "Area": "Ikana Canyon",
+      "Area": "Secret Shrine",
       "ValidItemTypes": [
         "item"
       ],
@@ -13612,7 +13612,7 @@
       "ID": "MM Secret Shrine Boss 2 Chest",
       "Name": "Secret Shrine Boss 2 Chest",
       "OriginalItem": "MM_RUPEE_SILVER",
-      "Area": "Ikana Canyon",
+      "Area": "Secret Shrine",
       "ValidItemTypes": [
         "item"
       ],
@@ -13631,7 +13631,7 @@
       "ID": "MM Secret Shrine Boss 3 Chest",
       "Name": "Secret Shrine Boss 3 Chest",
       "OriginalItem": "MM_RUPEE_SILVER",
-      "Area": "Ikana Canyon",
+      "Area": "Secret Shrine",
       "ValidItemTypes": [
         "item"
       ],
@@ -13650,7 +13650,7 @@
       "ID": "MM Secret Shrine Boss 4 Chest",
       "Name": "Secret Shrine Boss 4 Chest",
       "OriginalItem": "MM_RUPEE_SILVER",
-      "Area": "Ikana Canyon",
+      "Area": "Secret Shrine",
       "ValidItemTypes": [
         "item"
       ],
@@ -13669,7 +13669,7 @@
       "ID": "MM Secret Shrine HP Chest",
       "Name": "Secret Shrine HP Chest",
       "OriginalItem": "MM_HEART_PIECE",
-      "Area": "Ikana Canyon",
+      "Area": "Secret Shrine",
       "ValidItemTypes": [
         "item"
       ],
@@ -18680,28 +18680,8 @@
       }
     },
     {
-      "ID": "OOT_BOSS_KEY_GANON",
-      "Name": "Boss Key (Ganon)",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "OOT_BOSS_KEY_GANON",
-          "Boss Key (Ganon)"
-        ],
-        "GossipHintNames": [
-          "OOT_BOSS_KEY_GANON",
-          "Boss Key (Ganon)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
       "ID": "SHARED_BOW",
-      "Name": "Bow",
+      "Name": "Shared Bow",
       "MaxAmountInWorld": 3,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -18710,11 +18690,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "SHARED_BOW",
-          "Bow"
+          "Shared Bow"
         ],
         "GossipHintNames": [
           "SHARED_BOW",
-          "Bow"
+          "Shared Bow"
         ],
         "PriceDataNames": []
       }
@@ -18801,7 +18781,7 @@
     },
     {
       "ID": "SHARED_BOMB_BAG",
-      "Name": "Bomb Bag",
+      "Name": "Shared Bomb Bag",
       "MaxAmountInWorld": 3,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -18810,11 +18790,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "SHARED_BOMB_BAG",
-          "Bomb Bag"
+          "Shared Bomb Bag"
         ],
         "GossipHintNames": [
           "SHARED_BOMB_BAG",
-          "Bomb Bag"
+          "Shared Bomb Bag"
         ],
         "PriceDataNames": []
       }
@@ -18921,7 +18901,7 @@
     },
     {
       "ID": "SHARED_MAGIC_UPGRADE",
-      "Name": "Magic Upgrade",
+      "Name": "Shared Magic Upgrade",
       "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -18930,18 +18910,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "SHARED_MAGIC_UPGRADE",
-          "Magic Upgrade"
+          "Shared Magic Upgrade"
         ],
         "GossipHintNames": [
           "SHARED_MAGIC_UPGRADE",
-          "Magic Upgrade"
+          "Shared Magic Upgrade"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "SHARED_ARROW_FIRE",
-      "Name": "Fire Arrows",
+      "Name": "Shared Fire Arrows",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -18950,18 +18930,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "SHARED_ARROW_FIRE",
-          "Fire Arrows"
+          "Shared Fire Arrows"
         ],
         "GossipHintNames": [
           "SHARED_ARROW_FIRE",
-          "Fire Arrows"
+          "Shared Fire Arrows"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "SHARED_ARROW_ICE",
-      "Name": "Ice Arrows",
+      "Name": "Shared Ice Arrows",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -18970,18 +18950,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "SHARED_ARROW_ICE",
-          "Ice Arrows"
+          "Shared Ice Arrows"
         ],
         "GossipHintNames": [
           "SHARED_ARROW_ICE",
-          "Ice Arrows"
+          "Shared Ice Arrows"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "SHARED_ARROW_LIGHT",
-      "Name": "Light Arrows",
+      "Name": "Shared Light Arrows",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -18990,11 +18970,31 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "SHARED_ARROW_LIGHT",
-          "Light Arrows"
+          "Shared Light Arrows"
         ],
         "GossipHintNames": [
           "SHARED_ARROW_LIGHT",
-          "Light Arrows"
+          "Shared Light Arrows"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_BOSS_KEY_GANON",
+      "Name": "Boss Key (Ganon)",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_BOSS_KEY_GANON",
+          "Boss Key (Ganon)"
+        ],
+        "GossipHintNames": [
+          "OOT_BOSS_KEY_GANON",
+          "Boss Key (Ganon)"
         ],
         "PriceDataNames": []
       }

@@ -39,41 +39,65 @@ Single Gratitude Crystal
 
 #GAMECODESTART: OOTMM,MMR
 
+//Ocarina of Time
 Kokiri Forest
-Deku Tree
 Lost Woods
-Forest Temple
+Sacred Forest Meadow
 Hyrule Field
 Lon Lon Ranch
-Castle Town
-Hyrule Castle
+Kakariko
 Kakariko Village
-Bottom of the Well
+Graveyard
 Kakariko Graveyard
-Shadow Temple
+Castle Town
+Market
+Temple of Time
+Hyrule Castle
+Outside Ganon's Castle
+Death Mountain Trail
 Death Mountain
 Goron City
-Dodongos Cavern
 Death Mountain Crater
-Fire Temple
 Zoras River
+Zora's River
 Zoras Domain
-Jabu Jabu
-Ice Cavern
+Zora's Domain
+Zora's Fountain
 Lake Hylia
-Water Temple
 Gerudo Valley
 Gerudo Fortress
-Gerudo Training Grounds
+Thieves' Hideout
+Haunted Wasteland
 Desert Colossus
-Spirit Temple
-Ganons Castle
 
+//Misc Dungeon Reward
+Sacred Realm
+
+//Child Dungeons
+Deku Tree
+Dodongo's Cavern
+Jabu Jabu's Belly
+
+//Mini Dungeons
+Bottom of the Well
+Ice Cavern
+Gerudo Training Ground
+
+//Adult Dungeons
+Forest Temple
+Fire Temple
+Water Temple
+Shadow Temple
+Spirit Temple
+Ganon's Castle
+
+//Majoras Mask
 Clock Town
 North Clock Town
 East Clock Town
 South Clock Town
 West Clock Town
+Clock Tower Roof
 Stock Pot Inn
 Laundry Pool
 Beneath Clocktown
@@ -85,13 +109,8 @@ Romani Ranch
 Swamp
 Road to Southern Swamp
 Southern Swamp
-Swamp Skull House
-Swamp Spider House
 Deku Palace
 Woodfall
-Woodfall Temple
-Woodfall Temple Fairies
-Woodfall Temple Stray Fairies
 Mountains
 Path to Mountain Village
 Mountain Village
@@ -99,27 +118,20 @@ Twin Islands
 Goron Village
 Path to Snowhead
 Snowhead
-Snowhead Temple
-Snowhead Temple Fairies
-Snowhead Temple Stray Fairies
 Bay
 Great Bay
 Great Bay Coast
 Great Bay Cape
 Zora Cape
-Ocean Skull House
-Ocean Spider House
 Zora Hall
 Pinnacle Rock
 Great Bay 
-Great Bay Temple
-Great Bay Temple Fairies
-Great Bay Temple Stray Fairies
 Pirate Fortress
 Pirates Fortress
 Pirates' Fortress Exterior
 Pirates' Fortress Interior
 Pirates' Fortress Sewer
+Pirates' Fortress Sewers
 Canyon
 Ikana Road
 Road to Ikana
@@ -130,17 +142,37 @@ Beneath the Well
 Ikana Castle
 Stone 
 Stone Tower
+Tingle Map
+Bottle Catch
+Dungeon Entrance
+Owl Warp
+Interior
+Grottos
+
+//Spider Houses
+Swamp Skull House
+Swamp Spider House
+Ocean Skull House
+Ocean Spider House
+
+//Dungeons
+Woodfall Temple
+Woodfall Temple Fairies
+Woodfall Temple Stray Fairies
+Snowhead Temple
+Snowhead Temple Fairies
+Snowhead Temple Stray Fairies
+Great Bay Temple
+Great Bay Temple Fairies
+Great Bay Temple Stray Fairies
 Stone Tower Temple
 Inverted Stone Tower Temple
 Stone Tower Temple Fairies
 Stone Tower Temple Stray Fairies
-Tingle Map
-Bottle Catch
-Dungeon Entrance
+
+//Misc Dungeon Reward
+Giant's Dream
 The Moon
-Owl Warp
-Interior
-Grottos
 
 #GAMECODEEND:
 

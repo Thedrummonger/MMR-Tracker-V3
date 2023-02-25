@@ -11,6 +11,7 @@ using YamlDotNet.Serialization.NamingConventions;
 using System.Text.RegularExpressions;
 using MMR_Tracker_V3.TrackerObjects;
 using System.Collections;
+using System.Transactions;
 
 namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 {
@@ -61,12 +62,37 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
             AddSharedItemMacros(LogicFile);
 
+            CreateAreaNameMappingFile();
+
             Logic = LogicFile;
             dictionary = dictionaryFile;
             File.WriteAllText(FinalLogicFile, JsonConvert.SerializeObject(LogicFile, Testing._NewtonsoftJsonSerializerOptions));
             File.WriteAllText(FinalDictFile, JsonConvert.SerializeObject(dictionaryFile, Testing._NewtonsoftJsonSerializerOptions));
 
 
+        }
+
+        private static void CreateAreaNameMappingFile()
+        {
+            string AllRandoFile = Path.Combine(References.TestingPaths.GetDevTestingPath(), "MM-OOT", "OoTMM-Spoiler-FullRando.txt");
+            if (!File.Exists(AllRandoFile)) { return; }
+            string[] lines = File.ReadAllLines(AllRandoFile);
+
+            Dictionary<string, string> AreaData = new Dictionary<string, string>();
+
+            bool AtLocations = false;
+            string CurrentArea = "";
+            foreach (string line in lines)
+            {
+                if (line == "Location List") { AtLocations = true; continue; }
+                if (!AtLocations) { continue; }
+                var LineData = line.Split(':').Select(x => x.Trim()).ToArray();
+                if (LineData.Length < 2) { continue; }
+                if (string.IsNullOrWhiteSpace(LineData[1])) { CurrentArea = LineData[0]; continue; }
+                AreaData[LineData[0]] = CurrentArea;
+            }
+
+            Testing.PrintObjectToConsole(AreaData);
         }
 
         private static void AddSharedItemMacros(MMRData.LogicFile LogicFile)
@@ -543,7 +569,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
             foreach (var i in ootPoolObj)
             {
-                OOTRCheckDict.Add($"OOT {i.location}", new string[] { i.scene, $"OOT_{i.item}" });
+                OOTRCheckDict.Add($"OOT {i.location}", new string[] { $"OOT_{i.scene}", $"OOT_{i.item}" });
                 if (i.hint != "NONE")
                 {
                     if (!HintNameData.ContainsKey($"OOT {i.hint}")) { HintNameData[$"OOT {i.hint}"] = new List<string>(); }
@@ -552,7 +578,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             }
             foreach (var i in mmPoolObj)
             {
-                OOTRCheckDict.Add($"MM {i.location}", new string[] { i.scene, $"MM_{i.item}" });
+                OOTRCheckDict.Add($"MM {i.location}", new string[] { $"MM_{i.scene}", $"MM_{i.item}" });
                 if (i.hint != "NONE")
                 {
                     if (!HintNameData.ContainsKey($"MM {i.hint}")) { HintNameData[$"MM {i.hint}"] = new List<string>(); }
