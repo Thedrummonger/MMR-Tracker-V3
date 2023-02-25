@@ -128,9 +128,6 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
         private static void AddVariablesandOptions(LogicDictionaryData.LogicDictionary dictionaryFile)
         {
-            string SharedItemData = Path.Combine(References.TestingPaths.GetDevCodePath(), @"MMR Tracker V3", "OtherGames", "OOTMMRCOMBO", @"SharedItems.json");
-            Dictionary<string, int> SharedItems = JsonConvert.DeserializeObject<Dictionary<string, int>>(File.ReadAllText(SharedItemData));
-
             LogicDictionaryData.TrackerVariable MM_Masks = new LogicDictionaryData.TrackerVariable();
             MM_Masks.Static = true;
             MM_Masks.Value =new List<string> {
@@ -242,38 +239,42 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             //Temp Workaround for a typo in logic
             dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "MM_ZORA", RequiredItems = new List<string> { "MM_MASK_ZORA" } });
 
-            foreach(var i in SharedItems)
-            {
-                AddSharedItemOptions(i.Key, i.Value);
-            }
+            AddSharedItemOptions("sharedBows", "Shared Bows", new string[] { "BOW" }, 1);
+            AddSharedItemOptions("sharedBombBags", "Shared Bomb Bags", new string[] { "BOMB_BAG" }, 1);
+            AddSharedItemOptions("sharedMagic", "Shared Magic", new string[] { "MAGIC_UPGRADE" }, 1);
+            AddSharedItemOptions("sharedMagicArrows", "Shared Magic Arrows", new string[] { "ARROW_FIRE", "ARROW_ICE", "ARROW_LIGHT" }, 1);
 
-            void AddSharedItemOptions(string Item, int Amount)
+            void AddSharedItemOptions(string ID, string Name, string[] Items, int LogicalAmount)
             {
-                string ItemName = dictionaryFile.ItemList.FirstOrDefault(x => x.ID == $"OOT_{Item}").Name.Replace(" (OoT)", "").Replace("Progressive ", "");
-
                 OptionData.LogicReplacement OnActionReplacementData = new();
-                OnActionReplacementData.ReplacementList.Add($"OOT_{Item}", $"SHARED_{Item}");
-                OnActionReplacementData.ReplacementList.Add($"MM_{Item}", $"SHARED_{Item}");
-                if (Amount > 1)
-                {
-                    for (var i = 2; i <= Amount; i++)
-                    {
-                        OnActionReplacementData.ReplacementList.Add($"OOT_{Item}, {Amount}", $"SHARED_{Item}, {Amount}");
-                        OnActionReplacementData.ReplacementList.Add($"MM_{Item}, {Amount}", $"SHARED_{Item}, {Amount}");
-                    }
-                }
 
-                OptionData.actions onAction = new() { LogicReplacements = new OptionData.LogicReplacement[] { OnActionReplacementData } };
-                onAction.AddMaxAmountEdit($"OOT_{Item}", MiscData.MathOP.set, 0);
-                onAction.AddMaxAmountEdit($"MM_{Item}", MiscData.MathOP.set, 0);
-
+                OptionData.actions onAction = new();
                 OptionData.actions offAction = new();
-                offAction.AddMaxAmountEdit($"SHARED_{Item}", MiscData.MathOP.set, 0);
+
+                foreach (var Item in Items)
+                {
+                    OnActionReplacementData.ReplacementList.Add($"OOT_{Item}", $"SHARED_{Item}");
+                    OnActionReplacementData.ReplacementList.Add($"MM_{Item}", $"SHARED_{Item}");
+                    if (LogicalAmount > 1)
+                    {
+                        for (var i = 2; i <= LogicalAmount; i++)
+                        {
+                            OnActionReplacementData.ReplacementList.Add($"OOT_{Item}, {LogicalAmount}", $"SHARED_{Item}, {LogicalAmount}");
+                            OnActionReplacementData.ReplacementList.Add($"MM_{Item}, {LogicalAmount}", $"SHARED_{Item}, {LogicalAmount}");
+                        }
+                    }
+
+                    onAction.AddMaxAmountEdit($"OOT_{Item}", MiscData.MathOP.set, 0);
+                    onAction.AddMaxAmountEdit($"MM_{Item}", MiscData.MathOP.set, 0);
+
+                    offAction.AddMaxAmountEdit($"SHARED_{Item}", MiscData.MathOP.set, 0);
+                }
+                onAction.LogicReplacements = new OptionData.LogicReplacement[] { OnActionReplacementData };
 
                 OptionData.TrackerOption SharedItem = new()
                 {
-                    ID = $"shared{Item}",
-                    DisplayName = $"Shared {ItemName}",
+                    ID = ID,
+                    DisplayName = Name,
                     CurrentValue = "false",
                     Values = new Dictionary<string, OptionData.actions>
                     {

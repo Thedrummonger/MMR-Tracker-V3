@@ -27217,7 +27217,12 @@
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {
+            "OOT_BOSS_KEY_GANON": {
+              "action": "set",
+              "amount": 0
+            }
+          }
         },
         "vanilla": {
           "LogicReplacements": [],
@@ -27420,8 +27425,8 @@
       }
     },
     {
-      "ID": "sharedBOW",
-      "DisplayName": "Shared Bow",
+      "ID": "sharedBows",
+      "DisplayName": "Shared Bows",
       "CurrentValue": "false",
       "Values": {
         "false": {
@@ -27462,8 +27467,8 @@
       }
     },
     {
-      "ID": "sharedBOMB_BAG",
-      "DisplayName": "Shared Bomb Bag",
+      "ID": "sharedBombBags",
+      "DisplayName": "Shared Bomb Bags",
       "CurrentValue": "false",
       "Values": {
         "false": {
@@ -27504,8 +27509,8 @@
       }
     },
     {
-      "ID": "sharedMAGIC_UPGRADE",
-      "DisplayName": "Shared Magic Upgrade",
+      "ID": "sharedMagic",
+      "DisplayName": "Shared Magic",
       "CurrentValue": "false",
       "Values": {
         "false": {
@@ -27546,8 +27551,8 @@
       }
     },
     {
-      "ID": "sharedARROW_FIRE",
-      "DisplayName": "Shared Fire Arrows",
+      "ID": "sharedMagicArrows",
+      "DisplayName": "Shared Magic Arrows",
       "CurrentValue": "false",
       "Values": {
         "false": {
@@ -27556,6 +27561,14 @@
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {
             "SHARED_ARROW_FIRE": {
+              "action": "set",
+              "amount": 0
+            },
+            "SHARED_ARROW_ICE": {
+              "action": "set",
+              "amount": 0
+            },
+            "SHARED_ARROW_LIGHT": {
               "action": "set",
               "amount": 0
             }
@@ -27568,7 +27581,11 @@
               "LocationBlacklist": [],
               "ReplacementList": {
                 "OOT_ARROW_FIRE": "SHARED_ARROW_FIRE",
-                "MM_ARROW_FIRE": "SHARED_ARROW_FIRE"
+                "MM_ARROW_FIRE": "SHARED_ARROW_FIRE",
+                "OOT_ARROW_ICE": "SHARED_ARROW_ICE",
+                "MM_ARROW_ICE": "SHARED_ARROW_ICE",
+                "OOT_ARROW_LIGHT": "SHARED_ARROW_LIGHT",
+                "MM_ARROW_LIGHT": "SHARED_ARROW_LIGHT"
               }
             }
           ],
@@ -27582,41 +27599,7 @@
             "MM_ARROW_FIRE": {
               "action": "set",
               "amount": 0
-            }
-          }
-        }
-      }
-    },
-    {
-      "ID": "sharedARROW_ICE",
-      "DisplayName": "Shared Ice Arrows",
-      "CurrentValue": "false",
-      "Values": {
-        "false": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {
-            "SHARED_ARROW_ICE": {
-              "action": "set",
-              "amount": 0
-            }
-          }
-        },
-        "true": {
-          "LogicReplacements": [
-            {
-              "LocationWhitelist": [],
-              "LocationBlacklist": [],
-              "ReplacementList": {
-                "OOT_ARROW_ICE": "SHARED_ARROW_ICE",
-                "MM_ARROW_ICE": "SHARED_ARROW_ICE"
-              }
-            }
-          ],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {
+            },
             "OOT_ARROW_ICE": {
               "action": "set",
               "amount": 0
@@ -27624,514 +27607,12 @@
             "MM_ARROW_ICE": {
               "action": "set",
               "amount": 0
-            }
-          }
-        }
-      }
-    },
-    {
-      "ID": "sharedARROW_LIGHT",
-      "DisplayName": "Shared Light Arrows",
-      "CurrentValue": "false",
-      "Values": {
-        "false": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {
-            "SHARED_ARROW_LIGHT": {
-              "action": "set",
-              "amount": 0
-            }
-          }
-        },
-        "true": {
-          "LogicReplacements": [
-            {
-              "LocationWhitelist": [],
-              "LocationBlacklist": [],
-              "ReplacementList": {
-                "OOT_ARROW_LIGHT": "SHARED_ARROW_LIGHT",
-                "MM_ARROW_LIGHT": "SHARED_ARROW_LIGHT"
-              }
-            }
-          ],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {
+            },
             "OOT_ARROW_LIGHT": {
               "action": "set",
               "amount": 0
             },
             "MM_ARROW_LIGHT": {
-              "action": "set",
-              "amount": 0
-            }
-          }
-        }
-      }
-    },
-    {
-      "ID": "sharedHOOKSHOT",
-      "DisplayName": "Shared Hookshot",
-      "CurrentValue": "false",
-      "Values": {
-        "false": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {
-            "SHARED_HOOKSHOT": {
-              "action": "set",
-              "amount": 0
-            }
-          }
-        },
-        "true": {
-          "LogicReplacements": [
-            {
-              "LocationWhitelist": [],
-              "LocationBlacklist": [],
-              "ReplacementList": {
-                "OOT_HOOKSHOT": "SHARED_HOOKSHOT",
-                "MM_HOOKSHOT": "SHARED_HOOKSHOT",
-                "OOT_HOOKSHOT, 2": "SHARED_HOOKSHOT, 2",
-                "MM_HOOKSHOT, 2": "SHARED_HOOKSHOT, 2"
-              }
-            }
-          ],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {
-            "OOT_HOOKSHOT": {
-              "action": "set",
-              "amount": 0
-            },
-            "MM_HOOKSHOT": {
-              "action": "set",
-              "amount": 0
-            }
-          }
-        }
-      }
-    },
-    {
-      "ID": "sharedLENS",
-      "DisplayName": "Shared Lens of Truth",
-      "CurrentValue": "false",
-      "Values": {
-        "false": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {
-            "SHARED_LENS": {
-              "action": "set",
-              "amount": 0
-            }
-          }
-        },
-        "true": {
-          "LogicReplacements": [
-            {
-              "LocationWhitelist": [],
-              "LocationBlacklist": [],
-              "ReplacementList": {
-                "OOT_LENS": "SHARED_LENS",
-                "MM_LENS": "SHARED_LENS"
-              }
-            }
-          ],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {
-            "OOT_LENS": {
-              "action": "set",
-              "amount": 0
-            },
-            "MM_LENS": {
-              "action": "set",
-              "amount": 0
-            }
-          }
-        }
-      }
-    },
-    {
-      "ID": "sharedOCARINA",
-      "DisplayName": "Shared Ocarina",
-      "CurrentValue": "false",
-      "Values": {
-        "false": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {
-            "SHARED_OCARINA": {
-              "action": "set",
-              "amount": 0
-            }
-          }
-        },
-        "true": {
-          "LogicReplacements": [
-            {
-              "LocationWhitelist": [],
-              "LocationBlacklist": [],
-              "ReplacementList": {
-                "OOT_OCARINA": "SHARED_OCARINA",
-                "MM_OCARINA": "SHARED_OCARINA",
-                "OOT_OCARINA, 2": "SHARED_OCARINA, 2",
-                "MM_OCARINA, 2": "SHARED_OCARINA, 2"
-              }
-            }
-          ],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {
-            "OOT_OCARINA": {
-              "action": "set",
-              "amount": 0
-            },
-            "MM_OCARINA": {
-              "action": "set",
-              "amount": 0
-            }
-          }
-        }
-      }
-    },
-    {
-      "ID": "sharedMASK_KEATON",
-      "DisplayName": "Shared Keaton Mask",
-      "CurrentValue": "false",
-      "Values": {
-        "false": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {
-            "SHARED_MASK_KEATON": {
-              "action": "set",
-              "amount": 0
-            }
-          }
-        },
-        "true": {
-          "LogicReplacements": [
-            {
-              "LocationWhitelist": [],
-              "LocationBlacklist": [],
-              "ReplacementList": {
-                "OOT_MASK_KEATON": "SHARED_MASK_KEATON",
-                "MM_MASK_KEATON": "SHARED_MASK_KEATON"
-              }
-            }
-          ],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {
-            "OOT_MASK_KEATON": {
-              "action": "set",
-              "amount": 0
-            },
-            "MM_MASK_KEATON": {
-              "action": "set",
-              "amount": 0
-            }
-          }
-        }
-      }
-    },
-    {
-      "ID": "sharedMASK_BUNNY",
-      "DisplayName": "Shared Bunny Hood",
-      "CurrentValue": "false",
-      "Values": {
-        "false": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {
-            "SHARED_MASK_BUNNY": {
-              "action": "set",
-              "amount": 0
-            }
-          }
-        },
-        "true": {
-          "LogicReplacements": [
-            {
-              "LocationWhitelist": [],
-              "LocationBlacklist": [],
-              "ReplacementList": {
-                "OOT_MASK_BUNNY": "SHARED_MASK_BUNNY",
-                "MM_MASK_BUNNY": "SHARED_MASK_BUNNY"
-              }
-            }
-          ],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {
-            "OOT_MASK_BUNNY": {
-              "action": "set",
-              "amount": 0
-            },
-            "MM_MASK_BUNNY": {
-              "action": "set",
-              "amount": 0
-            }
-          }
-        }
-      }
-    },
-    {
-      "ID": "sharedMASK_ZORA",
-      "DisplayName": "Shared Zora Mask",
-      "CurrentValue": "false",
-      "Values": {
-        "false": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {
-            "SHARED_MASK_ZORA": {
-              "action": "set",
-              "amount": 0
-            }
-          }
-        },
-        "true": {
-          "LogicReplacements": [
-            {
-              "LocationWhitelist": [],
-              "LocationBlacklist": [],
-              "ReplacementList": {
-                "OOT_MASK_ZORA": "SHARED_MASK_ZORA",
-                "MM_MASK_ZORA": "SHARED_MASK_ZORA"
-              }
-            }
-          ],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {
-            "OOT_MASK_ZORA": {
-              "action": "set",
-              "amount": 0
-            },
-            "MM_MASK_ZORA": {
-              "action": "set",
-              "amount": 0
-            }
-          }
-        }
-      }
-    },
-    {
-      "ID": "sharedMASK_GORON",
-      "DisplayName": "Shared Goron Mask",
-      "CurrentValue": "false",
-      "Values": {
-        "false": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {
-            "SHARED_MASK_GORON": {
-              "action": "set",
-              "amount": 0
-            }
-          }
-        },
-        "true": {
-          "LogicReplacements": [
-            {
-              "LocationWhitelist": [],
-              "LocationBlacklist": [],
-              "ReplacementList": {
-                "OOT_MASK_GORON": "SHARED_MASK_GORON",
-                "MM_MASK_GORON": "SHARED_MASK_GORON"
-              }
-            }
-          ],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {
-            "OOT_MASK_GORON": {
-              "action": "set",
-              "amount": 0
-            },
-            "MM_MASK_GORON": {
-              "action": "set",
-              "amount": 0
-            }
-          }
-        }
-      }
-    },
-    {
-      "ID": "sharedWALLET",
-      "DisplayName": "Shared Wallet",
-      "CurrentValue": "false",
-      "Values": {
-        "false": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {
-            "SHARED_WALLET": {
-              "action": "set",
-              "amount": 0
-            }
-          }
-        },
-        "true": {
-          "LogicReplacements": [
-            {
-              "LocationWhitelist": [],
-              "LocationBlacklist": [],
-              "ReplacementList": {
-                "OOT_WALLET": "SHARED_WALLET",
-                "MM_WALLET": "SHARED_WALLET",
-                "OOT_WALLET, 2": "SHARED_WALLET, 2",
-                "MM_WALLET, 2": "SHARED_WALLET, 2"
-              }
-            }
-          ],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {
-            "OOT_WALLET": {
-              "action": "set",
-              "amount": 0
-            },
-            "MM_WALLET": {
-              "action": "set",
-              "amount": 0
-            }
-          }
-        }
-      }
-    },
-    {
-      "ID": "sharedSONG_EPONA",
-      "DisplayName": "Shared Epona's Song",
-      "CurrentValue": "false",
-      "Values": {
-        "false": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {
-            "SHARED_SONG_EPONA": {
-              "action": "set",
-              "amount": 0
-            }
-          }
-        },
-        "true": {
-          "LogicReplacements": [
-            {
-              "LocationWhitelist": [],
-              "LocationBlacklist": [],
-              "ReplacementList": {
-                "OOT_SONG_EPONA": "SHARED_SONG_EPONA",
-                "MM_SONG_EPONA": "SHARED_SONG_EPONA"
-              }
-            }
-          ],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {
-            "OOT_SONG_EPONA": {
-              "action": "set",
-              "amount": 0
-            },
-            "MM_SONG_EPONA": {
-              "action": "set",
-              "amount": 0
-            }
-          }
-        }
-      }
-    },
-    {
-      "ID": "sharedSONG_STORMS",
-      "DisplayName": "Shared Song of Storms",
-      "CurrentValue": "false",
-      "Values": {
-        "false": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {
-            "SHARED_SONG_STORMS": {
-              "action": "set",
-              "amount": 0
-            }
-          }
-        },
-        "true": {
-          "LogicReplacements": [
-            {
-              "LocationWhitelist": [],
-              "LocationBlacklist": [],
-              "ReplacementList": {
-                "OOT_SONG_STORMS": "SHARED_SONG_STORMS",
-                "MM_SONG_STORMS": "SHARED_SONG_STORMS"
-              }
-            }
-          ],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {
-            "OOT_SONG_STORMS": {
-              "action": "set",
-              "amount": 0
-            },
-            "MM_SONG_STORMS": {
-              "action": "set",
-              "amount": 0
-            }
-          }
-        }
-      }
-    },
-    {
-      "ID": "sharedSONG_TIME",
-      "DisplayName": "Shared Song of Time",
-      "CurrentValue": "false",
-      "Values": {
-        "false": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {
-            "SHARED_SONG_TIME": {
-              "action": "set",
-              "amount": 0
-            }
-          }
-        },
-        "true": {
-          "LogicReplacements": [
-            {
-              "LocationWhitelist": [],
-              "LocationBlacklist": [],
-              "ReplacementList": {
-                "OOT_SONG_TIME": "SHARED_SONG_TIME",
-                "MM_SONG_TIME": "SHARED_SONG_TIME"
-              }
-            }
-          ],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {
-            "OOT_SONG_TIME": {
-              "action": "set",
-              "amount": 0
-            },
-            "MM_SONG_TIME": {
               "action": "set",
               "amount": 0
             }

@@ -68,13 +68,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
             List<string> ManualTrackItems = new()
             {
-                "OOT_GS_TOKEN",
-                "MM_GS_TOKEN_OCEAN",
-                "MM_GS_TOKEN_SWAMP",
-                "MM_STRAY_FAIRY_GB",
-                "MM_STRAY_FAIRY_SH",
-                "MM_STRAY_FAIRY_ST",
-                "MM_STRAY_FAIRY_WF"
+                "OOT_GS_TOKEN"
             };
 
             foreach(var i in Instance.LocationPool.Values)
@@ -104,9 +98,21 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             {
                 var SettingLineData = Line.Split(":").Select(x => x.Trim()).ToArray();
                 if (SettingLineData.Length < 2) { return false; }
+
                 if (Instance.UserOptions.ContainsKey(SettingLineData[0]))
                 {
-                    Instance.UserOptions[SettingLineData[0]].CurrentValue = SettingLineData[1];
+                    if (Instance.UserOptions[SettingLineData[0]].Values.ContainsKey(SettingLineData[1]))
+                    {
+                        Instance.UserOptions[SettingLineData[0]].CurrentValue = SettingLineData[1];
+                    }
+                    else if (Instance.UserOptions[SettingLineData[0]].IsToggleOption() && (SettingLineData[1] == "progressive" || SettingLineData[1] == "separate"))
+                    {
+                        Instance.UserOptions[SettingLineData[0]].CurrentValue = SettingLineData[1] == "progressive" ? "true" : "false";
+                    }
+                    else
+                    {
+                        Debug.WriteLine($"{SettingLineData[0]} Could not be set to value {SettingLineData[1]}");
+                    }
                 }
                 else if (SettingLineData[0] == "erBoss" && SettingLineData[1] != "none")
                 {
