@@ -64,6 +64,26 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string CurrentSavePath { get; set; } = "";
             public bool UnsavedChanges { get; set; } = false;
 
+            public bool SaveInstance(string SavePath)
+            {
+                try
+                {
+                    if (Instance.StaticOptions.OptionFile.CompressSave)
+                    {
+                        var CompressedSave = new SaveCompressor.CompressedSave(Instance.ToString());
+                        File.WriteAllBytes(SavePath, CompressedSave.Bytes);
+                    }
+                    else
+                    {
+                        File.WriteAllText(SavePath, Instance.ToString());
+                    }
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
             public bool LoadSave(string[] Save) { return LoadSave(string.Join("", Save)); }
             public bool LoadSave(string Save)
             {

@@ -482,7 +482,7 @@ namespace ConsoleDebugger
                     if (key.Key == ConsoleKey.N) { Console.WriteLine($""); goto promptForSave; }
                     else if (key.Key != ConsoleKey.Y) { goto readConfirmKey; }
                     if (!Directory.Exists(Folder)) { Directory.CreateDirectory(Folder); }
-                    File.WriteAllText(FinalPath, newTrackerInstance.Instance.ToString());
+                    newTrackerInstance.SaveInstance(FinalPath);
                     newTrackerInstance.CurrentSavePath = FinalPath;
                     Debug.WriteLine($"{FinalPath}");
                 }
@@ -495,7 +495,7 @@ namespace ConsoleDebugger
             }
             else
             {
-                File.WriteAllText(newTrackerInstance.CurrentSavePath, newTrackerInstance.Instance.ToString());
+                newTrackerInstance.SaveInstance(newTrackerInstance.CurrentSavePath);
             }
 
             newTrackerInstance.UnsavedChanges = false;

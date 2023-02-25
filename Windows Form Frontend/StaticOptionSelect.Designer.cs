@@ -48,9 +48,12 @@ namespace Windows_Form_Frontend
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.label11 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.chkCompressSave = new System.Windows.Forms.CheckBox();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudFontSize)).BeginInit();
             this.SuspendLayout();
             // 
@@ -161,7 +164,7 @@ namespace Windows_Form_Frontend
             this.label7.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label7.Location = new System.Drawing.Point(12, 83);
+            this.label7.Location = new System.Drawing.Point(12, 104);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(17, 18);
             this.label7.TabIndex = 10;
@@ -172,7 +175,7 @@ namespace Windows_Form_Frontend
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(35, 75);
+            this.label8.Location = new System.Drawing.Point(35, 96);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(62, 16);
             this.label8.TabIndex = 9;
@@ -182,7 +185,7 @@ namespace Windows_Form_Frontend
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(35, 95);
+            this.label10.Location = new System.Drawing.Point(35, 116);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(66, 16);
             this.label10.TabIndex = 12;
@@ -191,7 +194,7 @@ namespace Windows_Form_Frontend
             // nudFontSize
             // 
             this.nudFontSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nudFontSize.Location = new System.Drawing.Point(167, 75);
+            this.nudFontSize.Location = new System.Drawing.Point(167, 96);
             this.nudFontSize.Minimum = new decimal(new int[] {
             1,
             0,
@@ -211,7 +214,7 @@ namespace Windows_Form_Frontend
             // 
             this.cmbFontStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbFontStyle.FormattingEnabled = true;
-            this.cmbFontStyle.Location = new System.Drawing.Point(112, 94);
+            this.cmbFontStyle.Location = new System.Drawing.Point(112, 115);
             this.cmbFontStyle.Name = "cmbFontStyle";
             this.cmbFontStyle.Size = new System.Drawing.Size(100, 21);
             this.cmbFontStyle.TabIndex = 15;
@@ -220,7 +223,7 @@ namespace Windows_Form_Frontend
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(12, 121);
+            this.button1.Location = new System.Drawing.Point(12, 142);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 22);
             this.button1.TabIndex = 16;
@@ -231,7 +234,7 @@ namespace Windows_Form_Frontend
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(112, 121);
+            this.button2.Location = new System.Drawing.Point(112, 142);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 22);
             this.button2.TabIndex = 17;
@@ -239,10 +242,24 @@ namespace Windows_Form_Frontend
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label11.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label11.Location = new System.Drawing.Point(12, 73);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(17, 18);
+            this.label11.TabIndex = 22;
+            this.label11.Text = "?";
+            this.toolTip1.SetToolTip(this.label11, "Should the tracker Compress it\'s save files to take less disk space?\r\nCompressed " +
+        "save files are unreadable and cannot be edited manually.");
+            // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(112, 75);
+            this.button3.Location = new System.Drawing.Point(112, 96);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(55, 19);
             this.button3.TabIndex = 18;
@@ -252,7 +269,7 @@ namespace Windows_Form_Frontend
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(112, 150);
+            this.textBox1.Location = new System.Drawing.Point(112, 171);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 24);
             this.textBox1.TabIndex = 19;
@@ -261,17 +278,40 @@ namespace Windows_Form_Frontend
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(12, 155);
+            this.label9.Location = new System.Drawing.Point(12, 176);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(92, 16);
             this.label9.TabIndex = 20;
             this.label9.Text = "Font Example:";
             // 
+            // chkCompressSave
+            // 
+            this.chkCompressSave.AutoSize = true;
+            this.chkCompressSave.Location = new System.Drawing.Point(197, 76);
+            this.chkCompressSave.Name = "chkCompressSave";
+            this.chkCompressSave.Size = new System.Drawing.Size(15, 14);
+            this.chkCompressSave.TabIndex = 23;
+            this.chkCompressSave.UseVisualStyleBackColor = true;
+            this.chkCompressSave.CheckedChanged += new System.EventHandler(this.chkUpdates_CheckStateChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label12.Location = new System.Drawing.Point(35, 75);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(136, 16);
+            this.label12.TabIndex = 21;
+            this.label12.Text = "Compress Save Files";
+            // 
             // StaticOptionSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(221, 185);
+            this.ClientSize = new System.Drawing.Size(221, 208);
+            this.Controls.Add(this.chkCompressSave);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button3);
@@ -324,5 +364,8 @@ namespace Windows_Form_Frontend
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.CheckBox chkCompressSave;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
     }
 }

@@ -32,6 +32,7 @@ namespace Windows_Form_Frontend
             chkHorizontal.Checked = TempOptionFile.WinformData.HorizontalLayout;
             chkTooltips.Checked = TempOptionFile.WinformData.ShowEntryNameTooltip;
             chkUpdates.Checked = TempOptionFile.CheckForUpdate;
+            chkCompressSave.Checked = TempOptionFile.CompressSave;
             int counter = 0;
             var CurrentFont = WinFormUtils.GetFontFromString(TempOptionFile.WinformData.FormFont);
             foreach (FontFamily font in FontFamily.Families)
@@ -52,6 +53,7 @@ namespace Windows_Form_Frontend
             TempOptionFile.WinformData.HorizontalLayout = chkHorizontal.Checked;
             TempOptionFile.WinformData.ShowEntryNameTooltip = chkTooltips.Checked;
             TempOptionFile.CheckForUpdate = chkUpdates.Checked;
+            TempOptionFile.CompressSave = chkCompressSave.Checked;
         }
 
         private void nudFontSize_ValueChanged(object sender, EventArgs e)

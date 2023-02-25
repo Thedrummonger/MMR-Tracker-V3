@@ -207,6 +207,7 @@ namespace MMR_Tracker_V3
         {
             public bool CheckForUpdate { get; set; } = true;
             public bool CheckHintMarkItem { get; set; } = true;
+            public bool CompressSave { get; set; } = true;
             public WinformData WinformData { get; set; } = new WinformData();
         }
 

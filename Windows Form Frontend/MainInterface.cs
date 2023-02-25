@@ -147,7 +147,7 @@ namespace Windows_Form_Frontend
             if (File.Exists(InstanceContainer.CurrentSavePath) && !SaveAs)
             {
                 InstanceContainer.UnsavedChanges = false;
-                File.WriteAllText(InstanceContainer.CurrentSavePath, InstanceContainer.Instance.ToString());
+                InstanceContainer.SaveInstance(InstanceContainer.CurrentSavePath);
             }
             else
             {
@@ -158,7 +158,7 @@ namespace Windows_Form_Frontend
                 if (saveFileDialog.FileName != "")
                 {
                     InstanceContainer.UnsavedChanges = false;
-                    File.WriteAllText(saveFileDialog.FileName, InstanceContainer.Instance.ToString());
+                    InstanceContainer.SaveInstance(saveFileDialog.FileName);
                     InstanceContainer.CurrentSavePath = saveFileDialog.FileName;
                 }
             }
