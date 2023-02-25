@@ -60,8 +60,6 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
             CreateEntrancePairs(dictionaryFile);
 
-            AddSharedItemMacros(LogicFile);
-
             CreateAreaNameMappingFile();
 
             Logic = LogicFile;
@@ -93,45 +91,6 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             }
 
             Testing.PrintObjectToConsole(AreaData);
-        }
-
-        private static void AddSharedItemMacros(MMRData.LogicFile LogicFile)
-        {
-            string MMOOTCodeSharedItems = Path.Combine(References.TestingPaths.GetDevCodePath(), @"MMR Tracker V3", "OtherGames", "OOTMMRCOMBO", @"SharedItems.json");
-            List<string> SharedItems = JsonConvert.DeserializeObject<List<string>>(File.ReadAllText(MMOOTCodeSharedItems));
-            foreach (string SharedItem in SharedItems)
-            {
-                string ItemData = SharedItem;
-                int Amount = 1;
-                if (ItemData.Contains(", "))
-                {
-                    Amount = Convert.ToInt32(ItemData.Split(",")[1].Trim());
-                    ItemData = ItemData.Split(",")[0].Trim();
-                }
-                LogicFile.Logic.Add(createSharedEntry("OOT", ItemData));
-                LogicFile.Logic.Add(createSharedEntry("MM", ItemData));
-                if (Amount > 1)
-                {
-                    for(var i = 2; i <= Amount; i++)
-                    {
-                        LogicFile.Logic.Add(createSharedEntry("OOT", ItemData, i));
-                        LogicFile.Logic.Add(createSharedEntry("MM", ItemData, i));
-                    }
-                }
-            }
-
-            MMRData.JsonFormatLogicItem createSharedEntry(string Game, string SharedItem, int Count = 1)
-            {
-                return new MMRData.JsonFormatLogicItem()
-                {
-                    Id = $"USE_{Game}_{SharedItem}" + (Count > 1 ? $"_{Count}" : ""),
-                    ConditionalItems = new List<List<string>>
-                    {
-                        new List<string> { $"SHARED_{SharedItem}" + (Count > 1 ? $", {Count}" : "") },
-                        new List<string> { $"{Game}_{SharedItem}" + (Count > 1 ? $", {Count}" : "") }
-                    }
-                };
-            }
         }
 
         private static void CreateEntrancePairs(LogicDictionaryData.LogicDictionary dictionaryFile)
@@ -169,6 +128,9 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
         private static void AddVariablesandOptions(LogicDictionaryData.LogicDictionary dictionaryFile)
         {
+            string SharedItemData = Path.Combine(References.TestingPaths.GetDevCodePath(), @"MMR Tracker V3", "OtherGames", "OOTMMRCOMBO", @"SharedItems.json");
+            Dictionary<string, int> SharedItems = JsonConvert.DeserializeObject<Dictionary<string, int>>(File.ReadAllText(SharedItemData));
+
             LogicDictionaryData.TrackerVariable MM_Masks = new LogicDictionaryData.TrackerVariable();
             MM_Masks.Static = true;
             MM_Masks.Value =new List<string> {
@@ -232,6 +194,49 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
             //Temp Workaround for a typo in logic
             dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "MM_ZORA", RequiredItems = new List<string> { "MM_MASK_ZORA" } });
+
+            foreach(var i in SharedItems)
+            {
+                AddSharedItemOptions(i.Key, i.Value);
+            }
+
+            void AddSharedItemOptions(string Item, int Amount)
+            {
+                string ItemName = dictionaryFile.ItemList.FirstOrDefault(x => x.ID == $"OOT_{Item}").Name.Replace(" (OoT)", "").Replace("Progressive ", "");
+
+                OptionData.LogicReplacement OnActionReplacementData = new();
+                OnActionReplacementData.ReplacementList.Add($"OOT_{Item}", $"SHARED_{Item}");
+                OnActionReplacementData.ReplacementList.Add($"MM_{Item}", $"SHARED_{Item}");
+                if (Amount > 1)
+                {
+                    for (var i = 2; i <= Amount; i++)
+                    {
+                        OnActionReplacementData.ReplacementList.Add($"OOT_{Item}, {Amount}", $"SHARED_{Item}, {Amount}");
+                        OnActionReplacementData.ReplacementList.Add($"MM_{Item}, {Amount}", $"SHARED_{Item}, {Amount}");
+                    }
+                }
+
+                OptionData.actions onAction = new() { LogicReplacements = new OptionData.LogicReplacement[] { OnActionReplacementData } };
+                onAction.AddMaxAmountEdit($"OOT_{Item}", OptionData.MathOP.set, 0);
+                onAction.AddMaxAmountEdit($"MM_{Item}", OptionData.MathOP.set, 0);
+
+                OptionData.actions offAction = new();
+                offAction.AddMaxAmountEdit($"SHARED_{Item}", OptionData.MathOP.set, 0);
+
+                OptionData.TrackerOption SharedItem = new()
+                {
+                    ID = $"shared{Item}",
+                    DisplayName = $"Shared {ItemName}",
+                    CurrentValue = "false",
+                    Values = new Dictionary<string, OptionData.actions>
+                    {
+                        { "false", offAction },
+                        { "true", onAction }
+                    }
+                };
+
+                dictionaryFile.Options.Add(SharedItem);
+            }
 
         }
 
@@ -380,8 +385,6 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
         public static string ParseFunction(string LogicLine, string Game)
         {
-            string MMOOTCodeSharedItems = Path.Combine(References.TestingPaths.GetDevCodePath(), @"MMR Tracker V3", "OtherGames", "OOTMMRCOMBO", @"SharedItems.json");
-            List<string> SharedItems = JsonConvert.DeserializeObject<List<string>>(File.ReadAllText(MMOOTCodeSharedItems)).Select(x => x.Split(",")[0]).ToList();
             string line = LogicLine;
             var FunctionsFound = LogicStringParser.GetFunctionsFromLogicString(line);
 
@@ -394,19 +397,14 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         line = line.Replace(f.ToString(), $"TRICK_{f.ParametersTrimmed}");
                         break;
                     case "has":
-                        string ItemData = f.ParametersTrimmed;
+                        string ReplaceText = $"{Game}_{f.ParametersTrimmed}";
                         int Amount = 1;
-                        if (ItemData.Contains(", "))
+                        if (ReplaceText.Contains(", "))
                         {
-                            Amount = Convert.ToInt32(ItemData.Split(",")[1].Trim());
-                            ItemData = ItemData.Split(",")[0].Trim();
+                            Amount = Convert.ToInt32(ReplaceText.Split(",")[1].Trim());
+                            ReplaceText = ReplaceText.Split(",")[0].Trim();
                         }
-                        bool Shareditem = SharedItems.Contains(ItemData);
-                        string ReplaceText = Shareditem ? $"USE_{Game}_{ItemData}" : $"{Game}_{ItemData}";
-                        if (Amount > 1)
-                        {
-                            ReplaceText = ReplaceText + (Shareditem ? $"_{Amount}" : $", {Amount}");
-                        }
+                        if (Amount > 1) { ReplaceText += $", {Amount}"; }
                         line = line.Replace(f.ToString(), ReplaceText);
                         break;
                     case "event":

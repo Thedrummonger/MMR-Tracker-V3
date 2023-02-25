@@ -1,19 +1,19 @@
-﻿[
-  "BOW",
-  "BOMB_BAG",
-  "MAGIC_UPGRADE",
-  "ARROW_FIRE",
-  "ARROW_ICE",
-  "ARROW_LIGHT",
-  "HOOKSHOT, 2",
-  "LENS",
-  "OCARINA, 2",
-  "MASK_KEATON",
-  "MASK_BUNNY",
-  "MASK_ZORA",
-  "MASK_GORON",
-  "WALLET, 2",
-  "SONG_EPONA",
-  "SONG_STORMS",
-  "SONG_TIME"
-]
+﻿{
+  "BOW": 0,
+  "BOMB_BAG": 0,
+  "MAGIC_UPGRADE": 0,
+  "ARROW_FIRE": 0,
+  "ARROW_ICE": 0,
+  "ARROW_LIGHT": 0,
+  "HOOKSHOT": 2,
+  "LENS": 0,
+  "OCARINA": 2,
+  "MASK_KEATON": 0,
+  "MASK_BUNNY": 0,
+  "MASK_ZORA": 0,
+  "MASK_GORON": 0,
+  "WALLET": 2,
+  "SONG_EPONA": 0,
+  "SONG_STORMS": 0,
+  "SONG_TIME": 0
+}

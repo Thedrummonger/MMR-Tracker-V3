@@ -56,11 +56,31 @@ namespace MMR_Tracker_V3.TrackerObjects
             public LogicReplacement[] LogicReplacements { get; set; } = Array.Empty<LogicReplacement>();
             public AdditionalLogic[] AdditionalLogic { get; set; } = Array.Empty<AdditionalLogic>();
             public Dictionary<string, string> ItemNameOverride { get; set; } = new Dictionary<string, string>();
-            public Dictionary<string, int> ItemMaxAmountEdit { get; set; } = new Dictionary<string, int>();
+            public Dictionary<string, MaxAmountSetData> ItemMaxAmountEdit { get; set; } = new Dictionary<string, MaxAmountSetData>();
             public bool LocationValid(string ID)
             {
                 return LogicReplacements.Any(x => x.LocationValid(ID)) || AdditionalLogic.Any(x => x.LocationValid(ID));
             }
+
+            public void AddMaxAmountEdit(string Item, MathOP mathOP, int amount)
+            {
+                ItemMaxAmountEdit.Add(Item, new MaxAmountSetData { action = mathOP, amount = amount});
+            }
+        }
+
+        public enum MathOP
+        {
+            add,
+            subtract,
+            multiply,
+            divide,
+            set
+        }
+
+        public class MaxAmountSetData
+        {
+            public MathOP action { get; set; } = MathOP.add;
+            public int amount { get; set; } = 0;
         }
 
         [Serializable]

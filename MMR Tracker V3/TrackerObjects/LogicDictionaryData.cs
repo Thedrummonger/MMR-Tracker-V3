@@ -111,7 +111,18 @@ namespace MMR_Tracker_V3.TrackerObjects
                 int FinalValue = MaxAmountInWorld is null ? -1 : (int)MaxAmountInWorld;
                 foreach(var i in OptionsEffectingThisItem)
                 {
-                    FinalValue += i.GetActions().ItemMaxAmountEdit[ID];
+                    var EditData = i.GetActions().ItemMaxAmountEdit[ID];
+                    switch (EditData.action){
+                        case MathOP.add:
+                            FinalValue += EditData.amount;
+                            break;
+                        case MathOP.subtract:
+                            FinalValue -= EditData.amount;
+                            break;
+                        case MathOP.set:
+                            FinalValue = EditData.amount;
+                            break;
+                    }
                 }
                 return FinalValue;
             }
