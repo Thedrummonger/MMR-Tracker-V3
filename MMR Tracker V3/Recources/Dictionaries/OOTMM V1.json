@@ -7545,7 +7545,26 @@
         ],
         "PriceDataNames": []
       },
-      "LocationProxys": []
+      "LocationProxys": [
+        {
+          "ID": "MMKeatonClocktownProxy",
+          "Name": "Clock Town Keaton HP",
+          "Area": "North Clock Town",
+          "LogicInheritance": "MM Clock Town Keaton HP"
+        },
+        {
+          "ID": "MMKeatonMilkRoadProxy",
+          "Name": "Milk Road Keaton HP",
+          "Area": "Milk Road",
+          "LogicInheritance": "MM Clock Town Keaton HP"
+        },
+        {
+          "ID": "MMKeatonMountainProxy",
+          "Name": "Mountain Village Keaton HP",
+          "Area": "Mountain Village",
+          "LogicInheritance": "KeatonInSpring"
+        }
+      ]
     },
     {
       "ID": "MM Clock Town Silver Rupee Chest",
@@ -11478,7 +11497,32 @@
         ],
         "PriceDataNames": []
       },
-      "LocationProxys": []
+      "LocationProxys": [
+        {
+          "ID": "MMOathWoodfallProxy",
+          "Name": "Oath to Order",
+          "Area": "Woodfall Temple",
+          "LogicInheritance": "CanGetOathWoodfall"
+        },
+        {
+          "ID": "MMOathSnowheadProxy",
+          "Name": "Oath to Order",
+          "Area": "Snowhead Temple",
+          "LogicInheritance": "CanGetOathSnowhead"
+        },
+        {
+          "ID": "MMOathGreatBayProxy",
+          "Name": "Oath to Order",
+          "Area": "Great Bay Temple",
+          "LogicInheritance": "CanGetOathGreatBay"
+        },
+        {
+          "ID": "MMOathStoneTowerProxy",
+          "Name": "Oath to Order",
+          "Area": "Stone Tower Temple",
+          "LogicInheritance": "CanGetOathStoneTow"
+        }
+      ]
     },
     {
       "ID": "MM Woodfall Temple Entrance Chest",
@@ -27155,6 +27199,63 @@
       "Id": "MM_ZORA",
       "RequiredItems": [
         "MM_MASK_ZORA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CanGetOathWoodfall",
+      "RequiredItems": [
+        "MM Woodfall Temple After Boss"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CanGetOathSnowhead",
+      "RequiredItems": [
+        "MM Snowhead Temple After Boss"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CanGetOathGreatBay",
+      "RequiredItems": [
+        "MM Great Bay Temple After Boss"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CanGetOathStoneTow",
+      "RequiredItems": [
+        "MM Stone Tower After Boss"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "KeatonInSpring",
+      "RequiredItems": [
+        "MM_MASK_KEATON",
+        "MM_BOSS_SNOWHEAD",
+        "MM Mountain Village"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",

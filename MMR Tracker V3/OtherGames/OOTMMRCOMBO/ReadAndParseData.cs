@@ -60,6 +60,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
             CreateEntrancePairs(dictionaryFile);
 
+            CreateLocationProxies(dictionaryFile);
+
             CreateAreaNameMappingFile();
 
             Logic = LogicFile;
@@ -68,6 +70,37 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             File.WriteAllText(FinalDictFile, JsonConvert.SerializeObject(dictionaryFile, Testing._NewtonsoftJsonSerializerOptions));
 
 
+        }
+
+        private static void CreateLocationProxies(LogicDictionaryData.LogicDictionary dictionaryFile)
+        {
+            dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "CanGetOathWoodfall", RequiredItems = new List<string> { "MM Woodfall Temple After Boss" } });
+            dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "CanGetOathSnowhead", RequiredItems = new List<string> { "MM Snowhead Temple After Boss" } });
+            dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "CanGetOathGreatBay", RequiredItems = new List<string> { "MM Great Bay Temple After Boss" } });
+            dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "CanGetOathStoneTow", RequiredItems = new List<string> { "MM Stone Tower After Boss" } });
+            dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "KeatonInSpring", RequiredItems = new List<string> { "MM_MASK_KEATON", "MM_BOSS_SNOWHEAD", "MM Mountain Village" } });
+
+
+            createLocationProxy("MM Oath to Order", "MMOathWoodfallProxy", "Oath to Order", "Woodfall Temple", "CanGetOathWoodfall");
+            createLocationProxy("MM Oath to Order", "MMOathSnowheadProxy", "Oath to Order", "Snowhead Temple", "CanGetOathSnowhead");
+            createLocationProxy("MM Oath to Order", "MMOathGreatBayProxy", "Oath to Order", "Great Bay Temple", "CanGetOathGreatBay");
+            createLocationProxy("MM Oath to Order", "MMOathStoneTowerProxy", "Oath to Order", "Stone Tower Temple", "CanGetOathStoneTow");
+
+            createLocationProxy("MM Clock Town Keaton HP", "MMKeatonClocktownProxy", "Clock Town Keaton HP", "North Clock Town", "MM Clock Town Keaton HP");
+            createLocationProxy("MM Clock Town Keaton HP", "MMKeatonMilkRoadProxy", "Milk Road Keaton HP", "Milk Road", "MM Clock Town Keaton HP");
+            createLocationProxy("MM Clock Town Keaton HP", "MMKeatonMountainProxy", "Mountain Village Keaton HP", "Mountain Village", "KeatonInSpring");
+
+            void createLocationProxy(string OriginalLocationID, string ID, string ProxyName, string ProxyArea, string Logic)
+            {
+                var OriginalLocation = dictionaryFile.LocationList.Find(x => x.ID == OriginalLocationID);
+                OriginalLocation.LocationProxys.Add(new LogicDictionaryData.DictLocationProxy()
+                {
+                    ID = ID,
+                    Area = ProxyArea,
+                    Name = ProxyName,
+                    LogicInheritance = Logic
+                });
+            }
         }
 
         private static void CreateAreaNameMappingFile()

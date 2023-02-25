@@ -213,8 +213,10 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
             public object GetLogicInheritance(LogicObjects.TrackerInstance instance)
             {
-                if (LogicInheritance is null) { return GetReferenceLocation(instance); }
-                return (instance.GetMacroByID(LogicInheritance));
+                var LogicId = LogicInheritance ?? ReferenceID;
+                bool Literal = LogicId.IsLiteralID(out LogicId);
+                instance.GetLocationEntryType(LogicId, Literal, out object Result);
+                return Result;
             }
         }
     }
