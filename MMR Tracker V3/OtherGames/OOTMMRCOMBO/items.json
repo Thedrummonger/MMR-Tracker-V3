@@ -258,5 +258,17 @@
   "SHARED_ARROW_ICE": "Shared Ice Arrows",
   "SHARED_ARROW_LIGHT": "Shared Light Arrows",
 
+  "SHARED_HOOKSHOT": "Shared Hookshot",
+  "SHARED_LENS": "Shared Lens of Truth",
+  "SHARED_OCARINA": "Shared Ocarina",
+  "SHARED_MASK_KEATON": "Shared Keaton Mask",
+  "SHARED_MASK_BUNNY": "Shared Bunny Hood",
+  "SHARED_MASK_ZORA": "Shared Zora Mask",
+  "SHARED_MASK_GORON": "Shared Goron Mask",
+  "SHARED_WALLET": "Shared Progressive Wallet",
+  "SHARED_SONG_EPONA": "Shared Epona's Song",
+  "SHARED_SONG_STORMS": "Shared Song of Storms",
+  "SHARED_SONG_TIME": "Shared Song of Time",
+
   "OOT_BOSS_KEY_GANON": "Boss Key (Ganon)"
 }

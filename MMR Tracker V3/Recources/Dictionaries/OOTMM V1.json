@@ -18980,6 +18980,226 @@
       }
     },
     {
+      "ID": "SHARED_HOOKSHOT",
+      "Name": "Shared Hookshot",
+      "MaxAmountInWorld": 2,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_HOOKSHOT",
+          "Shared Hookshot"
+        ],
+        "GossipHintNames": [
+          "SHARED_HOOKSHOT",
+          "Shared Hookshot"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_LENS",
+      "Name": "Shared Lens of Truth",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_LENS",
+          "Shared Lens of Truth"
+        ],
+        "GossipHintNames": [
+          "SHARED_LENS",
+          "Shared Lens of Truth"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_OCARINA",
+      "Name": "Shared Ocarina",
+      "MaxAmountInWorld": 2,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_OCARINA",
+          "Shared Ocarina"
+        ],
+        "GossipHintNames": [
+          "SHARED_OCARINA",
+          "Shared Ocarina"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_MASK_KEATON",
+      "Name": "Shared Keaton Mask",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_MASK_KEATON",
+          "Shared Keaton Mask"
+        ],
+        "GossipHintNames": [
+          "SHARED_MASK_KEATON",
+          "Shared Keaton Mask"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_MASK_BUNNY",
+      "Name": "Shared Bunny Hood",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_MASK_BUNNY",
+          "Shared Bunny Hood"
+        ],
+        "GossipHintNames": [
+          "SHARED_MASK_BUNNY",
+          "Shared Bunny Hood"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_MASK_ZORA",
+      "Name": "Shared Zora Mask",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_MASK_ZORA",
+          "Shared Zora Mask"
+        ],
+        "GossipHintNames": [
+          "SHARED_MASK_ZORA",
+          "Shared Zora Mask"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_MASK_GORON",
+      "Name": "Shared Goron Mask",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_MASK_GORON",
+          "Shared Goron Mask"
+        ],
+        "GossipHintNames": [
+          "SHARED_MASK_GORON",
+          "Shared Goron Mask"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_WALLET",
+      "Name": "Shared Progressive Wallet",
+      "MaxAmountInWorld": 2,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_WALLET",
+          "Shared Progressive Wallet"
+        ],
+        "GossipHintNames": [
+          "SHARED_WALLET",
+          "Shared Progressive Wallet"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_SONG_EPONA",
+      "Name": "Shared Epona's Song",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_SONG_EPONA",
+          "Shared Epona's Song"
+        ],
+        "GossipHintNames": [
+          "SHARED_SONG_EPONA",
+          "Shared Epona's Song"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_SONG_STORMS",
+      "Name": "Shared Song of Storms",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_SONG_STORMS",
+          "Shared Song of Storms"
+        ],
+        "GossipHintNames": [
+          "SHARED_SONG_STORMS",
+          "Shared Song of Storms"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_SONG_TIME",
+      "Name": "Shared Song of Time",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_SONG_TIME",
+          "Shared Song of Time"
+        ],
+        "GossipHintNames": [
+          "SHARED_SONG_TIME",
+          "Shared Song of Time"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
       "ID": "OOT_BOSS_KEY_GANON",
       "Name": "Boss Key (Ganon)",
       "MaxAmountInWorld": 1,
