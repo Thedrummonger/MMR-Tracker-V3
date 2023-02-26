@@ -698,6 +698,9 @@ namespace Windows_Form_Frontend
         private void UpdateDynamicUserOptions()
         {
             RandomizerOptionsToolStripMenuItem1.DropDownItems.Clear();
+
+            Dictionary<string, List<ToolStripMenuItem>> MenuItemGroups = new Dictionary<string, List<ToolStripMenuItem>>();
+
             //Create List Box Toggle
             ToolStripComboBox ListBoxDisplayOptions = new();
             ListBoxDisplayOptions.Items.AddRange(OptionData.DisplayListBoxes);
@@ -718,7 +721,7 @@ namespace Windows_Form_Frontend
                 {
                     ToolStripMenuItem menuItem = new() { Checked = OptionData.ToggleValues.Keys.Select(x => x.ToLower()).Contains(i.CurrentValue.ToLower()), Text = i.DisplayName };
                     menuItem.Click += delegate (object sender, EventArgs e) { ToggleRandomizerOption_Click(sender, e, i); };
-                    RandomizerOptionsToolStripMenuItem1.DropDownItems.Add(menuItem);
+                    GroupOption(menuItem, i.SubCategory);
                 }
                 else if (i.Values.Keys.Count > 1)//If the option only has one value, it will always be active so no need to display it.
                 {
@@ -734,16 +737,39 @@ namespace Windows_Form_Frontend
                     };
                     ToolStripMenuItem menuItem = new() { Text = i.DisplayName };
                     menuItem.DropDownItems.Add(toolStripComboBox);
-                    RandomizerOptionsToolStripMenuItem1.DropDownItems.Add(menuItem);
+                    GroupOption(menuItem, i.SubCategory);
                 }
             }
             foreach(var i in InstanceContainer.Instance.Variables.Values.Where(x => !x.Static))
             {
                 ToolStripMenuItem menuItem = new() { Text = i.ToString() };
                 menuItem.Click += delegate (object sender, EventArgs e) { HandleItemSelect(new List<LogicDictionaryData.TrackerVariable> { i }, MiscData.CheckState.Checked); };
-                RandomizerOptionsToolStripMenuItem1.DropDownItems.Add(menuItem);
+                GroupOption(menuItem);
             }
+
+            foreach(var i in MenuItemGroups.Keys)
+            {
+                var Parent = RandomizerOptionsToolStripMenuItem1;
+                if (i != "MMRTROOTMENU")
+                {
+                    ToolStripMenuItem SubCategory = new() { Text = i.ToString() };
+                    RandomizerOptionsToolStripMenuItem1.DropDownItems.Add(SubCategory);
+                    Parent = SubCategory;
+                }
+                foreach(var j in MenuItemGroups[i])
+                {
+                    Parent.DropDownItems.Add(j);
+                }
+            }
+
             RandomizerOptionsToolStripMenuItem1.Visible = RandomizerOptionsToolStripMenuItem1.DropDownItems.Count > 1;
+
+            void GroupOption(ToolStripMenuItem menuItem, string SubCategory = null)
+            {
+                string SubCategoryName = SubCategory ?? "MMRTROOTMENU";
+                if (!MenuItemGroups.ContainsKey(SubCategoryName)) { MenuItemGroups[SubCategoryName] = new List<ToolStripMenuItem>(); }
+                MenuItemGroups[SubCategoryName].Add(menuItem);
+            }
         }
 
         //Context Menus

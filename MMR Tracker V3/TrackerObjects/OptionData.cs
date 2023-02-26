@@ -24,6 +24,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string ID { get; set; }
             public string DisplayName { get; set; }
             public string CurrentValue { get; set; } = "";
+            public string SubCategory { get; set; } = null;
             public Dictionary<string, actions> Values { get; set; } = new Dictionary<string, actions>();
             public actions GetActions()
             {

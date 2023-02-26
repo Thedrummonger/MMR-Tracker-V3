@@ -27368,6 +27368,7 @@
       "ID": "progressiveShieldsOot",
       "DisplayName": "Progressive OoT Shields",
       "CurrentValue": "true",
+      "SubCategory": "Progressive Items",
       "Values": {
         "false": {
           "LogicReplacements": [],
@@ -27405,6 +27406,7 @@
       "ID": "progressiveSwordsOot",
       "DisplayName": "Progressive OoT Swords",
       "CurrentValue": "separate",
+      "SubCategory": "Progressive Items",
       "Values": {
         "separate": {
           "LogicReplacements": [],
@@ -27473,6 +27475,7 @@
       "ID": "progressiveShieldsMm",
       "DisplayName": "Progressive MM Shields",
       "CurrentValue": "true",
+      "SubCategory": "Progressive Items",
       "Values": {
         "false": {
           "LogicReplacements": [],
@@ -27510,6 +27513,7 @@
       "ID": "progressiveGoronLullaby",
       "DisplayName": "Progressive MM Goron Lullaby",
       "CurrentValue": "true",
+      "SubCategory": "Progressive Items",
       "Values": {
         "false": {
           "LogicReplacements": [],
@@ -27529,6 +27533,7 @@
       "ID": "sharedBows",
       "DisplayName": "Shared Bows",
       "CurrentValue": "false",
+      "SubCategory": "Shared Items",
       "Values": {
         "false": {
           "LogicReplacements": [],
@@ -27571,6 +27576,7 @@
       "ID": "sharedBombBags",
       "DisplayName": "Shared Bomb Bags",
       "CurrentValue": "false",
+      "SubCategory": "Shared Items",
       "Values": {
         "false": {
           "LogicReplacements": [],
@@ -27613,6 +27619,7 @@
       "ID": "sharedMagic",
       "DisplayName": "Shared Magic",
       "CurrentValue": "false",
+      "SubCategory": "Shared Items",
       "Values": {
         "false": {
           "LogicReplacements": [],
@@ -27655,6 +27662,7 @@
       "ID": "sharedMagicArrows",
       "DisplayName": "Shared Magic Arrows",
       "CurrentValue": "false",
+      "SubCategory": "Shared Items",
       "Values": {
         "false": {
           "LogicReplacements": [],
@@ -27725,6 +27733,7 @@
       "ID": "sharedSongs",
       "DisplayName": "Shared Songs",
       "CurrentValue": "false",
+      "SubCategory": "Shared Items",
       "Values": {
         "false": {
           "LogicReplacements": [],

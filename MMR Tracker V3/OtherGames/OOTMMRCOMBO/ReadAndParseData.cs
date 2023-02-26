@@ -222,6 +222,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             ProgressiveShieldsOOT.ID = "progressiveShieldsOot";
             ProgressiveShieldsOOT.DisplayName = "Progressive OoT Shields";
             ProgressiveShieldsOOT.CurrentValue = "true";
+            ProgressiveShieldsOOT.SubCategory = "Progressive Items";
             ProgressiveShieldsOOT.CreateSimpleValues(new string[] { "false", "true" });
             ProgressiveShieldsOOT.Values["false"].AddMaxAmountEdit("OOT_SHIELD", MiscData.MathOP.set, 0);
             ProgressiveShieldsOOT.Values["true"].AddMaxAmountEdit("OOT_SHIELD_DEKU", MiscData.MathOP.set, 0);
@@ -233,6 +234,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             ProgressiveSwordsOOT.ID = "progressiveSwordsOot";
             ProgressiveSwordsOOT.DisplayName = "Progressive OoT Swords";
             ProgressiveSwordsOOT.CurrentValue = "separate";
+            ProgressiveSwordsOOT.SubCategory = "Progressive Items";
             ProgressiveSwordsOOT.CreateSimpleValues(new string[] { "separate", "progressive", "goron" });
             ProgressiveSwordsOOT.Values["separate"].AddMaxAmountEdit("OOT_SWORD", MiscData.MathOP.set, 0);
             ProgressiveSwordsOOT.Values["separate"].AddMaxAmountEdit("OOT_SWORD_GORON", MiscData.MathOP.set, 0);
@@ -250,6 +252,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             ProgressiveShieldsMM.ID = "progressiveShieldsMm";
             ProgressiveShieldsMM.DisplayName = "Progressive MM Shields";
             ProgressiveShieldsMM.CurrentValue = "true";
+            ProgressiveShieldsMM.SubCategory = "Progressive Items";
             ProgressiveShieldsMM.CreateSimpleValues(new string[] { "false", "true" });
             ProgressiveShieldsMM.Values["false"].AddMaxAmountEdit("MM_SHIELD", MiscData.MathOP.set, 0);
             ProgressiveShieldsMM.Values["true"].AddMaxAmountEdit("MM_SHIELD_MIRROR", MiscData.MathOP.set, 0);
@@ -259,6 +262,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             ProgressiveLullabyMM.ID = "progressiveGoronLullaby";
             ProgressiveLullabyMM.DisplayName = "Progressive MM Goron Lullaby";
             ProgressiveLullabyMM.CurrentValue = "true";
+            ProgressiveLullabyMM.SubCategory = "Progressive Items";
             ProgressiveLullabyMM.CreateSimpleValues(new string[] { "false", "true" });
             ProgressiveShieldsMM.Values["false"].AddMaxAmountEdit("MM_SONG_GORON_HALF", MiscData.MathOP.set, 0);
             ProgressiveShieldsMM.Values["true"].AddMaxAmountEdit("MM_SONG_GORON", MiscData.MathOP.set, 0);
@@ -324,6 +328,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                     ID = ID,
                     DisplayName = Name,
                     CurrentValue = "false",
+                    SubCategory = "Shared Items",
                     Values = new Dictionary<string, OptionData.actions>
                     {
                         { "false", offAction },
