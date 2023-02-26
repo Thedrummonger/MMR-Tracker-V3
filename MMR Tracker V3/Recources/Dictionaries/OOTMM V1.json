@@ -577,7 +577,7 @@
     {
       "ID": "OOT Kakariko Anju Bottle",
       "Name": "Kakariko Anju Bottle",
-      "OriginalItem": "OOT_EMPTY_BOTTLE",
+      "OriginalItem": "OOT_BOTTLE_EMPTY",
       "Area": "Kakariko",
       "ValidItemTypes": [
         "item"
@@ -2192,7 +2192,7 @@
     {
       "ID": "OOT Lon Lon Ranch Talon Bottle",
       "Name": "Lon Lon Ranch Talon Bottle",
-      "OriginalItem": "OOT_MILK_BOTTLE",
+      "OriginalItem": "OOT_BOTTLE_MILK",
       "Area": "Lon Lon Ranch",
       "ValidItemTypes": [
         "item"
@@ -2477,7 +2477,7 @@
     {
       "ID": "OOT Market Pot House Big Poes",
       "Name": "Market Pot House Big Poes",
-      "OriginalItem": "OOT_EMPTY_BOTTLE",
+      "OriginalItem": "OOT_BOTTLE_EMPTY",
       "Area": "Market",
       "ValidItemTypes": [
         "item"
@@ -10020,7 +10020,7 @@
     {
       "ID": "MM Romani Ranch Aliens",
       "Name": "Romani Ranch Aliens",
-      "OriginalItem": "MM_BOTTLED_MILK",
+      "OriginalItem": "MM_BOTTLE_MILK",
       "Area": "Romani Ranch",
       "ValidItemTypes": [
         "item"
@@ -11084,7 +11084,7 @@
     {
       "ID": "MM Waterfall Rapids Beaver Race 1",
       "Name": "Waterfall Rapids Beaver Race 1",
-      "OriginalItem": "MM_EMPTY_BOTTLE",
+      "OriginalItem": "MM_BOTTLE_EMPTY",
       "Area": "Zora Cape",
       "ValidItemTypes": [
         "item"
@@ -11293,7 +11293,7 @@
     {
       "ID": "MM Beneath The Graveyard Dampe Chest",
       "Name": "Beneath The Graveyard Dampe Chest",
-      "OriginalItem": "MM_EMPTY_BOTTLE",
+      "OriginalItem": "MM_BOTTLE_EMPTY",
       "Area": "Ikana Graveyard",
       "ValidItemTypes": [
         "item"
@@ -14184,20 +14184,20 @@
       }
     },
     {
-      "ID": "MM_BOTTLED_POTION_RED",
+      "ID": "MM_BOTTLE_POTION_RED",
       "Name": "Bottle - Red Potion (MM)",
-      "MaxAmountInWorld": 1,
+      "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_BOTTLED_POTION_RED",
+          "MM_BOTTLE_POTION_RED",
           "Bottle - Red Potion (MM)"
         ],
         "GossipHintNames": [
-          "MM_BOTTLED_POTION_RED",
+          "MM_BOTTLE_POTION_RED",
           "Bottle - Red Potion (MM)"
         ],
         "PriceDataNames": []
