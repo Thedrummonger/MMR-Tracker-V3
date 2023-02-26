@@ -270,5 +270,20 @@
   "SHARED_SONG_STORMS": "Song of Storms",
   "SHARED_SONG_TIME": "Song of Time",
 
-  "OOT_BOSS_KEY_GANON": "Boss Key (Ganon)"
+  "OOT_BOSS_KEY_GANON": "Boss Key (Ganon)",
+  "OOT_NUTS_5": "5 Deku Nuts",
+  "OOT_NUTS_5_ALT": "5 Deku Nuts",
+  "OOT_STICK": "1 Deku Stick",
+  "OOT_STICKS_5": "5 Deku Sticks",
+  "OOT_STICKS_10": "10 Deku Sticks",
+  "MM_NUT": "1 Deku Nut",
+  "MM_NUTS_5": "5 Deku Nuts",
+  "MM_NUTS_10": "10 Deku Nuts",
+  "MM_STICK": "1 Deku Stick",
+  "SHARED_NUT": "1 Deku Nut",
+  "SHARED_NUTS_5": "5 Deku Nuts",
+  "SHARED_NUTS_10": "10 Deku Nuts",
+  "SHARED_STICK": "1 Deku Stick",
+  "SHARED_STICKS_5": "5 Deku Sticks",
+  "SHARED_STICKS_10": "10 Deku Sticks"
 }

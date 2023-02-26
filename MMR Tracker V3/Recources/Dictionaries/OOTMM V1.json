@@ -19262,6 +19262,306 @@
         ],
         "PriceDataNames": []
       }
+    },
+    {
+      "ID": "OOT_NUTS_5",
+      "Name": "5 Deku Nuts",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_NUTS_5",
+          "5 Deku Nuts"
+        ],
+        "GossipHintNames": [
+          "OOT_NUTS_5",
+          "5 Deku Nuts"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_NUTS_5_ALT",
+      "Name": "5 Deku Nuts",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_NUTS_5_ALT",
+          "5 Deku Nuts"
+        ],
+        "GossipHintNames": [
+          "OOT_NUTS_5_ALT",
+          "5 Deku Nuts"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_STICK",
+      "Name": "1 Deku Stick",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_STICK",
+          "1 Deku Stick"
+        ],
+        "GossipHintNames": [
+          "OOT_STICK",
+          "1 Deku Stick"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_STICKS_5",
+      "Name": "5 Deku Sticks",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_STICKS_5",
+          "5 Deku Sticks"
+        ],
+        "GossipHintNames": [
+          "OOT_STICKS_5",
+          "5 Deku Sticks"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_STICKS_10",
+      "Name": "10 Deku Sticks",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_STICKS_10",
+          "10 Deku Sticks"
+        ],
+        "GossipHintNames": [
+          "OOT_STICKS_10",
+          "10 Deku Sticks"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "MM_NUT",
+      "Name": "1 Deku Nut",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_NUT",
+          "1 Deku Nut"
+        ],
+        "GossipHintNames": [
+          "MM_NUT",
+          "1 Deku Nut"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "MM_NUTS_5",
+      "Name": "5 Deku Nuts",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_NUTS_5",
+          "5 Deku Nuts"
+        ],
+        "GossipHintNames": [
+          "MM_NUTS_5",
+          "5 Deku Nuts"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "MM_NUTS_10",
+      "Name": "10 Deku Nuts",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_NUTS_10",
+          "10 Deku Nuts"
+        ],
+        "GossipHintNames": [
+          "MM_NUTS_10",
+          "10 Deku Nuts"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "MM_STICK",
+      "Name": "1 Deku Stick",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_STICK",
+          "1 Deku Stick"
+        ],
+        "GossipHintNames": [
+          "MM_STICK",
+          "1 Deku Stick"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_NUT",
+      "Name": "1 Deku Nut",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_NUT",
+          "1 Deku Nut"
+        ],
+        "GossipHintNames": [
+          "SHARED_NUT",
+          "1 Deku Nut"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_NUTS_5",
+      "Name": "5 Deku Nuts",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_NUTS_5",
+          "5 Deku Nuts"
+        ],
+        "GossipHintNames": [
+          "SHARED_NUTS_5",
+          "5 Deku Nuts"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_NUTS_10",
+      "Name": "10 Deku Nuts",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_NUTS_10",
+          "10 Deku Nuts"
+        ],
+        "GossipHintNames": [
+          "SHARED_NUTS_10",
+          "10 Deku Nuts"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_STICK",
+      "Name": "1 Deku Stick",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_STICK",
+          "1 Deku Stick"
+        ],
+        "GossipHintNames": [
+          "SHARED_STICK",
+          "1 Deku Stick"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_STICKS_5",
+      "Name": "5 Deku Sticks",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_STICKS_5",
+          "5 Deku Sticks"
+        ],
+        "GossipHintNames": [
+          "SHARED_STICKS_5",
+          "5 Deku Sticks"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_STICKS_10",
+      "Name": "10 Deku Sticks",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_STICKS_10",
+          "10 Deku Sticks"
+        ],
+        "GossipHintNames": [
+          "SHARED_STICKS_10",
+          "10 Deku Sticks"
+        ],
+        "PriceDataNames": []
+      }
     }
   ],
   "EntranceList": [
