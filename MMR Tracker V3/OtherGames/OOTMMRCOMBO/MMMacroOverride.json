@@ -1,6 +1,7 @@
 ﻿{
   "has_bottle": "has(EMPTY_BOTTLE) || has(BOTTLED_POTION_RED) || has(BOTTLED_MILK) || event(GOLD_DUST_USED) || has(BOTTLED_CHATEAU_ROMANI)",
   "can_rescue_koume": "has_bottle",
+  "has_ocarina": "(sharedOcarina == false && has(OCARINA)) || (sharedOcarina == true && has(OCARINA, 2))",
   "can_break_boulders": "has_explosives || has(MASK_GORON)",
   "can_use_lens": "can_use_lens_strict || trick(MM_LENS)",
   "can_use_lens_strict": "has(MAGIC_UPGRADE) && has(LENS)",

@@ -5401,7 +5401,7 @@
     {
       "Id": "MM Milk Bar Troupe Leader Mask",
       "RequiredItems": [
-        "MM_OCARINA",
+        "MM_has_ocarina",
         "MM_MASK_DEKU",
         "MM_MASK_ZORA",
         "MM_MASK_GORON",
@@ -5893,7 +5893,7 @@
     {
       "Id": "MM Termina Field Gossip Stones HP",
       "RequiredItems": [
-        "MM_OCARINA",
+        "MM_has_ocarina",
         "MM_can_break_boulders",
         "MM Termina Field"
       ],
@@ -6107,7 +6107,7 @@
       "Id": "MM Deku Palace Sonata of Awakening",
       "RequiredItems": [
         "MM_MASK_DEKU",
-        "MM_OCARINA",
+        "MM_has_ocarina",
         "MM Deku Palace"
       ],
       "ConditionalItems": [
@@ -6831,7 +6831,6 @@
       "Id": "MM Goron Elder",
       "RequiredItems": [
         "MM_MASK_GORON",
-        "MM_OCARINA",
         "MM Twin Islands"
       ],
       "ConditionalItems": [
@@ -6843,6 +6842,7 @@
         ],
         [
           "MM_WELL_HOT_WATER",
+          "MM_OCARINA",
           "MM_SONG_SOARING"
         ]
       ],
@@ -7201,7 +7201,7 @@
       "Id": "MM Zora Hall Evan HP",
       "RequiredItems": [
         "MM_MASK_ZORA",
-        "MM_OCARINA",
+        "MM_has_ocarina",
         "MM Zora Hall"
       ],
       "ConditionalItems": [],
@@ -7268,7 +7268,7 @@
         "MM_ZORA_EGGS_TREASURE_ROOM",
         "MM_ZORA_EGGS_PINNACLE_ROCK",
         "MM_MASK_ZORA",
-        "MM_OCARINA",
+        "MM_has_ocarina",
         "MM Laboratory"
       ],
       "ConditionalItems": [],
@@ -24716,6 +24716,24 @@
         "MM_has_bottle"
       ],
       "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_has_ocarina",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "sharedOcarina == false",
+          "MM_OCARINA"
+        ],
+        [
+          "sharedOcarina == true",
+          "MM_OCARINA, 2"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",

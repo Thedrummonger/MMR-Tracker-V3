@@ -281,20 +281,9 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             AddSharedItemOptions("sharedMagic", "Shared Magic", new string[] { "MAGIC_UPGRADE" }, 1);
             AddSharedItemOptions("sharedMagicArrows", "Shared Magic Arrows", new string[] { "ARROW_FIRE", "ARROW_ICE", "ARROW_LIGHT" }, 1);
             AddSharedItemOptions("sharedSongs", "Shared Songs", new string[] { "SONG_TIME", "SONG_EPONA", "SONG_STORMS" }, 1);
-
-            //AddSharedItemOptions("sharedHookshots", "Shared Hookshot", new string[] { "HOOKSHOT" }, 2);
-            //AddSharedItemOptions("sharedLens", "Shared Lens", new string[] { "LENS" }, 1);
-            //AddSharedItemOptions("sharedOcarinas", "Shared Ocarina", new string[] { "OCARINA" }, 2);
-            //AddSharedItemOptions("sharedWallets", "Shared Wallet", new string[] { "WALLET" }, 2);
-
-            //AddSharedItemOptions("sharedKeaton", "Shared Keaton Mask", new string[] { "MASK_KEATON" }, 1);
-            //AddSharedItemOptions("sharedBunny", "Shared Bunny Hood", new string[] { "MASK_BUNNY" }, 1);
-            //AddSharedItemOptions("sharedZora", "Shared Zora Mask", new string[] { "MASK_ZORA" }, 1);
-            //AddSharedItemOptions("sharedGoron", "Shared Goron Mask", new string[] { "MASK_GORON" }, 1);
-
-            //AddSharedItemOptions("sharedSongEpona", "Shared Goron Mask", new string[] { "SONG_EPONA" }, 1);
-            //AddSharedItemOptions("sharedSongStorms", "Shared Goron Mask", new string[] { "SONG_STORMS" }, 1);
-            //AddSharedItemOptions("sharedSongTime", "Shared Goron Mask", new string[] { "SONG_TIME" }, 1);
+            AddSharedItemOptions("sharedOcarina", "Shared Ocarina", new string[] { "OCARINA" }, 2);
+            AddSharedItemOptions("sharedLens", "Shared Lens of Truth", new string[] { "LENS" }, 1);
+            AddSharedItemOptions("sharedHookshot", "Shared Hookshots", new string[] { "HOOKSHOT" }, 2);
 
             void AddSharedItemOptions(string ID, string Name, string[] Items, int LogicalAmount)
             {

@@ -19025,7 +19025,7 @@
     },
     {
       "ID": "SHARED_HOOKSHOT",
-      "Name": "Shared Hookshot",
+      "Name": "Progressive Hookshot",
       "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -19034,18 +19034,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "SHARED_HOOKSHOT",
-          "Shared Hookshot"
+          "Progressive Hookshot"
         ],
         "GossipHintNames": [
           "SHARED_HOOKSHOT",
-          "Shared Hookshot"
+          "Progressive Hookshot"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "SHARED_LENS",
-      "Name": "Shared Lens of Truth",
+      "Name": "Lens of Truth",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -19054,18 +19054,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "SHARED_LENS",
-          "Shared Lens of Truth"
+          "Lens of Truth"
         ],
         "GossipHintNames": [
           "SHARED_LENS",
-          "Shared Lens of Truth"
+          "Lens of Truth"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "SHARED_OCARINA",
-      "Name": "Shared Ocarina",
+      "Name": "Ocarina",
       "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -19074,111 +19074,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "SHARED_OCARINA",
-          "Shared Ocarina"
+          "Ocarina"
         ],
         "GossipHintNames": [
           "SHARED_OCARINA",
-          "Shared Ocarina"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "SHARED_MASK_KEATON",
-      "Name": "Shared Keaton Mask",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_MASK_KEATON",
-          "Shared Keaton Mask"
-        ],
-        "GossipHintNames": [
-          "SHARED_MASK_KEATON",
-          "Shared Keaton Mask"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "SHARED_MASK_BUNNY",
-      "Name": "Shared Bunny Hood",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_MASK_BUNNY",
-          "Shared Bunny Hood"
-        ],
-        "GossipHintNames": [
-          "SHARED_MASK_BUNNY",
-          "Shared Bunny Hood"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "SHARED_MASK_ZORA",
-      "Name": "Shared Zora Mask",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_MASK_ZORA",
-          "Shared Zora Mask"
-        ],
-        "GossipHintNames": [
-          "SHARED_MASK_ZORA",
-          "Shared Zora Mask"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "SHARED_MASK_GORON",
-      "Name": "Shared Goron Mask",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_MASK_GORON",
-          "Shared Goron Mask"
-        ],
-        "GossipHintNames": [
-          "SHARED_MASK_GORON",
-          "Shared Goron Mask"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "SHARED_WALLET",
-      "Name": "Shared Progressive Wallet",
-      "MaxAmountInWorld": 2,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_WALLET",
-          "Shared Progressive Wallet"
-        ],
-        "GossipHintNames": [
-          "SHARED_WALLET",
-          "Shared Progressive Wallet"
+          "Ocarina"
         ],
         "PriceDataNames": []
       }
@@ -28093,6 +27993,139 @@
               "amount": 0
             },
             "MM_SONG_STORMS": {
+              "action": "set",
+              "amount": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "ID": "sharedOcarina",
+      "DisplayName": "Shared Ocarina",
+      "CurrentValue": "false",
+      "SubCategory": "Shared Items",
+      "Values": {
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "SHARED_OCARINA": {
+              "action": "set",
+              "amount": 0
+            }
+          }
+        },
+        "true": {
+          "LogicReplacements": [
+            {
+              "LocationWhitelist": [],
+              "LocationBlacklist": [],
+              "ReplacementList": {
+                "OOT_OCARINA": "SHARED_OCARINA",
+                "MM_OCARINA": "SHARED_OCARINA",
+                "OOT_OCARINA, 2": "SHARED_OCARINA, 2",
+                "MM_OCARINA, 2": "SHARED_OCARINA, 2"
+              }
+            }
+          ],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "OOT_OCARINA": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_OCARINA": {
+              "action": "set",
+              "amount": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "ID": "sharedLens",
+      "DisplayName": "Shared Lens of Truth",
+      "CurrentValue": "false",
+      "SubCategory": "Shared Items",
+      "Values": {
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "SHARED_LENS": {
+              "action": "set",
+              "amount": 0
+            }
+          }
+        },
+        "true": {
+          "LogicReplacements": [
+            {
+              "LocationWhitelist": [],
+              "LocationBlacklist": [],
+              "ReplacementList": {
+                "OOT_LENS": "SHARED_LENS",
+                "MM_LENS": "SHARED_LENS"
+              }
+            }
+          ],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "OOT_LENS": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_LENS": {
+              "action": "set",
+              "amount": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "ID": "sharedHookshot",
+      "DisplayName": "Shared Hookshots",
+      "CurrentValue": "false",
+      "SubCategory": "Shared Items",
+      "Values": {
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "SHARED_HOOKSHOT": {
+              "action": "set",
+              "amount": 0
+            }
+          }
+        },
+        "true": {
+          "LogicReplacements": [
+            {
+              "LocationWhitelist": [],
+              "LocationBlacklist": [],
+              "ReplacementList": {
+                "OOT_HOOKSHOT": "SHARED_HOOKSHOT",
+                "MM_HOOKSHOT": "SHARED_HOOKSHOT",
+                "OOT_HOOKSHOT, 2": "SHARED_HOOKSHOT, 2",
+                "MM_HOOKSHOT, 2": "SHARED_HOOKSHOT, 2"
+              }
+            }
+          ],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "OOT_HOOKSHOT": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_HOOKSHOT": {
               "action": "set",
               "amount": 0
             }
