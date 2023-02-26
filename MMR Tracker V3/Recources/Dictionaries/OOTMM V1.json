@@ -19144,6 +19144,106 @@
       }
     },
     {
+      "ID": "SHARED_MASK_BUNNY",
+      "Name": "Bunny Hood",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_MASK_BUNNY",
+          "Bunny Hood"
+        ],
+        "GossipHintNames": [
+          "SHARED_MASK_BUNNY",
+          "Bunny Hood"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_MASK_GORON",
+      "Name": "Goron Mask",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_MASK_GORON",
+          "Goron Mask"
+        ],
+        "GossipHintNames": [
+          "SHARED_MASK_GORON",
+          "Goron Mask"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_MASK_KEATON",
+      "Name": "Keaton Mask",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_MASK_KEATON",
+          "Keaton Mask"
+        ],
+        "GossipHintNames": [
+          "SHARED_MASK_KEATON",
+          "Keaton Mask"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_MASK_TRUTH",
+      "Name": "Mask of Truth",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_MASK_TRUTH",
+          "Mask of Truth"
+        ],
+        "GossipHintNames": [
+          "SHARED_MASK_TRUTH",
+          "Mask of Truth"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_MASK_ZORA",
+      "Name": "Zora Mask",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_MASK_ZORA",
+          "Zora Mask"
+        ],
+        "GossipHintNames": [
+          "SHARED_MASK_ZORA",
+          "Zora Mask"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
       "ID": "OOT_BOSS_KEY_GANON",
       "Name": "Boss Key (Ganon)",
       "MaxAmountInWorld": 1,
@@ -28126,6 +28226,105 @@
               "amount": 0
             },
             "MM_HOOKSHOT": {
+              "action": "set",
+              "amount": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "ID": "sharedMasks",
+      "DisplayName": "Shared Masks",
+      "CurrentValue": "false",
+      "SubCategory": "Shared Items",
+      "Values": {
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "SHARED_MASK_ZORA": {
+              "action": "set",
+              "amount": 0
+            },
+            "SHARED_MASK_GORON": {
+              "action": "set",
+              "amount": 0
+            },
+            "SHARED_MASK_TRUTH": {
+              "action": "set",
+              "amount": 0
+            },
+            "SHARED_MASK_BUNNY": {
+              "action": "set",
+              "amount": 0
+            },
+            "SHARED_MASK_KEATON": {
+              "action": "set",
+              "amount": 0
+            }
+          }
+        },
+        "true": {
+          "LogicReplacements": [
+            {
+              "LocationWhitelist": [],
+              "LocationBlacklist": [],
+              "ReplacementList": {
+                "OOT_MASK_ZORA": "SHARED_MASK_ZORA",
+                "MM_MASK_ZORA": "SHARED_MASK_ZORA",
+                "OOT_MASK_GORON": "SHARED_MASK_GORON",
+                "MM_MASK_GORON": "SHARED_MASK_GORON",
+                "OOT_MASK_TRUTH": "SHARED_MASK_TRUTH",
+                "MM_MASK_TRUTH": "SHARED_MASK_TRUTH",
+                "OOT_MASK_BUNNY": "SHARED_MASK_BUNNY",
+                "MM_MASK_BUNNY": "SHARED_MASK_BUNNY",
+                "OOT_MASK_KEATON": "SHARED_MASK_KEATON",
+                "MM_MASK_KEATON": "SHARED_MASK_KEATON"
+              }
+            }
+          ],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "OOT_MASK_ZORA": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_MASK_ZORA": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_MASK_GORON": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_MASK_GORON": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_MASK_TRUTH": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_MASK_TRUTH": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_MASK_BUNNY": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_MASK_BUNNY": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_MASK_KEATON": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_MASK_KEATON": {
               "action": "set",
               "amount": 0
             }

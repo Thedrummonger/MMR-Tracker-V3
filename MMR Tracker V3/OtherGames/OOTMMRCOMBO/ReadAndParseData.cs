@@ -284,6 +284,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             AddSharedItemOptions("sharedOcarina", "Shared Ocarina", new string[] { "OCARINA" }, 2);
             AddSharedItemOptions("sharedLens", "Shared Lens of Truth", new string[] { "LENS" }, 1);
             AddSharedItemOptions("sharedHookshot", "Shared Hookshots", new string[] { "HOOKSHOT" }, 2);
+            AddSharedItemOptions("sharedMasks", "Shared Masks", new string[] { "MASK_ZORA", "MASK_GORON", "MASK_TRUTH", "MASK_BUNNY", "MASK_KEATON" }, 1);
 
             void AddSharedItemOptions(string ID, string Name, string[] Items, int LogicalAmount)
             {
