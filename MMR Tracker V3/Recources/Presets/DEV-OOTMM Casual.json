@@ -23982,10 +23982,10 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "OOT_EMPTY_BOTTLE"
+          "OOT_BOTTLE_EMPTY"
         ],
         [
-          "OOT_MILK_BOTTLE"
+          "OOT_BOTTLE_MILK"
         ],
         [
           "OOT_KING_ZORA_LETTER"
@@ -24690,13 +24690,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_EMPTY_BOTTLE"
+          "MM_BOTTLE_EMPTY"
         ],
         [
           "MM_BOTTLED_POTION_RED"
         ],
         [
-          "MM_BOTTLED_MILK"
+          "MM_BOTTLE_MILK"
         ],
         [
           "MM_GOLD_DUST_USED"

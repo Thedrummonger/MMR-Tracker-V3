@@ -14164,20 +14164,20 @@
       }
     },
     {
-      "ID": "MM_BOTTLED_MILK",
+      "ID": "MM_BOTTLE_MILK",
       "Name": "Bottle - Milk (MM)",
-      "MaxAmountInWorld": 1,
+      "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_BOTTLED_MILK",
+          "MM_BOTTLE_MILK",
           "Bottle - Milk (MM)"
         ],
         "GossipHintNames": [
-          "MM_BOTTLED_MILK",
+          "MM_BOTTLE_MILK",
           "Bottle - Milk (MM)"
         ],
         "PriceDataNames": []
@@ -14404,20 +14404,20 @@
       }
     },
     {
-      "ID": "MM_EMPTY_BOTTLE",
+      "ID": "MM_BOTTLE_EMPTY",
       "Name": "Bottle - Empty (MM)",
-      "MaxAmountInWorld": 2,
+      "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_EMPTY_BOTTLE",
+          "MM_BOTTLE_EMPTY",
           "Bottle - Empty (MM)"
         ],
         "GossipHintNames": [
-          "MM_EMPTY_BOTTLE",
+          "MM_BOTTLE_EMPTY",
           "Bottle - Empty (MM)"
         ],
         "PriceDataNames": []
@@ -16764,20 +16764,20 @@
       }
     },
     {
-      "ID": "OOT_EMPTY_BOTTLE",
+      "ID": "OOT_BOTTLE_EMPTY",
       "Name": "Bottle - Empty (OoT)",
-      "MaxAmountInWorld": 2,
+      "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_EMPTY_BOTTLE",
+          "OOT_BOTTLE_EMPTY",
           "Bottle - Empty (OoT)"
         ],
         "GossipHintNames": [
-          "OOT_EMPTY_BOTTLE",
+          "OOT_BOTTLE_EMPTY",
           "Bottle - Empty (OoT)"
         ],
         "PriceDataNames": []
@@ -17504,20 +17504,20 @@
       }
     },
     {
-      "ID": "OOT_MILK_BOTTLE",
+      "ID": "OOT_BOTTLE_MILK",
       "Name": "Bottle - Milk (OoT)",
-      "MaxAmountInWorld": 1,
+      "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_MILK_BOTTLE",
+          "OOT_BOTTLE_MILK",
           "Bottle - Milk (OoT)"
         ],
         "GossipHintNames": [
-          "OOT_MILK_BOTTLE",
+          "OOT_BOTTLE_MILK",
           "Bottle - Milk (OoT)"
         ],
         "PriceDataNames": []
@@ -19099,6 +19099,86 @@
         "GossipHintNames": [
           "SHARED_WALLET",
           "Progressive Wallet"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_HEART_PIECE",
+      "Name": "Heart Piece",
+      "MaxAmountInWorld": 44,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_HEART_PIECE",
+          "Heart Piece"
+        ],
+        "GossipHintNames": [
+          "SHARED_HEART_PIECE",
+          "Heart Piece"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_HEART_CONTAINER",
+      "Name": "Heart Container",
+      "MaxAmountInWorld": 6,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_HEART_CONTAINER",
+          "Heart Container"
+        ],
+        "GossipHintNames": [
+          "SHARED_HEART_CONTAINER",
+          "Heart Container"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_DEFENSE_UPGRADE",
+      "Name": "Double Defense",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_DEFENSE_UPGRADE",
+          "Double Defense"
+        ],
+        "GossipHintNames": [
+          "SHARED_DEFENSE_UPGRADE",
+          "Double Defense"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_RECOVERY_HEART",
+      "Name": "Recovery Heart",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_RECOVERY_HEART",
+          "Recovery Heart"
+        ],
+        "GossipHintNames": [
+          "SHARED_RECOVERY_HEART",
+          "Recovery Heart"
         ],
         "PriceDataNames": []
       }
@@ -28722,6 +28802,89 @@
               "amount": 0
             },
             "MM_RUPEE_HUGE": {
+              "action": "set",
+              "amount": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "ID": "sharedHealth",
+      "DisplayName": "Shared Health",
+      "CurrentValue": "false",
+      "SubCategory": "Shared Items",
+      "Values": {
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "SHARED_HEART_PIECE": {
+              "action": "set",
+              "amount": 0
+            },
+            "SHARED_HEART_CONTAINER": {
+              "action": "set",
+              "amount": 0
+            },
+            "SHARED_DEFENSE_UPGRADE": {
+              "action": "set",
+              "amount": 0
+            },
+            "SHARED_RECOVERY_HEART": {
+              "action": "set",
+              "amount": 0
+            }
+          }
+        },
+        "true": {
+          "LogicReplacements": [
+            {
+              "LocationWhitelist": [],
+              "LocationBlacklist": [],
+              "ReplacementList": {
+                "OOT_HEART_PIECE": "SHARED_HEART_PIECE",
+                "MM_HEART_PIECE": "SHARED_HEART_PIECE",
+                "OOT_HEART_CONTAINER": "SHARED_HEART_CONTAINER",
+                "MM_HEART_CONTAINER": "SHARED_HEART_CONTAINER",
+                "OOT_DEFENSE_UPGRADE": "SHARED_DEFENSE_UPGRADE",
+                "MM_DEFENSE_UPGRADE": "SHARED_DEFENSE_UPGRADE"
+              }
+            }
+          ],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "OOT_HEART_PIECE": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_HEART_PIECE": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_HEART_CONTAINER": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_HEART_CONTAINER": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_DEFENSE_UPGRADE": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_DEFENSE_UPGRADE": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_RECOVERY_HEART": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_RECOVERY_HEART": {
               "action": "set",
               "amount": 0
             }
