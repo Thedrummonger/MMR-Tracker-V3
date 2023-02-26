@@ -2687,7 +2687,7 @@
       "ID": "OOT Temple of Time Medallion",
       "Name": "Temple of Time Medallion",
       "OriginalItem": "OOT_MEDALLION_LIGHT",
-      "Area": "Sacred Realm",
+      "Area": "Temple of Time",
       "ValidItemTypes": [
         "item"
       ],
@@ -19185,7 +19185,7 @@
     },
     {
       "ID": "SHARED_SONG_EPONA",
-      "Name": "Shared Epona's Song",
+      "Name": "Epona's Song",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -19194,18 +19194,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "SHARED_SONG_EPONA",
-          "Shared Epona's Song"
+          "Epona's Song"
         ],
         "GossipHintNames": [
           "SHARED_SONG_EPONA",
-          "Shared Epona's Song"
+          "Epona's Song"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "SHARED_SONG_STORMS",
-      "Name": "Shared Song of Storms",
+      "Name": "Song of Storms",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -19214,18 +19214,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "SHARED_SONG_STORMS",
-          "Shared Song of Storms"
+          "Song of Storms"
         ],
         "GossipHintNames": [
           "SHARED_SONG_STORMS",
-          "Shared Song of Storms"
+          "Song of Storms"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "SHARED_SONG_TIME",
-      "Name": "Shared Song of Time",
+      "Name": "Song of Time",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -19234,11 +19234,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "SHARED_SONG_TIME",
-          "Shared Song of Time"
+          "Song of Time"
         ],
         "GossipHintNames": [
           "SHARED_SONG_TIME",
-          "Shared Song of Time"
+          "Song of Time"
         ],
         "PriceDataNames": []
       }
@@ -27714,6 +27714,76 @@
               "amount": 0
             },
             "MM_ARROW_LIGHT": {
+              "action": "set",
+              "amount": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "ID": "sharedSongs",
+      "DisplayName": "Shared Songs",
+      "CurrentValue": "false",
+      "Values": {
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "SHARED_SONG_TIME": {
+              "action": "set",
+              "amount": 0
+            },
+            "SHARED_SONG_EPONA": {
+              "action": "set",
+              "amount": 0
+            },
+            "SHARED_SONG_STORMS": {
+              "action": "set",
+              "amount": 0
+            }
+          }
+        },
+        "true": {
+          "LogicReplacements": [
+            {
+              "LocationWhitelist": [],
+              "LocationBlacklist": [],
+              "ReplacementList": {
+                "OOT_SONG_TIME": "SHARED_SONG_TIME",
+                "MM_SONG_TIME": "SHARED_SONG_TIME",
+                "OOT_SONG_EPONA": "SHARED_SONG_EPONA",
+                "MM_SONG_EPONA": "SHARED_SONG_EPONA",
+                "OOT_SONG_STORMS": "SHARED_SONG_STORMS",
+                "MM_SONG_STORMS": "SHARED_SONG_STORMS"
+              }
+            }
+          ],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "OOT_SONG_TIME": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_SONG_TIME": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_SONG_EPONA": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_SONG_EPONA": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_SONG_STORMS": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_SONG_STORMS": {
               "action": "set",
               "amount": 0
             }

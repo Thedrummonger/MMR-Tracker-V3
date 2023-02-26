@@ -266,9 +266,9 @@
   "SHARED_MASK_ZORA": "Shared Zora Mask",
   "SHARED_MASK_GORON": "Shared Goron Mask",
   "SHARED_WALLET": "Shared Progressive Wallet",
-  "SHARED_SONG_EPONA": "Shared Epona's Song",
-  "SHARED_SONG_STORMS": "Shared Song of Storms",
-  "SHARED_SONG_TIME": "Shared Song of Time",
+  "SHARED_SONG_EPONA": "Epona's Song",
+  "SHARED_SONG_STORMS": "Song of Storms",
+  "SHARED_SONG_TIME": "Song of Time",
 
   "OOT_BOSS_KEY_GANON": "Boss Key (Ganon)"
 }
