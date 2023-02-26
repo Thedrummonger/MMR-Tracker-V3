@@ -276,8 +276,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             //Temp Workaround for a typo in logic
             dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "MM_ZORA", RequiredItems = new List<string> { "MM_MASK_ZORA" } });
 
-            AddSharedItemOptions("sharedBows", "Shared Bows", new string[] { "BOW" }, 1);
-            AddSharedItemOptions("sharedBombBags", "Shared Bomb Bags", new string[] { "BOMB_BAG" }, 1);
+            AddSharedItemOptions("sharedBows", "Shared Bows", new string[] { "BOW" }, 1, new string[] { "ARROWS_5", "ARROWS_10", "ARROWS_30", "ARROWS_40", });
+            AddSharedItemOptions("sharedBombBags", "Shared Bomb Bags", new string[] { "BOMB_BAG" }, 1, new string[] { "BOMBS_5", "BOMBS_10", "BOMBS_20", "BOMBS_30", "BOMB" });
             AddSharedItemOptions("sharedMagic", "Shared Magic", new string[] { "MAGIC_UPGRADE" }, 1);
             AddSharedItemOptions("sharedMagicArrows", "Shared Magic Arrows", new string[] { "ARROW_FIRE", "ARROW_ICE", "ARROW_LIGHT" }, 1);
             AddSharedItemOptions("sharedSongs", "Shared Songs", new string[] { "SONG_TIME", "SONG_EPONA", "SONG_STORMS" }, 1);
@@ -285,8 +285,12 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             AddSharedItemOptions("sharedLens", "Shared Lens of Truth", new string[] { "LENS" }, 1);
             AddSharedItemOptions("sharedHookshot", "Shared Hookshots", new string[] { "HOOKSHOT" }, 2);
             AddSharedItemOptions("sharedMasks", "Shared Masks", new string[] { "MASK_ZORA", "MASK_GORON", "MASK_TRUTH", "MASK_BUNNY", "MASK_KEATON" }, 1);
+            AddSharedItemOptions("sharedWallets", "Shared Wallets", new string[] { "WALLET" }, 2, new string[] { "RUPEE_GREEN", "RUPEE_BLUE", "RUPEE_RED", "RUPEE_PURPLE", "RUPEE_SILVER", "RUPEE_GOLD", "RUPEE_HUGE" });
 
-            void AddSharedItemOptions(string ID, string Name, string[] Items, int LogicalAmount)
+            //Sticks and nuts doesn't change logic but the option can be added to toggle the shared drops **Actually not needed since I made the share names
+            //AddSharedItemOptions("sharedNutsSticks", "Shared Nuts and Sticks", Array.Empty<string>(), 1, new string[] { "NUT", "NUTS_5", "NUTS_5_ALT", "NUTS_10", "STICK", "STICKS_5", "STICKS_10" });
+
+            void AddSharedItemOptions(string ID, string Name, string[] Items, int LogicalAmount, string[] NonLogicReplacements = null)
             {
                 OptionData.LogicReplacement OnActionReplacementData = new();
 
@@ -312,6 +316,16 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                     offAction.AddMaxAmountEdit($"SHARED_{Item}", MiscData.MathOP.set, 0);
                 }
                 onAction.LogicReplacements = new OptionData.LogicReplacement[] { OnActionReplacementData };
+
+                if (NonLogicReplacements != null)
+                {
+                    foreach(var Item in NonLogicReplacements)
+                    {
+                        onAction.AddMaxAmountEdit($"OOT_{Item}", MiscData.MathOP.set, 0);
+                        onAction.AddMaxAmountEdit($"MM_{Item}", MiscData.MathOP.set, 0);
+                        offAction.AddMaxAmountEdit($"SHARED_{Item}", MiscData.MathOP.set, 0);
+                    }
+                }
 
                 OptionData.TrackerOption SharedItem = new()
                 {

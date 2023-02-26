@@ -15404,6 +15404,26 @@
       }
     },
     {
+      "ID": "MM_RUPEE_GREEN",
+      "Name": "Green Rupee (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_RUPEE_GREEN",
+          "Green Rupee (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_RUPEE_GREEN",
+          "Green Rupee (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
       "ID": "MM_RUPEE_BLUE",
       "Name": "Blue Rupee (MM)",
       "MaxAmountInWorld": -1,
@@ -18744,86 +18764,6 @@
       }
     },
     {
-      "ID": "SHARED_ARROWS_5",
-      "Name": "5 Arrows",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_ARROWS_5",
-          "5 Arrows"
-        ],
-        "GossipHintNames": [
-          "SHARED_ARROWS_5",
-          "5 Arrows"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "SHARED_ARROWS_10",
-      "Name": "10 Arrows",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_ARROWS_10",
-          "10 Arrows"
-        ],
-        "GossipHintNames": [
-          "SHARED_ARROWS_10",
-          "10 Arrows"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "SHARED_ARROWS_30",
-      "Name": "30 Arrows",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_ARROWS_30",
-          "30 Arrows"
-        ],
-        "GossipHintNames": [
-          "SHARED_ARROWS_30",
-          "30 Arrows"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "SHARED_ARROWS_40",
-      "Name": "40 Arrows",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_ARROWS_40",
-          "40 Arrows"
-        ],
-        "GossipHintNames": [
-          "SHARED_ARROWS_40",
-          "40 Arrows"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
       "ID": "SHARED_BOMB_BAG",
       "Name": "Shared Bomb Bag",
       "MaxAmountInWorld": 3,
@@ -18839,106 +18779,6 @@
         "GossipHintNames": [
           "SHARED_BOMB_BAG",
           "Shared Bomb Bag"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "SHARED_BOMB",
-      "Name": "1 Bomb",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_BOMB",
-          "1 Bomb"
-        ],
-        "GossipHintNames": [
-          "SHARED_BOMB",
-          "1 Bomb"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "SHARED_BOMBS_5",
-      "Name": "5 Bombs",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_BOMBS_5",
-          "5 Bombs"
-        ],
-        "GossipHintNames": [
-          "SHARED_BOMBS_5",
-          "5 Bombs"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "SHARED_BOMBS_10",
-      "Name": "10 Bombs",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_BOMBS_10",
-          "10 Bombs"
-        ],
-        "GossipHintNames": [
-          "SHARED_BOMBS_10",
-          "10 Bombs"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "SHARED_BOMBS_20",
-      "Name": "20 Bombs",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_BOMBS_20",
-          "20 Bombs"
-        ],
-        "GossipHintNames": [
-          "SHARED_BOMBS_20",
-          "20 Bombs"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "SHARED_BOMBS_30",
-      "Name": "30 Bombs",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_BOMBS_30",
-          "30 Bombs"
-        ],
-        "GossipHintNames": [
-          "SHARED_BOMBS_30",
-          "30 Bombs"
         ],
         "PriceDataNames": []
       }
@@ -19244,6 +19084,26 @@
       }
     },
     {
+      "ID": "SHARED_WALLET",
+      "Name": "Progressive Wallet",
+      "MaxAmountInWorld": 2,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_WALLET",
+          "Progressive Wallet"
+        ],
+        "GossipHintNames": [
+          "SHARED_WALLET",
+          "Progressive Wallet"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
       "ID": "OOT_BOSS_KEY_GANON",
       "Name": "Boss Key (Ganon)",
       "MaxAmountInWorld": 1,
@@ -19444,6 +19304,186 @@
       }
     },
     {
+      "ID": "SHARED_ARROWS_5",
+      "Name": "5 Arrows",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_ARROWS_5",
+          "5 Arrows"
+        ],
+        "GossipHintNames": [
+          "SHARED_ARROWS_5",
+          "5 Arrows"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_ARROWS_10",
+      "Name": "10 Arrows",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_ARROWS_10",
+          "10 Arrows"
+        ],
+        "GossipHintNames": [
+          "SHARED_ARROWS_10",
+          "10 Arrows"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_ARROWS_30",
+      "Name": "30 Arrows",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_ARROWS_30",
+          "30 Arrows"
+        ],
+        "GossipHintNames": [
+          "SHARED_ARROWS_30",
+          "30 Arrows"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_ARROWS_40",
+      "Name": "40 Arrows",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_ARROWS_40",
+          "40 Arrows"
+        ],
+        "GossipHintNames": [
+          "SHARED_ARROWS_40",
+          "40 Arrows"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_BOMB",
+      "Name": "1 Bomb",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_BOMB",
+          "1 Bomb"
+        ],
+        "GossipHintNames": [
+          "SHARED_BOMB",
+          "1 Bomb"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_BOMBS_5",
+      "Name": "5 Bombs",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_BOMBS_5",
+          "5 Bombs"
+        ],
+        "GossipHintNames": [
+          "SHARED_BOMBS_5",
+          "5 Bombs"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_BOMBS_10",
+      "Name": "10 Bombs",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_BOMBS_10",
+          "10 Bombs"
+        ],
+        "GossipHintNames": [
+          "SHARED_BOMBS_10",
+          "10 Bombs"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_BOMBS_20",
+      "Name": "20 Bombs",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_BOMBS_20",
+          "20 Bombs"
+        ],
+        "GossipHintNames": [
+          "SHARED_BOMBS_20",
+          "20 Bombs"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_BOMBS_30",
+      "Name": "30 Bombs",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_BOMBS_30",
+          "30 Bombs"
+        ],
+        "GossipHintNames": [
+          "SHARED_BOMBS_30",
+          "30 Bombs"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
       "ID": "SHARED_NUT",
       "Name": "1 Deku Nut",
       "MaxAmountInWorld": -1,
@@ -19559,6 +19599,126 @@
         "GossipHintNames": [
           "SHARED_STICKS_10",
           "10 Deku Sticks"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_RUPEE_GREEN",
+      "Name": "Green Rupee",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_RUPEE_GREEN",
+          "Green Rupee"
+        ],
+        "GossipHintNames": [
+          "SHARED_RUPEE_GREEN",
+          "Green Rupee"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_RUPEE_BLUE",
+      "Name": "Blue Rupee",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_RUPEE_BLUE",
+          "Blue Rupee"
+        ],
+        "GossipHintNames": [
+          "SHARED_RUPEE_BLUE",
+          "Blue Rupee"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_RUPEE_RED",
+      "Name": "Red Rupee",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_RUPEE_RED",
+          "Red Rupee"
+        ],
+        "GossipHintNames": [
+          "SHARED_RUPEE_RED",
+          "Red Rupee"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_RUPEE_PURPLE",
+      "Name": "Purple Rupee",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_RUPEE_PURPLE",
+          "Purple Rupee"
+        ],
+        "GossipHintNames": [
+          "SHARED_RUPEE_PURPLE",
+          "Purple Rupee"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_RUPEE_SILVER",
+      "Name": "Silver Rupee",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_RUPEE_SILVER",
+          "Silver Rupee"
+        ],
+        "GossipHintNames": [
+          "SHARED_RUPEE_SILVER",
+          "Silver Rupee"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_RUPEE_GOLD",
+      "Name": "Gold Rupee",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_RUPEE_GOLD",
+          "Gold Rupee"
+        ],
+        "GossipHintNames": [
+          "SHARED_RUPEE_GOLD",
+          "Gold Rupee"
         ],
         "PriceDataNames": []
       }
@@ -27843,6 +28003,22 @@
             "SHARED_BOW": {
               "action": "set",
               "amount": 0
+            },
+            "SHARED_ARROWS_5": {
+              "action": "set",
+              "amount": 0
+            },
+            "SHARED_ARROWS_10": {
+              "action": "set",
+              "amount": 0
+            },
+            "SHARED_ARROWS_30": {
+              "action": "set",
+              "amount": 0
+            },
+            "SHARED_ARROWS_40": {
+              "action": "set",
+              "amount": 0
             }
           }
         },
@@ -27867,6 +28043,38 @@
             "MM_BOW": {
               "action": "set",
               "amount": 0
+            },
+            "OOT_ARROWS_5": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_ARROWS_5": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_ARROWS_10": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_ARROWS_10": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_ARROWS_30": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_ARROWS_30": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_ARROWS_40": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_ARROWS_40": {
+              "action": "set",
+              "amount": 0
             }
           }
         }
@@ -27884,6 +28092,26 @@
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {
             "SHARED_BOMB_BAG": {
+              "action": "set",
+              "amount": 0
+            },
+            "SHARED_BOMBS_5": {
+              "action": "set",
+              "amount": 0
+            },
+            "SHARED_BOMBS_10": {
+              "action": "set",
+              "amount": 0
+            },
+            "SHARED_BOMBS_20": {
+              "action": "set",
+              "amount": 0
+            },
+            "SHARED_BOMBS_30": {
+              "action": "set",
+              "amount": 0
+            },
+            "SHARED_BOMB": {
               "action": "set",
               "amount": 0
             }
@@ -27908,6 +28136,46 @@
               "amount": 0
             },
             "MM_BOMB_BAG": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_BOMBS_5": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_BOMBS_5": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_BOMBS_10": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_BOMBS_10": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_BOMBS_20": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_BOMBS_20": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_BOMBS_30": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_BOMBS_30": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_BOMB": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_BOMB": {
               "action": "set",
               "amount": 0
             }
@@ -28325,6 +28593,135 @@
               "amount": 0
             },
             "MM_MASK_KEATON": {
+              "action": "set",
+              "amount": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "ID": "sharedWallets",
+      "DisplayName": "Shared Wallets",
+      "CurrentValue": "false",
+      "SubCategory": "Shared Items",
+      "Values": {
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "SHARED_WALLET": {
+              "action": "set",
+              "amount": 0
+            },
+            "SHARED_RUPEE_GREEN": {
+              "action": "set",
+              "amount": 0
+            },
+            "SHARED_RUPEE_BLUE": {
+              "action": "set",
+              "amount": 0
+            },
+            "SHARED_RUPEE_RED": {
+              "action": "set",
+              "amount": 0
+            },
+            "SHARED_RUPEE_PURPLE": {
+              "action": "set",
+              "amount": 0
+            },
+            "SHARED_RUPEE_SILVER": {
+              "action": "set",
+              "amount": 0
+            },
+            "SHARED_RUPEE_GOLD": {
+              "action": "set",
+              "amount": 0
+            },
+            "SHARED_RUPEE_HUGE": {
+              "action": "set",
+              "amount": 0
+            }
+          }
+        },
+        "true": {
+          "LogicReplacements": [
+            {
+              "LocationWhitelist": [],
+              "LocationBlacklist": [],
+              "ReplacementList": {
+                "OOT_WALLET": "SHARED_WALLET",
+                "MM_WALLET": "SHARED_WALLET",
+                "OOT_WALLET, 2": "SHARED_WALLET, 2",
+                "MM_WALLET, 2": "SHARED_WALLET, 2"
+              }
+            }
+          ],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "OOT_WALLET": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_WALLET": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_RUPEE_GREEN": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_RUPEE_GREEN": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_RUPEE_BLUE": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_RUPEE_BLUE": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_RUPEE_RED": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_RUPEE_RED": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_RUPEE_PURPLE": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_RUPEE_PURPLE": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_RUPEE_SILVER": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_RUPEE_SILVER": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_RUPEE_GOLD": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_RUPEE_GOLD": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_RUPEE_HUGE": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_RUPEE_HUGE": {
               "action": "set",
               "amount": 0
             }
