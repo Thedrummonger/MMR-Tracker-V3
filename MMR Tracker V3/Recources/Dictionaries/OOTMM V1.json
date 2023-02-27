@@ -14124,7 +14124,7 @@
       }
     },
     {
-      "ID": "MM_BOTTLED_CHATEAU_ROMANI",
+      "ID": "MM_BOTTLE_CHATEAU",
       "Name": "Bottle - Chateau Romani (MM)",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
@@ -14133,11 +14133,11 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_BOTTLED_CHATEAU_ROMANI",
+          "MM_BOTTLE_CHATEAU",
           "Bottle - Chateau Romani (MM)"
         ],
         "GossipHintNames": [
-          "MM_BOTTLED_CHATEAU_ROMANI",
+          "MM_BOTTLE_CHATEAU",
           "Bottle - Chateau Romani (MM)"
         ],
         "PriceDataNames": []
@@ -14166,7 +14166,7 @@
     {
       "ID": "MM_BOTTLE_MILK",
       "Name": "Bottle - Milk (MM)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14186,7 +14186,7 @@
     {
       "ID": "MM_BOTTLE_POTION_RED",
       "Name": "Bottle - Red Potion (MM)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -14406,7 +14406,7 @@
     {
       "ID": "MM_BOTTLE_EMPTY",
       "Name": "Bottle - Empty (MM)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -16766,7 +16766,7 @@
     {
       "ID": "OOT_BOTTLE_EMPTY",
       "Name": "Bottle - Empty (OoT)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -17506,7 +17506,7 @@
     {
       "ID": "OOT_BOTTLE_MILK",
       "Name": "Bottle - Milk (OoT)",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
