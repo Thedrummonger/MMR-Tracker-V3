@@ -18905,7 +18905,7 @@
     },
     {
       "ID": "SHARED_OCARINA",
-      "Name": "Ocarina",
+      "Name": "Progressive Ocarina",
       "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -18914,11 +18914,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "SHARED_OCARINA",
-          "Ocarina"
+          "Progressive Ocarina"
         ],
         "GossipHintNames": [
           "SHARED_OCARINA",
-          "Ocarina"
+          "Progressive Ocarina"
         ],
         "PriceDataNames": []
       }
