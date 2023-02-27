@@ -7854,7 +7854,7 @@
     {
       "ID": "MM Milk Bar Madame Aroma Bottle",
       "Name": "Milk Bar Madame Aroma Bottle",
-      "OriginalItem": "MM_BOTTLED_CHATEAU_ROMANI",
+      "OriginalItem": "MM_BOTTLE_CHATEAU",
       "Area": "East Clock Town",
       "ValidItemTypes": [
         "item"
@@ -8728,7 +8728,7 @@
     {
       "ID": "MM Swamp Potion Shop Kotake",
       "Name": "Swamp Potion Shop Kotake",
-      "OriginalItem": "MM_BOTTLED_POTION_RED",
+      "OriginalItem": "MM_BOTTLE_POTION_RED",
       "Area": "Southern Swamp",
       "ValidItemTypes": [
         "item"
