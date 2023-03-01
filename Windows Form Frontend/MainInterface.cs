@@ -253,6 +253,10 @@ namespace Windows_Form_Frontend
 
         private void CodeTestingToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            MMR_Tracker_V3.OtherGames.SkywardSwordRando.ReadAndParse.ReadWebData();
+
+            return;
+
             MMR_Tracker_V3.OtherGames.OOTMMRCOMBO.ReadAndParseData.CreateFiles(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary);
 
             WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(Logic), JsonConvert.SerializeObject(dictionary));
@@ -266,42 +270,6 @@ namespace Windows_Form_Frontend
                 }
 
             }
-
-            var TestingFolder = References.TestingPaths.GetDevTestingPath();
-            var SaveTestingFolder = Path.Combine(TestingFolder, "SaveTesting");
-            if (!Directory.Exists(SaveTestingFolder)) { Directory.CreateDirectory(SaveTestingFolder); }
-            var BaseSaveFile = Path.Combine(SaveTestingFolder, "BaseSave.MMRTSAV");
-            var ByteSaveFile = Path.Combine(SaveTestingFolder, "ByteSave.MMRTSAV");
-            var ByteStringSaveFile = Path.Combine(SaveTestingFolder, "ByteStringSave.MMRTSAV");
-            var DecompByteSave = Path.Combine(SaveTestingFolder, "DecompByteSave.MMRTSAV");
-            var DecompStringSave = Path.Combine(SaveTestingFolder, "DecompStringSave.MMRTSAV");
-
-            string SaveData = InstanceContainer.Instance.ToString();
-            File.WriteAllText(BaseSaveFile, SaveData);
-
-            var CompressedSave = new SaveCompressor.CompressedSave(SaveData);
-
-            File.WriteAllBytes(ByteSaveFile, CompressedSave.Bytes);
-            File.WriteAllText(ByteStringSaveFile, CompressedSave.ToString());
-
-            byte[] ReadByteFile = File.ReadAllBytes(ByteSaveFile);
-            string ReadByteStringFile = File.ReadAllText(ByteStringSaveFile);
-
-            File.WriteAllText(DecompByteSave, SaveCompressor.Decompress(ReadByteFile));
-            File.WriteAllText(DecompStringSave, SaveCompressor.Decompress(ReadByteStringFile));
-
-            var Groups = Utility.GetCategoriesFromFile(InstanceContainer.Instance);
-            List<string> MissingAreas = new List<string>();
-
-            foreach (var i in InstanceContainer.Instance.LocationPool.Values)
-            {
-                string LocArea = i.GetDictEntry(InstanceContainer.Instance).Area;
-                if (!Groups.ContainsKey(LocArea.ToLower()) && !MissingAreas.Contains(LocArea))
-                {
-                    MissingAreas.Add(LocArea);
-                }
-            }
-            Testing.PrintObjectToConsole(MissingAreas);
 
         }
 
