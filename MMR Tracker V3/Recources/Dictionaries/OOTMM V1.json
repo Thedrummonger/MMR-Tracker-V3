@@ -176,6 +176,25 @@
       "LocationProxys": []
     },
     {
+      "ID": "OOT Kokiri Forest Cow",
+      "Name": "Kokiri Forest Cow",
+      "OriginalItem": "OOT_MILK",
+      "Area": "Kokiri Forest",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Kokiri Forest Cow"
+        ],
+        "GossipHintNames": [
+          "OOT Kokiri Forest Cow"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
       "ID": "OOT Malon Egg",
       "Name": "Malon Egg",
       "OriginalItem": "OOT_CHICKEN",
@@ -860,6 +879,25 @@
       "LocationProxys": []
     },
     {
+      "ID": "OOT Kakariko Cow",
+      "Name": "Kakariko Cow",
+      "OriginalItem": "OOT_MILK",
+      "Area": "Kakariko",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Kakariko Cow"
+        ],
+        "GossipHintNames": [
+          "OOT Kakariko Cow"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
       "ID": "OOT Graveyard Dampe Game",
       "Name": "Graveyard Dampe Game",
       "OriginalItem": "OOT_HEART_PIECE",
@@ -1234,6 +1272,25 @@
         ],
         "GossipHintNames": [
           "OOT Death Mountain GS Before Climb"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Death Mountain Cow",
+      "Name": "Death Mountain Cow",
+      "OriginalItem": "OOT_MILK",
+      "Area": "Death Mountain Trail",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Death Mountain Cow"
+        ],
+        "GossipHintNames": [
+          "OOT Death Mountain Cow"
         ],
         "PriceDataNames": []
       },
@@ -2285,6 +2342,82 @@
       "LocationProxys": []
     },
     {
+      "ID": "OOT Lon Lon Ranch Stables Cow Left",
+      "Name": "Lon Lon Ranch Stables Cow Left",
+      "OriginalItem": "OOT_MILK",
+      "Area": "Lon Lon Ranch",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Lon Lon Ranch Stables Cow Left"
+        ],
+        "GossipHintNames": [
+          "OOT Lon Lon Ranch Stables Cow Left"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Lon Lon Ranch Stables Cow Right",
+      "Name": "Lon Lon Ranch Stables Cow Right",
+      "OriginalItem": "OOT_MILK",
+      "Area": "Lon Lon Ranch",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Lon Lon Ranch Stables Cow Right"
+        ],
+        "GossipHintNames": [
+          "OOT Lon Lon Ranch Stables Cow Right"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Lon Lon Ranch Silo Cow Front",
+      "Name": "Lon Lon Ranch Silo Cow Front",
+      "OriginalItem": "OOT_MILK",
+      "Area": "Lon Lon Ranch",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Lon Lon Ranch Silo Cow Front"
+        ],
+        "GossipHintNames": [
+          "OOT Lon Lon Ranch Silo Cow Front"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Lon Lon Ranch Silo Cow Back",
+      "Name": "Lon Lon Ranch Silo Cow Back",
+      "OriginalItem": "OOT_MILK",
+      "Area": "Lon Lon Ranch",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Lon Lon Ranch Silo Cow Back"
+        ],
+        "GossipHintNames": [
+          "OOT Lon Lon Ranch Silo Cow Back"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
       "ID": "OOT Hyrule Field Ocarina of Time",
       "Name": "Hyrule Field Ocarina of Time",
       "OriginalItem": "OOT_OCARINA",
@@ -2450,6 +2583,25 @@
         ],
         "GossipHintNames": [
           "OOT Hyrule Field Grotto Near Gerudo GS"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Hyrule Field Cow",
+      "Name": "Hyrule Field Cow",
+      "OriginalItem": "OOT_MILK",
+      "Area": "Hyrule Field",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Hyrule Field Cow"
+        ],
+        "GossipHintNames": [
+          "OOT Hyrule Field Cow"
         ],
         "PriceDataNames": []
       },
@@ -2925,6 +3077,25 @@
         ],
         "GossipHintNames": [
           "OOT Gerudo Valley GS Pillar"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Gerudo Valley Cow",
+      "Name": "Gerudo Valley Cow",
+      "OriginalItem": "OOT_MILK",
+      "Area": "Gerudo Valley",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Gerudo Valley Cow"
+        ],
+        "GossipHintNames": [
+          "OOT Gerudo Valley Cow"
         ],
         "PriceDataNames": []
       },
@@ -8555,6 +8726,44 @@
       "LocationProxys": []
     },
     {
+      "ID": "MM Termina Field Cow Front",
+      "Name": "Termina Field Cow Front",
+      "OriginalItem": "MM_MILK",
+      "Area": "Termina Field",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Termina Field Cow Front"
+        ],
+        "GossipHintNames": [
+          "MM Termina Field Cow Front"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "MM Termina Field Cow Back",
+      "Name": "Termina Field Cow Back",
+      "OriginalItem": "MM_MILK",
+      "Area": "Termina Field",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Termina Field Cow Back"
+        ],
+        "GossipHintNames": [
+          "MM Termina Field Cow Back"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
       "ID": "MM Road to Southern Swamp HP",
       "Name": "Road to Southern Swamp HP",
       "OriginalItem": "MM_HEART_PIECE",
@@ -10056,6 +10265,63 @@
       "LocationProxys": []
     },
     {
+      "ID": "MM Romani Ranch Barn Cow Left",
+      "Name": "Romani Ranch Barn Cow Left",
+      "OriginalItem": "MM_MILK",
+      "Area": "Romani Ranch",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Romani Ranch Barn Cow Left"
+        ],
+        "GossipHintNames": [
+          "MM Romani Ranch Barn Cow Left"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "MM Romani Ranch Barn Cow Right Front",
+      "Name": "Romani Ranch Barn Cow Right Front",
+      "OriginalItem": "MM_MILK",
+      "Area": "Romani Ranch",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Romani Ranch Barn Cow Right Front"
+        ],
+        "GossipHintNames": [
+          "MM Romani Ranch Barn Cow Right Front"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "MM Romani Ranch Barn Cow Right Back",
+      "Name": "Romani Ranch Barn Cow Right Back",
+      "OriginalItem": "MM_MILK",
+      "Area": "Romani Ranch",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Romani Ranch Barn Cow Right Back"
+        ],
+        "GossipHintNames": [
+          "MM Romani Ranch Barn Cow Right Back"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
       "ID": "MM Cucco Shack Bunny Mask",
       "Name": "Cucco Shack Bunny Mask",
       "OriginalItem": "MM_MASK_BUNNY",
@@ -10183,6 +10449,44 @@
         ],
         "GossipHintNames": [
           "MM Great Bay Coast Fisherman Grotto"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "MM Great Bay Coast Cow Front",
+      "Name": "Great Bay Coast Cow Front",
+      "OriginalItem": "MM_MILK",
+      "Area": "Great Bay Coast",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Great Bay Coast Cow Front"
+        ],
+        "GossipHintNames": [
+          "MM Great Bay Coast Cow Front"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "MM Great Bay Coast Cow Back",
+      "Name": "Great Bay Coast Cow Back",
+      "OriginalItem": "MM_MILK",
+      "Area": "Great Bay Coast",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Great Bay Coast Cow Back"
+        ],
+        "GossipHintNames": [
+          "MM Great Bay Coast Cow Back"
         ],
         "PriceDataNames": []
       },
@@ -13096,6 +13400,25 @@
         ],
         "GossipHintNames": [
           "MM Beneath the Well Mirror Shield"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "MM Beneath the Well Cow",
+      "Name": "Beneath the Well Cow",
+      "OriginalItem": "MM_MILK",
+      "Area": "Beneath the Well",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Beneath the Well Cow"
+        ],
+        "GossipHintNames": [
+          "MM Beneath the Well Cow"
         ],
         "PriceDataNames": []
       },
@@ -18744,6 +19067,46 @@
       }
     },
     {
+      "ID": "OOT_MILK",
+      "Name": "Milk (OoT)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_MILK",
+          "Milk (OoT)"
+        ],
+        "GossipHintNames": [
+          "OOT_MILK",
+          "Milk (OoT)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "MM_MILK",
+      "Name": "Milk (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_MILK",
+          "Milk (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_MILK",
+          "Milk (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
       "ID": "SHARED_BOW",
       "Name": "Shared Bow",
       "MaxAmountInWorld": 3,
@@ -21328,9 +21691,25 @@
       "DestinationHasSingleEntrance": false
     },
     {
+      "ID": "OOT Lon Lon Ranch => OOT Lon Lon Ranch Stables",
+      "Area": "OOT Lon Lon Ranch",
+      "Exit": "OOT Lon Lon Ranch Stables",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
       "ID": "OOT Lon Lon Ranch => OOT Lon Lon Ranch House",
       "Area": "OOT Lon Lon Ranch",
       "Exit": "OOT Lon Lon Ranch House",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Lon Lon Ranch Stables => OOT Lon Lon Ranch",
+      "Area": "OOT Lon Lon Ranch Stables",
+      "Exit": "OOT Lon Lon Ranch",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -27160,6 +27539,7 @@
     "OOT Treasure Game",
     "OOT Market Destroyed",
     "OOT Lon Lon Ranch",
+    "OOT Lon Lon Ranch Stables",
     "OOT Lon Lon Ranch Silo",
     "OOT Lon Lon Ranch House",
     "OOT Hyrule Castle",

@@ -109,6 +109,21 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Kokiri Forest Cow",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT_MALON_COW",
+        "OOT_OCARINA",
+        "OOT_SONG_EPONA",
+        "OOT Link's House"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Malon Egg",
       "RequiredItems": [
         "OOT_MALON",
@@ -572,6 +587,19 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Kakariko Cow",
+      "RequiredItems": [
+        "OOT_OCARINA",
+        "OOT_SONG_EPONA",
+        "OOT Kakariko"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Graveyard Dampe Game",
       "RequiredItems": [
         "OOT_is_child",
@@ -816,6 +844,20 @@
         "OOT_gs_night",
         "OOT_can_hammer",
         "OOT Death Mountain Summit"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Death Mountain Cow",
+      "RequiredItems": [
+        "OOT_has_explosives_or_hammer",
+        "OOT_OCARINA",
+        "OOT_SONG_EPONA",
+        "OOT Death Mountain"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -1607,6 +1649,58 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Lon Lon Ranch Stables Cow Left",
+      "RequiredItems": [
+        "OOT_OCARINA",
+        "OOT_SONG_EPONA",
+        "OOT Lon Lon Ranch Stables"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Lon Lon Ranch Stables Cow Right",
+      "RequiredItems": [
+        "OOT_OCARINA",
+        "OOT_SONG_EPONA",
+        "OOT Lon Lon Ranch Stables"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Lon Lon Ranch Silo Cow Front",
+      "RequiredItems": [
+        "OOT_OCARINA",
+        "OOT_SONG_EPONA",
+        "OOT Lon Lon Ranch Silo"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Lon Lon Ranch Silo Cow Back",
+      "RequiredItems": [
+        "OOT_OCARINA",
+        "OOT_SONG_EPONA",
+        "OOT Lon Lon Ranch Silo"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Hyrule Field Ocarina of Time",
       "RequiredItems": [
         "OOT_has_spiritual_stones",
@@ -1708,6 +1802,28 @@
       "RequiredItems": [
         "OOT_can_collect_distance",
         "OOT_has_fire",
+        "OOT Hyrule Field"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_is_child",
+          "OOT_hidden_grotto_bomb"
+        ],
+        [
+          "OOT_can_hammer"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Hyrule Field Cow",
+      "RequiredItems": [
+        "OOT_has_fire",
+        "OOT_OCARINA",
+        "OOT_SONG_EPONA",
         "OOT Hyrule Field"
       ],
       "ConditionalItems": [
@@ -2039,6 +2155,20 @@
         "OOT_can_hookshot",
         "OOT_gs_night",
         "OOT Gerudo Valley After Bridge"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Valley Cow",
+      "RequiredItems": [
+        "OOT_is_child",
+        "OOT_OCARINA",
+        "OOT_SONG_EPONA",
+        "OOT Gerudo Valley"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5917,6 +6047,34 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Termina Field Cow Front",
+      "RequiredItems": [
+        "MM_has_explosives",
+        "MM_OCARINA",
+        "MM_SONG_EPONA",
+        "MM Termina Field"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Termina Field Cow Back",
+      "RequiredItems": [
+        "MM_has_explosives",
+        "MM_OCARINA",
+        "MM_SONG_EPONA",
+        "MM Termina Field"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Road to Southern Swamp HP",
       "RequiredItems": [
         "MM_has_weapon_range",
@@ -7004,6 +7162,48 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Romani Ranch Barn Cow Left",
+      "RequiredItems": [
+        "MM_can_use_keg",
+        "MM_OCARINA",
+        "MM_SONG_EPONA",
+        "MM Stables"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Romani Ranch Barn Cow Right Front",
+      "RequiredItems": [
+        "MM_can_use_keg",
+        "MM_OCARINA",
+        "MM_SONG_EPONA",
+        "MM Stables"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Romani Ranch Barn Cow Right Back",
+      "RequiredItems": [
+        "MM_can_use_keg",
+        "MM_OCARINA",
+        "MM_SONG_EPONA",
+        "MM Stables"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Cucco Shack Bunny Mask",
       "RequiredItems": [
         "MM_MASK_BREMEN",
@@ -7090,6 +7290,34 @@
     {
       "Id": "MM Great Bay Coast Fisherman Grotto",
       "RequiredItems": [
+        "MM Great Bay Coast"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Great Bay Coast Cow Front",
+      "RequiredItems": [
+        "MM_HOOKSHOT",
+        "MM_OCARINA",
+        "MM_SONG_EPONA",
+        "MM Great Bay Coast"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Great Bay Coast Cow Back",
+      "RequiredItems": [
+        "MM_HOOKSHOT",
+        "MM_OCARINA",
+        "MM_SONG_EPONA",
         "MM Great Bay Coast"
       ],
       "ConditionalItems": [],
@@ -9223,6 +9451,21 @@
           "MM_WELL_BIG_POE"
         ]
       ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Beneath the Well Cow",
+      "RequiredItems": [
+        "MM_MASK_GIBDO",
+        "MM_has_bottle",
+        "MM_OCARINA",
+        "MM_SONG_EPONA",
+        "MM Beneath the Well East Section"
+      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -12849,6 +13092,17 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Lon Lon Ranch => OOT Lon Lon Ranch Stables",
+      "RequiredItems": [
+        "OOT Lon Lon Ranch"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Lon Lon Ranch => OOT Lon Lon Ranch House",
       "RequiredItems": [
         "OOT Lon Lon Ranch"
@@ -12866,6 +13120,30 @@
         "OOT_OCARINA",
         "OOT_SONG_EPONA",
         "OOT Lon Lon Ranch"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_MALON_COW",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT_EPONA",
+        "OOT Lon Lon Ranch"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Lon Lon Ranch Stables => OOT Lon Lon Ranch",
+      "RequiredItems": [
+        "OOT Lon Lon Ranch Stables"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
