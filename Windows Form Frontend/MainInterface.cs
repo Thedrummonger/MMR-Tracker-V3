@@ -13,6 +13,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -24,6 +25,8 @@ namespace Windows_Form_Frontend
         public static MainInterface CurrentProgram;
         Pathfinder MainInterfacepathfinder = new Pathfinder();
         private bool FormIsMaximized = false;
+        Thread MainInterfaceItemDisplayThread = null;
+        ItemDisplay MainInterfaceItemDisplayForm = null;
         public MainInterface()
         {
             InitializeComponent();
@@ -123,6 +126,7 @@ namespace Windows_Form_Frontend
             Utility.TimeCodeExecution(TimeTotalItemSelect, "Undo/Redo Action", -1);
 
             InstanceContainer.logicCalculation.CalculateLogic();
+            SendDataToItemDisplay();
             UpdateUI();
         }
 
@@ -251,10 +255,37 @@ namespace Windows_Form_Frontend
 
         //Menu Strip => Dev
 
+        private void ShowItemDisplayForm()
+        {
+            if (MainInterfaceItemDisplayThread == null || !MainInterfaceItemDisplayThread.IsAlive || MainInterfaceItemDisplayForm == null)
+            {
+                MainInterfaceItemDisplayForm = new ItemDisplay(this);
+                MainInterfaceItemDisplayThread = new Thread(new ThreadStart(() => MainInterfaceItemDisplayForm.ShowDialog()));
+                MainInterfaceItemDisplayThread.Start();
+                while(!Utility.OBJIsThreadSafe(MainInterfaceItemDisplayThread, MainInterfaceItemDisplayForm)) { Thread.Sleep(10); }
+                SendDataToItemDisplay();
+            }
+            else
+            {
+                MainInterfaceItemDisplayForm.Invoke(new Action(delegate {
+                    MainInterfaceItemDisplayForm.Activate();
+                }));
+                SendDataToItemDisplay();
+            }
+        }
+
+        private async void SendDataToItemDisplay()
+        {
+            if (!Utility.OBJIsThreadSafe(MainInterfaceItemDisplayThread, MainInterfaceItemDisplayForm)) { return; }
+            var newState = ItemTracker.CaptureTrackerState(InstanceContainer.Instance);
+            await Task.Run(() => MainInterfaceItemDisplayForm.Invoke(new MethodInvoker(delegate { MainInterfaceItemDisplayForm.UpdateData(newState); })));
+        }
+
         private void CodeTestingToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            ShowItemDisplayForm();
             //MMR_Tracker_V3.OtherGames.SkywardSwordRando.ReadAndParse.ReadWebData();
-            //return;
+            return;
 
             MMR_Tracker_V3.OtherGames.OOTMMRCOMBO.ReadAndParseData.CreateFiles(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary);
 
@@ -995,7 +1026,11 @@ namespace Windows_Form_Frontend
 
             bool ChangesMade = TrackerDataHandeling.CheckSelectedItems(Items, checkState, InstanceContainer, HandleUnassignedChecks, HandleUnassignedVariables, EnforceMarkAction);
 
-            if (ChangesMade) { SaveTrackerState(CurrentState); }
+            if (ChangesMade) 
+            { 
+                SaveTrackerState(CurrentState);
+                SendDataToItemDisplay();
+            }
             UpdateUI();
         }
 

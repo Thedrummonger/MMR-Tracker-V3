@@ -11,6 +11,7 @@ using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace MMR_Tracker_V3
@@ -121,6 +122,7 @@ namespace MMR_Tracker_V3
                 _ => obj.ToString(),
             };
         }
+
         public static string GetEntranceDisplayName(EntranceData.EntranceRandoExit ExitObjectObject, LogicObjects.TrackerInstance instance)
         {
             var Destination = ExitObjectObject.GetDestinationAtExit(instance);
@@ -223,6 +225,12 @@ namespace MMR_Tracker_V3
             bool ReqEqual = logicItem1.RequiredItems.SequenceEqual(logicItem2.RequiredItems);
             bool ConEqual = logicItem1.ConditionalItems.SelectMany(x => x).SequenceEqual(logicItem2.ConditionalItems.SelectMany(x => x));
             return ReqEqual && ConEqual;
+        }
+
+        public static bool OBJIsThreadSafe(Thread thread, dynamic Obj)
+        {
+            bool IsWinformSafe = Obj is not null && (!Utility.DynamicPropertyExist(Obj, "IsHandleCreated") || Obj.IsHandleCreated);
+            return thread is not null && thread.IsAlive && Obj is not null && IsWinformSafe;
         }
 
     }

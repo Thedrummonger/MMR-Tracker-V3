@@ -12,10 +12,6 @@ namespace MMR_Tracker_V3
 {
     public static class ItemTracker
     {
-        public class ItemStateChangeEventArgs : EventArgs
-        {
-            public TrackerState NewState { get; set; }
-        }
 
         public enum TextPosition
         {
@@ -54,11 +50,6 @@ namespace MMR_Tracker_V3
             public int ImagesPerLimiterDirection { get; set; } = 6;
             public TrackerState trackerState { get; set; }
             public List<DisplayBox> DisplayBoxes { get; set; }
-
-            private void X_ItemStateUpdated(object sender, ItemStateChangeEventArgs e)
-            {
-                trackerState = e.NewState;
-            }
 
         }
 
