@@ -25755,6 +25755,7 @@
         [
           "OOT_BOW",
           "OOT_ARROW_FIRE",
+          "OOT_has_sticks",
           "OOT_has_explosives"
         ],
         [
@@ -25764,6 +25765,7 @@
         [
           "OOT_BOW",
           "OOT_ARROW_FIRE",
+          "OOT_has_sticks",
           "OOT_SMALL_KEY_SPIRIT, 2"
         ],
         [
@@ -26287,7 +26289,18 @@
     {
       "Id": "OOT_has_shield",
       "RequiredItems": [],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SHIELD_HYLIAN"
+        ],
+        [
+          "OOT_has_mirror_shield"
+        ],
+        [
+          "OOT_is_child",
+          "OOT_SHIELD_DEKU"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
