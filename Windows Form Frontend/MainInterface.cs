@@ -255,11 +255,17 @@ namespace Windows_Form_Frontend
 
         //Menu Strip => Dev
 
+        private WinFormImageUtils.ItemTrackerInstance GetImageSheet()
+        {
+            return new WinFormImageUtils.ItemTrackerInstance { imageSheet = new WinFormImageUtils.ImageSheet { ImageSheetPath = Path.Combine("ItemTrackerData", "MMR.png") } };
+        }
+
         private void ShowItemDisplayForm()
         {
             if (MainInterfaceItemDisplayThread == null || !MainInterfaceItemDisplayThread.IsAlive || MainInterfaceItemDisplayForm == null)
             {
-                MainInterfaceItemDisplayForm = new ItemDisplay(this);
+
+                MainInterfaceItemDisplayForm = new ItemDisplay(this, GetImageSheet());
                 MainInterfaceItemDisplayThread = new Thread(new ThreadStart(() => MainInterfaceItemDisplayForm.ShowDialog()));
                 MainInterfaceItemDisplayThread.Start();
                 while(!Utility.OBJIsThreadSafe(MainInterfaceItemDisplayThread, MainInterfaceItemDisplayForm)) { Thread.Sleep(10); }
@@ -277,13 +283,12 @@ namespace Windows_Form_Frontend
         private async void SendDataToItemDisplay()
         {
             if (!Utility.OBJIsThreadSafe(MainInterfaceItemDisplayThread, MainInterfaceItemDisplayForm)) { return; }
-            var newState = ItemTracker.CaptureTrackerState(InstanceContainer.Instance);
+            var newState = WinFormImageUtils.CaptureTrackerState(InstanceContainer.Instance);
             await Task.Run(() => MainInterfaceItemDisplayForm.Invoke(new MethodInvoker(delegate { MainInterfaceItemDisplayForm.UpdateData(newState); })));
         }
 
         private void CodeTestingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ShowItemDisplayForm();
             //MMR_Tracker_V3.OtherGames.SkywardSwordRando.ReadAndParse.ReadWebData();
             return;
 
@@ -675,6 +680,7 @@ namespace Windows_Form_Frontend
             importSpoilerLogToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
             PathFinderToolStripMenuItem.Visible = (InstanceContainer.Instance != null && InstanceContainer.Instance.EntrancePool.IsEntranceRando);
 
+            visualItemTrackerToolStripMenuItem.Visible = Testing.Debugging();
             logicEditorToolStripMenuItem.Visible = Testing.Debugging();
 
             if (InstanceContainer.Instance == null) { return; }
@@ -1270,6 +1276,11 @@ namespace Windows_Form_Frontend
         {
             InstanceContainer.Instance.StaticOptions.EntranceRandoFeatures = !InstanceContainer.Instance.StaticOptions.EntranceRandoFeatures;
             UpdateUI();
+        }
+
+        private void visualItemTrackerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowItemDisplayForm();
         }
     }
 }

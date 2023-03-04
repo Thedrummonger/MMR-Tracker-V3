@@ -76,6 +76,7 @@ namespace Windows_Form_Frontend
             this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.visualItemTrackerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -373,28 +374,28 @@ namespace Windows_Form_Frontend
             // NewToolStripMenuItem1
             // 
             this.NewToolStripMenuItem1.Name = "NewToolStripMenuItem1";
-            this.NewToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.NewToolStripMenuItem1.Size = new System.Drawing.Size(112, 22);
             this.NewToolStripMenuItem1.Text = "New";
             this.NewToolStripMenuItem1.Click += new System.EventHandler(this.NewToolStripMenuItem1_Click);
             // 
             // LoadToolStripMenuItem
             // 
             this.LoadToolStripMenuItem.Name = "LoadToolStripMenuItem";
-            this.LoadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.LoadToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.LoadToolStripMenuItem.Text = "Load";
             this.LoadToolStripMenuItem.Click += new System.EventHandler(this.LoadToolStripMenuItem_Click);
             // 
             // SavetoolStripMenuItem
             // 
             this.SavetoolStripMenuItem.Name = "SavetoolStripMenuItem";
-            this.SavetoolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.SavetoolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.SavetoolStripMenuItem.Text = "Save";
             this.SavetoolStripMenuItem.Click += new System.EventHandler(this.SavetoolStripMenuItem1_Click);
             // 
             // SaveAsToolStripMenuItem
             // 
             this.SaveAsToolStripMenuItem.Name = "SaveAsToolStripMenuItem";
-            this.SaveAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.SaveAsToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.SaveAsToolStripMenuItem.Text = "Save as";
             // 
             // OptionstoolStripMenuItem
@@ -441,7 +442,8 @@ namespace Windows_Form_Frontend
             this.logicEditorToolStripMenuItem,
             this.importSpoilerLogToolStripMenuItem,
             this.spoilerLogToolsToolStripMenuItem,
-            this.PathFinderToolStripMenuItem});
+            this.PathFinderToolStripMenuItem,
+            this.visualItemTrackerToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
@@ -449,27 +451,27 @@ namespace Windows_Form_Frontend
             // logicEditorToolStripMenuItem
             // 
             this.logicEditorToolStripMenuItem.Name = "logicEditorToolStripMenuItem";
-            this.logicEditorToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.logicEditorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logicEditorToolStripMenuItem.Text = "Logic Editor";
             // 
             // importSpoilerLogToolStripMenuItem
             // 
             this.importSpoilerLogToolStripMenuItem.Name = "importSpoilerLogToolStripMenuItem";
-            this.importSpoilerLogToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.importSpoilerLogToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.importSpoilerLogToolStripMenuItem.Text = "Import Spoiler Log";
             this.importSpoilerLogToolStripMenuItem.Click += new System.EventHandler(this.importSpoilerLogToolStripMenuItem_Click);
             // 
             // spoilerLogToolsToolStripMenuItem
             // 
             this.spoilerLogToolsToolStripMenuItem.Name = "spoilerLogToolsToolStripMenuItem";
-            this.spoilerLogToolsToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.spoilerLogToolsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.spoilerLogToolsToolStripMenuItem.Text = "Spoiler Log Tools";
             this.spoilerLogToolsToolStripMenuItem.Click += new System.EventHandler(this.spoilerLogToolsToolStripMenuItem_Click);
             // 
             // PathFinderToolStripMenuItem
             // 
             this.PathFinderToolStripMenuItem.Name = "PathFinderToolStripMenuItem";
-            this.PathFinderToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.PathFinderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.PathFinderToolStripMenuItem.Text = "Path Finder";
             this.PathFinderToolStripMenuItem.Click += new System.EventHandler(this.PathFinderToolStripMenuItem_Click);
             // 
@@ -539,6 +541,13 @@ namespace Windows_Form_Frontend
             this.toolTip1.AutoPopDelay = 50000;
             this.toolTip1.InitialDelay = 10;
             this.toolTip1.ReshowDelay = 100;
+            // 
+            // visualItemTrackerToolStripMenuItem
+            // 
+            this.visualItemTrackerToolStripMenuItem.Name = "visualItemTrackerToolStripMenuItem";
+            this.visualItemTrackerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.visualItemTrackerToolStripMenuItem.Text = "Visual Item Tracker";
+            this.visualItemTrackerToolStripMenuItem.Click += new System.EventHandler(this.visualItemTrackerToolStripMenuItem_Click);
             // 
             // MainInterface
             // 
@@ -633,6 +642,7 @@ namespace Windows_Form_Frontend
         private System.Windows.Forms.ToolStripMenuItem entranceRandoFeaturesToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem NewToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem SaveAsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem visualItemTrackerToolStripMenuItem;
     }
 }
 

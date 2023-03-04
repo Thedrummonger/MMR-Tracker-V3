@@ -44,4 +44,14 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ItemTrackerData\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ItemTrackerData\MMR.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

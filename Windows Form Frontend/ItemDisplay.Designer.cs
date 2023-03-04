@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemDisplay));
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -45,10 +46,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(233, 181);
             this.Controls.Add(this.button1);
             this.Name = "ItemDisplay";
             this.Text = "ItemDisplay";
+            this.ResizeBegin += new System.EventHandler(this.ItemDisplay_ResizeBegin);
+            this.ResizeEnd += new System.EventHandler(this.ItemDisplay_ResizeEnd);
             this.ResumeLayout(false);
 
         }
