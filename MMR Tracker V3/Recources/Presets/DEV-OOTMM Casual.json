@@ -74,6 +74,7 @@
       "Id": "OOT Kokiri Forest GS Soil",
       "RequiredItems": [
         "OOT_gs_soil",
+        "OOT_can_damage_skull",
         "OOT Kokiri Forest"
       ],
       "ConditionalItems": [],
@@ -87,6 +88,7 @@
       "RequiredItems": [
         "OOT_is_child",
         "OOT_gs_night",
+        "OOT_can_damage_skull",
         "OOT Kokiri Forest"
       ],
       "ConditionalItems": [],
@@ -303,7 +305,14 @@
         "OOT_is_child",
         "OOT Lost Woods"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_nuts"
+        ],
+        [
+          "OOT_has_shield_for_scrubs"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -341,7 +350,17 @@
         "OOT_has_explosives_or_hammer",
         "OOT Lost Woods Deep"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_nuts"
+        ],
+        [
+          "OOT_has_shield_for_scrubs"
+        ],
+        [
+          "OOT_can_hammer"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -363,6 +382,7 @@
       "Id": "OOT Lost Woods GS Soil Bridge",
       "RequiredItems": [
         "OOT_gs_soil",
+        "OOT_can_damage_skull",
         "OOT Lost Woods"
       ],
       "ConditionalItems": [],
@@ -375,6 +395,7 @@
       "Id": "OOT Lost Woods GS Soil Theater",
       "RequiredItems": [
         "OOT_gs_soil",
+        "OOT_can_damage_skull",
         "OOT Lost Woods Deep"
       ],
       "ConditionalItems": [],
@@ -427,9 +448,18 @@
       "Id": "OOT Saria's Song",
       "RequiredItems": [
         "OOT_EVENT_MEET_ZELDA",
+        "OOT_is_child",
         "OOT Sacred Meadow"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_OCARINA",
+          "OOT_SONG_TP_FOREST"
+        ],
+        [
+          "OOT_can_damage"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -971,6 +1001,7 @@
       "Id": "OOT Graveyard GS Soil",
       "RequiredItems": [
         "OOT_gs_soil",
+        "OOT_can_damage_skull",
         "OOT Graveyard"
       ],
       "ConditionalItems": [],
@@ -1083,6 +1114,7 @@
       "RequiredItems": [
         "OOT_gs_soil",
         "OOT_has_bombflowers",
+        "OOT_can_damage_skull",
         "OOT Death Mountain"
       ],
       "ConditionalItems": [],
@@ -1449,6 +1481,7 @@
       "Id": "OOT Death Mountain Crater GS Soil",
       "RequiredItems": [
         "OOT_gs_soil",
+        "OOT_can_damage_skull",
         "OOT Death Mountain Crater Warp"
       ],
       "ConditionalItems": [],
@@ -1461,6 +1494,7 @@
       "Id": "OOT Death Mountain Crater GS Crate",
       "RequiredItems": [
         "OOT_is_child",
+        "OOT_can_damage_skull",
         "OOT Death Mountain Crater Top"
       ],
       "ConditionalItems": [],
@@ -1565,6 +1599,7 @@
       "Id": "OOT Zora River GS Tree",
       "RequiredItems": [
         "OOT_is_child",
+        "OOT_can_damage_skull",
         "OOT Zora River Front"
       ],
       "ConditionalItems": [],
@@ -1578,6 +1613,7 @@
       "RequiredItems": [
         "OOT_is_child",
         "OOT_gs_night",
+        "OOT_can_damage_skull",
         "OOT Zora River"
       ],
       "ConditionalItems": [],
@@ -1817,6 +1853,7 @@
       "Id": "OOT Zora Fountain GS Tree",
       "RequiredItems": [
         "OOT_is_child",
+        "OOT_can_damage_skull",
         "OOT Zora Fountain"
       ],
       "ConditionalItems": [],
@@ -1909,6 +1946,7 @@
       "RequiredItems": [
         "OOT_is_child",
         "OOT_gs_night",
+        "OOT_can_damage_skull",
         "OOT Lake Hylia"
       ],
       "ConditionalItems": [],
@@ -1921,6 +1959,7 @@
       "Id": "OOT Lake Hylia GS Soil",
       "RequiredItems": [
         "OOT_gs_soil",
+        "OOT_can_damage_skull",
         "OOT Lake Hylia"
       ],
       "ConditionalItems": [],
@@ -2176,7 +2215,17 @@
         "OOT_hidden_grotto_bomb",
         "OOT Hyrule Field"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_nuts"
+        ],
+        [
+          "OOT_has_shield_for_scrubs"
+        ],
+        [
+          "OOT_can_hammer"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -2659,6 +2708,7 @@
     {
       "Id": "OOT Hyrule Castle GS Tree",
       "RequiredItems": [
+        "OOT_can_damage_skull",
         "OOT Hyrule Castle"
       ],
       "ConditionalItems": [],
@@ -2835,6 +2885,7 @@
       "Id": "OOT Gerudo Valley GS Soil",
       "RequiredItems": [
         "OOT_gs_soil",
+        "OOT_can_damage_skull",
         "OOT Gerudo Valley"
       ],
       "ConditionalItems": [],
@@ -3024,6 +3075,7 @@
       "Id": "OOT Desert Colossus GS Soil",
       "RequiredItems": [
         "OOT_gs_soil",
+        "OOT_can_damage_skull",
         "OOT Desert Colossus"
       ],
       "ConditionalItems": [],
@@ -3278,6 +3330,7 @@
     {
       "Id": "OOT Deku Tree GS Compass",
       "RequiredItems": [
+        "OOT_can_damage_skull",
         "OOT Deku Tree Lobby"
       ],
       "ConditionalItems": [],
@@ -3310,6 +3363,7 @@
     {
       "Id": "OOT Deku Tree GS Basement Gate",
       "RequiredItems": [
+        "OOT_can_damage_skull",
         "OOT Deku Tree Basement"
       ],
       "ConditionalItems": [],
@@ -3419,6 +3473,7 @@
     {
       "Id": "OOT Dodongo Cavern GS Side Room",
       "RequiredItems": [
+        "OOT_can_damage_skull",
         "OOT Dodongo Cavern Side Room"
       ],
       "ConditionalItems": [],
@@ -3645,7 +3700,62 @@
       "RequiredItems": [
         "OOT Forest Temple Map Room"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_has_explosives"
+        ],
+        [
+          "OOT_can_hookshot",
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_has_nuts",
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_can_boomerang",
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_has_shield",
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_can_hookshot",
+          "OOT_can_use_slingshot"
+        ],
+        [
+          "OOT_has_nuts",
+          "OOT_can_use_slingshot"
+        ],
+        [
+          "OOT_can_boomerang",
+          "OOT_can_use_slingshot"
+        ],
+        [
+          "OOT_has_shield",
+          "OOT_can_use_slingshot"
+        ],
+        [
+          "OOT_can_hookshot",
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_has_nuts",
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_can_boomerang",
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_has_shield",
+          "OOT_can_use_sticks"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -5048,7 +5158,7 @@
       "Id": "OOT Spirit Temple Child First Chest",
       "RequiredItems": [
         "OOT_has_ranged_weapon_child",
-        "OOT Spirit Temple Child Entrance"
+        "OOT Spirit Temple Child Back"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5060,9 +5170,16 @@
       "Id": "OOT Spirit Temple Child Second Chest",
       "RequiredItems": [
         "OOT_has_ranged_weapon_child",
-        "OOT Spirit Temple Child Entrance"
+        "OOT Spirit Temple Child Back"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_can_use_din"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -5122,7 +5239,8 @@
       "ConditionalItems": [
         [
           "OOT_EVENT_SPIRIT_CHILD_DOOR",
-          "OOT_has_explosives"
+          "OOT_has_explosives",
+          "OOT_can_use_sticks"
         ],
         [
           "OOT_has_fire_spirit"
@@ -5176,7 +5294,7 @@
       "ConditionalItems": [
         [
           "OOT_EVENT_SPIRIT_CHILD_DOOR",
-          "OOT_is_child"
+          "OOT_can_use_sticks"
         ],
         [
           "OOT_has_fire_spirit"
@@ -5309,6 +5427,7 @@
     {
       "Id": "OOT Spirit Temple GS Child Climb",
       "RequiredItems": [
+        "OOT_can_damage_skull",
         "OOT Spirit Temple Child Climb"
       ],
       "ConditionalItems": [],
@@ -5321,7 +5440,7 @@
       "Id": "OOT Spirit Temple GS Child Fence",
       "RequiredItems": [
         "OOT_has_ranged_weapon_child",
-        "OOT Spirit Temple Child Entrance"
+        "OOT Spirit Temple Child Back"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11028,7 +11147,20 @@
         "OOT_is_child",
         "OOT Bottom of the Well"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_nuts"
+        ],
+        [
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_has_explosives"
+        ],
+        [
+          "OOT_has_ranged_weapon_child"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -11040,6 +11172,70 @@
         "OOT Bottom of the Well Main"
       ],
       "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_STICKS",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT Bottom of the Well Main"
+        ],
+        [
+          "OOT_is_child",
+          "OOT Zora Domain"
+        ],
+        [
+          "OOT_can_boomerang",
+          "OOT Kokiri Forest"
+        ],
+        [
+          "OOT_is_child",
+          "OOT_has_weapon",
+          "OOT Kokiri Forest"
+        ],
+        [
+          "OOT_can_hookshot",
+          "OOT Forest Temple Garden East"
+        ],
+        [
+          "OOT_can_hammer",
+          "OOT Forest Temple Garden East"
+        ],
+        [
+          "OOT_can_boomerang",
+          "OOT Forest Temple Garden East"
+        ],
+        [
+          "OOT_has_nuts",
+          "OOT_has_weapon",
+          "OOT Forest Temple Garden East"
+        ],
+        [
+          "OOT_can_hookshot",
+          "OOT Forest Temple Garden West"
+        ],
+        [
+          "OOT_can_hammer",
+          "OOT Forest Temple Garden West"
+        ],
+        [
+          "OOT_can_boomerang",
+          "OOT Forest Temple Garden West"
+        ],
+        [
+          "OOT_has_nuts",
+          "OOT_has_weapon",
+          "OOT Forest Temple Garden West"
+        ],
+        [
+          "OOT Deku Tree Lobby",
+          "OOT_can_kill_baba_sticks"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -11084,7 +11280,73 @@
       "RequiredItems": [
         "OOT Deku Tree Lobby"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_fire"
+        ],
+        [
+          "OOT_has_nuts"
+        ],
+        [
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_has_explosives"
+        ],
+        [
+          "OOT_has_ranged_weapon_child"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_NUTS",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "true",
+          "OOT Zora Domain"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Forest Temple Garden East"
+        ],
+        [
+          "OOT_has_weapon",
+          "OOT Forest Temple Garden East"
+        ],
+        [
+          "OOT_has_explosives",
+          "OOT Forest Temple Garden East"
+        ],
+        [
+          "OOT_can_use_slingshot",
+          "OOT Forest Temple Garden East"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Forest Temple Garden West"
+        ],
+        [
+          "OOT_has_weapon",
+          "OOT Forest Temple Garden West"
+        ],
+        [
+          "OOT_has_explosives",
+          "OOT Forest Temple Garden West"
+        ],
+        [
+          "OOT_can_use_slingshot",
+          "OOT Forest Temple Garden West"
+        ],
+        [
+          "OOT_can_kill_baba_nuts",
+          "OOT Deku Tree Lobby"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -12007,7 +12269,23 @@
       "RequiredItems": [
         "OOT Forest Temple"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_is_adult"
+        ],
+        [
+          "OOT_has_nuts"
+        ],
+        [
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_has_explosives"
+        ],
+        [
+          "OOT_has_ranged_weapon_child"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -12184,11 +12462,66 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Forest Temple Map Room => OOT Forest Temple Main",
+      "Id": "OOT Forest Temple Map Room => OOT Forest Temple Garden West",
       "RequiredItems": [
         "OOT Forest Temple Map Room"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_has_explosives"
+        ],
+        [
+          "OOT_can_hookshot",
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_has_nuts",
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_can_boomerang",
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_has_shield",
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_can_hookshot",
+          "OOT_can_use_slingshot"
+        ],
+        [
+          "OOT_has_nuts",
+          "OOT_can_use_slingshot"
+        ],
+        [
+          "OOT_can_boomerang",
+          "OOT_can_use_slingshot"
+        ],
+        [
+          "OOT_has_shield",
+          "OOT_can_use_slingshot"
+        ],
+        [
+          "OOT_can_hookshot",
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_has_nuts",
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_can_boomerang",
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_has_shield",
+          "OOT_can_use_sticks"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -12199,7 +12532,62 @@
       "RequiredItems": [
         "OOT Forest Temple Map Room"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_has_explosives"
+        ],
+        [
+          "OOT_can_hookshot",
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_has_nuts",
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_can_boomerang",
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_has_shield",
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_can_hookshot",
+          "OOT_can_use_slingshot"
+        ],
+        [
+          "OOT_has_nuts",
+          "OOT_can_use_slingshot"
+        ],
+        [
+          "OOT_can_boomerang",
+          "OOT_can_use_slingshot"
+        ],
+        [
+          "OOT_has_shield",
+          "OOT_can_use_slingshot"
+        ],
+        [
+          "OOT_can_hookshot",
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_has_nuts",
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_can_boomerang",
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_has_shield",
+          "OOT_can_use_sticks"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -16140,6 +16528,40 @@
         "OOT Spirit Temple Child Entrance"
       ],
       "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Spirit Temple Child Entrance => OOT Spirit Temple Child Back",
+      "RequiredItems": [
+        "OOT Spirit Temple Child Entrance"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_has_explosives"
+        ],
+        [
+          "OOT_can_boomerang",
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_has_nuts",
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_can_boomerang",
+          "OOT_can_use_slingshot"
+        ],
+        [
+          "OOT_has_nuts",
+          "OOT_can_use_slingshot"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -25942,6 +26364,28 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT_has_nuts",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_EVENT_NUTS"
+        ],
+        [
+          "OOT_NUT"
+        ],
+        [
+          "OOT_NUTS_5"
+        ],
+        [
+          "OOT_NUTS_10"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT_can_use_sticks",
       "RequiredItems": [
         "OOT_is_child",
@@ -25964,6 +26408,98 @@
         ],
         [
           "OOT_BLUE_FIRE"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_can_kill_baba_sticks",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_can_boomerang"
+        ],
+        [
+          "OOT_has_weapon",
+          "OOT_is_child"
+        ],
+        [
+          "OOT_has_weapon",
+          "OOT_has_nuts"
+        ],
+        [
+          "OOT_has_weapon",
+          "OOT_can_hookshot"
+        ],
+        [
+          "OOT_has_weapon",
+          "OOT_can_hammer"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_can_kill_baba_nuts",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_has_explosives"
+        ],
+        [
+          "OOT_can_use_slingshot"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_can_damage",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_is_adult"
+        ],
+        [
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_has_explosives"
+        ],
+        [
+          "OOT_can_use_slingshot"
+        ],
+        [
+          "OOT_can_use_din"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_can_damage_skull",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_can_damage"
+        ],
+        [
+          "OOT_can_collect_distance"
         ]
       ],
       "TimeNeeded": "None",

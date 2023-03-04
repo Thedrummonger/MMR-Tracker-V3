@@ -22113,9 +22113,9 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Forest Temple Map Room => OOT Forest Temple Main",
+      "ID": "OOT Forest Temple Map Room => OOT Forest Temple Garden West",
       "Area": "OOT Forest Temple Map Room",
-      "Exit": "OOT Forest Temple Main",
+      "Exit": "OOT Forest Temple Garden West",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -24031,6 +24031,14 @@
       "ID": "OOT Spirit Temple Child Entrance => OOT Spirit Temple Child Climb",
       "Area": "OOT Spirit Temple Child Entrance",
       "Exit": "OOT Spirit Temple Child Climb",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Spirit Temple Child Entrance => OOT Spirit Temple Child Back",
+      "Area": "OOT Spirit Temple Child Entrance",
+      "Exit": "OOT Spirit Temple Child Back",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -28964,6 +28972,7 @@
     "OOT Shadow Temple After Boss",
     "OOT Spirit Temple",
     "OOT Spirit Temple Child Entrance",
+    "OOT Spirit Temple Child Back",
     "OOT Spirit Temple Child Climb",
     "OOT Spirit Temple Child Upper",
     "OOT Spirit Temple Child Hand",
@@ -29822,6 +29831,133 @@
       }
     },
     {
+      "ID": "sharedNutsSticks",
+      "DisplayName": "Shared Nuts and Sticks",
+      "CurrentValue": "false",
+      "SubCategory": "Shared Items",
+      "Values": {
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "SHARED_NUT": {
+              "action": "set",
+              "amount": 0
+            },
+            "SHARED_NUTS_5": {
+              "action": "set",
+              "amount": 0
+            },
+            "SHARED_NUTS_5_ALT": {
+              "action": "set",
+              "amount": 0
+            },
+            "SHARED_NUTS_10": {
+              "action": "set",
+              "amount": 0
+            },
+            "SHARED_STICK": {
+              "action": "set",
+              "amount": 0
+            },
+            "SHARED_STICKS_5": {
+              "action": "set",
+              "amount": 0
+            },
+            "SHARED_STICKS_10": {
+              "action": "set",
+              "amount": 0
+            }
+          }
+        },
+        "true": {
+          "LogicReplacements": [
+            {
+              "LocationWhitelist": [],
+              "LocationBlacklist": [],
+              "ReplacementList": {
+                "OOT_NUT": "SHARED_NUT",
+                "MM_NUT": "SHARED_NUT",
+                "OOT_NUTS_5": "SHARED_NUTS_5",
+                "MM_NUTS_5": "SHARED_NUTS_5",
+                "OOT_NUTS_5_ALT": "SHARED_NUTS_5_ALT",
+                "MM_NUTS_5_ALT": "SHARED_NUTS_5_ALT",
+                "OOT_NUTS_10": "SHARED_NUTS_10",
+                "MM_NUTS_10": "SHARED_NUTS_10",
+                "OOT_STICK": "SHARED_STICK",
+                "MM_STICK": "SHARED_STICK",
+                "OOT_STICKS_5": "SHARED_STICKS_5",
+                "MM_STICKS_5": "SHARED_STICKS_5",
+                "OOT_STICKS_10": "SHARED_STICKS_10",
+                "MM_STICKS_10": "SHARED_STICKS_10"
+              }
+            }
+          ],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "OOT_NUT": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_NUT": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_NUTS_5": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_NUTS_5": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_NUTS_5_ALT": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_NUTS_5_ALT": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_NUTS_10": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_NUTS_10": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_STICK": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_STICK": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_STICKS_5": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_STICKS_5": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_STICKS_10": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_STICKS_10": {
+              "action": "set",
+              "amount": 0
+            }
+          }
+        }
+      }
+    },
+    {
       "ID": "sharedBows",
       "DisplayName": "Shared Bows",
       "CurrentValue": "false",
@@ -30201,8 +30337,8 @@
       }
     },
     {
-      "ID": "sharedOcarina",
-      "DisplayName": "Shared Ocarina",
+      "ID": "sharedHookshot",
+      "DisplayName": "Shared Hookshots",
       "CurrentValue": "false",
       "SubCategory": "Shared Items",
       "Values": {
@@ -30211,7 +30347,7 @@
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {
-            "SHARED_OCARINA": {
+            "SHARED_HOOKSHOT": {
               "action": "set",
               "amount": 0
             }
@@ -30223,21 +30359,21 @@
               "LocationWhitelist": [],
               "LocationBlacklist": [],
               "ReplacementList": {
-                "OOT_OCARINA": "SHARED_OCARINA",
-                "MM_OCARINA": "SHARED_OCARINA",
-                "OOT_OCARINA, 2": "SHARED_OCARINA, 2",
-                "MM_OCARINA, 2": "SHARED_OCARINA, 2"
+                "OOT_HOOKSHOT": "SHARED_HOOKSHOT",
+                "MM_HOOKSHOT": "SHARED_HOOKSHOT",
+                "OOT_HOOKSHOT, 2": "SHARED_HOOKSHOT, 2",
+                "MM_HOOKSHOT, 2": "SHARED_HOOKSHOT, 2"
               }
             }
           ],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {
-            "OOT_OCARINA": {
+            "OOT_HOOKSHOT": {
               "action": "set",
               "amount": 0
             },
-            "MM_OCARINA": {
+            "MM_HOOKSHOT": {
               "action": "set",
               "amount": 0
             }
@@ -30289,8 +30425,8 @@
       }
     },
     {
-      "ID": "sharedHookshot",
-      "DisplayName": "Shared Hookshots",
+      "ID": "sharedOcarina",
+      "DisplayName": "Shared Ocarina",
       "CurrentValue": "false",
       "SubCategory": "Shared Items",
       "Values": {
@@ -30299,7 +30435,7 @@
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {
-            "SHARED_HOOKSHOT": {
+            "SHARED_OCARINA": {
               "action": "set",
               "amount": 0
             }
@@ -30311,21 +30447,21 @@
               "LocationWhitelist": [],
               "LocationBlacklist": [],
               "ReplacementList": {
-                "OOT_HOOKSHOT": "SHARED_HOOKSHOT",
-                "MM_HOOKSHOT": "SHARED_HOOKSHOT",
-                "OOT_HOOKSHOT, 2": "SHARED_HOOKSHOT, 2",
-                "MM_HOOKSHOT, 2": "SHARED_HOOKSHOT, 2"
+                "OOT_OCARINA": "SHARED_OCARINA",
+                "MM_OCARINA": "SHARED_OCARINA",
+                "OOT_OCARINA, 2": "SHARED_OCARINA, 2",
+                "MM_OCARINA, 2": "SHARED_OCARINA, 2"
               }
             }
           ],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {
-            "OOT_HOOKSHOT": {
+            "OOT_OCARINA": {
               "action": "set",
               "amount": 0
             },
-            "MM_HOOKSHOT": {
+            "MM_OCARINA": {
               "action": "set",
               "amount": 0
             }
