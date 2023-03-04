@@ -195,6 +195,158 @@
       "LocationProxys": []
     },
     {
+      "ID": "OOT Kokiri Shop Item 1",
+      "Name": "Kokiri Shop Item 1",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "Area": "Kokiri Forest",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Kokiri Shop Item 1"
+        ],
+        "GossipHintNames": [
+          "OOT Kokiri Shop Item 1"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Kokiri Shop Item 2",
+      "Name": "Kokiri Shop Item 2",
+      "OriginalItem": "OOT_ARROWS_10",
+      "Area": "Kokiri Forest",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Kokiri Shop Item 2"
+        ],
+        "GossipHintNames": [
+          "OOT Kokiri Shop Item 2"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Kokiri Shop Item 3",
+      "Name": "Kokiri Shop Item 3",
+      "OriginalItem": "OOT_ARROWS_30",
+      "Area": "Kokiri Forest",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Kokiri Shop Item 3"
+        ],
+        "GossipHintNames": [
+          "OOT Kokiri Shop Item 3"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Kokiri Shop Item 4",
+      "Name": "Kokiri Shop Item 4",
+      "OriginalItem": "OOT_DEKU_SEEDS_30",
+      "Area": "Kokiri Forest",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Kokiri Shop Item 4"
+        ],
+        "GossipHintNames": [
+          "OOT Kokiri Shop Item 4"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Kokiri Shop Item 5",
+      "Name": "Kokiri Shop Item 5",
+      "OriginalItem": "OOT_NUTS_5",
+      "Area": "Kokiri Forest",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Kokiri Shop Item 5"
+        ],
+        "GossipHintNames": [
+          "OOT Kokiri Shop Item 5"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Kokiri Shop Item 6",
+      "Name": "Kokiri Shop Item 6",
+      "OriginalItem": "OOT_NUTS_10",
+      "Area": "Kokiri Forest",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Kokiri Shop Item 6"
+        ],
+        "GossipHintNames": [
+          "OOT Kokiri Shop Item 6"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Kokiri Shop Item 7",
+      "Name": "Kokiri Shop Item 7",
+      "OriginalItem": "OOT_STICK",
+      "Area": "Kokiri Forest",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Kokiri Shop Item 7"
+        ],
+        "GossipHintNames": [
+          "OOT Kokiri Shop Item 7"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Kokiri Shop Item 8",
+      "Name": "Kokiri Shop Item 8",
+      "OriginalItem": "OOT_SHIELD_DEKU",
+      "Area": "Kokiri Forest",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Kokiri Shop Item 8"
+        ],
+        "GossipHintNames": [
+          "OOT Kokiri Shop Item 8"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
       "ID": "OOT Malon Egg",
       "Name": "Malon Egg",
       "OriginalItem": "OOT_CHICKEN",
@@ -898,6 +1050,310 @@
       "LocationProxys": []
     },
     {
+      "ID": "OOT Kakariko Bazaar Item 1",
+      "Name": "Kakariko Bazaar Item 1",
+      "OriginalItem": "OOT_ARROWS_5",
+      "Area": "Kakariko",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Kakariko Bazaar Item 1"
+        ],
+        "GossipHintNames": [
+          "OOT Kakariko Bazaar Item 1"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Kakariko Bazaar Item 2",
+      "Name": "Kakariko Bazaar Item 2",
+      "OriginalItem": "OOT_ARROWS_10",
+      "Area": "Kakariko",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Kakariko Bazaar Item 2"
+        ],
+        "GossipHintNames": [
+          "OOT Kakariko Bazaar Item 2"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Kakariko Bazaar Item 3",
+      "Name": "Kakariko Bazaar Item 3",
+      "OriginalItem": "OOT_ARROWS_30",
+      "Area": "Kakariko",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Kakariko Bazaar Item 3"
+        ],
+        "GossipHintNames": [
+          "OOT Kakariko Bazaar Item 3"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Kakariko Bazaar Item 4",
+      "Name": "Kakariko Bazaar Item 4",
+      "OriginalItem": "OOT_STICK",
+      "Area": "Kakariko",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Kakariko Bazaar Item 4"
+        ],
+        "GossipHintNames": [
+          "OOT Kakariko Bazaar Item 4"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Kakariko Bazaar Item 5",
+      "Name": "Kakariko Bazaar Item 5",
+      "OriginalItem": "OOT_BOMBS_5",
+      "Area": "Kakariko",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Kakariko Bazaar Item 5"
+        ],
+        "GossipHintNames": [
+          "OOT Kakariko Bazaar Item 5"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Kakariko Bazaar Item 6",
+      "Name": "Kakariko Bazaar Item 6",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "Area": "Kakariko",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Kakariko Bazaar Item 6"
+        ],
+        "GossipHintNames": [
+          "OOT Kakariko Bazaar Item 6"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Kakariko Bazaar Item 7",
+      "Name": "Kakariko Bazaar Item 7",
+      "OriginalItem": "OOT_NUTS_5",
+      "Area": "Kakariko",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Kakariko Bazaar Item 7"
+        ],
+        "GossipHintNames": [
+          "OOT Kakariko Bazaar Item 7"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Kakariko Bazaar Item 8",
+      "Name": "Kakariko Bazaar Item 8",
+      "OriginalItem": "OOT_SHIELD_HYLIAN",
+      "Area": "Kakariko",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Kakariko Bazaar Item 8"
+        ],
+        "GossipHintNames": [
+          "OOT Kakariko Bazaar Item 8"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Kakariko Potion Shop Item 1",
+      "Name": "Kakariko Potion Shop Item 1",
+      "OriginalItem": "OOT_FISH",
+      "Area": "Kakariko",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Kakariko Potion Shop Item 1"
+        ],
+        "GossipHintNames": [
+          "OOT Kakariko Potion Shop Item 1"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Kakariko Potion Shop Item 2",
+      "Name": "Kakariko Potion Shop Item 2",
+      "OriginalItem": "OOT_BUG",
+      "Area": "Kakariko",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Kakariko Potion Shop Item 2"
+        ],
+        "GossipHintNames": [
+          "OOT Kakariko Potion Shop Item 2"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Kakariko Potion Shop Item 3",
+      "Name": "Kakariko Potion Shop Item 3",
+      "OriginalItem": "OOT_POE",
+      "Area": "Kakariko",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Kakariko Potion Shop Item 3"
+        ],
+        "GossipHintNames": [
+          "OOT Kakariko Potion Shop Item 3"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Kakariko Potion Shop Item 4",
+      "Name": "Kakariko Potion Shop Item 4",
+      "OriginalItem": "OOT_NUTS_5",
+      "Area": "Kakariko",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Kakariko Potion Shop Item 4"
+        ],
+        "GossipHintNames": [
+          "OOT Kakariko Potion Shop Item 4"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Kakariko Potion Shop Item 5",
+      "Name": "Kakariko Potion Shop Item 5",
+      "OriginalItem": "OOT_BLUE_FIRE",
+      "Area": "Kakariko",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Kakariko Potion Shop Item 5"
+        ],
+        "GossipHintNames": [
+          "OOT Kakariko Potion Shop Item 5"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Kakariko Potion Shop Item 6",
+      "Name": "Kakariko Potion Shop Item 6",
+      "OriginalItem": "OOT_FAIRY",
+      "Area": "Kakariko",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Kakariko Potion Shop Item 6"
+        ],
+        "GossipHintNames": [
+          "OOT Kakariko Potion Shop Item 6"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Kakariko Potion Shop Item 7",
+      "Name": "Kakariko Potion Shop Item 7",
+      "OriginalItem": "OOT_POTION_GREEN",
+      "Area": "Kakariko",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Kakariko Potion Shop Item 7"
+        ],
+        "GossipHintNames": [
+          "OOT Kakariko Potion Shop Item 7"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Kakariko Potion Shop Item 8",
+      "Name": "Kakariko Potion Shop Item 8",
+      "OriginalItem": "OOT_POTION_RED",
+      "Area": "Kakariko",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Kakariko Potion Shop Item 8"
+        ],
+        "GossipHintNames": [
+          "OOT Kakariko Potion Shop Item 8"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
       "ID": "OOT Graveyard Dampe Game",
       "Name": "Graveyard Dampe Game",
       "OriginalItem": "OOT_HEART_PIECE",
@@ -1487,6 +1943,158 @@
       "LocationProxys": []
     },
     {
+      "ID": "OOT Goron Shop Item 1",
+      "Name": "Goron Shop Item 1",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "Area": "Goron City",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Goron Shop Item 1"
+        ],
+        "GossipHintNames": [
+          "OOT Goron Shop Item 1"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Goron Shop Item 2",
+      "Name": "Goron Shop Item 2",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "Area": "Goron City",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Goron Shop Item 2"
+        ],
+        "GossipHintNames": [
+          "OOT Goron Shop Item 2"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Goron Shop Item 3",
+      "Name": "Goron Shop Item 3",
+      "OriginalItem": "OOT_POTION_RED",
+      "Area": "Goron City",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Goron Shop Item 3"
+        ],
+        "GossipHintNames": [
+          "OOT Goron Shop Item 3"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Goron Shop Item 4",
+      "Name": "Goron Shop Item 4",
+      "OriginalItem": "OOT_TUNIC_GORON",
+      "Area": "Goron City",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Goron Shop Item 4"
+        ],
+        "GossipHintNames": [
+          "OOT Goron Shop Item 4"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Goron Shop Item 5",
+      "Name": "Goron Shop Item 5",
+      "OriginalItem": "OOT_BOMBS_5",
+      "Area": "Goron City",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Goron Shop Item 5"
+        ],
+        "GossipHintNames": [
+          "OOT Goron Shop Item 5"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Goron Shop Item 6",
+      "Name": "Goron Shop Item 6",
+      "OriginalItem": "OOT_BOMBS_10",
+      "Area": "Goron City",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Goron Shop Item 6"
+        ],
+        "GossipHintNames": [
+          "OOT Goron Shop Item 6"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Goron Shop Item 7",
+      "Name": "Goron Shop Item 7",
+      "OriginalItem": "OOT_BOMBS_20",
+      "Area": "Goron City",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Goron Shop Item 7"
+        ],
+        "GossipHintNames": [
+          "OOT Goron Shop Item 7"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Goron Shop Item 8",
+      "Name": "Goron Shop Item 8",
+      "OriginalItem": "OOT_BOMBS_30",
+      "Area": "Goron City",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Goron Shop Item 8"
+        ],
+        "GossipHintNames": [
+          "OOT Goron Shop Item 8"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
       "ID": "OOT Death Mountain Crater Alcove HP",
       "Name": "Death Mountain Crater Alcove HP",
       "OriginalItem": "OOT_HEART_PIECE",
@@ -1880,6 +2488,158 @@
         ],
         "GossipHintNames": [
           "OOT Zora Domain GS Waterfall"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Zora Shop Item 1",
+      "Name": "Zora Shop Item 1",
+      "OriginalItem": "OOT_POTION_RED",
+      "Area": "Zora's Domain",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Zora Shop Item 1"
+        ],
+        "GossipHintNames": [
+          "OOT Zora Shop Item 1"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Zora Shop Item 2",
+      "Name": "Zora Shop Item 2",
+      "OriginalItem": "OOT_ARROWS_30",
+      "Area": "Zora's Domain",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Zora Shop Item 2"
+        ],
+        "GossipHintNames": [
+          "OOT Zora Shop Item 2"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Zora Shop Item 3",
+      "Name": "Zora Shop Item 3",
+      "OriginalItem": "OOT_FISH",
+      "Area": "Zora's Domain",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Zora Shop Item 3"
+        ],
+        "GossipHintNames": [
+          "OOT Zora Shop Item 3"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Zora Shop Item 4",
+      "Name": "Zora Shop Item 4",
+      "OriginalItem": "OOT_NUTS_5",
+      "Area": "Zora's Domain",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Zora Shop Item 4"
+        ],
+        "GossipHintNames": [
+          "OOT Zora Shop Item 4"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Zora Shop Item 5",
+      "Name": "Zora Shop Item 5",
+      "OriginalItem": "OOT_ARROWS_5",
+      "Area": "Zora's Domain",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Zora Shop Item 5"
+        ],
+        "GossipHintNames": [
+          "OOT Zora Shop Item 5"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Zora Shop Item 6",
+      "Name": "Zora Shop Item 6",
+      "OriginalItem": "OOT_ARROWS_10",
+      "Area": "Zora's Domain",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Zora Shop Item 6"
+        ],
+        "GossipHintNames": [
+          "OOT Zora Shop Item 6"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Zora Shop Item 7",
+      "Name": "Zora Shop Item 7",
+      "OriginalItem": "OOT_TUNIC_ZORA",
+      "Area": "Zora's Domain",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Zora Shop Item 7"
+        ],
+        "GossipHintNames": [
+          "OOT Zora Shop Item 7"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Zora Shop Item 8",
+      "Name": "Zora Shop Item 8",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "Area": "Zora's Domain",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Zora Shop Item 8"
+        ],
+        "GossipHintNames": [
+          "OOT Zora Shop Item 8"
         ],
         "PriceDataNames": []
       },
@@ -2659,6 +3419,462 @@
         ],
         "GossipHintNames": [
           "OOT Market Pot House GS"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Market Bazaar Item 1",
+      "Name": "Market Bazaar Item 1",
+      "OriginalItem": "OOT_ARROWS_5",
+      "Area": "Market",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Market Bazaar Item 1"
+        ],
+        "GossipHintNames": [
+          "OOT Market Bazaar Item 1"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Market Bazaar Item 2",
+      "Name": "Market Bazaar Item 2",
+      "OriginalItem": "OOT_ARROWS_10",
+      "Area": "Market",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Market Bazaar Item 2"
+        ],
+        "GossipHintNames": [
+          "OOT Market Bazaar Item 2"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Market Bazaar Item 3",
+      "Name": "Market Bazaar Item 3",
+      "OriginalItem": "OOT_ARROWS_30",
+      "Area": "Market",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Market Bazaar Item 3"
+        ],
+        "GossipHintNames": [
+          "OOT Market Bazaar Item 3"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Market Bazaar Item 4",
+      "Name": "Market Bazaar Item 4",
+      "OriginalItem": "OOT_STICK",
+      "Area": "Market",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Market Bazaar Item 4"
+        ],
+        "GossipHintNames": [
+          "OOT Market Bazaar Item 4"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Market Bazaar Item 5",
+      "Name": "Market Bazaar Item 5",
+      "OriginalItem": "OOT_BOMBS_5",
+      "Area": "Market",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Market Bazaar Item 5"
+        ],
+        "GossipHintNames": [
+          "OOT Market Bazaar Item 5"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Market Bazaar Item 6",
+      "Name": "Market Bazaar Item 6",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "Area": "Market",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Market Bazaar Item 6"
+        ],
+        "GossipHintNames": [
+          "OOT Market Bazaar Item 6"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Market Bazaar Item 7",
+      "Name": "Market Bazaar Item 7",
+      "OriginalItem": "OOT_NUTS_5",
+      "Area": "Market",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Market Bazaar Item 7"
+        ],
+        "GossipHintNames": [
+          "OOT Market Bazaar Item 7"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Market Bazaar Item 8",
+      "Name": "Market Bazaar Item 8",
+      "OriginalItem": "OOT_SHIELD_HYLIAN",
+      "Area": "Market",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Market Bazaar Item 8"
+        ],
+        "GossipHintNames": [
+          "OOT Market Bazaar Item 8"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Market Potion Shop Item 1",
+      "Name": "Market Potion Shop Item 1",
+      "OriginalItem": "OOT_FISH",
+      "Area": "Market",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Market Potion Shop Item 1"
+        ],
+        "GossipHintNames": [
+          "OOT Market Potion Shop Item 1"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Market Potion Shop Item 2",
+      "Name": "Market Potion Shop Item 2",
+      "OriginalItem": "OOT_BUG",
+      "Area": "Market",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Market Potion Shop Item 2"
+        ],
+        "GossipHintNames": [
+          "OOT Market Potion Shop Item 2"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Market Potion Shop Item 3",
+      "Name": "Market Potion Shop Item 3",
+      "OriginalItem": "OOT_POE",
+      "Area": "Market",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Market Potion Shop Item 3"
+        ],
+        "GossipHintNames": [
+          "OOT Market Potion Shop Item 3"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Market Potion Shop Item 4",
+      "Name": "Market Potion Shop Item 4",
+      "OriginalItem": "OOT_NUTS_5",
+      "Area": "Market",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Market Potion Shop Item 4"
+        ],
+        "GossipHintNames": [
+          "OOT Market Potion Shop Item 4"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Market Potion Shop Item 5",
+      "Name": "Market Potion Shop Item 5",
+      "OriginalItem": "OOT_BLUE_FIRE",
+      "Area": "Market",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Market Potion Shop Item 5"
+        ],
+        "GossipHintNames": [
+          "OOT Market Potion Shop Item 5"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Market Potion Shop Item 6",
+      "Name": "Market Potion Shop Item 6",
+      "OriginalItem": "OOT_FAIRY",
+      "Area": "Market",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Market Potion Shop Item 6"
+        ],
+        "GossipHintNames": [
+          "OOT Market Potion Shop Item 6"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Market Potion Shop Item 7",
+      "Name": "Market Potion Shop Item 7",
+      "OriginalItem": "OOT_POTION_GREEN",
+      "Area": "Market",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Market Potion Shop Item 7"
+        ],
+        "GossipHintNames": [
+          "OOT Market Potion Shop Item 7"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Market Potion Shop Item 8",
+      "Name": "Market Potion Shop Item 8",
+      "OriginalItem": "OOT_POTION_RED",
+      "Area": "Market",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Market Potion Shop Item 8"
+        ],
+        "GossipHintNames": [
+          "OOT Market Potion Shop Item 8"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Market Bombchu Shop Item 1",
+      "Name": "Market Bombchu Shop Item 1",
+      "OriginalItem": "OOT_BOMBCHU_20",
+      "Area": "Market",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Market Bombchu Shop Item 1"
+        ],
+        "GossipHintNames": [
+          "OOT Market Bombchu Shop Item 1"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Market Bombchu Shop Item 2",
+      "Name": "Market Bombchu Shop Item 2",
+      "OriginalItem": "OOT_BOMBCHU_20",
+      "Area": "Market",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Market Bombchu Shop Item 2"
+        ],
+        "GossipHintNames": [
+          "OOT Market Bombchu Shop Item 2"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Market Bombchu Shop Item 3",
+      "Name": "Market Bombchu Shop Item 3",
+      "OriginalItem": "OOT_BOMBCHU_20",
+      "Area": "Market",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Market Bombchu Shop Item 3"
+        ],
+        "GossipHintNames": [
+          "OOT Market Bombchu Shop Item 3"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Market Bombchu Shop Item 4",
+      "Name": "Market Bombchu Shop Item 4",
+      "OriginalItem": "OOT_BOMBCHU_20",
+      "Area": "Market",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Market Bombchu Shop Item 4"
+        ],
+        "GossipHintNames": [
+          "OOT Market Bombchu Shop Item 4"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Market Bombchu Shop Item 5",
+      "Name": "Market Bombchu Shop Item 5",
+      "OriginalItem": "OOT_BOMBCHU_10",
+      "Area": "Market",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Market Bombchu Shop Item 5"
+        ],
+        "GossipHintNames": [
+          "OOT Market Bombchu Shop Item 5"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Market Bombchu Shop Item 6",
+      "Name": "Market Bombchu Shop Item 6",
+      "OriginalItem": "OOT_BOMBCHU_10",
+      "Area": "Market",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Market Bombchu Shop Item 6"
+        ],
+        "GossipHintNames": [
+          "OOT Market Bombchu Shop Item 6"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Market Bombchu Shop Item 7",
+      "Name": "Market Bombchu Shop Item 7",
+      "OriginalItem": "OOT_BOMBCHU_10",
+      "Area": "Market",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Market Bombchu Shop Item 7"
+        ],
+        "GossipHintNames": [
+          "OOT Market Bombchu Shop Item 7"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Market Bombchu Shop Item 8",
+      "Name": "Market Bombchu Shop Item 8",
+      "OriginalItem": "OOT_BOMBCHU_10",
+      "Area": "Market",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Market Bombchu Shop Item 8"
+        ],
+        "GossipHintNames": [
+          "OOT Market Bombchu Shop Item 8"
         ],
         "PriceDataNames": []
       },
@@ -19107,6 +20323,26 @@
       }
     },
     {
+      "ID": "OOT_BLUE_FIRE",
+      "Name": "Blue Fire",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_BLUE_FIRE",
+          "Blue Fire"
+        ],
+        "GossipHintNames": [
+          "OOT_BLUE_FIRE",
+          "Blue Fire"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
       "ID": "SHARED_BOW",
       "Name": "Shared Bow",
       "MaxAmountInWorld": 3,
@@ -21422,6 +22658,14 @@
       "DestinationHasSingleEntrance": false
     },
     {
+      "ID": "OOT Kokiri Forest => OOT Kokiri Shop",
+      "Area": "OOT Kokiri Forest",
+      "Exit": "OOT Kokiri Shop",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
       "ID": "OOT Kokiri Forest => OOT Deku Tree",
       "Area": "OOT Kokiri Forest",
       "Exit": "OOT Deku Tree",
@@ -21431,6 +22675,14 @@
         "Exit": "OOT Kokiri Forest"
       },
       "RandomizableEntrance": true,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Kokiri Shop => OOT Kokiri Forest",
+      "Area": "OOT Kokiri Shop",
+      "Exit": "OOT Kokiri Forest",
+      "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -21571,9 +22823,57 @@
       "DestinationHasSingleEntrance": false
     },
     {
+      "ID": "OOT Market => OOT Market Bazaar",
+      "Area": "OOT Market",
+      "Exit": "OOT Market Bazaar",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Market => OOT Market Potion Shop",
+      "Area": "OOT Market",
+      "Exit": "OOT Market Potion Shop",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Market => OOT Market Bombchu Shop",
+      "Area": "OOT Market",
+      "Exit": "OOT Market Bombchu Shop",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
       "ID": "OOT Market => MM SPAWN",
       "Area": "OOT Market",
       "Exit": "MM SPAWN",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Market Bazaar => OOT Market",
+      "Area": "OOT Market Bazaar",
+      "Exit": "OOT Market",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Market Potion Shop => OOT Market",
+      "Area": "OOT Market Potion Shop",
+      "Exit": "OOT Market",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Market Bombchu Shop => OOT Market",
+      "Area": "OOT Market Bombchu Shop",
+      "Exit": "OOT Market",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -21941,8 +23241,40 @@
       "DestinationHasSingleEntrance": false
     },
     {
+      "ID": "OOT Kakariko => OOT Kakariko Bazaar",
+      "Area": "OOT Kakariko",
+      "Exit": "OOT Kakariko Bazaar",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Kakariko => OOT Kakariko Potion Shop",
+      "Area": "OOT Kakariko",
+      "Exit": "OOT Kakariko Potion Shop",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
       "ID": "OOT Kakariko Rooftop => OOT Kakariko",
       "Area": "OOT Kakariko Rooftop",
+      "Exit": "OOT Kakariko",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Kakariko Bazaar => OOT Kakariko",
+      "Area": "OOT Kakariko Bazaar",
+      "Exit": "OOT Kakariko",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Kakariko Potion Shop => OOT Kakariko",
+      "Area": "OOT Kakariko Potion Shop",
       "Exit": "OOT Kakariko",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
@@ -22111,6 +23443,22 @@
       "DestinationHasSingleEntrance": false
     },
     {
+      "ID": "OOT Goron City => OOT Goron Shop",
+      "Area": "OOT Goron City",
+      "Exit": "OOT Goron Shop",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Goron Shop => OOT Goron City",
+      "Area": "OOT Goron Shop",
+      "Exit": "OOT Goron City",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
       "ID": "OOT Zora River Front => OOT Hyrule Field",
       "Area": "OOT Zora River Front",
       "Exit": "OOT Hyrule Field",
@@ -22175,6 +23523,14 @@
       "DestinationHasSingleEntrance": false
     },
     {
+      "ID": "OOT Zora Domain => OOT Zora Shop",
+      "Area": "OOT Zora Domain",
+      "Exit": "OOT Zora Shop",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
       "ID": "OOT Zora Domain Back => OOT Zora Fountain",
       "Area": "OOT Zora Domain Back",
       "Exit": "OOT Zora Fountain",
@@ -22185,6 +23541,14 @@
     {
       "ID": "OOT Zora Domain Back => OOT Zora Domain",
       "Area": "OOT Zora Domain Back",
+      "Exit": "OOT Zora Domain",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Zora Shop => OOT Zora Domain",
+      "Area": "OOT Zora Shop",
       "Exit": "OOT Zora Domain",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
@@ -27528,9 +28892,13 @@
     "OOT SPAWN",
     "OOT Link's House",
     "OOT Kokiri Forest",
+    "OOT Kokiri Shop",
     "OOT Mido's House",
     "OOT Hyrule Field",
     "OOT Market",
+    "OOT Market Bazaar",
+    "OOT Market Potion Shop",
+    "OOT Market Bombchu Shop",
     "OOT Market Pot House",
     "OOT Back Alley",
     "OOT Dog Lady House",
@@ -27551,6 +28919,8 @@
     "OOT Sacred Meadow",
     "OOT Kakariko",
     "OOT Kakariko Rooftop",
+    "OOT Kakariko Bazaar",
+    "OOT Kakariko Potion Shop",
     "OOT Shooting Gallery Adult",
     "OOT Graveyard",
     "OOT Graveyard Upper",
@@ -27560,10 +28930,12 @@
     "OOT Death Mountain Summit",
     "OOT Goron City Shortcut",
     "OOT Goron City",
+    "OOT Goron Shop",
     "OOT Zora River Front",
     "OOT Zora River",
     "OOT Zora Domain",
     "OOT Zora Domain Back",
+    "OOT Zora Shop",
     "OOT Lake Hylia",
     "OOT Laboratory",
     "OOT Fishing Pond",
@@ -28106,8 +29478,8 @@
     {
       "Id": "Game_Clear",
       "RequiredItems": [
-        "OOT_GANON",
-        "MM_MAJORA"
+        "OOT_EVENT_GANON",
+        "MM_EVENT_MAJORA"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",

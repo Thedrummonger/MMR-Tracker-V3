@@ -62,7 +62,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
             CreateLocationProxies(dictionaryFile);
 
-            CreateAreaNameMappingFile();
+            //CreateAreaNameMappingFile();
 
             Logic = LogicFile;
             dictionary = dictionaryFile;
@@ -269,7 +269,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             dictionaryFile.Options.Add(ProgressiveLullabyMM);
 
             //Game Clear
-            dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "Game_Clear", RequiredItems = new List<string> { "OOT_GANON", "MM_MAJORA" } });
+            dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "Game_Clear", RequiredItems = new List<string> { "OOT_EVENT_GANON", "MM_EVENT_MAJORA" } });
             dictionaryFile.MacroList.Add(new LogicDictionaryData.DictionaryMacroEntry { ID = "Game_Clear", Name = "Both Games Cleared" });
             dictionaryFile.WinCondition = "Game_Clear";
 
@@ -401,7 +401,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                     }
                     foreach (var i in FileOBJ[key].events?.Keys.ToArray()??new string[0])
                     {
-                        var LogicFileEntry = LogicFile.Logic.Find(x => x.Id == i || x.Id == $"{Game} {i}" || x.Id == $"{Game}_{i}");
+                        var LogicFileEntry = LogicFile.Logic.Find(x => x.Id == i || x.Id == $"{Game} {i}" || x.Id == $"{Game}_EVENT_{i}");
                         if (LogicFileEntry is not null)
                         {
                             string Logic = $"(({FileOBJ[key].events[i]}) && {Game} {key})";
@@ -514,11 +514,13 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         line = line.Replace(f.ToString(), ReplaceText);
                         break;
                     case "event":
-                        line = line.Replace(f.ToString(), $"{Game}_{f.ParametersTrimmed}");
+                        line = line.Replace(f.ToString(), $"{Game}_EVENT_{f.ParametersTrimmed}");
                         break;
                     case "adult_trade":
+                        line = line.Replace(f.ToString(), $"{Game}_is_adult && has({f.ParametersTrimmed})");
+                        break;
                     case "can_ride_bean":
-                        line = line.Replace(f.ToString(), $"{Game}_is_adult && {Game}_{f.ParametersTrimmed}");
+                        line = line.Replace(f.ToString(), $"{Game}_is_adult && event({f.ParametersTrimmed})");
                         break;
                     case "masks":
                         line = line.Replace(f.ToString(), $"MM_MASKS, {f.ParametersTrimmed}");
@@ -535,12 +537,22 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         break;
                     case "age":
                         if (f.ParametersTrimmed == "child") { line = line.Replace(f.ToString(), $"age_filter != adult"); }
-                        else if (f.ParametersTrimmed == "adult") { line = line.Replace(f.ToString(), $"age_filter != child && OOT_TIME_TRAVEL"); }
+                        else if (f.ParametersTrimmed == "adult") { line = line.Replace(f.ToString(), $"age_filter != child && OOT_EVENT_TIME_TRAVEL"); }
                         break;
                     case "cond":
-                        string CleanedInput = f.ParametersTrimmed.Replace("setting(", "(");
-                        var splitArray = Regex.Split(CleanedInput, @"(?<!,[^(]+\([^)]+),");
-                        line = line.Replace(f.ToString(), $"({splitArray[0]} == {splitArray[1]} && {splitArray[2]}) || ({splitArray[0]} != {splitArray[1]} && {splitArray[3]})");
+                        if (f.ParametersTrimmed.StartsWith("setting"))
+                        {
+                            string CleanedInput = f.ParametersTrimmed.Replace("setting(", "(");
+                            Debug.WriteLine($"Parsing Cond \n[{f.ParametersTrimmed}]");
+                            var splitArray = Regex.Split(CleanedInput, @"(?<!,[^(]+\([^)]+),");
+                            line = line.Replace(f.ToString(), $"(({splitArray[0]} == {splitArray[1]} && {splitArray[2]}) || ({splitArray[0]} != {splitArray[1]} && {splitArray[3]}))");
+                            Debug.WriteLine($"Success \n[({splitArray[0]} == {splitArray[1]} && {splitArray[2]}) || ({splitArray[0]} != {splitArray[1]} && {splitArray[3]})]");
+                        }
+                        else
+                        {
+                            var splitArray = f.ParametersTrimmed.Split(",").Select(x => x.Trim()).ToArray();
+                            line = line.Replace(f.ToString(), $"({splitArray[0]} && {splitArray[1]}) || ({splitArray[2]})");
+                        }
                         break;
                     default:
                         line = line.Replace(f.ToString(), $"ERROR UNHANDLED FUNTION {f.Funtion}");
@@ -643,7 +655,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         }
                         foreach (var Event in LogicObject[l]?.events?.Keys?.ToList()??new List<string>())
                         {
-                            string TrueMacroName = $"{Game}_{Event}";
+                            string TrueMacroName = $"{Game}_EVENT_{Event}";
                             if (LogicFile.Logic.Find(x => x.Id == TrueMacroName) == null)
                             {
                                 LogicFile.Logic.Add(new TrackerObjects.MMRData.JsonFormatLogicItem { Id = TrueMacroName });
@@ -746,7 +758,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 dictEntry.ValidItemTypes = new string[] { "item" };
                 if (OOTRAreaDict.ContainsKey(i)) { dictEntry.Area = OOTRAreaDict[i]; }
                 else if (OOTRAreaDict.ContainsKey(DictValue[0])) { dictEntry.Area = OOTRAreaDict[DictValue[0]]; }
-                else { dictEntry.Area = DictValue[0]; }
+                else { dictEntry.Area = DictValue[0]; Debug.WriteLine($"{i} Had no Area Data"); }
                 dictEntry.OriginalItem = DictValue[1];
                 logicDictionary.LocationList.Add(dictEntry);
             }
@@ -809,9 +821,9 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
         public static void FixAreaClearLogic(MMRData.LogicFile Logic)
         {
-            var MM_BOSS_GREAT_BAY = Logic.Logic.First(x => x.Id == "MM_BOSS_GREAT_BAY");
-            var MM_BOSS_SNOWHEAD = Logic.Logic.First(x => x.Id == "MM_BOSS_SNOWHEAD");
-            var MM_CLEAN_SWAMP = Logic.Logic.First(x => x.Id == "MM_CLEAN_SWAMP");
+            var MM_BOSS_GREAT_BAY = Logic.Logic.First(x => x.Id == "MM_EVENT_BOSS_GREAT_BAY");
+            var MM_BOSS_SNOWHEAD = Logic.Logic.First(x => x.Id == "MM_EVENT_BOSS_SNOWHEAD");
+            var MM_CLEAN_SWAMP = Logic.Logic.First(x => x.Id == "MM_EVENT_CLEAN_SWAMP");
 
             string CodeFolder = References.TestingPaths.GetDevCodePath();
             string OOTMMRandoAreaClear = Path.Combine(CodeFolder, @"MMR Tracker V3", "OtherGames", "OOTMMRCOMBO", @"AfterBossMacroFixing.json");
