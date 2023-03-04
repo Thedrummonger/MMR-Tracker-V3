@@ -33,36 +33,19 @@ namespace Windows_Form_Frontend
             InitializeComponent();
         }
 
-        public void CloseThread()
+        //Form Functions =================================================================
+        private void ItemDisplay_Load(object sender, EventArgs e)
         {
-            this.Close();
+            DrawingControl.SuspendDrawing(this);
+            CreateDisplayBoxes();
+            refreshPage();
+            EnforceWindowSize();
+            DrawingControl.ResumeDrawing(this);
         }
 
-        public void UpdateData(WinFormImageUtils.TrackerState newState)
+        private void ItemDisplay_Shown(object sender, EventArgs e)
         {
-            trackerState = newState;
-            UpdateImages();
-            Debug.WriteLine($"Data Recieved containing {newState.ItemValues.Count} items and {newState.MacroValues.Count} macros");
-        }
 
-        private int GetImageBoxSize()
-        {
-            return _Instance.LimiterDirection == WinFormImageUtils.StaticDirecton.Horizontal ? (this.Width-16) / _Instance.ImagesPerLimiterDirection : (this.Height-16) / _Instance.ImagesPerLimiterDirection;
-        }
-
-        private Point GetPBpositionByIndex(int index)
-        {
-            int PBSize = GetImageBoxSize();
-            int offset = index / _Instance.ImagesPerLimiterDirection;
-            int position = index % _Instance.ImagesPerLimiterDirection;
-            if (_Instance.LimiterDirection == WinFormImageUtils.StaticDirecton.Horizontal)
-            {
-                return new Point(position * PBSize, offset * PBSize);
-            }
-            else
-            {
-                return new Point(offset * PBSize, position * PBSize);
-            }
         }
 
         private void ItemDisplay_ResizeBegin(object sender, EventArgs e)
@@ -73,17 +56,69 @@ namespace Windows_Form_Frontend
         private void ItemDisplay_ResizeEnd(object sender, EventArgs e)
         {
             refreshPage();
+            EnforceWindowSize();
             DrawingControl.ResumeDrawing(this);
         }
 
-        private void ItemDisplay_Load(object sender, EventArgs e)
+        private void EnforceWindowSize()
         {
-            CreateDisplayBoxes();
+            Rectangle screenRectangle = this.RectangleToScreen(this.ClientRectangle);
+            int titleHeight = screenRectangle.Top - this.Top;
+            int RowCount = (int)Math.Ceiling((decimal)PictureBoxes.Keys.Count / (decimal)_Instance.ImagesPerLimiterDirection);
+            var PBSize = GetImageBoxSize() + 2;
+            if (_Instance.LimiterDirection == StaticDirecton.Horizontal)
+            {
+                this.Height = RowCount * PBSize + titleHeight;
+            }
+            else
+            {
+                this.Width = RowCount * PBSize + 8;
+            }
         }
+
+        //handle picture Boxes =================================================================
+
+        private void CreateDisplayBoxes()
+        {
+            int PBSize = GetImageBoxSize();
+            int Position = 0;
+            foreach (var i in _Instance.DisplayBoxes)
+            {
+                var PB = new PictureBox
+                {
+                    Name = i.ID,
+                    BorderStyle = BorderStyle.Fixed3D,
+                    Image = i.GetDeafaultImage(),
+                    Size = new Size(PBSize, PBSize),
+                    SizeMode = PictureBoxSizeMode.StretchImage,
+                    Location = GetPBpositionByIndex(Position),
+                    BackColor = Color.Transparent,
+                    BackgroundImageLayout = ImageLayout.Stretch
+                };
+                PictureBoxes.Add(i.ID, PB);
+                Position++;
+            }
+        }
+
+        private void addPictureBoxesToScreen()
+        {
+            this.Controls.Clear();
+            int PBSize = GetImageBoxSize();
+            int Position = 0;
+            foreach (var i in PictureBoxes.Values)
+            {
+                i.Location = GetPBpositionByIndex(Position);
+                i.Size = new Size(PBSize, PBSize);
+                this.Controls.Add(i);
+                Position++;
+            }
+        }
+
+        //handle picture Box Content =================================================================
 
         private void UpdateImages()
         {
-            foreach(var i in _Instance.DisplayBoxes)
+            foreach (var i in _Instance.DisplayBoxes)
             {
                 if (!PictureBoxes.ContainsKey(i.ID)) { Debug.WriteLine($"WARNING {i.ID} WAS ORPHANED"); continue; }
                 var CurrentPB = PictureBoxes[i.ID];
@@ -133,6 +168,42 @@ namespace Windows_Form_Frontend
             }
         }
 
+        //Cross Thread Functions =================================================================
+        public void UpdateData(WinFormImageUtils.TrackerState newState)
+        {
+            trackerState = newState;
+            UpdateImages();
+        }
+
+        public void CloseThread()
+        {
+            this.Close();
+        }
+
+        //Utility Functions =================================================================
+
+        private int GetImageBoxSize()
+        {
+            Rectangle screenRectangle = this.RectangleToScreen(this.ClientRectangle);
+            int titleHeight = screenRectangle.Top - this.Top;
+            return _Instance.LimiterDirection == WinFormImageUtils.StaticDirecton.Horizontal ? (this.Width-16) / _Instance.ImagesPerLimiterDirection : (this.Height - titleHeight - 4) / _Instance.ImagesPerLimiterDirection;
+        }
+
+        private Point GetPBpositionByIndex(int index)
+        {
+            int PBSize = GetImageBoxSize();
+            int offset = index / _Instance.ImagesPerLimiterDirection;
+            int position = index % _Instance.ImagesPerLimiterDirection;
+            if (_Instance.LimiterDirection == WinFormImageUtils.StaticDirecton.Horizontal)
+            {
+                return new Point(position * PBSize, offset * PBSize);
+            }
+            else
+            {
+                return new Point(offset * PBSize, position * PBSize);
+            }
+        }
+
         private Point getLableLocation(ImageTextBox ITB, PictureBox ParentPB, Label self)
         {
             int LeftAnchor = ParentPB.Location.X + 2;
@@ -151,47 +222,6 @@ namespace Windows_Form_Frontend
                     return new Point(RightAnchor, BottomAnchor);
             }
             return new Point(LeftAnchor, TopAnchor);
-        }
-
-        private void addPictureBoxesToScreen()
-        {
-            this.Controls.Clear();
-            int PBSize = GetImageBoxSize();
-            int Position = 0;
-            foreach (var i in PictureBoxes.Values)
-            {
-                i.Location = GetPBpositionByIndex(Position);
-                i.Size = new Size(PBSize, PBSize);
-                this.Controls.Add(i);
-                Position++;
-            }
-        }
-
-        private void CreateDisplayBoxes()
-        {
-            int PBSize = GetImageBoxSize();
-            int Position = 0;
-            foreach (var i in _Instance.DisplayBoxes)
-            {
-                var PB = new PictureBox
-                {
-                    Name = i.ID,
-                    BorderStyle = BorderStyle.Fixed3D,
-                    Image = i.GetDeafaultImage(),
-                    Size = new Size(PBSize, PBSize),
-                    SizeMode = PictureBoxSizeMode.StretchImage,
-                    Location = GetPBpositionByIndex(Position),
-                    BackColor = Color.Transparent,
-                    BackgroundImageLayout = ImageLayout.Stretch
-                };
-                PictureBoxes.Add(i.ID, PB);
-                Position++;
-            }
-        }
-
-        private void ItemDisplay_Shown(object sender, EventArgs e)
-        {
-            refreshPage();
         }
 
         private void refreshPage()

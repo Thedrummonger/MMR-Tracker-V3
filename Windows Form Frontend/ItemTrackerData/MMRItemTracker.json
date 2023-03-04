@@ -564,6 +564,437 @@
       ]
     },
     {
+      "ID": "DBPowderkeg",
+      "DefaultImageLocations": "0, 4",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "Powder Keg"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "Powderkeg",
+          "ImageLocations": "0, 4",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "Powder Keg",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBItemPictobox",
+      "DefaultImageLocations": "1, 4",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "ItemPictobox"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "ItemPictobox",
+          "ImageLocations": "1, 4",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "ItemPictobox",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBItemLens",
+      "DefaultImageLocations": "2, 4",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "ItemLens"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "ItemLens",
+          "ImageLocations": "2, 4",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "ItemLens",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBItemHookshot",
+      "DefaultImageLocations": "3, 4",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "ItemHookshot"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "ItemHookshot",
+          "ImageLocations": "3, 4",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "ItemHookshot",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBItemFairySword",
+      "DefaultImageLocations": "4, 4",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "ItemFairySword"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "ItemFairySword",
+          "ImageLocations": "4, 4",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "ItemFairySword",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBSongEpona",
+      "DefaultImageLocations": "3, 24",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "SongEpona"
+        },
+        {
+          "Position": "bottomLeft",
+          "textType": "text",
+          "Value": "Epona"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "SongEpona",
+          "ImageLocations": "3, 24",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 100,
+              "G": 20,
+              "B": -60
+            }
+          },
+          "LogicReferenceEntry": "SongEpona",
+          "TextDisplay": [
+            {
+              "Position": "bottomLeft",
+              "textType": "text",
+              "Value": "Epona"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "DBSongNewWaveBossaNova",
+      "DefaultImageLocations": "3, 24",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "SongNewWaveBossaNova"
+        },
+        {
+          "Position": "bottomLeft",
+          "textType": "text",
+          "Value": "NWBN"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "SongNewWaveBossaNova",
+          "ImageLocations": "3, 24",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": -200,
+              "G": 50,
+              "B": 100
+            }
+          },
+          "LogicReferenceEntry": "SongNewWaveBossaNova",
+          "TextDisplay": [
+            {
+              "Position": "bottomLeft",
+              "textType": "text",
+              "Value": "NWBN"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "DBTradeItemSwampDeed",
+      "DefaultImageLocations": "2, 6",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "TradeItemSwampDeed"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "TradeItemSwampDeed",
+          "ImageLocations": "2, 6",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "TradeItemSwampDeed",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBBottle",
+      "DefaultImageLocations": "0, 9",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "Bottle with Red Potion+Bottle with Milk+Bottle with Gold Dust+Empty Bottle+Bottle with Chateau Romani"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "Bottle",
+          "ImageLocations": "0, 9",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "Any Bottle",
+          "TextDisplay": [
+            {
+              "Position": "topRight",
+              "textType": "ItemCount",
+              "Value": "Bottle with Red Potion+Bottle with Milk+Bottle with Gold Dust+Empty Bottle+Bottle with Chateau Romani"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "DBBottleMilk",
+      "DefaultImageLocations": "0, 10",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "Milk+Bottle with Milk"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "BottleMilk",
+          "ImageLocations": "0, 10",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "Any Milk",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBGoldDust",
+      "DefaultImageLocations": "0, 11",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "ItemBottleGoronRace"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "GoldDust",
+          "ImageLocations": "0, 11",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "ItemBottleGoronRace",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBMundaneItemSeahorse",
+      "DefaultImageLocations": "0, 12",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "MundaneItemSeahorse"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "MundaneItemSeahorse",
+          "ImageLocations": "0, 12",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "MundaneItemSeahorse",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBChateau",
+      "DefaultImageLocations": "1, 12",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "ItemBottleMadameAroma+ShopItemMilkBarChateau"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "Chateau",
+          "ImageLocations": "1, 12",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "MMRTItemDisplayHasChateau",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBSoaring",
+      "DefaultImageLocations": "3, 24",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "SongSoaring"
+        },
+        {
+          "Position": "bottomLeft",
+          "textType": "text",
+          "Value": "Soaring"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "SongSoaring",
+          "ImageLocations": "3, 24",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 32,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "SongSoaring",
+          "TextDisplay": [
+            {
+              "Position": "bottomLeft",
+              "textType": "text",
+              "Value": "Soaring"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "ID": "DBSongElegy",
       "DefaultImageLocations": "3, 24",
       "DefaultTextDisplay": [
@@ -599,6 +1030,420 @@
               "Value": "Elegy"
             }
           ]
+        }
+      ]
+    },
+    {
+      "ID": "DBTradeItemMountainDeed",
+      "DefaultImageLocations": "3, 6",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "TradeItemMountainDeed"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "TradeItemMountainDeed",
+          "ImageLocations": "3, 6",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "TradeItemMountainDeed",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBFairy",
+      "DefaultImageLocations": "1, 12",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "BottleCatchFairy"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "Fairy",
+          "ImageLocations": "1, 12",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "BottleCatchFairy",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBDekuPrincess",
+      "DefaultImageLocations": "5, 9",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "BottleCatchPrincess"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "DekuPrincess",
+          "ImageLocations": "5, 9",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "BottleCatchPrincess",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBFish",
+      "DefaultImageLocations": "2, 10",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "BottleCatchFish"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "Fish",
+          "ImageLocations": "2, 10",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "BottleCatchFish",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBBug",
+      "DefaultImageLocations": "3, 10",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "BottleCatchBug"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "Bug",
+          "ImageLocations": "3, 10",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "BottleCatchBug",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBSmallPoe",
+      "DefaultImageLocations": "5, 10",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "BottleCatchPoe"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "SmallPoe",
+          "ImageLocations": "5, 10",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "BottleCatchPoe",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBStorms",
+      "DefaultImageLocations": "3, 24",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "SongStorms"
+        },
+        {
+          "Position": "bottomLeft",
+          "textType": "text",
+          "Value": "Storms"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "SongSoaring",
+          "ImageLocations": "3, 24",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 64,
+              "G": 64,
+              "B": 128
+            }
+          },
+          "LogicReferenceEntry": "SongStorms",
+          "TextDisplay": [
+            {
+              "Position": "bottomLeft",
+              "textType": "text",
+              "Value": "Storms"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "DBOath",
+      "DefaultImageLocations": "3, 24",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "SongOath"
+        },
+        {
+          "Position": "bottomLeft",
+          "textType": "text",
+          "Value": "Oath"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "SongOath",
+          "ImageLocations": "3, 24",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 20,
+              "G": -50,
+              "B": 100
+            }
+          },
+          "LogicReferenceEntry": "SongOath",
+          "TextDisplay": [
+            {
+              "Position": "bottomLeft",
+              "textType": "text",
+              "Value": "Oath"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "DBTradeItemOceanDeed",
+      "DefaultImageLocations": "4, 6",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "TradeItemOceanDeed"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "TradeItemOceanDeed",
+          "ImageLocations": "4, 6",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "TradeItemOceanDeed",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBBottleCatchBigPoe",
+      "DefaultImageLocations": "0, 11",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "BottleCatchBigPoe"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "BottleCatchBigPoe",
+          "ImageLocations": "0, 11",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "BottleCatchBigPoe",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBBottleCatchSpringWater",
+      "DefaultImageLocations": "1, 11",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "BottleCatchSpringWater"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "BottleCatchSpringWater",
+          "ImageLocations": "1, 11",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "BottleCatchSpringWater",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBBottleCatchHotSpringWater",
+      "DefaultImageLocations": "2, 11",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "BottleCatchHotSpringWater"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "BottleCatchHotSpringWater",
+          "ImageLocations": "2, 11",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "BottleCatchHotSpringWater",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBBottleCatchEgg",
+      "DefaultImageLocations": "3, 11",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "BottleCatchEgg"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "BottleCatchEgg",
+          "ImageLocations": "3, 11",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "BottleCatchEgg",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBBottleCatchMushroom",
+      "DefaultImageLocations": "5, 11",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "BottleCatchMushroom"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "BottleCatchMushroom",
+          "ImageLocations": "5, 11",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "BottleCatchMushroom",
+          "TextDisplay": []
         }
       ]
     },
@@ -655,6 +1500,34 @@
               "Value": "Heart Container"
             }
           ]
+        }
+      ]
+    },
+    {
+      "ID": "DBTradeItemRoomKey",
+      "DefaultImageLocations": "5, 6",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "TradeItemRoomKey"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "TradeItemRoomKey",
+          "ImageLocations": "5, 6",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "TradeItemRoomKey",
+          "TextDisplay": []
         }
       ]
     }

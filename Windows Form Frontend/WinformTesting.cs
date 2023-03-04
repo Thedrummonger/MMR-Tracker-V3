@@ -19,8 +19,13 @@ namespace Windows_Form_Frontend
             instance.imageSheet.ImageSheetPath = Path.Combine("ItemTrackerData", "MMR.png");
             instance.imageSheet.ImageDimentions = 32;
             instance.ImagesPerLimiterDirection = 8;
+            instance.LimiterDirection = WinFormImageUtils.StaticDirecton.Horizontal;
 
             //ROW 1=============================================================================================================
+
+            string ID;
+            int iconx;
+            int icony;
 
             //Ocarina
             instance.AddDisplayBox("DBOcarina", 0, 2);
@@ -117,35 +122,120 @@ namespace Windows_Form_Frontend
 
             //ROW 3=============================================================================================================
 
-            //PowderKeg
+            //PowderKeg 0 4
+            iconx = 0;
+            icony = 4;
+            ID = "Powderkeg";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "Powder Keg");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "Powder Keg");
 
             //PictoBox
+            iconx = 1;
+            icony = 4;
+            ID = "ItemPictobox";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "ItemPictobox");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "ItemPictobox");
 
             //Lens
+            iconx = 2;
+            icony = 4;
+            ID = "ItemLens";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "ItemLens");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "ItemLens");
 
             //Hookshot
+            iconx = 3;
+            icony = 4;
+            ID = "ItemHookshot";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "ItemHookshot");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "ItemHookshot");
 
             //Fairy Sword
+            iconx = 4;
+            icony = 4;
+            ID = "ItemFairySword";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "ItemFairySword");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "ItemFairySword");
 
             //Song Epona
+            iconx = 3;
+            icony = 24;
+            ID = "SongEpona";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "SongEpona");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "SongEpona", false, 100,20,-60);
+            instance.AddStaticTextBox($"DB{ID}", WinFormImageUtils.TextPosition.bottomLeft, WinFormImageUtils.TextType.text, "Epona");
 
             //BossaNova
+            iconx = 3;
+            icony = 24;
+            ID = "SongNewWaveBossaNova";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "SongNewWaveBossaNova");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "SongNewWaveBossaNova", false, -200, 50, 100);
+            instance.AddStaticTextBox($"DB{ID}", WinFormImageUtils.TextPosition.bottomLeft, WinFormImageUtils.TextType.text, "NWBN");
 
             //Swamp Deed
+            iconx = 2;
+            icony = 6;
+            ID = "TradeItemSwampDeed";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "TradeItemSwampDeed");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "TradeItemSwampDeed");
 
             //ROW 4=============================================================================================================
 
             //Bottle
+            iconx = 0;
+            icony = 9;
+            ID = "Bottle";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "Bottle with Red Potion+Bottle with Milk+Bottle with Gold Dust+Empty Bottle+Bottle with Chateau Romani");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "Any Bottle");
+            instance.AddTextToDisplayItem($"DB{ID}", ID, WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.ItemCount, "Bottle with Red Potion+Bottle with Milk+Bottle with Gold Dust+Empty Bottle+Bottle with Chateau Romani");
 
             //Milk
+            iconx = 0;
+            icony = 10;
+            ID = "BottleMilk";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "Milk+Bottle with Milk");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "Any Milk");
 
             //GoldDust
+            iconx = 0;
+            icony = 11;
+            ID = "GoldDust";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "ItemBottleGoronRace");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "ItemBottleGoronRace");
 
             //SeaHourse
+            iconx = 0;
+            icony = 12;
+            ID = "MundaneItemSeahorse";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "MundaneItemSeahorse");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "MundaneItemSeahorse");
 
             //Chateu
+            iconx = 1;
+            icony = 12;
+            ID = "Chateau";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "ItemBottleMadameAroma+ShopItemMilkBarChateau");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "MMRTItemDisplayHasChateau");
 
             //Soaring
+            instance.AddDisplayBox("DBSoaring", 3, 24);
+            instance.AddTextToDefaultImage("DBSoaring", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "SongSoaring");
+            instance.AddDisplayItem("DBSoaring", "SongSoaring", 3, 24, "SongSoaring", false, 32, 0, 0);
+            instance.AddStaticTextBox("DBSoaring", WinFormImageUtils.TextPosition.bottomLeft, WinFormImageUtils.TextType.text, "Soaring");
 
             //Elegey
             instance.AddDisplayBox("DBSongElegy", 3, 24);
@@ -154,36 +244,116 @@ namespace Windows_Form_Frontend
             instance.AddStaticTextBox("DBSongElegy", WinFormImageUtils.TextPosition.bottomLeft, WinFormImageUtils.TextType.text, "Elegy");
 
             //Mountain Deed
+            iconx = 3;
+            icony = 6;
+            ID = "TradeItemMountainDeed";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "TradeItemMountainDeed");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "TradeItemMountainDeed");
 
             //ROW 5=============================================================================================================
 
             //Bottle Fairy
+            iconx = 1;
+            icony = 12;
+            ID = "Fairy";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "BottleCatchFairy");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "BottleCatchFairy");
 
             //Bottle Deku
+            iconx = 5;
+            icony = 9;
+            ID = "DekuPrincess";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "BottleCatchPrincess");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "BottleCatchPrincess");
 
             //Bottle Fish
+            iconx = 2;
+            icony = 10;
+            ID = "Fish";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "BottleCatchFish");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "BottleCatchFish");
 
             //Bottle Bug
+            iconx = 3;
+            icony = 10;
+            ID = "Bug";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "BottleCatchBug");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "BottleCatchBug");
 
             //Bottle Small poe
+            iconx = 5;
+            icony = 10;
+            ID = "SmallPoe";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "BottleCatchPoe");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "BottleCatchPoe");
 
             //Song Storms
+            instance.AddDisplayBox("DBStorms", 3, 24);
+            instance.AddTextToDefaultImage("DBStorms", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "SongStorms");
+            instance.AddDisplayItem("DBStorms", "SongSoaring", 3, 24, "SongStorms", false, 64, 64, 128);
+            instance.AddStaticTextBox("DBStorms", WinFormImageUtils.TextPosition.bottomLeft, WinFormImageUtils.TextType.text, "Storms");
 
             //Song Oath
+            instance.AddDisplayBox("DBOath", 3, 24);
+            instance.AddTextToDefaultImage("DBOath", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "SongOath");
+            instance.AddDisplayItem("DBOath", "SongOath", 3, 24, "SongOath", false, 20, -50, 100);
+            instance.AddStaticTextBox("DBOath", WinFormImageUtils.TextPosition.bottomLeft, WinFormImageUtils.TextType.text, "Oath");
 
             //OceanDeed
+            iconx = 4;
+            icony = 6;
+            ID = "TradeItemOceanDeed";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "TradeItemOceanDeed");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "TradeItemOceanDeed");
 
             //ROW 6=============================================================================================================
 
             //Bottle Big Poe
+            iconx = 0;
+            icony = 11;
+            ID = "BottleCatchBigPoe";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "BottleCatchBigPoe");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "BottleCatchBigPoe");
 
             //Bottle Water
+            iconx = 1;
+            icony = 11;
+            ID = "BottleCatchSpringWater";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "BottleCatchSpringWater");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "BottleCatchSpringWater");
 
             //Bottle HS
+            iconx = 2;
+            icony = 11;
+            ID = "BottleCatchHotSpringWater";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "BottleCatchHotSpringWater");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "BottleCatchHotSpringWater");
 
             //Bottle Zora
+            iconx = 3;
+            icony = 11;
+            ID = "BottleCatchEgg";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "BottleCatchEgg");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "BottleCatchEgg");
 
             //Bottle Mushroom
+            iconx = 5;
+            icony = 11;
+            ID = "BottleCatchMushroom";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "BottleCatchMushroom");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "BottleCatchMushroom");
 
             //Heart Piece
             instance.AddDisplayBox("DBHeartPieces", 4, 7);
@@ -196,6 +366,12 @@ namespace Windows_Form_Frontend
             instance.AddTextToDisplayItem("DBHeartContainer", "HeartContainer", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.ItemCount, "Heart Container");
 
             //Room Key
+            iconx = 5;
+            icony = 6;
+            ID = "TradeItemRoomKey";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "TradeItemRoomKey");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "TradeItemRoomKey");
 
             //ROW 7=============================================================================================================
 
@@ -342,6 +518,7 @@ namespace Windows_Form_Frontend
 
 
             File.WriteAllText(Path.Combine(References.TestingPaths.GetDevCodePath(), "Windows Form Frontend", "ItemTrackerData", "MMRItemTracker.json"), Newtonsoft.Json.JsonConvert.SerializeObject(instance, MMR_Tracker_V3.Testing._NewtonsoftJsonSerializerOptions));
+            File.WriteAllText(Path.Combine("ItemTrackerData", "MMRItemTracker.json"), Newtonsoft.Json.JsonConvert.SerializeObject(instance, MMR_Tracker_V3.Testing._NewtonsoftJsonSerializerOptions));
 
         }
     }

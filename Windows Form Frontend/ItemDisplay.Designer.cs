@@ -37,7 +37,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(233, 181);
+            this.ClientSize = new System.Drawing.Size(559, 691);
             this.Name = "ItemDisplay";
             this.Text = "ItemDisplay";
             this.Load += new System.EventHandler(this.ItemDisplay_Load);

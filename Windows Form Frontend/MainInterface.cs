@@ -260,18 +260,11 @@ namespace Windows_Form_Frontend
         //Menu Strip => Dev
 
 
-        private async void SendDataToItemDisplay()
-        {
-            if (!Utility.OBJIsThreadSafe(MainInterfaceItemDisplayThread, MainInterfaceItemDisplayForm)) { return; }
-            var newState = WinFormImageUtils.CaptureTrackerState(InstanceContainer.Instance);
-            await Task.Run(() => MainInterfaceItemDisplayForm.Invoke(new MethodInvoker(delegate { MainInterfaceItemDisplayForm.UpdateData(newState); })));
-        }
-
         private void CodeTestingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //WinformTesting.CreateMMRItemTrackerObject();
+            WinformTesting.CreateMMRItemTrackerObject();
             //MMR_Tracker_V3.OtherGames.SkywardSwordRando.ReadAndParse.ReadWebData();
-            //return;
+            return;
 
             MMR_Tracker_V3.OtherGames.OOTMMRCOMBO.ReadAndParseData.CreateFiles(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary);
 
@@ -1277,6 +1270,13 @@ namespace Windows_Form_Frontend
                 }));
                 SendDataToItemDisplay();
             }
+        }
+
+        private async void SendDataToItemDisplay()
+        {
+            if (!Utility.OBJIsThreadSafe(MainInterfaceItemDisplayThread, MainInterfaceItemDisplayForm)) { return; }
+            var newState = WinFormImageUtils.CaptureTrackerState(InstanceContainer.Instance);
+            await Task.Run(() => MainInterfaceItemDisplayForm.Invoke(new MethodInvoker(delegate { MainInterfaceItemDisplayForm.UpdateData(newState); })));
         }
     }
 }

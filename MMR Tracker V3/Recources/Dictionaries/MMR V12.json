@@ -37277,6 +37277,22 @@
       "IsTrick": false
     },
     {
+      "Id": "MMRTItemDisplayHasChateau",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "ShopItemMilkBarChateau"
+        ],
+        [
+          "ItemBottleMadameAroma"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "DefeatMajora",
       "RequiredItems": [ "AreaMoonAccess" ],
       "ConditionalItems": [],
