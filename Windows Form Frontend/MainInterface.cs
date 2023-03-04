@@ -101,6 +101,10 @@ namespace Windows_Form_Frontend
         private void MainInterface_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!PromptSave()) { e.Cancel = true; }
+            if (Utility.OBJIsThreadSafe(MainInterfaceItemDisplayThread, MainInterfaceItemDisplayForm))
+            {
+                MainInterfaceItemDisplayForm.Invoke(new MethodInvoker(delegate { MainInterfaceItemDisplayForm.CloseThread(); }));
+            }
         }
 
         //Menu Strip
@@ -255,30 +259,6 @@ namespace Windows_Form_Frontend
 
         //Menu Strip => Dev
 
-        private WinFormImageUtils.ItemTrackerInstance GetImageSheet()
-        {
-            return new WinFormImageUtils.ItemTrackerInstance { imageSheet = new WinFormImageUtils.ImageSheet { ImageSheetPath = Path.Combine("ItemTrackerData", "MMR.png") } };
-        }
-
-        private void ShowItemDisplayForm()
-        {
-            if (MainInterfaceItemDisplayThread == null || !MainInterfaceItemDisplayThread.IsAlive || MainInterfaceItemDisplayForm == null)
-            {
-
-                MainInterfaceItemDisplayForm = new ItemDisplay(this, GetImageSheet());
-                MainInterfaceItemDisplayThread = new Thread(new ThreadStart(() => MainInterfaceItemDisplayForm.ShowDialog()));
-                MainInterfaceItemDisplayThread.Start();
-                while(!Utility.OBJIsThreadSafe(MainInterfaceItemDisplayThread, MainInterfaceItemDisplayForm)) { Thread.Sleep(10); }
-                SendDataToItemDisplay();
-            }
-            else
-            {
-                MainInterfaceItemDisplayForm.Invoke(new Action(delegate {
-                    MainInterfaceItemDisplayForm.Activate();
-                }));
-                SendDataToItemDisplay();
-            }
-        }
 
         private async void SendDataToItemDisplay()
         {
@@ -289,8 +269,9 @@ namespace Windows_Form_Frontend
 
         private void CodeTestingToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            WinformTesting.CreateMMRItemTrackerObject();
             //MMR_Tracker_V3.OtherGames.SkywardSwordRando.ReadAndParse.ReadWebData();
-            //return;
+            return;
 
             MMR_Tracker_V3.OtherGames.OOTMMRCOMBO.ReadAndParseData.CreateFiles(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary);
 
@@ -1280,7 +1261,22 @@ namespace Windows_Form_Frontend
 
         private void visualItemTrackerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ShowItemDisplayForm();
+            if (MainInterfaceItemDisplayThread == null || !MainInterfaceItemDisplayThread.IsAlive || MainInterfaceItemDisplayForm == null)
+            {
+
+                MainInterfaceItemDisplayForm = new ItemDisplay(this, WinFormImageUtils.GetImageSheet());
+                MainInterfaceItemDisplayThread = new Thread(new ThreadStart(() => MainInterfaceItemDisplayForm.ShowDialog()));
+                MainInterfaceItemDisplayThread.Start();
+                while (!Utility.OBJIsThreadSafe(MainInterfaceItemDisplayThread, MainInterfaceItemDisplayForm)) { Thread.Sleep(10); }
+                SendDataToItemDisplay();
+            }
+            else
+            {
+                MainInterfaceItemDisplayForm.Invoke(new Action(delegate {
+                    MainInterfaceItemDisplayForm.Activate();
+                }));
+                SendDataToItemDisplay();
+            }
         }
     }
 }

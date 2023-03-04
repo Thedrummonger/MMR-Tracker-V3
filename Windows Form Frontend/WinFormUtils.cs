@@ -101,19 +101,11 @@ namespace Windows_Form_Frontend
         public static Font GetFontFromString(string Font)
         {
             TypeConverter converter = TypeDescriptor.GetConverter(typeof(Font));
-            if (string.IsNullOrWhiteSpace(Font))
-            {
-                return System.Drawing.SystemFonts.DefaultFont;
-            }
-            return (Font)converter.ConvertFromString(Font);
+            return string.IsNullOrWhiteSpace(Font) ? SystemFonts.DefaultFont : (Font)converter.ConvertFromString(Font);
         }
         public static string ConvertFontToString(Font Font)
         {
-            if (Font == null)
-            {
-                Font = System.Drawing.SystemFonts.DefaultFont;
-            }
-
+            Font ??= SystemFonts.DefaultFont;
             TypeConverter converter = TypeDescriptor.GetConverter(typeof(Font));
             return converter.ConvertToString(Font);
         }

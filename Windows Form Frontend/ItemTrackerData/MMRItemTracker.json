@@ -1,0 +1,662 @@
+{
+  "GameCode": "MMR",
+  "LogicVersion": 12,
+  "imageSheet": {
+    "ImageSheetPath": "ItemTrackerData\\MMR.png",
+    "ImageDimentions": 32
+  },
+  "LimiterDirection": "Horizontal",
+  "ImagesPerLimiterDirection": 8,
+  "DisplayBoxes": [
+    {
+      "ID": "DBOcarina",
+      "DefaultImageLocations": "0, 2",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "ItemOcarina"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "ItemOcarina",
+          "ImageLocations": "0, 2",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "ItemOcarina",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBbows",
+      "DefaultImageLocations": "1, 2",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "UpgradeBiggestQuiver+UpgradeBigQuiver+ItemBow"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "UpgradeBiggestQuiver",
+          "ImageLocations": "1, 2",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "UpgradeBiggestQuiver",
+          "TextDisplay": [
+            {
+              "Position": "topLeft",
+              "textType": "text",
+              "Value": "50"
+            }
+          ]
+        },
+        {
+          "Name": "UpgradeBigQuiver",
+          "ImageLocations": "1, 2",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "UpgradeBigQuiver",
+          "TextDisplay": [
+            {
+              "Position": "topLeft",
+              "textType": "text",
+              "Value": "40"
+            }
+          ]
+        },
+        {
+          "Name": "ItemBow",
+          "ImageLocations": "1, 2",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "ItemBow",
+          "TextDisplay": [
+            {
+              "Position": "topLeft",
+              "textType": "text",
+              "Value": "30"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "DBFireArrow",
+      "DefaultImageLocations": "2, 2",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "ItemFireArrow"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "ItemFireArrow",
+          "ImageLocations": "2, 2",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "ItemFireArrow",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBIceArrow",
+      "DefaultImageLocations": "3, 2",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "ItemIceArrow"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "ItemIceArrow",
+          "ImageLocations": "3, 2",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "ItemIceArrow",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBLightArrow",
+      "DefaultImageLocations": "4, 2",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "ItemLightArrow"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "ItemLightArrow",
+          "ImageLocations": "4, 2",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "ItemLightArrow",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBSongTime",
+      "DefaultImageLocations": "3, 24",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "SongTime"
+        },
+        {
+          "Position": "bottomLeft",
+          "textType": "text",
+          "Value": "SoT"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "SongTime",
+          "ImageLocations": "3, 24",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": -200,
+              "G": -20,
+              "B": 100
+            }
+          },
+          "LogicReferenceEntry": "SongTime",
+          "TextDisplay": [
+            {
+              "Position": "bottomLeft",
+              "textType": "text",
+              "Value": "SoT"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "DBSongSonata",
+      "DefaultImageLocations": "3, 24",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "SongSonata"
+        },
+        {
+          "Position": "bottomLeft",
+          "textType": "text",
+          "Value": "Sonata"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "SongSonata",
+          "ImageLocations": "3, 24",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": -50,
+              "G": 32,
+              "B": -50
+            }
+          },
+          "LogicReferenceEntry": "SongSonata",
+          "TextDisplay": [
+            {
+              "Position": "bottomLeft",
+              "textType": "text",
+              "Value": "Sonata"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "DBMoonTear",
+      "DefaultImageLocations": "0, 6",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "TradeItemMoonTear"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "TradeItemMoonTear",
+          "ImageLocations": "0, 6",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "TradeItemMoonTear",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBbombs",
+      "DefaultImageLocations": "0, 3",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "UpgradeBiggestBombBag+UpgradeBigBombBag+ItemBombBag"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "UpgradeBiggestBombBag",
+          "ImageLocations": "0, 3",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "UpgradeBiggestBombBag",
+          "TextDisplay": [
+            {
+              "Position": "topLeft",
+              "textType": "text",
+              "Value": "40"
+            }
+          ]
+        },
+        {
+          "Name": "UpgradeBigBombBag",
+          "ImageLocations": "0, 3",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "UpgradeBigBombBag",
+          "TextDisplay": [
+            {
+              "Position": "topLeft",
+              "textType": "text",
+              "Value": "30"
+            }
+          ]
+        },
+        {
+          "Name": "ItemBombBag",
+          "ImageLocations": "0, 3",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "ItemBombBag",
+          "TextDisplay": [
+            {
+              "Position": "topLeft",
+              "textType": "text",
+              "Value": "20"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "DBBombchu",
+      "DefaultImageLocations": "1, 3",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "ShopItemBombsBombchu10+ChestInvertedStoneTowerBombchu10+ChestLinkTrialBombchu10"
+        },
+        {
+          "Position": "bottomLeft",
+          "textType": "text",
+          "Value": "10 Pack"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "BombchuPack",
+          "ImageLocations": "1, 3",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "Any Bombchu Pack",
+          "TextDisplay": [
+            {
+              "Position": "bottomLeft",
+              "textType": "text",
+              "Value": "10 Pack"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "DBSticks",
+      "DefaultImageLocations": "2, 3",
+      "DefaultTextDisplay": [],
+      "DisplayItems": []
+    },
+    {
+      "ID": "DBNuts",
+      "DefaultImageLocations": "3, 3",
+      "DefaultTextDisplay": [],
+      "DisplayItems": []
+    },
+    {
+      "ID": "DBMagicBean",
+      "DefaultImageLocations": "4, 3",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "ItemMagicBean+ChestInvertedStoneTowerBean+ShopItemBusinessScrubMagicBean"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "ItemMagicBean",
+          "ImageLocations": "4, 3",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "OtherMagicBean",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBHealing",
+      "DefaultImageLocations": "3, 24",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "SongHealing"
+        },
+        {
+          "Position": "bottomLeft",
+          "textType": "text",
+          "Value": "Healing"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "SongHealing",
+          "ImageLocations": "3, 24",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 100,
+              "G": 0,
+              "B": 50
+            }
+          },
+          "LogicReferenceEntry": "SongHealing",
+          "TextDisplay": [
+            {
+              "Position": "bottomLeft",
+              "textType": "text",
+              "Value": "Healing"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "DBLullaby",
+      "DefaultImageLocations": "3, 24",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "SongLullaby"
+        },
+        {
+          "Position": "bottomLeft",
+          "textType": "text",
+          "Value": "Lullaby"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "SongLullaby",
+          "ImageLocations": "3, 24",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 64,
+              "G": -64,
+              "B": -32
+            }
+          },
+          "LogicReferenceEntry": "SongLullaby",
+          "TextDisplay": [
+            {
+              "Position": "bottomLeft",
+              "textType": "text",
+              "Value": "Lullaby"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "DBlandDeed",
+      "DefaultImageLocations": "1, 6",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "TradeItemLandDeed"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "TradeItemLandDeed",
+          "ImageLocations": "1, 6",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "TradeItemLandDeed",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBSongElegy",
+      "DefaultImageLocations": "3, 24",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "SongElegy"
+        },
+        {
+          "Position": "bottomLeft",
+          "textType": "text",
+          "Value": "Elegy"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "SongElegy",
+          "ImageLocations": "3, 24",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 100,
+              "G": 80,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "SongElegy",
+          "TextDisplay": [
+            {
+              "Position": "bottomLeft",
+              "textType": "text",
+              "Value": "Elegy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "DBHeartPieces",
+      "DefaultImageLocations": "4, 7",
+      "DefaultTextDisplay": [],
+      "DisplayItems": [
+        {
+          "Name": "HeartPiece",
+          "ImageLocations": "4, 7",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "Piece of Heart",
+          "TextDisplay": [
+            {
+              "Position": "topRight",
+              "textType": "ItemCount",
+              "Value": "Piece of Heart"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "DBHeartContainer",
+      "DefaultImageLocations": "5, 7",
+      "DefaultTextDisplay": [],
+      "DisplayItems": [
+        {
+          "Name": "HeartContainer",
+          "ImageLocations": "5, 7",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "Heart Container",
+          "TextDisplay": [
+            {
+              "Position": "topRight",
+              "textType": "ItemCount",
+              "Value": "Heart Container"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
