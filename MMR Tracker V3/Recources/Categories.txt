@@ -40,6 +40,7 @@ Single Gratitude Crystal
 #GAMECODESTART: OOTMM,MMR
 
 //Ocarina of Time
+Egg Hatching
 Kokiri Forest
 Lost Woods
 Sacred Forest Meadow

@@ -3,6 +3,32 @@
   "GameCode": "OOTMM",
   "Logic": [
     {
+      "Id": "OOT Hatch Chicken",
+      "RequiredItems": [
+        "OOT_is_child",
+        "OOT_WEIRD_EGG",
+        "OOT EGGS"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Hatch Pocket Cucco",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT_POCKET_EGG",
+        "OOT EGGS"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Kokiri Forest Mido Top Left",
       "RequiredItems": [
         "OOT Mido's House"
@@ -5244,6 +5270,10 @@
         ],
         [
           "OOT_has_fire_spirit"
+        ],
+        [
+          "OOT_has_fire_arrows",
+          "OOT_SMALL_KEY_SPIRIT, 4"
         ]
       ],
       "TimeNeeded": "None",
@@ -5294,10 +5324,15 @@
       "ConditionalItems": [
         [
           "OOT_EVENT_SPIRIT_CHILD_DOOR",
-          "OOT_can_use_sticks"
+          "OOT_can_use_sticks",
+          "OOT_has_explosives"
         ],
         [
           "OOT_has_fire_spirit"
+        ],
+        [
+          "OOT_has_fire_arrows",
+          "OOT_SMALL_KEY_SPIRIT, 4"
         ]
       ],
       "TimeNeeded": "None",
@@ -13474,6 +13509,17 @@
       "RequiredItems": [
         "OOT_can_boomerang",
         "OOT Jabu-Jabu Boss"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT SPAWN => OOT EGGS",
+      "RequiredItems": [
+        "OOT SPAWN"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",

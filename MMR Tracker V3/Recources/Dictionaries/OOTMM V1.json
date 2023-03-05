@@ -5,6 +5,44 @@
   "WinCondition": "Game_Clear",
   "LocationList": [
     {
+      "ID": "OOT Hatch Chicken",
+      "Name": "Hatch Chicken",
+      "OriginalItem": "OOT_WEIRD_EGG",
+      "Area": "Egg Hatching",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Hatch Chicken"
+        ],
+        "GossipHintNames": [
+          "OOT Hatch Chicken"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT Hatch Pocket Cucco",
+      "Name": "Hatch Pocket Cucco",
+      "OriginalItem": "OOT_POCKET_EGG",
+      "Area": "Egg Hatching",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Hatch Pocket Cucco"
+        ],
+        "GossipHintNames": [
+          "OOT Hatch Pocket Cucco"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
       "ID": "OOT Kokiri Forest Mido Top Left",
       "Name": "Kokiri Forest Mido Top Left",
       "OriginalItem": "OOT_RUPEE_BLUE",
@@ -20343,6 +20381,46 @@
       }
     },
     {
+      "ID": "OOT_WEIRD_EGG",
+      "Name": "Weird Egg",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_WEIRD_EGG",
+          "Weird Egg"
+        ],
+        "GossipHintNames": [
+          "OOT_WEIRD_EGG",
+          "Weird Egg"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_POCKET_EGG",
+      "Name": "Pocket Egg",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_POCKET_EGG",
+          "Pocket Egg"
+        ],
+        "GossipHintNames": [
+          "OOT_POCKET_EGG",
+          "Pocket Egg"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
       "ID": "SHARED_BOW",
       "Name": "Shared Bow",
       "MaxAmountInWorld": 3,
@@ -22559,6 +22637,14 @@
       "Exit": "OOT Jabu-Jabu After Boss",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT SPAWN => OOT EGGS",
+      "Area": "OOT SPAWN",
+      "Exit": "OOT EGGS",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": true,
       "DestinationHasSingleEntrance": false
     },
     {
@@ -28898,6 +28984,7 @@
     "OOT Jabu-Jabu Boss",
     "OOT Jabu-Jabu After Boss",
     "OOT SPAWN",
+    "OOT EGGS",
     "OOT Link's House",
     "OOT Kokiri Forest",
     "OOT Kokiri Shop",
