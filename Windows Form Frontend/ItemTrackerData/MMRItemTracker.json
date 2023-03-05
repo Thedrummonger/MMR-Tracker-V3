@@ -59,7 +59,7 @@
               "B": 0
             }
           },
-          "LogicReferenceEntry": "UpgradeBiggestQuiver",
+          "LogicReferenceEntry": "MMRTItemDisplayHasBiggestQuiver",
           "TextDisplay": [
             {
               "Position": "topLeft",
@@ -80,7 +80,7 @@
               "B": 0
             }
           },
-          "LogicReferenceEntry": "UpgradeBigQuiver",
+          "LogicReferenceEntry": "MMRTItemDisplayHasBigQuiver",
           "TextDisplay": [
             {
               "Position": "topLeft",
@@ -101,7 +101,7 @@
               "B": 0
             }
           },
-          "LogicReferenceEntry": "ItemBow",
+          "LogicReferenceEntry": "MMRTItemDisplayHasBow",
           "TextDisplay": [
             {
               "Position": "topLeft",
@@ -325,7 +325,7 @@
               "B": 0
             }
           },
-          "LogicReferenceEntry": "UpgradeBiggestBombBag",
+          "LogicReferenceEntry": "MMRTItemDisplayHasBiggestBombBag",
           "TextDisplay": [
             {
               "Position": "topLeft",
@@ -346,7 +346,7 @@
               "B": 0
             }
           },
-          "LogicReferenceEntry": "UpgradeBigBombBag",
+          "LogicReferenceEntry": "MMRTItemDisplayHasBigBombBag",
           "TextDisplay": [
             {
               "Position": "topLeft",
@@ -367,7 +367,7 @@
               "B": 0
             }
           },
-          "LogicReferenceEntry": "ItemBombBag",
+          "LogicReferenceEntry": "MMRTItemDisplayHasBombBag",
           "TextDisplay": [
             {
               "Position": "topLeft",
@@ -1527,6 +1527,846 @@
             }
           },
           "LogicReferenceEntry": "TradeItemRoomKey",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBMaskPostmanHat",
+      "DefaultImageLocations": "0, 14",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "MaskPostmanHat"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "MaskPostmanHat",
+          "ImageLocations": "0, 14",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "MaskPostmanHat",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBMaskAllNight",
+      "DefaultImageLocations": "1, 14",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "MaskAllNight"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "MaskAllNight",
+          "ImageLocations": "1, 14",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "MaskAllNight",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBMaskBlast",
+      "DefaultImageLocations": "2, 14",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "MaskBlast"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "MaskBlast",
+          "ImageLocations": "2, 14",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "MaskBlast",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBMaskStone",
+      "DefaultImageLocations": "3, 14",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "MaskStone"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "MaskStone",
+          "ImageLocations": "3, 14",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "MaskStone",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBMaskGreatFairy",
+      "DefaultImageLocations": "4, 14",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "MaskGreatFairy"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "MaskGreatFairy",
+          "ImageLocations": "4, 14",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "MaskGreatFairy",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBMaskDeku",
+      "DefaultImageLocations": "5, 14",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "MaskDeku"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "MaskDeku",
+          "ImageLocations": "5, 14",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "MaskDeku",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBRedPotion",
+      "DefaultImageLocations": "1, 9",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "ItemBottleWitch+ShopItemTradingPostRedPotion+ShopItemWitchRedPotion+ShopItemGoronRedPotion+ShopItemZoraRedPotion"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "RedPotion",
+          "ImageLocations": "1, 9",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "Any Red Potion",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBTradeItemMamaLetter",
+      "DefaultImageLocations": "0, 7",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "TradeItemMamaLetter"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "TradeItemMamaLetter",
+          "ImageLocations": "0, 7",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "TradeItemMamaLetter",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBMaskKeaton",
+      "DefaultImageLocations": "0, 15",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "MaskKeaton"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "MaskKeaton",
+          "ImageLocations": "0, 15",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "MaskKeaton",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBMaskBremen",
+      "DefaultImageLocations": "1, 15",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "MaskBremen"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "MaskBremen",
+          "ImageLocations": "1, 15",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "MaskBremen",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBMaskBunnyHood",
+      "DefaultImageLocations": "2, 15",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "MaskBunnyHood"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "MaskBunnyHood",
+          "ImageLocations": "2, 15",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "MaskBunnyHood",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBMaskDonGero",
+      "DefaultImageLocations": "3, 15",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "MaskDonGero"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "MaskDonGero",
+          "ImageLocations": "3, 15",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "MaskDonGero",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBMaskScents",
+      "DefaultImageLocations": "4, 15",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "MaskScents"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "MaskScents",
+          "ImageLocations": "4, 15",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "MaskScents",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBMaskGoron",
+      "DefaultImageLocations": "5, 15",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "MaskGoron"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "MaskGoron",
+          "ImageLocations": "5, 15",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "MaskGoron",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBGreenPotion",
+      "DefaultImageLocations": "2, 9",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "ShopItemTradingPostGreenPotion+ShopItemWitchGreenPotion+ShopItemBusinessScrubGreenPotion"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "GreenPotion",
+          "ImageLocations": "2, 9",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "Any Green Potion",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBTradeItemKafeiLetter",
+      "DefaultImageLocations": "1, 7",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "TradeItemKafeiLetter"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "TradeItemKafeiLetter",
+          "ImageLocations": "1, 7",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "TradeItemKafeiLetter",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBMaskRomani",
+      "DefaultImageLocations": "0, 16",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "MaskRomani"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "MaskRomani",
+          "ImageLocations": "0, 16",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "MaskRomani",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBMaskCircusLeader",
+      "DefaultImageLocations": "1, 16",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "MaskCircusLeader"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "MaskCircusLeader",
+          "ImageLocations": "1, 16",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "MaskCircusLeader",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBMaskKafei",
+      "DefaultImageLocations": "2, 16",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "MaskKafei"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "MaskKafei",
+          "ImageLocations": "2, 16",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "MaskKafei",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBMaskCouple",
+      "DefaultImageLocations": "3, 16",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "MaskCouple"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "MaskCouple",
+          "ImageLocations": "3, 16",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "MaskCouple",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBMaskTruth",
+      "DefaultImageLocations": "4, 16",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "MaskTruth"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "MaskTruth",
+          "ImageLocations": "4, 16",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "MaskTruth",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBMaskZora",
+      "DefaultImageLocations": "5, 16",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "MaskZora"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "MaskZora",
+          "ImageLocations": "5, 16",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "MaskZora",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBBluePotion",
+      "DefaultImageLocations": "3, 9",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "ShopItemWitchBluePotion+ShopItemBusinessScrubBluePotion"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "BluePotion",
+          "ImageLocations": "3, 9",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "Any Blue Potion",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBTradeItemPendant",
+      "DefaultImageLocations": "2, 7",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "TradeItemPendant"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "TradeItemPendant",
+          "ImageLocations": "2, 7",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "TradeItemPendant",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBMaskKamaro",
+      "DefaultImageLocations": "0, 17",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "MaskKamaro"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "MaskKamaro",
+          "ImageLocations": "0, 17",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "MaskKamaro",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBMaskGibdo",
+      "DefaultImageLocations": "1, 17",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "MaskGibdo"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "MaskGibdo",
+          "ImageLocations": "1, 17",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "MaskGibdo",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBMaskGaro",
+      "DefaultImageLocations": "2, 17",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "MaskGaro"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "MaskGaro",
+          "ImageLocations": "2, 17",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "MaskGaro",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBMaskCaptainHat",
+      "DefaultImageLocations": "3, 17",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "MaskCaptainHat"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "MaskCaptainHat",
+          "ImageLocations": "3, 17",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "MaskCaptainHat",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBMaskGiant",
+      "DefaultImageLocations": "4, 17",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "MaskGiant"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "MaskGiant",
+          "ImageLocations": "4, 17",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "MaskGiant",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBMaskFierceDeity",
+      "DefaultImageLocations": "5, 17",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "MaskFierceDeity"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "MaskFierceDeity",
+          "ImageLocations": "5, 17",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "MaskFierceDeity",
           "TextDisplay": []
         }
       ]

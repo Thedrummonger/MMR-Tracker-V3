@@ -464,8 +464,8 @@ namespace MMR_Tracker_V3
                 if (CleanedHint.Contains(i)) { CleanedHint = CleanedHint.Replace(i, ""); }
             }
 
-            Debug.WriteLine($"------------------------------------------------");
-            Debug.WriteLine($"Parsing Gossip Hint{CleanedHint}");
+            //Debug.WriteLine($"------------------------------------------------");
+            //Debug.WriteLine($"Parsing Gossip Hint{CleanedHint}");
 
             var messageSegments = CleanedHint.Split('|').Select(x => x.Trim()).ToArray();
             string Location = messageSegments[0];
@@ -475,7 +475,7 @@ namespace MMR_Tracker_V3
             if (Item.StartsWith("an ")) { Item = Item[3..].Trim(); }
             if (Item.StartsWith("the ")) { Item = Item[4..].Trim(); }
 
-            Debug.WriteLine($"Hint claims [{Location}] contains [{Item}]");
+            //Debug.WriteLine($"Hint claims [{Location}] contains [{Item}]");
 
             var ValidItems = instance.ItemPool
             .Where(x => x.Value.GetDictEntry(instance)?.GetName(instance) != null)
@@ -485,8 +485,8 @@ namespace MMR_Tracker_V3
             .Where(x => x.Value.GetDictEntry(instance)?.GetName(instance) != null)
             .Select(x => x.Value)
             .Where(x => x.GetDictEntry(instance).GetName(instance) == Location || x.GetDictEntry(instance).SpoilerData.SpoilerLogNames.Contains(Location));
-            Debug.WriteLine($"{ValidLocations.Count()} Locations found with the name [{Location}]");
-            Debug.WriteLine($"{ValidItems.Count()} Items found with the name [{Item}]");
+            //Debug.WriteLine($"{ValidLocations.Count()} Locations found with the name [{Location}]");
+            //Debug.WriteLine($"{ValidItems.Count()} Items found with the name [{Item}]");
 
             foreach (var l in ValidLocations)
             {
@@ -494,7 +494,7 @@ namespace MMR_Tracker_V3
                 {
                     if (l.Randomizeditem.SpoilerLogGivenItem == i.Id)
                     {
-                        Debug.WriteLine($"Location [{l.ID}] Contained [{i.Id}]");
+                        //Debug.WriteLine($"Location [{l.ID}] Contained [{i.Id}]");
                         Hint.ParsedHintData[l.ID] = i.Id;
                         return;
                     }

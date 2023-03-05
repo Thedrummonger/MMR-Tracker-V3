@@ -55,9 +55,10 @@ namespace Windows_Form_Frontend
 
         private void ItemDisplay_ResizeEnd(object sender, EventArgs e)
         {
+            DrawingControl.ResumeDrawing(this);
+
             refreshPage();
             EnforceWindowSize();
-            DrawingControl.ResumeDrawing(this);
         }
 
         private void EnforceWindowSize()
@@ -68,7 +69,7 @@ namespace Windows_Form_Frontend
             var PBSize = GetImageBoxSize() + 2;
             if (_Instance.LimiterDirection == StaticDirecton.Horizontal)
             {
-                this.Height = RowCount * PBSize + titleHeight;
+                this.Height = (RowCount * PBSize) + titleHeight - RowCount;
             }
             else
             {
@@ -226,8 +227,10 @@ namespace Windows_Form_Frontend
 
         private void refreshPage()
         {
+            DrawingControl.SuspendDrawing(this);
             addPictureBoxesToScreen();
             UpdateImages();
+            DrawingControl.ResumeDrawing(this);
         }
     }
     class DrawingControl

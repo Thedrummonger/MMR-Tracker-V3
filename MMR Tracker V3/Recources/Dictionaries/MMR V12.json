@@ -37293,6 +37293,132 @@
       "IsTrick": false
     },
     {
+      "Id": "MMRTItemDisplayHasBombBag",
+      "RequiredItems": [ "ItemBombBag" ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MMRTItemDisplayHasBigBombBag",
+      "RequiredItems": [ "UpgradeBigBombBag" ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MMRTItemDisplayHasBiggestBombBag",
+      "RequiredItems": [ "UpgradeBiggestBombBag" ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MMRTItemDisplayHasBow",
+      "RequiredItems": [ "ItemBow" ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MMRTItemDisplayHasBigQuiver",
+      "RequiredItems": [ "UpgradeBigQuiver" ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MMRTItemDisplayHasBiggestQuiver",
+      "RequiredItems": [ "UpgradeBiggestQuiver" ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MMRTItemDisplayHasKokiriSword",
+      "RequiredItems": [ "StartingSword" ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MMRTItemDisplayHasRazorSword",
+      "RequiredItems": [ "UpgradeRazorSword" ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MMRTItemDisplayHasGildedSword",
+      "RequiredItems": [ "UpgradeGildedSword" ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MMRTItemDisplayHasAdultWallet",
+      "RequiredItems": [ "UpgradeAdultWallet" ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MMRTItemDisplayHasGiantWallet",
+      "RequiredItems": [ "UpgradeGiantWallet" ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MMRTItemDisplayHasRoyalWallet",
+      "RequiredItems": [ "UpgradeRoyalWallet" ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MMRTItemDisplayHasMagic",
+      "RequiredItems": [ "FairyMagic" ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MMRTItemDisplayHasDoubleMagic",
+      "RequiredItems": [ "FairyDoubleMagic" ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "DefeatMajora",
       "RequiredItems": [ "AreaMoonAccess" ],
       "ConditionalItems": [],

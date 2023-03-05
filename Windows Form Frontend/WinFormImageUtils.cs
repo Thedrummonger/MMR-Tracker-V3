@@ -40,7 +40,6 @@ namespace Windows_Form_Frontend
             public Dictionary<string, ItemCounts> ItemValues { get; set; } = new Dictionary<string, ItemCounts>();
             public Dictionary<string, ItemCounts> ItemNameValues { get; set; } = new Dictionary<string, ItemCounts>();
             public Dictionary<string, bool> MacroValues { get; set; } = new Dictionary<string, bool>();
-            public Dictionary<string, string> ActiveLogicReplacements { get; set; } = new Dictionary<string, string>();
         }
         public class ItemCounts
         {
@@ -201,7 +200,6 @@ namespace Windows_Form_Frontend
             public bool DisplayItemValid(TrackerState trackerState)
             {
                 ParseLogicReferenceEntry(LogicReferenceEntry, out string Entry, out int Amount);
-                if (trackerState.ActiveLogicReplacements.ContainsKey(Entry)) { Entry = trackerState.ActiveLogicReplacements[Entry]; }
                 if (trackerState.ItemValues.TryGetValue(Entry, out ItemCounts counts))
                 {
                     return counts.Obtained >= Amount;
@@ -314,13 +312,6 @@ namespace Windows_Form_Frontend
             foreach (var macro in Instance.MacroPool.Values)
             {
                 trackerState.MacroValues[macro.ID] = macro.Aquired;
-            }
-            foreach(var Options in Instance.UserOptions.Values)
-            {
-                foreach(var Replacement in Options.GetActions().LogicReplacements.SelectMany(x => x.ReplacementList))
-                {
-                    trackerState.ActiveLogicReplacements.Add(Replacement.Key, Replacement.Value);
-                }
             }
             return trackerState;
         }

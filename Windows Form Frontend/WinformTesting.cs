@@ -35,9 +35,9 @@ namespace Windows_Form_Frontend
             //Bow
             instance.AddDisplayBox("DBbows", 1, 2);
             instance.AddTextToDefaultImage("DBbows", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "UpgradeBiggestQuiver+UpgradeBigQuiver+ItemBow");
-            instance.AddDisplayItem("DBbows", "UpgradeBiggestQuiver", 1, 2, "UpgradeBiggestQuiver");
-            instance.AddDisplayItem("DBbows", "UpgradeBigQuiver", 1, 2, "UpgradeBigQuiver");
-            instance.AddDisplayItem("DBbows", "ItemBow", 1, 2, "ItemBow");
+            instance.AddDisplayItem("DBbows", "UpgradeBiggestQuiver", 1, 2, "MMRTItemDisplayHasBiggestQuiver");
+            instance.AddDisplayItem("DBbows", "UpgradeBigQuiver", 1, 2, "MMRTItemDisplayHasBigQuiver");
+            instance.AddDisplayItem("DBbows", "ItemBow", 1, 2, "MMRTItemDisplayHasBow");
             instance.AddTextToDisplayItem("DBbows", "UpgradeBiggestQuiver", WinFormImageUtils.TextPosition.topLeft, WinFormImageUtils.TextType.text, "50");
             instance.AddTextToDisplayItem("DBbows", "UpgradeBigQuiver", WinFormImageUtils.TextPosition.topLeft, WinFormImageUtils.TextType.text, "40");
             instance.AddTextToDisplayItem("DBbows", "ItemBow", WinFormImageUtils.TextPosition.topLeft, WinFormImageUtils.TextType.text, "30");
@@ -79,9 +79,9 @@ namespace Windows_Form_Frontend
             //Bombs
             instance.AddDisplayBox("DBbombs", 0, 3);
             instance.AddTextToDefaultImage("DBbombs", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "UpgradeBiggestBombBag+UpgradeBigBombBag+ItemBombBag");
-            instance.AddDisplayItem("DBbombs", "UpgradeBiggestBombBag", 0, 3, "UpgradeBiggestBombBag");
-            instance.AddDisplayItem("DBbombs", "UpgradeBigBombBag", 0, 3, "UpgradeBigBombBag");
-            instance.AddDisplayItem("DBbombs", "ItemBombBag", 0, 3, "ItemBombBag");
+            instance.AddDisplayItem("DBbombs", "UpgradeBiggestBombBag", 0, 3, "MMRTItemDisplayHasBiggestBombBag");
+            instance.AddDisplayItem("DBbombs", "UpgradeBigBombBag", 0, 3, "MMRTItemDisplayHasBigBombBag");
+            instance.AddDisplayItem("DBbombs", "ItemBombBag", 0, 3, "MMRTItemDisplayHasBombBag");
             instance.AddTextToDisplayItem("DBbombs", "UpgradeBiggestBombBag", WinFormImageUtils.TextPosition.topLeft, WinFormImageUtils.TextType.text, "40");
             instance.AddTextToDisplayItem("DBbombs", "UpgradeBigBombBag", WinFormImageUtils.TextPosition.topLeft, WinFormImageUtils.TextType.text, "30");
             instance.AddTextToDisplayItem("DBbombs", "ItemBombBag", WinFormImageUtils.TextPosition.topLeft, WinFormImageUtils.TextType.text, "20");
@@ -376,70 +376,250 @@ namespace Windows_Form_Frontend
             //ROW 7=============================================================================================================
 
             //Postman
+            iconx = 0;
+            icony = 14;
+            ID = "MaskPostmanHat";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "MaskPostmanHat");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "MaskPostmanHat");
 
             //Allnight
+            iconx = 1;
+            icony = 14;
+            ID = "MaskAllNight";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "MaskAllNight");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "MaskAllNight");
 
             //Blast
+            iconx = 2;
+            icony = 14;
+            ID = "MaskBlast";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "MaskBlast");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "MaskBlast");
 
             //Stone
+            iconx = 3;
+            icony = 14;
+            ID = "MaskStone";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "MaskStone");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "MaskStone");
 
             //GreatFairy
+            iconx = 4;
+            icony = 14;
+            ID = "MaskGreatFairy";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "MaskGreatFairy");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "MaskGreatFairy");
 
             //Deku
+            iconx = 5;
+            icony = 14;
+            ID = "MaskDeku";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "MaskDeku");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "MaskDeku");
 
             //Redpotion
+            iconx = 1;
+            icony = 9;
+            ID = "RedPotion";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "ItemBottleWitch+ShopItemTradingPostRedPotion+ShopItemWitchRedPotion+ShopItemGoronRedPotion+ShopItemZoraRedPotion");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "Any Red Potion");
 
             //Mama
+            iconx = 0;
+            icony = 7;
+            ID = "TradeItemMamaLetter";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "TradeItemMamaLetter");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "TradeItemMamaLetter");
 
             //ROW 8=============================================================================================================
 
             //Keaton
+            iconx = 0;
+            icony = 15;
+            ID = "MaskKeaton";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "MaskKeaton");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "MaskKeaton");
 
             //Bremon
+            iconx = 1;
+            icony = 15;
+            ID = "MaskBremen";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "MaskBremen");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "MaskBremen");
 
             //Bunny
+            iconx = 2;
+            icony = 15;
+            ID = "MaskBunnyHood";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "MaskBunnyHood");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "MaskBunnyHood");
 
             //DonGero
+            iconx = 3;
+            icony = 15;
+            ID = "MaskDonGero";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "MaskDonGero");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "MaskDonGero");
 
             //Scents
+            iconx = 4;
+            icony = 15;
+            ID = "MaskScents";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "MaskScents");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "MaskScents");
 
             //Goron
+            iconx = 5;
+            icony = 15;
+            ID = "MaskGoron";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "MaskGoron");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "MaskGoron");
 
             //Greenpotion???
+            iconx = 2;
+            icony = 9;
+            ID = "GreenPotion";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "ShopItemTradingPostGreenPotion+ShopItemWitchGreenPotion+ShopItemBusinessScrubGreenPotion");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "Any Green Potion");
 
             //Kafei Letter
+            iconx = 1;
+            icony = 7;
+            ID = "TradeItemKafeiLetter";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "TradeItemKafeiLetter");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "TradeItemKafeiLetter");
 
             //ROW 9=============================================================================================================
 
             //romani
+            iconx = 0;
+            icony = 16;
+            ID = "MaskRomani";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "MaskRomani");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "MaskRomani");
 
             //circus
+            iconx = 1;
+            icony = 16;
+            ID = "MaskCircusLeader";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "MaskCircusLeader");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "MaskCircusLeader");
 
             //kafei
+            iconx = 2;
+            icony = 16;
+            ID = "MaskKafei";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "MaskKafei");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "MaskKafei");
 
             //couples
+            iconx = 3;
+            icony = 16;
+            ID = "MaskCouple";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "MaskCouple");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "MaskCouple");
 
             //masktruth
+            iconx = 4;
+            icony = 16;
+            ID = "MaskTruth";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "MaskTruth");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "MaskTruth");
 
             //zora
+            iconx = 5;
+            icony = 16;
+            ID = "MaskZora";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "MaskZora");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "MaskZora");
 
             //bluepotion
+            iconx = 3;
+            icony = 9;
+            ID = "BluePotion";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "ShopItemWitchBluePotion+ShopItemBusinessScrubBluePotion");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "Any Blue Potion");
 
             //pendant
+            iconx = 2;
+            icony = 7;
+            ID = "TradeItemPendant";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "TradeItemPendant");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "TradeItemPendant");
 
             //ROW 10=============================================================================================================
 
             //Kamaro
+            iconx = 0;
+            icony = 17;
+            ID = "MaskKamaro";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "MaskKamaro");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "MaskKamaro");
 
             //Gibdo
+            iconx = 1;
+            icony = 17;
+            ID = "MaskGibdo";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "MaskGibdo");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "MaskGibdo");
 
             //Garo
+            iconx = 2;
+            icony = 17;
+            ID = "MaskGaro";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "MaskGaro");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "MaskGaro");
 
             //Captians
+            iconx = 3;
+            icony = 17;
+            ID = "MaskCaptainHat";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "MaskCaptainHat");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "MaskCaptainHat");
 
             //Giants
+            iconx = 4;
+            icony = 17;
+            ID = "MaskGiant";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "MaskGiant");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "MaskGiant");
 
             //Deity
+            iconx = 5;
+            icony = 17;
+            ID = "MaskFierceDeity";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "MaskFierceDeity");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "MaskFierceDeity");
 
             //ClockFairy
 
