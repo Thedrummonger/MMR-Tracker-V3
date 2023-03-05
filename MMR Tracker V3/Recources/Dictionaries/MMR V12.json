@@ -37626,6 +37626,31 @@
       }
     },
     {
+      "ID": "MoonAccessInaccessable",
+      "DisplayName": "MoonAccessInaccessable",
+      "CurrentValue": "enabled",
+      "Values": {
+        "enabled": {
+          "LogicReplacements": [
+            {
+              "LocationWhitelist": [
+                "UpgradeRoyalWallet",
+                "CollectableDekuPalaceWestInnerGardenItem7",
+                "ItemRanchBarnOtherCowMilk2",
+                "ChestPreClocktownDekuNut"
+              ],
+              "LocationBlacklist": [],
+              "ReplacementList": {
+                "AreaMoonAccess": "false"
+              }
+            }
+          ],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {}
+        }
+      }
+    },
+    {
       "ID": "BYOA",
       "DisplayName": "Bring Your Own Ammo",
       "CurrentValue": "disabled",
