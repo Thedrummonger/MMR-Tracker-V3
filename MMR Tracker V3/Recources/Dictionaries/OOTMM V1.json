@@ -20381,6 +20381,146 @@
       }
     },
     {
+      "ID": "OOT_BUG",
+      "Name": "Bugs (OoT)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_BUG",
+          "Bugs (OoT)"
+        ],
+        "GossipHintNames": [
+          "OOT_BUG",
+          "Bugs (OoT)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_DEKU_SEEDS_30",
+      "Name": "30 Deku Seeds (OoT)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_DEKU_SEEDS_30",
+          "30 Deku Seeds (OoT)"
+        ],
+        "GossipHintNames": [
+          "OOT_DEKU_SEEDS_30",
+          "30 Deku Seeds (OoT)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_FAIRY",
+      "Name": "Fairy (OoT)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_FAIRY",
+          "Fairy (OoT)"
+        ],
+        "GossipHintNames": [
+          "OOT_FAIRY",
+          "Fairy (OoT)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_FISH",
+      "Name": "Fish (OoT)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_FISH",
+          "Fish (OoT)"
+        ],
+        "GossipHintNames": [
+          "OOT_FISH",
+          "Fish (OoT)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_POE",
+      "Name": "Poe (OoT)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_POE",
+          "Poe (OoT)"
+        ],
+        "GossipHintNames": [
+          "OOT_POE",
+          "Poe (OoT)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_POTION_GREEN",
+      "Name": "Green Potion (OoT)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_POTION_GREEN",
+          "Green Potion (OoT)"
+        ],
+        "GossipHintNames": [
+          "OOT_POTION_GREEN",
+          "Green Potion (OoT)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_POTION_RED",
+      "Name": "Red Potion (OoT)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_POTION_RED",
+          "Red Potion (OoT)"
+        ],
+        "GossipHintNames": [
+          "OOT_POTION_RED",
+          "Red Potion (OoT)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
       "ID": "OOT_WEIRD_EGG",
       "Name": "Weird Egg",
       "MaxAmountInWorld": -1,

@@ -97,7 +97,7 @@ namespace MMR_Tracker_V3
                     return LogicEntryType.Exit; 
                 }
                 if (!literal && HintPool.ContainsKey(ID)) { Obj = HintPool[ID]; return LogicEntryType.Hint; }
-                if (UserOptions.ContainsKey(ID)) { Obj = UserOptions[ID]; return LogicEntryType.Option; }
+                //if (UserOptions.ContainsKey(ID)) { Obj = UserOptions[ID]; return LogicEntryType.Option; }
                 if (Variables.ContainsKey(ID))
                 {
                     Obj = Variables[ID];
@@ -107,23 +107,6 @@ namespace MMR_Tracker_V3
                     if (Variables[ID].Value is Newtonsoft.Json.Linq.JArray || Variables[ID].Value is List<string>) { return LogicEntryType.variableList; }
                 }
                 Obj = null;
-                return LogicEntryType.error;
-            }
-
-            public LogicEntryType GetOptionEntryType(string ID, bool literal, out object obj)
-            {
-                if (literal && UserOptions.ContainsKey(ID)) { obj = UserOptions[ID]; return LogicEntryType.Option; }
-                if (LocationPool.ContainsKey(ID)) { obj = LocationPool[ID]; return LogicEntryType.location; }
-                if (InstanceReference.EntranceLogicNameToEntryData.ContainsKey(ID))
-                {
-                    var EA = InstanceReference.EntranceLogicNameToEntryData[ID];
-                    obj = EntrancePool.AreaList[EA.Area].LoadingZoneExits.ContainsKey(EA.Exit) ?
-                        EntrancePool.AreaList[EA.Area].LoadingZoneExits[EA.Exit] :
-                        EntrancePool.AreaList[EA.Area].MacroExits[EA.Exit];
-                    return LogicEntryType.Exit;
-                }
-                if (!literal && UserOptions.ContainsKey(ID)) { obj = UserOptions[ID]; return LogicEntryType.Option; }
-                obj = null;
                 return LogicEntryType.error;
             }
 
@@ -145,7 +128,7 @@ namespace MMR_Tracker_V3
                 }
                 if (bool.TryParse(ID, out bool result)) { obj = result; return LogicEntryType.Bool; }
                 obj = null;
-                if (this.LogicOptionEntry(ID, out _)) { return LogicEntryType.Option; }
+                if (LogicEditing.CheckLogicFunction(this, OriginalID, new List<string>(), out _, false)) { return LogicEntryType.function; }
                 return LogicEntryType.error;
             }
 

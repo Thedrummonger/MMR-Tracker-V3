@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using static Microsoft.FSharp.Core.LanguagePrimitives;
 using static MMR_Tracker_V3.LogicObjects;
 using static MMR_Tracker_V3.TrackerObjects.ItemData;
 using static MMR_Tracker_V3.TrackerObjects.LocationData;
@@ -49,9 +50,10 @@ namespace MMR_Tracker_V3
 
         public bool LogicEntryAquired(string i, List<string> SubUnlockData)
         {
-            if (container.Instance.LogicOptionEntry(i, out bool OptionEntryValid)) { return OptionEntryValid; }
-
-            if (CheckLogicFunction(i, SubUnlockData, out bool FunctionEntryValid)) { return FunctionEntryValid; }
+            if (LogicEditing.CheckLogicFunction(container.Instance, i, SubUnlockData, out bool FunctionEntryValid))
+            {
+                return FunctionEntryValid;
+            }
 
             container.Instance.MultipleItemEntry(i, out string LogicItem, out int Amount);
             bool Literal = LogicItem.IsLiteralID(out LogicItem);
@@ -77,35 +79,6 @@ namespace MMR_Tracker_V3
                     Debug.WriteLine($"{LogicItem} Was not a valid Logic Entry");
                     return false;
             }
-        }
-
-        public bool CheckLogicFunction(string i, List<string> SubUnlockData, out bool LogicFuntionValid)
-        {
-            LogicFuntionValid=false;
-            if (i.IsLiteralID(out _)) { return false; }
-            bool squirFunc = i.EndsWith('}') && i.Contains("{");
-
-            if (!squirFunc) { return false; }
-            Tuple <char, char> functionCasing = new('{', '}');
-
-            int funcEnd = i.IndexOf(functionCasing.Item1);
-            int paramStart = i.IndexOf(functionCasing.Item1) + 1;
-            int paramEnd = i.IndexOf(functionCasing.Item2);
-            string Func = i[..funcEnd].Trim().ToLower();
-            string Param = i[paramStart..paramEnd].Trim();
-
-            switch (Func)
-            {
-                case "check":
-                case "available":
-                    bool litteral = Param.IsLiteralID(out Param);
-                    container.Instance.GetLocationEntryType(Param, litteral, out dynamic obj);
-                    if (Func == "check" && Utility.DynamicPropertyExist(obj, "CheckState")) { LogicFuntionValid = obj.CheckState == CheckState.Checked; }
-                    else if (Func == "available" && Utility.DynamicPropertyExist(obj, "Available")) { LogicFuntionValid =  obj.Available; }
-                    break;
-            }
-
-            return true;
         }
 
         public bool checkItemArray(string ArrVar, int amount, List<string> SubUnlockData, out int TotalUsable)
@@ -400,71 +373,189 @@ namespace MMR_Tracker_V3
             OutConditionals = Conditionals;
         }
 
-        public static bool LogicOptionEntry(this TrackerInstance instance, string i, out bool optionEntryValid)
+        public static bool IsLogicFunction(string i, out string Func, out string Param)
         {
-            optionEntryValid = false;
-            if (!i.Contains("==") && !i.Contains("!=")) { return false; }
-            bool inverse = i.Contains("!=");
-            string[] data = inverse ? i.Split("!=") : i.Split("==");
-            if (data.Length != 2) { return false; }
-            optionEntryValid = checkOptionEntry(instance, data, inverse, i);
+            Func = null;
+            Param = null;   
+            if (i.IsLiteralID(out _)) { return false; }
+            bool squirFunc = i.EndsWith('}') && i.Contains("{");
+
+            if (!squirFunc) { return false; }
+            Tuple<char, char> functionCasing = new('{', '}');
+
+            int funcEnd = i.IndexOf(functionCasing.Item1);
+            int paramStart = i.IndexOf(functionCasing.Item1) + 1;
+            int paramEnd = i.IndexOf(functionCasing.Item2);
+            Func = i[..funcEnd].Trim().ToLower();
+            Param = i[paramStart..paramEnd].Trim();
             return true;
         }
 
-        private static bool checkOptionEntry(TrackerInstance instance, string[] data, bool inverse, string OriginalText)
+        public static bool CheckLogicFunction(TrackerInstance instance, string i, List<string> SubUnlockData, out bool LogicFuntionValid, bool DoCheck = true)
         {
-            bool WasSetting = true;
-            bool WasCompare = true;
+            LogicFuntionValid=false;
 
-            bool LiteralOption = data[0].Trim().IsLiteralID(out string CleanedOptionName);
-            bool LiteralValue = data[1].Trim().IsLiteralID(out string CleanedOptionValue);
+            if (!IsLogicFunction(i, out string Func, out string Param)) { return false; }
 
-            List<string> OptionList = new() { CleanedOptionName };
-            List<string> ValueList = new() { CleanedOptionValue };
-
-            if (instance.Variables.ContainsKey(CleanedOptionName))
+            switch (Func)
             {
-                if (instance.Variables[CleanedOptionName].Value is List<string> VarOptionList)
-                {
-                    OptionList = VarOptionList;
-                }
-                else if (instance.Variables[CleanedOptionName].Value is string VarOptionString)
-                {
-                    return (VarOptionString == CleanedOptionValue) != inverse;
-                }
-                else if (instance.Variables[CleanedOptionName].Value is Int64 VarOptionInt)
-                {
-                    return (int.TryParse(CleanedOptionValue, out int TryParseValue) && (int)VarOptionInt == TryParseValue) != inverse;
-                }
-                else if (instance.Variables[CleanedOptionName].Value is bool VarOptionBool)
-                {
-                    return (bool.TryParse(CleanedOptionValue, out bool TryParseBool) && (bool)VarOptionBool == TryParseBool) != inverse;
-                }
+                case "check":
+                case "available":
+                    if (!DoCheck) { return true; }
+                    LogicFuntionValid = checkAvailableFunction(instance, Func, Param);
+                    break;
+                case "contains":
+                    if (!DoCheck) { return true; }
+                    LogicFuntionValid = CheckContainsFunction(instance, Param.Split(",").Select(x => x.Trim()).ToArray());
+                    break;
+                case "var":
+                case "variable":
+                    if (!DoCheck) { return true; }
+                    LogicFuntionValid = checkVarFunction(instance, Param.Split(",").Select(x => x.Trim()).ToArray());
+                    break;
+                case "option":
+                    if (!DoCheck) { return true; }
+                    LogicFuntionValid = CheckOptionFunction(instance, Param.Split(",").Select(x => x.Trim()).ToArray());
+                    break;
+                default: 
+                    return false;
             }
-            else { WasSetting = false; }
 
-            if (instance.Variables.ContainsKey(CleanedOptionValue) && instance.Variables[CleanedOptionValue].Value is List<string> VarValueList) { ValueList = VarValueList; }
+            return true;
+        }
+
+        private static bool checkAvailableFunction(TrackerInstance instance, string func, string param)
+        {
+            bool litteral = param.IsLiteralID(out string paramClean);
+            instance.GetLocationEntryType(paramClean, litteral, out dynamic obj);
+            if (func == "check" && Utility.DynamicPropertyExist(obj, "CheckState")) { return obj.CheckState == CheckState.Checked; }
+            else if (func == "available" && Utility.DynamicPropertyExist(obj, "Available")) { return  obj.Available; }
+            return false;
+        }
+
+        private static bool checkVarFunction(TrackerInstance instance, string[] param)
+        {
+            if (param.Length < 1) { return false; } //No Values Pased
+
+            //Evaluate the Function Param
+            object funcValue = param[0]; //The function as an object after its variable value has been parsed
+            string funcValueString = param[0]; //The function as an strng after its variable value has been parsed
+            VariableEntryType functype = instance.Variables.ContainsKey(param[0]) ? instance.Variables[param[0]].GetCurrentValueData(out funcValue) : VariableEntryType.error;
+            if (param.Length < 2) { return functype == VariableEntryType.varbool && (bool)funcValue; } //Valid if the only value passed was a bool
+            if (functype != VariableEntryType.error) { funcValueString = instance.Variables[param[0]].ToString(); }
+
+            //Evaluate the Value Param
+            object varValue = param[1]; //The value as an object after its variable value has been parsed
+            string varValueString = param[1]; //The value as an strng after its variable value has been parsed
+            VariableEntryType vartype = instance.Variables.ContainsKey(param[1]) ? instance.Variables[param[1]].GetCurrentValueData(out varValue) : VariableEntryType.error;
+            if (vartype != VariableEntryType.error) { varValueString = instance.Variables[param[1]].ToString(); }
+
+            bool inverse = param.Length > 2 && bool.TryParse(param[2], out bool inverseValue) && !inverseValue; //If a third param is passed and its a false bool, invert the result
+
+            switch (functype)
+            {
+                case VariableEntryType.error:
+                case VariableEntryType.varstring:
+                    if (vartype == VariableEntryType.varlist) { return GetReturnValue((varValue as List<string>).Contains(funcValueString)); }
+                    return GetReturnValue((string)funcValue == varValueString);
+                case VariableEntryType.varint:
+                    if (vartype == VariableEntryType.varlist) { return GetReturnValue((varValue as List<string>).Contains(funcValueString)); }
+                    return GetReturnValue(int.TryParse(varValueString, out int intresult) && (Int64)funcValue == intresult);
+                case VariableEntryType.varbool:
+                    if (vartype == VariableEntryType.varlist) { return GetReturnValue((varValue as List<string>).Contains(funcValueString)); }
+                    return GetReturnValue( bool.TryParse(varValueString, out bool BoolResult) && (bool)funcValue == BoolResult);
+                case VariableEntryType.varlist:
+                    if (vartype == VariableEntryType.varlist) { return GetReturnValue((funcValue as List<string>).ToHashSet().SetEquals(funcValue as List<string>)); }
+                    return GetReturnValue((funcValue as List<string>).Contains(varValueString));
+                default: return false;
+            }
+
+            bool GetReturnValue(bool expression)
+            {
+                return expression != inverse;
+            }
+        }
+
+        private static bool CheckOptionFunction(TrackerInstance instance, string[] param)
+        {
+            if (param.Length < 1) { return false; } //No Values Pased
+
+            //Evaluate the Function Param
+            object funcValue = param[0]; //The function as an object after its variable value has been parsed
+            string funcValueString = param[0]; //The function as an strng after its variable value has been parsed
+            VariableEntryType functype = instance.Variables.ContainsKey(param[0]) ? instance.Variables[param[0]].GetCurrentValueData(out funcValue) : VariableEntryType.error;
+            if (functype != VariableEntryType.error) { funcValueString = instance.Variables[param[0]].ToString(); }
+            List<string> OptionList = functype == VariableEntryType.varlist ? (List<string>)funcValue : new() { funcValueString };
+
+            //Evaluate the Value Param
+            object varValue;
+            string varValueString;
+            VariableEntryType vartype;
+            if (param.Length < 2) 
+            { 
+                varValue = OptionData.ToggleValues.Keys.ToList(); 
+                varValueString = "true";
+                vartype = VariableEntryType.varlist;
+            }
+            else 
+            { 
+                varValue = param[1]; 
+                varValueString = param[1];
+                vartype = instance.Variables.ContainsKey(param[1]) ? instance.Variables[param[1]].GetCurrentValueData(out varValue) : VariableEntryType.error;
+                if (vartype != VariableEntryType.error) { varValueString = instance.Variables[param[1]].ToString(); }
+            }
+            List<string> ValueList = vartype == VariableEntryType.varlist ? (List<string>)varValue : new() { varValueString };
+
+            bool inverse = param.Length > 2 && bool.TryParse(param[2], out bool inverseValue) && !inverseValue;
 
             bool RequiremntMet = false;
             foreach (var currentOption in OptionList)
             {
-                var CurrentOptionType = instance.GetOptionEntryType(currentOption, LiteralOption, out object CurrentOptionEntry);
-                if (CurrentOptionType != LogicEntryType.Option && CurrentOptionType != LogicEntryType.location && CurrentOptionType != LogicEntryType.Exit) { WasCompare = false; }
                 foreach (var CurrentValue in ValueList)
                 {
-                    string CheckValue = CurrentValue;
-                    if (!LiteralValue && instance.Variables.ContainsKey(CurrentValue)) { CheckValue = instance.Variables[CurrentValue].ValueToString(); }
-                    if (CurrentOptionType == LogicEntryType.Option && (instance.UserOptions[currentOption].CurrentValue == CheckValue)) { RequiremntMet = true; }
-                    //This should always return whatever value will result in false if the item is unknown. This is because checking a location should never 
-                    //result in another location becoming unavilable otherwise we could enter an infinite loop if both those location are checked automatically
-                    else if (CurrentOptionType == LogicEntryType.location && (instance.GetLocationByID(currentOption)?.GetItemAtCheck(instance) == null)) { RequiremntMet = inverse; }
-                    else if (CurrentOptionType == LogicEntryType.location && (instance.GetLocationByID(currentOption)?.GetItemAtCheck(instance) == CheckValue)) { RequiremntMet = true; }
-                    else if (CurrentOptionType == LogicEntryType.Exit && (CurrentOptionEntry as EntranceData.EntranceRandoExit)?.DestinationExit == null) { RequiremntMet = inverse; }
-                    else if (CurrentOptionType == LogicEntryType.Exit && ExitLeadsToArea(CurrentOptionEntry, CheckValue)) { RequiremntMet = true; }
+                    if (instance.UserOptions[currentOption].CurrentValue == CurrentValue) { RequiremntMet = true; }
                 }
             }
-            if (!WasCompare && !WasSetting) { Debug.WriteLine($"{OriginalText} may not be a valid Option Entry"); }
             return RequiremntMet != inverse;
+
+        }
+
+        private static bool CheckContainsFunction(TrackerInstance instance, string[] param)
+        {
+            if (param.Length < 2) { return false; } //Not enough Values Pased
+
+            //Evaluate the Function Param
+            object funcValue = param[0]; //The function as an object after its variable value has been parsed
+            string funcValueString = param[0]; //The function as an strng after its variable value has been parsed
+            VariableEntryType functype = instance.Variables.ContainsKey(param[0]) ? instance.Variables[param[0]].GetCurrentValueData(out funcValue) : VariableEntryType.error;
+            if (functype != VariableEntryType.error) { funcValueString = instance.Variables[param[0]].ToString(); }
+            List<string> OptionList = functype == VariableEntryType.varlist ? (List<string>)funcValue : new() { funcValueString };
+
+            //Evaluate the Value Param
+            object varValue = param[1]; //The value as an object after its variable value has been parsed
+            string varValueString = param[1]; //The value as an strng after its variable value has been parsed
+            VariableEntryType vartype = instance.Variables.ContainsKey(param[1]) ? instance.Variables[param[1]].GetCurrentValueData(out varValue) : VariableEntryType.error;
+            if (vartype != VariableEntryType.error) { varValueString = instance.Variables[param[1]].ToString(); }
+            List<string> ValueList = vartype == VariableEntryType.varlist ? (List<string>)varValue : new() { varValueString };
+
+            bool inverse = param.Length > 2 && bool.TryParse(param[2], out bool inverseValue) && !inverseValue; //If a third param is passed and its a false bool, invert the result
+
+            bool RequiremntMet = false;
+            foreach (var currentOption in OptionList)
+            {
+                var CurrentOptionType = instance.GetLocationEntryType(currentOption, false, out object CurrentOptionEntry);
+                foreach (var CurrentValue in ValueList)
+                {
+                    //This should always return whatever value will result in false if the item is unknown. This is because checking a location should never 
+                    //result in another location becoming unavilable otherwise we could enter an infinite loop if both those location are checked automatically
+                    if (CurrentOptionType == LogicEntryType.location && (instance.GetLocationByID(currentOption)?.GetItemAtCheck(instance) == null)) { RequiremntMet = inverse; }
+                    else if (CurrentOptionType == LogicEntryType.location && (instance.GetLocationByID(currentOption)?.GetItemAtCheck(instance) == CurrentValue)) { RequiremntMet = true; }
+                    else if (CurrentOptionType == LogicEntryType.Exit && (CurrentOptionEntry as EntranceData.EntranceRandoExit)?.DestinationExit == null) { RequiremntMet = inverse; }
+                    else if (CurrentOptionType == LogicEntryType.Exit && ExitLeadsToArea(CurrentOptionEntry, CurrentValue)) { RequiremntMet = true; }
+                }
+            }
+            return RequiremntMet != inverse;
+
         }
 
         private static bool ExitLeadsToArea(object Exit, string Area)

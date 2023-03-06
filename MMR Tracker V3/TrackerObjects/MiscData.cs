@@ -174,13 +174,22 @@ namespace MMR_Tracker_V3.TrackerObjects
             macro,
             Hint,
             Bool,
-            Option,
             Area,
             Exit,
             variableString,
             variableInt,
             variableBool,
             variableList,
+            function,
+            error
+        }
+        [Serializable]
+        public enum VariableEntryType
+        {
+            varstring,
+            varint,
+            varbool,
+            varlist,
             error
         }
         public static string GetDescription<T>(this T e) where T : IConvertible

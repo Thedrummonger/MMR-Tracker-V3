@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
@@ -194,6 +195,16 @@ namespace MMR_Tracker_V3.TrackerObjects
                 if (Value is List<string> valListString) { DisplayValue = string.Join(", ", valListString); }
                 if (DisplayValue == null) { DisplayValue = $"{Value.GetType().ToString()}"; }
                 return DisplayValue;
+            }
+
+            public MiscData.VariableEntryType GetCurrentValueData(out object obj)
+            {
+                if (Value is string valString) { obj = valString; return MiscData.VariableEntryType.varstring; }
+                if (Value is Int64 valint) { obj = valint; return MiscData.VariableEntryType.varint; }
+                if (Value is bool valbool) { obj = valbool; return MiscData.VariableEntryType.varbool; }
+                if (Value is List<string> valListString) { obj = valListString; return MiscData.VariableEntryType.varlist; }
+                obj = Value;
+                return MiscData.VariableEntryType.error;
             }
         }
     }

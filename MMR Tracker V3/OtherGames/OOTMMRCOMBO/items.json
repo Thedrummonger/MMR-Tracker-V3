@@ -247,6 +247,13 @@
   "OOT_MILK": "Milk (OoT)",
   "MM_MILK": "Milk (MM)",
   "OOT_BLUE_FIRE": "Blue Fire",
+  "OOT_BUG": "Bugs (OoT)",
+  "OOT_DEKU_SEEDS_30": "30 Deku Seeds (OoT)",
+  "OOT_FAIRY": "Fairy (OoT)",
+  "OOT_FISH": "Fish (OoT)",
+  "OOT_POE": "Poe (OoT)",
+  "OOT_POTION_GREEN": "Green Potion (OoT)",
+  "OOT_POTION_RED": "Red Potion (OoT)",
   "OOT_WEIRD_EGG": "Weird Egg",
   "OOT_POCKET_EGG": "Pocket Egg",
 
@@ -256,7 +263,6 @@
   "SHARED_ARROW_FIRE": "Shared Fire Arrows",
   "SHARED_ARROW_ICE": "Shared Ice Arrows",
   "SHARED_ARROW_LIGHT": "Shared Light Arrows",
-
   "SHARED_HOOKSHOT": "Progressive Hookshot",
   "SHARED_LENS": "Lens of Truth",
   "SHARED_OCARINA": "Progressive Ocarina",

@@ -262,20 +262,9 @@ namespace Windows_Form_Frontend
 
         private void CodeTestingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MMRData.JsonFormatLogicItem Test = new MMRData.JsonFormatLogicItem { Id = "Test", RequiredItems= new List<string>() { "check{ChestBomberHideoutSilverRupee}" } };
-            var Valid = InstanceContainer.logicCalculation.CalculatReqAndCond(Test, Test.Id, null);
-            MMRData.JsonFormatLogicItem Test1 = new MMRData.JsonFormatLogicItem { Id = "Test", RequiredItems= new List<string>() { "available{ChestBomberHideoutSilverRupee}" } };
-            var Valid1 = InstanceContainer.logicCalculation.CalculatReqAndCond(Test1, Test1.Id, null);
-            MMRData.JsonFormatLogicItem Test2 = new MMRData.JsonFormatLogicItem { Id = "Test", RequiredItems= new List<string>() { "ChestBomberHideoutSilverRupee" } };
-            var Valid2 = InstanceContainer.logicCalculation.CalculatReqAndCond(Test2, Test2.Id, null);
-
-            Debug.WriteLine("Location Checked: " + Valid);
-            Debug.WriteLine("Location Available: " + Valid1);
-            Debug.WriteLine("Error Checking: " + Valid);
-
             //WinformTesting.CreateMMRItemTrackerObject();
             //MMR_Tracker_V3.OtherGames.SkywardSwordRando.ReadAndParse.ReadWebData();
-            return;
+            //return;
 
             MMR_Tracker_V3.OtherGames.OOTMMRCOMBO.ReadAndParseData.CreateFiles(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary);
 

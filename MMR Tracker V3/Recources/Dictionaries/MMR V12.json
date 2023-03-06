@@ -36803,6 +36803,18 @@
   ],
   "AdditionalLogic": [
     {
+      "Id": "TestingLogic",
+      "RequiredItems": [ "check{MaskBlast}", "contains{UpgradeBigBombBag, ItemBow}" ],
+      "ConditionalItems": [
+        [ "available{MaskBlast}", "UpgradeBigQuiver" ],
+        [ "contains{UpgradeBigBombBag, ItemBow}", "UpgradeBigQuiver" ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OtherOneMask",
       "RequiredItems": [ "NonTransformationMasks, 1" ],
       "ConditionalItems": [],
@@ -36843,19 +36855,19 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "AreaWoodFallTempleAccess == AreaWoodFallTempleAccess",
+          "contains{AreaWoodFallTempleAccess, AreaWoodFallTempleAccess}",
           "AreaWoodFallTempleClear"
         ],
         [
-          "AreaWoodFallTempleAccess == AreaSnowheadTempleAccess",
+          "contains{AreaWoodFallTempleAccess, AreaSnowheadTempleAccess}",
           "AreaSnowheadTempleClear"
         ],
         [
-          "AreaWoodFallTempleAccess == AreaGreatBayTempleAccess",
+          "contains{AreaWoodFallTempleAccess, AreaGreatBayTempleAccess}",
           "AreaGreatBayTempleClear"
         ],
         [
-          "AreaWoodFallTempleAccess == AreaInvertedStoneTowerTempleAccess",
+          "contains{AreaWoodFallTempleAccess, AreaInvertedStoneTowerTempleAccess}",
           "AreaStoneTowerClear"
         ]
       ],
@@ -36869,19 +36881,19 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "AreaSnowheadTempleAccess == AreaWoodFallTempleAccess",
+          "contains{AreaSnowheadTempleAccess, AreaWoodFallTempleAccess}",
           "AreaWoodFallTempleClear"
         ],
         [
-          "AreaSnowheadTempleAccess == AreaSnowheadTempleAccess",
+          "contains{AreaSnowheadTempleAccess, AreaSnowheadTempleAccess}",
           "AreaSnowheadTempleClear"
         ],
         [
-          "AreaSnowheadTempleAccess == AreaGreatBayTempleAccess",
+          "contains{AreaSnowheadTempleAccess, AreaGreatBayTempleAccess}",
           "AreaGreatBayTempleClear"
         ],
         [
-          "AreaSnowheadTempleAccess == AreaInvertedStoneTowerTempleAccess",
+          "contains{AreaSnowheadTempleAccess, AreaInvertedStoneTowerTempleAccess}",
           "AreaStoneTowerClear"
         ]
       ],
@@ -36895,19 +36907,19 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "AreaGreatBayTempleAccess == AreaWoodFallTempleAccess",
+          "contains{AreaGreatBayTempleAccess, AreaWoodFallTempleAccess}",
           "AreaWoodFallTempleClear"
         ],
         [
-          "AreaGreatBayTempleAccess == AreaSnowheadTempleAccess",
+          "contains{AreaGreatBayTempleAccess, AreaSnowheadTempleAccess}",
           "AreaSnowheadTempleClear"
         ],
         [
-          "AreaGreatBayTempleAccess == AreaGreatBayTempleAccess",
+          "contains{AreaGreatBayTempleAccess, AreaGreatBayTempleAccess}",
           "AreaGreatBayTempleClear"
         ],
         [
-          "AreaGreatBayTempleAccess == AreaInvertedStoneTowerTempleAccess",
+          "contains{AreaGreatBayTempleAccess, AreaInvertedStoneTowerTempleAccess}",
           "AreaStoneTowerClear"
         ]
       ],
@@ -36921,19 +36933,19 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "AreaInvertedStoneTowerTempleAccess == AreaWoodFallTempleAccess",
+          "contains{AreaInvertedStoneTowerTempleAccess, AreaWoodFallTempleAccess}",
           "AreaWoodFallTempleClear"
         ],
         [
-          "AreaInvertedStoneTowerTempleAccess == AreaSnowheadTempleAccess",
+          "contains{AreaInvertedStoneTowerTempleAccess, AreaSnowheadTempleAccess}",
           "AreaSnowheadTempleClear"
         ],
         [
-          "AreaInvertedStoneTowerTempleAccess == AreaGreatBayTempleAccess",
+          "contains{AreaInvertedStoneTowerTempleAccess, AreaGreatBayTempleAccess}",
           "AreaGreatBayTempleClear"
         ],
         [
-          "AreaInvertedStoneTowerTempleAccess == AreaInvertedStoneTowerTempleAccess",
+          "contains{AreaInvertedStoneTowerTempleAccess, AreaInvertedStoneTowerTempleAccess}",
           "AreaStoneTowerClear"
         ]
       ],

@@ -109,7 +109,7 @@ namespace MMR_Tracker_V3
             if (!Entry.Contains(",")) { return false; }
             var data = Entry.Split(',').Select(x => x.Trim()).ToArray();
             Item = data[0];
-            if (data.Length < 2) { return false; }
+            if (data.Length != 2) { return false; }
             if (int.TryParse(data[1].Trim(), out Amount))
             {
                 return true;
