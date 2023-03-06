@@ -123,6 +123,31 @@ namespace MMR_Tracker_V3
             };
         }
 
+        public static string GetDictNameDynamicEntry(dynamic Entry, LogicObjects.TrackerInstance instance)
+        {
+            if (Entry is LocationData.LocationObject LO)
+            {
+                return LO.GetDictEntry(instance)?.GetName(instance)??LO.ID;
+            }
+            else if (Entry is MacroObject MO)
+            {
+                return MO.GetDictEntry(instance)?.Name??MO.ID;
+            }
+            else if (Entry is ItemData.ItemObject IO)
+            {
+                return IO.GetDictEntry(instance)?.Name??IO.Id;
+            }
+            else if (Entry is OptionData.TrackerOption TO)
+            {
+                return TO.DisplayName??TO.ID;
+            }
+            else if (Entry is HintData.HintObject HO)
+            {
+                return HO.GetDictEntry(instance)?.Name??HO.ID;
+            }
+            else { return null; }
+        }
+
         public static string GetEntranceDisplayName(EntranceData.EntranceRandoExit ExitObjectObject, LogicObjects.TrackerInstance instance)
         {
             var Destination = ExitObjectObject.GetDestinationAtExit(instance);

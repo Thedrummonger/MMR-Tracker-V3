@@ -67,13 +67,15 @@ namespace Windows_Form_Frontend
                 var AlteredLogic = instance.GetLogic(CurrentID, true);
                 var UnAlteredLogic = instance.GetLogic(CurrentID, false);
                 bool Literal = CurrentID.IsLiteralID(out string LogicItem);
-                var type = instance.GetLocationEntryType(LogicItem, Literal, out _);
+                var type = instance.GetLocationEntryType(LogicItem, Literal, out dynamic LogicItemObject);
                 string Availablility = GetAvailable(AlteredLogic, type, LogicItem) ? "*" : "";
                 string typeDisplay = type == LogicEntryType.macro && UnAlteredLogic.IsTrick ? "Trick" : type.ToString();
                 bool hasTimeLogic = UnAlteredLogic.TimeAvailable != TimeOfDay.None || UnAlteredLogic.TimeSetup != TimeOfDay.None;
                 bool ShowTimeLogic = hasTimeLogic && chkShowTime.Checked;
                 //Title
-                this.Text = $"{typeDisplay}: {LogicItem}{Availablility}";
+                string EntryName = Utility.GetDictNameDynamicEntry(LogicItemObject, instance)??LogicItem;
+                if (EntryName != LogicItem) { EntryName = $"{EntryName} ({LogicItem})"; }
+                this.Text = $"{typeDisplay}: {EntryName}{Availablility}";
                 //Text Changes
                 textBox1.Text = "";
                 label1.Text = "Requirements";
@@ -269,9 +271,9 @@ namespace Windows_Form_Frontend
 
         private List<object> CreateGotoDataFromList(Dictionary<string, LogicEntryType> GotoList)
         {
-            GotoList = GotoList.OrderBy(x => x.Value).ThenBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
+            GotoList = GotoList.Concat(AddItemsFromFunction(GotoList)).OrderBy(x => x.Value).ThenBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
             List<object> list = new List<object>();
-            LogicEntryType CurrentType = LogicEntryType.location;
+            LogicEntryType CurrentType = LogicEntryType.error;
             foreach (var i in GotoList)
             {
                 var Checks = GetChecksContainingSelectedID(i.Key, out _, out string CleanedID);
@@ -292,7 +294,7 @@ namespace Windows_Form_Frontend
                             break;
                         case LogicEntryType.item:
                             LitEntry.tag = c;
-                            LitEntry.Display = $"{instance.GetItemByID(CleanedID)?.GetDictEntry(instance)?.GetName(instance)??CleanedID}: {c}";
+                            LitEntry.Display = $"{instance.GetItemByID(CleanedID)?.GetDictEntry(instance)?.GetName(instance)??CleanedID}: {instance.GetLocationByID(c)?.GetDictEntry(instance)?.GetName(instance)??c}";
                             break;
                         case LogicEntryType.macro:
                         default:
@@ -303,8 +305,78 @@ namespace Windows_Form_Frontend
                     list.Add(LitEntry);
                 }
             }
+            Dictionary<string, LogicEntryType> LocationsGotoList = GetLocationsFromFunctions(GotoList).OrderBy(x => x.Value).ThenBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
+            foreach(var i in LocationsGotoList)
+            {
+                if (CurrentType != i.Value)
+                {
+                    list.Add(WinFormUtils.CreateDivider(lbCond, $"{i.Value}"));
+                    CurrentType = i.Value;
+                }
+                var LitEntry = new StandardListBoxItem();
+                switch (CurrentType)
+                {
+                    case LogicEntryType.location:
+                        LitEntry.tag = i.Key;
+                        LitEntry.Display = instance.GetLocationByID(i.Key)?.GetDictEntry(instance)?.GetName(instance)??i.Key;
+                        break;
+                    case LogicEntryType.Exit:
+                    default:
+                        LitEntry.tag = i.Key;
+                        LitEntry.Display = i.Key;
+                        break;
+                }
+                list.Add(LitEntry);
+            }
             return list;
         }
+
+        private Dictionary<string, LogicEntryType> GetLocationsFromFunctions(Dictionary<string, LogicEntryType> CurrentList)
+        {
+            Dictionary<string, LogicEntryType> NewList = new Dictionary<string, LogicEntryType>();
+            foreach (var i in CurrentList.Where(x => x.Value == LogicEntryType.function))
+            {
+                LogicEditing.IsLogicFunction(i.Key, out string Func, out string Param);
+                if (Func == "contains")
+                {
+                    var Data = Param.Split(',').Select(x => x.Trim()).ToArray();
+                    if (!CurrentList.ContainsKey(Data[0]))
+                    {
+                        var ItemType = instance.GetLocationEntryType(Data[0], false, out object obj);
+                        NewList[Data[0]] = ItemType;
+                    }
+                }
+                else if (Func == "check" || Func == "available")
+                {
+                    if (!CurrentList.ContainsKey(Param))
+                    {
+                        var ItemType = instance.GetLocationEntryType(Param, false, out object obj);
+                        NewList[Param] = ItemType;
+                    }
+                }
+            }
+            return NewList;
+        }
+
+        private Dictionary<string, LogicEntryType> AddItemsFromFunction(Dictionary<string, LogicEntryType> CurrentList)
+        {
+            Dictionary<string, LogicEntryType> NewList = new Dictionary<string, LogicEntryType>();
+            foreach (var i in CurrentList.Where(x => x.Value == LogicEntryType.function))
+            {
+                LogicEditing.IsLogicFunction(i.Key, out string Func, out string Param);
+                if (Func == "contains")
+                {
+                    var Data = Param.Split(',').Select(x => x.Trim()).ToArray();
+                    if (!CurrentList.ContainsKey(Data[1]))
+                    {
+                        var ItemType = instance.GetItemEntryType(Data[1], false, out object obj);
+                        NewList[Data[1]] = ItemType;
+                    }
+                }
+            }
+            return NewList;
+        }
+
         private void UpdateTimeCheckboxes(MMR_Tracker_V3.TrackerObjects.MMRData.JsonFormatLogicItem OriginalLogic)
         {
             Updating = true;
