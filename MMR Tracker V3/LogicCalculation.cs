@@ -91,19 +91,17 @@ namespace MMR_Tracker_V3
             int funcEnd = i.IndexOf(functionCasing.Item1);
             int paramStart = i.IndexOf(functionCasing.Item1) + 1;
             int paramEnd = i.IndexOf(functionCasing.Item2);
-            string Func = i[..funcEnd].Trim();
+            string Func = i[..funcEnd].Trim().ToLower();
             string Param = i[paramStart..paramEnd].Trim();
 
-            switch (Func.ToLower())
+            switch (Func)
             {
                 case "check":
-                    LogicFuntionValid = container.Instance.LocationPool.ContainsKey(Param) && container.Instance.LocationPool[Param].CheckState == CheckState.Checked;
-                    break;
-                case "exit":
-                    var ExitValid = container.Instance.InstanceReference.EntranceLogicNameToEntryData.TryGetValue(Param, out EntranceData.EntranceAreaPair ExitData);
-                    if (!ExitValid) { return true; }
-                    var Exit = container.Instance.EntrancePool.AreaList[ExitData.Area].GetExit(ExitData.Exit);
-                    LogicFuntionValid = Exit.CheckState == CheckState.Checked;
+                case "available":
+                    bool litteral = Param.IsLiteralID(out Param);
+                    container.Instance.GetLocationEntryType(Param, litteral, out dynamic obj);
+                    if (Func == "check" && Utility.DynamicPropertyExist(obj, "CheckState")) { LogicFuntionValid = obj.CheckState == CheckState.Checked; }
+                    else if (Func == "available" && Utility.DynamicPropertyExist(obj, "Available")) { LogicFuntionValid =  obj.Available; }
                     break;
             }
 
