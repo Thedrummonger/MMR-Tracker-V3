@@ -1,6 +1,8 @@
-﻿using MMR_Tracker_V3.TrackerObjects;
+﻿using MathNet.Symbolics;
+using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -49,6 +51,8 @@ namespace MMR_Tracker_V3
         {
             if (container.Instance.LogicOptionEntry(i, out bool OptionEntryValid)) { return OptionEntryValid; }
 
+            if (CheckLogicFunction(i, SubUnlockData, out bool FunctionEntryValid)) { return FunctionEntryValid; }
+
             container.Instance.MultipleItemEntry(i, out string LogicItem, out int Amount);
             bool Literal = LogicItem.IsLiteralID(out LogicItem);
             var type = container.Instance.GetItemEntryType(LogicItem, Literal, out _);
@@ -73,6 +77,37 @@ namespace MMR_Tracker_V3
                     Debug.WriteLine($"{LogicItem} Was not a valid Logic Entry");
                     return false;
             }
+        }
+
+        public bool CheckLogicFunction(string i, List<string> SubUnlockData, out bool LogicFuntionValid)
+        {
+            LogicFuntionValid=false;
+            if (i.IsLiteralID(out _)) { return false; }
+            bool squirFunc = i.EndsWith('}') && i.Contains("{");
+
+            if (!squirFunc) { return false; }
+            Tuple <char, char> functionCasing = new('{', '}');
+
+            int funcEnd = i.IndexOf(functionCasing.Item1);
+            int paramStart = i.IndexOf(functionCasing.Item1) + 1;
+            int paramEnd = i.IndexOf(functionCasing.Item2);
+            string Func = i[..funcEnd].Trim();
+            string Param = i[paramStart..paramEnd].Trim();
+
+            switch (Func.ToLower())
+            {
+                case "check":
+                    LogicFuntionValid = container.Instance.LocationPool.ContainsKey(Param) && container.Instance.LocationPool[Param].CheckState == CheckState.Checked;
+                    break;
+                case "exit":
+                    var ExitValid = container.Instance.InstanceReference.EntranceLogicNameToEntryData.TryGetValue(Param, out EntranceData.EntranceAreaPair ExitData);
+                    if (!ExitValid) { return true; }
+                    var Exit = container.Instance.EntrancePool.AreaList[ExitData.Area].GetExit(ExitData.Exit);
+                    LogicFuntionValid = Exit.CheckState == CheckState.Checked;
+                    break;
+            }
+
+            return true;
         }
 
         public bool checkItemArray(string ArrVar, int amount, List<string> SubUnlockData, out int TotalUsable)
