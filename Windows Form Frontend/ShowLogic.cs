@@ -16,6 +16,12 @@ namespace Windows_Form_Frontend
 {
     public partial class ShowLogic : Form
     {
+        public enum FormState
+        {
+            showLogic,
+            GoTo
+        }
+
         public string CurrentID;
         private readonly LogicObjects.TrackerInstance instance;
         private readonly ListBoxHeightData ReqLBHeightData;
@@ -24,8 +30,7 @@ namespace Windows_Form_Frontend
         private readonly List<string> GoBackList = new();
         private List<object> CurrentGotoData;
         private LogicCalculation LogicCalculation;
-        //0 = Show Logic; 1 = Goto Entry
-        public int state = 0;
+        public FormState state = FormState.showLogic;
         public ShowLogic(string id, LogicObjects.TrackerInstance _instance)
         {
             InitializeComponent();
@@ -62,7 +67,7 @@ namespace Windows_Form_Frontend
         private void UpdateUI()
         {
             Updating = true;
-            if (state == 0)
+            if (state == FormState.showLogic)
             {
                 var AlteredLogic = instance.GetLogic(CurrentID, true);
                 var UnAlteredLogic = instance.GetLogic(CurrentID, false);
@@ -98,7 +103,7 @@ namespace Windows_Form_Frontend
                 //Resize Items
                 ReqLBHeightData.ResizeLB(false, ShowTimeLogic);
             }
-            else if (state == 1)
+            else if (state == FormState.GoTo)
             {
                 //Title
                 this.Text = $"Select Logic Entry";
@@ -136,12 +141,12 @@ namespace Windows_Form_Frontend
         {
             if (CurrentID is not null && instance.GetLogic(CurrentID) is not null)
             {
-                state = 0;
+                state = FormState.showLogic;
                 PrintLogicToLists();
             }
             else
             {
-                state = 1;
+                state = FormState.GoTo;
                 List<string> ItemIds = instance.ItemPool.Keys.ToList();
                 List<string> MacroIds = instance.MacroPool.Keys.ToList();
                 List<string> AreaIds = instance.EntrancePool.AreaList.Keys.ToList();
@@ -340,22 +345,40 @@ namespace Windows_Form_Frontend
                 if (Func == "contains")
                 {
                     var Data = Param.Split(',').Select(x => x.Trim()).ToArray();
-                    if (!CurrentList.ContainsKey(Data[0]))
+                    var ItemType = instance.GetLocationEntryType(Data[0], false, out object obj);
+                    if (ItemType == LogicEntryType.variableList)
                     {
-                        var ItemType = instance.GetLocationEntryType(Data[0], false, out object obj);
+                        AddFromVariable(Data[0]);
+                    }
+                    else if (!CurrentList.ContainsKey(Data[0]))
+                    {
                         NewList[Data[0]] = ItemType;
                     }
                 }
                 else if (Func == "check" || Func == "available")
                 {
-                    if (!CurrentList.ContainsKey(Param))
+                    var ItemType = instance.GetLocationEntryType(Param, false, out object obj);
+                    if (ItemType == LogicEntryType.variableList)
                     {
-                        var ItemType = instance.GetLocationEntryType(Param, false, out object obj);
+                        AddFromVariable(Param);
+                    }
+                    else if (!CurrentList.ContainsKey(Param))
+                    {
                         NewList[Param] = ItemType;
                     }
                 }
             }
             return NewList;
+            void AddFromVariable(string Entry)
+            {
+                instance.MultipleItemEntry(Entry, out string LogicItem, out int Amount);
+                if (!instance.Variables.TryGetValue(LogicItem, out LogicDictionaryData.TrackerVariable variable)) { return; }
+                foreach (string varEntry in variable.Value)
+                {
+                    var ItemType = instance.GetItemEntryType(varEntry, false, out object obj);
+                    NewList[varEntry] = ItemType;
+                }
+            }
         }
 
         private Dictionary<string, LogicEntryType> AddItemsFromFunction(Dictionary<string, LogicEntryType> CurrentList)
@@ -367,14 +390,33 @@ namespace Windows_Form_Frontend
                 if (Func == "contains")
                 {
                     var Data = Param.Split(',').Select(x => x.Trim()).ToArray();
-                    if (!CurrentList.ContainsKey(Data[1]))
+                    var ItemType = instance.GetItemEntryType(Data[1], false, out object obj);
+                    if (ItemType == LogicEntryType.variableList) 
+                    { 
+                        AddFromVariable(Data[1]); 
+                    }
+                    else if (!CurrentList.ContainsKey(Data[1]))
                     {
-                        var ItemType = instance.GetItemEntryType(Data[1], false, out object obj);
                         NewList[Data[1]] = ItemType;
                     }
                 }
             }
+            foreach (var i in CurrentList.Where(x => x.Value == LogicEntryType.variableList))
+            {
+                AddFromVariable(i.Key);
+            }
             return NewList;
+
+            void AddFromVariable(string Entry)
+            {
+                instance.MultipleItemEntry(Entry, out string LogicItem, out int Amount);
+                if (!instance.Variables.TryGetValue(LogicItem, out LogicDictionaryData.TrackerVariable variable)) { return; }
+                foreach (string varEntry in variable.Value)
+                {
+                    var ItemType = instance.GetItemEntryType(varEntry, false, out object obj);
+                    NewList[varEntry] = ItemType;
+                }
+            }
         }
 
         private void UpdateTimeCheckboxes(MMR_Tracker_V3.TrackerObjects.MMRData.JsonFormatLogicItem OriginalLogic)
@@ -425,16 +467,16 @@ namespace Windows_Form_Frontend
         private void btnGoTo_Click(object sender, EventArgs e)
         {
             Debug.WriteLine(state);
-            if (state == 0) 
+            if (state == FormState.showLogic) 
             { 
                 var GotoList = CreatGotoList(GetAllLogicItemsByFromID(CurrentID), out List<object> DataEntriesOnly); 
-                state = 1;
+                state = FormState.GoTo;
                 PrintGotoData(GotoList);
             }
-            else if (state == 1) 
+            else if (state == FormState.GoTo) 
             { 
                 PrintLogicToLists(); 
-                state = 0; 
+                state = FormState.showLogic; 
             }
             UpdateUI();
         }
@@ -449,7 +491,7 @@ namespace Windows_Form_Frontend
 
         private void LBCond_DoubleClick(object sender, EventArgs e)
         {
-            if (state == 0)
+            if (state == FormState.showLogic)
             {
                 if (lbCond.SelectedItem is StandardListBoxItem SI && SI.tag is List<string> Cond)
                 {
@@ -463,19 +505,19 @@ namespace Windows_Form_Frontend
                     }
                     else
                     {
-                        state = 1;
+                        state = FormState.GoTo;
                         PrintGotoData(GotoList);
                     }
                 }
             }
-            else if (state == 1)
+            else if (state == FormState.GoTo)
             {
                 if (lbCond.SelectedItem is StandardListBoxItem SI && SI.tag is string str)
                 {
                     GoBackList.Add(CurrentID);
                     CurrentID = str;
                     PrintLogicToLists(); 
-                    state = 0;
+                    state = FormState.showLogic;
                 }
             }
             UpdateUI();
@@ -483,7 +525,7 @@ namespace Windows_Form_Frontend
 
         private void lbReq_DoubleClick(object sender, EventArgs e)
         {
-            if (state == 0)
+            if (state == FormState.showLogic)
             {
                 if (LBReq.SelectedItem is StandardListBoxItem SI && SI.tag is string req)
                 {
@@ -497,19 +539,19 @@ namespace Windows_Form_Frontend
                     }
                     else
                     {
-                        state = 1;
+                        state = FormState.GoTo;
                         PrintGotoData(GotoList);
                     }
                 }
             }
-            else if (state == 1)
+            else if (state == FormState.GoTo)
             {
                 if (LBReq.SelectedItem is string str)
                 {
                     if (CurrentID is not null) { GoBackList.Add(CurrentID); }
                     CurrentID = str;
                     PrintLogicToLists(); 
-                    state = 0;
+                    state = FormState.showLogic;
                 }
             }
             UpdateUI();
