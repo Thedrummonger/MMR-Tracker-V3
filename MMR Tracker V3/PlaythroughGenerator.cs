@@ -342,10 +342,10 @@ namespace MMR_Tracker_V3
                         Data.MacrosUsed.Add(LogicItem);
                         ParseRequirements(LogicItem);
                     }
-                    //else if (type == MiscData.LogicEntryType.Option && !Data.OptionsUsed.Contains(LogicItem))
-                    //{
-                    //    Data.OptionsUsed.Add(LogicItem);
-                    //}
+                    else if (type == MiscData.LogicEntryType.function && !Data.OptionsUsed.Contains(LogicItem))
+                    {
+                        Data.OptionsUsed.Add(LogicItem);
+                    }
                     else if (type == MiscData.LogicEntryType.item)
                     {
                         if (Data.RealItemsUsed.ContainsKey(LogicItem)) { if (Amount > Data.RealItemsUsed[LogicItem]) { Data.RealItemsUsed[LogicItem] = Amount; } }
