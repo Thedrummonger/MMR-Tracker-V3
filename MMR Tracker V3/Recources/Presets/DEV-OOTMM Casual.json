@@ -4103,12 +4103,12 @@
         ],
         [
           "OOT_can_use_bow",
-          "smallKeyShuffle == anywhere",
+          "option{smallKeyShuffle, anywhere}",
           "OOT_SMALL_KEY_FIRE, 5",
           "OOT Fire Temple Maze"
         ],
         [
-          "smallKeyShuffle != anywhere",
+          "option{smallKeyShuffle, anywhere, false}",
           "OOT_SMALL_KEY_FIRE, 4",
           "OOT Fire Temple Maze"
         ]
@@ -12035,11 +12035,11 @@
       ],
       "ConditionalItems": [
         [
-          "smallKeyShuffle == anywhere",
+          "option{smallKeyShuffle, anywhere}",
           "OOT_SMALL_KEY_FIRE, 2"
         ],
         [
-          "smallKeyShuffle != anywhere",
+          "option{smallKeyShuffle, anywhere, false}",
           "OOT_SMALL_KEY_FIRE"
         ]
       ],
@@ -12076,11 +12076,11 @@
       ],
       "ConditionalItems": [
         [
-          "smallKeyShuffle ==  anywhere",
+          "option{smallKeyShuffle,  anywhere}",
           "OOT_SMALL_KEY_FIRE, 8"
         ],
         [
-          "smallKeyShuffle !=  anywhere",
+          "option{smallKeyShuffle,  anywhere, false}",
           "true"
         ]
       ],
@@ -12096,18 +12096,18 @@
       ],
       "ConditionalItems": [
         [
-          "smallKeyShuffle == anywhere",
+          "option{smallKeyShuffle, anywhere}",
           "OOT_SMALL_KEY_FIRE, 4"
         ],
         [
-          "smallKeyShuffle != anywhere",
+          "option{smallKeyShuffle, anywhere, false}",
           "OOT_SMALL_KEY_FIRE, 3",
           "OOT_has_tunic_goron_strict",
           "OOT_STRENGTH",
           "OOT_has_ranged_weapon_adult"
         ],
         [
-          "smallKeyShuffle != anywhere",
+          "option{smallKeyShuffle, anywhere, false}",
           "OOT_SMALL_KEY_FIRE, 3",
           "OOT_has_tunic_goron_strict",
           "OOT_STRENGTH",
@@ -12126,11 +12126,11 @@
       ],
       "ConditionalItems": [
         [
-          "smallKeyShuffle == anywhere",
+          "option{smallKeyShuffle, anywhere}",
           "OOT_SMALL_KEY_FIRE, 6"
         ],
         [
-          "smallKeyShuffle != anywhere",
+          "option{smallKeyShuffle, anywhere, false}",
           "OOT_SMALL_KEY_FIRE, 5"
         ]
       ],
@@ -12146,11 +12146,11 @@
       ],
       "ConditionalItems": [
         [
-          "smallKeyShuffle == anywhere",
+          "option{smallKeyShuffle, anywhere}",
           "OOT_SMALL_KEY_FIRE, 7"
         ],
         [
-          "smallKeyShuffle != anywhere",
+          "option{smallKeyShuffle, anywhere, false}",
           "OOT_SMALL_KEY_FIRE, 6"
         ]
       ],
@@ -12178,11 +12178,11 @@
       ],
       "ConditionalItems": [
         [
-          "smallKeyShuffle == anywhere",
+          "option{smallKeyShuffle, anywhere}",
           "OOT_SMALL_KEY_FIRE, 8"
         ],
         [
-          "smallKeyShuffle != anywhere",
+          "option{smallKeyShuffle, anywhere, false}",
           "OOT_SMALL_KEY_FIRE, 7"
         ]
       ],
@@ -13153,7 +13153,7 @@
       ],
       "ConditionalItems": [
         [
-          "ganonBossKey == removed"
+          "option{ganonBossKey, removed}"
         ],
         [
           "OOT_BOSS_KEY_GANON"
@@ -15889,7 +15889,7 @@
       ],
       "ConditionalItems": [
         [
-          "doorOfTime == open"
+          "option{doorOfTime, open}"
         ],
         [
           "OOT_OCARINA",
@@ -18320,51 +18320,51 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss == OOT Deku Tree Boss",
+          "contains{MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss, OOT Deku Tree Boss}",
           "OOT Deku Tree Boss"
         ],
         [
-          "MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss == OOT Dodongo Cavern Boss",
+          "contains{MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss, OOT Dodongo Cavern Boss}",
           "OOT Dodongo Cavern After Boss"
         ],
         [
-          "MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss == OOT Jabu-Jabu Boss",
+          "contains{MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss, OOT Jabu-Jabu Boss}",
           "OOT Jabu-Jabu After Boss"
         ],
         [
-          "MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss == OOT Forest Temple Boss",
+          "contains{MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss, OOT Forest Temple Boss}",
           "OOT Forest Temple After Boss"
         ],
         [
-          "MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss == OOT Fire Temple Boss",
+          "contains{MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss, OOT Fire Temple Boss}",
           "OOT Fire Temple After Boss"
         ],
         [
-          "MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss == OOT Water Temple Boss",
+          "contains{MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss, OOT Water Temple Boss}",
           "OOT Water Temple After Boss"
         ],
         [
-          "MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss == OOT Spirit Temple Boss",
+          "contains{MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss, OOT Spirit Temple Boss}",
           "OOT Spirit Temple After Boss"
         ],
         [
-          "MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss == OOT Shadow Temple Boss",
+          "contains{MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss, OOT Shadow Temple Boss}",
           "OOT Shadow Temple After Boss"
         ],
         [
-          "MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss == MM Woodfall Temple Boss",
+          "contains{MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss, MM Woodfall Temple Boss}",
           "MM Woodfall Temple After Boss"
         ],
         [
-          "MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss == MM Great Bay Temple Boss",
+          "contains{MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss, MM Great Bay Temple Boss}",
           "MM Great Bay Temple After Boss"
         ],
         [
-          "MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss == MM Snowhead Temple Boss",
+          "contains{MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss, MM Snowhead Temple Boss}",
           "MM Snowhead Temple After Boss"
         ],
         [
-          "MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss == MM Stone Tower Temple Boss",
+          "contains{MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss, MM Stone Tower Temple Boss}",
           "MM Stone Tower After Boss"
         ]
       ],
@@ -24211,51 +24211,51 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss == OOT Deku Tree Boss",
+          "contains{MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss, OOT Deku Tree Boss}",
           "OOT Deku Tree Boss"
         ],
         [
-          "MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss == OOT Dodongo Cavern Boss",
+          "contains{MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss, OOT Dodongo Cavern Boss}",
           "OOT Dodongo Cavern After Boss"
         ],
         [
-          "MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss == OOT Jabu-Jabu Boss",
+          "contains{MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss, OOT Jabu-Jabu Boss}",
           "OOT Jabu-Jabu After Boss"
         ],
         [
-          "MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss == OOT Forest Temple Boss",
+          "contains{MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss, OOT Forest Temple Boss}",
           "OOT Forest Temple After Boss"
         ],
         [
-          "MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss == OOT Fire Temple Boss",
+          "contains{MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss, OOT Fire Temple Boss}",
           "OOT Fire Temple After Boss"
         ],
         [
-          "MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss == OOT Water Temple Boss",
+          "contains{MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss, OOT Water Temple Boss}",
           "OOT Water Temple After Boss"
         ],
         [
-          "MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss == OOT Spirit Temple Boss",
+          "contains{MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss, OOT Spirit Temple Boss}",
           "OOT Spirit Temple After Boss"
         ],
         [
-          "MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss == OOT Shadow Temple Boss",
+          "contains{MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss, OOT Shadow Temple Boss}",
           "OOT Shadow Temple After Boss"
         ],
         [
-          "MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss == MM Woodfall Temple Boss",
+          "contains{MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss, MM Woodfall Temple Boss}",
           "MM Woodfall Temple After Boss"
         ],
         [
-          "MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss == MM Great Bay Temple Boss",
+          "contains{MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss, MM Great Bay Temple Boss}",
           "MM Great Bay Temple After Boss"
         ],
         [
-          "MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss == MM Snowhead Temple Boss",
+          "contains{MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss, MM Snowhead Temple Boss}",
           "MM Snowhead Temple After Boss"
         ],
         [
-          "MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss == MM Stone Tower Temple Boss",
+          "contains{MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss, MM Stone Tower Temple Boss}",
           "MM Stone Tower After Boss"
         ]
       ],
@@ -25502,51 +25502,51 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss == OOT Deku Tree Boss",
+          "contains{MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss, OOT Deku Tree Boss}",
           "OOT Deku Tree Boss"
         ],
         [
-          "MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss == OOT Dodongo Cavern Boss",
+          "contains{MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss, OOT Dodongo Cavern Boss}",
           "OOT Dodongo Cavern After Boss"
         ],
         [
-          "MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss == OOT Jabu-Jabu Boss",
+          "contains{MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss, OOT Jabu-Jabu Boss}",
           "OOT Jabu-Jabu After Boss"
         ],
         [
-          "MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss == OOT Forest Temple Boss",
+          "contains{MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss, OOT Forest Temple Boss}",
           "OOT Forest Temple After Boss"
         ],
         [
-          "MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss == OOT Fire Temple Boss",
+          "contains{MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss, OOT Fire Temple Boss}",
           "OOT Fire Temple After Boss"
         ],
         [
-          "MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss == OOT Water Temple Boss",
+          "contains{MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss, OOT Water Temple Boss}",
           "OOT Water Temple After Boss"
         ],
         [
-          "MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss == OOT Spirit Temple Boss",
+          "contains{MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss, OOT Spirit Temple Boss}",
           "OOT Spirit Temple After Boss"
         ],
         [
-          "MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss == OOT Shadow Temple Boss",
+          "contains{MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss, OOT Shadow Temple Boss}",
           "OOT Shadow Temple After Boss"
         ],
         [
-          "MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss == MM Woodfall Temple Boss",
+          "contains{MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss, MM Woodfall Temple Boss}",
           "MM Woodfall Temple After Boss"
         ],
         [
-          "MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss == MM Great Bay Temple Boss",
+          "contains{MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss, MM Great Bay Temple Boss}",
           "MM Great Bay Temple After Boss"
         ],
         [
-          "MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss == MM Snowhead Temple Boss",
+          "contains{MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss, MM Snowhead Temple Boss}",
           "MM Snowhead Temple After Boss"
         ],
         [
-          "MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss == MM Stone Tower Temple Boss",
+          "contains{MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss, MM Stone Tower Temple Boss}",
           "MM Stone Tower After Boss"
         ]
       ],
@@ -25558,7 +25558,7 @@
     {
       "Id": "OOT_is_child",
       "RequiredItems": [
-        "age_filter != adult"
+        "option{age_filter, adult, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -25569,7 +25569,7 @@
     {
       "Id": "OOT_is_adult",
       "RequiredItems": [
-        "age_filter != child",
+        "option{age_filter, child, false}",
         "OOT_EVENT_TIME_TRAVEL"
       ],
       "ConditionalItems": [],
@@ -26607,11 +26607,11 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "sharedOcarina == false",
+          "option{sharedOcarina, false}",
           "MM_OCARINA"
         ],
         [
-          "sharedOcarina == true",
+          "option{sharedOcarina, true}",
           "MM_OCARINA, 2"
         ]
       ],

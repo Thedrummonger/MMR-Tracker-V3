@@ -528,14 +528,14 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         break;
                     case "has_small_keys_fire":
                         int Keys = int.Parse(f.ParametersTrimmed);
-                        line = line.Replace(f.ToString(), $"(smallKeyShuffle == anywhere && has(SMALL_KEY_FIRE, {Keys + 1})) || (smallKeyShuffle != anywhere && has(SMALL_KEY_FIRE, {Keys}))");
+                        line = line.Replace(f.ToString(), $"(option{{smallKeyShuffle, anywhere}} && has(SMALL_KEY_FIRE, {Keys + 1})) || (option{{smallKeyShuffle, anywhere, false}} && has(SMALL_KEY_FIRE, {Keys}))");
                         break;
                     case "setting":
-                        line = line.Replace(f.ToString(), $"{f.ParametersTrimmed.Replace(",", " ==")}");
+                        line = line.Replace(f.ToString(), $"option{{{f.ParametersTrimmed}}}");
                         break;
                     case "age":
-                        if (f.ParametersTrimmed == "child") { line = line.Replace(f.ToString(), $"age_filter != adult"); }
-                        else if (f.ParametersTrimmed == "adult") { line = line.Replace(f.ToString(), $"age_filter != child && OOT_EVENT_TIME_TRAVEL"); }
+                        if (f.ParametersTrimmed == "child") { line = line.Replace(f.ToString(), $"option{{age_filter, adult, false}}"); }
+                        else if (f.ParametersTrimmed == "adult") { line = line.Replace(f.ToString(), $"option{{age_filter, child, false}} && OOT_EVENT_TIME_TRAVEL"); }
                         break;
                     case "cond":
                         if (f.ParametersTrimmed.StartsWith("setting"))
@@ -543,8 +543,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                             string CleanedInput = f.ParametersTrimmed.Replace("setting(", "(");
                             Debug.WriteLine($"Parsing Cond \n[{f.ParametersTrimmed}]");
                             var splitArray = Regex.Split(CleanedInput, @"(?<!,[^(]+\([^)]+),");
-                            line = line.Replace(f.ToString(), $"(({splitArray[0]} == {splitArray[1]} && {splitArray[2]}) || ({splitArray[0]} != {splitArray[1]} && {splitArray[3]}))");
-                            Debug.WriteLine($"Success \n[({splitArray[0]} == {splitArray[1]} && {splitArray[2]}) || ({splitArray[0]} != {splitArray[1]} && {splitArray[3]})]");
+                            line = line.Replace(f.ToString(), $"((option{{{splitArray[0].TrimStart('(')}, {splitArray[1].TrimEnd(')')}}} && {splitArray[2]}) || (option{{{splitArray[0].TrimStart('(')}, {splitArray[1].TrimEnd(')')}, false}} && {splitArray[3]}))");
+                            Debug.WriteLine($"Success \n[(option{{{splitArray[0]}, {splitArray[1]}}} && {splitArray[2]}) || (option{{{splitArray[0]}, {splitArray[1]}, false}} && {splitArray[3]})]");
                         }
                         else
                         {
@@ -837,7 +837,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 Item.ConditionalItems = new List<List<string>>();
                 foreach (var i in RandoAreaClear)
                 {
-                    Item.ConditionalItems.Add(new() { $"{DungeonArea} => {BossDoor} == {i.Key}", i.Value });
+                    Item.ConditionalItems.Add(new() { $"contains{{{DungeonArea} => {BossDoor}, {i.Key}}}", i.Value });
                 }
             }
         }

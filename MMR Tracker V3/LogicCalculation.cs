@@ -513,7 +513,8 @@ namespace MMR_Tracker_V3
             {
                 foreach (var CurrentValue in ValueList)
                 {
-                    if (instance.UserOptions[currentOption].CurrentValue == CurrentValue) { RequiremntMet = true; }
+                    if (instance.UserOptions.ContainsKey(currentOption) && instance.UserOptions[currentOption].CurrentValue == CurrentValue) { RequiremntMet = true; }
+                    if (!instance.UserOptions.ContainsKey(currentOption)) { Debug.WriteLine($"{currentOption} Was not a valid Option"); }
                 }
             }
             return RequiremntMet != inverse;
