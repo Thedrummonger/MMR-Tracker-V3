@@ -15521,6 +15521,26 @@
       }
     },
     {
+      "ID": "MM_BOMB_BAG",
+      "Name": "Bomb Bag (MM)",
+      "MaxAmountInWorld": 3,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_BOMB_BAG",
+          "Bomb Bag (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_BOMB_BAG",
+          "Bomb Bag (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
       "ID": "MM_BOMBCHU",
       "Name": "1 Bombchu (MM)",
       "MaxAmountInWorld": -1,
@@ -15582,7 +15602,7 @@
     },
     {
       "ID": "MM_BOMBER_NOTEBOOK",
-      "Name": "Bomber's Notebook",
+      "Name": "Bombers' Notebook",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -15591,31 +15611,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_BOMBER_NOTEBOOK",
-          "Bomber's Notebook"
+          "Bombers' Notebook"
         ],
         "GossipHintNames": [
           "MM_BOMBER_NOTEBOOK",
-          "Bomber's Notebook"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "MM_BOMB_BAG",
-      "Name": "Bomb Bag (MM)",
-      "MaxAmountInWorld": 3,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "MM_BOMB_BAG",
-          "Bomb Bag (MM)"
-        ],
-        "GossipHintNames": [
-          "MM_BOMB_BAG",
-          "Bomb Bag (MM)"
+          "Bombers' Notebook"
         ],
         "PriceDataNames": []
       }
@@ -15721,21 +15721,21 @@
       }
     },
     {
-      "ID": "MM_BOTTLED_GOLD_DUST",
-      "Name": "Bottle - Gold Dust (MM)",
-      "MaxAmountInWorld": 1,
+      "ID": "MM_BOTTLE_EMPTY",
+      "Name": "Bottle - Empty (MM)",
+      "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_BOTTLED_GOLD_DUST",
-          "Bottle - Gold Dust (MM)"
+          "MM_BOTTLE_EMPTY",
+          "Bottle - Empty (MM)"
         ],
         "GossipHintNames": [
-          "MM_BOTTLED_GOLD_DUST",
-          "Bottle - Gold Dust (MM)"
+          "MM_BOTTLE_EMPTY",
+          "Bottle - Empty (MM)"
         ],
         "PriceDataNames": []
       }
@@ -15781,8 +15781,28 @@
       }
     },
     {
+      "ID": "MM_BOTTLED_GOLD_DUST",
+      "Name": "Bottle - Gold Dust (MM)",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_BOTTLED_GOLD_DUST",
+          "Bottle - Gold Dust (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_BOTTLED_GOLD_DUST",
+          "Bottle - Gold Dust (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
       "ID": "MM_BOW",
-      "Name": "Bow (MM)",
+      "Name": "Hero's Bow (MM)",
       "MaxAmountInWorld": 3,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -15791,11 +15811,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_BOW",
-          "Bow (MM)"
+          "Hero's Bow (MM)"
         ],
         "GossipHintNames": [
           "MM_BOW",
-          "Bow (MM)"
+          "Hero's Bow (MM)"
         ],
         "PriceDataNames": []
       }
@@ -15981,28 +16001,8 @@
       }
     },
     {
-      "ID": "MM_BOTTLE_EMPTY",
-      "Name": "Bottle - Empty (MM)",
-      "MaxAmountInWorld": 2,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "MM_BOTTLE_EMPTY",
-          "Bottle - Empty (MM)"
-        ],
-        "GossipHintNames": [
-          "MM_BOTTLE_EMPTY",
-          "Bottle - Empty (MM)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
       "ID": "MM_GREAT_FAIRY_SWORD",
-      "Name": "Great Fairy Sword",
+      "Name": "Great Fairy's Sword",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -16011,18 +16011,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_GREAT_FAIRY_SWORD",
-          "Great Fairy Sword"
+          "Great Fairy's Sword"
         ],
         "GossipHintNames": [
           "MM_GREAT_FAIRY_SWORD",
-          "Great Fairy Sword"
+          "Great Fairy's Sword"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "MM_GS_TOKEN_OCEAN",
-      "Name": "Ocean Spider Token",
+      "Name": "Ocean Golden Skulltula Spirits",
       "MaxAmountInWorld": 30,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -16031,18 +16031,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_GS_TOKEN_OCEAN",
-          "Ocean Spider Token"
+          "Ocean Golden Skulltula Spirits"
         ],
         "GossipHintNames": [
           "MM_GS_TOKEN_OCEAN",
-          "Ocean Spider Token"
+          "Ocean Golden Skulltula Spirits"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "MM_GS_TOKEN_SWAMP",
-      "Name": "Swamp Spider Token",
+      "Name": "Swamp Golden Skulltula Spirits",
       "MaxAmountInWorld": 30,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -16051,11 +16051,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_GS_TOKEN_SWAMP",
-          "Swamp Spider Token"
+          "Swamp Golden Skulltula Spirits"
         ],
         "GossipHintNames": [
           "MM_GS_TOKEN_SWAMP",
-          "Swamp Spider Token"
+          "Swamp Golden Skulltula Spirits"
         ],
         "PriceDataNames": []
       }
@@ -16162,7 +16162,7 @@
     },
     {
       "ID": "MM_LETTER_TO_MAMA",
-      "Name": "Express Mail to Mama",
+      "Name": "Letter to Mama",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -16171,11 +16171,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_LETTER_TO_MAMA",
-          "Express Mail to Mama"
+          "Letter to Mama"
         ],
         "GossipHintNames": [
           "MM_LETTER_TO_MAMA",
-          "Express Mail to Mama"
+          "Letter to Mama"
         ],
         "PriceDataNames": []
       }
@@ -16302,7 +16302,7 @@
     },
     {
       "ID": "MM_MASK_ALL_NIGHT",
-      "Name": "All Night's Mask",
+      "Name": "All-Night Mask",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -16311,11 +16311,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_MASK_ALL_NIGHT",
-          "All Night's Mask"
+          "All-Night Mask"
         ],
         "GossipHintNames": [
           "MM_MASK_ALL_NIGHT",
-          "All Night's Mask"
+          "All-Night Mask"
         ],
         "PriceDataNames": []
       }
@@ -16442,7 +16442,7 @@
     },
     {
       "ID": "MM_MASK_DON_GERO",
-      "Name": "Don Gero Mask",
+      "Name": "Don Gero's Mask",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -16451,18 +16451,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_MASK_DON_GERO",
-          "Don Gero Mask"
+          "Don Gero's Mask"
         ],
         "GossipHintNames": [
           "MM_MASK_DON_GERO",
-          "Don Gero Mask"
+          "Don Gero's Mask"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "MM_MASK_FIERCE_DEITY",
-      "Name": "Fierce Diety Mask",
+      "Name": "Fierce Deity's Mask",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -16471,18 +16471,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_MASK_FIERCE_DEITY",
-          "Fierce Diety Mask"
+          "Fierce Deity's Mask"
         ],
         "GossipHintNames": [
           "MM_MASK_FIERCE_DEITY",
-          "Fierce Diety Mask"
+          "Fierce Deity's Mask"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "MM_MASK_GARO",
-      "Name": "Garo Mask",
+      "Name": "Garo's Mask",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -16491,11 +16491,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_MASK_GARO",
-          "Garo Mask"
+          "Garo's Mask"
         ],
         "GossipHintNames": [
           "MM_MASK_GARO",
-          "Garo Mask"
+          "Garo's Mask"
         ],
         "PriceDataNames": []
       }
@@ -16562,7 +16562,7 @@
     },
     {
       "ID": "MM_MASK_GREAT_FAIRY",
-      "Name": "Great Fairy Mask",
+      "Name": "Great Fairy's Mask",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -16571,11 +16571,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_MASK_GREAT_FAIRY",
-          "Great Fairy Mask"
+          "Great Fairy's Mask"
         ],
         "GossipHintNames": [
           "MM_MASK_GREAT_FAIRY",
-          "Great Fairy Mask"
+          "Great Fairy's Mask"
         ],
         "PriceDataNames": []
       }
@@ -16602,7 +16602,7 @@
     },
     {
       "ID": "MM_MASK_KAMARO",
-      "Name": "Kamaro Mask",
+      "Name": "Kamaro's Mask",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -16611,11 +16611,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_MASK_KAMARO",
-          "Kamaro Mask"
+          "Kamaro's Mask"
         ],
         "GossipHintNames": [
           "MM_MASK_KAMARO",
-          "Kamaro Mask"
+          "Kamaro's Mask"
         ],
         "PriceDataNames": []
       }
@@ -16662,7 +16662,7 @@
     },
     {
       "ID": "MM_MASK_ROMANI",
-      "Name": "Romani Mask",
+      "Name": "Romani's Mask",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -16671,11 +16671,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_MASK_ROMANI",
-          "Romani Mask"
+          "Romani's Mask"
         ],
         "GossipHintNames": [
           "MM_MASK_ROMANI",
-          "Romani Mask"
+          "Romani's Mask"
         ],
         "PriceDataNames": []
       }
@@ -16781,8 +16781,28 @@
       }
     },
     {
+      "ID": "MM_MILK",
+      "Name": "Romani Milk",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_MILK",
+          "Romani Milk"
+        ],
+        "GossipHintNames": [
+          "MM_MILK",
+          "Romani Milk"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
       "ID": "MM_MOON_TEAR",
-      "Name": "Moon Tear",
+      "Name": "Moon's Tear",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -16791,11 +16811,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_MOON_TEAR",
-          "Moon Tear"
+          "Moon's Tear"
         ],
         "GossipHintNames": [
           "MM_MOON_TEAR",
-          "Moon Tear"
+          "Moon's Tear"
         ],
         "PriceDataNames": []
       }
@@ -16981,26 +17001,6 @@
       }
     },
     {
-      "ID": "MM_RUPEE_GREEN",
-      "Name": "Green Rupee (MM)",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "MM_RUPEE_GREEN",
-          "Green Rupee (MM)"
-        ],
-        "GossipHintNames": [
-          "MM_RUPEE_GREEN",
-          "Green Rupee (MM)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
       "ID": "MM_RUPEE_BLUE",
       "Name": "Blue Rupee (MM)",
       "MaxAmountInWorld": -1,
@@ -17036,6 +17036,26 @@
         "GossipHintNames": [
           "MM_RUPEE_GOLD",
           "Gold Rupee (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "MM_RUPEE_GREEN",
+      "Name": "Green Rupee (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_RUPEE_GREEN",
+          "Green Rupee (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_RUPEE_GREEN",
+          "Green Rupee (MM)"
         ],
         "PriceDataNames": []
       }
@@ -17522,7 +17542,7 @@
     },
     {
       "ID": "MM_STRAY_FAIRY_TOWN",
-      "Name": "Stray Fairy (Clocktown)",
+      "Name": "Stray Fairy (Clock Town)",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -17531,11 +17551,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_STRAY_FAIRY_TOWN",
-          "Stray Fairy (Clocktown)"
+          "Stray Fairy (Clock Town)"
         ],
         "GossipHintNames": [
           "MM_STRAY_FAIRY_TOWN",
-          "Stray Fairy (Clocktown)"
+          "Stray Fairy (Clock Town)"
         ],
         "PriceDataNames": []
       }
@@ -17601,66 +17621,6 @@
       }
     },
     {
-      "ID": "OOT_ARROWS_10",
-      "Name": "10 Arrows (OoT)",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "OOT_ARROWS_10",
-          "10 Arrows (OoT)"
-        ],
-        "GossipHintNames": [
-          "OOT_ARROWS_10",
-          "10 Arrows (OoT)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "OOT_ARROWS_30",
-      "Name": "30 Arrows (OoT)",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "OOT_ARROWS_30",
-          "30 Arrows (OoT)"
-        ],
-        "GossipHintNames": [
-          "OOT_ARROWS_30",
-          "30 Arrows (OoT)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "OOT_ARROWS_5",
-      "Name": "5 Arrows (OoT)",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "OOT_ARROWS_5",
-          "5 Arrows (OoT)"
-        ],
-        "GossipHintNames": [
-          "OOT_ARROWS_5",
-          "5 Arrows (OoT)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
       "ID": "OOT_ARROW_FIRE",
       "Name": "Fire Arrows (OoT)",
       "MaxAmountInWorld": 1,
@@ -17721,6 +17681,106 @@
       }
     },
     {
+      "ID": "OOT_ARROWS_10",
+      "Name": "10 Arrows (OoT)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_ARROWS_10",
+          "10 Arrows (OoT)"
+        ],
+        "GossipHintNames": [
+          "OOT_ARROWS_10",
+          "10 Arrows (OoT)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_ARROWS_30",
+      "Name": "30 Arrows (OoT)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_ARROWS_30",
+          "30 Arrows (OoT)"
+        ],
+        "GossipHintNames": [
+          "OOT_ARROWS_30",
+          "30 Arrows (OoT)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_ARROWS_5",
+      "Name": "5 Arrows (OoT)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_ARROWS_5",
+          "5 Arrows (OoT)"
+        ],
+        "GossipHintNames": [
+          "OOT_ARROWS_5",
+          "5 Arrows (OoT)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_BLUE_FIRE",
+      "Name": "Bottle - Blue Fire",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_BLUE_FIRE",
+          "Bottle - Blue Fire"
+        ],
+        "GossipHintNames": [
+          "OOT_BLUE_FIRE",
+          "Bottle - Blue Fire"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_BOMB_BAG",
+      "Name": "Bomb Bag (OoT)",
+      "MaxAmountInWorld": 3,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_BOMB_BAG",
+          "Bomb Bag (OoT)"
+        ],
+        "GossipHintNames": [
+          "OOT_BOMB_BAG",
+          "Bomb Bag (OoT)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
       "ID": "OOT_BOMBCHU_10",
       "Name": "10 Bombchu (OoT)",
       "MaxAmountInWorld": -1,
@@ -17776,26 +17836,6 @@
         "GossipHintNames": [
           "OOT_BOMBCHU_5",
           "5 Bombchu (OoT)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "OOT_BOMB_BAG",
-      "Name": "Bomb Bag (OoT)",
-      "MaxAmountInWorld": 3,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "OOT_BOMB_BAG",
-          "Bomb Bag (OoT)"
-        ],
-        "GossipHintNames": [
-          "OOT_BOMB_BAG",
-          "Bomb Bag (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -17961,6 +18001,26 @@
       }
     },
     {
+      "ID": "OOT_BOSS_KEY_GANON",
+      "Name": "Boss Key (Ganon's Castle)",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_BOSS_KEY_GANON",
+          "Boss Key (Ganon's Castle)"
+        ],
+        "GossipHintNames": [
+          "OOT_BOSS_KEY_GANON",
+          "Boss Key (Ganon's Castle)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
       "ID": "OOT_BOSS_KEY_SHADOW",
       "Name": "Boss Key (Shadow Temple)",
       "MaxAmountInWorld": 1,
@@ -18021,8 +18081,48 @@
       }
     },
     {
+      "ID": "OOT_BOTTLE_EMPTY",
+      "Name": "Bottle - Empty (OoT)",
+      "MaxAmountInWorld": 2,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_BOTTLE_EMPTY",
+          "Bottle - Empty (OoT)"
+        ],
+        "GossipHintNames": [
+          "OOT_BOTTLE_EMPTY",
+          "Bottle - Empty (OoT)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_BOTTLE_MILK",
+      "Name": "Bottle - Milk (OoT)",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_BOTTLE_MILK",
+          "Bottle - Milk (OoT)"
+        ],
+        "GossipHintNames": [
+          "OOT_BOTTLE_MILK",
+          "Bottle - Milk (OoT)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
       "ID": "OOT_BOW",
-      "Name": "Bow (OoT)",
+      "Name": "Fairy Bow (OoT)",
       "MaxAmountInWorld": 3,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -18031,18 +18131,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_BOW",
-          "Bow (OoT)"
+          "Fairy Bow (OoT)"
         ],
         "GossipHintNames": [
           "OOT_BOW",
-          "Bow (OoT)"
+          "Fairy Bow (OoT)"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "OOT_BROKEN_GORON_SWORD",
-      "Name": "Broken Goron Sword",
+      "Name": "Broken Goron's Sword",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -18051,11 +18151,31 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_BROKEN_GORON_SWORD",
-          "Broken Goron Sword"
+          "Broken Goron's Sword"
         ],
         "GossipHintNames": [
           "OOT_BROKEN_GORON_SWORD",
-          "Broken Goron Sword"
+          "Broken Goron's Sword"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_BUG",
+      "Name": "Bottle - Bugs (OoT)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_BUG",
+          "Bottle - Bugs (OoT)"
+        ],
+        "GossipHintNames": [
+          "OOT_BUG",
+          "Bottle - Bugs (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -18242,7 +18362,7 @@
     },
     {
       "ID": "OOT_COMPASS_JJ",
-      "Name": "Compass (Jabu Jabu's Belly)",
+      "Name": "Compass (Jabu-Jabu's Belly)",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -18251,11 +18371,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_COMPASS_JJ",
-          "Compass (Jabu Jabu's Belly)"
+          "Compass (Jabu-Jabu's Belly)"
         ],
         "GossipHintNames": [
           "OOT_COMPASS_JJ",
-          "Compass (Jabu Jabu's Belly)"
+          "Compass (Jabu-Jabu's Belly)"
         ],
         "PriceDataNames": []
       }
@@ -18341,21 +18461,41 @@
       }
     },
     {
-      "ID": "OOT_BOTTLE_EMPTY",
-      "Name": "Bottle - Empty (OoT)",
-      "MaxAmountInWorld": 2,
+      "ID": "OOT_DEKU_SEEDS_30",
+      "Name": "Deku Seeds Bullet Bag",
+      "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_BOTTLE_EMPTY",
-          "Bottle - Empty (OoT)"
+          "OOT_DEKU_SEEDS_30",
+          "Deku Seeds Bullet Bag"
         ],
         "GossipHintNames": [
-          "OOT_BOTTLE_EMPTY",
-          "Bottle - Empty (OoT)"
+          "OOT_DEKU_SEEDS_30",
+          "Deku Seeds Bullet Bag"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_EYE_DROPS",
+      "Name": "Biggoron's Eye Drops",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_EYE_DROPS",
+          "Biggoron's Eye Drops"
+        ],
+        "GossipHintNames": [
+          "OOT_EYE_DROPS",
+          "Biggoron's Eye Drops"
         ],
         "PriceDataNames": []
       }
@@ -18381,28 +18521,48 @@
       }
     },
     {
-      "ID": "OOT_EYE_DROPS",
-      "Name": "Eye Drops",
-      "MaxAmountInWorld": 1,
+      "ID": "OOT_FAIRY",
+      "Name": "Bottle - Fairy (OoT)",
+      "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_EYE_DROPS",
-          "Eye Drops"
+          "OOT_FAIRY",
+          "Bottle - Fairy (OoT)"
         ],
         "GossipHintNames": [
-          "OOT_EYE_DROPS",
-          "Eye Drops"
+          "OOT_FAIRY",
+          "Bottle - Fairy (OoT)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_FISH",
+      "Name": "Bottle - Fish (OoT)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_FISH",
+          "Bottle - Fish (OoT)"
+        ],
+        "GossipHintNames": [
+          "OOT_FISH",
+          "Bottle - Fish (OoT)"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "OOT_GERUDO_CARD",
-      "Name": "Gerudo Card",
+      "Name": "Gerudo's Membership Card",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -18411,18 +18571,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_GERUDO_CARD",
-          "Gerudo Card"
+          "Gerudo's Membership Card"
         ],
         "GossipHintNames": [
           "OOT_GERUDO_CARD",
-          "Gerudo Card"
+          "Gerudo's Membership Card"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "OOT_GS_TOKEN",
-      "Name": "Golden Skulltula Token",
+      "Name": "Gold Skulltula Token",
       "MaxAmountInWorld": 100,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -18431,18 +18591,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_GS_TOKEN",
-          "Golden Skulltula Token"
+          "Gold Skulltula Token"
         ],
         "GossipHintNames": [
           "OOT_GS_TOKEN",
-          "Golden Skulltula Token"
+          "Gold Skulltula Token"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "OOT_HAMMER",
-      "Name": "Hammer",
+      "Name": "Megaton Hammer",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -18451,11 +18611,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_HAMMER",
-          "Hammer"
+          "Megaton Hammer"
         ],
         "GossipHintNames": [
           "OOT_HAMMER",
-          "Hammer"
+          "Megaton Hammer"
         ],
         "PriceDataNames": []
       }
@@ -18722,7 +18882,7 @@
     },
     {
       "ID": "OOT_MAP_JJ",
-      "Name": "Map (Jabu Jabu's Belly)",
+      "Name": "Map (Jabu-Jabu's Belly)",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -18731,11 +18891,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_MAP_JJ",
-          "Map (Jabu Jabu's Belly)"
+          "Map (Jabu-Jabu's Belly)"
         ],
         "GossipHintNames": [
           "OOT_MAP_JJ",
-          "Map (Jabu Jabu's Belly)"
+          "Map (Jabu-Jabu's Belly)"
         ],
         "PriceDataNames": []
       }
@@ -19081,28 +19241,8 @@
       }
     },
     {
-      "ID": "OOT_BOTTLE_MILK",
-      "Name": "Bottle - Milk (OoT)",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "OOT_BOTTLE_MILK",
-          "Bottle - Milk (OoT)"
-        ],
-        "GossipHintNames": [
-          "OOT_BOTTLE_MILK",
-          "Bottle - Milk (OoT)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "OOT_NUTS_10",
-      "Name": "10 Deku Nuts",
+      "ID": "OOT_MILK",
+      "Name": "Bottle - Lon Lon Milk (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -19110,12 +19250,12 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_NUTS_10",
-          "10 Deku Nuts"
+          "OOT_MILK",
+          "Bottle - Lon Lon Milk (OoT)"
         ],
         "GossipHintNames": [
-          "OOT_NUTS_10",
-          "10 Deku Nuts"
+          "OOT_MILK",
+          "Bottle - Lon Lon Milk (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -19136,6 +19276,26 @@
         "GossipHintNames": [
           "OOT_NUT_UPGRADE",
           "Deku Nut Upgrade"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_NUTS_10",
+      "Name": "10 Deku Nuts (OoT)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_NUTS_10",
+          "10 Deku Nuts (OoT)"
+        ],
+        "GossipHintNames": [
+          "OOT_NUTS_10",
+          "10 Deku Nuts (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -19236,6 +19396,106 @@
         "GossipHintNames": [
           "OOT_POCKET_CUCCO",
           "Pocket Cucco"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_POCKET_EGG",
+      "Name": "Pocket Egg",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_POCKET_EGG",
+          "Pocket Egg"
+        ],
+        "GossipHintNames": [
+          "OOT_POCKET_EGG",
+          "Pocket Egg"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_POE",
+      "Name": "Bottle - Poe Spirit (OoT)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_POE",
+          "Bottle - Poe Spirit (OoT)"
+        ],
+        "GossipHintNames": [
+          "OOT_POE",
+          "Bottle - Poe Spirit (OoT)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_POTION_BLUE",
+      "Name": "Bottle - Blue Potion (OoT)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_POTION_BLUE",
+          "Bottle - Blue Potion (OoT)"
+        ],
+        "GossipHintNames": [
+          "OOT_POTION_BLUE",
+          "Bottle - Blue Potion (OoT)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_POTION_GREEN",
+      "Name": "Bottle - Green Potion (OoT)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_POTION_GREEN",
+          "Bottle - Green Potion (OoT)"
+        ],
+        "GossipHintNames": [
+          "OOT_POTION_GREEN",
+          "Bottle - Green Potion (OoT)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_POTION_RED",
+      "Name": "Bottle - Red Potion (OoT)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_POTION_RED",
+          "Bottle - Red Potion (OoT)"
+        ],
+        "GossipHintNames": [
+          "OOT_POTION_RED",
+          "Bottle - Red Potion (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -19502,7 +19762,7 @@
     },
     {
       "ID": "OOT_SLINGSHOT",
-      "Name": "Slingshot",
+      "Name": "Fairy Slingshot",
       "MaxAmountInWorld": 3,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -19511,11 +19771,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_SLINGSHOT",
-          "Slingshot"
+          "Fairy Slingshot"
         ],
         "GossipHintNames": [
           "OOT_SLINGSHOT",
-          "Slingshot"
+          "Fairy Slingshot"
         ],
         "PriceDataNames": []
       }
@@ -19602,7 +19862,7 @@
     },
     {
       "ID": "OOT_SMALL_KEY_GF",
-      "Name": "Small Key (Gerudo Fortress)",
+      "Name": "Small Key (Gerudo's Fortress)",
       "MaxAmountInWorld": 4,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -19611,18 +19871,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_SMALL_KEY_GF",
-          "Small Key (Gerudo Fortress)"
+          "Small Key (Gerudo's Fortress)"
         ],
         "GossipHintNames": [
           "OOT_SMALL_KEY_GF",
-          "Small Key (Gerudo Fortress)"
+          "Small Key (Gerudo's Fortress)"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "OOT_SMALL_KEY_GTG",
-      "Name": "Small Key (Gerudo Training Ground)",
+      "Name": "Small Key (Gerudo's Training Ground)",
       "MaxAmountInWorld": 9,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -19631,11 +19891,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_SMALL_KEY_GTG",
-          "Small Key (Gerudo Training Ground)"
+          "Small Key (Gerudo's Training Ground)"
         ],
         "GossipHintNames": [
           "OOT_SMALL_KEY_GTG",
-          "Small Key (Gerudo Training Ground)"
+          "Small Key (Gerudo's Training Ground)"
         ],
         "PriceDataNames": []
       }
@@ -20022,7 +20282,7 @@
     },
     {
       "ID": "OOT_STONE_EMERALD",
-      "Name": "Kokiri Emerald",
+      "Name": "Kokiri's Emerald",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -20031,11 +20291,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_STONE_EMERALD",
-          "Kokiri Emerald"
+          "Kokiri's Emerald"
         ],
         "GossipHintNames": [
           "OOT_STONE_EMERALD",
-          "Kokiri Emerald"
+          "Kokiri's Emerald"
         ],
         "PriceDataNames": []
       }
@@ -20062,7 +20322,7 @@
     },
     {
       "ID": "OOT_STONE_RUBY",
-      "Name": "Goron Ruby",
+      "Name": "Goron's Ruby",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -20071,18 +20331,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_STONE_RUBY",
-          "Goron Ruby"
+          "Goron's Ruby"
         ],
         "GossipHintNames": [
           "OOT_STONE_RUBY",
-          "Goron Ruby"
+          "Goron's Ruby"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "OOT_STONE_SAPPHIRE",
-      "Name": "Zora Sapphire",
+      "Name": "Zora's Sapphire",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -20091,11 +20351,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_STONE_SAPPHIRE",
-          "Zora Sapphire"
+          "Zora's Sapphire"
         ],
         "GossipHintNames": [
           "OOT_STONE_SAPPHIRE",
-          "Zora Sapphire"
+          "Zora's Sapphire"
         ],
         "PriceDataNames": []
       }
@@ -20141,41 +20401,21 @@
       }
     },
     {
-      "ID": "OOT_SWORD_KOKIRI",
-      "Name": "Kokiri Sword (OoT)",
-      "MaxAmountInWorld": 1,
+      "ID": "OOT_SWORD_BIGGORON",
+      "Name": "Biggoron's Sword",
+      "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SWORD_KOKIRI",
-          "Kokiri Sword (OoT)"
+          "OOT_SWORD_BIGGORON",
+          "Biggoron's Sword"
         ],
         "GossipHintNames": [
-          "OOT_SWORD_KOKIRI",
-          "Kokiri Sword (OoT)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "OOT_SWORD_MASTER",
-      "Name": "Master Sword",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "OOT_SWORD_MASTER",
-          "Master Sword"
-        ],
-        "GossipHintNames": [
-          "OOT_SWORD_MASTER",
-          "Master Sword"
+          "OOT_SWORD_BIGGORON",
+          "Biggoron's Sword"
         ],
         "PriceDataNames": []
       }
@@ -20221,21 +20461,41 @@
       }
     },
     {
-      "ID": "OOT_SWORD_BIGGORON",
-      "Name": "Biggoron Sword",
-      "MaxAmountInWorld": -1,
+      "ID": "OOT_SWORD_KOKIRI",
+      "Name": "Kokiri Sword (OoT)",
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SWORD_BIGGORON",
-          "Biggoron Sword"
+          "OOT_SWORD_KOKIRI",
+          "Kokiri Sword (OoT)"
         ],
         "GossipHintNames": [
-          "OOT_SWORD_BIGGORON",
-          "Biggoron Sword"
+          "OOT_SWORD_KOKIRI",
+          "Kokiri Sword (OoT)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_SWORD_MASTER",
+      "Name": "Master Sword",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SWORD_MASTER",
+          "Master Sword"
+        ],
+        "GossipHintNames": [
+          "OOT_SWORD_MASTER",
+          "Master Sword"
         ],
         "PriceDataNames": []
       }
@@ -20301,226 +20561,6 @@
       }
     },
     {
-      "ID": "OOT_ZELDA_LETTER",
-      "Name": "Zelda's Letter",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "OOT_ZELDA_LETTER",
-          "Zelda's Letter"
-        ],
-        "GossipHintNames": [
-          "OOT_ZELDA_LETTER",
-          "Zelda's Letter"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "OOT_MILK",
-      "Name": "Milk (OoT)",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "OOT_MILK",
-          "Milk (OoT)"
-        ],
-        "GossipHintNames": [
-          "OOT_MILK",
-          "Milk (OoT)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "MM_MILK",
-      "Name": "Milk (MM)",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "MM_MILK",
-          "Milk (MM)"
-        ],
-        "GossipHintNames": [
-          "MM_MILK",
-          "Milk (MM)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "OOT_BLUE_FIRE",
-      "Name": "Blue Fire",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "OOT_BLUE_FIRE",
-          "Blue Fire"
-        ],
-        "GossipHintNames": [
-          "OOT_BLUE_FIRE",
-          "Blue Fire"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "OOT_BUG",
-      "Name": "Bugs (OoT)",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "OOT_BUG",
-          "Bugs (OoT)"
-        ],
-        "GossipHintNames": [
-          "OOT_BUG",
-          "Bugs (OoT)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "OOT_DEKU_SEEDS_30",
-      "Name": "30 Deku Seeds (OoT)",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "OOT_DEKU_SEEDS_30",
-          "30 Deku Seeds (OoT)"
-        ],
-        "GossipHintNames": [
-          "OOT_DEKU_SEEDS_30",
-          "30 Deku Seeds (OoT)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "OOT_FAIRY",
-      "Name": "Fairy (OoT)",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "OOT_FAIRY",
-          "Fairy (OoT)"
-        ],
-        "GossipHintNames": [
-          "OOT_FAIRY",
-          "Fairy (OoT)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "OOT_FISH",
-      "Name": "Fish (OoT)",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "OOT_FISH",
-          "Fish (OoT)"
-        ],
-        "GossipHintNames": [
-          "OOT_FISH",
-          "Fish (OoT)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "OOT_POE",
-      "Name": "Poe (OoT)",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "OOT_POE",
-          "Poe (OoT)"
-        ],
-        "GossipHintNames": [
-          "OOT_POE",
-          "Poe (OoT)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "OOT_POTION_GREEN",
-      "Name": "Green Potion (OoT)",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "OOT_POTION_GREEN",
-          "Green Potion (OoT)"
-        ],
-        "GossipHintNames": [
-          "OOT_POTION_GREEN",
-          "Green Potion (OoT)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "OOT_POTION_RED",
-      "Name": "Red Potion (OoT)",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "OOT_POTION_RED",
-          "Red Potion (OoT)"
-        ],
-        "GossipHintNames": [
-          "OOT_POTION_RED",
-          "Red Potion (OoT)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
       "ID": "OOT_WEIRD_EGG",
       "Name": "Weird Egg",
       "MaxAmountInWorld": -1,
@@ -20541,81 +20581,21 @@
       }
     },
     {
-      "ID": "OOT_POCKET_EGG",
-      "Name": "Pocket Egg",
-      "MaxAmountInWorld": -1,
+      "ID": "OOT_ZELDA_LETTER",
+      "Name": "Zelda's Letter",
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_POCKET_EGG",
-          "Pocket Egg"
+          "OOT_ZELDA_LETTER",
+          "Zelda's Letter"
         ],
         "GossipHintNames": [
-          "OOT_POCKET_EGG",
-          "Pocket Egg"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "SHARED_BOW",
-      "Name": "Shared Bow",
-      "MaxAmountInWorld": 3,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_BOW",
-          "Shared Bow"
-        ],
-        "GossipHintNames": [
-          "SHARED_BOW",
-          "Shared Bow"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "SHARED_BOMB_BAG",
-      "Name": "Shared Bomb Bag",
-      "MaxAmountInWorld": 3,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_BOMB_BAG",
-          "Shared Bomb Bag"
-        ],
-        "GossipHintNames": [
-          "SHARED_BOMB_BAG",
-          "Shared Bomb Bag"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "SHARED_MAGIC_UPGRADE",
-      "Name": "Shared Magic Upgrade",
-      "MaxAmountInWorld": 2,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_MAGIC_UPGRADE",
-          "Shared Magic Upgrade"
-        ],
-        "GossipHintNames": [
-          "SHARED_MAGIC_UPGRADE",
-          "Shared Magic Upgrade"
+          "OOT_ZELDA_LETTER",
+          "Zelda's Letter"
         ],
         "PriceDataNames": []
       }
@@ -20681,6 +20661,286 @@
       }
     },
     {
+      "ID": "SHARED_ARROWS_10",
+      "Name": "10 Arrows",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_ARROWS_10",
+          "10 Arrows"
+        ],
+        "GossipHintNames": [
+          "SHARED_ARROWS_10",
+          "10 Arrows"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_ARROWS_30",
+      "Name": "30 Arrows",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_ARROWS_30",
+          "30 Arrows"
+        ],
+        "GossipHintNames": [
+          "SHARED_ARROWS_30",
+          "30 Arrows"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_ARROWS_40",
+      "Name": "40 Arrows",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_ARROWS_40",
+          "40 Arrows"
+        ],
+        "GossipHintNames": [
+          "SHARED_ARROWS_40",
+          "40 Arrows"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_ARROWS_5",
+      "Name": "5 Arrows",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_ARROWS_5",
+          "5 Arrows"
+        ],
+        "GossipHintNames": [
+          "SHARED_ARROWS_5",
+          "5 Arrows"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_BOMB",
+      "Name": "1 Bomb",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_BOMB",
+          "1 Bomb"
+        ],
+        "GossipHintNames": [
+          "SHARED_BOMB",
+          "1 Bomb"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_BOMB_BAG",
+      "Name": "Shared Bomb Bag",
+      "MaxAmountInWorld": 3,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_BOMB_BAG",
+          "Shared Bomb Bag"
+        ],
+        "GossipHintNames": [
+          "SHARED_BOMB_BAG",
+          "Shared Bomb Bag"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_BOMBS_10",
+      "Name": "10 Bombs",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_BOMBS_10",
+          "10 Bombs"
+        ],
+        "GossipHintNames": [
+          "SHARED_BOMBS_10",
+          "10 Bombs"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_BOMBS_20",
+      "Name": "20 Bombs",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_BOMBS_20",
+          "20 Bombs"
+        ],
+        "GossipHintNames": [
+          "SHARED_BOMBS_20",
+          "20 Bombs"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_BOMBS_30",
+      "Name": "30 Bombs",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_BOMBS_30",
+          "30 Bombs"
+        ],
+        "GossipHintNames": [
+          "SHARED_BOMBS_30",
+          "30 Bombs"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_BOMBS_5",
+      "Name": "5 Bombs",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_BOMBS_5",
+          "5 Bombs"
+        ],
+        "GossipHintNames": [
+          "SHARED_BOMBS_5",
+          "5 Bombs"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_BOW",
+      "Name": "Shared Bow",
+      "MaxAmountInWorld": 3,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_BOW",
+          "Shared Bow"
+        ],
+        "GossipHintNames": [
+          "SHARED_BOW",
+          "Shared Bow"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_DEFENSE_UPGRADE",
+      "Name": "Double Defense",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_DEFENSE_UPGRADE",
+          "Double Defense"
+        ],
+        "GossipHintNames": [
+          "SHARED_DEFENSE_UPGRADE",
+          "Double Defense"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_HEART_CONTAINER",
+      "Name": "Heart Container",
+      "MaxAmountInWorld": 6,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_HEART_CONTAINER",
+          "Heart Container"
+        ],
+        "GossipHintNames": [
+          "SHARED_HEART_CONTAINER",
+          "Heart Container"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_HEART_PIECE",
+      "Name": "Heart Piece",
+      "MaxAmountInWorld": 44,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_HEART_PIECE",
+          "Heart Piece"
+        ],
+        "GossipHintNames": [
+          "SHARED_HEART_PIECE",
+          "Heart Piece"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
       "ID": "SHARED_HOOKSHOT",
       "Name": "Progressive Hookshot",
       "MaxAmountInWorld": 2,
@@ -20721,8 +20981,8 @@
       }
     },
     {
-      "ID": "SHARED_OCARINA",
-      "Name": "Progressive Ocarina",
+      "ID": "SHARED_MAGIC_UPGRADE",
+      "Name": "Shared Magic Upgrade",
       "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -20730,72 +20990,12 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "SHARED_OCARINA",
-          "Progressive Ocarina"
+          "SHARED_MAGIC_UPGRADE",
+          "Shared Magic Upgrade"
         ],
         "GossipHintNames": [
-          "SHARED_OCARINA",
-          "Progressive Ocarina"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "SHARED_SONG_EPONA",
-      "Name": "Epona's Song",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_SONG_EPONA",
-          "Epona's Song"
-        ],
-        "GossipHintNames": [
-          "SHARED_SONG_EPONA",
-          "Epona's Song"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "SHARED_SONG_STORMS",
-      "Name": "Song of Storms",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_SONG_STORMS",
-          "Song of Storms"
-        ],
-        "GossipHintNames": [
-          "SHARED_SONG_STORMS",
-          "Song of Storms"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "SHARED_SONG_TIME",
-      "Name": "Song of Time",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_SONG_TIME",
-          "Song of Time"
-        ],
-        "GossipHintNames": [
-          "SHARED_SONG_TIME",
-          "Song of Time"
+          "SHARED_MAGIC_UPGRADE",
+          "Shared Magic Upgrade"
         ],
         "PriceDataNames": []
       }
@@ -20901,8 +21101,8 @@
       }
     },
     {
-      "ID": "SHARED_WALLET",
-      "Name": "Progressive Wallet",
+      "ID": "SHARED_OCARINA",
+      "Name": "Progressive Ocarina",
       "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -20910,72 +21110,12 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "SHARED_WALLET",
-          "Progressive Wallet"
+          "SHARED_OCARINA",
+          "Progressive Ocarina"
         ],
         "GossipHintNames": [
-          "SHARED_WALLET",
-          "Progressive Wallet"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "SHARED_HEART_PIECE",
-      "Name": "Heart Piece",
-      "MaxAmountInWorld": 44,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_HEART_PIECE",
-          "Heart Piece"
-        ],
-        "GossipHintNames": [
-          "SHARED_HEART_PIECE",
-          "Heart Piece"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "SHARED_HEART_CONTAINER",
-      "Name": "Heart Container",
-      "MaxAmountInWorld": 6,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_HEART_CONTAINER",
-          "Heart Container"
-        ],
-        "GossipHintNames": [
-          "SHARED_HEART_CONTAINER",
-          "Heart Container"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "SHARED_DEFENSE_UPGRADE",
-      "Name": "Double Defense",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_DEFENSE_UPGRADE",
-          "Double Defense"
-        ],
-        "GossipHintNames": [
-          "SHARED_DEFENSE_UPGRADE",
-          "Double Defense"
+          "SHARED_OCARINA",
+          "Progressive Ocarina"
         ],
         "PriceDataNames": []
       }
@@ -21001,8 +21141,128 @@
       }
     },
     {
-      "ID": "OOT_BOSS_KEY_GANON",
-      "Name": "Boss Key (Ganon)",
+      "ID": "SHARED_RUPEE_BLUE",
+      "Name": "Blue Rupee",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_RUPEE_BLUE",
+          "Blue Rupee"
+        ],
+        "GossipHintNames": [
+          "SHARED_RUPEE_BLUE",
+          "Blue Rupee"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_RUPEE_GOLD",
+      "Name": "Gold Rupee",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_RUPEE_GOLD",
+          "Gold Rupee"
+        ],
+        "GossipHintNames": [
+          "SHARED_RUPEE_GOLD",
+          "Gold Rupee"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_RUPEE_GREEN",
+      "Name": "Green Rupee",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_RUPEE_GREEN",
+          "Green Rupee"
+        ],
+        "GossipHintNames": [
+          "SHARED_RUPEE_GREEN",
+          "Green Rupee"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_RUPEE_PURPLE",
+      "Name": "Purple Rupee",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_RUPEE_PURPLE",
+          "Purple Rupee"
+        ],
+        "GossipHintNames": [
+          "SHARED_RUPEE_PURPLE",
+          "Purple Rupee"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_RUPEE_RED",
+      "Name": "Red Rupee",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_RUPEE_RED",
+          "Red Rupee"
+        ],
+        "GossipHintNames": [
+          "SHARED_RUPEE_RED",
+          "Red Rupee"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_RUPEE_SILVER",
+      "Name": "Silver Rupee",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_RUPEE_SILVER",
+          "Silver Rupee"
+        ],
+        "GossipHintNames": [
+          "SHARED_RUPEE_SILVER",
+          "Silver Rupee"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_SONG_EPONA",
+      "Name": "Epona's Song",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -21010,119 +21270,79 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_BOSS_KEY_GANON",
-          "Boss Key (Ganon)"
+          "SHARED_SONG_EPONA",
+          "Epona's Song"
         ],
         "GossipHintNames": [
-          "OOT_BOSS_KEY_GANON",
-          "Boss Key (Ganon)"
+          "SHARED_SONG_EPONA",
+          "Epona's Song"
         ],
         "PriceDataNames": []
       }
     },
     {
-      "ID": "OOT_NUTS_5",
-      "Name": "5 Deku Nuts",
-      "MaxAmountInWorld": -1,
+      "ID": "SHARED_SONG_STORMS",
+      "Name": "Song of Storms",
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_NUTS_5",
-          "5 Deku Nuts"
+          "SHARED_SONG_STORMS",
+          "Song of Storms"
         ],
         "GossipHintNames": [
-          "OOT_NUTS_5",
-          "5 Deku Nuts"
+          "SHARED_SONG_STORMS",
+          "Song of Storms"
         ],
         "PriceDataNames": []
       }
     },
     {
-      "ID": "OOT_NUTS_5_ALT",
-      "Name": "5 Deku Nuts",
-      "MaxAmountInWorld": -1,
+      "ID": "SHARED_SONG_TIME",
+      "Name": "Song of Time",
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_NUTS_5_ALT",
-          "5 Deku Nuts"
+          "SHARED_SONG_TIME",
+          "Song of Time"
         ],
         "GossipHintNames": [
-          "OOT_NUTS_5_ALT",
-          "5 Deku Nuts"
+          "SHARED_SONG_TIME",
+          "Song of Time"
         ],
         "PriceDataNames": []
       }
     },
     {
-      "ID": "OOT_STICK",
-      "Name": "1 Deku Stick",
-      "MaxAmountInWorld": -1,
+      "ID": "SHARED_WALLET",
+      "Name": "Progressive Wallet",
+      "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_STICK",
-          "1 Deku Stick"
+          "SHARED_WALLET",
+          "Progressive Wallet"
         ],
         "GossipHintNames": [
-          "OOT_STICK",
-          "1 Deku Stick"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "OOT_STICKS_5",
-      "Name": "5 Deku Sticks",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "OOT_STICKS_5",
-          "5 Deku Sticks"
-        ],
-        "GossipHintNames": [
-          "OOT_STICKS_5",
-          "5 Deku Sticks"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "OOT_STICKS_10",
-      "Name": "10 Deku Sticks",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "OOT_STICKS_10",
-          "10 Deku Sticks"
-        ],
-        "GossipHintNames": [
-          "OOT_STICKS_10",
-          "10 Deku Sticks"
+          "SHARED_WALLET",
+          "Progressive Wallet"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "MM_NUT",
-      "Name": "1 Deku Nut",
+      "Name": "1 Deku Nut (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -21131,18 +21351,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_NUT",
-          "1 Deku Nut"
+          "1 Deku Nut (MM)"
         ],
         "GossipHintNames": [
           "MM_NUT",
-          "1 Deku Nut"
+          "1 Deku Nut (MM)"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "MM_NUTS_5",
-      "Name": "5 Deku Nuts",
+      "Name": "5 Deku Nuts (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -21151,18 +21371,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_NUTS_5",
-          "5 Deku Nuts"
+          "5 Deku Nuts (MM)"
         ],
         "GossipHintNames": [
           "MM_NUTS_5",
-          "5 Deku Nuts"
+          "5 Deku Nuts (MM)"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "MM_NUTS_10",
-      "Name": "10 Deku Nuts",
+      "Name": "10 Deku Nuts (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -21171,18 +21391,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_NUTS_10",
-          "10 Deku Nuts"
+          "10 Deku Nuts (MM)"
         ],
         "GossipHintNames": [
           "MM_NUTS_10",
-          "10 Deku Nuts"
+          "10 Deku Nuts (MM)"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "MM_STICK",
-      "Name": "1 Deku Stick",
+      "Name": "1 Deku Stick (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -21191,18 +21411,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_STICK",
-          "1 Deku Stick"
+          "1 Deku Stick (MM)"
         ],
         "GossipHintNames": [
           "MM_STICK",
-          "1 Deku Stick"
+          "1 Deku Stick (MM)"
         ],
         "PriceDataNames": []
       }
     },
     {
-      "ID": "SHARED_ARROWS_5",
-      "Name": "5 Arrows",
+      "ID": "MM_STICKS_5",
+      "Name": "5 Deku Sticks (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -21210,19 +21430,19 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "SHARED_ARROWS_5",
-          "5 Arrows"
+          "MM_STICKS_5",
+          "5 Deku Sticks (MM)"
         ],
         "GossipHintNames": [
-          "SHARED_ARROWS_5",
-          "5 Arrows"
+          "MM_STICKS_5",
+          "5 Deku Sticks (MM)"
         ],
         "PriceDataNames": []
       }
     },
     {
-      "ID": "SHARED_ARROWS_10",
-      "Name": "10 Arrows",
+      "ID": "MM_STICKS_10",
+      "Name": "10 Deku Sticks (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -21230,19 +21450,19 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "SHARED_ARROWS_10",
-          "10 Arrows"
+          "MM_STICKS_10",
+          "10 Deku Sticks (MM)"
         ],
         "GossipHintNames": [
-          "SHARED_ARROWS_10",
-          "10 Arrows"
+          "MM_STICKS_10",
+          "10 Deku Sticks (MM)"
         ],
         "PriceDataNames": []
       }
     },
     {
-      "ID": "SHARED_ARROWS_30",
-      "Name": "30 Arrows",
+      "ID": "OOT_NUT",
+      "Name": "1 Deku Nut (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -21250,19 +21470,19 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "SHARED_ARROWS_30",
-          "30 Arrows"
+          "OOT_NUT",
+          "1 Deku Nut (OoT)"
         ],
         "GossipHintNames": [
-          "SHARED_ARROWS_30",
-          "30 Arrows"
+          "OOT_NUT",
+          "1 Deku Nut (OoT)"
         ],
         "PriceDataNames": []
       }
     },
     {
-      "ID": "SHARED_ARROWS_40",
-      "Name": "40 Arrows",
+      "ID": "OOT_NUTS_5",
+      "Name": "5 Deku Nuts (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -21270,19 +21490,19 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "SHARED_ARROWS_40",
-          "40 Arrows"
+          "OOT_NUTS_5",
+          "5 Deku Nuts (OoT)"
         ],
         "GossipHintNames": [
-          "SHARED_ARROWS_40",
-          "40 Arrows"
+          "OOT_NUTS_5",
+          "5 Deku Nuts (OoT)"
         ],
         "PriceDataNames": []
       }
     },
     {
-      "ID": "SHARED_BOMB",
-      "Name": "1 Bomb",
+      "ID": "OOT_STICK",
+      "Name": "1 Deku Stick (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -21290,19 +21510,19 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "SHARED_BOMB",
-          "1 Bomb"
+          "OOT_STICK",
+          "1 Deku Stick (OoT)"
         ],
         "GossipHintNames": [
-          "SHARED_BOMB",
-          "1 Bomb"
+          "OOT_STICK",
+          "1 Deku Stick (OoT)"
         ],
         "PriceDataNames": []
       }
     },
     {
-      "ID": "SHARED_BOMBS_5",
-      "Name": "5 Bombs",
+      "ID": "OOT_STICKS_5",
+      "Name": "5 Deku Sticks (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -21310,19 +21530,19 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "SHARED_BOMBS_5",
-          "5 Bombs"
+          "OOT_STICKS_5",
+          "5 Deku Sticks (OoT)"
         ],
         "GossipHintNames": [
-          "SHARED_BOMBS_5",
-          "5 Bombs"
+          "OOT_STICKS_5",
+          "5 Deku Sticks (OoT)"
         ],
         "PriceDataNames": []
       }
     },
     {
-      "ID": "SHARED_BOMBS_10",
-      "Name": "10 Bombs",
+      "ID": "OOT_STICKS_10",
+      "Name": "10 Deku Sticks (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -21330,52 +21550,12 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "SHARED_BOMBS_10",
-          "10 Bombs"
+          "OOT_STICKS_10",
+          "10 Deku Sticks (OoT)"
         ],
         "GossipHintNames": [
-          "SHARED_BOMBS_10",
-          "10 Bombs"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "SHARED_BOMBS_20",
-      "Name": "20 Bombs",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_BOMBS_20",
-          "20 Bombs"
-        ],
-        "GossipHintNames": [
-          "SHARED_BOMBS_20",
-          "20 Bombs"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "SHARED_BOMBS_30",
-      "Name": "30 Bombs",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_BOMBS_30",
-          "30 Bombs"
-        ],
-        "GossipHintNames": [
-          "SHARED_BOMBS_30",
-          "30 Bombs"
+          "OOT_STICKS_10",
+          "10 Deku Sticks (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -21496,126 +21676,6 @@
         "GossipHintNames": [
           "SHARED_STICKS_10",
           "10 Deku Sticks"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "SHARED_RUPEE_GREEN",
-      "Name": "Green Rupee",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_RUPEE_GREEN",
-          "Green Rupee"
-        ],
-        "GossipHintNames": [
-          "SHARED_RUPEE_GREEN",
-          "Green Rupee"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "SHARED_RUPEE_BLUE",
-      "Name": "Blue Rupee",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_RUPEE_BLUE",
-          "Blue Rupee"
-        ],
-        "GossipHintNames": [
-          "SHARED_RUPEE_BLUE",
-          "Blue Rupee"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "SHARED_RUPEE_RED",
-      "Name": "Red Rupee",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_RUPEE_RED",
-          "Red Rupee"
-        ],
-        "GossipHintNames": [
-          "SHARED_RUPEE_RED",
-          "Red Rupee"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "SHARED_RUPEE_PURPLE",
-      "Name": "Purple Rupee",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_RUPEE_PURPLE",
-          "Purple Rupee"
-        ],
-        "GossipHintNames": [
-          "SHARED_RUPEE_PURPLE",
-          "Purple Rupee"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "SHARED_RUPEE_SILVER",
-      "Name": "Silver Rupee",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_RUPEE_SILVER",
-          "Silver Rupee"
-        ],
-        "GossipHintNames": [
-          "SHARED_RUPEE_SILVER",
-          "Silver Rupee"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "SHARED_RUPEE_GOLD",
-      "Name": "Gold Rupee",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_RUPEE_GOLD",
-          "Gold Rupee"
-        ],
-        "GossipHintNames": [
-          "SHARED_RUPEE_GOLD",
-          "Gold Rupee"
         ],
         "PriceDataNames": []
       }
