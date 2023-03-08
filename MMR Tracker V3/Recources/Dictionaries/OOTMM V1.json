@@ -31102,7 +31102,12 @@
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {
+            "OOT_SMALL_KEY_FIRE": {
+              "action": "subtract",
+              "amount": 1
+            }
+          }
         },
         "anywhere": {
           "LogicReplacements": [],
@@ -32303,7 +32308,12 @@
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {
+            "OOT_SMALL_KEY_FOREST": {
+              "action": "set",
+              "amount": 6
+            }
+          }
         }
       }
     },
@@ -32323,7 +32333,12 @@
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {
+            "OOT_SMALL_KEY_FIRE": {
+              "action": "set",
+              "amount": 5
+            }
+          }
         }
       }
     },
@@ -32343,7 +32358,12 @@
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {
+            "OOT_SMALL_KEY_WATER": {
+              "action": "set",
+              "amount": 2
+            }
+          }
         }
       }
     },
@@ -32363,7 +32383,12 @@
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {
+            "OOT_SMALL_KEY_SHADOW": {
+              "action": "set",
+              "amount": 6
+            }
+          }
         }
       }
     },
@@ -32383,7 +32408,12 @@
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {
+            "OOT_SMALL_KEY_SPIRIT": {
+              "action": "set",
+              "amount": 7
+            }
+          }
         }
       }
     },
@@ -32403,7 +32433,12 @@
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {
+            "OOT_SMALL_KEY_BOTW": {
+              "action": "set",
+              "amount": 2
+            }
+          }
         }
       }
     },
@@ -32443,7 +32478,12 @@
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {
+            "OOT_SMALL_KEY_GTG": {
+              "action": "set",
+              "amount": 3
+            }
+          }
         }
       }
     },
@@ -32463,7 +32503,12 @@
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {
+            "OOT_SMALL_KEY_GANON": {
+              "action": "set",
+              "amount": 3
+            }
+          }
         }
       }
     }

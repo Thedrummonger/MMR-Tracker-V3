@@ -274,6 +274,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             SmallKey.DisplayName = "Small Key Shuffle";
             SmallKey.CurrentValue = "anywhere";
             SmallKey.CreateSimpleValues(new string[] { "ownDungeon", "anywhere" });
+            SmallKey.Values["ownDungeon"].AddMaxAmountEdit("OOT_SMALL_KEY_FIRE", MiscData.MathOP.subtract, 1);
             dictionaryFile.Options.Add(SmallKey);
 
             OptionData.TrackerOption ProgressiveShieldsOOT = new OptionData.TrackerOption();
@@ -350,17 +351,41 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             AddMQOption("DTMQ", "Deku Tree MQ");
             AddMQOption("DCMQ", "Dodongos Cavern MQ");
             AddMQOption("JJMQ", "Jabu Jabu MQ");
-            AddMQOption("ForestMQ", "Forest Temple MQ");
-            AddMQOption("FireMQ", "Fire Temple MQ");
-            AddMQOption("WaterMQ", "Water Temple MQ");
-            AddMQOption("ShadowMQ", "Shadow Temple MQ");
-            AddMQOption("SpiritMQ", "Spirit Temple MQ");
-            AddMQOption("BotWMQ", "Bottom of the Well MQ");
+            AddMQOption("ForestMQ", "Forest Temple MQ", "OOT_SMALL_KEY_FOREST", 6);
+            AddMQOption("FireMQ", "Fire Temple MQ", "OOT_SMALL_KEY_FIRE", 5);
+            AddMQOption("WaterMQ", "Water Temple MQ", "OOT_SMALL_KEY_WATER", 2);
+            AddMQOption("ShadowMQ", "Shadow Temple MQ", "OOT_SMALL_KEY_SHADOW", 6);
+            AddMQOption("SpiritMQ", "Spirit Temple MQ", "OOT_SMALL_KEY_SPIRIT", 7);
+            AddMQOption("BotWMQ", "Bottom of the Well MQ", "OOT_SMALL_KEY_BOTW", 2);
             AddMQOption("ICMQ", "Ice Cavern MQ");
-            AddMQOption("GTGMQ", "Gerudo Training Grounds MQ");
-            AddMQOption("GanonMQ", "Ganons Castle MQ");
+            AddMQOption("GTGMQ", "Gerudo Training Grounds MQ", "OOT_SMALL_KEY_GTG", 3);
+            AddMQOption("GanonMQ", "Ganons Castle MQ", "OOT_SMALL_KEY_GANON", 3);
 
-            void AddMQOption(string ID, string Name)
+            foreach(var i in dictionaryFile.ItemList.Where(x => x.Name.StartsWith("Small Key (")))
+            {
+                int Maxinworld = i.MaxAmountInWorld is not null && i.MaxAmountInWorld > 0 ? i.MaxAmountInWorld??9 : 9;
+                if (Maxinworld < 2) { continue; }
+                string Dungeon = i.Name.Split('(')[1].Trim().TrimEnd(')');
+                string KeyRingName = i.ID.Replace($"SMALL_KEY", "KEY_RING");
+                OptionData.TrackerOption KeyRingOption = new OptionData.TrackerOption();
+                KeyRingOption.ID = $"{Dungeon.Replace(" ", "")}KeyRing";
+                KeyRingOption.DisplayName = $"{Dungeon} Key Ring";
+                KeyRingOption.CreateSimpleValues(new string[] { "false", "true" });
+                KeyRingOption.CurrentValue = "false";
+                KeyRingOption.SubCategory = "Key Rings";
+                KeyRingOption.Values["true"].LogicReplacements = new OptionData.LogicReplacement[] { new OptionData.LogicReplacement() };
+                KeyRingOption.Values["true"].LogicReplacements[0].ReplacementList.Add(i.ID, i.ID.Replace("SMALL_KEY", "KEY_RING"));
+                KeyRingOption.Values["true"].AddMaxAmountEdit(i.ID, MiscData.MathOP.set, 0);
+                KeyRingOption.Values["false"].AddMaxAmountEdit(KeyRingName, MiscData.MathOP.set, 0);
+                for (var c = 1; c <= Maxinworld; c++)
+                {
+                    KeyRingOption.Values["true"].LogicReplacements[0].ReplacementList.Add($"{i.ID}, {c}", KeyRingName);
+                }
+                //dictionaryFile.Options.Add(KeyRingOption);
+            }
+
+
+            void AddMQOption(string ID, string Name, string Key = null, int MaxKeys = 0)
             {
                 OptionData.TrackerOption MQEntry = new OptionData.TrackerOption();
                 MQEntry.ID = ID;
@@ -368,6 +393,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 MQEntry.SubCategory = "Master Quest";
                 MQEntry.CurrentValue = "false";
                 MQEntry.CreateSimpleValues(new string[] { "false", "true" });
+                if (Key != null) { MQEntry.Values["true"].AddMaxAmountEdit(Key, MiscData.MathOP.set, MaxKeys); }
                 dictionaryFile.Options.Add(MQEntry);
             }
 
