@@ -32343,6 +32343,30 @@
         "MM_MASK_CAPTAIN",
         "MM_MASK_GIANT"
       ]
+    },
+    {
+      "ID": "OOT_ANY_STICK",
+      "Static": true,
+      "Value": [
+        "OOT_STICK",
+        "OOT_STICKS_5",
+        "OOT_STICKS_10",
+        "SHARED_STICK",
+        "SHARED_STICKS_5",
+        "SHARED_STICKS_10"
+      ]
+    },
+    {
+      "ID": "OOT_ANY_NUT",
+      "Static": true,
+      "Value": [
+        "OOT_NUT",
+        "OOT_NUTS_5",
+        "OOT_NUTS_10",
+        "SHARED_NUT",
+        "SHARED_NUTS_5",
+        "SHARED_NUTS_10"
+      ]
     }
   ],
   "HintSpots": [

@@ -28443,13 +28443,7 @@
           "OOT_EVENT_STICKS"
         ],
         [
-          "OOT_STICK"
-        ],
-        [
-          "OOT_STICKS_5"
-        ],
-        [
-          "OOT_STICKS_10"
+          "OOT_can_get_renewable_sticks"
         ]
       ],
       "TimeNeeded": "None",
@@ -28465,13 +28459,7 @@
           "OOT_EVENT_NUTS"
         ],
         [
-          "OOT_NUT"
-        ],
-        [
-          "OOT_NUTS_5"
-        ],
-        [
-          "OOT_NUTS_10"
+          "OOT_can_get_renewable_nuts"
         ]
       ],
       "TimeNeeded": "None",
@@ -29142,6 +29130,682 @@
         "MM_BOMB_BAG"
       ],
       "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_can_get_renewable_nuts",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "contains{OOT Kokiri Forest Cow, OOT_ANY_NUT}",
+          "check{OOT Kokiri Forest Cow}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 1, OOT_ANY_NUT}",
+          "check{OOT Kokiri Shop Item 1}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 2, OOT_ANY_NUT}",
+          "check{OOT Kokiri Shop Item 2}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 3, OOT_ANY_NUT}",
+          "check{OOT Kokiri Shop Item 3}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 4, OOT_ANY_NUT}",
+          "check{OOT Kokiri Shop Item 4}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 5, OOT_ANY_NUT}",
+          "check{OOT Kokiri Shop Item 5}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 6, OOT_ANY_NUT}",
+          "check{OOT Kokiri Shop Item 6}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 7, OOT_ANY_NUT}",
+          "check{OOT Kokiri Shop Item 7}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 8, OOT_ANY_NUT}",
+          "check{OOT Kokiri Shop Item 8}"
+        ],
+        [
+          "contains{OOT Kakariko Cow, OOT_ANY_NUT}",
+          "check{OOT Kakariko Cow}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 1, OOT_ANY_NUT}",
+          "check{OOT Kakariko Bazaar Item 1}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 2, OOT_ANY_NUT}",
+          "check{OOT Kakariko Bazaar Item 2}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 3, OOT_ANY_NUT}",
+          "check{OOT Kakariko Bazaar Item 3}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 4, OOT_ANY_NUT}",
+          "check{OOT Kakariko Bazaar Item 4}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 5, OOT_ANY_NUT}",
+          "check{OOT Kakariko Bazaar Item 5}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 6, OOT_ANY_NUT}",
+          "check{OOT Kakariko Bazaar Item 6}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 7, OOT_ANY_NUT}",
+          "check{OOT Kakariko Bazaar Item 7}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 8, OOT_ANY_NUT}",
+          "check{OOT Kakariko Bazaar Item 8}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 1, OOT_ANY_NUT}",
+          "check{OOT Kakariko Potion Shop Item 1}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 2, OOT_ANY_NUT}",
+          "check{OOT Kakariko Potion Shop Item 2}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 3, OOT_ANY_NUT}",
+          "check{OOT Kakariko Potion Shop Item 3}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 4, OOT_ANY_NUT}",
+          "check{OOT Kakariko Potion Shop Item 4}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 5, OOT_ANY_NUT}",
+          "check{OOT Kakariko Potion Shop Item 5}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 6, OOT_ANY_NUT}",
+          "check{OOT Kakariko Potion Shop Item 6}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 7, OOT_ANY_NUT}",
+          "check{OOT Kakariko Potion Shop Item 7}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 8, OOT_ANY_NUT}",
+          "check{OOT Kakariko Potion Shop Item 8}"
+        ],
+        [
+          "contains{OOT Death Mountain Cow, OOT_ANY_NUT}",
+          "check{OOT Death Mountain Cow}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 1, OOT_ANY_NUT}",
+          "check{OOT Goron Shop Item 1}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 2, OOT_ANY_NUT}",
+          "check{OOT Goron Shop Item 2}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 3, OOT_ANY_NUT}",
+          "check{OOT Goron Shop Item 3}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 4, OOT_ANY_NUT}",
+          "check{OOT Goron Shop Item 4}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 5, OOT_ANY_NUT}",
+          "check{OOT Goron Shop Item 5}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 6, OOT_ANY_NUT}",
+          "check{OOT Goron Shop Item 6}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 7, OOT_ANY_NUT}",
+          "check{OOT Goron Shop Item 7}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 8, OOT_ANY_NUT}",
+          "check{OOT Goron Shop Item 8}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 1, OOT_ANY_NUT}",
+          "check{OOT Zora Shop Item 1}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 2, OOT_ANY_NUT}",
+          "check{OOT Zora Shop Item 2}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 3, OOT_ANY_NUT}",
+          "check{OOT Zora Shop Item 3}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 4, OOT_ANY_NUT}",
+          "check{OOT Zora Shop Item 4}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 5, OOT_ANY_NUT}",
+          "check{OOT Zora Shop Item 5}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 6, OOT_ANY_NUT}",
+          "check{OOT Zora Shop Item 6}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 7, OOT_ANY_NUT}",
+          "check{OOT Zora Shop Item 7}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 8, OOT_ANY_NUT}",
+          "check{OOT Zora Shop Item 8}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Stables Cow Left, OOT_ANY_NUT}",
+          "check{OOT Lon Lon Ranch Stables Cow Left}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Stables Cow Right, OOT_ANY_NUT}",
+          "check{OOT Lon Lon Ranch Stables Cow Right}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Silo Cow Front, OOT_ANY_NUT}",
+          "check{OOT Lon Lon Ranch Silo Cow Front}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Silo Cow Back, OOT_ANY_NUT}",
+          "check{OOT Lon Lon Ranch Silo Cow Back}"
+        ],
+        [
+          "contains{OOT Hyrule Field Cow, OOT_ANY_NUT}",
+          "check{OOT Hyrule Field Cow}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 1, OOT_ANY_NUT}",
+          "check{OOT Market Bazaar Item 1}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 2, OOT_ANY_NUT}",
+          "check{OOT Market Bazaar Item 2}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 3, OOT_ANY_NUT}",
+          "check{OOT Market Bazaar Item 3}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 4, OOT_ANY_NUT}",
+          "check{OOT Market Bazaar Item 4}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 5, OOT_ANY_NUT}",
+          "check{OOT Market Bazaar Item 5}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 6, OOT_ANY_NUT}",
+          "check{OOT Market Bazaar Item 6}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 7, OOT_ANY_NUT}",
+          "check{OOT Market Bazaar Item 7}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 8, OOT_ANY_NUT}",
+          "check{OOT Market Bazaar Item 8}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 1, OOT_ANY_NUT}",
+          "check{OOT Market Potion Shop Item 1}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 2, OOT_ANY_NUT}",
+          "check{OOT Market Potion Shop Item 2}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 3, OOT_ANY_NUT}",
+          "check{OOT Market Potion Shop Item 3}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 4, OOT_ANY_NUT}",
+          "check{OOT Market Potion Shop Item 4}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 5, OOT_ANY_NUT}",
+          "check{OOT Market Potion Shop Item 5}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 6, OOT_ANY_NUT}",
+          "check{OOT Market Potion Shop Item 6}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 7, OOT_ANY_NUT}",
+          "check{OOT Market Potion Shop Item 7}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 8, OOT_ANY_NUT}",
+          "check{OOT Market Potion Shop Item 8}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 1, OOT_ANY_NUT}",
+          "check{OOT Market Bombchu Shop Item 1}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 2, OOT_ANY_NUT}",
+          "check{OOT Market Bombchu Shop Item 2}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 3, OOT_ANY_NUT}",
+          "check{OOT Market Bombchu Shop Item 3}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 4, OOT_ANY_NUT}",
+          "check{OOT Market Bombchu Shop Item 4}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 5, OOT_ANY_NUT}",
+          "check{OOT Market Bombchu Shop Item 5}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 6, OOT_ANY_NUT}",
+          "check{OOT Market Bombchu Shop Item 6}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 7, OOT_ANY_NUT}",
+          "check{OOT Market Bombchu Shop Item 7}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 8, OOT_ANY_NUT}",
+          "check{OOT Market Bombchu Shop Item 8}"
+        ],
+        [
+          "contains{OOT Gerudo Valley Cow, OOT_ANY_NUT}",
+          "check{OOT Gerudo Valley Cow}"
+        ],
+        [
+          "contains{OOT MQ Jabu-Jabu Cow, OOT_ANY_NUT}",
+          "check{OOT MQ Jabu-Jabu Cow}"
+        ],
+        [
+          "contains{MM Termina Field Cow Front, OOT_ANY_NUT}",
+          "check{MM Termina Field Cow Front}"
+        ],
+        [
+          "contains{MM Termina Field Cow Back, OOT_ANY_NUT}",
+          "check{MM Termina Field Cow Back}"
+        ],
+        [
+          "contains{MM Romani Ranch Barn Cow Left, OOT_ANY_NUT}",
+          "check{MM Romani Ranch Barn Cow Left}"
+        ],
+        [
+          "contains{MM Romani Ranch Barn Cow Right Front, OOT_ANY_NUT}",
+          "check{MM Romani Ranch Barn Cow Right Front}"
+        ],
+        [
+          "contains{MM Romani Ranch Barn Cow Right Back, OOT_ANY_NUT}",
+          "check{MM Romani Ranch Barn Cow Right Back}"
+        ],
+        [
+          "contains{MM Great Bay Coast Cow Front, OOT_ANY_NUT}",
+          "check{MM Great Bay Coast Cow Front}"
+        ],
+        [
+          "contains{MM Great Bay Coast Cow Back, OOT_ANY_NUT}",
+          "check{MM Great Bay Coast Cow Back}"
+        ],
+        [
+          "contains{MM Beneath the Well Cow, OOT_ANY_NUT}",
+          "check{MM Beneath the Well Cow}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_can_get_renewable_sticks",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "contains{OOT Kokiri Forest Cow, OOT_ANY_STICK}",
+          "check{OOT Kokiri Forest Cow}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 1, OOT_ANY_STICK}",
+          "check{OOT Kokiri Shop Item 1}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 2, OOT_ANY_STICK}",
+          "check{OOT Kokiri Shop Item 2}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 3, OOT_ANY_STICK}",
+          "check{OOT Kokiri Shop Item 3}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 4, OOT_ANY_STICK}",
+          "check{OOT Kokiri Shop Item 4}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 5, OOT_ANY_STICK}",
+          "check{OOT Kokiri Shop Item 5}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 6, OOT_ANY_STICK}",
+          "check{OOT Kokiri Shop Item 6}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 7, OOT_ANY_STICK}",
+          "check{OOT Kokiri Shop Item 7}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 8, OOT_ANY_STICK}",
+          "check{OOT Kokiri Shop Item 8}"
+        ],
+        [
+          "contains{OOT Kakariko Cow, OOT_ANY_STICK}",
+          "check{OOT Kakariko Cow}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 1, OOT_ANY_STICK}",
+          "check{OOT Kakariko Bazaar Item 1}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 2, OOT_ANY_STICK}",
+          "check{OOT Kakariko Bazaar Item 2}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 3, OOT_ANY_STICK}",
+          "check{OOT Kakariko Bazaar Item 3}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 4, OOT_ANY_STICK}",
+          "check{OOT Kakariko Bazaar Item 4}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 5, OOT_ANY_STICK}",
+          "check{OOT Kakariko Bazaar Item 5}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 6, OOT_ANY_STICK}",
+          "check{OOT Kakariko Bazaar Item 6}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 7, OOT_ANY_STICK}",
+          "check{OOT Kakariko Bazaar Item 7}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 8, OOT_ANY_STICK}",
+          "check{OOT Kakariko Bazaar Item 8}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 1, OOT_ANY_STICK}",
+          "check{OOT Kakariko Potion Shop Item 1}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 2, OOT_ANY_STICK}",
+          "check{OOT Kakariko Potion Shop Item 2}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 3, OOT_ANY_STICK}",
+          "check{OOT Kakariko Potion Shop Item 3}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 4, OOT_ANY_STICK}",
+          "check{OOT Kakariko Potion Shop Item 4}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 5, OOT_ANY_STICK}",
+          "check{OOT Kakariko Potion Shop Item 5}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 6, OOT_ANY_STICK}",
+          "check{OOT Kakariko Potion Shop Item 6}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 7, OOT_ANY_STICK}",
+          "check{OOT Kakariko Potion Shop Item 7}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 8, OOT_ANY_STICK}",
+          "check{OOT Kakariko Potion Shop Item 8}"
+        ],
+        [
+          "contains{OOT Death Mountain Cow, OOT_ANY_STICK}",
+          "check{OOT Death Mountain Cow}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 1, OOT_ANY_STICK}",
+          "check{OOT Goron Shop Item 1}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 2, OOT_ANY_STICK}",
+          "check{OOT Goron Shop Item 2}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 3, OOT_ANY_STICK}",
+          "check{OOT Goron Shop Item 3}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 4, OOT_ANY_STICK}",
+          "check{OOT Goron Shop Item 4}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 5, OOT_ANY_STICK}",
+          "check{OOT Goron Shop Item 5}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 6, OOT_ANY_STICK}",
+          "check{OOT Goron Shop Item 6}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 7, OOT_ANY_STICK}",
+          "check{OOT Goron Shop Item 7}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 8, OOT_ANY_STICK}",
+          "check{OOT Goron Shop Item 8}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 1, OOT_ANY_STICK}",
+          "check{OOT Zora Shop Item 1}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 2, OOT_ANY_STICK}",
+          "check{OOT Zora Shop Item 2}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 3, OOT_ANY_STICK}",
+          "check{OOT Zora Shop Item 3}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 4, OOT_ANY_STICK}",
+          "check{OOT Zora Shop Item 4}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 5, OOT_ANY_STICK}",
+          "check{OOT Zora Shop Item 5}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 6, OOT_ANY_STICK}",
+          "check{OOT Zora Shop Item 6}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 7, OOT_ANY_STICK}",
+          "check{OOT Zora Shop Item 7}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 8, OOT_ANY_STICK}",
+          "check{OOT Zora Shop Item 8}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Stables Cow Left, OOT_ANY_STICK}",
+          "check{OOT Lon Lon Ranch Stables Cow Left}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Stables Cow Right, OOT_ANY_STICK}",
+          "check{OOT Lon Lon Ranch Stables Cow Right}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Silo Cow Front, OOT_ANY_STICK}",
+          "check{OOT Lon Lon Ranch Silo Cow Front}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Silo Cow Back, OOT_ANY_STICK}",
+          "check{OOT Lon Lon Ranch Silo Cow Back}"
+        ],
+        [
+          "contains{OOT Hyrule Field Cow, OOT_ANY_STICK}",
+          "check{OOT Hyrule Field Cow}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 1, OOT_ANY_STICK}",
+          "check{OOT Market Bazaar Item 1}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 2, OOT_ANY_STICK}",
+          "check{OOT Market Bazaar Item 2}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 3, OOT_ANY_STICK}",
+          "check{OOT Market Bazaar Item 3}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 4, OOT_ANY_STICK}",
+          "check{OOT Market Bazaar Item 4}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 5, OOT_ANY_STICK}",
+          "check{OOT Market Bazaar Item 5}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 6, OOT_ANY_STICK}",
+          "check{OOT Market Bazaar Item 6}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 7, OOT_ANY_STICK}",
+          "check{OOT Market Bazaar Item 7}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 8, OOT_ANY_STICK}",
+          "check{OOT Market Bazaar Item 8}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 1, OOT_ANY_STICK}",
+          "check{OOT Market Potion Shop Item 1}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 2, OOT_ANY_STICK}",
+          "check{OOT Market Potion Shop Item 2}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 3, OOT_ANY_STICK}",
+          "check{OOT Market Potion Shop Item 3}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 4, OOT_ANY_STICK}",
+          "check{OOT Market Potion Shop Item 4}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 5, OOT_ANY_STICK}",
+          "check{OOT Market Potion Shop Item 5}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 6, OOT_ANY_STICK}",
+          "check{OOT Market Potion Shop Item 6}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 7, OOT_ANY_STICK}",
+          "check{OOT Market Potion Shop Item 7}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 8, OOT_ANY_STICK}",
+          "check{OOT Market Potion Shop Item 8}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 1, OOT_ANY_STICK}",
+          "check{OOT Market Bombchu Shop Item 1}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 2, OOT_ANY_STICK}",
+          "check{OOT Market Bombchu Shop Item 2}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 3, OOT_ANY_STICK}",
+          "check{OOT Market Bombchu Shop Item 3}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 4, OOT_ANY_STICK}",
+          "check{OOT Market Bombchu Shop Item 4}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 5, OOT_ANY_STICK}",
+          "check{OOT Market Bombchu Shop Item 5}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 6, OOT_ANY_STICK}",
+          "check{OOT Market Bombchu Shop Item 6}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 7, OOT_ANY_STICK}",
+          "check{OOT Market Bombchu Shop Item 7}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 8, OOT_ANY_STICK}",
+          "check{OOT Market Bombchu Shop Item 8}"
+        ],
+        [
+          "contains{OOT Gerudo Valley Cow, OOT_ANY_STICK}",
+          "check{OOT Gerudo Valley Cow}"
+        ],
+        [
+          "contains{OOT MQ Jabu-Jabu Cow, OOT_ANY_STICK}",
+          "check{OOT MQ Jabu-Jabu Cow}"
+        ],
+        [
+          "contains{MM Termina Field Cow Front, OOT_ANY_STICK}",
+          "check{MM Termina Field Cow Front}"
+        ],
+        [
+          "contains{MM Termina Field Cow Back, OOT_ANY_STICK}",
+          "check{MM Termina Field Cow Back}"
+        ],
+        [
+          "contains{MM Romani Ranch Barn Cow Left, OOT_ANY_STICK}",
+          "check{MM Romani Ranch Barn Cow Left}"
+        ],
+        [
+          "contains{MM Romani Ranch Barn Cow Right Front, OOT_ANY_STICK}",
+          "check{MM Romani Ranch Barn Cow Right Front}"
+        ],
+        [
+          "contains{MM Romani Ranch Barn Cow Right Back, OOT_ANY_STICK}",
+          "check{MM Romani Ranch Barn Cow Right Back}"
+        ],
+        [
+          "contains{MM Great Bay Coast Cow Front, OOT_ANY_STICK}",
+          "check{MM Great Bay Coast Cow Front}"
+        ],
+        [
+          "contains{MM Great Bay Coast Cow Back, OOT_ANY_STICK}",
+          "check{MM Great Bay Coast Cow Back}"
+        ],
+        [
+          "contains{MM Beneath the Well Cow, OOT_ANY_STICK}",
+          "check{MM Beneath the Well Cow}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
