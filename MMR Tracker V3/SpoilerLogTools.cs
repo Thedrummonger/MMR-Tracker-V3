@@ -372,7 +372,8 @@ namespace MMR_Tracker_V3
                 {
                     if (i.IsRandomized())
                     {
-                        Debug.WriteLine($"{i.ID} was not found in the spoiler log and was randomized");
+                        if (Log.GameplaySettings.StrayFairyMode == "ChestsOnly" && i.ID.StartsWith("CollectibleStrayFairy")) { i.RandomizedState = RandomizedState.ForcedJunk; }
+                        else { Debug.WriteLine($"{i.ID} was not found in the spoiler log and was randomized"); }
                     }
                     continue; 
                 }
@@ -468,6 +469,7 @@ namespace MMR_Tracker_V3
             //Debug.WriteLine($"Parsing Gossip Hint{CleanedHint}");
 
             var messageSegments = CleanedHint.Split('|').Select(x => x.Trim()).ToArray();
+            if (messageSegments.Length < 2) { return; }
             string Location = messageSegments[0];
             string Item = messageSegments[1];
 

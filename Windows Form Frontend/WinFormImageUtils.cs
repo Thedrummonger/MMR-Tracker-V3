@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 using static Windows_Form_Frontend.WinFormImageUtils;
 using System.IO;
 using System.Diagnostics;
+using MMR_Tracker_V3.TrackerObjects;
+using MMR_Tracker_V3;
+using Octokit;
 
 namespace Windows_Form_Frontend
 {
@@ -40,6 +43,7 @@ namespace Windows_Form_Frontend
             public Dictionary<string, ItemCounts> ItemValues { get; set; } = new Dictionary<string, ItemCounts>();
             public Dictionary<string, ItemCounts> ItemNameValues { get; set; } = new Dictionary<string, ItemCounts>();
             public Dictionary<string, bool> MacroValues { get; set; } = new Dictionary<string, bool>();
+            public Dictionary<string, string> OptionValues { get; set; } = new Dictionary<string, string>();
         }
         public class ItemCounts
         {
@@ -199,21 +203,10 @@ namespace Windows_Form_Frontend
             public List<ImageTextBox> TextDisplay { get; set; } =  new List<ImageTextBox> { };
             public bool DisplayItemValid(TrackerState trackerState)
             {
-                ParseLogicReferenceEntry(LogicReferenceEntry, out string Entry, out int Amount);
-                if (trackerState.ItemValues.TryGetValue(Entry, out ItemCounts counts))
-                {
-                    return counts.Obtained >= Amount;
-                }
-                else if (trackerState.ItemNameValues.TryGetValue(Entry, out ItemCounts Namecounts))
-                {
-                    return Namecounts.Obtained >= Amount;
-                }
-                else if (trackerState.MacroValues.TryGetValue(Entry, out bool obtained))
-                {
-                    return obtained;
-                }
-                return false;
+                return ParseImageDisplayLogic(trackerState, LogicReferenceEntry);
             }
+
+
             public void Initialize(ImageSheet imageSheet)
             {
                 Image = imageSheet.GetItemImage(ImageLocations.X, ImageLocations.Y);
@@ -263,6 +256,8 @@ namespace Windows_Form_Frontend
                     }
                 }
 
+                if (textType == TextType.ItemCount && ObtainedCount < 1 && SeenCount < 1) { return ""; }
+
                 return textType switch
                 {
                     TextType.HasSeen => SeenCount >= 1 ? "X" : "",
@@ -273,14 +268,59 @@ namespace Windows_Form_Frontend
                 };
             }
         }
-        private static void ParseLogicReferenceEntry(string LogicReferenceEntry, out string entry, out int amount)
+        private static bool ParseImageDisplayLogic(TrackerState trackerState, string logicReferenceEntry)
         {
-            entry = LogicReferenceEntry;
-            amount = 1;
-            if (!LogicReferenceEntry.Contains(',')) { return; }
-            var data = entry.Split(',').Select(x => x.Trim()).ToArray();
-            entry = data[0];
-            if (int.TryParse(data[1].Trim(), out int testAmount)) { amount = testAmount; }
+            return ConditionalValid(logicReferenceEntry.StringSplit("||").Select(x => x.StringSplit("&&").Select(x => x.Trim()).ToArray()));
+
+            bool ConditionalValid(IEnumerable<string[]> Cond)
+            {
+                foreach (var cond in Cond)
+                {
+                    if (RequirementValid(cond)) { return true; }
+                }
+                return false;
+            }
+
+            bool RequirementValid(string[] Req)
+            {
+                return (Req.All(x => EntryValid(x)));
+            }
+
+            bool EntryValid(string Entry)
+            {
+                ParseAdvanceEntry(Entry, out string CleanEntry, out dynamic Param);
+
+                if (trackerState.ItemValues.TryGetValue(CleanEntry, out ItemCounts counts))
+                {
+                    return counts.Obtained >= Param;
+                }
+                else if (trackerState.ItemNameValues.TryGetValue(CleanEntry, out ItemCounts Namecounts))
+                {
+                    return Namecounts.Obtained >= Param;
+                }
+                else if (trackerState.MacroValues.TryGetValue(CleanEntry, out bool obtained))
+                {
+                    return obtained;
+                }
+                else if (trackerState.OptionValues.TryGetValue(CleanEntry, out string OptionValue))
+                {
+                    return OptionValue == Param;
+                }
+                else
+                {
+                    Debug.WriteLine($"ERROR {CleanEntry}, {Param} Was Unknown)");
+                    return false;
+                }
+            }
+            void ParseAdvanceEntry(string LogicReferenceEntry, out string entry, out dynamic amount)
+            {
+                entry = LogicReferenceEntry;
+                amount = 1;
+                if (!LogicReferenceEntry.Contains(',')) { return; }
+                var data = entry.Split(',').Select(x => x.Trim()).ToArray();
+                entry = data[0];
+                amount = int.TryParse(data[1].Trim(), out int testAmount) ? testAmount : data[1].Trim().ToString();
+            }
         }
 
         public static TrackerState CaptureTrackerState(MMR_Tracker_V3.LogicObjects.TrackerInstance Instance)
@@ -312,6 +352,10 @@ namespace Windows_Form_Frontend
             foreach (var macro in Instance.MacroPool.Values)
             {
                 trackerState.MacroValues[macro.ID] = macro.Aquired;
+            }
+            foreach (var option in Instance.UserOptions.Values)
+            {
+                trackerState.OptionValues[option.ID] = option.CurrentValue;
             }
             return trackerState;
         }

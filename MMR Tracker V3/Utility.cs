@@ -8,6 +8,8 @@ using System.Dynamic;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Runtime.Intrinsics.X86;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Cryptography;
 using System.Text;
@@ -16,8 +18,12 @@ using System.Threading.Tasks;
 
 namespace MMR_Tracker_V3
 {
-    public class Utility
+    public static class Utility
     {
+        public static string[] StringSplit(this string input, string Split, StringSplitOptions options = StringSplitOptions.None)
+        {
+            return input.Split(new string[] { Split }, options);
+        }
         public static Dictionary<string, int> GetCategoriesFromFile(LogicObjects.TrackerInstance Instance)
         {
             Dictionary<string, int> Groups = new();

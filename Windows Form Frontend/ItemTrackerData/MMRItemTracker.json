@@ -59,7 +59,7 @@
               "B": 0
             }
           },
-          "LogicReferenceEntry": "MMRTItemDisplayHasBiggestQuiver",
+          "LogicReferenceEntry": "ProgressiveItems, disabled && UpgradeBiggestQuiver || ProgressiveItems, enabled && MMRTProgressiveQuiverX3",
           "TextDisplay": [
             {
               "Position": "topLeft",
@@ -80,7 +80,7 @@
               "B": 0
             }
           },
-          "LogicReferenceEntry": "MMRTItemDisplayHasBigQuiver",
+          "LogicReferenceEntry": "ProgressiveItems, disabled && UpgradeBigQuiver || ProgressiveItems, enabled && MMRTProgressiveQuiverX2",
           "TextDisplay": [
             {
               "Position": "topLeft",
@@ -101,7 +101,7 @@
               "B": 0
             }
           },
-          "LogicReferenceEntry": "MMRTItemDisplayHasBow",
+          "LogicReferenceEntry": "ProgressiveItems, disabled && ItemBow || ProgressiveItems, enabled && MMRTProgressiveQuiver",
           "TextDisplay": [
             {
               "Position": "topLeft",
@@ -325,7 +325,7 @@
               "B": 0
             }
           },
-          "LogicReferenceEntry": "MMRTItemDisplayHasBiggestBombBag",
+          "LogicReferenceEntry": "ProgressiveItems, disabled && UpgradeBiggestBombBag || ProgressiveItems, enabled && MMRTProgressiveBombBagX3",
           "TextDisplay": [
             {
               "Position": "topLeft",
@@ -346,7 +346,7 @@
               "B": 0
             }
           },
-          "LogicReferenceEntry": "MMRTItemDisplayHasBigBombBag",
+          "LogicReferenceEntry": "ProgressiveItems, disabled && UpgradeBigBombBag || ProgressiveItems, enabled && MMRTProgressiveBombBagX2",
           "TextDisplay": [
             {
               "Position": "topLeft",
@@ -367,7 +367,7 @@
               "B": 0
             }
           },
-          "LogicReferenceEntry": "MMRTItemDisplayHasBombBag",
+          "LogicReferenceEntry": "ProgressiveItems, disabled && ItemBombBag || ProgressiveItems, enabled && MMRTProgressiveBombBag",
           "TextDisplay": [
             {
               "Position": "topLeft",
@@ -950,7 +950,7 @@
               "B": 0
             }
           },
-          "LogicReferenceEntry": "MMRTItemDisplayHasChateau",
+          "LogicReferenceEntry": "ItemBottleMadameAroma||ShopItemMilkBarChateau",
           "TextDisplay": []
         }
       ]
@@ -1450,7 +1450,13 @@
     {
       "ID": "DBHeartPieces",
       "DefaultImageLocations": "4, 7",
-      "DefaultTextDisplay": [],
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "ItemCount",
+          "Value": "Piece of Heart"
+        }
+      ],
       "DisplayItems": [
         {
           "Name": "HeartPiece",
@@ -1478,7 +1484,13 @@
     {
       "ID": "DBHeartContainer",
       "DefaultImageLocations": "5, 7",
-      "DefaultTextDisplay": [],
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "ItemCount",
+          "Value": "Heart Container"
+        }
+      ],
       "DisplayItems": [
         {
           "Name": "HeartContainer",
@@ -2368,6 +2380,1087 @@
           },
           "LogicReferenceEntry": "MaskFierceDeity",
           "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBCollectibleStrayFairyClockTown",
+      "DefaultImageLocations": "5, 22",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "CollectibleStrayFairyClockTown"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "CollectibleStrayFairyClockTown",
+          "ImageLocations": "5, 22",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "CollectibleStrayFairyClockTown",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBItemNotebook",
+      "DefaultImageLocations": "5, 21",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "ItemNotebook"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "ItemNotebook",
+          "ImageLocations": "5, 21",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "ItemNotebook",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBsword",
+      "DefaultImageLocations": "0, 20",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "UpgradeBiggestBombBag+UpgradeBigBombBag+ItemBombBag"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "UpgradeGildedSword",
+          "ImageLocations": "2, 20",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "ProgressiveItems, disabled && UpgradeGildedSword || ProgressiveItems, enabled && Progressive Sword, 3",
+          "TextDisplay": []
+        },
+        {
+          "Name": "UpgradeRazorSword",
+          "ImageLocations": "1, 20",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "ProgressiveItems, disabled && UpgradeRazorSword || ProgressiveItems, enabled && Progressive Sword, 2",
+          "TextDisplay": []
+        },
+        {
+          "Name": "StartingSword",
+          "ImageLocations": "0, 20",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "ProgressiveItems, disabled && StartingSword || ProgressiveItems, enabled && Progressive Sword",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBRemainsOdolwa",
+      "DefaultImageLocations": "0, 21",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "RemainsOdolwa"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "RemainsOdolwa",
+          "ImageLocations": "0, 21",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "RemainsOdolwa",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBItemWoodfallMap",
+      "DefaultImageLocations": "0, 22",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "ItemWoodfallMap"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "ItemWoodfallMap",
+          "ImageLocations": "0, 22",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "ItemWoodfallMap",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBItemWoodfallCompass",
+      "DefaultImageLocations": "1, 22",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "ItemWoodfallCompass"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "ItemWoodfallCompass",
+          "ImageLocations": "1, 22",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "ItemWoodfallCompass",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBItemWoodfallBossKey",
+      "DefaultImageLocations": "2, 22",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "ItemWoodfallBossKey"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "ItemWoodfallBossKey",
+          "ImageLocations": "2, 22",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "ItemWoodfallBossKey",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBItemWoodfallKey1",
+      "DefaultImageLocations": "3, 22",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "ItemWoodfallKey1"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "ItemWoodfallKey1",
+          "ImageLocations": "3, 22",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "ItemWoodfallKey1",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBWoodfallStrayFairy",
+      "DefaultImageLocations": "5, 12",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "ItemCount",
+          "Value": "Woodfall Stray Fairy"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "WoodfallStrayFairy",
+          "ImageLocations": "5, 12",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "Woodfall Stray Fairy",
+          "TextDisplay": [
+            {
+              "Position": "topRight",
+              "textType": "ItemCount",
+              "Value": "Woodfall Stray Fairy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "DBSwampSkullToken",
+      "DefaultImageLocations": "4, 22",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "ItemCount",
+          "Value": "Swamp Skulltula Spirit"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "SwampSkullToken",
+          "ImageLocations": "4, 22",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": -100,
+              "G": 0,
+              "B": -40
+            }
+          },
+          "LogicReferenceEntry": "Swamp Skulltula Spirit",
+          "TextDisplay": [
+            {
+              "Position": "topRight",
+              "textType": "ItemCount",
+              "Value": "Swamp Skulltula Spirit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "DBShield",
+      "DefaultImageLocations": "4, 20",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "Hero's Shield+UpgradeMirrorShield"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "UpgradeMirrorShield",
+          "ImageLocations": "5, 20",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "UpgradeMirrorShield",
+          "TextDisplay": []
+        },
+        {
+          "Name": "UpgradeHeroShield",
+          "ImageLocations": "4, 20",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "Hero's Shield",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBRemainsGoht",
+      "DefaultImageLocations": "1, 21",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "RemainsGoht"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "RemainsGoht",
+          "ImageLocations": "1, 21",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "RemainsGoht",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBItemSnowheadMap",
+      "DefaultImageLocations": "0, 22",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "ItemSnowheadMap"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "ItemSnowheadMap",
+          "ImageLocations": "0, 22",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "ItemSnowheadMap",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBItemSnowheadCompass",
+      "DefaultImageLocations": "1, 22",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "ItemSnowheadCompass"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "ItemSnowheadCompass",
+          "ImageLocations": "1, 22",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "ItemSnowheadCompass",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBItemSnowheadBossKey",
+      "DefaultImageLocations": "2, 22",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "ItemSnowheadBossKey"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "ItemSnowheadBossKey",
+          "ImageLocations": "2, 22",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "ItemSnowheadBossKey",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBSnowheadSmallKey",
+      "DefaultImageLocations": "3, 22",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "ItemCount",
+          "Value": "Snowhead Small Key"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "SnowheadSmallKey",
+          "ImageLocations": "3, 22",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "Snowhead Small Key",
+          "TextDisplay": [
+            {
+              "Position": "topRight",
+              "textType": "ItemCount",
+              "Value": "Snowhead Small Key"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "DBSnowheadStrayFairy",
+      "DefaultImageLocations": "4, 12",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "ItemCount",
+          "Value": "Snowhead Stray Fairy"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "SnowheadStrayFairy",
+          "ImageLocations": "4, 12",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "Snowhead Stray Fairy",
+          "TextDisplay": [
+            {
+              "Position": "topRight",
+              "textType": "ItemCount",
+              "Value": "Snowhead Stray Fairy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "DBMagic",
+      "DefaultImageLocations": "3, 7",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "ItemCount",
+          "Value": "Magic Power+Extended Magic Power"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "Magic",
+          "ImageLocations": "3, 7",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "Magic Power || Extended Magic Power",
+          "TextDisplay": [
+            {
+              "Position": "topRight",
+              "textType": "ItemCount",
+              "Value": "Magic Power+Extended Magic Power"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "DBWallet",
+      "DefaultImageLocations": "5, 3",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "UpgradeRoyalWallet+UpgradeGiantWallet+UpgradeAdultWallet"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "UpgradeRoyalWallet",
+          "ImageLocations": "5, 1",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "ProgressiveItems, disabled && UpgradeRoyalWallet || ProgressiveItems, enabled && MMRTProgressiveWalletX3",
+          "TextDisplay": []
+        },
+        {
+          "Name": "UpgradeGiantWallet",
+          "ImageLocations": "5, 4",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "ProgressiveItems, disabled && UpgradeGiantWallet || ProgressiveItems, enabled && MMRTProgressiveWalletX2",
+          "TextDisplay": []
+        },
+        {
+          "Name": "UpgradeAdultWallet",
+          "ImageLocations": "5, 3",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "ProgressiveItems, disabled && UpgradeAdultWallet || ProgressiveItems, enabled && MMRTProgressiveWallet",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBRemainsGyorg",
+      "DefaultImageLocations": "2, 21",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "RemainsGyorg"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "RemainsGyorg",
+          "ImageLocations": "2, 21",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "RemainsGyorg",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBItemGreatBayMap",
+      "DefaultImageLocations": "0, 22",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "ItemGreatBayMap"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "ItemGreatBayMap",
+          "ImageLocations": "0, 22",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "ItemGreatBayMap",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBItemGreatBayCompass",
+      "DefaultImageLocations": "1, 22",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "ItemGreatBayCompass"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "ItemGreatBayCompass",
+          "ImageLocations": "1, 22",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "ItemGreatBayCompass",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBItemGreatBayBossKey",
+      "DefaultImageLocations": "2, 22",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "ItemGreatBayBossKey"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "ItemGreatBayBossKey",
+          "ImageLocations": "2, 22",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "ItemGreatBayBossKey",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBItemGreatBayKey1",
+      "DefaultImageLocations": "3, 22",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "ItemGreatBayKey1"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "ItemGreatBayKey1",
+          "ImageLocations": "3, 22",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "ItemGreatBayKey1",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBGreatBayStrayFairy",
+      "DefaultImageLocations": "3, 12",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "ItemCount",
+          "Value": "Great Bay Stray Fairy"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "GreatBayStrayFairy",
+          "ImageLocations": "3, 12",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "Great Bay Stray Fairy",
+          "TextDisplay": [
+            {
+              "Position": "topRight",
+              "textType": "ItemCount",
+              "Value": "Great Bay Stray Fairy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "DBOceanSkullToken",
+      "DefaultImageLocations": "4, 22",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "ItemCount",
+          "Value": "Ocean Skulltula Spirit"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "OceanSkullToken",
+          "ImageLocations": "4, 22",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": -200,
+              "G": -40,
+              "B": 80
+            }
+          },
+          "LogicReferenceEntry": "Ocean Skulltula Spirit",
+          "TextDisplay": [
+            {
+              "Position": "topRight",
+              "textType": "ItemCount",
+              "Value": "Ocean Skulltula Spirit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "DBAreaMoonAccess",
+      "DefaultImageLocations": "5, 13",
+      "DefaultTextDisplay": [],
+      "DisplayItems": [
+        {
+          "Name": "AreaMoonAccess",
+          "ImageLocations": "5, 13",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "AreaMoonAccess",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBRemainsTwinmold",
+      "DefaultImageLocations": "3, 21",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "RemainsTwinmold"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "RemainsTwinmold",
+          "ImageLocations": "3, 21",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "RemainsTwinmold",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBItemStoneTowerMap",
+      "DefaultImageLocations": "0, 22",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "ItemStoneTowerMap"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "ItemStoneTowerMap",
+          "ImageLocations": "0, 22",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "ItemStoneTowerMap",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBItemStoneTowerCompass",
+      "DefaultImageLocations": "1, 22",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "ItemStoneTowerCompass"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "ItemStoneTowerCompass",
+          "ImageLocations": "1, 22",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "ItemStoneTowerCompass",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBItemStoneTowerBossKey",
+      "DefaultImageLocations": "2, 22",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "HasSeen",
+          "Value": "ItemStoneTowerBossKey"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "ItemStoneTowerBossKey",
+          "ImageLocations": "2, 22",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "ItemStoneTowerBossKey",
+          "TextDisplay": []
+        }
+      ]
+    },
+    {
+      "ID": "DBStoneTowerKey",
+      "DefaultImageLocations": "3, 22",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "ItemCount",
+          "Value": "Stone Tower Small Key"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "StoneTowerKey",
+          "ImageLocations": "3, 22",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "Stone Tower Small Key",
+          "TextDisplay": [
+            {
+              "Position": "topRight",
+              "textType": "ItemCount",
+              "Value": "Stone Tower Small Key"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "DBStoneTowerStrayFairy",
+      "DefaultImageLocations": "2, 12",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "ItemCount",
+          "Value": "Stone Tower Stray Fairy"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "StoneTowerStrayFairy",
+          "ImageLocations": "2, 12",
+          "edits": {
+            "GreyScale": false,
+            "Invert": false,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "Stone Tower Stray Fairy",
+          "TextDisplay": [
+            {
+              "Position": "topRight",
+              "textType": "ItemCount",
+              "Value": "Stone Tower Stray Fairy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ID": "DBFairyDoubleDefense",
+      "DefaultImageLocations": "5, 7",
+      "DefaultTextDisplay": [
+        {
+          "Position": "topRight",
+          "textType": "ItemCount",
+          "Value": "FairyDoubleDefense"
+        }
+      ],
+      "DisplayItems": [
+        {
+          "Name": "FairyDoubleDefense",
+          "ImageLocations": "5, 7",
+          "edits": {
+            "GreyScale": false,
+            "Invert": true,
+            "Reshade": {
+              "R": 0,
+              "G": 0,
+              "B": 0
+            }
+          },
+          "LogicReferenceEntry": "FairyDoubleDefense",
+          "TextDisplay": [
+            {
+              "Position": "topRight",
+              "textType": "ItemCount",
+              "Value": "FairyDoubleDefense"
+            }
+          ]
         }
       ]
     }

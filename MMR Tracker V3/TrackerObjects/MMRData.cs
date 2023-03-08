@@ -56,6 +56,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public bool ByoAmmo { get; set; } = false;
             public string SmallKeyMode { get; set; } = "Default";
             public string BossKeyMode { get; set; } = "Default";
+            public string StrayFairyMode { get; set; } = "Default";
             public string LogicMode { get; set; } = "Casual";
             public string UserLogicFileName { get; set; } = "";
             public string CustomItemListString { get; set; } = "";
