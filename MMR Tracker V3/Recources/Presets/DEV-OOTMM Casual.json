@@ -3290,7 +3290,8 @@
     {
       "Id": "OOT Deku Tree Map Chest",
       "RequiredItems": [
-        "OOT Deku Tree Lobby"
+        "OOT Deku Tree Lobby",
+        "option{DTMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3301,7 +3302,8 @@
     {
       "Id": "OOT Deku Tree Compass Chest",
       "RequiredItems": [
-        "OOT Deku Tree Lobby"
+        "OOT Deku Tree Lobby",
+        "option{DTMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3312,7 +3314,8 @@
     {
       "Id": "OOT Deku Tree Compass Room Side Chest",
       "RequiredItems": [
-        "OOT Deku Tree Lobby"
+        "OOT Deku Tree Lobby",
+        "option{DTMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3323,7 +3326,8 @@
     {
       "Id": "OOT Deku Tree Slingshot Chest",
       "RequiredItems": [
-        "OOT Deku Tree Slingshot Room"
+        "OOT Deku Tree Slingshot Room",
+        "option{DTMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3334,7 +3338,8 @@
     {
       "Id": "OOT Deku Tree Slingshot Side Chest",
       "RequiredItems": [
-        "OOT Deku Tree Slingshot Room"
+        "OOT Deku Tree Slingshot Room",
+        "option{DTMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3345,7 +3350,8 @@
     {
       "Id": "OOT Deku Tree Basement Chest",
       "RequiredItems": [
-        "OOT Deku Tree Basement"
+        "OOT Deku Tree Basement",
+        "option{DTMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3357,7 +3363,8 @@
       "Id": "OOT Deku Tree GS Compass",
       "RequiredItems": [
         "OOT_can_damage_skull",
-        "OOT Deku Tree Lobby"
+        "OOT Deku Tree Lobby",
+        "option{DTMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3368,7 +3375,8 @@
     {
       "Id": "OOT Deku Tree GS Basement Vines",
       "RequiredItems": [
-        "OOT Deku Tree Basement"
+        "OOT Deku Tree Basement",
+        "option{DTMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -3390,7 +3398,8 @@
       "Id": "OOT Deku Tree GS Basement Gate",
       "RequiredItems": [
         "OOT_can_damage_skull",
-        "OOT Deku Tree Basement"
+        "OOT Deku Tree Basement",
+        "option{DTMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3403,7 +3412,8 @@
       "RequiredItems": [
         "OOT_has_explosives_or_hammer",
         "OOT_can_collect_distance",
-        "OOT Deku Tree Basement Back Room"
+        "OOT Deku Tree Basement Back Room",
+        "option{DTMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3416,7 +3426,24 @@
       "RequiredItems": [
         "OOT Deku Tree Boss"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_nuts",
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_can_use_slingshot",
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_has_nuts",
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_can_use_slingshot",
+          "OOT_has_weapon"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3427,7 +3454,24 @@
       "RequiredItems": [
         "OOT Deku Tree Boss"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_nuts",
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_can_use_slingshot",
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_has_nuts",
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_can_use_slingshot",
+          "OOT_has_weapon"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3436,7 +3480,8 @@
     {
       "Id": "OOT Dodongo Cavern Map Chest",
       "RequiredItems": [
-        "OOT Dodongo Cavern Main"
+        "OOT Dodongo Cavern Main",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -3454,7 +3499,8 @@
     {
       "Id": "OOT Dodongo Cavern Compass Chest",
       "RequiredItems": [
-        "OOT Dodongo Cavern Compass Room"
+        "OOT Dodongo Cavern Compass Room",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3465,7 +3511,8 @@
     {
       "Id": "OOT Dodongo Cavern Bomb Bag Side Chest",
       "RequiredItems": [
-        "OOT Dodongo Cavern Bomb Bag Room 1"
+        "OOT Dodongo Cavern Bomb Bag Room 1",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3476,7 +3523,8 @@
     {
       "Id": "OOT Dodongo Cavern Bomb Bag Chest",
       "RequiredItems": [
-        "OOT Dodongo Cavern Bomb Bag Room 2"
+        "OOT Dodongo Cavern Bomb Bag Room 2",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3488,7 +3536,8 @@
       "Id": "OOT Dodongo Cavern Bridge Chest",
       "RequiredItems": [
         "OOT_has_explosives_or_hammer",
-        "OOT Dodongo Cavern Main Bridge"
+        "OOT Dodongo Cavern Main Bridge",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3500,7 +3549,8 @@
       "Id": "OOT Dodongo Cavern GS Side Room",
       "RequiredItems": [
         "OOT_can_damage_skull",
-        "OOT Dodongo Cavern Side Room"
+        "OOT Dodongo Cavern Side Room",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3511,7 +3561,8 @@
     {
       "Id": "OOT Dodongo Cavern GS Stairs Vines",
       "RequiredItems": [
-        "OOT Dodongo Cavern Stairs Top"
+        "OOT Dodongo Cavern Stairs Top",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3523,7 +3574,8 @@
       "Id": "OOT Dodongo Cavern GS Stairs Top",
       "RequiredItems": [
         "OOT_EVENT_DC_SHORTCUT",
-        "OOT Dodongo Cavern Stairs Top"
+        "OOT Dodongo Cavern Stairs Top",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -3542,7 +3594,8 @@
       "Id": "OOT Dodongo Cavern GS Scarecrow",
       "RequiredItems": [
         "OOT_scarecrow_hookshot",
-        "OOT Dodongo Cavern Right Corridor"
+        "OOT Dodongo Cavern Right Corridor",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3553,7 +3606,8 @@
     {
       "Id": "OOT Dodongo Cavern GS Near Boss",
       "RequiredItems": [
-        "OOT Dodongo Cavern Skull"
+        "OOT Dodongo Cavern Skull",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3577,7 +3631,14 @@
       "RequiredItems": [
         "OOT Dodongo Cavern After Boss"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_has_weapon"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3588,7 +3649,14 @@
       "RequiredItems": [
         "OOT Dodongo Cavern After Boss"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_has_weapon"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3598,7 +3666,8 @@
       "Id": "OOT Jabu-Jabu Map Chest",
       "RequiredItems": [
         "OOT_can_boomerang",
-        "OOT Jabu-Jabu Main"
+        "OOT Jabu-Jabu Main",
+        "option{JJMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3610,7 +3679,8 @@
       "Id": "OOT Jabu-Jabu Compass Chest",
       "RequiredItems": [
         "OOT_can_boomerang",
-        "OOT Jabu-Jabu Main"
+        "OOT Jabu-Jabu Main",
+        "option{JJMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3621,7 +3691,8 @@
     {
       "Id": "OOT Jabu-Jabu Boomerang Chest",
       "RequiredItems": [
-        "OOT Jabu-Jabu Main"
+        "OOT Jabu-Jabu Main",
+        "option{JJMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3632,7 +3703,8 @@
     {
       "Id": "OOT Jabu-Jabu GS Water Switch",
       "RequiredItems": [
-        "OOT Jabu-Jabu Main"
+        "OOT Jabu-Jabu Main",
+        "option{JJMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3644,7 +3716,8 @@
       "Id": "OOT Jabu-Jabu GS Bottom Lower",
       "RequiredItems": [
         "OOT_can_collect_distance",
-        "OOT Jabu-Jabu Main"
+        "OOT Jabu-Jabu Main",
+        "option{JJMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3656,7 +3729,8 @@
       "Id": "OOT Jabu-Jabu GS Bottom Upper",
       "RequiredItems": [
         "OOT_can_collect_distance",
-        "OOT Jabu-Jabu Main"
+        "OOT Jabu-Jabu Main",
+        "option{JJMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3668,7 +3742,8 @@
       "Id": "OOT Jabu-Jabu GS Near Boss",
       "RequiredItems": [
         "OOT_can_boomerang",
-        "OOT Jabu-Jabu Main"
+        "OOT Jabu-Jabu Main",
+        "option{JJMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3701,7 +3776,8 @@
     {
       "Id": "OOT Forest Temple Tree Small Key",
       "RequiredItems": [
-        "OOT Forest Temple"
+        "OOT Forest Temple",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3713,7 +3789,8 @@
       "Id": "OOT Forest Temple Mini-Boss Key",
       "RequiredItems": [
         "OOT_has_weapon",
-        "OOT Forest Temple Mini-Boss"
+        "OOT Forest Temple Mini-Boss",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3724,7 +3801,8 @@
     {
       "Id": "OOT Forest Temple Map",
       "RequiredItems": [
-        "OOT Forest Temple Map Room"
+        "OOT Forest Temple Map Room",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -3792,7 +3870,8 @@
       "RequiredItems": [
         "OOT_STRENGTH",
         "OOT_can_hit_triggers_distance",
-        "OOT Forest Temple Maze"
+        "OOT Forest Temple Maze",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3804,7 +3883,8 @@
       "Id": "OOT Forest Temple Garden",
       "RequiredItems": [
         "OOT_can_hookshot",
-        "OOT Forest Temple Garden East"
+        "OOT Forest Temple Garden East",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3816,7 +3896,8 @@
       "Id": "OOT Forest Temple Well",
       "RequiredItems": [
         "OOT_EVENT_FOREST_WELL",
-        "OOT Forest Temple Well"
+        "OOT Forest Temple Well",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3828,7 +3909,8 @@
       "Id": "OOT Forest Temple Poe Key",
       "RequiredItems": [
         "OOT_can_use_bow",
-        "OOT Forest Temple Poe 1"
+        "OOT Forest Temple Poe 1",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3840,7 +3922,8 @@
       "Id": "OOT Forest Temple Bow",
       "RequiredItems": [
         "OOT_has_weapon",
-        "OOT Forest Temple Mini-Boss 2"
+        "OOT Forest Temple Mini-Boss 2",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3852,7 +3935,8 @@
       "Id": "OOT Forest Temple Compass",
       "RequiredItems": [
         "OOT_can_use_bow",
-        "OOT Forest Temple Poe 2"
+        "OOT Forest Temple Poe 2",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3863,7 +3947,8 @@
     {
       "Id": "OOT Forest Temple Checkerboard",
       "RequiredItems": [
-        "OOT Forest Temple Checkerboard"
+        "OOT Forest Temple Checkerboard",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3874,7 +3959,8 @@
     {
       "Id": "OOT Forest Temple Boss Key",
       "RequiredItems": [
-        "OOT Forest Temple Twisted 1 Alt"
+        "OOT Forest Temple Twisted 1 Alt",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3885,7 +3971,8 @@
     {
       "Id": "OOT Forest Temple Floormaster",
       "RequiredItems": [
-        "OOT Forest Temple Floormaster"
+        "OOT Forest Temple Floormaster",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3896,7 +3983,8 @@
     {
       "Id": "OOT Forest Temple Antichamber",
       "RequiredItems": [
-        "OOT Forest Temple Antichamber"
+        "OOT Forest Temple Antichamber",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3907,7 +3995,8 @@
     {
       "Id": "OOT Forest Temple GS Entrance",
       "RequiredItems": [
-        "OOT Forest Temple"
+        "OOT Forest Temple",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -3929,7 +4018,8 @@
       "Id": "OOT Forest Temple GS Main",
       "RequiredItems": [
         "OOT_can_collect_distance",
-        "OOT Forest Temple Main"
+        "OOT Forest Temple Main",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3940,7 +4030,8 @@
     {
       "Id": "OOT Forest Temple GS Garden West",
       "RequiredItems": [
-        "OOT Forest Temple Garden West"
+        "OOT Forest Temple Garden West",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -3960,7 +4051,8 @@
       "Id": "OOT Forest Temple GS Garden East",
       "RequiredItems": [
         "OOT_can_hookshot",
-        "OOT Forest Temple Garden East"
+        "OOT Forest Temple Garden East",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3972,7 +4064,8 @@
       "Id": "OOT Forest Temple GS Antichamber",
       "RequiredItems": [
         "OOT_can_collect_distance",
-        "OOT Forest Temple Antichamber"
+        "OOT Forest Temple Antichamber",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4006,7 +4099,8 @@
       "Id": "OOT Fire Temple Jail 1 Chest",
       "RequiredItems": [
         "OOT_has_tunic_goron",
-        "OOT Fire Temple"
+        "OOT Fire Temple",
+        "option{FireMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4017,7 +4111,8 @@
     {
       "Id": "OOT Fire Temple Boss Key Side Chest",
       "RequiredItems": [
-        "OOT Fire Temple Boss Key Loop"
+        "OOT Fire Temple Boss Key Loop",
+        "option{FireMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4028,7 +4123,8 @@
     {
       "Id": "OOT Fire Temple Boss Key Chest",
       "RequiredItems": [
-        "OOT Fire Temple Boss Key Loop"
+        "OOT Fire Temple Boss Key Loop",
+        "option{FireMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4039,7 +4135,8 @@
     {
       "Id": "OOT Fire Temple Jail 2 Chest",
       "RequiredItems": [
-        "OOT Fire Temple Lava Room"
+        "OOT Fire Temple Lava Room",
+        "option{FireMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -4063,7 +4160,8 @@
       "RequiredItems": [
         "OOT_has_tunic_goron",
         "OOT_has_explosives",
-        "OOT Fire Temple Lava Room"
+        "OOT Fire Temple Lava Room",
+        "option{FireMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4074,7 +4172,8 @@
     {
       "Id": "OOT Fire Temple Maze Chest",
       "RequiredItems": [
-        "OOT Fire Temple Maze"
+        "OOT Fire Temple Maze",
+        "option{FireMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4085,7 +4184,8 @@
     {
       "Id": "OOT Fire Temple Jail 4 Chest",
       "RequiredItems": [
-        "OOT Fire Temple Maze"
+        "OOT Fire Temple Maze",
+        "option{FireMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4095,7 +4195,9 @@
     },
     {
       "Id": "OOT Fire Temple Map",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "option{FireMQ, false}"
+      ],
       "ConditionalItems": [
         [
           "true",
@@ -4121,7 +4223,8 @@
     {
       "Id": "OOT Fire Temple Above Maze Chest",
       "RequiredItems": [
-        "OOT Fire Temple Maze Upper"
+        "OOT Fire Temple Maze Upper",
+        "option{FireMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4133,7 +4236,8 @@
       "Id": "OOT Fire Temple Below Maze Chest",
       "RequiredItems": [
         "OOT_has_explosives",
-        "OOT Fire Temple Maze Upper"
+        "OOT Fire Temple Maze Upper",
+        "option{FireMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4144,7 +4248,8 @@
     {
       "Id": "OOT Fire Temple Compass",
       "RequiredItems": [
-        "OOT Fire Temple Ring"
+        "OOT Fire Temple Ring",
+        "option{FireMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4155,7 +4260,8 @@
     {
       "Id": "OOT Fire Temple Hammer",
       "RequiredItems": [
-        "OOT Fire Temple After Miniboss"
+        "OOT Fire Temple After Miniboss",
+        "option{FireMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4166,7 +4272,8 @@
     {
       "Id": "OOT Fire Temple Ring Jail",
       "RequiredItems": [
-        "OOT_can_hammer"
+        "OOT_can_hammer",
+        "option{FireMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -4187,7 +4294,8 @@
     {
       "Id": "OOT Fire Temple Scarecrow Chest",
       "RequiredItems": [
-        "OOT Fire Temple Scarecrow"
+        "OOT Fire Temple Scarecrow",
+        "option{FireMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4202,7 +4310,8 @@
         "OOT_has_tunic_goron",
         "OOT_OCARINA",
         "OOT_SONG_TIME",
-        "OOT Fire Temple Lava Room"
+        "OOT Fire Temple Lava Room",
+        "option{FireMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4213,7 +4322,8 @@
     {
       "Id": "OOT Fire Temple GS Hammer Statues",
       "RequiredItems": [
-        "OOT Fire Temple Boss Key Loop"
+        "OOT Fire Temple Boss Key Loop",
+        "option{FireMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4225,7 +4335,8 @@
       "Id": "OOT Fire Temple GS Maze",
       "RequiredItems": [
         "OOT_has_explosives",
-        "OOT Fire Temple Maze"
+        "OOT Fire Temple Maze",
+        "option{FireMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4236,7 +4347,8 @@
     {
       "Id": "OOT Fire Temple GS Scarecrow Wall",
       "RequiredItems": [
-        "OOT Fire Temple Scarecrow"
+        "OOT Fire Temple Scarecrow",
+        "option{FireMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4247,7 +4359,8 @@
     {
       "Id": "OOT Fire Temple GS Scarecrow Top",
       "RequiredItems": [
-        "OOT Fire Temple Scarecrow"
+        "OOT Fire Temple Scarecrow",
+        "option{FireMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4281,7 +4394,8 @@
       "Id": "OOT Ice Cavern Iron Boots",
       "RequiredItems": [
         "OOT_EVENT_BLUE_FIRE",
-        "OOT Ice Cavern"
+        "OOT Ice Cavern",
+        "option{ICMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4294,7 +4408,8 @@
       "RequiredItems": [
         "OOT_EVENT_BLUE_FIRE",
         "OOT_is_adult",
-        "OOT Ice Cavern"
+        "OOT Ice Cavern",
+        "option{ICMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4306,7 +4421,8 @@
       "Id": "OOT Ice Cavern Compass",
       "RequiredItems": [
         "OOT_EVENT_BLUE_FIRE",
-        "OOT Ice Cavern"
+        "OOT Ice Cavern",
+        "option{ICMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4318,7 +4434,8 @@
       "Id": "OOT Ice Cavern HP",
       "RequiredItems": [
         "OOT_EVENT_BLUE_FIRE",
-        "OOT Ice Cavern"
+        "OOT Ice Cavern",
+        "option{ICMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4330,7 +4447,8 @@
       "Id": "OOT Ice Cavern Sheik Song",
       "RequiredItems": [
         "OOT_EVENT_BLUE_FIRE",
-        "OOT Ice Cavern"
+        "OOT Ice Cavern",
+        "option{ICMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4342,7 +4460,8 @@
       "Id": "OOT Ice Cavern GS Scythe Room",
       "RequiredItems": [
         "OOT_can_collect_distance",
-        "OOT Ice Cavern"
+        "OOT Ice Cavern",
+        "option{ICMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4355,7 +4474,8 @@
       "RequiredItems": [
         "OOT_EVENT_BLUE_FIRE",
         "OOT_can_collect_distance",
-        "OOT Ice Cavern"
+        "OOT Ice Cavern",
+        "option{ICMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4368,7 +4488,8 @@
       "RequiredItems": [
         "OOT_EVENT_BLUE_FIRE",
         "OOT_can_collect_distance",
-        "OOT Ice Cavern"
+        "OOT Ice Cavern",
+        "option{ICMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4380,7 +4501,8 @@
       "Id": "OOT Water Temple Under Center",
       "RequiredItems": [
         "OOT_can_hookshot",
-        "OOT Water Temple Under Center"
+        "OOT Water Temple Under Center",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4391,7 +4513,8 @@
     {
       "Id": "OOT Water Temple Compass",
       "RequiredItems": [
-        "OOT Water Temple Compass Room"
+        "OOT Water Temple Compass Room",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4402,7 +4525,8 @@
     {
       "Id": "OOT Water Temple Longshot",
       "RequiredItems": [
-        "OOT Water Temple Longshot Room"
+        "OOT Water Temple Longshot Room",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4415,7 +4539,8 @@
       "RequiredItems": [
         "OOT_can_hookshot",
         "OOT_has_iron_boots",
-        "OOT Water Temple Dragon Room"
+        "OOT Water Temple Dragon Room",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4426,7 +4551,8 @@
     {
       "Id": "OOT Water Temple Boss Key Chest",
       "RequiredItems": [
-        "OOT Water Temple Boss Key Room"
+        "OOT Water Temple Boss Key Room",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4439,7 +4565,8 @@
       "RequiredItems": [
         "OOT_EVENT_WATER_LEVEL_MIDDLE",
         "OOT_has_explosives",
-        "OOT Water Temple Ruto Room"
+        "OOT Water Temple Ruto Room",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4450,7 +4577,8 @@
     {
       "Id": "OOT Water Temple Shell Chest",
       "RequiredItems": [
-        "OOT Water Temple Shell Room"
+        "OOT Water Temple Shell Room",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4461,7 +4589,8 @@
     {
       "Id": "OOT Water Temple Map",
       "RequiredItems": [
-        "OOT Water Temple Map Room"
+        "OOT Water Temple Map Room",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4473,7 +4602,8 @@
       "Id": "OOT Water Temple Corridor Chest",
       "RequiredItems": [
         "OOT_STRENGTH",
-        "OOT Water Temple Corridor"
+        "OOT Water Temple Corridor",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4485,7 +4615,8 @@
       "Id": "OOT Water Temple River Chest",
       "RequiredItems": [
         "OOT_can_use_bow",
-        "OOT Water Temple River"
+        "OOT Water Temple River",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4497,7 +4628,8 @@
       "Id": "OOT Water Temple GS River",
       "RequiredItems": [
         "OOT_has_iron_boots",
-        "OOT Water Temple River"
+        "OOT Water Temple River",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4509,7 +4641,8 @@
       "Id": "OOT Water Temple GS Center",
       "RequiredItems": [
         "OOT_can_longshot",
-        "OOT Water Temple Center Middle"
+        "OOT Water Temple Center Middle",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4521,7 +4654,8 @@
       "Id": "OOT Water Temple GS Large Pit",
       "RequiredItems": [
         "OOT_can_longshot",
-        "OOT Water Temple Large Pit"
+        "OOT Water Temple Large Pit",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4533,7 +4667,8 @@
       "Id": "OOT Water Temple GS Waterfalls",
       "RequiredItems": [
         "OOT_can_hookshot",
-        "OOT Water Temple Waterfalls Ledge"
+        "OOT Water Temple Waterfalls Ledge",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4544,7 +4679,8 @@
     {
       "Id": "OOT Water Temple GS Cage",
       "RequiredItems": [
-        "OOT Water Temple Cage Room"
+        "OOT Water Temple Cage Room",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -4585,7 +4721,8 @@
       "Id": "OOT Bottom of the Well Compass",
       "RequiredItems": [
         "OOT_has_lens",
-        "OOT Bottom of the Well Main"
+        "OOT Bottom of the Well Main",
+        "option{BotWMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4597,7 +4734,8 @@
       "Id": "OOT Bottom of the Well Under Debris",
       "RequiredItems": [
         "OOT_has_explosives",
-        "OOT Bottom of the Well Main"
+        "OOT Bottom of the Well Main",
+        "option{BotWMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4610,7 +4748,8 @@
       "RequiredItems": [
         "OOT_has_explosives",
         "OOT_has_lens",
-        "OOT Bottom of the Well Main"
+        "OOT Bottom of the Well Main",
+        "option{BotWMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4622,7 +4761,8 @@
       "Id": "OOT Bottom of the Well East",
       "RequiredItems": [
         "OOT_has_lens",
-        "OOT Bottom of the Well Main"
+        "OOT Bottom of the Well Main",
+        "option{BotWMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4634,7 +4774,8 @@
       "Id": "OOT Bottom of the Well Front West",
       "RequiredItems": [
         "OOT_has_lens",
-        "OOT Bottom of the Well Main"
+        "OOT Bottom of the Well Main",
+        "option{BotWMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4647,7 +4788,8 @@
       "RequiredItems": [
         "OOT_OCARINA",
         "OOT_SONG_ZELDA",
-        "OOT Bottom of the Well Main"
+        "OOT Bottom of the Well Main",
+        "option{BotWMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4660,7 +4802,8 @@
       "RequiredItems": [
         "OOT_SMALL_KEY_BOTW, 3",
         "OOT_has_lens",
-        "OOT Bottom of the Well Main"
+        "OOT Bottom of the Well Main",
+        "option{BotWMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4672,7 +4815,8 @@
       "Id": "OOT Bottom of the Well Blood Chest",
       "RequiredItems": [
         "OOT_has_lens",
-        "OOT Bottom of the Well Main"
+        "OOT Bottom of the Well Main",
+        "option{BotWMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4685,7 +4829,8 @@
       "RequiredItems": [
         "OOT_OCARINA",
         "OOT_SONG_ZELDA",
-        "OOT Bottom of the Well Main"
+        "OOT Bottom of the Well Main",
+        "option{BotWMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4696,7 +4841,8 @@
     {
       "Id": "OOT Bottom of the Well Map",
       "RequiredItems": [
-        "OOT Bottom of the Well Main"
+        "OOT Bottom of the Well Main",
+        "option{BotWMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -4719,7 +4865,8 @@
     {
       "Id": "OOT Bottom of the Well Coffin",
       "RequiredItems": [
-        "OOT Bottom of the Well Main"
+        "OOT Bottom of the Well Main",
+        "option{BotWMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4732,7 +4879,8 @@
       "RequiredItems": [
         "OOT_has_lens",
         "OOT_SMALL_KEY_BOTW, 3",
-        "OOT Bottom of the Well Main"
+        "OOT Bottom of the Well Main",
+        "option{BotWMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4746,7 +4894,8 @@
         "OOT_OCARINA",
         "OOT_SONG_ZELDA",
         "OOT_has_weapon",
-        "OOT Bottom of the Well Main"
+        "OOT Bottom of the Well Main",
+        "option{BotWMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4760,7 +4909,8 @@
         "OOT_OCARINA",
         "OOT_SONG_ZELDA",
         "OOT_has_lens",
-        "OOT Bottom of the Well Main"
+        "OOT Bottom of the Well Main",
+        "option{BotWMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4774,7 +4924,8 @@
         "OOT_SMALL_KEY_BOTW, 3",
         "OOT_has_lens",
         "OOT_can_boomerang",
-        "OOT Bottom of the Well Main"
+        "OOT Bottom of the Well Main",
+        "option{BotWMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4788,7 +4939,8 @@
         "OOT_SMALL_KEY_BOTW, 3",
         "OOT_has_lens",
         "OOT_can_boomerang",
-        "OOT Bottom of the Well Main"
+        "OOT Bottom of the Well Main",
+        "option{BotWMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4802,7 +4954,8 @@
         "OOT_SMALL_KEY_BOTW, 3",
         "OOT_has_lens",
         "OOT_can_boomerang",
-        "OOT Bottom of the Well Main"
+        "OOT Bottom of the Well Main",
+        "option{BotWMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4814,7 +4967,8 @@
       "Id": "OOT Shadow Temple Map",
       "RequiredItems": [
         "OOT_has_lens",
-        "OOT Shadow Temple Pit"
+        "OOT Shadow Temple Pit",
+        "option{ShadowMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4826,7 +4980,8 @@
       "Id": "OOT Shadow Temple Hover Boots",
       "RequiredItems": [
         "OOT_has_lens",
-        "OOT Shadow Temple Pit"
+        "OOT Shadow Temple Pit",
+        "option{ShadowMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4837,7 +4992,8 @@
     {
       "Id": "OOT Shadow Temple Silver Rupees",
       "RequiredItems": [
-        "OOT Shadow Temple Main"
+        "OOT Shadow Temple Main",
+        "option{ShadowMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -4855,7 +5011,8 @@
     {
       "Id": "OOT Shadow Temple Compass",
       "RequiredItems": [
-        "OOT Shadow Temple Main"
+        "OOT Shadow Temple Main",
+        "option{ShadowMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4866,7 +5023,8 @@
     {
       "Id": "OOT Shadow Temple Falling Spikes Lower",
       "RequiredItems": [
-        "OOT Shadow Temple Open"
+        "OOT Shadow Temple Open",
+        "option{ShadowMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4879,7 +5037,8 @@
       "RequiredItems": [
         "OOT_STRENGTH",
         "OOT_has_lens",
-        "OOT Shadow Temple Open"
+        "OOT Shadow Temple Open",
+        "option{ShadowMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4892,7 +5051,8 @@
       "RequiredItems": [
         "OOT_STRENGTH",
         "OOT_has_lens",
-        "OOT Shadow Temple Open"
+        "OOT Shadow Temple Open",
+        "option{ShadowMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4906,7 +5066,8 @@
         "OOT_SMALL_KEY_SHADOW, 2",
         "OOT_can_hookshot",
         "OOT_has_lens",
-        "OOT Shadow Temple Open"
+        "OOT Shadow Temple Open",
+        "option{ShadowMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4918,7 +5079,8 @@
       "Id": "OOT Shadow Temple Boss Key Room 1",
       "RequiredItems": [
         "OOT_can_use_din",
-        "OOT Shadow Temple Boat"
+        "OOT Shadow Temple Boat",
+        "option{ShadowMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4930,7 +5092,8 @@
       "Id": "OOT Shadow Temple Boss Key Room 2",
       "RequiredItems": [
         "OOT_can_use_din",
-        "OOT Shadow Temple Boat"
+        "OOT Shadow Temple Boat",
+        "option{ShadowMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4945,7 +5108,8 @@
         "OOT_can_hookshot",
         "OOT_has_explosives",
         "OOT_has_lens",
-        "OOT Shadow Temple Open"
+        "OOT Shadow Temple Open",
+        "option{ShadowMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4956,7 +5120,8 @@
     {
       "Id": "OOT Shadow Temple Spinning Blades Visible",
       "RequiredItems": [
-        "OOT Shadow Temple Open"
+        "OOT Shadow Temple Open",
+        "option{ShadowMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4968,7 +5133,8 @@
       "Id": "OOT Shadow Temple Spinning Blades Invisible",
       "RequiredItems": [
         "OOT_has_lens",
-        "OOT Shadow Temple Open"
+        "OOT Shadow Temple Open",
+        "option{ShadowMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4979,7 +5145,8 @@
     {
       "Id": "OOT Shadow Temple Invisible Floormaster",
       "RequiredItems": [
-        "OOT Shadow Temple Boat"
+        "OOT Shadow Temple Boat",
+        "option{ShadowMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -4991,7 +5158,8 @@
       "Id": "OOT Shadow Temple Wind Room Hint",
       "RequiredItems": [
         "OOT_has_lens",
-        "OOT Shadow Temple Wind"
+        "OOT Shadow Temple Wind",
+        "option{ShadowMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5002,7 +5170,8 @@
     {
       "Id": "OOT Shadow Temple After Wind",
       "RequiredItems": [
-        "OOT Shadow Temple Wind"
+        "OOT Shadow Temple Wind",
+        "option{ShadowMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5015,7 +5184,8 @@
       "RequiredItems": [
         "OOT_has_explosives",
         "OOT_has_lens",
-        "OOT Shadow Temple Wind"
+        "OOT Shadow Temple Wind",
+        "option{ShadowMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5026,7 +5196,8 @@
     {
       "Id": "OOT Shadow Temple GS Invisible Scythe",
       "RequiredItems": [
-        "OOT Shadow Temple Open"
+        "OOT Shadow Temple Open",
+        "option{ShadowMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5040,7 +5211,8 @@
         "OOT_SMALL_KEY_SHADOW, 2",
         "OOT_can_hookshot",
         "OOT_has_lens",
-        "OOT Shadow Temple Open"
+        "OOT Shadow Temple Open",
+        "option{ShadowMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5052,7 +5224,8 @@
       "Id": "OOT Shadow Temple GS Triple Skull Pot",
       "RequiredItems": [
         "OOT_can_hookshot",
-        "OOT Shadow Temple Boat"
+        "OOT Shadow Temple Boat",
+        "option{ShadowMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5065,7 +5238,8 @@
       "RequiredItems": [
         "OOT_SMALL_KEY_SHADOW, 4",
         "OOT_can_longshot",
-        "OOT Shadow Temple Wind"
+        "OOT Shadow Temple Wind",
+        "option{ShadowMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5077,7 +5251,8 @@
       "Id": "OOT Shadow Temple GS Falling Spikes",
       "RequiredItems": [
         "OOT_can_hookshot",
-        "OOT Shadow Temple Open"
+        "OOT Shadow Temple Open",
+        "option{ShadowMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5184,7 +5359,8 @@
       "Id": "OOT Spirit Temple Child First Chest",
       "RequiredItems": [
         "OOT_has_ranged_weapon_child",
-        "OOT Spirit Temple Child Back"
+        "OOT Spirit Temple Child Back",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5196,7 +5372,8 @@
       "Id": "OOT Spirit Temple Child Second Chest",
       "RequiredItems": [
         "OOT_has_ranged_weapon_child",
-        "OOT Spirit Temple Child Back"
+        "OOT Spirit Temple Child Back",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -5214,7 +5391,8 @@
     {
       "Id": "OOT Spirit Temple Child Climb 1",
       "RequiredItems": [
-        "OOT Spirit Temple Child Climb"
+        "OOT Spirit Temple Child Climb",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -5237,7 +5415,8 @@
     {
       "Id": "OOT Spirit Temple Child Climb 2",
       "RequiredItems": [
-        "OOT Spirit Temple Child Climb"
+        "OOT Spirit Temple Child Climb",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -5260,7 +5439,8 @@
     {
       "Id": "OOT Spirit Temple Statue Base",
       "RequiredItems": [
-        "OOT Spirit Temple Statue"
+        "OOT Spirit Temple Statue",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -5287,7 +5467,8 @@
         "OOT_EVENT_SPIRIT_ADULT_DOOR",
         "OOT_OCARINA",
         "OOT_SONG_ZELDA",
-        "OOT Spirit Temple Statue Adult"
+        "OOT Spirit Temple Statue Adult",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5301,7 +5482,8 @@
         "OOT_EVENT_SPIRIT_ADULT_DOOR",
         "OOT_OCARINA",
         "OOT_SONG_ZELDA",
-        "OOT Spirit Temple Statue Adult"
+        "OOT Spirit Temple Statue Adult",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -5319,7 +5501,8 @@
     {
       "Id": "OOT Spirit Temple Sun Block Room Torches",
       "RequiredItems": [
-        "OOT Spirit Temple Child Upper"
+        "OOT Spirit Temple Child Upper",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -5343,7 +5526,8 @@
     {
       "Id": "OOT Spirit Temple Adult Silver Rupees",
       "RequiredItems": [
-        "OOT Spirit Temple Adult Entrance"
+        "OOT Spirit Temple Adult Entrance",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -5364,7 +5548,8 @@
         "OOT_OCARINA",
         "OOT_SONG_ZELDA",
         "OOT_can_hookshot",
-        "OOT Spirit Temple Adult Entrance"
+        "OOT Spirit Temple Adult Entrance",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5376,7 +5561,8 @@
       "Id": "OOT Spirit Temple Adult Suns on Wall 1",
       "RequiredItems": [
         "OOT_EVENT_SPIRIT_ADULT_DOOR",
-        "OOT Spirit Temple Adult Climb"
+        "OOT Spirit Temple Adult Climb",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5388,7 +5574,8 @@
       "Id": "OOT Spirit Temple Adult Suns on Wall 2",
       "RequiredItems": [
         "OOT_EVENT_SPIRIT_ADULT_DOOR",
-        "OOT Spirit Temple Adult Climb"
+        "OOT Spirit Temple Adult Climb",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5400,7 +5587,8 @@
       "Id": "OOT Spirit Temple Adult Invisible 1",
       "RequiredItems": [
         "OOT_has_lens",
-        "OOT Spirit Temple Adult Hand"
+        "OOT Spirit Temple Adult Hand",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5412,7 +5600,8 @@
       "Id": "OOT Spirit Temple Adult Invisible 2",
       "RequiredItems": [
         "OOT_has_lens",
-        "OOT Spirit Temple Adult Hand"
+        "OOT Spirit Temple Adult Hand",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5424,7 +5613,8 @@
       "Id": "OOT Spirit Temple Adult Late Sun on Wall",
       "RequiredItems": [
         "OOT_has_mirror_shield",
-        "OOT Spirit Temple Adult Upper 2"
+        "OOT Spirit Temple Adult Upper 2",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5439,7 +5629,8 @@
         "OOT_SONG_ZELDA",
         "OOT_can_hookshot",
         "OOT_can_use_bow",
-        "OOT Spirit Temple Adult Climb 2"
+        "OOT Spirit Temple Adult Climb 2",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5451,7 +5642,8 @@
       "Id": "OOT Spirit Temple Adult Topmost Sun on Wall",
       "RequiredItems": [
         "OOT_has_mirror_shield",
-        "OOT Spirit Temple Adult Climb 2"
+        "OOT Spirit Temple Adult Climb 2",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5463,7 +5655,8 @@
       "Id": "OOT Spirit Temple GS Child Climb",
       "RequiredItems": [
         "OOT_can_damage_skull",
-        "OOT Spirit Temple Child Climb"
+        "OOT Spirit Temple Child Climb",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5475,7 +5668,8 @@
       "Id": "OOT Spirit Temple GS Child Fence",
       "RequiredItems": [
         "OOT_has_ranged_weapon_child",
-        "OOT Spirit Temple Child Back"
+        "OOT Spirit Temple Child Back",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5486,7 +5680,8 @@
     {
       "Id": "OOT Spirit Temple GS Iron Knuckle",
       "RequiredItems": [
-        "OOT Spirit Temple Child Upper"
+        "OOT Spirit Temple Child Upper",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -5516,7 +5711,8 @@
       "RequiredItems": [
         "OOT_OCARINA",
         "OOT_SONG_TIME",
-        "OOT Spirit Temple Adult Entrance"
+        "OOT Spirit Temple Adult Entrance",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -5535,7 +5731,8 @@
       "Id": "OOT Spirit Temple GS Statue",
       "RequiredItems": [
         "OOT_EVENT_SPIRIT_ADULT_DOOR",
-        "OOT Spirit Temple Statue"
+        "OOT Spirit Temple Statue",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -5552,7 +5749,9 @@
     },
     {
       "Id": "OOT Spirit Temple Silver Gauntlets",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "option{SpiritMQ, false}"
+      ],
       "ConditionalItems": [
         [
           "OOT_SMALL_KEY_SPIRIT, 3",
@@ -5572,7 +5771,8 @@
     {
       "Id": "OOT Spirit Temple Mirror Shield",
       "RequiredItems": [
-        "OOT Spirit Temple Adult Hand"
+        "OOT Spirit Temple Adult Hand",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5605,7 +5805,8 @@
     {
       "Id": "OOT Gerudo Training Grounds Entrance 1",
       "RequiredItems": [
-        "OOT Gerudo Training Grounds"
+        "OOT Gerudo Training Grounds",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -5623,7 +5824,8 @@
     {
       "Id": "OOT Gerudo Training Grounds Entrance 2",
       "RequiredItems": [
-        "OOT Gerudo Training Grounds"
+        "OOT Gerudo Training Grounds",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -5642,7 +5844,8 @@
       "Id": "OOT Gerudo Training Grounds Stalfos",
       "RequiredItems": [
         "OOT_has_weapon",
-        "OOT Gerudo Training Grounds"
+        "OOT Gerudo Training Grounds",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5653,7 +5856,8 @@
     {
       "Id": "OOT Gerudo Training Grounds Near Block",
       "RequiredItems": [
-        "OOT Gerudo Training Grounds Left Side"
+        "OOT Gerudo Training Grounds Left Side",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5665,7 +5869,8 @@
       "Id": "OOT Gerudo Training Grounds Behind Block Invisible",
       "RequiredItems": [
         "OOT_has_lens",
-        "OOT Gerudo Training Grounds After Block"
+        "OOT Gerudo Training Grounds After Block",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5676,7 +5881,8 @@
     {
       "Id": "OOT Gerudo Training Grounds Behind Block Visible 1",
       "RequiredItems": [
-        "OOT Gerudo Training Grounds After Block"
+        "OOT Gerudo Training Grounds After Block",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5687,7 +5893,8 @@
     {
       "Id": "OOT Gerudo Training Grounds Behind Block Visible 2",
       "RequiredItems": [
-        "OOT Gerudo Training Grounds After Block"
+        "OOT Gerudo Training Grounds After Block",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5698,7 +5905,8 @@
     {
       "Id": "OOT Gerudo Training Grounds Behind Block Visible 3",
       "RequiredItems": [
-        "OOT Gerudo Training Grounds After Block"
+        "OOT Gerudo Training Grounds After Block",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5710,7 +5918,8 @@
       "Id": "OOT Gerudo Training Grounds Eye Statue",
       "RequiredItems": [
         "OOT_can_use_bow",
-        "OOT Gerudo Training Grounds Statue"
+        "OOT Gerudo Training Grounds Statue",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5722,7 +5931,8 @@
       "Id": "OOT Gerudo Training Grounds Hammer Room Switch",
       "RequiredItems": [
         "OOT_can_hammer",
-        "OOT Gerudo Training Grounds Hammer"
+        "OOT Gerudo Training Grounds Hammer",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5733,7 +5943,8 @@
     {
       "Id": "OOT Gerudo Training Grounds Hammer Room",
       "RequiredItems": [
-        "OOT Gerudo Training Grounds Hammer"
+        "OOT Gerudo Training Grounds Hammer",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5744,7 +5955,8 @@
     {
       "Id": "OOT Gerudo Training Grounds Lizalfos",
       "RequiredItems": [
-        "OOT Gerudo Training Grounds Right Side"
+        "OOT Gerudo Training Grounds Right Side",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5759,7 +5971,8 @@
         "OOT_SONG_TIME",
         "OOT_has_tunic_zora",
         "OOT_has_iron_boots",
-        "OOT Gerudo Training Grounds Water"
+        "OOT Gerudo Training Grounds Water",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5770,7 +5983,8 @@
     {
       "Id": "OOT Gerudo Training Freestanding Key",
       "RequiredItems": [
-        "OOT Gerudo Training Grounds Maze Side"
+        "OOT Gerudo Training Grounds Maze Side",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5782,7 +5996,8 @@
       "Id": "OOT Gerudo Training Maze Upper Cage",
       "RequiredItems": [
         "OOT_can_use_bow",
-        "OOT Gerudo Training Grounds Upper"
+        "OOT Gerudo Training Grounds Upper",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5795,7 +6010,8 @@
       "RequiredItems": [
         "OOT_SMALL_KEY_GTG, 3",
         "OOT_has_lens",
-        "OOT Gerudo Training Grounds Maze"
+        "OOT Gerudo Training Grounds Maze",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5806,7 +6022,8 @@
     {
       "Id": "OOT Gerudo Training Maze Side Chest 1",
       "RequiredItems": [
-        "OOT Gerudo Training Grounds Maze Side"
+        "OOT Gerudo Training Grounds Maze Side",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5817,7 +6034,8 @@
     {
       "Id": "OOT Gerudo Training Maze Side Chest 2",
       "RequiredItems": [
-        "OOT Gerudo Training Grounds Maze Side"
+        "OOT Gerudo Training Grounds Maze Side",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5829,7 +6047,8 @@
       "Id": "OOT Gerudo Training Maze Chest 1",
       "RequiredItems": [
         "OOT_SMALL_KEY_GTG, 4",
-        "OOT Gerudo Training Grounds Maze"
+        "OOT Gerudo Training Grounds Maze",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5841,7 +6060,8 @@
       "Id": "OOT Gerudo Training Maze Chest 2",
       "RequiredItems": [
         "OOT_SMALL_KEY_GTG, 6",
-        "OOT Gerudo Training Grounds Maze"
+        "OOT Gerudo Training Grounds Maze",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5853,7 +6073,8 @@
       "Id": "OOT Gerudo Training Maze Chest 3",
       "RequiredItems": [
         "OOT_SMALL_KEY_GTG, 7",
-        "OOT Gerudo Training Grounds Maze"
+        "OOT Gerudo Training Grounds Maze",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5865,7 +6086,8 @@
       "Id": "OOT Gerudo Training Maze Chest 4",
       "RequiredItems": [
         "OOT_SMALL_KEY_GTG, 9",
-        "OOT Gerudo Training Grounds Maze"
+        "OOT Gerudo Training Grounds Maze",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5876,7 +6098,8 @@
     {
       "Id": "OOT Ganon Castle Water Chest 1",
       "RequiredItems": [
-        "OOT Ganon Castle Water"
+        "OOT Ganon Castle Water",
+        "option{GanonMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5887,7 +6110,8 @@
     {
       "Id": "OOT Ganon Castle Water Chest 2",
       "RequiredItems": [
-        "OOT Ganon Castle Water"
+        "OOT Ganon Castle Water",
+        "option{GanonMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5898,7 +6122,8 @@
     {
       "Id": "OOT Ganon Castle Forest Chest",
       "RequiredItems": [
-        "OOT Ganon Castle Forest"
+        "OOT Ganon Castle Forest",
+        "option{GanonMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5910,7 +6135,8 @@
       "Id": "OOT Ganon Castle Light Chest Center",
       "RequiredItems": [
         "OOT_has_lens",
-        "OOT Ganon Castle Light"
+        "OOT Ganon Castle Light",
+        "option{GanonMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5921,7 +6147,8 @@
     {
       "Id": "OOT Ganon Castle Light Chest Around 1",
       "RequiredItems": [
-        "OOT Ganon Castle Light"
+        "OOT Ganon Castle Light",
+        "option{GanonMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5932,7 +6159,8 @@
     {
       "Id": "OOT Ganon Castle Light Chest Around 2",
       "RequiredItems": [
-        "OOT Ganon Castle Light"
+        "OOT Ganon Castle Light",
+        "option{GanonMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5943,7 +6171,8 @@
     {
       "Id": "OOT Ganon Castle Light Chest Around 3",
       "RequiredItems": [
-        "OOT Ganon Castle Light"
+        "OOT Ganon Castle Light",
+        "option{GanonMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5954,7 +6183,8 @@
     {
       "Id": "OOT Ganon Castle Light Chest Around 4",
       "RequiredItems": [
-        "OOT Ganon Castle Light"
+        "OOT Ganon Castle Light",
+        "option{GanonMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5965,7 +6195,8 @@
     {
       "Id": "OOT Ganon Castle Light Chest Around 5",
       "RequiredItems": [
-        "OOT Ganon Castle Light"
+        "OOT Ganon Castle Light",
+        "option{GanonMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5976,7 +6207,8 @@
     {
       "Id": "OOT Ganon Castle Light Chest Around 6",
       "RequiredItems": [
-        "OOT Ganon Castle Light"
+        "OOT Ganon Castle Light",
+        "option{GanonMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5990,7 +6222,8 @@
         "OOT_SMALL_KEY_GANON",
         "OOT_OCARINA",
         "OOT_SONG_ZELDA",
-        "OOT Ganon Castle Light"
+        "OOT Ganon Castle Light",
+        "option{GanonMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -6001,7 +6234,8 @@
     {
       "Id": "OOT Ganon Castle Shadow Chest 1",
       "RequiredItems": [
-        "OOT Ganon Castle Shadow"
+        "OOT Ganon Castle Shadow",
+        "option{GanonMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -6026,7 +6260,8 @@
     {
       "Id": "OOT Ganon Castle Shadow Chest 2",
       "RequiredItems": [
-        "OOT Ganon Castle Shadow"
+        "OOT Ganon Castle Shadow",
+        "option{GanonMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -6055,7 +6290,8 @@
       "Id": "OOT Ganon Castle Spirit Chest 1",
       "RequiredItems": [
         "OOT_can_hookshot",
-        "OOT Ganon Castle Spirit"
+        "OOT Ganon Castle Spirit",
+        "option{GanonMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -6069,7 +6305,8 @@
         "OOT_can_hookshot",
         "OOT_has_explosives",
         "OOT_has_lens",
-        "OOT Ganon Castle Spirit"
+        "OOT Ganon Castle Spirit",
+        "option{GanonMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -6082,6 +6319,586 @@
       "RequiredItems": [
         "OOT_has_weapon",
         "OOT Ganon Castle Tower"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Map Chest",
+      "RequiredItems": [
+        "OOT Deku Tree Lobby",
+        "option{DTMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Compass Chest",
+      "RequiredItems": [
+        "OOT Deku Tree Compass Room",
+        "option{DTMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Slingshot Chest",
+      "RequiredItems": [
+        "OOT Deku Tree Lobby",
+        "option{DTMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_has_ranged_weapon_child"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Slingshot Room Far Chest",
+      "RequiredItems": [
+        "OOT Deku Tree Lobby",
+        "option{DTMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_has_fire"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Basement Chest",
+      "RequiredItems": [
+        "OOT Deku Tree Lobby",
+        "option{DTMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_has_fire"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Before Water Platform Chest",
+      "RequiredItems": [
+        "option{DTMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "true",
+          "OOT Deku Tree Water Room Back"
+        ],
+        [
+          "OOT Deku Tree Water Room"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree After Water Platform Chest",
+      "RequiredItems": [
+        "OOT_OCARINA",
+        "OOT_SONG_TIME",
+        "OOT Deku Tree Water Room Back",
+        "option{DTMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree GS Back Room",
+      "RequiredItems": [
+        "OOT_can_collect_distance",
+        "OOT Deku Tree Backrooms",
+        "option{DTMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_has_fire"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree GS Lobby Crate",
+      "RequiredItems": [
+        "OOT_can_damage_skull",
+        "OOT Deku Tree Lobby",
+        "option{DTMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree GS Song of Time Blocks",
+      "RequiredItems": [
+        "OOT Deku Tree Backrooms",
+        "option{DTMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_OCARINA",
+          "OOT_SONG_TIME",
+          "OOT_can_collect_distance"
+        ],
+        [
+          "OOT_can_longshot"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree GS Compass Room",
+      "RequiredItems": [
+        "OOT_has_explosives",
+        "OOT_can_collect_distance",
+        "OOT Deku Tree Compass Room",
+        "option{DTMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Dodongo Cavern Map Chest",
+      "RequiredItems": [
+        "OOT Dodongo Cavern Main",
+        "option{DCMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_has_bombflowers"
+        ],
+        [
+          "OOT_can_hammer"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Dodongo Cavern Compass Chest",
+      "RequiredItems": [
+        "OOT Dodongo Cavern Upper Staircase",
+        "option{DCMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Dodongo Cavern Larvae Room Chest",
+      "RequiredItems": [
+        "OOT Dodongo Cavern Upper Staircase",
+        "option{DCMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_has_fire"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Dodongo Cavern Upper Ledge Chest",
+      "RequiredItems": [
+        "OOT Dodongo Cavern Upper Ledges",
+        "option{DCMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Dodongo Cavern Bomb Bag Chest",
+      "RequiredItems": [
+        "OOT Dodongo Cavern Bomb Bag Ledge",
+        "option{DCMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Dodongo Cavern Chest Under Grave",
+      "RequiredItems": [
+        "OOT Dodongo Cavern Skull",
+        "option{DCMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Dodongo Cavern GS Time Blocks",
+      "RequiredItems": [
+        "OOT_OCARINA",
+        "OOT_SONG_TIME",
+        "OOT Dodongo Cavern Main",
+        "option{DCMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Dodongo Cavern GS Larve Room",
+      "RequiredItems": [
+        "OOT Dodongo Cavern Upper Staircase",
+        "option{DCMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_has_fire"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Dodongo Cavern GS Upper Lizalfos",
+      "RequiredItems": [
+        "OOT_has_explosives_or_hammer",
+        "OOT Dodongo Cavern Upper Lizalfos",
+        "option{DCMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Dodongo Cavern GS Poe Room Side",
+      "RequiredItems": [
+        "OOT_can_collect_distance",
+        "OOT Dodongo Cavern Poe Room",
+        "option{DCMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_has_bombflowers"
+        ],
+        [
+          "OOT_can_use_din"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Dodongo Cavern GS Near Boss",
+      "RequiredItems": [
+        "OOT Dodongo Cavern Skull",
+        "option{DCMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Jabu-Jabu Map Chest",
+      "RequiredItems": [
+        "OOT_has_explosives_or_hammer",
+        "OOT Jabu-Jabu",
+        "option{JJMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Jabu-Jabu Entry Chest",
+      "RequiredItems": [
+        "OOT_can_use_slingshot",
+        "OOT Jabu-Jabu",
+        "option{JJMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Jabu-Jabu Compass Chest",
+      "RequiredItems": [
+        "OOT_can_use_slingshot",
+        "OOT Jabu-Jabu Main",
+        "option{JJMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Jabu-Jabu Second Room B1 Chest",
+      "RequiredItems": [
+        "OOT Jabu-Jabu Main",
+        "option{JJMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Jabu-Jabu Second Room 1F Chest",
+      "RequiredItems": [
+        "OOT Jabu-Jabu Main",
+        "option{JJMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_has_hover_boots"
+        ],
+        [
+          "OOT_can_hookshot"
+        ],
+        [
+          "OOT_EVENT_JABU_BIG_OCTO"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Jabu-Jabu Third Room West Chest",
+      "RequiredItems": [
+        "OOT_can_use_slingshot",
+        "OOT Jabu-Jabu Main",
+        "option{JJMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Jabu-Jabu Third Room East Chest",
+      "RequiredItems": [
+        "OOT_can_use_slingshot",
+        "OOT Jabu-Jabu Main",
+        "option{JJMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Jabu-Jabu SoT Room Lower Chest",
+      "RequiredItems": [
+        "OOT Jabu-Jabu Main",
+        "option{JJMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Jabu-Jabu Boomerang Chest",
+      "RequiredItems": [
+        "OOT Jabu-Jabu Main",
+        "option{JJMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Jabu-Jabu Back Chest",
+      "RequiredItems": [
+        "OOT Jabu-Jabu Back",
+        "option{JJMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Jabu-Jabu Pre-Boss Chest",
+      "RequiredItems": [
+        "OOT_can_use_slingshot",
+        "OOT Jabu-Jabu Pre-Boss",
+        "option{JJMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Jabu-Jabu GS SoT Block",
+      "RequiredItems": [
+        "OOT_OCARINA",
+        "OOT_SONG_TIME",
+        "OOT Jabu-Jabu Main",
+        "option{JJMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Jabu-Jabu GS Back",
+      "RequiredItems": [
+        "OOT_EVENT_JABU_TENTACLE_GREEN",
+        "OOT Jabu-Jabu Back",
+        "option{JJMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Jabu-Jabu GS Basement Side Room",
+      "RequiredItems": [
+        "OOT Jabu-Jabu Basement Side Room",
+        "option{JJMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_has_lens"
+        ],
+        [
+          "OOT_has_hover_boots",
+          "OOT_can_hookshot"
+        ],
+        [
+          "OOT_has_fire_arrows",
+          "OOT_can_longshot"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Jabu-Jabu GS Pre-Boss",
+      "RequiredItems": [
+        "OOT_can_boomerang",
+        "OOT Jabu-Jabu Pre-Boss",
+        "option{JJMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Jabu-Jabu Cow",
+      "RequiredItems": [
+        "OOT_OCARINA",
+        "OOT_SONG_EPONA",
+        "OOT_EVENT_JABU_BIG_OCTO",
+        "OOT_is_child",
+        "OOT Jabu-Jabu Main",
+        "option{JJMQ, true}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11166,11 +11983,138 @@
       "TrickCategory": "Majoras Mask"
     },
     {
+      "Id": "OOT Dodongo Cavern Boss => OOT Dodongo Cavern After Boss",
+      "RequiredItems": [
+        "OOT_has_explosives",
+        "OOT Dodongo Cavern Boss"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Jabu-Jabu Boss => OOT Jabu-Jabu After Boss",
+      "RequiredItems": [
+        "OOT_can_boomerang",
+        "OOT Jabu-Jabu Boss"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_has_weapon"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Forest Temple Boss => OOT Forest Temple After Boss",
+      "RequiredItems": [
+        "OOT_has_weapon",
+        "OOT Forest Temple Boss"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_has_ranged_weapon_adult"
+        ],
+        [
+          "OOT_can_use_slingshot"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fire Temple Boss => OOT Fire Temple After Boss",
+      "RequiredItems": [
+        "OOT_can_hammer",
+        "OOT_has_tunic_goron_strict",
+        "OOT Fire Temple Boss"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Water Temple Boss => OOT Water Temple After Boss",
+      "RequiredItems": [
+        "OOT_can_hookshot",
+        "OOT_has_weapon",
+        "OOT Water Temple Boss"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_WATER_TEMPLE_CLEARED",
+      "RequiredItems": [
+        "OOT Water Temple After Boss"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Spirit Temple Boss => OOT Spirit Temple After Boss",
+      "RequiredItems": [
+        "OOT_has_mirror_shield",
+        "OOT Spirit Temple Boss"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Shadow Temple Boss => OOT Shadow Temple After Boss",
+      "RequiredItems": [
+        "OOT_has_weapon",
+        "OOT_has_lens",
+        "OOT Shadow Temple Boss"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_can_use_slingshot"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Bottom of the Well => OOT Kakariko",
       "RequiredItems": [
         "OOT Bottom of the Well"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "true",
+          "option{BotWMQ, true}"
+        ],
+        [
+          "option{BotWMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -11180,7 +12124,8 @@
       "Id": "OOT Bottom of the Well => OOT Bottom of the Well Main",
       "RequiredItems": [
         "OOT_is_child",
-        "OOT Bottom of the Well"
+        "OOT Bottom of the Well",
+        "option{BotWMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -11204,7 +12149,8 @@
     {
       "Id": "OOT Bottom of the Well Main => OOT Bottom of the Well",
       "RequiredItems": [
-        "OOT Bottom of the Well Main"
+        "OOT Bottom of the Well Main",
+        "option{BotWMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11217,58 +12163,78 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "OOT Bottom of the Well Main"
+          "OOT_is_child",
+          "OOT_has_weapon",
+          "OOT Kokiri Forest"
+        ],
+        [
+          "OOT_can_hookshot",
+          "OOT Forest Temple Garden East",
+          "option{ForestMQ, false}"
+        ],
+        [
+          "OOT_can_hammer",
+          "OOT Forest Temple Garden East",
+          "option{ForestMQ, false}"
+        ],
+        [
+          "OOT_can_boomerang",
+          "OOT Forest Temple Garden East",
+          "option{ForestMQ, false}"
+        ],
+        [
+          "OOT_has_weapon",
+          "OOT Forest Temple Garden East",
+          "option{ForestMQ, false}",
+          "OOT_has_nuts"
+        ],
+        [
+          "OOT_has_weapon",
+          "OOT Deku Tree Lobby",
+          "option{DTMQ, true}"
+        ],
+        [
+          "OOT_can_boomerang",
+          "OOT Deku Tree Lobby",
+          "option{DTMQ, true}"
+        ],
+        [
+          "OOT_can_hookshot",
+          "OOT Forest Temple Garden West",
+          "option{ForestMQ, false}"
+        ],
+        [
+          "OOT_can_hammer",
+          "OOT Forest Temple Garden West",
+          "option{ForestMQ, false}"
+        ],
+        [
+          "OOT_can_boomerang",
+          "OOT Forest Temple Garden West",
+          "option{ForestMQ, false}"
         ],
         [
           "OOT_is_child",
           "OOT Zora Domain"
         ],
         [
-          "OOT_can_boomerang",
-          "OOT Kokiri Forest"
-        ],
-        [
-          "OOT_is_child",
-          "OOT_has_weapon",
-          "OOT Kokiri Forest"
-        ],
-        [
-          "OOT_can_hookshot",
-          "OOT Forest Temple Garden East"
-        ],
-        [
-          "OOT_can_hammer",
-          "OOT Forest Temple Garden East"
-        ],
-        [
-          "OOT_can_boomerang",
-          "OOT Forest Temple Garden East"
-        ],
-        [
           "OOT_has_nuts",
           "OOT_has_weapon",
-          "OOT Forest Temple Garden East"
+          "OOT Forest Temple Garden West",
+          "option{ForestMQ, false}"
         ],
         [
-          "OOT_can_hookshot",
-          "OOT Forest Temple Garden West"
-        ],
-        [
-          "OOT_can_hammer",
-          "OOT Forest Temple Garden West"
-        ],
-        [
-          "OOT_can_boomerang",
-          "OOT Forest Temple Garden West"
-        ],
-        [
-          "OOT_has_nuts",
-          "OOT_has_weapon",
-          "OOT Forest Temple Garden West"
-        ],
-        [
+          "OOT_can_kill_baba_sticks",
           "OOT Deku Tree Lobby",
-          "OOT_can_kill_baba_sticks"
+          "option{DTMQ, false}"
+        ],
+        [
+          "OOT Bottom of the Well Main",
+          "option{BotWMQ, false}"
+        ],
+        [
+          "OOT_can_boomerang",
+          "OOT Kokiri Forest"
         ]
       ],
       "TimeNeeded": "None",
@@ -11281,7 +12247,15 @@
       "RequiredItems": [
         "OOT Deku Tree"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "true",
+          "option{DTMQ, true}"
+        ],
+        [
+          "option{DTMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -11292,7 +12266,15 @@
       "RequiredItems": [
         "OOT Deku Tree"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "true",
+          "option{DTMQ, true}"
+        ],
+        [
+          "option{DTMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -11302,7 +12284,8 @@
       "Id": "OOT Deku Tree Lobby => OOT Deku Tree Slingshot Room",
       "RequiredItems": [
         "OOT_has_shield_for_scrubs",
-        "OOT Deku Tree Lobby"
+        "OOT Deku Tree Lobby",
+        "option{DTMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11313,7 +12296,8 @@
     {
       "Id": "OOT Deku Tree Lobby => OOT Deku Tree Basement",
       "RequiredItems": [
-        "OOT Deku Tree Lobby"
+        "OOT Deku Tree Lobby",
+        "option{DTMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -11342,44 +12326,58 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
+          "OOT_has_explosives",
+          "OOT Forest Temple Garden West",
+          "option{ForestMQ, false}"
+        ],
+        [
+          "OOT_can_use_slingshot",
+          "OOT Forest Temple Garden West",
+          "option{ForestMQ, false}"
+        ],
+        [
+          "OOT_can_kill_baba_nuts",
+          "OOT Deku Tree Lobby",
+          "option{DTMQ, true}"
+        ],
+        [
+          "OOT_can_kill_baba_nuts",
+          "OOT Deku Tree Lobby",
+          "option{DTMQ, false}"
+        ],
+        [
           "true",
           "OOT Zora Domain"
         ],
         [
           "OOT_is_adult",
-          "OOT Forest Temple Garden East"
+          "OOT Forest Temple Garden East",
+          "option{ForestMQ, false}"
         ],
         [
           "OOT_has_weapon",
-          "OOT Forest Temple Garden East"
+          "OOT Forest Temple Garden East",
+          "option{ForestMQ, false}"
         ],
         [
           "OOT_has_explosives",
-          "OOT Forest Temple Garden East"
+          "OOT Forest Temple Garden East",
+          "option{ForestMQ, false}"
         ],
         [
           "OOT_can_use_slingshot",
-          "OOT Forest Temple Garden East"
+          "OOT Forest Temple Garden East",
+          "option{ForestMQ, false}"
         ],
         [
           "OOT_is_adult",
-          "OOT Forest Temple Garden West"
+          "OOT Forest Temple Garden West",
+          "option{ForestMQ, false}"
         ],
         [
           "OOT_has_weapon",
-          "OOT Forest Temple Garden West"
-        ],
-        [
-          "OOT_has_explosives",
-          "OOT Forest Temple Garden West"
-        ],
-        [
-          "OOT_can_use_slingshot",
-          "OOT Forest Temple Garden West"
-        ],
-        [
-          "OOT_can_kill_baba_nuts",
-          "OOT Deku Tree Lobby"
+          "OOT Forest Temple Garden West",
+          "option{ForestMQ, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -11390,7 +12388,8 @@
     {
       "Id": "OOT Deku Tree Slingshot Room => OOT Deku Tree Lobby",
       "RequiredItems": [
-        "OOT Deku Tree Slingshot Room"
+        "OOT Deku Tree Slingshot Room",
+        "option{DTMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11401,7 +12400,8 @@
     {
       "Id": "OOT Deku Tree Basement => OOT Deku Tree Lobby",
       "RequiredItems": [
-        "OOT Deku Tree Basement"
+        "OOT Deku Tree Basement",
+        "option{DTMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11413,7 +12413,8 @@
       "Id": "OOT Deku Tree Basement => OOT Deku Tree Basement Back Room",
       "RequiredItems": [
         "OOT_can_hit_triggers_distance",
-        "OOT Deku Tree Basement"
+        "OOT Deku Tree Basement",
+        "option{DTMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11424,7 +12425,8 @@
     {
       "Id": "OOT Deku Tree Basement => OOT Deku Tree Basement Ledge",
       "RequiredItems": [
-        "OOT Deku Tree Basement"
+        "OOT Deku Tree Basement",
+        "option{DTMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -11443,7 +12445,8 @@
       "Id": "OOT Deku Tree Basement Back Room => OOT Deku Tree Basement Ledge",
       "RequiredItems": [
         "OOT_is_child",
-        "OOT Deku Tree Basement Back Room"
+        "OOT Deku Tree Basement Back Room",
+        "option{DTMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11455,7 +12458,8 @@
       "Id": "OOT Deku Tree Basement Ledge => OOT Deku Tree Basement Back Room",
       "RequiredItems": [
         "OOT_is_child",
-        "OOT Deku Tree Basement Ledge"
+        "OOT Deku Tree Basement Ledge",
+        "option{DTMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11466,10 +12470,22 @@
     {
       "Id": "OOT Deku Tree Basement Ledge => OOT Deku Tree Before Boss",
       "RequiredItems": [
-        "OOT_has_fire_or_sticks",
         "OOT Deku Tree Basement Ledge"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_sticks",
+          "option{DTMQ, true}"
+        ],
+        [
+          "OOT_has_fire",
+          "option{DTMQ, true}"
+        ],
+        [
+          "OOT_has_fire_or_sticks",
+          "option{DTMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -11480,7 +12496,15 @@
       "RequiredItems": [
         "OOT Deku Tree Before Boss"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "true",
+          "option{DTMQ, true}"
+        ],
+        [
+          "option{DTMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -11492,7 +12516,14 @@
         "OOT_has_shield_for_scrubs",
         "OOT Deku Tree Before Boss"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "option{DTMQ, true}"
+        ],
+        [
+          "option{DTMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -11503,7 +12534,15 @@
       "RequiredItems": [
         "OOT Dodongo Cavern"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "true",
+          "option{DCMQ, true}"
+        ],
+        [
+          "option{DCMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -11516,10 +12555,20 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_has_bombflowers"
+          "OOT_has_bombflowers",
+          "option{DCMQ, true}"
         ],
         [
-          "OOT_can_hammer"
+          "OOT_can_hammer",
+          "option{DCMQ, true}"
+        ],
+        [
+          "OOT_has_bombflowers",
+          "option{DCMQ, false}"
+        ],
+        [
+          "OOT_can_hammer",
+          "option{DCMQ, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -11532,7 +12581,15 @@
       "RequiredItems": [
         "OOT Dodongo Cavern Main"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "true",
+          "option{DCMQ, true}"
+        ],
+        [
+          "option{DCMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -11541,7 +12598,8 @@
     {
       "Id": "OOT Dodongo Cavern Main => OOT Dodongo Cavern Right Corridor",
       "RequiredItems": [
-        "OOT Dodongo Cavern Main"
+        "OOT Dodongo Cavern Main",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11553,7 +12611,8 @@
       "Id": "OOT Dodongo Cavern Main => OOT Dodongo Cavern Main Ledge",
       "RequiredItems": [
         "OOT_is_adult",
-        "OOT Dodongo Cavern Main"
+        "OOT Dodongo Cavern Main",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11565,7 +12624,8 @@
       "Id": "OOT Dodongo Cavern Main => OOT Dodongo Cavern Stairs",
       "RequiredItems": [
         "OOT_EVENT_DC_MAIN_SWITCH",
-        "OOT Dodongo Cavern Main"
+        "OOT Dodongo Cavern Main",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11576,10 +12636,18 @@
     {
       "Id": "OOT Dodongo Cavern Main => OOT Dodongo Cavern Skull",
       "RequiredItems": [
-        "OOT_EVENT_DC_BOMB_EYES",
         "OOT Dodongo Cavern Main"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_explosives",
+          "option{DCMQ, true}"
+        ],
+        [
+          "OOT_EVENT_DC_BOMB_EYES",
+          "option{DCMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -11592,10 +12660,20 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_has_bombflowers"
+          "OOT_has_bombflowers",
+          "option{DCMQ, true}"
         ],
         [
-          "OOT_can_hammer"
+          "OOT_can_hammer",
+          "option{DCMQ, true}"
+        ],
+        [
+          "OOT_has_bombflowers",
+          "option{DCMQ, false}"
+        ],
+        [
+          "OOT_can_hammer",
+          "option{DCMQ, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -11606,7 +12684,8 @@
     {
       "Id": "OOT Dodongo Cavern Right Corridor => OOT Dodongo Cavern Main",
       "RequiredItems": [
-        "OOT Dodongo Cavern Right Corridor"
+        "OOT Dodongo Cavern Right Corridor",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11617,7 +12696,8 @@
     {
       "Id": "OOT Dodongo Cavern Right Corridor => OOT Dodongo Cavern Side Room",
       "RequiredItems": [
-        "OOT Dodongo Cavern Right Corridor"
+        "OOT Dodongo Cavern Right Corridor",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11628,7 +12708,8 @@
     {
       "Id": "OOT Dodongo Cavern Right Corridor => OOT Dodongo Cavern Miniboss 1",
       "RequiredItems": [
-        "OOT Dodongo Cavern Right Corridor"
+        "OOT Dodongo Cavern Right Corridor",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11639,7 +12720,8 @@
     {
       "Id": "OOT Dodongo Cavern Side Room => OOT Dodongo Cavern Right Corridor",
       "RequiredItems": [
-        "OOT Dodongo Cavern Side Room"
+        "OOT Dodongo Cavern Side Room",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11650,7 +12732,8 @@
     {
       "Id": "OOT Dodongo Cavern Miniboss 1 => OOT Dodongo Cavern Right Corridor",
       "RequiredItems": [
-        "OOT Dodongo Cavern Miniboss 1"
+        "OOT Dodongo Cavern Miniboss 1",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11661,7 +12744,8 @@
     {
       "Id": "OOT Dodongo Cavern Miniboss 1 => OOT Dodongo Cavern Green Room",
       "RequiredItems": [
-        "OOT Dodongo Cavern Miniboss 1"
+        "OOT Dodongo Cavern Miniboss 1",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11672,7 +12756,8 @@
     {
       "Id": "OOT Dodongo Cavern Green Room => OOT Dodongo Cavern Miniboss 1",
       "RequiredItems": [
-        "OOT Dodongo Cavern Green Room"
+        "OOT Dodongo Cavern Green Room",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11683,7 +12768,8 @@
     {
       "Id": "OOT Dodongo Cavern Green Room => OOT Dodongo Cavern Green Side Room",
       "RequiredItems": [
-        "OOT Dodongo Cavern Green Room"
+        "OOT Dodongo Cavern Green Room",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11694,7 +12780,8 @@
     {
       "Id": "OOT Dodongo Cavern Green Room => OOT Dodongo Cavern Main Ledge",
       "RequiredItems": [
-        "OOT Dodongo Cavern Green Room"
+        "OOT Dodongo Cavern Green Room",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -11712,7 +12799,8 @@
     {
       "Id": "OOT Dodongo Cavern Green Side Room => OOT Dodongo Cavern Green Room",
       "RequiredItems": [
-        "OOT Dodongo Cavern Green Side Room"
+        "OOT Dodongo Cavern Green Side Room",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11723,7 +12811,8 @@
     {
       "Id": "OOT Dodongo Cavern Main Ledge => OOT Dodongo Cavern Main",
       "RequiredItems": [
-        "OOT Dodongo Cavern Main Ledge"
+        "OOT Dodongo Cavern Main Ledge",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11734,7 +12823,8 @@
     {
       "Id": "OOT Dodongo Cavern Main Ledge => OOT Dodongo Cavern Green Room",
       "RequiredItems": [
-        "OOT Dodongo Cavern Main Ledge"
+        "OOT Dodongo Cavern Main Ledge",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11745,7 +12835,8 @@
     {
       "Id": "OOT_EVENT_DC_MAIN_SWITCH",
       "RequiredItems": [
-        "OOT Dodongo Cavern Main Ledge"
+        "OOT Dodongo Cavern Main Ledge",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11756,7 +12847,8 @@
     {
       "Id": "OOT Dodongo Cavern Stairs => OOT Dodongo Cavern Main",
       "RequiredItems": [
-        "OOT Dodongo Cavern Stairs"
+        "OOT Dodongo Cavern Stairs",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11767,7 +12859,8 @@
     {
       "Id": "OOT Dodongo Cavern Stairs => OOT Dodongo Cavern Compass Room",
       "RequiredItems": [
-        "OOT Dodongo Cavern Stairs"
+        "OOT Dodongo Cavern Stairs",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11778,7 +12871,8 @@
     {
       "Id": "OOT Dodongo Cavern Stairs => OOT Dodongo Cavern Stairs Top",
       "RequiredItems": [
-        "OOT Dodongo Cavern Stairs"
+        "OOT Dodongo Cavern Stairs",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -11796,7 +12890,8 @@
     {
       "Id": "OOT Dodongo Cavern Stairs Top => OOT Dodongo Cavern Stairs",
       "RequiredItems": [
-        "OOT Dodongo Cavern Stairs Top"
+        "OOT Dodongo Cavern Stairs Top",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11807,7 +12902,8 @@
     {
       "Id": "OOT Dodongo Cavern Stairs Top => OOT Dodongo Cavern Bomb Bag Room 1",
       "RequiredItems": [
-        "OOT Dodongo Cavern Stairs Top"
+        "OOT Dodongo Cavern Stairs Top",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11818,7 +12914,8 @@
     {
       "Id": "OOT Dodongo Cavern Compass Room => OOT Dodongo Cavern Stairs",
       "RequiredItems": [
-        "OOT Dodongo Cavern Compass Room"
+        "OOT Dodongo Cavern Compass Room",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11829,7 +12926,8 @@
     {
       "Id": "OOT Dodongo Cavern Bomb Bag Room 1 => OOT Dodongo Cavern Stairs Top",
       "RequiredItems": [
-        "OOT Dodongo Cavern Bomb Bag Room 1"
+        "OOT Dodongo Cavern Bomb Bag Room 1",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11840,7 +12938,8 @@
     {
       "Id": "OOT Dodongo Cavern Bomb Bag Room 1 => OOT Dodongo Cavern Bomb Bag Room 2",
       "RequiredItems": [
-        "OOT Dodongo Cavern Bomb Bag Room 1"
+        "OOT Dodongo Cavern Bomb Bag Room 1",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -11863,7 +12962,8 @@
       "Id": "OOT Dodongo Cavern Bomb Bag Room 1 => OOT Dodongo Cavern Miniboss 2",
       "RequiredItems": [
         "OOT_can_hit_triggers_distance",
-        "OOT Dodongo Cavern Bomb Bag Room 1"
+        "OOT Dodongo Cavern Bomb Bag Room 1",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11875,7 +12975,8 @@
       "Id": "OOT Dodongo Cavern Bomb Bag Room 1 => OOT Dodongo Cavern Bomb Bag Side Room",
       "RequiredItems": [
         "OOT_has_explosives_or_hammer",
-        "OOT Dodongo Cavern Bomb Bag Room 1"
+        "OOT Dodongo Cavern Bomb Bag Room 1",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11886,7 +12987,8 @@
     {
       "Id": "OOT Dodongo Cavern Bomb Bag Side Room => OOT Dodongo Cavern Bomb Bag Room 1",
       "RequiredItems": [
-        "OOT Dodongo Cavern Bomb Bag Side Room"
+        "OOT Dodongo Cavern Bomb Bag Side Room",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11897,7 +12999,8 @@
     {
       "Id": "OOT Dodongo Cavern Miniboss 2 => OOT Dodongo Cavern Bomb Bag Room 1",
       "RequiredItems": [
-        "OOT Dodongo Cavern Miniboss 2"
+        "OOT Dodongo Cavern Miniboss 2",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11908,7 +13011,8 @@
     {
       "Id": "OOT Dodongo Cavern Miniboss 2 => OOT Dodongo Cavern Bomb Bag Room 2",
       "RequiredItems": [
-        "OOT Dodongo Cavern Miniboss 2"
+        "OOT Dodongo Cavern Miniboss 2",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11919,7 +13023,8 @@
     {
       "Id": "OOT Dodongo Cavern Bomb Bag Room 2 => OOT Dodongo Cavern Miniboss 2",
       "RequiredItems": [
-        "OOT Dodongo Cavern Bomb Bag Room 2"
+        "OOT Dodongo Cavern Bomb Bag Room 2",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11930,7 +13035,8 @@
     {
       "Id": "OOT Dodongo Cavern Bomb Bag Room 2 => OOT Dodongo Cavern Bomb Bag Room 1",
       "RequiredItems": [
-        "OOT Dodongo Cavern Bomb Bag Room 2"
+        "OOT Dodongo Cavern Bomb Bag Room 2",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11941,7 +13047,8 @@
     {
       "Id": "OOT Dodongo Cavern Bomb Bag Room 2 => OOT Dodongo Cavern Main Bridge",
       "RequiredItems": [
-        "OOT Dodongo Cavern Bomb Bag Room 2"
+        "OOT Dodongo Cavern Bomb Bag Room 2",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11952,7 +13059,8 @@
     {
       "Id": "OOT Dodongo Cavern Main Bridge => OOT Dodongo Cavern Bomb Bag Room 2",
       "RequiredItems": [
-        "OOT Dodongo Cavern Main Bridge"
+        "OOT Dodongo Cavern Main Bridge",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11963,7 +13071,8 @@
     {
       "Id": "OOT_EVENT_DC_SHORTCUT",
       "RequiredItems": [
-        "OOT Dodongo Cavern Main Bridge"
+        "OOT Dodongo Cavern Main Bridge",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11975,7 +13084,8 @@
       "Id": "OOT_EVENT_DC_BOMB_EYES",
       "RequiredItems": [
         "OOT_has_explosives",
-        "OOT Dodongo Cavern Main Bridge"
+        "OOT Dodongo Cavern Main Bridge",
+        "option{DCMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11988,7 +13098,15 @@
       "RequiredItems": [
         "OOT Dodongo Cavern Skull"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "true",
+          "option{DCMQ, true}"
+        ],
+        [
+          "option{DCMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -11999,19 +13117,15 @@
       "RequiredItems": [
         "OOT Dodongo Cavern Skull"
       ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT Dodongo Cavern Boss => OOT Dodongo Cavern After Boss",
-      "RequiredItems": [
-        "OOT_has_explosives",
-        "OOT Dodongo Cavern Boss"
+      "ConditionalItems": [
+        [
+          "true",
+          "option{DCMQ, true}"
+        ],
+        [
+          "option{DCMQ, false}"
+        ]
       ],
-      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -12022,7 +13136,15 @@
       "RequiredItems": [
         "OOT Fire Temple"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "true",
+          "option{FireMQ, true}"
+        ],
+        [
+          "option{FireMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -12031,7 +13153,8 @@
     {
       "Id": "OOT Fire Temple => OOT Fire Temple Lava Room",
       "RequiredItems": [
-        "OOT Fire Temple"
+        "OOT Fire Temple",
+        "option{FireMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -12051,16 +13174,24 @@
     {
       "Id": "OOT Fire Temple => OOT Fire Temple Boss",
       "RequiredItems": [
-        "OOT_BOSS_KEY_FIRE",
-        "OOT_has_tunic_goron",
         "OOT Fire Temple"
       ],
       "ConditionalItems": [
         [
-          "OOT_EVENT_FIRE_TEMPLE_PILLAR_HAMMER"
+          "true",
+          "option{FireMQ, true}"
         ],
         [
-          "OOT_has_hover_boots"
+          "OOT_EVENT_FIRE_TEMPLE_PILLAR_HAMMER",
+          "OOT_BOSS_KEY_FIRE",
+          "OOT_has_tunic_goron",
+          "option{FireMQ, false}"
+        ],
+        [
+          "OOT_has_hover_boots",
+          "OOT_BOSS_KEY_FIRE",
+          "OOT_has_tunic_goron",
+          "option{FireMQ, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -12072,7 +13203,8 @@
       "Id": "OOT Fire Temple => OOT Fire Temple Boss Key Loop",
       "RequiredItems": [
         "OOT_can_hammer",
-        "OOT Fire Temple"
+        "OOT Fire Temple",
+        "option{FireMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -12092,7 +13224,8 @@
     {
       "Id": "OOT Fire Temple Lava Room => OOT Fire Temple Maze",
       "RequiredItems": [
-        "OOT Fire Temple Lava Room"
+        "OOT Fire Temple Lava Room",
+        "option{FireMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -12122,7 +13255,8 @@
     {
       "Id": "OOT Fire Temple Maze => OOT Fire Temple Maze Upper",
       "RequiredItems": [
-        "OOT Fire Temple Maze"
+        "OOT Fire Temple Maze",
+        "option{FireMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -12142,7 +13276,8 @@
     {
       "Id": "OOT Fire Temple Maze Upper => OOT Fire Temple Ring",
       "RequiredItems": [
-        "OOT Fire Temple Maze Upper"
+        "OOT Fire Temple Maze Upper",
+        "option{FireMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -12163,7 +13298,8 @@
       "Id": "OOT Fire Temple Maze Upper => OOT Fire Temple Scarecrow",
       "RequiredItems": [
         "OOT_scarecrow_hookshot",
-        "OOT Fire Temple Maze Upper"
+        "OOT Fire Temple Maze Upper",
+        "option{FireMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12174,7 +13310,8 @@
     {
       "Id": "OOT Fire Temple Ring => OOT Fire Temple Before Miniboss",
       "RequiredItems": [
-        "OOT Fire Temple Ring"
+        "OOT Fire Temple Ring",
+        "option{FireMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -12195,7 +13332,8 @@
       "Id": "OOT Fire Temple Ring => OOT Fire Temple Pillar Ledge",
       "RequiredItems": [
         "OOT_has_hover_boots",
-        "OOT Fire Temple Ring"
+        "OOT Fire Temple Ring",
+        "option{FireMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12207,7 +13345,8 @@
       "Id": "OOT Fire Temple Before Miniboss => OOT Fire Temple After Miniboss",
       "RequiredItems": [
         "OOT_has_explosives_or_hammer",
-        "OOT Fire Temple Before Miniboss"
+        "OOT Fire Temple Before Miniboss",
+        "option{FireMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12220,7 +13359,8 @@
       "RequiredItems": [
         "OOT_OCARINA",
         "OOT_SONG_TIME",
-        "OOT Fire Temple Before Miniboss"
+        "OOT Fire Temple Before Miniboss",
+        "option{FireMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12232,7 +13372,8 @@
       "Id": "OOT Fire Temple Pillar Ledge => OOT Fire Temple Before Miniboss",
       "RequiredItems": [
         "OOT_can_hammer",
-        "OOT Fire Temple Pillar Ledge"
+        "OOT Fire Temple Pillar Ledge",
+        "option{FireMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12243,7 +13384,8 @@
     {
       "Id": "OOT Fire Temple Pillar Ledge => OOT Fire Temple Ring",
       "RequiredItems": [
-        "OOT Fire Temple Pillar Ledge"
+        "OOT Fire Temple Pillar Ledge",
+        "option{FireMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12255,7 +13397,8 @@
       "Id": "OOT_EVENT_FIRE_TEMPLE_PILLAR_HAMMER",
       "RequiredItems": [
         "OOT_can_hammer",
-        "OOT Fire Temple Pillar Ledge"
+        "OOT Fire Temple Pillar Ledge",
+        "option{FireMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12267,20 +13410,8 @@
       "Id": "OOT Fire Temple After Miniboss => OOT Fire Temple Pillar Ledge",
       "RequiredItems": [
         "OOT_can_hammer",
-        "OOT Fire Temple After Miniboss"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT Fire Temple Boss => OOT Fire Temple After Boss",
-      "RequiredItems": [
-        "OOT_can_hammer",
-        "OOT_has_tunic_goron_strict",
-        "OOT Fire Temple Boss"
+        "OOT Fire Temple After Miniboss",
+        "option{FireMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12293,7 +13424,15 @@
       "RequiredItems": [
         "OOT Forest Temple"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "true",
+          "option{ForestMQ, true}"
+        ],
+        [
+          "option{ForestMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -12306,19 +13445,28 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_is_adult"
+          "true",
+          "option{ForestMQ, true}"
         ],
         [
-          "OOT_has_nuts"
+          "OOT_is_adult",
+          "option{ForestMQ, false}"
         ],
         [
-          "OOT_has_weapon"
+          "OOT_has_nuts",
+          "option{ForestMQ, false}"
         ],
         [
-          "OOT_has_explosives"
+          "OOT_has_weapon",
+          "option{ForestMQ, false}"
         ],
         [
-          "OOT_has_ranged_weapon_child"
+          "OOT_has_explosives",
+          "option{ForestMQ, false}"
+        ],
+        [
+          "OOT_has_ranged_weapon_child",
+          "option{ForestMQ, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -12331,7 +13479,15 @@
       "RequiredItems": [
         "OOT Forest Temple Main"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "true",
+          "option{ForestMQ, true}"
+        ],
+        [
+          "option{ForestMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -12340,7 +13496,8 @@
     {
       "Id": "OOT Forest Temple Main => OOT Forest Temple Mini-Boss",
       "RequiredItems": [
-        "OOT Forest Temple Main"
+        "OOT Forest Temple Main",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12353,7 +13510,8 @@
       "RequiredItems": [
         "OOT_OCARINA",
         "OOT_SONG_TIME",
-        "OOT Forest Temple Main"
+        "OOT Forest Temple Main",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12365,7 +13523,8 @@
       "Id": "OOT Forest Temple Main => OOT Forest Temple Garden East",
       "RequiredItems": [
         "OOT_can_hit_triggers_distance",
-        "OOT Forest Temple Main"
+        "OOT Forest Temple Main",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12377,7 +13536,8 @@
       "Id": "OOT Forest Temple Main => OOT Forest Temple Maze",
       "RequiredItems": [
         "OOT_SMALL_KEY_FOREST",
-        "OOT Forest Temple Main"
+        "OOT Forest Temple Main",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12388,10 +13548,18 @@
     {
       "Id": "OOT Forest Temple Main => OOT Forest Temple Antichamber",
       "RequiredItems": [
-        "OOT_EVENT_FOREST_POE_4",
         "OOT Forest Temple Main"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "true",
+          "option{ForestMQ, true}"
+        ],
+        [
+          "OOT_EVENT_FOREST_POE_4",
+          "option{ForestMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -12404,7 +13572,8 @@
         "OOT_EVENT_FOREST_POE_2",
         "OOT_EVENT_FOREST_POE_3",
         "OOT_can_use_bow",
-        "OOT Forest Temple Main"
+        "OOT Forest Temple Main",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12415,7 +13584,8 @@
     {
       "Id": "OOT Forest Temple Garden West => OOT Forest Temple Main",
       "RequiredItems": [
-        "OOT Forest Temple Garden West"
+        "OOT Forest Temple Garden West",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12426,7 +13596,8 @@
     {
       "Id": "OOT Forest Temple Garden West => OOT Forest Temple Map Room",
       "RequiredItems": [
-        "OOT Forest Temple Garden West"
+        "OOT Forest Temple Garden West",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12437,7 +13608,8 @@
     {
       "Id": "OOT Forest Temple Garden West => OOT Forest Temple Well",
       "RequiredItems": [
-        "OOT Forest Temple Garden West"
+        "OOT Forest Temple Garden West",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -12455,7 +13627,8 @@
     {
       "Id": "OOT Forest Temple Garden West Ledge => OOT Forest Temple Garden West",
       "RequiredItems": [
-        "OOT Forest Temple Garden West Ledge"
+        "OOT Forest Temple Garden West Ledge",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12466,7 +13639,8 @@
     {
       "Id": "OOT Forest Temple Garden West Ledge => OOT Forest Temple Floormaster",
       "RequiredItems": [
-        "OOT Forest Temple Garden West Ledge"
+        "OOT Forest Temple Garden West Ledge",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12477,7 +13651,8 @@
     {
       "Id": "OOT Forest Temple Garden West Ledge => OOT Forest Temple Maze",
       "RequiredItems": [
-        "OOT Forest Temple Garden West Ledge"
+        "OOT Forest Temple Garden West Ledge",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12488,7 +13663,8 @@
     {
       "Id": "OOT_EVENT_FOREST_LEDGE_REACHED",
       "RequiredItems": [
-        "OOT Forest Temple Garden West Ledge"
+        "OOT Forest Temple Garden West Ledge",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12499,7 +13675,8 @@
     {
       "Id": "OOT Forest Temple Map Room => OOT Forest Temple Garden West",
       "RequiredItems": [
-        "OOT Forest Temple Map Room"
+        "OOT Forest Temple Map Room",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -12565,7 +13742,8 @@
     {
       "Id": "OOT Forest Temple Map Room => OOT Forest Temple Garden East Ledge",
       "RequiredItems": [
-        "OOT Forest Temple Map Room"
+        "OOT Forest Temple Map Room",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -12631,7 +13809,8 @@
     {
       "Id": "OOT Forest Temple Garden East Ledge => OOT Forest Temple Garden East",
       "RequiredItems": [
-        "OOT Forest Temple Garden East Ledge"
+        "OOT Forest Temple Garden East Ledge",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12642,7 +13821,8 @@
     {
       "Id": "OOT_EVENT_FOREST_WELL",
       "RequiredItems": [
-        "OOT Forest Temple Garden East Ledge"
+        "OOT Forest Temple Garden East Ledge",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12653,7 +13833,8 @@
     {
       "Id": "OOT Forest Temple Garden East => OOT Forest Temple Well",
       "RequiredItems": [
-        "OOT Forest Temple Garden East"
+        "OOT Forest Temple Garden East",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -12671,7 +13852,8 @@
     {
       "Id": "OOT Forest Temple Garden East => OOT Forest Temple Garden East Ledge",
       "RequiredItems": [
-        "OOT Forest Temple Garden East"
+        "OOT Forest Temple Garden East",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -12690,7 +13872,8 @@
     {
       "Id": "OOT Forest Temple Well => OOT Forest Temple Garden West",
       "RequiredItems": [
-        "OOT Forest Temple Well"
+        "OOT Forest Temple Well",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12701,7 +13884,8 @@
     {
       "Id": "OOT Forest Temple Well => OOT Forest Temple Garden East",
       "RequiredItems": [
-        "OOT Forest Temple Well"
+        "OOT Forest Temple Well",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12712,7 +13896,8 @@
     {
       "Id": "OOT Forest Temple Maze => OOT Forest Temple Main",
       "RequiredItems": [
-        "OOT Forest Temple Maze"
+        "OOT Forest Temple Maze",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12724,7 +13909,8 @@
       "Id": "OOT Forest Temple Maze => OOT Forest Temple Garden West Ledge",
       "RequiredItems": [
         "OOT_has_hover_boots",
-        "OOT Forest Temple Maze"
+        "OOT Forest Temple Maze",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12738,7 +13924,8 @@
         "OOT_is_adult",
         "OOT_SMALL_KEY_FOREST, 2",
         "OOT_STRENGTH",
-        "OOT Forest Temple Maze"
+        "OOT Forest Temple Maze",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12753,7 +13940,8 @@
         "OOT_SMALL_KEY_FOREST, 2",
         "OOT_STRENGTH",
         "OOT_can_hit_triggers_distance",
-        "OOT Forest Temple Maze"
+        "OOT Forest Temple Maze",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12765,7 +13953,8 @@
       "Id": "OOT Forest Temple Twisted 1 Normal => OOT Forest Temple Poe 1",
       "RequiredItems": [
         "OOT_SMALL_KEY_FOREST, 3",
-        "OOT Forest Temple Twisted 1 Normal"
+        "OOT Forest Temple Twisted 1 Normal",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12776,7 +13965,8 @@
     {
       "Id": "OOT Forest Temple Twisted 1 Alt => OOT Forest Temple Garden West Ledge",
       "RequiredItems": [
-        "OOT Forest Temple Twisted 1 Alt"
+        "OOT Forest Temple Twisted 1 Alt",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12787,7 +13977,8 @@
     {
       "Id": "OOT Forest Temple Poe 1 => OOT Forest Temple Mini-Boss 2",
       "RequiredItems": [
-        "OOT Forest Temple Poe 1"
+        "OOT Forest Temple Poe 1",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12799,7 +13990,8 @@
       "Id": "OOT_EVENT_FOREST_POE_1",
       "RequiredItems": [
         "OOT_can_use_bow",
-        "OOT Forest Temple Poe 1"
+        "OOT Forest Temple Poe 1",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12811,7 +14003,8 @@
       "Id": "OOT Forest Temple Mini-Boss 2 => OOT Forest Temple Poe 2",
       "RequiredItems": [
         "OOT_has_weapon",
-        "OOT Forest Temple Mini-Boss 2"
+        "OOT Forest Temple Mini-Boss 2",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12823,7 +14016,8 @@
       "Id": "OOT Forest Temple Poe 2 => OOT Forest Temple Twisted 2 Normal",
       "RequiredItems": [
         "OOT_SMALL_KEY_FOREST, 4",
-        "OOT Forest Temple Poe 2"
+        "OOT Forest Temple Poe 2",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12835,7 +14029,8 @@
       "Id": "OOT_EVENT_FOREST_POE_2",
       "RequiredItems": [
         "OOT_can_use_bow",
-        "OOT Forest Temple Poe 2"
+        "OOT Forest Temple Poe 2",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12847,7 +14042,8 @@
       "Id": "OOT Forest Temple Twisted 2 Normal => OOT Forest Temple Rotating Room",
       "RequiredItems": [
         "OOT_SMALL_KEY_FOREST, 5",
-        "OOT Forest Temple Twisted 2 Normal"
+        "OOT Forest Temple Twisted 2 Normal",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12858,7 +14054,8 @@
     {
       "Id": "OOT Forest Temple Rotating Room => OOT Forest Temple Twisted 2 Alt",
       "RequiredItems": [
-        "OOT Forest Temple Rotating Room"
+        "OOT Forest Temple Rotating Room",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -12876,7 +14073,8 @@
     {
       "Id": "OOT Forest Temple Twisted 2 Alt => OOT Forest Temple Checkerboard",
       "RequiredItems": [
-        "OOT Forest Temple Twisted 2 Alt"
+        "OOT Forest Temple Twisted 2 Alt",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12887,7 +14085,8 @@
     {
       "Id": "OOT Forest Temple Checkerboard => OOT Forest Temple Poe 3",
       "RequiredItems": [
-        "OOT Forest Temple Checkerboard"
+        "OOT Forest Temple Checkerboard",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12899,7 +14098,8 @@
       "Id": "OOT_EVENT_FOREST_POE_3",
       "RequiredItems": [
         "OOT_can_use_bow",
-        "OOT Forest Temple Poe 3"
+        "OOT Forest Temple Poe 3",
+        "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12910,27 +14110,16 @@
     {
       "Id": "OOT Forest Temple Antichamber => OOT Forest Temple Boss",
       "RequiredItems": [
-        "OOT_BOSS_KEY_FOREST",
         "OOT Forest Temple Antichamber"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT Forest Temple Boss => OOT Forest Temple After Boss",
-      "RequiredItems": [
-        "OOT_has_weapon",
-        "OOT Forest Temple Boss"
       ],
       "ConditionalItems": [
         [
-          "OOT_has_ranged_weapon_adult"
+          "true",
+          "option{ForestMQ, true}"
         ],
         [
-          "OOT_can_use_slingshot"
+          "OOT_BOSS_KEY_FOREST",
+          "option{ForestMQ, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -12942,7 +14131,8 @@
       "Id": "OOT Ganon Castle Main => OOT Ganon Castle Light",
       "RequiredItems": [
         "OOT_STRENGTH, 3",
-        "OOT Ganon Castle Main"
+        "OOT Ganon Castle Main",
+        "option{GanonMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12953,7 +14143,8 @@
     {
       "Id": "OOT Ganon Castle Main => OOT Ganon Castle Forest",
       "RequiredItems": [
-        "OOT Ganon Castle Main"
+        "OOT Ganon Castle Main",
+        "option{GanonMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12964,7 +14155,8 @@
     {
       "Id": "OOT Ganon Castle Main => OOT Ganon Castle Fire",
       "RequiredItems": [
-        "OOT Ganon Castle Main"
+        "OOT Ganon Castle Main",
+        "option{GanonMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12975,7 +14167,8 @@
     {
       "Id": "OOT Ganon Castle Main => OOT Ganon Castle Water",
       "RequiredItems": [
-        "OOT Ganon Castle Main"
+        "OOT Ganon Castle Main",
+        "option{GanonMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12986,7 +14179,8 @@
     {
       "Id": "OOT Ganon Castle Main => OOT Ganon Castle Spirit",
       "RequiredItems": [
-        "OOT Ganon Castle Main"
+        "OOT Ganon Castle Main",
+        "option{GanonMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12997,7 +14191,8 @@
     {
       "Id": "OOT Ganon Castle Main => OOT Ganon Castle Shadow",
       "RequiredItems": [
-        "OOT Ganon Castle Main"
+        "OOT Ganon Castle Main",
+        "option{GanonMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -13010,7 +14205,15 @@
       "RequiredItems": [
         "OOT Ganon Castle Main"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "true",
+          "option{GanonMQ, true}"
+        ],
+        [
+          "option{GanonMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -13023,7 +14226,8 @@
         "OOT_can_hookshot",
         "OOT_has_lens",
         "OOT_has_light_arrows",
-        "OOT Ganon Castle Light"
+        "OOT Ganon Castle Light",
+        "option{GanonMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -13035,7 +14239,8 @@
       "Id": "OOT_EVENT_GANON_TRIAL_FOREST",
       "RequiredItems": [
         "OOT_has_light_arrows",
-        "OOT Ganon Castle Forest"
+        "OOT Ganon Castle Forest",
+        "option{GanonMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -13058,7 +14263,8 @@
         "OOT_can_longshot",
         "OOT_STRENGTH, 3",
         "OOT_has_light_arrows",
-        "OOT Ganon Castle Fire"
+        "OOT Ganon Castle Fire",
+        "option{GanonMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -13074,10 +14280,12 @@
       "ConditionalItems": [
         [
           "OOT_is_adult",
-          "OOT Ice Cavern"
+          "OOT Ice Cavern",
+          "option{ICMQ, false}"
         ],
         [
-          "OOT Ganon Castle Water"
+          "OOT Ganon Castle Water",
+          "option{GanonMQ, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -13091,7 +14299,8 @@
         "OOT_EVENT_BLUE_FIRE",
         "OOT_can_hammer",
         "OOT_has_light_arrows",
-        "OOT Ganon Castle Water"
+        "OOT Ganon Castle Water",
+        "option{GanonMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -13105,7 +14314,8 @@
         "OOT_can_hookshot",
         "OOT_has_explosives",
         "OOT_has_light_arrows",
-        "OOT Ganon Castle Spirit"
+        "OOT Ganon Castle Spirit",
+        "option{GanonMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -13118,7 +14328,8 @@
       "RequiredItems": [
         "OOT_can_hammer",
         "OOT_has_light_arrows",
-        "OOT Ganon Castle Shadow"
+        "OOT Ganon Castle Shadow",
+        "option{GanonMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -13218,7 +14429,15 @@
       "RequiredItems": [
         "OOT Gerudo Training Grounds"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "true",
+          "option{GTGMQ, true}"
+        ],
+        [
+          "option{GTGMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -13229,7 +14448,8 @@
       "RequiredItems": [
         "OOT_can_hookshot",
         "OOT_has_weapon",
-        "OOT Gerudo Training Grounds"
+        "OOT Gerudo Training Grounds",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -13242,7 +14462,8 @@
       "RequiredItems": [
         "OOT_has_explosives",
         "OOT_has_weapon",
-        "OOT Gerudo Training Grounds"
+        "OOT Gerudo Training Grounds",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -13253,7 +14474,8 @@
     {
       "Id": "OOT Gerudo Training Grounds => OOT Gerudo Training Grounds Maze",
       "RequiredItems": [
-        "OOT Gerudo Training Grounds"
+        "OOT Gerudo Training Grounds",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -13267,7 +14489,8 @@
         "OOT_can_lift_silver",
         "OOT_has_lens",
         "OOT_can_hookshot",
-        "OOT Gerudo Training Grounds Left Side"
+        "OOT Gerudo Training Grounds Left Side",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -13280,7 +14503,8 @@
       "RequiredItems": [
         "OOT_can_hookshot",
         "OOT_has_lens",
-        "OOT Gerudo Training Grounds Left Side"
+        "OOT Gerudo Training Grounds Left Side",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -13291,7 +14515,8 @@
     {
       "Id": "OOT Gerudo Training Grounds Upper => OOT Gerudo Training Grounds Left Side",
       "RequiredItems": [
-        "OOT Gerudo Training Grounds Upper"
+        "OOT Gerudo Training Grounds Upper",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -13302,7 +14527,8 @@
     {
       "Id": "OOT Gerudo Training Grounds Upper => OOT Gerudo Training Grounds Statue",
       "RequiredItems": [
-        "OOT Gerudo Training Grounds Upper"
+        "OOT Gerudo Training Grounds Upper",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -13313,7 +14539,8 @@
     {
       "Id": "OOT Gerudo Training Grounds Right Side => OOT Gerudo Training Grounds Lava",
       "RequiredItems": [
-        "OOT Gerudo Training Grounds Right Side"
+        "OOT Gerudo Training Grounds Right Side",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -13324,7 +14551,8 @@
     {
       "Id": "OOT Gerudo Training Grounds Lava => OOT Gerudo Training Grounds Maze Side",
       "RequiredItems": [
-        "OOT Gerudo Training Grounds Lava"
+        "OOT Gerudo Training Grounds Lava",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -13344,7 +14572,8 @@
       "Id": "OOT Gerudo Training Grounds Lava => OOT Gerudo Training Grounds Hammer",
       "RequiredItems": [
         "OOT_can_hookshot",
-        "OOT Gerudo Training Grounds Lava"
+        "OOT Gerudo Training Grounds Lava",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -13367,7 +14596,8 @@
       "Id": "OOT Gerudo Training Grounds Lava => OOT Gerudo Training Grounds Water",
       "RequiredItems": [
         "OOT_can_hookshot",
-        "OOT Gerudo Training Grounds Lava"
+        "OOT Gerudo Training Grounds Lava",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -13386,7 +14616,8 @@
     {
       "Id": "OOT Gerudo Training Grounds Maze Side => OOT Gerudo Training Grounds Lava",
       "RequiredItems": [
-        "OOT Gerudo Training Grounds Maze Side"
+        "OOT Gerudo Training Grounds Maze Side",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -13397,7 +14628,8 @@
     {
       "Id": "OOT Gerudo Training Grounds Hammer => OOT Gerudo Training Grounds Lava",
       "RequiredItems": [
-        "OOT Gerudo Training Grounds Hammer"
+        "OOT Gerudo Training Grounds Hammer",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -13410,7 +14642,8 @@
       "RequiredItems": [
         "OOT_can_hammer",
         "OOT_can_use_bow",
-        "OOT Gerudo Training Grounds Hammer"
+        "OOT Gerudo Training Grounds Hammer",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -13421,7 +14654,8 @@
     {
       "Id": "OOT Gerudo Training Grounds Statue => OOT Gerudo Training Grounds Hammer",
       "RequiredItems": [
-        "OOT Gerudo Training Grounds Statue"
+        "OOT Gerudo Training Grounds Statue",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -13433,7 +14667,8 @@
       "Id": "OOT Gerudo Training Grounds Maze => OOT Gerudo Training Grounds Maze Side",
       "RequiredItems": [
         "OOT_SMALL_KEY_GTG, 9",
-        "OOT Gerudo Training Grounds Maze"
+        "OOT Gerudo Training Grounds Maze",
+        "option{GTGMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -13446,7 +14681,15 @@
       "RequiredItems": [
         "OOT Ice Cavern"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "true",
+          "option{ICMQ, true}"
+        ],
+        [
+          "option{ICMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -13457,7 +14700,15 @@
       "RequiredItems": [
         "OOT Jabu-Jabu"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "true",
+          "option{JJMQ, true}"
+        ],
+        [
+          "option{JJMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -13470,10 +14721,16 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_has_ranged_weapon"
+          "OOT_EVENT_JABU_MQ_START",
+          "option{JJMQ, true}"
         ],
         [
-          "OOT_has_explosives"
+          "OOT_has_ranged_weapon",
+          "option{JJMQ, false}"
+        ],
+        [
+          "OOT_has_explosives",
+          "option{JJMQ, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -13486,7 +14743,15 @@
       "RequiredItems": [
         "OOT Jabu-Jabu Main"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "true",
+          "option{JJMQ, true}"
+        ],
+        [
+          "option{JJMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -13496,19 +14761,8 @@
       "Id": "OOT Jabu-Jabu Main => OOT Jabu-Jabu Boss",
       "RequiredItems": [
         "OOT_can_boomerang",
-        "OOT Jabu-Jabu Main"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT Jabu-Jabu Boss => OOT Jabu-Jabu After Boss",
-      "RequiredItems": [
-        "OOT_can_boomerang",
-        "OOT Jabu-Jabu Boss"
+        "OOT Jabu-Jabu Main",
+        "option{JJMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -16375,7 +17629,15 @@
       "RequiredItems": [
         "OOT Shadow Temple"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "true",
+          "option{ShadowMQ, true}"
+        ],
+        [
+          "option{ShadowMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -16384,7 +17646,8 @@
     {
       "Id": "OOT Shadow Temple => OOT Shadow Temple Pit",
       "RequiredItems": [
-        "OOT Shadow Temple"
+        "OOT Shadow Temple",
+        "option{ShadowMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -16404,7 +17667,8 @@
       "RequiredItems": [
         "OOT_has_hover_boots",
         "OOT_has_lens",
-        "OOT Shadow Temple Pit"
+        "OOT Shadow Temple Pit",
+        "option{ShadowMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -16417,7 +17681,8 @@
       "RequiredItems": [
         "OOT_SMALL_KEY_SHADOW",
         "OOT_has_explosives",
-        "OOT Shadow Temple Main"
+        "OOT Shadow Temple Main",
+        "option{ShadowMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -16431,7 +17696,8 @@
         "OOT_SMALL_KEY_SHADOW, 3",
         "OOT_can_hookshot",
         "OOT_has_lens",
-        "OOT Shadow Temple Open"
+        "OOT Shadow Temple Open",
+        "option{ShadowMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -16445,7 +17711,8 @@
         "OOT_SMALL_KEY_SHADOW, 4",
         "OOT_OCARINA",
         "OOT_SONG_ZELDA",
-        "OOT Shadow Temple Wind"
+        "OOT Shadow Temple Wind",
+        "option{ShadowMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -16456,36 +17723,24 @@
     {
       "Id": "OOT Shadow Temple Boat => OOT Shadow Temple Boss",
       "RequiredItems": [
-        "OOT_SMALL_KEY_SHADOW, 5",
-        "OOT_BOSS_KEY_SHADOW",
         "OOT Shadow Temple Boat"
       ],
       "ConditionalItems": [
         [
-          "OOT_can_use_bow"
+          "true",
+          "option{ShadowMQ, true}"
         ],
         [
-          "OOT_scarecrow_longshot"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT Shadow Temple Boss => OOT Shadow Temple After Boss",
-      "RequiredItems": [
-        "OOT_has_weapon",
-        "OOT_has_lens",
-        "OOT Shadow Temple Boss"
-      ],
-      "ConditionalItems": [
-        [
-          "OOT_can_use_bow"
+          "OOT_can_use_bow",
+          "OOT_SMALL_KEY_SHADOW, 5",
+          "OOT_BOSS_KEY_SHADOW",
+          "option{ShadowMQ, false}"
         ],
         [
-          "OOT_can_use_slingshot"
+          "OOT_scarecrow_longshot",
+          "OOT_SMALL_KEY_SHADOW, 5",
+          "OOT_BOSS_KEY_SHADOW",
+          "option{ShadowMQ, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -16498,7 +17753,15 @@
       "RequiredItems": [
         "OOT Spirit Temple"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "true",
+          "option{SpiritMQ, true}"
+        ],
+        [
+          "option{SpiritMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -16508,7 +17771,8 @@
       "Id": "OOT Spirit Temple => OOT Spirit Temple Child Entrance",
       "RequiredItems": [
         "OOT_is_child",
-        "OOT Spirit Temple"
+        "OOT Spirit Temple",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -16520,7 +17784,8 @@
       "Id": "OOT Spirit Temple => OOT Spirit Temple Adult Entrance",
       "RequiredItems": [
         "OOT_can_lift_silver",
-        "OOT Spirit Temple"
+        "OOT Spirit Temple",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -16533,7 +17798,8 @@
       "RequiredItems": [
         "OOT_is_child",
         "OOT_SMALL_KEY_SPIRIT, 5",
-        "OOT Spirit Temple"
+        "OOT Spirit Temple",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -16546,7 +17812,8 @@
       "RequiredItems": [
         "OOT_SMALL_KEY_SPIRIT, 3",
         "OOT_can_lift_silver",
-        "OOT Spirit Temple"
+        "OOT Spirit Temple",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -16558,7 +17825,8 @@
       "Id": "OOT Spirit Temple Child Entrance => OOT Spirit Temple",
       "RequiredItems": [
         "OOT_is_child",
-        "OOT Spirit Temple Child Entrance"
+        "OOT Spirit Temple Child Entrance",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -16571,7 +17839,8 @@
       "RequiredItems": [
         "OOT_is_child",
         "OOT_SMALL_KEY_SPIRIT",
-        "OOT Spirit Temple Child Entrance"
+        "OOT Spirit Temple Child Entrance",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -16582,7 +17851,8 @@
     {
       "Id": "OOT Spirit Temple Child Entrance => OOT Spirit Temple Child Back",
       "RequiredItems": [
-        "OOT Spirit Temple Child Entrance"
+        "OOT Spirit Temple Child Entrance",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -16618,7 +17888,8 @@
       "RequiredItems": [
         "OOT_is_child",
         "OOT_SMALL_KEY_SPIRIT",
-        "OOT Spirit Temple Child Climb"
+        "OOT Spirit Temple Child Climb",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -16630,7 +17901,8 @@
       "Id": "OOT Spirit Temple Child Climb => OOT Spirit Temple Statue",
       "RequiredItems": [
         "OOT_has_explosives",
-        "OOT Spirit Temple Child Climb"
+        "OOT Spirit Temple Child Climb",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -16641,7 +17913,8 @@
     {
       "Id": "OOT Spirit Temple Child Upper => OOT Spirit Temple Statue",
       "RequiredItems": [
-        "OOT Spirit Temple Child Upper"
+        "OOT Spirit Temple Child Upper",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -16653,7 +17926,8 @@
       "Id": "OOT Spirit Temple Child Upper => OOT Spirit Temple Child Hand",
       "RequiredItems": [
         "OOT_SMALL_KEY_SPIRIT, 5",
-        "OOT Spirit Temple Child Upper"
+        "OOT Spirit Temple Child Upper",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -16665,7 +17939,8 @@
       "Id": "OOT Spirit Temple Child Hand => OOT Spirit Temple Child Upper",
       "RequiredItems": [
         "OOT_SMALL_KEY_SPIRIT, 5",
-        "OOT Spirit Temple Child Hand"
+        "OOT Spirit Temple Child Hand",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -16676,7 +17951,8 @@
     {
       "Id": "OOT Spirit Temple Child Hand => OOT Desert Colossus",
       "RequiredItems": [
-        "OOT Spirit Temple Child Hand"
+        "OOT Spirit Temple Child Hand",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -16688,7 +17964,8 @@
       "Id": "OOT Spirit Temple Adult Entrance => OOT Spirit Temple Adult Climb",
       "RequiredItems": [
         "OOT_SMALL_KEY_SPIRIT",
-        "OOT Spirit Temple Adult Entrance"
+        "OOT Spirit Temple Adult Entrance",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -16699,7 +17976,8 @@
     {
       "Id": "OOT Spirit Temple Adult Climb => OOT Spirit Temple Statue Adult",
       "RequiredItems": [
-        "OOT Spirit Temple Adult Climb"
+        "OOT Spirit Temple Adult Climb",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -16711,7 +17989,8 @@
       "Id": "OOT Spirit Temple Statue => OOT Spirit Temple Statue Adult",
       "RequiredItems": [
         "OOT_can_hookshot",
-        "OOT Spirit Temple Statue"
+        "OOT Spirit Temple Statue",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -16722,7 +18001,8 @@
     {
       "Id": "OOT Spirit Temple Statue => OOT Spirit Temple Child Climb",
       "RequiredItems": [
-        "OOT Spirit Temple Statue"
+        "OOT Spirit Temple Statue",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -16733,7 +18013,8 @@
     {
       "Id": "OOT Spirit Temple Statue => OOT Spirit Temple Child Upper",
       "RequiredItems": [
-        "OOT Spirit Temple Statue"
+        "OOT Spirit Temple Statue",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -16744,12 +18025,20 @@
     {
       "Id": "OOT Spirit Temple Statue => OOT Spirit Temple Boss",
       "RequiredItems": [
-        "OOT_BOSS_KEY_SPIRIT",
-        "OOT_EVENT_SPIRIT_LIGHT_STATUE",
-        "OOT_can_hookshot",
         "OOT Spirit Temple Statue"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "true",
+          "option{SpiritMQ, true}"
+        ],
+        [
+          "OOT_BOSS_KEY_SPIRIT",
+          "OOT_EVENT_SPIRIT_LIGHT_STATUE",
+          "OOT_can_hookshot",
+          "option{SpiritMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -16758,7 +18047,8 @@
     {
       "Id": "OOT Spirit Temple Statue Adult => OOT Spirit Temple Statue",
       "RequiredItems": [
-        "OOT Spirit Temple Statue Adult"
+        "OOT Spirit Temple Statue Adult",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -16770,7 +18060,8 @@
       "Id": "OOT Spirit Temple Statue Adult => OOT Spirit Temple Adult Upper",
       "RequiredItems": [
         "OOT_SMALL_KEY_SPIRIT, 4",
-        "OOT Spirit Temple Statue Adult"
+        "OOT Spirit Temple Statue Adult",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -16782,7 +18073,8 @@
       "Id": "OOT Spirit Temple Adult Upper => OOT Spirit Temple Adult Upper 2",
       "RequiredItems": [
         "OOT_has_explosives",
-        "OOT Spirit Temple Adult Upper"
+        "OOT Spirit Temple Adult Upper",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -16794,7 +18086,8 @@
       "Id": "OOT Spirit Temple Adult Upper => OOT Spirit Temple Adult Climb 2",
       "RequiredItems": [
         "OOT_SMALL_KEY_SPIRIT, 5",
-        "OOT Spirit Temple Adult Upper"
+        "OOT Spirit Temple Adult Upper",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -16805,7 +18098,8 @@
     {
       "Id": "OOT Spirit Temple Adult Upper 2 => OOT Spirit Temple Adult Hand",
       "RequiredItems": [
-        "OOT Spirit Temple Adult Upper 2"
+        "OOT Spirit Temple Adult Upper 2",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -16816,7 +18110,8 @@
     {
       "Id": "OOT Spirit Temple Adult Hand => OOT Spirit Temple Adult Upper",
       "RequiredItems": [
-        "OOT Spirit Temple Adult Hand"
+        "OOT Spirit Temple Adult Hand",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -16828,7 +18123,8 @@
       "Id": "OOT Spirit Temple Adult Hand => OOT Spirit Temple Child Hand",
       "RequiredItems": [
         "OOT_can_longshot",
-        "OOT Spirit Temple Adult Hand"
+        "OOT Spirit Temple Adult Hand",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -16839,7 +18135,8 @@
     {
       "Id": "OOT Spirit Temple Adult Hand => OOT Desert Colossus",
       "RequiredItems": [
-        "OOT Spirit Temple Adult Hand"
+        "OOT Spirit Temple Adult Hand",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -16852,19 +18149,8 @@
       "RequiredItems": [
         "OOT_has_mirror_shield",
         "OOT_has_explosives",
-        "OOT Spirit Temple Adult Climb 2"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT Spirit Temple Boss => OOT Spirit Temple After Boss",
-      "RequiredItems": [
-        "OOT_has_mirror_shield",
-        "OOT Spirit Temple Boss"
+        "OOT Spirit Temple Adult Climb 2",
+        "option{SpiritMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -16877,7 +18163,15 @@
       "RequiredItems": [
         "OOT Water Temple"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "true",
+          "option{WaterMQ, true}"
+        ],
+        [
+          "option{WaterMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -16888,7 +18182,15 @@
       "RequiredItems": [
         "OOT Water Temple"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "true",
+          "option{WaterMQ, true}"
+        ],
+        [
+          "option{WaterMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -16899,7 +18201,15 @@
       "RequiredItems": [
         "OOT Water Temple Main"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "true",
+          "option{WaterMQ, true}"
+        ],
+        [
+          "option{WaterMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -16908,7 +18218,8 @@
     {
       "Id": "OOT Water Temple Main => OOT Water Temple Ruto Room",
       "RequiredItems": [
-        "OOT Water Temple Main"
+        "OOT Water Temple Main",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -16929,7 +18240,8 @@
       "RequiredItems": [
         "OOT_EVENT_WATER_LEVEL_LOW",
         "OOT_SMALL_KEY_WATER, 5",
-        "OOT Water Temple Main"
+        "OOT Water Temple Main",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -16941,7 +18253,8 @@
       "Id": "OOT Water Temple Main => OOT Water Temple Center Middle",
       "RequiredItems": [
         "OOT_EVENT_WATER_LEVEL_LOW",
-        "OOT Water Temple Main"
+        "OOT Water Temple Main",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -16960,7 +18273,8 @@
       "Id": "OOT Water Temple Main => OOT Water Temple Compass Room",
       "RequiredItems": [
         "OOT_can_hookshot",
-        "OOT Water Temple Main"
+        "OOT Water Temple Main",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -16982,7 +18296,8 @@
         "OOT_EVENT_WATER_LEVEL_LOW",
         "OOT_STRENGTH",
         "OOT_can_dive_small",
-        "OOT Water Temple Main"
+        "OOT Water Temple Main",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -16993,7 +18308,8 @@
     {
       "Id": "OOT Water Temple Main => OOT Water Temple Elevator",
       "RequiredItems": [
-        "OOT Water Temple Main"
+        "OOT Water Temple Main",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -17017,7 +18333,8 @@
       "RequiredItems": [
         "OOT_can_use_bow",
         "OOT_EVENT_WATER_LEVEL_LOW",
-        "OOT Water Temple Main"
+        "OOT Water Temple Main",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -17039,7 +18356,8 @@
         "OOT_SMALL_KEY_WATER, 4",
         "OOT_can_longshot",
         "OOT_has_iron_boots",
-        "OOT Water Temple Main"
+        "OOT Water Temple Main",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -17052,7 +18370,8 @@
       "RequiredItems": [
         "OOT_SMALL_KEY_WATER, 4",
         "OOT_EVENT_WATER_LEVEL_RESET",
-        "OOT Water Temple Main"
+        "OOT Water Temple Main",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -17063,11 +18382,19 @@
     {
       "Id": "OOT Water Temple Main => OOT Water Temple Antichamber",
       "RequiredItems": [
-        "OOT_can_longshot",
-        "OOT_EVENT_WATER_LEVEL_RESET",
         "OOT Water Temple Main"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "true",
+          "option{WaterMQ, true}"
+        ],
+        [
+          "OOT_can_longshot",
+          "OOT_EVENT_WATER_LEVEL_RESET",
+          "option{WaterMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -17079,7 +18406,8 @@
         "OOT_EVENT_WATER_LEVEL_LOW",
         "OOT_has_explosives",
         "OOT_can_dive_small",
-        "OOT Water Temple Main"
+        "OOT Water Temple Main",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -17091,7 +18419,8 @@
       "Id": "OOT Water Temple Main => OOT Water Temple Main Ledge",
       "RequiredItems": [
         "OOT_has_hover_boots",
-        "OOT Water Temple Main"
+        "OOT Water Temple Main",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -17102,7 +18431,8 @@
     {
       "Id": "OOT Water Temple Main Ledge => OOT Water Temple Main",
       "RequiredItems": [
-        "OOT Water Temple Main Ledge"
+        "OOT Water Temple Main Ledge",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -17113,7 +18443,8 @@
     {
       "Id": "OOT_EVENT_WATER_LEVEL_RESET",
       "RequiredItems": [
-        "OOT Water Temple Main Ledge"
+        "OOT Water Temple Main Ledge",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -17125,7 +18456,8 @@
       "Id": "OOT Water Temple Ruto Room => OOT Water Temple Map Room",
       "RequiredItems": [
         "OOT_EVENT_WATER_LEVEL_RESET",
-        "OOT Water Temple Ruto Room"
+        "OOT Water Temple Ruto Room",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -17137,7 +18469,8 @@
       "Id": "OOT Water Temple Ruto Room => OOT Water Temple Shell Room",
       "RequiredItems": [
         "OOT_EVENT_WATER_LEVEL_LOW",
-        "OOT Water Temple Ruto Room"
+        "OOT Water Temple Ruto Room",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -17157,7 +18490,8 @@
       "RequiredItems": [
         "OOT_OCARINA",
         "OOT_SONG_ZELDA",
-        "OOT Water Temple Ruto Room"
+        "OOT Water Temple Ruto Room",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -17171,7 +18505,8 @@
         "OOT_EVENT_WATER_LEVEL_MIDDLE",
         "OOT_has_iron_boots",
         "OOT_has_tunic_zora_strict",
-        "OOT Water Temple Center Bottom"
+        "OOT Water Temple Center Bottom",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -17183,7 +18518,8 @@
       "Id": "OOT Water Temple Center Bottom => OOT Water Temple Center Middle",
       "RequiredItems": [
         "OOT_can_hookshot",
-        "OOT Water Temple Center Bottom"
+        "OOT Water Temple Center Bottom",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -17194,7 +18530,8 @@
     {
       "Id": "OOT Water Temple Center Middle => OOT Water Temple Center Bottom",
       "RequiredItems": [
-        "OOT Water Temple Center Middle"
+        "OOT Water Temple Center Middle",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -17207,7 +18544,8 @@
       "RequiredItems": [
         "OOT_OCARINA",
         "OOT_SONG_ZELDA",
-        "OOT Water Temple Center Middle"
+        "OOT Water Temple Center Middle",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -17218,7 +18556,8 @@
     {
       "Id": "OOT Water Temple Elevator => OOT Water Temple Main Ledge",
       "RequiredItems": [
-        "OOT Water Temple Elevator"
+        "OOT Water Temple Elevator",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [
         [
@@ -17236,7 +18575,8 @@
     {
       "Id": "OOT Water Temple Waterfalls => OOT Water Temple Blocks",
       "RequiredItems": [
-        "OOT Water Temple Waterfalls"
+        "OOT Water Temple Waterfalls",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -17248,7 +18588,8 @@
       "Id": "OOT Water Temple Waterfalls => OOT Water Temple Waterfalls Ledge",
       "RequiredItems": [
         "OOT_has_hover_boots",
-        "OOT Water Temple Waterfalls"
+        "OOT Water Temple Waterfalls",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -17261,7 +18602,8 @@
       "RequiredItems": [
         "OOT_has_explosives",
         "OOT_STRENGTH",
-        "OOT Water Temple Blocks"
+        "OOT Water Temple Blocks",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -17273,7 +18615,8 @@
       "Id": "OOT Water Temple Waterfalls Ledge => OOT Water Temple Boss Key Room",
       "RequiredItems": [
         "OOT_SMALL_KEY_WATER, 5",
-        "OOT Water Temple Waterfalls Ledge"
+        "OOT Water Temple Waterfalls Ledge",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -17286,7 +18629,8 @@
       "RequiredItems": [
         "OOT_SMALL_KEY_WATER, 5",
         "OOT_can_hookshot",
-        "OOT Water Temple Large Pit"
+        "OOT Water Temple Large Pit",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -17298,7 +18642,8 @@
       "Id": "OOT Water Temple Before Dark Link => OOT Water Temple Dark Link",
       "RequiredItems": [
         "OOT_can_hookshot",
-        "OOT Water Temple Before Dark Link"
+        "OOT Water Temple Before Dark Link",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -17310,7 +18655,8 @@
       "Id": "OOT Water Temple Dark Link => OOT Water Temple Longshot Room",
       "RequiredItems": [
         "OOT_has_weapon",
-        "OOT Water Temple Dark Link"
+        "OOT Water Temple Dark Link",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -17323,7 +18669,8 @@
       "RequiredItems": [
         "OOT_OCARINA",
         "OOT_SONG_TIME",
-        "OOT Water Temple Longshot Room"
+        "OOT Water Temple Longshot Room",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -17335,7 +18682,8 @@
       "Id": "OOT Water Temple River => OOT Water Temple Dragon Room",
       "RequiredItems": [
         "OOT_can_use_bow",
-        "OOT Water Temple River"
+        "OOT Water Temple River",
+        "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -17346,21 +18694,103 @@
     {
       "Id": "OOT Water Temple Antichamber => OOT Water Temple Boss",
       "RequiredItems": [
-        "OOT_BOSS_KEY_WATER",
         "OOT Water Temple Antichamber"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "true",
+          "option{WaterMQ, true}"
+        ],
+        [
+          "OOT_BOSS_KEY_WATER",
+          "option{WaterMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
       "IsTrick": false
     },
     {
-      "Id": "OOT Water Temple Boss => OOT Water Temple After Boss",
+      "Id": "OOT Deku Tree Lobby => OOT Deku Tree Compass Room",
       "RequiredItems": [
-        "OOT_can_hookshot",
-        "OOT_has_weapon",
-        "OOT Water Temple Boss"
+        "OOT Deku Tree Lobby",
+        "option{DTMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_can_use_slingshot",
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_can_use_slingshot",
+          "OOT_can_use_din"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Deku Tree Lobby => OOT Deku Tree Water Room",
+      "RequiredItems": [
+        "OOT Deku Tree Lobby",
+        "option{DTMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_slingshot",
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_can_use_bow",
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_can_use_slingshot",
+          "OOT_has_fire"
+        ],
+        [
+          "OOT_can_use_bow",
+          "OOT_has_fire"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Deku Tree Lobby => OOT Deku Tree Basement Ledge",
+      "RequiredItems": [
+        "OOT Deku Tree Lobby",
+        "option{DTMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_is_adult"
+        ],
+        [
+          "OOT_EVENT_DEKU_BLOCK"
+        ],
+        [
+          "TRICK_OOT_DEKU_SKIP"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Deku Tree Compass Room => OOT Deku Tree Lobby",
+      "RequiredItems": [
+        "OOT Deku Tree Compass Room",
+        "option{DTMQ, true}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -17369,9 +18799,614 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT_EVENT_WATER_TEMPLE_CLEARED",
+      "Id": "OOT Deku Tree Water Room => OOT Deku Tree Lobby",
       "RequiredItems": [
-        "OOT Water Temple After Boss"
+        "OOT Deku Tree Water Room",
+        "option{DTMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Deku Tree Water Room => OOT Deku Tree Water Room Back",
+      "RequiredItems": [
+        "OOT Deku Tree Water Room",
+        "option{DTMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_is_child"
+        ],
+        [
+          "OOT_can_longshot"
+        ],
+        [
+          "OOT_can_hookshot",
+          "OOT_has_iron_boots"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Deku Tree Water Room Back => OOT Deku Tree Backrooms",
+      "RequiredItems": [
+        "OOT Deku Tree Water Room Back",
+        "option{DTMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_has_fire"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Deku Tree Backrooms => OOT Deku Tree Water Room Back",
+      "RequiredItems": [
+        "OOT Deku Tree Backrooms",
+        "option{DTMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_has_ranged_weapon_child"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Deku Tree Backrooms => OOT Deku Tree Basement Ledge",
+      "RequiredItems": [
+        "OOT Deku Tree Backrooms",
+        "option{DTMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_can_use_din"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Deku Tree Basement Ledge => OOT Deku Tree Backrooms",
+      "RequiredItems": [
+        "OOT_is_child",
+        "OOT Deku Tree Basement Ledge",
+        "option{DTMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_DEKU_BLOCK",
+      "RequiredItems": [
+        "OOT Deku Tree Basement Ledge",
+        "option{DTMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Dodongo Cavern Main => OOT Dodongo Cavern Upper Staircase",
+      "RequiredItems": [
+        "OOT_has_bombflowers",
+        "OOT Dodongo Cavern Main",
+        "option{DCMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_is_adult"
+        ],
+        [
+          "OOT_has_nuts"
+        ],
+        [
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_has_explosives"
+        ],
+        [
+          "OOT_has_ranged_weapon_child"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Dodongo Cavern Main => OOT Dodongo Cavern Upper Ledges",
+      "RequiredItems": [
+        "OOT_has_explosives_or_hammer",
+        "OOT Dodongo Cavern Main",
+        "option{DCMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Dodongo Cavern Main => OOT Dodongo Cavern Lower Tunnel",
+      "RequiredItems": [
+        "OOT Dodongo Cavern Main",
+        "option{DCMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_has_explosives_or_hammer"
+        ],
+        [
+          "OOT_EVENT_DC_MQ_SHORTCUT"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Dodongo Cavern Main => OOT Dodongo Cavern Bomb Bag Ledge",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT Dodongo Cavern Main",
+        "option{DCMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Dodongo Cavern Upper Staircase => OOT Dodongo Cavern Main",
+      "RequiredItems": [
+        "OOT Dodongo Cavern Upper Staircase",
+        "option{DCMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Dodongo Cavern Upper Staircase => OOT Dodongo Cavern Upper Ledges",
+      "RequiredItems": [
+        "OOT Dodongo Cavern Upper Staircase",
+        "option{DCMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_hookshot"
+        ],
+        [
+          "OOT_has_hover_boots"
+        ],
+        [
+          "OOT_is_adult",
+          "TRICK_OOT_DC_JUMP"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Dodongo Cavern Upper Staircase => OOT Dodongo Cavern Upper Lizalfos",
+      "RequiredItems": [
+        "OOT Dodongo Cavern Upper Staircase",
+        "option{DCMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_has_fire",
+          "OOT_has_explosives_or_hammer"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Dodongo Cavern Upper Lizalfos => OOT Dodongo Cavern Upper Ledges",
+      "RequiredItems": [
+        "OOT Dodongo Cavern Upper Lizalfos",
+        "option{DCMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_can_use_slingshot"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Dodongo Cavern Upper Ledges => OOT Dodongo Cavern Upper Lizalfos",
+      "RequiredItems": [
+        "OOT Dodongo Cavern Upper Ledges",
+        "option{DCMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_DC_MQ_SHORTCUT",
+      "RequiredItems": [
+        "OOT Dodongo Cavern Upper Ledges",
+        "option{DCMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_has_bombflowers"
+        ],
+        [
+          "OOT_can_hammer"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Dodongo Cavern Lower Tunnel => OOT Dodongo Cavern Lower Lizalfos",
+      "RequiredItems": [
+        "OOT Dodongo Cavern Lower Tunnel",
+        "option{DCMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_has_bombflowers",
+          "OOT_can_use_slingshot"
+        ],
+        [
+          "OOT_can_use_din",
+          "OOT_can_use_slingshot"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Dodongo Cavern Lower Lizalfos => OOT Dodongo Cavern Lower Tunnel",
+      "RequiredItems": [
+        "OOT Dodongo Cavern Lower Lizalfos",
+        "option{DCMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_can_use_slingshot"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Dodongo Cavern Lower Lizalfos => OOT Dodongo Cavern Poe Room",
+      "RequiredItems": [
+        "OOT Dodongo Cavern Lower Lizalfos",
+        "option{DCMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_can_use_slingshot"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Dodongo Cavern Poe Room => OOT Dodongo Cavern Lower Lizalfos",
+      "RequiredItems": [
+        "OOT Dodongo Cavern Poe Room",
+        "option{DCMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Dodongo Cavern Poe Room => OOT Dodongo Cavern Bomb Bag Ledge",
+      "RequiredItems": [
+        "OOT Dodongo Cavern Poe Room",
+        "option{DCMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_has_bombflowers"
+        ],
+        [
+          "OOT_can_use_din"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Dodongo Cavern Bomb Bag Ledge => OOT Dodongo Cavern Poe Room",
+      "RequiredItems": [
+        "OOT Dodongo Cavern Bomb Bag Ledge",
+        "option{DCMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_JABU_MQ_START",
+      "RequiredItems": [
+        "OOT_can_use_slingshot",
+        "OOT Jabu-Jabu",
+        "option{JJMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Jabu-Jabu Main => OOT Jabu-Jabu Back",
+      "RequiredItems": [
+        "OOT_can_boomerang",
+        "OOT_can_use_slingshot",
+        "OOT_has_explosives",
+        "OOT Jabu-Jabu Main",
+        "option{JJMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Jabu-Jabu Main => OOT Jabu-Jabu Pre-Boss",
+      "RequiredItems": [
+        "OOT_EVENT_JABU_TENTACLE_RED",
+        "OOT Jabu-Jabu Main",
+        "option{JJMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_EVENT_JABU_BIG_OCTO"
+        ],
+        [
+          "OOT_can_hookshot"
+        ],
+        [
+          "OOT_has_hover_boots"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Jabu-Jabu Main => OOT Jabu-Jabu Basement Side Room",
+      "RequiredItems": [
+        "OOT_EVENT_JABU_TENTACLE_RED",
+        "OOT Jabu-Jabu Main",
+        "option{JJMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_JABU_BIG_OCTO",
+      "RequiredItems": [
+        "OOT_EVENT_JABU_TENTACLE_GREEN",
+        "OOT_is_child",
+        "OOT Jabu-Jabu Main",
+        "option{JJMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_has_weapon"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Jabu-Jabu Back => OOT Jabu-Jabu Main",
+      "RequiredItems": [
+        "OOT_can_boomerang",
+        "OOT Jabu-Jabu Back",
+        "option{JJMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_JABU_TENTACLE_GREEN",
+      "RequiredItems": [
+        "OOT Jabu-Jabu Back",
+        "option{JJMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_can_use_din"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_JABU_TENTACLE_RED",
+      "RequiredItems": [
+        "OOT Jabu-Jabu Back",
+        "option{JJMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Jabu-Jabu Basement Side Room => OOT Jabu-Jabu Main",
+      "RequiredItems": [
+        "OOT Jabu-Jabu Basement Side Room",
+        "option{JJMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Jabu-Jabu Pre-Boss => OOT Jabu-Jabu Boss",
+      "RequiredItems": [
+        "OOT_EVENT_JABU_MQ_END",
+        "OOT Jabu-Jabu Pre-Boss",
+        "option{JJMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Jabu-Jabu Pre-Boss => OOT Jabu-Jabu Main",
+      "RequiredItems": [
+        "OOT Jabu-Jabu Pre-Boss",
+        "option{JJMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_JABU_MQ_END",
+      "RequiredItems": [
+        "OOT_can_use_slingshot",
+        "OOT Jabu-Jabu Pre-Boss",
+        "option{JJMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Shadow Temple => OOT Shadow Temple Boat",
+      "RequiredItems": [
+        "OOT Shadow Temple",
+        "option{ShadowMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Spirit Temple => OOT Spirit Temple Statue",
+      "RequiredItems": [
+        "OOT Spirit Temple",
+        "option{SpiritMQ, true}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -18321,51 +20356,51 @@
       "ConditionalItems": [
         [
           "contains{MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss, OOT Deku Tree Boss}",
-          "OOT Deku Tree Boss"
+          "check{OOT Deku Tree Boss}"
         ],
         [
           "contains{MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss, OOT Dodongo Cavern Boss}",
-          "OOT Dodongo Cavern After Boss"
+          "check{OOT Dodongo Cavern Boss}"
         ],
         [
           "contains{MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss, OOT Jabu-Jabu Boss}",
-          "OOT Jabu-Jabu After Boss"
+          "check{OOT Jabu-Jabu Boss}"
         ],
         [
           "contains{MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss, OOT Forest Temple Boss}",
-          "OOT Forest Temple After Boss"
+          "check{OOT Forest Temple Boss}"
         ],
         [
           "contains{MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss, OOT Fire Temple Boss}",
-          "OOT Fire Temple After Boss"
+          "check{OOT Fire Temple Boss}"
         ],
         [
           "contains{MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss, OOT Water Temple Boss}",
-          "OOT Water Temple After Boss"
+          "check{OOT Water Temple Boss}"
         ],
         [
           "contains{MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss, OOT Spirit Temple Boss}",
-          "OOT Spirit Temple After Boss"
+          "check{OOT Spirit Temple Boss}"
         ],
         [
           "contains{MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss, OOT Shadow Temple Boss}",
-          "OOT Shadow Temple After Boss"
+          "check{OOT Shadow Temple Boss}"
         ],
         [
           "contains{MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss, MM Woodfall Temple Boss}",
-          "MM Woodfall Temple After Boss"
+          "check{MM Woodfall Temple Boss}"
         ],
         [
           "contains{MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss, MM Great Bay Temple Boss}",
-          "MM Great Bay Temple After Boss"
+          "check{MM Great Bay Temple Boss}"
         ],
         [
           "contains{MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss, MM Snowhead Temple Boss}",
-          "MM Snowhead Temple After Boss"
+          "check{MM Snowhead Temple Boss}"
         ],
         [
           "contains{MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss, MM Stone Tower Temple Boss}",
-          "MM Stone Tower After Boss"
+          "check{MM Stone Tower Boss}"
         ]
       ],
       "TimeNeeded": "None",
@@ -24212,51 +26247,51 @@
       "ConditionalItems": [
         [
           "contains{MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss, OOT Deku Tree Boss}",
-          "OOT Deku Tree Boss"
+          "check{OOT Deku Tree Boss}"
         ],
         [
           "contains{MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss, OOT Dodongo Cavern Boss}",
-          "OOT Dodongo Cavern After Boss"
+          "check{OOT Dodongo Cavern Boss}"
         ],
         [
           "contains{MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss, OOT Jabu-Jabu Boss}",
-          "OOT Jabu-Jabu After Boss"
+          "check{OOT Jabu-Jabu Boss}"
         ],
         [
           "contains{MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss, OOT Forest Temple Boss}",
-          "OOT Forest Temple After Boss"
+          "check{OOT Forest Temple Boss}"
         ],
         [
           "contains{MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss, OOT Fire Temple Boss}",
-          "OOT Fire Temple After Boss"
+          "check{OOT Fire Temple Boss}"
         ],
         [
           "contains{MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss, OOT Water Temple Boss}",
-          "OOT Water Temple After Boss"
+          "check{OOT Water Temple Boss}"
         ],
         [
           "contains{MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss, OOT Spirit Temple Boss}",
-          "OOT Spirit Temple After Boss"
+          "check{OOT Spirit Temple Boss}"
         ],
         [
           "contains{MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss, OOT Shadow Temple Boss}",
-          "OOT Shadow Temple After Boss"
+          "check{OOT Shadow Temple Boss}"
         ],
         [
           "contains{MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss, MM Woodfall Temple Boss}",
-          "MM Woodfall Temple After Boss"
+          "check{MM Woodfall Temple Boss}"
         ],
         [
           "contains{MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss, MM Great Bay Temple Boss}",
-          "MM Great Bay Temple After Boss"
+          "check{MM Great Bay Temple Boss}"
         ],
         [
           "contains{MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss, MM Snowhead Temple Boss}",
-          "MM Snowhead Temple After Boss"
+          "check{MM Snowhead Temple Boss}"
         ],
         [
           "contains{MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss, MM Stone Tower Temple Boss}",
-          "MM Stone Tower After Boss"
+          "check{MM Stone Tower Boss}"
         ]
       ],
       "TimeNeeded": "None",
@@ -25503,51 +27538,51 @@
       "ConditionalItems": [
         [
           "contains{MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss, OOT Deku Tree Boss}",
-          "OOT Deku Tree Boss"
+          "check{OOT Deku Tree Boss}"
         ],
         [
           "contains{MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss, OOT Dodongo Cavern Boss}",
-          "OOT Dodongo Cavern After Boss"
+          "check{OOT Dodongo Cavern Boss}"
         ],
         [
           "contains{MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss, OOT Jabu-Jabu Boss}",
-          "OOT Jabu-Jabu After Boss"
+          "check{OOT Jabu-Jabu Boss}"
         ],
         [
           "contains{MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss, OOT Forest Temple Boss}",
-          "OOT Forest Temple After Boss"
+          "check{OOT Forest Temple Boss}"
         ],
         [
           "contains{MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss, OOT Fire Temple Boss}",
-          "OOT Fire Temple After Boss"
+          "check{OOT Fire Temple Boss}"
         ],
         [
           "contains{MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss, OOT Water Temple Boss}",
-          "OOT Water Temple After Boss"
+          "check{OOT Water Temple Boss}"
         ],
         [
           "contains{MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss, OOT Spirit Temple Boss}",
-          "OOT Spirit Temple After Boss"
+          "check{OOT Spirit Temple Boss}"
         ],
         [
           "contains{MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss, OOT Shadow Temple Boss}",
-          "OOT Shadow Temple After Boss"
+          "check{OOT Shadow Temple Boss}"
         ],
         [
           "contains{MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss, MM Woodfall Temple Boss}",
-          "MM Woodfall Temple After Boss"
+          "check{MM Woodfall Temple Boss}"
         ],
         [
           "contains{MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss, MM Great Bay Temple Boss}",
-          "MM Great Bay Temple After Boss"
+          "check{MM Great Bay Temple Boss}"
         ],
         [
           "contains{MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss, MM Snowhead Temple Boss}",
-          "MM Snowhead Temple After Boss"
+          "check{MM Snowhead Temple Boss}"
         ],
         [
           "contains{MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss, MM Stone Tower Temple Boss}",
-          "MM Stone Tower After Boss"
+          "check{MM Stone Tower Boss}"
         ]
       ],
       "TimeNeeded": "None",

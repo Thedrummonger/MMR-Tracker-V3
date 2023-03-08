@@ -12,6 +12,7 @@ using System.Text.RegularExpressions;
 using MMR_Tracker_V3.TrackerObjects;
 using System.Collections;
 using System.Transactions;
+using Octokit;
 
 namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 {
@@ -289,6 +290,30 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             AddSharedItemOptions("sharedWallets", "Shared Wallets", new string[] { "WALLET" }, 2, new string[] { "RUPEE_GREEN", "RUPEE_BLUE", "RUPEE_RED", "RUPEE_PURPLE", "RUPEE_SILVER", "RUPEE_GOLD", "RUPEE_HUGE" });
             AddSharedItemOptions("sharedHealth", "Shared Health", new string[] { "HEART_PIECE", "HEART_CONTAINER", "DEFENSE_UPGRADE" }, 1, new string[] { "RECOVERY_HEART", }); //I don't actually think any of this effects logic?
 
+            AddMQOption("DTMQ", "Deku Tree MQ");
+            AddMQOption("DCMQ", "Dodongos Cavern MQ");
+            AddMQOption("JJMQ", "Jabu Jabu MQ");
+            AddMQOption("ForestMQ", "Forest Temple MQ");
+            AddMQOption("FireMQ", "Fire Temple MQ");
+            AddMQOption("WaterMQ", "Water Temple MQ");
+            AddMQOption("ShadowMQ", "Shadow Temple MQ");
+            AddMQOption("SpiritMQ", "Spirit Temple MQ");
+            AddMQOption("BotWMQ", "Bottom of the Well MQ");
+            AddMQOption("ICMQ", "Ice Cavern MQ");
+            AddMQOption("GTGMQ", "Gerudo Training Grounds MQ");
+            AddMQOption("GanonMQ", "Ganons Castle MQ");
+
+            void AddMQOption(string ID, string Name)
+            {
+                OptionData.TrackerOption MQEntry = new OptionData.TrackerOption();
+                MQEntry.ID = ID;
+                MQEntry.DisplayName = Name;
+                MQEntry.SubCategory = "Master Quest";
+                MQEntry.CurrentValue = "false";
+                MQEntry.CreateSimpleValues(new string[] { "false", "true" });
+                dictionaryFile.Options.Add(MQEntry);
+            }
+
             void AddSharedItemOptions(string ID, string Name, string[] Items, int LogicalAmount, string[] NonLogicReplacements = null)
             {
                 OptionData.LogicReplacement OnActionReplacementData = new();
@@ -348,18 +373,53 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
         {
             string MMLogic = Path.Combine(References.TestingPaths.GetDevTestingPath(), "core-develop", "data", "mm", "world");
             string OOTLogic = Path.Combine(References.TestingPaths.GetDevTestingPath(), "core-develop", "data", "oot", "world");
+            string OOTMQLogic = Path.Combine(References.TestingPaths.GetDevTestingPath(), "core-develop", "data", "oot", "world_mq");
             string MMOOTCodeMMMacros = Path.Combine(References.TestingPaths.GetDevCodePath(), @"MMR Tracker V3", "OtherGames", "OOTMMRCOMBO", @"MMMacroOverride.json");
             string MMOOTCodeOOTMacros = Path.Combine(References.TestingPaths.GetDevCodePath(), @"MMR Tracker V3", "OtherGames", "OOTMMRCOMBO", @"OOTMacroOverride.json");
             Dictionary<string, string> MMMacros = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(MMOOTCodeMMMacros));
             Dictionary<string, string> OOTMacros = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(MMOOTCodeOOTMacros));
-            var files = Directory.GetFiles(MMLogic).Concat(Directory.GetFiles(OOTLogic)).ToList();
+            var files = Directory.GetFiles(MMLogic).Concat(Directory.GetFiles(OOTLogic)).Concat(Directory.GetFiles(OOTMQLogic)).ToList();
+
+            var OOTVanillaFiles = Directory.GetFiles(OOTLogic);
+            var OOTMQFiles = Directory.GetFiles(OOTMQLogic);
+            var VariableDungeons = new List<string>();
+            foreach (var file in OOTMQFiles)
+            {
+                string ValillaName = file.Replace("_mq", "");
+                if (OOTVanillaFiles.Contains(ValillaName))
+                {
+                    VariableDungeons.Add(ValillaName);
+                    VariableDungeons.Add(file);
+                }
+            }
+
+            string GetLogic(string Logic, string GameCode, string Area, bool VariableDungeon, bool MQ, string DungeonCode)
+            {
+                string GameArea = $"{GameCode} {Area}";
+                string LogicString = Logic;
+                if (!VariableDungeon) { return $"(({Logic}) && {GameCode} {Area})"; }
+                return $"(({Logic}) && {GameCode} {Area} && option{{{DungeonCode}MQ, {MQ.ToString().ToLower()}}})";
+            }
+
+            string CombineLogicFromOtherSource(MMRData.JsonFormatLogicItem Logic, string NewLogic, string DebugMessage = null)
+            {
+                if (Logic.ConditionalItems.Any() || Logic.RequiredItems.Any())
+                {
+                    Debug.WriteLine(DebugMessage);
+                    logicCleaner.MoveRequirementsToConditionals(Logic);
+                    string CurrentLogic = $" || ({string.Join(" || ", Logic.ConditionalItems.Select(x => string.Join(" && ", x)))})";
+                    return NewLogic + CurrentLogic;
+                }
+                return NewLogic;
+            }
 
             Dictionary<string, List<string>> FoundFunctions = new Dictionary<string, List<string>>();
             foreach(var file in files)
             {
-                string Game = "OOT";
+                string Game = file.Contains(@"\mm\") ? "MM": "OOT";
                 string OpositeGame = Game == "OOT" ? "MM" : "OOT";
-                if (file.Contains(@"\mm\")) { Game = "MM"; }
+                bool VariableDungeon = VariableDungeons.Contains(file);
+                bool MQDungeon = file.Contains(@"\world_mq");
                 var FileOBJ = JsonConvert.DeserializeObject<Dictionary<string, MMROOTLogicEntry>>(LogicStringParser.ConvertYamlStringToJsonString(File.ReadAllText(file)));
                 foreach(var key in FileOBJ.Keys)
                 {
@@ -368,14 +428,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         var LogicFileEntry = LogicFile.Logic.Find(x => x.Id == i || x.Id == $"{Game} {i}" || x.Id == $"{Game}_{i}");
                         if (LogicFileEntry is not null)
                         {
-                            string Logic = $"({FileOBJ[key].locations[i]}) && {Game} {key}";
-                            if (LogicFileEntry.ConditionalItems.Any() || LogicFileEntry.RequiredItems.Any())
-                            {
-                                Debug.WriteLine($"{key} {i} Duplicate Logic Entry");
-                                logicCleaner.MoveRequirementsToConditionals(LogicFileEntry);
-                                string CurrentLogic = $" || ({string.Join(" || ", LogicFileEntry.ConditionalItems.Select(x => string.Join(" && ", x)))})";
-                                Logic += CurrentLogic;
-                            }
+                            string Logic = GetLogic(FileOBJ[key].locations[i], Game, key, VariableDungeon, MQDungeon, FileOBJ[key].dungeon);
+                            Logic = CombineLogicFromOtherSource(LogicFileEntry, Logic, $"LOGGING- {key} {i} Duplicate Logic Entry");
                             LogicFileEntry.ConditionalItems = ParselogicLine(Logic, Game);
                             logicCleaner.RemoveRedundantConditionals(LogicFileEntry);
                             logicCleaner.MakeCommonConditionalsRequirements(LogicFileEntry);
@@ -389,7 +443,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         var LogicFileEntry = LogicFile.Logic.Find(x => x.Id == FullexitName);
                         if (LogicFileEntry is not null)
                         {
-                            string Logic = $"({FileOBJ[key].exits[i]}) && {Game} {key}";
+                            string Logic = GetLogic(FileOBJ[key].exits[i], Game, key, VariableDungeon, MQDungeon, FileOBJ[key].dungeon);
+                            Logic = CombineLogicFromOtherSource(LogicFileEntry, Logic, $"LOGGING- {FullexitName} Duplicate Logic Entry");
                             if (FullexitName == "OOT SPAWN => OOT Link's House") { Logic = FileOBJ[key].exits[i]; }
                             LogicFileEntry.ConditionalItems = ParselogicLine(Logic, Game);
                             logicCleaner.RemoveRedundantConditionals(LogicFileEntry);
@@ -402,14 +457,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         var LogicFileEntry = LogicFile.Logic.Find(x => x.Id == i || x.Id == $"{Game} {i}" || x.Id == $"{Game}_EVENT_{i}");
                         if (LogicFileEntry is not null)
                         {
-                            string Logic = $"(({FileOBJ[key].events[i]}) && {Game} {key})";
-                            if (LogicFileEntry.ConditionalItems.Any() || LogicFileEntry.RequiredItems.Any())
-                            {
-                                Debug.WriteLine($"{key} {i} Duplicate Logic Entry");
-                                logicCleaner.MoveRequirementsToConditionals(LogicFileEntry);
-                                string CurrentLogic = $" || ({string.Join(" || ", LogicFileEntry.ConditionalItems.Select(x => string.Join(" && ", x)))})";
-                                Logic += CurrentLogic;
-                            }
+                            string Logic = GetLogic(FileOBJ[key].events[i], Game, key, VariableDungeon, MQDungeon, FileOBJ[key].dungeon);
+                            Logic = CombineLogicFromOtherSource(LogicFileEntry, Logic, $"LOGGING- {key} {i} Duplicate Logic Entry");
                             LogicFileEntry.ConditionalItems = ParselogicLine(Logic, Game);
                             logicCleaner.RemoveRedundantConditionals(LogicFileEntry);
                             logicCleaner.MakeCommonConditionalsRequirements(LogicFileEntry);
@@ -420,7 +469,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         var LogicFileEntry = LogicFile.Logic.Find(x => x.Id == i || x.Id == $"{Game} {i}" || x.Id == $"{Game}_{i}");
                         if (LogicFileEntry is not null)
                         {
-                            string Logic = $"({FileOBJ[key].gossip[i]}) && {Game} {key}";
+                            string Logic = GetLogic(FileOBJ[key].gossip[i], Game, key, VariableDungeon, MQDungeon, FileOBJ[key].dungeon);
+                            Logic = CombineLogicFromOtherSource(LogicFileEntry, Logic, $"LOGGING- {key} {i} Duplicate Logic Entry");
                             LogicFileEntry.ConditionalItems = ParselogicLine(Logic, Game);
                             logicCleaner.RemoveRedundantConditionals(LogicFileEntry);
                             logicCleaner.MakeCommonConditionalsRequirements(LogicFileEntry);
@@ -574,8 +624,10 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             string MMOOTCodeOOTMacros = Path.Combine(OOTMMCode, @"OOTMacroOverride.json");
             string MMOOTCodeMMWorld = Path.Combine(MMOOTCodeMM, @"world");
             string MMOOTCodeOOTWorld = Path.Combine(MMOOTCodeOOT, @"world");
+            string MMOOTCodeOOTMQWorld = Path.Combine(MMOOTCodeOOT, @"world_mq");
             string[] MMOOTCodeMMWorldFiles = Directory.GetFiles(MMOOTCodeMMWorld);
             string[] MMOOTCodeOOTWorldFiles = Directory.GetFiles(MMOOTCodeOOTWorld);
+            string[] MMOOTCodeOOTMQWorldFiles = Directory.GetFiles(MMOOTCodeOOTMQWorld);
             string FinalLogicFile = Path.Combine(TestFolder, @"OOTMMLogic.json");
             string FinalDictFile = Path.Combine(TestFolder, @"OOTMMDict.json");
             string OOTMMRandoEntrances = Path.Combine(OOTMMCode, @"RandomizableEntrances.json");
@@ -590,6 +642,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             Dictionary<string, MMROOTLogicEntry> MMLogicEntries = new Dictionary<string, MMROOTLogicEntry>();
             Dictionary<string, MMROOTLogicEntry> OOTLogicEntries = new Dictionary<string, MMROOTLogicEntry>();
             addEntranceandEventData("OOT", MMOOTCodeOOTWorldFiles);
+            addEntranceandEventData("OOT", MMOOTCodeOOTMQWorldFiles);
             addEntranceandEventData("MM", MMOOTCodeMMWorldFiles);
             addMacros("OOT", OOTMacros);
             addMacros("MM", MMMacros);
@@ -837,7 +890,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 Item.ConditionalItems = new List<List<string>>();
                 foreach (var i in RandoAreaClear)
                 {
-                    Item.ConditionalItems.Add(new() { $"contains{{{DungeonArea} => {BossDoor}, {i.Key}}}", i.Value });
+                    Item.ConditionalItems.Add(new() { $"contains{{{DungeonArea} => {BossDoor}, {i.Key}}}", $"check{{{i.Value}}}" });
                 }
             }
         }

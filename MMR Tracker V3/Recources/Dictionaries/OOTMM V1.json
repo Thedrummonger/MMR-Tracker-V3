@@ -8783,6 +8783,728 @@
       "LocationProxys": []
     },
     {
+      "ID": "OOT MQ Deku Tree Map Chest",
+      "Name": "MQ Deku Tree Map Chest",
+      "OriginalItem": "OOT_MAP_DT",
+      "Area": "Deku Tree",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Map Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Deku Tree Map Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Deku Tree Compass Chest",
+      "Name": "MQ Deku Tree Compass Chest",
+      "OriginalItem": "OOT_COMPASS_DT",
+      "Area": "Deku Tree",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Compass Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Deku Tree Compass Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Deku Tree Slingshot Chest",
+      "Name": "MQ Deku Tree Slingshot Chest",
+      "OriginalItem": "OOT_SLINGSHOT",
+      "Area": "Deku Tree",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Slingshot Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Deku Tree Slingshot Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Deku Tree Slingshot Room Far Chest",
+      "Name": "MQ Deku Tree Slingshot Room Far Chest",
+      "OriginalItem": "OOT_RUPEE_BLUE",
+      "Area": "Deku Tree",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Slingshot Room Far Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Deku Tree Slingshot Room Far Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Deku Tree Basement Chest",
+      "Name": "MQ Deku Tree Basement Chest",
+      "OriginalItem": "OOT_RUPEE_BLUE",
+      "Area": "Deku Tree",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Basement Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Deku Tree Basement Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Deku Tree Before Water Platform Chest",
+      "Name": "MQ Deku Tree Before Water Platform Chest",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "Area": "Deku Tree",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Before Water Platform Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Deku Tree Before Water Platform Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Deku Tree After Water Platform Chest",
+      "Name": "MQ Deku Tree After Water Platform Chest",
+      "OriginalItem": "OOT_RUPEE_PURPLE",
+      "Area": "Deku Tree",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree After Water Platform Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Deku Tree After Water Platform Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Deku Tree GS Back Room",
+      "Name": "MQ Deku Tree GS Back Room",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Deku Tree",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree GS Back Room"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Deku Tree GS Back Room"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Deku Tree GS Lobby Crate",
+      "Name": "MQ Deku Tree GS Lobby Crate",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Deku Tree",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree GS Lobby Crate"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Deku Tree GS Lobby Crate"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Deku Tree GS Song of Time Blocks",
+      "Name": "MQ Deku Tree GS Song of Time Blocks",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Deku Tree",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree GS Song of Time Blocks"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Deku Tree GS Song of Time Blocks"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Deku Tree GS Compass Room",
+      "Name": "MQ Deku Tree GS Compass Room",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Deku Tree",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree GS Compass Room"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Deku Tree GS Compass Room"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Dodongo Cavern Map Chest",
+      "Name": "MQ Dodongo Cavern Map Chest",
+      "OriginalItem": "OOT_MAP_DC",
+      "Area": "Dodongo's Cavern",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Dodongo Cavern Map Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Dodongo Cavern Map Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Dodongo Cavern Compass Chest",
+      "Name": "MQ Dodongo Cavern Compass Chest",
+      "OriginalItem": "OOT_COMPASS_DC",
+      "Area": "Dodongo's Cavern",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Dodongo Cavern Compass Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Dodongo Cavern Compass Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Dodongo Cavern Larvae Room Chest",
+      "Name": "MQ Dodongo Cavern Larvae Room Chest",
+      "OriginalItem": "OOT_RUPEE_BLUE",
+      "Area": "Dodongo's Cavern",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Dodongo Cavern Larvae Room Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Dodongo Cavern Larvae Room Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Dodongo Cavern Upper Ledge Chest",
+      "Name": "MQ Dodongo Cavern Upper Ledge Chest",
+      "OriginalItem": "OOT_RUPEE_BLUE",
+      "Area": "Dodongo's Cavern",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Dodongo Cavern Upper Ledge Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Dodongo Cavern Upper Ledge Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Dodongo Cavern Bomb Bag Chest",
+      "Name": "MQ Dodongo Cavern Bomb Bag Chest",
+      "OriginalItem": "OOT_BOMB_BAG",
+      "Area": "Dodongo's Cavern",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Dodongo Cavern Bomb Bag Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Dodongo Cavern Bomb Bag Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Dodongo Cavern Chest Under Grave",
+      "Name": "MQ Dodongo Cavern Chest Under Grave",
+      "OriginalItem": "OOT_RUPEE_BLUE",
+      "Area": "Dodongo's Cavern",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Dodongo Cavern Chest Under Grave"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Dodongo Cavern Chest Under Grave"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Dodongo Cavern GS Time Blocks",
+      "Name": "MQ Dodongo Cavern GS Time Blocks",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Dodongo's Cavern",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Dodongo Cavern GS Time Blocks"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Dodongo Cavern GS Time Blocks"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Dodongo Cavern GS Larve Room",
+      "Name": "MQ Dodongo Cavern GS Larve Room",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Dodongo's Cavern",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Dodongo Cavern GS Larve Room"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Dodongo Cavern GS Larve Room"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Dodongo Cavern GS Upper Lizalfos",
+      "Name": "MQ Dodongo Cavern GS Upper Lizalfos",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Dodongo's Cavern",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Dodongo Cavern GS Upper Lizalfos"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Dodongo Cavern GS Upper Lizalfos"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Dodongo Cavern GS Poe Room Side",
+      "Name": "MQ Dodongo Cavern GS Poe Room Side",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Dodongo's Cavern",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Dodongo Cavern GS Poe Room Side"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Dodongo Cavern GS Poe Room Side"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Dodongo Cavern GS Near Boss",
+      "Name": "MQ Dodongo Cavern GS Near Boss",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Dodongo's Cavern",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Dodongo Cavern GS Near Boss"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Dodongo Cavern GS Near Boss"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Jabu-Jabu Map Chest",
+      "Name": "MQ Jabu-Jabu Map Chest",
+      "OriginalItem": "OOT_MAP_JJ",
+      "Area": "Jabu Jabu's Belly",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Jabu-Jabu Map Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Jabu-Jabu Map Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Jabu-Jabu Entry Chest",
+      "Name": "MQ Jabu-Jabu Entry Chest",
+      "OriginalItem": "OOT_NUTS_5",
+      "Area": "Jabu Jabu's Belly",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Jabu-Jabu Entry Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Jabu-Jabu Entry Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Jabu-Jabu Compass Chest",
+      "Name": "MQ Jabu-Jabu Compass Chest",
+      "OriginalItem": "OOT_COMPASS_JJ",
+      "Area": "Jabu Jabu's Belly",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Jabu-Jabu Compass Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Jabu-Jabu Compass Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Jabu-Jabu Second Room B1 Chest",
+      "Name": "MQ Jabu-Jabu Second Room B1 Chest",
+      "OriginalItem": "OOT_NUTS_5",
+      "Area": "Jabu Jabu's Belly",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Jabu-Jabu Second Room B1 Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Jabu-Jabu Second Room B1 Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Jabu-Jabu Second Room 1F Chest",
+      "Name": "MQ Jabu-Jabu Second Room 1F Chest",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "Area": "Jabu Jabu's Belly",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Jabu-Jabu Second Room 1F Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Jabu-Jabu Second Room 1F Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Jabu-Jabu Third Room West Chest",
+      "Name": "MQ Jabu-Jabu Third Room West Chest",
+      "OriginalItem": "OOT_BOMBCHU_5",
+      "Area": "Jabu Jabu's Belly",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Jabu-Jabu Third Room West Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Jabu-Jabu Third Room West Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Jabu-Jabu Third Room East Chest",
+      "Name": "MQ Jabu-Jabu Third Room East Chest",
+      "OriginalItem": "OOT_NUTS_5",
+      "Area": "Jabu Jabu's Belly",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Jabu-Jabu Third Room East Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Jabu-Jabu Third Room East Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Jabu-Jabu SoT Room Lower Chest",
+      "Name": "MQ Jabu-Jabu SoT Room Lower Chest",
+      "OriginalItem": "OOT_STICK",
+      "Area": "Jabu Jabu's Belly",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Jabu-Jabu SoT Room Lower Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Jabu-Jabu SoT Room Lower Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Jabu-Jabu Boomerang Chest",
+      "Name": "MQ Jabu-Jabu Boomerang Chest",
+      "OriginalItem": "OOT_BOOMERANG",
+      "Area": "Jabu Jabu's Belly",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Jabu-Jabu Boomerang Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Jabu-Jabu Boomerang Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Jabu-Jabu Back Chest",
+      "Name": "MQ Jabu-Jabu Back Chest",
+      "OriginalItem": "OOT_NUTS_5",
+      "Area": "Jabu Jabu's Belly",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Jabu-Jabu Back Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Jabu-Jabu Back Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Jabu-Jabu Pre-Boss Chest",
+      "Name": "MQ Jabu-Jabu Pre-Boss Chest",
+      "OriginalItem": "OOT_RUPEE_BLUE",
+      "Area": "Jabu Jabu's Belly",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Jabu-Jabu Pre-Boss Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Jabu-Jabu Pre-Boss Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Jabu-Jabu GS SoT Block",
+      "Name": "MQ Jabu-Jabu GS SoT Block",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Jabu Jabu's Belly",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Jabu-Jabu GS SoT Block"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Jabu-Jabu GS SoT Block"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Jabu-Jabu GS Back",
+      "Name": "MQ Jabu-Jabu GS Back",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Jabu Jabu's Belly",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Jabu-Jabu GS Back"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Jabu-Jabu GS Back"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Jabu-Jabu GS Basement Side Room",
+      "Name": "MQ Jabu-Jabu GS Basement Side Room",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Jabu Jabu's Belly",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Jabu-Jabu GS Basement Side Room"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Jabu-Jabu GS Basement Side Room"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Jabu-Jabu GS Pre-Boss",
+      "Name": "MQ Jabu-Jabu GS Pre-Boss",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Jabu Jabu's Belly",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Jabu-Jabu GS Pre-Boss"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Jabu-Jabu GS Pre-Boss"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Jabu-Jabu Cow",
+      "Name": "MQ Jabu-Jabu Cow",
+      "OriginalItem": "OOT_MILK",
+      "Area": "Jabu Jabu's Belly",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Jabu-Jabu Cow"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Jabu-Jabu Cow"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
       "ID": "MM Initial Song of Healing",
       "Name": "Initial Song of Healing",
       "OriginalItem": "MM_SONG_HEALING",
@@ -21683,6 +22405,62 @@
   ],
   "EntranceList": [
     {
+      "ID": "OOT Dodongo Cavern Boss => OOT Dodongo Cavern After Boss",
+      "Area": "OOT Dodongo Cavern Boss",
+      "Exit": "OOT Dodongo Cavern After Boss",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Jabu-Jabu Boss => OOT Jabu-Jabu After Boss",
+      "Area": "OOT Jabu-Jabu Boss",
+      "Exit": "OOT Jabu-Jabu After Boss",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Forest Temple Boss => OOT Forest Temple After Boss",
+      "Area": "OOT Forest Temple Boss",
+      "Exit": "OOT Forest Temple After Boss",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Fire Temple Boss => OOT Fire Temple After Boss",
+      "Area": "OOT Fire Temple Boss",
+      "Exit": "OOT Fire Temple After Boss",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Water Temple Boss => OOT Water Temple After Boss",
+      "Area": "OOT Water Temple Boss",
+      "Exit": "OOT Water Temple After Boss",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Spirit Temple Boss => OOT Spirit Temple After Boss",
+      "Area": "OOT Spirit Temple Boss",
+      "Exit": "OOT Spirit Temple After Boss",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Shadow Temple Boss => OOT Shadow Temple After Boss",
+      "Area": "OOT Shadow Temple Boss",
+      "Exit": "OOT Shadow Temple After Boss",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
       "ID": "OOT Bottom of the Well => OOT Kakariko",
       "Area": "OOT Bottom of the Well",
       "Exit": "OOT Kakariko",
@@ -22132,14 +22910,6 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Dodongo Cavern Boss => OOT Dodongo Cavern After Boss",
-      "Area": "OOT Dodongo Cavern Boss",
-      "Exit": "OOT Dodongo Cavern After Boss",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    {
       "ID": "OOT Fire Temple => OOT Death Mountain Crater Warp",
       "Area": "OOT Fire Temple",
       "Exit": "OOT Death Mountain Crater Warp",
@@ -22261,14 +23031,6 @@
       "ID": "OOT Fire Temple After Miniboss => OOT Fire Temple Pillar Ledge",
       "Area": "OOT Fire Temple After Miniboss",
       "Exit": "OOT Fire Temple Pillar Ledge",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    {
-      "ID": "OOT Fire Temple Boss => OOT Fire Temple After Boss",
-      "Area": "OOT Fire Temple Boss",
-      "Exit": "OOT Fire Temple After Boss",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -22560,14 +23322,6 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Forest Temple Boss => OOT Forest Temple After Boss",
-      "Area": "OOT Forest Temple Boss",
-      "Exit": "OOT Forest Temple After Boss",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    {
       "ID": "OOT Ganon Castle Main => OOT Ganon Castle Light",
       "Area": "OOT Ganon Castle Main",
       "Exit": "OOT Ganon Castle Light",
@@ -22828,14 +23582,6 @@
       "Exit": "OOT Jabu-Jabu Boss",
       "DisplayArea": "Boss Room",
       "RandomizableEntrance": true,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    {
-      "ID": "OOT Jabu-Jabu Boss => OOT Jabu-Jabu After Boss",
-      "Area": "OOT Jabu-Jabu Boss",
-      "Exit": "OOT Jabu-Jabu After Boss",
-      "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -24269,14 +25015,6 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Shadow Temple Boss => OOT Shadow Temple After Boss",
-      "Area": "OOT Shadow Temple Boss",
-      "Exit": "OOT Shadow Temple After Boss",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    {
       "ID": "OOT Spirit Temple => OOT Desert Colossus",
       "Area": "OOT Spirit Temple",
       "Exit": "OOT Desert Colossus",
@@ -24486,14 +25224,6 @@
       "ID": "OOT Spirit Temple Adult Hand => OOT Desert Colossus",
       "Area": "OOT Spirit Temple Adult Hand",
       "Exit": "OOT Desert Colossus",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    {
-      "ID": "OOT Spirit Temple Boss => OOT Spirit Temple After Boss",
-      "Area": "OOT Spirit Temple Boss",
-      "Exit": "OOT Spirit Temple After Boss",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -24761,9 +25491,273 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Water Temple Boss => OOT Water Temple After Boss",
-      "Area": "OOT Water Temple Boss",
-      "Exit": "OOT Water Temple After Boss",
+      "ID": "OOT Deku Tree Lobby => OOT Deku Tree Compass Room",
+      "Area": "OOT Deku Tree Lobby",
+      "Exit": "OOT Deku Tree Compass Room",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Deku Tree Lobby => OOT Deku Tree Water Room",
+      "Area": "OOT Deku Tree Lobby",
+      "Exit": "OOT Deku Tree Water Room",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Deku Tree Lobby => OOT Deku Tree Basement Ledge",
+      "Area": "OOT Deku Tree Lobby",
+      "Exit": "OOT Deku Tree Basement Ledge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Deku Tree Compass Room => OOT Deku Tree Lobby",
+      "Area": "OOT Deku Tree Compass Room",
+      "Exit": "OOT Deku Tree Lobby",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Deku Tree Water Room => OOT Deku Tree Lobby",
+      "Area": "OOT Deku Tree Water Room",
+      "Exit": "OOT Deku Tree Lobby",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Deku Tree Water Room => OOT Deku Tree Water Room Back",
+      "Area": "OOT Deku Tree Water Room",
+      "Exit": "OOT Deku Tree Water Room Back",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Deku Tree Water Room Back => OOT Deku Tree Backrooms",
+      "Area": "OOT Deku Tree Water Room Back",
+      "Exit": "OOT Deku Tree Backrooms",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Deku Tree Backrooms => OOT Deku Tree Water Room Back",
+      "Area": "OOT Deku Tree Backrooms",
+      "Exit": "OOT Deku Tree Water Room Back",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Deku Tree Backrooms => OOT Deku Tree Basement Ledge",
+      "Area": "OOT Deku Tree Backrooms",
+      "Exit": "OOT Deku Tree Basement Ledge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Deku Tree Basement Ledge => OOT Deku Tree Backrooms",
+      "Area": "OOT Deku Tree Basement Ledge",
+      "Exit": "OOT Deku Tree Backrooms",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Dodongo Cavern Main => OOT Dodongo Cavern Upper Staircase",
+      "Area": "OOT Dodongo Cavern Main",
+      "Exit": "OOT Dodongo Cavern Upper Staircase",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Dodongo Cavern Main => OOT Dodongo Cavern Upper Ledges",
+      "Area": "OOT Dodongo Cavern Main",
+      "Exit": "OOT Dodongo Cavern Upper Ledges",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Dodongo Cavern Main => OOT Dodongo Cavern Lower Tunnel",
+      "Area": "OOT Dodongo Cavern Main",
+      "Exit": "OOT Dodongo Cavern Lower Tunnel",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Dodongo Cavern Main => OOT Dodongo Cavern Bomb Bag Ledge",
+      "Area": "OOT Dodongo Cavern Main",
+      "Exit": "OOT Dodongo Cavern Bomb Bag Ledge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Dodongo Cavern Upper Staircase => OOT Dodongo Cavern Main",
+      "Area": "OOT Dodongo Cavern Upper Staircase",
+      "Exit": "OOT Dodongo Cavern Main",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Dodongo Cavern Upper Staircase => OOT Dodongo Cavern Upper Ledges",
+      "Area": "OOT Dodongo Cavern Upper Staircase",
+      "Exit": "OOT Dodongo Cavern Upper Ledges",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Dodongo Cavern Upper Staircase => OOT Dodongo Cavern Upper Lizalfos",
+      "Area": "OOT Dodongo Cavern Upper Staircase",
+      "Exit": "OOT Dodongo Cavern Upper Lizalfos",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Dodongo Cavern Upper Lizalfos => OOT Dodongo Cavern Upper Ledges",
+      "Area": "OOT Dodongo Cavern Upper Lizalfos",
+      "Exit": "OOT Dodongo Cavern Upper Ledges",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Dodongo Cavern Upper Ledges => OOT Dodongo Cavern Upper Lizalfos",
+      "Area": "OOT Dodongo Cavern Upper Ledges",
+      "Exit": "OOT Dodongo Cavern Upper Lizalfos",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Dodongo Cavern Lower Tunnel => OOT Dodongo Cavern Lower Lizalfos",
+      "Area": "OOT Dodongo Cavern Lower Tunnel",
+      "Exit": "OOT Dodongo Cavern Lower Lizalfos",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Dodongo Cavern Lower Lizalfos => OOT Dodongo Cavern Lower Tunnel",
+      "Area": "OOT Dodongo Cavern Lower Lizalfos",
+      "Exit": "OOT Dodongo Cavern Lower Tunnel",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Dodongo Cavern Lower Lizalfos => OOT Dodongo Cavern Poe Room",
+      "Area": "OOT Dodongo Cavern Lower Lizalfos",
+      "Exit": "OOT Dodongo Cavern Poe Room",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Dodongo Cavern Poe Room => OOT Dodongo Cavern Lower Lizalfos",
+      "Area": "OOT Dodongo Cavern Poe Room",
+      "Exit": "OOT Dodongo Cavern Lower Lizalfos",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Dodongo Cavern Poe Room => OOT Dodongo Cavern Bomb Bag Ledge",
+      "Area": "OOT Dodongo Cavern Poe Room",
+      "Exit": "OOT Dodongo Cavern Bomb Bag Ledge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Dodongo Cavern Bomb Bag Ledge => OOT Dodongo Cavern Poe Room",
+      "Area": "OOT Dodongo Cavern Bomb Bag Ledge",
+      "Exit": "OOT Dodongo Cavern Poe Room",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Jabu-Jabu Main => OOT Jabu-Jabu Back",
+      "Area": "OOT Jabu-Jabu Main",
+      "Exit": "OOT Jabu-Jabu Back",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Jabu-Jabu Main => OOT Jabu-Jabu Pre-Boss",
+      "Area": "OOT Jabu-Jabu Main",
+      "Exit": "OOT Jabu-Jabu Pre-Boss",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Jabu-Jabu Main => OOT Jabu-Jabu Basement Side Room",
+      "Area": "OOT Jabu-Jabu Main",
+      "Exit": "OOT Jabu-Jabu Basement Side Room",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Jabu-Jabu Back => OOT Jabu-Jabu Main",
+      "Area": "OOT Jabu-Jabu Back",
+      "Exit": "OOT Jabu-Jabu Main",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Jabu-Jabu Basement Side Room => OOT Jabu-Jabu Main",
+      "Area": "OOT Jabu-Jabu Basement Side Room",
+      "Exit": "OOT Jabu-Jabu Main",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Jabu-Jabu Pre-Boss => OOT Jabu-Jabu Boss",
+      "Area": "OOT Jabu-Jabu Pre-Boss",
+      "Exit": "OOT Jabu-Jabu Boss",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Jabu-Jabu Pre-Boss => OOT Jabu-Jabu Main",
+      "Area": "OOT Jabu-Jabu Pre-Boss",
+      "Exit": "OOT Jabu-Jabu Main",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Shadow Temple => OOT Shadow Temple Boat",
+      "Area": "OOT Shadow Temple",
+      "Exit": "OOT Shadow Temple Boat",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Spirit Temple => OOT Spirit Temple Statue",
+      "Area": "OOT Spirit Temple",
+      "Exit": "OOT Spirit Temple Statue",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -29092,6 +30086,21 @@
     }
   ],
   "AreaList": [
+    "OOT Deku Tree Boss",
+    "OOT Dodongo Cavern Boss",
+    "OOT Dodongo Cavern After Boss",
+    "OOT Jabu-Jabu Boss",
+    "OOT Jabu-Jabu After Boss",
+    "OOT Forest Temple Boss",
+    "OOT Forest Temple After Boss",
+    "OOT Fire Temple Boss",
+    "OOT Fire Temple After Boss",
+    "OOT Water Temple Boss",
+    "OOT Water Temple After Boss",
+    "OOT Spirit Temple Boss",
+    "OOT Spirit Temple After Boss",
+    "OOT Shadow Temple Boss",
+    "OOT Shadow Temple After Boss",
     "OOT Bottom of the Well",
     "OOT Bottom of the Well Main",
     "OOT Deku Tree",
@@ -29101,7 +30110,6 @@
     "OOT Deku Tree Basement Back Room",
     "OOT Deku Tree Basement Ledge",
     "OOT Deku Tree Before Boss",
-    "OOT Deku Tree Boss",
     "OOT Dodongo Cavern",
     "OOT Dodongo Cavern Main",
     "OOT Dodongo Cavern Right Corridor",
@@ -29119,8 +30127,6 @@
     "OOT Dodongo Cavern Bomb Bag Room 2",
     "OOT Dodongo Cavern Main Bridge",
     "OOT Dodongo Cavern Skull",
-    "OOT Dodongo Cavern Boss",
-    "OOT Dodongo Cavern After Boss",
     "OOT Fire Temple",
     "OOT Fire Temple Boss Key Loop",
     "OOT Fire Temple Lava Room",
@@ -29131,8 +30137,6 @@
     "OOT Fire Temple Before Miniboss",
     "OOT Fire Temple Pillar Ledge",
     "OOT Fire Temple After Miniboss",
-    "OOT Fire Temple Boss",
-    "OOT Fire Temple After Boss",
     "OOT Forest Temple",
     "OOT Forest Temple Main",
     "OOT Forest Temple Mini-Boss",
@@ -29155,8 +30159,6 @@
     "OOT Forest Temple Checkerboard",
     "OOT Forest Temple Poe 3",
     "OOT Forest Temple Antichamber",
-    "OOT Forest Temple Boss",
-    "OOT Forest Temple After Boss",
     "OOT Ganon Castle Main",
     "OOT Ganon Castle Light",
     "OOT Ganon Castle Forest",
@@ -29181,8 +30183,6 @@
     "OOT Ice Cavern",
     "OOT Jabu-Jabu",
     "OOT Jabu-Jabu Main",
-    "OOT Jabu-Jabu Boss",
-    "OOT Jabu-Jabu After Boss",
     "OOT SPAWN",
     "OOT EGGS",
     "OOT Link's House",
@@ -29255,8 +30255,6 @@
     "OOT Shadow Temple Open",
     "OOT Shadow Temple Wind",
     "OOT Shadow Temple Boat",
-    "OOT Shadow Temple Boss",
-    "OOT Shadow Temple After Boss",
     "OOT Spirit Temple",
     "OOT Spirit Temple Child Entrance",
     "OOT Spirit Temple Child Back",
@@ -29271,8 +30269,6 @@
     "OOT Spirit Temple Adult Upper 2",
     "OOT Spirit Temple Adult Hand",
     "OOT Spirit Temple Adult Climb 2",
-    "OOT Spirit Temple Boss",
-    "OOT Spirit Temple After Boss",
     "OOT Water Temple",
     "OOT Water Temple Main",
     "OOT Water Temple Main Ledge",
@@ -29297,8 +30293,20 @@
     "OOT Water Temple River",
     "OOT Water Temple Cage Room",
     "OOT Water Temple Antichamber",
-    "OOT Water Temple Boss",
-    "OOT Water Temple After Boss",
+    "OOT Deku Tree Compass Room",
+    "OOT Deku Tree Water Room",
+    "OOT Deku Tree Water Room Back",
+    "OOT Deku Tree Backrooms",
+    "OOT Dodongo Cavern Upper Staircase",
+    "OOT Dodongo Cavern Upper Lizalfos",
+    "OOT Dodongo Cavern Upper Ledges",
+    "OOT Dodongo Cavern Lower Tunnel",
+    "OOT Dodongo Cavern Lower Lizalfos",
+    "OOT Dodongo Cavern Poe Room",
+    "OOT Dodongo Cavern Bomb Bag Ledge",
+    "OOT Jabu-Jabu Back",
+    "OOT Jabu-Jabu Basement Side Room",
+    "OOT Jabu-Jabu Pre-Boss",
     "MM Ancient Castle of Ikana Exterior",
     "MM Ancient Castle of Ikana Entrance",
     "MM Ancient Castle of Ikana Interior",
@@ -31064,6 +32072,246 @@
               "amount": 0
             }
           }
+        }
+      }
+    },
+    {
+      "ID": "DTMQ",
+      "DisplayName": "Deku Tree MQ",
+      "CurrentValue": "false",
+      "SubCategory": "Master Quest",
+      "Values": {
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
+        },
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
+        }
+      }
+    },
+    {
+      "ID": "DCMQ",
+      "DisplayName": "Dodongos Cavern MQ",
+      "CurrentValue": "false",
+      "SubCategory": "Master Quest",
+      "Values": {
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
+        },
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
+        }
+      }
+    },
+    {
+      "ID": "JJMQ",
+      "DisplayName": "Jabu Jabu MQ",
+      "CurrentValue": "false",
+      "SubCategory": "Master Quest",
+      "Values": {
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
+        },
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
+        }
+      }
+    },
+    {
+      "ID": "ForestMQ",
+      "DisplayName": "Forest Temple MQ",
+      "CurrentValue": "false",
+      "SubCategory": "Master Quest",
+      "Values": {
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
+        },
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
+        }
+      }
+    },
+    {
+      "ID": "FireMQ",
+      "DisplayName": "Fire Temple MQ",
+      "CurrentValue": "false",
+      "SubCategory": "Master Quest",
+      "Values": {
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
+        },
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
+        }
+      }
+    },
+    {
+      "ID": "WaterMQ",
+      "DisplayName": "Water Temple MQ",
+      "CurrentValue": "false",
+      "SubCategory": "Master Quest",
+      "Values": {
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
+        },
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
+        }
+      }
+    },
+    {
+      "ID": "ShadowMQ",
+      "DisplayName": "Shadow Temple MQ",
+      "CurrentValue": "false",
+      "SubCategory": "Master Quest",
+      "Values": {
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
+        },
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
+        }
+      }
+    },
+    {
+      "ID": "SpiritMQ",
+      "DisplayName": "Spirit Temple MQ",
+      "CurrentValue": "false",
+      "SubCategory": "Master Quest",
+      "Values": {
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
+        },
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
+        }
+      }
+    },
+    {
+      "ID": "BotWMQ",
+      "DisplayName": "Bottom of the Well MQ",
+      "CurrentValue": "false",
+      "SubCategory": "Master Quest",
+      "Values": {
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
+        },
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
+        }
+      }
+    },
+    {
+      "ID": "ICMQ",
+      "DisplayName": "Ice Cavern MQ",
+      "CurrentValue": "false",
+      "SubCategory": "Master Quest",
+      "Values": {
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
+        },
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
+        }
+      }
+    },
+    {
+      "ID": "GTGMQ",
+      "DisplayName": "Gerudo Training Grounds MQ",
+      "CurrentValue": "false",
+      "SubCategory": "Master Quest",
+      "Values": {
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
+        },
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
+        }
+      }
+    },
+    {
+      "ID": "GanonMQ",
+      "DisplayName": "Ganons Castle MQ",
+      "CurrentValue": "false",
+      "SubCategory": "Master Quest",
+      "Values": {
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
+        },
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
         }
       }
     }
