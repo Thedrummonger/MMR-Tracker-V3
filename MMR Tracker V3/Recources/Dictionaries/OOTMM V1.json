@@ -9505,6 +9505,158 @@
       "LocationProxys": []
     },
     {
+      "ID": "OOT MQ Bottom of the Well Map Chest",
+      "Name": "MQ Bottom of the Well Map Chest",
+      "OriginalItem": "OOT_MAP_BOTW",
+      "Area": "Bottom of the Well",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Bottom of the Well Map Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Bottom of the Well Map Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Bottom of the Well Compass Chest",
+      "Name": "MQ Bottom of the Well Compass Chest",
+      "OriginalItem": "OOT_COMPASS_BOTW",
+      "Area": "Bottom of the Well",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Bottom of the Well Compass Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Bottom of the Well Compass Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Bottom of the Well Lens Chest",
+      "Name": "MQ Bottom of the Well Lens Chest",
+      "OriginalItem": "OOT_LENS",
+      "Area": "Bottom of the Well",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Bottom of the Well Lens Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Bottom of the Well Lens Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Bottom of the Well Dead Hand Key",
+      "Name": "MQ Bottom of the Well Dead Hand Key",
+      "OriginalItem": "OOT_SMALL_KEY_BOTW",
+      "Area": "Bottom of the Well",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Bottom of the Well Dead Hand Key"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Bottom of the Well Dead Hand Key"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Bottom of the Well East Middle Room Key",
+      "Name": "MQ Bottom of the Well East Middle Room Key",
+      "OriginalItem": "OOT_SMALL_KEY_BOTW",
+      "Area": "Bottom of the Well",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Bottom of the Well East Middle Room Key"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Bottom of the Well East Middle Room Key"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Bottom of the Well GS Basement",
+      "Name": "MQ Bottom of the Well GS Basement",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Bottom of the Well",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Bottom of the Well GS Basement"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Bottom of the Well GS Basement"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Bottom of the Well GS West Middle Room",
+      "Name": "MQ Bottom of the Well GS West Middle Room",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Bottom of the Well",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Bottom of the Well GS West Middle Room"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Bottom of the Well GS West Middle Room"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Bottom of the Well GS Coffin Room",
+      "Name": "MQ Bottom of the Well GS Coffin Room",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Bottom of the Well",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Bottom of the Well GS Coffin Room"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Bottom of the Well GS Coffin Room"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
       "ID": "MM Initial Song of Healing",
       "Name": "Initial Song of Healing",
       "OriginalItem": "MM_SONG_HEALING",

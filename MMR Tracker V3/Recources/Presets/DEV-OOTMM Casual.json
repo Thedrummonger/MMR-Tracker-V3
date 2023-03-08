@@ -4200,7 +4200,6 @@
       ],
       "ConditionalItems": [
         [
-          "true",
           "OOT Fire Temple Maze Upper"
         ],
         [
@@ -6417,7 +6416,6 @@
       ],
       "ConditionalItems": [
         [
-          "true",
           "OOT Deku Tree Water Room Back"
         ],
         [
@@ -6899,6 +6897,139 @@
         "OOT_is_child",
         "OOT Jabu-Jabu Main",
         "option{JJMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Bottom of the Well Map Chest",
+      "RequiredItems": [
+        "OOT_OCARINA",
+        "OOT_SONG_ZELDA",
+        "OOT Bottom of the Well Main",
+        "option{BotWMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Bottom of the Well Compass Chest",
+      "RequiredItems": [
+        "OOT_has_weapon",
+        "OOT Bottom of the Well Main",
+        "option{BotWMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_has_ranged_weapon_child"
+        ],
+        [
+          "OOT_has_explosives"
+        ],
+        [
+          "OOT_OCARINA",
+          "OOT_SONG_ZELDA"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Bottom of the Well Lens Chest",
+      "RequiredItems": [
+        "OOT_OCARINA",
+        "OOT_SONG_ZELDA",
+        "OOT_SMALL_KEY_BOTW, 2",
+        "OOT_has_explosives",
+        "OOT Bottom of the Well Main",
+        "option{BotWMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_SONG_SUN"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Bottom of the Well Dead Hand Key",
+      "RequiredItems": [
+        "OOT_has_explosives",
+        "OOT Bottom of the Well Main",
+        "option{BotWMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Bottom of the Well East Middle Room Key",
+      "RequiredItems": [
+        "OOT_OCARINA",
+        "OOT_SONG_ZELDA",
+        "OOT Bottom of the Well Main",
+        "option{BotWMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Bottom of the Well GS Basement",
+      "RequiredItems": [
+        "OOT_can_damage_skull",
+        "OOT Bottom of the Well Main",
+        "option{BotWMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Bottom of the Well GS West Middle Room",
+      "RequiredItems": [
+        "OOT_OCARINA",
+        "OOT_SONG_ZELDA",
+        "OOT_has_explosives",
+        "OOT Bottom of the Well Main",
+        "option{BotWMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Bottom of the Well GS Coffin Room",
+      "RequiredItems": [
+        "OOT_can_damage_skull",
+        "OOT_SMALL_KEY_BOTW, 2",
+        "OOT Bottom of the Well Main",
+        "option{BotWMQ, true}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -7883,7 +8014,6 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "true",
           "MM Swamp Potion Shop"
         ],
         [
@@ -12108,7 +12238,6 @@
       ],
       "ConditionalItems": [
         [
-          "true",
           "option{BotWMQ, true}"
         ],
         [
@@ -12124,21 +12253,27 @@
       "Id": "OOT Bottom of the Well => OOT Bottom of the Well Main",
       "RequiredItems": [
         "OOT_is_child",
-        "OOT Bottom of the Well",
-        "option{BotWMQ, false}"
+        "OOT Bottom of the Well"
       ],
       "ConditionalItems": [
         [
-          "OOT_has_nuts"
+          "option{BotWMQ, true}"
         ],
         [
-          "OOT_has_weapon"
+          "OOT_has_nuts",
+          "option{BotWMQ, false}"
         ],
         [
-          "OOT_has_explosives"
+          "OOT_has_weapon",
+          "option{BotWMQ, false}"
         ],
         [
-          "OOT_has_ranged_weapon_child"
+          "OOT_has_explosives",
+          "option{BotWMQ, false}"
+        ],
+        [
+          "OOT_has_ranged_weapon_child",
+          "option{BotWMQ, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -12149,10 +12284,16 @@
     {
       "Id": "OOT Bottom of the Well Main => OOT Bottom of the Well",
       "RequiredItems": [
-        "OOT Bottom of the Well Main",
-        "option{BotWMQ, false}"
+        "OOT Bottom of the Well Main"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "option{BotWMQ, true}"
+        ],
+        [
+          "option{BotWMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -12249,7 +12390,6 @@
       ],
       "ConditionalItems": [
         [
-          "true",
           "option{DTMQ, true}"
         ],
         [
@@ -12268,7 +12408,6 @@
       ],
       "ConditionalItems": [
         [
-          "true",
           "option{DTMQ, true}"
         ],
         [
@@ -12346,7 +12485,6 @@
           "option{DTMQ, false}"
         ],
         [
-          "true",
           "OOT Zora Domain"
         ],
         [
@@ -12498,7 +12636,6 @@
       ],
       "ConditionalItems": [
         [
-          "true",
           "option{DTMQ, true}"
         ],
         [
@@ -12536,7 +12673,6 @@
       ],
       "ConditionalItems": [
         [
-          "true",
           "option{DCMQ, true}"
         ],
         [
@@ -12583,7 +12719,6 @@
       ],
       "ConditionalItems": [
         [
-          "true",
           "option{DCMQ, true}"
         ],
         [
@@ -13100,7 +13235,6 @@
       ],
       "ConditionalItems": [
         [
-          "true",
           "option{DCMQ, true}"
         ],
         [
@@ -13119,7 +13253,6 @@
       ],
       "ConditionalItems": [
         [
-          "true",
           "option{DCMQ, true}"
         ],
         [
@@ -13138,7 +13271,6 @@
       ],
       "ConditionalItems": [
         [
-          "true",
           "option{FireMQ, true}"
         ],
         [
@@ -13178,7 +13310,6 @@
       ],
       "ConditionalItems": [
         [
-          "true",
           "option{FireMQ, true}"
         ],
         [
@@ -13212,8 +13343,7 @@
           "OOT_SMALL_KEY_FIRE, 8"
         ],
         [
-          "option{smallKeyShuffle,  anywhere, false}",
-          "true"
+          "option{smallKeyShuffle,  anywhere, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -13426,7 +13556,6 @@
       ],
       "ConditionalItems": [
         [
-          "true",
           "option{ForestMQ, true}"
         ],
         [
@@ -13445,7 +13574,6 @@
       ],
       "ConditionalItems": [
         [
-          "true",
           "option{ForestMQ, true}"
         ],
         [
@@ -13481,7 +13609,6 @@
       ],
       "ConditionalItems": [
         [
-          "true",
           "option{ForestMQ, true}"
         ],
         [
@@ -13552,7 +13679,6 @@
       ],
       "ConditionalItems": [
         [
-          "true",
           "option{ForestMQ, true}"
         ],
         [
@@ -14114,7 +14240,6 @@
       ],
       "ConditionalItems": [
         [
-          "true",
           "option{ForestMQ, true}"
         ],
         [
@@ -14207,7 +14332,6 @@
       ],
       "ConditionalItems": [
         [
-          "true",
           "option{GanonMQ, true}"
         ],
         [
@@ -14431,7 +14555,6 @@
       ],
       "ConditionalItems": [
         [
-          "true",
           "option{GTGMQ, true}"
         ],
         [
@@ -14683,7 +14806,6 @@
       ],
       "ConditionalItems": [
         [
-          "true",
           "option{ICMQ, true}"
         ],
         [
@@ -14702,7 +14824,6 @@
       ],
       "ConditionalItems": [
         [
-          "true",
           "option{JJMQ, true}"
         ],
         [
@@ -14745,7 +14866,6 @@
       ],
       "ConditionalItems": [
         [
-          "true",
           "option{JJMQ, true}"
         ],
         [
@@ -17631,7 +17751,6 @@
       ],
       "ConditionalItems": [
         [
-          "true",
           "option{ShadowMQ, true}"
         ],
         [
@@ -17727,7 +17846,6 @@
       ],
       "ConditionalItems": [
         [
-          "true",
           "option{ShadowMQ, true}"
         ],
         [
@@ -17755,7 +17873,6 @@
       ],
       "ConditionalItems": [
         [
-          "true",
           "option{SpiritMQ, true}"
         ],
         [
@@ -18029,7 +18146,6 @@
       ],
       "ConditionalItems": [
         [
-          "true",
           "option{SpiritMQ, true}"
         ],
         [
@@ -18165,7 +18281,6 @@
       ],
       "ConditionalItems": [
         [
-          "true",
           "option{WaterMQ, true}"
         ],
         [
@@ -18184,7 +18299,6 @@
       ],
       "ConditionalItems": [
         [
-          "true",
           "option{WaterMQ, true}"
         ],
         [
@@ -18203,7 +18317,6 @@
       ],
       "ConditionalItems": [
         [
-          "true",
           "option{WaterMQ, true}"
         ],
         [
@@ -18386,7 +18499,6 @@
       ],
       "ConditionalItems": [
         [
-          "true",
           "option{WaterMQ, true}"
         ],
         [
@@ -18698,7 +18810,6 @@
       ],
       "ConditionalItems": [
         [
-          "true",
           "option{WaterMQ, true}"
         ],
         [

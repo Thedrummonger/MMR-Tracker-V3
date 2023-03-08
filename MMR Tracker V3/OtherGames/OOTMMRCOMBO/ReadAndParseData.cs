@@ -66,6 +66,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
             AddRenewableChecks(LogicFile, dictionaryFile);
 
+            FinalLogicCleanup(LogicFile);
+
             //CreateAreaNameMappingFile();
 
             Logic = LogicFile;
@@ -74,6 +76,20 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             File.WriteAllText(FinalDictFile, JsonConvert.SerializeObject(dictionaryFile, Testing._NewtonsoftJsonSerializerOptions));
 
 
+        }
+
+        private static void FinalLogicCleanup(MMRData.LogicFile logicFile)
+        {
+            foreach(var logic in logicFile.Logic)
+            {
+                foreach(var condSet in logic.ConditionalItems)
+                {
+                    if (condSet.Any(x => bool.TryParse(x, out bool BT) && BT) && condSet.Any(x => !bool.TryParse(x, out _)))
+                    {
+                        int Match = condSet.RemoveAll(x => bool.TryParse(x, out bool BR) && BR);
+                    }
+                }
+            }
         }
 
         private static void AddRenewableChecks(MMRData.LogicFile logicFile, LogicDictionaryData.LogicDictionary dictionaryFile)
@@ -446,7 +462,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             {
                 if (Logic.ConditionalItems.Any() || Logic.RequiredItems.Any())
                 {
-                    Debug.WriteLine(DebugMessage);
+                    //Debug.WriteLine(DebugMessage);
                     logicCleaner.MoveRequirementsToConditionals(Logic);
                     string CurrentLogic = $" || ({string.Join(" || ", Logic.ConditionalItems.Select(x => string.Join(" && ", x)))})";
                     return NewLogic + CurrentLogic;
@@ -695,8 +711,6 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                     string Truename = $"{Game}_{i}";
                     if (LogicFile.Logic.Find(x => x.Id == Truename) == null)
                     {
-
-
                         LogicFile.Logic.Add(new TrackerObjects.MMRData.JsonFormatLogicItem { Id = Truename });
                     }
                 }
