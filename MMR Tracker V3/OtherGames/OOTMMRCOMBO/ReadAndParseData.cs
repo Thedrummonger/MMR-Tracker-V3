@@ -620,21 +620,35 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             return finallogic;
         }
 
-        public static string ParseFunction(string LogicLine, string Game)
+        public static string ParseFunction(string LogicLine, string CurrentGame)
         {
             string line = LogicLine;
             var FunctionsFound = LogicStringParser.GetFunctionsFromLogicString(line);
 
             while (FunctionsFound.Any())
             {
-                var f = FunctionsFound[0];
-                switch (f.Funtion)
+                var CurFunction = FunctionsFound[0];
+                string FullFunction = CurFunction.ToString();
+                string Function = CurFunction.Funtion;
+                string Parameters = CurFunction.ParametersTrimmed;
+                string Game = CurrentGame;
+                if (Parameters.StartsWith($"MM_"))
+                {
+                    Parameters = Parameters.Replace("MM_", "");
+                    Game = "MM";
+                }
+                else if (Parameters.StartsWith($"OOT_"))
+                {
+                    Parameters = Parameters.Replace("OOT_", "");
+                    Game = "OOT";
+                }
+                switch (Function)
                 {
                     case "trick":
-                        line = line.Replace(f.ToString(), $"TRICK_{f.ParametersTrimmed}");
+                        line = line.Replace(FullFunction, $"TRICK_{Game}_{Parameters}");
                         break;
                     case "has":
-                        string ReplaceText = $"{Game}_{f.ParametersTrimmed}";
+                        string ReplaceText = $"{Game}_{Parameters}";
                         int Amount = 1;
                         if (ReplaceText.Contains(", "))
                         {
@@ -642,51 +656,51 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                             ReplaceText = ReplaceText.Split(",")[0].Trim();
                         }
                         if (Amount > 1) { ReplaceText += $", {Amount}"; }
-                        line = line.Replace(f.ToString(), ReplaceText);
+                        line = line.Replace(FullFunction, ReplaceText);
                         break;
                     case "event":
-                        line = line.Replace(f.ToString(), $"{Game}_EVENT_{f.ParametersTrimmed}");
+                        line = line.Replace(FullFunction, $"{Game}_EVENT_{Parameters}");
                         break;
                     case "adult_trade":
-                        line = line.Replace(f.ToString(), $"{Game}_is_adult && has({f.ParametersTrimmed})");
+                        line = line.Replace(FullFunction, $"{Game}_is_adult && has({Parameters})");
                         break;
                     case "can_ride_bean":
-                        line = line.Replace(f.ToString(), $"{Game}_is_adult && event({f.ParametersTrimmed})");
+                        line = line.Replace(FullFunction, $"{Game}_is_adult && event({Parameters})");
                         break;
                     case "masks":
-                        line = line.Replace(f.ToString(), $"MM_MASKS, {f.ParametersTrimmed}");
+                        line = line.Replace(FullFunction, $"MM_MASKS, {Parameters}");
                         break;
                     case "can_play":
-                        line = line.Replace(f.ToString(), $"has(OCARINA) && has({f.ParametersTrimmed})");
+                        line = line.Replace(FullFunction, $"has(OCARINA) && has({Parameters})");
                         break;
                     case "has_small_keys_fire":
-                        int Keys = int.Parse(f.ParametersTrimmed);
-                        line = line.Replace(f.ToString(), $"(option{{smallKeyShuffle, anywhere}} && has(SMALL_KEY_FIRE, {Keys + 1})) || (option{{smallKeyShuffle, anywhere, false}} && has(SMALL_KEY_FIRE, {Keys}))");
+                        int Keys = int.Parse(Parameters);
+                        line = line.Replace(FullFunction, $"(option{{smallKeyShuffle, anywhere}} && has(SMALL_KEY_FIRE, {Keys + 1})) || (option{{smallKeyShuffle, anywhere, false}} && has(SMALL_KEY_FIRE, {Keys}))");
                         break;
                     case "setting":
-                        line = line.Replace(f.ToString(), $"option{{{f.ParametersTrimmed}}}");
+                        line = line.Replace(FullFunction, $"option{{{Parameters}}}");
                         break;
                     case "age":
-                        if (f.ParametersTrimmed == "child") { line = line.Replace(f.ToString(), $"option{{age_filter, adult, false}}"); }
-                        else if (f.ParametersTrimmed == "adult") { line = line.Replace(f.ToString(), $"option{{age_filter, child, false}} && OOT_EVENT_TIME_TRAVEL"); }
+                        if (Parameters == "child") { line = line.Replace(FullFunction, $"option{{age_filter, adult, false}}"); }
+                        else if (Parameters == "adult") { line = line.Replace(FullFunction, $"option{{age_filter, child, false}} && OOT_EVENT_TIME_TRAVEL"); }
                         break;
                     case "cond":
-                        if (f.ParametersTrimmed.StartsWith("setting"))
+                        if (Parameters.StartsWith("setting"))
                         {
-                            string CleanedInput = f.ParametersTrimmed.Replace("setting(", "(");
-                            Debug.WriteLine($"Parsing Cond \n[{f.ParametersTrimmed}]");
+                            string CleanedInput = Parameters.Replace("setting(", "(");
+                            Debug.WriteLine($"Parsing Cond \n[{Parameters}]");
                             var splitArray = Regex.Split(CleanedInput, @"(?<!,[^(]+\([^)]+),");
-                            line = line.Replace(f.ToString(), $"((option{{{splitArray[0].TrimStart('(')}, {splitArray[1].TrimEnd(')')}}} && {splitArray[2]}) || (option{{{splitArray[0].TrimStart('(')}, {splitArray[1].TrimEnd(')')}, false}} && {splitArray[3]}))");
+                            line = line.Replace(FullFunction, $"((option{{{splitArray[0].TrimStart('(')}, {splitArray[1].TrimEnd(')')}}} && {splitArray[2]}) || (option{{{splitArray[0].TrimStart('(')}, {splitArray[1].TrimEnd(')')}, false}} && {splitArray[3]}))");
                             Debug.WriteLine($"Success \n[(option{{{splitArray[0]}, {splitArray[1]}}} && {splitArray[2]}) || (option{{{splitArray[0]}, {splitArray[1]}, false}} && {splitArray[3]})]");
                         }
                         else
                         {
-                            var splitArray = f.ParametersTrimmed.Split(",").Select(x => x.Trim()).ToArray();
-                            line = line.Replace(f.ToString(), $"({splitArray[0]} && {splitArray[1]}) || ({splitArray[2]})");
+                            var splitArray = Parameters.Split(",").Select(x => x.Trim()).ToArray();
+                            line = line.Replace(FullFunction, $"({splitArray[0]} && {splitArray[1]}) || ({splitArray[2]})");
                         }
                         break;
                     default:
-                        line = line.Replace(f.ToString(), $"ERROR UNHANDLED FUNTION {f.Funtion}");
+                        line = line.Replace(FullFunction, $"ERROR UNHANDLED FUNTION {Function}");
                         break;
                 }
                 FunctionsFound = LogicStringParser.GetFunctionsFromLogicString(line);
