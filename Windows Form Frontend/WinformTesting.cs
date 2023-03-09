@@ -35,9 +35,9 @@ namespace Windows_Form_Frontend
             //Bow
             instance.AddDisplayBox("DBbows", 1, 2);
             instance.AddTextToDefaultImage("DBbows", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "UpgradeBiggestQuiver+UpgradeBigQuiver+ItemBow");
-            instance.AddDisplayItem("DBbows", "UpgradeBiggestQuiver", 1, 2, "MMRTItemDisplayHasBiggestQuiver");
-            instance.AddDisplayItem("DBbows", "UpgradeBigQuiver", 1, 2, "MMRTItemDisplayHasBigQuiver");
-            instance.AddDisplayItem("DBbows", "ItemBow", 1, 2, "MMRTItemDisplayHasBow");
+            instance.AddDisplayItem("DBbows", "UpgradeBiggestQuiver", 1, 2, "ProgressiveItems, disabled && UpgradeBiggestQuiver || ProgressiveItems, enabled && MMRTProgressiveQuiverX3");
+            instance.AddDisplayItem("DBbows", "UpgradeBigQuiver", 1, 2, "ProgressiveItems, disabled && UpgradeBigQuiver || ProgressiveItems, enabled && MMRTProgressiveQuiverX2");
+            instance.AddDisplayItem("DBbows", "ItemBow", 1, 2, "ProgressiveItems, disabled && ItemBow || ProgressiveItems, enabled && MMRTProgressiveQuiver");
             instance.AddTextToDisplayItem("DBbows", "UpgradeBiggestQuiver", WinFormImageUtils.TextPosition.topLeft, WinFormImageUtils.TextType.text, "50");
             instance.AddTextToDisplayItem("DBbows", "UpgradeBigQuiver", WinFormImageUtils.TextPosition.topLeft, WinFormImageUtils.TextType.text, "40");
             instance.AddTextToDisplayItem("DBbows", "ItemBow", WinFormImageUtils.TextPosition.topLeft, WinFormImageUtils.TextType.text, "30");
@@ -79,9 +79,9 @@ namespace Windows_Form_Frontend
             //Bombs
             instance.AddDisplayBox("DBbombs", 0, 3);
             instance.AddTextToDefaultImage("DBbombs", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "UpgradeBiggestBombBag+UpgradeBigBombBag+ItemBombBag");
-            instance.AddDisplayItem("DBbombs", "UpgradeBiggestBombBag", 0, 3, "MMRTItemDisplayHasBiggestBombBag");
-            instance.AddDisplayItem("DBbombs", "UpgradeBigBombBag", 0, 3, "MMRTItemDisplayHasBigBombBag");
-            instance.AddDisplayItem("DBbombs", "ItemBombBag", 0, 3, "MMRTItemDisplayHasBombBag");
+            instance.AddDisplayItem("DBbombs", "UpgradeBiggestBombBag", 0, 3, "ProgressiveItems, disabled && UpgradeBiggestBombBag || ProgressiveItems, enabled && MMRTProgressiveBombBagX3");
+            instance.AddDisplayItem("DBbombs", "UpgradeBigBombBag", 0, 3, "ProgressiveItems, disabled && UpgradeBigBombBag || ProgressiveItems, enabled && MMRTProgressiveBombBagX2");
+            instance.AddDisplayItem("DBbombs", "ItemBombBag", 0, 3, "ProgressiveItems, disabled && ItemBombBag || ProgressiveItems, enabled && MMRTProgressiveBombBag");
             instance.AddTextToDisplayItem("DBbombs", "UpgradeBiggestBombBag", WinFormImageUtils.TextPosition.topLeft, WinFormImageUtils.TextType.text, "40");
             instance.AddTextToDisplayItem("DBbombs", "UpgradeBigBombBag", WinFormImageUtils.TextPosition.topLeft, WinFormImageUtils.TextType.text, "30");
             instance.AddTextToDisplayItem("DBbombs", "ItemBombBag", WinFormImageUtils.TextPosition.topLeft, WinFormImageUtils.TextType.text, "20");
@@ -229,7 +229,7 @@ namespace Windows_Form_Frontend
             ID = "Chateau";
             instance.AddDisplayBox($"DB{ID}", iconx, icony);
             instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "ItemBottleMadameAroma+ShopItemMilkBarChateau");
-            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "MMRTItemDisplayHasChateau");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "ItemBottleMadameAroma||ShopItemMilkBarChateau");
 
             //Soaring
             instance.AddDisplayBox("DBSoaring", 3, 24);
@@ -358,12 +358,12 @@ namespace Windows_Form_Frontend
             //Heart Piece
             instance.AddDisplayBox("DBHeartPieces", 4, 7);
             instance.AddDisplayItem("DBHeartPieces", "HeartPiece", 4, 7, "Piece of Heart");
-            instance.AddTextToDisplayItem("DBHeartPieces", "HeartPiece", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.ItemCount, "Piece of Heart");
+            instance.AddStaticTextBox("DBHeartPieces", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.ItemCount, "Piece of Heart");
 
             //Heart containers
             instance.AddDisplayBox("DBHeartContainer", 5, 7);
             instance.AddDisplayItem("DBHeartContainer", "HeartContainer", 5, 7, "Heart Container");
-            instance.AddTextToDisplayItem("DBHeartContainer", "HeartContainer", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.ItemCount, "Heart Container");
+            instance.AddStaticTextBox("DBHeartContainer", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.ItemCount, "Heart Container");
 
             //Room Key
             iconx = 5;
@@ -622,79 +622,280 @@ namespace Windows_Form_Frontend
             instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "MaskFierceDeity");
 
             //ClockFairy
+            iconx = 5;
+            icony = 22;
+            ID = "CollectibleStrayFairyClockTown";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "CollectibleStrayFairyClockTown");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "CollectibleStrayFairyClockTown");
 
             //Notebook ???
+            iconx = 5;
+            icony = 21;
+            ID = "ItemNotebook";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "ItemNotebook");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "ItemNotebook");
 
             //ROW 10=============================================================================================================
 
             //Swords
+            instance.AddDisplayBox("DBsword", 0, 20);
+            instance.AddTextToDefaultImage("DBsword", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "UpgradeBiggestBombBag+UpgradeBigBombBag+ItemBombBag");
+            instance.AddDisplayItem("DBsword", "UpgradeGildedSword", 2, 20, "ProgressiveItems, disabled && UpgradeGildedSword || ProgressiveItems, enabled && Progressive Sword, 3");
+            instance.AddDisplayItem("DBsword", "UpgradeRazorSword", 1, 20, "ProgressiveItems, disabled && UpgradeRazorSword || ProgressiveItems, enabled && Progressive Sword, 2");
+            instance.AddDisplayItem("DBsword", "StartingSword", 0, 20, "ProgressiveItems, disabled && StartingSword || ProgressiveItems, enabled && Progressive Sword");
 
             //Odolawa
+            iconx = 0;
+            icony = 21;
+            ID = "RemainsOdolwa";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "RemainsOdolwa");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "RemainsOdolwa");
 
             //WoodfallMap
+            iconx = 0;
+            icony = 22;
+            ID = "ItemWoodfallMap";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "ItemWoodfallMap");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "ItemWoodfallMap");
 
             //WoodfallCompass
+            iconx = 1;
+            icony = 22;
+            ID = "ItemWoodfallCompass";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "ItemWoodfallCompass");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "ItemWoodfallCompass");
 
             //WoodfallBK
+            iconx = 2;
+            icony = 22;
+            ID = "ItemWoodfallBossKey";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "ItemWoodfallBossKey");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "ItemWoodfallBossKey");
+
+            //WoodfallKey
+            iconx = 3;
+            icony = 22;
+            ID = "ItemWoodfallKey1";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "ItemWoodfallKey1");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "ItemWoodfallKey1");
 
             //Woodfall Fairy
+            iconx = 5;
+            icony = 12;
+            ID = "WoodfallStrayFairy";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "Woodfall Stray Fairy");
+            instance.AddStaticTextBox($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.ItemCount, "Woodfall Stray Fairy");
 
             //Swamp Skull
+            iconx = 4;
+            icony = 22;
+            ID = "SwampSkullToken";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "Swamp Skulltula Spirit", false, -100, 0, -40);
+            instance.AddStaticTextBox($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.ItemCount, "Swamp Skulltula Spirit");
 
             //ROW 11=============================================================================================================
 
             //Sheild
+            instance.AddDisplayBox("DBShield", 4, 20);
+            instance.AddTextToDefaultImage("DBShield", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "Hero's Shield+UpgradeMirrorShield");
+            instance.AddDisplayItem("DBShield", "UpgradeMirrorShield", 5, 20, "UpgradeMirrorShield");
+            instance.AddDisplayItem("DBShield", "UpgradeHeroShield", 4, 20, "Hero's Shield");
 
             //Goht
+            iconx = 1;
+            icony = 21;
+            ID = "RemainsGoht";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "RemainsGoht");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "RemainsGoht");
 
             //Snowhead Map
+            iconx = 0;
+            icony = 22;
+            ID = "ItemSnowheadMap";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "ItemSnowheadMap");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "ItemSnowheadMap");
 
             //Snowhead Compass
+            iconx = 1;
+            icony = 22;
+            ID = "ItemSnowheadCompass";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "ItemSnowheadCompass");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "ItemSnowheadCompass");
+
+            //Snowhead BK
+            iconx = 2;
+            icony = 22;
+            ID = "ItemSnowheadBossKey";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "ItemSnowheadBossKey");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "ItemSnowheadBossKey");
 
             //Snowhead Key
-
-            //Snopwhead BK
+            iconx = 3;
+            icony = 22;
+            ID = "SnowheadSmallKey";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "Snowhead Small Key");
+            instance.AddStaticTextBox($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.ItemCount, "Snowhead Small Key");
 
             //Snowhead Fairy
+            iconx = 4;
+            icony = 12;
+            ID = "SnowheadStrayFairy";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "Snowhead Stray Fairy");
+            instance.AddStaticTextBox($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.ItemCount, "Snowhead Stray Fairy");
 
             //Magic
+            iconx = 3;
+            icony = 7;
+            ID = "Magic";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "Magic Power || Extended Magic Power");
+            instance.AddStaticTextBox($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.ItemCount, "Magic Power+Extended Magic Power");
 
 
             //ROW 12=============================================================================================================
 
             //Wallet
+            instance.AddDisplayBox("DBWallet", 5, 3);
+            instance.AddTextToDefaultImage("DBWallet", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "UpgradeRoyalWallet+UpgradeGiantWallet+UpgradeAdultWallet");
+            instance.AddDisplayItem("DBWallet", "UpgradeRoyalWallet", 5, 1, "ProgressiveItems, disabled && UpgradeRoyalWallet || ProgressiveItems, enabled && MMRTProgressiveWalletX3");
+            instance.AddDisplayItem("DBWallet", "UpgradeGiantWallet", 5, 4, "ProgressiveItems, disabled && UpgradeGiantWallet || ProgressiveItems, enabled && MMRTProgressiveWalletX2");
+            instance.AddDisplayItem("DBWallet", "UpgradeAdultWallet", 5, 3, "ProgressiveItems, disabled && UpgradeAdultWallet || ProgressiveItems, enabled && MMRTProgressiveWallet");
 
             //Gyorg
+            iconx = 2;
+            icony = 21;
+            ID = "RemainsGyorg";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "RemainsGyorg");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "RemainsGyorg");
 
             //Greatbay Map
+            iconx = 0;
+            icony = 22;
+            ID = "ItemGreatBayMap";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "ItemGreatBayMap");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "ItemGreatBayMap");
 
             //Greatbay Compass
+            iconx = 1;
+            icony = 22;
+            ID = "ItemGreatBayCompass";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "ItemGreatBayCompass");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "ItemGreatBayCompass");
 
-            //Greatbay Key
+            //Greatbay Boss Key
+            iconx = 2;
+            icony = 22;
+            ID = "ItemGreatBayBossKey";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "ItemGreatBayBossKey");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "ItemGreatBayBossKey");
 
-            //Greatbay BK
+            //Greatbay Kkey
+            iconx = 3;
+            icony = 22;
+            ID = "ItemGreatBayKey1";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "ItemGreatBayKey1");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "ItemGreatBayKey1");
 
             //Greatbay Fairy
+            iconx = 3;
+            icony = 12;
+            ID = "GreatBayStrayFairy";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "Great Bay Stray Fairy");
+            instance.AddStaticTextBox($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.ItemCount, "Great Bay Stray Fairy");
 
             //Ocean Skull
+            iconx = 4;
+            icony = 22;
+            ID = "OceanSkullToken";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "Ocean Skulltula Spirit", false, -200, -40, 80);
+            instance.AddStaticTextBox($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.ItemCount, "Ocean Skulltula Spirit");
 
             //ROW 13=============================================================================================================
 
             //GO MODE
+            iconx = 5;
+            icony = 13;
+            ID = "AreaMoonAccess";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "AreaMoonAccess");
 
             //Twinmold
+            iconx = 3;
+            icony = 21;
+            ID = "RemainsTwinmold";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "RemainsTwinmold");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "RemainsTwinmold");
 
             //StoneTower Map
+            iconx = 0;
+            icony = 22;
+            ID = "ItemStoneTowerMap";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "ItemStoneTowerMap");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "ItemStoneTowerMap");
 
             //StoneTower Compass
+            iconx = 1;
+            icony = 22;
+            ID = "ItemStoneTowerCompass";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "ItemStoneTowerCompass");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "ItemStoneTowerCompass");
+
+            //StoneTower Boss Key
+            iconx = 2;
+            icony = 22;
+            ID = "ItemStoneTowerBossKey";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddTextToDefaultImage($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.HasSeen, "ItemStoneTowerBossKey");
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "ItemStoneTowerBossKey");
 
             //StoneTower Key
-
-            //StoneTower BK
+            iconx = 3;
+            icony = 22;
+            ID = "StoneTowerKey";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "Stone Tower Small Key");
+            instance.AddStaticTextBox($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.ItemCount, "Stone Tower Small Key");
 
             //StoneTower Fairy
+            iconx = 2;
+            icony = 12;
+            ID = "StoneTowerStrayFairy";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "Stone Tower Stray Fairy");
+            instance.AddStaticTextBox($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.ItemCount, "Stone Tower Stray Fairy");
 
             //Double Defence
+            iconx = 5;
+            icony = 7;
+            ID = "FairyDoubleDefense";
+            instance.AddDisplayBox($"DB{ID}", iconx, icony);
+            instance.AddDisplayItem($"DB{ID}", ID, iconx, icony, "FairyDoubleDefense", true);
+            instance.AddStaticTextBox($"DB{ID}", WinFormImageUtils.TextPosition.topRight, WinFormImageUtils.TextType.ItemCount, "FairyDoubleDefense");
 
 
             File.WriteAllText(Path.Combine(References.TestingPaths.GetDevCodePath(), "Windows Form Frontend", "ItemTrackerData", "MMRItemTracker.json"), Newtonsoft.Json.JsonConvert.SerializeObject(instance, MMR_Tracker_V3.Testing._NewtonsoftJsonSerializerOptions));

@@ -560,6 +560,7 @@ namespace MMR_Tracker_V3
                     bool DividerCreated = false;
                     foreach (var i in AvailableHints)
                     {
+                        if (i.RandomizedState == MiscData.RandomizedState.ForcedJunk) { continue; }
                         i.DisplayName = (i.CheckState == MiscData.CheckState.Marked) ? $"{i.GetDictEntry(Instance).Name}: {i.HintText}" : i.GetDictEntry(Instance).Name;
                         ItemsInListBox++;
                         if (!SearchStringParser.FilterSearch(Instance, i, Filter, i.DisplayName)) { continue; }

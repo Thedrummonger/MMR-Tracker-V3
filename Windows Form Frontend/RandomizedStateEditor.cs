@@ -34,6 +34,10 @@ namespace Windows_Form_Frontend
             {
                 cmbLocationType.Items.Add("Entrances");
             }
+            if (_Instance.HintPool.Any())
+            {
+                cmbLocationType.Items.Add("Hints");
+            }
             cmbLocationType.SelectedIndex = 0;
 
             PrintToLocationList(); 
@@ -56,6 +60,12 @@ namespace Windows_Form_Frontend
         private void PrintToLocationList()
         {
             Updating = true;
+
+            btnSetUnRandomized.Enabled = true;
+            btnSetManual.Enabled = true;
+            chkShowManual.Enabled = true;
+            chkShowUnrand.Enabled = true;
+
             lvLocationList.ShowItemToolTips = true;
             lvLocationList.Items.Clear();
             if (cmbLocationType.SelectedItem is string selection)
@@ -68,8 +78,39 @@ namespace Windows_Form_Frontend
                 {
                     PrintExitData();
                 }
+                else if(selection == "Hints")
+                {
+                    btnSetUnRandomized.Enabled = false;
+                    btnSetManual.Enabled = false;
+                    chkShowManual.Enabled = false;
+                    chkShowUnrand.Enabled = false;
+                    PrintHintData();
+                }
             }
             Updating = false;
+        }
+        private List<HintData.HintObject> CheckedhintItems = new List<HintData.HintObject>();
+        private void PrintHintData()
+        {
+            List<ListViewItem> TempList = new List<ListViewItem>();
+            foreach (var i in _Instance.HintPool)
+            {
+                if (i.Value.RandomizedState == MiscData.RandomizedState.Randomized && !chkShowRand.Checked) { continue; }
+                if (i.Value.RandomizedState == MiscData.RandomizedState.ForcedJunk && !chkShowJunk.Checked) { continue; }
+                i.Value.DisplayName = i.Value.GetDictEntry(_Instance).Name;
+                if (!SearchStringParser.FilterSearch(_Instance, i.Value, TxtLocationSearch.Text, i.Value.DisplayName)) { continue; }
+
+                string[] row = { i.Value.DisplayName, "", i.Value.RandomizedState.GetDescription() };
+                ListViewItem listViewItem = new(row)
+                {
+                    Tag = i.Value,
+                    Checked = CheckedhintItems.Contains(i.Value),
+                    ToolTipText = $"Hint: {i.Value.DisplayName} \nRandomized State: {i.Value.RandomizedState}"
+                };
+                TempList.Add(listViewItem);
+            }
+            lvLocationList.Items.AddRange(TempList.ToArray());
+            lvLocationList.CheckBoxes = true;
         }
 
         private void UpdateItemSets()
@@ -109,7 +150,7 @@ namespace Windows_Form_Frontend
                 {
                     Tag = i.Value,
                     Checked = CheckedLocationItems.Contains(i.Value),
-                    ToolTipText = $"Exit: {i.Value.DisplayName} \nVanilla Destination: {VanillaItemText} \nRandomized State: {i.Value.RandomizedState}"
+                    ToolTipText = $"Location: {i.Value.DisplayName} \nVanilla Item: {VanillaItemText} \nRandomized State: {i.Value.RandomizedState}"
                 };
                 TempList.Add(listViewItem);
             }
@@ -138,7 +179,7 @@ namespace Windows_Form_Frontend
                     {
                         Tag = i.Value,
                         Checked = CheckedExitItems.Contains(i.Value),
-                        ToolTipText = $"Location: {i.Value.DisplayName} \nVanilla Item: {VanillaItemText} \nRandomized State: {i.Value.RandomizedState}"
+                        ToolTipText = $"Exit: {i.Value.DisplayName} \nVanilla Destination: {VanillaItemText} \nRandomized State: {i.Value.RandomizedState}"
                     };
                     TempList.Add(listViewItem);
                 }
@@ -250,6 +291,11 @@ namespace Windows_Form_Frontend
                 if (e.Item.Checked) { CheckedExitItems.Add(ExitObject); }
                 else { CheckedExitItems.Remove(ExitObject); }
             }
+            else if (e.Item.Tag is HintData.HintObject HintObject)
+            {
+                if (e.Item.Checked) { CheckedhintItems.Add(HintObject); }
+                else { CheckedhintItems.Remove(HintObject); }
+            }
 
         }
 
@@ -285,6 +331,12 @@ namespace Windows_Form_Frontend
                 if (button == btnSetJunk) { i.RandomizedState = MiscData.RandomizedState.ForcedJunk; }
             }
             CheckedExitItems.Clear();
+            foreach (var i in CheckedhintItems)
+            {
+                if (button == btnSetRandomized) { i.RandomizedState = MiscData.RandomizedState.Randomized; }
+                if (button == btnSetJunk) { i.RandomizedState = MiscData.RandomizedState.ForcedJunk; }
+            }
+            CheckedhintItems.Clear();
 
             UpdateItemSets();
             PrintToLocationList();

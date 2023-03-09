@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using static FParsec.ErrorMessage;
@@ -350,7 +351,7 @@ namespace MMR_Tracker_V3
             foreach (var i in instance.LocationPool)
             {   
                 //Any unrandomized locations with items that effect logic should be made Manual to track obtaining the item and updating logic
-                if (i.Value.IsUnrandomized(1) && AllLogicItems.ContainsKey(i.Value.GetDictEntry(instance).OriginalItem))
+                if (i.Value.IsUnrandomized(1) && i.Value.GetDictEntry(instance).ValidItemTypes.Contains("Dungeon Entrance") && AllLogicItems.ContainsKey(i.Value.GetDictEntry(instance).OriginalItem))
                 {
                     i.Value.SetRandomizedState(MiscData.RandomizedState.UnrandomizedManual, instance);
                 }
@@ -372,7 +373,8 @@ namespace MMR_Tracker_V3
                 {
                     if (i.IsRandomized())
                     {
-                        Debug.WriteLine($"{i.ID} was not found in the spoiler log and was randomized");
+                        if (Log.GameplaySettings.StrayFairyMode == "ChestsOnly" && i.ID.StartsWith("CollectibleStrayFairy")) { i.RandomizedState = RandomizedState.ForcedJunk; }
+                        else { Debug.WriteLine($"{i.ID} was not found in the spoiler log and was randomized"); }
                     }
                     continue; 
                 }
@@ -404,6 +406,7 @@ namespace MMR_Tracker_V3
                     continue;
                 }
                 i.SetPrice(MatchingLocations.Select(x => x.Value).Min());
+                Debug.WriteLine($"{i.ID} was assigned a price");
                 //Debug.WriteLine($"{i.ID} was assigned a price of {i.Price}");
             }
             foreach (var i in instance.MacroPool.Values)
@@ -416,6 +419,7 @@ namespace MMR_Tracker_V3
                     continue;
                 }
                 i.SetPrice(MatchingLocations.Select(x => x.Value).Min());
+                Debug.WriteLine($"{i.ID} was assigned a price");
                 //Debug.WriteLine($"{i.ID} was assigned a price of {i.Price}");
             }
             foreach (var i in instance.HintPool.Values)
@@ -424,7 +428,10 @@ namespace MMR_Tracker_V3
                 var MatchingLocation = Log.GossipLog.Where(x => DictEntry.SpoilerData.SpoilerLogNames.Contains(x.Key));
                 if (!MatchingLocation.Any())
                 {
-                    Debug.WriteLine($"{i.ID} was not found in the hint log");
+                    if (i.RandomizedState != RandomizedState.ForcedJunk)
+                    {
+                        Debug.WriteLine($"{i.ID} was not found in the hint log");
+                    }
                     continue;
                 }
                 i.SpoilerHintText = MatchingLocation.First().Value;
@@ -465,9 +472,23 @@ namespace MMR_Tracker_V3
             }
 
             //Debug.WriteLine($"------------------------------------------------");
-            //Debug.WriteLine($"Parsing Gossip Hint{CleanedHint}");
+            //Debug.WriteLine($"Parsing Gossip Hint{Hint.ID}: {CleanedHint}");
+
+            if (CleanedHint.Contains("is foolish"))
+            {
+                int AreaEnd = CleanedHint.IndexOf("is foolish");
+                string FoolishArea = CleanedHint[..AreaEnd].Trim();
+                bool ExludeSong = CleanedHint.Contains("except for its song");
+                foreach (var i in instance.LocationPool.Where(x => x.Value.GetDictEntry(instance).Area == FoolishArea))
+                {
+                    if (!i.Value.IsRandomized() || i.Value.CheckState == CheckState.Checked) { continue; }
+                    if (ExludeSong && i.Value.GetDictEntry(instance).OriginalItem.StartsWith("Song")) { continue; }
+                    Hint.FoolishLocations.Add(i.Key);
+                }
+            }
 
             var messageSegments = CleanedHint.Split('|').Select(x => x.Trim()).ToArray();
+            if (messageSegments.Length < 2) { return; }
             string Location = messageSegments[0];
             string Item = messageSegments[1];
 
@@ -484,7 +505,7 @@ namespace MMR_Tracker_V3
             var ValidLocations = instance.LocationPool
             .Where(x => x.Value.GetDictEntry(instance)?.GetName(instance) != null)
             .Select(x => x.Value)
-            .Where(x => x.GetDictEntry(instance).GetName(instance) == Location || x.GetDictEntry(instance).SpoilerData.SpoilerLogNames.Contains(Location));
+            .Where(x => x.GetDictEntry(instance).GetName(instance) == Location || x.GetDictEntry(instance).SpoilerData.SpoilerLogNames.Contains(Location) || x.GetDictEntry(instance).SpoilerData.SpoilerLogNames.Select(x => x.Replace("#", "")).Contains(Location));
             //Debug.WriteLine($"{ValidLocations.Count()} Locations found with the name [{Location}]");
             //Debug.WriteLine($"{ValidItems.Count()} Items found with the name [{Item}]");
 
