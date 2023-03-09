@@ -4099,7 +4099,7 @@
       "Id": "OOT Fire Temple Jail 1 Chest",
       "RequiredItems": [
         "OOT_has_tunic_goron",
-        "OOT Fire Temple",
+        "OOT Fire Temple Pre-Boss",
         "option{FireMQ, false}"
       ],
       "ConditionalItems": [],
@@ -7030,6 +7030,617 @@
         "OOT_SMALL_KEY_BOTW, 2",
         "OOT Bottom of the Well Main",
         "option{BotWMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Ice Cavern Map Chest",
+      "RequiredItems": [
+        "OOT_EVENT_BLUE_FIRE",
+        "OOT Ice Cavern Map Room",
+        "option{ICMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Ice Cavern Compass Chest",
+      "RequiredItems": [
+        "OOT Ice Cavern Compass Room",
+        "option{ICMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Ice Cavern Iron Boots",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT Ice Cavern Big Room",
+        "option{ICMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Ice Cavern Piece of Heart",
+      "RequiredItems": [
+        "OOT_has_explosives",
+        "OOT Ice Cavern Compass Room",
+        "option{ICMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Ice Cavern Sheik Song",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT Ice Cavern Big Room",
+        "option{ICMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Ice Cavern GS Compass Room",
+      "RequiredItems": [
+        "OOT_OCARINA",
+        "OOT_SONG_TIME",
+        "OOT Ice Cavern Compass Room",
+        "option{ICMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Ice Cavern GS Scarecrow",
+      "RequiredItems": [
+        "OOT_scarecrow_hookshot",
+        "OOT Ice Cavern Big Room",
+        "option{ICMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Ice Cavern GS Clear Blocks",
+      "RequiredItems": [
+        "OOT Ice Cavern Big Room",
+        "option{ICMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_has_ranged_weapon"
+        ],
+        [
+          "OOT_has_explosives"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Forest Temple First Room Chest",
+      "RequiredItems": [
+        "OOT Forest Temple",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_hit_triggers_distance"
+        ],
+        [
+          "OOT_can_hookshot"
+        ],
+        [
+          "OOT_has_explosives"
+        ],
+        [
+          "OOT_has_hover_boots"
+        ],
+        [
+          "OOT_can_use_din"
+        ],
+        [
+          "OOT_has_weapon",
+          "OOT_MAGIC_UPGRADE"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Forest Temple Wolfos Chest",
+      "RequiredItems": [
+        "OOT_OCARINA",
+        "OOT_SONG_TIME",
+        "OOT Forest Temple Main",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_can_use_slingshot"
+        ],
+        [
+          "OOT_has_explosives"
+        ],
+        [
+          "OOT_can_use_din"
+        ],
+        [
+          "OOT_can_use_sticks"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Forest Temple Boss Key Chest",
+      "RequiredItems": [
+        "OOT Forest Temple Straightened Hallway",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Forest Temple ReDead Chest",
+      "RequiredItems": [
+        "OOT Forest Temple West Garden Ledge",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Forest Temple Well Chest",
+      "RequiredItems": [
+        "OOT_can_hit_triggers_distance",
+        "OOT Forest Temple East Garden",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Forest Temple East Garden High Ledge Chest",
+      "RequiredItems": [
+        "OOT Forest Temple Garden Ledges",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Forest Temple East Garden Ledge Chest",
+      "RequiredItems": [
+        "OOT Forest Temple East Garden Ledge",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Forest Temple Map Chest",
+      "RequiredItems": [
+        "OOT_can_use_bow",
+        "OOT Forest Temple Bow Region",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Forest Temple Bow Chest",
+      "RequiredItems": [
+        "OOT Forest Temple Bow Region",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Forest Temple Compass Chest",
+      "RequiredItems": [
+        "OOT_can_use_bow",
+        "OOT Forest Temple Bow Region",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Forest Temple Falling Ceiling Chest",
+      "RequiredItems": [
+        "OOT Forest Temple Falling Ceiling",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Forest Temple Antichamber",
+      "RequiredItems": [
+        "OOT Forest Temple Antichamber",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Forest Temple GS Entryway",
+      "RequiredItems": [
+        "OOT_can_collect_distance",
+        "OOT Forest Temple",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Forest Temple GS Climb Room",
+      "RequiredItems": [
+        "OOT_can_damage_skull",
+        "OOT Forest Temple West Wing",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Forest Temple GS West Garden",
+      "RequiredItems": [
+        "OOT Forest Temple West Garden",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Forest Temple GS East Garden",
+      "RequiredItems": [
+        "OOT_can_collect_distance",
+        "OOT Forest Temple East Garden",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Forest Temple GS Well",
+      "RequiredItems": [
+        "OOT Forest Temple East Garden",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_hit_triggers_distance"
+        ],
+        [
+          "OOT_has_iron_boots",
+          "OOT_can_hookshot"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Fire Temple Early Lower Left Chest",
+      "RequiredItems": [
+        "OOT Fire Temple",
+        "option{FireMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_can_use_slingshot"
+        ],
+        [
+          "OOT_has_explosives"
+        ],
+        [
+          "OOT_can_use_din"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Fire Temple Pre-Boss Chest",
+      "RequiredItems": [
+        "OOT_has_fire",
+        "OOT Fire Temple Pre-Boss",
+        "option{FireMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_has_tunic_goron_strict"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Fire Temple Hammer Chest",
+      "RequiredItems": [
+        "OOT Fire Temple Vanilla Hammer Loop",
+        "option{FireMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Fire Temple Map Chest",
+      "RequiredItems": [
+        "OOT_can_hammer",
+        "OOT Fire Temple Vanilla Hammer Loop",
+        "option{FireMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Fire Temple Boss Key Chest",
+      "RequiredItems": [
+        "OOT_has_fire",
+        "OOT_can_hookshot",
+        "OOT Fire Temple 1f Lava Room",
+        "option{FireMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Fire Temple 1f Lava Room Goron Chest",
+      "RequiredItems": [
+        "OOT_has_fire",
+        "OOT_can_hookshot",
+        "OOT_has_explosives",
+        "OOT Fire Temple 1f Lava Room",
+        "option{FireMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Fire Temple Maze Lower Chest",
+      "RequiredItems": [
+        "OOT Fire Temple Maze Lower",
+        "option{FireMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Fire Temple Maze Upper Chest",
+      "RequiredItems": [
+        "OOT Fire Temple Maze Upper",
+        "option{FireMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Fire Temple Maze Side Room Chest",
+      "RequiredItems": [
+        "OOT Fire Temple Maze Upper",
+        "option{FireMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Fire Temple Compass Chest",
+      "RequiredItems": [
+        "OOT_has_explosives",
+        "OOT Fire Temple Maze Upper",
+        "option{FireMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Fire Temple Topmost Chest",
+      "RequiredItems": [
+        "OOT Fire Temple Top",
+        "option{FireMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Fire Temple Flare Dancer Key",
+      "RequiredItems": [
+        "OOT Fire Temple Fire Walls",
+        "option{FireMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Fire Temple GS Burning Block",
+      "RequiredItems": [
+        "OOT Fire Temple Burning Block",
+        "option{FireMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Fire Temple GS 1f Lava Room",
+      "RequiredItems": [
+        "OOT Fire Temple 1f Lava Room",
+        "option{FireMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Fire Temple GS Fire Walls Side Room",
+      "RequiredItems": [
+        "OOT Fire Temple Fire Walls",
+        "option{FireMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_has_hover_boots"
+        ],
+        [
+          "OOT_OCARINA",
+          "OOT_SONG_TIME"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Fire Temple GS Fire Walls Middle",
+      "RequiredItems": [
+        "OOT_has_explosives",
+        "OOT Fire Temple Fire Walls",
+        "option{FireMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Fire Temple GS Topmost",
+      "RequiredItems": [
+        "OOT_SMALL_KEY_FIRE, 5",
+        "OOT Fire Temple Top",
+        "option{FireMQ, true}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12304,37 +12915,6 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "OOT_is_child",
-          "OOT_has_weapon",
-          "OOT Kokiri Forest"
-        ],
-        [
-          "OOT_can_hookshot",
-          "OOT Forest Temple Garden East",
-          "option{ForestMQ, false}"
-        ],
-        [
-          "OOT_can_hammer",
-          "OOT Forest Temple Garden East",
-          "option{ForestMQ, false}"
-        ],
-        [
-          "OOT_can_boomerang",
-          "OOT Forest Temple Garden East",
-          "option{ForestMQ, false}"
-        ],
-        [
-          "OOT_has_weapon",
-          "OOT Forest Temple Garden East",
-          "option{ForestMQ, false}",
-          "OOT_has_nuts"
-        ],
-        [
-          "OOT_has_weapon",
-          "OOT Deku Tree Lobby",
-          "option{DTMQ, true}"
-        ],
-        [
           "OOT_can_boomerang",
           "OOT Deku Tree Lobby",
           "option{DTMQ, true}"
@@ -12376,6 +12956,58 @@
         [
           "OOT_can_boomerang",
           "OOT Kokiri Forest"
+        ],
+        [
+          "OOT_can_hookshot",
+          "OOT Forest Temple East Garden",
+          "option{ForestMQ, true}"
+        ],
+        [
+          "OOT_can_hammer",
+          "OOT Forest Temple East Garden",
+          "option{ForestMQ, true}"
+        ],
+        [
+          "OOT_can_boomerang",
+          "OOT Forest Temple East Garden",
+          "option{ForestMQ, true}"
+        ],
+        [
+          "OOT_has_nuts",
+          "OOT_has_weapon",
+          "OOT Forest Temple East Garden",
+          "option{ForestMQ, true}"
+        ],
+        [
+          "OOT_is_child",
+          "OOT_has_weapon",
+          "OOT Kokiri Forest"
+        ],
+        [
+          "OOT_can_hookshot",
+          "OOT Forest Temple Garden East",
+          "option{ForestMQ, false}"
+        ],
+        [
+          "OOT_can_hammer",
+          "OOT Forest Temple Garden East",
+          "option{ForestMQ, false}"
+        ],
+        [
+          "OOT_can_boomerang",
+          "OOT Forest Temple Garden East",
+          "option{ForestMQ, false}"
+        ],
+        [
+          "OOT_has_weapon",
+          "OOT Forest Temple Garden East",
+          "option{ForestMQ, false}",
+          "OOT_has_nuts"
+        ],
+        [
+          "OOT_has_weapon",
+          "OOT Deku Tree Lobby",
+          "option{DTMQ, true}"
         ]
       ],
       "TimeNeeded": "None",
@@ -12466,6 +13098,46 @@
       "ConditionalItems": [
         [
           "OOT_has_explosives",
+          "OOT Forest Temple Garden East",
+          "option{ForestMQ, false}"
+        ],
+        [
+          "OOT_can_use_slingshot",
+          "OOT Forest Temple Garden East",
+          "option{ForestMQ, false}"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Forest Temple Garden West",
+          "option{ForestMQ, false}"
+        ],
+        [
+          "OOT_has_weapon",
+          "OOT Forest Temple Garden West",
+          "option{ForestMQ, false}"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Forest Temple East Garden",
+          "option{ForestMQ, true}"
+        ],
+        [
+          "OOT_has_weapon",
+          "OOT Forest Temple East Garden",
+          "option{ForestMQ, true}"
+        ],
+        [
+          "OOT_has_explosives",
+          "OOT Forest Temple East Garden",
+          "option{ForestMQ, true}"
+        ],
+        [
+          "OOT_can_use_slingshot",
+          "OOT Forest Temple East Garden",
+          "option{ForestMQ, true}"
+        ],
+        [
+          "OOT_has_explosives",
           "OOT Forest Temple Garden West",
           "option{ForestMQ, false}"
         ],
@@ -12495,26 +13167,6 @@
         [
           "OOT_has_weapon",
           "OOT Forest Temple Garden East",
-          "option{ForestMQ, false}"
-        ],
-        [
-          "OOT_has_explosives",
-          "OOT Forest Temple Garden East",
-          "option{ForestMQ, false}"
-        ],
-        [
-          "OOT_can_use_slingshot",
-          "OOT Forest Temple Garden East",
-          "option{ForestMQ, false}"
-        ],
-        [
-          "OOT_is_adult",
-          "OOT Forest Temple Garden West",
-          "option{ForestMQ, false}"
-        ],
-        [
-          "OOT_has_weapon",
-          "OOT Forest Temple Garden West",
           "option{ForestMQ, false}"
         ]
       ],
@@ -13304,33 +13956,6 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Fire Temple => OOT Fire Temple Boss",
-      "RequiredItems": [
-        "OOT Fire Temple"
-      ],
-      "ConditionalItems": [
-        [
-          "option{FireMQ, true}"
-        ],
-        [
-          "OOT_EVENT_FIRE_TEMPLE_PILLAR_HAMMER",
-          "OOT_BOSS_KEY_FIRE",
-          "OOT_has_tunic_goron",
-          "option{FireMQ, false}"
-        ],
-        [
-          "OOT_has_hover_boots",
-          "OOT_BOSS_KEY_FIRE",
-          "OOT_has_tunic_goron",
-          "option{FireMQ, false}"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
       "Id": "OOT Fire Temple => OOT Fire Temple Boss Key Loop",
       "RequiredItems": [
         "OOT_can_hammer",
@@ -13344,6 +13969,61 @@
         ],
         [
           "option{smallKeyShuffle,  anywhere, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fire Temple => OOT Fire Temple Pre-Boss",
+      "RequiredItems": [
+        "OOT Fire Temple",
+        "option{FireMQ, false}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fire Temple Pre-Boss => OOT Fire Temple",
+      "RequiredItems": [
+        "OOT Fire Temple Pre-Boss",
+        "option{FireMQ, false}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fire Temple Pre-Boss => OOT Fire Temple Boss",
+      "RequiredItems": [
+        "OOT_BOSS_KEY_FIRE",
+        "OOT Fire Temple Pre-Boss"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_EVENT_FIRE_TEMPLE_PILLAR_HAMMER",
+          "option{FireMQ, true}"
+        ],
+        [
+          "OOT_has_hover_boots",
+          "option{FireMQ, true}"
+        ],
+        [
+          "OOT_EVENT_FIRE_TEMPLE_PILLAR_HAMMER",
+          "OOT_has_tunic_goron",
+          "option{FireMQ, false}"
+        ],
+        [
+          "OOT_has_hover_boots",
+          "OOT_has_tunic_goron",
+          "option{FireMQ, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -13525,12 +14205,18 @@
     },
     {
       "Id": "OOT_EVENT_FIRE_TEMPLE_PILLAR_HAMMER",
-      "RequiredItems": [
-        "OOT_can_hammer",
-        "OOT Fire Temple Pillar Ledge",
-        "option{FireMQ, false}"
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT Fire Temple Fire Walls",
+          "option{FireMQ, true}"
+        ],
+        [
+          "OOT_can_hammer",
+          "OOT Fire Temple Pillar Ledge",
+          "option{FireMQ, false}"
+        ]
       ],
-      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -13574,6 +14260,28 @@
       ],
       "ConditionalItems": [
         [
+          "OOT_SMALL_KEY_FOREST",
+          "OOT_is_adult",
+          "option{ForestMQ, true}"
+        ],
+        [
+          "OOT_SMALL_KEY_FOREST",
+          "OOT_has_nuts",
+          "option{ForestMQ, true}"
+        ],
+        [
+          "OOT_SMALL_KEY_FOREST",
+          "OOT_has_weapon",
+          "option{ForestMQ, true}"
+        ],
+        [
+          "OOT_SMALL_KEY_FOREST",
+          "OOT_has_explosives",
+          "option{ForestMQ, true}"
+        ],
+        [
+          "OOT_SMALL_KEY_FOREST",
+          "OOT_has_ranged_weapon_child",
           "option{ForestMQ, true}"
         ],
         [
@@ -13679,6 +14387,9 @@
       ],
       "ConditionalItems": [
         [
+          "OOT_EVENT_FOREST_POE_1",
+          "OOT_EVENT_FOREST_POE_2",
+          "OOT_EVENT_FOREST_POE_3",
           "option{ForestMQ, true}"
         ],
         [
@@ -14115,11 +14826,18 @@
     {
       "Id": "OOT_EVENT_FOREST_POE_1",
       "RequiredItems": [
-        "OOT_can_use_bow",
-        "OOT Forest Temple Poe 1",
-        "option{ForestMQ, false}"
+        "OOT_can_use_bow"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT Forest Temple Bow Region",
+          "option{ForestMQ, true}"
+        ],
+        [
+          "OOT Forest Temple Poe 1",
+          "option{ForestMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -14154,11 +14872,18 @@
     {
       "Id": "OOT_EVENT_FOREST_POE_2",
       "RequiredItems": [
-        "OOT_can_use_bow",
-        "OOT Forest Temple Poe 2",
-        "option{ForestMQ, false}"
+        "OOT_can_use_bow"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT Forest Temple Bow Region",
+          "option{ForestMQ, true}"
+        ],
+        [
+          "OOT Forest Temple Poe 2",
+          "option{ForestMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -14223,11 +14948,19 @@
     {
       "Id": "OOT_EVENT_FOREST_POE_3",
       "RequiredItems": [
-        "OOT_can_use_bow",
-        "OOT Forest Temple Poe 3",
-        "option{ForestMQ, false}"
+        "OOT_can_use_bow"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SMALL_KEY_FOREST, 6",
+          "OOT Forest Temple Falling Ceiling",
+          "option{ForestMQ, true}"
+        ],
+        [
+          "OOT Forest Temple Poe 3",
+          "option{ForestMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -14236,6 +14969,7 @@
     {
       "Id": "OOT Forest Temple Antichamber => OOT Forest Temple Boss",
       "RequiredItems": [
+        "OOT_BOSS_KEY_FOREST",
         "OOT Forest Temple Antichamber"
       ],
       "ConditionalItems": [
@@ -14243,7 +14977,6 @@
           "option{ForestMQ, true}"
         ],
         [
-          "OOT_BOSS_KEY_FOREST",
           "option{ForestMQ, false}"
         ]
       ],
@@ -14402,6 +15135,10 @@
         "OOT_has_bottle"
       ],
       "ConditionalItems": [
+        [
+          "OOT Ice Cavern Map Room",
+          "option{ICMQ, true}"
+        ],
         [
           "OOT_is_adult",
           "OOT Ice Cavern",
@@ -14878,13 +15615,68 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Jabu-Jabu Main => OOT Jabu-Jabu Boss",
+      "Id": "OOT Jabu-Jabu Main => OOT Jabu-Jabu Pre-Boss",
       "RequiredItems": [
-        "OOT_can_boomerang",
-        "OOT Jabu-Jabu Main",
-        "option{JJMQ, false}"
+        "OOT Jabu-Jabu Main"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_EVENT_JABU_TENTACLE_RED",
+          "OOT_EVENT_JABU_BIG_OCTO",
+          "option{JJMQ, true}"
+        ],
+        [
+          "OOT_EVENT_JABU_TENTACLE_RED",
+          "OOT_can_hookshot",
+          "option{JJMQ, true}"
+        ],
+        [
+          "OOT_EVENT_JABU_TENTACLE_RED",
+          "OOT_has_hover_boots",
+          "option{JJMQ, true}"
+        ],
+        [
+          "OOT_can_boomerang",
+          "option{JJMQ, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Jabu-Jabu Pre-Boss => OOT Jabu-Jabu Boss",
+      "RequiredItems": [
+        "OOT Jabu-Jabu Pre-Boss"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_EVENT_JABU_MQ_END",
+          "option{JJMQ, true}"
+        ],
+        [
+          "option{JJMQ, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Jabu-Jabu Pre-Boss => OOT Jabu-Jabu Main",
+      "RequiredItems": [
+        "OOT Jabu-Jabu Pre-Boss"
+      ],
+      "ConditionalItems": [
+        [
+          "option{JJMQ, true}"
+        ],
+        [
+          "option{JJMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -19323,6 +20115,589 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Fire Temple => OOT Fire Temple Upper Lobby",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT_has_tunic_goron",
+        "OOT Fire Temple",
+        "option{FireMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fire Temple => OOT Fire Temple Vanilla Hammer Loop",
+      "RequiredItems": [
+        "OOT_SMALL_KEY_FIRE, 5",
+        "OOT_has_weapon",
+        "OOT Fire Temple",
+        "option{FireMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_has_explosives_or_hammer"
+        ],
+        [
+          "OOT_can_hookshot"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fire Temple Upper Lobby => OOT Fire Temple Pre-Boss",
+      "RequiredItems": [
+        "OOT_has_fire",
+        "OOT Fire Temple Upper Lobby",
+        "option{FireMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fire Temple Upper Lobby => OOT Fire Temple 1f Lava Room",
+      "RequiredItems": [
+        "OOT_can_hammer",
+        "OOT Fire Temple Upper Lobby",
+        "option{FireMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fire Temple Pre-Boss => OOT Fire Temple Upper Lobby",
+      "RequiredItems": [
+        "OOT Fire Temple Pre-Boss",
+        "option{FireMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fire Temple 1f Lava Room => OOT Fire Temple Upper Lobby",
+      "RequiredItems": [
+        "OOT Fire Temple 1f Lava Room",
+        "option{FireMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fire Temple 1f Lava Room => OOT Fire Temple Maze Lower",
+      "RequiredItems": [
+        "OOT_has_tunic_goron_strict",
+        "OOT_SMALL_KEY_FIRE, 2",
+        "OOT_has_fire",
+        "OOT Fire Temple 1f Lava Room",
+        "option{FireMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fire Temple Maze Lower => OOT Fire Temple 1f Lava Room",
+      "RequiredItems": [
+        "OOT Fire Temple Maze Lower",
+        "option{FireMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fire Temple Maze Lower => OOT Fire Temple Maze Upper",
+      "RequiredItems": [
+        "OOT_can_hookshot",
+        "OOT Fire Temple Maze Lower",
+        "option{FireMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "TRICK_OOT_HAMMER_WALLS"
+        ],
+        [
+          "OOT_has_explosives"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fire Temple Maze Upper => OOT Fire Temple Burning Block",
+      "RequiredItems": [
+        "OOT Fire Temple Maze Upper",
+        "option{FireMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_OCARINA",
+          "OOT_SONG_TIME"
+        ],
+        [
+          "OOT_can_longshot"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fire Temple Maze Upper => OOT Fire Temple 3f Lava Room",
+      "RequiredItems": [
+        "OOT_SMALL_KEY_FIRE, 3",
+        "OOT Fire Temple Maze Upper",
+        "option{FireMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fire Temple 3f Lava Room => OOT Fire Temple Fire Walls",
+      "RequiredItems": [
+        "OOT_can_use_bow",
+        "OOT Fire Temple 3f Lava Room",
+        "option{FireMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fire Temple Fire Walls => OOT Fire Temple Top",
+      "RequiredItems": [
+        "OOT_SMALL_KEY_FIRE, 4",
+        "OOT Fire Temple Fire Walls",
+        "option{FireMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Forest Temple Main => OOT Forest Temple West Wing",
+      "RequiredItems": [
+        "OOT_has_weapon",
+        "OOT Forest Temple Main",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Forest Temple Main => OOT Forest Temple West Garden",
+      "RequiredItems": [
+        "OOT_can_hit_triggers_distance",
+        "OOT Forest Temple Main",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Forest Temple Main => OOT Forest Temple East Garden",
+      "RequiredItems": [
+        "OOT_can_hit_triggers_distance",
+        "OOT Forest Temple Main",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Forest Temple West Wing => OOT Forest Temple Main",
+      "RequiredItems": [
+        "OOT_has_weapon",
+        "OOT Forest Temple West Wing",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Forest Temple West Wing => OOT Forest Temple Straightened Hallway",
+      "RequiredItems": [
+        "OOT_SMALL_KEY_FOREST, 3",
+        "OOT_is_adult",
+        "OOT_STRENGTH",
+        "OOT Forest Temple West Wing",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Forest Temple West Wing => OOT Forest Temple West Garden",
+      "RequiredItems": [
+        "OOT_SMALL_KEY_FOREST, 2",
+        "OOT_is_adult",
+        "OOT_STRENGTH",
+        "OOT Forest Temple West Wing",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Forest Temple West Wing => OOT Forest Temple Twisted Hallway",
+      "RequiredItems": [
+        "OOT_SMALL_KEY_FOREST, 3",
+        "OOT_is_adult",
+        "OOT_STRENGTH",
+        "OOT_EVENT_FOREST_TWIST_SWITCH",
+        "OOT Forest Temple West Wing",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Forest Temple Straightened Hallway => OOT Forest Temple West Garden Ledge",
+      "RequiredItems": [
+        "OOT Forest Temple Straightened Hallway",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Forest Temple West Garden Ledge => OOT Forest Temple West Garden",
+      "RequiredItems": [
+        "OOT Forest Temple West Garden Ledge",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Forest Temple West Garden Ledge => OOT Forest Temple West Wing",
+      "RequiredItems": [
+        "OOT Forest Temple West Garden Ledge",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_FOREST_TWIST_SWITCH",
+      "RequiredItems": [
+        "OOT Forest Temple West Garden Ledge",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Forest Temple West Garden => OOT Forest Temple Main",
+      "RequiredItems": [
+        "OOT Forest Temple West Garden",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Forest Temple West Garden => OOT Forest Temple East Garden",
+      "RequiredItems": [
+        "OOT_can_dive_big",
+        "OOT Forest Temple West Garden",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Forest Temple West Garden => OOT Forest Temple Garden Ledges",
+      "RequiredItems": [
+        "OOT_has_fire_arrows",
+        "OOT Forest Temple West Garden",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Forest Temple East Garden => OOT Forest Temple Main",
+      "RequiredItems": [
+        "OOT Forest Temple East Garden",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Forest Temple East Garden => OOT Forest Temple Garden Ledges",
+      "RequiredItems": [
+        "OOT Forest Temple East Garden",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_longshot"
+        ],
+        [
+          "OOT_can_hookshot",
+          "TRICK_OOT_FOREST_HOOK"
+        ],
+        [
+          "OOT_can_hookshot",
+          "OOT_OCARINA",
+          "OOT_SONG_TIME"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Forest Temple East Garden => OOT Forest Temple East Garden Ledge",
+      "RequiredItems": [
+        "OOT_can_longshot",
+        "OOT Forest Temple East Garden",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Forest Temple Garden Ledges => OOT Forest Temple West Garden",
+      "RequiredItems": [
+        "OOT Forest Temple Garden Ledges",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_can_use_din"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Forest Temple Garden Ledges => OOT Forest Temple East Garden",
+      "RequiredItems": [
+        "OOT Forest Temple Garden Ledges",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Forest Temple East Garden Ledge => OOT Forest Temple East Garden",
+      "RequiredItems": [
+        "OOT Forest Temple East Garden Ledge",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Forest Temple East Garden Ledge => OOT Forest Temple Falling Ceiling",
+      "RequiredItems": [
+        "OOT_OCARINA",
+        "OOT_SONG_TIME",
+        "OOT Forest Temple East Garden Ledge",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Forest Temple Twisted Hallway => OOT Forest Temple Bow Region",
+      "RequiredItems": [
+        "OOT_SMALL_KEY_FOREST, 4",
+        "OOT Forest Temple Twisted Hallway",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Forest Temple Bow Region => OOT Forest Temple Falling Ceiling",
+      "RequiredItems": [
+        "OOT_SMALL_KEY_FOREST, 5",
+        "OOT Forest Temple Bow Region",
+        "option{ForestMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_can_use_din"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Ice Cavern => OOT Ice Cavern Main",
+      "RequiredItems": [
+        "OOT Ice Cavern",
+        "option{ICMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_has_ranged_weapon"
+        ],
+        [
+          "OOT_has_explosives"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Ice Cavern Main => OOT Ice Cavern Map Room",
+      "RequiredItems": [
+        "OOT Ice Cavern Main",
+        "option{ICMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_is_adult"
+        ],
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_has_explosives"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Ice Cavern Main => OOT Ice Cavern Compass Room",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT_EVENT_BLUE_FIRE",
+        "OOT Ice Cavern Main",
+        "option{ICMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Ice Cavern Main => OOT Ice Cavern Big Room",
+      "RequiredItems": [
+        "OOT_EVENT_BLUE_FIRE",
+        "OOT Ice Cavern Main",
+        "option{ICMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT_EVENT_JABU_MQ_START",
       "RequiredItems": [
         "OOT_can_use_slingshot",
@@ -19345,29 +20720,6 @@
         "option{JJMQ, true}"
       ],
       "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT Jabu-Jabu Main => OOT Jabu-Jabu Pre-Boss",
-      "RequiredItems": [
-        "OOT_EVENT_JABU_TENTACLE_RED",
-        "OOT Jabu-Jabu Main",
-        "option{JJMQ, true}"
-      ],
-      "ConditionalItems": [
-        [
-          "OOT_EVENT_JABU_BIG_OCTO"
-        ],
-        [
-          "OOT_can_hookshot"
-        ],
-        [
-          "OOT_has_hover_boots"
-        ]
-      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -19455,31 +20807,6 @@
       "Id": "OOT Jabu-Jabu Basement Side Room => OOT Jabu-Jabu Main",
       "RequiredItems": [
         "OOT Jabu-Jabu Basement Side Room",
-        "option{JJMQ, true}"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT Jabu-Jabu Pre-Boss => OOT Jabu-Jabu Boss",
-      "RequiredItems": [
-        "OOT_EVENT_JABU_MQ_END",
-        "OOT Jabu-Jabu Pre-Boss",
-        "option{JJMQ, true}"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT Jabu-Jabu Pre-Boss => OOT Jabu-Jabu Main",
-      "RequiredItems": [
-        "OOT Jabu-Jabu Pre-Boss",
         "option{JJMQ, true}"
       ],
       "ConditionalItems": [],

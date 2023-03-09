@@ -9657,6 +9657,804 @@
       "LocationProxys": []
     },
     {
+      "ID": "OOT MQ Ice Cavern Map Chest",
+      "Name": "MQ Ice Cavern Map Chest",
+      "OriginalItem": "OOT_MAP_IC",
+      "Area": "Ice Cavern",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Ice Cavern Map Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Ice Cavern Map Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Ice Cavern Compass Chest",
+      "Name": "MQ Ice Cavern Compass Chest",
+      "OriginalItem": "OOT_COMPASS_IC",
+      "Area": "Ice Cavern",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Ice Cavern Compass Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Ice Cavern Compass Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Ice Cavern Iron Boots",
+      "Name": "MQ Ice Cavern Iron Boots",
+      "OriginalItem": "OOT_BOOTS_IRON",
+      "Area": "Ice Cavern",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Ice Cavern Iron Boots"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Ice Cavern Iron Boots"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Ice Cavern Piece of Heart",
+      "Name": "MQ Ice Cavern Piece of Heart",
+      "OriginalItem": "OOT_HEART_PIECE",
+      "Area": "Ice Cavern",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Ice Cavern Piece of Heart"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Ice Cavern Piece of Heart"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Ice Cavern Sheik Song",
+      "Name": "MQ Ice Cavern Sheik Song",
+      "OriginalItem": "OOT_SONG_TP_WATER",
+      "Area": "Ice Cavern",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Ice Cavern Sheik Song"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Ice Cavern Sheik Song"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Ice Cavern GS Compass Room",
+      "Name": "MQ Ice Cavern GS Compass Room",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Ice Cavern",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Ice Cavern GS Compass Room"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Ice Cavern GS Compass Room"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Ice Cavern GS Scarecrow",
+      "Name": "MQ Ice Cavern GS Scarecrow",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Ice Cavern",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Ice Cavern GS Scarecrow"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Ice Cavern GS Scarecrow"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Ice Cavern GS Clear Blocks",
+      "Name": "MQ Ice Cavern GS Clear Blocks",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Ice Cavern",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Ice Cavern GS Clear Blocks"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Ice Cavern GS Clear Blocks"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Forest Temple First Room Chest",
+      "Name": "MQ Forest Temple First Room Chest",
+      "OriginalItem": "OOT_SMALL_KEY_FOREST",
+      "Area": "Forest Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Forest Temple First Room Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Forest Temple First Room Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Forest Temple Wolfos Chest",
+      "Name": "MQ Forest Temple Wolfos Chest",
+      "OriginalItem": "OOT_SMALL_KEY_FOREST",
+      "Area": "Forest Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Forest Temple Wolfos Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Forest Temple Wolfos Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Forest Temple Boss Key Chest",
+      "Name": "MQ Forest Temple Boss Key Chest",
+      "OriginalItem": "OOT_BOSS_KEY_FOREST",
+      "Area": "Forest Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Forest Temple Boss Key Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Forest Temple Boss Key Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Forest Temple ReDead Chest",
+      "Name": "MQ Forest Temple ReDead Chest",
+      "OriginalItem": "OOT_SMALL_KEY_FOREST",
+      "Area": "Forest Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Forest Temple ReDead Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Forest Temple ReDead Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Forest Temple Well Chest",
+      "Name": "MQ Forest Temple Well Chest",
+      "OriginalItem": "OOT_SMALL_KEY_FOREST",
+      "Area": "Forest Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Forest Temple Well Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Forest Temple Well Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Forest Temple East Garden High Ledge Chest",
+      "Name": "MQ Forest Temple East Garden High Ledge Chest",
+      "OriginalItem": "OOT_SMALL_KEY_FOREST",
+      "Area": "Forest Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Forest Temple East Garden High Ledge Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Forest Temple East Garden High Ledge Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Forest Temple East Garden Ledge Chest",
+      "Name": "MQ Forest Temple East Garden Ledge Chest",
+      "OriginalItem": "OOT_SMALL_KEY_FOREST",
+      "Area": "Forest Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Forest Temple East Garden Ledge Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Forest Temple East Garden Ledge Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Forest Temple Map Chest",
+      "Name": "MQ Forest Temple Map Chest",
+      "OriginalItem": "OOT_MAP_FOREST",
+      "Area": "Forest Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Forest Temple Map Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Forest Temple Map Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Forest Temple Bow Chest",
+      "Name": "MQ Forest Temple Bow Chest",
+      "OriginalItem": "OOT_BOW",
+      "Area": "Forest Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Forest Temple Bow Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Forest Temple Bow Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Forest Temple Compass Chest",
+      "Name": "MQ Forest Temple Compass Chest",
+      "OriginalItem": "OOT_COMPASS_FOREST",
+      "Area": "Forest Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Forest Temple Compass Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Forest Temple Compass Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Forest Temple Falling Ceiling Chest",
+      "Name": "MQ Forest Temple Falling Ceiling Chest",
+      "OriginalItem": "OOT_ARROWS_5",
+      "Area": "Forest Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Forest Temple Falling Ceiling Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Forest Temple Falling Ceiling Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Forest Temple Antichamber",
+      "Name": "MQ Forest Temple Antichamber",
+      "OriginalItem": "OOT_ARROWS_5",
+      "Area": "Forest Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Forest Temple Antichamber"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Forest Temple Antichamber"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Forest Temple GS Entryway",
+      "Name": "MQ Forest Temple GS Entryway",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Forest Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Forest Temple GS Entryway"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Forest Temple GS Entryway"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Forest Temple GS Climb Room",
+      "Name": "MQ Forest Temple GS Climb Room",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Forest Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Forest Temple GS Climb Room"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Forest Temple GS Climb Room"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Forest Temple GS West Garden",
+      "Name": "MQ Forest Temple GS West Garden",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Forest Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Forest Temple GS West Garden"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Forest Temple GS West Garden"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Forest Temple GS East Garden",
+      "Name": "MQ Forest Temple GS East Garden",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Forest Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Forest Temple GS East Garden"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Forest Temple GS East Garden"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Forest Temple GS Well",
+      "Name": "MQ Forest Temple GS Well",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Forest Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Forest Temple GS Well"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Forest Temple GS Well"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Fire Temple Early Lower Left Chest",
+      "Name": "MQ Fire Temple Early Lower Left Chest",
+      "OriginalItem": "OOT_RUPEE_BLUE",
+      "Area": "Fire Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Fire Temple Early Lower Left Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Fire Temple Early Lower Left Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Fire Temple Pre-Boss Chest",
+      "Name": "MQ Fire Temple Pre-Boss Chest",
+      "OriginalItem": "OOT_SMALL_KEY_FIRE",
+      "Area": "Fire Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Fire Temple Pre-Boss Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Fire Temple Pre-Boss Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Fire Temple Hammer Chest",
+      "Name": "MQ Fire Temple Hammer Chest",
+      "OriginalItem": "OOT_HAMMER",
+      "Area": "Fire Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Fire Temple Hammer Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Fire Temple Hammer Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Fire Temple Map Chest",
+      "Name": "MQ Fire Temple Map Chest",
+      "OriginalItem": "OOT_MAP_FIRE",
+      "Area": "Fire Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Fire Temple Map Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Fire Temple Map Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Fire Temple Boss Key Chest",
+      "Name": "MQ Fire Temple Boss Key Chest",
+      "OriginalItem": "OOT_BOSS_KEY_FIRE",
+      "Area": "Fire Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Fire Temple Boss Key Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Fire Temple Boss Key Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Fire Temple 1f Lava Room Goron Chest",
+      "Name": "MQ Fire Temple 1f Lava Room Goron Chest",
+      "OriginalItem": "OOT_SMALL_KEY_FIRE",
+      "Area": "Fire Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Fire Temple 1f Lava Room Goron Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Fire Temple 1f Lava Room Goron Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Fire Temple Maze Lower Chest",
+      "Name": "MQ Fire Temple Maze Lower Chest",
+      "OriginalItem": "OOT_BOMBS_5",
+      "Area": "Fire Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Fire Temple Maze Lower Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Fire Temple Maze Lower Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Fire Temple Maze Upper Chest",
+      "Name": "MQ Fire Temple Maze Upper Chest",
+      "OriginalItem": "OOT_BOMBS_5",
+      "Area": "Fire Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Fire Temple Maze Upper Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Fire Temple Maze Upper Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Fire Temple Maze Side Room Chest",
+      "Name": "MQ Fire Temple Maze Side Room Chest",
+      "OriginalItem": "OOT_SMALL_KEY_FIRE",
+      "Area": "Fire Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Fire Temple Maze Side Room Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Fire Temple Maze Side Room Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Fire Temple Compass Chest",
+      "Name": "MQ Fire Temple Compass Chest",
+      "OriginalItem": "OOT_COMPASS_FIRE",
+      "Area": "Fire Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Fire Temple Compass Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Fire Temple Compass Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Fire Temple Topmost Chest",
+      "Name": "MQ Fire Temple Topmost Chest",
+      "OriginalItem": "OOT_SMALL_KEY_FIRE",
+      "Area": "Fire Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Fire Temple Topmost Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Fire Temple Topmost Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Fire Temple Flare Dancer Key",
+      "Name": "MQ Fire Temple Flare Dancer Key",
+      "OriginalItem": "OOT_SMALL_KEY_FIRE",
+      "Area": "Fire Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Fire Temple Flare Dancer Key"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Fire Temple Flare Dancer Key"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Fire Temple GS Burning Block",
+      "Name": "MQ Fire Temple GS Burning Block",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Fire Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Fire Temple GS Burning Block"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Fire Temple GS Burning Block"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Fire Temple GS 1f Lava Room",
+      "Name": "MQ Fire Temple GS 1f Lava Room",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Fire Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Fire Temple GS 1f Lava Room"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Fire Temple GS 1f Lava Room"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Fire Temple GS Fire Walls Side Room",
+      "Name": "MQ Fire Temple GS Fire Walls Side Room",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Fire Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Fire Temple GS Fire Walls Side Room"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Fire Temple GS Fire Walls Side Room"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Fire Temple GS Fire Walls Middle",
+      "Name": "MQ Fire Temple GS Fire Walls Middle",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Fire Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Fire Temple GS Fire Walls Middle"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Fire Temple GS Fire Walls Middle"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Fire Temple GS Topmost",
+      "Name": "MQ Fire Temple GS Topmost",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Fire Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Fire Temple GS Topmost"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Fire Temple GS Topmost"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
       "ID": "MM Initial Song of Healing",
       "Name": "Initial Song of Healing",
       "OriginalItem": "MM_SONG_HEALING",
@@ -23083,19 +23881,35 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Fire Temple => OOT Fire Temple Boss",
-      "Area": "OOT Fire Temple",
-      "Exit": "OOT Fire Temple Boss",
-      "DisplayArea": "Boss Room",
-      "RandomizableEntrance": true,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    {
       "ID": "OOT Fire Temple => OOT Fire Temple Boss Key Loop",
       "Area": "OOT Fire Temple",
       "Exit": "OOT Fire Temple Boss Key Loop",
       "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Fire Temple => OOT Fire Temple Pre-Boss",
+      "Area": "OOT Fire Temple",
+      "Exit": "OOT Fire Temple Pre-Boss",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Fire Temple Pre-Boss => OOT Fire Temple",
+      "Area": "OOT Fire Temple Pre-Boss",
+      "Exit": "OOT Fire Temple",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Fire Temple Pre-Boss => OOT Fire Temple Boss",
+      "Area": "OOT Fire Temple Pre-Boss",
+      "Exit": "OOT Fire Temple Boss",
+      "DisplayArea": "Boss Room",
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -23729,11 +24543,27 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Jabu-Jabu Main => OOT Jabu-Jabu Boss",
+      "ID": "OOT Jabu-Jabu Main => OOT Jabu-Jabu Pre-Boss",
       "Area": "OOT Jabu-Jabu Main",
+      "Exit": "OOT Jabu-Jabu Pre-Boss",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Jabu-Jabu Pre-Boss => OOT Jabu-Jabu Boss",
+      "Area": "OOT Jabu-Jabu Pre-Boss",
       "Exit": "OOT Jabu-Jabu Boss",
       "DisplayArea": "Boss Room",
       "RandomizableEntrance": true,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Jabu-Jabu Pre-Boss => OOT Jabu-Jabu Main",
+      "Area": "OOT Jabu-Jabu Pre-Boss",
+      "Exit": "OOT Jabu-Jabu Main",
+      "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -25843,17 +26673,321 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Jabu-Jabu Main => OOT Jabu-Jabu Back",
-      "Area": "OOT Jabu-Jabu Main",
-      "Exit": "OOT Jabu-Jabu Back",
+      "ID": "OOT Fire Temple => OOT Fire Temple Upper Lobby",
+      "Area": "OOT Fire Temple",
+      "Exit": "OOT Fire Temple Upper Lobby",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Jabu-Jabu Main => OOT Jabu-Jabu Pre-Boss",
+      "ID": "OOT Fire Temple => OOT Fire Temple Vanilla Hammer Loop",
+      "Area": "OOT Fire Temple",
+      "Exit": "OOT Fire Temple Vanilla Hammer Loop",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Fire Temple Upper Lobby => OOT Fire Temple Pre-Boss",
+      "Area": "OOT Fire Temple Upper Lobby",
+      "Exit": "OOT Fire Temple Pre-Boss",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Fire Temple Upper Lobby => OOT Fire Temple 1f Lava Room",
+      "Area": "OOT Fire Temple Upper Lobby",
+      "Exit": "OOT Fire Temple 1f Lava Room",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Fire Temple Pre-Boss => OOT Fire Temple Upper Lobby",
+      "Area": "OOT Fire Temple Pre-Boss",
+      "Exit": "OOT Fire Temple Upper Lobby",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Fire Temple 1f Lava Room => OOT Fire Temple Upper Lobby",
+      "Area": "OOT Fire Temple 1f Lava Room",
+      "Exit": "OOT Fire Temple Upper Lobby",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Fire Temple 1f Lava Room => OOT Fire Temple Maze Lower",
+      "Area": "OOT Fire Temple 1f Lava Room",
+      "Exit": "OOT Fire Temple Maze Lower",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Fire Temple Maze Lower => OOT Fire Temple 1f Lava Room",
+      "Area": "OOT Fire Temple Maze Lower",
+      "Exit": "OOT Fire Temple 1f Lava Room",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Fire Temple Maze Lower => OOT Fire Temple Maze Upper",
+      "Area": "OOT Fire Temple Maze Lower",
+      "Exit": "OOT Fire Temple Maze Upper",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Fire Temple Maze Upper => OOT Fire Temple Burning Block",
+      "Area": "OOT Fire Temple Maze Upper",
+      "Exit": "OOT Fire Temple Burning Block",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Fire Temple Maze Upper => OOT Fire Temple 3f Lava Room",
+      "Area": "OOT Fire Temple Maze Upper",
+      "Exit": "OOT Fire Temple 3f Lava Room",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Fire Temple 3f Lava Room => OOT Fire Temple Fire Walls",
+      "Area": "OOT Fire Temple 3f Lava Room",
+      "Exit": "OOT Fire Temple Fire Walls",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Fire Temple Fire Walls => OOT Fire Temple Top",
+      "Area": "OOT Fire Temple Fire Walls",
+      "Exit": "OOT Fire Temple Top",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Forest Temple Main => OOT Forest Temple West Wing",
+      "Area": "OOT Forest Temple Main",
+      "Exit": "OOT Forest Temple West Wing",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Forest Temple Main => OOT Forest Temple West Garden",
+      "Area": "OOT Forest Temple Main",
+      "Exit": "OOT Forest Temple West Garden",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Forest Temple Main => OOT Forest Temple East Garden",
+      "Area": "OOT Forest Temple Main",
+      "Exit": "OOT Forest Temple East Garden",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Forest Temple West Wing => OOT Forest Temple Main",
+      "Area": "OOT Forest Temple West Wing",
+      "Exit": "OOT Forest Temple Main",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Forest Temple West Wing => OOT Forest Temple Straightened Hallway",
+      "Area": "OOT Forest Temple West Wing",
+      "Exit": "OOT Forest Temple Straightened Hallway",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Forest Temple West Wing => OOT Forest Temple West Garden",
+      "Area": "OOT Forest Temple West Wing",
+      "Exit": "OOT Forest Temple West Garden",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Forest Temple West Wing => OOT Forest Temple Twisted Hallway",
+      "Area": "OOT Forest Temple West Wing",
+      "Exit": "OOT Forest Temple Twisted Hallway",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Forest Temple Straightened Hallway => OOT Forest Temple West Garden Ledge",
+      "Area": "OOT Forest Temple Straightened Hallway",
+      "Exit": "OOT Forest Temple West Garden Ledge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Forest Temple West Garden Ledge => OOT Forest Temple West Garden",
+      "Area": "OOT Forest Temple West Garden Ledge",
+      "Exit": "OOT Forest Temple West Garden",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Forest Temple West Garden Ledge => OOT Forest Temple West Wing",
+      "Area": "OOT Forest Temple West Garden Ledge",
+      "Exit": "OOT Forest Temple West Wing",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Forest Temple West Garden => OOT Forest Temple Main",
+      "Area": "OOT Forest Temple West Garden",
+      "Exit": "OOT Forest Temple Main",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Forest Temple West Garden => OOT Forest Temple East Garden",
+      "Area": "OOT Forest Temple West Garden",
+      "Exit": "OOT Forest Temple East Garden",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Forest Temple West Garden => OOT Forest Temple Garden Ledges",
+      "Area": "OOT Forest Temple West Garden",
+      "Exit": "OOT Forest Temple Garden Ledges",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Forest Temple East Garden => OOT Forest Temple Main",
+      "Area": "OOT Forest Temple East Garden",
+      "Exit": "OOT Forest Temple Main",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Forest Temple East Garden => OOT Forest Temple Garden Ledges",
+      "Area": "OOT Forest Temple East Garden",
+      "Exit": "OOT Forest Temple Garden Ledges",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Forest Temple East Garden => OOT Forest Temple East Garden Ledge",
+      "Area": "OOT Forest Temple East Garden",
+      "Exit": "OOT Forest Temple East Garden Ledge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Forest Temple Garden Ledges => OOT Forest Temple West Garden",
+      "Area": "OOT Forest Temple Garden Ledges",
+      "Exit": "OOT Forest Temple West Garden",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Forest Temple Garden Ledges => OOT Forest Temple East Garden",
+      "Area": "OOT Forest Temple Garden Ledges",
+      "Exit": "OOT Forest Temple East Garden",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Forest Temple East Garden Ledge => OOT Forest Temple East Garden",
+      "Area": "OOT Forest Temple East Garden Ledge",
+      "Exit": "OOT Forest Temple East Garden",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Forest Temple East Garden Ledge => OOT Forest Temple Falling Ceiling",
+      "Area": "OOT Forest Temple East Garden Ledge",
+      "Exit": "OOT Forest Temple Falling Ceiling",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Forest Temple Twisted Hallway => OOT Forest Temple Bow Region",
+      "Area": "OOT Forest Temple Twisted Hallway",
+      "Exit": "OOT Forest Temple Bow Region",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Forest Temple Bow Region => OOT Forest Temple Falling Ceiling",
+      "Area": "OOT Forest Temple Bow Region",
+      "Exit": "OOT Forest Temple Falling Ceiling",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Ice Cavern => OOT Ice Cavern Main",
+      "Area": "OOT Ice Cavern",
+      "Exit": "OOT Ice Cavern Main",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Ice Cavern Main => OOT Ice Cavern Map Room",
+      "Area": "OOT Ice Cavern Main",
+      "Exit": "OOT Ice Cavern Map Room",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Ice Cavern Main => OOT Ice Cavern Compass Room",
+      "Area": "OOT Ice Cavern Main",
+      "Exit": "OOT Ice Cavern Compass Room",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Ice Cavern Main => OOT Ice Cavern Big Room",
+      "Area": "OOT Ice Cavern Main",
+      "Exit": "OOT Ice Cavern Big Room",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Jabu-Jabu Main => OOT Jabu-Jabu Back",
       "Area": "OOT Jabu-Jabu Main",
-      "Exit": "OOT Jabu-Jabu Pre-Boss",
+      "Exit": "OOT Jabu-Jabu Back",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -25877,22 +27011,6 @@
     {
       "ID": "OOT Jabu-Jabu Basement Side Room => OOT Jabu-Jabu Main",
       "Area": "OOT Jabu-Jabu Basement Side Room",
-      "Exit": "OOT Jabu-Jabu Main",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    {
-      "ID": "OOT Jabu-Jabu Pre-Boss => OOT Jabu-Jabu Boss",
-      "Area": "OOT Jabu-Jabu Pre-Boss",
-      "Exit": "OOT Jabu-Jabu Boss",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    {
-      "ID": "OOT Jabu-Jabu Pre-Boss => OOT Jabu-Jabu Main",
-      "Area": "OOT Jabu-Jabu Pre-Boss",
       "Exit": "OOT Jabu-Jabu Main",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
@@ -30280,6 +31398,7 @@
     "OOT Dodongo Cavern Main Bridge",
     "OOT Dodongo Cavern Skull",
     "OOT Fire Temple",
+    "OOT Fire Temple Pre-Boss",
     "OOT Fire Temple Boss Key Loop",
     "OOT Fire Temple Lava Room",
     "OOT Fire Temple Maze",
@@ -30335,6 +31454,7 @@
     "OOT Ice Cavern",
     "OOT Jabu-Jabu",
     "OOT Jabu-Jabu Main",
+    "OOT Jabu-Jabu Pre-Boss",
     "OOT SPAWN",
     "OOT EGGS",
     "OOT Link's House",
@@ -30456,9 +31576,30 @@
     "OOT Dodongo Cavern Lower Lizalfos",
     "OOT Dodongo Cavern Poe Room",
     "OOT Dodongo Cavern Bomb Bag Ledge",
+    "OOT Fire Temple Upper Lobby",
+    "OOT Fire Temple Vanilla Hammer Loop",
+    "OOT Fire Temple 1f Lava Room",
+    "OOT Fire Temple Maze Lower",
+    "OOT Fire Temple Burning Block",
+    "OOT Fire Temple 3f Lava Room",
+    "OOT Fire Temple Fire Walls",
+    "OOT Fire Temple Top",
+    "OOT Forest Temple West Wing",
+    "OOT Forest Temple Straightened Hallway",
+    "OOT Forest Temple West Garden Ledge",
+    "OOT Forest Temple West Garden",
+    "OOT Forest Temple East Garden",
+    "OOT Forest Temple Garden Ledges",
+    "OOT Forest Temple East Garden Ledge",
+    "OOT Forest Temple Twisted Hallway",
+    "OOT Forest Temple Bow Region",
+    "OOT Forest Temple Falling Ceiling",
+    "OOT Ice Cavern Main",
+    "OOT Ice Cavern Map Room",
+    "OOT Ice Cavern Compass Room",
+    "OOT Ice Cavern Big Room",
     "OOT Jabu-Jabu Back",
     "OOT Jabu-Jabu Basement Side Room",
-    "OOT Jabu-Jabu Pre-Boss",
     "MM Ancient Castle of Ikana Exterior",
     "MM Ancient Castle of Ikana Entrance",
     "MM Ancient Castle of Ikana Interior",
