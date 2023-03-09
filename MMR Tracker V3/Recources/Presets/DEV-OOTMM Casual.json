@@ -7649,6 +7649,182 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT MQ Water Temple Map Chest",
+      "RequiredItems": [
+        "OOT_has_iron_boots",
+        "OOT_has_tunic_zora",
+        "OOT_has_fire",
+        "OOT_can_hookshot",
+        "OOT_EVENT_WATER_LEVEL_HIGH",
+        "OOT Water Temple Main",
+        "option{WaterMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Water Temple Compass Chest",
+      "RequiredItems": [
+        "OOT_EVENT_WATER_LEVEL_LOW",
+        "OOT_EVENT_WATER_LEVEL_HIGH",
+        "OOT Water Temple Main",
+        "option{WaterMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_has_fire"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Water Temple Longshot Chest",
+      "RequiredItems": [
+        "OOT_EVENT_WATER_LEVEL_LOW",
+        "OOT_can_hookshot",
+        "OOT Water Temple Main",
+        "option{WaterMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Water Temple Central Pillar Chest",
+      "RequiredItems": [
+        "OOT_can_hookshot",
+        "OOT_has_iron_boots",
+        "OOT_has_tunic_zora_strict",
+        "OOT Water Temple Main",
+        "option{WaterMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_has_fire_arrows"
+        ],
+        [
+          "OOT_OCARINA",
+          "OOT_SONG_TIME",
+          "OOT_can_use_din"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Water Temple Boss Key Chest",
+      "RequiredItems": [
+        "OOT_can_use_din",
+        "OOT_can_dive_small",
+        "OOT Water Temple Dark Link",
+        "option{WaterMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Water Temple Side Loop Key",
+      "RequiredItems": [
+        "OOT Water Temple Side Loop",
+        "option{WaterMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Water Temple GS Lizalfos Hallway",
+      "RequiredItems": [
+        "OOT_EVENT_WATER_LEVEL_LOW",
+        "OOT_can_use_din",
+        "OOT Water Temple Main",
+        "option{WaterMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Water Temple GS High Water Changer",
+      "RequiredItems": [
+        "OOT_EVENT_WATER_LEVEL_LOW",
+        "OOT_can_longshot",
+        "OOT Water Temple Main",
+        "option{WaterMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Water Temple GS River",
+      "RequiredItems": [
+        "OOT Water Temple Dark Link",
+        "option{WaterMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Water Temple GS Three Torch",
+      "RequiredItems": [
+        "OOT_has_fire_arrows",
+        "OOT Water Temple Three Torch Room",
+        "option{WaterMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_scarecrow_hookshot"
+        ],
+        [
+          "OOT_has_hover_boots"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Water Temple GS Side Loop",
+      "RequiredItems": [
+        "OOT_has_fire",
+        "OOT_SMALL_KEY_WATER, 2",
+        "OOT Water Temple Side Loop",
+        "option{WaterMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Initial Song of Healing",
       "RequiredItems": [
         "MM INITIAL"
@@ -19287,14 +19463,15 @@
     {
       "Id": "OOT Water Temple Main => OOT Water Temple Antichamber",
       "RequiredItems": [
+        "OOT_can_longshot",
         "OOT Water Temple Main"
       ],
       "ConditionalItems": [
         [
+          "OOT_EVENT_WATER_LEVEL_HIGH",
           "option{WaterMQ, true}"
         ],
         [
-          "OOT_can_longshot",
           "OOT_EVENT_WATER_LEVEL_RESET",
           "option{WaterMQ, false}"
         ]
@@ -19393,11 +19570,20 @@
       "Id": "OOT_EVENT_WATER_LEVEL_LOW",
       "RequiredItems": [
         "OOT_OCARINA",
-        "OOT_SONG_ZELDA",
-        "OOT Water Temple Ruto Room",
-        "option{WaterMQ, false}"
+        "OOT_SONG_ZELDA"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_iron_boots",
+          "OOT_has_tunic_zora",
+          "OOT Water Temple Main",
+          "option{WaterMQ, true}"
+        ],
+        [
+          "OOT Water Temple Ruto Room",
+          "option{WaterMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -19598,6 +19784,7 @@
     {
       "Id": "OOT Water Temple Antichamber => OOT Water Temple Boss",
       "RequiredItems": [
+        "OOT_BOSS_KEY_WATER",
         "OOT Water Temple Antichamber"
       ],
       "ConditionalItems": [
@@ -19605,7 +19792,6 @@
           "option{WaterMQ, true}"
         ],
         [
-          "OOT_BOSS_KEY_WATER",
           "option{WaterMQ, false}"
         ]
       ],
@@ -20845,6 +21031,89 @@
       "RequiredItems": [
         "OOT Spirit Temple",
         "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Water Temple Main => OOT Water Temple Dark Link",
+      "RequiredItems": [
+        "OOT_SMALL_KEY_WATER",
+        "OOT_EVENT_WATER_LEVEL_HIGH",
+        "OOT_can_longshot",
+        "OOT Water Temple Main",
+        "option{WaterMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Water Temple Main => OOT Water Temple Three Torch Room",
+      "RequiredItems": [
+        "OOT_EVENT_WATER_GATES",
+        "OOT Water Temple Main",
+        "option{WaterMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Water Temple Main => OOT Water Temple Side Loop",
+      "RequiredItems": [
+        "OOT_EVENT_WATER_GATES",
+        "OOT_can_longshot",
+        "OOT Water Temple Main",
+        "option{WaterMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_scarecrow_longshot"
+        ],
+        [
+          "OOT_has_hover_boots"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_WATER_LEVEL_HIGH",
+      "RequiredItems": [
+        "OOT Water Temple Main",
+        "option{WaterMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_hookshot"
+        ],
+        [
+          "OOT_has_hover_boots"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_WATER_GATES",
+      "RequiredItems": [
+        "OOT_can_use_din",
+        "OOT_has_iron_boots",
+        "OOT_has_tunic_zora",
+        "OOT Water Temple Dark Link",
+        "option{WaterMQ, true}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",

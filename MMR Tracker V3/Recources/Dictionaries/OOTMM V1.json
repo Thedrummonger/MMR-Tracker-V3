@@ -10455,6 +10455,215 @@
       "LocationProxys": []
     },
     {
+      "ID": "OOT MQ Water Temple Map Chest",
+      "Name": "MQ Water Temple Map Chest",
+      "OriginalItem": "OOT_MAP_WATER",
+      "Area": "Water Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Water Temple Map Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Water Temple Map Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Water Temple Compass Chest",
+      "Name": "MQ Water Temple Compass Chest",
+      "OriginalItem": "OOT_COMPASS_WATER",
+      "Area": "Water Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Water Temple Compass Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Water Temple Compass Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Water Temple Longshot Chest",
+      "Name": "MQ Water Temple Longshot Chest",
+      "OriginalItem": "OOT_HOOKSHOT",
+      "Area": "Water Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Water Temple Longshot Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Water Temple Longshot Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Water Temple Central Pillar Chest",
+      "Name": "MQ Water Temple Central Pillar Chest",
+      "OriginalItem": "OOT_SMALL_KEY_WATER",
+      "Area": "Water Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Water Temple Central Pillar Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Water Temple Central Pillar Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Water Temple Boss Key Chest",
+      "Name": "MQ Water Temple Boss Key Chest",
+      "OriginalItem": "OOT_BOSS_KEY_WATER",
+      "Area": "Water Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Water Temple Boss Key Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Water Temple Boss Key Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Water Temple Side Loop Key",
+      "Name": "MQ Water Temple Side Loop Key",
+      "OriginalItem": "OOT_SMALL_KEY_WATER",
+      "Area": "Water Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Water Temple Side Loop Key"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Water Temple Side Loop Key"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Water Temple GS Lizalfos Hallway",
+      "Name": "MQ Water Temple GS Lizalfos Hallway",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Water Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Water Temple GS Lizalfos Hallway"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Water Temple GS Lizalfos Hallway"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Water Temple GS High Water Changer",
+      "Name": "MQ Water Temple GS High Water Changer",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Water Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Water Temple GS High Water Changer"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Water Temple GS High Water Changer"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Water Temple GS River",
+      "Name": "MQ Water Temple GS River",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Water Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Water Temple GS River"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Water Temple GS River"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Water Temple GS Three Torch",
+      "Name": "MQ Water Temple GS Three Torch",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Water Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Water Temple GS Three Torch"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Water Temple GS Three Torch"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Water Temple GS Side Loop",
+      "Name": "MQ Water Temple GS Side Loop",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Water Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Water Temple GS Side Loop"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Water Temple GS Side Loop"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
       "ID": "MM Initial Song of Healing",
       "Name": "Initial Song of Healing",
       "OriginalItem": "MM_SONG_HEALING",
@@ -27028,6 +27237,30 @@
       "ID": "OOT Spirit Temple => OOT Spirit Temple Statue",
       "Area": "OOT Spirit Temple",
       "Exit": "OOT Spirit Temple Statue",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Water Temple Main => OOT Water Temple Dark Link",
+      "Area": "OOT Water Temple Main",
+      "Exit": "OOT Water Temple Dark Link",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Water Temple Main => OOT Water Temple Three Torch Room",
+      "Area": "OOT Water Temple Main",
+      "Exit": "OOT Water Temple Three Torch Room",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Water Temple Main => OOT Water Temple Side Loop",
+      "Area": "OOT Water Temple Main",
+      "Exit": "OOT Water Temple Side Loop",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
