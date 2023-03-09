@@ -27274,9 +27274,73 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT Shadow Temple => OOT Shadow Temple Boat",
+      "ID": "OOT Shadow Temple => OOT Shadow Temple Truth Spinner",
       "Area": "OOT Shadow Temple",
+      "Exit": "OOT Shadow Temple Truth Spinner",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Shadow Temple Truth Spinner => OOT Shadow Temple First Locked Door",
+      "Area": "OOT Shadow Temple Truth Spinner",
+      "Exit": "OOT Shadow Temple First Locked Door",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Shadow Temple Truth Spinner => OOT Shadow Temple First Beamos",
+      "Area": "OOT Shadow Temple Truth Spinner",
+      "Exit": "OOT Shadow Temple First Beamos",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Shadow Temple First Beamos => OOT Shadow Temple Upper Huge Pit",
+      "Area": "OOT Shadow Temple First Beamos",
+      "Exit": "OOT Shadow Temple Upper Huge Pit",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Shadow Temple Upper Huge Pit => OOT Shadow Temple Lower Huge Pit",
+      "Area": "OOT Shadow Temple Upper Huge Pit",
+      "Exit": "OOT Shadow Temple Lower Huge Pit",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Shadow Temple Lower Huge Pit => OOT Shadow Temple Invisible Spike Floor",
+      "Area": "OOT Shadow Temple Lower Huge Pit",
+      "Exit": "OOT Shadow Temple Invisible Spike Floor",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Shadow Temple Invisible Spike Floor => OOT Shadow Temple Wind Tunnel",
+      "Area": "OOT Shadow Temple Invisible Spike Floor",
+      "Exit": "OOT Shadow Temple Wind Tunnel",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Shadow Temple Wind Tunnel => OOT Shadow Temple Boat",
+      "Area": "OOT Shadow Temple Wind Tunnel",
       "Exit": "OOT Shadow Temple Boat",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Shadow Temple Boat => OOT Shadow Temple Final Side Rooms",
+      "Area": "OOT Shadow Temple Boat",
+      "Exit": "OOT Shadow Temple Final Side Rooms",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -28069,9 +28133,9 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "MM SPAWN => MM INITIAL",
+      "ID": "MM SPAWN => MM Clock Town South",
       "Area": "MM SPAWN",
-      "Exit": "MM INITIAL",
+      "Exit": "MM Clock Town South",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -28080,14 +28144,6 @@
       "ID": "MM SPAWN => OOT SONGS",
       "Area": "MM SPAWN",
       "Exit": "OOT SONGS",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    {
-      "ID": "MM INITIAL => MM Clock Town South",
-      "Area": "MM INITIAL",
-      "Exit": "MM Clock Town South",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false

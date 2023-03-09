@@ -7406,26 +7406,11 @@
     {
       "Id": "OOT MQ Fire Temple Early Lower Left Chest",
       "RequiredItems": [
+        "OOT_can_damage",
         "OOT Fire Temple",
         "option{FireMQ, true}"
       ],
-      "ConditionalItems": [
-        [
-          "OOT_has_weapon"
-        ],
-        [
-          "OOT_can_use_sticks"
-        ],
-        [
-          "OOT_can_use_slingshot"
-        ],
-        [
-          "OOT_has_explosives"
-        ],
-        [
-          "OOT_can_use_din"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -7827,7 +7812,7 @@
     {
       "Id": "MM Initial Song of Healing",
       "RequiredItems": [
-        "MM INITIAL"
+        "MM SPAWN"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -9001,7 +8986,7 @@
       "Id": "MM Swamp Spider House Mask of Truth",
       "RequiredItems": [
         "MM_GS_TOKEN_SWAMP, 30",
-        "MM Swamp Spider House Main"
+        "MM Swamp Spider House"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -10129,7 +10114,7 @@
       "Id": "MM Ocean Spider House Wallet",
       "RequiredItems": [
         "MM_GS_TOKEN_OCEAN, 30",
-        "MM Ocean Spider House Front"
+        "MM Ocean Spider House"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -18831,22 +18816,22 @@
     {
       "Id": "OOT Shadow Temple Boat => OOT Shadow Temple Boss",
       "RequiredItems": [
+        "OOT_BOSS_KEY_SHADOW",
         "OOT Shadow Temple Boat"
       ],
       "ConditionalItems": [
         [
+          "OOT_can_use_bow",
           "option{ShadowMQ, true}"
         ],
         [
           "OOT_can_use_bow",
           "OOT_SMALL_KEY_SHADOW, 5",
-          "OOT_BOSS_KEY_SHADOW",
           "option{ShadowMQ, false}"
         ],
         [
           "OOT_scarecrow_longshot",
           "OOT_SMALL_KEY_SHADOW, 5",
-          "OOT_BOSS_KEY_SHADOW",
           "option{ShadowMQ, false}"
         ]
       ],
@@ -21036,9 +21021,136 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Shadow Temple => OOT Shadow Temple Boat",
+      "Id": "OOT Shadow Temple => OOT Shadow Temple Truth Spinner",
       "RequiredItems": [
+        "OOT_has_lens",
         "OOT Shadow Temple",
+        "option{ShadowMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_hookshot"
+        ],
+        [
+          "OOT_has_hover_boots"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Shadow Temple Truth Spinner => OOT Shadow Temple First Locked Door",
+      "RequiredItems": [
+        "OOT_has_explosives",
+        "OOT_SMALL_KEY_SHADOW, 6",
+        "OOT Shadow Temple Truth Spinner",
+        "option{ShadowMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Shadow Temple Truth Spinner => OOT Shadow Temple First Beamos",
+      "RequiredItems": [
+        "OOT Shadow Temple Truth Spinner",
+        "option{ShadowMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_has_fire_arrows"
+        ],
+        [
+          "OOT_has_hover_boots"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Shadow Temple First Beamos => OOT Shadow Temple Upper Huge Pit",
+      "RequiredItems": [
+        "OOT_has_explosives",
+        "OOT_SMALL_KEY_SHADOW, 2",
+        "OOT Shadow Temple First Beamos",
+        "option{ShadowMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Shadow Temple Upper Huge Pit => OOT Shadow Temple Lower Huge Pit",
+      "RequiredItems": [
+        "OOT_has_fire",
+        "OOT Shadow Temple Upper Huge Pit",
+        "option{ShadowMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Shadow Temple Lower Huge Pit => OOT Shadow Temple Invisible Spike Floor",
+      "RequiredItems": [
+        "OOT_SMALL_KEY_SHADOW, 3",
+        "OOT_has_hover_boots",
+        "OOT Shadow Temple Lower Huge Pit",
+        "option{ShadowMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Shadow Temple Invisible Spike Floor => OOT Shadow Temple Wind Tunnel",
+      "RequiredItems": [
+        "OOT_SMALL_KEY_SHADOW, 4",
+        "OOT_can_hookshot",
+        "OOT Shadow Temple Invisible Spike Floor",
+        "option{ShadowMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Shadow Temple Wind Tunnel => OOT Shadow Temple Boat",
+      "RequiredItems": [
+        "OOT_SMALL_KEY_SHADOW, 5",
+        "OOT_OCARINA",
+        "OOT_SONG_ZELDA",
+        "OOT Shadow Temple Wind Tunnel",
+        "option{ShadowMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Shadow Temple Boat => OOT Shadow Temple Final Side Rooms",
+      "RequiredItems": [
+        "OOT_can_use_bow",
+        "OOT_OCARINA",
+        "OOT_SONG_TIME",
+        "OOT_can_longshot",
+        "OOT Shadow Temple Boat",
         "option{ShadowMQ, true}"
       ],
       "ConditionalItems": [],
@@ -22613,7 +22725,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM SPAWN => MM INITIAL",
+      "Id": "MM SPAWN => MM Clock Town South",
       "RequiredItems": [
         "MM_EVENT_TIME_TRAVEL",
         "MM SPAWN"
@@ -22643,17 +22755,6 @@
         "MM_OCARINA",
         "MM_SONG_TIME",
         "MM SPAWN"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM INITIAL => MM Clock Town South",
-      "RequiredItems": [
-        "MM INITIAL"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
