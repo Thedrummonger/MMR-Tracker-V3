@@ -15859,8 +15859,9 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT SPAWN => OOT EGGS",
+      "Id": "OOT SPAWN => OOT SPAWN CHILD",
       "RequiredItems": [
+        "OOT_is_child",
         "OOT SPAWN"
       ],
       "ConditionalItems": [],
@@ -15870,9 +15871,11 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT SPAWN => OOT Link's House",
+      "Id": "OOT SPAWN => OOT SPAWN ADULT",
       "RequiredItems": [
-        "OOT_is_child"
+        "OOT_is_adult",
+        "OOT_EVENT_TIME_TRAVEL",
+        "OOT SPAWN"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -15881,121 +15884,139 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT SPAWN => OOT Temple of Time",
+      "Id": "OOT SPAWN CHILD => OOT SPAWN COMMON",
       "RequiredItems": [
-        "OOT SPAWN"
+        "OOT SPAWN CHILD"
       ],
-      "ConditionalItems": [
-        [
-          "OOT_is_adult",
-          "OOT_EVENT_TIME_TRAVEL"
-        ],
-        [
-          "OOT_is_child",
-          "OOT_OCARINA",
-          "OOT_SONG_TP_LIGHT"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
       "IsTrick": false
     },
     {
-      "Id": "OOT SPAWN => OOT Sacred Meadow",
+      "Id": "OOT SPAWN CHILD => OOT Link's House",
+      "RequiredItems": [
+        "OOT SPAWN CHILD"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT SPAWN ADULT => OOT SPAWN COMMON",
+      "RequiredItems": [
+        "OOT SPAWN ADULT"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT SPAWN ADULT => OOT Temple of Time",
+      "RequiredItems": [
+        "OOT SPAWN ADULT"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT SPAWN COMMON => OOT SONGS",
       "RequiredItems": [
         "OOT_OCARINA",
+        "OOT SPAWN COMMON"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT SPAWN COMMON => OOT EGGS",
+      "RequiredItems": [
+        "OOT SPAWN COMMON"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT SONGS => OOT Temple of Time",
+      "RequiredItems": [
+        "OOT_SONG_TP_LIGHT",
+        "OOT SONGS"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT SONGS => OOT Sacred Meadow",
+      "RequiredItems": [
         "OOT_SONG_TP_FOREST",
-        "OOT SPAWN"
+        "OOT SONGS"
       ],
-      "ConditionalItems": [
-        [
-          "OOT_is_child"
-        ],
-        [
-          "OOT_EVENT_TIME_TRAVEL"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
       "IsTrick": false
     },
     {
-      "Id": "OOT SPAWN => OOT Death Mountain Crater Warp",
+      "Id": "OOT SONGS => OOT Death Mountain Crater Warp",
       "RequiredItems": [
-        "OOT_OCARINA",
         "OOT_SONG_TP_FIRE",
-        "OOT SPAWN"
+        "OOT SONGS"
       ],
-      "ConditionalItems": [
-        [
-          "OOT_is_child"
-        ],
-        [
-          "OOT_EVENT_TIME_TRAVEL"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
       "IsTrick": false
     },
     {
-      "Id": "OOT SPAWN => OOT Lake Hylia",
+      "Id": "OOT SONGS => OOT Lake Hylia",
       "RequiredItems": [
-        "OOT_OCARINA",
         "OOT_SONG_TP_WATER",
-        "OOT SPAWN"
+        "OOT SONGS"
       ],
-      "ConditionalItems": [
-        [
-          "OOT_is_child"
-        ],
-        [
-          "OOT_EVENT_TIME_TRAVEL"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
       "IsTrick": false
     },
     {
-      "Id": "OOT SPAWN => OOT Graveyard Upper",
+      "Id": "OOT SONGS => OOT Graveyard Upper",
       "RequiredItems": [
-        "OOT_OCARINA",
         "OOT_SONG_TP_SHADOW",
-        "OOT SPAWN"
+        "OOT SONGS"
       ],
-      "ConditionalItems": [
-        [
-          "OOT_is_child"
-        ],
-        [
-          "OOT_EVENT_TIME_TRAVEL"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
       "IsTrick": false
     },
     {
-      "Id": "OOT SPAWN => OOT Desert Colossus",
+      "Id": "OOT SONGS => OOT Desert Colossus",
       "RequiredItems": [
-        "OOT_OCARINA",
         "OOT_SONG_TP_SPIRIT",
-        "OOT SPAWN"
+        "OOT SONGS"
       ],
-      "ConditionalItems": [
-        [
-          "OOT_is_child"
-        ],
-        [
-          "OOT_EVENT_TIME_TRAVEL"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -22595,6 +22616,19 @@
       "Id": "MM SPAWN => MM INITIAL",
       "RequiredItems": [
         "MM_EVENT_TIME_TRAVEL",
+        "MM SPAWN"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM SPAWN => OOT SONGS",
+      "RequiredItems": [
+        "option{crossWarpOot}",
+        "MM_has_ocarina",
         "MM SPAWN"
       ],
       "ConditionalItems": [],

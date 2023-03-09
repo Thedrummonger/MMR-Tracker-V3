@@ -254,12 +254,28 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             ageFilter.CreateSimpleValues(new string[] { "both", "adult", "child" });
             dictionaryFile.Options.Add(ageFilter);
 
+            OptionData.TrackerOption EggContentShuffle = new OptionData.TrackerOption();
+            EggContentShuffle.ID = "eggShuffle";
+            EggContentShuffle.DisplayName = "Egg Content Shuffle";
+            EggContentShuffle.CurrentValue = "true";
+            EggContentShuffle.CreateSimpleValues(new string[] { "true", "false" });
+            EggContentShuffle.Values["false"].AddMaxAmountEdit("OOT_WEIRD_EGG", MiscData.MathOP.set, 0);
+            EggContentShuffle.Values["false"].AddMaxAmountEdit("OOT_POCKET_EGG", MiscData.MathOP.set, 0);
+            dictionaryFile.Options.Add(EggContentShuffle);
+
             OptionData.TrackerOption DoorOfTime = new OptionData.TrackerOption();
             DoorOfTime.ID = "doorOfTime";
             DoorOfTime.DisplayName = "Door Of Time";
             DoorOfTime.CurrentValue = "closed";
             DoorOfTime.CreateSimpleValues(new string[] { "open", "closed" });
             dictionaryFile.Options.Add(DoorOfTime);
+
+            OptionData.TrackerOption CrossGameOOTWarpSong = new OptionData.TrackerOption();
+            CrossGameOOTWarpSong.ID = "crossWarpOot";
+            CrossGameOOTWarpSong.DisplayName = "Cross-Games OoT Warp Songs";
+            CrossGameOOTWarpSong.CurrentValue = "true";
+            CrossGameOOTWarpSong.CreateSimpleValues(new string[] { "true", "false" });
+            dictionaryFile.Options.Add(CrossGameOOTWarpSong);
 
             OptionData.TrackerOption GanonBossKey = new OptionData.TrackerOption();
             GanonBossKey.ID = "ganonBossKey";

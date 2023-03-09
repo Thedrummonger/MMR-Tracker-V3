@@ -24777,67 +24777,115 @@
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT SPAWN => OOT EGGS",
+      "ID": "OOT SPAWN => OOT SPAWN CHILD",
       "Area": "OOT SPAWN",
-      "Exit": "OOT EGGS",
+      "Exit": "OOT SPAWN CHILD",
       "RandomizableEntrance": false,
       "AlwaysAccessable": true,
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT SPAWN => OOT Link's House",
+      "ID": "OOT SPAWN => OOT SPAWN ADULT",
       "Area": "OOT SPAWN",
+      "Exit": "OOT SPAWN ADULT",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": true,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT SPAWN CHILD => OOT SPAWN COMMON",
+      "Area": "OOT SPAWN CHILD",
+      "Exit": "OOT SPAWN COMMON",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT SPAWN CHILD => OOT Link's House",
+      "Area": "OOT SPAWN CHILD",
       "Exit": "OOT Link's House",
       "RandomizableEntrance": false,
-      "AlwaysAccessable": true,
+      "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT SPAWN => OOT Temple of Time",
-      "Area": "OOT SPAWN",
+      "ID": "OOT SPAWN ADULT => OOT SPAWN COMMON",
+      "Area": "OOT SPAWN ADULT",
+      "Exit": "OOT SPAWN COMMON",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT SPAWN ADULT => OOT Temple of Time",
+      "Area": "OOT SPAWN ADULT",
       "Exit": "OOT Temple of Time",
       "RandomizableEntrance": false,
-      "AlwaysAccessable": true,
+      "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT SPAWN => OOT Sacred Meadow",
-      "Area": "OOT SPAWN",
+      "ID": "OOT SPAWN COMMON => OOT SONGS",
+      "Area": "OOT SPAWN COMMON",
+      "Exit": "OOT SONGS",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT SPAWN COMMON => OOT EGGS",
+      "Area": "OOT SPAWN COMMON",
+      "Exit": "OOT EGGS",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT SONGS => OOT Temple of Time",
+      "Area": "OOT SONGS",
+      "Exit": "OOT Temple of Time",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT SONGS => OOT Sacred Meadow",
+      "Area": "OOT SONGS",
       "Exit": "OOT Sacred Meadow",
       "RandomizableEntrance": false,
-      "AlwaysAccessable": true,
+      "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT SPAWN => OOT Death Mountain Crater Warp",
-      "Area": "OOT SPAWN",
+      "ID": "OOT SONGS => OOT Death Mountain Crater Warp",
+      "Area": "OOT SONGS",
       "Exit": "OOT Death Mountain Crater Warp",
       "RandomizableEntrance": false,
-      "AlwaysAccessable": true,
+      "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT SPAWN => OOT Lake Hylia",
-      "Area": "OOT SPAWN",
+      "ID": "OOT SONGS => OOT Lake Hylia",
+      "Area": "OOT SONGS",
       "Exit": "OOT Lake Hylia",
       "RandomizableEntrance": false,
-      "AlwaysAccessable": true,
+      "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT SPAWN => OOT Graveyard Upper",
-      "Area": "OOT SPAWN",
+      "ID": "OOT SONGS => OOT Graveyard Upper",
+      "Area": "OOT SONGS",
       "Exit": "OOT Graveyard Upper",
       "RandomizableEntrance": false,
-      "AlwaysAccessable": true,
+      "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     {
-      "ID": "OOT SPAWN => OOT Desert Colossus",
-      "Area": "OOT SPAWN",
+      "ID": "OOT SONGS => OOT Desert Colossus",
+      "Area": "OOT SONGS",
       "Exit": "OOT Desert Colossus",
       "RandomizableEntrance": false,
-      "AlwaysAccessable": true,
+      "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     {
@@ -28024,6 +28072,14 @@
       "ID": "MM SPAWN => MM INITIAL",
       "Area": "MM SPAWN",
       "Exit": "MM INITIAL",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "MM SPAWN => OOT SONGS",
+      "Area": "MM SPAWN",
+      "Exit": "OOT SONGS",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -31924,6 +31980,34 @@
       }
     },
     {
+      "ID": "eggShuffle",
+      "DisplayName": "Egg Content Shuffle",
+      "CurrentValue": "true",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "OOT_WEIRD_EGG": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_POCKET_EGG": {
+              "action": "set",
+              "amount": 0
+            }
+          }
+        }
+      }
+    },
+    {
       "ID": "doorOfTime",
       "DisplayName": "Door Of Time",
       "CurrentValue": "closed",
@@ -31935,6 +32019,25 @@
           "ItemMaxAmountEdit": {}
         },
         "closed": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
+        }
+      }
+    },
+    {
+      "ID": "crossWarpOot",
+      "DisplayName": "Cross-Games OoT Warp Songs",
+      "CurrentValue": "true",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
+        },
+        "false": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
