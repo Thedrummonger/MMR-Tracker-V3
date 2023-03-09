@@ -145,8 +145,7 @@ namespace MMR_Tracker_V3
                     var DictEntry = Instance.LogicDictionary.EntranceList.First(x => x.ID == i.Id);
                     Instance.InstanceReference.EntranceLogicNameToEntryData.Add(i.Id, new EntranceData.EntranceAreaPair { Area = DictEntry.Area, Exit = DictEntry.Exit });
                     Instance.AddLogicExitReference(new EntranceData.EntranceAreaPair { Area = DictEntry.Area, Exit = DictEntry.Exit }, i.Id);
-                    var DestinationList = DictEntry.RandomizableEntrance ? Instance.EntrancePool.AreaList[DictEntry.Area].LoadingZoneExits : Instance.EntrancePool.AreaList[DictEntry.Area].MacroExits;
-                    DestinationList.Add(DictEntry.Exit, new EntranceData.EntranceRandoExit
+                    Instance.EntrancePool.AreaList[DictEntry.Area].Exits.Add(DictEntry.Exit, new EntranceData.EntranceRandoExit
                     {
                         ParentAreaID = DictEntry.Area,
                         Area= DictEntry.DisplayArea??DictEntry.Area,
@@ -196,7 +195,7 @@ namespace MMR_Tracker_V3
                 });
             }
 
-            Instance.EntrancePool.IsEntranceRando = Instance.EntrancePool.CheckForRandomEntrances();
+            Instance.EntrancePool.IsEntranceRando = Instance.EntrancePool.CheckForRandomEntrances(Instance);
 
             Instance.PriceData.Initialized = true;
 
@@ -207,7 +206,7 @@ namespace MMR_Tracker_V3
             //If the number of randomized entrances is less than 10% of the number of randomized locations, show the entrances in the location box
             if (Instance.EntrancePool.IsEntranceRando)
             {
-                double EntrancesRandomized = Instance.EntrancePool.GetAmountOfRandomizedEntrances();
+                double EntrancesRandomized = Instance.EntrancePool.GetAmountOfRandomizedEntrances(Instance);
                 double Locationsrandomized = Instance.LocationPool.Where(x => x.Value.AppearsinListbox(Instance)).Count();
                 double LocationEntranceRatio = Math.Round(EntrancesRandomized / Locationsrandomized, 2);
                 Instance.StaticOptions.EntranceRandoFeatures = LocationEntranceRatio >= .1;

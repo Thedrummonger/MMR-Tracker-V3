@@ -433,7 +433,7 @@ namespace Windows_Form_Frontend
             if (InstanceContainer is null || InstanceContainer.Instance is null) { return; }
 
 
-            InstanceContainer.Instance.EntrancePool.IsEntranceRando = InstanceContainer.Instance.EntrancePool.CheckForRandomEntrances();
+            InstanceContainer.Instance.EntrancePool.IsEntranceRando = InstanceContainer.Instance.EntrancePool.CheckForRandomEntrances(InstanceContainer.Instance);
 
             PathFinderToolStripMenuItem.Visible = InstanceContainer.Instance.EntrancePool.IsEntranceRando;
 
@@ -442,7 +442,7 @@ namespace Windows_Form_Frontend
 
             string CurrentStart = (string)CMBStart.SelectedItem ?? "";
             string CurrentEnd = (string)CMBEnd.SelectedItem ?? "";
-            var AccessableAreas = InstanceContainer.Instance.EntrancePool.AreaList.Values.Where(x => x.ExitsAcessibleFrom > 0 && x.LoadingZoneExits.Any()).Select(x => x.ID);
+            var AccessableAreas = InstanceContainer.Instance.EntrancePool.AreaList.Values.Where(x => x.ExitsAcessibleFrom > 0 && x.RandomizableExits(InstanceContainer.Instance).Any()).Select(x => x.ID);
             CMBStart.DataSource = AccessableAreas.OrderBy(x => x).ToList();
             CMBEnd.DataSource = AccessableAreas.OrderBy(x => x).ToList();
             if (CMBStart.Items.Contains(CurrentStart)) { CMBStart.SelectedIndex = CMBStart.Items.IndexOf(CurrentStart); }
@@ -467,7 +467,7 @@ namespace Windows_Form_Frontend
                 SetObjectVisibility(false, false);
                 return;
             }
-            else if (InstanceContainer.Instance.StaticOptions.EntranceRandoFeatures && (InstanceContainer.Instance.EntrancePool.IsEntranceRando || InstanceContainer.Instance.EntrancePool.CheckForRandomEntrances()))
+            else if (InstanceContainer.Instance.StaticOptions.EntranceRandoFeatures && (InstanceContainer.Instance.EntrancePool.IsEntranceRando || InstanceContainer.Instance.EntrancePool.CheckForRandomEntrances(InstanceContainer.Instance)))
             {
                 SetObjectVisibility(true, true);
                 lblAvailableLocation.Location = new Point(locX, locY + 2);
@@ -662,7 +662,7 @@ namespace Windows_Form_Frontend
             SaveAsToolStripMenuItem.Visible = (File.Exists(InstanceContainer.CurrentSavePath));
             importSpoilerLogToolStripMenuItem.Text = (InstanceContainer.Instance.SpoilerLog != null) ? "Remove Spoiler Log" : "Import Spoiler Log";
             entranceRandoFeaturesToolStripMenuItem.Checked = InstanceContainer.Instance.StaticOptions.EntranceRandoFeatures;
-            entranceRandoFeaturesToolStripMenuItem.Visible = InstanceContainer.Instance.EntrancePool.IsEntranceRando || InstanceContainer.Instance.EntrancePool.CheckForRandomEntrances();
+            entranceRandoFeaturesToolStripMenuItem.Visible = InstanceContainer.Instance.EntrancePool.IsEntranceRando || InstanceContainer.Instance.EntrancePool.CheckForRandomEntrances(InstanceContainer.Instance);
 
 
             //Manage Dev Menus

@@ -24,9 +24,9 @@ namespace MMR_Tracker_V3
         {
             if (Root) { FinalPath.Clear(); }
             SeenAreas.Add(CurrentArea);
-            var validLoadingZoneExits = instance.EntrancePool.AreaList[CurrentArea].LoadingZoneExits.Values.Where(x => x.CheckState == MiscData.CheckState.Checked);
-            var validMacroExits = instance.EntrancePool.AreaList[CurrentArea].MacroExits.Values.Where(x => x.CheckState == MiscData.CheckState.Checked);
-            var WarpExits = instance.EntrancePool.AreaList.SelectMany(x => x.Value.LoadingZoneExits.Values.Where(x => x.IsWarp && x.CheckState == MiscData.CheckState.Checked));
+            var validLoadingZoneExits = instance.EntrancePool.AreaList[CurrentArea].RandomizableExits(instance).Values.Where(x => x.CheckState == MiscData.CheckState.Checked);
+            var validMacroExits = instance.EntrancePool.AreaList[CurrentArea].NonRandomizableExits(instance).Values.Where(x => x.CheckState == MiscData.CheckState.Checked);
+            var WarpExits = instance.EntrancePool.AreaList.SelectMany(x => x.Value.RandomizableExits(instance).Values.Where(x => x.IsWarp && x.CheckState == MiscData.CheckState.Checked));
             var validExits = validLoadingZoneExits.Concat(validMacroExits);
             if (Root) { validExits = validExits.Concat(WarpExits); }
             if (validExits.Any(x => x.DestinationExit.region == Goal))

@@ -24,23 +24,18 @@ namespace MMR_Tracker_V3.TrackerObjects
                 if (EntrancePair == null) { return null; }
                 return AreaList[EntrancePair.Area].GetExit(EntrancePair.Exit);
             }
-            public bool CheckForRandomEntrances()
+            public bool CheckForRandomEntrances(LogicObjects.TrackerInstance Instance)
             {
-                return AreaList.Any(x => x.Value.LoadingZoneExits.Any(x => x.Value.RandomizedState == RandomizedState.Randomized));
+                return AreaList.Any(x => x.Value.RandomizableExits(Instance).Any(x => x.Value.RandomizedState == RandomizedState.Randomized));
             }
-            public int GetAmountOfRandomizedEntrances()
+            public int GetAmountOfRandomizedEntrances(LogicObjects.TrackerInstance Instance)
             {
-                return AreaList.SelectMany(x => x.Value.LoadingZoneExits.Where(y => y.Value.IsRandomized())).Count();
+                return AreaList.SelectMany(x => x.Value.RandomizableExits(Instance).Where(y => y.Value.IsRandomized())).Count();
             }
             public bool EntranceIsValid(string Area, string Exit, bool Macros, out bool AreaValid, out bool ExitValid)
             {
-                AreaValid = false; ExitValid = false;
-                if (AreaList.ContainsKey(Area))
-                {
-                    AreaValid = true;
-                    var ExitList = Macros ? AreaList[Area].MacroExits : AreaList[Area].LoadingZoneExits;
-                    ExitValid = ExitList.ContainsKey(Exit);
-                }
+                AreaValid = AreaList.ContainsKey(Area); 
+                ExitValid = AreaValid && AreaList[Area].Exits.ContainsKey(Exit);
                 return AreaValid && ExitValid;
             }
         }
@@ -48,13 +43,19 @@ namespace MMR_Tracker_V3.TrackerObjects
         {
             public string ID { get; set; }
             public int ExitsAcessibleFrom { get; set; } = 0;
-            public Dictionary<string, EntranceRandoExit> LoadingZoneExits { get; set; } = new Dictionary<string, EntranceRandoExit>();
-            public Dictionary<string, EntranceRandoExit> MacroExits { get; set; } = new Dictionary<string, EntranceRandoExit>();
+            public Dictionary<string, EntranceRandoExit> Exits { get; set; } = new Dictionary<string, EntranceRandoExit>();
             public EntranceRandoExit GetExit(string ID)
             {
-                if (LoadingZoneExits.ContainsKey(ID)) { return LoadingZoneExits[ID]; }
-                if (MacroExits.ContainsKey(ID)) { return MacroExits[ID]; }
+                if (Exits.ContainsKey(ID)) { return Exits[ID]; }
                 return null;
+            }
+            public Dictionary<string, EntranceRandoExit> RandomizableExits(LogicObjects.TrackerInstance Instance)
+            {
+                return Exits.Where(x => x.Value.IsRandomizableEntrance(Instance)).ToDictionary(x => x.Key, v => v.Value);
+            }
+            public Dictionary<string, EntranceRandoExit> NonRandomizableExits(LogicObjects.TrackerInstance Instance)
+            {
+                return Exits.Where(x => !x.Value.IsRandomizableEntrance(Instance)).ToDictionary(x => x.Key, v => v.Value);
             }
         }
         public class EntranceRandoExit
@@ -79,10 +80,14 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return DisplayName ?? ID;
             }
 
-            public bool isMacroExit(LogicObjects.TrackerInstance currentTrackerInstance)
+            public bool IsRandomizableEntrance(LogicObjects.TrackerInstance currentTrackerInstance)
             {
-                if (!currentTrackerInstance.EntrancePool.AreaList.ContainsKey(ParentAreaID)) { return false; }
-                return currentTrackerInstance.EntrancePool.AreaList[ParentAreaID].MacroExits.ContainsKey(ID);
+                return GetDictEntry(currentTrackerInstance).RandomizableEntrance;
+            }
+
+            public LogicDictionaryData.DictionaryEntranceEntries GetDictEntry(LogicObjects.TrackerInstance Instance)
+            {
+                return Instance.LogicDictionary.EntranceList[referenceData.DictIndex];
             }
 
             public EntranceRandoDestination GetVanillaDestination()

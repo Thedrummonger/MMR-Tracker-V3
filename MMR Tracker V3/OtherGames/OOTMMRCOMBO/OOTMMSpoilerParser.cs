@@ -19,7 +19,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
         public static void readAndApplySpoilerLog(LogicObjects.TrackerInstance Instance)
         {
             Instance.ToggleAllTricks(false);
-            foreach (var i in Instance.EntrancePool.AreaList.SelectMany(x => x.Value.LoadingZoneExits))
+            foreach (var i in Instance.EntrancePool.AreaList.SelectMany(x => x.Value.RandomizableExits(Instance)))
             {
                 i.Value.RandomizedState = MiscData.RandomizedState.Unrandomized;
             }
@@ -116,7 +116,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 }
                 else if (SettingLineData[0] == "erBoss" && SettingLineData[1] != "none")
                 {
-                    foreach (var i in Instance.EntrancePool.AreaList.SelectMany(x => x.Value.LoadingZoneExits))
+                    foreach (var i in Instance.EntrancePool.AreaList.SelectMany(x => x.Value.RandomizableExits(Instance)))
                     {
                         //For now just randomize them if their found in the spoiler log
                         //i.Value.RandomizedState = MiscData.RandomizedState.Randomized;
@@ -210,7 +210,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
                 if (SourceArea && SourceExit && DestArea && DestExit)
                 {
-                    var CurExit = Instance.EntrancePool.AreaList[Source[0]].LoadingZoneExits[Source[1]];
+                    var CurExit = Instance.EntrancePool.AreaList[Source[0]].RandomizableExits(Instance)[Source[1]];
                     CurExit.SpoilerDefinedDestinationExit = new EntranceData.EntranceRandoDestination
                     {
                         region = Destination[1],
@@ -222,7 +222,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                     var PairExit = CurExit.EntrancePair?.Exit;
                     if (PairArea is not null && PairExit is not null)
                     {
-                        Instance.EntrancePool.AreaList[PairArea].LoadingZoneExits[PairExit].RandomizedState = MiscData.RandomizedState.Randomized;
+                        Instance.EntrancePool.AreaList[PairArea].RandomizableExits(Instance)[PairExit].RandomizedState = MiscData.RandomizedState.Randomized;
                     }
                 }
                 else 

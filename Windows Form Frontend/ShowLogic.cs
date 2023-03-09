@@ -219,13 +219,13 @@ namespace Windows_Form_Frontend
                 if (!SearchStringParser.FilterSearch(instance, i, textBox1.Text, i.ID)) { continue; }
                 LBReq.Items.Add(i.ID);
             }
-            foreach (var i in instance.EntrancePool.AreaList.SelectMany(x => x.Value.LoadingZoneExits))
+            foreach (var i in instance.EntrancePool.AreaList.SelectMany(x => x.Value.RandomizableExits(instance)))
             {
                 var ID = instance.GetLogicNameFromExit(i.Value);
                 if (!SearchStringParser.FilterSearch(instance, i, textBox1.Text, ID)) { continue; }
                 LBReq.Items.Add(ID);
             }
-            foreach (var i in instance.EntrancePool.AreaList.SelectMany(x => x.Value.MacroExits))
+            foreach (var i in instance.EntrancePool.AreaList.SelectMany(x => x.Value.NonRandomizableExits(instance)))
             {
                 var ID = instance.GetLogicNameFromExit(i.Value);
                 if (!SearchStringParser.FilterSearch(instance, i, textBox1.Text, ID)) { continue; }
@@ -440,10 +440,10 @@ namespace Windows_Form_Frontend
             switch (Type)
             {
                 case LogicEntryType.Area:
-                    var ValidLoadingZoneExits = instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values.Where(x => 
+                    var ValidLoadingZoneExits = instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits(instance).Values.Where(x => 
                         (x.DestinationExit is not null  && x.DestinationExit.region == CleanedID && x.CheckState != MiscData.CheckState.Unchecked) ||
                         (x.IsUnrandomized() && x.GetVanillaDestination().region == CleanedID)));
-                    var ValidMacroExits = instance.EntrancePool.AreaList.Values.SelectMany(x => x.MacroExits.Values.Where(x => 
+                    var ValidMacroExits = instance.EntrancePool.AreaList.Values.SelectMany(x => x.NonRandomizableExits(instance).Values.Where(x => 
                         (x.DestinationExit is not null  && x.DestinationExit.region == CleanedID) || 
                         x.GetVanillaDestination().region == CleanedID));
                     var ValidExits = ValidLoadingZoneExits.Concat(ValidMacroExits);

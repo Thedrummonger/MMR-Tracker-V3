@@ -80,9 +80,7 @@ namespace MMR_Tracker_V3
                 if (literal && InstanceReference.EntranceLogicNameToEntryData.ContainsKey(ID)) 
                 {
                     var EA = InstanceReference.EntranceLogicNameToEntryData[ID];
-                    Obj = EntrancePool.AreaList[EA.Area].LoadingZoneExits.ContainsKey(EA.Exit) ? 
-                        EntrancePool.AreaList[EA.Area].LoadingZoneExits[EA.Exit] : 
-                        EntrancePool.AreaList[EA.Area].MacroExits[EA.Exit]; 
+                    Obj = EntrancePool.AreaList[EA.Area].Exits[EA.Exit]; 
                     return LogicEntryType.Exit; 
                 }
                 if (literal && HintPool.ContainsKey(ID)) { Obj = HintPool[ID]; return LogicEntryType.Hint; }
@@ -91,9 +89,7 @@ namespace MMR_Tracker_V3
                 if (!literal && InstanceReference.EntranceLogicNameToEntryData.ContainsKey(ID))
                 {
                     var EA = InstanceReference.EntranceLogicNameToEntryData[ID];
-                    Obj = EntrancePool.AreaList[EA.Area].LoadingZoneExits.ContainsKey(EA.Exit) ?
-                        EntrancePool.AreaList[EA.Area].LoadingZoneExits[EA.Exit] :
-                        EntrancePool.AreaList[EA.Area].MacroExits[EA.Exit]; 
+                    Obj = EntrancePool.AreaList[EA.Area].Exits[EA.Exit];
                     return LogicEntryType.Exit; 
                 }
                 if (!literal && HintPool.ContainsKey(ID)) { Obj = HintPool[ID]; return LogicEntryType.Hint; }

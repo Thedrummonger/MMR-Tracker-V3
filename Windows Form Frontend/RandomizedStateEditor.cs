@@ -1,4 +1,5 @@
-﻿using MMR_Tracker_V3;
+﻿using MathNet.Numerics;
+using MMR_Tracker_V3;
 using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
@@ -164,7 +165,7 @@ namespace Windows_Form_Frontend
             List<ListViewItem> TempList = new List<ListViewItem>();
             foreach (var area in _Instance.EntrancePool.AreaList)
             {
-                foreach(var i in area.Value.LoadingZoneExits)
+                foreach(var i in area.Value.RandomizableExits(_Instance))
                 {
                     if (i.Value.IsRandomized() && !chkShowRand.Checked) { continue; }
                     if (i.Value.IsUnrandomized(1) && !chkShowUnrand.Checked) { continue; }

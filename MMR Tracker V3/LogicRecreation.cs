@@ -41,7 +41,7 @@ namespace MMR_Tracker_V3
                     OwningPlayer = i.Value.Randomizeditem.OwningPlayer
                 });
             }
-            foreach (var i in InstanceContainer.Instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values))
+            foreach (var i in InstanceContainer.Instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits(InstanceContainer.Instance).Values))
             {
                 state.Exits.Add(InstanceContainer.Instance.GetLogicNameFromExit(i), new RecData()
                 {
@@ -93,9 +93,9 @@ namespace MMR_Tracker_V3
             {
                 var EntPool = InstanceContainer.Instance.EntrancePool;
                 var entDict = InstanceContainer.Instance.InstanceReference.EntranceLogicNameToEntryData;
-                if (entDict.ContainsKey(i.Key) && EntPool.AreaList.ContainsKey(entDict[i.Key].Area) && EntPool.AreaList[entDict[i.Key].Area].LoadingZoneExits.ContainsKey(entDict[i.Key].Exit))
+                if (entDict.ContainsKey(i.Key) && EntPool.AreaList.ContainsKey(entDict[i.Key].Area) && EntPool.AreaList[entDict[i.Key].Area].RandomizableExits(InstanceContainer.Instance).ContainsKey(entDict[i.Key].Exit))
                 {
-                    var loc = EntPool.AreaList[entDict[i.Key].Area].LoadingZoneExits[entDict[i.Key].Exit];
+                    var loc = EntPool.AreaList[entDict[i.Key].Area].RandomizableExits(InstanceContainer.Instance)[entDict[i.Key].Exit];
                     loc.DestinationExit = loc.GetDestinationAtExit(InstanceContainer.Instance)??i.Value.randomizedEntry;
                     loc.ToggleExitChecked(i.Value.CheckState, InstanceContainer.Instance);
                 }

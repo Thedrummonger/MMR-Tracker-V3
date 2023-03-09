@@ -170,7 +170,7 @@ namespace MMR_Tracker_V3
             dataSets.AllAvailableProxies = instance.LocationProxyData.LocationProxies.Values.Where(x => x.GetReferenceLocation(instance).CheckState != MiscData.CheckState.Checked).ToList();
             dataSets.AvailableProxies = dataSets.AllAvailableProxies.Where(x => x.ProxyAvailable(instance) || x.GetReferenceLocation(instance).CheckState == MiscData.CheckState.Marked).ToList();
 
-            var AllExits = instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values);
+            var AllExits = instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits(instance).Values);
             dataSets.UncheckedEntrances = AllExits.Where(x => x.CheckState == MiscData.CheckState.Unchecked).ToList();
             dataSets.MarkedEntrances = AllExits.Where(x => x.CheckState == MiscData.CheckState.Checked).ToList();
             dataSets.CheckedEntrances = AllExits.Where(x => x.CheckState == MiscData.CheckState.Marked).ToList();
@@ -288,7 +288,7 @@ namespace MMR_Tracker_V3
                 List<EntranceData.EntranceRandoExit> ValidExits = new List<EntranceData.EntranceRandoExit>();
                 foreach (var area in Instance.EntrancePool.AreaList)
                 {
-                    var CheckLoadingZoneExits = area.Value.LoadingZoneExits.Where(x => x.Value.CheckState == MiscData.CheckState.Checked && EntranceAppearsinListbox(x.Value, Instance));
+                    var CheckLoadingZoneExits = area.Value.RandomizableExits(Instance).Where(x => x.Value.CheckState == MiscData.CheckState.Checked && EntranceAppearsinListbox(x.Value, Instance));
                     var FilteredCheckedExits = CheckLoadingZoneExits.Where(x => SearchStringParser.FilterSearch(Instance, x.Value, Filter, Utility.GetEntranceDisplayName(x.Value, Instance)));
 
                     ItemsInListBox += CheckLoadingZoneExits.Count();
@@ -590,7 +590,7 @@ namespace MMR_Tracker_V3
 
             foreach (var area in Instance.EntrancePool.AreaList)
             {
-                var AvailableExits = area.Value.LoadingZoneExits.Where(x => 
+                var AvailableExits = area.Value.RandomizableExits(Instance).Where(x => 
                 (x.Value.Available || x.Value.CheckState == MiscData.CheckState.Marked || ShowUnavailable || Filter.StartsWith("^")) && 
                 x.Value.CheckState != MiscData.CheckState.Checked && EntranceAppearsinListbox(x.Value, Instance));
 

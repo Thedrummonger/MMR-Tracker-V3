@@ -162,7 +162,7 @@ namespace MMR_Tracker_V3
             }
             foreach (var Area in container.Instance.EntrancePool.AreaList)
             {
-                foreach (var i in Area.Value.LoadingZoneExits.Concat(Area.Value.MacroExits))
+                foreach (var i in Area.Value.Exits)
                 {
                     LogicMap[container.Instance.GetLogicNameFromExit(i.Value)] = container.Instance.GetLogic(container.Instance.GetLogicNameFromExit(i.Value));
                 }
@@ -191,7 +191,7 @@ namespace MMR_Tracker_V3
             }
             foreach (var Area in container.Instance.EntrancePool.AreaList)
             {
-                foreach (var i in Area.Value.LoadingZoneExits.Where(x => !x.Value.IsUnrandomized(1) && !x.Value.IsJunk()))
+                foreach (var i in Area.Value.RandomizableExits(container.Instance).Where(x => !x.Value.IsUnrandomized(1) && !x.Value.IsJunk()))
                 {
                     var Logic = LogicMap[container.Instance.GetLogicNameFromExit(i.Value)];
                     i.Value.Available = CalculatReqAndCond(Logic, container.Instance.GetLogicNameFromExit(i.Value), Area.Key);
@@ -217,7 +217,7 @@ namespace MMR_Tracker_V3
             }
             foreach (var Area in container.Instance.EntrancePool.AreaList)
             {
-                foreach (var i in Area.Value.LoadingZoneExits.Values.Concat(Area.Value.MacroExits.Values))
+                foreach (var i in Area.Value.Exits.Values)
                 {
                     var ID = container.Instance.GetLogicNameFromExit(i);
                     if (!i.Available && LogicUnlockData.ContainsKey(ID)) { LogicUnlockData.Remove(ID); }
@@ -237,7 +237,7 @@ namespace MMR_Tracker_V3
         {
             foreach (var Area in container.Instance.EntrancePool.AreaList)
             {
-                foreach (var i in Area.Value.LoadingZoneExits.Where(x => x.Value.IsUnrandomized(1)).Concat(Area.Value.MacroExits))
+                foreach (var i in Area.Value.Exits.Where(x => x.Value.IsUnrandomized(1) || !x.Value.IsRandomizableEntrance(container.Instance)))
                 {
                     i.Value.ToggleExitChecked(CheckState.Unchecked, container.Instance);
                 }
@@ -253,7 +253,7 @@ namespace MMR_Tracker_V3
             bool ItemStateChanged = false;
             foreach (var Area in container.Instance.EntrancePool.AreaList)
             {
-                foreach (var i in Area.Value.LoadingZoneExits.Where(x => x.Value.IsUnrandomized(1)).Concat(Area.Value.MacroExits))
+                foreach (var i in Area.Value.Exits.Where(x => x.Value.IsUnrandomized(1) || !x.Value.IsRandomizableEntrance(container.Instance)))
                 {
                     var Logic = LogicMap[container.Instance.GetLogicNameFromExit(i.Value)];
                     var Available = CalculatReqAndCond(Logic, container.Instance.GetLogicNameFromExit(i.Value), Area.Key);
@@ -569,7 +569,7 @@ namespace MMR_Tracker_V3
         public static bool CheckEntrancePair(this TrackerInstance instance)
         {
             bool ChangesMade = false;
-            foreach (var i in instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values))
+            foreach (var i in instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits(instance).Values))
             {
                 if (i.CheckState == CheckState.Checked && i.EntrancePair != null)
                 {
@@ -587,7 +587,7 @@ namespace MMR_Tracker_V3
         public static bool UnCheckEntrancePair(this TrackerInstance instance)
         {
             bool ChangesMade = false;
-            foreach (var i in instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values))
+            foreach (var i in instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits(instance).Values))
             {
                 if (i.CheckState != CheckState.Checked && i.EntrancePair != null)
                 {

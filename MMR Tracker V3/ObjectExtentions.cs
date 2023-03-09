@@ -158,7 +158,7 @@ namespace MMR_Tracker_V3
         {
             var Names = new List<string>();
             var EnteredItems = new List<EntranceRandoDestination>();
-            foreach (var area in _Instance.EntrancePool.AreaList.Values.Where(x => x.LoadingZoneExits.Any()).ToList().SelectMany(x => x.LoadingZoneExits).OrderBy(x => x.Value.ID))
+            foreach (var area in _Instance.EntrancePool.AreaList.Values.Where(x => x.RandomizableExits(_Instance).Any()).ToList().SelectMany(x => x.RandomizableExits(_Instance)).OrderBy(x => x.Value.ID))
             {
                 var Entry = new EntranceRandoDestination
                 {
