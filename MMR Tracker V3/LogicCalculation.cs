@@ -184,14 +184,14 @@ namespace MMR_Tracker_V3
                 Itterations++;
                  if (!MacroChanged && !UnrandomizedItemChecked && !UnrandomizedExitChecked) { break; }
             }
-            foreach (var i in container.Instance.LocationPool.Values.Where(x => !x.IsUnrandomized(1) && !x.IsJunk()))
+            foreach (var i in container.Instance.LocationPool.Values.Where(x => !x.IsUnrandomized(1)))
             {
                 var Logic = LogicMap[i.ID];
                 i.Available = CalculatReqAndCond(Logic, i.ID, null);
             }
             foreach (var Area in container.Instance.EntrancePool.AreaList)
             {
-                foreach (var i in Area.Value.RandomizableExits(container.Instance).Where(x => !x.Value.IsUnrandomized(1) && !x.Value.IsJunk()))
+                foreach (var i in Area.Value.RandomizableExits(container.Instance).Where(x => !x.Value.IsUnrandomized(1)))
                 {
                     var Logic = LogicMap[container.Instance.GetLogicNameFromExit(i.Value)];
                     i.Value.Available = CalculatReqAndCond(Logic, container.Instance.GetLogicNameFromExit(i.Value), Area.Key);
@@ -428,6 +428,9 @@ namespace MMR_Tracker_V3
         {
             bool litteral = param.IsLiteralID(out string paramClean);
             instance.GetLocationEntryType(paramClean, litteral, out dynamic obj);
+
+            if (func == "check" && Utility.DynamicPropertyExist(obj, "RandomizedState") && obj.RandomizedState == RandomizedState.ForcedJunk) { func = "available"; }
+
             if (func == "check" && Utility.DynamicPropertyExist(obj, "CheckState")) { return obj.CheckState == CheckState.Checked; }
             else if (func == "available" && Utility.DynamicPropertyExist(obj, "Available")) { return  obj.Available; }
             return false;
