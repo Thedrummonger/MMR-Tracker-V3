@@ -22,7 +22,6 @@ namespace MMR_Tracker_V3.TrackerObjects
             public List<DictionaryLocationEntries> LocationList { get; set; } = new List<DictionaryLocationEntries>();
             public List<DictionaryItemEntries> ItemList { get; set; } = new List<DictionaryItemEntries>();
             public List<DictionaryEntranceEntries> EntranceList { get; set; } = new List<DictionaryEntranceEntries>();
-            public List<string> AreaList { get; set; } = new List<string>();
             public List<DictionaryMacroEntry> MacroList { get; set; } = new List<DictionaryMacroEntry>();
             public List<JsonFormatLogicItem> AdditionalLogic { get; set; } = new List<JsonFormatLogicItem>();
             public List<TrackerOption> Options { get; set; } = new List<TrackerOption>();
@@ -45,6 +44,10 @@ namespace MMR_Tracker_V3.TrackerObjects
                 NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore,
                 Converters = { new Newtonsoft.Json.Converters.StringEnumConverter() }
             };
+            public List<string> GetAreas()
+            {
+                return EntranceList.Select(x => x.Area).Concat(EntranceList.Select(x => x.Exit)).Distinct().ToList();
+            }
 
         }
 

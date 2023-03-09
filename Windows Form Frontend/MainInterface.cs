@@ -262,9 +262,9 @@ namespace Windows_Form_Frontend
 
         private void CodeTestingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            WinformTesting.CreateMMRItemTrackerObject();
+            //WinformTesting.CreateMMRItemTrackerObject();
             //MMR_Tracker_V3.OtherGames.SkywardSwordRando.ReadAndParse.ReadWebData();
-            return;
+            //return;
 
             MMR_Tracker_V3.OtherGames.OOTMMRCOMBO.ReadAndParseData.CreateFiles(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary);
 

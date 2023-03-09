@@ -81,7 +81,7 @@ namespace MMR_Tracker_V3
                 Index++;
             }
 
-            foreach (var i in Instance.LogicDictionary.AreaList)
+            foreach (var i in Instance.LogicDictionary.GetAreas())
             {
                 if (!Instance.EntrancePool.AreaList.ContainsKey(i)) { Instance.EntrancePool.AreaList.Add(i, new EntranceData.EntranceRandoArea() { ID = i }); }
             }

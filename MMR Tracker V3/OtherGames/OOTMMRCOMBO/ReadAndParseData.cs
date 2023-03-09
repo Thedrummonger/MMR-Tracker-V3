@@ -752,8 +752,6 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                     foreach (var l in LogicObject.Keys)
                     {
                         string TrueAreaName = $"{Game} {l}";
-                        if (!dictionaryFile.AreaList.Contains(TrueAreaName))
-                            dictionaryFile.AreaList.Add(TrueAreaName);
                         foreach (var exit in LogicObject[l]?.exits?.Keys?.ToList()??new List<string>())
                         {
                             string TrueExitName = exit.StartsWith($"{OpositeGame} ") || exit.StartsWith($"{Game} ") ? $"{exit}" : $"{Game} {exit}";
