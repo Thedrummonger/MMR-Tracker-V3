@@ -293,11 +293,11 @@ namespace MMR_Tracker_V3
             Debug.WriteLine($"Enabling Hints");
             foreach (var i in instance.HintPool.Where(x => x.Key.StartsWith("Gossip")))
             {
-                i.Value.RandomizedState = Log.GameplaySettings.GossipHintStyle == "Default" ? MiscData.RandomizedState.ForcedJunk : MiscData.RandomizedState.Randomized;
+                i.Value.RandomizedState = Log.GameplaySettings.GossipHintStyle == MMRData.GossipHintStyle.Default ? MiscData.RandomizedState.ForcedJunk : MiscData.RandomizedState.Randomized;
             }
             foreach (var i in instance.HintPool.Where(x => x.Key.StartsWith("HintGaro")))
             {
-                i.Value.RandomizedState = Log.GameplaySettings.GaroHintStyle == "Default" ? MiscData.RandomizedState.ForcedJunk : MiscData.RandomizedState.Randomized;
+                i.Value.RandomizedState = Log.GameplaySettings.GaroHintStyle == MMRData.GossipHintStyle.Default ? MiscData.RandomizedState.ForcedJunk : MiscData.RandomizedState.Randomized;
             }
             //If no StartingItemMode = None, starting locations should be junk. SongHealing is only junked if songs are mixed with items
             Debug.WriteLine($"Handeling MM Starting Locations");
@@ -305,7 +305,7 @@ namespace MMR_Tracker_V3
             if (Log.GameplaySettings.AddSongs) { StartingItems.Add("SongHealing"); }
             foreach (var i in StartingItems)
             {
-                if (Log.GameplaySettings.StartingItemMode != "None") { break; }
+                if (Log.GameplaySettings.StartingItemMode != MMRData.StartingItemMode.None) { break; }
                 var Entry = instance.GetLocationByID(i);
                 if (!Entry.IsUnrandomized()) { Entry.SetRandomizedState(MiscData.RandomizedState.ForcedJunk, instance); }
             }
@@ -326,11 +326,11 @@ namespace MMR_Tracker_V3
             }
             if (instance.UserOptions.ContainsKey("SmallKeysy"))
             {
-                instance.UserOptions["SmallKeysy"].CurrentValue = Log.GameplaySettings.SmallKeyMode.Contains("DoorsOpen") ? "enabled" : "disabled";
+                instance.UserOptions["SmallKeysy"].CurrentValue = Log.GameplaySettings.SmallKeyMode == MMRData.SmallKeyMode.DoorsOpen ? "enabled" : "disabled";
             }
             if (instance.UserOptions.ContainsKey("BossKeysy"))
             {
-                instance.UserOptions["BossKeysy"].CurrentValue = Log.GameplaySettings.BossKeyMode.Contains("DoorsOpen") ? "enabled" : "disabled";
+                instance.UserOptions["BossKeysy"].CurrentValue = Log.GameplaySettings.BossKeyMode == MMRData.BossKeyMode.DoorsOpen ? "enabled" : "disabled";
             }
             if (instance.UserOptions.ContainsKey("BYOA"))
             {
@@ -373,7 +373,7 @@ namespace MMR_Tracker_V3
                 {
                     if (i.IsRandomized())
                     {
-                        if (Log.GameplaySettings.StrayFairyMode == "ChestsOnly" && i.ID.StartsWith("CollectibleStrayFairy")) { i.RandomizedState = RandomizedState.ForcedJunk; }
+                        if (Log.GameplaySettings.StrayFairyMode == MMRData.StrayFairyMode.ChestsOnly && i.ID.StartsWith("CollectibleStrayFairy")) { i.RandomizedState = RandomizedState.ForcedJunk; }
                         else { Debug.WriteLine($"{i.ID} was not found in the spoiler log and was randomized"); }
                     }
                     continue; 

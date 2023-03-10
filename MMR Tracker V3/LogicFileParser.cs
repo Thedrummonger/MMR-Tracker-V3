@@ -61,15 +61,15 @@ namespace MMR_Tracker_V3
         {
             Logic = null;
             MMRData.SpoilerLogData LogData = SpoilerLogTools.ReadSpoilerLog(LogFile);
-            if ( LogData is null || LogData.GameplaySettings is null || LogData.GameplaySettings.LogicMode is null) { return false; }
-            if (LogData.GameplaySettings.LogicMode == "UserLogic")
+            if ( LogData is null || LogData.GameplaySettings is null) { return false; }
+            if (LogData.GameplaySettings.LogicMode == MMRData.LogicMode.UserLogic)
             {
                 if (!File.Exists(LogData.GameplaySettings.UserLogicFileName)) { return false; }
                 var UserLogicFile = File.ReadAllLines(LogData.GameplaySettings.UserLogicFileName);
                 if (TestLogicFileValid(UserLogicFile)) { Logic = UserLogicFile; return true; }
                 return false;
             }
-            else if (LogData.GameplaySettings.LogicMode == "Casual")
+            else if (LogData.GameplaySettings.LogicMode == MMRData.LogicMode.Casual)
             {
                 WebClient wc = new WebClient();
                 try
@@ -81,7 +81,7 @@ namespace MMR_Tracker_V3
                 }
                 catch { return false; }
             }
-            else if (LogData.GameplaySettings.LogicMode == "Glitched")
+            else if (LogData.GameplaySettings.LogicMode == MMRData.LogicMode.Glitched)
             {
                 WebClient wc = new WebClient();
                 try

@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,18 +46,166 @@ namespace MMR_Tracker_V3.TrackerObjects
             public Dictionary<string, int> PriceLog { get; set; } = new Dictionary<string, int>();
         }
 
+        public enum StrayFairyMode
+        {
+            Default,
+            ChestsOnly,
+            KeepWithinDungeon,
+        }
+        public enum BossKeyMode
+        {
+            Default,
+            DoorsOpen = 1,
+            KeepWithinDungeon = 1 << 1,
+            KeepThroughTime = 1 << 2,
+        }
+        public enum SmallKeyMode
+        {
+            Default,
+            DoorsOpen = 1,
+            KeepWithinDungeon = 1 << 1,
+            KeepThroughTime = 1 << 2,
+        }
+        public enum BossRemainsMode
+        {
+            Default,
+            GreatFairyRewards,
+            KeepWithinDungeon,
+        }
+        public enum PriceMode
+        {
+            None,
+            Purchases = 1,
+            Minigames = 2,
+            Misc = 4,
+            AccountForRoyalWallet = 8,
+        }
+        public enum AutoInvertState : byte
+        {
+            Never,
+            FirstCycle,
+            Always,
+        }
+        public enum LogicMode
+        {
+            Casual,
+            Glitched,
+            Vanilla,
+            UserLogic,
+            NoLogic,
+        }
+        public enum ItemPlacement
+        {
+            Random,
+            Bespoke,
+            Classic
+        }
+        public enum StartingItemMode
+        {
+            None,
+            Random,
+            AllowTemporaryItems,
+        }
+        public enum IceTraps
+        {
+            None,
+            Normal,
+            Extra,
+            Mayhem,
+            Onslaught,
+        }
+        public enum IceTrapAppearance
+        {
+            MajorItems,
+            JunkItems,
+            Anything,
+        }
+        public enum DamageMode
+        {
+            Default,
+            Double,
+            Quadruple,
+            OHKO,
+            Doom
+        }
+        public enum DamageEffect
+        {
+            Default,
+            Fire,
+            Ice,
+            Shock,
+            Knockdown,
+            Random
+        }
+        public enum MovementMode
+        {
+            Default,
+            HighSpeed,
+            SuperLowGravity,
+            LowGravity,
+            HighGravity
+        }
+        public enum FloorType
+        {
+            Default,
+            Sand,
+            Ice,
+            Snow,
+            Random
+        }
+        public enum NutAndStickDrops
+        {
+            Default = 0,
+            Light = 1,
+            Medium = 2,
+            Extra = 3,
+            Mayhem = 4
+        }
+        public enum ClockSpeed
+        {
+            Default,
+            VerySlow,
+            Slow,
+            Fast,
+            VeryFast,
+            SuperFast
+        }
+        public enum BlastMaskCooldown
+        {
+            Default,
+            Instant,
+            VeryShort,
+            Short,
+            Long,
+            VeryLong
+        }
+        public enum Character
+        {
+            LinkMM,
+            LinkOOT,
+            AdultLink,
+            Kafei
+        }
+        public enum GossipHintStyle
+        {
+            Default,
+            Random,
+            Relevant,
+            Competitive,
+        }
+
         [Serializable]
         public class GameplaySettings
         {
-            public string StrayFairyMode { get; set; } = "Default";
+            public StrayFairyMode StrayFairyMode { get; set; } = StrayFairyMode.Default;
             public bool DoubleArcheryRewards { get; set; } = false;
             public bool UpdateShopAppearance { get; set; } = true;
             public bool AddSongs { get; set; } = false;
-            public string BossKeyMode { get; set; } = "Default";
-            public string SmallKeyMode { get; set; } = "DoorsOpen";
+            public BossKeyMode BossKeyMode { get; set; } = BossKeyMode.Default;
+            public SmallKeyMode SmallKeyMode { get; set; } = SmallKeyMode.DoorsOpen;
             public bool SpeedupLabFish { get; set; } = true;
-            public string BossRemainsMode { get; set; } = "Default";
-            public string PriceMode { get; set; } = "None";
+            public BossRemainsMode BossRemainsMode { get; set; } = BossRemainsMode.Default;
+            public PriceMode PriceMode { get; set; } = PriceMode.None;
             public string UserLogicFileName { get; set; } = "";
             public bool CloseCows { get; set; } = true;
             public bool ArrowCycling { get; set; } = true;
@@ -74,27 +223,27 @@ namespace MMR_Tracker_V3.TrackerObjects
             public bool ClimbMostSurfaces { get; set; } = false;
             public bool FreeScarecrow { get; set; } = false;
             public bool FillWallet { get; set; } = false;
-            public string AutoInvert { get; set; } = "Never";
+            public AutoInvertState AutoInvert { get; set; } = AutoInvertState.Never;
             public bool HiddenRupeesSparkle { get; set; } = false;
-            public string LogicMode { get; set; } = "Casual";
-            public string ItemPlacement { get; set; } = "Bespoke";
+            public LogicMode LogicMode { get; set; } = LogicMode.Casual;
+            public ItemPlacement ItemPlacement { get; set; } = ItemPlacement.Bespoke;
             public List<string> EnabledTricks { get; set; } = new List<string>();
             public bool RandomizeDungeonEntrances { get; set; } = false;
             public bool RandomizeEnemies { get; set; } = false;
-            public string StartingItemMode { get; set; } = "None";
+            public StartingItemMode StartingItemMode { get; set; } = StartingItemMode.None;
             public string CustomItemListString { get; set; } = "";
             public string CustomStartingItemListString { get; set; } = "";
             public string CustomJunkLocationsString { get; set; } = "";
-            public string IceTraps { get; set; } = "None";
-            public string IceTrapAppearance { get; set; } = "MajorItems";
-            public string DamageMode { get; set; } = "Default";
-            public string DamageEffect { get; set; } = "Default";
-            public string MovementMode { get; set; } = "Default";
-            public string FloorType { get; set; } = "Default";
-            public string NutandStickDrops { get; set; } = "Default";
-            public string ClockSpeed { get; set; } = "Default";
+            public IceTraps IceTraps { get; set; } = IceTraps.None;
+            public IceTrapAppearance IceTrapAppearance { get; set; } = IceTrapAppearance.MajorItems;
+            public DamageMode DamageMode { get; set; } = DamageMode.Default;
+            public DamageEffect DamageEffect { get; set; } = DamageEffect.Default;
+            public MovementMode MovementMode { get; set; } = MovementMode.Default;
+            public FloorType FloorType { get; set; } = FloorType.Default;
+            public NutAndStickDrops NutandStickDrops { get; set; } = NutAndStickDrops.Default;
+            public ClockSpeed ClockSpeed { get; set; } = ClockSpeed.Default;
             public bool HideClock { get; set; } = false;
-            public string BlastMaskCooldown { get; set; } = "Default";
+            public BlastMaskCooldown BlastMaskCooldown { get; set; } = BlastMaskCooldown.Default;
             public bool EnableSunsSong { get; set; } = false;
             public bool AllowFierceDeityAnywhere { get; set; } = false;
             public bool ByoAmmo { get; set; } = false;
@@ -102,9 +251,9 @@ namespace MMR_Tracker_V3.TrackerObjects
             public bool HookshotAnySurface { get; set; } = false;
             public Dictionary<string,string> ShortenCutsceneSettings { get; set; } = new Dictionary<string, string> { { "General", "" }, { "BossIntros", "" } };
             public bool QuickTextEnabled { get; set; } = true;
-            public string Character { get; set; } = "LinkMM";
-            public string GossipHintStyle { get; set; } = "Competitive";
-            public string GaroHintStyle { get; set; } = "Default";
+            public Character Character { get; set; } = Character.LinkMM;
+            public GossipHintStyle GossipHintStyle { get; set; } = GossipHintStyle.Competitive;
+            public GossipHintStyle GaroHintStyle { get; set; } = GossipHintStyle.Default;
             public bool MixGossipAndGaroHints { get; set; } = false;
             public bool FreeHints { get; set; } = true;
             public bool FreeGaroHints { get; set; } = false;

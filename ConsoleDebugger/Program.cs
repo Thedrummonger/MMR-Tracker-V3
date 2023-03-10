@@ -139,7 +139,7 @@ namespace ConsoleDebugger
             string Filter = "";
             while (true)
             {
-                newTrackerInstance.Instance.EntrancePool.IsEntranceRando = newTrackerInstance.Instance.EntrancePool.CheckForRandomEntrances();
+                newTrackerInstance.Instance.EntrancePool.IsEntranceRando = newTrackerInstance.Instance.EntrancePool.CheckForRandomEntrances(newTrackerInstance.Instance);
                 bool er = newTrackerInstance.Instance.EntrancePool.IsEntranceRando;
                 Console.Title = newTrackerInstance.Instance.LogicFile.GameCode + " Tracker" + (newTrackerInstance.UnsavedChanges ? "*" : "");
                 Console.Clear();
