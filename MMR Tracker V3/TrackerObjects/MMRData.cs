@@ -101,15 +101,25 @@ namespace MMR_Tracker_V3.TrackerObjects
             public bool DeathMoonCrash { get; set; } = false;
             public bool HookshotAnySurface { get; set; } = false;
             public Dictionary<string,string> ShortenCutsceneSettings { get; set; } = new Dictionary<string, string> { { "General", "" }, { "BossIntros", "" } };
-
-
-
-            public string Logic { get; set; } = "";
-            public bool ByoAmmo { get; set; } = false;
-            public string GossipHintStyle { get; set; } = "Default";
+            public bool QuickTextEnabled { get; set; } = true;
+            public string Character { get; set; } = "LinkMM";
+            public string GossipHintStyle { get; set; } = "Competitive";
             public string GaroHintStyle { get; set; } = "Default";
-            public bool FreeHints { get; set; } = false;
+            public bool MixGossipAndGaroHints { get; set; } = false;
+            public bool FreeHints { get; set; } = true;
             public bool FreeGaroHints { get; set; } = false;
+            public bool ClearHints { get; set; } = true;
+            public bool ClearGaroHints { get; set; } = false;
+            public bool HintsIndicateImportance { get; set; } = false;
+            public bool PreventDowngrades { get; set; } = true;
+            public bool UpdateChests { get; set; } = false;
+            public bool FixEponaSword { get; set; } = true;
+            public bool EnablePictoboxSubject { get; set; } = true;
+            public bool LenientGoronSpikes { get; set; } = false;
+            public bool SpeedupBeavers { get; set; } = true;
+            public bool SpeedupDampe { get; set; } = true;
+            public bool SpeedupDogRace { get; set; } = true;
+            public bool SpeedupBank { get; set; } = true;
         }
 
         [Serializable]
