@@ -754,6 +754,9 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
             Dictionary<string, MMROOTLogicEntry> MMLogicEntries = new Dictionary<string, MMROOTLogicEntry>();
             Dictionary<string, MMROOTLogicEntry> OOTLogicEntries = new Dictionary<string, MMROOTLogicEntry>();
+
+            List<string> DungeonAreas = GetDungeonAreas(RandoEntrances);
+
             addEntranceandEventData("OOT", MMOOTCodeOOTWorldFiles);
             addEntranceandEventData("OOT", MMOOTCodeOOTMQWorldFiles);
             addEntranceandEventData("MM", MMOOTCodeMMWorldFiles);
@@ -808,6 +811,11 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                                 { 
                                     entranceEntry.RandomizableEntrance = true;
                                     entranceEntry.DisplayArea = TrueExitName.EndsWith(" Boss") ? "Boss Room" : "Dungeon";
+                                    if (DungeonAreas.Contains(l))
+                                    {
+                                        entranceEntry.DisplayArea = "Dungeon Exit";
+                                        entranceEntry.DisplayExit = $"{entranceEntry.Area} Exit";
+                                    }
                                 }
 
                                 dictionaryFile.EntranceList.Add(entranceEntry);
@@ -840,6 +848,21 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 }
             }
 
+        }
+
+        private static List<string> GetDungeonAreas(Dictionary<string, string> randoEntrances)
+        {
+            List<string> DungeonAreas = new List<string>();
+            //This is hacky and I hate it
+            foreach(var ent in randoEntrances)
+            {
+                if(ent.Key.EndsWith(" Boss")) { continue; }
+                if (!DungeonAreas.Contains(ent.Value))
+                {
+                    DungeonAreas.Add(ent.Key);
+                }
+            }
+            return DungeonAreas;
         }
 
         public static void AddEntriesFromItemPools(out TrackerObjects.MMRData.LogicFile Logic, out TrackerObjects.LogicDictionaryData.LogicDictionary dictionary)

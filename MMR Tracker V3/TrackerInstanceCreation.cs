@@ -148,7 +148,6 @@ namespace MMR_Tracker_V3
                     Instance.EntrancePool.AreaList[DictEntry.Area].Exits.Add(DictEntry.Exit, new EntranceData.EntranceRandoExit
                     {
                         ParentAreaID = DictEntry.Area,
-                        Area= DictEntry.DisplayArea??DictEntry.Area,
                         ID = DictEntry.Exit,
                         EntrancePair = DictEntry.RandomizableEntrance ? DictEntry.EntrancePairID : null,
                         IsWarp = DictEntry.AlwaysAccessable,

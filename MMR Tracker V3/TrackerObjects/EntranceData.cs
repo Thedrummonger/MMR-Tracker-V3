@@ -61,7 +61,6 @@ namespace MMR_Tracker_V3.TrackerObjects
         public class EntranceRandoExit
         {
             public string ParentAreaID { get; set; }
-            public string Area { get; set; }
             public string ID { get; set; }
             public bool Available { get; set; } = false;
             public bool Starred { get; set; } = false;
@@ -74,6 +73,14 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string DisplayName { get; set; }
             public LogicObjects.ReferenceData referenceData { get; set; } = new LogicObjects.ReferenceData();
 
+            public string DisplayArea(LogicObjects.TrackerInstance Instance)
+            {
+                return GetDictEntry(Instance)?.DisplayArea??ParentAreaID;
+            }
+            public string DisplayExit(LogicObjects.TrackerInstance Instance)
+            {
+                return GetDictEntry(Instance)?.DisplayExit??ID;
+            }
 
             public override string ToString()
             {

@@ -162,9 +162,9 @@ namespace MMR_Tracker_V3
 
             return ExitObjectObject.CheckState switch
             {
-                MiscData.CheckState.Marked => $"{ExitObjectObject.ID}: {RandomizedExitDisplay}{StarredDisplay}",
-                MiscData.CheckState.Unchecked => $"{ExitObjectObject.ID}{StarredDisplay}",
-                MiscData.CheckState.Checked => $"{RandomizedExitDisplay}: {ExitObjectObject.ID}{StarredDisplay}",
+                MiscData.CheckState.Marked => $"{ExitObjectObject.DisplayExit(instance)}: {RandomizedExitDisplay}{StarredDisplay}",
+                MiscData.CheckState.Unchecked => $"{ExitObjectObject.DisplayExit(instance)}{StarredDisplay}",
+                MiscData.CheckState.Checked => $"{RandomizedExitDisplay}: {ExitObjectObject.DisplayExit(instance)}{StarredDisplay}",
                 _ => ExitObjectObject.ToString(),
             };
         }
@@ -615,7 +615,7 @@ namespace MMR_Tracker_V3
             else if (Object is EntranceData.EntranceRandoExit ExitObject)
             {
                 OutObject.ID = instance.GetLogicNameFromExit(ExitObject);
-                OutObject.Area = ExitObject.Area??ExitObject.ParentAreaID;
+                OutObject.Area = ExitObject.DisplayArea(instance);
                 OutObject.Name = ExitObject.ID;
                 OutObject.OriginalItem = ExitObject.EntrancePair == null ? "One Way" : $"{ExitObject.EntrancePair.Area} To {ExitObject.EntrancePair.Exit}";
                 OutObject.Randomizeditem = ExitObject.DestinationExit == null ? null : $"{ExitObject.DestinationExit.region} From {ExitObject.DestinationExit.from}";

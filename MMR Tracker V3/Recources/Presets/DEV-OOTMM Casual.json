@@ -29598,8 +29598,7 @@
           "OOT_has_explosives"
         ],
         [
-          "OOT_is_adult",
-          "OOT_HAMMER"
+          "OOT_can_hammer"
         ]
       ],
       "TimeNeeded": "None",
@@ -29610,7 +29609,6 @@
     {
       "Id": "OOT_scarecrow_hookshot",
       "RequiredItems": [
-        "OOT_is_adult",
         "OOT_can_hookshot",
         "OOT_EVENT_SCARECROW"
       ],
@@ -29623,7 +29621,6 @@
     {
       "Id": "OOT_scarecrow_longshot",
       "RequiredItems": [
-        "OOT_is_adult",
         "OOT_can_longshot",
         "OOT_EVENT_SCARECROW"
       ],
@@ -29635,17 +29632,13 @@
     },
     {
       "Id": "OOT_has_fire",
-      "RequiredItems": [
-        "OOT_MAGIC_UPGRADE"
-      ],
+      "RequiredItems": [],
       "ConditionalItems": [
         [
-          "OOT_is_adult",
-          "OOT_BOW",
-          "OOT_ARROW_FIRE"
+          "OOT_has_fire_arrows"
         ],
         [
-          "OOT_SPELL_FIRE"
+          "OOT_can_use_din"
         ]
       ],
       "TimeNeeded": "None",
@@ -29886,8 +29879,7 @@
     {
       "Id": "OOT_has_light_arrows",
       "RequiredItems": [
-        "OOT_is_adult",
-        "OOT_BOW",
+        "OOT_can_use_bow",
         "OOT_ARROW_LIGHT",
         "OOT_MAGIC_UPGRADE"
       ],
@@ -29900,8 +29892,7 @@
     {
       "Id": "OOT_has_fire_arrows",
       "RequiredItems": [
-        "OOT_is_adult",
-        "OOT_BOW",
+        "OOT_can_use_bow",
         "OOT_ARROW_FIRE",
         "OOT_MAGIC_UPGRADE"
       ],
@@ -29942,16 +29933,10 @@
     {
       "Id": "OOT_hidden_grotto_bomb",
       "RequiredItems": [
-        "OOT_stone_of_agony"
+        "OOT_stone_of_agony",
+        "OOT_has_explosives_or_hammer"
       ],
-      "ConditionalItems": [
-        [
-          "OOT_BOMB_BAG"
-        ],
-        [
-          "OOT_can_hammer"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -30391,9 +30376,6 @@
       "Id": "OOT_can_damage",
       "RequiredItems": [],
       "ConditionalItems": [
-        [
-          "OOT_is_adult"
-        ],
         [
           "OOT_has_weapon"
         ],

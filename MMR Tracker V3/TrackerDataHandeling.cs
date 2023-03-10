@@ -300,11 +300,11 @@ namespace MMR_Tracker_V3
                         ValidExits.Add(i.Value);
                     }
                 }
-                ValidExits = ValidExits.OrderBy(x => x.Area??x.ParentAreaID).ThenBy(x => x.DisplayName).ToList();
+                ValidExits = ValidExits.OrderBy(x => x.DisplayArea(Instance)).ThenBy(x => x.DisplayName).ToList();
                 string CurrentArea = "";
                 foreach (var i in ValidExits)
                 {
-                    string ItemArea =  $"{i.Area??i.ParentAreaID} Exits";
+                    string ItemArea =  $"{i.DisplayArea(Instance)} Exits";
                     if (CurrentArea != ItemArea)
                     {
                         CurrentArea = ItemArea;
@@ -608,11 +608,11 @@ namespace MMR_Tracker_V3
                 }
             }
 
-            ValidExits = ValidExits.OrderBy(x => x.Area??x.ParentAreaID).ThenBy(x => x.DisplayName).ToList();
+            ValidExits = ValidExits.OrderBy(x => x.DisplayArea(Instance)).ThenBy(x => x.DisplayName).ToList();
             string CurrentArea = "";
             foreach(var i in ValidExits)
             {
-                string ItemArea = InLocationBox ? $"{i.Area??i.ParentAreaID} Entrances" : i.Area??i.ParentAreaID;
+                string ItemArea = InLocationBox ? $"{i.DisplayArea(Instance)} Entrances" : i.DisplayArea(Instance);
                 if (CurrentArea != ItemArea)
                 {
                     CurrentArea = ItemArea;
