@@ -48,25 +48,68 @@ namespace MMR_Tracker_V3.TrackerObjects
         [Serializable]
         public class GameplaySettings
         {
-            public bool RandomizeDungeonEntrances { get; set; } = false;
-            public string StartingItemMode { get; set; } = "";
-            public string Logic { get; set; } = "";
-            public bool AddSongs { get; set; } = false;
-            public bool ProgressiveUpgrades { get; set; } = false;
-            public bool ByoAmmo { get; set; } = false;
-            public string SmallKeyMode { get; set; } = "Default";
-            public string BossKeyMode { get; set; } = "Default";
             public string StrayFairyMode { get; set; } = "Default";
-            public string LogicMode { get; set; } = "Casual";
+            public bool DoubleArcheryRewards { get; set; } = false;
+            public bool UpdateShopAppearance { get; set; } = true;
+            public bool AddSongs { get; set; } = false;
+            public string BossKeyMode { get; set; } = "Default";
+            public string SmallKeyMode { get; set; } = "DoorsOpen";
+            public bool SpeedupLabFish { get; set; } = true;
+            public string BossRemainsMode { get; set; } = "Default";
+            public string PriceMode { get; set; } = "None";
             public string UserLogicFileName { get; set; } = "";
+            public bool CloseCows { get; set; } = true;
+            public bool ArrowCycling { get; set; } = true;
+            public bool CritWiggleDisable { get; set; } = false;
+            public bool DrawHash { get; set; } = true;
+            public bool ElegySpeedup { get; set; } = true;
+            public bool FastPush { get; set; } = true;
+            public bool IceTrapQuirks { get; set; } = false;
+            public bool UpdateWorldModels { get; set; } = true;
+            public bool OcarinaUnderwater { get; set; } = true;
+            public bool QuestItemStorage { get; set; } = true;
+            public bool ContinuousDekuHopping { get; set; } = false;
+            public bool ProgressiveUpgrades { get; set; } = true;
+            public bool TargetHealthBar { get; set; } = false;
+            public bool ClimbMostSurfaces { get; set; } = false;
+            public bool FreeScarecrow { get; set; } = false;
+            public bool FillWallet { get; set; } = false;
+            public string AutoInvert { get; set; } = "Never";
+            public bool HiddenRupeesSparkle { get; set; } = false;
+            public string LogicMode { get; set; } = "Casual";
+            public string ItemPlacement { get; set; } = "Bespoke";
+            public List<string> EnabledTricks { get; set; } = new List<string>();
+            public bool RandomizeDungeonEntrances { get; set; } = false;
+            public bool RandomizeEnemies { get; set; } = false;
+            public string StartingItemMode { get; set; } = "None";
             public string CustomItemListString { get; set; } = "";
-            public string CustomJunkLocationsString { get; set; } = "";
             public string CustomStartingItemListString { get; set; } = "";
+            public string CustomJunkLocationsString { get; set; } = "";
+            public string IceTraps { get; set; } = "None";
+            public string IceTrapAppearance { get; set; } = "MajorItems";
+            public string DamageMode { get; set; } = "Default";
+            public string DamageEffect { get; set; } = "Default";
+            public string MovementMode { get; set; } = "Default";
+            public string FloorType { get; set; } = "Default";
+            public string NutandStickDrops { get; set; } = "Default";
+            public string ClockSpeed { get; set; } = "Default";
+            public bool HideClock { get; set; } = false;
+            public string BlastMaskCooldown { get; set; } = "Default";
+            public bool EnableSunsSong { get; set; } = false;
+            public bool AllowFierceDeityAnywhere { get; set; } = false;
+            public bool ByoAmmo { get; set; } = false;
+            public bool DeathMoonCrash { get; set; } = false;
+            public bool HookshotAnySurface { get; set; } = false;
+            public Dictionary<string,string> ShortenCutsceneSettings { get; set; } = new Dictionary<string, string> { { "General", "" }, { "BossIntros", "" } };
+
+
+
+            public string Logic { get; set; } = "";
+            public bool ByoAmmo { get; set; } = false;
             public string GossipHintStyle { get; set; } = "Default";
             public string GaroHintStyle { get; set; } = "Default";
             public bool FreeHints { get; set; } = false;
             public bool FreeGaroHints { get; set; } = false;
-            public List<string> EnabledTricks { get; set; } = new List<string>();
         }
 
         [Serializable]
