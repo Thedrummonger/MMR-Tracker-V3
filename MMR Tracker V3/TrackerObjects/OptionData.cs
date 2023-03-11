@@ -54,6 +54,7 @@ namespace MMR_Tracker_V3.TrackerObjects
         [Serializable]
         public class actions
         {
+            public string Name { get; set; } = null;
             public LogicReplacement[] LogicReplacements { get; set; } = Array.Empty<LogicReplacement>();
             public AdditionalLogic[] AdditionalLogic { get; set; } = Array.Empty<AdditionalLogic>();
             public Dictionary<string, string> ItemNameOverride { get; set; } = new Dictionary<string, string>();

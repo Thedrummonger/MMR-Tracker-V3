@@ -32087,12 +32087,14 @@
       "CurrentValue": "closed",
       "Values": {
         "open": {
+          "Name": "Open",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {}
         },
         "closed": {
+          "Name": "Closed",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -32125,6 +32127,7 @@
       "CurrentValue": "ganon",
       "Values": {
         "removed": {
+          "Name": "Removed",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -32136,18 +32139,21 @@
           }
         },
         "vanilla": {
+          "Name": "Vanilla",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {}
         },
         "ganon": {
+          "Name": "Ganon's Castle",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {}
         },
         "anywhere": {
+          "Name": "Anywhere",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -32161,6 +32167,7 @@
       "CurrentValue": "anywhere",
       "Values": {
         "ownDungeon": {
+          "Name": "Own Dungeon",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -32172,6 +32179,7 @@
           }
         },
         "anywhere": {
+          "Name": "Anywhere",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -32224,6 +32232,7 @@
       "SubCategory": "Progressive Items",
       "Values": {
         "separate": {
+          "Name": "Separate",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -32239,6 +32248,7 @@
           }
         },
         "progressive": {
+          "Name": "Progressive",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -32266,6 +32276,7 @@
           }
         },
         "goron": {
+          "Name": "Progressive Knife and Biggoron",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},

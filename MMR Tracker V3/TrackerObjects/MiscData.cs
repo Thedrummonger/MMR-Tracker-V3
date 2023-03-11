@@ -27,6 +27,16 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return Display;
             }
         }
+        public class OptionComboboxItem
+        {
+            public string Text { get; set; }
+            public object Value { get; set; }
+
+            public override string ToString()
+            {
+                return Text;
+            }
+        }
         public class Divider
         {
             public string Display { get; set; }

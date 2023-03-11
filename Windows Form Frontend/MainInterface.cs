@@ -706,12 +706,16 @@ namespace Windows_Form_Frontend
                     ToolStripComboBox toolStripComboBox = new();
                     foreach (var j in i.Values)
                     {
-                        toolStripComboBox.Items.Add(j.Key);
+                        MiscData.OptionComboboxItem optionComboboxItem = new MiscData.OptionComboboxItem() { Text = j.Value.Name??j.Key, Value = j.Key };
+                        toolStripComboBox.Items.Add(optionComboboxItem);
                     }
-                    toolStripComboBox.SelectedIndex = toolStripComboBox.Items.IndexOf(i.CurrentValue);
+                    foreach(MiscData.OptionComboboxItem ind in toolStripComboBox.Items) 
+                    { 
+                        if (ind.Value as string == i.CurrentValue) { toolStripComboBox.SelectedIndex = toolStripComboBox.Items.IndexOf(ind); break; }
+                    }
                     toolStripComboBox.SelectedIndexChanged += delegate (object sender, EventArgs e)
                     {
-                        ToggleRandomizerOption_Click(sender, e, i, toolStripComboBox.SelectedItem);
+                        ToggleRandomizerOption_Click(sender, e, i, (toolStripComboBox.SelectedItem as MiscData.OptionComboboxItem).Value);
                     };
                     ToolStripMenuItem menuItem = new() { Text = i.DisplayName };
                     menuItem.DropDownItems.Add(toolStripComboBox);

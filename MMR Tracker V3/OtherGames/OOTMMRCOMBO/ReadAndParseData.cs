@@ -268,6 +268,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             DoorOfTime.DisplayName = "Door Of Time";
             DoorOfTime.CurrentValue = "closed";
             DoorOfTime.CreateSimpleValues(new string[] { "open", "closed" });
+            DoorOfTime.Values["open"].Name = "Open";
+            DoorOfTime.Values["closed"].Name = "Closed";
             dictionaryFile.Options.Add(DoorOfTime);
 
             OptionData.TrackerOption CrossGameOOTWarpSong = new OptionData.TrackerOption();
@@ -282,6 +284,10 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             GanonBossKey.DisplayName = "Ganon's Boss Key";
             GanonBossKey.CurrentValue = "ganon";
             GanonBossKey.CreateSimpleValues(new string[] { "removed", "vanilla", "ganon", "anywhere" });
+            GanonBossKey.Values["removed"].Name = "Removed";
+            GanonBossKey.Values["vanilla"].Name = "Vanilla";
+            GanonBossKey.Values["ganon"].Name = "Ganon's Castle";
+            GanonBossKey.Values["anywhere"].Name = "Anywhere";
             GanonBossKey.Values["removed"].AddMaxAmountEdit("OOT_BOSS_KEY_GANON", MiscData.MathOP.set, 0);
             dictionaryFile.Options.Add(GanonBossKey);
 
@@ -290,6 +296,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             SmallKey.DisplayName = "Small Key Shuffle";
             SmallKey.CurrentValue = "anywhere";
             SmallKey.CreateSimpleValues(new string[] { "ownDungeon", "anywhere" });
+            SmallKey.Values["ownDungeon"].Name = "Own Dungeon";
+            SmallKey.Values["anywhere"].Name = "Anywhere";
             SmallKey.Values["ownDungeon"].AddMaxAmountEdit("OOT_SMALL_KEY_FIRE", MiscData.MathOP.subtract, 1);
             dictionaryFile.Options.Add(SmallKey);
 
@@ -321,6 +329,9 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             ProgressiveSwordsOOT.Values["goron"].AddMaxAmountEdit("OOT_SWORD", MiscData.MathOP.set, 0);
             ProgressiveSwordsOOT.Values["goron"].AddMaxAmountEdit("OOT_SWORD_KNIFE", MiscData.MathOP.set, 0);
             ProgressiveSwordsOOT.Values["goron"].AddMaxAmountEdit("OOT_SWORD_BIGGORON", MiscData.MathOP.set, 0);
+            ProgressiveSwordsOOT.Values["separate"].Name = "Separate";
+            ProgressiveSwordsOOT.Values["goron"].Name = "Progressive Knife and Biggoron";
+            ProgressiveSwordsOOT.Values["progressive"].Name = "Progressive";
             dictionaryFile.Options.Add(ProgressiveSwordsOOT);
 
             OptionData.TrackerOption ProgressiveShieldsMM = new OptionData.TrackerOption();
