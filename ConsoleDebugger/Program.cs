@@ -126,7 +126,7 @@ namespace ConsoleDebugger
 
             if (newTrackerInstance.Instance.LogicFile.GameCode == "MMR" && WasSpoilerLog)
             {
-                SpoilerLogTools.ImportSpoilerLog(path, newTrackerInstance.Instance);
+                SpoilerLogTools.ImportSpoilerLog(path, newTrackerInstance);
             }
             LoopLocationList();
         }
@@ -517,6 +517,7 @@ namespace ConsoleDebugger
 
             if (!File.Exists(path)) { Console.WriteLine("Path Invalid!"); goto getpath; }
 
+            newTrackerInstance.logicCalculation.ResetAutoObtainedItems();
 
             MMRData.SpoilerLogData SpoilerLogData = null;
             try { SpoilerLogData = Newtonsoft.Json.JsonConvert.DeserializeObject<MMRData.SpoilerLogData>(File.ReadAllText(path)); }
@@ -530,8 +531,9 @@ namespace ConsoleDebugger
             else
             {
                 Console.WriteLine("Importing Spoiler Log...");
-                SpoilerLogTools.ImportSpoilerLog(File.ReadAllLines(path), path, newTrackerInstance.Instance);
+                SpoilerLogTools.ImportSpoilerLog(File.ReadAllLines(path), path, newTrackerInstance);
             }
+            newTrackerInstance.logicCalculation.CalculateLogic();
         }
 
     }

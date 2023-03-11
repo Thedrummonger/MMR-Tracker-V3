@@ -211,6 +211,11 @@ namespace MMR_Tracker_V3
                 Instance.StaticOptions.EntranceRandoFeatures = LocationEntranceRatio >= .1;
             }
 
+            if (Instance.LogicFile.GameCode == "MMR")
+            {
+                Instance.ApplyMMRandoSettings(new MMRData.SpoilerLogData { GameplaySettings = new MMRData.GameplaySettings() });
+            }
+
             Debug.WriteLine(JsonConvert.SerializeObject(Instance.PriceData.WalletEntries, Testing._NewtonsoftJsonSerializerOptions));
             Debug.WriteLine(JsonConvert.SerializeObject(Instance.PriceData.CapacityMap, Testing._NewtonsoftJsonSerializerOptions));
 

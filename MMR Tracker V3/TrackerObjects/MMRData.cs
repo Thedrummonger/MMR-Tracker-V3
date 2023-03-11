@@ -227,13 +227,24 @@ namespace MMR_Tracker_V3.TrackerObjects
             public bool HiddenRupeesSparkle { get; set; } = false;
             public LogicMode LogicMode { get; set; } = LogicMode.Casual;
             public ItemPlacement ItemPlacement { get; set; } = ItemPlacement.Bespoke;
-            public List<string> EnabledTricks { get; set; } = new List<string>();
+            public List<string> EnabledTricks { get; set; } = new List<string>()
+            {
+                "Exit Ocean Spider House without Goron",
+                "Lensless Chests",
+                "Lensless Walking",
+                "Lensless Walls/Ceilings",
+                "Pinnacle Rock without Seahorse",
+                "Run Through Poisoned Water",
+                "Scarecrow's Song",
+                "Take Damage",
+                "WFT 2nd Floor Skip"
+            };
             public bool RandomizeDungeonEntrances { get; set; } = false;
             public bool RandomizeEnemies { get; set; } = false;
             public StartingItemMode StartingItemMode { get; set; } = StartingItemMode.None;
-            public string CustomItemListString { get; set; } = "";
-            public string CustomStartingItemListString { get; set; } = "";
-            public string CustomJunkLocationsString { get; set; } = "";
+            public string CustomItemListString { get; set; } = "--------------------40c-80000000----21ffff-ffffffff-ffffffff-f0000000-7bbeeffa-7fffffff-e6f1fffe-ffffffff";
+            public string CustomStartingItemListString { get; set; } = "1fbfc-5800000-";
+            public string CustomJunkLocationsString { get; set; } = "-------------------------200000-----400000--f000";
             public IceTraps IceTraps { get; set; } = IceTraps.None;
             public IceTrapAppearance IceTrapAppearance { get; set; } = IceTrapAppearance.MajorItems;
             public DamageMode DamageMode { get; set; } = DamageMode.Default;
@@ -249,7 +260,10 @@ namespace MMR_Tracker_V3.TrackerObjects
             public bool ByoAmmo { get; set; } = false;
             public bool DeathMoonCrash { get; set; } = false;
             public bool HookshotAnySurface { get; set; } = false;
-            public Dictionary<string,string> ShortenCutsceneSettings { get; set; } = new Dictionary<string, string> { { "General", "" }, { "BossIntros", "" } };
+            public Dictionary<string,string> ShortenCutsceneSettings { get; set; } = new Dictionary<string, string> { 
+                { "General", "BlastMaskThief, BoatArchery, FishermanGame, MilkBarPerformance, HungryGoron, TatlInterrupts, FasterBankText, GoronVillageOwl, AutomaticCredits, EverythingElse" }, 
+                { "BossIntros", "Odolwa, Goht, Gyorg, Majora, IgosDuIkana, Gomess" } 
+            };
             public bool QuickTextEnabled { get; set; } = true;
             public Character Character { get; set; } = Character.LinkMM;
             public GossipHintStyle GossipHintStyle { get; set; } = GossipHintStyle.Competitive;

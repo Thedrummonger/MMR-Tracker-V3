@@ -49,11 +49,11 @@ namespace Windows_Form_Frontend
             }
 
             ApplyWinFormSpecificData(MainInterface.InstanceContainer.Instance);
-            MainInterface.InstanceContainer.logicCalculation.CalculateLogic();
             if (MainInterface.InstanceContainer.Instance.LogicFile.GameCode == "MMR" && SpoilerLog is not null)
             {
-                SpoilerLogTools.ImportSpoilerLog(File.ReadAllLines(SpoilerLog), SpoilerLog, MainInterface.InstanceContainer.Instance);
+                SpoilerLogTools.ImportSpoilerLog(File.ReadAllLines(SpoilerLog), SpoilerLog, MainInterface.InstanceContainer);
             }
+            MainInterface.InstanceContainer.logicCalculation.CalculateLogic();
             MainInterface.CurrentProgram.UpdateUI();
 
             return true;

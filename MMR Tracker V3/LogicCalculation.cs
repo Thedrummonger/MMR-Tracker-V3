@@ -233,7 +233,7 @@ namespace MMR_Tracker_V3
             }
         }
 
-        private void ResetAutoObtainedItems()
+        public void ResetAutoObtainedItems()
         {
             foreach (var Area in container.Instance.EntrancePool.AreaList)
             {

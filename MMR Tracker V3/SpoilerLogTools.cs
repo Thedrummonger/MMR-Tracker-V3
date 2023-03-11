@@ -30,48 +30,49 @@ namespace MMR_Tracker_V3
             }
         }
 
-        public static bool ImportSpoilerLog(string spoilerLog, LogicObjects.TrackerInstance Instance)
+        public static bool ImportSpoilerLog(string spoilerLog, InstanceContainer container)
         {
             if (File.Exists(spoilerLog))
             {
-                return ImportSpoilerLog(File.ReadLines(spoilerLog).ToArray(), spoilerLog, Instance);
+                return ImportSpoilerLog(File.ReadLines(spoilerLog).ToArray(), spoilerLog, container);
             }
             else
             {
                 string[] lines = spoilerLog.Split(new string[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
-                return ImportSpoilerLog(lines, spoilerLog, Instance);
+                return ImportSpoilerLog(lines, spoilerLog, container);
             }
         }
-        public static bool ImportSpoilerLog(string spoilerLog, string OriginalFile, LogicObjects.TrackerInstance Instance)
+        public static bool ImportSpoilerLog(string spoilerLog, string OriginalFile, InstanceContainer container)
         {
             if (File.Exists(spoilerLog))
             {
-                return ImportSpoilerLog(File.ReadLines(spoilerLog).ToArray(), OriginalFile, Instance);
+                return ImportSpoilerLog(File.ReadLines(spoilerLog).ToArray(), OriginalFile, container);
             }
             else
             {
                 string[] lines = spoilerLog.Split( new string[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
-                return ImportSpoilerLog(lines, OriginalFile, Instance);
+                return ImportSpoilerLog(lines, OriginalFile, container);
             }
         }
 
-        public static bool ImportSpoilerLog(string[] spoilerLog, string OriginalFile, LogicObjects.TrackerInstance Instance)
+        public static bool ImportSpoilerLog(string[] spoilerLog, string OriginalFile, InstanceContainer container)
         {
-            switch (Instance.LogicFile.GameCode)
+            container.logicCalculation.ResetAutoObtainedItems();
+            switch (container.Instance.LogicFile.GameCode)
             {
                 //case "OOTR":
                 //case "PMR":
                 case "OOTMM":
-                    Instance.SpoilerLog = new LogicObjects.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
-                    OtherGames.OOTMMRCOMBO.OOTMMSpoilerParser.readAndApplySpoilerLog(Instance);
-                    Instance.EntrancePool.IsEntranceRando = Instance.EntrancePool.CheckForRandomEntrances(Instance);
+                    container.Instance.SpoilerLog = new LogicObjects.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
+                    OtherGames.OOTMMRCOMBO.OOTMMSpoilerParser.readAndApplySpoilerLog(container.Instance);
+                    container.Instance.EntrancePool.IsEntranceRando = container.Instance.EntrancePool.CheckForRandomEntrances(container.Instance);
                     return true;
                 case "MMR":
-                    Instance.SpoilerLog = new LogicObjects.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
+                    container.Instance.SpoilerLog = new LogicObjects.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
                     MMRData.SpoilerLogData LogData = ReadSpoilerLog(spoilerLog);
-                    ApplyMMRandoSettings(Instance, LogData);
-                    ApplyMMRandoSpoilerLog(Instance, LogData);
-                    Instance.EntrancePool.IsEntranceRando = Instance.EntrancePool.CheckForRandomEntrances(Instance);
+                    ApplyMMRandoSettings(container.Instance, LogData);
+                    ApplyMMRandoSpoilerLog(container.Instance, LogData);
+                    container.Instance.EntrancePool.IsEntranceRando = container.Instance.EntrancePool.CheckForRandomEntrances(container.Instance);
                     return true;
 
                 default:

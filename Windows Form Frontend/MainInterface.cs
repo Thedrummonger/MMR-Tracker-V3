@@ -215,6 +215,7 @@ namespace Windows_Form_Frontend
 
         private void logicOptionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            InstanceContainer.logicCalculation.ResetAutoObtainedItems();
             string CurrentState = Utf8Json.JsonSerializer.ToJsonString(InstanceContainer.Instance);
             RandomizedStateEditor editor = new RandomizedStateEditor(InstanceContainer.Instance);
             editor.ShowDialog();
@@ -241,7 +242,7 @@ namespace Windows_Form_Frontend
                     string CurrentState = Utf8Json.JsonSerializer.ToJsonString(InstanceContainer.Instance);
                     var ToUpdate = new List<ListBox> { LBCheckedLocations, LBValidEntrances, LBValidLocations };
                     foreach (var i in ToUpdate) { WinFormUtils.PrintMessageToListBox(i, "Importing Spoiler Log \n Please Wait..."); }
-                    if (SpoilerLogTools.ImportSpoilerLog(File.ReadAllLines(openFileDialog.FileName), openFileDialog.FileName, InstanceContainer.Instance))
+                    if (SpoilerLogTools.ImportSpoilerLog(File.ReadAllLines(openFileDialog.FileName), openFileDialog.FileName, InstanceContainer))
                     {
                         SaveTrackerState(CurrentState);
                     }
