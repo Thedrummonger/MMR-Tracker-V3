@@ -698,7 +698,7 @@ namespace Windows_Form_Frontend
             {
                 if (i.IsToggleOption())
                 {
-                    ToolStripMenuItem menuItem = new() { Checked = OptionData.ToggleValues.Keys.Select(x => x.ToLower()).Contains(i.CurrentValue.ToLower()), Text = i.DisplayName };
+                    ToolStripMenuItem menuItem = new() { Checked = OptionData.GetToggleValues().Keys.Select(x => x.ToLower()).Contains(i.CurrentValue.ToLower()), Text = i.DisplayName };
                     menuItem.Click += delegate (object sender, EventArgs e) { ToggleRandomizerOption_Click(sender, e, i); };
                     GroupOption(menuItem, i.SubCategory);
                 }

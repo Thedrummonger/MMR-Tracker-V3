@@ -257,7 +257,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             OptionData.TrackerOption EggContentShuffle = new OptionData.TrackerOption();
             EggContentShuffle.ID = "eggShuffle";
             EggContentShuffle.DisplayName = "Egg Content Shuffle";
-            EggContentShuffle.CurrentValue = "true";
+            EggContentShuffle.CurrentValue = "false";
             EggContentShuffle.CreateSimpleValues(new string[] { "true", "false" });
             EggContentShuffle.Values["false"].AddMaxAmountEdit("OOT_WEIRD_EGG", MiscData.MathOP.set, 0);
             EggContentShuffle.Values["false"].AddMaxAmountEdit("OOT_POCKET_EGG", MiscData.MathOP.set, 0);
@@ -265,7 +265,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
             OptionData.TrackerOption DoorOfTime = new OptionData.TrackerOption();
             DoorOfTime.ID = "doorOfTime";
-            DoorOfTime.DisplayName = "Door Of Time";
+            DoorOfTime.DisplayName = "Open Door Of Time";
             DoorOfTime.CurrentValue = "closed";
             DoorOfTime.CreateSimpleValues(new string[] { "open", "closed" });
             DoorOfTime.Values["open"].Name = "Open";
@@ -275,14 +275,24 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             OptionData.TrackerOption CrossGameOOTWarpSong = new OptionData.TrackerOption();
             CrossGameOOTWarpSong.ID = "crossWarpOot";
             CrossGameOOTWarpSong.DisplayName = "Cross-Games OoT Warp Songs";
-            CrossGameOOTWarpSong.CurrentValue = "true";
+            CrossGameOOTWarpSong.CurrentValue = "false";
             CrossGameOOTWarpSong.CreateSimpleValues(new string[] { "true", "false" });
             dictionaryFile.Options.Add(CrossGameOOTWarpSong);
+
+            OptionData.TrackerOption CrossGameMMWarpSong = new OptionData.TrackerOption();
+            CrossGameMMWarpSong.ID = "crossWarpMm";
+            CrossGameMMWarpSong.DisplayName = "Cross-Games MM Song of Soaring";
+            CrossGameMMWarpSong.CurrentValue = "none";
+            CrossGameMMWarpSong.CreateSimpleValues(new string[] { "none", "childOnly", "full" });
+            CrossGameMMWarpSong.Values["none"].Name = "None";
+            CrossGameMMWarpSong.Values["childOnly"].Name = "Child Only";
+            CrossGameMMWarpSong.Values["full"].Name = "Child & Adult";
+            dictionaryFile.Options.Add(CrossGameMMWarpSong);
 
             OptionData.TrackerOption GanonBossKey = new OptionData.TrackerOption();
             GanonBossKey.ID = "ganonBossKey";
             GanonBossKey.DisplayName = "Ganon's Boss Key";
-            GanonBossKey.CurrentValue = "ganon";
+            GanonBossKey.CurrentValue = "removed";
             GanonBossKey.CreateSimpleValues(new string[] { "removed", "vanilla", "ganon", "anywhere" });
             GanonBossKey.Values["removed"].Name = "Removed";
             GanonBossKey.Values["vanilla"].Name = "Vanilla";
@@ -294,7 +304,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             OptionData.TrackerOption SmallKey = new OptionData.TrackerOption();
             SmallKey.ID = "smallKeyShuffle";
             SmallKey.DisplayName = "Small Key Shuffle";
-            SmallKey.CurrentValue = "anywhere";
+            SmallKey.CurrentValue = "ownDungeon";
             SmallKey.CreateSimpleValues(new string[] { "ownDungeon", "anywhere" });
             SmallKey.Values["ownDungeon"].Name = "Own Dungeon";
             SmallKey.Values["anywhere"].Name = "Anywhere";
@@ -304,7 +314,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             OptionData.TrackerOption ProgressiveShieldsOOT = new OptionData.TrackerOption();
             ProgressiveShieldsOOT.ID = "progressiveShieldsOot";
             ProgressiveShieldsOOT.DisplayName = "Progressive OoT Shields";
-            ProgressiveShieldsOOT.CurrentValue = "true";
+            ProgressiveShieldsOOT.CurrentValue = "false";
             ProgressiveShieldsOOT.SubCategory = "Progressive Items";
             ProgressiveShieldsOOT.CreateSimpleValues(new string[] { "false", "true" });
             ProgressiveShieldsOOT.Values["false"].AddMaxAmountEdit("OOT_SHIELD", MiscData.MathOP.set, 0);
@@ -316,7 +326,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             OptionData.TrackerOption ProgressiveSwordsOOT = new OptionData.TrackerOption();
             ProgressiveSwordsOOT.ID = "progressiveSwordsOot";
             ProgressiveSwordsOOT.DisplayName = "Progressive OoT Swords";
-            ProgressiveSwordsOOT.CurrentValue = "separate";
+            ProgressiveSwordsOOT.CurrentValue = "goron";
             ProgressiveSwordsOOT.SubCategory = "Progressive Items";
             ProgressiveSwordsOOT.CreateSimpleValues(new string[] { "separate", "progressive", "goron" });
             ProgressiveSwordsOOT.Values["separate"].AddMaxAmountEdit("OOT_SWORD", MiscData.MathOP.set, 0);
@@ -337,11 +347,15 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             OptionData.TrackerOption ProgressiveShieldsMM = new OptionData.TrackerOption();
             ProgressiveShieldsMM.ID = "progressiveShieldsMm";
             ProgressiveShieldsMM.DisplayName = "Progressive MM Shields";
-            ProgressiveShieldsMM.CurrentValue = "true";
+            ProgressiveShieldsMM.CurrentValue = "start";
             ProgressiveShieldsMM.SubCategory = "Progressive Items";
-            ProgressiveShieldsMM.CreateSimpleValues(new string[] { "false", "true" });
-            ProgressiveShieldsMM.Values["false"].AddMaxAmountEdit("MM_SHIELD", MiscData.MathOP.set, 0);
-            ProgressiveShieldsMM.Values["true"].AddMaxAmountEdit("MM_SHIELD_MIRROR", MiscData.MathOP.set, 0);
+            ProgressiveShieldsMM.CreateSimpleValues(new string[] { "separate", "start", "progressive" });
+            ProgressiveShieldsMM.Values["separate"].AddMaxAmountEdit("MM_SHIELD", MiscData.MathOP.set, 0);
+            ProgressiveShieldsMM.Values["start"].AddMaxAmountEdit("MM_SHIELD", MiscData.MathOP.set, 0);
+            ProgressiveShieldsMM.Values["progressive"].AddMaxAmountEdit("MM_SHIELD_MIRROR", MiscData.MathOP.set, 0);
+            ProgressiveShieldsMM.Values["separate"].Name = "Separate";
+            ProgressiveShieldsMM.Values["start"].Name = "Start with Hero Shield";
+            ProgressiveShieldsMM.Values["progressive"].Name = "Progressive";
             dictionaryFile.Options.Add(ProgressiveShieldsMM);
 
             OptionData.TrackerOption ProgressiveLullabyMM = new OptionData.TrackerOption();
@@ -350,8 +364,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             ProgressiveLullabyMM.CurrentValue = "true";
             ProgressiveLullabyMM.SubCategory = "Progressive Items";
             ProgressiveLullabyMM.CreateSimpleValues(new string[] { "false", "true" });
-            ProgressiveShieldsMM.Values["false"].AddMaxAmountEdit("MM_SONG_GORON_HALF", MiscData.MathOP.set, 0);
-            ProgressiveShieldsMM.Values["true"].AddMaxAmountEdit("MM_SONG_GORON", MiscData.MathOP.set, 0);
+            ProgressiveLullabyMM.Values["false"].AddMaxAmountEdit("MM_SONG_GORON_HALF", MiscData.MathOP.set, 0);
+            ProgressiveLullabyMM.Values["true"].AddMaxAmountEdit("MM_SONG_GORON", MiscData.MathOP.set, 0);
             dictionaryFile.Options.Add(ProgressiveLullabyMM);
 
             //Game Clear

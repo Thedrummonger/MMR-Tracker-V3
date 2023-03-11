@@ -8,13 +8,19 @@ namespace MMR_Tracker_V3.TrackerObjects
 {
     public class OptionData
     {
-        public static readonly Dictionary<string, string> ToggleValues = new()
+        private static readonly Dictionary<string, string> ToggleValues = new()
         {
             {"yes", "no" },
             {"enabled", "disabled" },
             {"true", "false" },
             {"on", "off" },
+            {"open", "closed" },
         };
+
+        public static Dictionary<string, string> GetToggleValues()
+        {
+            return ToggleValues;
+        }
 
         public static readonly string[] DisplayListBoxes = { "None", "Available Locations", "Checked Locations" };
 

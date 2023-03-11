@@ -10664,6 +10664,481 @@
       "LocationProxys": []
     },
     {
+      "ID": "OOT MQ Shadow Temple Compass Chest",
+      "Name": "MQ Shadow Temple Compass Chest",
+      "OriginalItem": "OOT_COMPASS_SHADOW",
+      "Area": "Shadow Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Shadow Temple Compass Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Shadow Temple Compass Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Shadow Temple Hover Boots Chest",
+      "Name": "MQ Shadow Temple Hover Boots Chest",
+      "OriginalItem": "OOT_BOOTS_HOVER",
+      "Area": "Shadow Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Shadow Temple Hover Boots Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Shadow Temple Hover Boots Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Shadow Temple First Gibdos Chest",
+      "Name": "MQ Shadow Temple First Gibdos Chest",
+      "OriginalItem": "OOT_SMALL_KEY_SHADOW",
+      "Area": "Shadow Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Shadow Temple First Gibdos Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Shadow Temple First Gibdos Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Shadow Temple Map Chest",
+      "Name": "MQ Shadow Temple Map Chest",
+      "OriginalItem": "OOT_MAP_SHADOW",
+      "Area": "Shadow Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Shadow Temple Map Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Shadow Temple Map Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Shadow Temple Boat Passage Chest",
+      "Name": "MQ Shadow Temple Boat Passage Chest",
+      "OriginalItem": "OOT_SMALL_KEY_SHADOW",
+      "Area": "Shadow Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Shadow Temple Boat Passage Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Shadow Temple Boat Passage Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Shadow Temple Second Silver Rupee Visible Chest",
+      "Name": "MQ Shadow Temple Second Silver Rupee Visible Chest",
+      "OriginalItem": "OOT_RUPEE_BLUE",
+      "Area": "Shadow Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Shadow Temple Second Silver Rupee Visible Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Shadow Temple Second Silver Rupee Visible Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Shadow Temple Second Silver Rupee Invisible Chest",
+      "Name": "MQ Shadow Temple Second Silver Rupee Invisible Chest",
+      "OriginalItem": "OOT_SMALL_KEY_SHADOW",
+      "Area": "Shadow Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Shadow Temple Second Silver Rupee Invisible Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Shadow Temple Second Silver Rupee Invisible Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Shadow Temple Huge Pit Silver Rupee Chest",
+      "Name": "MQ Shadow Temple Huge Pit Silver Rupee Chest",
+      "OriginalItem": "OOT_RUPEE_BLUE",
+      "Area": "Shadow Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Shadow Temple Huge Pit Silver Rupee Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Shadow Temple Huge Pit Silver Rupee Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Shadow Temple Spike Curtain Ground Chest",
+      "Name": "MQ Shadow Temple Spike Curtain Ground Chest",
+      "OriginalItem": "OOT_ARROWS_10",
+      "Area": "Shadow Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Shadow Temple Spike Curtain Ground Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Shadow Temple Spike Curtain Ground Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Shadow Temple Spike Curtain Upper Cage Chest",
+      "Name": "MQ Shadow Temple Spike Curtain Upper Cage Chest",
+      "OriginalItem": "OOT_RUPEE_BLUE",
+      "Area": "Shadow Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Shadow Temple Spike Curtain Upper Cage Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Shadow Temple Spike Curtain Upper Cage Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Shadow Temple Spike Curtain Upper Switch Chest",
+      "Name": "MQ Shadow Temple Spike Curtain Upper Switch Chest",
+      "OriginalItem": "OOT_SMALL_KEY_SHADOW",
+      "Area": "Shadow Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Shadow Temple Spike Curtain Upper Switch Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Shadow Temple Spike Curtain Upper Switch Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Shadow Temple Invisible Spike Floor Chest",
+      "Name": "MQ Shadow Temple Invisible Spike Floor Chest",
+      "OriginalItem": "OOT_RUPEE_BLUE",
+      "Area": "Shadow Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Shadow Temple Invisible Spike Floor Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Shadow Temple Invisible Spike Floor Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Shadow Temple Stalfos Room Chest",
+      "Name": "MQ Shadow Temple Stalfos Room Chest",
+      "OriginalItem": "OOT_RUPEE_RED",
+      "Area": "Shadow Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Shadow Temple Stalfos Room Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Shadow Temple Stalfos Room Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Shadow Temple Wind Hint Chest",
+      "Name": "MQ Shadow Temple Wind Hint Chest",
+      "OriginalItem": "OOT_SMALL_KEY_SHADOW",
+      "Area": "Shadow Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Shadow Temple Wind Hint Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Shadow Temple Wind Hint Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Shadow Temple After Wind Gibdos Chest",
+      "Name": "MQ Shadow Temple After Wind Gibdos Chest",
+      "OriginalItem": "OOT_RUPEE_BLUE",
+      "Area": "Shadow Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Shadow Temple After Wind Gibdos Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Shadow Temple After Wind Gibdos Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Shadow Temple After Wind Bomb Chest",
+      "Name": "MQ Shadow Temple After Wind Bomb Chest",
+      "OriginalItem": "OOT_ARROWS_5",
+      "Area": "Shadow Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Shadow Temple After Wind Bomb Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Shadow Temple After Wind Bomb Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Shadow Temple Hidden Dead Hand Chest",
+      "Name": "MQ Shadow Temple Hidden Dead Hand Chest",
+      "OriginalItem": "OOT_ARROWS_10",
+      "Area": "Shadow Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Shadow Temple Hidden Dead Hand Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Shadow Temple Hidden Dead Hand Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Shadow Temple Crushing Wall Left Chest",
+      "Name": "MQ Shadow Temple Crushing Wall Left Chest",
+      "OriginalItem": "OOT_RUPEE_BLUE",
+      "Area": "Shadow Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Shadow Temple Crushing Wall Left Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Shadow Temple Crushing Wall Left Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Shadow Temple Boss Key Chest",
+      "Name": "MQ Shadow Temple Boss Key Chest",
+      "OriginalItem": "OOT_BOSS_KEY_SHADOW",
+      "Area": "Shadow Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Shadow Temple Boss Key Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Shadow Temple Boss Key Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Shadow Temple Triple Pot Key",
+      "Name": "MQ Shadow Temple Triple Pot Key",
+      "OriginalItem": "OOT_SMALL_KEY_SHADOW",
+      "Area": "Shadow Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Shadow Temple Triple Pot Key"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Shadow Temple Triple Pot Key"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Shadow Temple GS Spike Curtain",
+      "Name": "MQ Shadow Temple GS Spike Curtain",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Shadow Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Shadow Temple GS Spike Curtain"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Shadow Temple GS Spike Curtain"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Shadow Temple GS Wind Hint",
+      "Name": "MQ Shadow Temple GS Wind Hint",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Shadow Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Shadow Temple GS Wind Hint"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Shadow Temple GS Wind Hint"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Shadow Temple GS After Wind Bomb",
+      "Name": "MQ Shadow Temple GS After Wind Bomb",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Shadow Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Shadow Temple GS After Wind Bomb"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Shadow Temple GS After Wind Bomb"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Shadow Temple GS After Boat",
+      "Name": "MQ Shadow Temple GS After Boat",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Shadow Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Shadow Temple GS After Boat"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Shadow Temple GS After Boat"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Shadow Temple GS Pre-Boss",
+      "Name": "MQ Shadow Temple GS Pre-Boss",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Shadow Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Shadow Temple GS Pre-Boss"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Shadow Temple GS Pre-Boss"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
       "ID": "MM Initial Song of Healing",
       "Name": "Initial Song of Healing",
       "OriginalItem": "MM_SONG_HEALING",
@@ -24897,6 +25372,14 @@
       "DestinationHasSingleEntrance": false
     },
     {
+      "ID": "OOT SONGS => MM SOARING",
+      "Area": "OOT SONGS",
+      "Exit": "MM SOARING",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
       "ID": "OOT Link's House => OOT Kokiri Forest",
       "Area": "OOT Link's House",
       "Exit": "OOT Kokiri Forest",
@@ -26893,6 +27376,14 @@
       "DestinationHasSingleEntrance": false
     },
     {
+      "ID": "OOT Dodongo Cavern Upper Ledges => OOT Dodongo Cavern Upper Staircase",
+      "Area": "OOT Dodongo Cavern Upper Ledges",
+      "Exit": "OOT Dodongo Cavern Upper Staircase",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
       "ID": "OOT Dodongo Cavern Lower Tunnel => OOT Dodongo Cavern Lower Lizalfos",
       "Area": "OOT Dodongo Cavern Lower Tunnel",
       "Exit": "OOT Dodongo Cavern Lower Lizalfos",
@@ -28141,6 +28632,14 @@
       "ID": "MM Ocean Spider House Back => MM Ocean Spider House",
       "Area": "MM Ocean Spider House Back",
       "Exit": "MM Ocean Spider House",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "MM SOARING => MM SPAWN",
+      "Area": "MM SOARING",
+      "Exit": "MM SPAWN",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -32056,7 +32555,7 @@
     {
       "ID": "eggShuffle",
       "DisplayName": "Egg Content Shuffle",
-      "CurrentValue": "true",
+      "CurrentValue": "false",
       "Values": {
         "true": {
           "LogicReplacements": [],
@@ -32083,7 +32582,7 @@
     },
     {
       "ID": "doorOfTime",
-      "DisplayName": "Door Of Time",
+      "DisplayName": "Open Door Of Time",
       "CurrentValue": "closed",
       "Values": {
         "open": {
@@ -32105,7 +32604,7 @@
     {
       "ID": "crossWarpOot",
       "DisplayName": "Cross-Games OoT Warp Songs",
-      "CurrentValue": "true",
+      "CurrentValue": "false",
       "Values": {
         "true": {
           "LogicReplacements": [],
@@ -32122,9 +32621,37 @@
       }
     },
     {
+      "ID": "crossWarpMm",
+      "DisplayName": "Cross-Games MM Song of Soaring",
+      "CurrentValue": "none",
+      "Values": {
+        "none": {
+          "Name": "None",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
+        },
+        "childOnly": {
+          "Name": "Child Only",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
+        },
+        "full": {
+          "Name": "Child & Adult",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
+        }
+      }
+    },
+    {
       "ID": "ganonBossKey",
       "DisplayName": "Ganon's Boss Key",
-      "CurrentValue": "ganon",
+      "CurrentValue": "removed",
       "Values": {
         "removed": {
           "Name": "Removed",
@@ -32164,7 +32691,7 @@
     {
       "ID": "smallKeyShuffle",
       "DisplayName": "Small Key Shuffle",
-      "CurrentValue": "anywhere",
+      "CurrentValue": "ownDungeon",
       "Values": {
         "ownDungeon": {
           "Name": "Own Dungeon",
@@ -32190,7 +32717,7 @@
     {
       "ID": "progressiveShieldsOot",
       "DisplayName": "Progressive OoT Shields",
-      "CurrentValue": "true",
+      "CurrentValue": "false",
       "SubCategory": "Progressive Items",
       "Values": {
         "false": {
@@ -32228,7 +32755,7 @@
     {
       "ID": "progressiveSwordsOot",
       "DisplayName": "Progressive OoT Swords",
-      "CurrentValue": "separate",
+      "CurrentValue": "goron",
       "SubCategory": "Progressive Items",
       "Values": {
         "separate": {
@@ -32300,10 +32827,11 @@
     {
       "ID": "progressiveShieldsMm",
       "DisplayName": "Progressive MM Shields",
-      "CurrentValue": "true",
+      "CurrentValue": "start",
       "SubCategory": "Progressive Items",
       "Values": {
-        "false": {
+        "separate": {
+          "Name": "Separate",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -32311,23 +32839,28 @@
             "MM_SHIELD": {
               "action": "set",
               "amount": 0
-            },
-            "MM_SONG_GORON_HALF": {
+            }
+          }
+        },
+        "start": {
+          "Name": "Start with Hero Shield",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "MM_SHIELD": {
               "action": "set",
               "amount": 0
             }
           }
         },
-        "true": {
+        "progressive": {
+          "Name": "Progressive",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {
             "MM_SHIELD_MIRROR": {
-              "action": "set",
-              "amount": 0
-            },
-            "MM_SONG_GORON": {
               "action": "set",
               "amount": 0
             }
@@ -32345,13 +32878,23 @@
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {
+            "MM_SONG_GORON_HALF": {
+              "action": "set",
+              "amount": 0
+            }
+          }
         },
         "true": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {
+            "MM_SONG_GORON": {
+              "action": "set",
+              "amount": 0
+            }
+          }
         }
       }
     },

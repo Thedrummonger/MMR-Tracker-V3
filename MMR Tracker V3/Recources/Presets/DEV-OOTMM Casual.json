@@ -6498,12 +6498,20 @@
     {
       "Id": "OOT MQ Deku Tree GS Compass Room",
       "RequiredItems": [
-        "OOT_has_explosives",
         "OOT_can_collect_distance",
         "OOT Deku Tree Compass Room",
         "option{DTMQ, true}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_explosives"
+        ],
+        [
+          "OOT_OCARINA",
+          "OOT_SONG_TIME",
+          "OOT_can_hammer"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -6600,6 +6608,7 @@
       "RequiredItems": [
         "OOT_OCARINA",
         "OOT_SONG_TIME",
+        "OOT_can_damage_skull",
         "OOT Dodongo Cavern Main",
         "option{DCMQ, true}"
       ],
@@ -7802,6 +7811,339 @@
         "OOT_SMALL_KEY_WATER, 2",
         "OOT Water Temple Side Loop",
         "option{WaterMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Shadow Temple Compass Chest",
+      "RequiredItems": [
+        "OOT Shadow Temple First Locked Door",
+        "option{ShadowMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Shadow Temple Hover Boots Chest",
+      "RequiredItems": [
+        "OOT_OCARINA",
+        "OOT_SONG_TIME",
+        "OOT_can_use_bow",
+        "OOT Shadow Temple First Locked Door",
+        "option{ShadowMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Shadow Temple First Gibdos Chest",
+      "RequiredItems": [
+        "OOT Shadow Temple First Beamos",
+        "option{ShadowMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Shadow Temple Map Chest",
+      "RequiredItems": [
+        "OOT Shadow Temple First Beamos",
+        "option{ShadowMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Shadow Temple Boat Passage Chest",
+      "RequiredItems": [
+        "OOT Shadow Temple First Beamos",
+        "option{ShadowMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Shadow Temple Second Silver Rupee Visible Chest",
+      "RequiredItems": [
+        "OOT_OCARINA",
+        "OOT_SONG_TIME",
+        "OOT Shadow Temple Upper Huge Pit",
+        "option{ShadowMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Shadow Temple Second Silver Rupee Invisible Chest",
+      "RequiredItems": [
+        "OOT_OCARINA",
+        "OOT_SONG_TIME",
+        "OOT Shadow Temple Upper Huge Pit",
+        "option{ShadowMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Shadow Temple Huge Pit Silver Rupee Chest",
+      "RequiredItems": [
+        "OOT_can_longshot",
+        "OOT Shadow Temple Lower Huge Pit",
+        "option{ShadowMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Shadow Temple Spike Curtain Ground Chest",
+      "RequiredItems": [
+        "OOT Shadow Temple Lower Huge Pit",
+        "option{ShadowMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Shadow Temple Spike Curtain Upper Cage Chest",
+      "RequiredItems": [
+        "OOT_STRENGTH",
+        "OOT Shadow Temple Lower Huge Pit",
+        "option{ShadowMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Shadow Temple Spike Curtain Upper Switch Chest",
+      "RequiredItems": [
+        "OOT_STRENGTH",
+        "OOT Shadow Temple Lower Huge Pit",
+        "option{ShadowMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Shadow Temple Invisible Spike Floor Chest",
+      "RequiredItems": [
+        "OOT Shadow Temple Invisible Spike Floor",
+        "option{ShadowMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Shadow Temple Stalfos Room Chest",
+      "RequiredItems": [
+        "OOT_can_hookshot",
+        "OOT Shadow Temple Invisible Spike Floor",
+        "option{ShadowMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Shadow Temple Wind Hint Chest",
+      "RequiredItems": [
+        "OOT Shadow Temple Wind Tunnel",
+        "option{ShadowMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Shadow Temple After Wind Gibdos Chest",
+      "RequiredItems": [
+        "OOT Shadow Temple Wind Tunnel",
+        "option{ShadowMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Shadow Temple After Wind Bomb Chest",
+      "RequiredItems": [
+        "OOT_has_explosives",
+        "OOT Shadow Temple Wind Tunnel",
+        "option{ShadowMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Shadow Temple Hidden Dead Hand Chest",
+      "RequiredItems": [
+        "OOT Shadow Temple Final Side Rooms",
+        "option{ShadowMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_has_explosives"
+        ],
+        [
+          "OOT_STRENGTH"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Shadow Temple Crushing Wall Left Chest",
+      "RequiredItems": [
+        "OOT_SMALL_KEY_SHADOW, 6",
+        "OOT_can_use_din",
+        "OOT Shadow Temple Final Side Rooms",
+        "option{ShadowMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Shadow Temple Boss Key Chest",
+      "RequiredItems": [
+        "OOT_SMALL_KEY_SHADOW, 6",
+        "OOT_can_use_din",
+        "OOT Shadow Temple Final Side Rooms",
+        "option{ShadowMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Shadow Temple Triple Pot Key",
+      "RequiredItems": [
+        "OOT Shadow Temple Final Side Rooms",
+        "option{ShadowMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_has_explosives"
+        ],
+        [
+          "OOT_STRENGTH"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Shadow Temple GS Spike Curtain",
+      "RequiredItems": [
+        "OOT_can_hookshot",
+        "OOT Shadow Temple Lower Huge Pit",
+        "option{ShadowMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Shadow Temple GS Wind Hint",
+      "RequiredItems": [
+        "OOT Shadow Temple Wind Tunnel",
+        "option{ShadowMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Shadow Temple GS After Wind Bomb",
+      "RequiredItems": [
+        "OOT_has_explosives",
+        "OOT Shadow Temple Wind Tunnel",
+        "option{ShadowMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Shadow Temple GS After Boat",
+      "RequiredItems": [
+        "OOT Shadow Temple Boat",
+        "option{ShadowMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Shadow Temple GS Pre-Boss",
+      "RequiredItems": [
+        "OOT_can_use_bow",
+        "OOT Shadow Temple Boat",
+        "option{ShadowMQ, true}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -16008,6 +16350,25 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT SONGS => MM SOARING",
+      "RequiredItems": [
+        "OOT SONGS"
+      ],
+      "ConditionalItems": [
+        [
+          "option{crossWarpMm, full}"
+        ],
+        [
+          "option{crossWarpMm, childOnly}",
+          "OOT_is_child"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Link's House => OOT Kokiri Forest",
       "RequiredItems": [
         "OOT Link's House"
@@ -19913,7 +20274,8 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_is_child"
+          "OOT_is_child",
+          "OOT_has_shield"
         ],
         [
           "OOT_can_longshot"
@@ -20032,6 +20394,9 @@
         ],
         [
           "OOT_has_ranged_weapon_child"
+        ],
+        [
+          "OOT_can_use_sticks"
         ]
       ],
       "TimeNeeded": "None",
@@ -20042,11 +20407,17 @@
     {
       "Id": "OOT Dodongo Cavern Main => OOT Dodongo Cavern Upper Ledges",
       "RequiredItems": [
-        "OOT_has_explosives_or_hammer",
         "OOT Dodongo Cavern Main",
         "option{DCMQ, true}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_explosives_or_hammer"
+        ],
+        [
+          "OOT_can_use_din"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -20163,6 +20534,18 @@
     },
     {
       "Id": "OOT Dodongo Cavern Upper Ledges => OOT Dodongo Cavern Upper Lizalfos",
+      "RequiredItems": [
+        "OOT Dodongo Cavern Upper Ledges",
+        "option{DCMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Dodongo Cavern Upper Ledges => OOT Dodongo Cavern Upper Staircase",
       "RequiredItems": [
         "OOT Dodongo Cavern Upper Ledges",
         "option{DCMQ, true}"
@@ -22719,6 +23102,18 @@
           "MM_SONG_SOARING"
         ]
       ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM SOARING => MM SPAWN",
+      "RequiredItems": [
+        "MM_SONG_SOARING",
+        "MM SOARING"
+      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",

@@ -496,7 +496,7 @@ namespace MMR_Tracker_V3
             VariableEntryType vartype;
             if (param.Length < 2) 
             { 
-                varValue = OptionData.ToggleValues.Keys.ToList(); 
+                varValue = OptionData.GetToggleValues().Keys.ToList(); 
                 varValueString = "true";
                 vartype = VariableEntryType.varlist;
             }
