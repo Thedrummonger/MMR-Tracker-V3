@@ -20,9 +20,9 @@ namespace MMR_Tracker_V3
     public class LogicCalculation
     {
         public readonly InstanceContainer container;
-        public Dictionary<string, List<string>> LogicUnlockData = new Dictionary<string, List<string>>();
-        public Dictionary<string, MMRData.JsonFormatLogicItem> LogicMap = new Dictionary<string, MMRData.JsonFormatLogicItem>();
-        public Dictionary<object, int> AutoObtainedObjects = new Dictionary<object, int>();
+        public Dictionary<string, List<string>> LogicUnlockData = new();
+        public Dictionary<string, MMRData.JsonFormatLogicItem> LogicMap = new();
+        public Dictionary<object, int> AutoObtainedObjects = new();
 
         public LogicCalculation(InstanceContainer _container)
         {
@@ -31,7 +31,7 @@ namespace MMR_Tracker_V3
 
         private bool RequirementsMet(List<string> Requirements, string ID, Dictionary<string, List<string>> TempUnlockData)
         {
-            List<string> SubUnlockData = new List<string>();
+            List<string> SubUnlockData = new();
             bool reqMet = Requirements.All(x => LogicEntryAquired(x, SubUnlockData));
             if (TempUnlockData != null && reqMet)
             {
@@ -72,7 +72,7 @@ namespace MMR_Tracker_V3
                 case LogicEntryType.variableString:
                     return LogicEntryAquired(container.Instance.Variables[LogicItem].Value as string, SubUnlockData);
                 case LogicEntryType.variableList:
-                    return checkItemArray(LogicItem, Amount, SubUnlockData, out int _);
+                    return CheckItemArray(LogicItem, Amount, SubUnlockData, out int _);
                 case LogicEntryType.variableBool:
                     return container.Instance.Variables[LogicItem].Value;
                 default:
@@ -81,12 +81,12 @@ namespace MMR_Tracker_V3
             }
         }
 
-        public bool checkItemArray(string ArrVar, int amount, List<string> SubUnlockData, out int TotalUsable)
+        public bool CheckItemArray(string ArrVar, int amount, List<string> SubUnlockData, out int TotalUsable)
         {
             TotalUsable = 0;
             if (container.Instance.Variables[ArrVar].Value is not List<string> VariableEntries) { return false; }
-            List<string> UsableItems = new List<string>();
-            Dictionary<string, int> ItemTracking = new Dictionary<string, int>();
+            List<string> UsableItems = new();
+            Dictionary<string, int> ItemTracking = new();
             LoopVarEntry(VariableEntries);
             bool CountMet = UsableItems.Count >= amount;
             TotalUsable = UsableItems.Count;
@@ -120,7 +120,7 @@ namespace MMR_Tracker_V3
         private bool AreaReached(string Area, string ID, Dictionary<string, List<string>> TempUnlockData = null)
         {
             bool IsRoot = Area is null || Area == container.Instance.EntrancePool.RootArea;
-            string TargetArea = (Area == null) ? container.Instance.EntrancePool.RootArea : Area;
+            string TargetArea = Area ??container.Instance.EntrancePool.RootArea;
             bool Reachable = IsRoot || container.Instance.EntrancePool.AreaList.ContainsKey(Area) && container.Instance.EntrancePool.AreaList[Area].ExitsAcessibleFrom > 0;
             if (TempUnlockData != null && Reachable)
             {
@@ -132,7 +132,7 @@ namespace MMR_Tracker_V3
 
         public bool CalculatReqAndCond(MMRData.JsonFormatLogicItem Logic, string ID, string Area)
         {
-            Dictionary<string, List<string>> TempUnlockData = new Dictionary<string, List<string>>();
+            Dictionary<string, List<string>> TempUnlockData = new();
             bool Available =
                 (Area == null || AreaReached(Area, ID, TempUnlockData)) &&
                 RequirementsMet(Logic.RequiredItems, ID, TempUnlockData) &&
@@ -378,7 +378,7 @@ namespace MMR_Tracker_V3
             Func = null;
             Param = null;   
             if (i.IsLiteralID(out _)) { return false; }
-            bool squirFunc = i.EndsWith('}') && i.Contains("{");
+            bool squirFunc = i.EndsWith('}') && i.Contains('{');
 
             if (!squirFunc) { return false; }
             Tuple<char, char> functionCasing = new('{', '}');
@@ -402,7 +402,7 @@ namespace MMR_Tracker_V3
                 case "check":
                 case "available":
                     if (!DoCheck) { return true; }
-                    LogicFuntionValid = checkAvailableFunction(instance, Func, Param);
+                    LogicFuntionValid = CheckAvailableFunction(instance, Func, Param);
                     break;
                 case "contains":
                     if (!DoCheck) { return true; }
@@ -411,7 +411,7 @@ namespace MMR_Tracker_V3
                 case "var":
                 case "variable":
                     if (!DoCheck) { return true; }
-                    LogicFuntionValid = checkVarFunction(instance, Param.Split(",").Select(x => x.Trim()).ToArray());
+                    LogicFuntionValid = CheckVarFunction(instance, Param.Split(",").Select(x => x.Trim()).ToArray());
                     break;
                 case "option":
                     if (!DoCheck) { return true; }
@@ -424,7 +424,7 @@ namespace MMR_Tracker_V3
             return true;
         }
 
-        private static bool checkAvailableFunction(TrackerInstance instance, string func, string param)
+        private static bool CheckAvailableFunction(TrackerInstance instance, string func, string param)
         {
             bool litteral = param.IsLiteralID(out string paramClean);
             instance.GetLocationEntryType(paramClean, litteral, out dynamic obj);
@@ -436,7 +436,7 @@ namespace MMR_Tracker_V3
             return false;
         }
 
-        private static bool checkVarFunction(TrackerInstance instance, string[] param)
+        private static bool CheckVarFunction(TrackerInstance instance, string[] param)
         {
             if (param.Length < 1) { return false; } //No Values Pased
 

@@ -174,7 +174,7 @@ namespace MMR_Tracker_V3
             bool CurrentInitializedState = instance.PriceData.Initialized;
             instance.PriceData.Initialized = false;
 
-            List<string> WalletEntries = new List<string>();
+            List<string> WalletEntries = new();
             foreach (var i in instance.ItemPool)
             {
                 if (i.Value.GetDictEntry(instance).WalletCapacity != null)
@@ -269,13 +269,11 @@ namespace MMR_Tracker_V3
     {
         public static T DeepCopy(object objectToCopy)
         {
-            using (MemoryStream memoryStream = new MemoryStream())
-            {
-                BinaryFormatter binaryFormatter = new BinaryFormatter();
-                binaryFormatter.Serialize(memoryStream, objectToCopy);
-                memoryStream.Seek(0, SeekOrigin.Begin);
-                return (T)binaryFormatter.Deserialize(memoryStream);
-            }
+            using MemoryStream memoryStream = new();
+            BinaryFormatter binaryFormatter = new();
+            binaryFormatter.Serialize(memoryStream, objectToCopy);
+            memoryStream.Seek(0, SeekOrigin.Begin);
+            return (T)binaryFormatter.Deserialize(memoryStream);
         }
     }
 
@@ -314,29 +312,23 @@ namespace MMR_Tracker_V3
 
         private static byte[] CompressByte(byte[] bytes)
         {
-            using (var memoryStream = new MemoryStream())
+            using var memoryStream = new MemoryStream();
+            using (var gzipStream = new GZipStream(memoryStream, CompressionLevel.SmallestSize))
             {
-                using (var gzipStream = new GZipStream(memoryStream, CompressionLevel.SmallestSize))
-                {
-                    gzipStream.Write(bytes, 0, bytes.Length);
-                }
-                return memoryStream.ToArray();
+                gzipStream.Write(bytes, 0, bytes.Length);
             }
+            return memoryStream.ToArray();
         }
         private static byte[] DecompressByte(byte[] bytes)
         {
-            using (var memoryStream = new MemoryStream(bytes))
-            {
+            using var memoryStream = new MemoryStream(bytes);
 
-                using (var outputStream = new MemoryStream())
-                {
-                    using (var decompressStream = new GZipStream(memoryStream, CompressionMode.Decompress))
-                    {
-                        decompressStream.CopyTo(outputStream);
-                    }
-                    return outputStream.ToArray();
-                }
+            using var outputStream = new MemoryStream();
+            using (var decompressStream = new GZipStream(memoryStream, CompressionMode.Decompress))
+            {
+                decompressStream.CopyTo(outputStream);
             }
+            return outputStream.ToArray();
         }
 
         private static byte[] Compress(string String)
@@ -412,7 +404,7 @@ namespace MMR_Tracker_V3
 
         public static List<string> GetEntriesFromLogicString(string input)
         {
-            List<string> BrokenString = new List<string>();
+            List<string> BrokenString = new();
             string currentItem = "";
             foreach (var i in input)
             {
@@ -452,10 +444,10 @@ namespace MMR_Tracker_V3
 
             bool StarredOnly = false;
             char[] GlobalModifiers = new char[] { '^', '*' };
-            while (searchTerm.Count() > 0 && GlobalModifiers.Contains(searchTerm[0]))
+            while (searchTerm.Length > 0 && GlobalModifiers.Contains(searchTerm[0]))
             {
                 if (searchTerm[0] == '*') { StarredOnly = true; }
-                searchTerm = searchTerm.Substring(1);
+                searchTerm = searchTerm[1..];
             }
             if (StarredOnly && !searchObject.Starred) { return false; }
             if (string.IsNullOrWhiteSpace(searchTerm)) { return true; }
@@ -493,7 +485,7 @@ namespace MMR_Tracker_V3
             {
                 if (subterm[0] == '!') { Inverse = true; }
                 if (subterm[0] == '=') { Perfect = true; }
-                subterm = subterm.Substring(1);
+                subterm = subterm[1..];
             }
             if (subterm == "") { return "1"; }
             if (string.IsNullOrWhiteSpace(subterm)) { return ""; }
