@@ -547,7 +547,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 var FileOBJ = JsonConvert.DeserializeObject<Dictionary<string, MMROOTLogicEntry>>(LogicStringParser.ConvertYamlStringToJsonString(File.ReadAllText(file)));
                 foreach(var key in FileOBJ.Keys)
                 {
-                    foreach(var i in FileOBJ[key].locations?.Keys.ToArray()??new string[0])
+                    foreach(var i in FileOBJ[key].locations?.Keys.ToArray()??Array.Empty<string>())
                     {
                         var LogicFileEntry = LogicFile.Logic.Find(x => x.Id == i || x.Id == $"{Game} {i}" || x.Id == $"{Game}_{i}");
                         if (LogicFileEntry is not null)
@@ -558,8 +558,12 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                             logicCleaner.RemoveRedundantConditionals(LogicFileEntry);
                             logicCleaner.MakeCommonConditionalsRequirements(LogicFileEntry);
                         }
+                        else
+                        {
+                            Debug.WriteLine($"{LogicFileEntry} was not added to the logic");
+                        }
                     }
-                    foreach (var i in FileOBJ[key].exits?.Keys.ToArray()??new string[0])
+                    foreach (var i in FileOBJ[key].exits?.Keys.ToArray()??Array.Empty<string>())
                     {
                         string TrueAreaName = $"{Game} {key}";
                         string TrueExitName = i.StartsWith($"{OpositeGame} ") || i.StartsWith($"{Game} ") ? $"{i}" : $"{Game} {i}";
@@ -574,9 +578,13 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                             logicCleaner.RemoveRedundantConditionals(LogicFileEntry);
                             logicCleaner.MakeCommonConditionalsRequirements(LogicFileEntry);
                         }
+                        else
+                        {
+                            Debug.WriteLine($"{LogicFileEntry} was not added to the logic");
+                        }
 
                     }
-                    foreach (var i in FileOBJ[key].events?.Keys.ToArray()??new string[0])
+                    foreach (var i in FileOBJ[key].events?.Keys.ToArray()??Array.Empty<string>())
                     {
                         var LogicFileEntry = LogicFile.Logic.Find(x => x.Id == i || x.Id == $"{Game} {i}" || x.Id == $"{Game}_EVENT_{i}");
                         if (LogicFileEntry is not null)
@@ -588,7 +596,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                             logicCleaner.MakeCommonConditionalsRequirements(LogicFileEntry);
                         }
                     }
-                    foreach (var i in FileOBJ[key].gossip?.Keys.ToArray()??new string[0])
+                    foreach (var i in FileOBJ[key].gossip?.Keys.ToArray()??Array.Empty<string>())
                     {
                         var LogicFileEntry = LogicFile.Logic.Find(x => x.Id == i || x.Id == $"{Game} {i}" || x.Id == $"{Game}_{i}");
                         if (LogicFileEntry is not null)
@@ -598,6 +606,10 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                             LogicFileEntry.ConditionalItems = ParselogicLine(Logic, Game);
                             logicCleaner.RemoveRedundantConditionals(LogicFileEntry);
                             logicCleaner.MakeCommonConditionalsRequirements(LogicFileEntry);
+                        }
+                        else
+                        {
+                            Debug.WriteLine($"{LogicFileEntry} was not added to the logic");
                         }
                     }
                 }
@@ -612,6 +624,10 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                     logicCleaner.RemoveRedundantConditionals(LogicFileEntry);
                     logicCleaner.MakeCommonConditionalsRequirements(LogicFileEntry);
                 }
+                else
+                {
+                    Debug.WriteLine($"{LogicFileEntry} was not added to the logic");
+                }
             }
             foreach (var key in OOTMacros.Keys)
             {
@@ -622,6 +638,10 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                     LogicFileEntry.ConditionalItems = ParselogicLine(Logic, "OOT");
                     logicCleaner.RemoveRedundantConditionals(LogicFileEntry);
                     logicCleaner.MakeCommonConditionalsRequirements(LogicFileEntry);
+                }
+                else
+                {
+                    Debug.WriteLine($"{LogicFileEntry} was not added to the logic");
                 }
             }
         }
