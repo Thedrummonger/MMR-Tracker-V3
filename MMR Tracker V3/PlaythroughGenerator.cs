@@ -216,7 +216,7 @@ namespace MMR_Tracker_V3
             //var UnrandEntranceMacros = instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values.Where(x => x.CheckState == MiscData.CheckState.Checked && !Playthrough.ContainsKey(GetEntId(x)) && x.IsUnrandomized()));
             //var AllEntrances = AvailableEntrances.Concat(AquiredEntranceMacros).Concat(UnrandEntranceMacros).ToList();
             var AllEntrances = AvailableEntrances.Concat(AutoObtainedEntrance).ToList();
-            Debug.WriteLine(AutoObtainedEntrance.Count());
+            //Debug.WriteLine(AutoObtainedEntrance.Count());
             return AllEntrances;
         }
 

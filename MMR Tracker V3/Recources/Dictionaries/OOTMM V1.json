@@ -18058,7 +18058,7 @@
     },
     {
       "ID": "MM_BOTTLE_CHATEAU",
-      "Name": "Bottle - Chateau Romani (MM)",
+      "Name": "Bottle of Chateau Romani",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -18067,18 +18067,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_BOTTLE_CHATEAU",
-          "Bottle - Chateau Romani (MM)"
+          "Bottle of Chateau Romani"
         ],
         "GossipHintNames": [
           "MM_BOTTLE_CHATEAU",
-          "Bottle - Chateau Romani (MM)"
+          "Bottle of Chateau Romani"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "MM_BOTTLE_EMPTY",
-      "Name": "Bottle - Empty (MM)",
+      "Name": "Empty Bottle",
       "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -18087,58 +18087,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_BOTTLE_EMPTY",
-          "Bottle - Empty (MM)"
+          "Empty Bottle"
         ],
         "GossipHintNames": [
           "MM_BOTTLE_EMPTY",
-          "Bottle - Empty (MM)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "MM_BOTTLE_MILK",
-      "Name": "Bottle - Milk (MM)",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "MM_BOTTLE_MILK",
-          "Bottle - Milk (MM)"
-        ],
-        "GossipHintNames": [
-          "MM_BOTTLE_MILK",
-          "Bottle - Milk (MM)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "MM_BOTTLE_POTION_RED",
-      "Name": "Bottle - Red Potion (MM)",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "MM_BOTTLE_POTION_RED",
-          "Bottle - Red Potion (MM)"
-        ],
-        "GossipHintNames": [
-          "MM_BOTTLE_POTION_RED",
-          "Bottle - Red Potion (MM)"
+          "Empty Bottle"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "MM_BOTTLED_GOLD_DUST",
-      "Name": "Bottle - Gold Dust (MM)",
+      "Name": "Bottle of Gold Dust",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -18147,11 +18107,51 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_BOTTLED_GOLD_DUST",
-          "Bottle - Gold Dust (MM)"
+          "Bottle of Gold Dust"
         ],
         "GossipHintNames": [
           "MM_BOTTLED_GOLD_DUST",
-          "Bottle - Gold Dust (MM)"
+          "Bottle of Gold Dust"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "MM_BOTTLE_MILK",
+      "Name": "Bottle of Milk (MM)",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_BOTTLE_MILK",
+          "Bottle of Milk (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_BOTTLE_MILK",
+          "Bottle of Milk (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "MM_BOTTLE_POTION_RED",
+      "Name": "Bottle of Red Potion (MM)",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_BOTTLE_POTION_RED",
+          "Bottle of Red Potion (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_BOTTLE_POTION_RED",
+          "Bottle of Red Potion (MM)"
         ],
         "PriceDataNames": []
       }
@@ -18378,7 +18378,7 @@
     },
     {
       "ID": "MM_GS_TOKEN_OCEAN",
-      "Name": "Ocean Golden Skulltula Spirits",
+      "Name": "Ocean Skulltula Token",
       "MaxAmountInWorld": 30,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -18387,18 +18387,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_GS_TOKEN_OCEAN",
-          "Ocean Golden Skulltula Spirits"
+          "Ocean Skulltula Token"
         ],
         "GossipHintNames": [
           "MM_GS_TOKEN_OCEAN",
-          "Ocean Golden Skulltula Spirits"
+          "Ocean Skulltula Token"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "MM_GS_TOKEN_SWAMP",
-      "Name": "Swamp Golden Skulltula Spirits",
+      "Name": "Swamp Skulltula Token",
       "MaxAmountInWorld": 30,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -18407,11 +18407,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_GS_TOKEN_SWAMP",
-          "Swamp Golden Skulltula Spirits"
+          "Swamp Skulltula Token"
         ],
         "GossipHintNames": [
           "MM_GS_TOKEN_SWAMP",
-          "Swamp Golden Skulltula Spirits"
+          "Swamp Skulltula Token"
         ],
         "PriceDataNames": []
       }
@@ -18438,7 +18438,7 @@
     },
     {
       "ID": "MM_HEART_PIECE",
-      "Name": "Heart Piece (MM)",
+      "Name": "Piece of Heart (MM)",
       "MaxAmountInWorld": 52,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -18447,11 +18447,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_HEART_PIECE",
-          "Heart Piece (MM)"
+          "Piece of Heart (MM)"
         ],
         "GossipHintNames": [
           "MM_HEART_PIECE",
-          "Heart Piece (MM)"
+          "Piece of Heart (MM)"
         ],
         "PriceDataNames": []
       }
@@ -20117,26 +20117,6 @@
       }
     },
     {
-      "ID": "OOT_BOMB_BAG",
-      "Name": "Bomb Bag (OoT)",
-      "MaxAmountInWorld": 3,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "OOT_BOMB_BAG",
-          "Bomb Bag (OoT)"
-        ],
-        "GossipHintNames": [
-          "OOT_BOMB_BAG",
-          "Bomb Bag (OoT)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
       "ID": "OOT_BOMBCHU_10",
       "Name": "10 Bombchu (OoT)",
       "MaxAmountInWorld": -1,
@@ -20192,6 +20172,26 @@
         "GossipHintNames": [
           "OOT_BOMBCHU_5",
           "5 Bombchu (OoT)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "OOT_BOMB_BAG",
+      "Name": "Bomb Bag (OoT)",
+      "MaxAmountInWorld": 3,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_BOMB_BAG",
+          "Bomb Bag (OoT)"
+        ],
+        "GossipHintNames": [
+          "OOT_BOMB_BAG",
+          "Bomb Bag (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -20438,7 +20438,7 @@
     },
     {
       "ID": "OOT_BOTTLE_EMPTY",
-      "Name": "Bottle - Empty (OoT)",
+      "Name": "Empty Bottle (OoT)",
       "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -20447,18 +20447,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_BOTTLE_EMPTY",
-          "Bottle - Empty (OoT)"
+          "Empty Bottle (OoT)"
         ],
         "GossipHintNames": [
           "OOT_BOTTLE_EMPTY",
-          "Bottle - Empty (OoT)"
+          "Empty Bottle (OoT)"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "OOT_BOTTLE_MILK",
-      "Name": "Bottle - Milk (OoT)",
+      "Name": "Bottle of Milk (OoT)",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -20467,11 +20467,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_BOTTLE_MILK",
-          "Bottle - Milk (OoT)"
+          "Bottle of Milk (OoT)"
         ],
         "GossipHintNames": [
           "OOT_BOTTLE_MILK",
-          "Bottle - Milk (OoT)"
+          "Bottle of Milk (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -20838,7 +20838,7 @@
     },
     {
       "ID": "OOT_EYE_DROPS",
-      "Name": "Biggoron's Eye Drops",
+      "Name": "Eye Drops",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -20847,11 +20847,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_EYE_DROPS",
-          "Biggoron's Eye Drops"
+          "Eye Drops"
         ],
         "GossipHintNames": [
           "OOT_EYE_DROPS",
-          "Biggoron's Eye Drops"
+          "Eye Drops"
         ],
         "PriceDataNames": []
       }
@@ -20878,7 +20878,7 @@
     },
     {
       "ID": "OOT_FAIRY",
-      "Name": "Bottle - Fairy (OoT)",
+      "Name": "Fairy (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -20887,18 +20887,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_FAIRY",
-          "Bottle - Fairy (OoT)"
+          "Fairy (OoT)"
         ],
         "GossipHintNames": [
           "OOT_FAIRY",
-          "Bottle - Fairy (OoT)"
+          "Fairy (OoT)"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "OOT_FISH",
-      "Name": "Bottle - Fish (OoT)",
+      "Name": "Fish (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -20907,11 +20907,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_FISH",
-          "Bottle - Fish (OoT)"
+          "Fish (OoT)"
         ],
         "GossipHintNames": [
           "OOT_FISH",
-          "Bottle - Fish (OoT)"
+          "Fish (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -21598,7 +21598,7 @@
     },
     {
       "ID": "OOT_MILK",
-      "Name": "Bottle - Lon Lon Milk (OoT)",
+      "Name": "Lon Lon Milk (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -21607,11 +21607,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_MILK",
-          "Bottle - Lon Lon Milk (OoT)"
+          "Lon Lon Milk (OoT)"
         ],
         "GossipHintNames": [
           "OOT_MILK",
-          "Bottle - Lon Lon Milk (OoT)"
+          "Lon Lon Milk (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -21778,7 +21778,7 @@
     },
     {
       "ID": "OOT_POE",
-      "Name": "Bottle - Poe Spirit (OoT)",
+      "Name": "Poe Spirit (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -21787,18 +21787,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_POE",
-          "Bottle - Poe Spirit (OoT)"
+          "Poe Spirit (OoT)"
         ],
         "GossipHintNames": [
           "OOT_POE",
-          "Bottle - Poe Spirit (OoT)"
+          "Poe Spirit (OoT)"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "OOT_POTION_BLUE",
-      "Name": "Bottle - Blue Potion (OoT)",
+      "Name": "Blue Potion (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -21807,18 +21807,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_POTION_BLUE",
-          "Bottle - Blue Potion (OoT)"
+          "Blue Potion (OoT)"
         ],
         "GossipHintNames": [
           "OOT_POTION_BLUE",
-          "Bottle - Blue Potion (OoT)"
+          "Blue Potion (OoT)"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "OOT_POTION_GREEN",
-      "Name": "Bottle - Green Potion (OoT)",
+      "Name": "Green Potion (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -21827,18 +21827,18 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_POTION_GREEN",
-          "Bottle - Green Potion (OoT)"
+          "Green Potion (OoT)"
         ],
         "GossipHintNames": [
           "OOT_POTION_GREEN",
-          "Bottle - Green Potion (OoT)"
+          "Green Potion (OoT)"
         ],
         "PriceDataNames": []
       }
     },
     {
       "ID": "OOT_POTION_RED",
-      "Name": "Bottle - Red Potion (OoT)",
+      "Name": "Red Potion (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -21847,11 +21847,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_POTION_RED",
-          "Bottle - Red Potion (OoT)"
+          "Red Potion (OoT)"
         ],
         "GossipHintNames": [
           "OOT_POTION_RED",
-          "Bottle - Red Potion (OoT)"
+          "Red Potion (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -23278,7 +23278,7 @@
     },
     {
       "ID": "SHARED_HEART_PIECE",
-      "Name": "Heart Piece",
+      "Name": "Piece of Heart",
       "MaxAmountInWorld": 44,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -23287,11 +23287,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "SHARED_HEART_PIECE",
-          "Heart Piece"
+          "Piece of Heart"
         ],
         "GossipHintNames": [
           "SHARED_HEART_PIECE",
-          "Heart Piece"
+          "Piece of Heart"
         ],
         "PriceDataNames": []
       }
@@ -32516,7 +32516,7 @@
       "Id": "KeatonInSpring",
       "RequiredItems": [
         "MM_MASK_KEATON",
-        "MM_BOSS_SNOWHEAD",
+        "MM_EVENT_BOSS_SNOWHEAD",
         "MM Mountain Village"
       ],
       "ConditionalItems": [],
@@ -32717,10 +32717,10 @@
     {
       "ID": "progressiveShieldsOot",
       "DisplayName": "Progressive OoT Shields",
-      "CurrentValue": "false",
+      "CurrentValue": "separate",
       "SubCategory": "Progressive Items",
       "Values": {
-        "false": {
+        "separate": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -32731,7 +32731,7 @@
             }
           }
         },
-        "true": {
+        "progressive": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -32871,10 +32871,10 @@
     {
       "ID": "progressiveGoronLullaby",
       "DisplayName": "Progressive MM Goron Lullaby",
-      "CurrentValue": "true",
+      "CurrentValue": "progressive",
       "SubCategory": "Progressive Items",
       "Values": {
-        "false": {
+        "single": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -32885,7 +32885,7 @@
             }
           }
         },
-        "true": {
+        "progressive": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -33655,10 +33655,6 @@
               "action": "set",
               "amount": 0
             },
-            "SHARED_RUPEE_BLUE": {
-              "action": "set",
-              "amount": 0
-            },
             "SHARED_RUPEE_RED": {
               "action": "set",
               "amount": 0
@@ -33710,14 +33706,6 @@
               "amount": 0
             },
             "MM_RUPEE_GREEN": {
-              "action": "set",
-              "amount": 0
-            },
-            "OOT_RUPEE_BLUE": {
-              "action": "set",
-              "amount": 0
-            },
-            "MM_RUPEE_BLUE": {
               "action": "set",
               "amount": 0
             },

@@ -136,7 +136,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "CanGetOathSnowhead", RequiredItems = new List<string> { "MM Snowhead Temple After Boss" } });
             dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "CanGetOathGreatBay", RequiredItems = new List<string> { "MM Great Bay Temple After Boss" } });
             dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "CanGetOathStoneTow", RequiredItems = new List<string> { "MM Stone Tower After Boss" } });
-            dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "KeatonInSpring", RequiredItems = new List<string> { "MM_MASK_KEATON", "MM_BOSS_SNOWHEAD", "MM Mountain Village" } });
+            dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "KeatonInSpring", RequiredItems = new List<string> { "MM_MASK_KEATON", "MM_EVENT_BOSS_SNOWHEAD", "MM Mountain Village" } });
 
 
             createLocationProxy("MM Oath to Order", "MMOathWoodfallProxy", "Oath to Order", "Woodfall Temple", "CanGetOathWoodfall");
@@ -314,13 +314,13 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             OptionData.TrackerOption ProgressiveShieldsOOT = new OptionData.TrackerOption();
             ProgressiveShieldsOOT.ID = "progressiveShieldsOot";
             ProgressiveShieldsOOT.DisplayName = "Progressive OoT Shields";
-            ProgressiveShieldsOOT.CurrentValue = "false";
+            ProgressiveShieldsOOT.CurrentValue = "separate";
             ProgressiveShieldsOOT.SubCategory = "Progressive Items";
-            ProgressiveShieldsOOT.CreateSimpleValues(new string[] { "false", "true" });
-            ProgressiveShieldsOOT.Values["false"].AddMaxAmountEdit("OOT_SHIELD", MiscData.MathOP.set, 0);
-            ProgressiveShieldsOOT.Values["true"].AddMaxAmountEdit("OOT_SHIELD_DEKU", MiscData.MathOP.set, 0);
-            ProgressiveShieldsOOT.Values["true"].AddMaxAmountEdit("OOT_SHIELD_HYLIAN", MiscData.MathOP.set, 0);
-            ProgressiveShieldsOOT.Values["true"].AddMaxAmountEdit("OOT_SHIELD_MIRROR", MiscData.MathOP.set, 0);
+            ProgressiveShieldsOOT.CreateSimpleValues(new string[] { "separate", "progressive" });
+            ProgressiveShieldsOOT.Values["separate"].AddMaxAmountEdit("OOT_SHIELD", MiscData.MathOP.set, 0);
+            ProgressiveShieldsOOT.Values["progressive"].AddMaxAmountEdit("OOT_SHIELD_DEKU", MiscData.MathOP.set, 0);
+            ProgressiveShieldsOOT.Values["progressive"].AddMaxAmountEdit("OOT_SHIELD_HYLIAN", MiscData.MathOP.set, 0);
+            ProgressiveShieldsOOT.Values["progressive"].AddMaxAmountEdit("OOT_SHIELD_MIRROR", MiscData.MathOP.set, 0);
             dictionaryFile.Options.Add(ProgressiveShieldsOOT);
 
             OptionData.TrackerOption ProgressiveSwordsOOT = new OptionData.TrackerOption();
@@ -361,11 +361,11 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             OptionData.TrackerOption ProgressiveLullabyMM = new OptionData.TrackerOption();
             ProgressiveLullabyMM.ID = "progressiveGoronLullaby";
             ProgressiveLullabyMM.DisplayName = "Progressive MM Goron Lullaby";
-            ProgressiveLullabyMM.CurrentValue = "true";
+            ProgressiveLullabyMM.CurrentValue = "progressive";
             ProgressiveLullabyMM.SubCategory = "Progressive Items";
-            ProgressiveLullabyMM.CreateSimpleValues(new string[] { "false", "true" });
-            ProgressiveLullabyMM.Values["false"].AddMaxAmountEdit("MM_SONG_GORON_HALF", MiscData.MathOP.set, 0);
-            ProgressiveLullabyMM.Values["true"].AddMaxAmountEdit("MM_SONG_GORON", MiscData.MathOP.set, 0);
+            ProgressiveLullabyMM.CreateSimpleValues(new string[] { "single", "progressive" });
+            ProgressiveLullabyMM.Values["single"].AddMaxAmountEdit("MM_SONG_GORON_HALF", MiscData.MathOP.set, 0);
+            ProgressiveLullabyMM.Values["progressive"].AddMaxAmountEdit("MM_SONG_GORON", MiscData.MathOP.set, 0);
             dictionaryFile.Options.Add(ProgressiveLullabyMM);
 
             //Game Clear
@@ -386,7 +386,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             AddSharedItemOptions("sharedLens", "Shared Lens of Truth", new string[] { "LENS" }, 1);
             AddSharedItemOptions("sharedOcarina", "Shared Ocarina", new string[] { "OCARINA" }, 2);
             AddSharedItemOptions("sharedMasks", "Shared Masks", new string[] { "MASK_ZORA", "MASK_GORON", "MASK_TRUTH", "MASK_BUNNY", "MASK_KEATON" }, 1);
-            AddSharedItemOptions("sharedWallets", "Shared Wallets", new string[] { "WALLET" }, 2, new string[] { "RUPEE_GREEN", "RUPEE_BLUE", "RUPEE_RED", "RUPEE_PURPLE", "RUPEE_SILVER", "RUPEE_GOLD", "RUPEE_HUGE" });
+            AddSharedItemOptions("sharedWallets", "Shared Wallets", new string[] { "WALLET" }, 2, new string[] { "RUPEE_GREEN", "RUPEE_RED", "RUPEE_PURPLE", "RUPEE_SILVER", "RUPEE_GOLD", "RUPEE_HUGE" }); //RUPEE_BLUE is currently broken in the rando 
             AddSharedItemOptions("sharedHealth", "Shared Health", new string[] { "HEART_PIECE", "HEART_CONTAINER", "DEFENSE_UPGRADE" }, 1, new string[] { "RECOVERY_HEART", }); //I don't actually think any of this effects logic?
 
             AddMQOption("DTMQ", "Deku Tree MQ");
