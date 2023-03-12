@@ -11139,6 +11139,329 @@
       "LocationProxys": []
     },
     {
+      "ID": "OOT MQ Gerudo Training Grounds Entryway Left Chest",
+      "Name": "MQ Gerudo Training Grounds Entryway Left Chest",
+      "OriginalItem": "OOT_ARROWS_10",
+      "Area": "Gerudo Training Ground",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Gerudo Training Grounds Entryway Left Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Gerudo Training Grounds Entryway Left Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Gerudo Training Grounds Entryway Right Chest",
+      "Name": "MQ Gerudo Training Grounds Entryway Right Chest",
+      "OriginalItem": "OOT_BOMBCHU_10",
+      "Area": "Gerudo Training Ground",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Gerudo Training Grounds Entryway Right Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Gerudo Training Grounds Entryway Right Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Gerudo Training Grounds Maze First Chest",
+      "Name": "MQ Gerudo Training Grounds Maze First Chest",
+      "OriginalItem": "OOT_RUPEE_PURPLE",
+      "Area": "Gerudo Training Ground",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Gerudo Training Grounds Maze First Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Gerudo Training Grounds Maze First Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Gerudo Training Grounds Maze Second Chest",
+      "Name": "MQ Gerudo Training Grounds Maze Second Chest",
+      "OriginalItem": "OOT_RUPEE_GREEN",
+      "Area": "Gerudo Training Ground",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Gerudo Training Grounds Maze Second Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Gerudo Training Grounds Maze Second Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Gerudo Training Grounds Maze Third Chest",
+      "Name": "MQ Gerudo Training Grounds Maze Third Chest",
+      "OriginalItem": "OOT_RUPEE_RED",
+      "Area": "Gerudo Training Ground",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Gerudo Training Grounds Maze Third Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Gerudo Training Grounds Maze Third Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Gerudo Training Grounds Maze Fourth Chest",
+      "Name": "MQ Gerudo Training Grounds Maze Fourth Chest",
+      "OriginalItem": "OOT_RUPEE_GREEN",
+      "Area": "Gerudo Training Ground",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Gerudo Training Grounds Maze Fourth Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Gerudo Training Grounds Maze Fourth Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Gerudo Training Grounds Right Side Dinolfos Chest",
+      "Name": "MQ Gerudo Training Grounds Right Side Dinolfos Chest",
+      "OriginalItem": "OOT_SMALL_KEY_GTG",
+      "Area": "Gerudo Training Ground",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Gerudo Training Grounds Right Side Dinolfos Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Gerudo Training Grounds Right Side Dinolfos Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Gerudo Training Grounds Water Room Chest",
+      "Name": "MQ Gerudo Training Grounds Water Room Chest",
+      "OriginalItem": "OOT_SMALL_KEY_GTG",
+      "Area": "Gerudo Training Ground",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Gerudo Training Grounds Water Room Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Gerudo Training Grounds Water Room Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Gerudo Training Grounds Left Side Iron Knuckle Chest",
+      "Name": "MQ Gerudo Training Grounds Left Side Iron Knuckle Chest",
+      "OriginalItem": "OOT_RUPEE_BLUE",
+      "Area": "Gerudo Training Ground",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Gerudo Training Grounds Left Side Iron Knuckle Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Gerudo Training Grounds Left Side Iron Knuckle Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Gerudo Training Grounds Stalfos Room Chest",
+      "Name": "MQ Gerudo Training Grounds Stalfos Room Chest",
+      "OriginalItem": "OOT_ARROWS_10",
+      "Area": "Gerudo Training Ground",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Gerudo Training Grounds Stalfos Room Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Gerudo Training Grounds Stalfos Room Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Gerudo Training Grounds Silver Block Room Chest",
+      "Name": "MQ Gerudo Training Grounds Silver Block Room Chest",
+      "OriginalItem": "OOT_RUPEE_PURPLE",
+      "Area": "Gerudo Training Ground",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Gerudo Training Grounds Silver Block Room Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Gerudo Training Grounds Silver Block Room Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Gerudo Training Grounds Spinning Statue Chest",
+      "Name": "MQ Gerudo Training Grounds Spinning Statue Chest",
+      "OriginalItem": "OOT_BOMBCHU_5",
+      "Area": "Gerudo Training Ground",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Gerudo Training Grounds Spinning Statue Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Gerudo Training Grounds Spinning Statue Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Gerudo Training Grounds Torch Slug Room Clear Chest",
+      "Name": "MQ Gerudo Training Grounds Torch Slug Room Clear Chest",
+      "OriginalItem": "OOT_ARROWS_10",
+      "Area": "Gerudo Training Ground",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Gerudo Training Grounds Torch Slug Room Clear Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Gerudo Training Grounds Torch Slug Room Clear Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Gerudo Training Grounds Torch Slug Room Switch Chest",
+      "Name": "MQ Gerudo Training Grounds Torch Slug Room Switch Chest",
+      "OriginalItem": "OOT_SMALL_KEY_GTG",
+      "Area": "Gerudo Training Ground",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Gerudo Training Grounds Torch Slug Room Switch Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Gerudo Training Grounds Torch Slug Room Switch Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Gerudo Training Grounds Maze Right Side Middle Chest",
+      "Name": "MQ Gerudo Training Grounds Maze Right Side Middle Chest",
+      "OriginalItem": "OOT_RUPEE_BLUE",
+      "Area": "Gerudo Training Ground",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Gerudo Training Grounds Maze Right Side Middle Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Gerudo Training Grounds Maze Right Side Middle Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Gerudo Training Grounds Maze Right Side Right Chest",
+      "Name": "MQ Gerudo Training Grounds Maze Right Side Right Chest",
+      "OriginalItem": "OOT_RUPEE_GREEN",
+      "Area": "Gerudo Training Ground",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Gerudo Training Grounds Maze Right Side Right Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Gerudo Training Grounds Maze Right Side Right Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Gerudo Training Grounds Ice Arrows Chest",
+      "Name": "MQ Gerudo Training Grounds Ice Arrows Chest",
+      "OriginalItem": "OOT_ARROW_ICE",
+      "Area": "Gerudo Training Ground",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Gerudo Training Grounds Ice Arrows Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Gerudo Training Grounds Ice Arrows Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
       "ID": "MM Initial Song of Healing",
       "Name": "Initial Song of Healing",
       "OriginalItem": "MM_SONG_HEALING",
@@ -27707,6 +28030,62 @@
       "ID": "OOT Forest Temple Bow Region => OOT Forest Temple Falling Ceiling",
       "Area": "OOT Forest Temple Bow Region",
       "Exit": "OOT Forest Temple Falling Ceiling",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Gerudo Training Grounds => OOT Gerudo Training Grounds Right Path",
+      "Area": "OOT Gerudo Training Grounds",
+      "Exit": "OOT Gerudo Training Grounds Right Path",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Gerudo Training Grounds => OOT Gerudo Training Grounds Left Path",
+      "Area": "OOT Gerudo Training Grounds",
+      "Exit": "OOT Gerudo Training Grounds Left Path",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Gerudo Training Grounds Right Path => OOT Gerudo Training Grounds",
+      "Area": "OOT Gerudo Training Grounds Right Path",
+      "Exit": "OOT Gerudo Training Grounds",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Gerudo Training Grounds Left Path => OOT Gerudo Training Grounds",
+      "Area": "OOT Gerudo Training Grounds Left Path",
+      "Exit": "OOT Gerudo Training Grounds",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Gerudo Training Grounds Left Path => OOT Gerudo Training Grounds Stalfos Room",
+      "Area": "OOT Gerudo Training Grounds Left Path",
+      "Exit": "OOT Gerudo Training Grounds Stalfos Room",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Gerudo Training Grounds Stalfos Room => OOT Gerudo Training Grounds Spinning Statue Room",
+      "Area": "OOT Gerudo Training Grounds Stalfos Room",
+      "Exit": "OOT Gerudo Training Grounds Spinning Statue Room",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Gerudo Training Grounds Spinning Statue Room => OOT Gerudo Training Grounds Right Path",
+      "Area": "OOT Gerudo Training Grounds Spinning Statue Room",
+      "Exit": "OOT Gerudo Training Grounds Right Path",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false

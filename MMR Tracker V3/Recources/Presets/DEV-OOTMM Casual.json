@@ -8152,6 +8152,247 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT MQ Gerudo Training Grounds Entryway Left Chest",
+      "RequiredItems": [
+        "OOT Gerudo Training Grounds",
+        "option{GTGMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Gerudo Training Grounds Entryway Right Chest",
+      "RequiredItems": [
+        "OOT Gerudo Training Grounds",
+        "option{GTGMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Gerudo Training Grounds Maze First Chest",
+      "RequiredItems": [
+        "OOT_has_lens",
+        "OOT Gerudo Training Grounds",
+        "option{GTGMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Gerudo Training Grounds Maze Second Chest",
+      "RequiredItems": [
+        "OOT Gerudo Training Grounds",
+        "option{GTGMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Gerudo Training Grounds Maze Third Chest",
+      "RequiredItems": [
+        "OOT Gerudo Training Grounds",
+        "option{GTGMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Gerudo Training Grounds Maze Fourth Chest",
+      "RequiredItems": [
+        "OOT_SMALL_KEY_GTG",
+        "OOT Gerudo Training Grounds",
+        "option{GTGMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Gerudo Training Grounds Right Side Dinolfos Chest",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT Gerudo Training Grounds Right Path",
+        "option{GTGMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Gerudo Training Grounds Water Room Chest",
+      "RequiredItems": [
+        "OOT_has_hover_boots",
+        "OOT_has_fire",
+        "OOT_has_iron_boots",
+        "OOT_has_tunic_zora",
+        "OOT Gerudo Training Grounds Right Path",
+        "option{GTGMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_can_longshot"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Gerudo Training Grounds Left Side Iron Knuckle Chest",
+      "RequiredItems": [
+        "OOT Gerudo Training Grounds Left Path",
+        "option{GTGMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_has_weapon",
+          "OOT_has_shield"
+        ],
+        [
+          "OOT_can_use_sticks",
+          "OOT_has_shield"
+        ],
+        [
+          "OOT_has_weapon",
+          "OOT_is_adult"
+        ],
+        [
+          "OOT_can_use_sticks",
+          "OOT_is_adult"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Gerudo Training Grounds Stalfos Room Chest",
+      "RequiredItems": [
+        "OOT Gerudo Training Grounds Stalfos Room",
+        "option{GTGMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Gerudo Training Grounds Silver Block Room Chest",
+      "RequiredItems": [
+        "OOT_can_lift_silver",
+        "OOT Gerudo Training Grounds Stalfos Room",
+        "option{GTGMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Gerudo Training Grounds Spinning Statue Chest",
+      "RequiredItems": [
+        "OOT_can_use_bow",
+        "OOT Gerudo Training Grounds Spinning Statue Room",
+        "option{GTGMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Gerudo Training Grounds Torch Slug Room Clear Chest",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT Gerudo Training Grounds Spinning Statue Room",
+        "option{GTGMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Gerudo Training Grounds Torch Slug Room Switch Chest",
+      "RequiredItems": [
+        "OOT Gerudo Training Grounds Spinning Statue Room",
+        "option{GTGMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Gerudo Training Grounds Maze Right Side Middle Chest",
+      "RequiredItems": [
+        "OOT_can_hammer",
+        "OOT Gerudo Training Grounds Spinning Statue Room",
+        "option{GTGMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Gerudo Training Grounds Maze Right Side Right Chest",
+      "RequiredItems": [
+        "OOT_can_hammer",
+        "OOT Gerudo Training Grounds Spinning Statue Room",
+        "option{GTGMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Gerudo Training Grounds Ice Arrows Chest",
+      "RequiredItems": [
+        "OOT_EVENT_GTG_ICE_ARROWS",
+        "OOT Gerudo Training Grounds Spinning Statue Room",
+        "option{GTGMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Initial Song of Healing",
       "RequiredItems": [
         "MM SPAWN"
@@ -15643,6 +15884,10 @@
           "option{ICMQ, true}"
         ],
         [
+          "OOT Gerudo Training Grounds Stalfos Room",
+          "option{GTGMQ, true}"
+        ],
+        [
           "OOT_is_adult",
           "OOT Ice Cavern",
           "option{ICMQ, false}"
@@ -21199,6 +21444,138 @@
           "OOT_can_use_din"
         ]
       ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Training Grounds => OOT Gerudo Training Grounds Right Path",
+      "RequiredItems": [
+        "OOT_EVENT_GTG_RIGHT_SIDE",
+        "OOT_is_adult",
+        "OOT Gerudo Training Grounds",
+        "option{GTGMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Training Grounds => OOT Gerudo Training Grounds Left Path",
+      "RequiredItems": [
+        "OOT_EVENT_GTG_LEFT_SIDE",
+        "OOT Gerudo Training Grounds",
+        "option{GTGMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_GTG_RIGHT_SIDE",
+      "RequiredItems": [
+        "OOT_can_hit_triggers_distance",
+        "OOT Gerudo Training Grounds",
+        "option{GTGMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_GTG_LEFT_SIDE",
+      "RequiredItems": [
+        "OOT_has_fire",
+        "OOT Gerudo Training Grounds",
+        "option{GTGMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_GTG_ICE_ARROWS",
+      "RequiredItems": [
+        "OOT_SMALL_KEY_GTG, 3",
+        "OOT_can_hammer",
+        "OOT Gerudo Training Grounds",
+        "option{GTGMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Training Grounds Right Path => OOT Gerudo Training Grounds",
+      "RequiredItems": [
+        "OOT Gerudo Training Grounds Right Path",
+        "option{GTGMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Training Grounds Left Path => OOT Gerudo Training Grounds",
+      "RequiredItems": [
+        "OOT Gerudo Training Grounds Left Path",
+        "option{GTGMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Training Grounds Left Path => OOT Gerudo Training Grounds Stalfos Room",
+      "RequiredItems": [
+        "OOT_can_longshot",
+        "OOT Gerudo Training Grounds Left Path",
+        "option{GTGMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Training Grounds Stalfos Room => OOT Gerudo Training Grounds Spinning Statue Room",
+      "RequiredItems": [
+        "OOT_EVENT_BLUE_FIRE",
+        "OOT_OCARINA",
+        "OOT_SONG_TIME",
+        "OOT_has_lens",
+        "OOT Gerudo Training Grounds Stalfos Room",
+        "option{GTGMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Training Grounds Spinning Statue Room => OOT Gerudo Training Grounds Right Path",
+      "RequiredItems": [
+        "OOT Gerudo Training Grounds Spinning Statue Room",
+        "option{GTGMQ, true}"
+      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
