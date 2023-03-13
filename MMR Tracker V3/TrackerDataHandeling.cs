@@ -267,7 +267,7 @@ namespace MMR_Tracker_V3
                 string CurrentLocation = "";
                 foreach (var i in CheckedLocations)
                 {
-                    if (!i.AppearsinListbox(Instance)) { continue; }
+                    if (!i.AppearsinListbox(Instance, Filter.StartsWith("^"))) { continue; }
                     i.DisplayName = Utility.GetLocationDisplayName(i, Instance);
 
                     ItemsInListBox++;
@@ -391,14 +391,17 @@ namespace MMR_Tracker_V3
 
         public static List<object> PopulateAvailableLocationList(DataSets DataSets, MiscData.Divider Divider, LogicObjects.TrackerInstance Instance, string Filter, bool ShowUnavailable, out int OutItemsInListBox, out int OutItemsInListBoxFiltered, bool reverse = false)
         {
+            bool ShowAllLocation = ShowUnavailable || (Filter.StartsWith("^") && !Filter.StartsWith("^^")) || Filter.StartsWith("^^^");
+            bool ShowInvalidLocation = Filter.StartsWith("^^");
+
             var Groups = Utility.GetCategoriesFromFile(Instance);
             List<object> DataSource = new List<object>();
 
             var AvailableProxies = DataSets.AvailableProxies;
-            if (Filter.StartsWith("^") || ShowUnavailable) { AvailableProxies = DataSets.AllAvailableProxies; }
+            if (ShowAllLocation) { AvailableProxies = DataSets.AllAvailableProxies; }
 
             var AvailableLocations = DataSets.AvailableLocations;
-            if (Filter.StartsWith("^") || ShowUnavailable) { AvailableLocations = DataSets.AllAvailableLocations; }
+            if (ShowAllLocation) { AvailableLocations = DataSets.AllAvailableLocations; }
 
             IEnumerable<object> AvailableLocationsEntries = AvailableLocations.Where(x => !Instance.LocationProxyData.LocationsWithProxys.ContainsKey(x.ID));
             AvailableLocationsEntries = AvailableLocationsEntries.Concat(AvailableProxies);
@@ -458,7 +461,7 @@ namespace MMR_Tracker_V3
                     var CurrentArea = "";
                     if (obj is LocationData.LocationObject i)
                     {
-                        if (!i.AppearsinListbox(Instance)) { continue; }
+                        if (!i.AppearsinListbox(Instance, ShowInvalidLocation)) { continue; }
                         i.DisplayName = Utility.GetLocationDisplayName(i, Instance);
                         ItemsInListBox++;
                         if (!SearchStringParser.FilterSearch(Instance, i, Filter, i.DisplayName)) { continue; }
@@ -467,7 +470,7 @@ namespace MMR_Tracker_V3
                     }
                     else if (obj is LocationData.LocationProxy p)
                     {
-                        if (!p.GetReferenceLocation(Instance).AppearsinListbox(Instance)) { continue; }
+                        if (!p.GetReferenceLocation(Instance).AppearsinListbox(Instance, ShowInvalidLocation)) { continue; }
                         p.DisplayName = Utility.GetLocationDisplayName(p, Instance);
                         ItemsInListBox++;
                         if (!SearchStringParser.FilterSearch(Instance, p, Filter, p.DisplayName)) { continue; }
@@ -526,7 +529,7 @@ namespace MMR_Tracker_V3
                     var CurrentArea = "";
                     if (obj is LocationData.LocationObject i)
                     {
-                        if (!i.AppearsinListbox(Instance)) { continue; }
+                        if (!i.AppearsinListbox(Instance, ShowInvalidLocation)) { continue; }
                         i.DisplayName = Utility.GetLocationDisplayName(i, Instance);
                         ItemsInListBox++;
                         if (!SearchStringParser.FilterSearch(Instance, i, Filter, i.DisplayName)) { continue; }
@@ -535,7 +538,7 @@ namespace MMR_Tracker_V3
                     }
                     else if (obj is LocationData.LocationProxy p)
                     {
-                        if (!p.GetReferenceLocation(Instance).AppearsinListbox(Instance)) { continue; }
+                        if (!p.GetReferenceLocation(Instance).AppearsinListbox(Instance, ShowInvalidLocation)) { continue; }
                         p.DisplayName = Utility.GetLocationDisplayName(p, Instance);
                         ItemsInListBox++;
                         if (!SearchStringParser.FilterSearch(Instance, p, Filter, p.DisplayName)) { continue; }
