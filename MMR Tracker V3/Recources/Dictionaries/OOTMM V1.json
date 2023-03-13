@@ -11462,6 +11462,253 @@
       "LocationProxys": []
     },
     {
+      "ID": "OOT MQ Ganon Castle Light Trial Chest",
+      "Name": "MQ Ganon Castle Light Trial Chest",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "Area": "Ganon's Castle",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Ganon Castle Light Trial Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Ganon Castle Light Trial Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Ganon Castle Forest Trial First Chest",
+      "Name": "MQ Ganon Castle Forest Trial First Chest",
+      "OriginalItem": "OOT_ARROWS_10",
+      "Area": "Ganon's Castle",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Ganon Castle Forest Trial First Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Ganon Castle Forest Trial First Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Ganon Castle Forest Trial Second Chest",
+      "Name": "MQ Ganon Castle Forest Trial Second Chest",
+      "OriginalItem": "OOT_BOMBS_5",
+      "Area": "Ganon's Castle",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Ganon Castle Forest Trial Second Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Ganon Castle Forest Trial Second Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Ganon Castle Water Trial Chest",
+      "Name": "MQ Ganon Castle Water Trial Chest",
+      "OriginalItem": "OOT_RUPEE_RED",
+      "Area": "Ganon's Castle",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Ganon Castle Water Trial Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Ganon Castle Water Trial Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Ganon Castle Spirit Trial First Chest",
+      "Name": "MQ Ganon Castle Spirit Trial First Chest",
+      "OriginalItem": "OOT_BOMBCHU_5",
+      "Area": "Ganon's Castle",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Ganon Castle Spirit Trial First Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Ganon Castle Spirit Trial First Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Ganon Castle Spirit Trial Second Chest",
+      "Name": "MQ Ganon Castle Spirit Trial Second Chest",
+      "OriginalItem": "OOT_ARROWS_10",
+      "Area": "Ganon's Castle",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Ganon Castle Spirit Trial Second Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Ganon Castle Spirit Trial Second Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Ganon Castle Spirit Trial Back Right Sun Chest",
+      "Name": "MQ Ganon Castle Spirit Trial Back Right Sun Chest",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "Area": "Ganon's Castle",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Ganon Castle Spirit Trial Back Right Sun Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Ganon Castle Spirit Trial Back Right Sun Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Ganon Castle Spirit Trial Back Left Sun Chest",
+      "Name": "MQ Ganon Castle Spirit Trial Back Left Sun Chest",
+      "OriginalItem": "OOT_SMALL_KEY_GANON",
+      "Area": "Ganon's Castle",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Ganon Castle Spirit Trial Back Left Sun Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Ganon Castle Spirit Trial Back Left Sun Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Ganon Castle Spirit Trial Front Left Sun Chest",
+      "Name": "MQ Ganon Castle Spirit Trial Front Left Sun Chest",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "Area": "Ganon's Castle",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Ganon Castle Spirit Trial Front Left Sun Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Ganon Castle Spirit Trial Front Left Sun Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Ganon Castle Spirit Trial Gold Gauntlets Chest",
+      "Name": "MQ Ganon Castle Spirit Trial Gold Gauntlets Chest",
+      "OriginalItem": "OOT_STRENGTH",
+      "Area": "Ganon's Castle",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Ganon Castle Spirit Trial Gold Gauntlets Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Ganon Castle Spirit Trial Gold Gauntlets Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Ganon Castle Shadow Trial Bomb Flower Chest",
+      "Name": "MQ Ganon Castle Shadow Trial Bomb Flower Chest",
+      "OriginalItem": "OOT_ARROWS_10",
+      "Area": "Ganon's Castle",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Ganon Castle Shadow Trial Bomb Flower Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Ganon Castle Shadow Trial Bomb Flower Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Ganon Castle Shadow Trial Switch Chest",
+      "Name": "MQ Ganon Castle Shadow Trial Switch Chest",
+      "OriginalItem": "OOT_SMALL_KEY_GANON",
+      "Area": "Ganon's Castle",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Ganon Castle Shadow Trial Switch Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Ganon Castle Shadow Trial Switch Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Ganon Castle Forest Trial Key",
+      "Name": "MQ Ganon Castle Forest Trial Key",
+      "OriginalItem": "OOT_SMALL_KEY_GANON",
+      "Area": "Ganon's Castle",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Ganon Castle Forest Trial Key"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Ganon Castle Forest Trial Key"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
       "ID": "MM Initial Song of Healing",
       "Name": "Initial Song of Healing",
       "OriginalItem": "MM_SONG_HEALING",

@@ -8393,6 +8393,251 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT MQ Ganon Castle Light Trial Chest",
+      "RequiredItems": [
+        "OOT_OCARINA",
+        "OOT_SONG_ZELDA",
+        "OOT Ganon Castle Light",
+        "option{GanonMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Ganon Castle Forest Trial First Chest",
+      "RequiredItems": [
+        "OOT_can_use_bow",
+        "OOT Ganon Castle Forest",
+        "option{GanonMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Ganon Castle Forest Trial Second Chest",
+      "RequiredItems": [
+        "OOT_has_fire",
+        "OOT Ganon Castle Forest",
+        "option{GanonMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Ganon Castle Water Trial Chest",
+      "RequiredItems": [
+        "OOT_EVENT_BLUE_FIRE",
+        "OOT Ganon Castle Water",
+        "option{GanonMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Ganon Castle Spirit Trial First Chest",
+      "RequiredItems": [
+        "OOT_can_hammer",
+        "OOT Ganon Castle Spirit",
+        "option{GanonMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_bow"
+        ],
+        [
+          "TRICK_OOT_HAMMER_WALLS"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Ganon Castle Spirit Trial Second Chest",
+      "RequiredItems": [
+        "OOT_can_hammer",
+        "OOT_has_explosives",
+        "OOT_has_lens",
+        "OOT Ganon Castle Spirit",
+        "option{GanonMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_bow"
+        ],
+        [
+          "TRICK_OOT_HAMMER_WALLS"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Ganon Castle Spirit Trial Back Right Sun Chest",
+      "RequiredItems": [
+        "OOT_can_hammer",
+        "OOT_has_fire_arrows",
+        "OOT_has_mirror_shield",
+        "OOT_has_explosives",
+        "OOT Ganon Castle Spirit",
+        "option{GanonMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Ganon Castle Spirit Trial Back Left Sun Chest",
+      "RequiredItems": [
+        "OOT_can_hammer",
+        "OOT_has_fire_arrows",
+        "OOT_has_mirror_shield",
+        "OOT_has_explosives",
+        "OOT Ganon Castle Spirit",
+        "option{GanonMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Ganon Castle Spirit Trial Front Left Sun Chest",
+      "RequiredItems": [
+        "OOT_can_hammer",
+        "OOT_has_fire_arrows",
+        "OOT_has_mirror_shield",
+        "OOT_has_explosives",
+        "OOT Ganon Castle Spirit",
+        "option{GanonMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Ganon Castle Spirit Trial Gold Gauntlets Chest",
+      "RequiredItems": [
+        "OOT_can_hammer",
+        "OOT_has_fire_arrows",
+        "OOT_has_mirror_shield",
+        "OOT_has_explosives",
+        "OOT Ganon Castle Spirit",
+        "option{GanonMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Ganon Castle Shadow Trial Bomb Flower Chest",
+      "RequiredItems": [
+        "OOT Ganon Castle Shadow",
+        "option{GanonMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_hookshot",
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_has_hover_boots",
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_can_hookshot",
+          "OOT_has_lens",
+          "OOT_can_use_din"
+        ],
+        [
+          "OOT_has_hover_boots",
+          "OOT_has_lens",
+          "OOT_can_use_din"
+        ],
+        [
+          "OOT_can_hookshot",
+          "OOT_has_lens",
+          "OOT_has_explosives"
+        ],
+        [
+          "OOT_has_hover_boots",
+          "OOT_has_lens",
+          "OOT_has_explosives"
+        ],
+        [
+          "OOT_can_hookshot",
+          "OOT_has_lens",
+          "OOT_STRENGTH"
+        ],
+        [
+          "OOT_has_hover_boots",
+          "OOT_has_lens",
+          "OOT_STRENGTH"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Ganon Castle Shadow Trial Switch Chest",
+      "RequiredItems": [
+        "OOT_can_use_bow",
+        "OOT_has_lens",
+        "OOT Ganon Castle Shadow",
+        "option{GanonMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_has_hover_boots"
+        ],
+        [
+          "OOT_can_hookshot",
+          "OOT_has_fire"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Ganon Castle Forest Trial Key",
+      "RequiredItems": [
+        "OOT_can_hookshot",
+        "OOT Ganon Castle Forest",
+        "option{GanonMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Initial Song of Healing",
       "RequiredItems": [
         "MM SPAWN"
@@ -15732,11 +15977,18 @@
     {
       "Id": "OOT Ganon Castle Main => OOT Ganon Castle Light",
       "RequiredItems": [
-        "OOT_STRENGTH, 3",
-        "OOT Ganon Castle Main",
-        "option{GanonMQ, false}"
+        "OOT Ganon Castle Main"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_can_lift_gold",
+          "option{GanonMQ, true}"
+        ],
+        [
+          "OOT_STRENGTH, 3",
+          "option{GanonMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -15745,10 +15997,16 @@
     {
       "Id": "OOT Ganon Castle Main => OOT Ganon Castle Forest",
       "RequiredItems": [
-        "OOT Ganon Castle Main",
-        "option{GanonMQ, false}"
+        "OOT Ganon Castle Main"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "option{GanonMQ, true}"
+        ],
+        [
+          "option{GanonMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -15757,10 +16015,16 @@
     {
       "Id": "OOT Ganon Castle Main => OOT Ganon Castle Fire",
       "RequiredItems": [
-        "OOT Ganon Castle Main",
-        "option{GanonMQ, false}"
+        "OOT Ganon Castle Main"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "option{GanonMQ, true}"
+        ],
+        [
+          "option{GanonMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -15769,10 +16033,16 @@
     {
       "Id": "OOT Ganon Castle Main => OOT Ganon Castle Water",
       "RequiredItems": [
-        "OOT Ganon Castle Main",
-        "option{GanonMQ, false}"
+        "OOT Ganon Castle Main"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "option{GanonMQ, true}"
+        ],
+        [
+          "option{GanonMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -15781,10 +16051,16 @@
     {
       "Id": "OOT Ganon Castle Main => OOT Ganon Castle Spirit",
       "RequiredItems": [
-        "OOT Ganon Castle Main",
-        "option{GanonMQ, false}"
+        "OOT Ganon Castle Main"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "option{GanonMQ, true}"
+        ],
+        [
+          "option{GanonMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -15793,10 +16069,16 @@
     {
       "Id": "OOT Ganon Castle Main => OOT Ganon Castle Shadow",
       "RequiredItems": [
-        "OOT Ganon Castle Main",
-        "option{GanonMQ, false}"
+        "OOT Ganon Castle Main"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "option{GanonMQ, true}"
+        ],
+        [
+          "option{GanonMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -15823,14 +16105,21 @@
     {
       "Id": "OOT_EVENT_GANON_TRIAL_LIGHT",
       "RequiredItems": [
-        "OOT_SMALL_KEY_GANON, 2",
-        "OOT_can_hookshot",
-        "OOT_has_lens",
         "OOT_has_light_arrows",
-        "OOT Ganon Castle Light",
-        "option{GanonMQ, false}"
+        "OOT_has_lens",
+        "OOT_can_hookshot",
+        "OOT Ganon Castle Light"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SMALL_KEY_GANON, 3",
+          "option{GanonMQ, true}"
+        ],
+        [
+          "OOT_SMALL_KEY_GANON, 2",
+          "option{GanonMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -15840,16 +16129,22 @@
       "Id": "OOT_EVENT_GANON_TRIAL_FOREST",
       "RequiredItems": [
         "OOT_has_light_arrows",
-        "OOT Ganon Castle Forest",
-        "option{GanonMQ, false}"
+        "OOT Ganon Castle Forest"
       ],
       "ConditionalItems": [
         [
-          "OOT_has_fire_arrows"
+          "OOT_OCARINA",
+          "OOT_SONG_TIME",
+          "option{GanonMQ, true}"
+        ],
+        [
+          "OOT_has_fire_arrows",
+          "option{GanonMQ, false}"
         ],
         [
           "OOT_can_use_din",
-          "OOT_has_ranged_weapon_adult"
+          "OOT_has_ranged_weapon_adult",
+          "option{GanonMQ, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -15861,13 +16156,26 @@
       "Id": "OOT_EVENT_GANON_TRIAL_FIRE",
       "RequiredItems": [
         "OOT_has_tunic_goron_strict",
-        "OOT_can_longshot",
-        "OOT_STRENGTH, 3",
-        "OOT_has_light_arrows",
-        "OOT Ganon Castle Fire",
-        "option{GanonMQ, false}"
+        "OOT Ganon Castle Fire"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_can_lift_gold",
+          "OOT_can_longshot",
+          "option{GanonMQ, true}"
+        ],
+        [
+          "OOT_can_lift_gold",
+          "OOT_has_hover_boots",
+          "option{GanonMQ, true}"
+        ],
+        [
+          "OOT_can_longshot",
+          "OOT_STRENGTH, 3",
+          "OOT_has_light_arrows",
+          "option{GanonMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -15888,6 +16196,10 @@
           "option{GTGMQ, true}"
         ],
         [
+          "OOT Ganon Castle Water",
+          "option{GanonMQ, true}"
+        ],
+        [
           "OOT_is_adult",
           "OOT Ice Cavern",
           "option{ICMQ, false}"
@@ -15906,12 +16218,19 @@
       "Id": "OOT_EVENT_GANON_TRIAL_WATER",
       "RequiredItems": [
         "OOT_EVENT_BLUE_FIRE",
-        "OOT_can_hammer",
         "OOT_has_light_arrows",
-        "OOT Ganon Castle Water",
-        "option{GanonMQ, false}"
+        "OOT Ganon Castle Water"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SMALL_KEY_GANON, 3",
+          "option{GanonMQ, true}"
+        ],
+        [
+          "OOT_can_hammer",
+          "option{GanonMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -15920,13 +16239,22 @@
     {
       "Id": "OOT_EVENT_GANON_TRIAL_SPIRIT",
       "RequiredItems": [
-        "OOT_can_hookshot",
-        "OOT_has_explosives",
         "OOT_has_light_arrows",
-        "OOT Ganon Castle Spirit",
-        "option{GanonMQ, false}"
+        "OOT_has_explosives",
+        "OOT Ganon Castle Spirit"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_fire_arrows",
+          "OOT_has_mirror_shield",
+          "OOT_can_hammer",
+          "option{GanonMQ, true}"
+        ],
+        [
+          "OOT_can_hookshot",
+          "option{GanonMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -15935,30 +16263,47 @@
     {
       "Id": "OOT_EVENT_GANON_TRIAL_SHADOW",
       "RequiredItems": [
-        "OOT_can_hammer",
         "OOT_has_light_arrows",
-        "OOT Ganon Castle Shadow",
-        "option{GanonMQ, false}"
+        "OOT Ganon Castle Shadow"
       ],
       "ConditionalItems": [
         [
+          "OOT_can_longshot",
+          "OOT_has_hover_boots",
+          "OOT_can_hammer",
+          "option{GanonMQ, false}"
+        ],
+        [
+          "OOT_has_lens",
+          "OOT_has_hover_boots",
+          "option{GanonMQ, true}"
+        ],
+        [
+          "OOT_has_lens",
+          "OOT_can_hookshot",
+          "OOT_has_fire",
+          "option{GanonMQ, true}"
+        ],
+        [
           "OOT_has_fire_arrows",
           "OOT_has_hover_boots",
-          "OOT_has_lens"
+          "OOT_has_lens",
+          "OOT_can_hammer",
+          "option{GanonMQ, false}"
         ],
         [
           "OOT_can_longshot",
           "OOT_has_fire",
-          "OOT_has_lens"
+          "OOT_has_lens",
+          "OOT_can_hammer",
+          "option{GanonMQ, false}"
         ],
         [
+          "option{GanonMQ, false}",
           "OOT_has_fire_arrows",
           "OOT_has_fire",
-          "OOT_has_lens"
-        ],
-        [
-          "OOT_can_longshot",
-          "OOT_has_hover_boots"
+          "OOT_has_lens",
+          "OOT_can_hammer"
         ]
       ],
       "TimeNeeded": "None",

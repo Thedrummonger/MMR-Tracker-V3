@@ -27,6 +27,7 @@ namespace Windows_Form_Frontend
         private bool FormIsMaximized = false;
         Thread MainInterfaceItemDisplayThread = null;
         ItemDisplay MainInterfaceItemDisplayForm = null;
+        private Dictionary<string, ToolStripMenuItem> MenuItemParentTree = new Dictionary<string, ToolStripMenuItem>();
         public MainInterface()
         {
             InitializeComponent();
@@ -130,7 +131,6 @@ namespace Windows_Form_Frontend
             Utility.TimeCodeExecution(TimeTotalItemSelect, "Undo/Redo Action", -1);
 
             InstanceContainer.logicCalculation.CalculateLogic();
-            SendDataToItemDisplay();
             UpdateUI();
         }
 
@@ -451,6 +451,7 @@ namespace Windows_Form_Frontend
 
             UpdateDynamicUserOptions();
             PrintToListBox();
+            SendDataToItemDisplay();
             this.Refresh();
         }
 
@@ -677,6 +678,8 @@ namespace Windows_Form_Frontend
         private void UpdateDynamicUserOptions()
         {
             RandomizerOptionsToolStripMenuItem1.DropDownItems.Clear();
+            MenuItemParentTree.Clear();
+            MenuItemParentTree.Add(RandomizerOptionsToolStripMenuItem1.Name, OptionstoolStripMenuItem);
 
             Dictionary<string, List<ToolStripMenuItem>> MenuItemGroups = new Dictionary<string, List<ToolStripMenuItem>>();
 
@@ -698,8 +701,12 @@ namespace Windows_Form_Frontend
             {
                 if (i.IsToggleOption())
                 {
-                    ToolStripMenuItem menuItem = new() { Checked = OptionData.GetToggleValues().Keys.Select(x => x.ToLower()).Contains(i.CurrentValue.ToLower()), Text = i.DisplayName };
-                    menuItem.Click += delegate (object sender, EventArgs e) { ToggleRandomizerOption_Click(sender, e, i); };
+                    ToolStripMenuItem menuItem = new() { Name = $"{i.ID}Menu", Checked = OptionData.GetToggleValues().Keys.Select(x => x.ToLower()).Contains(i.CurrentValue.ToLower()), Text = i.DisplayName };
+                    menuItem.Click += delegate (object sender, EventArgs e) 
+                    { 
+                        ToggleRandomizerOption_Click(sender, e, i);
+                        ReopenMenu(menuItem);
+                    };
                     GroupOption(menuItem, i.SubCategory);
                 }
                 else if (i.Values.Keys.Count > 1)//If the option only has one value, it will always be active so no need to display it.
@@ -718,14 +725,14 @@ namespace Windows_Form_Frontend
                     {
                         ToggleRandomizerOption_Click(sender, e, i, (toolStripComboBox.SelectedItem as MiscData.OptionComboboxItem).Value);
                     };
-                    ToolStripMenuItem menuItem = new() { Text = i.DisplayName };
+                    ToolStripMenuItem menuItem = new() { Name = $"{i.ID}Menu", Text = i.DisplayName };
                     menuItem.DropDownItems.Add(toolStripComboBox);
                     GroupOption(menuItem, i.SubCategory);
                 }
             }
             foreach(var i in InstanceContainer.Instance.Variables.Values.Where(x => !x.Static))
             {
-                ToolStripMenuItem menuItem = new() { Text = i.ToString() };
+                ToolStripMenuItem menuItem = new() { Name = $"{i.ID}Menu", Text = i.ToString() };
                 menuItem.Click += delegate (object sender, EventArgs e) { HandleItemSelect(new List<LogicDictionaryData.TrackerVariable> { i }, MiscData.CheckState.Checked); };
                 GroupOption(menuItem);
             }
@@ -735,13 +742,15 @@ namespace Windows_Form_Frontend
                 var Parent = RandomizerOptionsToolStripMenuItem1;
                 if (i != "MMRTROOTMENU")
                 {
-                    ToolStripMenuItem SubCategory = new() { Text = i.ToString() };
+                    ToolStripMenuItem SubCategory = new() { Name = $"{i}SubMenu", Text = i.ToString() };
                     RandomizerOptionsToolStripMenuItem1.DropDownItems.Add(SubCategory);
+                    MenuItemParentTree.Add(SubCategory.Name, RandomizerOptionsToolStripMenuItem1);
                     Parent = SubCategory;
                 }
                 foreach(var j in MenuItemGroups[i])
                 {
                     Parent.DropDownItems.Add(j);
+                    MenuItemParentTree.Add(j.Name, Parent);
                 }
             }
 
@@ -753,6 +762,15 @@ namespace Windows_Form_Frontend
                 if (!MenuItemGroups.ContainsKey(SubCategoryName)) { MenuItemGroups[SubCategoryName] = new List<ToolStripMenuItem>(); }
                 MenuItemGroups[SubCategoryName].Add(menuItem);
             }
+        }
+
+        private void ReopenMenu(ToolStripMenuItem menuItem)
+        {
+            if (MenuItemParentTree.ContainsKey(menuItem.Name))
+            {
+                ReopenMenu(MenuItemParentTree[menuItem.Name]);
+            }
+            menuItem.ShowDropDown();
         }
 
         //Context Menus
@@ -1014,7 +1032,6 @@ namespace Windows_Form_Frontend
             if (ChangesMade) 
             { 
                 SaveTrackerState(CurrentState);
-                SendDataToItemDisplay();
             }
             UpdateUI();
         }
