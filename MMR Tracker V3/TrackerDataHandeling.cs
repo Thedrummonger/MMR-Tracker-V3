@@ -267,7 +267,7 @@ namespace MMR_Tracker_V3
                 string CurrentLocation = "";
                 foreach (var i in CheckedLocations)
                 {
-                    if (!i.AppearsinListbox(Instance, Filter.StartsWith("^"))) { continue; }
+                    if (!i.IsUnrandomized(1) && !Filter.StartsWith("^")) { continue; }
                     i.DisplayName = Utility.GetLocationDisplayName(i, Instance);
 
                     ItemsInListBox++;
@@ -413,10 +413,7 @@ namespace MMR_Tracker_V3
             AvailableLocationsEntries = AvailableLocationsEntries.Where(x => !Utility.DynamicPropertyExist(x, "Hidden") || !(x as dynamic).Hidden);
 
             var AvailableHints = DataSets.AvailableHints;
-            if (Filter.StartsWith("^") || ShowUnavailable)
-            {
-                AvailableHints = DataSets.AllAvailableHints;
-            }
+            if (ShowAllLocation) { AvailableHints = DataSets.AllAvailableHints; }
 
             var ItemsInListBox = 0;
             var ItemsInListBoxFiltered = 0;
@@ -563,7 +560,7 @@ namespace MMR_Tracker_V3
                     bool DividerCreated = false;
                     foreach (var i in AvailableHints)
                     {
-                        if (i.RandomizedState == MiscData.RandomizedState.ForcedJunk) { continue; }
+                        if (i.RandomizedState == MiscData.RandomizedState.ForcedJunk && !ShowInvalidLocation) { continue; }
                         i.DisplayName = (i.CheckState == MiscData.CheckState.Marked) ? $"{i.GetDictEntry(Instance).Name}: {i.HintText}" : i.GetDictEntry(Instance).Name;
                         ItemsInListBox++;
                         if (!SearchStringParser.FilterSearch(Instance, i, Filter, i.DisplayName)) { continue; }
