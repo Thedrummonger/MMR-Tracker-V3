@@ -41,6 +41,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             public Dictionary<string, string> gossip = new Dictionary<string, string>();
         }
 
+        public static LogicStringParser OOTMMLogicParser = new LogicStringParser();
+
         public static void CreateFiles(out TrackerObjects.MMRData.LogicFile Logic, out TrackerObjects.LogicDictionaryData.LogicDictionary dictionary)
         {
             string TestFolder = Path.Combine(References.TestingPaths.GetDevCodePath(), "MMR Tracker V3", "Recources");
@@ -530,7 +532,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 if (Logic.ConditionalItems.Any() || Logic.RequiredItems.Any())
                 {
                     //Debug.WriteLine(DebugMessage);
-                    logicCleaner.MoveRequirementsToConditionals(Logic);
+                    LogicUtilities.MoveRequirementsToConditionals(Logic);
                     string CurrentLogic = $" || ({string.Join(" || ", Logic.ConditionalItems.Select(x => string.Join(" && ", x)))})";
                     return NewLogic + CurrentLogic;
                 }
@@ -544,7 +546,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 string OpositeGame = Game == "OOT" ? "MM" : "OOT";
                 bool VariableDungeon = VariableDungeons.Contains(file);
                 bool MQDungeon = file.Contains(@"\world_mq");
-                var FileOBJ = JsonConvert.DeserializeObject<Dictionary<string, MMROOTLogicEntry>>(LogicStringParser.ConvertYamlStringToJsonString(File.ReadAllText(file)));
+                var FileOBJ = JsonConvert.DeserializeObject<Dictionary<string, MMROOTLogicEntry>>(Utility.ConvertYamlStringToJsonString(File.ReadAllText(file)));
                 foreach(var key in FileOBJ.Keys)
                 {
                     foreach(var i in FileOBJ[key].locations?.Keys.ToArray()??Array.Empty<string>())
@@ -555,8 +557,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                             string Logic = GetLogic(FileOBJ[key].locations[i], Game, key, VariableDungeon, MQDungeon, FileOBJ[key].dungeon);
                             Logic = CombineLogicFromOtherSource(LogicFileEntry, Logic, $"LOGGING- {key} {i} Duplicate Logic Entry");
                             LogicFileEntry.ConditionalItems = ParselogicLine(Logic, Game);
-                            logicCleaner.RemoveRedundantConditionals(LogicFileEntry);
-                            logicCleaner.MakeCommonConditionalsRequirements(LogicFileEntry);
+                            LogicUtilities.RemoveRedundantConditionals(LogicFileEntry);
+                            LogicUtilities.MakeCommonConditionalsRequirements(LogicFileEntry);
                         }
                         else
                         {
@@ -575,8 +577,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                             Logic = CombineLogicFromOtherSource(LogicFileEntry, Logic, $"LOGGING- {FullexitName} Duplicate Logic Entry");
                             if (FullexitName == "OOT SPAWN => OOT Link's House") { Logic = FileOBJ[key].exits[i]; }
                             LogicFileEntry.ConditionalItems = ParselogicLine(Logic, Game);
-                            logicCleaner.RemoveRedundantConditionals(LogicFileEntry);
-                            logicCleaner.MakeCommonConditionalsRequirements(LogicFileEntry);
+                            LogicUtilities.RemoveRedundantConditionals(LogicFileEntry);
+                            LogicUtilities.MakeCommonConditionalsRequirements(LogicFileEntry);
                         }
                         else
                         {
@@ -592,8 +594,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                             string Logic = GetLogic(FileOBJ[key].events[i], Game, key, VariableDungeon, MQDungeon, FileOBJ[key].dungeon);
                             Logic = CombineLogicFromOtherSource(LogicFileEntry, Logic, $"LOGGING- {key} {i} Duplicate Logic Entry");
                             LogicFileEntry.ConditionalItems = ParselogicLine(Logic, Game);
-                            logicCleaner.RemoveRedundantConditionals(LogicFileEntry);
-                            logicCleaner.MakeCommonConditionalsRequirements(LogicFileEntry);
+                            LogicUtilities.RemoveRedundantConditionals(LogicFileEntry);
+                            LogicUtilities.MakeCommonConditionalsRequirements(LogicFileEntry);
                         }
                     }
                     foreach (var i in FileOBJ[key].gossip?.Keys.ToArray()??Array.Empty<string>())
@@ -604,8 +606,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                             string Logic = GetLogic(FileOBJ[key].gossip[i], Game, key, VariableDungeon, MQDungeon, FileOBJ[key].dungeon);
                             Logic = CombineLogicFromOtherSource(LogicFileEntry, Logic, $"LOGGING- {key} {i} Duplicate Logic Entry");
                             LogicFileEntry.ConditionalItems = ParselogicLine(Logic, Game);
-                            logicCleaner.RemoveRedundantConditionals(LogicFileEntry);
-                            logicCleaner.MakeCommonConditionalsRequirements(LogicFileEntry);
+                            LogicUtilities.RemoveRedundantConditionals(LogicFileEntry);
+                            LogicUtilities.MakeCommonConditionalsRequirements(LogicFileEntry);
                         }
                         else
                         {
@@ -621,8 +623,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 {
                     string Logic = $"({MMMacros[key]})";
                     LogicFileEntry.ConditionalItems = ParselogicLine(Logic, "MM");
-                    logicCleaner.RemoveRedundantConditionals(LogicFileEntry);
-                    logicCleaner.MakeCommonConditionalsRequirements(LogicFileEntry);
+                    LogicUtilities.RemoveRedundantConditionals(LogicFileEntry);
+                    LogicUtilities.MakeCommonConditionalsRequirements(LogicFileEntry);
                 }
                 else
                 {
@@ -636,8 +638,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 {
                     string Logic = $"({OOTMacros[key]})";
                     LogicFileEntry.ConditionalItems = ParselogicLine(Logic, "OOT");
-                    logicCleaner.RemoveRedundantConditionals(LogicFileEntry);
-                    logicCleaner.MakeCommonConditionalsRequirements(LogicFileEntry);
+                    LogicUtilities.RemoveRedundantConditionals(LogicFileEntry);
+                    LogicUtilities.MakeCommonConditionalsRequirements(LogicFileEntry);
                 }
                 else
                 {
@@ -653,9 +655,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             Dictionary<string, string> MMMacros = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(MMOOTCodeMMMacros));
             Dictionary<string, string> OOTMacros = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(MMOOTCodeOOTMacros));
 
-            LogicStringParser.OperatorList operators = new LogicStringParser.OperatorList(new string[] { "&&" }, new string[] { "||" });
             string CleanLine = ParseFunction(Line, Game);
-            List<List<string>> logic = LogicStringParser.ConvertLogicStringToConditional(CleanLine, operators);
+            List<List<string>> logic = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicParser, CleanLine);
 
             List<List<string>> finallogic = new List<List<string>>();
 
@@ -684,7 +685,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
         public static string ParseFunction(string LogicLine, string CurrentGame)
         {
             string line = LogicLine;
-            var FunctionsFound = LogicStringParser.GetFunctionsFromLogicString(line);
+            var ParsedLine = OOTMMLogicParser.ParseLogicString(line);
+            var FunctionsFound = ParsedLine.Where(x => x.Type == LogicStringParser.EntryType.function).Select(x => new LogicUtilities.LogicFunction(x.Text)).ToArray();
 
             while (FunctionsFound.Any())
             {
@@ -764,7 +766,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         line = line.Replace(FullFunction, $"ERROR UNHANDLED FUNTION {Function}");
                         break;
                 }
-                FunctionsFound = LogicStringParser.GetFunctionsFromLogicString(line);
+                ParsedLine = OOTMMLogicParser.ParseLogicString(line);
+                FunctionsFound = ParsedLine.Where(x => x.Type == LogicStringParser.EntryType.function).Select(x => new LogicUtilities.LogicFunction(x.Text)).ToArray();
             }
             return line;
         }
@@ -825,7 +828,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 string OpositeGame = Game == "OOT" ? "MM" : "OOT";
                 foreach (var i in WorldFiles)
                 {
-                    var text = LogicStringParser.ConvertYamlStringToJsonString(File.ReadAllText(i));
+                    var text = Utility.ConvertYamlStringToJsonString(File.ReadAllText(i));
                     var LogicObject = JsonConvert.DeserializeObject<Dictionary<string, MMROOTLogicEntry>>(text);
                     foreach (var l in LogicObject.Keys)
                     {

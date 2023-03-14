@@ -4209,9 +4209,9 @@
           "OOT Fire Temple Maze"
         ],
         [
+          "OOT Fire Temple Maze",
           "option{smallKeyShuffle, anywhere, false}",
-          "OOT_SMALL_KEY_FIRE, 4",
-          "OOT Fire Temple Maze"
+          "OOT_SMALL_KEY_FIRE, 4"
         ]
       ],
       "TimeNeeded": "None",
@@ -5748,18 +5748,44 @@
     },
     {
       "Id": "OOT Spirit Temple Silver Gauntlets",
-      "RequiredItems": [
-        "option{SpiritMQ, false}"
-      ],
+      "RequiredItems": [],
       "ConditionalItems": [
         [
-          "OOT_SMALL_KEY_SPIRIT, 3",
-          "OOT_HOOKSHOT, 2",
-          "OOT_has_explosives",
-          "OOT Spirit Temple Statue"
+          "OOT Spirit Temple Child Hand",
+          "option{SpiritMQ, true}"
         ],
         [
-          "OOT Spirit Temple Child Hand"
+          "option{SpiritMQ, true}",
+          "OOT_SMALL_KEY_SPIRIT, 4",
+          "OOT_has_explosives",
+          "OOT_OCARINA",
+          "OOT_SONG_TIME",
+          "OOT_is_child",
+          "OOT_has_weapon",
+          "OOT_has_lens",
+          "OOT Spirit Temple"
+        ],
+        [
+          "option{SpiritMQ, true}",
+          "OOT_SMALL_KEY_SPIRIT, 4",
+          "OOT_has_explosives",
+          "OOT_OCARINA",
+          "OOT_SONG_TIME",
+          "OOT_is_child",
+          "OOT_has_lens",
+          "OOT Spirit Temple",
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT Spirit Temple Child Hand",
+          "option{SpiritMQ, false}"
+        ],
+        [
+          "OOT_has_explosives",
+          "OOT_SMALL_KEY_SPIRIT, 3",
+          "OOT_HOOKSHOT, 2",
+          "OOT Spirit Temple Statue",
+          "option{SpiritMQ, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -5770,10 +5796,17 @@
     {
       "Id": "OOT Spirit Temple Mirror Shield",
       "RequiredItems": [
-        "OOT Spirit Temple Adult Hand",
-        "option{SpiritMQ, false}"
+        "OOT Spirit Temple Adult Hand"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_lens",
+          "option{SpiritMQ, true}"
+        ],
+        [
+          "option{SpiritMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -8152,6 +8185,394 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT MQ Spirit Temple Entrance Initial Chest",
+      "RequiredItems": [
+        "OOT Spirit Temple",
+        "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Spirit Temple Lobby Back-Left Chest",
+      "RequiredItems": [
+        "OOT_EVENT_SPIRIT_LOBBY_BOULDERS",
+        "OOT_can_hit_triggers_distance",
+        "OOT Spirit Temple",
+        "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Spirit Temple Lobby Back-Right Chest",
+      "RequiredItems": [
+        "OOT Spirit Temple",
+        "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_hit_triggers_distance"
+        ],
+        [
+          "OOT_has_explosives"
+        ],
+        [
+          "OOT_can_hookshot"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Spirit Temple Compass Chest",
+      "RequiredItems": [
+        "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_slingshot",
+          "OOT Spirit Temple Statue"
+        ],
+        [
+          "OOT_can_use_bow",
+          "OOT Spirit Temple Statue"
+        ],
+        [
+          "OOT_can_use_slingshot",
+          "OOT_BOW",
+          "OOT_SMALL_KEY_SPIRIT, 2",
+          "OOT_has_explosives",
+          "OOT Spirit Temple"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Spirit Temple Sun Block Room Chest",
+      "RequiredItems": [
+        "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT Spirit Temple Sun Block Room"
+        ],
+        [
+          "OOT_SMALL_KEY_SPIRIT, 2",
+          "OOT_has_explosives",
+          "OOT_OCARINA",
+          "OOT_SONG_TIME",
+          "OOT_is_child",
+          "OOT Spirit Temple"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Spirit Temple Map Chest",
+      "RequiredItems": [
+        "OOT Spirit Temple Child Side",
+        "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_has_explosives",
+          "OOT_has_nuts"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Spirit Temple Map Room Back Chest",
+      "RequiredItems": [
+        "OOT_has_weapon",
+        "OOT_has_explosives",
+        "OOT_can_use_slingshot",
+        "OOT_can_use_din",
+        "OOT Spirit Temple Child Side",
+        "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Spirit Temple Paradox Chest",
+      "RequiredItems": [
+        "OOT_EVENT_SPIRIT_PARADOX",
+        "OOT Spirit Temple Child Side",
+        "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Spirit Temple Child Upper Ground Chest",
+      "RequiredItems": [
+        "OOT_has_weapon",
+        "OOT Spirit Temple Child Upper",
+        "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Spirit Temple Child Upper Ledge Chest",
+      "RequiredItems": [
+        "OOT_can_hookshot",
+        "OOT Spirit Temple Child Upper",
+        "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Spirit Temple Silver Block Room Target Chest",
+      "RequiredItems": [
+        "OOT_EVENT_SPIRIT_STATUE_FIRE",
+        "OOT_can_use_slingshot",
+        "OOT Spirit Temple Statue",
+        "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Spirit Temple Chest in Box",
+      "RequiredItems": [
+        "OOT_OCARINA",
+        "OOT_SONG_ZELDA",
+        "OOT_is_adult",
+        "OOT Spirit Temple Statue",
+        "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Spirit Temple Statue Room Ledge Chest",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT_has_lens",
+        "OOT Spirit Temple Statue",
+        "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Spirit Temple Lobby Front-Right Chest",
+      "RequiredItems": [
+        "OOT_can_hammer",
+        "OOT Spirit Temple Adult Lower",
+        "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Spirit Temple Purple Leever Chest",
+      "RequiredItems": [
+        "OOT Spirit Temple Adult Lower",
+        "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Spirit Temple Symphony Room Chest",
+      "RequiredItems": [
+        "OOT_SMALL_KEY_SPIRIT, 7",
+        "OOT_can_hammer",
+        "OOT_OCARINA",
+        "OOT_SONG_TIME",
+        "OOT_SONG_EPONA",
+        "OOT_SONG_SUN",
+        "OOT_SONG_STORMS",
+        "OOT_SONG_ZELDA",
+        "OOT Spirit Temple Adult Lower",
+        "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Spirit Temple Beamos Room Chest",
+      "RequiredItems": [
+        "OOT Spirit Temple Adult Upper",
+        "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Spirit Temple Dinolfos Room Chest",
+      "RequiredItems": [
+        "OOT Spirit Temple Adult Hand",
+        "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Spirit Temple Boss Key Chest",
+      "RequiredItems": [
+        "OOT_has_mirror_shield",
+        "OOT Spirit Temple Adult Hand",
+        "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Spirit Temple Topmost Chest",
+      "RequiredItems": [
+        "OOT_OCARINA",
+        "OOT_SONG_ZELDA",
+        "OOT_can_hammer",
+        "OOT_has_lens",
+        "OOT Spirit Temple Top Floor",
+        "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Spirit Temple GS Sun Block Room",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT Spirit Temple Sun Block Room",
+        "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Spirit Temple GS Leever Room",
+      "RequiredItems": [
+        "OOT Spirit Temple Adult Lower",
+        "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Spirit Temple GS Symphony Room",
+      "RequiredItems": [
+        "OOT_SMALL_KEY_SPIRIT, 7",
+        "OOT_can_hammer",
+        "OOT_OCARINA",
+        "OOT_SONG_TIME",
+        "OOT_SONG_EPONA",
+        "OOT_SONG_SUN",
+        "OOT_SONG_STORMS",
+        "OOT_SONG_ZELDA",
+        "OOT Spirit Temple Adult Lower",
+        "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Spirit Temple GS Top Floor Left Wall",
+      "RequiredItems": [
+        "OOT_SMALL_KEY_SPIRIT, 7",
+        "OOT Spirit Temple Top Floor",
+        "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Spirit Temple GS Top Floor Back Wall",
+      "RequiredItems": [
+        "OOT_SMALL_KEY_SPIRIT, 7",
+        "OOT Spirit Temple Top Floor",
+        "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT MQ Gerudo Training Grounds Entryway Left Chest",
       "RequiredItems": [
         "OOT Gerudo Training Grounds",
@@ -8567,34 +8988,14 @@
           "OOT_can_use_bow"
         ],
         [
-          "OOT_can_hookshot",
-          "OOT_has_lens",
-          "OOT_can_use_din"
-        ],
-        [
           "OOT_has_hover_boots",
           "OOT_has_lens",
           "OOT_can_use_din"
         ],
         [
-          "OOT_can_hookshot",
-          "OOT_has_lens",
-          "OOT_has_explosives"
-        ],
-        [
           "OOT_has_hover_boots",
           "OOT_has_lens",
-          "OOT_has_explosives"
-        ],
-        [
-          "OOT_can_hookshot",
-          "OOT_has_lens",
-          "OOT_STRENGTH"
-        ],
-        [
-          "OOT_has_hover_boots",
-          "OOT_has_lens",
-          "OOT_STRENGTH"
+          "OOT_has_bombflowers"
         ]
       ],
       "TimeNeeded": "None",
@@ -9717,8 +10118,8 @@
           "MM_HOOKSHOT"
         ],
         [
-          "MM_EVENT_CLEAN_SWAMP",
-          "MM_can_use_beans"
+          "MM_can_use_beans",
+          "MM_EVENT_CLEAN_SWAMP"
         ]
       ],
       "TimeNeeded": "None",
@@ -12143,8 +12544,8 @@
           "MM_scarecrow_hookshot"
         ],
         [
-          "MM Snowhead Temple Map Room Upper",
-          "MM_scarecrow_hookshot"
+          "MM_scarecrow_hookshot",
+          "MM Snowhead Temple Map Room Upper"
         ]
       ],
       "TimeNeeded": "None",
@@ -12258,8 +12659,8 @@
           "MM Snowhead Temple Bridge Front"
         ],
         [
-          "MM_HOOKSHOT",
-          "MM Snowhead Temple Bridge Front"
+          "MM Snowhead Temple Bridge Front",
+          "MM_HOOKSHOT"
         ]
       ],
       "TimeNeeded": "None",
@@ -13245,12 +13646,12 @@
           "MM Stone Tower Temple Inverted Wizzrobe Ledge"
         ],
         [
-          "MM_can_fight",
+          "MM_BOW",
           "MM_HOOKSHOT",
           "MM Stone Tower Temple Inverted Wizzrobe"
         ],
         [
-          "MM_BOW",
+          "MM_can_fight",
           "MM_HOOKSHOT",
           "MM Stone Tower Temple Inverted Wizzrobe"
         ]
@@ -13864,16 +14265,16 @@
           "option{BotWMQ, false}"
         ],
         [
-          "OOT_has_weapon",
-          "option{BotWMQ, false}"
+          "option{BotWMQ, false}",
+          "OOT_has_weapon"
         ],
         [
-          "OOT_has_explosives",
-          "option{BotWMQ, false}"
+          "option{BotWMQ, false}",
+          "OOT_has_explosives"
         ],
         [
-          "OOT_has_ranged_weapon_child",
-          "option{BotWMQ, false}"
+          "option{BotWMQ, false}",
+          "OOT_has_ranged_weapon_child"
         ]
       ],
       "TimeNeeded": "None",
@@ -13904,88 +14305,63 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
+          "OOT_can_hookshot",
+          "OOT Forest Temple East Garden",
+          "option{ForestMQ, true}"
+        ],
+        [
+          "OOT_can_hammer",
+          "OOT Forest Temple East Garden",
+          "option{ForestMQ, true}"
+        ],
+        [
           "OOT_can_boomerang",
+          "OOT Forest Temple East Garden",
+          "option{ForestMQ, true}"
+        ],
+        [
+          "OOT_has_nuts",
+          "OOT_has_weapon",
+          "OOT Forest Temple East Garden",
+          "option{ForestMQ, true}"
+        ],
+        [
+          "OOT_has_weapon",
           "OOT Deku Tree Lobby",
           "option{DTMQ, true}"
         ],
         [
-          "OOT_can_hookshot",
-          "OOT Forest Temple Garden West",
-          "option{ForestMQ, false}"
-        ],
-        [
-          "OOT_can_hammer",
-          "OOT Forest Temple Garden West",
-          "option{ForestMQ, false}"
-        ],
-        [
-          "OOT_can_boomerang",
-          "OOT Forest Temple Garden West",
-          "option{ForestMQ, false}"
+          "OOT Deku Tree Lobby",
+          "option{DTMQ, true}",
+          "OOT_can_boomerang"
         ],
         [
           "OOT_is_child",
           "OOT Zora Domain"
         ],
         [
-          "OOT_has_nuts",
-          "OOT_has_weapon",
-          "OOT Forest Temple Garden West",
-          "option{ForestMQ, false}"
-        ],
-        [
-          "OOT_can_kill_baba_sticks",
-          "OOT Deku Tree Lobby",
-          "option{DTMQ, false}"
-        ],
-        [
-          "OOT Bottom of the Well Main",
-          "option{BotWMQ, false}"
-        ],
-        [
           "OOT_can_boomerang",
           "OOT Kokiri Forest"
         ],
         [
-          "OOT_can_hookshot",
-          "OOT Forest Temple East Garden",
-          "option{ForestMQ, true}"
-        ],
-        [
-          "OOT_can_hammer",
-          "OOT Forest Temple East Garden",
-          "option{ForestMQ, true}"
-        ],
-        [
-          "OOT_can_boomerang",
-          "OOT Forest Temple East Garden",
-          "option{ForestMQ, true}"
-        ],
-        [
-          "OOT_has_nuts",
           "OOT_has_weapon",
-          "OOT Forest Temple East Garden",
-          "option{ForestMQ, true}"
-        ],
-        [
           "OOT_is_child",
-          "OOT_has_weapon",
           "OOT Kokiri Forest"
-        ],
-        [
-          "OOT_can_hookshot",
-          "OOT Forest Temple Garden East",
-          "option{ForestMQ, false}"
-        ],
-        [
-          "OOT_can_hammer",
-          "OOT Forest Temple Garden East",
-          "option{ForestMQ, false}"
         ],
         [
           "OOT_can_boomerang",
           "OOT Forest Temple Garden East",
           "option{ForestMQ, false}"
+        ],
+        [
+          "OOT Forest Temple Garden East",
+          "option{ForestMQ, false}",
+          "OOT_can_hookshot"
+        ],
+        [
+          "OOT Forest Temple Garden East",
+          "option{ForestMQ, false}",
+          "OOT_can_hammer"
         ],
         [
           "OOT_has_weapon",
@@ -13994,9 +14370,34 @@
           "OOT_has_nuts"
         ],
         [
+          "OOT_can_boomerang",
+          "option{ForestMQ, false}",
+          "OOT Forest Temple Garden West"
+        ],
+        [
+          "option{ForestMQ, false}",
+          "OOT_can_hookshot",
+          "OOT Forest Temple Garden West"
+        ],
+        [
+          "option{ForestMQ, false}",
+          "OOT_can_hammer",
+          "OOT Forest Temple Garden West"
+        ],
+        [
           "OOT_has_weapon",
+          "option{ForestMQ, false}",
+          "OOT_has_nuts",
+          "OOT Forest Temple Garden West"
+        ],
+        [
           "OOT Deku Tree Lobby",
-          "option{DTMQ, true}"
+          "OOT_can_kill_baba_sticks",
+          "option{DTMQ, false}"
+        ],
+        [
+          "OOT Bottom of the Well Main",
+          "option{BotWMQ, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -14086,26 +14487,6 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "OOT_has_explosives",
-          "OOT Forest Temple Garden East",
-          "option{ForestMQ, false}"
-        ],
-        [
-          "OOT_can_use_slingshot",
-          "OOT Forest Temple Garden East",
-          "option{ForestMQ, false}"
-        ],
-        [
-          "OOT_is_adult",
-          "OOT Forest Temple Garden West",
-          "option{ForestMQ, false}"
-        ],
-        [
-          "OOT_has_weapon",
-          "OOT Forest Temple Garden West",
-          "option{ForestMQ, false}"
-        ],
-        [
           "OOT_is_adult",
           "OOT Forest Temple East Garden",
           "option{ForestMQ, true}"
@@ -14124,26 +14505,11 @@
           "OOT_can_use_slingshot",
           "OOT Forest Temple East Garden",
           "option{ForestMQ, true}"
-        ],
-        [
-          "OOT_has_explosives",
-          "OOT Forest Temple Garden West",
-          "option{ForestMQ, false}"
-        ],
-        [
-          "OOT_can_use_slingshot",
-          "OOT Forest Temple Garden West",
-          "option{ForestMQ, false}"
         ],
         [
           "OOT_can_kill_baba_nuts",
           "OOT Deku Tree Lobby",
           "option{DTMQ, true}"
-        ],
-        [
-          "OOT_can_kill_baba_nuts",
-          "OOT Deku Tree Lobby",
-          "option{DTMQ, false}"
         ],
         [
           "OOT Zora Domain"
@@ -14154,9 +14520,44 @@
           "option{ForestMQ, false}"
         ],
         [
-          "OOT_has_weapon",
           "OOT Forest Temple Garden East",
-          "option{ForestMQ, false}"
+          "option{ForestMQ, false}",
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT Forest Temple Garden East",
+          "option{ForestMQ, false}",
+          "OOT_has_explosives"
+        ],
+        [
+          "OOT Forest Temple Garden East",
+          "option{ForestMQ, false}",
+          "OOT_can_use_slingshot"
+        ],
+        [
+          "OOT_is_adult",
+          "option{ForestMQ, false}",
+          "OOT Forest Temple Garden West"
+        ],
+        [
+          "option{ForestMQ, false}",
+          "OOT_has_weapon",
+          "OOT Forest Temple Garden West"
+        ],
+        [
+          "option{ForestMQ, false}",
+          "OOT_has_explosives",
+          "OOT Forest Temple Garden West"
+        ],
+        [
+          "option{ForestMQ, false}",
+          "OOT_can_use_slingshot",
+          "OOT Forest Temple Garden West"
+        ],
+        [
+          "OOT_can_kill_baba_nuts",
+          "OOT Deku Tree Lobby",
+          "option{DTMQ, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -14344,8 +14745,8 @@
           "option{DCMQ, false}"
         ],
         [
-          "OOT_can_hammer",
-          "option{DCMQ, false}"
+          "option{DCMQ, false}",
+          "OOT_can_hammer"
         ]
       ],
       "TimeNeeded": "None",
@@ -14448,8 +14849,8 @@
           "option{DCMQ, false}"
         ],
         [
-          "OOT_can_hammer",
-          "option{DCMQ, false}"
+          "option{DCMQ, false}",
+          "OOT_can_hammer"
         ]
       ],
       "TimeNeeded": "None",
@@ -15010,9 +15411,9 @@
           "option{FireMQ, false}"
         ],
         [
-          "OOT_has_hover_boots",
           "OOT_has_tunic_goron",
-          "option{FireMQ, false}"
+          "option{FireMQ, false}",
+          "OOT_has_hover_boots"
         ]
       ],
       "TimeNeeded": "None",
@@ -15278,20 +15679,20 @@
           "option{ForestMQ, false}"
         ],
         [
-          "OOT_has_nuts",
-          "option{ForestMQ, false}"
+          "option{ForestMQ, false}",
+          "OOT_has_nuts"
         ],
         [
-          "OOT_has_weapon",
-          "option{ForestMQ, false}"
+          "option{ForestMQ, false}",
+          "OOT_has_weapon"
         ],
         [
-          "OOT_has_explosives",
-          "option{ForestMQ, false}"
+          "option{ForestMQ, false}",
+          "OOT_has_explosives"
         ],
         [
-          "OOT_has_ranged_weapon_child",
-          "option{ForestMQ, false}"
+          "option{ForestMQ, false}",
+          "OOT_has_ranged_weapon_child"
         ]
       ],
       "TimeNeeded": "None",
@@ -16142,9 +16543,9 @@
           "option{GanonMQ, false}"
         ],
         [
+          "option{GanonMQ, false}",
           "OOT_can_use_din",
-          "OOT_has_ranged_weapon_adult",
-          "option{GanonMQ, false}"
+          "OOT_has_ranged_weapon_adult"
         ]
       ],
       "TimeNeeded": "None",
@@ -16155,6 +16556,7 @@
     {
       "Id": "OOT_EVENT_GANON_TRIAL_FIRE",
       "RequiredItems": [
+        "OOT_has_light_arrows",
         "OOT_has_tunic_goron_strict",
         "OOT Ganon Castle Fire"
       ],
@@ -16172,7 +16574,6 @@
         [
           "OOT_can_longshot",
           "OOT_STRENGTH, 3",
-          "OOT_has_light_arrows",
           "option{GanonMQ, false}"
         ]
       ],
@@ -16268,12 +16669,6 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_can_longshot",
-          "OOT_has_hover_boots",
-          "OOT_can_hammer",
-          "option{GanonMQ, false}"
-        ],
-        [
           "OOT_has_lens",
           "OOT_has_hover_boots",
           "option{GanonMQ, true}"
@@ -16285,25 +16680,31 @@
           "option{GanonMQ, true}"
         ],
         [
-          "OOT_has_fire_arrows",
+          "OOT_can_longshot",
           "OOT_has_hover_boots",
-          "OOT_has_lens",
           "OOT_can_hammer",
           "option{GanonMQ, false}"
+        ],
+        [
+          "OOT_has_hover_boots",
+          "OOT_can_hammer",
+          "option{GanonMQ, false}",
+          "OOT_has_fire_arrows",
+          "OOT_has_lens"
         ],
         [
           "OOT_can_longshot",
-          "OOT_has_fire",
-          "OOT_has_lens",
           "OOT_can_hammer",
-          "option{GanonMQ, false}"
+          "option{GanonMQ, false}",
+          "OOT_has_lens",
+          "OOT_has_fire"
         ],
         [
+          "OOT_can_hammer",
           "option{GanonMQ, false}",
           "OOT_has_fire_arrows",
-          "OOT_has_fire",
           "OOT_has_lens",
-          "OOT_can_hammer"
+          "OOT_has_fire"
         ]
       ],
       "TimeNeeded": "None",
@@ -16680,8 +17081,8 @@
           "option{JJMQ, false}"
         ],
         [
-          "OOT_has_explosives",
-          "option{JJMQ, false}"
+          "option{JJMQ, false}",
+          "OOT_has_explosives"
         ]
       ],
       "TimeNeeded": "None",
@@ -19781,9 +20182,9 @@
           "option{ShadowMQ, false}"
         ],
         [
-          "OOT_scarecrow_longshot",
           "OOT_SMALL_KEY_SHADOW, 5",
-          "option{ShadowMQ, false}"
+          "option{ShadowMQ, false}",
+          "OOT_scarecrow_longshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -19955,10 +20356,17 @@
     {
       "Id": "OOT Spirit Temple Child Upper => OOT Spirit Temple Statue",
       "RequiredItems": [
-        "OOT Spirit Temple Child Upper",
-        "option{SpiritMQ, false}"
+        "OOT Spirit Temple Child Upper"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SMALL_KEY_SPIRIT, 7",
+          "option{SpiritMQ, true}"
+        ],
+        [
+          "option{SpiritMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -19993,10 +20401,16 @@
     {
       "Id": "OOT Spirit Temple Child Hand => OOT Desert Colossus",
       "RequiredItems": [
-        "OOT Spirit Temple Child Hand",
-        "option{SpiritMQ, false}"
+        "OOT Spirit Temple Child Hand"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "option{SpiritMQ, true}"
+        ],
+        [
+          "option{SpiritMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -20055,10 +20469,17 @@
     {
       "Id": "OOT Spirit Temple Statue => OOT Spirit Temple Child Upper",
       "RequiredItems": [
-        "OOT Spirit Temple Statue",
-        "option{SpiritMQ, false}"
+        "OOT Spirit Temple Statue"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SMALL_KEY_SPIRIT, 7",
+          "option{SpiritMQ, true}"
+        ],
+        [
+          "option{SpiritMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -20067,14 +20488,16 @@
     {
       "Id": "OOT Spirit Temple Statue => OOT Spirit Temple Boss",
       "RequiredItems": [
+        "OOT_BOSS_KEY_SPIRIT",
         "OOT Spirit Temple Statue"
       ],
       "ConditionalItems": [
         [
+          "OOT_EVENT_SPIRIT_TEMPLE_LIGHT",
+          "OOT_has_mirror_shield",
           "option{SpiritMQ, true}"
         ],
         [
-          "OOT_BOSS_KEY_SPIRIT",
           "OOT_EVENT_SPIRIT_LIGHT_STATUE",
           "OOT_can_hookshot",
           "option{SpiritMQ, false}"
@@ -20163,11 +20586,18 @@
     {
       "Id": "OOT Spirit Temple Adult Hand => OOT Spirit Temple Child Hand",
       "RequiredItems": [
-        "OOT_can_longshot",
-        "OOT Spirit Temple Adult Hand",
-        "option{SpiritMQ, false}"
+        "OOT Spirit Temple Adult Hand"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_lens",
+          "option{SpiritMQ, true}"
+        ],
+        [
+          "OOT_can_longshot",
+          "option{SpiritMQ, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -22265,9 +22695,196 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Spirit Temple => OOT Spirit Temple Child Side",
+      "RequiredItems": [
+        "OOT_is_child",
+        "OOT Spirit Temple",
+        "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Spirit Temple => OOT Spirit Temple Statue",
       "RequiredItems": [
+        "OOT_can_longshot",
+        "OOT_has_explosives",
+        "OOT_can_lift_silver",
         "OOT Spirit Temple",
+        "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_SPIRIT_LOBBY_BOULDERS",
+      "RequiredItems": [
+        "OOT_has_explosives_or_hammer",
+        "OOT Spirit Temple",
+        "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Spirit Temple Child Side => OOT Spirit Temple Child Upper",
+      "RequiredItems": [
+        "OOT_has_explosives",
+        "OOT_SMALL_KEY_SPIRIT, 6",
+        "OOT Spirit Temple Child Side",
+        "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_SPIRIT_PARADOX",
+      "RequiredItems": [
+        "OOT_can_hammer",
+        "OOT Spirit Temple Child Upper",
+        "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Spirit Temple Statue => OOT Spirit Temple Sun Block Room",
+      "RequiredItems": [
+        "OOT Spirit Temple Statue",
+        "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_is_adult"
+        ],
+        [
+          "OOT_OCARINA",
+          "OOT_SONG_TIME"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Spirit Temple Statue => OOT Spirit Temple Adult Lower",
+      "RequiredItems": [
+        "OOT_has_fire_arrows",
+        "OOT_has_mirror_shield",
+        "OOT Spirit Temple Statue",
+        "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Spirit Temple Statue => OOT Spirit Temple Adult Upper",
+      "RequiredItems": [
+        "OOT_SMALL_KEY_SPIRIT, 5",
+        "OOT Spirit Temple Statue",
+        "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_SPIRIT_STATUE_FIRE",
+      "RequiredItems": [
+        "OOT_has_fire",
+        "OOT Spirit Temple Statue",
+        "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Spirit Temple Sun Block Room => OOT Spirit Temple Child Hand",
+      "RequiredItems": [
+        "OOT Spirit Temple Sun Block Room",
+        "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_SMALL_KEY_SPIRIT, 7",
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_SMALL_KEY_SPIRIT, 7",
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT_SMALL_KEY_SPIRIT, 4",
+          "OOT_has_lens",
+          "OOT_OCARINA",
+          "OOT_SONG_TIME"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Spirit Temple Adult Upper => OOT Spirit Temple Adult Hand",
+      "RequiredItems": [
+        "OOT_OCARINA",
+        "OOT_SONG_TIME",
+        "OOT Spirit Temple Adult Upper",
+        "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Spirit Temple Adult Upper => OOT Spirit Temple Top Floor",
+      "RequiredItems": [
+        "OOT_SMALL_KEY_SPIRIT, 6",
+        "OOT Spirit Temple Adult Upper",
+        "option{SpiritMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_SPIRIT_TEMPLE_LIGHT",
+      "RequiredItems": [
+        "OOT_OCARINA",
+        "OOT_SONG_ZELDA",
+        "OOT_can_hammer",
+        "OOT_has_mirror_shield",
+        "OOT Spirit Temple Top Floor",
         "option{SpiritMQ, true}"
       ],
       "ConditionalItems": [],
@@ -24909,17 +25526,10 @@
       "Id": "MM_EVENT_MAGIC_BEANS_SWAMP",
       "RequiredItems": [
         "MM_MAGIC_BEAN",
+        "MM_MASK_DEKU",
         "MM Swamp Front"
       ],
-      "ConditionalItems": [
-        [
-          "MM_MASK_DEKU"
-        ],
-        [
-          "MM_MOON_TEAR",
-          "MM_DEED_LAND"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -27658,8 +28268,8 @@
           "MM Pirate Fortress Hookshot Room Upper"
         ],
         [
-          "MM_can_use_deku_bubble",
-          "MM Pirate Fortress Hookshot Room Upper"
+          "MM Pirate Fortress Hookshot Room Upper",
+          "MM_can_use_deku_bubble"
         ]
       ],
       "TimeNeeded": "None",

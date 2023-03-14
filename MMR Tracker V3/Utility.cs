@@ -1,4 +1,5 @@
 ﻿using MMR_Tracker_V3.TrackerObjects;
+using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -24,6 +25,7 @@ namespace MMR_Tracker_V3
         {
             return input.Split(new string[] { Split }, options);
         }
+
         public static Dictionary<string, int> GetCategoriesFromFile(LogicObjects.TrackerInstance Instance)
         {
             Dictionary<string, int> Groups = new();
@@ -262,6 +264,13 @@ namespace MMR_Tracker_V3
         {
             bool IsWinformSafe = Obj is not null && (!Utility.DynamicPropertyExist(Obj, "IsHandleCreated") || Obj.IsHandleCreated);
             return thread is not null && thread.IsAlive && Obj is not null && IsWinformSafe;
+        }
+
+        public static string ConvertYamlStringToJsonString(string YAML)
+        {
+            var deserializer = new YamlDotNet.Serialization.DeserializerBuilder().Build();
+            object yamlIsDumb = deserializer.Deserialize<object>(YAML);
+            return JsonConvert.SerializeObject(yamlIsDumb);
         }
 
     }

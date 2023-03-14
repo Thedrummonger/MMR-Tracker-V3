@@ -11139,6 +11139,481 @@
       "LocationProxys": []
     },
     {
+      "ID": "OOT MQ Spirit Temple Entrance Initial Chest",
+      "Name": "MQ Spirit Temple Entrance Initial Chest",
+      "OriginalItem": "OOT_BOMBCHU_5",
+      "Area": "Spirit Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Spirit Temple Entrance Initial Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Spirit Temple Entrance Initial Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Spirit Temple Lobby Back-Left Chest",
+      "Name": "MQ Spirit Temple Lobby Back-Left Chest",
+      "OriginalItem": "OOT_SMALL_KEY_SPIRIT",
+      "Area": "Spirit Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Spirit Temple Lobby Back-Left Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Spirit Temple Lobby Back-Left Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Spirit Temple Lobby Back-Right Chest",
+      "Name": "MQ Spirit Temple Lobby Back-Right Chest",
+      "OriginalItem": "OOT_SMALL_KEY_SPIRIT",
+      "Area": "Spirit Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Spirit Temple Lobby Back-Right Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Spirit Temple Lobby Back-Right Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Spirit Temple Compass Chest",
+      "Name": "MQ Spirit Temple Compass Chest",
+      "OriginalItem": "OOT_COMPASS_SPIRIT",
+      "Area": "Spirit Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Spirit Temple Compass Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Spirit Temple Compass Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Spirit Temple Sun Block Room Chest",
+      "Name": "MQ Spirit Temple Sun Block Room Chest",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "Area": "Spirit Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Spirit Temple Sun Block Room Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Spirit Temple Sun Block Room Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Spirit Temple Map Chest",
+      "Name": "MQ Spirit Temple Map Chest",
+      "OriginalItem": "OOT_MAP_SPIRIT",
+      "Area": "Spirit Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Spirit Temple Map Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Spirit Temple Map Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Spirit Temple Map Room Back Chest",
+      "Name": "MQ Spirit Temple Map Room Back Chest",
+      "OriginalItem": "OOT_SMALL_KEY_SPIRIT",
+      "Area": "Spirit Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Spirit Temple Map Room Back Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Spirit Temple Map Room Back Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Spirit Temple Paradox Chest",
+      "Name": "MQ Spirit Temple Paradox Chest",
+      "OriginalItem": "OOT_SMALL_KEY_SPIRIT",
+      "Area": "Spirit Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Spirit Temple Paradox Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Spirit Temple Paradox Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Spirit Temple Child Upper Ground Chest",
+      "Name": "MQ Spirit Temple Child Upper Ground Chest",
+      "OriginalItem": "OOT_BOMBCHU_5",
+      "Area": "Spirit Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Spirit Temple Child Upper Ground Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Spirit Temple Child Upper Ground Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Spirit Temple Child Upper Ledge Chest",
+      "Name": "MQ Spirit Temple Child Upper Ledge Chest",
+      "OriginalItem": "OOT_SMALL_KEY_SPIRIT",
+      "Area": "Spirit Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Spirit Temple Child Upper Ledge Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Spirit Temple Child Upper Ledge Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Spirit Temple Silver Block Room Target Chest",
+      "Name": "MQ Spirit Temple Silver Block Room Target Chest",
+      "OriginalItem": "OOT_SMALL_KEY_SPIRIT",
+      "Area": "Spirit Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Spirit Temple Silver Block Room Target Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Spirit Temple Silver Block Room Target Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Spirit Temple Chest in Box",
+      "Name": "MQ Spirit Temple Chest in Box",
+      "OriginalItem": "OOT_RUPEE_BLUE",
+      "Area": "Spirit Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Spirit Temple Chest in Box"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Spirit Temple Chest in Box"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Spirit Temple Statue Room Ledge Chest",
+      "Name": "MQ Spirit Temple Statue Room Ledge Chest",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "Area": "Spirit Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Spirit Temple Statue Room Ledge Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Spirit Temple Statue Room Ledge Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Spirit Temple Lobby Front-Right Chest",
+      "Name": "MQ Spirit Temple Lobby Front-Right Chest",
+      "OriginalItem": "OOT_BOMBCHU_5",
+      "Area": "Spirit Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Spirit Temple Lobby Front-Right Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Spirit Temple Lobby Front-Right Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Spirit Temple Purple Leever Chest",
+      "Name": "MQ Spirit Temple Purple Leever Chest",
+      "OriginalItem": "OOT_RUPEE_PURPLE",
+      "Area": "Spirit Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Spirit Temple Purple Leever Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Spirit Temple Purple Leever Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Spirit Temple Symphony Room Chest",
+      "Name": "MQ Spirit Temple Symphony Room Chest",
+      "OriginalItem": "OOT_RUPEE_PURPLE",
+      "Area": "Spirit Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Spirit Temple Symphony Room Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Spirit Temple Symphony Room Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Spirit Temple Beamos Room Chest",
+      "Name": "MQ Spirit Temple Beamos Room Chest",
+      "OriginalItem": "OOT_ARROWS_30",
+      "Area": "Spirit Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Spirit Temple Beamos Room Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Spirit Temple Beamos Room Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Spirit Temple Dinolfos Room Chest",
+      "Name": "MQ Spirit Temple Dinolfos Room Chest",
+      "OriginalItem": "OOT_ICE_TRAP",
+      "Area": "Spirit Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Spirit Temple Dinolfos Room Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Spirit Temple Dinolfos Room Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Spirit Temple Boss Key Chest",
+      "Name": "MQ Spirit Temple Boss Key Chest",
+      "OriginalItem": "OOT_BOSS_KEY_SPIRIT",
+      "Area": "Spirit Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Spirit Temple Boss Key Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Spirit Temple Boss Key Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Spirit Temple Topmost Chest",
+      "Name": "MQ Spirit Temple Topmost Chest",
+      "OriginalItem": "OOT_SMALL_KEY_SPIRIT",
+      "Area": "Spirit Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Spirit Temple Topmost Chest"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Spirit Temple Topmost Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Spirit Temple GS Sun Block Room",
+      "Name": "MQ Spirit Temple GS Sun Block Room",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Spirit Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Spirit Temple GS Sun Block Room"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Spirit Temple GS Sun Block Room"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Spirit Temple GS Leever Room",
+      "Name": "MQ Spirit Temple GS Leever Room",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Spirit Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Spirit Temple GS Leever Room"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Spirit Temple GS Leever Room"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Spirit Temple GS Symphony Room",
+      "Name": "MQ Spirit Temple GS Symphony Room",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Spirit Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Spirit Temple GS Symphony Room"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Spirit Temple GS Symphony Room"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Spirit Temple GS Top Floor Left Wall",
+      "Name": "MQ Spirit Temple GS Top Floor Left Wall",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Spirit Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Spirit Temple GS Top Floor Left Wall"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Spirit Temple GS Top Floor Left Wall"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "OOT MQ Spirit Temple GS Top Floor Back Wall",
+      "Name": "MQ Spirit Temple GS Top Floor Back Wall",
+      "OriginalItem": "OOT_GS_TOKEN",
+      "Area": "Spirit Temple",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Spirit Temple GS Top Floor Back Wall"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Spirit Temple GS Top Floor Back Wall"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
       "ID": "OOT MQ Gerudo Training Grounds Entryway Left Chest",
       "Name": "MQ Gerudo Training Grounds Entryway Left Chest",
       "OriginalItem": "OOT_ARROWS_10",
@@ -28474,9 +28949,73 @@
       "DestinationHasSingleEntrance": false
     },
     {
+      "ID": "OOT Spirit Temple => OOT Spirit Temple Child Side",
+      "Area": "OOT Spirit Temple",
+      "Exit": "OOT Spirit Temple Child Side",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
       "ID": "OOT Spirit Temple => OOT Spirit Temple Statue",
       "Area": "OOT Spirit Temple",
       "Exit": "OOT Spirit Temple Statue",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Spirit Temple Child Side => OOT Spirit Temple Child Upper",
+      "Area": "OOT Spirit Temple Child Side",
+      "Exit": "OOT Spirit Temple Child Upper",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Spirit Temple Statue => OOT Spirit Temple Sun Block Room",
+      "Area": "OOT Spirit Temple Statue",
+      "Exit": "OOT Spirit Temple Sun Block Room",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Spirit Temple Statue => OOT Spirit Temple Adult Lower",
+      "Area": "OOT Spirit Temple Statue",
+      "Exit": "OOT Spirit Temple Adult Lower",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Spirit Temple Statue => OOT Spirit Temple Adult Upper",
+      "Area": "OOT Spirit Temple Statue",
+      "Exit": "OOT Spirit Temple Adult Upper",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Spirit Temple Sun Block Room => OOT Spirit Temple Child Hand",
+      "Area": "OOT Spirit Temple Sun Block Room",
+      "Exit": "OOT Spirit Temple Child Hand",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Spirit Temple Adult Upper => OOT Spirit Temple Adult Hand",
+      "Area": "OOT Spirit Temple Adult Upper",
+      "Exit": "OOT Spirit Temple Adult Hand",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    {
+      "ID": "OOT Spirit Temple Adult Upper => OOT Spirit Temple Top Floor",
+      "Area": "OOT Spirit Temple Adult Upper",
+      "Exit": "OOT Spirit Temple Top Floor",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
