@@ -45,6 +45,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
             Debug.WriteLine("\nApplying Settings");
             ApplySpoilerSettings(Instance, SettingData);
+            Debug.WriteLine("\nApplying Master Quest Data");
+            HandleMQChecks(Instance, LocationData, SettingData);
             Debug.WriteLine("\nToggling Tricks");
             ToggleTricks(Instance, TrickData);
             Debug.WriteLine("\nApplying Starting Items");
@@ -63,6 +65,24 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
         {
             public string Area { get; set; }
             public string Dest { get; set; }
+        }
+
+        private static void HandleMQChecks(LogicObjects.TrackerInstance instance, Dictionary<string, string> locationData, Dictionary<string, string> settingData)
+        {
+            foreach(var i in instance.UserOptions.Where(x => x.Value.SubCategory == "Dungeon Settings"))
+            {
+                bool ISMQ = locationData.Any(x => x.Key.StartsWith($"OOT MQ {i.Value.DisplayName[0..3]}"));
+                i.Value.CurrentValue = ISMQ ? "mq" : "vanilla";
+
+                string DungeonCode = i.Key[..^2];
+                string OppositeLogic = $"{DungeonCode}_IS_{(ISMQ ? "VANILLA": "MQ")}";
+                var JunkChecks = instance.LocationPool.Values.Where(x => instance.GetLogic(x.ID).RequiredItems.Contains(OppositeLogic));
+                foreach(var Check in JunkChecks)
+                {
+                    Check.SetRandomizedState(MiscData.RandomizedState.ForcedJunk, instance);
+                }
+                instance.LocationPool.Values.First(x => x.ID == $"{DungeonCode}_Layout").Randomizeditem.SpoilerLogGivenItem = ISMQ ? "DUNGEON_MQ": "DUNGEON_VANILLA";
+            }
         }
 
         private static void ApplyEntrances(LogicObjects.TrackerInstance instance, Dictionary<string, string> exitData)
@@ -196,9 +216,9 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             }
             foreach(var i in instance.LocationPool.Values)
             {
-                if (!LocationFilled.Contains(i))
+                if (string.IsNullOrWhiteSpace(i.Randomizeditem.SpoilerLogGivenItem) && i.RandomizedState == MiscData.RandomizedState.Randomized)
                 {
-                    Debug.WriteLine($"{i.ID} was not found in the spoiler log. Assuming it's unrandomized");
+                    Debug.WriteLine($"{i.ID} was randomized but had no spoiler data. Assuming it's unrandomized");
                     i.SetRandomizedState(MiscData.RandomizedState.Unrandomized, instance);
                 }
             }
