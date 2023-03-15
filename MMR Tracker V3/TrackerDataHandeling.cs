@@ -267,7 +267,7 @@ namespace MMR_Tracker_V3
                 string CurrentLocation = "";
                 foreach (var i in CheckedLocations)
                 {
-                    if (!i.IsUnrandomized(1) && !Filter.StartsWith("^")) { continue; }
+                    if (i.IsUnrandomized(1) && !Filter.StartsWith("^")) { continue; }
                     i.DisplayName = Utility.GetLocationDisplayName(i, Instance);
 
                     ItemsInListBox++;

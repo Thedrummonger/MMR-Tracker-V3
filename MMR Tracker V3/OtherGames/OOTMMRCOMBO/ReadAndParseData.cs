@@ -52,6 +52,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             AddEntriesFromItemPools(out TrackerObjects.MMRData.LogicFile LogicFile, out TrackerObjects.LogicDictionaryData.LogicDictionary dictionaryFile);
             AddEntriesFromLogicFiles(LogicFile, dictionaryFile);
 
+            AddMQLayoutChecks(LogicFile, dictionaryFile);
+
             CleanLogicAndParse(LogicFile);
 
             AddVariablesandOptions(dictionaryFile);
@@ -391,41 +393,18 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             AddSharedItemOptions("sharedWallets", "Shared Wallets", new string[] { "WALLET" }, 2, new string[] { "RUPEE_GREEN", "RUPEE_RED", "RUPEE_PURPLE", "RUPEE_SILVER", "RUPEE_GOLD", "RUPEE_HUGE" }); //RUPEE_BLUE is currently broken in the rando 
             AddSharedItemOptions("sharedHealth", "Shared Health", new string[] { "HEART_PIECE", "HEART_CONTAINER", "DEFENSE_UPGRADE" }, 1, new string[] { "RECOVERY_HEART", }); //I don't actually think any of this effects logic?
 
-            AddMQOption("DTMQ", "Deku Tree MQ");
-            AddMQOption("DCMQ", "Dodongos Cavern MQ");
-            AddMQOption("JJMQ", "Jabu Jabu MQ");
-            AddMQOption("ForestMQ", "Forest Temple MQ", "OOT_SMALL_KEY_FOREST", 6);
-            AddMQOption("FireMQ", "Fire Temple MQ", "OOT_SMALL_KEY_FIRE", 5);
-            AddMQOption("WaterMQ", "Water Temple MQ", "OOT_SMALL_KEY_WATER", 2);
-            AddMQOption("ShadowMQ", "Shadow Temple MQ", "OOT_SMALL_KEY_SHADOW", 6);
-            AddMQOption("SpiritMQ", "Spirit Temple MQ", "OOT_SMALL_KEY_SPIRIT", 7);
-            AddMQOption("BotWMQ", "Bottom of the Well MQ", "OOT_SMALL_KEY_BOTW", 2);
-            AddMQOption("ICMQ", "Ice Cavern MQ");
-            AddMQOption("GTGMQ", "Gerudo Training Grounds MQ", "OOT_SMALL_KEY_GTG", 3);
-            AddMQOption("GanonMQ", "Ganons Castle MQ", "OOT_SMALL_KEY_GANON", 3);
-
-            foreach(var i in dictionaryFile.ItemList.Where(x => x.Name.StartsWith("Small Key (")))
-            {
-                int Maxinworld = i.MaxAmountInWorld is not null && i.MaxAmountInWorld > 0 ? i.MaxAmountInWorld??9 : 9;
-                if (Maxinworld < 2) { continue; }
-                string Dungeon = i.Name.Split('(')[1].Trim().TrimEnd(')');
-                string KeyRingName = i.ID.Replace($"SMALL_KEY", "KEY_RING");
-                OptionData.TrackerOption KeyRingOption = new OptionData.TrackerOption();
-                KeyRingOption.ID = $"{Dungeon.Replace(" ", "")}KeyRing";
-                KeyRingOption.DisplayName = $"{Dungeon} Key Ring";
-                KeyRingOption.CreateSimpleValues(new string[] { "false", "true" });
-                KeyRingOption.CurrentValue = "false";
-                KeyRingOption.SubCategory = "Key Rings";
-                KeyRingOption.Values["true"].LogicReplacements = new OptionData.LogicReplacement[] { new OptionData.LogicReplacement() };
-                KeyRingOption.Values["true"].LogicReplacements[0].ReplacementList.Add(i.ID, i.ID.Replace("SMALL_KEY", "KEY_RING"));
-                KeyRingOption.Values["true"].AddMaxAmountEdit(i.ID, MiscData.MathOP.set, 0);
-                KeyRingOption.Values["false"].AddMaxAmountEdit(KeyRingName, MiscData.MathOP.set, 0);
-                for (var c = 1; c <= Maxinworld; c++)
-                {
-                    KeyRingOption.Values["true"].LogicReplacements[0].ReplacementList.Add($"{i.ID}, {c}", KeyRingName);
-                }
-                //dictionaryFile.Options.Add(KeyRingOption);
-            }
+            AddMQOption("DTMQ", "Deku Tree");
+            AddMQOption("DCMQ", "Dodongos Cavern");
+            AddMQOption("JJMQ", "Jabu Jabu");
+            AddMQOption("ForestMQ", "Forest Temple", "OOT_SMALL_KEY_FOREST", 6);
+            AddMQOption("FireMQ", "Fire Temple", "OOT_SMALL_KEY_FIRE", 5);
+            AddMQOption("WaterMQ", "Water Temple", "OOT_SMALL_KEY_WATER", 2);
+            AddMQOption("ShadowMQ", "Shadow Temple", "OOT_SMALL_KEY_SHADOW", 6);
+            AddMQOption("SpiritMQ", "Spirit Temple", "OOT_SMALL_KEY_SPIRIT", 7);
+            AddMQOption("BotWMQ", "Bottom of the Well", "OOT_SMALL_KEY_BOTW", 2);
+            AddMQOption("ICMQ", "Ice Cavern");
+            AddMQOption("GTGMQ", "Gerudo Training Grounds", "OOT_SMALL_KEY_GTG", 3);
+            AddMQOption("GanonMQ", "Ganon's Castle", "OOT_SMALL_KEY_GANON", 3);
 
 
             void AddMQOption(string ID, string Name, string Key = null, int MaxKeys = 0)
@@ -433,10 +412,11 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 OptionData.TrackerOption MQEntry = new OptionData.TrackerOption();
                 MQEntry.ID = ID;
                 MQEntry.DisplayName = Name;
-                MQEntry.SubCategory = "Master Quest";
-                MQEntry.CurrentValue = "false";
-                MQEntry.CreateSimpleValues(new string[] { "false", "true" });
-                if (Key != null) { MQEntry.Values["true"].AddMaxAmountEdit(Key, MiscData.MathOP.set, MaxKeys); }
+                MQEntry.SubCategory = "Dungeon Settings";
+                MQEntry.CurrentValue = "vanilla";
+                MQEntry.CreateSimpleValues(new string[] { "vanilla", "mq", "random" });
+                if (Key != null) { MQEntry.Values["mq"].AddMaxAmountEdit(Key, MiscData.MathOP.set, MaxKeys); }
+                if (Key != null) { MQEntry.Values["random"].AddMaxAmountEdit(Key, MiscData.MathOP.set, 10); }
                 dictionaryFile.Options.Add(MQEntry);
             }
 
@@ -493,6 +473,90 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 dictionaryFile.Options.Add(SharedItem);
             }
 
+            foreach (var i in dictionaryFile.ItemList.Where(x => x.Name.StartsWith("Small Key (")))
+            {
+                int Maxinworld = i.MaxAmountInWorld is not null && i.MaxAmountInWorld > 0 ? i.MaxAmountInWorld??9 : 9;
+                if (Maxinworld < 2) { continue; }
+                string Dungeon = i.Name.Split('(')[1].Trim().TrimEnd(')');
+                string KeyRingName = i.ID.Replace($"SMALL_KEY", "KEY_RING");
+                OptionData.TrackerOption KeyRingOption = new OptionData.TrackerOption();
+                KeyRingOption.ID = $"{Dungeon.Replace(" ", "")}KeyRing";
+                KeyRingOption.DisplayName = $"{Dungeon} Key Ring";
+                KeyRingOption.CreateSimpleValues(new string[] { "true", "false", "random" });
+                KeyRingOption.CurrentValue = "false";
+                KeyRingOption.SubCategory = "Key Rings";
+                KeyRingOption.Values["true"].LogicReplacements = new OptionData.LogicReplacement[] { new OptionData.LogicReplacement() };
+                KeyRingOption.Values["true"].LogicReplacements[0].ReplacementList.Add(i.ID, i.ID.Replace("SMALL_KEY", "KEY_RING"));
+                KeyRingOption.Values["true"].AddMaxAmountEdit(i.ID, MiscData.MathOP.set, 0);
+                KeyRingOption.Values["false"].AddMaxAmountEdit(KeyRingName, MiscData.MathOP.set, 0);
+                for (var c = 1; c <= Maxinworld; c++)
+                {
+                    KeyRingOption.Values["true"].LogicReplacements[0].ReplacementList.Add($"{i.ID}, {c}", KeyRingName);
+                }
+                //dictionaryFile.Options.Add(KeyRingOption);
+            }
+
+        }
+
+        private static void AddMQLayoutChecks(MMRData.LogicFile logicFile, LogicDictionaryData.LogicDictionary dictionaryFile)
+        {
+            string OOTMQLogic = Path.Combine(References.TestingPaths.GetDevTestingPath(), "core-develop", "data", "oot", "world_mq");
+            var files = Directory.GetFiles(OOTMQLogic);
+
+            dictionaryFile.ItemList.Add(new LogicDictionaryData.DictionaryItemEntries
+            {
+                ID = "DUNGEON_VANILLA",
+                Name = "Vanilla",
+                ItemTypes = new string[] { "DUNGEON_LAYOUT" },
+                ValidStartingItem = false,
+            });
+            dictionaryFile.ItemList.Add(new LogicDictionaryData.DictionaryItemEntries
+            {
+                ID = "DUNGEON_MQ",
+                Name = "Master Quest",
+                ItemTypes = new string[] { "DUNGEON_LAYOUT" },
+                ValidStartingItem = false,
+            });
+
+            foreach (var file in files)
+            {
+                var FileOBJ = JsonConvert.DeserializeObject<Dictionary<string, MMROOTLogicEntry>>(Utility.ConvertYamlStringToJsonString(File.ReadAllText(file)));
+                foreach(var i in FileOBJ)
+                {
+                    string CurrentArea = i.Key;
+                    string DungeonCode = i.Value.dungeon;
+                    string MQOptionID = $"{DungeonCode}_IS_MQ";
+                    string VanillaOptionID = $"{DungeonCode}_IS_VANILLA";
+                    string MQOptionLogic = $"(option{{{DungeonCode}MQ, mq}} || (option{{{DungeonCode}MQ, random}} && contains{{{DungeonCode}_Layout, DUNGEON_MQ}}))";
+                    string VanillaOptionLogic = $"(option{{{DungeonCode}MQ, vanilla}} || (option{{{DungeonCode}MQ, random}} && contains{{{DungeonCode}_Layout, DUNGEON_VANILLA}}))";
+                    var LogicFileEntry = logicFile.Logic.FirstOrDefault(x => x.Id == MQOptionID);
+                    if (LogicFileEntry is null)
+                    {
+                        logicFile.Logic.Add(new MMRData.JsonFormatLogicItem
+                        {
+                            Id = MQOptionID,
+                            ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicParser, MQOptionLogic)
+                        });
+                        logicFile.Logic.Add(new MMRData.JsonFormatLogicItem { 
+                            Id = VanillaOptionID, 
+                            ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicParser, VanillaOptionLogic) 
+                        });
+                        logicFile.Logic.Add(new MMRData.JsonFormatLogicItem
+                        {
+                            Id = $"{DungeonCode}_Layout",
+                            RequiredItems = new List<string> { $"option{{{DungeonCode}MQ, random}}", $"OOT {CurrentArea}" }
+                        });
+                        dictionaryFile.LocationList.Add(new LogicDictionaryData.DictionaryLocationEntries
+                        {
+                            ID = $"{DungeonCode}_Layout",
+                            Name = $"{CurrentArea} Layout",
+                            Area = "Dungeon Layouts",
+                            OriginalItem = "DUNGEON_VANILLA",
+                            ValidItemTypes = new string[] { "DUNGEON_LAYOUT" }
+                        });
+                    }
+                }
+            }
         }
 
         public static void CleanLogicAndParse(TrackerObjects.MMRData.LogicFile LogicFile)
@@ -524,7 +588,13 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 string GameArea = $"{GameCode} {Area}";
                 string LogicString = Logic;
                 if (!VariableDungeon) { return $"(({Logic}) && {GameCode} {Area})"; }
-                return $"(({Logic}) && {GameCode} {Area} && option{{{DungeonCode}MQ, {MQ.ToString().ToLower()}}})";
+                return $"(({Logic}) && {GameCode} {Area} && {BuildMQOption(MQ, DungeonCode)})";
+            }
+
+            string BuildMQOption(bool MQ, string DungeonCode)
+            {
+                string MQOptionID = $"{DungeonCode}_IS_{(MQ ? "MQ" : "VANILLA")}";
+                return LogicFile.Logic.FirstOrDefault(x => x.Id == MQOptionID).Id;
             }
 
             string CombineLogicFromOtherSource(MMRData.JsonFormatLogicItem Logic, string NewLogic, string DebugMessage = null)

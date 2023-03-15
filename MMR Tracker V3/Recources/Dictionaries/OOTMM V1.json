@@ -18838,6 +18838,186 @@
         "PriceDataNames": []
       },
       "LocationProxys": []
+    },
+    {
+      "ID": "BotW_Layout",
+      "Name": "Bottom of the Well Layout",
+      "OriginalItem": "DUNGEON_VANILLA",
+      "Area": "Dungeon Layouts",
+      "ValidItemTypes": [
+        "DUNGEON_LAYOUT"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "DT_Layout",
+      "Name": "Deku Tree Layout",
+      "OriginalItem": "DUNGEON_VANILLA",
+      "Area": "Dungeon Layouts",
+      "ValidItemTypes": [
+        "DUNGEON_LAYOUT"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "DC_Layout",
+      "Name": "Dodongo Cavern Layout",
+      "OriginalItem": "DUNGEON_VANILLA",
+      "Area": "Dungeon Layouts",
+      "ValidItemTypes": [
+        "DUNGEON_LAYOUT"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "Fire_Layout",
+      "Name": "Fire Temple Layout",
+      "OriginalItem": "DUNGEON_VANILLA",
+      "Area": "Dungeon Layouts",
+      "ValidItemTypes": [
+        "DUNGEON_LAYOUT"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "Forest_Layout",
+      "Name": "Forest Temple Layout",
+      "OriginalItem": "DUNGEON_VANILLA",
+      "Area": "Dungeon Layouts",
+      "ValidItemTypes": [
+        "DUNGEON_LAYOUT"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "Ganon_Layout",
+      "Name": "Ganon Castle Main Layout",
+      "OriginalItem": "DUNGEON_VANILLA",
+      "Area": "Dungeon Layouts",
+      "ValidItemTypes": [
+        "DUNGEON_LAYOUT"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "GTG_Layout",
+      "Name": "Gerudo Training Grounds Layout",
+      "OriginalItem": "DUNGEON_VANILLA",
+      "Area": "Dungeon Layouts",
+      "ValidItemTypes": [
+        "DUNGEON_LAYOUT"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "IC_Layout",
+      "Name": "Ice Cavern Layout",
+      "OriginalItem": "DUNGEON_VANILLA",
+      "Area": "Dungeon Layouts",
+      "ValidItemTypes": [
+        "DUNGEON_LAYOUT"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "JJ_Layout",
+      "Name": "Jabu-Jabu Layout",
+      "OriginalItem": "DUNGEON_VANILLA",
+      "Area": "Dungeon Layouts",
+      "ValidItemTypes": [
+        "DUNGEON_LAYOUT"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "Shadow_Layout",
+      "Name": "Shadow Temple Layout",
+      "OriginalItem": "DUNGEON_VANILLA",
+      "Area": "Dungeon Layouts",
+      "ValidItemTypes": [
+        "DUNGEON_LAYOUT"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "Spirit_Layout",
+      "Name": "Spirit Temple Layout",
+      "OriginalItem": "DUNGEON_VANILLA",
+      "Area": "Dungeon Layouts",
+      "ValidItemTypes": [
+        "DUNGEON_LAYOUT"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    {
+      "ID": "Water_Layout",
+      "Name": "Water Temple Layout",
+      "OriginalItem": "DUNGEON_VANILLA",
+      "Area": "Dungeon Layouts",
+      "ValidItemTypes": [
+        "DUNGEON_LAYOUT"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
     }
   ],
   "ItemList": [
@@ -25077,6 +25257,40 @@
         "GossipHintNames": [
           "SHARED_STICKS_10",
           "10 Deku Sticks"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "DUNGEON_VANILLA",
+      "Name": "Vanilla",
+      "ValidStartingItem": false,
+      "ItemTypes": [
+        "DUNGEON_LAYOUT"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "Vanilla"
+        ],
+        "GossipHintNames": [
+          "Vanilla"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "DUNGEON_MQ",
+      "Name": "Master Quest",
+      "ValidStartingItem": false,
+      "ItemTypes": [
+        "DUNGEON_LAYOUT"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "Master Quest"
+        ],
+        "GossipHintNames": [
+          "Master Quest"
         ],
         "PriceDataNames": []
       }
@@ -35003,17 +35217,23 @@
     },
     {
       "ID": "DTMQ",
-      "DisplayName": "Deku Tree MQ",
-      "CurrentValue": "false",
-      "SubCategory": "Master Quest",
+      "DisplayName": "Deku Tree",
+      "CurrentValue": "vanilla",
+      "SubCategory": "Dungeon Settings",
       "Values": {
-        "false": {
+        "vanilla": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {}
         },
-        "true": {
+        "mq": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
+        },
+        "random": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -35023,17 +35243,23 @@
     },
     {
       "ID": "DCMQ",
-      "DisplayName": "Dodongos Cavern MQ",
-      "CurrentValue": "false",
-      "SubCategory": "Master Quest",
+      "DisplayName": "Dodongos Cavern",
+      "CurrentValue": "vanilla",
+      "SubCategory": "Dungeon Settings",
       "Values": {
-        "false": {
+        "vanilla": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {}
         },
-        "true": {
+        "mq": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
+        },
+        "random": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -35043,17 +35269,23 @@
     },
     {
       "ID": "JJMQ",
-      "DisplayName": "Jabu Jabu MQ",
-      "CurrentValue": "false",
-      "SubCategory": "Master Quest",
+      "DisplayName": "Jabu Jabu",
+      "CurrentValue": "vanilla",
+      "SubCategory": "Dungeon Settings",
       "Values": {
-        "false": {
+        "vanilla": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {}
         },
-        "true": {
+        "mq": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
+        },
+        "random": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -35063,17 +35295,17 @@
     },
     {
       "ID": "ForestMQ",
-      "DisplayName": "Forest Temple MQ",
-      "CurrentValue": "false",
-      "SubCategory": "Master Quest",
+      "DisplayName": "Forest Temple",
+      "CurrentValue": "vanilla",
+      "SubCategory": "Dungeon Settings",
       "Values": {
-        "false": {
+        "vanilla": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {}
         },
-        "true": {
+        "mq": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -35083,22 +35315,33 @@
               "amount": 6
             }
           }
+        },
+        "random": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "OOT_SMALL_KEY_FOREST": {
+              "action": "set",
+              "amount": 10
+            }
+          }
         }
       }
     },
     {
       "ID": "FireMQ",
-      "DisplayName": "Fire Temple MQ",
-      "CurrentValue": "false",
-      "SubCategory": "Master Quest",
+      "DisplayName": "Fire Temple",
+      "CurrentValue": "vanilla",
+      "SubCategory": "Dungeon Settings",
       "Values": {
-        "false": {
+        "vanilla": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {}
         },
-        "true": {
+        "mq": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -35108,22 +35351,33 @@
               "amount": 5
             }
           }
+        },
+        "random": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "OOT_SMALL_KEY_FIRE": {
+              "action": "set",
+              "amount": 10
+            }
+          }
         }
       }
     },
     {
       "ID": "WaterMQ",
-      "DisplayName": "Water Temple MQ",
-      "CurrentValue": "false",
-      "SubCategory": "Master Quest",
+      "DisplayName": "Water Temple",
+      "CurrentValue": "vanilla",
+      "SubCategory": "Dungeon Settings",
       "Values": {
-        "false": {
+        "vanilla": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {}
         },
-        "true": {
+        "mq": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -35133,22 +35387,33 @@
               "amount": 2
             }
           }
+        },
+        "random": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "OOT_SMALL_KEY_WATER": {
+              "action": "set",
+              "amount": 10
+            }
+          }
         }
       }
     },
     {
       "ID": "ShadowMQ",
-      "DisplayName": "Shadow Temple MQ",
-      "CurrentValue": "false",
-      "SubCategory": "Master Quest",
+      "DisplayName": "Shadow Temple",
+      "CurrentValue": "vanilla",
+      "SubCategory": "Dungeon Settings",
       "Values": {
-        "false": {
+        "vanilla": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {}
         },
-        "true": {
+        "mq": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -35158,22 +35423,33 @@
               "amount": 6
             }
           }
+        },
+        "random": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "OOT_SMALL_KEY_SHADOW": {
+              "action": "set",
+              "amount": 10
+            }
+          }
         }
       }
     },
     {
       "ID": "SpiritMQ",
-      "DisplayName": "Spirit Temple MQ",
-      "CurrentValue": "false",
-      "SubCategory": "Master Quest",
+      "DisplayName": "Spirit Temple",
+      "CurrentValue": "vanilla",
+      "SubCategory": "Dungeon Settings",
       "Values": {
-        "false": {
+        "vanilla": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {}
         },
-        "true": {
+        "mq": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -35183,22 +35459,33 @@
               "amount": 7
             }
           }
+        },
+        "random": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "OOT_SMALL_KEY_SPIRIT": {
+              "action": "set",
+              "amount": 10
+            }
+          }
         }
       }
     },
     {
       "ID": "BotWMQ",
-      "DisplayName": "Bottom of the Well MQ",
-      "CurrentValue": "false",
-      "SubCategory": "Master Quest",
+      "DisplayName": "Bottom of the Well",
+      "CurrentValue": "vanilla",
+      "SubCategory": "Dungeon Settings",
       "Values": {
-        "false": {
+        "vanilla": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {}
         },
-        "true": {
+        "mq": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -35208,22 +35495,39 @@
               "amount": 2
             }
           }
+        },
+        "random": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "OOT_SMALL_KEY_BOTW": {
+              "action": "set",
+              "amount": 10
+            }
+          }
         }
       }
     },
     {
       "ID": "ICMQ",
-      "DisplayName": "Ice Cavern MQ",
-      "CurrentValue": "false",
-      "SubCategory": "Master Quest",
+      "DisplayName": "Ice Cavern",
+      "CurrentValue": "vanilla",
+      "SubCategory": "Dungeon Settings",
       "Values": {
-        "false": {
+        "vanilla": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {}
         },
-        "true": {
+        "mq": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
+        },
+        "random": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -35233,17 +35537,17 @@
     },
     {
       "ID": "GTGMQ",
-      "DisplayName": "Gerudo Training Grounds MQ",
-      "CurrentValue": "false",
-      "SubCategory": "Master Quest",
+      "DisplayName": "Gerudo Training Grounds",
+      "CurrentValue": "vanilla",
+      "SubCategory": "Dungeon Settings",
       "Values": {
-        "false": {
+        "vanilla": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {}
         },
-        "true": {
+        "mq": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -35253,22 +35557,33 @@
               "amount": 3
             }
           }
+        },
+        "random": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "OOT_SMALL_KEY_GTG": {
+              "action": "set",
+              "amount": 10
+            }
+          }
         }
       }
     },
     {
       "ID": "GanonMQ",
-      "DisplayName": "Ganons Castle MQ",
-      "CurrentValue": "false",
-      "SubCategory": "Master Quest",
+      "DisplayName": "Ganon's Castle",
+      "CurrentValue": "vanilla",
+      "SubCategory": "Dungeon Settings",
       "Values": {
-        "false": {
+        "vanilla": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {}
         },
-        "true": {
+        "mq": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -35276,6 +35591,17 @@
             "OOT_SMALL_KEY_GANON": {
               "action": "set",
               "amount": 3
+            }
+          }
+        },
+        "random": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "OOT_SMALL_KEY_GANON": {
+              "action": "set",
+              "amount": 10
             }
           }
         }
