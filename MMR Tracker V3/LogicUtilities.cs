@@ -218,29 +218,31 @@ namespace MMR_Tracker_V3
         private string _OROP;
         private char _OpenContainer;
         private char _CloseContainer;
-        public LogicStringParser(OperatorType operatorType = OperatorType.CStyle, ContainerType containerType = ContainerType.parentheses)
+        private bool _AllowSpaces;
+        public LogicStringParser(OperatorType operatorType = OperatorType.CStyle, ContainerType containerType = ContainerType.parentheses, bool AllowSpaces = true)
         {
-            Initialize(GetAndOP(operatorType), GetOrOP(operatorType), GetOpenContainer(containerType), GetCloseContainer(containerType));
+            Initialize(GetAndOP(operatorType), GetOrOP(operatorType), GetOpenContainer(containerType), GetCloseContainer(containerType), AllowSpaces);
         }
-        public LogicStringParser(string AndOP, string OrOP, ContainerType containerType)
+        public LogicStringParser(string AndOP, string OrOP, ContainerType containerType, bool AllowSpaces = true)
         {
-            Initialize(AndOP, OrOP, GetOpenContainer(containerType), GetCloseContainer(containerType));
+            Initialize(AndOP, OrOP, GetOpenContainer(containerType), GetCloseContainer(containerType), AllowSpaces);
         }
-        public LogicStringParser(string AndOP, string OrOP, char OpenContainer, char CloseContainer)
+        public LogicStringParser(string AndOP, string OrOP, char OpenContainer, char CloseContainer, bool AllowSpaces = true)
         {
-            Initialize(AndOP, OrOP, OpenContainer, CloseContainer);
+            Initialize(AndOP, OrOP, OpenContainer, CloseContainer, AllowSpaces);
         }
-        public LogicStringParser(OperatorType operatorType, char OpenContainer, char CloseContainer)
+        public LogicStringParser(OperatorType operatorType, char OpenContainer, char CloseContainer, bool AllowSpaces = true)
         {
-            Initialize(GetAndOP(operatorType), GetOrOP(operatorType), OpenContainer, CloseContainer);
+            Initialize(GetAndOP(operatorType), GetOrOP(operatorType), OpenContainer, CloseContainer, AllowSpaces);
         }
 
-        private void Initialize(string AndOP, string OrOP, char OpenContainer, char CloseContainer)
+        private void Initialize(string AndOP, string OrOP, char OpenContainer, char CloseContainer, bool AllowSpaces)
         {
             _ANDOP = AndOP;
             _OROP = OrOP;
             _OpenContainer = OpenContainer;
             _CloseContainer = CloseContainer;
+            _AllowSpaces = AllowSpaces;
             Debug.WriteLine($"{_ANDOP} {_OROP} {_OpenContainer} {_CloseContainer}");
         }
 
@@ -320,11 +322,13 @@ namespace MMR_Tracker_V3
             List<LogicItem> ParsedLogic = new();
             string CurrentEntry = "";
             int currentIndex = -1;
+            bool InQuotes = false;
             foreach (char c in logicString)
             {
                 currentIndex++;
                 CurrentEntry += c;
-                if (IsEndOfExpression(CurrentEntry, logicString, currentIndex))
+                if (c == '\'') { InQuotes = !InQuotes; }
+                if (IsEndOfExpression(CurrentEntry, logicString, currentIndex, InQuotes))
                 {
                     string TrimmedEntry = CurrentEntry.Trim();
                     if (!string.IsNullOrWhiteSpace(TrimmedEntry))
@@ -348,10 +352,10 @@ namespace MMR_Tracker_V3
             else { return EntryType.LogicItem; }
         }
 
-        private bool IsEndOfExpression(string currentEntry, string LogicString, int CurrentIndex)
+        private bool IsEndOfExpression(string currentEntry, string LogicString, int CurrentIndex, bool inQuotes)
         {
-            char CurrentChar = LogicString[CurrentIndex];
-            //If the expression is a function, return whether or not the function has ended
+            if (CurrentIndex + 1 >= LogicString.Length) { return true; } //Return true if this is the last char in the line
+            //If the expression is a function, return whether or not the function has escaped parenthese
             //To test this, check if the number of closing Parenthese is equal to the number of open Parenthese
             if (entryIsFunction(currentEntry.Trim())) { return GetFunctionParDepth(currentEntry) == 0; }
             if (currentEntry == $"{_ANDOP} ") { return true; } //Return true if the expression is the AND Operator
@@ -360,13 +364,14 @@ namespace MMR_Tracker_V3
             if (currentEntry == $"{_CloseContainer}") { return true; } //Return true if the expression is a Close Parenthese
 
             //Return true if next character of the string contains an operator or Parenthese
-            //Any Operator other than ')' should always be preceded by a space
-            if (GetNextChar(LogicString, CurrentIndex, 1) == $"{_CloseContainer}") { return true; }
-            if (char.IsWhiteSpace(CurrentChar))
+            //Any other than ')' should always be preceded by a space and operators should be followed by a space
+            if (GetNeighborChars(LogicString, CurrentIndex, 1) == $"{_CloseContainer}") { return true; }
+            if (char.IsWhiteSpace(LogicString[CurrentIndex])) //Current char is whitespace
             {
-                if (GetNextChar(LogicString, CurrentIndex, 1) == $"{_OpenContainer}") { return true; }
-                if (GetNextChar(LogicString, CurrentIndex, _ANDOP.Length) == _ANDOP) { return true; }
-                if (GetNextChar(LogicString, CurrentIndex, _OROP.Length) == _OROP) { return true; }
+                if (!_AllowSpaces && !inQuotes) { return true; }
+                if (GetNeighborChars(LogicString, CurrentIndex, 1) == $"{_OpenContainer}") { return true; }
+                if (GetNeighborChars(LogicString, CurrentIndex, _ANDOP.Length + 1) == $"{_ANDOP} ") { return true; }
+                if (GetNeighborChars(LogicString, CurrentIndex, _OROP.Length + 1) == $"{_OROP} ") { return true; }
             }
             return false;
         }
@@ -386,13 +391,7 @@ namespace MMR_Tracker_V3
 
         private int GetFunctionParDepth(string currentEntry)
         {
-            int ParDepth = 0;
-            foreach (var i in currentEntry)
-            {
-                if (i == _OpenContainer) { ParDepth++; }
-                if (i == _CloseContainer) { ParDepth--; }
-            }
-            return ParDepth;
+            return currentEntry.Count(x => x == _OpenContainer) - currentEntry.Count(x => x == _CloseContainer);
         }
 
         private char CharRelPos(string line, int CurrenIndex, int move)
@@ -402,7 +401,7 @@ namespace MMR_Tracker_V3
             return line[Target];
         }
 
-        private string GetNextChar(string line, int CurrenIndex, int Count)
+        private string GetNeighborChars(string line, int CurrenIndex, int Count)
         {
             string SubString = "";
             for (var i = 1; i <= Count; i++)
