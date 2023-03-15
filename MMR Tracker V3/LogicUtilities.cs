@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Text;
 
 namespace MMR_Tracker_V3
 {
@@ -117,19 +118,18 @@ namespace MMR_Tracker_V3
         public static List<List<string>> ConvertLogicStringToConditional(LogicStringParser Parser, string LogicLine)
         {
             var ParsedLogic = Parser.ParseLogicString(LogicLine);
-            var MathString = ConvertLogicParserObjectToMathString(ParsedLogic, out Dictionary<char, string> RefMap, out _);
+            var MathString = ConvertLogicParserObjectToMathString(ParsedLogic, out Dictionary<string, string> RefMap, out _);
             var ExpandedMathString = ExpandMathExpressionString(MathString);
             var MathLogicArray = ConvertMathStringToArray(ExpandedMathString);
             return RestorelogicValues(MathLogicArray, RefMap);
         }
 
-        private static string ConvertLogicParserObjectToMathString(List<LogicStringParser.LogicItem> Logic, out Dictionary<char, string> Ref, out Dictionary<char, string> OperatorMap)
+        private static string ConvertLogicParserObjectToMathString(List<LogicStringParser.LogicItem> Logic, out Dictionary<string, string> Ref, out Dictionary<char, string> OperatorMap)
         {
-            string ValidLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-            int CurrentLetter = 0;
+            int CurrentLetterIndex = 1;
             string Mathstring = "";
-            var TextToChar = new Dictionary<string, char>();
-            Ref = new Dictionary<char, string>();
+            var TextToLetter = new Dictionary<string, string>();
+            Ref = new Dictionary<string, string>();
             OperatorMap = new Dictionary<char, string>();
             foreach (var i in Logic)
             {
@@ -155,17 +155,38 @@ namespace MMR_Tracker_V3
                 }
                 else
                 {
-                    if (!TextToChar.ContainsKey(i.Text))
+                    if (!TextToLetter.ContainsKey(i.Text))
                     {
-                        if (CurrentLetter >= ValidLetters.Length) { throw new Exception("Logic String To Complex, ran out of letters. Time to fix this!"); }
-                        TextToChar.Add(i.Text, ValidLetters[CurrentLetter]);
-                        Ref.Add(ValidLetters[CurrentLetter], i.Text);
-                        CurrentLetter++;
+                        TextToLetter.Add(i.Text, IndexToLetter(CurrentLetterIndex));
+                        Ref.Add(IndexToLetter(CurrentLetterIndex), i.Text);
+                        CurrentLetterIndex++;
                     }
-                    Mathstring += TextToChar[i.Text];
+                    Mathstring += TextToLetter[i.Text];
                 }
             }
             return Mathstring;
+        }
+
+        public static string IndexToLetter(int index)
+        {
+            int ColumnBase = 26;
+            int DigitMax = 7; // ceil(log26(Int32.Max))
+            string Digits = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            if (index <= 0)
+                throw new IndexOutOfRangeException("index must be a positive number");
+
+            if (index <= ColumnBase)
+                return Digits[index - 1].ToString();
+
+            var sb = new StringBuilder().Append(' ', DigitMax);
+            var current = index;
+            var offset = DigitMax;
+            while (current > 0)
+            {
+                sb[--offset] = Digits[--current % ColumnBase];
+                current /= ColumnBase;
+            }
+            return sb.ToString(offset, DigitMax - offset);
         }
 
         private static string ExpandMathExpressionString(string MathLogic)
@@ -180,10 +201,14 @@ namespace MMR_Tracker_V3
             return MathString.Split('+').Select(x => x.Split('*').ToList()).ToList();
         }
 
-        private static List<List<string>> RestorelogicValues(List<List<string>> MathLogicArray, Dictionary<char, string> logicObjectMap)
+        private static List<List<string>> RestorelogicValues(List<List<string>> MathLogicArray, Dictionary<string, string> logicObjectMap)
         {
             return MathLogicArray.Select(x => x.Select(y => Convert(y)).ToList()).ToList();
-            string Convert(string entry) { return logicObjectMap[entry[0]]; }
+            string Convert(string entry) 
+            { 
+                if (entry.Contains('^')) { entry = entry[..entry.IndexOf("^")]; }
+                return logicObjectMap[entry]; 
+            }
         }
 
     }
