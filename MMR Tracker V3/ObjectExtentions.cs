@@ -101,6 +101,52 @@ namespace MMR_Tracker_V3
             };
         }
 
+        public static List<string> GetAllInaccessableLogic(this TrackerInstance instance)
+        {
+            List<string> InaccessableLogic = new List<string>();
+            bool InaccessableFound = true;
+            while (InaccessableFound)
+            {
+                InaccessableFound = false;
+                foreach (var i in instance.LogicFile.Logic)
+                {
+                    if (InaccessableLogic.Contains(i.Id)) { continue; }
+                    if (instance.IsLogicInaccessable(i.Id, InaccessableLogic))
+                    {
+                        InaccessableLogic.Add(i.Id);
+                        InaccessableFound = true;
+                    }
+                }
+            }
+            return InaccessableLogic;
+        }
+
+        public static bool IsLogicInaccessable(this TrackerInstance instance, string OriginalID, List<string> KnownInaccessable = null)
+        {
+            var Logic = instance.GetLogic(OriginalID);
+            if (RequirementInaccessable(Logic.RequiredItems)) { return true; }
+            if (Logic.ConditionalItems.Any() && Logic.ConditionalItems.All(c => RequirementInaccessable(c))) { return true; }
+            return false;
+
+            bool RequirementInaccessable(List<string> Req)
+            {
+                return Req.Any(x => IsInacceableEntry(x));
+            }
+            
+            bool IsInacceableEntry(string x)
+            {
+                if (KnownInaccessable is not null && KnownInaccessable.Contains(x)) { return true; }
+                if (bool.TryParse(x, out bool FoundBool) && !FoundBool) { return true; }
+                if (LogicEditing.IsLogicFunction(x, out string func, out string Param) && func == "option" && !LogicEditing.CheckOptionFunction(instance, Param.Split(",").Select(x => x.Trim()).ToArray()))
+                {
+                    return true;
+                }
+                var SubLogic = instance.GetLogic(x);
+                if (SubLogic is not null && SubLogic.IsTrick && instance.MacroPool.ContainsKey(x) && !instance.MacroPool[x].TrickEnabled) { return true; }
+                return false;
+            }
+        }
+
 
         public static bool MultipleItemEntry(this LogicObjects.TrackerInstance instance, string Entry, out string Item, out int Amount)
         {

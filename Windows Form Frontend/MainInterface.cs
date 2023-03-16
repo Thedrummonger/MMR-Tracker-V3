@@ -279,7 +279,7 @@ namespace Windows_Form_Frontend
                 {
                     InstanceContainer.logicCalculation.LogicEntryAquired(l, new List<string>()) ;
                 }
-
+                
             }
 
         }

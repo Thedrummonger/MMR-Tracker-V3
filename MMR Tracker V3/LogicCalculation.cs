@@ -479,7 +479,7 @@ namespace MMR_Tracker_V3
             }
         }
 
-        private static bool CheckOptionFunction(TrackerInstance instance, string[] param)
+        public static bool CheckOptionFunction(TrackerInstance instance, string[] param)
         {
             if (param.Length < 1) { return false; } //No Values Pased
 

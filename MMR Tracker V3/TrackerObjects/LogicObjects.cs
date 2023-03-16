@@ -147,9 +147,10 @@ namespace MMR_Tracker_V3
                 return ValidItem;
             }
 
-            public void ToggleAllTricks(bool state)
+            public void ToggleAllTricks(bool? state)
             {
-                foreach(var i in MacroPool.Values.Where(x => x.isTrick(this))) { i.TrickEnabled = state; }
+                if (state is null) { foreach (var i in MacroPool.Values.Where(x => x.isTrick(this))) { i.TrickEnabled = !i.TrickEnabled; } }
+                else { foreach (var i in MacroPool.Values.Where(x => x.isTrick(this))) { i.TrickEnabled = (bool)state; } }
             }
 
             public List<char> GetAllCurrencies(bool all = false)
