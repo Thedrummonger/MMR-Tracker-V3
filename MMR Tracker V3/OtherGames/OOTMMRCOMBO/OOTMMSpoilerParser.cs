@@ -42,11 +42,12 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             Dictionary<string, string> ExitData = GetEntranceListFromSpoiler(Instance, "Entrances");
             List<string> TrickData = GetListFromSpoiler(Instance, "Tricks").Select(x => $"TRICK_{x}").ToList();
             List<string> JunkLocationData = GetListFromSpoiler(Instance, "Junk Locations");
+            List<string> MQDungeons = GetListFromSpoiler(Instance, "MQ Dungeons");
 
             Debug.WriteLine("\nApplying Settings");
             ApplySpoilerSettings(Instance, SettingData);
             Debug.WriteLine("\nApplying Master Quest Data");
-            HandleMQChecks(Instance, LocationData, SettingData);
+            HandleMQChecks(Instance, MQDungeons);
             Debug.WriteLine("\nToggling Tricks");
             ToggleTricks(Instance, TrickData);
             Debug.WriteLine("\nApplying Starting Items");
@@ -67,21 +68,22 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             public string Dest { get; set; }
         }
 
-        private static void HandleMQChecks(LogicObjects.TrackerInstance instance, Dictionary<string, string> locationData, Dictionary<string, string> settingData)
+        private static void HandleMQChecks(LogicObjects.TrackerInstance instance, List<string> mQDungeons)
         {
-            foreach(var i in instance.UserOptions.Where(x => x.Value.SubCategory == "Dungeon Settings"))
+            foreach(var i in instance.UserOptions.Where(x => x.Value.SubCategory == "Master Quest Dungeons"))
             {
-                bool ISMQ = locationData.Any(x => x.Key.StartsWith($"OOT MQ {i.Value.DisplayName[0..3]}"));
-                i.Value.CurrentValue = ISMQ ? "mq" : "vanilla";
+                bool ISMQ = mQDungeons.Any(x => i.Key.ToLower().StartsWith(x.ToLower()));
+                i.Value.CurrentValue = ISMQ.ToString().ToLower();
 
                 string DungeonCode = i.Key[..^2];
-                string OppositeLogic = $"{DungeonCode}_IS_{(ISMQ ? "VANILLA": "MQ")}";
+
+                Debug.WriteLine($"{DungeonCode} MQ {ISMQ}");
+                string OppositeLogic = $"option{{{i.Key}, {(!ISMQ).ToString().ToLower()}}}";
                 var JunkChecks = instance.LocationPool.Values.Where(x => instance.GetLogic(x.ID).RequiredItems.Contains(OppositeLogic));
                 foreach(var Check in JunkChecks)
                 {
                     Check.SetRandomizedState(MiscData.RandomizedState.ForcedJunk, instance);
                 }
-                instance.LocationPool.Values.First(x => x.ID == $"{DungeonCode}_Layout").Randomizeditem.SpoilerLogGivenItem = ISMQ ? "DUNGEON_MQ": "DUNGEON_VANILLA";
             }
         }
 

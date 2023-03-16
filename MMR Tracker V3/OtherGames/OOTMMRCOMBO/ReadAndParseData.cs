@@ -52,8 +52,6 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             AddEntriesFromItemPools(out TrackerObjects.MMRData.LogicFile LogicFile, out TrackerObjects.LogicDictionaryData.LogicDictionary dictionaryFile);
             AddEntriesFromLogicFiles(LogicFile, dictionaryFile);
 
-            AddMQLayoutChecks(LogicFile, dictionaryFile);
-
             CleanLogicAndParse(LogicFile);
 
             AddVariablesandOptions(dictionaryFile);
@@ -412,11 +410,10 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 OptionData.TrackerOption MQEntry = new OptionData.TrackerOption();
                 MQEntry.ID = ID;
                 MQEntry.DisplayName = Name;
-                MQEntry.SubCategory = "Dungeon Settings";
-                MQEntry.CurrentValue = "vanilla";
-                MQEntry.CreateSimpleValues(new string[] { "vanilla", "mq", "random" });
-                if (Key != null) { MQEntry.Values["mq"].AddMaxAmountEdit(Key, MiscData.MathOP.set, MaxKeys); }
-                if (Key != null) { MQEntry.Values["random"].AddMaxAmountEdit(Key, MiscData.MathOP.set, 10); }
+                MQEntry.SubCategory = "Master Quest Dungeons";
+                MQEntry.CurrentValue = "false";
+                MQEntry.CreateSimpleValues(new string[] { "true", "false" });
+                if (Key != null) { MQEntry.Values["true"].AddMaxAmountEdit(Key, MiscData.MathOP.set, MaxKeys); }
                 dictionaryFile.Options.Add(MQEntry);
             }
 
@@ -495,68 +492,6 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 }
                 //dictionaryFile.Options.Add(KeyRingOption);
             }
-
-        }
-
-        private static void AddMQLayoutChecks(MMRData.LogicFile logicFile, LogicDictionaryData.LogicDictionary dictionaryFile)
-        {
-            string OOTMQLogic = Path.Combine(References.TestingPaths.GetDevTestingPath(), "core-develop", "data", "oot", "world_mq");
-            var files = Directory.GetFiles(OOTMQLogic);
-
-            dictionaryFile.ItemList.Add(new LogicDictionaryData.DictionaryItemEntries
-            {
-                ID = "DUNGEON_VANILLA",
-                Name = "Vanilla",
-                ItemTypes = new string[] { "DUNGEON_LAYOUT" },
-                ValidStartingItem = false,
-            });
-            dictionaryFile.ItemList.Add(new LogicDictionaryData.DictionaryItemEntries
-            {
-                ID = "DUNGEON_MQ",
-                Name = "Master Quest",
-                ItemTypes = new string[] { "DUNGEON_LAYOUT" },
-                ValidStartingItem = false,
-            });
-
-            foreach (var file in files)
-            {
-                var FileOBJ = JsonConvert.DeserializeObject<Dictionary<string, MMROOTLogicEntry>>(Utility.ConvertYamlStringToJsonString(File.ReadAllText(file)));
-                foreach(var i in FileOBJ)
-                {
-                    string CurrentArea = i.Key;
-                    string DungeonCode = i.Value.dungeon;
-                    string MQOptionID = $"{DungeonCode}_IS_MQ";
-                    string VanillaOptionID = $"{DungeonCode}_IS_VANILLA";
-                    string MQOptionLogic = $"(option{{{DungeonCode}MQ, mq}} || (option{{{DungeonCode}MQ, random}} && contains{{{DungeonCode}_Layout, DUNGEON_MQ}}))";
-                    string VanillaOptionLogic = $"(option{{{DungeonCode}MQ, vanilla}} || (option{{{DungeonCode}MQ, random}} && contains{{{DungeonCode}_Layout, DUNGEON_VANILLA}}))";
-                    var LogicFileEntry = logicFile.Logic.FirstOrDefault(x => x.Id == MQOptionID);
-                    if (LogicFileEntry is null)
-                    {
-                        logicFile.Logic.Add(new MMRData.JsonFormatLogicItem
-                        {
-                            Id = MQOptionID,
-                            ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicParser, MQOptionLogic)
-                        });
-                        logicFile.Logic.Add(new MMRData.JsonFormatLogicItem { 
-                            Id = VanillaOptionID, 
-                            ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicParser, VanillaOptionLogic) 
-                        });
-                        logicFile.Logic.Add(new MMRData.JsonFormatLogicItem
-                        {
-                            Id = $"{DungeonCode}_Layout",
-                            RequiredItems = new List<string> { $"option{{{DungeonCode}MQ, random}}", $"OOT {CurrentArea}" }
-                        });
-                        dictionaryFile.LocationList.Add(new LogicDictionaryData.DictionaryLocationEntries
-                        {
-                            ID = $"{DungeonCode}_Layout",
-                            Name = $"{CurrentArea} Layout",
-                            Area = "Dungeon Layouts",
-                            OriginalItem = "DUNGEON_VANILLA",
-                            ValidItemTypes = new string[] { "DUNGEON_LAYOUT" }
-                        });
-                    }
-                }
-            }
         }
 
         public static void CleanLogicAndParse(TrackerObjects.MMRData.LogicFile LogicFile)
@@ -587,14 +522,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             {
                 string ReturnLogic = $"({Logic})";
                 if (!IsExit) { ReturnLogic += $" && ({GameCode} {Area})"; }
-                if (VariableDungeon) { ReturnLogic += $" && ({BuildMQOption(MQ, DungeonCode)})"; }
+                if (VariableDungeon) { ReturnLogic += $" && (option{{{DungeonCode}MQ, {MQ.ToString().ToLower()}}})"; }
                 return $"({ReturnLogic})";
-            }
-
-            string BuildMQOption(bool MQ, string DungeonCode)
-            {
-                string MQOptionID = $"{DungeonCode}_IS_{(MQ ? "MQ" : "VANILLA")}";
-                return LogicFile.Logic.FirstOrDefault(x => x.Id == MQOptionID).Id;
             }
 
             string CombineLogicFromOtherSource(MMRData.JsonFormatLogicItem Logic, string NewLogic, string DebugMessage = null)
