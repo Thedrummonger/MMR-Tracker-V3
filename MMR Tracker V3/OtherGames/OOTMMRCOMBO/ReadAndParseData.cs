@@ -583,12 +583,12 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 }
             }
 
-            string GetLogic(string Logic, string GameCode, string Area, bool VariableDungeon, bool MQ, string DungeonCode)
+            string GetLogic(string Logic, string GameCode, string Area, bool VariableDungeon, bool MQ, string DungeonCode, bool IsExit = false)
             {
-                string GameArea = $"{GameCode} {Area}";
-                string LogicString = Logic;
-                if (!VariableDungeon) { return $"(({Logic}) && {GameCode} {Area})"; }
-                return $"(({Logic}) && {GameCode} {Area} && {BuildMQOption(MQ, DungeonCode)})";
+                string ReturnLogic = $"({Logic})";
+                if (!IsExit) { ReturnLogic += $" && ({GameCode} {Area})"; }
+                if (VariableDungeon) { ReturnLogic += $" && ({BuildMQOption(MQ, DungeonCode)})"; }
+                return $"({ReturnLogic})";
             }
 
             string BuildMQOption(bool MQ, string DungeonCode)
@@ -643,7 +643,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         var LogicFileEntry = LogicFile.Logic.Find(x => x.Id == FullexitName);
                         if (LogicFileEntry is not null)
                         {
-                            string Logic = GetLogic(FileOBJ[key].exits[i], Game, key, VariableDungeon, MQDungeon, FileOBJ[key].dungeon);
+                            string Logic = GetLogic(FileOBJ[key].exits[i], Game, key, VariableDungeon, MQDungeon, FileOBJ[key].dungeon, true);
                             Logic = CombineLogicFromOtherSource(LogicFileEntry, Logic, $"LOGGING- {FullexitName} Duplicate Logic Entry");
                             if (FullexitName == "OOT SPAWN => OOT Link's House") { Logic = FileOBJ[key].exits[i]; }
                             LogicFileEntry.ConditionalItems = ParselogicLine(Logic, Game);
