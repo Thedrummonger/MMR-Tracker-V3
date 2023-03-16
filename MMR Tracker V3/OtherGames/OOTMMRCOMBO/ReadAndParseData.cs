@@ -14,6 +14,7 @@ using System.Collections;
 using System.Transactions;
 using Octokit;
 using static Microsoft.FSharp.Core.ByRefKinds;
+using YamlDotNet.Core.Tokens;
 
 namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 {
@@ -50,6 +51,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             string FinalLogicFile = Path.Combine(TestFolder, "Presets", @"DEV-OOTMM Casual.json");
 
             AddEntriesFromItemPools(out TrackerObjects.MMRData.LogicFile LogicFile, out TrackerObjects.LogicDictionaryData.LogicDictionary dictionaryFile);
+
             AddEntriesFromLogicFiles(LogicFile, dictionaryFile);
 
             CleanLogicAndParse(LogicFile);
@@ -60,8 +62,6 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
             FixAreaClearLogic(LogicFile);
 
-            FixLogicErrors(LogicFile, dictionaryFile);
-
             CreateEntrancePairs(dictionaryFile);
 
             CreateLocationProxies(dictionaryFile);
@@ -69,8 +69,6 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             AddRenewableChecks(LogicFile, dictionaryFile);
 
             FinalLogicCleanup(LogicFile);
-
-            //CreateAreaNameMappingFile();
 
             Logic = LogicFile;
             dictionary = dictionaryFile;
@@ -163,29 +161,6 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             }
         }
 
-        private static void CreateAreaNameMappingFile()
-        {
-            string AllRandoFile = Path.Combine(References.TestingPaths.GetDevTestingPath(), "MM-OOT", "OoTMM-Spoiler-FullRando.txt");
-            if (!File.Exists(AllRandoFile)) { return; }
-            string[] lines = File.ReadAllLines(AllRandoFile);
-
-            Dictionary<string, string> AreaData = new Dictionary<string, string>();
-
-            bool AtLocations = false;
-            string CurrentArea = "";
-            foreach (string line in lines)
-            {
-                if (line == "Location List") { AtLocations = true; continue; }
-                if (!AtLocations) { continue; }
-                var LineData = line.Split(':').Select(x => x.Trim()).ToArray();
-                if (LineData.Length < 2) { continue; }
-                if (string.IsNullOrWhiteSpace(LineData[1])) { CurrentArea = LineData[0]; continue; }
-                AreaData[LineData[0]] = CurrentArea;
-            }
-
-            Testing.PrintObjectToConsole(AreaData);
-        }
-
         private static void CreateEntrancePairs(LogicDictionaryData.LogicDictionary dictionaryFile)
         {
             var RandomizedEntrances = dictionaryFile.EntranceList.Where(x => x.RandomizableEntrance);
@@ -198,11 +173,6 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                     i.EntrancePairID = new EntranceData.EntranceAreaPair { Area= i.Exit, Exit = i.Area };
                 }
             }
-        }
-
-        private static void FixLogicErrors(MMRData.LogicFile logicFile, LogicDictionaryData.LogicDictionary dictionaryFile)
-        {
-            //No logic errors!
         }
 
         private static void RemoveGameFromNames(LogicDictionaryData.LogicDictionary dictionaryFile)
@@ -472,7 +442,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
             foreach (var i in dictionaryFile.ItemList.Where(x => x.Name.StartsWith("Small Key (")))
             {
-                int Maxinworld = i.MaxAmountInWorld is not null && i.MaxAmountInWorld > 0 ? i.MaxAmountInWorld??9 : 9;
+                int Maxinworld = i.MaxAmountInWorld is not null && i.MaxAmountInWorld > 0 ? (int)i.MaxAmountInWorld : 9;
                 if (Maxinworld < 2) { continue; }
                 string Dungeon = i.Name.Split('(')[1].Trim().TrimEnd(')');
                 string KeyRingName = i.ID.Replace($"SMALL_KEY", "KEY_RING");
@@ -537,7 +507,14 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 return NewLogic;
             }
 
-            Dictionary<string, List<string>> FoundFunctions = new Dictionary<string, List<string>>();
+            void ApplyLogic(MMRData.JsonFormatLogicItem LogicFileEntry, string InLogic, string Game, string Debugname = "")
+            {
+                string Logic = CombineLogicFromOtherSource(LogicFileEntry, InLogic, $"LOGGING- {Debugname} Duplicate Logic Entry");
+                LogicFileEntry.ConditionalItems = ParselogicLine(Logic, Game);
+                LogicUtilities.RemoveRedundantConditionals(LogicFileEntry);
+                LogicUtilities.MakeCommonConditionalsRequirements(LogicFileEntry);
+            }
+
             foreach(var file in files)
             {
                 string Game = file.Contains(@"\mm\") ? "MM": "OOT";
@@ -553,14 +530,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         if (LogicFileEntry is not null)
                         {
                             string Logic = GetLogic(FileOBJ[key].locations[i], Game, key, VariableDungeon, MQDungeon, FileOBJ[key].dungeon);
-                            Logic = CombineLogicFromOtherSource(LogicFileEntry, Logic, $"LOGGING- {key} {i} Duplicate Logic Entry");
-                            LogicFileEntry.ConditionalItems = ParselogicLine(Logic, Game);
-                            LogicUtilities.RemoveRedundantConditionals(LogicFileEntry);
-                            LogicUtilities.MakeCommonConditionalsRequirements(LogicFileEntry);
-                        }
-                        else
-                        {
-                            Debug.WriteLine($"{LogicFileEntry} was not added to the logic");
+                            ApplyLogic(LogicFileEntry, Logic, Game, $"{key} {i}");
                         }
                     }
                     foreach (var i in FileOBJ[key].exits?.Keys.ToArray()??Array.Empty<string>())
@@ -572,15 +542,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         if (LogicFileEntry is not null)
                         {
                             string Logic = GetLogic(FileOBJ[key].exits[i], Game, key, VariableDungeon, MQDungeon, FileOBJ[key].dungeon, true);
-                            Logic = CombineLogicFromOtherSource(LogicFileEntry, Logic, $"LOGGING- {FullexitName} Duplicate Logic Entry");
-                            if (FullexitName == "OOT SPAWN => OOT Link's House") { Logic = FileOBJ[key].exits[i]; }
-                            LogicFileEntry.ConditionalItems = ParselogicLine(Logic, Game);
-                            LogicUtilities.RemoveRedundantConditionals(LogicFileEntry);
-                            LogicUtilities.MakeCommonConditionalsRequirements(LogicFileEntry);
-                        }
-                        else
-                        {
-                            Debug.WriteLine($"{LogicFileEntry} was not added to the logic");
+                            ApplyLogic(LogicFileEntry, Logic, Game, FullexitName);
                         }
 
                     }
@@ -590,10 +552,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         if (LogicFileEntry is not null)
                         {
                             string Logic = GetLogic(FileOBJ[key].events[i], Game, key, VariableDungeon, MQDungeon, FileOBJ[key].dungeon);
-                            Logic = CombineLogicFromOtherSource(LogicFileEntry, Logic, $"LOGGING- {key} {i} Duplicate Logic Entry");
-                            LogicFileEntry.ConditionalItems = ParselogicLine(Logic, Game);
-                            LogicUtilities.RemoveRedundantConditionals(LogicFileEntry);
-                            LogicUtilities.MakeCommonConditionalsRequirements(LogicFileEntry);
+                            ApplyLogic(LogicFileEntry, Logic, Game, $"{key} {i}");
                         }
                     }
                     foreach (var i in FileOBJ[key].gossip?.Keys.ToArray()??Array.Empty<string>())
@@ -602,14 +561,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         if (LogicFileEntry is not null)
                         {
                             string Logic = GetLogic(FileOBJ[key].gossip[i], Game, key, VariableDungeon, MQDungeon, FileOBJ[key].dungeon);
-                            Logic = CombineLogicFromOtherSource(LogicFileEntry, Logic, $"LOGGING- {key} {i} Duplicate Logic Entry");
-                            LogicFileEntry.ConditionalItems = ParselogicLine(Logic, Game);
-                            LogicUtilities.RemoveRedundantConditionals(LogicFileEntry);
-                            LogicUtilities.MakeCommonConditionalsRequirements(LogicFileEntry);
-                        }
-                        else
-                        {
-                            Debug.WriteLine($"{LogicFileEntry} was not added to the logic");
+                            ApplyLogic(LogicFileEntry, Logic, Game, $"{key} {i}");
                         }
                     }
                 }
