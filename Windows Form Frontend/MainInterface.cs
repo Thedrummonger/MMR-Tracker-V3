@@ -1,18 +1,13 @@
-﻿using Microsoft.VisualBasic;
-using MMR_Tracker_V3;
+﻿using MMR_Tracker_V3;
 using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -275,7 +270,9 @@ namespace Windows_Form_Frontend
 
             WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(Logic), JsonConvert.SerializeObject(dictionary));
 
-            foreach(var i in InstanceContainer.Instance.LogicFile.Logic)
+            InstanceContainer.Instance.StaticOptions.ShowMacroExitsPathfinder = true;
+
+            foreach (var i in InstanceContainer.Instance.LogicFile.Logic)
             {
                 var logicitems = i.ConditionalItems.SelectMany(x => x).ToArray();
                 foreach(var l in logicitems)
@@ -447,7 +444,7 @@ namespace Windows_Form_Frontend
 
             string CurrentStart = (string)CMBStart.SelectedItem ?? "";
             string CurrentEnd = (string)CMBEnd.SelectedItem ?? "";
-            var AccessableAreas = InstanceContainer.Instance.EntrancePool.AreaList.Values.Where(x => x.ExitsAcessibleFrom > 0 && x.RandomizableExits(InstanceContainer.Instance).Any()).Select(x => x.ID);
+            var AccessableAreas = InstanceContainer.Instance.EntrancePool.AreaList.Values.Where(x => x.ExitsAcessibleFrom > 0 && (x.RandomizableExits(InstanceContainer.Instance).Any() || InstanceContainer.Instance.StaticOptions.ShowMacroExitsPathfinder)).Select(x => x.ID);
             CMBStart.DataSource = AccessableAreas.OrderBy(x => x).ToList();
             CMBEnd.DataSource = AccessableAreas.OrderBy(x => x).ToList();
             if (CMBStart.Items.Contains(CurrentStart)) { CMBStart.SelectedIndex = CMBStart.Items.IndexOf(CurrentStart); }
@@ -1153,7 +1150,7 @@ namespace Windows_Form_Frontend
 
         private void LB_KeyDown(object sender, KeyEventArgs e)
         {
-            if (Control.ModifierKeys == Keys.Control)
+            if (ModifierKeys == Keys.Control)
             {
                 switch (e.KeyCode)
                 {
@@ -1168,7 +1165,7 @@ namespace Windows_Form_Frontend
 
         private void preventKeyShortcuts(object sender, KeyPressEventArgs e)
         {
-            if (Control.ModifierKeys == Keys.Control &&
+            if (ModifierKeys == Keys.Control &&
                 this.ActiveControl != TXTLocSearch &&
                 this.ActiveControl != TXTEntSearch &&
                 this.ActiveControl != TXTCheckedSearch)
@@ -1189,7 +1186,7 @@ namespace Windows_Form_Frontend
             LBPathFinder.ItemHeight = Convert.ToInt32(LBPathFinder.Font.Size * 1.8);
             LBPathFinder.DataSource = new List<string> { "Finding path" };
             MainInterfacepathfinder = new Pathfinder();
-            MainInterfacepathfinder.FindPath(InstanceContainer.Instance, (string)CMBStart.SelectedItem, (string)CMBEnd.SelectedItem, new List<string>(), new Dictionary<string, string>());
+            MainInterfacepathfinder.FindPath(InstanceContainer.Instance, (string)CMBStart.SelectedItem, (string)CMBEnd.SelectedItem, new List<string>(), new Dictionary<string, string>(), IncludeMacroExits: InstanceContainer.Instance.StaticOptions.ShowMacroExitsPathfinder);
             MainInterfacepathfinder.FinalPath = MainInterfacepathfinder.FinalPath.OrderBy(x => x.Count).ToList();
             if (!MainInterfacepathfinder.FinalPath.Any()) { LBPathFinder.DataSource = new List<string> { "No Path Found" }; }
             else { PrintPaths(); }

@@ -48,7 +48,7 @@ namespace Windows_Form_Frontend
             listBox1.ItemHeight = Convert.ToInt32(listBox1.Font.Size * 1.8);
             listBox1.DataSource = new List<string> { "Finding path" };
             pathfinder = new Pathfinder();
-            pathfinder.FindPath(_instance, (string)comboBox1.SelectedItem, (string)comboBox2.SelectedItem, new List<string>(), new Dictionary<string, string>());
+            pathfinder.FindPath(_instance, (string)comboBox1.SelectedItem, (string)comboBox2.SelectedItem, new List<string>(), new Dictionary<string, string>(), IncludeMacroExits: _instance.StaticOptions.ShowMacroExitsPathfinder);
             pathfinder.FinalPath = pathfinder.FinalPath.OrderBy(x => x.Count).ToList();
             if (!pathfinder.FinalPath.Any()) { listBox1.DataSource = new List<string> { "No Path Found" }; }
             else { PrintPaths(); }
