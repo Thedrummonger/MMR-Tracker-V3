@@ -124,6 +124,17 @@ namespace MMR_Tracker_V3
             return RestorelogicValues(MathLogicArray, RefMap);
         }
 
+        public static string ConvertConditionalToLogicString(LogicStringParser Parser, List<List<string>> Conditional)
+        {
+            if (!Conditional.SelectMany(x => x).Any()) { return "(true)"; }
+            return $"(({string.Join($") {Parser._OROP} (", Conditional.Select(x => string.Join($" {Parser._ANDOP} ", x)))}))";
+        }
+
+        public static List<List<string>> ReparseConditional(LogicStringParser Parser, List<List<string>> Conditional)
+        {
+            return ConvertLogicStringToConditional(Parser, ConvertConditionalToLogicString(Parser, Conditional));
+        }
+
         private static string ConvertLogicParserObjectToMathString(List<LogicStringParser.LogicItem> Logic, out Dictionary<string, string> Ref, out Dictionary<char, string> OperatorMap)
         {
             int CurrentLetterIndex = 1;
@@ -214,10 +225,10 @@ namespace MMR_Tracker_V3
     }
     public class LogicStringParser
     {
-        private string _ANDOP;
-        private string _OROP;
-        private char _OpenContainer;
-        private char _CloseContainer;
+        public string _ANDOP;
+        public string _OROP;
+        public char _OpenContainer;
+        public char _CloseContainer;
         private bool _AllowSpaces;
         public LogicStringParser(OperatorType operatorType = OperatorType.CStyle, ContainerType containerType = ContainerType.parentheses, bool AllowSpaces = true)
         {

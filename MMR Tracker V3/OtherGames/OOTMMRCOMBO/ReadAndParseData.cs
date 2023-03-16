@@ -603,8 +603,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 {
                     //Debug.WriteLine(DebugMessage);
                     LogicUtilities.MoveRequirementsToConditionals(Logic);
-                    string CurrentLogic = $" || ({string.Join(" || ", Logic.ConditionalItems.Select(x => string.Join(" && ", x)))})";
-                    return NewLogic + CurrentLogic;
+                    return $"({NewLogic}) || ({LogicStringConverter.ConvertConditionalToLogicString(OOTMMLogicParser, Logic.ConditionalItems)})";
                 }
                 return NewLogic;
             }
