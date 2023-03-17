@@ -41,6 +41,12 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             public Dictionary<string, string> events = new Dictionary<string, string>();
             public Dictionary<string, string> gossip = new Dictionary<string, string>();
         }
+        public class MMROOTEntranceData
+        {
+            public string to;
+            public string from;
+            public string id;
+        }
 
         public static LogicStringParser OOTMMLogicParser = new LogicStringParser();
 
@@ -753,13 +759,16 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             string[] MMOOTCodeMMWorldFiles = Directory.GetFiles(MMOOTCodeMMWorld);
             string[] MMOOTCodeOOTWorldFiles = Directory.GetFiles(MMOOTCodeOOTWorld);
             string[] MMOOTCodeOOTMQWorldFiles = Directory.GetFiles(MMOOTCodeOOTMQWorld);
-            string FinalLogicFile = Path.Combine(TestFolder, @"OOTMMLogic.json");
-            string FinalDictFile = Path.Combine(TestFolder, @"OOTMMDict.json");
-            string OOTMMRandoEntrances = Path.Combine(OOTMMCode, @"RandomizableEntrances.json");
+            string MMEntrances = Path.Combine(MMOOTCodeMM, @"entrances.csv");
+            string OOTEntrances = Path.Combine(MMOOTCodeOOT, @"entrances.csv");
             string MMMacrosfile = File.ReadAllText(MMOOTCodeMMMacros);
             string OOTMacrosfile = File.ReadAllText(MMOOTCodeOOTMacros);
 
-            Dictionary<string, string> RandoEntrances = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(OOTMMRandoEntrances));
+
+            var MMentranceData = JsonConvert.DeserializeObject<List<MMROOTEntranceData>>(ConvertCsvFileToJsonObject(File.ReadAllLines(MMEntrances))).ToDictionary(x => x.to, x => x.from);
+            var OOTentranceData = JsonConvert.DeserializeObject<List<MMROOTEntranceData>>(ConvertCsvFileToJsonObject(File.ReadAllLines(OOTEntrances))).ToDictionary(x => x.to, x => x.from);
+
+            Dictionary<string, string> RandoEntrances = MMentranceData.Concat(OOTentranceData).ToDictionary(x => x.Key, x => x.Value);
 
             Dictionary<string, string> MMMacros = JsonConvert.DeserializeObject<Dictionary<string, string>>(MMMacrosfile);
             Dictionary<string, string> OOTMacros = JsonConvert.DeserializeObject<Dictionary<string, string>>(OOTMacrosfile);
