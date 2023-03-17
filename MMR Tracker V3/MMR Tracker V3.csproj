@@ -22,6 +22,9 @@
     <None Update="Recources\Dictionaries\MMR V12.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Recources\Dictionaries\OOTMM V1.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Recources\Presets\DEV-OOTMM Casual.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

@@ -21282,6 +21282,26 @@
       }
     },
     {
+      "ID": "OOT_BOMBS_30",
+      "Name": "30 Bombs (OoT)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_BOMBS_30",
+          "30 Bombs (OoT)"
+        ],
+        "GossipHintNames": [
+          "OOT_BOMBS_30",
+          "30 Bombs (OoT)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
       "ID": "OOT_BOMBS_5",
       "Name": "5 Bombs (OoT)",
       "MaxAmountInWorld": -1,
@@ -22702,6 +22722,26 @@
       }
     },
     {
+      "ID": "OOT_NUTS_5",
+      "Name": "5 Deku Nuts (OoT)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_NUTS_5",
+          "5 Deku Nuts (OoT)"
+        ],
+        "GossipHintNames": [
+          "OOT_NUTS_5",
+          "5 Deku Nuts (OoT)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
       "ID": "OOT_OCARINA",
       "Name": "Progressive Ocarina (OoT)",
       "MaxAmountInWorld": 2,
@@ -23662,6 +23702,26 @@
       }
     },
     {
+      "ID": "OOT_STICK",
+      "Name": "1 Deku Stick (OoT)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_STICK",
+          "1 Deku Stick (OoT)"
+        ],
+        "GossipHintNames": [
+          "OOT_STICK",
+          "1 Deku Stick (OoT)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
       "ID": "OOT_STICK_UPGRADE",
       "Name": "Deku Stick Upgrade",
       "MaxAmountInWorld": 2,
@@ -24502,6 +24562,46 @@
       }
     },
     {
+      "ID": "SHARED_NUTS_5",
+      "Name": "5 Deku Nuts",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_NUTS_5",
+          "5 Deku Nuts"
+        ],
+        "GossipHintNames": [
+          "SHARED_NUTS_5",
+          "5 Deku Nuts"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "SHARED_NUTS_10",
+      "Name": "10 Deku Nuts",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_NUTS_10",
+          "10 Deku Nuts"
+        ],
+        "GossipHintNames": [
+          "SHARED_NUTS_10",
+          "10 Deku Nuts"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
       "ID": "SHARED_OCARINA",
       "Name": "Progressive Ocarina",
       "MaxAmountInWorld": 2,
@@ -24722,6 +24822,26 @@
       }
     },
     {
+      "ID": "SHARED_STICK",
+      "Name": "Deku Sticks",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_STICK",
+          "Deku Sticks"
+        ],
+        "GossipHintNames": [
+          "SHARED_STICK",
+          "Deku Sticks"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    {
       "ID": "SHARED_WALLET",
       "Name": "Progressive Wallet",
       "MaxAmountInWorld": 2,
@@ -24882,46 +25002,6 @@
       }
     },
     {
-      "ID": "OOT_NUTS_5",
-      "Name": "5 Deku Nuts (OoT)",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "OOT_NUTS_5",
-          "5 Deku Nuts (OoT)"
-        ],
-        "GossipHintNames": [
-          "OOT_NUTS_5",
-          "5 Deku Nuts (OoT)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "OOT_STICK",
-      "Name": "1 Deku Stick (OoT)",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "OOT_STICK",
-          "1 Deku Stick (OoT)"
-        ],
-        "GossipHintNames": [
-          "OOT_STICK",
-          "1 Deku Stick (OoT)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
       "ID": "OOT_STICKS_5",
       "Name": "5 Deku Sticks (OoT)",
       "MaxAmountInWorld": -1,
@@ -24977,66 +25057,6 @@
         "GossipHintNames": [
           "SHARED_NUT",
           "1 Deku Nut"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "SHARED_NUTS_5",
-      "Name": "5 Deku Nuts",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_NUTS_5",
-          "5 Deku Nuts"
-        ],
-        "GossipHintNames": [
-          "SHARED_NUTS_5",
-          "5 Deku Nuts"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "SHARED_NUTS_10",
-      "Name": "10 Deku Nuts",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_NUTS_10",
-          "10 Deku Nuts"
-        ],
-        "GossipHintNames": [
-          "SHARED_NUTS_10",
-          "10 Deku Nuts"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "SHARED_STICK",
-      "Name": "1 Deku Stick",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_STICK",
-          "1 Deku Stick"
-        ],
-        "GossipHintNames": [
-          "SHARED_STICK",
-          "1 Deku Stick"
         ],
         "PriceDataNames": []
       }
