@@ -13936,37 +13936,7 @@
       "TrickCategory": "Ocarina of Time"
     },
     {
-      "Id": "TRICK_OOT_NIGHT_GS",
-      "RequiredItems": [],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": true,
-      "TrickCategory": "Ocarina of Time"
-    },
-    {
       "Id": "TRICK_OOT_DEKU_SKIP",
-      "RequiredItems": [],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": true,
-      "TrickCategory": "Ocarina of Time"
-    },
-    {
-      "Id": "TRICK_OOT_VOLCANO_HOVERS",
-      "RequiredItems": [],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": true,
-      "TrickCategory": "Ocarina of Time"
-    },
-    {
-      "Id": "TRICK_OOT_HAMMER_WALLS",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -13996,6 +13966,36 @@
       "TrickCategory": "Ocarina of Time"
     },
     {
+      "Id": "TRICK_OOT_HAMMER_WALLS",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": true,
+      "TrickCategory": "Ocarina of Time"
+    },
+    {
+      "Id": "TRICK_OOT_VOLCANO_HOVERS",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": true,
+      "TrickCategory": "Ocarina of Time"
+    },
+    {
+      "Id": "TRICK_OOT_NIGHT_GS",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": true,
+      "TrickCategory": "Ocarina of Time"
+    },
+    {
       "Id": "TRICK_MM_LENS",
       "RequiredItems": [],
       "ConditionalItems": [],
@@ -14006,7 +14006,17 @@
       "TrickCategory": "Majoras Mask"
     },
     {
-      "Id": "TRICK_MM_GORON_BOMB_JUMP",
+      "Id": "TRICK_MM_PALACE_BEAN_SKIP",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": true,
+      "TrickCategory": "Majoras Mask"
+    },
+    {
+      "Id": "TRICK_MM_DARMANI_WALL",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -14056,6 +14066,16 @@
       "TrickCategory": "Majoras Mask"
     },
     {
+      "Id": "TRICK_MM_ISTT_EYEGORE",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": true,
+      "TrickCategory": "Majoras Mask"
+    },
+    {
       "Id": "TRICK_MM_SCT_NOTHING",
       "RequiredItems": [],
       "ConditionalItems": [],
@@ -14066,7 +14086,7 @@
       "TrickCategory": "Majoras Mask"
     },
     {
-      "Id": "TRICK_MM_CAPTAIN_SKIP",
+      "Id": "TRICK_MM_GORON_BOMB_JUMP",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -14086,27 +14106,7 @@
       "TrickCategory": "Majoras Mask"
     },
     {
-      "Id": "TRICK_MM_DARMANI_WALL",
-      "RequiredItems": [],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": true,
-      "TrickCategory": "Majoras Mask"
-    },
-    {
-      "Id": "TRICK_MM_PALACE_BEAN_SKIP",
-      "RequiredItems": [],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": true,
-      "TrickCategory": "Majoras Mask"
-    },
-    {
-      "Id": "TRICK_MM_ISTT_EYEGORE",
+      "Id": "TRICK_MM_CAPTAIN_SKIP",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",

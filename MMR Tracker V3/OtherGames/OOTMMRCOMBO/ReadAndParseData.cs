@@ -977,10 +977,11 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 string TrickID = "TRICK_" + i;
                 TrackerObjects.LogicDictionaryData.DictionaryMacroEntry TrickObject = new TrackerObjects.LogicDictionaryData.DictionaryMacroEntry();
                 TrickObject.ID = TrickID;
-                TrickObject.Name = OOTRTricksDict[i].Split(":")[1];
+                TrickObject.Name = OOTRTricksDict[i];
                 logicDictionary.MacroList.Add(TrickObject);
 
-                logicFile.Logic.Add(new TrackerObjects.MMRData.JsonFormatLogicItem() { Id = TrickID, IsTrick = true, TrickCategory = OOTRTricksDict[i].Split(":")[0] });
+                string TrickCategory = i.StartsWith("OOT_") ? "Ocarina of Time" : "Majoras Mask";
+                logicFile.Logic.Add(new TrackerObjects.MMRData.JsonFormatLogicItem() { Id = TrickID, IsTrick = true, TrickCategory = TrickCategory });
             }
 
             Logic = logicFile;

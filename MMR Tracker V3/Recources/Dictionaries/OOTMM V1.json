@@ -23703,7 +23703,7 @@
     },
     {
       "ID": "OOT_STICK",
-      "Name": "1 Deku Stick (OoT)",
+      "Name": "Deku Stick (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -23712,11 +23712,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_STICK",
-          "1 Deku Stick (OoT)"
+          "Deku Stick (OoT)"
         ],
         "GossipHintNames": [
           "OOT_STICK",
-          "1 Deku Stick (OoT)"
+          "Deku Stick (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -33405,7 +33405,7 @@
   "MacroList": [
     {
       "ID": "TRICK_OOT_LENS",
-      "Name": "Fewer Lens Requirements",
+      "Name": "Fewer Lens Requirements (OoT)",
       "SpoilerData": {
         "SpoilerLogNames": [],
         "GossipHintNames": [],
@@ -33423,7 +33423,7 @@
     },
     {
       "ID": "TRICK_OOT_HIDDEN_GROTTOS",
-      "Name": "Hidden Grottos Without Stone of Agony",
+      "Name": "Hidden Grottos (OoT) without Stone of Agony",
       "SpoilerData": {
         "SpoilerLogNames": [],
         "GossipHintNames": [],
@@ -33441,7 +33441,7 @@
     },
     {
       "ID": "TRICK_OOT_MAN_ON_ROOF",
-      "Name": "Man On Roof With Nothing",
+      "Name": "Man on Roof with Nothing",
       "SpoilerData": {
         "SpoilerLogNames": [],
         "GossipHintNames": [],
@@ -33458,35 +33458,8 @@
       }
     },
     {
-      "ID": "TRICK_OOT_NIGHT_GS",
-      "Name": "Nighttime Skulltulas Without Suns Song",
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    {
       "ID": "TRICK_OOT_DEKU_SKIP",
       "Name": "Deku Tree B1 Skip",
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "TRICK_OOT_VOLCANO_HOVERS",
-      "Name": "Volcano Item with Hover Boots",
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "TRICK_OOT_HAMMER_WALLS",
-      "Name": "Hammer Through Walls",
       "SpoilerData": {
         "SpoilerLogNames": [],
         "GossipHintNames": [],
@@ -33512,8 +33485,8 @@
       }
     },
     {
-      "ID": "TRICK_MM_LENS",
-      "Name": "Fewer Lens Requirements",
+      "ID": "TRICK_OOT_HAMMER_WALLS",
+      "Name": "Hammer Through Walls",
       "SpoilerData": {
         "SpoilerLogNames": [],
         "GossipHintNames": [],
@@ -33521,8 +33494,44 @@
       }
     },
     {
-      "ID": "TRICK_MM_GORON_BOMB_JUMP",
-      "Name": "Bomb Jump Fences as Goron",
+      "ID": "TRICK_OOT_VOLCANO_HOVERS",
+      "Name": "Volcano Item with Hover Boots",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "TRICK_OOT_NIGHT_GS",
+      "Name": "Nighttime Gold Skulltulas without Sun's Song",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "TRICK_MM_LENS",
+      "Name": "Fewer Lens Requirements (MM)",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "TRICK_MM_PALACE_BEAN_SKIP",
+      "Name": "Skip Planting Beans in Deku Palace",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "TRICK_MM_DARMANI_WALL",
+      "Name": "Climb Mountain Village Wall Blind",
       "SpoilerData": {
         "SpoilerLogNames": [],
         "GossipHintNames": [],
@@ -33531,7 +33540,7 @@
     },
     {
       "ID": "TRICK_MM_NO_SEAHORSE",
-      "Name": "Pinnacle Rock Without Seahors",
+      "Name": "Pinnacle Rock without Seahorse",
       "SpoilerData": {
         "SpoilerLogNames": [],
         "GossipHintNames": [],
@@ -33549,7 +33558,7 @@
     },
     {
       "ID": "TRICK_MM_ICELESS_IKANA",
-      "Name": "Climb Ikana Canyon Without Ice Arrows",
+      "Name": "Climb Ikana Canyon without Ice Arrows",
       "SpoilerData": {
         "SpoilerLogNames": [],
         "GossipHintNames": [],
@@ -33558,7 +33567,16 @@
     },
     {
       "ID": "TRICK_MM_ONE_MASK_STONE_TOWER",
-      "Name": "Climb Stone Tower With One Mask",
+      "Name": "Climb Stone Tower with One Mask",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    {
+      "ID": "TRICK_MM_ISTT_EYEGORE",
+      "Name": "Inverted Stone Tower Temple Eyegore Skips",
       "SpoilerData": {
         "SpoilerLogNames": [],
         "GossipHintNames": [],
@@ -33575,8 +33593,8 @@
       }
     },
     {
-      "ID": "TRICK_MM_CAPTAIN_SKIP",
-      "Name": "Guess Oceanside Spider House Code",
+      "ID": "TRICK_MM_GORON_BOMB_JUMP",
+      "Name": "Bomb Jump Fences as Goron",
       "SpoilerData": {
         "SpoilerLogNames": [],
         "GossipHintNames": [],
@@ -33593,26 +33611,8 @@
       }
     },
     {
-      "ID": "TRICK_MM_DARMANI_WALL",
-      "Name": "Climb Mountain Village Wall Blind",
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "TRICK_MM_PALACE_BEAN_SKIP",
-      "Name": "Skip Planting Beans in Deku Palace",
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    {
-      "ID": "TRICK_MM_ISTT_EYEGORE",
-      "Name": "Inverted Stone Tower Temple Eyegore Skips",
+      "ID": "TRICK_MM_CAPTAIN_SKIP",
+      "Name": "Guess Oceanside Spider House Code",
       "SpoilerData": {
         "SpoilerLogNames": [],
         "GossipHintNames": [],
