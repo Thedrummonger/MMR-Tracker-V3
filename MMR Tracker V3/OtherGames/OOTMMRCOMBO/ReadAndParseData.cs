@@ -348,6 +348,14 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             fairyOcarinaMm.Values["false"].AddMaxAmountEdit("MM_OCARINA", MiscData.MathOP.subtract, 1);
             dictionaryFile.Options.Add(fairyOcarinaMm);
 
+            OptionData.TrackerOption shortHookshotMm = new OptionData.TrackerOption();
+            shortHookshotMm.ID = "shortHookshotMm";
+            shortHookshotMm.DisplayName = "Short Hookshot in MM";
+            shortHookshotMm.CurrentValue = "false";
+            shortHookshotMm.CreateSimpleValues(new string[] { "true", "false" });
+            shortHookshotMm.Values["false"].AddMaxAmountEdit("MM_HOOKSHOT", MiscData.MathOP.subtract, 1);
+            dictionaryFile.Options.Add(shortHookshotMm);
+
             //Game Clear
             dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "Game_Clear", RequiredItems = new List<string> { "OOT_EVENT_GANON", "MM_EVENT_MAJORA" } });
             dictionaryFile.MacroList.Add(new LogicDictionaryData.DictionaryMacroEntry { ID = "Game_Clear", Name = "Both Games Cleared" });

@@ -9057,7 +9057,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ],
         [
           "MM_MASK_DEKU",
@@ -9079,7 +9079,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ],
         [
           "MM_MASK_DEKU",
@@ -9727,7 +9727,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ],
         [
           "MM_can_use_beans"
@@ -10116,7 +10116,7 @@
         ],
         [
           "MM_MASK_DEKU",
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ],
         [
           "MM_can_use_beans",
@@ -10150,11 +10150,11 @@
           "MM Woodfall Shrine"
         ],
         [
-          "MM_HOOKSHOT",
+          "MM_can_hookshot",
           "MM Woodfall Shrine"
         ],
         [
-          "MM_HOOKSHOT",
+          "MM_can_hookshot",
           "MM_EVENT_CLEAN_SWAMP",
           "MM Woodfall"
         ]
@@ -10174,7 +10174,7 @@
           "MM_MASK_DEKU"
         ],
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -10192,7 +10192,7 @@
           "MM_MASK_DEKU"
         ],
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -10231,7 +10231,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ],
         [
           "MM_MASK_ZORA"
@@ -10341,7 +10341,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ],
         [
           "MM_MASK_ZORA"
@@ -10463,7 +10463,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ],
         [
           "MM_MASK_ZORA"
@@ -11051,7 +11051,7 @@
           "MM_MASK_ZORA"
         ],
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -11100,7 +11100,7 @@
     {
       "Id": "MM Great Bay Coast Fisherman HP",
       "RequiredItems": [
-        "MM_HOOKSHOT",
+        "MM_can_hookshot",
         "MM_EVENT_BOSS_GREAT_BAY",
         "MM Great Bay Coast"
       ],
@@ -11124,7 +11124,7 @@
     {
       "Id": "MM Great Bay Coast Cow Front",
       "RequiredItems": [
-        "MM_HOOKSHOT",
+        "MM_can_hookshot",
         "MM_OCARINA",
         "MM_SONG_EPONA",
         "MM Great Bay Coast"
@@ -11138,7 +11138,7 @@
     {
       "Id": "MM Great Bay Coast Cow Back",
       "RequiredItems": [
-        "MM_HOOKSHOT",
+        "MM_can_hookshot",
         "MM_OCARINA",
         "MM_SONG_EPONA",
         "MM Great Bay Coast"
@@ -11152,7 +11152,7 @@
     {
       "Id": "MM Zora Cape Ledge Chest 1",
       "RequiredItems": [
-        "MM_HOOKSHOT",
+        "MM_can_hookshot",
         "MM Waterfall Cliffs"
       ],
       "ConditionalItems": [],
@@ -11164,7 +11164,7 @@
     {
       "Id": "MM Zora Cape Ledge Chest 2",
       "RequiredItems": [
-        "MM_HOOKSHOT",
+        "MM_can_hookshot",
         "MM Waterfall Cliffs"
       ],
       "ConditionalItems": [],
@@ -11375,7 +11375,7 @@
       "Id": "MM Ocean Skulltula Entrance Right Wall",
       "RequiredItems": [
         "MM_has_explosives",
-        "MM_HOOKSHOT",
+        "MM_can_hookshot",
         "MM Ocean Spider House Front"
       ],
       "ConditionalItems": [],
@@ -11388,7 +11388,7 @@
       "Id": "MM Ocean Skulltula Entrance Left Wall",
       "RequiredItems": [
         "MM_has_explosives",
-        "MM_HOOKSHOT",
+        "MM_can_hookshot",
         "MM Ocean Spider House Front"
       ],
       "ConditionalItems": [],
@@ -11405,7 +11405,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ],
         [
           "MM_can_use_fire_arrows",
@@ -11424,7 +11424,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ],
         [
           "MM_MASK_ZORA"
@@ -11442,7 +11442,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ],
         [
           "MM_MASK_ZORA"
@@ -11467,7 +11467,7 @@
     {
       "Id": "MM Ocean Skulltula 2nd Room Webbed Hole",
       "RequiredItems": [
-        "MM_HOOKSHOT",
+        "MM_can_hookshot",
         "MM Ocean Spider House Back"
       ],
       "ConditionalItems": [],
@@ -11516,7 +11516,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ],
         [
           "MM_MASK_ZORA"
@@ -11557,7 +11557,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ],
         [
           "MM_MASK_ZORA"
@@ -11575,7 +11575,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ],
         [
           "MM_MASK_ZORA"
@@ -11612,7 +11612,7 @@
     {
       "Id": "MM Ocean Skulltula Storage Room Jar",
       "RequiredItems": [
-        "MM_HOOKSHOT",
+        "MM_can_hookshot",
         "MM Ocean Spider House Back"
       ],
       "ConditionalItems": [],
@@ -11624,7 +11624,7 @@
     {
       "Id": "MM Ocean Skulltula Library Hole Behind Picture",
       "RequiredItems": [
-        "MM_HOOKSHOT",
+        "MM_can_hookshot",
         "MM Ocean Spider House Back"
       ],
       "ConditionalItems": [],
@@ -11636,7 +11636,7 @@
     {
       "Id": "MM Ocean Skulltula Library Hole Behind Cabinet",
       "RequiredItems": [
-        "MM_HOOKSHOT",
+        "MM_can_hookshot",
         "MM Ocean Spider House Back"
       ],
       "ConditionalItems": [],
@@ -11663,7 +11663,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ],
         [
           "MM_MASK_ZORA"
@@ -11681,7 +11681,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ],
         [
           "MM_BOW"
@@ -11727,7 +11727,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ],
         [
           "MM_MASK_ZORA"
@@ -11778,7 +11778,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ],
         [
           "MM_MASK_ZORA"
@@ -11835,7 +11835,7 @@
     {
       "Id": "MM Road to Ikana Chest",
       "RequiredItems": [
-        "MM_HOOKSHOT",
+        "MM_can_hookshot",
         "MM Road to Ikana Front"
       ],
       "ConditionalItems": [],
@@ -11925,7 +11925,7 @@
           "MM_BOW"
         ],
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ],
         [
           "MM_MASK_DEKU"
@@ -12040,7 +12040,7 @@
           "MM_BOW"
         ],
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ],
         [
           "MM_can_use_deku_bubble"
@@ -12118,7 +12118,7 @@
           "MM_MASK_DEKU"
         ],
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -12136,7 +12136,7 @@
           "MM_MASK_DEKU"
         ],
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -12320,7 +12320,7 @@
         ],
         [
           "MM_MASK_GREAT_FAIRY",
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ],
         [
           "MM_EVENT_WOODFALL_TEMPLE_MAIN_FLOWER"
@@ -12353,7 +12353,7 @@
         ],
         [
           "MM_MASK_GREAT_FAIRY",
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -12473,7 +12473,7 @@
           "MM Snowhead Temple Bridge Back"
         ],
         [
-          "MM_HOOKSHOT",
+          "MM_can_hookshot",
           "MM Snowhead Temple Bridge Front"
         ]
       ],
@@ -12607,7 +12607,7 @@
           "MM_can_break_boulders"
         ],
         [
-          "MM_HOOKSHOT",
+          "MM_can_hookshot",
           "MM_has_explosives"
         ]
       ],
@@ -12637,7 +12637,7 @@
           "MM_can_use_lens"
         ],
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -12661,7 +12661,7 @@
         ],
         [
           "MM Snowhead Temple Bridge Front",
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -12681,7 +12681,7 @@
           "MM_BOW"
         ],
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -12750,7 +12750,7 @@
           "MM_BOW"
         ],
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -12902,7 +12902,7 @@
       "Id": "MM Pirate Fortress Interior Aquarium",
       "RequiredItems": [
         "MM_MASK_ZORA",
-        "MM_HOOKSHOT",
+        "MM_can_hookshot",
         "MM Pirate Fortress Lone Guard Aquarium"
       ],
       "ConditionalItems": [],
@@ -12937,7 +12937,7 @@
     {
       "Id": "MM Pirate Fortress Interior Upper Chest",
       "RequiredItems": [
-        "MM_HOOKSHOT",
+        "MM_can_hookshot",
         "MM Pirate Fortress Interior"
       ],
       "ConditionalItems": [],
@@ -12953,7 +12953,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ],
         [
           "MM_can_use_ice_arrows"
@@ -13022,7 +13022,7 @@
     {
       "Id": "MM Great Bay Temple Green Pipe 1 Chest",
       "RequiredItems": [
-        "MM_HOOKSHOT",
+        "MM_can_hookshot",
         "MM Great Bay Temple Green Pipe 1"
       ],
       "ConditionalItems": [],
@@ -13034,7 +13034,7 @@
     {
       "Id": "MM Great Bay Temple Green Pipe 2 Lower Chest",
       "RequiredItems": [
-        "MM_HOOKSHOT",
+        "MM_can_hookshot",
         "MM Great Bay Temple Green Pipe 2"
       ],
       "ConditionalItems": [],
@@ -13046,7 +13046,7 @@
     {
       "Id": "MM Great Bay Temple Green Pipe 2 Upper Chest",
       "RequiredItems": [
-        "MM_HOOKSHOT",
+        "MM_can_hookshot",
         "MM_can_use_ice_arrows",
         "MM_can_use_fire_arrows",
         "MM Great Bay Temple Green Pipe 2"
@@ -13062,7 +13062,7 @@
       "RequiredItems": [
         "MM_can_use_ice_arrows",
         "MM_can_use_fire_arrows",
-        "MM_HOOKSHOT",
+        "MM_can_hookshot",
         "MM Great Bay Temple Green Pipe 3"
       ],
       "ConditionalItems": [],
@@ -13097,7 +13097,7 @@
         ],
         [
           "MM_MASK_GREAT_FAIRY",
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -13195,7 +13195,7 @@
         ],
         [
           "MM_MASK_GREAT_FAIRY",
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -13311,7 +13311,7 @@
           "MM_BOW"
         ],
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -13357,7 +13357,7 @@
     {
       "Id": "MM Stone Tower Temple Under West Garden Ledge Chest",
       "RequiredItems": [
-        "MM_HOOKSHOT",
+        "MM_can_hookshot",
         "MM Stone Tower Temple Under West Garden"
       ],
       "ConditionalItems": [],
@@ -13626,6 +13626,7 @@
       "RequiredItems": [
         "MM_MASK_DEKU",
         "MM_can_use_elegy",
+        "MM_EVENT_STONE_TOWER_WATER_CHEST_SWITCH",
         "MM Stone Tower Temple Inverted East"
       ],
       "ConditionalItems": [],
@@ -13648,12 +13649,12 @@
         ],
         [
           "MM_BOW",
-          "MM_HOOKSHOT",
+          "MM_can_hookshot",
           "MM Stone Tower Temple Inverted Wizzrobe"
         ],
         [
           "MM_can_fight",
-          "MM_HOOKSHOT",
+          "MM_can_hookshot",
           "MM Stone Tower Temple Inverted Wizzrobe"
         ]
       ],
@@ -22794,7 +22795,7 @@
     {
       "Id": "MM Great Bay Temple => MM Zora Cape Peninsula",
       "RequiredItems": [
-        "MM_HOOKSHOT"
+        "MM_can_hookshot"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -22845,7 +22846,7 @@
       "RequiredItems": [
         "MM_EVENT_GB_PIPE_RED",
         "MM_EVENT_GB_PIPE_RED2",
-        "MM_HOOKSHOT",
+        "MM_can_hookshot",
         "MM Great Bay Temple Water Wheel"
       ],
       "ConditionalItems": [],
@@ -23455,7 +23456,7 @@
     {
       "Id": "MM Moon Trial Link Rest 1 => MM Moon Trial Link Rest 2",
       "RequiredItems": [
-        "MM_HOOKSHOT"
+        "MM_can_hookshot"
       ],
       "ConditionalItems": [
         [
@@ -23635,7 +23636,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ],
         [
           "MM_can_goron_bomb_jump"
@@ -24583,7 +24584,7 @@
         ],
         [
           "MM_MASK_DEKU",
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -24924,7 +24925,7 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_HOOKSHOT",
+          "MM_can_hookshot",
           "MM_MASK_DEKU"
         ],
         [
@@ -26098,7 +26099,7 @@
     {
       "Id": "MM Zora Cape => MM Waterfall Cliffs",
       "RequiredItems": [
-        "MM_HOOKSHOT"
+        "MM_can_hookshot"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -26109,7 +26110,7 @@
     {
       "Id": "MM Zora Cape => MM Great Bay Near Fairy Fountain",
       "RequiredItems": [
-        "MM_HOOKSHOT"
+        "MM_can_hookshot"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -26255,7 +26256,7 @@
       "Id": "MM Zora Cape Peninsula => MM Great Bay Temple",
       "RequiredItems": [
         "MM_MASK_ZORA",
-        "MM_HOOKSHOT",
+        "MM_can_hookshot",
         "MM_OCARINA",
         "MM_SONG_ZORA"
       ],
@@ -26331,7 +26332,7 @@
     {
       "Id": "MM Road to Ikana Center => MM Road to Ikana Top",
       "RequiredItems": [
-        "MM_HOOKSHOT"
+        "MM_can_hookshot"
       ],
       "ConditionalItems": [
         [
@@ -26465,7 +26466,7 @@
     {
       "Id": "MM Ikana Valley => MM Ikana Canyon",
       "RequiredItems": [
-        "MM_HOOKSHOT"
+        "MM_can_hookshot"
       ],
       "ConditionalItems": [
         [
@@ -26711,7 +26712,7 @@
     {
       "Id": "MM Stone Tower => MM Stone Tower Top",
       "RequiredItems": [
-        "MM_HOOKSHOT"
+        "MM_can_hookshot"
       ],
       "ConditionalItems": [
         [
@@ -26886,7 +26887,7 @@
     {
       "Id": "MM Pirate Fortress Entrance => MM Pirate Fortress Entrance Balcony",
       "RequiredItems": [
-        "MM_HOOKSHOT"
+        "MM_can_hookshot"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -27005,7 +27006,7 @@
     {
       "Id": "MM Pirate Fortress Interior => MM Pirate Fortress Lone Guard Entry",
       "RequiredItems": [
-        "MM_HOOKSHOT"
+        "MM_can_hookshot"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -27016,7 +27017,7 @@
     {
       "Id": "MM Pirate Fortress Interior => MM Pirate Fortress Barrel Maze Entry",
       "RequiredItems": [
-        "MM_HOOKSHOT"
+        "MM_can_hookshot"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -27048,13 +27049,13 @@
       "ConditionalItems": [
         [
           "MM_MASK_STONE",
-          "MM_HOOKSHOT",
+          "MM_can_hookshot",
           "MM_BOW",
           "MM Pirate Fortress Hookshot Room Lower"
         ],
         [
           "MM_MASK_STONE",
-          "MM_HOOKSHOT",
+          "MM_can_hookshot",
           "MM_can_use_deku_bubble",
           "MM Pirate Fortress Hookshot Room Lower"
         ],
@@ -27093,7 +27094,7 @@
     {
       "Id": "MM_EVENT_ZORA_EGGS_HOOKSHOT_ROOM",
       "RequiredItems": [
-        "MM_HOOKSHOT",
+        "MM_can_hookshot",
         "MM_MASK_ZORA",
         "MM_has_bottle",
         "MM Pirate Fortress Hookshot Room Lower"
@@ -27209,7 +27210,7 @@
     {
       "Id": "MM_EVENT_ZORA_EGGS_BARREL_MAZE",
       "RequiredItems": [
-        "MM_HOOKSHOT",
+        "MM_can_hookshot",
         "MM_MASK_ZORA",
         "MM_has_bottle",
         "MM Pirate Fortress Barrel Maze Aquarium"
@@ -27259,7 +27260,7 @@
     {
       "Id": "MM Pirate Fortress Lone Guard Entry => MM Pirate Fortress Treasure Room Entry",
       "RequiredItems": [
-        "MM_HOOKSHOT"
+        "MM_can_hookshot"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -27320,7 +27321,7 @@
     {
       "Id": "MM_EVENT_ZORA_EGGS_LONE_GUARD",
       "RequiredItems": [
-        "MM_HOOKSHOT",
+        "MM_can_hookshot",
         "MM_MASK_ZORA",
         "MM_has_bottle",
         "MM Pirate Fortress Lone Guard Aquarium"
@@ -27431,7 +27432,7 @@
     {
       "Id": "MM_EVENT_ZORA_EGGS_TREASURE_ROOM",
       "RequiredItems": [
-        "MM_HOOKSHOT",
+        "MM_can_hookshot",
         "MM_MASK_ZORA",
         "MM_has_bottle",
         "MM Pirate Fortress Treasure Room Aquarium"
@@ -27682,7 +27683,7 @@
           "MM_goron_fast_roll"
         ],
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -27911,7 +27912,7 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ],
         [
           "MM_EVENT_SNOWHEAD_PUSH_BLOCK",
@@ -27977,7 +27978,7 @@
           "MM_can_use_fire_arrows"
         ],
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -28074,7 +28075,7 @@
           "MM_goron_fast_roll"
         ],
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -28112,7 +28113,7 @@
     {
       "Id": "MM Snowhead Temple Fire Arrow => MM Snowhead Temple Center Level 3 Snow",
       "RequiredItems": [
-        "MM_HOOKSHOT"
+        "MM_can_hookshot"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -28155,7 +28156,7 @@
           "MM_MASK_GORON"
         ],
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -28228,7 +28229,7 @@
           "MM_MASK_GORON"
         ],
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -28876,7 +28877,7 @@
     {
       "Id": "MM Stone Tower Temple Inverted Wizzrobe => MM Stone Tower Temple Inverted Wizzrobe Ledge",
       "RequiredItems": [
-        "MM_HOOKSHOT"
+        "MM_can_hookshot"
       ],
       "ConditionalItems": [
         [
@@ -28989,7 +28990,7 @@
       "Id": "MM Stone Tower Temple Inverted Entrance Ledge => MM Stone Tower Temple Inverted Bridge",
       "RequiredItems": [
         "MM_SMALL_KEY_ST, 4",
-        "MM_HOOKSHOT"
+        "MM_can_hookshot"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -29044,7 +29045,7 @@
     {
       "Id": "MM Stone Tower Temple Inverted Bridge 2 => MM Stone Tower Temple Boss",
       "RequiredItems": [
-        "MM_HOOKSHOT",
+        "MM_can_hookshot",
         "MM_BOSS_KEY_ST"
       ],
       "ConditionalItems": [],
@@ -29169,7 +29170,7 @@
           "MM_MASK_DEKU"
         ],
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -29217,7 +29218,7 @@
           "MM_EVENT_WOODFALL_TEMPLE_MAIN_LADDER"
         ],
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -29260,7 +29261,7 @@
           "MM_MASK_DEKU"
         ],
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -29495,7 +29496,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ],
         [
           "MM_MASK_DEKU"
@@ -30901,7 +30902,7 @@
       "Id": "MM_scarecrow_hookshot",
       "RequiredItems": [
         "MM_has_ocarina",
-        "MM_HOOKSHOT"
+        "MM_can_hookshot"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -30941,7 +30942,7 @@
           "MM_BOW"
         ],
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ],
         [
           "MM_MASK_ZORA"
@@ -31083,7 +31084,7 @@
           "MM_BOW"
         ],
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ],
         [
           "MM_MASK_DEKU"
@@ -31105,7 +31106,7 @@
           "MM_BOW"
         ],
         [
-          "MM_HOOKSHOT"
+          "MM_can_hookshot"
         ],
         [
           "MM_MASK_ZORA"
@@ -31147,6 +31148,34 @@
         "TRICK_MM_GORON_BOMB_JUMP",
         "MM_MASK_GORON",
         "MM_BOMB_BAG"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_can_hookshot",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "option{shortHookshotMm, false}",
+          "MM_HOOKSHOT"
+        ],
+        [
+          "MM_HOOKSHOT, 2"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_can_hookshot_short",
+      "RequiredItems": [
+        "MM_HOOKSHOT"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",

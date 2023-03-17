@@ -19504,7 +19504,7 @@
     {
       "ID": "MM_HOOKSHOT",
       "Name": "Hookshot (MM)",
-      "MaxAmountInWorld": 1,
+      "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -34080,6 +34080,30 @@
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {
             "MM_OCARINA": {
+              "action": "subtract",
+              "amount": 1
+            }
+          }
+        }
+      }
+    },
+    {
+      "ID": "shortHookshotMm",
+      "DisplayName": "Short Hookshot in MM",
+      "CurrentValue": "false",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "MM_HOOKSHOT": {
               "action": "subtract",
               "amount": 1
             }
