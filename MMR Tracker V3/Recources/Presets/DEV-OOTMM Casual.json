@@ -13996,6 +13996,46 @@
       "TrickCategory": "Ocarina of Time"
     },
     {
+      "Id": "TRICK_OOT_CHILD_DOMAIN",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": true,
+      "TrickCategory": "Ocarina of Time"
+    },
+    {
+      "Id": "TRICK_OOT_ADULT_DOMAIN",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": true,
+      "TrickCategory": "Ocarina of Time"
+    },
+    {
+      "Id": "TRICK_OOT_WATER_LONGSHOT",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": true,
+      "TrickCategory": "Ocarina of Time"
+    },
+    {
+      "Id": "TRICK_OOT_SAND_RIVER_NOTHING",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": true,
+      "TrickCategory": "Ocarina of Time"
+    },
+    {
       "Id": "TRICK_MM_LENS",
       "RequiredItems": [],
       "ConditionalItems": [],
@@ -14107,6 +14147,46 @@
     },
     {
       "Id": "TRICK_MM_CAPTAIN_SKIP",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": true,
+      "TrickCategory": "Majoras Mask"
+    },
+    {
+      "Id": "TRICK_MM_ISTT_ENTRY_JUMP",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": true,
+      "TrickCategory": "Majoras Mask"
+    },
+    {
+      "Id": "TRICK_MM_ROAD_IKANA_SHORT_HOOK",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": true,
+      "TrickCategory": "Majoras Mask"
+    },
+    {
+      "Id": "TRICK_MM_PFI_BOAT_HOOK",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": true,
+      "TrickCategory": "Majoras Mask"
+    },
+    {
+      "Id": "TRICK_MM_PALACE_GUARD_SKIP",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -30897,6 +30977,18 @@
       "IsTrick": false
     },
     {
+      "Id": "MM_scarecrow_hookshot_short",
+      "RequiredItems": [
+        "MM_has_ocarina",
+        "MM_can_hookshot_short"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM_scarecrow_hookshot",
       "RequiredItems": [
         "MM_has_ocarina",
@@ -30940,7 +31032,7 @@
           "MM_BOW"
         ],
         [
-          "MM_can_hookshot"
+          "MM_can_hookshot_short"
         ],
         [
           "MM_MASK_ZORA"
@@ -31082,7 +31174,7 @@
           "MM_BOW"
         ],
         [
-          "MM_can_hookshot"
+          "MM_can_hookshot_short"
         ],
         [
           "MM_MASK_DEKU"
@@ -31104,7 +31196,7 @@
           "MM_BOW"
         ],
         [
-          "MM_can_hookshot"
+          "MM_can_hookshot_short"
         ],
         [
           "MM_MASK_ZORA"
@@ -31154,6 +31246,17 @@
       "IsTrick": false
     },
     {
+      "Id": "MM_can_hookshot_short",
+      "RequiredItems": [
+        "MM_HOOKSHOT"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM_can_hookshot",
       "RequiredItems": [],
       "ConditionalItems": [
@@ -31165,17 +31268,6 @@
           "MM_HOOKSHOT, 2"
         ]
       ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM_can_hookshot_short",
-      "RequiredItems": [
-        "MM_HOOKSHOT"
-      ],
-      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",

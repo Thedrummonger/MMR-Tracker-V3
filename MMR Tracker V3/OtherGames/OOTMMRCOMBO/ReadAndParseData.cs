@@ -474,7 +474,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 int Maxinworld = i.Value.MaxAmountInWorld is not null && i.Value.MaxAmountInWorld > 0 ? (int)i.Value.MaxAmountInWorld : 9;
                 if (Maxinworld < 2) { continue; }
                 string Dungeon = i.Value.Name.Split('(')[1].Trim().TrimEnd(')');
-                string KeyRingName = i.Value.ID.Replace($"SMALL_KEY", "KEY_RING");
+                string KeyRingName = i.Key.Replace($"SMALL_KEY", "KEY_RING");
                 OptionData.TrackerOption KeyRingOption = new OptionData.TrackerOption();
                 KeyRingOption.ID = $"{Dungeon.Replace(" ", "")}KeyRing";
                 KeyRingOption.DisplayName = $"{Dungeon} Key Ring";
@@ -996,7 +996,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 TrackerObjects.LogicDictionaryData.DictionaryMacroEntry TrickObject = new TrackerObjects.LogicDictionaryData.DictionaryMacroEntry();
                 TrickObject.ID = null;
                 TrickObject.Name = OOTRTricksDict[i];
-                logicDictionary.MacroList.Add(i,TrickObject);
+                logicDictionary.MacroList.Add(TrickID, TrickObject);
 
                 string TrickCategory = i.StartsWith("OOT_") ? "Ocarina of Time" : "Majoras Mask";
                 logicFile.Logic.Add(new TrackerObjects.MMRData.JsonFormatLogicItem() { Id = TrickID, IsTrick = true, TrickCategory = TrickCategory });

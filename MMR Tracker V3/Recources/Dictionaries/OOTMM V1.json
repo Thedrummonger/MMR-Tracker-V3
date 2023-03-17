@@ -31636,7 +31636,7 @@
     }
   },
   "MacroList": {
-    "OOT_LENS": {
+    "TRICK_OOT_LENS": {
       "Name": "Fewer Lens Requirements (OoT)",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -31644,7 +31644,7 @@
         "PriceDataNames": []
       }
     },
-    "OOT_TUNICS": {
+    "TRICK_OOT_TUNICS": {
       "Name": "Fewer Tunic Requirements",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -31652,7 +31652,7 @@
         "PriceDataNames": []
       }
     },
-    "OOT_HIDDEN_GROTTOS": {
+    "TRICK_OOT_HIDDEN_GROTTOS": {
       "Name": "Hidden Grottos (OoT) without Stone of Agony",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -31660,7 +31660,7 @@
         "PriceDataNames": []
       }
     },
-    "OOT_MIDO_SKIP": {
+    "TRICK_OOT_MIDO_SKIP": {
       "Name": "Backflip Over Mido",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -31668,7 +31668,7 @@
         "PriceDataNames": []
       }
     },
-    "OOT_MAN_ON_ROOF": {
+    "TRICK_OOT_MAN_ON_ROOF": {
       "Name": "Man on Roof with Nothing",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -31676,7 +31676,7 @@
         "PriceDataNames": []
       }
     },
-    "OOT_BLIND_WASTELAND": {
+    "TRICK_OOT_BLIND_WASTELAND": {
       "Name": "Blind Wasteland Crossing",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -31684,7 +31684,7 @@
         "PriceDataNames": []
       }
     },
-    "OOT_DEKU_SKIP": {
+    "TRICK_OOT_DEKU_SKIP": {
       "Name": "Deku Tree B1 Skip",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -31692,7 +31692,7 @@
         "PriceDataNames": []
       }
     },
-    "OOT_DC_JUMP": {
+    "TRICK_OOT_DC_JUMP": {
       "Name": "Dodongo's Cavern Upper Adult Jump",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -31700,7 +31700,7 @@
         "PriceDataNames": []
       }
     },
-    "OOT_FOREST_HOOK": {
+    "TRICK_OOT_FOREST_HOOK": {
       "Name": "Forest Temple Garden Vines with Hookshot",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -31708,7 +31708,7 @@
         "PriceDataNames": []
       }
     },
-    "OOT_HAMMER_WALLS": {
+    "TRICK_OOT_HAMMER_WALLS": {
       "Name": "Hammer Through Walls",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -31716,7 +31716,7 @@
         "PriceDataNames": []
       }
     },
-    "OOT_VOLCANO_HOVERS": {
+    "TRICK_OOT_VOLCANO_HOVERS": {
       "Name": "Volcano Item with Hover Boots",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -31724,7 +31724,7 @@
         "PriceDataNames": []
       }
     },
-    "OOT_NIGHT_GS": {
+    "TRICK_OOT_NIGHT_GS": {
       "Name": "Nighttime Gold Skulltulas without Sun's Song",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -31732,7 +31732,39 @@
         "PriceDataNames": []
       }
     },
-    "MM_LENS": {
+    "TRICK_OOT_CHILD_DOMAIN": {
+      "Name": "Enter Child Zora's Domain with Cucco",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "TRICK_OOT_ADULT_DOMAIN": {
+      "Name": "Enter Adult Zora's Domain using Hover Boots",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "TRICK_OOT_WATER_LONGSHOT": {
+      "Name": "Drain Water Temple using Longshot",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "TRICK_OOT_SAND_RIVER_NOTHING": {
+      "Name": "Cross the River of Sand with Nothing",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "TRICK_MM_LENS": {
       "Name": "Fewer Lens Requirements (MM)",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -31740,7 +31772,7 @@
         "PriceDataNames": []
       }
     },
-    "MM_PALACE_BEAN_SKIP": {
+    "TRICK_MM_PALACE_BEAN_SKIP": {
       "Name": "Skip Planting Beans in Deku Palace",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -31748,7 +31780,7 @@
         "PriceDataNames": []
       }
     },
-    "MM_DARMANI_WALL": {
+    "TRICK_MM_DARMANI_WALL": {
       "Name": "Climb Mountain Village Wall Blind",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -31756,7 +31788,7 @@
         "PriceDataNames": []
       }
     },
-    "MM_NO_SEAHORSE": {
+    "TRICK_MM_NO_SEAHORSE": {
       "Name": "Pinnacle Rock without Seahorse",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -31764,7 +31796,7 @@
         "PriceDataNames": []
       }
     },
-    "MM_ZORA_HALL_HUMAN": {
+    "TRICK_MM_ZORA_HALL_HUMAN": {
       "Name": "Swim to Zora Hall as Human",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -31772,7 +31804,7 @@
         "PriceDataNames": []
       }
     },
-    "MM_ICELESS_IKANA": {
+    "TRICK_MM_ICELESS_IKANA": {
       "Name": "Climb Ikana Canyon without Ice Arrows",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -31780,7 +31812,7 @@
         "PriceDataNames": []
       }
     },
-    "MM_ONE_MASK_STONE_TOWER": {
+    "TRICK_MM_ONE_MASK_STONE_TOWER": {
       "Name": "Climb Stone Tower with One Mask",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -31788,7 +31820,7 @@
         "PriceDataNames": []
       }
     },
-    "MM_ISTT_EYEGORE": {
+    "TRICK_MM_ISTT_EYEGORE": {
       "Name": "Inverted Stone Tower Temple Eyegore Skips",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -31796,7 +31828,7 @@
         "PriceDataNames": []
       }
     },
-    "MM_SCT_NOTHING": {
+    "TRICK_MM_SCT_NOTHING": {
       "Name": "South Clock Town Chest with Nothing",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -31804,7 +31836,7 @@
         "PriceDataNames": []
       }
     },
-    "MM_GORON_BOMB_JUMP": {
+    "TRICK_MM_GORON_BOMB_JUMP": {
       "Name": "Bomb Jump Fences as Goron",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -31812,7 +31844,7 @@
         "PriceDataNames": []
       }
     },
-    "MM_BOMBER_SKIP": {
+    "TRICK_MM_BOMBER_SKIP": {
       "Name": "Guess Bomber Code",
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -31820,8 +31852,40 @@
         "PriceDataNames": []
       }
     },
-    "MM_CAPTAIN_SKIP": {
+    "TRICK_MM_CAPTAIN_SKIP": {
       "Name": "Guess Oceanside Spider House Code",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "TRICK_MM_ISTT_ENTRY_JUMP": {
+      "Name": "Inverted Stone Tower Temple Long Jump to Death Armos",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "TRICK_MM_ROAD_IKANA_SHORT_HOOK": {
+      "Name": "Road to Ikana chest using Short Hookshot",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "TRICK_MM_PFI_BOAT_HOOK": {
+      "Name": "Enter Pirate Fortress Interior using Hookshot from the Boats",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "TRICK_MM_PALACE_GUARD_SKIP": {
+      "Name": "Backflip over Deku Palace Guards",
       "SpoilerData": {
         "SpoilerLogNames": [],
         "GossipHintNames": [],
