@@ -103,8 +103,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             //Create Variables
             List<string> OOTSticks = new() { "OOT_STICK", "OOT_STICKS_5", "OOT_STICKS_10", "SHARED_STICK", "SHARED_STICKS_5", "SHARED_STICKS_10" };
             List<string> OOTnuts = new() { "OOT_NUT", "OOT_NUTS_5", "OOT_NUTS_10", "SHARED_NUT", "SHARED_NUTS_5", "SHARED_NUTS_10" };
-            dictionaryFile.Variables.Add(new LogicDictionaryData.TrackerVariable { ID = "OOT_ANY_STICK", Static = true, Value = OOTSticks });
-            dictionaryFile.Variables.Add(new LogicDictionaryData.TrackerVariable { ID = "OOT_ANY_NUT", Static = true, Value = OOTnuts });
+            dictionaryFile.Variables.Add("OOT_ANY_STICK", new LogicDictionaryData.TrackerVariable { ID = "OOT_ANY_STICK", Static = true, Value = OOTSticks });
+            dictionaryFile.Variables.Add("OOT_ANY_NUT", new LogicDictionaryData.TrackerVariable { ID = "OOT_ANY_NUT", Static = true, Value = OOTnuts });
 
             //Add Reneawable Logic
             var OOTRenewableLocations = GetRenewableLocations("OOT");
@@ -154,7 +154,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
             void createLocationProxy(string OriginalLocationID, string ID, string ProxyName, string ProxyArea, string Logic)
             {
-                var OriginalLocation = dictionaryFile.LocationList.Find(x => x.ID == OriginalLocationID);
+                var OriginalLocation = dictionaryFile.LocationList[OriginalLocationID];
                 OriginalLocation.LocationProxys.Add(new LogicDictionaryData.DictLocationProxy()
                 {
                     ID = ID,
@@ -167,14 +167,14 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
         private static void CreateEntrancePairs(LogicDictionaryData.LogicDictionary dictionaryFile)
         {
-            var RandomizedEntrances = dictionaryFile.EntranceList.Where(x => x.RandomizableEntrance);
+            var RandomizedEntrances = dictionaryFile.EntranceList.Where(x => x.Value.RandomizableEntrance);
 
             foreach(var i in RandomizedEntrances)
             {
-                string PairId = $"{i.Exit} => {i.Area}";
-                if (RandomizedEntrances.Any(x => x.ID == PairId))
+                string PairId = $"{i.Value.Exit} => {i.Value.Area}";
+                if (RandomizedEntrances.Any(x => x.Key == PairId))
                 {
-                    i.EntrancePairID = new EntranceData.EntranceAreaPair { Area= i.Exit, Exit = i.Area };
+                    i.Value.EntrancePairID = new EntranceData.EntranceAreaPair { Area= i.Value.Exit, Exit = i.Value.Area };
                 }
             }
         }
@@ -183,13 +183,13 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
         {
             foreach(var i in dictionaryFile.ItemList)
             {
-                i.Name = i.Name.Replace("OOT ", "").Replace("MM ", "");
-                i.SpoilerData.SpoilerLogNames = i.SpoilerData.SpoilerLogNames.Append(i.Name).Distinct().ToArray();
-                i.SpoilerData.GossipHintNames = i.SpoilerData.GossipHintNames.Append(i.Name).Distinct().ToArray();
+                i.Value.Name = i.Value.Name.Replace("OOT ", "").Replace("MM ", "");
+                i.Value.SpoilerData.SpoilerLogNames = i.Value.SpoilerData.SpoilerLogNames.Append(i.Value.Name).Distinct().ToArray();
+                i.Value.SpoilerData.GossipHintNames = i.Value.SpoilerData.GossipHintNames.Append(i.Value.Name).Distinct().ToArray();
             }
             foreach (var i in dictionaryFile.LocationList)
             {
-                i.Name = i.Name.Replace("OOT ", "").Replace("MM ", "");
+                i.Value.Name = i.Value.Name.Replace("OOT ", "").Replace("MM ", "");
             }
         }
 
@@ -221,14 +221,14 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             };
             MM_Masks.Name = "MM Masks";
             MM_Masks.ID = "MM_MASKS";
-            dictionaryFile.Variables.Add(MM_Masks);
+            dictionaryFile.Variables.Add(MM_Masks.ID, MM_Masks);
 
             OptionData.TrackerOption ageFilter = new OptionData.TrackerOption();
             ageFilter.ID = "age_filter";
             ageFilter.DisplayName = "Age Filter";
             ageFilter.CurrentValue = "both";
             ageFilter.CreateSimpleValues(new string[] { "both", "adult", "child" });
-            dictionaryFile.Options.Add(ageFilter);
+            dictionaryFile.Options.Add(ageFilter.ID, ageFilter);
 
             OptionData.TrackerOption EggContentShuffle = new OptionData.TrackerOption();
             EggContentShuffle.ID = "eggShuffle";
@@ -237,7 +237,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             EggContentShuffle.CreateSimpleValues(new string[] { "true", "false" });
             EggContentShuffle.Values["false"].AddMaxAmountEdit("OOT_WEIRD_EGG", MiscData.MathOP.set, 0);
             EggContentShuffle.Values["false"].AddMaxAmountEdit("OOT_POCKET_EGG", MiscData.MathOP.set, 0);
-            dictionaryFile.Options.Add(EggContentShuffle);
+            dictionaryFile.Options.Add(EggContentShuffle.ID,EggContentShuffle);
 
             OptionData.TrackerOption DoorOfTime = new OptionData.TrackerOption();
             DoorOfTime.ID = "doorOfTime";
@@ -246,14 +246,14 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             DoorOfTime.CreateSimpleValues(new string[] { "open", "closed" });
             DoorOfTime.Values["open"].Name = "Open";
             DoorOfTime.Values["closed"].Name = "Closed";
-            dictionaryFile.Options.Add(DoorOfTime);
+            dictionaryFile.Options.Add(DoorOfTime.ID,DoorOfTime);
 
             OptionData.TrackerOption CrossGameOOTWarpSong = new OptionData.TrackerOption();
             CrossGameOOTWarpSong.ID = "crossWarpOot";
             CrossGameOOTWarpSong.DisplayName = "Cross-Games OoT Warp Songs";
             CrossGameOOTWarpSong.CurrentValue = "false";
             CrossGameOOTWarpSong.CreateSimpleValues(new string[] { "true", "false" });
-            dictionaryFile.Options.Add(CrossGameOOTWarpSong);
+            dictionaryFile.Options.Add(CrossGameOOTWarpSong.ID, CrossGameOOTWarpSong);
 
             OptionData.TrackerOption CrossGameMMWarpSong = new OptionData.TrackerOption();
             CrossGameMMWarpSong.ID = "crossWarpMm";
@@ -263,7 +263,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             CrossGameMMWarpSong.Values["none"].Name = "None";
             CrossGameMMWarpSong.Values["childOnly"].Name = "Child Only";
             CrossGameMMWarpSong.Values["full"].Name = "Child & Adult";
-            dictionaryFile.Options.Add(CrossGameMMWarpSong);
+            dictionaryFile.Options.Add(CrossGameMMWarpSong.ID, CrossGameMMWarpSong);
 
             OptionData.TrackerOption GanonBossKey = new OptionData.TrackerOption();
             GanonBossKey.ID = "ganonBossKey";
@@ -275,7 +275,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             GanonBossKey.Values["ganon"].Name = "Ganon's Castle";
             GanonBossKey.Values["anywhere"].Name = "Anywhere";
             GanonBossKey.Values["removed"].AddMaxAmountEdit("OOT_BOSS_KEY_GANON", MiscData.MathOP.set, 0);
-            dictionaryFile.Options.Add(GanonBossKey);
+            dictionaryFile.Options.Add(GanonBossKey.ID, GanonBossKey);
 
             OptionData.TrackerOption SmallKey = new OptionData.TrackerOption();
             SmallKey.ID = "smallKeyShuffle";
@@ -285,7 +285,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             SmallKey.Values["ownDungeon"].Name = "Own Dungeon";
             SmallKey.Values["anywhere"].Name = "Anywhere";
             SmallKey.Values["ownDungeon"].AddMaxAmountEdit("OOT_SMALL_KEY_FIRE", MiscData.MathOP.subtract, 1);
-            dictionaryFile.Options.Add(SmallKey);
+            dictionaryFile.Options.Add(SmallKey.ID, SmallKey);
 
             OptionData.TrackerOption ProgressiveShieldsOOT = new OptionData.TrackerOption();
             ProgressiveShieldsOOT.ID = "progressiveShieldsOot";
@@ -297,7 +297,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             ProgressiveShieldsOOT.Values["progressive"].AddMaxAmountEdit("OOT_SHIELD_DEKU", MiscData.MathOP.set, 0);
             ProgressiveShieldsOOT.Values["progressive"].AddMaxAmountEdit("OOT_SHIELD_HYLIAN", MiscData.MathOP.set, 0);
             ProgressiveShieldsOOT.Values["progressive"].AddMaxAmountEdit("OOT_SHIELD_MIRROR", MiscData.MathOP.set, 0);
-            dictionaryFile.Options.Add(ProgressiveShieldsOOT);
+            dictionaryFile.Options.Add(ProgressiveShieldsOOT.ID, ProgressiveShieldsOOT);
 
             OptionData.TrackerOption ProgressiveSwordsOOT = new OptionData.TrackerOption();
             ProgressiveSwordsOOT.ID = "progressiveSwordsOot";
@@ -318,7 +318,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             ProgressiveSwordsOOT.Values["separate"].Name = "Separate";
             ProgressiveSwordsOOT.Values["goron"].Name = "Progressive Knife and Biggoron";
             ProgressiveSwordsOOT.Values["progressive"].Name = "Progressive";
-            dictionaryFile.Options.Add(ProgressiveSwordsOOT);
+            dictionaryFile.Options.Add(ProgressiveSwordsOOT.ID, ProgressiveSwordsOOT);
 
             OptionData.TrackerOption ProgressiveShieldsMM = new OptionData.TrackerOption();
             ProgressiveShieldsMM.ID = "progressiveShieldsMm";
@@ -332,7 +332,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             ProgressiveShieldsMM.Values["separate"].Name = "Separate";
             ProgressiveShieldsMM.Values["start"].Name = "Start with Hero Shield";
             ProgressiveShieldsMM.Values["progressive"].Name = "Progressive";
-            dictionaryFile.Options.Add(ProgressiveShieldsMM);
+            dictionaryFile.Options.Add(ProgressiveShieldsMM.ID, ProgressiveShieldsMM);
 
             OptionData.TrackerOption ProgressiveLullabyMM = new OptionData.TrackerOption();
             ProgressiveLullabyMM.ID = "progressiveGoronLullaby";
@@ -342,7 +342,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             ProgressiveLullabyMM.CreateSimpleValues(new string[] { "single", "progressive" });
             ProgressiveLullabyMM.Values["single"].AddMaxAmountEdit("MM_SONG_GORON_HALF", MiscData.MathOP.set, 0);
             ProgressiveLullabyMM.Values["progressive"].AddMaxAmountEdit("MM_SONG_GORON", MiscData.MathOP.set, 0);
-            dictionaryFile.Options.Add(ProgressiveLullabyMM);
+            dictionaryFile.Options.Add(ProgressiveLullabyMM.ID, ProgressiveLullabyMM);
 
             OptionData.TrackerOption fairyOcarinaMm = new OptionData.TrackerOption();
             fairyOcarinaMm.ID = "fairyOcarinaMm";
@@ -350,7 +350,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             fairyOcarinaMm.CurrentValue = "false";
             fairyOcarinaMm.CreateSimpleValues(new string[] { "true", "false" });
             fairyOcarinaMm.Values["false"].AddMaxAmountEdit("MM_OCARINA", MiscData.MathOP.subtract, 1);
-            dictionaryFile.Options.Add(fairyOcarinaMm);
+            dictionaryFile.Options.Add(fairyOcarinaMm.ID, fairyOcarinaMm);
 
             OptionData.TrackerOption shortHookshotMm = new OptionData.TrackerOption();
             shortHookshotMm.ID = "shortHookshotMm";
@@ -358,11 +358,11 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             shortHookshotMm.CurrentValue = "false";
             shortHookshotMm.CreateSimpleValues(new string[] { "true", "false" });
             shortHookshotMm.Values["false"].AddMaxAmountEdit("MM_HOOKSHOT", MiscData.MathOP.subtract, 1);
-            dictionaryFile.Options.Add(shortHookshotMm);
+            dictionaryFile.Options.Add(shortHookshotMm.ID, shortHookshotMm);
 
             //Game Clear
             dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "Game_Clear", RequiredItems = new List<string> { "OOT_EVENT_GANON", "MM_EVENT_MAJORA" } });
-            dictionaryFile.MacroList.Add(new LogicDictionaryData.DictionaryMacroEntry { ID = "Game_Clear", Name = "Both Games Cleared" });
+            dictionaryFile.MacroList.Add("Game_Clear", new LogicDictionaryData.DictionaryMacroEntry { ID = "Game_Clear", Name = "Both Games Cleared" });
             dictionaryFile.WinCondition = "Game_Clear";
 
             //Temp Workaround for a typo in logic
@@ -404,7 +404,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 MQEntry.CurrentValue = "false";
                 MQEntry.CreateSimpleValues(new string[] { "true", "false" });
                 if (Key != null) { MQEntry.Values["true"].AddMaxAmountEdit(Key, MiscData.MathOP.set, MaxKeys); }
-                dictionaryFile.Options.Add(MQEntry);
+                dictionaryFile.Options.Add(ID, MQEntry);
             }
 
             void AddSharedItemOptions(string ID, string Name, string[] Items, int LogicalAmount, string[] NonLogicReplacements = null)
@@ -457,15 +457,15 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                     }
                 };
 
-                dictionaryFile.Options.Add(SharedItem);
+                dictionaryFile.Options.Add(ID, SharedItem);
             }
 
-            foreach (var i in dictionaryFile.ItemList.Where(x => x.Name.StartsWith("Small Key (")))
+            foreach (var i in dictionaryFile.ItemList.Where(x => x.Value.Name.StartsWith("Small Key (")))
             {
-                int Maxinworld = i.MaxAmountInWorld is not null && i.MaxAmountInWorld > 0 ? (int)i.MaxAmountInWorld : 9;
+                int Maxinworld = i.Value.MaxAmountInWorld is not null && i.Value.MaxAmountInWorld > 0 ? (int)i.Value.MaxAmountInWorld : 9;
                 if (Maxinworld < 2) { continue; }
-                string Dungeon = i.Name.Split('(')[1].Trim().TrimEnd(')');
-                string KeyRingName = i.ID.Replace($"SMALL_KEY", "KEY_RING");
+                string Dungeon = i.Value.Name.Split('(')[1].Trim().TrimEnd(')');
+                string KeyRingName = i.Value.ID.Replace($"SMALL_KEY", "KEY_RING");
                 OptionData.TrackerOption KeyRingOption = new OptionData.TrackerOption();
                 KeyRingOption.ID = $"{Dungeon.Replace(" ", "")}KeyRing";
                 KeyRingOption.DisplayName = $"{Dungeon} Key Ring";
@@ -473,12 +473,12 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 KeyRingOption.CurrentValue = "false";
                 KeyRingOption.SubCategory = "Key Rings";
                 KeyRingOption.Values["true"].LogicReplacements = new OptionData.LogicReplacement[] { new OptionData.LogicReplacement() };
-                KeyRingOption.Values["true"].LogicReplacements[0].ReplacementList.Add(i.ID, i.ID.Replace("SMALL_KEY", "KEY_RING"));
-                KeyRingOption.Values["true"].AddMaxAmountEdit(i.ID, MiscData.MathOP.set, 0);
+                KeyRingOption.Values["true"].LogicReplacements[0].ReplacementList.Add(i.Key, i.Key.Replace("SMALL_KEY", "KEY_RING"));
+                KeyRingOption.Values["true"].AddMaxAmountEdit(i.Key, MiscData.MathOP.set, 0);
                 KeyRingOption.Values["false"].AddMaxAmountEdit(KeyRingName, MiscData.MathOP.set, 0);
                 for (var c = 1; c <= Maxinworld; c++)
                 {
-                    KeyRingOption.Values["true"].LogicReplacements[0].ReplacementList.Add($"{i.ID}, {c}", KeyRingName);
+                    KeyRingOption.Values["true"].LogicReplacements[0].ReplacementList.Add($"{i.Key}, {c}", KeyRingName);
                 }
                 //dictionaryFile.Options.Add(KeyRingOption);
             }
@@ -819,7 +819,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                                 LogicFile.Logic.Add(EntranceEntry);
                             }
 
-                            if (dictionaryFile.EntranceList.Find(x => x.ID == FullexitName) == null)
+                            if (dictionaryFile.EntranceList.Values.FirstOrDefault(x => x.ID == FullexitName) == null)
                             {
                                 TrackerObjects.LogicDictionaryData.DictionaryEntranceEntries entranceEntry = new TrackerObjects.LogicDictionaryData.DictionaryEntranceEntries();
                                 entranceEntry.ID = FullexitName;
@@ -839,7 +839,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                                     }
                                 }
 
-                                dictionaryFile.EntranceList.Add(entranceEntry);
+                                dictionaryFile.EntranceList.Add(FullexitName, entranceEntry);
                             }
                         }
                         foreach (var Event in LogicObject[l]?.events?.Keys?.ToList()??new List<string>())
@@ -857,12 +857,12 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                             {
                                 LogicFile.Logic.Add(new TrackerObjects.MMRData.JsonFormatLogicItem { Id = TrueHintName });
                             }
-                            if (dictionaryFile.HintSpots.Find(x => x.ID == TrueHintName) == null)
+                            if (dictionaryFile.HintSpots.Values.FirstOrDefault(x => x.ID == TrueHintName) == null)
                             {
                                 LogicDictionaryData.DictionaryHintEntries dictionaryHint = new LogicDictionaryData.DictionaryHintEntries();
                                 dictionaryHint.ID = TrueHintName;
                                 dictionaryHint.Name = TrueHintName;
-                                dictionaryFile.HintSpots.Add(dictionaryHint);
+                                dictionaryFile.HintSpots.Add(TrueHintName, dictionaryHint);
                             }
                         }
                     }
@@ -947,8 +947,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 LogicVersion = 1,
                 GameCode = "OOTMM",
                 RootArea = "OOT SPAWN",
-                LocationList = new List<LogicDictionaryData.DictionaryLocationEntries>(),
-                ItemList = new List<LogicDictionaryData.DictionaryItemEntries>()
+                LocationList = new(),
+                ItemList = new()
             };
 
             foreach (var i in OOTRCheckDict.Keys)
@@ -964,7 +964,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 else if (OOTRAreaDict.ContainsKey(DictValue[0])) { dictEntry.Area = OOTRAreaDict[DictValue[0]]; }
                 else { dictEntry.Area = DictValue[0]; Debug.WriteLine($"{i} Had no Area Data"); }
                 dictEntry.OriginalItem = DictValue[1];
-                logicDictionary.LocationList.Add(dictEntry);
+                logicDictionary.LocationList.Add(i,dictEntry);
             }
             foreach(var i in OOTRItemsDict.Keys)
             {
@@ -978,7 +978,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 dictItem.ID = i;
                 dictItem.SpoilerData = new TrackerObjects.MMRData.SpoilerlogReference { SpoilerLogNames = new string[] { i }, GossipHintNames =  new string[] { i, ItemName } };
                 dictItem.ItemTypes = new string[] { "item" };
-                logicDictionary.ItemList.Add(dictItem);
+                logicDictionary.ItemList.Add(i,dictItem);
             }
 
             foreach(var i in OOTRTricksDict.Keys)
@@ -987,7 +987,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 TrackerObjects.LogicDictionaryData.DictionaryMacroEntry TrickObject = new TrackerObjects.LogicDictionaryData.DictionaryMacroEntry();
                 TrickObject.ID = TrickID;
                 TrickObject.Name = OOTRTricksDict[i];
-                logicDictionary.MacroList.Add(TrickObject);
+                logicDictionary.MacroList.Add(i,TrickObject);
 
                 string TrickCategory = i.StartsWith("OOT_") ? "Ocarina of Time" : "Majoras Mask";
                 logicFile.Logic.Add(new TrackerObjects.MMRData.JsonFormatLogicItem() { Id = TrickID, IsTrick = true, TrickCategory = TrickCategory });

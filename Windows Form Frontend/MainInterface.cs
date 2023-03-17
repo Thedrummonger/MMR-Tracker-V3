@@ -258,12 +258,6 @@ namespace Windows_Form_Frontend
 
         private void CodeTestingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LogicStringParser logicStringParser = new(operatorType: LogicStringParser.OperatorType.PyStyle, AllowSpaces: false);
-
-            var List = logicStringParser.ParseLogicString("We are Spereate and 'we are together' or we(are function)");
-            Testing.PrintObjectToConsole(List);
-            //WinformTesting.CreateMMRItemTrackerObject();
-            //MMR_Tracker_V3.OtherGames.SkywardSwordRando.ReadAndParse.ReadWebData();
             //return;
 
             MMR_Tracker_V3.OtherGames.OOTMMRCOMBO.ReadAndParseData.CreateFiles(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary);

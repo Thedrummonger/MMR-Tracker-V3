@@ -29,7 +29,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
             public LogicDictionaryData.DictionaryItemEntries GetDictEntry(LogicObjects.TrackerInstance Instance)
             {
-                return Instance.LogicDictionary.ItemList[referenceData.DictIndex];
+                return Instance.LogicDictionary.ItemList[Id];
             }
             public bool ValidStartingItem(LogicObjects.TrackerInstance Instance)
             {

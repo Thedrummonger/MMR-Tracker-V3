@@ -19,15 +19,14 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string GameCode { get; set; }
             public string RootArea { get; set; }
             public string WinCondition { get; set; }
-            public List<DictionaryLocationEntries> LocationList { get; set; } = new List<DictionaryLocationEntries>();
-            public List<DictionaryItemEntries> ItemList { get; set; } = new List<DictionaryItemEntries>();
-            public List<DictionaryEntranceEntries> EntranceList { get; set; } = new List<DictionaryEntranceEntries>();
-            public List<DictionaryMacroEntry> MacroList { get; set; } = new List<DictionaryMacroEntry>();
+            public Dictionary<string, DictionaryLocationEntries> LocationList { get; set; } = new Dictionary<string, DictionaryLocationEntries>();
+            public Dictionary<string, DictionaryItemEntries> ItemList { get; set; } = new Dictionary<string, DictionaryItemEntries>();
+            public Dictionary<string, DictionaryEntranceEntries> EntranceList { get; set; } = new Dictionary<string, DictionaryEntranceEntries>();
+            public Dictionary<string, DictionaryHintEntries> HintSpots { get; set; } = new Dictionary<string, DictionaryHintEntries>();
+            public Dictionary<string, DictionaryMacroEntry> MacroList { get; set; } = new Dictionary<string, DictionaryMacroEntry>();
+            public Dictionary<string, TrackerOption> Options { get; set; } = new Dictionary<string, TrackerOption>();
+            public Dictionary<string, TrackerVariable> Variables { get; set; } = new Dictionary<string, TrackerVariable>();
             public List<JsonFormatLogicItem> AdditionalLogic { get; set; } = new List<JsonFormatLogicItem>();
-            public List<TrackerOption> Options { get; set; } = new List<TrackerOption>();
-            public List<TrackerVariable> Variables { get; set; } = new List<TrackerVariable>();
-            public List<DictionaryHintEntries> HintSpots { get; set; } = new List<DictionaryHintEntries>();
-
             public static LogicDictionary FromJson(string json)
             {
                 return Newtonsoft.Json.JsonConvert.DeserializeObject<LogicDictionary>(json, _NewtonsoftJsonSerializerOptions);
@@ -46,9 +45,8 @@ namespace MMR_Tracker_V3.TrackerObjects
             };
             public List<string> GetAreas()
             {
-                return EntranceList.Select(x => x.Area).Concat(EntranceList.Select(x => x.Exit)).Distinct().ToList();
+                return EntranceList.Values.Select(x => x.Area).Concat(EntranceList.Values.Select(x => x.Exit)).Distinct().ToList();
             }
-
         }
 
         [Serializable]

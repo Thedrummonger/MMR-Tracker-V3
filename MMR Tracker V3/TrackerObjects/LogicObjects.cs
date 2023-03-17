@@ -216,7 +216,6 @@ namespace MMR_Tracker_V3
         {
             public LogicFileType LogicList { get; set; }
             public int LogicIndex { get; set; }
-            public int DictIndex { get; set; }
         }
         [Serializable]
         public class SpoilerLogFileData

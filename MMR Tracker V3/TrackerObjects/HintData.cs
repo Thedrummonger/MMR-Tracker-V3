@@ -31,7 +31,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
             public LogicDictionaryData.DictionaryHintEntries GetDictEntry(LogicObjects.TrackerInstance Instance)
             {
-                return Instance.LogicDictionary.HintSpots[referenceData.DictIndex];
+                return Instance.LogicDictionary.HintSpots[ID];
             }
         }
     }

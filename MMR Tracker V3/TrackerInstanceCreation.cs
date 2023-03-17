@@ -72,13 +72,13 @@ namespace MMR_Tracker_V3
         {
             Container.Instance ??= new();
             var Instance = Container.Instance;
-            Instance.UserOptions = Instance.LogicDictionary.Options.ToDictionary(x => x.ID, y => y);
-            Instance.Variables = Instance.LogicDictionary.Variables.ToDictionary(x => x.ID, y => y);
+            Instance.UserOptions = Instance.LogicDictionary.Options.ToDictionary(x => x.Key, y => y.Value);
+            Instance.Variables = Instance.LogicDictionary.Variables.ToDictionary(x => x.Key, y => y.Value);
 
             int Index = 0;
             foreach(var i in Instance.LogicDictionary.ItemList)
             {
-                Instance.ItemPool.Add(i.ID, new() { Id = i.ID, referenceData = new ReferenceData { DictIndex = Index } });
+                Instance.ItemPool.Add(i.Key, new() { Id = i.Key });
                 Index++;
             }
 
@@ -103,56 +103,55 @@ namespace MMR_Tracker_V3
             Index = 0;
             foreach (var i in Instance.LogicDictionary.MacroList)
             {
-                if (Instance.MacroPool.ContainsKey(i.ID))
+                if (Instance.MacroPool.ContainsKey(i.Key))
                 {
-                    Instance.MacroPool[i.ID].referenceData.DictIndex = Index;
-                    Instance.MacroPool[i.ID].Currency = i.WalletCurrency;
+                    Instance.MacroPool[i.Key].Currency = i.Value.WalletCurrency;
                 }
                 Index++;
             }
 
             void ParseLogicItem(MMRData.JsonFormatLogicItem i, int Index, LogicFileType Source)
             {
-                if (Instance.LogicDictionary.LocationList.Any(x => x.ID == i.Id))
+                if (Instance.LogicDictionary.LocationList.Any(x => x.Key == i.Id))
                 {
-                    var DictEntry = Instance.LogicDictionary.LocationList.First(x => x.ID == i.Id);
-                    var ValidItems = Instance.LogicDictionary.ItemList.Where(x => x.ItemTypes.Intersect(DictEntry.ValidItemTypes).Any());
+                    var DictEntry = Instance.LogicDictionary.LocationList.First(x => x.Key == i.Id);
+                    var ValidItems = Instance.LogicDictionary.ItemList.Where(x => x.Value.ItemTypes.Intersect(DictEntry.Value.ValidItemTypes).Any());
                     Instance.LocationPool.Add(i.Id, new()
                     {
                         ID = i.Id,
-                        Currency = DictEntry.WalletCurrency,
-                        SingleValidItem = ValidItems.Count() == 1 ? ValidItems.First().ID : null,
-                        referenceData = new ReferenceData { LogicIndex = Index, DictIndex = Instance.LogicDictionary.LocationList.IndexOf(DictEntry), LogicList = Source }
+                        Currency = DictEntry.Value.WalletCurrency,
+                        SingleValidItem = ValidItems.Count() == 1 ? ValidItems.First().Key : null,
+                        referenceData = new ReferenceData { LogicIndex = Index, LogicList = Source }
                     });
 
-                    if (DictEntry.LocationProxys.Any())
+                    if (DictEntry.Value.LocationProxys.Any())
                     {
                         if (!Instance.LocationProxyData.LocationsWithProxys.ContainsKey(i.Id)) { Instance.LocationProxyData.LocationsWithProxys.Add(i.Id, new List<string>()); }
-                        Instance.LocationProxyData.LocationsWithProxys[i.Id].AddRange(DictEntry.LocationProxys.Select(x => x.Name));
-                        foreach(var proxy in DictEntry.LocationProxys) { Instance.LocationProxyData.LocationProxies.Add(proxy.ID, proxy.ToInstanceData(DictEntry)); }
+                        Instance.LocationProxyData.LocationsWithProxys[i.Id].AddRange(DictEntry.Value.LocationProxys.Select(x => x.Name));
+                        foreach(var proxy in DictEntry.Value.LocationProxys) { Instance.LocationProxyData.LocationProxies.Add(proxy.ID, proxy.ToInstanceData(DictEntry.Value)); }
                     }
                 }
-                else if (Instance.LogicDictionary.HintSpots.Any(x => x.ID == i.Id))
+                else if (Instance.LogicDictionary.HintSpots.Any(x => x.Key == i.Id))
                 {
-                    var DictEntry = Instance.LogicDictionary.HintSpots.First(x => x.ID == i.Id);
+                    var DictEntry = Instance.LogicDictionary.HintSpots.First(x => x.Key == i.Id);
                     Instance.HintPool.Add(i.Id, new() 
                     { 
                         ID = i.Id,
-                        referenceData = new ReferenceData { LogicIndex = Index, DictIndex = Instance.LogicDictionary.HintSpots.IndexOf(DictEntry), LogicList = Source }
+                        referenceData = new ReferenceData { LogicIndex = Index, LogicList = Source }
                     });
                 }
-                else if (Instance.LogicDictionary.EntranceList.Any(x => x.ID == i.Id))
+                else if (Instance.LogicDictionary.EntranceList.Any(x => x.Key == i.Id))
                 {
-                    var DictEntry = Instance.LogicDictionary.EntranceList.First(x => x.ID == i.Id);
-                    Instance.InstanceReference.EntranceLogicNameToEntryData.Add(i.Id, new EntranceData.EntranceAreaPair { Area = DictEntry.Area, Exit = DictEntry.Exit });
-                    Instance.AddLogicExitReference(new EntranceData.EntranceAreaPair { Area = DictEntry.Area, Exit = DictEntry.Exit }, i.Id);
-                    Instance.EntrancePool.AreaList[DictEntry.Area].Exits.Add(DictEntry.Exit, new EntranceData.EntranceRandoExit
+                    var DictEntry = Instance.LogicDictionary.EntranceList.First(x => x.Key == i.Id);
+                    Instance.InstanceReference.EntranceLogicNameToEntryData.Add(i.Id, new EntranceData.EntranceAreaPair { Area = DictEntry.Value.Area, Exit = DictEntry.Value.Exit });
+                    Instance.AddLogicExitReference(new EntranceData.EntranceAreaPair { Area = DictEntry.Value.Area, Exit = DictEntry.Value.Exit }, i.Id);
+                    Instance.EntrancePool.AreaList[DictEntry.Value.Area].Exits.Add(DictEntry.Value.Exit, new EntranceData.EntranceRandoExit
                     {
-                        ParentAreaID = DictEntry.Area,
-                        ID = DictEntry.Exit,
-                        EntrancePair = DictEntry.RandomizableEntrance ? DictEntry.EntrancePairID : null,
-                        IsWarp = DictEntry.AlwaysAccessable,
-                        referenceData = new ReferenceData { LogicIndex = Index, DictIndex = Instance.LogicDictionary.EntranceList.IndexOf(DictEntry), LogicList = Source }
+                        ParentAreaID = DictEntry.Value.Area,
+                        ID = DictEntry.Value.Exit,
+                        EntrancePair = DictEntry.Value.RandomizableEntrance ? DictEntry.Value.EntrancePairID : null,
+                        IsWarp = DictEntry.Value.AlwaysAccessable,
+                        referenceData = new ReferenceData { LogicIndex = Index, LogicList = Source }
                     });
                 }
                 else
@@ -160,7 +159,7 @@ namespace MMR_Tracker_V3
                     Instance.MacroPool.Add(i.Id, new() 
                     { 
                         ID = i.Id,
-                        referenceData = new ReferenceData { LogicIndex = Index, DictIndex = -1, LogicList = Source }
+                        referenceData = new ReferenceData { LogicIndex = Index, LogicList = Source }
                     });
                 }
             }
@@ -168,10 +167,10 @@ namespace MMR_Tracker_V3
             //Wallet and Price Data
 
             Instance.PriceData.WalletEntries = Utility.GetAllWalletLogicEntries(Instance);
-            Dictionary<string, Tuple<char, int>> ItemWallets = Instance.LogicDictionary.ItemList
+            Dictionary<string, Tuple<char, int>> ItemWallets = Instance.LogicDictionary.ItemList.Values
                 .Where(x => x.WalletCapacity != null && (int)x.WalletCapacity > -1)
                 .ToDictionary(x => x.ID, x => new Tuple<char, int>(x.WalletCurrency??'$', (int)x.WalletCapacity ) );
-            Dictionary<string, Tuple<char, int>> MacroWallets = Instance.LogicDictionary.MacroList
+            Dictionary<string, Tuple<char, int>> MacroWallets = Instance.LogicDictionary.MacroList.Values
                 .Where(x => x.WalletCapacity != null && (int)x.WalletCapacity > -1)
                 .ToDictionary(x => x.ID, x => new Tuple<char, int>(x.WalletCurrency??'$', (int)x.WalletCapacity));
             Dictionary<string, Tuple<char, int>> AllWallets = ItemWallets.Concat(MacroWallets).ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
@@ -182,7 +181,7 @@ namespace MMR_Tracker_V3
                 Debug.WriteLine($"Adding Wallet {CanAffordString}");
                 Instance.MacroPool.Add(CanAffordString, new() { 
                     ID = CanAffordString,
-                    referenceData = new ReferenceData { LogicIndex = Index, DictIndex = -1, LogicList = LogicFileType.Runtime }
+                    referenceData = new ReferenceData { LogicIndex = Index, LogicList = LogicFileType.Runtime }
                 });
                 if (!Instance.PriceData.CapacityMap.ContainsKey(i.Value.Item1))
                     Instance.PriceData.CapacityMap.Add(i.Value.Item1, new Dictionary<int, string>());

@@ -94,7 +94,7 @@ namespace MMR_Tracker_V3.TrackerObjects
 
             public LogicDictionaryData.DictionaryEntranceEntries GetDictEntry(LogicObjects.TrackerInstance Instance)
             {
-                return Instance.LogicDictionary.EntranceList[referenceData.DictIndex];
+                return Instance.LogicDictionary.EntranceList[Instance.GetLogicNameFromExit(this)];
             }
 
             public EntranceRandoDestination GetVanillaDestination()

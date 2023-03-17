@@ -34,9 +34,9 @@ namespace MMR_Tracker_V3.TrackerObjects
 
         public LogicDictionaryData.DictionaryMacroEntry GetDictEntry(LogicObjects.TrackerInstance Instance)
         {
-            if (referenceData.DictIndex > -1)
+            if (Instance.LogicDictionary.MacroList.ContainsKey(ID))
             {
-                return Instance.LogicDictionary.MacroList[referenceData.DictIndex];
+                return Instance.LogicDictionary.MacroList[ID];
             }
             return new LogicDictionaryData.DictionaryMacroEntry
             {

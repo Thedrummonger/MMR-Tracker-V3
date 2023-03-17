@@ -68,7 +68,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
             public LogicDictionaryData.DictionaryLocationEntries GetDictEntry(LogicObjects.TrackerInstance Instance)
             {
-                return Instance.LogicDictionary.LocationList[referenceData.DictIndex];
+                return Instance.LogicDictionary.LocationList[ID];
             }
             public bool CanBeUnrandomized(LogicObjects.TrackerInstance instance)
             {
