@@ -16,6 +16,8 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using YamlDotNet.Serialization.NamingConventions;
+using YamlDotNet.Serialization;
 
 namespace MMR_Tracker_V3
 {
@@ -271,6 +273,12 @@ namespace MMR_Tracker_V3
             var deserializer = new YamlDotNet.Serialization.DeserializerBuilder().Build();
             object yamlIsDumb = deserializer.Deserialize<object>(YAML);
             return JsonConvert.SerializeObject(yamlIsDumb);
+        }
+        public static string ConvertObjectToYamlString(object OBJ)
+        {
+            var serializer = new SerializerBuilder().Build();
+            var stringResult = serializer.Serialize(OBJ);
+            return stringResult;
         }
 
     }

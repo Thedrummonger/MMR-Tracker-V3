@@ -12,31 +12,39 @@ namespace MMR_Tracker_V3
 {
     public class Dictionaryhandeling
     {
-        public static string GetJSONDictionaryPathForLogicFile(MMRData.LogicFile logicFile)
+        public static LogicDictionaryData.LogicDictionary FindValidDictionary(MMRData.LogicFile logicFile, string DictFolderPath)
         {
-            string currentdictionary = "";
+            return FindValidDictionary(logicFile, DictFolderPath, out _, out _, out _);
+        }
+        public static LogicDictionaryData.LogicDictionary FindValidDictionary(MMRData.LogicFile logicFile, string DictFolderPath, out string DictPath, out string DictType, out int VersionOffset)
+        {
+            if (string.IsNullOrWhiteSpace(DictFolderPath)) { DictFolderPath = References.Globalpaths.BaseDictionaryPath; }
+            LogicDictionaryData.LogicDictionary currentdictionaryObj = null;
+            DictPath = "";
+            DictType = "";
+            VersionOffset = 0;
             int Versionoffset = -1;
-            foreach (var i in Directory.GetFiles(References.Globalpaths.BaseDictionaryPath, "*", SearchOption.AllDirectories).ToArray())
+            foreach (var i in Directory.GetFiles(DictFolderPath, "*", SearchOption.AllDirectories).ToArray())
             {
-                LogicDictionaryData.LogicDictionary LogicDic = new LogicDictionaryData.LogicDictionary();
-                try
+                LogicDictionaryData.LogicDictionary LogicDic = null;
+                string CurType = "Error";
+                string FileText = File.ReadAllText(i);
+                try { LogicDic = JsonConvert.DeserializeObject<LogicDictionaryData.LogicDictionary>(FileText); CurType = "Json"; } catch { }
+                try { LogicDic = JsonConvert.DeserializeObject<LogicDictionaryData.LogicDictionary>(Utility.ConvertYamlStringToJsonString(FileText)); CurType = "Yaml"; } catch { }
+                if (LogicDic is not null && logicFile.GameCode == LogicDic.GameCode)
                 {
-                    LogicDic = JsonConvert.DeserializeObject<LogicDictionaryData.LogicDictionary>(File.ReadAllText(i));
-                    if (logicFile.GameCode == LogicDic.GameCode)
+                    int offset = Math.Abs(logicFile.Version - LogicDic.LogicVersion);
+                    if (Versionoffset == -1 || Versionoffset > offset)
                     {
-                        int offset = Math.Abs(logicFile.Version - LogicDic.LogicVersion);
-                        if (Versionoffset == -1 || Versionoffset > offset)
-                        {
-                            currentdictionary = i;
-                            Versionoffset = offset;
-                        }
+                        DictType = CurType;
+                        DictPath = i;
+                        VersionOffset = offset;
+                        currentdictionaryObj = LogicDic;
                     }
                 }
-                catch { continue; }
+
             }
-            Debug.WriteLine("Json Dictionary " + currentdictionary);
-            Debug.WriteLine($"Dictionary was {Versionoffset} versions off");
-            return currentdictionary;
+            return currentdictionaryObj;
         }
     }
 }

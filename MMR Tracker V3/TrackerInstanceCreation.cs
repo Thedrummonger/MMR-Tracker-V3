@@ -16,35 +16,36 @@ namespace MMR_Tracker_V3
     public static class TrackerInstanceCreation
     {
 
-        public static InstanceState ApplyLogicAndDict(this InstanceContainer Container, string[] LogicFile, string DictionaryFile = null)
+        public static InstanceState ApplyLogicAndDict(this InstanceContainer Container, string[] LogicData, string DictionaryData = null)
         {
-            return Container.ApplyLogicAndDict(string.Join("", LogicFile), DictionaryFile);
+            return Container.ApplyLogicAndDict(string.Join("", LogicData), DictionaryData);
         }
-        public static InstanceState ApplyLogicAndDict(this InstanceContainer Container, string[] LogicFile, string[] DictionaryFile)
+        public static InstanceState ApplyLogicAndDict(this InstanceContainer Container, string[] LogicData, string[] DictionaryData)
         {
-            return Container.ApplyLogicAndDict(string.Join("", LogicFile), string.Join("", DictionaryFile));
+            return Container.ApplyLogicAndDict(string.Join("", LogicData), string.Join("", DictionaryData));
         }
-        public static InstanceState ApplyLogicAndDict(this InstanceContainer Container, string LogicFile, string[] DictionaryFile)
+        public static InstanceState ApplyLogicAndDict(this InstanceContainer Container, string LogicData, string[] DictionaryData)
         {
-            return Container.ApplyLogicAndDict(LogicFile, string.Join("", DictionaryFile));
+            return Container.ApplyLogicAndDict(LogicData, string.Join("", DictionaryData));
         }
-        public static InstanceState ApplyLogicAndDict(this InstanceContainer Container, string LogicFile, string DictionaryFile = null)
+        public static InstanceState ApplyLogicAndDict(this InstanceContainer Container, string LogicData, string DictionaryData = null)
         {
             Container.Instance ??= new();
-            try
-            {
-                Container.Instance.LogicFile = MMRData.LogicFile.FromJson(LogicFile);
-            }
+            try { Container.Instance.LogicFile = MMRData.LogicFile.FromJson(LogicData); }
             catch { return InstanceState.LogicFailure; }
-            try
+            if (DictionaryData is null)
             {
-                if (DictionaryFile == null)
-                {
-                    DictionaryFile = File.ReadAllText(Dictionaryhandeling.GetJSONDictionaryPathForLogicFile(Container.Instance.LogicFile));
-                }
-                Container.Instance.LogicDictionary = LogicDictionaryData.LogicDictionary.FromJson(DictionaryFile);
+                Container.Instance.LogicDictionary = Dictionaryhandeling.FindValidDictionary(Container.Instance.LogicFile, References.Globalpaths.BaseDictionaryPath);
+                if (Container.Instance.LogicDictionary is null) { return InstanceState.DictionaryFailure; }
             }
-            catch { return InstanceState.DictionaryFailure; }
+            else
+            {
+                try { Container.Instance.LogicDictionary = LogicDictionaryData.LogicDictionary.FromJson(DictionaryData); }
+                catch { Container.Instance.LogicDictionary = null; }
+                try { Container.Instance.LogicDictionary = LogicDictionaryData.LogicDictionary.FromJson(Utility.ConvertYamlStringToJsonString(DictionaryData)); }
+                catch { Container.Instance.LogicDictionary = null; }
+                if (Container.Instance.LogicDictionary is null) { return InstanceState.DictionaryFailure; }
+            }
             return InstanceState.Success;
         }
         public static InstanceState GenerateInstance(this InstanceContainer Container, string[] LogicFile, string[] DictionaryFile)
