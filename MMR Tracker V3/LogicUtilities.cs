@@ -117,11 +117,18 @@ namespace MMR_Tracker_V3
     {
         public static List<List<string>> ConvertLogicStringToConditional(LogicStringParser Parser, string LogicLine)
         {
-            var ParsedLogic = Parser.ParseLogicString(LogicLine);
-            var MathString = ConvertLogicParserObjectToMathString(ParsedLogic, out Dictionary<string, string> RefMap, out _);
-            var ExpandedMathString = ExpandMathExpressionString(MathString);
-            var MathLogicArray = ConvertMathStringToArray(ExpandedMathString);
-            return RestorelogicValues(MathLogicArray, RefMap);
+            try
+            {
+                var ParsedLogic = Parser.ParseLogicString(LogicLine);
+                var MathString = ConvertLogicParserObjectToMathString(ParsedLogic, out Dictionary<string, string> RefMap, out _);
+                var ExpandedMathString = ExpandMathExpressionString(MathString);
+                var MathLogicArray = ConvertMathStringToArray(ExpandedMathString);
+                return RestorelogicValues(MathLogicArray, RefMap);
+            }
+            catch(Exception e)
+            {
+                throw new Exception($"Error Parsing Logic Line {LogicLine}\n{e.Message}");
+            }
         }
 
         public static string ConvertConditionalToLogicString(LogicStringParser Parser, List<List<string>> Conditional)

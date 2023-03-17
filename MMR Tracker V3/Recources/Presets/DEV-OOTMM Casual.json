@@ -1704,7 +1704,7 @@
       "Id": "OOT Zora Domain Tunic",
       "RequiredItems": [
         "OOT_is_adult",
-        "OOT_EVENT_BLUE_FIRE",
+        "OOT_has_blue_fire",
         "OOT Zora Domain"
       ],
       "ConditionalItems": [],
@@ -1716,7 +1716,7 @@
     {
       "Id": "OOT Zora Domain Eyeball Frog",
       "RequiredItems": [
-        "OOT_EVENT_BLUE_FIRE",
+        "OOT_has_blue_fire",
         "OOT_is_adult",
         "OOT_PRESCRIPTION",
         "OOT Zora Domain"
@@ -4393,7 +4393,7 @@
     {
       "Id": "OOT Ice Cavern Iron Boots",
       "RequiredItems": [
-        "OOT_EVENT_BLUE_FIRE",
+        "OOT_has_blue_fire",
         "OOT Ice Cavern",
         "option{ICMQ, false}"
       ],
@@ -4406,7 +4406,7 @@
     {
       "Id": "OOT Ice Cavern Map",
       "RequiredItems": [
-        "OOT_EVENT_BLUE_FIRE",
+        "OOT_has_blue_fire",
         "OOT_is_adult",
         "OOT Ice Cavern",
         "option{ICMQ, false}"
@@ -4420,7 +4420,7 @@
     {
       "Id": "OOT Ice Cavern Compass",
       "RequiredItems": [
-        "OOT_EVENT_BLUE_FIRE",
+        "OOT_has_blue_fire",
         "OOT Ice Cavern",
         "option{ICMQ, false}"
       ],
@@ -4433,7 +4433,7 @@
     {
       "Id": "OOT Ice Cavern HP",
       "RequiredItems": [
-        "OOT_EVENT_BLUE_FIRE",
+        "OOT_has_blue_fire",
         "OOT Ice Cavern",
         "option{ICMQ, false}"
       ],
@@ -4446,7 +4446,7 @@
     {
       "Id": "OOT Ice Cavern Sheik Song",
       "RequiredItems": [
-        "OOT_EVENT_BLUE_FIRE",
+        "OOT_has_blue_fire",
         "OOT Ice Cavern",
         "option{ICMQ, false}"
       ],
@@ -4472,7 +4472,7 @@
     {
       "Id": "OOT Ice Cavern GS HP Room",
       "RequiredItems": [
-        "OOT_EVENT_BLUE_FIRE",
+        "OOT_has_blue_fire",
         "OOT_can_collect_distance",
         "OOT Ice Cavern",
         "option{ICMQ, false}"
@@ -4486,7 +4486,7 @@
     {
       "Id": "OOT Ice Cavern GS Block Room",
       "RequiredItems": [
-        "OOT_EVENT_BLUE_FIRE",
+        "OOT_has_blue_fire",
         "OOT_can_collect_distance",
         "OOT Ice Cavern",
         "option{ICMQ, false}"
@@ -7083,7 +7083,7 @@
     {
       "Id": "OOT MQ Ice Cavern Map Chest",
       "RequiredItems": [
-        "OOT_EVENT_BLUE_FIRE",
+        "OOT_has_blue_fire",
         "OOT Ice Cavern Map Room",
         "option{ICMQ, true}"
       ],
@@ -8857,7 +8857,7 @@
     {
       "Id": "OOT MQ Ganon Castle Water Trial Chest",
       "RequiredItems": [
-        "OOT_EVENT_BLUE_FIRE",
+        "OOT_has_blue_fire",
         "OOT Ganon Castle Water",
         "option{GanonMQ, true}"
       ],
@@ -9057,7 +9057,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ],
         [
           "MM_MASK_DEKU",
@@ -9079,7 +9079,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ],
         [
           "MM_MASK_DEKU",
@@ -9727,7 +9727,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ],
         [
           "MM_can_use_beans"
@@ -10116,7 +10116,7 @@
         ],
         [
           "MM_MASK_DEKU",
-          "MM_can_hookshot"
+          "can_hookshot"
         ],
         [
           "MM_can_use_beans",
@@ -10150,11 +10150,11 @@
           "MM Woodfall Shrine"
         ],
         [
-          "MM_can_hookshot",
+          "can_hookshot",
           "MM Woodfall Shrine"
         ],
         [
-          "MM_can_hookshot",
+          "can_hookshot",
           "MM_EVENT_CLEAN_SWAMP",
           "MM Woodfall"
         ]
@@ -10174,7 +10174,7 @@
           "MM_MASK_DEKU"
         ],
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -10192,7 +10192,7 @@
           "MM_MASK_DEKU"
         ],
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -10231,7 +10231,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ],
         [
           "MM_MASK_ZORA"
@@ -10341,7 +10341,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ],
         [
           "MM_MASK_ZORA"
@@ -10463,7 +10463,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ],
         [
           "MM_MASK_ZORA"
@@ -11051,7 +11051,7 @@
           "MM_MASK_ZORA"
         ],
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -11100,7 +11100,7 @@
     {
       "Id": "MM Great Bay Coast Fisherman HP",
       "RequiredItems": [
-        "MM_can_hookshot",
+        "can_hookshot",
         "MM_EVENT_BOSS_GREAT_BAY",
         "MM Great Bay Coast"
       ],
@@ -11124,7 +11124,7 @@
     {
       "Id": "MM Great Bay Coast Cow Front",
       "RequiredItems": [
-        "MM_can_hookshot",
+        "can_hookshot",
         "MM_OCARINA",
         "MM_SONG_EPONA",
         "MM Great Bay Coast"
@@ -11138,7 +11138,7 @@
     {
       "Id": "MM Great Bay Coast Cow Back",
       "RequiredItems": [
-        "MM_can_hookshot",
+        "can_hookshot",
         "MM_OCARINA",
         "MM_SONG_EPONA",
         "MM Great Bay Coast"
@@ -11152,7 +11152,7 @@
     {
       "Id": "MM Zora Cape Ledge Chest 1",
       "RequiredItems": [
-        "MM_can_hookshot",
+        "can_hookshot",
         "MM Waterfall Cliffs"
       ],
       "ConditionalItems": [],
@@ -11164,7 +11164,7 @@
     {
       "Id": "MM Zora Cape Ledge Chest 2",
       "RequiredItems": [
-        "MM_can_hookshot",
+        "can_hookshot",
         "MM Waterfall Cliffs"
       ],
       "ConditionalItems": [],
@@ -11375,7 +11375,7 @@
       "Id": "MM Ocean Skulltula Entrance Right Wall",
       "RequiredItems": [
         "MM_has_explosives",
-        "MM_can_hookshot",
+        "can_hookshot",
         "MM Ocean Spider House Front"
       ],
       "ConditionalItems": [],
@@ -11388,7 +11388,7 @@
       "Id": "MM Ocean Skulltula Entrance Left Wall",
       "RequiredItems": [
         "MM_has_explosives",
-        "MM_can_hookshot",
+        "can_hookshot",
         "MM Ocean Spider House Front"
       ],
       "ConditionalItems": [],
@@ -11405,7 +11405,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ],
         [
           "MM_can_use_fire_arrows",
@@ -11424,7 +11424,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ],
         [
           "MM_MASK_ZORA"
@@ -11442,7 +11442,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ],
         [
           "MM_MASK_ZORA"
@@ -11467,7 +11467,7 @@
     {
       "Id": "MM Ocean Skulltula 2nd Room Webbed Hole",
       "RequiredItems": [
-        "MM_can_hookshot",
+        "can_hookshot",
         "MM Ocean Spider House Back"
       ],
       "ConditionalItems": [],
@@ -11516,7 +11516,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ],
         [
           "MM_MASK_ZORA"
@@ -11557,7 +11557,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ],
         [
           "MM_MASK_ZORA"
@@ -11575,7 +11575,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ],
         [
           "MM_MASK_ZORA"
@@ -11612,7 +11612,7 @@
     {
       "Id": "MM Ocean Skulltula Storage Room Jar",
       "RequiredItems": [
-        "MM_can_hookshot",
+        "can_hookshot",
         "MM Ocean Spider House Back"
       ],
       "ConditionalItems": [],
@@ -11624,7 +11624,7 @@
     {
       "Id": "MM Ocean Skulltula Library Hole Behind Picture",
       "RequiredItems": [
-        "MM_can_hookshot",
+        "can_hookshot",
         "MM Ocean Spider House Back"
       ],
       "ConditionalItems": [],
@@ -11636,7 +11636,7 @@
     {
       "Id": "MM Ocean Skulltula Library Hole Behind Cabinet",
       "RequiredItems": [
-        "MM_can_hookshot",
+        "can_hookshot",
         "MM Ocean Spider House Back"
       ],
       "ConditionalItems": [],
@@ -11663,7 +11663,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ],
         [
           "MM_MASK_ZORA"
@@ -11681,7 +11681,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ],
         [
           "MM_BOW"
@@ -11727,7 +11727,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ],
         [
           "MM_MASK_ZORA"
@@ -11778,7 +11778,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ],
         [
           "MM_MASK_ZORA"
@@ -11835,7 +11835,7 @@
     {
       "Id": "MM Road to Ikana Chest",
       "RequiredItems": [
-        "MM_can_hookshot",
+        "can_hookshot",
         "MM Road to Ikana Front"
       ],
       "ConditionalItems": [],
@@ -11925,7 +11925,7 @@
           "MM_BOW"
         ],
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ],
         [
           "MM_MASK_DEKU"
@@ -12040,7 +12040,7 @@
           "MM_BOW"
         ],
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ],
         [
           "MM_can_use_deku_bubble"
@@ -12118,7 +12118,7 @@
           "MM_MASK_DEKU"
         ],
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -12136,7 +12136,7 @@
           "MM_MASK_DEKU"
         ],
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -12320,7 +12320,7 @@
         ],
         [
           "MM_MASK_GREAT_FAIRY",
-          "MM_can_hookshot"
+          "can_hookshot"
         ],
         [
           "MM_EVENT_WOODFALL_TEMPLE_MAIN_FLOWER"
@@ -12353,7 +12353,7 @@
         ],
         [
           "MM_MASK_GREAT_FAIRY",
-          "MM_can_hookshot"
+          "can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -12473,7 +12473,7 @@
           "MM Snowhead Temple Bridge Back"
         ],
         [
-          "MM_can_hookshot",
+          "can_hookshot",
           "MM Snowhead Temple Bridge Front"
         ]
       ],
@@ -12607,7 +12607,7 @@
           "MM_can_break_boulders"
         ],
         [
-          "MM_can_hookshot",
+          "can_hookshot",
           "MM_has_explosives"
         ]
       ],
@@ -12637,7 +12637,7 @@
           "MM_can_use_lens"
         ],
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -12661,7 +12661,7 @@
         ],
         [
           "MM Snowhead Temple Bridge Front",
-          "MM_can_hookshot"
+          "can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -12681,7 +12681,7 @@
           "MM_BOW"
         ],
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -12750,7 +12750,7 @@
           "MM_BOW"
         ],
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -12902,7 +12902,7 @@
       "Id": "MM Pirate Fortress Interior Aquarium",
       "RequiredItems": [
         "MM_MASK_ZORA",
-        "MM_can_hookshot",
+        "can_hookshot",
         "MM Pirate Fortress Lone Guard Aquarium"
       ],
       "ConditionalItems": [],
@@ -12937,7 +12937,7 @@
     {
       "Id": "MM Pirate Fortress Interior Upper Chest",
       "RequiredItems": [
-        "MM_can_hookshot",
+        "can_hookshot",
         "MM Pirate Fortress Interior"
       ],
       "ConditionalItems": [],
@@ -12953,7 +12953,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ],
         [
           "MM_can_use_ice_arrows"
@@ -13022,7 +13022,7 @@
     {
       "Id": "MM Great Bay Temple Green Pipe 1 Chest",
       "RequiredItems": [
-        "MM_can_hookshot",
+        "can_hookshot",
         "MM Great Bay Temple Green Pipe 1"
       ],
       "ConditionalItems": [],
@@ -13034,7 +13034,7 @@
     {
       "Id": "MM Great Bay Temple Green Pipe 2 Lower Chest",
       "RequiredItems": [
-        "MM_can_hookshot",
+        "can_hookshot",
         "MM Great Bay Temple Green Pipe 2"
       ],
       "ConditionalItems": [],
@@ -13046,7 +13046,7 @@
     {
       "Id": "MM Great Bay Temple Green Pipe 2 Upper Chest",
       "RequiredItems": [
-        "MM_can_hookshot",
+        "can_hookshot",
         "MM_can_use_ice_arrows",
         "MM_can_use_fire_arrows",
         "MM Great Bay Temple Green Pipe 2"
@@ -13062,7 +13062,7 @@
       "RequiredItems": [
         "MM_can_use_ice_arrows",
         "MM_can_use_fire_arrows",
-        "MM_can_hookshot",
+        "can_hookshot",
         "MM Great Bay Temple Green Pipe 3"
       ],
       "ConditionalItems": [],
@@ -13097,7 +13097,7 @@
         ],
         [
           "MM_MASK_GREAT_FAIRY",
-          "MM_can_hookshot"
+          "can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -13195,7 +13195,7 @@
         ],
         [
           "MM_MASK_GREAT_FAIRY",
-          "MM_can_hookshot"
+          "can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -13311,7 +13311,7 @@
           "MM_BOW"
         ],
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -13357,7 +13357,7 @@
     {
       "Id": "MM Stone Tower Temple Under West Garden Ledge Chest",
       "RequiredItems": [
-        "MM_can_hookshot",
+        "can_hookshot",
         "MM Stone Tower Temple Under West Garden"
       ],
       "ConditionalItems": [],
@@ -13649,12 +13649,12 @@
         ],
         [
           "MM_BOW",
-          "MM_can_hookshot",
+          "can_hookshot",
           "MM Stone Tower Temple Inverted Wizzrobe"
         ],
         [
           "MM_can_fight",
-          "MM_can_hookshot",
+          "can_hookshot",
           "MM Stone Tower Temple Inverted Wizzrobe"
         ]
       ],
@@ -16442,9 +16442,7 @@
     },
     {
       "Id": "OOT_EVENT_BLUE_FIRE",
-      "RequiredItems": [
-        "OOT_has_bottle"
-      ],
+      "RequiredItems": [],
       "ConditionalItems": [
         [
           "OOT Ice Cavern Map Room",
@@ -16476,7 +16474,7 @@
     {
       "Id": "OOT_EVENT_GANON_TRIAL_WATER",
       "RequiredItems": [
-        "OOT_EVENT_BLUE_FIRE",
+        "OOT_has_blue_fire",
         "OOT_has_light_arrows",
         "OOT Ganon Castle Water"
       ],
@@ -21726,7 +21724,7 @@
     {
       "Id": "OOT Gerudo Training Grounds Stalfos Room => OOT Gerudo Training Grounds Spinning Statue Room",
       "RequiredItems": [
-        "OOT_EVENT_BLUE_FIRE",
+        "OOT_has_blue_fire",
         "OOT_OCARINA",
         "OOT_SONG_TIME",
         "OOT_has_lens",
@@ -21792,7 +21790,7 @@
       "Id": "OOT Ice Cavern Main => OOT Ice Cavern Compass Room",
       "RequiredItems": [
         "OOT_is_adult",
-        "OOT_EVENT_BLUE_FIRE",
+        "OOT_has_blue_fire",
         "option{ICMQ, true}"
       ],
       "ConditionalItems": [],
@@ -21804,7 +21802,7 @@
     {
       "Id": "OOT Ice Cavern Main => OOT Ice Cavern Big Room",
       "RequiredItems": [
-        "OOT_EVENT_BLUE_FIRE",
+        "OOT_has_blue_fire",
         "option{ICMQ, true}"
       ],
       "ConditionalItems": [],
@@ -22795,7 +22793,7 @@
     {
       "Id": "MM Great Bay Temple => MM Zora Cape Peninsula",
       "RequiredItems": [
-        "MM_can_hookshot"
+        "can_hookshot"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -22846,7 +22844,7 @@
       "RequiredItems": [
         "MM_EVENT_GB_PIPE_RED",
         "MM_EVENT_GB_PIPE_RED2",
-        "MM_can_hookshot",
+        "can_hookshot",
         "MM Great Bay Temple Water Wheel"
       ],
       "ConditionalItems": [],
@@ -23456,7 +23454,7 @@
     {
       "Id": "MM Moon Trial Link Rest 1 => MM Moon Trial Link Rest 2",
       "RequiredItems": [
-        "MM_can_hookshot"
+        "can_hookshot"
       ],
       "ConditionalItems": [
         [
@@ -23636,7 +23634,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ],
         [
           "MM_can_goron_bomb_jump"
@@ -24584,7 +24582,7 @@
         ],
         [
           "MM_MASK_DEKU",
-          "MM_can_hookshot"
+          "can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -24925,7 +24923,7 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_can_hookshot",
+          "can_hookshot",
           "MM_MASK_DEKU"
         ],
         [
@@ -26099,7 +26097,7 @@
     {
       "Id": "MM Zora Cape => MM Waterfall Cliffs",
       "RequiredItems": [
-        "MM_can_hookshot"
+        "can_hookshot"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -26110,7 +26108,7 @@
     {
       "Id": "MM Zora Cape => MM Great Bay Near Fairy Fountain",
       "RequiredItems": [
-        "MM_can_hookshot"
+        "can_hookshot"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -26256,7 +26254,7 @@
       "Id": "MM Zora Cape Peninsula => MM Great Bay Temple",
       "RequiredItems": [
         "MM_MASK_ZORA",
-        "MM_can_hookshot",
+        "can_hookshot",
         "MM_OCARINA",
         "MM_SONG_ZORA"
       ],
@@ -26332,7 +26330,7 @@
     {
       "Id": "MM Road to Ikana Center => MM Road to Ikana Top",
       "RequiredItems": [
-        "MM_can_hookshot"
+        "can_hookshot"
       ],
       "ConditionalItems": [
         [
@@ -26466,7 +26464,7 @@
     {
       "Id": "MM Ikana Valley => MM Ikana Canyon",
       "RequiredItems": [
-        "MM_can_hookshot"
+        "can_hookshot"
       ],
       "ConditionalItems": [
         [
@@ -26712,7 +26710,7 @@
     {
       "Id": "MM Stone Tower => MM Stone Tower Top",
       "RequiredItems": [
-        "MM_can_hookshot"
+        "can_hookshot"
       ],
       "ConditionalItems": [
         [
@@ -26887,7 +26885,7 @@
     {
       "Id": "MM Pirate Fortress Entrance => MM Pirate Fortress Entrance Balcony",
       "RequiredItems": [
-        "MM_can_hookshot"
+        "can_hookshot"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -27006,7 +27004,7 @@
     {
       "Id": "MM Pirate Fortress Interior => MM Pirate Fortress Lone Guard Entry",
       "RequiredItems": [
-        "MM_can_hookshot"
+        "can_hookshot"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -27017,7 +27015,7 @@
     {
       "Id": "MM Pirate Fortress Interior => MM Pirate Fortress Barrel Maze Entry",
       "RequiredItems": [
-        "MM_can_hookshot"
+        "can_hookshot"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -27049,13 +27047,13 @@
       "ConditionalItems": [
         [
           "MM_MASK_STONE",
-          "MM_can_hookshot",
+          "can_hookshot",
           "MM_BOW",
           "MM Pirate Fortress Hookshot Room Lower"
         ],
         [
           "MM_MASK_STONE",
-          "MM_can_hookshot",
+          "can_hookshot",
           "MM_can_use_deku_bubble",
           "MM Pirate Fortress Hookshot Room Lower"
         ],
@@ -27094,7 +27092,7 @@
     {
       "Id": "MM_EVENT_ZORA_EGGS_HOOKSHOT_ROOM",
       "RequiredItems": [
-        "MM_can_hookshot",
+        "can_hookshot",
         "MM_MASK_ZORA",
         "MM_has_bottle",
         "MM Pirate Fortress Hookshot Room Lower"
@@ -27210,7 +27208,7 @@
     {
       "Id": "MM_EVENT_ZORA_EGGS_BARREL_MAZE",
       "RequiredItems": [
-        "MM_can_hookshot",
+        "can_hookshot",
         "MM_MASK_ZORA",
         "MM_has_bottle",
         "MM Pirate Fortress Barrel Maze Aquarium"
@@ -27260,7 +27258,7 @@
     {
       "Id": "MM Pirate Fortress Lone Guard Entry => MM Pirate Fortress Treasure Room Entry",
       "RequiredItems": [
-        "MM_can_hookshot"
+        "can_hookshot"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -27321,7 +27319,7 @@
     {
       "Id": "MM_EVENT_ZORA_EGGS_LONE_GUARD",
       "RequiredItems": [
-        "MM_can_hookshot",
+        "can_hookshot",
         "MM_MASK_ZORA",
         "MM_has_bottle",
         "MM Pirate Fortress Lone Guard Aquarium"
@@ -27432,7 +27430,7 @@
     {
       "Id": "MM_EVENT_ZORA_EGGS_TREASURE_ROOM",
       "RequiredItems": [
-        "MM_can_hookshot",
+        "can_hookshot",
         "MM_MASK_ZORA",
         "MM_has_bottle",
         "MM Pirate Fortress Treasure Room Aquarium"
@@ -27683,7 +27681,7 @@
           "MM_goron_fast_roll"
         ],
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -27912,7 +27910,7 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ],
         [
           "MM_EVENT_SNOWHEAD_PUSH_BLOCK",
@@ -27978,7 +27976,7 @@
           "MM_can_use_fire_arrows"
         ],
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -28075,7 +28073,7 @@
           "MM_goron_fast_roll"
         ],
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -28113,7 +28111,7 @@
     {
       "Id": "MM Snowhead Temple Fire Arrow => MM Snowhead Temple Center Level 3 Snow",
       "RequiredItems": [
-        "MM_can_hookshot"
+        "can_hookshot"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -28156,7 +28154,7 @@
           "MM_MASK_GORON"
         ],
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -28229,7 +28227,7 @@
           "MM_MASK_GORON"
         ],
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -28877,7 +28875,7 @@
     {
       "Id": "MM Stone Tower Temple Inverted Wizzrobe => MM Stone Tower Temple Inverted Wizzrobe Ledge",
       "RequiredItems": [
-        "MM_can_hookshot"
+        "can_hookshot"
       ],
       "ConditionalItems": [
         [
@@ -28990,7 +28988,7 @@
       "Id": "MM Stone Tower Temple Inverted Entrance Ledge => MM Stone Tower Temple Inverted Bridge",
       "RequiredItems": [
         "MM_SMALL_KEY_ST, 4",
-        "MM_can_hookshot"
+        "can_hookshot"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -29045,7 +29043,7 @@
     {
       "Id": "MM Stone Tower Temple Inverted Bridge 2 => MM Stone Tower Temple Boss",
       "RequiredItems": [
-        "MM_can_hookshot",
+        "can_hookshot",
         "MM_BOSS_KEY_ST"
       ],
       "ConditionalItems": [],
@@ -29170,7 +29168,7 @@
           "MM_MASK_DEKU"
         ],
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -29218,7 +29216,7 @@
           "MM_EVENT_WOODFALL_TEMPLE_MAIN_LADDER"
         ],
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -29261,7 +29259,7 @@
           "MM_MASK_DEKU"
         ],
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -29496,7 +29494,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_can_hookshot"
+          "can_hookshot"
         ],
         [
           "MM_MASK_DEKU"
@@ -30460,7 +30458,7 @@
           "OOT_EVENT_STICKS"
         ],
         [
-          "OOT_can_get_renewable_sticks"
+          "OOT_renewable_sticks"
         ]
       ],
       "TimeNeeded": "None",
@@ -30476,7 +30474,7 @@
           "OOT_EVENT_NUTS"
         ],
         [
-          "OOT_can_get_renewable_nuts"
+          "OOT_renewable_nuts"
         ]
       ],
       "TimeNeeded": "None",
@@ -30506,7 +30504,7 @@
           "OOT_EVENT_BLUE_FIRE"
         ],
         [
-          "OOT_BLUE_FIRE"
+          "OOT_renewable_blue_fire"
         ]
       ],
       "TimeNeeded": "None",
@@ -30644,18 +30642,12 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "option{sharedOcarina, true}",
-          "option{fairyOcarinaMm, true}",
+          "option{sharedOcarina, false}",
           "MM_OCARINA"
         ],
         [
           "option{sharedOcarina, true}",
-          "option{fairyOcarinaMm, false}",
           "MM_OCARINA, 2"
-        ],
-        [
-          "MM_OCARINA",
-          "option{sharedOcarina, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -30901,8 +30893,8 @@
     {
       "Id": "MM_scarecrow_hookshot",
       "RequiredItems": [
-        "MM_has_ocarina",
-        "MM_can_hookshot"
+        "MM_OCARINA",
+        "MM_HOOKSHOT"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -30942,7 +30934,7 @@
           "MM_BOW"
         ],
         [
-          "MM_can_hookshot"
+          "MM_HOOKSHOT"
         ],
         [
           "MM_MASK_ZORA"
@@ -31038,7 +31030,7 @@
     {
       "Id": "MM_can_lullaby_half",
       "RequiredItems": [
-        "MM_has_ocarina",
+        "MM_OCARINA",
         "MM_has_goron_song_half",
         "MM_MASK_GORON"
       ],
@@ -31051,7 +31043,7 @@
     {
       "Id": "MM_can_lullaby",
       "RequiredItems": [
-        "MM_has_ocarina",
+        "MM_OCARINA",
         "MM_has_goron_song",
         "MM_MASK_GORON"
       ],
@@ -31084,7 +31076,7 @@
           "MM_BOW"
         ],
         [
-          "MM_can_hookshot"
+          "MM_HOOKSHOT"
         ],
         [
           "MM_MASK_DEKU"
@@ -31106,7 +31098,7 @@
           "MM_BOW"
         ],
         [
-          "MM_can_hookshot"
+          "MM_HOOKSHOT"
         ],
         [
           "MM_MASK_ZORA"
@@ -31156,35 +31148,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM_can_hookshot",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "option{shortHookshotMm, false}",
-          "MM_HOOKSHOT"
-        ],
-        [
-          "MM_HOOKSHOT, 2"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM_can_hookshot_short",
-      "RequiredItems": [
-        "MM_HOOKSHOT"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_can_get_renewable_nuts",
+      "Id": "OOT_renewable_nuts",
       "RequiredItems": [],
       "ConditionalItems": [
         [
@@ -31522,7 +31486,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT_can_get_renewable_sticks",
+      "Id": "OOT_renewable_sticks",
       "RequiredItems": [],
       "ConditionalItems": [
         [
@@ -31851,6 +31815,344 @@
         ],
         [
           "contains{MM Beneath the Well Cow, OOT_ANY_STICK}",
+          "check{MM Beneath the Well Cow}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_renewable_blue_fire",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "contains{OOT Kokiri Forest Cow, OOT_BLUE_FIRE}",
+          "check{OOT Kokiri Forest Cow}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 1, OOT_BLUE_FIRE}",
+          "check{OOT Kokiri Shop Item 1}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 2, OOT_BLUE_FIRE}",
+          "check{OOT Kokiri Shop Item 2}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 3, OOT_BLUE_FIRE}",
+          "check{OOT Kokiri Shop Item 3}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 4, OOT_BLUE_FIRE}",
+          "check{OOT Kokiri Shop Item 4}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 5, OOT_BLUE_FIRE}",
+          "check{OOT Kokiri Shop Item 5}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 6, OOT_BLUE_FIRE}",
+          "check{OOT Kokiri Shop Item 6}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 7, OOT_BLUE_FIRE}",
+          "check{OOT Kokiri Shop Item 7}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 8, OOT_BLUE_FIRE}",
+          "check{OOT Kokiri Shop Item 8}"
+        ],
+        [
+          "contains{OOT Kakariko Cow, OOT_BLUE_FIRE}",
+          "check{OOT Kakariko Cow}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 1, OOT_BLUE_FIRE}",
+          "check{OOT Kakariko Bazaar Item 1}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 2, OOT_BLUE_FIRE}",
+          "check{OOT Kakariko Bazaar Item 2}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 3, OOT_BLUE_FIRE}",
+          "check{OOT Kakariko Bazaar Item 3}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 4, OOT_BLUE_FIRE}",
+          "check{OOT Kakariko Bazaar Item 4}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 5, OOT_BLUE_FIRE}",
+          "check{OOT Kakariko Bazaar Item 5}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 6, OOT_BLUE_FIRE}",
+          "check{OOT Kakariko Bazaar Item 6}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 7, OOT_BLUE_FIRE}",
+          "check{OOT Kakariko Bazaar Item 7}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 8, OOT_BLUE_FIRE}",
+          "check{OOT Kakariko Bazaar Item 8}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 1, OOT_BLUE_FIRE}",
+          "check{OOT Kakariko Potion Shop Item 1}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 2, OOT_BLUE_FIRE}",
+          "check{OOT Kakariko Potion Shop Item 2}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 3, OOT_BLUE_FIRE}",
+          "check{OOT Kakariko Potion Shop Item 3}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 4, OOT_BLUE_FIRE}",
+          "check{OOT Kakariko Potion Shop Item 4}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 5, OOT_BLUE_FIRE}",
+          "check{OOT Kakariko Potion Shop Item 5}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 6, OOT_BLUE_FIRE}",
+          "check{OOT Kakariko Potion Shop Item 6}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 7, OOT_BLUE_FIRE}",
+          "check{OOT Kakariko Potion Shop Item 7}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 8, OOT_BLUE_FIRE}",
+          "check{OOT Kakariko Potion Shop Item 8}"
+        ],
+        [
+          "contains{OOT Death Mountain Cow, OOT_BLUE_FIRE}",
+          "check{OOT Death Mountain Cow}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 1, OOT_BLUE_FIRE}",
+          "check{OOT Goron Shop Item 1}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 2, OOT_BLUE_FIRE}",
+          "check{OOT Goron Shop Item 2}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 3, OOT_BLUE_FIRE}",
+          "check{OOT Goron Shop Item 3}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 4, OOT_BLUE_FIRE}",
+          "check{OOT Goron Shop Item 4}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 5, OOT_BLUE_FIRE}",
+          "check{OOT Goron Shop Item 5}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 6, OOT_BLUE_FIRE}",
+          "check{OOT Goron Shop Item 6}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 7, OOT_BLUE_FIRE}",
+          "check{OOT Goron Shop Item 7}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 8, OOT_BLUE_FIRE}",
+          "check{OOT Goron Shop Item 8}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 1, OOT_BLUE_FIRE}",
+          "check{OOT Zora Shop Item 1}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 2, OOT_BLUE_FIRE}",
+          "check{OOT Zora Shop Item 2}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 3, OOT_BLUE_FIRE}",
+          "check{OOT Zora Shop Item 3}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 4, OOT_BLUE_FIRE}",
+          "check{OOT Zora Shop Item 4}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 5, OOT_BLUE_FIRE}",
+          "check{OOT Zora Shop Item 5}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 6, OOT_BLUE_FIRE}",
+          "check{OOT Zora Shop Item 6}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 7, OOT_BLUE_FIRE}",
+          "check{OOT Zora Shop Item 7}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 8, OOT_BLUE_FIRE}",
+          "check{OOT Zora Shop Item 8}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Stables Cow Left, OOT_BLUE_FIRE}",
+          "check{OOT Lon Lon Ranch Stables Cow Left}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Stables Cow Right, OOT_BLUE_FIRE}",
+          "check{OOT Lon Lon Ranch Stables Cow Right}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Silo Cow Front, OOT_BLUE_FIRE}",
+          "check{OOT Lon Lon Ranch Silo Cow Front}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Silo Cow Back, OOT_BLUE_FIRE}",
+          "check{OOT Lon Lon Ranch Silo Cow Back}"
+        ],
+        [
+          "contains{OOT Hyrule Field Cow, OOT_BLUE_FIRE}",
+          "check{OOT Hyrule Field Cow}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 1, OOT_BLUE_FIRE}",
+          "check{OOT Market Bazaar Item 1}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 2, OOT_BLUE_FIRE}",
+          "check{OOT Market Bazaar Item 2}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 3, OOT_BLUE_FIRE}",
+          "check{OOT Market Bazaar Item 3}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 4, OOT_BLUE_FIRE}",
+          "check{OOT Market Bazaar Item 4}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 5, OOT_BLUE_FIRE}",
+          "check{OOT Market Bazaar Item 5}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 6, OOT_BLUE_FIRE}",
+          "check{OOT Market Bazaar Item 6}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 7, OOT_BLUE_FIRE}",
+          "check{OOT Market Bazaar Item 7}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 8, OOT_BLUE_FIRE}",
+          "check{OOT Market Bazaar Item 8}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 1, OOT_BLUE_FIRE}",
+          "check{OOT Market Potion Shop Item 1}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 2, OOT_BLUE_FIRE}",
+          "check{OOT Market Potion Shop Item 2}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 3, OOT_BLUE_FIRE}",
+          "check{OOT Market Potion Shop Item 3}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 4, OOT_BLUE_FIRE}",
+          "check{OOT Market Potion Shop Item 4}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 5, OOT_BLUE_FIRE}",
+          "check{OOT Market Potion Shop Item 5}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 6, OOT_BLUE_FIRE}",
+          "check{OOT Market Potion Shop Item 6}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 7, OOT_BLUE_FIRE}",
+          "check{OOT Market Potion Shop Item 7}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 8, OOT_BLUE_FIRE}",
+          "check{OOT Market Potion Shop Item 8}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 1, OOT_BLUE_FIRE}",
+          "check{OOT Market Bombchu Shop Item 1}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 2, OOT_BLUE_FIRE}",
+          "check{OOT Market Bombchu Shop Item 2}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 3, OOT_BLUE_FIRE}",
+          "check{OOT Market Bombchu Shop Item 3}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 4, OOT_BLUE_FIRE}",
+          "check{OOT Market Bombchu Shop Item 4}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 5, OOT_BLUE_FIRE}",
+          "check{OOT Market Bombchu Shop Item 5}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 6, OOT_BLUE_FIRE}",
+          "check{OOT Market Bombchu Shop Item 6}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 7, OOT_BLUE_FIRE}",
+          "check{OOT Market Bombchu Shop Item 7}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 8, OOT_BLUE_FIRE}",
+          "check{OOT Market Bombchu Shop Item 8}"
+        ],
+        [
+          "contains{OOT Gerudo Valley Cow, OOT_BLUE_FIRE}",
+          "check{OOT Gerudo Valley Cow}"
+        ],
+        [
+          "contains{OOT MQ Jabu-Jabu Cow, OOT_BLUE_FIRE}",
+          "check{OOT MQ Jabu-Jabu Cow}"
+        ],
+        [
+          "contains{MM Termina Field Cow Front, OOT_BLUE_FIRE}",
+          "check{MM Termina Field Cow Front}"
+        ],
+        [
+          "contains{MM Termina Field Cow Back, OOT_BLUE_FIRE}",
+          "check{MM Termina Field Cow Back}"
+        ],
+        [
+          "contains{MM Romani Ranch Barn Cow Left, OOT_BLUE_FIRE}",
+          "check{MM Romani Ranch Barn Cow Left}"
+        ],
+        [
+          "contains{MM Romani Ranch Barn Cow Right Front, OOT_BLUE_FIRE}",
+          "check{MM Romani Ranch Barn Cow Right Front}"
+        ],
+        [
+          "contains{MM Romani Ranch Barn Cow Right Back, OOT_BLUE_FIRE}",
+          "check{MM Romani Ranch Barn Cow Right Back}"
+        ],
+        [
+          "contains{MM Great Bay Coast Cow Front, OOT_BLUE_FIRE}",
+          "check{MM Great Bay Coast Cow Front}"
+        ],
+        [
+          "contains{MM Great Bay Coast Cow Back, OOT_BLUE_FIRE}",
+          "check{MM Great Bay Coast Cow Back}"
+        ],
+        [
+          "contains{MM Beneath the Well Cow, OOT_BLUE_FIRE}",
           "check{MM Beneath the Well Cow}"
         ]
       ],

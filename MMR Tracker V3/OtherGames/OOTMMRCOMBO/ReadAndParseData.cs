@@ -94,40 +94,38 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
         private static void AddRenewableChecks(MMRData.LogicFile logicFile, LogicDictionaryData.LogicDictionary dictionaryFile)
         {
-            string OOTpool = Path.Combine(References.TestingPaths.GetDevTestingPath(), @"core-develop", "data", "oot", "pool.csv");
-            string MMpool = Path.Combine(References.TestingPaths.GetDevTestingPath(), @"core-develop", "data", "mm", "pool.csv");
-            string[] OOTPoolWebData = File.ReadAllLines(OOTpool);
-            var ootPool = ConvertCsvFileToJsonObject(OOTPoolWebData.Where(x => !string.IsNullOrWhiteSpace(x)).ToArray());
-            var ootPoolObj = JsonConvert.DeserializeObject<List<MMROOTLocation>>(ootPool);
-            string[] MMPoolWebData = File.ReadAllLines(MMpool);
-            var mmPool = ConvertCsvFileToJsonObject(MMPoolWebData.Where(x => !string.IsNullOrWhiteSpace(x)).ToArray());
-            var mmPoolObj = JsonConvert.DeserializeObject<List<MMROOTLocation>>(mmPool);
-
-            string[] RenewableTypes = new string[] { "shop", "cow" };
-            var ootRenewableLocations = ootPoolObj.Where(x => RenewableTypes.Contains(x.type));
-            var mmRenewableLocations = mmPoolObj.Where(x => RenewableTypes.Contains(x.type));
-
+            //Create Variables
             List<string> OOTSticks = new() { "OOT_STICK", "OOT_STICKS_5", "OOT_STICKS_10", "SHARED_STICK", "SHARED_STICKS_5", "SHARED_STICKS_10" };
             List<string> OOTnuts = new() { "OOT_NUT", "OOT_NUTS_5", "OOT_NUTS_10", "SHARED_NUT", "SHARED_NUTS_5", "SHARED_NUTS_10" };
-
             dictionaryFile.Variables.Add(new LogicDictionaryData.TrackerVariable { ID = "OOT_ANY_STICK", Static = true, Value = OOTSticks });
             dictionaryFile.Variables.Add(new LogicDictionaryData.TrackerVariable { ID = "OOT_ANY_NUT", Static = true, Value = OOTnuts });
 
-            MMRData.JsonFormatLogicItem RenewableSticksOOT = new() { Id = "OOT_can_get_renewable_sticks", ConditionalItems = new List<List<string>>() };
-            MMRData.JsonFormatLogicItem RenewableNutsOOT = new() { Id = "OOT_can_get_renewable_nuts", ConditionalItems = new List<List<string>>() };
+            //Add Reneawable Logic
+            var OOTRenewableLocations = GetRenewableLocations("OOT");
+            var MMRenewableLocations = GetRenewableLocations("MM");
+            var RenewableLocations = OOTRenewableLocations.Concat(MMRenewableLocations);
 
-            foreach (var location in ootRenewableLocations.Select(x => $"OOT {x.location}"))
+            MMRData.JsonFormatLogicItem RenewableSticksOOT = new() { Id = "OOT_renewable_sticks", ConditionalItems = new List<List<string>>() };
+            MMRData.JsonFormatLogicItem RenewableNutsOOT = new() { Id = "OOT_renewable_nuts", ConditionalItems = new List<List<string>>() };
+            MMRData.JsonFormatLogicItem RenewableBlueFireOOT = new() { Id = "OOT_renewable_blue_fire", ConditionalItems = new List<List<string>>() };
+
+            foreach (var location in RenewableLocations)
             {
                 RenewableSticksOOT.ConditionalItems.Add(new List<string> { $"contains{{{location}, OOT_ANY_STICK}}", $"check{{{location}}}" });
                 RenewableNutsOOT.ConditionalItems.Add(new List<string> { $"contains{{{location}, OOT_ANY_NUT}}", $"check{{{location}}}" });
-            }
-            foreach (var location in mmRenewableLocations.Select(x => $"MM {x.location}"))
-            {
-                RenewableSticksOOT.ConditionalItems.Add(new List<string> { $"contains{{{location}, OOT_ANY_STICK}}", $"check{{{location}}}" });
-                RenewableNutsOOT.ConditionalItems.Add(new List<string> { $"contains{{{location}, OOT_ANY_NUT}}", $"check{{{location}}}" });
+                RenewableBlueFireOOT.ConditionalItems.Add(new List<string> { $"contains{{{location}, OOT_BLUE_FIRE}}", $"check{{{location}}}" });
             }
             logicFile.Logic.Add(RenewableNutsOOT);
             logicFile.Logic.Add(RenewableSticksOOT);
+            logicFile.Logic.Add(RenewableBlueFireOOT);
+
+            List<string> GetRenewableLocations(string GameCode)
+            {
+                string path = Path.Combine(References.TestingPaths.GetDevTestingPath(), @"core-develop", "data", GameCode.ToLower(), "pool.csv");
+                string[] RenewableTypes = new string[] { "shop", "cow" };
+                var Pool = ConvertCsvFileToJsonObject(File.ReadAllLines(path).Where(x => !string.IsNullOrWhiteSpace(x)).ToArray());
+                return JsonConvert.DeserializeObject<List<MMROOTLocation>>(Pool).Where(x => RenewableTypes.Contains(x.type)).Select(x => $"{GameCode} {x.location}").ToList();
+            }
         }
 
         private static void CreateLocationProxies(LogicDictionaryData.LogicDictionary dictionaryFile)
