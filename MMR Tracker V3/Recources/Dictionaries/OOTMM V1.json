@@ -20224,7 +20224,7 @@
     {
       "ID": "MM_OCARINA",
       "Name": "Ocarina (MM)",
-      "MaxAmountInWorld": 1,
+      "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -34064,6 +34064,30 @@
       }
     },
     {
+      "ID": "fairyOcarinaMm",
+      "DisplayName": "Fairy Ocarina in MM",
+      "CurrentValue": "false",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {}
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "MM_OCARINA": {
+              "action": "subtract",
+              "amount": 1
+            }
+          }
+        }
+      }
+    },
+    {
       "ID": "sharedNutsSticks",
       "DisplayName": "Shared Nuts and Sticks",
       "CurrentValue": "false",
@@ -34820,6 +34844,10 @@
               "action": "set",
               "amount": 0
             },
+            "SHARED_RUPEE_BLUE": {
+              "action": "set",
+              "amount": 0
+            },
             "SHARED_RUPEE_RED": {
               "action": "set",
               "amount": 0
@@ -34871,6 +34899,14 @@
               "amount": 0
             },
             "MM_RUPEE_GREEN": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_RUPEE_BLUE": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_RUPEE_BLUE": {
               "action": "set",
               "amount": 0
             },

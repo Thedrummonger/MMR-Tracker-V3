@@ -30643,12 +30643,18 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "option{sharedOcarina, false}",
+          "option{sharedOcarina, true}",
+          "option{fairyOcarinaMm, true}",
           "MM_OCARINA"
         ],
         [
           "option{sharedOcarina, true}",
+          "option{fairyOcarinaMm, false}",
           "MM_OCARINA, 2"
+        ],
+        [
+          "MM_OCARINA",
+          "option{sharedOcarina, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -30894,7 +30900,7 @@
     {
       "Id": "MM_scarecrow_hookshot",
       "RequiredItems": [
-        "MM_OCARINA",
+        "MM_has_ocarina",
         "MM_HOOKSHOT"
       ],
       "ConditionalItems": [],
@@ -31031,7 +31037,7 @@
     {
       "Id": "MM_can_lullaby_half",
       "RequiredItems": [
-        "MM_OCARINA",
+        "MM_has_ocarina",
         "MM_has_goron_song_half",
         "MM_MASK_GORON"
       ],
@@ -31044,7 +31050,7 @@
     {
       "Id": "MM_can_lullaby",
       "RequiredItems": [
-        "MM_OCARINA",
+        "MM_has_ocarina",
         "MM_has_goron_song",
         "MM_MASK_GORON"
       ],

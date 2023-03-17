@@ -340,6 +340,14 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             ProgressiveLullabyMM.Values["progressive"].AddMaxAmountEdit("MM_SONG_GORON", MiscData.MathOP.set, 0);
             dictionaryFile.Options.Add(ProgressiveLullabyMM);
 
+            OptionData.TrackerOption fairyOcarinaMm = new OptionData.TrackerOption();
+            fairyOcarinaMm.ID = "fairyOcarinaMm";
+            fairyOcarinaMm.DisplayName = "Fairy Ocarina in MM";
+            fairyOcarinaMm.CurrentValue = "false";
+            fairyOcarinaMm.CreateSimpleValues(new string[] { "true", "false" });
+            fairyOcarinaMm.Values["false"].AddMaxAmountEdit("MM_OCARINA", MiscData.MathOP.subtract, 1);
+            dictionaryFile.Options.Add(fairyOcarinaMm);
+
             //Game Clear
             dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "Game_Clear", RequiredItems = new List<string> { "OOT_EVENT_GANON", "MM_EVENT_MAJORA" } });
             dictionaryFile.MacroList.Add(new LogicDictionaryData.DictionaryMacroEntry { ID = "Game_Clear", Name = "Both Games Cleared" });
