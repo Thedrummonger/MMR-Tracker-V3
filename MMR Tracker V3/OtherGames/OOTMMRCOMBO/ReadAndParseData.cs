@@ -76,6 +76,15 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
             FinalLogicCleanup(LogicFile);
 
+
+            foreach (var i in dictionaryFile.LocationList) { i.Value.ID = null; }
+            foreach (var i in dictionaryFile.ItemList) { i.Value.ID = null; }
+            foreach (var i in dictionaryFile.EntranceList) { i.Value.ID = null; }
+            foreach (var i in dictionaryFile.HintSpots) { i.Value.ID = null; }
+            foreach (var i in dictionaryFile.MacroList) { i.Value.ID = null; }
+            foreach (var i in dictionaryFile.Options) { i.Value.ID = null; }
+            foreach (var i in dictionaryFile.Variables) { i.Value.ID = null; }
+
             Logic = LogicFile;
             dictionary = dictionaryFile;
             File.WriteAllText(FinalLogicFile, JsonConvert.SerializeObject(LogicFile, Testing._NewtonsoftJsonSerializerOptions));
@@ -956,7 +965,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 string[] DictValue = OOTRCheckDict[i];
                 logicFile.Logic.Add(new MMRData.JsonFormatLogicItem() { Id = i });
                 LogicDictionaryData.DictionaryLocationEntries dictEntry = new LogicDictionaryData.DictionaryLocationEntries();
-                dictEntry.ID = i;
+                dictEntry.ID = null;
                 dictEntry.SpoilerData = new MMRData.SpoilerlogReference { SpoilerLogNames = new string[] { i }, GossipHintNames = new string[] { i } };
                 dictEntry.Name = i;
                 dictEntry.ValidItemTypes = new string[] { "item" };
@@ -975,7 +984,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 dictItem.Name = ItemName;
                 dictItem.MaxAmountInWorld = OOTRItemCounts.ContainsKey(i) ? OOTRItemCounts[i] : -1;
                 dictItem.ValidStartingItem = true;
-                dictItem.ID = i;
+                dictItem.ID = null;
                 dictItem.SpoilerData = new TrackerObjects.MMRData.SpoilerlogReference { SpoilerLogNames = new string[] { i }, GossipHintNames =  new string[] { i, ItemName } };
                 dictItem.ItemTypes = new string[] { "item" };
                 logicDictionary.ItemList.Add(i,dictItem);
@@ -985,7 +994,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             {
                 string TrickID = "TRICK_" + i;
                 TrackerObjects.LogicDictionaryData.DictionaryMacroEntry TrickObject = new TrackerObjects.LogicDictionaryData.DictionaryMacroEntry();
-                TrickObject.ID = TrickID;
+                TrickObject.ID = null;
                 TrickObject.Name = OOTRTricksDict[i];
                 logicDictionary.MacroList.Add(i,TrickObject);
 
