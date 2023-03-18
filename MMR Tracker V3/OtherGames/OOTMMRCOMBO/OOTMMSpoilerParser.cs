@@ -43,6 +43,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             List<string> TrickData = GetListFromSpoiler(Instance, "Tricks").Select(x => $"TRICK_{x}").ToList();
             List<string> JunkLocationData = GetListFromSpoiler(Instance, "Junk Locations");
             List<string> MQDungeons = GetListFromSpoiler(Instance, "MQ Dungeons");
+            List<string> AccessConditions = GetListFromSpoiler(Instance, "Special Conditions");
 
             Debug.WriteLine("\nApplying Settings");
             ApplySpoilerSettings(Instance, SettingData);
@@ -60,6 +61,31 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             ApplyHintData(Instance, HintData);
             Debug.WriteLine("\nApplying Entrance Data");
             ApplyEntrances(Instance, ExitData);
+            Debug.WriteLine("\nSetting Special Conditions");
+            ToggleSpecialConditions(Instance, AccessConditions);
+        }
+
+        private static void ToggleSpecialConditions(LogicObjects.TrackerInstance instance, List<string> AccessConditions)
+        {
+
+            bool atBridge = false;
+            bool atMoon = false;
+            foreach (var i in AccessConditions)
+            {
+                if (i == "BRIDGE:") { atMoon = false; atBridge = true; continue; }
+                if (i == "MOON:") { atBridge = false; atMoon = true; continue; }
+                if (string.IsNullOrWhiteSpace(i)) { return; }
+                var Data = i.Split(':').Select(x => x.Trim()).ToArray();
+                string ID = atBridge ? $"bridge_{Data[0]}" : $"moon_{Data[0]}";
+                if (instance.UserOptions.ContainsKey(ID)) { instance.UserOptions[ID].CurrentValue = Data[1]; }
+                else if (instance.Variables.ContainsKey(ID))
+                {
+                    if (int.TryParse(Data[1], out int count)) { instance.Variables[ID].Value = count; }
+                    else { instance.Variables[ID].Value = Data[1]; }
+                }
+                else { Debug.WriteLine($"{ID} was not an option or variable"); }
+            }
+
         }
 
         private class EntranceDataContainer

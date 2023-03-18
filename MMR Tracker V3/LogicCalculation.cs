@@ -84,7 +84,8 @@ namespace MMR_Tracker_V3
         public bool CheckItemArray(string ArrVar, int amount, List<string> SubUnlockData, out int TotalUsable)
         {
             TotalUsable = 0;
-            if (container.Instance.Variables[ArrVar].GetValue(container.Instance) is not List<string> VariableEntries) { return false; }
+            if (container.Instance.Variables[ArrVar].GetType() != VariableEntryType.varlist) { return false; }
+            List<string> VariableEntries = (List<string>)container.Instance.Variables[ArrVar].GetValue(container.Instance);
             List<string> UsableItems = new();
             Dictionary<string, int> ItemTracking = new();
             LoopVarEntry(VariableEntries);

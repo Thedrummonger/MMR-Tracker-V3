@@ -234,7 +234,7 @@ namespace MMR_Tracker_V3.TrackerObjects
         {
             if (value is int || value is Int64) { return (int)value;  }
             else if (value is bool boolean) { return boolean; }
-            //else if (value is string s) { return s; }
+            else if (value is string s) { return s; }
             else if (value is List<string> || value is Array || value is Newtonsoft.Json.Linq.JArray)
             {
                 List<string> list = new();
