@@ -207,45 +207,47 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem
             {
                 Id = $"MM_HAS_MOON_REQUIREMENTS",
-                RequiredItems = new List<string> { "moon_req, moon_req_count" }
+                RequiredItems = new List<string> { "moon_req, moon_count" }
             });
             dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem
             {
                 Id = $"OOT_HAS_BRIDGE_REQUIREMENTS",
-                RequiredItems = new List<string> { "bridge_req, bridge_req_count" }
+                RequiredItems = new List<string> { "bridge_req, bridge_count" }
             });
 
             Dictionary<string, string[]> PossibleReqs = new()
             {
-                { "Spiritual Stones", new string[] { "OOT_STONE_EMERALD", "OOT_STONE_RUBY", "OOT_STONE_SAPPHIRE" } },
-                { "Medallions", new string[] { "OOT_MEDALLION_LIGHT", "OOT_MEDALLION_FOREST", "OOT_MEDALLION_FIRE", "OOT_MEDALLION_WATER", "OOT_MEDALLION_SPIRIT", "OOT_MEDALLION_SHADOW" } },
-                { "Boss Remains", new string[] { "MM_REMAINS_ODOLWA", "MM_REMAINS_GOHT", "MM_REMAINS_GYORG", "MM_REMAINS_TWINMOLD" } },
-                { "Gold Skulltulas Tokens", new string[] { "OOT_GS_TOKEN" } },
-                { "Swamp Skulltulas Tokens", new string[] { "MM_GS_TOKEN_SWAMP" } },
-                { "Ocean Skulltulas Tokens", new string[] { "MM_GS_TOKEN_OCEAN" } },
-                { "Stray Fairies (Woodfall)", new string[] { "MM_STRAY_FAIRY_WF" } },
-                { "Stray Fairies (Snowhead)", new string[] { "MM_STRAY_FAIRY_SH" } },
-                { "Stray Fairies (Great Bay)", new string[] { "MM_STRAY_FAIRY_GB" } },
-                { "Stray Fairies (Stone Tower)", new string[] { "MM_STRAY_FAIRY_ST" } },
-                { "Stray Fairy (Clock Town)", new string[] { "MM_STRAY_FAIRY_TOWN" } }
+                { "Spiritual Stones|stones", new string[] { "OOT_STONE_EMERALD", "OOT_STONE_RUBY", "OOT_STONE_SAPPHIRE" } },
+                { "Medallions|medallions", new string[] { "OOT_MEDALLION_LIGHT", "OOT_MEDALLION_FOREST", "OOT_MEDALLION_FIRE", "OOT_MEDALLION_WATER", "OOT_MEDALLION_SPIRIT", "OOT_MEDALLION_SHADOW" } },
+                { "Boss Remains|remains", new string[] { "MM_REMAINS_ODOLWA", "MM_REMAINS_GOHT", "MM_REMAINS_GYORG", "MM_REMAINS_TWINMOLD" } },
+                { "Gold Skulltulas Tokens|skullsGold", new string[] { "OOT_GS_TOKEN" } },
+                { "Swamp Skulltulas Tokens|skullsSwamp", new string[] { "MM_GS_TOKEN_SWAMP" } },
+                { "Ocean Skulltulas Tokens|skullsOcean", new string[] { "MM_GS_TOKEN_OCEAN" } },
+                { "Stray Fairies (Woodfall)|fairiesWF", new string[] { "MM_STRAY_FAIRY_WF" } },
+                { "Stray Fairies (Snowhead)|fairiesSH", new string[] { "MM_STRAY_FAIRY_SH" } },
+                { "Stray Fairies (Great Bay)|fairiesGB", new string[] { "MM_STRAY_FAIRY_GB" } },
+                { "Stray Fairies (Stone Tower)|fairiesST", new string[] { "MM_STRAY_FAIRY_ST" } },
+                { "Stray Fairy (Clock Town)|fairyTown", new string[] { "MM_STRAY_FAIRY_TOWN" } }
             };
 
             foreach (var i in PossibleReqs)
             {
+                var namedata = i.Key.Split('|');
+
                 OptionData.TrackerOption MoonRequirement = new OptionData.TrackerOption();
-                MoonRequirement.ID = $"MOON_REQ_{i.Key.ToUpper().Replace(" ", "_")}";
-                MoonRequirement.DisplayName = i.Key;
+                MoonRequirement.ID = $"moon_{namedata[1]}";
+                MoonRequirement.DisplayName = namedata[0];
                 MoonRequirement.SubCategory = "Moon Access Conditions";
-                MoonRequirement.CurrentValue = (i.Key == "Boss Remains").ToString().ToLower();
+                MoonRequirement.CurrentValue = (namedata[0] == "Boss Remains").ToString().ToLower();
                 MoonRequirement.CreateSimpleValues(new string[] { "true", "false" });
                 MoonRequirement.Values["true"].VariableEdit.Add("moon_req", new OptionData.VariableEditData { action = MiscData.MathOP.add, EditValue = i.Value });
                 dictionaryFile.Options.Add(MoonRequirement.ID, MoonRequirement);
 
                 OptionData.TrackerOption BridgeRequirement = new OptionData.TrackerOption();
-                BridgeRequirement.ID = $"BRIDGE_REQ_{i.Key.ToUpper().Replace(" ", "_")}";
-                BridgeRequirement.DisplayName = i.Key;
+                BridgeRequirement.ID = $"bridge_{namedata[1]}";
+                BridgeRequirement.DisplayName = namedata[0];
                 BridgeRequirement.SubCategory = "Rainbow Bridge Conditions";
-                BridgeRequirement.CurrentValue = (i.Key == "Medallions").ToString().ToLower();
+                BridgeRequirement.CurrentValue = (namedata[0] == "Medallions").ToString().ToLower();
                 BridgeRequirement.CreateSimpleValues(new string[] { "true", "false" });
                 BridgeRequirement.Values["true"].VariableEdit.Add("bridge_req", new OptionData.VariableEditData { action = MiscData.MathOP.add, EditValue = i.Value });
                 dictionaryFile.Options.Add(BridgeRequirement.ID, BridgeRequirement);
@@ -262,7 +264,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             bridge_req_count.Static = false;
             bridge_req_count.SubCategory = "Rainbow Bridge Conditions";
             bridge_req_count.Name = "Items Required";
-            bridge_req_count.ID = "bridge_req_count";
+            bridge_req_count.ID = "bridge_count";
             bridge_req_count.Value = 6;
             dictionaryFile.Variables.Add(bridge_req_count.ID, bridge_req_count);
 
@@ -277,7 +279,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             moon_req_count.Static = false;
             moon_req_count.SubCategory = "Moon Access Conditions";
             moon_req_count.Name = "Items Required";
-            moon_req_count.ID = "moon_req_count";
+            moon_req_count.ID = "moon_count";
             moon_req_count.Value = 4;
             dictionaryFile.Variables.Add(moon_req_count.ID, moon_req_count);
 

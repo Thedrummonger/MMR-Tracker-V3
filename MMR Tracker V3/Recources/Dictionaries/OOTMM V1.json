@@ -33594,7 +33594,7 @@
         }
       }
     },
-    "MOON_REQ_SPIRITUAL_STONES": {
+    "moon_stones": {
       "DisplayName": "Spiritual Stones",
       "CurrentValue": "false",
       "SubCategory": "Moon Access Conditions",
@@ -33624,7 +33624,7 @@
         }
       }
     },
-    "BRIDGE_REQ_SPIRITUAL_STONES": {
+    "bridge_stones": {
       "DisplayName": "Spiritual Stones",
       "CurrentValue": "false",
       "SubCategory": "Rainbow Bridge Conditions",
@@ -33654,7 +33654,7 @@
         }
       }
     },
-    "MOON_REQ_MEDALLIONS": {
+    "moon_medallions": {
       "DisplayName": "Medallions",
       "CurrentValue": "false",
       "SubCategory": "Moon Access Conditions",
@@ -33687,7 +33687,7 @@
         }
       }
     },
-    "BRIDGE_REQ_MEDALLIONS": {
+    "bridge_medallions": {
       "DisplayName": "Medallions",
       "CurrentValue": "true",
       "SubCategory": "Rainbow Bridge Conditions",
@@ -33720,7 +33720,7 @@
         }
       }
     },
-    "MOON_REQ_BOSS_REMAINS": {
+    "moon_remains": {
       "DisplayName": "Boss Remains",
       "CurrentValue": "true",
       "SubCategory": "Moon Access Conditions",
@@ -33751,7 +33751,7 @@
         }
       }
     },
-    "BRIDGE_REQ_BOSS_REMAINS": {
+    "bridge_remains": {
       "DisplayName": "Boss Remains",
       "CurrentValue": "false",
       "SubCategory": "Rainbow Bridge Conditions",
@@ -33782,7 +33782,7 @@
         }
       }
     },
-    "MOON_REQ_GOLD_SKULLTULAS_TOKENS": {
+    "moon_skullsGold": {
       "DisplayName": "Gold Skulltulas Tokens",
       "CurrentValue": "false",
       "SubCategory": "Moon Access Conditions",
@@ -33810,7 +33810,7 @@
         }
       }
     },
-    "BRIDGE_REQ_GOLD_SKULLTULAS_TOKENS": {
+    "bridge_skullsGold": {
       "DisplayName": "Gold Skulltulas Tokens",
       "CurrentValue": "false",
       "SubCategory": "Rainbow Bridge Conditions",
@@ -33838,7 +33838,7 @@
         }
       }
     },
-    "MOON_REQ_SWAMP_SKULLTULAS_TOKENS": {
+    "moon_skullsSwamp": {
       "DisplayName": "Swamp Skulltulas Tokens",
       "CurrentValue": "false",
       "SubCategory": "Moon Access Conditions",
@@ -33866,7 +33866,7 @@
         }
       }
     },
-    "BRIDGE_REQ_SWAMP_SKULLTULAS_TOKENS": {
+    "bridge_skullsSwamp": {
       "DisplayName": "Swamp Skulltulas Tokens",
       "CurrentValue": "false",
       "SubCategory": "Rainbow Bridge Conditions",
@@ -33894,7 +33894,7 @@
         }
       }
     },
-    "MOON_REQ_OCEAN_SKULLTULAS_TOKENS": {
+    "moon_skullsOcean": {
       "DisplayName": "Ocean Skulltulas Tokens",
       "CurrentValue": "false",
       "SubCategory": "Moon Access Conditions",
@@ -33922,7 +33922,7 @@
         }
       }
     },
-    "BRIDGE_REQ_OCEAN_SKULLTULAS_TOKENS": {
+    "bridge_skullsOcean": {
       "DisplayName": "Ocean Skulltulas Tokens",
       "CurrentValue": "false",
       "SubCategory": "Rainbow Bridge Conditions",
@@ -33950,7 +33950,7 @@
         }
       }
     },
-    "MOON_REQ_STRAY_FAIRIES_(WOODFALL)": {
+    "moon_fairiesWF": {
       "DisplayName": "Stray Fairies (Woodfall)",
       "CurrentValue": "false",
       "SubCategory": "Moon Access Conditions",
@@ -33978,7 +33978,7 @@
         }
       }
     },
-    "BRIDGE_REQ_STRAY_FAIRIES_(WOODFALL)": {
+    "bridge_fairiesWF": {
       "DisplayName": "Stray Fairies (Woodfall)",
       "CurrentValue": "false",
       "SubCategory": "Rainbow Bridge Conditions",
@@ -34006,7 +34006,7 @@
         }
       }
     },
-    "MOON_REQ_STRAY_FAIRIES_(SNOWHEAD)": {
+    "moon_fairiesSH": {
       "DisplayName": "Stray Fairies (Snowhead)",
       "CurrentValue": "false",
       "SubCategory": "Moon Access Conditions",
@@ -34034,7 +34034,7 @@
         }
       }
     },
-    "BRIDGE_REQ_STRAY_FAIRIES_(SNOWHEAD)": {
+    "bridge_fairiesSH": {
       "DisplayName": "Stray Fairies (Snowhead)",
       "CurrentValue": "false",
       "SubCategory": "Rainbow Bridge Conditions",
@@ -34062,7 +34062,7 @@
         }
       }
     },
-    "MOON_REQ_STRAY_FAIRIES_(GREAT_BAY)": {
+    "moon_fairiesGB": {
       "DisplayName": "Stray Fairies (Great Bay)",
       "CurrentValue": "false",
       "SubCategory": "Moon Access Conditions",
@@ -34090,7 +34090,7 @@
         }
       }
     },
-    "BRIDGE_REQ_STRAY_FAIRIES_(GREAT_BAY)": {
+    "bridge_fairiesGB": {
       "DisplayName": "Stray Fairies (Great Bay)",
       "CurrentValue": "false",
       "SubCategory": "Rainbow Bridge Conditions",
@@ -34118,7 +34118,7 @@
         }
       }
     },
-    "MOON_REQ_STRAY_FAIRIES_(STONE_TOWER)": {
+    "moon_fairiesST": {
       "DisplayName": "Stray Fairies (Stone Tower)",
       "CurrentValue": "false",
       "SubCategory": "Moon Access Conditions",
@@ -34146,7 +34146,7 @@
         }
       }
     },
-    "BRIDGE_REQ_STRAY_FAIRIES_(STONE_TOWER)": {
+    "bridge_fairiesST": {
       "DisplayName": "Stray Fairies (Stone Tower)",
       "CurrentValue": "false",
       "SubCategory": "Rainbow Bridge Conditions",
@@ -34174,7 +34174,7 @@
         }
       }
     },
-    "MOON_REQ_STRAY_FAIRY_(CLOCK_TOWN)": {
+    "moon_fairyTown": {
       "DisplayName": "Stray Fairy (Clock Town)",
       "CurrentValue": "false",
       "SubCategory": "Moon Access Conditions",
@@ -34202,7 +34202,7 @@
         }
       }
     },
-    "BRIDGE_REQ_STRAY_FAIRY_(CLOCK_TOWN)": {
+    "bridge_fairyTown": {
       "DisplayName": "Stray Fairy (Clock Town)",
       "CurrentValue": "false",
       "SubCategory": "Rainbow Bridge Conditions",
@@ -34263,7 +34263,7 @@
       "Static": true,
       "Value": []
     },
-    "bridge_req_count": {
+    "bridge_count": {
       "Name": "Items Required",
       "SubCategory": "Rainbow Bridge Conditions",
       "Static": false,
@@ -34274,7 +34274,7 @@
       "Static": true,
       "Value": []
     },
-    "moon_req_count": {
+    "moon_count": {
       "Name": "Items Required",
       "SubCategory": "Moon Access Conditions",
       "Static": false,
@@ -34335,7 +34335,7 @@
     {
       "Id": "MM_HAS_MOON_REQUIREMENTS",
       "RequiredItems": [
-        "moon_req, moon_req_count"
+        "moon_req, moon_count"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -34346,7 +34346,7 @@
     {
       "Id": "OOT_HAS_BRIDGE_REQUIREMENTS",
       "RequiredItems": [
-        "bridge_req, bridge_req_count"
+        "bridge_req, bridge_count"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
