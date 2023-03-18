@@ -17993,7 +17993,7 @@
     {
       "Id": "OOT Ganon Castle Exterior => OOT Ganon Castle Main",
       "RequiredItems": [
-        "OOT_has_medallions"
+        "OOT_HAS_BRIDGE_REQUIREMENTS"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -24135,10 +24135,7 @@
       "RequiredItems": [
         "MM_OCARINA",
         "MM_SONG_ORDER",
-        "MM_REMAINS_ODOLWA",
-        "MM_REMAINS_GOHT",
-        "MM_REMAINS_GYORG",
-        "MM_REMAINS_TWINMOLD"
+        "MM_HAS_MOON_REQUIREMENTS"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",

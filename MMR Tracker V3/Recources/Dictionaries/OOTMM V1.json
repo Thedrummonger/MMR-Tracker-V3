@@ -31910,19 +31910,22 @@
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
         },
         "adult": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
         },
         "child": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
         }
       }
     },
@@ -31934,7 +31937,8 @@
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
         },
         "false": {
           "LogicReplacements": [],
@@ -31949,7 +31953,8 @@
               "action": "set",
               "amount": 0
             }
-          }
+          },
+          "VariableEdit": {}
         }
       }
     },
@@ -31962,14 +31967,16 @@
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
         },
         "closed": {
           "Name": "Closed",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
         }
       }
     },
@@ -31981,13 +31988,15 @@
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
         },
         "false": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
         }
       }
     },
@@ -32000,21 +32009,24 @@
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
         },
         "childOnly": {
           "Name": "Child Only",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
         },
         "full": {
           "Name": "Child & Adult",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
         }
       }
     },
@@ -32032,28 +32044,32 @@
               "action": "set",
               "amount": 0
             }
-          }
+          },
+          "VariableEdit": {}
         },
         "vanilla": {
           "Name": "Vanilla",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
         },
         "ganon": {
           "Name": "Ganon's Castle",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
         },
         "anywhere": {
           "Name": "Anywhere",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
         }
       }
     },
@@ -32071,14 +32087,16 @@
               "action": "subtract",
               "amount": 1
             }
-          }
+          },
+          "VariableEdit": {}
         },
         "anywhere": {
           "Name": "Anywhere",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
         }
       }
     },
@@ -32096,7 +32114,8 @@
               "action": "set",
               "amount": 0
             }
-          }
+          },
+          "VariableEdit": {}
         },
         "progressive": {
           "LogicReplacements": [],
@@ -32115,7 +32134,8 @@
               "action": "set",
               "amount": 0
             }
-          }
+          },
+          "VariableEdit": {}
         }
       }
     },
@@ -32138,7 +32158,8 @@
               "action": "set",
               "amount": 0
             }
-          }
+          },
+          "VariableEdit": {}
         },
         "progressive": {
           "Name": "Progressive",
@@ -32166,7 +32187,8 @@
               "action": "set",
               "amount": 0
             }
-          }
+          },
+          "VariableEdit": {}
         },
         "goron": {
           "Name": "Progressive Knife and Biggoron",
@@ -32186,7 +32208,8 @@
               "action": "set",
               "amount": 0
             }
-          }
+          },
+          "VariableEdit": {}
         }
       }
     },
@@ -32205,7 +32228,8 @@
               "action": "set",
               "amount": 0
             }
-          }
+          },
+          "VariableEdit": {}
         },
         "start": {
           "Name": "Start with Hero Shield",
@@ -32217,7 +32241,8 @@
               "action": "set",
               "amount": 0
             }
-          }
+          },
+          "VariableEdit": {}
         },
         "progressive": {
           "Name": "Progressive",
@@ -32229,7 +32254,8 @@
               "action": "set",
               "amount": 0
             }
-          }
+          },
+          "VariableEdit": {}
         }
       }
     },
@@ -32247,7 +32273,8 @@
               "action": "set",
               "amount": 0
             }
-          }
+          },
+          "VariableEdit": {}
         },
         "progressive": {
           "LogicReplacements": [],
@@ -32258,7 +32285,8 @@
               "action": "set",
               "amount": 0
             }
-          }
+          },
+          "VariableEdit": {}
         }
       }
     },
@@ -32270,7 +32298,8 @@
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
         },
         "false": {
           "LogicReplacements": [],
@@ -32281,7 +32310,8 @@
               "action": "subtract",
               "amount": 1
             }
-          }
+          },
+          "VariableEdit": {}
         }
       }
     },
@@ -32293,7 +32323,8 @@
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
         },
         "false": {
           "LogicReplacements": [],
@@ -32304,7 +32335,8 @@
               "action": "subtract",
               "amount": 1
             }
-          }
+          },
+          "VariableEdit": {}
         }
       }
     },
@@ -32346,7 +32378,8 @@
               "action": "set",
               "amount": 0
             }
-          }
+          },
+          "VariableEdit": {}
         },
         "true": {
           "LogicReplacements": [
@@ -32430,7 +32463,8 @@
               "action": "set",
               "amount": 0
             }
-          }
+          },
+          "VariableEdit": {}
         }
       }
     },
@@ -32464,7 +32498,8 @@
               "action": "set",
               "amount": 0
             }
-          }
+          },
+          "VariableEdit": {}
         },
         "true": {
           "LogicReplacements": [
@@ -32520,7 +32555,8 @@
               "action": "set",
               "amount": 0
             }
-          }
+          },
+          "VariableEdit": {}
         }
       }
     },
@@ -32558,7 +32594,8 @@
               "action": "set",
               "amount": 0
             }
-          }
+          },
+          "VariableEdit": {}
         },
         "true": {
           "LogicReplacements": [
@@ -32622,7 +32659,8 @@
               "action": "set",
               "amount": 0
             }
-          }
+          },
+          "VariableEdit": {}
         }
       }
     },
@@ -32640,7 +32678,8 @@
               "action": "set",
               "amount": 0
             }
-          }
+          },
+          "VariableEdit": {}
         },
         "true": {
           "LogicReplacements": [
@@ -32664,7 +32703,8 @@
               "action": "set",
               "amount": 0
             }
-          }
+          },
+          "VariableEdit": {}
         }
       }
     },
@@ -32690,7 +32730,8 @@
               "action": "set",
               "amount": 0
             }
-          }
+          },
+          "VariableEdit": {}
         },
         "true": {
           "LogicReplacements": [
@@ -32734,7 +32775,8 @@
               "action": "set",
               "amount": 0
             }
-          }
+          },
+          "VariableEdit": {}
         }
       }
     },
@@ -32760,7 +32802,8 @@
               "action": "set",
               "amount": 0
             }
-          }
+          },
+          "VariableEdit": {}
         },
         "true": {
           "LogicReplacements": [
@@ -32804,7 +32847,8 @@
               "action": "set",
               "amount": 0
             }
-          }
+          },
+          "VariableEdit": {}
         }
       }
     },
@@ -32822,7 +32866,8 @@
               "action": "set",
               "amount": 0
             }
-          }
+          },
+          "VariableEdit": {}
         },
         "true": {
           "LogicReplacements": [
@@ -32848,7 +32893,8 @@
               "action": "set",
               "amount": 0
             }
-          }
+          },
+          "VariableEdit": {}
         }
       }
     },
@@ -32866,7 +32912,8 @@
               "action": "set",
               "amount": 0
             }
-          }
+          },
+          "VariableEdit": {}
         },
         "true": {
           "LogicReplacements": [
@@ -32890,7 +32937,8 @@
               "action": "set",
               "amount": 0
             }
-          }
+          },
+          "VariableEdit": {}
         }
       }
     },
@@ -32908,7 +32956,8 @@
               "action": "set",
               "amount": 0
             }
-          }
+          },
+          "VariableEdit": {}
         },
         "true": {
           "LogicReplacements": [
@@ -32934,7 +32983,8 @@
               "action": "set",
               "amount": 0
             }
-          }
+          },
+          "VariableEdit": {}
         }
       }
     },
@@ -32968,7 +33018,8 @@
               "action": "set",
               "amount": 0
             }
-          }
+          },
+          "VariableEdit": {}
         },
         "true": {
           "LogicReplacements": [
@@ -33032,7 +33083,8 @@
               "action": "set",
               "amount": 0
             }
-          }
+          },
+          "VariableEdit": {}
         }
       }
     },
@@ -33078,7 +33130,8 @@
               "action": "set",
               "amount": 0
             }
-          }
+          },
+          "VariableEdit": {}
         },
         "true": {
           "LogicReplacements": [
@@ -33160,7 +33213,8 @@
               "action": "set",
               "amount": 0
             }
-          }
+          },
+          "VariableEdit": {}
         }
       }
     },
@@ -33190,7 +33244,8 @@
               "action": "set",
               "amount": 0
             }
-          }
+          },
+          "VariableEdit": {}
         },
         "true": {
           "LogicReplacements": [
@@ -33242,7 +33297,8 @@
               "action": "set",
               "amount": 0
             }
-          }
+          },
+          "VariableEdit": {}
         }
       }
     },
@@ -33255,13 +33311,15 @@
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
         },
         "false": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
         }
       }
     },
@@ -33274,13 +33332,15 @@
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
         },
         "false": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
         }
       }
     },
@@ -33293,13 +33353,15 @@
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
         },
         "false": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
         }
       }
     },
@@ -33317,13 +33379,15 @@
               "action": "set",
               "amount": 6
             }
-          }
+          },
+          "VariableEdit": {}
         },
         "false": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
         }
       }
     },
@@ -33341,13 +33405,15 @@
               "action": "set",
               "amount": 5
             }
-          }
+          },
+          "VariableEdit": {}
         },
         "false": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
         }
       }
     },
@@ -33365,13 +33431,15 @@
               "action": "set",
               "amount": 2
             }
-          }
+          },
+          "VariableEdit": {}
         },
         "false": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
         }
       }
     },
@@ -33389,13 +33457,15 @@
               "action": "set",
               "amount": 6
             }
-          }
+          },
+          "VariableEdit": {}
         },
         "false": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
         }
       }
     },
@@ -33413,13 +33483,15 @@
               "action": "set",
               "amount": 7
             }
-          }
+          },
+          "VariableEdit": {}
         },
         "false": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
         }
       }
     },
@@ -33437,13 +33509,15 @@
               "action": "set",
               "amount": 2
             }
-          }
+          },
+          "VariableEdit": {}
         },
         "false": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
         }
       }
     },
@@ -33456,13 +33530,15 @@
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
         },
         "false": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
         }
       }
     },
@@ -33480,13 +33556,15 @@
               "action": "set",
               "amount": 3
             }
-          }
+          },
+          "VariableEdit": {}
         },
         "false": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
         }
       }
     },
@@ -33504,13 +33582,203 @@
               "action": "set",
               "amount": 3
             }
+          },
+          "VariableEdit": {}
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "MOON_REQ_SPIRITUAL_STONES": {
+      "DisplayName": "Spiritual Stones",
+      "CurrentValue": "false",
+      "SubCategory": "Moon Access Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "moon_req": {
+              "action": "add",
+              "EditValue": [
+                "OOT_STONE_EMERALD",
+                "OOT_STONE_RUBY",
+                "OOT_STONE_SAPPHIRE"
+              ]
+            }
           }
         },
         "false": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {}
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "BRIDGE_REQ_SPIRITUAL_STONES": {
+      "DisplayName": "Spiritual Stones",
+      "CurrentValue": "false",
+      "SubCategory": "Rainbow Bridge Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "bridge_req": {
+              "action": "add",
+              "EditValue": [
+                "OOT_STONE_EMERALD",
+                "OOT_STONE_RUBY",
+                "OOT_STONE_SAPPHIRE"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "MOON_REQ_MEDALLIONS": {
+      "DisplayName": "Medallions",
+      "CurrentValue": "false",
+      "SubCategory": "Moon Access Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "moon_req": {
+              "action": "add",
+              "EditValue": [
+                "OOT_MEDALLION_LIGHT",
+                "OOT_MEDALLION_FOREST",
+                "OOT_MEDALLION_FIRE",
+                "OOT_MEDALLION_WATER",
+                "OOT_MEDALLION_SPIRIT",
+                "OOT_MEDALLION_SHADOW"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "BRIDGE_REQ_MEDALLIONS": {
+      "DisplayName": "Medallions",
+      "CurrentValue": "true",
+      "SubCategory": "Rainbow Bridge Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "bridge_req": {
+              "action": "add",
+              "EditValue": [
+                "OOT_MEDALLION_LIGHT",
+                "OOT_MEDALLION_FOREST",
+                "OOT_MEDALLION_FIRE",
+                "OOT_MEDALLION_WATER",
+                "OOT_MEDALLION_SPIRIT",
+                "OOT_MEDALLION_SHADOW"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "MOON_REQ_BOSS_REMAINS": {
+      "DisplayName": "Boss Remains",
+      "CurrentValue": "true",
+      "SubCategory": "Moon Access Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "moon_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_REMAINS_ODOLWA",
+                "MM_REMAINS_GOHT",
+                "MM_REMAINS_GYORG",
+                "MM_REMAINS_TWINMOLD"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "BRIDGE_REQ_BOSS_REMAINS": {
+      "DisplayName": "Boss Remains",
+      "CurrentValue": "false",
+      "SubCategory": "Rainbow Bridge Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "bridge_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_REMAINS_ODOLWA",
+                "MM_REMAINS_GOHT",
+                "MM_REMAINS_GYORG",
+                "MM_REMAINS_TWINMOLD"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
         }
       }
     }
@@ -33541,6 +33809,31 @@
         "MM_MASK_CAPTAIN",
         "MM_MASK_GIANT"
       ]
+    },
+    "bridge_req": {
+      "Name": "bridge_req",
+      "Static": true,
+      "Value": []
+    },
+    "bridge_req_count": {
+      "Name": "Bridge Amount",
+      "Static": false,
+      "Value": 6
+    },
+    "moon_req": {
+      "Name": "moon_req",
+      "Static": true,
+      "Value": []
+    },
+    "moon_req_count": {
+      "Name": "Moon Amount",
+      "Static": false,
+      "Value": 4
+    },
+    "dumbtest": {
+      "Name": "Amount",
+      "Static": true,
+      "Value": true
     },
     "OOT_ANY_STICK": {
       "Static": true,
@@ -33582,6 +33875,28 @@
       "Id": "MM_ZORA",
       "RequiredItems": [
         "MM_MASK_ZORA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_HAS_MOON_REQUIREMENTS",
+      "RequiredItems": [
+        "moon_req, moon_req_count"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_HAS_BRIDGE_REQUIREMENTS",
+      "RequiredItems": [
+        "bridge_req, bridge_req_count"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",

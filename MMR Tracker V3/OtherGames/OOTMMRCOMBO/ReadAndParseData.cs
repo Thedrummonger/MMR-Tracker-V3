@@ -202,6 +202,85 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             }
         }
 
+        private static void WorldEventRequirementOptions(LogicDictionaryData.LogicDictionary dictionaryFile)
+        {
+            dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem
+            {
+                Id = $"MM_HAS_MOON_REQUIREMENTS",
+                RequiredItems = new List<string> { "moon_req, moon_req_count" }
+            });
+            dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem
+            {
+                Id = $"OOT_HAS_BRIDGE_REQUIREMENTS",
+                RequiredItems = new List<string> { "bridge_req, bridge_req_count" }
+            });
+
+            Dictionary<string, string[]> PossibleReqs = new Dictionary<string, string[]>();
+            PossibleReqs.Add("Spiritual Stones", new string[] { "OOT_STONE_EMERALD", "OOT_STONE_RUBY", "OOT_STONE_SAPPHIRE" });
+            PossibleReqs.Add("Medallions", new string[] { "OOT_MEDALLION_LIGHT", "OOT_MEDALLION_FOREST", "OOT_MEDALLION_FIRE", "OOT_MEDALLION_WATER", "OOT_MEDALLION_SPIRIT", "OOT_MEDALLION_SHADOW" });
+            PossibleReqs.Add("Boss Remains", new string[] { "MM_REMAINS_ODOLWA", "MM_REMAINS_GOHT", "MM_REMAINS_GYORG", "MM_REMAINS_TWINMOLD" });
+
+            foreach(var i in PossibleReqs)
+            {
+                OptionData.TrackerOption MoonRequirement = new OptionData.TrackerOption();
+                MoonRequirement.ID = $"MOON_REQ_{i.Key.ToUpper().Replace(" ", "_")}";
+                MoonRequirement.DisplayName = i.Key;
+                MoonRequirement.SubCategory = "Moon Access Conditions";
+                MoonRequirement.CurrentValue = (i.Key == "Boss Remains").ToString().ToLower();
+                MoonRequirement.CreateSimpleValues(new string[] { "true", "false" });
+                MoonRequirement.Values["true"].VariableEdit.Add("moon_req", new OptionData.VariableEditData { action = MiscData.MathOP.add, EditValue = i.Value });
+                dictionaryFile.Options.Add(MoonRequirement.ID, MoonRequirement);
+
+                OptionData.TrackerOption BridgeRequirement = new OptionData.TrackerOption();
+                BridgeRequirement.ID = $"BRIDGE_REQ_{i.Key.ToUpper().Replace(" ", "_")}";
+                BridgeRequirement.DisplayName = i.Key;
+                BridgeRequirement.SubCategory = "Rainbow Bridge Conditions";
+                BridgeRequirement.CurrentValue = (i.Key == "Medallions").ToString().ToLower();
+                BridgeRequirement.CreateSimpleValues(new string[] { "true", "false" });
+                BridgeRequirement.Values["true"].VariableEdit.Add("bridge_req", new OptionData.VariableEditData { action = MiscData.MathOP.add, EditValue = i.Value });
+                dictionaryFile.Options.Add(BridgeRequirement.ID, BridgeRequirement);
+            }
+
+            OptionData.TrackerVar bridge_req = new OptionData.TrackerVar();
+            bridge_req.Static = true;
+            bridge_req.Name = "bridge_req";
+            bridge_req.ID = "bridge_req";
+            bridge_req.Value = new List<string>();
+            dictionaryFile.Variables.Add(bridge_req.ID, bridge_req);
+
+            OptionData.TrackerVar bridge_req_count = new OptionData.TrackerVar();
+            bridge_req_count.Static = false;
+            bridge_req_count.Name = "Bridge Amount";
+            bridge_req_count.ID = "bridge_req_count";
+            bridge_req_count.Value = 6;
+            dictionaryFile.Variables.Add(bridge_req_count.ID, bridge_req_count);
+
+            OptionData.TrackerVar moon_req = new OptionData.TrackerVar();
+            moon_req.Static = true;
+            moon_req.Name = "moon_req";
+            moon_req.ID = "moon_req";
+            moon_req.Value = new List<string>();
+            dictionaryFile.Variables.Add(moon_req.ID, moon_req);
+
+            OptionData.TrackerVar moon_req_count = new OptionData.TrackerVar();
+            moon_req_count.Static = false;
+            moon_req_count.Name = "Moon Amount";
+            moon_req_count.ID = "moon_req_count";
+            moon_req_count.Value = 4;
+            dictionaryFile.Variables.Add(moon_req_count.ID, moon_req_count);
+
+
+
+            OptionData.TrackerVar dumbtest = new OptionData.TrackerVar();
+            dumbtest.Static = true;
+            dumbtest.Name = "Amount";
+            dumbtest.ID = "dumbtest";
+            dumbtest.Value = true;
+            dictionaryFile.Variables.Add(dumbtest.ID, dumbtest);
+
+
+        }
+
         private static void AddVariablesandOptions(LogicDictionaryData.LogicDictionary dictionaryFile)
         {
             OptionData.TrackerVar MM_Masks = new OptionData.TrackerVar();
@@ -231,6 +310,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             MM_Masks.Name = "MM Masks";
             MM_Masks.ID = "MM_MASKS";
             dictionaryFile.Variables.Add(MM_Masks.ID, MM_Masks);
+
 
             OptionData.TrackerOption ageFilter = new OptionData.TrackerOption();
             ageFilter.ID = "age_filter";
@@ -403,6 +483,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             AddMQOption("GTGMQ", "Gerudo Training Grounds", "OOT_SMALL_KEY_GTG", 3);
             AddMQOption("GanonMQ", "Ganon's Castle", "OOT_SMALL_KEY_GANON", 3);
 
+            WorldEventRequirementOptions(dictionaryFile);
 
             void AddMQOption(string ID, string Name, string Key = null, int MaxKeys = 0)
             {
@@ -686,6 +767,9 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 }
                 switch (Function)
                 {
+                    case "special":
+                        line = line.Replace(FullFunction, $"{Game}_HAS_{Parameters}_REQUIREMENTS");
+                        break;
                     case "trick":
                         line = line.Replace(FullFunction, $"TRICK_{Game}_{Parameters}");
                         break;

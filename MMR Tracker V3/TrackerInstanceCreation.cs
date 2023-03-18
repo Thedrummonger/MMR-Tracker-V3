@@ -42,8 +42,6 @@ namespace MMR_Tracker_V3
             {
                 try { Container.Instance.LogicDictionary = LogicDictionaryData.LogicDictionary.FromJson(DictionaryData); }
                 catch { Container.Instance.LogicDictionary = null; }
-                try { Container.Instance.LogicDictionary = LogicDictionaryData.LogicDictionary.FromJson(Utility.ConvertYamlStringToJsonString(DictionaryData)); }
-                catch { Container.Instance.LogicDictionary = null; }
                 if (Container.Instance.LogicDictionary is null) { return InstanceState.DictionaryFailure; }
             }
             return InstanceState.Success;

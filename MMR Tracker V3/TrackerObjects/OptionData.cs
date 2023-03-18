@@ -87,7 +87,8 @@ namespace MMR_Tracker_V3.TrackerObjects
         public class VariableEditData
         {
             public MiscData.MathOP action { get; set; } = MiscData.MathOP.add;
-            public dynamic EditValue { get; set; } = 0;
+            private dynamic _value;
+            public dynamic EditValue { set { _value = ParseInput(value, "edit"); } get { return _value; } }
         }
 
         [Serializable]
@@ -118,25 +119,11 @@ namespace MMR_Tracker_V3.TrackerObjects
 
         public class TrackerVar
         {
-            private dynamic _value;
+            private object _value;
             public string ID { get; set; }
             public string Name { get; set; }
             public bool Static { get; set; } = true;
-            public dynamic Value { set { _value = ParseInput(value); } get { return _value; } }
-
-            private static dynamic ParseInput(dynamic value)
-            {
-                if (value is string @string) { return @string; }
-                if (value is Int64 || value is Int32 || value is Int16 || value is int) { return (int)value; }
-                if (value is bool boolean) { return boolean; }
-                if (value is List<string> || value is Array || value is Newtonsoft.Json.Linq.JArray) 
-                { 
-                    List<string> list = new();
-                    foreach(object i in value) { list.Add(i.ToString()); } 
-                    return list;
-                }
-                return value.ToString();
-            }
+            public object Value { set { _value = ParseInput(value, Name); } get { return _value; } }
 
             public string ValueToString()
             {
@@ -145,7 +132,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                 if (_value is int valint) { DisplayValue = valint.ToString(); }
                 if (_value is bool valbool) { DisplayValue = valbool.ToString(); }
                 if (_value is List<string> valListString) { DisplayValue = string.Join(", ", valListString); }
-                DisplayValue ??= $"{_value.ToString()}";
+                DisplayValue ??= $"{_value}";
                 return DisplayValue;
             }
 
@@ -156,11 +143,16 @@ namespace MMR_Tracker_V3.TrackerObjects
 
             public new MiscData.VariableEntryType GetType()
             {
-                if (_value is string) { return MiscData.VariableEntryType.varstring; }
-                if (_value is int) { return MiscData.VariableEntryType.varint; }
+                if (_value is int || _value is Int64) { return MiscData.VariableEntryType.varint; }
                 if (_value is bool) { return MiscData.VariableEntryType.varbool; }
+                if (_value is string) { return MiscData.VariableEntryType.varstring; }
                 if (_value is List<string>) { return MiscData.VariableEntryType.varlist; }
                 return MiscData.VariableEntryType.error;
+            }
+
+            public void printType()
+            {
+                Debug.WriteLine(((object)_value).GetType());
             }
 
             public dynamic GetValue(LogicObjects.TrackerInstance instance) 
@@ -170,11 +162,11 @@ namespace MMR_Tracker_V3.TrackerObjects
 
             private dynamic GetActualValue(LogicObjects.TrackerInstance instance)
             {
-                string ReturnString = GetType() == MiscData.VariableEntryType.varstring ? _value : string.Empty;
-                bool ReturnBool = GetType() == MiscData.VariableEntryType.varbool ? _value : false;
-                int ReturnInt = GetType() == MiscData.VariableEntryType.varint ? _value : 0;
+                string ReturnString = GetType() == MiscData.VariableEntryType.varstring ? (string)_value : string.Empty;
+                bool ReturnBool = GetType() == MiscData.VariableEntryType.varbool ? (bool)_value : false;
+                int ReturnInt = GetType() == MiscData.VariableEntryType.varint ? (int)_value : 0;
                 List<string> ReturnList = new List<string>();
-                if (GetType() == MiscData.VariableEntryType.varlist) { ReturnList.AddRange(_value); }
+                if (GetType() == MiscData.VariableEntryType.varlist) { ReturnList.AddRange((List<string>)_value); }
 
                 foreach (var i in instance.UserOptions.Values)
                 {
@@ -188,7 +180,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                                 switch (edits[ID].action)
                                 {
                                     case MiscData.MathOP.add:   
-                                        if (EditValue.GetType() == MiscData.VariableEntryType.varlist) { ReturnList.AddRange(EditValue.Value); }
+                                        if (EditValue.GetType() == MiscData.VariableEntryType.varlist) { ReturnList.AddRange((List<string>)EditValue.Value); }
                                         else { ReturnList.Add(((object)EditValue.Value).ToString()); }
                                         break;
                                     case MiscData.MathOP.subtract:
@@ -228,13 +220,27 @@ namespace MMR_Tracker_V3.TrackerObjects
 
                 return GetType() switch
                 {
-                    MiscData.VariableEntryType.varstring => ReturnString,
                     MiscData.VariableEntryType.varint => ReturnInt,
                     MiscData.VariableEntryType.varbool => ReturnBool,
+                    MiscData.VariableEntryType.varstring => ReturnString,
                     MiscData.VariableEntryType.varlist => ReturnList,
                     _ => _value,
                 };
             }
+        }
+
+        private static object ParseInput(dynamic value, string ID)
+        {
+            if (value is int || value is Int64) { return (int)value;  }
+            else if (value is bool boolean) { return boolean; }
+            //else if (value is string s) { return s; }
+            else if (value is List<string> || value is Array || value is Newtonsoft.Json.Linq.JArray)
+            {
+                List<string> list = new();
+                foreach (object i in value) { list.Add(i.ToString()); }
+                return list;
+            }
+            throw new Exception(ID + $" Was not a valid type {((object)value).GetType()}");
         }
     }
 }
