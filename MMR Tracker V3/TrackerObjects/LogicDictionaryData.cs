@@ -170,69 +170,42 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string Name { get; set; }
             public bool Static  { get; set; } = true;
             private dynamic _value;
-            public dynamic Value { set => _value = value; }
+            public dynamic Value
+            {
+                get
+                {
+                    List<string> JsonList = new List<string>();
+                    if ((_value is Newtonsoft.Json.Linq.JArray))
+                    {
+                        foreach(string i in _value) { JsonList.Add(i); }
+                        return JsonList;
+                    }
+                    return _value;
+                }
+                set => _value = value;
+            }
             public override string ToString()
             {
                 return (Name??ID) + ": " + ValueToString();
             }
-            public dynamic GetValue(LogicObjects.TrackerInstance Instance)
-            {
-                dynamic Value = GetBaseValue();
-                foreach (var option in Instance.UserOptions)
-                {
-                    var Edits = option.Value.GetActions().VariableEdit;
-                    if (Edits.ContainsKey(ID))
-                    {
-                        if (GetBaseValue() is List<string> BaseValue && Edits[ID].Editvalue is Newtonsoft.Json.Linq.JArray EditValue)
-                        {
-                            List<string> ReturnList = new List<string>();
-                            switch (Edits[ID].action)
-                            {
-                                case MathOP.add:
-                                    foreach (var i in BaseValue) { ReturnList.Add(i); }
-                                    foreach (var i in EditValue) { ReturnList.Add(i.ToString()); }
-                                    return ReturnList;
-                                case MathOP.subtract:
-                                    foreach (var i in BaseValue) { ReturnList.Add(i); }
-                                    foreach (var i in EditValue) { if (ReturnList.Contains(i.ToString())) { ReturnList.Remove(i.ToString()); } }
-                                    return ReturnList;
-                                case MathOP.set:
-                                    foreach (var i in EditValue) { ReturnList.Add(i.ToString()); }
-                                    return ReturnList;
-                            }
-                        }
-                    }
-                }
-                return Value;
-            }
-            public dynamic GetBaseValue()
-            {
-                List<string> JsonList = new List<string>();
-                if ((_value is Newtonsoft.Json.Linq.JArray))
-                {
-                    foreach (string i in _value) { JsonList.Add(i); }
-                    return JsonList;
-                }
-                return _value;
-            }
             public string ValueToString()
             {
                 string DisplayValue = null;
-                if (GetBaseValue() is string valString) { DisplayValue = valString; }
-                if (GetBaseValue() is Int64 valint) { DisplayValue = valint.ToString(); }
-                if (GetBaseValue() is bool valbool) { DisplayValue = valbool.ToString(); }
-                if (GetBaseValue() is List<string> valListString) { DisplayValue = string.Join(", ", valListString); }
-                if (DisplayValue == null) { DisplayValue = $"{GetBaseValue().GetType().ToString()}"; }
+                if (Value is string valString) { DisplayValue = valString; }
+                if (Value is Int64 valint) { DisplayValue = valint.ToString(); }
+                if (Value is bool valbool) { DisplayValue = valbool.ToString(); }
+                if (Value is List<string> valListString) { DisplayValue = string.Join(", ", valListString); }
+                if (DisplayValue == null) { DisplayValue = $"{Value.GetType().ToString()}"; }
                 return DisplayValue;
             }
 
             public MiscData.VariableEntryType GetCurrentValueData(out object obj)
             {
-                if (GetBaseValue() is string valString) { obj = valString; return MiscData.VariableEntryType.varstring; }
-                if (GetBaseValue() is Int64 valint) { obj = valint; return MiscData.VariableEntryType.varint; }
-                if (GetBaseValue() is bool valbool) { obj = valbool; return MiscData.VariableEntryType.varbool; }
-                if (GetBaseValue() is List<string> valListString) { obj = valListString; return MiscData.VariableEntryType.varlist; }
-                obj = GetBaseValue();
+                if (Value is string valString) { obj = valString; return MiscData.VariableEntryType.varstring; }
+                if (Value is Int64 valint) { obj = valint; return MiscData.VariableEntryType.varint; }
+                if (Value is bool valbool) { obj = valbool; return MiscData.VariableEntryType.varbool; }
+                if (Value is List<string> valListString) { obj = valListString; return MiscData.VariableEntryType.varlist; }
+                obj = Value;
                 return MiscData.VariableEntryType.error;
             }
         }

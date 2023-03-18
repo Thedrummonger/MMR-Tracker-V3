@@ -654,10 +654,10 @@ namespace MMR_Tracker_V3
                 OutObject.Randomizeditem = VariableObject.ValueToString();
                 OutObject.Starred = !VariableObject.Static;
                 List<string> ItemTypes = new() { "Variable" };
-                if (VariableObject.GetValue(instance) is string) { ItemTypes.Add("string"); }
-                if (VariableObject.GetValue(instance) is Int64) { ItemTypes.Add("Number"); }
-                if (VariableObject.GetValue(instance) is bool) { ItemTypes.Add("Bool"); }
-                if (VariableObject.GetValue(instance) is List<string>) { ItemTypes.Add("List"); }
+                if (VariableObject.Value is string) { ItemTypes.Add("string"); }
+                if (VariableObject.Value is Int64) { ItemTypes.Add("Number"); }
+                if (VariableObject.Value is bool) { ItemTypes.Add("Bool"); }
+                if (VariableObject.Value is List<string>) { ItemTypes.Add("List"); }
                 OutObject.ValidItemTypes = ItemTypes.ToArray();
             }
             else if (Object is EntranceData.EntranceRandoDestination DestinationObject)

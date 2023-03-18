@@ -97,10 +97,10 @@ namespace MMR_Tracker_V3
                 if (Variables.ContainsKey(ID))
                 {
                     Obj = Variables[ID];
-                    if (Variables[ID].GetValue(this) is string) { return LogicEntryType.variableString; }
-                    if (Variables[ID].GetValue(this) is bool) { return LogicEntryType.variableBool; }
-                    if (Variables[ID].GetValue(this) is Int64) { return LogicEntryType.variableInt; }
-                    if (Variables[ID].GetValue(this) is Newtonsoft.Json.Linq.JArray || Variables[ID].GetValue(this) is List<string>) { return LogicEntryType.variableList; }
+                    if (Variables[ID].Value is string) { return LogicEntryType.variableString; }
+                    if (Variables[ID].Value is bool) { return LogicEntryType.variableBool; }
+                    if (Variables[ID].Value is Int64) { return LogicEntryType.variableInt; }
+                    if (Variables[ID].Value is Newtonsoft.Json.Linq.JArray || Variables[ID].Value is List<string>) { return LogicEntryType.variableList; }
                 }
                 Obj = null;
                 return LogicEntryType.error;
@@ -117,10 +117,10 @@ namespace MMR_Tracker_V3
                 if (Variables.ContainsKey(ID))
                 {
                     obj = Variables[ID];
-                    if (Variables[ID].GetValue(this) is string) { return LogicEntryType.variableString; }
-                    if (Variables[ID].GetValue(this) is bool) { return LogicEntryType.variableBool; }
-                    if (Variables[ID].GetValue(this) is Int64) { return LogicEntryType.variableInt; }
-                    if (Variables[ID].GetValue(this) is Newtonsoft.Json.Linq.JArray || Variables[ID].GetValue(this) is List<string>) { return LogicEntryType.variableList; }
+                    if (Variables[ID].Value is string) { return LogicEntryType.variableString; }
+                    if (Variables[ID].Value is bool) { return LogicEntryType.variableBool; }
+                    if (Variables[ID].Value is Int64) { return LogicEntryType.variableInt; }
+                    if (Variables[ID].Value is Newtonsoft.Json.Linq.JArray || Variables[ID].Value is List<string>) { return LogicEntryType.variableList; }
                 }
                 if (bool.TryParse(ID, out bool result)) { obj = result; return LogicEntryType.Bool; }
                 obj = null;

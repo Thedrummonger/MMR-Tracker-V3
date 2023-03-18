@@ -108,13 +108,13 @@ namespace MMR_Tracker_V3
             foreach (var i in UncheckedHintObjects.Where(x => !string.IsNullOrWhiteSpace(x.SpoilerHintText))) { i.HintText = i.SpoilerHintText; }
 
             IEnumerable<object> UncheckedVariableObjects = UncheckedHintObjects.Where(x => string.IsNullOrWhiteSpace(x.HintText));
-            UncheckedVariableObjects = UncheckedVariableObjects.Concat(VariableObjects.Where(x => x.GetValue(instanceContainer.Instance) is not bool));
+            UncheckedVariableObjects = UncheckedVariableObjects.Concat(VariableObjects.Where(x => x.Value is not bool));
             if (UncheckedVariableObjects.Any())
             {
                 CheckUnassignedVariable(UncheckedVariableObjects, instanceContainer.Instance);
                 ChangesMade = true;
             }
-            foreach (var i in VariableObjects.Where(x => x.GetValue(instanceContainer.Instance) is bool)) { i.Value = !i.GetValue(instanceContainer.Instance); ChangesMade = true; }
+            foreach (var i in VariableObjects.Where(x => x.Value is bool)) { i.Value = !i.Value; ChangesMade = true; }
             foreach (HintData.HintObject hintObject in HintObjects)
             {
                 ChangesMade = true;

@@ -962,7 +962,7 @@ namespace Windows_Form_Frontend
             var PriceContainer = new List<LogicDictionaryData.TrackerVariable>() { new() { ID = DictEntry.Name ?? DictEntry.ID, Value = 0 } };
             VariableInputWindow PriceInput = new(PriceContainer, InstanceContainer.Instance);
             PriceInput.ShowDialog();
-            Object.SetPrice((int)PriceContainer.First().GetValue(InstanceContainer.Instance));
+            Object.SetPrice((int)PriceContainer.First().Value);
             InstanceContainer.logicCalculation.CalculateLogic();
             UpdateUI();
         }

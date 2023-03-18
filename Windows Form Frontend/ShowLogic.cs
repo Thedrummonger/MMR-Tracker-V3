@@ -373,7 +373,7 @@ namespace Windows_Form_Frontend
             {
                 instance.MultipleItemEntry(Entry, out string LogicItem, out int Amount);
                 if (!instance.Variables.TryGetValue(LogicItem, out LogicDictionaryData.TrackerVariable variable)) { return; }
-                foreach (string varEntry in variable.GetValue(instance))
+                foreach (string varEntry in variable.Value)
                 {
                     var ItemType = instance.GetItemEntryType(varEntry, false, out object obj);
                     NewList[varEntry] = ItemType;
@@ -411,7 +411,7 @@ namespace Windows_Form_Frontend
             {
                 instance.MultipleItemEntry(Entry, out string LogicItem, out int Amount);
                 if (!instance.Variables.TryGetValue(LogicItem, out LogicDictionaryData.TrackerVariable variable)) { return; }
-                foreach (string varEntry in variable.GetValue(instance))
+                foreach (string varEntry in variable.Value)
                 {
                     var ItemType = instance.GetItemEntryType(varEntry, false, out object obj);
                     NewList[varEntry] = ItemType;
