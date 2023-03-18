@@ -215,12 +215,22 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 RequiredItems = new List<string> { "bridge_req, bridge_req_count" }
             });
 
-            Dictionary<string, string[]> PossibleReqs = new Dictionary<string, string[]>();
-            PossibleReqs.Add("Spiritual Stones", new string[] { "OOT_STONE_EMERALD", "OOT_STONE_RUBY", "OOT_STONE_SAPPHIRE" });
-            PossibleReqs.Add("Medallions", new string[] { "OOT_MEDALLION_LIGHT", "OOT_MEDALLION_FOREST", "OOT_MEDALLION_FIRE", "OOT_MEDALLION_WATER", "OOT_MEDALLION_SPIRIT", "OOT_MEDALLION_SHADOW" });
-            PossibleReqs.Add("Boss Remains", new string[] { "MM_REMAINS_ODOLWA", "MM_REMAINS_GOHT", "MM_REMAINS_GYORG", "MM_REMAINS_TWINMOLD" });
+            Dictionary<string, string[]> PossibleReqs = new()
+            {
+                { "Spiritual Stones", new string[] { "OOT_STONE_EMERALD", "OOT_STONE_RUBY", "OOT_STONE_SAPPHIRE" } },
+                { "Medallions", new string[] { "OOT_MEDALLION_LIGHT", "OOT_MEDALLION_FOREST", "OOT_MEDALLION_FIRE", "OOT_MEDALLION_WATER", "OOT_MEDALLION_SPIRIT", "OOT_MEDALLION_SHADOW" } },
+                { "Boss Remains", new string[] { "MM_REMAINS_ODOLWA", "MM_REMAINS_GOHT", "MM_REMAINS_GYORG", "MM_REMAINS_TWINMOLD" } },
+                { "Gold Skulltulas Tokens", new string[] { "OOT_GS_TOKEN" } },
+                { "Swamp Skulltulas Tokens", new string[] { "MM_GS_TOKEN_SWAMP" } },
+                { "Ocean Skulltulas Tokens", new string[] { "MM_GS_TOKEN_OCEAN" } },
+                { "Stray Fairies (Woodfall)", new string[] { "MM_STRAY_FAIRY_WF" } },
+                { "Stray Fairies (Snowhead)", new string[] { "MM_STRAY_FAIRY_SH" } },
+                { "Stray Fairies (Great Bay)", new string[] { "MM_STRAY_FAIRY_GB" } },
+                { "Stray Fairies (Stone Tower)", new string[] { "MM_STRAY_FAIRY_ST" } },
+                { "Stray Fairy (Clock Town)", new string[] { "MM_STRAY_FAIRY_TOWN" } }
+            };
 
-            foreach(var i in PossibleReqs)
+            foreach (var i in PossibleReqs)
             {
                 OptionData.TrackerOption MoonRequirement = new OptionData.TrackerOption();
                 MoonRequirement.ID = $"MOON_REQ_{i.Key.ToUpper().Replace(" ", "_")}";
@@ -250,7 +260,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
             OptionData.TrackerVar bridge_req_count = new OptionData.TrackerVar();
             bridge_req_count.Static = false;
-            bridge_req_count.Name = "Bridge Amount";
+            bridge_req_count.SubCategory = "Rainbow Bridge Conditions";
+            bridge_req_count.Name = "Items Required";
             bridge_req_count.ID = "bridge_req_count";
             bridge_req_count.Value = 6;
             dictionaryFile.Variables.Add(bridge_req_count.ID, bridge_req_count);
@@ -264,7 +275,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
             OptionData.TrackerVar moon_req_count = new OptionData.TrackerVar();
             moon_req_count.Static = false;
-            moon_req_count.Name = "Moon Amount";
+            moon_req_count.SubCategory = "Moon Access Conditions";
+            moon_req_count.Name = "Items Required";
             moon_req_count.ID = "moon_req_count";
             moon_req_count.Value = 4;
             dictionaryFile.Variables.Add(moon_req_count.ID, moon_req_count);

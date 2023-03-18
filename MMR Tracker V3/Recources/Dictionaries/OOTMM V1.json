@@ -33781,6 +33781,454 @@
           "VariableEdit": {}
         }
       }
+    },
+    "MOON_REQ_GOLD_SKULLTULAS_TOKENS": {
+      "DisplayName": "Gold Skulltulas Tokens",
+      "CurrentValue": "false",
+      "SubCategory": "Moon Access Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "moon_req": {
+              "action": "add",
+              "EditValue": [
+                "OOT_GS_TOKEN"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "BRIDGE_REQ_GOLD_SKULLTULAS_TOKENS": {
+      "DisplayName": "Gold Skulltulas Tokens",
+      "CurrentValue": "false",
+      "SubCategory": "Rainbow Bridge Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "bridge_req": {
+              "action": "add",
+              "EditValue": [
+                "OOT_GS_TOKEN"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "MOON_REQ_SWAMP_SKULLTULAS_TOKENS": {
+      "DisplayName": "Swamp Skulltulas Tokens",
+      "CurrentValue": "false",
+      "SubCategory": "Moon Access Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "moon_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_GS_TOKEN_SWAMP"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "BRIDGE_REQ_SWAMP_SKULLTULAS_TOKENS": {
+      "DisplayName": "Swamp Skulltulas Tokens",
+      "CurrentValue": "false",
+      "SubCategory": "Rainbow Bridge Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "bridge_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_GS_TOKEN_SWAMP"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "MOON_REQ_OCEAN_SKULLTULAS_TOKENS": {
+      "DisplayName": "Ocean Skulltulas Tokens",
+      "CurrentValue": "false",
+      "SubCategory": "Moon Access Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "moon_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_GS_TOKEN_OCEAN"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "BRIDGE_REQ_OCEAN_SKULLTULAS_TOKENS": {
+      "DisplayName": "Ocean Skulltulas Tokens",
+      "CurrentValue": "false",
+      "SubCategory": "Rainbow Bridge Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "bridge_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_GS_TOKEN_OCEAN"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "MOON_REQ_STRAY_FAIRIES_(WOODFALL)": {
+      "DisplayName": "Stray Fairies (Woodfall)",
+      "CurrentValue": "false",
+      "SubCategory": "Moon Access Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "moon_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_STRAY_FAIRY_WF"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "BRIDGE_REQ_STRAY_FAIRIES_(WOODFALL)": {
+      "DisplayName": "Stray Fairies (Woodfall)",
+      "CurrentValue": "false",
+      "SubCategory": "Rainbow Bridge Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "bridge_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_STRAY_FAIRY_WF"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "MOON_REQ_STRAY_FAIRIES_(SNOWHEAD)": {
+      "DisplayName": "Stray Fairies (Snowhead)",
+      "CurrentValue": "false",
+      "SubCategory": "Moon Access Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "moon_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_STRAY_FAIRY_SH"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "BRIDGE_REQ_STRAY_FAIRIES_(SNOWHEAD)": {
+      "DisplayName": "Stray Fairies (Snowhead)",
+      "CurrentValue": "false",
+      "SubCategory": "Rainbow Bridge Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "bridge_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_STRAY_FAIRY_SH"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "MOON_REQ_STRAY_FAIRIES_(GREAT_BAY)": {
+      "DisplayName": "Stray Fairies (Great Bay)",
+      "CurrentValue": "false",
+      "SubCategory": "Moon Access Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "moon_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_STRAY_FAIRY_GB"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "BRIDGE_REQ_STRAY_FAIRIES_(GREAT_BAY)": {
+      "DisplayName": "Stray Fairies (Great Bay)",
+      "CurrentValue": "false",
+      "SubCategory": "Rainbow Bridge Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "bridge_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_STRAY_FAIRY_GB"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "MOON_REQ_STRAY_FAIRIES_(STONE_TOWER)": {
+      "DisplayName": "Stray Fairies (Stone Tower)",
+      "CurrentValue": "false",
+      "SubCategory": "Moon Access Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "moon_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_STRAY_FAIRY_ST"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "BRIDGE_REQ_STRAY_FAIRIES_(STONE_TOWER)": {
+      "DisplayName": "Stray Fairies (Stone Tower)",
+      "CurrentValue": "false",
+      "SubCategory": "Rainbow Bridge Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "bridge_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_STRAY_FAIRY_ST"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "MOON_REQ_STRAY_FAIRY_(CLOCK_TOWN)": {
+      "DisplayName": "Stray Fairy (Clock Town)",
+      "CurrentValue": "false",
+      "SubCategory": "Moon Access Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "moon_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_STRAY_FAIRY_TOWN"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "BRIDGE_REQ_STRAY_FAIRY_(CLOCK_TOWN)": {
+      "DisplayName": "Stray Fairy (Clock Town)",
+      "CurrentValue": "false",
+      "SubCategory": "Rainbow Bridge Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "bridge_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_STRAY_FAIRY_TOWN"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
     }
   },
   "Variables": {
@@ -33816,7 +34264,8 @@
       "Value": []
     },
     "bridge_req_count": {
-      "Name": "Bridge Amount",
+      "Name": "Items Required",
+      "SubCategory": "Rainbow Bridge Conditions",
       "Static": false,
       "Value": 6
     },
@@ -33826,7 +34275,8 @@
       "Value": []
     },
     "moon_req_count": {
-      "Name": "Moon Amount",
+      "Name": "Items Required",
+      "SubCategory": "Moon Access Conditions",
       "Static": false,
       "Value": 4
     },

@@ -729,7 +729,7 @@ namespace Windows_Form_Frontend
             {
                 ToolStripMenuItem menuItem = new() { Name = $"{i.ID}Menu", Text = i.ToString() };
                 menuItem.Click += delegate (object sender, EventArgs e) { HandleItemSelect(new List<OptionData.TrackerVar> { i }, MiscData.CheckState.Checked); };
-                GroupOption(menuItem);
+                GroupOption(menuItem, i.SubCategory);
             }
 
             foreach(var i in MenuItemGroups.Keys)

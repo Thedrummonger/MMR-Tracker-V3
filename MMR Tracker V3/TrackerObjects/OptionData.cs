@@ -122,6 +122,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             private object _value;
             public string ID { get; set; }
             public string Name { get; set; }
+            public string SubCategory { get; set; } = null;
             public bool Static { get; set; } = true;
             public object Value { set { _value = ParseInput(value, Name); } get { return _value; } }
 
