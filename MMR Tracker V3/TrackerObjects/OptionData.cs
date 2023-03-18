@@ -65,6 +65,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public AdditionalLogic[] AdditionalLogic { get; set; } = Array.Empty<AdditionalLogic>();
             public Dictionary<string, string> ItemNameOverride { get; set; } = new Dictionary<string, string>();
             public Dictionary<string, MaxAmountSetData> ItemMaxAmountEdit { get; set; } = new Dictionary<string, MaxAmountSetData>();
+            public Dictionary<string, VariableEditData> VariableEdit { get; set; } = new Dictionary<string, VariableEditData>();
             public bool LocationValid(string ID)
             {
                 return LogicReplacements.Any(x => x.LocationValid(ID)) || AdditionalLogic.Any(x => x.LocationValid(ID));
@@ -80,6 +81,12 @@ namespace MMR_Tracker_V3.TrackerObjects
         {
             public MiscData.MathOP action { get; set; } = MiscData.MathOP.add;
             public int amount { get; set; } = 0;
+        }
+
+        public class VariableEditData
+        {
+            public MiscData.MathOP action { get; set; } = MiscData.MathOP.add;
+            public dynamic Editvalue { get; set; } = 0;
         }
 
         [Serializable]

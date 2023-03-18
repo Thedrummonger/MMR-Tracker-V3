@@ -70,11 +70,11 @@ namespace MMR_Tracker_V3
                 case LogicEntryType.Area:
                     return AreaReached(LogicItem, "");
                 case LogicEntryType.variableString:
-                    return LogicEntryAquired(container.Instance.Variables[LogicItem].Value as string, SubUnlockData);
+                    return LogicEntryAquired(container.Instance.Variables[LogicItem].GetValue(container.Instance) as string, SubUnlockData);
                 case LogicEntryType.variableList:
                     return CheckItemArray(LogicItem, Amount, SubUnlockData, out int _);
                 case LogicEntryType.variableBool:
-                    return container.Instance.Variables[LogicItem].Value;
+                    return container.Instance.Variables[LogicItem].GetValue(container.Instance);
                 default:
                     Debug.WriteLine($"{LogicItem} Was not a valid Logic Entry");
                     return false;
@@ -84,7 +84,7 @@ namespace MMR_Tracker_V3
         public bool CheckItemArray(string ArrVar, int amount, List<string> SubUnlockData, out int TotalUsable)
         {
             TotalUsable = 0;
-            if (container.Instance.Variables[ArrVar].Value is not List<string> VariableEntries) { return false; }
+            if (container.Instance.Variables[ArrVar].GetValue(container.Instance) is not List<string> VariableEntries) { return false; }
             List<string> UsableItems = new();
             Dictionary<string, int> ItemTracking = new();
             LoopVarEntry(VariableEntries);
@@ -106,7 +106,7 @@ namespace MMR_Tracker_V3
                     bool MultiItem = container.Instance.MultipleItemEntry(i, out string LogicItem, out int Amount);
                     bool Literal = LogicItem.IsLiteralID(out LogicItem);
                     var type = container.Instance.GetItemEntryType(LogicItem, Literal, out object ItemObj);
-                    if (type == LogicEntryType.variableList) { LoopVarEntry((ItemObj as TrackerVariable).Value as List<string>); }
+                    if (type == LogicEntryType.variableList) { LoopVarEntry((ItemObj as TrackerVariable).GetValue(container.Instance) as List<string>); }
                     else
                     {
                         if (type == LogicEntryType.item && !MultiItem)
