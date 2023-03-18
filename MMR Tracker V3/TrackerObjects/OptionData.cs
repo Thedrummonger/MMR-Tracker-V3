@@ -66,6 +66,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public AdditionalLogic[] AdditionalLogic { get; set; } = Array.Empty<AdditionalLogic>();
             public Dictionary<string, string> ItemNameOverride { get; set; } = new Dictionary<string, string>();
             public Dictionary<string, MaxAmountSetData> ItemMaxAmountEdit { get; set; } = new Dictionary<string, MaxAmountSetData>();
+            public Dictionary<string, VariableEditData> VariableEdit { get; set; } = new Dictionary<string, VariableEditData>();
             public bool LocationValid(string ID)
             {
                 return LogicReplacements.Any(x => x.LocationValid(ID)) || AdditionalLogic.Any(x => x.LocationValid(ID));
@@ -81,6 +82,12 @@ namespace MMR_Tracker_V3.TrackerObjects
         {
             public MiscData.MathOP action { get; set; } = MiscData.MathOP.add;
             public int amount { get; set; } = 0;
+        }
+
+        public class VariableEditData
+        {
+            public MiscData.MathOP action { get; set; } = MiscData.MathOP.add;
+            public dynamic EditValue { get; set; } = 0;
         }
 
         [Serializable]
@@ -158,12 +165,75 @@ namespace MMR_Tracker_V3.TrackerObjects
 
             public dynamic GetValue(LogicObjects.TrackerInstance instance) 
             { 
-                return GetActualValue(instance, ID);
+                return GetActualValue(instance);
             }
 
-            private dynamic GetActualValue(LogicObjects.TrackerInstance instance, string ID)
+            private dynamic GetActualValue(LogicObjects.TrackerInstance instance)
             {
-                return _value;
+                string ReturnString = GetType() == MiscData.VariableEntryType.varstring ? _value : string.Empty;
+                bool ReturnBool = GetType() == MiscData.VariableEntryType.varbool ? _value : false;
+                int ReturnInt = GetType() == MiscData.VariableEntryType.varint ? _value : 0;
+                List<string> ReturnList = new List<string>();
+                if (GetType() == MiscData.VariableEntryType.varlist) { ReturnList.AddRange(_value); }
+
+                foreach (var i in instance.UserOptions.Values)
+                {
+                    var edits = i.GetActions().VariableEdit;
+                    if (edits.ContainsKey(ID))
+                    {
+                        TrackerVar EditValue = new() { Value = edits[ID].EditValue };
+                        switch (GetType())
+                        {
+                            case MiscData.VariableEntryType.varlist:
+                                switch (edits[ID].action)
+                                {
+                                    case MiscData.MathOP.add:   
+                                        if (EditValue.GetType() == MiscData.VariableEntryType.varlist) { ReturnList.AddRange(EditValue.Value); }
+                                        else { ReturnList.Add(((object)EditValue.Value).ToString()); }
+                                        break;
+                                    case MiscData.MathOP.subtract:
+                                        if (EditValue.GetType() == MiscData.VariableEntryType.varlist) { ReturnList.RemoveAll(x => ((List<string>)EditValue.Value).Contains(x)); }
+                                        else { ReturnList.Remove(((object)EditValue.Value).ToString()); }
+                                        break;
+                                    case MiscData.MathOP.set:
+                                        if (EditValue.GetType() == MiscData.VariableEntryType.varlist) { ReturnList = (List<string>)EditValue.Value; }
+                                        else { ReturnList =  new() { ((object)EditValue.Value).ToString() }; }
+                                        break;
+                                }
+                                break;
+                            case MiscData.VariableEntryType.varint:
+                                if (EditValue.GetType() != MiscData.VariableEntryType.varint) { continue; }
+                                switch (edits[ID].action)
+                                {
+                                    case MiscData.MathOP.add:
+                                        ReturnInt += (int)EditValue.Value;
+                                        break;
+                                    case MiscData.MathOP.subtract:
+                                        ReturnInt -= (int)EditValue.Value;
+                                        break;
+                                    case MiscData.MathOP.multiply:
+                                        ReturnInt *= (int)EditValue.Value;
+                                        break;
+                                    case MiscData.MathOP.divide:
+                                        ReturnInt /= (int)EditValue.Value;
+                                        break;
+                                    case MiscData.MathOP.set:
+                                        ReturnInt = (int)EditValue.Value;
+                                        break;
+                                }
+                                break;
+                        }
+                    }
+                }
+
+                return GetType() switch
+                {
+                    MiscData.VariableEntryType.varstring => ReturnString,
+                    MiscData.VariableEntryType.varint => ReturnInt,
+                    MiscData.VariableEntryType.varbool => ReturnBool,
+                    MiscData.VariableEntryType.varlist => ReturnList,
+                    _ => _value,
+                };
             }
         }
     }
