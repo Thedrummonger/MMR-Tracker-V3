@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -104,6 +105,65 @@ namespace MMR_Tracker_V3.TrackerObjects
             public bool LocationValid(string ID)
             {
                 return (!LocationWhitelist.Any() || LocationWhitelist.Contains(ID)) && !LocationBlacklist.Contains(ID);
+            }
+        }
+
+
+        public class TrackerVar
+        {
+            private dynamic _value;
+            public string ID { get; set; }
+            public string Name { get; set; }
+            public bool Static { get; set; } = true;
+            public dynamic Value { set { _value = ParseInput(value); } get { return _value; } }
+
+            private static dynamic ParseInput(dynamic value)
+            {
+                if (value is string @string) { return @string; }
+                if (value is Int64 || value is Int32 || value is Int16 || value is int) { return (int)value; }
+                if (value is bool boolean) { return boolean; }
+                if (value is List<string> || value is Array || value is Newtonsoft.Json.Linq.JArray) 
+                { 
+                    List<string> list = new();
+                    foreach(object i in value) { list.Add(i.ToString()); } 
+                    return list;
+                }
+                return value.ToString();
+            }
+
+            public string ValueToString()
+            {
+                string DisplayValue = null;
+                if (_value is string valString) { DisplayValue = valString; }
+                if (_value is int valint) { DisplayValue = valint.ToString(); }
+                if (_value is bool valbool) { DisplayValue = valbool.ToString(); }
+                if (_value is List<string> valListString) { DisplayValue = string.Join(", ", valListString); }
+                DisplayValue ??= $"{_value.ToString()}";
+                return DisplayValue;
+            }
+
+            public override string ToString()
+            {
+                return (Name??ID) + ": " + ValueToString();
+            }
+
+            public new MiscData.VariableEntryType GetType()
+            {
+                if (_value is string) { return MiscData.VariableEntryType.varstring; }
+                if (_value is int) { return MiscData.VariableEntryType.varint; }
+                if (_value is bool) { return MiscData.VariableEntryType.varbool; }
+                if (_value is List<string>) { return MiscData.VariableEntryType.varlist; }
+                return MiscData.VariableEntryType.error;
+            }
+
+            public dynamic GetValue(LogicObjects.TrackerInstance instance) 
+            { 
+                return GetActualValue(instance, ID);
+            }
+
+            private dynamic GetActualValue(LogicObjects.TrackerInstance instance, string ID)
+            {
+                return _value;
             }
         }
     }

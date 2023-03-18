@@ -645,7 +645,7 @@ namespace MMR_Tracker_V3
                 if (OptionObject.IsToggleOption()) { ItemTypes.Add("Toggle"); }
                 OutObject.ValidItemTypes = ItemTypes.ToArray();
             }
-            else if (Object is LogicDictionaryData.TrackerVariable VariableObject)
+            else if (Object is OptionData.TrackerVar VariableObject)
             {
                 OutObject.ID = VariableObject.ID;
                 OutObject.Area = "Variable";
@@ -654,10 +654,10 @@ namespace MMR_Tracker_V3
                 OutObject.Randomizeditem = VariableObject.ValueToString();
                 OutObject.Starred = !VariableObject.Static;
                 List<string> ItemTypes = new() { "Variable" };
-                if (VariableObject.Value is string) { ItemTypes.Add("string"); }
-                if (VariableObject.Value is Int64) { ItemTypes.Add("Number"); }
-                if (VariableObject.Value is bool) { ItemTypes.Add("Bool"); }
-                if (VariableObject.Value is List<string>) { ItemTypes.Add("List"); }
+                if (VariableObject.GetType() == MiscData.VariableEntryType.varstring) { ItemTypes.Add("string"); }
+                if (VariableObject.GetType() == MiscData.VariableEntryType.varint) { ItemTypes.Add("Number"); }
+                if (VariableObject.GetType() == MiscData.VariableEntryType.varbool) { ItemTypes.Add("Bool"); }
+                if (VariableObject.GetType() == MiscData.VariableEntryType.varlist) { ItemTypes.Add("List"); }
                 OutObject.ValidItemTypes = ItemTypes.ToArray();
             }
             else if (Object is EntranceData.EntranceRandoDestination DestinationObject)

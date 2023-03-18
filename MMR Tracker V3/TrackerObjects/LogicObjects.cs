@@ -23,7 +23,7 @@ namespace MMR_Tracker_V3
             public Dictionary<string, MacroObject> MacroPool { get; set; } = new Dictionary<string, MacroObject>();
             public Dictionary<string, ItemObject> ItemPool { get; set; } = new Dictionary<string, ItemObject>();
             public Dictionary<string, TrackerOption> UserOptions { get; set; } = new Dictionary<string, TrackerOption>();
-            public Dictionary<string, TrackerVariable> Variables { get; set; } = new Dictionary<string, TrackerVariable>();
+            public Dictionary<string, TrackerVar> Variables { get; set; } = new Dictionary<string, TrackerVar>();
             public EntranceData.EntrancePool EntrancePool { get; set; } = new EntranceData.EntrancePool();
             public LogicDictionary LogicDictionary { get; set; } = new LogicDictionary();
             public LogicFile LogicFile { get; set; } = new MMRData.LogicFile();
@@ -97,10 +97,10 @@ namespace MMR_Tracker_V3
                 if (Variables.ContainsKey(ID))
                 {
                     Obj = Variables[ID];
-                    if (Variables[ID].Value is string) { return LogicEntryType.variableString; }
-                    if (Variables[ID].Value is bool) { return LogicEntryType.variableBool; }
-                    if (Variables[ID].Value is Int64) { return LogicEntryType.variableInt; }
-                    if (Variables[ID].Value is Newtonsoft.Json.Linq.JArray || Variables[ID].Value is List<string>) { return LogicEntryType.variableList; }
+                    if (Variables[ID].GetType() == VariableEntryType.varstring) { return LogicEntryType.variableString; }
+                    if (Variables[ID].GetType() == VariableEntryType.varbool) { return LogicEntryType.variableBool; }
+                    if (Variables[ID].GetType() == VariableEntryType.varint) { return LogicEntryType.variableInt; }
+                    if (Variables[ID].GetType() == VariableEntryType.varlist) { return LogicEntryType.variableList; }
                 }
                 Obj = null;
                 return LogicEntryType.error;
@@ -117,10 +117,10 @@ namespace MMR_Tracker_V3
                 if (Variables.ContainsKey(ID))
                 {
                     obj = Variables[ID];
-                    if (Variables[ID].Value is string) { return LogicEntryType.variableString; }
-                    if (Variables[ID].Value is bool) { return LogicEntryType.variableBool; }
-                    if (Variables[ID].Value is Int64) { return LogicEntryType.variableInt; }
-                    if (Variables[ID].Value is Newtonsoft.Json.Linq.JArray || Variables[ID].Value is List<string>) { return LogicEntryType.variableList; }
+                    if (Variables[ID].GetType() == VariableEntryType.varstring) { return LogicEntryType.variableString; }
+                    if (Variables[ID].GetType() == VariableEntryType.varbool) { return LogicEntryType.variableBool; }
+                    if (Variables[ID].GetType() == VariableEntryType.varint) { return LogicEntryType.variableInt; }
+                    if (Variables[ID].GetType() == VariableEntryType.varlist) { return LogicEntryType.variableList; }
                 }
                 if (bool.TryParse(ID, out bool result)) { obj = result; return LogicEntryType.Bool; }
                 obj = null;

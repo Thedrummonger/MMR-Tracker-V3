@@ -112,8 +112,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             //Create Variables
             List<string> OOTSticks = new() { "OOT_STICK", "OOT_STICKS_5", "OOT_STICKS_10", "SHARED_STICK", "SHARED_STICKS_5", "SHARED_STICKS_10" };
             List<string> OOTnuts = new() { "OOT_NUT", "OOT_NUTS_5", "OOT_NUTS_10", "SHARED_NUT", "SHARED_NUTS_5", "SHARED_NUTS_10" };
-            dictionaryFile.Variables.Add("OOT_ANY_STICK", new LogicDictionaryData.TrackerVariable { ID = "OOT_ANY_STICK", Static = true, Value = OOTSticks });
-            dictionaryFile.Variables.Add("OOT_ANY_NUT", new LogicDictionaryData.TrackerVariable { ID = "OOT_ANY_NUT", Static = true, Value = OOTnuts });
+            dictionaryFile.Variables.Add("OOT_ANY_STICK", new OptionData.TrackerVar { ID = "OOT_ANY_STICK", Static = true, Value = OOTSticks });
+            dictionaryFile.Variables.Add("OOT_ANY_NUT", new OptionData.TrackerVar { ID = "OOT_ANY_NUT", Static = true, Value = OOTnuts });
 
             //Add Reneawable Logic
             var OOTRenewableLocations = GetRenewableLocations("OOT");
@@ -204,7 +204,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
         private static void AddVariablesandOptions(LogicDictionaryData.LogicDictionary dictionaryFile)
         {
-            LogicDictionaryData.TrackerVariable MM_Masks = new LogicDictionaryData.TrackerVariable();
+            OptionData.TrackerVar MM_Masks = new OptionData.TrackerVar();
             MM_Masks.Static = true;
             MM_Masks.Value =new List<string> {
                 "MM_MASK_POSTMAN",

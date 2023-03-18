@@ -728,7 +728,7 @@ namespace Windows_Form_Frontend
             foreach(var i in InstanceContainer.Instance.Variables.Values.Where(x => !x.Static))
             {
                 ToolStripMenuItem menuItem = new() { Name = $"{i.ID}Menu", Text = i.ToString() };
-                menuItem.Click += delegate (object sender, EventArgs e) { HandleItemSelect(new List<LogicDictionaryData.TrackerVariable> { i }, MiscData.CheckState.Checked); };
+                menuItem.Click += delegate (object sender, EventArgs e) { HandleItemSelect(new List<OptionData.TrackerVar> { i }, MiscData.CheckState.Checked); };
                 GroupOption(menuItem);
             }
 
@@ -877,7 +877,7 @@ namespace Windows_Form_Frontend
             }
 
             //Variable and Option check Functions
-            if (listBox.SelectedItem is OptionData.TrackerOption || listBox.SelectedItem is LogicDictionaryData.TrackerVariable)
+            if (listBox.SelectedItem is OptionData.TrackerOption || listBox.SelectedItem is OptionData.TrackerVar)
             {
                 //UnCheck Item
                 ToolStripItem CheckContextItem = contextMenuStrip.Items.Add("Edit");
@@ -959,10 +959,10 @@ namespace Windows_Form_Frontend
         private void SetCheckPrice(dynamic Object)
         {
             var DictEntry = Object.GetDictEntry(InstanceContainer.Instance);
-            var PriceContainer = new List<LogicDictionaryData.TrackerVariable>() { new() { ID = DictEntry.Name ?? DictEntry.ID, Value = 0 } };
+            var PriceContainer = new List<OptionData.TrackerVar>() { new() { ID = DictEntry.Name ?? DictEntry.ID, Value = 0 } };
             VariableInputWindow PriceInput = new(PriceContainer, InstanceContainer.Instance);
             PriceInput.ShowDialog();
-            Object.SetPrice((int)PriceContainer.First().Value);
+            Object.SetPrice((int)PriceContainer.First().GetValue(InstanceContainer.Instance));
             InstanceContainer.logicCalculation.CalculateLogic();
             UpdateUI();
         }

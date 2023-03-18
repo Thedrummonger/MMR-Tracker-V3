@@ -160,9 +160,9 @@ namespace MMR_Tracker_V3
             {
                 return true;
             }
-            else if (instance.Variables.ContainsKey(data[1]) && instance.Variables[data[1]].Value is Int64 amount)
+            else if (instance.Variables.ContainsKey(data[1]) && instance.Variables[data[1]].GetType() == VariableEntryType.varint)
             {
-                Amount = (int)amount;
+                Amount = (int)instance.Variables[data[1]].GetValue(instance);
                 return true;
             }
             else

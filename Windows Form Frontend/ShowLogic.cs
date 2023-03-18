@@ -372,8 +372,8 @@ namespace Windows_Form_Frontend
             void AddFromVariable(string Entry)
             {
                 instance.MultipleItemEntry(Entry, out string LogicItem, out int Amount);
-                if (!instance.Variables.TryGetValue(LogicItem, out LogicDictionaryData.TrackerVariable variable)) { return; }
-                foreach (string varEntry in variable.Value)
+                if (!instance.Variables.TryGetValue(LogicItem, out OptionData.TrackerVar variable)) { return; }
+                foreach (string varEntry in variable.GetValue(instance))
                 {
                     var ItemType = instance.GetItemEntryType(varEntry, false, out object obj);
                     NewList[varEntry] = ItemType;
@@ -410,8 +410,8 @@ namespace Windows_Form_Frontend
             void AddFromVariable(string Entry)
             {
                 instance.MultipleItemEntry(Entry, out string LogicItem, out int Amount);
-                if (!instance.Variables.TryGetValue(LogicItem, out LogicDictionaryData.TrackerVariable variable)) { return; }
-                foreach (string varEntry in variable.Value)
+                if (!instance.Variables.TryGetValue(LogicItem, out OptionData.TrackerVar variable)) { return; }
+                foreach (string varEntry in variable.GetValue(instance))
                 {
                     var ItemType = instance.GetItemEntryType(varEntry, false, out object obj);
                     NewList[varEntry] = ItemType;

@@ -102,19 +102,19 @@ namespace MMR_Tracker_V3
 
             //Hints======================================
             List<HintData.HintObject> HintObjects = Items.Where(x => x is HintData.HintObject).Select(x => x as HintData.HintObject).ToList();
-            List<LogicDictionaryData.TrackerVariable> VariableObjects = Items.Where(x => x is LogicDictionaryData.TrackerVariable).Select(x => x as LogicDictionaryData.TrackerVariable).ToList();
+            List<OptionData.TrackerVar> VariableObjects = Items.Where(x => x is OptionData.TrackerVar).Select(x => x as OptionData.TrackerVar).ToList();
 
             var UncheckedHintObjects = HintObjects.Where(x => x.CheckState == MiscData.CheckState.Unchecked);
             foreach (var i in UncheckedHintObjects.Where(x => !string.IsNullOrWhiteSpace(x.SpoilerHintText))) { i.HintText = i.SpoilerHintText; }
 
             IEnumerable<object> UncheckedVariableObjects = UncheckedHintObjects.Where(x => string.IsNullOrWhiteSpace(x.HintText));
-            UncheckedVariableObjects = UncheckedVariableObjects.Concat(VariableObjects.Where(x => x.Value is not bool));
+            UncheckedVariableObjects = UncheckedVariableObjects.Concat(VariableObjects.Where(x => x.GetType() != MiscData.VariableEntryType.varbool));
             if (UncheckedVariableObjects.Any())
             {
                 CheckUnassignedVariable(UncheckedVariableObjects, instanceContainer.Instance);
                 ChangesMade = true;
             }
-            foreach (var i in VariableObjects.Where(x => x.Value is bool)) { i.Value = !i.Value; ChangesMade = true; }
+            foreach (var i in VariableObjects.Where(x => x.GetType() == MiscData.VariableEntryType.varbool)) { i.Value = !i.GetValue(instanceContainer.Instance); ChangesMade = true; }
             foreach (HintData.HintObject hintObject in HintObjects)
             {
                 ChangesMade = true;

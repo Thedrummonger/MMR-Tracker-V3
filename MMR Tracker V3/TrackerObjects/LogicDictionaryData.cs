@@ -25,7 +25,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public Dictionary<string, DictionaryHintEntries> HintSpots { get; set; } = new Dictionary<string, DictionaryHintEntries>();
             public Dictionary<string, DictionaryMacroEntry> MacroList { get; set; } = new Dictionary<string, DictionaryMacroEntry>();
             public Dictionary<string, TrackerOption> Options { get; set; } = new Dictionary<string, TrackerOption>();
-            public Dictionary<string, TrackerVariable> Variables { get; set; } = new Dictionary<string, TrackerVariable>();
+            public Dictionary<string, TrackerVar> Variables { get; set; } = new Dictionary<string, TrackerVar>();
             public List<JsonFormatLogicItem> AdditionalLogic { get; set; } = new List<JsonFormatLogicItem>();
             public static LogicDictionary FromJson(string json)
             {
@@ -162,52 +162,6 @@ namespace MMR_Tracker_V3.TrackerObjects
             public bool RandomizableEntrance { get; set; }
             public bool AlwaysAccessable { get; set; } = false;
             public bool DestinationHasSingleEntrance { get; set; } = false;
-        }
-
-        public class TrackerVariable
-        {
-            public string ID { get; set; }
-            public string Name { get; set; }
-            public bool Static  { get; set; } = true;
-            private dynamic _value;
-            public dynamic Value
-            {
-                get
-                {
-                    List<string> JsonList = new List<string>();
-                    if ((_value is Newtonsoft.Json.Linq.JArray))
-                    {
-                        foreach(string i in _value) { JsonList.Add(i); }
-                        return JsonList;
-                    }
-                    return _value;
-                }
-                set => _value = value;
-            }
-            public override string ToString()
-            {
-                return (Name??ID) + ": " + ValueToString();
-            }
-            public string ValueToString()
-            {
-                string DisplayValue = null;
-                if (Value is string valString) { DisplayValue = valString; }
-                if (Value is Int64 valint) { DisplayValue = valint.ToString(); }
-                if (Value is bool valbool) { DisplayValue = valbool.ToString(); }
-                if (Value is List<string> valListString) { DisplayValue = string.Join(", ", valListString); }
-                if (DisplayValue == null) { DisplayValue = $"{Value.GetType().ToString()}"; }
-                return DisplayValue;
-            }
-
-            public MiscData.VariableEntryType GetCurrentValueData(out object obj)
-            {
-                if (Value is string valString) { obj = valString; return MiscData.VariableEntryType.varstring; }
-                if (Value is Int64 valint) { obj = valint; return MiscData.VariableEntryType.varint; }
-                if (Value is bool valbool) { obj = valbool; return MiscData.VariableEntryType.varbool; }
-                if (Value is List<string> valListString) { obj = valListString; return MiscData.VariableEntryType.varlist; }
-                obj = Value;
-                return MiscData.VariableEntryType.error;
-            }
         }
     }
 }
