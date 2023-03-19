@@ -34229,6 +34229,252 @@
           "VariableEdit": {}
         }
       }
+    },
+    "moon_masksRegular": {
+      "DisplayName": "Regular Masks (MM)",
+      "CurrentValue": "false",
+      "SubCategory": "Moon Access Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "moon_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_MASK_CAPTAIN",
+                "MM_MASK_GIANT",
+                "MM_MASK_ALL_NIGHT",
+                "MM_MASK_BUNNY",
+                "MM_MASK_KEATON",
+                "MM_MASK_GARO",
+                "MM_MASK_ROMANI",
+                "MM_MASK_TROUPE_LEADER",
+                "MM_MASK_POSTMAN",
+                "MM_MASK_COUPLE",
+                "MM_MASK_GREAT_FAIRY",
+                "MM_MASK_GIBDO",
+                "MM_MASK_DON_GERO",
+                "MM_MASK_KAMARO",
+                "MM_MASK_TRUTH",
+                "MM_MASK_STONE",
+                "MM_MASK_BREMEN",
+                "MM_MASK_BLAST",
+                "MM_MASK_SCENTS",
+                "MM_MASK_KAFEI",
+                "SHARED_MASK_TRUTH",
+                "SHARED_MASK_BUNNY",
+                "SHARED_MASK_KEATON"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "bridge_masksRegular": {
+      "DisplayName": "Regular Masks (MM)",
+      "CurrentValue": "false",
+      "SubCategory": "Rainbow Bridge Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "bridge_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_MASK_CAPTAIN",
+                "MM_MASK_GIANT",
+                "MM_MASK_ALL_NIGHT",
+                "MM_MASK_BUNNY",
+                "MM_MASK_KEATON",
+                "MM_MASK_GARO",
+                "MM_MASK_ROMANI",
+                "MM_MASK_TROUPE_LEADER",
+                "MM_MASK_POSTMAN",
+                "MM_MASK_COUPLE",
+                "MM_MASK_GREAT_FAIRY",
+                "MM_MASK_GIBDO",
+                "MM_MASK_DON_GERO",
+                "MM_MASK_KAMARO",
+                "MM_MASK_TRUTH",
+                "MM_MASK_STONE",
+                "MM_MASK_BREMEN",
+                "MM_MASK_BLAST",
+                "MM_MASK_SCENTS",
+                "MM_MASK_KAFEI",
+                "SHARED_MASK_TRUTH",
+                "SHARED_MASK_BUNNY",
+                "SHARED_MASK_KEATON"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "moon_masksTransform": {
+      "DisplayName": "Transformation Masks (MM)",
+      "CurrentValue": "false",
+      "SubCategory": "Moon Access Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "moon_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_MASK_DEKU",
+                "MM_MASK_GORON",
+                "MM_MASK_ZORA",
+                "MM_MASK_FIERCE_DEITY",
+                "SHARED_MASK_GORON",
+                "SHARED_MASK_ZORA"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "bridge_masksTransform": {
+      "DisplayName": "Transformation Masks (MM)",
+      "CurrentValue": "false",
+      "SubCategory": "Rainbow Bridge Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "bridge_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_MASK_DEKU",
+                "MM_MASK_GORON",
+                "MM_MASK_ZORA",
+                "MM_MASK_FIERCE_DEITY",
+                "SHARED_MASK_GORON",
+                "SHARED_MASK_ZORA"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "moon_masksOot": {
+      "DisplayName": "Masks (OoT)",
+      "CurrentValue": "false",
+      "SubCategory": "Moon Access Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "moon_req": {
+              "action": "add",
+              "EditValue": [
+                "OOT_MASK_SKULL",
+                "OOT_MASK_SPOOKY",
+                "OOT_MASK_KEATON",
+                "OOT_MASK_BUNNY",
+                "OOT_MASK_TRUTH",
+                "OOT_MASK_GERUDO",
+                "OOT_MASK_GORON",
+                "OOT_MASK_ZORA",
+                "SHARED_MASK_KEATON",
+                "SHARED_MASK_BUNNY",
+                "SHARED_MASK_TRUTH",
+                "SHARED_MASK_GORON",
+                "SHARED_MASK_ZORA"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "bridge_masksOot": {
+      "DisplayName": "Masks (OoT)",
+      "CurrentValue": "false",
+      "SubCategory": "Rainbow Bridge Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "bridge_req": {
+              "action": "add",
+              "EditValue": [
+                "OOT_MASK_SKULL",
+                "OOT_MASK_SPOOKY",
+                "OOT_MASK_KEATON",
+                "OOT_MASK_BUNNY",
+                "OOT_MASK_TRUTH",
+                "OOT_MASK_GERUDO",
+                "OOT_MASK_GORON",
+                "OOT_MASK_ZORA",
+                "SHARED_MASK_KEATON",
+                "SHARED_MASK_BUNNY",
+                "SHARED_MASK_TRUTH",
+                "SHARED_MASK_GORON",
+                "SHARED_MASK_ZORA"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
     }
   },
   "Variables": {

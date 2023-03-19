@@ -227,7 +227,10 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 { "Stray Fairies (Snowhead)|fairiesSH", new string[] { "MM_STRAY_FAIRY_SH" } },
                 { "Stray Fairies (Great Bay)|fairiesGB", new string[] { "MM_STRAY_FAIRY_GB" } },
                 { "Stray Fairies (Stone Tower)|fairiesST", new string[] { "MM_STRAY_FAIRY_ST" } },
-                { "Stray Fairy (Clock Town)|fairyTown", new string[] { "MM_STRAY_FAIRY_TOWN" } }
+                { "Stray Fairy (Clock Town)|fairyTown", new string[] { "MM_STRAY_FAIRY_TOWN" } },
+                { "Regular Masks (MM)|masksRegular", new string[] { "MM_MASK_CAPTAIN", "MM_MASK_GIANT", "MM_MASK_ALL_NIGHT", "MM_MASK_BUNNY", "MM_MASK_KEATON", "MM_MASK_GARO", "MM_MASK_ROMANI", "MM_MASK_TROUPE_LEADER", "MM_MASK_POSTMAN", "MM_MASK_COUPLE", "MM_MASK_GREAT_FAIRY", "MM_MASK_GIBDO", "MM_MASK_DON_GERO", "MM_MASK_KAMARO", "MM_MASK_TRUTH", "MM_MASK_STONE", "MM_MASK_BREMEN", "MM_MASK_BLAST", "MM_MASK_SCENTS", "MM_MASK_KAFEI", "SHARED_MASK_TRUTH", "SHARED_MASK_BUNNY", "SHARED_MASK_KEATON" } },
+                { "Transformation Masks (MM)|masksTransform", new string[] { "MM_MASK_DEKU", "MM_MASK_GORON", "MM_MASK_ZORA", "MM_MASK_FIERCE_DEITY", "SHARED_MASK_GORON", "SHARED_MASK_ZORA" } },
+                { "Masks (OoT)|masksOot", new string[] { "OOT_MASK_SKULL", "OOT_MASK_SPOOKY", "OOT_MASK_KEATON", "OOT_MASK_BUNNY", "OOT_MASK_TRUTH", "OOT_MASK_GERUDO", "OOT_MASK_GORON", "OOT_MASK_ZORA", "SHARED_MASK_KEATON", "SHARED_MASK_BUNNY", "SHARED_MASK_TRUTH", "SHARED_MASK_GORON", "SHARED_MASK_ZORA" } }
             };
 
             foreach (var i in PossibleReqs)
