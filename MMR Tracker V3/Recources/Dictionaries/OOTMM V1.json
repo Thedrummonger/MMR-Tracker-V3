@@ -24151,7 +24151,7 @@
       }
     },
     "MM_FAIRY": {
-      "Name": "Blue Potion (MM)",
+      "Name": "Fairy (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -24160,17 +24160,17 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_FAIRY",
-          "Blue Potion (MM)"
+          "Fairy (MM)"
         ],
         "GossipHintNames": [
           "MM_FAIRY",
-          "Blue Potion (MM)"
+          "Fairy (MM)"
         ],
         "PriceDataNames": []
       }
     },
     "MM_SHIELD_HERO": {
-      "Name": "Blue Potion (MM)",
+      "Name": "Hero Shield",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -24179,11 +24179,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_SHIELD_HERO",
-          "Blue Potion (MM)"
+          "Hero Shield"
         ],
         "GossipHintNames": [
           "MM_SHIELD_HERO",
-          "Blue Potion (MM)"
+          "Hero Shield"
         ],
         "PriceDataNames": []
       }
