@@ -9065,6 +9065,9 @@
         ],
         [
           "TRICK_MM_SCT_NOTHING"
+        ],
+        [
+          "MM_can_goron_bomb_jump"
         ]
       ],
       "TimeNeeded": "None",
@@ -9084,6 +9087,10 @@
         [
           "MM_MASK_DEKU",
           "MM_EVENT_CLOCK_TOWN_SCRUB"
+        ],
+        [
+          "MM_can_goron_bomb_jump",
+          "MM_can_hookshot_short"
         ]
       ],
       "TimeNeeded": "None",
@@ -9572,6 +9579,116 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Trading Post Item 1",
+      "RequiredItems": [
+        "MM Trading Post"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Trading Post Item 2",
+      "RequiredItems": [
+        "MM Trading Post"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Trading Post Item 3",
+      "RequiredItems": [
+        "MM Trading Post"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Trading Post Item 4",
+      "RequiredItems": [
+        "MM Trading Post"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Trading Post Item 5",
+      "RequiredItems": [
+        "MM Trading Post"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Trading Post Item 6",
+      "RequiredItems": [
+        "MM Trading Post"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Trading Post Item 7",
+      "RequiredItems": [
+        "MM Trading Post"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Trading Post Item 8",
+      "RequiredItems": [
+        "MM Trading Post"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Bomb Shop Item 1",
+      "RequiredItems": [
+        "MM Bomb Shop"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Bomb Shop Item 2",
+      "RequiredItems": [
+        "MM Bomb Shop"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Bomb Shop Bomb Bag",
       "RequiredItems": [
         "MM Bomb Shop"
@@ -9727,7 +9844,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_can_hookshot"
+          "MM_can_hookshot_short"
         ],
         [
           "MM_can_use_beans"
@@ -9969,6 +10086,9 @@
         ],
         [
           "MM_MASK_ZORA"
+        ],
+        [
+          "MM_EVENT_CLEAN_SWAMP"
         ]
       ],
       "TimeNeeded": "None",
@@ -10028,6 +10148,41 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Swamp Potion Shop Item 1",
+      "RequiredItems": [
+        "MM_has_bottle",
+        "MM_MASK_SCENTS",
+        "MM Swamp Potion Shop"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Swamp Potion Shop Item 2",
+      "RequiredItems": [
+        "MM Swamp Potion Shop"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Swamp Potion Shop Item 3",
+      "RequiredItems": [
+        "MM Swamp Potion Shop"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Tourist Information Pictobox",
       "RequiredItems": [
         "MM_EVENT_KOUME",
@@ -10077,6 +10232,9 @@
         [
           "MM_EVENT_CLEAN_SWAMP",
           "MM_can_use_beans"
+        ],
+        [
+          "TRICK_MM_PALACE_GUARD_SKIP"
         ]
       ],
       "TimeNeeded": "None",
@@ -10115,8 +10273,26 @@
           "MM_can_use_beans"
         ],
         [
+          "TRICK_MM_PALACE_GUARD_SKIP",
+          "MM_can_use_beans"
+        ],
+        [
           "MM_MASK_DEKU",
           "MM_can_hookshot"
+        ],
+        [
+          "TRICK_MM_PALACE_GUARD_SKIP",
+          "MM_can_hookshot"
+        ],
+        [
+          "MM_MASK_DEKU",
+          "MM_can_hookshot_short",
+          "TRICK_MM_SHORT_HOOK_HARD"
+        ],
+        [
+          "TRICK_MM_PALACE_GUARD_SKIP",
+          "MM_can_hookshot_short",
+          "TRICK_MM_SHORT_HOOK_HARD"
         ],
         [
           "MM_can_use_beans",
@@ -10146,17 +10322,16 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
+          "MM_can_hookshot",
+          "MM Woodfall Near Great Fairy Fountain"
+        ],
+        [
           "MM_MASK_DEKU",
           "MM Woodfall Shrine"
         ],
         [
-          "MM_can_hookshot",
-          "MM Woodfall Shrine"
-        ],
-        [
-          "MM_can_hookshot",
-          "MM_EVENT_CLEAN_SWAMP",
-          "MM Woodfall"
+          "MM Woodfall Shrine",
+          "MM_can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -10175,6 +10350,9 @@
         ],
         [
           "MM_can_hookshot"
+        ],
+        [
+          "MM_EVENT_CLEAN_SWAMP"
         ]
       ],
       "TimeNeeded": "None",
@@ -10231,7 +10409,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_can_hookshot"
+          "MM_can_hookshot_short"
         ],
         [
           "MM_MASK_ZORA"
@@ -10341,7 +10519,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_can_hookshot"
+          "MM_can_hookshot_short"
         ],
         [
           "MM_MASK_ZORA"
@@ -10463,7 +10641,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_can_hookshot"
+          "MM_can_hookshot_short"
         ],
         [
           "MM_MASK_ZORA"
@@ -10846,6 +11024,39 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Goron Shop Item 1",
+      "RequiredItems": [
+        "MM Goron Shop"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Goron Shop Item 2",
+      "RequiredItems": [
+        "MM Goron Shop"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Goron Shop Item 3",
+      "RequiredItems": [
+        "MM Goron Shop"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Goron Village HP",
       "RequiredItems": [
         "MM_DEED_SWAMP",
@@ -11051,7 +11262,7 @@
           "MM_MASK_ZORA"
         ],
         [
-          "MM_can_hookshot"
+          "MM_can_hookshot_short"
         ]
       ],
       "TimeNeeded": "None",
@@ -11100,7 +11311,7 @@
     {
       "Id": "MM Great Bay Coast Fisherman HP",
       "RequiredItems": [
-        "MM_can_hookshot",
+        "MM_can_hookshot_short",
         "MM_EVENT_BOSS_GREAT_BAY",
         "MM Great Bay Coast"
       ],
@@ -11274,6 +11485,39 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Zora Shop Item 1",
+      "RequiredItems": [
+        "MM Zora Shop"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Zora Shop Item 2",
+      "RequiredItems": [
+        "MM Zora Shop"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Zora Shop Item 3",
+      "RequiredItems": [
+        "MM Zora Shop"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Pinnacle Rock Chest 1",
       "RequiredItems": [
         "MM_MASK_ZORA",
@@ -11375,7 +11619,7 @@
       "Id": "MM Ocean Skulltula Entrance Right Wall",
       "RequiredItems": [
         "MM_has_explosives",
-        "MM_can_hookshot",
+        "MM_can_hookshot_short",
         "MM Ocean Spider House Front"
       ],
       "ConditionalItems": [],
@@ -11388,7 +11632,7 @@
       "Id": "MM Ocean Skulltula Entrance Left Wall",
       "RequiredItems": [
         "MM_has_explosives",
-        "MM_can_hookshot",
+        "MM_can_hookshot_short",
         "MM Ocean Spider House Front"
       ],
       "ConditionalItems": [],
@@ -11405,7 +11649,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_can_hookshot"
+          "MM_can_hookshot_short"
         ],
         [
           "MM_can_use_fire_arrows",
@@ -11424,7 +11668,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_can_hookshot"
+          "MM_can_hookshot_short"
         ],
         [
           "MM_MASK_ZORA"
@@ -11442,7 +11686,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_can_hookshot"
+          "MM_can_hookshot_short"
         ],
         [
           "MM_MASK_ZORA"
@@ -11467,7 +11711,7 @@
     {
       "Id": "MM Ocean Skulltula 2nd Room Webbed Hole",
       "RequiredItems": [
-        "MM_can_hookshot",
+        "MM_can_hookshot_short",
         "MM Ocean Spider House Back"
       ],
       "ConditionalItems": [],
@@ -11516,7 +11760,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_can_hookshot"
+          "MM_can_hookshot_short"
         ],
         [
           "MM_MASK_ZORA"
@@ -11557,7 +11801,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_can_hookshot"
+          "MM_can_hookshot_short"
         ],
         [
           "MM_MASK_ZORA"
@@ -11575,7 +11819,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_can_hookshot"
+          "MM_can_hookshot_short"
         ],
         [
           "MM_MASK_ZORA"
@@ -11612,7 +11856,7 @@
     {
       "Id": "MM Ocean Skulltula Storage Room Jar",
       "RequiredItems": [
-        "MM_can_hookshot",
+        "MM_can_hookshot_short",
         "MM Ocean Spider House Back"
       ],
       "ConditionalItems": [],
@@ -11636,7 +11880,7 @@
     {
       "Id": "MM Ocean Skulltula Library Hole Behind Cabinet",
       "RequiredItems": [
-        "MM_can_hookshot",
+        "MM_can_hookshot_short",
         "MM Ocean Spider House Back"
       ],
       "ConditionalItems": [],
@@ -11663,7 +11907,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_can_hookshot"
+          "MM_can_hookshot_short"
         ],
         [
           "MM_MASK_ZORA"
@@ -11681,7 +11925,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_can_hookshot"
+          "MM_can_hookshot_short"
         ],
         [
           "MM_BOW"
@@ -11727,7 +11971,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_can_hookshot"
+          "MM_can_hookshot_short"
         ],
         [
           "MM_MASK_ZORA"
@@ -11778,7 +12022,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_can_hookshot"
+          "MM_can_hookshot_short"
         ],
         [
           "MM_MASK_ZORA"
@@ -11835,10 +12079,17 @@
     {
       "Id": "MM Road to Ikana Chest",
       "RequiredItems": [
-        "MM_can_hookshot",
         "MM Road to Ikana Front"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_can_hookshot"
+        ],
+        [
+          "MM_can_hookshot_short",
+          "TRICK_MM_SHORT_HOOK_HARD"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -11860,7 +12111,7 @@
       "Id": "MM Road to Ikana Stone Mask",
       "RequiredItems": [
         "MM_can_use_lens_strict",
-        "MM_has_bottle",
+        "MM_has_red_or_blue_potion",
         "MM Road to Ikana Center"
       ],
       "ConditionalItems": [],
@@ -11925,7 +12176,7 @@
           "MM_BOW"
         ],
         [
-          "MM_can_hookshot"
+          "MM_can_hookshot_short"
         ],
         [
           "MM_MASK_DEKU"
@@ -12040,7 +12291,7 @@
           "MM_BOW"
         ],
         [
-          "MM_can_hookshot"
+          "MM_can_hookshot_short"
         ],
         [
           "MM_can_use_deku_bubble"
@@ -12118,7 +12369,7 @@
           "MM_MASK_DEKU"
         ],
         [
-          "MM_can_hookshot"
+          "MM_can_hookshot_short"
         ]
       ],
       "TimeNeeded": "None",
@@ -12137,6 +12388,13 @@
         ],
         [
           "MM_can_hookshot"
+        ],
+        [
+          "MM_can_hookshot_short",
+          "MM_EVENT_WOODFALL_TEMPLE_MAIN_FLOWER"
+        ],
+        [
+          "MM_can_use_ice_arrows"
         ]
       ],
       "TimeNeeded": "None",
@@ -12320,7 +12578,7 @@
         ],
         [
           "MM_MASK_GREAT_FAIRY",
-          "MM_can_hookshot"
+          "MM_can_hookshot_short"
         ],
         [
           "MM_EVENT_WOODFALL_TEMPLE_MAIN_FLOWER"
@@ -12473,7 +12731,7 @@
           "MM Snowhead Temple Bridge Back"
         ],
         [
-          "MM_can_hookshot",
+          "MM_can_hookshot_short",
           "MM Snowhead Temple Bridge Front"
         ]
       ],
@@ -12607,7 +12865,7 @@
           "MM_can_break_boulders"
         ],
         [
-          "MM_can_hookshot",
+          "MM_can_hookshot_short",
           "MM_has_explosives"
         ]
       ],
@@ -12681,7 +12939,7 @@
           "MM_BOW"
         ],
         [
-          "MM_can_hookshot"
+          "MM_can_hookshot_short"
         ]
       ],
       "TimeNeeded": "None",
@@ -12711,12 +12969,23 @@
           "MM_has_explosives"
         ],
         [
+          "MM_can_hookshot_short",
+          "MM_has_explosives"
+        ],
+        [
           "MM_can_use_fire_arrows",
+          "MM_MASK_GORON"
+        ],
+        [
+          "MM_can_hookshot_short",
           "MM_MASK_GORON"
         ],
         [
           "MM_MASK_GREAT_FAIRY",
           "MM_BOMB_BAG"
+        ],
+        [
+          "MM_can_goron_bomb_jump"
         ]
       ],
       "TimeNeeded": "None",
@@ -12750,7 +13019,7 @@
           "MM_BOW"
         ],
         [
-          "MM_can_hookshot"
+          "MM_can_hookshot_short"
         ]
       ],
       "TimeNeeded": "None",
@@ -12902,7 +13171,7 @@
       "Id": "MM Pirate Fortress Interior Aquarium",
       "RequiredItems": [
         "MM_MASK_ZORA",
-        "MM_can_hookshot",
+        "MM_can_hookshot_short",
         "MM Pirate Fortress Lone Guard Aquarium"
       ],
       "ConditionalItems": [],
@@ -12951,14 +13220,7 @@
       "RequiredItems": [
         "MM Great Bay Temple Map Room"
       ],
-      "ConditionalItems": [
-        [
-          "MM_can_hookshot"
-        ],
-        [
-          "MM_can_use_ice_arrows"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -13034,10 +13296,17 @@
     {
       "Id": "MM Great Bay Temple Green Pipe 2 Lower Chest",
       "RequiredItems": [
-        "MM_can_hookshot",
         "MM Great Bay Temple Green Pipe 2"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_can_hookshot"
+        ],
+        [
+          "MM_can_use_ice_arrows",
+          "MM_can_hookshot_short"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -13171,7 +13440,6 @@
     {
       "Id": "MM Great Bay Temple SF Green Pipe 3 Barrel",
       "RequiredItems": [
-        "MM_MASK_ZORA",
         "MM Great Bay Temple Green Pipe 3"
       ],
       "ConditionalItems": [],
@@ -13311,7 +13579,7 @@
           "MM_BOW"
         ],
         [
-          "MM_can_hookshot"
+          "MM_can_hookshot_short"
         ]
       ],
       "TimeNeeded": "None",
@@ -13408,7 +13676,7 @@
       "Id": "MM Stone Tower Temple Center Sun Block Chest",
       "RequiredItems": [
         "MM_can_use_light_arrows",
-        "MM Stone Tower Temple Center"
+        "MM Stone Tower Temple Center Ledge"
       ],
       "ConditionalItems": [
         [
@@ -13426,12 +13694,13 @@
           "MM_SPIN_UPGRADE"
         ],
         [
-          "MM_MAGIC_UPGRADE",
           "MM_SWORD, 3"
         ],
         [
-          "MM_MAGIC_UPGRADE",
           "MM_GREAT_FAIRY_SWORD"
+        ],
+        [
+          "MM_can_use_ice_arrows"
         ]
       ],
       "TimeNeeded": "None",
@@ -13637,27 +13906,10 @@
     },
     {
       "Id": "MM Stone Tower Temple Inverted Wizrobe Chest",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "MM_can_fight",
-          "MM Stone Tower Temple Inverted Wizzrobe Ledge"
-        ],
-        [
-          "MM_BOW",
-          "MM Stone Tower Temple Inverted Wizzrobe Ledge"
-        ],
-        [
-          "MM_BOW",
-          "MM_can_hookshot",
-          "MM Stone Tower Temple Inverted Wizzrobe"
-        ],
-        [
-          "MM_can_fight",
-          "MM_can_hookshot",
-          "MM Stone Tower Temple Inverted Wizzrobe"
-        ]
+      "RequiredItems": [
+        "MM Stone Tower Temple Inverted Wizzrobe Ledge"
       ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -14166,7 +14418,7 @@
       "TrickCategory": "Majoras Mask"
     },
     {
-      "Id": "TRICK_MM_ROAD_IKANA_SHORT_HOOK",
+      "Id": "TRICK_MM_SHORT_HOOK_HARD",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -15316,7 +15568,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Fire Temple => OOT Death Mountain Crater Warp",
+      "Id": "OOT Fire Temple => OOT Fire Temple Entry",
       "RequiredItems": [],
       "ConditionalItems": [
         [
@@ -18826,11 +19078,21 @@
     },
     {
       "Id": "OOT Zora River => OOT Zora Domain",
-      "RequiredItems": [
-        "OOT_OCARINA",
-        "OOT_SONG_ZELDA"
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_OCARINA",
+          "OOT_SONG_ZELDA"
+        ],
+        [
+          "OOT_is_child",
+          "TRICK_OOT_CHILD_DOMAIN"
+        ],
+        [
+          "OOT_has_hover_boots",
+          "TRICK_OOT_ADULT_DOMAIN"
+        ]
       ],
-      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -19384,7 +19646,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Death Mountain Crater Warp => OOT Fire Temple",
+      "Id": "OOT Death Mountain Crater Warp => OOT Fire Temple Entry",
       "RequiredItems": [
         "OOT_is_adult",
         "OOT_has_tunic_goron"
@@ -19420,6 +19682,26 @@
       "RequiredItems": [
         "OOT_can_use_beans",
         "OOT Death Mountain Crater Warp"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fire Temple Entry => OOT Fire Temple",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fire Temple Entry => OOT Death Mountain Crater Warp",
+      "RequiredItems": [
+        "OOT_has_tunic_goron_strict"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -19583,6 +19865,9 @@
         ],
         [
           "OOT_has_hover_boots"
+        ],
+        [
+          "TRICK_OOT_SAND_RIVER_NOTHING"
         ]
       ],
       "TimeNeeded": "None",
@@ -19599,6 +19884,9 @@
         ],
         [
           "OOT_has_hover_boots"
+        ],
+        [
+          "TRICK_OOT_SAND_RIVER_NOTHING"
         ]
       ],
       "TimeNeeded": "None",
@@ -20254,15 +20542,16 @@
     {
       "Id": "OOT Water Temple Main => OOT Water Temple Ruto Room",
       "RequiredItems": [
+        "OOT_has_tunic_zora",
         "option{WaterMQ, false}"
       ],
       "ConditionalItems": [
         [
-          "OOT_has_tunic_zora",
           "OOT_has_iron_boots"
         ],
         [
-          "OOT_EVENT_WATER_LEVEL_LOW"
+          "OOT_can_longshot",
+          "TRICK_OOT_WATER_LONGSHOT"
         ]
       ],
       "TimeNeeded": "None",
@@ -20384,10 +20673,16 @@
         "OOT_has_tunic_zora",
         "OOT_SMALL_KEY_WATER, 4",
         "OOT_can_longshot",
-        "OOT_has_iron_boots",
         "option{WaterMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_iron_boots"
+        ],
+        [
+          "OOT_EVENT_WATER_LEVEL_LOW"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -20429,6 +20724,7 @@
     {
       "Id": "OOT Water Temple Main => OOT Water Temple Cage Room",
       "RequiredItems": [
+        "OOT_has_tunic_zora",
         "OOT_EVENT_WATER_LEVEL_LOW",
         "OOT_has_explosives",
         "OOT_can_dive_small",
@@ -20697,9 +20993,20 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Water Temple River => OOT Water Temple Dragon Room",
+      "Id": "OOT Water Temple River => OOT Water Temple Dragon Room Ledge",
       "RequiredItems": [
         "OOT_can_use_bow",
+        "option{WaterMQ, false}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Water Temple Dragon Room Ledge => OOT Water Temple Dragon Room",
+      "RequiredItems": [
         "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
@@ -22745,7 +23052,7 @@
       "Id": "MM Beneath the Well Entrance => MM Beneath the Well North Section",
       "RequiredItems": [
         "MM_MASK_GIBDO",
-        "MM_EVENT_BLUE_POTION"
+        "MM_has_blue_potion"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -22805,7 +23112,8 @@
     {
       "Id": "MM Beneath the Well East Section => MM Beneath the Well End",
       "RequiredItems": [
-        "MM_EVENT_WELL_BIG_POE"
+        "MM_EVENT_WELL_BIG_POE",
+        "MM_has_milk"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -23228,12 +23536,12 @@
     {
       "Id": "MM Great Bay Temple Boss => MM Great Bay Temple After Boss",
       "RequiredItems": [
-        "MM_MAGIC_UPGRADE",
-        "MM_BOW"
+        "MM_MAGIC_UPGRADE"
       ],
       "ConditionalItems": [
         [
-          "MM_MASK_ZORA"
+          "MM_MASK_ZORA",
+          "MM_BOW"
         ],
         [
           "MM_MASK_FIERCE_DEITY"
@@ -23534,7 +23842,7 @@
     {
       "Id": "MM Moon Trial Link Rest 1 => MM Moon Trial Link Rest 2",
       "RequiredItems": [
-        "MM_can_hookshot"
+        "MM_can_hookshot_short"
       ],
       "ConditionalItems": [
         [
@@ -23714,7 +24022,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_can_hookshot"
+          "MM_can_hookshot_short"
         ],
         [
           "MM_can_goron_bomb_jump"
@@ -23963,6 +24271,15 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Clock Town West => MM Trading Post",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Clock Town West => MM Curiosity Shop",
       "RequiredItems": [],
       "ConditionalItems": [],
@@ -24145,6 +24462,15 @@
     },
     {
       "Id": "MM Bomb Shop => MM Clock Town West",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Trading Post => MM Clock Town West",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -24659,7 +24985,7 @@
         ],
         [
           "MM_MASK_DEKU",
-          "MM_can_hookshot"
+          "MM_can_hookshot_short"
         ]
       ],
       "TimeNeeded": "None",
@@ -24778,6 +25104,9 @@
         ],
         [
           "MM_MASK_ZORA"
+        ],
+        [
+          "MM_EVENT_CLEAN_SWAMP"
         ]
       ],
       "TimeNeeded": "None",
@@ -24826,7 +25155,7 @@
     {
       "Id": "MM_EVENT_KOUME",
       "RequiredItems": [
-        "MM_has_bottle",
+        "MM_has_red_or_blue_potion",
         "MM Woods of Mystery"
       ],
       "ConditionalItems": [],
@@ -24839,26 +25168,6 @@
       "Id": "MM Swamp Potion Shop => MM Swamp Front",
       "RequiredItems": [],
       "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM_EVENT_BLUE_POTION",
-      "RequiredItems": [
-        "MM_has_bottle"
-      ],
-      "ConditionalItems": [
-        [
-          "MM_WALLET",
-          "MM Ikana Valley"
-        ],
-        [
-          "MM_MASK_SCENTS",
-          "MM Swamp Potion Shop"
-        ]
-      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -24898,10 +25207,16 @@
     {
       "Id": "MM_EVENT_MAGIC_BEANS_PALACE",
       "RequiredItems": [
-        "MM_MASK_DEKU",
         "MM Deku Palace"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_MASK_DEKU"
+        ],
+        [
+          "TRICK_MM_PALACE_GUARD_SKIP"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -25000,7 +25315,6 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_can_hookshot",
           "MM_MASK_DEKU"
         ],
         [
@@ -25026,9 +25340,7 @@
     },
     {
       "Id": "MM Woodfall Front of Temple => MM Woodfall Temple",
-      "RequiredItems": [
-        "MM_has_weapon"
-      ],
+      "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -25569,6 +25881,15 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Goron Shrine => MM Goron Shop",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM_EVENT_GORON_FOOD",
       "RequiredItems": [
         "MM_MASK_GORON",
@@ -25583,6 +25904,15 @@
           "MM_can_lullaby_half"
         ]
       ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Goron Shop => MM Goron Shrine",
+      "RequiredItems": [],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -26244,7 +26574,9 @@
     },
     {
       "Id": "MM Waterfall Cliffs => MM Waterfall Rapids",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM_can_hookshot"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -26295,6 +26627,24 @@
     },
     {
       "Id": "MM Zora Hall => MM Zora Cape Peninsula",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Zora Hall => MM Zora Shop",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Zora Shop => MM Zora Hall",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -26362,6 +26712,17 @@
       "IsTrick": false
     },
     {
+      "Id": "MM_EVENT_MILK",
+      "RequiredItems": [
+        "MM Gorman Track"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Road to Ikana Front => MM Termina Field",
       "RequiredItems": [],
       "ConditionalItems": [],
@@ -26406,15 +26767,25 @@
     },
     {
       "Id": "MM Road to Ikana Center => MM Road to Ikana Top",
-      "RequiredItems": [
-        "MM_can_hookshot"
-      ],
+      "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_MASK_GARO"
+          "MM_MASK_GARO",
+          "MM_can_hookshot"
         ],
         [
-          "MM_MASK_GIBDO"
+          "MM_MASK_GIBDO",
+          "MM_can_hookshot"
+        ],
+        [
+          "MM_MASK_GARO",
+          "MM_can_hookshot_short",
+          "TRICK_MM_SHORT_HOOK_HARD"
+        ],
+        [
+          "MM_MASK_GIBDO",
+          "MM_can_hookshot_short",
+          "TRICK_MM_SHORT_HOOK_HARD"
         ]
       ],
       "TimeNeeded": "None",
@@ -26579,6 +26950,19 @@
     {
       "Id": "MM Ikana Valley => MM Swamp Front",
       "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_EVENT_BLUE_POTION",
+      "RequiredItems": [
+        "MM_has_bottle",
+        "MM_WALLET",
+        "MM Ikana Valley"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -26961,8 +27345,26 @@
     },
     {
       "Id": "MM Pirate Fortress Entrance => MM Pirate Fortress Entrance Balcony",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "MM_can_hookshot"
+        ],
+        [
+          "MM_can_hookshot_short",
+          "TRICK_MM_PFI_BOAT_HOOK"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Pirate Fortress Entrance => MM Pirate Fortress Entrance Lookout",
       "RequiredItems": [
-        "MM_can_hookshot"
+        "MM_can_hookshot_short",
+        "TRICK_MM_PFI_BOAT_HOOK"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -27081,7 +27483,7 @@
     {
       "Id": "MM Pirate Fortress Interior => MM Pirate Fortress Lone Guard Entry",
       "RequiredItems": [
-        "MM_can_hookshot"
+        "MM_can_hookshot_short"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -27092,7 +27494,7 @@
     {
       "Id": "MM Pirate Fortress Interior => MM Pirate Fortress Barrel Maze Entry",
       "RequiredItems": [
-        "MM_can_hookshot"
+        "MM_can_hookshot_short"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -27124,13 +27526,13 @@
       "ConditionalItems": [
         [
           "MM_MASK_STONE",
-          "MM_can_hookshot",
+          "MM_can_hookshot_short",
           "MM_BOW",
           "MM Pirate Fortress Hookshot Room Lower"
         ],
         [
           "MM_MASK_STONE",
-          "MM_can_hookshot",
+          "MM_can_hookshot_short",
           "MM_can_use_deku_bubble",
           "MM Pirate Fortress Hookshot Room Lower"
         ],
@@ -27169,19 +27571,13 @@
     {
       "Id": "MM_EVENT_ZORA_EGGS_HOOKSHOT_ROOM",
       "RequiredItems": [
-        "MM_can_hookshot",
+        "MM_can_hookshot_short",
         "MM_MASK_ZORA",
         "MM_has_bottle",
+        "MM_EVENT_FORTRESS_BEEHIVE",
         "MM Pirate Fortress Hookshot Room Lower"
       ],
-      "ConditionalItems": [
-        [
-          "MM_MASK_STONE"
-        ],
-        [
-          "MM_EVENT_FORTRESS_BEEHIVE"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -27285,7 +27681,7 @@
     {
       "Id": "MM_EVENT_ZORA_EGGS_BARREL_MAZE",
       "RequiredItems": [
-        "MM_can_hookshot",
+        "MM_can_hookshot_short",
         "MM_MASK_ZORA",
         "MM_has_bottle",
         "MM Pirate Fortress Barrel Maze Aquarium"
@@ -27396,7 +27792,7 @@
     {
       "Id": "MM_EVENT_ZORA_EGGS_LONE_GUARD",
       "RequiredItems": [
-        "MM_can_hookshot",
+        "MM_can_hookshot_short",
         "MM_MASK_ZORA",
         "MM_has_bottle",
         "MM Pirate Fortress Lone Guard Aquarium"
@@ -27507,7 +27903,7 @@
     {
       "Id": "MM_EVENT_ZORA_EGGS_TREASURE_ROOM",
       "RequiredItems": [
-        "MM_can_hookshot",
+        "MM_can_hookshot_short",
         "MM_MASK_ZORA",
         "MM_has_bottle",
         "MM Pirate Fortress Treasure Room Aquarium"
@@ -27987,7 +28383,7 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_can_hookshot"
+          "MM_can_hookshot_short"
         ],
         [
           "MM_EVENT_SNOWHEAD_PUSH_BLOCK",
@@ -28053,7 +28449,10 @@
           "MM_can_use_fire_arrows"
         ],
         [
-          "MM_can_hookshot"
+          "MM_can_hookshot_short"
+        ],
+        [
+          "MM_can_goron_bomb_jump"
         ]
       ],
       "TimeNeeded": "None",
@@ -28631,7 +29030,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Stone Tower Temple West Garden => MM Stone Tower Temple Center",
+      "Id": "MM Stone Tower Temple West Garden => MM Stone Tower Temple Center Ledge",
       "RequiredItems": [],
       "ConditionalItems": [
         [
@@ -28669,7 +29068,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Stone Tower Temple Center => MM Stone Tower Temple West Garden",
+      "Id": "MM Stone Tower Temple Center Ledge => MM Stone Tower Temple West Garden",
       "RequiredItems": [],
       "ConditionalItems": [
         [
@@ -28689,9 +29088,41 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Stone Tower Temple Center Ledge => MM Stone Tower Temple Center",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Stone Tower Temple Center => MM Stone Tower Temple Water Room",
       "RequiredItems": [
         "MM_MASK_ZORA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Stone Tower Temple Center => MM Stone Tower Temple Center Ledge",
+      "RequiredItems": [
+        "MM_MASK_ZORA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Stone Tower Temple Center => MM Stone Tower Temple Water Bridge",
+      "RequiredItems": [
+        "MM_can_goron_bomb_jump",
+        "MM_can_use_ice_arrows"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -28843,6 +29274,29 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Stone Tower Temple Water Bridge => MM Stone Tower Temple Center",
+      "RequiredItems": [
+        "MM_can_goron_bomb_jump"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Stone Tower Temple Water Bridge => MM Stone Tower Temple Center Ledge",
+      "RequiredItems": [
+        "MM_can_goron_bomb_jump",
+        "MM_can_use_ice_arrows"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Stone Tower Temple Inverted => MM Stone Tower Temple Inverted Entrance",
       "RequiredItems": [
         "MM_EVENT_TIME_TRAVEL"
@@ -28883,6 +29337,18 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Stone Tower Temple Inverted Entrance => MM Stone Tower Temple Inverted Entrance Ledge",
+      "RequiredItems": [
+        "TRICK_MM_ISTT_ENTRY_JUMP",
+        "MM_BOMB_BAG"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Stone Tower Temple Inverted East => MM Stone Tower Temple Inverted Entrance",
       "RequiredItems": [
         "MM_can_use_light_arrows"
@@ -28911,7 +29377,7 @@
       "RequiredItems": [
         "TRICK_MM_ISTT_EYEGORE",
         "MM_has_shield",
-        "MM_BOMB_BAG"
+        "MM_has_explosives"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -28924,14 +29390,7 @@
       "RequiredItems": [
         "TRICK_MM_ISTT_EYEGORE"
       ],
-      "ConditionalItems": [
-        [
-          "MM_MASK_DEKU"
-        ],
-        [
-          "MM_MASK_ZORA"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -28952,16 +29411,9 @@
     {
       "Id": "MM Stone Tower Temple Inverted Wizzrobe => MM Stone Tower Temple Inverted Wizzrobe Ledge",
       "RequiredItems": [
-        "MM_can_hookshot"
+        "MM_can_hookshot_short"
       ],
-      "ConditionalItems": [
-        [
-          "MM_can_fight"
-        ],
-        [
-          "MM_BOW"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -29022,8 +29474,8 @@
     {
       "Id": "MM Stone Tower Temple Inverted Center => MM Stone Tower Temple Inverted Boss Key Room",
       "RequiredItems": [
-        "MM_has_weapon_range",
-        "MM_MASK_DEKU"
+        "MM_MASK_DEKU",
+        "MM_has_weapon_range"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -29052,7 +29504,6 @@
     {
       "Id": "MM Stone Tower Temple Inverted Boss Key Room => MM Stone Tower Temple Inverted Center",
       "RequiredItems": [
-        "MM_has_weapon_range",
         "MM_MASK_DEKU"
       ],
       "ConditionalItems": [],
@@ -29067,6 +29518,15 @@
         "MM_SMALL_KEY_ST, 4",
         "MM_can_hookshot"
       ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Stone Tower Temple Inverted Entrance Ledge => MM Stone Tower Temple Inverted Center",
+      "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -29096,10 +29556,16 @@
     {
       "Id": "MM Stone Tower Temple Inverted Bridge => MM Stone Tower Temple Inverted Boss Key Room",
       "RequiredItems": [
-        "TRICK_MM_ISTT_EYEGORE",
-        "MM_MASK_GORON"
+        "TRICK_MM_ISTT_EYEGORE"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_MASK_GORON"
+        ],
+        [
+          "MM_has_explosives"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -29108,10 +29574,16 @@
     {
       "Id": "MM Stone Tower Temple Inverted Bridge => MM Stone Tower Temple Inverted Center",
       "RequiredItems": [
-        "TRICK_MM_ISTT_EYEGORE",
-        "MM_MASK_GORON"
+        "TRICK_MM_ISTT_EYEGORE"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_MASK_GORON"
+        ],
+        [
+          "MM_has_explosives"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -29120,7 +29592,7 @@
     {
       "Id": "MM Stone Tower Temple Inverted Bridge 2 => MM Stone Tower Temple Boss",
       "RequiredItems": [
-        "MM_can_hookshot",
+        "MM_can_hookshot_short",
         "MM_BOSS_KEY_ST"
       ],
       "ConditionalItems": [],
@@ -29245,7 +29717,7 @@
           "MM_MASK_DEKU"
         ],
         [
-          "MM_can_hookshot"
+          "MM_can_hookshot_short"
         ]
       ],
       "TimeNeeded": "None",
@@ -29293,7 +29765,7 @@
           "MM_EVENT_WOODFALL_TEMPLE_MAIN_LADDER"
         ],
         [
-          "MM_can_hookshot"
+          "MM_can_hookshot_short"
         ]
       ],
       "TimeNeeded": "None",
@@ -29336,7 +29808,13 @@
           "MM_MASK_DEKU"
         ],
         [
-          "MM_can_hookshot"
+          "MM_can_hookshot_short"
+        ],
+        [
+          "MM_can_use_ice_arrows"
+        ],
+        [
+          "MM_EVENT_WOODFALL_TEMPLE_MAIN_FLOWER"
         ]
       ],
       "TimeNeeded": "None",
@@ -31151,7 +31629,17 @@
     {
       "Id": "MM_has_shield",
       "RequiredItems": [],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_SHIELD_HERO"
+        ],
+        [
+          "MM_has_mirror_shield"
+        ],
+        [
+          "MM_SHIELD"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -31271,336 +31759,62 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT_renewable_nuts",
+      "Id": "MM_has_blue_potion",
+      "RequiredItems": [
+        "MM_has_bottle"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_EVENT_BLUE_POTION"
+        ],
+        [
+          "MM_renewable_blue_potion"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_has_red_potion",
+      "RequiredItems": [
+        "MM_has_bottle",
+        "MM_renewable_red_potion"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_has_milk",
+      "RequiredItems": [
+        "MM_has_bottle"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_renewable_milk"
+        ],
+        [
+          "MM_EVENT_MILK"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_has_red_or_blue_potion",
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "contains{OOT Kokiri Forest Cow, OOT_ANY_NUT}",
-          "check{OOT Kokiri Forest Cow}"
+          "MM_has_red_potion"
         ],
         [
-          "contains{OOT Kokiri Shop Item 1, OOT_ANY_NUT}",
-          "check{OOT Kokiri Shop Item 1}"
-        ],
-        [
-          "contains{OOT Kokiri Shop Item 2, OOT_ANY_NUT}",
-          "check{OOT Kokiri Shop Item 2}"
-        ],
-        [
-          "contains{OOT Kokiri Shop Item 3, OOT_ANY_NUT}",
-          "check{OOT Kokiri Shop Item 3}"
-        ],
-        [
-          "contains{OOT Kokiri Shop Item 4, OOT_ANY_NUT}",
-          "check{OOT Kokiri Shop Item 4}"
-        ],
-        [
-          "contains{OOT Kokiri Shop Item 5, OOT_ANY_NUT}",
-          "check{OOT Kokiri Shop Item 5}"
-        ],
-        [
-          "contains{OOT Kokiri Shop Item 6, OOT_ANY_NUT}",
-          "check{OOT Kokiri Shop Item 6}"
-        ],
-        [
-          "contains{OOT Kokiri Shop Item 7, OOT_ANY_NUT}",
-          "check{OOT Kokiri Shop Item 7}"
-        ],
-        [
-          "contains{OOT Kokiri Shop Item 8, OOT_ANY_NUT}",
-          "check{OOT Kokiri Shop Item 8}"
-        ],
-        [
-          "contains{OOT Kakariko Cow, OOT_ANY_NUT}",
-          "check{OOT Kakariko Cow}"
-        ],
-        [
-          "contains{OOT Kakariko Bazaar Item 1, OOT_ANY_NUT}",
-          "check{OOT Kakariko Bazaar Item 1}"
-        ],
-        [
-          "contains{OOT Kakariko Bazaar Item 2, OOT_ANY_NUT}",
-          "check{OOT Kakariko Bazaar Item 2}"
-        ],
-        [
-          "contains{OOT Kakariko Bazaar Item 3, OOT_ANY_NUT}",
-          "check{OOT Kakariko Bazaar Item 3}"
-        ],
-        [
-          "contains{OOT Kakariko Bazaar Item 4, OOT_ANY_NUT}",
-          "check{OOT Kakariko Bazaar Item 4}"
-        ],
-        [
-          "contains{OOT Kakariko Bazaar Item 5, OOT_ANY_NUT}",
-          "check{OOT Kakariko Bazaar Item 5}"
-        ],
-        [
-          "contains{OOT Kakariko Bazaar Item 6, OOT_ANY_NUT}",
-          "check{OOT Kakariko Bazaar Item 6}"
-        ],
-        [
-          "contains{OOT Kakariko Bazaar Item 7, OOT_ANY_NUT}",
-          "check{OOT Kakariko Bazaar Item 7}"
-        ],
-        [
-          "contains{OOT Kakariko Bazaar Item 8, OOT_ANY_NUT}",
-          "check{OOT Kakariko Bazaar Item 8}"
-        ],
-        [
-          "contains{OOT Kakariko Potion Shop Item 1, OOT_ANY_NUT}",
-          "check{OOT Kakariko Potion Shop Item 1}"
-        ],
-        [
-          "contains{OOT Kakariko Potion Shop Item 2, OOT_ANY_NUT}",
-          "check{OOT Kakariko Potion Shop Item 2}"
-        ],
-        [
-          "contains{OOT Kakariko Potion Shop Item 3, OOT_ANY_NUT}",
-          "check{OOT Kakariko Potion Shop Item 3}"
-        ],
-        [
-          "contains{OOT Kakariko Potion Shop Item 4, OOT_ANY_NUT}",
-          "check{OOT Kakariko Potion Shop Item 4}"
-        ],
-        [
-          "contains{OOT Kakariko Potion Shop Item 5, OOT_ANY_NUT}",
-          "check{OOT Kakariko Potion Shop Item 5}"
-        ],
-        [
-          "contains{OOT Kakariko Potion Shop Item 6, OOT_ANY_NUT}",
-          "check{OOT Kakariko Potion Shop Item 6}"
-        ],
-        [
-          "contains{OOT Kakariko Potion Shop Item 7, OOT_ANY_NUT}",
-          "check{OOT Kakariko Potion Shop Item 7}"
-        ],
-        [
-          "contains{OOT Kakariko Potion Shop Item 8, OOT_ANY_NUT}",
-          "check{OOT Kakariko Potion Shop Item 8}"
-        ],
-        [
-          "contains{OOT Death Mountain Cow, OOT_ANY_NUT}",
-          "check{OOT Death Mountain Cow}"
-        ],
-        [
-          "contains{OOT Goron Shop Item 1, OOT_ANY_NUT}",
-          "check{OOT Goron Shop Item 1}"
-        ],
-        [
-          "contains{OOT Goron Shop Item 2, OOT_ANY_NUT}",
-          "check{OOT Goron Shop Item 2}"
-        ],
-        [
-          "contains{OOT Goron Shop Item 3, OOT_ANY_NUT}",
-          "check{OOT Goron Shop Item 3}"
-        ],
-        [
-          "contains{OOT Goron Shop Item 4, OOT_ANY_NUT}",
-          "check{OOT Goron Shop Item 4}"
-        ],
-        [
-          "contains{OOT Goron Shop Item 5, OOT_ANY_NUT}",
-          "check{OOT Goron Shop Item 5}"
-        ],
-        [
-          "contains{OOT Goron Shop Item 6, OOT_ANY_NUT}",
-          "check{OOT Goron Shop Item 6}"
-        ],
-        [
-          "contains{OOT Goron Shop Item 7, OOT_ANY_NUT}",
-          "check{OOT Goron Shop Item 7}"
-        ],
-        [
-          "contains{OOT Goron Shop Item 8, OOT_ANY_NUT}",
-          "check{OOT Goron Shop Item 8}"
-        ],
-        [
-          "contains{OOT Zora Shop Item 1, OOT_ANY_NUT}",
-          "check{OOT Zora Shop Item 1}"
-        ],
-        [
-          "contains{OOT Zora Shop Item 2, OOT_ANY_NUT}",
-          "check{OOT Zora Shop Item 2}"
-        ],
-        [
-          "contains{OOT Zora Shop Item 3, OOT_ANY_NUT}",
-          "check{OOT Zora Shop Item 3}"
-        ],
-        [
-          "contains{OOT Zora Shop Item 4, OOT_ANY_NUT}",
-          "check{OOT Zora Shop Item 4}"
-        ],
-        [
-          "contains{OOT Zora Shop Item 5, OOT_ANY_NUT}",
-          "check{OOT Zora Shop Item 5}"
-        ],
-        [
-          "contains{OOT Zora Shop Item 6, OOT_ANY_NUT}",
-          "check{OOT Zora Shop Item 6}"
-        ],
-        [
-          "contains{OOT Zora Shop Item 7, OOT_ANY_NUT}",
-          "check{OOT Zora Shop Item 7}"
-        ],
-        [
-          "contains{OOT Zora Shop Item 8, OOT_ANY_NUT}",
-          "check{OOT Zora Shop Item 8}"
-        ],
-        [
-          "contains{OOT Lon Lon Ranch Stables Cow Left, OOT_ANY_NUT}",
-          "check{OOT Lon Lon Ranch Stables Cow Left}"
-        ],
-        [
-          "contains{OOT Lon Lon Ranch Stables Cow Right, OOT_ANY_NUT}",
-          "check{OOT Lon Lon Ranch Stables Cow Right}"
-        ],
-        [
-          "contains{OOT Lon Lon Ranch Silo Cow Front, OOT_ANY_NUT}",
-          "check{OOT Lon Lon Ranch Silo Cow Front}"
-        ],
-        [
-          "contains{OOT Lon Lon Ranch Silo Cow Back, OOT_ANY_NUT}",
-          "check{OOT Lon Lon Ranch Silo Cow Back}"
-        ],
-        [
-          "contains{OOT Hyrule Field Cow, OOT_ANY_NUT}",
-          "check{OOT Hyrule Field Cow}"
-        ],
-        [
-          "contains{OOT Market Bazaar Item 1, OOT_ANY_NUT}",
-          "check{OOT Market Bazaar Item 1}"
-        ],
-        [
-          "contains{OOT Market Bazaar Item 2, OOT_ANY_NUT}",
-          "check{OOT Market Bazaar Item 2}"
-        ],
-        [
-          "contains{OOT Market Bazaar Item 3, OOT_ANY_NUT}",
-          "check{OOT Market Bazaar Item 3}"
-        ],
-        [
-          "contains{OOT Market Bazaar Item 4, OOT_ANY_NUT}",
-          "check{OOT Market Bazaar Item 4}"
-        ],
-        [
-          "contains{OOT Market Bazaar Item 5, OOT_ANY_NUT}",
-          "check{OOT Market Bazaar Item 5}"
-        ],
-        [
-          "contains{OOT Market Bazaar Item 6, OOT_ANY_NUT}",
-          "check{OOT Market Bazaar Item 6}"
-        ],
-        [
-          "contains{OOT Market Bazaar Item 7, OOT_ANY_NUT}",
-          "check{OOT Market Bazaar Item 7}"
-        ],
-        [
-          "contains{OOT Market Bazaar Item 8, OOT_ANY_NUT}",
-          "check{OOT Market Bazaar Item 8}"
-        ],
-        [
-          "contains{OOT Market Potion Shop Item 1, OOT_ANY_NUT}",
-          "check{OOT Market Potion Shop Item 1}"
-        ],
-        [
-          "contains{OOT Market Potion Shop Item 2, OOT_ANY_NUT}",
-          "check{OOT Market Potion Shop Item 2}"
-        ],
-        [
-          "contains{OOT Market Potion Shop Item 3, OOT_ANY_NUT}",
-          "check{OOT Market Potion Shop Item 3}"
-        ],
-        [
-          "contains{OOT Market Potion Shop Item 4, OOT_ANY_NUT}",
-          "check{OOT Market Potion Shop Item 4}"
-        ],
-        [
-          "contains{OOT Market Potion Shop Item 5, OOT_ANY_NUT}",
-          "check{OOT Market Potion Shop Item 5}"
-        ],
-        [
-          "contains{OOT Market Potion Shop Item 6, OOT_ANY_NUT}",
-          "check{OOT Market Potion Shop Item 6}"
-        ],
-        [
-          "contains{OOT Market Potion Shop Item 7, OOT_ANY_NUT}",
-          "check{OOT Market Potion Shop Item 7}"
-        ],
-        [
-          "contains{OOT Market Potion Shop Item 8, OOT_ANY_NUT}",
-          "check{OOT Market Potion Shop Item 8}"
-        ],
-        [
-          "contains{OOT Market Bombchu Shop Item 1, OOT_ANY_NUT}",
-          "check{OOT Market Bombchu Shop Item 1}"
-        ],
-        [
-          "contains{OOT Market Bombchu Shop Item 2, OOT_ANY_NUT}",
-          "check{OOT Market Bombchu Shop Item 2}"
-        ],
-        [
-          "contains{OOT Market Bombchu Shop Item 3, OOT_ANY_NUT}",
-          "check{OOT Market Bombchu Shop Item 3}"
-        ],
-        [
-          "contains{OOT Market Bombchu Shop Item 4, OOT_ANY_NUT}",
-          "check{OOT Market Bombchu Shop Item 4}"
-        ],
-        [
-          "contains{OOT Market Bombchu Shop Item 5, OOT_ANY_NUT}",
-          "check{OOT Market Bombchu Shop Item 5}"
-        ],
-        [
-          "contains{OOT Market Bombchu Shop Item 6, OOT_ANY_NUT}",
-          "check{OOT Market Bombchu Shop Item 6}"
-        ],
-        [
-          "contains{OOT Market Bombchu Shop Item 7, OOT_ANY_NUT}",
-          "check{OOT Market Bombchu Shop Item 7}"
-        ],
-        [
-          "contains{OOT Market Bombchu Shop Item 8, OOT_ANY_NUT}",
-          "check{OOT Market Bombchu Shop Item 8}"
-        ],
-        [
-          "contains{OOT Gerudo Valley Cow, OOT_ANY_NUT}",
-          "check{OOT Gerudo Valley Cow}"
-        ],
-        [
-          "contains{OOT MQ Jabu-Jabu Cow, OOT_ANY_NUT}",
-          "check{OOT MQ Jabu-Jabu Cow}"
-        ],
-        [
-          "contains{MM Termina Field Cow Front, OOT_ANY_NUT}",
-          "check{MM Termina Field Cow Front}"
-        ],
-        [
-          "contains{MM Termina Field Cow Back, OOT_ANY_NUT}",
-          "check{MM Termina Field Cow Back}"
-        ],
-        [
-          "contains{MM Romani Ranch Barn Cow Left, OOT_ANY_NUT}",
-          "check{MM Romani Ranch Barn Cow Left}"
-        ],
-        [
-          "contains{MM Romani Ranch Barn Cow Right Front, OOT_ANY_NUT}",
-          "check{MM Romani Ranch Barn Cow Right Front}"
-        ],
-        [
-          "contains{MM Romani Ranch Barn Cow Right Back, OOT_ANY_NUT}",
-          "check{MM Romani Ranch Barn Cow Right Back}"
-        ],
-        [
-          "contains{MM Great Bay Coast Cow Front, OOT_ANY_NUT}",
-          "check{MM Great Bay Coast Cow Front}"
-        ],
-        [
-          "contains{MM Great Bay Coast Cow Back, OOT_ANY_NUT}",
-          "check{MM Great Bay Coast Cow Back}"
-        ],
-        [
-          "contains{MM Beneath the Well Cow, OOT_ANY_NUT}",
-          "check{MM Beneath the Well Cow}"
+          "MM_has_blue_potion"
         ]
       ],
       "TimeNeeded": "None",
@@ -31909,12 +32123,76 @@
           "check{OOT MQ Jabu-Jabu Cow}"
         ],
         [
+          "contains{MM Trading Post Item 1, OOT_ANY_STICK}",
+          "check{MM Trading Post Item 1}"
+        ],
+        [
+          "contains{MM Trading Post Item 2, OOT_ANY_STICK}",
+          "check{MM Trading Post Item 2}"
+        ],
+        [
+          "contains{MM Trading Post Item 3, OOT_ANY_STICK}",
+          "check{MM Trading Post Item 3}"
+        ],
+        [
+          "contains{MM Trading Post Item 4, OOT_ANY_STICK}",
+          "check{MM Trading Post Item 4}"
+        ],
+        [
+          "contains{MM Trading Post Item 5, OOT_ANY_STICK}",
+          "check{MM Trading Post Item 5}"
+        ],
+        [
+          "contains{MM Trading Post Item 6, OOT_ANY_STICK}",
+          "check{MM Trading Post Item 6}"
+        ],
+        [
+          "contains{MM Trading Post Item 7, OOT_ANY_STICK}",
+          "check{MM Trading Post Item 7}"
+        ],
+        [
+          "contains{MM Trading Post Item 8, OOT_ANY_STICK}",
+          "check{MM Trading Post Item 8}"
+        ],
+        [
+          "contains{MM Bomb Shop Item 1, OOT_ANY_STICK}",
+          "check{MM Bomb Shop Item 1}"
+        ],
+        [
+          "contains{MM Bomb Shop Item 2, OOT_ANY_STICK}",
+          "check{MM Bomb Shop Item 2}"
+        ],
+        [
           "contains{MM Termina Field Cow Front, OOT_ANY_STICK}",
           "check{MM Termina Field Cow Front}"
         ],
         [
           "contains{MM Termina Field Cow Back, OOT_ANY_STICK}",
           "check{MM Termina Field Cow Back}"
+        ],
+        [
+          "contains{MM Swamp Potion Shop Item 1, OOT_ANY_STICK}",
+          "check{MM Swamp Potion Shop Item 1}"
+        ],
+        [
+          "contains{MM Swamp Potion Shop Item 2, OOT_ANY_STICK}",
+          "check{MM Swamp Potion Shop Item 2}"
+        ],
+        [
+          "contains{MM Swamp Potion Shop Item 3, OOT_ANY_STICK}",
+          "check{MM Swamp Potion Shop Item 3}"
+        ],
+        [
+          "contains{MM Goron Shop Item 1, OOT_ANY_STICK}",
+          "check{MM Goron Shop Item 1}"
+        ],
+        [
+          "contains{MM Goron Shop Item 2, OOT_ANY_STICK}",
+          "check{MM Goron Shop Item 2}"
+        ],
+        [
+          "contains{MM Goron Shop Item 3, OOT_ANY_STICK}",
+          "check{MM Goron Shop Item 3}"
         ],
         [
           "contains{MM Romani Ranch Barn Cow Left, OOT_ANY_STICK}",
@@ -31937,7 +32215,433 @@
           "check{MM Great Bay Coast Cow Back}"
         ],
         [
+          "contains{MM Zora Shop Item 1, OOT_ANY_STICK}",
+          "check{MM Zora Shop Item 1}"
+        ],
+        [
+          "contains{MM Zora Shop Item 2, OOT_ANY_STICK}",
+          "check{MM Zora Shop Item 2}"
+        ],
+        [
+          "contains{MM Zora Shop Item 3, OOT_ANY_STICK}",
+          "check{MM Zora Shop Item 3}"
+        ],
+        [
           "contains{MM Beneath the Well Cow, OOT_ANY_STICK}",
+          "check{MM Beneath the Well Cow}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_renewable_nuts",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "contains{OOT Kokiri Forest Cow, OOT_ANY_NUT}",
+          "check{OOT Kokiri Forest Cow}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 1, OOT_ANY_NUT}",
+          "check{OOT Kokiri Shop Item 1}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 2, OOT_ANY_NUT}",
+          "check{OOT Kokiri Shop Item 2}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 3, OOT_ANY_NUT}",
+          "check{OOT Kokiri Shop Item 3}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 4, OOT_ANY_NUT}",
+          "check{OOT Kokiri Shop Item 4}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 5, OOT_ANY_NUT}",
+          "check{OOT Kokiri Shop Item 5}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 6, OOT_ANY_NUT}",
+          "check{OOT Kokiri Shop Item 6}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 7, OOT_ANY_NUT}",
+          "check{OOT Kokiri Shop Item 7}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 8, OOT_ANY_NUT}",
+          "check{OOT Kokiri Shop Item 8}"
+        ],
+        [
+          "contains{OOT Kakariko Cow, OOT_ANY_NUT}",
+          "check{OOT Kakariko Cow}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 1, OOT_ANY_NUT}",
+          "check{OOT Kakariko Bazaar Item 1}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 2, OOT_ANY_NUT}",
+          "check{OOT Kakariko Bazaar Item 2}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 3, OOT_ANY_NUT}",
+          "check{OOT Kakariko Bazaar Item 3}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 4, OOT_ANY_NUT}",
+          "check{OOT Kakariko Bazaar Item 4}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 5, OOT_ANY_NUT}",
+          "check{OOT Kakariko Bazaar Item 5}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 6, OOT_ANY_NUT}",
+          "check{OOT Kakariko Bazaar Item 6}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 7, OOT_ANY_NUT}",
+          "check{OOT Kakariko Bazaar Item 7}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 8, OOT_ANY_NUT}",
+          "check{OOT Kakariko Bazaar Item 8}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 1, OOT_ANY_NUT}",
+          "check{OOT Kakariko Potion Shop Item 1}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 2, OOT_ANY_NUT}",
+          "check{OOT Kakariko Potion Shop Item 2}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 3, OOT_ANY_NUT}",
+          "check{OOT Kakariko Potion Shop Item 3}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 4, OOT_ANY_NUT}",
+          "check{OOT Kakariko Potion Shop Item 4}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 5, OOT_ANY_NUT}",
+          "check{OOT Kakariko Potion Shop Item 5}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 6, OOT_ANY_NUT}",
+          "check{OOT Kakariko Potion Shop Item 6}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 7, OOT_ANY_NUT}",
+          "check{OOT Kakariko Potion Shop Item 7}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 8, OOT_ANY_NUT}",
+          "check{OOT Kakariko Potion Shop Item 8}"
+        ],
+        [
+          "contains{OOT Death Mountain Cow, OOT_ANY_NUT}",
+          "check{OOT Death Mountain Cow}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 1, OOT_ANY_NUT}",
+          "check{OOT Goron Shop Item 1}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 2, OOT_ANY_NUT}",
+          "check{OOT Goron Shop Item 2}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 3, OOT_ANY_NUT}",
+          "check{OOT Goron Shop Item 3}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 4, OOT_ANY_NUT}",
+          "check{OOT Goron Shop Item 4}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 5, OOT_ANY_NUT}",
+          "check{OOT Goron Shop Item 5}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 6, OOT_ANY_NUT}",
+          "check{OOT Goron Shop Item 6}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 7, OOT_ANY_NUT}",
+          "check{OOT Goron Shop Item 7}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 8, OOT_ANY_NUT}",
+          "check{OOT Goron Shop Item 8}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 1, OOT_ANY_NUT}",
+          "check{OOT Zora Shop Item 1}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 2, OOT_ANY_NUT}",
+          "check{OOT Zora Shop Item 2}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 3, OOT_ANY_NUT}",
+          "check{OOT Zora Shop Item 3}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 4, OOT_ANY_NUT}",
+          "check{OOT Zora Shop Item 4}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 5, OOT_ANY_NUT}",
+          "check{OOT Zora Shop Item 5}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 6, OOT_ANY_NUT}",
+          "check{OOT Zora Shop Item 6}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 7, OOT_ANY_NUT}",
+          "check{OOT Zora Shop Item 7}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 8, OOT_ANY_NUT}",
+          "check{OOT Zora Shop Item 8}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Stables Cow Left, OOT_ANY_NUT}",
+          "check{OOT Lon Lon Ranch Stables Cow Left}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Stables Cow Right, OOT_ANY_NUT}",
+          "check{OOT Lon Lon Ranch Stables Cow Right}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Silo Cow Front, OOT_ANY_NUT}",
+          "check{OOT Lon Lon Ranch Silo Cow Front}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Silo Cow Back, OOT_ANY_NUT}",
+          "check{OOT Lon Lon Ranch Silo Cow Back}"
+        ],
+        [
+          "contains{OOT Hyrule Field Cow, OOT_ANY_NUT}",
+          "check{OOT Hyrule Field Cow}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 1, OOT_ANY_NUT}",
+          "check{OOT Market Bazaar Item 1}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 2, OOT_ANY_NUT}",
+          "check{OOT Market Bazaar Item 2}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 3, OOT_ANY_NUT}",
+          "check{OOT Market Bazaar Item 3}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 4, OOT_ANY_NUT}",
+          "check{OOT Market Bazaar Item 4}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 5, OOT_ANY_NUT}",
+          "check{OOT Market Bazaar Item 5}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 6, OOT_ANY_NUT}",
+          "check{OOT Market Bazaar Item 6}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 7, OOT_ANY_NUT}",
+          "check{OOT Market Bazaar Item 7}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 8, OOT_ANY_NUT}",
+          "check{OOT Market Bazaar Item 8}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 1, OOT_ANY_NUT}",
+          "check{OOT Market Potion Shop Item 1}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 2, OOT_ANY_NUT}",
+          "check{OOT Market Potion Shop Item 2}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 3, OOT_ANY_NUT}",
+          "check{OOT Market Potion Shop Item 3}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 4, OOT_ANY_NUT}",
+          "check{OOT Market Potion Shop Item 4}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 5, OOT_ANY_NUT}",
+          "check{OOT Market Potion Shop Item 5}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 6, OOT_ANY_NUT}",
+          "check{OOT Market Potion Shop Item 6}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 7, OOT_ANY_NUT}",
+          "check{OOT Market Potion Shop Item 7}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 8, OOT_ANY_NUT}",
+          "check{OOT Market Potion Shop Item 8}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 1, OOT_ANY_NUT}",
+          "check{OOT Market Bombchu Shop Item 1}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 2, OOT_ANY_NUT}",
+          "check{OOT Market Bombchu Shop Item 2}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 3, OOT_ANY_NUT}",
+          "check{OOT Market Bombchu Shop Item 3}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 4, OOT_ANY_NUT}",
+          "check{OOT Market Bombchu Shop Item 4}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 5, OOT_ANY_NUT}",
+          "check{OOT Market Bombchu Shop Item 5}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 6, OOT_ANY_NUT}",
+          "check{OOT Market Bombchu Shop Item 6}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 7, OOT_ANY_NUT}",
+          "check{OOT Market Bombchu Shop Item 7}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 8, OOT_ANY_NUT}",
+          "check{OOT Market Bombchu Shop Item 8}"
+        ],
+        [
+          "contains{OOT Gerudo Valley Cow, OOT_ANY_NUT}",
+          "check{OOT Gerudo Valley Cow}"
+        ],
+        [
+          "contains{OOT MQ Jabu-Jabu Cow, OOT_ANY_NUT}",
+          "check{OOT MQ Jabu-Jabu Cow}"
+        ],
+        [
+          "contains{MM Trading Post Item 1, OOT_ANY_NUT}",
+          "check{MM Trading Post Item 1}"
+        ],
+        [
+          "contains{MM Trading Post Item 2, OOT_ANY_NUT}",
+          "check{MM Trading Post Item 2}"
+        ],
+        [
+          "contains{MM Trading Post Item 3, OOT_ANY_NUT}",
+          "check{MM Trading Post Item 3}"
+        ],
+        [
+          "contains{MM Trading Post Item 4, OOT_ANY_NUT}",
+          "check{MM Trading Post Item 4}"
+        ],
+        [
+          "contains{MM Trading Post Item 5, OOT_ANY_NUT}",
+          "check{MM Trading Post Item 5}"
+        ],
+        [
+          "contains{MM Trading Post Item 6, OOT_ANY_NUT}",
+          "check{MM Trading Post Item 6}"
+        ],
+        [
+          "contains{MM Trading Post Item 7, OOT_ANY_NUT}",
+          "check{MM Trading Post Item 7}"
+        ],
+        [
+          "contains{MM Trading Post Item 8, OOT_ANY_NUT}",
+          "check{MM Trading Post Item 8}"
+        ],
+        [
+          "contains{MM Bomb Shop Item 1, OOT_ANY_NUT}",
+          "check{MM Bomb Shop Item 1}"
+        ],
+        [
+          "contains{MM Bomb Shop Item 2, OOT_ANY_NUT}",
+          "check{MM Bomb Shop Item 2}"
+        ],
+        [
+          "contains{MM Termina Field Cow Front, OOT_ANY_NUT}",
+          "check{MM Termina Field Cow Front}"
+        ],
+        [
+          "contains{MM Termina Field Cow Back, OOT_ANY_NUT}",
+          "check{MM Termina Field Cow Back}"
+        ],
+        [
+          "contains{MM Swamp Potion Shop Item 1, OOT_ANY_NUT}",
+          "check{MM Swamp Potion Shop Item 1}"
+        ],
+        [
+          "contains{MM Swamp Potion Shop Item 2, OOT_ANY_NUT}",
+          "check{MM Swamp Potion Shop Item 2}"
+        ],
+        [
+          "contains{MM Swamp Potion Shop Item 3, OOT_ANY_NUT}",
+          "check{MM Swamp Potion Shop Item 3}"
+        ],
+        [
+          "contains{MM Goron Shop Item 1, OOT_ANY_NUT}",
+          "check{MM Goron Shop Item 1}"
+        ],
+        [
+          "contains{MM Goron Shop Item 2, OOT_ANY_NUT}",
+          "check{MM Goron Shop Item 2}"
+        ],
+        [
+          "contains{MM Goron Shop Item 3, OOT_ANY_NUT}",
+          "check{MM Goron Shop Item 3}"
+        ],
+        [
+          "contains{MM Romani Ranch Barn Cow Left, OOT_ANY_NUT}",
+          "check{MM Romani Ranch Barn Cow Left}"
+        ],
+        [
+          "contains{MM Romani Ranch Barn Cow Right Front, OOT_ANY_NUT}",
+          "check{MM Romani Ranch Barn Cow Right Front}"
+        ],
+        [
+          "contains{MM Romani Ranch Barn Cow Right Back, OOT_ANY_NUT}",
+          "check{MM Romani Ranch Barn Cow Right Back}"
+        ],
+        [
+          "contains{MM Great Bay Coast Cow Front, OOT_ANY_NUT}",
+          "check{MM Great Bay Coast Cow Front}"
+        ],
+        [
+          "contains{MM Great Bay Coast Cow Back, OOT_ANY_NUT}",
+          "check{MM Great Bay Coast Cow Back}"
+        ],
+        [
+          "contains{MM Zora Shop Item 1, OOT_ANY_NUT}",
+          "check{MM Zora Shop Item 1}"
+        ],
+        [
+          "contains{MM Zora Shop Item 2, OOT_ANY_NUT}",
+          "check{MM Zora Shop Item 2}"
+        ],
+        [
+          "contains{MM Zora Shop Item 3, OOT_ANY_NUT}",
+          "check{MM Zora Shop Item 3}"
+        ],
+        [
+          "contains{MM Beneath the Well Cow, OOT_ANY_NUT}",
           "check{MM Beneath the Well Cow}"
         ]
       ],
@@ -32247,12 +32951,76 @@
           "check{OOT MQ Jabu-Jabu Cow}"
         ],
         [
+          "contains{MM Trading Post Item 1, OOT_BLUE_FIRE}",
+          "check{MM Trading Post Item 1}"
+        ],
+        [
+          "contains{MM Trading Post Item 2, OOT_BLUE_FIRE}",
+          "check{MM Trading Post Item 2}"
+        ],
+        [
+          "contains{MM Trading Post Item 3, OOT_BLUE_FIRE}",
+          "check{MM Trading Post Item 3}"
+        ],
+        [
+          "contains{MM Trading Post Item 4, OOT_BLUE_FIRE}",
+          "check{MM Trading Post Item 4}"
+        ],
+        [
+          "contains{MM Trading Post Item 5, OOT_BLUE_FIRE}",
+          "check{MM Trading Post Item 5}"
+        ],
+        [
+          "contains{MM Trading Post Item 6, OOT_BLUE_FIRE}",
+          "check{MM Trading Post Item 6}"
+        ],
+        [
+          "contains{MM Trading Post Item 7, OOT_BLUE_FIRE}",
+          "check{MM Trading Post Item 7}"
+        ],
+        [
+          "contains{MM Trading Post Item 8, OOT_BLUE_FIRE}",
+          "check{MM Trading Post Item 8}"
+        ],
+        [
+          "contains{MM Bomb Shop Item 1, OOT_BLUE_FIRE}",
+          "check{MM Bomb Shop Item 1}"
+        ],
+        [
+          "contains{MM Bomb Shop Item 2, OOT_BLUE_FIRE}",
+          "check{MM Bomb Shop Item 2}"
+        ],
+        [
           "contains{MM Termina Field Cow Front, OOT_BLUE_FIRE}",
           "check{MM Termina Field Cow Front}"
         ],
         [
           "contains{MM Termina Field Cow Back, OOT_BLUE_FIRE}",
           "check{MM Termina Field Cow Back}"
+        ],
+        [
+          "contains{MM Swamp Potion Shop Item 1, OOT_BLUE_FIRE}",
+          "check{MM Swamp Potion Shop Item 1}"
+        ],
+        [
+          "contains{MM Swamp Potion Shop Item 2, OOT_BLUE_FIRE}",
+          "check{MM Swamp Potion Shop Item 2}"
+        ],
+        [
+          "contains{MM Swamp Potion Shop Item 3, OOT_BLUE_FIRE}",
+          "check{MM Swamp Potion Shop Item 3}"
+        ],
+        [
+          "contains{MM Goron Shop Item 1, OOT_BLUE_FIRE}",
+          "check{MM Goron Shop Item 1}"
+        ],
+        [
+          "contains{MM Goron Shop Item 2, OOT_BLUE_FIRE}",
+          "check{MM Goron Shop Item 2}"
+        ],
+        [
+          "contains{MM Goron Shop Item 3, OOT_BLUE_FIRE}",
+          "check{MM Goron Shop Item 3}"
         ],
         [
           "contains{MM Romani Ranch Barn Cow Left, OOT_BLUE_FIRE}",
@@ -32275,7 +33043,1261 @@
           "check{MM Great Bay Coast Cow Back}"
         ],
         [
+          "contains{MM Zora Shop Item 1, OOT_BLUE_FIRE}",
+          "check{MM Zora Shop Item 1}"
+        ],
+        [
+          "contains{MM Zora Shop Item 2, OOT_BLUE_FIRE}",
+          "check{MM Zora Shop Item 2}"
+        ],
+        [
+          "contains{MM Zora Shop Item 3, OOT_BLUE_FIRE}",
+          "check{MM Zora Shop Item 3}"
+        ],
+        [
           "contains{MM Beneath the Well Cow, OOT_BLUE_FIRE}",
+          "check{MM Beneath the Well Cow}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_renewable_red_potion",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "contains{OOT Kokiri Forest Cow, MM_POTION_RED}",
+          "check{OOT Kokiri Forest Cow}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 1, MM_POTION_RED}",
+          "check{OOT Kokiri Shop Item 1}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 2, MM_POTION_RED}",
+          "check{OOT Kokiri Shop Item 2}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 3, MM_POTION_RED}",
+          "check{OOT Kokiri Shop Item 3}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 4, MM_POTION_RED}",
+          "check{OOT Kokiri Shop Item 4}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 5, MM_POTION_RED}",
+          "check{OOT Kokiri Shop Item 5}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 6, MM_POTION_RED}",
+          "check{OOT Kokiri Shop Item 6}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 7, MM_POTION_RED}",
+          "check{OOT Kokiri Shop Item 7}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 8, MM_POTION_RED}",
+          "check{OOT Kokiri Shop Item 8}"
+        ],
+        [
+          "contains{OOT Kakariko Cow, MM_POTION_RED}",
+          "check{OOT Kakariko Cow}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 1, MM_POTION_RED}",
+          "check{OOT Kakariko Bazaar Item 1}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 2, MM_POTION_RED}",
+          "check{OOT Kakariko Bazaar Item 2}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 3, MM_POTION_RED}",
+          "check{OOT Kakariko Bazaar Item 3}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 4, MM_POTION_RED}",
+          "check{OOT Kakariko Bazaar Item 4}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 5, MM_POTION_RED}",
+          "check{OOT Kakariko Bazaar Item 5}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 6, MM_POTION_RED}",
+          "check{OOT Kakariko Bazaar Item 6}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 7, MM_POTION_RED}",
+          "check{OOT Kakariko Bazaar Item 7}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 8, MM_POTION_RED}",
+          "check{OOT Kakariko Bazaar Item 8}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 1, MM_POTION_RED}",
+          "check{OOT Kakariko Potion Shop Item 1}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 2, MM_POTION_RED}",
+          "check{OOT Kakariko Potion Shop Item 2}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 3, MM_POTION_RED}",
+          "check{OOT Kakariko Potion Shop Item 3}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 4, MM_POTION_RED}",
+          "check{OOT Kakariko Potion Shop Item 4}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 5, MM_POTION_RED}",
+          "check{OOT Kakariko Potion Shop Item 5}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 6, MM_POTION_RED}",
+          "check{OOT Kakariko Potion Shop Item 6}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 7, MM_POTION_RED}",
+          "check{OOT Kakariko Potion Shop Item 7}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 8, MM_POTION_RED}",
+          "check{OOT Kakariko Potion Shop Item 8}"
+        ],
+        [
+          "contains{OOT Death Mountain Cow, MM_POTION_RED}",
+          "check{OOT Death Mountain Cow}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 1, MM_POTION_RED}",
+          "check{OOT Goron Shop Item 1}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 2, MM_POTION_RED}",
+          "check{OOT Goron Shop Item 2}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 3, MM_POTION_RED}",
+          "check{OOT Goron Shop Item 3}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 4, MM_POTION_RED}",
+          "check{OOT Goron Shop Item 4}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 5, MM_POTION_RED}",
+          "check{OOT Goron Shop Item 5}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 6, MM_POTION_RED}",
+          "check{OOT Goron Shop Item 6}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 7, MM_POTION_RED}",
+          "check{OOT Goron Shop Item 7}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 8, MM_POTION_RED}",
+          "check{OOT Goron Shop Item 8}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 1, MM_POTION_RED}",
+          "check{OOT Zora Shop Item 1}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 2, MM_POTION_RED}",
+          "check{OOT Zora Shop Item 2}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 3, MM_POTION_RED}",
+          "check{OOT Zora Shop Item 3}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 4, MM_POTION_RED}",
+          "check{OOT Zora Shop Item 4}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 5, MM_POTION_RED}",
+          "check{OOT Zora Shop Item 5}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 6, MM_POTION_RED}",
+          "check{OOT Zora Shop Item 6}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 7, MM_POTION_RED}",
+          "check{OOT Zora Shop Item 7}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 8, MM_POTION_RED}",
+          "check{OOT Zora Shop Item 8}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Stables Cow Left, MM_POTION_RED}",
+          "check{OOT Lon Lon Ranch Stables Cow Left}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Stables Cow Right, MM_POTION_RED}",
+          "check{OOT Lon Lon Ranch Stables Cow Right}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Silo Cow Front, MM_POTION_RED}",
+          "check{OOT Lon Lon Ranch Silo Cow Front}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Silo Cow Back, MM_POTION_RED}",
+          "check{OOT Lon Lon Ranch Silo Cow Back}"
+        ],
+        [
+          "contains{OOT Hyrule Field Cow, MM_POTION_RED}",
+          "check{OOT Hyrule Field Cow}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 1, MM_POTION_RED}",
+          "check{OOT Market Bazaar Item 1}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 2, MM_POTION_RED}",
+          "check{OOT Market Bazaar Item 2}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 3, MM_POTION_RED}",
+          "check{OOT Market Bazaar Item 3}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 4, MM_POTION_RED}",
+          "check{OOT Market Bazaar Item 4}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 5, MM_POTION_RED}",
+          "check{OOT Market Bazaar Item 5}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 6, MM_POTION_RED}",
+          "check{OOT Market Bazaar Item 6}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 7, MM_POTION_RED}",
+          "check{OOT Market Bazaar Item 7}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 8, MM_POTION_RED}",
+          "check{OOT Market Bazaar Item 8}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 1, MM_POTION_RED}",
+          "check{OOT Market Potion Shop Item 1}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 2, MM_POTION_RED}",
+          "check{OOT Market Potion Shop Item 2}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 3, MM_POTION_RED}",
+          "check{OOT Market Potion Shop Item 3}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 4, MM_POTION_RED}",
+          "check{OOT Market Potion Shop Item 4}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 5, MM_POTION_RED}",
+          "check{OOT Market Potion Shop Item 5}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 6, MM_POTION_RED}",
+          "check{OOT Market Potion Shop Item 6}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 7, MM_POTION_RED}",
+          "check{OOT Market Potion Shop Item 7}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 8, MM_POTION_RED}",
+          "check{OOT Market Potion Shop Item 8}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 1, MM_POTION_RED}",
+          "check{OOT Market Bombchu Shop Item 1}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 2, MM_POTION_RED}",
+          "check{OOT Market Bombchu Shop Item 2}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 3, MM_POTION_RED}",
+          "check{OOT Market Bombchu Shop Item 3}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 4, MM_POTION_RED}",
+          "check{OOT Market Bombchu Shop Item 4}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 5, MM_POTION_RED}",
+          "check{OOT Market Bombchu Shop Item 5}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 6, MM_POTION_RED}",
+          "check{OOT Market Bombchu Shop Item 6}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 7, MM_POTION_RED}",
+          "check{OOT Market Bombchu Shop Item 7}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 8, MM_POTION_RED}",
+          "check{OOT Market Bombchu Shop Item 8}"
+        ],
+        [
+          "contains{OOT Gerudo Valley Cow, MM_POTION_RED}",
+          "check{OOT Gerudo Valley Cow}"
+        ],
+        [
+          "contains{OOT MQ Jabu-Jabu Cow, MM_POTION_RED}",
+          "check{OOT MQ Jabu-Jabu Cow}"
+        ],
+        [
+          "contains{MM Trading Post Item 1, MM_POTION_RED}",
+          "check{MM Trading Post Item 1}"
+        ],
+        [
+          "contains{MM Trading Post Item 2, MM_POTION_RED}",
+          "check{MM Trading Post Item 2}"
+        ],
+        [
+          "contains{MM Trading Post Item 3, MM_POTION_RED}",
+          "check{MM Trading Post Item 3}"
+        ],
+        [
+          "contains{MM Trading Post Item 4, MM_POTION_RED}",
+          "check{MM Trading Post Item 4}"
+        ],
+        [
+          "contains{MM Trading Post Item 5, MM_POTION_RED}",
+          "check{MM Trading Post Item 5}"
+        ],
+        [
+          "contains{MM Trading Post Item 6, MM_POTION_RED}",
+          "check{MM Trading Post Item 6}"
+        ],
+        [
+          "contains{MM Trading Post Item 7, MM_POTION_RED}",
+          "check{MM Trading Post Item 7}"
+        ],
+        [
+          "contains{MM Trading Post Item 8, MM_POTION_RED}",
+          "check{MM Trading Post Item 8}"
+        ],
+        [
+          "contains{MM Bomb Shop Item 1, MM_POTION_RED}",
+          "check{MM Bomb Shop Item 1}"
+        ],
+        [
+          "contains{MM Bomb Shop Item 2, MM_POTION_RED}",
+          "check{MM Bomb Shop Item 2}"
+        ],
+        [
+          "contains{MM Termina Field Cow Front, MM_POTION_RED}",
+          "check{MM Termina Field Cow Front}"
+        ],
+        [
+          "contains{MM Termina Field Cow Back, MM_POTION_RED}",
+          "check{MM Termina Field Cow Back}"
+        ],
+        [
+          "contains{MM Swamp Potion Shop Item 1, MM_POTION_RED}",
+          "check{MM Swamp Potion Shop Item 1}"
+        ],
+        [
+          "contains{MM Swamp Potion Shop Item 2, MM_POTION_RED}",
+          "check{MM Swamp Potion Shop Item 2}"
+        ],
+        [
+          "contains{MM Swamp Potion Shop Item 3, MM_POTION_RED}",
+          "check{MM Swamp Potion Shop Item 3}"
+        ],
+        [
+          "contains{MM Goron Shop Item 1, MM_POTION_RED}",
+          "check{MM Goron Shop Item 1}"
+        ],
+        [
+          "contains{MM Goron Shop Item 2, MM_POTION_RED}",
+          "check{MM Goron Shop Item 2}"
+        ],
+        [
+          "contains{MM Goron Shop Item 3, MM_POTION_RED}",
+          "check{MM Goron Shop Item 3}"
+        ],
+        [
+          "contains{MM Romani Ranch Barn Cow Left, MM_POTION_RED}",
+          "check{MM Romani Ranch Barn Cow Left}"
+        ],
+        [
+          "contains{MM Romani Ranch Barn Cow Right Front, MM_POTION_RED}",
+          "check{MM Romani Ranch Barn Cow Right Front}"
+        ],
+        [
+          "contains{MM Romani Ranch Barn Cow Right Back, MM_POTION_RED}",
+          "check{MM Romani Ranch Barn Cow Right Back}"
+        ],
+        [
+          "contains{MM Great Bay Coast Cow Front, MM_POTION_RED}",
+          "check{MM Great Bay Coast Cow Front}"
+        ],
+        [
+          "contains{MM Great Bay Coast Cow Back, MM_POTION_RED}",
+          "check{MM Great Bay Coast Cow Back}"
+        ],
+        [
+          "contains{MM Zora Shop Item 1, MM_POTION_RED}",
+          "check{MM Zora Shop Item 1}"
+        ],
+        [
+          "contains{MM Zora Shop Item 2, MM_POTION_RED}",
+          "check{MM Zora Shop Item 2}"
+        ],
+        [
+          "contains{MM Zora Shop Item 3, MM_POTION_RED}",
+          "check{MM Zora Shop Item 3}"
+        ],
+        [
+          "contains{MM Beneath the Well Cow, MM_POTION_RED}",
+          "check{MM Beneath the Well Cow}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_renewable_blue_potion",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "contains{OOT Kokiri Forest Cow, MM_POTION_BLUE}",
+          "check{OOT Kokiri Forest Cow}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 1, MM_POTION_BLUE}",
+          "check{OOT Kokiri Shop Item 1}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 2, MM_POTION_BLUE}",
+          "check{OOT Kokiri Shop Item 2}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 3, MM_POTION_BLUE}",
+          "check{OOT Kokiri Shop Item 3}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 4, MM_POTION_BLUE}",
+          "check{OOT Kokiri Shop Item 4}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 5, MM_POTION_BLUE}",
+          "check{OOT Kokiri Shop Item 5}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 6, MM_POTION_BLUE}",
+          "check{OOT Kokiri Shop Item 6}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 7, MM_POTION_BLUE}",
+          "check{OOT Kokiri Shop Item 7}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 8, MM_POTION_BLUE}",
+          "check{OOT Kokiri Shop Item 8}"
+        ],
+        [
+          "contains{OOT Kakariko Cow, MM_POTION_BLUE}",
+          "check{OOT Kakariko Cow}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 1, MM_POTION_BLUE}",
+          "check{OOT Kakariko Bazaar Item 1}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 2, MM_POTION_BLUE}",
+          "check{OOT Kakariko Bazaar Item 2}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 3, MM_POTION_BLUE}",
+          "check{OOT Kakariko Bazaar Item 3}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 4, MM_POTION_BLUE}",
+          "check{OOT Kakariko Bazaar Item 4}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 5, MM_POTION_BLUE}",
+          "check{OOT Kakariko Bazaar Item 5}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 6, MM_POTION_BLUE}",
+          "check{OOT Kakariko Bazaar Item 6}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 7, MM_POTION_BLUE}",
+          "check{OOT Kakariko Bazaar Item 7}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 8, MM_POTION_BLUE}",
+          "check{OOT Kakariko Bazaar Item 8}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 1, MM_POTION_BLUE}",
+          "check{OOT Kakariko Potion Shop Item 1}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 2, MM_POTION_BLUE}",
+          "check{OOT Kakariko Potion Shop Item 2}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 3, MM_POTION_BLUE}",
+          "check{OOT Kakariko Potion Shop Item 3}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 4, MM_POTION_BLUE}",
+          "check{OOT Kakariko Potion Shop Item 4}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 5, MM_POTION_BLUE}",
+          "check{OOT Kakariko Potion Shop Item 5}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 6, MM_POTION_BLUE}",
+          "check{OOT Kakariko Potion Shop Item 6}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 7, MM_POTION_BLUE}",
+          "check{OOT Kakariko Potion Shop Item 7}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 8, MM_POTION_BLUE}",
+          "check{OOT Kakariko Potion Shop Item 8}"
+        ],
+        [
+          "contains{OOT Death Mountain Cow, MM_POTION_BLUE}",
+          "check{OOT Death Mountain Cow}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 1, MM_POTION_BLUE}",
+          "check{OOT Goron Shop Item 1}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 2, MM_POTION_BLUE}",
+          "check{OOT Goron Shop Item 2}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 3, MM_POTION_BLUE}",
+          "check{OOT Goron Shop Item 3}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 4, MM_POTION_BLUE}",
+          "check{OOT Goron Shop Item 4}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 5, MM_POTION_BLUE}",
+          "check{OOT Goron Shop Item 5}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 6, MM_POTION_BLUE}",
+          "check{OOT Goron Shop Item 6}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 7, MM_POTION_BLUE}",
+          "check{OOT Goron Shop Item 7}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 8, MM_POTION_BLUE}",
+          "check{OOT Goron Shop Item 8}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 1, MM_POTION_BLUE}",
+          "check{OOT Zora Shop Item 1}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 2, MM_POTION_BLUE}",
+          "check{OOT Zora Shop Item 2}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 3, MM_POTION_BLUE}",
+          "check{OOT Zora Shop Item 3}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 4, MM_POTION_BLUE}",
+          "check{OOT Zora Shop Item 4}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 5, MM_POTION_BLUE}",
+          "check{OOT Zora Shop Item 5}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 6, MM_POTION_BLUE}",
+          "check{OOT Zora Shop Item 6}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 7, MM_POTION_BLUE}",
+          "check{OOT Zora Shop Item 7}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 8, MM_POTION_BLUE}",
+          "check{OOT Zora Shop Item 8}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Stables Cow Left, MM_POTION_BLUE}",
+          "check{OOT Lon Lon Ranch Stables Cow Left}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Stables Cow Right, MM_POTION_BLUE}",
+          "check{OOT Lon Lon Ranch Stables Cow Right}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Silo Cow Front, MM_POTION_BLUE}",
+          "check{OOT Lon Lon Ranch Silo Cow Front}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Silo Cow Back, MM_POTION_BLUE}",
+          "check{OOT Lon Lon Ranch Silo Cow Back}"
+        ],
+        [
+          "contains{OOT Hyrule Field Cow, MM_POTION_BLUE}",
+          "check{OOT Hyrule Field Cow}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 1, MM_POTION_BLUE}",
+          "check{OOT Market Bazaar Item 1}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 2, MM_POTION_BLUE}",
+          "check{OOT Market Bazaar Item 2}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 3, MM_POTION_BLUE}",
+          "check{OOT Market Bazaar Item 3}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 4, MM_POTION_BLUE}",
+          "check{OOT Market Bazaar Item 4}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 5, MM_POTION_BLUE}",
+          "check{OOT Market Bazaar Item 5}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 6, MM_POTION_BLUE}",
+          "check{OOT Market Bazaar Item 6}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 7, MM_POTION_BLUE}",
+          "check{OOT Market Bazaar Item 7}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 8, MM_POTION_BLUE}",
+          "check{OOT Market Bazaar Item 8}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 1, MM_POTION_BLUE}",
+          "check{OOT Market Potion Shop Item 1}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 2, MM_POTION_BLUE}",
+          "check{OOT Market Potion Shop Item 2}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 3, MM_POTION_BLUE}",
+          "check{OOT Market Potion Shop Item 3}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 4, MM_POTION_BLUE}",
+          "check{OOT Market Potion Shop Item 4}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 5, MM_POTION_BLUE}",
+          "check{OOT Market Potion Shop Item 5}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 6, MM_POTION_BLUE}",
+          "check{OOT Market Potion Shop Item 6}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 7, MM_POTION_BLUE}",
+          "check{OOT Market Potion Shop Item 7}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 8, MM_POTION_BLUE}",
+          "check{OOT Market Potion Shop Item 8}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 1, MM_POTION_BLUE}",
+          "check{OOT Market Bombchu Shop Item 1}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 2, MM_POTION_BLUE}",
+          "check{OOT Market Bombchu Shop Item 2}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 3, MM_POTION_BLUE}",
+          "check{OOT Market Bombchu Shop Item 3}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 4, MM_POTION_BLUE}",
+          "check{OOT Market Bombchu Shop Item 4}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 5, MM_POTION_BLUE}",
+          "check{OOT Market Bombchu Shop Item 5}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 6, MM_POTION_BLUE}",
+          "check{OOT Market Bombchu Shop Item 6}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 7, MM_POTION_BLUE}",
+          "check{OOT Market Bombchu Shop Item 7}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 8, MM_POTION_BLUE}",
+          "check{OOT Market Bombchu Shop Item 8}"
+        ],
+        [
+          "contains{OOT Gerudo Valley Cow, MM_POTION_BLUE}",
+          "check{OOT Gerudo Valley Cow}"
+        ],
+        [
+          "contains{OOT MQ Jabu-Jabu Cow, MM_POTION_BLUE}",
+          "check{OOT MQ Jabu-Jabu Cow}"
+        ],
+        [
+          "contains{MM Trading Post Item 1, MM_POTION_BLUE}",
+          "check{MM Trading Post Item 1}"
+        ],
+        [
+          "contains{MM Trading Post Item 2, MM_POTION_BLUE}",
+          "check{MM Trading Post Item 2}"
+        ],
+        [
+          "contains{MM Trading Post Item 3, MM_POTION_BLUE}",
+          "check{MM Trading Post Item 3}"
+        ],
+        [
+          "contains{MM Trading Post Item 4, MM_POTION_BLUE}",
+          "check{MM Trading Post Item 4}"
+        ],
+        [
+          "contains{MM Trading Post Item 5, MM_POTION_BLUE}",
+          "check{MM Trading Post Item 5}"
+        ],
+        [
+          "contains{MM Trading Post Item 6, MM_POTION_BLUE}",
+          "check{MM Trading Post Item 6}"
+        ],
+        [
+          "contains{MM Trading Post Item 7, MM_POTION_BLUE}",
+          "check{MM Trading Post Item 7}"
+        ],
+        [
+          "contains{MM Trading Post Item 8, MM_POTION_BLUE}",
+          "check{MM Trading Post Item 8}"
+        ],
+        [
+          "contains{MM Bomb Shop Item 1, MM_POTION_BLUE}",
+          "check{MM Bomb Shop Item 1}"
+        ],
+        [
+          "contains{MM Bomb Shop Item 2, MM_POTION_BLUE}",
+          "check{MM Bomb Shop Item 2}"
+        ],
+        [
+          "contains{MM Termina Field Cow Front, MM_POTION_BLUE}",
+          "check{MM Termina Field Cow Front}"
+        ],
+        [
+          "contains{MM Termina Field Cow Back, MM_POTION_BLUE}",
+          "check{MM Termina Field Cow Back}"
+        ],
+        [
+          "contains{MM Swamp Potion Shop Item 1, MM_POTION_BLUE}",
+          "check{MM Swamp Potion Shop Item 1}"
+        ],
+        [
+          "contains{MM Swamp Potion Shop Item 2, MM_POTION_BLUE}",
+          "check{MM Swamp Potion Shop Item 2}"
+        ],
+        [
+          "contains{MM Swamp Potion Shop Item 3, MM_POTION_BLUE}",
+          "check{MM Swamp Potion Shop Item 3}"
+        ],
+        [
+          "contains{MM Goron Shop Item 1, MM_POTION_BLUE}",
+          "check{MM Goron Shop Item 1}"
+        ],
+        [
+          "contains{MM Goron Shop Item 2, MM_POTION_BLUE}",
+          "check{MM Goron Shop Item 2}"
+        ],
+        [
+          "contains{MM Goron Shop Item 3, MM_POTION_BLUE}",
+          "check{MM Goron Shop Item 3}"
+        ],
+        [
+          "contains{MM Romani Ranch Barn Cow Left, MM_POTION_BLUE}",
+          "check{MM Romani Ranch Barn Cow Left}"
+        ],
+        [
+          "contains{MM Romani Ranch Barn Cow Right Front, MM_POTION_BLUE}",
+          "check{MM Romani Ranch Barn Cow Right Front}"
+        ],
+        [
+          "contains{MM Romani Ranch Barn Cow Right Back, MM_POTION_BLUE}",
+          "check{MM Romani Ranch Barn Cow Right Back}"
+        ],
+        [
+          "contains{MM Great Bay Coast Cow Front, MM_POTION_BLUE}",
+          "check{MM Great Bay Coast Cow Front}"
+        ],
+        [
+          "contains{MM Great Bay Coast Cow Back, MM_POTION_BLUE}",
+          "check{MM Great Bay Coast Cow Back}"
+        ],
+        [
+          "contains{MM Zora Shop Item 1, MM_POTION_BLUE}",
+          "check{MM Zora Shop Item 1}"
+        ],
+        [
+          "contains{MM Zora Shop Item 2, MM_POTION_BLUE}",
+          "check{MM Zora Shop Item 2}"
+        ],
+        [
+          "contains{MM Zora Shop Item 3, MM_POTION_BLUE}",
+          "check{MM Zora Shop Item 3}"
+        ],
+        [
+          "contains{MM Beneath the Well Cow, MM_POTION_BLUE}",
+          "check{MM Beneath the Well Cow}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_renewable_milk",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "contains{OOT Kokiri Forest Cow, MM_MILK}",
+          "check{OOT Kokiri Forest Cow}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 1, MM_MILK}",
+          "check{OOT Kokiri Shop Item 1}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 2, MM_MILK}",
+          "check{OOT Kokiri Shop Item 2}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 3, MM_MILK}",
+          "check{OOT Kokiri Shop Item 3}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 4, MM_MILK}",
+          "check{OOT Kokiri Shop Item 4}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 5, MM_MILK}",
+          "check{OOT Kokiri Shop Item 5}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 6, MM_MILK}",
+          "check{OOT Kokiri Shop Item 6}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 7, MM_MILK}",
+          "check{OOT Kokiri Shop Item 7}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 8, MM_MILK}",
+          "check{OOT Kokiri Shop Item 8}"
+        ],
+        [
+          "contains{OOT Kakariko Cow, MM_MILK}",
+          "check{OOT Kakariko Cow}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 1, MM_MILK}",
+          "check{OOT Kakariko Bazaar Item 1}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 2, MM_MILK}",
+          "check{OOT Kakariko Bazaar Item 2}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 3, MM_MILK}",
+          "check{OOT Kakariko Bazaar Item 3}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 4, MM_MILK}",
+          "check{OOT Kakariko Bazaar Item 4}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 5, MM_MILK}",
+          "check{OOT Kakariko Bazaar Item 5}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 6, MM_MILK}",
+          "check{OOT Kakariko Bazaar Item 6}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 7, MM_MILK}",
+          "check{OOT Kakariko Bazaar Item 7}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 8, MM_MILK}",
+          "check{OOT Kakariko Bazaar Item 8}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 1, MM_MILK}",
+          "check{OOT Kakariko Potion Shop Item 1}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 2, MM_MILK}",
+          "check{OOT Kakariko Potion Shop Item 2}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 3, MM_MILK}",
+          "check{OOT Kakariko Potion Shop Item 3}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 4, MM_MILK}",
+          "check{OOT Kakariko Potion Shop Item 4}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 5, MM_MILK}",
+          "check{OOT Kakariko Potion Shop Item 5}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 6, MM_MILK}",
+          "check{OOT Kakariko Potion Shop Item 6}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 7, MM_MILK}",
+          "check{OOT Kakariko Potion Shop Item 7}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 8, MM_MILK}",
+          "check{OOT Kakariko Potion Shop Item 8}"
+        ],
+        [
+          "contains{OOT Death Mountain Cow, MM_MILK}",
+          "check{OOT Death Mountain Cow}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 1, MM_MILK}",
+          "check{OOT Goron Shop Item 1}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 2, MM_MILK}",
+          "check{OOT Goron Shop Item 2}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 3, MM_MILK}",
+          "check{OOT Goron Shop Item 3}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 4, MM_MILK}",
+          "check{OOT Goron Shop Item 4}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 5, MM_MILK}",
+          "check{OOT Goron Shop Item 5}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 6, MM_MILK}",
+          "check{OOT Goron Shop Item 6}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 7, MM_MILK}",
+          "check{OOT Goron Shop Item 7}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 8, MM_MILK}",
+          "check{OOT Goron Shop Item 8}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 1, MM_MILK}",
+          "check{OOT Zora Shop Item 1}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 2, MM_MILK}",
+          "check{OOT Zora Shop Item 2}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 3, MM_MILK}",
+          "check{OOT Zora Shop Item 3}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 4, MM_MILK}",
+          "check{OOT Zora Shop Item 4}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 5, MM_MILK}",
+          "check{OOT Zora Shop Item 5}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 6, MM_MILK}",
+          "check{OOT Zora Shop Item 6}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 7, MM_MILK}",
+          "check{OOT Zora Shop Item 7}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 8, MM_MILK}",
+          "check{OOT Zora Shop Item 8}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Stables Cow Left, MM_MILK}",
+          "check{OOT Lon Lon Ranch Stables Cow Left}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Stables Cow Right, MM_MILK}",
+          "check{OOT Lon Lon Ranch Stables Cow Right}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Silo Cow Front, MM_MILK}",
+          "check{OOT Lon Lon Ranch Silo Cow Front}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Silo Cow Back, MM_MILK}",
+          "check{OOT Lon Lon Ranch Silo Cow Back}"
+        ],
+        [
+          "contains{OOT Hyrule Field Cow, MM_MILK}",
+          "check{OOT Hyrule Field Cow}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 1, MM_MILK}",
+          "check{OOT Market Bazaar Item 1}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 2, MM_MILK}",
+          "check{OOT Market Bazaar Item 2}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 3, MM_MILK}",
+          "check{OOT Market Bazaar Item 3}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 4, MM_MILK}",
+          "check{OOT Market Bazaar Item 4}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 5, MM_MILK}",
+          "check{OOT Market Bazaar Item 5}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 6, MM_MILK}",
+          "check{OOT Market Bazaar Item 6}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 7, MM_MILK}",
+          "check{OOT Market Bazaar Item 7}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 8, MM_MILK}",
+          "check{OOT Market Bazaar Item 8}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 1, MM_MILK}",
+          "check{OOT Market Potion Shop Item 1}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 2, MM_MILK}",
+          "check{OOT Market Potion Shop Item 2}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 3, MM_MILK}",
+          "check{OOT Market Potion Shop Item 3}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 4, MM_MILK}",
+          "check{OOT Market Potion Shop Item 4}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 5, MM_MILK}",
+          "check{OOT Market Potion Shop Item 5}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 6, MM_MILK}",
+          "check{OOT Market Potion Shop Item 6}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 7, MM_MILK}",
+          "check{OOT Market Potion Shop Item 7}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 8, MM_MILK}",
+          "check{OOT Market Potion Shop Item 8}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 1, MM_MILK}",
+          "check{OOT Market Bombchu Shop Item 1}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 2, MM_MILK}",
+          "check{OOT Market Bombchu Shop Item 2}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 3, MM_MILK}",
+          "check{OOT Market Bombchu Shop Item 3}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 4, MM_MILK}",
+          "check{OOT Market Bombchu Shop Item 4}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 5, MM_MILK}",
+          "check{OOT Market Bombchu Shop Item 5}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 6, MM_MILK}",
+          "check{OOT Market Bombchu Shop Item 6}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 7, MM_MILK}",
+          "check{OOT Market Bombchu Shop Item 7}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 8, MM_MILK}",
+          "check{OOT Market Bombchu Shop Item 8}"
+        ],
+        [
+          "contains{OOT Gerudo Valley Cow, MM_MILK}",
+          "check{OOT Gerudo Valley Cow}"
+        ],
+        [
+          "contains{OOT MQ Jabu-Jabu Cow, MM_MILK}",
+          "check{OOT MQ Jabu-Jabu Cow}"
+        ],
+        [
+          "contains{MM Trading Post Item 1, MM_MILK}",
+          "check{MM Trading Post Item 1}"
+        ],
+        [
+          "contains{MM Trading Post Item 2, MM_MILK}",
+          "check{MM Trading Post Item 2}"
+        ],
+        [
+          "contains{MM Trading Post Item 3, MM_MILK}",
+          "check{MM Trading Post Item 3}"
+        ],
+        [
+          "contains{MM Trading Post Item 4, MM_MILK}",
+          "check{MM Trading Post Item 4}"
+        ],
+        [
+          "contains{MM Trading Post Item 5, MM_MILK}",
+          "check{MM Trading Post Item 5}"
+        ],
+        [
+          "contains{MM Trading Post Item 6, MM_MILK}",
+          "check{MM Trading Post Item 6}"
+        ],
+        [
+          "contains{MM Trading Post Item 7, MM_MILK}",
+          "check{MM Trading Post Item 7}"
+        ],
+        [
+          "contains{MM Trading Post Item 8, MM_MILK}",
+          "check{MM Trading Post Item 8}"
+        ],
+        [
+          "contains{MM Bomb Shop Item 1, MM_MILK}",
+          "check{MM Bomb Shop Item 1}"
+        ],
+        [
+          "contains{MM Bomb Shop Item 2, MM_MILK}",
+          "check{MM Bomb Shop Item 2}"
+        ],
+        [
+          "contains{MM Termina Field Cow Front, MM_MILK}",
+          "check{MM Termina Field Cow Front}"
+        ],
+        [
+          "contains{MM Termina Field Cow Back, MM_MILK}",
+          "check{MM Termina Field Cow Back}"
+        ],
+        [
+          "contains{MM Swamp Potion Shop Item 1, MM_MILK}",
+          "check{MM Swamp Potion Shop Item 1}"
+        ],
+        [
+          "contains{MM Swamp Potion Shop Item 2, MM_MILK}",
+          "check{MM Swamp Potion Shop Item 2}"
+        ],
+        [
+          "contains{MM Swamp Potion Shop Item 3, MM_MILK}",
+          "check{MM Swamp Potion Shop Item 3}"
+        ],
+        [
+          "contains{MM Goron Shop Item 1, MM_MILK}",
+          "check{MM Goron Shop Item 1}"
+        ],
+        [
+          "contains{MM Goron Shop Item 2, MM_MILK}",
+          "check{MM Goron Shop Item 2}"
+        ],
+        [
+          "contains{MM Goron Shop Item 3, MM_MILK}",
+          "check{MM Goron Shop Item 3}"
+        ],
+        [
+          "contains{MM Romani Ranch Barn Cow Left, MM_MILK}",
+          "check{MM Romani Ranch Barn Cow Left}"
+        ],
+        [
+          "contains{MM Romani Ranch Barn Cow Right Front, MM_MILK}",
+          "check{MM Romani Ranch Barn Cow Right Front}"
+        ],
+        [
+          "contains{MM Romani Ranch Barn Cow Right Back, MM_MILK}",
+          "check{MM Romani Ranch Barn Cow Right Back}"
+        ],
+        [
+          "contains{MM Great Bay Coast Cow Front, MM_MILK}",
+          "check{MM Great Bay Coast Cow Front}"
+        ],
+        [
+          "contains{MM Great Bay Coast Cow Back, MM_MILK}",
+          "check{MM Great Bay Coast Cow Back}"
+        ],
+        [
+          "contains{MM Zora Shop Item 1, MM_MILK}",
+          "check{MM Zora Shop Item 1}"
+        ],
+        [
+          "contains{MM Zora Shop Item 2, MM_MILK}",
+          "check{MM Zora Shop Item 2}"
+        ],
+        [
+          "contains{MM Zora Shop Item 3, MM_MILK}",
+          "check{MM Zora Shop Item 3}"
+        ],
+        [
+          "contains{MM Beneath the Well Cow, MM_MILK}",
           "check{MM Beneath the Well Cow}"
         ]
       ],

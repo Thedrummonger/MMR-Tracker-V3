@@ -109,37 +109,44 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
         private static void AddRenewableChecks(MMRData.LogicFile logicFile, LogicDictionaryData.LogicDictionary dictionaryFile)
         {
-            //Create Variables
-            List<string> OOTSticks = new() { "OOT_STICK", "OOT_STICKS_5", "OOT_STICKS_10", "SHARED_STICK", "SHARED_STICKS_5", "SHARED_STICKS_10" };
-            List<string> OOTnuts = new() { "OOT_NUT", "OOT_NUTS_5", "OOT_NUTS_10", "SHARED_NUT", "SHARED_NUTS_5", "SHARED_NUTS_10" };
-            dictionaryFile.Variables.Add("OOT_ANY_STICK", new OptionData.TrackerVar { ID = "OOT_ANY_STICK", Static = true, Value = OOTSticks });
-            dictionaryFile.Variables.Add("OOT_ANY_NUT", new OptionData.TrackerVar { ID = "OOT_ANY_NUT", Static = true, Value = OOTnuts });
+            Dictionary<string, Tuple<string, List<string>>> RenewableItems = new()
+            {
+                { "OOT_renewable_sticks", new("OOT_ANY_STICK", new List<string> { "OOT_STICK", "OOT_STICKS_5", "OOT_STICKS_10", "SHARED_STICK", "SHARED_STICKS_5", "SHARED_STICKS_10" }) },
+                { "OOT_renewable_nuts", new("OOT_ANY_NUT", new List<string> { "OOT_NUT", "OOT_NUTS_5", "OOT_NUTS_10", "SHARED_NUT", "SHARED_NUTS_5", "SHARED_NUTS_10" }) },
+                { "OOT_renewable_blue_fire", new("OOT_BLUE_FIRE", new List<string>()) },
+                { "MM_renewable_red_potion", new("MM_POTION_RED", new List<string>()) },
+                { "MM_renewable_blue_potion", new("MM_POTION_BLUE", new List<string>()) },
+                { "MM_renewable_milk", new("MM_MILK", new List<string>()) }
+            };
 
             //Add Reneawable Logic
             var OOTRenewableLocations = GetRenewableLocations("OOT");
             var MMRenewableLocations = GetRenewableLocations("MM");
             var RenewableLocations = OOTRenewableLocations.Concat(MMRenewableLocations);
 
-            MMRData.JsonFormatLogicItem RenewableSticksOOT = new() { Id = "OOT_renewable_sticks", ConditionalItems = new List<List<string>>() };
-            MMRData.JsonFormatLogicItem RenewableNutsOOT = new() { Id = "OOT_renewable_nuts", ConditionalItems = new List<List<string>>() };
-            MMRData.JsonFormatLogicItem RenewableBlueFireOOT = new() { Id = "OOT_renewable_blue_fire", ConditionalItems = new List<List<string>>() };
-
-            foreach (var location in RenewableLocations)
+            foreach (var item in RenewableItems)
             {
-                RenewableSticksOOT.ConditionalItems.Add(new List<string> { $"contains{{{location}, OOT_ANY_STICK}}", $"check{{{location}}}" });
-                RenewableNutsOOT.ConditionalItems.Add(new List<string> { $"contains{{{location}, OOT_ANY_NUT}}", $"check{{{location}}}" });
-                RenewableBlueFireOOT.ConditionalItems.Add(new List<string> { $"contains{{{location}, OOT_BLUE_FIRE}}", $"check{{{location}}}" });
+                MMRData.JsonFormatLogicItem LogicEntry = new() { Id = item.Key, ConditionalItems = new List<List<string>>() };
+                foreach (var location in RenewableLocations)
+                {
+                    LogicEntry.ConditionalItems.Add(new List<string> { $"contains{{{location}, {item.Value.Item1}}}", $"check{{{location}}}" });
+                }
+                logicFile.Logic.Add(LogicEntry);
+                if (item.Value.Item2.Any())
+                {
+                    dictionaryFile.Variables.Add(item.Value.Item1, new OptionData.TrackerVar { ID = item.Value.Item1, Static = true, Value = item.Value.Item2 });
+                }
             }
-            logicFile.Logic.Add(RenewableNutsOOT);
-            logicFile.Logic.Add(RenewableSticksOOT);
-            logicFile.Logic.Add(RenewableBlueFireOOT);
 
             List<string> GetRenewableLocations(string GameCode)
             {
+                var ONE_TIME_SHOP_CHECKS = new string[] { "MM Bomb Shop Bomb Bag", "MM Bomb Shop Bomb Bag 2", "MM Curiosity Shop All-Night Mask" };
                 string path = Path.Combine(References.TestingPaths.GetDevTestingPath(), @"core-develop", "data", GameCode.ToLower(), "pool.csv");
                 string[] RenewableTypes = new string[] { "shop", "cow" };
                 var Pool = ConvertCsvFileToJsonObject(File.ReadAllLines(path).Where(x => !string.IsNullOrWhiteSpace(x)).ToArray());
-                return JsonConvert.DeserializeObject<List<MMROOTLocation>>(Pool).Where(x => RenewableTypes.Contains(x.type)).Select(x => $"{GameCode} {x.location}").ToList();
+                return JsonConvert.DeserializeObject<List<MMROOTLocation>>(Pool)
+                    .Where(x => RenewableTypes.Contains(x.type) && !ONE_TIME_SHOP_CHECKS.Contains($"{GameCode} {x.location}"))
+                    .Select(x => $"{GameCode} {x.location}").ToList();
             }
         }
 
@@ -285,16 +292,6 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             moon_req_count.ID = "moon_count";
             moon_req_count.Value = 4;
             dictionaryFile.Variables.Add(moon_req_count.ID, moon_req_count);
-
-
-
-            OptionData.TrackerVar dumbtest = new OptionData.TrackerVar();
-            dumbtest.Static = true;
-            dumbtest.Name = "Amount";
-            dumbtest.ID = "dumbtest";
-            dumbtest.Value = true;
-            dictionaryFile.Variables.Add(dumbtest.ID, dumbtest);
-
 
         }
 

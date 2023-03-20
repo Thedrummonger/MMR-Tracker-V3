@@ -12299,6 +12299,186 @@
       },
       "LocationProxys": []
     },
+    "MM Trading Post Item 1": {
+      "Name": "Trading Post Item 1",
+      "OriginalItem": "MM_POTION_RED",
+      "Area": "West Clock Town",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Trading Post Item 1"
+        ],
+        "GossipHintNames": [
+          "MM Trading Post Item 1"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "MM Trading Post Item 2": {
+      "Name": "Trading Post Item 2",
+      "OriginalItem": "MM_POTION_GREEN",
+      "Area": "West Clock Town",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Trading Post Item 2"
+        ],
+        "GossipHintNames": [
+          "MM Trading Post Item 2"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "MM Trading Post Item 3": {
+      "Name": "Trading Post Item 3",
+      "OriginalItem": "MM_SHIELD_HERO",
+      "Area": "West Clock Town",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Trading Post Item 3"
+        ],
+        "GossipHintNames": [
+          "MM Trading Post Item 3"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "MM Trading Post Item 4": {
+      "Name": "Trading Post Item 4",
+      "OriginalItem": "MM_FAIRY",
+      "Area": "West Clock Town",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Trading Post Item 4"
+        ],
+        "GossipHintNames": [
+          "MM Trading Post Item 4"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "MM Trading Post Item 5": {
+      "Name": "Trading Post Item 5",
+      "OriginalItem": "MM_STICK",
+      "Area": "West Clock Town",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Trading Post Item 5"
+        ],
+        "GossipHintNames": [
+          "MM Trading Post Item 5"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "MM Trading Post Item 6": {
+      "Name": "Trading Post Item 6",
+      "OriginalItem": "MM_ARROWS_10",
+      "Area": "West Clock Town",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Trading Post Item 6"
+        ],
+        "GossipHintNames": [
+          "MM Trading Post Item 6"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "MM Trading Post Item 7": {
+      "Name": "Trading Post Item 7",
+      "OriginalItem": "MM_NUTS_10",
+      "Area": "West Clock Town",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Trading Post Item 7"
+        ],
+        "GossipHintNames": [
+          "MM Trading Post Item 7"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "MM Trading Post Item 8": {
+      "Name": "Trading Post Item 8",
+      "OriginalItem": "MM_ARROWS_30",
+      "Area": "West Clock Town",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Trading Post Item 8"
+        ],
+        "GossipHintNames": [
+          "MM Trading Post Item 8"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "MM Bomb Shop Item 1": {
+      "Name": "Bomb Shop Item 1",
+      "OriginalItem": "MM_BOMBS_10",
+      "Area": "West Clock Town",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Bomb Shop Item 1"
+        ],
+        "GossipHintNames": [
+          "MM Bomb Shop Item 1"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "MM Bomb Shop Item 2": {
+      "Name": "Bomb Shop Item 2",
+      "OriginalItem": "MM_BOMBCHU_10",
+      "Area": "West Clock Town",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Bomb Shop Item 2"
+        ],
+        "GossipHintNames": [
+          "MM Bomb Shop Item 2"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
     "MM Bomb Shop Bomb Bag": {
       "Name": "Bomb Shop Bomb Bag",
       "OriginalItem": "MM_BOMB_BAG",
@@ -12888,6 +13068,60 @@
         ],
         "GossipHintNames": [
           "MM Swamp Potion Shop Kotake"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "MM Swamp Potion Shop Item 1": {
+      "Name": "Swamp Potion Shop Item 1",
+      "OriginalItem": "MM_POTION_BLUE",
+      "Area": "Southern Swamp",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Swamp Potion Shop Item 1"
+        ],
+        "GossipHintNames": [
+          "MM Swamp Potion Shop Item 1"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "MM Swamp Potion Shop Item 2": {
+      "Name": "Swamp Potion Shop Item 2",
+      "OriginalItem": "MM_POTION_GREEN",
+      "Area": "Southern Swamp",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Swamp Potion Shop Item 2"
+        ],
+        "GossipHintNames": [
+          "MM Swamp Potion Shop Item 2"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "MM Swamp Potion Shop Item 3": {
+      "Name": "Swamp Potion Shop Item 3",
+      "OriginalItem": "MM_POTION_RED",
+      "Area": "Southern Swamp",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Swamp Potion Shop Item 3"
+        ],
+        "GossipHintNames": [
+          "MM Swamp Potion Shop Item 3"
         ],
         "PriceDataNames": []
       },
@@ -13937,6 +14171,60 @@
       },
       "LocationProxys": []
     },
+    "MM Goron Shop Item 1": {
+      "Name": "Goron Shop Item 1",
+      "OriginalItem": "MM_ARROWS_10",
+      "Area": "Goron Village",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Goron Shop Item 1"
+        ],
+        "GossipHintNames": [
+          "MM Goron Shop Item 1"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "MM Goron Shop Item 2": {
+      "Name": "Goron Shop Item 2",
+      "OriginalItem": "MM_BOMBS_10",
+      "Area": "Goron Village",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Goron Shop Item 2"
+        ],
+        "GossipHintNames": [
+          "MM Goron Shop Item 2"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "MM Goron Shop Item 3": {
+      "Name": "Goron Shop Item 3",
+      "OriginalItem": "MM_POTION_RED",
+      "Area": "Goron Village",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Goron Shop Item 3"
+        ],
+        "GossipHintNames": [
+          "MM Goron Shop Item 3"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
     "MM Goron Village HP": {
       "Name": "Goron Village HP",
       "OriginalItem": "MM_HEART_PIECE",
@@ -14526,6 +14814,60 @@
         ],
         "GossipHintNames": [
           "MM Zora Hall Scene Lights"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "MM Zora Shop Item 1": {
+      "Name": "Zora Shop Item 1",
+      "OriginalItem": "MM_SHIELD_HERO",
+      "Area": "Zora Hall",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Zora Shop Item 1"
+        ],
+        "GossipHintNames": [
+          "MM Zora Shop Item 1"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "MM Zora Shop Item 2": {
+      "Name": "Zora Shop Item 2",
+      "OriginalItem": "MM_ARROWS_10",
+      "Area": "Zora Hall",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Zora Shop Item 2"
+        ],
+        "GossipHintNames": [
+          "MM Zora Shop Item 2"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "MM Zora Shop Item 3": {
+      "Name": "Zora Shop Item 3",
+      "OriginalItem": "MM_POTION_RED",
+      "Area": "Zora Hall",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Zora Shop Item 3"
+        ],
+        "GossipHintNames": [
+          "MM Zora Shop Item 3"
         ],
         "PriceDataNames": []
       },
@@ -23685,6 +24027,101 @@
         "PriceDataNames": []
       }
     },
+    "MM_POTION_RED": {
+      "Name": "Red Potion (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_POTION_RED",
+          "Red Potion (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_POTION_RED",
+          "Red Potion (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_POTION_GREEN": {
+      "Name": "Green Potion (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_POTION_GREEN",
+          "Green Potion (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_POTION_GREEN",
+          "Green Potion (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_POTION_BLUE": {
+      "Name": "Blue Potion (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_POTION_BLUE",
+          "Blue Potion (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_POTION_BLUE",
+          "Blue Potion (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_FAIRY": {
+      "Name": "Blue Potion (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_FAIRY",
+          "Blue Potion (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_FAIRY",
+          "Blue Potion (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_SHIELD_HERO": {
+      "Name": "Blue Potion (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_SHIELD_HERO",
+          "Blue Potion (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_SHIELD_HERO",
+          "Blue Potion (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
     "OOT_NUT": {
       "Name": "1 Deku Nut (OoT)",
       "MaxAmountInWorld": -1,
@@ -24248,13 +24685,13 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT Fire Temple => OOT Death Mountain Crater Warp": {
+    "OOT Fire Temple => OOT Fire Temple Entry": {
       "Area": "OOT Fire Temple",
-      "Exit": "OOT Death Mountain Crater Warp",
+      "Exit": "OOT Fire Temple Entry",
       "DisplayArea": "Dungeon Exit",
       "DisplayExit": "OOT Fire Temple Exit",
       "EntrancePairID": {
-        "Area": "OOT Death Mountain Crater Warp",
+        "Area": "OOT Fire Temple Entry",
         "Exit": "OOT Fire Temple"
       },
       "RandomizableEntrance": true,
@@ -25966,21 +26403,35 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT Death Mountain Crater Warp => OOT Fire Temple": {
+    "OOT Death Mountain Crater Warp => OOT Fire Temple Entry": {
       "Area": "OOT Death Mountain Crater Warp",
-      "Exit": "OOT Fire Temple",
-      "DisplayArea": "Dungeon",
-      "EntrancePairID": {
-        "Area": "OOT Fire Temple",
-        "Exit": "OOT Death Mountain Crater Warp"
-      },
-      "RandomizableEntrance": true,
+      "Exit": "OOT Fire Temple Entry",
+      "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "OOT Death Mountain Crater Warp => OOT Death Mountain Crater Bottom": {
       "Area": "OOT Death Mountain Crater Warp",
       "Exit": "OOT Death Mountain Crater Bottom",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Fire Temple Entry => OOT Fire Temple": {
+      "Area": "OOT Fire Temple Entry",
+      "Exit": "OOT Fire Temple",
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "OOT Fire Temple",
+        "Exit": "OOT Fire Temple Entry"
+      },
+      "RandomizableEntrance": true,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Fire Temple Entry => OOT Death Mountain Crater Warp": {
+      "Area": "OOT Fire Temple Entry",
+      "Exit": "OOT Death Mountain Crater Warp",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -26589,8 +27040,15 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT Water Temple River => OOT Water Temple Dragon Room": {
+    "OOT Water Temple River => OOT Water Temple Dragon Room Ledge": {
       "Area": "OOT Water Temple River",
+      "Exit": "OOT Water Temple Dragon Room Ledge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Water Temple Dragon Room Ledge => OOT Water Temple Dragon Room": {
+      "Area": "OOT Water Temple Dragon Room Ledge",
       "Exit": "OOT Water Temple Dragon Room",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
@@ -28066,6 +28524,13 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "MM Clock Town West => MM Trading Post": {
+      "Area": "MM Clock Town West",
+      "Exit": "MM Trading Post",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "MM Clock Town West => MM Curiosity Shop": {
       "Area": "MM Clock Town West",
       "Exit": "MM Curiosity Shop",
@@ -28180,6 +28645,13 @@
     },
     "MM Bomb Shop => MM Clock Town West": {
       "Area": "MM Bomb Shop",
+      "Exit": "MM Clock Town West",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Trading Post => MM Clock Town West": {
+      "Area": "MM Trading Post",
       "Exit": "MM Clock Town West",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
@@ -28790,6 +29262,20 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "MM Goron Shrine => MM Goron Shop": {
+      "Area": "MM Goron Shrine",
+      "Exit": "MM Goron Shop",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Goron Shop => MM Goron Shrine": {
+      "Area": "MM Goron Shop",
+      "Exit": "MM Goron Shrine",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "MM Path to Snowhead Front => MM Mountain Village": {
       "Area": "MM Path to Snowhead Front",
       "Exit": "MM Mountain Village",
@@ -29185,6 +29671,20 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "MM Zora Hall => MM Zora Shop": {
+      "Area": "MM Zora Hall",
+      "Exit": "MM Zora Shop",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Zora Shop => MM Zora Hall": {
+      "Area": "MM Zora Shop",
+      "Exit": "MM Zora Hall",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "MM Zora Cape Peninsula => MM Zora Cape": {
       "Area": "MM Zora Cape Peninsula",
       "Exit": "MM Zora Cape",
@@ -29567,6 +30067,13 @@
     "MM Pirate Fortress Entrance => MM Pirate Fortress Entrance Balcony": {
       "Area": "MM Pirate Fortress Entrance",
       "Exit": "MM Pirate Fortress Entrance Balcony",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Pirate Fortress Entrance => MM Pirate Fortress Entrance Lookout": {
+      "Area": "MM Pirate Fortress Entrance",
+      "Exit": "MM Pirate Fortress Entrance Lookout",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -30529,9 +31036,9 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Stone Tower Temple West Garden => MM Stone Tower Temple Center": {
+    "MM Stone Tower Temple West Garden => MM Stone Tower Temple Center Ledge": {
       "Area": "MM Stone Tower Temple West Garden",
-      "Exit": "MM Stone Tower Temple Center",
+      "Exit": "MM Stone Tower Temple Center Ledge",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -30543,9 +31050,16 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Stone Tower Temple Center => MM Stone Tower Temple West Garden": {
-      "Area": "MM Stone Tower Temple Center",
+    "MM Stone Tower Temple Center Ledge => MM Stone Tower Temple West Garden": {
+      "Area": "MM Stone Tower Temple Center Ledge",
       "Exit": "MM Stone Tower Temple West Garden",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Stone Tower Temple Center Ledge => MM Stone Tower Temple Center": {
+      "Area": "MM Stone Tower Temple Center Ledge",
+      "Exit": "MM Stone Tower Temple Center",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -30553,6 +31067,20 @@
     "MM Stone Tower Temple Center => MM Stone Tower Temple Water Room": {
       "Area": "MM Stone Tower Temple Center",
       "Exit": "MM Stone Tower Temple Water Room",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Stone Tower Temple Center => MM Stone Tower Temple Center Ledge": {
+      "Area": "MM Stone Tower Temple Center",
+      "Exit": "MM Stone Tower Temple Center Ledge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Stone Tower Temple Center => MM Stone Tower Temple Water Bridge": {
+      "Area": "MM Stone Tower Temple Center",
+      "Exit": "MM Stone Tower Temple Water Bridge",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -30627,6 +31155,20 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "MM Stone Tower Temple Water Bridge => MM Stone Tower Temple Center": {
+      "Area": "MM Stone Tower Temple Water Bridge",
+      "Exit": "MM Stone Tower Temple Center",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Stone Tower Temple Water Bridge => MM Stone Tower Temple Center Ledge": {
+      "Area": "MM Stone Tower Temple Water Bridge",
+      "Exit": "MM Stone Tower Temple Center Ledge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "MM Stone Tower Temple Inverted => MM Stone Tower Temple Inverted Entrance": {
       "Area": "MM Stone Tower Temple Inverted",
       "Exit": "MM Stone Tower Temple Inverted Entrance",
@@ -30657,6 +31199,13 @@
     "MM Stone Tower Temple Inverted Entrance => MM Stone Tower Temple Inverted East": {
       "Area": "MM Stone Tower Temple Inverted Entrance",
       "Exit": "MM Stone Tower Temple Inverted East",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Stone Tower Temple Inverted Entrance => MM Stone Tower Temple Inverted Entrance Ledge": {
+      "Area": "MM Stone Tower Temple Inverted Entrance",
+      "Exit": "MM Stone Tower Temple Inverted Entrance Ledge",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -30762,6 +31311,13 @@
     "MM Stone Tower Temple Inverted Entrance Ledge => MM Stone Tower Temple Inverted Bridge": {
       "Area": "MM Stone Tower Temple Inverted Entrance Ledge",
       "Exit": "MM Stone Tower Temple Inverted Bridge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Stone Tower Temple Inverted Entrance Ledge => MM Stone Tower Temple Inverted Center": {
+      "Area": "MM Stone Tower Temple Inverted Entrance Ledge",
+      "Exit": "MM Stone Tower Temple Inverted Center",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -31868,8 +32424,8 @@
         "PriceDataNames": []
       }
     },
-    "TRICK_MM_ROAD_IKANA_SHORT_HOOK": {
-      "Name": "Road to Ikana chest using Short Hookshot",
+    "TRICK_MM_SHORT_HOOK_HARD": {
+      "Name": "Precise Short Hookshot Usage",
       "SpoilerData": {
         "SpoilerLogNames": [],
         "GossipHintNames": [],
@@ -34525,11 +35081,6 @@
       "SubCategory": "Moon Access Conditions",
       "Static": false,
       "Value": 4
-    },
-    "dumbtest": {
-      "Name": "Amount",
-      "Static": true,
-      "Value": true
     },
     "OOT_ANY_STICK": {
       "Static": true,
