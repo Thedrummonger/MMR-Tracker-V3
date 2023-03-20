@@ -352,7 +352,7 @@ namespace MMR_Tracker_V3
             foreach (var i in instance.LocationPool)
             {   
                 //Any unrandomized locations with items that effect logic should be made Manual to track obtaining the item and updating logic
-                if (i.Value.IsUnrandomized(1) && i.Value.GetDictEntry(instance).ValidItemTypes.Contains("Dungeon Entrance") && AllLogicItems.ContainsKey(i.Value.GetDictEntry(instance).OriginalItem))
+                if (i.Value.IsUnrandomized(UnrandState.Unrand) && i.Value.GetDictEntry(instance).ValidItemTypes.Contains("Dungeon Entrance") && AllLogicItems.ContainsKey(i.Value.GetDictEntry(instance).OriginalItem))
                 {
                     i.Value.SetRandomizedState(MiscData.RandomizedState.UnrandomizedManual, instance);
                 }

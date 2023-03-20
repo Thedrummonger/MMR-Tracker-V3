@@ -188,7 +188,7 @@ namespace MMR_Tracker_V3
                 }
                 foreach (var i in ImportantCheck.advancedUnlockData.AreasAccessed)
                 {
-                    if (FirstObtainedDict.ContainsKey(i) && FirstObtainedDict[i].First().Item1 is EntranceData.EntranceRandoExit ere && ere.IsRandomizableEntrance(_Instance.Instance) && (ere.IsRandomized() || ere.IsUnrandomized(2)))
+                    if (FirstObtainedDict.ContainsKey(i) && FirstObtainedDict[i].First().Item1 is EntranceData.EntranceRandoExit ere && ere.IsRandomizableEntrance(_Instance.Instance) && (ere.IsRandomized() || ere.IsUnrandomized(MiscData.UnrandState.Manual)))
                     {
                         FirstObtainedDict[i].First().Item2.Important = true;
                     }

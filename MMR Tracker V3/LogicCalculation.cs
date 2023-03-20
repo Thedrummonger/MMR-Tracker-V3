@@ -185,14 +185,14 @@ namespace MMR_Tracker_V3
                 Itterations++;
                  if (!MacroChanged && !UnrandomizedItemChecked && !UnrandomizedExitChecked) { break; }
             }
-            foreach (var i in container.Instance.LocationPool.Values.Where(x => !x.IsUnrandomized(1)))
+            foreach (var i in container.Instance.LocationPool.Values.Where(x => !x.IsUnrandomized(UnrandState.Unrand)))
             {
                 var Logic = LogicMap[i.ID];
                 i.Available = CalculatReqAndCond(Logic, i.ID, null);
             }
             foreach (var Area in container.Instance.EntrancePool.AreaList)
             {
-                foreach (var i in Area.Value.RandomizableExits(container.Instance).Where(x => !x.Value.IsUnrandomized(1)))
+                foreach (var i in Area.Value.RandomizableExits(container.Instance).Where(x => !x.Value.IsUnrandomized(UnrandState.Unrand)))
                 {
                     var Logic = LogicMap[container.Instance.GetLogicNameFromExit(i.Value)];
                     i.Value.Available = CalculatReqAndCond(Logic, container.Instance.GetLogicNameFromExit(i.Value), Area.Key);
@@ -238,12 +238,12 @@ namespace MMR_Tracker_V3
         {
             foreach (var Area in container.Instance.EntrancePool.AreaList)
             {
-                foreach (var i in Area.Value.Exits.Where(x => x.Value.IsUnrandomized(1) || !x.Value.IsRandomizableEntrance(container.Instance)))
+                foreach (var i in Area.Value.Exits.Where(x => x.Value.IsUnrandomized(UnrandState.Unrand) || !x.Value.IsRandomizableEntrance(container.Instance)))
                 {
                     i.Value.ToggleExitChecked(CheckState.Unchecked, container.Instance);
                 }
             }
-            foreach (var i in container.Instance.LocationPool.Where(x => x.Value.IsUnrandomized(1)))
+            foreach (var i in container.Instance.LocationPool.Where(x => x.Value.IsUnrandomized(UnrandState.Unrand)))
             {
                 i.Value.ToggleChecked(CheckState.Unchecked, container.Instance);
             }
@@ -254,7 +254,7 @@ namespace MMR_Tracker_V3
             bool ItemStateChanged = false;
             foreach (var Area in container.Instance.EntrancePool.AreaList)
             {
-                foreach (var i in Area.Value.Exits.Where(x => x.Value.IsUnrandomized(1) || !x.Value.IsRandomizableEntrance(container.Instance)))
+                foreach (var i in Area.Value.Exits.Where(x => x.Value.IsUnrandomized(UnrandState.Unrand) || !x.Value.IsRandomizableEntrance(container.Instance)))
                 {
                     var Logic = LogicMap[container.Instance.GetLogicNameFromExit(i.Value)];
                     var Available = CalculatReqAndCond(Logic, container.Instance.GetLogicNameFromExit(i.Value), Area.Key);
@@ -300,7 +300,7 @@ namespace MMR_Tracker_V3
         private bool CheckUrandomizedLocations(int itterations)
         {
             bool ItemStateChanged = false;
-            foreach (var i in container.Instance.LocationPool.Where(x => x.Value.IsUnrandomized(1)))
+            foreach (var i in container.Instance.LocationPool.Where(x => x.Value.IsUnrandomized(MiscData.UnrandState.Unrand)))
             {
                 if (string.IsNullOrWhiteSpace(i.Value.GetDictEntry(container.Instance).OriginalItem)) { continue; }
                 var Logic = LogicMap[i.Key];

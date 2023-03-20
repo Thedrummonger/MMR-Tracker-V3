@@ -126,8 +126,8 @@ namespace Windows_Form_Frontend
             foreach (var i in _Instance.LocationPool)
             {
                 if (i.Value.IsRandomized() && !chkShowRand.Checked) { continue; }
-                if (i.Value.IsUnrandomized(1) && !chkShowUnrand.Checked) { continue; }
-                if (i.Value.IsUnrandomized(2) && !chkShowManual.Checked) { continue; }
+                if (i.Value.IsUnrandomized(MiscData.UnrandState.Unrand) && !chkShowUnrand.Checked) { continue; }
+                if (i.Value.IsUnrandomized(MiscData.UnrandState.Manual) && !chkShowManual.Checked) { continue; }
                 if (i.Value.IsJunk() && !chkShowJunk.Checked) { continue; }
                 i.Value.DisplayName = i.Value.GetDictEntry(_Instance).GetName(_Instance);
                 if (!SearchStringParser.FilterSearch(_Instance, i.Value, TxtLocationSearch.Text, i.Value.DisplayName)) { continue; }
@@ -168,8 +168,8 @@ namespace Windows_Form_Frontend
                 foreach(var i in area.Value.RandomizableExits(_Instance))
                 {
                     if (i.Value.IsRandomized() && !chkShowRand.Checked) { continue; }
-                    if (i.Value.IsUnrandomized(1) && !chkShowUnrand.Checked) { continue; }
-                    if (i.Value.IsUnrandomized(2) && !chkShowManual.Checked) { continue; }
+                    if (i.Value.IsUnrandomized(MiscData.UnrandState.Unrand) && !chkShowUnrand.Checked) { continue; }
+                    if (i.Value.IsUnrandomized(MiscData.UnrandState.Manual) && !chkShowManual.Checked) { continue; }
                     if (i.Value.IsJunk() && !chkShowJunk.Checked) { continue; }
                     i.Value.DisplayName = i.Value.ParentAreaID + " => " + i.Value.ID;
                     if (!SearchStringParser.FilterSearch(_Instance, i.Value, TxtLocationSearch.Text, i.Value.DisplayName)) { continue; }

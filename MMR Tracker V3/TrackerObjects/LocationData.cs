@@ -51,11 +51,10 @@ namespace MMR_Tracker_V3.TrackerObjects
                 if (Newstate == RandomizedState) { return; }
                 RandomizedState = Newstate;
             }
-
-            public bool IsUnrandomized(int Include = 0)
+            public bool IsUnrandomized(UnrandState Include = UnrandState.Any)
             {
-                if ((Include == 0 || Include == 1) && RandomizedState == RandomizedState.Unrandomized) { return true; }
-                if ((Include == 0 || Include == 2) && RandomizedState == RandomizedState.UnrandomizedManual) { return true; }
+                if ((Include == UnrandState.Any || Include == UnrandState.Unrand) && RandomizedState == RandomizedState.Unrandomized) { return true; }
+                if ((Include == UnrandState.Any || Include == UnrandState.Manual) && RandomizedState == RandomizedState.UnrandomizedManual) { return true; }
                 return false;
             }
             public bool IsRandomized()
@@ -80,7 +79,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
             public bool AppearsinListbox(LogicObjects.TrackerInstance Instance, bool ShowJunkUnrand = false)
             {
-                return (!IsJunk() || ShowJunkUnrand) && (!IsUnrandomized(1) || ShowJunkUnrand) && !string.IsNullOrWhiteSpace(GetDictEntry(Instance).GetName(Instance));
+                return (!IsJunk() || ShowJunkUnrand) && (!IsUnrandomized(MiscData.UnrandState.Unrand) || ShowJunkUnrand) && !string.IsNullOrWhiteSpace(GetDictEntry(Instance).GetName(Instance));
             }
 
             public bool ToggleChecked(CheckState NewState, LogicObjects.TrackerInstance Instance)

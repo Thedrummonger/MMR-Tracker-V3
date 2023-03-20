@@ -109,10 +109,10 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 return new EntranceRandoDestination { region = EntrancePair.Exit, from = EntrancePair.Area };
             }
-            public bool IsUnrandomized(int Include = 0)
+            public bool IsUnrandomized(UnrandState Include = UnrandState.Any)
             {
-                if ((Include == 0 || Include == 1) && RandomizedState == RandomizedState.Unrandomized) { return true; }
-                if ((Include == 0 || Include == 2) && RandomizedState == RandomizedState.UnrandomizedManual) { return true; }
+                if ((Include == UnrandState.Any || Include == UnrandState.Unrand) && RandomizedState == RandomizedState.Unrandomized) { return true; }
+                if ((Include == UnrandState.Any || Include == UnrandState.Manual) && RandomizedState == RandomizedState.UnrandomizedManual) { return true; }
                 return false;
             }
             public bool IsRandomized()

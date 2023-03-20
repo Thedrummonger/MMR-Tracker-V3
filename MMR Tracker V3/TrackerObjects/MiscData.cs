@@ -55,11 +55,6 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return Display;
             }
         }
-        public class userData
-        {
-            public string CloudSaveAPIKey { get; set; }
-
-        }
         public class InstanceContainer
         {
             public InstanceContainer()
@@ -129,6 +124,12 @@ namespace MMR_Tracker_V3.TrackerObjects
             Checked = 0,
             Marked = 1,
             Unchecked = 2
+        }
+        public enum UnrandState
+        {
+            Any = 0,
+            Unrand = 1,
+            Manual = 2
         }
         [Serializable]
         public enum LogicFileType
