@@ -24027,6 +24027,44 @@
         "PriceDataNames": []
       }
     },
+    "MM_ARROWS_10": {
+      "Name": "10 Arrows (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_ARROWS_10",
+          "10 Arrows (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_ARROWS_10",
+          "10 Arrows (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_BOMBS_10": {
+      "Name": "10 Bombs (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_BOMBS_10",
+          "10 Bombs (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_BOMBS_10",
+          "10 Bombs (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
     "MM_POTION_RED": {
       "Name": "Red Potion (MM)",
       "MaxAmountInWorld": -1,

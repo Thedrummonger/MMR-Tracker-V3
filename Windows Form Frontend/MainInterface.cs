@@ -268,12 +268,19 @@ namespace Windows_Form_Frontend
 
             foreach (var i in InstanceContainer.Instance.LogicFile.Logic)
             {
-                var logicitems = i.ConditionalItems.SelectMany(x => x).ToArray();
+                var logicitems = i.ConditionalItems.SelectMany(x => x).Concat(i.RequiredItems).ToArray();
                 foreach(var l in logicitems)
                 {
                     InstanceContainer.logicCalculation.LogicEntryAquired(l, new List<string>()) ;
                 }
-                
+            }
+            foreach(var i in InstanceContainer.Instance.LocationPool)
+            {
+                string OriginalItem = i.Value.GetDictEntry(InstanceContainer.Instance).OriginalItem;
+                if (InstanceContainer.Instance.GetItemByID(OriginalItem) is null)
+                {
+                    Debug.WriteLine($"{OriginalItem} at loc {i.Key} is not a valid item");
+                }
             }
 
         }
