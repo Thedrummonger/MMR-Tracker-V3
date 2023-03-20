@@ -18191,6 +18191,34 @@
         "PriceDataNames": []
       },
       "LocationProxys": []
+    },
+    "MM_EVENT_MAJORA": {
+      "Name": "Majora",
+      "OriginalItem": "MM_MASK_MAJORA",
+      "Area": "The Moon",
+      "ValidItemTypes": [
+        "Majora"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT_EVENT_GANON": {
+      "Name": "Ganon",
+      "OriginalItem": "OOT_TRIFORCE",
+      "Area": "Ganon's Castle",
+      "ValidItemTypes": [
+        "Ganon"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
     }
   },
   "ItemList": {
@@ -24271,6 +24299,32 @@
           "SHARED_STICKS_10",
           "10 Deku Sticks"
         ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_MASK_MAJORA": {
+      "Name": "Majoras Mask",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": false,
+      "ItemTypes": [
+        "Majora"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_TRIFORCE": {
+      "Name": "Triforce",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": false,
+      "ItemTypes": [
+        "Ganon"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
         "PriceDataNames": []
       }
     }
@@ -33700,10 +33754,6 @@
               "action": "set",
               "amount": 0
             },
-            "SHARED_RUPEE_BLUE": {
-              "action": "set",
-              "amount": 0
-            },
             "SHARED_RUPEE_RED": {
               "action": "set",
               "amount": 0
@@ -33756,14 +33806,6 @@
               "amount": 0
             },
             "MM_RUPEE_GREEN": {
-              "action": "set",
-              "amount": 0
-            },
-            "OOT_RUPEE_BLUE": {
-              "action": "set",
-              "amount": 0
-            },
-            "MM_RUPEE_BLUE": {
               "action": "set",
               "amount": 0
             },
@@ -35145,18 +35187,6 @@
   },
   "AdditionalLogic": [
     {
-      "Id": "Game_Clear",
-      "RequiredItems": [
-        "OOT_EVENT_GANON",
-        "MM_EVENT_MAJORA"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
       "Id": "MM_ZORA",
       "RequiredItems": [
         "MM_MASK_ZORA"
@@ -35239,6 +35269,18 @@
         "MM_MASK_KEATON",
         "MM_EVENT_BOSS_SNOWHEAD",
         "MM Mountain Village"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Game_Clear",
+      "RequiredItems": [
+        "OOT_TRIFORCE",
+        "MM_MASK_MAJORA"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",

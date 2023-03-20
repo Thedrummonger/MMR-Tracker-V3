@@ -74,6 +74,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
             AddRenewableChecks(LogicFile, dictionaryFile);
 
+            AddGameClearChecks(LogicFile, dictionaryFile);
+
             FinalLogicCleanup(LogicFile);
 
 
@@ -91,6 +93,54 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             File.WriteAllText(FinalDictFile, JsonConvert.SerializeObject(dictionaryFile, Testing._NewtonsoftJsonSerializerOptions));
 
 
+        }
+
+        private static void AddGameClearChecks(MMRData.LogicFile logicFile, LogicDictionaryData.LogicDictionary dictionaryFile)
+        {
+            dictionaryFile.LocationList.Add("MM_EVENT_MAJORA", new LogicDictionaryData.DictionaryLocationEntries
+            {
+                ID = "MM_EVENT_MAJORA",
+                Name = "Majora",
+                Area = "The Moon",
+                OriginalItem = "MM_MASK_MAJORA",
+                ValidItemTypes = new string[] { "Majora" },
+                SpoilerData = new MMRData.SpoilerlogReference()
+            });
+
+            dictionaryFile.ItemList.Add("MM_MASK_MAJORA", new LogicDictionaryData.DictionaryItemEntries
+            {
+                ID = "MM_MASK_MAJORA",
+                Name = "Majoras Mask",
+                ValidStartingItem = false,
+                MaxAmountInWorld = 1,
+                ItemTypes= new string[] { "Majora" },
+                SpoilerData = new MMRData.SpoilerlogReference()
+            });
+
+            dictionaryFile.LocationList.Add("OOT_EVENT_GANON", new LogicDictionaryData.DictionaryLocationEntries
+            {
+                ID = "OOT_EVENT_GANON",
+                Name = "Ganon",
+                Area = "Ganon's Castle",
+                OriginalItem = "OOT_TRIFORCE",
+                ValidItemTypes = new string[] { "Ganon" },
+                SpoilerData = new MMRData.SpoilerlogReference()
+            });
+
+            dictionaryFile.ItemList.Add("OOT_TRIFORCE", new LogicDictionaryData.DictionaryItemEntries
+            {
+                ID = "OOT_TRIFORCE",
+                Name = "Triforce",
+                ValidStartingItem = false,
+                MaxAmountInWorld = 1,
+                ItemTypes= new string[] { "Ganon" },
+                SpoilerData = new MMRData.SpoilerlogReference()
+            });
+
+            //Game Clear
+            dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "Game_Clear", RequiredItems = new List<string> { "OOT_TRIFORCE", "MM_MASK_MAJORA" } });
+            dictionaryFile.MacroList.Add("Game_Clear", new LogicDictionaryData.DictionaryMacroEntry { ID = "Game_Clear", Name = "Both Games Cleared" });
+            dictionaryFile.WinCondition = "Game_Clear";
         }
 
         private static void FinalLogicCleanup(MMRData.LogicFile logicFile)
@@ -463,11 +513,6 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             shortHookshotMm.Values["false"].AddMaxAmountEdit("MM_HOOKSHOT", MiscData.MathOP.subtract, 1);
             dictionaryFile.Options.Add(shortHookshotMm.ID, shortHookshotMm);
 
-            //Game Clear
-            dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "Game_Clear", RequiredItems = new List<string> { "OOT_EVENT_GANON", "MM_EVENT_MAJORA" } });
-            dictionaryFile.MacroList.Add("Game_Clear", new LogicDictionaryData.DictionaryMacroEntry { ID = "Game_Clear", Name = "Both Games Cleared" });
-            dictionaryFile.WinCondition = "Game_Clear";
-
             //Temp Workaround for a typo in logic
             dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "MM_ZORA", RequiredItems = new List<string> { "MM_MASK_ZORA" } });
 
@@ -481,7 +526,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             AddSharedItemOptions("sharedLens", "Shared Lens of Truth", new string[] { "LENS" }, 1);
             AddSharedItemOptions("sharedOcarina", "Shared Ocarina", new string[] { "OCARINA" }, 2);
             AddSharedItemOptions("sharedMasks", "Shared Masks", new string[] { "MASK_ZORA", "MASK_GORON", "MASK_TRUTH", "MASK_BUNNY", "MASK_KEATON" }, 1);
-            AddSharedItemOptions("sharedWallets", "Shared Wallets", new string[] { "WALLET" }, 2, new string[] { "RUPEE_GREEN", "RUPEE_BLUE", "RUPEE_RED", "RUPEE_PURPLE", "RUPEE_SILVER", "RUPEE_GOLD", "RUPEE_HUGE" });
+            AddSharedItemOptions("sharedWallets", "Shared Wallets", new string[] { "WALLET" }, 2, new string[] { "RUPEE_GREEN", "RUPEE_RED", "RUPEE_PURPLE", "RUPEE_SILVER", "RUPEE_GOLD", "RUPEE_HUGE" }); //"RUPEE_BLUE" is bugged and still appears if shared
             AddSharedItemOptions("sharedHealth", "Shared Health", new string[] { "HEART_PIECE", "HEART_CONTAINER", "DEFENSE_UPGRADE" }, 1, new string[] { "RECOVERY_HEART", }); //I don't actually think any of this effects logic?
 
             AddMQOption("DTMQ", "Deku Tree");

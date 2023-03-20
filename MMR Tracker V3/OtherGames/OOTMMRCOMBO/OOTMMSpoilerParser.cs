@@ -188,6 +188,14 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         break;
                 }
             }
+            foreach(var i in instance.HintPool)
+            {
+                if (string.IsNullOrWhiteSpace(i.Value.SpoilerHintText))
+                {
+                    Debug.WriteLine($"Hint {i.Key} has no spoiler data, assuming junk");
+                    i.Value.RandomizedState = MiscData.RandomizedState.ForcedJunk;
+                }
+            }
         }
 
         private static void ToggleTricks(LogicObjects.TrackerInstance instance, List<string> trickData)
