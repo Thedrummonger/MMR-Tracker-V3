@@ -168,7 +168,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 switch (i.Value.HintType)
                 {
                     case HintType.ItemExact:
-                        instance.HintPool[i.Key].HintText = $"{i.Value.PrettyLocationText} contains {string.Join(" and ", i.Value.HintedItems)}";
+                        instance.HintPool[i.Key].SpoilerHintText = $"{i.Value.PrettyLocationText} contains {string.Join(" and ", i.Value.HintedItems)}";
                         if (i.Value.HintedLocations.Length == i.Value.HintedItems.Length)
                         {
                             for (var hintind = 0; hintind < i.Value.HintedLocations.Length; hintind++)
@@ -178,13 +178,13 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         }
                         break;
                     case HintType.ItemRegion:
-                        instance.HintPool[i.Key].HintText = $"{i.Value.PrettyLocationText} contains {string.Join(" and ", i.Value.HintedItems )}";
+                        instance.HintPool[i.Key].SpoilerHintText = $"{i.Value.PrettyLocationText} contains {string.Join(" and ", i.Value.HintedItems )}";
                         break;
                     case HintType.Hero:
-                        instance.HintPool[i.Key].HintText = $"{i.Value.PrettyLocationText} is Way of the Hero";
+                        instance.HintPool[i.Key].SpoilerHintText = $"{i.Value.PrettyLocationText} is Way of the Hero";
                         break;
                     case HintType.Foolish:
-                        instance.HintPool[i.Key].HintText = $"{i.Value.PrettyLocationText} is Foolish";
+                        instance.HintPool[i.Key].SpoilerHintText = $"{i.Value.PrettyLocationText} is Foolish";
                         break;
                 }
             }
@@ -265,16 +265,17 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             foreach(var i in startingItemData)
             {
                 if(i.Value < 1) { continue; }
-                if (!instance.ItemPool.ContainsKey(i.Key))
+                var item = instance.ItemPool.Values.FirstOrDefault(x => x.Id == i.Key || x.GetDictEntry(instance).SpoilerData.SpoilerLogNames.Contains(i.Key));
+                if (item is null)
                 {
                     Debug.WriteLine($"{i.Key} is not a valid item");
                     continue;
                 }
                 for(var c = 0; c < i.Value; c++)
                 {
-                    if (instance.GetItemToPlace(i.Key) is not null)
+                    if (instance.GetItemToPlace(item.Id) is not null)
                     {
-                        instance.ItemPool[i.Key].AmountInStartingpool++;
+                        item.AmountInStartingpool++;
                     }
                     else
                     {
