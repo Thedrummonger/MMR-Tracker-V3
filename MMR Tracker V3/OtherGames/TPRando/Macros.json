@@ -116,7 +116,7 @@
   "canCompleteCityinTheSky": "(City in The Sky Boss Room and CanDefeatArgorok)",
   "canCompletePalaceofTwilight": "(Palace of Twilight Boss Room and CanDefeatZant)",
   "canCompleteAllDungeons": "(canCompleteForestTemple and canCompleteGoronMines and canCompleteLakebedTemple and canCompleteArbitersGrounds and canCompleteSnowpeakRuins and canCompleteTempleofTime and canCompleteCityinTheSky and canCompletePalaceofTwilight)",
-  "HasBug": "true",
+  "HasBug": "Female_Phasmid or Male_Phasmid or Female_Grasshopper or Male_Grasshopper or Female_Pill_Bug or Male_Pill_Bug or Male_Ant or Female_Ant or Female_Beetle or Male_Beetle or Female_Snail or Male_Snail or Female_Dayfly or Male_Dayfly or Female_Mantis or Male_Mantis or Female_Stag_Beetle or Male_Stag_Beetle or Female_Ladybug or Male_Ladybug or Female_Dragonfly or Female_Butterfly or Male_Butterfly or Male_Dragonfly",
   "CanDoDifficultCombat": "false",
   "CanDoNicheStuff": "option{logicRules, Glitched}",
   "CanUseBacksliceAsSword": "CanDoNicheStuff and (Progressive_Hidden_Skill, 3)",

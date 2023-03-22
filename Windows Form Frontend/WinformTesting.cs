@@ -918,6 +918,10 @@ namespace Windows_Form_Frontend
             List<string> Areas = MainInterface.InstanceContainer.Instance.LocationPool.Values.Select(x => x.GetDictEntry(MainInterface.InstanceContainer.Instance).Area).Distinct().ToList();
             Testing.PrintObjectToConsole(Areas);
 
+            List<string> Bugs = MainInterface.InstanceContainer.Instance.ItemPool.Values.Where(x => x.Id.StartsWith("Female_") || x.Id.StartsWith("Male_")).Select(x => x.Id).ToList();
+            string AnyBug = string.Join(" or ", Bugs);
+            Debug.WriteLine(AnyBug);
+
             string Root = MainInterface.InstanceContainer.Instance.EntrancePool.RootArea;
             Debug.WriteLine($"Root Area {Root} Valid {MainInterface.InstanceContainer.Instance.EntrancePool.AreaList.ContainsKey(Root)} Aquired {MainInterface.InstanceContainer.logicCalculation.LogicEntryAquired(Root, new List<string>())}");
         }
