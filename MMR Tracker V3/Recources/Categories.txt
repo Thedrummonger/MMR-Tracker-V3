@@ -3,38 +3,45 @@
 //Multiple gamecodes can be defined in a comma seperated lits ex: (#GAMECODESTART:MMR,OOTR)
 //Using "#GAMECODEEND:" will exit the game code restriction
 
-#GAMECODESTART: SSR
-%Options%
-%Required Dungeons%
-Skyloft
-Sky
-Skyloft Silent Realm
-Skykeep
-Thunderhead
-Sealed Grounds
+GAMECODESTART: TPR
+
+//Ordon and Faron
+Ordona Province
 Faron Woods
-Skyview
-Faron Silent Realm
-Flooded Faron Woods
-Lake Floria
-Ancient Cistern
-Eldin Volcano
-Mogma Turf
-Earth Temple
-Eldin Silent Realm
-Volcano Summit
-Fire Dragon Room
-Fire Sanctuary
-Lanayru Mines
-Lanayru
-Lanayru Mining Facility
-Lanyru Silent Realm
-Lanayru Caves
-Lanayru Gorge
-Lanayru Sand Sea
-Sandship
-Goddess Cubes
-Single Gratitude Crystal
+Hyrule Field - Faron Province
+
+//Eldin
+Hyrule Field - Eldin Province
+Eldin Lantern Cave
+Eldin Stockcave
+Kakariko Village
+Death Mountain
+
+//Lanayru
+Lake Hylia
+Lake Lantern Cave
+Zoras Domain
+Hyrule Field - Lanayru Province
+Castle Town
+
+//Mirror Dungeon Areas
+Gerudo Desert
+Snowpeak Province
+Hidden Village
+Sacred Grove
+
+//Temples
+Cave of Ordeals
+Forest Temple
+Goron Mines
+Lakebed Temple
+Arbiters Grounds
+Snowpeak Ruins
+Temple of Time
+City in The Sky
+Palace of Twilight
+Hyrule Castle
+
 #GAMECODEEND:
 
 #GAMECODESTART: OOTMM,MMR
