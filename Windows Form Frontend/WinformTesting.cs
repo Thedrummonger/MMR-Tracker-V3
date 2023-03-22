@@ -1,6 +1,9 @@
 ﻿using MMR_Tracker_V3;
+using MMR_Tracker_V3.TrackerObjects;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -901,6 +904,28 @@ namespace Windows_Form_Frontend
             File.WriteAllText(Path.Combine(References.TestingPaths.GetDevCodePath(), "Windows Form Frontend", "ItemTrackerData", "MMRItemTracker.json"), Newtonsoft.Json.JsonConvert.SerializeObject(instance, MMR_Tracker_V3.Testing._NewtonsoftJsonSerializerOptions));
             File.WriteAllText(Path.Combine("ItemTrackerData", "MMRItemTracker.json"), Newtonsoft.Json.JsonConvert.SerializeObject(instance, MMR_Tracker_V3.Testing._NewtonsoftJsonSerializerOptions));
 
+        }
+
+        public static void TPRCreateData()
+        {
+            MMR_Tracker_V3.OtherGames.TPRando.ReadAndParseData.CreateFiles(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary);
+            WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(Logic), JsonConvert.SerializeObject(dictionary));
+            Testing.TestLogicForInvalidItems(MainInterface.InstanceContainer);
+            //Testing.TestLocationsForInvalidVanillaItem(MainInterface.InstanceContainer);
+
+            //Testing.PrintObjectToConsole(MMR_Tracker_V3.OtherGames.TPRando.ParseMacrosFromCode.ReadMacrosFromCode());
+
+            string Root = MainInterface.InstanceContainer.Instance.EntrancePool.RootArea;
+            Debug.WriteLine($"Root Area {Root} Valid {MainInterface.InstanceContainer.Instance.EntrancePool.AreaList.ContainsKey(Root)} Aquired {MainInterface.InstanceContainer.logicCalculation.LogicEntryAquired(Root, new List<string>())}");
+        }
+
+        public static void OOTMMCreateData()
+        {
+            MMR_Tracker_V3.OtherGames.OOTMMRCOMBO.ReadAndParseData.CreateFiles(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary);
+            WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(Logic), JsonConvert.SerializeObject(dictionary));
+            MainInterface.InstanceContainer.Instance.StaticOptions.ShowMacroExitsPathfinder = true;
+            Testing.TestLogicForInvalidItems(MainInterface.InstanceContainer);
+            Testing.TestLocationsForInvalidVanillaItem(MainInterface.InstanceContainer);
         }
     }
 }

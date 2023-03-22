@@ -69,5 +69,27 @@ namespace MMR_Tracker_V3
             NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore,
             Converters = { new Newtonsoft.Json.Converters.StringEnumConverter() }
         };
+        public static void TestLogicForInvalidItems(MiscData.InstanceContainer Container)
+        {
+            foreach (var i in Container.Instance.LogicFile.Logic)
+            {
+                var logicitems = i.ConditionalItems.SelectMany(x => x).Concat(i.RequiredItems).ToArray();
+                foreach (var l in logicitems)
+                {
+                    Container.logicCalculation.LogicEntryAquired(l, new List<string>());
+                }
+            }
+        }
+        public static void TestLocationsForInvalidVanillaItem(MiscData.InstanceContainer Container)
+        {
+            foreach (var i in Container.Instance.LocationPool)
+            {
+                string OriginalItem = i.Value.GetDictEntry(Container.Instance).OriginalItem;
+                if (Container.Instance.GetItemByID(OriginalItem) is null)
+                {
+                    Debug.WriteLine($"{OriginalItem} at loc {i.Key} is not a valid item");
+                }
+            }
+        }
     }
 }

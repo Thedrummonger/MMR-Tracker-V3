@@ -372,6 +372,7 @@ namespace MMR_Tracker_V3
 
         private bool IsEndOfExpression(string currentEntry, string LogicString, int CurrentIndex, bool inQuotes)
         {
+            if (inQuotes) { return false; }
             if (CurrentIndex + 1 >= LogicString.Length) { return true; } //Return true if this is the last char in the line
             //If the expression is a function, return whether or not the function has escaped parenthese
             //To test this, check if the number of closing Parenthese is equal to the number of open Parenthese
