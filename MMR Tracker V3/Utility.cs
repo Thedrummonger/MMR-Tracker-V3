@@ -240,6 +240,11 @@ namespace MMR_Tracker_V3
             return Object.GetType().GetProperty(name) != null;
         }
 
+        public static List<string> ParseJArrayToListSlow(object JArray)
+        {
+            return JsonConvert.DeserializeObject<List<string>>(JsonConvert.SerializeObject(JArray));
+        }
+
         public static bool TestForPriceData(dynamic Object)
         {
             try

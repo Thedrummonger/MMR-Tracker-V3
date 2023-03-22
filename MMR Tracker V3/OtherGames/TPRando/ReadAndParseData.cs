@@ -36,13 +36,6 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
             public Dictionary<string, string> Exits { get; set; } = new Dictionary<string, string>();
         }
 
-        public class TPRSpoilerLog
-        {
-            public string[] requiredDungeons { get; set; }
-            public Dictionary<string, string> itemPlacements { get; set; }
-            public Dictionary<string, object> settings { get; set; }
-        }
-
         private static LogicStringParser TPLogicParser = new LogicStringParser(LogicStringParser.OperatorType.PyStyle);
 
         public static void CreateFiles(out MMRData.LogicFile TRPLogic, out LogicDictionaryData.LogicDictionary TRPDictionary)
@@ -64,6 +57,19 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
 
         private static void CreateOptions(LogicDictionaryData.LogicDictionary tRPDictionary)
         {
+            Dictionary<string, string> OptionPrettyName = new Dictionary<string, string>
+            {
+                { "Fused_Shadows", "Fused Shadows" },
+                { "Mirror_Shards","Mirror Shards"},
+                { "All_Dungeons","All Dungeons"},
+                { "vanilla","Vanilla"},
+                { "ownDungeon","Own Dungeon"},
+                { "anyDungeon", "Any Dungeon"},
+                { "anywhere","Anywhere"},
+                { "NoWrestling","No Wrestling"},
+                { "OpenGrove","Open Grove"}
+            };
+
             CreateOption("castleRequirements", "Hyrule Castle Requirements", "Access Options", new string[] { "Vanilla", "Open", "Fused_Shadows", "Mirror_Shards", "All_Dungeons" });
             CreateOption("palaceRequirements", "Palace of Twilight Requirements", "Access Options", new string[] { "Vanilla", "Open", "Fused_Shadows", "Mirror_Shards" });
             CreateOption("faronWoodsLogic", "Open Faron Woods", "Access Options", new string[] { "Closed", "Open" });
@@ -105,6 +111,10 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
                     SubCategory= Category,
                 };
                 Option.CreateSimpleValues(Values);
+                foreach(var Value in Option.Values)
+                {
+                    if (OptionPrettyName.ContainsKey(Value.Key)) { Value.Value.Name = OptionPrettyName[Value.Key]; }
+                }
                 tRPDictionary.Options.Add(ID, Option);
             }
         }
@@ -151,7 +161,7 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
         {
             string Macros = Path.Combine(References.TestingPaths.GetDevCodePath(), @"MMR Tracker V3", "OtherGames", "TPRando", @"Macros.json");
             TRPLogic = new() { GameCode = "TPR", Logic = new List<MMRData.JsonFormatLogicItem>(), Version = 1 };
-            TRPDictionary = new() { LogicVersion = 1, GameCode = "TPR", RootArea = "Ordon Province" };
+            TRPDictionary = new() { LogicVersion = 1, GameCode = "TPR", RootArea = "Ordon Province", WinCondition = "GameClear" };
             foreach (var graph in worldGRaph)
             {
                 foreach(var loc in graph.Value.Locations)
@@ -194,7 +204,7 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
                     TRPDictionary.EntranceList.Add(ExitID, exitEntry);
                 }
             }
-            var AdditionalItems = new string[] { "Lantern", "Gate_Keys", "Shadow_Crystal" };
+            var AdditionalItems = new string[] { "Lantern", "Gate_Keys", "Shadow_Crystal", "Foolish_Item" };
             foreach(var i in checkData.Select(x => x.itemId).Concat(AdditionalItems))
             {
                 if (TRPDictionary.ItemList.Any(x => x.Key == i)) { continue; }
@@ -218,13 +228,19 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
                 };
                 TRPLogic.Logic.Add(logicItem);
             }
+
+            TRPLogic.Logic.Add(new MMRData.JsonFormatLogicItem()
+            {
+                Id = "GameClear",
+                ConditionalItems = new List<List<string>> { new List<string> { "Ganondorf Castle" } }
+            });
         }
 
         private static void CompareDataToSpoilerLog(List<CheckData> checkData, List<string> AllItems)
         {
             List<string> allSpoilerlogItems = new List<string>();
             string TestSpoilerLog = Path.Combine(References.TestingPaths.GetDevTestingPath(), "TPRando", "TestSpoiler.json");
-            var SpoilerData = Newtonsoft.Json.JsonConvert.DeserializeObject<TPRSpoilerLog>(File.ReadAllText(TestSpoilerLog));
+            var SpoilerData = JsonConvert.DeserializeObject<TPRSpoilerLogParser.TPRSpoilerLog>(File.ReadAllText(TestSpoilerLog));
 
             Debug.WriteLine("\nLocations in spoiler log not found in Pool");
             foreach(var i in SpoilerData.itemPlacements)

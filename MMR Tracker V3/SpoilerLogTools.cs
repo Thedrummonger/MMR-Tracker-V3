@@ -20,13 +20,13 @@ namespace MMR_Tracker_V3
             switch (Instance.LogicFile.GameCode)
             {
                 case "OOTR":
-                    return "OOTR Spoiler Log (*.json)|*.json";
+                    return "Ocarina of Time Rando Spoiler Log (*.json)|*.json";
                 case "OOTMM":
-                    return "OOTMM Spoiler Log (*.txt)|*.txt";
-                case "PMR":
-                    return "PMR Text Spoiler Log|*.txt";
+                    return "OOT X MM Combo Rando Spoiler Log (*.txt)|*.txt";
+                case "TPR":
+                    return "Twilight Princess Rando Spoiler Log|*.json";
                 default:
-                    return "MMR Text Spoiler Log|*.txt";
+                    return "Majoras Mask Randomizer Text Spoiler Log|*.txt";
             }
         }
 
@@ -73,6 +73,10 @@ namespace MMR_Tracker_V3
                     ApplyMMRandoSettings(container.Instance, LogData);
                     ApplyMMRandoSpoilerLog(container.Instance, LogData);
                     container.Instance.EntrancePool.IsEntranceRando = container.Instance.EntrancePool.CheckForRandomEntrances(container.Instance);
+                    return true;
+                case "TPR":
+                    container.Instance.SpoilerLog = new LogicObjects.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
+                    OtherGames.TPRando.TPRSpoilerLogParser.readAndApplySpoilerLog(container.Instance);
                     return true;
 
                 default:
