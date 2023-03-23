@@ -48,9 +48,10 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
             CreateDictionaryAndLogicFile(WorldGRaph, CheckData, out TRPLogic, out TRPDictionary);
             FormatLogic(TRPLogic);
             CreateOptions(TRPDictionary);
-            string TestFolder = Path.Combine(References.TestingPaths.GetDevTestingPath(), "TPRando");
-            string FinalDictFile = Path.Combine(TestFolder,  @"TPR V1.json");
-            string FinalLogicFile = Path.Combine(TestFolder, @"DEV-TPR Casual.json");
+
+            string TestFolder = Path.Combine(References.TestingPaths.GetDevCodePath(), "MMR Tracker V3", "Recources");
+            string FinalDictFile = Path.Combine(TestFolder, "Dictionaries", @"TPR V1.json");
+            string FinalLogicFile = Path.Combine(TestFolder, "Presets", @"DEV-TPR Casual.json");
             File.WriteAllText(FinalLogicFile, JsonConvert.SerializeObject(TRPLogic, Testing._NewtonsoftJsonSerializerOptions));
             File.WriteAllText(FinalDictFile, JsonConvert.SerializeObject(TRPDictionary, Testing._NewtonsoftJsonSerializerOptions));
         }
@@ -180,7 +181,7 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
                         Name = loc.Key,
                         OriginalItem = CheckData.itemId,
                         SpoilerData = new MMRData.SpoilerlogReference { SpoilerLogNames = new string[] { loc.Key } },
-                        ValidItemTypes = new string[] { "item" }
+                        ValidItemTypes = new string[] { "item" }.Concat(CheckData.category).ToArray()
                     };
                     TRPLogic.Logic.Add(logicItem);
                     TRPDictionary.LocationList.Add(loc.Key, locationEntry);
