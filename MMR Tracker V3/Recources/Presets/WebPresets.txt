@@ -18,6 +18,10 @@ Address: https://raw.githubusercontent.com/ZoeyZolotova/mm-rando/dev/MMR.Randomi
 Name: MMR Glitched
 Address: https://raw.githubusercontent.com/ZoeyZolotova/mm-rando/dev/MMR.Randomizer/Resources/REQ_GLITCH.txt
 
-Name: OOTMM Casual
+Name: OOTMM Casual (BETA)
 Dictionary: https://raw.githubusercontent.com/Thedrummonger/MMR-Tracker-V3/master/MMR%20Tracker%20V3/Recources/Dictionaries/OOTMM%20V1.json
 Address: https://raw.githubusercontent.com/Thedrummonger/MMR-Tracker-V3/master/MMR%20Tracker%20V3/Recources/Presets/DEV-OOTMM%20Casual.json
+
+Name: TPR Casual (BETA)
+Dictionary: https://raw.githubusercontent.com/Thedrummonger/MMR-Tracker-V3/master/MMR%20Tracker%20V3/Recources/Dictionaries/TPR%20V1.json
+Address: https://raw.githubusercontent.com/Thedrummonger/MMR-Tracker-V3/master/MMR%20Tracker%20V3/Recources/Presets/DEV-TPR%20Casual.json
