@@ -36,7 +36,7 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
             public Dictionary<string, string> Exits { get; set; } = new Dictionary<string, string>();
         }
 
-        private static LogicStringParser TPLogicParser = new LogicStringParser(LogicStringParser.OperatorType.PyStyle);
+        private static LogicStringParser TPLogicParser = new LogicStringParser(LogicStringParser.OperatorType.PyStyle, quotes: '\'');
 
         public static void CreateFiles(out MMRData.LogicFile TRPLogic, out LogicDictionaryData.LogicDictionary TRPDictionary)
         {

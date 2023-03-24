@@ -14173,7 +14173,7 @@
     },
     "MM Goron Shop Item 1": {
       "Name": "Goron Shop Item 1",
-      "OriginalItem": "MM_ARROWS_10",
+      "OriginalItem": "MM_BOMBS_10",
       "Area": "Goron Village",
       "ValidItemTypes": [
         "item"
@@ -14191,7 +14191,7 @@
     },
     "MM Goron Shop Item 2": {
       "Name": "Goron Shop Item 2",
-      "OriginalItem": "MM_BOMBS_10",
+      "OriginalItem": "MM_ARROWS_10",
       "Area": "Goron Village",
       "ValidItemTypes": [
         "item"
@@ -32863,24 +32863,11 @@
     },
     "progressiveShieldsMm": {
       "DisplayName": "Progressive MM Shields",
-      "CurrentValue": "start",
+      "CurrentValue": "separate",
       "SubCategory": "Progressive Items",
       "Values": {
         "separate": {
           "Name": "Separate",
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {
-            "MM_SHIELD": {
-              "action": "set",
-              "amount": 0
-            }
-          },
-          "VariableEdit": {}
-        },
-        "start": {
-          "Name": "Start with Hero Shield",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},

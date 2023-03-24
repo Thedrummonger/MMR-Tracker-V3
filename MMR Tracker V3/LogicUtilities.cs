@@ -237,29 +237,31 @@ namespace MMR_Tracker_V3
         public char _OpenContainer;
         public char _CloseContainer;
         private bool _AllowSpaces;
-        public LogicStringParser(OperatorType operatorType = OperatorType.CStyle, ContainerType containerType = ContainerType.parentheses, bool AllowSpaces = true)
+        private char _Quotes = default;
+        public LogicStringParser(OperatorType operatorType = OperatorType.CStyle, ContainerType containerType = ContainerType.parentheses, bool AllowSpaces = true, char quotes = default)
         {
-            Initialize(GetAndOP(operatorType), GetOrOP(operatorType), GetOpenContainer(containerType), GetCloseContainer(containerType), AllowSpaces);
+            Initialize(GetAndOP(operatorType), GetOrOP(operatorType), GetOpenContainer(containerType), GetCloseContainer(containerType), AllowSpaces, quotes);
         }
-        public LogicStringParser(string AndOP, string OrOP, ContainerType containerType, bool AllowSpaces = true)
+        public LogicStringParser(string AndOP, string OrOP, ContainerType containerType, bool AllowSpaces = true, char quotes = default)
         {
-            Initialize(AndOP, OrOP, GetOpenContainer(containerType), GetCloseContainer(containerType), AllowSpaces);
+            Initialize(AndOP, OrOP, GetOpenContainer(containerType), GetCloseContainer(containerType), AllowSpaces, quotes);
         }
-        public LogicStringParser(string AndOP, string OrOP, char OpenContainer, char CloseContainer, bool AllowSpaces = true)
+        public LogicStringParser(string AndOP, string OrOP, char OpenContainer, char CloseContainer, bool AllowSpaces = true, char quotes = default)
         {
-            Initialize(AndOP, OrOP, OpenContainer, CloseContainer, AllowSpaces);
+            Initialize(AndOP, OrOP, OpenContainer, CloseContainer, AllowSpaces, quotes);
         }
-        public LogicStringParser(OperatorType operatorType, char OpenContainer, char CloseContainer, bool AllowSpaces = true)
+        public LogicStringParser(OperatorType operatorType, char OpenContainer, char CloseContainer, bool AllowSpaces = true, char quotes = default)
         {
-            Initialize(GetAndOP(operatorType), GetOrOP(operatorType), OpenContainer, CloseContainer, AllowSpaces);
+            Initialize(GetAndOP(operatorType), GetOrOP(operatorType), OpenContainer, CloseContainer, AllowSpaces, quotes);
         }
 
-        private void Initialize(string AndOP, string OrOP, char OpenContainer, char CloseContainer, bool AllowSpaces)
+        private void Initialize(string AndOP, string OrOP, char OpenContainer, char CloseContainer, bool AllowSpaces, char quotes = default)
         {
             _ANDOP = AndOP;
             _OROP = OrOP;
             _OpenContainer = OpenContainer;
             _CloseContainer = CloseContainer;
+            _Quotes = quotes;
             _AllowSpaces = AllowSpaces;
             Debug.WriteLine($"{_ANDOP} {_OROP} {_OpenContainer} {_CloseContainer}");
         }
@@ -341,11 +343,12 @@ namespace MMR_Tracker_V3
             string CurrentEntry = "";
             int currentIndex = -1;
             bool InQuotes = false;
+            char QuoteChar = _Quotes == default ? '\'' : _Quotes;
             foreach (char c in logicString)
             {
                 currentIndex++;
                 CurrentEntry += c;
-                if (c == '\'') { InQuotes = !InQuotes; }
+                if (c == QuoteChar) { InQuotes = !InQuotes; }
                 if (IsEndOfExpression(CurrentEntry, logicString, currentIndex, InQuotes))
                 {
                     string TrimmedEntry = CurrentEntry.Trim();
@@ -372,7 +375,7 @@ namespace MMR_Tracker_V3
 
         private bool IsEndOfExpression(string currentEntry, string LogicString, int CurrentIndex, bool inQuotes)
         {
-            if (inQuotes) { return false; }
+            if (_Quotes != default && inQuotes) { return false; }
             if (CurrentIndex + 1 >= LogicString.Length) { return true; } //Return true if this is the last char in the line
             //If the expression is a function, return whether or not the function has escaped parenthese
             //To test this, check if the number of closing Parenthese is equal to the number of open Parenthese

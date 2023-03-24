@@ -476,14 +476,12 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             OptionData.TrackerOption ProgressiveShieldsMM = new OptionData.TrackerOption();
             ProgressiveShieldsMM.ID = "progressiveShieldsMm";
             ProgressiveShieldsMM.DisplayName = "Progressive MM Shields";
-            ProgressiveShieldsMM.CurrentValue = "start";
+            ProgressiveShieldsMM.CurrentValue = "separate";
             ProgressiveShieldsMM.SubCategory = "Progressive Items";
-            ProgressiveShieldsMM.CreateSimpleValues(new string[] { "separate", "start", "progressive" });
+            ProgressiveShieldsMM.CreateSimpleValues(new string[] { "separate", "progressive" });
             ProgressiveShieldsMM.Values["separate"].AddMaxAmountEdit("MM_SHIELD", MiscData.MathOP.set, 0);
-            ProgressiveShieldsMM.Values["start"].AddMaxAmountEdit("MM_SHIELD", MiscData.MathOP.set, 0);
             ProgressiveShieldsMM.Values["progressive"].AddMaxAmountEdit("MM_SHIELD_MIRROR", MiscData.MathOP.set, 0);
             ProgressiveShieldsMM.Values["separate"].Name = "Separate";
-            ProgressiveShieldsMM.Values["start"].Name = "Start with Hero Shield";
             ProgressiveShieldsMM.Values["progressive"].Name = "Progressive";
             dictionaryFile.Options.Add(ProgressiveShieldsMM.ID, ProgressiveShieldsMM);
 
