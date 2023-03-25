@@ -36,6 +36,32 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
             public Dictionary<string, string> Exits { get; set; } = new Dictionary<string, string>();
         }
 
+        private static string[] StartingItems = new string[]
+        {
+            "Shadow Crystal",
+            "Progressive Sword",
+            "Boomerang",
+            "Lantern",
+            "Slingshot",
+            "Progressive Fishing Rod",
+            "Iron Boots",
+            "Progressive Bow",
+            "Filled Bomb Bag",
+            "Zora Armor",
+            "Progressive Clawshot",
+            "Aurus Memo",
+            "Asheis Sketch",
+            "Spinner",
+            "Ball and Chain",
+            "Progressive Dominion Rod",
+            "Progressive Sky Book",
+            "Horse Call",
+            "Gate Keys",
+            "Empty Bottle",
+            "Ordon Shield",
+            "Hylian Shield"
+        };
+
         private static LogicStringParser TPLogicParser = new LogicStringParser(LogicStringParser.OperatorType.PyStyle, quotes: '\'');
 
         public static void CreateFiles(out MMRData.LogicFile TRPLogic, out LogicDictionaryData.LogicDictionary TRPDictionary)
@@ -162,7 +188,7 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
         {
             string Macros = Path.Combine(References.TestingPaths.GetDevCodePath(), @"MMR Tracker V3", "OtherGames", "TPRando", @"Macros.json");
             TRPLogic = new() { GameCode = "TPR", Logic = new List<MMRData.JsonFormatLogicItem>(), Version = 1 };
-            TRPDictionary = new() { LogicVersion = 1, GameCode = "TPR", RootArea = "Ordon Province", WinCondition = "GameClear" };
+            TRPDictionary = new() { LogicVersion = 1, GameCode = "TPR", RootArea = "Ordon Province", WinCondition = "Triforce" };
             foreach (var graph in worldGRaph)
             {
                 foreach(var loc in graph.Value.Locations)
@@ -216,8 +242,8 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
                     SpoilerData = new MMRData.SpoilerlogReference { SpoilerLogNames = new string[] { i, i.Replace("_", " ") } },
                     MaxAmountInWorld = -1,
                     ItemTypes = new string[] { "item" },
-                    ValidStartingItem= true,
                 };
+                itemEntry.ValidStartingItem = itemEntry.SpoilerData.SpoilerLogNames.Intersect(StartingItems).Any();
                 TRPDictionary.ItemList.Add(i, itemEntry);
             }
             foreach(var i in JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(Macros)))
@@ -232,8 +258,26 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
 
             TRPLogic.Logic.Add(new MMRData.JsonFormatLogicItem()
             {
-                Id = "GameClear",
+                Id = "DefeatGanon",
                 ConditionalItems = new List<List<string>> { new List<string> { "Ganondorf Castle" } }
+            });
+            TRPDictionary.LocationList.Add("DefeatGanon", new()
+            {
+                ID = "DefeatGanon",
+                Area = "Hyrule Castle",
+                Name = "Ganondorf",
+                OriginalItem = "Triforce",
+                SpoilerData = new MMRData.SpoilerlogReference { SpoilerLogNames = new string[] { "DefeatGanon", "Ganondorf" } },
+                ValidItemTypes = new string[] { "GameClear" }
+            });
+            TRPDictionary.ItemList.Add("Triforce", new()
+            {
+                ID = "Triforce",
+                Name = "Triforce",
+                SpoilerData = new MMRData.SpoilerlogReference { SpoilerLogNames = new string[] { "Triforce" } },
+                MaxAmountInWorld = 1,
+                ItemTypes = new string[] { "GameClear" },
+                ValidStartingItem= false,
             });
         }
 

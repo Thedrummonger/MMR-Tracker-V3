@@ -13390,7 +13390,7 @@
       "IsTrick": false
     },
     {
-      "Id": "GameClear",
+      "Id": "DefeatGanon",
       "RequiredItems": [
         "Ganondorf Castle"
       ],
