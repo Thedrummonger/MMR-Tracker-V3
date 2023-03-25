@@ -20,21 +20,6 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
         public static void readAndApplySpoilerLog(LogicObjects.TrackerInstance Instance)
         {
             var SpoilerData = JsonConvert.DeserializeObject<TPRSpoilerLog>(string.Join("", Instance.SpoilerLog.Log));
-            foreach(var i in SpoilerData.itemPlacements)
-            {
-                var Location = Instance.GetLocationByID(i.Key);
-                var item = Instance.GetItemByID(i.Value);
-                if (Location is null)
-                {
-                    Debug.WriteLine($"{i.Key} was not a valid location!");
-                    continue;
-                }
-                if (item is null)
-                {
-                    Debug.WriteLine($"{i.Value} was not a valid Item!");
-                }
-                Location.Randomizeditem.SpoilerLogGivenItem = item?.Id??i.Value;
-            }
             foreach(var i in SpoilerData.settings)
             {
                 if (Instance.UserOptions.ContainsKey(i.Key))
@@ -70,9 +55,29 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
                     }
                 }
             }
-            foreach(var i in Instance.LocationPool.Values)
+            foreach (var i in SpoilerData.itemPlacements)
             {
-                if (string.IsNullOrWhiteSpace(i.Randomizeditem.SpoilerLogGivenItem))
+                var Location = Instance.GetLocationByID(i.Key);
+                var item = Instance.GetItemByID(i.Value);
+                if (i.Value == "Vanilla" && Location is not null) { Location.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.ForcedJunk, Instance); continue; }
+                if (Location is null)
+                {
+                    Debug.WriteLine($"{i.Key} was not a valid location!");
+                    continue;
+                }
+                if (item is null)
+                {
+                    Debug.WriteLine($"{i.Value} was not a valid Item!");
+                }
+                else if (Instance.GetItemToPlace(i.Value) == null)
+                {
+                    Debug.WriteLine($"{i.Value} was placed more times than allowed!");
+                }
+                Location.Randomizeditem.SpoilerLogGivenItem = item?.Id??i.Value;
+            }
+            foreach (var i in Instance.LocationPool.Values)
+            {
+                if (string.IsNullOrWhiteSpace(i.Randomizeditem.SpoilerLogGivenItem) && i.IsRandomized() && string.IsNullOrWhiteSpace(i.SingleValidItem))
                 {
                     Debug.WriteLine($"{i.ID} Was not found in the spoiler log!");
                 }

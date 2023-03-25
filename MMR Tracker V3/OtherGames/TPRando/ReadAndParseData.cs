@@ -61,6 +61,28 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
             "Ordon Shield",
             "Hylian Shield"
         };
+        private static string[] JunkItems = new string[] {
+            "Bombs_5",
+            "Bombs_10",
+            "Bombs_20",
+            "Bombs_30",
+            "Arrows_10",
+            "Arrows_20",
+            "Arrows_30",
+            "Seeds_50",
+            "Water_Bombs_5",
+            "Water_Bombs_10",
+            "Water_Bombs_15",
+            "Bomblings_5",
+            "Bomblings_10",
+            "Blue_Rupee",
+            "Yellow_Rupee",
+            "Red_Rupee",
+            "Purple_Rupee",
+            "Orange_Rupee"
+        };
+
+        private static string[] AdditionalItems = new string[] { "Lantern", "Gate_Keys", "Shadow_Crystal", "Foolish_Item" };
 
         private static LogicStringParser TPLogicParser = new LogicStringParser(LogicStringParser.OperatorType.PyStyle, quotes: '\'');
 
@@ -80,6 +102,7 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
             string FinalLogicFile = Path.Combine(TestFolder, "Presets", @"DEV-TPR Casual.json");
             File.WriteAllText(FinalLogicFile, JsonConvert.SerializeObject(TRPLogic, Testing._NewtonsoftJsonSerializerOptions));
             File.WriteAllText(FinalDictFile, JsonConvert.SerializeObject(TRPDictionary, Testing._NewtonsoftJsonSerializerOptions));
+            GetItemCOunts(CheckData);
         }
 
         private static void CreateOptions(LogicDictionaryData.LogicDictionary tRPDictionary)
@@ -184,8 +207,43 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
             return c;
         }
 
+        private static Dictionary<string, int> GetItemCOunts(List<CheckData> checkData)
+        {
+            Dictionary<string, int> ExtraItems = new Dictionary<string, int>()
+            {
+                { "Progressive_Sword", 1 },         //Sword from master sword pedestal
+                { "Progressive_Dominion_Rod", 1  },  //Restored Dominion Rod, The valilla check seems to be removed and having all the sky books just moves the canon?
+                //These staring Items are odd so just increase the max amount until I have a better Solution
+                { "Asheis_Sketch", 1  },
+                { "Aurus_Memo", 1  },
+                { "Filled_Bomb_Bag", 1  },
+                { "Horse_Call", 1  },
+                { "Progressive_Fishing_Rod", 1  },
+                { "Progressive_Sky_Book", 7  },
+                { "Zora_Armor", 1  },
+            };
+            Dictionary<string, int> ItemCounts = new Dictionary<string, int>();
+            foreach (var check in checkData)
+            {
+                if (!ItemCounts.ContainsKey(check.itemId)) { ItemCounts.Add(check.itemId, 1); }
+                else { ItemCounts[check.itemId]++; }
+                if (JunkItems.Contains(check.itemId)) { ItemCounts[check.itemId] = -1; }
+            }
+            foreach(var check in AdditionalItems) 
+            {
+                int Amount = check == "Foolish_Item" ? -1 : 1;
+                ItemCounts.Add(check, Amount);
+            }
+            foreach (var check in ExtraItems)
+            {
+                ItemCounts[check.Key] += check.Value;
+            }
+            return ItemCounts;
+        }
+
         private static void CreateDictionaryAndLogicFile(Dictionary<string, WorldGraph> worldGRaph, List<CheckData> checkData, out MMRData.LogicFile TRPLogic, out LogicDictionaryData.LogicDictionary TRPDictionary)
         {
+            Dictionary<string, int> ItemCounts = GetItemCOunts(checkData);
             string Macros = Path.Combine(References.TestingPaths.GetDevCodePath(), @"MMR Tracker V3", "OtherGames", "TPRando", @"Macros.json");
             TRPLogic = new() { GameCode = "TPR", Logic = new List<MMRData.JsonFormatLogicItem>(), Version = 1 };
             TRPDictionary = new() { LogicVersion = 1, GameCode = "TPR", RootArea = "Ordon Province", WinCondition = "Triforce" };
@@ -231,7 +289,6 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
                     TRPDictionary.EntranceList.Add(ExitID, exitEntry);
                 }
             }
-            var AdditionalItems = new string[] { "Lantern", "Gate_Keys", "Shadow_Crystal", "Foolish_Item" };
             foreach(var i in checkData.Select(x => x.itemId).Concat(AdditionalItems))
             {
                 if (TRPDictionary.ItemList.Any(x => x.Key == i)) { continue; }
@@ -240,7 +297,7 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
                     ID = i,
                     Name = i.Replace("_", " "),
                     SpoilerData = new MMRData.SpoilerlogReference { SpoilerLogNames = new string[] { i, i.Replace("_", " ") } },
-                    MaxAmountInWorld = -1,
+                    MaxAmountInWorld = ItemCounts[i],
                     ItemTypes = new string[] { "item" },
                 };
                 itemEntry.ValidStartingItem = itemEntry.SpoilerData.SpoilerLogNames.Intersect(StartingItems).Any();

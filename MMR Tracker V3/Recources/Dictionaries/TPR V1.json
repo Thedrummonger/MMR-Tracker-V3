@@ -10017,7 +10017,7 @@
     "Arbiters_Grounds_Big_Key": {
       "ID": "Arbiters_Grounds_Big_Key",
       "Name": "Arbiters Grounds Big Key",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -10034,7 +10034,7 @@
     "Spinner": {
       "ID": "Spinner",
       "Name": "Spinner",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -10051,7 +10051,7 @@
     "Arbiters_Grounds_Small_Key": {
       "ID": "Arbiters_Grounds_Small_Key",
       "Name": "Arbiters Grounds Small Key",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 5,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -10068,7 +10068,7 @@
     "Poe_Soul": {
       "ID": "Poe_Soul",
       "Name": "Poe Soul",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 60,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -10085,7 +10085,7 @@
     "Arbiters_Grounds_Compass": {
       "ID": "Arbiters_Grounds_Compass",
       "Name": "Arbiters Grounds Compass",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -10153,7 +10153,7 @@
     "Piece_of_Heart": {
       "ID": "Piece_of_Heart",
       "Name": "Piece of Heart",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 45,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -10170,7 +10170,7 @@
     "Heart_Container": {
       "ID": "Heart_Container",
       "Name": "Heart Container",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 8,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -10187,7 +10187,7 @@
     "Arbiters_Grounds_Dungeon_Map": {
       "ID": "Arbiters_Grounds_Dungeon_Map",
       "Name": "Arbiters Grounds Dungeon Map",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -10221,7 +10221,7 @@
     "Progressive_Clawshot": {
       "ID": "Progressive_Clawshot",
       "Name": "Progressive Clawshot",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -10238,7 +10238,7 @@
     "City_in_The_Sky_Big_Key": {
       "ID": "City_in_The_Sky_Big_Key",
       "Name": "City in The Sky Big Key",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -10272,7 +10272,7 @@
     "Progressive_Mirror_Shard": {
       "ID": "Progressive_Mirror_Shard",
       "Name": "Progressive Mirror Shard",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 3,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -10289,7 +10289,7 @@
     "City_in_The_Sky_Dungeon_Map": {
       "ID": "City_in_The_Sky_Dungeon_Map",
       "Name": "City in The Sky Dungeon Map",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -10306,7 +10306,7 @@
     "City_in_The_Sky_Compass": {
       "ID": "City_in_The_Sky_Compass",
       "Name": "City in The Sky Compass",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -10357,7 +10357,7 @@
     "City_in_The_Sky_Small_Key": {
       "ID": "City_in_The_Sky_Small_Key",
       "Name": "City in The Sky Small Key",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -10374,7 +10374,7 @@
     "Forest_Temple_Small_Key": {
       "ID": "Forest_Temple_Small_Key",
       "Name": "Forest Temple Small Key",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 4,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -10391,7 +10391,7 @@
     "Forest_Temple_Big_Key": {
       "ID": "Forest_Temple_Big_Key",
       "Name": "Forest Temple Big Key",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -10408,7 +10408,7 @@
     "Forest_Temple_Compass": {
       "ID": "Forest_Temple_Compass",
       "Name": "Forest Temple Compass",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -10425,7 +10425,7 @@
     "Forest_Temple_Dungeon_Map": {
       "ID": "Forest_Temple_Dungeon_Map",
       "Name": "Forest Temple Dungeon Map",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -10442,7 +10442,7 @@
     "Progressive_Fused_Shadow": {
       "ID": "Progressive_Fused_Shadow",
       "Name": "Progressive Fused Shadow",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 3,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -10459,7 +10459,7 @@
     "Boomerang": {
       "ID": "Boomerang",
       "Name": "Boomerang",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -10476,7 +10476,7 @@
     "Goron_Mines_Compass": {
       "ID": "Goron_Mines_Compass",
       "Name": "Goron Mines Compass",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -10493,7 +10493,7 @@
     "Goron_Mines_Small_Key": {
       "ID": "Goron_Mines_Small_Key",
       "Name": "Goron Mines Small Key",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 3,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -10510,7 +10510,7 @@
     "Progressive_Bow": {
       "ID": "Progressive_Bow",
       "Name": "Progressive Bow",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 3,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -10527,7 +10527,7 @@
     "Goron_Mines_Dungeon_Map": {
       "ID": "Goron_Mines_Dungeon_Map",
       "Name": "Goron Mines Dungeon Map",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -10544,7 +10544,7 @@
     "Goron_Mines_Key_Shard": {
       "ID": "Goron_Mines_Key_Shard",
       "Name": "Goron Mines Key Shard",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 3,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -10561,7 +10561,7 @@
     "Hyrule_Castle_Big_Key": {
       "ID": "Hyrule_Castle_Big_Key",
       "Name": "Hyrule Castle Big Key",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -10578,7 +10578,7 @@
     "Hyrule_Castle_Dungeon_Map": {
       "ID": "Hyrule_Castle_Dungeon_Map",
       "Name": "Hyrule Castle Dungeon Map",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -10595,7 +10595,7 @@
     "Green_Rupee": {
       "ID": "Green_Rupee",
       "Name": "Green Rupee",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 2,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -10629,7 +10629,7 @@
     "Hyrule_Castle_Small_Key": {
       "ID": "Hyrule_Castle_Small_Key",
       "Name": "Hyrule Castle Small Key",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 3,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -10646,7 +10646,7 @@
     "Hyrule_Castle_Compass": {
       "ID": "Hyrule_Castle_Compass",
       "Name": "Hyrule Castle Compass",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -10663,7 +10663,7 @@
     "Silver_Rupee": {
       "ID": "Silver_Rupee",
       "Name": "Silver Rupee",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 3,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -10765,7 +10765,7 @@
     "Lakebed_Temple_Small_Key": {
       "ID": "Lakebed_Temple_Small_Key",
       "Name": "Lakebed Temple Small Key",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 3,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -10799,7 +10799,7 @@
     "Lakebed_Temple_Big_Key": {
       "ID": "Lakebed_Temple_Big_Key",
       "Name": "Lakebed Temple Big Key",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -10816,7 +10816,7 @@
     "Lakebed_Temple_Dungeon_Map": {
       "ID": "Lakebed_Temple_Dungeon_Map",
       "Name": "Lakebed Temple Dungeon Map",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -10850,7 +10850,7 @@
     "Lakebed_Temple_Compass": {
       "ID": "Lakebed_Temple_Compass",
       "Name": "Lakebed Temple Compass",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -10867,7 +10867,7 @@
     "Palace_of_Twilight_Big_Key": {
       "ID": "Palace_of_Twilight_Big_Key",
       "Name": "Palace of Twilight Big Key",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -10884,7 +10884,7 @@
     "Palace_of_Twilight_Small_Key": {
       "ID": "Palace_of_Twilight_Small_Key",
       "Name": "Palace of Twilight Small Key",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 7,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -10901,7 +10901,7 @@
     "Progressive_Sword": {
       "ID": "Progressive_Sword",
       "Name": "Progressive Sword",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 4,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -10918,7 +10918,7 @@
     "Palace_of_Twilight_Dungeon_Map": {
       "ID": "Palace_of_Twilight_Dungeon_Map",
       "Name": "Palace of Twilight Dungeon Map",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -10935,7 +10935,7 @@
     "Palace_of_Twilight_Compass": {
       "ID": "Palace_of_Twilight_Compass",
       "Name": "Palace of Twilight Compass",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -10952,7 +10952,7 @@
     "Ball_and_Chain": {
       "ID": "Ball_and_Chain",
       "Name": "Ball and Chain",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -10969,7 +10969,7 @@
     "Snowpeak_Ruins_Bedroom_Key": {
       "ID": "Snowpeak_Ruins_Bedroom_Key",
       "Name": "Snowpeak Ruins Bedroom Key",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -10986,7 +10986,7 @@
     "Snowpeak_Ruins_Ordon_Goat_Cheese": {
       "ID": "Snowpeak_Ruins_Ordon_Goat_Cheese",
       "Name": "Snowpeak Ruins Ordon Goat Cheese",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11003,7 +11003,7 @@
     "Snowpeak_Ruins_Small_Key": {
       "ID": "Snowpeak_Ruins_Small_Key",
       "Name": "Snowpeak Ruins Small Key",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 4,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11020,7 +11020,7 @@
     "Snowpeak_Ruins_Dungeon_Map": {
       "ID": "Snowpeak_Ruins_Dungeon_Map",
       "Name": "Snowpeak Ruins Dungeon Map",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11037,7 +11037,7 @@
     "Snowpeak_Ruins_Ordon_Pumpkin": {
       "ID": "Snowpeak_Ruins_Ordon_Pumpkin",
       "Name": "Snowpeak Ruins Ordon Pumpkin",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11054,7 +11054,7 @@
     "Snowpeak_Ruins_Compass": {
       "ID": "Snowpeak_Ruins_Compass",
       "Name": "Snowpeak Ruins Compass",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11071,7 +11071,7 @@
     "Temple_of_Time_Small_Key": {
       "ID": "Temple_of_Time_Small_Key",
       "Name": "Temple of Time Small Key",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 3,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11088,7 +11088,7 @@
     "Temple_of_Time_Big_Key": {
       "ID": "Temple_of_Time_Big_Key",
       "Name": "Temple of Time Big Key",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11105,7 +11105,7 @@
     "Progressive_Dominion_Rod": {
       "ID": "Progressive_Dominion_Rod",
       "Name": "Progressive Dominion Rod",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -11122,7 +11122,7 @@
     "Temple_of_Time_Dungeon_Map": {
       "ID": "Temple_of_Time_Dungeon_Map",
       "Name": "Temple of Time Dungeon Map",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11139,7 +11139,7 @@
     "Temple_of_Time_Compass": {
       "ID": "Temple_of_Time_Compass",
       "Name": "Temple of Time Compass",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11156,7 +11156,7 @@
     "Filled_Bomb_Bag": {
       "ID": "Filled_Bomb_Bag",
       "Name": "Filled Bomb Bag",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 4,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -11173,7 +11173,7 @@
     "Female_Phasmid": {
       "ID": "Female_Phasmid",
       "Name": "Female Phasmid",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11190,7 +11190,7 @@
     "Male_Phasmid": {
       "ID": "Male_Phasmid",
       "Name": "Male Phasmid",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11207,7 +11207,7 @@
     "Progressive_Sky_Book": {
       "ID": "Progressive_Sky_Book",
       "Name": "Progressive Sky Book",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 14,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -11224,7 +11224,7 @@
     "Female_Grasshopper": {
       "ID": "Female_Grasshopper",
       "Name": "Female Grasshopper",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11241,7 +11241,7 @@
     "Male_Grasshopper": {
       "ID": "Male_Grasshopper",
       "Name": "Male Grasshopper",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11258,7 +11258,7 @@
     "Progressive_Fishing_Rod": {
       "ID": "Progressive_Fishing_Rod",
       "Name": "Progressive Fishing Rod",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 3,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -11275,7 +11275,7 @@
     "Ilias_Charm": {
       "ID": "Ilias_Charm",
       "Name": "Ilias Charm",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11292,7 +11292,7 @@
     "Horse_Call": {
       "ID": "Horse_Call",
       "Name": "Horse Call",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -11309,7 +11309,7 @@
     "Female_Pill_Bug": {
       "ID": "Female_Pill_Bug",
       "Name": "Female Pill Bug",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11326,7 +11326,7 @@
     "Male_Pill_Bug": {
       "ID": "Male_Pill_Bug",
       "Name": "Male Pill Bug",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11343,7 +11343,7 @@
     "Progressive_Hidden_Skill": {
       "ID": "Progressive_Hidden_Skill",
       "Name": "Progressive Hidden Skill",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 7,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11360,7 +11360,7 @@
     "Male_Ant": {
       "ID": "Male_Ant",
       "Name": "Male Ant",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11377,7 +11377,7 @@
     "Female_Ant": {
       "ID": "Female_Ant",
       "Name": "Female Ant",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11394,7 +11394,7 @@
     "Hawkeye": {
       "ID": "Hawkeye",
       "Name": "Hawkeye",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11411,7 +11411,7 @@
     "Hylian_Shield": {
       "ID": "Hylian_Shield",
       "Name": "Hylian Shield",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -11428,7 +11428,7 @@
     "Renados_Letter": {
       "ID": "Renados_Letter",
       "Name": "Renados Letter",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11445,7 +11445,7 @@
     "Zora_Armor": {
       "ID": "Zora_Armor",
       "Name": "Zora Armor",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -11462,7 +11462,7 @@
     "Coro_Bottle": {
       "ID": "Coro_Bottle",
       "Name": "Coro Bottle",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11479,7 +11479,7 @@
     "Female_Beetle": {
       "ID": "Female_Beetle",
       "Name": "Female Beetle",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11496,7 +11496,7 @@
     "Male_Beetle": {
       "ID": "Male_Beetle",
       "Name": "Male Beetle",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11513,7 +11513,7 @@
     "North_Faron_Woods_Gate_Key": {
       "ID": "North_Faron_Woods_Gate_Key",
       "Name": "North Faron Woods Gate Key",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11547,7 +11547,7 @@
     "Female_Snail": {
       "ID": "Female_Snail",
       "Name": "Female Snail",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11564,7 +11564,7 @@
     "Male_Snail": {
       "ID": "Male_Snail",
       "Name": "Male Snail",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11581,7 +11581,7 @@
     "Gerudo_Desert_Bulblin_Camp_Key": {
       "ID": "Gerudo_Desert_Bulblin_Camp_Key",
       "Name": "Gerudo Desert Bulblin Camp Key",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11598,7 +11598,7 @@
     "Fairy_Tears": {
       "ID": "Fairy_Tears",
       "Name": "Fairy Tears",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11632,7 +11632,7 @@
     "Female_Dayfly": {
       "ID": "Female_Dayfly",
       "Name": "Female Dayfly",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11649,7 +11649,7 @@
     "Male_Dayfly": {
       "ID": "Male_Dayfly",
       "Name": "Male Dayfly",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11666,7 +11666,7 @@
     "Progressive_Wallet": {
       "ID": "Progressive_Wallet",
       "Name": "Progressive Wallet",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 2,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11683,7 +11683,7 @@
     "Aurus_Memo": {
       "ID": "Aurus_Memo",
       "Name": "Aurus Memo",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -11700,7 +11700,7 @@
     "Magic_Armor": {
       "ID": "Magic_Armor",
       "Name": "Magic Armor",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11717,7 +11717,7 @@
     "Empty_Bottle": {
       "ID": "Empty_Bottle",
       "Name": "Empty Bottle",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -11734,7 +11734,7 @@
     "Giant_Bomb_Bag": {
       "ID": "Giant_Bomb_Bag",
       "Name": "Giant Bomb Bag",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11751,7 +11751,7 @@
     "Jovani_Bottle": {
       "ID": "Jovani_Bottle",
       "Name": "Jovani Bottle",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11768,7 +11768,7 @@
     "Female_Mantis": {
       "ID": "Female_Mantis",
       "Name": "Female Mantis",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11785,7 +11785,7 @@
     "Male_Mantis": {
       "ID": "Male_Mantis",
       "Name": "Male Mantis",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11819,7 +11819,7 @@
     "Female_Stag_Beetle": {
       "ID": "Female_Stag_Beetle",
       "Name": "Female Stag Beetle",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11836,7 +11836,7 @@
     "Male_Stag_Beetle": {
       "ID": "Male_Stag_Beetle",
       "Name": "Male Stag Beetle",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11853,7 +11853,7 @@
     "Female_Ladybug": {
       "ID": "Female_Ladybug",
       "Name": "Female Ladybug",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11870,7 +11870,7 @@
     "Male_Ladybug": {
       "ID": "Male_Ladybug",
       "Name": "Male Ladybug",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11887,7 +11887,7 @@
     "Invoice": {
       "ID": "Invoice",
       "Name": "Invoice",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11904,7 +11904,7 @@
     "Female_Dragonfly": {
       "ID": "Female_Dragonfly",
       "Name": "Female Dragonfly",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11921,7 +11921,7 @@
     "Female_Butterfly": {
       "ID": "Female_Butterfly",
       "Name": "Female Butterfly",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11938,7 +11938,7 @@
     "Male_Butterfly": {
       "ID": "Male_Butterfly",
       "Name": "Male Butterfly",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11955,7 +11955,7 @@
     "Wooden_Statue": {
       "ID": "Wooden_Statue",
       "Name": "Wooden Statue",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11972,7 +11972,7 @@
     "Male_Dragonfly": {
       "ID": "Male_Dragonfly",
       "Name": "Male Dragonfly",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -11989,7 +11989,7 @@
     "Purple_Rupee_Links_House": {
       "ID": "Purple_Rupee_Links_House",
       "Name": "Purple Rupee Links House",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -12006,7 +12006,7 @@
     "Sera_Bottle": {
       "ID": "Sera_Bottle",
       "Name": "Sera Bottle",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": false,
       "ItemTypes": [
         "item"
@@ -12023,7 +12023,7 @@
     "Ordon_Shield": {
       "ID": "Ordon_Shield",
       "Name": "Ordon Shield",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -12040,7 +12040,7 @@
     "Slingshot": {
       "ID": "Slingshot",
       "Name": "Slingshot",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -12057,7 +12057,7 @@
     "Iron_Boots": {
       "ID": "Iron_Boots",
       "Name": "Iron Boots",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -12074,7 +12074,7 @@
     "Asheis_Sketch": {
       "ID": "Asheis_Sketch",
       "Name": "Asheis Sketch",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -12091,7 +12091,7 @@
     "Lantern": {
       "ID": "Lantern",
       "Name": "Lantern",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -12108,7 +12108,7 @@
     "Gate_Keys": {
       "ID": "Gate_Keys",
       "Name": "Gate Keys",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -12125,7 +12125,7 @@
     "Shadow_Crystal": {
       "ID": "Shadow_Crystal",
       "Name": "Shadow Crystal",
-      "MaxAmountInWorld": -1,
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
