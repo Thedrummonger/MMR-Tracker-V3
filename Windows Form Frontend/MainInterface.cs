@@ -258,8 +258,8 @@ namespace Windows_Form_Frontend
 
         private void CodeTestingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            WinformTesting.TPRCreateData();
-            //WinformTesting.OOTMMCreateData();
+            //WinformTesting.TPRCreateData();
+            WinformTesting.OOTMMCreateData();
         }
 
         //ListBoxes

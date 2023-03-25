@@ -14173,7 +14173,7 @@
     },
     "MM Goron Shop Item 1": {
       "Name": "Goron Shop Item 1",
-      "OriginalItem": "MM_BOMBS_10",
+      "OriginalItem": "MM_ARROWS_10",
       "Area": "Goron Village",
       "ValidItemTypes": [
         "item"
@@ -14191,7 +14191,7 @@
     },
     "MM Goron Shop Item 2": {
       "Name": "Goron Shop Item 2",
-      "OriginalItem": "MM_ARROWS_10",
+      "OriginalItem": "MM_BOMBS_10",
       "Area": "Goron Village",
       "ValidItemTypes": [
         "item"
@@ -35111,8 +35111,10 @@
         "MM_MASK_STONE",
         "MM_MASK_GREAT_FAIRY",
         "MM_MASK_KEATON",
+        "SHARED_MASK_KEATON",
         "MM_MASK_BREMEN",
         "MM_MASK_BUNNY",
+        "SHARED_MASK_BUNNY",
         "MM_MASK_DON_GERO",
         "MM_MASK_SCENTS",
         "MM_MASK_ROMANI",
@@ -35120,6 +35122,7 @@
         "MM_MASK_KAFEI",
         "MM_MASK_COUPLE",
         "MM_MASK_TRUTH",
+        "SHARED_MASK_TRUTH",
         "MM_MASK_KAMARO",
         "MM_MASK_GIBDO",
         "MM_MASK_GARO",
