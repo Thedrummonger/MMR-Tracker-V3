@@ -14173,7 +14173,7 @@
     },
     "MM Goron Shop Item 1": {
       "Name": "Goron Shop Item 1",
-      "OriginalItem": "MM_ARROWS_10",
+      "OriginalItem": "MM_BOMBS_10",
       "Area": "Goron Village",
       "ValidItemTypes": [
         "item"
@@ -14191,7 +14191,7 @@
     },
     "MM Goron Shop Item 2": {
       "Name": "Goron Shop Item 2",
-      "OriginalItem": "MM_BOMBS_10",
+      "OriginalItem": "MM_ARROWS_10",
       "Area": "Goron Village",
       "ValidItemTypes": [
         "item"
@@ -30736,13 +30736,6 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Snowhead Temple Center Level 1 => MM Snowhead Temple Main": {
-      "Area": "MM Snowhead Temple Center Level 1",
-      "Exit": "MM Snowhead Temple Main",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
     "MM Snowhead Temple Center Level 1 => MM Snowhead Temple Map Room Upper": {
       "Area": "MM Snowhead Temple Center Level 1",
       "Exit": "MM Snowhead Temple Map Room Upper",
@@ -31393,9 +31386,23 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "MM Stone Tower Temple Inverted Center => MM Stone Tower Temple Inverted Bridge": {
+      "Area": "MM Stone Tower Temple Inverted Center",
+      "Exit": "MM Stone Tower Temple Inverted Bridge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "MM Stone Tower Temple Inverted Boss Key Room => MM Stone Tower Temple Inverted Center": {
       "Area": "MM Stone Tower Temple Inverted Boss Key Room",
       "Exit": "MM Stone Tower Temple Inverted Center",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Stone Tower Temple Inverted Boss Key Room => MM Stone Tower Temple Inverted Bridge": {
+      "Area": "MM Stone Tower Temple Inverted Boss Key Room",
+      "Exit": "MM Stone Tower Temple Inverted Bridge",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -32412,6 +32419,22 @@
         "PriceDataNames": []
       }
     },
+    "TRICK_OOT_SHADOW_FIRE_ARROW": {
+      "Name": "Enter Shadow Temple using Fire Arrows",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "TRICK_OOT_KZ_SKIP": {
+      "Name": "Skip King Zora as Adult",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
     "TRICK_MM_LENS": {
       "Name": "Fewer Lens Requirements (MM)",
       "SpoilerData": {
@@ -32534,6 +32557,30 @@
     },
     "TRICK_MM_PALACE_GUARD_SKIP": {
       "Name": "Backflip over Deku Palace Guards",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "TRICK_MM_SHT_FIRELESS": {
+      "Name": "Complete Snowhead Temple without Fire Arrows",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "TRICK_MM_KEG_EXPLOSIVES": {
+      "Name": "Use Powder Kegs as Explosives",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "TRICK_MM_DOG_RACE_CHEST_NOTHING": {
+      "Name": "Doggy Racetrack Chest with Nothing",
       "SpoilerData": {
         "SpoilerLogNames": [],
         "GossipHintNames": [],

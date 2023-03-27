@@ -273,10 +273,11 @@ namespace MMR_Tracker_V3
             return thread is not null && thread.IsAlive && Obj is not null && IsWinformSafe;
         }
 
-        public static string ConvertYamlStringToJsonString(string YAML)
+        public static string ConvertYamlStringToJsonString(string YAML, bool Format = false)
         {
             var deserializer = new YamlDotNet.Serialization.DeserializerBuilder().Build();
             object yamlIsDumb = deserializer.Deserialize<object>(YAML);
+            if (Format) { return JsonConvert.SerializeObject(yamlIsDumb, Testing._NewtonsoftJsonSerializerOptions); }
             return JsonConvert.SerializeObject(yamlIsDumb);
         }
         public static string ConvertObjectToYamlString(object OBJ)
