@@ -339,6 +339,32 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Lost Woods Scrub Near Theater Left",
+      "RequiredItems": [
+        "OOT_is_child",
+        "OOT_can_hit_scrub",
+        "OOT Lost Woods Deep"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Lost Woods Scrub Near Theater Right",
+      "RequiredItems": [
+        "OOT_is_child",
+        "OOT_can_hit_scrub",
+        "OOT Lost Woods Deep"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Lost Woods Odd Mushroom",
       "RequiredItems": [
         "OOT_is_adult",
@@ -366,6 +392,19 @@
     },
     {
       "Id": "OOT Lost Woods Grotto Scrub Nuts Upgrade",
+      "RequiredItems": [
+        "OOT_has_explosives_or_hammer",
+        "OOT_can_hit_scrub",
+        "OOT Lost Woods Deep"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Lost Woods Grotto Scrub Back",
       "RequiredItems": [
         "OOT_has_explosives_or_hammer",
         "OOT_can_hit_scrub",
@@ -508,6 +547,54 @@
         "OOT Sacred Meadow"
       ],
       "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Sacred Meadow Storms Grotto Front Scrub",
+      "RequiredItems": [
+        "OOT_hidden_grotto_storms",
+        "OOT_can_hit_scrub",
+        "OOT Sacred Meadow"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_is_adult"
+        ],
+        [
+          "OOT_can_damage"
+        ],
+        [
+          "OOT_OCARINA",
+          "OOT_SONG_TP_FOREST"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Sacred Meadow Storms Grotto Back Scrub",
+      "RequiredItems": [
+        "OOT_hidden_grotto_storms",
+        "OOT_can_hit_scrub",
+        "OOT Sacred Meadow"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_is_adult"
+        ],
+        [
+          "OOT_can_damage"
+        ],
+        [
+          "OOT_OCARINA",
+          "OOT_SONG_TP_FOREST"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -1344,6 +1431,81 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Goron City Grotto Left Scrub",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT Goron City"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_OCARINA",
+          "OOT_SONG_TIME"
+        ],
+        [
+          "OOT_can_hookshot",
+          "OOT_has_tunic_goron_strict"
+        ],
+        [
+          "OOT_can_hookshot",
+          "OOT_can_use_nayru"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Goron City Grotto Center Scrub",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT Goron City"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_OCARINA",
+          "OOT_SONG_TIME"
+        ],
+        [
+          "OOT_can_hookshot",
+          "OOT_has_tunic_goron_strict"
+        ],
+        [
+          "OOT_can_hookshot",
+          "OOT_can_use_nayru"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Goron City Grotto Right Scrub",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT Goron City"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_OCARINA",
+          "OOT_SONG_TIME"
+        ],
+        [
+          "OOT_can_hookshot",
+          "OOT_has_tunic_goron_strict"
+        ],
+        [
+          "OOT_can_hookshot",
+          "OOT_can_use_nayru"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Goron Shop Item 1",
       "RequiredItems": [
         "OOT Goron Shop"
@@ -1489,6 +1651,55 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Death Mountain Crater Scrub Child",
+      "RequiredItems": [
+        "OOT_is_child",
+        "OOT_can_hit_scrub",
+        "OOT Death Mountain Crater Top"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Death Mountain Crater Grotto Left Scrub",
+      "RequiredItems": [
+        "OOT_can_hammer",
+        "OOT Death Mountain Crater Bottom"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Death Mountain Crater Grotto Center Scrub",
+      "RequiredItems": [
+        "OOT_can_hammer",
+        "OOT Death Mountain Crater Bottom"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Death Mountain Crater Grotto Right Scrub",
+      "RequiredItems": [
+        "OOT_can_hammer",
+        "OOT Death Mountain Crater Bottom"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Death Mountain Crater GS Soil",
       "RequiredItems": [
         "OOT_gs_soil",
@@ -1598,6 +1809,32 @@
     {
       "Id": "OOT Zora River Grotto",
       "RequiredItems": [
+        "OOT Zora River"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Zora River Storms Grotto Front Scrub",
+      "RequiredItems": [
+        "OOT_hidden_grotto_storms",
+        "OOT_can_hit_scrub",
+        "OOT Zora River"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Zora River Storms Grotto Back Scrub",
+      "RequiredItems": [
+        "OOT_hidden_grotto_storms",
+        "OOT_can_hit_scrub",
         "OOT Zora River"
       ],
       "ConditionalItems": [],
@@ -1940,6 +2177,42 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Lake Hylia Grotto Left Scrub",
+      "RequiredItems": [
+        "OOT_can_hit_scrub",
+        "OOT Lake Hylia"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Lake Hylia Grotto Center Scrub",
+      "RequiredItems": [
+        "OOT_can_hit_scrub",
+        "OOT Lake Hylia"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Lake Hylia Grotto Right Scrub",
+      "RequiredItems": [
+        "OOT_can_hit_scrub",
+        "OOT Lake Hylia"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Lake Hylia GS Lab Wall",
       "RequiredItems": [
         "OOT_gs_night",
@@ -2189,6 +2462,45 @@
         "OOT_OCARINA",
         "OOT_SONG_EPONA",
         "OOT Lon Lon Ranch Silo"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Lon Lon Ranch Grotto Left Scrub",
+      "RequiredItems": [
+        "OOT_is_child",
+        "OOT_can_hit_scrub",
+        "OOT Lon Lon Ranch"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Lon Lon Ranch Grotto Center Scrub",
+      "RequiredItems": [
+        "OOT_is_child",
+        "OOT_can_hit_scrub",
+        "OOT Lon Lon Ranch"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Lon Lon Ranch Grotto Right Scrub",
+      "RequiredItems": [
+        "OOT_is_child",
+        "OOT_can_hit_scrub",
+        "OOT Lon Lon Ranch"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -2884,6 +3196,32 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Gerudo Valley Grotto Front Scrub",
+      "RequiredItems": [
+        "OOT_hidden_grotto_storms",
+        "OOT_can_hit_scrub",
+        "OOT Gerudo Valley After Bridge"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Valley Grotto Back Scrub",
+      "RequiredItems": [
+        "OOT_hidden_grotto_storms",
+        "OOT_can_hit_scrub",
+        "OOT Gerudo Valley After Bridge"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Gerudo Valley GS Soil",
       "RequiredItems": [
         "OOT_gs_soil",
@@ -3065,6 +3403,32 @@
     {
       "Id": "OOT Desert Colossus Song Spirit",
       "RequiredItems": [
+        "OOT Desert Colossus"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Desert Colossus Grotto Front Scrub",
+      "RequiredItems": [
+        "OOT_can_lift_silver",
+        "OOT_can_hit_scrub",
+        "OOT Desert Colossus"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Desert Colossus Grotto Back Scrub",
+      "RequiredItems": [
+        "OOT_can_lift_silver",
+        "OOT_can_hit_scrub",
         "OOT Desert Colossus"
       ],
       "ConditionalItems": [],
@@ -3522,6 +3886,58 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Dodongo Cavern Lobby Scrub",
+      "RequiredItems": [
+        "OOT_can_hit_scrub",
+        "OOT Dodongo Cavern Main",
+        "option{DCMQ, false}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Dodongo Cavern Green Side Room Scrub",
+      "RequiredItems": [
+        "OOT_can_hit_scrub",
+        "OOT Dodongo Cavern Green Side Room",
+        "option{DCMQ, false}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Dodongo Cavern Bomb Bag Side Room Left Scrub",
+      "RequiredItems": [
+        "OOT_can_hit_scrub",
+        "OOT Dodongo Cavern Bomb Bag Side Room",
+        "option{DCMQ, false}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Dodongo Cavern Bomb Bag Side Room Right Scrub",
+      "RequiredItems": [
+        "OOT_can_hit_scrub",
+        "OOT Dodongo Cavern Bomb Bag Side Room",
+        "option{DCMQ, false}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Dodongo Cavern GS Side Room",
       "RequiredItems": [
         "OOT_can_damage_skull",
@@ -3671,6 +4087,26 @@
         "option{JJMQ, false}"
       ],
       "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Jabu-Jabu Scrub",
+      "RequiredItems": [
+        "OOT_can_hit_scrub",
+        "OOT Jabu-Jabu Main",
+        "option{JJMQ, false}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_is_child"
+        ],
+        [
+          "OOT_can_dive_small"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -6343,6 +6779,62 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Ganon Castle Leftmost Scrub",
+      "RequiredItems": [
+        "OOT_has_lens",
+        "OOT_can_hit_scrub",
+        "OOT Ganon Castle Main",
+        "option{GanonMQ, false}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Ganon Castle Left-Center Scrub",
+      "RequiredItems": [
+        "OOT_has_lens",
+        "OOT_can_hit_scrub",
+        "OOT Ganon Castle Main",
+        "option{GanonMQ, false}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Ganon Castle Right-Center Scrub",
+      "RequiredItems": [
+        "OOT_has_lens",
+        "OOT_can_hit_scrub",
+        "OOT Ganon Castle Main",
+        "option{GanonMQ, false}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Ganon Castle Rightmost Scrub",
+      "RequiredItems": [
+        "OOT_has_lens",
+        "OOT_can_hit_scrub",
+        "OOT Ganon Castle Main",
+        "option{GanonMQ, false}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT MQ Deku Tree Map Chest",
       "RequiredItems": [
         "OOT Deku Tree Lobby",
@@ -6450,6 +6942,19 @@
         "OOT_OCARINA",
         "OOT_SONG_TIME",
         "OOT Deku Tree Water Room Back",
+        "option{DTMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Scrub",
+      "RequiredItems": [
+        "OOT_can_hit_scrub",
+        "OOT Deku Tree Basement Ledge",
         "option{DTMQ, true}"
       ],
       "ConditionalItems": [],
@@ -6612,6 +7117,58 @@
       "Id": "OOT MQ Dodongo Cavern Chest Under Grave",
       "RequiredItems": [
         "OOT Dodongo Cavern Skull",
+        "option{DCMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Dodongo Cavern Lobby Scrub Front",
+      "RequiredItems": [
+        "OOT_can_hit_scrub",
+        "OOT Dodongo Cavern Main",
+        "option{DCMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Dodongo Cavern Lobby Scrub Back",
+      "RequiredItems": [
+        "OOT_can_hit_scrub",
+        "OOT Dodongo Cavern Main",
+        "option{DCMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Dodongo Cavern Staircase Scrub",
+      "RequiredItems": [
+        "OOT_can_hit_scrub",
+        "OOT Dodongo Cavern Upper Staircase",
+        "option{DCMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Dodongo Cavern Tunnel Side Scrub",
+      "RequiredItems": [
+        "OOT_can_hit_scrub",
+        "OOT Dodongo Cavern Lower Tunnel",
         "option{DCMQ, true}"
       ],
       "ConditionalItems": [],
@@ -9014,6 +9571,76 @@
       "RequiredItems": [
         "OOT_can_hookshot",
         "OOT Ganon Castle Forest",
+        "option{GanonMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Ganon Castle Leftmost Scrub",
+      "RequiredItems": [
+        "OOT_has_lens",
+        "OOT_can_hit_scrub",
+        "OOT Ganon Castle Main",
+        "option{GanonMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Ganon Castle Left-Center Scrub",
+      "RequiredItems": [
+        "OOT_has_lens",
+        "OOT_can_hit_scrub",
+        "OOT Ganon Castle Main",
+        "option{GanonMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Ganon Castle Center Scrub",
+      "RequiredItems": [
+        "OOT_has_lens",
+        "OOT_can_hit_scrub",
+        "OOT Ganon Castle Main",
+        "option{GanonMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Ganon Castle Right-Center Scrub",
+      "RequiredItems": [
+        "OOT_has_lens",
+        "OOT_can_hit_scrub",
+        "OOT Ganon Castle Main",
+        "option{GanonMQ, true}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Ganon Castle Rightmost Scrub",
+      "RequiredItems": [
+        "OOT_has_lens",
+        "OOT_can_hit_scrub",
+        "OOT Ganon Castle Main",
         "option{GanonMQ, true}"
       ],
       "ConditionalItems": [],
@@ -32321,6 +32948,26 @@
           "check{OOT Kokiri Shop Item 8}"
         ],
         [
+          "contains{OOT Lost Woods Scrub Near Theater Left, OOT_ANY_STICK}",
+          "check{OOT Lost Woods Scrub Near Theater Left}"
+        ],
+        [
+          "contains{OOT Lost Woods Scrub Near Theater Right, OOT_ANY_STICK}",
+          "check{OOT Lost Woods Scrub Near Theater Right}"
+        ],
+        [
+          "contains{OOT Lost Woods Grotto Scrub Back, OOT_ANY_STICK}",
+          "check{OOT Lost Woods Grotto Scrub Back}"
+        ],
+        [
+          "contains{OOT Sacred Meadow Storms Grotto Front Scrub, OOT_ANY_STICK}",
+          "check{OOT Sacred Meadow Storms Grotto Front Scrub}"
+        ],
+        [
+          "contains{OOT Sacred Meadow Storms Grotto Back Scrub, OOT_ANY_STICK}",
+          "check{OOT Sacred Meadow Storms Grotto Back Scrub}"
+        ],
+        [
           "contains{OOT Kakariko Cow, OOT_ANY_STICK}",
           "check{OOT Kakariko Cow}"
         ],
@@ -32393,6 +33040,18 @@
           "check{OOT Death Mountain Cow}"
         ],
         [
+          "contains{OOT Goron City Grotto Left Scrub, OOT_ANY_STICK}",
+          "check{OOT Goron City Grotto Left Scrub}"
+        ],
+        [
+          "contains{OOT Goron City Grotto Center Scrub, OOT_ANY_STICK}",
+          "check{OOT Goron City Grotto Center Scrub}"
+        ],
+        [
+          "contains{OOT Goron City Grotto Right Scrub, OOT_ANY_STICK}",
+          "check{OOT Goron City Grotto Right Scrub}"
+        ],
+        [
           "contains{OOT Goron Shop Item 1, OOT_ANY_STICK}",
           "check{OOT Goron Shop Item 1}"
         ],
@@ -32423,6 +33082,30 @@
         [
           "contains{OOT Goron Shop Item 8, OOT_ANY_STICK}",
           "check{OOT Goron Shop Item 8}"
+        ],
+        [
+          "contains{OOT Death Mountain Crater Scrub Child, OOT_ANY_STICK}",
+          "check{OOT Death Mountain Crater Scrub Child}"
+        ],
+        [
+          "contains{OOT Death Mountain Crater Grotto Left Scrub, OOT_ANY_STICK}",
+          "check{OOT Death Mountain Crater Grotto Left Scrub}"
+        ],
+        [
+          "contains{OOT Death Mountain Crater Grotto Center Scrub, OOT_ANY_STICK}",
+          "check{OOT Death Mountain Crater Grotto Center Scrub}"
+        ],
+        [
+          "contains{OOT Death Mountain Crater Grotto Right Scrub, OOT_ANY_STICK}",
+          "check{OOT Death Mountain Crater Grotto Right Scrub}"
+        ],
+        [
+          "contains{OOT Zora River Storms Grotto Front Scrub, OOT_ANY_STICK}",
+          "check{OOT Zora River Storms Grotto Front Scrub}"
+        ],
+        [
+          "contains{OOT Zora River Storms Grotto Back Scrub, OOT_ANY_STICK}",
+          "check{OOT Zora River Storms Grotto Back Scrub}"
         ],
         [
           "contains{OOT Zora Shop Item 1, OOT_ANY_STICK}",
@@ -32457,6 +33140,18 @@
           "check{OOT Zora Shop Item 8}"
         ],
         [
+          "contains{OOT Lake Hylia Grotto Left Scrub, OOT_ANY_STICK}",
+          "check{OOT Lake Hylia Grotto Left Scrub}"
+        ],
+        [
+          "contains{OOT Lake Hylia Grotto Center Scrub, OOT_ANY_STICK}",
+          "check{OOT Lake Hylia Grotto Center Scrub}"
+        ],
+        [
+          "contains{OOT Lake Hylia Grotto Right Scrub, OOT_ANY_STICK}",
+          "check{OOT Lake Hylia Grotto Right Scrub}"
+        ],
+        [
           "contains{OOT Lon Lon Ranch Stables Cow Left, OOT_ANY_STICK}",
           "check{OOT Lon Lon Ranch Stables Cow Left}"
         ],
@@ -32471,6 +33166,18 @@
         [
           "contains{OOT Lon Lon Ranch Silo Cow Back, OOT_ANY_STICK}",
           "check{OOT Lon Lon Ranch Silo Cow Back}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Grotto Left Scrub, OOT_ANY_STICK}",
+          "check{OOT Lon Lon Ranch Grotto Left Scrub}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Grotto Center Scrub, OOT_ANY_STICK}",
+          "check{OOT Lon Lon Ranch Grotto Center Scrub}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Grotto Right Scrub, OOT_ANY_STICK}",
+          "check{OOT Lon Lon Ranch Grotto Right Scrub}"
         ],
         [
           "contains{OOT Hyrule Field Cow, OOT_ANY_STICK}",
@@ -32573,12 +33280,104 @@
           "check{OOT Market Bombchu Shop Item 8}"
         ],
         [
+          "contains{OOT Gerudo Valley Grotto Front Scrub, OOT_ANY_STICK}",
+          "check{OOT Gerudo Valley Grotto Front Scrub}"
+        ],
+        [
+          "contains{OOT Gerudo Valley Grotto Back Scrub, OOT_ANY_STICK}",
+          "check{OOT Gerudo Valley Grotto Back Scrub}"
+        ],
+        [
           "contains{OOT Gerudo Valley Cow, OOT_ANY_STICK}",
           "check{OOT Gerudo Valley Cow}"
         ],
         [
+          "contains{OOT Desert Colossus Grotto Front Scrub, OOT_ANY_STICK}",
+          "check{OOT Desert Colossus Grotto Front Scrub}"
+        ],
+        [
+          "contains{OOT Desert Colossus Grotto Back Scrub, OOT_ANY_STICK}",
+          "check{OOT Desert Colossus Grotto Back Scrub}"
+        ],
+        [
+          "contains{OOT Dodongo Cavern Lobby Scrub, OOT_ANY_STICK}",
+          "check{OOT Dodongo Cavern Lobby Scrub}"
+        ],
+        [
+          "contains{OOT Dodongo Cavern Green Side Room Scrub, OOT_ANY_STICK}",
+          "check{OOT Dodongo Cavern Green Side Room Scrub}"
+        ],
+        [
+          "contains{OOT Dodongo Cavern Bomb Bag Side Room Left Scrub, OOT_ANY_STICK}",
+          "check{OOT Dodongo Cavern Bomb Bag Side Room Left Scrub}"
+        ],
+        [
+          "contains{OOT Dodongo Cavern Bomb Bag Side Room Right Scrub, OOT_ANY_STICK}",
+          "check{OOT Dodongo Cavern Bomb Bag Side Room Right Scrub}"
+        ],
+        [
+          "contains{OOT Jabu-Jabu Scrub, OOT_ANY_STICK}",
+          "check{OOT Jabu-Jabu Scrub}"
+        ],
+        [
+          "contains{OOT Ganon Castle Leftmost Scrub, OOT_ANY_STICK}",
+          "check{OOT Ganon Castle Leftmost Scrub}"
+        ],
+        [
+          "contains{OOT Ganon Castle Left-Center Scrub, OOT_ANY_STICK}",
+          "check{OOT Ganon Castle Left-Center Scrub}"
+        ],
+        [
+          "contains{OOT Ganon Castle Right-Center Scrub, OOT_ANY_STICK}",
+          "check{OOT Ganon Castle Right-Center Scrub}"
+        ],
+        [
+          "contains{OOT Ganon Castle Rightmost Scrub, OOT_ANY_STICK}",
+          "check{OOT Ganon Castle Rightmost Scrub}"
+        ],
+        [
+          "contains{OOT MQ Deku Tree Scrub, OOT_ANY_STICK}",
+          "check{OOT MQ Deku Tree Scrub}"
+        ],
+        [
+          "contains{OOT MQ Dodongo Cavern Lobby Scrub Front, OOT_ANY_STICK}",
+          "check{OOT MQ Dodongo Cavern Lobby Scrub Front}"
+        ],
+        [
+          "contains{OOT MQ Dodongo Cavern Lobby Scrub Back, OOT_ANY_STICK}",
+          "check{OOT MQ Dodongo Cavern Lobby Scrub Back}"
+        ],
+        [
+          "contains{OOT MQ Dodongo Cavern Staircase Scrub, OOT_ANY_STICK}",
+          "check{OOT MQ Dodongo Cavern Staircase Scrub}"
+        ],
+        [
+          "contains{OOT MQ Dodongo Cavern Tunnel Side Scrub, OOT_ANY_STICK}",
+          "check{OOT MQ Dodongo Cavern Tunnel Side Scrub}"
+        ],
+        [
           "contains{OOT MQ Jabu-Jabu Cow, OOT_ANY_STICK}",
           "check{OOT MQ Jabu-Jabu Cow}"
+        ],
+        [
+          "contains{OOT MQ Ganon Castle Leftmost Scrub, OOT_ANY_STICK}",
+          "check{OOT MQ Ganon Castle Leftmost Scrub}"
+        ],
+        [
+          "contains{OOT MQ Ganon Castle Left-Center Scrub, OOT_ANY_STICK}",
+          "check{OOT MQ Ganon Castle Left-Center Scrub}"
+        ],
+        [
+          "contains{OOT MQ Ganon Castle Center Scrub, OOT_ANY_STICK}",
+          "check{OOT MQ Ganon Castle Center Scrub}"
+        ],
+        [
+          "contains{OOT MQ Ganon Castle Right-Center Scrub, OOT_ANY_STICK}",
+          "check{OOT MQ Ganon Castle Right-Center Scrub}"
+        ],
+        [
+          "contains{OOT MQ Ganon Castle Rightmost Scrub, OOT_ANY_STICK}",
+          "check{OOT MQ Ganon Castle Rightmost Scrub}"
         ],
         [
           "contains{MM Trading Post Item 1, OOT_ANY_STICK}",
@@ -32735,6 +33534,26 @@
           "check{OOT Kokiri Shop Item 8}"
         ],
         [
+          "contains{OOT Lost Woods Scrub Near Theater Left, OOT_ANY_NUT}",
+          "check{OOT Lost Woods Scrub Near Theater Left}"
+        ],
+        [
+          "contains{OOT Lost Woods Scrub Near Theater Right, OOT_ANY_NUT}",
+          "check{OOT Lost Woods Scrub Near Theater Right}"
+        ],
+        [
+          "contains{OOT Lost Woods Grotto Scrub Back, OOT_ANY_NUT}",
+          "check{OOT Lost Woods Grotto Scrub Back}"
+        ],
+        [
+          "contains{OOT Sacred Meadow Storms Grotto Front Scrub, OOT_ANY_NUT}",
+          "check{OOT Sacred Meadow Storms Grotto Front Scrub}"
+        ],
+        [
+          "contains{OOT Sacred Meadow Storms Grotto Back Scrub, OOT_ANY_NUT}",
+          "check{OOT Sacred Meadow Storms Grotto Back Scrub}"
+        ],
+        [
           "contains{OOT Kakariko Cow, OOT_ANY_NUT}",
           "check{OOT Kakariko Cow}"
         ],
@@ -32807,6 +33626,18 @@
           "check{OOT Death Mountain Cow}"
         ],
         [
+          "contains{OOT Goron City Grotto Left Scrub, OOT_ANY_NUT}",
+          "check{OOT Goron City Grotto Left Scrub}"
+        ],
+        [
+          "contains{OOT Goron City Grotto Center Scrub, OOT_ANY_NUT}",
+          "check{OOT Goron City Grotto Center Scrub}"
+        ],
+        [
+          "contains{OOT Goron City Grotto Right Scrub, OOT_ANY_NUT}",
+          "check{OOT Goron City Grotto Right Scrub}"
+        ],
+        [
           "contains{OOT Goron Shop Item 1, OOT_ANY_NUT}",
           "check{OOT Goron Shop Item 1}"
         ],
@@ -32837,6 +33668,30 @@
         [
           "contains{OOT Goron Shop Item 8, OOT_ANY_NUT}",
           "check{OOT Goron Shop Item 8}"
+        ],
+        [
+          "contains{OOT Death Mountain Crater Scrub Child, OOT_ANY_NUT}",
+          "check{OOT Death Mountain Crater Scrub Child}"
+        ],
+        [
+          "contains{OOT Death Mountain Crater Grotto Left Scrub, OOT_ANY_NUT}",
+          "check{OOT Death Mountain Crater Grotto Left Scrub}"
+        ],
+        [
+          "contains{OOT Death Mountain Crater Grotto Center Scrub, OOT_ANY_NUT}",
+          "check{OOT Death Mountain Crater Grotto Center Scrub}"
+        ],
+        [
+          "contains{OOT Death Mountain Crater Grotto Right Scrub, OOT_ANY_NUT}",
+          "check{OOT Death Mountain Crater Grotto Right Scrub}"
+        ],
+        [
+          "contains{OOT Zora River Storms Grotto Front Scrub, OOT_ANY_NUT}",
+          "check{OOT Zora River Storms Grotto Front Scrub}"
+        ],
+        [
+          "contains{OOT Zora River Storms Grotto Back Scrub, OOT_ANY_NUT}",
+          "check{OOT Zora River Storms Grotto Back Scrub}"
         ],
         [
           "contains{OOT Zora Shop Item 1, OOT_ANY_NUT}",
@@ -32871,6 +33726,18 @@
           "check{OOT Zora Shop Item 8}"
         ],
         [
+          "contains{OOT Lake Hylia Grotto Left Scrub, OOT_ANY_NUT}",
+          "check{OOT Lake Hylia Grotto Left Scrub}"
+        ],
+        [
+          "contains{OOT Lake Hylia Grotto Center Scrub, OOT_ANY_NUT}",
+          "check{OOT Lake Hylia Grotto Center Scrub}"
+        ],
+        [
+          "contains{OOT Lake Hylia Grotto Right Scrub, OOT_ANY_NUT}",
+          "check{OOT Lake Hylia Grotto Right Scrub}"
+        ],
+        [
           "contains{OOT Lon Lon Ranch Stables Cow Left, OOT_ANY_NUT}",
           "check{OOT Lon Lon Ranch Stables Cow Left}"
         ],
@@ -32885,6 +33752,18 @@
         [
           "contains{OOT Lon Lon Ranch Silo Cow Back, OOT_ANY_NUT}",
           "check{OOT Lon Lon Ranch Silo Cow Back}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Grotto Left Scrub, OOT_ANY_NUT}",
+          "check{OOT Lon Lon Ranch Grotto Left Scrub}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Grotto Center Scrub, OOT_ANY_NUT}",
+          "check{OOT Lon Lon Ranch Grotto Center Scrub}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Grotto Right Scrub, OOT_ANY_NUT}",
+          "check{OOT Lon Lon Ranch Grotto Right Scrub}"
         ],
         [
           "contains{OOT Hyrule Field Cow, OOT_ANY_NUT}",
@@ -32987,12 +33866,104 @@
           "check{OOT Market Bombchu Shop Item 8}"
         ],
         [
+          "contains{OOT Gerudo Valley Grotto Front Scrub, OOT_ANY_NUT}",
+          "check{OOT Gerudo Valley Grotto Front Scrub}"
+        ],
+        [
+          "contains{OOT Gerudo Valley Grotto Back Scrub, OOT_ANY_NUT}",
+          "check{OOT Gerudo Valley Grotto Back Scrub}"
+        ],
+        [
           "contains{OOT Gerudo Valley Cow, OOT_ANY_NUT}",
           "check{OOT Gerudo Valley Cow}"
         ],
         [
+          "contains{OOT Desert Colossus Grotto Front Scrub, OOT_ANY_NUT}",
+          "check{OOT Desert Colossus Grotto Front Scrub}"
+        ],
+        [
+          "contains{OOT Desert Colossus Grotto Back Scrub, OOT_ANY_NUT}",
+          "check{OOT Desert Colossus Grotto Back Scrub}"
+        ],
+        [
+          "contains{OOT Dodongo Cavern Lobby Scrub, OOT_ANY_NUT}",
+          "check{OOT Dodongo Cavern Lobby Scrub}"
+        ],
+        [
+          "contains{OOT Dodongo Cavern Green Side Room Scrub, OOT_ANY_NUT}",
+          "check{OOT Dodongo Cavern Green Side Room Scrub}"
+        ],
+        [
+          "contains{OOT Dodongo Cavern Bomb Bag Side Room Left Scrub, OOT_ANY_NUT}",
+          "check{OOT Dodongo Cavern Bomb Bag Side Room Left Scrub}"
+        ],
+        [
+          "contains{OOT Dodongo Cavern Bomb Bag Side Room Right Scrub, OOT_ANY_NUT}",
+          "check{OOT Dodongo Cavern Bomb Bag Side Room Right Scrub}"
+        ],
+        [
+          "contains{OOT Jabu-Jabu Scrub, OOT_ANY_NUT}",
+          "check{OOT Jabu-Jabu Scrub}"
+        ],
+        [
+          "contains{OOT Ganon Castle Leftmost Scrub, OOT_ANY_NUT}",
+          "check{OOT Ganon Castle Leftmost Scrub}"
+        ],
+        [
+          "contains{OOT Ganon Castle Left-Center Scrub, OOT_ANY_NUT}",
+          "check{OOT Ganon Castle Left-Center Scrub}"
+        ],
+        [
+          "contains{OOT Ganon Castle Right-Center Scrub, OOT_ANY_NUT}",
+          "check{OOT Ganon Castle Right-Center Scrub}"
+        ],
+        [
+          "contains{OOT Ganon Castle Rightmost Scrub, OOT_ANY_NUT}",
+          "check{OOT Ganon Castle Rightmost Scrub}"
+        ],
+        [
+          "contains{OOT MQ Deku Tree Scrub, OOT_ANY_NUT}",
+          "check{OOT MQ Deku Tree Scrub}"
+        ],
+        [
+          "contains{OOT MQ Dodongo Cavern Lobby Scrub Front, OOT_ANY_NUT}",
+          "check{OOT MQ Dodongo Cavern Lobby Scrub Front}"
+        ],
+        [
+          "contains{OOT MQ Dodongo Cavern Lobby Scrub Back, OOT_ANY_NUT}",
+          "check{OOT MQ Dodongo Cavern Lobby Scrub Back}"
+        ],
+        [
+          "contains{OOT MQ Dodongo Cavern Staircase Scrub, OOT_ANY_NUT}",
+          "check{OOT MQ Dodongo Cavern Staircase Scrub}"
+        ],
+        [
+          "contains{OOT MQ Dodongo Cavern Tunnel Side Scrub, OOT_ANY_NUT}",
+          "check{OOT MQ Dodongo Cavern Tunnel Side Scrub}"
+        ],
+        [
           "contains{OOT MQ Jabu-Jabu Cow, OOT_ANY_NUT}",
           "check{OOT MQ Jabu-Jabu Cow}"
+        ],
+        [
+          "contains{OOT MQ Ganon Castle Leftmost Scrub, OOT_ANY_NUT}",
+          "check{OOT MQ Ganon Castle Leftmost Scrub}"
+        ],
+        [
+          "contains{OOT MQ Ganon Castle Left-Center Scrub, OOT_ANY_NUT}",
+          "check{OOT MQ Ganon Castle Left-Center Scrub}"
+        ],
+        [
+          "contains{OOT MQ Ganon Castle Center Scrub, OOT_ANY_NUT}",
+          "check{OOT MQ Ganon Castle Center Scrub}"
+        ],
+        [
+          "contains{OOT MQ Ganon Castle Right-Center Scrub, OOT_ANY_NUT}",
+          "check{OOT MQ Ganon Castle Right-Center Scrub}"
+        ],
+        [
+          "contains{OOT MQ Ganon Castle Rightmost Scrub, OOT_ANY_NUT}",
+          "check{OOT MQ Ganon Castle Rightmost Scrub}"
         ],
         [
           "contains{MM Trading Post Item 1, OOT_ANY_NUT}",
@@ -33149,6 +34120,26 @@
           "check{OOT Kokiri Shop Item 8}"
         ],
         [
+          "contains{OOT Lost Woods Scrub Near Theater Left, OOT_BLUE_FIRE}",
+          "check{OOT Lost Woods Scrub Near Theater Left}"
+        ],
+        [
+          "contains{OOT Lost Woods Scrub Near Theater Right, OOT_BLUE_FIRE}",
+          "check{OOT Lost Woods Scrub Near Theater Right}"
+        ],
+        [
+          "contains{OOT Lost Woods Grotto Scrub Back, OOT_BLUE_FIRE}",
+          "check{OOT Lost Woods Grotto Scrub Back}"
+        ],
+        [
+          "contains{OOT Sacred Meadow Storms Grotto Front Scrub, OOT_BLUE_FIRE}",
+          "check{OOT Sacred Meadow Storms Grotto Front Scrub}"
+        ],
+        [
+          "contains{OOT Sacred Meadow Storms Grotto Back Scrub, OOT_BLUE_FIRE}",
+          "check{OOT Sacred Meadow Storms Grotto Back Scrub}"
+        ],
+        [
           "contains{OOT Kakariko Cow, OOT_BLUE_FIRE}",
           "check{OOT Kakariko Cow}"
         ],
@@ -33221,6 +34212,18 @@
           "check{OOT Death Mountain Cow}"
         ],
         [
+          "contains{OOT Goron City Grotto Left Scrub, OOT_BLUE_FIRE}",
+          "check{OOT Goron City Grotto Left Scrub}"
+        ],
+        [
+          "contains{OOT Goron City Grotto Center Scrub, OOT_BLUE_FIRE}",
+          "check{OOT Goron City Grotto Center Scrub}"
+        ],
+        [
+          "contains{OOT Goron City Grotto Right Scrub, OOT_BLUE_FIRE}",
+          "check{OOT Goron City Grotto Right Scrub}"
+        ],
+        [
           "contains{OOT Goron Shop Item 1, OOT_BLUE_FIRE}",
           "check{OOT Goron Shop Item 1}"
         ],
@@ -33251,6 +34254,30 @@
         [
           "contains{OOT Goron Shop Item 8, OOT_BLUE_FIRE}",
           "check{OOT Goron Shop Item 8}"
+        ],
+        [
+          "contains{OOT Death Mountain Crater Scrub Child, OOT_BLUE_FIRE}",
+          "check{OOT Death Mountain Crater Scrub Child}"
+        ],
+        [
+          "contains{OOT Death Mountain Crater Grotto Left Scrub, OOT_BLUE_FIRE}",
+          "check{OOT Death Mountain Crater Grotto Left Scrub}"
+        ],
+        [
+          "contains{OOT Death Mountain Crater Grotto Center Scrub, OOT_BLUE_FIRE}",
+          "check{OOT Death Mountain Crater Grotto Center Scrub}"
+        ],
+        [
+          "contains{OOT Death Mountain Crater Grotto Right Scrub, OOT_BLUE_FIRE}",
+          "check{OOT Death Mountain Crater Grotto Right Scrub}"
+        ],
+        [
+          "contains{OOT Zora River Storms Grotto Front Scrub, OOT_BLUE_FIRE}",
+          "check{OOT Zora River Storms Grotto Front Scrub}"
+        ],
+        [
+          "contains{OOT Zora River Storms Grotto Back Scrub, OOT_BLUE_FIRE}",
+          "check{OOT Zora River Storms Grotto Back Scrub}"
         ],
         [
           "contains{OOT Zora Shop Item 1, OOT_BLUE_FIRE}",
@@ -33285,6 +34312,18 @@
           "check{OOT Zora Shop Item 8}"
         ],
         [
+          "contains{OOT Lake Hylia Grotto Left Scrub, OOT_BLUE_FIRE}",
+          "check{OOT Lake Hylia Grotto Left Scrub}"
+        ],
+        [
+          "contains{OOT Lake Hylia Grotto Center Scrub, OOT_BLUE_FIRE}",
+          "check{OOT Lake Hylia Grotto Center Scrub}"
+        ],
+        [
+          "contains{OOT Lake Hylia Grotto Right Scrub, OOT_BLUE_FIRE}",
+          "check{OOT Lake Hylia Grotto Right Scrub}"
+        ],
+        [
           "contains{OOT Lon Lon Ranch Stables Cow Left, OOT_BLUE_FIRE}",
           "check{OOT Lon Lon Ranch Stables Cow Left}"
         ],
@@ -33299,6 +34338,18 @@
         [
           "contains{OOT Lon Lon Ranch Silo Cow Back, OOT_BLUE_FIRE}",
           "check{OOT Lon Lon Ranch Silo Cow Back}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Grotto Left Scrub, OOT_BLUE_FIRE}",
+          "check{OOT Lon Lon Ranch Grotto Left Scrub}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Grotto Center Scrub, OOT_BLUE_FIRE}",
+          "check{OOT Lon Lon Ranch Grotto Center Scrub}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Grotto Right Scrub, OOT_BLUE_FIRE}",
+          "check{OOT Lon Lon Ranch Grotto Right Scrub}"
         ],
         [
           "contains{OOT Hyrule Field Cow, OOT_BLUE_FIRE}",
@@ -33401,12 +34452,104 @@
           "check{OOT Market Bombchu Shop Item 8}"
         ],
         [
+          "contains{OOT Gerudo Valley Grotto Front Scrub, OOT_BLUE_FIRE}",
+          "check{OOT Gerudo Valley Grotto Front Scrub}"
+        ],
+        [
+          "contains{OOT Gerudo Valley Grotto Back Scrub, OOT_BLUE_FIRE}",
+          "check{OOT Gerudo Valley Grotto Back Scrub}"
+        ],
+        [
           "contains{OOT Gerudo Valley Cow, OOT_BLUE_FIRE}",
           "check{OOT Gerudo Valley Cow}"
         ],
         [
+          "contains{OOT Desert Colossus Grotto Front Scrub, OOT_BLUE_FIRE}",
+          "check{OOT Desert Colossus Grotto Front Scrub}"
+        ],
+        [
+          "contains{OOT Desert Colossus Grotto Back Scrub, OOT_BLUE_FIRE}",
+          "check{OOT Desert Colossus Grotto Back Scrub}"
+        ],
+        [
+          "contains{OOT Dodongo Cavern Lobby Scrub, OOT_BLUE_FIRE}",
+          "check{OOT Dodongo Cavern Lobby Scrub}"
+        ],
+        [
+          "contains{OOT Dodongo Cavern Green Side Room Scrub, OOT_BLUE_FIRE}",
+          "check{OOT Dodongo Cavern Green Side Room Scrub}"
+        ],
+        [
+          "contains{OOT Dodongo Cavern Bomb Bag Side Room Left Scrub, OOT_BLUE_FIRE}",
+          "check{OOT Dodongo Cavern Bomb Bag Side Room Left Scrub}"
+        ],
+        [
+          "contains{OOT Dodongo Cavern Bomb Bag Side Room Right Scrub, OOT_BLUE_FIRE}",
+          "check{OOT Dodongo Cavern Bomb Bag Side Room Right Scrub}"
+        ],
+        [
+          "contains{OOT Jabu-Jabu Scrub, OOT_BLUE_FIRE}",
+          "check{OOT Jabu-Jabu Scrub}"
+        ],
+        [
+          "contains{OOT Ganon Castle Leftmost Scrub, OOT_BLUE_FIRE}",
+          "check{OOT Ganon Castle Leftmost Scrub}"
+        ],
+        [
+          "contains{OOT Ganon Castle Left-Center Scrub, OOT_BLUE_FIRE}",
+          "check{OOT Ganon Castle Left-Center Scrub}"
+        ],
+        [
+          "contains{OOT Ganon Castle Right-Center Scrub, OOT_BLUE_FIRE}",
+          "check{OOT Ganon Castle Right-Center Scrub}"
+        ],
+        [
+          "contains{OOT Ganon Castle Rightmost Scrub, OOT_BLUE_FIRE}",
+          "check{OOT Ganon Castle Rightmost Scrub}"
+        ],
+        [
+          "contains{OOT MQ Deku Tree Scrub, OOT_BLUE_FIRE}",
+          "check{OOT MQ Deku Tree Scrub}"
+        ],
+        [
+          "contains{OOT MQ Dodongo Cavern Lobby Scrub Front, OOT_BLUE_FIRE}",
+          "check{OOT MQ Dodongo Cavern Lobby Scrub Front}"
+        ],
+        [
+          "contains{OOT MQ Dodongo Cavern Lobby Scrub Back, OOT_BLUE_FIRE}",
+          "check{OOT MQ Dodongo Cavern Lobby Scrub Back}"
+        ],
+        [
+          "contains{OOT MQ Dodongo Cavern Staircase Scrub, OOT_BLUE_FIRE}",
+          "check{OOT MQ Dodongo Cavern Staircase Scrub}"
+        ],
+        [
+          "contains{OOT MQ Dodongo Cavern Tunnel Side Scrub, OOT_BLUE_FIRE}",
+          "check{OOT MQ Dodongo Cavern Tunnel Side Scrub}"
+        ],
+        [
           "contains{OOT MQ Jabu-Jabu Cow, OOT_BLUE_FIRE}",
           "check{OOT MQ Jabu-Jabu Cow}"
+        ],
+        [
+          "contains{OOT MQ Ganon Castle Leftmost Scrub, OOT_BLUE_FIRE}",
+          "check{OOT MQ Ganon Castle Leftmost Scrub}"
+        ],
+        [
+          "contains{OOT MQ Ganon Castle Left-Center Scrub, OOT_BLUE_FIRE}",
+          "check{OOT MQ Ganon Castle Left-Center Scrub}"
+        ],
+        [
+          "contains{OOT MQ Ganon Castle Center Scrub, OOT_BLUE_FIRE}",
+          "check{OOT MQ Ganon Castle Center Scrub}"
+        ],
+        [
+          "contains{OOT MQ Ganon Castle Right-Center Scrub, OOT_BLUE_FIRE}",
+          "check{OOT MQ Ganon Castle Right-Center Scrub}"
+        ],
+        [
+          "contains{OOT MQ Ganon Castle Rightmost Scrub, OOT_BLUE_FIRE}",
+          "check{OOT MQ Ganon Castle Rightmost Scrub}"
         ],
         [
           "contains{MM Trading Post Item 1, OOT_BLUE_FIRE}",
@@ -33563,6 +34706,26 @@
           "check{OOT Kokiri Shop Item 8}"
         ],
         [
+          "contains{OOT Lost Woods Scrub Near Theater Left, MM_POTION_RED}",
+          "check{OOT Lost Woods Scrub Near Theater Left}"
+        ],
+        [
+          "contains{OOT Lost Woods Scrub Near Theater Right, MM_POTION_RED}",
+          "check{OOT Lost Woods Scrub Near Theater Right}"
+        ],
+        [
+          "contains{OOT Lost Woods Grotto Scrub Back, MM_POTION_RED}",
+          "check{OOT Lost Woods Grotto Scrub Back}"
+        ],
+        [
+          "contains{OOT Sacred Meadow Storms Grotto Front Scrub, MM_POTION_RED}",
+          "check{OOT Sacred Meadow Storms Grotto Front Scrub}"
+        ],
+        [
+          "contains{OOT Sacred Meadow Storms Grotto Back Scrub, MM_POTION_RED}",
+          "check{OOT Sacred Meadow Storms Grotto Back Scrub}"
+        ],
+        [
           "contains{OOT Kakariko Cow, MM_POTION_RED}",
           "check{OOT Kakariko Cow}"
         ],
@@ -33635,6 +34798,18 @@
           "check{OOT Death Mountain Cow}"
         ],
         [
+          "contains{OOT Goron City Grotto Left Scrub, MM_POTION_RED}",
+          "check{OOT Goron City Grotto Left Scrub}"
+        ],
+        [
+          "contains{OOT Goron City Grotto Center Scrub, MM_POTION_RED}",
+          "check{OOT Goron City Grotto Center Scrub}"
+        ],
+        [
+          "contains{OOT Goron City Grotto Right Scrub, MM_POTION_RED}",
+          "check{OOT Goron City Grotto Right Scrub}"
+        ],
+        [
           "contains{OOT Goron Shop Item 1, MM_POTION_RED}",
           "check{OOT Goron Shop Item 1}"
         ],
@@ -33665,6 +34840,30 @@
         [
           "contains{OOT Goron Shop Item 8, MM_POTION_RED}",
           "check{OOT Goron Shop Item 8}"
+        ],
+        [
+          "contains{OOT Death Mountain Crater Scrub Child, MM_POTION_RED}",
+          "check{OOT Death Mountain Crater Scrub Child}"
+        ],
+        [
+          "contains{OOT Death Mountain Crater Grotto Left Scrub, MM_POTION_RED}",
+          "check{OOT Death Mountain Crater Grotto Left Scrub}"
+        ],
+        [
+          "contains{OOT Death Mountain Crater Grotto Center Scrub, MM_POTION_RED}",
+          "check{OOT Death Mountain Crater Grotto Center Scrub}"
+        ],
+        [
+          "contains{OOT Death Mountain Crater Grotto Right Scrub, MM_POTION_RED}",
+          "check{OOT Death Mountain Crater Grotto Right Scrub}"
+        ],
+        [
+          "contains{OOT Zora River Storms Grotto Front Scrub, MM_POTION_RED}",
+          "check{OOT Zora River Storms Grotto Front Scrub}"
+        ],
+        [
+          "contains{OOT Zora River Storms Grotto Back Scrub, MM_POTION_RED}",
+          "check{OOT Zora River Storms Grotto Back Scrub}"
         ],
         [
           "contains{OOT Zora Shop Item 1, MM_POTION_RED}",
@@ -33699,6 +34898,18 @@
           "check{OOT Zora Shop Item 8}"
         ],
         [
+          "contains{OOT Lake Hylia Grotto Left Scrub, MM_POTION_RED}",
+          "check{OOT Lake Hylia Grotto Left Scrub}"
+        ],
+        [
+          "contains{OOT Lake Hylia Grotto Center Scrub, MM_POTION_RED}",
+          "check{OOT Lake Hylia Grotto Center Scrub}"
+        ],
+        [
+          "contains{OOT Lake Hylia Grotto Right Scrub, MM_POTION_RED}",
+          "check{OOT Lake Hylia Grotto Right Scrub}"
+        ],
+        [
           "contains{OOT Lon Lon Ranch Stables Cow Left, MM_POTION_RED}",
           "check{OOT Lon Lon Ranch Stables Cow Left}"
         ],
@@ -33713,6 +34924,18 @@
         [
           "contains{OOT Lon Lon Ranch Silo Cow Back, MM_POTION_RED}",
           "check{OOT Lon Lon Ranch Silo Cow Back}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Grotto Left Scrub, MM_POTION_RED}",
+          "check{OOT Lon Lon Ranch Grotto Left Scrub}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Grotto Center Scrub, MM_POTION_RED}",
+          "check{OOT Lon Lon Ranch Grotto Center Scrub}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Grotto Right Scrub, MM_POTION_RED}",
+          "check{OOT Lon Lon Ranch Grotto Right Scrub}"
         ],
         [
           "contains{OOT Hyrule Field Cow, MM_POTION_RED}",
@@ -33815,12 +35038,104 @@
           "check{OOT Market Bombchu Shop Item 8}"
         ],
         [
+          "contains{OOT Gerudo Valley Grotto Front Scrub, MM_POTION_RED}",
+          "check{OOT Gerudo Valley Grotto Front Scrub}"
+        ],
+        [
+          "contains{OOT Gerudo Valley Grotto Back Scrub, MM_POTION_RED}",
+          "check{OOT Gerudo Valley Grotto Back Scrub}"
+        ],
+        [
           "contains{OOT Gerudo Valley Cow, MM_POTION_RED}",
           "check{OOT Gerudo Valley Cow}"
         ],
         [
+          "contains{OOT Desert Colossus Grotto Front Scrub, MM_POTION_RED}",
+          "check{OOT Desert Colossus Grotto Front Scrub}"
+        ],
+        [
+          "contains{OOT Desert Colossus Grotto Back Scrub, MM_POTION_RED}",
+          "check{OOT Desert Colossus Grotto Back Scrub}"
+        ],
+        [
+          "contains{OOT Dodongo Cavern Lobby Scrub, MM_POTION_RED}",
+          "check{OOT Dodongo Cavern Lobby Scrub}"
+        ],
+        [
+          "contains{OOT Dodongo Cavern Green Side Room Scrub, MM_POTION_RED}",
+          "check{OOT Dodongo Cavern Green Side Room Scrub}"
+        ],
+        [
+          "contains{OOT Dodongo Cavern Bomb Bag Side Room Left Scrub, MM_POTION_RED}",
+          "check{OOT Dodongo Cavern Bomb Bag Side Room Left Scrub}"
+        ],
+        [
+          "contains{OOT Dodongo Cavern Bomb Bag Side Room Right Scrub, MM_POTION_RED}",
+          "check{OOT Dodongo Cavern Bomb Bag Side Room Right Scrub}"
+        ],
+        [
+          "contains{OOT Jabu-Jabu Scrub, MM_POTION_RED}",
+          "check{OOT Jabu-Jabu Scrub}"
+        ],
+        [
+          "contains{OOT Ganon Castle Leftmost Scrub, MM_POTION_RED}",
+          "check{OOT Ganon Castle Leftmost Scrub}"
+        ],
+        [
+          "contains{OOT Ganon Castle Left-Center Scrub, MM_POTION_RED}",
+          "check{OOT Ganon Castle Left-Center Scrub}"
+        ],
+        [
+          "contains{OOT Ganon Castle Right-Center Scrub, MM_POTION_RED}",
+          "check{OOT Ganon Castle Right-Center Scrub}"
+        ],
+        [
+          "contains{OOT Ganon Castle Rightmost Scrub, MM_POTION_RED}",
+          "check{OOT Ganon Castle Rightmost Scrub}"
+        ],
+        [
+          "contains{OOT MQ Deku Tree Scrub, MM_POTION_RED}",
+          "check{OOT MQ Deku Tree Scrub}"
+        ],
+        [
+          "contains{OOT MQ Dodongo Cavern Lobby Scrub Front, MM_POTION_RED}",
+          "check{OOT MQ Dodongo Cavern Lobby Scrub Front}"
+        ],
+        [
+          "contains{OOT MQ Dodongo Cavern Lobby Scrub Back, MM_POTION_RED}",
+          "check{OOT MQ Dodongo Cavern Lobby Scrub Back}"
+        ],
+        [
+          "contains{OOT MQ Dodongo Cavern Staircase Scrub, MM_POTION_RED}",
+          "check{OOT MQ Dodongo Cavern Staircase Scrub}"
+        ],
+        [
+          "contains{OOT MQ Dodongo Cavern Tunnel Side Scrub, MM_POTION_RED}",
+          "check{OOT MQ Dodongo Cavern Tunnel Side Scrub}"
+        ],
+        [
           "contains{OOT MQ Jabu-Jabu Cow, MM_POTION_RED}",
           "check{OOT MQ Jabu-Jabu Cow}"
+        ],
+        [
+          "contains{OOT MQ Ganon Castle Leftmost Scrub, MM_POTION_RED}",
+          "check{OOT MQ Ganon Castle Leftmost Scrub}"
+        ],
+        [
+          "contains{OOT MQ Ganon Castle Left-Center Scrub, MM_POTION_RED}",
+          "check{OOT MQ Ganon Castle Left-Center Scrub}"
+        ],
+        [
+          "contains{OOT MQ Ganon Castle Center Scrub, MM_POTION_RED}",
+          "check{OOT MQ Ganon Castle Center Scrub}"
+        ],
+        [
+          "contains{OOT MQ Ganon Castle Right-Center Scrub, MM_POTION_RED}",
+          "check{OOT MQ Ganon Castle Right-Center Scrub}"
+        ],
+        [
+          "contains{OOT MQ Ganon Castle Rightmost Scrub, MM_POTION_RED}",
+          "check{OOT MQ Ganon Castle Rightmost Scrub}"
         ],
         [
           "contains{MM Trading Post Item 1, MM_POTION_RED}",
@@ -33977,6 +35292,26 @@
           "check{OOT Kokiri Shop Item 8}"
         ],
         [
+          "contains{OOT Lost Woods Scrub Near Theater Left, MM_POTION_BLUE}",
+          "check{OOT Lost Woods Scrub Near Theater Left}"
+        ],
+        [
+          "contains{OOT Lost Woods Scrub Near Theater Right, MM_POTION_BLUE}",
+          "check{OOT Lost Woods Scrub Near Theater Right}"
+        ],
+        [
+          "contains{OOT Lost Woods Grotto Scrub Back, MM_POTION_BLUE}",
+          "check{OOT Lost Woods Grotto Scrub Back}"
+        ],
+        [
+          "contains{OOT Sacred Meadow Storms Grotto Front Scrub, MM_POTION_BLUE}",
+          "check{OOT Sacred Meadow Storms Grotto Front Scrub}"
+        ],
+        [
+          "contains{OOT Sacred Meadow Storms Grotto Back Scrub, MM_POTION_BLUE}",
+          "check{OOT Sacred Meadow Storms Grotto Back Scrub}"
+        ],
+        [
           "contains{OOT Kakariko Cow, MM_POTION_BLUE}",
           "check{OOT Kakariko Cow}"
         ],
@@ -34049,6 +35384,18 @@
           "check{OOT Death Mountain Cow}"
         ],
         [
+          "contains{OOT Goron City Grotto Left Scrub, MM_POTION_BLUE}",
+          "check{OOT Goron City Grotto Left Scrub}"
+        ],
+        [
+          "contains{OOT Goron City Grotto Center Scrub, MM_POTION_BLUE}",
+          "check{OOT Goron City Grotto Center Scrub}"
+        ],
+        [
+          "contains{OOT Goron City Grotto Right Scrub, MM_POTION_BLUE}",
+          "check{OOT Goron City Grotto Right Scrub}"
+        ],
+        [
           "contains{OOT Goron Shop Item 1, MM_POTION_BLUE}",
           "check{OOT Goron Shop Item 1}"
         ],
@@ -34079,6 +35426,30 @@
         [
           "contains{OOT Goron Shop Item 8, MM_POTION_BLUE}",
           "check{OOT Goron Shop Item 8}"
+        ],
+        [
+          "contains{OOT Death Mountain Crater Scrub Child, MM_POTION_BLUE}",
+          "check{OOT Death Mountain Crater Scrub Child}"
+        ],
+        [
+          "contains{OOT Death Mountain Crater Grotto Left Scrub, MM_POTION_BLUE}",
+          "check{OOT Death Mountain Crater Grotto Left Scrub}"
+        ],
+        [
+          "contains{OOT Death Mountain Crater Grotto Center Scrub, MM_POTION_BLUE}",
+          "check{OOT Death Mountain Crater Grotto Center Scrub}"
+        ],
+        [
+          "contains{OOT Death Mountain Crater Grotto Right Scrub, MM_POTION_BLUE}",
+          "check{OOT Death Mountain Crater Grotto Right Scrub}"
+        ],
+        [
+          "contains{OOT Zora River Storms Grotto Front Scrub, MM_POTION_BLUE}",
+          "check{OOT Zora River Storms Grotto Front Scrub}"
+        ],
+        [
+          "contains{OOT Zora River Storms Grotto Back Scrub, MM_POTION_BLUE}",
+          "check{OOT Zora River Storms Grotto Back Scrub}"
         ],
         [
           "contains{OOT Zora Shop Item 1, MM_POTION_BLUE}",
@@ -34113,6 +35484,18 @@
           "check{OOT Zora Shop Item 8}"
         ],
         [
+          "contains{OOT Lake Hylia Grotto Left Scrub, MM_POTION_BLUE}",
+          "check{OOT Lake Hylia Grotto Left Scrub}"
+        ],
+        [
+          "contains{OOT Lake Hylia Grotto Center Scrub, MM_POTION_BLUE}",
+          "check{OOT Lake Hylia Grotto Center Scrub}"
+        ],
+        [
+          "contains{OOT Lake Hylia Grotto Right Scrub, MM_POTION_BLUE}",
+          "check{OOT Lake Hylia Grotto Right Scrub}"
+        ],
+        [
           "contains{OOT Lon Lon Ranch Stables Cow Left, MM_POTION_BLUE}",
           "check{OOT Lon Lon Ranch Stables Cow Left}"
         ],
@@ -34127,6 +35510,18 @@
         [
           "contains{OOT Lon Lon Ranch Silo Cow Back, MM_POTION_BLUE}",
           "check{OOT Lon Lon Ranch Silo Cow Back}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Grotto Left Scrub, MM_POTION_BLUE}",
+          "check{OOT Lon Lon Ranch Grotto Left Scrub}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Grotto Center Scrub, MM_POTION_BLUE}",
+          "check{OOT Lon Lon Ranch Grotto Center Scrub}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Grotto Right Scrub, MM_POTION_BLUE}",
+          "check{OOT Lon Lon Ranch Grotto Right Scrub}"
         ],
         [
           "contains{OOT Hyrule Field Cow, MM_POTION_BLUE}",
@@ -34229,12 +35624,104 @@
           "check{OOT Market Bombchu Shop Item 8}"
         ],
         [
+          "contains{OOT Gerudo Valley Grotto Front Scrub, MM_POTION_BLUE}",
+          "check{OOT Gerudo Valley Grotto Front Scrub}"
+        ],
+        [
+          "contains{OOT Gerudo Valley Grotto Back Scrub, MM_POTION_BLUE}",
+          "check{OOT Gerudo Valley Grotto Back Scrub}"
+        ],
+        [
           "contains{OOT Gerudo Valley Cow, MM_POTION_BLUE}",
           "check{OOT Gerudo Valley Cow}"
         ],
         [
+          "contains{OOT Desert Colossus Grotto Front Scrub, MM_POTION_BLUE}",
+          "check{OOT Desert Colossus Grotto Front Scrub}"
+        ],
+        [
+          "contains{OOT Desert Colossus Grotto Back Scrub, MM_POTION_BLUE}",
+          "check{OOT Desert Colossus Grotto Back Scrub}"
+        ],
+        [
+          "contains{OOT Dodongo Cavern Lobby Scrub, MM_POTION_BLUE}",
+          "check{OOT Dodongo Cavern Lobby Scrub}"
+        ],
+        [
+          "contains{OOT Dodongo Cavern Green Side Room Scrub, MM_POTION_BLUE}",
+          "check{OOT Dodongo Cavern Green Side Room Scrub}"
+        ],
+        [
+          "contains{OOT Dodongo Cavern Bomb Bag Side Room Left Scrub, MM_POTION_BLUE}",
+          "check{OOT Dodongo Cavern Bomb Bag Side Room Left Scrub}"
+        ],
+        [
+          "contains{OOT Dodongo Cavern Bomb Bag Side Room Right Scrub, MM_POTION_BLUE}",
+          "check{OOT Dodongo Cavern Bomb Bag Side Room Right Scrub}"
+        ],
+        [
+          "contains{OOT Jabu-Jabu Scrub, MM_POTION_BLUE}",
+          "check{OOT Jabu-Jabu Scrub}"
+        ],
+        [
+          "contains{OOT Ganon Castle Leftmost Scrub, MM_POTION_BLUE}",
+          "check{OOT Ganon Castle Leftmost Scrub}"
+        ],
+        [
+          "contains{OOT Ganon Castle Left-Center Scrub, MM_POTION_BLUE}",
+          "check{OOT Ganon Castle Left-Center Scrub}"
+        ],
+        [
+          "contains{OOT Ganon Castle Right-Center Scrub, MM_POTION_BLUE}",
+          "check{OOT Ganon Castle Right-Center Scrub}"
+        ],
+        [
+          "contains{OOT Ganon Castle Rightmost Scrub, MM_POTION_BLUE}",
+          "check{OOT Ganon Castle Rightmost Scrub}"
+        ],
+        [
+          "contains{OOT MQ Deku Tree Scrub, MM_POTION_BLUE}",
+          "check{OOT MQ Deku Tree Scrub}"
+        ],
+        [
+          "contains{OOT MQ Dodongo Cavern Lobby Scrub Front, MM_POTION_BLUE}",
+          "check{OOT MQ Dodongo Cavern Lobby Scrub Front}"
+        ],
+        [
+          "contains{OOT MQ Dodongo Cavern Lobby Scrub Back, MM_POTION_BLUE}",
+          "check{OOT MQ Dodongo Cavern Lobby Scrub Back}"
+        ],
+        [
+          "contains{OOT MQ Dodongo Cavern Staircase Scrub, MM_POTION_BLUE}",
+          "check{OOT MQ Dodongo Cavern Staircase Scrub}"
+        ],
+        [
+          "contains{OOT MQ Dodongo Cavern Tunnel Side Scrub, MM_POTION_BLUE}",
+          "check{OOT MQ Dodongo Cavern Tunnel Side Scrub}"
+        ],
+        [
           "contains{OOT MQ Jabu-Jabu Cow, MM_POTION_BLUE}",
           "check{OOT MQ Jabu-Jabu Cow}"
+        ],
+        [
+          "contains{OOT MQ Ganon Castle Leftmost Scrub, MM_POTION_BLUE}",
+          "check{OOT MQ Ganon Castle Leftmost Scrub}"
+        ],
+        [
+          "contains{OOT MQ Ganon Castle Left-Center Scrub, MM_POTION_BLUE}",
+          "check{OOT MQ Ganon Castle Left-Center Scrub}"
+        ],
+        [
+          "contains{OOT MQ Ganon Castle Center Scrub, MM_POTION_BLUE}",
+          "check{OOT MQ Ganon Castle Center Scrub}"
+        ],
+        [
+          "contains{OOT MQ Ganon Castle Right-Center Scrub, MM_POTION_BLUE}",
+          "check{OOT MQ Ganon Castle Right-Center Scrub}"
+        ],
+        [
+          "contains{OOT MQ Ganon Castle Rightmost Scrub, MM_POTION_BLUE}",
+          "check{OOT MQ Ganon Castle Rightmost Scrub}"
         ],
         [
           "contains{MM Trading Post Item 1, MM_POTION_BLUE}",
@@ -34391,6 +35878,26 @@
           "check{OOT Kokiri Shop Item 8}"
         ],
         [
+          "contains{OOT Lost Woods Scrub Near Theater Left, MM_MILK}",
+          "check{OOT Lost Woods Scrub Near Theater Left}"
+        ],
+        [
+          "contains{OOT Lost Woods Scrub Near Theater Right, MM_MILK}",
+          "check{OOT Lost Woods Scrub Near Theater Right}"
+        ],
+        [
+          "contains{OOT Lost Woods Grotto Scrub Back, MM_MILK}",
+          "check{OOT Lost Woods Grotto Scrub Back}"
+        ],
+        [
+          "contains{OOT Sacred Meadow Storms Grotto Front Scrub, MM_MILK}",
+          "check{OOT Sacred Meadow Storms Grotto Front Scrub}"
+        ],
+        [
+          "contains{OOT Sacred Meadow Storms Grotto Back Scrub, MM_MILK}",
+          "check{OOT Sacred Meadow Storms Grotto Back Scrub}"
+        ],
+        [
           "contains{OOT Kakariko Cow, MM_MILK}",
           "check{OOT Kakariko Cow}"
         ],
@@ -34463,6 +35970,18 @@
           "check{OOT Death Mountain Cow}"
         ],
         [
+          "contains{OOT Goron City Grotto Left Scrub, MM_MILK}",
+          "check{OOT Goron City Grotto Left Scrub}"
+        ],
+        [
+          "contains{OOT Goron City Grotto Center Scrub, MM_MILK}",
+          "check{OOT Goron City Grotto Center Scrub}"
+        ],
+        [
+          "contains{OOT Goron City Grotto Right Scrub, MM_MILK}",
+          "check{OOT Goron City Grotto Right Scrub}"
+        ],
+        [
           "contains{OOT Goron Shop Item 1, MM_MILK}",
           "check{OOT Goron Shop Item 1}"
         ],
@@ -34493,6 +36012,30 @@
         [
           "contains{OOT Goron Shop Item 8, MM_MILK}",
           "check{OOT Goron Shop Item 8}"
+        ],
+        [
+          "contains{OOT Death Mountain Crater Scrub Child, MM_MILK}",
+          "check{OOT Death Mountain Crater Scrub Child}"
+        ],
+        [
+          "contains{OOT Death Mountain Crater Grotto Left Scrub, MM_MILK}",
+          "check{OOT Death Mountain Crater Grotto Left Scrub}"
+        ],
+        [
+          "contains{OOT Death Mountain Crater Grotto Center Scrub, MM_MILK}",
+          "check{OOT Death Mountain Crater Grotto Center Scrub}"
+        ],
+        [
+          "contains{OOT Death Mountain Crater Grotto Right Scrub, MM_MILK}",
+          "check{OOT Death Mountain Crater Grotto Right Scrub}"
+        ],
+        [
+          "contains{OOT Zora River Storms Grotto Front Scrub, MM_MILK}",
+          "check{OOT Zora River Storms Grotto Front Scrub}"
+        ],
+        [
+          "contains{OOT Zora River Storms Grotto Back Scrub, MM_MILK}",
+          "check{OOT Zora River Storms Grotto Back Scrub}"
         ],
         [
           "contains{OOT Zora Shop Item 1, MM_MILK}",
@@ -34527,6 +36070,18 @@
           "check{OOT Zora Shop Item 8}"
         ],
         [
+          "contains{OOT Lake Hylia Grotto Left Scrub, MM_MILK}",
+          "check{OOT Lake Hylia Grotto Left Scrub}"
+        ],
+        [
+          "contains{OOT Lake Hylia Grotto Center Scrub, MM_MILK}",
+          "check{OOT Lake Hylia Grotto Center Scrub}"
+        ],
+        [
+          "contains{OOT Lake Hylia Grotto Right Scrub, MM_MILK}",
+          "check{OOT Lake Hylia Grotto Right Scrub}"
+        ],
+        [
           "contains{OOT Lon Lon Ranch Stables Cow Left, MM_MILK}",
           "check{OOT Lon Lon Ranch Stables Cow Left}"
         ],
@@ -34541,6 +36096,18 @@
         [
           "contains{OOT Lon Lon Ranch Silo Cow Back, MM_MILK}",
           "check{OOT Lon Lon Ranch Silo Cow Back}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Grotto Left Scrub, MM_MILK}",
+          "check{OOT Lon Lon Ranch Grotto Left Scrub}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Grotto Center Scrub, MM_MILK}",
+          "check{OOT Lon Lon Ranch Grotto Center Scrub}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Grotto Right Scrub, MM_MILK}",
+          "check{OOT Lon Lon Ranch Grotto Right Scrub}"
         ],
         [
           "contains{OOT Hyrule Field Cow, MM_MILK}",
@@ -34643,12 +36210,104 @@
           "check{OOT Market Bombchu Shop Item 8}"
         ],
         [
+          "contains{OOT Gerudo Valley Grotto Front Scrub, MM_MILK}",
+          "check{OOT Gerudo Valley Grotto Front Scrub}"
+        ],
+        [
+          "contains{OOT Gerudo Valley Grotto Back Scrub, MM_MILK}",
+          "check{OOT Gerudo Valley Grotto Back Scrub}"
+        ],
+        [
           "contains{OOT Gerudo Valley Cow, MM_MILK}",
           "check{OOT Gerudo Valley Cow}"
         ],
         [
+          "contains{OOT Desert Colossus Grotto Front Scrub, MM_MILK}",
+          "check{OOT Desert Colossus Grotto Front Scrub}"
+        ],
+        [
+          "contains{OOT Desert Colossus Grotto Back Scrub, MM_MILK}",
+          "check{OOT Desert Colossus Grotto Back Scrub}"
+        ],
+        [
+          "contains{OOT Dodongo Cavern Lobby Scrub, MM_MILK}",
+          "check{OOT Dodongo Cavern Lobby Scrub}"
+        ],
+        [
+          "contains{OOT Dodongo Cavern Green Side Room Scrub, MM_MILK}",
+          "check{OOT Dodongo Cavern Green Side Room Scrub}"
+        ],
+        [
+          "contains{OOT Dodongo Cavern Bomb Bag Side Room Left Scrub, MM_MILK}",
+          "check{OOT Dodongo Cavern Bomb Bag Side Room Left Scrub}"
+        ],
+        [
+          "contains{OOT Dodongo Cavern Bomb Bag Side Room Right Scrub, MM_MILK}",
+          "check{OOT Dodongo Cavern Bomb Bag Side Room Right Scrub}"
+        ],
+        [
+          "contains{OOT Jabu-Jabu Scrub, MM_MILK}",
+          "check{OOT Jabu-Jabu Scrub}"
+        ],
+        [
+          "contains{OOT Ganon Castle Leftmost Scrub, MM_MILK}",
+          "check{OOT Ganon Castle Leftmost Scrub}"
+        ],
+        [
+          "contains{OOT Ganon Castle Left-Center Scrub, MM_MILK}",
+          "check{OOT Ganon Castle Left-Center Scrub}"
+        ],
+        [
+          "contains{OOT Ganon Castle Right-Center Scrub, MM_MILK}",
+          "check{OOT Ganon Castle Right-Center Scrub}"
+        ],
+        [
+          "contains{OOT Ganon Castle Rightmost Scrub, MM_MILK}",
+          "check{OOT Ganon Castle Rightmost Scrub}"
+        ],
+        [
+          "contains{OOT MQ Deku Tree Scrub, MM_MILK}",
+          "check{OOT MQ Deku Tree Scrub}"
+        ],
+        [
+          "contains{OOT MQ Dodongo Cavern Lobby Scrub Front, MM_MILK}",
+          "check{OOT MQ Dodongo Cavern Lobby Scrub Front}"
+        ],
+        [
+          "contains{OOT MQ Dodongo Cavern Lobby Scrub Back, MM_MILK}",
+          "check{OOT MQ Dodongo Cavern Lobby Scrub Back}"
+        ],
+        [
+          "contains{OOT MQ Dodongo Cavern Staircase Scrub, MM_MILK}",
+          "check{OOT MQ Dodongo Cavern Staircase Scrub}"
+        ],
+        [
+          "contains{OOT MQ Dodongo Cavern Tunnel Side Scrub, MM_MILK}",
+          "check{OOT MQ Dodongo Cavern Tunnel Side Scrub}"
+        ],
+        [
           "contains{OOT MQ Jabu-Jabu Cow, MM_MILK}",
           "check{OOT MQ Jabu-Jabu Cow}"
+        ],
+        [
+          "contains{OOT MQ Ganon Castle Leftmost Scrub, MM_MILK}",
+          "check{OOT MQ Ganon Castle Leftmost Scrub}"
+        ],
+        [
+          "contains{OOT MQ Ganon Castle Left-Center Scrub, MM_MILK}",
+          "check{OOT MQ Ganon Castle Left-Center Scrub}"
+        ],
+        [
+          "contains{OOT MQ Ganon Castle Center Scrub, MM_MILK}",
+          "check{OOT MQ Ganon Castle Center Scrub}"
+        ],
+        [
+          "contains{OOT MQ Ganon Castle Right-Center Scrub, MM_MILK}",
+          "check{OOT MQ Ganon Castle Right-Center Scrub}"
+        ],
+        [
+          "contains{OOT MQ Ganon Castle Rightmost Scrub, MM_MILK}",
+          "check{OOT MQ Ganon Castle Rightmost Scrub}"
         ],
         [
           "contains{MM Trading Post Item 1, MM_MILK}",
