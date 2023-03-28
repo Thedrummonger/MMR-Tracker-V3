@@ -31008,22 +31008,6 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT_has_medallions",
-      "RequiredItems": [
-        "OOT_MEDALLION_LIGHT",
-        "OOT_MEDALLION_FOREST",
-        "OOT_MEDALLION_FIRE",
-        "OOT_MEDALLION_WATER",
-        "OOT_MEDALLION_SPIRIT",
-        "OOT_MEDALLION_SHADOW"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
       "Id": "OOT_has_light_arrows",
       "RequiredItems": [
         "OOT_can_use_bow",

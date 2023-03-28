@@ -18279,6 +18279,25 @@
         "PriceDataNames": []
       }
     },
+    "MM_ARROWS_10": {
+      "Name": "10 Arrows (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_ARROWS_10",
+          "10 Arrows (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_ARROWS_10",
+          "10 Arrows (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
     "MM_ARROWS_30": {
       "Name": "30 Arrows (MM)",
       "MaxAmountInWorld": -1,
@@ -18389,6 +18408,25 @@
         "GossipHintNames": [
           "MM_BOMBER_NOTEBOOK",
           "Bombers' Notebook"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_BOMBS_10": {
+      "Name": "10 Bombs (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_BOMBS_10",
+          "10 Bombs (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_BOMBS_10",
+          "10 Bombs (MM)"
         ],
         "PriceDataNames": []
       }
@@ -18750,6 +18788,25 @@
         "GossipHintNames": [
           "MM_DEFENSE_UPGRADE",
           "Double Defense (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_FAIRY": {
+      "Name": "Fairy (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_FAIRY",
+          "Fairy (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_FAIRY",
+          "Fairy (MM)"
         ],
         "PriceDataNames": []
       }
@@ -19533,6 +19590,25 @@
         "PriceDataNames": []
       }
     },
+    "MM_NUTS_10": {
+      "Name": "10 Deku Nuts (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_NUTS_10",
+          "10 Deku Nuts (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_NUTS_10",
+          "10 Deku Nuts (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
     "MM_OCARINA": {
       "Name": "Ocarina (MM)",
       "MaxAmountInWorld": 2,
@@ -19586,6 +19662,63 @@
         "GossipHintNames": [
           "MM_PICTOGRAPH_BOX",
           "Pictograph Box"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_POTION_BLUE": {
+      "Name": "Blue Potion (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_POTION_BLUE",
+          "Blue Potion (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_POTION_BLUE",
+          "Blue Potion (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_POTION_GREEN": {
+      "Name": "Green Potion (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_POTION_GREEN",
+          "Green Potion (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_POTION_GREEN",
+          "Green Potion (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_POTION_RED": {
+      "Name": "Red Potion (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_POTION_RED",
+          "Red Potion (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_POTION_RED",
+          "Red Potion (MM)"
         ],
         "PriceDataNames": []
       }
@@ -19833,6 +19966,25 @@
         "GossipHintNames": [
           "MM_SHIELD",
           "Progressive Shield (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_SHIELD_HERO": {
+      "Name": "Hero's Shield",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_SHIELD_HERO",
+          "Hero's Shield"
+        ],
+        "GossipHintNames": [
+          "MM_SHIELD_HERO",
+          "Hero's Shield"
         ],
         "PriceDataNames": []
       }
@@ -20251,6 +20403,25 @@
         "GossipHintNames": [
           "MM_STRAY_FAIRY_WF",
           "Stray Fairy (Woodfall Temple)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_STICK": {
+      "Name": "Deku Stick (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_STICK",
+          "Deku Stick (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_STICK",
+          "Deku Stick (MM)"
         ],
         "PriceDataNames": []
       }
@@ -21889,25 +22060,6 @@
         "PriceDataNames": []
       }
     },
-    "OOT_NUTS_10": {
-      "Name": "10 Deku Nuts (OoT)",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "OOT_NUTS_10",
-          "10 Deku Nuts (OoT)"
-        ],
-        "GossipHintNames": [
-          "OOT_NUTS_10",
-          "10 Deku Nuts (OoT)"
-        ],
-        "PriceDataNames": []
-      }
-    },
     "OOT_NUTS_5": {
       "Name": "5 Deku Nuts (OoT)",
       "MaxAmountInWorld": -1,
@@ -21923,6 +22075,25 @@
         "GossipHintNames": [
           "OOT_NUTS_5",
           "5 Deku Nuts (OoT)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_NUTS_10": {
+      "Name": "10 Deku Nuts (OoT)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_NUTS_10",
+          "10 Deku Nuts (OoT)"
+        ],
+        "GossipHintNames": [
+          "OOT_NUTS_10",
+          "10 Deku Nuts (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -22346,7 +22517,7 @@
       }
     },
     "OOT_SHIELD_MIRROR": {
-      "Name": "Mirror Shield",
+      "Name": "Mirror Shield (OoT)",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -22355,11 +22526,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_SHIELD_MIRROR",
-          "Mirror Shield"
+          "Mirror Shield (OoT)"
         ],
         "GossipHintNames": [
           "OOT_SHIELD_MIRROR",
-          "Mirror Shield"
+          "Mirror Shield (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -23656,44 +23827,6 @@
         "PriceDataNames": []
       }
     },
-    "SHARED_NUTS_5": {
-      "Name": "5 Deku Nuts",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_NUTS_5",
-          "5 Deku Nuts"
-        ],
-        "GossipHintNames": [
-          "SHARED_NUTS_5",
-          "5 Deku Nuts"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    "SHARED_NUTS_10": {
-      "Name": "10 Deku Nuts",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_NUTS_10",
-          "10 Deku Nuts"
-        ],
-        "GossipHintNames": [
-          "SHARED_NUTS_10",
-          "10 Deku Nuts"
-        ],
-        "PriceDataNames": []
-      }
-    },
     "SHARED_OCARINA": {
       "Name": "Progressive Ocarina",
       "MaxAmountInWorld": 2,
@@ -23903,25 +24036,6 @@
         "PriceDataNames": []
       }
     },
-    "SHARED_STICK": {
-      "Name": "Deku Sticks",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_STICK",
-          "Deku Sticks"
-        ],
-        "GossipHintNames": [
-          "SHARED_STICK",
-          "Deku Sticks"
-        ],
-        "PriceDataNames": []
-      }
-    },
     "SHARED_WALLET": {
       "Name": "Progressive Wallet",
       "MaxAmountInWorld": 2,
@@ -23979,44 +24093,6 @@
         "PriceDataNames": []
       }
     },
-    "MM_NUTS_10": {
-      "Name": "10 Deku Nuts (MM)",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "MM_NUTS_10",
-          "10 Deku Nuts (MM)"
-        ],
-        "GossipHintNames": [
-          "MM_NUTS_10",
-          "10 Deku Nuts (MM)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    "MM_STICK": {
-      "Name": "1 Deku Stick (MM)",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "MM_STICK",
-          "1 Deku Stick (MM)"
-        ],
-        "GossipHintNames": [
-          "MM_STICK",
-          "1 Deku Stick (MM)"
-        ],
-        "PriceDataNames": []
-      }
-    },
     "MM_STICKS_5": {
       "Name": "5 Deku Sticks (MM)",
       "MaxAmountInWorld": -1,
@@ -24051,139 +24127,6 @@
         "GossipHintNames": [
           "MM_STICKS_10",
           "10 Deku Sticks (MM)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    "MM_ARROWS_10": {
-      "Name": "10 Arrows (MM)",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "MM_ARROWS_10",
-          "10 Arrows (MM)"
-        ],
-        "GossipHintNames": [
-          "MM_ARROWS_10",
-          "10 Arrows (MM)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    "MM_BOMBS_10": {
-      "Name": "10 Bombs (MM)",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "MM_BOMBS_10",
-          "10 Bombs (MM)"
-        ],
-        "GossipHintNames": [
-          "MM_BOMBS_10",
-          "10 Bombs (MM)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    "MM_POTION_RED": {
-      "Name": "Red Potion (MM)",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "MM_POTION_RED",
-          "Red Potion (MM)"
-        ],
-        "GossipHintNames": [
-          "MM_POTION_RED",
-          "Red Potion (MM)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    "MM_POTION_GREEN": {
-      "Name": "Green Potion (MM)",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "MM_POTION_GREEN",
-          "Green Potion (MM)"
-        ],
-        "GossipHintNames": [
-          "MM_POTION_GREEN",
-          "Green Potion (MM)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    "MM_POTION_BLUE": {
-      "Name": "Blue Potion (MM)",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "MM_POTION_BLUE",
-          "Blue Potion (MM)"
-        ],
-        "GossipHintNames": [
-          "MM_POTION_BLUE",
-          "Blue Potion (MM)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    "MM_FAIRY": {
-      "Name": "Fairy (MM)",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "MM_FAIRY",
-          "Fairy (MM)"
-        ],
-        "GossipHintNames": [
-          "MM_FAIRY",
-          "Fairy (MM)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    "MM_SHIELD_HERO": {
-      "Name": "Hero Shield",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "MM_SHIELD_HERO",
-          "Hero Shield"
-        ],
-        "GossipHintNames": [
-          "MM_SHIELD_HERO",
-          "Hero Shield"
         ],
         "PriceDataNames": []
       }
