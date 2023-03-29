@@ -18966,7 +18966,7 @@
       },
       "LocationProxys": []
     },
-    "MM_EVENT_MAJORA": {
+    "MM_BOSS_MAJORA": {
       "Name": "Majora",
       "OriginalItem": "MM_MASK_MAJORA",
       "Area": "The Moon",
@@ -18980,7 +18980,7 @@
       },
       "LocationProxys": []
     },
-    "OOT_EVENT_GANON": {
+    "OOT_BOSS_GANON": {
       "Name": "Ganon",
       "OriginalItem": "OOT_TRIFORCE",
       "Area": "Ganon's Castle",
@@ -28550,9 +28550,9 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Ancient Castle of Ikana Exterior => MM Beneath the Well End": {
+    "MM Ancient Castle of Ikana Exterior => MM Ancient Castle of Ikana Well": {
       "Area": "MM Ancient Castle of Ikana Exterior",
-      "Exit": "MM Beneath the Well End",
+      "Exit": "MM Ancient Castle of Ikana Well",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -28581,6 +28581,20 @@
     "MM Ancient Castle of Ikana Entrance => MM Ikana Canyon": {
       "Area": "MM Ancient Castle of Ikana Entrance",
       "Exit": "MM Ikana Canyon",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Ancient Castle of Ikana Well => MM Beneath the Well End": {
+      "Area": "MM Ancient Castle of Ikana Well",
+      "Exit": "MM Beneath the Well End",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Ancient Castle of Ikana Well => MM Ancient Castle of Ikana Exterior": {
+      "Area": "MM Ancient Castle of Ikana Well",
+      "Exit": "MM Ancient Castle of Ikana Exterior",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -28760,23 +28774,37 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Beneath the Well East Section => MM Beneath the Well End": {
+    "MM Beneath the Well East Section => MM Beneath the Well Sun Block": {
       "Area": "MM Beneath the Well East Section",
-      "Exit": "MM Beneath the Well End",
+      "Exit": "MM Beneath the Well Sun Block",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Beneath the Well End => MM Beneath the Well East Section": {
-      "Area": "MM Beneath the Well End",
+    "MM Beneath the Well Sun Block => MM Beneath the Well East Section": {
+      "Area": "MM Beneath the Well Sun Block",
       "Exit": "MM Beneath the Well East Section",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Beneath the Well End => MM Ancient Castle of Ikana Exterior": {
+    "MM Beneath the Well Sun Block => MM Beneath the Well End": {
+      "Area": "MM Beneath the Well Sun Block",
+      "Exit": "MM Beneath the Well End",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Beneath the Well End => MM Beneath the Well Sun Block": {
       "Area": "MM Beneath the Well End",
-      "Exit": "MM Ancient Castle of Ikana Exterior",
+      "Exit": "MM Beneath the Well Sun Block",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Beneath the Well End => MM Ancient Castle of Ikana Well": {
+      "Area": "MM Beneath the Well End",
+      "Exit": "MM Ancient Castle of Ikana Well",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -29231,6 +29259,13 @@
     "MM SPAWN => OOT SONGS": {
       "Area": "MM SPAWN",
       "Exit": "OOT SONGS",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM SPAWN => MM Moon": {
+      "Area": "MM SPAWN",
+      "Exit": "MM Moon",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -30293,9 +30328,9 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Great Bay Coast => MM Pirate Fortress Entrance": {
+    "MM Great Bay Coast => MM Pirate Fortress": {
       "Area": "MM Great Bay Coast",
-      "Exit": "MM Pirate Fortress Entrance",
+      "Exit": "MM Pirate Fortress",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -30852,9 +30887,23 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Pirate Fortress Entrance => MM Great Bay Coast": {
-      "Area": "MM Pirate Fortress Entrance",
+    "MM Pirate Fortress => MM Great Bay Coast": {
+      "Area": "MM Pirate Fortress",
       "Exit": "MM Great Bay Coast",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Pirate Fortress => MM Pirate Fortress Entrance": {
+      "Area": "MM Pirate Fortress",
+      "Exit": "MM Pirate Fortress Entrance",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Pirate Fortress Entrance => MM Pirate Fortress": {
+      "Area": "MM Pirate Fortress Entrance",
+      "Exit": "MM Pirate Fortress",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -33298,6 +33347,30 @@
     },
     "TRICK_MM_DOG_RACE_CHEST_NOTHING": {
       "Name": "Doggy Racetrack Chest with Nothing",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "TRICK_MM_MAJORA_LOGIC": {
+      "Name": "Fight Majora to Reset Time",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "TRICK_MM_SOUTHERN_SWAMP_SCRUB_HP_GORON": {
+      "Name": "Southern Swamp Scrub HP as Goron",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "TRICK_MM_ZORA_HALL_SCRUB_HP_NO_DEKU": {
+      "Name": "Zora Hall Scrub HP without Deku",
       "SpoilerData": {
         "SpoilerLogNames": [],
         "GossipHintNames": [],
