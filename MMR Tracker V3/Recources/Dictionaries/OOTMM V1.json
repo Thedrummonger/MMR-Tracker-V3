@@ -25019,6 +25019,63 @@
         "PriceDataNames": []
       }
     },
+    "SHARED_NUTS_5": {
+      "Name": "5 Deku Nuts (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_NUTS_5",
+          "5 Deku Nuts (MM)"
+        ],
+        "GossipHintNames": [
+          "SHARED_NUTS_5",
+          "5 Deku Nuts (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "SHARED_NUTS_10": {
+      "Name": "10 Deku Sticks (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_NUTS_10",
+          "10 Deku Sticks (MM)"
+        ],
+        "GossipHintNames": [
+          "SHARED_NUTS_10",
+          "10 Deku Sticks (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "SHARED_STICK": {
+      "Name": "Deku Stick",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_STICK",
+          "Deku Stick"
+        ],
+        "GossipHintNames": [
+          "SHARED_STICK",
+          "Deku Stick"
+        ],
+        "PriceDataNames": []
+      }
+    },
     "MM_MASK_MAJORA": {
       "Name": "Majoras Mask",
       "MaxAmountInWorld": 1,

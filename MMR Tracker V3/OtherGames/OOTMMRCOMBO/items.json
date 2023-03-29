@@ -318,6 +318,9 @@
 
   "SHARED_NUT": "1 Deku Nut",
   "SHARED_STICKS_5": "5 Deku Sticks",
-  "SHARED_STICKS_10": "10 Deku Sticks"
+  "SHARED_STICKS_10": "10 Deku Sticks",
+  "SHARED_NUTS_5": "5 Deku Nuts (MM)",
+  "SHARED_NUTS_10": "10 Deku Sticks (MM)",
+  "SHARED_STICK": "Deku Stick"
 
 }
