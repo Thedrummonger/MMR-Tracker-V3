@@ -201,12 +201,20 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
             List<string> GetRenewableLocations(string GameCode)
             {
-                var ONE_TIME_SHOP_CHECKS = new string[] { "MM Bomb Shop Bomb Bag", "MM Bomb Shop Bomb Bag 2", "MM Curiosity Shop All-Night Mask" };
+                var RenewableOverride = new string[] 
+                { 
+                    "MM Bomb Shop Bomb Bag", 
+                    "MM Bomb Shop Bomb Bag 2", 
+                    "MM Curiosity Shop All-Night Mask",
+                    "OOT Lost Woods Scrub Sticks Upgrade",
+                    "OOT Lost Woods Grotto Scrub Nuts Upgrade",
+                    "OOT Hyrule Field Grotto Scrub HP"
+                };
                 string path = Path.Combine(References.TestingPaths.GetDevTestingPath(), @"core-develop", "data", GameCode.ToLower(), "pool.csv");
-                string[] RenewableTypes = new string[] { "shop", "cow" };
+                string[] RenewableTypes = new string[] { "shop", "cow", "scrub" };
                 var Pool = ConvertCsvFileToJsonObject(File.ReadAllLines(path).Where(x => !string.IsNullOrWhiteSpace(x)).ToArray());
                 return JsonConvert.DeserializeObject<List<MMROOTLocation>>(Pool)
-                    .Where(x => RenewableTypes.Contains(x.type) && !ONE_TIME_SHOP_CHECKS.Contains($"{GameCode} {x.location}"))
+                    .Where(x => RenewableTypes.Contains(x.type) && !RenewableOverride.Contains($"{GameCode} {x.location}"))
                     .Select(x => $"{GameCode} {x.location}").ToList();
             }
         }

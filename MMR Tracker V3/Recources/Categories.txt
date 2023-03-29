@@ -3,7 +3,7 @@
 //Multiple gamecodes can be defined in a comma seperated lits ex: (#GAMECODESTART:MMR,OOTR)
 //Using "#GAMECODEEND:" will exit the game code restriction
 
-GAMECODESTART:TPR
+#GAMECODESTART:TPR
 
 //Ordon and Faron
 Ordona Province

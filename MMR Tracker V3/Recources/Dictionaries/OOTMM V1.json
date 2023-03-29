@@ -511,7 +511,7 @@
     "OOT Lost Woods Scrub Near Theater Left": {
       "Name": "Lost Woods Scrub Near Theater Left",
       "OriginalItem": "OOT_STICK",
-      "Area": "OOT_LOST_WOODS",
+      "Area": "Lost Woods",
       "ValidItemTypes": [
         "item"
       ],
@@ -529,7 +529,7 @@
     "OOT Lost Woods Scrub Near Theater Right": {
       "Name": "Lost Woods Scrub Near Theater Right",
       "OriginalItem": "OOT_NUTS_5",
-      "Area": "OOT_LOST_WOODS",
+      "Area": "Lost Woods",
       "ValidItemTypes": [
         "item"
       ],
@@ -601,7 +601,7 @@
     "OOT Lost Woods Grotto Scrub Back": {
       "Name": "Lost Woods Grotto Scrub Back",
       "OriginalItem": "OOT_DEKU_SEEDS_30",
-      "Area": "OOT_GROTTOS",
+      "Area": "Lost Woods",
       "ValidItemTypes": [
         "item"
       ],
@@ -799,7 +799,7 @@
     "OOT Sacred Meadow Storms Grotto Front Scrub": {
       "Name": "Sacred Meadow Storms Grotto Front Scrub",
       "OriginalItem": "OOT_POTION_GREEN",
-      "Area": "OOT_GROTTOS",
+      "Area": "Sacred Forest Meadow",
       "ValidItemTypes": [
         "item"
       ],
@@ -817,7 +817,7 @@
     "OOT Sacred Meadow Storms Grotto Back Scrub": {
       "Name": "Sacred Meadow Storms Grotto Back Scrub",
       "OriginalItem": "OOT_POTION_RED",
-      "Area": "OOT_GROTTOS",
+      "Area": "Sacred Forest Meadow",
       "ValidItemTypes": [
         "item"
       ],
@@ -1969,7 +1969,7 @@
     "OOT Goron City Grotto Left Scrub": {
       "Name": "Goron City Grotto Left Scrub",
       "OriginalItem": "OOT_NUTS_5",
-      "Area": "OOT_GROTTOS",
+      "Area": "Goron City",
       "ValidItemTypes": [
         "item"
       ],
@@ -1987,7 +1987,7 @@
     "OOT Goron City Grotto Center Scrub": {
       "Name": "Goron City Grotto Center Scrub",
       "OriginalItem": "OOT_DEKU_SEEDS_30",
-      "Area": "OOT_GROTTOS",
+      "Area": "Goron City",
       "ValidItemTypes": [
         "item"
       ],
@@ -2005,7 +2005,7 @@
     "OOT Goron City Grotto Right Scrub": {
       "Name": "Goron City Grotto Right Scrub",
       "OriginalItem": "OOT_BOMBS_5",
-      "Area": "OOT_GROTTOS",
+      "Area": "Goron City",
       "ValidItemTypes": [
         "item"
       ],
@@ -2239,7 +2239,7 @@
     "OOT Death Mountain Crater Scrub Child": {
       "Name": "Death Mountain Crater Scrub Child",
       "OriginalItem": "OOT_BOMBS_5",
-      "Area": "OOT_DEATH_MOUNTAIN_CRATER",
+      "Area": "Death Mountain Crater",
       "ValidItemTypes": [
         "item"
       ],
@@ -2257,7 +2257,7 @@
     "OOT Death Mountain Crater Grotto Left Scrub": {
       "Name": "Death Mountain Crater Grotto Left Scrub",
       "OriginalItem": "OOT_NUTS_5",
-      "Area": "OOT_GROTTOS",
+      "Area": "Death Mountain Crater",
       "ValidItemTypes": [
         "item"
       ],
@@ -2275,7 +2275,7 @@
     "OOT Death Mountain Crater Grotto Center Scrub": {
       "Name": "Death Mountain Crater Grotto Center Scrub",
       "OriginalItem": "OOT_DEKU_SEEDS_30",
-      "Area": "OOT_GROTTOS",
+      "Area": "Death Mountain Crater",
       "ValidItemTypes": [
         "item"
       ],
@@ -2293,7 +2293,7 @@
     "OOT Death Mountain Crater Grotto Right Scrub": {
       "Name": "Death Mountain Crater Grotto Right Scrub",
       "OriginalItem": "OOT_BOMBS_5",
-      "Area": "OOT_GROTTOS",
+      "Area": "Death Mountain Crater",
       "ValidItemTypes": [
         "item"
       ],
@@ -2455,7 +2455,7 @@
     "OOT Zora River Storms Grotto Front Scrub": {
       "Name": "Zora River Storms Grotto Front Scrub",
       "OriginalItem": "OOT_POTION_GREEN",
-      "Area": "OOT_GROTTOS",
+      "Area": "Zora's River",
       "ValidItemTypes": [
         "item"
       ],
@@ -2473,7 +2473,7 @@
     "OOT Zora River Storms Grotto Back Scrub": {
       "Name": "Zora River Storms Grotto Back Scrub",
       "OriginalItem": "OOT_POTION_RED",
-      "Area": "OOT_GROTTOS",
+      "Area": "Zora's River",
       "ValidItemTypes": [
         "item"
       ],
@@ -2941,7 +2941,7 @@
     "OOT Lake Hylia Grotto Left Scrub": {
       "Name": "Lake Hylia Grotto Left Scrub",
       "OriginalItem": "OOT_NUTS_5",
-      "Area": "OOT_GROTTOS",
+      "Area": "Lake Hylia",
       "ValidItemTypes": [
         "item"
       ],
@@ -2959,7 +2959,7 @@
     "OOT Lake Hylia Grotto Center Scrub": {
       "Name": "Lake Hylia Grotto Center Scrub",
       "OriginalItem": "OOT_DEKU_SEEDS_30",
-      "Area": "OOT_GROTTOS",
+      "Area": "Lake Hylia",
       "ValidItemTypes": [
         "item"
       ],
@@ -2977,7 +2977,7 @@
     "OOT Lake Hylia Grotto Right Scrub": {
       "Name": "Lake Hylia Grotto Right Scrub",
       "OriginalItem": "OOT_BOMBS_5",
-      "Area": "OOT_GROTTOS",
+      "Area": "Lake Hylia",
       "ValidItemTypes": [
         "item"
       ],
@@ -3355,7 +3355,7 @@
     "OOT Lon Lon Ranch Grotto Left Scrub": {
       "Name": "Lon Lon Ranch Grotto Left Scrub",
       "OriginalItem": "OOT_NUTS_5",
-      "Area": "OOT_GROTTOS",
+      "Area": "Lon Lon Ranch",
       "ValidItemTypes": [
         "item"
       ],
@@ -3373,7 +3373,7 @@
     "OOT Lon Lon Ranch Grotto Center Scrub": {
       "Name": "Lon Lon Ranch Grotto Center Scrub",
       "OriginalItem": "OOT_DEKU_SEEDS_30",
-      "Area": "OOT_GROTTOS",
+      "Area": "Lon Lon Ranch",
       "ValidItemTypes": [
         "item"
       ],
@@ -3391,7 +3391,7 @@
     "OOT Lon Lon Ranch Grotto Right Scrub": {
       "Name": "Lon Lon Ranch Grotto Right Scrub",
       "OriginalItem": "OOT_BOMBS_5",
-      "Area": "OOT_GROTTOS",
+      "Area": "Lon Lon Ranch",
       "ValidItemTypes": [
         "item"
       ],
@@ -4399,7 +4399,7 @@
     "OOT Gerudo Valley Grotto Front Scrub": {
       "Name": "Gerudo Valley Grotto Front Scrub",
       "OriginalItem": "OOT_POTION_GREEN",
-      "Area": "OOT_GROTTOS",
+      "Area": "Gerudo Valley",
       "ValidItemTypes": [
         "item"
       ],
@@ -4417,7 +4417,7 @@
     "OOT Gerudo Valley Grotto Back Scrub": {
       "Name": "Gerudo Valley Grotto Back Scrub",
       "OriginalItem": "OOT_POTION_RED",
-      "Area": "OOT_GROTTOS",
+      "Area": "Gerudo Valley",
       "ValidItemTypes": [
         "item"
       ],
@@ -4687,7 +4687,7 @@
     "OOT Desert Colossus Grotto Front Scrub": {
       "Name": "Desert Colossus Grotto Front Scrub",
       "OriginalItem": "OOT_POTION_GREEN",
-      "Area": "OOT_GROTTOS",
+      "Area": "Desert Colossus",
       "ValidItemTypes": [
         "item"
       ],
@@ -4705,7 +4705,7 @@
     "OOT Desert Colossus Grotto Back Scrub": {
       "Name": "Desert Colossus Grotto Back Scrub",
       "OriginalItem": "OOT_POTION_RED",
-      "Area": "OOT_GROTTOS",
+      "Area": "Desert Colossus",
       "ValidItemTypes": [
         "item"
       ],
@@ -5281,7 +5281,7 @@
     "OOT Dodongo Cavern Lobby Scrub": {
       "Name": "Dodongo Cavern Lobby Scrub",
       "OriginalItem": "OOT_SHIELD_DEKU",
-      "Area": "OOT_DODONGO_CAVERN",
+      "Area": "Dodongo's Cavern",
       "ValidItemTypes": [
         "item"
       ],
@@ -5299,7 +5299,7 @@
     "OOT Dodongo Cavern Green Side Room Scrub": {
       "Name": "Dodongo Cavern Green Side Room Scrub",
       "OriginalItem": "OOT_STICK",
-      "Area": "OOT_DODONGO_CAVERN",
+      "Area": "Dodongo's Cavern",
       "ValidItemTypes": [
         "item"
       ],
@@ -5317,7 +5317,7 @@
     "OOT Dodongo Cavern Bomb Bag Side Room Left Scrub": {
       "Name": "Dodongo Cavern Bomb Bag Side Room Left Scrub",
       "OriginalItem": "OOT_NUTS_5",
-      "Area": "OOT_DODONGO_CAVERN",
+      "Area": "Dodongo's Cavern",
       "ValidItemTypes": [
         "item"
       ],
@@ -5335,7 +5335,7 @@
     "OOT Dodongo Cavern Bomb Bag Side Room Right Scrub": {
       "Name": "Dodongo Cavern Bomb Bag Side Room Right Scrub",
       "OriginalItem": "OOT_DEKU_SEEDS_30",
-      "Area": "OOT_DODONGO_CAVERN",
+      "Area": "Dodongo's Cavern",
       "ValidItemTypes": [
         "item"
       ],
@@ -5551,7 +5551,7 @@
     "OOT Jabu-Jabu Scrub": {
       "Name": "Jabu-Jabu Scrub",
       "OriginalItem": "OOT_NUTS_5",
-      "Area": "OOT_INSIDE_JABU_JABU",
+      "Area": "Jabu Jabu's Belly",
       "ValidItemTypes": [
         "item"
       ],
@@ -8845,7 +8845,7 @@
     "OOT Ganon Castle Leftmost Scrub": {
       "Name": "Ganon Castle Leftmost Scrub",
       "OriginalItem": "OOT_POTION_GREEN",
-      "Area": "OOT_INSIDE_GANON_CASTLE",
+      "Area": "Ganon's Castle",
       "ValidItemTypes": [
         "item"
       ],
@@ -8863,7 +8863,7 @@
     "OOT Ganon Castle Left-Center Scrub": {
       "Name": "Ganon Castle Left-Center Scrub",
       "OriginalItem": "OOT_BOMBS_5",
-      "Area": "OOT_INSIDE_GANON_CASTLE",
+      "Area": "Ganon's Castle",
       "ValidItemTypes": [
         "item"
       ],
@@ -8881,7 +8881,7 @@
     "OOT Ganon Castle Right-Center Scrub": {
       "Name": "Ganon Castle Right-Center Scrub",
       "OriginalItem": "OOT_ARROWS_10",
-      "Area": "OOT_INSIDE_GANON_CASTLE",
+      "Area": "Ganon's Castle",
       "ValidItemTypes": [
         "item"
       ],
@@ -8899,7 +8899,7 @@
     "OOT Ganon Castle Rightmost Scrub": {
       "Name": "Ganon Castle Rightmost Scrub",
       "OriginalItem": "OOT_POTION_RED",
-      "Area": "OOT_INSIDE_GANON_CASTLE",
+      "Area": "Ganon's Castle",
       "ValidItemTypes": [
         "item"
       ],
@@ -9043,7 +9043,7 @@
     "OOT MQ Deku Tree Scrub": {
       "Name": "MQ Deku Tree Scrub",
       "OriginalItem": "OOT_SHIELD_DEKU",
-      "Area": "OOT_INSIDE_DEKU_TREE",
+      "Area": "Deku Tree",
       "ValidItemTypes": [
         "item"
       ],
@@ -9241,7 +9241,7 @@
     "OOT MQ Dodongo Cavern Lobby Scrub Front": {
       "Name": "MQ Dodongo Cavern Lobby Scrub Front",
       "OriginalItem": "OOT_DEKU_SEEDS_30",
-      "Area": "OOT_DODONGO_CAVERN",
+      "Area": "Dodongo's Cavern",
       "ValidItemTypes": [
         "item"
       ],
@@ -9259,7 +9259,7 @@
     "OOT MQ Dodongo Cavern Lobby Scrub Back": {
       "Name": "MQ Dodongo Cavern Lobby Scrub Back",
       "OriginalItem": "OOT_STICK",
-      "Area": "OOT_DODONGO_CAVERN",
+      "Area": "Dodongo's Cavern",
       "ValidItemTypes": [
         "item"
       ],
@@ -9277,7 +9277,7 @@
     "OOT MQ Dodongo Cavern Staircase Scrub": {
       "Name": "MQ Dodongo Cavern Staircase Scrub",
       "OriginalItem": "OOT_POTION_RED",
-      "Area": "OOT_DODONGO_CAVERN",
+      "Area": "Dodongo's Cavern",
       "ValidItemTypes": [
         "item"
       ],
@@ -9295,7 +9295,7 @@
     "OOT MQ Dodongo Cavern Tunnel Side Scrub": {
       "Name": "MQ Dodongo Cavern Tunnel Side Scrub",
       "OriginalItem": "OOT_SHIELD_DEKU",
-      "Area": "OOT_DODONGO_CAVERN",
+      "Area": "Dodongo's Cavern",
       "ValidItemTypes": [
         "item"
       ],
@@ -12229,7 +12229,7 @@
     "OOT MQ Ganon Castle Leftmost Scrub": {
       "Name": "MQ Ganon Castle Leftmost Scrub",
       "OriginalItem": "OOT_POTION_GREEN",
-      "Area": "OOT_INSIDE_GANON_CASTLE",
+      "Area": "Ganon's Castle",
       "ValidItemTypes": [
         "item"
       ],
@@ -12247,7 +12247,7 @@
     "OOT MQ Ganon Castle Left-Center Scrub": {
       "Name": "MQ Ganon Castle Left-Center Scrub",
       "OriginalItem": "OOT_BOMBS_5",
-      "Area": "OOT_INSIDE_GANON_CASTLE",
+      "Area": "Ganon's Castle",
       "ValidItemTypes": [
         "item"
       ],
@@ -12265,7 +12265,7 @@
     "OOT MQ Ganon Castle Center Scrub": {
       "Name": "MQ Ganon Castle Center Scrub",
       "OriginalItem": "OOT_ARROWS_10",
-      "Area": "OOT_INSIDE_GANON_CASTLE",
+      "Area": "Ganon's Castle",
       "ValidItemTypes": [
         "item"
       ],
@@ -12283,7 +12283,7 @@
     "OOT MQ Ganon Castle Right-Center Scrub": {
       "Name": "MQ Ganon Castle Right-Center Scrub",
       "OriginalItem": "OOT_POTION_RED",
-      "Area": "OOT_INSIDE_GANON_CASTLE",
+      "Area": "Ganon's Castle",
       "ValidItemTypes": [
         "item"
       ],
@@ -12301,7 +12301,7 @@
     "OOT MQ Ganon Castle Rightmost Scrub": {
       "Name": "MQ Ganon Castle Rightmost Scrub",
       "OriginalItem": "OOT_NUTS_5",
-      "Area": "OOT_INSIDE_GANON_CASTLE",
+      "Area": "Ganon's Castle",
       "ValidItemTypes": [
         "item"
       ],
@@ -18966,7 +18966,7 @@
       },
       "LocationProxys": []
     },
-    "MM_BOSS_MAJORA": {
+    "MM_EVENT_MAJORA": {
       "Name": "Majora",
       "OriginalItem": "MM_MASK_MAJORA",
       "Area": "The Moon",
@@ -18980,7 +18980,7 @@
       },
       "LocationProxys": []
     },
-    "OOT_BOSS_GANON": {
+    "OOT_EVENT_GANON": {
       "Name": "Ganon",
       "OriginalItem": "OOT_TRIFORCE",
       "Area": "Ganon's Castle",
@@ -19049,6 +19049,25 @@
         "GossipHintNames": [
           "MM_ARROW_LIGHT",
           "Light Arrows (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_ARROWS_10": {
+      "Name": "10 Arrows (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_ARROWS_10",
+          "10 Arrows (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_ARROWS_10",
+          "10 Arrows (MM)"
         ],
         "PriceDataNames": []
       }
@@ -19163,6 +19182,25 @@
         "GossipHintNames": [
           "MM_BOMBER_NOTEBOOK",
           "Bombers' Notebook"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_BOMBS_10": {
+      "Name": "10 Bombs (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_BOMBS_10",
+          "10 Bombs (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_BOMBS_10",
+          "10 Bombs (MM)"
         ],
         "PriceDataNames": []
       }
@@ -19524,6 +19562,25 @@
         "GossipHintNames": [
           "MM_DEFENSE_UPGRADE",
           "Double Defense (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_FAIRY": {
+      "Name": "Fairy (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_FAIRY",
+          "Fairy (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_FAIRY",
+          "Fairy (MM)"
         ],
         "PriceDataNames": []
       }
@@ -20307,6 +20364,25 @@
         "PriceDataNames": []
       }
     },
+    "MM_NUTS_10": {
+      "Name": "10 Deku Nuts (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_NUTS_10",
+          "10 Deku Nuts (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_NUTS_10",
+          "10 Deku Nuts (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
     "MM_OCARINA": {
       "Name": "Ocarina (MM)",
       "MaxAmountInWorld": 2,
@@ -20360,6 +20436,63 @@
         "GossipHintNames": [
           "MM_PICTOGRAPH_BOX",
           "Pictograph Box"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_POTION_BLUE": {
+      "Name": "Blue Potion (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_POTION_BLUE",
+          "Blue Potion (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_POTION_BLUE",
+          "Blue Potion (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_POTION_GREEN": {
+      "Name": "Green Potion (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_POTION_GREEN",
+          "Green Potion (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_POTION_GREEN",
+          "Green Potion (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_POTION_RED": {
+      "Name": "Red Potion (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_POTION_RED",
+          "Red Potion (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_POTION_RED",
+          "Red Potion (MM)"
         ],
         "PriceDataNames": []
       }
@@ -20607,6 +20740,25 @@
         "GossipHintNames": [
           "MM_SHIELD",
           "Progressive Shield (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_SHIELD_HERO": {
+      "Name": "Hero's Shield",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_SHIELD_HERO",
+          "Hero's Shield"
+        ],
+        "GossipHintNames": [
+          "MM_SHIELD_HERO",
+          "Hero's Shield"
         ],
         "PriceDataNames": []
       }
@@ -21025,6 +21177,25 @@
         "GossipHintNames": [
           "MM_STRAY_FAIRY_WF",
           "Stray Fairy (Woodfall Temple)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_STICK": {
+      "Name": "Deku Stick (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_STICK",
+          "Deku Stick (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_STICK",
+          "Deku Stick (MM)"
         ],
         "PriceDataNames": []
       }
@@ -21885,7 +22056,7 @@
       }
     },
     "OOT_DEKU_SEEDS_30": {
-      "Name": "Deku Seeds Bullet Bag",
+      "Name": "30 Deku Seeds",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -21894,11 +22065,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_DEKU_SEEDS_30",
-          "Deku Seeds Bullet Bag"
+          "30 Deku Seeds"
         ],
         "GossipHintNames": [
           "OOT_DEKU_SEEDS_30",
-          "Deku Seeds Bullet Bag"
+          "30 Deku Seeds"
         ],
         "PriceDataNames": []
       }
@@ -22663,25 +22834,6 @@
         "PriceDataNames": []
       }
     },
-    "OOT_NUTS_10": {
-      "Name": "10 Deku Nuts (OoT)",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "OOT_NUTS_10",
-          "10 Deku Nuts (OoT)"
-        ],
-        "GossipHintNames": [
-          "OOT_NUTS_10",
-          "10 Deku Nuts (OoT)"
-        ],
-        "PriceDataNames": []
-      }
-    },
     "OOT_NUTS_5": {
       "Name": "5 Deku Nuts (OoT)",
       "MaxAmountInWorld": -1,
@@ -22697,6 +22849,25 @@
         "GossipHintNames": [
           "OOT_NUTS_5",
           "5 Deku Nuts (OoT)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_NUTS_10": {
+      "Name": "10 Deku Nuts (OoT)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_NUTS_10",
+          "10 Deku Nuts (OoT)"
+        ],
+        "GossipHintNames": [
+          "OOT_NUTS_10",
+          "10 Deku Nuts (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -23120,7 +23291,7 @@
       }
     },
     "OOT_SHIELD_MIRROR": {
-      "Name": "Mirror Shield",
+      "Name": "Mirror Shield (OoT)",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -23129,11 +23300,11 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_SHIELD_MIRROR",
-          "Mirror Shield"
+          "Mirror Shield (OoT)"
         ],
         "GossipHintNames": [
           "OOT_SHIELD_MIRROR",
-          "Mirror Shield"
+          "Mirror Shield (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -24430,44 +24601,6 @@
         "PriceDataNames": []
       }
     },
-    "SHARED_NUTS_5": {
-      "Name": "5 Deku Nuts",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_NUTS_5",
-          "5 Deku Nuts"
-        ],
-        "GossipHintNames": [
-          "SHARED_NUTS_5",
-          "5 Deku Nuts"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    "SHARED_NUTS_10": {
-      "Name": "10 Deku Nuts",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_NUTS_10",
-          "10 Deku Nuts"
-        ],
-        "GossipHintNames": [
-          "SHARED_NUTS_10",
-          "10 Deku Nuts"
-        ],
-        "PriceDataNames": []
-      }
-    },
     "SHARED_OCARINA": {
       "Name": "Progressive Ocarina",
       "MaxAmountInWorld": 2,
@@ -24677,25 +24810,6 @@
         "PriceDataNames": []
       }
     },
-    "SHARED_STICK": {
-      "Name": "Deku Sticks",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "SHARED_STICK",
-          "Deku Sticks"
-        ],
-        "GossipHintNames": [
-          "SHARED_STICK",
-          "Deku Sticks"
-        ],
-        "PriceDataNames": []
-      }
-    },
     "SHARED_WALLET": {
       "Name": "Progressive Wallet",
       "MaxAmountInWorld": 2,
@@ -24753,44 +24867,6 @@
         "PriceDataNames": []
       }
     },
-    "MM_NUTS_10": {
-      "Name": "10 Deku Nuts (MM)",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "MM_NUTS_10",
-          "10 Deku Nuts (MM)"
-        ],
-        "GossipHintNames": [
-          "MM_NUTS_10",
-          "10 Deku Nuts (MM)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    "MM_STICK": {
-      "Name": "1 Deku Stick (MM)",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "MM_STICK",
-          "1 Deku Stick (MM)"
-        ],
-        "GossipHintNames": [
-          "MM_STICK",
-          "1 Deku Stick (MM)"
-        ],
-        "PriceDataNames": []
-      }
-    },
     "MM_STICKS_5": {
       "Name": "5 Deku Sticks (MM)",
       "MaxAmountInWorld": -1,
@@ -24825,139 +24901,6 @@
         "GossipHintNames": [
           "MM_STICKS_10",
           "10 Deku Sticks (MM)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    "MM_ARROWS_10": {
-      "Name": "10 Arrows (MM)",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "MM_ARROWS_10",
-          "10 Arrows (MM)"
-        ],
-        "GossipHintNames": [
-          "MM_ARROWS_10",
-          "10 Arrows (MM)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    "MM_BOMBS_10": {
-      "Name": "10 Bombs (MM)",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "MM_BOMBS_10",
-          "10 Bombs (MM)"
-        ],
-        "GossipHintNames": [
-          "MM_BOMBS_10",
-          "10 Bombs (MM)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    "MM_POTION_RED": {
-      "Name": "Red Potion (MM)",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "MM_POTION_RED",
-          "Red Potion (MM)"
-        ],
-        "GossipHintNames": [
-          "MM_POTION_RED",
-          "Red Potion (MM)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    "MM_POTION_GREEN": {
-      "Name": "Green Potion (MM)",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "MM_POTION_GREEN",
-          "Green Potion (MM)"
-        ],
-        "GossipHintNames": [
-          "MM_POTION_GREEN",
-          "Green Potion (MM)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    "MM_POTION_BLUE": {
-      "Name": "Blue Potion (MM)",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "MM_POTION_BLUE",
-          "Blue Potion (MM)"
-        ],
-        "GossipHintNames": [
-          "MM_POTION_BLUE",
-          "Blue Potion (MM)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    "MM_FAIRY": {
-      "Name": "Fairy (MM)",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "MM_FAIRY",
-          "Fairy (MM)"
-        ],
-        "GossipHintNames": [
-          "MM_FAIRY",
-          "Fairy (MM)"
-        ],
-        "PriceDataNames": []
-      }
-    },
-    "MM_SHIELD_HERO": {
-      "Name": "Hero Shield",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "MM_SHIELD_HERO",
-          "Hero Shield"
-        ],
-        "GossipHintNames": [
-          "MM_SHIELD_HERO",
-          "Hero Shield"
         ],
         "PriceDataNames": []
       }
@@ -28607,9 +28550,9 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Ancient Castle of Ikana Exterior => MM Ancient Castle of Ikana Well": {
+    "MM Ancient Castle of Ikana Exterior => MM Beneath the Well End": {
       "Area": "MM Ancient Castle of Ikana Exterior",
-      "Exit": "MM Ancient Castle of Ikana Well",
+      "Exit": "MM Beneath the Well End",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -28638,20 +28581,6 @@
     "MM Ancient Castle of Ikana Entrance => MM Ikana Canyon": {
       "Area": "MM Ancient Castle of Ikana Entrance",
       "Exit": "MM Ikana Canyon",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    "MM Ancient Castle of Ikana Well => MM Beneath the Well End": {
-      "Area": "MM Ancient Castle of Ikana Well",
-      "Exit": "MM Beneath the Well End",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    "MM Ancient Castle of Ikana Well => MM Ancient Castle of Ikana Exterior": {
-      "Area": "MM Ancient Castle of Ikana Well",
-      "Exit": "MM Ancient Castle of Ikana Exterior",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -28831,37 +28760,23 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Beneath the Well East Section => MM Beneath the Well Sun Block": {
+    "MM Beneath the Well East Section => MM Beneath the Well End": {
       "Area": "MM Beneath the Well East Section",
-      "Exit": "MM Beneath the Well Sun Block",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    "MM Beneath the Well Sun Block => MM Beneath the Well East Section": {
-      "Area": "MM Beneath the Well Sun Block",
-      "Exit": "MM Beneath the Well East Section",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    "MM Beneath the Well Sun Block => MM Beneath the Well End": {
-      "Area": "MM Beneath the Well Sun Block",
       "Exit": "MM Beneath the Well End",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Beneath the Well End => MM Beneath the Well Sun Block": {
+    "MM Beneath the Well End => MM Beneath the Well East Section": {
       "Area": "MM Beneath the Well End",
-      "Exit": "MM Beneath the Well Sun Block",
+      "Exit": "MM Beneath the Well East Section",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Beneath the Well End => MM Ancient Castle of Ikana Well": {
+    "MM Beneath the Well End => MM Ancient Castle of Ikana Exterior": {
       "Area": "MM Beneath the Well End",
-      "Exit": "MM Ancient Castle of Ikana Well",
+      "Exit": "MM Ancient Castle of Ikana Exterior",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -29316,13 +29231,6 @@
     "MM SPAWN => OOT SONGS": {
       "Area": "MM SPAWN",
       "Exit": "OOT SONGS",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    "MM SPAWN => MM Moon": {
-      "Area": "MM SPAWN",
-      "Exit": "MM Moon",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -30385,9 +30293,9 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Great Bay Coast => MM Pirate Fortress": {
+    "MM Great Bay Coast => MM Pirate Fortress Entrance": {
       "Area": "MM Great Bay Coast",
-      "Exit": "MM Pirate Fortress",
+      "Exit": "MM Pirate Fortress Entrance",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -30944,23 +30852,9 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Pirate Fortress => MM Great Bay Coast": {
-      "Area": "MM Pirate Fortress",
-      "Exit": "MM Great Bay Coast",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    "MM Pirate Fortress => MM Pirate Fortress Entrance": {
-      "Area": "MM Pirate Fortress",
-      "Exit": "MM Pirate Fortress Entrance",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    "MM Pirate Fortress Entrance => MM Pirate Fortress": {
+    "MM Pirate Fortress Entrance => MM Great Bay Coast": {
       "Area": "MM Pirate Fortress Entrance",
-      "Exit": "MM Pirate Fortress",
+      "Exit": "MM Great Bay Coast",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -33404,30 +33298,6 @@
     },
     "TRICK_MM_DOG_RACE_CHEST_NOTHING": {
       "Name": "Doggy Racetrack Chest with Nothing",
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "TRICK_MM_MAJORA_LOGIC": {
-      "Name": "Fight Majora to Reset Time",
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "TRICK_MM_SOUTHERN_SWAMP_SCRUB_HP_GORON": {
-      "Name": "Southern Swamp Scrub HP as Goron",
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "TRICK_MM_ZORA_HALL_SCRUB_HP_NO_DEKU": {
-      "Name": "Zora Hall Scrub HP without Deku",
       "SpoilerData": {
         "SpoilerLogNames": [],
         "GossipHintNames": [],
