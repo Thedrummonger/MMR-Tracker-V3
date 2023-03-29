@@ -508,6 +508,42 @@
       },
       "LocationProxys": []
     },
+    "OOT Lost Woods Scrub Near Theater Left": {
+      "Name": "Lost Woods Scrub Near Theater Left",
+      "OriginalItem": "OOT_STICK",
+      "Area": "OOT_LOST_WOODS",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Lost Woods Scrub Near Theater Left"
+        ],
+        "GossipHintNames": [
+          "OOT Lost Woods Scrub Near Theater Left"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT Lost Woods Scrub Near Theater Right": {
+      "Name": "Lost Woods Scrub Near Theater Right",
+      "OriginalItem": "OOT_NUTS_5",
+      "Area": "OOT_LOST_WOODS",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Lost Woods Scrub Near Theater Right"
+        ],
+        "GossipHintNames": [
+          "OOT Lost Woods Scrub Near Theater Right"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
     "OOT Lost Woods Odd Mushroom": {
       "Name": "Lost Woods Odd Mushroom",
       "OriginalItem": "OOT_ODD_MUSHROOM",
@@ -557,6 +593,24 @@
         ],
         "GossipHintNames": [
           "OOT Lost Woods Grotto Scrub Nuts Upgrade"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT Lost Woods Grotto Scrub Back": {
+      "Name": "Lost Woods Grotto Scrub Back",
+      "OriginalItem": "OOT_DEKU_SEEDS_30",
+      "Area": "OOT_GROTTOS",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Lost Woods Grotto Scrub Back"
+        ],
+        "GossipHintNames": [
+          "OOT Lost Woods Grotto Scrub Back"
         ],
         "PriceDataNames": []
       },
@@ -737,6 +791,42 @@
         ],
         "GossipHintNames": [
           "OOT Sacred Meadow GS Night Adult"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT Sacred Meadow Storms Grotto Front Scrub": {
+      "Name": "Sacred Meadow Storms Grotto Front Scrub",
+      "OriginalItem": "OOT_POTION_GREEN",
+      "Area": "OOT_GROTTOS",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Sacred Meadow Storms Grotto Front Scrub"
+        ],
+        "GossipHintNames": [
+          "OOT Sacred Meadow Storms Grotto Front Scrub"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT Sacred Meadow Storms Grotto Back Scrub": {
+      "Name": "Sacred Meadow Storms Grotto Back Scrub",
+      "OriginalItem": "OOT_POTION_RED",
+      "Area": "OOT_GROTTOS",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Sacred Meadow Storms Grotto Back Scrub"
+        ],
+        "GossipHintNames": [
+          "OOT Sacred Meadow Storms Grotto Back Scrub"
         ],
         "PriceDataNames": []
       },
@@ -1876,6 +1966,60 @@
       },
       "LocationProxys": []
     },
+    "OOT Goron City Grotto Left Scrub": {
+      "Name": "Goron City Grotto Left Scrub",
+      "OriginalItem": "OOT_NUTS_5",
+      "Area": "OOT_GROTTOS",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Goron City Grotto Left Scrub"
+        ],
+        "GossipHintNames": [
+          "OOT Goron City Grotto Left Scrub"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT Goron City Grotto Center Scrub": {
+      "Name": "Goron City Grotto Center Scrub",
+      "OriginalItem": "OOT_DEKU_SEEDS_30",
+      "Area": "OOT_GROTTOS",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Goron City Grotto Center Scrub"
+        ],
+        "GossipHintNames": [
+          "OOT Goron City Grotto Center Scrub"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT Goron City Grotto Right Scrub": {
+      "Name": "Goron City Grotto Right Scrub",
+      "OriginalItem": "OOT_BOMBS_5",
+      "Area": "OOT_GROTTOS",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Goron City Grotto Right Scrub"
+        ],
+        "GossipHintNames": [
+          "OOT Goron City Grotto Right Scrub"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
     "OOT Goron Shop Item 1": {
       "Name": "Goron Shop Item 1",
       "OriginalItem": "OOT_RECOVERY_HEART",
@@ -2092,6 +2236,78 @@
       },
       "LocationProxys": []
     },
+    "OOT Death Mountain Crater Scrub Child": {
+      "Name": "Death Mountain Crater Scrub Child",
+      "OriginalItem": "OOT_BOMBS_5",
+      "Area": "OOT_DEATH_MOUNTAIN_CRATER",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Death Mountain Crater Scrub Child"
+        ],
+        "GossipHintNames": [
+          "OOT Death Mountain Crater Scrub Child"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT Death Mountain Crater Grotto Left Scrub": {
+      "Name": "Death Mountain Crater Grotto Left Scrub",
+      "OriginalItem": "OOT_NUTS_5",
+      "Area": "OOT_GROTTOS",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Death Mountain Crater Grotto Left Scrub"
+        ],
+        "GossipHintNames": [
+          "OOT Death Mountain Crater Grotto Left Scrub"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT Death Mountain Crater Grotto Center Scrub": {
+      "Name": "Death Mountain Crater Grotto Center Scrub",
+      "OriginalItem": "OOT_DEKU_SEEDS_30",
+      "Area": "OOT_GROTTOS",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Death Mountain Crater Grotto Center Scrub"
+        ],
+        "GossipHintNames": [
+          "OOT Death Mountain Crater Grotto Center Scrub"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT Death Mountain Crater Grotto Right Scrub": {
+      "Name": "Death Mountain Crater Grotto Right Scrub",
+      "OriginalItem": "OOT_BOMBS_5",
+      "Area": "OOT_GROTTOS",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Death Mountain Crater Grotto Right Scrub"
+        ],
+        "GossipHintNames": [
+          "OOT Death Mountain Crater Grotto Right Scrub"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
     "OOT Death Mountain Crater GS Soil": {
       "Name": "Death Mountain Crater GS Soil",
       "OriginalItem": "OOT_GS_TOKEN",
@@ -2231,6 +2447,42 @@
         ],
         "GossipHintNames": [
           "OOT Zora River Grotto"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT Zora River Storms Grotto Front Scrub": {
+      "Name": "Zora River Storms Grotto Front Scrub",
+      "OriginalItem": "OOT_POTION_GREEN",
+      "Area": "OOT_GROTTOS",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Zora River Storms Grotto Front Scrub"
+        ],
+        "GossipHintNames": [
+          "OOT Zora River Storms Grotto Front Scrub"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT Zora River Storms Grotto Back Scrub": {
+      "Name": "Zora River Storms Grotto Back Scrub",
+      "OriginalItem": "OOT_POTION_RED",
+      "Area": "OOT_GROTTOS",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Zora River Storms Grotto Back Scrub"
+        ],
+        "GossipHintNames": [
+          "OOT Zora River Storms Grotto Back Scrub"
         ],
         "PriceDataNames": []
       },
@@ -2686,6 +2938,60 @@
       },
       "LocationProxys": []
     },
+    "OOT Lake Hylia Grotto Left Scrub": {
+      "Name": "Lake Hylia Grotto Left Scrub",
+      "OriginalItem": "OOT_NUTS_5",
+      "Area": "OOT_GROTTOS",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Lake Hylia Grotto Left Scrub"
+        ],
+        "GossipHintNames": [
+          "OOT Lake Hylia Grotto Left Scrub"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT Lake Hylia Grotto Center Scrub": {
+      "Name": "Lake Hylia Grotto Center Scrub",
+      "OriginalItem": "OOT_DEKU_SEEDS_30",
+      "Area": "OOT_GROTTOS",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Lake Hylia Grotto Center Scrub"
+        ],
+        "GossipHintNames": [
+          "OOT Lake Hylia Grotto Center Scrub"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT Lake Hylia Grotto Right Scrub": {
+      "Name": "Lake Hylia Grotto Right Scrub",
+      "OriginalItem": "OOT_BOMBS_5",
+      "Area": "OOT_GROTTOS",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Lake Hylia Grotto Right Scrub"
+        ],
+        "GossipHintNames": [
+          "OOT Lake Hylia Grotto Right Scrub"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
     "OOT Lake Hylia GS Lab Wall": {
       "Name": "Lake Hylia GS Lab Wall",
       "OriginalItem": "OOT_GS_TOKEN",
@@ -3041,6 +3347,60 @@
         ],
         "GossipHintNames": [
           "OOT Lon Lon Ranch Silo Cow Back"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT Lon Lon Ranch Grotto Left Scrub": {
+      "Name": "Lon Lon Ranch Grotto Left Scrub",
+      "OriginalItem": "OOT_NUTS_5",
+      "Area": "OOT_GROTTOS",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Lon Lon Ranch Grotto Left Scrub"
+        ],
+        "GossipHintNames": [
+          "OOT Lon Lon Ranch Grotto Left Scrub"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT Lon Lon Ranch Grotto Center Scrub": {
+      "Name": "Lon Lon Ranch Grotto Center Scrub",
+      "OriginalItem": "OOT_DEKU_SEEDS_30",
+      "Area": "OOT_GROTTOS",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Lon Lon Ranch Grotto Center Scrub"
+        ],
+        "GossipHintNames": [
+          "OOT Lon Lon Ranch Grotto Center Scrub"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT Lon Lon Ranch Grotto Right Scrub": {
+      "Name": "Lon Lon Ranch Grotto Right Scrub",
+      "OriginalItem": "OOT_BOMBS_5",
+      "Area": "OOT_GROTTOS",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Lon Lon Ranch Grotto Right Scrub"
+        ],
+        "GossipHintNames": [
+          "OOT Lon Lon Ranch Grotto Right Scrub"
         ],
         "PriceDataNames": []
       },
@@ -4036,6 +4396,42 @@
       },
       "LocationProxys": []
     },
+    "OOT Gerudo Valley Grotto Front Scrub": {
+      "Name": "Gerudo Valley Grotto Front Scrub",
+      "OriginalItem": "OOT_POTION_GREEN",
+      "Area": "OOT_GROTTOS",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Gerudo Valley Grotto Front Scrub"
+        ],
+        "GossipHintNames": [
+          "OOT Gerudo Valley Grotto Front Scrub"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT Gerudo Valley Grotto Back Scrub": {
+      "Name": "Gerudo Valley Grotto Back Scrub",
+      "OriginalItem": "OOT_POTION_RED",
+      "Area": "OOT_GROTTOS",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Gerudo Valley Grotto Back Scrub"
+        ],
+        "GossipHintNames": [
+          "OOT Gerudo Valley Grotto Back Scrub"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
     "OOT Gerudo Valley GS Soil": {
       "Name": "Gerudo Valley GS Soil",
       "OriginalItem": "OOT_GS_TOKEN",
@@ -4283,6 +4679,42 @@
         ],
         "GossipHintNames": [
           "OOT Desert Colossus Song Spirit"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT Desert Colossus Grotto Front Scrub": {
+      "Name": "Desert Colossus Grotto Front Scrub",
+      "OriginalItem": "OOT_POTION_GREEN",
+      "Area": "OOT_GROTTOS",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Desert Colossus Grotto Front Scrub"
+        ],
+        "GossipHintNames": [
+          "OOT Desert Colossus Grotto Front Scrub"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT Desert Colossus Grotto Back Scrub": {
+      "Name": "Desert Colossus Grotto Back Scrub",
+      "OriginalItem": "OOT_POTION_RED",
+      "Area": "OOT_GROTTOS",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Desert Colossus Grotto Back Scrub"
+        ],
+        "GossipHintNames": [
+          "OOT Desert Colossus Grotto Back Scrub"
         ],
         "PriceDataNames": []
       },
@@ -4846,6 +5278,78 @@
       },
       "LocationProxys": []
     },
+    "OOT Dodongo Cavern Lobby Scrub": {
+      "Name": "Dodongo Cavern Lobby Scrub",
+      "OriginalItem": "OOT_SHIELD_DEKU",
+      "Area": "OOT_DODONGO_CAVERN",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Dodongo Cavern Lobby Scrub"
+        ],
+        "GossipHintNames": [
+          "OOT Dodongo Cavern Lobby Scrub"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT Dodongo Cavern Green Side Room Scrub": {
+      "Name": "Dodongo Cavern Green Side Room Scrub",
+      "OriginalItem": "OOT_STICK",
+      "Area": "OOT_DODONGO_CAVERN",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Dodongo Cavern Green Side Room Scrub"
+        ],
+        "GossipHintNames": [
+          "OOT Dodongo Cavern Green Side Room Scrub"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT Dodongo Cavern Bomb Bag Side Room Left Scrub": {
+      "Name": "Dodongo Cavern Bomb Bag Side Room Left Scrub",
+      "OriginalItem": "OOT_NUTS_5",
+      "Area": "OOT_DODONGO_CAVERN",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Dodongo Cavern Bomb Bag Side Room Left Scrub"
+        ],
+        "GossipHintNames": [
+          "OOT Dodongo Cavern Bomb Bag Side Room Left Scrub"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT Dodongo Cavern Bomb Bag Side Room Right Scrub": {
+      "Name": "Dodongo Cavern Bomb Bag Side Room Right Scrub",
+      "OriginalItem": "OOT_DEKU_SEEDS_30",
+      "Area": "OOT_DODONGO_CAVERN",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Dodongo Cavern Bomb Bag Side Room Right Scrub"
+        ],
+        "GossipHintNames": [
+          "OOT Dodongo Cavern Bomb Bag Side Room Right Scrub"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
     "OOT Dodongo Cavern GS Side Room": {
       "Name": "Dodongo Cavern GS Side Room",
       "OriginalItem": "OOT_GS_TOKEN",
@@ -5039,6 +5543,24 @@
         ],
         "GossipHintNames": [
           "OOT Jabu-Jabu Boomerang Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT Jabu-Jabu Scrub": {
+      "Name": "Jabu-Jabu Scrub",
+      "OriginalItem": "OOT_NUTS_5",
+      "Area": "OOT_INSIDE_JABU_JABU",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Jabu-Jabu Scrub"
+        ],
+        "GossipHintNames": [
+          "OOT Jabu-Jabu Scrub"
         ],
         "PriceDataNames": []
       },
@@ -8320,6 +8842,78 @@
       },
       "LocationProxys": []
     },
+    "OOT Ganon Castle Leftmost Scrub": {
+      "Name": "Ganon Castle Leftmost Scrub",
+      "OriginalItem": "OOT_POTION_GREEN",
+      "Area": "OOT_INSIDE_GANON_CASTLE",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Ganon Castle Leftmost Scrub"
+        ],
+        "GossipHintNames": [
+          "OOT Ganon Castle Leftmost Scrub"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT Ganon Castle Left-Center Scrub": {
+      "Name": "Ganon Castle Left-Center Scrub",
+      "OriginalItem": "OOT_BOMBS_5",
+      "Area": "OOT_INSIDE_GANON_CASTLE",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Ganon Castle Left-Center Scrub"
+        ],
+        "GossipHintNames": [
+          "OOT Ganon Castle Left-Center Scrub"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT Ganon Castle Right-Center Scrub": {
+      "Name": "Ganon Castle Right-Center Scrub",
+      "OriginalItem": "OOT_ARROWS_10",
+      "Area": "OOT_INSIDE_GANON_CASTLE",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Ganon Castle Right-Center Scrub"
+        ],
+        "GossipHintNames": [
+          "OOT Ganon Castle Right-Center Scrub"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT Ganon Castle Rightmost Scrub": {
+      "Name": "Ganon Castle Rightmost Scrub",
+      "OriginalItem": "OOT_POTION_RED",
+      "Area": "OOT_INSIDE_GANON_CASTLE",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT Ganon Castle Rightmost Scrub"
+        ],
+        "GossipHintNames": [
+          "OOT Ganon Castle Rightmost Scrub"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
     "OOT MQ Deku Tree Map Chest": {
       "Name": "MQ Deku Tree Map Chest",
       "OriginalItem": "OOT_MAP_DT",
@@ -8441,6 +9035,24 @@
         ],
         "GossipHintNames": [
           "OOT MQ Deku Tree After Water Platform Chest"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Scrub": {
+      "Name": "MQ Deku Tree Scrub",
+      "OriginalItem": "OOT_SHIELD_DEKU",
+      "Area": "OOT_INSIDE_DEKU_TREE",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Scrub"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Deku Tree Scrub"
         ],
         "PriceDataNames": []
       },
@@ -8621,6 +9233,78 @@
         ],
         "GossipHintNames": [
           "OOT MQ Dodongo Cavern Chest Under Grave"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Dodongo Cavern Lobby Scrub Front": {
+      "Name": "MQ Dodongo Cavern Lobby Scrub Front",
+      "OriginalItem": "OOT_DEKU_SEEDS_30",
+      "Area": "OOT_DODONGO_CAVERN",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Dodongo Cavern Lobby Scrub Front"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Dodongo Cavern Lobby Scrub Front"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Dodongo Cavern Lobby Scrub Back": {
+      "Name": "MQ Dodongo Cavern Lobby Scrub Back",
+      "OriginalItem": "OOT_STICK",
+      "Area": "OOT_DODONGO_CAVERN",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Dodongo Cavern Lobby Scrub Back"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Dodongo Cavern Lobby Scrub Back"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Dodongo Cavern Staircase Scrub": {
+      "Name": "MQ Dodongo Cavern Staircase Scrub",
+      "OriginalItem": "OOT_POTION_RED",
+      "Area": "OOT_DODONGO_CAVERN",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Dodongo Cavern Staircase Scrub"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Dodongo Cavern Staircase Scrub"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Dodongo Cavern Tunnel Side Scrub": {
+      "Name": "MQ Dodongo Cavern Tunnel Side Scrub",
+      "OriginalItem": "OOT_SHIELD_DEKU",
+      "Area": "OOT_DODONGO_CAVERN",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Dodongo Cavern Tunnel Side Scrub"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Dodongo Cavern Tunnel Side Scrub"
         ],
         "PriceDataNames": []
       },
@@ -11537,6 +12221,96 @@
         ],
         "GossipHintNames": [
           "OOT MQ Ganon Castle Forest Trial Key"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Ganon Castle Leftmost Scrub": {
+      "Name": "MQ Ganon Castle Leftmost Scrub",
+      "OriginalItem": "OOT_POTION_GREEN",
+      "Area": "OOT_INSIDE_GANON_CASTLE",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Ganon Castle Leftmost Scrub"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Ganon Castle Leftmost Scrub"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Ganon Castle Left-Center Scrub": {
+      "Name": "MQ Ganon Castle Left-Center Scrub",
+      "OriginalItem": "OOT_BOMBS_5",
+      "Area": "OOT_INSIDE_GANON_CASTLE",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Ganon Castle Left-Center Scrub"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Ganon Castle Left-Center Scrub"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Ganon Castle Center Scrub": {
+      "Name": "MQ Ganon Castle Center Scrub",
+      "OriginalItem": "OOT_ARROWS_10",
+      "Area": "OOT_INSIDE_GANON_CASTLE",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Ganon Castle Center Scrub"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Ganon Castle Center Scrub"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Ganon Castle Right-Center Scrub": {
+      "Name": "MQ Ganon Castle Right-Center Scrub",
+      "OriginalItem": "OOT_POTION_RED",
+      "Area": "OOT_INSIDE_GANON_CASTLE",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Ganon Castle Right-Center Scrub"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Ganon Castle Right-Center Scrub"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Ganon Castle Rightmost Scrub": {
+      "Name": "MQ Ganon Castle Rightmost Scrub",
+      "OriginalItem": "OOT_NUTS_5",
+      "Area": "OOT_INSIDE_GANON_CASTLE",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Ganon Castle Rightmost Scrub"
+        ],
+        "GossipHintNames": [
+          "OOT MQ Ganon Castle Rightmost Scrub"
         ],
         "PriceDataNames": []
       },
@@ -18192,7 +18966,7 @@
       },
       "LocationProxys": []
     },
-    "MM_EVENT_MAJORA": {
+    "MM_BOSS_MAJORA": {
       "Name": "Majora",
       "OriginalItem": "MM_MASK_MAJORA",
       "Area": "The Moon",
@@ -18206,7 +18980,7 @@
       },
       "LocationProxys": []
     },
-    "OOT_EVENT_GANON": {
+    "OOT_BOSS_GANON": {
       "Name": "Ganon",
       "OriginalItem": "OOT_TRIFORCE",
       "Area": "Ganon's Castle",
@@ -27833,9 +28607,9 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Ancient Castle of Ikana Exterior => MM Beneath the Well End": {
+    "MM Ancient Castle of Ikana Exterior => MM Ancient Castle of Ikana Well": {
       "Area": "MM Ancient Castle of Ikana Exterior",
-      "Exit": "MM Beneath the Well End",
+      "Exit": "MM Ancient Castle of Ikana Well",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -27864,6 +28638,20 @@
     "MM Ancient Castle of Ikana Entrance => MM Ikana Canyon": {
       "Area": "MM Ancient Castle of Ikana Entrance",
       "Exit": "MM Ikana Canyon",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Ancient Castle of Ikana Well => MM Beneath the Well End": {
+      "Area": "MM Ancient Castle of Ikana Well",
+      "Exit": "MM Beneath the Well End",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Ancient Castle of Ikana Well => MM Ancient Castle of Ikana Exterior": {
+      "Area": "MM Ancient Castle of Ikana Well",
+      "Exit": "MM Ancient Castle of Ikana Exterior",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -28043,23 +28831,37 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Beneath the Well East Section => MM Beneath the Well End": {
+    "MM Beneath the Well East Section => MM Beneath the Well Sun Block": {
       "Area": "MM Beneath the Well East Section",
-      "Exit": "MM Beneath the Well End",
+      "Exit": "MM Beneath the Well Sun Block",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Beneath the Well End => MM Beneath the Well East Section": {
-      "Area": "MM Beneath the Well End",
+    "MM Beneath the Well Sun Block => MM Beneath the Well East Section": {
+      "Area": "MM Beneath the Well Sun Block",
       "Exit": "MM Beneath the Well East Section",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Beneath the Well End => MM Ancient Castle of Ikana Exterior": {
+    "MM Beneath the Well Sun Block => MM Beneath the Well End": {
+      "Area": "MM Beneath the Well Sun Block",
+      "Exit": "MM Beneath the Well End",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Beneath the Well End => MM Beneath the Well Sun Block": {
       "Area": "MM Beneath the Well End",
-      "Exit": "MM Ancient Castle of Ikana Exterior",
+      "Exit": "MM Beneath the Well Sun Block",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Beneath the Well End => MM Ancient Castle of Ikana Well": {
+      "Area": "MM Beneath the Well End",
+      "Exit": "MM Ancient Castle of Ikana Well",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -28514,6 +29316,13 @@
     "MM SPAWN => OOT SONGS": {
       "Area": "MM SPAWN",
       "Exit": "OOT SONGS",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM SPAWN => MM Moon": {
+      "Area": "MM SPAWN",
+      "Exit": "MM Moon",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -29576,9 +30385,9 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Great Bay Coast => MM Pirate Fortress Entrance": {
+    "MM Great Bay Coast => MM Pirate Fortress": {
       "Area": "MM Great Bay Coast",
-      "Exit": "MM Pirate Fortress Entrance",
+      "Exit": "MM Pirate Fortress",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -30135,9 +30944,23 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Pirate Fortress Entrance => MM Great Bay Coast": {
-      "Area": "MM Pirate Fortress Entrance",
+    "MM Pirate Fortress => MM Great Bay Coast": {
+      "Area": "MM Pirate Fortress",
       "Exit": "MM Great Bay Coast",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Pirate Fortress => MM Pirate Fortress Entrance": {
+      "Area": "MM Pirate Fortress",
+      "Exit": "MM Pirate Fortress Entrance",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Pirate Fortress Entrance => MM Pirate Fortress": {
+      "Area": "MM Pirate Fortress Entrance",
+      "Exit": "MM Pirate Fortress",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -32581,6 +33404,30 @@
     },
     "TRICK_MM_DOG_RACE_CHEST_NOTHING": {
       "Name": "Doggy Racetrack Chest with Nothing",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "TRICK_MM_MAJORA_LOGIC": {
+      "Name": "Fight Majora to Reset Time",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "TRICK_MM_SOUTHERN_SWAMP_SCRUB_HP_GORON": {
+      "Name": "Southern Swamp Scrub HP as Goron",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "TRICK_MM_ZORA_HALL_SCRUB_HP_NO_DEKU": {
+      "Name": "Zora Hall Scrub HP without Deku",
       "SpoilerData": {
         "SpoilerLogNames": [],
         "GossipHintNames": [],

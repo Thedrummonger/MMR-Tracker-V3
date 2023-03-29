@@ -97,14 +97,19 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
         private static void AddGameClearChecks(MMRData.LogicFile logicFile, LogicDictionaryData.LogicDictionary dictionaryFile)
         {
-            dictionaryFile.LocationList.Add("MM_EVENT_MAJORA", new LogicDictionaryData.DictionaryLocationEntries
+            dictionaryFile.LocationList.Add("MM_BOSS_MAJORA", new LogicDictionaryData.DictionaryLocationEntries
             {
-                ID = "MM_EVENT_MAJORA",
+                ID = "MM_BOSS_MAJORA",
                 Name = "Majora",
                 Area = "The Moon",
                 OriginalItem = "MM_MASK_MAJORA",
                 ValidItemTypes = new string[] { "Majora" },
                 SpoilerData = new MMRData.SpoilerlogReference()
+            });
+            logicFile.Logic.Add(new MMRData.JsonFormatLogicItem
+            {
+                Id = "MM_BOSS_MAJORA",
+                RequiredItems = new List<string> { "MM_EVENT_MAJORA" }
             });
 
             dictionaryFile.ItemList.Add("MM_MASK_MAJORA", new LogicDictionaryData.DictionaryItemEntries
@@ -117,14 +122,20 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 SpoilerData = new MMRData.SpoilerlogReference()
             });
 
-            dictionaryFile.LocationList.Add("OOT_EVENT_GANON", new LogicDictionaryData.DictionaryLocationEntries
+            dictionaryFile.LocationList.Add("OOT_BOSS_GANON", new LogicDictionaryData.DictionaryLocationEntries
             {
-                ID = "OOT_EVENT_GANON",
+                ID = "OOT_BOSS_GANON",
                 Name = "Ganon",
                 Area = "Ganon's Castle",
                 OriginalItem = "OOT_TRIFORCE",
                 ValidItemTypes = new string[] { "Ganon" },
                 SpoilerData = new MMRData.SpoilerlogReference()
+            });
+
+            logicFile.Logic.Add(new MMRData.JsonFormatLogicItem
+            {
+                Id = "OOT_BOSS_GANON",
+                RequiredItems = new List<string> { "OOT_EVENT_GANON" }
             });
 
             dictionaryFile.ItemList.Add("OOT_TRIFORCE", new LogicDictionaryData.DictionaryItemEntries
