@@ -262,6 +262,11 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                     i.Value.EntrancePairID = new EntranceData.EntranceAreaPair { Area= i.Value.Exit, Exit = i.Value.Area };
                 }
             }
+
+            //Spirit exits to a different area than it enters from, temp manual fix.
+            dictionaryFile.EntranceList["OOT Spirit Temple => OOT Desert Colossus Spirit Exit"].EntrancePairID = new EntranceData.EntranceAreaPair { Area= "OOT Desert Colossus", Exit = "OOT Spirit Temple" };
+            dictionaryFile.EntranceList["OOT Desert Colossus => OOT Spirit Temple"].EntrancePairID = new EntranceData.EntranceAreaPair { Area= "OOT Spirit Temple", Exit = "OOT Desert Colossus Spirit Exit" };
+
         }
 
         private static void RemoveGameFromNames(LogicDictionaryData.LogicDictionary dictionaryFile)
@@ -938,10 +943,10 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             string DungeonExitFile = Path.Combine(CodeFolder, @"MMR Tracker V3", "OtherGames", "OOTMMRCOMBO", "DungeonExits.json");
 
 
-            var MMentranceData = JsonConvert.DeserializeObject<List<MMROOTEntranceData>>(ConvertCsvFileToJsonObject(File.ReadAllLines(MMEntrances))).ToDictionary(x => x.to, x => x.from);
-            var OOTentranceData = JsonConvert.DeserializeObject<List<MMROOTEntranceData>>(ConvertCsvFileToJsonObject(File.ReadAllLines(OOTEntrances))).ToDictionary(x => x.to, x => x.from);
+            var MMentranceData = JsonConvert.DeserializeObject<List<MMROOTEntranceData>>(ConvertCsvFileToJsonObject(File.ReadAllLines(MMEntrances)));
+            var OOTentranceData = JsonConvert.DeserializeObject<List<MMROOTEntranceData>>(ConvertCsvFileToJsonObject(File.ReadAllLines(OOTEntrances)));
 
-            Dictionary<string, string> RandoEntrances = MMentranceData.Concat(OOTentranceData).ToDictionary(x => x.Key, x => x.Value);
+            List<MMROOTEntranceData> RandoEntrances = MMentranceData.Concat(OOTentranceData).ToList();
             Dictionary<string, string> DungeonExits = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(DungeonExitFile));
 
             Dictionary<string, string> MMMacros = JsonConvert.DeserializeObject<Dictionary<string, string>>(MMMacrosfile);
@@ -975,10 +980,10 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 {
                     var text = Utility.ConvertYamlStringToJsonString(File.ReadAllText(i));
                     var LogicObject = JsonConvert.DeserializeObject<Dictionary<string, MMROOTLogicEntry>>(text);
-                    foreach (var l in LogicObject.Keys)
+                    foreach (var Area in LogicObject.Keys)
                     {
-                        string TrueAreaName = $"{Game} {l}";
-                        foreach (var exit in LogicObject[l]?.exits?.Keys?.ToList()??new List<string>())
+                        string TrueAreaName = $"{Game} {Area}";
+                        foreach (var exit in LogicObject[Area]?.exits?.Keys?.ToList()??new List<string>())
                         {
                             string TrueExitName = exit.StartsWith($"{OpositeGame} ") || exit.StartsWith($"{Game} ") ? $"{exit}" : $"{Game} {exit}";
                             if (TrueExitName == "OOT MM SPAWN") { TrueExitName = "MM SPAWN"; }
@@ -1002,11 +1007,12 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                                     AlwaysAccessable = false
                                 };
                                 if (FullexitName.StartsWith("OOT SPAWN => ")) { entranceEntry.AlwaysAccessable = true; }
-                                if (RandoEntrances.ContainsKey(exit) && RandoEntrances[exit] == l) 
-                                { 
+                                if (RandoEntrances.Any(x => x.to == exit && x.from == Area)) 
+                                {
+                                    bool IsBossDoor = TrueExitName.EndsWith(" Boss");
                                     entranceEntry.RandomizableEntrance = true;
-                                    entranceEntry.DisplayArea = TrueExitName.EndsWith(" Boss") ? "Boss Room" : "Dungeon";
-                                    entranceEntry.DisplayExit = $"Entrance to {entranceEntry.Exit}";
+                                    entranceEntry.DisplayArea = IsBossDoor ? "Boss Room" : "Dungeon";
+                                    entranceEntry.DisplayExit = $"{(IsBossDoor ? "" : "Entrance to ")}{entranceEntry.Exit}";
                                     if (DungeonExits.ContainsKey(TrueAreaName))
                                     {
                                         entranceEntry.DisplayExit = $"Exit from {entranceEntry.Area}";
@@ -1016,7 +1022,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                                 dictionaryFile.EntranceList.Add(FullexitName, entranceEntry);
                             }
                         }
-                        foreach (var Event in LogicObject[l]?.events?.Keys?.ToList()??new List<string>())
+                        foreach (var Event in LogicObject[Area]?.events?.Keys?.ToList()??new List<string>())
                         {
                             string TrueMacroName = $"{Game}_EVENT_{Event}";
                             if (!LogicFile.Logic.Any(x => x.Id == TrueMacroName))
@@ -1024,7 +1030,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                                 LogicFile.Logic.Add(new TrackerObjects.MMRData.JsonFormatLogicItem { Id = TrueMacroName });
                             }
                         }
-                        foreach (var hint in LogicObject[l]?.gossip?.Keys?.ToList()??new List<string>())
+                        foreach (var hint in LogicObject[Area]?.gossip?.Keys?.ToList()??new List<string>())
                         {
                             string TrueHintName = $"{Game} {hint}";
                             if (!LogicFile.Logic.Any(x => x.Id == TrueHintName))

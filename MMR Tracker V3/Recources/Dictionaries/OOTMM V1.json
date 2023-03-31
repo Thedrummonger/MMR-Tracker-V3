@@ -25274,7 +25274,7 @@
       "Area": "OOT Deku Tree Before Boss",
       "Exit": "OOT Deku Tree Boss",
       "DisplayArea": "Boss Room",
-      "DisplayExit": "Entrance to OOT Deku Tree Boss",
+      "DisplayExit": "OOT Deku Tree Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -25548,7 +25548,7 @@
       "Area": "OOT Dodongo Cavern Skull",
       "Exit": "OOT Dodongo Cavern Boss",
       "DisplayArea": "Boss Room",
-      "DisplayExit": "Entrance to OOT Dodongo Cavern Boss",
+      "DisplayExit": "OOT Dodongo Cavern Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -25598,7 +25598,7 @@
       "Area": "OOT Fire Temple Pre-Boss",
       "Exit": "OOT Fire Temple Boss",
       "DisplayArea": "Boss Room",
-      "DisplayExit": "Entrance to OOT Fire Temple Boss",
+      "DisplayExit": "OOT Fire Temple Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -25928,7 +25928,7 @@
       "Area": "OOT Forest Temple Antichamber",
       "Exit": "OOT Forest Temple Boss",
       "DisplayArea": "Boss Room",
-      "DisplayExit": "Entrance to OOT Forest Temple Boss",
+      "DisplayExit": "OOT Forest Temple Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -26172,7 +26172,7 @@
       "Area": "OOT Jabu-Jabu Pre-Boss",
       "Exit": "OOT Jabu-Jabu Boss",
       "DisplayArea": "Boss Room",
-      "DisplayExit": "Entrance to OOT Jabu-Jabu Boss",
+      "DisplayExit": "OOT Jabu-Jabu Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -27448,7 +27448,7 @@
       "DisplayExit": "Entrance to OOT Spirit Temple",
       "EntrancePairID": {
         "Area": "OOT Spirit Temple",
-        "Exit": "OOT Desert Colossus"
+        "Exit": "OOT Desert Colossus Spirit Exit"
       },
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
@@ -27457,6 +27457,13 @@
     "OOT Desert Colossus => OOT Haunted Wasteland End": {
       "Area": "OOT Desert Colossus",
       "Exit": "OOT Haunted Wasteland End",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Desert Colossus Spirit Exit => OOT Desert Colossus": {
+      "Area": "OOT Desert Colossus Spirit Exit",
+      "Exit": "OOT Desert Colossus",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -27513,14 +27520,14 @@
       "Area": "OOT Shadow Temple Boat",
       "Exit": "OOT Shadow Temple Boss",
       "DisplayArea": "Boss Room",
-      "DisplayExit": "Entrance to OOT Shadow Temple Boss",
+      "DisplayExit": "OOT Shadow Temple Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT Spirit Temple => OOT Desert Colossus": {
+    "OOT Spirit Temple => OOT Desert Colossus Spirit Exit": {
       "Area": "OOT Spirit Temple",
-      "Exit": "OOT Desert Colossus",
+      "Exit": "OOT Desert Colossus Spirit Exit",
       "DisplayArea": "Dungeon",
       "DisplayExit": "Exit from OOT Spirit Temple",
       "EntrancePairID": {
@@ -27647,7 +27654,7 @@
       "Area": "OOT Spirit Temple Statue",
       "Exit": "OOT Spirit Temple Boss",
       "DisplayArea": "Boss Room",
-      "DisplayExit": "Entrance to OOT Spirit Temple Boss",
+      "DisplayExit": "OOT Spirit Temple Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -27942,7 +27949,7 @@
       "Area": "OOT Water Temple Antichamber",
       "Exit": "OOT Water Temple Boss",
       "DisplayArea": "Boss Room",
-      "DisplayExit": "Entrance to OOT Water Temple Boss",
+      "DisplayExit": "OOT Water Temple Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -28626,77 +28633,30 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Ancient Castle of Ikana Exterior => MM Ancient Castle of Ikana Well": {
-      "Area": "MM Ancient Castle of Ikana Exterior",
-      "Exit": "MM Ancient Castle of Ikana Well",
-      "RandomizableEntrance": false,
+    "MM Ancient Castle of Ikana => MM Ikana Castle Exterior": {
+      "Area": "MM Ancient Castle of Ikana",
+      "Exit": "MM Ikana Castle Exterior",
+      "DisplayArea": "Dungeon",
+      "DisplayExit": "Entrance to MM Ikana Castle Exterior",
+      "EntrancePairID": {
+        "Area": "MM Ikana Castle Exterior",
+        "Exit": "MM Ancient Castle of Ikana"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Ancient Castle of Ikana Exterior => MM Ancient Castle of Ikana Entrance": {
-      "Area": "MM Ancient Castle of Ikana Exterior",
-      "Exit": "MM Ancient Castle of Ikana Entrance",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    "MM Ancient Castle of Ikana Exterior => MM Ancient Castle of Ikana Interior": {
-      "Area": "MM Ancient Castle of Ikana Exterior",
+    "MM Ancient Castle of Ikana => MM Ancient Castle of Ikana Interior": {
+      "Area": "MM Ancient Castle of Ikana",
       "Exit": "MM Ancient Castle of Ikana Interior",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance to MM Ancient Castle of Ikana Interior",
-      "EntrancePairID": {
-        "Area": "MM Ancient Castle of Ikana Interior",
-        "Exit": "MM Ancient Castle of Ikana Exterior"
-      },
-      "RandomizableEntrance": true,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    "MM Ancient Castle of Ikana Entrance => MM Ancient Castle of Ikana Exterior": {
-      "Area": "MM Ancient Castle of Ikana Entrance",
-      "Exit": "MM Ancient Castle of Ikana Exterior",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Ancient Castle of Ikana Entrance => MM Ikana Canyon": {
-      "Area": "MM Ancient Castle of Ikana Entrance",
-      "Exit": "MM Ikana Canyon",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    "MM Ancient Castle of Ikana Well => MM Beneath the Well End": {
-      "Area": "MM Ancient Castle of Ikana Well",
-      "Exit": "MM Beneath the Well End",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance to MM Beneath the Well End",
-      "EntrancePairID": {
-        "Area": "MM Beneath the Well End",
-        "Exit": "MM Ancient Castle of Ikana Well"
-      },
-      "RandomizableEntrance": true,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    "MM Ancient Castle of Ikana Well => MM Ancient Castle of Ikana Exterior": {
-      "Area": "MM Ancient Castle of Ikana Well",
-      "Exit": "MM Ancient Castle of Ikana Exterior",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    "MM Ancient Castle of Ikana Interior => MM Ancient Castle of Ikana Exterior": {
+    "MM Ancient Castle of Ikana Interior => MM Ancient Castle of Ikana": {
       "Area": "MM Ancient Castle of Ikana Interior",
-      "Exit": "MM Ancient Castle of Ikana Exterior",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit from MM Ancient Castle of Ikana Interior",
-      "EntrancePairID": {
-        "Area": "MM Ancient Castle of Ikana Exterior",
-        "Exit": "MM Ancient Castle of Ikana Interior"
-      },
-      "RandomizableEntrance": true,
+      "Exit": "MM Ancient Castle of Ikana",
+      "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -28756,9 +28716,9 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Ancient Castle of Ikana Roof Exterior => MM Ancient Castle of Ikana Exterior": {
+    "MM Ancient Castle of Ikana Roof Exterior => MM Ikana Castle Exterior": {
       "Area": "MM Ancient Castle of Ikana Roof Exterior",
-      "Exit": "MM Ancient Castle of Ikana Exterior",
+      "Exit": "MM Ikana Castle Exterior",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -28902,13 +28862,13 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Beneath the Well End => MM Ancient Castle of Ikana Well": {
+    "MM Beneath the Well End => MM Ikana Castle Exterior": {
       "Area": "MM Beneath the Well End",
-      "Exit": "MM Ancient Castle of Ikana Well",
+      "Exit": "MM Ikana Castle Exterior",
       "DisplayArea": "Dungeon",
       "DisplayExit": "Exit from MM Beneath the Well End",
       "EntrancePairID": {
-        "Area": "MM Ancient Castle of Ikana Well",
+        "Area": "MM Ikana Castle Exterior",
         "Exit": "MM Beneath the Well End"
       },
       "RandomizableEntrance": true,
@@ -29121,7 +29081,7 @@
       "Area": "MM Great Bay Temple Pre-Boss",
       "Exit": "MM Great Bay Temple Boss",
       "DisplayArea": "Boss Room",
-      "DisplayExit": "Entrance to MM Great Bay Temple Boss",
+      "DisplayExit": "MM Great Bay Temple Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -30868,9 +30828,9 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Ikana Canyon => MM Ancient Castle of Ikana Entrance": {
+    "MM Ikana Canyon => MM Ikana Castle Entrance": {
       "Area": "MM Ikana Canyon",
-      "Exit": "MM Ancient Castle of Ikana Entrance",
+      "Exit": "MM Ikana Castle Entrance",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -30907,6 +30867,53 @@
       "Area": "MM Ghost Hut",
       "Exit": "MM Ikana Canyon",
       "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Ikana Castle Entrance => MM Ikana Castle Exterior": {
+      "Area": "MM Ikana Castle Entrance",
+      "Exit": "MM Ikana Castle Exterior",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Ikana Castle Entrance => MM Ikana Canyon": {
+      "Area": "MM Ikana Castle Entrance",
+      "Exit": "MM Ikana Canyon",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Ikana Castle Exterior => MM Beneath the Well End": {
+      "Area": "MM Ikana Castle Exterior",
+      "Exit": "MM Beneath the Well End",
+      "DisplayArea": "Dungeon",
+      "DisplayExit": "Entrance to MM Beneath the Well End",
+      "EntrancePairID": {
+        "Area": "MM Beneath the Well End",
+        "Exit": "MM Ikana Castle Exterior"
+      },
+      "RandomizableEntrance": true,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Ikana Castle Exterior => MM Ikana Castle Entrance": {
+      "Area": "MM Ikana Castle Exterior",
+      "Exit": "MM Ikana Castle Entrance",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Ikana Castle Exterior => MM Ancient Castle of Ikana": {
+      "Area": "MM Ikana Castle Exterior",
+      "Exit": "MM Ancient Castle of Ikana",
+      "DisplayArea": "Dungeon",
+      "DisplayExit": "Entrance to MM Ancient Castle of Ikana",
+      "EntrancePairID": {
+        "Area": "MM Ancient Castle of Ikana",
+        "Exit": "MM Ikana Castle Exterior"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -31925,7 +31932,7 @@
       "Area": "MM Snowhead Temple Center Level 4",
       "Exit": "MM Snowhead Temple Boss",
       "DisplayArea": "Boss Room",
-      "DisplayExit": "Entrance to MM Snowhead Temple Boss",
+      "DisplayExit": "MM Snowhead Temple Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -32345,7 +32352,7 @@
       "Area": "MM Stone Tower Temple Inverted Bridge 2",
       "Exit": "MM Stone Tower Temple Boss",
       "DisplayArea": "Boss Room",
-      "DisplayExit": "Entrance to MM Stone Tower Temple Boss",
+      "DisplayExit": "MM Stone Tower Temple Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -32611,7 +32618,7 @@
       "Area": "MM Woodfall Temple Pre-Boss",
       "Exit": "MM Woodfall Temple Boss",
       "DisplayArea": "Boss Room",
-      "DisplayExit": "Entrance to MM Woodfall Temple Boss",
+      "DisplayExit": "MM Woodfall Temple Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false

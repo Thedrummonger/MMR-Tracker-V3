@@ -3403,7 +3403,7 @@
     {
       "Id": "OOT Desert Colossus Song Spirit",
       "RequiredItems": [
-        "OOT Desert Colossus"
+        "OOT Desert Colossus Spirit Exit"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -20899,6 +20899,15 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Desert Colossus Spirit Exit => OOT Desert Colossus",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Shadow Temple => OOT Graveyard Upper",
       "RequiredItems": [],
       "ConditionalItems": [
@@ -21013,7 +21022,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Spirit Temple => OOT Desert Colossus",
+      "Id": "OOT Spirit Temple => OOT Desert Colossus Spirit Exit",
       "RequiredItems": [],
       "ConditionalItems": [
         [
@@ -23653,7 +23662,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Ancient Castle of Ikana Exterior => MM Ancient Castle of Ikana Well",
+      "Id": "MM Ancient Castle of Ikana => MM Ikana Castle Exterior",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -23662,74 +23671,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Ancient Castle of Ikana Exterior => MM Ancient Castle of Ikana Entrance",
-      "RequiredItems": [
-        "MM_can_use_light_arrows"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Ancient Castle of Ikana Exterior => MM Ancient Castle of Ikana Interior",
-      "RequiredItems": [],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Ancient Castle of Ikana Entrance => MM Ancient Castle of Ikana Exterior",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "MM_has_mirror_shield",
-          "MM_EVENT_IKANA_CASTLE_LIGHT_ENTRANCE"
-        ],
-        [
-          "MM_can_use_light_arrows"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Ancient Castle of Ikana Entrance => MM Ikana Canyon",
-      "RequiredItems": [],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM_EVENT_IKANA_CASTLE_LIGHT_ENTRANCE",
-      "RequiredItems": [
-        "MM_can_activate_crystal",
-        "MM Ancient Castle of Ikana Entrance"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Ancient Castle of Ikana Well => MM Beneath the Well End",
-      "RequiredItems": [],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Ancient Castle of Ikana Well => MM Ancient Castle of Ikana Exterior",
+      "Id": "MM Ancient Castle of Ikana => MM Ancient Castle of Ikana Interior",
       "RequiredItems": [
         "MM_can_reset_time"
       ],
@@ -23740,7 +23682,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Ancient Castle of Ikana Interior => MM Ancient Castle of Ikana Exterior",
+      "Id": "MM Ancient Castle of Ikana Interior => MM Ancient Castle of Ikana",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -23843,7 +23785,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Ancient Castle of Ikana Roof Exterior => MM Ancient Castle of Ikana Exterior",
+      "Id": "MM Ancient Castle of Ikana Roof Exterior => MM Ikana Castle Exterior",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -24128,7 +24070,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Beneath the Well End => MM Ancient Castle of Ikana Well",
+      "Id": "MM Beneath the Well End => MM Ikana Castle Exterior",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -28084,7 +28026,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Ikana Canyon => MM Ancient Castle of Ikana Entrance",
+      "Id": "MM Ikana Canyon => MM Ikana Castle Entrance",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -28167,6 +28109,73 @@
     },
     {
       "Id": "MM Ghost Hut => MM Ikana Canyon",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Ikana Castle Entrance => MM Ikana Castle Exterior",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "MM_has_mirror_shield",
+          "MM_EVENT_IKANA_CASTLE_LIGHT_ENTRANCE"
+        ],
+        [
+          "MM_can_use_light_arrows"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Ikana Castle Entrance => MM Ikana Canyon",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_EVENT_IKANA_CASTLE_LIGHT_ENTRANCE",
+      "RequiredItems": [
+        "MM_can_activate_crystal",
+        "MM Ikana Castle Entrance"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Ikana Castle Exterior => MM Beneath the Well End",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Ikana Castle Exterior => MM Ikana Castle Entrance",
+      "RequiredItems": [
+        "MM_can_use_light_arrows"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Ikana Castle Exterior => MM Ancient Castle of Ikana",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
