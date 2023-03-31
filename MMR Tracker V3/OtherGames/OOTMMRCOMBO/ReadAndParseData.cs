@@ -1006,10 +1006,10 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                                 { 
                                     entranceEntry.RandomizableEntrance = true;
                                     entranceEntry.DisplayArea = TrueExitName.EndsWith(" Boss") ? "Boss Room" : "Dungeon";
-                                    entranceEntry.DisplayExit = $"Entrance {entranceEntry.Area}";
+                                    entranceEntry.DisplayExit = $"Entrance to {entranceEntry.Exit}";
                                     if (DungeonExits.ContainsKey(TrueAreaName))
                                     {
-                                        entranceEntry.DisplayExit = $"Exit {entranceEntry.Area}";
+                                        entranceEntry.DisplayExit = $"Exit from {entranceEntry.Area}";
                                     }
                                 }
 

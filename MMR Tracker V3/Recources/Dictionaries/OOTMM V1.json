@@ -25157,7 +25157,7 @@
       "Area": "OOT Bottom of the Well",
       "Exit": "OOT Kakariko",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit OOT Bottom of the Well",
+      "DisplayExit": "Exit from OOT Bottom of the Well",
       "EntrancePairID": {
         "Area": "OOT Kakariko",
         "Exit": "OOT Bottom of the Well"
@@ -25184,7 +25184,7 @@
       "Area": "OOT Deku Tree",
       "Exit": "OOT Kokiri Forest",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit OOT Deku Tree",
+      "DisplayExit": "Exit from OOT Deku Tree",
       "EntrancePairID": {
         "Area": "OOT Kokiri Forest",
         "Exit": "OOT Deku Tree"
@@ -25274,7 +25274,7 @@
       "Area": "OOT Deku Tree Before Boss",
       "Exit": "OOT Deku Tree Boss",
       "DisplayArea": "Boss Room",
-      "DisplayExit": "Entrance OOT Deku Tree Before Boss",
+      "DisplayExit": "Entrance to OOT Deku Tree Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -25283,7 +25283,7 @@
       "Area": "OOT Dodongo Cavern",
       "Exit": "OOT Death Mountain",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit OOT Dodongo Cavern",
+      "DisplayExit": "Exit from OOT Dodongo Cavern",
       "EntrancePairID": {
         "Area": "OOT Death Mountain",
         "Exit": "OOT Dodongo Cavern"
@@ -25548,7 +25548,7 @@
       "Area": "OOT Dodongo Cavern Skull",
       "Exit": "OOT Dodongo Cavern Boss",
       "DisplayArea": "Boss Room",
-      "DisplayExit": "Entrance OOT Dodongo Cavern Skull",
+      "DisplayExit": "Entrance to OOT Dodongo Cavern Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -25557,7 +25557,7 @@
       "Area": "OOT Fire Temple",
       "Exit": "OOT Fire Temple Entry",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit OOT Fire Temple",
+      "DisplayExit": "Exit from OOT Fire Temple",
       "EntrancePairID": {
         "Area": "OOT Fire Temple Entry",
         "Exit": "OOT Fire Temple"
@@ -25598,7 +25598,7 @@
       "Area": "OOT Fire Temple Pre-Boss",
       "Exit": "OOT Fire Temple Boss",
       "DisplayArea": "Boss Room",
-      "DisplayExit": "Entrance OOT Fire Temple Pre-Boss",
+      "DisplayExit": "Entrance to OOT Fire Temple Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -25684,7 +25684,7 @@
       "Area": "OOT Forest Temple",
       "Exit": "OOT Sacred Meadow",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit OOT Forest Temple",
+      "DisplayExit": "Exit from OOT Forest Temple",
       "EntrancePairID": {
         "Area": "OOT Sacred Meadow",
         "Exit": "OOT Forest Temple"
@@ -25928,7 +25928,7 @@
       "Area": "OOT Forest Temple Antichamber",
       "Exit": "OOT Forest Temple Boss",
       "DisplayArea": "Boss Room",
-      "DisplayExit": "Entrance OOT Forest Temple Antichamber",
+      "DisplayExit": "Entrance to OOT Forest Temple Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -26000,7 +26000,7 @@
       "Area": "OOT Gerudo Training Grounds",
       "Exit": "OOT Gerudo Fortress Exterior",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit OOT Gerudo Training Grounds",
+      "DisplayExit": "Exit from OOT Gerudo Training Grounds",
       "EntrancePairID": {
         "Area": "OOT Gerudo Fortress Exterior",
         "Exit": "OOT Gerudo Training Grounds"
@@ -26125,7 +26125,7 @@
       "Area": "OOT Ice Cavern",
       "Exit": "OOT Zora Fountain Frozen",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit OOT Ice Cavern",
+      "DisplayExit": "Exit from OOT Ice Cavern",
       "EntrancePairID": {
         "Area": "OOT Zora Fountain Frozen",
         "Exit": "OOT Ice Cavern"
@@ -26138,7 +26138,7 @@
       "Area": "OOT Jabu-Jabu",
       "Exit": "OOT Zora Fountain",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit OOT Jabu-Jabu",
+      "DisplayExit": "Exit from OOT Jabu-Jabu",
       "EntrancePairID": {
         "Area": "OOT Zora Fountain",
         "Exit": "OOT Jabu-Jabu"
@@ -26172,7 +26172,7 @@
       "Area": "OOT Jabu-Jabu Pre-Boss",
       "Exit": "OOT Jabu-Jabu Boss",
       "DisplayArea": "Boss Room",
-      "DisplayExit": "Entrance OOT Jabu-Jabu Pre-Boss",
+      "DisplayExit": "Entrance to OOT Jabu-Jabu Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -26335,7 +26335,7 @@
       "Area": "OOT Kokiri Forest",
       "Exit": "OOT Deku Tree",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance OOT Kokiri Forest",
+      "DisplayExit": "Entrance to OOT Deku Tree",
       "EntrancePairID": {
         "Area": "OOT Deku Tree",
         "Exit": "OOT Kokiri Forest"
@@ -26775,7 +26775,7 @@
       "Area": "OOT Sacred Meadow",
       "Exit": "OOT Forest Temple",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance OOT Sacred Meadow",
+      "DisplayExit": "Entrance to OOT Forest Temple",
       "EntrancePairID": {
         "Area": "OOT Forest Temple",
         "Exit": "OOT Sacred Meadow"
@@ -26809,7 +26809,7 @@
       "Area": "OOT Kakariko",
       "Exit": "OOT Bottom of the Well",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance OOT Kakariko",
+      "DisplayExit": "Entrance to OOT Bottom of the Well",
       "EntrancePairID": {
         "Area": "OOT Bottom of the Well",
         "Exit": "OOT Kakariko"
@@ -26906,7 +26906,7 @@
       "Area": "OOT Graveyard Upper",
       "Exit": "OOT Shadow Temple",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance OOT Graveyard Upper",
+      "DisplayExit": "Entrance to OOT Shadow Temple",
       "EntrancePairID": {
         "Area": "OOT Shadow Temple",
         "Exit": "OOT Graveyard Upper"
@@ -26940,7 +26940,7 @@
       "Area": "OOT Death Mountain",
       "Exit": "OOT Dodongo Cavern",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance OOT Death Mountain",
+      "DisplayExit": "Entrance to OOT Dodongo Cavern",
       "EntrancePairID": {
         "Area": "OOT Dodongo Cavern",
         "Exit": "OOT Death Mountain"
@@ -27142,7 +27142,7 @@
       "Area": "OOT Lake Hylia",
       "Exit": "OOT Water Temple",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance OOT Lake Hylia",
+      "DisplayExit": "Entrance to OOT Water Temple",
       "EntrancePairID": {
         "Area": "OOT Water Temple",
         "Exit": "OOT Lake Hylia"
@@ -27183,7 +27183,7 @@
       "Area": "OOT Zora Fountain",
       "Exit": "OOT Jabu-Jabu",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance OOT Zora Fountain",
+      "DisplayExit": "Entrance to OOT Jabu-Jabu",
       "EntrancePairID": {
         "Area": "OOT Jabu-Jabu",
         "Exit": "OOT Zora Fountain"
@@ -27210,7 +27210,7 @@
       "Area": "OOT Zora Fountain Frozen",
       "Exit": "OOT Ice Cavern",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance OOT Zora Fountain Frozen",
+      "DisplayExit": "Entrance to OOT Ice Cavern",
       "EntrancePairID": {
         "Area": "OOT Ice Cavern",
         "Exit": "OOT Zora Fountain Frozen"
@@ -27300,7 +27300,7 @@
       "Area": "OOT Fire Temple Entry",
       "Exit": "OOT Fire Temple",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance OOT Fire Temple Entry",
+      "DisplayExit": "Entrance to OOT Fire Temple",
       "EntrancePairID": {
         "Area": "OOT Fire Temple",
         "Exit": "OOT Fire Temple Entry"
@@ -27376,7 +27376,7 @@
       "Area": "OOT Gerudo Fortress Exterior",
       "Exit": "OOT Gerudo Training Grounds",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance OOT Gerudo Fortress Exterior",
+      "DisplayExit": "Entrance to OOT Gerudo Training Grounds",
       "EntrancePairID": {
         "Area": "OOT Gerudo Training Grounds",
         "Exit": "OOT Gerudo Fortress Exterior"
@@ -27445,7 +27445,7 @@
       "Area": "OOT Desert Colossus",
       "Exit": "OOT Spirit Temple",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance OOT Desert Colossus",
+      "DisplayExit": "Entrance to OOT Spirit Temple",
       "EntrancePairID": {
         "Area": "OOT Spirit Temple",
         "Exit": "OOT Desert Colossus"
@@ -27465,7 +27465,7 @@
       "Area": "OOT Shadow Temple",
       "Exit": "OOT Graveyard Upper",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit OOT Shadow Temple",
+      "DisplayExit": "Exit from OOT Shadow Temple",
       "EntrancePairID": {
         "Area": "OOT Graveyard Upper",
         "Exit": "OOT Shadow Temple"
@@ -27513,7 +27513,7 @@
       "Area": "OOT Shadow Temple Boat",
       "Exit": "OOT Shadow Temple Boss",
       "DisplayArea": "Boss Room",
-      "DisplayExit": "Entrance OOT Shadow Temple Boat",
+      "DisplayExit": "Entrance to OOT Shadow Temple Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -27522,7 +27522,7 @@
       "Area": "OOT Spirit Temple",
       "Exit": "OOT Desert Colossus",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit OOT Spirit Temple",
+      "DisplayExit": "Exit from OOT Spirit Temple",
       "EntrancePairID": {
         "Area": "OOT Desert Colossus",
         "Exit": "OOT Spirit Temple"
@@ -27647,7 +27647,7 @@
       "Area": "OOT Spirit Temple Statue",
       "Exit": "OOT Spirit Temple Boss",
       "DisplayArea": "Boss Room",
-      "DisplayExit": "Entrance OOT Spirit Temple Statue",
+      "DisplayExit": "Entrance to OOT Spirit Temple Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -27712,7 +27712,7 @@
       "Area": "OOT Water Temple",
       "Exit": "OOT Lake Hylia",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit OOT Water Temple",
+      "DisplayExit": "Exit from OOT Water Temple",
       "EntrancePairID": {
         "Area": "OOT Lake Hylia",
         "Exit": "OOT Water Temple"
@@ -27942,7 +27942,7 @@
       "Area": "OOT Water Temple Antichamber",
       "Exit": "OOT Water Temple Boss",
       "DisplayArea": "Boss Room",
-      "DisplayExit": "Entrance OOT Water Temple Antichamber",
+      "DisplayExit": "Entrance to OOT Water Temple Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -28644,7 +28644,7 @@
       "Area": "MM Ancient Castle of Ikana Exterior",
       "Exit": "MM Ancient Castle of Ikana Interior",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance MM Ancient Castle of Ikana Exterior",
+      "DisplayExit": "Entrance to MM Ancient Castle of Ikana Interior",
       "EntrancePairID": {
         "Area": "MM Ancient Castle of Ikana Interior",
         "Exit": "MM Ancient Castle of Ikana Exterior"
@@ -28671,7 +28671,7 @@
       "Area": "MM Ancient Castle of Ikana Well",
       "Exit": "MM Beneath the Well End",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance MM Ancient Castle of Ikana Well",
+      "DisplayExit": "Entrance to MM Beneath the Well End",
       "EntrancePairID": {
         "Area": "MM Beneath the Well End",
         "Exit": "MM Ancient Castle of Ikana Well"
@@ -28691,7 +28691,7 @@
       "Area": "MM Ancient Castle of Ikana Interior",
       "Exit": "MM Ancient Castle of Ikana Exterior",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit MM Ancient Castle of Ikana Interior",
+      "DisplayExit": "Exit from MM Ancient Castle of Ikana Interior",
       "EntrancePairID": {
         "Area": "MM Ancient Castle of Ikana Exterior",
         "Exit": "MM Ancient Castle of Ikana Interior"
@@ -28837,7 +28837,7 @@
       "Area": "MM Beneath the Well Entrance",
       "Exit": "MM Ikana Canyon",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit MM Beneath the Well Entrance",
+      "DisplayExit": "Exit from MM Beneath the Well Entrance",
       "EntrancePairID": {
         "Area": "MM Ikana Canyon",
         "Exit": "MM Beneath the Well Entrance"
@@ -28906,7 +28906,7 @@
       "Area": "MM Beneath the Well End",
       "Exit": "MM Ancient Castle of Ikana Well",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit MM Beneath the Well End",
+      "DisplayExit": "Exit from MM Beneath the Well End",
       "EntrancePairID": {
         "Area": "MM Ancient Castle of Ikana Well",
         "Exit": "MM Beneath the Well End"
@@ -28926,7 +28926,7 @@
       "Area": "MM Great Bay Temple",
       "Exit": "MM Zora Cape Peninsula",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit MM Great Bay Temple",
+      "DisplayExit": "Exit from MM Great Bay Temple",
       "EntrancePairID": {
         "Area": "MM Zora Cape Peninsula",
         "Exit": "MM Great Bay Temple"
@@ -29121,7 +29121,7 @@
       "Area": "MM Great Bay Temple Pre-Boss",
       "Exit": "MM Great Bay Temple Boss",
       "DisplayArea": "Boss Room",
-      "DisplayExit": "Entrance MM Great Bay Temple Pre-Boss",
+      "DisplayExit": "Entrance to MM Great Bay Temple Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -29319,7 +29319,7 @@
       "Area": "MM Ocean Spider House",
       "Exit": "MM Great Bay Coast",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit MM Ocean Spider House",
+      "DisplayExit": "Exit from MM Ocean Spider House",
       "EntrancePairID": {
         "Area": "MM Great Bay Coast",
         "Exit": "MM Ocean Spider House"
@@ -29864,7 +29864,7 @@
       "Area": "MM Swamp Back",
       "Exit": "MM Swamp Spider House",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance MM Swamp Back",
+      "DisplayExit": "Entrance to MM Swamp Spider House",
       "EntrancePairID": {
         "Area": "MM Swamp Spider House",
         "Exit": "MM Swamp Back"
@@ -29989,7 +29989,7 @@
       "Area": "MM Woodfall Front of Temple",
       "Exit": "MM Woodfall Temple",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance MM Woodfall Front of Temple",
+      "DisplayExit": "Entrance to MM Woodfall Temple",
       "EntrancePairID": {
         "Area": "MM Woodfall Temple",
         "Exit": "MM Woodfall Front of Temple"
@@ -30303,7 +30303,7 @@
       "Area": "MM Snowhead",
       "Exit": "MM Snowhead Temple",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance MM Snowhead",
+      "DisplayExit": "Entrance to MM Snowhead Temple",
       "EntrancePairID": {
         "Area": "MM Snowhead Temple",
         "Exit": "MM Snowhead"
@@ -30470,7 +30470,7 @@
       "Area": "MM Great Bay Coast",
       "Exit": "MM Ocean Spider House",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance MM Great Bay Coast",
+      "DisplayExit": "Entrance to MM Ocean Spider House",
       "EntrancePairID": {
         "Area": "MM Ocean Spider House",
         "Exit": "MM Great Bay Coast"
@@ -30658,7 +30658,7 @@
       "Area": "MM Zora Cape Peninsula",
       "Exit": "MM Great Bay Temple",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance MM Zora Cape Peninsula",
+      "DisplayExit": "Entrance to MM Great Bay Temple",
       "EntrancePairID": {
         "Area": "MM Great Bay Temple",
         "Exit": "MM Zora Cape Peninsula"
@@ -30790,7 +30790,7 @@
       "Area": "MM Ikana Valley",
       "Exit": "MM Secret Shrine Entrance",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance MM Ikana Valley",
+      "DisplayExit": "Entrance to MM Secret Shrine Entrance",
       "EntrancePairID": {
         "Area": "MM Secret Shrine Entrance",
         "Exit": "MM Ikana Valley"
@@ -30859,7 +30859,7 @@
       "Area": "MM Ikana Canyon",
       "Exit": "MM Beneath the Well Entrance",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance MM Ikana Canyon",
+      "DisplayExit": "Entrance to MM Beneath the Well Entrance",
       "EntrancePairID": {
         "Area": "MM Beneath the Well Entrance",
         "Exit": "MM Ikana Canyon"
@@ -30970,7 +30970,7 @@
       "Area": "MM Stone Tower Front of Temple",
       "Exit": "MM Stone Tower Temple",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance MM Stone Tower Front of Temple",
+      "DisplayExit": "Entrance to MM Stone Tower Temple",
       "EntrancePairID": {
         "Area": "MM Stone Tower Temple",
         "Exit": "MM Stone Tower Front of Temple"
@@ -30983,7 +30983,7 @@
       "Area": "MM Stone Tower Top Inverted",
       "Exit": "MM Stone Tower Temple Inverted",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance MM Stone Tower Top Inverted",
+      "DisplayExit": "Entrance to MM Stone Tower Temple Inverted",
       "EntrancePairID": {
         "Area": "MM Stone Tower Temple Inverted",
         "Exit": "MM Stone Tower Top Inverted"
@@ -31409,7 +31409,7 @@
       "Area": "MM Secret Shrine Entrance",
       "Exit": "MM Ikana Valley",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit MM Secret Shrine Entrance",
+      "DisplayExit": "Exit from MM Secret Shrine Entrance",
       "EntrancePairID": {
         "Area": "MM Ikana Valley",
         "Exit": "MM Secret Shrine Entrance"
@@ -31464,7 +31464,7 @@
       "Area": "MM Snowhead Temple",
       "Exit": "MM Snowhead",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit MM Snowhead Temple",
+      "DisplayExit": "Exit from MM Snowhead Temple",
       "EntrancePairID": {
         "Area": "MM Snowhead",
         "Exit": "MM Snowhead Temple"
@@ -31925,7 +31925,7 @@
       "Area": "MM Snowhead Temple Center Level 4",
       "Exit": "MM Snowhead Temple Boss",
       "DisplayArea": "Boss Room",
-      "DisplayExit": "Entrance MM Snowhead Temple Center Level 4",
+      "DisplayExit": "Entrance to MM Snowhead Temple Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -31969,7 +31969,7 @@
       "Area": "MM Stone Tower Temple",
       "Exit": "MM Stone Tower Front of Temple",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit MM Stone Tower Temple",
+      "DisplayExit": "Exit from MM Stone Tower Temple",
       "EntrancePairID": {
         "Area": "MM Stone Tower Front of Temple",
         "Exit": "MM Stone Tower Temple"
@@ -32164,7 +32164,7 @@
       "Area": "MM Stone Tower Temple Inverted",
       "Exit": "MM Stone Tower Top Inverted",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit MM Stone Tower Temple Inverted",
+      "DisplayExit": "Exit from MM Stone Tower Temple Inverted",
       "EntrancePairID": {
         "Area": "MM Stone Tower Top Inverted",
         "Exit": "MM Stone Tower Temple Inverted"
@@ -32345,7 +32345,7 @@
       "Area": "MM Stone Tower Temple Inverted Bridge 2",
       "Exit": "MM Stone Tower Temple Boss",
       "DisplayArea": "Boss Room",
-      "DisplayExit": "Entrance MM Stone Tower Temple Inverted Bridge 2",
+      "DisplayExit": "Entrance to MM Stone Tower Temple Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -32368,7 +32368,7 @@
       "Area": "MM Swamp Spider House",
       "Exit": "MM Swamp Back",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit MM Swamp Spider House",
+      "DisplayExit": "Exit from MM Swamp Spider House",
       "EntrancePairID": {
         "Area": "MM Swamp Back",
         "Exit": "MM Swamp Spider House"
@@ -32395,7 +32395,7 @@
       "Area": "MM Woodfall Temple",
       "Exit": "MM Woodfall Front of Temple",
       "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit MM Woodfall Temple",
+      "DisplayExit": "Exit from MM Woodfall Temple",
       "EntrancePairID": {
         "Area": "MM Woodfall Front of Temple",
         "Exit": "MM Woodfall Temple"
@@ -32611,7 +32611,7 @@
       "Area": "MM Woodfall Temple Pre-Boss",
       "Exit": "MM Woodfall Temple Boss",
       "DisplayArea": "Boss Room",
-      "DisplayExit": "Entrance MM Woodfall Temple Pre-Boss",
+      "DisplayExit": "Entrance to MM Woodfall Temple Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
