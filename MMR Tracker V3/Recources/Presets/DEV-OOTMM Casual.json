@@ -12909,13 +12909,7 @@
           "MM_has_explosives"
         ],
         [
-          "MM_trick_keg_explosives",
-          "MM_OCARINA",
-          "MM_SONG_EPONA"
-        ],
-        [
-          "MM_trick_keg_explosives",
-          "MM_EVENT_IKANA_CANYON_OWL"
+          "MM_trick_keg_explosives"
         ]
       ],
       "TimeNeeded": "None",

@@ -28624,7 +28624,12 @@
     "MM Ancient Castle of Ikana Exterior => MM Ancient Castle of Ikana Interior": {
       "Area": "MM Ancient Castle of Ikana Exterior",
       "Exit": "MM Ancient Castle of Ikana Interior",
-      "RandomizableEntrance": false,
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "MM Ancient Castle of Ikana Interior",
+        "Exit": "MM Ancient Castle of Ikana Exterior"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -28645,7 +28650,12 @@
     "MM Ancient Castle of Ikana Well => MM Beneath the Well End": {
       "Area": "MM Ancient Castle of Ikana Well",
       "Exit": "MM Beneath the Well End",
-      "RandomizableEntrance": false,
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "MM Beneath the Well End",
+        "Exit": "MM Ancient Castle of Ikana Well"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -28659,7 +28669,13 @@
     "MM Ancient Castle of Ikana Interior => MM Ancient Castle of Ikana Exterior": {
       "Area": "MM Ancient Castle of Ikana Interior",
       "Exit": "MM Ancient Castle of Ikana Exterior",
-      "RandomizableEntrance": false,
+      "DisplayArea": "Dungeon Exit",
+      "DisplayExit": "MM Ancient Castle of Ikana Interior Exit",
+      "EntrancePairID": {
+        "Area": "MM Ancient Castle of Ikana Exterior",
+        "Exit": "MM Ancient Castle of Ikana Interior"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -28799,7 +28815,13 @@
     "MM Beneath the Well Entrance => MM Ikana Canyon": {
       "Area": "MM Beneath the Well Entrance",
       "Exit": "MM Ikana Canyon",
-      "RandomizableEntrance": false,
+      "DisplayArea": "Dungeon Exit",
+      "DisplayExit": "MM Beneath the Well Entrance Exit",
+      "EntrancePairID": {
+        "Area": "MM Ikana Canyon",
+        "Exit": "MM Beneath the Well Entrance"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -28862,7 +28884,13 @@
     "MM Beneath the Well End => MM Ancient Castle of Ikana Well": {
       "Area": "MM Beneath the Well End",
       "Exit": "MM Ancient Castle of Ikana Well",
-      "RandomizableEntrance": false,
+      "DisplayArea": "Dungeon Exit",
+      "DisplayExit": "MM Beneath the Well End Exit",
+      "EntrancePairID": {
+        "Area": "MM Ancient Castle of Ikana Well",
+        "Exit": "MM Beneath the Well End"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -30734,7 +30762,12 @@
     "MM Ikana Valley => MM Secret Shrine Entrance": {
       "Area": "MM Ikana Valley",
       "Exit": "MM Secret Shrine Entrance",
-      "RandomizableEntrance": false,
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "MM Secret Shrine Entrance",
+        "Exit": "MM Ikana Valley"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -30797,7 +30830,12 @@
     "MM Ikana Canyon => MM Beneath the Well Entrance": {
       "Area": "MM Ikana Canyon",
       "Exit": "MM Beneath the Well Entrance",
-      "RandomizableEntrance": false,
+      "DisplayArea": "Dungeon",
+      "EntrancePairID": {
+        "Area": "MM Beneath the Well Entrance",
+        "Exit": "MM Ikana Canyon"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -31339,7 +31377,13 @@
     "MM Secret Shrine Entrance => MM Ikana Valley": {
       "Area": "MM Secret Shrine Entrance",
       "Exit": "MM Ikana Valley",
-      "RandomizableEntrance": false,
+      "DisplayArea": "Dungeon Exit",
+      "DisplayExit": "MM Secret Shrine Entrance Exit",
+      "EntrancePairID": {
+        "Area": "MM Ikana Valley",
+        "Exit": "MM Secret Shrine Entrance"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
