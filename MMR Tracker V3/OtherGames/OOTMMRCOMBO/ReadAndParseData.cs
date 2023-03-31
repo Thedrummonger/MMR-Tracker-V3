@@ -935,20 +935,20 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             string OOTEntrances = Path.Combine(MMOOTCodeOOT, @"entrances.csv");
             string MMMacrosfile = File.ReadAllText(MMOOTCodeMMMacros);
             string OOTMacrosfile = File.ReadAllText(MMOOTCodeOOTMacros);
+            string DungeonExitFile = Path.Combine(CodeFolder, @"MMR Tracker V3", "OtherGames", "OOTMMRCOMBO", "DungeonExits.json");
 
 
             var MMentranceData = JsonConvert.DeserializeObject<List<MMROOTEntranceData>>(ConvertCsvFileToJsonObject(File.ReadAllLines(MMEntrances))).ToDictionary(x => x.to, x => x.from);
             var OOTentranceData = JsonConvert.DeserializeObject<List<MMROOTEntranceData>>(ConvertCsvFileToJsonObject(File.ReadAllLines(OOTEntrances))).ToDictionary(x => x.to, x => x.from);
 
             Dictionary<string, string> RandoEntrances = MMentranceData.Concat(OOTentranceData).ToDictionary(x => x.Key, x => x.Value);
+            Dictionary<string, string> DungeonExits = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(DungeonExitFile));
 
             Dictionary<string, string> MMMacros = JsonConvert.DeserializeObject<Dictionary<string, string>>(MMMacrosfile);
             Dictionary<string, string> OOTMacros = JsonConvert.DeserializeObject<Dictionary<string, string>>(OOTMacrosfile);
 
             Dictionary<string, MMROOTLogicEntry> MMLogicEntries = new Dictionary<string, MMROOTLogicEntry>();
             Dictionary<string, MMROOTLogicEntry> OOTLogicEntries = new Dictionary<string, MMROOTLogicEntry>();
-
-            Dictionary<string, string> DungeonAreas = GetDungeonAreas();
 
             addEntranceandEventData("OOT", MMOOTCodeOOTWorldFiles);
             addEntranceandEventData("OOT", MMOOTCodeOOTMQWorldFiles);
@@ -984,14 +984,14 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                             if (TrueExitName == "OOT MM SPAWN") { TrueExitName = "MM SPAWN"; }
                             string FullexitName = $"{TrueAreaName} => {TrueExitName}";
 
-                            if (LogicFile.Logic.Find(x => x.Id == FullexitName) == null)
+                            if (!LogicFile.Logic.Any(x => x.Id == FullexitName))
                             {
                                 MMRData.JsonFormatLogicItem EntranceEntry = new();
                                 EntranceEntry.Id = FullexitName;
                                 LogicFile.Logic.Add(EntranceEntry);
                             }
 
-                            if (dictionaryFile.EntranceList.Values.FirstOrDefault(x => x.ID == FullexitName) == null)
+                            if (!dictionaryFile.EntranceList.Values.Any(x => x.ID == FullexitName))
                             {
                                 LogicDictionaryData.DictionaryEntranceEntries entranceEntry = new()
                                 {
@@ -1006,10 +1006,10 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                                 { 
                                     entranceEntry.RandomizableEntrance = true;
                                     entranceEntry.DisplayArea = TrueExitName.EndsWith(" Boss") ? "Boss Room" : "Dungeon";
-                                    if (DungeonAreas.ContainsKey(TrueAreaName))
+                                    entranceEntry.DisplayExit = $"Entrance {entranceEntry.Area}";
+                                    if (DungeonExits.ContainsKey(TrueAreaName))
                                     {
-                                        entranceEntry.DisplayArea = "Dungeon Exit";
-                                        entranceEntry.DisplayExit = $"{entranceEntry.Area} Exit";
+                                        entranceEntry.DisplayExit = $"Exit {entranceEntry.Area}";
                                     }
                                 }
 
@@ -1019,7 +1019,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         foreach (var Event in LogicObject[l]?.events?.Keys?.ToList()??new List<string>())
                         {
                             string TrueMacroName = $"{Game}_EVENT_{Event}";
-                            if (LogicFile.Logic.Find(x => x.Id == TrueMacroName) == null)
+                            if (!LogicFile.Logic.Any(x => x.Id == TrueMacroName))
                             {
                                 LogicFile.Logic.Add(new TrackerObjects.MMRData.JsonFormatLogicItem { Id = TrueMacroName });
                             }
@@ -1027,11 +1027,11 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         foreach (var hint in LogicObject[l]?.gossip?.Keys?.ToList()??new List<string>())
                         {
                             string TrueHintName = $"{Game} {hint}";
-                            if (LogicFile.Logic.Find(x => x.Id == TrueHintName) == null)
+                            if (!LogicFile.Logic.Any(x => x.Id == TrueHintName))
                             {
                                 LogicFile.Logic.Add(new TrackerObjects.MMRData.JsonFormatLogicItem { Id = TrueHintName });
                             }
-                            if (dictionaryFile.HintSpots.Values.FirstOrDefault(x => x.ID == TrueHintName) == null)
+                            if (!dictionaryFile.HintSpots.Values.Any(x => x.ID == TrueHintName))
                             {
                                 LogicDictionaryData.DictionaryHintEntries dictionaryHint = new LogicDictionaryData.DictionaryHintEntries();
                                 dictionaryHint.ID = TrueHintName;
@@ -1043,14 +1043,6 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 }
             }
 
-        }
-
-        private static Dictionary<string, string> GetDungeonAreas()
-        {
-            string CodeFolder = References.TestingPaths.GetDevCodePath();
-            string DungeonExits = Path.Combine(CodeFolder, @"MMR Tracker V3", "OtherGames", "OOTMMRCOMBO", "DungeonExits.json");
-            Dictionary<string, string> Exits = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(DungeonExits));
-            return Exits;
         }
 
         public static void AddEntriesFromItemPools(out TrackerObjects.MMRData.LogicFile Logic, out TrackerObjects.LogicDictionaryData.LogicDictionary dictionary)
