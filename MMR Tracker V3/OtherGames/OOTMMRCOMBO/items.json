@@ -311,6 +311,7 @@
   "MM_NUTS_5": "5 Deku Nuts (MM)",
   "MM_STICKS_5": "5 Deku Sticks (MM)",
   "MM_STICKS_10": "10 Deku Sticks (MM)",
+  "MM_SONG_SUN": "Sun's Song (MM)",
 
   "OOT_NUT": "1 Deku Nut (OoT)",
   "OOT_STICKS_5": "5 Deku Sticks (OoT)",
@@ -321,6 +322,7 @@
   "SHARED_STICKS_10": "10 Deku Sticks",
   "SHARED_NUTS_5": "5 Deku Nuts (MM)",
   "SHARED_NUTS_10": "10 Deku Sticks (MM)",
-  "SHARED_STICK": "Deku Stick"
+  "SHARED_STICK": "Deku Stick",
+  "SHARED_SONG_SUN": "Sun's Song"
 
 }

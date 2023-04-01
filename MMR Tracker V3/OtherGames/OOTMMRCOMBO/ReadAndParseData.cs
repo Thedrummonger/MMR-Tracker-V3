@@ -432,6 +432,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             CrossGameOOTWarpSong.ID = "crossWarpOot";
             CrossGameOOTWarpSong.DisplayName = "Cross-Games OoT Warp Songs";
             CrossGameOOTWarpSong.CurrentValue = "false";
+            CrossGameOOTWarpSong.SubCategory = "Cross Game";
             CrossGameOOTWarpSong.CreateSimpleValues(new string[] { "true", "false" });
             dictionaryFile.Options.Add(CrossGameOOTWarpSong.ID, CrossGameOOTWarpSong);
 
@@ -439,6 +440,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             CrossGameMMWarpSong.ID = "crossWarpMm";
             CrossGameMMWarpSong.DisplayName = "Cross-Games MM Song of Soaring";
             CrossGameMMWarpSong.CurrentValue = "none";
+            CrossGameMMWarpSong.SubCategory = "Cross Game";
             CrossGameMMWarpSong.CreateSimpleValues(new string[] { "none", "childOnly", "full" });
             CrossGameMMWarpSong.Values["none"].Name = "None";
             CrossGameMMWarpSong.Values["childOnly"].Name = "Child Only";
@@ -449,6 +451,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             GanonBossKey.ID = "ganonBossKey";
             GanonBossKey.DisplayName = "Ganon's Boss Key";
             GanonBossKey.CurrentValue = "removed";
+            GanonBossKey.SubCategory = "Key Shuffle";
             GanonBossKey.CreateSimpleValues(new string[] { "removed", "vanilla", "ganon", "anywhere" });
             GanonBossKey.Values["removed"].Name = "Removed";
             GanonBossKey.Values["vanilla"].Name = "Vanilla";
@@ -461,6 +464,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             SmallKey.ID = "smallKeyShuffle";
             SmallKey.DisplayName = "Small Key Shuffle";
             SmallKey.CurrentValue = "ownDungeon";
+            SmallKey.SubCategory = "Key Shuffle";
             SmallKey.CreateSimpleValues(new string[] { "ownDungeon", "anywhere" });
             SmallKey.Values["ownDungeon"].Name = "Own Dungeon";
             SmallKey.Values["anywhere"].Name = "Anywhere";
@@ -526,6 +530,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             fairyOcarinaMm.ID = "fairyOcarinaMm";
             fairyOcarinaMm.DisplayName = "Fairy Ocarina in MM";
             fairyOcarinaMm.CurrentValue = "false";
+            fairyOcarinaMm.SubCategory = "Item Extensions";
             fairyOcarinaMm.CreateSimpleValues(new string[] { "true", "false" });
             fairyOcarinaMm.Values["false"].AddMaxAmountEdit("MM_OCARINA", MiscData.MathOP.subtract, 1);
             dictionaryFile.Options.Add(fairyOcarinaMm.ID, fairyOcarinaMm);
@@ -534,9 +539,20 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             shortHookshotMm.ID = "shortHookshotMm";
             shortHookshotMm.DisplayName = "Short Hookshot in MM";
             shortHookshotMm.CurrentValue = "false";
+            shortHookshotMm.SubCategory = "Item Extensions";
             shortHookshotMm.CreateSimpleValues(new string[] { "true", "false" });
             shortHookshotMm.Values["false"].AddMaxAmountEdit("MM_HOOKSHOT", MiscData.MathOP.subtract, 1);
             dictionaryFile.Options.Add(shortHookshotMm.ID, shortHookshotMm);
+
+            OptionData.TrackerOption sunSongMm = new OptionData.TrackerOption();
+            sunSongMm.ID = "sunSongMm";
+            sunSongMm.DisplayName = "Sun's Song in MM";
+            sunSongMm.CurrentValue = "false";
+            sunSongMm.SubCategory = "Item Extensions";
+            sunSongMm.CreateSimpleValues(new string[] { "true", "false" });
+            sunSongMm.Values["false"].AddMaxAmountEdit("MM_SONG_SUN", MiscData.MathOP.set, 0);
+            sunSongMm.Values["true"].ItemNameOverride.Add("OOT_SONG_SUN", "Sun Song (OoT)");
+            dictionaryFile.Options.Add(sunSongMm.ID, sunSongMm);
 
             //Temp Workaround for a typo in logic
             dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "MM_ZORA", RequiredItems = new List<string> { "MM_MASK_ZORA" } });
@@ -546,7 +562,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             AddSharedItemOptions("sharedBombBags", "Shared Bomb Bags", new string[] { "BOMB_BAG" }, 1, new string[] { "BOMBS_5", "BOMBS_10", "BOMBS_20", "BOMBS_30", "BOMB" });
             AddSharedItemOptions("sharedMagic", "Shared Magic", new string[] { "MAGIC_UPGRADE" }, 1);
             AddSharedItemOptions("sharedMagicArrows", "Shared Magic Arrows", new string[] { "ARROW_FIRE", "ARROW_ICE", "ARROW_LIGHT" }, 1);
-            AddSharedItemOptions("sharedSongs", "Shared Songs", new string[] { "SONG_TIME", "SONG_EPONA", "SONG_STORMS" }, 1);
+            AddSharedItemOptions("sharedSongs", "Shared Songs", new string[] { "SONG_TIME", "SONG_EPONA", "SONG_STORMS", "SONG_SUN" }, 1);
             AddSharedItemOptions("sharedHookshot", "Shared Hookshots", new string[] { "HOOKSHOT" }, 2);
             AddSharedItemOptions("sharedLens", "Shared Lens of Truth", new string[] { "LENS" }, 1);
             AddSharedItemOptions("sharedOcarina", "Shared Ocarina", new string[] { "OCARINA" }, 2);
@@ -1141,7 +1157,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 dictItem.MaxAmountInWorld = OOTRItemCounts.ContainsKey(i) ? OOTRItemCounts[i] : -1;
                 dictItem.ValidStartingItem = true;
                 dictItem.ID = null;
-                dictItem.SpoilerData = new TrackerObjects.MMRData.SpoilerlogReference { SpoilerLogNames = new string[] { i }, GossipHintNames =  new string[] { i, ItemName } };
+                var SpoilerNames = GetItemSpoilerNames(i, ItemName);
+                dictItem.SpoilerData = new TrackerObjects.MMRData.SpoilerlogReference { SpoilerLogNames = SpoilerNames, GossipHintNames = SpoilerNames };
                 dictItem.ItemTypes = new string[] { "item" };
                 logicDictionary.ItemList.Add(i,dictItem);
             }
@@ -1160,6 +1177,14 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
             Logic = logicFile;
             dictionary = logicDictionary;
+
+            string[] GetItemSpoilerNames(string ID, string Name)
+            {
+                List<string> names = new List<string>() { ID, Name };
+                string Game = ID.StartsWith("OOT_") ? "OoT" : "MM";
+                if (!Name.EndsWith(')') && !ID.StartsWith("SHARED_")) { names.Add($"{Name} ({Game})"); }
+                return names.ToArray();
+            }
 
         }
 

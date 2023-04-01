@@ -19177,11 +19177,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_BOMBER_NOTEBOOK",
-          "Bombers' Notebook"
+          "Bombers' Notebook",
+          "Bombers' Notebook (MM)"
         ],
         "GossipHintNames": [
           "MM_BOMBER_NOTEBOOK",
-          "Bombers' Notebook"
+          "Bombers' Notebook",
+          "Bombers' Notebook (MM)"
         ],
         "PriceDataNames": []
       }
@@ -19291,11 +19293,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_BOTTLE_CHATEAU",
-          "Bottle of Chateau Romani"
+          "Bottle of Chateau Romani",
+          "Bottle of Chateau Romani (MM)"
         ],
         "GossipHintNames": [
           "MM_BOTTLE_CHATEAU",
-          "Bottle of Chateau Romani"
+          "Bottle of Chateau Romani",
+          "Bottle of Chateau Romani (MM)"
         ],
         "PriceDataNames": []
       }
@@ -19310,11 +19314,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_BOTTLE_EMPTY",
-          "Empty Bottle"
+          "Empty Bottle",
+          "Empty Bottle (MM)"
         ],
         "GossipHintNames": [
           "MM_BOTTLE_EMPTY",
-          "Empty Bottle"
+          "Empty Bottle",
+          "Empty Bottle (MM)"
         ],
         "PriceDataNames": []
       }
@@ -19329,11 +19335,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_BOTTLED_GOLD_DUST",
-          "Bottle of Gold Dust"
+          "Bottle of Gold Dust",
+          "Bottle of Gold Dust (MM)"
         ],
         "GossipHintNames": [
           "MM_BOTTLED_GOLD_DUST",
-          "Bottle of Gold Dust"
+          "Bottle of Gold Dust",
+          "Bottle of Gold Dust (MM)"
         ],
         "PriceDataNames": []
       }
@@ -19481,11 +19489,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_DEED_LAND",
-          "Land Title Deed"
+          "Land Title Deed",
+          "Land Title Deed (MM)"
         ],
         "GossipHintNames": [
           "MM_DEED_LAND",
-          "Land Title Deed"
+          "Land Title Deed",
+          "Land Title Deed (MM)"
         ],
         "PriceDataNames": []
       }
@@ -19500,11 +19510,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_DEED_MOUNTAIN",
-          "Mountain Title Deed"
+          "Mountain Title Deed",
+          "Mountain Title Deed (MM)"
         ],
         "GossipHintNames": [
           "MM_DEED_MOUNTAIN",
-          "Mountain Title Deed"
+          "Mountain Title Deed",
+          "Mountain Title Deed (MM)"
         ],
         "PriceDataNames": []
       }
@@ -19519,11 +19531,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_DEED_OCEAN",
-          "Ocean Title Deed"
+          "Ocean Title Deed",
+          "Ocean Title Deed (MM)"
         ],
         "GossipHintNames": [
           "MM_DEED_OCEAN",
-          "Ocean Title Deed"
+          "Ocean Title Deed",
+          "Ocean Title Deed (MM)"
         ],
         "PriceDataNames": []
       }
@@ -19538,11 +19552,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_DEED_SWAMP",
-          "Swamp Title Deed"
+          "Swamp Title Deed",
+          "Swamp Title Deed (MM)"
         ],
         "GossipHintNames": [
           "MM_DEED_SWAMP",
-          "Swamp Title Deed"
+          "Swamp Title Deed",
+          "Swamp Title Deed (MM)"
         ],
         "PriceDataNames": []
       }
@@ -19595,11 +19611,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_GREAT_FAIRY_SWORD",
-          "Great Fairy's Sword"
+          "Great Fairy's Sword",
+          "Great Fairy's Sword (MM)"
         ],
         "GossipHintNames": [
           "MM_GREAT_FAIRY_SWORD",
-          "Great Fairy's Sword"
+          "Great Fairy's Sword",
+          "Great Fairy's Sword (MM)"
         ],
         "PriceDataNames": []
       }
@@ -19614,11 +19632,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_GS_TOKEN_OCEAN",
-          "Ocean Skulltula Token"
+          "Ocean Skulltula Token",
+          "Ocean Skulltula Token (MM)"
         ],
         "GossipHintNames": [
           "MM_GS_TOKEN_OCEAN",
-          "Ocean Skulltula Token"
+          "Ocean Skulltula Token",
+          "Ocean Skulltula Token (MM)"
         ],
         "PriceDataNames": []
       }
@@ -19633,11 +19653,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_GS_TOKEN_SWAMP",
-          "Swamp Skulltula Token"
+          "Swamp Skulltula Token",
+          "Swamp Skulltula Token (MM)"
         ],
         "GossipHintNames": [
           "MM_GS_TOKEN_SWAMP",
-          "Swamp Skulltula Token"
+          "Swamp Skulltula Token",
+          "Swamp Skulltula Token (MM)"
         ],
         "PriceDataNames": []
       }
@@ -19728,11 +19750,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_LETTER_TO_KAFEI",
-          "Letter to Kafei"
+          "Letter to Kafei",
+          "Letter to Kafei (MM)"
         ],
         "GossipHintNames": [
           "MM_LETTER_TO_KAFEI",
-          "Letter to Kafei"
+          "Letter to Kafei",
+          "Letter to Kafei (MM)"
         ],
         "PriceDataNames": []
       }
@@ -19747,11 +19771,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_LETTER_TO_MAMA",
-          "Letter to Mama"
+          "Letter to Mama",
+          "Letter to Mama (MM)"
         ],
         "GossipHintNames": [
           "MM_LETTER_TO_MAMA",
-          "Letter to Mama"
+          "Letter to Mama",
+          "Letter to Mama (MM)"
         ],
         "PriceDataNames": []
       }
@@ -19880,11 +19906,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_MASK_ALL_NIGHT",
-          "All-Night Mask"
+          "All-Night Mask",
+          "All-Night Mask (MM)"
         ],
         "GossipHintNames": [
           "MM_MASK_ALL_NIGHT",
-          "All-Night Mask"
+          "All-Night Mask",
+          "All-Night Mask (MM)"
         ],
         "PriceDataNames": []
       }
@@ -19899,11 +19927,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_MASK_BLAST",
-          "Blast Mask"
+          "Blast Mask",
+          "Blast Mask (MM)"
         ],
         "GossipHintNames": [
           "MM_MASK_BLAST",
-          "Blast Mask"
+          "Blast Mask",
+          "Blast Mask (MM)"
         ],
         "PriceDataNames": []
       }
@@ -19918,11 +19948,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_MASK_BREMEN",
-          "Bremen Mask"
+          "Bremen Mask",
+          "Bremen Mask (MM)"
         ],
         "GossipHintNames": [
           "MM_MASK_BREMEN",
-          "Bremen Mask"
+          "Bremen Mask",
+          "Bremen Mask (MM)"
         ],
         "PriceDataNames": []
       }
@@ -19956,11 +19988,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_MASK_CAPTAIN",
-          "Captain's Hat"
+          "Captain's Hat",
+          "Captain's Hat (MM)"
         ],
         "GossipHintNames": [
           "MM_MASK_CAPTAIN",
-          "Captain's Hat"
+          "Captain's Hat",
+          "Captain's Hat (MM)"
         ],
         "PriceDataNames": []
       }
@@ -19975,11 +20009,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_MASK_COUPLE",
-          "Couple's Mask"
+          "Couple's Mask",
+          "Couple's Mask (MM)"
         ],
         "GossipHintNames": [
           "MM_MASK_COUPLE",
-          "Couple's Mask"
+          "Couple's Mask",
+          "Couple's Mask (MM)"
         ],
         "PriceDataNames": []
       }
@@ -19994,11 +20030,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_MASK_DEKU",
-          "Deku Mask"
+          "Deku Mask",
+          "Deku Mask (MM)"
         ],
         "GossipHintNames": [
           "MM_MASK_DEKU",
-          "Deku Mask"
+          "Deku Mask",
+          "Deku Mask (MM)"
         ],
         "PriceDataNames": []
       }
@@ -20013,11 +20051,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_MASK_DON_GERO",
-          "Don Gero's Mask"
+          "Don Gero's Mask",
+          "Don Gero's Mask (MM)"
         ],
         "GossipHintNames": [
           "MM_MASK_DON_GERO",
-          "Don Gero's Mask"
+          "Don Gero's Mask",
+          "Don Gero's Mask (MM)"
         ],
         "PriceDataNames": []
       }
@@ -20032,11 +20072,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_MASK_FIERCE_DEITY",
-          "Fierce Deity's Mask"
+          "Fierce Deity's Mask",
+          "Fierce Deity's Mask (MM)"
         ],
         "GossipHintNames": [
           "MM_MASK_FIERCE_DEITY",
-          "Fierce Deity's Mask"
+          "Fierce Deity's Mask",
+          "Fierce Deity's Mask (MM)"
         ],
         "PriceDataNames": []
       }
@@ -20051,11 +20093,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_MASK_GARO",
-          "Garo's Mask"
+          "Garo's Mask",
+          "Garo's Mask (MM)"
         ],
         "GossipHintNames": [
           "MM_MASK_GARO",
-          "Garo's Mask"
+          "Garo's Mask",
+          "Garo's Mask (MM)"
         ],
         "PriceDataNames": []
       }
@@ -20070,11 +20114,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_MASK_GIANT",
-          "Giant's Mask"
+          "Giant's Mask",
+          "Giant's Mask (MM)"
         ],
         "GossipHintNames": [
           "MM_MASK_GIANT",
-          "Giant's Mask"
+          "Giant's Mask",
+          "Giant's Mask (MM)"
         ],
         "PriceDataNames": []
       }
@@ -20089,11 +20135,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_MASK_GIBDO",
-          "Gibdo Mask"
+          "Gibdo Mask",
+          "Gibdo Mask (MM)"
         ],
         "GossipHintNames": [
           "MM_MASK_GIBDO",
-          "Gibdo Mask"
+          "Gibdo Mask",
+          "Gibdo Mask (MM)"
         ],
         "PriceDataNames": []
       }
@@ -20127,11 +20175,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_MASK_GREAT_FAIRY",
-          "Great Fairy's Mask"
+          "Great Fairy's Mask",
+          "Great Fairy's Mask (MM)"
         ],
         "GossipHintNames": [
           "MM_MASK_GREAT_FAIRY",
-          "Great Fairy's Mask"
+          "Great Fairy's Mask",
+          "Great Fairy's Mask (MM)"
         ],
         "PriceDataNames": []
       }
@@ -20146,11 +20196,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_MASK_KAFEI",
-          "Kafei's Mask"
+          "Kafei's Mask",
+          "Kafei's Mask (MM)"
         ],
         "GossipHintNames": [
           "MM_MASK_KAFEI",
-          "Kafei's Mask"
+          "Kafei's Mask",
+          "Kafei's Mask (MM)"
         ],
         "PriceDataNames": []
       }
@@ -20165,11 +20217,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_MASK_KAMARO",
-          "Kamaro's Mask"
+          "Kamaro's Mask",
+          "Kamaro's Mask (MM)"
         ],
         "GossipHintNames": [
           "MM_MASK_KAMARO",
-          "Kamaro's Mask"
+          "Kamaro's Mask",
+          "Kamaro's Mask (MM)"
         ],
         "PriceDataNames": []
       }
@@ -20184,11 +20238,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_MASK_KEATON",
-          "Keaton Mask"
+          "Keaton Mask",
+          "Keaton Mask (MM)"
         ],
         "GossipHintNames": [
           "MM_MASK_KEATON",
-          "Keaton Mask"
+          "Keaton Mask",
+          "Keaton Mask (MM)"
         ],
         "PriceDataNames": []
       }
@@ -20203,11 +20259,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_MASK_POSTMAN",
-          "Postman's Hat"
+          "Postman's Hat",
+          "Postman's Hat (MM)"
         ],
         "GossipHintNames": [
           "MM_MASK_POSTMAN",
-          "Postman's Hat"
+          "Postman's Hat",
+          "Postman's Hat (MM)"
         ],
         "PriceDataNames": []
       }
@@ -20222,11 +20280,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_MASK_ROMANI",
-          "Romani's Mask"
+          "Romani's Mask",
+          "Romani's Mask (MM)"
         ],
         "GossipHintNames": [
           "MM_MASK_ROMANI",
-          "Romani's Mask"
+          "Romani's Mask",
+          "Romani's Mask (MM)"
         ],
         "PriceDataNames": []
       }
@@ -20241,11 +20301,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_MASK_SCENTS",
-          "Mask of Scents"
+          "Mask of Scents",
+          "Mask of Scents (MM)"
         ],
         "GossipHintNames": [
           "MM_MASK_SCENTS",
-          "Mask of Scents"
+          "Mask of Scents",
+          "Mask of Scents (MM)"
         ],
         "PriceDataNames": []
       }
@@ -20260,11 +20322,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_MASK_STONE",
-          "Stone Mask"
+          "Stone Mask",
+          "Stone Mask (MM)"
         ],
         "GossipHintNames": [
           "MM_MASK_STONE",
-          "Stone Mask"
+          "Stone Mask",
+          "Stone Mask (MM)"
         ],
         "PriceDataNames": []
       }
@@ -20279,11 +20343,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_MASK_TROUPE_LEADER",
-          "Circus Leader's Mask"
+          "Circus Leader's Mask",
+          "Circus Leader's Mask (MM)"
         ],
         "GossipHintNames": [
           "MM_MASK_TROUPE_LEADER",
-          "Circus Leader's Mask"
+          "Circus Leader's Mask",
+          "Circus Leader's Mask (MM)"
         ],
         "PriceDataNames": []
       }
@@ -20336,11 +20402,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_MILK",
-          "Romani Milk"
+          "Romani Milk",
+          "Romani Milk (MM)"
         ],
         "GossipHintNames": [
           "MM_MILK",
-          "Romani Milk"
+          "Romani Milk",
+          "Romani Milk (MM)"
         ],
         "PriceDataNames": []
       }
@@ -20355,11 +20423,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_MOON_TEAR",
-          "Moon's Tear"
+          "Moon's Tear",
+          "Moon's Tear (MM)"
         ],
         "GossipHintNames": [
           "MM_MOON_TEAR",
-          "Moon's Tear"
+          "Moon's Tear",
+          "Moon's Tear (MM)"
         ],
         "PriceDataNames": []
       }
@@ -20412,11 +20482,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_PENDANT_OF_MEMORIES",
-          "Pendant of Memories"
+          "Pendant of Memories",
+          "Pendant of Memories (MM)"
         ],
         "GossipHintNames": [
           "MM_PENDANT_OF_MEMORIES",
-          "Pendant of Memories"
+          "Pendant of Memories",
+          "Pendant of Memories (MM)"
         ],
         "PriceDataNames": []
       }
@@ -20431,11 +20503,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_PICTOGRAPH_BOX",
-          "Pictograph Box"
+          "Pictograph Box",
+          "Pictograph Box (MM)"
         ],
         "GossipHintNames": [
           "MM_PICTOGRAPH_BOX",
-          "Pictograph Box"
+          "Pictograph Box",
+          "Pictograph Box (MM)"
         ],
         "PriceDataNames": []
       }
@@ -20507,11 +20581,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_POWDER_KEG",
-          "Powder Keg"
+          "Powder Keg",
+          "Powder Keg (MM)"
         ],
         "GossipHintNames": [
           "MM_POWDER_KEG",
-          "Powder Keg"
+          "Powder Keg",
+          "Powder Keg (MM)"
         ],
         "PriceDataNames": []
       }
@@ -20526,11 +20602,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_REMAINS_GOHT",
-          "Goht's Remains"
+          "Goht's Remains",
+          "Goht's Remains (MM)"
         ],
         "GossipHintNames": [
           "MM_REMAINS_GOHT",
-          "Goht's Remains"
+          "Goht's Remains",
+          "Goht's Remains (MM)"
         ],
         "PriceDataNames": []
       }
@@ -20545,11 +20623,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_REMAINS_GYORG",
-          "Gyorg's Remains"
+          "Gyorg's Remains",
+          "Gyorg's Remains (MM)"
         ],
         "GossipHintNames": [
           "MM_REMAINS_GYORG",
-          "Gyorg's Remains"
+          "Gyorg's Remains",
+          "Gyorg's Remains (MM)"
         ],
         "PriceDataNames": []
       }
@@ -20564,11 +20644,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_REMAINS_ODOLWA",
-          "Odolwa's Remains"
+          "Odolwa's Remains",
+          "Odolwa's Remains (MM)"
         ],
         "GossipHintNames": [
           "MM_REMAINS_ODOLWA",
-          "Odolwa's Remains"
+          "Odolwa's Remains",
+          "Odolwa's Remains (MM)"
         ],
         "PriceDataNames": []
       }
@@ -20583,11 +20665,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_REMAINS_TWINMOLD",
-          "Twinmold's Remains"
+          "Twinmold's Remains",
+          "Twinmold's Remains (MM)"
         ],
         "GossipHintNames": [
           "MM_REMAINS_TWINMOLD",
-          "Twinmold's Remains"
+          "Twinmold's Remains",
+          "Twinmold's Remains (MM)"
         ],
         "PriceDataNames": []
       }
@@ -20602,11 +20686,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_ROOM_KEY",
-          "Room Key"
+          "Room Key",
+          "Room Key (MM)"
         ],
         "GossipHintNames": [
           "MM_ROOM_KEY",
-          "Room Key"
+          "Room Key",
+          "Room Key (MM)"
         ],
         "PriceDataNames": []
       }
@@ -20754,11 +20840,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_SHIELD_HERO",
-          "Hero's Shield"
+          "Hero's Shield",
+          "Hero's Shield (MM)"
         ],
         "GossipHintNames": [
           "MM_SHIELD_HERO",
-          "Hero's Shield"
+          "Hero's Shield",
+          "Hero's Shield (MM)"
         ],
         "PriceDataNames": []
       }
@@ -20868,11 +20956,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_SONG_AWAKENING",
-          "Sonata of Awakening"
+          "Sonata of Awakening",
+          "Sonata of Awakening (MM)"
         ],
         "GossipHintNames": [
           "MM_SONG_AWAKENING",
-          "Sonata of Awakening"
+          "Sonata of Awakening",
+          "Sonata of Awakening (MM)"
         ],
         "PriceDataNames": []
       }
@@ -20887,11 +20977,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_SONG_EMPTINESS",
-          "Elegy of Emptiness"
+          "Elegy of Emptiness",
+          "Elegy of Emptiness (MM)"
         ],
         "GossipHintNames": [
           "MM_SONG_EMPTINESS",
-          "Elegy of Emptiness"
+          "Elegy of Emptiness",
+          "Elegy of Emptiness (MM)"
         ],
         "PriceDataNames": []
       }
@@ -20925,11 +21017,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_SONG_GORON",
-          "Goron Lullaby"
+          "Goron Lullaby",
+          "Goron Lullaby (MM)"
         ],
         "GossipHintNames": [
           "MM_SONG_GORON",
-          "Goron Lullaby"
+          "Goron Lullaby",
+          "Goron Lullaby (MM)"
         ],
         "PriceDataNames": []
       }
@@ -20944,11 +21038,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_SONG_GORON_HALF",
-          "Progressive Goron Lullaby"
+          "Progressive Goron Lullaby",
+          "Progressive Goron Lullaby (MM)"
         ],
         "GossipHintNames": [
           "MM_SONG_GORON_HALF",
-          "Progressive Goron Lullaby"
+          "Progressive Goron Lullaby",
+          "Progressive Goron Lullaby (MM)"
         ],
         "PriceDataNames": []
       }
@@ -20963,11 +21059,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_SONG_HEALING",
-          "Song of Healing"
+          "Song of Healing",
+          "Song of Healing (MM)"
         ],
         "GossipHintNames": [
           "MM_SONG_HEALING",
-          "Song of Healing"
+          "Song of Healing",
+          "Song of Healing (MM)"
         ],
         "PriceDataNames": []
       }
@@ -20982,11 +21080,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_SONG_ORDER",
-          "Oath to Order"
+          "Oath to Order",
+          "Oath to Order (MM)"
         ],
         "GossipHintNames": [
           "MM_SONG_ORDER",
-          "Oath to Order"
+          "Oath to Order",
+          "Oath to Order (MM)"
         ],
         "PriceDataNames": []
       }
@@ -21001,11 +21101,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_SONG_SOARING",
-          "Song of Soaring"
+          "Song of Soaring",
+          "Song of Soaring (MM)"
         ],
         "GossipHintNames": [
           "MM_SONG_SOARING",
-          "Song of Soaring"
+          "Song of Soaring",
+          "Song of Soaring (MM)"
         ],
         "PriceDataNames": []
       }
@@ -21058,11 +21160,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_SONG_ZORA",
-          "New Wave Bossa Nova"
+          "New Wave Bossa Nova",
+          "New Wave Bossa Nova (MM)"
         ],
         "GossipHintNames": [
           "MM_SONG_ZORA",
-          "New Wave Bossa Nova"
+          "New Wave Bossa Nova",
+          "New Wave Bossa Nova (MM)"
         ],
         "PriceDataNames": []
       }
@@ -21077,11 +21181,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_SPIN_UPGRADE",
-          "Spin Attack"
+          "Spin Attack",
+          "Spin Attack (MM)"
         ],
         "GossipHintNames": [
           "MM_SPIN_UPGRADE",
-          "Spin Attack"
+          "Spin Attack",
+          "Spin Attack (MM)"
         ],
         "PriceDataNames": []
       }
@@ -21362,11 +21468,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_BLUE_FIRE",
-          "Bottle - Blue Fire"
+          "Bottle - Blue Fire",
+          "Bottle - Blue Fire (OoT)"
         ],
         "GossipHintNames": [
           "OOT_BLUE_FIRE",
-          "Bottle - Blue Fire"
+          "Bottle - Blue Fire",
+          "Bottle - Blue Fire (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -21533,11 +21641,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_BOOMERANG",
-          "Boomerang"
+          "Boomerang",
+          "Boomerang (OoT)"
         ],
         "GossipHintNames": [
           "OOT_BOOMERANG",
-          "Boomerang"
+          "Boomerang",
+          "Boomerang (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -21552,11 +21662,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_BOOTS_HOVER",
-          "Hover Boots"
+          "Hover Boots",
+          "Hover Boots (OoT)"
         ],
         "GossipHintNames": [
           "OOT_BOOTS_HOVER",
-          "Hover Boots"
+          "Hover Boots",
+          "Hover Boots (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -21571,11 +21683,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_BOOTS_IRON",
-          "Iron Boots"
+          "Iron Boots",
+          "Iron Boots (OoT)"
         ],
         "GossipHintNames": [
           "OOT_BOOTS_IRON",
-          "Iron Boots"
+          "Iron Boots",
+          "Iron Boots (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -21761,11 +21875,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_BROKEN_GORON_SWORD",
-          "Broken Goron's Sword"
+          "Broken Goron's Sword",
+          "Broken Goron's Sword (OoT)"
         ],
         "GossipHintNames": [
           "OOT_BROKEN_GORON_SWORD",
-          "Broken Goron's Sword"
+          "Broken Goron's Sword",
+          "Broken Goron's Sword (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -21799,11 +21915,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_CHICKEN",
-          "Chicken"
+          "Chicken",
+          "Chicken (OoT)"
         ],
         "GossipHintNames": [
           "OOT_CHICKEN",
-          "Chicken"
+          "Chicken",
+          "Chicken (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -21818,11 +21936,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_CLAIM_CHECK",
-          "Claim Check"
+          "Claim Check",
+          "Claim Check (OoT)"
         ],
         "GossipHintNames": [
           "OOT_CLAIM_CHECK",
-          "Claim Check"
+          "Claim Check",
+          "Claim Check (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -21837,11 +21957,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_COJIRO",
-          "Cojiro"
+          "Cojiro",
+          "Cojiro (OoT)"
         ],
         "GossipHintNames": [
           "OOT_COJIRO",
-          "Cojiro"
+          "Cojiro",
+          "Cojiro (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -22065,11 +22187,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_DEKU_SEEDS_30",
-          "30 Deku Seeds"
+          "30 Deku Seeds",
+          "30 Deku Seeds (OoT)"
         ],
         "GossipHintNames": [
           "OOT_DEKU_SEEDS_30",
-          "30 Deku Seeds"
+          "30 Deku Seeds",
+          "30 Deku Seeds (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -22084,11 +22208,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_EYE_DROPS",
-          "Eye Drops"
+          "Eye Drops",
+          "Eye Drops (OoT)"
         ],
         "GossipHintNames": [
           "OOT_EYE_DROPS",
-          "Eye Drops"
+          "Eye Drops",
+          "Eye Drops (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -22103,11 +22229,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_EYEBALL_FROG",
-          "Eyeball Frog"
+          "Eyeball Frog",
+          "Eyeball Frog (OoT)"
         ],
         "GossipHintNames": [
           "OOT_EYEBALL_FROG",
-          "Eyeball Frog"
+          "Eyeball Frog",
+          "Eyeball Frog (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -22160,11 +22288,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_GERUDO_CARD",
-          "Gerudo's Membership Card"
+          "Gerudo's Membership Card",
+          "Gerudo's Membership Card (OoT)"
         ],
         "GossipHintNames": [
           "OOT_GERUDO_CARD",
-          "Gerudo's Membership Card"
+          "Gerudo's Membership Card",
+          "Gerudo's Membership Card (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -22179,11 +22309,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_GS_TOKEN",
-          "Gold Skulltula Token"
+          "Gold Skulltula Token",
+          "Gold Skulltula Token (OoT)"
         ],
         "GossipHintNames": [
           "OOT_GS_TOKEN",
-          "Gold Skulltula Token"
+          "Gold Skulltula Token",
+          "Gold Skulltula Token (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -22198,11 +22330,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_HAMMER",
-          "Megaton Hammer"
+          "Megaton Hammer",
+          "Megaton Hammer (OoT)"
         ],
         "GossipHintNames": [
           "OOT_HAMMER",
-          "Megaton Hammer"
+          "Megaton Hammer",
+          "Megaton Hammer (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -22559,11 +22693,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_MASK_GERUDO",
-          "Gerudo Mask"
+          "Gerudo Mask",
+          "Gerudo Mask (OoT)"
         ],
         "GossipHintNames": [
           "OOT_MASK_GERUDO",
-          "Gerudo Mask"
+          "Gerudo Mask",
+          "Gerudo Mask (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -22616,11 +22752,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_MASK_SKULL",
-          "Skull Mask"
+          "Skull Mask",
+          "Skull Mask (OoT)"
         ],
         "GossipHintNames": [
           "OOT_MASK_SKULL",
-          "Skull Mask"
+          "Skull Mask",
+          "Skull Mask (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -22635,11 +22773,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_MASK_SPOOKY",
-          "Spooky Mask"
+          "Spooky Mask",
+          "Spooky Mask (OoT)"
         ],
         "GossipHintNames": [
           "OOT_MASK_SPOOKY",
-          "Spooky Mask"
+          "Spooky Mask",
+          "Spooky Mask (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -22692,11 +22832,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_MEDALLION_FIRE",
-          "Fire Medallion"
+          "Fire Medallion",
+          "Fire Medallion (OoT)"
         ],
         "GossipHintNames": [
           "OOT_MEDALLION_FIRE",
-          "Fire Medallion"
+          "Fire Medallion",
+          "Fire Medallion (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -22711,11 +22853,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_MEDALLION_FOREST",
-          "Forest Medallion"
+          "Forest Medallion",
+          "Forest Medallion (OoT)"
         ],
         "GossipHintNames": [
           "OOT_MEDALLION_FOREST",
-          "Forest Medallion"
+          "Forest Medallion",
+          "Forest Medallion (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -22730,11 +22874,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_MEDALLION_LIGHT",
-          "Light Medallion"
+          "Light Medallion",
+          "Light Medallion (OoT)"
         ],
         "GossipHintNames": [
           "OOT_MEDALLION_LIGHT",
-          "Light Medallion"
+          "Light Medallion",
+          "Light Medallion (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -22749,11 +22895,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_MEDALLION_SHADOW",
-          "Shadow Medallion"
+          "Shadow Medallion",
+          "Shadow Medallion (OoT)"
         ],
         "GossipHintNames": [
           "OOT_MEDALLION_SHADOW",
-          "Shadow Medallion"
+          "Shadow Medallion",
+          "Shadow Medallion (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -22768,11 +22916,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_MEDALLION_SPIRIT",
-          "Spirit Medallion"
+          "Spirit Medallion",
+          "Spirit Medallion (OoT)"
         ],
         "GossipHintNames": [
           "OOT_MEDALLION_SPIRIT",
-          "Spirit Medallion"
+          "Spirit Medallion",
+          "Spirit Medallion (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -22787,11 +22937,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_MEDALLION_WATER",
-          "Water Medallion"
+          "Water Medallion",
+          "Water Medallion (OoT)"
         ],
         "GossipHintNames": [
           "OOT_MEDALLION_WATER",
-          "Water Medallion"
+          "Water Medallion",
+          "Water Medallion (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -22825,11 +22977,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_NUT_UPGRADE",
-          "Deku Nut Upgrade"
+          "Deku Nut Upgrade",
+          "Deku Nut Upgrade (OoT)"
         ],
         "GossipHintNames": [
           "OOT_NUT_UPGRADE",
-          "Deku Nut Upgrade"
+          "Deku Nut Upgrade",
+          "Deku Nut Upgrade (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -22901,11 +23055,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_ODD_MUSHROOM",
-          "Odd Mushroom"
+          "Odd Mushroom",
+          "Odd Mushroom (OoT)"
         ],
         "GossipHintNames": [
           "OOT_ODD_MUSHROOM",
-          "Odd Mushroom"
+          "Odd Mushroom",
+          "Odd Mushroom (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -22920,11 +23076,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_ODD_POTION",
-          "Odd Potion"
+          "Odd Potion",
+          "Odd Potion (OoT)"
         ],
         "GossipHintNames": [
           "OOT_ODD_POTION",
-          "Odd Potion"
+          "Odd Potion",
+          "Odd Potion (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -22939,11 +23097,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_POACHER_SAW",
-          "Poacher's Saw"
+          "Poacher's Saw",
+          "Poacher's Saw (OoT)"
         ],
         "GossipHintNames": [
           "OOT_POACHER_SAW",
-          "Poacher's Saw"
+          "Poacher's Saw",
+          "Poacher's Saw (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -22958,11 +23118,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_POCKET_CUCCO",
-          "Pocket Cucco"
+          "Pocket Cucco",
+          "Pocket Cucco (OoT)"
         ],
         "GossipHintNames": [
           "OOT_POCKET_CUCCO",
-          "Pocket Cucco"
+          "Pocket Cucco",
+          "Pocket Cucco (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -22977,11 +23139,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_POCKET_EGG",
-          "Pocket Egg"
+          "Pocket Egg",
+          "Pocket Egg (OoT)"
         ],
         "GossipHintNames": [
           "OOT_POCKET_EGG",
-          "Pocket Egg"
+          "Pocket Egg",
+          "Pocket Egg (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -23072,11 +23236,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_PRESCRIPTION",
-          "Prescription"
+          "Prescription",
+          "Prescription (OoT)"
         ],
         "GossipHintNames": [
           "OOT_PRESCRIPTION",
-          "Prescription"
+          "Prescription",
+          "Prescription (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -23205,11 +23371,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_RUTO_LETTER",
-          "Ruto's Letter"
+          "Ruto's Letter",
+          "Ruto's Letter (OoT)"
         ],
         "GossipHintNames": [
           "OOT_RUTO_LETTER",
-          "Ruto's Letter"
+          "Ruto's Letter",
+          "Ruto's Letter (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -23224,11 +23392,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_SCALE",
-          "Progressive Scale"
+          "Progressive Scale",
+          "Progressive Scale (OoT)"
         ],
         "GossipHintNames": [
           "OOT_SCALE",
-          "Progressive Scale"
+          "Progressive Scale",
+          "Progressive Scale (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -23262,11 +23432,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_SHIELD_DEKU",
-          "Deku Shield"
+          "Deku Shield",
+          "Deku Shield (OoT)"
         ],
         "GossipHintNames": [
           "OOT_SHIELD_DEKU",
-          "Deku Shield"
+          "Deku Shield",
+          "Deku Shield (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -23281,11 +23453,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_SHIELD_HYLIAN",
-          "Hylian Shield"
+          "Hylian Shield",
+          "Hylian Shield (OoT)"
         ],
         "GossipHintNames": [
           "OOT_SHIELD_HYLIAN",
-          "Hylian Shield"
+          "Hylian Shield",
+          "Hylian Shield (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -23319,11 +23493,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_SLINGSHOT",
-          "Fairy Slingshot"
+          "Fairy Slingshot",
+          "Fairy Slingshot (OoT)"
         ],
         "GossipHintNames": [
           "OOT_SLINGSHOT",
-          "Fairy Slingshot"
+          "Fairy Slingshot",
+          "Fairy Slingshot (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -23528,11 +23704,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_SONG_SARIA",
-          "Saria's Song"
+          "Saria's Song",
+          "Saria's Song (OoT)"
         ],
         "GossipHintNames": [
           "OOT_SONG_SARIA",
-          "Saria's Song"
+          "Saria's Song",
+          "Saria's Song (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -23566,11 +23744,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_SONG_SUN",
-          "Sun's Song"
+          "Sun's Song",
+          "Sun's Song (OoT)"
         ],
         "GossipHintNames": [
           "OOT_SONG_SUN",
-          "Sun's Song"
+          "Sun's Song",
+          "Sun's Song (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -23604,11 +23784,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_SONG_TP_FIRE",
-          "Bolero of Fire"
+          "Bolero of Fire",
+          "Bolero of Fire (OoT)"
         ],
         "GossipHintNames": [
           "OOT_SONG_TP_FIRE",
-          "Bolero of Fire"
+          "Bolero of Fire",
+          "Bolero of Fire (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -23623,11 +23805,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_SONG_TP_FOREST",
-          "Minuet of Forest"
+          "Minuet of Forest",
+          "Minuet of Forest (OoT)"
         ],
         "GossipHintNames": [
           "OOT_SONG_TP_FOREST",
-          "Minuet of Forest"
+          "Minuet of Forest",
+          "Minuet of Forest (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -23642,11 +23826,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_SONG_TP_LIGHT",
-          "Prelude of Light"
+          "Prelude of Light",
+          "Prelude of Light (OoT)"
         ],
         "GossipHintNames": [
           "OOT_SONG_TP_LIGHT",
-          "Prelude of Light"
+          "Prelude of Light",
+          "Prelude of Light (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -23661,11 +23847,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_SONG_TP_SHADOW",
-          "Nocturne of Shadow"
+          "Nocturne of Shadow",
+          "Nocturne of Shadow (OoT)"
         ],
         "GossipHintNames": [
           "OOT_SONG_TP_SHADOW",
-          "Nocturne of Shadow"
+          "Nocturne of Shadow",
+          "Nocturne of Shadow (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -23680,11 +23868,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_SONG_TP_SPIRIT",
-          "Requiem of Spirit"
+          "Requiem of Spirit",
+          "Requiem of Spirit (OoT)"
         ],
         "GossipHintNames": [
           "OOT_SONG_TP_SPIRIT",
-          "Requiem of Spirit"
+          "Requiem of Spirit",
+          "Requiem of Spirit (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -23699,11 +23889,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_SONG_TP_WATER",
-          "Serenade of Water"
+          "Serenade of Water",
+          "Serenade of Water (OoT)"
         ],
         "GossipHintNames": [
           "OOT_SONG_TP_WATER",
-          "Serenade of Water"
+          "Serenade of Water",
+          "Serenade of Water (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -23718,11 +23910,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_SONG_ZELDA",
-          "Zelda's Lullaby"
+          "Zelda's Lullaby",
+          "Zelda's Lullaby (OoT)"
         ],
         "GossipHintNames": [
           "OOT_SONG_ZELDA",
-          "Zelda's Lullaby"
+          "Zelda's Lullaby",
+          "Zelda's Lullaby (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -23737,11 +23931,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_SPELL_FIRE",
-          "Din's Fire"
+          "Din's Fire",
+          "Din's Fire (OoT)"
         ],
         "GossipHintNames": [
           "OOT_SPELL_FIRE",
-          "Din's Fire"
+          "Din's Fire",
+          "Din's Fire (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -23756,11 +23952,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_SPELL_LOVE",
-          "Nayru's Love"
+          "Nayru's Love",
+          "Nayru's Love (OoT)"
         ],
         "GossipHintNames": [
           "OOT_SPELL_LOVE",
-          "Nayru's Love"
+          "Nayru's Love",
+          "Nayru's Love (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -23775,11 +23973,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_SPELL_WIND",
-          "Farore's Wind"
+          "Farore's Wind",
+          "Farore's Wind (OoT)"
         ],
         "GossipHintNames": [
           "OOT_SPELL_WIND",
-          "Farore's Wind"
+          "Farore's Wind",
+          "Farore's Wind (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -23813,11 +24013,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_STICK_UPGRADE",
-          "Deku Stick Upgrade"
+          "Deku Stick Upgrade",
+          "Deku Stick Upgrade (OoT)"
         ],
         "GossipHintNames": [
           "OOT_STICK_UPGRADE",
-          "Deku Stick Upgrade"
+          "Deku Stick Upgrade",
+          "Deku Stick Upgrade (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -23832,11 +24034,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_STONE_EMERALD",
-          "Kokiri's Emerald"
+          "Kokiri's Emerald",
+          "Kokiri's Emerald (OoT)"
         ],
         "GossipHintNames": [
           "OOT_STONE_EMERALD",
-          "Kokiri's Emerald"
+          "Kokiri's Emerald",
+          "Kokiri's Emerald (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -23851,11 +24055,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_STONE_OF_AGONY",
-          "Stone of Agony"
+          "Stone of Agony",
+          "Stone of Agony (OoT)"
         ],
         "GossipHintNames": [
           "OOT_STONE_OF_AGONY",
-          "Stone of Agony"
+          "Stone of Agony",
+          "Stone of Agony (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -23870,11 +24076,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_STONE_RUBY",
-          "Goron's Ruby"
+          "Goron's Ruby",
+          "Goron's Ruby (OoT)"
         ],
         "GossipHintNames": [
           "OOT_STONE_RUBY",
-          "Goron's Ruby"
+          "Goron's Ruby",
+          "Goron's Ruby (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -23889,11 +24097,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_STONE_SAPPHIRE",
-          "Zora's Sapphire"
+          "Zora's Sapphire",
+          "Zora's Sapphire (OoT)"
         ],
         "GossipHintNames": [
           "OOT_STONE_SAPPHIRE",
-          "Zora's Sapphire"
+          "Zora's Sapphire",
+          "Zora's Sapphire (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -23908,11 +24118,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_STRENGTH",
-          "Progressive Strength"
+          "Progressive Strength",
+          "Progressive Strength (OoT)"
         ],
         "GossipHintNames": [
           "OOT_STRENGTH",
-          "Progressive Strength"
+          "Progressive Strength",
+          "Progressive Strength (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -23946,11 +24158,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_SWORD_BIGGORON",
-          "Biggoron's Sword"
+          "Biggoron's Sword",
+          "Biggoron's Sword (OoT)"
         ],
         "GossipHintNames": [
           "OOT_SWORD_BIGGORON",
-          "Biggoron's Sword"
+          "Biggoron's Sword",
+          "Biggoron's Sword (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -23965,11 +24179,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_SWORD_GORON",
-          "Progressive Goron Sword"
+          "Progressive Goron Sword",
+          "Progressive Goron Sword (OoT)"
         ],
         "GossipHintNames": [
           "OOT_SWORD_GORON",
-          "Progressive Goron Sword"
+          "Progressive Goron Sword",
+          "Progressive Goron Sword (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -23984,11 +24200,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_SWORD_KNIFE",
-          "Giant's Knife"
+          "Giant's Knife",
+          "Giant's Knife (OoT)"
         ],
         "GossipHintNames": [
           "OOT_SWORD_KNIFE",
-          "Giant's Knife"
+          "Giant's Knife",
+          "Giant's Knife (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -24022,11 +24240,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_SWORD_MASTER",
-          "Master Sword"
+          "Master Sword",
+          "Master Sword (OoT)"
         ],
         "GossipHintNames": [
           "OOT_SWORD_MASTER",
-          "Master Sword"
+          "Master Sword",
+          "Master Sword (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -24041,11 +24261,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_TUNIC_GORON",
-          "Goron Tunic"
+          "Goron Tunic",
+          "Goron Tunic (OoT)"
         ],
         "GossipHintNames": [
           "OOT_TUNIC_GORON",
-          "Goron Tunic"
+          "Goron Tunic",
+          "Goron Tunic (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -24060,11 +24282,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_TUNIC_ZORA",
-          "Zora Tunic"
+          "Zora Tunic",
+          "Zora Tunic (OoT)"
         ],
         "GossipHintNames": [
           "OOT_TUNIC_ZORA",
-          "Zora Tunic"
+          "Zora Tunic",
+          "Zora Tunic (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -24098,11 +24322,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_WEIRD_EGG",
-          "Weird Egg"
+          "Weird Egg",
+          "Weird Egg (OoT)"
         ],
         "GossipHintNames": [
           "OOT_WEIRD_EGG",
-          "Weird Egg"
+          "Weird Egg",
+          "Weird Egg (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -24117,11 +24343,13 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_ZELDA_LETTER",
-          "Zelda's Letter"
+          "Zelda's Letter",
+          "Zelda's Letter (OoT)"
         ],
         "GossipHintNames": [
           "OOT_ZELDA_LETTER",
-          "Zelda's Letter"
+          "Zelda's Letter",
+          "Zelda's Letter (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -24905,6 +25133,25 @@
         "PriceDataNames": []
       }
     },
+    "MM_SONG_SUN": {
+      "Name": "Sun's Song (MM)",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_SONG_SUN",
+          "Sun's Song (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_SONG_SUN",
+          "Sun's Song (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
     "OOT_NUT": {
       "Name": "1 Deku Nut (OoT)",
       "MaxAmountInWorld": -1,
@@ -25072,6 +25319,25 @@
         "GossipHintNames": [
           "SHARED_STICK",
           "Deku Stick"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "SHARED_SONG_SUN": {
+      "Name": "Sun's Song",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_SONG_SUN",
+          "Sun's Song"
+        ],
+        "GossipHintNames": [
+          "SHARED_SONG_SUN",
+          "Sun's Song"
         ],
         "PriceDataNames": []
       }
@@ -28716,6 +28982,13 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "MM Ancient Castle of Ikana Roof Exterior => MM Ancient Castle of Ikana Roof Interior": {
+      "Area": "MM Ancient Castle of Ikana Roof Exterior",
+      "Exit": "MM Ancient Castle of Ikana Roof Interior",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "MM Ancient Castle of Ikana Roof Exterior => MM Ikana Castle Exterior": {
       "Area": "MM Ancient Castle of Ikana Roof Exterior",
       "Exit": "MM Ikana Castle Exterior",
@@ -28761,6 +29034,13 @@
     "MM Ancient Castle of Ikana Roof Interior => MM Ancient Castle of Ikana Wizzrobe": {
       "Area": "MM Ancient Castle of Ikana Roof Interior",
       "Exit": "MM Ancient Castle of Ikana Wizzrobe",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Ancient Castle of Ikana Roof Interior => MM Ancient Castle of Ikana Roof Exterior": {
+      "Area": "MM Ancient Castle of Ikana Roof Interior",
+      "Exit": "MM Ancient Castle of Ikana Roof Exterior",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -30398,9 +30678,9 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Great Bay Coast => MM Pirate Fortress": {
+    "MM Great Bay Coast => MM Great Bay Coast Fortress": {
       "Area": "MM Great Bay Coast",
-      "Exit": "MM Pirate Fortress",
+      "Exit": "MM Great Bay Coast Fortress",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -30439,10 +30719,23 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Great Bay Coast Captured => MM Great Bay Coast": {
-      "Area": "MM Great Bay Coast Captured",
+    "MM Great Bay Coast Fortress => MM Great Bay Coast": {
+      "Area": "MM Great Bay Coast Fortress",
       "Exit": "MM Great Bay Coast",
       "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Great Bay Coast Fortress => MM Pirate Fortress": {
+      "Area": "MM Great Bay Coast Fortress",
+      "Exit": "MM Pirate Fortress",
+      "DisplayArea": "Dungeon",
+      "DisplayExit": "Entrance to MM Pirate Fortress",
+      "EntrancePairID": {
+        "Area": "MM Pirate Fortress",
+        "Exit": "MM Great Bay Coast Fortress"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -31020,10 +31313,16 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Pirate Fortress => MM Great Bay Coast": {
+    "MM Pirate Fortress => MM Great Bay Coast Fortress": {
       "Area": "MM Pirate Fortress",
-      "Exit": "MM Great Bay Coast",
-      "RandomizableEntrance": false,
+      "Exit": "MM Great Bay Coast Fortress",
+      "DisplayArea": "Dungeon",
+      "DisplayExit": "Exit from MM Pirate Fortress",
+      "EntrancePairID": {
+        "Area": "MM Great Bay Coast Fortress",
+        "Exit": "MM Pirate Fortress"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -31037,13 +31336,6 @@
     "MM Pirate Fortress Entrance => MM Pirate Fortress": {
       "Area": "MM Pirate Fortress Entrance",
       "Exit": "MM Pirate Fortress",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    "MM Pirate Fortress Entrance => MM Great Bay Coast Captured": {
-      "Area": "MM Pirate Fortress Entrance",
-      "Exit": "MM Great Bay Coast Captured",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -33343,6 +33635,38 @@
         "PriceDataNames": []
       }
     },
+    "TRICK_OOT_LOST_WOODS_ADULT_GS": {
+      "Name": "Lost Woods Adult GS without Bean",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "TRICK_OOT_WINDMILL_HP_NOTHING": {
+      "Name": "Windmill HP as Adult with Nothing",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "TRICK_OOT_LAB_DIVE_NO_GOLD_SCALE": {
+      "Name": "Laboratory Dive without Gold Scale",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "TRICK_OOT_LAB_WALL_GS": {
+      "Name": "Laboratory Wall GS with Jump Slash",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
     "TRICK_MM_LENS": {
       "Name": "Fewer Lens Requirements (MM)",
       "SpoilerData": {
@@ -33519,6 +33843,14 @@
         "PriceDataNames": []
       }
     },
+    "TRICK_MM_IKANA_ROOF_PARKOUR": {
+      "Name": "Jump from Ikana Castle's Roof Interior to Exterior",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
     "Game_Clear": {
       "Name": "Both Games Cleared",
       "SpoilerData": {
@@ -33610,6 +33942,7 @@
     "crossWarpOot": {
       "DisplayName": "Cross-Games OoT Warp Songs",
       "CurrentValue": "false",
+      "SubCategory": "Cross Game",
       "Values": {
         "true": {
           "LogicReplacements": [],
@@ -33630,6 +33963,7 @@
     "crossWarpMm": {
       "DisplayName": "Cross-Games MM Song of Soaring",
       "CurrentValue": "none",
+      "SubCategory": "Cross Game",
       "Values": {
         "none": {
           "Name": "None",
@@ -33660,6 +33994,7 @@
     "ganonBossKey": {
       "DisplayName": "Ganon's Boss Key",
       "CurrentValue": "removed",
+      "SubCategory": "Key Shuffle",
       "Values": {
         "removed": {
           "Name": "Removed",
@@ -33703,6 +34038,7 @@
     "smallKeyShuffle": {
       "DisplayName": "Small Key Shuffle",
       "CurrentValue": "ownDungeon",
+      "SubCategory": "Key Shuffle",
       "Values": {
         "ownDungeon": {
           "Name": "Own Dungeon",
@@ -33907,6 +34243,7 @@
     "fairyOcarinaMm": {
       "DisplayName": "Fairy Ocarina in MM",
       "CurrentValue": "false",
+      "SubCategory": "Item Extensions",
       "Values": {
         "true": {
           "LogicReplacements": [],
@@ -33932,6 +34269,7 @@
     "shortHookshotMm": {
       "DisplayName": "Short Hookshot in MM",
       "CurrentValue": "false",
+      "SubCategory": "Item Extensions",
       "Values": {
         "true": {
           "LogicReplacements": [],
@@ -33948,6 +34286,34 @@
             "MM_HOOKSHOT": {
               "action": "subtract",
               "amount": 1
+            }
+          },
+          "VariableEdit": {}
+        }
+      }
+    },
+    "sunSongMm": {
+      "DisplayName": "Sun's Song in MM",
+      "CurrentValue": "false",
+      "SubCategory": "Item Extensions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {
+            "OOT_SONG_SUN": "Sun Song (OoT)"
+          },
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "MM_SONG_SUN": {
+              "action": "set",
+              "amount": 0
             }
           },
           "VariableEdit": {}
@@ -34415,6 +34781,10 @@
             "SHARED_SONG_STORMS": {
               "action": "set",
               "amount": 0
+            },
+            "SHARED_SONG_SUN": {
+              "action": "set",
+              "amount": 0
             }
           },
           "VariableEdit": {}
@@ -34430,7 +34800,9 @@
                 "OOT_SONG_EPONA": "SHARED_SONG_EPONA",
                 "MM_SONG_EPONA": "SHARED_SONG_EPONA",
                 "OOT_SONG_STORMS": "SHARED_SONG_STORMS",
-                "MM_SONG_STORMS": "SHARED_SONG_STORMS"
+                "MM_SONG_STORMS": "SHARED_SONG_STORMS",
+                "OOT_SONG_SUN": "SHARED_SONG_SUN",
+                "MM_SONG_SUN": "SHARED_SONG_SUN"
               }
             }
           ],
@@ -34458,6 +34830,14 @@
               "amount": 0
             },
             "MM_SONG_STORMS": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_SONG_SUN": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_SONG_SUN": {
               "action": "set",
               "amount": 0
             }

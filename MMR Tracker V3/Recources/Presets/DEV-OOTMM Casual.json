@@ -458,11 +458,34 @@
       "Id": "OOT Lost Woods GS Bean Ride",
       "RequiredItems": [
         "OOT_gs_night",
-        "OOT_is_adult",
-        "OOT_EVENT_BEAN_LOST_WOODS_LATE",
         "OOT Lost Woods Deep"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_is_adult",
+          "OOT_EVENT_BEAN_LOST_WOODS_LATE"
+        ],
+        [
+          "TRICK_OOT_LOST_WOODS_ADULT_GS",
+          "OOT_can_hookshot",
+          "OOT_can_longshot"
+        ],
+        [
+          "TRICK_OOT_LOST_WOODS_ADULT_GS",
+          "OOT_can_hookshot",
+          "OOT_can_use_bow"
+        ],
+        [
+          "TRICK_OOT_LOST_WOODS_ADULT_GS",
+          "OOT_can_hookshot",
+          "OOT_has_bombchu"
+        ],
+        [
+          "TRICK_OOT_LOST_WOODS_ADULT_GS",
+          "OOT_can_hookshot",
+          "OOT_can_use_din"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -2216,10 +2239,21 @@
       "Id": "OOT Lake Hylia GS Lab Wall",
       "RequiredItems": [
         "OOT_gs_night",
-        "OOT_can_boomerang",
         "OOT Lake Hylia"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_can_boomerang"
+        ],
+        [
+          "TRICK_OOT_LAB_WALL_GS",
+          "OOT_has_sword_kokiri"
+        ],
+        [
+          "TRICK_OOT_LAB_WALL_GS",
+          "OOT_has_sticks"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -2268,10 +2302,18 @@
     {
       "Id": "OOT Laboratory Dive",
       "RequiredItems": [
-        "OOT_SCALE, 2",
         "OOT Laboratory"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SCALE, 2"
+        ],
+        [
+          "TRICK_OOT_LAB_DIVE_NO_GOLD_SCALE",
+          "OOT_has_iron_boots",
+          "OOT_can_hookshot"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3121,6 +3163,10 @@
           "OOT_is_adult",
           "OOT_OCARINA",
           "OOT_SONG_TIME"
+        ],
+        [
+          "OOT_is_adult",
+          "TRICK_OOT_WINDMILL_HP_NOTHING"
         ]
       ],
       "TimeNeeded": "None",
@@ -15097,6 +15143,46 @@
       "TrickCategory": "Ocarina of Time"
     },
     {
+      "Id": "TRICK_OOT_LOST_WOODS_ADULT_GS",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": true,
+      "TrickCategory": "Ocarina of Time"
+    },
+    {
+      "Id": "TRICK_OOT_WINDMILL_HP_NOTHING",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": true,
+      "TrickCategory": "Ocarina of Time"
+    },
+    {
+      "Id": "TRICK_OOT_LAB_DIVE_NO_GOLD_SCALE",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": true,
+      "TrickCategory": "Ocarina of Time"
+    },
+    {
+      "Id": "TRICK_OOT_LAB_WALL_GS",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": true,
+      "TrickCategory": "Ocarina of Time"
+    },
+    {
       "Id": "TRICK_MM_LENS",
       "RequiredItems": [],
       "ConditionalItems": [],
@@ -15308,6 +15394,16 @@
     },
     {
       "Id": "TRICK_MM_ZORA_HALL_SCRUB_HP_NO_DEKU",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": true,
+      "TrickCategory": "Majoras Mask"
+    },
+    {
+      "Id": "TRICK_MM_IKANA_ROOF_PARKOUR",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -23785,6 +23881,17 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Ancient Castle of Ikana Roof Exterior => MM Ancient Castle of Ikana Roof Interior",
+      "RequiredItems": [
+        "MM_can_goron_bomb_jump"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Ancient Castle of Ikana Roof Exterior => MM Ikana Castle Exterior",
       "RequiredItems": [],
       "ConditionalItems": [],
@@ -23800,6 +23907,24 @@
         "MM Ancient Castle of Ikana Roof Exterior"
       ],
       "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_EVENT_IKANA_CASTLE_LIGHT2",
+      "RequiredItems": [
+        "MM_can_use_keg"
+      ],
+      "ConditionalItems": [
+        [
+          "MM Ancient Castle of Ikana Roof Interior"
+        ],
+        [
+          "MM Ancient Castle of Ikana Roof Exterior"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -23879,10 +24004,9 @@
       "IsTrick": false
     },
     {
-      "Id": "MM_EVENT_IKANA_CASTLE_LIGHT2",
+      "Id": "MM Ancient Castle of Ikana Roof Interior => MM Ancient Castle of Ikana Roof Exterior",
       "RequiredItems": [
-        "MM_can_use_keg",
-        "MM Ancient Castle of Ikana Roof Interior"
+        "TRICK_MM_IKANA_ROOF_PARKOUR"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -25707,7 +25831,8 @@
           "MM_SONG_EPONA"
         ],
         [
-          "MM_can_goron_bomb_jump"
+          "MM_can_goron_bomb_jump",
+          "MM_BOMB_BAG"
         ]
       ],
       "TimeNeeded": "None",
@@ -26980,9 +27105,7 @@
     },
     {
       "Id": "MM Snowhead => MM Snowhead Entrance",
-      "RequiredItems": [
-        "MM_EVENT_OPEN_SNOWHEAD_TEMPLE"
-      ],
+      "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -27000,9 +27123,7 @@
     },
     {
       "Id": "MM Snowhead Near Great Fairy Fountain => MM Snowhead Entrance",
-      "RequiredItems": [
-        "MM_EVENT_OPEN_SNOWHEAD_TEMPLE"
-      ],
+      "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -27250,7 +27371,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Great Bay Coast => MM Pirate Fortress",
+      "Id": "MM Great Bay Coast => MM Great Bay Coast Fortress",
       "RequiredItems": [
         "MM_MASK_ZORA"
       ],
@@ -27262,9 +27383,7 @@
     },
     {
       "Id": "MM Great Bay Coast => MM Pinnacle Rock Entrance",
-      "RequiredItems": [
-        "MM_MASK_ZORA"
-      ],
+      "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -27323,7 +27442,18 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Great Bay Coast Captured => MM Great Bay Coast",
+      "Id": "MM Great Bay Coast Fortress => MM Great Bay Coast",
+      "RequiredItems": [
+        "MM_MASK_ZORA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Great Bay Coast Fortress => MM Pirate Fortress",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -28338,7 +28468,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Pirate Fortress => MM Great Bay Coast",
+      "Id": "MM Pirate Fortress => MM Great Bay Coast Fortress",
       "RequiredItems": [
         "MM_MASK_ZORA"
       ],
@@ -28361,15 +28491,6 @@
     },
     {
       "Id": "MM Pirate Fortress Entrance => MM Pirate Fortress",
-      "RequiredItems": [],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Pirate Fortress Entrance => MM Great Bay Coast Captured",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
