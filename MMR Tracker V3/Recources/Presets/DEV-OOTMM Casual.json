@@ -87,8 +87,7 @@
     {
       "Id": "OOT Kokiri Forest Storms Grotto",
       "RequiredItems": [
-        "OOT_hidden_grotto_storms",
-        "OOT Kokiri Forest"
+        "OOT Kokiri Forest Storms Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -154,6 +153,7 @@
     {
       "Id": "OOT Kokiri Shop Item 1",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Kokiri Shop"
       ],
       "ConditionalItems": [],
@@ -165,6 +165,7 @@
     {
       "Id": "OOT Kokiri Shop Item 2",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Kokiri Shop"
       ],
       "ConditionalItems": [],
@@ -176,6 +177,7 @@
     {
       "Id": "OOT Kokiri Shop Item 3",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Kokiri Shop"
       ],
       "ConditionalItems": [],
@@ -187,6 +189,7 @@
     {
       "Id": "OOT Kokiri Shop Item 4",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Kokiri Shop"
       ],
       "ConditionalItems": [],
@@ -198,6 +201,7 @@
     {
       "Id": "OOT Kokiri Shop Item 5",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Kokiri Shop"
       ],
       "ConditionalItems": [],
@@ -209,6 +213,7 @@
     {
       "Id": "OOT Kokiri Shop Item 6",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Kokiri Shop"
       ],
       "ConditionalItems": [],
@@ -220,6 +225,7 @@
     {
       "Id": "OOT Kokiri Shop Item 7",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Kokiri Shop"
       ],
       "ConditionalItems": [],
@@ -231,6 +237,7 @@
     {
       "Id": "OOT Kokiri Shop Item 8",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Kokiri Shop"
       ],
       "ConditionalItems": [],
@@ -254,7 +261,7 @@
     {
       "Id": "OOT Zelda's Letter",
       "RequiredItems": [
-        "OOT_EVENT_MEET_ZELDA",
+        "OOT_met_zelda",
         "OOT Hyrule Castle"
       ],
       "ConditionalItems": [],
@@ -266,7 +273,7 @@
     {
       "Id": "OOT Zelda's Song",
       "RequiredItems": [
-        "OOT_EVENT_MEET_ZELDA",
+        "OOT_met_zelda",
         "OOT Hyrule Castle"
       ],
       "ConditionalItems": [],
@@ -330,6 +337,7 @@
       "RequiredItems": [
         "OOT_is_child",
         "OOT_can_hit_scrub",
+        "OOT_EVENT_RUPEES",
         "OOT Lost Woods"
       ],
       "ConditionalItems": [],
@@ -343,6 +351,7 @@
       "RequiredItems": [
         "OOT_is_child",
         "OOT_can_hit_scrub",
+        "OOT_EVENT_RUPEES",
         "OOT Lost Woods Deep"
       ],
       "ConditionalItems": [],
@@ -356,6 +365,7 @@
       "RequiredItems": [
         "OOT_is_child",
         "OOT_can_hit_scrub",
+        "OOT_EVENT_RUPEES",
         "OOT Lost Woods Deep"
       ],
       "ConditionalItems": [],
@@ -393,9 +403,9 @@
     {
       "Id": "OOT Lost Woods Grotto Scrub Nuts Upgrade",
       "RequiredItems": [
-        "OOT_has_explosives_or_hammer",
         "OOT_can_hit_scrub",
-        "OOT Lost Woods Deep"
+        "OOT_EVENT_RUPEES",
+        "OOT Lost Woods Scrub Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -406,9 +416,9 @@
     {
       "Id": "OOT Lost Woods Grotto Scrub Back",
       "RequiredItems": [
-        "OOT_has_explosives_or_hammer",
         "OOT_can_hit_scrub",
-        "OOT Lost Woods Deep"
+        "OOT_EVENT_RUPEES",
+        "OOT Lost Woods Scrub Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -419,8 +429,7 @@
     {
       "Id": "OOT Lost Woods Grotto Generic",
       "RequiredItems": [
-        "OOT_has_explosives_or_hammer",
-        "OOT Lost Woods"
+        "OOT Lost Woods Generic Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -520,19 +529,11 @@
     {
       "Id": "OOT Saria's Song",
       "RequiredItems": [
-        "OOT_EVENT_MEET_ZELDA",
+        "OOT_met_zelda",
         "OOT_is_child",
         "OOT Sacred Meadow"
       ],
-      "ConditionalItems": [
-        [
-          "OOT_OCARINA",
-          "OOT_SONG_TP_FOREST"
-        ],
-        [
-          "OOT_can_damage"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -553,8 +554,8 @@
     {
       "Id": "OOT Sacred Meadow Grotto",
       "RequiredItems": [
-        "OOT_hidden_grotto_bomb",
-        "OOT Sacred Meadow"
+        "OOT_can_damage",
+        "OOT Wolfos Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -578,22 +579,11 @@
     {
       "Id": "OOT Sacred Meadow Storms Grotto Front Scrub",
       "RequiredItems": [
-        "OOT_hidden_grotto_storms",
         "OOT_can_hit_scrub",
-        "OOT Sacred Meadow"
+        "OOT_EVENT_RUPEES",
+        "OOT Sacred Meadow Storms Grotto"
       ],
-      "ConditionalItems": [
-        [
-          "OOT_is_adult"
-        ],
-        [
-          "OOT_can_damage"
-        ],
-        [
-          "OOT_OCARINA",
-          "OOT_SONG_TP_FOREST"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -602,22 +592,11 @@
     {
       "Id": "OOT Sacred Meadow Storms Grotto Back Scrub",
       "RequiredItems": [
-        "OOT_hidden_grotto_storms",
         "OOT_can_hit_scrub",
-        "OOT Sacred Meadow"
+        "OOT_EVENT_RUPEES",
+        "OOT Sacred Meadow Storms Grotto"
       ],
-      "ConditionalItems": [
-        [
-          "OOT_is_adult"
-        ],
-        [
-          "OOT_can_damage"
-        ],
-        [
-          "OOT_OCARINA",
-          "OOT_SONG_TP_FOREST"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -696,7 +675,7 @@
     {
       "Id": "OOT Kakariko Impa House HP",
       "RequiredItems": [
-        "OOT Kakariko Rooftop"
+        "OOT Impa House Back"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -707,10 +686,16 @@
     {
       "Id": "OOT Kakariko Grotto Front",
       "RequiredItems": [
-        "OOT_hidden_grotto_bomb",
-        "OOT Kakariko"
+        "OOT ReDead Grotto"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_can_use_sticks"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -719,7 +704,7 @@
     {
       "Id": "OOT Kakariko Grotto Back",
       "RequiredItems": [
-        "OOT Kakariko"
+        "OOT Kakariko Generic Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -804,7 +789,7 @@
           "OOT_can_use_slingshot"
         ],
         [
-          "OOT_has_explosives"
+          "OOT_has_bombchu"
         ]
       ],
       "TimeNeeded": "None",
@@ -817,7 +802,7 @@
       "RequiredItems": [
         "OOT_is_adult",
         "OOT_ODD_MUSHROOM",
-        "OOT Kakariko"
+        "OOT Kakariko Granny Shop"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -829,10 +814,16 @@
       "Id": "OOT Kakariko Cow",
       "RequiredItems": [
         "OOT_OCARINA",
-        "OOT_SONG_EPONA",
-        "OOT Kakariko"
+        "OOT_SONG_EPONA"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT Impa House Back"
+        ],
+        [
+          "OOT Impa House Front"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -841,6 +832,7 @@
     {
       "Id": "OOT Kakariko Bazaar Item 1",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Kakariko Bazaar"
       ],
       "ConditionalItems": [],
@@ -852,6 +844,7 @@
     {
       "Id": "OOT Kakariko Bazaar Item 2",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Kakariko Bazaar"
       ],
       "ConditionalItems": [],
@@ -863,6 +856,7 @@
     {
       "Id": "OOT Kakariko Bazaar Item 3",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Kakariko Bazaar"
       ],
       "ConditionalItems": [],
@@ -874,6 +868,7 @@
     {
       "Id": "OOT Kakariko Bazaar Item 4",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Kakariko Bazaar"
       ],
       "ConditionalItems": [],
@@ -885,6 +880,7 @@
     {
       "Id": "OOT Kakariko Bazaar Item 5",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Kakariko Bazaar"
       ],
       "ConditionalItems": [],
@@ -896,6 +892,7 @@
     {
       "Id": "OOT Kakariko Bazaar Item 6",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Kakariko Bazaar"
       ],
       "ConditionalItems": [],
@@ -907,6 +904,7 @@
     {
       "Id": "OOT Kakariko Bazaar Item 7",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Kakariko Bazaar"
       ],
       "ConditionalItems": [],
@@ -918,6 +916,7 @@
     {
       "Id": "OOT Kakariko Bazaar Item 8",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Kakariko Bazaar"
       ],
       "ConditionalItems": [],
@@ -930,6 +929,7 @@
       "Id": "OOT Kakariko Potion Shop Item 1",
       "RequiredItems": [
         "OOT_WALLET",
+        "OOT_EVENT_RUPEES",
         "OOT Kakariko Potion Shop"
       ],
       "ConditionalItems": [],
@@ -941,6 +941,7 @@
     {
       "Id": "OOT Kakariko Potion Shop Item 2",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Kakariko Potion Shop"
       ],
       "ConditionalItems": [],
@@ -952,6 +953,7 @@
     {
       "Id": "OOT Kakariko Potion Shop Item 3",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Kakariko Potion Shop"
       ],
       "ConditionalItems": [],
@@ -963,6 +965,7 @@
     {
       "Id": "OOT Kakariko Potion Shop Item 4",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Kakariko Potion Shop"
       ],
       "ConditionalItems": [],
@@ -975,6 +978,7 @@
       "Id": "OOT Kakariko Potion Shop Item 5",
       "RequiredItems": [
         "OOT_WALLET, 2",
+        "OOT_EVENT_RUPEES",
         "OOT Kakariko Potion Shop"
       ],
       "ConditionalItems": [],
@@ -986,6 +990,7 @@
     {
       "Id": "OOT Kakariko Potion Shop Item 6",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Kakariko Potion Shop"
       ],
       "ConditionalItems": [],
@@ -997,6 +1002,7 @@
     {
       "Id": "OOT Kakariko Potion Shop Item 7",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Kakariko Potion Shop"
       ],
       "ConditionalItems": [],
@@ -1008,6 +1014,7 @@
     {
       "Id": "OOT Kakariko Potion Shop Item 8",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Kakariko Potion Shop"
       ],
       "ConditionalItems": [],
@@ -1020,6 +1027,7 @@
       "Id": "OOT Graveyard Dampe Game",
       "RequiredItems": [
         "OOT_is_child",
+        "OOT_EVENT_RUPEES",
         "OOT Graveyard"
       ],
       "ConditionalItems": [],
@@ -1033,7 +1041,7 @@
       "RequiredItems": [
         "OOT_OCARINA",
         "OOT_SONG_SUN",
-        "OOT Graveyard"
+        "OOT Graveyard ReDead Grave"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -1067,7 +1075,7 @@
     {
       "Id": "OOT Graveyard Fairy Tomb",
       "RequiredItems": [
-        "OOT Graveyard"
+        "OOT Graveyard Shield Grave"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -1078,8 +1086,7 @@
     {
       "Id": "OOT Graveyard Dampe Tomb Reward 1",
       "RequiredItems": [
-        "OOT_is_adult",
-        "OOT Graveyard"
+        "OOT Dampe Grave"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -1091,7 +1098,7 @@
       "Id": "OOT Graveyard Dampe Tomb Reward 2",
       "RequiredItems": [
         "OOT_is_adult",
-        "OOT Graveyard"
+        "OOT Dampe Grave"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -1209,8 +1216,7 @@
     {
       "Id": "OOT Death Mountain Grotto",
       "RequiredItems": [
-        "OOT_hidden_grotto_storms",
-        "OOT Death Mountain"
+        "OOT Death Mountain Storms Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -1273,10 +1279,9 @@
     {
       "Id": "OOT Death Mountain Cow",
       "RequiredItems": [
-        "OOT_has_explosives_or_hammer",
         "OOT_OCARINA",
         "OOT_SONG_EPONA",
-        "OOT Death Mountain"
+        "OOT Death Mountain Cow Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -1413,6 +1418,7 @@
       "RequiredItems": [
         "OOT_is_adult",
         "OOT_WALLET",
+        "OOT_EVENT_RUPEES",
         "OOT Goron City"
       ],
       "ConditionalItems": [
@@ -1456,23 +1462,11 @@
     {
       "Id": "OOT Goron City Grotto Left Scrub",
       "RequiredItems": [
-        "OOT_is_adult",
-        "OOT Goron City"
+        "OOT_can_hit_scrub",
+        "OOT_EVENT_RUPEES",
+        "OOT Goron City Grotto"
       ],
-      "ConditionalItems": [
-        [
-          "OOT_OCARINA",
-          "OOT_SONG_TIME"
-        ],
-        [
-          "OOT_can_hookshot",
-          "OOT_has_tunic_goron_strict"
-        ],
-        [
-          "OOT_can_hookshot",
-          "OOT_can_use_nayru"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -1481,23 +1475,11 @@
     {
       "Id": "OOT Goron City Grotto Center Scrub",
       "RequiredItems": [
-        "OOT_is_adult",
-        "OOT Goron City"
+        "OOT_can_hit_scrub",
+        "OOT_EVENT_RUPEES",
+        "OOT Goron City Grotto"
       ],
-      "ConditionalItems": [
-        [
-          "OOT_OCARINA",
-          "OOT_SONG_TIME"
-        ],
-        [
-          "OOT_can_hookshot",
-          "OOT_has_tunic_goron_strict"
-        ],
-        [
-          "OOT_can_hookshot",
-          "OOT_can_use_nayru"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -1506,23 +1488,11 @@
     {
       "Id": "OOT Goron City Grotto Right Scrub",
       "RequiredItems": [
-        "OOT_is_adult",
-        "OOT Goron City"
+        "OOT_can_hit_scrub",
+        "OOT_EVENT_RUPEES",
+        "OOT Goron City Grotto"
       ],
-      "ConditionalItems": [
-        [
-          "OOT_OCARINA",
-          "OOT_SONG_TIME"
-        ],
-        [
-          "OOT_can_hookshot",
-          "OOT_has_tunic_goron_strict"
-        ],
-        [
-          "OOT_can_hookshot",
-          "OOT_can_use_nayru"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -1531,6 +1501,7 @@
     {
       "Id": "OOT Goron Shop Item 1",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Goron Shop"
       ],
       "ConditionalItems": [],
@@ -1542,6 +1513,7 @@
     {
       "Id": "OOT Goron Shop Item 2",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Goron Shop"
       ],
       "ConditionalItems": [],
@@ -1553,6 +1525,7 @@
     {
       "Id": "OOT Goron Shop Item 3",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Goron Shop"
       ],
       "ConditionalItems": [],
@@ -1565,6 +1538,7 @@
       "Id": "OOT Goron Shop Item 4",
       "RequiredItems": [
         "OOT_WALLET",
+        "OOT_EVENT_RUPEES",
         "OOT Goron Shop"
       ],
       "ConditionalItems": [],
@@ -1576,6 +1550,7 @@
     {
       "Id": "OOT Goron Shop Item 5",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Goron Shop"
       ],
       "ConditionalItems": [],
@@ -1587,6 +1562,7 @@
     {
       "Id": "OOT Goron Shop Item 6",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Goron Shop"
       ],
       "ConditionalItems": [],
@@ -1598,6 +1574,7 @@
     {
       "Id": "OOT Goron Shop Item 7",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Goron Shop"
       ],
       "ConditionalItems": [],
@@ -1610,6 +1587,7 @@
       "Id": "OOT Goron Shop Item 8",
       "RequiredItems": [
         "OOT_WALLET",
+        "OOT_EVENT_RUPEES",
         "OOT Goron Shop"
       ],
       "ConditionalItems": [],
@@ -1664,8 +1642,7 @@
     {
       "Id": "OOT Death Mountain Crater Grotto",
       "RequiredItems": [
-        "OOT_has_explosives_or_hammer",
-        "OOT Death Mountain Crater Top"
+        "OOT Death Mountain Crater Generic Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -1689,8 +1666,9 @@
     {
       "Id": "OOT Death Mountain Crater Grotto Left Scrub",
       "RequiredItems": [
-        "OOT_can_hammer",
-        "OOT Death Mountain Crater Bottom"
+        "OOT_can_hit_scrub",
+        "OOT_EVENT_RUPEES",
+        "OOT Death Mountain Crater Scrub Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -1701,8 +1679,9 @@
     {
       "Id": "OOT Death Mountain Crater Grotto Center Scrub",
       "RequiredItems": [
-        "OOT_can_hammer",
-        "OOT Death Mountain Crater Bottom"
+        "OOT_can_hit_scrub",
+        "OOT_EVENT_RUPEES",
+        "OOT Death Mountain Crater Scrub Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -1713,8 +1692,9 @@
     {
       "Id": "OOT Death Mountain Crater Grotto Right Scrub",
       "RequiredItems": [
-        "OOT_can_hammer",
-        "OOT Death Mountain Crater Bottom"
+        "OOT_can_hit_scrub",
+        "OOT_EVENT_RUPEES",
+        "OOT Death Mountain Crater Scrub Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -1788,6 +1768,7 @@
       "Id": "OOT Zora River Bean Seller",
       "RequiredItems": [
         "OOT_is_child",
+        "OOT_EVENT_RUPEES",
         "OOT Zora River"
       ],
       "ConditionalItems": [],
@@ -1832,7 +1813,7 @@
     {
       "Id": "OOT Zora River Grotto",
       "RequiredItems": [
-        "OOT Zora River"
+        "OOT Zora River Open Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -1843,9 +1824,9 @@
     {
       "Id": "OOT Zora River Storms Grotto Front Scrub",
       "RequiredItems": [
-        "OOT_hidden_grotto_storms",
         "OOT_can_hit_scrub",
-        "OOT Zora River"
+        "OOT_EVENT_RUPEES",
+        "OOT Zora River Storms Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -1856,9 +1837,9 @@
     {
       "Id": "OOT Zora River Storms Grotto Back Scrub",
       "RequiredItems": [
-        "OOT_hidden_grotto_storms",
         "OOT_can_hit_scrub",
-        "OOT Zora River"
+        "OOT_EVENT_RUPEES",
+        "OOT Zora River Storms Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -1937,6 +1918,7 @@
       "Id": "OOT Zora Domain Diving Game",
       "RequiredItems": [
         "OOT_is_child",
+        "OOT_EVENT_RUPEES",
         "OOT Zora Domain"
       ],
       "ConditionalItems": [],
@@ -1995,6 +1977,7 @@
     {
       "Id": "OOT Zora Shop Item 1",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Zora Shop"
       ],
       "ConditionalItems": [],
@@ -2006,6 +1989,7 @@
     {
       "Id": "OOT Zora Shop Item 2",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Zora Shop"
       ],
       "ConditionalItems": [],
@@ -2018,6 +2002,7 @@
       "Id": "OOT Zora Shop Item 3",
       "RequiredItems": [
         "OOT_WALLET",
+        "OOT_EVENT_RUPEES",
         "OOT Zora Shop"
       ],
       "ConditionalItems": [],
@@ -2029,6 +2014,7 @@
     {
       "Id": "OOT Zora Shop Item 4",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Zora Shop"
       ],
       "ConditionalItems": [],
@@ -2040,6 +2026,7 @@
     {
       "Id": "OOT Zora Shop Item 5",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Zora Shop"
       ],
       "ConditionalItems": [],
@@ -2051,6 +2038,7 @@
     {
       "Id": "OOT Zora Shop Item 6",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Zora Shop"
       ],
       "ConditionalItems": [],
@@ -2063,6 +2051,7 @@
       "Id": "OOT Zora Shop Item 7",
       "RequiredItems": [
         "OOT_WALLET, 2",
+        "OOT_EVENT_RUPEES",
         "OOT Zora Shop"
       ],
       "ConditionalItems": [],
@@ -2074,6 +2063,7 @@
     {
       "Id": "OOT Zora Shop Item 8",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Zora Shop"
       ],
       "ConditionalItems": [],
@@ -2203,7 +2193,8 @@
       "Id": "OOT Lake Hylia Grotto Left Scrub",
       "RequiredItems": [
         "OOT_can_hit_scrub",
-        "OOT Lake Hylia"
+        "OOT_EVENT_RUPEES",
+        "OOT Lake Hylia Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -2215,7 +2206,8 @@
       "Id": "OOT Lake Hylia Grotto Center Scrub",
       "RequiredItems": [
         "OOT_can_hit_scrub",
-        "OOT Lake Hylia"
+        "OOT_EVENT_RUPEES",
+        "OOT Lake Hylia Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -2227,7 +2219,8 @@
       "Id": "OOT Lake Hylia Grotto Right Scrub",
       "RequiredItems": [
         "OOT_can_hit_scrub",
-        "OOT Lake Hylia"
+        "OOT_EVENT_RUPEES",
+        "OOT Lake Hylia Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -2349,6 +2342,7 @@
       "Id": "OOT Fishing Pond Child",
       "RequiredItems": [
         "OOT_is_child",
+        "OOT_EVENT_RUPEES",
         "OOT Fishing Pond"
       ],
       "ConditionalItems": [],
@@ -2361,6 +2355,7 @@
       "Id": "OOT Fishing Pond Adult",
       "RequiredItems": [
         "OOT_is_adult",
+        "OOT_EVENT_RUPEES",
         "OOT Fishing Pond"
       ],
       "ConditionalItems": [],
@@ -2399,7 +2394,8 @@
       "Id": "OOT Lon Lon Ranch Talon Bottle",
       "RequiredItems": [
         "OOT_is_child",
-        "OOT_EVENT_TALON_CHILD",
+        "OOT_woke_talon_child",
+        "OOT_EVENT_RUPEES",
         "OOT Lon Lon Ranch House"
       ],
       "ConditionalItems": [],
@@ -2516,7 +2512,7 @@
       "RequiredItems": [
         "OOT_is_child",
         "OOT_can_hit_scrub",
-        "OOT Lon Lon Ranch"
+        "OOT Lon Lon Ranch Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -2529,7 +2525,7 @@
       "RequiredItems": [
         "OOT_is_child",
         "OOT_can_hit_scrub",
-        "OOT Lon Lon Ranch"
+        "OOT Lon Lon Ranch Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -2542,7 +2538,7 @@
       "RequiredItems": [
         "OOT_is_child",
         "OOT_can_hit_scrub",
-        "OOT Lon Lon Ranch"
+        "OOT Lon Lon Ranch Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -2577,9 +2573,9 @@
     {
       "Id": "OOT Hyrule Field Grotto Scrub HP",
       "RequiredItems": [
-        "OOT_hidden_grotto_bomb",
         "OOT_can_hit_scrub",
-        "OOT Hyrule Field"
+        "OOT_EVENT_RUPEES",
+        "OOT Hyrule Field Scrub Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -2590,8 +2586,7 @@
     {
       "Id": "OOT Hyrule Field Grotto Southeast",
       "RequiredItems": [
-        "OOT_has_explosives_or_hammer",
-        "OOT Hyrule Field"
+        "OOT Hyrule Field Southeast Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -2602,7 +2597,7 @@
     {
       "Id": "OOT Hyrule Field Grotto Open",
       "RequiredItems": [
-        "OOT Hyrule Field"
+        "OOT Hyrule Field Open Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -2613,8 +2608,7 @@
     {
       "Id": "OOT Hyrule Field Grotto Market",
       "RequiredItems": [
-        "OOT_has_explosives_or_hammer",
-        "OOT Hyrule Field"
+        "OOT Hyrule Field Grotto Near Market"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -2625,9 +2619,8 @@
     {
       "Id": "OOT Hyrule Field Grotto Tektite HP",
       "RequiredItems": [
-        "OOT_hidden_grotto_bomb",
         "OOT_can_dive_big",
-        "OOT Hyrule Field"
+        "OOT Hyrule Field Tektite Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -2638,9 +2631,8 @@
     {
       "Id": "OOT Hyrule Field Grotto Near Kakariko GS",
       "RequiredItems": [
-        "OOT_hidden_grotto_bomb",
         "OOT_can_collect_distance",
-        "OOT Hyrule Field"
+        "OOT Hyrule Field Grotto Near Kak"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -2653,17 +2645,9 @@
       "RequiredItems": [
         "OOT_can_collect_distance",
         "OOT_has_fire",
-        "OOT Hyrule Field"
+        "OOT Hyrule Field Grotto Near GV"
       ],
-      "ConditionalItems": [
-        [
-          "OOT_is_child",
-          "OOT_hidden_grotto_bomb"
-        ],
-        [
-          "OOT_can_hammer"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -2675,17 +2659,9 @@
         "OOT_has_fire",
         "OOT_OCARINA",
         "OOT_SONG_EPONA",
-        "OOT Hyrule Field"
+        "OOT Hyrule Field Grotto Near GV"
       ],
-      "ConditionalItems": [
-        [
-          "OOT_is_child",
-          "OOT_hidden_grotto_bomb"
-        ],
-        [
-          "OOT_can_hammer"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -2730,6 +2706,7 @@
     {
       "Id": "OOT Market Bazaar Item 1",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Market Bazaar"
       ],
       "ConditionalItems": [],
@@ -2741,6 +2718,7 @@
     {
       "Id": "OOT Market Bazaar Item 2",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Market Bazaar"
       ],
       "ConditionalItems": [],
@@ -2752,6 +2730,7 @@
     {
       "Id": "OOT Market Bazaar Item 3",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Market Bazaar"
       ],
       "ConditionalItems": [],
@@ -2763,6 +2742,7 @@
     {
       "Id": "OOT Market Bazaar Item 4",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Market Bazaar"
       ],
       "ConditionalItems": [],
@@ -2774,6 +2754,7 @@
     {
       "Id": "OOT Market Bazaar Item 5",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Market Bazaar"
       ],
       "ConditionalItems": [],
@@ -2785,6 +2766,7 @@
     {
       "Id": "OOT Market Bazaar Item 6",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Market Bazaar"
       ],
       "ConditionalItems": [],
@@ -2796,6 +2778,7 @@
     {
       "Id": "OOT Market Bazaar Item 7",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Market Bazaar"
       ],
       "ConditionalItems": [],
@@ -2807,6 +2790,7 @@
     {
       "Id": "OOT Market Bazaar Item 8",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Market Bazaar"
       ],
       "ConditionalItems": [],
@@ -2819,6 +2803,7 @@
       "Id": "OOT Market Potion Shop Item 1",
       "RequiredItems": [
         "OOT_WALLET",
+        "OOT_EVENT_RUPEES",
         "OOT Market Potion Shop"
       ],
       "ConditionalItems": [],
@@ -2830,6 +2815,7 @@
     {
       "Id": "OOT Market Potion Shop Item 2",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Market Potion Shop"
       ],
       "ConditionalItems": [],
@@ -2841,6 +2827,7 @@
     {
       "Id": "OOT Market Potion Shop Item 3",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Market Potion Shop"
       ],
       "ConditionalItems": [],
@@ -2852,6 +2839,7 @@
     {
       "Id": "OOT Market Potion Shop Item 4",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Market Potion Shop"
       ],
       "ConditionalItems": [],
@@ -2864,6 +2852,7 @@
       "Id": "OOT Market Potion Shop Item 5",
       "RequiredItems": [
         "OOT_WALLET, 2",
+        "OOT_EVENT_RUPEES",
         "OOT Market Potion Shop"
       ],
       "ConditionalItems": [],
@@ -2875,6 +2864,7 @@
     {
       "Id": "OOT Market Potion Shop Item 6",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Market Potion Shop"
       ],
       "ConditionalItems": [],
@@ -2886,6 +2876,7 @@
     {
       "Id": "OOT Market Potion Shop Item 7",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Market Potion Shop"
       ],
       "ConditionalItems": [],
@@ -2897,6 +2888,7 @@
     {
       "Id": "OOT Market Potion Shop Item 8",
       "RequiredItems": [
+        "OOT_EVENT_RUPEES",
         "OOT Market Potion Shop"
       ],
       "ConditionalItems": [],
@@ -2909,6 +2901,7 @@
       "Id": "OOT Market Bombchu Shop Item 1",
       "RequiredItems": [
         "OOT_WALLET",
+        "OOT_EVENT_RUPEES",
         "OOT Market Bombchu Shop"
       ],
       "ConditionalItems": [],
@@ -2921,6 +2914,7 @@
       "Id": "OOT Market Bombchu Shop Item 2",
       "RequiredItems": [
         "OOT_WALLET",
+        "OOT_EVENT_RUPEES",
         "OOT Market Bombchu Shop"
       ],
       "ConditionalItems": [],
@@ -2933,6 +2927,7 @@
       "Id": "OOT Market Bombchu Shop Item 3",
       "RequiredItems": [
         "OOT_WALLET",
+        "OOT_EVENT_RUPEES",
         "OOT Market Bombchu Shop"
       ],
       "ConditionalItems": [],
@@ -2945,6 +2940,7 @@
       "Id": "OOT Market Bombchu Shop Item 4",
       "RequiredItems": [
         "OOT_WALLET",
+        "OOT_EVENT_RUPEES",
         "OOT Market Bombchu Shop"
       ],
       "ConditionalItems": [],
@@ -2957,6 +2953,7 @@
       "Id": "OOT Market Bombchu Shop Item 5",
       "RequiredItems": [
         "OOT_WALLET",
+        "OOT_EVENT_RUPEES",
         "OOT Market Bombchu Shop"
       ],
       "ConditionalItems": [],
@@ -2969,6 +2966,7 @@
       "Id": "OOT Market Bombchu Shop Item 6",
       "RequiredItems": [
         "OOT_WALLET",
+        "OOT_EVENT_RUPEES",
         "OOT Market Bombchu Shop"
       ],
       "ConditionalItems": [],
@@ -2981,6 +2979,7 @@
       "Id": "OOT Market Bombchu Shop Item 7",
       "RequiredItems": [
         "OOT_WALLET",
+        "OOT_EVENT_RUPEES",
         "OOT Market Bombchu Shop"
       ],
       "ConditionalItems": [],
@@ -2993,6 +2992,7 @@
       "Id": "OOT Market Bombchu Shop Item 8",
       "RequiredItems": [
         "OOT_WALLET",
+        "OOT_EVENT_RUPEES",
         "OOT Market Bombchu Shop"
       ],
       "ConditionalItems": [],
@@ -3004,7 +3004,8 @@
     {
       "Id": "OOT Bombchu Bowling Reward 1",
       "RequiredItems": [
-        "OOT_has_explosives",
+        "OOT_BOMB_BAG",
+        "OOT_EVENT_RUPEES",
         "OOT Bombchu Bowling"
       ],
       "ConditionalItems": [],
@@ -3016,7 +3017,8 @@
     {
       "Id": "OOT Bombchu Bowling Reward 2",
       "RequiredItems": [
-        "OOT_has_explosives",
+        "OOT_BOMB_BAG",
+        "OOT_EVENT_RUPEES",
         "OOT Bombchu Bowling"
       ],
       "ConditionalItems": [],
@@ -3029,6 +3031,7 @@
       "Id": "OOT Treasure Game HP",
       "RequiredItems": [
         "OOT_has_lens_strict",
+        "OOT_EVENT_RUPEES",
         "OOT Treasure Game"
       ],
       "ConditionalItems": [],
@@ -3041,6 +3044,7 @@
       "Id": "OOT Shooting Gallery Child",
       "RequiredItems": [
         "OOT_is_child",
+        "OOT_EVENT_RUPEES",
         "OOT Shooting Gallery Child"
       ],
       "ConditionalItems": [],
@@ -3053,6 +3057,7 @@
       "Id": "OOT Shooting Gallery Adult",
       "RequiredItems": [
         "OOT_can_use_bow",
+        "OOT_EVENT_RUPEES",
         "OOT Shooting Gallery Adult"
       ],
       "ConditionalItems": [],
@@ -3076,10 +3081,9 @@
     {
       "Id": "OOT Hyrule Castle GS Grotto",
       "RequiredItems": [
-        "OOT_hidden_grotto_storms",
-        "OOT_has_explosives",
-        "OOT_can_boomerang",
-        "OOT Hyrule Castle"
+        "OOT_has_explosives_or_hammer",
+        "OOT_can_collect_distance",
+        "OOT Hyrule Castle Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3153,19 +3157,16 @@
     {
       "Id": "OOT Windmill HP",
       "RequiredItems": [
-        "OOT Kakariko"
+        "OOT Windmill"
       ],
       "ConditionalItems": [
         [
           "OOT_can_boomerang"
         ],
         [
-          "OOT_is_adult",
-          "OOT_OCARINA",
-          "OOT_SONG_TIME"
+          "OOT_EVENT_WINDMILL_TOP"
         ],
         [
-          "OOT_is_adult",
           "TRICK_OOT_WINDMILL_HP_NOTHING"
         ]
       ],
@@ -3179,7 +3180,7 @@
       "RequiredItems": [
         "OOT_is_adult",
         "OOT_OCARINA",
-        "OOT Kakariko"
+        "OOT Windmill"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3244,9 +3245,9 @@
     {
       "Id": "OOT Gerudo Valley Grotto Front Scrub",
       "RequiredItems": [
-        "OOT_hidden_grotto_storms",
         "OOT_can_hit_scrub",
-        "OOT Gerudo Valley After Bridge"
+        "OOT_EVENT_RUPEES",
+        "OOT Gerudo Valley Storms Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3257,9 +3258,9 @@
     {
       "Id": "OOT Gerudo Valley Grotto Back Scrub",
       "RequiredItems": [
-        "OOT_hidden_grotto_storms",
         "OOT_can_hit_scrub",
-        "OOT Gerudo Valley After Bridge"
+        "OOT_EVENT_RUPEES",
+        "OOT Gerudo Valley Storms Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3360,6 +3361,7 @@
         "OOT_EVENT_EPONA",
         "OOT_can_use_bow",
         "OOT_GERUDO_CARD",
+        "OOT_EVENT_RUPEES",
         "OOT Gerudo Fortress Exterior"
       ],
       "ConditionalItems": [],
@@ -3374,6 +3376,7 @@
         "OOT_EVENT_EPONA",
         "OOT_can_use_bow",
         "OOT_GERUDO_CARD",
+        "OOT_EVENT_RUPEES",
         "OOT Gerudo Fortress Exterior"
       ],
       "ConditionalItems": [],
@@ -3460,9 +3463,9 @@
     {
       "Id": "OOT Desert Colossus Grotto Front Scrub",
       "RequiredItems": [
-        "OOT_can_lift_silver",
         "OOT_can_hit_scrub",
-        "OOT Desert Colossus"
+        "OOT_EVENT_RUPEES",
+        "OOT Desert Colossus Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3473,9 +3476,9 @@
     {
       "Id": "OOT Desert Colossus Grotto Back Scrub",
       "RequiredItems": [
-        "OOT_can_lift_silver",
         "OOT_can_hit_scrub",
-        "OOT Desert Colossus"
+        "OOT_EVENT_RUPEES",
+        "OOT Desert Colossus Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3592,10 +3595,9 @@
     {
       "Id": "OOT Great Fairy Magic Upgrade",
       "RequiredItems": [
-        "OOT_has_explosives_or_hammer",
         "OOT_OCARINA",
         "OOT_SONG_ZELDA",
-        "OOT Death Mountain Summit"
+        "OOT Fairy Fountain Magic"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3606,10 +3608,9 @@
     {
       "Id": "OOT Great Fairy Magic Upgrade 2",
       "RequiredItems": [
-        "OOT_can_hammer",
         "OOT_OCARINA",
         "OOT_SONG_ZELDA",
-        "OOT Death Mountain Crater Bottom"
+        "OOT Fairy Fountain Double Magic"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3620,10 +3621,9 @@
     {
       "Id": "OOT Great Fairy Defense Upgrade",
       "RequiredItems": [
-        "OOT_can_lift_gold",
         "OOT_OCARINA",
         "OOT_SONG_ZELDA",
-        "OOT Ganon Castle Exterior"
+        "OOT Fairy Fountain Defense"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3634,10 +3634,9 @@
     {
       "Id": "OOT Great Fairy Din's Fire",
       "RequiredItems": [
-        "OOT_has_explosives",
         "OOT_OCARINA",
         "OOT_SONG_ZELDA",
-        "OOT Hyrule Castle"
+        "OOT Fairy Fountain Din"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3648,10 +3647,9 @@
     {
       "Id": "OOT Great Fairy Farore's Wind",
       "RequiredItems": [
-        "OOT_has_explosives",
         "OOT_OCARINA",
         "OOT_SONG_ZELDA",
-        "OOT Zora Fountain"
+        "OOT Fairy Fountain Farore"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3662,10 +3660,9 @@
     {
       "Id": "OOT Great Fairy Nayru's Love",
       "RequiredItems": [
-        "OOT_has_explosives",
         "OOT_OCARINA",
         "OOT_SONG_ZELDA",
-        "OOT Desert Colossus"
+        "OOT Fairy Fountain Nayru"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -3935,6 +3932,7 @@
       "Id": "OOT Dodongo Cavern Lobby Scrub",
       "RequiredItems": [
         "OOT_can_hit_scrub",
+        "OOT_EVENT_RUPEES",
         "OOT Dodongo Cavern Main",
         "option{DCMQ, false}"
       ],
@@ -3948,6 +3946,7 @@
       "Id": "OOT Dodongo Cavern Green Side Room Scrub",
       "RequiredItems": [
         "OOT_can_hit_scrub",
+        "OOT_EVENT_RUPEES",
         "OOT Dodongo Cavern Green Side Room",
         "option{DCMQ, false}"
       ],
@@ -3961,6 +3960,7 @@
       "Id": "OOT Dodongo Cavern Bomb Bag Side Room Left Scrub",
       "RequiredItems": [
         "OOT_can_hit_scrub",
+        "OOT_EVENT_RUPEES",
         "OOT Dodongo Cavern Bomb Bag Side Room",
         "option{DCMQ, false}"
       ],
@@ -3974,6 +3974,7 @@
       "Id": "OOT Dodongo Cavern Bomb Bag Side Room Right Scrub",
       "RequiredItems": [
         "OOT_can_hit_scrub",
+        "OOT_EVENT_RUPEES",
         "OOT Dodongo Cavern Bomb Bag Side Room",
         "option{DCMQ, false}"
       ],
@@ -4142,6 +4143,7 @@
       "Id": "OOT Jabu-Jabu Scrub",
       "RequiredItems": [
         "OOT_can_hit_scrub",
+        "OOT_EVENT_RUPEES",
         "OOT Jabu-Jabu Main",
         "option{JJMQ, false}"
       ],
@@ -6801,7 +6803,7 @@
       "Id": "OOT Ganon Castle Spirit Chest 2",
       "RequiredItems": [
         "OOT_can_hookshot",
-        "OOT_has_explosives",
+        "OOT_has_bombchu",
         "OOT_has_lens",
         "OOT Ganon Castle Spirit",
         "option{GanonMQ, false}"
@@ -6829,6 +6831,7 @@
       "RequiredItems": [
         "OOT_has_lens",
         "OOT_can_hit_scrub",
+        "OOT_EVENT_RUPEES",
         "OOT Ganon Castle Main",
         "option{GanonMQ, false}"
       ],
@@ -6843,6 +6846,7 @@
       "RequiredItems": [
         "OOT_has_lens",
         "OOT_can_hit_scrub",
+        "OOT_EVENT_RUPEES",
         "OOT Ganon Castle Main",
         "option{GanonMQ, false}"
       ],
@@ -6857,6 +6861,7 @@
       "RequiredItems": [
         "OOT_has_lens",
         "OOT_can_hit_scrub",
+        "OOT_EVENT_RUPEES",
         "OOT Ganon Castle Main",
         "option{GanonMQ, false}"
       ],
@@ -6871,6 +6876,7 @@
       "RequiredItems": [
         "OOT_has_lens",
         "OOT_can_hit_scrub",
+        "OOT_EVENT_RUPEES",
         "OOT Ganon Castle Main",
         "option{GanonMQ, false}"
       ],
@@ -7000,6 +7006,7 @@
       "Id": "OOT MQ Deku Tree Scrub",
       "RequiredItems": [
         "OOT_can_hit_scrub",
+        "OOT_EVENT_RUPEES",
         "OOT Deku Tree Basement Ledge",
         "option{DTMQ, true}"
       ],
@@ -7175,6 +7182,7 @@
       "Id": "OOT MQ Dodongo Cavern Lobby Scrub Front",
       "RequiredItems": [
         "OOT_can_hit_scrub",
+        "OOT_EVENT_RUPEES",
         "OOT Dodongo Cavern Main",
         "option{DCMQ, true}"
       ],
@@ -7188,6 +7196,7 @@
       "Id": "OOT MQ Dodongo Cavern Lobby Scrub Back",
       "RequiredItems": [
         "OOT_can_hit_scrub",
+        "OOT_EVENT_RUPEES",
         "OOT Dodongo Cavern Main",
         "option{DCMQ, true}"
       ],
@@ -7201,6 +7210,7 @@
       "Id": "OOT MQ Dodongo Cavern Staircase Scrub",
       "RequiredItems": [
         "OOT_can_hit_scrub",
+        "OOT_EVENT_RUPEES",
         "OOT Dodongo Cavern Upper Staircase",
         "option{DCMQ, true}"
       ],
@@ -7214,6 +7224,7 @@
       "Id": "OOT MQ Dodongo Cavern Tunnel Side Scrub",
       "RequiredItems": [
         "OOT_can_hit_scrub",
+        "OOT_EVENT_RUPEES",
         "OOT Dodongo Cavern Lower Tunnel",
         "option{DCMQ, true}"
       ],
@@ -9477,7 +9488,7 @@
       "Id": "OOT MQ Ganon Castle Spirit Trial Second Chest",
       "RequiredItems": [
         "OOT_can_hammer",
-        "OOT_has_explosives",
+        "OOT_has_bombchu",
         "OOT_has_lens",
         "OOT Ganon Castle Spirit",
         "option{GanonMQ, true}"
@@ -9501,7 +9512,7 @@
         "OOT_can_hammer",
         "OOT_has_fire_arrows",
         "OOT_has_mirror_shield",
-        "OOT_has_explosives",
+        "OOT_has_bombchu",
         "OOT Ganon Castle Spirit",
         "option{GanonMQ, true}"
       ],
@@ -9517,7 +9528,7 @@
         "OOT_can_hammer",
         "OOT_has_fire_arrows",
         "OOT_has_mirror_shield",
-        "OOT_has_explosives",
+        "OOT_has_bombchu",
         "OOT Ganon Castle Spirit",
         "option{GanonMQ, true}"
       ],
@@ -9533,7 +9544,7 @@
         "OOT_can_hammer",
         "OOT_has_fire_arrows",
         "OOT_has_mirror_shield",
-        "OOT_has_explosives",
+        "OOT_has_bombchu",
         "OOT Ganon Castle Spirit",
         "option{GanonMQ, true}"
       ],
@@ -9549,7 +9560,7 @@
         "OOT_can_hammer",
         "OOT_has_fire_arrows",
         "OOT_has_mirror_shield",
-        "OOT_has_explosives",
+        "OOT_has_bombchu",
         "OOT Ganon Castle Spirit",
         "option{GanonMQ, true}"
       ],
@@ -9630,6 +9641,7 @@
       "RequiredItems": [
         "OOT_has_lens",
         "OOT_can_hit_scrub",
+        "OOT_EVENT_RUPEES",
         "OOT Ganon Castle Main",
         "option{GanonMQ, true}"
       ],
@@ -9644,6 +9656,7 @@
       "RequiredItems": [
         "OOT_has_lens",
         "OOT_can_hit_scrub",
+        "OOT_EVENT_RUPEES",
         "OOT Ganon Castle Main",
         "option{GanonMQ, true}"
       ],
@@ -9658,6 +9671,7 @@
       "RequiredItems": [
         "OOT_has_lens",
         "OOT_can_hit_scrub",
+        "OOT_EVENT_RUPEES",
         "OOT Ganon Castle Main",
         "option{GanonMQ, true}"
       ],
@@ -9672,6 +9686,7 @@
       "RequiredItems": [
         "OOT_has_lens",
         "OOT_can_hit_scrub",
+        "OOT_EVENT_RUPEES",
         "OOT Ganon Castle Main",
         "option{GanonMQ, true}"
       ],
@@ -9686,6 +9701,7 @@
       "RequiredItems": [
         "OOT_has_lens",
         "OOT_can_hit_scrub",
+        "OOT_EVENT_RUPEES",
         "OOT Ganon Castle Main",
         "option{GanonMQ, true}"
       ],
@@ -9698,7 +9714,7 @@
     {
       "Id": "MM Initial Song of Healing",
       "RequiredItems": [
-        "MM SPAWN"
+        "MM Clock Town"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -15796,6 +15812,17 @@
           "OOT Zora Domain"
         ],
         [
+          "OOT Dampe Grave"
+        ],
+        [
+          "OOT_has_explosives_or_hammer",
+          "OOT Hyrule Castle Grotto"
+        ],
+        [
+          "OOT_has_fire",
+          "OOT Hyrule Field Grotto Near GV"
+        ],
+        [
           "OOT_is_adult",
           "OOT Forest Temple Garden East",
           "option{ForestMQ, false}"
@@ -16673,6 +16700,121 @@
           "OOT_has_tunic_goron",
           "option{FireMQ, false}",
           "OOT_has_hover_boots"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_BOMBS",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_tunic_goron_strict",
+          "OOT Death Mountain Crater Top"
+        ],
+        [
+          "option{FireMQ, false}",
+          "OOT_has_tunic_goron",
+          "OOT Fire Temple Pre-Boss"
+        ],
+        [
+          "OOT Spirit Temple",
+          "option{SpiritMQ, true}"
+        ],
+        [
+          "OOT Hyrule Field"
+        ],
+        [
+          "OOT Kokiri Forest"
+        ],
+        [
+          "OOT Zora River"
+        ],
+        [
+          "OOT Dampe Grave"
+        ],
+        [
+          "OOT Hyrule Castle"
+        ],
+        [
+          "OOT Shadow Temple Truth Spinner",
+          "option{ShadowMQ, true}"
+        ],
+        [
+          "OOT_is_child",
+          "OOT Gerudo Valley"
+        ],
+        [
+          "OOT_can_hammer",
+          "OOT Hyrule Castle Grotto"
+        ],
+        [
+          "OOT Kakariko",
+          "OOT_can_cut_grass"
+        ],
+        [
+          "OOT Lost Woods Deep",
+          "OOT_can_cut_grass"
+        ],
+        [
+          "OOT Lost Woods Generic Grotto",
+          "OOT_can_cut_grass"
+        ],
+        [
+          "OOT Lost Woods",
+          "OOT_can_cut_grass"
+        ],
+        [
+          "OOT Hyrule Field Grotto Near Market",
+          "OOT_can_cut_grass"
+        ],
+        [
+          "OOT Hyrule Field Southeast Grotto",
+          "OOT_can_cut_grass"
+        ],
+        [
+          "OOT Lake Hylia",
+          "OOT_can_cut_grass"
+        ],
+        [
+          "OOT Hyrule Field Open Grotto",
+          "OOT_can_cut_grass"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Kokiri Forest Storms Grotto"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Zora River Open Grotto"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Zora River Front"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Death Mountain Storms Grotto"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Graveyard"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Kakariko Generic Grotto"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Death Mountain Crater Generic Grotto"
+        ],
+        [
+          "OOT_EVENT_RUPEES",
+          "OOT_WALLET",
+          "OOT Bombchu Bowling"
         ]
       ],
       "TimeNeeded": "None",
@@ -17834,7 +17976,7 @@
       "Id": "OOT_EVENT_GANON_TRIAL_SPIRIT",
       "RequiredItems": [
         "OOT_has_light_arrows",
-        "OOT_has_explosives",
+        "OOT_has_bombchu",
         "OOT Ganon Castle Spirit"
       ],
       "ConditionalItems": [
@@ -18529,6 +18671,33 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Kokiri Forest => OOT Saria's House",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Kokiri Forest => OOT House of Twins",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Kokiri Forest => OOT Know It All House",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Kokiri Forest => OOT Lost Woods",
       "RequiredItems": [],
       "ConditionalItems": [],
@@ -18561,6 +18730,502 @@
         "OOT_is_child"
       ],
       "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Kokiri Forest => OOT Kokiri Forest Storms Grotto",
+      "RequiredItems": [
+        "OOT_hidden_grotto_storms"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_RUPEES",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT Market"
+        ],
+        [
+          "OOT Hyrule Field"
+        ],
+        [
+          "OOT Zora River"
+        ],
+        [
+          "OOT Death Mountain Cow Grotto"
+        ],
+        [
+          "OOT Death Mountain"
+        ],
+        [
+          "OOT Dampe Grave"
+        ],
+        [
+          "OOT Sacred Meadow Entryway"
+        ],
+        [
+          "OOT Octorok Grotto"
+        ],
+        [
+          "OOT Lost Woods"
+        ],
+        [
+          "OOT Hyrule Castle"
+        ],
+        [
+          "OOT_is_child",
+          "OOT Lon Lon Ranch"
+        ],
+        [
+          "OOT Zora Domain"
+        ],
+        [
+          "OOT Market Pot House"
+        ],
+        [
+          "OOT Gerudo Valley"
+        ],
+        [
+          "OOT Kokiri Forest"
+        ],
+        [
+          "OOT Kakariko Generic Grotto",
+          "OOT_can_cut_grass"
+        ],
+        [
+          "OOT Kakariko",
+          "OOT_can_cut_grass"
+        ],
+        [
+          "OOT Lake Hylia",
+          "OOT_can_cut_grass"
+        ],
+        [
+          "OOT Lost Woods Deep",
+          "OOT_can_cut_grass"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Lost Woods Generic Grotto"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Zora River Open Grotto"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Death Mountain Crater Generic Grotto"
+        ],
+        [
+          "OOT_has_tunic_goron_strict",
+          "OOT Death Mountain Crater Top"
+        ],
+        [
+          "OOT Hyrule Castle Grotto",
+          "OOT_has_explosives_or_hammer"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Hyrule Field Grotto Near Market"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Hyrule Field Southeast Grotto"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Hyrule Field Open Grotto"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Zora River Front"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Kokiri Forest Storms Grotto"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Death Mountain Storms Grotto"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Graveyard"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_SEEDS",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_sword_kokiri",
+          "OOT Hyrule Field Grotto Near Kak"
+        ],
+        [
+          "OOT_is_child",
+          "OOT Gerudo Valley"
+        ],
+        [
+          "OOT Hyrule Field Grotto Near Market",
+          "OOT_is_child",
+          "OOT_can_cut_grass"
+        ],
+        [
+          "OOT_is_child",
+          "OOT_can_cut_grass",
+          "OOT Death Mountain Crater Generic Grotto"
+        ],
+        [
+          "OOT_is_child",
+          "OOT Hyrule Field"
+        ],
+        [
+          "OOT_is_child",
+          "OOT Zora Fountain"
+        ],
+        [
+          "OOT_is_child",
+          "OOT_can_cut_grass",
+          "OOT Hyrule Field Southeast Grotto"
+        ],
+        [
+          "OOT_is_child",
+          "OOT_can_cut_grass",
+          "OOT Hyrule Field Open Grotto"
+        ],
+        [
+          "OOT_is_child",
+          "OOT_can_cut_grass",
+          "OOT Kokiri Forest Storms Grotto"
+        ],
+        [
+          "OOT_is_child",
+          "OOT_can_cut_grass",
+          "OOT Lake Hylia"
+        ],
+        [
+          "OOT_is_child",
+          "OOT Kokiri Forest"
+        ],
+        [
+          "OOT_is_child",
+          "OOT_can_cut_grass",
+          "OOT Zora River Open Grotto"
+        ],
+        [
+          "OOT_is_child",
+          "OOT Zora River"
+        ],
+        [
+          "OOT_is_child",
+          "OOT_can_cut_grass",
+          "OOT Zora River Front"
+        ],
+        [
+          "OOT_is_child",
+          "OOT_can_cut_grass",
+          "OOT Death Mountain Storms Grotto"
+        ],
+        [
+          "OOT_is_child",
+          "OOT Dampe Grave"
+        ],
+        [
+          "OOT_is_child",
+          "OOT_can_cut_grass",
+          "OOT Graveyard"
+        ],
+        [
+          "OOT_is_child",
+          "OOT_can_cut_grass",
+          "OOT Kakariko Generic Grotto"
+        ],
+        [
+          "OOT_is_child",
+          "OOT_can_cut_grass",
+          "OOT Kakariko"
+        ],
+        [
+          "OOT_is_child",
+          "OOT_can_cut_grass",
+          "OOT Lost Woods Deep"
+        ],
+        [
+          "OOT_is_child",
+          "OOT_can_cut_grass",
+          "OOT Lost Woods Generic Grotto"
+        ],
+        [
+          "OOT_is_child",
+          "OOT_can_cut_grass",
+          "OOT Lost Woods"
+        ],
+        [
+          "OOT_is_child",
+          "OOT_has_explosives",
+          "OOT Hyrule Castle Grotto"
+        ],
+        [
+          "OOT_is_child",
+          "OOT Hyrule Castle"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_ARROWS",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT Shadow Temple Truth Spinner",
+          "option{ShadowMQ, true}"
+        ],
+        [
+          "OOT Kokiri Forest Storms Grotto",
+          "OOT_is_adult"
+        ],
+        [
+          "OOT Kokiri Forest",
+          "OOT_is_adult"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Death Mountain Crater Generic Grotto"
+        ],
+        [
+          "OOT_has_tunic_goron_strict",
+          "OOT Death Mountain Crater Top"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Lake Hylia"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Zora River Open Grotto"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Zora River"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Zora River Front"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Death Mountain Storms Grotto"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Dampe Grave"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Graveyard"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Kakariko Generic Grotto"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Kakariko"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Lost Woods Deep"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Lost Woods Generic Grotto"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Lost Woods"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT_has_explosives_or_hammer",
+          "OOT Hyrule Castle Grotto"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Hyrule Field Grotto Near Kak"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Hyrule Field Grotto Near Market"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Hyrule Field Southeast Grotto"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Hyrule Field Open Grotto"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Hyrule Field"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_MAGIC",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT Fairy Fountain Defense",
+          "OOT_OCARINA",
+          "OOT_SONG_ZELDA"
+        ],
+        [
+          "OOT_OCARINA",
+          "OOT_SONG_ZELDA",
+          "OOT Fairy Fountain Din"
+        ],
+        [
+          "OOT_OCARINA",
+          "OOT_SONG_ZELDA",
+          "OOT Fairy Fountain Farore"
+        ],
+        [
+          "OOT_OCARINA",
+          "OOT_SONG_ZELDA",
+          "OOT Fairy Fountain Nayru"
+        ],
+        [
+          "OOT Hyrule Castle"
+        ],
+        [
+          "OOT Hyrule Field"
+        ],
+        [
+          "OOT Zora River"
+        ],
+        [
+          "OOT Dampe Grave"
+        ],
+        [
+          "OOT_is_child",
+          "OOT Gerudo Valley"
+        ],
+        [
+          "OOT_OCARINA",
+          "OOT_SONG_ZELDA",
+          "OOT Fairy Fountain Magic"
+        ],
+        [
+          "OOT_OCARINA",
+          "OOT_SONG_ZELDA",
+          "OOT Fairy Fountain Double Magic"
+        ],
+        [
+          "OOT Spirit Temple",
+          "option{SpiritMQ, true}"
+        ],
+        [
+          "OOT Lost Woods Deep",
+          "OOT_can_cut_grass"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Lost Woods Generic Grotto"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Death Mountain Crater Generic Grotto"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Lost Woods"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Hyrule Field Grotto Near Market"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Hyrule Field Southeast Grotto"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Hyrule Field Open Grotto"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Kokiri Forest Storms Grotto"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Lake Hylia"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Zora River Open Grotto"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Zora River Front"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Death Mountain Storms Grotto"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Graveyard"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Kakariko Generic Grotto"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Kakariko"
+        ],
+        [
+          "OOT Shadow Temple Truth Spinner",
+          "option{ShadowMQ, true}"
+        ],
+        [
+          "OOT Spirit Temple",
+          "option{SpiritMQ, false}"
+        ],
+        [
+          "OOT_has_tunic_goron_strict",
+          "OOT Death Mountain Crater Top"
+        ],
+        [
+          "OOT Kokiri Forest"
+        ],
+        [
+          "option{ShadowMQ, false}",
+          "TRICK_OOT_LENS",
+          "OOT Shadow Temple Pit"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -18630,6 +19295,183 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Saria's House => OOT Kokiri Forest",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT House of Twins => OOT Kokiri Forest",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Know It All House => OOT Kokiri Forest",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Kokiri Forest Storms Grotto => OOT Kokiri Forest",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_FISH",
+      "RequiredItems": [
+        "OOT_has_bottle"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT Death Mountain Crater Generic Grotto"
+        ],
+        [
+          "OOT_is_child",
+          "OOT Zora Domain"
+        ],
+        [
+          "OOT Zora River Open Grotto"
+        ],
+        [
+          "OOT Death Mountain Storms Grotto"
+        ],
+        [
+          "OOT Kakariko Generic Grotto"
+        ],
+        [
+          "OOT Lost Woods Generic Grotto"
+        ],
+        [
+          "OOT Hyrule Field Grotto Near Market"
+        ],
+        [
+          "OOT Hyrule Field Southeast Grotto"
+        ],
+        [
+          "OOT Hyrule Field Open Grotto"
+        ],
+        [
+          "OOT Kokiri Forest Storms Grotto"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_BUGS",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_is_child",
+          "OOT_has_bottle",
+          "OOT Gerudo Valley"
+        ],
+        [
+          "OOT_has_bottle",
+          "OOT_can_cut_grass",
+          "OOT Death Mountain Crater Generic Grotto"
+        ],
+        [
+          "OOT_has_bottle",
+          "OOT_can_cut_grass",
+          "OOT_is_child",
+          "OOT Lake Hylia"
+        ],
+        [
+          "OOT_has_bottle",
+          "OOT_can_cut_grass",
+          "OOT Zora River Open Grotto"
+        ],
+        [
+          "OOT_has_bottle",
+          "OOT_can_cut_grass",
+          "OOT Death Mountain Storms Grotto"
+        ],
+        [
+          "OOT_has_bottle",
+          "OOT Graveyard"
+        ],
+        [
+          "OOT_has_bottle",
+          "OOT_can_cut_grass",
+          "OOT Kakariko Generic Grotto"
+        ],
+        [
+          "OOT_has_bottle",
+          "OOT Kakariko"
+        ],
+        [
+          "OOT_has_bottle",
+          "OOT_can_cut_grass",
+          "OOT Lost Woods Deep"
+        ],
+        [
+          "OOT_has_bottle",
+          "OOT_can_cut_grass",
+          "OOT Lost Woods Generic Grotto"
+        ],
+        [
+          "OOT_has_bottle",
+          "OOT_can_cut_grass",
+          "OOT Lost Woods"
+        ],
+        [
+          "OOT_has_bottle",
+          "OOT_has_explosives_or_hammer",
+          "OOT Hyrule Castle Grotto"
+        ],
+        [
+          "OOT_has_bottle",
+          "OOT Hyrule Castle"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT_has_fire",
+          "OOT Hyrule Field Grotto Near GV"
+        ],
+        [
+          "OOT_has_bottle",
+          "OOT_can_cut_grass",
+          "OOT Hyrule Field Grotto Near Market"
+        ],
+        [
+          "OOT_has_bottle",
+          "OOT_can_cut_grass",
+          "OOT Hyrule Field Southeast Grotto"
+        ],
+        [
+          "OOT_has_bottle",
+          "OOT_can_cut_grass",
+          "OOT Hyrule Field Open Grotto"
+        ],
+        [
+          "OOT_has_bottle",
+          "OOT_can_cut_grass",
+          "OOT Kokiri Forest Storms Grotto"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Hyrule Field => OOT Lost Woods Bridge",
       "RequiredItems": [],
       "ConditionalItems": [],
@@ -18639,21 +19481,8 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Hyrule Field => OOT Market",
-      "RequiredItems": [
-        "OOT_is_child"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT Hyrule Field => OOT Market Destroyed",
-      "RequiredItems": [
-        "OOT_is_adult"
-      ],
+      "Id": "OOT Hyrule Field => OOT Market Entryway",
+      "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -18706,12 +19535,9 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT_EVENT_BIG_POE",
+      "Id": "OOT Hyrule Field => OOT Hyrule Field Scrub Grotto",
       "RequiredItems": [
-        "OOT_EVENT_EPONA",
-        "OOT_can_use_bow",
-        "OOT_has_bottle",
-        "OOT Hyrule Field"
+        "OOT_hidden_grotto_bomb"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -18720,10 +19546,18 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Hyrule Field Gossip Near Castle Town",
+      "Id": "OOT Hyrule Field => OOT Hyrule Field Open Grotto",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Hyrule Field => OOT Hyrule Field Southeast Grotto",
       "RequiredItems": [
-        "OOT_has_explosives_or_hammer",
-        "OOT Hyrule Field"
+        "OOT_has_explosives_or_hammer"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -18732,9 +19566,9 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Hyrule Field Gossip Near Lake Hylia",
+      "Id": "OOT Hyrule Field => OOT Hyrule Field Grotto Near Market",
       "RequiredItems": [
-        "OOT Hyrule Field"
+        "OOT_has_explosives_or_hammer"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -18743,10 +19577,9 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Hyrule Field Gossip Southeast Grotto",
+      "Id": "OOT Hyrule Field => OOT Hyrule Field Tektite Grotto",
       "RequiredItems": [
-        "OOT_has_explosives_or_hammer",
-        "OOT Hyrule Field"
+        "OOT_hidden_grotto_bomb"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -18755,11 +19588,8 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Hyrule Field Gossip Near Gerudo Valley",
-      "RequiredItems": [
-        "OOT_has_fire",
-        "OOT Hyrule Field"
-      ],
+      "Id": "OOT Hyrule Field => OOT Hyrule Field Grotto Near GV",
+      "RequiredItems": [],
       "ConditionalItems": [
         [
           "OOT_is_child",
@@ -18775,7 +19605,43 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Market => OOT Hyrule Field",
+      "Id": "OOT Hyrule Field => OOT Hyrule Field Grotto Near Kak",
+      "RequiredItems": [
+        "OOT_hidden_grotto_bomb"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Hyrule Field => OOT Hyrule Field Fairy Grotto",
+      "RequiredItems": [
+        "OOT_has_explosives_or_hammer"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_BIG_POE",
+      "RequiredItems": [
+        "OOT_EVENT_EPONA",
+        "OOT_can_use_bow",
+        "OOT_has_bottle",
+        "OOT Hyrule Field"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Hyrule Field Scrub Grotto => OOT Hyrule Field",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -18784,7 +19650,155 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Market => OOT Market Pot House",
+      "Id": "OOT Hyrule Field Open Grotto => OOT Hyrule Field",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Hyrule Field Gossip Near Lake Hylia",
+      "RequiredItems": [
+        "OOT Hyrule Field Open Grotto"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Hyrule Field Southeast Grotto => OOT Hyrule Field",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Hyrule Field Gossip Southeast Grotto",
+      "RequiredItems": [
+        "OOT Hyrule Field Southeast Grotto"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Hyrule Field Grotto Near Market => OOT Hyrule Field",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Hyrule Field Gossip Near Castle Town",
+      "RequiredItems": [
+        "OOT Hyrule Field Grotto Near Market"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Hyrule Field Tektite Grotto => OOT Hyrule Field",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Hyrule Field Grotto Near GV => OOT Hyrule Field",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Hyrule Field Gossip Near Gerudo Valley",
+      "RequiredItems": [
+        "OOT_has_fire",
+        "OOT Hyrule Field Grotto Near GV"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Hyrule Field Grotto Near Kak => OOT Hyrule Field",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Hyrule Field Fairy Grotto => OOT Hyrule Field",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Market Entryway => OOT Hyrule Field",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Market Entryway => OOT Market",
+      "RequiredItems": [
+        "OOT_is_child"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Market Entryway => OOT Market Destroyed",
+      "RequiredItems": [
+        "OOT_is_adult"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Market Entryway => OOT Market Pot House",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Market => OOT Hyrule Field",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -18803,7 +19817,9 @@
     },
     {
       "Id": "OOT Market => OOT Hyrule Castle",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "OOT_is_child"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -18811,7 +19827,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Market => OOT Temple of Time",
+      "Id": "OOT Market => OOT Temple of Time Entryway",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -18865,62 +19881,9 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Market => OOT Market Bombchu Shop",
-      "RequiredItems": [],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT Market => MM SPAWN",
+      "Id": "OOT Market => MM Clock Town",
       "RequiredItems": [
         "OOT_is_child"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT Market Gossip Outside Temple Leftmost",
-      "RequiredItems": [
-        "OOT Market"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT Market Gossip Outside Temple Left-Center",
-      "RequiredItems": [
-        "OOT Market"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT Market Gossip Outside Temple Right-Center",
-      "RequiredItems": [
-        "OOT Market"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT Market Gossip Outside Temple Rightmost",
-      "RequiredItems": [
-        "OOT Market"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -18985,7 +19948,20 @@
     },
     {
       "Id": "OOT Back Alley => OOT Market",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "OOT_is_child"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Back Alley => OOT Market Destroyed",
+      "RequiredItems": [
+        "OOT_is_adult"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -18994,6 +19970,24 @@
     },
     {
       "Id": "OOT Back Alley => OOT Dog Lady House",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Back Alley => OOT Market Bombchu Shop",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Back Alley => OOT Market Back Alley East Home",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -19011,9 +20005,37 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Market Back Alley East Home => OOT Back Alley",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Bombchu Bowling => OOT Market",
       "RequiredItems": [],
       "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_BOMBCHUS",
+      "RequiredItems": [
+        "OOT_EVENT_RUPEES"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_WALLET",
+          "OOT Haunted Wasteland Structure"
+        ],
+        [
+          "OOT Bombchu Bowling"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -19076,6 +20098,81 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Temple of Time Entryway => OOT Market",
+      "RequiredItems": [
+        "OOT_is_child"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Temple of Time Entryway => OOT Market Destroyed",
+      "RequiredItems": [
+        "OOT_is_adult"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Temple of Time Entryway => OOT Temple of Time",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Market Gossip Outside Temple Leftmost",
+      "RequiredItems": [
+        "OOT Temple of Time Entryway"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Market Gossip Outside Temple Left-Center",
+      "RequiredItems": [
+        "OOT Temple of Time Entryway"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Market Gossip Outside Temple Right-Center",
+      "RequiredItems": [
+        "OOT Temple of Time Entryway"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Market Gossip Outside Temple Rightmost",
+      "RequiredItems": [
+        "OOT Temple of Time Entryway"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Lon Lon Ranch => OOT Hyrule Field",
       "RequiredItems": [],
       "ConditionalItems": [],
@@ -19112,11 +20209,23 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Lon Lon Ranch => OOT Lon Lon Ranch Grotto",
+      "RequiredItems": [
+        "OOT_is_child"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT_EVENT_EPONA",
       "RequiredItems": [
         "OOT_is_adult",
         "OOT_OCARINA",
         "OOT_SONG_EPONA",
+        "OOT_EVENT_RUPEES",
         "OOT Lon Lon Ranch"
       ],
       "ConditionalItems": [],
@@ -19166,8 +20275,39 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Lon Lon Ranch Grotto => OOT Lon Lon Ranch",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Hyrule Castle => OOT Market",
       "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Hyrule Castle => OOT Fairy Fountain Din",
+      "RequiredItems": [
+        "OOT_has_explosives"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Hyrule Castle => OOT Hyrule Castle Grotto",
+      "RequiredItems": [
+        "OOT_hidden_grotto_storms"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -19200,7 +20340,7 @@
     {
       "Id": "OOT_EVENT_MEET_ZELDA",
       "RequiredItems": [
-        "OOT_EVENT_TALON_CHILD",
+        "OOT_woke_talon_child",
         "OOT Hyrule Castle"
       ],
       "ConditionalItems": [],
@@ -19232,11 +20372,28 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Fairy Fountain Din => OOT Hyrule Castle",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Hyrule Castle Grotto => OOT Hyrule Castle",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Hyrule Castle Gossip Grotto",
       "RequiredItems": [
-        "OOT_hidden_grotto_storms",
-        "OOT_has_explosives",
-        "OOT Hyrule Castle"
+        "OOT_has_explosives_or_hammer",
+        "OOT Hyrule Castle Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -19258,6 +20415,26 @@
       "RequiredItems": [
         "OOT_HAS_BRIDGE_REQUIREMENTS"
       ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Ganon Castle Exterior => OOT Fairy Fountain Defense",
+      "RequiredItems": [
+        "OOT_can_lift_gold"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fairy Fountain Defense => OOT Ganon Castle Exterior",
+      "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -19314,6 +20491,17 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Lost Woods => OOT Lost Woods Generic Grotto",
+      "RequiredItems": [
+        "OOT_has_explosives_or_hammer"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Lost Woods => OOT Goron City Shortcut",
       "RequiredItems": [],
       "ConditionalItems": [],
@@ -19357,10 +20545,18 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Lost Woods Generic Grotto => OOT Lost Woods",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Lost Woods Gossip Grotto",
       "RequiredItems": [
-        "OOT_has_explosives_or_hammer",
-        "OOT Lost Woods"
+        "OOT Lost Woods Generic Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -19415,7 +20611,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Lost Woods Deep => OOT Sacred Meadow",
+      "Id": "OOT Lost Woods Deep => OOT Sacred Meadow Entryway",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -19426,6 +20622,17 @@
     {
       "Id": "OOT Lost Woods Deep => OOT Deku Theater",
       "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Lost Woods Deep => OOT Lost Woods Scrub Grotto",
+      "RequiredItems": [
+        "OOT_has_explosives_or_hammer"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -19463,6 +20670,55 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Lost Woods Scrub Grotto => OOT Lost Woods Deep",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Sacred Meadow Entryway => OOT Lost Woods Deep",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Sacred Meadow Entryway => OOT Sacred Meadow",
+      "RequiredItems": [
+        "OOT_can_damage"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Sacred Meadow Entryway => OOT Wolfos Grotto",
+      "RequiredItems": [
+        "OOT_hidden_grotto_bomb"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Wolfos Grotto => OOT Sacred Meadow Entryway",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Sacred Meadow => OOT Lost Woods Deep",
       "RequiredItems": [],
       "ConditionalItems": [],
@@ -19475,6 +20731,17 @@
       "Id": "OOT Sacred Meadow => OOT Forest Temple",
       "RequiredItems": [
         "OOT_can_hookshot"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Sacred Meadow => OOT Sacred Meadow Storms Grotto",
+      "RequiredItems": [
+        "OOT_hidden_grotto_storms"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -19516,6 +20783,15 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Sacred Meadow Storms Grotto => OOT Sacred Meadow",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Kakariko => OOT Hyrule Field",
       "RequiredItems": [],
       "ConditionalItems": [],
@@ -19525,11 +20801,14 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Kakariko => OOT Death Mountain",
+      "Id": "OOT Kakariko => OOT Kakariko Trail Start",
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "OOT_ZELDA_LETTER"
+          "option{kakarikoGate, open}"
+        ],
+        [
+          "OOT_EVENT_KAKARIKO_GATE_OPEN"
         ],
         [
           "OOT_is_adult"
@@ -19553,8 +20832,7 @@
       "Id": "OOT Kakariko => OOT Bottom of the Well",
       "RequiredItems": [
         "OOT_is_child",
-        "OOT_OCARINA",
-        "OOT_SONG_STORMS"
+        "OOT_EVENT_WELL_DRAIN"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -19621,8 +20899,59 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Kakariko Gossip Grotto",
+      "Id": "OOT Kakariko => OOT Kakariko Granny Shop",
       "RequiredItems": [
+        "OOT_is_adult"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Kakariko => OOT Windmill",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Kakariko => OOT Impa House Front",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Kakariko => OOT ReDead Grotto",
+      "RequiredItems": [
+        "OOT_hidden_grotto_bomb"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Kakariko => OOT Kakariko Generic Grotto",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_KAKARIKO_GATE_OPEN",
+      "RequiredItems": [
+        "OOT_is_child",
+        "OOT_ZELDA_LETTER",
         "OOT Kakariko"
       ],
       "ConditionalItems": [],
@@ -19633,6 +20962,43 @@
     },
     {
       "Id": "OOT Kakariko Rooftop => OOT Kakariko",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Kakariko Rooftop => OOT Impa House Back",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Kakariko Trail Start => OOT Kakariko",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "option{kakarikoGate, open}"
+        ],
+        [
+          "OOT_EVENT_KAKARIKO_GATE_OPEN"
+        ],
+        [
+          "OOT_is_adult"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Kakariko Trail Start => OOT Death Mountain",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -19663,9 +21029,97 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Kakariko Granny Shop => OOT Kakariko",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Shooting Gallery Adult => OOT Kakariko",
       "RequiredItems": [
         "OOT_is_adult"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Impa House Front => OOT Kakariko",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Impa House Back => OOT Kakariko",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Windmill => OOT Kakariko",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_WELL_DRAIN",
+      "RequiredItems": [
+        "OOT_is_child",
+        "OOT_OCARINA",
+        "OOT_SONG_STORMS",
+        "OOT Windmill"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Skulltula House => OOT Kakariko",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT ReDead Grotto => OOT Kakariko",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Kakariko Generic Grotto => OOT Kakariko",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Kakariko Gossip Grotto",
+      "RequiredItems": [
+        "OOT Kakariko Generic Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -19688,6 +21142,44 @@
         "OOT_OCARINA",
         "OOT_SONG_ZELDA"
       ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Graveyard => OOT Graveyard Shield Grave",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Graveyard => OOT Graveyard ReDead Grave",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Graveyard => OOT Dampe Grave",
+      "RequiredItems": [
+        "OOT_is_adult"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Graveyard => OOT Dampe House",
+      "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -19753,7 +21245,61 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Skulltula House => OOT Kakariko",
+      "Id": "OOT Graveyard Shield Grave => OOT Graveyard",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Graveyard ReDead Grave => OOT Graveyard",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Dampe Grave => OOT Graveyard",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Dampe Grave => OOT Windmill",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT_OCARINA",
+        "OOT_SONG_TIME"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_WINDMILL_TOP",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT_OCARINA",
+        "OOT_SONG_TIME",
+        "OOT Dampe Grave"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Dampe House => OOT Graveyard",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -19787,16 +21333,9 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Death Mountain => OOT Kakariko",
+      "Id": "OOT Death Mountain => OOT Kakariko Trail Start",
       "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "OOT_ZELDA_LETTER"
-        ],
-        [
-          "OOT_is_adult"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -19814,6 +21353,28 @@
           "OOT_EVENT_BEAN_DEATH_MOUNTAIN"
         ]
       ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Death Mountain => OOT Death Mountain Storms Grotto",
+      "RequiredItems": [
+        "OOT_hidden_grotto_storms"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Death Mountain => OOT Death Mountain Cow Grotto",
+      "RequiredItems": [
+        "OOT_has_explosives_or_hammer"
+      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -19857,18 +21418,6 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Death Mountain Gossip Grotto",
-      "RequiredItems": [
-        "OOT_hidden_grotto_storms",
-        "OOT Death Mountain"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
       "Id": "OOT Death Mountain Summit => OOT Death Mountain",
       "RequiredItems": [],
       "ConditionalItems": [],
@@ -19898,10 +21447,59 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Death Mountain Summit => OOT Fairy Fountain Magic",
+      "RequiredItems": [
+        "OOT_has_explosives_or_hammer"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Death Mountain Gossip on Climb",
       "RequiredItems": [
         "OOT Death Mountain Summit"
       ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Death Mountain Storms Grotto => OOT Death Mountain",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Death Mountain Gossip Grotto",
+      "RequiredItems": [
+        "OOT Death Mountain Storms Grotto"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Death Mountain Cow Grotto => OOT Death Mountain",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fairy Fountain Magic => OOT Death Mountain Summit",
+      "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -20014,6 +21612,30 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Goron City => OOT Goron City Grotto",
+      "RequiredItems": [
+        "OOT_is_adult"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_OCARINA",
+          "OOT_SONG_TIME"
+        ],
+        [
+          "OOT_can_hookshot",
+          "OOT_has_tunic_goron_strict"
+        ],
+        [
+          "OOT_can_hookshot",
+          "OOT_can_use_nayru"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Goron City Gossip Boulder Maze",
       "RequiredItems": [
         "OOT Goron City"
@@ -20051,6 +21673,15 @@
     },
     {
       "Id": "OOT Goron Shop => OOT Goron City",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Goron City Grotto => OOT Goron City",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -20127,6 +21758,37 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Zora River => OOT Zora River Storms Grotto",
+      "RequiredItems": [
+        "OOT_hidden_grotto_storms"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Zora River => OOT Zora River Open Grotto",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Zora River => OOT Zora River Boulder Grotto",
+      "RequiredItems": [
+        "OOT_has_explosives_or_hammer"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Zora River Gossip High Pillar",
       "RequiredItems": [
         "OOT Zora River"
@@ -20149,10 +21811,37 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Zora River Storms Grotto => OOT Zora River",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Zora River Open Grotto => OOT Zora River",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Zora River Gossip Grotto",
       "RequiredItems": [
-        "OOT Zora River"
+        "OOT Zora River Open Grotto"
       ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Zora River Boulder Grotto => OOT Zora River",
+      "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -20214,6 +21903,17 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Zora Domain => OOT Zora Domain Grotto",
+      "RequiredItems": [
+        "OOT_hidden_grotto_storms"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT_EVENT_KING_ZORA_LETTER",
       "RequiredItems": [
         "OOT_is_child",
@@ -20259,6 +21959,15 @@
     },
     {
       "Id": "OOT Zora Shop => OOT Zora Domain",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Zora Domain Grotto => OOT Zora Domain",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -20327,6 +22036,15 @@
           "OOT_EVENT_BEAN_LAKE_HYLIA"
         ]
       ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Lake Hylia => OOT Lake Hylia Grotto",
+      "RequiredItems": [],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -20422,6 +22140,15 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Lake Hylia Grotto => OOT Lake Hylia",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Zora Fountain => OOT Zora Domain Back",
       "RequiredItems": [],
       "ConditionalItems": [],
@@ -20436,7 +22163,14 @@
         "OOT_is_child",
         "OOT_has_bottle"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_FISH"
+        ],
+        [
+          "OOT_EVENT_FISH"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -20446,6 +22180,17 @@
       "Id": "OOT Zora Fountain => OOT Zora Fountain Frozen",
       "RequiredItems": [
         "OOT_is_adult"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Zora Fountain => OOT Fairy Fountain Farore",
+      "RequiredItems": [
+        "OOT_has_explosives"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -20486,6 +22231,15 @@
     },
     {
       "Id": "OOT Zora Fountain Frozen => OOT Ice Cavern",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fairy Fountain Farore => OOT Zora Fountain",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -20597,10 +22351,9 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Death Mountain Crater Gossip Grotto",
+      "Id": "OOT Death Mountain Crater Top => OOT Death Mountain Crater Generic Grotto",
       "RequiredItems": [
-        "OOT_has_explosives_or_hammer",
-        "OOT Death Mountain Crater Top"
+        "OOT_has_explosives_or_hammer"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -20648,7 +22401,29 @@
     {
       "Id": "OOT Death Mountain Crater Bottom => OOT Death Mountain Crater Top",
       "RequiredItems": [
-        "OOT_EVENT_RED_BOULDER_BROKEN"
+        "OOT_is_adult"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Death Mountain Crater Bottom => OOT Death Mountain Crater Scrub Grotto",
+      "RequiredItems": [
+        "OOT_can_hammer"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Death Mountain Crater Bottom => OOT Fairy Fountain Double Magic",
+      "RequiredItems": [
+        "OOT_can_hammer"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -20733,6 +22508,44 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Death Mountain Crater Generic Grotto => OOT Death Mountain Crater Top",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Death Mountain Crater Gossip Grotto",
+      "RequiredItems": [
+        "OOT Death Mountain Crater Generic Grotto"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Death Mountain Crater Scrub Grotto => OOT Death Mountain Crater Bottom",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fairy Fountain Double Magic => OOT Death Mountain Crater Bottom",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Gerudo Valley => OOT Lake Hylia",
       "RequiredItems": [],
       "ConditionalItems": [],
@@ -20760,8 +22573,23 @@
         [
           "OOT_is_adult",
           "OOT_EVENT_EPONA"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT_EVENT_CARPENTERS_RESCUE"
         ]
       ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Valley => OOT Octorok Grotto",
+      "RequiredItems": [
+        "OOT_can_lift_silver"
+      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -20789,6 +22617,77 @@
     },
     {
       "Id": "OOT Gerudo Valley After Bridge => OOT Gerudo Fortress Exterior",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Valley After Bridge => OOT Gerudo Valley",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_can_longshot"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT_EVENT_EPONA"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT_EVENT_CARPENTERS_RESCUE"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Valley After Bridge => OOT Gerudo Valley Storms Grotto",
+      "RequiredItems": [
+        "OOT_hidden_grotto_storms",
+        "OOT_is_adult"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Valley After Bridge => OOT Gerudo Valley Tent",
+      "RequiredItems": [
+        "OOT_is_adult"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Octorok Grotto => OOT Gerudo Valley",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Valley Storms Grotto => OOT Gerudo Valley After Bridge",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Valley Tent => OOT Gerudo Valley After Bridge",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -20829,7 +22728,20 @@
       "Id": "OOT Gerudo Fortress Exterior => OOT Gerudo Training Grounds",
       "RequiredItems": [
         "OOT_GERUDO_CARD",
-        "OOT_is_adult"
+        "OOT_is_adult",
+        "OOT_EVENT_RUPEES"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Exterior => OOT Gerudo Fortress Grotto",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT_hidden_grotto_storms"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -20863,6 +22775,15 @@
     },
     {
       "Id": "OOT Fortress Near Wasteland => OOT Haunted Wasteland Start",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Grotto => OOT Gerudo Fortress",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -20972,6 +22893,28 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Desert Colossus => OOT Fairy Fountain Nayru",
+      "RequiredItems": [
+        "OOT_has_explosives"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Desert Colossus => OOT Desert Colossus Grotto",
+      "RequiredItems": [
+        "OOT_can_lift_silver"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT_EVENT_BEAN_DESERT_COLOSSUS",
       "RequiredItems": [
         "OOT_can_use_beans",
@@ -20996,6 +22939,24 @@
     },
     {
       "Id": "OOT Desert Colossus Spirit Exit => OOT Desert Colossus",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fairy Fountain Nayru => OOT Desert Colossus",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Desert Colossus Grotto => OOT Desert Colossus",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -25098,29 +27059,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM SOARING => MM SPAWN",
-      "RequiredItems": [
-        "MM_SONG_SOARING"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM SPAWN => MM Clock Town South",
-      "RequiredItems": [
-        "MM_can_reset_time"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM SPAWN => OOT SONGS",
+      "Id": "MM GLOBAL => OOT SONGS",
       "RequiredItems": [
         "option{crossWarpOot}",
         "MM_has_ocarina"
@@ -25132,7 +27071,39 @@
       "IsTrick": false
     },
     {
-      "Id": "MM SPAWN => MM Moon",
+      "Id": "MM SOARING => MM Clock Town",
+      "RequiredItems": [
+        "MM_SONG_SOARING",
+        "MM_EVENT_CLOCK_TOWN"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Clock Town => MM GLOBAL",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Clock Town => MM Clock Town South",
+      "RequiredItems": [
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Clock Town => MM Moon",
       "RequiredItems": [
         "MM_OCARINA",
         "MM_SONG_ORDER",
@@ -25145,11 +27116,32 @@
       "IsTrick": false
     },
     {
-      "Id": "MM_EVENT_TIME_TRAVEL",
+      "Id": "MM_EVENT_CLOCK_TOWN",
       "RequiredItems": [
-        "MM_OCARINA",
-        "MM_SONG_TIME",
-        "MM SPAWN"
+        "MM Clock Town"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Clock Town South => OOT Market",
+      "RequiredItems": [
+        "option{age_filter, adult, false}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Clock Town South => OOT Market Destroyed",
+      "RequiredItems": [
+        "option{age_filter, child, false}",
+        "OOT_EVENT_TIME_TRAVEL"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -25860,6 +27852,17 @@
           "MM_can_goron_bomb_jump"
         ]
       ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_EVENT_STICKS",
+      "RequiredItems": [
+        "MM Termina Field"
+      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -31469,9 +33472,56 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT_has_explosives",
+      "Id": "OOT_is_day",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_is_night",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_is_dusk",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_sticks",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_EVENT_STICKS"
+        ],
+        [
+          "OOT_renewable_sticks"
+        ],
+        [
+          "option{sharedNutsSticks}",
+          "MM_EVENT_STICKS"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_nuts",
       "RequiredItems": [
-        "OOT_BOMB_BAG"
+        "OOT_renewable_nuts"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -31480,14 +33530,61 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT_has_bombflowers",
-      "RequiredItems": [],
+      "Id": "OOT_can_use_sticks",
+      "RequiredItems": [
+        "OOT_is_child",
+        "OOT_has_sticks"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_explosives",
+      "RequiredItems": [
+        "OOT_BOMB_BAG"
+      ],
       "ConditionalItems": [
         [
-          "OOT_has_explosives"
+          "OOT_EVENT_BOMBS"
         ],
         [
-          "OOT_STRENGTH"
+          "OOT_BOMBS_5"
+        ],
+        [
+          "OOT_BOMBS_10"
+        ],
+        [
+          "OOT_BOMBS_20"
+        ],
+        [
+          "OOT_BOMBS_30"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_bombchu",
+      "RequiredItems": [
+        "OOT_BOMB_BAG"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_EVENT_BOMBCHUS"
+        ],
+        [
+          "OOT_BOMBCHU_5"
+        ],
+        [
+          "OOT_BOMBCHU_10"
+        ],
+        [
+          "OOT_BOMBCHU_20"
         ]
       ],
       "TimeNeeded": "None",
@@ -31501,7 +33598,14 @@
         "OOT_is_child",
         "OOT_SLINGSHOT"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_EVENT_SEEDS"
+        ],
+        [
+          "OOT_DEKU_SEEDS_30"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -31513,55 +33617,20 @@
         "OOT_is_adult",
         "OOT_BOW"
       ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_can_hit_triggers_distance",
-      "RequiredItems": [],
       "ConditionalItems": [
         [
-          "OOT_can_use_slingshot"
+          "OOT_EVENT_ARROWS"
         ],
         [
-          "OOT_can_use_bow"
+          "OOT_ARROWS_5"
+        ],
+        [
+          "OOT_ARROWS_10"
+        ],
+        [
+          "OOT_ARROWS_30"
         ]
       ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_has_bottle",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "OOT_BOTTLE_EMPTY"
-        ],
-        [
-          "OOT_BOTTLE_MILK"
-        ],
-        [
-          "OOT_EVENT_KING_ZORA_LETTER"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_has_spiritual_stones",
-      "RequiredItems": [
-        "OOT_STONE_EMERALD",
-        "OOT_STONE_RUBY",
-        "OOT_STONE_SAPPHIRE"
-      ],
-      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -31592,12 +33661,293 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT_can_boomerang",
+      "RequiredItems": [
+        "OOT_is_child",
+        "OOT_BOOMERANG"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT_can_hammer",
       "RequiredItems": [
         "OOT_is_adult",
         "OOT_HAMMER"
       ],
       "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_bottle",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_BOTTLE_EMPTY"
+        ],
+        [
+          "OOT_BOTTLE_MILK"
+        ],
+        [
+          "OOT_EVENT_KING_ZORA_LETTER"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_can_use_beans",
+      "RequiredItems": [
+        "OOT_is_child",
+        "OOT_MAGIC_BEAN"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_stone_of_agony",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_STONE_OF_AGONY"
+        ],
+        [
+          "TRICK_OOT_HIDDEN_GROTTOS"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_sword_kokiri",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SWORD"
+        ],
+        [
+          "OOT_SWORD_KOKIRI"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_sword_master",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SWORD, 2"
+        ],
+        [
+          "OOT_SWORD_MASTER"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_mirror_shield",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_is_adult",
+          "OOT_SHIELD, 3"
+        ],
+        [
+          "OOT_SHIELD_MIRROR"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_tunic_goron_strict",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT_TUNIC_GORON"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_tunic_zora_strict",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT_TUNIC_ZORA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_iron_boots",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT_BOOTS_IRON"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_hover_boots",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT_BOOTS_HOVER"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_can_lift_silver",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT_STRENGTH, 2"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_can_lift_gold",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT_STRENGTH, 3"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_magic",
+      "RequiredItems": [
+        "OOT_MAGIC_UPGRADE"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_EVENT_MAGIC"
+        ],
+        [
+          "OOT_has_bottle",
+          "OOT_POTION_GREEN"
+        ],
+        [
+          "OOT_has_bottle",
+          "OOT_POTION_BLUE"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_can_use_din",
+      "RequiredItems": [
+        "OOT_has_magic",
+        "OOT_SPELL_FIRE"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_can_use_nayru",
+      "RequiredItems": [
+        "OOT_has_magic",
+        "OOT_SPELL_LOVE"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_light_arrows",
+      "RequiredItems": [
+        "OOT_can_use_bow",
+        "OOT_ARROW_LIGHT",
+        "OOT_has_magic"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_fire_arrows",
+      "RequiredItems": [
+        "OOT_can_use_bow",
+        "OOT_ARROW_FIRE",
+        "OOT_has_magic"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_lens_strict",
+      "RequiredItems": [
+        "OOT_has_magic",
+        "OOT_LENS"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_bombflowers",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_explosives"
+        ],
+        [
+          "OOT_STRENGTH"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -31612,6 +33962,86 @@
         ],
         [
           "OOT_can_hammer"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_can_hit_triggers_distance",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_slingshot"
+        ],
+        [
+          "OOT_can_use_bow"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_ranged_weapon_child",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_slingshot"
+        ],
+        [
+          "OOT_can_boomerang"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_ranged_weapon_adult",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_can_hookshot"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_ranged_weapon",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_ranged_weapon_child"
+        ],
+        [
+          "OOT_has_ranged_weapon_adult"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_can_collect_distance",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_can_hookshot"
+        ],
+        [
+          "OOT_can_boomerang"
         ]
       ],
       "TimeNeeded": "None",
@@ -31676,384 +34106,6 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT_has_fire_spirit",
-      "RequiredItems": [
-        "OOT_MAGIC_UPGRADE"
-      ],
-      "ConditionalItems": [
-        [
-          "OOT_BOW",
-          "OOT_ARROW_FIRE",
-          "OOT_has_sticks",
-          "OOT_has_explosives"
-        ],
-        [
-          "OOT_SPELL_FIRE",
-          "OOT_has_explosives"
-        ],
-        [
-          "OOT_BOW",
-          "OOT_ARROW_FIRE",
-          "OOT_has_sticks",
-          "OOT_SMALL_KEY_SPIRIT, 2"
-        ],
-        [
-          "OOT_SPELL_FIRE",
-          "OOT_SMALL_KEY_SPIRIT, 2"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_has_lens",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "OOT_has_lens_strict"
-        ],
-        [
-          "TRICK_OOT_LENS"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_has_lens_strict",
-      "RequiredItems": [
-        "OOT_MAGIC_UPGRADE",
-        "OOT_LENS"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_has_bombchu",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "OOT_BOMBCHU_10"
-        ],
-        [
-          "OOT_BOMBCHU_20"
-        ],
-        [
-          "OOT_BOMBCHU_5"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_can_use_din",
-      "RequiredItems": [
-        "OOT_MAGIC_UPGRADE",
-        "OOT_SPELL_FIRE"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_can_use_nayru",
-      "RequiredItems": [
-        "OOT_MAGIC_UPGRADE",
-        "OOT_SPELL_LOVE"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_can_boomerang",
-      "RequiredItems": [
-        "OOT_is_child",
-        "OOT_BOOMERANG"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_has_ranged_weapon_child",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "OOT_can_use_slingshot"
-        ],
-        [
-          "OOT_can_boomerang"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_has_ranged_weapon_adult",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "OOT_can_use_bow"
-        ],
-        [
-          "OOT_can_hookshot"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_has_ranged_weapon",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "OOT_has_ranged_weapon_child"
-        ],
-        [
-          "OOT_has_ranged_weapon_adult"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_has_ranged_weapon_both",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "OOT_has_explosives"
-        ],
-        [
-          "OOT_SLINGSHOT",
-          "OOT_HOOKSHOT"
-        ],
-        [
-          "OOT_BOOMERANG",
-          "OOT_HOOKSHOT"
-        ],
-        [
-          "OOT_SLINGSHOT",
-          "OOT_BOW"
-        ],
-        [
-          "OOT_BOOMERANG",
-          "OOT_BOW"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_has_mirror_shield",
-      "RequiredItems": [
-        "OOT_is_adult"
-      ],
-      "ConditionalItems": [
-        [
-          "OOT_SHIELD, 3"
-        ],
-        [
-          "OOT_SHIELD_MIRROR"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_has_light_arrows",
-      "RequiredItems": [
-        "OOT_can_use_bow",
-        "OOT_ARROW_LIGHT",
-        "OOT_MAGIC_UPGRADE"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_has_fire_arrows",
-      "RequiredItems": [
-        "OOT_can_use_bow",
-        "OOT_ARROW_FIRE",
-        "OOT_MAGIC_UPGRADE"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_can_use_beans",
-      "RequiredItems": [
-        "OOT_is_child",
-        "OOT_MAGIC_BEAN"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_stone_of_agony",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "OOT_STONE_OF_AGONY"
-        ],
-        [
-          "TRICK_OOT_HIDDEN_GROTTOS"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_hidden_grotto_bomb",
-      "RequiredItems": [
-        "OOT_stone_of_agony",
-        "OOT_has_explosives_or_hammer"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_hidden_grotto_storms",
-      "RequiredItems": [
-        "OOT_stone_of_agony",
-        "OOT_OCARINA",
-        "OOT_SONG_STORMS"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_can_collect_distance",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "OOT_can_hookshot"
-        ],
-        [
-          "OOT_can_boomerang"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_can_collect_ageless",
-      "RequiredItems": [
-        "OOT_HOOKSHOT",
-        "OOT_BOOMERANG"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_gs_night",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "TRICK_OOT_NIGHT_GS"
-        ],
-        [
-          "OOT_OCARINA",
-          "OOT_SONG_SUN"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_gs_soil",
-      "RequiredItems": [
-        "OOT_is_child",
-        "OOT_has_bottle"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_has_sword_kokiri",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "OOT_SWORD"
-        ],
-        [
-          "OOT_SWORD_KOKIRI"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_has_sword_master",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "OOT_SWORD, 2"
-        ],
-        [
-          "OOT_SWORD_MASTER"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
       "Id": "OOT_has_weapon",
       "RequiredItems": [],
       "ConditionalItems": [
@@ -32071,83 +34123,20 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT_has_tunic_goron",
+      "Id": "OOT_has_shield",
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "OOT_is_adult",
-          "OOT_TUNIC_GORON"
+          "OOT_SHIELD_HYLIAN"
         ],
         [
-          "TRICK_OOT_TUNICS"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_has_tunic_goron_strict",
-      "RequiredItems": [
-        "OOT_is_adult",
-        "OOT_TUNIC_GORON"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_has_tunic_zora",
-      "RequiredItems": [
-        "OOT_is_adult"
-      ],
-      "ConditionalItems": [
-        [
-          "OOT_TUNIC_ZORA"
+          "OOT_has_mirror_shield"
         ],
         [
-          "TRICK_OOT_TUNICS"
+          "OOT_is_child",
+          "OOT_SHIELD_DEKU"
         ]
       ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_has_tunic_zora_strict",
-      "RequiredItems": [
-        "OOT_is_adult",
-        "OOT_TUNIC_ZORA"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_has_iron_boots",
-      "RequiredItems": [
-        "OOT_is_adult",
-        "OOT_BOOTS_IRON"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_has_hover_boots",
-      "RequiredItems": [
-        "OOT_is_adult",
-        "OOT_BOOTS_HOVER"
-      ],
-      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -32186,48 +34175,10 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT_has_shield_for_scrubs",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "OOT_is_adult",
-          "OOT_SHIELD_HYLIAN"
-        ],
-        [
-          "OOT_is_child",
-          "OOT_SHIELD_DEKU"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_has_shield",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "OOT_SHIELD_HYLIAN"
-        ],
-        [
-          "OOT_has_mirror_shield"
-        ],
-        [
-          "OOT_is_child",
-          "OOT_SHIELD_DEKU"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_can_lift_silver",
+      "Id": "OOT_hidden_grotto_bomb",
       "RequiredItems": [
-        "OOT_is_adult",
-        "OOT_STRENGTH, 2"
+        "OOT_stone_of_agony",
+        "OOT_has_explosives_or_hammer"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -32236,10 +34187,11 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT_can_lift_gold",
+      "Id": "OOT_hidden_grotto_storms",
       "RequiredItems": [
-        "OOT_is_adult",
-        "OOT_STRENGTH, 3"
+        "OOT_stone_of_agony",
+        "OOT_OCARINA",
+        "OOT_SONG_STORMS"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -32248,68 +34200,32 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT_trick_mido",
+      "Id": "OOT_has_spiritual_stones",
       "RequiredItems": [
-        "TRICK_OOT_MIDO_SKIP"
+        "OOT_STONE_EMERALD",
+        "OOT_STONE_RUBY",
+        "OOT_STONE_SAPPHIRE"
       ],
-      "ConditionalItems": [
-        [
-          "OOT_BOW"
-        ],
-        [
-          "OOT_HOOKSHOT"
-        ],
-        [
-          "OOT_ARROW_FIRE"
-        ],
-        [
-          "OOT_ARROW_LIGHT"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
       "IsTrick": false
     },
     {
-      "Id": "OOT_has_sticks",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "OOT_EVENT_STICKS"
-        ],
-        [
-          "OOT_renewable_sticks"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_has_nuts",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "OOT_EVENT_NUTS"
-        ],
-        [
-          "OOT_renewable_nuts"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_can_use_sticks",
+      "Id": "OOT_gs_soil",
       "RequiredItems": [
         "OOT_is_child",
-        "OOT_has_sticks"
+        "OOT_has_bottle"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_BUGS"
+        ],
+        [
+          "OOT_EVENT_BUGS"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -32325,7 +34241,67 @@
           "OOT_EVENT_BLUE_FIRE"
         ],
         [
-          "OOT_renewable_blue_fire"
+          "OOT_BLUE_FIRE"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_can_damage",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_has_explosives"
+        ],
+        [
+          "OOT_can_use_slingshot"
+        ],
+        [
+          "OOT_can_use_din"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_can_damage_skull",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_can_damage"
+        ],
+        [
+          "OOT_can_collect_distance"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_can_cut_grass",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_can_boomerang"
+        ],
+        [
+          "OOT_STRENGTH"
         ]
       ],
       "TimeNeeded": "None",
@@ -32382,47 +34358,6 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT_can_damage",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "OOT_has_weapon"
-        ],
-        [
-          "OOT_can_use_sticks"
-        ],
-        [
-          "OOT_has_explosives"
-        ],
-        [
-          "OOT_can_use_slingshot"
-        ],
-        [
-          "OOT_can_use_din"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_can_damage_skull",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "OOT_can_damage"
-        ],
-        [
-          "OOT_can_collect_distance"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
       "Id": "OOT_can_hit_scrub",
       "RequiredItems": [],
       "ConditionalItems": [
@@ -32442,6 +34377,329 @@
           "OOT_can_hammer"
         ]
       ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_shield_for_scrubs",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_is_adult",
+          "OOT_SHIELD_HYLIAN"
+        ],
+        [
+          "OOT_SHIELD_DEKU"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_gs_night",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "TRICK_OOT_NIGHT_GS"
+        ],
+        [
+          "OOT_OCARINA",
+          "OOT_SONG_SUN"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_lens",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_lens_strict"
+        ],
+        [
+          "TRICK_OOT_LENS"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_tunic_goron",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_tunic_goron_strict"
+        ],
+        [
+          "TRICK_OOT_TUNICS"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_tunic_zora",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_tunic_zora_strict"
+        ],
+        [
+          "TRICK_OOT_TUNICS"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_trick_mido",
+      "RequiredItems": [
+        "TRICK_OOT_MIDO_SKIP"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_BOW"
+        ],
+        [
+          "OOT_HOOKSHOT"
+        ],
+        [
+          "OOT_ARROW_FIRE"
+        ],
+        [
+          "OOT_ARROW_LIGHT"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_met_zelda",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_EVENT_MEET_ZELDA"
+        ],
+        [
+          "option{skipZelda}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_woke_talon_child",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_EVENT_TALON_CHILD"
+        ],
+        [
+          "option{skipZelda}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_fire_spirit",
+      "RequiredItems": [
+        "OOT_has_magic"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_BOW",
+          "OOT_ARROW_FIRE",
+          "OOT_has_sticks",
+          "OOT_EVENT_ARROWS",
+          "OOT_has_explosives"
+        ],
+        [
+          "OOT_BOW",
+          "OOT_ARROW_FIRE",
+          "OOT_has_sticks",
+          "OOT_ARROWS_5",
+          "OOT_has_explosives"
+        ],
+        [
+          "OOT_BOW",
+          "OOT_ARROW_FIRE",
+          "OOT_has_sticks",
+          "OOT_ARROWS_10",
+          "OOT_has_explosives"
+        ],
+        [
+          "OOT_BOW",
+          "OOT_ARROW_FIRE",
+          "OOT_has_sticks",
+          "OOT_ARROWS_30",
+          "OOT_has_explosives"
+        ],
+        [
+          "OOT_SPELL_FIRE",
+          "OOT_has_explosives"
+        ],
+        [
+          "OOT_BOW",
+          "OOT_ARROW_FIRE",
+          "OOT_has_sticks",
+          "OOT_EVENT_ARROWS",
+          "OOT_SMALL_KEY_SPIRIT, 2"
+        ],
+        [
+          "OOT_BOW",
+          "OOT_ARROW_FIRE",
+          "OOT_has_sticks",
+          "OOT_ARROWS_5",
+          "OOT_SMALL_KEY_SPIRIT, 2"
+        ],
+        [
+          "OOT_BOW",
+          "OOT_ARROW_FIRE",
+          "OOT_has_sticks",
+          "OOT_ARROWS_10",
+          "OOT_SMALL_KEY_SPIRIT, 2"
+        ],
+        [
+          "OOT_BOW",
+          "OOT_ARROW_FIRE",
+          "OOT_has_sticks",
+          "OOT_ARROWS_30",
+          "OOT_SMALL_KEY_SPIRIT, 2"
+        ],
+        [
+          "OOT_SPELL_FIRE",
+          "OOT_SMALL_KEY_SPIRIT, 2"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_ranged_weapon_both",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_explosives"
+        ],
+        [
+          "OOT_SLINGSHOT",
+          "OOT_EVENT_SEEDS",
+          "OOT_HOOKSHOT"
+        ],
+        [
+          "OOT_SLINGSHOT",
+          "OOT_DEKU_SEEDS_30",
+          "OOT_HOOKSHOT"
+        ],
+        [
+          "OOT_BOOMERANG",
+          "OOT_HOOKSHOT"
+        ],
+        [
+          "OOT_SLINGSHOT",
+          "OOT_EVENT_SEEDS",
+          "OOT_BOW"
+        ],
+        [
+          "OOT_SLINGSHOT",
+          "OOT_DEKU_SEEDS_30",
+          "OOT_BOW"
+        ],
+        [
+          "OOT_BOOMERANG",
+          "OOT_BOW"
+        ],
+        [
+          "OOT_SLINGSHOT",
+          "OOT_EVENT_SEEDS",
+          "OOT_EVENT_ARROWS"
+        ],
+        [
+          "OOT_SLINGSHOT",
+          "OOT_DEKU_SEEDS_30",
+          "OOT_EVENT_ARROWS"
+        ],
+        [
+          "OOT_BOOMERANG",
+          "OOT_EVENT_ARROWS"
+        ],
+        [
+          "OOT_SLINGSHOT",
+          "OOT_EVENT_SEEDS",
+          "OOT_ARROWS_5"
+        ],
+        [
+          "OOT_SLINGSHOT",
+          "OOT_DEKU_SEEDS_30",
+          "OOT_ARROWS_5"
+        ],
+        [
+          "OOT_BOOMERANG",
+          "OOT_ARROWS_5"
+        ],
+        [
+          "OOT_SLINGSHOT",
+          "OOT_EVENT_SEEDS",
+          "OOT_ARROWS_10"
+        ],
+        [
+          "OOT_SLINGSHOT",
+          "OOT_DEKU_SEEDS_30",
+          "OOT_ARROWS_10"
+        ],
+        [
+          "OOT_BOOMERANG",
+          "OOT_ARROWS_10"
+        ],
+        [
+          "OOT_SLINGSHOT",
+          "OOT_EVENT_SEEDS",
+          "OOT_ARROWS_30"
+        ],
+        [
+          "OOT_SLINGSHOT",
+          "OOT_DEKU_SEEDS_30",
+          "OOT_ARROWS_30"
+        ],
+        [
+          "OOT_BOOMERANG",
+          "OOT_ARROWS_30"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_can_collect_ageless",
+      "RequiredItems": [
+        "OOT_HOOKSHOT",
+        "OOT_BOOMERANG"
+      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -33163,11 +35421,32 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_EVENT_TIME_TRAVEL"
+          "MM_OCARINA",
+          "MM_SONG_TIME"
         ],
         [
           "MM_EVENT_MAJORA",
           "TRICK_MM_MAJORA_LOGIC"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_has_sticks",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "MM_EVENT_STICKS"
+        ],
+        [
+          "MM_renewable_sticks"
+        ],
+        [
+          "option{sharedNutsSticks}",
+          "OOT_EVENT_STICKS"
         ]
       ],
       "TimeNeeded": "None",
@@ -36683,6 +38962,592 @@
         ],
         [
           "contains{MM Beneath the Well Cow, MM_MILK}",
+          "check{MM Beneath the Well Cow}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_renewable_sticks",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "contains{OOT Kokiri Forest Cow, MM_ANY_STICK}",
+          "check{OOT Kokiri Forest Cow}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 1, MM_ANY_STICK}",
+          "check{OOT Kokiri Shop Item 1}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 2, MM_ANY_STICK}",
+          "check{OOT Kokiri Shop Item 2}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 3, MM_ANY_STICK}",
+          "check{OOT Kokiri Shop Item 3}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 4, MM_ANY_STICK}",
+          "check{OOT Kokiri Shop Item 4}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 5, MM_ANY_STICK}",
+          "check{OOT Kokiri Shop Item 5}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 6, MM_ANY_STICK}",
+          "check{OOT Kokiri Shop Item 6}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 7, MM_ANY_STICK}",
+          "check{OOT Kokiri Shop Item 7}"
+        ],
+        [
+          "contains{OOT Kokiri Shop Item 8, MM_ANY_STICK}",
+          "check{OOT Kokiri Shop Item 8}"
+        ],
+        [
+          "contains{OOT Lost Woods Scrub Near Theater Left, MM_ANY_STICK}",
+          "check{OOT Lost Woods Scrub Near Theater Left}"
+        ],
+        [
+          "contains{OOT Lost Woods Scrub Near Theater Right, MM_ANY_STICK}",
+          "check{OOT Lost Woods Scrub Near Theater Right}"
+        ],
+        [
+          "contains{OOT Lost Woods Grotto Scrub Back, MM_ANY_STICK}",
+          "check{OOT Lost Woods Grotto Scrub Back}"
+        ],
+        [
+          "contains{OOT Sacred Meadow Storms Grotto Front Scrub, MM_ANY_STICK}",
+          "check{OOT Sacred Meadow Storms Grotto Front Scrub}"
+        ],
+        [
+          "contains{OOT Sacred Meadow Storms Grotto Back Scrub, MM_ANY_STICK}",
+          "check{OOT Sacred Meadow Storms Grotto Back Scrub}"
+        ],
+        [
+          "contains{OOT Kakariko Cow, MM_ANY_STICK}",
+          "check{OOT Kakariko Cow}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 1, MM_ANY_STICK}",
+          "check{OOT Kakariko Bazaar Item 1}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 2, MM_ANY_STICK}",
+          "check{OOT Kakariko Bazaar Item 2}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 3, MM_ANY_STICK}",
+          "check{OOT Kakariko Bazaar Item 3}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 4, MM_ANY_STICK}",
+          "check{OOT Kakariko Bazaar Item 4}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 5, MM_ANY_STICK}",
+          "check{OOT Kakariko Bazaar Item 5}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 6, MM_ANY_STICK}",
+          "check{OOT Kakariko Bazaar Item 6}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 7, MM_ANY_STICK}",
+          "check{OOT Kakariko Bazaar Item 7}"
+        ],
+        [
+          "contains{OOT Kakariko Bazaar Item 8, MM_ANY_STICK}",
+          "check{OOT Kakariko Bazaar Item 8}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 1, MM_ANY_STICK}",
+          "check{OOT Kakariko Potion Shop Item 1}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 2, MM_ANY_STICK}",
+          "check{OOT Kakariko Potion Shop Item 2}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 3, MM_ANY_STICK}",
+          "check{OOT Kakariko Potion Shop Item 3}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 4, MM_ANY_STICK}",
+          "check{OOT Kakariko Potion Shop Item 4}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 5, MM_ANY_STICK}",
+          "check{OOT Kakariko Potion Shop Item 5}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 6, MM_ANY_STICK}",
+          "check{OOT Kakariko Potion Shop Item 6}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 7, MM_ANY_STICK}",
+          "check{OOT Kakariko Potion Shop Item 7}"
+        ],
+        [
+          "contains{OOT Kakariko Potion Shop Item 8, MM_ANY_STICK}",
+          "check{OOT Kakariko Potion Shop Item 8}"
+        ],
+        [
+          "contains{OOT Death Mountain Cow, MM_ANY_STICK}",
+          "check{OOT Death Mountain Cow}"
+        ],
+        [
+          "contains{OOT Goron City Grotto Left Scrub, MM_ANY_STICK}",
+          "check{OOT Goron City Grotto Left Scrub}"
+        ],
+        [
+          "contains{OOT Goron City Grotto Center Scrub, MM_ANY_STICK}",
+          "check{OOT Goron City Grotto Center Scrub}"
+        ],
+        [
+          "contains{OOT Goron City Grotto Right Scrub, MM_ANY_STICK}",
+          "check{OOT Goron City Grotto Right Scrub}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 1, MM_ANY_STICK}",
+          "check{OOT Goron Shop Item 1}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 2, MM_ANY_STICK}",
+          "check{OOT Goron Shop Item 2}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 3, MM_ANY_STICK}",
+          "check{OOT Goron Shop Item 3}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 4, MM_ANY_STICK}",
+          "check{OOT Goron Shop Item 4}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 5, MM_ANY_STICK}",
+          "check{OOT Goron Shop Item 5}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 6, MM_ANY_STICK}",
+          "check{OOT Goron Shop Item 6}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 7, MM_ANY_STICK}",
+          "check{OOT Goron Shop Item 7}"
+        ],
+        [
+          "contains{OOT Goron Shop Item 8, MM_ANY_STICK}",
+          "check{OOT Goron Shop Item 8}"
+        ],
+        [
+          "contains{OOT Death Mountain Crater Scrub Child, MM_ANY_STICK}",
+          "check{OOT Death Mountain Crater Scrub Child}"
+        ],
+        [
+          "contains{OOT Death Mountain Crater Grotto Left Scrub, MM_ANY_STICK}",
+          "check{OOT Death Mountain Crater Grotto Left Scrub}"
+        ],
+        [
+          "contains{OOT Death Mountain Crater Grotto Center Scrub, MM_ANY_STICK}",
+          "check{OOT Death Mountain Crater Grotto Center Scrub}"
+        ],
+        [
+          "contains{OOT Death Mountain Crater Grotto Right Scrub, MM_ANY_STICK}",
+          "check{OOT Death Mountain Crater Grotto Right Scrub}"
+        ],
+        [
+          "contains{OOT Zora River Storms Grotto Front Scrub, MM_ANY_STICK}",
+          "check{OOT Zora River Storms Grotto Front Scrub}"
+        ],
+        [
+          "contains{OOT Zora River Storms Grotto Back Scrub, MM_ANY_STICK}",
+          "check{OOT Zora River Storms Grotto Back Scrub}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 1, MM_ANY_STICK}",
+          "check{OOT Zora Shop Item 1}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 2, MM_ANY_STICK}",
+          "check{OOT Zora Shop Item 2}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 3, MM_ANY_STICK}",
+          "check{OOT Zora Shop Item 3}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 4, MM_ANY_STICK}",
+          "check{OOT Zora Shop Item 4}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 5, MM_ANY_STICK}",
+          "check{OOT Zora Shop Item 5}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 6, MM_ANY_STICK}",
+          "check{OOT Zora Shop Item 6}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 7, MM_ANY_STICK}",
+          "check{OOT Zora Shop Item 7}"
+        ],
+        [
+          "contains{OOT Zora Shop Item 8, MM_ANY_STICK}",
+          "check{OOT Zora Shop Item 8}"
+        ],
+        [
+          "contains{OOT Lake Hylia Grotto Left Scrub, MM_ANY_STICK}",
+          "check{OOT Lake Hylia Grotto Left Scrub}"
+        ],
+        [
+          "contains{OOT Lake Hylia Grotto Center Scrub, MM_ANY_STICK}",
+          "check{OOT Lake Hylia Grotto Center Scrub}"
+        ],
+        [
+          "contains{OOT Lake Hylia Grotto Right Scrub, MM_ANY_STICK}",
+          "check{OOT Lake Hylia Grotto Right Scrub}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Stables Cow Left, MM_ANY_STICK}",
+          "check{OOT Lon Lon Ranch Stables Cow Left}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Stables Cow Right, MM_ANY_STICK}",
+          "check{OOT Lon Lon Ranch Stables Cow Right}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Silo Cow Front, MM_ANY_STICK}",
+          "check{OOT Lon Lon Ranch Silo Cow Front}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Silo Cow Back, MM_ANY_STICK}",
+          "check{OOT Lon Lon Ranch Silo Cow Back}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Grotto Left Scrub, MM_ANY_STICK}",
+          "check{OOT Lon Lon Ranch Grotto Left Scrub}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Grotto Center Scrub, MM_ANY_STICK}",
+          "check{OOT Lon Lon Ranch Grotto Center Scrub}"
+        ],
+        [
+          "contains{OOT Lon Lon Ranch Grotto Right Scrub, MM_ANY_STICK}",
+          "check{OOT Lon Lon Ranch Grotto Right Scrub}"
+        ],
+        [
+          "contains{OOT Hyrule Field Cow, MM_ANY_STICK}",
+          "check{OOT Hyrule Field Cow}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 1, MM_ANY_STICK}",
+          "check{OOT Market Bazaar Item 1}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 2, MM_ANY_STICK}",
+          "check{OOT Market Bazaar Item 2}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 3, MM_ANY_STICK}",
+          "check{OOT Market Bazaar Item 3}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 4, MM_ANY_STICK}",
+          "check{OOT Market Bazaar Item 4}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 5, MM_ANY_STICK}",
+          "check{OOT Market Bazaar Item 5}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 6, MM_ANY_STICK}",
+          "check{OOT Market Bazaar Item 6}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 7, MM_ANY_STICK}",
+          "check{OOT Market Bazaar Item 7}"
+        ],
+        [
+          "contains{OOT Market Bazaar Item 8, MM_ANY_STICK}",
+          "check{OOT Market Bazaar Item 8}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 1, MM_ANY_STICK}",
+          "check{OOT Market Potion Shop Item 1}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 2, MM_ANY_STICK}",
+          "check{OOT Market Potion Shop Item 2}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 3, MM_ANY_STICK}",
+          "check{OOT Market Potion Shop Item 3}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 4, MM_ANY_STICK}",
+          "check{OOT Market Potion Shop Item 4}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 5, MM_ANY_STICK}",
+          "check{OOT Market Potion Shop Item 5}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 6, MM_ANY_STICK}",
+          "check{OOT Market Potion Shop Item 6}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 7, MM_ANY_STICK}",
+          "check{OOT Market Potion Shop Item 7}"
+        ],
+        [
+          "contains{OOT Market Potion Shop Item 8, MM_ANY_STICK}",
+          "check{OOT Market Potion Shop Item 8}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 1, MM_ANY_STICK}",
+          "check{OOT Market Bombchu Shop Item 1}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 2, MM_ANY_STICK}",
+          "check{OOT Market Bombchu Shop Item 2}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 3, MM_ANY_STICK}",
+          "check{OOT Market Bombchu Shop Item 3}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 4, MM_ANY_STICK}",
+          "check{OOT Market Bombchu Shop Item 4}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 5, MM_ANY_STICK}",
+          "check{OOT Market Bombchu Shop Item 5}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 6, MM_ANY_STICK}",
+          "check{OOT Market Bombchu Shop Item 6}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 7, MM_ANY_STICK}",
+          "check{OOT Market Bombchu Shop Item 7}"
+        ],
+        [
+          "contains{OOT Market Bombchu Shop Item 8, MM_ANY_STICK}",
+          "check{OOT Market Bombchu Shop Item 8}"
+        ],
+        [
+          "contains{OOT Gerudo Valley Grotto Front Scrub, MM_ANY_STICK}",
+          "check{OOT Gerudo Valley Grotto Front Scrub}"
+        ],
+        [
+          "contains{OOT Gerudo Valley Grotto Back Scrub, MM_ANY_STICK}",
+          "check{OOT Gerudo Valley Grotto Back Scrub}"
+        ],
+        [
+          "contains{OOT Gerudo Valley Cow, MM_ANY_STICK}",
+          "check{OOT Gerudo Valley Cow}"
+        ],
+        [
+          "contains{OOT Desert Colossus Grotto Front Scrub, MM_ANY_STICK}",
+          "check{OOT Desert Colossus Grotto Front Scrub}"
+        ],
+        [
+          "contains{OOT Desert Colossus Grotto Back Scrub, MM_ANY_STICK}",
+          "check{OOT Desert Colossus Grotto Back Scrub}"
+        ],
+        [
+          "contains{OOT Dodongo Cavern Lobby Scrub, MM_ANY_STICK}",
+          "check{OOT Dodongo Cavern Lobby Scrub}"
+        ],
+        [
+          "contains{OOT Dodongo Cavern Green Side Room Scrub, MM_ANY_STICK}",
+          "check{OOT Dodongo Cavern Green Side Room Scrub}"
+        ],
+        [
+          "contains{OOT Dodongo Cavern Bomb Bag Side Room Left Scrub, MM_ANY_STICK}",
+          "check{OOT Dodongo Cavern Bomb Bag Side Room Left Scrub}"
+        ],
+        [
+          "contains{OOT Dodongo Cavern Bomb Bag Side Room Right Scrub, MM_ANY_STICK}",
+          "check{OOT Dodongo Cavern Bomb Bag Side Room Right Scrub}"
+        ],
+        [
+          "contains{OOT Jabu-Jabu Scrub, MM_ANY_STICK}",
+          "check{OOT Jabu-Jabu Scrub}"
+        ],
+        [
+          "contains{OOT Ganon Castle Leftmost Scrub, MM_ANY_STICK}",
+          "check{OOT Ganon Castle Leftmost Scrub}"
+        ],
+        [
+          "contains{OOT Ganon Castle Left-Center Scrub, MM_ANY_STICK}",
+          "check{OOT Ganon Castle Left-Center Scrub}"
+        ],
+        [
+          "contains{OOT Ganon Castle Right-Center Scrub, MM_ANY_STICK}",
+          "check{OOT Ganon Castle Right-Center Scrub}"
+        ],
+        [
+          "contains{OOT Ganon Castle Rightmost Scrub, MM_ANY_STICK}",
+          "check{OOT Ganon Castle Rightmost Scrub}"
+        ],
+        [
+          "contains{OOT MQ Deku Tree Scrub, MM_ANY_STICK}",
+          "check{OOT MQ Deku Tree Scrub}"
+        ],
+        [
+          "contains{OOT MQ Dodongo Cavern Lobby Scrub Front, MM_ANY_STICK}",
+          "check{OOT MQ Dodongo Cavern Lobby Scrub Front}"
+        ],
+        [
+          "contains{OOT MQ Dodongo Cavern Lobby Scrub Back, MM_ANY_STICK}",
+          "check{OOT MQ Dodongo Cavern Lobby Scrub Back}"
+        ],
+        [
+          "contains{OOT MQ Dodongo Cavern Staircase Scrub, MM_ANY_STICK}",
+          "check{OOT MQ Dodongo Cavern Staircase Scrub}"
+        ],
+        [
+          "contains{OOT MQ Dodongo Cavern Tunnel Side Scrub, MM_ANY_STICK}",
+          "check{OOT MQ Dodongo Cavern Tunnel Side Scrub}"
+        ],
+        [
+          "contains{OOT MQ Jabu-Jabu Cow, MM_ANY_STICK}",
+          "check{OOT MQ Jabu-Jabu Cow}"
+        ],
+        [
+          "contains{OOT MQ Ganon Castle Leftmost Scrub, MM_ANY_STICK}",
+          "check{OOT MQ Ganon Castle Leftmost Scrub}"
+        ],
+        [
+          "contains{OOT MQ Ganon Castle Left-Center Scrub, MM_ANY_STICK}",
+          "check{OOT MQ Ganon Castle Left-Center Scrub}"
+        ],
+        [
+          "contains{OOT MQ Ganon Castle Center Scrub, MM_ANY_STICK}",
+          "check{OOT MQ Ganon Castle Center Scrub}"
+        ],
+        [
+          "contains{OOT MQ Ganon Castle Right-Center Scrub, MM_ANY_STICK}",
+          "check{OOT MQ Ganon Castle Right-Center Scrub}"
+        ],
+        [
+          "contains{OOT MQ Ganon Castle Rightmost Scrub, MM_ANY_STICK}",
+          "check{OOT MQ Ganon Castle Rightmost Scrub}"
+        ],
+        [
+          "contains{MM Trading Post Item 1, MM_ANY_STICK}",
+          "check{MM Trading Post Item 1}"
+        ],
+        [
+          "contains{MM Trading Post Item 2, MM_ANY_STICK}",
+          "check{MM Trading Post Item 2}"
+        ],
+        [
+          "contains{MM Trading Post Item 3, MM_ANY_STICK}",
+          "check{MM Trading Post Item 3}"
+        ],
+        [
+          "contains{MM Trading Post Item 4, MM_ANY_STICK}",
+          "check{MM Trading Post Item 4}"
+        ],
+        [
+          "contains{MM Trading Post Item 5, MM_ANY_STICK}",
+          "check{MM Trading Post Item 5}"
+        ],
+        [
+          "contains{MM Trading Post Item 6, MM_ANY_STICK}",
+          "check{MM Trading Post Item 6}"
+        ],
+        [
+          "contains{MM Trading Post Item 7, MM_ANY_STICK}",
+          "check{MM Trading Post Item 7}"
+        ],
+        [
+          "contains{MM Trading Post Item 8, MM_ANY_STICK}",
+          "check{MM Trading Post Item 8}"
+        ],
+        [
+          "contains{MM Bomb Shop Item 1, MM_ANY_STICK}",
+          "check{MM Bomb Shop Item 1}"
+        ],
+        [
+          "contains{MM Bomb Shop Item 2, MM_ANY_STICK}",
+          "check{MM Bomb Shop Item 2}"
+        ],
+        [
+          "contains{MM Termina Field Cow Front, MM_ANY_STICK}",
+          "check{MM Termina Field Cow Front}"
+        ],
+        [
+          "contains{MM Termina Field Cow Back, MM_ANY_STICK}",
+          "check{MM Termina Field Cow Back}"
+        ],
+        [
+          "contains{MM Swamp Potion Shop Item 1, MM_ANY_STICK}",
+          "check{MM Swamp Potion Shop Item 1}"
+        ],
+        [
+          "contains{MM Swamp Potion Shop Item 2, MM_ANY_STICK}",
+          "check{MM Swamp Potion Shop Item 2}"
+        ],
+        [
+          "contains{MM Swamp Potion Shop Item 3, MM_ANY_STICK}",
+          "check{MM Swamp Potion Shop Item 3}"
+        ],
+        [
+          "contains{MM Goron Shop Item 1, MM_ANY_STICK}",
+          "check{MM Goron Shop Item 1}"
+        ],
+        [
+          "contains{MM Goron Shop Item 2, MM_ANY_STICK}",
+          "check{MM Goron Shop Item 2}"
+        ],
+        [
+          "contains{MM Goron Shop Item 3, MM_ANY_STICK}",
+          "check{MM Goron Shop Item 3}"
+        ],
+        [
+          "contains{MM Romani Ranch Barn Cow Left, MM_ANY_STICK}",
+          "check{MM Romani Ranch Barn Cow Left}"
+        ],
+        [
+          "contains{MM Romani Ranch Barn Cow Right Front, MM_ANY_STICK}",
+          "check{MM Romani Ranch Barn Cow Right Front}"
+        ],
+        [
+          "contains{MM Romani Ranch Barn Cow Right Back, MM_ANY_STICK}",
+          "check{MM Romani Ranch Barn Cow Right Back}"
+        ],
+        [
+          "contains{MM Great Bay Coast Cow Front, MM_ANY_STICK}",
+          "check{MM Great Bay Coast Cow Front}"
+        ],
+        [
+          "contains{MM Great Bay Coast Cow Back, MM_ANY_STICK}",
+          "check{MM Great Bay Coast Cow Back}"
+        ],
+        [
+          "contains{MM Zora Shop Item 1, MM_ANY_STICK}",
+          "check{MM Zora Shop Item 1}"
+        ],
+        [
+          "contains{MM Zora Shop Item 2, MM_ANY_STICK}",
+          "check{MM Zora Shop Item 2}"
+        ],
+        [
+          "contains{MM Zora Shop Item 3, MM_ANY_STICK}",
+          "check{MM Zora Shop Item 3}"
+        ],
+        [
+          "contains{MM Beneath the Well Cow, MM_ANY_STICK}",
           "check{MM Beneath the Well Cow}"
         ]
       ],

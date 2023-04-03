@@ -45,6 +45,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
         {
             public string to;
             public string from;
+            public string type;
             public string id;
         }
 
@@ -177,7 +178,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 { "OOT_renewable_blue_fire", new("OOT_BLUE_FIRE", new List<string>()) },
                 { "MM_renewable_red_potion", new("MM_POTION_RED", new List<string>()) },
                 { "MM_renewable_blue_potion", new("MM_POTION_BLUE", new List<string>()) },
-                { "MM_renewable_milk", new("MM_MILK", new List<string>()) }
+                { "MM_renewable_milk", new("MM_MILK", new List<string>()) },
+                { "MM_renewable_sticks", new("MM_ANY_STICK", new List<string> { "MM_STICK", "MM_STICKS_5", "MM_STICKS_10", "SHARED_STICK", "SHARED_STICKS_5", "SHARED_STICKS_10" }) },
             };
 
             //Add Reneawable Logic
@@ -423,10 +425,29 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             DoorOfTime.ID = "doorOfTime";
             DoorOfTime.DisplayName = "Open Door Of Time";
             DoorOfTime.CurrentValue = "closed";
+            DoorOfTime.SubCategory = "Events";
             DoorOfTime.CreateSimpleValues(new string[] { "open", "closed" });
             DoorOfTime.Values["open"].Name = "Open";
             DoorOfTime.Values["closed"].Name = "Closed";
             dictionaryFile.Options.Add(DoorOfTime.ID,DoorOfTime);
+
+            OptionData.TrackerOption kakarikoGate = new OptionData.TrackerOption();
+            kakarikoGate.ID = "kakarikoGate";
+            kakarikoGate.DisplayName = "Open Kakariko Gate";
+            kakarikoGate.CurrentValue = "closed";
+            kakarikoGate.SubCategory = "Events";
+            kakarikoGate.CreateSimpleValues(new string[] { "open", "closed" });
+            kakarikoGate.Values["open"].Name = "Open";
+            kakarikoGate.Values["closed"].Name = "Closed";
+            dictionaryFile.Options.Add(kakarikoGate.ID, kakarikoGate);
+
+            OptionData.TrackerOption skipZelda = new OptionData.TrackerOption();
+            skipZelda.ID = "skipZelda";
+            skipZelda.DisplayName = "Skip Child Zelda";
+            skipZelda.CurrentValue = "false";
+            skipZelda.SubCategory = "Events";
+            skipZelda.CreateSimpleValues(new string[] { "true", "false" });
+            dictionaryFile.Options.Add(skipZelda.ID, skipZelda);
 
             OptionData.TrackerOption CrossGameOOTWarpSong = new OptionData.TrackerOption();
             CrossGameOOTWarpSong.ID = "crossWarpOot";
@@ -885,7 +906,14 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         line = line.Replace(FullFunction, ReplaceText);
                         break;
                     case "event":
-                        line = line.Replace(FullFunction, $"{Game}_EVENT_{Parameters}");
+                        string TempGame = Game;
+                        string TempParam = Parameters;
+                        if (Parameters.StartsWith("OOT_") || Parameters.StartsWith("MM_"))
+                        {
+                            TempGame = Parameters.Split('_')[0];
+                            TempParam = Parameters.Split('_')[1];
+                        }
+                        line = line.Replace(FullFunction, $"{TempGame}_EVENT_{TempParam}");
                         break;
                     case "adult_trade":
                         line = line.Replace(FullFunction, $"{Game}_is_adult && has({Parameters})");
@@ -1025,14 +1053,17 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                                 if (FullexitName.StartsWith("OOT SPAWN => ")) { entranceEntry.AlwaysAccessable = true; }
                                 if (RandoEntrances.Any(x => x.to == exit && x.from == Area)) 
                                 {
-                                    bool IsBossDoor = TrueExitName.EndsWith(" Boss");
+                                    var EntranceCSVentry = RandoEntrances.First(x => x.to == exit && x.from == Area);
+                                    bool IsBossDoor = EntranceCSVentry.type == "boss";
                                     entranceEntry.RandomizableEntrance = true;
+                                    /*
                                     entranceEntry.DisplayArea = IsBossDoor ? "Boss Room" : "Dungeon";
                                     entranceEntry.DisplayExit = $"{(IsBossDoor ? "" : "Entrance to ")}{entranceEntry.Exit}";
                                     if (DungeonExits.ContainsKey(TrueAreaName))
                                     {
                                         entranceEntry.DisplayExit = $"Exit from {entranceEntry.Area}";
                                     }
+                                    */
                                 }
 
                                 dictionaryFile.EntranceList.Add(FullexitName, entranceEntry);

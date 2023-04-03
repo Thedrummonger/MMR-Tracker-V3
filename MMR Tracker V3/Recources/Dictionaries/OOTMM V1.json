@@ -11274,7 +11274,7 @@
     },
     "OOT MQ Spirit Temple Lobby Back-Right Chest": {
       "Name": "MQ Spirit Temple Lobby Back-Right Chest",
-      "OriginalItem": "OOT_SMALL_KEY_SPIRIT",
+      "OriginalItem": "OOT_BOMBCHU_5",
       "Area": "Spirit Temple",
       "ValidItemTypes": [
         "item"
@@ -11472,7 +11472,7 @@
     },
     "OOT MQ Spirit Temple Lobby Front-Right Chest": {
       "Name": "MQ Spirit Temple Lobby Front-Right Chest",
-      "OriginalItem": "OOT_BOMBCHU_5",
+      "OriginalItem": "OOT_SMALL_KEY_SPIRIT",
       "Area": "Spirit Temple",
       "ValidItemTypes": [
         "item"
@@ -19305,7 +19305,7 @@
       }
     },
     "MM_BOTTLE_EMPTY": {
-      "Name": "Empty Bottle",
+      "Name": "Empty Bottle (MM)",
       "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -19314,12 +19314,10 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM_BOTTLE_EMPTY",
-          "Empty Bottle",
           "Empty Bottle (MM)"
         ],
         "GossipHintNames": [
           "MM_BOTTLE_EMPTY",
-          "Empty Bottle",
           "Empty Bottle (MM)"
         ],
         "PriceDataNames": []
@@ -25422,8 +25420,6 @@
     "OOT Bottom of the Well => OOT Kakariko": {
       "Area": "OOT Bottom of the Well",
       "Exit": "OOT Kakariko",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit from OOT Bottom of the Well",
       "EntrancePairID": {
         "Area": "OOT Kakariko",
         "Exit": "OOT Bottom of the Well"
@@ -25449,8 +25445,6 @@
     "OOT Deku Tree => OOT Kokiri Forest": {
       "Area": "OOT Deku Tree",
       "Exit": "OOT Kokiri Forest",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit from OOT Deku Tree",
       "EntrancePairID": {
         "Area": "OOT Kokiri Forest",
         "Exit": "OOT Deku Tree"
@@ -25539,8 +25533,6 @@
     "OOT Deku Tree Before Boss => OOT Deku Tree Boss": {
       "Area": "OOT Deku Tree Before Boss",
       "Exit": "OOT Deku Tree Boss",
-      "DisplayArea": "Boss Room",
-      "DisplayExit": "OOT Deku Tree Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -25548,8 +25540,6 @@
     "OOT Dodongo Cavern => OOT Death Mountain": {
       "Area": "OOT Dodongo Cavern",
       "Exit": "OOT Death Mountain",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit from OOT Dodongo Cavern",
       "EntrancePairID": {
         "Area": "OOT Death Mountain",
         "Exit": "OOT Dodongo Cavern"
@@ -25813,8 +25803,6 @@
     "OOT Dodongo Cavern Skull => OOT Dodongo Cavern Boss": {
       "Area": "OOT Dodongo Cavern Skull",
       "Exit": "OOT Dodongo Cavern Boss",
-      "DisplayArea": "Boss Room",
-      "DisplayExit": "OOT Dodongo Cavern Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -25822,8 +25810,6 @@
     "OOT Fire Temple => OOT Fire Temple Entry": {
       "Area": "OOT Fire Temple",
       "Exit": "OOT Fire Temple Entry",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit from OOT Fire Temple",
       "EntrancePairID": {
         "Area": "OOT Fire Temple Entry",
         "Exit": "OOT Fire Temple"
@@ -25863,8 +25849,6 @@
     "OOT Fire Temple Pre-Boss => OOT Fire Temple Boss": {
       "Area": "OOT Fire Temple Pre-Boss",
       "Exit": "OOT Fire Temple Boss",
-      "DisplayArea": "Boss Room",
-      "DisplayExit": "OOT Fire Temple Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -25949,8 +25933,6 @@
     "OOT Forest Temple => OOT Sacred Meadow": {
       "Area": "OOT Forest Temple",
       "Exit": "OOT Sacred Meadow",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit from OOT Forest Temple",
       "EntrancePairID": {
         "Area": "OOT Sacred Meadow",
         "Exit": "OOT Forest Temple"
@@ -26193,8 +26175,6 @@
     "OOT Forest Temple Antichamber => OOT Forest Temple Boss": {
       "Area": "OOT Forest Temple Antichamber",
       "Exit": "OOT Forest Temple Boss",
-      "DisplayArea": "Boss Room",
-      "DisplayExit": "OOT Forest Temple Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -26265,8 +26245,6 @@
     "OOT Gerudo Training Grounds => OOT Gerudo Fortress Exterior": {
       "Area": "OOT Gerudo Training Grounds",
       "Exit": "OOT Gerudo Fortress Exterior",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit from OOT Gerudo Training Grounds",
       "EntrancePairID": {
         "Area": "OOT Gerudo Fortress Exterior",
         "Exit": "OOT Gerudo Training Grounds"
@@ -26390,8 +26368,6 @@
     "OOT Ice Cavern => OOT Zora Fountain Frozen": {
       "Area": "OOT Ice Cavern",
       "Exit": "OOT Zora Fountain Frozen",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit from OOT Ice Cavern",
       "EntrancePairID": {
         "Area": "OOT Zora Fountain Frozen",
         "Exit": "OOT Ice Cavern"
@@ -26403,8 +26379,6 @@
     "OOT Jabu-Jabu => OOT Zora Fountain": {
       "Area": "OOT Jabu-Jabu",
       "Exit": "OOT Zora Fountain",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit from OOT Jabu-Jabu",
       "EntrancePairID": {
         "Area": "OOT Zora Fountain",
         "Exit": "OOT Jabu-Jabu"
@@ -26437,8 +26411,6 @@
     "OOT Jabu-Jabu Pre-Boss => OOT Jabu-Jabu Boss": {
       "Area": "OOT Jabu-Jabu Pre-Boss",
       "Exit": "OOT Jabu-Jabu Boss",
-      "DisplayArea": "Boss Room",
-      "DisplayExit": "OOT Jabu-Jabu Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -26576,6 +26548,27 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "OOT Kokiri Forest => OOT Saria's House": {
+      "Area": "OOT Kokiri Forest",
+      "Exit": "OOT Saria's House",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Kokiri Forest => OOT House of Twins": {
+      "Area": "OOT Kokiri Forest",
+      "Exit": "OOT House of Twins",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Kokiri Forest => OOT Know It All House": {
+      "Area": "OOT Kokiri Forest",
+      "Exit": "OOT Know It All House",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "OOT Kokiri Forest => OOT Lost Woods": {
       "Area": "OOT Kokiri Forest",
       "Exit": "OOT Lost Woods",
@@ -26600,13 +26593,18 @@
     "OOT Kokiri Forest => OOT Deku Tree": {
       "Area": "OOT Kokiri Forest",
       "Exit": "OOT Deku Tree",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance to OOT Deku Tree",
       "EntrancePairID": {
         "Area": "OOT Deku Tree",
         "Exit": "OOT Kokiri Forest"
       },
       "RandomizableEntrance": true,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Kokiri Forest => OOT Kokiri Forest Storms Grotto": {
+      "Area": "OOT Kokiri Forest",
+      "Exit": "OOT Kokiri Forest Storms Grotto",
+      "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -26624,23 +26622,48 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "OOT Saria's House => OOT Kokiri Forest": {
+      "Area": "OOT Saria's House",
+      "Exit": "OOT Kokiri Forest",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT House of Twins => OOT Kokiri Forest": {
+      "Area": "OOT House of Twins",
+      "Exit": "OOT Kokiri Forest",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Know It All House => OOT Kokiri Forest": {
+      "Area": "OOT Know It All House",
+      "Exit": "OOT Kokiri Forest",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Kokiri Forest Storms Grotto => OOT Kokiri Forest": {
+      "Area": "OOT Kokiri Forest Storms Grotto",
+      "Exit": "OOT Kokiri Forest",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "OOT Hyrule Field => OOT Lost Woods Bridge": {
       "Area": "OOT Hyrule Field",
       "Exit": "OOT Lost Woods Bridge",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Lost Woods Bridge",
+        "Exit": "OOT Hyrule Field"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT Hyrule Field => OOT Market": {
+    "OOT Hyrule Field => OOT Market Entryway": {
       "Area": "OOT Hyrule Field",
-      "Exit": "OOT Market",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    "OOT Hyrule Field => OOT Market Destroyed": {
-      "Area": "OOT Hyrule Field",
-      "Exit": "OOT Market Destroyed",
+      "Exit": "OOT Market Entryway",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -26648,21 +26671,33 @@
     "OOT Hyrule Field => OOT Kakariko": {
       "Area": "OOT Hyrule Field",
       "Exit": "OOT Kakariko",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Kakariko",
+        "Exit": "OOT Hyrule Field"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "OOT Hyrule Field => OOT Zora River Front": {
       "Area": "OOT Hyrule Field",
       "Exit": "OOT Zora River Front",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Zora River Front",
+        "Exit": "OOT Hyrule Field"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "OOT Hyrule Field => OOT Lake Hylia": {
       "Area": "OOT Hyrule Field",
       "Exit": "OOT Lake Hylia",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Lake Hylia",
+        "Exit": "OOT Hyrule Field"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -26676,6 +26711,150 @@
     "OOT Hyrule Field => OOT Lon Lon Ranch": {
       "Area": "OOT Hyrule Field",
       "Exit": "OOT Lon Lon Ranch",
+      "EntrancePairID": {
+        "Area": "OOT Lon Lon Ranch",
+        "Exit": "OOT Hyrule Field"
+      },
+      "RandomizableEntrance": true,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Hyrule Field => OOT Hyrule Field Scrub Grotto": {
+      "Area": "OOT Hyrule Field",
+      "Exit": "OOT Hyrule Field Scrub Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Hyrule Field => OOT Hyrule Field Open Grotto": {
+      "Area": "OOT Hyrule Field",
+      "Exit": "OOT Hyrule Field Open Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Hyrule Field => OOT Hyrule Field Southeast Grotto": {
+      "Area": "OOT Hyrule Field",
+      "Exit": "OOT Hyrule Field Southeast Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Hyrule Field => OOT Hyrule Field Grotto Near Market": {
+      "Area": "OOT Hyrule Field",
+      "Exit": "OOT Hyrule Field Grotto Near Market",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Hyrule Field => OOT Hyrule Field Tektite Grotto": {
+      "Area": "OOT Hyrule Field",
+      "Exit": "OOT Hyrule Field Tektite Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Hyrule Field => OOT Hyrule Field Grotto Near GV": {
+      "Area": "OOT Hyrule Field",
+      "Exit": "OOT Hyrule Field Grotto Near GV",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Hyrule Field => OOT Hyrule Field Grotto Near Kak": {
+      "Area": "OOT Hyrule Field",
+      "Exit": "OOT Hyrule Field Grotto Near Kak",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Hyrule Field => OOT Hyrule Field Fairy Grotto": {
+      "Area": "OOT Hyrule Field",
+      "Exit": "OOT Hyrule Field Fairy Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Hyrule Field Scrub Grotto => OOT Hyrule Field": {
+      "Area": "OOT Hyrule Field Scrub Grotto",
+      "Exit": "OOT Hyrule Field",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Hyrule Field Open Grotto => OOT Hyrule Field": {
+      "Area": "OOT Hyrule Field Open Grotto",
+      "Exit": "OOT Hyrule Field",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Hyrule Field Southeast Grotto => OOT Hyrule Field": {
+      "Area": "OOT Hyrule Field Southeast Grotto",
+      "Exit": "OOT Hyrule Field",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Hyrule Field Grotto Near Market => OOT Hyrule Field": {
+      "Area": "OOT Hyrule Field Grotto Near Market",
+      "Exit": "OOT Hyrule Field",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Hyrule Field Tektite Grotto => OOT Hyrule Field": {
+      "Area": "OOT Hyrule Field Tektite Grotto",
+      "Exit": "OOT Hyrule Field",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Hyrule Field Grotto Near GV => OOT Hyrule Field": {
+      "Area": "OOT Hyrule Field Grotto Near GV",
+      "Exit": "OOT Hyrule Field",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Hyrule Field Grotto Near Kak => OOT Hyrule Field": {
+      "Area": "OOT Hyrule Field Grotto Near Kak",
+      "Exit": "OOT Hyrule Field",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Hyrule Field Fairy Grotto => OOT Hyrule Field": {
+      "Area": "OOT Hyrule Field Fairy Grotto",
+      "Exit": "OOT Hyrule Field",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Market Entryway => OOT Hyrule Field": {
+      "Area": "OOT Market Entryway",
+      "Exit": "OOT Hyrule Field",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Market Entryway => OOT Market": {
+      "Area": "OOT Market Entryway",
+      "Exit": "OOT Market",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Market Entryway => OOT Market Destroyed": {
+      "Area": "OOT Market Entryway",
+      "Exit": "OOT Market Destroyed",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Market Entryway => OOT Market Pot House": {
+      "Area": "OOT Market Entryway",
+      "Exit": "OOT Market Pot House",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -26683,13 +26862,6 @@
     "OOT Market => OOT Hyrule Field": {
       "Area": "OOT Market",
       "Exit": "OOT Hyrule Field",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    "OOT Market => OOT Market Pot House": {
-      "Area": "OOT Market",
-      "Exit": "OOT Market Pot House",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -26708,9 +26880,9 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT Market => OOT Temple of Time": {
+    "OOT Market => OOT Temple of Time Entryway": {
       "Area": "OOT Market",
-      "Exit": "OOT Temple of Time",
+      "Exit": "OOT Temple of Time Entryway",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -26750,16 +26922,9 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT Market => OOT Market Bombchu Shop": {
+    "OOT Market => MM Clock Town": {
       "Area": "OOT Market",
-      "Exit": "OOT Market Bombchu Shop",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    "OOT Market => MM SPAWN": {
-      "Area": "OOT Market",
-      "Exit": "MM SPAWN",
+      "Exit": "MM Clock Town",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -26806,6 +26971,13 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "OOT Back Alley => OOT Market Destroyed": {
+      "Area": "OOT Back Alley",
+      "Exit": "OOT Market Destroyed",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "OOT Back Alley => OOT Dog Lady House": {
       "Area": "OOT Back Alley",
       "Exit": "OOT Dog Lady House",
@@ -26813,8 +26985,29 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "OOT Back Alley => OOT Market Bombchu Shop": {
+      "Area": "OOT Back Alley",
+      "Exit": "OOT Market Bombchu Shop",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Back Alley => OOT Market Back Alley East Home": {
+      "Area": "OOT Back Alley",
+      "Exit": "OOT Market Back Alley East Home",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "OOT Dog Lady House => OOT Back Alley": {
       "Area": "OOT Dog Lady House",
+      "Exit": "OOT Back Alley",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Market Back Alley East Home => OOT Back Alley": {
+      "Area": "OOT Market Back Alley East Home",
       "Exit": "OOT Back Alley",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
@@ -26869,10 +27062,35 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "OOT Temple of Time Entryway => OOT Market": {
+      "Area": "OOT Temple of Time Entryway",
+      "Exit": "OOT Market",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Temple of Time Entryway => OOT Market Destroyed": {
+      "Area": "OOT Temple of Time Entryway",
+      "Exit": "OOT Market Destroyed",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Temple of Time Entryway => OOT Temple of Time": {
+      "Area": "OOT Temple of Time Entryway",
+      "Exit": "OOT Temple of Time",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "OOT Lon Lon Ranch => OOT Hyrule Field": {
       "Area": "OOT Lon Lon Ranch",
       "Exit": "OOT Hyrule Field",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Hyrule Field",
+        "Exit": "OOT Lon Lon Ranch"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -26893,6 +27111,13 @@
     "OOT Lon Lon Ranch => OOT Lon Lon Ranch House": {
       "Area": "OOT Lon Lon Ranch",
       "Exit": "OOT Lon Lon Ranch House",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Lon Lon Ranch => OOT Lon Lon Ranch Grotto": {
+      "Area": "OOT Lon Lon Ranch",
+      "Exit": "OOT Lon Lon Ranch Grotto",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -26918,9 +27143,44 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "OOT Lon Lon Ranch Grotto => OOT Lon Lon Ranch": {
+      "Area": "OOT Lon Lon Ranch Grotto",
+      "Exit": "OOT Lon Lon Ranch",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "OOT Hyrule Castle => OOT Market": {
       "Area": "OOT Hyrule Castle",
       "Exit": "OOT Market",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Hyrule Castle => OOT Fairy Fountain Din": {
+      "Area": "OOT Hyrule Castle",
+      "Exit": "OOT Fairy Fountain Din",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Hyrule Castle => OOT Hyrule Castle Grotto": {
+      "Area": "OOT Hyrule Castle",
+      "Exit": "OOT Hyrule Castle Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Fairy Fountain Din => OOT Hyrule Castle": {
+      "Area": "OOT Fairy Fountain Din",
+      "Exit": "OOT Hyrule Castle",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Hyrule Castle Grotto => OOT Hyrule Castle": {
+      "Area": "OOT Hyrule Castle Grotto",
+      "Exit": "OOT Hyrule Castle",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -26935,6 +27195,20 @@
     "OOT Ganon Castle Exterior => OOT Ganon Castle Main": {
       "Area": "OOT Ganon Castle Exterior",
       "Exit": "OOT Ganon Castle Main",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Ganon Castle Exterior => OOT Fairy Fountain Defense": {
+      "Area": "OOT Ganon Castle Exterior",
+      "Exit": "OOT Fairy Fountain Defense",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Fairy Fountain Defense => OOT Ganon Castle Exterior": {
+      "Area": "OOT Fairy Fountain Defense",
+      "Exit": "OOT Ganon Castle Exterior",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -26960,6 +27234,13 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "OOT Lost Woods => OOT Lost Woods Generic Grotto": {
+      "Area": "OOT Lost Woods",
+      "Exit": "OOT Lost Woods Generic Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "OOT Lost Woods => OOT Goron City Shortcut": {
       "Area": "OOT Lost Woods",
       "Exit": "OOT Goron City Shortcut",
@@ -26974,6 +27255,13 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "OOT Lost Woods Generic Grotto => OOT Lost Woods": {
+      "Area": "OOT Lost Woods Generic Grotto",
+      "Exit": "OOT Lost Woods",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "OOT Lost Woods Bridge => OOT Kokiri Forest": {
       "Area": "OOT Lost Woods Bridge",
       "Exit": "OOT Kokiri Forest",
@@ -26984,7 +27272,11 @@
     "OOT Lost Woods Bridge => OOT Hyrule Field": {
       "Area": "OOT Lost Woods Bridge",
       "Exit": "OOT Hyrule Field",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Hyrule Field",
+        "Exit": "OOT Lost Woods Bridge"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -27002,9 +27294,9 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT Lost Woods Deep => OOT Sacred Meadow": {
+    "OOT Lost Woods Deep => OOT Sacred Meadow Entryway": {
       "Area": "OOT Lost Woods Deep",
-      "Exit": "OOT Sacred Meadow",
+      "Exit": "OOT Sacred Meadow Entryway",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -27012,6 +27304,13 @@
     "OOT Lost Woods Deep => OOT Deku Theater": {
       "Area": "OOT Lost Woods Deep",
       "Exit": "OOT Deku Theater",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Lost Woods Deep => OOT Lost Woods Scrub Grotto": {
+      "Area": "OOT Lost Woods Deep",
+      "Exit": "OOT Lost Woods Scrub Grotto",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -27030,6 +27329,41 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "OOT Lost Woods Scrub Grotto => OOT Lost Woods Deep": {
+      "Area": "OOT Lost Woods Scrub Grotto",
+      "Exit": "OOT Lost Woods Deep",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Sacred Meadow Entryway => OOT Lost Woods Deep": {
+      "Area": "OOT Sacred Meadow Entryway",
+      "Exit": "OOT Lost Woods Deep",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Sacred Meadow Entryway => OOT Sacred Meadow": {
+      "Area": "OOT Sacred Meadow Entryway",
+      "Exit": "OOT Sacred Meadow",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Sacred Meadow Entryway => OOT Wolfos Grotto": {
+      "Area": "OOT Sacred Meadow Entryway",
+      "Exit": "OOT Wolfos Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Wolfos Grotto => OOT Sacred Meadow Entryway": {
+      "Area": "OOT Wolfos Grotto",
+      "Exit": "OOT Sacred Meadow Entryway",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "OOT Sacred Meadow => OOT Lost Woods Deep": {
       "Area": "OOT Sacred Meadow",
       "Exit": "OOT Lost Woods Deep",
@@ -27040,8 +27374,6 @@
     "OOT Sacred Meadow => OOT Forest Temple": {
       "Area": "OOT Sacred Meadow",
       "Exit": "OOT Forest Temple",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance to OOT Forest Temple",
       "EntrancePairID": {
         "Area": "OOT Forest Temple",
         "Exit": "OOT Sacred Meadow"
@@ -27050,16 +27382,34 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT Kakariko => OOT Hyrule Field": {
-      "Area": "OOT Kakariko",
-      "Exit": "OOT Hyrule Field",
+    "OOT Sacred Meadow => OOT Sacred Meadow Storms Grotto": {
+      "Area": "OOT Sacred Meadow",
+      "Exit": "OOT Sacred Meadow Storms Grotto",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT Kakariko => OOT Death Mountain": {
+    "OOT Sacred Meadow Storms Grotto => OOT Sacred Meadow": {
+      "Area": "OOT Sacred Meadow Storms Grotto",
+      "Exit": "OOT Sacred Meadow",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Kakariko => OOT Hyrule Field": {
       "Area": "OOT Kakariko",
-      "Exit": "OOT Death Mountain",
+      "Exit": "OOT Hyrule Field",
+      "EntrancePairID": {
+        "Area": "OOT Hyrule Field",
+        "Exit": "OOT Kakariko"
+      },
+      "RandomizableEntrance": true,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Kakariko => OOT Kakariko Trail Start": {
+      "Area": "OOT Kakariko",
+      "Exit": "OOT Kakariko Trail Start",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -27074,8 +27424,6 @@
     "OOT Kakariko => OOT Bottom of the Well": {
       "Area": "OOT Kakariko",
       "Exit": "OOT Bottom of the Well",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance to OOT Bottom of the Well",
       "EntrancePairID": {
         "Area": "OOT Bottom of the Well",
         "Exit": "OOT Kakariko"
@@ -27119,9 +27467,65 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "OOT Kakariko => OOT Kakariko Granny Shop": {
+      "Area": "OOT Kakariko",
+      "Exit": "OOT Kakariko Granny Shop",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Kakariko => OOT Windmill": {
+      "Area": "OOT Kakariko",
+      "Exit": "OOT Windmill",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Kakariko => OOT Impa House Front": {
+      "Area": "OOT Kakariko",
+      "Exit": "OOT Impa House Front",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Kakariko => OOT ReDead Grotto": {
+      "Area": "OOT Kakariko",
+      "Exit": "OOT ReDead Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Kakariko => OOT Kakariko Generic Grotto": {
+      "Area": "OOT Kakariko",
+      "Exit": "OOT Kakariko Generic Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "OOT Kakariko Rooftop => OOT Kakariko": {
       "Area": "OOT Kakariko Rooftop",
       "Exit": "OOT Kakariko",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Kakariko Rooftop => OOT Impa House Back": {
+      "Area": "OOT Kakariko Rooftop",
+      "Exit": "OOT Impa House Back",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Kakariko Trail Start => OOT Kakariko": {
+      "Area": "OOT Kakariko Trail Start",
+      "Exit": "OOT Kakariko",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Kakariko Trail Start => OOT Death Mountain": {
+      "Area": "OOT Kakariko Trail Start",
+      "Exit": "OOT Death Mountain",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -27140,8 +27544,57 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "OOT Kakariko Granny Shop => OOT Kakariko": {
+      "Area": "OOT Kakariko Granny Shop",
+      "Exit": "OOT Kakariko",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "OOT Shooting Gallery Adult => OOT Kakariko": {
       "Area": "OOT Shooting Gallery Adult",
+      "Exit": "OOT Kakariko",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Impa House Front => OOT Kakariko": {
+      "Area": "OOT Impa House Front",
+      "Exit": "OOT Kakariko",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Impa House Back => OOT Kakariko": {
+      "Area": "OOT Impa House Back",
+      "Exit": "OOT Kakariko",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Windmill => OOT Kakariko": {
+      "Area": "OOT Windmill",
+      "Exit": "OOT Kakariko",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Skulltula House => OOT Kakariko": {
+      "Area": "OOT Skulltula House",
+      "Exit": "OOT Kakariko",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT ReDead Grotto => OOT Kakariko": {
+      "Area": "OOT ReDead Grotto",
+      "Exit": "OOT Kakariko",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Kakariko Generic Grotto => OOT Kakariko": {
+      "Area": "OOT Kakariko Generic Grotto",
       "Exit": "OOT Kakariko",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
@@ -27161,6 +27614,34 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "OOT Graveyard => OOT Graveyard Shield Grave": {
+      "Area": "OOT Graveyard",
+      "Exit": "OOT Graveyard Shield Grave",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Graveyard => OOT Graveyard ReDead Grave": {
+      "Area": "OOT Graveyard",
+      "Exit": "OOT Graveyard ReDead Grave",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Graveyard => OOT Dampe Grave": {
+      "Area": "OOT Graveyard",
+      "Exit": "OOT Dampe Grave",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Graveyard => OOT Dampe House": {
+      "Area": "OOT Graveyard",
+      "Exit": "OOT Dampe House",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "OOT Graveyard Upper => OOT Graveyard": {
       "Area": "OOT Graveyard Upper",
       "Exit": "OOT Graveyard",
@@ -27171,8 +27652,6 @@
     "OOT Graveyard Upper => OOT Shadow Temple": {
       "Area": "OOT Graveyard Upper",
       "Exit": "OOT Shadow Temple",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance to OOT Shadow Temple",
       "EntrancePairID": {
         "Area": "OOT Shadow Temple",
         "Exit": "OOT Graveyard Upper"
@@ -27188,9 +27667,37 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT Skulltula House => OOT Kakariko": {
-      "Area": "OOT Skulltula House",
-      "Exit": "OOT Kakariko",
+    "OOT Graveyard Shield Grave => OOT Graveyard": {
+      "Area": "OOT Graveyard Shield Grave",
+      "Exit": "OOT Graveyard",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Graveyard ReDead Grave => OOT Graveyard": {
+      "Area": "OOT Graveyard ReDead Grave",
+      "Exit": "OOT Graveyard",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Dampe Grave => OOT Graveyard": {
+      "Area": "OOT Dampe Grave",
+      "Exit": "OOT Graveyard",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Dampe Grave => OOT Windmill": {
+      "Area": "OOT Dampe Grave",
+      "Exit": "OOT Windmill",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Dampe House => OOT Graveyard": {
+      "Area": "OOT Dampe House",
+      "Exit": "OOT Graveyard",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -27205,8 +27712,6 @@
     "OOT Death Mountain => OOT Dodongo Cavern": {
       "Area": "OOT Death Mountain",
       "Exit": "OOT Dodongo Cavern",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance to OOT Dodongo Cavern",
       "EntrancePairID": {
         "Area": "OOT Dodongo Cavern",
         "Exit": "OOT Death Mountain"
@@ -27215,9 +27720,9 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT Death Mountain => OOT Kakariko": {
+    "OOT Death Mountain => OOT Kakariko Trail Start": {
       "Area": "OOT Death Mountain",
-      "Exit": "OOT Kakariko",
+      "Exit": "OOT Kakariko Trail Start",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -27225,6 +27730,20 @@
     "OOT Death Mountain => OOT Death Mountain Summit": {
       "Area": "OOT Death Mountain",
       "Exit": "OOT Death Mountain Summit",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Death Mountain => OOT Death Mountain Storms Grotto": {
+      "Area": "OOT Death Mountain",
+      "Exit": "OOT Death Mountain Storms Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Death Mountain => OOT Death Mountain Cow Grotto": {
+      "Area": "OOT Death Mountain",
+      "Exit": "OOT Death Mountain Cow Grotto",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -27246,6 +27765,34 @@
     "OOT Death Mountain Summit => OOT Death Mountain Crater Top": {
       "Area": "OOT Death Mountain Summit",
       "Exit": "OOT Death Mountain Crater Top",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Death Mountain Summit => OOT Fairy Fountain Magic": {
+      "Area": "OOT Death Mountain Summit",
+      "Exit": "OOT Fairy Fountain Magic",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Death Mountain Storms Grotto => OOT Death Mountain": {
+      "Area": "OOT Death Mountain Storms Grotto",
+      "Exit": "OOT Death Mountain",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Death Mountain Cow Grotto => OOT Death Mountain": {
+      "Area": "OOT Death Mountain Cow Grotto",
+      "Exit": "OOT Death Mountain",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Fairy Fountain Magic => OOT Death Mountain Summit": {
+      "Area": "OOT Fairy Fountain Magic",
+      "Exit": "OOT Death Mountain Summit",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -27292,8 +27839,22 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "OOT Goron City => OOT Goron City Grotto": {
+      "Area": "OOT Goron City",
+      "Exit": "OOT Goron City Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "OOT Goron Shop => OOT Goron City": {
       "Area": "OOT Goron Shop",
+      "Exit": "OOT Goron City",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Goron City Grotto => OOT Goron City": {
+      "Area": "OOT Goron City Grotto",
       "Exit": "OOT Goron City",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
@@ -27302,7 +27863,11 @@
     "OOT Zora River Front => OOT Hyrule Field": {
       "Area": "OOT Zora River Front",
       "Exit": "OOT Hyrule Field",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Hyrule Field",
+        "Exit": "OOT Zora River Front"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -27330,6 +27895,48 @@
     "OOT Zora River => OOT Lost Woods": {
       "Area": "OOT Zora River",
       "Exit": "OOT Lost Woods",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Zora River => OOT Zora River Storms Grotto": {
+      "Area": "OOT Zora River",
+      "Exit": "OOT Zora River Storms Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Zora River => OOT Zora River Open Grotto": {
+      "Area": "OOT Zora River",
+      "Exit": "OOT Zora River Open Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Zora River => OOT Zora River Boulder Grotto": {
+      "Area": "OOT Zora River",
+      "Exit": "OOT Zora River Boulder Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Zora River Storms Grotto => OOT Zora River": {
+      "Area": "OOT Zora River Storms Grotto",
+      "Exit": "OOT Zora River",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Zora River Open Grotto => OOT Zora River": {
+      "Area": "OOT Zora River Open Grotto",
+      "Exit": "OOT Zora River",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Zora River Boulder Grotto => OOT Zora River": {
+      "Area": "OOT Zora River Boulder Grotto",
+      "Exit": "OOT Zora River",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -27362,6 +27969,13 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "OOT Zora Domain => OOT Zora Domain Grotto": {
+      "Area": "OOT Zora Domain",
+      "Exit": "OOT Zora Domain Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "OOT Zora Domain Back => OOT Zora Fountain": {
       "Area": "OOT Zora Domain Back",
       "Exit": "OOT Zora Fountain",
@@ -27383,10 +27997,21 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "OOT Zora Domain Grotto => OOT Zora Domain": {
+      "Area": "OOT Zora Domain Grotto",
+      "Exit": "OOT Zora Domain",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "OOT Lake Hylia => OOT Hyrule Field": {
       "Area": "OOT Lake Hylia",
       "Exit": "OOT Hyrule Field",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Hyrule Field",
+        "Exit": "OOT Lake Hylia"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -27407,8 +28032,6 @@
     "OOT Lake Hylia => OOT Water Temple": {
       "Area": "OOT Lake Hylia",
       "Exit": "OOT Water Temple",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance to OOT Water Temple",
       "EntrancePairID": {
         "Area": "OOT Water Temple",
         "Exit": "OOT Lake Hylia"
@@ -27420,6 +28043,13 @@
     "OOT Lake Hylia => OOT Fishing Pond": {
       "Area": "OOT Lake Hylia",
       "Exit": "OOT Fishing Pond",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Lake Hylia => OOT Lake Hylia Grotto": {
+      "Area": "OOT Lake Hylia",
+      "Exit": "OOT Lake Hylia Grotto",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -27438,6 +28068,13 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "OOT Lake Hylia Grotto => OOT Lake Hylia": {
+      "Area": "OOT Lake Hylia Grotto",
+      "Exit": "OOT Lake Hylia",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "OOT Zora Fountain => OOT Zora Domain Back": {
       "Area": "OOT Zora Fountain",
       "Exit": "OOT Zora Domain Back",
@@ -27448,8 +28085,6 @@
     "OOT Zora Fountain => OOT Jabu-Jabu": {
       "Area": "OOT Zora Fountain",
       "Exit": "OOT Jabu-Jabu",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance to OOT Jabu-Jabu",
       "EntrancePairID": {
         "Area": "OOT Jabu-Jabu",
         "Exit": "OOT Zora Fountain"
@@ -27465,6 +28100,13 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "OOT Zora Fountain => OOT Fairy Fountain Farore": {
+      "Area": "OOT Zora Fountain",
+      "Exit": "OOT Fairy Fountain Farore",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "OOT Zora Fountain Frozen => OOT Zora Fountain": {
       "Area": "OOT Zora Fountain Frozen",
       "Exit": "OOT Zora Fountain",
@@ -27475,13 +28117,18 @@
     "OOT Zora Fountain Frozen => OOT Ice Cavern": {
       "Area": "OOT Zora Fountain Frozen",
       "Exit": "OOT Ice Cavern",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance to OOT Ice Cavern",
       "EntrancePairID": {
         "Area": "OOT Ice Cavern",
         "Exit": "OOT Zora Fountain Frozen"
       },
       "RandomizableEntrance": true,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Fairy Fountain Farore => OOT Zora Fountain": {
+      "Area": "OOT Fairy Fountain Farore",
+      "Exit": "OOT Zora Fountain",
+      "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -27527,6 +28174,13 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "OOT Death Mountain Crater Top => OOT Death Mountain Crater Generic Grotto": {
+      "Area": "OOT Death Mountain Crater Top",
+      "Exit": "OOT Death Mountain Crater Generic Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "OOT Death Mountain Crater Bottom => OOT Goron City": {
       "Area": "OOT Death Mountain Crater Bottom",
       "Exit": "OOT Goron City",
@@ -27548,6 +28202,20 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "OOT Death Mountain Crater Bottom => OOT Death Mountain Crater Scrub Grotto": {
+      "Area": "OOT Death Mountain Crater Bottom",
+      "Exit": "OOT Death Mountain Crater Scrub Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Death Mountain Crater Bottom => OOT Fairy Fountain Double Magic": {
+      "Area": "OOT Death Mountain Crater Bottom",
+      "Exit": "OOT Fairy Fountain Double Magic",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "OOT Death Mountain Crater Warp => OOT Fire Temple Entry": {
       "Area": "OOT Death Mountain Crater Warp",
       "Exit": "OOT Fire Temple Entry",
@@ -27565,8 +28233,6 @@
     "OOT Fire Temple Entry => OOT Fire Temple": {
       "Area": "OOT Fire Temple Entry",
       "Exit": "OOT Fire Temple",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance to OOT Fire Temple",
       "EntrancePairID": {
         "Area": "OOT Fire Temple",
         "Exit": "OOT Fire Temple Entry"
@@ -27578,6 +28244,27 @@
     "OOT Fire Temple Entry => OOT Death Mountain Crater Warp": {
       "Area": "OOT Fire Temple Entry",
       "Exit": "OOT Death Mountain Crater Warp",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Death Mountain Crater Generic Grotto => OOT Death Mountain Crater Top": {
+      "Area": "OOT Death Mountain Crater Generic Grotto",
+      "Exit": "OOT Death Mountain Crater Top",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Death Mountain Crater Scrub Grotto => OOT Death Mountain Crater Bottom": {
+      "Area": "OOT Death Mountain Crater Scrub Grotto",
+      "Exit": "OOT Death Mountain Crater Bottom",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Fairy Fountain Double Magic => OOT Death Mountain Crater Bottom": {
+      "Area": "OOT Fairy Fountain Double Magic",
+      "Exit": "OOT Death Mountain Crater Bottom",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -27603,6 +28290,13 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "OOT Gerudo Valley => OOT Octorok Grotto": {
+      "Area": "OOT Gerudo Valley",
+      "Exit": "OOT Octorok Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "OOT Gerudo Valley After Bridge => OOT Lake Hylia": {
       "Area": "OOT Gerudo Valley After Bridge",
       "Exit": "OOT Lake Hylia",
@@ -27613,6 +28307,48 @@
     "OOT Gerudo Valley After Bridge => OOT Gerudo Fortress Exterior": {
       "Area": "OOT Gerudo Valley After Bridge",
       "Exit": "OOT Gerudo Fortress Exterior",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Valley After Bridge => OOT Gerudo Valley": {
+      "Area": "OOT Gerudo Valley After Bridge",
+      "Exit": "OOT Gerudo Valley",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Valley After Bridge => OOT Gerudo Valley Storms Grotto": {
+      "Area": "OOT Gerudo Valley After Bridge",
+      "Exit": "OOT Gerudo Valley Storms Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Valley After Bridge => OOT Gerudo Valley Tent": {
+      "Area": "OOT Gerudo Valley After Bridge",
+      "Exit": "OOT Gerudo Valley Tent",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Octorok Grotto => OOT Gerudo Valley": {
+      "Area": "OOT Octorok Grotto",
+      "Exit": "OOT Gerudo Valley",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Valley Storms Grotto => OOT Gerudo Valley After Bridge": {
+      "Area": "OOT Gerudo Valley Storms Grotto",
+      "Exit": "OOT Gerudo Valley After Bridge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Valley Tent => OOT Gerudo Valley After Bridge": {
+      "Area": "OOT Gerudo Valley Tent",
+      "Exit": "OOT Gerudo Valley After Bridge",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -27641,13 +28377,18 @@
     "OOT Gerudo Fortress Exterior => OOT Gerudo Training Grounds": {
       "Area": "OOT Gerudo Fortress Exterior",
       "Exit": "OOT Gerudo Training Grounds",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance to OOT Gerudo Training Grounds",
       "EntrancePairID": {
         "Area": "OOT Gerudo Training Grounds",
         "Exit": "OOT Gerudo Fortress Exterior"
       },
       "RandomizableEntrance": true,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Exterior => OOT Gerudo Fortress Grotto": {
+      "Area": "OOT Gerudo Fortress Exterior",
+      "Exit": "OOT Gerudo Fortress Grotto",
+      "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -27661,6 +28402,13 @@
     "OOT Fortress Near Wasteland => OOT Haunted Wasteland Start": {
       "Area": "OOT Fortress Near Wasteland",
       "Exit": "OOT Haunted Wasteland Start",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Grotto => OOT Gerudo Fortress": {
+      "Area": "OOT Gerudo Fortress Grotto",
+      "Exit": "OOT Gerudo Fortress",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -27710,8 +28458,6 @@
     "OOT Desert Colossus => OOT Spirit Temple": {
       "Area": "OOT Desert Colossus",
       "Exit": "OOT Spirit Temple",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance to OOT Spirit Temple",
       "EntrancePairID": {
         "Area": "OOT Spirit Temple",
         "Exit": "OOT Desert Colossus Spirit Exit"
@@ -27727,8 +28473,36 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "OOT Desert Colossus => OOT Fairy Fountain Nayru": {
+      "Area": "OOT Desert Colossus",
+      "Exit": "OOT Fairy Fountain Nayru",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Desert Colossus => OOT Desert Colossus Grotto": {
+      "Area": "OOT Desert Colossus",
+      "Exit": "OOT Desert Colossus Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "OOT Desert Colossus Spirit Exit => OOT Desert Colossus": {
       "Area": "OOT Desert Colossus Spirit Exit",
+      "Exit": "OOT Desert Colossus",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Fairy Fountain Nayru => OOT Desert Colossus": {
+      "Area": "OOT Fairy Fountain Nayru",
+      "Exit": "OOT Desert Colossus",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Desert Colossus Grotto => OOT Desert Colossus": {
+      "Area": "OOT Desert Colossus Grotto",
       "Exit": "OOT Desert Colossus",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
@@ -27737,8 +28511,6 @@
     "OOT Shadow Temple => OOT Graveyard Upper": {
       "Area": "OOT Shadow Temple",
       "Exit": "OOT Graveyard Upper",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit from OOT Shadow Temple",
       "EntrancePairID": {
         "Area": "OOT Graveyard Upper",
         "Exit": "OOT Shadow Temple"
@@ -27785,8 +28557,6 @@
     "OOT Shadow Temple Boat => OOT Shadow Temple Boss": {
       "Area": "OOT Shadow Temple Boat",
       "Exit": "OOT Shadow Temple Boss",
-      "DisplayArea": "Boss Room",
-      "DisplayExit": "OOT Shadow Temple Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -27794,8 +28564,6 @@
     "OOT Spirit Temple => OOT Desert Colossus Spirit Exit": {
       "Area": "OOT Spirit Temple",
       "Exit": "OOT Desert Colossus Spirit Exit",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit from OOT Spirit Temple",
       "EntrancePairID": {
         "Area": "OOT Desert Colossus",
         "Exit": "OOT Spirit Temple"
@@ -27919,8 +28687,6 @@
     "OOT Spirit Temple Statue => OOT Spirit Temple Boss": {
       "Area": "OOT Spirit Temple Statue",
       "Exit": "OOT Spirit Temple Boss",
-      "DisplayArea": "Boss Room",
-      "DisplayExit": "OOT Spirit Temple Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -27984,8 +28750,6 @@
     "OOT Water Temple => OOT Lake Hylia": {
       "Area": "OOT Water Temple",
       "Exit": "OOT Lake Hylia",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit from OOT Water Temple",
       "EntrancePairID": {
         "Area": "OOT Lake Hylia",
         "Exit": "OOT Water Temple"
@@ -28214,8 +28978,6 @@
     "OOT Water Temple Antichamber => OOT Water Temple Boss": {
       "Area": "OOT Water Temple Antichamber",
       "Exit": "OOT Water Temple Boss",
-      "DisplayArea": "Boss Room",
-      "DisplayExit": "OOT Water Temple Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -28902,8 +29664,6 @@
     "MM Ancient Castle of Ikana => MM Ikana Castle Exterior": {
       "Area": "MM Ancient Castle of Ikana",
       "Exit": "MM Ikana Castle Exterior",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance to MM Ikana Castle Exterior",
       "EntrancePairID": {
         "Area": "MM Ikana Castle Exterior",
         "Exit": "MM Ancient Castle of Ikana"
@@ -29076,8 +29836,6 @@
     "MM Beneath the Well Entrance => MM Ikana Canyon": {
       "Area": "MM Beneath the Well Entrance",
       "Exit": "MM Ikana Canyon",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit from MM Beneath the Well Entrance",
       "EntrancePairID": {
         "Area": "MM Ikana Canyon",
         "Exit": "MM Beneath the Well Entrance"
@@ -29145,8 +29903,6 @@
     "MM Beneath the Well End => MM Ikana Castle Exterior": {
       "Area": "MM Beneath the Well End",
       "Exit": "MM Ikana Castle Exterior",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit from MM Beneath the Well End",
       "EntrancePairID": {
         "Area": "MM Ikana Castle Exterior",
         "Exit": "MM Beneath the Well End"
@@ -29165,8 +29921,6 @@
     "MM Great Bay Temple => MM Zora Cape Peninsula": {
       "Area": "MM Great Bay Temple",
       "Exit": "MM Zora Cape Peninsula",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit from MM Great Bay Temple",
       "EntrancePairID": {
         "Area": "MM Zora Cape Peninsula",
         "Exit": "MM Great Bay Temple"
@@ -29360,8 +30114,6 @@
     "MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss": {
       "Area": "MM Great Bay Temple Pre-Boss",
       "Exit": "MM Great Bay Temple Boss",
-      "DisplayArea": "Boss Room",
-      "DisplayExit": "MM Great Bay Temple Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -29558,8 +30310,6 @@
     "MM Ocean Spider House => MM Great Bay Coast": {
       "Area": "MM Ocean Spider House",
       "Exit": "MM Great Bay Coast",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit from MM Ocean Spider House",
       "EntrancePairID": {
         "Area": "MM Great Bay Coast",
         "Exit": "MM Ocean Spider House"
@@ -29589,30 +30339,51 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM SOARING => MM SPAWN": {
-      "Area": "MM SOARING",
-      "Exit": "MM SPAWN",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    "MM SPAWN => MM Clock Town South": {
-      "Area": "MM SPAWN",
-      "Exit": "MM Clock Town South",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    "MM SPAWN => OOT SONGS": {
-      "Area": "MM SPAWN",
+    "MM GLOBAL => OOT SONGS": {
+      "Area": "MM GLOBAL",
       "Exit": "OOT SONGS",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM SPAWN => MM Moon": {
-      "Area": "MM SPAWN",
+    "MM SOARING => MM Clock Town": {
+      "Area": "MM SOARING",
+      "Exit": "MM Clock Town",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Clock Town => MM GLOBAL": {
+      "Area": "MM Clock Town",
+      "Exit": "MM GLOBAL",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Clock Town => MM Clock Town South": {
+      "Area": "MM Clock Town",
+      "Exit": "MM Clock Town South",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Clock Town => MM Moon": {
+      "Area": "MM Clock Town",
       "Exit": "MM Moon",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Clock Town South => OOT Market": {
+      "Area": "MM Clock Town South",
+      "Exit": "OOT Market",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Clock Town South => OOT Market Destroyed": {
+      "Area": "MM Clock Town South",
+      "Exit": "OOT Market Destroyed",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -30026,7 +30797,11 @@
     "MM Road to Southern Swamp => MM Swamp Front": {
       "Area": "MM Road to Southern Swamp",
       "Exit": "MM Swamp Front",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Swamp Front",
+        "Exit": "MM Road to Southern Swamp"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -30054,7 +30829,11 @@
     "MM Swamp Front => MM Road to Southern Swamp": {
       "Area": "MM Swamp Front",
       "Exit": "MM Road to Southern Swamp",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Road to Southern Swamp",
+        "Exit": "MM Swamp Front"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -30103,8 +30882,6 @@
     "MM Swamp Back => MM Swamp Spider House": {
       "Area": "MM Swamp Back",
       "Exit": "MM Swamp Spider House",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance to MM Swamp Spider House",
       "EntrancePairID": {
         "Area": "MM Swamp Spider House",
         "Exit": "MM Swamp Back"
@@ -30228,8 +31005,6 @@
     "MM Woodfall Front of Temple => MM Woodfall Temple": {
       "Area": "MM Woodfall Front of Temple",
       "Exit": "MM Woodfall Temple",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance to MM Woodfall Temple",
       "EntrancePairID": {
         "Area": "MM Woodfall Temple",
         "Exit": "MM Woodfall Front of Temple"
@@ -30332,14 +31107,22 @@
     "MM Mountain Village Path Upper => MM Mountain Village": {
       "Area": "MM Mountain Village Path Upper",
       "Exit": "MM Mountain Village",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Mountain Village",
+        "Exit": "MM Mountain Village Path Upper"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Mountain Village => MM Mountain Village Path Upper": {
       "Area": "MM Mountain Village",
       "Exit": "MM Mountain Village Path Upper",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Mountain Village Path Upper",
+        "Exit": "MM Mountain Village"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -30542,8 +31325,6 @@
     "MM Snowhead => MM Snowhead Temple": {
       "Area": "MM Snowhead",
       "Exit": "MM Snowhead Temple",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance to MM Snowhead Temple",
       "EntrancePairID": {
         "Area": "MM Snowhead Temple",
         "Exit": "MM Snowhead"
@@ -30660,7 +31441,11 @@
     "MM Great Bay Fence => MM Great Bay Coast": {
       "Area": "MM Great Bay Fence",
       "Exit": "MM Great Bay Coast",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Great Bay Coast",
+        "Exit": "MM Great Bay Fence"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -30674,7 +31459,11 @@
     "MM Great Bay Coast => MM Great Bay Fence": {
       "Area": "MM Great Bay Coast",
       "Exit": "MM Great Bay Fence",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Great Bay Fence",
+        "Exit": "MM Great Bay Coast"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -30709,8 +31498,6 @@
     "MM Great Bay Coast => MM Ocean Spider House": {
       "Area": "MM Great Bay Coast",
       "Exit": "MM Ocean Spider House",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance to MM Ocean Spider House",
       "EntrancePairID": {
         "Area": "MM Ocean Spider House",
         "Exit": "MM Great Bay Coast"
@@ -30729,8 +31516,6 @@
     "MM Great Bay Coast Fortress => MM Pirate Fortress": {
       "Area": "MM Great Bay Coast Fortress",
       "Exit": "MM Pirate Fortress",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance to MM Pirate Fortress",
       "EntrancePairID": {
         "Area": "MM Pirate Fortress",
         "Exit": "MM Great Bay Coast Fortress"
@@ -30910,8 +31695,6 @@
     "MM Zora Cape Peninsula => MM Great Bay Temple": {
       "Area": "MM Zora Cape Peninsula",
       "Exit": "MM Great Bay Temple",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance to MM Great Bay Temple",
       "EntrancePairID": {
         "Area": "MM Great Bay Temple",
         "Exit": "MM Zora Cape Peninsula"
@@ -31021,14 +31804,22 @@
     "MM Road to Ikana Top => MM Ikana Valley": {
       "Area": "MM Road to Ikana Top",
       "Exit": "MM Ikana Valley",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Ikana Valley",
+        "Exit": "MM Road to Ikana Top"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Ikana Valley => MM Road to Ikana Top": {
       "Area": "MM Ikana Valley",
       "Exit": "MM Road to Ikana Top",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Road to Ikana Top",
+        "Exit": "MM Ikana Valley"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -31042,8 +31833,6 @@
     "MM Ikana Valley => MM Secret Shrine Entrance": {
       "Area": "MM Ikana Valley",
       "Exit": "MM Secret Shrine Entrance",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance to MM Secret Shrine Entrance",
       "EntrancePairID": {
         "Area": "MM Secret Shrine Entrance",
         "Exit": "MM Ikana Valley"
@@ -31111,8 +31900,6 @@
     "MM Ikana Canyon => MM Beneath the Well Entrance": {
       "Area": "MM Ikana Canyon",
       "Exit": "MM Beneath the Well Entrance",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance to MM Beneath the Well Entrance",
       "EntrancePairID": {
         "Area": "MM Beneath the Well Entrance",
         "Exit": "MM Ikana Canyon"
@@ -31180,8 +31967,6 @@
     "MM Ikana Castle Exterior => MM Beneath the Well End": {
       "Area": "MM Ikana Castle Exterior",
       "Exit": "MM Beneath the Well End",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance to MM Beneath the Well End",
       "EntrancePairID": {
         "Area": "MM Beneath the Well End",
         "Exit": "MM Ikana Castle Exterior"
@@ -31200,8 +31985,6 @@
     "MM Ikana Castle Exterior => MM Ancient Castle of Ikana": {
       "Area": "MM Ikana Castle Exterior",
       "Exit": "MM Ancient Castle of Ikana",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance to MM Ancient Castle of Ikana",
       "EntrancePairID": {
         "Area": "MM Ancient Castle of Ikana",
         "Exit": "MM Ikana Castle Exterior"
@@ -31269,8 +32052,6 @@
     "MM Stone Tower Front of Temple => MM Stone Tower Temple": {
       "Area": "MM Stone Tower Front of Temple",
       "Exit": "MM Stone Tower Temple",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance to MM Stone Tower Temple",
       "EntrancePairID": {
         "Area": "MM Stone Tower Temple",
         "Exit": "MM Stone Tower Front of Temple"
@@ -31282,8 +32063,6 @@
     "MM Stone Tower Top Inverted => MM Stone Tower Temple Inverted": {
       "Area": "MM Stone Tower Top Inverted",
       "Exit": "MM Stone Tower Temple Inverted",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Entrance to MM Stone Tower Temple Inverted",
       "EntrancePairID": {
         "Area": "MM Stone Tower Temple Inverted",
         "Exit": "MM Stone Tower Top Inverted"
@@ -31316,8 +32095,6 @@
     "MM Pirate Fortress => MM Great Bay Coast Fortress": {
       "Area": "MM Pirate Fortress",
       "Exit": "MM Great Bay Coast Fortress",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit from MM Pirate Fortress",
       "EntrancePairID": {
         "Area": "MM Great Bay Coast Fortress",
         "Exit": "MM Pirate Fortress"
@@ -31707,8 +32484,6 @@
     "MM Secret Shrine Entrance => MM Ikana Valley": {
       "Area": "MM Secret Shrine Entrance",
       "Exit": "MM Ikana Valley",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit from MM Secret Shrine Entrance",
       "EntrancePairID": {
         "Area": "MM Ikana Valley",
         "Exit": "MM Secret Shrine Entrance"
@@ -31762,8 +32537,6 @@
     "MM Snowhead Temple => MM Snowhead": {
       "Area": "MM Snowhead Temple",
       "Exit": "MM Snowhead",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit from MM Snowhead Temple",
       "EntrancePairID": {
         "Area": "MM Snowhead",
         "Exit": "MM Snowhead Temple"
@@ -32223,8 +32996,6 @@
     "MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss": {
       "Area": "MM Snowhead Temple Center Level 4",
       "Exit": "MM Snowhead Temple Boss",
-      "DisplayArea": "Boss Room",
-      "DisplayExit": "MM Snowhead Temple Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -32267,8 +33038,6 @@
     "MM Stone Tower Temple => MM Stone Tower Front of Temple": {
       "Area": "MM Stone Tower Temple",
       "Exit": "MM Stone Tower Front of Temple",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit from MM Stone Tower Temple",
       "EntrancePairID": {
         "Area": "MM Stone Tower Front of Temple",
         "Exit": "MM Stone Tower Temple"
@@ -32462,8 +33231,6 @@
     "MM Stone Tower Temple Inverted => MM Stone Tower Top Inverted": {
       "Area": "MM Stone Tower Temple Inverted",
       "Exit": "MM Stone Tower Top Inverted",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit from MM Stone Tower Temple Inverted",
       "EntrancePairID": {
         "Area": "MM Stone Tower Top Inverted",
         "Exit": "MM Stone Tower Temple Inverted"
@@ -32643,8 +33410,6 @@
     "MM Stone Tower Temple Inverted Bridge 2 => MM Stone Tower Temple Boss": {
       "Area": "MM Stone Tower Temple Inverted Bridge 2",
       "Exit": "MM Stone Tower Temple Boss",
-      "DisplayArea": "Boss Room",
-      "DisplayExit": "MM Stone Tower Temple Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -32666,8 +33431,6 @@
     "MM Swamp Spider House => MM Swamp Back": {
       "Area": "MM Swamp Spider House",
       "Exit": "MM Swamp Back",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit from MM Swamp Spider House",
       "EntrancePairID": {
         "Area": "MM Swamp Back",
         "Exit": "MM Swamp Spider House"
@@ -32693,8 +33456,6 @@
     "MM Woodfall Temple => MM Woodfall Front of Temple": {
       "Area": "MM Woodfall Temple",
       "Exit": "MM Woodfall Front of Temple",
-      "DisplayArea": "Dungeon",
-      "DisplayExit": "Exit from MM Woodfall Temple",
       "EntrancePairID": {
         "Area": "MM Woodfall Front of Temple",
         "Exit": "MM Woodfall Temple"
@@ -32909,8 +33670,6 @@
     "MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss": {
       "Area": "MM Woodfall Temple Pre-Boss",
       "Exit": "MM Woodfall Temple Boss",
-      "DisplayArea": "Boss Room",
-      "DisplayExit": "MM Woodfall Temple Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -32985,14 +33744,6 @@
         "PriceDataNames": []
       }
     },
-    "OOT Hyrule Field Gossip Near Castle Town": {
-      "Name": "OOT Hyrule Field Gossip Near Castle Town",
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
     "OOT Hyrule Field Gossip Near Lake Hylia": {
       "Name": "OOT Hyrule Field Gossip Near Lake Hylia",
       "SpoilerData": {
@@ -33003,6 +33754,14 @@
     },
     "OOT Hyrule Field Gossip Southeast Grotto": {
       "Name": "OOT Hyrule Field Gossip Southeast Grotto",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT Hyrule Field Gossip Near Castle Town": {
+      "Name": "OOT Hyrule Field Gossip Near Castle Town",
       "SpoilerData": {
         "SpoilerLogNames": [],
         "GossipHintNames": [],
@@ -33129,16 +33888,16 @@
         "PriceDataNames": []
       }
     },
-    "OOT Death Mountain Gossip Grotto": {
-      "Name": "OOT Death Mountain Gossip Grotto",
+    "OOT Death Mountain Gossip on Climb": {
+      "Name": "OOT Death Mountain Gossip on Climb",
       "SpoilerData": {
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT Death Mountain Gossip on Climb": {
-      "Name": "OOT Death Mountain Gossip on Climb",
+    "OOT Death Mountain Gossip Grotto": {
+      "Name": "OOT Death Mountain Gossip Grotto",
       "SpoilerData": {
         "SpoilerLogNames": [],
         "GossipHintNames": [],
@@ -33233,16 +33992,16 @@
         "PriceDataNames": []
       }
     },
-    "OOT Death Mountain Crater Gossip Grotto": {
-      "Name": "OOT Death Mountain Crater Gossip Grotto",
+    "OOT Death Mountain Crater Gossip Wall": {
+      "Name": "OOT Death Mountain Crater Gossip Wall",
       "SpoilerData": {
         "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT Death Mountain Crater Gossip Wall": {
-      "Name": "OOT Death Mountain Crater Gossip Wall",
+    "OOT Death Mountain Crater Gossip Grotto": {
+      "Name": "OOT Death Mountain Crater Gossip Grotto",
       "SpoilerData": {
         "SpoilerLogNames": [],
         "GossipHintNames": [],
@@ -33920,6 +34679,7 @@
     "doorOfTime": {
       "DisplayName": "Open Door Of Time",
       "CurrentValue": "closed",
+      "SubCategory": "Events",
       "Values": {
         "open": {
           "Name": "Open",
@@ -33931,6 +34691,50 @@
         },
         "closed": {
           "Name": "Closed",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "kakarikoGate": {
+      "DisplayName": "Open Kakariko Gate",
+      "CurrentValue": "closed",
+      "SubCategory": "Events",
+      "Values": {
+        "open": {
+          "Name": "Open",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        },
+        "closed": {
+          "Name": "Closed",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "skipZelda": {
+      "DisplayName": "Skip Child Zelda",
+      "CurrentValue": "false",
+      "SubCategory": "Events",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        },
+        "false": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -36531,6 +37335,17 @@
         "SHARED_NUT",
         "SHARED_NUTS_5",
         "SHARED_NUTS_10"
+      ]
+    },
+    "MM_ANY_STICK": {
+      "Static": true,
+      "Value": [
+        "MM_STICK",
+        "MM_STICKS_5",
+        "MM_STICKS_10",
+        "SHARED_STICK",
+        "SHARED_STICKS_5",
+        "SHARED_STICKS_10"
       ]
     }
   },
