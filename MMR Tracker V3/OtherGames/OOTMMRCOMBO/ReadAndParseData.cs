@@ -991,9 +991,13 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         else if (Parameters == "adult") { line = line.Replace(FullFunction, $"option{{age_filter, child, false}} && OOT_EVENT_TIME_TRAVEL"); }
                         break;
                     case "before":
+                        line = line.Replace(FullFunction, $"time{{Before_{Parameters}}}");
+                        break;
                     case "after":
+                        line = line.Replace(FullFunction, $"time{{After_{Parameters}}}");
+                        break;
                     case "at":
-                        line = line.Replace(FullFunction, "true"); //the "Time" based function don't matter since the tracker doesn't track the curent game time
+                        line = line.Replace(FullFunction, $"time{{At_{Parameters}}}");
                         break;
                     case "cond":
                         if (Parameters.StartsWith("setting"))

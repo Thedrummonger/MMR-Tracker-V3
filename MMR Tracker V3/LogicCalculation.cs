@@ -414,9 +414,18 @@ namespace MMR_Tracker_V3
                     if (!DoCheck) { return true; }
                     LogicFuntionValid = CheckVarFunction(instance, Param.Split(",").Select(x => x.Trim()).ToArray());
                     break;
+                case "setting":
                 case "option":
                     if (!DoCheck) { return true; }
                     LogicFuntionValid = CheckOptionFunction(instance, Param.Split(",").Select(x => x.Trim()).ToArray());
+                    break;
+                case "comment":
+                case "cmnt":
+                case "cc":
+                    LogicFuntionValid = true; //Comment Style Check. Will always return true but can state why its returning true and what it's expecting
+                    break;
+                case "time":
+                    LogicFuntionValid = true; //The tracker currently doesn't track time, but this can at least display the data for logic 
                     break;
                 default: 
                     return false;

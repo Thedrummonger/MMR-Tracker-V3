@@ -9904,6 +9904,7 @@
       "Id": "MM Clock Town Postman Hat",
       "RequiredItems": [
         "MM_EVENT_POSTMAN_FREEDOM",
+        "time{Before_NIGHT3_AM_05_00}",
         "MM Clock Town East"
       ],
       "ConditionalItems": [],
@@ -10076,7 +10077,16 @@
       "RequiredItems": [
         "MM Mayor's Office"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "time{After_DAY1_AM_10_00}",
+          "time{Before_NIGHT1_PM_08_00}"
+        ],
+        [
+          "time{After_DAY2_AM_10_00}",
+          "time{Before_NIGHT2_PM_08_00}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -10088,7 +10098,20 @@
         "MM_MASK_COUPLE",
         "MM Mayor's Office"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "time{After_DAY1_AM_10_00}",
+          "time{Before_NIGHT1_PM_08_00}"
+        ],
+        [
+          "time{After_DAY2_AM_10_00}",
+          "time{Before_NIGHT2_PM_08_00}"
+        ],
+        [
+          "time{After_DAY3_AM_10_00}",
+          "time{Before_NIGHT3_PM_06_00}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -10103,7 +10126,16 @@
         "MM_MASK_GORON",
         "MM Milk Bar"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "time{After_NIGHT1_PM_10_00}",
+          "time{Before_NIGHT1_AM_05_00}"
+        ],
+        [
+          "time{After_NIGHT2_PM_10_00}",
+          "time{Before_NIGHT2_AM_05_00}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -10116,7 +10148,15 @@
         "MM_LETTER_TO_MAMA",
         "MM Milk Bar"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "time{After_NIGHT3_PM_06_00}",
+          "time{Before_NIGHT3_PM_09_00}"
+        ],
+        [
+          "time{After_NIGHT3_PM_10_00}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -10129,7 +10169,19 @@
         "MM_has_rupees",
         "MM Town Archery"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "time{Before_NIGHT1_PM_10_00}"
+        ],
+        [
+          "time{After_DAY2_AM_06_00}",
+          "time{Before_NIGHT2_PM_10_00}"
+        ],
+        [
+          "time{After_DAY3_AM_06_00}",
+          "time{Before_NIGHT3_PM_10_00}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -10142,7 +10194,19 @@
         "MM_has_rupees",
         "MM Town Archery"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "time{Before_NIGHT1_PM_10_00}"
+        ],
+        [
+          "time{After_DAY2_AM_06_00}",
+          "time{Before_NIGHT2_PM_10_00}"
+        ],
+        [
+          "time{After_DAY3_AM_06_00}",
+          "time{Before_NIGHT3_PM_10_00}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -10155,7 +10219,18 @@
         "MM_has_rupees",
         "MM Chest Game"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "time{Before_NIGHT1_PM_10_00}"
+        ],
+        [
+          "time{After_DAY2_AM_06_00}",
+          "time{Before_NIGHT2_PM_10_00}"
+        ],
+        [
+          "MM_is_day3"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -10225,6 +10300,8 @@
     {
       "Id": "MM Stock Pot Inn Room Key",
       "RequiredItems": [
+        "time{After_DAY1_PM_01_45}",
+        "time{Before_DAY1_PM_04_00}",
         "MM Stock Pot Inn"
       ],
       "ConditionalItems": [],
@@ -10251,6 +10328,7 @@
         "MM_EVENT_SUN_MASK",
         "MM_EVENT_DELIVER_PENDANT",
         "MM_EVENT_MEET_ANJU",
+        "time{After_NIGHT3_AM_04_00}",
         "MM Stock Pot Inn"
       ],
       "ConditionalItems": [],
@@ -10344,6 +10422,7 @@
       "Id": "MM Trading Post Item 1",
       "RequiredItems": [
         "MM_has_rupees",
+        "time{Before_NIGHT3_PM_09_00}",
         "MM Trading Post"
       ],
       "ConditionalItems": [],
@@ -10356,6 +10435,7 @@
       "Id": "MM Trading Post Item 2",
       "RequiredItems": [
         "MM_has_rupees",
+        "time{Before_NIGHT3_PM_09_00}",
         "MM Trading Post"
       ],
       "ConditionalItems": [],
@@ -10368,6 +10448,7 @@
       "Id": "MM Trading Post Item 3",
       "RequiredItems": [
         "MM_has_rupees",
+        "time{Before_NIGHT3_PM_09_00}",
         "MM Trading Post"
       ],
       "ConditionalItems": [],
@@ -10380,6 +10461,7 @@
       "Id": "MM Trading Post Item 4",
       "RequiredItems": [
         "MM_has_rupees",
+        "time{Before_NIGHT3_PM_09_00}",
         "MM Trading Post"
       ],
       "ConditionalItems": [],
@@ -10392,6 +10474,7 @@
       "Id": "MM Trading Post Item 5",
       "RequiredItems": [
         "MM_has_rupees",
+        "time{Before_NIGHT3_PM_09_00}",
         "MM Trading Post"
       ],
       "ConditionalItems": [],
@@ -10404,6 +10487,7 @@
       "Id": "MM Trading Post Item 6",
       "RequiredItems": [
         "MM_has_rupees",
+        "time{Before_NIGHT3_PM_09_00}",
         "MM Trading Post"
       ],
       "ConditionalItems": [],
@@ -10416,6 +10500,7 @@
       "Id": "MM Trading Post Item 7",
       "RequiredItems": [
         "MM_has_rupees",
+        "time{Before_NIGHT3_PM_09_00}",
         "MM Trading Post"
       ],
       "ConditionalItems": [],
@@ -10428,6 +10513,7 @@
       "Id": "MM Trading Post Item 8",
       "RequiredItems": [
         "MM_has_rupees",
+        "time{Before_NIGHT3_PM_09_00}",
         "MM Trading Post"
       ],
       "ConditionalItems": [],
@@ -10519,7 +10605,17 @@
       "RequiredItems": [
         "MM Curiosity Shop Back Room"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "time{Before_DAY3_AM_06_00}"
+        ],
+        [
+          "MM_EVENT_SAKON_BOMB_BAG"
+        ],
+        [
+          "MM_EVENT_SAKON_BOOM"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -10528,6 +10624,8 @@
     {
       "Id": "MM Curiosity Shop Back Room Owner Reward 1",
       "RequiredItems": [
+        "time{After_DAY3_AM_06_00}",
+        "time{Before_NIGHT3_PM_10_00}",
         "MM Curiosity Shop Back Room"
       ],
       "ConditionalItems": [],
@@ -10539,6 +10637,8 @@
     {
       "Id": "MM Curiosity Shop Back Room Owner Reward 2",
       "RequiredItems": [
+        "time{After_DAY3_AM_06_00}",
+        "time{Before_NIGHT3_PM_10_00}",
         "MM Curiosity Shop Back Room"
       ],
       "ConditionalItems": [],
@@ -10553,7 +10653,17 @@
         "MM_MASK_BUNNY",
         "MM Post Office"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "time{After_DAY1_PM_03_00}",
+          "time{Before_NIGHT1_AM_12_00}"
+        ],
+        [
+          "MM_EVENT_MAIL_LETTER",
+          "time{After_NIGHT2_PM_06_00}",
+          "time{Before_NIGHT2_AM_12_00}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -10564,6 +10674,7 @@
       "RequiredItems": [
         "MM_SWORD",
         "MM_has_rupees",
+        "time{Before_NIGHT3_PM_11_00}",
         "MM Swordsman School"
       ],
       "ConditionalItems": [],
@@ -10909,7 +11020,19 @@
         "MM_has_rupees",
         "MM Swamp Archery"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "time{Before_NIGHT1_PM_10_00}"
+        ],
+        [
+          "time{After_DAY2_AM_06_00}",
+          "time{Before_NIGHT2_PM_10_00}"
+        ],
+        [
+          "time{After_DAY3_AM_06_00}",
+          "time{Before_NIGHT3_PM_10_00}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -10922,7 +11045,19 @@
         "MM_has_rupees",
         "MM Swamp Archery"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "time{Before_NIGHT1_PM_10_00}"
+        ],
+        [
+          "time{After_DAY2_AM_06_00}",
+          "time{Before_NIGHT2_PM_10_00}"
+        ],
+        [
+          "time{After_DAY3_AM_06_00}",
+          "time{Before_NIGHT3_PM_10_00}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -11957,6 +12092,7 @@
     {
       "Id": "MM Romani Ranch Epona Song",
       "RequiredItems": [
+        "time{Before_NIGHT1_PM_06_00}",
         "MM Romani Ranch"
       ],
       "ConditionalItems": [],
@@ -11968,6 +12104,7 @@
     {
       "Id": "MM Romani Ranch Aliens",
       "RequiredItems": [
+        "time{Before_NIGHT1_AM_02_30}",
         "MM_has_arrows",
         "MM Romani Ranch"
       ],
@@ -11996,7 +12133,14 @@
         "MM_SONG_EPONA",
         "MM Stables"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "time{Before_NIGHT1_AM_02_30}"
+        ],
+        [
+          "MM_EVENT_ALIENS"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -12009,7 +12153,14 @@
         "MM_SONG_EPONA",
         "MM Stables"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "time{Before_NIGHT1_AM_02_30}"
+        ],
+        [
+          "MM_EVENT_ALIENS"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -12022,7 +12173,14 @@
         "MM_SONG_EPONA",
         "MM Stables"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "time{Before_NIGHT1_AM_02_30}"
+        ],
+        [
+          "MM_EVENT_ALIENS"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -12034,7 +12192,20 @@
         "MM_MASK_BREMEN",
         "MM Cucco Shack"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "time{After_DAY1_AM_06_00}",
+          "time{Before_NIGHT1_PM_08_00}"
+        ],
+        [
+          "time{After_DAY2_AM_06_00}",
+          "time{Before_NIGHT2_PM_08_00}"
+        ],
+        [
+          "time{After_DAY3_AM_06_00}",
+          "time{Before_NIGHT3_PM_08_00}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -12047,16 +12218,64 @@
       ],
       "ConditionalItems": [
         [
-          "MM_can_use_beans"
+          "MM_can_use_beans",
+          "time{After_DAY1_AM_06_00}",
+          "time{Before_NIGHT1_PM_08_00}"
         ],
         [
-          "MM_MASK_ZORA"
+          "MM_MASK_ZORA",
+          "time{After_DAY1_AM_06_00}",
+          "time{Before_NIGHT1_PM_08_00}"
         ],
         [
-          "MM_can_hookshot_short"
+          "MM_can_hookshot_short",
+          "time{After_DAY1_AM_06_00}",
+          "time{Before_NIGHT1_PM_08_00}"
         ],
         [
-          "TRICK_MM_DOG_RACE_CHEST_NOTHING"
+          "TRICK_MM_DOG_RACE_CHEST_NOTHING",
+          "time{After_DAY1_AM_06_00}",
+          "time{Before_NIGHT1_PM_08_00}"
+        ],
+        [
+          "MM_can_use_beans",
+          "time{After_DAY2_AM_06_00}",
+          "time{Before_NIGHT2_PM_08_00}"
+        ],
+        [
+          "MM_MASK_ZORA",
+          "time{After_DAY2_AM_06_00}",
+          "time{Before_NIGHT2_PM_08_00}"
+        ],
+        [
+          "MM_can_hookshot_short",
+          "time{After_DAY2_AM_06_00}",
+          "time{Before_NIGHT2_PM_08_00}"
+        ],
+        [
+          "TRICK_MM_DOG_RACE_CHEST_NOTHING",
+          "time{After_DAY2_AM_06_00}",
+          "time{Before_NIGHT2_PM_08_00}"
+        ],
+        [
+          "MM_can_use_beans",
+          "time{After_DAY3_AM_06_00}",
+          "time{Before_NIGHT3_PM_08_00}"
+        ],
+        [
+          "MM_MASK_ZORA",
+          "time{After_DAY3_AM_06_00}",
+          "time{Before_NIGHT3_PM_08_00}"
+        ],
+        [
+          "MM_can_hookshot_short",
+          "time{After_DAY3_AM_06_00}",
+          "time{Before_NIGHT3_PM_08_00}"
+        ],
+        [
+          "TRICK_MM_DOG_RACE_CHEST_NOTHING",
+          "time{After_DAY3_AM_06_00}",
+          "time{Before_NIGHT3_PM_08_00}"
         ]
       ],
       "TimeNeeded": "None",
@@ -12070,7 +12289,20 @@
         "MM_MASK_TRUTH",
         "MM Doggy Racetrack"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "time{After_DAY1_AM_06_00}",
+          "time{Before_NIGHT1_PM_08_00}"
+        ],
+        [
+          "time{After_DAY2_AM_06_00}",
+          "time{Before_NIGHT2_PM_08_00}"
+        ],
+        [
+          "time{After_DAY3_AM_06_00}",
+          "time{Before_NIGHT3_PM_08_00}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -12109,7 +12341,20 @@
         "MM_EVENT_BOSS_GREAT_BAY",
         "MM Great Bay Coast"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "time{After_DAY1_AM_07_00}",
+          "time{Before_NIGHT1_AM_04_00}"
+        ],
+        [
+          "time{After_DAY2_AM_07_00}",
+          "time{Before_NIGHT2_AM_04_00}"
+        ],
+        [
+          "time{After_DAY3_AM_07_00}",
+          "time{Before_NIGHT3_AM_04_00}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -27675,7 +27920,9 @@
     },
     {
       "Id": "MM Clock Town South => MM Clock Tower Roof",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "time{After_NIGHT3_AM_12_00}"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -27716,7 +27963,8 @@
     {
       "Id": "MM_EVENT_MAIL_LETTER",
       "RequiredItems": [
-        "MM_LETTER_TO_KAFEI"
+        "MM_LETTER_TO_KAFEI",
+        "time{Before_DAY2_AM_11_30}"
       ],
       "ConditionalItems": [
         [
@@ -27951,6 +28199,7 @@
       "Id": "MM_EVENT_SAKON_BOMB_BAG",
       "RequiredItems": [
         "MM_can_fight",
+        "time{Before_NIGHT1_AM_12_00}",
         "MM Clock Town North"
       ],
       "ConditionalItems": [],
@@ -27962,6 +28211,7 @@
     {
       "Id": "MM_EVENT_SAKON_BOOM",
       "RequiredItems": [
+        "time{Before_NIGHT1_AM_12_00}",
         "MM Clock Town North"
       ],
       "ConditionalItems": [
@@ -28133,7 +28383,19 @@
     {
       "Id": "MM Clock Town West => MM Curiosity Shop",
       "RequiredItems": [],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "time{After_NIGHT1_PM_10_00}",
+          "time{Before_DAY2_AM_06_00}"
+        ],
+        [
+          "time{After_NIGHT2_PM_10_00}",
+          "time{Before_DAY3_AM_06_00}"
+        ],
+        [
+          "time{After_NIGHT3_PM_10_00}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -28142,7 +28404,20 @@
     {
       "Id": "MM Clock Town West => MM Post Office",
       "RequiredItems": [],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "time{After_DAY1_PM_03_00}",
+          "time{Before_NIGHT1_AM_12_00}"
+        ],
+        [
+          "MM_EVENT_MAIL_LETTER",
+          "time{After_NIGHT2_PM_06_00}",
+          "time{Before_NIGHT2_AM_12_00}"
+        ],
+        [
+          "MM_is_night3"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -28151,7 +28426,21 @@
     {
       "Id": "MM Clock Town West => MM Swordsman School",
       "RequiredItems": [],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_first_day"
+        ],
+        [
+          "MM_second_day"
+        ],
+        [
+          "time{After_DAY3_AM_06_00}",
+          "time{Before_NIGHT3_PM_11_00}"
+        ],
+        [
+          "time{After_NIGHT3_AM_12_00}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -28165,7 +28454,18 @@
           "MM_is_day"
         ],
         [
-          "MM_EVENT_PLAY_LOTTERY"
+          "MM_EVENT_PLAY_LOTTERY",
+          "time{Before_NIGHT1_PM_11_00}"
+        ],
+        [
+          "MM_EVENT_PLAY_LOTTERY",
+          "time{After_NIGHT2_PM_06_00}",
+          "time{Before_NIGHT2_PM_11_00}"
+        ],
+        [
+          "MM_EVENT_PLAY_LOTTERY",
+          "time{After_NIGHT3_PM_06_00}",
+          "time{Before_NIGHT3_PM_11_00}"
         ]
       ],
       "TimeNeeded": "None",
@@ -28239,7 +28539,19 @@
     {
       "Id": "MM Clock Town East => MM Mayor's Office",
       "RequiredItems": [],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "time{After_DAY1_AM_10_00}",
+          "time{Before_NIGHT1_PM_08_00}"
+        ],
+        [
+          "time{After_DAY2_AM_10_00}",
+          "time{Before_NIGHT2_PM_08_00}"
+        ],
+        [
+          "time{After_DAY3_AM_10_00}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -28248,7 +28560,19 @@
     {
       "Id": "MM Clock Town East => MM Town Archery",
       "RequiredItems": [],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "time{Before_NIGHT1_PM_10_00}"
+        ],
+        [
+          "time{After_DAY2_AM_06_00}",
+          "time{Before_NIGHT2_PM_10_00}"
+        ],
+        [
+          "time{After_DAY3_AM_06_00}",
+          "time{Before_NIGHT3_PM_10_00}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -28257,7 +28581,19 @@
     {
       "Id": "MM Clock Town East => MM Chest Game",
       "RequiredItems": [],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "time{Before_NIGHT1_PM_10_00}"
+        ],
+        [
+          "time{After_DAY2_AM_06_00}",
+          "time{Before_NIGHT2_PM_10_00}"
+        ],
+        [
+          "time{After_DAY3_AM_06_00}",
+          "time{Before_NIGHT3_PM_10_00}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -28266,7 +28602,19 @@
     {
       "Id": "MM Clock Town East => MM Honey & Darling Game",
       "RequiredItems": [],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "time{Before_NIGHT1_PM_10_00}"
+        ],
+        [
+          "time{After_DAY2_AM_06_00}",
+          "time{Before_NIGHT2_PM_10_00}"
+        ],
+        [
+          "time{After_DAY3_AM_06_00}",
+          "time{Before_NIGHT3_PM_10_00}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -28305,7 +28653,32 @@
     {
       "Id": "MM Clock Town East => MM Milk Bar",
       "RequiredItems": [],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "time{After_DAY1_AM_10_00}",
+          "time{Before_NIGHT1_PM_09_00}"
+        ],
+        [
+          "time{After_DAY2_AM_10_00}",
+          "time{Before_NIGHT2_PM_09_00}"
+        ],
+        [
+          "time{After_DAY3_AM_10_00}",
+          "time{Before_NIGHT3_PM_09_00}"
+        ],
+        [
+          "MM_MASK_ROMANI",
+          "time{After_NIGHT1_PM_10_00}",
+          "time{Before_NIGHT1_AM_05_00}"
+        ],
+        [
+          "time{After_NIGHT2_PM_10_00}",
+          "time{Before_NIGHT2_AM_05_00}"
+        ],
+        [
+          "time{After_NIGHT3_PM_10_00}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -28389,10 +28762,14 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_EVENT_MAIL_LETTER"
+          "MM_EVENT_MAIL_LETTER",
+          "time{After_DAY2_PM_02_00}",
+          "time{Before_NIGHT2_PM_10_00}"
         ],
         [
-          "MM_EVENT_MEET_KAFEI"
+          "MM_EVENT_MEET_KAFEI",
+          "time{After_DAY3_PM_01_00}",
+          "time{Before_NIGHT3_PM_10_00}"
         ]
       ],
       "TimeNeeded": "None",
@@ -28612,6 +28989,7 @@
     {
       "Id": "MM_EVENT_MEET_KAFEI",
       "RequiredItems": [
+        "time{Before_DAY3_AM_06_00}",
         "MM Curiosity Shop Back Room"
       ],
       "ConditionalItems": [],
@@ -28702,8 +29080,27 @@
           "MM Gorman Track Front"
         ],
         [
+          "time{After_NIGHT1_PM_10_00}",
+          "time{Before_DAY2_AM_06_00}",
           "MM_MASK_ROMANI",
           "MM Milk Bar"
+        ],
+        [
+          "MM_MASK_ROMANI",
+          "MM Milk Bar",
+          "time{After_NIGHT2_PM_10_00}",
+          "time{Before_DAY3_AM_06_00}"
+        ],
+        [
+          "MM_MASK_ROMANI",
+          "MM Milk Bar",
+          "time{After_NIGHT3_PM_06_00}",
+          "time{Before_NIGHT3_PM_09_00}"
+        ],
+        [
+          "MM_MASK_ROMANI",
+          "MM Milk Bar",
+          "time{After_NIGHT3_PM_10_00}"
         ]
       ],
       "TimeNeeded": "None",
@@ -28719,7 +29116,23 @@
         "MM_has_rupees",
         "MM Milk Bar"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "time{After_NIGHT1_PM_10_00}",
+          "time{Before_DAY2_AM_06_00}"
+        ],
+        [
+          "time{After_NIGHT2_PM_10_00}",
+          "time{Before_DAY3_AM_06_00}"
+        ],
+        [
+          "time{After_NIGHT3_PM_06_00}",
+          "time{Before_NIGHT3_PM_09_00}"
+        ],
+        [
+          "time{After_NIGHT3_PM_10_00}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -28756,6 +29169,7 @@
       "Id": "MM_EVENT_HD_REWARD_1",
       "RequiredItems": [
         "MM_BOMB_BAG",
+        "time{Before_NIGHT1_PM_10_00}",
         "MM Honey & Darling Game"
       ],
       "ConditionalItems": [],
@@ -28768,6 +29182,8 @@
       "Id": "MM_EVENT_HD_REWARD_2",
       "RequiredItems": [
         "MM_BOMB_BAG",
+        "time{After_DAY2_AM_06_00}",
+        "time{Before_NIGHT2_PM_10_00}",
         "MM Honey & Darling Game"
       ],
       "ConditionalItems": [],
@@ -28817,6 +29233,8 @@
       "Id": "MM_EVENT_SETUP_MEET",
       "RequiredItems": [
         "MM_MASK_KAFEI",
+        "time{After_DAY1_PM_01_45}",
+        "time{Before_NIGHT1_PM_09_00}",
         "MM Stock Pot Inn"
       ],
       "ConditionalItems": [],
@@ -28850,7 +29268,16 @@
         "MM_PENDANT_OF_MEMORIES",
         "MM Stock Pot Inn"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "time{After_DAY2_AM_06_00}",
+          "time{Before_NIGHT2_PM_09_00}"
+        ],
+        [
+          "time{After_DAY3_AM_06_00}",
+          "time{Before_DAY3_AM_11_30}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -29058,6 +29485,8 @@
     {
       "Id": "MM_EVENT_DEKU_REWARD_1",
       "RequiredItems": [
+        "time{After_DAY1_AM_06_00}",
+        "time{Before_NIGHT1_AM_12_00}",
         "MM Deku Playground"
       ],
       "ConditionalItems": [],
@@ -29069,6 +29498,8 @@
     {
       "Id": "MM_EVENT_DEKU_REWARD_2",
       "RequiredItems": [
+        "time{After_DAY2_AM_06_00}",
+        "time{Before_NIGHT2_AM_12_00}",
         "MM Deku Playground"
       ],
       "ConditionalItems": [],
@@ -29080,6 +29511,8 @@
     {
       "Id": "MM_EVENT_DEKU_REWARD_3",
       "RequiredItems": [
+        "time{After_DAY3_AM_06_00}",
+        "time{Before_NIGHT3_AM_12_00}",
         "MM Deku Playground"
       ],
       "ConditionalItems": [],
@@ -29875,7 +30308,19 @@
     {
       "Id": "MM Road to Southern Swamp => MM Swamp Archery",
       "RequiredItems": [],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "time{Before_NIGHT1_PM_10_00}"
+        ],
+        [
+          "time{After_DAY2_AM_06_00}",
+          "time{Before_NIGHT2_PM_10_00}"
+        ],
+        [
+          "time{After_DAY3_AM_06_00}",
+          "time{Before_NIGHT3_PM_10_00}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -31789,7 +32234,14 @@
     {
       "Id": "MM Milk Road Back => MM Near Romani Ranch",
       "RequiredItems": [],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "time{After_DAY3_AM_06_00}"
+        ],
+        [
+          "MM_can_use_keg"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -31839,7 +32291,14 @@
     {
       "Id": "MM Near Romani Ranch => MM Milk Road Back",
       "RequiredItems": [],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "time{After_DAY3_AM_06_00}"
+        ],
+        [
+          "MM_can_use_keg"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -31866,7 +32325,20 @@
     {
       "Id": "MM Romani Ranch => MM Cucco Shack",
       "RequiredItems": [],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "time{After_DAY1_AM_06_00}",
+          "time{Before_NIGHT1_PM_08_00}"
+        ],
+        [
+          "time{After_DAY2_AM_06_00}",
+          "time{Before_NIGHT2_PM_08_00}"
+        ],
+        [
+          "time{After_DAY3_AM_06_00}",
+          "time{Before_NIGHT3_PM_08_00}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -31875,7 +32347,20 @@
     {
       "Id": "MM Romani Ranch => MM Doggy Racetrack",
       "RequiredItems": [],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "time{After_DAY1_AM_06_00}",
+          "time{Before_NIGHT1_PM_08_00}"
+        ],
+        [
+          "time{After_DAY2_AM_06_00}",
+          "time{Before_NIGHT2_PM_08_00}"
+        ],
+        [
+          "time{After_DAY3_AM_06_00}",
+          "time{Before_NIGHT3_PM_08_00}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -31893,7 +32378,20 @@
     {
       "Id": "MM Romani Ranch => MM Ranch House",
       "RequiredItems": [],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "time{After_DAY1_AM_06_00}",
+          "time{Before_NIGHT1_PM_08_00}"
+        ],
+        [
+          "time{After_DAY2_AM_06_00}",
+          "time{Before_NIGHT2_PM_08_00}"
+        ],
+        [
+          "time{After_DAY3_AM_06_00}",
+          "time{Before_NIGHT3_PM_08_00}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -31902,6 +32400,7 @@
     {
       "Id": "MM_EVENT_ALIENS",
       "RequiredItems": [
+        "time{Before_NIGHT1_AM_02_30}",
         "MM_has_arrows",
         "MM Romani Ranch"
       ],
@@ -31958,7 +32457,20 @@
       "RequiredItems": [
         "MM Cucco Shack"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "time{After_DAY1_AM_06_00}",
+          "time{Before_NIGHT1_PM_08_00}"
+        ],
+        [
+          "time{After_DAY2_AM_06_00}",
+          "time{Before_NIGHT2_PM_08_00}"
+        ],
+        [
+          "time{After_DAY3_AM_06_00}",
+          "time{Before_NIGHT3_PM_08_00}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -31978,7 +32490,20 @@
       "RequiredItems": [
         "MM Doggy Racetrack"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "time{After_DAY1_AM_06_00}",
+          "time{Before_NIGHT1_PM_08_00}"
+        ],
+        [
+          "time{After_DAY2_AM_06_00}",
+          "time{Before_NIGHT2_PM_08_00}"
+        ],
+        [
+          "time{After_DAY3_AM_06_00}",
+          "time{Before_NIGHT3_PM_08_00}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -32780,7 +33305,8 @@
     {
       "Id": "MM Ikana Valley => MM Sakon Hideout",
       "RequiredItems": [
-        "MM_EVENT_MEET_KAFEI"
+        "MM_EVENT_MEET_KAFEI",
+        "time{At_NIGHT3_PM_06_00}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -37542,7 +38068,9 @@
     },
     {
       "Id": "MM_is_day1",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "time{Before_NIGHT1_PM_06_00}"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -37551,7 +38079,10 @@
     },
     {
       "Id": "MM_is_day2",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "time{After_DAY2_AM_06_00}",
+        "time{Before_NIGHT2_PM_06_00}"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -37560,7 +38091,10 @@
     },
     {
       "Id": "MM_is_day3",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "time{After_DAY3_AM_06_00}",
+        "time{Before_NIGHT3_PM_06_00}"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -37588,7 +38122,10 @@
     },
     {
       "Id": "MM_is_night1",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "time{After_NIGHT1_PM_06_00}",
+        "time{Before_DAY2_AM_06_00}"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -37597,7 +38134,10 @@
     },
     {
       "Id": "MM_is_night2",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "time{After_NIGHT2_PM_06_00}",
+        "time{Before_DAY3_AM_06_00}"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -37606,7 +38146,9 @@
     },
     {
       "Id": "MM_is_night3",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "time{After_NIGHT3_PM_06_00}"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -37634,7 +38176,9 @@
     },
     {
       "Id": "MM_first_day",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "time{Before_DAY2_AM_06_00}"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -37643,7 +38187,10 @@
     },
     {
       "Id": "MM_second_day",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "time{After_DAY2_AM_06_00}",
+        "time{Before_DAY3_AM_06_00}"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -37652,7 +38199,9 @@
     },
     {
       "Id": "MM_final_day",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "time{After_DAY3_AM_06_00}"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -37662,7 +38211,19 @@
     {
       "Id": "MM_midnight",
       "RequiredItems": [],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "time{After_NIGHT1_AM_12_00}",
+          "time{Before_DAY2_AM_06_00}"
+        ],
+        [
+          "time{After_NIGHT2_AM_12_00}",
+          "time{Before_DAY3_AM_06_00}"
+        ],
+        [
+          "time{After_NIGHT3_AM_12_00}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
