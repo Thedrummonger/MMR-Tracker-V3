@@ -35821,6 +35821,7 @@
       "SubCategory": "Progressive Items",
       "Values": {
         "separate": {
+          "Name": "Separate",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -35833,6 +35834,7 @@
           "VariableEdit": {}
         },
         "progressive": {
+          "Name": "Progressive",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -35967,6 +35969,7 @@
       "SubCategory": "Progressive Items",
       "Values": {
         "single": {
+          "Name": "Single",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -35979,6 +35982,7 @@
           "VariableEdit": {}
         },
         "progressive": {
+          "Name": "Progressive",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},

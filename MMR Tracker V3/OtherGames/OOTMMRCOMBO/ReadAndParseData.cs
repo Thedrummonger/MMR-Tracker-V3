@@ -548,6 +548,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             ProgressiveShieldsOOT.Values["progressive"].AddMaxAmountEdit("OOT_SHIELD_DEKU", MiscData.MathOP.set, 0);
             ProgressiveShieldsOOT.Values["progressive"].AddMaxAmountEdit("OOT_SHIELD_HYLIAN", MiscData.MathOP.set, 0);
             ProgressiveShieldsOOT.Values["progressive"].AddMaxAmountEdit("OOT_SHIELD_MIRROR", MiscData.MathOP.set, 0);
+            ProgressiveShieldsOOT.Values["separate"].Name = "Separate";
+            ProgressiveShieldsOOT.Values["progressive"].Name = "Progressive";
             dictionaryFile.Options.Add(ProgressiveShieldsOOT.ID, ProgressiveShieldsOOT);
 
             OptionData.TrackerOption ProgressiveSwordsOOT = new OptionData.TrackerOption();
@@ -591,6 +593,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             ProgressiveLullabyMM.CreateSimpleValues(new string[] { "single", "progressive" });
             ProgressiveLullabyMM.Values["single"].AddMaxAmountEdit("MM_SONG_GORON_HALF", MiscData.MathOP.set, 0);
             ProgressiveLullabyMM.Values["progressive"].AddMaxAmountEdit("MM_SONG_GORON", MiscData.MathOP.set, 0);
+            ProgressiveLullabyMM.Values["single"].Name = "Single";
+            ProgressiveLullabyMM.Values["progressive"].Name = "Progressive";
             dictionaryFile.Options.Add(ProgressiveLullabyMM.ID, ProgressiveLullabyMM);
 
             OptionData.TrackerOption fairyOcarinaMm = new OptionData.TrackerOption();
