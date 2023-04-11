@@ -253,7 +253,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 if (string.IsNullOrWhiteSpace(i.Randomizeditem.SpoilerLogGivenItem) && i.RandomizedState == MiscData.RandomizedState.Randomized)
                 {
                     Debug.WriteLine($"{i.ID} was randomized but had no spoiler data. Assuming it's unrandomized");
-                    i.SetRandomizedState(MiscData.RandomizedState.Unrandomized, instance);
+                    if (i.SingleValidItem is not null) { i.SetRandomizedState(MiscData.RandomizedState.UnrandomizedManual, instance); }
+                    else { i.SetRandomizedState(MiscData.RandomizedState.Unrandomized, instance); }
                 }
             }
         }

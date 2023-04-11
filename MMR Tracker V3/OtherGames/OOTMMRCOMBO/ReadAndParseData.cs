@@ -221,11 +221,11 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 string MMID = $"MM_Has_Renewable_{i.Value}";
                 string OOTID = $"OOT_Has_Renewable_{i.Value}";
                 if (!RenewableItemChecks.ContainsKey(MMID)) { RenewableItemChecks[MMID] = new($"MM_ANY_{i.Value}", new List<string>()); }
-                RenewableItemChecks[MMID].Item2.Add($"MM_{i.Value}");
-                RenewableItemChecks[MMID].Item2.Add($"SHARED_{i.Value}");
+                RenewableItemChecks[MMID].Item2.Add($"MM_{i.Key}");
+                RenewableItemChecks[MMID].Item2.Add($"SHARED_{i.Key}");
                 if (!RenewableItemChecks.ContainsKey(OOTID)) { RenewableItemChecks[OOTID] = new($"OOT_ANY_{i.Value}", new List<string>()); }
-                RenewableItemChecks[OOTID].Item2.Add($"OOT_{i.Value}");
-                RenewableItemChecks[OOTID].Item2.Add($"SHARED_{i.Value}");
+                RenewableItemChecks[OOTID].Item2.Add($"OOT_{i.Key}");
+                RenewableItemChecks[OOTID].Item2.Add($"SHARED_{i.Key}");
             }
 
             //Add Reneawable Logic

@@ -38266,345 +38266,345 @@
     "MM_ANY_Heart": {
       "Static": true,
       "Value": [
-        "MM_Heart",
-        "SHARED_Heart"
+        "MM_RECOVERY_HEART",
+        "SHARED_RECOVERY_HEART"
       ]
     },
     "OOT_ANY_Heart": {
       "Static": true,
       "Value": [
-        "OOT_Heart",
-        "SHARED_Heart"
+        "OOT_RECOVERY_HEART",
+        "SHARED_RECOVERY_HEART"
       ]
     },
     "MM_ANY_Stick": {
       "Static": true,
       "Value": [
-        "MM_Stick",
-        "SHARED_Stick",
-        "MM_Stick",
-        "SHARED_Stick",
-        "MM_Stick",
-        "SHARED_Stick"
+        "MM_STICK",
+        "SHARED_STICK",
+        "MM_STICKS_5",
+        "SHARED_STICKS_5",
+        "MM_STICKS_10",
+        "SHARED_STICKS_10"
       ]
     },
     "OOT_ANY_Stick": {
       "Static": true,
       "Value": [
-        "OOT_Stick",
-        "SHARED_Stick",
-        "OOT_Stick",
-        "SHARED_Stick",
-        "OOT_Stick",
-        "SHARED_Stick"
+        "OOT_STICK",
+        "SHARED_STICK",
+        "OOT_STICKS_5",
+        "SHARED_STICKS_5",
+        "OOT_STICKS_10",
+        "SHARED_STICKS_10"
       ]
     },
     "MM_ANY_Nut": {
       "Static": true,
       "Value": [
-        "MM_Nut",
-        "SHARED_Nut",
-        "MM_Nut",
-        "SHARED_Nut",
-        "MM_Nut",
-        "SHARED_Nut"
+        "MM_NUTS_5",
+        "SHARED_NUTS_5",
+        "MM_NUTS_10",
+        "SHARED_NUTS_10",
+        "MM_NUT",
+        "SHARED_NUT"
       ]
     },
     "OOT_ANY_Nut": {
       "Static": true,
       "Value": [
-        "OOT_Nut",
-        "SHARED_Nut",
-        "OOT_Nut",
-        "SHARED_Nut",
-        "OOT_Nut",
-        "SHARED_Nut"
+        "OOT_NUTS_5",
+        "SHARED_NUTS_5",
+        "OOT_NUTS_10",
+        "SHARED_NUTS_10",
+        "OOT_NUT",
+        "SHARED_NUT"
       ]
     },
     "MM_ANY_Bomb": {
       "Static": true,
       "Value": [
-        "MM_Bomb",
-        "SHARED_Bomb",
-        "MM_Bomb",
-        "SHARED_Bomb",
-        "MM_Bomb",
-        "SHARED_Bomb",
-        "MM_Bomb",
-        "SHARED_Bomb",
-        "MM_Bomb",
-        "SHARED_Bomb"
+        "MM_BOMB",
+        "SHARED_BOMB",
+        "MM_BOMBS_5",
+        "SHARED_BOMBS_5",
+        "MM_BOMBS_10",
+        "SHARED_BOMBS_10",
+        "MM_BOMBS_20",
+        "SHARED_BOMBS_20",
+        "MM_BOMBS_30",
+        "SHARED_BOMBS_30"
       ]
     },
     "OOT_ANY_Bomb": {
       "Static": true,
       "Value": [
-        "OOT_Bomb",
-        "SHARED_Bomb",
-        "OOT_Bomb",
-        "SHARED_Bomb",
-        "OOT_Bomb",
-        "SHARED_Bomb",
-        "OOT_Bomb",
-        "SHARED_Bomb",
-        "OOT_Bomb",
-        "SHARED_Bomb"
+        "OOT_BOMB",
+        "SHARED_BOMB",
+        "OOT_BOMBS_5",
+        "SHARED_BOMBS_5",
+        "OOT_BOMBS_10",
+        "SHARED_BOMBS_10",
+        "OOT_BOMBS_20",
+        "SHARED_BOMBS_20",
+        "OOT_BOMBS_30",
+        "SHARED_BOMBS_30"
       ]
     },
     "MM_ANY_Arrow": {
       "Static": true,
       "Value": [
-        "MM_Arrow",
-        "SHARED_Arrow",
-        "MM_Arrow",
-        "SHARED_Arrow",
-        "MM_Arrow",
-        "SHARED_Arrow",
-        "MM_Arrow",
-        "SHARED_Arrow"
+        "MM_ARROWS_5",
+        "SHARED_ARROWS_5",
+        "MM_ARROWS_10",
+        "SHARED_ARROWS_10",
+        "MM_ARROWS_30",
+        "SHARED_ARROWS_30",
+        "MM_ARROWS_40",
+        "SHARED_ARROWS_40"
       ]
     },
     "OOT_ANY_Arrow": {
       "Static": true,
       "Value": [
-        "OOT_Arrow",
-        "SHARED_Arrow",
-        "OOT_Arrow",
-        "SHARED_Arrow",
-        "OOT_Arrow",
-        "SHARED_Arrow",
-        "OOT_Arrow",
-        "SHARED_Arrow"
+        "OOT_ARROWS_5",
+        "SHARED_ARROWS_5",
+        "OOT_ARROWS_10",
+        "SHARED_ARROWS_10",
+        "OOT_ARROWS_30",
+        "SHARED_ARROWS_30",
+        "OOT_ARROWS_40",
+        "SHARED_ARROWS_40"
       ]
     },
     "MM_ANY_Seed": {
       "Static": true,
       "Value": [
-        "MM_Seed",
-        "SHARED_Seed",
-        "MM_Seed",
-        "SHARED_Seed"
+        "MM_DEKU_SEEDS_5",
+        "SHARED_DEKU_SEEDS_5",
+        "MM_DEKU_SEEDS_30",
+        "SHARED_DEKU_SEEDS_30"
       ]
     },
     "OOT_ANY_Seed": {
       "Static": true,
       "Value": [
-        "OOT_Seed",
-        "SHARED_Seed",
-        "OOT_Seed",
-        "SHARED_Seed"
+        "OOT_DEKU_SEEDS_5",
+        "SHARED_DEKU_SEEDS_5",
+        "OOT_DEKU_SEEDS_30",
+        "SHARED_DEKU_SEEDS_30"
       ]
     },
     "MM_ANY_Bombchu": {
       "Static": true,
       "Value": [
-        "MM_Bombchu",
-        "SHARED_Bombchu",
-        "MM_Bombchu",
-        "SHARED_Bombchu",
-        "MM_Bombchu",
-        "SHARED_Bombchu",
-        "MM_Bombchu",
-        "SHARED_Bombchu"
+        "MM_BOMBCHU_5",
+        "SHARED_BOMBCHU_5",
+        "MM_BOMBCHU_10",
+        "SHARED_BOMBCHU_10",
+        "MM_BOMBCHU_20",
+        "SHARED_BOMBCHU_20",
+        "MM_BOMBCHU",
+        "SHARED_BOMBCHU"
       ]
     },
     "OOT_ANY_Bombchu": {
       "Static": true,
       "Value": [
-        "OOT_Bombchu",
-        "SHARED_Bombchu",
-        "OOT_Bombchu",
-        "SHARED_Bombchu",
-        "OOT_Bombchu",
-        "SHARED_Bombchu",
-        "OOT_Bombchu",
-        "SHARED_Bombchu"
+        "OOT_BOMBCHU_5",
+        "SHARED_BOMBCHU_5",
+        "OOT_BOMBCHU_10",
+        "SHARED_BOMBCHU_10",
+        "OOT_BOMBCHU_20",
+        "SHARED_BOMBCHU_20",
+        "OOT_BOMBCHU",
+        "SHARED_BOMBCHU"
       ]
     },
     "MM_ANY_DekuShield": {
       "Static": true,
       "Value": [
-        "MM_DekuShield",
-        "SHARED_DekuShield"
+        "MM_SHIELD_DEKU",
+        "SHARED_SHIELD_DEKU"
       ]
     },
     "OOT_ANY_DekuShield": {
       "Static": true,
       "Value": [
-        "OOT_DekuShield",
-        "SHARED_DekuShield"
+        "OOT_SHIELD_DEKU",
+        "SHARED_SHIELD_DEKU"
       ]
     },
     "MM_ANY_HylianShield": {
       "Static": true,
       "Value": [
-        "MM_HylianShield",
-        "SHARED_HylianShield"
+        "MM_SHIELD_HYLIAN",
+        "SHARED_SHIELD_HYLIAN"
       ]
     },
     "OOT_ANY_HylianShield": {
       "Static": true,
       "Value": [
-        "OOT_HylianShield",
-        "SHARED_HylianShield"
+        "OOT_SHIELD_HYLIAN",
+        "SHARED_SHIELD_HYLIAN"
       ]
     },
     "MM_ANY_Milk": {
       "Static": true,
       "Value": [
-        "MM_Milk",
-        "SHARED_Milk"
+        "MM_MILK",
+        "SHARED_MILK"
       ]
     },
     "OOT_ANY_Milk": {
       "Static": true,
       "Value": [
-        "OOT_Milk",
-        "SHARED_Milk"
+        "OOT_MILK",
+        "SHARED_MILK"
       ]
     },
     "MM_ANY_RedPotion": {
       "Static": true,
       "Value": [
-        "MM_RedPotion",
-        "SHARED_RedPotion"
+        "MM_POTION_RED",
+        "SHARED_POTION_RED"
       ]
     },
     "OOT_ANY_RedPotion": {
       "Static": true,
       "Value": [
-        "OOT_RedPotion",
-        "SHARED_RedPotion"
+        "OOT_POTION_RED",
+        "SHARED_POTION_RED"
       ]
     },
     "MM_ANY_GreenPotion": {
       "Static": true,
       "Value": [
-        "MM_GreenPotion",
-        "SHARED_GreenPotion"
+        "MM_POTION_GREEN",
+        "SHARED_POTION_GREEN"
       ]
     },
     "OOT_ANY_GreenPotion": {
       "Static": true,
       "Value": [
-        "OOT_GreenPotion",
-        "SHARED_GreenPotion"
+        "OOT_POTION_GREEN",
+        "SHARED_POTION_GREEN"
       ]
     },
     "MM_ANY_BluePotion": {
       "Static": true,
       "Value": [
-        "MM_BluePotion",
-        "SHARED_BluePotion"
+        "MM_POTION_BLUE",
+        "SHARED_POTION_BLUE"
       ]
     },
     "OOT_ANY_BluePotion": {
       "Static": true,
       "Value": [
-        "OOT_BluePotion",
-        "SHARED_BluePotion"
+        "OOT_POTION_BLUE",
+        "SHARED_POTION_BLUE"
       ]
     },
     "MM_ANY_Fairy": {
       "Static": true,
       "Value": [
-        "MM_Fairy",
-        "SHARED_Fairy"
+        "MM_FAIRY",
+        "SHARED_FAIRY"
       ]
     },
     "OOT_ANY_Fairy": {
       "Static": true,
       "Value": [
-        "OOT_Fairy",
-        "SHARED_Fairy"
+        "OOT_FAIRY",
+        "SHARED_FAIRY"
       ]
     },
     "MM_ANY_Fish": {
       "Static": true,
       "Value": [
-        "MM_Fish",
-        "SHARED_Fish"
+        "MM_FISH",
+        "SHARED_FISH"
       ]
     },
     "OOT_ANY_Fish": {
       "Static": true,
       "Value": [
-        "OOT_Fish",
-        "SHARED_Fish"
+        "OOT_FISH",
+        "SHARED_FISH"
       ]
     },
     "MM_ANY_Bug": {
       "Static": true,
       "Value": [
-        "MM_Bug",
-        "SHARED_Bug",
-        "MM_Bug",
-        "SHARED_Bug"
+        "MM_BUG",
+        "SHARED_BUG",
+        "MM_BUGS",
+        "SHARED_BUGS"
       ]
     },
     "OOT_ANY_Bug": {
       "Static": true,
       "Value": [
-        "OOT_Bug",
-        "SHARED_Bug",
-        "OOT_Bug",
-        "SHARED_Bug"
+        "OOT_BUG",
+        "SHARED_BUG",
+        "OOT_BUGS",
+        "SHARED_BUGS"
       ]
     },
     "MM_ANY_BlueFire": {
       "Static": true,
       "Value": [
-        "MM_BlueFire",
-        "SHARED_BlueFire"
+        "MM_BLUE_FIRE",
+        "SHARED_BLUE_FIRE"
       ]
     },
     "OOT_ANY_BlueFire": {
       "Static": true,
       "Value": [
-        "OOT_BlueFire",
-        "SHARED_BlueFire"
+        "OOT_BLUE_FIRE",
+        "SHARED_BLUE_FIRE"
       ]
     },
     "MM_ANY_Poe": {
       "Static": true,
       "Value": [
-        "MM_Poe",
-        "SHARED_Poe"
+        "MM_POE",
+        "SHARED_POE"
       ]
     },
     "OOT_ANY_Poe": {
       "Static": true,
       "Value": [
-        "OOT_Poe",
-        "SHARED_Poe"
+        "OOT_POE",
+        "SHARED_POE"
       ]
     },
     "MM_ANY_HeroShield": {
       "Static": true,
       "Value": [
-        "MM_HeroShield",
-        "SHARED_HeroShield"
+        "MM_SHIELD_HERO",
+        "SHARED_SHIELD_HERO"
       ]
     },
     "OOT_ANY_HeroShield": {
       "Static": true,
       "Value": [
-        "OOT_HeroShield",
-        "SHARED_HeroShield"
+        "OOT_SHIELD_HERO",
+        "SHARED_SHIELD_HERO"
       ]
     },
     "MM_ANY_Chateau": {
       "Static": true,
       "Value": [
-        "MM_Chateau",
-        "SHARED_Chateau"
+        "MM_CHATEAU",
+        "SHARED_CHATEAU"
       ]
     },
     "OOT_ANY_Chateau": {
       "Static": true,
       "Value": [
-        "OOT_Chateau",
-        "SHARED_Chateau"
+        "OOT_CHATEAU",
+        "SHARED_CHATEAU"
       ]
     }
   },
