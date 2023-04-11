@@ -934,5 +934,12 @@ namespace Windows_Form_Frontend
             Testing.TestLogicForInvalidItems(MainInterface.InstanceContainer);
             Testing.TestLocationsForInvalidVanillaItem(MainInterface.InstanceContainer);
         }
+
+        internal static void WWRCreateData()
+        {
+            MMR_Tracker_V3.OtherGames.WindWakerRando.ReadAndParseData.CreateFiles(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary);
+            WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(Logic), JsonConvert.SerializeObject(dictionary));
+            Testing.TestLocationsForInvalidVanillaItem(MainInterface.InstanceContainer);
+        }
     }
 }

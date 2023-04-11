@@ -259,8 +259,8 @@ namespace Windows_Form_Frontend
         private void CodeTestingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //WinformTesting.TPRCreateData();
-            WinformTesting.OOTMMCreateData();
-            //MMR_Tracker_V3.OtherGames.WindWakerRando.ReadAndParseData.CreateFiles();
+            //WinformTesting.OOTMMCreateData();
+            WinformTesting.WWRCreateData();
         }
 
         //ListBoxes
