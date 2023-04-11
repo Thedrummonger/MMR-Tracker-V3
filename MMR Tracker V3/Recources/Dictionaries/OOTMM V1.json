@@ -38643,6 +38643,28 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT_BOMBCHU_1",
+      "RequiredItems": [
+        "false"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_EVENT_GREEN_POTION",
+      "RequiredItems": [
+        "false"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM_HAS_MOON_REQUIREMENTS",
       "RequiredItems": [
         "moon_req, moon_count"

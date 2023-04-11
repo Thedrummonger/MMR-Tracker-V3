@@ -625,7 +625,9 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "MM_ZORA", RequiredItems = new List<string> { "MM_MASK_ZORA" } });
             dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "MM_bow", RequiredItems = new List<string> { "MM_BOW" } });
             dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "MM_PICTORGRAPH_BOX", RequiredItems = new List<string> { "MM_PICTOGRAPH_BOX" } });
-
+            dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "OOT_BOMBCHU_1", RequiredItems = new List<string> { "false" } });
+            dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "MM_EVENT_GREEN_POTION", RequiredItems = new List<string> { "false" } });
+            
             AddSharedItemOptions("sharedNutsSticks", "Shared Nuts and Sticks", new string[] { "NUT", "NUTS_5", "NUTS_5_ALT", "NUTS_10", "STICK", "STICKS_5", "STICKS_10" }, 1);
             AddSharedItemOptions("sharedBows", "Shared Bows", new string[] { "BOW" }, 1, new string[] { "ARROWS_5", "ARROWS_10", "ARROWS_30", "ARROWS_40", });
             AddSharedItemOptions("sharedBombBags", "Shared Bomb Bags", new string[] { "BOMB_BAG" }, 1, new string[] { "BOMBS_5", "BOMBS_10", "BOMBS_20", "BOMBS_30", "BOMB" });
