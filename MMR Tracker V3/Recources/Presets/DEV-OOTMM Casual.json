@@ -9902,7 +9902,10 @@
     },
     {
       "Id": "MM Clock Town Postman Hat",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM_EVENT_POSTMAN_FREEDOM",
+        "MM Clock Town East"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -10070,7 +10073,9 @@
     },
     {
       "Id": "MM Mayor's Office Kafei's Mask",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM Mayor's Office"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -10079,7 +10084,10 @@
     },
     {
       "Id": "MM Mayor's Office HP",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM_MASK_COUPLE",
+        "MM Mayor's Office"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -10088,7 +10096,13 @@
     },
     {
       "Id": "MM Milk Bar Troupe Leader Mask",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM_has_ocarina",
+        "MM_MASK_DEKU",
+        "MM_MASK_ZORA",
+        "MM_MASK_GORON",
+        "MM Milk Bar"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -10097,7 +10111,11 @@
     },
     {
       "Id": "MM Milk Bar Madame Aroma Bottle",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM_MASK_KAFEI",
+        "MM_LETTER_TO_MAMA",
+        "MM Milk Bar"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -10106,7 +10124,11 @@
     },
     {
       "Id": "MM Town Archery Reward 1",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM_BOW",
+        "MM_has_rupees",
+        "MM Town Archery"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -10115,7 +10137,11 @@
     },
     {
       "Id": "MM Town Archery Reward 2",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM_BOW",
+        "MM_has_rupees",
+        "MM Town Archery"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -10124,8 +10150,19 @@
     },
     {
       "Id": "MM Chest Game HP",
-      "RequiredItems": [],
-      "ConditionalItems": [],
+      "RequiredItems": [
+        "MM_MASK_GORON",
+        "MM_has_rupees",
+        "MM Chest Game"
+      ],
+      "ConditionalItems": [
+        [
+          "true"
+        ],
+        [
+          "MM_is_day3"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -10194,7 +10231,9 @@
     },
     {
       "Id": "MM Stock Pot Inn Room Key",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM Stock Pot Inn"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -10215,7 +10254,12 @@
     },
     {
       "Id": "MM Stock Pot Inn Couple's Mask",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM_EVENT_SUN_MASK",
+        "MM_EVENT_DELIVER_PENDANT",
+        "MM_EVENT_MEET_ANJU",
+        "MM Stock Pot Inn"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -10305,7 +10349,10 @@
     },
     {
       "Id": "MM Trading Post Item 1",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM_has_rupees",
+        "MM Trading Post"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -10314,7 +10361,10 @@
     },
     {
       "Id": "MM Trading Post Item 2",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM_has_rupees",
+        "MM Trading Post"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -10323,7 +10373,10 @@
     },
     {
       "Id": "MM Trading Post Item 3",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM_has_rupees",
+        "MM Trading Post"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -10332,7 +10385,10 @@
     },
     {
       "Id": "MM Trading Post Item 4",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM_has_rupees",
+        "MM Trading Post"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -10341,7 +10397,10 @@
     },
     {
       "Id": "MM Trading Post Item 5",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM_has_rupees",
+        "MM Trading Post"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -10350,7 +10409,10 @@
     },
     {
       "Id": "MM Trading Post Item 6",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM_has_rupees",
+        "MM Trading Post"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -10359,7 +10421,10 @@
     },
     {
       "Id": "MM Trading Post Item 7",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM_has_rupees",
+        "MM Trading Post"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -10368,7 +10433,10 @@
     },
     {
       "Id": "MM Trading Post Item 8",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM_has_rupees",
+        "MM Trading Post"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -10455,8 +10523,20 @@
     },
     {
       "Id": "MM Curiosity Shop Back Room Pendant of Memories",
-      "RequiredItems": [],
-      "ConditionalItems": [],
+      "RequiredItems": [
+        "MM Curiosity Shop Back Room"
+      ],
+      "ConditionalItems": [
+        [
+          "true"
+        ],
+        [
+          "MM_EVENT_SAKON_BOMB_BAG"
+        ],
+        [
+          "MM_EVENT_SAKON_BOOM"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -10464,7 +10544,9 @@
     },
     {
       "Id": "MM Curiosity Shop Back Room Owner Reward 1",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM Curiosity Shop Back Room"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -10473,7 +10555,9 @@
     },
     {
       "Id": "MM Curiosity Shop Back Room Owner Reward 2",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM Curiosity Shop Back Room"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -10482,7 +10566,10 @@
     },
     {
       "Id": "MM Post Office HP",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM_MASK_BUNNY",
+        "MM Post Office"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -10491,7 +10578,11 @@
     },
     {
       "Id": "MM Swordsman School HP",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM_SWORD",
+        "MM_has_rupees",
+        "MM Swordsman School"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -10830,7 +10921,11 @@
     },
     {
       "Id": "MM Swamp Archery Reward 1",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM_BOW",
+        "MM_has_rupees",
+        "MM Swamp Archery"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -10839,7 +10934,11 @@
     },
     {
       "Id": "MM Swamp Archery Reward 2",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM_BOW",
+        "MM_has_rupees",
+        "MM Swamp Archery"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -11874,7 +11973,9 @@
     },
     {
       "Id": "MM Romani Ranch Epona Song",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM Romani Ranch"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -11883,7 +11984,10 @@
     },
     {
       "Id": "MM Romani Ranch Aliens",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM_has_arrows",
+        "MM Romani Ranch"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -11904,8 +12008,19 @@
     },
     {
       "Id": "MM Romani Ranch Barn Cow Left",
-      "RequiredItems": [],
-      "ConditionalItems": [],
+      "RequiredItems": [
+        "MM_OCARINA",
+        "MM_SONG_EPONA",
+        "MM Stables"
+      ],
+      "ConditionalItems": [
+        [
+          "true"
+        ],
+        [
+          "MM_EVENT_ALIENS"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -11913,8 +12028,19 @@
     },
     {
       "Id": "MM Romani Ranch Barn Cow Right Front",
-      "RequiredItems": [],
-      "ConditionalItems": [],
+      "RequiredItems": [
+        "MM_OCARINA",
+        "MM_SONG_EPONA",
+        "MM Stables"
+      ],
+      "ConditionalItems": [
+        [
+          "true"
+        ],
+        [
+          "MM_EVENT_ALIENS"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -11922,8 +12048,19 @@
     },
     {
       "Id": "MM Romani Ranch Barn Cow Right Back",
-      "RequiredItems": [],
-      "ConditionalItems": [],
+      "RequiredItems": [
+        "MM_OCARINA",
+        "MM_SONG_EPONA",
+        "MM Stables"
+      ],
+      "ConditionalItems": [
+        [
+          "true"
+        ],
+        [
+          "MM_EVENT_ALIENS"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -11931,7 +12068,10 @@
     },
     {
       "Id": "MM Cucco Shack Bunny Mask",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM_MASK_BREMEN",
+        "MM Cucco Shack"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -11940,8 +12080,23 @@
     },
     {
       "Id": "MM Doggy Racetrack Chest",
-      "RequiredItems": [],
-      "ConditionalItems": [],
+      "RequiredItems": [
+        "MM Doggy Racetrack"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_can_use_beans"
+        ],
+        [
+          "MM_MASK_ZORA"
+        ],
+        [
+          "MM_can_hookshot_short"
+        ],
+        [
+          "TRICK_MM_DOG_RACE_CHEST_NOTHING"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -11949,7 +12104,10 @@
     },
     {
       "Id": "MM Doggy Racetrack HP",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM_MASK_TRUTH",
+        "MM Doggy Racetrack"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -11984,7 +12142,11 @@
     },
     {
       "Id": "MM Great Bay Coast Fisherman HP",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM_can_hookshot_short",
+        "MM_EVENT_BOSS_GREAT_BAY",
+        "MM Great Bay Coast"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -27591,8 +27753,20 @@
     },
     {
       "Id": "MM_EVENT_MAIL_LETTER",
-      "RequiredItems": [],
-      "ConditionalItems": [],
+      "RequiredItems": [
+        "MM_LETTER_TO_KAFEI"
+      ],
+      "ConditionalItems": [
+        [
+          "MM Clock Town East"
+        ],
+        [
+          "MM Clock Town North"
+        ],
+        [
+          "MM Clock Town South"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -27813,7 +27987,10 @@
     },
     {
       "Id": "MM_EVENT_SAKON_BOMB_BAG",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM_can_fight",
+        "MM Clock Town North"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -27822,8 +27999,17 @@
     },
     {
       "Id": "MM_EVENT_SAKON_BOOM",
-      "RequiredItems": [],
-      "ConditionalItems": [],
+      "RequiredItems": [
+        "MM Clock Town North"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_has_arrows"
+        ],
+        [
+          "MM_can_hookshot_short"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -27994,7 +28180,14 @@
     {
       "Id": "MM Clock Town West => MM Post Office",
       "RequiredItems": [],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "true"
+        ],
+        [
+          "MM_is_night3"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -28003,7 +28196,17 @@
     {
       "Id": "MM Clock Town West => MM Swordsman School",
       "RequiredItems": [],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_first_day"
+        ],
+        [
+          "MM_second_day"
+        ],
+        [
+          "true"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -28012,7 +28215,14 @@
     {
       "Id": "MM Clock Town West => MM Lottery",
       "RequiredItems": [],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_is_day"
+        ],
+        [
+          "MM_EVENT_PLAY_LOTTERY"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -28232,7 +28442,14 @@
     {
       "Id": "MM Clock Town Laundry Pool => MM Curiosity Shop Back Room",
       "RequiredItems": [],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_EVENT_MAIL_LETTER"
+        ],
+        [
+          "MM_EVENT_MEET_KAFEI"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -28449,7 +28666,9 @@
     },
     {
       "Id": "MM_EVENT_MEET_KAFEI",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM Curiosity Shop Back Room"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -28530,11 +28749,18 @@
     {
       "Id": "MM_EVENT_MILK",
       "RequiredItems": [
-        "MM_has_rupees",
-        "MM_is_day",
-        "MM Gorman Track Front"
+        "MM_has_rupees"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_is_day",
+          "MM Gorman Track Front"
+        ],
+        [
+          "MM_MASK_ROMANI",
+          "MM Milk Bar"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -28542,7 +28768,12 @@
     },
     {
       "Id": "MM_EVENT_CHATEAU",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM_MASK_ROMANI",
+        "MM_WALLET",
+        "MM_has_rupees",
+        "MM Milk Bar"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -28578,7 +28809,10 @@
     },
     {
       "Id": "MM_EVENT_HD_REWARD_1",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM_BOMB_BAG",
+        "MM Honey & Darling Game"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -28587,7 +28821,10 @@
     },
     {
       "Id": "MM_EVENT_HD_REWARD_2",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM_BOMB_BAG",
+        "MM Honey & Darling Game"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -28633,7 +28870,10 @@
     },
     {
       "Id": "MM_EVENT_SETUP_MEET",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM_MASK_KAFEI",
+        "MM Stock Pot Inn"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -28661,7 +28901,10 @@
     },
     {
       "Id": "MM_EVENT_DELIVER_PENDANT",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM_PENDANT_OF_MEMORIES",
+        "MM Stock Pot Inn"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -28869,7 +29112,9 @@
     },
     {
       "Id": "MM_EVENT_DEKU_REWARD_1",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM Deku Playground"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -28878,7 +29123,9 @@
     },
     {
       "Id": "MM_EVENT_DEKU_REWARD_2",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM Deku Playground"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -28887,7 +29134,9 @@
     },
     {
       "Id": "MM_EVENT_DEKU_REWARD_3",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM Deku Playground"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -31595,7 +31844,14 @@
     {
       "Id": "MM Milk Road Back => MM Near Romani Ranch",
       "RequiredItems": [],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "true"
+        ],
+        [
+          "MM_can_use_keg"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -31645,7 +31901,14 @@
     {
       "Id": "MM Near Romani Ranch => MM Milk Road Back",
       "RequiredItems": [],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "true"
+        ],
+        [
+          "MM_can_use_keg"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -31707,7 +31970,10 @@
     },
     {
       "Id": "MM_EVENT_ALIENS",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM_has_arrows",
+        "MM Romani Ranch"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -31758,7 +32024,9 @@
     },
     {
       "Id": "MM Cucco Shack Gossip",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM Cucco Shack"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -31776,7 +32044,9 @@
     },
     {
       "Id": "MM Doggy Racetrack Gossip",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM Doggy Racetrack"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -32578,7 +32848,9 @@
     },
     {
       "Id": "MM Ikana Valley => MM Sakon Hideout",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM_EVENT_MEET_KAFEI"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",

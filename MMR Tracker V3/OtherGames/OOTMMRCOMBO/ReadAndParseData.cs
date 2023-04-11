@@ -990,7 +990,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                     case "before":
                     case "after":
                     case "at":
-                        line = "true"; //the "Time" based function don't matter since the tracker doesn't track the curent game time
+                        line = line.Replace(FullFunction, "true"); //the "Time" based function don't matter since the tracker doesn't track the curent game time
                         break;
                     case "cond":
                         if (Parameters.StartsWith("setting"))
