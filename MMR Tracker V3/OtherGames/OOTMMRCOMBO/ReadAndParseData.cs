@@ -51,46 +51,6 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
         public static LogicStringParser OOTMMLogicParser = new LogicStringParser();
 
-        public static Dictionary<string, string> RenewableItems = new Dictionary<string, string>()
-        {
-            {"RECOVERY_HEART", "Heart"},
-            {"STICK", "Stick"},
-            {"STICKS_5", "Stick"},
-            {"STICKS_10", "Stick"},
-            {"NUTS_5", "Nut"},
-            {"NUTS_10", "Nut"},
-            {"BOMB", "Bomb"},
-            {"BOMBS_5", "Bomb"},
-            {"BOMBS_10", "Bomb"},
-            {"BOMBS_20", "Bomb"},
-            {"BOMBS_30", "Bomb"},
-            {"ARROWS_5", "Arrow"},
-            {"ARROWS_10", "Arrow"},
-            {"ARROWS_30", "Arrow"},
-            {"DEKU_SEEDS_5", "Seed"},
-            {"DEKU_SEEDS_30", "Seed"},
-            {"BOMBCHU_5", "Bombchu"},
-            {"BOMBCHU_10", "Bombchu"},
-            {"BOMBCHU_20", "Bombchu"},
-            {"SHIELD_DEKU", "DekuShield"},
-            {"SHIELD_HYLIAN", "HylianShield"},
-            {"MILK", "Milk"},
-            {"POTION_RED", "RedPotion"},
-            {"POTION_GREEN", "GreenPotion"},
-            {"POTION_BLUE", "BluePotion"},
-            {"FAIRY", "Fairy"},
-            {"FISH", "Fish"},
-            {"BUG", "Bug"},
-            {"BLUE_FIRE", "BlueFire"},
-            {"POE", "Poe"},
-            {"NUT", "Nut"},
-            {"BOMBCHU", "Bombchu"},
-            {"ARROWS_40", "Arrow"},
-            {"SHIELD_HERO", "HeroShield"},
-            {"CHATEAU", "Chateau"},
-            {"BUGS", "Bug"}
-        };
-
         public static void CreateFiles(out TrackerObjects.MMRData.LogicFile Logic, out TrackerObjects.LogicDictionaryData.LogicDictionary dictionary)
         {
             string TestFolder = Path.Combine(References.TestingPaths.GetDevCodePath(), "MMR Tracker V3", "Recources");
@@ -214,6 +174,10 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
         private static void AddRenewableChecks(MMRData.LogicFile logicFile, LogicDictionaryData.LogicDictionary dictionaryFile)
         {
+            string CodeFolder = References.TestingPaths.GetDevCodePath();
+            string OOTMMCode = Path.Combine(CodeFolder, @"MMR Tracker V3", "OtherGames", "OOTMMRCOMBO");
+            string MMOOTCodeRenewableItems = Path.Combine(OOTMMCode, @"RenewableItems.json");
+            Dictionary<string, string> RenewableItems = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(MMOOTCodeRenewableItems));
             Dictionary<string, Tuple<string, List<string>>> RenewableItemChecks = new();
 
             foreach(var i in RenewableItems)
@@ -919,6 +883,11 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
         public static string ParseFunction(string LogicLine, string CurrentGame)
         {
+            string CodeFolder = References.TestingPaths.GetDevCodePath();
+            string OOTMMCode = Path.Combine(CodeFolder, @"MMR Tracker V3", "OtherGames", "OOTMMRCOMBO");
+            string MMOOTCodeRenewableItems = Path.Combine(OOTMMCode, @"RenewableItems.json");
+            Dictionary<string, string> RenewableItems = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(MMOOTCodeRenewableItems));
+
             string line = LogicLine;
             var ParsedLine = OOTMMLogicParser.ParseLogicString(line);
             var FunctionsFound = ParsedLine.Where(x => x.Type == LogicStringParser.EntryType.function).Select(x => new LogicUtilities.LogicFunction(x.Text)).ToArray();
