@@ -199,13 +199,16 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
         {
             foreach(var logic in logicFile.Logic)
             {
+                bool CondAllwaysTrue = false;
                 foreach(var condSet in logic.ConditionalItems)
                 {
                     if (condSet.Any(x => bool.TryParse(x, out bool BT) && BT) && condSet.Any(x => !bool.TryParse(x, out _)))
                     {
                         int Match = condSet.RemoveAll(x => bool.TryParse(x, out bool BR) && BR);
                     }
+                    else if (condSet.All(x => bool.TryParse(x, out bool BT) && BT)) { CondAllwaysTrue = true; }
                 }
+                if (CondAllwaysTrue) { logic.ConditionalItems.Clear(); }
             }
         }
 

@@ -10155,14 +10155,7 @@
         "MM_has_rupees",
         "MM Chest Game"
       ],
-      "ConditionalItems": [
-        [
-          "true"
-        ],
-        [
-          "MM_is_day3"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -10526,17 +10519,7 @@
       "RequiredItems": [
         "MM Curiosity Shop Back Room"
       ],
-      "ConditionalItems": [
-        [
-          "true"
-        ],
-        [
-          "MM_EVENT_SAKON_BOMB_BAG"
-        ],
-        [
-          "MM_EVENT_SAKON_BOOM"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -12013,14 +11996,7 @@
         "MM_SONG_EPONA",
         "MM Stables"
       ],
-      "ConditionalItems": [
-        [
-          "true"
-        ],
-        [
-          "MM_EVENT_ALIENS"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -12033,14 +12009,7 @@
         "MM_SONG_EPONA",
         "MM Stables"
       ],
-      "ConditionalItems": [
-        [
-          "true"
-        ],
-        [
-          "MM_EVENT_ALIENS"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -12053,14 +12022,7 @@
         "MM_SONG_EPONA",
         "MM Stables"
       ],
-      "ConditionalItems": [
-        [
-          "true"
-        ],
-        [
-          "MM_EVENT_ALIENS"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -28180,14 +28142,7 @@
     {
       "Id": "MM Clock Town West => MM Post Office",
       "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "true"
-        ],
-        [
-          "MM_is_night3"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -28196,17 +28151,7 @@
     {
       "Id": "MM Clock Town West => MM Swordsman School",
       "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "MM_first_day"
-        ],
-        [
-          "MM_second_day"
-        ],
-        [
-          "true"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -31844,14 +31789,7 @@
     {
       "Id": "MM Milk Road Back => MM Near Romani Ranch",
       "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "true"
-        ],
-        [
-          "MM_can_use_keg"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -31901,14 +31839,7 @@
     {
       "Id": "MM Near Romani Ranch => MM Milk Road Back",
       "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "true"
-        ],
-        [
-          "MM_can_use_keg"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
