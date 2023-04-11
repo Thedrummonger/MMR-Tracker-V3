@@ -174,10 +174,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
         private static void AddRenewableChecks(MMRData.LogicFile logicFile, LogicDictionaryData.LogicDictionary dictionaryFile)
         {
-            string CodeFolder = References.TestingPaths.GetDevCodePath();
-            string OOTMMCode = Path.Combine(CodeFolder, @"MMR Tracker V3", "OtherGames", "OOTMMRCOMBO");
-            string MMOOTCodeRenewableItems = Path.Combine(OOTMMCode, @"RenewableItems.json");
-            Dictionary<string, string> RenewableItems = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(MMOOTCodeRenewableItems));
+            Dictionary<string, string> RenewableItems = new CodeFileReader<Dictionary<string, string>>().ReadCodeFile("RenewableItems");
             Dictionary<string, Tuple<string, List<string>>> RenewableItemChecks = new();
 
             foreach(var i in RenewableItems)
@@ -883,10 +880,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
         public static string ParseFunction(string LogicLine, string CurrentGame)
         {
-            string CodeFolder = References.TestingPaths.GetDevCodePath();
-            string OOTMMCode = Path.Combine(CodeFolder, @"MMR Tracker V3", "OtherGames", "OOTMMRCOMBO");
-            string MMOOTCodeRenewableItems = Path.Combine(OOTMMCode, @"RenewableItems.json");
-            Dictionary<string, string> RenewableItems = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(MMOOTCodeRenewableItems));
+            Dictionary<string, string> RenewableItems = new CodeFileReader<Dictionary<string, string>>().ReadCodeFile("RenewableItems");
 
             string line = LogicLine;
             var ParsedLine = OOTMMLogicParser.ParseLogicString(line);
@@ -1001,15 +995,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
         public static void AddEntriesFromLogicFiles(TrackerObjects.MMRData.LogicFile LogicFile, TrackerObjects.LogicDictionaryData.LogicDictionary dictionaryFile)
         {
-            string TestFolder = References.TestingPaths.GetDevTestingPath();
-            string CodeFolder = References.TestingPaths.GetDevCodePath();
-            string MMOOTCodeDir = Path.Combine(TestFolder, @"core-develop");
-            string MMOOTCodeData = Path.Combine(MMOOTCodeDir, @"data");
-            string MMOOTCodeMM = Path.Combine(MMOOTCodeData, @"mm");
-            string MMOOTCodeOOT = Path.Combine(MMOOTCodeData, @"oot");
-            string OOTMMCode = Path.Combine(CodeFolder, @"MMR Tracker V3", "OtherGames", "OOTMMRCOMBO");
-            string MMOOTCodeMMMacros = Path.Combine(OOTMMCode, @"MMMacroOverride.json");
-            string MMOOTCodeOOTMacros = Path.Combine(OOTMMCode, @"OOTMacroOverride.json");
+            string MMOOTCodeMM = Path.Combine(References.TestingPaths.GetDevTestingPath(), @"core-develop", @"data", @"mm");
+            string MMOOTCodeOOT = Path.Combine(References.TestingPaths.GetDevTestingPath(), @"core-develop", @"data", @"oot");
             string MMOOTCodeMMWorld = Path.Combine(MMOOTCodeMM, @"world");
             string MMOOTCodeOOTWorld = Path.Combine(MMOOTCodeOOT, @"world");
             string MMOOTCodeOOTMQWorld = Path.Combine(MMOOTCodeOOT, @"world_mq");
@@ -1018,19 +1005,15 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             string[] MMOOTCodeOOTMQWorldFiles = Directory.GetFiles(MMOOTCodeOOTMQWorld);
             string MMEntrances = Path.Combine(MMOOTCodeMM, @"entrances.csv");
             string OOTEntrances = Path.Combine(MMOOTCodeOOT, @"entrances.csv");
-            string MMMacrosfile = File.ReadAllText(MMOOTCodeMMMacros);
-            string OOTMacrosfile = File.ReadAllText(MMOOTCodeOOTMacros);
-            string DungeonExitFile = Path.Combine(CodeFolder, @"MMR Tracker V3", "OtherGames", "OOTMMRCOMBO", "DungeonExits.json");
 
 
-            var MMentranceData = JsonConvert.DeserializeObject<List<MMROOTEntranceData>>(ConvertCsvFileToJsonObject(File.ReadAllLines(MMEntrances)));
-            var OOTentranceData = JsonConvert.DeserializeObject<List<MMROOTEntranceData>>(ConvertCsvFileToJsonObject(File.ReadAllLines(OOTEntrances)));
+            List<MMROOTEntranceData> MMentranceData = JsonConvert.DeserializeObject<List<MMROOTEntranceData>>(ConvertCsvFileToJsonObject(File.ReadAllLines(MMEntrances)));
+            List<MMROOTEntranceData> OOTentranceData = JsonConvert.DeserializeObject<List<MMROOTEntranceData>>(ConvertCsvFileToJsonObject(File.ReadAllLines(OOTEntrances)));
 
             List<MMROOTEntranceData> RandoEntrances = MMentranceData.Concat(OOTentranceData).ToList();
-            Dictionary<string, string> DungeonExits = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(DungeonExitFile));
 
-            Dictionary<string, string> MMMacros = JsonConvert.DeserializeObject<Dictionary<string, string>>(MMMacrosfile);
-            Dictionary<string, string> OOTMacros = JsonConvert.DeserializeObject<Dictionary<string, string>>(OOTMacrosfile);
+            Dictionary<string, string> MMMacros = new CodeFileReader<Dictionary<string, string>>().ReadCodeFile(@"MMMacroOverride");
+            Dictionary<string, string> OOTMacros = new CodeFileReader<Dictionary<string, string>>().ReadCodeFile(@"OOTMacroOverride");
 
             Dictionary<string, MMROOTLogicEntry> MMLogicEntries = new Dictionary<string, MMROOTLogicEntry>();
             Dictionary<string, MMROOTLogicEntry> OOTLogicEntries = new Dictionary<string, MMROOTLogicEntry>();
@@ -1092,14 +1075,6 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                                     var EntranceCSVentry = RandoEntrances.First(x => x.to == exit && x.from == Area);
                                     bool IsBossDoor = EntranceCSVentry.type == "boss";
                                     entranceEntry.RandomizableEntrance = true;
-                                    /*
-                                    entranceEntry.DisplayArea = IsBossDoor ? "Boss Room" : "Dungeon";
-                                    entranceEntry.DisplayExit = $"{(IsBossDoor ? "" : "Entrance to ")}{entranceEntry.Exit}";
-                                    if (DungeonExits.ContainsKey(TrueAreaName))
-                                    {
-                                        entranceEntry.DisplayExit = $"Exit from {entranceEntry.Area}";
-                                    }
-                                    */
                                 }
 
                                 dictionaryFile.EntranceList.Add(FullexitName, entranceEntry);
@@ -1136,24 +1111,17 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
         public static void AddEntriesFromItemPools(out TrackerObjects.MMRData.LogicFile Logic, out TrackerObjects.LogicDictionaryData.LogicDictionary dictionary)
         {
-            string CodeFolder = References.TestingPaths.GetDevCodePath();
-            string OOTMMCode = Path.Combine(CodeFolder, @"MMR Tracker V3", "OtherGames", "OOTMMRCOMBO");
+            Dictionary<string, string> OOTRItemsDict = new CodeFileReader<Dictionary<string, string>>().ReadCodeFile("items");
+            Dictionary<string, string> OOTRTricksDict = new CodeFileReader<Dictionary<string, string>>().ReadCodeFile("tricks");
+            Dictionary<string, string> OOTRAreaDict = new CodeFileReader<Dictionary<string, string>>().ReadCodeFile("AreaNames");
+            Dictionary<string, int> OOTRItemCounts = new CodeFileReader<Dictionary<string, int>>().ReadCodeFile("itemCounts");
+
             string MMpool = Path.Combine(References.TestingPaths.GetDevTestingPath(), @"core-develop", "data", "mm", "pool.csv");
-            string OOTpool = Path.Combine(References.TestingPaths.GetDevTestingPath(), @"core-develop", "data", "oot", "pool.csv");
-            string OOTMMItems = Path.Combine(OOTMMCode, @"items.json");
-            string OOTMMTricks = Path.Combine(OOTMMCode, @"tricks.json");
-            string OOTMMArea = Path.Combine(OOTMMCode, @"AreaNames.json");
-            string OOTMMCounts = Path.Combine(OOTMMCode, @"itemCounts.json");
-
-            Dictionary<string, string> OOTRItemsDict = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(OOTMMItems));
-            Dictionary<string, string> OOTRTricksDict = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(OOTMMTricks));
-            Dictionary<string, string> OOTRAreaDict = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(OOTMMArea));
-            Dictionary<string, int> OOTRItemCounts = JsonConvert.DeserializeObject<Dictionary<string, int>>(File.ReadAllText(OOTMMCounts));
-
             string[] MMPoolWebData = File.ReadAllLines(MMpool);
             var mmPool = ConvertCsvFileToJsonObject(MMPoolWebData.Where(x => !string.IsNullOrWhiteSpace(x)).ToArray());
             var mmPoolObj = JsonConvert.DeserializeObject<List<MMROOTLocation>>(mmPool);
 
+            string OOTpool = Path.Combine(References.TestingPaths.GetDevTestingPath(), @"core-develop", "data", "oot", "pool.csv");
             string[] OOTPoolWebData = File.ReadAllLines(OOTpool);
             var ootPool = ConvertCsvFileToJsonObject(OOTPoolWebData.Where(x => !string.IsNullOrWhiteSpace(x)).ToArray());
             var ootPoolObj = JsonConvert.DeserializeObject<List<MMROOTLocation>>(ootPool);
@@ -1303,6 +1271,27 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 {
                     Item.ConditionalItems.Add(new() { $"contains{{{DungeonArea} => {BossDoor}, {i.Key}}}", $"check{{{i.Value}}}" });
                 }
+            }
+        }
+
+        public class CodeFileReader<T>
+        {
+            public T ReadCodeFile(string FileName)
+            {
+                string Name;
+                string Extention = ".json";
+                if (Path.HasExtension(FileName))
+                {
+                    Name = Path.GetFileNameWithoutExtension(FileName);
+                    Extention = Path.GetExtension(FileName);
+                }
+                else
+                {
+                    Name = FileName;
+                }
+                string Target = Path.Combine(References.TestingPaths.GetDevCodePath(), @"MMR Tracker V3", "OtherGames", "OOTMMRCOMBO", $"{Name}{Extention}");
+                string Content = File.ReadAllText(Target);
+                return JsonConvert.DeserializeObject<T>(Content);
             }
         }
     }
