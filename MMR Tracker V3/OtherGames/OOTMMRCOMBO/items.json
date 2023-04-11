@@ -312,10 +312,17 @@
   "MM_STICKS_5": "5 Deku Sticks (MM)",
   "MM_STICKS_10": "10 Deku Sticks (MM)",
   "MM_SONG_SUN": "Sun's Song (MM)",
+  "MM_BOMBS_5": "5 Bombs (MM)",
+  "MM_BOMBS_20": "20 Bombs (MM)",
+  "MM_BOMBS_30": "30 Bombs (MM)",
+  "MM_ARROWS_5": "5 Arrows (MM)",
+  "MM_ARROWS_40": "40 Arrows (MM)",
+  "MM_BOMBCHU_20": "20 Bombchu (MM)",
 
   "OOT_NUT": "1 Deku Nut (OoT)",
   "OOT_STICKS_5": "5 Deku Sticks (OoT)",
   "OOT_STICKS_10": "10 Deku Sticks (OoT)",
+  "OOT_ARROWS_40": "40 Arrows (OoT)",
 
   "SHARED_NUT": "1 Deku Nut",
   "SHARED_STICKS_5": "5 Deku Sticks",

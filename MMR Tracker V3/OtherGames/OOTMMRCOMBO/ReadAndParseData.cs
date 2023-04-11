@@ -51,6 +51,46 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
         public static LogicStringParser OOTMMLogicParser = new LogicStringParser();
 
+        public static Dictionary<string, string> RenewableItems = new Dictionary<string, string>()
+        {
+            {"RECOVERY_HEART", "Heart"},
+            {"STICK", "Stick"},
+            {"STICKS_5", "Stick"},
+            {"STICKS_10", "Stick"},
+            {"NUTS_5", "Nut"},
+            {"NUTS_10", "Nut"},
+            {"BOMB", "Bomb"},
+            {"BOMBS_5", "Bomb"},
+            {"BOMBS_10", "Bomb"},
+            {"BOMBS_20", "Bomb"},
+            {"BOMBS_30", "Bomb"},
+            {"ARROWS_5", "Arrow"},
+            {"ARROWS_10", "Arrow"},
+            {"ARROWS_30", "Arrow"},
+            {"DEKU_SEEDS_5", "Seed"},
+            {"DEKU_SEEDS_30", "Seed"},
+            {"BOMBCHU_5", "Bombchu"},
+            {"BOMBCHU_10", "Bombchu"},
+            {"BOMBCHU_20", "Bombchu"},
+            {"SHIELD_DEKU", "DekuShield"},
+            {"SHIELD_HYLIAN", "HylianShield"},
+            {"MILK", "Milk"},
+            {"POTION_RED", "RedPotion"},
+            {"POTION_GREEN", "GreenPotion"},
+            {"POTION_BLUE", "BluePotion"},
+            {"FAIRY", "Fairy"},
+            {"FISH", "Fish"},
+            {"BUG", "Bug"},
+            {"BLUE_FIRE", "BlueFire"},
+            {"POE", "Poe"},
+            {"NUT", "Nut"},
+            {"BOMBCHU", "Bombchu"},
+            {"ARROWS_40", "Arrow"},
+            {"SHIELD_HERO", "HeroShield"},
+            {"CHATEAU", "Chateau"},
+            {"BUGS", "Bug"}
+        };
+
         public static void CreateFiles(out TrackerObjects.MMRData.LogicFile Logic, out TrackerObjects.LogicDictionaryData.LogicDictionary dictionary)
         {
             string TestFolder = Path.Combine(References.TestingPaths.GetDevCodePath(), "MMR Tracker V3", "Recources");
@@ -171,23 +211,26 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
         private static void AddRenewableChecks(MMRData.LogicFile logicFile, LogicDictionaryData.LogicDictionary dictionaryFile)
         {
-            Dictionary<string, Tuple<string, List<string>>> RenewableItems = new()
+            Dictionary<string, Tuple<string, List<string>>> RenewableItemChecks = new();
+
+            foreach(var i in RenewableItems)
             {
-                { "OOT_renewable_sticks", new("OOT_ANY_STICK", new List<string> { "OOT_STICK", "OOT_STICKS_5", "OOT_STICKS_10", "SHARED_STICK", "SHARED_STICKS_5", "SHARED_STICKS_10" }) },
-                { "OOT_renewable_nuts", new("OOT_ANY_NUT", new List<string> { "OOT_NUT", "OOT_NUTS_5", "OOT_NUTS_10", "SHARED_NUT", "SHARED_NUTS_5", "SHARED_NUTS_10" }) },
-                { "OOT_renewable_blue_fire", new("OOT_BLUE_FIRE", new List<string>()) },
-                { "MM_renewable_red_potion", new("MM_POTION_RED", new List<string>()) },
-                { "MM_renewable_blue_potion", new("MM_POTION_BLUE", new List<string>()) },
-                { "MM_renewable_milk", new("MM_MILK", new List<string>()) },
-                { "MM_renewable_sticks", new("MM_ANY_STICK", new List<string> { "MM_STICK", "MM_STICKS_5", "MM_STICKS_10", "SHARED_STICK", "SHARED_STICKS_5", "SHARED_STICKS_10" }) },
-            };
+                string MMID = $"MM_Has_Renewable_{i.Value}";
+                string OOTID = $"OOT_Has_Renewable_{i.Value}";
+                if (!RenewableItemChecks.ContainsKey(MMID)) { RenewableItemChecks[MMID] = new($"MM_ANY_{i.Value}", new List<string>()); }
+                RenewableItemChecks[MMID].Item2.Add($"MM_{i.Value}");
+                RenewableItemChecks[MMID].Item2.Add($"SHARED_{i.Value}");
+                if (!RenewableItemChecks.ContainsKey(OOTID)) { RenewableItemChecks[OOTID] = new($"OOT_ANY_{i.Value}", new List<string>()); }
+                RenewableItemChecks[OOTID].Item2.Add($"OOT_{i.Value}");
+                RenewableItemChecks[OOTID].Item2.Add($"SHARED_{i.Value}");
+            }
 
             //Add Reneawable Logic
             var OOTRenewableLocations = GetRenewableLocations("OOT");
             var MMRenewableLocations = GetRenewableLocations("MM");
             var RenewableLocations = OOTRenewableLocations.Concat(MMRenewableLocations);
 
-            foreach (var item in RenewableItems)
+            foreach (var item in RenewableItemChecks)
             {
                 MMRData.JsonFormatLogicItem LogicEntry = new() { Id = item.Key, ConditionalItems = new List<List<string>>() };
                 foreach (var location in RenewableLocations)
@@ -575,8 +618,10 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             sunSongMm.Values["true"].ItemNameOverride.Add("OOT_SONG_SUN", "Sun Song (OoT)");
             dictionaryFile.Options.Add(sunSongMm.ID, sunSongMm);
 
-            //Temp Workaround for a typo in logic
+            //Temp Workaround for some typos in logic
             dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "MM_ZORA", RequiredItems = new List<string> { "MM_MASK_ZORA" } });
+            dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "MM_bow", RequiredItems = new List<string> { "MM_BOW" } });
+            dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "MM_PICTORGRAPH_BOX", RequiredItems = new List<string> { "MM_PICTOGRAPH_BOX" } });
 
             AddSharedItemOptions("sharedNutsSticks", "Shared Nuts and Sticks", new string[] { "NUT", "NUTS_5", "NUTS_5_ALT", "NUTS_10", "STICK", "STICKS_5", "STICKS_10" }, 1);
             AddSharedItemOptions("sharedBows", "Shared Bows", new string[] { "BOW" }, 1, new string[] { "ARROWS_5", "ARROWS_10", "ARROWS_30", "ARROWS_40", });
@@ -895,15 +940,19 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         line = line.Replace(FullFunction, $"TRICK_{Game}_{Parameters}");
                         break;
                     case "has":
-                        string ReplaceText = $"{Game}_{Parameters}";
-                        int Amount = 1;
-                        if (ReplaceText.Contains(", "))
+                        if (RenewableItems.ContainsKey(Parameters)) { line = line.Replace(FullFunction, $"{CurrentGame}_Has_Renewable_{RenewableItems[Parameters]}"); }
+                        else
                         {
-                            Amount = Convert.ToInt32(ReplaceText.Split(",")[1].Trim());
-                            ReplaceText = ReplaceText.Split(",")[0].Trim();
+                            string ReplaceText = $"{Game}_{Parameters}";
+                            int Amount = 1;
+                            if (ReplaceText.Contains(", "))
+                            {
+                                Amount = Convert.ToInt32(ReplaceText.Split(",")[1].Trim());
+                                ReplaceText = ReplaceText.Split(",")[0].Trim();
+                            }
+                            if (Amount > 1) { ReplaceText += $", {Amount}"; }
+                            line = line.Replace(FullFunction, ReplaceText);
                         }
-                        if (Amount > 1) { ReplaceText += $", {Amount}"; }
-                        line = line.Replace(FullFunction, ReplaceText);
                         break;
                     case "event":
                         string TempGame = Game;
@@ -937,6 +986,11 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                     case "age":
                         if (Parameters == "child") { line = line.Replace(FullFunction, $"option{{age_filter, adult, false}}"); }
                         else if (Parameters == "adult") { line = line.Replace(FullFunction, $"option{{age_filter, child, false}} && OOT_EVENT_TIME_TRAVEL"); }
+                        break;
+                    case "before":
+                    case "after":
+                    case "at":
+                        line = "true"; //the "Time" based function don't matter since the tracker doesn't track the curent game time
                         break;
                     case "cond":
                         if (Parameters.StartsWith("setting"))

@@ -117,16 +117,24 @@ namespace MMR_Tracker_V3
     {
         public static List<List<string>> ConvertLogicStringToConditional(LogicStringParser Parser, string LogicLine)
         {
+            var ParsedLogic = new List<LogicStringParser.LogicItem>();
+            var MathString = "";
+            var ExpandedMathString = "";
+            var MathLogicArray = new List<List<string>>();
             try
             {
-                var ParsedLogic = Parser.ParseLogicString(LogicLine);
-                var MathString = ConvertLogicParserObjectToMathString(ParsedLogic, out Dictionary<string, string> RefMap, out _);
-                var ExpandedMathString = ExpandMathExpressionString(MathString);
-                var MathLogicArray = ConvertMathStringToArray(ExpandedMathString);
+                ParsedLogic = Parser.ParseLogicString(LogicLine);
+                MathString = ConvertLogicParserObjectToMathString(ParsedLogic, out Dictionary<string, string> RefMap, out _);
+                ExpandedMathString = ExpandMathExpressionString(MathString);
+                MathLogicArray = ConvertMathStringToArray(ExpandedMathString);
                 return RestorelogicValues(MathLogicArray, RefMap);
             }
             catch(Exception e)
             {
+                Testing.PrintObjectToConsole(ParsedLogic);
+                Testing.PrintObjectToConsole(MathString);
+                Testing.PrintObjectToConsole(ExpandedMathString);
+                Testing.PrintObjectToConsole(MathLogicArray);
                 throw new Exception($"Error Parsing Logic Line {LogicLine}\n{e.Message}");
             }
         }
@@ -216,7 +224,19 @@ namespace MMR_Tracker_V3
 
         private static List<List<string>> ConvertMathStringToArray(string MathString)
         {
-            return MathString.Split('+').Select(x => x.Split('*').ToList()).ToList();
+            var MathArray = MathString.Split('+').Select(x => x.Split('*').ToList()).ToList();
+            List<List<string>> CleanedArray = new List<List<string>>();
+            foreach(var set in MathArray)
+            {
+                List<string> CleanedSet = new List<string>();
+                foreach(var item in set)
+                {
+                    if (int.TryParse(item, out _)) { continue; }
+                    CleanedSet.Add(item);
+                }
+                if (CleanedSet.Any()) { CleanedArray.Add(CleanedSet); }
+            }
+            return CleanedArray;
         }
 
         private static List<List<string>> RestorelogicValues(List<List<string>> MathLogicArray, Dictionary<string, string> logicObjectMap)

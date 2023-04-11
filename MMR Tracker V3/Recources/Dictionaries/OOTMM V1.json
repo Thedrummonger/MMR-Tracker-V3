@@ -25150,6 +25150,120 @@
         "PriceDataNames": []
       }
     },
+    "MM_BOMBS_5": {
+      "Name": "5 Bombs (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_BOMBS_5",
+          "5 Bombs (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_BOMBS_5",
+          "5 Bombs (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_BOMBS_20": {
+      "Name": "20 Bombs (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_BOMBS_20",
+          "20 Bombs (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_BOMBS_20",
+          "20 Bombs (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_BOMBS_30": {
+      "Name": "30 Bombs (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_BOMBS_30",
+          "30 Bombs (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_BOMBS_30",
+          "30 Bombs (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_ARROWS_5": {
+      "Name": "5 Arrows (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_ARROWS_5",
+          "5 Arrows (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_ARROWS_5",
+          "5 Arrows (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_ARROWS_40": {
+      "Name": "40 Arrows (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_ARROWS_40",
+          "40 Arrows (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_ARROWS_40",
+          "40 Arrows (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_BOMBCHU_20": {
+      "Name": "20 Bombchu (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_BOMBCHU_20",
+          "20 Bombchu (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_BOMBCHU_20",
+          "20 Bombchu (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
     "OOT_NUT": {
       "Name": "1 Deku Nut (OoT)",
       "MaxAmountInWorld": -1,
@@ -25203,6 +25317,25 @@
         "GossipHintNames": [
           "OOT_STICKS_10",
           "10 Deku Sticks (OoT)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_ARROWS_40": {
+      "Name": "40 Arrows (OoT)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_ARROWS_40",
+          "40 Arrows (OoT)"
+        ],
+        "GossipHintNames": [
+          "OOT_ARROWS_40",
+          "40 Arrows (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -26859,9 +26992,9 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT Market => OOT Hyrule Field": {
+    "OOT Market => OOT Market Entryway": {
       "Area": "OOT Market",
-      "Exit": "OOT Hyrule Field",
+      "Exit": "OOT Market Entryway",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -26950,16 +27083,9 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT Market Pot House => OOT Market": {
+    "OOT Market Pot House => OOT Market Entryway": {
       "Area": "OOT Market Pot House",
-      "Exit": "OOT Market",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    "OOT Market Pot House => OOT Market Destroyed": {
-      "Area": "OOT Market Pot House",
-      "Exit": "OOT Market Destroyed",
+      "Exit": "OOT Market Entryway",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -27481,6 +27607,13 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "OOT Kakariko => OOT Kakariko Carpenter House": {
+      "Area": "OOT Kakariko",
+      "Exit": "OOT Kakariko Carpenter House",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "OOT Kakariko => OOT Impa House Front": {
       "Area": "OOT Kakariko",
       "Exit": "OOT Impa House Front",
@@ -27574,6 +27707,13 @@
     },
     "OOT Windmill => OOT Kakariko": {
       "Area": "OOT Windmill",
+      "Exit": "OOT Kakariko",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Kakariko Carpenter House => OOT Kakariko": {
+      "Area": "OOT Kakariko Carpenter House",
       "Exit": "OOT Kakariko",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
@@ -28132,16 +28272,9 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT Temple of Time => OOT Market": {
+    "OOT Temple of Time => OOT Temple of Time Entryway": {
       "Area": "OOT Temple of Time",
-      "Exit": "OOT Market",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    "OOT Temple of Time => OOT Market Destroyed": {
-      "Area": "OOT Temple of Time",
-      "Exit": "OOT Market Destroyed",
+      "Exit": "OOT Temple of Time Entryway",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -28307,7 +28440,11 @@
     "OOT Gerudo Valley After Bridge => OOT Gerudo Fortress Exterior": {
       "Area": "OOT Gerudo Valley After Bridge",
       "Exit": "OOT Gerudo Fortress Exterior",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Gerudo Fortress Exterior",
+        "Exit": "OOT Gerudo Valley After Bridge"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -28363,7 +28500,11 @@
     "OOT Gerudo Fortress Exterior => OOT Gerudo Valley After Bridge": {
       "Area": "OOT Gerudo Fortress Exterior",
       "Exit": "OOT Gerudo Valley After Bridge",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Gerudo Valley After Bridge",
+        "Exit": "OOT Gerudo Fortress Exterior"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -29872,6 +30013,13 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "MM Beneath the Well East Section => MM Beneath the Well Middle Section": {
+      "Area": "MM Beneath the Well East Section",
+      "Exit": "MM Beneath the Well Middle Section",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "MM Beneath the Well East Section => MM Beneath the Well Sun Block": {
       "Area": "MM Beneath the Well East Section",
       "Exit": "MM Beneath the Well Sun Block",
@@ -29879,9 +30027,23 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Beneath the Well Sun Block => MM Beneath the Well East Section": {
-      "Area": "MM Beneath the Well Sun Block",
+    "MM Beneath the Well Middle Section => MM Beneath the Well East Section": {
+      "Area": "MM Beneath the Well Middle Section",
       "Exit": "MM Beneath the Well East Section",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Beneath the Well Middle Section => MM Beneath the Well Sun Block": {
+      "Area": "MM Beneath the Well Middle Section",
+      "Exit": "MM Beneath the Well Sun Block",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Beneath the Well Sun Block => MM Beneath the Well Middle Section": {
+      "Area": "MM Beneath the Well Sun Block",
+      "Exit": "MM Beneath the Well Middle Section",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -30346,9 +30508,72 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM SOARING => MM Clock Town": {
+    "MM SOARING => MM Clock Town South": {
       "Area": "MM SOARING",
-      "Exit": "MM Clock Town",
+      "Exit": "MM Clock Town South",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM SOARING => MM Milk Road Front": {
+      "Area": "MM SOARING",
+      "Exit": "MM Milk Road Front",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM SOARING => MM Swamp Front": {
+      "Area": "MM SOARING",
+      "Exit": "MM Swamp Front",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM SOARING => MM Woodfall Shrine": {
+      "Area": "MM SOARING",
+      "Exit": "MM Woodfall Shrine",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM SOARING => MM Mountain Village": {
+      "Area": "MM SOARING",
+      "Exit": "MM Mountain Village",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM SOARING => MM Snowhead Entrance": {
+      "Area": "MM SOARING",
+      "Exit": "MM Snowhead Entrance",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM SOARING => MM Great Bay Coast": {
+      "Area": "MM SOARING",
+      "Exit": "MM Great Bay Coast",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM SOARING => MM Zora Cape Peninsula": {
+      "Area": "MM SOARING",
+      "Exit": "MM Zora Cape Peninsula",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM SOARING => MM Ikana Canyon": {
+      "Area": "MM SOARING",
+      "Exit": "MM Ikana Canyon",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM SOARING => MM Stone Tower Top": {
+      "Area": "MM SOARING",
+      "Exit": "MM Stone Tower Top",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -30395,23 +30620,37 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "MM Clock Town South => MM Clock Town South Upper West": {
+      "Area": "MM Clock Town South",
+      "Exit": "MM Clock Town South Upper West",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Clock Town South => MM Clock Town South Lower West": {
+      "Area": "MM Clock Town South",
+      "Exit": "MM Clock Town South Lower West",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Clock Town South => MM Clock Town South Upper East": {
+      "Area": "MM Clock Town South",
+      "Exit": "MM Clock Town South Upper East",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Clock Town South => MM Clock Town South Lower East": {
+      "Area": "MM Clock Town South",
+      "Exit": "MM Clock Town South Lower East",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "MM Clock Town South => MM Clock Town North": {
       "Area": "MM Clock Town South",
       "Exit": "MM Clock Town North",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    "MM Clock Town South => MM Clock Town West": {
-      "Area": "MM Clock Town South",
-      "Exit": "MM Clock Town West",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    "MM Clock Town South => MM Clock Town East": {
-      "Area": "MM Clock Town South",
-      "Exit": "MM Clock Town East",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -30426,6 +30665,62 @@
     "MM Clock Town South => MM Clock Tower Roof": {
       "Area": "MM Clock Town South",
       "Exit": "MM Clock Tower Roof",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Clock Town South Upper West => MM Clock Town West": {
+      "Area": "MM Clock Town South Upper West",
+      "Exit": "MM Clock Town West",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Clock Town South Upper West => MM Clock Town South": {
+      "Area": "MM Clock Town South Upper West",
+      "Exit": "MM Clock Town South",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Clock Town South Lower West => MM Clock Town West": {
+      "Area": "MM Clock Town South Lower West",
+      "Exit": "MM Clock Town West",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Clock Town South Lower West => MM Clock Town South": {
+      "Area": "MM Clock Town South Lower West",
+      "Exit": "MM Clock Town South",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Clock Town South Upper East => MM Clock Town East": {
+      "Area": "MM Clock Town South Upper East",
+      "Exit": "MM Clock Town East",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Clock Town South Upper East => MM Clock Town South": {
+      "Area": "MM Clock Town South Upper East",
+      "Exit": "MM Clock Town South",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Clock Town South Lower East => MM Clock Town East": {
+      "Area": "MM Clock Town South Lower East",
+      "Exit": "MM Clock Town East",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Clock Town South Lower East => MM Clock Town South": {
+      "Area": "MM Clock Town South Lower East",
+      "Exit": "MM Clock Town South",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -30472,9 +30767,16 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Clock Town West => MM Clock Town South": {
+    "MM Clock Town West => MM Clock Town South Upper West": {
       "Area": "MM Clock Town West",
-      "Exit": "MM Clock Town South",
+      "Exit": "MM Clock Town South Upper West",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Clock Town West => MM Clock Town South Lower West": {
+      "Area": "MM Clock Town West",
+      "Exit": "MM Clock Town South Lower West",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -30514,6 +30816,13 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "MM Clock Town West => MM Lottery": {
+      "Area": "MM Clock Town West",
+      "Exit": "MM Lottery",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "MM Clock Town East => MM Termina Field": {
       "Area": "MM Clock Town East",
       "Exit": "MM Termina Field",
@@ -30521,9 +30830,16 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Clock Town East => MM Clock Town South": {
+    "MM Clock Town East => MM Clock Town South Upper East": {
       "Area": "MM Clock Town East",
-      "Exit": "MM Clock Town South",
+      "Exit": "MM Clock Town South Upper East",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Clock Town East => MM Clock Town South Lower East": {
+      "Area": "MM Clock Town East",
+      "Exit": "MM Clock Town South Lower East",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -30559,6 +30875,13 @@
     "MM Clock Town East => MM Stock Pot Inn": {
       "Area": "MM Clock Town East",
       "Exit": "MM Stock Pot Inn",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Clock Town East => MM Stock Pot Inn Roof": {
+      "Area": "MM Clock Town East",
+      "Exit": "MM Stock Pot Inn Roof",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -30647,6 +30970,13 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "MM Lottery => MM Clock Town West": {
+      "Area": "MM Lottery",
+      "Exit": "MM Clock Town West",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "MM Mayor's Office => MM Clock Town East": {
       "Area": "MM Mayor's Office",
       "Exit": "MM Clock Town East",
@@ -30685,6 +31015,27 @@
     "MM Stock Pot Inn => MM Clock Town East": {
       "Area": "MM Stock Pot Inn",
       "Exit": "MM Clock Town East",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Stock Pot Inn => MM Stock Pot Inn Roof": {
+      "Area": "MM Stock Pot Inn",
+      "Exit": "MM Stock Pot Inn Roof",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Stock Pot Inn Roof => MM Clock Town East": {
+      "Area": "MM Stock Pot Inn Roof",
+      "Exit": "MM Clock Town East",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Stock Pot Inn Roof => MM Stock Pot Inn": {
+      "Area": "MM Stock Pot Inn Roof",
+      "Exit": "MM Stock Pot Inn",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -30759,16 +31110,16 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Termina Field => MM Mountain Village Path Lower": {
+    "MM Termina Field => MM Behind Large Icicles": {
       "Area": "MM Termina Field",
-      "Exit": "MM Mountain Village Path Lower",
+      "Exit": "MM Behind Large Icicles",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Termina Field => MM Milk Road": {
+    "MM Termina Field => MM Milk Road Front": {
       "Area": "MM Termina Field",
-      "Exit": "MM Milk Road",
+      "Exit": "MM Milk Road Front",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -30790,6 +31141,160 @@
     "MM Termina Field => MM Astral Observatory Balcony": {
       "Area": "MM Termina Field",
       "Exit": "MM Astral Observatory Balcony",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Termina Field => MM Grass Grotto": {
+      "Area": "MM Termina Field",
+      "Exit": "MM Grass Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Termina Field => MM Peahat Grotto": {
+      "Area": "MM Termina Field",
+      "Exit": "MM Peahat Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Termina Field => MM Bio Baba Grotto": {
+      "Area": "MM Termina Field",
+      "Exit": "MM Bio Baba Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Termina Field => MM Dodongo Grotto": {
+      "Area": "MM Termina Field",
+      "Exit": "MM Dodongo Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Termina Field => MM Pillar Grotto": {
+      "Area": "MM Termina Field",
+      "Exit": "MM Pillar Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Termina Field => MM Scrub Grotto": {
+      "Area": "MM Termina Field",
+      "Exit": "MM Scrub Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Termina Field => MM Termina Field Cow Grotto": {
+      "Area": "MM Termina Field",
+      "Exit": "MM Termina Field Cow Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Termina Field => MM Swamp Gossip Grotto": {
+      "Area": "MM Termina Field",
+      "Exit": "MM Swamp Gossip Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Termina Field => MM Mountain Gossip Grotto": {
+      "Area": "MM Termina Field",
+      "Exit": "MM Mountain Gossip Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Termina Field => MM Ocean Gossip Grotto": {
+      "Area": "MM Termina Field",
+      "Exit": "MM Ocean Gossip Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Termina Field => MM Canyon Gossip Grotto": {
+      "Area": "MM Termina Field",
+      "Exit": "MM Canyon Gossip Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Grass Grotto => MM Termina Field": {
+      "Area": "MM Grass Grotto",
+      "Exit": "MM Termina Field",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Peahat Grotto => MM Termina Field": {
+      "Area": "MM Peahat Grotto",
+      "Exit": "MM Termina Field",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Bio Baba Grotto => MM Termina Field": {
+      "Area": "MM Bio Baba Grotto",
+      "Exit": "MM Termina Field",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Dodongo Grotto => MM Termina Field": {
+      "Area": "MM Dodongo Grotto",
+      "Exit": "MM Termina Field",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Pillar Grotto => MM Termina Field": {
+      "Area": "MM Pillar Grotto",
+      "Exit": "MM Termina Field",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Scrub Grotto => MM Termina Field": {
+      "Area": "MM Scrub Grotto",
+      "Exit": "MM Termina Field",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Termina Field Cow Grotto => MM Termina Field": {
+      "Area": "MM Termina Field Cow Grotto",
+      "Exit": "MM Termina Field",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Swamp Gossip Grotto => MM Termina Field": {
+      "Area": "MM Swamp Gossip Grotto",
+      "Exit": "MM Termina Field",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Mountain Gossip Grotto => MM Termina Field": {
+      "Area": "MM Mountain Gossip Grotto",
+      "Exit": "MM Termina Field",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Ocean Gossip Grotto => MM Termina Field": {
+      "Area": "MM Ocean Gossip Grotto",
+      "Exit": "MM Termina Field",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Canyon Gossip Grotto => MM Termina Field": {
+      "Area": "MM Canyon Gossip Grotto",
+      "Exit": "MM Termina Field",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -30819,8 +31324,22 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "MM Road to Southern Swamp => MM Road to Southern Swamp Grotto": {
+      "Area": "MM Road to Southern Swamp",
+      "Exit": "MM Road to Southern Swamp Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "MM Swamp Archery => MM Road to Southern Swamp": {
       "Area": "MM Swamp Archery",
+      "Exit": "MM Road to Southern Swamp",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Road to Southern Swamp Grotto => MM Road to Southern Swamp": {
+      "Area": "MM Road to Southern Swamp Grotto",
       "Exit": "MM Road to Southern Swamp",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
@@ -30872,27 +31391,76 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Swamp Back => MM Deku Palace": {
+    "MM Swamp Back => MM Deku Palace Front": {
       "Area": "MM Swamp Back",
-      "Exit": "MM Deku Palace",
+      "Exit": "MM Deku Palace Front",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Swamp Back => MM Swamp Spider House": {
+    "MM Swamp Back => MM Near Swamp Spider House": {
       "Area": "MM Swamp Back",
-      "Exit": "MM Swamp Spider House",
-      "EntrancePairID": {
-        "Area": "MM Swamp Spider House",
-        "Exit": "MM Swamp Back"
-      },
-      "RandomizableEntrance": true,
+      "Exit": "MM Near Swamp Spider House",
+      "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Swamp Back => MM Swamp Canopy Back": {
       "Area": "MM Swamp Back",
       "Exit": "MM Swamp Canopy Back",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Near Swamp Spider House => MM Swamp Spider House": {
+      "Area": "MM Near Swamp Spider House",
+      "Exit": "MM Swamp Spider House",
+      "EntrancePairID": {
+        "Area": "MM Swamp Spider House",
+        "Exit": "MM Near Swamp Spider House"
+      },
+      "RandomizableEntrance": true,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Near Swamp Spider House => MM Swamp Back": {
+      "Area": "MM Near Swamp Spider House",
+      "Exit": "MM Swamp Back",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Near Swamp Spider House => MM Near Swamp Grotto": {
+      "Area": "MM Near Swamp Spider House",
+      "Exit": "MM Near Swamp Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Near Swamp Grotto => MM Swamp Front": {
+      "Area": "MM Near Swamp Grotto",
+      "Exit": "MM Swamp Front",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Near Swamp Grotto => MM Near Swamp Spider House": {
+      "Area": "MM Near Swamp Grotto",
+      "Exit": "MM Near Swamp Spider House",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Near Swamp Grotto => MM Southern Swamp Grotto": {
+      "Area": "MM Near Swamp Grotto",
+      "Exit": "MM Southern Swamp Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Southern Swamp Grotto => MM Near Swamp Grotto": {
+      "Area": "MM Southern Swamp Grotto",
+      "Exit": "MM Near Swamp Grotto",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -30904,6 +31472,20 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "MM Woods of Mystery => MM Woods of Mystery Grotto": {
+      "Area": "MM Woods of Mystery",
+      "Exit": "MM Woods of Mystery Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Woods of Mystery Grotto => MM Woods of Mystery": {
+      "Area": "MM Woods of Mystery Grotto",
+      "Exit": "MM Woods of Mystery",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "MM Swamp Potion Shop => MM Swamp Front": {
       "Area": "MM Swamp Potion Shop",
       "Exit": "MM Swamp Front",
@@ -30911,37 +31493,149 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Deku Palace => MM Swamp Back": {
-      "Area": "MM Deku Palace",
+    "MM Deku Palace Front => MM Swamp Back": {
+      "Area": "MM Deku Palace Front",
       "Exit": "MM Swamp Back",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Deku Palace => MM Swamp Canopy Front": {
-      "Area": "MM Deku Palace",
+    "MM Deku Palace Front => MM Deku Palace Cliff": {
+      "Area": "MM Deku Palace Front",
+      "Exit": "MM Deku Palace Cliff",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Deku Palace Front => MM Near Deku Shrine": {
+      "Area": "MM Deku Palace Front",
+      "Exit": "MM Near Deku Shrine",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Deku Palace Front => MM Deku Palace Main": {
+      "Area": "MM Deku Palace Front",
+      "Exit": "MM Deku Palace Main",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Deku Palace Front => MM Deku Palace Upper": {
+      "Area": "MM Deku Palace Front",
+      "Exit": "MM Deku Palace Upper",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Deku Palace Main => MM Deku Palace Throne": {
+      "Area": "MM Deku Palace Main",
+      "Exit": "MM Deku Palace Throne",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Deku Palace Main => MM Deku Palace Front": {
+      "Area": "MM Deku Palace Main",
+      "Exit": "MM Deku Palace Front",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Deku Palace Main => MM Deku Palace Grotto": {
+      "Area": "MM Deku Palace Main",
+      "Exit": "MM Deku Palace Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Deku Palace Main => MM Deku Palace Upper": {
+      "Area": "MM Deku Palace Main",
+      "Exit": "MM Deku Palace Upper",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Deku Palace Upper => MM Deku Palace Main": {
+      "Area": "MM Deku Palace Upper",
+      "Exit": "MM Deku Palace Main",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Deku Palace Upper => MM Deku Palace Near Cage": {
+      "Area": "MM Deku Palace Upper",
+      "Exit": "MM Deku Palace Near Cage",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Deku Palace Throne => MM Deku Palace Main": {
+      "Area": "MM Deku Palace Throne",
+      "Exit": "MM Deku Palace Main",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Deku Palace Near Cage => MM Deku Palace Main": {
+      "Area": "MM Deku Palace Near Cage",
+      "Exit": "MM Deku Palace Main",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Deku Palace Near Cage => MM Deku Palace Upper": {
+      "Area": "MM Deku Palace Near Cage",
+      "Exit": "MM Deku Palace Upper",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Deku Palace Near Cage => MM Deku Palace Cage": {
+      "Area": "MM Deku Palace Near Cage",
+      "Exit": "MM Deku Palace Cage",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Deku Palace Cage => MM Deku Palace Near Cage": {
+      "Area": "MM Deku Palace Cage",
+      "Exit": "MM Deku Palace Near Cage",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Deku Palace Grotto => MM Deku Palace Main": {
+      "Area": "MM Deku Palace Grotto",
+      "Exit": "MM Deku Palace Main",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Deku Palace Cliff => MM Deku Palace Front": {
+      "Area": "MM Deku Palace Cliff",
+      "Exit": "MM Deku Palace Front",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Deku Palace Cliff => MM Swamp Canopy Front": {
+      "Area": "MM Deku Palace Cliff",
       "Exit": "MM Swamp Canopy Front",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Deku Palace => MM Deku Shrine": {
-      "Area": "MM Deku Palace",
-      "Exit": "MM Deku Shrine",
+    "MM Swamp Canopy Front => MM Near Swamp Grotto": {
+      "Area": "MM Swamp Canopy Front",
+      "Exit": "MM Near Swamp Grotto",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Swamp Canopy Front => MM Swamp Back": {
+    "MM Swamp Canopy Front => MM Deku Palace Cliff": {
       "Area": "MM Swamp Canopy Front",
-      "Exit": "MM Swamp Back",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    "MM Swamp Canopy Front => MM Deku Palace": {
-      "Area": "MM Swamp Canopy Front",
-      "Exit": "MM Deku Palace",
+      "Exit": "MM Deku Palace Cliff",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -30984,13 +31678,6 @@
     "MM Woodfall => MM Woodfall Shrine": {
       "Area": "MM Woodfall",
       "Exit": "MM Woodfall Shrine",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    "MM Woodfall => MM Woodfall Near Great Fairy Fountain": {
-      "Area": "MM Woodfall",
-      "Exit": "MM Woodfall Near Great Fairy Fountain",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -31076,16 +31763,44 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Deku Shrine => MM Deku Palace": {
-      "Area": "MM Deku Shrine",
-      "Exit": "MM Deku Palace",
+    "MM Near Deku Shrine => MM Deku Palace Front": {
+      "Area": "MM Near Deku Shrine",
+      "Exit": "MM Deku Palace Front",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Mountain Village Path Lower => MM Termina Field": {
-      "Area": "MM Mountain Village Path Lower",
+    "MM Near Deku Shrine => MM Deku Shrine": {
+      "Area": "MM Near Deku Shrine",
+      "Exit": "MM Deku Shrine",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Deku Shrine => MM Near Deku Shrine": {
+      "Area": "MM Deku Shrine",
+      "Exit": "MM Near Deku Shrine",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Behind Large Icicles => MM Termina Field": {
+      "Area": "MM Behind Large Icicles",
       "Exit": "MM Termina Field",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Behind Large Icicles => MM Mountain Village Path Lower": {
+      "Area": "MM Behind Large Icicles",
+      "Exit": "MM Mountain Village Path Lower",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Mountain Village Path Lower => MM Behind Large Icicles": {
+      "Area": "MM Mountain Village Path Lower",
+      "Exit": "MM Behind Large Icicles",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -31133,9 +31848,9 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Mountain Village => MM Goron Graveyard": {
+    "MM Mountain Village => MM Near Goron Graveyard": {
       "Area": "MM Mountain Village",
-      "Exit": "MM Goron Graveyard",
+      "Exit": "MM Near Goron Graveyard",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -31150,6 +31865,41 @@
     "MM Mountain Village => MM Blacksmith": {
       "Area": "MM Mountain Village",
       "Exit": "MM Blacksmith",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Mountain Village => MM Near Village Grotto": {
+      "Area": "MM Mountain Village",
+      "Exit": "MM Near Village Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Near Village Grotto => MM Mountain Village Grotto": {
+      "Area": "MM Near Village Grotto",
+      "Exit": "MM Mountain Village Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Near Village Grotto => MM Mountain Village": {
+      "Area": "MM Near Village Grotto",
+      "Exit": "MM Mountain Village",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Near Village Grotto => MM Near Goron Graveyard": {
+      "Area": "MM Near Village Grotto",
+      "Exit": "MM Near Goron Graveyard",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Mountain Village Grotto => MM Near Village Grotto": {
+      "Area": "MM Mountain Village Grotto",
+      "Exit": "MM Near Village Grotto",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -31175,9 +31925,72 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Twin Islands => MM Goron Race": {
+    "MM Twin Islands => MM Near Goron Race": {
       "Area": "MM Twin Islands",
+      "Exit": "MM Near Goron Race",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Twin Islands => MM Near Ramp Grotto": {
+      "Area": "MM Twin Islands",
+      "Exit": "MM Near Ramp Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Twin Islands => MM Twin Islands Frozen Grotto": {
+      "Area": "MM Twin Islands",
+      "Exit": "MM Twin Islands Frozen Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Twin Islands Ramp Grotto => MM Near Ramp Grotto": {
+      "Area": "MM Twin Islands Ramp Grotto",
+      "Exit": "MM Near Ramp Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Twin Islands Frozen Grotto => MM Twin Islands": {
+      "Area": "MM Twin Islands Frozen Grotto",
+      "Exit": "MM Twin Islands",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Near Goron Race => MM Twin Islands": {
+      "Area": "MM Near Goron Race",
+      "Exit": "MM Twin Islands",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Near Goron Race => MM Goron Race": {
+      "Area": "MM Near Goron Race",
       "Exit": "MM Goron Race",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Near Goron Race => MM Near Ramp Grotto": {
+      "Area": "MM Near Goron Race",
+      "Exit": "MM Near Ramp Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Near Ramp Grotto => MM Twin Islands": {
+      "Area": "MM Near Ramp Grotto",
+      "Exit": "MM Twin Islands",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Near Ramp Grotto => MM Twin Islands Ramp Grotto": {
+      "Area": "MM Near Ramp Grotto",
+      "Exit": "MM Twin Islands Ramp Grotto",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -31220,6 +32033,27 @@
     "MM Lone Peak Shrine => MM Front of Lone Peak Shrine": {
       "Area": "MM Lone Peak Shrine",
       "Exit": "MM Front of Lone Peak Shrine",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Near Goron Graveyard => MM Mountain Village": {
+      "Area": "MM Near Goron Graveyard",
+      "Exit": "MM Mountain Village",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Near Goron Graveyard => MM Goron Graveyard": {
+      "Area": "MM Near Goron Graveyard",
+      "Exit": "MM Goron Graveyard",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Near Goron Graveyard => MM Near Village Grotto": {
+      "Area": "MM Near Goron Graveyard",
+      "Exit": "MM Near Village Grotto",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -31294,6 +32128,20 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "MM Path to Snowhead Back => MM Path to Snowhead Grotto": {
+      "Area": "MM Path to Snowhead Back",
+      "Exit": "MM Path to Snowhead Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Path to Snowhead Grotto => MM Path to Snowhead Back": {
+      "Area": "MM Path to Snowhead Grotto",
+      "Exit": "MM Path to Snowhead Back",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "MM Snowhead Entrance => MM Path to Snowhead Back": {
       "Area": "MM Snowhead Entrance",
       "Exit": "MM Path to Snowhead Back",
@@ -31354,38 +32202,81 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Goron Race => MM Twin Islands": {
+    "MM Goron Race => MM Near Goron Race": {
       "Area": "MM Goron Race",
-      "Exit": "MM Twin Islands",
+      "Exit": "MM Near Goron Race",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Milk Road => MM Romani Ranch": {
-      "Area": "MM Milk Road",
-      "Exit": "MM Romani Ranch",
+    "MM Milk Road Front => MM Milk Road Back": {
+      "Area": "MM Milk Road Front",
+      "Exit": "MM Milk Road Back",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Milk Road => MM Termina Field": {
-      "Area": "MM Milk Road",
+    "MM Milk Road Front => MM Termina Field": {
+      "Area": "MM Milk Road Front",
       "Exit": "MM Termina Field",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Milk Road => MM Gorman Track": {
-      "Area": "MM Milk Road",
-      "Exit": "MM Gorman Track",
+    "MM Milk Road Front => MM Gorman Track Front": {
+      "Area": "MM Milk Road Front",
+      "Exit": "MM Gorman Track Front",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Romani Ranch => MM Milk Road": {
-      "Area": "MM Romani Ranch",
-      "Exit": "MM Milk Road",
+    "MM Milk Road Back => MM Near Romani Ranch": {
+      "Area": "MM Milk Road Back",
+      "Exit": "MM Near Romani Ranch",
       "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Milk Road Back => MM Milk Road Front": {
+      "Area": "MM Milk Road Back",
+      "Exit": "MM Milk Road Front",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Milk Road Back => MM Behind Gorman Fence": {
+      "Area": "MM Milk Road Back",
+      "Exit": "MM Behind Gorman Fence",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Near Romani Ranch => MM Milk Road Back": {
+      "Area": "MM Near Romani Ranch",
+      "Exit": "MM Milk Road Back",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Near Romani Ranch => MM Romani Ranch": {
+      "Area": "MM Near Romani Ranch",
+      "Exit": "MM Romani Ranch",
+      "EntrancePairID": {
+        "Area": "MM Romani Ranch",
+        "Exit": "MM Near Romani Ranch"
+      },
+      "RandomizableEntrance": true,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Romani Ranch => MM Near Romani Ranch": {
+      "Area": "MM Romani Ranch",
+      "Exit": "MM Near Romani Ranch",
+      "EntrancePairID": {
+        "Area": "MM Near Romani Ranch",
+        "Exit": "MM Romani Ranch"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -31410,6 +32301,13 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "MM Romani Ranch => MM Ranch House": {
+      "Area": "MM Romani Ranch",
+      "Exit": "MM Ranch House",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "MM Cucco Shack => MM Romani Ranch": {
       "Area": "MM Cucco Shack",
       "Exit": "MM Romani Ranch",
@@ -31426,6 +32324,13 @@
     },
     "MM Stables => MM Romani Ranch": {
       "Area": "MM Stables",
+      "Exit": "MM Romani Ranch",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Ranch House => MM Romani Ranch": {
+      "Area": "MM Ranch House",
       "Exit": "MM Romani Ranch",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
@@ -31703,9 +32608,44 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Gorman Track => MM Milk Road": {
-      "Area": "MM Gorman Track",
-      "Exit": "MM Milk Road",
+    "MM Behind Gorman Fence => MM Milk Road Back": {
+      "Area": "MM Behind Gorman Fence",
+      "Exit": "MM Milk Road Back",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Behind Gorman Fence => MM Gorman Track Back": {
+      "Area": "MM Behind Gorman Fence",
+      "Exit": "MM Gorman Track Back",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Gorman Track Front => MM Milk Road Front": {
+      "Area": "MM Gorman Track Front",
+      "Exit": "MM Milk Road Front",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Gorman Track Front => MM Gorman Track Back": {
+      "Area": "MM Gorman Track Front",
+      "Exit": "MM Gorman Track Back",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Gorman Track Back => MM Behind Gorman Fence": {
+      "Area": "MM Gorman Track Back",
+      "Exit": "MM Behind Gorman Fence",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Gorman Track Back => MM Gorman Track Front": {
+      "Area": "MM Gorman Track Back",
+      "Exit": "MM Gorman Track Front",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -33428,11 +34368,11 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Swamp Spider House => MM Swamp Back": {
+    "MM Swamp Spider House => MM Near Swamp Spider House": {
       "Area": "MM Swamp Spider House",
-      "Exit": "MM Swamp Back",
+      "Exit": "MM Near Swamp Spider House",
       "EntrancePairID": {
-        "Area": "MM Swamp Back",
+        "Area": "MM Near Swamp Spider House",
         "Exit": "MM Swamp Spider House"
       },
       "RandomizableEntrance": true,
@@ -33485,9 +34425,9 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Woodfall Temple Main => MM Woodfall Temple": {
+    "MM Woodfall Temple Main => MM Woodfall Temple Entrance": {
       "Area": "MM Woodfall Temple Main",
-      "Exit": "MM Woodfall Temple",
+      "Exit": "MM Woodfall Temple Entrance",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -34420,6 +35360,14 @@
     },
     "TRICK_OOT_LAB_WALL_GS": {
       "Name": "Laboratory Wall GS with Jump Slash",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "TRICK_OOT_PASS_COLLISION": {
+      "Name": "Pass through Visible One-Way Collisions",
       "SpoilerData": {
         "SpoilerLogNames": [],
         "GossipHintNames": [],
@@ -37315,37 +38263,348 @@
       "Static": false,
       "Value": 4
     },
-    "OOT_ANY_STICK": {
+    "MM_ANY_Heart": {
       "Static": true,
       "Value": [
-        "OOT_STICK",
-        "OOT_STICKS_5",
-        "OOT_STICKS_10",
-        "SHARED_STICK",
-        "SHARED_STICKS_5",
-        "SHARED_STICKS_10"
+        "MM_Heart",
+        "SHARED_Heart"
       ]
     },
-    "OOT_ANY_NUT": {
+    "OOT_ANY_Heart": {
       "Static": true,
       "Value": [
-        "OOT_NUT",
-        "OOT_NUTS_5",
-        "OOT_NUTS_10",
-        "SHARED_NUT",
-        "SHARED_NUTS_5",
-        "SHARED_NUTS_10"
+        "OOT_Heart",
+        "SHARED_Heart"
       ]
     },
-    "MM_ANY_STICK": {
+    "MM_ANY_Stick": {
       "Static": true,
       "Value": [
-        "MM_STICK",
-        "MM_STICKS_5",
-        "MM_STICKS_10",
-        "SHARED_STICK",
-        "SHARED_STICKS_5",
-        "SHARED_STICKS_10"
+        "MM_Stick",
+        "SHARED_Stick",
+        "MM_Stick",
+        "SHARED_Stick",
+        "MM_Stick",
+        "SHARED_Stick"
+      ]
+    },
+    "OOT_ANY_Stick": {
+      "Static": true,
+      "Value": [
+        "OOT_Stick",
+        "SHARED_Stick",
+        "OOT_Stick",
+        "SHARED_Stick",
+        "OOT_Stick",
+        "SHARED_Stick"
+      ]
+    },
+    "MM_ANY_Nut": {
+      "Static": true,
+      "Value": [
+        "MM_Nut",
+        "SHARED_Nut",
+        "MM_Nut",
+        "SHARED_Nut",
+        "MM_Nut",
+        "SHARED_Nut"
+      ]
+    },
+    "OOT_ANY_Nut": {
+      "Static": true,
+      "Value": [
+        "OOT_Nut",
+        "SHARED_Nut",
+        "OOT_Nut",
+        "SHARED_Nut",
+        "OOT_Nut",
+        "SHARED_Nut"
+      ]
+    },
+    "MM_ANY_Bomb": {
+      "Static": true,
+      "Value": [
+        "MM_Bomb",
+        "SHARED_Bomb",
+        "MM_Bomb",
+        "SHARED_Bomb",
+        "MM_Bomb",
+        "SHARED_Bomb",
+        "MM_Bomb",
+        "SHARED_Bomb",
+        "MM_Bomb",
+        "SHARED_Bomb"
+      ]
+    },
+    "OOT_ANY_Bomb": {
+      "Static": true,
+      "Value": [
+        "OOT_Bomb",
+        "SHARED_Bomb",
+        "OOT_Bomb",
+        "SHARED_Bomb",
+        "OOT_Bomb",
+        "SHARED_Bomb",
+        "OOT_Bomb",
+        "SHARED_Bomb",
+        "OOT_Bomb",
+        "SHARED_Bomb"
+      ]
+    },
+    "MM_ANY_Arrow": {
+      "Static": true,
+      "Value": [
+        "MM_Arrow",
+        "SHARED_Arrow",
+        "MM_Arrow",
+        "SHARED_Arrow",
+        "MM_Arrow",
+        "SHARED_Arrow",
+        "MM_Arrow",
+        "SHARED_Arrow"
+      ]
+    },
+    "OOT_ANY_Arrow": {
+      "Static": true,
+      "Value": [
+        "OOT_Arrow",
+        "SHARED_Arrow",
+        "OOT_Arrow",
+        "SHARED_Arrow",
+        "OOT_Arrow",
+        "SHARED_Arrow",
+        "OOT_Arrow",
+        "SHARED_Arrow"
+      ]
+    },
+    "MM_ANY_Seed": {
+      "Static": true,
+      "Value": [
+        "MM_Seed",
+        "SHARED_Seed",
+        "MM_Seed",
+        "SHARED_Seed"
+      ]
+    },
+    "OOT_ANY_Seed": {
+      "Static": true,
+      "Value": [
+        "OOT_Seed",
+        "SHARED_Seed",
+        "OOT_Seed",
+        "SHARED_Seed"
+      ]
+    },
+    "MM_ANY_Bombchu": {
+      "Static": true,
+      "Value": [
+        "MM_Bombchu",
+        "SHARED_Bombchu",
+        "MM_Bombchu",
+        "SHARED_Bombchu",
+        "MM_Bombchu",
+        "SHARED_Bombchu",
+        "MM_Bombchu",
+        "SHARED_Bombchu"
+      ]
+    },
+    "OOT_ANY_Bombchu": {
+      "Static": true,
+      "Value": [
+        "OOT_Bombchu",
+        "SHARED_Bombchu",
+        "OOT_Bombchu",
+        "SHARED_Bombchu",
+        "OOT_Bombchu",
+        "SHARED_Bombchu",
+        "OOT_Bombchu",
+        "SHARED_Bombchu"
+      ]
+    },
+    "MM_ANY_DekuShield": {
+      "Static": true,
+      "Value": [
+        "MM_DekuShield",
+        "SHARED_DekuShield"
+      ]
+    },
+    "OOT_ANY_DekuShield": {
+      "Static": true,
+      "Value": [
+        "OOT_DekuShield",
+        "SHARED_DekuShield"
+      ]
+    },
+    "MM_ANY_HylianShield": {
+      "Static": true,
+      "Value": [
+        "MM_HylianShield",
+        "SHARED_HylianShield"
+      ]
+    },
+    "OOT_ANY_HylianShield": {
+      "Static": true,
+      "Value": [
+        "OOT_HylianShield",
+        "SHARED_HylianShield"
+      ]
+    },
+    "MM_ANY_Milk": {
+      "Static": true,
+      "Value": [
+        "MM_Milk",
+        "SHARED_Milk"
+      ]
+    },
+    "OOT_ANY_Milk": {
+      "Static": true,
+      "Value": [
+        "OOT_Milk",
+        "SHARED_Milk"
+      ]
+    },
+    "MM_ANY_RedPotion": {
+      "Static": true,
+      "Value": [
+        "MM_RedPotion",
+        "SHARED_RedPotion"
+      ]
+    },
+    "OOT_ANY_RedPotion": {
+      "Static": true,
+      "Value": [
+        "OOT_RedPotion",
+        "SHARED_RedPotion"
+      ]
+    },
+    "MM_ANY_GreenPotion": {
+      "Static": true,
+      "Value": [
+        "MM_GreenPotion",
+        "SHARED_GreenPotion"
+      ]
+    },
+    "OOT_ANY_GreenPotion": {
+      "Static": true,
+      "Value": [
+        "OOT_GreenPotion",
+        "SHARED_GreenPotion"
+      ]
+    },
+    "MM_ANY_BluePotion": {
+      "Static": true,
+      "Value": [
+        "MM_BluePotion",
+        "SHARED_BluePotion"
+      ]
+    },
+    "OOT_ANY_BluePotion": {
+      "Static": true,
+      "Value": [
+        "OOT_BluePotion",
+        "SHARED_BluePotion"
+      ]
+    },
+    "MM_ANY_Fairy": {
+      "Static": true,
+      "Value": [
+        "MM_Fairy",
+        "SHARED_Fairy"
+      ]
+    },
+    "OOT_ANY_Fairy": {
+      "Static": true,
+      "Value": [
+        "OOT_Fairy",
+        "SHARED_Fairy"
+      ]
+    },
+    "MM_ANY_Fish": {
+      "Static": true,
+      "Value": [
+        "MM_Fish",
+        "SHARED_Fish"
+      ]
+    },
+    "OOT_ANY_Fish": {
+      "Static": true,
+      "Value": [
+        "OOT_Fish",
+        "SHARED_Fish"
+      ]
+    },
+    "MM_ANY_Bug": {
+      "Static": true,
+      "Value": [
+        "MM_Bug",
+        "SHARED_Bug",
+        "MM_Bug",
+        "SHARED_Bug"
+      ]
+    },
+    "OOT_ANY_Bug": {
+      "Static": true,
+      "Value": [
+        "OOT_Bug",
+        "SHARED_Bug",
+        "OOT_Bug",
+        "SHARED_Bug"
+      ]
+    },
+    "MM_ANY_BlueFire": {
+      "Static": true,
+      "Value": [
+        "MM_BlueFire",
+        "SHARED_BlueFire"
+      ]
+    },
+    "OOT_ANY_BlueFire": {
+      "Static": true,
+      "Value": [
+        "OOT_BlueFire",
+        "SHARED_BlueFire"
+      ]
+    },
+    "MM_ANY_Poe": {
+      "Static": true,
+      "Value": [
+        "MM_Poe",
+        "SHARED_Poe"
+      ]
+    },
+    "OOT_ANY_Poe": {
+      "Static": true,
+      "Value": [
+        "OOT_Poe",
+        "SHARED_Poe"
+      ]
+    },
+    "MM_ANY_HeroShield": {
+      "Static": true,
+      "Value": [
+        "MM_HeroShield",
+        "SHARED_HeroShield"
+      ]
+    },
+    "OOT_ANY_HeroShield": {
+      "Static": true,
+      "Value": [
+        "OOT_HeroShield",
+        "SHARED_HeroShield"
+      ]
+    },
+    "MM_ANY_Chateau": {
+      "Static": true,
+      "Value": [
+        "MM_Chateau",
+        "SHARED_Chateau"
+      ]
+    },
+    "OOT_ANY_Chateau": {
+      "Static": true,
+      "Value": [
+        "OOT_Chateau",
+        "SHARED_Chateau"
       ]
     }
   },
@@ -37354,6 +38613,28 @@
       "Id": "MM_ZORA",
       "RequiredItems": [
         "MM_MASK_ZORA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_bow",
+      "RequiredItems": [
+        "MM_BOW"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_PICTORGRAPH_BOX",
+      "RequiredItems": [
+        "MM_PICTOGRAPH_BOX"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
