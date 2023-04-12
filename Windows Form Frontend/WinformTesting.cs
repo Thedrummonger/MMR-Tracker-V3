@@ -939,6 +939,7 @@ namespace Windows_Form_Frontend
         {
             MMR_Tracker_V3.OtherGames.WindWakerRando.ReadAndParseData.CreateFiles(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary);
             WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(Logic), JsonConvert.SerializeObject(dictionary));
+            Testing.TestLogicForInvalidItems(MainInterface.InstanceContainer);
             Testing.TestLocationsForInvalidVanillaItem(MainInterface.InstanceContainer);
         }
     }
