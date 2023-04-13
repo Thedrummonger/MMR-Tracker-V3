@@ -26368,9 +26368,219 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT Gerudo Fortress => OOT Gerudo Fortress Exterior": {
-      "Area": "OOT Gerudo Fortress",
+    "OOT Gerudo Fortress Carpenter 1 Left => OOT Gerudo Fortress Exterior": {
+      "Area": "OOT Gerudo Fortress Carpenter 1 Left",
       "Exit": "OOT Gerudo Fortress Exterior",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Carpenter 1 Left => OOT Gerudo Fortress Carpenter 1 Right": {
+      "Area": "OOT Gerudo Fortress Carpenter 1 Left",
+      "Exit": "OOT Gerudo Fortress Carpenter 1 Right",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Carpenter 1 Right => OOT Gerudo Fortress Exterior": {
+      "Area": "OOT Gerudo Fortress Carpenter 1 Right",
+      "Exit": "OOT Gerudo Fortress Exterior",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Carpenter 1 Right => OOT Gerudo Fortress Carpenter 1 Left": {
+      "Area": "OOT Gerudo Fortress Carpenter 1 Right",
+      "Exit": "OOT Gerudo Fortress Carpenter 1 Left",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Carpenter 2 Bottom => OOT Gerudo Fortress Exterior": {
+      "Area": "OOT Gerudo Fortress Carpenter 2 Bottom",
+      "Exit": "OOT Gerudo Fortress Exterior",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Carpenter 2 Bottom => OOT Gerudo Fortress Carpenter 2 Top": {
+      "Area": "OOT Gerudo Fortress Carpenter 2 Bottom",
+      "Exit": "OOT Gerudo Fortress Carpenter 2 Top",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Carpenter 2 Top => OOT Gerudo Fortress Lower-Center Ledge": {
+      "Area": "OOT Gerudo Fortress Carpenter 2 Top",
+      "Exit": "OOT Gerudo Fortress Lower-Center Ledge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Carpenter 2 Top => OOT Gerudo Fortress Carpenter 2 Bottom": {
+      "Area": "OOT Gerudo Fortress Carpenter 2 Top",
+      "Exit": "OOT Gerudo Fortress Carpenter 2 Bottom",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Carpenter 3 Bottom => OOT Gerudo Fortress Lower-Right Ledge": {
+      "Area": "OOT Gerudo Fortress Carpenter 3 Bottom",
+      "Exit": "OOT Gerudo Fortress Lower-Right Ledge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Carpenter 3 Bottom => OOT Gerudo Fortress Carpenter 3 Top": {
+      "Area": "OOT Gerudo Fortress Carpenter 3 Bottom",
+      "Exit": "OOT Gerudo Fortress Carpenter 3 Top",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Carpenter 3 Top => OOT Gerudo Fortress Lower-Center Ledge": {
+      "Area": "OOT Gerudo Fortress Carpenter 3 Top",
+      "Exit": "OOT Gerudo Fortress Lower-Center Ledge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Carpenter 3 Top => OOT Gerudo Fortress Carpenter 3 Bottom": {
+      "Area": "OOT Gerudo Fortress Carpenter 3 Top",
+      "Exit": "OOT Gerudo Fortress Carpenter 3 Bottom",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Kitchen Tunnel End => OOT Gerudo Fortress Exterior": {
+      "Area": "OOT Gerudo Fortress Kitchen Tunnel End",
+      "Exit": "OOT Gerudo Fortress Exterior",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Kitchen Tunnel End => OOT Gerudo Fortress Kitchen Tunnel Mid": {
+      "Area": "OOT Gerudo Fortress Kitchen Tunnel End",
+      "Exit": "OOT Gerudo Fortress Kitchen Tunnel Mid",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Kitchen Tunnel Mid => OOT Gerudo Fortress Lower-Right Ledge": {
+      "Area": "OOT Gerudo Fortress Kitchen Tunnel Mid",
+      "Exit": "OOT Gerudo Fortress Lower-Right Ledge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Kitchen Tunnel Mid => OOT Gerudo Fortress Kitchen Tunnel End": {
+      "Area": "OOT Gerudo Fortress Kitchen Tunnel Mid",
+      "Exit": "OOT Gerudo Fortress Kitchen Tunnel End",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Kitchen Tunnel Mid => OOT Gerudo Fortress Kitchen Bottom": {
+      "Area": "OOT Gerudo Fortress Kitchen Tunnel Mid",
+      "Exit": "OOT Gerudo Fortress Kitchen Bottom",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Kitchen Bottom => OOT Gerudo Fortress Kitchen Tunnel Mid": {
+      "Area": "OOT Gerudo Fortress Kitchen Bottom",
+      "Exit": "OOT Gerudo Fortress Kitchen Tunnel Mid",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Kitchen Bottom => OOT Gerudo Fortress Kitchen Ledge Near Tunnel": {
+      "Area": "OOT Gerudo Fortress Kitchen Bottom",
+      "Exit": "OOT Gerudo Fortress Kitchen Ledge Near Tunnel",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Kitchen Bottom => OOT Gerudo Fortress Kitchen Ledge Away from Tunnel": {
+      "Area": "OOT Gerudo Fortress Kitchen Bottom",
+      "Exit": "OOT Gerudo Fortress Kitchen Ledge Away from Tunnel",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Kitchen Ledge Near Tunnel => OOT Gerudo Fortress Lower-Center Ledge": {
+      "Area": "OOT Gerudo Fortress Kitchen Ledge Near Tunnel",
+      "Exit": "OOT Gerudo Fortress Lower-Center Ledge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Kitchen Ledge Near Tunnel => OOT Gerudo Fortress Kitchen Bottom": {
+      "Area": "OOT Gerudo Fortress Kitchen Ledge Near Tunnel",
+      "Exit": "OOT Gerudo Fortress Kitchen Bottom",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Kitchen Ledge Near Tunnel => OOT Gerudo Fortress Kitchen Ledge Away from Tunnel": {
+      "Area": "OOT Gerudo Fortress Kitchen Ledge Near Tunnel",
+      "Exit": "OOT Gerudo Fortress Kitchen Ledge Away from Tunnel",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Kitchen Ledge Away from Tunnel => OOT Gerudo Fortress Upper-Center Ledge": {
+      "Area": "OOT Gerudo Fortress Kitchen Ledge Away from Tunnel",
+      "Exit": "OOT Gerudo Fortress Upper-Center Ledge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Kitchen Ledge Away from Tunnel => OOT Gerudo Fortress Kitchen Bottom": {
+      "Area": "OOT Gerudo Fortress Kitchen Ledge Away from Tunnel",
+      "Exit": "OOT Gerudo Fortress Kitchen Bottom",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Kitchen Ledge Away from Tunnel => OOT Gerudo Fortress Kitchen Ledge Near Tunnel": {
+      "Area": "OOT Gerudo Fortress Kitchen Ledge Away from Tunnel",
+      "Exit": "OOT Gerudo Fortress Kitchen Ledge Near Tunnel",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Carpenter 4 => OOT Gerudo Fortress Center Ledge": {
+      "Area": "OOT Gerudo Fortress Carpenter 4",
+      "Exit": "OOT Gerudo Fortress Center Ledge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Break Room Bottom => OOT Gerudo Fortress Lower-Left Ledge": {
+      "Area": "OOT Gerudo Fortress Break Room Bottom",
+      "Exit": "OOT Gerudo Fortress Lower-Left Ledge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Break Room Bottom => OOT Gerudo Fortress Break Room Top": {
+      "Area": "OOT Gerudo Fortress Break Room Bottom",
+      "Exit": "OOT Gerudo Fortress Break Room Top",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Break Room Top => OOT Gerudo Fortress Above Prison": {
+      "Area": "OOT Gerudo Fortress Break Room Top",
+      "Exit": "OOT Gerudo Fortress Above Prison",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Break Room Top => OOT Gerudo Fortress Break Room Bottom": {
+      "Area": "OOT Gerudo Fortress Break Room Top",
+      "Exit": "OOT Gerudo Fortress Break Room Bottom",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -27579,6 +27789,13 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "OOT Kakariko => OOT Kakariko Back": {
+      "Area": "OOT Kakariko",
+      "Exit": "OOT Kakariko Back",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "OOT Kakariko => OOT Kakariko Bazaar": {
       "Area": "OOT Kakariko",
       "Exit": "OOT Kakariko Bazaar",
@@ -27589,13 +27806,6 @@
     "OOT Kakariko => OOT Kakariko Potion Shop": {
       "Area": "OOT Kakariko",
       "Exit": "OOT Kakariko Potion Shop",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    "OOT Kakariko => OOT Kakariko Granny Shop": {
-      "Area": "OOT Kakariko",
-      "Exit": "OOT Kakariko Granny Shop",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -27628,13 +27838,6 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT Kakariko => OOT Kakariko Generic Grotto": {
-      "Area": "OOT Kakariko",
-      "Exit": "OOT Kakariko Generic Grotto",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
     "OOT Kakariko Rooftop => OOT Kakariko": {
       "Area": "OOT Kakariko Rooftop",
       "Exit": "OOT Kakariko",
@@ -27663,6 +27866,34 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "OOT Kakariko Back => OOT Kakariko": {
+      "Area": "OOT Kakariko Back",
+      "Exit": "OOT Kakariko",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Kakariko Back => OOT Kakariko Potion Shop Back": {
+      "Area": "OOT Kakariko Back",
+      "Exit": "OOT Kakariko Potion Shop Back",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Kakariko Back => OOT Kakariko Granny Shop": {
+      "Area": "OOT Kakariko Back",
+      "Exit": "OOT Kakariko Granny Shop",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Kakariko Back => OOT Kakariko Generic Grotto": {
+      "Area": "OOT Kakariko Back",
+      "Exit": "OOT Kakariko Generic Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "OOT Kakariko Bazaar => OOT Kakariko": {
       "Area": "OOT Kakariko Bazaar",
       "Exit": "OOT Kakariko",
@@ -27677,9 +27908,30 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT Kakariko Granny Shop => OOT Kakariko": {
+    "OOT Kakariko Potion Shop => OOT Kakariko Potion Shop Back": {
+      "Area": "OOT Kakariko Potion Shop",
+      "Exit": "OOT Kakariko Potion Shop Back",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Kakariko Potion Shop Back => OOT Kakariko Back": {
+      "Area": "OOT Kakariko Potion Shop Back",
+      "Exit": "OOT Kakariko Back",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Kakariko Potion Shop Back => OOT Kakariko Potion Shop": {
+      "Area": "OOT Kakariko Potion Shop Back",
+      "Exit": "OOT Kakariko Potion Shop",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Kakariko Granny Shop => OOT Kakariko Back": {
       "Area": "OOT Kakariko Granny Shop",
-      "Exit": "OOT Kakariko",
+      "Exit": "OOT Kakariko Back",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -27733,9 +27985,9 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT Kakariko Generic Grotto => OOT Kakariko": {
+    "OOT Kakariko Generic Grotto => OOT Kakariko Back": {
       "Area": "OOT Kakariko Generic Grotto",
-      "Exit": "OOT Kakariko",
+      "Exit": "OOT Kakariko Back",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -28490,9 +28742,30 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT Gerudo Fortress Exterior => OOT Gerudo Fortress": {
+    "OOT Gerudo Fortress Exterior => OOT Gerudo Fortress Carpenter 1 Left": {
       "Area": "OOT Gerudo Fortress Exterior",
-      "Exit": "OOT Gerudo Fortress",
+      "Exit": "OOT Gerudo Fortress Carpenter 1 Left",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Exterior => OOT Gerudo Fortress Carpenter 1 Right": {
+      "Area": "OOT Gerudo Fortress Exterior",
+      "Exit": "OOT Gerudo Fortress Carpenter 1 Right",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Exterior => OOT Gerudo Fortress Kitchen Tunnel End": {
+      "Area": "OOT Gerudo Fortress Exterior",
+      "Exit": "OOT Gerudo Fortress Kitchen Tunnel End",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Exterior => OOT Gerudo Fortress Carpenter 2 Bottom": {
+      "Area": "OOT Gerudo Fortress Exterior",
+      "Exit": "OOT Gerudo Fortress Carpenter 2 Bottom",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -28533,6 +28806,202 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "OOT Gerudo Fortress Exterior => OOT Gerudo Fortress Lower-Right Ledge": {
+      "Area": "OOT Gerudo Fortress Exterior",
+      "Exit": "OOT Gerudo Fortress Lower-Right Ledge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Lower-Right Ledge => OOT Gerudo Fortress Exterior": {
+      "Area": "OOT Gerudo Fortress Lower-Right Ledge",
+      "Exit": "OOT Gerudo Fortress Exterior",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Lower-Right Ledge => OOT Gerudo Fortress Lower-Center Ledge": {
+      "Area": "OOT Gerudo Fortress Lower-Right Ledge",
+      "Exit": "OOT Gerudo Fortress Lower-Center Ledge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Lower-Right Ledge => OOT Gerudo Fortress Kitchen Tunnel Mid": {
+      "Area": "OOT Gerudo Fortress Lower-Right Ledge",
+      "Exit": "OOT Gerudo Fortress Kitchen Tunnel Mid",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Lower-Right Ledge => OOT Gerudo Fortress Carpenter 3 Bottom": {
+      "Area": "OOT Gerudo Fortress Lower-Right Ledge",
+      "Exit": "OOT Gerudo Fortress Carpenter 3 Bottom",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Lower-Center Ledge => OOT Gerudo Fortress Exterior": {
+      "Area": "OOT Gerudo Fortress Lower-Center Ledge",
+      "Exit": "OOT Gerudo Fortress Exterior",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Lower-Center Ledge => OOT Gerudo Fortress Lower-Right Ledge": {
+      "Area": "OOT Gerudo Fortress Lower-Center Ledge",
+      "Exit": "OOT Gerudo Fortress Lower-Right Ledge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Lower-Center Ledge => OOT Gerudo Fortress Carpenter 2 Top": {
+      "Area": "OOT Gerudo Fortress Lower-Center Ledge",
+      "Exit": "OOT Gerudo Fortress Carpenter 2 Top",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Lower-Center Ledge => OOT Gerudo Fortress Carpenter 3 Top": {
+      "Area": "OOT Gerudo Fortress Lower-Center Ledge",
+      "Exit": "OOT Gerudo Fortress Carpenter 3 Top",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Lower-Center Ledge => OOT Gerudo Fortress Kitchen Ledge Near Tunnel": {
+      "Area": "OOT Gerudo Fortress Lower-Center Ledge",
+      "Exit": "OOT Gerudo Fortress Kitchen Ledge Near Tunnel",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Lower-Center Ledge => OOT Gerudo Fortress Upper-Right Ledge": {
+      "Area": "OOT Gerudo Fortress Lower-Center Ledge",
+      "Exit": "OOT Gerudo Fortress Upper-Right Ledge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Upper-Center Ledge => OOT Gerudo Fortress Kitchen Ledge Away from Tunnel": {
+      "Area": "OOT Gerudo Fortress Upper-Center Ledge",
+      "Exit": "OOT Gerudo Fortress Kitchen Ledge Away from Tunnel",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Upper-Center Ledge => OOT Gerudo Fortress Lower-Center Ledge": {
+      "Area": "OOT Gerudo Fortress Upper-Center Ledge",
+      "Exit": "OOT Gerudo Fortress Lower-Center Ledge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Upper-Center Ledge => OOT Gerudo Fortress Upper-Right Ledge": {
+      "Area": "OOT Gerudo Fortress Upper-Center Ledge",
+      "Exit": "OOT Gerudo Fortress Upper-Right Ledge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Upper-Center Ledge => OOT Gerudo Fortress Upper-Left Ledge": {
+      "Area": "OOT Gerudo Fortress Upper-Center Ledge",
+      "Exit": "OOT Gerudo Fortress Upper-Left Ledge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Upper-Center Ledge => OOT Gerudo Fortress Center Ledge": {
+      "Area": "OOT Gerudo Fortress Upper-Center Ledge",
+      "Exit": "OOT Gerudo Fortress Center Ledge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Upper-Right Ledge => OOT Gerudo Fortress Lower-Center Ledge": {
+      "Area": "OOT Gerudo Fortress Upper-Right Ledge",
+      "Exit": "OOT Gerudo Fortress Lower-Center Ledge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Upper-Right Ledge => OOT Gerudo Fortress Lower-Right Ledge": {
+      "Area": "OOT Gerudo Fortress Upper-Right Ledge",
+      "Exit": "OOT Gerudo Fortress Lower-Right Ledge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Upper-Right Ledge => OOT Gerudo Fortress Upper-Left Ledge": {
+      "Area": "OOT Gerudo Fortress Upper-Right Ledge",
+      "Exit": "OOT Gerudo Fortress Upper-Left Ledge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Upper-Right Ledge => OOT Gerudo Fortress Center Ledge": {
+      "Area": "OOT Gerudo Fortress Upper-Right Ledge",
+      "Exit": "OOT Gerudo Fortress Center Ledge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Upper-Left Ledge => OOT Gerudo Fortress Lower-Left Ledge": {
+      "Area": "OOT Gerudo Fortress Upper-Left Ledge",
+      "Exit": "OOT Gerudo Fortress Lower-Left Ledge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Upper-Left Ledge => OOT Gerudo Fortress Center Ledge": {
+      "Area": "OOT Gerudo Fortress Upper-Left Ledge",
+      "Exit": "OOT Gerudo Fortress Center Ledge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Center Ledge => OOT Gerudo Fortress Carpenter 4": {
+      "Area": "OOT Gerudo Fortress Center Ledge",
+      "Exit": "OOT Gerudo Fortress Carpenter 4",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Center Ledge => OOT Gerudo Fortress Lower-Center Ledge": {
+      "Area": "OOT Gerudo Fortress Center Ledge",
+      "Exit": "OOT Gerudo Fortress Lower-Center Ledge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Lower-Left Ledge => OOT Gerudo Fortress Exterior": {
+      "Area": "OOT Gerudo Fortress Lower-Left Ledge",
+      "Exit": "OOT Gerudo Fortress Exterior",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Lower-Left Ledge => OOT Gerudo Fortress Break Room Bottom": {
+      "Area": "OOT Gerudo Fortress Lower-Left Ledge",
+      "Exit": "OOT Gerudo Fortress Break Room Bottom",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Above Prison => OOT Gerudo Fortress Exterior": {
+      "Area": "OOT Gerudo Fortress Above Prison",
+      "Exit": "OOT Gerudo Fortress Exterior",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Gerudo Fortress Above Prison => OOT Gerudo Fortress Lower-Left Ledge": {
+      "Area": "OOT Gerudo Fortress Above Prison",
+      "Exit": "OOT Gerudo Fortress Lower-Left Ledge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "OOT Fortress Near Wasteland => OOT Gerudo Fortress Exterior": {
       "Area": "OOT Fortress Near Wasteland",
       "Exit": "OOT Gerudo Fortress Exterior",
@@ -28547,9 +29016,9 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT Gerudo Fortress Grotto => OOT Gerudo Fortress": {
+    "OOT Gerudo Fortress Grotto => OOT Gerudo Fortress Exterior": {
       "Area": "OOT Gerudo Fortress Grotto",
-      "Exit": "OOT Gerudo Fortress",
+      "Exit": "OOT Gerudo Fortress Exterior",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -30508,6 +30977,13 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "MM GLOBAL => MM SOARING": {
+      "Area": "MM GLOBAL",
+      "Exit": "MM SOARING",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "MM SOARING => MM Clock Town South": {
       "Area": "MM SOARING",
       "Exit": "MM Clock Town South",
@@ -32181,9 +32657,23 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "MM Snowhead => MM Snowhead Near Great Fairy Fountain": {
+      "Area": "MM Snowhead",
+      "Exit": "MM Snowhead Near Great Fairy Fountain",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "MM Snowhead Near Great Fairy Fountain => MM Snowhead Entrance": {
       "Area": "MM Snowhead Near Great Fairy Fountain",
       "Exit": "MM Snowhead Entrance",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Snowhead Near Great Fairy Fountain => MM Snowhead": {
+      "Area": "MM Snowhead Near Great Fairy Fountain",
+      "Exit": "MM Snowhead",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -36444,8 +36934,8 @@
         }
       }
     },
-    "sharedMagicArrows": {
-      "DisplayName": "Shared Magic Arrows",
+    "sharedMagicArrowFire": {
+      "DisplayName": "Shared Fire Arrow",
       "CurrentValue": "false",
       "SubCategory": "Shared Items",
       "Values": {
@@ -36455,14 +36945,6 @@
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {
             "SHARED_ARROW_FIRE": {
-              "action": "set",
-              "amount": 0
-            },
-            "SHARED_ARROW_ICE": {
-              "action": "set",
-              "amount": 0
-            },
-            "SHARED_ARROW_LIGHT": {
               "action": "set",
               "amount": 0
             }
@@ -36476,11 +36958,7 @@
               "LocationBlacklist": [],
               "ReplacementList": {
                 "OOT_ARROW_FIRE": "SHARED_ARROW_FIRE",
-                "MM_ARROW_FIRE": "SHARED_ARROW_FIRE",
-                "OOT_ARROW_ICE": "SHARED_ARROW_ICE",
-                "MM_ARROW_ICE": "SHARED_ARROW_ICE",
-                "OOT_ARROW_LIGHT": "SHARED_ARROW_LIGHT",
-                "MM_ARROW_LIGHT": "SHARED_ARROW_LIGHT"
+                "MM_ARROW_FIRE": "SHARED_ARROW_FIRE"
               }
             }
           ],
@@ -36494,7 +36972,43 @@
             "MM_ARROW_FIRE": {
               "action": "set",
               "amount": 0
-            },
+            }
+          },
+          "VariableEdit": {}
+        }
+      }
+    },
+    "sharedMagicArrowIce": {
+      "DisplayName": "Shared Ice Arrow",
+      "CurrentValue": "false",
+      "SubCategory": "Shared Items",
+      "Values": {
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "SHARED_ARROW_ICE": {
+              "action": "set",
+              "amount": 0
+            }
+          },
+          "VariableEdit": {}
+        },
+        "true": {
+          "LogicReplacements": [
+            {
+              "LocationWhitelist": [],
+              "LocationBlacklist": [],
+              "ReplacementList": {
+                "OOT_ARROW_ICE": "SHARED_ARROW_ICE",
+                "MM_ARROW_ICE": "SHARED_ARROW_ICE"
+              }
+            }
+          ],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
             "OOT_ARROW_ICE": {
               "action": "set",
               "amount": 0
@@ -36502,7 +37016,43 @@
             "MM_ARROW_ICE": {
               "action": "set",
               "amount": 0
-            },
+            }
+          },
+          "VariableEdit": {}
+        }
+      }
+    },
+    "sharedMagicArrowLight": {
+      "DisplayName": "Shared Light Arrow",
+      "CurrentValue": "false",
+      "SubCategory": "Shared Items",
+      "Values": {
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "SHARED_ARROW_LIGHT": {
+              "action": "set",
+              "amount": 0
+            }
+          },
+          "VariableEdit": {}
+        },
+        "true": {
+          "LogicReplacements": [
+            {
+              "LocationWhitelist": [],
+              "LocationBlacklist": [],
+              "ReplacementList": {
+                "OOT_ARROW_LIGHT": "SHARED_ARROW_LIGHT",
+                "MM_ARROW_LIGHT": "SHARED_ARROW_LIGHT"
+              }
+            }
+          ],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
             "OOT_ARROW_LIGHT": {
               "action": "set",
               "amount": 0

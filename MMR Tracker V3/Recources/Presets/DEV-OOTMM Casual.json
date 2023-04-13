@@ -932,6 +932,7 @@
       "RequiredItems": [
         "OOT_WALLET",
         "OOT_has_rupees",
+        "OOT_is_adult",
         "OOT Kakariko Potion Shop"
       ],
       "ConditionalItems": [],
@@ -944,6 +945,7 @@
       "Id": "OOT Kakariko Potion Shop Item 2",
       "RequiredItems": [
         "OOT_has_rupees",
+        "OOT_is_adult",
         "OOT Kakariko Potion Shop"
       ],
       "ConditionalItems": [],
@@ -956,6 +958,7 @@
       "Id": "OOT Kakariko Potion Shop Item 3",
       "RequiredItems": [
         "OOT_has_rupees",
+        "OOT_is_adult",
         "OOT Kakariko Potion Shop"
       ],
       "ConditionalItems": [],
@@ -968,6 +971,7 @@
       "Id": "OOT Kakariko Potion Shop Item 4",
       "RequiredItems": [
         "OOT_has_rupees",
+        "OOT_is_adult",
         "OOT Kakariko Potion Shop"
       ],
       "ConditionalItems": [],
@@ -981,6 +985,7 @@
       "RequiredItems": [
         "OOT_WALLET, 2",
         "OOT_has_rupees",
+        "OOT_is_adult",
         "OOT Kakariko Potion Shop"
       ],
       "ConditionalItems": [],
@@ -993,6 +998,7 @@
       "Id": "OOT Kakariko Potion Shop Item 6",
       "RequiredItems": [
         "OOT_has_rupees",
+        "OOT_is_adult",
         "OOT Kakariko Potion Shop"
       ],
       "ConditionalItems": [],
@@ -1005,6 +1011,7 @@
       "Id": "OOT Kakariko Potion Shop Item 7",
       "RequiredItems": [
         "OOT_has_rupees",
+        "OOT_is_adult",
         "OOT Kakariko Potion Shop"
       ],
       "ConditionalItems": [],
@@ -1017,6 +1024,7 @@
       "Id": "OOT Kakariko Potion Shop Item 8",
       "RequiredItems": [
         "OOT_has_rupees",
+        "OOT_is_adult",
         "OOT Kakariko Potion Shop"
       ],
       "ConditionalItems": [],
@@ -3345,19 +3353,9 @@
     {
       "Id": "OOT Gerudo Fortress Chest",
       "RequiredItems": [
-        "OOT Gerudo Fortress Exterior"
+        "OOT Gerudo Fortress Upper-Left Ledge"
       ],
-      "ConditionalItems": [
-        [
-          "OOT_has_hover_boots"
-        ],
-        [
-          "OOT_can_longshot"
-        ],
-        [
-          "OOT_scarecrow_hookshot"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3366,7 +3364,7 @@
     {
       "Id": "OOT Gerudo Fortress Archery Reward 1",
       "RequiredItems": [
-        "OOT_EVENT_EPONA",
+        "OOT_can_ride_epona",
         "OOT_can_use_bow",
         "OOT_GERUDO_CARD",
         "OOT_has_rupees",
@@ -3382,7 +3380,7 @@
     {
       "Id": "OOT Gerudo Fortress Archery Reward 2",
       "RequiredItems": [
-        "OOT_EVENT_EPONA",
+        "OOT_can_ride_epona",
         "OOT_can_use_bow",
         "OOT_GERUDO_CARD",
         "OOT_has_rupees",
@@ -3400,7 +3398,7 @@
       "RequiredItems": [
         "OOT_can_hookshot",
         "OOT_gs_night",
-        "OOT Gerudo Fortress Exterior"
+        "OOT Gerudo Fortress Upper-Right Ledge"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -5782,10 +5780,21 @@
     {
       "Id": "OOT Gerudo Fortress Jail 1",
       "RequiredItems": [
-        "OOT_has_weapon",
-        "OOT Gerudo Fortress"
+        "OOT Gerudo Fortress Carpenter 1 Left"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_can_boomerang",
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_has_nuts",
+          "OOT_can_use_sticks"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -5794,10 +5803,21 @@
     {
       "Id": "OOT Gerudo Fortress Jail 2",
       "RequiredItems": [
-        "OOT_has_weapon",
-        "OOT Gerudo Fortress"
+        "OOT Gerudo Fortress Carpenter 2 Bottom"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_can_boomerang",
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_has_nuts",
+          "OOT_can_use_sticks"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -5806,10 +5826,21 @@
     {
       "Id": "OOT Gerudo Fortress Jail 3",
       "RequiredItems": [
-        "OOT_has_weapon",
-        "OOT Gerudo Fortress"
+        "OOT Gerudo Fortress Carpenter 3 Top"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_can_boomerang",
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_has_nuts",
+          "OOT_can_use_sticks"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -5818,21 +5849,19 @@
     {
       "Id": "OOT Gerudo Fortress Jail 4",
       "RequiredItems": [
-        "OOT_has_weapon",
-        "OOT Gerudo Fortress"
+        "OOT Gerudo Fortress Carpenter 4"
       ],
       "ConditionalItems": [
         [
-          "OOT_can_hookshot"
+          "OOT_has_weapon"
         ],
         [
-          "OOT_can_use_bow"
+          "OOT_can_boomerang",
+          "OOT_can_use_sticks"
         ],
         [
-          "OOT_has_hover_boots"
-        ],
-        [
-          "OOT_GERUDO_CARD"
+          "OOT_has_nuts",
+          "OOT_can_use_sticks"
         ]
       ],
       "TimeNeeded": "None",
@@ -5843,10 +5872,22 @@
     {
       "Id": "OOT Gerudo Member Card",
       "RequiredItems": [
-        "OOT_EVENT_CARPENTERS_RESCUE",
-        "OOT Gerudo Fortress"
+        "OOT_EVENT_CARPENTERS_RESCUE"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT Gerudo Fortress Carpenter 4"
+        ],
+        [
+          "OOT Gerudo Fortress Carpenter 3 Top"
+        ],
+        [
+          "OOT Gerudo Fortress Carpenter 2 Bottom"
+        ],
+        [
+          "OOT Gerudo Fortress Carpenter 1 Left"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -18377,8 +18418,406 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Gerudo Fortress => OOT Gerudo Fortress Exterior",
+      "Id": "OOT Gerudo Fortress Carpenter 1 Left => OOT Gerudo Fortress Exterior",
       "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Carpenter 1 Left => OOT Gerudo Fortress Carpenter 1 Right",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_RUPEES",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT Gerudo Fortress Carpenter 1 Left"
+        ],
+        [
+          "OOT Dampe Grave"
+        ],
+        [
+          "OOT Zora Domain"
+        ],
+        [
+          "OOT Octorok Grotto"
+        ],
+        [
+          "OOT Sacred Meadow Entryway"
+        ],
+        [
+          "OOT Lost Woods"
+        ],
+        [
+          "OOT Hyrule Castle"
+        ],
+        [
+          "OOT Zora River"
+        ],
+        [
+          "OOT Market Pot House"
+        ],
+        [
+          "OOT Market"
+        ],
+        [
+          "OOT Hyrule Field"
+        ],
+        [
+          "OOT Death Mountain Cow Grotto"
+        ],
+        [
+          "OOT Kokiri Forest"
+        ],
+        [
+          "OOT Gerudo Fortress Carpenter 3 Top"
+        ],
+        [
+          "OOT Gerudo Fortress Carpenter 2 Bottom"
+        ],
+        [
+          "OOT Death Mountain"
+        ],
+        [
+          "OOT Gerudo Valley"
+        ],
+        [
+          "OOT_has_explosives_or_hammer",
+          "OOT Hyrule Castle Grotto"
+        ],
+        [
+          "OOT Hyrule Field Open Grotto",
+          "OOT_can_cut_grass"
+        ],
+        [
+          "OOT Kokiri Forest Storms Grotto",
+          "OOT_can_cut_grass"
+        ],
+        [
+          "OOT Death Mountain Storms Grotto",
+          "OOT_can_cut_grass"
+        ],
+        [
+          "OOT Zora River Open Grotto",
+          "OOT_can_cut_grass"
+        ],
+        [
+          "OOT Graveyard",
+          "OOT_can_cut_grass"
+        ],
+        [
+          "OOT Kakariko Generic Grotto",
+          "OOT_can_cut_grass"
+        ],
+        [
+          "OOT Kakariko",
+          "OOT_can_cut_grass"
+        ],
+        [
+          "OOT Lost Woods Deep",
+          "OOT_can_cut_grass"
+        ],
+        [
+          "OOT Lost Woods Generic Grotto",
+          "OOT_can_cut_grass"
+        ],
+        [
+          "OOT Lake Hylia",
+          "OOT_can_cut_grass"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Death Mountain Crater Generic Grotto"
+        ],
+        [
+          "OOT Lon Lon Ranch",
+          "OOT_is_child"
+        ],
+        [
+          "OOT_has_tunic_goron_strict",
+          "OOT Death Mountain Crater Top"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Zora River Front"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Hyrule Field Grotto Near Market"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Hyrule Field Southeast Grotto"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_ARROWS",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT Shadow Temple Truth Spinner",
+          "option{ShadowMQ, true}"
+        ],
+        [
+          "OOT_has_explosives_or_hammer",
+          "OOT Hyrule Castle Grotto",
+          "OOT_is_adult"
+        ],
+        [
+          "OOT Hyrule Field Grotto Near Kak",
+          "OOT_is_adult"
+        ],
+        [
+          "OOT Hyrule Field Grotto Near Market",
+          "OOT_is_adult"
+        ],
+        [
+          "OOT Hyrule Field Southeast Grotto",
+          "OOT_is_adult"
+        ],
+        [
+          "OOT Hyrule Field Open Grotto",
+          "OOT_is_adult"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Death Mountain Crater Generic Grotto"
+        ],
+        [
+          "OOT_has_tunic_goron_strict",
+          "OOT Death Mountain Crater Top"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Hyrule Field"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Kokiri Forest Storms Grotto"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Kokiri Forest"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT_GERUDO_CARD",
+          "OOT Gerudo Fortress Break Room Bottom"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Gerudo Fortress Break Room Bottom",
+          "OOT_can_hookshot"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Lake Hylia"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Gerudo Fortress Carpenter 1 Left"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Zora River Open Grotto"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Zora River"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Zora River Front"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Death Mountain Storms Grotto"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Dampe Grave"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Graveyard"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Kakariko Generic Grotto"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Kakariko"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Lost Woods Deep"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Lost Woods Generic Grotto"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT Lost Woods"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_SEEDS",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_is_child",
+          "OOT Gerudo Valley"
+        ],
+        [
+          "OOT Gerudo Fortress Carpenter 1 Left",
+          "OOT_is_child"
+        ],
+        [
+          "OOT Dampe Grave",
+          "OOT_is_child"
+        ],
+        [
+          "OOT Zora River Front",
+          "OOT_is_child",
+          "OOT_can_cut_grass"
+        ],
+        [
+          "OOT Death Mountain Storms Grotto",
+          "OOT_is_child",
+          "OOT_can_cut_grass"
+        ],
+        [
+          "OOT Graveyard",
+          "OOT_is_child",
+          "OOT_can_cut_grass"
+        ],
+        [
+          "OOT Kakariko Generic Grotto",
+          "OOT_is_child",
+          "OOT_can_cut_grass"
+        ],
+        [
+          "OOT_is_child",
+          "OOT_can_cut_grass",
+          "OOT Death Mountain Crater Generic Grotto"
+        ],
+        [
+          "OOT_has_sword_kokiri",
+          "OOT Hyrule Field Grotto Near Kak"
+        ],
+        [
+          "OOT_is_child",
+          "OOT_has_explosives",
+          "OOT Hyrule Castle Grotto"
+        ],
+        [
+          "OOT_is_child",
+          "OOT Zora Fountain"
+        ],
+        [
+          "OOT_is_child",
+          "OOT Hyrule Castle"
+        ],
+        [
+          "OOT_is_child",
+          "OOT_can_cut_grass",
+          "OOT Kakariko"
+        ],
+        [
+          "OOT_is_child",
+          "OOT_can_cut_grass",
+          "OOT Lost Woods Deep"
+        ],
+        [
+          "OOT_is_child",
+          "OOT_can_cut_grass",
+          "OOT Lost Woods Generic Grotto"
+        ],
+        [
+          "OOT_is_child",
+          "OOT_can_cut_grass",
+          "OOT Lost Woods"
+        ],
+        [
+          "OOT_is_child",
+          "OOT_can_cut_grass",
+          "OOT Hyrule Field Grotto Near Market"
+        ],
+        [
+          "OOT_is_child",
+          "OOT_can_cut_grass",
+          "OOT Lake Hylia"
+        ],
+        [
+          "OOT_is_child",
+          "OOT Hyrule Field"
+        ],
+        [
+          "OOT_is_child",
+          "OOT_can_cut_grass",
+          "OOT Hyrule Field Southeast Grotto"
+        ],
+        [
+          "OOT_is_child",
+          "OOT_can_cut_grass",
+          "OOT Hyrule Field Open Grotto"
+        ],
+        [
+          "OOT_is_child",
+          "OOT_can_cut_grass",
+          "OOT Kokiri Forest Storms Grotto"
+        ],
+        [
+          "OOT_is_child",
+          "OOT_can_cut_grass",
+          "OOT Zora River Open Grotto"
+        ],
+        [
+          "OOT_is_child",
+          "OOT Kokiri Forest"
+        ],
+        [
+          "OOT_is_child",
+          "OOT Gerudo Fortress Break Room Bottom",
+          "OOT_GERUDO_CARD"
+        ],
+        [
+          "OOT_is_child",
+          "OOT Zora River"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_CARPENTER_1",
+      "RequiredItems": [
+        "OOT_can_rescue_carpenter",
+        "OOT Gerudo Fortress Carpenter 1 Left"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -18388,24 +18827,542 @@
     {
       "Id": "OOT_EVENT_CARPENTERS_RESCUE",
       "RequiredItems": [
-        "OOT_has_weapon",
-        "OOT_SMALL_KEY_GF, 4",
-        "OOT Gerudo Fortress"
+        "OOT_EVENT_CARPENTER_1",
+        "OOT_EVENT_CARPENTER_2",
+        "OOT_EVENT_CARPENTER_3",
+        "OOT_EVENT_CARPENTER_4"
       ],
       "ConditionalItems": [
         [
-          "OOT_can_hookshot"
+          "OOT Gerudo Fortress Carpenter 4"
         ],
+        [
+          "OOT Gerudo Fortress Carpenter 3 Top"
+        ],
+        [
+          "OOT Gerudo Fortress Carpenter 2 Bottom"
+        ],
+        [
+          "OOT Gerudo Fortress Carpenter 1 Left"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Carpenter 1 Right => OOT Gerudo Fortress Exterior",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Carpenter 1 Right => OOT Gerudo Fortress Carpenter 1 Left",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Carpenter 2 Bottom => OOT Gerudo Fortress Exterior",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Carpenter 2 Bottom => OOT Gerudo Fortress Carpenter 2 Top",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_CARPENTER_2",
+      "RequiredItems": [
+        "OOT_can_rescue_carpenter",
+        "OOT Gerudo Fortress Carpenter 2 Bottom"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Carpenter 2 Top => OOT Gerudo Fortress Lower-Center Ledge",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Carpenter 2 Top => OOT Gerudo Fortress Carpenter 2 Bottom",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Carpenter 3 Bottom => OOT Gerudo Fortress Lower-Right Ledge",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Carpenter 3 Bottom => OOT Gerudo Fortress Carpenter 3 Top",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Carpenter 3 Top => OOT Gerudo Fortress Lower-Center Ledge",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Carpenter 3 Top => OOT Gerudo Fortress Carpenter 3 Bottom",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_CARPENTER_3",
+      "RequiredItems": [
+        "OOT_can_rescue_carpenter",
+        "OOT Gerudo Fortress Carpenter 3 Top"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Kitchen Tunnel End => OOT Gerudo Fortress Exterior",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Kitchen Tunnel End => OOT Gerudo Fortress Kitchen Tunnel Mid",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Kitchen Tunnel Mid => OOT Gerudo Fortress Lower-Right Ledge",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Kitchen Tunnel Mid => OOT Gerudo Fortress Kitchen Tunnel End",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Kitchen Tunnel Mid => OOT Gerudo Fortress Kitchen Bottom",
+      "RequiredItems": [],
+      "ConditionalItems": [
         [
           "OOT_can_use_bow"
-        ],
-        [
-          "OOT_has_hover_boots"
         ],
         [
           "OOT_GERUDO_CARD"
         ]
       ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Kitchen Bottom => OOT Gerudo Fortress Kitchen Tunnel Mid",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_GERUDO_CARD"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Kitchen Bottom => OOT Gerudo Fortress Kitchen Ledge Near Tunnel",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_GERUDO_CARD"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Kitchen Bottom => OOT Gerudo Fortress Kitchen Ledge Away from Tunnel",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_GERUDO_CARD"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Kitchen Ledge Near Tunnel => OOT Gerudo Fortress Lower-Center Ledge",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Kitchen Ledge Near Tunnel => OOT Gerudo Fortress Kitchen Bottom",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_GERUDO_CARD"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Kitchen Ledge Near Tunnel => OOT Gerudo Fortress Kitchen Ledge Away from Tunnel",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_can_hookshot"
+        ],
+        [
+          "OOT_has_hover_boots"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Kitchen Ledge Away from Tunnel => OOT Gerudo Fortress Upper-Center Ledge",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Kitchen Ledge Away from Tunnel => OOT Gerudo Fortress Kitchen Bottom",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_GERUDO_CARD"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Kitchen Ledge Away from Tunnel => OOT Gerudo Fortress Kitchen Ledge Near Tunnel",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_can_hookshot"
+        ],
+        [
+          "OOT_has_hover_boots"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Carpenter 4 => OOT Gerudo Fortress Center Ledge",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_CARPENTER_4",
+      "RequiredItems": [
+        "OOT_can_rescue_carpenter",
+        "OOT Gerudo Fortress Carpenter 4"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Break Room Bottom => OOT Gerudo Fortress Lower-Left Ledge",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Break Room Bottom => OOT Gerudo Fortress Break Room Top",
+      "RequiredItems": [
+        "OOT_can_hookshot"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_MAGIC",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT Shadow Temple Truth Spinner",
+          "option{ShadowMQ, true}"
+        ],
+        [
+          "OOT Fairy Fountain Farore",
+          "OOT_OCARINA",
+          "OOT_SONG_ZELDA"
+        ],
+        [
+          "OOT_OCARINA",
+          "OOT_SONG_ZELDA",
+          "OOT Fairy Fountain Magic"
+        ],
+        [
+          "OOT_OCARINA",
+          "OOT_SONG_ZELDA",
+          "OOT Fairy Fountain Defense"
+        ],
+        [
+          "OOT_OCARINA",
+          "OOT_SONG_ZELDA",
+          "OOT Fairy Fountain Din"
+        ],
+        [
+          "OOT_OCARINA",
+          "OOT_SONG_ZELDA",
+          "OOT Fairy Fountain Double Magic"
+        ],
+        [
+          "OOT_OCARINA",
+          "OOT_SONG_ZELDA",
+          "OOT Fairy Fountain Nayru"
+        ],
+        [
+          "OOT Dampe Grave"
+        ],
+        [
+          "OOT Zora River"
+        ],
+        [
+          "OOT Hyrule Field"
+        ],
+        [
+          "OOT Kokiri Forest"
+        ],
+        [
+          "OOT Hyrule Castle"
+        ],
+        [
+          "OOT Kakariko Granny Shop",
+          "OOT_is_adult",
+          "OOT_ODD_MUSHROOM",
+          "OOT_has_rupees",
+          "OOT_WALLET",
+          "OOT_has_bottle"
+        ],
+        [
+          "OOT_has_tunic_goron_strict",
+          "OOT Death Mountain Crater Top"
+        ],
+        [
+          "option{SpiritMQ, false}",
+          "OOT Spirit Temple"
+        ],
+        [
+          "OOT Spirit Temple",
+          "option{SpiritMQ, true}"
+        ],
+        [
+          "OOT_is_child",
+          "OOT Gerudo Valley"
+        ],
+        [
+          "OOT_GERUDO_CARD",
+          "OOT Gerudo Fortress Break Room Bottom"
+        ],
+        [
+          "OOT Gerudo Fortress Break Room Bottom",
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT Gerudo Fortress Break Room Bottom",
+          "OOT_can_hookshot"
+        ],
+        [
+          "TRICK_OOT_LENS",
+          "OOT Shadow Temple Pit",
+          "option{ShadowMQ, false}"
+        ],
+        [
+          "OOT Lake Hylia",
+          "OOT_can_cut_grass"
+        ],
+        [
+          "OOT Hyrule Field Grotto Near Market",
+          "OOT_can_cut_grass"
+        ],
+        [
+          "OOT Hyrule Field Southeast Grotto",
+          "OOT_can_cut_grass"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Hyrule Field Open Grotto"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Graveyard"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Zora River Front"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Kokiri Forest Storms Grotto"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Zora River Open Grotto"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Kakariko Generic Grotto"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Kakariko"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Lost Woods Deep"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Death Mountain Crater Generic Grotto"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Lost Woods Generic Grotto"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Lost Woods"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Death Mountain Storms Grotto"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Break Room Top => OOT Gerudo Fortress Above Prison",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Break Room Top => OOT Gerudo Fortress Break Room Bottom",
+      "RequiredItems": [
+        "OOT_can_hookshot"
+      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -19048,499 +20005,6 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT_EVENT_RUPEES",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "OOT Market"
-        ],
-        [
-          "OOT Hyrule Field"
-        ],
-        [
-          "OOT Zora River"
-        ],
-        [
-          "OOT Death Mountain Cow Grotto"
-        ],
-        [
-          "OOT Death Mountain"
-        ],
-        [
-          "OOT Dampe Grave"
-        ],
-        [
-          "OOT Sacred Meadow Entryway"
-        ],
-        [
-          "OOT Octorok Grotto"
-        ],
-        [
-          "OOT Lost Woods"
-        ],
-        [
-          "OOT Hyrule Castle"
-        ],
-        [
-          "OOT_is_child",
-          "OOT Lon Lon Ranch"
-        ],
-        [
-          "OOT Zora Domain"
-        ],
-        [
-          "OOT Market Pot House"
-        ],
-        [
-          "OOT Gerudo Valley"
-        ],
-        [
-          "OOT Kokiri Forest"
-        ],
-        [
-          "OOT Kakariko Generic Grotto",
-          "OOT_can_cut_grass"
-        ],
-        [
-          "OOT Kakariko",
-          "OOT_can_cut_grass"
-        ],
-        [
-          "OOT Lake Hylia",
-          "OOT_can_cut_grass"
-        ],
-        [
-          "OOT Lost Woods Deep",
-          "OOT_can_cut_grass"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Lost Woods Generic Grotto"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Zora River Open Grotto"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Death Mountain Crater Generic Grotto"
-        ],
-        [
-          "OOT_has_tunic_goron_strict",
-          "OOT Death Mountain Crater Top"
-        ],
-        [
-          "OOT Hyrule Castle Grotto",
-          "OOT_has_explosives_or_hammer"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Hyrule Field Grotto Near Market"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Hyrule Field Southeast Grotto"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Hyrule Field Open Grotto"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Zora River Front"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Kokiri Forest Storms Grotto"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Death Mountain Storms Grotto"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Graveyard"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_EVENT_SEEDS",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "OOT_has_sword_kokiri",
-          "OOT Hyrule Field Grotto Near Kak"
-        ],
-        [
-          "OOT_is_child",
-          "OOT Gerudo Valley"
-        ],
-        [
-          "OOT Hyrule Field Grotto Near Market",
-          "OOT_is_child",
-          "OOT_can_cut_grass"
-        ],
-        [
-          "OOT_is_child",
-          "OOT_can_cut_grass",
-          "OOT Death Mountain Crater Generic Grotto"
-        ],
-        [
-          "OOT_is_child",
-          "OOT Hyrule Field"
-        ],
-        [
-          "OOT_is_child",
-          "OOT Zora Fountain"
-        ],
-        [
-          "OOT_is_child",
-          "OOT_can_cut_grass",
-          "OOT Hyrule Field Southeast Grotto"
-        ],
-        [
-          "OOT_is_child",
-          "OOT_can_cut_grass",
-          "OOT Hyrule Field Open Grotto"
-        ],
-        [
-          "OOT_is_child",
-          "OOT_can_cut_grass",
-          "OOT Kokiri Forest Storms Grotto"
-        ],
-        [
-          "OOT_is_child",
-          "OOT_can_cut_grass",
-          "OOT Lake Hylia"
-        ],
-        [
-          "OOT_is_child",
-          "OOT Kokiri Forest"
-        ],
-        [
-          "OOT_is_child",
-          "OOT_can_cut_grass",
-          "OOT Zora River Open Grotto"
-        ],
-        [
-          "OOT_is_child",
-          "OOT Zora River"
-        ],
-        [
-          "OOT_is_child",
-          "OOT_can_cut_grass",
-          "OOT Zora River Front"
-        ],
-        [
-          "OOT_is_child",
-          "OOT_can_cut_grass",
-          "OOT Death Mountain Storms Grotto"
-        ],
-        [
-          "OOT_is_child",
-          "OOT Dampe Grave"
-        ],
-        [
-          "OOT_is_child",
-          "OOT_can_cut_grass",
-          "OOT Graveyard"
-        ],
-        [
-          "OOT_is_child",
-          "OOT_can_cut_grass",
-          "OOT Kakariko Generic Grotto"
-        ],
-        [
-          "OOT_is_child",
-          "OOT_can_cut_grass",
-          "OOT Kakariko"
-        ],
-        [
-          "OOT_is_child",
-          "OOT_can_cut_grass",
-          "OOT Lost Woods Deep"
-        ],
-        [
-          "OOT_is_child",
-          "OOT_can_cut_grass",
-          "OOT Lost Woods Generic Grotto"
-        ],
-        [
-          "OOT_is_child",
-          "OOT_can_cut_grass",
-          "OOT Lost Woods"
-        ],
-        [
-          "OOT_is_child",
-          "OOT_has_explosives",
-          "OOT Hyrule Castle Grotto"
-        ],
-        [
-          "OOT_is_child",
-          "OOT Hyrule Castle"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_EVENT_ARROWS",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "OOT Shadow Temple Truth Spinner",
-          "option{ShadowMQ, true}"
-        ],
-        [
-          "OOT Kokiri Forest Storms Grotto",
-          "OOT_is_adult"
-        ],
-        [
-          "OOT Kokiri Forest",
-          "OOT_is_adult"
-        ],
-        [
-          "OOT_is_adult",
-          "OOT Death Mountain Crater Generic Grotto"
-        ],
-        [
-          "OOT_has_tunic_goron_strict",
-          "OOT Death Mountain Crater Top"
-        ],
-        [
-          "OOT_is_adult",
-          "OOT Lake Hylia"
-        ],
-        [
-          "OOT_is_adult",
-          "OOT Zora River Open Grotto"
-        ],
-        [
-          "OOT_is_adult",
-          "OOT Zora River"
-        ],
-        [
-          "OOT_is_adult",
-          "OOT Zora River Front"
-        ],
-        [
-          "OOT_is_adult",
-          "OOT Death Mountain Storms Grotto"
-        ],
-        [
-          "OOT_is_adult",
-          "OOT Dampe Grave"
-        ],
-        [
-          "OOT_is_adult",
-          "OOT Graveyard"
-        ],
-        [
-          "OOT_is_adult",
-          "OOT Kakariko Generic Grotto"
-        ],
-        [
-          "OOT_is_adult",
-          "OOT Kakariko"
-        ],
-        [
-          "OOT_is_adult",
-          "OOT Lost Woods Deep"
-        ],
-        [
-          "OOT_is_adult",
-          "OOT Lost Woods Generic Grotto"
-        ],
-        [
-          "OOT_is_adult",
-          "OOT Lost Woods"
-        ],
-        [
-          "OOT_is_adult",
-          "OOT_has_explosives_or_hammer",
-          "OOT Hyrule Castle Grotto"
-        ],
-        [
-          "OOT_is_adult",
-          "OOT Hyrule Field Grotto Near Kak"
-        ],
-        [
-          "OOT_is_adult",
-          "OOT Hyrule Field Grotto Near Market"
-        ],
-        [
-          "OOT_is_adult",
-          "OOT Hyrule Field Southeast Grotto"
-        ],
-        [
-          "OOT_is_adult",
-          "OOT Hyrule Field Open Grotto"
-        ],
-        [
-          "OOT_is_adult",
-          "OOT Hyrule Field"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_EVENT_MAGIC",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "OOT Zora River"
-        ],
-        [
-          "OOT Hyrule Castle"
-        ],
-        [
-          "OOT Hyrule Field"
-        ],
-        [
-          "OOT Dampe Grave"
-        ],
-        [
-          "OOT Death Mountain Storms Grotto",
-          "OOT_can_cut_grass"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Kokiri Forest Storms Grotto"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Death Mountain Crater Generic Grotto"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Graveyard"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Lake Hylia"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Kakariko Generic Grotto"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Zora River Open Grotto"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Kakariko"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Lost Woods Deep"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Lost Woods Generic Grotto"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Lost Woods"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Zora River Front"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Hyrule Field Grotto Near Market"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Hyrule Field Southeast Grotto"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Hyrule Field Open Grotto"
-        ],
-        [
-          "option{SpiritMQ, false}",
-          "OOT Spirit Temple"
-        ],
-        [
-          "OOT Spirit Temple",
-          "option{SpiritMQ, true}"
-        ],
-        [
-          "TRICK_OOT_LENS",
-          "OOT Shadow Temple Pit",
-          "option{ShadowMQ, false}"
-        ],
-        [
-          "OOT Kokiri Forest"
-        ],
-        [
-          "OOT_has_tunic_goron_strict",
-          "OOT Death Mountain Crater Top"
-        ],
-        [
-          "OOT_SONG_ZELDA",
-          "OOT Fairy Fountain Nayru",
-          "OOT_OCARINA"
-        ],
-        [
-          "OOT_SONG_ZELDA",
-          "OOT_OCARINA",
-          "OOT Fairy Fountain Defense"
-        ],
-        [
-          "OOT_SONG_ZELDA",
-          "OOT_OCARINA",
-          "OOT Fairy Fountain Din"
-        ],
-        [
-          "OOT_SONG_ZELDA",
-          "OOT_OCARINA",
-          "OOT Fairy Fountain Magic"
-        ],
-        [
-          "OOT_SONG_ZELDA",
-          "OOT_OCARINA",
-          "OOT Fairy Fountain Farore"
-        ],
-        [
-          "OOT_SONG_ZELDA",
-          "OOT_OCARINA",
-          "OOT Fairy Fountain Double Magic"
-        ],
-        [
-          "OOT Shadow Temple Truth Spinner",
-          "option{ShadowMQ, true}"
-        ],
-        [
-          "OOT_ODD_MUSHROOM",
-          "OOT_has_rupees",
-          "OOT_WALLET",
-          "OOT_has_bottle",
-          "OOT Kakariko Granny Shop",
-          "OOT_is_adult"
-        ],
-        [
-          "OOT Gerudo Valley",
-          "OOT_is_child"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
       "Id": "OOT Kokiri Gossip Near Lost Woods Open",
       "RequiredItems": [
         "OOT Kokiri Forest"
@@ -19938,7 +20402,7 @@
     {
       "Id": "OOT_EVENT_BIG_POE",
       "RequiredItems": [
-        "OOT_EVENT_EPONA",
+        "OOT_can_ride_epona",
         "OOT_can_use_bow",
         "OOT_has_bottle",
         "OOT Hyrule Field"
@@ -20547,11 +21011,6 @@
     {
       "Id": "OOT_EVENT_EPONA",
       "RequiredItems": [
-        "OOT_is_adult",
-        "OOT_OCARINA",
-        "OOT_SONG_EPONA",
-        "OOT_has_rupees",
-        "OOT_is_day",
         "OOT Lon Lon Ranch"
       ],
       "ConditionalItems": [],
@@ -20563,7 +21022,7 @@
     {
       "Id": "OOT_EVENT_MALON_COW",
       "RequiredItems": [
-        "OOT_is_adult",
+        "OOT_can_ride_epona",
         "OOT_EVENT_EPONA",
         "OOT_is_day",
         "OOT Lon Lon Ranch"
@@ -21210,6 +21669,38 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Kakariko => OOT Kakariko Back",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_can_hookshot"
+        ],
+        [
+          "OOT_has_hover_boots"
+        ],
+        [
+          "OOT_is_day",
+          "OOT_is_child"
+        ],
+        [
+          "TRICK_OOT_MAN_ON_ROOF",
+          "OOT_is_adult"
+        ],
+        [
+          "TRICK_OOT_MAN_ON_ROOF",
+          "OOT_can_use_slingshot"
+        ],
+        [
+          "TRICK_OOT_MAN_ON_ROOF",
+          "OOT_has_bombchu"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Kakariko => OOT Kakariko Bazaar",
       "RequiredItems": [
         "OOT_is_adult",
@@ -21224,19 +21715,7 @@
     {
       "Id": "OOT Kakariko => OOT Kakariko Potion Shop",
       "RequiredItems": [
-        "OOT_is_adult",
         "OOT_is_day"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT Kakariko => OOT Kakariko Granny Shop",
-      "RequiredItems": [
-        "OOT_is_adult"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -21276,15 +21755,6 @@
       "RequiredItems": [
         "OOT_hidden_grotto_bomb"
       ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT Kakariko => OOT Kakariko Generic Grotto",
-      "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -21354,6 +21824,47 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Kakariko Back => OOT Kakariko",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Kakariko Back => OOT Kakariko Potion Shop Back",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT_is_day"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Kakariko Back => OOT Kakariko Granny Shop",
+      "RequiredItems": [
+        "OOT_is_adult"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Kakariko Back => OOT Kakariko Generic Grotto",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Kakariko Bazaar => OOT Kakariko",
       "RequiredItems": [
         "OOT_is_adult"
@@ -21376,7 +21887,38 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Kakariko Granny Shop => OOT Kakariko",
+      "Id": "OOT Kakariko Potion Shop => OOT Kakariko Potion Shop Back",
+      "RequiredItems": [
+        "OOT_is_adult"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Kakariko Potion Shop Back => OOT Kakariko Back",
+      "RequiredItems": [
+        "OOT_is_adult"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Kakariko Potion Shop Back => OOT Kakariko Potion Shop",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Kakariko Granny Shop => OOT Kakariko Back",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -21477,7 +22019,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Kakariko Generic Grotto => OOT Kakariko",
+      "Id": "OOT Kakariko Generic Grotto => OOT Kakariko Back",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -22951,8 +23493,7 @@
           "OOT_can_longshot"
         ],
         [
-          "OOT_is_adult",
-          "OOT_EVENT_EPONA"
+          "OOT_can_ride_epona"
         ],
         [
           "OOT_is_adult",
@@ -23012,8 +23553,7 @@
           "OOT_can_longshot"
         ],
         [
-          "OOT_is_adult",
-          "OOT_EVENT_EPONA"
+          "OOT_can_ride_epona"
         ],
         [
           "OOT_is_adult",
@@ -23076,7 +23616,34 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Gerudo Fortress Exterior => OOT Gerudo Fortress",
+      "Id": "OOT Gerudo Fortress Exterior => OOT Gerudo Fortress Carpenter 1 Left",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Exterior => OOT Gerudo Fortress Carpenter 1 Right",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Exterior => OOT Gerudo Fortress Kitchen Tunnel End",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Exterior => OOT Gerudo Fortress Carpenter 2 Bottom",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -23130,12 +23697,293 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Gerudo Fortress Exterior => OOT Gerudo Fortress Lower-Right Ledge",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_is_child"
+        ],
+        [
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_can_hookshot"
+        ],
+        [
+          "OOT_GERUDO_CARD"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT_EVENT_OPEN_FORTRESS_GATE",
       "RequiredItems": [
         "OOT_GERUDO_CARD",
         "OOT_is_adult",
         "OOT Gerudo Fortress Exterior"
       ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Lower-Right Ledge => OOT Gerudo Fortress Exterior",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Lower-Right Ledge => OOT Gerudo Fortress Lower-Center Ledge",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Lower-Right Ledge => OOT Gerudo Fortress Kitchen Tunnel Mid",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Lower-Right Ledge => OOT Gerudo Fortress Carpenter 3 Bottom",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Lower-Center Ledge => OOT Gerudo Fortress Exterior",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Lower-Center Ledge => OOT Gerudo Fortress Lower-Right Ledge",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Lower-Center Ledge => OOT Gerudo Fortress Carpenter 2 Top",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Lower-Center Ledge => OOT Gerudo Fortress Carpenter 3 Top",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Lower-Center Ledge => OOT Gerudo Fortress Kitchen Ledge Near Tunnel",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Lower-Center Ledge => OOT Gerudo Fortress Upper-Right Ledge",
+      "RequiredItems": [
+        "false"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Upper-Center Ledge => OOT Gerudo Fortress Kitchen Ledge Away from Tunnel",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Upper-Center Ledge => OOT Gerudo Fortress Lower-Center Ledge",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Upper-Center Ledge => OOT Gerudo Fortress Upper-Right Ledge",
+      "RequiredItems": [
+        "OOT_is_adult"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Upper-Center Ledge => OOT Gerudo Fortress Upper-Left Ledge",
+      "RequiredItems": [
+        "OOT_can_longshot"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Upper-Center Ledge => OOT Gerudo Fortress Center Ledge",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Upper-Right Ledge => OOT Gerudo Fortress Lower-Center Ledge",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Upper-Right Ledge => OOT Gerudo Fortress Lower-Right Ledge",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Upper-Right Ledge => OOT Gerudo Fortress Upper-Left Ledge",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_scarecrow_hookshot"
+        ],
+        [
+          "OOT_can_longshot"
+        ],
+        [
+          "OOT_has_hover_boots"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Upper-Right Ledge => OOT Gerudo Fortress Center Ledge",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Upper-Left Ledge => OOT Gerudo Fortress Lower-Left Ledge",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Upper-Left Ledge => OOT Gerudo Fortress Center Ledge",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Center Ledge => OOT Gerudo Fortress Carpenter 4",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Center Ledge => OOT Gerudo Fortress Lower-Center Ledge",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Lower-Left Ledge => OOT Gerudo Fortress Exterior",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Lower-Left Ledge => OOT Gerudo Fortress Break Room Bottom",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Above Prison => OOT Gerudo Fortress Exterior",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Gerudo Fortress Above Prison => OOT Gerudo Fortress Lower-Left Ledge",
+      "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -23163,7 +24011,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Gerudo Fortress Grotto => OOT Gerudo Fortress",
+      "Id": "OOT Gerudo Fortress Grotto => OOT Gerudo Fortress Exterior",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -26517,17 +27365,26 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM Grass Grotto"
+          "MM Swamp Front"
         ],
         [
-          "MM Termina Field",
-          "MM_can_kill_baba_both_sticks"
+          "MM Road to Southern Swamp Grotto"
+        ],
+        [
+          "MM Road to Southern Swamp"
+        ],
+        [
+          "MM Pillar Grotto"
         ],
         [
           "MM Woodfall Temple Main"
         ],
         [
-          "MM Beneath the Well Middle Section"
+          "MM Grass Grotto"
+        ],
+        [
+          "MM_can_kill_baba_both_sticks",
+          "MM Termina Field"
         ],
         [
           "MM Ikana Valley"
@@ -26552,6 +27409,9 @@
           "MM Zora Cape"
         ],
         [
+          "MM Beneath the Well Middle Section"
+        ],
+        [
           "MM Great Bay Coast"
         ],
         [
@@ -26559,6 +27419,9 @@
         ],
         [
           "MM Goron Shrine"
+        ],
+        [
+          "MM Goron Village"
         ],
         [
           "MM_can_kill_baba_sticks",
@@ -26578,18 +27441,6 @@
         ],
         [
           "MM Southern Swamp Grotto"
-        ],
-        [
-          "MM Swamp Front"
-        ],
-        [
-          "MM Road to Southern Swamp Grotto"
-        ],
-        [
-          "MM Road to Southern Swamp"
-        ],
-        [
-          "MM Pillar Grotto"
         ]
       ],
       "TimeNeeded": "None",
@@ -26623,6 +27474,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
+          "MM Beneath the Well Middle Section"
+        ],
+        [
+          "MM_MASK_GORON",
+          "MM Road to Ikana Front"
+        ],
+        [
           "MM_can_break_boulders",
           "MM Zora Cape"
         ],
@@ -26643,23 +27501,10 @@
           "MM Woodfall Temple Main"
         ],
         [
-          "MM_MASK_DEKU",
-          "MM Deku Palace Front"
+          "MM Road to Southern Swamp"
         ],
         [
-          "MM Deku Palace Front",
-          "MM_can_hookshot_short",
-          "MM_EVENT_CLEAN_SWAMP"
-        ],
-        [
-          "MM Deku Palace Front",
-          "MM_EVENT_CLEAN_SWAMP",
-          "MM_can_fight"
-        ],
-        [
-          "MM Deku Palace Front",
-          "MM_EVENT_CLEAN_SWAMP",
-          "MM_has_arrows"
+          "MM Pillar Grotto"
         ],
         [
           "MM Grass Grotto"
@@ -26674,6 +27519,9 @@
           "MM Path to Snowhead Grotto"
         ],
         [
+          "MM Goron Village"
+        ],
+        [
           "MM Twin Islands Ramp Grotto"
         ],
         [
@@ -26686,6 +27534,28 @@
           "MM Secret Shrine Main"
         ],
         [
+          "MM_MASK_DEKU",
+          "MM Deku Palace Front"
+        ],
+        [
+          "MM Deku Palace Front",
+          "MM_EVENT_CLEAN_SWAMP",
+          "MM_can_fight"
+        ],
+        [
+          "MM Deku Palace Front",
+          "MM_EVENT_CLEAN_SWAMP",
+          "MM_has_arrows"
+        ],
+        [
+          "MM Deku Palace Front",
+          "MM_EVENT_CLEAN_SWAMP",
+          "MM_can_hookshot_short"
+        ],
+        [
+          "MM Ikana Canyon"
+        ],
+        [
           "MM Woods of Mystery Grotto"
         ],
         [
@@ -26695,22 +27565,10 @@
           "MM Swamp Front"
         ],
         [
-          "MM Ikana Canyon"
-        ],
-        [
           "MM Road to Southern Swamp Grotto"
         ],
         [
-          "MM Road to Southern Swamp"
-        ],
-        [
-          "MM Pillar Grotto"
-        ],
-        [
           "MM Ikana Valley"
-        ],
-        [
-          "MM Beneath the Well Middle Section"
         ],
         [
           "MM Deku Palace Front",
@@ -26724,10 +27582,6 @@
         [
           "MM Ikana Graveyard",
           "MM_trick_keg_explosives"
-        ],
-        [
-          "MM_MASK_GORON",
-          "MM Road to Ikana Front"
         ]
       ],
       "TimeNeeded": "None",
@@ -27690,6 +28544,19 @@
       "IsTrick": false
     },
     {
+      "Id": "MM GLOBAL => MM SOARING",
+      "RequiredItems": [
+        "MM_OCARINA",
+        "MM_SONG_TIME",
+        "MM_SONG_SOARING"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM SOARING => MM Clock Town South",
       "RequiredItems": [
         "MM_EVENT_CLOCK_TOWN_OWL"
@@ -28257,50 +29124,44 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM Clock Town North"
+          "MM Southern Swamp Grotto"
         ],
         [
-          "MM Woodfall Temple Pits Room"
-        ],
-        [
-          "MM_has_weapon_range",
-          "MM Woodfall Temple Entrance"
-        ],
-        [
-          "MM_has_arrows",
-          "MM Swamp Spider House Main"
-        ],
-        [
-          "MM Milk Road Back"
+          "MM Swamp Front"
         ],
         [
           "MM Path to Snowhead Grotto"
         ],
         [
-          "MM Twin Islands Ramp Grotto"
-        ],
-        [
-          "MM Mountain Village Grotto"
-        ],
-        [
-          "MM_can_break_boulders",
-          "MM Mountain Village"
+          "MM Mountain Village",
+          "MM_second_day",
+          "MM_can_break_boulders"
         ],
         [
           "MM Mountain Village",
+          "MM_can_break_boulders",
+          "MM_final_day"
+        ],
+        [
+          "MM_can_break_boulders",
+          "MM Goron Village"
+        ],
+        [
+          "MM Mountain Village",
+          "MM_second_day",
           "MM_can_use_fire_arrows"
         ],
         [
-          "MM Deku Palace Grotto"
+          "MM Mountain Village",
+          "MM_final_day",
+          "MM_can_use_fire_arrows"
         ],
         [
-          "MM Woods of Mystery Grotto"
+          "MM Goron Village",
+          "MM_can_use_fire_arrows"
         ],
         [
-          "MM Southern Swamp Grotto"
-        ],
-        [
-          "MM Swamp Front"
+          "MM Snowhead Temple Bridge Front"
         ],
         [
           "MM Road to Southern Swamp Grotto"
@@ -28312,10 +29173,73 @@
           "MM Canyon Gossip Grotto"
         ],
         [
+          "MM Woodfall Temple Pits Room"
+        ],
+        [
+          "MM Clock Town North"
+        ],
+        [
+          "MM Mountain Village",
+          "MM_EVENT_BOSS_SNOWHEAD"
+        ],
+        [
+          "MM Twin Islands",
+          "MM_EVENT_BOSS_SNOWHEAD"
+        ],
+        [
+          "MM_has_weapon_range",
+          "MM Woodfall Temple Entrance"
+        ],
+        [
+          "MM Mountain Village",
+          "MM_can_break_boulders",
+          "MM_first_day",
+          "MM_can_use_light_arrows"
+        ],
+        [
+          "MM Goron Village",
+          "MM_can_use_light_arrows"
+        ],
+        [
+          "MM Mountain Village",
+          "MM_first_day",
+          "MM_can_use_fire_arrows",
+          "MM_can_use_light_arrows"
+        ],
+        [
+          "MM Twin Islands",
+          "MM_can_use_light_arrows"
+        ],
+        [
+          "MM_can_use_light_arrows",
+          "MM Mountain Village Path Upper"
+        ],
+        [
+          "MM_can_use_light_arrows",
+          "MM Mountain Village Path Lower"
+        ],
+        [
+          "MM_EVENT_BOSS_SNOWHEAD",
+          "MM_can_use_light_arrows",
+          "MM Snowhead Near Great Fairy Fountain"
+        ],
+        [
+          "MM_can_use_light_arrows",
+          "MM Snowhead Near Great Fairy Fountain",
+          "MM_EVENT_OPEN_SNOWHEAD_TEMPLE"
+        ],
+        [
+          "MM_has_arrows",
+          "MM Swamp Spider House Main"
+        ],
+        [
           "MM Ocean Gossip Grotto"
         ],
         [
           "MM Termina Field Cow Grotto"
+        ],
+        [
+          "MM Snowhead Temple Main"
         ],
         [
           "MM Pillar Grotto"
@@ -28327,7 +29251,22 @@
           "MM Termina Field"
         ],
         [
+          "MM Twin Islands Ramp Grotto"
+        ],
+        [
           "MM Astral Observatory"
+        ],
+        [
+          "MM Milk Road Back"
+        ],
+        [
+          "MM Mountain Village Grotto"
+        ],
+        [
+          "MM Deku Palace Grotto"
+        ],
+        [
+          "MM Woods of Mystery Grotto"
         ]
       ],
       "TimeNeeded": "None",
@@ -28794,6 +29733,98 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
+          "MM Path to Snowhead Back",
+          "MM_can_break_boulders"
+        ],
+        [
+          "MM_can_break_boulders",
+          "MM_EVENT_OPEN_SNOWHEAD_TEMPLE",
+          "MM Snowhead Near Great Fairy Fountain"
+        ],
+        [
+          "MM Snowhead Near Great Fairy Fountain",
+          "MM_EVENT_BOSS_SNOWHEAD"
+        ],
+        [
+          "MM_EVENT_BOSS_SNOWHEAD",
+          "MM Mountain Village Path Lower"
+        ],
+        [
+          "MM Woods of Mystery Grotto"
+        ],
+        [
+          "MM Southern Swamp Grotto"
+        ],
+        [
+          "MM Swamp Front"
+        ],
+        [
+          "MM Road to Southern Swamp Grotto"
+        ],
+        [
+          "MM Snowhead Temple After Boss"
+        ],
+        [
+          "MM Road to Southern Swamp"
+        ],
+        [
+          "MM Canyon Gossip Grotto"
+        ],
+        [
+          "MM Ocean Gossip Grotto"
+        ],
+        [
+          "MM Goron Shrine"
+        ],
+        [
+          "MM Snowhead Temple Main"
+        ],
+        [
+          "MM Termina Field Cow Grotto"
+        ],
+        [
+          "MM Pillar Grotto"
+        ],
+        [
+          "MM Woodfall Temple Entrance"
+        ],
+        [
+          "MM Grass Grotto"
+        ],
+        [
+          "MM Near Goron Graveyard"
+        ],
+        [
+          "MM Termina Field"
+        ],
+        [
+          "MM Astral Observatory"
+        ],
+        [
+          "MM Lone Peak Shrine"
+        ],
+        [
+          "MM Clock Town Laundry Pool"
+        ],
+        [
+          "MM Goron Village"
+        ],
+        [
+          "MM Near Ramp Grotto"
+        ],
+        [
+          "MM Snowhead Temple Boss"
+        ],
+        [
+          "MM Twin Islands Ramp Grotto"
+        ],
+        [
+          "MM Snowhead Entrance"
+        ],
+        [
+          "MM Milk Road Front"
+        ],
+        [
           "MM Twin Islands"
         ],
         [
@@ -28809,78 +29840,23 @@
           "MM Woodfall"
         ],
         [
-          "MM Deku Palace Grotto"
+          "MM Swamp Spider House Main"
         ],
         [
-          "MM Woodfall Temple Entrance"
+          "MM Path to Snowhead Grotto"
         ],
         [
           "MM_MASK_DEKU",
           "MM Deku Palace Upper"
         ],
         [
-          "MM Woods of Mystery Grotto"
+          "MM Deku Palace Grotto"
         ],
         [
-          "MM Southern Swamp Grotto"
+          "MM Goron Race"
         ],
         [
-          "MM Swamp Front"
-        ],
-        [
-          "MM Swamp Spider House Main"
-        ],
-        [
-          "MM Road to Southern Swamp Grotto"
-        ],
-        [
-          "MM Road to Southern Swamp"
-        ],
-        [
-          "MM Canyon Gossip Grotto"
-        ],
-        [
-          "MM Ocean Gossip Grotto"
-        ],
-        [
-          "MM Milk Road Front"
-        ],
-        [
-          "MM Termina Field Cow Grotto"
-        ],
-        [
-          "MM Pillar Grotto"
-        ],
-        [
-          "MM Grass Grotto"
-        ],
-        [
-          "MM Snowhead Entrance"
-        ],
-        [
-          "MM Termina Field"
-        ],
-        [
-          "MM Astral Observatory"
-        ],
-        [
-          "MM Path to Snowhead Grotto"
-        ],
-        [
-          "MM Clock Town Laundry Pool"
-        ],
-        [
-          "MM_can_break_boulders",
-          "MM Path to Snowhead Back"
-        ],
-        [
-          "MM Goron Shrine"
-        ],
-        [
-          "MM Near Goron Graveyard"
-        ],
-        [
-          "MM Twin Islands Ramp Grotto"
+          "MM Snowhead Temple Bridge Front"
         ]
       ],
       "TimeNeeded": "None",
@@ -29294,6 +30270,9 @@
         ],
         [
           "MM Path to Snowhead Grotto"
+        ],
+        [
+          "MM Lone Peak Shrine"
         ],
         [
           "MM Twin Islands Ramp Grotto"
@@ -29825,10 +30804,19 @@
           "MM Woodfall Temple Main"
         ],
         [
+          "MM Snowhead Temple Bridge Front"
+        ],
+        [
           "MM Snowhead Entrance"
         ],
         [
           "MM Path to Snowhead Grotto"
+        ],
+        [
+          "MM Lone Peak Shrine"
+        ],
+        [
+          "MM Goron Village"
         ],
         [
           "MM Twin Islands Ramp Grotto"
@@ -29886,6 +30874,15 @@
           "MM Woodfall Temple Main"
         ],
         [
+          "MM Snowhead Temple After Boss"
+        ],
+        [
+          "MM Snowhead Temple Boss"
+        ],
+        [
+          "MM Snowhead Temple Main"
+        ],
+        [
           "MM Milk Road Front"
         ],
         [
@@ -29893,6 +30890,13 @@
         ],
         [
           "MM Path to Snowhead Grotto"
+        ],
+        [
+          "MM_EVENT_BOSS_SNOWHEAD",
+          "MM Near Goron Graveyard"
+        ],
+        [
+          "MM Goron Village"
         ],
         [
           "MM Twin Islands Ramp Grotto"
@@ -32150,8 +33154,30 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Snowhead => MM Snowhead Near Great Fairy Fountain",
+      "RequiredItems": [
+        "MM_EVENT_BOSS_SNOWHEAD"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Snowhead Near Great Fairy Fountain => MM Snowhead Entrance",
       "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Snowhead Near Great Fairy Fountain => MM Snowhead",
+      "RequiredItems": [
+        "MM_EVENT_BOSS_SNOWHEAD"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -37614,6 +38640,19 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT_can_ride_epona",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT_OCARINA",
+        "OOT_SONG_EPONA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT_has_blue_fire",
       "RequiredItems": [
         "OOT_has_bottle"
@@ -37774,6 +38813,29 @@
         ],
         [
           "OOT_Has_Renewable_DekuShield"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_can_rescue_carpenter",
+      "RequiredItems": [
+        "OOT_SMALL_KEY_GF, 4"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_can_boomerang",
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_has_nuts",
+          "OOT_can_use_sticks"
         ]
       ],
       "TimeNeeded": "None",

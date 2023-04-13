@@ -597,7 +597,9 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             AddSharedItemOptions("sharedBows", "Shared Bows", new string[] { "BOW" }, 1, new string[] { "ARROWS_5", "ARROWS_10", "ARROWS_30", "ARROWS_40", });
             AddSharedItemOptions("sharedBombBags", "Shared Bomb Bags", new string[] { "BOMB_BAG" }, 1, new string[] { "BOMBS_5", "BOMBS_10", "BOMBS_20", "BOMBS_30", "BOMB" });
             AddSharedItemOptions("sharedMagic", "Shared Magic", new string[] { "MAGIC_UPGRADE" }, 1);
-            AddSharedItemOptions("sharedMagicArrows", "Shared Magic Arrows", new string[] { "ARROW_FIRE", "ARROW_ICE", "ARROW_LIGHT" }, 1);
+            AddSharedItemOptions("sharedMagicArrowFire", "Shared Fire Arrow", new string[] { "ARROW_FIRE" }, 1);
+            AddSharedItemOptions("sharedMagicArrowIce", "Shared Ice Arrow", new string[] { "ARROW_ICE"}, 1);
+            AddSharedItemOptions("sharedMagicArrowLight", "Shared Light Arrow", new string[] { "ARROW_LIGHT" }, 1);
             AddSharedItemOptions("sharedSongs", "Shared Songs", new string[] { "SONG_TIME", "SONG_EPONA", "SONG_STORMS", "SONG_SUN" }, 1);
             AddSharedItemOptions("sharedHookshot", "Shared Hookshots", new string[] { "HOOKSHOT" }, 2);
             AddSharedItemOptions("sharedLens", "Shared Lens of Truth", new string[] { "LENS" }, 1);
