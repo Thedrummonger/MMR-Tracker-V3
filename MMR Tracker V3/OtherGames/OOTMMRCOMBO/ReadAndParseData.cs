@@ -301,26 +301,6 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
         private static void WorldEventRequirementOptions(LogicDictionaryData.LogicDictionary dictionaryFile)
         {
-            dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem
-            {
-                Id = $"MM_HAS_MOON_REQUIREMENTS",
-                RequiredItems = new List<string> { "moon_req, moon_count" }
-            });
-            dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem
-            {
-                Id = $"OOT_HAS_BRIDGE_REQUIREMENTS",
-                RequiredItems = new List<string> { "bridge_req, bridge_count" }
-            });
-            dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem
-            {
-                Id = $"OOT_HAS_LACS_REQUIREMENTS",
-                RequiredItems = new List<string> { "lacs_req, lacs_count" }
-            });
-            dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem
-            {
-                Id = $"OOT_HAS_GANON_BK_REQUIREMENTS",
-                RequiredItems = new List<string> { "ganon_bk_req, ganon_bk_count" }
-            });
 
             Dictionary<string, string[]> PossibleReqs = new()
             {
@@ -340,106 +320,46 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 { "Masks (OoT)|masksOot", new string[] { "OOT_MASK_SKULL", "OOT_MASK_SPOOKY", "OOT_MASK_KEATON", "OOT_MASK_BUNNY", "OOT_MASK_TRUTH", "OOT_MASK_GERUDO", "OOT_MASK_GORON", "OOT_MASK_ZORA", "SHARED_MASK_KEATON", "SHARED_MASK_BUNNY", "SHARED_MASK_TRUTH", "SHARED_MASK_GORON", "SHARED_MASK_ZORA" } }
             };
 
-            foreach (var i in PossibleReqs)
+            void AddCondition(string ID, string Game, string Category, string DefaultValue = null, int DefaultCount = 0)
             {
-                var namedata = i.Key.Split('|');
+                dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem
+                {
+                    Id = $"{Game.ToUpper()}_HAS_{ID.ToUpper()}_REQUIREMENTS",
+                    RequiredItems = new List<string> { $"{ID.ToLower()}_req, {ID.ToLower()}_count" }
+                });
+                foreach (var i in PossibleReqs)
+                {
+                    var namedata = i.Key.Split('|');
 
-                OptionData.TrackerOption MoonRequirement = new OptionData.TrackerOption();
-                MoonRequirement.ID = $"moon_{namedata[1]}";
-                MoonRequirement.DisplayName = namedata[0];
-                MoonRequirement.SubCategory = "Moon Access Conditions";
-                MoonRequirement.CurrentValue = (namedata[0] == "Boss Remains").ToString().ToLower();
-                MoonRequirement.CreateSimpleValues(new string[] { "true", "false" });
-                MoonRequirement.Values["true"].VariableEdit.Add("moon_req", new OptionData.VariableEditData { action = MiscData.MathOP.add, EditValue = i.Value });
-                dictionaryFile.Options.Add(MoonRequirement.ID, MoonRequirement);
+                    OptionData.TrackerOption Requirement = new OptionData.TrackerOption();
+                    Requirement.ID = $"{ID.ToLower()}_{namedata[1]}";
+                    Requirement.DisplayName = namedata[0];
+                    Requirement.SubCategory = Category;
+                    Requirement.CurrentValue = DefaultValue is null ? "false" : (namedata[0] == DefaultValue).ToString().ToLower();
+                    Requirement.CreateSimpleValues(new string[] { "true", "false" });
+                    Requirement.Values["true"].VariableEdit.Add($"{ID.ToLower()}_req", new OptionData.VariableEditData { action = MiscData.MathOP.add, EditValue = i.Value });
+                    dictionaryFile.Options.Add(Requirement.ID, Requirement);
+                }
+                OptionData.TrackerVar ReqVar = new OptionData.TrackerVar();
+                ReqVar.Static = true;
+                ReqVar.Name = $"{ID.ToLower()}_req";
+                ReqVar.ID = $"{ID.ToLower()}_req";
+                ReqVar.Value = new List<string>();
+                dictionaryFile.Variables.Add(ReqVar.ID, ReqVar);
 
-                OptionData.TrackerOption BridgeRequirement = new OptionData.TrackerOption();
-                BridgeRequirement.ID = $"bridge_{namedata[1]}";
-                BridgeRequirement.DisplayName = namedata[0];
-                BridgeRequirement.SubCategory = "Rainbow Bridge Conditions";
-                BridgeRequirement.CurrentValue = (namedata[0] == "Medallions").ToString().ToLower();
-                BridgeRequirement.CreateSimpleValues(new string[] { "true", "false" });
-                BridgeRequirement.Values["true"].VariableEdit.Add("bridge_req", new OptionData.VariableEditData { action = MiscData.MathOP.add, EditValue = i.Value });
-                dictionaryFile.Options.Add(BridgeRequirement.ID, BridgeRequirement);
-
-                OptionData.TrackerOption LACSRequirement = new OptionData.TrackerOption();
-                LACSRequirement.ID = $"lacs_{namedata[1]}";
-                LACSRequirement.DisplayName = namedata[0];
-                LACSRequirement.SubCategory = "Light Arrow Cutscene Conditions";
-                LACSRequirement.CurrentValue = "false";
-                LACSRequirement.CreateSimpleValues(new string[] { "true", "false" });
-                LACSRequirement.Values["true"].VariableEdit.Add("lacs_req", new OptionData.VariableEditData { action = MiscData.MathOP.add, EditValue = i.Value });
-                dictionaryFile.Options.Add(LACSRequirement.ID, LACSRequirement);
-
-                OptionData.TrackerOption GanonBKRequirement = new OptionData.TrackerOption();
-                GanonBKRequirement.ID = $"ganon_bk_{namedata[1]}";
-                GanonBKRequirement.DisplayName = namedata[0];
-                GanonBKRequirement.SubCategory = "Ganon Boss Key Conditions";
-                GanonBKRequirement.CurrentValue = "false";
-                GanonBKRequirement.CreateSimpleValues(new string[] { "true", "false" });
-                GanonBKRequirement.Values["true"].VariableEdit.Add("ganon_bk_req", new OptionData.VariableEditData { action = MiscData.MathOP.add, EditValue = i.Value });
-                dictionaryFile.Options.Add(GanonBKRequirement.ID, GanonBKRequirement);
+                OptionData.TrackerVar req_count = new OptionData.TrackerVar();
+                req_count.Static = false;
+                req_count.SubCategory = Category;
+                req_count.Name = "Items Required";
+                req_count.ID = $"{ID.ToLower()}_count";
+                req_count.Value = DefaultCount;
+                dictionaryFile.Variables.Add(req_count.ID, req_count);
             }
 
-            OptionData.TrackerVar bridge_req = new OptionData.TrackerVar();
-            bridge_req.Static = true;
-            bridge_req.Name = "bridge_req";
-            bridge_req.ID = "bridge_req";
-            bridge_req.Value = new List<string>();
-            dictionaryFile.Variables.Add(bridge_req.ID, bridge_req);
-
-            OptionData.TrackerVar bridge_req_count = new OptionData.TrackerVar();
-            bridge_req_count.Static = false;
-            bridge_req_count.SubCategory = "Rainbow Bridge Conditions";
-            bridge_req_count.Name = "Items Required";
-            bridge_req_count.ID = "bridge_count";
-            bridge_req_count.Value = 6;
-            dictionaryFile.Variables.Add(bridge_req_count.ID, bridge_req_count);
-
-            OptionData.TrackerVar moon_req = new OptionData.TrackerVar();
-            moon_req.Static = true;
-            moon_req.Name = "moon_req";
-            moon_req.ID = "moon_req";
-            moon_req.Value = new List<string>();
-            dictionaryFile.Variables.Add(moon_req.ID, moon_req);
-
-            OptionData.TrackerVar moon_req_count = new OptionData.TrackerVar();
-            moon_req_count.Static = false;
-            moon_req_count.SubCategory = "Moon Access Conditions";
-            moon_req_count.Name = "Items Required";
-            moon_req_count.ID = "moon_count";
-            moon_req_count.Value = 4;
-            dictionaryFile.Variables.Add(moon_req_count.ID, moon_req_count);
-
-            OptionData.TrackerVar lacs_req = new OptionData.TrackerVar();
-            lacs_req.Static = true;
-            lacs_req.Name = "lacs_req";
-            lacs_req.ID = "lacs_req";
-            lacs_req.Value = new List<string>();
-            dictionaryFile.Variables.Add(lacs_req.ID, lacs_req);
-
-            OptionData.TrackerVar lacs_count = new OptionData.TrackerVar();
-            lacs_count.Static = false;
-            lacs_count.SubCategory = "Light Arrow Cutscene Conditions";
-            lacs_count.Name = "Items Required";
-            lacs_count.ID = "lacs_count";
-            lacs_count.Value = 0;
-            dictionaryFile.Variables.Add(lacs_count.ID, lacs_count);
-
-            OptionData.TrackerVar ganon_bk_req = new OptionData.TrackerVar();
-            ganon_bk_req.Static = true;
-            ganon_bk_req.Name = "ganon_bk_req";
-            ganon_bk_req.ID = "ganon_bk_req";
-            ganon_bk_req.Value = new List<string>();
-            dictionaryFile.Variables.Add(ganon_bk_req.ID, ganon_bk_req);
-
-            OptionData.TrackerVar ganon_bk_count = new OptionData.TrackerVar();
-            ganon_bk_count.Static = false;
-            ganon_bk_count.SubCategory = "Ganon Boss Key Conditions";
-            ganon_bk_count.Name = "Items Required";
-            ganon_bk_count.ID = "ganon_bk_count";
-            ganon_bk_count.Value = 0;
-            dictionaryFile.Variables.Add(ganon_bk_count.ID, ganon_bk_count);
+            AddCondition("moon", "mm", "Moon Access Conditions", "Boss Remains", 4);
+            AddCondition("bridge", "oot", "Rainbow Bridge Conditions", "Medallions", 6);
+            AddCondition("lacs", "oot", "Light Arrow Cutscene Conditions");
+            AddCondition("ganon_bk", "oot", "Ganon Boss Key Conditions");
 
         }
 

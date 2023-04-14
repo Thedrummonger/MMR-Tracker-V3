@@ -60,24 +60,16 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
         private static void ToggleSpecialConditions(LogicObjects.TrackerInstance instance, List<string> AccessConditions)
         {
-
-            bool atBridge = false;
-            bool atMoon = false;
-            bool atLACS = false;
-            bool atGBK = false;
+            string Section = "";
             foreach (var i in AccessConditions)
             {
-                if (i == "BRIDGE:") { atBridge = true; atMoon = false; atLACS = false; atGBK = false; continue; }
-                if (i == "MOON:") { atBridge = false; atMoon = true; atLACS = false; atGBK = false; continue; }
-                if (i == "LACS:") { atBridge = false; atMoon = false; atLACS = true; atGBK = false; continue; }
-                if (i == "GANON_BK:") { atBridge = false; atMoon = false; atLACS = false; atGBK = true; continue; }
+                if (i == "BRIDGE:") { Section = "bridge"; continue; }
+                if (i == "MOON:") { Section = "moon"; continue; }
+                if (i == "LACS:") { Section = "lacs"; continue; }
+                if (i == "GANON_BK:") { Section = "ganon_bk"; continue; }
                 if (string.IsNullOrWhiteSpace(i)) { return; }
                 var Data = i.Split(':').Select(x => x.Trim()).ToArray();
-                string ID = "";
-                if (atBridge) { ID = $"bridge_{Data[0]}"; }
-                else if (atMoon) { ID = $"moon_{Data[0]}"; }
-                else if (atLACS) { ID = $"lacs_{Data[0]}"; }
-                else if (atGBK) { ID = $"ganon_bk_{Data[0]}"; }
+                string ID = $"{Section}_{Data[0]}";
                 if (instance.UserOptions.ContainsKey(ID)) { instance.UserOptions[ID].CurrentValue = Data[1]; }
                 else if (instance.Variables.ContainsKey(ID))
                 {
