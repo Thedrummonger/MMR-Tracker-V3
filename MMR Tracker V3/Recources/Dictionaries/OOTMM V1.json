@@ -36085,6 +36085,44 @@
         }
       }
     },
+    "goal": {
+      "DisplayName": "Goal",
+      "CurrentValue": "both",
+      "Values": {
+        "any": {
+          "Name": "Any Final Boss",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        },
+        "ganon": {
+          "Name": "Ganon",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        },
+        "majora": {
+          "Name": "Majora",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        },
+        "both": {
+          "Name": "Ganon & Majora",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
     "eggShuffle": {
       "DisplayName": "Egg Content Shuffle",
       "CurrentValue": "false",
@@ -36160,6 +36198,37 @@
         }
       }
     },
+    "zoraKing": {
+      "DisplayName": "Zora King",
+      "CurrentValue": "vanilla",
+      "SubCategory": "Events",
+      "Values": {
+        "vanilla": {
+          "Name": "Vanilla",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        },
+        "adult": {
+          "Name": "Open (Adult Only)",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        },
+        "open": {
+          "Name": "Open",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
     "skipZelda": {
       "DisplayName": "Skip Child Zelda",
       "CurrentValue": "false",
@@ -36173,6 +36242,29 @@
           "VariableEdit": {}
         },
         "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "lacs": {
+      "DisplayName": "Light Arrow Cutscene",
+      "CurrentValue": "vanilla",
+      "SubCategory": "Events",
+      "Values": {
+        "vanilla": {
+          "Name": "Vanilla",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        },
+        "custom": {
+          "Name": "Custom",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -36269,6 +36361,14 @@
         },
         "anywhere": {
           "Name": "Anywhere",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        },
+        "custom": {
+          "Name": "Custom",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -37066,8 +37166,96 @@
         }
       }
     },
-    "sharedSongs": {
-      "DisplayName": "Shared Songs",
+    "sharedSongEpona": {
+      "DisplayName": "Shared Epona's Song",
+      "CurrentValue": "false",
+      "SubCategory": "Shared Items",
+      "Values": {
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "SHARED_SONG_EPONA": {
+              "action": "set",
+              "amount": 0
+            }
+          },
+          "VariableEdit": {}
+        },
+        "true": {
+          "LogicReplacements": [
+            {
+              "LocationWhitelist": [],
+              "LocationBlacklist": [],
+              "ReplacementList": {
+                "OOT_SONG_EPONA": "SHARED_SONG_EPONA",
+                "MM_SONG_EPONA": "SHARED_SONG_EPONA"
+              }
+            }
+          ],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "OOT_SONG_EPONA": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_SONG_EPONA": {
+              "action": "set",
+              "amount": 0
+            }
+          },
+          "VariableEdit": {}
+        }
+      }
+    },
+    "sharedSongStorms": {
+      "DisplayName": "Shared Song of Storms",
+      "CurrentValue": "false",
+      "SubCategory": "Shared Items",
+      "Values": {
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "SHARED_SONG_STORMS": {
+              "action": "set",
+              "amount": 0
+            }
+          },
+          "VariableEdit": {}
+        },
+        "true": {
+          "LogicReplacements": [
+            {
+              "LocationWhitelist": [],
+              "LocationBlacklist": [],
+              "ReplacementList": {
+                "OOT_SONG_STORMS": "SHARED_SONG_STORMS",
+                "MM_SONG_STORMS": "SHARED_SONG_STORMS"
+              }
+            }
+          ],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "OOT_SONG_STORMS": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_SONG_STORMS": {
+              "action": "set",
+              "amount": 0
+            }
+          },
+          "VariableEdit": {}
+        }
+      }
+    },
+    "sharedSongTime": {
+      "DisplayName": "Shared Song of Time",
       "CurrentValue": "false",
       "SubCategory": "Shared Items",
       "Values": {
@@ -37077,18 +37265,6 @@
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {
             "SHARED_SONG_TIME": {
-              "action": "set",
-              "amount": 0
-            },
-            "SHARED_SONG_EPONA": {
-              "action": "set",
-              "amount": 0
-            },
-            "SHARED_SONG_STORMS": {
-              "action": "set",
-              "amount": 0
-            },
-            "SHARED_SONG_SUN": {
               "action": "set",
               "amount": 0
             }
@@ -37102,13 +37278,7 @@
               "LocationBlacklist": [],
               "ReplacementList": {
                 "OOT_SONG_TIME": "SHARED_SONG_TIME",
-                "MM_SONG_TIME": "SHARED_SONG_TIME",
-                "OOT_SONG_EPONA": "SHARED_SONG_EPONA",
-                "MM_SONG_EPONA": "SHARED_SONG_EPONA",
-                "OOT_SONG_STORMS": "SHARED_SONG_STORMS",
-                "MM_SONG_STORMS": "SHARED_SONG_STORMS",
-                "OOT_SONG_SUN": "SHARED_SONG_SUN",
-                "MM_SONG_SUN": "SHARED_SONG_SUN"
+                "MM_SONG_TIME": "SHARED_SONG_TIME"
               }
             }
           ],
@@ -37122,23 +37292,43 @@
             "MM_SONG_TIME": {
               "action": "set",
               "amount": 0
-            },
-            "OOT_SONG_EPONA": {
+            }
+          },
+          "VariableEdit": {}
+        }
+      }
+    },
+    "sharedSongSun": {
+      "DisplayName": "Shared Sun's Song",
+      "CurrentValue": "false",
+      "SubCategory": "Shared Items",
+      "Values": {
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "SHARED_SONG_SUN": {
               "action": "set",
               "amount": 0
-            },
-            "MM_SONG_EPONA": {
-              "action": "set",
-              "amount": 0
-            },
-            "OOT_SONG_STORMS": {
-              "action": "set",
-              "amount": 0
-            },
-            "MM_SONG_STORMS": {
-              "action": "set",
-              "amount": 0
-            },
+            }
+          },
+          "VariableEdit": {}
+        },
+        "true": {
+          "LogicReplacements": [
+            {
+              "LocationWhitelist": [],
+              "LocationBlacklist": [],
+              "ReplacementList": {
+                "OOT_SONG_SUN": "SHARED_SONG_SUN",
+                "MM_SONG_SUN": "SHARED_SONG_SUN"
+              }
+            }
+          ],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
             "OOT_SONG_SUN": {
               "action": "set",
               "amount": 0
@@ -37942,6 +38132,66 @@
         }
       }
     },
+    "lacs_stones": {
+      "DisplayName": "Spiritual Stones",
+      "CurrentValue": "false",
+      "SubCategory": "Light Arrow Cutscene Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "lacs_req": {
+              "action": "add",
+              "EditValue": [
+                "OOT_STONE_EMERALD",
+                "OOT_STONE_RUBY",
+                "OOT_STONE_SAPPHIRE"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "ganon_bk_stones": {
+      "DisplayName": "Spiritual Stones",
+      "CurrentValue": "false",
+      "SubCategory": "Ganon Boss Key Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "ganon_bk_req": {
+              "action": "add",
+              "EditValue": [
+                "OOT_STONE_EMERALD",
+                "OOT_STONE_RUBY",
+                "OOT_STONE_SAPPHIRE"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
     "moon_medallions": {
       "DisplayName": "Medallions",
       "CurrentValue": "false",
@@ -37987,6 +38237,72 @@
           "ItemMaxAmountEdit": {},
           "VariableEdit": {
             "bridge_req": {
+              "action": "add",
+              "EditValue": [
+                "OOT_MEDALLION_LIGHT",
+                "OOT_MEDALLION_FOREST",
+                "OOT_MEDALLION_FIRE",
+                "OOT_MEDALLION_WATER",
+                "OOT_MEDALLION_SPIRIT",
+                "OOT_MEDALLION_SHADOW"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "lacs_medallions": {
+      "DisplayName": "Medallions",
+      "CurrentValue": "false",
+      "SubCategory": "Light Arrow Cutscene Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "lacs_req": {
+              "action": "add",
+              "EditValue": [
+                "OOT_MEDALLION_LIGHT",
+                "OOT_MEDALLION_FOREST",
+                "OOT_MEDALLION_FIRE",
+                "OOT_MEDALLION_WATER",
+                "OOT_MEDALLION_SPIRIT",
+                "OOT_MEDALLION_SHADOW"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "ganon_bk_medallions": {
+      "DisplayName": "Medallions",
+      "CurrentValue": "false",
+      "SubCategory": "Ganon Boss Key Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "ganon_bk_req": {
               "action": "add",
               "EditValue": [
                 "OOT_MEDALLION_LIGHT",
@@ -38070,6 +38386,68 @@
         }
       }
     },
+    "lacs_remains": {
+      "DisplayName": "Boss Remains",
+      "CurrentValue": "false",
+      "SubCategory": "Light Arrow Cutscene Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "lacs_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_REMAINS_ODOLWA",
+                "MM_REMAINS_GOHT",
+                "MM_REMAINS_GYORG",
+                "MM_REMAINS_TWINMOLD"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "ganon_bk_remains": {
+      "DisplayName": "Boss Remains",
+      "CurrentValue": "false",
+      "SubCategory": "Ganon Boss Key Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "ganon_bk_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_REMAINS_ODOLWA",
+                "MM_REMAINS_GOHT",
+                "MM_REMAINS_GYORG",
+                "MM_REMAINS_TWINMOLD"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
     "moon_skullsGold": {
       "DisplayName": "Gold Skulltulas Tokens",
       "CurrentValue": "false",
@@ -38110,6 +38488,62 @@
           "ItemMaxAmountEdit": {},
           "VariableEdit": {
             "bridge_req": {
+              "action": "add",
+              "EditValue": [
+                "OOT_GS_TOKEN"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "lacs_skullsGold": {
+      "DisplayName": "Gold Skulltulas Tokens",
+      "CurrentValue": "false",
+      "SubCategory": "Light Arrow Cutscene Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "lacs_req": {
+              "action": "add",
+              "EditValue": [
+                "OOT_GS_TOKEN"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "ganon_bk_skullsGold": {
+      "DisplayName": "Gold Skulltulas Tokens",
+      "CurrentValue": "false",
+      "SubCategory": "Ganon Boss Key Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "ganon_bk_req": {
               "action": "add",
               "EditValue": [
                 "OOT_GS_TOKEN"
@@ -38182,6 +38616,62 @@
         }
       }
     },
+    "lacs_skullsSwamp": {
+      "DisplayName": "Swamp Skulltulas Tokens",
+      "CurrentValue": "false",
+      "SubCategory": "Light Arrow Cutscene Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "lacs_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_GS_TOKEN_SWAMP"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "ganon_bk_skullsSwamp": {
+      "DisplayName": "Swamp Skulltulas Tokens",
+      "CurrentValue": "false",
+      "SubCategory": "Ganon Boss Key Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "ganon_bk_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_GS_TOKEN_SWAMP"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
     "moon_skullsOcean": {
       "DisplayName": "Ocean Skulltulas Tokens",
       "CurrentValue": "false",
@@ -38222,6 +38712,62 @@
           "ItemMaxAmountEdit": {},
           "VariableEdit": {
             "bridge_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_GS_TOKEN_OCEAN"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "lacs_skullsOcean": {
+      "DisplayName": "Ocean Skulltulas Tokens",
+      "CurrentValue": "false",
+      "SubCategory": "Light Arrow Cutscene Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "lacs_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_GS_TOKEN_OCEAN"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "ganon_bk_skullsOcean": {
+      "DisplayName": "Ocean Skulltulas Tokens",
+      "CurrentValue": "false",
+      "SubCategory": "Ganon Boss Key Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "ganon_bk_req": {
               "action": "add",
               "EditValue": [
                 "MM_GS_TOKEN_OCEAN"
@@ -38294,6 +38840,62 @@
         }
       }
     },
+    "lacs_fairiesWF": {
+      "DisplayName": "Stray Fairies (Woodfall)",
+      "CurrentValue": "false",
+      "SubCategory": "Light Arrow Cutscene Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "lacs_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_STRAY_FAIRY_WF"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "ganon_bk_fairiesWF": {
+      "DisplayName": "Stray Fairies (Woodfall)",
+      "CurrentValue": "false",
+      "SubCategory": "Ganon Boss Key Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "ganon_bk_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_STRAY_FAIRY_WF"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
     "moon_fairiesSH": {
       "DisplayName": "Stray Fairies (Snowhead)",
       "CurrentValue": "false",
@@ -38334,6 +38936,62 @@
           "ItemMaxAmountEdit": {},
           "VariableEdit": {
             "bridge_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_STRAY_FAIRY_SH"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "lacs_fairiesSH": {
+      "DisplayName": "Stray Fairies (Snowhead)",
+      "CurrentValue": "false",
+      "SubCategory": "Light Arrow Cutscene Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "lacs_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_STRAY_FAIRY_SH"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "ganon_bk_fairiesSH": {
+      "DisplayName": "Stray Fairies (Snowhead)",
+      "CurrentValue": "false",
+      "SubCategory": "Ganon Boss Key Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "ganon_bk_req": {
               "action": "add",
               "EditValue": [
                 "MM_STRAY_FAIRY_SH"
@@ -38406,6 +39064,62 @@
         }
       }
     },
+    "lacs_fairiesGB": {
+      "DisplayName": "Stray Fairies (Great Bay)",
+      "CurrentValue": "false",
+      "SubCategory": "Light Arrow Cutscene Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "lacs_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_STRAY_FAIRY_GB"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "ganon_bk_fairiesGB": {
+      "DisplayName": "Stray Fairies (Great Bay)",
+      "CurrentValue": "false",
+      "SubCategory": "Ganon Boss Key Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "ganon_bk_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_STRAY_FAIRY_GB"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
     "moon_fairiesST": {
       "DisplayName": "Stray Fairies (Stone Tower)",
       "CurrentValue": "false",
@@ -38462,6 +39176,62 @@
         }
       }
     },
+    "lacs_fairiesST": {
+      "DisplayName": "Stray Fairies (Stone Tower)",
+      "CurrentValue": "false",
+      "SubCategory": "Light Arrow Cutscene Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "lacs_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_STRAY_FAIRY_ST"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "ganon_bk_fairiesST": {
+      "DisplayName": "Stray Fairies (Stone Tower)",
+      "CurrentValue": "false",
+      "SubCategory": "Ganon Boss Key Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "ganon_bk_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_STRAY_FAIRY_ST"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
     "moon_fairyTown": {
       "DisplayName": "Stray Fairy (Clock Town)",
       "CurrentValue": "false",
@@ -38502,6 +39272,62 @@
           "ItemMaxAmountEdit": {},
           "VariableEdit": {
             "bridge_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_STRAY_FAIRY_TOWN"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "lacs_fairyTown": {
+      "DisplayName": "Stray Fairy (Clock Town)",
+      "CurrentValue": "false",
+      "SubCategory": "Light Arrow Cutscene Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "lacs_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_STRAY_FAIRY_TOWN"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "ganon_bk_fairyTown": {
+      "DisplayName": "Stray Fairy (Clock Town)",
+      "CurrentValue": "false",
+      "SubCategory": "Ganon Boss Key Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "ganon_bk_req": {
               "action": "add",
               "EditValue": [
                 "MM_STRAY_FAIRY_TOWN"
@@ -38618,6 +39444,106 @@
         }
       }
     },
+    "lacs_masksRegular": {
+      "DisplayName": "Regular Masks (MM)",
+      "CurrentValue": "false",
+      "SubCategory": "Light Arrow Cutscene Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "lacs_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_MASK_CAPTAIN",
+                "MM_MASK_GIANT",
+                "MM_MASK_ALL_NIGHT",
+                "MM_MASK_BUNNY",
+                "MM_MASK_KEATON",
+                "MM_MASK_GARO",
+                "MM_MASK_ROMANI",
+                "MM_MASK_TROUPE_LEADER",
+                "MM_MASK_POSTMAN",
+                "MM_MASK_COUPLE",
+                "MM_MASK_GREAT_FAIRY",
+                "MM_MASK_GIBDO",
+                "MM_MASK_DON_GERO",
+                "MM_MASK_KAMARO",
+                "MM_MASK_TRUTH",
+                "MM_MASK_STONE",
+                "MM_MASK_BREMEN",
+                "MM_MASK_BLAST",
+                "MM_MASK_SCENTS",
+                "MM_MASK_KAFEI",
+                "SHARED_MASK_TRUTH",
+                "SHARED_MASK_BUNNY",
+                "SHARED_MASK_KEATON"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "ganon_bk_masksRegular": {
+      "DisplayName": "Regular Masks (MM)",
+      "CurrentValue": "false",
+      "SubCategory": "Ganon Boss Key Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "ganon_bk_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_MASK_CAPTAIN",
+                "MM_MASK_GIANT",
+                "MM_MASK_ALL_NIGHT",
+                "MM_MASK_BUNNY",
+                "MM_MASK_KEATON",
+                "MM_MASK_GARO",
+                "MM_MASK_ROMANI",
+                "MM_MASK_TROUPE_LEADER",
+                "MM_MASK_POSTMAN",
+                "MM_MASK_COUPLE",
+                "MM_MASK_GREAT_FAIRY",
+                "MM_MASK_GIBDO",
+                "MM_MASK_DON_GERO",
+                "MM_MASK_KAMARO",
+                "MM_MASK_TRUTH",
+                "MM_MASK_STONE",
+                "MM_MASK_BREMEN",
+                "MM_MASK_BLAST",
+                "MM_MASK_SCENTS",
+                "MM_MASK_KAFEI",
+                "SHARED_MASK_TRUTH",
+                "SHARED_MASK_BUNNY",
+                "SHARED_MASK_KEATON"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
     "moon_masksTransform": {
       "DisplayName": "Transformation Masks (MM)",
       "CurrentValue": "false",
@@ -38663,6 +39589,72 @@
           "ItemMaxAmountEdit": {},
           "VariableEdit": {
             "bridge_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_MASK_DEKU",
+                "MM_MASK_GORON",
+                "MM_MASK_ZORA",
+                "MM_MASK_FIERCE_DEITY",
+                "SHARED_MASK_GORON",
+                "SHARED_MASK_ZORA"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "lacs_masksTransform": {
+      "DisplayName": "Transformation Masks (MM)",
+      "CurrentValue": "false",
+      "SubCategory": "Light Arrow Cutscene Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "lacs_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_MASK_DEKU",
+                "MM_MASK_GORON",
+                "MM_MASK_ZORA",
+                "MM_MASK_FIERCE_DEITY",
+                "SHARED_MASK_GORON",
+                "SHARED_MASK_ZORA"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "ganon_bk_masksTransform": {
+      "DisplayName": "Transformation Masks (MM)",
+      "CurrentValue": "false",
+      "SubCategory": "Ganon Boss Key Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "ganon_bk_req": {
               "action": "add",
               "EditValue": [
                 "MM_MASK_DEKU",
@@ -38763,6 +39755,86 @@
           "VariableEdit": {}
         }
       }
+    },
+    "lacs_masksOot": {
+      "DisplayName": "Masks (OoT)",
+      "CurrentValue": "false",
+      "SubCategory": "Light Arrow Cutscene Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "lacs_req": {
+              "action": "add",
+              "EditValue": [
+                "OOT_MASK_SKULL",
+                "OOT_MASK_SPOOKY",
+                "OOT_MASK_KEATON",
+                "OOT_MASK_BUNNY",
+                "OOT_MASK_TRUTH",
+                "OOT_MASK_GERUDO",
+                "OOT_MASK_GORON",
+                "OOT_MASK_ZORA",
+                "SHARED_MASK_KEATON",
+                "SHARED_MASK_BUNNY",
+                "SHARED_MASK_TRUTH",
+                "SHARED_MASK_GORON",
+                "SHARED_MASK_ZORA"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "ganon_bk_masksOot": {
+      "DisplayName": "Masks (OoT)",
+      "CurrentValue": "false",
+      "SubCategory": "Ganon Boss Key Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "ganon_bk_req": {
+              "action": "add",
+              "EditValue": [
+                "OOT_MASK_SKULL",
+                "OOT_MASK_SPOOKY",
+                "OOT_MASK_KEATON",
+                "OOT_MASK_BUNNY",
+                "OOT_MASK_TRUTH",
+                "OOT_MASK_GERUDO",
+                "OOT_MASK_GORON",
+                "OOT_MASK_ZORA",
+                "SHARED_MASK_KEATON",
+                "SHARED_MASK_BUNNY",
+                "SHARED_MASK_TRUTH",
+                "SHARED_MASK_GORON",
+                "SHARED_MASK_ZORA"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
     }
   },
   "Variables": {
@@ -38816,6 +39888,28 @@
       "SubCategory": "Moon Access Conditions",
       "Static": false,
       "Value": 4
+    },
+    "lacs_req": {
+      "Name": "lacs_req",
+      "Static": true,
+      "Value": []
+    },
+    "lacs_count": {
+      "Name": "Items Required",
+      "SubCategory": "Light Arrow Cutscene Conditions",
+      "Static": false,
+      "Value": 0
+    },
+    "ganon_bk_req": {
+      "Name": "ganon_bk_req",
+      "Static": true,
+      "Value": []
+    },
+    "ganon_bk_count": {
+      "Name": "Items Required",
+      "SubCategory": "Ganon Boss Key Conditions",
+      "Static": false,
+      "Value": 0
     },
     "MM_ANY_Heart": {
       "Static": true,
@@ -39241,6 +40335,28 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT_HAS_LACS_REQUIREMENTS",
+      "RequiredItems": [
+        "lacs_req, lacs_count"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_HAS_GANON_BK_REQUIREMENTS",
+      "RequiredItems": [
+        "ganon_bk_req, ganon_bk_count"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "CanGetOathWoodfall",
       "RequiredItems": [
         "MM Woodfall Temple After Boss"
@@ -39299,11 +40415,30 @@
     },
     {
       "Id": "Game_Clear",
-      "RequiredItems": [
-        "OOT_TRIFORCE",
-        "MM_MASK_MAJORA"
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{goal, any}",
+          "OOT_TRIFORCE"
+        ],
+        [
+          "setting{goal, any}",
+          "MM_MASK_MAJORA"
+        ],
+        [
+          "OOT_TRIFORCE",
+          "MM_MASK_MAJORA",
+          "setting{goal, both}"
+        ],
+        [
+          "OOT_TRIFORCE",
+          "setting{goal, ganon}"
+        ],
+        [
+          "MM_MASK_MAJORA",
+          "setting{goal, majora}"
+        ]
       ],
-      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",

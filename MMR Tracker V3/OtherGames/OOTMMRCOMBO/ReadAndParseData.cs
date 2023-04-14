@@ -150,7 +150,14 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             });
 
             //Game Clear
-            dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "Game_Clear", RequiredItems = new List<string> { "OOT_TRIFORCE", "MM_MASK_MAJORA" } });
+
+            string GameClearLogic =
+                "(setting{goal, any} && (OOT_TRIFORCE || MM_MASK_MAJORA)) || " +
+                "(setting{goal, both} && OOT_TRIFORCE && MM_MASK_MAJORA) || " +
+                "(setting{goal, ganon} && OOT_TRIFORCE) || " +
+                "(setting{goal, majora} && MM_MASK_MAJORA)";
+
+            dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "Game_Clear", ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicParser, GameClearLogic) });
             dictionaryFile.MacroList.Add("Game_Clear", new LogicDictionaryData.DictionaryMacroEntry { ID = "Game_Clear", Name = "Both Games Cleared" });
             dictionaryFile.WinCondition = "Game_Clear";
         }
@@ -304,6 +311,16 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 Id = $"OOT_HAS_BRIDGE_REQUIREMENTS",
                 RequiredItems = new List<string> { "bridge_req, bridge_count" }
             });
+            dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem
+            {
+                Id = $"OOT_HAS_LACS_REQUIREMENTS",
+                RequiredItems = new List<string> { "lacs_req, lacs_count" }
+            });
+            dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem
+            {
+                Id = $"OOT_HAS_GANON_BK_REQUIREMENTS",
+                RequiredItems = new List<string> { "ganon_bk_req, ganon_bk_count" }
+            });
 
             Dictionary<string, string[]> PossibleReqs = new()
             {
@@ -344,6 +361,24 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 BridgeRequirement.CreateSimpleValues(new string[] { "true", "false" });
                 BridgeRequirement.Values["true"].VariableEdit.Add("bridge_req", new OptionData.VariableEditData { action = MiscData.MathOP.add, EditValue = i.Value });
                 dictionaryFile.Options.Add(BridgeRequirement.ID, BridgeRequirement);
+
+                OptionData.TrackerOption LACSRequirement = new OptionData.TrackerOption();
+                LACSRequirement.ID = $"lacs_{namedata[1]}";
+                LACSRequirement.DisplayName = namedata[0];
+                LACSRequirement.SubCategory = "Light Arrow Cutscene Conditions";
+                LACSRequirement.CurrentValue = "false";
+                LACSRequirement.CreateSimpleValues(new string[] { "true", "false" });
+                LACSRequirement.Values["true"].VariableEdit.Add("lacs_req", new OptionData.VariableEditData { action = MiscData.MathOP.add, EditValue = i.Value });
+                dictionaryFile.Options.Add(LACSRequirement.ID, LACSRequirement);
+
+                OptionData.TrackerOption GanonBKRequirement = new OptionData.TrackerOption();
+                GanonBKRequirement.ID = $"ganon_bk_{namedata[1]}";
+                GanonBKRequirement.DisplayName = namedata[0];
+                GanonBKRequirement.SubCategory = "Ganon Boss Key Conditions";
+                GanonBKRequirement.CurrentValue = "false";
+                GanonBKRequirement.CreateSimpleValues(new string[] { "true", "false" });
+                GanonBKRequirement.Values["true"].VariableEdit.Add("ganon_bk_req", new OptionData.VariableEditData { action = MiscData.MathOP.add, EditValue = i.Value });
+                dictionaryFile.Options.Add(GanonBKRequirement.ID, GanonBKRequirement);
             }
 
             OptionData.TrackerVar bridge_req = new OptionData.TrackerVar();
@@ -375,6 +410,36 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             moon_req_count.ID = "moon_count";
             moon_req_count.Value = 4;
             dictionaryFile.Variables.Add(moon_req_count.ID, moon_req_count);
+
+            OptionData.TrackerVar lacs_req = new OptionData.TrackerVar();
+            lacs_req.Static = true;
+            lacs_req.Name = "lacs_req";
+            lacs_req.ID = "lacs_req";
+            lacs_req.Value = new List<string>();
+            dictionaryFile.Variables.Add(lacs_req.ID, lacs_req);
+
+            OptionData.TrackerVar lacs_count = new OptionData.TrackerVar();
+            lacs_count.Static = false;
+            lacs_count.SubCategory = "Light Arrow Cutscene Conditions";
+            lacs_count.Name = "Items Required";
+            lacs_count.ID = "lacs_count";
+            lacs_count.Value = 0;
+            dictionaryFile.Variables.Add(lacs_count.ID, lacs_count);
+
+            OptionData.TrackerVar ganon_bk_req = new OptionData.TrackerVar();
+            ganon_bk_req.Static = true;
+            ganon_bk_req.Name = "ganon_bk_req";
+            ganon_bk_req.ID = "ganon_bk_req";
+            ganon_bk_req.Value = new List<string>();
+            dictionaryFile.Variables.Add(ganon_bk_req.ID, ganon_bk_req);
+
+            OptionData.TrackerVar ganon_bk_count = new OptionData.TrackerVar();
+            ganon_bk_count.Static = false;
+            ganon_bk_count.SubCategory = "Ganon Boss Key Conditions";
+            ganon_bk_count.Name = "Items Required";
+            ganon_bk_count.ID = "ganon_bk_count";
+            ganon_bk_count.Value = 0;
+            dictionaryFile.Variables.Add(ganon_bk_count.ID, ganon_bk_count);
 
         }
 
@@ -419,6 +484,17 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             ageFilter.CreateSimpleValues(new string[] { "both", "adult", "child" });
             dictionaryFile.Options.Add(ageFilter.ID, ageFilter);
 
+            OptionData.TrackerOption goal = new OptionData.TrackerOption();
+            goal.ID = "goal";
+            goal.DisplayName = "Goal";
+            goal.CurrentValue = "both";
+            goal.CreateSimpleValues(new string[] { "any", "ganon", "majora", "both" });
+            goal.Values["any"].Name = "Any Final Boss";
+            goal.Values["ganon"].Name = "Ganon";
+            goal.Values["majora"].Name = "Majora";
+            goal.Values["both"].Name = "Ganon & Majora";
+            dictionaryFile.Options.Add(goal.ID, goal);
+
             OptionData.TrackerOption EggContentShuffle = new OptionData.TrackerOption();
             EggContentShuffle.ID = "eggShuffle";
             EggContentShuffle.DisplayName = "Egg Content Shuffle";
@@ -448,6 +524,17 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             kakarikoGate.Values["closed"].Name = "Closed";
             dictionaryFile.Options.Add(kakarikoGate.ID, kakarikoGate);
 
+            OptionData.TrackerOption zoraKing = new OptionData.TrackerOption();
+            zoraKing.ID = "zoraKing";
+            zoraKing.DisplayName = "Zora King";
+            zoraKing.CurrentValue = "vanilla";
+            zoraKing.SubCategory = "Events";
+            zoraKing.CreateSimpleValues(new string[] { "vanilla", "adult", "open" });
+            zoraKing.Values["vanilla"].Name = "Vanilla";
+            zoraKing.Values["adult"].Name = "Open (Adult Only)";
+            zoraKing.Values["open"].Name = "Open";
+            dictionaryFile.Options.Add(zoraKing.ID, zoraKing);
+
             OptionData.TrackerOption skipZelda = new OptionData.TrackerOption();
             skipZelda.ID = "skipZelda";
             skipZelda.DisplayName = "Skip Child Zelda";
@@ -455,6 +542,16 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             skipZelda.SubCategory = "Events";
             skipZelda.CreateSimpleValues(new string[] { "true", "false" });
             dictionaryFile.Options.Add(skipZelda.ID, skipZelda);
+
+            OptionData.TrackerOption lacs = new OptionData.TrackerOption();
+            lacs.ID = "lacs";
+            lacs.DisplayName = "Light Arrow Cutscene";
+            lacs.CurrentValue = "vanilla";
+            lacs.SubCategory = "Events";
+            lacs.CreateSimpleValues(new string[] { "vanilla", "custom" });
+            lacs.Values["vanilla"].Name = "Vanilla";
+            lacs.Values["custom"].Name = "Custom";
+            dictionaryFile.Options.Add(lacs.ID, lacs);
 
             OptionData.TrackerOption CrossGameOOTWarpSong = new OptionData.TrackerOption();
             CrossGameOOTWarpSong.ID = "crossWarpOot";
@@ -480,11 +577,12 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             GanonBossKey.DisplayName = "Ganon's Boss Key";
             GanonBossKey.CurrentValue = "removed";
             GanonBossKey.SubCategory = "Key Shuffle";
-            GanonBossKey.CreateSimpleValues(new string[] { "removed", "vanilla", "ganon", "anywhere" });
+            GanonBossKey.CreateSimpleValues(new string[] { "removed", "vanilla", "ganon", "anywhere", "custom" });
             GanonBossKey.Values["removed"].Name = "Removed";
             GanonBossKey.Values["vanilla"].Name = "Vanilla";
             GanonBossKey.Values["ganon"].Name = "Ganon's Castle";
             GanonBossKey.Values["anywhere"].Name = "Anywhere";
+            GanonBossKey.Values["custom"].Name = "Custom";
             GanonBossKey.Values["removed"].AddMaxAmountEdit("OOT_BOSS_KEY_GANON", MiscData.MathOP.set, 0);
             dictionaryFile.Options.Add(GanonBossKey.ID, GanonBossKey);
 
@@ -600,7 +698,10 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             AddSharedItemOptions("sharedMagicArrowFire", "Shared Fire Arrow", new string[] { "ARROW_FIRE" }, 1);
             AddSharedItemOptions("sharedMagicArrowIce", "Shared Ice Arrow", new string[] { "ARROW_ICE"}, 1);
             AddSharedItemOptions("sharedMagicArrowLight", "Shared Light Arrow", new string[] { "ARROW_LIGHT" }, 1);
-            AddSharedItemOptions("sharedSongs", "Shared Songs", new string[] { "SONG_TIME", "SONG_EPONA", "SONG_STORMS", "SONG_SUN" }, 1);
+            AddSharedItemOptions("sharedSongEpona", "Shared Epona's Song", new string[] { "SONG_EPONA" }, 1);
+            AddSharedItemOptions("sharedSongStorms", "Shared Song of Storms", new string[] { "SONG_STORMS" }, 1);
+            AddSharedItemOptions("sharedSongTime", "Shared Song of Time", new string[] { "SONG_TIME" }, 1);
+            AddSharedItemOptions("sharedSongSun", "Shared Sun's Song", new string[] { "SONG_SUN" }, 1);
             AddSharedItemOptions("sharedHookshot", "Shared Hookshots", new string[] { "HOOKSHOT" }, 2);
             AddSharedItemOptions("sharedLens", "Shared Lens of Truth", new string[] { "LENS" }, 1);
             AddSharedItemOptions("sharedOcarina", "Shared Ocarina", new string[] { "OCARINA" }, 2);

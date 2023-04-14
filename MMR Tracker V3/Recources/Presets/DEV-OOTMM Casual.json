@@ -3160,11 +3160,19 @@
       "Id": "OOT Temple of Time Light Arrows",
       "RequiredItems": [
         "OOT_is_adult",
-        "OOT_MEDALLION_SPIRIT",
-        "OOT_MEDALLION_SHADOW",
         "OOT Temple of Time"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "option{lacs, vanilla}",
+          "OOT_MEDALLION_SPIRIT",
+          "OOT_MEDALLION_SHADOW"
+        ],
+        [
+          "option{lacs, custom}",
+          "OOT_HAS_LACS_REQUIREMENTS"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -18398,6 +18406,10 @@
         ],
         [
           "OOT_BOSS_KEY_GANON"
+        ],
+        [
+          "option{ganonBossKey, custom}",
+          "OOT_HAS_GANON_BK_REQUIREMENTS"
         ]
       ],
       "TimeNeeded": "None",
@@ -22809,7 +22821,7 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "OOT_EVENT_KING_ZORA_LETTER"
+          "OOT_king_zora_moved"
         ],
         [
           "OOT_is_adult",
@@ -22884,7 +22896,7 @@
     {
       "Id": "OOT Zora Domain Back => OOT Zora Domain",
       "RequiredItems": [
-        "OOT_EVENT_KING_ZORA_LETTER"
+        "OOT_king_zora_moved"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -39123,6 +39135,26 @@
         "OOT_BOOMERANG"
       ],
       "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_king_zora_moved",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_EVENT_KING_ZORA_LETTER"
+        ],
+        [
+          "option{zoraKing, open}"
+        ],
+        [
+          "option{zoraKing, adult}",
+          "OOT_is_adult"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",

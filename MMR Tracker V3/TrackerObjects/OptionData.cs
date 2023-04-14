@@ -35,6 +35,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public Dictionary<string, actions> Values { get; set; } = new Dictionary<string, actions>();
             public actions GetActions()
             {
+                if (!Values.ContainsKey(CurrentValue)) { throw new Exception($"{ID} Contained no option {CurrentValue}"); }
                 return Values[CurrentValue];
             }
             public bool IsToggleOption()
