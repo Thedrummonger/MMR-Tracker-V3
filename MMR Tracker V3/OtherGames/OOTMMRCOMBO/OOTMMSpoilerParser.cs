@@ -63,13 +63,21 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
             bool atBridge = false;
             bool atMoon = false;
+            bool atLACS = false;
+            bool atGBK = false;
             foreach (var i in AccessConditions)
             {
-                if (i == "BRIDGE:") { atMoon = false; atBridge = true; continue; }
-                if (i == "MOON:") { atBridge = false; atMoon = true; continue; }
+                if (i == "BRIDGE:") { atBridge = true; atMoon = false; atLACS = false; atGBK = false; continue; }
+                if (i == "MOON:") { atBridge = false; atMoon = true; atLACS = false; atGBK = false; continue; }
+                if (i == "LACS:") { atBridge = false; atMoon = false; atLACS = true; atGBK = false; continue; }
+                if (i == "GANON_BK:") { atBridge = false; atMoon = false; atLACS = false; atGBK = true; continue; }
                 if (string.IsNullOrWhiteSpace(i)) { return; }
                 var Data = i.Split(':').Select(x => x.Trim()).ToArray();
-                string ID = atBridge ? $"bridge_{Data[0]}" : $"moon_{Data[0]}";
+                string ID = "";
+                if (atBridge) { ID = $"bridge_{Data[0]}"; }
+                else if (atMoon) { ID = $"moon_{Data[0]}"; }
+                else if (atLACS) { ID = $"lacs_{Data[0]}"; }
+                else if (atGBK) { ID = $"ganon_bk_{Data[0]}"; }
                 if (instance.UserOptions.ContainsKey(ID)) { instance.UserOptions[ID].CurrentValue = Data[1]; }
                 else if (instance.Variables.ContainsKey(ID))
                 {
