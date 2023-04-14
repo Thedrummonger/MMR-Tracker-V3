@@ -36273,6 +36273,29 @@
         }
       }
     },
+    "majoraChild": {
+      "DisplayName": "Majora Child Requirements",
+      "CurrentValue": "none",
+      "SubCategory": "Events",
+      "Values": {
+        "none": {
+          "Name": "None",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        },
+        "custom": {
+          "Name": "Custom",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
     "crossWarpOot": {
       "DisplayName": "Cross-Games OoT Warp Songs",
       "CurrentValue": "false",
@@ -38513,6 +38536,447 @@
         }
       }
     },
+    "majora_stones": {
+      "DisplayName": "Spiritual Stones",
+      "CurrentValue": "false",
+      "SubCategory": "Majora Child Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "majora_req": {
+              "action": "add",
+              "EditValue": [
+                "OOT_STONE_EMERALD",
+                "OOT_STONE_RUBY",
+                "OOT_STONE_SAPPHIRE"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "majora_medallions": {
+      "DisplayName": "Medallions",
+      "CurrentValue": "false",
+      "SubCategory": "Majora Child Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "majora_req": {
+              "action": "add",
+              "EditValue": [
+                "OOT_MEDALLION_LIGHT",
+                "OOT_MEDALLION_FOREST",
+                "OOT_MEDALLION_FIRE",
+                "OOT_MEDALLION_WATER",
+                "OOT_MEDALLION_SPIRIT",
+                "OOT_MEDALLION_SHADOW"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "majora_remains": {
+      "DisplayName": "Boss Remains",
+      "CurrentValue": "false",
+      "SubCategory": "Majora Child Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "majora_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_REMAINS_ODOLWA",
+                "MM_REMAINS_GOHT",
+                "MM_REMAINS_GYORG",
+                "MM_REMAINS_TWINMOLD"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "majora_skullsGold": {
+      "DisplayName": "Gold Skulltulas Tokens",
+      "CurrentValue": "false",
+      "SubCategory": "Majora Child Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "majora_req": {
+              "action": "add",
+              "EditValue": [
+                "OOT_GS_TOKEN"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "majora_skullsSwamp": {
+      "DisplayName": "Swamp Skulltulas Tokens",
+      "CurrentValue": "false",
+      "SubCategory": "Majora Child Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "majora_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_GS_TOKEN_SWAMP"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "majora_skullsOcean": {
+      "DisplayName": "Ocean Skulltulas Tokens",
+      "CurrentValue": "false",
+      "SubCategory": "Majora Child Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "majora_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_GS_TOKEN_OCEAN"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "majora_fairiesWF": {
+      "DisplayName": "Stray Fairies (Woodfall)",
+      "CurrentValue": "false",
+      "SubCategory": "Majora Child Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "majora_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_STRAY_FAIRY_WF"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "majora_fairiesSH": {
+      "DisplayName": "Stray Fairies (Snowhead)",
+      "CurrentValue": "false",
+      "SubCategory": "Majora Child Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "majora_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_STRAY_FAIRY_SH"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "majora_fairiesGB": {
+      "DisplayName": "Stray Fairies (Great Bay)",
+      "CurrentValue": "false",
+      "SubCategory": "Majora Child Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "majora_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_STRAY_FAIRY_GB"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "majora_fairiesST": {
+      "DisplayName": "Stray Fairies (Stone Tower)",
+      "CurrentValue": "false",
+      "SubCategory": "Majora Child Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "majora_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_STRAY_FAIRY_ST"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "majora_fairyTown": {
+      "DisplayName": "Stray Fairy (Clock Town)",
+      "CurrentValue": "false",
+      "SubCategory": "Majora Child Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "majora_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_STRAY_FAIRY_TOWN"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "majora_masksRegular": {
+      "DisplayName": "Regular Masks (MM)",
+      "CurrentValue": "false",
+      "SubCategory": "Majora Child Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "majora_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_MASK_CAPTAIN",
+                "MM_MASK_GIANT",
+                "MM_MASK_ALL_NIGHT",
+                "MM_MASK_BUNNY",
+                "MM_MASK_KEATON",
+                "MM_MASK_GARO",
+                "MM_MASK_ROMANI",
+                "MM_MASK_TROUPE_LEADER",
+                "MM_MASK_POSTMAN",
+                "MM_MASK_COUPLE",
+                "MM_MASK_GREAT_FAIRY",
+                "MM_MASK_GIBDO",
+                "MM_MASK_DON_GERO",
+                "MM_MASK_KAMARO",
+                "MM_MASK_TRUTH",
+                "MM_MASK_STONE",
+                "MM_MASK_BREMEN",
+                "MM_MASK_BLAST",
+                "MM_MASK_SCENTS",
+                "MM_MASK_KAFEI",
+                "SHARED_MASK_TRUTH",
+                "SHARED_MASK_BUNNY",
+                "SHARED_MASK_KEATON"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "majora_masksTransform": {
+      "DisplayName": "Transformation Masks (MM)",
+      "CurrentValue": "false",
+      "SubCategory": "Majora Child Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "majora_req": {
+              "action": "add",
+              "EditValue": [
+                "MM_MASK_DEKU",
+                "MM_MASK_GORON",
+                "MM_MASK_ZORA",
+                "MM_MASK_FIERCE_DEITY",
+                "SHARED_MASK_GORON",
+                "SHARED_MASK_ZORA"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "majora_masksOot": {
+      "DisplayName": "Masks (OoT)",
+      "CurrentValue": "false",
+      "SubCategory": "Majora Child Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "majora_req": {
+              "action": "add",
+              "EditValue": [
+                "OOT_MASK_SKULL",
+                "OOT_MASK_SPOOKY",
+                "OOT_MASK_KEATON",
+                "OOT_MASK_BUNNY",
+                "OOT_MASK_TRUTH",
+                "OOT_MASK_GERUDO",
+                "OOT_MASK_GORON",
+                "OOT_MASK_ZORA",
+                "SHARED_MASK_KEATON",
+                "SHARED_MASK_BUNNY",
+                "SHARED_MASK_TRUTH",
+                "SHARED_MASK_GORON",
+                "SHARED_MASK_ZORA"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
     "bridge_stones": {
       "DisplayName": "Spiritual Stones",
       "CurrentValue": "false",
@@ -39878,6 +40342,17 @@
       "Static": false,
       "Value": 4
     },
+    "majora_req": {
+      "Name": "majora_req",
+      "Static": true,
+      "Value": []
+    },
+    "majora_count": {
+      "Name": "Items Required",
+      "SubCategory": "Majora Child Conditions",
+      "Static": false,
+      "Value": 0
+    },
     "bridge_req": {
       "Name": "bridge_req",
       "Static": true,
@@ -40316,6 +40791,17 @@
       "Id": "MM_HAS_MOON_REQUIREMENTS",
       "RequiredItems": [
         "moon_req, moon_count"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_HAS_MAJORA_REQUIREMENTS",
+      "RequiredItems": [
+        "majora_req, majora_count"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",

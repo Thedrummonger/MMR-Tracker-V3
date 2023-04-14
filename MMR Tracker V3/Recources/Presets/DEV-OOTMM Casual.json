@@ -40047,6 +40047,25 @@
       "IsTrick": false
     },
     {
+      "Id": "MM_can_reset_time_on_moon",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "MM_OCARINA",
+          "MM_SONG_TIME"
+        ],
+        [
+          "option{majoraChild, none}",
+          "MM_EVENT_MAJORA",
+          "TRICK_MM_MAJORA_LOGIC"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM_can_reset_time",
       "RequiredItems": [],
       "ConditionalItems": [

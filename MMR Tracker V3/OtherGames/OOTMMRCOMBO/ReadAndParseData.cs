@@ -357,6 +357,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             }
 
             AddCondition("moon", "mm", "Moon Access Conditions", "Boss Remains", 4);
+            AddCondition("majora", "MM", "Majora Child Conditions");
             AddCondition("bridge", "oot", "Rainbow Bridge Conditions", "Medallions", 6);
             AddCondition("lacs", "oot", "Light Arrow Cutscene Conditions");
             AddCondition("ganon_bk", "oot", "Ganon Boss Key Conditions");
@@ -472,6 +473,16 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             lacs.Values["vanilla"].Name = "Vanilla";
             lacs.Values["custom"].Name = "Custom";
             dictionaryFile.Options.Add(lacs.ID, lacs);
+
+            OptionData.TrackerOption majoraChild = new OptionData.TrackerOption();
+            majoraChild.ID = "majoraChild";
+            majoraChild.DisplayName = "Majora Child Requirements";
+            majoraChild.CurrentValue = "none";
+            majoraChild.SubCategory = "Events";
+            majoraChild.CreateSimpleValues(new string[] { "none", "custom" });
+            majoraChild.Values["none"].Name = "None";
+            majoraChild.Values["custom"].Name = "Custom";
+            dictionaryFile.Options.Add(majoraChild.ID, majoraChild);
 
             OptionData.TrackerOption CrossGameOOTWarpSong = new OptionData.TrackerOption();
             CrossGameOOTWarpSong.ID = "crossWarpOot";
