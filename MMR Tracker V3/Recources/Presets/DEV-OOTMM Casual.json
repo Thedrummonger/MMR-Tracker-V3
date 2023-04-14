@@ -15294,7 +15294,7 @@
     {
       "Id": "MM Moon Fierce Deity Mask",
       "RequiredItems": [
-        "MM_can_reset_time",
+        "MM_can_reset_time_on_moon",
         "MM_MASKS, 20",
         "MM_EVENT_MOON_TRIAL_DEKU",
         "MM_EVENT_MOON_TRIAL_GORON",
@@ -28103,7 +28103,7 @@
     {
       "Id": "MM Moon => MM Moon Trial Deku Entrance",
       "RequiredItems": [
-        "MM_can_reset_time",
+        "MM_can_reset_time_on_moon",
         "MM_MASKS, 1"
       ],
       "ConditionalItems": [],
@@ -28115,7 +28115,7 @@
     {
       "Id": "MM Moon => MM Moon Trial Goron Entrance",
       "RequiredItems": [
-        "MM_can_reset_time",
+        "MM_can_reset_time_on_moon",
         "MM_MASKS, 2"
       ],
       "ConditionalItems": [],
@@ -28127,7 +28127,7 @@
     {
       "Id": "MM Moon => MM Moon Trial Zora",
       "RequiredItems": [
-        "MM_can_reset_time",
+        "MM_can_reset_time_on_moon",
         "MM_MASKS, 3"
       ],
       "ConditionalItems": [],
@@ -28139,7 +28139,7 @@
     {
       "Id": "MM Moon => MM Moon Trial Link Entrance",
       "RequiredItems": [
-        "MM_can_reset_time",
+        "MM_can_reset_time_on_moon",
         "MM_MASKS, 4"
       ],
       "ConditionalItems": [],
@@ -28151,7 +28151,15 @@
     {
       "Id": "MM Moon => MM Moon Boss",
       "RequiredItems": [],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "option{majoraChild, none}"
+        ],
+        [
+          "option{majoraChild, custom}",
+          "MM_HAS_MAJORA_REQUIREMENTS"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
