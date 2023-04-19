@@ -12334,6 +12334,192 @@
       },
       "LocationProxys": []
     },
+    "MM Tingle Map Clock Town": {
+      "Name": "Tingle Map Clock Town",
+      "OriginalItem": "MM_WORLD_MAP_CLOCK_TOWN",
+      "Area": "North Clock Town",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Tingle Map Clock Town"
+        ],
+        "GossipHintNames": [
+          "MM Tingle Map Clock Town"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": [
+        {
+          "ID": "Tingle_Town_Tingle_Map_Clock_Town_Proxy",
+          "Name": "Tingle Map Clock Town",
+          "Area": "North Clock Town",
+          "LogicInheritance": "Tingle_Town_Tingle_Map_Clock_Town"
+        },
+        {
+          "ID": "Tingle_Ikana_Tingle_Map_Clock_Town_Proxy",
+          "Name": "Tingle Map Clock Town",
+          "Area": "Ikana Canyon",
+          "LogicInheritance": "Tingle_Ikana_Tingle_Map_Clock_Town"
+        }
+      ]
+    },
+    "MM Tingle Map Woodfall": {
+      "Name": "Tingle Map Woodfall",
+      "OriginalItem": "MM_WORLD_MAP_WOODFALL",
+      "Area": "Road to Southern Swamp",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Tingle Map Woodfall"
+        ],
+        "GossipHintNames": [
+          "MM Tingle Map Woodfall"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": [
+        {
+          "ID": "Tingle_Town_Tingle_Map_Woodfall_Proxy",
+          "Name": "Tingle Map Woodfall",
+          "Area": "North Clock Town",
+          "LogicInheritance": "Tingle_Town_Tingle_Map_Woodfall"
+        },
+        {
+          "ID": "Tingle_Swamp_Tingle_Map_Woodfall_Proxy",
+          "Name": "Tingle Map Woodfall",
+          "Area": "Road to Southern Swamp",
+          "LogicInheritance": "Tingle_Swamp_Tingle_Map_Woodfall"
+        }
+      ]
+    },
+    "MM Tingle Map Snowhead": {
+      "Name": "Tingle Map Snowhead",
+      "OriginalItem": "MM_WORLD_MAP_SNOWHEAD",
+      "Area": "Twin Islands",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Tingle Map Snowhead"
+        ],
+        "GossipHintNames": [
+          "MM Tingle Map Snowhead"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": [
+        {
+          "ID": "Tingle_Swamp_Tingle_Map_Snowhead_Proxy",
+          "Name": "Tingle Map Snowhead",
+          "Area": "Road to Southern Swamp",
+          "LogicInheritance": "Tingle_Swamp_Tingle_Map_Snowhead"
+        },
+        {
+          "ID": "Tingle_Mountain_Tingle_Map_Snowhead_Proxy",
+          "Name": "Tingle Map Snowhead",
+          "Area": "Twin Islands",
+          "LogicInheritance": "Tingle_Mountain_Tingle_Map_Snowhead"
+        }
+      ]
+    },
+    "MM Tingle Map Ranch": {
+      "Name": "Tingle Map Ranch",
+      "OriginalItem": "MM_WORLD_MAP_ROMANI_RANCH",
+      "Area": "Milk Road",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Tingle Map Ranch"
+        ],
+        "GossipHintNames": [
+          "MM Tingle Map Ranch"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": [
+        {
+          "ID": "Tingle_Mountain_Tingle_Map_Ranch_Proxy",
+          "Name": "Tingle Map Ranch",
+          "Area": "Twin Islands",
+          "LogicInheritance": "Tingle_Mountain_Tingle_Map_Ranch"
+        },
+        {
+          "ID": "Tingle_Ranch_Tingle_Map_Ranch_Proxy",
+          "Name": "Tingle Map Ranch",
+          "Area": "Milk Road",
+          "LogicInheritance": "Tingle_Ranch_Tingle_Map_Ranch"
+        }
+      ]
+    },
+    "MM Tingle Map Great Bay": {
+      "Name": "Tingle Map Great Bay",
+      "OriginalItem": "MM_WORLD_MAP_GREAT_BAY",
+      "Area": "Great Bay Coast",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Tingle Map Great Bay"
+        ],
+        "GossipHintNames": [
+          "MM Tingle Map Great Bay"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": [
+        {
+          "ID": "Tingle_Ranch_Tingle_Map_Great_Bay_Proxy",
+          "Name": "Tingle Map Great Bay",
+          "Area": "Milk Road",
+          "LogicInheritance": "Tingle_Ranch_Tingle_Map_Great_Bay"
+        },
+        {
+          "ID": "Tingle_Great_Bay_Tingle_Map_Great_Bay_Proxy",
+          "Name": "Tingle Map Great Bay",
+          "Area": "Great Bay Coast",
+          "LogicInheritance": "Tingle_Great_Bay_Tingle_Map_Great_Bay"
+        }
+      ]
+    },
+    "MM Tingle Map Ikana": {
+      "Name": "Tingle Map Ikana",
+      "OriginalItem": "MM_WORLD_MAP_STONE_TOWER",
+      "Area": "Ikana Canyon",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Tingle Map Ikana"
+        ],
+        "GossipHintNames": [
+          "MM Tingle Map Ikana"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": [
+        {
+          "ID": "Tingle_Great_Bay_Tingle_Map_Ikana_Proxy",
+          "Name": "Tingle Map Ikana",
+          "Area": "Great Bay Coast",
+          "LogicInheritance": "Tingle_Great_Bay_Tingle_Map_Ikana"
+        },
+        {
+          "ID": "Tingle_Ikana_Tingle_Map_Ikana_Proxy",
+          "Name": "Tingle Map Ikana",
+          "Area": "Ikana Canyon",
+          "LogicInheritance": "Tingle_Ikana_Tingle_Map_Ikana"
+        }
+      ]
+    },
     "MM Clock Town South Chest Lower": {
       "Name": "Clock Town South Chest Lower",
       "OriginalItem": "MM_RUPEE_RED",
@@ -20491,6 +20677,132 @@
         "PriceDataNames": []
       }
     },
+    "MM_WORLD_MAP_CLOCK_TOWN": {
+      "Name": "Clock Town Map",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_WORLD_MAP_CLOCK_TOWN",
+          "Clock Town Map",
+          "Clock Town Map (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_WORLD_MAP_CLOCK_TOWN",
+          "Clock Town Map",
+          "Clock Town Map (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_WORLD_MAP_WOODFALL": {
+      "Name": "Southern Swamp Map",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_WORLD_MAP_WOODFALL",
+          "Southern Swamp Map",
+          "Southern Swamp Map (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_WORLD_MAP_WOODFALL",
+          "Southern Swamp Map",
+          "Southern Swamp Map (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_WORLD_MAP_SNOWHEAD": {
+      "Name": "Mountain Village Map",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_WORLD_MAP_SNOWHEAD",
+          "Mountain Village Map",
+          "Mountain Village Map (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_WORLD_MAP_SNOWHEAD",
+          "Mountain Village Map",
+          "Mountain Village Map (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_WORLD_MAP_ROMANI_RANCH": {
+      "Name": "Romani Ranch Map",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_WORLD_MAP_ROMANI_RANCH",
+          "Romani Ranch Map",
+          "Romani Ranch Map (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_WORLD_MAP_ROMANI_RANCH",
+          "Romani Ranch Map",
+          "Romani Ranch Map (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_WORLD_MAP_GREAT_BAY": {
+      "Name": "Great Bay Map",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_WORLD_MAP_GREAT_BAY",
+          "Great Bay Map",
+          "Great Bay Map (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_WORLD_MAP_GREAT_BAY",
+          "Great Bay Map",
+          "Great Bay Map (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_WORLD_MAP_STONE_TOWER": {
+      "Name": "Ikana Canyon Map",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_WORLD_MAP_STONE_TOWER",
+          "Ikana Canyon Map",
+          "Ikana Canyon Map (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_WORLD_MAP_STONE_TOWER",
+          "Ikana Canyon Map",
+          "Ikana Canyon Map (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
     "MM_PICTOGRAPH_BOX": {
       "Name": "Pictograph Box",
       "MaxAmountInWorld": 1,
@@ -21325,7 +21637,7 @@
     },
     "MM_WALLET": {
       "Name": "Progressive Wallet (MM)",
-      "MaxAmountInWorld": 3,
+      "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -24293,7 +24605,7 @@
     },
     "OOT_WALLET": {
       "Name": "Progressive Wallet (OoT)",
-      "MaxAmountInWorld": 3,
+      "MaxAmountInWorld": 2,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
@@ -30963,13 +31275,6 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Ocean Spider House Back => MM Ocean Spider House": {
-      "Area": "MM Ocean Spider House Back",
-      "Exit": "MM Ocean Spider House",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
     "MM GLOBAL => OOT SONGS": {
       "Area": "MM GLOBAL",
       "Exit": "OOT SONGS",
@@ -31232,6 +31537,13 @@
     "MM Clock Town North => MM Deku Playground": {
       "Area": "MM Clock Town North",
       "Exit": "MM Deku Playground",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Clock Town North => MM Tingle Town": {
+      "Area": "MM Clock Town North",
+      "Exit": "MM Tingle Town",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -31803,6 +32115,13 @@
     "MM Road to Southern Swamp => MM Road to Southern Swamp Grotto": {
       "Area": "MM Road to Southern Swamp",
       "Exit": "MM Road to Southern Swamp Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Road to Southern Swamp => MM Tingle Swamp": {
+      "Area": "MM Road to Southern Swamp",
+      "Exit": "MM Tingle Swamp",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -32422,6 +32741,13 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "MM Twin Islands => MM Tingle Mountain": {
+      "Area": "MM Twin Islands",
+      "Exit": "MM Tingle Mountain",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "MM Twin Islands Ramp Grotto => MM Near Ramp Grotto": {
       "Area": "MM Twin Islands Ramp Grotto",
       "Exit": "MM Near Ramp Grotto",
@@ -32741,6 +33067,13 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "MM Milk Road Back => MM Tingle Ranch": {
+      "Area": "MM Milk Road Back",
+      "Exit": "MM Tingle Ranch",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "MM Near Romani Ranch => MM Milk Road Back": {
       "Area": "MM Near Romani Ranch",
       "Exit": "MM Milk Road Back",
@@ -32901,6 +33234,27 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "MM Great Bay Coast => MM Tingle Great Bay": {
+      "Area": "MM Great Bay Coast",
+      "Exit": "MM Tingle Great Bay",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Great Bay Coast => MM Great Bay Grotto": {
+      "Area": "MM Great Bay Coast",
+      "Exit": "MM Great Bay Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Great Bay Coast => MM GBC Near Cow Grotto": {
+      "Area": "MM Great Bay Coast",
+      "Exit": "MM GBC Near Cow Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "MM Great Bay Coast Fortress => MM Great Bay Coast": {
       "Area": "MM Great Bay Coast Fortress",
       "Exit": "MM Great Bay Coast",
@@ -32916,6 +33270,34 @@
         "Exit": "MM Great Bay Coast Fortress"
       },
       "RandomizableEntrance": true,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Great Bay Grotto => MM Great Bay Coast": {
+      "Area": "MM Great Bay Grotto",
+      "Exit": "MM Great Bay Coast",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM GBC Near Cow Grotto => MM Great Bay Coast": {
+      "Area": "MM GBC Near Cow Grotto",
+      "Exit": "MM Great Bay Coast",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM GBC Near Cow Grotto => MM Great Bay Cow Grotto": {
+      "Area": "MM GBC Near Cow Grotto",
+      "Exit": "MM Great Bay Cow Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Great Bay Cow Grotto => MM Great Bay Coast": {
+      "Area": "MM Great Bay Cow Grotto",
+      "Exit": "MM Great Bay Coast",
+      "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -32961,9 +33343,9 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Zora Cape => MM Zora Hall Entrance": {
+    "MM Zora Cape => MM Zora Cape Near Hall": {
       "Area": "MM Zora Cape",
-      "Exit": "MM Zora Hall Entrance",
+      "Exit": "MM Zora Cape Near Hall",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -32985,6 +33367,20 @@
     "MM Zora Cape => MM Great Bay Near Fairy Fountain": {
       "Area": "MM Zora Cape",
       "Exit": "MM Great Bay Near Fairy Fountain",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Zora Cape => MM Zora Cape Grotto": {
+      "Area": "MM Zora Cape",
+      "Exit": "MM Zora Cape Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Zora Cape Grotto => MM Great Bay Coast": {
+      "Area": "MM Zora Cape Grotto",
+      "Exit": "MM Great Bay Coast",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -33031,9 +33427,23 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Zora Hall Entrance => MM Zora Cape": {
-      "Area": "MM Zora Hall Entrance",
+    "MM Zora Cape Near Hall => MM Zora Cape": {
+      "Area": "MM Zora Cape Near Hall",
       "Exit": "MM Zora Cape",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Zora Cape Near Hall => MM Zora Hall Entrance": {
+      "Area": "MM Zora Cape Near Hall",
+      "Exit": "MM Zora Hall Entrance",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Zora Hall Entrance => MM Zora Cape Near Hall": {
+      "Area": "MM Zora Hall Entrance",
+      "Exit": "MM Zora Cape Near Hall",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -33066,8 +33476,64 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "MM Zora Hall => MM Drummer Room": {
+      "Area": "MM Zora Hall",
+      "Exit": "MM Drummer Room",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Zora Hall => MM Japas' Room": {
+      "Area": "MM Zora Hall",
+      "Exit": "MM Japas' Room",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Zora Hall => MM Evan's Room": {
+      "Area": "MM Zora Hall",
+      "Exit": "MM Evan's Room",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Zora Hall => MM Lulu's Room": {
+      "Area": "MM Zora Hall",
+      "Exit": "MM Lulu's Room",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "MM Zora Shop => MM Zora Hall": {
       "Area": "MM Zora Shop",
+      "Exit": "MM Zora Hall",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Drummer Room => MM Zora Hall": {
+      "Area": "MM Drummer Room",
+      "Exit": "MM Zora Hall",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Japas' Room => MM Zora Hall": {
+      "Area": "MM Japas' Room",
+      "Exit": "MM Zora Hall",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Evan's Room => MM Zora Hall": {
+      "Area": "MM Evan's Room",
+      "Exit": "MM Zora Hall",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Lulu's Room => MM Zora Hall": {
+      "Area": "MM Lulu's Room",
       "Exit": "MM Zora Hall",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
@@ -33348,6 +33814,13 @@
     "MM Ikana Canyon => MM Stone Tower": {
       "Area": "MM Ikana Canyon",
       "Exit": "MM Stone Tower",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Ikana Canyon => MM Tingle Ikana": {
+      "Area": "MM Ikana Canyon",
+      "Exit": "MM Tingle Ikana",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -33652,13 +34125,6 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Pirate Fortress Interior => MM Pirate Fortress Entrance Captured": {
-      "Area": "MM Pirate Fortress Interior",
-      "Exit": "MM Pirate Fortress Entrance Captured",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
     "MM Pirate Fortress Hookshot Room Upper => MM Pirate Fortress Interior": {
       "Area": "MM Pirate Fortress Hookshot Room Upper",
       "Exit": "MM Pirate Fortress Interior",
@@ -33669,13 +34135,6 @@
     "MM Pirate Fortress Hookshot Room Lower => MM Pirate Fortress Interior": {
       "Area": "MM Pirate Fortress Hookshot Room Lower",
       "Exit": "MM Pirate Fortress Interior",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    "MM Pirate Fortress Hookshot Room Lower => MM Pirate Fortress Entrance Captured": {
-      "Area": "MM Pirate Fortress Hookshot Room Lower",
-      "Exit": "MM Pirate Fortress Entrance Captured",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -33725,13 +34184,6 @@
     "MM Pirate Fortress Barrel Maze => MM Pirate Fortress Barrel Maze Aquarium": {
       "Area": "MM Pirate Fortress Barrel Maze",
       "Exit": "MM Pirate Fortress Barrel Maze Aquarium",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    "MM Pirate Fortress Barrel Maze => MM Pirate Fortress Entrance Captured": {
-      "Area": "MM Pirate Fortress Barrel Maze",
-      "Exit": "MM Pirate Fortress Entrance Captured",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -33799,13 +34251,6 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Pirate Fortress Lone Guard => MM Pirate Fortress Entrance Captured": {
-      "Area": "MM Pirate Fortress Lone Guard",
-      "Exit": "MM Pirate Fortress Entrance Captured",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
     "MM Pirate Fortress Lone Guard Aquarium => MM Pirate Fortress Lone Guard": {
       "Area": "MM Pirate Fortress Lone Guard Aquarium",
       "Exit": "MM Pirate Fortress Lone Guard",
@@ -33848,13 +34293,6 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Pirate Fortress Treasure Room Entry => MM Pirate Fortress Entrance Captured": {
-      "Area": "MM Pirate Fortress Treasure Room Entry",
-      "Exit": "MM Pirate Fortress Entrance Captured",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
     "MM Pirate Fortress Treasure Room => MM Pirate Fortress Treasure Room Aquarium": {
       "Area": "MM Pirate Fortress Treasure Room",
       "Exit": "MM Pirate Fortress Treasure Room Aquarium",
@@ -33865,13 +34303,6 @@
     "MM Pirate Fortress Treasure Room => MM Pirate Fortress Treasure Room Entry": {
       "Area": "MM Pirate Fortress Treasure Room",
       "Exit": "MM Pirate Fortress Treasure Room Entry",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    "MM Pirate Fortress Treasure Room => MM Pirate Fortress Entrance Captured": {
-      "Area": "MM Pirate Fortress Treasure Room",
-      "Exit": "MM Pirate Fortress Entrance Captured",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -33900,13 +34331,6 @@
     "MM Pirate Fortress Treasure Room Exit => MM Pirate Fortress Interior": {
       "Area": "MM Pirate Fortress Treasure Room Exit",
       "Exit": "MM Pirate Fortress Interior",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    "MM Pirate Fortress Entrance Captured => MM Pirate Fortress Entrance Balcony": {
-      "Area": "MM Pirate Fortress Entrance Captured",
-      "Exit": "MM Pirate Fortress Entrance Balcony",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -35864,6 +36288,22 @@
         "PriceDataNames": []
       }
     },
+    "TRICK_OOT_DMT_RED_ROCK_GS": {
+      "Name": "DMT Red Rock Skulls without Hammer",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "TRICK_OOT_DEAD_HAND_STICKS": {
+      "Name": "Child Dead Hand without Kokiri Sword",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
     "TRICK_MM_LENS": {
       "Name": "Fewer Lens Requirements (MM)",
       "SpoilerData": {
@@ -36042,6 +36482,14 @@
     },
     "TRICK_MM_IKANA_ROOF_PARKOUR": {
       "Name": "Jump from Ikana Castle's Roof Interior to Exterior",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "TRICK_MM_POST_OFFICE_GAME": {
+      "Name": "Post Office Timing Game without Bunny Hood",
       "SpoilerData": {
         "SpoilerLogNames": [],
         "GossipHintNames": [],
@@ -36685,6 +37133,74 @@
               "amount": 0
             }
           },
+          "VariableEdit": {}
+        }
+      }
+    },
+    "childWallets": {
+      "DisplayName": "Child Wallets",
+      "CurrentValue": "false",
+      "SubCategory": "Item Extensions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "OOT_WALLET": {
+              "action": "add",
+              "amount": 1
+            },
+            "MM_WALLET": {
+              "action": "add",
+              "amount": 1
+            },
+            "SHARED_WALLET": {
+              "action": "add",
+              "amount": 1
+            }
+          },
+          "VariableEdit": {}
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "colossalWallets": {
+      "DisplayName": "Colossal Wallets",
+      "CurrentValue": "false",
+      "SubCategory": "Item Extensions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "OOT_WALLET": {
+              "action": "add",
+              "amount": 1
+            },
+            "MM_WALLET": {
+              "action": "add",
+              "amount": 1
+            },
+            "SHARED_WALLET": {
+              "action": "add",
+              "amount": 1
+            }
+          },
+          "VariableEdit": {}
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
           "VariableEdit": {}
         }
       }
@@ -40788,6 +41304,17 @@
       "IsTrick": false
     },
     {
+      "Id": "MM_EVENT_MOUNTIAN_VILLAGE_OWL",
+      "RequiredItems": [
+        "MM_EVENT_MOUNTAIN_VILLAGE_OWL"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM_HAS_MOON_REQUIREMENTS",
       "RequiredItems": [
         "moon_req, moon_count"
@@ -40894,6 +41421,258 @@
         "MM Mountain Village"
       ],
       "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Tingle_Town_Tingle_Map_Clock_Town",
+      "RequiredItems": [
+        "MM Tingle Town",
+        "MM_EVENT_RUPEES"
+      ],
+      "ConditionalItems": [
+        [
+          "option{childWallets, true}",
+          "MM_WALLET"
+        ],
+        [
+          "option{childWallets, false}",
+          "true"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Tingle_Town_Tingle_Map_Woodfall",
+      "RequiredItems": [
+        "MM Tingle Town",
+        "MM_EVENT_RUPEES"
+      ],
+      "ConditionalItems": [
+        [
+          "option{childWallets, true}",
+          "MM_WALLET"
+        ],
+        [
+          "option{childWallets, false}",
+          "true"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Tingle_Swamp_Tingle_Map_Woodfall",
+      "RequiredItems": [
+        "MM Tingle Swamp",
+        "MM_EVENT_RUPEES"
+      ],
+      "ConditionalItems": [
+        [
+          "option{childWallets, true}",
+          "MM_WALLET"
+        ],
+        [
+          "option{childWallets, false}",
+          "true"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Tingle_Swamp_Tingle_Map_Snowhead",
+      "RequiredItems": [
+        "MM Tingle Swamp",
+        "MM_EVENT_RUPEES"
+      ],
+      "ConditionalItems": [
+        [
+          "option{childWallets, true}",
+          "MM_WALLET"
+        ],
+        [
+          "option{childWallets, false}",
+          "true"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Tingle_Mountain_Tingle_Map_Snowhead",
+      "RequiredItems": [
+        "MM Tingle Mountain",
+        "MM_EVENT_RUPEES"
+      ],
+      "ConditionalItems": [
+        [
+          "option{childWallets, true}",
+          "MM_WALLET"
+        ],
+        [
+          "option{childWallets, false}",
+          "true"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Tingle_Mountain_Tingle_Map_Ranch",
+      "RequiredItems": [
+        "MM Tingle Mountain",
+        "MM_EVENT_RUPEES"
+      ],
+      "ConditionalItems": [
+        [
+          "option{childWallets, true}",
+          "MM_WALLET"
+        ],
+        [
+          "option{childWallets, false}",
+          "true"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Tingle_Ranch_Tingle_Map_Ranch",
+      "RequiredItems": [
+        "MM Tingle Ranch",
+        "MM_EVENT_RUPEES"
+      ],
+      "ConditionalItems": [
+        [
+          "option{childWallets, true}",
+          "MM_WALLET"
+        ],
+        [
+          "option{childWallets, false}",
+          "true"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Tingle_Ranch_Tingle_Map_Great_Bay",
+      "RequiredItems": [
+        "MM Tingle Ranch",
+        "MM_EVENT_RUPEES"
+      ],
+      "ConditionalItems": [
+        [
+          "option{childWallets, true}",
+          "MM_WALLET"
+        ],
+        [
+          "option{childWallets, false}",
+          "true"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Tingle_Great_Bay_Tingle_Map_Great_Bay",
+      "RequiredItems": [
+        "MM Tingle Great Bay",
+        "MM_EVENT_RUPEES"
+      ],
+      "ConditionalItems": [
+        [
+          "option{childWallets, true}",
+          "MM_WALLET"
+        ],
+        [
+          "option{childWallets, false}",
+          "true"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Tingle_Great_Bay_Tingle_Map_Ikana",
+      "RequiredItems": [
+        "MM Tingle Great Bay",
+        "MM_EVENT_RUPEES"
+      ],
+      "ConditionalItems": [
+        [
+          "option{childWallets, true}",
+          "MM_WALLET"
+        ],
+        [
+          "option{childWallets, false}",
+          "true"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Tingle_Ikana_Tingle_Map_Ikana",
+      "RequiredItems": [
+        "MM Tingle Ikana",
+        "MM_EVENT_RUPEES"
+      ],
+      "ConditionalItems": [
+        [
+          "option{childWallets, true}",
+          "MM_WALLET"
+        ],
+        [
+          "option{childWallets, false}",
+          "true"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Tingle_Ikana_Tingle_Map_Clock_Town",
+      "RequiredItems": [
+        "MM Tingle Ikana",
+        "MM_EVENT_RUPEES"
+      ],
+      "ConditionalItems": [
+        [
+          "option{childWallets, true}",
+          "MM_WALLET"
+        ],
+        [
+          "option{childWallets, false}",
+          "true"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",

@@ -243,6 +243,33 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "CanGetOathStoneTow", RequiredItems = new List<string> { "MM Stone Tower After Boss" } });
             dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "KeatonInSpring", RequiredItems = new List<string> { "MM_MASK_KEATON", "MM_EVENT_BOSS_SNOWHEAD", "MM Mountain Village" } });
 
+            Dictionary<string, Tuple<string, string[]>> TingleLocations = new Dictionary<string, Tuple<string, string[]>>
+            {
+                { "Tingle Town", new ("North Clock Town", new string[]{ "Tingle Map Clock Town", "Tingle Map Woodfall" }) },
+                { "Tingle Swamp", new ("Road to Southern Swamp", new string[]{ "Tingle Map Woodfall", "Tingle Map Snowhead"  }) },
+                { "Tingle Mountain", new ("Twin Islands", new string[]{ "Tingle Map Snowhead", "Tingle Map Ranch" }) },
+                { "Tingle Ranch", new ("Milk Road", new string[]{ "Tingle Map Ranch", "Tingle Map Great Bay" }) },
+                { "Tingle Great Bay", new ("Great Bay Coast", new string[]{ "Tingle Map Great Bay", "Tingle Map Ikana" }) },
+                { "Tingle Ikana", new ("Ikana Canyon", new string[]{ "Tingle Map Ikana", "Tingle Map Clock Town" }) }
+            };
+
+            foreach(var area in TingleLocations)
+            {
+                foreach(var map in area.Value.Item2)
+                {
+                    string ProxyID = $"{area.Key.Replace(" ", "_")}_{map.Replace(" ", "_")}";
+                    var ProxyLogicEntry = new MMRData.JsonFormatLogicItem
+                    {
+                        Id = ProxyID,
+                        ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicParser, ParseFunction($"MM {area.Key} && can_use_wallet(1)", "MM"))
+                    };
+                    LogicUtilities.RemoveRedundantConditionals(ProxyLogicEntry);
+                    LogicUtilities.MakeCommonConditionalsRequirements(ProxyLogicEntry);
+                    dictionaryFile.AdditionalLogic.Add(ProxyLogicEntry);
+                    createLocationProxy("MM " + map, $"{ProxyID}_Proxy", map, area.Value.Item1, ProxyID);
+                }
+            }
+
 
             createLocationProxy("MM Oath to Order", "MMOathWoodfallProxy", "Oath to Order", "Woodfall Temple", "CanGetOathWoodfall");
             createLocationProxy("MM Oath to Order", "MMOathSnowheadProxy", "Oath to Order", "Snowhead Temple", "CanGetOathSnowhead");
@@ -615,13 +642,36 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             sunSongMm.Values["true"].ItemNameOverride.Add("OOT_SONG_SUN", "Sun Song (OoT)");
             dictionaryFile.Options.Add(sunSongMm.ID, sunSongMm);
 
+            OptionData.TrackerOption childWallets = new OptionData.TrackerOption();
+            childWallets.ID = "childWallets";
+            childWallets.DisplayName = "Child Wallets";
+            childWallets.CurrentValue = "false";
+            childWallets.SubCategory = "Item Extensions";
+            childWallets.CreateSimpleValues(new string[] { "true", "false" });
+            childWallets.Values["true"].AddMaxAmountEdit("OOT_WALLET", MiscData.MathOP.add, 1);
+            childWallets.Values["true"].AddMaxAmountEdit("MM_WALLET", MiscData.MathOP.add, 1);
+            childWallets.Values["true"].AddMaxAmountEdit("SHARED_WALLET", MiscData.MathOP.add, 1);
+            dictionaryFile.Options.Add(childWallets.ID, childWallets);
+
+            OptionData.TrackerOption colossalWallets = new OptionData.TrackerOption();
+            colossalWallets.ID = "colossalWallets";
+            colossalWallets.DisplayName = "Colossal Wallets";
+            colossalWallets.CurrentValue = "false";
+            colossalWallets.SubCategory = "Item Extensions";
+            colossalWallets.CreateSimpleValues(new string[] { "true", "false" });
+            colossalWallets.Values["true"].AddMaxAmountEdit("OOT_WALLET", MiscData.MathOP.add, 1);
+            colossalWallets.Values["true"].AddMaxAmountEdit("MM_WALLET", MiscData.MathOP.add, 1);
+            colossalWallets.Values["true"].AddMaxAmountEdit("SHARED_WALLET", MiscData.MathOP.add, 1);
+            dictionaryFile.Options.Add(colossalWallets.ID, colossalWallets);
+
             //Temp Workaround for some typos in logic
             dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "MM_ZORA", RequiredItems = new List<string> { "MM_MASK_ZORA" } });
             dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "MM_bow", RequiredItems = new List<string> { "MM_BOW" } });
             dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "MM_PICTORGRAPH_BOX", RequiredItems = new List<string> { "MM_PICTOGRAPH_BOX" } });
             dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "OOT_BOMBCHU_1", RequiredItems = new List<string> { "false" } });
             dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "MM_EVENT_GREEN_POTION", RequiredItems = new List<string> { "false" } });
-            
+            dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "MM_EVENT_MOUNTIAN_VILLAGE_OWL", RequiredItems = new List<string> { "MM_EVENT_MOUNTAIN_VILLAGE_OWL" } });
+
             AddSharedItemOptions("sharedNutsSticks", "Shared Nuts and Sticks", new string[] { "NUT", "NUTS_5", "NUTS_5_ALT", "NUTS_10", "STICK", "STICKS_5", "STICKS_10" }, 1);
             AddSharedItemOptions("sharedBows", "Shared Bows", new string[] { "BOW" }, 1, new string[] { "ARROWS_5", "ARROWS_10", "ARROWS_30", "ARROWS_40", });
             AddSharedItemOptions("sharedBombBags", "Shared Bomb Bags", new string[] { "BOMB_BAG" }, 1, new string[] { "BOMBS_5", "BOMBS_10", "BOMBS_20", "BOMBS_30", "BOMB" });
@@ -956,7 +1006,10 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                                 Amount = Convert.ToInt32(ReplaceText.Split(",")[1].Trim());
                                 ReplaceText = ReplaceText.Split(",")[0].Trim();
                             }
+                            //This might break something? but now with child wallets ammount can actually be 0 in logic meaning it's not needed
+                            //I feel like at one point if the amount was zero it was a bug and should just be one?
                             if (Amount > 1) { ReplaceText += $", {Amount}"; }
+                            else if (Amount == 0) { ReplaceText = "true"; }
                             line = line.Replace(FullFunction, ReplaceText);
                         }
                         break;
@@ -1002,14 +1055,22 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                     case "at":
                         line = line.Replace(FullFunction, $"time{{At_{Parameters}}}");
                         break;
+                    case "has_wallet":
+                        int WalletAmmount = int.Parse(Parameters);
+                        line = line.Replace(FullFunction, $"((option{{childWallets, true}} && has(WALLET, {WalletAmmount})) || (option{{childWallets, false}} && has(WALLET, {WalletAmmount-1})))");
+                        break;
+                    case "can_use_wallet":
+                        line = line.Replace(FullFunction, $"event(RUPEES) && has_wallet({Parameters})");
+                        break;
                     case "cond":
                         if (Parameters.StartsWith("setting"))
                         {
                             string CleanedInput = Parameters.Replace("setting(", "(");
                             Debug.WriteLine($"Parsing Cond \n[{Parameters}]");
                             var splitArray = Regex.Split(CleanedInput, @"(?<!,[^(]+\([^)]+),");
-                            line = line.Replace(FullFunction, $"((option{{{splitArray[0].TrimStart('(')}, {splitArray[1].TrimEnd(')')}}} && {splitArray[2]}) || (option{{{splitArray[0].TrimStart('(')}, {splitArray[1].TrimEnd(')')}, false}} && {splitArray[3]}))");
-                            Debug.WriteLine($"Success \n[(option{{{splitArray[0]}, {splitArray[1]}}} && {splitArray[2]}) || (option{{{splitArray[0]}, {splitArray[1]}, false}} && {splitArray[3]})]");
+                            string FinalCond = $"((option{{{splitArray[0].TrimStart('(')}, {splitArray[1].TrimEnd(')')}}} && {splitArray[2]}) || (option{{{splitArray[0].TrimStart('(')}, {splitArray[1].TrimEnd(')')}, false}} && {splitArray[3]}))";
+                            line = line.Replace(FullFunction, FinalCond);
+                            Debug.WriteLine($"Success \n{FinalCond}");
                         }
                         else
                         {
