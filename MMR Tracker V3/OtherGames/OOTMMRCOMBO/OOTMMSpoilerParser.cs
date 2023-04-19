@@ -67,6 +67,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 if (i == "MOON:") { Section = "moon"; continue; }
                 if (i == "LACS:") { Section = "lacs"; continue; }
                 if (i == "GANON_BK:") { Section = "ganon_bk"; continue; }
+                if (i == "MAJORA:") { Section = "majora"; continue; }
                 if (string.IsNullOrWhiteSpace(i)) { return; }
                 var Data = i.Split(':').Select(x => x.Trim()).ToArray();
                 string ID = $"{Section}_{Data[0]}";
