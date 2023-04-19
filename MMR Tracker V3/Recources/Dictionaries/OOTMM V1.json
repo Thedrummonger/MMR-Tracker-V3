@@ -40902,20 +40902,6 @@
       "Static": false,
       "Value": 0
     },
-    "MM_ANY_Heart": {
-      "Static": true,
-      "Value": [
-        "MM_RECOVERY_HEART",
-        "SHARED_RECOVERY_HEART"
-      ]
-    },
-    "OOT_ANY_Heart": {
-      "Static": true,
-      "Value": [
-        "OOT_RECOVERY_HEART",
-        "SHARED_RECOVERY_HEART"
-      ]
-    },
     "MM_ANY_Stick": {
       "Static": true,
       "Value": [

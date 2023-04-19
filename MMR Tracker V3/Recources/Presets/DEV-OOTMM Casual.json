@@ -42695,1178 +42695,6 @@
       "IsTrick": false
     },
     {
-      "Id": "MM_Has_Renewable_Heart",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "contains{OOT Kokiri Forest Cow, MM_ANY_Heart}",
-          "check{OOT Kokiri Forest Cow}"
-        ],
-        [
-          "contains{OOT Kokiri Shop Item 1, MM_ANY_Heart}",
-          "check{OOT Kokiri Shop Item 1}"
-        ],
-        [
-          "contains{OOT Kokiri Shop Item 2, MM_ANY_Heart}",
-          "check{OOT Kokiri Shop Item 2}"
-        ],
-        [
-          "contains{OOT Kokiri Shop Item 3, MM_ANY_Heart}",
-          "check{OOT Kokiri Shop Item 3}"
-        ],
-        [
-          "contains{OOT Kokiri Shop Item 4, MM_ANY_Heart}",
-          "check{OOT Kokiri Shop Item 4}"
-        ],
-        [
-          "contains{OOT Kokiri Shop Item 5, MM_ANY_Heart}",
-          "check{OOT Kokiri Shop Item 5}"
-        ],
-        [
-          "contains{OOT Kokiri Shop Item 6, MM_ANY_Heart}",
-          "check{OOT Kokiri Shop Item 6}"
-        ],
-        [
-          "contains{OOT Kokiri Shop Item 7, MM_ANY_Heart}",
-          "check{OOT Kokiri Shop Item 7}"
-        ],
-        [
-          "contains{OOT Kokiri Shop Item 8, MM_ANY_Heart}",
-          "check{OOT Kokiri Shop Item 8}"
-        ],
-        [
-          "contains{OOT Lost Woods Scrub Near Theater Left, MM_ANY_Heart}",
-          "check{OOT Lost Woods Scrub Near Theater Left}"
-        ],
-        [
-          "contains{OOT Lost Woods Scrub Near Theater Right, MM_ANY_Heart}",
-          "check{OOT Lost Woods Scrub Near Theater Right}"
-        ],
-        [
-          "contains{OOT Lost Woods Grotto Scrub Back, MM_ANY_Heart}",
-          "check{OOT Lost Woods Grotto Scrub Back}"
-        ],
-        [
-          "contains{OOT Sacred Meadow Storms Grotto Front Scrub, MM_ANY_Heart}",
-          "check{OOT Sacred Meadow Storms Grotto Front Scrub}"
-        ],
-        [
-          "contains{OOT Sacred Meadow Storms Grotto Back Scrub, MM_ANY_Heart}",
-          "check{OOT Sacred Meadow Storms Grotto Back Scrub}"
-        ],
-        [
-          "contains{OOT Kakariko Cow, MM_ANY_Heart}",
-          "check{OOT Kakariko Cow}"
-        ],
-        [
-          "contains{OOT Kakariko Bazaar Item 1, MM_ANY_Heart}",
-          "check{OOT Kakariko Bazaar Item 1}"
-        ],
-        [
-          "contains{OOT Kakariko Bazaar Item 2, MM_ANY_Heart}",
-          "check{OOT Kakariko Bazaar Item 2}"
-        ],
-        [
-          "contains{OOT Kakariko Bazaar Item 3, MM_ANY_Heart}",
-          "check{OOT Kakariko Bazaar Item 3}"
-        ],
-        [
-          "contains{OOT Kakariko Bazaar Item 4, MM_ANY_Heart}",
-          "check{OOT Kakariko Bazaar Item 4}"
-        ],
-        [
-          "contains{OOT Kakariko Bazaar Item 5, MM_ANY_Heart}",
-          "check{OOT Kakariko Bazaar Item 5}"
-        ],
-        [
-          "contains{OOT Kakariko Bazaar Item 6, MM_ANY_Heart}",
-          "check{OOT Kakariko Bazaar Item 6}"
-        ],
-        [
-          "contains{OOT Kakariko Bazaar Item 7, MM_ANY_Heart}",
-          "check{OOT Kakariko Bazaar Item 7}"
-        ],
-        [
-          "contains{OOT Kakariko Bazaar Item 8, MM_ANY_Heart}",
-          "check{OOT Kakariko Bazaar Item 8}"
-        ],
-        [
-          "contains{OOT Kakariko Potion Shop Item 1, MM_ANY_Heart}",
-          "check{OOT Kakariko Potion Shop Item 1}"
-        ],
-        [
-          "contains{OOT Kakariko Potion Shop Item 2, MM_ANY_Heart}",
-          "check{OOT Kakariko Potion Shop Item 2}"
-        ],
-        [
-          "contains{OOT Kakariko Potion Shop Item 3, MM_ANY_Heart}",
-          "check{OOT Kakariko Potion Shop Item 3}"
-        ],
-        [
-          "contains{OOT Kakariko Potion Shop Item 4, MM_ANY_Heart}",
-          "check{OOT Kakariko Potion Shop Item 4}"
-        ],
-        [
-          "contains{OOT Kakariko Potion Shop Item 5, MM_ANY_Heart}",
-          "check{OOT Kakariko Potion Shop Item 5}"
-        ],
-        [
-          "contains{OOT Kakariko Potion Shop Item 6, MM_ANY_Heart}",
-          "check{OOT Kakariko Potion Shop Item 6}"
-        ],
-        [
-          "contains{OOT Kakariko Potion Shop Item 7, MM_ANY_Heart}",
-          "check{OOT Kakariko Potion Shop Item 7}"
-        ],
-        [
-          "contains{OOT Kakariko Potion Shop Item 8, MM_ANY_Heart}",
-          "check{OOT Kakariko Potion Shop Item 8}"
-        ],
-        [
-          "contains{OOT Death Mountain Cow, MM_ANY_Heart}",
-          "check{OOT Death Mountain Cow}"
-        ],
-        [
-          "contains{OOT Goron City Grotto Left Scrub, MM_ANY_Heart}",
-          "check{OOT Goron City Grotto Left Scrub}"
-        ],
-        [
-          "contains{OOT Goron City Grotto Center Scrub, MM_ANY_Heart}",
-          "check{OOT Goron City Grotto Center Scrub}"
-        ],
-        [
-          "contains{OOT Goron City Grotto Right Scrub, MM_ANY_Heart}",
-          "check{OOT Goron City Grotto Right Scrub}"
-        ],
-        [
-          "contains{OOT Goron Shop Item 1, MM_ANY_Heart}",
-          "check{OOT Goron Shop Item 1}"
-        ],
-        [
-          "contains{OOT Goron Shop Item 2, MM_ANY_Heart}",
-          "check{OOT Goron Shop Item 2}"
-        ],
-        [
-          "contains{OOT Goron Shop Item 3, MM_ANY_Heart}",
-          "check{OOT Goron Shop Item 3}"
-        ],
-        [
-          "contains{OOT Goron Shop Item 4, MM_ANY_Heart}",
-          "check{OOT Goron Shop Item 4}"
-        ],
-        [
-          "contains{OOT Goron Shop Item 5, MM_ANY_Heart}",
-          "check{OOT Goron Shop Item 5}"
-        ],
-        [
-          "contains{OOT Goron Shop Item 6, MM_ANY_Heart}",
-          "check{OOT Goron Shop Item 6}"
-        ],
-        [
-          "contains{OOT Goron Shop Item 7, MM_ANY_Heart}",
-          "check{OOT Goron Shop Item 7}"
-        ],
-        [
-          "contains{OOT Goron Shop Item 8, MM_ANY_Heart}",
-          "check{OOT Goron Shop Item 8}"
-        ],
-        [
-          "contains{OOT Death Mountain Crater Scrub Child, MM_ANY_Heart}",
-          "check{OOT Death Mountain Crater Scrub Child}"
-        ],
-        [
-          "contains{OOT Death Mountain Crater Grotto Left Scrub, MM_ANY_Heart}",
-          "check{OOT Death Mountain Crater Grotto Left Scrub}"
-        ],
-        [
-          "contains{OOT Death Mountain Crater Grotto Center Scrub, MM_ANY_Heart}",
-          "check{OOT Death Mountain Crater Grotto Center Scrub}"
-        ],
-        [
-          "contains{OOT Death Mountain Crater Grotto Right Scrub, MM_ANY_Heart}",
-          "check{OOT Death Mountain Crater Grotto Right Scrub}"
-        ],
-        [
-          "contains{OOT Zora River Storms Grotto Front Scrub, MM_ANY_Heart}",
-          "check{OOT Zora River Storms Grotto Front Scrub}"
-        ],
-        [
-          "contains{OOT Zora River Storms Grotto Back Scrub, MM_ANY_Heart}",
-          "check{OOT Zora River Storms Grotto Back Scrub}"
-        ],
-        [
-          "contains{OOT Zora Shop Item 1, MM_ANY_Heart}",
-          "check{OOT Zora Shop Item 1}"
-        ],
-        [
-          "contains{OOT Zora Shop Item 2, MM_ANY_Heart}",
-          "check{OOT Zora Shop Item 2}"
-        ],
-        [
-          "contains{OOT Zora Shop Item 3, MM_ANY_Heart}",
-          "check{OOT Zora Shop Item 3}"
-        ],
-        [
-          "contains{OOT Zora Shop Item 4, MM_ANY_Heart}",
-          "check{OOT Zora Shop Item 4}"
-        ],
-        [
-          "contains{OOT Zora Shop Item 5, MM_ANY_Heart}",
-          "check{OOT Zora Shop Item 5}"
-        ],
-        [
-          "contains{OOT Zora Shop Item 6, MM_ANY_Heart}",
-          "check{OOT Zora Shop Item 6}"
-        ],
-        [
-          "contains{OOT Zora Shop Item 7, MM_ANY_Heart}",
-          "check{OOT Zora Shop Item 7}"
-        ],
-        [
-          "contains{OOT Zora Shop Item 8, MM_ANY_Heart}",
-          "check{OOT Zora Shop Item 8}"
-        ],
-        [
-          "contains{OOT Lake Hylia Grotto Left Scrub, MM_ANY_Heart}",
-          "check{OOT Lake Hylia Grotto Left Scrub}"
-        ],
-        [
-          "contains{OOT Lake Hylia Grotto Center Scrub, MM_ANY_Heart}",
-          "check{OOT Lake Hylia Grotto Center Scrub}"
-        ],
-        [
-          "contains{OOT Lake Hylia Grotto Right Scrub, MM_ANY_Heart}",
-          "check{OOT Lake Hylia Grotto Right Scrub}"
-        ],
-        [
-          "contains{OOT Lon Lon Ranch Stables Cow Left, MM_ANY_Heart}",
-          "check{OOT Lon Lon Ranch Stables Cow Left}"
-        ],
-        [
-          "contains{OOT Lon Lon Ranch Stables Cow Right, MM_ANY_Heart}",
-          "check{OOT Lon Lon Ranch Stables Cow Right}"
-        ],
-        [
-          "contains{OOT Lon Lon Ranch Silo Cow Front, MM_ANY_Heart}",
-          "check{OOT Lon Lon Ranch Silo Cow Front}"
-        ],
-        [
-          "contains{OOT Lon Lon Ranch Silo Cow Back, MM_ANY_Heart}",
-          "check{OOT Lon Lon Ranch Silo Cow Back}"
-        ],
-        [
-          "contains{OOT Lon Lon Ranch Grotto Left Scrub, MM_ANY_Heart}",
-          "check{OOT Lon Lon Ranch Grotto Left Scrub}"
-        ],
-        [
-          "contains{OOT Lon Lon Ranch Grotto Center Scrub, MM_ANY_Heart}",
-          "check{OOT Lon Lon Ranch Grotto Center Scrub}"
-        ],
-        [
-          "contains{OOT Lon Lon Ranch Grotto Right Scrub, MM_ANY_Heart}",
-          "check{OOT Lon Lon Ranch Grotto Right Scrub}"
-        ],
-        [
-          "contains{OOT Hyrule Field Cow, MM_ANY_Heart}",
-          "check{OOT Hyrule Field Cow}"
-        ],
-        [
-          "contains{OOT Market Bazaar Item 1, MM_ANY_Heart}",
-          "check{OOT Market Bazaar Item 1}"
-        ],
-        [
-          "contains{OOT Market Bazaar Item 2, MM_ANY_Heart}",
-          "check{OOT Market Bazaar Item 2}"
-        ],
-        [
-          "contains{OOT Market Bazaar Item 3, MM_ANY_Heart}",
-          "check{OOT Market Bazaar Item 3}"
-        ],
-        [
-          "contains{OOT Market Bazaar Item 4, MM_ANY_Heart}",
-          "check{OOT Market Bazaar Item 4}"
-        ],
-        [
-          "contains{OOT Market Bazaar Item 5, MM_ANY_Heart}",
-          "check{OOT Market Bazaar Item 5}"
-        ],
-        [
-          "contains{OOT Market Bazaar Item 6, MM_ANY_Heart}",
-          "check{OOT Market Bazaar Item 6}"
-        ],
-        [
-          "contains{OOT Market Bazaar Item 7, MM_ANY_Heart}",
-          "check{OOT Market Bazaar Item 7}"
-        ],
-        [
-          "contains{OOT Market Bazaar Item 8, MM_ANY_Heart}",
-          "check{OOT Market Bazaar Item 8}"
-        ],
-        [
-          "contains{OOT Market Potion Shop Item 1, MM_ANY_Heart}",
-          "check{OOT Market Potion Shop Item 1}"
-        ],
-        [
-          "contains{OOT Market Potion Shop Item 2, MM_ANY_Heart}",
-          "check{OOT Market Potion Shop Item 2}"
-        ],
-        [
-          "contains{OOT Market Potion Shop Item 3, MM_ANY_Heart}",
-          "check{OOT Market Potion Shop Item 3}"
-        ],
-        [
-          "contains{OOT Market Potion Shop Item 4, MM_ANY_Heart}",
-          "check{OOT Market Potion Shop Item 4}"
-        ],
-        [
-          "contains{OOT Market Potion Shop Item 5, MM_ANY_Heart}",
-          "check{OOT Market Potion Shop Item 5}"
-        ],
-        [
-          "contains{OOT Market Potion Shop Item 6, MM_ANY_Heart}",
-          "check{OOT Market Potion Shop Item 6}"
-        ],
-        [
-          "contains{OOT Market Potion Shop Item 7, MM_ANY_Heart}",
-          "check{OOT Market Potion Shop Item 7}"
-        ],
-        [
-          "contains{OOT Market Potion Shop Item 8, MM_ANY_Heart}",
-          "check{OOT Market Potion Shop Item 8}"
-        ],
-        [
-          "contains{OOT Market Bombchu Shop Item 1, MM_ANY_Heart}",
-          "check{OOT Market Bombchu Shop Item 1}"
-        ],
-        [
-          "contains{OOT Market Bombchu Shop Item 2, MM_ANY_Heart}",
-          "check{OOT Market Bombchu Shop Item 2}"
-        ],
-        [
-          "contains{OOT Market Bombchu Shop Item 3, MM_ANY_Heart}",
-          "check{OOT Market Bombchu Shop Item 3}"
-        ],
-        [
-          "contains{OOT Market Bombchu Shop Item 4, MM_ANY_Heart}",
-          "check{OOT Market Bombchu Shop Item 4}"
-        ],
-        [
-          "contains{OOT Market Bombchu Shop Item 5, MM_ANY_Heart}",
-          "check{OOT Market Bombchu Shop Item 5}"
-        ],
-        [
-          "contains{OOT Market Bombchu Shop Item 6, MM_ANY_Heart}",
-          "check{OOT Market Bombchu Shop Item 6}"
-        ],
-        [
-          "contains{OOT Market Bombchu Shop Item 7, MM_ANY_Heart}",
-          "check{OOT Market Bombchu Shop Item 7}"
-        ],
-        [
-          "contains{OOT Market Bombchu Shop Item 8, MM_ANY_Heart}",
-          "check{OOT Market Bombchu Shop Item 8}"
-        ],
-        [
-          "contains{OOT Gerudo Valley Grotto Front Scrub, MM_ANY_Heart}",
-          "check{OOT Gerudo Valley Grotto Front Scrub}"
-        ],
-        [
-          "contains{OOT Gerudo Valley Grotto Back Scrub, MM_ANY_Heart}",
-          "check{OOT Gerudo Valley Grotto Back Scrub}"
-        ],
-        [
-          "contains{OOT Gerudo Valley Cow, MM_ANY_Heart}",
-          "check{OOT Gerudo Valley Cow}"
-        ],
-        [
-          "contains{OOT Desert Colossus Grotto Front Scrub, MM_ANY_Heart}",
-          "check{OOT Desert Colossus Grotto Front Scrub}"
-        ],
-        [
-          "contains{OOT Desert Colossus Grotto Back Scrub, MM_ANY_Heart}",
-          "check{OOT Desert Colossus Grotto Back Scrub}"
-        ],
-        [
-          "contains{OOT Dodongo Cavern Lobby Scrub, MM_ANY_Heart}",
-          "check{OOT Dodongo Cavern Lobby Scrub}"
-        ],
-        [
-          "contains{OOT Dodongo Cavern Green Side Room Scrub, MM_ANY_Heart}",
-          "check{OOT Dodongo Cavern Green Side Room Scrub}"
-        ],
-        [
-          "contains{OOT Dodongo Cavern Bomb Bag Side Room Left Scrub, MM_ANY_Heart}",
-          "check{OOT Dodongo Cavern Bomb Bag Side Room Left Scrub}"
-        ],
-        [
-          "contains{OOT Dodongo Cavern Bomb Bag Side Room Right Scrub, MM_ANY_Heart}",
-          "check{OOT Dodongo Cavern Bomb Bag Side Room Right Scrub}"
-        ],
-        [
-          "contains{OOT Jabu-Jabu Scrub, MM_ANY_Heart}",
-          "check{OOT Jabu-Jabu Scrub}"
-        ],
-        [
-          "contains{OOT Ganon Castle Leftmost Scrub, MM_ANY_Heart}",
-          "check{OOT Ganon Castle Leftmost Scrub}"
-        ],
-        [
-          "contains{OOT Ganon Castle Left-Center Scrub, MM_ANY_Heart}",
-          "check{OOT Ganon Castle Left-Center Scrub}"
-        ],
-        [
-          "contains{OOT Ganon Castle Right-Center Scrub, MM_ANY_Heart}",
-          "check{OOT Ganon Castle Right-Center Scrub}"
-        ],
-        [
-          "contains{OOT Ganon Castle Rightmost Scrub, MM_ANY_Heart}",
-          "check{OOT Ganon Castle Rightmost Scrub}"
-        ],
-        [
-          "contains{OOT MQ Deku Tree Scrub, MM_ANY_Heart}",
-          "check{OOT MQ Deku Tree Scrub}"
-        ],
-        [
-          "contains{OOT MQ Dodongo Cavern Lobby Scrub Front, MM_ANY_Heart}",
-          "check{OOT MQ Dodongo Cavern Lobby Scrub Front}"
-        ],
-        [
-          "contains{OOT MQ Dodongo Cavern Lobby Scrub Back, MM_ANY_Heart}",
-          "check{OOT MQ Dodongo Cavern Lobby Scrub Back}"
-        ],
-        [
-          "contains{OOT MQ Dodongo Cavern Staircase Scrub, MM_ANY_Heart}",
-          "check{OOT MQ Dodongo Cavern Staircase Scrub}"
-        ],
-        [
-          "contains{OOT MQ Dodongo Cavern Tunnel Side Scrub, MM_ANY_Heart}",
-          "check{OOT MQ Dodongo Cavern Tunnel Side Scrub}"
-        ],
-        [
-          "contains{OOT MQ Jabu-Jabu Cow, MM_ANY_Heart}",
-          "check{OOT MQ Jabu-Jabu Cow}"
-        ],
-        [
-          "contains{OOT MQ Ganon Castle Leftmost Scrub, MM_ANY_Heart}",
-          "check{OOT MQ Ganon Castle Leftmost Scrub}"
-        ],
-        [
-          "contains{OOT MQ Ganon Castle Left-Center Scrub, MM_ANY_Heart}",
-          "check{OOT MQ Ganon Castle Left-Center Scrub}"
-        ],
-        [
-          "contains{OOT MQ Ganon Castle Center Scrub, MM_ANY_Heart}",
-          "check{OOT MQ Ganon Castle Center Scrub}"
-        ],
-        [
-          "contains{OOT MQ Ganon Castle Right-Center Scrub, MM_ANY_Heart}",
-          "check{OOT MQ Ganon Castle Right-Center Scrub}"
-        ],
-        [
-          "contains{OOT MQ Ganon Castle Rightmost Scrub, MM_ANY_Heart}",
-          "check{OOT MQ Ganon Castle Rightmost Scrub}"
-        ],
-        [
-          "contains{MM Trading Post Item 1, MM_ANY_Heart}",
-          "check{MM Trading Post Item 1}"
-        ],
-        [
-          "contains{MM Trading Post Item 2, MM_ANY_Heart}",
-          "check{MM Trading Post Item 2}"
-        ],
-        [
-          "contains{MM Trading Post Item 3, MM_ANY_Heart}",
-          "check{MM Trading Post Item 3}"
-        ],
-        [
-          "contains{MM Trading Post Item 4, MM_ANY_Heart}",
-          "check{MM Trading Post Item 4}"
-        ],
-        [
-          "contains{MM Trading Post Item 5, MM_ANY_Heart}",
-          "check{MM Trading Post Item 5}"
-        ],
-        [
-          "contains{MM Trading Post Item 6, MM_ANY_Heart}",
-          "check{MM Trading Post Item 6}"
-        ],
-        [
-          "contains{MM Trading Post Item 7, MM_ANY_Heart}",
-          "check{MM Trading Post Item 7}"
-        ],
-        [
-          "contains{MM Trading Post Item 8, MM_ANY_Heart}",
-          "check{MM Trading Post Item 8}"
-        ],
-        [
-          "contains{MM Bomb Shop Item 1, MM_ANY_Heart}",
-          "check{MM Bomb Shop Item 1}"
-        ],
-        [
-          "contains{MM Bomb Shop Item 2, MM_ANY_Heart}",
-          "check{MM Bomb Shop Item 2}"
-        ],
-        [
-          "contains{MM Termina Field Cow Front, MM_ANY_Heart}",
-          "check{MM Termina Field Cow Front}"
-        ],
-        [
-          "contains{MM Termina Field Cow Back, MM_ANY_Heart}",
-          "check{MM Termina Field Cow Back}"
-        ],
-        [
-          "contains{MM Swamp Potion Shop Item 1, MM_ANY_Heart}",
-          "check{MM Swamp Potion Shop Item 1}"
-        ],
-        [
-          "contains{MM Swamp Potion Shop Item 2, MM_ANY_Heart}",
-          "check{MM Swamp Potion Shop Item 2}"
-        ],
-        [
-          "contains{MM Swamp Potion Shop Item 3, MM_ANY_Heart}",
-          "check{MM Swamp Potion Shop Item 3}"
-        ],
-        [
-          "contains{MM Goron Shop Item 1, MM_ANY_Heart}",
-          "check{MM Goron Shop Item 1}"
-        ],
-        [
-          "contains{MM Goron Shop Item 2, MM_ANY_Heart}",
-          "check{MM Goron Shop Item 2}"
-        ],
-        [
-          "contains{MM Goron Shop Item 3, MM_ANY_Heart}",
-          "check{MM Goron Shop Item 3}"
-        ],
-        [
-          "contains{MM Romani Ranch Barn Cow Left, MM_ANY_Heart}",
-          "check{MM Romani Ranch Barn Cow Left}"
-        ],
-        [
-          "contains{MM Romani Ranch Barn Cow Right Front, MM_ANY_Heart}",
-          "check{MM Romani Ranch Barn Cow Right Front}"
-        ],
-        [
-          "contains{MM Romani Ranch Barn Cow Right Back, MM_ANY_Heart}",
-          "check{MM Romani Ranch Barn Cow Right Back}"
-        ],
-        [
-          "contains{MM Great Bay Coast Cow Front, MM_ANY_Heart}",
-          "check{MM Great Bay Coast Cow Front}"
-        ],
-        [
-          "contains{MM Great Bay Coast Cow Back, MM_ANY_Heart}",
-          "check{MM Great Bay Coast Cow Back}"
-        ],
-        [
-          "contains{MM Zora Shop Item 1, MM_ANY_Heart}",
-          "check{MM Zora Shop Item 1}"
-        ],
-        [
-          "contains{MM Zora Shop Item 2, MM_ANY_Heart}",
-          "check{MM Zora Shop Item 2}"
-        ],
-        [
-          "contains{MM Zora Shop Item 3, MM_ANY_Heart}",
-          "check{MM Zora Shop Item 3}"
-        ],
-        [
-          "contains{MM Beneath the Well Cow, MM_ANY_Heart}",
-          "check{MM Beneath the Well Cow}"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_Has_Renewable_Heart",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "contains{OOT Kokiri Forest Cow, OOT_ANY_Heart}",
-          "check{OOT Kokiri Forest Cow}"
-        ],
-        [
-          "contains{OOT Kokiri Shop Item 1, OOT_ANY_Heart}",
-          "check{OOT Kokiri Shop Item 1}"
-        ],
-        [
-          "contains{OOT Kokiri Shop Item 2, OOT_ANY_Heart}",
-          "check{OOT Kokiri Shop Item 2}"
-        ],
-        [
-          "contains{OOT Kokiri Shop Item 3, OOT_ANY_Heart}",
-          "check{OOT Kokiri Shop Item 3}"
-        ],
-        [
-          "contains{OOT Kokiri Shop Item 4, OOT_ANY_Heart}",
-          "check{OOT Kokiri Shop Item 4}"
-        ],
-        [
-          "contains{OOT Kokiri Shop Item 5, OOT_ANY_Heart}",
-          "check{OOT Kokiri Shop Item 5}"
-        ],
-        [
-          "contains{OOT Kokiri Shop Item 6, OOT_ANY_Heart}",
-          "check{OOT Kokiri Shop Item 6}"
-        ],
-        [
-          "contains{OOT Kokiri Shop Item 7, OOT_ANY_Heart}",
-          "check{OOT Kokiri Shop Item 7}"
-        ],
-        [
-          "contains{OOT Kokiri Shop Item 8, OOT_ANY_Heart}",
-          "check{OOT Kokiri Shop Item 8}"
-        ],
-        [
-          "contains{OOT Lost Woods Scrub Near Theater Left, OOT_ANY_Heart}",
-          "check{OOT Lost Woods Scrub Near Theater Left}"
-        ],
-        [
-          "contains{OOT Lost Woods Scrub Near Theater Right, OOT_ANY_Heart}",
-          "check{OOT Lost Woods Scrub Near Theater Right}"
-        ],
-        [
-          "contains{OOT Lost Woods Grotto Scrub Back, OOT_ANY_Heart}",
-          "check{OOT Lost Woods Grotto Scrub Back}"
-        ],
-        [
-          "contains{OOT Sacred Meadow Storms Grotto Front Scrub, OOT_ANY_Heart}",
-          "check{OOT Sacred Meadow Storms Grotto Front Scrub}"
-        ],
-        [
-          "contains{OOT Sacred Meadow Storms Grotto Back Scrub, OOT_ANY_Heart}",
-          "check{OOT Sacred Meadow Storms Grotto Back Scrub}"
-        ],
-        [
-          "contains{OOT Kakariko Cow, OOT_ANY_Heart}",
-          "check{OOT Kakariko Cow}"
-        ],
-        [
-          "contains{OOT Kakariko Bazaar Item 1, OOT_ANY_Heart}",
-          "check{OOT Kakariko Bazaar Item 1}"
-        ],
-        [
-          "contains{OOT Kakariko Bazaar Item 2, OOT_ANY_Heart}",
-          "check{OOT Kakariko Bazaar Item 2}"
-        ],
-        [
-          "contains{OOT Kakariko Bazaar Item 3, OOT_ANY_Heart}",
-          "check{OOT Kakariko Bazaar Item 3}"
-        ],
-        [
-          "contains{OOT Kakariko Bazaar Item 4, OOT_ANY_Heart}",
-          "check{OOT Kakariko Bazaar Item 4}"
-        ],
-        [
-          "contains{OOT Kakariko Bazaar Item 5, OOT_ANY_Heart}",
-          "check{OOT Kakariko Bazaar Item 5}"
-        ],
-        [
-          "contains{OOT Kakariko Bazaar Item 6, OOT_ANY_Heart}",
-          "check{OOT Kakariko Bazaar Item 6}"
-        ],
-        [
-          "contains{OOT Kakariko Bazaar Item 7, OOT_ANY_Heart}",
-          "check{OOT Kakariko Bazaar Item 7}"
-        ],
-        [
-          "contains{OOT Kakariko Bazaar Item 8, OOT_ANY_Heart}",
-          "check{OOT Kakariko Bazaar Item 8}"
-        ],
-        [
-          "contains{OOT Kakariko Potion Shop Item 1, OOT_ANY_Heart}",
-          "check{OOT Kakariko Potion Shop Item 1}"
-        ],
-        [
-          "contains{OOT Kakariko Potion Shop Item 2, OOT_ANY_Heart}",
-          "check{OOT Kakariko Potion Shop Item 2}"
-        ],
-        [
-          "contains{OOT Kakariko Potion Shop Item 3, OOT_ANY_Heart}",
-          "check{OOT Kakariko Potion Shop Item 3}"
-        ],
-        [
-          "contains{OOT Kakariko Potion Shop Item 4, OOT_ANY_Heart}",
-          "check{OOT Kakariko Potion Shop Item 4}"
-        ],
-        [
-          "contains{OOT Kakariko Potion Shop Item 5, OOT_ANY_Heart}",
-          "check{OOT Kakariko Potion Shop Item 5}"
-        ],
-        [
-          "contains{OOT Kakariko Potion Shop Item 6, OOT_ANY_Heart}",
-          "check{OOT Kakariko Potion Shop Item 6}"
-        ],
-        [
-          "contains{OOT Kakariko Potion Shop Item 7, OOT_ANY_Heart}",
-          "check{OOT Kakariko Potion Shop Item 7}"
-        ],
-        [
-          "contains{OOT Kakariko Potion Shop Item 8, OOT_ANY_Heart}",
-          "check{OOT Kakariko Potion Shop Item 8}"
-        ],
-        [
-          "contains{OOT Death Mountain Cow, OOT_ANY_Heart}",
-          "check{OOT Death Mountain Cow}"
-        ],
-        [
-          "contains{OOT Goron City Grotto Left Scrub, OOT_ANY_Heart}",
-          "check{OOT Goron City Grotto Left Scrub}"
-        ],
-        [
-          "contains{OOT Goron City Grotto Center Scrub, OOT_ANY_Heart}",
-          "check{OOT Goron City Grotto Center Scrub}"
-        ],
-        [
-          "contains{OOT Goron City Grotto Right Scrub, OOT_ANY_Heart}",
-          "check{OOT Goron City Grotto Right Scrub}"
-        ],
-        [
-          "contains{OOT Goron Shop Item 1, OOT_ANY_Heart}",
-          "check{OOT Goron Shop Item 1}"
-        ],
-        [
-          "contains{OOT Goron Shop Item 2, OOT_ANY_Heart}",
-          "check{OOT Goron Shop Item 2}"
-        ],
-        [
-          "contains{OOT Goron Shop Item 3, OOT_ANY_Heart}",
-          "check{OOT Goron Shop Item 3}"
-        ],
-        [
-          "contains{OOT Goron Shop Item 4, OOT_ANY_Heart}",
-          "check{OOT Goron Shop Item 4}"
-        ],
-        [
-          "contains{OOT Goron Shop Item 5, OOT_ANY_Heart}",
-          "check{OOT Goron Shop Item 5}"
-        ],
-        [
-          "contains{OOT Goron Shop Item 6, OOT_ANY_Heart}",
-          "check{OOT Goron Shop Item 6}"
-        ],
-        [
-          "contains{OOT Goron Shop Item 7, OOT_ANY_Heart}",
-          "check{OOT Goron Shop Item 7}"
-        ],
-        [
-          "contains{OOT Goron Shop Item 8, OOT_ANY_Heart}",
-          "check{OOT Goron Shop Item 8}"
-        ],
-        [
-          "contains{OOT Death Mountain Crater Scrub Child, OOT_ANY_Heart}",
-          "check{OOT Death Mountain Crater Scrub Child}"
-        ],
-        [
-          "contains{OOT Death Mountain Crater Grotto Left Scrub, OOT_ANY_Heart}",
-          "check{OOT Death Mountain Crater Grotto Left Scrub}"
-        ],
-        [
-          "contains{OOT Death Mountain Crater Grotto Center Scrub, OOT_ANY_Heart}",
-          "check{OOT Death Mountain Crater Grotto Center Scrub}"
-        ],
-        [
-          "contains{OOT Death Mountain Crater Grotto Right Scrub, OOT_ANY_Heart}",
-          "check{OOT Death Mountain Crater Grotto Right Scrub}"
-        ],
-        [
-          "contains{OOT Zora River Storms Grotto Front Scrub, OOT_ANY_Heart}",
-          "check{OOT Zora River Storms Grotto Front Scrub}"
-        ],
-        [
-          "contains{OOT Zora River Storms Grotto Back Scrub, OOT_ANY_Heart}",
-          "check{OOT Zora River Storms Grotto Back Scrub}"
-        ],
-        [
-          "contains{OOT Zora Shop Item 1, OOT_ANY_Heart}",
-          "check{OOT Zora Shop Item 1}"
-        ],
-        [
-          "contains{OOT Zora Shop Item 2, OOT_ANY_Heart}",
-          "check{OOT Zora Shop Item 2}"
-        ],
-        [
-          "contains{OOT Zora Shop Item 3, OOT_ANY_Heart}",
-          "check{OOT Zora Shop Item 3}"
-        ],
-        [
-          "contains{OOT Zora Shop Item 4, OOT_ANY_Heart}",
-          "check{OOT Zora Shop Item 4}"
-        ],
-        [
-          "contains{OOT Zora Shop Item 5, OOT_ANY_Heart}",
-          "check{OOT Zora Shop Item 5}"
-        ],
-        [
-          "contains{OOT Zora Shop Item 6, OOT_ANY_Heart}",
-          "check{OOT Zora Shop Item 6}"
-        ],
-        [
-          "contains{OOT Zora Shop Item 7, OOT_ANY_Heart}",
-          "check{OOT Zora Shop Item 7}"
-        ],
-        [
-          "contains{OOT Zora Shop Item 8, OOT_ANY_Heart}",
-          "check{OOT Zora Shop Item 8}"
-        ],
-        [
-          "contains{OOT Lake Hylia Grotto Left Scrub, OOT_ANY_Heart}",
-          "check{OOT Lake Hylia Grotto Left Scrub}"
-        ],
-        [
-          "contains{OOT Lake Hylia Grotto Center Scrub, OOT_ANY_Heart}",
-          "check{OOT Lake Hylia Grotto Center Scrub}"
-        ],
-        [
-          "contains{OOT Lake Hylia Grotto Right Scrub, OOT_ANY_Heart}",
-          "check{OOT Lake Hylia Grotto Right Scrub}"
-        ],
-        [
-          "contains{OOT Lon Lon Ranch Stables Cow Left, OOT_ANY_Heart}",
-          "check{OOT Lon Lon Ranch Stables Cow Left}"
-        ],
-        [
-          "contains{OOT Lon Lon Ranch Stables Cow Right, OOT_ANY_Heart}",
-          "check{OOT Lon Lon Ranch Stables Cow Right}"
-        ],
-        [
-          "contains{OOT Lon Lon Ranch Silo Cow Front, OOT_ANY_Heart}",
-          "check{OOT Lon Lon Ranch Silo Cow Front}"
-        ],
-        [
-          "contains{OOT Lon Lon Ranch Silo Cow Back, OOT_ANY_Heart}",
-          "check{OOT Lon Lon Ranch Silo Cow Back}"
-        ],
-        [
-          "contains{OOT Lon Lon Ranch Grotto Left Scrub, OOT_ANY_Heart}",
-          "check{OOT Lon Lon Ranch Grotto Left Scrub}"
-        ],
-        [
-          "contains{OOT Lon Lon Ranch Grotto Center Scrub, OOT_ANY_Heart}",
-          "check{OOT Lon Lon Ranch Grotto Center Scrub}"
-        ],
-        [
-          "contains{OOT Lon Lon Ranch Grotto Right Scrub, OOT_ANY_Heart}",
-          "check{OOT Lon Lon Ranch Grotto Right Scrub}"
-        ],
-        [
-          "contains{OOT Hyrule Field Cow, OOT_ANY_Heart}",
-          "check{OOT Hyrule Field Cow}"
-        ],
-        [
-          "contains{OOT Market Bazaar Item 1, OOT_ANY_Heart}",
-          "check{OOT Market Bazaar Item 1}"
-        ],
-        [
-          "contains{OOT Market Bazaar Item 2, OOT_ANY_Heart}",
-          "check{OOT Market Bazaar Item 2}"
-        ],
-        [
-          "contains{OOT Market Bazaar Item 3, OOT_ANY_Heart}",
-          "check{OOT Market Bazaar Item 3}"
-        ],
-        [
-          "contains{OOT Market Bazaar Item 4, OOT_ANY_Heart}",
-          "check{OOT Market Bazaar Item 4}"
-        ],
-        [
-          "contains{OOT Market Bazaar Item 5, OOT_ANY_Heart}",
-          "check{OOT Market Bazaar Item 5}"
-        ],
-        [
-          "contains{OOT Market Bazaar Item 6, OOT_ANY_Heart}",
-          "check{OOT Market Bazaar Item 6}"
-        ],
-        [
-          "contains{OOT Market Bazaar Item 7, OOT_ANY_Heart}",
-          "check{OOT Market Bazaar Item 7}"
-        ],
-        [
-          "contains{OOT Market Bazaar Item 8, OOT_ANY_Heart}",
-          "check{OOT Market Bazaar Item 8}"
-        ],
-        [
-          "contains{OOT Market Potion Shop Item 1, OOT_ANY_Heart}",
-          "check{OOT Market Potion Shop Item 1}"
-        ],
-        [
-          "contains{OOT Market Potion Shop Item 2, OOT_ANY_Heart}",
-          "check{OOT Market Potion Shop Item 2}"
-        ],
-        [
-          "contains{OOT Market Potion Shop Item 3, OOT_ANY_Heart}",
-          "check{OOT Market Potion Shop Item 3}"
-        ],
-        [
-          "contains{OOT Market Potion Shop Item 4, OOT_ANY_Heart}",
-          "check{OOT Market Potion Shop Item 4}"
-        ],
-        [
-          "contains{OOT Market Potion Shop Item 5, OOT_ANY_Heart}",
-          "check{OOT Market Potion Shop Item 5}"
-        ],
-        [
-          "contains{OOT Market Potion Shop Item 6, OOT_ANY_Heart}",
-          "check{OOT Market Potion Shop Item 6}"
-        ],
-        [
-          "contains{OOT Market Potion Shop Item 7, OOT_ANY_Heart}",
-          "check{OOT Market Potion Shop Item 7}"
-        ],
-        [
-          "contains{OOT Market Potion Shop Item 8, OOT_ANY_Heart}",
-          "check{OOT Market Potion Shop Item 8}"
-        ],
-        [
-          "contains{OOT Market Bombchu Shop Item 1, OOT_ANY_Heart}",
-          "check{OOT Market Bombchu Shop Item 1}"
-        ],
-        [
-          "contains{OOT Market Bombchu Shop Item 2, OOT_ANY_Heart}",
-          "check{OOT Market Bombchu Shop Item 2}"
-        ],
-        [
-          "contains{OOT Market Bombchu Shop Item 3, OOT_ANY_Heart}",
-          "check{OOT Market Bombchu Shop Item 3}"
-        ],
-        [
-          "contains{OOT Market Bombchu Shop Item 4, OOT_ANY_Heart}",
-          "check{OOT Market Bombchu Shop Item 4}"
-        ],
-        [
-          "contains{OOT Market Bombchu Shop Item 5, OOT_ANY_Heart}",
-          "check{OOT Market Bombchu Shop Item 5}"
-        ],
-        [
-          "contains{OOT Market Bombchu Shop Item 6, OOT_ANY_Heart}",
-          "check{OOT Market Bombchu Shop Item 6}"
-        ],
-        [
-          "contains{OOT Market Bombchu Shop Item 7, OOT_ANY_Heart}",
-          "check{OOT Market Bombchu Shop Item 7}"
-        ],
-        [
-          "contains{OOT Market Bombchu Shop Item 8, OOT_ANY_Heart}",
-          "check{OOT Market Bombchu Shop Item 8}"
-        ],
-        [
-          "contains{OOT Gerudo Valley Grotto Front Scrub, OOT_ANY_Heart}",
-          "check{OOT Gerudo Valley Grotto Front Scrub}"
-        ],
-        [
-          "contains{OOT Gerudo Valley Grotto Back Scrub, OOT_ANY_Heart}",
-          "check{OOT Gerudo Valley Grotto Back Scrub}"
-        ],
-        [
-          "contains{OOT Gerudo Valley Cow, OOT_ANY_Heart}",
-          "check{OOT Gerudo Valley Cow}"
-        ],
-        [
-          "contains{OOT Desert Colossus Grotto Front Scrub, OOT_ANY_Heart}",
-          "check{OOT Desert Colossus Grotto Front Scrub}"
-        ],
-        [
-          "contains{OOT Desert Colossus Grotto Back Scrub, OOT_ANY_Heart}",
-          "check{OOT Desert Colossus Grotto Back Scrub}"
-        ],
-        [
-          "contains{OOT Dodongo Cavern Lobby Scrub, OOT_ANY_Heart}",
-          "check{OOT Dodongo Cavern Lobby Scrub}"
-        ],
-        [
-          "contains{OOT Dodongo Cavern Green Side Room Scrub, OOT_ANY_Heart}",
-          "check{OOT Dodongo Cavern Green Side Room Scrub}"
-        ],
-        [
-          "contains{OOT Dodongo Cavern Bomb Bag Side Room Left Scrub, OOT_ANY_Heart}",
-          "check{OOT Dodongo Cavern Bomb Bag Side Room Left Scrub}"
-        ],
-        [
-          "contains{OOT Dodongo Cavern Bomb Bag Side Room Right Scrub, OOT_ANY_Heart}",
-          "check{OOT Dodongo Cavern Bomb Bag Side Room Right Scrub}"
-        ],
-        [
-          "contains{OOT Jabu-Jabu Scrub, OOT_ANY_Heart}",
-          "check{OOT Jabu-Jabu Scrub}"
-        ],
-        [
-          "contains{OOT Ganon Castle Leftmost Scrub, OOT_ANY_Heart}",
-          "check{OOT Ganon Castle Leftmost Scrub}"
-        ],
-        [
-          "contains{OOT Ganon Castle Left-Center Scrub, OOT_ANY_Heart}",
-          "check{OOT Ganon Castle Left-Center Scrub}"
-        ],
-        [
-          "contains{OOT Ganon Castle Right-Center Scrub, OOT_ANY_Heart}",
-          "check{OOT Ganon Castle Right-Center Scrub}"
-        ],
-        [
-          "contains{OOT Ganon Castle Rightmost Scrub, OOT_ANY_Heart}",
-          "check{OOT Ganon Castle Rightmost Scrub}"
-        ],
-        [
-          "contains{OOT MQ Deku Tree Scrub, OOT_ANY_Heart}",
-          "check{OOT MQ Deku Tree Scrub}"
-        ],
-        [
-          "contains{OOT MQ Dodongo Cavern Lobby Scrub Front, OOT_ANY_Heart}",
-          "check{OOT MQ Dodongo Cavern Lobby Scrub Front}"
-        ],
-        [
-          "contains{OOT MQ Dodongo Cavern Lobby Scrub Back, OOT_ANY_Heart}",
-          "check{OOT MQ Dodongo Cavern Lobby Scrub Back}"
-        ],
-        [
-          "contains{OOT MQ Dodongo Cavern Staircase Scrub, OOT_ANY_Heart}",
-          "check{OOT MQ Dodongo Cavern Staircase Scrub}"
-        ],
-        [
-          "contains{OOT MQ Dodongo Cavern Tunnel Side Scrub, OOT_ANY_Heart}",
-          "check{OOT MQ Dodongo Cavern Tunnel Side Scrub}"
-        ],
-        [
-          "contains{OOT MQ Jabu-Jabu Cow, OOT_ANY_Heart}",
-          "check{OOT MQ Jabu-Jabu Cow}"
-        ],
-        [
-          "contains{OOT MQ Ganon Castle Leftmost Scrub, OOT_ANY_Heart}",
-          "check{OOT MQ Ganon Castle Leftmost Scrub}"
-        ],
-        [
-          "contains{OOT MQ Ganon Castle Left-Center Scrub, OOT_ANY_Heart}",
-          "check{OOT MQ Ganon Castle Left-Center Scrub}"
-        ],
-        [
-          "contains{OOT MQ Ganon Castle Center Scrub, OOT_ANY_Heart}",
-          "check{OOT MQ Ganon Castle Center Scrub}"
-        ],
-        [
-          "contains{OOT MQ Ganon Castle Right-Center Scrub, OOT_ANY_Heart}",
-          "check{OOT MQ Ganon Castle Right-Center Scrub}"
-        ],
-        [
-          "contains{OOT MQ Ganon Castle Rightmost Scrub, OOT_ANY_Heart}",
-          "check{OOT MQ Ganon Castle Rightmost Scrub}"
-        ],
-        [
-          "contains{MM Trading Post Item 1, OOT_ANY_Heart}",
-          "check{MM Trading Post Item 1}"
-        ],
-        [
-          "contains{MM Trading Post Item 2, OOT_ANY_Heart}",
-          "check{MM Trading Post Item 2}"
-        ],
-        [
-          "contains{MM Trading Post Item 3, OOT_ANY_Heart}",
-          "check{MM Trading Post Item 3}"
-        ],
-        [
-          "contains{MM Trading Post Item 4, OOT_ANY_Heart}",
-          "check{MM Trading Post Item 4}"
-        ],
-        [
-          "contains{MM Trading Post Item 5, OOT_ANY_Heart}",
-          "check{MM Trading Post Item 5}"
-        ],
-        [
-          "contains{MM Trading Post Item 6, OOT_ANY_Heart}",
-          "check{MM Trading Post Item 6}"
-        ],
-        [
-          "contains{MM Trading Post Item 7, OOT_ANY_Heart}",
-          "check{MM Trading Post Item 7}"
-        ],
-        [
-          "contains{MM Trading Post Item 8, OOT_ANY_Heart}",
-          "check{MM Trading Post Item 8}"
-        ],
-        [
-          "contains{MM Bomb Shop Item 1, OOT_ANY_Heart}",
-          "check{MM Bomb Shop Item 1}"
-        ],
-        [
-          "contains{MM Bomb Shop Item 2, OOT_ANY_Heart}",
-          "check{MM Bomb Shop Item 2}"
-        ],
-        [
-          "contains{MM Termina Field Cow Front, OOT_ANY_Heart}",
-          "check{MM Termina Field Cow Front}"
-        ],
-        [
-          "contains{MM Termina Field Cow Back, OOT_ANY_Heart}",
-          "check{MM Termina Field Cow Back}"
-        ],
-        [
-          "contains{MM Swamp Potion Shop Item 1, OOT_ANY_Heart}",
-          "check{MM Swamp Potion Shop Item 1}"
-        ],
-        [
-          "contains{MM Swamp Potion Shop Item 2, OOT_ANY_Heart}",
-          "check{MM Swamp Potion Shop Item 2}"
-        ],
-        [
-          "contains{MM Swamp Potion Shop Item 3, OOT_ANY_Heart}",
-          "check{MM Swamp Potion Shop Item 3}"
-        ],
-        [
-          "contains{MM Goron Shop Item 1, OOT_ANY_Heart}",
-          "check{MM Goron Shop Item 1}"
-        ],
-        [
-          "contains{MM Goron Shop Item 2, OOT_ANY_Heart}",
-          "check{MM Goron Shop Item 2}"
-        ],
-        [
-          "contains{MM Goron Shop Item 3, OOT_ANY_Heart}",
-          "check{MM Goron Shop Item 3}"
-        ],
-        [
-          "contains{MM Romani Ranch Barn Cow Left, OOT_ANY_Heart}",
-          "check{MM Romani Ranch Barn Cow Left}"
-        ],
-        [
-          "contains{MM Romani Ranch Barn Cow Right Front, OOT_ANY_Heart}",
-          "check{MM Romani Ranch Barn Cow Right Front}"
-        ],
-        [
-          "contains{MM Romani Ranch Barn Cow Right Back, OOT_ANY_Heart}",
-          "check{MM Romani Ranch Barn Cow Right Back}"
-        ],
-        [
-          "contains{MM Great Bay Coast Cow Front, OOT_ANY_Heart}",
-          "check{MM Great Bay Coast Cow Front}"
-        ],
-        [
-          "contains{MM Great Bay Coast Cow Back, OOT_ANY_Heart}",
-          "check{MM Great Bay Coast Cow Back}"
-        ],
-        [
-          "contains{MM Zora Shop Item 1, OOT_ANY_Heart}",
-          "check{MM Zora Shop Item 1}"
-        ],
-        [
-          "contains{MM Zora Shop Item 2, OOT_ANY_Heart}",
-          "check{MM Zora Shop Item 2}"
-        ],
-        [
-          "contains{MM Zora Shop Item 3, OOT_ANY_Heart}",
-          "check{MM Zora Shop Item 3}"
-        ],
-        [
-          "contains{MM Beneath the Well Cow, OOT_ANY_Heart}",
-          "check{MM Beneath the Well Cow}"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
       "Id": "MM_Has_Renewable_Stick",
       "RequiredItems": [],
       "ConditionalItems": [
@@ -44337,6 +43165,30 @@
         [
           "contains{OOT MQ Ganon Castle Rightmost Scrub, MM_ANY_Stick}",
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
+        ],
+        [
+          "contains{MM Tingle Map Clock Town, MM_ANY_Stick}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, MM_ANY_Stick}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, MM_ANY_Stick}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, MM_ANY_Stick}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, MM_ANY_Stick}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, MM_ANY_Stick}",
+          "check{MM Tingle Map Ikana}"
         ],
         [
           "contains{MM Trading Post Item 1, MM_ANY_Stick}",
@@ -44925,6 +43777,30 @@
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
         ],
         [
+          "contains{MM Tingle Map Clock Town, OOT_ANY_Stick}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, OOT_ANY_Stick}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, OOT_ANY_Stick}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, OOT_ANY_Stick}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, OOT_ANY_Stick}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, OOT_ANY_Stick}",
+          "check{MM Tingle Map Ikana}"
+        ],
+        [
           "contains{MM Trading Post Item 1, OOT_ANY_Stick}",
           "check{MM Trading Post Item 1}"
         ],
@@ -45509,6 +44385,30 @@
         [
           "contains{OOT MQ Ganon Castle Rightmost Scrub, MM_ANY_Nut}",
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
+        ],
+        [
+          "contains{MM Tingle Map Clock Town, MM_ANY_Nut}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, MM_ANY_Nut}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, MM_ANY_Nut}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, MM_ANY_Nut}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, MM_ANY_Nut}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, MM_ANY_Nut}",
+          "check{MM Tingle Map Ikana}"
         ],
         [
           "contains{MM Trading Post Item 1, MM_ANY_Nut}",
@@ -46097,6 +44997,30 @@
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
         ],
         [
+          "contains{MM Tingle Map Clock Town, OOT_ANY_Nut}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, OOT_ANY_Nut}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, OOT_ANY_Nut}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, OOT_ANY_Nut}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, OOT_ANY_Nut}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, OOT_ANY_Nut}",
+          "check{MM Tingle Map Ikana}"
+        ],
+        [
           "contains{MM Trading Post Item 1, OOT_ANY_Nut}",
           "check{MM Trading Post Item 1}"
         ],
@@ -46681,6 +45605,30 @@
         [
           "contains{OOT MQ Ganon Castle Rightmost Scrub, MM_ANY_Bomb}",
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
+        ],
+        [
+          "contains{MM Tingle Map Clock Town, MM_ANY_Bomb}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, MM_ANY_Bomb}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, MM_ANY_Bomb}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, MM_ANY_Bomb}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, MM_ANY_Bomb}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, MM_ANY_Bomb}",
+          "check{MM Tingle Map Ikana}"
         ],
         [
           "contains{MM Trading Post Item 1, MM_ANY_Bomb}",
@@ -47269,6 +46217,30 @@
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
         ],
         [
+          "contains{MM Tingle Map Clock Town, OOT_ANY_Bomb}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, OOT_ANY_Bomb}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, OOT_ANY_Bomb}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, OOT_ANY_Bomb}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, OOT_ANY_Bomb}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, OOT_ANY_Bomb}",
+          "check{MM Tingle Map Ikana}"
+        ],
+        [
           "contains{MM Trading Post Item 1, OOT_ANY_Bomb}",
           "check{MM Trading Post Item 1}"
         ],
@@ -47853,6 +46825,30 @@
         [
           "contains{OOT MQ Ganon Castle Rightmost Scrub, MM_ANY_Arrow}",
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
+        ],
+        [
+          "contains{MM Tingle Map Clock Town, MM_ANY_Arrow}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, MM_ANY_Arrow}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, MM_ANY_Arrow}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, MM_ANY_Arrow}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, MM_ANY_Arrow}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, MM_ANY_Arrow}",
+          "check{MM Tingle Map Ikana}"
         ],
         [
           "contains{MM Trading Post Item 1, MM_ANY_Arrow}",
@@ -48441,6 +47437,30 @@
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
         ],
         [
+          "contains{MM Tingle Map Clock Town, OOT_ANY_Arrow}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, OOT_ANY_Arrow}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, OOT_ANY_Arrow}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, OOT_ANY_Arrow}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, OOT_ANY_Arrow}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, OOT_ANY_Arrow}",
+          "check{MM Tingle Map Ikana}"
+        ],
+        [
           "contains{MM Trading Post Item 1, OOT_ANY_Arrow}",
           "check{MM Trading Post Item 1}"
         ],
@@ -49025,6 +48045,30 @@
         [
           "contains{OOT MQ Ganon Castle Rightmost Scrub, MM_ANY_Seed}",
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
+        ],
+        [
+          "contains{MM Tingle Map Clock Town, MM_ANY_Seed}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, MM_ANY_Seed}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, MM_ANY_Seed}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, MM_ANY_Seed}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, MM_ANY_Seed}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, MM_ANY_Seed}",
+          "check{MM Tingle Map Ikana}"
         ],
         [
           "contains{MM Trading Post Item 1, MM_ANY_Seed}",
@@ -49613,6 +48657,30 @@
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
         ],
         [
+          "contains{MM Tingle Map Clock Town, OOT_ANY_Seed}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, OOT_ANY_Seed}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, OOT_ANY_Seed}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, OOT_ANY_Seed}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, OOT_ANY_Seed}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, OOT_ANY_Seed}",
+          "check{MM Tingle Map Ikana}"
+        ],
+        [
           "contains{MM Trading Post Item 1, OOT_ANY_Seed}",
           "check{MM Trading Post Item 1}"
         ],
@@ -50197,6 +49265,30 @@
         [
           "contains{OOT MQ Ganon Castle Rightmost Scrub, MM_ANY_Bombchu}",
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
+        ],
+        [
+          "contains{MM Tingle Map Clock Town, MM_ANY_Bombchu}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, MM_ANY_Bombchu}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, MM_ANY_Bombchu}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, MM_ANY_Bombchu}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, MM_ANY_Bombchu}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, MM_ANY_Bombchu}",
+          "check{MM Tingle Map Ikana}"
         ],
         [
           "contains{MM Trading Post Item 1, MM_ANY_Bombchu}",
@@ -50785,6 +49877,30 @@
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
         ],
         [
+          "contains{MM Tingle Map Clock Town, OOT_ANY_Bombchu}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, OOT_ANY_Bombchu}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, OOT_ANY_Bombchu}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, OOT_ANY_Bombchu}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, OOT_ANY_Bombchu}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, OOT_ANY_Bombchu}",
+          "check{MM Tingle Map Ikana}"
+        ],
+        [
           "contains{MM Trading Post Item 1, OOT_ANY_Bombchu}",
           "check{MM Trading Post Item 1}"
         ],
@@ -51369,6 +50485,30 @@
         [
           "contains{OOT MQ Ganon Castle Rightmost Scrub, MM_ANY_DekuShield}",
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
+        ],
+        [
+          "contains{MM Tingle Map Clock Town, MM_ANY_DekuShield}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, MM_ANY_DekuShield}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, MM_ANY_DekuShield}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, MM_ANY_DekuShield}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, MM_ANY_DekuShield}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, MM_ANY_DekuShield}",
+          "check{MM Tingle Map Ikana}"
         ],
         [
           "contains{MM Trading Post Item 1, MM_ANY_DekuShield}",
@@ -51957,6 +51097,30 @@
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
         ],
         [
+          "contains{MM Tingle Map Clock Town, OOT_ANY_DekuShield}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, OOT_ANY_DekuShield}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, OOT_ANY_DekuShield}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, OOT_ANY_DekuShield}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, OOT_ANY_DekuShield}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, OOT_ANY_DekuShield}",
+          "check{MM Tingle Map Ikana}"
+        ],
+        [
           "contains{MM Trading Post Item 1, OOT_ANY_DekuShield}",
           "check{MM Trading Post Item 1}"
         ],
@@ -52541,6 +51705,30 @@
         [
           "contains{OOT MQ Ganon Castle Rightmost Scrub, MM_ANY_HylianShield}",
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
+        ],
+        [
+          "contains{MM Tingle Map Clock Town, MM_ANY_HylianShield}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, MM_ANY_HylianShield}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, MM_ANY_HylianShield}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, MM_ANY_HylianShield}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, MM_ANY_HylianShield}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, MM_ANY_HylianShield}",
+          "check{MM Tingle Map Ikana}"
         ],
         [
           "contains{MM Trading Post Item 1, MM_ANY_HylianShield}",
@@ -53129,6 +52317,30 @@
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
         ],
         [
+          "contains{MM Tingle Map Clock Town, OOT_ANY_HylianShield}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, OOT_ANY_HylianShield}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, OOT_ANY_HylianShield}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, OOT_ANY_HylianShield}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, OOT_ANY_HylianShield}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, OOT_ANY_HylianShield}",
+          "check{MM Tingle Map Ikana}"
+        ],
+        [
           "contains{MM Trading Post Item 1, OOT_ANY_HylianShield}",
           "check{MM Trading Post Item 1}"
         ],
@@ -53713,6 +52925,30 @@
         [
           "contains{OOT MQ Ganon Castle Rightmost Scrub, MM_ANY_Milk}",
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
+        ],
+        [
+          "contains{MM Tingle Map Clock Town, MM_ANY_Milk}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, MM_ANY_Milk}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, MM_ANY_Milk}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, MM_ANY_Milk}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, MM_ANY_Milk}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, MM_ANY_Milk}",
+          "check{MM Tingle Map Ikana}"
         ],
         [
           "contains{MM Trading Post Item 1, MM_ANY_Milk}",
@@ -54301,6 +53537,30 @@
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
         ],
         [
+          "contains{MM Tingle Map Clock Town, OOT_ANY_Milk}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, OOT_ANY_Milk}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, OOT_ANY_Milk}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, OOT_ANY_Milk}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, OOT_ANY_Milk}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, OOT_ANY_Milk}",
+          "check{MM Tingle Map Ikana}"
+        ],
+        [
           "contains{MM Trading Post Item 1, OOT_ANY_Milk}",
           "check{MM Trading Post Item 1}"
         ],
@@ -54885,6 +54145,30 @@
         [
           "contains{OOT MQ Ganon Castle Rightmost Scrub, MM_ANY_RedPotion}",
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
+        ],
+        [
+          "contains{MM Tingle Map Clock Town, MM_ANY_RedPotion}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, MM_ANY_RedPotion}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, MM_ANY_RedPotion}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, MM_ANY_RedPotion}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, MM_ANY_RedPotion}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, MM_ANY_RedPotion}",
+          "check{MM Tingle Map Ikana}"
         ],
         [
           "contains{MM Trading Post Item 1, MM_ANY_RedPotion}",
@@ -55473,6 +54757,30 @@
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
         ],
         [
+          "contains{MM Tingle Map Clock Town, OOT_ANY_RedPotion}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, OOT_ANY_RedPotion}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, OOT_ANY_RedPotion}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, OOT_ANY_RedPotion}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, OOT_ANY_RedPotion}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, OOT_ANY_RedPotion}",
+          "check{MM Tingle Map Ikana}"
+        ],
+        [
           "contains{MM Trading Post Item 1, OOT_ANY_RedPotion}",
           "check{MM Trading Post Item 1}"
         ],
@@ -56057,6 +55365,30 @@
         [
           "contains{OOT MQ Ganon Castle Rightmost Scrub, MM_ANY_GreenPotion}",
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
+        ],
+        [
+          "contains{MM Tingle Map Clock Town, MM_ANY_GreenPotion}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, MM_ANY_GreenPotion}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, MM_ANY_GreenPotion}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, MM_ANY_GreenPotion}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, MM_ANY_GreenPotion}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, MM_ANY_GreenPotion}",
+          "check{MM Tingle Map Ikana}"
         ],
         [
           "contains{MM Trading Post Item 1, MM_ANY_GreenPotion}",
@@ -56645,6 +55977,30 @@
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
         ],
         [
+          "contains{MM Tingle Map Clock Town, OOT_ANY_GreenPotion}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, OOT_ANY_GreenPotion}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, OOT_ANY_GreenPotion}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, OOT_ANY_GreenPotion}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, OOT_ANY_GreenPotion}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, OOT_ANY_GreenPotion}",
+          "check{MM Tingle Map Ikana}"
+        ],
+        [
           "contains{MM Trading Post Item 1, OOT_ANY_GreenPotion}",
           "check{MM Trading Post Item 1}"
         ],
@@ -57229,6 +56585,30 @@
         [
           "contains{OOT MQ Ganon Castle Rightmost Scrub, MM_ANY_BluePotion}",
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
+        ],
+        [
+          "contains{MM Tingle Map Clock Town, MM_ANY_BluePotion}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, MM_ANY_BluePotion}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, MM_ANY_BluePotion}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, MM_ANY_BluePotion}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, MM_ANY_BluePotion}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, MM_ANY_BluePotion}",
+          "check{MM Tingle Map Ikana}"
         ],
         [
           "contains{MM Trading Post Item 1, MM_ANY_BluePotion}",
@@ -57817,6 +57197,30 @@
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
         ],
         [
+          "contains{MM Tingle Map Clock Town, OOT_ANY_BluePotion}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, OOT_ANY_BluePotion}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, OOT_ANY_BluePotion}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, OOT_ANY_BluePotion}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, OOT_ANY_BluePotion}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, OOT_ANY_BluePotion}",
+          "check{MM Tingle Map Ikana}"
+        ],
+        [
           "contains{MM Trading Post Item 1, OOT_ANY_BluePotion}",
           "check{MM Trading Post Item 1}"
         ],
@@ -58401,6 +57805,30 @@
         [
           "contains{OOT MQ Ganon Castle Rightmost Scrub, MM_ANY_Fairy}",
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
+        ],
+        [
+          "contains{MM Tingle Map Clock Town, MM_ANY_Fairy}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, MM_ANY_Fairy}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, MM_ANY_Fairy}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, MM_ANY_Fairy}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, MM_ANY_Fairy}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, MM_ANY_Fairy}",
+          "check{MM Tingle Map Ikana}"
         ],
         [
           "contains{MM Trading Post Item 1, MM_ANY_Fairy}",
@@ -58989,6 +58417,30 @@
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
         ],
         [
+          "contains{MM Tingle Map Clock Town, OOT_ANY_Fairy}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, OOT_ANY_Fairy}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, OOT_ANY_Fairy}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, OOT_ANY_Fairy}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, OOT_ANY_Fairy}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, OOT_ANY_Fairy}",
+          "check{MM Tingle Map Ikana}"
+        ],
+        [
           "contains{MM Trading Post Item 1, OOT_ANY_Fairy}",
           "check{MM Trading Post Item 1}"
         ],
@@ -59573,6 +59025,30 @@
         [
           "contains{OOT MQ Ganon Castle Rightmost Scrub, MM_ANY_Fish}",
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
+        ],
+        [
+          "contains{MM Tingle Map Clock Town, MM_ANY_Fish}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, MM_ANY_Fish}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, MM_ANY_Fish}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, MM_ANY_Fish}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, MM_ANY_Fish}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, MM_ANY_Fish}",
+          "check{MM Tingle Map Ikana}"
         ],
         [
           "contains{MM Trading Post Item 1, MM_ANY_Fish}",
@@ -60161,6 +59637,30 @@
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
         ],
         [
+          "contains{MM Tingle Map Clock Town, OOT_ANY_Fish}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, OOT_ANY_Fish}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, OOT_ANY_Fish}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, OOT_ANY_Fish}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, OOT_ANY_Fish}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, OOT_ANY_Fish}",
+          "check{MM Tingle Map Ikana}"
+        ],
+        [
           "contains{MM Trading Post Item 1, OOT_ANY_Fish}",
           "check{MM Trading Post Item 1}"
         ],
@@ -60745,6 +60245,30 @@
         [
           "contains{OOT MQ Ganon Castle Rightmost Scrub, MM_ANY_Bug}",
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
+        ],
+        [
+          "contains{MM Tingle Map Clock Town, MM_ANY_Bug}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, MM_ANY_Bug}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, MM_ANY_Bug}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, MM_ANY_Bug}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, MM_ANY_Bug}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, MM_ANY_Bug}",
+          "check{MM Tingle Map Ikana}"
         ],
         [
           "contains{MM Trading Post Item 1, MM_ANY_Bug}",
@@ -61333,6 +60857,30 @@
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
         ],
         [
+          "contains{MM Tingle Map Clock Town, OOT_ANY_Bug}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, OOT_ANY_Bug}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, OOT_ANY_Bug}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, OOT_ANY_Bug}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, OOT_ANY_Bug}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, OOT_ANY_Bug}",
+          "check{MM Tingle Map Ikana}"
+        ],
+        [
           "contains{MM Trading Post Item 1, OOT_ANY_Bug}",
           "check{MM Trading Post Item 1}"
         ],
@@ -61917,6 +61465,30 @@
         [
           "contains{OOT MQ Ganon Castle Rightmost Scrub, MM_ANY_BlueFire}",
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
+        ],
+        [
+          "contains{MM Tingle Map Clock Town, MM_ANY_BlueFire}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, MM_ANY_BlueFire}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, MM_ANY_BlueFire}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, MM_ANY_BlueFire}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, MM_ANY_BlueFire}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, MM_ANY_BlueFire}",
+          "check{MM Tingle Map Ikana}"
         ],
         [
           "contains{MM Trading Post Item 1, MM_ANY_BlueFire}",
@@ -62505,6 +62077,30 @@
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
         ],
         [
+          "contains{MM Tingle Map Clock Town, OOT_ANY_BlueFire}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, OOT_ANY_BlueFire}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, OOT_ANY_BlueFire}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, OOT_ANY_BlueFire}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, OOT_ANY_BlueFire}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, OOT_ANY_BlueFire}",
+          "check{MM Tingle Map Ikana}"
+        ],
+        [
           "contains{MM Trading Post Item 1, OOT_ANY_BlueFire}",
           "check{MM Trading Post Item 1}"
         ],
@@ -63089,6 +62685,30 @@
         [
           "contains{OOT MQ Ganon Castle Rightmost Scrub, MM_ANY_Poe}",
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
+        ],
+        [
+          "contains{MM Tingle Map Clock Town, MM_ANY_Poe}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, MM_ANY_Poe}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, MM_ANY_Poe}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, MM_ANY_Poe}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, MM_ANY_Poe}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, MM_ANY_Poe}",
+          "check{MM Tingle Map Ikana}"
         ],
         [
           "contains{MM Trading Post Item 1, MM_ANY_Poe}",
@@ -63677,6 +63297,30 @@
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
         ],
         [
+          "contains{MM Tingle Map Clock Town, OOT_ANY_Poe}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, OOT_ANY_Poe}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, OOT_ANY_Poe}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, OOT_ANY_Poe}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, OOT_ANY_Poe}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, OOT_ANY_Poe}",
+          "check{MM Tingle Map Ikana}"
+        ],
+        [
           "contains{MM Trading Post Item 1, OOT_ANY_Poe}",
           "check{MM Trading Post Item 1}"
         ],
@@ -64261,6 +63905,30 @@
         [
           "contains{OOT MQ Ganon Castle Rightmost Scrub, MM_ANY_HeroShield}",
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
+        ],
+        [
+          "contains{MM Tingle Map Clock Town, MM_ANY_HeroShield}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, MM_ANY_HeroShield}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, MM_ANY_HeroShield}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, MM_ANY_HeroShield}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, MM_ANY_HeroShield}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, MM_ANY_HeroShield}",
+          "check{MM Tingle Map Ikana}"
         ],
         [
           "contains{MM Trading Post Item 1, MM_ANY_HeroShield}",
@@ -64849,6 +64517,30 @@
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
         ],
         [
+          "contains{MM Tingle Map Clock Town, OOT_ANY_HeroShield}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, OOT_ANY_HeroShield}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, OOT_ANY_HeroShield}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, OOT_ANY_HeroShield}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, OOT_ANY_HeroShield}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, OOT_ANY_HeroShield}",
+          "check{MM Tingle Map Ikana}"
+        ],
+        [
           "contains{MM Trading Post Item 1, OOT_ANY_HeroShield}",
           "check{MM Trading Post Item 1}"
         ],
@@ -65435,6 +65127,30 @@
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
         ],
         [
+          "contains{MM Tingle Map Clock Town, MM_ANY_Chateau}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, MM_ANY_Chateau}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, MM_ANY_Chateau}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, MM_ANY_Chateau}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, MM_ANY_Chateau}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, MM_ANY_Chateau}",
+          "check{MM Tingle Map Ikana}"
+        ],
+        [
           "contains{MM Trading Post Item 1, MM_ANY_Chateau}",
           "check{MM Trading Post Item 1}"
         ],
@@ -66019,6 +65735,30 @@
         [
           "contains{OOT MQ Ganon Castle Rightmost Scrub, OOT_ANY_Chateau}",
           "check{OOT MQ Ganon Castle Rightmost Scrub}"
+        ],
+        [
+          "contains{MM Tingle Map Clock Town, OOT_ANY_Chateau}",
+          "check{MM Tingle Map Clock Town}"
+        ],
+        [
+          "contains{MM Tingle Map Woodfall, OOT_ANY_Chateau}",
+          "check{MM Tingle Map Woodfall}"
+        ],
+        [
+          "contains{MM Tingle Map Snowhead, OOT_ANY_Chateau}",
+          "check{MM Tingle Map Snowhead}"
+        ],
+        [
+          "contains{MM Tingle Map Ranch, OOT_ANY_Chateau}",
+          "check{MM Tingle Map Ranch}"
+        ],
+        [
+          "contains{MM Tingle Map Great Bay, OOT_ANY_Chateau}",
+          "check{MM Tingle Map Great Bay}"
+        ],
+        [
+          "contains{MM Tingle Map Ikana, OOT_ANY_Chateau}",
+          "check{MM Tingle Map Ikana}"
         ],
         [
           "contains{MM Trading Post Item 1, OOT_ANY_Chateau}",
