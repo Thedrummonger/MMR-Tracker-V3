@@ -176,6 +176,25 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                     else if (condSet.All(x => bool.TryParse(x, out bool BT) && BT)) { CondAllwaysTrue = true; }
                 }
                 if (CondAllwaysTrue) { logic.ConditionalItems.Clear(); }
+
+                List<List<string>> NewConditional = new List<List<string>>();
+                foreach (var condSet in logic.ConditionalItems)
+                {
+                    List<string> NewSet = new List<string>();
+                    foreach(var cond in condSet)
+                    {
+                        NewSet.Add(ApplyLogicReplacements(cond));
+                    }
+                    if (NewSet.Any()) { NewConditional.Add(NewSet); }
+                }
+                logic.ConditionalItems = NewConditional;
+            }
+
+            string ApplyLogicReplacements(string Cond)
+            {
+                if (Cond == "setting{erIkanaCastle}") { return "randomized{MM Ikana Castle Exterior => MM Ancient Castle of Ikana}"; }
+                if (Cond == "setting{erIkanaCastle, false}") { return "randomized{MM Ikana Castle Exterior => MM Ancient Castle of Ikana, false}"; }
+                return Cond;
             }
         }
 
@@ -217,7 +236,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
             List<string> GetRenewableLocations(string GameCode)
             {
-                string path = Path.Combine(References.TestingPaths.GetDevTestingPath(), @"core-develop", "data", GameCode.ToLower(), "pool.csv");
+                string path = Path.Combine(References.TestingPaths.GetDevTestingPath(), "OOTMM", "OoTMM-develop", "packages", "core", "data", GameCode.ToLower(), "pool.csv");
                 var Pool = ConvertCsvFileToJsonObject(File.ReadAllLines(path).Where(x => !string.IsNullOrWhiteSpace(x)).ToArray());
                 return JsonConvert.DeserializeObject<List<MMROOTLocation>>(Pool)
                     .Where(x => IsRenewable(x, GameCode))
@@ -803,9 +822,9 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
         public static void CleanLogicAndParse(TrackerObjects.MMRData.LogicFile LogicFile)
         {
-            string MMLogic = Path.Combine(References.TestingPaths.GetDevTestingPath(), "core-develop", "data", "mm", "world");
-            string OOTLogic = Path.Combine(References.TestingPaths.GetDevTestingPath(), "core-develop", "data", "oot", "world");
-            string OOTMQLogic = Path.Combine(References.TestingPaths.GetDevTestingPath(), "core-develop", "data", "oot", "world_mq");
+            string MMLogic = Path.Combine(References.TestingPaths.GetDevTestingPath(), "OOTMM", "OoTMM-develop", "packages", "core", "data", "mm", "world");
+            string OOTLogic = Path.Combine(References.TestingPaths.GetDevTestingPath(), "OOTMM", "OoTMM-develop", "packages", "core", "data", "oot", "world");
+            string OOTMQLogic = Path.Combine(References.TestingPaths.GetDevTestingPath(), "OOTMM", "OoTMM-develop", "packages", "core", "data", "oot", "world_mq");
             string MMOOTCodeMMMacros = Path.Combine(References.TestingPaths.GetDevCodePath(), @"MMR Tracker V3", "OtherGames", "OOTMMRCOMBO", @"MMMacroOverride.json");
             string MMOOTCodeOOTMacros = Path.Combine(References.TestingPaths.GetDevCodePath(), @"MMR Tracker V3", "OtherGames", "OOTMMRCOMBO", @"OOTMacroOverride.json");
             Dictionary<string, string> MMMacros = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(MMOOTCodeMMMacros));
@@ -1000,7 +1019,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         line = line.Replace(FullFunction, $"{Game}_HAS_{Parameters}_REQUIREMENTS");
                         break;
                     case "trick":
-                        line = line.Replace(FullFunction, $"TRICK_{Game}_{Parameters}");
+                        line = line.Replace(FullFunction, $"trick{{TRICK_{Game}_{Parameters}}}");
                         break;
                     case "has":
                         if (RenewableItems.ContainsKey(Parameters)) { line = line.Replace(FullFunction, $"{CurrentGame}_Has_Renewable_{RenewableItems[Parameters]}"); }
@@ -1047,7 +1066,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         line = line.Replace(FullFunction, $"(option{{smallKeyShuffle, anywhere}} && has(SMALL_KEY_FIRE, {Keys + 1})) || (option{{smallKeyShuffle, anywhere, false}} && has(SMALL_KEY_FIRE, {Keys}))");
                         break;
                     case "setting":
-                        line = line.Replace(FullFunction, $"option{{{Parameters}}}");
+                        line = line.Replace(FullFunction, $"{Function}{{{Parameters}}}");
                         break;
                     case "age":
                         if (Parameters == "child") { line = line.Replace(FullFunction, $"option{{age_filter, adult, false}}"); }
@@ -1070,20 +1089,23 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         line = line.Replace(FullFunction, $"event(RUPEES) && has_wallet({Parameters})");
                         break;
                     case "cond":
-                        if (Parameters.StartsWith("setting"))
+                        Debug.WriteLine($"Parsing Cond\n{FullFunction}\n{Parameters}");
+                        var splitArray = Regex.Split(Parameters, @",\s*(?![^()]*\))");
+                        string replaceLine = "ErrorCond";
+                        if (splitArray[0].StartsWith("setting") || splitArray[0].StartsWith("trick"))
                         {
-                            string CleanedInput = Parameters.Replace("setting(", "(");
-                            Debug.WriteLine($"Parsing Cond \n[{Parameters}]");
-                            var splitArray = Regex.Split(CleanedInput, @"(?<!,[^(]+\([^)]+),");
-                            string FinalCond = $"((option{{{splitArray[0].TrimStart('(')}, {splitArray[1].TrimEnd(')')}}} && {splitArray[2]}) || (option{{{splitArray[0].TrimStart('(')}, {splitArray[1].TrimEnd(')')}, false}} && {splitArray[3]}))";
-                            line = line.Replace(FullFunction, FinalCond);
-                            Debug.WriteLine($"Success \n{FinalCond}");
+                            replaceLine = $"(({splitArray[0]} && {splitArray[1]}) || ({splitArray[2]} && {splitArray[0].TrimEnd(')')}, false)))";
+                        }
+                        else if (splitArray[0] == "is_adult")
+                        {
+                            replaceLine = $"(({splitArray[0]} && {splitArray[1]}) || ({splitArray[2]} && is_child))";
                         }
                         else
                         {
-                            var splitArray = Parameters.Split(",").Select(x => x.Trim()).ToArray();
-                            line = line.Replace(FullFunction, $"({splitArray[0]} && {splitArray[1]}) || ({splitArray[2]})");
+                            replaceLine = $"(({splitArray[0]} && {splitArray[1]}) || {splitArray[2]})";
                         }
+                        Debug.WriteLine($"New Cond\n{replaceLine}");
+                        line = line.Replace(FullFunction, replaceLine);
                         break;
                     default:
                         line = line.Replace(FullFunction, $"ERROR UNHANDLED FUNTION {Function}");
@@ -1097,8 +1119,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
         public static void AddEntriesFromLogicFiles(TrackerObjects.MMRData.LogicFile LogicFile, TrackerObjects.LogicDictionaryData.LogicDictionary dictionaryFile)
         {
-            string MMOOTCodeMM = Path.Combine(References.TestingPaths.GetDevTestingPath(), @"core-develop", @"data", @"mm");
-            string MMOOTCodeOOT = Path.Combine(References.TestingPaths.GetDevTestingPath(), @"core-develop", @"data", @"oot");
+            string MMOOTCodeMM = Path.Combine(References.TestingPaths.GetDevTestingPath(), "OOTMM", "OoTMM-develop", "packages", "core", @"data", @"mm");
+            string MMOOTCodeOOT = Path.Combine(References.TestingPaths.GetDevTestingPath(), "OOTMM", "OoTMM-develop", "packages", "core", @"data", @"oot");
             string MMOOTCodeMMWorld = Path.Combine(MMOOTCodeMM, @"world");
             string MMOOTCodeOOTWorld = Path.Combine(MMOOTCodeOOT, @"world");
             string MMOOTCodeOOTMQWorld = Path.Combine(MMOOTCodeOOT, @"world_mq");
@@ -1218,12 +1240,12 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             Dictionary<string, string> OOTRAreaDict = new CodeFileReader<Dictionary<string, string>>().ReadCodeFile("AreaNames");
             Dictionary<string, int> OOTRItemCounts = new CodeFileReader<Dictionary<string, int>>().ReadCodeFile("itemCounts");
 
-            string MMpool = Path.Combine(References.TestingPaths.GetDevTestingPath(), @"core-develop", "data", "mm", "pool.csv");
+            string MMpool = Path.Combine(References.TestingPaths.GetDevTestingPath(), "OOTMM", "OoTMM-develop", "packages", "core", "data", "mm", "pool.csv");
             string[] MMPoolWebData = File.ReadAllLines(MMpool);
             var mmPool = ConvertCsvFileToJsonObject(MMPoolWebData.Where(x => !string.IsNullOrWhiteSpace(x)).ToArray());
             var mmPoolObj = JsonConvert.DeserializeObject<List<MMROOTLocation>>(mmPool);
 
-            string OOTpool = Path.Combine(References.TestingPaths.GetDevTestingPath(), @"core-develop", "data", "oot", "pool.csv");
+            string OOTpool = Path.Combine(References.TestingPaths.GetDevTestingPath(), "OOTMM", "OoTMM-develop", "packages", "core", "data", "oot", "pool.csv");
             string[] OOTPoolWebData = File.ReadAllLines(OOTpool);
             var ootPool = ConvertCsvFileToJsonObject(OOTPoolWebData.Where(x => !string.IsNullOrWhiteSpace(x)).ToArray());
             var ootPoolObj = JsonConvert.DeserializeObject<List<MMROOTLocation>>(ootPool);

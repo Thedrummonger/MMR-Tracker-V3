@@ -409,10 +409,19 @@ namespace MMR_Tracker_V3
                     if (!DoCheck) { return true; }
                     LogicFuntionValid = CheckContainsFunction(instance, Param.Split(",").Select(x => x.Trim()).ToArray());
                     break;
+                case "rand":
+                case "randomized":
+                    if (!DoCheck) { return true; }
+                    LogicFuntionValid = CheckIsRandomizedFunction(instance, Param.Split(",").Select(x => x.Trim()).ToArray());
+                    break;
                 case "var":
                 case "variable":
                     if (!DoCheck) { return true; }
                     LogicFuntionValid = CheckVarFunction(instance, Param.Split(",").Select(x => x.Trim()).ToArray());
+                    break;
+                case "trick":
+                    if (!DoCheck) { return true; }
+                    LogicFuntionValid = CheckTrickEnabledFunction(instance, Param.Split(",").Select(x => x.Trim()).ToArray());
                     break;
                 case "setting":
                 case "option":
@@ -432,6 +441,24 @@ namespace MMR_Tracker_V3
             }
 
             return true;
+        }
+
+        private static bool CheckIsRandomizedFunction(TrackerInstance instance, string[] strings)
+        {
+            bool Inverse = strings.Length > 1 && bool.TryParse(strings[1], out bool InverseParam) && !InverseParam;
+            bool IsLitteral = strings[0].IsLiteralID(out string CleanedID);
+            instance.GetLocationEntryType(CleanedID, IsLitteral, out dynamic OBJ);
+            if (!Utility.DynamicPropertyExist(OBJ, "RandomizedState")) { return false; }
+            RandomizedState randomizedState = OBJ.RandomizedState;
+            return (randomizedState == RandomizedState.Randomized) != Inverse;
+        }
+
+        private static bool CheckTrickEnabledFunction(TrackerInstance instance, string[] strings)
+        {
+            bool Inverse = strings.Length > 1 && bool.TryParse(strings[1], out bool InverseParam) && !InverseParam;
+            if (!instance.MacroPool.ContainsKey(strings[0])) { return false; }  
+            if (!instance.MacroPool[strings[0]].isTrick(instance)) { return false; }
+            return instance.MacroPool[strings[0]].TrickEnabled != Inverse;
         }
 
         private static bool CheckAvailableFunction(TrackerInstance instance, string func, string param)

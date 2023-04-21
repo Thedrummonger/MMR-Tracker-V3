@@ -579,22 +579,22 @@
           "OOT_EVENT_BEAN_LOST_WOODS_LATE"
         ],
         [
-          "TRICK_OOT_LOST_WOODS_ADULT_GS",
+          "trick{TRICK_OOT_LOST_WOODS_ADULT_GS}",
           "OOT_can_hookshot",
           "OOT_can_longshot"
         ],
         [
-          "TRICK_OOT_LOST_WOODS_ADULT_GS",
+          "trick{TRICK_OOT_LOST_WOODS_ADULT_GS}",
           "OOT_can_hookshot",
           "OOT_can_use_bow"
         ],
         [
-          "TRICK_OOT_LOST_WOODS_ADULT_GS",
+          "trick{TRICK_OOT_LOST_WOODS_ADULT_GS}",
           "OOT_can_hookshot",
           "OOT_has_bombchu"
         ],
         [
-          "TRICK_OOT_LOST_WOODS_ADULT_GS",
+          "trick{TRICK_OOT_LOST_WOODS_ADULT_GS}",
           "OOT_can_hookshot",
           "OOT_can_use_din"
         ]
@@ -786,7 +786,7 @@
           "OOT_can_hookshot"
         ],
         [
-          "TRICK_OOT_MAN_ON_ROOF"
+          "trick{TRICK_OOT_MAN_ON_ROOF}"
         ]
       ],
       "TimeNeeded": "None",
@@ -1528,7 +1528,7 @@
           "OOT_can_hammer"
         ],
         [
-          "TRICK_OOT_DMT_RED_ROCK_GS"
+          "trick{TRICK_OOT_DMT_RED_ROCK_GS}"
         ]
       ],
       "TimeNeeded": "None",
@@ -1547,7 +1547,7 @@
           "OOT_can_hammer"
         ],
         [
-          "TRICK_OOT_DMT_RED_ROCK_GS"
+          "trick{TRICK_OOT_DMT_RED_ROCK_GS}"
         ]
       ],
       "TimeNeeded": "None",
@@ -1998,7 +1998,7 @@
           "OOT_EVENT_BEAN_DEATH_MOUNTAIN_CRATER"
         ],
         [
-          "TRICK_OOT_VOLCANO_HOVERS",
+          "trick{TRICK_OOT_VOLCANO_HOVERS}",
           "OOT_has_hover_boots"
         ]
       ],
@@ -2772,11 +2772,11 @@
           "OOT_can_boomerang"
         ],
         [
-          "TRICK_OOT_LAB_WALL_GS",
+          "trick{TRICK_OOT_LAB_WALL_GS}",
           "OOT_has_sword_kokiri"
         ],
         [
-          "TRICK_OOT_LAB_WALL_GS",
+          "trick{TRICK_OOT_LAB_WALL_GS}",
           "OOT_can_use_sticks"
         ]
       ],
@@ -2835,7 +2835,7 @@
           "OOT_SCALE, 2"
         ],
         [
-          "TRICK_OOT_LAB_DIVE_NO_GOLD_SCALE",
+          "trick{TRICK_OOT_LAB_DIVE_NO_GOLD_SCALE}",
           "OOT_has_iron_boots",
           "OOT_can_hookshot"
         ]
@@ -3949,12 +3949,12 @@
       ],
       "ConditionalItems": [
         [
-          "option{lacs, vanilla}",
+          "setting{lacs, vanilla}",
           "OOT_MEDALLION_SPIRIT",
           "OOT_MEDALLION_SHADOW"
         ],
         [
-          "option{lacs, custom}",
+          "setting{lacs, custom}",
           "OOT_HAS_LACS_REQUIREMENTS"
         ]
       ],
@@ -3976,7 +3976,7 @@
           "OOT_EVENT_WINDMILL_TOP"
         ],
         [
-          "TRICK_OOT_WINDMILL_HP_NOTHING"
+          "trick{TRICK_OOT_WINDMILL_HP_NOTHING}"
         ]
       ],
       "TimeNeeded": "None",
@@ -5525,7 +5525,7 @@
         ],
         [
           "OOT_is_child",
-          "TRICK_OOT_TUNICS",
+          "trick{TRICK_OOT_TUNICS}",
           "OOT_OCARINA",
           "OOT_SONG_TIME"
         ]
@@ -5657,7 +5657,7 @@
       ],
       "ConditionalItems": [
         [
-          "TRICK_OOT_HAMMER_WALLS",
+          "trick{TRICK_OOT_HAMMER_WALLS}",
           "OOT Fire Temple Pillar Ledge"
         ],
         [
@@ -6282,7 +6282,7 @@
         ],
         [
           "OOT_can_use_sticks",
-          "TRICK_OOT_DEAD_HAND_STICKS"
+          "trick{TRICK_OOT_DEAD_HAND_STICKS}"
         ]
       ],
       "TimeNeeded": "None",
@@ -8606,7 +8606,7 @@
         ],
         [
           "OOT_can_use_sticks",
-          "TRICK_OOT_DEAD_HAND_STICKS",
+          "trick{TRICK_OOT_DEAD_HAND_STICKS}",
           "OOT_has_ranged_weapon_child"
         ],
         [
@@ -8615,7 +8615,7 @@
         ],
         [
           "OOT_can_use_sticks",
-          "TRICK_OOT_DEAD_HAND_STICKS",
+          "trick{TRICK_OOT_DEAD_HAND_STICKS}",
           "OOT_has_explosives"
         ],
         [
@@ -8625,7 +8625,7 @@
         ],
         [
           "OOT_can_use_sticks",
-          "TRICK_OOT_DEAD_HAND_STICKS",
+          "trick{TRICK_OOT_DEAD_HAND_STICKS}",
           "OOT_OCARINA",
           "OOT_SONG_ZELDA"
         ]
@@ -10529,7 +10529,7 @@
           "OOT_can_use_bow"
         ],
         [
-          "TRICK_OOT_HAMMER_WALLS"
+          "trick{TRICK_OOT_HAMMER_WALLS}"
         ]
       ],
       "TimeNeeded": "None",
@@ -10551,7 +10551,7 @@
           "OOT_can_use_bow"
         ],
         [
-          "TRICK_OOT_HAMMER_WALLS"
+          "trick{TRICK_OOT_HAMMER_WALLS}"
         ]
       ],
       "TimeNeeded": "None",
@@ -11009,7 +11009,7 @@
           "MM_EVENT_CLOCK_TOWN_SCRUB"
         ],
         [
-          "TRICK_MM_SCT_NOTHING"
+          "trick{TRICK_MM_SCT_NOTHING}"
         ],
         [
           "MM_can_goron_bomb_jump"
@@ -11304,17 +11304,12 @@
     {
       "Id": "MM Clock Tower Roof Skull Kid Ocarina",
       "RequiredItems": [
+        "MM_has_weapon_range",
+        "MM_OCARINA",
+        "MM_SONG_TIME",
         "MM Clock Tower Roof"
       ],
-      "ConditionalItems": [
-        [
-          "MM_has_weapon_range"
-        ],
-        [
-          "MM_MASK_DEKU",
-          "MM_MAGIC_UPGRADE"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -11323,17 +11318,12 @@
     {
       "Id": "MM Clock Tower Roof Skull Kid Song of Time",
       "RequiredItems": [
+        "MM_has_weapon_range",
+        "MM_OCARINA",
+        "MM_SONG_TIME",
         "MM Clock Tower Roof"
       ],
-      "ConditionalItems": [
-        [
-          "MM_has_weapon_range"
-        ],
-        [
-          "MM_MASK_DEKU",
-          "MM_MAGIC_UPGRADE"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -12126,7 +12116,7 @@
           "time{Before_NIGHT1_AM_12_00}"
         ],
         [
-          "TRICK_MM_POST_OFFICE_GAME",
+          "trick{TRICK_MM_POST_OFFICE_GAME}",
           "time{After_DAY1_PM_03_00}",
           "time{Before_NIGHT1_AM_12_00}"
         ],
@@ -12137,7 +12127,7 @@
           "time{Before_NIGHT2_AM_12_00}"
         ],
         [
-          "TRICK_MM_POST_OFFICE_GAME",
+          "trick{TRICK_MM_POST_OFFICE_GAME}",
           "MM_EVENT_MAIL_LETTER",
           "time{After_NIGHT2_PM_06_00}",
           "time{Before_NIGHT2_AM_12_00}"
@@ -12479,7 +12469,7 @@
           "MM_MASK_DEKU"
         ],
         [
-          "TRICK_MM_SOUTHERN_SWAMP_SCRUB_HP_GORON",
+          "trick{TRICK_MM_SOUTHERN_SWAMP_SCRUB_HP_GORON}",
           "MM_MASK_GORON"
         ]
       ],
@@ -12811,7 +12801,7 @@
         ],
         [
           "MM_can_hookshot_short",
-          "TRICK_MM_SHORT_HOOK_HARD"
+          "trick{TRICK_MM_SHORT_HOOK_HARD}"
         ]
       ],
       "TimeNeeded": "None",
@@ -12940,15 +12930,19 @@
         ],
         [
           "MM_MASK_DEKU",
-          "MM_BOW"
+          "MM_has_arrows"
         ],
         [
           "MM_MASK_DEKU",
-          "MM_MAGIC_UPGRADE"
+          "MM_has_magic"
         ],
         [
           "MM_MASK_DEKU",
-          "MM_BOMB_BAG"
+          "MM_has_bombs"
+        ],
+        [
+          "MM_MASK_DEKU",
+          "MM_has_bombchu"
         ],
         [
           "MM_MASK_DEKU",
@@ -13488,7 +13482,7 @@
           "MM_trick_keg_explosives"
         ],
         [
-          "TRICK_MM_KEG_EXPLOSIVES",
+          "trick{TRICK_MM_KEG_EXPLOSIVES}",
           "MM_EVENT_POWDER_KEG_TRIAL"
         ]
       ],
@@ -13871,7 +13865,7 @@
           "time{Before_NIGHT1_PM_08_00}"
         ],
         [
-          "TRICK_MM_DOG_RACE_CHEST_NOTHING",
+          "trick{TRICK_MM_DOG_RACE_CHEST_NOTHING}",
           "time{After_DAY1_AM_06_00}",
           "time{Before_NIGHT1_PM_08_00}"
         ],
@@ -13891,7 +13885,7 @@
           "time{Before_NIGHT2_PM_08_00}"
         ],
         [
-          "TRICK_MM_DOG_RACE_CHEST_NOTHING",
+          "trick{TRICK_MM_DOG_RACE_CHEST_NOTHING}",
           "time{After_DAY2_AM_06_00}",
           "time{Before_NIGHT2_PM_08_00}"
         ],
@@ -13911,7 +13905,7 @@
           "time{Before_NIGHT3_PM_08_00}"
         ],
         [
-          "TRICK_MM_DOG_RACE_CHEST_NOTHING",
+          "trick{TRICK_MM_DOG_RACE_CHEST_NOTHING}",
           "time{After_DAY3_AM_06_00}",
           "time{Before_NIGHT3_PM_08_00}"
         ]
@@ -14148,11 +14142,11 @@
       ],
       "ConditionalItems": [
         [
-          "TRICK_MM_ZORA_HALL_SCRUB_HP_NO_DEKU",
+          "trick{TRICK_MM_ZORA_HALL_SCRUB_HP_NO_DEKU}",
           "MM_MASK_GORON"
         ],
         [
-          "TRICK_MM_ZORA_HALL_SCRUB_HP_NO_DEKU",
+          "trick{TRICK_MM_ZORA_HALL_SCRUB_HP_NO_DEKU}",
           "MM_MASK_ZORA"
         ],
         [
@@ -14332,7 +14326,7 @@
     {
       "Id": "MM Ocean Spider House Chest HP",
       "RequiredItems": [
-        "MM_BOW",
+        "MM_has_arrows",
         "MM Ocean Spider House Back"
       ],
       "ConditionalItems": [
@@ -14340,7 +14334,7 @@
           "MM_MASK_CAPTAIN"
         ],
         [
-          "TRICK_MM_CAPTAIN_SKIP"
+          "trick{TRICK_MM_CAPTAIN_SKIP}"
         ]
       ],
       "TimeNeeded": "None",
@@ -14556,7 +14550,7 @@
         ],
         [
           "MM_MASK_GORON",
-          "MM_BOW"
+          "MM_has_arrows"
         ],
         [
           "MM_MASK_GORON",
@@ -14662,7 +14656,7 @@
           "MM_can_hookshot_short"
         ],
         [
-          "MM_BOW"
+          "MM_has_arrows"
         ],
         [
           "MM_MASK_ZORA"
@@ -14763,7 +14757,7 @@
         ],
         [
           "MM_MASK_GORON",
-          "MM_BOW"
+          "MM_has_arrows"
         ],
         [
           "MM_MASK_GORON",
@@ -14821,7 +14815,7 @@
         ],
         [
           "MM_can_hookshot_short",
-          "TRICK_MM_SHORT_HOOK_HARD"
+          "trick{TRICK_MM_SHORT_HOOK_HARD}"
         ]
       ],
       "TimeNeeded": "None",
@@ -14832,8 +14826,7 @@
     {
       "Id": "MM Road to Ikana Grotto",
       "RequiredItems": [
-        "MM_MASK_GORON",
-        "MM Road to Ikana Front"
+        "MM Road to Ikana Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -14895,16 +14888,9 @@
     {
       "Id": "MM Ikana Graveyard Grotto",
       "RequiredItems": [
-        "MM Ikana Graveyard"
+        "MM Ikana Graveyard Grotto"
       ],
-      "ConditionalItems": [
-        [
-          "MM_has_explosives"
-        ],
-        [
-          "MM_trick_keg_explosives"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -15028,7 +15014,7 @@
     {
       "Id": "MM Ikana Valley Grotto",
       "RequiredItems": [
-        "MM Ikana Valley"
+        "MM Ikana Valley Grotto"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -15051,17 +15037,36 @@
     {
       "Id": "MM Ghost Hut HP",
       "RequiredItems": [
+        "MM_EVENT_RUPEES",
         "MM Ghost Hut"
       ],
       "ConditionalItems": [
         [
-          "MM_has_arrows"
+          "MM_has_arrows",
+          "option{childWallets, true}",
+          "MM_WALLET"
         ],
         [
-          "MM_can_hookshot_short"
+          "MM_can_hookshot_short",
+          "option{childWallets, true}",
+          "MM_WALLET"
         ],
         [
-          "MM_can_use_deku_bubble"
+          "MM_can_use_deku_bubble",
+          "option{childWallets, true}",
+          "MM_WALLET"
+        ],
+        [
+          "MM_has_arrows",
+          "option{childWallets, false}"
+        ],
+        [
+          "MM_can_hookshot_short",
+          "option{childWallets, false}"
+        ],
+        [
+          "MM_can_use_deku_bubble",
+          "option{childWallets, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -15234,7 +15239,7 @@
           "MM_can_fight"
         ],
         [
-          "MM_BOW"
+          "MM_has_arrows"
         ]
       ],
       "TimeNeeded": "None",
@@ -15307,7 +15312,7 @@
           "MM_can_fight"
         ],
         [
-          "MM_BOW"
+          "MM_has_arrows"
         ],
         [
           "MM_can_use_deku_bubble"
@@ -15341,7 +15346,7 @@
       "ConditionalItems": [
         [
           "MM_MASK_GREAT_FAIRY",
-          "MM_BOW"
+          "MM_has_arrows"
         ],
         [
           "MM_MASK_GREAT_FAIRY",
@@ -15363,14 +15368,18 @@
       ],
       "ConditionalItems": [
         [
-          "MM_BOW"
+          "MM_has_arrows"
         ],
         [
           "MM_can_use_deku_bubble"
         ],
         [
           "MM_MASK_GREAT_FAIRY",
-          "MM_BOMB_BAG"
+          "MM_has_bombs"
+        ],
+        [
+          "MM_MASK_GREAT_FAIRY",
+          "MM_has_bombchu"
         ],
         [
           "MM_MASK_GREAT_FAIRY",
@@ -15626,7 +15635,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_BOW",
+          "MM_has_arrows",
           "MM_can_break_boulders"
         ],
         [
@@ -15691,7 +15700,7 @@
           "MM Snowhead Temple Bridge Back"
         ],
         [
-          "MM_BOW",
+          "MM_has_arrows",
           "MM Snowhead Temple Bridge Front"
         ],
         [
@@ -15713,7 +15722,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_BOW"
+          "MM_has_arrows"
         ],
         [
           "MM_can_hookshot_short"
@@ -15767,7 +15776,7 @@
         ],
         [
           "MM_MASK_GREAT_FAIRY",
-          "MM_BOMB_BAG"
+          "MM_has_bombs"
         ],
         [
           "MM_MASK_GREAT_FAIRY",
@@ -15786,7 +15795,7 @@
       "Id": "MM Snowhead Temple SF Dual Switches",
       "RequiredItems": [
         "MM_can_use_lens",
-        "MM_BOW",
+        "MM_has_arrows",
         "MM_MASK_GREAT_FAIRY",
         "MM Snowhead Temple Dual Switches"
       ],
@@ -15805,7 +15814,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_BOW"
+          "MM_has_arrows"
         ],
         [
           "MM_can_hookshot_short"
@@ -16158,7 +16167,7 @@
         ],
         [
           "MM_MASK_GREAT_FAIRY",
-          "MM_BOW"
+          "MM_has_arrows"
         ],
         [
           "MM_MASK_GREAT_FAIRY",
@@ -16202,7 +16211,7 @@
           "MM_MASK_ZORA"
         ],
         [
-          "MM_BOW",
+          "MM_has_arrows",
           "MM_MASK_GREAT_FAIRY"
         ]
       ],
@@ -16255,7 +16264,7 @@
         ],
         [
           "MM_MASK_GREAT_FAIRY",
-          "MM_BOW"
+          "MM_has_arrows"
         ],
         [
           "MM_MASK_GREAT_FAIRY",
@@ -16303,11 +16312,18 @@
     {
       "Id": "MM Beneath the Well Skulltulla Chest",
       "RequiredItems": [
-        "MM_MASK_GIBDO",
-        "MM_has_bottle",
-        "MM Beneath the Well Middle Section"
+        "MM_MASK_GIBDO"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_has_bottle",
+          "MM Beneath the Well Final Hall"
+        ],
+        [
+          "MM_EVENT_BUGS",
+          "MM Beneath the Well Middle Section"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -16316,6 +16332,8 @@
     {
       "Id": "MM Beneath the Well Keese Chest",
       "RequiredItems": [
+        "MM_EVENT_WATER",
+        "MM_EVENT_BUGS",
         "MM_can_use_lens",
         "MM Beneath the Well North Section"
       ],
@@ -16346,11 +16364,9 @@
     {
       "Id": "MM Beneath the Well Cow",
       "RequiredItems": [
-        "MM_MASK_GIBDO",
         "MM_OCARINA",
         "MM_SONG_EPONA",
-        "MM_has_nuts",
-        "MM Beneath the Well East Section"
+        "MM Beneath the Well Cow Hall"
       ],
       "ConditionalItems": [
         [
@@ -16373,7 +16389,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_BOW"
+          "MM_has_arrows"
         ],
         [
           "MM_can_hookshot_short"
@@ -16398,7 +16414,7 @@
     {
       "Id": "MM Stone Tower Temple Entrance Chest",
       "RequiredItems": [
-        "MM_BOW",
+        "MM_has_arrows",
         "MM Stone Tower Temple Entrance"
       ],
       "ConditionalItems": [],
@@ -16486,7 +16502,7 @@
           "MM_has_explosives"
         ],
         [
-          "MM_MAGIC_UPGRADE",
+          "MM_has_magic",
           "MM_has_weapon",
           "MM_SPIN_UPGRADE"
         ],
@@ -16681,8 +16697,7 @@
     {
       "Id": "MM Stone Tower Temple Inverted East Middle Chest",
       "RequiredItems": [
-        "MM_MASK_DEKU",
-        "MM Stone Tower Temple Inverted East"
+        "MM Stone Tower Temple Inverted East Bridge"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -16742,7 +16757,7 @@
     {
       "Id": "MM Stone Tower Temple Inverted Giant Mask",
       "RequiredItems": [
-        "MM Stone Tower Temple Inverted Bridge"
+        "MM Stone Tower Temple Inverted Center Bridge"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -16892,7 +16907,10 @@
           "MM_can_fight"
         ],
         [
-          "MM_BOMB_BAG"
+          "MM_has_bombs"
+        ],
+        [
+          "MM_has_bombchu"
         ]
       ],
       "TimeNeeded": "None",
@@ -17419,6 +17437,16 @@
       "TrickCategory": "Majoras Mask"
     },
     {
+      "Id": "TRICK_MM_WELL_HSW",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": true,
+      "TrickCategory": "Majoras Mask"
+    },
+    {
       "Id": "OOT Dodongo Cavern Boss => OOT Dodongo Cavern After Boss",
       "RequiredItems": [
         "OOT_has_explosives"
@@ -17904,7 +17932,7 @@
       ],
       "ConditionalItems": [
         [
-          "TRICK_OOT_DEKU_SKIP"
+          "trick{TRICK_OOT_DEKU_SKIP}"
         ],
         [
           "OOT_is_adult"
@@ -18403,7 +18431,7 @@
         ],
         [
           "OOT_is_adult",
-          "TRICK_OOT_DC_JUMP"
+          "trick{TRICK_OOT_DC_JUMP}"
         ]
       ],
       "TimeNeeded": "None",
@@ -18633,11 +18661,11 @@
       ],
       "ConditionalItems": [
         [
-          "option{smallKeyShuffle,  anywhere}",
+          "setting{smallKeyShuffle, anywhere}",
           "OOT_SMALL_KEY_FIRE, 8"
         ],
         [
-          "option{smallKeyShuffle,  anywhere, false}"
+          "setting{smallKeyShuffle, anywhere, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -19462,7 +19490,7 @@
         ],
         [
           "OOT_can_hookshot",
-          "TRICK_OOT_FOREST_HOOK"
+          "trick{TRICK_OOT_FOREST_HOOK}"
         ]
       ],
       "TimeNeeded": "None",
@@ -20059,13 +20087,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "option{ganonBossKey, removed}"
+          "setting{ganonBossKey, removed}"
         ],
         [
           "OOT_BOSS_KEY_GANON"
         ],
         [
-          "option{ganonBossKey, custom}",
+          "setting{ganonBossKey, custom}",
           "OOT_HAS_GANON_BK_REQUIREMENTS"
         ]
       ],
@@ -20864,7 +20892,7 @@
         [
           "OOT Shadow Temple Pit",
           "option{ShadowMQ, false}",
-          "TRICK_OOT_LENS"
+          "trick{TRICK_OOT_LENS}"
         ],
         [
           "OOT Shadow Temple Truth Spinner",
@@ -21568,10 +21596,10 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "option{crossWarpMm, full}"
+          "setting{crossWarpMm, full}"
         ],
         [
-          "option{crossWarpMm, childOnly}",
+          "setting{crossWarpMm, childOnly}",
           "OOT_is_child"
         ]
       ],
@@ -23282,7 +23310,7 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "option{kakarikoGate, open}"
+          "setting{kakarikoGate, open}"
         ],
         [
           "OOT_EVENT_KAKARIKO_GATE_OPEN"
@@ -23351,7 +23379,7 @@
         ],
         [
           "OOT_is_adult",
-          "TRICK_OOT_PASS_COLLISION"
+          "trick{TRICK_OOT_PASS_COLLISION}"
         ]
       ],
       "TimeNeeded": "None",
@@ -23374,15 +23402,15 @@
           "OOT_is_child"
         ],
         [
-          "TRICK_OOT_MAN_ON_ROOF",
+          "trick{TRICK_OOT_MAN_ON_ROOF}",
           "OOT_is_adult"
         ],
         [
-          "TRICK_OOT_MAN_ON_ROOF",
+          "trick{TRICK_OOT_MAN_ON_ROOF}",
           "OOT_can_use_slingshot"
         ],
         [
-          "TRICK_OOT_MAN_ON_ROOF",
+          "trick{TRICK_OOT_MAN_ON_ROOF}",
           "OOT_has_bombchu"
         ]
       ],
@@ -23488,7 +23516,7 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "option{kakarikoGate, open}"
+          "setting{kakarikoGate, open}"
         ],
         [
           "OOT_EVENT_KAKARIKO_GATE_OPEN"
@@ -23497,7 +23525,7 @@
           "OOT_is_adult"
         ],
         [
-          "TRICK_OOT_PASS_COLLISION"
+          "trick{TRICK_OOT_PASS_COLLISION}"
         ]
       ],
       "TimeNeeded": "None",
@@ -23839,7 +23867,7 @@
         ],
         [
           "OOT_has_fire_arrows",
-          "TRICK_OOT_SHADOW_FIRE_ARROW"
+          "trick{TRICK_OOT_SHADOW_FIRE_ARROW}"
         ]
       ],
       "TimeNeeded": "None",
@@ -24360,11 +24388,11 @@
         ],
         [
           "OOT_is_child",
-          "TRICK_OOT_CHILD_DOMAIN"
+          "trick{TRICK_OOT_CHILD_DOMAIN}"
         ],
         [
           "OOT_has_hover_boots",
-          "TRICK_OOT_ADULT_DOMAIN"
+          "trick{TRICK_OOT_ADULT_DOMAIN}"
         ]
       ],
       "TimeNeeded": "None",
@@ -24504,7 +24532,7 @@
         ],
         [
           "OOT_is_adult",
-          "TRICK_OOT_KZ_SKIP"
+          "trick{TRICK_OOT_KZ_SKIP}"
         ]
       ],
       "TimeNeeded": "None",
@@ -24901,7 +24929,7 @@
       ],
       "ConditionalItems": [
         [
-          "option{doorOfTime, open}"
+          "setting{doorOfTime, open}"
         ],
         [
           "OOT_OCARINA",
@@ -25738,7 +25766,7 @@
           "OOT_has_hover_boots"
         ],
         [
-          "TRICK_OOT_SAND_RIVER_NOTHING"
+          "trick{TRICK_OOT_SAND_RIVER_NOTHING}"
         ]
       ],
       "TimeNeeded": "None",
@@ -25757,7 +25785,7 @@
           "OOT_has_hover_boots"
         ],
         [
-          "TRICK_OOT_SAND_RIVER_NOTHING"
+          "trick{TRICK_OOT_SAND_RIVER_NOTHING}"
         ]
       ],
       "TimeNeeded": "None",
@@ -25773,7 +25801,7 @@
           "OOT_has_lens_strict"
         ],
         [
-          "TRICK_OOT_BLIND_WASTELAND"
+          "trick{TRICK_OOT_BLIND_WASTELAND}"
         ]
       ],
       "TimeNeeded": "None",
@@ -25784,7 +25812,7 @@
     {
       "Id": "OOT Haunted Wasteland End => OOT Haunted Wasteland Structure",
       "RequiredItems": [
-        "TRICK_OOT_BLIND_WASTELAND"
+        "trick{TRICK_OOT_BLIND_WASTELAND}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -26471,7 +26499,7 @@
         ],
         [
           "OOT_can_longshot",
-          "TRICK_OOT_WATER_LONGSHOT"
+          "trick{TRICK_OOT_WATER_LONGSHOT}"
         ]
       ],
       "TimeNeeded": "None",
@@ -27017,7 +27045,7 @@
           "OOT_EVENT_DEKU_BLOCK"
         ],
         [
-          "TRICK_OOT_DEKU_SKIP"
+          "trick{TRICK_OOT_DEKU_SKIP}"
         ]
       ],
       "TimeNeeded": "None",
@@ -27252,7 +27280,7 @@
         ],
         [
           "OOT_is_adult",
-          "TRICK_OOT_DC_JUMP"
+          "trick{TRICK_OOT_DC_JUMP}"
         ]
       ],
       "TimeNeeded": "None",
@@ -27564,7 +27592,7 @@
       ],
       "ConditionalItems": [
         [
-          "TRICK_OOT_HAMMER_WALLS"
+          "trick{TRICK_OOT_HAMMER_WALLS}"
         ],
         [
           "OOT_has_explosives"
@@ -27823,7 +27851,7 @@
         ],
         [
           "OOT_can_hookshot",
-          "TRICK_OOT_FOREST_HOOK"
+          "trick{TRICK_OOT_FOREST_HOOK}"
         ],
         [
           "OOT_can_hookshot",
@@ -28680,7 +28708,6 @@
     {
       "Id": "MM Ancient Castle of Ikana Interior => MM Ancient Castle of Ikana Interior North",
       "RequiredItems": [
-        "MM_can_reset_time",
         "MM_can_use_fire_arrows"
       ],
       "ConditionalItems": [],
@@ -28692,7 +28719,6 @@
     {
       "Id": "MM Ancient Castle of Ikana Interior => MM Ancient Castle of Ikana Interior South",
       "RequiredItems": [
-        "MM_can_reset_time",
         "MM_can_use_fire_arrows"
       ],
       "ConditionalItems": [],
@@ -28702,10 +28728,8 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Ancient Castle of Ikana Interior => MM Ancient Castle of Ikana Pre-Boss",
-      "RequiredItems": [
-        "MM_can_reset_time"
-      ],
+      "Id": "MM Ancient Castle of Ikana Interior => MM Ancient Castle of Ikana Behind Block",
+      "RequiredItems": [],
       "ConditionalItems": [
         [
           "MM_has_mirror_shield",
@@ -28713,6 +28737,356 @@
         ],
         [
           "MM_can_use_light_arrows"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_EVENT_RUPEES",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "MM Woods of Mystery Grotto"
+        ],
+        [
+          "MM_has_weapon_range",
+          "MM Woodfall Temple Entrance"
+        ],
+        [
+          "MM Southern Swamp Grotto"
+        ],
+        [
+          "MM Swamp Front"
+        ],
+        [
+          "MM Road to Southern Swamp Grotto"
+        ],
+        [
+          "MM Canyon Gossip Grotto"
+        ],
+        [
+          "MM Stone Tower Temple Entrance"
+        ],
+        [
+          "MM Ikana Castle Exterior"
+        ],
+        [
+          "MM Road to Southern Swamp"
+        ],
+        [
+          "MM Secret Shrine Entrance"
+        ],
+        [
+          "MM_MASK_GORON",
+          "MM Stone Tower Top"
+        ],
+        [
+          "MM_can_oot_warp",
+          "MM Great Bay Temple Entrance"
+        ],
+        [
+          "MM Great Bay Temple Entrance",
+          "MM_can_hookshot"
+        ],
+        [
+          "MM_has_weapon_range",
+          "MM Cucco Shack"
+        ],
+        [
+          "MM Cucco Shack",
+          "MM_has_weapon"
+        ],
+        [
+          "MM Cucco Shack",
+          "MM_can_break_boulders"
+        ],
+        [
+          "MM_can_break_boulders",
+          "MM Goron Village"
+        ],
+        [
+          "MM Goron Village",
+          "MM_can_use_fire_arrows"
+        ],
+        [
+          "MM Ancient Castle of Ikana Interior"
+        ],
+        [
+          "MM Goron Village",
+          "MM_can_use_light_arrows"
+        ],
+        [
+          "MM_can_use_light_arrows",
+          "MM Mountain Village Path Lower"
+        ],
+        [
+          "MM_can_use_light_arrows",
+          "MM Mountain Village Path Upper"
+        ],
+        [
+          "MM_can_use_light_arrows",
+          "MM Twin Islands"
+        ],
+        [
+          "MM Woodfall Temple Pits Room"
+        ],
+        [
+          "MM_can_use_light_arrows",
+          "MM Snowhead Near Great Fairy Fountain",
+          "MM_EVENT_OPEN_SNOWHEAD_TEMPLE"
+        ],
+        [
+          "MM_can_use_light_arrows",
+          "MM_is_night",
+          "MM Road to Ikana Front"
+        ],
+        [
+          "MM_can_use_light_arrows",
+          "MM_is_night",
+          "MM Road to Ikana Center"
+        ],
+        [
+          "MM_can_use_light_arrows",
+          "MM_is_night",
+          "MM Road to Ikana Top"
+        ],
+        [
+          "MM_can_use_light_arrows",
+          "MM_is_night",
+          "MM Ikana Canyon"
+        ],
+        [
+          "MM Twin Islands",
+          "MM_EVENT_BOSS_SNOWHEAD"
+        ],
+        [
+          "MM_can_use_light_arrows",
+          "MM Snowhead Near Great Fairy Fountain",
+          "MM_EVENT_BOSS_SNOWHEAD"
+        ],
+        [
+          "MM_EVENT_BOSS_SNOWHEAD",
+          "MM Mountain Village"
+        ],
+        [
+          "MM_can_break_boulders",
+          "MM_second_day",
+          "MM Mountain Village"
+        ],
+        [
+          "MM_can_use_fire_arrows",
+          "MM_second_day",
+          "MM Mountain Village"
+        ],
+        [
+          "MM_can_break_boulders",
+          "MM Mountain Village",
+          "MM_final_day"
+        ],
+        [
+          "MM_can_use_fire_arrows",
+          "MM Mountain Village",
+          "MM_final_day"
+        ],
+        [
+          "MM_can_break_boulders",
+          "MM_can_use_light_arrows",
+          "MM Mountain Village",
+          "MM_first_day"
+        ],
+        [
+          "MM_can_use_fire_arrows",
+          "MM_can_use_light_arrows",
+          "MM Mountain Village",
+          "MM_first_day"
+        ],
+        [
+          "MM_MASK_GORON",
+          "MM Stone Tower Front of Temple"
+        ],
+        [
+          "MM Stone Tower Front of Temple",
+          "MM_MASK_ZORA"
+        ],
+        [
+          "MM_is_night",
+          "MM Zora Cape",
+          "MM_can_fight"
+        ],
+        [
+          "MM Stone Tower Front of Temple",
+          "MM_can_fight",
+          "MM_scarecrow_hookshot"
+        ],
+        [
+          "MM_scarecrow_hookshot",
+          "MM_can_use_elegy3",
+          "MM Stone Tower"
+        ],
+        [
+          "MM_scarecrow_hookshot",
+          "MM Stone Tower",
+          "MM_can_use_elegy2",
+          "trick{TRICK_MM_ONE_MASK_STONE_TOWER}"
+        ],
+        [
+          "MM_has_weapon_range",
+          "MM_EVENT_WATER",
+          "MM Beneath the Well North Section"
+        ],
+        [
+          "MM_can_fight",
+          "MM_EVENT_WATER",
+          "MM Beneath the Well North Section"
+        ],
+        [
+          "MM_has_weapon_range",
+          "MM Beneath the Well Final Hall"
+        ],
+        [
+          "MM_can_fight",
+          "MM Beneath the Well Final Hall"
+        ],
+        [
+          "MM_has_weapon_range",
+          "MM Beneath the Well East Section"
+        ],
+        [
+          "MM_can_fight",
+          "MM Beneath the Well East Section"
+        ],
+        [
+          "MM_is_night",
+          "MM Zora Cape",
+          "MM_has_arrows"
+        ],
+        [
+          "MM Stone Tower Temple Inverted Entrance"
+        ],
+        [
+          "MM_has_arrows",
+          "MM Swamp Spider House Main"
+        ],
+        [
+          "MM_has_weapon_range",
+          "MM Beneath The Graveyard Night 3"
+        ],
+        [
+          "MM_can_fight",
+          "MM Beneath The Graveyard Night 3"
+        ],
+        [
+          "MM_is_night",
+          "MM Zora Cape",
+          "MM_has_explosives"
+        ],
+        [
+          "MM_EVENT_WATER",
+          "MM Beneath the Well North Section",
+          "MM_has_explosives"
+        ],
+        [
+          "MM Beneath the Well Final Hall",
+          "MM_has_explosives"
+        ],
+        [
+          "MM Beneath the Well East Section",
+          "MM_has_explosives"
+        ],
+        [
+          "MM Beneath The Graveyard Night 3",
+          "MM_has_explosives"
+        ],
+        [
+          "MM_can_use_beans",
+          "MM Stone Tower Top Inverted Upper"
+        ],
+        [
+          "MM_has_weapon_range",
+          "MM Pirate Fortress Interior"
+        ],
+        [
+          "MM_has_weapon",
+          "MM Pirate Fortress Interior"
+        ],
+        [
+          "MM_has_explosives",
+          "MM Pirate Fortress Interior"
+        ],
+        [
+          "MM Snowhead Temple Main"
+        ],
+        [
+          "MM Pirate Fortress Sewers End"
+        ],
+        [
+          "MM Snowhead Temple Bridge Front"
+        ],
+        [
+          "MM Ocean Gossip Grotto"
+        ],
+        [
+          "MM Termina Field Cow Grotto"
+        ],
+        [
+          "MM Mountain Village Grotto"
+        ],
+        [
+          "MM Pirate Fortress Barrel Maze Aquarium"
+        ],
+        [
+          "MM Twin Islands Ramp Grotto"
+        ],
+        [
+          "MM Great Bay Grotto"
+        ],
+        [
+          "MM Path to Snowhead Grotto"
+        ],
+        [
+          "MM Ikana Graveyard"
+        ],
+        [
+          "MM Milk Road Back"
+        ],
+        [
+          "MM Ikana Graveyard Grotto"
+        ],
+        [
+          "MM Road to Ikana Grotto"
+        ],
+        [
+          "MM Great Bay Coast"
+        ],
+        [
+          "MM Ikana Valley Grotto"
+        ],
+        [
+          "MM Zora Cape Grotto"
+        ],
+        [
+          "MM Great Bay Cow Grotto"
+        ],
+        [
+          "MM Pillar Grotto"
+        ],
+        [
+          "MM Grass Grotto"
+        ],
+        [
+          "MM Termina Field"
+        ],
+        [
+          "MM Astral Observatory"
+        ],
+        [
+          "MM Clock Town North"
+        ],
+        [
+          "MM Deku Palace Grotto"
         ]
       ],
       "TimeNeeded": "None",
@@ -28794,10 +29168,17 @@
     {
       "Id": "MM_EVENT_IKANA_CASTLE_LIGHT",
       "RequiredItems": [
-        "MM_MASK_DEKU",
         "MM Ancient Castle of Ikana Roof Exterior"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "randomized{MM Ikana Castle Exterior => MM Ancient Castle of Ikana}",
+          "MM_MASK_DEKU"
+        ],
+        [
+          "randomized{MM Ikana Castle Exterior => MM Ancient Castle of Ikana, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -28814,6 +29195,125 @@
         ],
         [
           "MM Ancient Castle of Ikana Roof Exterior"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_EVENT_NUTS",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "MM_MASK_DEKU",
+          "MM Deku Palace Front"
+        ],
+        [
+          "MM_EVENT_CLEAN_SWAMP",
+          "MM_can_fight",
+          "MM Deku Palace Front"
+        ],
+        [
+          "MM_EVENT_CLEAN_SWAMP",
+          "MM Deku Palace Front",
+          "MM_has_arrows"
+        ],
+        [
+          "MM_EVENT_CLEAN_SWAMP",
+          "MM Deku Palace Front",
+          "MM_has_explosives"
+        ],
+        [
+          "MM_EVENT_CLEAN_SWAMP",
+          "MM Deku Palace Front",
+          "MM_can_hookshot_short"
+        ],
+        [
+          "MM_MASK_DEKU",
+          "MM Woodfall Temple Main"
+        ],
+        [
+          "MM_has_arrows",
+          "MM Woodfall Temple Main"
+        ],
+        [
+          "MM_has_explosives",
+          "MM Woodfall Temple Main"
+        ],
+        [
+          "MM_can_fight",
+          "MM Woodfall Temple Main"
+        ],
+        [
+          "MM Twin Islands Ramp Grotto"
+        ],
+        [
+          "MM Mountain Village Grotto"
+        ],
+        [
+          "MM Woodfall Shrine"
+        ],
+        [
+          "MM Secret Shrine Main"
+        ],
+        [
+          "MM Woods of Mystery Grotto"
+        ],
+        [
+          "MM Southern Swamp Grotto"
+        ],
+        [
+          "MM Swamp Front"
+        ],
+        [
+          "MM Road to Southern Swamp Grotto"
+        ],
+        [
+          "MM Secret Shrine Entrance"
+        ],
+        [
+          "MM Road to Southern Swamp"
+        ],
+        [
+          "MM Pillar Grotto"
+        ],
+        [
+          "MM Grass Grotto"
+        ],
+        [
+          "MM Pirate Fortress Sewers End"
+        ],
+        [
+          "MM Termina Field"
+        ],
+        [
+          "MM Beneath the Well Middle Section"
+        ],
+        [
+          "MM Ikana Valley Grotto"
+        ],
+        [
+          "MM Ancient Castle of Ikana Roof Exterior"
+        ],
+        [
+          "MM Ikana Graveyard Grotto"
+        ],
+        [
+          "MM Road to Ikana Grotto"
+        ],
+        [
+          "MM Zora Cape Grotto"
+        ],
+        [
+          "MM Great Bay Grotto"
+        ],
+        [
+          "MM Path to Snowhead Grotto"
+        ],
+        [
+          "MM Goron Village"
         ]
       ],
       "TimeNeeded": "None",
@@ -28866,7 +29366,7 @@
           "MM_can_fight"
         ],
         [
-          "MM_BOW"
+          "MM_has_arrows"
         ]
       ],
       "TimeNeeded": "None",
@@ -28897,7 +29397,7 @@
     {
       "Id": "MM Ancient Castle of Ikana Roof Interior => MM Ancient Castle of Ikana Roof Exterior",
       "RequiredItems": [
-        "TRICK_MM_IKANA_ROOF_PARKOUR"
+        "trick{TRICK_MM_IKANA_ROOF_PARKOUR}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -28906,7 +29406,27 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Ancient Castle of Ikana Pre-Boss => MM Ancient Castle of Ikana Interior",
+      "Id": "MM Ancient Castle of Ikana Behind Block => MM Ancient Castle of Ikana Interior",
+      "RequiredItems": [
+        "MM_can_use_light_arrows"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Ancient Castle of Ikana Behind Block => MM Ancient Castle of Ikana Pre-Boss",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Ancient Castle of Ikana Pre-Boss => MM Ancient Castle of Ikana Behind Block",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -28918,6 +29438,481 @@
       "Id": "MM Ancient Castle of Ikana Pre-Boss => MM Ancient Castle of Ikana Throne Room",
       "RequiredItems": [],
       "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_EVENT_MAGIC",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "MM Snowhead Entrance"
+        ],
+        [
+          "MM Twin Islands"
+        ],
+        [
+          "MM Swamp Spider House Main"
+        ],
+        [
+          "MM Near Goron Graveyard"
+        ],
+        [
+          "MM Pinnacle Rock"
+        ],
+        [
+          "MM Mountain Village Path Upper"
+        ],
+        [
+          "MM Woods of Mystery Grotto"
+        ],
+        [
+          "MM Southern Swamp Grotto"
+        ],
+        [
+          "MM Snowhead Temple After Boss"
+        ],
+        [
+          "MM Stone Tower Top Inverted Upper",
+          "MM_can_use_beans"
+        ],
+        [
+          "MM Snowhead Temple Main"
+        ],
+        [
+          "MM Snowhead Near Great Fairy Fountain",
+          "MM_EVENT_BOSS_SNOWHEAD"
+        ],
+        [
+          "MM_EVENT_BOSS_SNOWHEAD",
+          "MM Mountain Village Path Lower"
+        ],
+        [
+          "MM Ocean Spider House Front",
+          "MM_can_warp"
+        ],
+        [
+          "MM_MASK_DEKU",
+          "MM Deku Palace Upper"
+        ],
+        [
+          "MM_can_oot_warp",
+          "MM Great Bay Temple Compass Room"
+        ],
+        [
+          "MM Great Bay Temple Compass Room",
+          "MM_can_hookshot"
+        ],
+        [
+          "MM_can_oot_warp",
+          "MM Great Bay Temple Map Room"
+        ],
+        [
+          "MM_can_hookshot",
+          "MM Great Bay Temple Map Room"
+        ],
+        [
+          "MM_can_oot_warp",
+          "MM Great Bay Temple Red Pipe 2"
+        ],
+        [
+          "MM_can_hookshot",
+          "MM Great Bay Temple Red Pipe 2"
+        ],
+        [
+          "MM_MASK_DEKU",
+          "MM_can_oot_warp",
+          "MM Great Bay Temple Ice Arrow Room"
+        ],
+        [
+          "MM_MASK_DEKU",
+          "MM_can_hookshot",
+          "MM Great Bay Temple Ice Arrow Room"
+        ],
+        [
+          "MM_can_oot_warp",
+          "MM Great Bay Temple Ice Arrow Room",
+          "MM_MASK_ZORA"
+        ],
+        [
+          "MM_can_hookshot",
+          "MM Great Bay Temple Ice Arrow Room",
+          "MM_MASK_ZORA"
+        ],
+        [
+          "MM Woodfall Temple Entrance"
+        ],
+        [
+          "MM_can_oot_warp",
+          "MM Great Bay Temple Ice Arrow Room",
+          "MM_has_explosives"
+        ],
+        [
+          "MM_can_hookshot",
+          "MM Great Bay Temple Ice Arrow Room",
+          "MM_has_explosives"
+        ],
+        [
+          "MM_can_oot_warp",
+          "MM Great Bay Temple Ice Arrow Room",
+          "MM_has_weapon"
+        ],
+        [
+          "MM_can_hookshot",
+          "MM Great Bay Temple Ice Arrow Room",
+          "MM_has_weapon"
+        ],
+        [
+          "MM Stone Tower Temple Entrance"
+        ],
+        [
+          "MM Ancient Castle of Ikana Pre-Boss"
+        ],
+        [
+          "MM_SONG_TIME",
+          "MM Clock Tower Roof",
+          "MM_OCARINA"
+        ],
+        [
+          "MM Ocean Spider House Front",
+          "MM_MASK_GORON"
+        ],
+        [
+          "MM_MASK_ZORA",
+          "MM Stone Tower Front of Temple"
+        ],
+        [
+          "MM_MASK_GORON",
+          "MM Stone Tower Front of Temple"
+        ],
+        [
+          "MM Snowhead Temple Bridge Front"
+        ],
+        [
+          "MM Stone Tower Front of Temple",
+          "MM_scarecrow_hookshot",
+          "MM_can_fight"
+        ],
+        [
+          "MM Snowhead Near Great Fairy Fountain",
+          "MM_EVENT_OPEN_SNOWHEAD_TEMPLE",
+          "MM_can_break_boulders"
+        ],
+        [
+          "MM_can_break_boulders",
+          "MM Path to Snowhead Back"
+        ],
+        [
+          "MM Ikana Graveyard Grotto"
+        ],
+        [
+          "MM Near Ramp Grotto"
+        ],
+        [
+          "MM Swamp Front"
+        ],
+        [
+          "MM Road to Southern Swamp Grotto"
+        ],
+        [
+          "MM Road to Southern Swamp"
+        ],
+        [
+          "MM Mountain Village Grotto"
+        ],
+        [
+          "MM Canyon Gossip Grotto"
+        ],
+        [
+          "MM Ocean Gossip Grotto"
+        ],
+        [
+          "MM Ikana Canyon"
+        ],
+        [
+          "MM Termina Field Cow Grotto"
+        ],
+        [
+          "MM Lone Peak Shrine"
+        ],
+        [
+          "MM Stone Tower Temple Inverted Entrance"
+        ],
+        [
+          "MM Great Bay Grotto"
+        ],
+        [
+          "MM Pillar Grotto"
+        ],
+        [
+          "MM Road to Ikana Grotto"
+        ],
+        [
+          "MM Grass Grotto"
+        ],
+        [
+          "MM Termina Field"
+        ],
+        [
+          "MM Astral Observatory"
+        ],
+        [
+          "MM Romani Ranch"
+        ],
+        [
+          "MM Woodfall"
+        ],
+        [
+          "MM Snowhead Temple Boss"
+        ],
+        [
+          "MM Goron Shrine"
+        ],
+        [
+          "MM Path to Snowhead Grotto"
+        ],
+        [
+          "MM Secret Shrine Entrance"
+        ],
+        [
+          "MM Twin Islands Ramp Grotto"
+        ],
+        [
+          "MM Clock Town Laundry Pool"
+        ],
+        [
+          "MM Goron Race"
+        ],
+        [
+          "MM Mountain Village"
+        ],
+        [
+          "MM Zora Cape"
+        ],
+        [
+          "MM Beneath The Graveyard Night 2"
+        ],
+        [
+          "MM Ikana Castle Exterior"
+        ],
+        [
+          "MM Great Bay Cow Grotto"
+        ],
+        [
+          "MM Ikana Graveyard"
+        ],
+        [
+          "MM Great Bay Coast"
+        ],
+        [
+          "MM Ikana Valley Grotto"
+        ],
+        [
+          "MM Zora Cape Grotto"
+        ],
+        [
+          "MM Stone Tower Top"
+        ],
+        [
+          "MM Milk Road Front"
+        ],
+        [
+          "MM Deku Palace Grotto"
+        ],
+        [
+          "MM Goron Village"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_EVENT_ARROWS",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "MM Great Bay Grotto"
+        ],
+        [
+          "MM Ikana Graveyard"
+        ],
+        [
+          "MM Road to Southern Swamp Grotto"
+        ],
+        [
+          "MM Road to Southern Swamp"
+        ],
+        [
+          "MM Beneath The Graveyard Night 2"
+        ],
+        [
+          "MM Secret Shrine Entrance"
+        ],
+        [
+          "MM Pirate Fortress Hookshot Room Upper"
+        ],
+        [
+          "MM Canyon Gossip Grotto"
+        ],
+        [
+          "MM Pirate Fortress Lone Guard Aquarium"
+        ],
+        [
+          "MM Ocean Gossip Grotto"
+        ],
+        [
+          "MM Termina Field Cow Grotto"
+        ],
+        [
+          "MM Great Bay Coast"
+        ],
+        [
+          "MM Pillar Grotto"
+        ],
+        [
+          "MM Grass Grotto"
+        ],
+        [
+          "MM Termina Field"
+        ],
+        [
+          "MM Stone Tower Temple Inverted East Bridge"
+        ],
+        [
+          "MM Road to Ikana Grotto"
+        ],
+        [
+          "MM Romani Ranch"
+        ],
+        [
+          "MM Ikana Canyon"
+        ],
+        [
+          "MM Ocean Spider House Front",
+          "MM_can_warp"
+        ],
+        [
+          "MM Beneath The Graveyard Night 1"
+        ],
+        [
+          "MM Milk Road Front"
+        ],
+        [
+          "MM Snowhead Temple After Boss"
+        ],
+        [
+          "MM_can_hookshot",
+          "MM Great Bay Temple Entrance"
+        ],
+        [
+          "MM Woodfall Temple Main"
+        ],
+        [
+          "MM Great Bay Temple Entrance",
+          "MM_can_oot_warp"
+        ],
+        [
+          "MM Zora Cape Grotto"
+        ],
+        [
+          "MM Stone Tower Top"
+        ],
+        [
+          "MM Snowhead Entrance"
+        ],
+        [
+          "MM Ancient Castle of Ikana Pre-Boss"
+        ],
+        [
+          "MM Snowhead Temple Main"
+        ],
+        [
+          "MM Path to Snowhead Grotto"
+        ],
+        [
+          "MM Pirate Fortress Sewers End"
+        ],
+        [
+          "MM Near Goron Graveyard",
+          "MM_EVENT_BOSS_SNOWHEAD"
+        ],
+        [
+          "MM Ocean Spider House Front",
+          "MM_MASK_GORON"
+        ],
+        [
+          "MM_MASK_GORON",
+          "MM Stone Tower Front of Temple"
+        ],
+        [
+          "MM Stone Tower Front of Temple",
+          "MM_MASK_ZORA"
+        ],
+        [
+          "MM Stone Tower Front of Temple",
+          "MM_scarecrow_hookshot",
+          "MM_can_fight"
+        ],
+        [
+          "MM_can_hookshot_short",
+          "MM Stone Tower Temple Inverted Pre-Boss"
+        ],
+        [
+          "MM Pirate Fortress Treasure Room Aquarium"
+        ],
+        [
+          "MM Pirate Fortress Barrel Maze Aquarium"
+        ],
+        [
+          "MM Stone Tower Temple Inverted Boss Key Room"
+        ],
+        [
+          "MM Ikana Graveyard Grotto"
+        ],
+        [
+          "MM Ikana Valley Grotto"
+        ],
+        [
+          "MM Goron Village"
+        ],
+        [
+          "MM Twin Islands Ramp Grotto"
+        ],
+        [
+          "MM Great Bay Cow Grotto"
+        ],
+        [
+          "MM Stone Tower Temple Entrance"
+        ],
+        [
+          "MM Mountain Village Grotto"
+        ],
+        [
+          "MM Mountain Village"
+        ],
+        [
+          "MM Deku Palace Grotto"
+        ],
+        [
+          "MM Woods of Mystery Grotto"
+        ],
+        [
+          "MM Southern Swamp Grotto"
+        ],
+        [
+          "MM Swamp Front"
+        ],
+        [
+          "MM Ikana Castle Exterior"
+        ],
+        [
+          "MM Snowhead Temple Boss"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -28981,18 +29976,9 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Beneath the Well North Section => MM Beneath the Well Entrance",
-      "RequiredItems": [],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
       "Id": "MM_EVENT_WELL_HOT_WATER",
       "RequiredItems": [
-        "MM_has_bottle",
+        "MM_EVENT_FISH",
         "MM Beneath the Well North Section"
       ],
       "ConditionalItems": [
@@ -29004,6 +29990,388 @@
         ],
         [
           "MM_trick_keg_explosives"
+        ],
+        [
+          "trick{TRICK_MM_WELL_HSW}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_EVENT_WATER",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "MM_has_bottle",
+          "MM Secret Shrine Entrance"
+        ],
+        [
+          "MM_has_bottle",
+          "MM_MASK_GORON",
+          "MM Goron Graveyard"
+        ],
+        [
+          "MM_has_bottle",
+          "MM Twin Islands Frozen Grotto"
+        ],
+        [
+          "MM_has_bottle",
+          "MM Deku Palace Grotto"
+        ],
+        [
+          "MM_has_bottle",
+          "MM Road to Southern Swamp"
+        ],
+        [
+          "MM_has_bottle",
+          "MM Beneath the Well East Section"
+        ],
+        [
+          "MM Beneath the Well North Section"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_EVENT_FISH",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "MM_has_bottle",
+          "MM Ikana Valley Grotto"
+        ],
+        [
+          "MM_has_bottle",
+          "MM Ikana Graveyard Grotto"
+        ],
+        [
+          "MM_has_bottle",
+          "MM Road to Ikana Grotto"
+        ],
+        [
+          "MM_has_bottle",
+          "MM Zora Cape Grotto"
+        ],
+        [
+          "MM_has_bottle",
+          "MM Great Bay Grotto"
+        ],
+        [
+          "MM_has_bottle",
+          "MM Great Bay Coast"
+        ],
+        [
+          "MM_has_bottle",
+          "MM Path to Snowhead Grotto"
+        ],
+        [
+          "MM_has_bottle",
+          "MM Twin Islands Ramp Grotto"
+        ],
+        [
+          "MM_has_bottle",
+          "MM Mountain Village Grotto"
+        ],
+        [
+          "MM_has_bottle",
+          "MM Woods of Mystery Grotto"
+        ],
+        [
+          "MM_has_bottle",
+          "MM Southern Swamp Grotto"
+        ],
+        [
+          "MM_has_bottle",
+          "MM Road to Southern Swamp Grotto"
+        ],
+        [
+          "MM_has_bottle",
+          "MM Road to Southern Swamp"
+        ],
+        [
+          "MM_has_bottle",
+          "MM Pillar Grotto"
+        ],
+        [
+          "MM_has_bottle",
+          "MM Grass Grotto"
+        ],
+        [
+          "MM_has_bottle",
+          "MM Stock Pot Inn"
+        ],
+        [
+          "MM Beneath the Well North Section"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_EVENT_BUGS",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "MM_has_bottle",
+          "MM Swamp Spider House Main"
+        ],
+        [
+          "MM_has_sticks",
+          "MM_EVENT_WATER",
+          "MM Beneath the Well North Section"
+        ],
+        [
+          "MM Mountain Gossip Grotto",
+          "MM_has_bottle"
+        ],
+        [
+          "MM Swamp Gossip Grotto",
+          "MM_has_bottle"
+        ],
+        [
+          "MM Scrub Grotto",
+          "MM_has_bottle"
+        ],
+        [
+          "MM Pillar Grotto",
+          "MM_has_bottle"
+        ],
+        [
+          "MM Bio Baba Grotto",
+          "MM_has_bottle"
+        ],
+        [
+          "MM Grass Grotto",
+          "MM_has_bottle"
+        ],
+        [
+          "MM_has_bottle",
+          "MM Stone Tower Top Inverted Upper"
+        ],
+        [
+          "MM_EVENT_WATER",
+          "MM Beneath the Well North Section",
+          "MM_can_use_fire_arrows"
+        ],
+        [
+          "MM_can_use_fire_arrows",
+          "MM Beneath the Well Final Hall"
+        ],
+        [
+          "MM_has_sticks",
+          "MM_EVENT_WELL_BIG_POE",
+          "MM Beneath the Well Final Hall"
+        ],
+        [
+          "MM_has_bottle",
+          "MM Stock Pot Inn"
+        ],
+        [
+          "MM_has_bottle",
+          "MM Ikana Valley Grotto"
+        ],
+        [
+          "MM_has_bottle",
+          "MM Ikana Graveyard Grotto"
+        ],
+        [
+          "MM_has_bottle",
+          "MM Beneath the Well Cow Hall"
+        ],
+        [
+          "MM_has_bottle",
+          "MM Road to Ikana Grotto"
+        ],
+        [
+          "MM_has_bottle",
+          "MM Zora Cape Grotto"
+        ],
+        [
+          "MM_has_bottle",
+          "MM Great Bay Grotto"
+        ],
+        [
+          "MM_has_bottle",
+          "MM Great Bay Coast"
+        ],
+        [
+          "MM_has_bottle",
+          "MM Path to Snowhead Grotto"
+        ],
+        [
+          "MM_has_bottle",
+          "MM Lone Peak Shrine"
+        ],
+        [
+          "MM_has_bottle",
+          "MM Twin Islands Ramp Grotto"
+        ],
+        [
+          "MM_has_bottle",
+          "MM Mountain Village Grotto"
+        ],
+        [
+          "MM_has_bottle",
+          "MM Woods of Mystery Grotto"
+        ],
+        [
+          "MM_has_bottle",
+          "MM Southern Swamp Grotto"
+        ],
+        [
+          "MM_has_bottle",
+          "MM Canyon Gossip Grotto"
+        ],
+        [
+          "MM_has_bottle",
+          "MM Ocean Gossip Grotto"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_EVENT_BOMBS",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "MM Grass Grotto"
+        ],
+        [
+          "MM Termina Field"
+        ],
+        [
+          "MM Snowhead Temple Bridge Front"
+        ],
+        [
+          "MM Road to Ikana Grotto"
+        ],
+        [
+          "MM Stone Tower Top"
+        ],
+        [
+          "MM Zora Cape Grotto"
+        ],
+        [
+          "MM Great Bay Cow Grotto"
+        ],
+        [
+          "MM Great Bay Grotto"
+        ],
+        [
+          "MM Great Bay Coast"
+        ],
+        [
+          "MM Snowhead Entrance"
+        ],
+        [
+          "MM Path to Snowhead Grotto"
+        ],
+        [
+          "MM Lone Peak Shrine"
+        ],
+        [
+          "MM Ikana Canyon"
+        ],
+        [
+          "MM Goron Village"
+        ],
+        [
+          "MM Twin Islands Ramp Grotto"
+        ],
+        [
+          "MM Mountain Village Grotto"
+        ],
+        [
+          "MM Stone Tower Temple Inverted Boss Key Room"
+        ],
+        [
+          "MM Mountain Village"
+        ],
+        [
+          "MM Woods of Mystery Grotto"
+        ],
+        [
+          "MM Southern Swamp Grotto"
+        ],
+        [
+          "MM Swamp Front"
+        ],
+        [
+          "MM Woodfall Temple Main"
+        ],
+        [
+          "MM_can_hookshot",
+          "MM Great Bay Temple Entrance"
+        ],
+        [
+          "MM Great Bay Temple Entrance",
+          "MM_can_oot_warp"
+        ],
+        [
+          "MM_has_sticks",
+          "MM_EVENT_WATER",
+          "MM Beneath the Well North Section"
+        ],
+        [
+          "MM_EVENT_WATER",
+          "MM Beneath the Well North Section",
+          "MM_can_use_fire_arrows"
+        ],
+        [
+          "MM_can_use_beans",
+          "MM Stone Tower Top Inverted Upper"
+        ],
+        [
+          "MM_can_hookshot_short",
+          "MM Stone Tower Temple Inverted Pre-Boss"
+        ],
+        [
+          "MM_MASK_GORON",
+          "MM Stone Tower Front of Temple"
+        ],
+        [
+          "MM Stone Tower Front of Temple",
+          "MM_MASK_ZORA"
+        ],
+        [
+          "MM Stone Tower Front of Temple",
+          "MM_scarecrow_hookshot",
+          "MM_can_fight"
+        ],
+        [
+          "MM Ikana Valley Grotto"
+        ],
+        [
+          "MM Road to Southern Swamp Grotto"
+        ],
+        [
+          "MM Road to Southern Swamp"
+        ],
+        [
+          "MM Canyon Gossip Grotto"
+        ],
+        [
+          "MM Ocean Gossip Grotto"
+        ],
+        [
+          "MM Termina Field Cow Grotto"
+        ],
+        [
+          "MM Pillar Grotto"
+        ],
+        [
+          "MM Ikana Graveyard Grotto"
         ]
       ],
       "TimeNeeded": "None",
@@ -29024,7 +30392,7 @@
       "Id": "MM Beneath the Well East Section => MM Beneath the Well Middle Section",
       "RequiredItems": [
         "MM_MASK_GIBDO",
-        "MM_has_bottle"
+        "MM_EVENT_FISH"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -29033,25 +30401,10 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Beneath the Well East Section => MM Beneath the Well Sun Block",
-      "RequiredItems": [
-        "MM_EVENT_WELL_BIG_POE",
-        "MM_has_milk"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM_EVENT_WELL_BIG_POE",
+      "Id": "MM Beneath the Well East Section => MM Beneath the Well Cow Hall",
       "RequiredItems": [
         "MM_MASK_GIBDO",
-        "MM_has_bottle",
-        "MM_BOMB_BAG",
-        "MM_has_weapon_range",
-        "MM Beneath the Well East Section"
+        "MM_has_nuts"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -29064,35 +30417,16 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM Grass Grotto"
-        ],
-        [
-          "MM Termina Field",
-          "MM_can_kill_baba_both_sticks"
-        ],
-        [
           "MM Woodfall Temple Main"
         ],
         [
-          "MM Beneath the Well Middle Section"
+          "MM Ikana Valley Grotto"
         ],
         [
-          "MM Ikana Valley"
+          "MM Ikana Graveyard Grotto"
         ],
         [
-          "MM Beneath the Well East Section"
-        ],
-        [
-          "MM_has_explosives",
-          "MM Ikana Graveyard"
-        ],
-        [
-          "MM Ikana Graveyard",
-          "MM_trick_keg_explosives"
-        ],
-        [
-          "MM_MASK_GORON",
-          "MM Road to Ikana Front"
+          "MM Road to Ikana Grotto"
         ],
         [
           "MM Zora Cape Grotto"
@@ -29139,8 +30473,36 @@
         ],
         [
           "MM Pillar Grotto"
+        ],
+        [
+          "MM Grass Grotto"
+        ],
+        [
+          "MM_can_kill_baba_both_sticks",
+          "MM Termina Field"
+        ],
+        [
+          "MM_can_kill_baba_both_sticks",
+          "MM Beneath the Well Middle Section"
+        ],
+        [
+          "MM_can_kill_baba_sticks",
+          "MM Beneath the Well East Section"
         ]
       ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_EVENT_WELL_BIG_POE",
+      "RequiredItems": [
+        "MM_has_bombs",
+        "MM_has_weapon_range",
+        "MM Beneath the Well Cow Hall"
+      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -29156,9 +30518,29 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Beneath the Well Middle Section => MM Beneath the Well Sun Block",
+      "Id": "MM Beneath the Well Middle Section => MM Beneath the Well Final Hall",
       "RequiredItems": [
-        "MM_EVENT_WELL_BIG_POE",
+        "MM_EVENT_WELL_BIG_POE"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Beneath the Well Final Hall => MM Beneath the Well Middle Section",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Beneath the Well Final Hall => MM Beneath the Well Sun Block",
+      "RequiredItems": [
+        "MM_MASK_GIBDO",
         "MM_has_milk"
       ],
       "ConditionalItems": [],
@@ -29168,129 +30550,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM_EVENT_NUTS",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "MM Beneath the Well Middle Section"
-        ],
-        [
-          "MM_has_explosives",
-          "MM Ikana Graveyard"
-        ],
-        [
-          "MM Ikana Graveyard",
-          "MM_trick_keg_explosives"
-        ],
-        [
-          "MM_MASK_GORON",
-          "MM Road to Ikana Front"
-        ],
-        [
-          "MM_MASK_DEKU",
-          "MM Woodfall Temple Main"
-        ],
-        [
-          "MM_has_arrows",
-          "MM Woodfall Temple Main"
-        ],
-        [
-          "MM_has_explosives",
-          "MM Woodfall Temple Main"
-        ],
-        [
-          "MM_can_fight",
-          "MM Woodfall Temple Main"
-        ],
-        [
-          "MM Grass Grotto"
-        ],
-        [
-          "MM Termina Field"
-        ],
-        [
-          "MM Zora Cape Grotto"
-        ],
-        [
-          "MM Great Bay Grotto"
-        ],
-        [
-          "MM Path to Snowhead Grotto"
-        ],
-        [
-          "MM Goron Village"
-        ],
-        [
-          "MM Twin Islands Ramp Grotto"
-        ],
-        [
-          "MM Mountain Village Grotto"
-        ],
-        [
-          "MM Woodfall Shrine"
-        ],
-        [
-          "MM Secret Shrine Main"
-        ],
-        [
-          "MM_MASK_DEKU",
-          "MM Deku Palace Front"
-        ],
-        [
-          "MM_has_explosives",
-          "MM Deku Palace Front",
-          "MM_EVENT_CLEAN_SWAMP"
-        ],
-        [
-          "MM Deku Palace Front",
-          "MM_can_hookshot_short",
-          "MM_EVENT_CLEAN_SWAMP"
-        ],
-        [
-          "MM Deku Palace Front",
-          "MM_EVENT_CLEAN_SWAMP",
-          "MM_can_fight"
-        ],
-        [
-          "MM Deku Palace Front",
-          "MM_EVENT_CLEAN_SWAMP",
-          "MM_has_arrows"
-        ],
-        [
-          "MM Pirate Fortress Sewers End"
-        ],
-        [
-          "MM Woods of Mystery Grotto"
-        ],
-        [
-          "MM Southern Swamp Grotto"
-        ],
-        [
-          "MM Swamp Front"
-        ],
-        [
-          "MM Ikana Canyon"
-        ],
-        [
-          "MM Road to Southern Swamp Grotto"
-        ],
-        [
-          "MM Road to Southern Swamp"
-        ],
-        [
-          "MM Pillar Grotto"
-        ],
-        [
-          "MM Ikana Valley"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Beneath the Well Sun Block => MM Beneath the Well Middle Section",
+      "Id": "MM Beneath the Well Sun Block => MM Beneath the Well Final Hall",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -29346,12 +30606,12 @@
         [
           "MM_can_hookshot",
           "MM_EVENT_MAJORA",
-          "TRICK_MM_MAJORA_LOGIC"
+          "trick{TRICK_MM_MAJORA_LOGIC}"
         ],
         [
           "MM_can_oot_warp",
           "MM_EVENT_MAJORA",
-          "TRICK_MM_MAJORA_LOGIC"
+          "trick{TRICK_MM_MAJORA_LOGIC}"
         ]
       ],
       "TimeNeeded": "None",
@@ -29383,430 +30643,6 @@
       "Id": "MM Great Bay Temple Entrance => MM Great Bay Temple Water Wheel",
       "RequiredItems": [],
       "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM_EVENT_ARROWS",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "MM Milk Road Front"
-        ],
-        [
-          "MM Snowhead Entrance"
-        ],
-        [
-          "MM Path to Snowhead Grotto"
-        ],
-        [
-          "MM_EVENT_BOSS_SNOWHEAD",
-          "MM Near Goron Graveyard"
-        ],
-        [
-          "MM Pirate Fortress Lone Guard Aquarium"
-        ],
-        [
-          "MM Snowhead Temple Boss"
-        ],
-        [
-          "MM Goron Village"
-        ],
-        [
-          "MM Twin Islands Ramp Grotto"
-        ],
-        [
-          "MM Zora Cape Grotto"
-        ],
-        [
-          "MM Mountain Village Grotto"
-        ],
-        [
-          "MM Mountain Village"
-        ],
-        [
-          "MM Deku Palace Grotto"
-        ],
-        [
-          "MM Woods of Mystery Grotto"
-        ],
-        [
-          "MM Southern Swamp Grotto"
-        ],
-        [
-          "MM Swamp Front"
-        ],
-        [
-          "MM Woodfall Temple Main"
-        ],
-        [
-          "MM Great Bay Cow Grotto"
-        ],
-        [
-          "MM Pirate Fortress Barrel Maze Aquarium"
-        ],
-        [
-          "MM Road to Southern Swamp Grotto"
-        ],
-        [
-          "MM Road to Southern Swamp"
-        ],
-        [
-          "MM Snowhead Temple Main"
-        ],
-        [
-          "MM Canyon Gossip Grotto"
-        ],
-        [
-          "MM Ocean Gossip Grotto"
-        ],
-        [
-          "MM Termina Field Cow Grotto"
-        ],
-        [
-          "MM Great Bay Grotto"
-        ],
-        [
-          "MM Pillar Grotto"
-        ],
-        [
-          "MM Grass Grotto"
-        ],
-        [
-          "MM Termina Field"
-        ],
-        [
-          "MM Pirate Fortress Hookshot Room Upper"
-        ],
-        [
-          "MM Great Bay Coast"
-        ],
-        [
-          "MM Snowhead Temple After Boss"
-        ],
-        [
-          "MM_can_warp",
-          "MM Ocean Spider House Front"
-        ],
-        [
-          "MM Ocean Spider House Front",
-          "MM_MASK_GORON"
-        ],
-        [
-          "MM Pirate Fortress Treasure Room Aquarium"
-        ],
-        [
-          "MM Romani Ranch"
-        ],
-        [
-          "MM_can_oot_warp",
-          "MM Great Bay Temple Entrance"
-        ],
-        [
-          "MM Great Bay Temple Entrance",
-          "MM_can_hookshot"
-        ],
-        [
-          "MM Pirate Fortress Sewers End"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM_EVENT_BOMBS",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "MM Great Bay Temple Entrance",
-          "MM_can_hookshot"
-        ],
-        [
-          "MM Woodfall Temple Main"
-        ],
-        [
-          "MM Snowhead Temple Bridge Front"
-        ],
-        [
-          "MM Zora Cape Grotto"
-        ],
-        [
-          "MM Great Bay Cow Grotto"
-        ],
-        [
-          "MM Great Bay Grotto"
-        ],
-        [
-          "MM Great Bay Coast"
-        ],
-        [
-          "MM Snowhead Entrance"
-        ],
-        [
-          "MM Path to Snowhead Grotto"
-        ],
-        [
-          "MM Lone Peak Shrine"
-        ],
-        [
-          "MM Goron Village"
-        ],
-        [
-          "MM Twin Islands Ramp Grotto"
-        ],
-        [
-          "MM Mountain Village Grotto"
-        ],
-        [
-          "MM Mountain Village"
-        ],
-        [
-          "MM Woods of Mystery Grotto"
-        ],
-        [
-          "MM Southern Swamp Grotto"
-        ],
-        [
-          "MM Swamp Front"
-        ],
-        [
-          "MM Road to Southern Swamp Grotto"
-        ],
-        [
-          "MM Road to Southern Swamp"
-        ],
-        [
-          "MM Canyon Gossip Grotto"
-        ],
-        [
-          "MM Ocean Gossip Grotto"
-        ],
-        [
-          "MM Termina Field Cow Grotto"
-        ],
-        [
-          "MM Pillar Grotto"
-        ],
-        [
-          "MM Grass Grotto"
-        ],
-        [
-          "MM Termina Field"
-        ],
-        [
-          "MM Great Bay Temple Entrance",
-          "MM_can_oot_warp"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM_EVENT_RUPEES",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "MM Milk Road Back"
-        ],
-        [
-          "MM Great Bay Grotto"
-        ],
-        [
-          "MM Snowhead Temple Main"
-        ],
-        [
-          "MM Twin Islands Ramp Grotto"
-        ],
-        [
-          "MM Canyon Gossip Grotto"
-        ],
-        [
-          "MM Ocean Gossip Grotto"
-        ],
-        [
-          "MM Zora Cape Grotto"
-        ],
-        [
-          "MM Termina Field Cow Grotto"
-        ],
-        [
-          "MM Pillar Grotto"
-        ],
-        [
-          "MM Grass Grotto"
-        ],
-        [
-          "MM Great Bay Coast"
-        ],
-        [
-          "MM Great Bay Cow Grotto"
-        ],
-        [
-          "MM Termina Field"
-        ],
-        [
-          "MM Astral Observatory"
-        ],
-        [
-          "MM Clock Town North"
-        ],
-        [
-          "MM Mountain Village Grotto"
-        ],
-        [
-          "MM Path to Snowhead Grotto"
-        ],
-        [
-          "MM Deku Palace Grotto"
-        ],
-        [
-          "MM Woods of Mystery Grotto"
-        ],
-        [
-          "MM Southern Swamp Grotto"
-        ],
-        [
-          "MM Pirate Fortress Sewers End"
-        ],
-        [
-          "MM Swamp Front"
-        ],
-        [
-          "MM Road to Southern Swamp Grotto"
-        ],
-        [
-          "MM Road to Southern Swamp"
-        ],
-        [
-          "MM Pirate Fortress Barrel Maze Aquarium"
-        ],
-        [
-          "MM Woodfall Temple Pits Room"
-        ],
-        [
-          "MM Snowhead Temple Bridge Front"
-        ],
-        [
-          "MM_has_weapon_range",
-          "MM Woodfall Temple Entrance"
-        ],
-        [
-          "MM_EVENT_BOSS_SNOWHEAD",
-          "MM Twin Islands"
-        ],
-        [
-          "MM Twin Islands",
-          "MM_can_use_light_arrows"
-        ],
-        [
-          "MM_can_use_light_arrows",
-          "MM Goron Village"
-        ],
-        [
-          "MM_can_use_light_arrows",
-          "MM Mountain Village Path Upper"
-        ],
-        [
-          "MM_can_use_light_arrows",
-          "MM Mountain Village Path Lower"
-        ],
-        [
-          "MM_EVENT_BOSS_SNOWHEAD",
-          "MM_can_use_light_arrows",
-          "MM Snowhead Near Great Fairy Fountain"
-        ],
-        [
-          "MM_can_use_light_arrows",
-          "MM Snowhead Near Great Fairy Fountain",
-          "MM_EVENT_OPEN_SNOWHEAD_TEMPLE"
-        ],
-        [
-          "MM_can_hookshot",
-          "MM Great Bay Temple Entrance"
-        ],
-        [
-          "MM Great Bay Temple Entrance",
-          "MM_can_oot_warp"
-        ],
-        [
-          "MM_has_weapon_range",
-          "MM Pirate Fortress Interior"
-        ],
-        [
-          "MM Pirate Fortress Interior",
-          "MM_has_explosives"
-        ],
-        [
-          "MM Pirate Fortress Interior",
-          "MM_has_weapon"
-        ],
-        [
-          "MM Goron Village",
-          "MM_can_break_boulders"
-        ],
-        [
-          "MM_EVENT_BOSS_SNOWHEAD",
-          "MM Mountain Village"
-        ],
-        [
-          "MM_can_use_light_arrows",
-          "MM_can_break_boulders",
-          "MM Mountain Village",
-          "MM_first_day"
-        ],
-        [
-          "MM_can_break_boulders",
-          "MM Mountain Village",
-          "MM_second_day"
-        ],
-        [
-          "MM Goron Village",
-          "MM_can_use_fire_arrows"
-        ],
-        [
-          "MM_can_use_light_arrows",
-          "MM Mountain Village",
-          "MM_first_day",
-          "MM_can_use_fire_arrows"
-        ],
-        [
-          "MM Mountain Village",
-          "MM_second_day",
-          "MM_can_use_fire_arrows"
-        ],
-        [
-          "MM_can_break_boulders",
-          "MM Mountain Village",
-          "MM_final_day"
-        ],
-        [
-          "MM Mountain Village",
-          "MM_can_use_fire_arrows",
-          "MM_final_day"
-        ],
-        [
-          "MM_has_weapon_range",
-          "MM Cucco Shack"
-        ],
-        [
-          "MM_has_weapon",
-          "MM Cucco Shack"
-        ],
-        [
-          "MM_can_break_boulders",
-          "MM Cucco Shack"
-        ],
-        [
-          "MM Swamp Spider House Main",
-          "MM_has_arrows"
-        ]
-      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -29921,235 +30757,6 @@
         "MM_can_use_ice_arrows"
       ],
       "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM_EVENT_MAGIC",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "MM Swamp Spider House Main"
-        ],
-        [
-          "MM Pillar Grotto"
-        ],
-        [
-          "MM Near Goron Graveyard"
-        ],
-        [
-          "MM Grass Grotto"
-        ],
-        [
-          "MM Pinnacle Rock"
-        ],
-        [
-          "MM Termina Field"
-        ],
-        [
-          "MM Near Ramp Grotto"
-        ],
-        [
-          "MM Astral Observatory"
-        ],
-        [
-          "MM Clock Town Laundry Pool"
-        ],
-        [
-          "MM Snowhead Entrance"
-        ],
-        [
-          "MM Great Bay Grotto"
-        ],
-        [
-          "MM Mountain Village"
-        ],
-        [
-          "MM Goron Race"
-        ],
-        [
-          "MM Snowhead Temple Boss"
-        ],
-        [
-          "MM Romani Ranch"
-        ],
-        [
-          "MM Great Bay Temple Compass Room",
-          "MM_can_oot_warp"
-        ],
-        [
-          "MM_can_oot_warp",
-          "MM Great Bay Temple Map Room"
-        ],
-        [
-          "MM_can_oot_warp",
-          "MM Great Bay Temple Red Pipe 2"
-        ],
-        [
-          "MM_MASK_DEKU",
-          "MM Deku Palace Upper"
-        ],
-        [
-          "MM_can_warp",
-          "MM Ocean Spider House Front"
-        ],
-        [
-          "MM Ocean Spider House Front",
-          "MM_MASK_GORON"
-        ],
-        [
-          "MM Snowhead Temple Main"
-        ],
-        [
-          "MM Woodfall Temple Entrance"
-        ],
-        [
-          "MM Path to Snowhead Back",
-          "MM_can_break_boulders"
-        ],
-        [
-          "MM Mountain Village Path Lower",
-          "MM_EVENT_BOSS_SNOWHEAD"
-        ],
-        [
-          "MM_EVENT_BOSS_SNOWHEAD",
-          "MM Snowhead Near Great Fairy Fountain"
-        ],
-        [
-          "MM_can_break_boulders",
-          "MM Snowhead Near Great Fairy Fountain",
-          "MM_EVENT_OPEN_SNOWHEAD_TEMPLE"
-        ],
-        [
-          "MM Zora Cape"
-        ],
-        [
-          "MM_can_oot_warp",
-          "MM_MASK_DEKU",
-          "MM Great Bay Temple Ice Arrow Room"
-        ],
-        [
-          "MM_can_oot_warp",
-          "MM_has_weapon",
-          "MM Great Bay Temple Ice Arrow Room"
-        ],
-        [
-          "MM_can_oot_warp",
-          "MM Great Bay Temple Ice Arrow Room",
-          "MM_MASK_ZORA"
-        ],
-        [
-          "MM_can_oot_warp",
-          "MM Great Bay Temple Ice Arrow Room",
-          "MM_has_explosives"
-        ],
-        [
-          "MM Great Bay Temple Compass Room",
-          "MM_can_hookshot"
-        ],
-        [
-          "MM Great Bay Temple Map Room",
-          "MM_can_hookshot"
-        ],
-        [
-          "MM Great Bay Temple Red Pipe 2",
-          "MM_can_hookshot"
-        ],
-        [
-          "MM_MASK_DEKU",
-          "MM Great Bay Temple Ice Arrow Room",
-          "MM_can_hookshot"
-        ],
-        [
-          "MM_has_weapon",
-          "MM Great Bay Temple Ice Arrow Room",
-          "MM_can_hookshot"
-        ],
-        [
-          "MM Great Bay Temple Ice Arrow Room",
-          "MM_MASK_ZORA",
-          "MM_can_hookshot"
-        ],
-        [
-          "MM Great Bay Temple Ice Arrow Room",
-          "MM_has_explosives",
-          "MM_can_hookshot"
-        ],
-        [
-          "MM Snowhead Temple After Boss"
-        ],
-        [
-          "MM Great Bay Cow Grotto"
-        ],
-        [
-          "MM Lone Peak Shrine"
-        ],
-        [
-          "MM Twin Islands Ramp Grotto"
-        ],
-        [
-          "MM Mountain Village Path Upper"
-        ],
-        [
-          "MM Woodfall"
-        ],
-        [
-          "MM Great Bay Coast"
-        ],
-        [
-          "MM Milk Road Front"
-        ],
-        [
-          "MM Goron Shrine"
-        ],
-        [
-          "MM Twin Islands"
-        ],
-        [
-          "MM Deku Palace Grotto"
-        ],
-        [
-          "MM Goron Village"
-        ],
-        [
-          "MM Snowhead Temple Bridge Front"
-        ],
-        [
-          "MM Woods of Mystery Grotto"
-        ],
-        [
-          "MM Southern Swamp Grotto"
-        ],
-        [
-          "MM Path to Snowhead Grotto"
-        ],
-        [
-          "MM Swamp Front"
-        ],
-        [
-          "MM Road to Southern Swamp Grotto"
-        ],
-        [
-          "MM Road to Southern Swamp"
-        ],
-        [
-          "MM Canyon Gossip Grotto"
-        ],
-        [
-          "MM Mountain Village Grotto"
-        ],
-        [
-          "MM Zora Cape Grotto"
-        ],
-        [
-          "MM Ocean Gossip Grotto"
-        ],
-        [
-          "MM Termina Field Cow Grotto"
-        ]
-      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -30370,12 +30977,12 @@
     {
       "Id": "MM Great Bay Temple Boss => MM Great Bay Temple After Boss",
       "RequiredItems": [
-        "MM_MAGIC_UPGRADE"
+        "MM_has_magic"
       ],
       "ConditionalItems": [
         [
           "MM_MASK_ZORA",
-          "MM_BOW"
+          "MM_has_arrows"
         ],
         [
           "MM_MASK_FIERCE_DEITY"
@@ -30506,10 +31113,10 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "option{majoraChild, none}"
+          "setting{majoraChild, none}"
         ],
         [
-          "option{majoraChild, custom}",
+          "setting{majoraChild, custom}",
           "MM_HAS_MAJORA_REQUIREMENTS"
         ]
       ],
@@ -30658,7 +31265,7 @@
           "MM_can_fight"
         ],
         [
-          "MM_BOW"
+          "MM_has_arrows"
         ]
       ],
       "TimeNeeded": "None",
@@ -30677,7 +31284,7 @@
           "MM_can_use_deku_bubble"
         ],
         [
-          "MM_BOW"
+          "MM_has_arrows"
         ]
       ],
       "TimeNeeded": "None",
@@ -30695,7 +31302,7 @@
           "MM_can_fight"
         ],
         [
-          "MM_BOW"
+          "MM_has_arrows"
         ]
       ],
       "TimeNeeded": "None",
@@ -30711,7 +31318,7 @@
           "MM_can_fight"
         ],
         [
-          "MM_BOW"
+          "MM_has_arrows"
         ]
       ],
       "TimeNeeded": "None",
@@ -30723,7 +31330,7 @@
       "Id": "MM Moon Trial Link Rest 2 => MM Moon Trial Link Rest 3",
       "RequiredItems": [
         "MM_has_bombchu",
-        "MM_BOW"
+        "MM_has_arrows"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -30739,7 +31346,10 @@
           "MM_can_fight"
         ],
         [
-          "MM_BOMB_BAG"
+          "MM_has_bombs"
+        ],
+        [
+          "MM_has_bombchu"
         ]
       ],
       "TimeNeeded": "None",
@@ -30795,14 +31405,14 @@
       ],
       "ConditionalItems": [
         [
-          "MM_BOW"
+          "MM_has_arrows"
         ],
         [
           "MM_MASK_ZORA"
         ],
         [
           "MM_MASK_FIERCE_DEITY",
-          "MM_MAGIC_UPGRADE"
+          "MM_has_magic"
         ]
       ],
       "TimeNeeded": "None",
@@ -30824,7 +31434,8 @@
           "MM_MASK_ZORA"
         ],
         [
-          "MM_MASK_FIERCE_DEITY"
+          "MM_MASK_FIERCE_DEITY",
+          "MM_has_magic"
         ]
       ],
       "TimeNeeded": "None",
@@ -30844,13 +31455,13 @@
         [
           "MM_MASK_GORON",
           "MM_EVENT_MAJORA",
-          "TRICK_MM_MAJORA_LOGIC",
+          "trick{TRICK_MM_MAJORA_LOGIC}",
           "MM_has_explosives"
         ],
         [
           "MM_can_warp",
           "MM_EVENT_MAJORA",
-          "TRICK_MM_MAJORA_LOGIC",
+          "trick{TRICK_MM_MAJORA_LOGIC}",
           "MM_has_explosives"
         ],
         [
@@ -30861,13 +31472,13 @@
         [
           "MM_MASK_GORON",
           "MM_EVENT_MAJORA",
-          "TRICK_MM_MAJORA_LOGIC",
+          "trick{TRICK_MM_MAJORA_LOGIC}",
           "MM_trick_keg_explosives"
         ],
         [
           "MM_can_warp",
           "MM_EVENT_MAJORA",
-          "TRICK_MM_MAJORA_LOGIC",
+          "trick{TRICK_MM_MAJORA_LOGIC}",
           "MM_trick_keg_explosives"
         ]
       ],
@@ -30913,7 +31524,7 @@
     {
       "Id": "MM GLOBAL => OOT SONGS",
       "RequiredItems": [
-        "option{crossWarpOot}",
+        "setting{crossWarpOot}",
         "MM_has_ocarina"
       ],
       "ConditionalItems": [],
@@ -30925,8 +31536,8 @@
     {
       "Id": "MM GLOBAL => MM SOARING",
       "RequiredItems": [
+        "MM_can_reset_time",
         "MM_OCARINA",
-        "MM_SONG_TIME",
         "MM_SONG_SOARING"
       ],
       "ConditionalItems": [],
@@ -31066,12 +31677,8 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Clock Town => MM Moon",
-      "RequiredItems": [
-        "MM_OCARINA",
-        "MM_SONG_ORDER",
-        "MM_HAS_MOON_REQUIREMENTS"
-      ],
+      "Id": "MM Clock Town => MM Clock Tower Roof",
+      "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -31867,7 +32474,7 @@
           "MM_EVENT_BOMBER_CODE"
         ],
         [
-          "TRICK_MM_BOMBER_SKIP"
+          "trick{TRICK_MM_BOMBER_SKIP}"
         ]
       ],
       "TimeNeeded": "None",
@@ -31878,7 +32485,7 @@
     {
       "Id": "MM_EVENT_GUESS_BOMBER",
       "RequiredItems": [
-        "TRICK_MM_BOMBER_SKIP",
+        "trick{TRICK_MM_BOMBER_SKIP}",
         "MM Clock Town East"
       ],
       "ConditionalItems": [],
@@ -32446,126 +33053,6 @@
         [
           "time{After_DAY3_AM_06_00}",
           "time{Before_DAY3_AM_11_30}"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM_EVENT_BUGS",
-      "RequiredItems": [
-        "MM_has_bottle"
-      ],
-      "ConditionalItems": [
-        [
-          "MM Swamp Spider House Main"
-        ],
-        [
-          "MM Zora Cape Grotto"
-        ],
-        [
-          "MM Great Bay Grotto"
-        ],
-        [
-          "MM Great Bay Coast"
-        ],
-        [
-          "MM Path to Snowhead Grotto"
-        ],
-        [
-          "MM Lone Peak Shrine"
-        ],
-        [
-          "MM Twin Islands Ramp Grotto"
-        ],
-        [
-          "MM Mountain Village Grotto"
-        ],
-        [
-          "MM Woods of Mystery Grotto"
-        ],
-        [
-          "MM Southern Swamp Grotto"
-        ],
-        [
-          "MM Canyon Gossip Grotto"
-        ],
-        [
-          "MM Ocean Gossip Grotto"
-        ],
-        [
-          "MM Mountain Gossip Grotto"
-        ],
-        [
-          "MM Swamp Gossip Grotto"
-        ],
-        [
-          "MM Scrub Grotto"
-        ],
-        [
-          "MM Pillar Grotto"
-        ],
-        [
-          "MM Bio Baba Grotto"
-        ],
-        [
-          "MM Grass Grotto"
-        ],
-        [
-          "MM Stock Pot Inn"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM_EVENT_FISH",
-      "RequiredItems": [
-        "MM_has_bottle"
-      ],
-      "ConditionalItems": [
-        [
-          "MM Zora Cape Grotto"
-        ],
-        [
-          "MM Great Bay Grotto"
-        ],
-        [
-          "MM Great Bay Coast"
-        ],
-        [
-          "MM Path to Snowhead Grotto"
-        ],
-        [
-          "MM Twin Islands Ramp Grotto"
-        ],
-        [
-          "MM Mountain Village Grotto"
-        ],
-        [
-          "MM Woods of Mystery Grotto"
-        ],
-        [
-          "MM Southern Swamp Grotto"
-        ],
-        [
-          "MM Road to Southern Swamp Grotto"
-        ],
-        [
-          "MM Road to Southern Swamp"
-        ],
-        [
-          "MM Pillar Grotto"
-        ],
-        [
-          "MM Grass Grotto"
-        ],
-        [
-          "MM Stock Pot Inn"
         ]
       ],
       "TimeNeeded": "None",
@@ -33410,31 +33897,6 @@
       "IsTrick": false
     },
     {
-      "Id": "MM_EVENT_WATER",
-      "RequiredItems": [
-        "MM_has_bottle"
-      ],
-      "ConditionalItems": [
-        [
-          "MM_MASK_GORON",
-          "MM Goron Graveyard"
-        ],
-        [
-          "MM Twin Islands Frozen Grotto"
-        ],
-        [
-          "MM Deku Palace Grotto"
-        ],
-        [
-          "MM Road to Southern Swamp"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
       "Id": "MM Road to Southern Swamp Gossip",
       "RequiredItems": [
         "MM Road to Southern Swamp"
@@ -33945,7 +34407,7 @@
           "MM_MASK_DEKU"
         ],
         [
-          "TRICK_MM_PALACE_GUARD_SKIP"
+          "trick{TRICK_MM_PALACE_GUARD_SKIP}"
         ]
       ],
       "TimeNeeded": "None",
@@ -34001,7 +34463,7 @@
     {
       "Id": "MM Deku Palace Main => MM Deku Palace Upper",
       "RequiredItems": [
-        "TRICK_MM_PALACE_BEAN_SKIP"
+        "trick{TRICK_MM_PALACE_BEAN_SKIP}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -34555,7 +35017,7 @@
           "MM_can_use_lens_strict"
         ],
         [
-          "TRICK_MM_DARMANI_WALL"
+          "trick{TRICK_MM_DARMANI_WALL}"
         ],
         [
           "MM_EVENT_BOSS_SNOWHEAD",
@@ -34901,7 +35363,7 @@
           "MM_trick_keg_explosives"
         ],
         [
-          "TRICK_MM_KEG_EXPLOSIVES",
+          "trick{TRICK_MM_KEG_EXPLOSIVES}",
           "MM_EVENT_POWDER_KEG_TRIAL"
         ]
       ],
@@ -35769,7 +36231,7 @@
           "MM_can_hookshot"
         ],
         [
-          "MM_BOW"
+          "MM_has_arrows"
         ]
       ],
       "TimeNeeded": "None",
@@ -35915,7 +36377,7 @@
           "MM_EVENT_SEAHORSE"
         ],
         [
-          "TRICK_MM_NO_SEAHORSE"
+          "trick{TRICK_MM_NO_SEAHORSE}"
         ]
       ],
       "TimeNeeded": "None",
@@ -35991,7 +36453,7 @@
           "MM_MASK_ZORA"
         ],
         [
-          "TRICK_MM_ZORA_HALL_HUMAN"
+          "trick{TRICK_MM_ZORA_HALL_HUMAN}"
         ]
       ],
       "TimeNeeded": "None",
@@ -36284,7 +36746,7 @@
           "MM_MASK_ZORA"
         ],
         [
-          "TRICK_MM_ZORA_HALL_HUMAN"
+          "trick{TRICK_MM_ZORA_HALL_HUMAN}"
         ]
       ],
       "TimeNeeded": "None",
@@ -36428,6 +36890,17 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Road to Ikana Front => MM Road to Ikana Grotto",
+      "RequiredItems": [
+        "MM_MASK_GORON"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Road to Ikana Front => MM Road to Ikana Center",
       "RequiredItems": [],
       "ConditionalItems": [
@@ -36440,6 +36913,15 @@
           "MM_has_bombs"
         ]
       ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Road to Ikana Grotto => MM Road to Ikana Front",
+      "RequiredItems": [],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -36478,12 +36960,12 @@
         [
           "MM_MASK_GARO",
           "MM_can_hookshot_short",
-          "TRICK_MM_SHORT_HOOK_HARD"
+          "trick{TRICK_MM_SHORT_HOOK_HARD}"
         ],
         [
           "MM_MASK_GIBDO",
           "MM_can_hookshot_short",
-          "TRICK_MM_SHORT_HOOK_HARD"
+          "trick{TRICK_MM_SHORT_HOOK_HARD}"
         ]
       ],
       "TimeNeeded": "None",
@@ -36521,6 +37003,22 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Ikana Graveyard => MM Ikana Graveyard Grotto",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "MM_has_explosives"
+        ],
+        [
+          "MM_trick_keg_explosives"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Ikana Graveyard => MM Beneath The Graveyard Night 1",
       "RequiredItems": [
         "MM_MASK_CAPTAIN",
@@ -36550,6 +37048,15 @@
         "MM_MASK_CAPTAIN",
         "MM_is_night3"
       ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Ikana Graveyard Grotto => MM Ikana Graveyard",
+      "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -36620,7 +37127,7 @@
           "MM_can_use_ice_arrows"
         ],
         [
-          "TRICK_MM_ICELESS_IKANA"
+          "trick{TRICK_MM_ICELESS_IKANA}"
         ]
       ],
       "TimeNeeded": "None",
@@ -36629,7 +37136,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Ikana Valley => MM Secret Shrine Entrance",
+      "Id": "MM Ikana Valley => MM Secret Shrine",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -36643,6 +37150,15 @@
         "MM_EVENT_MEET_KAFEI",
         "time{At_NIGHT3_PM_06_00}"
       ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Ikana Valley => MM Ikana Valley Grotto",
+      "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -36699,6 +37215,15 @@
         "MM_MASK_DEKU",
         "MM Ikana Valley"
       ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Ikana Valley Grotto => MM Ikana Valley",
+      "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -36764,10 +37289,15 @@
     },
     {
       "Id": "MM Ikana Canyon => MM Music Box House",
-      "RequiredItems": [
-        "MM_EVENT_IKANA_CURSE_LIFTED"
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "MM_EVENT_IKANA_CURSE_LIFTED"
+        ],
+        [
+          "MM_EVENT_BOSS_STONE_TOWER"
+        ]
       ],
-      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -36986,7 +37516,7 @@
         ],
         [
           "MM_can_use_elegy2",
-          "TRICK_MM_ONE_MASK_STONE_TOWER"
+          "trick{TRICK_MM_ONE_MASK_STONE_TOWER}"
         ]
       ],
       "TimeNeeded": "None",
@@ -37178,7 +37708,7 @@
         ],
         [
           "MM_can_hookshot_short",
-          "TRICK_MM_PFI_BOAT_HOOK"
+          "trick{TRICK_MM_PFI_BOAT_HOOK}"
         ]
       ],
       "TimeNeeded": "None",
@@ -37190,7 +37720,7 @@
       "Id": "MM Pirate Fortress Entrance => MM Pirate Fortress Entrance Lookout",
       "RequiredItems": [
         "MM_can_hookshot_short",
-        "TRICK_MM_PFI_BOAT_HOOK"
+        "trick{TRICK_MM_PFI_BOAT_HOOK}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -37708,8 +38238,19 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Secret Shrine Entrance => MM Ikana Valley",
+      "Id": "MM Secret Shrine => MM Ikana Valley",
       "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Secret Shrine => MM Secret Shrine Entrance",
+      "RequiredItems": [
+        "MM_can_reset_time"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -37719,8 +38260,7 @@
     {
       "Id": "MM Secret Shrine Entrance => MM Secret Shrine Main",
       "RequiredItems": [
-        "MM_can_use_light_arrows",
-        "MM_can_reset_time"
+        "MM_can_use_light_arrows"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -39114,7 +39654,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_BOMB_BAG"
+          "MM_has_bombs"
         ],
         [
           "MM_SMALL_KEY_ST, 3",
@@ -39169,11 +39709,11 @@
     {
       "Id": "MM Stone Tower Temple Inverted Entrance => MM Stone Tower Temple Inverted Entrance Ledge",
       "RequiredItems": [
-        "TRICK_MM_ISTT_ENTRY_JUMP"
+        "trick{TRICK_MM_ISTT_ENTRY_JUMP}"
       ],
       "ConditionalItems": [
         [
-          "MM_BOMB_BAG"
+          "MM_has_bombs"
         ],
         [
           "MM_trick_keg_explosives"
@@ -39196,11 +39736,9 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Stone Tower Temple Inverted East => MM Stone Tower Temple Inverted Wizzrobe",
+      "Id": "MM Stone Tower Temple Inverted East => MM Stone Tower Temple Inverted East Ledge",
       "RequiredItems": [
-        "MM_MASK_DEKU",
-        "MM_can_use_light_arrows",
-        "MM_SMALL_KEY_ST, 3"
+        "MM_MASK_DEKU"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -39209,41 +39747,16 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Stone Tower Temple Inverted East => MM Stone Tower Temple Inverted Bridge",
-      "RequiredItems": [
-        "TRICK_MM_ISTT_EYEGORE"
-      ],
+      "Id": "MM Stone Tower Temple Inverted East => MM Stone Tower Temple Inverted East Bridge",
+      "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_has_shield",
-          "MM_has_explosives"
+          "MM_MASK_DEKU"
         ],
         [
-          "MM_MASK_ZORA",
-          "MM_has_explosives"
-        ],
-        [
-          "MM_has_shield",
-          "MM_can_use_light_arrows",
-          "MM_trick_keg_explosives"
-        ],
-        [
-          "MM_MASK_ZORA",
-          "MM_can_use_light_arrows",
-          "MM_trick_keg_explosives"
+          "trick{TRICK_MM_ISTT_EYEGORE}"
         ]
       ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Stone Tower Temple Inverted East => MM Stone Tower Temple Inverted Boss Key Room",
-      "RequiredItems": [
-        "TRICK_MM_ISTT_EYEGORE"
-      ],
-      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -39262,6 +39775,84 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Stone Tower Temple Inverted East Bridge => MM Stone Tower Temple Inverted East",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Stone Tower Temple Inverted East Bridge => MM Stone Tower Temple Inverted Center Bridge",
+      "RequiredItems": [
+        "trick{TRICK_MM_ISTT_EYEGORE}"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_MASK_ZORA",
+          "MM_has_bombs"
+        ],
+        [
+          "MM_has_shield",
+          "MM_has_explosives"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Stone Tower Temple Inverted East Bridge => MM Stone Tower Temple Inverted Boss Key Room",
+      "RequiredItems": [
+        "trick{TRICK_MM_ISTT_EYEGORE}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Stone Tower Temple Inverted East Ledge => MM Stone Tower Temple Inverted East",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Stone Tower Temple Inverted East Ledge => MM Stone Tower Temple Inverted East Bridge",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Stone Tower Temple Inverted East Ledge => MM Stone Tower Temple Inverted Wizzrobe",
+      "RequiredItems": [
+        "MM_can_use_light_arrows"
+      ],
+      "ConditionalItems": [
+        [
+          "trick{TRICK_MM_ISTT_ENTRY_JUMP}",
+          "MM_SMALL_KEY_ST, 4"
+        ],
+        [
+          "MM_SMALL_KEY_ST, 3",
+          "trick{TRICK_MM_ISTT_ENTRY_JUMP, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Stone Tower Temple Inverted Wizzrobe => MM Stone Tower Temple Inverted Wizzrobe Ledge",
       "RequiredItems": [
         "MM_can_hookshot_short"
@@ -39273,12 +39864,19 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Stone Tower Temple Inverted Wizzrobe => MM Stone Tower Temple Inverted East",
-      "RequiredItems": [
-        "MM_can_use_light_arrows",
-        "MM_SMALL_KEY_ST, 4"
+      "Id": "MM Stone Tower Temple Inverted Wizzrobe => MM Stone Tower Temple Inverted East Ledge",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "MM_can_use_light_arrows",
+          "MM_SMALL_KEY_ST, 3"
+        ],
+        [
+          "MM_can_goron_bomb_jump",
+          "MM_has_bombs",
+          "MM_SMALL_KEY_ST, 4"
+        ]
       ],
-      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -39355,9 +39953,9 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Stone Tower Temple Inverted Center => MM Stone Tower Temple Inverted Bridge",
+      "Id": "MM Stone Tower Temple Inverted Center => MM Stone Tower Temple Inverted Center Bridge",
       "RequiredItems": [
-        "TRICK_MM_ISTT_EYEGORE",
+        "trick{TRICK_MM_ISTT_EYEGORE}",
         "MM_can_use_light_arrows",
         "MM_can_hookshot"
       ],
@@ -39379,9 +39977,9 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Stone Tower Temple Inverted Boss Key Room => MM Stone Tower Temple Inverted Bridge",
+      "Id": "MM Stone Tower Temple Inverted Boss Key Room => MM Stone Tower Temple Inverted Center Bridge",
       "RequiredItems": [
-        "TRICK_MM_ISTT_EYEGORE",
+        "trick{TRICK_MM_ISTT_EYEGORE}",
         "MM_can_use_light_arrows",
         "MM_can_hookshot"
       ],
@@ -39392,7 +39990,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Stone Tower Temple Inverted Entrance Ledge => MM Stone Tower Temple Inverted Bridge",
+      "Id": "MM Stone Tower Temple Inverted Entrance Ledge => MM Stone Tower Temple Inverted Center Bridge",
       "RequiredItems": [
         "MM_SMALL_KEY_ST, 4",
         "MM_can_hookshot"
@@ -39424,7 +40022,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Stone Tower Temple Inverted Bridge => MM Stone Tower Temple Inverted Bridge 2",
+      "Id": "MM Stone Tower Temple Inverted Center Bridge => MM Stone Tower Temple Inverted Pre-Boss",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -39433,9 +40031,9 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Stone Tower Temple Inverted Bridge => MM Stone Tower Temple Inverted Boss Key Room",
+      "Id": "MM Stone Tower Temple Inverted Center Bridge => MM Stone Tower Temple Inverted Boss Key Room",
       "RequiredItems": [
-        "TRICK_MM_ISTT_EYEGORE"
+        "trick{TRICK_MM_ISTT_EYEGORE}"
       ],
       "ConditionalItems": [
         [
@@ -39456,9 +40054,9 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Stone Tower Temple Inverted Bridge => MM Stone Tower Temple Inverted Center",
+      "Id": "MM Stone Tower Temple Inverted Center Bridge => MM Stone Tower Temple Inverted Center",
       "RequiredItems": [
-        "TRICK_MM_ISTT_EYEGORE"
+        "trick{TRICK_MM_ISTT_EYEGORE}"
       ],
       "ConditionalItems": [
         [
@@ -39478,7 +40076,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Stone Tower Temple Inverted Bridge 2 => MM Stone Tower Temple Boss",
+      "Id": "MM Stone Tower Temple Inverted Pre-Boss => MM Stone Tower Temple Boss",
       "RequiredItems": [
         "MM_can_hookshot_short",
         "MM_BOSS_KEY_ST"
@@ -39492,7 +40090,8 @@
     {
       "Id": "MM_EVENT_STONE_TOWER_BRIDGE_CHEST_SWITCH",
       "RequiredItems": [
-        "MM Stone Tower Temple Inverted Bridge 2"
+        "MM_can_activate_crystal",
+        "MM Stone Tower Temple Inverted Pre-Boss"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -39503,7 +40102,7 @@
     {
       "Id": "MM Stone Tower Temple Boss => MM Stone Tower After Boss",
       "RequiredItems": [
-        "MM_MAGIC_UPGRADE"
+        "MM_has_magic"
       ],
       "ConditionalItems": [
         [
@@ -39666,7 +40265,7 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_BOW",
+          "MM_has_arrows",
           "MM Woodfall Temple Main Ledge"
         ],
         [
@@ -39713,7 +40312,7 @@
     {
       "Id": "MM Woodfall Temple Water Room => MM Woodfall Temple Water Room Upper",
       "RequiredItems": [
-        "MM_BOW",
+        "MM_has_arrows",
         "MM_MASK_DEKU"
       ],
       "ConditionalItems": [],
@@ -39789,7 +40388,7 @@
           "MM_has_sticks"
         ],
         [
-          "MM_BOW"
+          "MM_has_arrows"
         ]
       ],
       "TimeNeeded": "None",
@@ -39856,7 +40455,7 @@
     {
       "Id": "MM Woodfall Temple Main Ledge => MM Woodfall Temple Pre-Boss",
       "RequiredItems": [
-        "MM_BOW"
+        "MM_has_arrows"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -39905,7 +40504,7 @@
     {
       "Id": "MM Woodfall Temple Water Room Upper => MM Woodfall Temple Boss Key Room",
       "RequiredItems": [
-        "MM_BOW",
+        "MM_has_arrows",
         "MM_MASK_DEKU"
       ],
       "ConditionalItems": [],
@@ -39922,7 +40521,7 @@
           "MM_can_fight"
         ],
         [
-          "MM_BOW"
+          "MM_has_arrows"
         ]
       ],
       "TimeNeeded": "None",
@@ -40009,7 +40608,7 @@
           "MM_has_magic"
         ],
         [
-          "MM_BOW",
+          "MM_has_arrows",
           "MM_has_weapon"
         ]
       ],
@@ -40376,7 +40975,7 @@
           "OOT_STONE_OF_AGONY"
         ],
         [
-          "TRICK_OOT_HIDDEN_GROTTOS"
+          "trick{TRICK_OOT_HIDDEN_GROTTOS}"
         ]
       ],
       "TimeNeeded": "None",
@@ -41081,7 +41680,8 @@
           "OOT_Has_Renewable_HylianShield"
         ],
         [
-          "OOT_Has_Renewable_DekuShield"
+          "OOT_Has_Renewable_DekuShield",
+          "OOT_is_child"
         ]
       ],
       "TimeNeeded": "None",
@@ -41119,7 +41719,7 @@
       ],
       "ConditionalItems": [
         [
-          "TRICK_OOT_NIGHT_GS"
+          "trick{TRICK_OOT_NIGHT_GS}"
         ],
         [
           "OOT_OCARINA",
@@ -41139,7 +41739,7 @@
           "OOT_has_lens_strict"
         ],
         [
-          "TRICK_OOT_LENS"
+          "trick{TRICK_OOT_LENS}"
         ]
       ],
       "TimeNeeded": "None",
@@ -41155,7 +41755,7 @@
           "OOT_has_tunic_goron_strict"
         ],
         [
-          "TRICK_OOT_TUNICS"
+          "trick{TRICK_OOT_TUNICS}"
         ]
       ],
       "TimeNeeded": "None",
@@ -41171,7 +41771,7 @@
           "OOT_has_tunic_zora_strict"
         ],
         [
-          "TRICK_OOT_TUNICS"
+          "trick{TRICK_OOT_TUNICS}"
         ]
       ],
       "TimeNeeded": "None",
@@ -41182,7 +41782,7 @@
     {
       "Id": "OOT_trick_mido",
       "RequiredItems": [
-        "TRICK_OOT_MIDO_SKIP"
+        "trick{TRICK_OOT_MIDO_SKIP}"
       ],
       "ConditionalItems": [
         [
@@ -41405,10 +42005,10 @@
           "OOT_EVENT_KING_ZORA_LETTER"
         ],
         [
-          "option{zoraKing, open}"
+          "setting{zoraKing, open}"
         ],
         [
-          "option{zoraKing, adult}",
+          "setting{zoraKing, adult}",
           "OOT_is_adult"
         ]
       ],
@@ -41653,7 +42253,7 @@
           "MM_can_use_lens_strict"
         ],
         [
-          "TRICK_MM_LENS"
+          "trick{TRICK_MM_LENS}"
         ]
       ],
       "TimeNeeded": "None",
@@ -42147,7 +42747,7 @@
     {
       "Id": "MM_can_goron_bomb_jump",
       "RequiredItems": [
-        "TRICK_MM_GORON_BOMB_JUMP",
+        "trick{TRICK_MM_GORON_BOMB_JUMP}",
         "MM_MASK_GORON"
       ],
       "ConditionalItems": [
@@ -42283,7 +42883,7 @@
       "Id": "MM_trick_keg_explosives",
       "RequiredItems": [
         "MM_can_use_keg",
-        "TRICK_MM_KEG_EXPLOSIVES"
+        "trick{TRICK_MM_KEG_EXPLOSIVES}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -42295,7 +42895,7 @@
       "Id": "MM_trick_sht_fireless",
       "RequiredItems": [
         "MM_has_hot_water_distance",
-        "TRICK_MM_SHT_FIRELESS"
+        "trick{TRICK_MM_SHT_FIRELESS}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -42312,9 +42912,9 @@
           "MM_SONG_TIME"
         ],
         [
-          "option{majoraChild, none}",
+          "setting{majoraChild, none}",
           "MM_EVENT_MAJORA",
-          "TRICK_MM_MAJORA_LOGIC"
+          "trick{TRICK_MM_MAJORA_LOGIC}"
         ]
       ],
       "TimeNeeded": "None",
@@ -42332,7 +42932,7 @@
         ],
         [
           "MM_EVENT_MAJORA",
-          "TRICK_MM_MAJORA_LOGIC"
+          "trick{TRICK_MM_MAJORA_LOGIC}"
         ]
       ],
       "TimeNeeded": "None",
@@ -42371,7 +42971,7 @@
           "MM_Has_Renewable_Nut"
         ],
         [
-          "option{sharedNutsSticks}",
+          "setting{sharedNutsSticks}",
           "OOT_EVENT_NUTS"
         ]
       ],

@@ -30622,9 +30622,9 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Ancient Castle of Ikana Interior => MM Ancient Castle of Ikana Pre-Boss": {
+    "MM Ancient Castle of Ikana Interior => MM Ancient Castle of Ikana Behind Block": {
       "Area": "MM Ancient Castle of Ikana Interior",
-      "Exit": "MM Ancient Castle of Ikana Pre-Boss",
+      "Exit": "MM Ancient Castle of Ikana Behind Block",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -30727,9 +30727,23 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Ancient Castle of Ikana Pre-Boss => MM Ancient Castle of Ikana Interior": {
-      "Area": "MM Ancient Castle of Ikana Pre-Boss",
+    "MM Ancient Castle of Ikana Behind Block => MM Ancient Castle of Ikana Interior": {
+      "Area": "MM Ancient Castle of Ikana Behind Block",
       "Exit": "MM Ancient Castle of Ikana Interior",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Ancient Castle of Ikana Behind Block => MM Ancient Castle of Ikana Pre-Boss": {
+      "Area": "MM Ancient Castle of Ikana Behind Block",
+      "Exit": "MM Ancient Castle of Ikana Pre-Boss",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Ancient Castle of Ikana Pre-Boss => MM Ancient Castle of Ikana Behind Block": {
+      "Area": "MM Ancient Castle of Ikana Pre-Boss",
+      "Exit": "MM Ancient Castle of Ikana Behind Block",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -30780,13 +30794,6 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Beneath the Well North Section => MM Beneath the Well Entrance": {
-      "Area": "MM Beneath the Well North Section",
-      "Exit": "MM Beneath the Well Entrance",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
     "MM Beneath the Well East Section => MM Beneath the Well Entrance": {
       "Area": "MM Beneath the Well East Section",
       "Exit": "MM Beneath the Well Entrance",
@@ -30801,9 +30808,9 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Beneath the Well East Section => MM Beneath the Well Sun Block": {
+    "MM Beneath the Well East Section => MM Beneath the Well Cow Hall": {
       "Area": "MM Beneath the Well East Section",
-      "Exit": "MM Beneath the Well Sun Block",
+      "Exit": "MM Beneath the Well Cow Hall",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -30815,16 +30822,30 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Beneath the Well Middle Section => MM Beneath the Well Sun Block": {
+    "MM Beneath the Well Middle Section => MM Beneath the Well Final Hall": {
       "Area": "MM Beneath the Well Middle Section",
+      "Exit": "MM Beneath the Well Final Hall",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Beneath the Well Final Hall => MM Beneath the Well Middle Section": {
+      "Area": "MM Beneath the Well Final Hall",
+      "Exit": "MM Beneath the Well Middle Section",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Beneath the Well Final Hall => MM Beneath the Well Sun Block": {
+      "Area": "MM Beneath the Well Final Hall",
       "Exit": "MM Beneath the Well Sun Block",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Beneath the Well Sun Block => MM Beneath the Well Middle Section": {
+    "MM Beneath the Well Sun Block => MM Beneath the Well Final Hall": {
       "Area": "MM Beneath the Well Sun Block",
-      "Exit": "MM Beneath the Well Middle Section",
+      "Exit": "MM Beneath the Well Final Hall",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -31373,9 +31394,9 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Clock Town => MM Moon": {
+    "MM Clock Town => MM Clock Tower Roof": {
       "Area": "MM Clock Town",
-      "Exit": "MM Moon",
+      "Exit": "MM Clock Tower Roof",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -33613,9 +33634,23 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "MM Road to Ikana Front => MM Road to Ikana Grotto": {
+      "Area": "MM Road to Ikana Front",
+      "Exit": "MM Road to Ikana Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "MM Road to Ikana Front => MM Road to Ikana Center": {
       "Area": "MM Road to Ikana Front",
       "Exit": "MM Road to Ikana Center",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Road to Ikana Grotto => MM Road to Ikana Front": {
+      "Area": "MM Road to Ikana Grotto",
+      "Exit": "MM Road to Ikana Front",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -33648,6 +33683,13 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "MM Ikana Graveyard => MM Ikana Graveyard Grotto": {
+      "Area": "MM Ikana Graveyard",
+      "Exit": "MM Ikana Graveyard Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "MM Ikana Graveyard => MM Beneath The Graveyard Night 1": {
       "Area": "MM Ikana Graveyard",
       "Exit": "MM Beneath The Graveyard Night 1",
@@ -33665,6 +33707,13 @@
     "MM Ikana Graveyard => MM Beneath The Graveyard Night 3": {
       "Area": "MM Ikana Graveyard",
       "Exit": "MM Beneath The Graveyard Night 3",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Ikana Graveyard Grotto => MM Ikana Graveyard": {
+      "Area": "MM Ikana Graveyard Grotto",
+      "Exit": "MM Ikana Graveyard",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -33726,11 +33775,11 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Ikana Valley => MM Secret Shrine Entrance": {
+    "MM Ikana Valley => MM Secret Shrine": {
       "Area": "MM Ikana Valley",
-      "Exit": "MM Secret Shrine Entrance",
+      "Exit": "MM Secret Shrine",
       "EntrancePairID": {
-        "Area": "MM Secret Shrine Entrance",
+        "Area": "MM Secret Shrine",
         "Exit": "MM Ikana Valley"
       },
       "RandomizableEntrance": true,
@@ -33744,9 +33793,23 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "MM Ikana Valley => MM Ikana Valley Grotto": {
+      "Area": "MM Ikana Valley",
+      "Exit": "MM Ikana Valley Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "MM Ikana Valley => MM Swamp Front": {
       "Area": "MM Ikana Valley",
       "Exit": "MM Swamp Front",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Ikana Valley Grotto => MM Ikana Valley": {
+      "Area": "MM Ikana Valley Grotto",
+      "Exit": "MM Ikana Valley",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -34335,14 +34398,21 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Secret Shrine Entrance => MM Ikana Valley": {
-      "Area": "MM Secret Shrine Entrance",
+    "MM Secret Shrine => MM Ikana Valley": {
+      "Area": "MM Secret Shrine",
       "Exit": "MM Ikana Valley",
       "EntrancePairID": {
         "Area": "MM Ikana Valley",
-        "Exit": "MM Secret Shrine Entrance"
+        "Exit": "MM Secret Shrine"
       },
       "RandomizableEntrance": true,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Secret Shrine => MM Secret Shrine Entrance": {
+      "Area": "MM Secret Shrine",
+      "Exit": "MM Secret Shrine Entrance",
+      "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -35121,23 +35191,58 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Stone Tower Temple Inverted East => MM Stone Tower Temple Inverted Wizzrobe": {
+    "MM Stone Tower Temple Inverted East => MM Stone Tower Temple Inverted East Ledge": {
       "Area": "MM Stone Tower Temple Inverted East",
-      "Exit": "MM Stone Tower Temple Inverted Wizzrobe",
+      "Exit": "MM Stone Tower Temple Inverted East Ledge",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Stone Tower Temple Inverted East => MM Stone Tower Temple Inverted Bridge": {
+    "MM Stone Tower Temple Inverted East => MM Stone Tower Temple Inverted East Bridge": {
       "Area": "MM Stone Tower Temple Inverted East",
-      "Exit": "MM Stone Tower Temple Inverted Bridge",
+      "Exit": "MM Stone Tower Temple Inverted East Bridge",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Stone Tower Temple Inverted East => MM Stone Tower Temple Inverted Boss Key Room": {
-      "Area": "MM Stone Tower Temple Inverted East",
+    "MM Stone Tower Temple Inverted East Bridge => MM Stone Tower Temple Inverted East": {
+      "Area": "MM Stone Tower Temple Inverted East Bridge",
+      "Exit": "MM Stone Tower Temple Inverted East",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Stone Tower Temple Inverted East Bridge => MM Stone Tower Temple Inverted Center Bridge": {
+      "Area": "MM Stone Tower Temple Inverted East Bridge",
+      "Exit": "MM Stone Tower Temple Inverted Center Bridge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Stone Tower Temple Inverted East Bridge => MM Stone Tower Temple Inverted Boss Key Room": {
+      "Area": "MM Stone Tower Temple Inverted East Bridge",
       "Exit": "MM Stone Tower Temple Inverted Boss Key Room",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Stone Tower Temple Inverted East Ledge => MM Stone Tower Temple Inverted East": {
+      "Area": "MM Stone Tower Temple Inverted East Ledge",
+      "Exit": "MM Stone Tower Temple Inverted East",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Stone Tower Temple Inverted East Ledge => MM Stone Tower Temple Inverted East Bridge": {
+      "Area": "MM Stone Tower Temple Inverted East Ledge",
+      "Exit": "MM Stone Tower Temple Inverted East Bridge",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Stone Tower Temple Inverted East Ledge => MM Stone Tower Temple Inverted Wizzrobe": {
+      "Area": "MM Stone Tower Temple Inverted East Ledge",
+      "Exit": "MM Stone Tower Temple Inverted Wizzrobe",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -35149,9 +35254,9 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Stone Tower Temple Inverted Wizzrobe => MM Stone Tower Temple Inverted East": {
+    "MM Stone Tower Temple Inverted Wizzrobe => MM Stone Tower Temple Inverted East Ledge": {
       "Area": "MM Stone Tower Temple Inverted Wizzrobe",
-      "Exit": "MM Stone Tower Temple Inverted East",
+      "Exit": "MM Stone Tower Temple Inverted East Ledge",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -35205,9 +35310,9 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Stone Tower Temple Inverted Center => MM Stone Tower Temple Inverted Bridge": {
+    "MM Stone Tower Temple Inverted Center => MM Stone Tower Temple Inverted Center Bridge": {
       "Area": "MM Stone Tower Temple Inverted Center",
-      "Exit": "MM Stone Tower Temple Inverted Bridge",
+      "Exit": "MM Stone Tower Temple Inverted Center Bridge",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -35219,16 +35324,16 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Stone Tower Temple Inverted Boss Key Room => MM Stone Tower Temple Inverted Bridge": {
+    "MM Stone Tower Temple Inverted Boss Key Room => MM Stone Tower Temple Inverted Center Bridge": {
       "Area": "MM Stone Tower Temple Inverted Boss Key Room",
-      "Exit": "MM Stone Tower Temple Inverted Bridge",
+      "Exit": "MM Stone Tower Temple Inverted Center Bridge",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Stone Tower Temple Inverted Entrance Ledge => MM Stone Tower Temple Inverted Bridge": {
+    "MM Stone Tower Temple Inverted Entrance Ledge => MM Stone Tower Temple Inverted Center Bridge": {
       "Area": "MM Stone Tower Temple Inverted Entrance Ledge",
-      "Exit": "MM Stone Tower Temple Inverted Bridge",
+      "Exit": "MM Stone Tower Temple Inverted Center Bridge",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -35240,29 +35345,29 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Stone Tower Temple Inverted Bridge => MM Stone Tower Temple Inverted Bridge 2": {
-      "Area": "MM Stone Tower Temple Inverted Bridge",
-      "Exit": "MM Stone Tower Temple Inverted Bridge 2",
+    "MM Stone Tower Temple Inverted Center Bridge => MM Stone Tower Temple Inverted Pre-Boss": {
+      "Area": "MM Stone Tower Temple Inverted Center Bridge",
+      "Exit": "MM Stone Tower Temple Inverted Pre-Boss",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Stone Tower Temple Inverted Bridge => MM Stone Tower Temple Inverted Boss Key Room": {
-      "Area": "MM Stone Tower Temple Inverted Bridge",
+    "MM Stone Tower Temple Inverted Center Bridge => MM Stone Tower Temple Inverted Boss Key Room": {
+      "Area": "MM Stone Tower Temple Inverted Center Bridge",
       "Exit": "MM Stone Tower Temple Inverted Boss Key Room",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Stone Tower Temple Inverted Bridge => MM Stone Tower Temple Inverted Center": {
-      "Area": "MM Stone Tower Temple Inverted Bridge",
+    "MM Stone Tower Temple Inverted Center Bridge => MM Stone Tower Temple Inverted Center": {
+      "Area": "MM Stone Tower Temple Inverted Center Bridge",
       "Exit": "MM Stone Tower Temple Inverted Center",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Stone Tower Temple Inverted Bridge 2 => MM Stone Tower Temple Boss": {
-      "Area": "MM Stone Tower Temple Inverted Bridge 2",
+    "MM Stone Tower Temple Inverted Pre-Boss => MM Stone Tower Temple Boss": {
+      "Area": "MM Stone Tower Temple Inverted Pre-Boss",
       "Exit": "MM Stone Tower Temple Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
@@ -36490,6 +36595,14 @@
     },
     "TRICK_MM_POST_OFFICE_GAME": {
       "Name": "Post Office Timing Game without Bunny Hood",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "TRICK_MM_WELL_HSW": {
+      "Name": "Well's Hot Spring Water without Killing Dexihand",
       "SpoilerData": {
         "SpoilerLogNames": [],
         "GossipHintNames": [],
