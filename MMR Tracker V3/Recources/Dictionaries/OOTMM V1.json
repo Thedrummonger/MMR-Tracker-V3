@@ -30907,6 +30907,13 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "MM Great Bay Temple Entrance => MM Great Bay Temple Boss": {
+      "Area": "MM Great Bay Temple Entrance",
+      "Exit": "MM Great Bay Temple Boss",
+      "RandomizableEntrance": true,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "MM Great Bay Temple Water Wheel => MM Great Bay Temple Entrance": {
       "Area": "MM Great Bay Temple Water Wheel",
       "Exit": "MM Great Bay Temple Entrance",
@@ -34483,6 +34490,13 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "MM Snowhead Temple Entrance => MM Snowhead Temple Boss": {
+      "Area": "MM Snowhead Temple Entrance",
+      "Exit": "MM Snowhead Temple Boss",
+      "RandomizableEntrance": true,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "MM Snowhead Temple Main => MM Snowhead Temple Entrance": {
       "Area": "MM Snowhead Temple Main",
       "Exit": "MM Snowhead Temple Entrance",
@@ -35184,6 +35198,13 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "MM Stone Tower Temple Inverted Entrance => MM Stone Tower Temple Boss": {
+      "Area": "MM Stone Tower Temple Inverted Entrance",
+      "Exit": "MM Stone Tower Temple Boss",
+      "RandomizableEntrance": true,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "MM Stone Tower Temple Inverted East => MM Stone Tower Temple Inverted Entrance": {
       "Area": "MM Stone Tower Temple Inverted East",
       "Exit": "MM Stone Tower Temple Inverted Entrance",
@@ -35441,6 +35462,13 @@
       "Area": "MM Woodfall Temple Entrance",
       "Exit": "MM Woodfall Temple Main",
       "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Woodfall Temple Entrance => MM Woodfall Temple Boss": {
+      "Area": "MM Woodfall Temple Entrance",
+      "Exit": "MM Woodfall Temple Boss",
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -36849,6 +36877,29 @@
         },
         "custom": {
           "Name": "Custom",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "bossWarpPads": {
+      "DisplayName": "Boss Warp Pads",
+      "CurrentValue": "bossBeaten",
+      "SubCategory": "Events",
+      "Values": {
+        "bossBeaten": {
+          "Name": "Boss Beaten",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        },
+        "remains": {
+          "Name": "Remains",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},

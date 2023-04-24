@@ -237,6 +237,8 @@ namespace MMR_Tracker_V3
             if (Object is ExpandoObject)
                 return ((IDictionary<string, object>)Object).ContainsKey(name);
 
+            if (Object.GetType() is MiscData.VariableEntryType) { return false; }
+
             return Object.GetType().GetProperty(name) != null;
         }
 

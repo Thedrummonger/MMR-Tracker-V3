@@ -537,6 +537,16 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             majoraChild.Values["custom"].Name = "Custom";
             dictionaryFile.Options.Add(majoraChild.ID, majoraChild);
 
+            OptionData.TrackerOption bossWarpPads = new OptionData.TrackerOption();
+            bossWarpPads.ID = "bossWarpPads";
+            bossWarpPads.DisplayName = "Boss Warp Pads";
+            bossWarpPads.CurrentValue = "bossBeaten";
+            bossWarpPads.SubCategory = "Events";
+            bossWarpPads.CreateSimpleValues(new string[] { "bossBeaten", "remains" });
+            bossWarpPads.Values["bossBeaten"].Name = "Boss Beaten";
+            bossWarpPads.Values["remains"].Name = "Remains";
+            dictionaryFile.Options.Add(bossWarpPads.ID, bossWarpPads);
+
             OptionData.TrackerOption CrossGameOOTWarpSong = new OptionData.TrackerOption();
             CrossGameOOTWarpSong.ID = "crossWarpOot";
             CrossGameOOTWarpSong.DisplayName = "Cross-Games OoT Warp Songs";

@@ -28506,6 +28506,7 @@
     {
       "Id": "OOT Spirit Temple Statue => OOT Spirit Temple Adult Upper",
       "RequiredItems": [
+        "OOT_is_adult",
         "OOT_SMALL_KEY_SPIRIT, 5",
         "option{SpiritMQ, true}"
       ],
@@ -30642,6 +30643,18 @@
     {
       "Id": "MM Great Bay Temple Entrance => MM Great Bay Temple Water Wheel",
       "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Great Bay Temple Entrance => MM Great Bay Temple Boss",
+      "RequiredItems": [
+        "setting{bossWarpPads, remains}",
+        "MM_REMAINS_GYORG"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -38394,6 +38407,18 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Snowhead Temple Entrance => MM Snowhead Temple Boss",
+      "RequiredItems": [
+        "setting{bossWarpPads, remains}",
+        "MM_REMAINS_GOHT"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Snowhead Temple Main => MM Snowhead Temple Entrance",
       "RequiredItems": [],
       "ConditionalItems": [],
@@ -39725,6 +39750,18 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Stone Tower Temple Inverted Entrance => MM Stone Tower Temple Boss",
+      "RequiredItems": [
+        "setting{bossWarpPads, remains}",
+        "MM_REMAINS_TWINMOLD"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Stone Tower Temple Inverted East => MM Stone Tower Temple Inverted Entrance",
       "RequiredItems": [
         "MM_can_use_light_arrows"
@@ -40207,6 +40244,18 @@
           "MM_can_hookshot_short"
         ]
       ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Woodfall Temple Entrance => MM Woodfall Temple Boss",
+      "RequiredItems": [
+        "setting{bossWarpPads, remains}",
+        "MM_REMAINS_ODOLWA"
+      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",

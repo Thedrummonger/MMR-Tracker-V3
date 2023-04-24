@@ -1,11 +1,8 @@
 ﻿using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static MMR_Tracker_V3.TrackerObjects.LocationData;
 
 namespace MMR_Tracker_V3
@@ -233,32 +230,36 @@ namespace MMR_Tracker_V3
             void WriteOptions()
             {
                 if (Instance.StaticOptions.ShowOptionsInListBox == null || Instance.StaticOptions.ShowOptionsInListBox != OptionData.DisplayListBoxes[2]) { return; }
-                bool DividerCreated = false;
-                foreach (var i in Instance.UserOptions.Where(x => x.Value.Values.Count > 1))
+
+                List<dynamic> Options = Instance.UserOptions.Values.Where(x => x.Values.Count > 1).Cast<dynamic>().ToList();
+                List<dynamic> Variables = Instance.Variables.Values.Where(x => !x.Static).Cast<dynamic>().ToList();
+                List<dynamic> All = Options.Concat(Variables).ToList();
+
+                Dictionary<string, List<dynamic>> Categorized = new Dictionary<string, List<dynamic>>();
+                foreach (var item in All)
                 {
-                    ItemsInListBox++;
-                    if (!SearchStringParser.FilterSearch(Instance, i.Value, Filter, i.Value.DisplayName)) { continue; }
-                    if (!DividerCreated)
-                    {
-                        if (DataSource.Count > 0) { DataSource.Add(Divider); }
-                        DataSource.Add(new MiscData.Areaheader { Area = "Options" });
-                        DividerCreated = true;
-                    }
-                    ItemsInListBoxFiltered++;
-                    DataSource.Add(i.Value);
+                    string Sub = item.SubCategory;
+                    Sub ??= "";
+                    if (!Categorized.ContainsKey(Sub)) { Categorized.Add(Sub, new List<dynamic>()); }
+                    Categorized[Sub].Add(item);
                 }
-                foreach (var i in Instance.Variables.Values.Where(x => !x.Static))
+
+                string CurrentCategory = null;
+                foreach(var i in Categorized)
                 {
-                    ItemsInListBox++;
-                    if (!SearchStringParser.FilterSearch(Instance, i, Filter, i.ToString())) { continue; }
-                    if (!DividerCreated)
+                    foreach(var c in i.Value)
                     {
-                        if (DataSource.Count > 0) { DataSource.Add(Divider); }
-                        DataSource.Add(new MiscData.Areaheader { Area = "Options" });
-                        DividerCreated = true;
+                        ItemsInListBox++;
+                        if (!SearchStringParser.FilterSearch(Instance, c, Filter, c.ToString())) { continue; }
+                        if (CurrentCategory is null || CurrentCategory != i.Key)
+                        {
+                            if (DataSource.Count > 0) { DataSource.Add(Divider); }
+                            DataSource.Add(new MiscData.Areaheader { Area = i.Key == "" ? "Options" : $"Options: {i.Key}" });
+                            CurrentCategory = i.Key;
+                        }
+                        ItemsInListBoxFiltered++;
+                        DataSource.Add(c);
                     }
-                    ItemsInListBoxFiltered++;
-                    DataSource.Add(i);
                 }
             }
 
@@ -488,33 +489,36 @@ namespace MMR_Tracker_V3
             void WriteOptions()
             {
                 if (Instance.StaticOptions.ShowOptionsInListBox == null || Instance.StaticOptions.ShowOptionsInListBox != OptionData.DisplayListBoxes[1]) { return; }
-                bool DividerCreated = false;
-                foreach (var i in Instance.UserOptions.Where(x => x.Value.Values.Count > 1))
+
+                List<dynamic> Options = Instance.UserOptions.Values.Where(x => x.Values.Count > 1).Cast<dynamic>().ToList();
+                List<dynamic> Variables = Instance.Variables.Values.Where(x => !x.Static).Cast<dynamic>().ToList();
+                List<dynamic> All = Options.Concat(Variables).ToList();
+
+                Dictionary<string, List<dynamic>> Categorized = new Dictionary<string, List<dynamic>>();
+                foreach (var item in All)
                 {
-                    ItemsInListBox++;
-                    i.Value.DisplayName = i.Value.DisplayName;
-                    if (!SearchStringParser.FilterSearch(Instance, i.Value, Filter, i.Value.DisplayName)) { continue; }
-                    if (!DividerCreated)
-                    {
-                        if (DataSource.Count > 0) { DataSource.Add(Divider); }
-                        DataSource.Add(new MiscData.Areaheader { Area = "Options" });
-                        DividerCreated = true;
-                    }
-                    ItemsInListBoxFiltered++;
-                    DataSource.Add(i.Value);
+                    string Sub = item.SubCategory;
+                    Sub ??= "";
+                    if (!Categorized.ContainsKey(Sub)) { Categorized.Add(Sub, new List<dynamic>()); }
+                    Categorized[Sub].Add(item);
                 }
-                foreach (var i in Instance.Variables.Values.Where(x => !x.Static))
+
+                string CurrentCategory = null;
+                foreach (var i in Categorized)
                 {
-                    ItemsInListBox++;
-                    if (!SearchStringParser.FilterSearch(Instance, i, Filter, i.ToString())) { continue; }
-                    if (!DividerCreated)
+                    foreach (var c in i.Value)
                     {
-                        if (DataSource.Count > 0) { DataSource.Add(Divider); }
-                        DataSource.Add(new MiscData.Areaheader { Area = "Options" });
-                        DividerCreated = true;
+                        ItemsInListBox++;
+                        if (!SearchStringParser.FilterSearch(Instance, c, Filter, c.ToString())) { continue; }
+                        if (CurrentCategory is null || CurrentCategory != i.Key)
+                        {
+                            if (DataSource.Count > 0) { DataSource.Add(Divider); }
+                            DataSource.Add(new MiscData.Areaheader { Area = i.Key == "" ? "Options" : $"Options: {i.Key}" });
+                            CurrentCategory = i.Key;
+                        }
+                        ItemsInListBoxFiltered++;
+                        DataSource.Add(c);
                     }
-                    ItemsInListBoxFiltered++;
-                    DataSource.Add(i);
                 }
             }
 
