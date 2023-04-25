@@ -153,6 +153,7 @@ namespace MMR_Tracker_V3
             Item = Entry;
             Amount = 1;
             if (!Entry.Contains(",")) { return false; }
+            if (LogicEditing.CheckLogicFunction(instance, Entry, new List<string>(), out _, false)) { return false; }
             var data = Entry.Split(',').Select(x => x.Trim()).ToArray();
             Item = data[0];
             if (data.Length != 2) { return false; }
@@ -167,6 +168,7 @@ namespace MMR_Tracker_V3
             }
             else
             {
+                Item = Entry;
                 Amount = 1;
                 return false;
             }

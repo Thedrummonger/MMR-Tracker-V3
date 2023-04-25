@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MathNet.Numerics;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -40,6 +41,11 @@ namespace MMR_Tracker_V3.TrackerObjects
                 Price = inPrice < 0 ? null : inPrice;
                 Currency = inCurrency;
                 return;
+            }
+
+            public bool IsRepeatable(LogicObjects.TrackerInstance Instance)
+            {
+                return GetDictEntry(Instance).Repeatable is not null && (bool)GetDictEntry(Instance).Repeatable;
             }
 
             public override string ToString()

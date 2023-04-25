@@ -193,6 +193,21 @@ namespace MMR_Tracker_V3
                         FirstObtainedDict[i].First().Item2.Important = true;
                     }
                 }
+                foreach (var i in ImportantCheck.advancedUnlockData.OptionsUsed.Where(x => x.StartsWith("renewable")))
+                {
+                    var item = i.Replace("renewable{", "").Replace("}", "");
+                    if (FirstObtainedDict.ContainsKey(item))
+                    {
+                        foreach(var j in FirstObtainedDict[item])
+                        {
+                            if (j.Item1 is LocationData.LocationObject Loc && Loc.IsRepeatable(_Instance.Instance))
+                            {
+                                j.Item2.Important = true;
+                                break;
+                            }
+                        }
+                    }
+                }
                 HandledImportantChecks.Add(ImportantCheck);
             }
 
@@ -308,6 +323,7 @@ namespace MMR_Tracker_V3
             public List<string> Rootareas { get; set; } = new List<string>();
             public List<string> ExitsTaken { get; set; } = new List<string>();
             public List<string> OptionsUsed { get; set; } = new List<string>();
+            public List<string> Unknown { get; set; } = new List<string>();
         }
         public class ShpereCompletionData
         {
@@ -365,6 +381,10 @@ namespace MMR_Tracker_V3
                                 ParseRequirements(PathID);
                             }
                         }
+                    }
+                    else if (!Data.AreasAccessed.Contains(LogicItem) && !Data.OptionsUsed.Contains(LogicItem) && !Data.MacrosUsed.Contains(LogicItem) && !Data.Unknown.Contains(LogicItem))
+                    {
+                        Data.Unknown.Add(LogicItem);
                     }
                 }
             }
@@ -424,7 +444,18 @@ namespace MMR_Tracker_V3
             }
             ReturnList.Add(new MiscData.Divider() { Display = Divider });
             ReturnList.Add(new MiscData.Divider() { Display = "REAL ITEMS USED:" });
+            Dictionary<string, int> TempRealItems = new Dictionary<string, int>();
             foreach (var i in ADVUnlockData.RealItemsUsed)
+            {
+                if (!TempRealItems.ContainsKey(i.Key)) { TempRealItems.Add(i.Key, 1); }
+                TempRealItems[i.Key] += i.Value;
+            }
+            foreach (var i in ADVUnlockData.OptionsUsed.Where(x => x.StartsWith("renewable")))
+            {
+                string RenewableItemName = i.Replace("renewable{", "").TrimEnd('}');
+                if (!TempRealItems.ContainsKey(RenewableItemName)) { TempRealItems.Add(RenewableItemName, 1); }
+            }
+            foreach(var i in TempRealItems)
             {
                 ReturnList.Add(i);
             }
@@ -437,12 +468,27 @@ namespace MMR_Tracker_V3
                 ReturnList.Add($"    Unlocked With: {string.Join(" | ", UnlockData[i])}");
             }
             ReturnList.Add(new MiscData.Divider() { Display = Divider });
+            ReturnList.Add(new MiscData.Divider() { Display = "FUNCTIONS USED:" });
+            foreach (var i in ADVUnlockData.OptionsUsed)
+            {
+                ReturnList.Add(i);
+            }
+            ReturnList.Add(new MiscData.Divider() { Display = Divider });
             ReturnList.Add(new MiscData.Divider() { Display = "EXITS TAKEN:" });
             foreach (var i in ADVUnlockData.ExitsTaken)
             {
                 ReturnList.Add(i);
                 if (!UnlockData.ContainsKey(i) || !UnlockData[i].Any()) { continue; }
                 ReturnList.Add($"    Unlocked With: {string.Join(" | ", UnlockData[i])}");
+            }
+            if (ADVUnlockData.Unknown.Any())
+            {
+                ReturnList.Add(new MiscData.Divider() { Display = Divider });
+                ReturnList.Add(new MiscData.Divider() { Display = "UNKNOWN:" });
+                foreach (var i in ADVUnlockData.Unknown)
+                {
+                    ReturnList.Add(i);
+                }
             }
             return ReturnList;
         }
