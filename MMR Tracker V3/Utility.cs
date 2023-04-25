@@ -186,6 +186,13 @@ namespace MMR_Tracker_V3
                     WalletEntries.Add(i.Key);
                 }
             }
+            foreach (var i in instance.MacroPool)
+            {
+                if (i.Value.GetDictEntry(instance).WalletCapacity != null)
+                {
+                    WalletEntries.Add(i.Key);
+                }
+            }
 
             while (true)
             {

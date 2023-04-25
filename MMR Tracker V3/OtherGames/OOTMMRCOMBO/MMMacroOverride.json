@@ -74,5 +74,10 @@
   "bombers3": "event(BOMBERS_NORTH3) && event(BOMBERS_EAST3) && event(BOMBERS_WEST3)",
   "can_soar": "has(SONG_SOARING) && (event(CLOCK_TOWN_OWL) || event(SWAMP_OWL) || event(WOODFALL_OWL) || event(MOUNTIAN_VILLAGE_OWL) || event(SNOWHEAD_OWL) || event(MILK_ROAD_OWL) || event(GREAT_BAY_OWL) || event(ZORA_CAPE_OWL) || event(IKANA_CANYON_OWL) || event(STONE_TOWER_OWL))",
   "can_oot_warp": "setting{crossWarpOot} && has_ocarina && (has(OOT_SONG_TP_LIGHT) || has(OOT_SONG_TP_FOREST) || has(OOT_SONG_TP_FIRE) || has(OOT_SONG_TP_WATER) || has(OOT_SONG_TP_SPIRIT) || has(OOT_SONG_TP_SHADOW))",
-  "can_warp": "can_soar || can_oot_warp"
+  "can_warp": "can_soar || can_oot_warp",
+
+  "can_use_wallet_1": "event(RUPEES) && has_wallet(1)",
+  "can_use_wallet_2": "event(RUPEES) && has_wallet(2)",
+  "can_use_wallet_3": "event(RUPEES) && has_wallet(3)",
+  "can_use_wallet_4": "event(RUPEES) && has_wallet(4)"
 }

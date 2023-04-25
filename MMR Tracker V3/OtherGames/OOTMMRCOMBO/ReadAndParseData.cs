@@ -79,6 +79,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
             FinalLogicCleanup(LogicFile);
 
+            AddWalletData(dictionaryFile);
+
 
             foreach (var i in dictionaryFile.LocationList) { i.Value.ID = null; }
             foreach (var i in dictionaryFile.ItemList) { i.Value.ID = null; }
@@ -93,6 +95,34 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             File.WriteAllText(FinalLogicFile, JsonConvert.SerializeObject(LogicFile, Testing._NewtonsoftJsonSerializerOptions));
             File.WriteAllText(FinalDictFile, JsonConvert.SerializeObject(dictionaryFile, Testing._NewtonsoftJsonSerializerOptions));
 
+
+        }
+
+        private static void AddWalletData(LogicDictionaryData.LogicDictionary dictionaryFile)
+        {
+            Dictionary<int, int> PriceMap = new Dictionary<int, int>
+            {
+                { 1, 99 },
+                { 2, 200 },
+                { 3, 500 },
+                { 4, 999 },
+            };
+
+            for(var i = 1; i <= 4; i++)
+            {
+                AddWalletMacroRef(i, "OOT");
+                AddWalletMacroRef(i, "MM");
+            }
+
+            void AddWalletMacroRef(int count, string Gamecode)
+            {
+                dictionaryFile.MacroList.Add($"{Gamecode}_can_use_wallet_{count}", new LogicDictionaryData.DictionaryMacroEntry 
+                {
+                    ID = $"{Gamecode}_can_use_wallet_{count}",
+                    WalletCapacity = PriceMap[count],
+                    WalletCurrency = Gamecode[0]
+                });
+            }
 
         }
 
@@ -1096,7 +1126,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         line = line.Replace(FullFunction, $"((option{{childWallets, true}} && has(WALLET, {WalletAmmount})) || (option{{childWallets, false}} && has(WALLET, {WalletAmmount-1})))");
                         break;
                     case "can_use_wallet":
-                        line = line.Replace(FullFunction, $"event(RUPEES) && has_wallet({Parameters})");
+                        //line = line.Replace(FullFunction, $"event(RUPEES) && has_wallet({Parameters})");
+                        line = line.Replace(FullFunction, $"{Game}_can_use_wallet_{Parameters}");
                         break;
                     case "cond":
                         Debug.WriteLine($"Parsing Cond\n{FullFunction}\n{Parameters}");
@@ -1314,6 +1345,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 else if (OOTRAreaDict.ContainsKey(DictValue[0])) { dictEntry.Area = OOTRAreaDict[DictValue[0]]; }
                 else { dictEntry.Area = DictValue[0]; Debug.WriteLine($"{i} Had no Area Data"); }
                 dictEntry.OriginalItem = DictValue[1];
+                dictEntry.WalletCurrency = i[0];
                 logicDictionary.LocationList.Add(i,dictEntry);
             }
             foreach(var i in OOTRItemsDict.Keys)

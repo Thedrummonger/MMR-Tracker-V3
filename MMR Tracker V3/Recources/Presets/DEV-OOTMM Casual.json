@@ -153,18 +153,10 @@
     {
       "Id": "OOT Kokiri Shop Item 1",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Kokiri Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -173,18 +165,10 @@
     {
       "Id": "OOT Kokiri Shop Item 2",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Kokiri Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -193,18 +177,10 @@
     {
       "Id": "OOT Kokiri Shop Item 3",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Kokiri Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -213,18 +189,10 @@
     {
       "Id": "OOT Kokiri Shop Item 4",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Kokiri Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -233,18 +201,10 @@
     {
       "Id": "OOT Kokiri Shop Item 5",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Kokiri Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -253,18 +213,10 @@
     {
       "Id": "OOT Kokiri Shop Item 6",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Kokiri Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -273,18 +225,10 @@
     {
       "Id": "OOT Kokiri Shop Item 7",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Kokiri Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -293,18 +237,10 @@
     {
       "Id": "OOT Kokiri Shop Item 8",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Kokiri Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -401,18 +337,10 @@
       "RequiredItems": [
         "OOT_is_child",
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Lost Woods"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -423,18 +351,10 @@
       "RequiredItems": [
         "OOT_is_child",
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Lost Woods Deep"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -445,18 +365,10 @@
       "RequiredItems": [
         "OOT_is_child",
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Lost Woods Deep"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -492,18 +404,10 @@
       "Id": "OOT Lost Woods Grotto Scrub Nuts Upgrade",
       "RequiredItems": [
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Lost Woods Scrub Grotto"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -513,18 +417,10 @@
       "Id": "OOT Lost Woods Grotto Scrub Back",
       "RequiredItems": [
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Lost Woods Scrub Grotto"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -684,18 +580,10 @@
       "Id": "OOT Sacred Meadow Storms Grotto Front Scrub",
       "RequiredItems": [
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Sacred Meadow Storms Grotto"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -705,18 +593,10 @@
       "Id": "OOT Sacred Meadow Storms Grotto Back Scrub",
       "RequiredItems": [
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Sacred Meadow Storms Grotto"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -954,18 +834,10 @@
     {
       "Id": "OOT Kakariko Bazaar Item 1",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Kakariko Bazaar"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -974,18 +846,10 @@
     {
       "Id": "OOT Kakariko Bazaar Item 2",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Kakariko Bazaar"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -994,18 +858,10 @@
     {
       "Id": "OOT Kakariko Bazaar Item 3",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Kakariko Bazaar"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -1014,18 +870,10 @@
     {
       "Id": "OOT Kakariko Bazaar Item 4",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Kakariko Bazaar"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -1034,18 +882,10 @@
     {
       "Id": "OOT Kakariko Bazaar Item 5",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Kakariko Bazaar"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -1054,18 +894,10 @@
     {
       "Id": "OOT Kakariko Bazaar Item 6",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Kakariko Bazaar"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -1074,18 +906,10 @@
     {
       "Id": "OOT Kakariko Bazaar Item 7",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Kakariko Bazaar"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -1094,18 +918,10 @@
     {
       "Id": "OOT Kakariko Bazaar Item 8",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Kakariko Bazaar"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -1114,20 +930,11 @@
     {
       "Id": "OOT Kakariko Potion Shop Item 1",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_2",
         "OOT_is_adult",
         "OOT Kakariko Potion Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET, 2"
-        ],
-        [
-          "option{childWallets, false}",
-          "OOT_WALLET"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -1136,19 +943,11 @@
     {
       "Id": "OOT Kakariko Potion Shop Item 2",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT_is_adult",
         "OOT Kakariko Potion Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -1157,19 +956,11 @@
     {
       "Id": "OOT Kakariko Potion Shop Item 3",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT_is_adult",
         "OOT Kakariko Potion Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -1178,19 +969,11 @@
     {
       "Id": "OOT Kakariko Potion Shop Item 4",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT_is_adult",
         "OOT Kakariko Potion Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -1199,20 +982,11 @@
     {
       "Id": "OOT Kakariko Potion Shop Item 5",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_3",
         "OOT_is_adult",
         "OOT Kakariko Potion Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET, 3"
-        ],
-        [
-          "option{childWallets, false}",
-          "OOT_WALLET, 2"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -1221,19 +995,11 @@
     {
       "Id": "OOT Kakariko Potion Shop Item 6",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT_is_adult",
         "OOT Kakariko Potion Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -1242,19 +1008,11 @@
     {
       "Id": "OOT Kakariko Potion Shop Item 7",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT_is_adult",
         "OOT Kakariko Potion Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -1263,19 +1021,11 @@
     {
       "Id": "OOT Kakariko Potion Shop Item 8",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT_is_adult",
         "OOT Kakariko Potion Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -1285,19 +1035,11 @@
       "Id": "OOT Graveyard Dampe Game",
       "RequiredItems": [
         "OOT_is_child",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT_is_dusk",
         "OOT Graveyard"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -1696,29 +1438,15 @@
       "Id": "OOT Goron City Medigoron Giant Knife",
       "RequiredItems": [
         "OOT_is_adult",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_2",
         "OOT Goron City"
       ],
       "ConditionalItems": [
         [
-          "OOT_has_bombflowers",
-          "option{childWallets, true}",
-          "OOT_WALLET, 2"
+          "OOT_has_bombflowers"
         ],
         [
-          "OOT_can_hammer",
-          "option{childWallets, true}",
-          "OOT_WALLET, 2"
-        ],
-        [
-          "OOT_has_bombflowers",
-          "option{childWallets, false}",
-          "OOT_WALLET"
-        ],
-        [
-          "OOT_can_hammer",
-          "option{childWallets, false}",
-          "OOT_WALLET"
+          "OOT_can_hammer"
         ]
       ],
       "TimeNeeded": "None",
@@ -1755,18 +1483,10 @@
       "Id": "OOT Goron City Grotto Left Scrub",
       "RequiredItems": [
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Goron City Grotto"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -1776,18 +1496,10 @@
       "Id": "OOT Goron City Grotto Center Scrub",
       "RequiredItems": [
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Goron City Grotto"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -1797,18 +1509,10 @@
       "Id": "OOT Goron City Grotto Right Scrub",
       "RequiredItems": [
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Goron City Grotto"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -1817,18 +1521,10 @@
     {
       "Id": "OOT Goron Shop Item 1",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Goron Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -1837,18 +1533,10 @@
     {
       "Id": "OOT Goron Shop Item 2",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Goron Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -1857,18 +1545,10 @@
     {
       "Id": "OOT Goron Shop Item 3",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Goron Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -1877,19 +1557,10 @@
     {
       "Id": "OOT Goron Shop Item 4",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_2",
         "OOT Goron Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET, 2"
-        ],
-        [
-          "option{childWallets, false}",
-          "OOT_WALLET"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -1898,18 +1569,10 @@
     {
       "Id": "OOT Goron Shop Item 5",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Goron Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -1918,18 +1581,10 @@
     {
       "Id": "OOT Goron Shop Item 6",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Goron Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -1938,18 +1593,10 @@
     {
       "Id": "OOT Goron Shop Item 7",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Goron Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -1958,19 +1605,10 @@
     {
       "Id": "OOT Goron Shop Item 8",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_2",
         "OOT Goron Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET, 2"
-        ],
-        [
-          "option{childWallets, false}",
-          "OOT_WALLET"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -2035,18 +1673,10 @@
       "RequiredItems": [
         "OOT_is_child",
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Death Mountain Crater Top"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -2056,18 +1686,10 @@
       "Id": "OOT Death Mountain Crater Grotto Left Scrub",
       "RequiredItems": [
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Death Mountain Crater Scrub Grotto"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -2077,18 +1699,10 @@
       "Id": "OOT Death Mountain Crater Grotto Center Scrub",
       "RequiredItems": [
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Death Mountain Crater Scrub Grotto"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -2098,18 +1712,10 @@
       "Id": "OOT Death Mountain Crater Grotto Right Scrub",
       "RequiredItems": [
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Death Mountain Crater Scrub Grotto"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -2181,18 +1787,10 @@
       "Id": "OOT Zora River Bean Seller",
       "RequiredItems": [
         "OOT_is_child",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Zora River"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -2246,18 +1844,10 @@
       "Id": "OOT Zora River Storms Grotto Front Scrub",
       "RequiredItems": [
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Zora River Storms Grotto"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -2267,18 +1857,10 @@
       "Id": "OOT Zora River Storms Grotto Back Scrub",
       "RequiredItems": [
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Zora River Storms Grotto"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -2355,18 +1937,10 @@
       "Id": "OOT Zora Domain Diving Game",
       "RequiredItems": [
         "OOT_is_child",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Zora Domain"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -2422,18 +1996,10 @@
     {
       "Id": "OOT Zora Shop Item 1",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Zora Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -2442,18 +2008,10 @@
     {
       "Id": "OOT Zora Shop Item 2",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Zora Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -2462,19 +2020,10 @@
     {
       "Id": "OOT Zora Shop Item 3",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_2",
         "OOT Zora Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET, 2"
-        ],
-        [
-          "option{childWallets, false}",
-          "OOT_WALLET"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -2483,18 +2032,10 @@
     {
       "Id": "OOT Zora Shop Item 4",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Zora Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -2503,18 +2044,10 @@
     {
       "Id": "OOT Zora Shop Item 5",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Zora Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -2523,18 +2056,10 @@
     {
       "Id": "OOT Zora Shop Item 6",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Zora Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -2543,19 +2068,10 @@
     {
       "Id": "OOT Zora Shop Item 7",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_3",
         "OOT Zora Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET, 3"
-        ],
-        [
-          "option{childWallets, false}",
-          "OOT_WALLET, 2"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -2564,18 +2080,10 @@
     {
       "Id": "OOT Zora Shop Item 8",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Zora Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -2702,18 +2210,10 @@
       "Id": "OOT Lake Hylia Grotto Left Scrub",
       "RequiredItems": [
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Lake Hylia Grotto"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -2723,18 +2223,10 @@
       "Id": "OOT Lake Hylia Grotto Center Scrub",
       "RequiredItems": [
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Lake Hylia Grotto"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -2744,18 +2236,10 @@
       "Id": "OOT Lake Hylia Grotto Right Scrub",
       "RequiredItems": [
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Lake Hylia Grotto"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -2875,18 +2359,10 @@
       "Id": "OOT Fishing Pond Child",
       "RequiredItems": [
         "OOT_is_child",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Fishing Pond"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -2896,18 +2372,10 @@
       "Id": "OOT Fishing Pond Adult",
       "RequiredItems": [
         "OOT_is_adult",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Fishing Pond"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -2945,19 +2413,11 @@
       "RequiredItems": [
         "OOT_is_child",
         "OOT_woke_talon_child",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT_is_day",
         "OOT Lon Lon Ranch House"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3133,18 +2593,10 @@
       "Id": "OOT Hyrule Field Grotto Scrub HP",
       "RequiredItems": [
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Hyrule Field Scrub Grotto"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3275,18 +2727,10 @@
     {
       "Id": "OOT Market Bazaar Item 1",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Market Bazaar"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3295,18 +2739,10 @@
     {
       "Id": "OOT Market Bazaar Item 2",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Market Bazaar"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3315,18 +2751,10 @@
     {
       "Id": "OOT Market Bazaar Item 3",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Market Bazaar"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3335,18 +2763,10 @@
     {
       "Id": "OOT Market Bazaar Item 4",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Market Bazaar"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3355,18 +2775,10 @@
     {
       "Id": "OOT Market Bazaar Item 5",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Market Bazaar"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3375,18 +2787,10 @@
     {
       "Id": "OOT Market Bazaar Item 6",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Market Bazaar"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3395,18 +2799,10 @@
     {
       "Id": "OOT Market Bazaar Item 7",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Market Bazaar"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3415,18 +2811,10 @@
     {
       "Id": "OOT Market Bazaar Item 8",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Market Bazaar"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3435,19 +2823,10 @@
     {
       "Id": "OOT Market Potion Shop Item 1",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_2",
         "OOT Market Potion Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET, 2"
-        ],
-        [
-          "option{childWallets, false}",
-          "OOT_WALLET"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3456,18 +2835,10 @@
     {
       "Id": "OOT Market Potion Shop Item 2",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Market Potion Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3476,18 +2847,10 @@
     {
       "Id": "OOT Market Potion Shop Item 3",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Market Potion Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3496,18 +2859,10 @@
     {
       "Id": "OOT Market Potion Shop Item 4",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Market Potion Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3516,19 +2871,10 @@
     {
       "Id": "OOT Market Potion Shop Item 5",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_3",
         "OOT Market Potion Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET, 3"
-        ],
-        [
-          "option{childWallets, false}",
-          "OOT_WALLET, 2"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3537,18 +2883,10 @@
     {
       "Id": "OOT Market Potion Shop Item 6",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Market Potion Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3557,18 +2895,10 @@
     {
       "Id": "OOT Market Potion Shop Item 7",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Market Potion Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3577,18 +2907,10 @@
     {
       "Id": "OOT Market Potion Shop Item 8",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Market Potion Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3597,19 +2919,10 @@
     {
       "Id": "OOT Market Bombchu Shop Item 1",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_2",
         "OOT Market Bombchu Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET, 2"
-        ],
-        [
-          "option{childWallets, false}",
-          "OOT_WALLET"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3618,19 +2931,10 @@
     {
       "Id": "OOT Market Bombchu Shop Item 2",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_2",
         "OOT Market Bombchu Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET, 2"
-        ],
-        [
-          "option{childWallets, false}",
-          "OOT_WALLET"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3639,19 +2943,10 @@
     {
       "Id": "OOT Market Bombchu Shop Item 3",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_2",
         "OOT Market Bombchu Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET, 2"
-        ],
-        [
-          "option{childWallets, false}",
-          "OOT_WALLET"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3660,19 +2955,10 @@
     {
       "Id": "OOT Market Bombchu Shop Item 4",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_2",
         "OOT Market Bombchu Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET, 2"
-        ],
-        [
-          "option{childWallets, false}",
-          "OOT_WALLET"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3681,19 +2967,10 @@
     {
       "Id": "OOT Market Bombchu Shop Item 5",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_2",
         "OOT Market Bombchu Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET, 2"
-        ],
-        [
-          "option{childWallets, false}",
-          "OOT_WALLET"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3702,19 +2979,10 @@
     {
       "Id": "OOT Market Bombchu Shop Item 6",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_2",
         "OOT Market Bombchu Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET, 2"
-        ],
-        [
-          "option{childWallets, false}",
-          "OOT_WALLET"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3723,19 +2991,10 @@
     {
       "Id": "OOT Market Bombchu Shop Item 7",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_2",
         "OOT Market Bombchu Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET, 2"
-        ],
-        [
-          "option{childWallets, false}",
-          "OOT_WALLET"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3744,19 +3003,10 @@
     {
       "Id": "OOT Market Bombchu Shop Item 8",
       "RequiredItems": [
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_2",
         "OOT Market Bombchu Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET, 2"
-        ],
-        [
-          "option{childWallets, false}",
-          "OOT_WALLET"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3766,18 +3016,10 @@
       "Id": "OOT Bombchu Bowling Reward 1",
       "RequiredItems": [
         "OOT_BOMB_BAG",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Bombchu Bowling"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3787,18 +3029,10 @@
       "Id": "OOT Bombchu Bowling Reward 2",
       "RequiredItems": [
         "OOT_BOMB_BAG",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Bombchu Bowling"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3808,18 +3042,10 @@
       "Id": "OOT Treasure Game HP",
       "RequiredItems": [
         "OOT_has_lens_strict",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Treasure Game"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3829,18 +3055,10 @@
       "Id": "OOT Shooting Gallery Child",
       "RequiredItems": [
         "OOT_is_child",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Shooting Gallery Child"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3850,18 +3068,10 @@
       "Id": "OOT Shooting Gallery Adult",
       "RequiredItems": [
         "OOT_can_use_bow",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Shooting Gallery Adult"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -4055,18 +3265,10 @@
       "Id": "OOT Gerudo Valley Grotto Front Scrub",
       "RequiredItems": [
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Gerudo Valley Storms Grotto"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -4076,18 +3278,10 @@
       "Id": "OOT Gerudo Valley Grotto Back Scrub",
       "RequiredItems": [
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Gerudo Valley Storms Grotto"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -4176,19 +3370,11 @@
         "OOT_can_ride_epona",
         "OOT_can_use_bow",
         "OOT_GERUDO_CARD",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT_is_day",
         "OOT Gerudo Fortress Exterior"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -4200,19 +3386,11 @@
         "OOT_can_ride_epona",
         "OOT_can_use_bow",
         "OOT_GERUDO_CARD",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT_is_day",
         "OOT Gerudo Fortress Exterior"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -4297,18 +3475,10 @@
       "Id": "OOT Desert Colossus Grotto Front Scrub",
       "RequiredItems": [
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Desert Colossus Grotto"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -4318,18 +3488,10 @@
       "Id": "OOT Desert Colossus Grotto Back Scrub",
       "RequiredItems": [
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Desert Colossus Grotto"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -4781,19 +3943,11 @@
       "Id": "OOT Dodongo Cavern Lobby Scrub",
       "RequiredItems": [
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Dodongo Cavern Main",
         "option{DCMQ, false}"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -4803,19 +3957,11 @@
       "Id": "OOT Dodongo Cavern Green Side Room Scrub",
       "RequiredItems": [
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Dodongo Cavern Green Side Room",
         "option{DCMQ, false}"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -4825,19 +3971,11 @@
       "Id": "OOT Dodongo Cavern Bomb Bag Side Room Left Scrub",
       "RequiredItems": [
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Dodongo Cavern Bomb Bag Side Room",
         "option{DCMQ, false}"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -4847,19 +3985,11 @@
       "Id": "OOT Dodongo Cavern Bomb Bag Side Room Right Scrub",
       "RequiredItems": [
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Dodongo Cavern Bomb Bag Side Room",
         "option{DCMQ, false}"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -5044,28 +4174,16 @@
       "Id": "OOT Jabu-Jabu Scrub",
       "RequiredItems": [
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Jabu-Jabu Main",
         "option{JJMQ, false}"
       ],
       "ConditionalItems": [
         [
-          "OOT_is_child",
-          "option{childWallets, true}",
-          "OOT_WALLET"
+          "OOT_is_child"
         ],
         [
-          "OOT_can_dive_small",
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "OOT_is_child",
-          "option{childWallets, false}"
-        ],
-        [
-          "OOT_can_dive_small",
-          "option{childWallets, false}"
+          "OOT_can_dive_small"
         ]
       ],
       "TimeNeeded": "None",
@@ -7794,19 +6912,11 @@
       "RequiredItems": [
         "OOT_has_lens",
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Ganon Castle Main",
         "option{GanonMQ, false}"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -7817,19 +6927,11 @@
       "RequiredItems": [
         "OOT_has_lens",
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Ganon Castle Main",
         "option{GanonMQ, false}"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -7840,19 +6942,11 @@
       "RequiredItems": [
         "OOT_has_lens",
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Ganon Castle Main",
         "option{GanonMQ, false}"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -7863,19 +6957,11 @@
       "RequiredItems": [
         "OOT_has_lens",
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Ganon Castle Main",
         "option{GanonMQ, false}"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -8001,19 +7087,11 @@
       "Id": "OOT MQ Deku Tree Scrub",
       "RequiredItems": [
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Deku Tree Basement Ledge",
         "option{DTMQ, true}"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -8185,19 +7263,11 @@
       "Id": "OOT MQ Dodongo Cavern Lobby Scrub Front",
       "RequiredItems": [
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Dodongo Cavern Main",
         "option{DCMQ, true}"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -8207,19 +7277,11 @@
       "Id": "OOT MQ Dodongo Cavern Lobby Scrub Back",
       "RequiredItems": [
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Dodongo Cavern Main",
         "option{DCMQ, true}"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -8229,19 +7291,11 @@
       "Id": "OOT MQ Dodongo Cavern Staircase Scrub",
       "RequiredItems": [
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Dodongo Cavern Upper Staircase",
         "option{DCMQ, true}"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -8251,19 +7305,11 @@
       "Id": "OOT MQ Dodongo Cavern Tunnel Side Scrub",
       "RequiredItems": [
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Dodongo Cavern Lower Tunnel",
         "option{DCMQ, true}"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -10694,19 +9740,11 @@
       "RequiredItems": [
         "OOT_has_lens",
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Ganon Castle Main",
         "option{GanonMQ, true}"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -10717,19 +9755,11 @@
       "RequiredItems": [
         "OOT_has_lens",
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Ganon Castle Main",
         "option{GanonMQ, true}"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -10740,19 +9770,11 @@
       "RequiredItems": [
         "OOT_has_lens",
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Ganon Castle Main",
         "option{GanonMQ, true}"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -10763,19 +9785,11 @@
       "RequiredItems": [
         "OOT_has_lens",
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Ganon Castle Main",
         "option{GanonMQ, true}"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -10786,19 +9800,11 @@
       "RequiredItems": [
         "OOT_has_lens",
         "OOT_can_hit_scrub",
-        "OOT_EVENT_RUPEES",
+        "OOT_can_use_wallet_1",
         "OOT Ganon Castle Main",
         "option{GanonMQ, true}"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -10818,25 +9824,13 @@
     {
       "Id": "MM Tingle Map Clock Town",
       "RequiredItems": [
-        "MM_EVENT_RUPEES"
+        "MM_can_use_wallet_1"
       ],
       "ConditionalItems": [
         [
-          "option{childWallets, true}",
-          "MM_WALLET",
           "MM Tingle Ikana"
         ],
         [
-          "option{childWallets, false}",
-          "MM Tingle Ikana"
-        ],
-        [
-          "option{childWallets, true}",
-          "MM_WALLET",
-          "MM Tingle Town"
-        ],
-        [
-          "option{childWallets, false}",
           "MM Tingle Town"
         ]
       ],
@@ -10848,25 +9842,13 @@
     {
       "Id": "MM Tingle Map Woodfall",
       "RequiredItems": [
-        "MM_EVENT_RUPEES"
+        "MM_can_use_wallet_1"
       ],
       "ConditionalItems": [
         [
-          "option{childWallets, true}",
-          "MM_WALLET",
           "MM Tingle Swamp"
         ],
         [
-          "option{childWallets, false}",
-          "MM Tingle Swamp"
-        ],
-        [
-          "option{childWallets, true}",
-          "MM_WALLET",
-          "MM Tingle Town"
-        ],
-        [
-          "option{childWallets, false}",
           "MM Tingle Town"
         ]
       ],
@@ -10878,25 +9860,13 @@
     {
       "Id": "MM Tingle Map Snowhead",
       "RequiredItems": [
-        "MM_EVENT_RUPEES"
+        "MM_can_use_wallet_1"
       ],
       "ConditionalItems": [
         [
-          "option{childWallets, true}",
-          "MM_WALLET",
           "MM Tingle Mountain"
         ],
         [
-          "option{childWallets, false}",
-          "MM Tingle Mountain"
-        ],
-        [
-          "option{childWallets, true}",
-          "MM_WALLET",
-          "MM Tingle Swamp"
-        ],
-        [
-          "option{childWallets, false}",
           "MM Tingle Swamp"
         ]
       ],
@@ -10908,25 +9878,13 @@
     {
       "Id": "MM Tingle Map Ranch",
       "RequiredItems": [
-        "MM_EVENT_RUPEES"
+        "MM_can_use_wallet_1"
       ],
       "ConditionalItems": [
         [
-          "option{childWallets, true}",
-          "MM_WALLET",
           "MM Tingle Ranch"
         ],
         [
-          "option{childWallets, false}",
-          "MM Tingle Ranch"
-        ],
-        [
-          "option{childWallets, true}",
-          "MM_WALLET",
-          "MM Tingle Mountain"
-        ],
-        [
-          "option{childWallets, false}",
           "MM Tingle Mountain"
         ]
       ],
@@ -10938,25 +9896,13 @@
     {
       "Id": "MM Tingle Map Great Bay",
       "RequiredItems": [
-        "MM_EVENT_RUPEES"
+        "MM_can_use_wallet_1"
       ],
       "ConditionalItems": [
         [
-          "option{childWallets, true}",
-          "MM_WALLET",
           "MM Tingle Great Bay"
         ],
         [
-          "option{childWallets, false}",
-          "MM Tingle Great Bay"
-        ],
-        [
-          "option{childWallets, true}",
-          "MM_WALLET",
-          "MM Tingle Ranch"
-        ],
-        [
-          "option{childWallets, false}",
           "MM Tingle Ranch"
         ]
       ],
@@ -10968,25 +9914,13 @@
     {
       "Id": "MM Tingle Map Ikana",
       "RequiredItems": [
-        "MM_EVENT_RUPEES"
+        "MM_can_use_wallet_1"
       ],
       "ConditionalItems": [
         [
-          "option{childWallets, true}",
-          "MM_WALLET",
           "MM Tingle Ikana"
         ],
         [
-          "option{childWallets, false}",
-          "MM Tingle Ikana"
-        ],
-        [
-          "option{childWallets, true}",
-          "MM_WALLET",
-          "MM Tingle Great Bay"
-        ],
-        [
-          "option{childWallets, false}",
           "MM Tingle Great Bay"
         ]
       ],
@@ -11159,18 +10093,10 @@
     {
       "Id": "MM Clock Town Bank Reward 1",
       "RequiredItems": [
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_1",
         "MM Clock Town West"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "MM_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -11179,19 +10105,10 @@
     {
       "Id": "MM Clock Town Bank Reward 2",
       "RequiredItems": [
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_2",
         "MM Clock Town West"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "MM_WALLET, 2"
-        ],
-        [
-          "option{childWallets, false}",
-          "MM_WALLET"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -11200,19 +10117,10 @@
     {
       "Id": "MM Clock Town Bank Reward 3",
       "RequiredItems": [
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_3",
         "MM Clock Town West"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "MM_WALLET, 3"
-        ],
-        [
-          "option{childWallets, false}",
-          "MM_WALLET, 2"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -11423,38 +10331,18 @@
       "Id": "MM Town Archery Reward 1",
       "RequiredItems": [
         "MM_BOW",
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_1",
         "MM Town Archery"
       ],
       "ConditionalItems": [
         [
-          "option{childWallets, true}",
-          "MM_WALLET",
           "time{Before_NIGHT1_PM_10_00}"
         ],
         [
-          "option{childWallets, false}",
-          "time{Before_NIGHT1_PM_10_00}"
-        ],
-        [
-          "option{childWallets, true}",
-          "MM_WALLET",
           "time{After_DAY2_AM_06_00}",
           "time{Before_NIGHT2_PM_10_00}"
         ],
         [
-          "option{childWallets, false}",
-          "time{After_DAY2_AM_06_00}",
-          "time{Before_NIGHT2_PM_10_00}"
-        ],
-        [
-          "option{childWallets, true}",
-          "MM_WALLET",
-          "time{After_DAY3_AM_06_00}",
-          "time{Before_NIGHT3_PM_10_00}"
-        ],
-        [
-          "option{childWallets, false}",
           "time{After_DAY3_AM_06_00}",
           "time{Before_NIGHT3_PM_10_00}"
         ]
@@ -11468,38 +10356,18 @@
       "Id": "MM Town Archery Reward 2",
       "RequiredItems": [
         "MM_BOW",
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_1",
         "MM Town Archery"
       ],
       "ConditionalItems": [
         [
-          "option{childWallets, true}",
-          "MM_WALLET",
           "time{Before_NIGHT1_PM_10_00}"
         ],
         [
-          "option{childWallets, false}",
-          "time{Before_NIGHT1_PM_10_00}"
-        ],
-        [
-          "option{childWallets, true}",
-          "MM_WALLET",
           "time{After_DAY2_AM_06_00}",
           "time{Before_NIGHT2_PM_10_00}"
         ],
         [
-          "option{childWallets, false}",
-          "time{After_DAY2_AM_06_00}",
-          "time{Before_NIGHT2_PM_10_00}"
-        ],
-        [
-          "option{childWallets, true}",
-          "MM_WALLET",
-          "time{After_DAY3_AM_06_00}",
-          "time{Before_NIGHT3_PM_10_00}"
-        ],
-        [
-          "option{childWallets, false}",
           "time{After_DAY3_AM_06_00}",
           "time{Before_NIGHT3_PM_10_00}"
         ]
@@ -11513,37 +10381,18 @@
       "Id": "MM Chest Game HP",
       "RequiredItems": [
         "MM_MASK_GORON",
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_1",
         "MM Chest Game"
       ],
       "ConditionalItems": [
         [
-          "option{childWallets, true}",
-          "MM_WALLET",
           "time{Before_NIGHT1_PM_10_00}"
         ],
         [
-          "option{childWallets, false}",
-          "time{Before_NIGHT1_PM_10_00}"
-        ],
-        [
-          "option{childWallets, true}",
-          "MM_WALLET",
           "time{After_DAY2_AM_06_00}",
           "time{Before_NIGHT2_PM_10_00}"
         ],
         [
-          "option{childWallets, false}",
-          "time{After_DAY2_AM_06_00}",
-          "time{Before_NIGHT2_PM_10_00}"
-        ],
-        [
-          "option{childWallets, true}",
-          "MM_WALLET",
-          "MM_is_day3"
-        ],
-        [
-          "option{childWallets, false}",
           "MM_is_day3"
         ]
       ],
@@ -11555,35 +10404,17 @@
     {
       "Id": "MM Honey & Darling Reward 1",
       "RequiredItems": [
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_1",
         "MM Honey & Darling Game"
       ],
       "ConditionalItems": [
         [
-          "option{childWallets, true}",
-          "MM_WALLET",
           "MM_EVENT_HD_REWARD_1"
         ],
         [
-          "option{childWallets, false}",
-          "MM_EVENT_HD_REWARD_1"
-        ],
-        [
-          "option{childWallets, true}",
-          "MM_WALLET",
           "MM_EVENT_HD_REWARD_2"
         ],
         [
-          "option{childWallets, false}",
-          "MM_EVENT_HD_REWARD_2"
-        ],
-        [
-          "option{childWallets, true}",
-          "MM_WALLET",
-          "MM_EVENT_HD_REWARD_3"
-        ],
-        [
-          "option{childWallets, false}",
           "MM_EVENT_HD_REWARD_3"
         ]
       ],
@@ -11595,21 +10426,13 @@
     {
       "Id": "MM Honey & Darling Reward 2",
       "RequiredItems": [
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_1",
         "MM_EVENT_HD_REWARD_1",
         "MM_EVENT_HD_REWARD_2",
         "MM_EVENT_HD_REWARD_3",
         "MM Honey & Darling Game"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "MM_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -11763,19 +10586,11 @@
     {
       "Id": "MM Trading Post Item 1",
       "RequiredItems": [
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_1",
         "time{Before_NIGHT3_PM_09_00}",
         "MM Trading Post"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "MM_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -11784,19 +10599,11 @@
     {
       "Id": "MM Trading Post Item 2",
       "RequiredItems": [
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_1",
         "time{Before_NIGHT3_PM_09_00}",
         "MM Trading Post"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "MM_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -11805,19 +10612,11 @@
     {
       "Id": "MM Trading Post Item 3",
       "RequiredItems": [
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_1",
         "time{Before_NIGHT3_PM_09_00}",
         "MM Trading Post"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "MM_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -11826,19 +10625,11 @@
     {
       "Id": "MM Trading Post Item 4",
       "RequiredItems": [
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_1",
         "time{Before_NIGHT3_PM_09_00}",
         "MM Trading Post"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "MM_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -11847,19 +10638,11 @@
     {
       "Id": "MM Trading Post Item 5",
       "RequiredItems": [
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_1",
         "time{Before_NIGHT3_PM_09_00}",
         "MM Trading Post"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "MM_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -11868,19 +10651,11 @@
     {
       "Id": "MM Trading Post Item 6",
       "RequiredItems": [
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_1",
         "time{Before_NIGHT3_PM_09_00}",
         "MM Trading Post"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "MM_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -11889,19 +10664,11 @@
     {
       "Id": "MM Trading Post Item 7",
       "RequiredItems": [
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_1",
         "time{Before_NIGHT3_PM_09_00}",
         "MM Trading Post"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "MM_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -11910,19 +10677,11 @@
     {
       "Id": "MM Trading Post Item 8",
       "RequiredItems": [
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_1",
         "time{Before_NIGHT3_PM_09_00}",
         "MM Trading Post"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "MM_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -11931,18 +10690,10 @@
     {
       "Id": "MM Bomb Shop Item 1",
       "RequiredItems": [
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_1",
         "MM Bomb Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "MM_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -11951,18 +10702,10 @@
     {
       "Id": "MM Bomb Shop Item 2",
       "RequiredItems": [
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_1",
         "MM Bomb Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "MM_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -11971,18 +10714,10 @@
     {
       "Id": "MM Bomb Shop Bomb Bag",
       "RequiredItems": [
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_1",
         "MM Bomb Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "MM_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -11990,31 +10725,16 @@
     },
     {
       "Id": "MM Bomb Shop Bomb Bag 2",
-      "RequiredItems": [
-        "MM_EVENT_RUPEES"
-      ],
+      "RequiredItems": [],
       "ConditionalItems": [
         [
-          "option{childWallets, true}",
-          "MM_WALLET, 2",
+          "MM_can_use_wallet_2",
           "MM_is_night3",
           "MM Curiosity Shop"
         ],
         [
-          "option{childWallets, false}",
-          "MM_WALLET",
-          "MM_is_night3",
-          "MM Curiosity Shop"
-        ],
-        [
-          "option{childWallets, true}",
-          "MM_WALLET",
           "MM_EVENT_SAKON_BOMB_BAG",
-          "MM Bomb Shop"
-        ],
-        [
-          "option{childWallets, false}",
-          "MM_EVENT_SAKON_BOMB_BAG",
+          "MM_can_use_wallet_1",
           "MM Bomb Shop"
         ]
       ],
@@ -12026,30 +10746,16 @@
     {
       "Id": "MM Curiosity Shop All-Night Mask",
       "RequiredItems": [
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_3",
         "MM_is_night3",
         "MM Curiosity Shop"
       ],
       "ConditionalItems": [
         [
-          "MM_EVENT_SAKON_BOMB_BAG",
-          "option{childWallets, true}",
-          "MM_WALLET, 3"
+          "MM_EVENT_SAKON_BOMB_BAG"
         ],
         [
-          "MM_EVENT_SAKON_BOOM",
-          "option{childWallets, true}",
-          "MM_WALLET, 3"
-        ],
-        [
-          "MM_EVENT_SAKON_BOMB_BAG",
-          "option{childWallets, false}",
-          "MM_WALLET, 2"
-        ],
-        [
-          "MM_EVENT_SAKON_BOOM",
-          "option{childWallets, false}",
-          "MM_WALLET, 2"
+          "MM_EVENT_SAKON_BOOM"
         ]
       ],
       "TimeNeeded": "None",
@@ -12142,19 +10848,11 @@
       "Id": "MM Swordsman School HP",
       "RequiredItems": [
         "MM_SWORD",
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_1",
         "time{Before_NIGHT3_PM_11_00}",
         "MM Swordsman School"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "MM_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -12164,35 +10862,17 @@
       "Id": "MM Deku Playground Reward 1",
       "RequiredItems": [
         "MM_MASK_DEKU",
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_1",
         "MM Deku Playground"
       ],
       "ConditionalItems": [
         [
-          "option{childWallets, true}",
-          "MM_WALLET",
           "MM_EVENT_DEKU_REWARD_1"
         ],
         [
-          "option{childWallets, false}",
-          "MM_EVENT_DEKU_REWARD_1"
-        ],
-        [
-          "option{childWallets, true}",
-          "MM_WALLET",
           "MM_EVENT_DEKU_REWARD_2"
         ],
         [
-          "option{childWallets, false}",
-          "MM_EVENT_DEKU_REWARD_2"
-        ],
-        [
-          "option{childWallets, true}",
-          "MM_WALLET",
-          "MM_EVENT_DEKU_REWARD_3"
-        ],
-        [
-          "option{childWallets, false}",
           "MM_EVENT_DEKU_REWARD_3"
         ]
       ],
@@ -12205,21 +10885,13 @@
       "Id": "MM Deku Playground Reward 2",
       "RequiredItems": [
         "MM_MASK_DEKU",
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_1",
         "MM_EVENT_DEKU_REWARD_1",
         "MM_EVENT_DEKU_REWARD_2",
         "MM_EVENT_DEKU_REWARD_3",
         "MM Deku Playground"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "MM_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -12364,19 +11036,10 @@
       "Id": "MM Termina Field Scrub",
       "RequiredItems": [
         "MM_EVENT_SCRUB_TELESCOPE",
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_2",
         "MM Scrub Grotto"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "MM_WALLET, 2"
-        ],
-        [
-          "option{childWallets, false}",
-          "MM_WALLET"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -12528,38 +11191,18 @@
       "Id": "MM Swamp Archery Reward 1",
       "RequiredItems": [
         "MM_BOW",
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_1",
         "MM Swamp Archery"
       ],
       "ConditionalItems": [
         [
-          "option{childWallets, true}",
-          "MM_WALLET",
           "time{Before_NIGHT1_PM_10_00}"
         ],
         [
-          "option{childWallets, false}",
-          "time{Before_NIGHT1_PM_10_00}"
-        ],
-        [
-          "option{childWallets, true}",
-          "MM_WALLET",
           "time{After_DAY2_AM_06_00}",
           "time{Before_NIGHT2_PM_10_00}"
         ],
         [
-          "option{childWallets, false}",
-          "time{After_DAY2_AM_06_00}",
-          "time{Before_NIGHT2_PM_10_00}"
-        ],
-        [
-          "option{childWallets, true}",
-          "MM_WALLET",
-          "time{After_DAY3_AM_06_00}",
-          "time{Before_NIGHT3_PM_10_00}"
-        ],
-        [
-          "option{childWallets, false}",
           "time{After_DAY3_AM_06_00}",
           "time{Before_NIGHT3_PM_10_00}"
         ]
@@ -12573,38 +11216,18 @@
       "Id": "MM Swamp Archery Reward 2",
       "RequiredItems": [
         "MM_BOW",
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_1",
         "MM Swamp Archery"
       ],
       "ConditionalItems": [
         [
-          "option{childWallets, true}",
-          "MM_WALLET",
           "time{Before_NIGHT1_PM_10_00}"
         ],
         [
-          "option{childWallets, false}",
-          "time{Before_NIGHT1_PM_10_00}"
-        ],
-        [
-          "option{childWallets, true}",
-          "MM_WALLET",
           "time{After_DAY2_AM_06_00}",
           "time{Before_NIGHT2_PM_10_00}"
         ],
         [
-          "option{childWallets, false}",
-          "time{After_DAY2_AM_06_00}",
-          "time{Before_NIGHT2_PM_10_00}"
-        ],
-        [
-          "option{childWallets, true}",
-          "MM_WALLET",
-          "time{After_DAY3_AM_06_00}",
-          "time{Before_NIGHT3_PM_10_00}"
-        ],
-        [
-          "option{childWallets, false}",
           "time{After_DAY3_AM_06_00}",
           "time{Before_NIGHT3_PM_10_00}"
         ]
@@ -12629,26 +11252,14 @@
       "Id": "MM Swamp Potion Shop Item 1",
       "RequiredItems": [
         "MM_EVENT_MUSHROOM",
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_1",
         "MM Swamp Potion Shop"
       ],
       "ConditionalItems": [
         [
-          "option{childWallets, true}",
-          "MM_WALLET",
           "MM_first_day"
         ],
         [
-          "option{childWallets, false}",
-          "MM_first_day"
-        ],
-        [
-          "option{childWallets, true}",
-          "MM_WALLET",
-          "MM_EVENT_MEET_KOUME"
-        ],
-        [
-          "option{childWallets, false}",
           "MM_EVENT_MEET_KOUME"
         ]
       ],
@@ -12660,26 +11271,14 @@
     {
       "Id": "MM Swamp Potion Shop Item 2",
       "RequiredItems": [
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_1",
         "MM Swamp Potion Shop"
       ],
       "ConditionalItems": [
         [
-          "option{childWallets, true}",
-          "MM_WALLET",
           "MM_first_day"
         ],
         [
-          "option{childWallets, false}",
-          "MM_first_day"
-        ],
-        [
-          "option{childWallets, true}",
-          "MM_WALLET",
-          "MM_EVENT_MEET_KOUME"
-        ],
-        [
-          "option{childWallets, false}",
           "MM_EVENT_MEET_KOUME"
         ]
       ],
@@ -12691,26 +11290,14 @@
     {
       "Id": "MM Swamp Potion Shop Item 3",
       "RequiredItems": [
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_1",
         "MM Swamp Potion Shop"
       ],
       "ConditionalItems": [
         [
-          "option{childWallets, true}",
-          "MM_WALLET",
           "MM_first_day"
         ],
         [
-          "option{childWallets, false}",
-          "MM_first_day"
-        ],
-        [
-          "option{childWallets, true}",
-          "MM_WALLET",
-          "MM_EVENT_MEET_KOUME"
-        ],
-        [
-          "option{childWallets, false}",
           "MM_EVENT_MEET_KOUME"
         ]
       ],
@@ -13357,20 +11944,11 @@
     {
       "Id": "MM Blacksmith Razor Blade",
       "RequiredItems": [
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_2",
         "MM_EVENT_BLACKSMITH_ENABLED",
         "MM Blacksmith"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "MM_WALLET, 2"
-        ],
-        [
-          "option{childWallets, false}",
-          "MM_WALLET"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -13555,18 +12133,10 @@
     {
       "Id": "MM Goron Shop Item 1",
       "RequiredItems": [
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_1",
         "MM Goron Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "MM_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -13575,18 +12145,10 @@
     {
       "Id": "MM Goron Shop Item 2",
       "RequiredItems": [
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_1",
         "MM Goron Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "MM_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -13595,18 +12157,10 @@
     {
       "Id": "MM Goron Shop Item 3",
       "RequiredItems": [
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_1",
         "MM Goron Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "MM_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -13642,19 +12196,10 @@
       "Id": "MM Goron Village Scrub Bomb Bag",
       "RequiredItems": [
         "MM_MASK_GORON",
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_2",
         "MM Goron Village"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "MM_WALLET, 2"
-        ],
-        [
-          "option{childWallets, false}",
-          "MM_WALLET"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -13969,42 +12514,21 @@
     {
       "Id": "MM Great Bay Coast Fisherman HP",
       "RequiredItems": [
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_1",
         "MM_can_hookshot_short",
         "MM_EVENT_BOSS_GREAT_BAY",
         "MM Great Bay Coast"
       ],
       "ConditionalItems": [
         [
-          "option{childWallets, true}",
-          "MM_WALLET",
           "time{After_DAY1_AM_07_00}",
           "time{Before_NIGHT1_AM_04_00}"
         ],
         [
-          "option{childWallets, false}",
-          "time{After_DAY1_AM_07_00}",
-          "time{Before_NIGHT1_AM_04_00}"
-        ],
-        [
-          "option{childWallets, true}",
-          "MM_WALLET",
           "time{After_DAY2_AM_07_00}",
           "time{Before_NIGHT2_AM_04_00}"
         ],
         [
-          "option{childWallets, false}",
-          "time{After_DAY2_AM_07_00}",
-          "time{Before_NIGHT2_AM_04_00}"
-        ],
-        [
-          "option{childWallets, true}",
-          "MM_WALLET",
-          "time{After_DAY3_AM_07_00}",
-          "time{Before_NIGHT3_AM_04_00}"
-        ],
-        [
-          "option{childWallets, false}",
           "time{After_DAY3_AM_07_00}",
           "time{Before_NIGHT3_AM_04_00}"
         ]
@@ -14187,18 +12711,10 @@
     {
       "Id": "MM Zora Shop Item 1",
       "RequiredItems": [
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_1",
         "MM Zora Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "MM_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -14207,18 +12723,10 @@
     {
       "Id": "MM Zora Shop Item 2",
       "RequiredItems": [
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_1",
         "MM Zora Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "MM_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -14227,18 +12735,10 @@
     {
       "Id": "MM Zora Shop Item 3",
       "RequiredItems": [
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_1",
         "MM Zora Shop"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "MM_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -14852,19 +13352,11 @@
       "RequiredItems": [
         "MM_OCARINA",
         "MM_SONG_EPONA",
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_1",
         "MM_is_day",
         "MM Gorman Track Front"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "MM_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -15037,36 +13529,18 @@
     {
       "Id": "MM Ghost Hut HP",
       "RequiredItems": [
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_1",
         "MM Ghost Hut"
       ],
       "ConditionalItems": [
         [
-          "MM_has_arrows",
-          "option{childWallets, true}",
-          "MM_WALLET"
+          "MM_has_arrows"
         ],
         [
-          "MM_can_hookshot_short",
-          "option{childWallets, true}",
-          "MM_WALLET"
+          "MM_can_hookshot_short"
         ],
         [
-          "MM_can_use_deku_bubble",
-          "option{childWallets, true}",
-          "MM_WALLET"
-        ],
-        [
-          "MM_has_arrows",
-          "option{childWallets, false}"
-        ],
-        [
-          "MM_can_hookshot_short",
-          "option{childWallets, false}"
-        ],
-        [
-          "MM_can_use_deku_bubble",
-          "option{childWallets, false}"
+          "MM_can_use_deku_bubble"
         ]
       ],
       "TimeNeeded": "None",
@@ -18734,84 +17208,44 @@
           "OOT Death Mountain Crater Top"
         ],
         [
-          "OOT_can_hammer",
-          "OOT Hyrule Castle Grotto"
+          "OOT Fire Temple Pre-Boss",
+          "option{FireMQ, false}",
+          "OOT_has_tunic_goron"
         ],
         [
           "OOT Spirit Temple",
           "option{SpiritMQ, true}"
         ],
         [
-          "option{childWallets, false}",
-          "OOT_WALLET",
-          "OOT_EVENT_RUPEES",
-          "OOT Bombchu Bowling"
+          "OOT Hyrule Castle"
         ],
         [
-          "OOT_EVENT_RUPEES",
-          "OOT Bombchu Bowling",
-          "option{childWallets, true}",
-          "OOT_WALLET, 2"
+          "OOT Hyrule Field"
+        ],
+        [
+          "OOT Kokiri Forest"
+        ],
+        [
+          "OOT Zora River"
+        ],
+        [
+          "OOT Dampe Grave"
         ],
         [
           "OOT Shadow Temple Truth Spinner",
           "option{ShadowMQ, true}"
         ],
         [
-          "OOT Kokiri Forest"
-        ],
-        [
-          "OOT Dampe Grave"
-        ],
-        [
-          "OOT Hyrule Castle"
-        ],
-        [
-          "OOT Zora River"
-        ],
-        [
-          "OOT Hyrule Field"
+          "OOT Hyrule Castle Grotto",
+          "OOT_can_hammer"
         ],
         [
           "OOT_is_child",
           "OOT Gerudo Valley"
         ],
         [
-          "OOT Fire Temple Pre-Boss",
-          "option{FireMQ, false}",
-          "OOT_has_tunic_goron"
-        ],
-        [
-          "OOT Graveyard",
-          "OOT_can_cut_grass"
-        ],
-        [
-          "OOT Kakariko Generic Grotto",
-          "OOT_can_cut_grass"
-        ],
-        [
-          "OOT Lake Hylia",
-          "OOT_can_cut_grass"
-        ],
-        [
-          "OOT Kakariko",
-          "OOT_can_cut_grass"
-        ],
-        [
-          "OOT Lost Woods Deep",
-          "OOT_can_cut_grass"
-        ],
-        [
-          "OOT Lost Woods Generic Grotto",
-          "OOT_can_cut_grass"
-        ],
-        [
-          "OOT Lost Woods",
-          "OOT_can_cut_grass"
-        ],
-        [
-          "OOT Zora River Open Grotto",
-          "OOT_can_cut_grass"
+          "OOT_can_use_wallet_2",
+          "OOT Bombchu Bowling"
         ],
         [
           "OOT Death Mountain Crater Generic Grotto",
@@ -18826,20 +17260,52 @@
           "OOT_can_cut_grass"
         ],
         [
-          "OOT Zora River Front",
+          "OOT Hyrule Field Open Grotto",
+          "OOT_can_cut_grass"
+        ],
+        [
+          "OOT Kokiri Forest Storms Grotto",
+          "OOT_can_cut_grass"
+        ],
+        [
+          "OOT Lake Hylia",
+          "OOT_can_cut_grass"
+        ],
+        [
+          "OOT Zora River Open Grotto",
           "OOT_can_cut_grass"
         ],
         [
           "OOT_can_cut_grass",
-          "OOT Hyrule Field Open Grotto"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Kokiri Forest Storms Grotto"
+          "OOT Zora River Front"
         ],
         [
           "OOT_can_cut_grass",
           "OOT Death Mountain Storms Grotto"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Graveyard"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Kakariko Generic Grotto"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Kakariko"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Lost Woods Deep"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Lost Woods Generic Grotto"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Lost Woods"
         ]
       ],
       "TimeNeeded": "None",
@@ -20890,83 +19356,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "OOT Shadow Temple Pit",
-          "option{ShadowMQ, false}",
-          "trick{TRICK_OOT_LENS}"
-        ],
-        [
           "OOT Shadow Temple Truth Spinner",
           "option{ShadowMQ, true}"
         ],
         [
-          "OOT Hyrule Field Southeast Grotto",
-          "OOT_can_cut_grass"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Hyrule Field Open Grotto"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Zora River Front"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Zora River Open Grotto"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Kokiri Forest Storms Grotto"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Kakariko"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Lost Woods Deep"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Lost Woods Generic Grotto"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Lost Woods"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Graveyard"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Kakariko Generic Grotto"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Death Mountain Crater Generic Grotto"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Lake Hylia"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Death Mountain Storms Grotto"
-        ],
-        [
-          "OOT_can_cut_grass",
-          "OOT Hyrule Field Grotto Near Market"
-        ],
-        [
-          "OOT Fairy Fountain Double Magic",
+          "OOT Fairy Fountain Farore",
           "OOT_OCARINA",
           "OOT_SONG_ZELDA"
-        ],
-        [
-          "OOT_OCARINA",
-          "OOT_SONG_ZELDA",
-          "OOT Fairy Fountain Nayru"
         ],
         [
           "OOT_OCARINA",
@@ -20986,68 +19382,127 @@
         [
           "OOT_OCARINA",
           "OOT_SONG_ZELDA",
-          "OOT Fairy Fountain Farore"
+          "OOT Fairy Fountain Double Magic"
         ],
         [
-          "OOT Spirit Temple",
-          "option{SpiritMQ, true}"
-        ],
-        [
-          "OOT Spirit Temple",
-          "option{SpiritMQ, false}"
-        ],
-        [
-          "OOT Kokiri Forest"
-        ],
-        [
-          "OOT Hyrule Castle"
-        ],
-        [
-          "OOT Zora River"
+          "OOT_OCARINA",
+          "OOT_SONG_ZELDA",
+          "OOT Fairy Fountain Nayru"
         ],
         [
           "OOT Dampe Grave"
         ],
         [
+          "OOT Zora River"
+        ],
+        [
+          "OOT Hyrule Castle"
+        ],
+        [
           "OOT Hyrule Field"
         ],
         [
-          "OOT Death Mountain Crater Top",
-          "OOT_has_tunic_goron_strict"
+          "OOT Kokiri Forest"
         ],
         [
-          "OOT_is_child",
-          "OOT Gerudo Valley"
-        ],
-        [
-          "OOT_can_use_bow",
-          "OOT Gerudo Fortress Break Room Bottom"
-        ],
-        [
-          "OOT Gerudo Fortress Break Room Bottom",
-          "OOT_can_hookshot"
-        ],
-        [
-          "OOT Gerudo Fortress Break Room Bottom",
-          "OOT_GERUDO_CARD"
-        ],
-        [
-          "OOT_EVENT_RUPEES",
-          "option{childWallets, false}",
-          "OOT_WALLET",
+          "OOT_can_use_wallet_2",
           "OOT_has_bottle",
           "OOT Kakariko Granny Shop",
           "OOT_is_adult",
           "OOT_ODD_MUSHROOM"
         ],
         [
-          "OOT_EVENT_RUPEES",
-          "OOT_has_bottle",
-          "OOT Kakariko Granny Shop",
-          "OOT_is_adult",
-          "OOT_ODD_MUSHROOM",
-          "option{childWallets, true}",
-          "OOT_WALLET, 2"
+          "OOT_has_tunic_goron_strict",
+          "OOT Death Mountain Crater Top"
+        ],
+        [
+          "OOT Gerudo Valley",
+          "OOT_is_child"
+        ],
+        [
+          "option{SpiritMQ, false}",
+          "OOT Spirit Temple"
+        ],
+        [
+          "OOT Spirit Temple",
+          "option{SpiritMQ, true}"
+        ],
+        [
+          "OOT_GERUDO_CARD",
+          "OOT Gerudo Fortress Break Room Bottom"
+        ],
+        [
+          "OOT Gerudo Fortress Break Room Bottom",
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT Gerudo Fortress Break Room Bottom",
+          "OOT_can_hookshot"
+        ],
+        [
+          "trick{TRICK_OOT_LENS}",
+          "OOT Shadow Temple Pit",
+          "option{ShadowMQ, false}"
+        ],
+        [
+          "OOT Kakariko",
+          "OOT_can_cut_grass"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Lost Woods Deep"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Lost Woods Generic Grotto"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Lost Woods"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Zora River Open Grotto"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Death Mountain Storms Grotto"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Hyrule Field Grotto Near Market"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Hyrule Field Southeast Grotto"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Death Mountain Crater Generic Grotto"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Hyrule Field Open Grotto"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Kokiri Forest Storms Grotto"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Graveyard"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Zora River Front"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Lake Hylia"
+        ],
+        [
+          "OOT_can_cut_grass",
+          "OOT Kakariko Generic Grotto"
         ]
       ],
       "TimeNeeded": "None",
@@ -22518,27 +20973,14 @@
     },
     {
       "Id": "OOT_EVENT_BOMBCHUS",
-      "RequiredItems": [
-        "OOT_EVENT_RUPEES"
-      ],
+      "RequiredItems": [],
       "ConditionalItems": [
         [
-          "option{childWallets, true}",
-          "OOT_WALLET, 2",
+          "OOT_can_use_wallet_2",
           "OOT Haunted Wasteland Structure"
         ],
         [
-          "option{childWallets, false}",
-          "OOT_WALLET",
-          "OOT Haunted Wasteland Structure"
-        ],
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET",
-          "OOT Bombchu Bowling"
-        ],
-        [
-          "option{childWallets, false}",
+          "OOT_can_use_wallet_1",
           "OOT Bombchu Bowling"
         ]
       ],
@@ -25395,17 +23837,9 @@
       "RequiredItems": [
         "OOT_GERUDO_CARD",
         "OOT_is_adult",
-        "OOT_EVENT_RUPEES"
+        "OOT_can_use_wallet_1"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "OOT_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -32618,31 +31052,17 @@
     {
       "Id": "MM_EVENT_BUY_KEG",
       "RequiredItems": [
-        "MM_POWDER_KEG",
-        "MM_EVENT_RUPEES"
+        "MM_POWDER_KEG"
       ],
       "ConditionalItems": [
         [
           "MM_EVENT_POWDER_KEG_TRIAL",
-          "option{childWallets, true}",
-          "MM_WALLET, 2",
+          "MM_can_use_wallet_2",
           "MM Goron Village"
         ],
         [
-          "MM_EVENT_POWDER_KEG_TRIAL",
-          "option{childWallets, false}",
-          "MM_WALLET",
-          "MM Goron Village"
-        ],
-        [
-          "option{childWallets, true}",
-          "MM_WALLET",
           "MM_MASK_GORON",
-          "MM Bomb Shop"
-        ],
-        [
-          "option{childWallets, false}",
-          "MM_MASK_GORON",
+          "MM_can_use_wallet_1",
           "MM Bomb Shop"
         ]
       ],
@@ -32752,18 +31172,10 @@
       "Id": "MM_EVENT_PLAY_LOTTERY",
       "RequiredItems": [
         "MM_is_day",
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_1",
         "MM Lottery"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "MM_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -32790,74 +31202,32 @@
     {
       "Id": "MM_EVENT_MILK",
       "RequiredItems": [
-        "MM_EVENT_RUPEES"
+        "MM_can_use_wallet_1"
       ],
       "ConditionalItems": [
         [
-          "option{childWallets, true}",
-          "MM_WALLET",
           "MM_is_day",
           "MM Gorman Track Front"
         ],
         [
-          "option{childWallets, false}",
-          "MM_is_day",
-          "MM Gorman Track Front"
-        ],
-        [
-          "option{childWallets, true}",
-          "MM_WALLET",
           "time{After_NIGHT1_PM_10_00}",
           "time{Before_DAY2_AM_06_00}",
           "MM_MASK_ROMANI",
           "MM Milk Bar"
         ],
         [
-          "option{childWallets, false}",
-          "time{After_NIGHT1_PM_10_00}",
-          "time{Before_DAY2_AM_06_00}",
-          "MM_MASK_ROMANI",
-          "MM Milk Bar"
-        ],
-        [
-          "option{childWallets, true}",
-          "MM_WALLET",
           "MM_MASK_ROMANI",
           "MM Milk Bar",
           "time{After_NIGHT2_PM_10_00}",
           "time{Before_DAY3_AM_06_00}"
         ],
         [
-          "option{childWallets, false}",
-          "MM_MASK_ROMANI",
-          "MM Milk Bar",
-          "time{After_NIGHT2_PM_10_00}",
-          "time{Before_DAY3_AM_06_00}"
-        ],
-        [
-          "option{childWallets, true}",
-          "MM_WALLET",
           "MM_MASK_ROMANI",
           "MM Milk Bar",
           "time{After_NIGHT3_PM_06_00}",
           "time{Before_NIGHT3_PM_09_00}"
         ],
         [
-          "option{childWallets, false}",
-          "MM_MASK_ROMANI",
-          "MM Milk Bar",
-          "time{After_NIGHT3_PM_06_00}",
-          "time{Before_NIGHT3_PM_09_00}"
-        ],
-        [
-          "option{childWallets, true}",
-          "MM_WALLET",
-          "MM_MASK_ROMANI",
-          "MM Milk Bar",
-          "time{After_NIGHT3_PM_10_00}"
-        ],
-        [
-          "option{childWallets, false}",
           "MM_MASK_ROMANI",
           "MM Milk Bar",
           "time{After_NIGHT3_PM_10_00}"
@@ -32872,54 +31242,23 @@
       "Id": "MM_EVENT_CHATEAU",
       "RequiredItems": [
         "MM_MASK_ROMANI",
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_2",
         "MM Milk Bar"
       ],
       "ConditionalItems": [
         [
-          "option{childWallets, true}",
-          "MM_WALLET, 2",
           "time{After_NIGHT1_PM_10_00}",
           "time{Before_DAY2_AM_06_00}"
         ],
         [
-          "option{childWallets, false}",
-          "MM_WALLET",
-          "time{After_NIGHT1_PM_10_00}",
-          "time{Before_DAY2_AM_06_00}"
-        ],
-        [
-          "option{childWallets, true}",
-          "MM_WALLET, 2",
           "time{After_NIGHT2_PM_10_00}",
           "time{Before_DAY3_AM_06_00}"
         ],
         [
-          "option{childWallets, false}",
-          "MM_WALLET",
-          "time{After_NIGHT2_PM_10_00}",
-          "time{Before_DAY3_AM_06_00}"
-        ],
-        [
-          "option{childWallets, true}",
-          "MM_WALLET, 2",
           "time{After_NIGHT3_PM_06_00}",
           "time{Before_NIGHT3_PM_09_00}"
         ],
         [
-          "option{childWallets, false}",
-          "MM_WALLET",
-          "time{After_NIGHT3_PM_06_00}",
-          "time{Before_NIGHT3_PM_09_00}"
-        ],
-        [
-          "option{childWallets, true}",
-          "MM_WALLET, 2",
-          "time{After_NIGHT3_PM_10_00}"
-        ],
-        [
-          "option{childWallets, false}",
-          "MM_WALLET",
           "time{After_NIGHT3_PM_10_00}"
         ]
       ],
@@ -34006,18 +32345,10 @@
       "RequiredItems": [
         "MM_MAGIC_BEAN",
         "MM_MASK_DEKU",
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_1",
         "MM Swamp Front"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "MM_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -34589,18 +32920,10 @@
     {
       "Id": "MM_EVENT_MAGIC_BEANS_PALACE",
       "RequiredItems": [
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_1",
         "MM Deku Palace Grotto"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "MM_WALLET"
-        ],
-        [
-          "option{childWallets, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -35194,21 +33517,12 @@
     {
       "Id": "MM_EVENT_GOLD_DUST_USED",
       "RequiredItems": [
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_2",
         "MM_BOTTLED_GOLD_DUST",
         "MM_EVENT_BLACKSMITH_ENABLED",
         "MM Blacksmith"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "MM_WALLET, 2"
-        ],
-        [
-          "option{childWallets, false}",
-          "MM_WALLET"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -37191,19 +35505,10 @@
       "Id": "MM_EVENT_BLUE_POTION",
       "RequiredItems": [
         "MM_has_bottle",
-        "MM_EVENT_RUPEES",
+        "MM_can_use_wallet_2",
         "MM Ikana Valley"
       ],
-      "ConditionalItems": [
-        [
-          "option{childWallets, true}",
-          "MM_WALLET, 2"
-        ],
-        [
-          "option{childWallets, false}",
-          "MM_WALLET"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -42067,6 +40372,85 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT_can_use_wallet_1",
+      "RequiredItems": [
+        "OOT_EVENT_RUPEES"
+      ],
+      "ConditionalItems": [
+        [
+          "option{childWallets, true}",
+          "OOT_WALLET"
+        ],
+        [
+          "option{childWallets, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_can_use_wallet_2",
+      "RequiredItems": [
+        "OOT_EVENT_RUPEES"
+      ],
+      "ConditionalItems": [
+        [
+          "option{childWallets, true}",
+          "OOT_WALLET, 2"
+        ],
+        [
+          "option{childWallets, false}",
+          "OOT_WALLET"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_can_use_wallet_3",
+      "RequiredItems": [
+        "OOT_EVENT_RUPEES"
+      ],
+      "ConditionalItems": [
+        [
+          "option{childWallets, true}",
+          "OOT_WALLET, 3"
+        ],
+        [
+          "option{childWallets, false}",
+          "OOT_WALLET, 2"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_can_use_wallet_4",
+      "RequiredItems": [
+        "OOT_EVENT_RUPEES"
+      ],
+      "ConditionalItems": [
+        [
+          "option{childWallets, true}",
+          "OOT_WALLET, 4"
+        ],
+        [
+          "option{childWallets, false}",
+          "OOT_WALLET, 3"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM_is_day1",
       "RequiredItems": [
         "time{Before_NIGHT1_PM_06_00}"
@@ -43336,6 +41720,85 @@
         ],
         [
           "MM_can_oot_warp"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_can_use_wallet_1",
+      "RequiredItems": [
+        "MM_EVENT_RUPEES"
+      ],
+      "ConditionalItems": [
+        [
+          "option{childWallets, true}",
+          "MM_WALLET"
+        ],
+        [
+          "option{childWallets, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_can_use_wallet_2",
+      "RequiredItems": [
+        "MM_EVENT_RUPEES"
+      ],
+      "ConditionalItems": [
+        [
+          "option{childWallets, true}",
+          "MM_WALLET, 2"
+        ],
+        [
+          "option{childWallets, false}",
+          "MM_WALLET"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_can_use_wallet_3",
+      "RequiredItems": [
+        "MM_EVENT_RUPEES"
+      ],
+      "ConditionalItems": [
+        [
+          "option{childWallets, true}",
+          "MM_WALLET, 3"
+        ],
+        [
+          "option{childWallets, false}",
+          "MM_WALLET, 2"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_can_use_wallet_4",
+      "RequiredItems": [
+        "MM_EVENT_RUPEES"
+      ],
+      "ConditionalItems": [
+        [
+          "option{childWallets, true}",
+          "MM_WALLET, 4"
+        ],
+        [
+          "option{childWallets, false}",
+          "MM_WALLET, 3"
         ]
       ],
       "TimeNeeded": "None",
