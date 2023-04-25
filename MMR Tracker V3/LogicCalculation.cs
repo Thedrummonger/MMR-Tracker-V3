@@ -409,6 +409,10 @@ namespace MMR_Tracker_V3
                     if (!DoCheck) { return true; }
                     LogicFuntionValid = CheckContainsFunction(instance, Param.Split(",").Select(x => x.Trim()).ToArray());
                     break;
+                case "renewable":
+                    if (!DoCheck) { return true; }
+                    LogicFuntionValid = CheckRenewableFunction(instance, Param.Split(",").Select(x => x.Trim()).ToArray());
+                    break;
                 case "rand":
                 case "randomized":
                     if (!DoCheck) { return true; }
@@ -441,6 +445,18 @@ namespace MMR_Tracker_V3
             }
 
             return true;
+        }
+
+        private static bool CheckRenewableFunction(TrackerInstance instance, string[] strings)
+        {
+            var item = instance.GetItemByID(strings[0]);
+            if (item is null) { return false; }
+            if (item.GetTotalUsable(instance) < 1) { return false; }
+            return instance.LocationPool.Values.Any(x => 
+                x.CheckState == CheckState.Checked && 
+                (x.GetDictEntry(instance).Repeatable is not null && (bool)x.GetDictEntry(instance).Repeatable) && 
+                (x.Randomizeditem.OwningPlayer == -1) && 
+                x.Randomizeditem.Item == item.Id);
         }
 
         private static bool CheckIsRandomizedFunction(TrackerInstance instance, string[] strings)

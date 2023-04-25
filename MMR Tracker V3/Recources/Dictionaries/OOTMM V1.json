@@ -221,6 +221,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Kokiri Forest Cow"
@@ -240,6 +241,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Kokiri Shop Item 1"
@@ -259,6 +261,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Kokiri Shop Item 2"
@@ -278,6 +281,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Kokiri Shop Item 3"
@@ -297,6 +301,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Kokiri Shop Item 4"
@@ -316,6 +321,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Kokiri Shop Item 5"
@@ -335,6 +341,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Kokiri Shop Item 6"
@@ -354,6 +361,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Kokiri Shop Item 7"
@@ -373,6 +381,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Kokiri Shop Item 8"
@@ -544,6 +553,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Lost Woods Scrub Near Theater Left"
@@ -563,6 +573,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Lost Woods Scrub Near Theater Right"
@@ -639,6 +650,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Lost Woods Grotto Scrub Back"
@@ -848,6 +860,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Sacred Meadow Storms Grotto Front Scrub"
@@ -867,6 +880,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Sacred Meadow Storms Grotto Back Scrub"
@@ -1171,6 +1185,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Kakariko Cow"
@@ -1190,6 +1205,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Kakariko Bazaar Item 1"
@@ -1209,6 +1225,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Kakariko Bazaar Item 2"
@@ -1228,6 +1245,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Kakariko Bazaar Item 3"
@@ -1247,6 +1265,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Kakariko Bazaar Item 4"
@@ -1266,6 +1285,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Kakariko Bazaar Item 5"
@@ -1285,6 +1305,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Kakariko Bazaar Item 6"
@@ -1304,6 +1325,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Kakariko Bazaar Item 7"
@@ -1323,6 +1345,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Kakariko Bazaar Item 8"
@@ -1342,6 +1365,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Kakariko Potion Shop Item 1"
@@ -1361,6 +1385,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Kakariko Potion Shop Item 2"
@@ -1380,6 +1405,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Kakariko Potion Shop Item 3"
@@ -1399,6 +1425,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Kakariko Potion Shop Item 4"
@@ -1418,6 +1445,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Kakariko Potion Shop Item 5"
@@ -1437,6 +1465,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Kakariko Potion Shop Item 6"
@@ -1456,6 +1485,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Kakariko Potion Shop Item 7"
@@ -1475,6 +1505,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Kakariko Potion Shop Item 8"
@@ -1874,6 +1905,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Death Mountain Cow"
@@ -2083,6 +2115,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Goron City Grotto Left Scrub"
@@ -2102,6 +2135,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Goron City Grotto Center Scrub"
@@ -2121,6 +2155,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Goron City Grotto Right Scrub"
@@ -2140,6 +2175,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Goron Shop Item 1"
@@ -2159,6 +2195,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Goron Shop Item 2"
@@ -2178,6 +2215,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Goron Shop Item 3"
@@ -2197,6 +2235,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Goron Shop Item 4"
@@ -2216,6 +2255,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Goron Shop Item 5"
@@ -2235,6 +2275,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Goron Shop Item 6"
@@ -2254,6 +2295,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Goron Shop Item 7"
@@ -2273,6 +2315,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Goron Shop Item 8"
@@ -2368,6 +2411,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Death Mountain Crater Scrub Child"
@@ -2387,6 +2431,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Death Mountain Crater Grotto Left Scrub"
@@ -2406,6 +2451,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Death Mountain Crater Grotto Center Scrub"
@@ -2425,6 +2471,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Death Mountain Crater Grotto Right Scrub"
@@ -2596,6 +2643,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Zora River Storms Grotto Front Scrub"
@@ -2615,6 +2663,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Zora River Storms Grotto Back Scrub"
@@ -2805,6 +2854,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Zora Shop Item 1"
@@ -2824,6 +2874,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Zora Shop Item 2"
@@ -2843,6 +2894,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Zora Shop Item 3"
@@ -2862,6 +2914,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Zora Shop Item 4"
@@ -2881,6 +2934,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Zora Shop Item 5"
@@ -2900,6 +2954,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Zora Shop Item 6"
@@ -2919,6 +2974,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Zora Shop Item 7"
@@ -2938,6 +2994,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Zora Shop Item 8"
@@ -3109,6 +3166,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Lake Hylia Grotto Left Scrub"
@@ -3128,6 +3186,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Lake Hylia Grotto Center Scrub"
@@ -3147,6 +3206,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Lake Hylia Grotto Right Scrub"
@@ -3470,6 +3530,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Lon Lon Ranch Stables Cow Left"
@@ -3489,6 +3550,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Lon Lon Ranch Stables Cow Right"
@@ -3508,6 +3570,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Lon Lon Ranch Silo Cow Front"
@@ -3527,6 +3590,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Lon Lon Ranch Silo Cow Back"
@@ -3546,6 +3610,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Lon Lon Ranch Grotto Left Scrub"
@@ -3565,6 +3630,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Lon Lon Ranch Grotto Center Scrub"
@@ -3584,6 +3650,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Lon Lon Ranch Grotto Right Scrub"
@@ -3774,6 +3841,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Hyrule Field Cow"
@@ -3850,6 +3918,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Market Bazaar Item 1"
@@ -3869,6 +3938,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Market Bazaar Item 2"
@@ -3888,6 +3958,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Market Bazaar Item 3"
@@ -3907,6 +3978,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Market Bazaar Item 4"
@@ -3926,6 +3998,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Market Bazaar Item 5"
@@ -3945,6 +4018,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Market Bazaar Item 6"
@@ -3964,6 +4038,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Market Bazaar Item 7"
@@ -3983,6 +4058,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Market Bazaar Item 8"
@@ -4002,6 +4078,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Market Potion Shop Item 1"
@@ -4021,6 +4098,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Market Potion Shop Item 2"
@@ -4040,6 +4118,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Market Potion Shop Item 3"
@@ -4059,6 +4138,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Market Potion Shop Item 4"
@@ -4078,6 +4158,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Market Potion Shop Item 5"
@@ -4097,6 +4178,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Market Potion Shop Item 6"
@@ -4116,6 +4198,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Market Potion Shop Item 7"
@@ -4135,6 +4218,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Market Potion Shop Item 8"
@@ -4154,6 +4238,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Market Bombchu Shop Item 1"
@@ -4173,6 +4258,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Market Bombchu Shop Item 2"
@@ -4192,6 +4278,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Market Bombchu Shop Item 3"
@@ -4211,6 +4298,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Market Bombchu Shop Item 4"
@@ -4230,6 +4318,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Market Bombchu Shop Item 5"
@@ -4249,6 +4338,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Market Bombchu Shop Item 6"
@@ -4268,6 +4358,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Market Bombchu Shop Item 7"
@@ -4287,6 +4378,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Market Bombchu Shop Item 8"
@@ -4648,6 +4740,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Gerudo Valley Grotto Front Scrub"
@@ -4667,6 +4760,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Gerudo Valley Grotto Back Scrub"
@@ -4762,6 +4856,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Gerudo Valley Cow"
@@ -4952,6 +5047,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Desert Colossus Grotto Front Scrub"
@@ -4971,6 +5067,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Desert Colossus Grotto Back Scrub"
@@ -5579,6 +5676,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Dodongo Cavern Lobby Scrub"
@@ -5598,6 +5696,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Dodongo Cavern Green Side Room Scrub"
@@ -5617,6 +5716,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Dodongo Cavern Bomb Bag Side Room Left Scrub"
@@ -5636,6 +5736,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Dodongo Cavern Bomb Bag Side Room Right Scrub"
@@ -5864,6 +5965,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Jabu-Jabu Scrub"
@@ -9341,6 +9443,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Ganon Castle Leftmost Scrub"
@@ -9360,6 +9463,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Ganon Castle Left-Center Scrub"
@@ -9379,6 +9483,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Ganon Castle Right-Center Scrub"
@@ -9398,6 +9503,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT Ganon Castle Rightmost Scrub"
@@ -9550,6 +9656,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT MQ Deku Tree Scrub"
@@ -9759,6 +9866,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT MQ Dodongo Cavern Lobby Scrub Front"
@@ -9778,6 +9886,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT MQ Dodongo Cavern Lobby Scrub Back"
@@ -9797,6 +9906,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT MQ Dodongo Cavern Staircase Scrub"
@@ -9816,6 +9926,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT MQ Dodongo Cavern Tunnel Side Scrub"
@@ -10215,6 +10326,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT MQ Jabu-Jabu Cow"
@@ -12913,6 +13025,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT MQ Ganon Castle Leftmost Scrub"
@@ -12932,6 +13045,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT MQ Ganon Castle Left-Center Scrub"
@@ -12951,6 +13065,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT MQ Ganon Castle Center Scrub"
@@ -12970,6 +13085,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT MQ Ganon Castle Right-Center Scrub"
@@ -12989,6 +13105,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT MQ Ganon Castle Rightmost Scrub"
@@ -13027,6 +13144,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM Tingle Map Clock Town"
@@ -13059,6 +13177,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM Tingle Map Woodfall"
@@ -13091,6 +13210,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM Tingle Map Snowhead"
@@ -13123,6 +13243,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM Tingle Map Ranch"
@@ -13155,6 +13276,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM Tingle Map Great Bay"
@@ -13187,6 +13309,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM Tingle Map Ikana"
@@ -13998,6 +14121,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM Trading Post Item 1"
@@ -14017,6 +14141,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM Trading Post Item 2"
@@ -14036,6 +14161,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM Trading Post Item 3"
@@ -14055,6 +14181,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM Trading Post Item 4"
@@ -14074,6 +14201,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM Trading Post Item 5"
@@ -14093,6 +14221,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM Trading Post Item 6"
@@ -14112,6 +14241,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM Trading Post Item 7"
@@ -14131,6 +14261,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM Trading Post Item 8"
@@ -14150,6 +14281,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM Bomb Shop Item 1"
@@ -14169,6 +14301,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM Bomb Shop Item 2"
@@ -14587,6 +14720,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM Termina Field Cow Front"
@@ -14606,6 +14740,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM Termina Field Cow Back"
@@ -14815,6 +14950,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM Swamp Potion Shop Item 1"
@@ -14834,6 +14970,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM Swamp Potion Shop Item 2"
@@ -14853,6 +14990,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM Swamp Potion Shop Item 3"
@@ -15974,6 +16112,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM Goron Shop Item 1"
@@ -15993,6 +16132,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM Goron Shop Item 2"
@@ -16012,6 +16152,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM Goron Shop Item 3"
@@ -16240,6 +16381,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM Romani Ranch Barn Cow Left"
@@ -16259,6 +16401,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM Romani Ranch Barn Cow Right Front"
@@ -16278,6 +16421,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM Romani Ranch Barn Cow Right Back"
@@ -16430,6 +16574,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM Great Bay Coast Cow Front"
@@ -16449,6 +16594,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM Great Bay Coast Cow Back"
@@ -16658,6 +16804,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM Zora Shop Item 1"
@@ -16677,6 +16824,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM Zora Shop Item 2"
@@ -16696,6 +16844,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM Zora Shop Item 3"
@@ -19438,6 +19587,7 @@
       "ValidItemTypes": [
         "item"
       ],
+      "Repeatable": true,
       "SpoilerData": {
         "SpoilerLogNames": [
           "MM Beneath the Well Cow"
@@ -38547,18 +38697,30 @@
               "ReplacementList": {
                 "OOT_NUT": "SHARED_NUT",
                 "MM_NUT": "SHARED_NUT",
+                "renewable{OOT_NUT}": "renewable{SHARED_NUT}",
+                "renewable{MM_NUT}": "renewable{SHARED_NUT}",
                 "OOT_NUTS_5": "SHARED_NUTS_5",
                 "MM_NUTS_5": "SHARED_NUTS_5",
+                "renewable{OOT_NUTS_5}": "renewable{SHARED_NUTS_5}",
+                "renewable{MM_NUTS_5}": "renewable{SHARED_NUTS_5}",
                 "OOT_NUTS_5_ALT": "SHARED_NUTS_5_ALT",
                 "MM_NUTS_5_ALT": "SHARED_NUTS_5_ALT",
                 "OOT_NUTS_10": "SHARED_NUTS_10",
                 "MM_NUTS_10": "SHARED_NUTS_10",
+                "renewable{OOT_NUTS_10}": "renewable{SHARED_NUTS_10}",
+                "renewable{MM_NUTS_10}": "renewable{SHARED_NUTS_10}",
                 "OOT_STICK": "SHARED_STICK",
                 "MM_STICK": "SHARED_STICK",
+                "renewable{OOT_STICK}": "renewable{SHARED_STICK}",
+                "renewable{MM_STICK}": "renewable{SHARED_STICK}",
                 "OOT_STICKS_5": "SHARED_STICKS_5",
                 "MM_STICKS_5": "SHARED_STICKS_5",
+                "renewable{OOT_STICKS_5}": "renewable{SHARED_STICKS_5}",
+                "renewable{MM_STICKS_5}": "renewable{SHARED_STICKS_5}",
                 "OOT_STICKS_10": "SHARED_STICKS_10",
-                "MM_STICKS_10": "SHARED_STICKS_10"
+                "MM_STICKS_10": "SHARED_STICKS_10",
+                "renewable{OOT_STICKS_10}": "renewable{SHARED_STICKS_10}",
+                "renewable{MM_STICKS_10}": "renewable{SHARED_STICKS_10}"
               }
             }
           ],
@@ -38636,10 +38798,6 @@
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {
-            "SHARED_BOW": {
-              "action": "set",
-              "amount": 0
-            },
             "SHARED_ARROWS_5": {
               "action": "set",
               "amount": 0
@@ -38655,6 +38813,10 @@
             "SHARED_ARROWS_40": {
               "action": "set",
               "amount": 0
+            },
+            "SHARED_BOW": {
+              "action": "set",
+              "amount": 0
             }
           },
           "VariableEdit": {}
@@ -38665,6 +38827,22 @@
               "LocationWhitelist": [],
               "LocationBlacklist": [],
               "ReplacementList": {
+                "OOT_ARROWS_5": "SHARED_ARROWS_5",
+                "MM_ARROWS_5": "SHARED_ARROWS_5",
+                "renewable{OOT_ARROWS_5}": "renewable{SHARED_ARROWS_5}",
+                "renewable{MM_ARROWS_5}": "renewable{SHARED_ARROWS_5}",
+                "OOT_ARROWS_10": "SHARED_ARROWS_10",
+                "MM_ARROWS_10": "SHARED_ARROWS_10",
+                "renewable{OOT_ARROWS_10}": "renewable{SHARED_ARROWS_10}",
+                "renewable{MM_ARROWS_10}": "renewable{SHARED_ARROWS_10}",
+                "OOT_ARROWS_30": "SHARED_ARROWS_30",
+                "MM_ARROWS_30": "SHARED_ARROWS_30",
+                "renewable{OOT_ARROWS_30}": "renewable{SHARED_ARROWS_30}",
+                "renewable{MM_ARROWS_30}": "renewable{SHARED_ARROWS_30}",
+                "OOT_ARROWS_40": "SHARED_ARROWS_40",
+                "MM_ARROWS_40": "SHARED_ARROWS_40",
+                "renewable{OOT_ARROWS_40}": "renewable{SHARED_ARROWS_40}",
+                "renewable{MM_ARROWS_40}": "renewable{SHARED_ARROWS_40}",
                 "OOT_BOW": "SHARED_BOW",
                 "MM_BOW": "SHARED_BOW"
               }
@@ -38673,14 +38851,6 @@
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {
-            "OOT_BOW": {
-              "action": "set",
-              "amount": 0
-            },
-            "MM_BOW": {
-              "action": "set",
-              "amount": 0
-            },
             "OOT_ARROWS_5": {
               "action": "set",
               "amount": 0
@@ -38712,6 +38882,14 @@
             "MM_ARROWS_40": {
               "action": "set",
               "amount": 0
+            },
+            "OOT_BOW": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_BOW": {
+              "action": "set",
+              "amount": 0
             }
           },
           "VariableEdit": {}
@@ -38728,10 +38906,6 @@
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {
-            "SHARED_BOMB_BAG": {
-              "action": "set",
-              "amount": 0
-            },
             "SHARED_BOMBS_5": {
               "action": "set",
               "amount": 0
@@ -38751,6 +38925,10 @@
             "SHARED_BOMB": {
               "action": "set",
               "amount": 0
+            },
+            "SHARED_BOMB_BAG": {
+              "action": "set",
+              "amount": 0
             }
           },
           "VariableEdit": {}
@@ -38761,6 +38939,26 @@
               "LocationWhitelist": [],
               "LocationBlacklist": [],
               "ReplacementList": {
+                "OOT_BOMBS_5": "SHARED_BOMBS_5",
+                "MM_BOMBS_5": "SHARED_BOMBS_5",
+                "renewable{OOT_BOMBS_5}": "renewable{SHARED_BOMBS_5}",
+                "renewable{MM_BOMBS_5}": "renewable{SHARED_BOMBS_5}",
+                "OOT_BOMBS_10": "SHARED_BOMBS_10",
+                "MM_BOMBS_10": "SHARED_BOMBS_10",
+                "renewable{OOT_BOMBS_10}": "renewable{SHARED_BOMBS_10}",
+                "renewable{MM_BOMBS_10}": "renewable{SHARED_BOMBS_10}",
+                "OOT_BOMBS_20": "SHARED_BOMBS_20",
+                "MM_BOMBS_20": "SHARED_BOMBS_20",
+                "renewable{OOT_BOMBS_20}": "renewable{SHARED_BOMBS_20}",
+                "renewable{MM_BOMBS_20}": "renewable{SHARED_BOMBS_20}",
+                "OOT_BOMBS_30": "SHARED_BOMBS_30",
+                "MM_BOMBS_30": "SHARED_BOMBS_30",
+                "renewable{OOT_BOMBS_30}": "renewable{SHARED_BOMBS_30}",
+                "renewable{MM_BOMBS_30}": "renewable{SHARED_BOMBS_30}",
+                "OOT_BOMB": "SHARED_BOMB",
+                "MM_BOMB": "SHARED_BOMB",
+                "renewable{OOT_BOMB}": "renewable{SHARED_BOMB}",
+                "renewable{MM_BOMB}": "renewable{SHARED_BOMB}",
                 "OOT_BOMB_BAG": "SHARED_BOMB_BAG",
                 "MM_BOMB_BAG": "SHARED_BOMB_BAG"
               }
@@ -38769,14 +38967,6 @@
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {
-            "OOT_BOMB_BAG": {
-              "action": "set",
-              "amount": 0
-            },
-            "MM_BOMB_BAG": {
-              "action": "set",
-              "amount": 0
-            },
             "OOT_BOMBS_5": {
               "action": "set",
               "amount": 0
@@ -38814,6 +39004,14 @@
               "amount": 0
             },
             "MM_BOMB": {
+              "action": "set",
+              "amount": 0
+            },
+            "OOT_BOMB_BAG": {
+              "action": "set",
+              "amount": 0
+            },
+            "MM_BOMB_BAG": {
               "action": "set",
               "amount": 0
             }
@@ -42194,336 +42392,6 @@
       "SubCategory": "Ganon Boss Key Conditions",
       "Static": false,
       "Value": 0
-    },
-    "MM_ANY_Stick": {
-      "Static": true,
-      "Value": [
-        "MM_STICK",
-        "SHARED_STICK",
-        "MM_STICKS_5",
-        "SHARED_STICKS_5",
-        "MM_STICKS_10",
-        "SHARED_STICKS_10"
-      ]
-    },
-    "OOT_ANY_Stick": {
-      "Static": true,
-      "Value": [
-        "OOT_STICK",
-        "SHARED_STICK",
-        "OOT_STICKS_5",
-        "SHARED_STICKS_5",
-        "OOT_STICKS_10",
-        "SHARED_STICKS_10"
-      ]
-    },
-    "MM_ANY_Nut": {
-      "Static": true,
-      "Value": [
-        "MM_NUTS_5",
-        "SHARED_NUTS_5",
-        "MM_NUTS_10",
-        "SHARED_NUTS_10",
-        "MM_NUT",
-        "SHARED_NUT"
-      ]
-    },
-    "OOT_ANY_Nut": {
-      "Static": true,
-      "Value": [
-        "OOT_NUTS_5",
-        "SHARED_NUTS_5",
-        "OOT_NUTS_10",
-        "SHARED_NUTS_10",
-        "OOT_NUT",
-        "SHARED_NUT"
-      ]
-    },
-    "MM_ANY_Bomb": {
-      "Static": true,
-      "Value": [
-        "MM_BOMB",
-        "SHARED_BOMB",
-        "MM_BOMBS_5",
-        "SHARED_BOMBS_5",
-        "MM_BOMBS_10",
-        "SHARED_BOMBS_10",
-        "MM_BOMBS_20",
-        "SHARED_BOMBS_20",
-        "MM_BOMBS_30",
-        "SHARED_BOMBS_30"
-      ]
-    },
-    "OOT_ANY_Bomb": {
-      "Static": true,
-      "Value": [
-        "OOT_BOMB",
-        "SHARED_BOMB",
-        "OOT_BOMBS_5",
-        "SHARED_BOMBS_5",
-        "OOT_BOMBS_10",
-        "SHARED_BOMBS_10",
-        "OOT_BOMBS_20",
-        "SHARED_BOMBS_20",
-        "OOT_BOMBS_30",
-        "SHARED_BOMBS_30"
-      ]
-    },
-    "MM_ANY_Arrow": {
-      "Static": true,
-      "Value": [
-        "MM_ARROWS_5",
-        "SHARED_ARROWS_5",
-        "MM_ARROWS_10",
-        "SHARED_ARROWS_10",
-        "MM_ARROWS_30",
-        "SHARED_ARROWS_30",
-        "MM_ARROWS_40",
-        "SHARED_ARROWS_40"
-      ]
-    },
-    "OOT_ANY_Arrow": {
-      "Static": true,
-      "Value": [
-        "OOT_ARROWS_5",
-        "SHARED_ARROWS_5",
-        "OOT_ARROWS_10",
-        "SHARED_ARROWS_10",
-        "OOT_ARROWS_30",
-        "SHARED_ARROWS_30",
-        "OOT_ARROWS_40",
-        "SHARED_ARROWS_40"
-      ]
-    },
-    "MM_ANY_Seed": {
-      "Static": true,
-      "Value": [
-        "MM_DEKU_SEEDS_5",
-        "SHARED_DEKU_SEEDS_5",
-        "MM_DEKU_SEEDS_30",
-        "SHARED_DEKU_SEEDS_30"
-      ]
-    },
-    "OOT_ANY_Seed": {
-      "Static": true,
-      "Value": [
-        "OOT_DEKU_SEEDS_5",
-        "SHARED_DEKU_SEEDS_5",
-        "OOT_DEKU_SEEDS_30",
-        "SHARED_DEKU_SEEDS_30"
-      ]
-    },
-    "MM_ANY_Bombchu": {
-      "Static": true,
-      "Value": [
-        "MM_BOMBCHU_5",
-        "SHARED_BOMBCHU_5",
-        "MM_BOMBCHU_10",
-        "SHARED_BOMBCHU_10",
-        "MM_BOMBCHU_20",
-        "SHARED_BOMBCHU_20",
-        "MM_BOMBCHU",
-        "SHARED_BOMBCHU"
-      ]
-    },
-    "OOT_ANY_Bombchu": {
-      "Static": true,
-      "Value": [
-        "OOT_BOMBCHU_5",
-        "SHARED_BOMBCHU_5",
-        "OOT_BOMBCHU_10",
-        "SHARED_BOMBCHU_10",
-        "OOT_BOMBCHU_20",
-        "SHARED_BOMBCHU_20",
-        "OOT_BOMBCHU",
-        "SHARED_BOMBCHU"
-      ]
-    },
-    "MM_ANY_DekuShield": {
-      "Static": true,
-      "Value": [
-        "MM_SHIELD_DEKU",
-        "SHARED_SHIELD_DEKU"
-      ]
-    },
-    "OOT_ANY_DekuShield": {
-      "Static": true,
-      "Value": [
-        "OOT_SHIELD_DEKU",
-        "SHARED_SHIELD_DEKU"
-      ]
-    },
-    "MM_ANY_HylianShield": {
-      "Static": true,
-      "Value": [
-        "MM_SHIELD_HYLIAN",
-        "SHARED_SHIELD_HYLIAN"
-      ]
-    },
-    "OOT_ANY_HylianShield": {
-      "Static": true,
-      "Value": [
-        "OOT_SHIELD_HYLIAN",
-        "SHARED_SHIELD_HYLIAN"
-      ]
-    },
-    "MM_ANY_Milk": {
-      "Static": true,
-      "Value": [
-        "MM_MILK",
-        "SHARED_MILK"
-      ]
-    },
-    "OOT_ANY_Milk": {
-      "Static": true,
-      "Value": [
-        "OOT_MILK",
-        "SHARED_MILK"
-      ]
-    },
-    "MM_ANY_RedPotion": {
-      "Static": true,
-      "Value": [
-        "MM_POTION_RED",
-        "SHARED_POTION_RED"
-      ]
-    },
-    "OOT_ANY_RedPotion": {
-      "Static": true,
-      "Value": [
-        "OOT_POTION_RED",
-        "SHARED_POTION_RED"
-      ]
-    },
-    "MM_ANY_GreenPotion": {
-      "Static": true,
-      "Value": [
-        "MM_POTION_GREEN",
-        "SHARED_POTION_GREEN"
-      ]
-    },
-    "OOT_ANY_GreenPotion": {
-      "Static": true,
-      "Value": [
-        "OOT_POTION_GREEN",
-        "SHARED_POTION_GREEN"
-      ]
-    },
-    "MM_ANY_BluePotion": {
-      "Static": true,
-      "Value": [
-        "MM_POTION_BLUE",
-        "SHARED_POTION_BLUE"
-      ]
-    },
-    "OOT_ANY_BluePotion": {
-      "Static": true,
-      "Value": [
-        "OOT_POTION_BLUE",
-        "SHARED_POTION_BLUE"
-      ]
-    },
-    "MM_ANY_Fairy": {
-      "Static": true,
-      "Value": [
-        "MM_FAIRY",
-        "SHARED_FAIRY"
-      ]
-    },
-    "OOT_ANY_Fairy": {
-      "Static": true,
-      "Value": [
-        "OOT_FAIRY",
-        "SHARED_FAIRY"
-      ]
-    },
-    "MM_ANY_Fish": {
-      "Static": true,
-      "Value": [
-        "MM_FISH",
-        "SHARED_FISH"
-      ]
-    },
-    "OOT_ANY_Fish": {
-      "Static": true,
-      "Value": [
-        "OOT_FISH",
-        "SHARED_FISH"
-      ]
-    },
-    "MM_ANY_Bug": {
-      "Static": true,
-      "Value": [
-        "MM_BUG",
-        "SHARED_BUG",
-        "MM_BUGS",
-        "SHARED_BUGS"
-      ]
-    },
-    "OOT_ANY_Bug": {
-      "Static": true,
-      "Value": [
-        "OOT_BUG",
-        "SHARED_BUG",
-        "OOT_BUGS",
-        "SHARED_BUGS"
-      ]
-    },
-    "MM_ANY_BlueFire": {
-      "Static": true,
-      "Value": [
-        "MM_BLUE_FIRE",
-        "SHARED_BLUE_FIRE"
-      ]
-    },
-    "OOT_ANY_BlueFire": {
-      "Static": true,
-      "Value": [
-        "OOT_BLUE_FIRE",
-        "SHARED_BLUE_FIRE"
-      ]
-    },
-    "MM_ANY_Poe": {
-      "Static": true,
-      "Value": [
-        "MM_POE",
-        "SHARED_POE"
-      ]
-    },
-    "OOT_ANY_Poe": {
-      "Static": true,
-      "Value": [
-        "OOT_POE",
-        "SHARED_POE"
-      ]
-    },
-    "MM_ANY_HeroShield": {
-      "Static": true,
-      "Value": [
-        "MM_SHIELD_HERO",
-        "SHARED_SHIELD_HERO"
-      ]
-    },
-    "OOT_ANY_HeroShield": {
-      "Static": true,
-      "Value": [
-        "OOT_SHIELD_HERO",
-        "SHARED_SHIELD_HERO"
-      ]
-    },
-    "MM_ANY_Chateau": {
-      "Static": true,
-      "Value": [
-        "MM_CHATEAU",
-        "SHARED_CHATEAU"
-      ]
-    },
-    "OOT_ANY_Chateau": {
-      "Static": true,
-      "Value": [
-        "OOT_CHATEAU",
-        "SHARED_CHATEAU"
-      ]
     }
   },
   "AdditionalLogic": [

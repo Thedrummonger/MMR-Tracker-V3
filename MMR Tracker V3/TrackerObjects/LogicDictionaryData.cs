@@ -59,6 +59,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string Area { get; set; }
             public string[] ValidItemTypes { get; set; } = Array.Empty<string>();
             public bool? IgnoreForSettingString { get; set; } = null;
+            public bool? Repeatable { get; set; } = null;
             public SpoilerlogReference SpoilerData { get; set; } = new SpoilerlogReference();
             public List<DictLocationProxy> LocationProxys { get; set; } = new List<DictLocationProxy>();
             public string GetName(LogicObjects.TrackerInstance instance)
