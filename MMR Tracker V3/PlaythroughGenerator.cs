@@ -1,4 +1,5 @@
 ﻿using MMR_Tracker_V3.TrackerObjects;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -46,7 +47,7 @@ namespace MMR_Tracker_V3
             var AvailableEntrances = getAllAvailableEntrances(_Instance.Instance, _Instance.logicCalculation.AutoObtainedObjects);
             var AquiredMacros = _Instance.Instance.MacroPool.Values.Where(x => x.Aquired && !Playthrough.ContainsKey(x.ID));
 
-            while (AvailableLocations.Any() || AvailableEntrances.Any())
+            while (AvailableLocations.Any() || AvailableEntrances.Any() || AquiredMacros.Any())
             {
                 //Debug.WriteLine($"Sphere: {Sphere} ============================================");
                 foreach (var i in AvailableEntrances)
@@ -148,6 +149,7 @@ namespace MMR_Tracker_V3
             }
             else
             {
+                if (Testing.IsDevUser()) { File.WriteAllText(Testing.CretaeTestingFile("PlaythroughDEBUG"), JsonConvert.SerializeObject(Playthrough, Testing._NewtonsoftJsonSerializerOptions)); }
                 return false;
             }
 
