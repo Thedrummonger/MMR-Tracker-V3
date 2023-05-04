@@ -40721,7 +40721,11 @@
                 "OOT_WALLET": "SHARED_WALLET",
                 "MM_WALLET": "SHARED_WALLET",
                 "OOT_WALLET, 2": "SHARED_WALLET, 2",
-                "MM_WALLET, 2": "SHARED_WALLET, 2"
+                "MM_WALLET, 2": "SHARED_WALLET, 2",
+                "OOT_WALLET, 3": "SHARED_WALLET, 3",
+                "MM_WALLET, 3": "SHARED_WALLET, 3",
+                "OOT_WALLET, 4": "SHARED_WALLET, 4",
+                "MM_WALLET, 4": "SHARED_WALLET, 4"
               }
             }
           ],
@@ -41179,9 +41183,9 @@
             "moon_req": {
               "action": "add",
               "EditValue": [
-                "OOT_STONE_EMERALD",
-                "OOT_STONE_RUBY",
-                "OOT_STONE_SAPPHIRE"
+                "OOT_STONE_EMERALD, 1",
+                "OOT_STONE_RUBY, 1",
+                "OOT_STONE_SAPPHIRE, 1"
               ]
             }
           }
@@ -41209,12 +41213,12 @@
             "moon_req": {
               "action": "add",
               "EditValue": [
-                "OOT_MEDALLION_LIGHT",
-                "OOT_MEDALLION_FOREST",
-                "OOT_MEDALLION_FIRE",
-                "OOT_MEDALLION_WATER",
-                "OOT_MEDALLION_SPIRIT",
-                "OOT_MEDALLION_SHADOW"
+                "OOT_MEDALLION_LIGHT, 1",
+                "OOT_MEDALLION_FOREST, 1",
+                "OOT_MEDALLION_FIRE, 1",
+                "OOT_MEDALLION_WATER, 1",
+                "OOT_MEDALLION_SPIRIT, 1",
+                "OOT_MEDALLION_SHADOW, 1"
               ]
             }
           }
@@ -41242,10 +41246,10 @@
             "moon_req": {
               "action": "add",
               "EditValue": [
-                "MM_REMAINS_ODOLWA",
-                "MM_REMAINS_GOHT",
-                "MM_REMAINS_GYORG",
-                "MM_REMAINS_TWINMOLD"
+                "MM_REMAINS_ODOLWA, 1",
+                "MM_REMAINS_GOHT, 1",
+                "MM_REMAINS_GYORG, 1",
+                "MM_REMAINS_TWINMOLD, 1"
               ]
             }
           }
@@ -41497,29 +41501,29 @@
             "moon_req": {
               "action": "add",
               "EditValue": [
-                "MM_MASK_CAPTAIN",
-                "MM_MASK_GIANT",
-                "MM_MASK_ALL_NIGHT",
-                "MM_MASK_BUNNY",
-                "MM_MASK_KEATON",
-                "MM_MASK_GARO",
-                "MM_MASK_ROMANI",
-                "MM_MASK_TROUPE_LEADER",
-                "MM_MASK_POSTMAN",
-                "MM_MASK_COUPLE",
-                "MM_MASK_GREAT_FAIRY",
-                "MM_MASK_GIBDO",
-                "MM_MASK_DON_GERO",
-                "MM_MASK_KAMARO",
-                "MM_MASK_TRUTH",
-                "MM_MASK_STONE",
-                "MM_MASK_BREMEN",
-                "MM_MASK_BLAST",
-                "MM_MASK_SCENTS",
-                "MM_MASK_KAFEI",
-                "SHARED_MASK_TRUTH",
-                "SHARED_MASK_BUNNY",
-                "SHARED_MASK_KEATON"
+                "MM_MASK_CAPTAIN, 1",
+                "MM_MASK_GIANT, 1",
+                "MM_MASK_ALL_NIGHT, 1",
+                "MM_MASK_BUNNY, 1",
+                "MM_MASK_KEATON, 1",
+                "MM_MASK_GARO, 1",
+                "MM_MASK_ROMANI, 1",
+                "MM_MASK_TROUPE_LEADER, 1",
+                "MM_MASK_POSTMAN, 1",
+                "MM_MASK_COUPLE, 1",
+                "MM_MASK_GREAT_FAIRY, 1",
+                "MM_MASK_GIBDO, 1",
+                "MM_MASK_DON_GERO, 1",
+                "MM_MASK_KAMARO, 1",
+                "MM_MASK_TRUTH, 1",
+                "MM_MASK_STONE, 1",
+                "MM_MASK_BREMEN, 1",
+                "MM_MASK_BLAST, 1",
+                "MM_MASK_SCENTS, 1",
+                "MM_MASK_KAFEI, 1",
+                "SHARED_MASK_TRUTH, 1",
+                "SHARED_MASK_BUNNY, 1",
+                "SHARED_MASK_KEATON, 1"
               ]
             }
           }
@@ -41547,12 +41551,12 @@
             "moon_req": {
               "action": "add",
               "EditValue": [
-                "MM_MASK_DEKU",
-                "MM_MASK_GORON",
-                "MM_MASK_ZORA",
-                "MM_MASK_FIERCE_DEITY",
-                "SHARED_MASK_GORON",
-                "SHARED_MASK_ZORA"
+                "MM_MASK_DEKU, 1",
+                "MM_MASK_GORON, 1",
+                "MM_MASK_ZORA, 1",
+                "MM_MASK_FIERCE_DEITY, 1",
+                "SHARED_MASK_GORON, 1",
+                "SHARED_MASK_ZORA, 1"
               ]
             }
           }
@@ -41580,19 +41584,19 @@
             "moon_req": {
               "action": "add",
               "EditValue": [
-                "OOT_MASK_SKULL",
-                "OOT_MASK_SPOOKY",
-                "OOT_MASK_KEATON",
-                "OOT_MASK_BUNNY",
-                "OOT_MASK_TRUTH",
-                "OOT_MASK_GERUDO",
-                "OOT_MASK_GORON",
-                "OOT_MASK_ZORA",
-                "SHARED_MASK_KEATON",
-                "SHARED_MASK_BUNNY",
-                "SHARED_MASK_TRUTH",
-                "SHARED_MASK_GORON",
-                "SHARED_MASK_ZORA"
+                "OOT_MASK_SKULL, 1",
+                "OOT_MASK_SPOOKY, 1",
+                "OOT_MASK_KEATON, 1",
+                "OOT_MASK_BUNNY, 1",
+                "OOT_MASK_TRUTH, 1",
+                "OOT_MASK_GERUDO, 1",
+                "OOT_MASK_GORON, 1",
+                "OOT_MASK_ZORA, 1",
+                "SHARED_MASK_KEATON, 1",
+                "SHARED_MASK_BUNNY, 1",
+                "SHARED_MASK_TRUTH, 1",
+                "SHARED_MASK_GORON, 1",
+                "SHARED_MASK_ZORA, 1"
               ]
             }
           }
@@ -41620,9 +41624,9 @@
             "majora_req": {
               "action": "add",
               "EditValue": [
-                "OOT_STONE_EMERALD",
-                "OOT_STONE_RUBY",
-                "OOT_STONE_SAPPHIRE"
+                "OOT_STONE_EMERALD, 1",
+                "OOT_STONE_RUBY, 1",
+                "OOT_STONE_SAPPHIRE, 1"
               ]
             }
           }
@@ -41650,12 +41654,12 @@
             "majora_req": {
               "action": "add",
               "EditValue": [
-                "OOT_MEDALLION_LIGHT",
-                "OOT_MEDALLION_FOREST",
-                "OOT_MEDALLION_FIRE",
-                "OOT_MEDALLION_WATER",
-                "OOT_MEDALLION_SPIRIT",
-                "OOT_MEDALLION_SHADOW"
+                "OOT_MEDALLION_LIGHT, 1",
+                "OOT_MEDALLION_FOREST, 1",
+                "OOT_MEDALLION_FIRE, 1",
+                "OOT_MEDALLION_WATER, 1",
+                "OOT_MEDALLION_SPIRIT, 1",
+                "OOT_MEDALLION_SHADOW, 1"
               ]
             }
           }
@@ -41683,10 +41687,10 @@
             "majora_req": {
               "action": "add",
               "EditValue": [
-                "MM_REMAINS_ODOLWA",
-                "MM_REMAINS_GOHT",
-                "MM_REMAINS_GYORG",
-                "MM_REMAINS_TWINMOLD"
+                "MM_REMAINS_ODOLWA, 1",
+                "MM_REMAINS_GOHT, 1",
+                "MM_REMAINS_GYORG, 1",
+                "MM_REMAINS_TWINMOLD, 1"
               ]
             }
           }
@@ -41938,29 +41942,29 @@
             "majora_req": {
               "action": "add",
               "EditValue": [
-                "MM_MASK_CAPTAIN",
-                "MM_MASK_GIANT",
-                "MM_MASK_ALL_NIGHT",
-                "MM_MASK_BUNNY",
-                "MM_MASK_KEATON",
-                "MM_MASK_GARO",
-                "MM_MASK_ROMANI",
-                "MM_MASK_TROUPE_LEADER",
-                "MM_MASK_POSTMAN",
-                "MM_MASK_COUPLE",
-                "MM_MASK_GREAT_FAIRY",
-                "MM_MASK_GIBDO",
-                "MM_MASK_DON_GERO",
-                "MM_MASK_KAMARO",
-                "MM_MASK_TRUTH",
-                "MM_MASK_STONE",
-                "MM_MASK_BREMEN",
-                "MM_MASK_BLAST",
-                "MM_MASK_SCENTS",
-                "MM_MASK_KAFEI",
-                "SHARED_MASK_TRUTH",
-                "SHARED_MASK_BUNNY",
-                "SHARED_MASK_KEATON"
+                "MM_MASK_CAPTAIN, 1",
+                "MM_MASK_GIANT, 1",
+                "MM_MASK_ALL_NIGHT, 1",
+                "MM_MASK_BUNNY, 1",
+                "MM_MASK_KEATON, 1",
+                "MM_MASK_GARO, 1",
+                "MM_MASK_ROMANI, 1",
+                "MM_MASK_TROUPE_LEADER, 1",
+                "MM_MASK_POSTMAN, 1",
+                "MM_MASK_COUPLE, 1",
+                "MM_MASK_GREAT_FAIRY, 1",
+                "MM_MASK_GIBDO, 1",
+                "MM_MASK_DON_GERO, 1",
+                "MM_MASK_KAMARO, 1",
+                "MM_MASK_TRUTH, 1",
+                "MM_MASK_STONE, 1",
+                "MM_MASK_BREMEN, 1",
+                "MM_MASK_BLAST, 1",
+                "MM_MASK_SCENTS, 1",
+                "MM_MASK_KAFEI, 1",
+                "SHARED_MASK_TRUTH, 1",
+                "SHARED_MASK_BUNNY, 1",
+                "SHARED_MASK_KEATON, 1"
               ]
             }
           }
@@ -41988,12 +41992,12 @@
             "majora_req": {
               "action": "add",
               "EditValue": [
-                "MM_MASK_DEKU",
-                "MM_MASK_GORON",
-                "MM_MASK_ZORA",
-                "MM_MASK_FIERCE_DEITY",
-                "SHARED_MASK_GORON",
-                "SHARED_MASK_ZORA"
+                "MM_MASK_DEKU, 1",
+                "MM_MASK_GORON, 1",
+                "MM_MASK_ZORA, 1",
+                "MM_MASK_FIERCE_DEITY, 1",
+                "SHARED_MASK_GORON, 1",
+                "SHARED_MASK_ZORA, 1"
               ]
             }
           }
@@ -42021,19 +42025,19 @@
             "majora_req": {
               "action": "add",
               "EditValue": [
-                "OOT_MASK_SKULL",
-                "OOT_MASK_SPOOKY",
-                "OOT_MASK_KEATON",
-                "OOT_MASK_BUNNY",
-                "OOT_MASK_TRUTH",
-                "OOT_MASK_GERUDO",
-                "OOT_MASK_GORON",
-                "OOT_MASK_ZORA",
-                "SHARED_MASK_KEATON",
-                "SHARED_MASK_BUNNY",
-                "SHARED_MASK_TRUTH",
-                "SHARED_MASK_GORON",
-                "SHARED_MASK_ZORA"
+                "OOT_MASK_SKULL, 1",
+                "OOT_MASK_SPOOKY, 1",
+                "OOT_MASK_KEATON, 1",
+                "OOT_MASK_BUNNY, 1",
+                "OOT_MASK_TRUTH, 1",
+                "OOT_MASK_GERUDO, 1",
+                "OOT_MASK_GORON, 1",
+                "OOT_MASK_ZORA, 1",
+                "SHARED_MASK_KEATON, 1",
+                "SHARED_MASK_BUNNY, 1",
+                "SHARED_MASK_TRUTH, 1",
+                "SHARED_MASK_GORON, 1",
+                "SHARED_MASK_ZORA, 1"
               ]
             }
           }
@@ -42061,9 +42065,9 @@
             "bridge_req": {
               "action": "add",
               "EditValue": [
-                "OOT_STONE_EMERALD",
-                "OOT_STONE_RUBY",
-                "OOT_STONE_SAPPHIRE"
+                "OOT_STONE_EMERALD, 1",
+                "OOT_STONE_RUBY, 1",
+                "OOT_STONE_SAPPHIRE, 1"
               ]
             }
           }
@@ -42091,12 +42095,12 @@
             "bridge_req": {
               "action": "add",
               "EditValue": [
-                "OOT_MEDALLION_LIGHT",
-                "OOT_MEDALLION_FOREST",
-                "OOT_MEDALLION_FIRE",
-                "OOT_MEDALLION_WATER",
-                "OOT_MEDALLION_SPIRIT",
-                "OOT_MEDALLION_SHADOW"
+                "OOT_MEDALLION_LIGHT, 1",
+                "OOT_MEDALLION_FOREST, 1",
+                "OOT_MEDALLION_FIRE, 1",
+                "OOT_MEDALLION_WATER, 1",
+                "OOT_MEDALLION_SPIRIT, 1",
+                "OOT_MEDALLION_SHADOW, 1"
               ]
             }
           }
@@ -42124,10 +42128,10 @@
             "bridge_req": {
               "action": "add",
               "EditValue": [
-                "MM_REMAINS_ODOLWA",
-                "MM_REMAINS_GOHT",
-                "MM_REMAINS_GYORG",
-                "MM_REMAINS_TWINMOLD"
+                "MM_REMAINS_ODOLWA, 1",
+                "MM_REMAINS_GOHT, 1",
+                "MM_REMAINS_GYORG, 1",
+                "MM_REMAINS_TWINMOLD, 1"
               ]
             }
           }
@@ -42379,29 +42383,29 @@
             "bridge_req": {
               "action": "add",
               "EditValue": [
-                "MM_MASK_CAPTAIN",
-                "MM_MASK_GIANT",
-                "MM_MASK_ALL_NIGHT",
-                "MM_MASK_BUNNY",
-                "MM_MASK_KEATON",
-                "MM_MASK_GARO",
-                "MM_MASK_ROMANI",
-                "MM_MASK_TROUPE_LEADER",
-                "MM_MASK_POSTMAN",
-                "MM_MASK_COUPLE",
-                "MM_MASK_GREAT_FAIRY",
-                "MM_MASK_GIBDO",
-                "MM_MASK_DON_GERO",
-                "MM_MASK_KAMARO",
-                "MM_MASK_TRUTH",
-                "MM_MASK_STONE",
-                "MM_MASK_BREMEN",
-                "MM_MASK_BLAST",
-                "MM_MASK_SCENTS",
-                "MM_MASK_KAFEI",
-                "SHARED_MASK_TRUTH",
-                "SHARED_MASK_BUNNY",
-                "SHARED_MASK_KEATON"
+                "MM_MASK_CAPTAIN, 1",
+                "MM_MASK_GIANT, 1",
+                "MM_MASK_ALL_NIGHT, 1",
+                "MM_MASK_BUNNY, 1",
+                "MM_MASK_KEATON, 1",
+                "MM_MASK_GARO, 1",
+                "MM_MASK_ROMANI, 1",
+                "MM_MASK_TROUPE_LEADER, 1",
+                "MM_MASK_POSTMAN, 1",
+                "MM_MASK_COUPLE, 1",
+                "MM_MASK_GREAT_FAIRY, 1",
+                "MM_MASK_GIBDO, 1",
+                "MM_MASK_DON_GERO, 1",
+                "MM_MASK_KAMARO, 1",
+                "MM_MASK_TRUTH, 1",
+                "MM_MASK_STONE, 1",
+                "MM_MASK_BREMEN, 1",
+                "MM_MASK_BLAST, 1",
+                "MM_MASK_SCENTS, 1",
+                "MM_MASK_KAFEI, 1",
+                "SHARED_MASK_TRUTH, 1",
+                "SHARED_MASK_BUNNY, 1",
+                "SHARED_MASK_KEATON, 1"
               ]
             }
           }
@@ -42429,12 +42433,12 @@
             "bridge_req": {
               "action": "add",
               "EditValue": [
-                "MM_MASK_DEKU",
-                "MM_MASK_GORON",
-                "MM_MASK_ZORA",
-                "MM_MASK_FIERCE_DEITY",
-                "SHARED_MASK_GORON",
-                "SHARED_MASK_ZORA"
+                "MM_MASK_DEKU, 1",
+                "MM_MASK_GORON, 1",
+                "MM_MASK_ZORA, 1",
+                "MM_MASK_FIERCE_DEITY, 1",
+                "SHARED_MASK_GORON, 1",
+                "SHARED_MASK_ZORA, 1"
               ]
             }
           }
@@ -42462,19 +42466,19 @@
             "bridge_req": {
               "action": "add",
               "EditValue": [
-                "OOT_MASK_SKULL",
-                "OOT_MASK_SPOOKY",
-                "OOT_MASK_KEATON",
-                "OOT_MASK_BUNNY",
-                "OOT_MASK_TRUTH",
-                "OOT_MASK_GERUDO",
-                "OOT_MASK_GORON",
-                "OOT_MASK_ZORA",
-                "SHARED_MASK_KEATON",
-                "SHARED_MASK_BUNNY",
-                "SHARED_MASK_TRUTH",
-                "SHARED_MASK_GORON",
-                "SHARED_MASK_ZORA"
+                "OOT_MASK_SKULL, 1",
+                "OOT_MASK_SPOOKY, 1",
+                "OOT_MASK_KEATON, 1",
+                "OOT_MASK_BUNNY, 1",
+                "OOT_MASK_TRUTH, 1",
+                "OOT_MASK_GERUDO, 1",
+                "OOT_MASK_GORON, 1",
+                "OOT_MASK_ZORA, 1",
+                "SHARED_MASK_KEATON, 1",
+                "SHARED_MASK_BUNNY, 1",
+                "SHARED_MASK_TRUTH, 1",
+                "SHARED_MASK_GORON, 1",
+                "SHARED_MASK_ZORA, 1"
               ]
             }
           }
@@ -42502,9 +42506,9 @@
             "lacs_req": {
               "action": "add",
               "EditValue": [
-                "OOT_STONE_EMERALD",
-                "OOT_STONE_RUBY",
-                "OOT_STONE_SAPPHIRE"
+                "OOT_STONE_EMERALD, 1",
+                "OOT_STONE_RUBY, 1",
+                "OOT_STONE_SAPPHIRE, 1"
               ]
             }
           }
@@ -42532,12 +42536,12 @@
             "lacs_req": {
               "action": "add",
               "EditValue": [
-                "OOT_MEDALLION_LIGHT",
-                "OOT_MEDALLION_FOREST",
-                "OOT_MEDALLION_FIRE",
-                "OOT_MEDALLION_WATER",
-                "OOT_MEDALLION_SPIRIT",
-                "OOT_MEDALLION_SHADOW"
+                "OOT_MEDALLION_LIGHT, 1",
+                "OOT_MEDALLION_FOREST, 1",
+                "OOT_MEDALLION_FIRE, 1",
+                "OOT_MEDALLION_WATER, 1",
+                "OOT_MEDALLION_SPIRIT, 1",
+                "OOT_MEDALLION_SHADOW, 1"
               ]
             }
           }
@@ -42565,10 +42569,10 @@
             "lacs_req": {
               "action": "add",
               "EditValue": [
-                "MM_REMAINS_ODOLWA",
-                "MM_REMAINS_GOHT",
-                "MM_REMAINS_GYORG",
-                "MM_REMAINS_TWINMOLD"
+                "MM_REMAINS_ODOLWA, 1",
+                "MM_REMAINS_GOHT, 1",
+                "MM_REMAINS_GYORG, 1",
+                "MM_REMAINS_TWINMOLD, 1"
               ]
             }
           }
@@ -42820,29 +42824,29 @@
             "lacs_req": {
               "action": "add",
               "EditValue": [
-                "MM_MASK_CAPTAIN",
-                "MM_MASK_GIANT",
-                "MM_MASK_ALL_NIGHT",
-                "MM_MASK_BUNNY",
-                "MM_MASK_KEATON",
-                "MM_MASK_GARO",
-                "MM_MASK_ROMANI",
-                "MM_MASK_TROUPE_LEADER",
-                "MM_MASK_POSTMAN",
-                "MM_MASK_COUPLE",
-                "MM_MASK_GREAT_FAIRY",
-                "MM_MASK_GIBDO",
-                "MM_MASK_DON_GERO",
-                "MM_MASK_KAMARO",
-                "MM_MASK_TRUTH",
-                "MM_MASK_STONE",
-                "MM_MASK_BREMEN",
-                "MM_MASK_BLAST",
-                "MM_MASK_SCENTS",
-                "MM_MASK_KAFEI",
-                "SHARED_MASK_TRUTH",
-                "SHARED_MASK_BUNNY",
-                "SHARED_MASK_KEATON"
+                "MM_MASK_CAPTAIN, 1",
+                "MM_MASK_GIANT, 1",
+                "MM_MASK_ALL_NIGHT, 1",
+                "MM_MASK_BUNNY, 1",
+                "MM_MASK_KEATON, 1",
+                "MM_MASK_GARO, 1",
+                "MM_MASK_ROMANI, 1",
+                "MM_MASK_TROUPE_LEADER, 1",
+                "MM_MASK_POSTMAN, 1",
+                "MM_MASK_COUPLE, 1",
+                "MM_MASK_GREAT_FAIRY, 1",
+                "MM_MASK_GIBDO, 1",
+                "MM_MASK_DON_GERO, 1",
+                "MM_MASK_KAMARO, 1",
+                "MM_MASK_TRUTH, 1",
+                "MM_MASK_STONE, 1",
+                "MM_MASK_BREMEN, 1",
+                "MM_MASK_BLAST, 1",
+                "MM_MASK_SCENTS, 1",
+                "MM_MASK_KAFEI, 1",
+                "SHARED_MASK_TRUTH, 1",
+                "SHARED_MASK_BUNNY, 1",
+                "SHARED_MASK_KEATON, 1"
               ]
             }
           }
@@ -42870,12 +42874,12 @@
             "lacs_req": {
               "action": "add",
               "EditValue": [
-                "MM_MASK_DEKU",
-                "MM_MASK_GORON",
-                "MM_MASK_ZORA",
-                "MM_MASK_FIERCE_DEITY",
-                "SHARED_MASK_GORON",
-                "SHARED_MASK_ZORA"
+                "MM_MASK_DEKU, 1",
+                "MM_MASK_GORON, 1",
+                "MM_MASK_ZORA, 1",
+                "MM_MASK_FIERCE_DEITY, 1",
+                "SHARED_MASK_GORON, 1",
+                "SHARED_MASK_ZORA, 1"
               ]
             }
           }
@@ -42903,19 +42907,19 @@
             "lacs_req": {
               "action": "add",
               "EditValue": [
-                "OOT_MASK_SKULL",
-                "OOT_MASK_SPOOKY",
-                "OOT_MASK_KEATON",
-                "OOT_MASK_BUNNY",
-                "OOT_MASK_TRUTH",
-                "OOT_MASK_GERUDO",
-                "OOT_MASK_GORON",
-                "OOT_MASK_ZORA",
-                "SHARED_MASK_KEATON",
-                "SHARED_MASK_BUNNY",
-                "SHARED_MASK_TRUTH",
-                "SHARED_MASK_GORON",
-                "SHARED_MASK_ZORA"
+                "OOT_MASK_SKULL, 1",
+                "OOT_MASK_SPOOKY, 1",
+                "OOT_MASK_KEATON, 1",
+                "OOT_MASK_BUNNY, 1",
+                "OOT_MASK_TRUTH, 1",
+                "OOT_MASK_GERUDO, 1",
+                "OOT_MASK_GORON, 1",
+                "OOT_MASK_ZORA, 1",
+                "SHARED_MASK_KEATON, 1",
+                "SHARED_MASK_BUNNY, 1",
+                "SHARED_MASK_TRUTH, 1",
+                "SHARED_MASK_GORON, 1",
+                "SHARED_MASK_ZORA, 1"
               ]
             }
           }
@@ -42943,9 +42947,9 @@
             "ganon_bk_req": {
               "action": "add",
               "EditValue": [
-                "OOT_STONE_EMERALD",
-                "OOT_STONE_RUBY",
-                "OOT_STONE_SAPPHIRE"
+                "OOT_STONE_EMERALD, 1",
+                "OOT_STONE_RUBY, 1",
+                "OOT_STONE_SAPPHIRE, 1"
               ]
             }
           }
@@ -42973,12 +42977,12 @@
             "ganon_bk_req": {
               "action": "add",
               "EditValue": [
-                "OOT_MEDALLION_LIGHT",
-                "OOT_MEDALLION_FOREST",
-                "OOT_MEDALLION_FIRE",
-                "OOT_MEDALLION_WATER",
-                "OOT_MEDALLION_SPIRIT",
-                "OOT_MEDALLION_SHADOW"
+                "OOT_MEDALLION_LIGHT, 1",
+                "OOT_MEDALLION_FOREST, 1",
+                "OOT_MEDALLION_FIRE, 1",
+                "OOT_MEDALLION_WATER, 1",
+                "OOT_MEDALLION_SPIRIT, 1",
+                "OOT_MEDALLION_SHADOW, 1"
               ]
             }
           }
@@ -43006,10 +43010,10 @@
             "ganon_bk_req": {
               "action": "add",
               "EditValue": [
-                "MM_REMAINS_ODOLWA",
-                "MM_REMAINS_GOHT",
-                "MM_REMAINS_GYORG",
-                "MM_REMAINS_TWINMOLD"
+                "MM_REMAINS_ODOLWA, 1",
+                "MM_REMAINS_GOHT, 1",
+                "MM_REMAINS_GYORG, 1",
+                "MM_REMAINS_TWINMOLD, 1"
               ]
             }
           }
@@ -43261,29 +43265,29 @@
             "ganon_bk_req": {
               "action": "add",
               "EditValue": [
-                "MM_MASK_CAPTAIN",
-                "MM_MASK_GIANT",
-                "MM_MASK_ALL_NIGHT",
-                "MM_MASK_BUNNY",
-                "MM_MASK_KEATON",
-                "MM_MASK_GARO",
-                "MM_MASK_ROMANI",
-                "MM_MASK_TROUPE_LEADER",
-                "MM_MASK_POSTMAN",
-                "MM_MASK_COUPLE",
-                "MM_MASK_GREAT_FAIRY",
-                "MM_MASK_GIBDO",
-                "MM_MASK_DON_GERO",
-                "MM_MASK_KAMARO",
-                "MM_MASK_TRUTH",
-                "MM_MASK_STONE",
-                "MM_MASK_BREMEN",
-                "MM_MASK_BLAST",
-                "MM_MASK_SCENTS",
-                "MM_MASK_KAFEI",
-                "SHARED_MASK_TRUTH",
-                "SHARED_MASK_BUNNY",
-                "SHARED_MASK_KEATON"
+                "MM_MASK_CAPTAIN, 1",
+                "MM_MASK_GIANT, 1",
+                "MM_MASK_ALL_NIGHT, 1",
+                "MM_MASK_BUNNY, 1",
+                "MM_MASK_KEATON, 1",
+                "MM_MASK_GARO, 1",
+                "MM_MASK_ROMANI, 1",
+                "MM_MASK_TROUPE_LEADER, 1",
+                "MM_MASK_POSTMAN, 1",
+                "MM_MASK_COUPLE, 1",
+                "MM_MASK_GREAT_FAIRY, 1",
+                "MM_MASK_GIBDO, 1",
+                "MM_MASK_DON_GERO, 1",
+                "MM_MASK_KAMARO, 1",
+                "MM_MASK_TRUTH, 1",
+                "MM_MASK_STONE, 1",
+                "MM_MASK_BREMEN, 1",
+                "MM_MASK_BLAST, 1",
+                "MM_MASK_SCENTS, 1",
+                "MM_MASK_KAFEI, 1",
+                "SHARED_MASK_TRUTH, 1",
+                "SHARED_MASK_BUNNY, 1",
+                "SHARED_MASK_KEATON, 1"
               ]
             }
           }
@@ -43311,12 +43315,12 @@
             "ganon_bk_req": {
               "action": "add",
               "EditValue": [
-                "MM_MASK_DEKU",
-                "MM_MASK_GORON",
-                "MM_MASK_ZORA",
-                "MM_MASK_FIERCE_DEITY",
-                "SHARED_MASK_GORON",
-                "SHARED_MASK_ZORA"
+                "MM_MASK_DEKU, 1",
+                "MM_MASK_GORON, 1",
+                "MM_MASK_ZORA, 1",
+                "MM_MASK_FIERCE_DEITY, 1",
+                "SHARED_MASK_GORON, 1",
+                "SHARED_MASK_ZORA, 1"
               ]
             }
           }
@@ -43344,19 +43348,19 @@
             "ganon_bk_req": {
               "action": "add",
               "EditValue": [
-                "OOT_MASK_SKULL",
-                "OOT_MASK_SPOOKY",
-                "OOT_MASK_KEATON",
-                "OOT_MASK_BUNNY",
-                "OOT_MASK_TRUTH",
-                "OOT_MASK_GERUDO",
-                "OOT_MASK_GORON",
-                "OOT_MASK_ZORA",
-                "SHARED_MASK_KEATON",
-                "SHARED_MASK_BUNNY",
-                "SHARED_MASK_TRUTH",
-                "SHARED_MASK_GORON",
-                "SHARED_MASK_ZORA"
+                "OOT_MASK_SKULL, 1",
+                "OOT_MASK_SPOOKY, 1",
+                "OOT_MASK_KEATON, 1",
+                "OOT_MASK_BUNNY, 1",
+                "OOT_MASK_TRUTH, 1",
+                "OOT_MASK_GERUDO, 1",
+                "OOT_MASK_GORON, 1",
+                "OOT_MASK_ZORA, 1",
+                "SHARED_MASK_KEATON, 1",
+                "SHARED_MASK_BUNNY, 1",
+                "SHARED_MASK_TRUTH, 1",
+                "SHARED_MASK_GORON, 1",
+                "SHARED_MASK_ZORA, 1"
               ]
             }
           }
