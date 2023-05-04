@@ -2530,6 +2530,7 @@
       "Id": "OOT Lon Lon Ranch Grotto Left Scrub",
       "RequiredItems": [
         "OOT_is_child",
+        "OOT_can_use_wallet_1",
         "OOT_can_hit_scrub",
         "OOT Lon Lon Ranch Grotto"
       ],
@@ -2543,6 +2544,7 @@
       "Id": "OOT Lon Lon Ranch Grotto Center Scrub",
       "RequiredItems": [
         "OOT_is_child",
+        "OOT_can_use_wallet_1",
         "OOT_can_hit_scrub",
         "OOT Lon Lon Ranch Grotto"
       ],
@@ -2556,6 +2558,7 @@
       "Id": "OOT Lon Lon Ranch Grotto Right Scrub",
       "RequiredItems": [
         "OOT_is_child",
+        "OOT_can_use_wallet_1",
         "OOT_can_hit_scrub",
         "OOT Lon Lon Ranch Grotto"
       ],
@@ -3186,6 +3189,7 @@
           "OOT_EVENT_WINDMILL_TOP"
         ],
         [
+          "OOT_is_adult",
           "trick{TRICK_OOT_WINDMILL_HP_NOTHING}"
         ]
       ],
@@ -10285,6 +10289,7 @@
     {
       "Id": "MM Milk Bar Troupe Leader Mask",
       "RequiredItems": [
+        "MM_MASK_ROMANI",
         "MM_has_ocarina",
         "MM_MASK_DEKU",
         "MM_MASK_ZORA",
@@ -16136,12 +16141,12 @@
         ],
         [
           "OOT_can_boomerang",
-          "OOT Kokiri Forest"
+          "OOT Kokiri Forest Near Deku Tree"
         ],
         [
           "OOT_has_weapon",
           "OOT_is_child",
-          "OOT Kokiri Forest"
+          "OOT Kokiri Forest Near Deku Tree"
         ],
         [
           "OOT_can_boomerang",
@@ -16201,7 +16206,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Deku Tree => OOT Kokiri Forest",
+      "Id": "OOT Deku Tree => OOT Kokiri Forest Near Deku Tree",
       "RequiredItems": [],
       "ConditionalItems": [
         [
@@ -19925,7 +19930,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT SPAWN CHILD => OOT SPAWN COMMON",
+      "Id": "OOT SPAWN CHILD => OOT GLOBAL",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -19943,7 +19948,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT SPAWN ADULT => OOT SPAWN COMMON",
+      "Id": "OOT SPAWN ADULT => OOT GLOBAL",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -19961,7 +19966,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT SPAWN COMMON => OOT SONGS",
+      "Id": "OOT GLOBAL => OOT SONGS",
       "RequiredItems": [
         "OOT_OCARINA"
       ],
@@ -19972,7 +19977,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT SPAWN COMMON => OOT EGGS",
+      "Id": "OOT GLOBAL => OOT EGGS",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -20145,9 +20150,9 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Kokiri Forest => OOT Deku Tree",
+      "Id": "OOT Kokiri Forest => OOT Kokiri Forest Storms Grotto",
       "RequiredItems": [
-        "OOT_is_child"
+        "OOT_hidden_grotto_storms"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -20156,11 +20161,29 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Kokiri Forest => OOT Kokiri Forest Storms Grotto",
+      "Id": "OOT Kokiri Forest => OOT Kokiri Forest Near Deku Tree",
       "RequiredItems": [
-        "OOT_hidden_grotto_storms"
+        "OOT_mido_moved"
       ],
       "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_EVENT_MIDO_MOVED",
+      "RequiredItems": [
+        "OOT_can_move_mido"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT Kokiri Forest Near Deku Tree"
+        ],
+        [
+          "OOT Kokiri Forest"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -20190,9 +20213,38 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Kokiri Forest Near Deku Tree => OOT Kokiri Forest",
+      "RequiredItems": [
+        "OOT_mido_moved"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Kokiri Forest Near Deku Tree => OOT Deku Tree",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_is_child"
+        ],
+        [
+          "OOT_is_adult",
+          "setting{dekuTreeAdult}",
+          "OOT_mido_moved"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Kokiri Gossip Left of Deku Tree",
       "RequiredItems": [
-        "OOT Kokiri Forest"
+        "OOT Kokiri Forest Near Deku Tree"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -20203,7 +20255,7 @@
     {
       "Id": "OOT Kokiri Gossip Right of Deku Tree",
       "RequiredItems": [
-        "OOT Kokiri Forest"
+        "OOT Kokiri Forest Near Deku Tree"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -20694,10 +20746,15 @@
     },
     {
       "Id": "OOT Market Entryway => OOT Hyrule Field",
-      "RequiredItems": [
-        "OOT_is_day"
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_is_day"
+        ],
+        [
+          "OOT_is_adult"
+        ]
       ],
-      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -21778,10 +21835,17 @@
     {
       "Id": "OOT Kakariko => OOT Bottom of the Well",
       "RequiredItems": [
-        "OOT_is_child",
         "OOT_EVENT_WELL_DRAIN"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_is_child"
+        ],
+        [
+          "OOT_is_adult",
+          "setting{wellAdult}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -23528,11 +23592,17 @@
     },
     {
       "Id": "OOT Death Mountain Crater Warp => OOT Fire Temple Entry",
-      "RequiredItems": [
-        "OOT_is_adult",
-        "OOT_has_tunic_goron"
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_is_adult",
+          "OOT_has_tunic_goron"
+        ],
+        [
+          "OOT_is_child",
+          "setting{fireChild}"
+        ]
       ],
-      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -39105,7 +39175,7 @@
           "renewable{OOT_STICKS_10}"
         ],
         [
-          "option{sharedNutsSticks}",
+          "setting{sharedNutsSticks}",
           "MM_EVENT_STICKS"
         ]
       ],
@@ -39131,7 +39201,7 @@
           "renewable{OOT_NUTS_10}"
         ],
         [
-          "option{sharedNutsSticks}",
+          "setting{sharedNutsSticks}",
           "MM_EVENT_NUTS"
         ]
       ],
@@ -39174,7 +39244,7 @@
           "renewable{OOT_BOMBS_30}"
         ],
         [
-          "option{sharedBombBags}",
+          "setting{sharedBombBags}",
           "MM_EVENT_BOMBS"
         ]
       ],
@@ -39252,7 +39322,7 @@
           "renewable{OOT_ARROWS_40}"
         ],
         [
-          "option{sharedBows}",
+          "setting{sharedBows}",
           "MM_EVENT_ARROWS"
         ]
       ],
@@ -39348,7 +39418,7 @@
           "OOT_EVENT_RUPEES"
         ],
         [
-          "option{sharedWallets}",
+          "setting{sharedWallets}",
           "MM_EVENT_RUPEES"
         ]
       ],
@@ -39407,10 +39477,11 @@
     },
     {
       "Id": "OOT_has_mirror_shield",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "OOT_is_adult"
+      ],
       "ConditionalItems": [
         [
-          "OOT_is_adult",
           "OOT_SHIELD, 3"
         ],
         [
@@ -39504,7 +39575,7 @@
           "OOT_EVENT_MAGIC"
         ],
         [
-          "option{sharedMagic}",
+          "setting{sharedMagic}",
           "MM_EVENT_MAGIC"
         ],
         [
@@ -39879,6 +39950,19 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT_can_ride_epona",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT_OCARINA",
+        "OOT_SONG_EPONA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT_gs_soil",
       "RequiredItems": [
         "OOT_is_child",
@@ -39892,19 +39976,6 @@
           "OOT_EVENT_BUGS"
         ]
       ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_can_ride_epona",
-      "RequiredItems": [
-        "OOT_is_adult",
-        "OOT_OCARINA",
-        "OOT_SONG_EPONA"
-      ],
-      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -40070,8 +40141,8 @@
           "renewable{OOT_SHIELD_HYLIAN}"
         ],
         [
-          "renewable{OOT_SHIELD_DEKU}",
-          "OOT_is_child"
+          "OOT_is_child",
+          "renewable{OOT_SHIELD_DEKU}"
         ]
       ],
       "TimeNeeded": "None",
@@ -40201,7 +40272,7 @@
           "OOT_EVENT_MEET_ZELDA"
         ],
         [
-          "option{skipZelda}"
+          "setting{skipZelda}"
         ]
       ],
       "TimeNeeded": "None",
@@ -40217,7 +40288,7 @@
           "OOT_EVENT_TALON_CHILD"
         ],
         [
-          "option{skipZelda}"
+          "setting{skipZelda}"
         ]
       ],
       "TimeNeeded": "None",
@@ -40270,7 +40341,7 @@
           "OOT_BOW",
           "OOT_ARROW_FIRE",
           "OOT_has_sticks",
-          "option{sharedBows}",
+          "setting{sharedBows}",
           "MM_EVENT_ARROWS",
           "OOT_has_explosives"
         ],
@@ -40317,7 +40388,7 @@
           "OOT_BOW",
           "OOT_ARROW_FIRE",
           "OOT_has_sticks",
-          "option{sharedBows}",
+          "setting{sharedBows}",
           "MM_EVENT_ARROWS",
           "OOT_SMALL_KEY_SPIRIT, 2"
         ],
@@ -40439,18 +40510,18 @@
         [
           "OOT_SLINGSHOT",
           "OOT_EVENT_SEEDS",
-          "option{sharedBows}",
+          "setting{sharedBows}",
           "MM_EVENT_ARROWS"
         ],
         [
           "OOT_SLINGSHOT",
           "renewable{OOT_DEKU_SEEDS_30}",
-          "option{sharedBows}",
+          "setting{sharedBows}",
           "MM_EVENT_ARROWS"
         ],
         [
           "OOT_BOOMERANG",
-          "option{sharedBows}",
+          "setting{sharedBows}",
           "MM_EVENT_ARROWS"
         ]
       ],
@@ -40484,6 +40555,38 @@
         [
           "setting{zoraKing, adult}",
           "OOT_is_adult"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_can_move_mido",
+      "RequiredItems": [
+        "OOT_is_child",
+        "OOT_has_sword_kokiri",
+        "renewable{OOT_SHIELD_DEKU}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_mido_moved",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{dekuTree, open}"
+        ],
+        [
+          "OOT_is_adult"
+        ],
+        [
+          "OOT_EVENT_MIDO_MOVED"
         ]
       ],
       "TimeNeeded": "None",

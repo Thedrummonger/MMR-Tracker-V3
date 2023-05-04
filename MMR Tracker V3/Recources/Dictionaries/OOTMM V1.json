@@ -27094,11 +27094,11 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT Deku Tree => OOT Kokiri Forest": {
+    "OOT Deku Tree => OOT Kokiri Forest Near Deku Tree": {
       "Area": "OOT Deku Tree",
-      "Exit": "OOT Kokiri Forest",
+      "Exit": "OOT Kokiri Forest Near Deku Tree",
       "EntrancePairID": {
-        "Area": "OOT Kokiri Forest",
+        "Area": "OOT Kokiri Forest Near Deku Tree",
         "Exit": "OOT Deku Tree"
       },
       "RandomizableEntrance": true,
@@ -28298,9 +28298,9 @@
       "AlwaysAccessable": true,
       "DestinationHasSingleEntrance": false
     },
-    "OOT SPAWN CHILD => OOT SPAWN COMMON": {
+    "OOT SPAWN CHILD => OOT GLOBAL": {
       "Area": "OOT SPAWN CHILD",
-      "Exit": "OOT SPAWN COMMON",
+      "Exit": "OOT GLOBAL",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -28312,9 +28312,9 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT SPAWN ADULT => OOT SPAWN COMMON": {
+    "OOT SPAWN ADULT => OOT GLOBAL": {
       "Area": "OOT SPAWN ADULT",
-      "Exit": "OOT SPAWN COMMON",
+      "Exit": "OOT GLOBAL",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -28326,15 +28326,15 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT SPAWN COMMON => OOT SONGS": {
-      "Area": "OOT SPAWN COMMON",
+    "OOT GLOBAL => OOT SONGS": {
+      "Area": "OOT GLOBAL",
       "Exit": "OOT SONGS",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT SPAWN COMMON => OOT EGGS": {
-      "Area": "OOT SPAWN COMMON",
+    "OOT GLOBAL => OOT EGGS": {
+      "Area": "OOT GLOBAL",
       "Exit": "OOT EGGS",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
@@ -28452,21 +28452,35 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT Kokiri Forest => OOT Deku Tree": {
-      "Area": "OOT Kokiri Forest",
-      "Exit": "OOT Deku Tree",
-      "EntrancePairID": {
-        "Area": "OOT Deku Tree",
-        "Exit": "OOT Kokiri Forest"
-      },
-      "RandomizableEntrance": true,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
     "OOT Kokiri Forest => OOT Kokiri Forest Storms Grotto": {
       "Area": "OOT Kokiri Forest",
       "Exit": "OOT Kokiri Forest Storms Grotto",
       "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Kokiri Forest => OOT Kokiri Forest Near Deku Tree": {
+      "Area": "OOT Kokiri Forest",
+      "Exit": "OOT Kokiri Forest Near Deku Tree",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Kokiri Forest Near Deku Tree => OOT Kokiri Forest": {
+      "Area": "OOT Kokiri Forest Near Deku Tree",
+      "Exit": "OOT Kokiri Forest",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Kokiri Forest Near Deku Tree => OOT Deku Tree": {
+      "Area": "OOT Kokiri Forest Near Deku Tree",
+      "Exit": "OOT Deku Tree",
+      "EntrancePairID": {
+        "Area": "OOT Deku Tree",
+        "Exit": "OOT Kokiri Forest Near Deku Tree"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -37953,6 +37967,969 @@
         }
       }
     },
+    "itemPool": {
+      "DisplayName": "Item Pool",
+      "CurrentValue": "normal",
+      "Values": {
+        "plentiful": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {
+            "MM_ARROW_FIRE": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_ARROW_ICE": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_ARROW_LIGHT": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_BOMBER_NOTEBOOK": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_BOMB_BAG": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_BOSS_KEY_GB": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_BOSS_KEY_SH": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_BOSS_KEY_ST": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_BOSS_KEY_WF": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_BOTTLE_CHATEAU": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_BOTTLED_GOLD_DUST": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_BOTTLE_MILK": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_BOTTLE_POTION_RED": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_BOW": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_COMPASS_GB": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_COMPASS_SH": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_COMPASS_ST": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_COMPASS_WF": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_DEED_LAND": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_DEED_MOUNTAIN": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_DEED_OCEAN": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_DEED_SWAMP": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_DEFENSE_UPGRADE": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_BOTTLE_EMPTY": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_GREAT_FAIRY_SWORD": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_GS_TOKEN_OCEAN": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_GS_TOKEN_SWAMP": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_HEART_CONTAINER": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_HEART_PIECE": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_HOOKSHOT": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_LENS": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_LETTER_TO_KAFEI": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_LETTER_TO_MAMA": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_MAGIC_BEAN": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_MAGIC_UPGRADE": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_MAP_GB": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_MAP_SH": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_MAP_ST": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_MAP_WF": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_MASK_ALL_NIGHT": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_MASK_BLAST": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_MASK_BREMEN": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_MASK_BUNNY": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_MASK_CAPTAIN": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_MASK_COUPLE": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_MASK_DEKU": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_MASK_DON_GERO": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_MASK_FIERCE_DEITY": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_MASK_GARO": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_MASK_GIANT": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_MASK_GIBDO": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_MASK_GORON": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_MASK_GREAT_FAIRY": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_MASK_KAFEI": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_MASK_KAMARO": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_MASK_KEATON": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_MASK_POSTMAN": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_MASK_ROMANI": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_MASK_SCENTS": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_MASK_STONE": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_MASK_TROUPE_LEADER": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_MASK_TRUTH": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_MASK_ZORA": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_MOON_TEAR": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_OCARINA": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_PENDANT_OF_MEMORIES": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_PICTOGRAPH_BOX": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_POWDER_KEG": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_REMAINS_GOHT": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_REMAINS_GYORG": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_REMAINS_ODOLWA": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_REMAINS_TWINMOLD": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_ROOM_KEY": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_SHIELD_MIRROR": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_SMALL_KEY_GB": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_SMALL_KEY_SH": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_SMALL_KEY_ST": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_SMALL_KEY_WF": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_SONG_AWAKENING": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_SONG_EMPTINESS": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_SONG_EPONA": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_SONG_GORON_HALF": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_SONG_HEALING": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_SONG_ORDER": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_SONG_SOARING": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_SONG_STORMS": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_SONG_TIME": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_SONG_ZORA": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_SONG_SUN": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_SPIN_UPGRADE": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_STRAY_FAIRY_GB": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_STRAY_FAIRY_SH": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_STRAY_FAIRY_ST": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_STRAY_FAIRY_TOWN": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_STRAY_FAIRY_WF": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_SWORD": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_WALLET": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_ARROW_FIRE": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_ARROW_ICE": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_ARROW_LIGHT": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_BOMB_BAG": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_BOOMERANG": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_BOOTS_HOVER": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_BOOTS_IRON": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_BOSS_KEY_FIRE": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_BOSS_KEY_FOREST": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_BOSS_KEY_SHADOW": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_BOSS_KEY_SPIRIT": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_BOSS_KEY_WATER": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_BOW": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_BROKEN_GORON_SWORD": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_CHICKEN": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_CLAIM_CHECK": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_COJIRO": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_COMPASS_BOTW": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_COMPASS_DC": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_COMPASS_DT": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_COMPASS_FIRE": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_COMPASS_FOREST": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_COMPASS_IC": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_COMPASS_JJ": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_COMPASS_SHADOW": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_COMPASS_SPIRIT": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_COMPASS_WATER": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_DEFENSE_UPGRADE": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_BOTTLE_EMPTY": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_EYEBALL_FROG": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_EYE_DROPS": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_GERUDO_CARD": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_GS_TOKEN": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_HAMMER": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_HEART_CONTAINER": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_HEART_PIECE": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_HOOKSHOT": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_LENS": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_MAGIC_BEAN": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_MAGIC_UPGRADE": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_MAP_BOTW": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_MAP_DC": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_MAP_DT": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_MAP_FIRE": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_MAP_FOREST": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_MAP_IC": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_MAP_JJ": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_MAP_SHADOW": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_MAP_SPIRIT": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_MAP_WATER": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_MASK_BUNNY": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_MASK_GERUDO": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_MASK_GORON": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_MASK_KEATON": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_MASK_SKULL": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_MASK_SPOOKY": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_MASK_TRUTH": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_MASK_ZORA": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_MEDALLION_FIRE": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_MEDALLION_FOREST": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_MEDALLION_LIGHT": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_MEDALLION_SHADOW": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_MEDALLION_SPIRIT": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_MEDALLION_WATER": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_BOTTLE_MILK": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_NUT_UPGRADE": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_OCARINA": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_ODD_MUSHROOM": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_ODD_POTION": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_POACHER_SAW": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_POCKET_CUCCO": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_PRESCRIPTION": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_RUTO_LETTER": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_SCALE": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_SHIELD_MIRROR": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_SLINGSHOT": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_SMALL_KEY_BOTW": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_SMALL_KEY_FIRE": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_SMALL_KEY_FOREST": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_SMALL_KEY_GANON": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_SMALL_KEY_GF": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_SMALL_KEY_GTG": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_SMALL_KEY_SHADOW": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_SMALL_KEY_SPIRIT": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_SMALL_KEY_WATER": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_SONG_EPONA": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_SONG_SARIA": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_SONG_STORMS": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_SONG_SUN": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_SONG_TIME": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_SONG_TP_FIRE": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_SONG_TP_FOREST": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_SONG_TP_LIGHT": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_SONG_TP_SHADOW": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_SONG_TP_SPIRIT": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_SONG_TP_WATER": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_SONG_ZELDA": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_SPELL_FIRE": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_SPELL_LOVE": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_SPELL_WIND": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_STICK_UPGRADE": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_STONE_EMERALD": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_STONE_OF_AGONY": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_STONE_RUBY": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_STONE_SAPPHIRE": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_STRENGTH": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_SWORD_GORON": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_SWORD_KOKIRI": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_SWORD_MASTER": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_WALLET": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_ZELDA_LETTER": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_SWORD": {
+              "action": "set",
+              "amount": -1
+            },
+            "OOT_BOSS_KEY_GANON": {
+              "action": "set",
+              "amount": -1
+            },
+            "MM_SONG_GORON": {
+              "action": "set",
+              "amount": -1
+            },
+            "SHARED_BOW": {
+              "action": "set",
+              "amount": -1
+            },
+            "SHARED_BOMB_BAG": {
+              "action": "set",
+              "amount": -1
+            },
+            "SHARED_MAGIC_UPGRADE": {
+              "action": "set",
+              "amount": -1
+            },
+            "SHARED_ARROW_FIRE": {
+              "action": "set",
+              "amount": -1
+            },
+            "SHARED_ARROW_ICE": {
+              "action": "set",
+              "amount": -1
+            },
+            "SHARED_ARROW_LIGHT": {
+              "action": "set",
+              "amount": -1
+            },
+            "SHARED_HOOKSHOT": {
+              "action": "set",
+              "amount": -1
+            },
+            "SHARED_LENS": {
+              "action": "set",
+              "amount": -1
+            },
+            "SHARED_OCARINA": {
+              "action": "set",
+              "amount": -1
+            },
+            "SHARED_MASK_KEATON": {
+              "action": "set",
+              "amount": -1
+            },
+            "SHARED_MASK_BUNNY": {
+              "action": "set",
+              "amount": -1
+            },
+            "SHARED_MASK_ZORA": {
+              "action": "set",
+              "amount": -1
+            },
+            "SHARED_MASK_GORON": {
+              "action": "set",
+              "amount": -1
+            },
+            "SHARED_WALLET": {
+              "action": "set",
+              "amount": -1
+            },
+            "SHARED_SONG_EPONA": {
+              "action": "set",
+              "amount": -1
+            },
+            "SHARED_SONG_STORMS": {
+              "action": "set",
+              "amount": -1
+            },
+            "SHARED_SONG_TIME": {
+              "action": "set",
+              "amount": -1
+            },
+            "SHARED_SONG_SUN": {
+              "action": "set",
+              "amount": -1
+            },
+            "SHARED_HEART_PIECE": {
+              "action": "set",
+              "amount": -1
+            },
+            "SHARED_HEART_CONTAINER": {
+              "action": "set",
+              "amount": -1
+            },
+            "SHARED_DEFENSE_UPGRADE": {
+              "action": "set",
+              "amount": -1
+            }
+          },
+          "VariableEdit": {}
+        },
+        "normal": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        },
+        "scarce": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        },
+        "minimal": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
     "goal": {
       "DisplayName": "Goal",
       "CurrentValue": "both",
@@ -38035,6 +39012,92 @@
         },
         "closed": {
           "Name": "Closed",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "dekuTree": {
+      "DisplayName": "Deku Tree",
+      "CurrentValue": "open",
+      "SubCategory": "Events",
+      "Values": {
+        "open": {
+          "Name": "Open",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        },
+        "closed": {
+          "Name": "Closed",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "dekuTreeAdult": {
+      "DisplayName": "Deku Tree as Adult",
+      "CurrentValue": "false",
+      "SubCategory": "Events",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "wellAdult": {
+      "DisplayName": "Well as Adult",
+      "CurrentValue": "false",
+      "SubCategory": "Events",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "fireChild": {
+      "DisplayName": "Fire Temple as Child",
+      "CurrentValue": "false",
+      "SubCategory": "Events",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        },
+        "false": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},

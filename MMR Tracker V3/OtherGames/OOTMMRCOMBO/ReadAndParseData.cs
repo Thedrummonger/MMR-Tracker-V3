@@ -427,6 +427,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
         {
             Dictionary<string, string> RenewableItems = new CodeFileReader<Dictionary<string, string>>().ReadCodeFile("RenewableItems");
 
+            Dictionary<string, int> OOTRItemCounts = new CodeFileReader<Dictionary<string, int>>().ReadCodeFile("itemCounts");
+
             OptionData.TrackerVar MM_Masks = new OptionData.TrackerVar();
             MM_Masks.Static = true;
             MM_Masks.Value =new List<string> {
@@ -466,6 +468,14 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             ageFilter.CreateSimpleValues(new string[] { "both", "adult", "child" });
             dictionaryFile.Options.Add(ageFilter.ID, ageFilter);
 
+            OptionData.TrackerOption itemPool = new OptionData.TrackerOption();
+            itemPool.ID = "itemPool";
+            itemPool.DisplayName = "Item Pool";
+            itemPool.CurrentValue = "normal";
+            itemPool.CreateSimpleValues(new string[] { "plentiful", "normal", "scarce", "minimal" });
+            foreach(var i in OOTRItemCounts) { itemPool.Values["plentiful"].AddMaxAmountEdit(i.Key, MiscData.MathOP.set, -1); }
+            dictionaryFile.Options.Add(itemPool.ID, itemPool);
+
             OptionData.TrackerOption goal = new OptionData.TrackerOption();
             goal.ID = "goal";
             goal.DisplayName = "Goal";
@@ -495,6 +505,40 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             DoorOfTime.Values["open"].Name = "Open";
             DoorOfTime.Values["closed"].Name = "Closed";
             dictionaryFile.Options.Add(DoorOfTime.ID,DoorOfTime);
+
+            OptionData.TrackerOption dekuTree = new OptionData.TrackerOption();
+            dekuTree.ID = "dekuTree";
+            dekuTree.DisplayName = "Deku Tree";
+            dekuTree.CurrentValue = "open";
+            dekuTree.SubCategory = "Events";
+            dekuTree.CreateSimpleValues(new string[] { "open", "closed" });
+            dekuTree.Values["open"].Name = "Open";
+            dekuTree.Values["closed"].Name = "Closed";
+            dictionaryFile.Options.Add(dekuTree.ID, dekuTree);
+
+            OptionData.TrackerOption dekuTreeAdult = new OptionData.TrackerOption();
+            dekuTreeAdult.ID = "dekuTreeAdult";
+            dekuTreeAdult.DisplayName = "Deku Tree as Adult";
+            dekuTreeAdult.CurrentValue = "false";
+            dekuTreeAdult.SubCategory = "Events";
+            dekuTreeAdult.CreateSimpleValues(new string[] { "true", "false" });
+            dictionaryFile.Options.Add(dekuTreeAdult.ID, dekuTreeAdult);
+
+            OptionData.TrackerOption wellAdult = new OptionData.TrackerOption();
+            wellAdult.ID = "wellAdult";
+            wellAdult.DisplayName = "Well as Adult";
+            wellAdult.CurrentValue = "false";
+            wellAdult.SubCategory = "Events";
+            wellAdult.CreateSimpleValues(new string[] { "true", "false" });
+            dictionaryFile.Options.Add(wellAdult.ID, wellAdult);
+
+            OptionData.TrackerOption fireChild = new OptionData.TrackerOption();
+            fireChild.ID = "fireChild";
+            fireChild.DisplayName = "Fire Temple as Child";
+            fireChild.CurrentValue = "false";
+            fireChild.SubCategory = "Events";
+            fireChild.CreateSimpleValues(new string[] { "true", "false" });
+            dictionaryFile.Options.Add(fireChild.ID, fireChild);
 
             OptionData.TrackerOption kakarikoGate = new OptionData.TrackerOption();
             kakarikoGate.ID = "kakarikoGate";
