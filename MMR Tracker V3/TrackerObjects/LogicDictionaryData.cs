@@ -117,9 +117,11 @@ namespace MMR_Tracker_V3.TrackerObjects
                     var EditData = i.GetActions().ItemMaxAmountEdit[ID];
                     switch (EditData.action){
                         case MathOP.add:
+                            if (FinalValue < 0) { break; }
                             FinalValue += EditData.amount;
                             break;
                         case MathOP.subtract:
+                            if (FinalValue < 0 || FinalValue - EditData.amount < 0) { break; }
                             FinalValue -= EditData.amount;
                             break;
                         case MathOP.set:
