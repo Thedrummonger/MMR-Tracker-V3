@@ -805,7 +805,12 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 MQEntry.SubCategory = "Master Quest Dungeons";
                 MQEntry.CurrentValue = "false";
                 MQEntry.CreateSimpleValues(new string[] { "true", "false" });
-                if (Key != null) { MQEntry.Values["true"].AddMaxAmountEdit(Key, MiscData.MathOP.set, MaxKeys); }
+                if (Key != null) 
+                {
+                    int KeyDiff = MaxKeys - ((int)dictionaryFile.ItemList[Key].MaxAmountInWorld);
+                    MiscData.MathOP Op = KeyDiff < 0 ? MiscData.MathOP.subtract : MiscData.MathOP.add;
+                    MQEntry.Values["true"].AddMaxAmountEdit(Key, Op, Math.Abs(KeyDiff)); 
+                }
                 dictionaryFile.Options.Add(ID, MQEntry);
             }
 
