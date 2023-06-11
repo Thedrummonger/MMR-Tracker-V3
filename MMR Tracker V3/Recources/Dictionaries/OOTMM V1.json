@@ -13429,6 +13429,25 @@
       },
       "LocationProxys": []
     },
+    "MM Clock Town Owl Statue": {
+      "Name": "Clock Town Owl Statue",
+      "OriginalItem": "MM_OWL_CLOCK_TOWN",
+      "WalletCurrency": "M",
+      "Area": "South Clock Town",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Clock Town Owl Statue"
+        ],
+        "GossipHintNames": [
+          "MM Clock Town Owl Statue"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
     "MM Clock Town Tree HP": {
       "Name": "Clock Town Tree HP",
       "OriginalItem": "MM_HEART_PIECE",
@@ -13823,6 +13842,44 @@
         ],
         "GossipHintNames": [
           "MM Milk Bar Madame Aroma Bottle"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "MM Milk Bar Purchase Milk": {
+      "Name": "Milk Bar Purchase Milk",
+      "OriginalItem": "MM_MILK",
+      "WalletCurrency": "M",
+      "Area": "East Clock Town",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Milk Bar Purchase Milk"
+        ],
+        "GossipHintNames": [
+          "MM Milk Bar Purchase Milk"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "MM Milk Bar Purchase Chateau": {
+      "Name": "Milk Bar Purchase Chateau",
+      "OriginalItem": "MM_CHATEAU",
+      "WalletCurrency": "M",
+      "Area": "East Clock Town",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Milk Bar Purchase Chateau"
+        ],
+        "GossipHintNames": [
+          "MM Milk Bar Purchase Chateau"
         ],
         "PriceDataNames": []
       },
@@ -14828,6 +14885,25 @@
       },
       "LocationProxys": []
     },
+    "MM Southern Swamp Scrub Shop": {
+      "Name": "Southern Swamp Scrub Shop",
+      "OriginalItem": "MM_MAGIC_BEAN",
+      "WalletCurrency": "M",
+      "Area": "Southern Swamp",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Southern Swamp Scrub Shop"
+        ],
+        "GossipHintNames": [
+          "MM Southern Swamp Scrub Shop"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
     "MM Southern Swamp Song of Soaring": {
       "Name": "Southern Swamp Song of Soaring",
       "OriginalItem": "MM_SONG_SOARING",
@@ -14842,6 +14918,25 @@
         ],
         "GossipHintNames": [
           "MM Southern Swamp Song of Soaring"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "MM Southern Swamp Owl Statue": {
+      "Name": "Southern Swamp Owl Statue",
+      "OriginalItem": "MM_OWL_SOUTHERN_SWAMP",
+      "WalletCurrency": "M",
+      "Area": "Southern Swamp",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Southern Swamp Owl Statue"
+        ],
+        "GossipHintNames": [
+          "MM Southern Swamp Owl Statue"
         ],
         "PriceDataNames": []
       },
@@ -15130,6 +15225,25 @@
         ],
         "GossipHintNames": [
           "MM Deku Shrine Mask of Scents"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "MM Woodfall Owl Statue": {
+      "Name": "Woodfall Owl Statue",
+      "OriginalItem": "MM_OWL_WOODFALL",
+      "WalletCurrency": "M",
+      "Area": "Woodfall",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Woodfall Owl Statue"
+        ],
+        "GossipHintNames": [
+          "MM Woodfall Owl Statue"
         ],
         "PriceDataNames": []
       },
@@ -15876,6 +15990,25 @@
       },
       "LocationProxys": []
     },
+    "MM Mountain Village Owl Statue": {
+      "Name": "Mountain Village Owl Statue",
+      "OriginalItem": "MM_OWL_MOUNTAIN_VILLAGE",
+      "WalletCurrency": "M",
+      "Area": "Mountain Village",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Mountain Village Owl Statue"
+        ],
+        "GossipHintNames": [
+          "MM Mountain Village Owl Statue"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
     "MM Blacksmith Razor Blade": {
       "Name": "Blacksmith Razor Blade",
       "OriginalItem": "MM_SWORD",
@@ -16297,6 +16430,25 @@
       },
       "LocationProxys": []
     },
+    "MM Snowhead Owl Statue": {
+      "Name": "Snowhead Owl Statue",
+      "OriginalItem": "MM_OWL_SNOWHEAD",
+      "WalletCurrency": "M",
+      "Area": "Snowhead",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Snowhead Owl Statue"
+        ],
+        "GossipHintNames": [
+          "MM Snowhead Owl Statue"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
     "MM Goron Race Reward": {
       "Name": "Goron Race Reward",
       "OriginalItem": "MM_BOTTLED_GOLD_DUST",
@@ -16311,6 +16463,25 @@
         ],
         "GossipHintNames": [
           "MM Goron Race Reward"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "MM Milk Road Owl Statue": {
+      "Name": "Milk Road Owl Statue",
+      "OriginalItem": "MM_OWL_MILK_ROAD",
+      "WalletCurrency": "M",
+      "Area": "Milk Road",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Milk Road Owl Statue"
+        ],
+        "GossipHintNames": [
+          "MM Milk Road Owl Statue"
         ],
         "PriceDataNames": []
       },
@@ -16606,6 +16777,25 @@
       },
       "LocationProxys": []
     },
+    "MM Great Bay Coast Owl Statue": {
+      "Name": "Great Bay Coast Owl Statue",
+      "OriginalItem": "MM_OWL_GREAT_BAY",
+      "WalletCurrency": "M",
+      "Area": "Great Bay Coast",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Great Bay Coast Owl Statue"
+        ],
+        "GossipHintNames": [
+          "MM Great Bay Coast Owl Statue"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
     "MM Zora Cape Ledge Chest 1": {
       "Name": "Zora Cape Ledge Chest 1",
       "OriginalItem": "MM_RUPEE_RED",
@@ -16682,6 +16872,25 @@
       },
       "LocationProxys": []
     },
+    "MM Zora Cape Owl Statue": {
+      "Name": "Zora Cape Owl Statue",
+      "OriginalItem": "MM_OWL_ZORA_CAPE",
+      "WalletCurrency": "M",
+      "Area": "Zora Cape",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Zora Cape Owl Statue"
+        ],
+        "GossipHintNames": [
+          "MM Zora Cape Owl Statue"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
     "MM Zora Cape Grotto": {
       "Name": "Zora Cape Grotto",
       "OriginalItem": "MM_BOMBCHU",
@@ -16734,6 +16943,25 @@
         ],
         "GossipHintNames": [
           "MM Zora Hall Scrub Deed"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "MM Zora Hall Scrub Shop": {
+      "Name": "Zora Hall Scrub Shop",
+      "OriginalItem": "MM_POTION_GREEN",
+      "WalletCurrency": "M",
+      "Area": "Zora Hall",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Zora Hall Scrub Shop"
+        ],
+        "GossipHintNames": [
+          "MM Zora Hall Scrub Shop"
         ],
         "PriceDataNames": []
       },
@@ -17673,6 +17901,25 @@
       },
       "LocationProxys": []
     },
+    "MM Gorman Track Milk Purchase": {
+      "Name": "Gorman Track Milk Purchase",
+      "OriginalItem": "MM_MILK",
+      "WalletCurrency": "M",
+      "Area": "Milk Road",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Gorman Track Milk Purchase"
+        ],
+        "GossipHintNames": [
+          "MM Gorman Track Milk Purchase"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
     "MM Ikana Graveyard Captain Mask": {
       "Name": "Ikana Graveyard Captain Mask",
       "OriginalItem": "MM_MASK_CAPTAIN",
@@ -17806,6 +18053,25 @@
       },
       "LocationProxys": []
     },
+    "MM Ikana Valley Scrub Shop": {
+      "Name": "Ikana Valley Scrub Shop",
+      "OriginalItem": "MM_POTION_BLUE",
+      "WalletCurrency": "M",
+      "Area": "Ikana Canyon",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Ikana Valley Scrub Shop"
+        ],
+        "GossipHintNames": [
+          "MM Ikana Valley Scrub Shop"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
     "MM Ikana Valley Scrub HP": {
       "Name": "Ikana Valley Scrub HP",
       "OriginalItem": "MM_HEART_PIECE",
@@ -17839,6 +18105,25 @@
         ],
         "GossipHintNames": [
           "MM Ikana Valley Grotto"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "MM Ikana Canyon Owl Statue": {
+      "Name": "Ikana Canyon Owl Statue",
+      "OriginalItem": "MM_OWL_IKANA_CANYON",
+      "WalletCurrency": "M",
+      "Area": "Ikana Canyon",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Ikana Canyon Owl Statue"
+        ],
+        "GossipHintNames": [
+          "MM Ikana Canyon Owl Statue"
         ],
         "PriceDataNames": []
       },
@@ -17896,6 +18181,25 @@
         ],
         "GossipHintNames": [
           "MM Music Box House Gibdo Mask"
+        ],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "MM Stone Tower Owl Statue": {
+      "Name": "Stone Tower Owl Statue",
+      "OriginalItem": "MM_OWL_STONE_TOWER",
+      "WalletCurrency": "M",
+      "Area": "Stone Tower",
+      "ValidItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM Stone Tower Owl Statue"
+        ],
+        "GossipHintNames": [
+          "MM Stone Tower Owl Statue"
         ],
         "PriceDataNames": []
       },
@@ -21804,6 +22108,27 @@
         "PriceDataNames": []
       }
     },
+    "MM_CHATEAU": {
+      "Name": "Chateau Romani",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_CHATEAU",
+          "Chateau Romani",
+          "Chateau Romani (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_CHATEAU",
+          "Chateau Romani",
+          "Chateau Romani (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
     "MM_MOON_TEAR": {
       "Name": "Moon's Tear",
       "MaxAmountInWorld": 1,
@@ -22857,6 +23182,216 @@
         "GossipHintNames": [
           "MM_WALLET",
           "Progressive Wallet (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_OWL_CLOCK_TOWN": {
+      "Name": "Clock Town Owl",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_OWL_CLOCK_TOWN",
+          "Clock Town Owl",
+          "Clock Town Owl (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_OWL_CLOCK_TOWN",
+          "Clock Town Owl",
+          "Clock Town Owl (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_OWL_MILK_ROAD": {
+      "Name": "Milk Road Owl",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_OWL_MILK_ROAD",
+          "Milk Road Owl",
+          "Milk Road Owl (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_OWL_MILK_ROAD",
+          "Milk Road Owl",
+          "Milk Road Owl (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_OWL_SOUTHERN_SWAMP": {
+      "Name": "Southern Swamp Owl",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_OWL_SOUTHERN_SWAMP",
+          "Southern Swamp Owl",
+          "Southern Swamp Owl (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_OWL_SOUTHERN_SWAMP",
+          "Southern Swamp Owl",
+          "Southern Swamp Owl (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_OWL_WOODFALL": {
+      "Name": "Woodfall Owl",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_OWL_WOODFALL",
+          "Woodfall Owl",
+          "Woodfall Owl (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_OWL_WOODFALL",
+          "Woodfall Owl",
+          "Woodfall Owl (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_OWL_MOUNTAIN_VILLAGE": {
+      "Name": "Mountain Village Owl",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_OWL_MOUNTAIN_VILLAGE",
+          "Mountain Village Owl",
+          "Mountain Village Owl (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_OWL_MOUNTAIN_VILLAGE",
+          "Mountain Village Owl",
+          "Mountain Village Owl (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_OWL_SNOWHEAD": {
+      "Name": "Snowhead Owl",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_OWL_SNOWHEAD",
+          "Snowhead Owl",
+          "Snowhead Owl (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_OWL_SNOWHEAD",
+          "Snowhead Owl",
+          "Snowhead Owl (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_OWL_GREAT_BAY": {
+      "Name": "Great Bay Owl",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_OWL_GREAT_BAY",
+          "Great Bay Owl",
+          "Great Bay Owl (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_OWL_GREAT_BAY",
+          "Great Bay Owl",
+          "Great Bay Owl (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_OWL_ZORA_CAPE": {
+      "Name": "Zora Cape Owl",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_OWL_ZORA_CAPE",
+          "Zora Cape Owl",
+          "Zora Cape Owl (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_OWL_ZORA_CAPE",
+          "Zora Cape Owl",
+          "Zora Cape Owl (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_OWL_IKANA_CANYON": {
+      "Name": "Ikana Canyon Owl",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_OWL_IKANA_CANYON",
+          "Ikana Canyon Owl",
+          "Ikana Canyon Owl (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_OWL_IKANA_CANYON",
+          "Ikana Canyon Owl",
+          "Ikana Canyon Owl (MM)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "MM_OWL_STONE_TOWER": {
+      "Name": "Clock Town Owl",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_OWL_STONE_TOWER",
+          "Clock Town Owl",
+          "Clock Town Owl (MM)"
+        ],
+        "GossipHintNames": [
+          "MM_OWL_STONE_TOWER",
+          "Clock Town Owl",
+          "Clock Town Owl (MM)"
         ],
         "PriceDataNames": []
       }
@@ -27831,52 +28366,92 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT Ganon Castle Main => OOT Ganon Castle Light": {
-      "Area": "OOT Ganon Castle Main",
+    "OOT Ganon Castle => OOT Ganon Castle Exterior After Bridge": {
+      "Area": "OOT Ganon Castle",
+      "Exit": "OOT Ganon Castle Exterior After Bridge",
+      "EntrancePairID": {
+        "Area": "OOT Ganon Castle Exterior After Bridge",
+        "Exit": "OOT Ganon Castle"
+      },
+      "RandomizableEntrance": true,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Ganon Castle => OOT Ganon Castle Light": {
+      "Area": "OOT Ganon Castle",
       "Exit": "OOT Ganon Castle Light",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT Ganon Castle Main => OOT Ganon Castle Forest": {
-      "Area": "OOT Ganon Castle Main",
+    "OOT Ganon Castle => OOT Ganon Castle Forest": {
+      "Area": "OOT Ganon Castle",
       "Exit": "OOT Ganon Castle Forest",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT Ganon Castle Main => OOT Ganon Castle Fire": {
-      "Area": "OOT Ganon Castle Main",
+    "OOT Ganon Castle => OOT Ganon Castle Fire": {
+      "Area": "OOT Ganon Castle",
       "Exit": "OOT Ganon Castle Fire",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT Ganon Castle Main => OOT Ganon Castle Water": {
-      "Area": "OOT Ganon Castle Main",
+    "OOT Ganon Castle => OOT Ganon Castle Water": {
+      "Area": "OOT Ganon Castle",
       "Exit": "OOT Ganon Castle Water",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT Ganon Castle Main => OOT Ganon Castle Spirit": {
-      "Area": "OOT Ganon Castle Main",
+    "OOT Ganon Castle => OOT Ganon Castle Spirit": {
+      "Area": "OOT Ganon Castle",
       "Exit": "OOT Ganon Castle Spirit",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT Ganon Castle Main => OOT Ganon Castle Shadow": {
-      "Area": "OOT Ganon Castle Main",
+    "OOT Ganon Castle => OOT Ganon Castle Shadow": {
+      "Area": "OOT Ganon Castle",
       "Exit": "OOT Ganon Castle Shadow",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT Ganon Castle Main => OOT Ganon Castle Tower": {
-      "Area": "OOT Ganon Castle Main",
-      "Exit": "OOT Ganon Castle Tower",
+    "OOT Ganon Castle => OOT Ganon Castle Stairs": {
+      "Area": "OOT Ganon Castle",
+      "Exit": "OOT Ganon Castle Stairs",
       "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Ganon Castle Stairs => OOT Ganon Castle": {
+      "Area": "OOT Ganon Castle Stairs",
+      "Exit": "OOT Ganon Castle",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Ganon Castle Stairs => OOT Ganon Castle Tower": {
+      "Area": "OOT Ganon Castle Stairs",
+      "Exit": "OOT Ganon Castle Tower",
+      "EntrancePairID": {
+        "Area": "OOT Ganon Castle Tower",
+        "Exit": "OOT Ganon Castle Stairs"
+      },
+      "RandomizableEntrance": true,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Ganon Castle Tower => OOT Ganon Castle Stairs": {
+      "Area": "OOT Ganon Castle Tower",
+      "Exit": "OOT Ganon Castle Stairs",
+      "EntrancePairID": {
+        "Area": "OOT Ganon Castle Stairs",
+        "Exit": "OOT Ganon Castle Tower"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -29061,9 +29636,9 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT Ganon Castle Exterior => OOT Ganon Castle Main": {
+    "OOT Ganon Castle Exterior => OOT Ganon Castle Exterior After Bridge": {
       "Area": "OOT Ganon Castle Exterior",
-      "Exit": "OOT Ganon Castle Main",
+      "Exit": "OOT Ganon Castle Exterior After Bridge",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -29072,6 +29647,31 @@
       "Area": "OOT Ganon Castle Exterior",
       "Exit": "OOT Fairy Fountain Defense",
       "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Ganon Castle Exterior After Bridge => OOT Ganon Castle Exterior": {
+      "Area": "OOT Ganon Castle Exterior After Bridge",
+      "Exit": "OOT Ganon Castle Exterior",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Ganon Castle Exterior After Bridge => OOT Hyrule Castle": {
+      "Area": "OOT Ganon Castle Exterior After Bridge",
+      "Exit": "OOT Hyrule Castle",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Ganon Castle Exterior After Bridge => OOT Ganon Castle": {
+      "Area": "OOT Ganon Castle Exterior After Bridge",
+      "Exit": "OOT Ganon Castle",
+      "EntrancePairID": {
+        "Area": "OOT Ganon Castle",
+        "Exit": "OOT Ganon Castle Exterior After Bridge"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -32538,71 +33138,162 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM SOARING => MM Clock Town South": {
+    "MM SOARING => MM Owl Clock Town": {
       "Area": "MM SOARING",
+      "Exit": "MM Owl Clock Town",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM SOARING => MM Owl Milk Road": {
+      "Area": "MM SOARING",
+      "Exit": "MM Owl Milk Road",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM SOARING => MM Owl Swamp": {
+      "Area": "MM SOARING",
+      "Exit": "MM Owl Swamp",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM SOARING => MM Owl Woodfall": {
+      "Area": "MM SOARING",
+      "Exit": "MM Owl Woodfall",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM SOARING => MM Owl Mountain": {
+      "Area": "MM SOARING",
+      "Exit": "MM Owl Mountain",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM SOARING => MM Owl Snowhead": {
+      "Area": "MM SOARING",
+      "Exit": "MM Owl Snowhead",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM SOARING => MM Owl Great Bay": {
+      "Area": "MM SOARING",
+      "Exit": "MM Owl Great Bay",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM SOARING => MM Owl Zora Cape": {
+      "Area": "MM SOARING",
+      "Exit": "MM Owl Zora Cape",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM SOARING => MM Owl Ikana": {
+      "Area": "MM SOARING",
+      "Exit": "MM Owl Ikana",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM SOARING => MM Owl Stone Tower": {
+      "Area": "MM SOARING",
+      "Exit": "MM Owl Stone Tower",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Owl Clock Town => MM Clock Town South": {
+      "Area": "MM Owl Clock Town",
       "Exit": "MM Clock Town South",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM SOARING => MM Milk Road Front": {
-      "Area": "MM SOARING",
+    "MM Owl Clock Town => OOT Market": {
+      "Area": "MM Owl Clock Town",
+      "Exit": "OOT Market",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Owl Clock Town => OOT Market Destroyed": {
+      "Area": "MM Owl Clock Town",
+      "Exit": "OOT Market Destroyed",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Owl Clock Town => MM Clock Tower Roof": {
+      "Area": "MM Owl Clock Town",
+      "Exit": "MM Clock Tower Roof",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Owl Milk Road => MM Milk Road Front": {
+      "Area": "MM Owl Milk Road",
       "Exit": "MM Milk Road Front",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM SOARING => MM Swamp Front": {
-      "Area": "MM SOARING",
+    "MM Owl Swamp => MM Swamp Front": {
+      "Area": "MM Owl Swamp",
       "Exit": "MM Swamp Front",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM SOARING => MM Woodfall Shrine": {
-      "Area": "MM SOARING",
+    "MM Owl Woodfall => MM Woodfall Shrine": {
+      "Area": "MM Owl Woodfall",
       "Exit": "MM Woodfall Shrine",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM SOARING => MM Mountain Village": {
-      "Area": "MM SOARING",
+    "MM Owl Mountain => MM Mountain Village": {
+      "Area": "MM Owl Mountain",
       "Exit": "MM Mountain Village",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM SOARING => MM Snowhead Entrance": {
-      "Area": "MM SOARING",
+    "MM Owl Snowhead => MM Snowhead Entrance": {
+      "Area": "MM Owl Snowhead",
       "Exit": "MM Snowhead Entrance",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM SOARING => MM Great Bay Coast": {
-      "Area": "MM SOARING",
+    "MM Owl Great Bay => MM Great Bay Coast": {
+      "Area": "MM Owl Great Bay",
       "Exit": "MM Great Bay Coast",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM SOARING => MM Zora Cape Peninsula": {
-      "Area": "MM SOARING",
+    "MM Owl Zora Cape => MM Zora Cape Peninsula": {
+      "Area": "MM Owl Zora Cape",
       "Exit": "MM Zora Cape Peninsula",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM SOARING => MM Ikana Canyon": {
-      "Area": "MM SOARING",
+    "MM Owl Ikana => MM Ikana Canyon": {
+      "Area": "MM Owl Ikana",
       "Exit": "MM Ikana Canyon",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM SOARING => MM Stone Tower Top": {
-      "Area": "MM SOARING",
+    "MM Owl Stone Tower => MM Stone Tower Top": {
+      "Area": "MM Owl Stone Tower",
       "Exit": "MM Stone Tower Top",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
@@ -32625,6 +33316,13 @@
     "MM Clock Town => MM Clock Tower Roof": {
       "Area": "MM Clock Town",
       "Exit": "MM Clock Tower Roof",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Clock Town => MM Owl Clock Town": {
+      "Area": "MM Clock Town",
+      "Exit": "MM Owl Clock Town",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -32695,6 +33393,13 @@
     "MM Clock Town South => MM Clock Tower Roof": {
       "Area": "MM Clock Town South",
       "Exit": "MM Clock Tower Roof",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Clock Town South => MM Owl Clock Town": {
+      "Area": "MM Clock Town South",
+      "Exit": "MM Owl Clock Town",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -33428,6 +34133,13 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "MM Swamp Front => MM Owl Swamp": {
+      "Area": "MM Swamp Front",
+      "Exit": "MM Owl Swamp",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "MM Swamp Back => MM Swamp Front": {
       "Area": "MM Swamp Back",
       "Exit": "MM Swamp Front",
@@ -33779,6 +34491,13 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "MM Woodfall Shrine => MM Owl Woodfall": {
+      "Area": "MM Woodfall Shrine",
+      "Exit": "MM Owl Woodfall",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "MM Woodfall Near Great Fairy Fountain => MM Woodfall": {
       "Area": "MM Woodfall Near Great Fairy Fountain",
       "Exit": "MM Woodfall",
@@ -33916,6 +34635,13 @@
     "MM Mountain Village => MM Near Village Grotto": {
       "Area": "MM Mountain Village",
       "Exit": "MM Near Village Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Mountain Village => MM Owl Mountain": {
+      "Area": "MM Mountain Village",
+      "Exit": "MM Owl Mountain",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -34214,6 +34940,13 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "MM Snowhead Entrance => MM Owl Snowhead": {
+      "Area": "MM Snowhead Entrance",
+      "Exit": "MM Owl Snowhead",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "MM Snowhead => MM Snowhead Entrance": {
       "Area": "MM Snowhead",
       "Exit": "MM Snowhead Entrance",
@@ -34291,6 +35024,13 @@
     "MM Milk Road Front => MM Gorman Track Front": {
       "Area": "MM Milk Road Front",
       "Exit": "MM Gorman Track Front",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Milk Road Front => MM Owl Milk Road": {
+      "Area": "MM Milk Road Front",
+      "Exit": "MM Owl Milk Road",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -34500,6 +35240,13 @@
     "MM Great Bay Coast => MM GBC Near Cow Grotto": {
       "Area": "MM Great Bay Coast",
       "Exit": "MM GBC Near Cow Grotto",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Great Bay Coast => MM Owl Great Bay": {
+      "Area": "MM Great Bay Coast",
+      "Exit": "MM Owl Great Bay",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -34813,6 +35560,13 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "MM Zora Cape Peninsula => MM Owl Zora Cape": {
+      "Area": "MM Zora Cape Peninsula",
+      "Exit": "MM Owl Zora Cape",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "MM Behind Gorman Fence => MM Milk Road Back": {
       "Area": "MM Behind Gorman Fence",
       "Exit": "MM Milk Road Back",
@@ -35116,6 +35870,13 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "MM Ikana Canyon => MM Owl Ikana": {
+      "Area": "MM Ikana Canyon",
+      "Exit": "MM Owl Ikana",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "MM Ikana Fairy Fountain => MM Ikana Canyon": {
       "Area": "MM Ikana Fairy Fountain",
       "Exit": "MM Ikana Canyon",
@@ -35218,6 +35979,13 @@
     "MM Stone Tower Top => MM Stone Tower Top Inverted": {
       "Area": "MM Stone Tower Top",
       "Exit": "MM Stone Tower Top Inverted",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Stone Tower Top => MM Owl Stone Tower": {
+      "Area": "MM Stone Tower Top",
+      "Exit": "MM Owl Stone Tower",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -37232,6 +38000,166 @@
         "PriceDataNames": []
       }
     },
+    "MM Moon Trial Deku Gossip Front-Left": {
+      "Name": "MM Moon Trial Deku Gossip Front-Left",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "MM Moon Trial Deku Gossip Front-Right": {
+      "Name": "MM Moon Trial Deku Gossip Front-Right",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "MM Moon Trial Deku Gossip Mid-Left": {
+      "Name": "MM Moon Trial Deku Gossip Mid-Left",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "MM Moon Trial Deku Gossip Mid-Right": {
+      "Name": "MM Moon Trial Deku Gossip Mid-Right",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "MM Moon Trial Deku Gossip Back": {
+      "Name": "MM Moon Trial Deku Gossip Back",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "MM Moon Trial Goron Gossip Center Left": {
+      "Name": "MM Moon Trial Goron Gossip Center Left",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "MM Moon Trial Goron Gossip Center Right": {
+      "Name": "MM Moon Trial Goron Gossip Center Right",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "MM Moon Trial Goron Gossip West Left": {
+      "Name": "MM Moon Trial Goron Gossip West Left",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "MM Moon Trial Goron Gossip West Right": {
+      "Name": "MM Moon Trial Goron Gossip West Right",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "MM Moon Trial Goron Gossip By Heart Piece": {
+      "Name": "MM Moon Trial Goron Gossip By Heart Piece",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "MM Moon Trial Zora Gossip Outer Left": {
+      "Name": "MM Moon Trial Zora Gossip Outer Left",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "MM Moon Trial Zora Gossip Middle Left": {
+      "Name": "MM Moon Trial Zora Gossip Middle Left",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "MM Moon Trial Zora Gossip Inner Right": {
+      "Name": "MM Moon Trial Zora Gossip Inner Right",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "MM Moon Trial Zora Gossip Middle Right": {
+      "Name": "MM Moon Trial Zora Gossip Middle Right",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "MM Moon Trial Zora Gossip Outer Right": {
+      "Name": "MM Moon Trial Zora Gossip Outer Right",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "MM Moon Trial Link Gossip 1": {
+      "Name": "MM Moon Trial Link Gossip 1",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "MM Moon Trial Link Gossip 2": {
+      "Name": "MM Moon Trial Link Gossip 2",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "MM Moon Trial Link Gossip Left": {
+      "Name": "MM Moon Trial Link Gossip Left",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "MM Moon Trial Link Gossip Right": {
+      "Name": "MM Moon Trial Link Gossip Right",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "MM Moon Trial Link Gossip Last": {
+      "Name": "MM Moon Trial Link Gossip Last",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
     "MM Termina Field Gossip Near Observatory": {
       "Name": "MM Termina Field Gossip Near Observatory",
       "SpoilerData": {
@@ -39021,7 +39949,7 @@
       }
     },
     "dekuTree": {
-      "DisplayName": "Deku Tree",
+      "DisplayName": "Open Deku Tree",
       "CurrentValue": "open",
       "SubCategory": "Events",
       "Values": {
@@ -39144,6 +40072,37 @@
         },
         "adult": {
           "Name": "Open (Adult Only)",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        },
+        "open": {
+          "Name": "Open",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "gerudoFortress": {
+      "DisplayName": "Gerudo Fortress",
+      "CurrentValue": "vanilla",
+      "SubCategory": "Events",
+      "Values": {
+        "vanilla": {
+          "Name": "Vanilla",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        },
+        "single": {
+          "Name": "One Carpenter",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -39354,8 +40313,70 @@
         }
       }
     },
-    "smallKeyShuffle": {
-      "DisplayName": "Small Key Shuffle",
+    "smallKeyShuffleOot": {
+      "DisplayName": "Small Key Shuffle MM",
+      "CurrentValue": "ownDungeon",
+      "SubCategory": "Key Shuffle",
+      "Values": {
+        "ownDungeon": {
+          "Name": "Own Dungeon",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        },
+        "anywhere": {
+          "Name": "Anywhere",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        },
+        "removed": {
+          "Name": "Removed",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "smallKeyShuffleMm": {
+      "DisplayName": "Small Key Shuffle MM",
+      "CurrentValue": "ownDungeon",
+      "SubCategory": "Key Shuffle",
+      "Values": {
+        "ownDungeon": {
+          "Name": "Own Dungeon",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        },
+        "anywhere": {
+          "Name": "Anywhere",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        },
+        "removed": {
+          "Name": "Removed",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "bossKeyShuffleOot": {
+      "DisplayName": "Boss Key Shuffle OOT",
       "CurrentValue": "ownDungeon",
       "SubCategory": "Key Shuffle",
       "Values": {
@@ -39374,6 +40395,192 @@
         },
         "anywhere": {
           "Name": "Anywhere",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        },
+        "removed": {
+          "Name": "Removed",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "bossKeyShuffleMm": {
+      "DisplayName": "Boss Key Shuffle MM",
+      "CurrentValue": "ownDungeon",
+      "SubCategory": "Key Shuffle",
+      "Values": {
+        "ownDungeon": {
+          "Name": "Own Dungeon",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        },
+        "anywhere": {
+          "Name": "Anywhere",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        },
+        "removed": {
+          "Name": "Removed",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "agelessSwords": {
+      "DisplayName": "Ageless Swords",
+      "CurrentValue": "false",
+      "SubCategory": "Ageless Items",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "agelessShields": {
+      "DisplayName": "Ageless Shields",
+      "CurrentValue": "false",
+      "SubCategory": "Ageless Items",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "agelessTunics": {
+      "DisplayName": "Ageless Tunics",
+      "CurrentValue": "false",
+      "SubCategory": "Ageless Items",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "agelessBoots": {
+      "DisplayName": "Ageless Boots",
+      "CurrentValue": "false",
+      "SubCategory": "Ageless Items",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "agelessSticks": {
+      "DisplayName": "Ageless Sticks",
+      "CurrentValue": "false",
+      "SubCategory": "Ageless Items",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "agelessBoomerang": {
+      "DisplayName": "Ageless Boomerang",
+      "CurrentValue": "false",
+      "SubCategory": "Ageless Items",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "agelessHammer": {
+      "DisplayName": "Ageless Hammer",
+      "CurrentValue": "false",
+      "SubCategory": "Ageless Items",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        },
+        "false": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -43463,64 +44670,9 @@
   },
   "AdditionalLogic": [
     {
-      "Id": "MM_ZORA",
-      "RequiredItems": [
-        "MM_MASK_ZORA"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM_bow",
-      "RequiredItems": [
-        "MM_BOW"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
       "Id": "MM_PICTORGRAPH_BOX",
       "RequiredItems": [
         "MM_PICTOGRAPH_BOX"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_BOMBCHU_1",
-      "RequiredItems": [
-        "false"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM_EVENT_GREEN_POTION",
-      "RequiredItems": [
-        "false"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM_EVENT_MOUNTIAN_VILLAGE_OWL",
-      "RequiredItems": [
-        "MM_EVENT_MOUNTAIN_VILLAGE_OWL"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",

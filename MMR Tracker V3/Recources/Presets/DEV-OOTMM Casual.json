@@ -4707,13 +4707,13 @@
         ],
         [
           "OOT_can_use_bow",
-          "option{smallKeyShuffle, anywhere}",
+          "option{smallKeyShuffleOot, anywhere}",
           "OOT_SMALL_KEY_FIRE, 5",
           "OOT Fire Temple Maze"
         ],
         [
           "OOT Fire Temple Maze",
-          "option{smallKeyShuffle, anywhere, false}",
+          "option{smallKeyShuffleOot, anywhere, false}",
           "OOT_SMALL_KEY_FIRE, 4"
         ]
       ],
@@ -5302,12 +5302,18 @@
     {
       "Id": "OOT Bottom of the Well East Cage",
       "RequiredItems": [
-        "OOT_SMALL_KEY_BOTW, 3",
-        "OOT_has_lens",
         "OOT Bottom of the Well Main",
         "option{BotWMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_BOTW, 3",
+          "OOT_has_lens"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -5352,6 +5358,10 @@
         ],
         [
           "OOT_has_bombflowers",
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_has_bombflowers",
           "OOT_SMALL_KEY_BOTW, 3"
         ],
         [
@@ -5379,12 +5389,18 @@
     {
       "Id": "OOT Bottom of the Well Pits",
       "RequiredItems": [
-        "OOT_has_lens",
-        "OOT_SMALL_KEY_BOTW, 3",
         "OOT Bottom of the Well Main",
         "option{BotWMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_lens",
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_BOTW, 3"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -5430,13 +5446,19 @@
     {
       "Id": "OOT Bottom of the Well GS East Cage",
       "RequiredItems": [
-        "OOT_SMALL_KEY_BOTW, 3",
-        "OOT_has_lens",
-        "OOT_can_boomerang",
         "OOT Bottom of the Well Main",
         "option{BotWMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_BOTW, 3",
+          "OOT_has_lens",
+          "OOT_can_boomerang"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -5445,13 +5467,19 @@
     {
       "Id": "OOT Bottom of the Well GS Inner West",
       "RequiredItems": [
-        "OOT_SMALL_KEY_BOTW, 3",
-        "OOT_has_lens",
-        "OOT_can_boomerang",
         "OOT Bottom of the Well Main",
         "option{BotWMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_BOTW, 3",
+          "OOT_has_lens",
+          "OOT_can_boomerang"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -5460,13 +5488,19 @@
     {
       "Id": "OOT Bottom of the Well GS Inner East",
       "RequiredItems": [
-        "OOT_SMALL_KEY_BOTW, 3",
-        "OOT_has_lens",
-        "OOT_can_boomerang",
         "OOT Bottom of the Well Main",
         "option{BotWMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_BOTW, 3",
+          "OOT_has_lens",
+          "OOT_can_boomerang"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -5572,13 +5606,19 @@
     {
       "Id": "OOT Shadow Temple Invisible Spike Room",
       "RequiredItems": [
-        "OOT_SMALL_KEY_SHADOW, 2",
-        "OOT_can_hookshot",
-        "OOT_has_lens",
         "OOT Shadow Temple Open",
         "option{ShadowMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_SHADOW, 2",
+          "OOT_can_hookshot",
+          "OOT_has_lens"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -5613,14 +5653,20 @@
     {
       "Id": "OOT Shadow Temple Skull",
       "RequiredItems": [
-        "OOT_SMALL_KEY_SHADOW, 2",
-        "OOT_can_hookshot",
-        "OOT_has_bombs",
-        "OOT_has_lens",
         "OOT Shadow Temple Open",
         "option{ShadowMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_SHADOW, 2",
+          "OOT_can_hookshot",
+          "OOT_has_bombs",
+          "OOT_has_lens"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -5717,13 +5763,19 @@
     {
       "Id": "OOT Shadow Temple GS Skull Pot",
       "RequiredItems": [
-        "OOT_SMALL_KEY_SHADOW, 2",
-        "OOT_can_hookshot",
-        "OOT_has_lens",
         "OOT Shadow Temple Open",
         "option{ShadowMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_SHADOW, 2",
+          "OOT_can_hookshot",
+          "OOT_has_lens"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -5745,12 +5797,18 @@
     {
       "Id": "OOT Shadow Temple GS Near Boat",
       "RequiredItems": [
-        "OOT_SMALL_KEY_SHADOW, 4",
-        "OOT_can_longshot",
         "OOT Shadow Temple Wind",
         "option{ShadowMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_SHADOW, 4",
+          "OOT_can_longshot"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -5886,7 +5944,7 @@
     {
       "Id": "OOT Gerudo Member Card",
       "RequiredItems": [
-        "OOT_EVENT_CARPENTERS_RESCUE"
+        "OOT_carpenters_rescued"
       ],
       "ConditionalItems": [
         [
@@ -6005,6 +6063,9 @@
         ],
         [
           "OOT_has_fire_arrows",
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
           "OOT_SMALL_KEY_SPIRIT, 4"
         ]
       ],
@@ -6067,6 +6128,9 @@
         ],
         [
           "OOT_has_fire_arrows",
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
           "OOT_SMALL_KEY_SPIRIT, 4"
         ]
       ],
@@ -6250,6 +6314,10 @@
         ],
         [
           "OOT_can_collect_ageless",
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_can_collect_ageless",
           "OOT_SMALL_KEY_SPIRIT, 2"
         ]
       ],
@@ -6309,24 +6377,29 @@
         ],
         [
           "option{SpiritMQ, true}",
+          "setting{smallKeyShuffleOot, removed}",
+          "OOT Spirit Temple"
+        ],
+        [
+          "option{SpiritMQ, true}",
+          "OOT Spirit Temple",
           "OOT_SMALL_KEY_SPIRIT, 4",
           "OOT_has_explosives",
           "OOT_OCARINA",
           "OOT_SONG_TIME",
           "OOT_is_child",
           "OOT_has_weapon",
-          "OOT_has_lens",
-          "OOT Spirit Temple"
+          "OOT_has_lens"
         ],
         [
           "option{SpiritMQ, true}",
+          "OOT Spirit Temple",
           "OOT_SMALL_KEY_SPIRIT, 4",
           "OOT_has_explosives",
           "OOT_OCARINA",
           "OOT_SONG_TIME",
           "OOT_is_child",
           "OOT_has_lens",
-          "OOT Spirit Temple",
           "OOT_can_use_sticks"
         ],
         [
@@ -6334,11 +6407,16 @@
           "option{SpiritMQ, false}"
         ],
         [
-          "OOT_has_explosives",
-          "OOT_SMALL_KEY_SPIRIT, 3",
-          "OOT_HOOKSHOT, 2",
+          "setting{smallKeyShuffleOot, removed}",
           "OOT Spirit Temple Statue",
           "option{SpiritMQ, false}"
+        ],
+        [
+          "OOT_has_explosives",
+          "OOT Spirit Temple Statue",
+          "option{SpiritMQ, false}",
+          "OOT_SMALL_KEY_SPIRIT, 3",
+          "OOT_HOOKSHOT, 2"
         ]
       ],
       "TimeNeeded": "None",
@@ -6593,12 +6671,18 @@
     {
       "Id": "OOT Gerudo Training Maze Upper Fake Ceiling",
       "RequiredItems": [
-        "OOT_SMALL_KEY_GTG, 3",
-        "OOT_has_lens",
         "OOT Gerudo Training Grounds Maze",
         "option{GTGMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_GTG, 3",
+          "OOT_has_lens"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -6631,11 +6715,17 @@
     {
       "Id": "OOT Gerudo Training Maze Chest 1",
       "RequiredItems": [
-        "OOT_SMALL_KEY_GTG, 4",
         "OOT Gerudo Training Grounds Maze",
         "option{GTGMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_GTG, 4"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -6644,11 +6734,17 @@
     {
       "Id": "OOT Gerudo Training Maze Chest 2",
       "RequiredItems": [
-        "OOT_SMALL_KEY_GTG, 6",
         "OOT Gerudo Training Grounds Maze",
         "option{GTGMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_GTG, 6"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -6657,11 +6753,17 @@
     {
       "Id": "OOT Gerudo Training Maze Chest 3",
       "RequiredItems": [
-        "OOT_SMALL_KEY_GTG, 7",
         "OOT Gerudo Training Grounds Maze",
         "option{GTGMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_GTG, 7"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -6670,11 +6772,17 @@
     {
       "Id": "OOT Gerudo Training Maze Chest 4",
       "RequiredItems": [
-        "OOT_SMALL_KEY_GTG, 9",
         "OOT Gerudo Training Grounds Maze",
         "option{GTGMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_GTG, 9"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -6804,13 +6912,19 @@
     {
       "Id": "OOT Ganon Castle Light Chest Lullaby",
       "RequiredItems": [
-        "OOT_SMALL_KEY_GANON",
-        "OOT_OCARINA",
-        "OOT_SONG_ZELDA",
         "OOT Ganon Castle Light",
         "option{GanonMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_GANON",
+          "OOT_OCARINA",
+          "OOT_SONG_ZELDA"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -6917,7 +7031,7 @@
         "OOT_has_lens",
         "OOT_can_hit_scrub",
         "OOT_can_use_wallet_1",
-        "OOT Ganon Castle Main",
+        "OOT Ganon Castle",
         "option{GanonMQ, false}"
       ],
       "ConditionalItems": [],
@@ -6932,7 +7046,7 @@
         "OOT_has_lens",
         "OOT_can_hit_scrub",
         "OOT_can_use_wallet_1",
-        "OOT Ganon Castle Main",
+        "OOT Ganon Castle",
         "option{GanonMQ, false}"
       ],
       "ConditionalItems": [],
@@ -6947,7 +7061,7 @@
         "OOT_has_lens",
         "OOT_can_hit_scrub",
         "OOT_can_use_wallet_1",
-        "OOT Ganon Castle Main",
+        "OOT Ganon Castle",
         "option{GanonMQ, false}"
       ],
       "ConditionalItems": [],
@@ -6962,7 +7076,7 @@
         "OOT_has_lens",
         "OOT_can_hit_scrub",
         "OOT_can_use_wallet_1",
-        "OOT Ganon Castle Main",
+        "OOT Ganon Castle",
         "option{GanonMQ, false}"
       ],
       "ConditionalItems": [],
@@ -7688,21 +7802,29 @@
     {
       "Id": "OOT MQ Bottom of the Well Lens Chest",
       "RequiredItems": [
-        "OOT_OCARINA",
-        "OOT_SONG_ZELDA",
-        "OOT_SMALL_KEY_BOTW, 2",
-        "OOT_has_explosives",
         "OOT Bottom of the Well Main",
         "option{BotWMQ, true}"
       ],
       "ConditionalItems": [
         [
+          "OOT_OCARINA",
+          "OOT_SONG_ZELDA",
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_BOTW, 2",
+          "OOT_has_explosives",
           "OOT_has_weapon"
         ],
         [
+          "OOT_SMALL_KEY_BOTW, 2",
+          "OOT_has_explosives",
           "OOT_can_use_sticks"
         ],
         [
+          "OOT_OCARINA",
+          "OOT_SMALL_KEY_BOTW, 2",
+          "OOT_has_explosives",
           "OOT_SONG_SUN"
         ]
       ],
@@ -7769,12 +7891,18 @@
     {
       "Id": "OOT MQ Bottom of the Well GS Coffin Room",
       "RequiredItems": [
-        "OOT_can_damage_skull",
-        "OOT_SMALL_KEY_BOTW, 2",
         "OOT Bottom of the Well Main",
         "option{BotWMQ, true}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_can_damage_skull",
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_BOTW, 2"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -8366,11 +8494,17 @@
     {
       "Id": "OOT MQ Fire Temple GS Topmost",
       "RequiredItems": [
-        "OOT_SMALL_KEY_FIRE, 5",
         "OOT Fire Temple Top",
         "option{FireMQ, true}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_FIRE, 5"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -8541,12 +8675,18 @@
     {
       "Id": "OOT MQ Water Temple GS Side Loop",
       "RequiredItems": [
-        "OOT_has_fire",
-        "OOT_SMALL_KEY_WATER, 2",
         "OOT Water Temple Side Loop",
         "option{WaterMQ, true}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_fire",
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_WATER, 2"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -8778,12 +8918,18 @@
     {
       "Id": "OOT MQ Shadow Temple Crushing Wall Left Chest",
       "RequiredItems": [
-        "OOT_SMALL_KEY_SHADOW, 6",
-        "OOT_can_use_din",
         "OOT Shadow Temple Final Side Rooms",
         "option{ShadowMQ, true}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_SHADOW, 6",
+          "OOT_can_use_din"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -8792,12 +8938,18 @@
     {
       "Id": "OOT MQ Shadow Temple Boss Key Chest",
       "RequiredItems": [
-        "OOT_SMALL_KEY_SHADOW, 6",
-        "OOT_can_use_din",
         "OOT Shadow Temple Final Side Rooms",
         "option{ShadowMQ, true}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_SHADOW, 6",
+          "OOT_can_use_din"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -8950,9 +9102,13 @@
         [
           "OOT_can_use_slingshot",
           "OOT_BOW",
-          "OOT_SMALL_KEY_SPIRIT, 2",
-          "OOT_has_explosives",
+          "setting{smallKeyShuffleOot, removed}",
           "OOT Spirit Temple"
+        ],
+        [
+          "OOT Spirit Temple",
+          "OOT_SMALL_KEY_SPIRIT, 2",
+          "OOT_has_explosives"
         ]
       ],
       "TimeNeeded": "None",
@@ -8970,12 +9126,16 @@
           "OOT Spirit Temple Sun Block Room"
         ],
         [
+          "setting{smallKeyShuffleOot, removed}",
+          "OOT Spirit Temple"
+        ],
+        [
+          "OOT Spirit Temple",
           "OOT_SMALL_KEY_SPIRIT, 2",
           "OOT_has_explosives",
           "OOT_OCARINA",
           "OOT_SONG_TIME",
-          "OOT_is_child",
-          "OOT Spirit Temple"
+          "OOT_is_child"
         ]
       ],
       "TimeNeeded": "None",
@@ -9132,18 +9292,24 @@
     {
       "Id": "OOT MQ Spirit Temple Symphony Room Chest",
       "RequiredItems": [
-        "OOT_SMALL_KEY_SPIRIT, 7",
-        "OOT_can_hammer",
-        "OOT_OCARINA",
-        "OOT_SONG_TIME",
-        "OOT_SONG_EPONA",
-        "OOT_SONG_SUN",
-        "OOT_SONG_STORMS",
-        "OOT_SONG_ZELDA",
         "OOT Spirit Temple Adult Lower",
         "option{SpiritMQ, true}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_SPIRIT, 7",
+          "OOT_can_hammer",
+          "OOT_OCARINA",
+          "OOT_SONG_TIME",
+          "OOT_SONG_EPONA",
+          "OOT_SONG_SUN",
+          "OOT_SONG_STORMS",
+          "OOT_SONG_ZELDA"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -9230,18 +9396,24 @@
     {
       "Id": "OOT MQ Spirit Temple GS Symphony Room",
       "RequiredItems": [
-        "OOT_SMALL_KEY_SPIRIT, 7",
-        "OOT_can_hammer",
-        "OOT_OCARINA",
-        "OOT_SONG_TIME",
-        "OOT_SONG_EPONA",
-        "OOT_SONG_SUN",
-        "OOT_SONG_STORMS",
-        "OOT_SONG_ZELDA",
         "OOT Spirit Temple Adult Lower",
         "option{SpiritMQ, true}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_SPIRIT, 7",
+          "OOT_can_hammer",
+          "OOT_OCARINA",
+          "OOT_SONG_TIME",
+          "OOT_SONG_EPONA",
+          "OOT_SONG_SUN",
+          "OOT_SONG_STORMS",
+          "OOT_SONG_ZELDA"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -9250,11 +9422,17 @@
     {
       "Id": "OOT MQ Spirit Temple GS Top Floor Left Wall",
       "RequiredItems": [
-        "OOT_SMALL_KEY_SPIRIT, 7",
         "OOT Spirit Temple Top Floor",
         "option{SpiritMQ, true}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_SPIRIT, 7"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -9263,11 +9441,17 @@
     {
       "Id": "OOT MQ Spirit Temple GS Top Floor Back Wall",
       "RequiredItems": [
-        "OOT_SMALL_KEY_SPIRIT, 7",
         "OOT Spirit Temple Top Floor",
         "option{SpiritMQ, true}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_SPIRIT, 7"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -9337,11 +9521,17 @@
     {
       "Id": "OOT MQ Gerudo Training Grounds Maze Fourth Chest",
       "RequiredItems": [
-        "OOT_SMALL_KEY_GTG",
         "OOT Gerudo Training Grounds",
         "option{GTGMQ, true}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_GTG"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -9745,7 +9935,7 @@
         "OOT_has_lens",
         "OOT_can_hit_scrub",
         "OOT_can_use_wallet_1",
-        "OOT Ganon Castle Main",
+        "OOT Ganon Castle",
         "option{GanonMQ, true}"
       ],
       "ConditionalItems": [],
@@ -9760,7 +9950,7 @@
         "OOT_has_lens",
         "OOT_can_hit_scrub",
         "OOT_can_use_wallet_1",
-        "OOT Ganon Castle Main",
+        "OOT Ganon Castle",
         "option{GanonMQ, true}"
       ],
       "ConditionalItems": [],
@@ -9775,7 +9965,7 @@
         "OOT_has_lens",
         "OOT_can_hit_scrub",
         "OOT_can_use_wallet_1",
-        "OOT Ganon Castle Main",
+        "OOT Ganon Castle",
         "option{GanonMQ, true}"
       ],
       "ConditionalItems": [],
@@ -9790,7 +9980,7 @@
         "OOT_has_lens",
         "OOT_can_hit_scrub",
         "OOT_can_use_wallet_1",
-        "OOT Ganon Castle Main",
+        "OOT Ganon Castle",
         "option{GanonMQ, true}"
       ],
       "ConditionalItems": [],
@@ -9805,7 +9995,7 @@
         "OOT_has_lens",
         "OOT_can_hit_scrub",
         "OOT_can_use_wallet_1",
-        "OOT Ganon Castle Main",
+        "OOT Ganon Castle",
         "option{GanonMQ, true}"
       ],
       "ConditionalItems": [],
@@ -10012,6 +10202,24 @@
         "MM Clock Town South"
       ],
       "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Clock Town Owl Statue",
+      "RequiredItems": [
+        "MM Owl Clock Town"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_has_sticks"
+        ],
+        [
+          "MM_has_weapon"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -10333,6 +10541,64 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Milk Bar Purchase Milk",
+      "RequiredItems": [
+        "MM_MASK_ROMANI",
+        "MM_can_use_wallet_1",
+        "MM Milk Bar"
+      ],
+      "ConditionalItems": [
+        [
+          "time{After_NIGHT1_PM_10_00}",
+          "time{Before_DAY2_AM_06_00}"
+        ],
+        [
+          "time{After_NIGHT2_PM_10_00}",
+          "time{Before_DAY3_AM_06_00}"
+        ],
+        [
+          "time{After_NIGHT3_PM_06_00}",
+          "time{Before_NIGHT3_PM_09_00}"
+        ],
+        [
+          "time{After_NIGHT3_PM_10_00}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Milk Bar Purchase Chateau",
+      "RequiredItems": [
+        "MM_MASK_ROMANI",
+        "MM_can_use_wallet_2",
+        "MM Milk Bar"
+      ],
+      "ConditionalItems": [
+        [
+          "time{After_NIGHT1_PM_10_00}",
+          "time{Before_DAY2_AM_06_00}"
+        ],
+        [
+          "time{After_NIGHT2_PM_10_00}",
+          "time{Before_DAY3_AM_06_00}"
+        ],
+        [
+          "time{After_NIGHT3_PM_06_00}",
+          "time{Before_NIGHT3_PM_09_00}"
+        ],
+        [
+          "time{After_NIGHT3_PM_10_00}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Town Archery Reward 1",
       "RequiredItems": [
         "MM_BOW",
@@ -10432,6 +10698,7 @@
       "Id": "MM Honey & Darling Reward 2",
       "RequiredItems": [
         "MM_can_use_wallet_1",
+        "MM_BOW",
         "MM_EVENT_HD_REWARD_1",
         "MM_EVENT_HD_REWARD_2",
         "MM_EVENT_HD_REWARD_3",
@@ -11159,12 +11426,43 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Southern Swamp Scrub Shop",
+      "RequiredItems": [
+        "MM_MASK_DEKU",
+        "MM_can_use_wallet_1",
+        "MM Swamp Front"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Southern Swamp Song of Soaring",
       "RequiredItems": [
         "MM_MASK_DEKU",
         "MM Swamp Canopy Back"
       ],
       "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Southern Swamp Owl Statue",
+      "RequiredItems": [
+        "MM Owl Swamp"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_has_sticks"
+        ],
+        [
+          "MM_has_weapon"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -11409,6 +11707,24 @@
         "MM Deku Shrine"
       ],
       "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Woodfall Owl Statue",
+      "RequiredItems": [
+        "MM Owl Woodfall"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_has_sticks"
+        ],
+        [
+          "MM_has_weapon"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -11947,6 +12263,24 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Mountain Village Owl Statue",
+      "RequiredItems": [
+        "MM Owl Mountain"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_has_sticks"
+        ],
+        [
+          "MM_has_weapon"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Blacksmith Razor Blade",
       "RequiredItems": [
         "MM_can_use_wallet_2",
@@ -12259,6 +12593,24 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Snowhead Owl Statue",
+      "RequiredItems": [
+        "MM Owl Snowhead"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_has_sticks"
+        ],
+        [
+          "MM_has_weapon"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Goron Race Reward",
       "RequiredItems": [
         "MM_EVENT_BOSS_SNOWHEAD",
@@ -12266,6 +12618,24 @@
         "MM Goron Race"
       ],
       "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Milk Road Owl Statue",
+      "RequiredItems": [
+        "MM Owl Milk Road"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_has_sticks"
+        ],
+        [
+          "MM_has_weapon"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -12581,6 +12951,24 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Great Bay Coast Owl Statue",
+      "RequiredItems": [
+        "MM Owl Great Bay"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_has_sticks"
+        ],
+        [
+          "MM_has_weapon"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Zora Cape Ledge Chest 1",
       "RequiredItems": [
         "MM_can_hookshot",
@@ -12629,6 +13017,24 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Zora Cape Owl Statue",
+      "RequiredItems": [
+        "MM Owl Zora Cape"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_has_sticks"
+        ],
+        [
+          "MM_has_weapon"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Zora Cape Grotto",
       "RequiredItems": [
         "MM Zora Cape Grotto"
@@ -12656,6 +13062,19 @@
       "RequiredItems": [
         "MM_DEED_MOUNTAIN",
         "MM_MASK_GORON",
+        "MM Lulu's Room"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Zora Hall Scrub Shop",
+      "RequiredItems": [
+        "MM_MASK_ZORA",
+        "MM_can_use_wallet_1",
         "MM Lulu's Room"
       ],
       "ConditionalItems": [],
@@ -13368,6 +13787,19 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Gorman Track Milk Purchase",
+      "RequiredItems": [
+        "MM_can_use_wallet_1",
+        "MM_is_day",
+        "MM Gorman Track Front"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Ikana Graveyard Captain Mask",
       "RequiredItems": [
         "MM_OCARINA",
@@ -13495,6 +13927,18 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Ikana Valley Scrub Shop",
+      "RequiredItems": [
+        "MM_can_use_wallet_2",
+        "MM Ikana Valley"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Ikana Valley Scrub HP",
       "RequiredItems": [
         "MM_DEED_OCEAN",
@@ -13514,6 +13958,24 @@
         "MM Ikana Valley Grotto"
       ],
       "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Ikana Canyon Owl Statue",
+      "RequiredItems": [
+        "MM Owl Ikana"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_has_sticks"
+        ],
+        [
+          "MM_has_weapon"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -13561,6 +14023,24 @@
         "MM Music Box House"
       ],
       "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Stone Tower Owl Statue",
+      "RequiredItems": [
+        "MM Owl Stone Tower"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_has_sticks"
+        ],
+        [
+          "MM_has_weapon"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -17119,11 +17599,11 @@
       ],
       "ConditionalItems": [
         [
-          "option{smallKeyShuffle, anywhere}",
+          "option{smallKeyShuffleOot, anywhere}",
           "OOT_SMALL_KEY_FIRE, 2"
         ],
         [
-          "option{smallKeyShuffle, anywhere, false}",
+          "option{smallKeyShuffleOot, anywhere, false}",
           "OOT_SMALL_KEY_FIRE"
         ]
       ],
@@ -17140,11 +17620,14 @@
       ],
       "ConditionalItems": [
         [
-          "setting{smallKeyShuffle, anywhere}",
+          "setting{smallKeyShuffleOot, anywhere}",
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
           "OOT_SMALL_KEY_FIRE, 8"
         ],
         [
-          "setting{smallKeyShuffle, anywhere, false}"
+          "setting{smallKeyShuffleOot, anywhere, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -17176,26 +17659,36 @@
     },
     {
       "Id": "OOT Fire Temple Pre-Boss => OOT Fire Temple Boss",
-      "RequiredItems": [
-        "OOT_BOSS_KEY_FIRE"
-      ],
+      "RequiredItems": [],
       "ConditionalItems": [
         [
+          "setting{bossKeyShuffleOot, removed}",
+          "option{FireMQ, true}"
+        ],
+        [
+          "OOT_BOSS_KEY_FIRE",
           "OOT_EVENT_FIRE_TEMPLE_PILLAR_HAMMER",
           "option{FireMQ, true}"
         ],
         [
+          "OOT_BOSS_KEY_FIRE",
           "OOT_has_hover_boots",
           "option{FireMQ, true}"
         ],
         [
-          "OOT_EVENT_FIRE_TEMPLE_PILLAR_HAMMER",
-          "OOT_has_tunic_goron",
+          "setting{bossKeyShuffleOot, removed}",
           "option{FireMQ, false}"
         ],
         [
-          "OOT_has_tunic_goron",
+          "OOT_BOSS_KEY_FIRE",
+          "OOT_EVENT_FIRE_TEMPLE_PILLAR_HAMMER",
           "option{FireMQ, false}",
+          "OOT_has_tunic_goron"
+        ],
+        [
+          "OOT_BOSS_KEY_FIRE",
+          "option{FireMQ, false}",
+          "OOT_has_tunic_goron",
           "OOT_has_hover_boots"
         ]
       ],
@@ -17325,18 +17818,19 @@
       ],
       "ConditionalItems": [
         [
-          "option{smallKeyShuffle, anywhere}",
+          "OOT_is_adult",
+          "option{smallKeyShuffleOot, anywhere}",
           "OOT_SMALL_KEY_FIRE, 4"
         ],
         [
-          "option{smallKeyShuffle, anywhere, false}",
+          "option{smallKeyShuffleOot, anywhere, false}",
           "OOT_SMALL_KEY_FIRE, 3",
           "OOT_has_tunic_goron_strict",
           "OOT_STRENGTH",
           "OOT_has_ranged_weapon_adult"
         ],
         [
-          "option{smallKeyShuffle, anywhere, false}",
+          "option{smallKeyShuffleOot, anywhere, false}",
           "OOT_SMALL_KEY_FIRE, 3",
           "OOT_has_tunic_goron_strict",
           "OOT_STRENGTH",
@@ -17355,11 +17849,11 @@
       ],
       "ConditionalItems": [
         [
-          "option{smallKeyShuffle, anywhere}",
+          "option{smallKeyShuffleOot, anywhere}",
           "OOT_SMALL_KEY_FIRE, 6"
         ],
         [
-          "option{smallKeyShuffle, anywhere, false}",
+          "option{smallKeyShuffleOot, anywhere, false}",
           "OOT_SMALL_KEY_FIRE, 5"
         ]
       ],
@@ -17375,11 +17869,11 @@
       ],
       "ConditionalItems": [
         [
-          "option{smallKeyShuffle, anywhere}",
+          "option{smallKeyShuffleOot, anywhere}",
           "OOT_SMALL_KEY_FIRE, 7"
         ],
         [
-          "option{smallKeyShuffle, anywhere, false}",
+          "option{smallKeyShuffleOot, anywhere, false}",
           "OOT_SMALL_KEY_FIRE, 6"
         ]
       ],
@@ -17407,11 +17901,11 @@
       ],
       "ConditionalItems": [
         [
-          "option{smallKeyShuffle, anywhere}",
+          "option{smallKeyShuffleOot, anywhere}",
           "OOT_SMALL_KEY_FIRE, 8"
         ],
         [
-          "option{smallKeyShuffle, anywhere, false}",
+          "option{smallKeyShuffleOot, anywhere, false}",
           "OOT_SMALL_KEY_FIRE, 7"
         ]
       ],
@@ -17542,6 +18036,10 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
+          "setting{smallKeyShuffleOot, removed}",
+          "option{ForestMQ, true}"
+        ],
+        [
           "OOT_SMALL_KEY_FOREST",
           "OOT_is_adult",
           "option{ForestMQ, true}"
@@ -17647,10 +18145,16 @@
     {
       "Id": "OOT Forest Temple Main => OOT Forest Temple Maze",
       "RequiredItems": [
-        "OOT_SMALL_KEY_FOREST",
         "option{ForestMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_FOREST"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -18017,12 +18521,18 @@
     {
       "Id": "OOT Forest Temple Maze => OOT Forest Temple Twisted 1 Normal",
       "RequiredItems": [
-        "OOT_is_adult",
-        "OOT_SMALL_KEY_FOREST, 2",
-        "OOT_STRENGTH",
         "option{ForestMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_is_adult",
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_FOREST, 2",
+          "OOT_STRENGTH"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -18031,13 +18541,19 @@
     {
       "Id": "OOT Forest Temple Maze => OOT Forest Temple Twisted 1 Alt",
       "RequiredItems": [
-        "OOT_is_adult",
-        "OOT_SMALL_KEY_FOREST, 2",
-        "OOT_STRENGTH",
-        "OOT_can_hit_triggers_distance",
         "option{ForestMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_is_adult",
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_FOREST, 2",
+          "OOT_STRENGTH",
+          "OOT_can_hit_triggers_distance"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -18046,10 +18562,16 @@
     {
       "Id": "OOT Forest Temple Twisted 1 Normal => OOT Forest Temple Poe 1",
       "RequiredItems": [
-        "OOT_SMALL_KEY_FOREST, 3",
         "option{ForestMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_FOREST, 3"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -18112,10 +18634,16 @@
     {
       "Id": "OOT Forest Temple Poe 2 => OOT Forest Temple Twisted 2 Normal",
       "RequiredItems": [
-        "OOT_SMALL_KEY_FOREST, 4",
         "option{ForestMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_FOREST, 4"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -18144,10 +18672,16 @@
     {
       "Id": "OOT Forest Temple Twisted 2 Normal => OOT Forest Temple Rotating Room",
       "RequiredItems": [
-        "OOT_SMALL_KEY_FOREST, 5",
         "option{ForestMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_FOREST, 5"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -18195,16 +18729,21 @@
     },
     {
       "Id": "OOT_EVENT_FOREST_POE_3",
-      "RequiredItems": [
-        "OOT_can_use_bow"
-      ],
+      "RequiredItems": [],
       "ConditionalItems": [
         [
-          "OOT_SMALL_KEY_FOREST, 6",
+          "setting{smallKeyShuffleOot, removed}",
           "OOT Forest Temple Falling Ceiling",
           "option{ForestMQ, true}"
         ],
         [
+          "OOT_SMALL_KEY_FOREST, 6",
+          "OOT_can_use_bow",
+          "OOT Forest Temple Falling Ceiling",
+          "option{ForestMQ, true}"
+        ],
+        [
+          "OOT_can_use_bow",
           "OOT Forest Temple Poe 3",
           "option{ForestMQ, false}"
         ]
@@ -18216,14 +18755,22 @@
     },
     {
       "Id": "OOT Forest Temple Antichamber => OOT Forest Temple Boss",
-      "RequiredItems": [
-        "OOT_BOSS_KEY_FOREST"
-      ],
+      "RequiredItems": [],
       "ConditionalItems": [
         [
+          "setting{bossKeyShuffleOot, removed}",
           "option{ForestMQ, true}"
         ],
         [
+          "OOT_BOSS_KEY_FOREST",
+          "option{ForestMQ, true}"
+        ],
+        [
+          "setting{bossKeyShuffleOot, removed}",
+          "option{ForestMQ, false}"
+        ],
+        [
+          "OOT_BOSS_KEY_FOREST",
           "option{ForestMQ, false}"
         ]
       ],
@@ -18233,25 +18780,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Ganon Castle Main => OOT Ganon Castle Light",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "OOT_can_lift_gold",
-          "option{GanonMQ, true}"
-        ],
-        [
-          "OOT_STRENGTH, 3",
-          "option{GanonMQ, false}"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT Ganon Castle Main => OOT Ganon Castle Forest",
+      "Id": "OOT Ganon Castle => OOT Ganon Castle Exterior After Bridge",
       "RequiredItems": [],
       "ConditionalItems": [
         [
@@ -18267,7 +18796,25 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Ganon Castle Main => OOT Ganon Castle Fire",
+      "Id": "OOT Ganon Castle => OOT Ganon Castle Light",
+      "RequiredItems": [
+        "OOT_can_lift_gold"
+      ],
+      "ConditionalItems": [
+        [
+          "option{GanonMQ, true}"
+        ],
+        [
+          "option{GanonMQ, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Ganon Castle => OOT Ganon Castle Forest",
       "RequiredItems": [],
       "ConditionalItems": [
         [
@@ -18283,7 +18830,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Ganon Castle Main => OOT Ganon Castle Water",
+      "Id": "OOT Ganon Castle => OOT Ganon Castle Fire",
       "RequiredItems": [],
       "ConditionalItems": [
         [
@@ -18299,7 +18846,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Ganon Castle Main => OOT Ganon Castle Spirit",
+      "Id": "OOT Ganon Castle => OOT Ganon Castle Water",
       "RequiredItems": [],
       "ConditionalItems": [
         [
@@ -18315,7 +18862,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Ganon Castle Main => OOT Ganon Castle Shadow",
+      "Id": "OOT Ganon Castle => OOT Ganon Castle Spirit",
       "RequiredItems": [],
       "ConditionalItems": [
         [
@@ -18331,7 +18878,23 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Ganon Castle Main => OOT Ganon Castle Tower",
+      "Id": "OOT Ganon Castle => OOT Ganon Castle Shadow",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "option{GanonMQ, true}"
+        ],
+        [
+          "option{GanonMQ, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Ganon Castle => OOT Ganon Castle Stairs",
       "RequiredItems": [],
       "ConditionalItems": [
         [
@@ -18349,19 +18912,30 @@
     {
       "Id": "OOT_EVENT_GANON_TRIAL_LIGHT",
       "RequiredItems": [
-        "OOT_has_light_arrows",
-        "OOT_has_lens",
-        "OOT_can_hookshot",
         "OOT Ganon Castle Light"
       ],
       "ConditionalItems": [
+        [
+          "OOT_has_light_arrows",
+          "OOT_has_lens",
+          "OOT_can_hookshot",
+          "setting{smallKeyShuffleOot, removed}",
+          "option{GanonMQ, true}"
+        ],
         [
           "OOT_SMALL_KEY_GANON, 3",
           "option{GanonMQ, true}"
         ],
         [
-          "OOT_SMALL_KEY_GANON, 2",
+          "setting{smallKeyShuffleOot, removed}",
           "option{GanonMQ, false}"
+        ],
+        [
+          "option{GanonMQ, false}",
+          "OOT_SMALL_KEY_GANON, 2",
+          "OOT_can_hookshot",
+          "OOT_has_lens",
+          "OOT_has_light_arrows"
         ]
       ],
       "TimeNeeded": "None",
@@ -18401,22 +18975,20 @@
       "RequiredItems": [
         "OOT_has_light_arrows",
         "OOT_has_tunic_goron_strict",
+        "OOT_can_lift_gold",
         "OOT Ganon Castle Fire"
       ],
       "ConditionalItems": [
         [
-          "OOT_can_lift_gold",
           "OOT_can_longshot",
           "option{GanonMQ, true}"
         ],
         [
-          "OOT_can_lift_gold",
           "OOT_has_hover_boots",
           "option{GanonMQ, true}"
         ],
         [
           "OOT_can_longshot",
-          "OOT_STRENGTH, 3",
           "option{GanonMQ, false}"
         ]
       ],
@@ -18459,17 +19031,23 @@
     {
       "Id": "OOT_EVENT_GANON_TRIAL_WATER",
       "RequiredItems": [
-        "OOT_has_blue_fire",
-        "OOT_has_light_arrows",
         "OOT Ganon Castle Water"
       ],
       "ConditionalItems": [
         [
-          "OOT_SMALL_KEY_GANON, 3",
+          "OOT_has_blue_fire",
+          "setting{smallKeyShuffleOot, removed}",
           "option{GanonMQ, true}"
         ],
         [
+          "OOT_SMALL_KEY_GANON, 3",
+          "OOT_has_light_arrows",
+          "option{GanonMQ, true}"
+        ],
+        [
+          "OOT_has_blue_fire",
           "OOT_can_hammer",
+          "OOT_has_light_arrows",
           "option{GanonMQ, false}"
         ]
       ],
@@ -18554,6 +19132,33 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Ganon Castle Stairs => OOT Ganon Castle",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Ganon Castle Stairs => OOT Ganon Castle Tower",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Ganon Castle Tower => OOT Ganon Castle Stairs",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Ganon Castle Tower => OOT Ganon Castle Tower Boss",
       "RequiredItems": [],
       "ConditionalItems": [
@@ -18576,6 +19181,7 @@
     {
       "Id": "OOT_EVENT_GANON",
       "RequiredItems": [
+        "setting{goal, triforce,false}",
         "OOT_has_light_arrows",
         "OOT Ganon Castle Tower Boss"
       ],
@@ -18987,33 +19593,6 @@
         "OOT Gerudo Fortress Carpenter 1 Left"
       ],
       "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_EVENT_CARPENTERS_RESCUE",
-      "RequiredItems": [
-        "OOT_EVENT_CARPENTER_1",
-        "OOT_EVENT_CARPENTER_2",
-        "OOT_EVENT_CARPENTER_3",
-        "OOT_EVENT_CARPENTER_4"
-      ],
-      "ConditionalItems": [
-        [
-          "OOT Gerudo Fortress Carpenter 4"
-        ],
-        [
-          "OOT Gerudo Fortress Carpenter 3 Top"
-        ],
-        [
-          "OOT Gerudo Fortress Carpenter 2 Bottom"
-        ],
-        [
-          "OOT Gerudo Fortress Carpenter 1 Left"
-        ]
-      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -19759,10 +20338,16 @@
     {
       "Id": "OOT Gerudo Training Grounds Maze => OOT Gerudo Training Grounds Maze Side",
       "RequiredItems": [
-        "OOT_SMALL_KEY_GTG, 9",
         "option{GTGMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_GTG, 9"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -20053,7 +20638,9 @@
     },
     {
       "Id": "OOT SONGS => MM SOARING",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM_SONG_SOARING"
+      ],
       "ConditionalItems": [
         [
           "setting{crossWarpMm, full}"
@@ -20162,10 +20749,15 @@
     },
     {
       "Id": "OOT Kokiri Forest => OOT Kokiri Forest Near Deku Tree",
-      "RequiredItems": [
-        "OOT_mido_moved"
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_mido_moved"
+        ],
+        [
+          "OOT_is_adult"
+        ]
       ],
-      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -20214,10 +20806,15 @@
     },
     {
       "Id": "OOT Kokiri Forest Near Deku Tree => OOT Kokiri Forest",
-      "RequiredItems": [
-        "OOT_mido_moved"
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_mido_moved"
+        ],
+        [
+          "OOT_is_adult"
+        ]
       ],
-      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -21415,7 +22012,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Ganon Castle Exterior => OOT Ganon Castle Main",
+      "Id": "OOT Ganon Castle Exterior => OOT Ganon Castle Exterior After Bridge",
       "RequiredItems": [
         "OOT_HAS_BRIDGE_REQUIREMENTS"
       ],
@@ -21430,6 +22027,38 @@
       "RequiredItems": [
         "OOT_can_lift_gold"
       ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Ganon Castle Exterior After Bridge => OOT Ganon Castle Exterior",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT_HAS_BRIDGE_REQUIREMENTS"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Ganon Castle Exterior After Bridge => OOT Hyrule Castle",
+      "RequiredItems": [
+        "OOT_is_child"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Ganon Castle Exterior After Bridge => OOT Ganon Castle",
+      "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -23325,7 +23954,7 @@
       ],
       "ConditionalItems": [
         [
-          "renewable{OOT_FISH}"
+          "OOT_FISH"
         ],
         [
           "OOT_EVENT_FISH"
@@ -23728,7 +24357,7 @@
         ],
         [
           "OOT_is_adult",
-          "OOT_EVENT_CARPENTERS_RESCUE"
+          "OOT_carpenters_rescued"
         ]
       ],
       "TimeNeeded": "None",
@@ -23788,7 +24417,7 @@
         ],
         [
           "OOT_is_adult",
-          "OOT_EVENT_CARPENTERS_RESCUE"
+          "OOT_carpenters_rescued"
         ]
       ],
       "TimeNeeded": "None",
@@ -24473,11 +25102,17 @@
     {
       "Id": "OOT Shadow Temple Main => OOT Shadow Temple Open",
       "RequiredItems": [
-        "OOT_SMALL_KEY_SHADOW",
-        "OOT_has_explosives",
         "option{ShadowMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_SHADOW",
+          "OOT_has_explosives"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -24486,12 +25121,18 @@
     {
       "Id": "OOT Shadow Temple Open => OOT Shadow Temple Wind",
       "RequiredItems": [
-        "OOT_SMALL_KEY_SHADOW, 3",
-        "OOT_can_hookshot",
-        "OOT_has_lens",
         "option{ShadowMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_SHADOW, 3",
+          "OOT_can_hookshot",
+          "OOT_has_lens"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -24500,12 +25141,18 @@
     {
       "Id": "OOT Shadow Temple Wind => OOT Shadow Temple Boat",
       "RequiredItems": [
-        "OOT_SMALL_KEY_SHADOW, 4",
-        "OOT_OCARINA",
-        "OOT_SONG_ZELDA",
         "option{ShadowMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_SHADOW, 4",
+          "OOT_OCARINA",
+          "OOT_SONG_ZELDA"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -24513,21 +25160,33 @@
     },
     {
       "Id": "OOT Shadow Temple Boat => OOT Shadow Temple Boss",
-      "RequiredItems": [
-        "OOT_BOSS_KEY_SHADOW"
-      ],
+      "RequiredItems": [],
       "ConditionalItems": [
         [
+          "setting{bossKeyShuffleOot, removed}",
+          "option{ShadowMQ, true}"
+        ],
+        [
+          "OOT_BOSS_KEY_SHADOW",
           "OOT_can_use_bow",
           "option{ShadowMQ, true}"
         ],
         [
-          "OOT_can_use_bow",
-          "OOT_SMALL_KEY_SHADOW, 5",
+          "setting{smallKeyShuffleOot, removed}",
           "option{ShadowMQ, false}"
         ],
         [
-          "OOT_SMALL_KEY_SHADOW, 5",
+          "setting{bossKeyShuffleOot, removed}",
+          "option{ShadowMQ, false}",
+          "OOT_SMALL_KEY_SHADOW, 5"
+        ],
+        [
+          "OOT_BOSS_KEY_SHADOW",
+          "option{ShadowMQ, false}",
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_BOSS_KEY_SHADOW",
           "option{ShadowMQ, false}",
           "OOT_scarecrow_longshot"
         ]
@@ -24580,12 +25239,18 @@
     {
       "Id": "OOT_EVENT_SPIRIT_CHILD_DOOR",
       "RequiredItems": [
-        "OOT_is_child",
-        "OOT_SMALL_KEY_SPIRIT, 5",
         "OOT Spirit Temple",
         "option{SpiritMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_is_child",
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_SPIRIT, 5"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -24594,12 +25259,18 @@
     {
       "Id": "OOT_EVENT_SPIRIT_ADULT_DOOR",
       "RequiredItems": [
-        "OOT_SMALL_KEY_SPIRIT, 3",
-        "OOT_can_lift_silver",
         "OOT Spirit Temple",
         "option{SpiritMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_SPIRIT, 3",
+          "OOT_can_lift_silver"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -24620,11 +25291,17 @@
     {
       "Id": "OOT Spirit Temple Child Entrance => OOT Spirit Temple Child Climb",
       "RequiredItems": [
-        "OOT_is_child",
-        "OOT_SMALL_KEY_SPIRIT",
         "option{SpiritMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_is_child",
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_SPIRIT"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -24667,11 +25344,17 @@
     {
       "Id": "OOT Spirit Temple Child Climb => OOT Spirit Temple Child Entrance",
       "RequiredItems": [
-        "OOT_is_child",
-        "OOT_SMALL_KEY_SPIRIT",
         "option{SpiritMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_is_child",
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_SPIRIT"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -24694,6 +25377,10 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
+          "setting{smallKeyShuffleOot, removed}",
+          "option{SpiritMQ, true}"
+        ],
+        [
           "OOT_SMALL_KEY_SPIRIT, 7",
           "option{SpiritMQ, true}"
         ],
@@ -24709,10 +25396,16 @@
     {
       "Id": "OOT Spirit Temple Child Upper => OOT Spirit Temple Child Hand",
       "RequiredItems": [
-        "OOT_SMALL_KEY_SPIRIT, 5",
         "option{SpiritMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_SPIRIT, 5"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -24721,10 +25414,16 @@
     {
       "Id": "OOT Spirit Temple Child Hand => OOT Spirit Temple Child Upper",
       "RequiredItems": [
-        "OOT_SMALL_KEY_SPIRIT, 5",
         "option{SpiritMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_SPIRIT, 5"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -24749,10 +25448,16 @@
     {
       "Id": "OOT Spirit Temple Adult Entrance => OOT Spirit Temple Adult Climb",
       "RequiredItems": [
-        "OOT_SMALL_KEY_SPIRIT",
         "option{SpiritMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_SPIRIT"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -24797,6 +25502,10 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
+          "setting{smallKeyShuffleOot, removed}",
+          "option{SpiritMQ, true}"
+        ],
+        [
           "OOT_SMALL_KEY_SPIRIT, 7",
           "option{SpiritMQ, true}"
         ],
@@ -24811,19 +25520,27 @@
     },
     {
       "Id": "OOT Spirit Temple Statue => OOT Spirit Temple Boss",
-      "RequiredItems": [
-        "OOT_BOSS_KEY_SPIRIT"
-      ],
+      "RequiredItems": [],
       "ConditionalItems": [
         [
           "OOT_EVENT_SPIRIT_TEMPLE_LIGHT",
           "OOT_has_mirror_shield",
+          "setting{bossKeyShuffleOot, removed}",
           "option{SpiritMQ, true}"
         ],
         [
-          "OOT_EVENT_SPIRIT_LIGHT_STATUE",
-          "OOT_can_hookshot",
+          "OOT_BOSS_KEY_SPIRIT",
+          "option{SpiritMQ, true}"
+        ],
+        [
+          "setting{bossKeyShuffleOot, removed}",
           "option{SpiritMQ, false}"
+        ],
+        [
+          "OOT_BOSS_KEY_SPIRIT",
+          "option{SpiritMQ, false}",
+          "OOT_EVENT_SPIRIT_LIGHT_STATUE",
+          "OOT_can_hookshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -24845,10 +25562,16 @@
     {
       "Id": "OOT Spirit Temple Statue Adult => OOT Spirit Temple Adult Upper",
       "RequiredItems": [
-        "OOT_SMALL_KEY_SPIRIT, 4",
         "option{SpiritMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_SPIRIT, 4"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -24869,10 +25592,16 @@
     {
       "Id": "OOT Spirit Temple Adult Upper => OOT Spirit Temple Adult Climb 2",
       "RequiredItems": [
-        "OOT_SMALL_KEY_SPIRIT, 5",
         "option{SpiritMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_SPIRIT, 5"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -25014,11 +25743,17 @@
     {
       "Id": "OOT Water Temple Main => OOT Water Temple Center Bottom",
       "RequiredItems": [
-        "OOT_EVENT_WATER_LEVEL_LOW",
-        "OOT_SMALL_KEY_WATER, 5",
         "option{WaterMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_EVENT_WATER_LEVEL_LOW",
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_WATER, 5"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -25084,6 +25819,9 @@
       ],
       "ConditionalItems": [
         [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
           "OOT_SMALL_KEY_WATER, 5",
           "OOT_can_hookshot"
         ],
@@ -25122,16 +25860,21 @@
     {
       "Id": "OOT Water Temple Main => OOT Water Temple Waterfalls",
       "RequiredItems": [
-        "OOT_has_tunic_zora",
-        "OOT_SMALL_KEY_WATER, 4",
-        "OOT_can_longshot",
         "option{WaterMQ, false}"
       ],
       "ConditionalItems": [
         [
+          "OOT_has_tunic_zora",
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_WATER, 4",
+          "OOT_can_longshot",
           "OOT_has_iron_boots"
         ],
         [
+          "OOT_SMALL_KEY_WATER, 4",
+          "OOT_can_longshot",
           "OOT_EVENT_WATER_LEVEL_LOW"
         ]
       ],
@@ -25143,11 +25886,17 @@
     {
       "Id": "OOT Water Temple Main => OOT Water Temple Large Pit",
       "RequiredItems": [
-        "OOT_SMALL_KEY_WATER, 4",
-        "OOT_EVENT_WATER_LEVEL_RESET",
         "option{WaterMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_WATER, 4",
+          "OOT_EVENT_WATER_LEVEL_RESET"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -25385,10 +26134,16 @@
     {
       "Id": "OOT Water Temple Waterfalls Ledge => OOT Water Temple Boss Key Room",
       "RequiredItems": [
-        "OOT_SMALL_KEY_WATER, 5",
         "option{WaterMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_WATER, 5"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -25397,11 +26152,17 @@
     {
       "Id": "OOT Water Temple Large Pit => OOT Water Temple Before Dark Link",
       "RequiredItems": [
-        "OOT_SMALL_KEY_WATER, 5",
-        "OOT_can_hookshot",
         "option{WaterMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_WATER, 5",
+          "OOT_can_hookshot"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -25469,14 +26230,22 @@
     },
     {
       "Id": "OOT Water Temple Antichamber => OOT Water Temple Boss",
-      "RequiredItems": [
-        "OOT_BOSS_KEY_WATER"
-      ],
+      "RequiredItems": [],
       "ConditionalItems": [
         [
+          "setting{bossKeyShuffleOot, removed}",
           "option{WaterMQ, true}"
         ],
         [
+          "OOT_BOSS_KEY_WATER",
+          "option{WaterMQ, true}"
+        ],
+        [
+          "setting{bossKeyShuffleOot, removed}",
+          "option{WaterMQ, false}"
+        ],
+        [
+          "OOT_BOSS_KEY_WATER",
           "option{WaterMQ, false}"
         ]
       ],
@@ -25997,18 +26766,25 @@
     {
       "Id": "OOT Fire Temple => OOT Fire Temple Vanilla Hammer Loop",
       "RequiredItems": [
-        "OOT_SMALL_KEY_FIRE, 5",
-        "OOT_has_weapon",
         "option{FireMQ, true}"
       ],
       "ConditionalItems": [
         [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_FIRE, 5",
+          "OOT_has_weapon",
           "OOT_has_bombs"
         ],
         [
+          "OOT_SMALL_KEY_FIRE, 5",
+          "OOT_has_weapon",
           "OOT_can_hammer"
         ],
         [
+          "OOT_SMALL_KEY_FIRE, 5",
+          "OOT_has_weapon",
           "OOT_can_hookshot"
         ]
       ],
@@ -26066,12 +26842,18 @@
     {
       "Id": "OOT Fire Temple 1f Lava Room => OOT Fire Temple Maze Lower",
       "RequiredItems": [
-        "OOT_has_tunic_goron_strict",
-        "OOT_SMALL_KEY_FIRE, 2",
-        "OOT_has_fire",
         "option{FireMQ, true}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_tunic_goron_strict",
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_FIRE, 2",
+          "OOT_has_fire"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -26129,10 +26911,16 @@
     {
       "Id": "OOT Fire Temple Maze Upper => OOT Fire Temple 3f Lava Room",
       "RequiredItems": [
-        "OOT_SMALL_KEY_FIRE, 3",
         "option{FireMQ, true}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_FIRE, 3"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -26153,10 +26941,16 @@
     {
       "Id": "OOT Fire Temple Fire Walls => OOT Fire Temple Top",
       "RequiredItems": [
-        "OOT_SMALL_KEY_FIRE, 4",
         "option{FireMQ, true}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_FIRE, 4"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -26213,12 +27007,18 @@
     {
       "Id": "OOT Forest Temple West Wing => OOT Forest Temple Straightened Hallway",
       "RequiredItems": [
-        "OOT_SMALL_KEY_FOREST, 3",
-        "OOT_is_adult",
-        "OOT_STRENGTH",
         "option{ForestMQ, true}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_FOREST, 3",
+          "OOT_is_adult",
+          "OOT_STRENGTH"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -26227,12 +27027,18 @@
     {
       "Id": "OOT Forest Temple West Wing => OOT Forest Temple West Garden",
       "RequiredItems": [
-        "OOT_SMALL_KEY_FOREST, 2",
-        "OOT_is_adult",
-        "OOT_STRENGTH",
         "option{ForestMQ, true}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_FOREST, 2",
+          "OOT_is_adult",
+          "OOT_STRENGTH"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -26241,13 +27047,19 @@
     {
       "Id": "OOT Forest Temple West Wing => OOT Forest Temple Twisted Hallway",
       "RequiredItems": [
-        "OOT_SMALL_KEY_FOREST, 3",
-        "OOT_is_adult",
-        "OOT_STRENGTH",
-        "OOT_EVENT_FOREST_TWIST_SWITCH",
         "option{ForestMQ, true}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_FOREST, 3",
+          "OOT_is_adult",
+          "OOT_STRENGTH",
+          "OOT_EVENT_FOREST_TWIST_SWITCH"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -26436,10 +27248,16 @@
     {
       "Id": "OOT Forest Temple Twisted Hallway => OOT Forest Temple Bow Region",
       "RequiredItems": [
-        "OOT_SMALL_KEY_FOREST, 4",
         "option{ForestMQ, true}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_FOREST, 4"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -26448,14 +27266,18 @@
     {
       "Id": "OOT Forest Temple Bow Region => OOT Forest Temple Falling Ceiling",
       "RequiredItems": [
-        "OOT_SMALL_KEY_FOREST, 5",
         "option{ForestMQ, true}"
       ],
       "ConditionalItems": [
         [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_FOREST, 5",
           "OOT_can_use_bow"
         ],
         [
+          "OOT_SMALL_KEY_FOREST, 5",
           "OOT_can_use_din"
         ]
       ],
@@ -26518,12 +27340,18 @@
     {
       "Id": "OOT_EVENT_GTG_ICE_ARROWS",
       "RequiredItems": [
-        "OOT_SMALL_KEY_GTG, 3",
-        "OOT_can_hammer",
         "OOT Gerudo Training Grounds",
         "option{GTGMQ, true}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_GTG, 3",
+          "OOT_can_hammer"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -26802,11 +27630,17 @@
     {
       "Id": "OOT Shadow Temple Truth Spinner => OOT Shadow Temple First Locked Door",
       "RequiredItems": [
-        "OOT_has_explosives",
-        "OOT_SMALL_KEY_SHADOW, 6",
         "option{ShadowMQ, true}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_explosives",
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_SHADOW, 6"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -26833,11 +27667,17 @@
     {
       "Id": "OOT Shadow Temple First Beamos => OOT Shadow Temple Upper Huge Pit",
       "RequiredItems": [
-        "OOT_has_explosives",
-        "OOT_SMALL_KEY_SHADOW, 2",
         "option{ShadowMQ, true}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_explosives",
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_SHADOW, 2"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -26858,11 +27698,17 @@
     {
       "Id": "OOT Shadow Temple Lower Huge Pit => OOT Shadow Temple Invisible Spike Floor",
       "RequiredItems": [
-        "OOT_SMALL_KEY_SHADOW, 3",
-        "OOT_has_hover_boots",
         "option{ShadowMQ, true}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_SHADOW, 3",
+          "OOT_has_hover_boots"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -26871,11 +27717,17 @@
     {
       "Id": "OOT Shadow Temple Invisible Spike Floor => OOT Shadow Temple Wind Tunnel",
       "RequiredItems": [
-        "OOT_SMALL_KEY_SHADOW, 4",
-        "OOT_can_hookshot",
         "option{ShadowMQ, true}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_SHADOW, 4",
+          "OOT_can_hookshot"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -26884,12 +27736,18 @@
     {
       "Id": "OOT Shadow Temple Wind Tunnel => OOT Shadow Temple Boat",
       "RequiredItems": [
-        "OOT_SMALL_KEY_SHADOW, 5",
-        "OOT_OCARINA",
-        "OOT_SONG_ZELDA",
         "option{ShadowMQ, true}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_SHADOW, 5",
+          "OOT_OCARINA",
+          "OOT_SONG_ZELDA"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -26952,11 +27810,17 @@
     {
       "Id": "OOT Spirit Temple Child Side => OOT Spirit Temple Child Upper",
       "RequiredItems": [
-        "OOT_has_explosives",
-        "OOT_SMALL_KEY_SPIRIT, 6",
         "option{SpiritMQ, true}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_explosives",
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_SPIRIT, 6"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -27010,11 +27874,17 @@
     {
       "Id": "OOT Spirit Temple Statue => OOT Spirit Temple Adult Upper",
       "RequiredItems": [
-        "OOT_is_adult",
-        "OOT_SMALL_KEY_SPIRIT, 5",
         "option{SpiritMQ, true}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_is_adult",
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_SPIRIT, 5"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -27040,6 +27910,9 @@
       ],
       "ConditionalItems": [
         [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
           "OOT_SMALL_KEY_SPIRIT, 7",
           "OOT_has_weapon"
         ],
@@ -27048,7 +27921,6 @@
           "OOT_can_use_sticks"
         ],
         [
-          "OOT_is_adult",
           "OOT_SMALL_KEY_SPIRIT, 4",
           "OOT_has_lens",
           "OOT_OCARINA",
@@ -27076,10 +27948,16 @@
     {
       "Id": "OOT Spirit Temple Adult Upper => OOT Spirit Temple Top Floor",
       "RequiredItems": [
-        "OOT_SMALL_KEY_SPIRIT, 6",
         "option{SpiritMQ, true}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_SPIRIT, 6"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -27104,12 +27982,18 @@
     {
       "Id": "OOT Water Temple Main => OOT Water Temple Dark Link",
       "RequiredItems": [
-        "OOT_SMALL_KEY_WATER",
-        "OOT_EVENT_WATER_LEVEL_HIGH",
-        "OOT_can_longshot",
         "option{WaterMQ, true}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SMALL_KEY_WATER",
+          "OOT_EVENT_WATER_LEVEL_HIGH",
+          "OOT_can_longshot"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -29331,10 +30215,15 @@
     },
     {
       "Id": "MM Great Bay Temple Red Pipe 1 => MM Great Bay Temple Ice Arrow Room",
-      "RequiredItems": [
-        "MM_SMALL_KEY_GB"
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleMm, removed}"
+        ],
+        [
+          "MM_SMALL_KEY_GB"
+        ]
       ],
-      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -29480,12 +30369,17 @@
     },
     {
       "Id": "MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss",
-      "RequiredItems": [
-        "MM_BOSS_KEY_GB",
-        "MM_EVENT_GB_PIPE_GREEN",
-        "MM_EVENT_GB_PIPE_GREEN2"
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{bossKeyShuffleMm, removed}"
+        ],
+        [
+          "MM_BOSS_KEY_GB",
+          "MM_EVENT_GB_PIPE_GREEN",
+          "MM_EVENT_GB_PIPE_GREEN2"
+        ]
       ],
-      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -29663,6 +30557,66 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Moon Trial Deku Gossip Front-Left",
+      "RequiredItems": [
+        "MM_MASK_DEKU",
+        "MM Moon Trial Deku Entrance"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Moon Trial Deku Gossip Front-Right",
+      "RequiredItems": [
+        "MM_MASK_DEKU",
+        "MM Moon Trial Deku Entrance"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Moon Trial Deku Gossip Mid-Left",
+      "RequiredItems": [
+        "MM_MASK_DEKU",
+        "MM Moon Trial Deku Entrance"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Moon Trial Deku Gossip Mid-Right",
+      "RequiredItems": [
+        "MM_MASK_DEKU",
+        "MM Moon Trial Deku Entrance"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Moon Trial Deku Gossip Back",
+      "RequiredItems": [
+        "MM_MASK_DEKU",
+        "MM Moon Trial Deku Entrance"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Moon Trial Deku Exit => MM Moon",
       "RequiredItems": [],
       "ConditionalItems": [],
@@ -29714,6 +30668,66 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Moon Trial Goron Gossip Center Left",
+      "RequiredItems": [
+        "MM_goron_fast_roll",
+        "MM Moon Trial Goron Entrance"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Moon Trial Goron Gossip Center Right",
+      "RequiredItems": [
+        "MM_goron_fast_roll",
+        "MM Moon Trial Goron Entrance"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Moon Trial Goron Gossip West Left",
+      "RequiredItems": [
+        "MM_goron_fast_roll",
+        "MM Moon Trial Goron Entrance"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Moon Trial Goron Gossip West Right",
+      "RequiredItems": [
+        "MM_goron_fast_roll",
+        "MM Moon Trial Goron Entrance"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Moon Trial Goron Gossip By Heart Piece",
+      "RequiredItems": [
+        "MM_goron_fast_roll",
+        "MM Moon Trial Goron Entrance"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Moon Trial Goron Exit => MM Moon",
       "RequiredItems": [],
       "ConditionalItems": [],
@@ -29755,6 +30769,66 @@
     },
     {
       "Id": "MM_EVENT_MOON_TRIAL_ZORA",
+      "RequiredItems": [
+        "MM_MASK_ZORA",
+        "MM Moon Trial Zora"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Moon Trial Zora Gossip Outer Left",
+      "RequiredItems": [
+        "MM_MASK_ZORA",
+        "MM Moon Trial Zora"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Moon Trial Zora Gossip Middle Left",
+      "RequiredItems": [
+        "MM_MASK_ZORA",
+        "MM Moon Trial Zora"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Moon Trial Zora Gossip Inner Right",
+      "RequiredItems": [
+        "MM_MASK_ZORA",
+        "MM Moon Trial Zora"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Moon Trial Zora Gossip Middle Right",
+      "RequiredItems": [
+        "MM_MASK_ZORA",
+        "MM Moon Trial Zora"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Moon Trial Zora Gossip Outer Right",
       "RequiredItems": [
         "MM_MASK_ZORA",
         "MM Moon Trial Zora"
@@ -29828,6 +30902,17 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Moon Trial Link Gossip 1",
+      "RequiredItems": [
+        "MM Moon Trial Link Rest 1"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Moon Trial Link Rest 2 => MM Moon Trial Link Rest 1",
       "RequiredItems": [],
       "ConditionalItems": [
@@ -29848,6 +30933,17 @@
       "RequiredItems": [
         "MM_has_bombchu",
         "MM_has_arrows"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Moon Trial Link Gossip 2",
+      "RequiredItems": [
+        "MM Moon Trial Link Rest 2"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -29879,6 +30975,39 @@
       "RequiredItems": [
         "MM_has_bombchu",
         "MM_can_use_fire_arrows"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Moon Trial Link Gossip Left",
+      "RequiredItems": [
+        "MM Moon Trial Link Rest 3"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Moon Trial Link Gossip Right",
+      "RequiredItems": [
+        "MM Moon Trial Link Rest 3"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Moon Trial Link Gossip Last",
+      "RequiredItems": [
+        "MM Moon Trial Link Rest 3"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -29940,6 +31069,7 @@
     {
       "Id": "MM_EVENT_MAJORA",
       "RequiredItems": [
+        "setting{goal, triforce,false}",
         "MM_EVENT_MAJORA_PHASE_1",
         "MM Moon Boss"
       ],
@@ -30053,7 +31183,6 @@
     {
       "Id": "MM GLOBAL => MM SOARING",
       "RequiredItems": [
-        "MM_can_reset_time",
         "MM_OCARINA",
         "MM_SONG_SOARING"
       ],
@@ -30064,9 +31193,9 @@
       "IsTrick": false
     },
     {
-      "Id": "MM SOARING => MM Clock Town South",
+      "Id": "MM SOARING => MM Owl Clock Town",
       "RequiredItems": [
-        "MM_EVENT_CLOCK_TOWN_OWL"
+        "MM_OWL_CLOCK_TOWN"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -30075,9 +31204,9 @@
       "IsTrick": false
     },
     {
-      "Id": "MM SOARING => MM Milk Road Front",
+      "Id": "MM SOARING => MM Owl Milk Road",
       "RequiredItems": [
-        "MM_EVENT_MILK_ROAD_OWL"
+        "MM_OWL_MILK_ROAD"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -30086,9 +31215,9 @@
       "IsTrick": false
     },
     {
-      "Id": "MM SOARING => MM Swamp Front",
+      "Id": "MM SOARING => MM Owl Swamp",
       "RequiredItems": [
-        "MM_EVENT_SWAMP_OWL"
+        "MM_OWL_SOUTHERN_SWAMP"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -30097,9 +31226,9 @@
       "IsTrick": false
     },
     {
-      "Id": "MM SOARING => MM Woodfall Shrine",
+      "Id": "MM SOARING => MM Owl Woodfall",
       "RequiredItems": [
-        "MM_EVENT_WOODFALL_OWL"
+        "MM_OWL_WOODFALL"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -30108,9 +31237,9 @@
       "IsTrick": false
     },
     {
-      "Id": "MM SOARING => MM Mountain Village",
+      "Id": "MM SOARING => MM Owl Mountain",
       "RequiredItems": [
-        "MM_EVENT_MOUNTAIN_VILLAGE_OWL"
+        "MM_OWL_MOUNTAIN_VILLAGE"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -30119,9 +31248,9 @@
       "IsTrick": false
     },
     {
-      "Id": "MM SOARING => MM Snowhead Entrance",
+      "Id": "MM SOARING => MM Owl Snowhead",
       "RequiredItems": [
-        "MM_EVENT_SNOWHEAD_OWL"
+        "MM_OWL_SNOWHEAD"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -30130,9 +31259,9 @@
       "IsTrick": false
     },
     {
-      "Id": "MM SOARING => MM Great Bay Coast",
+      "Id": "MM SOARING => MM Owl Great Bay",
       "RequiredItems": [
-        "MM_EVENT_GREAT_BAY_OWL"
+        "MM_OWL_GREAT_BAY"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -30141,9 +31270,9 @@
       "IsTrick": false
     },
     {
-      "Id": "MM SOARING => MM Zora Cape Peninsula",
+      "Id": "MM SOARING => MM Owl Zora Cape",
       "RequiredItems": [
-        "MM_EVENT_ZORA_CAPE_OWL"
+        "MM_OWL_ZORA_CAPE"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -30152,9 +31281,9 @@
       "IsTrick": false
     },
     {
-      "Id": "MM SOARING => MM Ikana Canyon",
+      "Id": "MM SOARING => MM Owl Ikana",
       "RequiredItems": [
-        "MM_EVENT_IKANA_CANYON_OWL"
+        "MM_OWL_IKANA_CANYON"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -30163,9 +31292,153 @@
       "IsTrick": false
     },
     {
-      "Id": "MM SOARING => MM Stone Tower Top",
+      "Id": "MM SOARING => MM Owl Stone Tower",
       "RequiredItems": [
-        "MM_EVENT_STONE_TOWER_OWL"
+        "MM_OWL_STONE_TOWER"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Owl Clock Town => MM Clock Town South",
+      "RequiredItems": [
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Owl Clock Town => OOT Market",
+      "RequiredItems": [
+        "option{age_filter, adult, false}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Owl Clock Town => OOT Market Destroyed",
+      "RequiredItems": [
+        "option{age_filter, child, false}",
+        "OOT_EVENT_TIME_TRAVEL"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Owl Clock Town => MM Clock Tower Roof",
+      "RequiredItems": [
+        "time{After_NIGHT3_AM_12_00}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Owl Milk Road => MM Milk Road Front",
+      "RequiredItems": [
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Owl Swamp => MM Swamp Front",
+      "RequiredItems": [
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Owl Woodfall => MM Woodfall Shrine",
+      "RequiredItems": [
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Owl Mountain => MM Mountain Village",
+      "RequiredItems": [
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Owl Snowhead => MM Snowhead Entrance",
+      "RequiredItems": [
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Owl Great Bay => MM Great Bay Coast",
+      "RequiredItems": [
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Owl Zora Cape => MM Zora Cape Peninsula",
+      "RequiredItems": [
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Owl Ikana => MM Ikana Canyon",
+      "RequiredItems": [
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Owl Stone Tower => MM Stone Tower Top",
+      "RequiredItems": [
+        "MM_can_reset_time"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -30195,6 +31468,17 @@
     },
     {
       "Id": "MM Clock Town => MM Clock Tower Roof",
+      "RequiredItems": [
+        "time{After_NIGHT3_AM_12_00}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Clock Town => MM Owl Clock Town",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -30300,11 +31584,8 @@
       "IsTrick": false
     },
     {
-      "Id": "MM_EVENT_CLOCK_TOWN_SCRUB",
-      "RequiredItems": [
-        "MM_MOON_TEAR",
-        "MM Clock Town South"
-      ],
+      "Id": "MM Clock Town South => MM Owl Clock Town",
+      "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -30312,19 +31593,12 @@
       "IsTrick": false
     },
     {
-      "Id": "MM_EVENT_CLOCK_TOWN_OWL",
+      "Id": "MM_EVENT_CLOCK_TOWN_SCRUB",
       "RequiredItems": [
-        "MM_SONG_SOARING",
+        "MM_MOON_TEAR",
         "MM Clock Town South"
       ],
-      "ConditionalItems": [
-        [
-          "MM_has_sticks"
-        ],
-        [
-          "MM_has_weapon"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -31264,74 +32538,6 @@
       "Id": "MM Milk Bar => MM Clock Town East",
       "RequiredItems": [],
       "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM_EVENT_MILK",
-      "RequiredItems": [
-        "MM_can_use_wallet_1"
-      ],
-      "ConditionalItems": [
-        [
-          "MM_is_day",
-          "MM Gorman Track Front"
-        ],
-        [
-          "time{After_NIGHT1_PM_10_00}",
-          "time{Before_DAY2_AM_06_00}",
-          "MM_MASK_ROMANI",
-          "MM Milk Bar"
-        ],
-        [
-          "MM_MASK_ROMANI",
-          "MM Milk Bar",
-          "time{After_NIGHT2_PM_10_00}",
-          "time{Before_DAY3_AM_06_00}"
-        ],
-        [
-          "MM_MASK_ROMANI",
-          "MM Milk Bar",
-          "time{After_NIGHT3_PM_06_00}",
-          "time{Before_NIGHT3_PM_09_00}"
-        ],
-        [
-          "MM_MASK_ROMANI",
-          "MM Milk Bar",
-          "time{After_NIGHT3_PM_10_00}"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM_EVENT_CHATEAU",
-      "RequiredItems": [
-        "MM_MASK_ROMANI",
-        "MM_can_use_wallet_2",
-        "MM Milk Bar"
-      ],
-      "ConditionalItems": [
-        [
-          "time{After_NIGHT1_PM_10_00}",
-          "time{Before_DAY2_AM_06_00}"
-        ],
-        [
-          "time{After_NIGHT2_PM_10_00}",
-          "time{Before_DAY3_AM_06_00}"
-        ],
-        [
-          "time{After_NIGHT3_PM_06_00}",
-          "time{Before_NIGHT3_PM_09_00}"
-        ],
-        [
-          "time{After_NIGHT3_PM_10_00}"
-        ]
-      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -32411,13 +33617,8 @@
       "IsTrick": false
     },
     {
-      "Id": "MM_EVENT_MAGIC_BEANS_SWAMP",
-      "RequiredItems": [
-        "MM_MAGIC_BEAN",
-        "MM_MASK_DEKU",
-        "MM_can_use_wallet_1",
-        "MM Swamp Front"
-      ],
+      "Id": "MM Swamp Front => MM Owl Swamp",
+      "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -32431,25 +33632,6 @@
         "MM Swamp Front"
       ],
       "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM_EVENT_SWAMP_OWL",
-      "RequiredItems": [
-        "MM_SONG_SOARING",
-        "MM Swamp Front"
-      ],
-      "ConditionalItems": [
-        [
-          "MM_has_sticks"
-        ],
-        [
-          "MM_has_weapon"
-        ]
-      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -33194,19 +34376,9 @@
       "IsTrick": false
     },
     {
-      "Id": "MM_EVENT_WOODFALL_OWL",
-      "RequiredItems": [
-        "MM_SONG_SOARING",
-        "MM Woodfall Shrine"
-      ],
-      "ConditionalItems": [
-        [
-          "MM_has_sticks"
-        ],
-        [
-          "MM_has_weapon"
-        ]
-      ],
+      "Id": "MM Woodfall Shrine => MM Owl Woodfall",
+      "RequiredItems": [],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -33470,19 +34642,9 @@
       "IsTrick": false
     },
     {
-      "Id": "MM_EVENT_MOUNTAIN_VILLAGE_OWL",
-      "RequiredItems": [
-        "MM_SONG_SOARING",
-        "MM Mountain Village"
-      ],
-      "ConditionalItems": [
-        [
-          "MM_has_sticks"
-        ],
-        [
-          "MM_has_weapon"
-        ]
-      ],
+      "Id": "MM Mountain Village => MM Owl Mountain",
+      "RequiredItems": [],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -34063,19 +35225,9 @@
       "IsTrick": false
     },
     {
-      "Id": "MM_EVENT_SNOWHEAD_OWL",
-      "RequiredItems": [
-        "MM_SONG_SOARING",
-        "MM Snowhead Entrance"
-      ],
-      "ConditionalItems": [
-        [
-          "MM_has_sticks"
-        ],
-        [
-          "MM_has_weapon"
-        ]
-      ],
+      "Id": "MM Snowhead Entrance => MM Owl Snowhead",
+      "RequiredItems": [],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -34091,7 +35243,8 @@
           "MM_can_lullaby"
         ],
         [
-          "MM_EVENT_BOSS_SNOWHEAD"
+          "MM_EVENT_BOSS_SNOWHEAD",
+          "MM_MASK_GORON"
         ]
       ],
       "TimeNeeded": "None",
@@ -34203,19 +35356,9 @@
       "IsTrick": false
     },
     {
-      "Id": "MM_EVENT_MILK_ROAD_OWL",
-      "RequiredItems": [
-        "MM_SONG_SOARING",
-        "MM Milk Road Front"
-      ],
-      "ConditionalItems": [
-        [
-          "MM_has_sticks"
-        ],
-        [
-          "MM_has_weapon"
-        ]
-      ],
+      "Id": "MM Milk Road Front => MM Owl Milk Road",
+      "RequiredItems": [],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -34657,19 +35800,9 @@
       "IsTrick": false
     },
     {
-      "Id": "MM_EVENT_GREAT_BAY_OWL",
-      "RequiredItems": [
-        "MM_SONG_SOARING",
-        "MM Great Bay Coast"
-      ],
-      "ConditionalItems": [
-        [
-          "MM_has_sticks"
-        ],
-        [
-          "MM_has_weapon"
-        ]
-      ],
+      "Id": "MM Great Bay Coast => MM Owl Great Bay",
+      "RequiredItems": [],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -35175,19 +36308,9 @@
       "IsTrick": false
     },
     {
-      "Id": "MM_EVENT_ZORA_CAPE_OWL",
-      "RequiredItems": [
-        "MM_SONG_SOARING",
-        "MM Zora Cape Peninsula"
-      ],
-      "ConditionalItems": [
-        [
-          "MM_has_sticks"
-        ],
-        [
-          "MM_has_weapon"
-        ]
-      ],
+      "Id": "MM Zora Cape Peninsula => MM Owl Zora Cape",
+      "RequiredItems": [],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -35572,19 +36695,6 @@
       "IsTrick": false
     },
     {
-      "Id": "MM_EVENT_BLUE_POTION",
-      "RequiredItems": [
-        "MM_has_bottle",
-        "MM_can_use_wallet_2",
-        "MM Ikana Valley"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
       "Id": "MM Ikana Valley Gossip Lower",
       "RequiredItems": [
         "MM Ikana Valley"
@@ -35739,19 +36849,9 @@
       "IsTrick": false
     },
     {
-      "Id": "MM_EVENT_IKANA_CANYON_OWL",
-      "RequiredItems": [
-        "MM_SONG_SOARING",
-        "MM Ikana Canyon"
-      ],
-      "ConditionalItems": [
-        [
-          "MM_has_sticks"
-        ],
-        [
-          "MM_has_weapon"
-        ]
-      ],
+      "Id": "MM Ikana Canyon => MM Owl Ikana",
+      "RequiredItems": [],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -35945,19 +37045,9 @@
       "IsTrick": false
     },
     {
-      "Id": "MM_EVENT_STONE_TOWER_OWL",
-      "RequiredItems": [
-        "MM_SONG_SOARING",
-        "MM Stone Tower Top"
-      ],
-      "ConditionalItems": [
-        [
-          "MM_has_sticks"
-        ],
-        [
-          "MM_has_weapon"
-        ]
-      ],
+      "Id": "MM Stone Tower Top => MM Owl Stone Tower",
+      "RequiredItems": [],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -36807,14 +37897,12 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
+          "setting{smallKeyShuffleMm, removed}"
+        ],
+        [
           "MM_SMALL_KEY_SH, 3"
         ],
         [
-          "MM_has_explosives",
-          "MM_SMALL_KEY_SH, 2"
-        ],
-        [
-          "MM_trick_keg_explosives",
           "MM_SMALL_KEY_SH, 2"
         ]
       ],
@@ -37148,14 +38236,12 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
+          "setting{smallKeyShuffleMm, removed}"
+        ],
+        [
           "MM_SMALL_KEY_SH, 3"
         ],
         [
-          "MM_has_explosives",
-          "MM_SMALL_KEY_SH, 2"
-        ],
-        [
-          "MM_trick_keg_explosives",
           "MM_SMALL_KEY_SH, 2"
         ]
       ],
@@ -37223,14 +38309,12 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
+          "setting{smallKeyShuffleMm, removed}"
+        ],
+        [
           "MM_SMALL_KEY_SH, 3"
         ],
         [
-          "MM_has_explosives",
-          "MM_SMALL_KEY_SH, 2"
-        ],
-        [
-          "MM_trick_keg_explosives",
           "MM_SMALL_KEY_SH, 2"
         ]
       ],
@@ -37244,14 +38328,12 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
+          "setting{smallKeyShuffleMm, removed}"
+        ],
+        [
           "MM_SMALL_KEY_SH, 3"
         ],
         [
-          "MM_has_explosives",
-          "MM_SMALL_KEY_SH, 2"
-        ],
-        [
-          "MM_trick_keg_explosives",
           "MM_SMALL_KEY_SH, 2"
         ]
       ],
@@ -37377,10 +38459,15 @@
     },
     {
       "Id": "MM Snowhead Temple Center Level 3 Snow => MM Snowhead Temple Snow Room",
-      "RequiredItems": [
-        "MM_SMALL_KEY_SH, 3"
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleMm, removed}"
+        ],
+        [
+          "MM_SMALL_KEY_SH, 3"
+        ]
       ],
-      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -37473,10 +38560,15 @@
     },
     {
       "Id": "MM Snowhead Temple Snow Room => MM Snowhead Temple Center Level 3 Snow",
-      "RequiredItems": [
-        "MM_SMALL_KEY_SH, 3"
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleMm, removed}"
+        ],
+        [
+          "MM_SMALL_KEY_SH, 3"
+        ]
       ],
-      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -37582,11 +38674,16 @@
     },
     {
       "Id": "MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss",
-      "RequiredItems": [
-        "MM_goron_fast_roll",
-        "MM_BOSS_KEY_SH"
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "MM_goron_fast_roll",
+          "setting{bossKeyShuffleMm, removed}"
+        ],
+        [
+          "MM_BOSS_KEY_SH"
+        ]
       ],
-      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -37789,6 +38886,9 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
+          "setting{smallKeyShuffleMm, removed}"
+        ],
+        [
           "MM_SMALL_KEY_ST, 4"
         ],
         [
@@ -37826,6 +38926,9 @@
       "Id": "MM Stone Tower Temple Center Ledge => MM Stone Tower Temple West Garden",
       "RequiredItems": [],
       "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleMm, removed}"
+        ],
         [
           "MM_SMALL_KEY_ST, 4"
         ],
@@ -37905,10 +39008,15 @@
     },
     {
       "Id": "MM Stone Tower Temple Water Room => MM Stone Tower Temple Mirrors Room",
-      "RequiredItems": [
-        "MM_SMALL_KEY_ST, 4"
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleMm, removed}"
+        ],
+        [
+          "MM_SMALL_KEY_ST, 4"
+        ]
       ],
-      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -37957,10 +39065,15 @@
     },
     {
       "Id": "MM Stone Tower Temple Mirrors Room => MM Stone Tower Temple Water Room",
-      "RequiredItems": [
-        "MM_SMALL_KEY_ST, 4"
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleMm, removed}"
+        ],
+        [
+          "MM_SMALL_KEY_ST, 4"
+        ]
       ],
-      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -38055,6 +39168,9 @@
       "ConditionalItems": [
         [
           "MM_has_bombs"
+        ],
+        [
+          "setting{smallKeyShuffleMm, removed}"
         ],
         [
           "MM_SMALL_KEY_ST, 3",
@@ -38251,7 +39367,9 @@
       ],
       "ConditionalItems": [
         [
-          "trick{TRICK_MM_ISTT_ENTRY_JUMP}",
+          "setting{smallKeyShuffleMm, removed}"
+        ],
+        [
           "MM_SMALL_KEY_ST, 4"
         ],
         [
@@ -38281,11 +39399,17 @@
       "ConditionalItems": [
         [
           "MM_can_use_light_arrows",
+          "setting{smallKeyShuffleMm, removed}"
+        ],
+        [
           "MM_SMALL_KEY_ST, 3"
         ],
         [
+          "setting{smallKeyShuffleMm, removed}",
           "MM_can_goron_bomb_jump",
-          "MM_has_bombs",
+          "MM_has_bombs"
+        ],
+        [
           "MM_SMALL_KEY_ST, 4"
         ]
       ],
@@ -38403,11 +39527,16 @@
     },
     {
       "Id": "MM Stone Tower Temple Inverted Entrance Ledge => MM Stone Tower Temple Inverted Center Bridge",
-      "RequiredItems": [
-        "MM_SMALL_KEY_ST, 4",
-        "MM_can_hookshot"
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleMm, removed}"
+        ],
+        [
+          "MM_SMALL_KEY_ST, 4",
+          "MM_can_hookshot"
+        ]
       ],
-      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -38457,6 +39586,9 @@
         [
           "MM_trick_keg_explosives",
           "MM_can_hookshot",
+          "setting{smallKeyShuffleMm, removed}"
+        ],
+        [
           "MM_SMALL_KEY_ST, 4"
         ]
       ],
@@ -38489,11 +39621,16 @@
     },
     {
       "Id": "MM Stone Tower Temple Inverted Pre-Boss => MM Stone Tower Temple Boss",
-      "RequiredItems": [
-        "MM_can_hookshot_short",
-        "MM_BOSS_KEY_ST"
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "MM_can_hookshot_short",
+          "setting{bossKeyShuffleMm, removed}"
+        ],
+        [
+          "MM_BOSS_KEY_ST"
+        ]
       ],
-      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -38656,10 +39793,15 @@
     },
     {
       "Id": "MM Woodfall Temple Main => MM Woodfall Temple Maze",
-      "RequiredItems": [
-        "MM_SMALL_KEY_WF"
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleMm, removed}"
+        ],
+        [
+          "MM_SMALL_KEY_WF"
+        ]
       ],
-      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -38976,14 +40118,17 @@
     },
     {
       "Id": "MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss",
-      "RequiredItems": [
-        "MM_BOSS_KEY_WF"
-      ],
+      "RequiredItems": [],
       "ConditionalItems": [
         [
+          "setting{bossKeyShuffleMm, removed}"
+        ],
+        [
+          "MM_BOSS_KEY_WF",
           "MM_can_hookshot"
         ],
         [
+          "MM_BOSS_KEY_WF",
           "MM_MASK_DEKU"
         ]
       ],
@@ -39166,13 +40311,13 @@
           "OOT_EVENT_STICKS"
         ],
         [
-          "renewable{OOT_STICK}"
+          "renewable{STICK}"
         ],
         [
-          "renewable{OOT_STICKS_5}"
+          "renewable{STICKS_5}"
         ],
         [
-          "renewable{OOT_STICKS_10}"
+          "renewable{STICKS_10}"
         ],
         [
           "setting{sharedNutsSticks}",
@@ -39192,13 +40337,13 @@
           "OOT_EVENT_NUTS"
         ],
         [
-          "renewable{OOT_NUT}"
+          "renewable{NUT}"
         ],
         [
-          "renewable{OOT_NUTS_5}"
+          "renewable{NUTS_5}"
         ],
         [
-          "renewable{OOT_NUTS_10}"
+          "renewable{NUTS_10}"
         ],
         [
           "setting{sharedNutsSticks}",
@@ -39232,16 +40377,16 @@
           "OOT_EVENT_BOMBS"
         ],
         [
-          "renewable{OOT_BOMBS_5}"
+          "renewable{BOMBS_5}"
         ],
         [
-          "renewable{OOT_BOMBS_10}"
+          "renewable{BOMBS_10}"
         ],
         [
-          "renewable{OOT_BOMBS_20}"
+          "renewable{BOMBS_20}"
         ],
         [
-          "renewable{OOT_BOMBS_30}"
+          "renewable{BOMBS_30}"
         ],
         [
           "setting{sharedBombBags}",
@@ -39263,16 +40408,16 @@
           "OOT_EVENT_BOMBCHUS"
         ],
         [
-          "OOT_BOMBCHU_1"
+          "renewable{BOMBCHU_1}"
         ],
         [
-          "renewable{OOT_BOMBCHU_5}"
+          "renewable{BOMBCHU_5}"
         ],
         [
-          "renewable{OOT_BOMBCHU_10}"
+          "renewable{BOMBCHU_10}"
         ],
         [
-          "renewable{OOT_BOMBCHU_20}"
+          "renewable{BOMBCHU_20}"
         ]
       ],
       "TimeNeeded": "None",
@@ -39291,7 +40436,7 @@
           "OOT_EVENT_SEEDS"
         ],
         [
-          "renewable{OOT_DEKU_SEEDS_30}"
+          "renewable{DEKU_SEEDS_30}"
         ]
       ],
       "TimeNeeded": "None",
@@ -39310,16 +40455,16 @@
           "OOT_EVENT_ARROWS"
         ],
         [
-          "renewable{OOT_ARROWS_5}"
+          "renewable{ARROWS_5}"
         ],
         [
-          "renewable{OOT_ARROWS_10}"
+          "renewable{ARROWS_10}"
         ],
         [
-          "renewable{OOT_ARROWS_30}"
+          "renewable{ARROWS_30}"
         ],
         [
-          "renewable{OOT_ARROWS_40}"
+          "renewable{ARROWS_40}"
         ],
         [
           "setting{sharedBows}",
@@ -39405,6 +40550,150 @@
         "OOT_MAGIC_BEAN"
       ],
       "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_age_sticks",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_is_child"
+        ],
+        [
+          "setting{agelessSticks}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_age_boomerang",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_is_child"
+        ],
+        [
+          "setting{agelessBoomerang}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_age_hammer",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_is_adult"
+        ],
+        [
+          "setting{agelessHammer}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_age_sword_child",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_is_child"
+        ],
+        [
+          "setting{agelessSwords}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_age_sword_adult",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_is_adult"
+        ],
+        [
+          "setting{agelessSwords}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_age_shield_child",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_is_child"
+        ],
+        [
+          "setting{agelessShields}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_age_shield_adult",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_is_adult"
+        ],
+        [
+          "setting{agelessShields}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_age_tunics",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_is_adult"
+        ],
+        [
+          "setting{agelessTunics}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_age_boots",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_is_adult"
+        ],
+        [
+          "setting{agelessBoots}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -39580,15 +40869,15 @@
         ],
         [
           "OOT_has_bottle",
-          "renewable{OOT_POTION_GREEN}"
+          "renewable{POTION_GREEN}"
         ],
         [
           "OOT_has_bottle",
-          "renewable{OOT_POTION_BLUE}"
+          "renewable{POTION_BLUE}"
         ],
         [
           "OOT_has_bottle",
-          "renewable{MM_CHATEAU}"
+          "renewable{CHATEAU}"
         ]
       ],
       "TimeNeeded": "None",
@@ -39864,14 +41153,32 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "renewable{OOT_SHIELD_HYLIAN}"
+          "renewable{SHIELD_HYLIAN}"
         ],
         [
           "OOT_has_mirror_shield"
         ],
         [
-          "OOT_is_child",
-          "renewable{OOT_SHIELD_DEKU}"
+          "OOT_age_shield_child",
+          "renewable{SHIELD_DEKU}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_shield_for_scrubs",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_is_adult",
+          "renewable{SHIELD_HYLIAN}"
+        ],
+        [
+          "OOT_age_shield_child",
+          "renewable{SHIELD_DEKU}"
         ]
       ],
       "TimeNeeded": "None",
@@ -39970,7 +41277,7 @@
       ],
       "ConditionalItems": [
         [
-          "renewable{OOT_BUGS}"
+          "renewable{BUGS}"
         ],
         [
           "OOT_EVENT_BUGS"
@@ -39991,7 +41298,7 @@
           "OOT_EVENT_BLUE_FIRE"
         ],
         [
-          "renewable{OOT_BLUE_FIRE}"
+          "OOT_BLUE_FIRE"
         ]
       ],
       "TimeNeeded": "None",
@@ -40133,24 +41440,6 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT_has_shield_for_scrubs",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "OOT_is_adult",
-          "renewable{OOT_SHIELD_HYLIAN}"
-        ],
-        [
-          "OOT_is_child",
-          "renewable{OOT_SHIELD_DEKU}"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
       "Id": "OOT_can_rescue_carpenter",
       "RequiredItems": [
         "OOT_SMALL_KEY_GF, 4"
@@ -40265,6 +41554,35 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT_carpenters_rescued",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{gerudoFortress, open}"
+        ],
+        [
+          "OOT_EVENT_CARPENTER_1",
+          "setting{gerudoFortress, single}"
+        ],
+        [
+          "OOT_EVENT_CARPENTER_1",
+          "OOT_EVENT_CARPENTER_2"
+        ],
+        [
+          "OOT_EVENT_CARPENTER_1",
+          "OOT_EVENT_CARPENTER_3"
+        ],
+        [
+          "OOT_EVENT_CARPENTER_1",
+          "OOT_EVENT_CARPENTER_4"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT_met_zelda",
       "RequiredItems": [],
       "ConditionalItems": [
@@ -40313,28 +41631,28 @@
           "OOT_BOW",
           "OOT_ARROW_FIRE",
           "OOT_has_sticks",
-          "renewable{OOT_ARROWS_5}",
+          "renewable{ARROWS_5}",
           "OOT_has_explosives"
         ],
         [
           "OOT_BOW",
           "OOT_ARROW_FIRE",
           "OOT_has_sticks",
-          "renewable{OOT_ARROWS_10}",
+          "renewable{ARROWS_10}",
           "OOT_has_explosives"
         ],
         [
           "OOT_BOW",
           "OOT_ARROW_FIRE",
           "OOT_has_sticks",
-          "renewable{OOT_ARROWS_30}",
+          "renewable{ARROWS_30}",
           "OOT_has_explosives"
         ],
         [
           "OOT_BOW",
           "OOT_ARROW_FIRE",
           "OOT_has_sticks",
-          "renewable{OOT_ARROWS_40}",
+          "renewable{ARROWS_40}",
           "OOT_has_explosives"
         ],
         [
@@ -40354,34 +41672,81 @@
           "OOT_ARROW_FIRE",
           "OOT_has_sticks",
           "OOT_EVENT_ARROWS",
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_BOW",
+          "OOT_ARROW_FIRE",
+          "OOT_has_sticks",
+          "renewable{ARROWS_5}",
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_BOW",
+          "OOT_ARROW_FIRE",
+          "OOT_has_sticks",
+          "renewable{ARROWS_10}",
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_BOW",
+          "OOT_ARROW_FIRE",
+          "OOT_has_sticks",
+          "renewable{ARROWS_30}",
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_BOW",
+          "OOT_ARROW_FIRE",
+          "OOT_has_sticks",
+          "renewable{ARROWS_40}",
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_BOW",
+          "OOT_ARROW_FIRE",
+          "OOT_has_sticks",
+          "setting{sharedBows}",
+          "MM_EVENT_ARROWS",
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_SPELL_FIRE",
+          "setting{smallKeyShuffleOot, removed}"
+        ],
+        [
+          "OOT_BOW",
+          "OOT_ARROW_FIRE",
+          "OOT_has_sticks",
+          "OOT_EVENT_ARROWS",
           "OOT_SMALL_KEY_SPIRIT, 2"
         ],
         [
           "OOT_BOW",
           "OOT_ARROW_FIRE",
           "OOT_has_sticks",
-          "renewable{OOT_ARROWS_5}",
+          "renewable{ARROWS_5}",
           "OOT_SMALL_KEY_SPIRIT, 2"
         ],
         [
           "OOT_BOW",
           "OOT_ARROW_FIRE",
           "OOT_has_sticks",
-          "renewable{OOT_ARROWS_10}",
+          "renewable{ARROWS_10}",
           "OOT_SMALL_KEY_SPIRIT, 2"
         ],
         [
           "OOT_BOW",
           "OOT_ARROW_FIRE",
           "OOT_has_sticks",
-          "renewable{OOT_ARROWS_30}",
+          "renewable{ARROWS_30}",
           "OOT_SMALL_KEY_SPIRIT, 2"
         ],
         [
           "OOT_BOW",
           "OOT_ARROW_FIRE",
           "OOT_has_sticks",
-          "renewable{OOT_ARROWS_40}",
+          "renewable{ARROWS_40}",
           "OOT_SMALL_KEY_SPIRIT, 2"
         ],
         [
@@ -40416,7 +41781,7 @@
         ],
         [
           "OOT_SLINGSHOT",
-          "renewable{OOT_DEKU_SEEDS_30}",
+          "renewable{DEKU_SEEDS_30}",
           "OOT_HOOKSHOT"
         ],
         [
@@ -40430,7 +41795,7 @@
         ],
         [
           "OOT_SLINGSHOT",
-          "renewable{OOT_DEKU_SEEDS_30}",
+          "renewable{DEKU_SEEDS_30}",
           "OOT_BOW"
         ],
         [
@@ -40444,7 +41809,7 @@
         ],
         [
           "OOT_SLINGSHOT",
-          "renewable{OOT_DEKU_SEEDS_30}",
+          "renewable{DEKU_SEEDS_30}",
           "OOT_EVENT_ARROWS"
         ],
         [
@@ -40454,58 +41819,58 @@
         [
           "OOT_SLINGSHOT",
           "OOT_EVENT_SEEDS",
-          "renewable{OOT_ARROWS_5}"
+          "renewable{ARROWS_5}"
         ],
         [
           "OOT_SLINGSHOT",
-          "renewable{OOT_DEKU_SEEDS_30}",
-          "renewable{OOT_ARROWS_5}"
+          "renewable{DEKU_SEEDS_30}",
+          "renewable{ARROWS_5}"
         ],
         [
           "OOT_BOOMERANG",
-          "renewable{OOT_ARROWS_5}"
+          "renewable{ARROWS_5}"
         ],
         [
           "OOT_SLINGSHOT",
           "OOT_EVENT_SEEDS",
-          "renewable{OOT_ARROWS_10}"
+          "renewable{ARROWS_10}"
         ],
         [
           "OOT_SLINGSHOT",
-          "renewable{OOT_DEKU_SEEDS_30}",
-          "renewable{OOT_ARROWS_10}"
+          "renewable{DEKU_SEEDS_30}",
+          "renewable{ARROWS_10}"
         ],
         [
           "OOT_BOOMERANG",
-          "renewable{OOT_ARROWS_10}"
+          "renewable{ARROWS_10}"
         ],
         [
           "OOT_SLINGSHOT",
           "OOT_EVENT_SEEDS",
-          "renewable{OOT_ARROWS_30}"
+          "renewable{ARROWS_30}"
         ],
         [
           "OOT_SLINGSHOT",
-          "renewable{OOT_DEKU_SEEDS_30}",
-          "renewable{OOT_ARROWS_30}"
+          "renewable{DEKU_SEEDS_30}",
+          "renewable{ARROWS_30}"
         ],
         [
           "OOT_BOOMERANG",
-          "renewable{OOT_ARROWS_30}"
+          "renewable{ARROWS_30}"
         ],
         [
           "OOT_SLINGSHOT",
           "OOT_EVENT_SEEDS",
-          "renewable{OOT_ARROWS_40}"
+          "renewable{ARROWS_40}"
         ],
         [
           "OOT_SLINGSHOT",
-          "renewable{OOT_DEKU_SEEDS_30}",
-          "renewable{OOT_ARROWS_40}"
+          "renewable{DEKU_SEEDS_30}",
+          "renewable{ARROWS_40}"
         ],
         [
           "OOT_BOOMERANG",
-          "renewable{OOT_ARROWS_40}"
+          "renewable{ARROWS_40}"
         ],
         [
           "OOT_SLINGSHOT",
@@ -40515,7 +41880,7 @@
         ],
         [
           "OOT_SLINGSHOT",
-          "renewable{OOT_DEKU_SEEDS_30}",
+          "renewable{DEKU_SEEDS_30}",
           "setting{sharedBows}",
           "MM_EVENT_ARROWS"
         ],
@@ -40567,7 +41932,7 @@
       "RequiredItems": [
         "OOT_is_child",
         "OOT_has_sword_kokiri",
-        "renewable{OOT_SHIELD_DEKU}"
+        "renewable{SHIELD_DEKU}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -41066,16 +42431,16 @@
       ],
       "ConditionalItems": [
         [
-          "renewable{MM_BOMBCHU}"
+          "renewable{BOMBCHU}"
         ],
         [
-          "renewable{MM_BOMBCHU_5}"
+          "renewable{BOMBCHU_5}"
         ],
         [
-          "renewable{MM_BOMBCHU_10}"
+          "renewable{BOMBCHU_10}"
         ],
         [
-          "renewable{MM_BOMBCHU_20}"
+          "renewable{BOMBCHU_20}"
         ]
       ],
       "TimeNeeded": "None",
@@ -41091,7 +42456,7 @@
           "MM_EVENT_MAGIC_BEANS_PALACE"
         ],
         [
-          "MM_EVENT_MAGIC_BEANS_SWAMP"
+          "renewable{MAGIC_BEAN}"
         ]
       ],
       "TimeNeeded": "None",
@@ -41314,7 +42679,7 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "renewable{MM_SHIELD_HERO}"
+          "renewable{SHIELD_HERO}"
         ],
         [
           "MM_has_mirror_shield"
@@ -41462,16 +42827,10 @@
     {
       "Id": "MM_has_blue_potion",
       "RequiredItems": [
-        "MM_has_bottle"
+        "MM_has_bottle",
+        "renewable{POTION_BLUE}"
       ],
-      "ConditionalItems": [
-        [
-          "MM_EVENT_BLUE_POTION"
-        ],
-        [
-          "renewable{MM_POTION_BLUE}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -41487,7 +42846,10 @@
           "MM_EVENT_RED_POTION"
         ],
         [
-          "renewable{MM_POTION_RED}"
+          "renewable{POTION_RED}"
+        ],
+        [
+          "renewable{BOTTLE_POTION_RED}"
         ]
       ],
       "TimeNeeded": "None",
@@ -41498,16 +42860,10 @@
     {
       "Id": "MM_has_green_potion",
       "RequiredItems": [
-        "MM_has_bottle"
+        "MM_has_bottle",
+        "renewable{POTION_GREEN}"
       ],
-      "ConditionalItems": [
-        [
-          "MM_EVENT_GREEN_POTION"
-        ],
-        [
-          "renewable{MM_POTION_GREEN}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -41516,16 +42872,10 @@
     {
       "Id": "MM_has_milk",
       "RequiredItems": [
-        "MM_has_bottle"
+        "MM_has_bottle",
+        "renewable{MILK}"
       ],
-      "ConditionalItems": [
-        [
-          "renewable{MM_MILK}"
-        ],
-        [
-          "MM_EVENT_MILK"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -41616,16 +42966,16 @@
           "MM_EVENT_STICKS"
         ],
         [
-          "renewable{MM_STICK}"
+          "renewable{STICK}"
         ],
         [
-          "renewable{MM_STICKS_5}"
+          "renewable{STICKS_5}"
         ],
         [
-          "renewable{MM_STICKS_10}"
+          "renewable{STICKS_10}"
         ],
         [
-          "option{sharedNutsSticks}",
+          "setting{sharedNutsSticks}",
           "OOT_EVENT_STICKS"
         ]
       ],
@@ -41642,13 +42992,13 @@
           "MM_EVENT_NUTS"
         ],
         [
-          "renewable{MM_NUT}"
+          "renewable{NUT}"
         ],
         [
-          "renewable{MM_NUTS_5}"
+          "renewable{NUTS_5}"
         ],
         [
-          "renewable{MM_NUTS_10}"
+          "renewable{NUTS_10}"
         ],
         [
           "setting{sharedNutsSticks}",
@@ -41670,16 +43020,16 @@
           "MM_EVENT_ARROWS"
         ],
         [
-          "renewable{MM_ARROWS_5}"
+          "renewable{ARROWS_5}"
         ],
         [
-          "renewable{MM_ARROWS_10}"
+          "renewable{ARROWS_10}"
         ],
         [
-          "renewable{MM_ARROWS_30}"
+          "renewable{ARROWS_30}"
         ],
         [
-          "renewable{MM_ARROWS_40}"
+          "renewable{ARROWS_40}"
         ]
       ],
       "TimeNeeded": "None",
@@ -41697,16 +43047,16 @@
           "MM_EVENT_BOMBS"
         ],
         [
-          "renewable{MM_BOMBS_5}"
+          "renewable{BOMBS_5}"
         ],
         [
-          "renewable{MM_BOMBS_10}"
+          "renewable{BOMBS_10}"
         ],
         [
-          "renewable{MM_BOMBS_20}"
+          "renewable{BOMBS_20}"
         ],
         [
-          "renewable{MM_BOMBS_30}"
+          "renewable{BOMBS_30}"
         ]
       ],
       "TimeNeeded": "None",
@@ -41773,13 +43123,15 @@
     },
     {
       "Id": "MM_has_chateau",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "MM_has_bottle"
+      ],
       "ConditionalItems": [
         [
-          "MM_EVENT_CHATEAU"
+          "renewable{CHATEAU}"
         ],
         [
-          "renewable{MM_CHATEAU}"
+          "renewable{BOTTLE_CHATEAU}"
         ]
       ],
       "TimeNeeded": "None",
@@ -41906,38 +43258,39 @@
     {
       "Id": "MM_can_soar",
       "RequiredItems": [
+        "MM_has_ocarina",
         "MM_SONG_SOARING"
       ],
       "ConditionalItems": [
         [
-          "MM_EVENT_CLOCK_TOWN_OWL"
+          "MM_OWL_CLOCK_TOWN"
         ],
         [
-          "MM_EVENT_SWAMP_OWL"
+          "MM_OWL_MILK_ROAD"
         ],
         [
-          "MM_EVENT_WOODFALL_OWL"
+          "MM_OWL_SOUTHERN_SWAMP"
         ],
         [
-          "MM_EVENT_MOUNTIAN_VILLAGE_OWL"
+          "MM_OWL_WOODFALL"
         ],
         [
-          "MM_EVENT_SNOWHEAD_OWL"
+          "MM_OWL_MOUNTAIN_VILLAGE"
         ],
         [
-          "MM_EVENT_MILK_ROAD_OWL"
+          "MM_OWL_SNOWHEAD"
         ],
         [
-          "MM_EVENT_GREAT_BAY_OWL"
+          "MM_OWL_GREAT_BAY"
         ],
         [
-          "MM_EVENT_ZORA_CAPE_OWL"
+          "MM_OWL_ZORA_CAPE"
         ],
         [
-          "MM_EVENT_IKANA_CANYON_OWL"
+          "MM_OWL_IKANA_CANYON"
         ],
         [
-          "MM_EVENT_STONE_TOWER_OWL"
+          "MM_OWL_STONE_TOWER"
         ]
       ],
       "TimeNeeded": "None",

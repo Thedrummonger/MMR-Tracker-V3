@@ -512,7 +512,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
             OptionData.TrackerOption dekuTree = new OptionData.TrackerOption();
             dekuTree.ID = "dekuTree";
-            dekuTree.DisplayName = "Deku Tree";
+            dekuTree.DisplayName = "Open Deku Tree";
             dekuTree.CurrentValue = "open";
             dekuTree.SubCategory = "Events";
             dekuTree.CreateSimpleValues(new string[] { "open", "closed" });
@@ -564,6 +564,17 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             zoraKing.Values["adult"].Name = "Open (Adult Only)";
             zoraKing.Values["open"].Name = "Open";
             dictionaryFile.Options.Add(zoraKing.ID, zoraKing);
+
+            OptionData.TrackerOption gerudoFortress = new OptionData.TrackerOption();
+            gerudoFortress.ID = "gerudoFortress";
+            gerudoFortress.DisplayName = "Gerudo Fortress";
+            gerudoFortress.CurrentValue = "vanilla";
+            gerudoFortress.SubCategory = "Events";
+            gerudoFortress.CreateSimpleValues(new string[] { "vanilla", "single", "open" });
+            gerudoFortress.Values["vanilla"].Name = "Vanilla";
+            gerudoFortress.Values["single"].Name = "One Carpenter";
+            gerudoFortress.Values["open"].Name = "Open";
+            dictionaryFile.Options.Add(gerudoFortress.ID, gerudoFortress);
 
             OptionData.TrackerOption skipZelda = new OptionData.TrackerOption();
             skipZelda.ID = "skipZelda";
@@ -636,16 +647,107 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             GanonBossKey.Values["removed"].AddMaxAmountEdit("OOT_BOSS_KEY_GANON", MiscData.MathOP.set, 0);
             dictionaryFile.Options.Add(GanonBossKey.ID, GanonBossKey);
 
-            OptionData.TrackerOption SmallKey = new OptionData.TrackerOption();
-            SmallKey.ID = "smallKeyShuffle";
-            SmallKey.DisplayName = "Small Key Shuffle";
-            SmallKey.CurrentValue = "ownDungeon";
-            SmallKey.SubCategory = "Key Shuffle";
-            SmallKey.CreateSimpleValues(new string[] { "ownDungeon", "anywhere" });
-            SmallKey.Values["ownDungeon"].Name = "Own Dungeon";
-            SmallKey.Values["anywhere"].Name = "Anywhere";
-            SmallKey.Values["ownDungeon"].AddMaxAmountEdit("OOT_SMALL_KEY_FIRE", MiscData.MathOP.subtract, 1);
-            dictionaryFile.Options.Add(SmallKey.ID, SmallKey);
+            OptionData.TrackerOption SmallKeyOot = new OptionData.TrackerOption();
+            SmallKeyOot.ID = "smallKeyShuffleOot";
+            SmallKeyOot.DisplayName = "Small Key Shuffle OOT";
+            SmallKeyOot.CurrentValue = "ownDungeon";
+            SmallKeyOot.SubCategory = "Key Shuffle";
+            SmallKeyOot.CreateSimpleValues(new string[] { "ownDungeon", "anywhere", "removed" });
+            SmallKeyOot.Values["ownDungeon"].Name = "Own Dungeon";
+            SmallKeyOot.Values["anywhere"].Name = "Anywhere";
+            SmallKeyOot.Values["removed"].Name = "Removed";
+            SmallKeyOot.Values["ownDungeon"].AddMaxAmountEdit("OOT_SMALL_KEY_FIRE", MiscData.MathOP.subtract, 1);
+            dictionaryFile.Options.Add(SmallKeyOot.ID, SmallKeyOot);
+
+            OptionData.TrackerOption SmallKeyMM = new OptionData.TrackerOption();
+            SmallKeyOot.ID = "smallKeyShuffleMm";
+            SmallKeyOot.DisplayName = "Small Key Shuffle MM";
+            SmallKeyOot.CurrentValue = "ownDungeon";
+            SmallKeyOot.SubCategory = "Key Shuffle";
+            SmallKeyOot.CreateSimpleValues(new string[] { "ownDungeon", "anywhere", "removed" });
+            SmallKeyOot.Values["ownDungeon"].Name = "Own Dungeon";
+            SmallKeyOot.Values["anywhere"].Name = "Anywhere";
+            SmallKeyOot.Values["removed"].Name = "Removed";
+            dictionaryFile.Options.Add(SmallKeyOot.ID, SmallKeyOot);
+
+            OptionData.TrackerOption BossKeyOot = new OptionData.TrackerOption();
+            BossKeyOot.ID = "bossKeyShuffleOot";
+            BossKeyOot.DisplayName = "Boss Key Shuffle OOT";
+            BossKeyOot.CurrentValue = "ownDungeon";
+            BossKeyOot.SubCategory = "Key Shuffle";
+            BossKeyOot.CreateSimpleValues(new string[] { "ownDungeon", "anywhere", "removed" });
+            BossKeyOot.Values["ownDungeon"].Name = "Own Dungeon";
+            BossKeyOot.Values["anywhere"].Name = "Anywhere";
+            BossKeyOot.Values["removed"].Name = "Removed";
+            BossKeyOot.Values["ownDungeon"].AddMaxAmountEdit("OOT_SMALL_KEY_FIRE", MiscData.MathOP.subtract, 1);
+            dictionaryFile.Options.Add(BossKeyOot.ID, BossKeyOot);
+
+            OptionData.TrackerOption BossKeyMM = new OptionData.TrackerOption();
+            BossKeyMM.ID = "bossKeyShuffleMm";
+            BossKeyMM.DisplayName = "Boss Key Shuffle MM";
+            BossKeyMM.CurrentValue = "ownDungeon";
+            BossKeyMM.SubCategory = "Key Shuffle";
+            BossKeyMM.CreateSimpleValues(new string[] { "ownDungeon", "anywhere", "removed" });
+            BossKeyMM.Values["ownDungeon"].Name = "Own Dungeon";
+            BossKeyMM.Values["anywhere"].Name = "Anywhere";
+            BossKeyMM.Values["removed"].Name = "Removed";
+            dictionaryFile.Options.Add(BossKeyMM.ID, BossKeyMM);
+
+            OptionData.TrackerOption agelessSwords = new OptionData.TrackerOption();
+            agelessSwords.ID = "agelessSwords";
+            agelessSwords.DisplayName = "Ageless Swords";
+            agelessSwords.CurrentValue = "false";
+            agelessSwords.SubCategory = "Ageless Items";
+            agelessSwords.CreateSimpleValues(new string[] { "true", "false" });
+            dictionaryFile.Options.Add(agelessSwords.ID, agelessSwords);
+
+            OptionData.TrackerOption agelessShields = new OptionData.TrackerOption();
+            agelessShields.ID = "agelessShields";
+            agelessShields.DisplayName = "Ageless Shields";
+            agelessShields.CurrentValue = "false";
+            agelessShields.SubCategory = "Ageless Items";
+            agelessShields.CreateSimpleValues(new string[] { "true", "false" });
+            dictionaryFile.Options.Add(agelessShields.ID, agelessShields);
+
+            OptionData.TrackerOption agelessTunics = new OptionData.TrackerOption();
+            agelessTunics.ID = "agelessTunics";
+            agelessTunics.DisplayName = "Ageless Tunics";
+            agelessTunics.CurrentValue = "false";
+            agelessTunics.SubCategory = "Ageless Items";
+            agelessTunics.CreateSimpleValues(new string[] { "true", "false" });
+            dictionaryFile.Options.Add(agelessTunics.ID, agelessTunics);
+
+            OptionData.TrackerOption agelessBoots = new OptionData.TrackerOption();
+            agelessBoots.ID = "agelessBoots";
+            agelessBoots.DisplayName = "Ageless Boots";
+            agelessBoots.CurrentValue = "false";
+            agelessBoots.SubCategory = "Ageless Items";
+            agelessBoots.CreateSimpleValues(new string[] { "true", "false" });
+            dictionaryFile.Options.Add(agelessBoots.ID, agelessBoots);
+
+            OptionData.TrackerOption agelessSticks = new OptionData.TrackerOption();
+            agelessSticks.ID = "agelessSticks";
+            agelessSticks.DisplayName = "Ageless Sticks";
+            agelessSticks.CurrentValue = "false";
+            agelessSticks.SubCategory = "Ageless Items";
+            agelessSticks.CreateSimpleValues(new string[] { "true", "false" });
+            dictionaryFile.Options.Add(agelessSticks.ID, agelessSticks);
+
+            OptionData.TrackerOption agelessBoomerang = new OptionData.TrackerOption();
+            agelessBoomerang.ID = "agelessBoomerang";
+            agelessBoomerang.DisplayName = "Ageless Boomerang";
+            agelessBoomerang.CurrentValue = "false";
+            agelessBoomerang.SubCategory = "Ageless Items";
+            agelessBoomerang.CreateSimpleValues(new string[] { "true", "false" });
+            dictionaryFile.Options.Add(agelessBoomerang.ID, agelessBoomerang);
+
+            OptionData.TrackerOption agelessHammer = new OptionData.TrackerOption();
+            agelessHammer.ID = "agelessHammer";
+            agelessHammer.DisplayName = "Ageless Hammer";
+            agelessHammer.CurrentValue = "false";
+            agelessHammer.SubCategory = "Ageless Items";
+            agelessHammer.CreateSimpleValues(new string[] { "true", "false" });
+            dictionaryFile.Options.Add(agelessHammer.ID, agelessHammer);
 
             OptionData.TrackerOption ProgressiveShieldsOOT = new OptionData.TrackerOption();
             ProgressiveShieldsOOT.ID = "progressiveShieldsOot";
@@ -757,12 +859,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             dictionaryFile.Options.Add(colossalWallets.ID, colossalWallets);
 
             //Temp Workaround for some typos in logic
-            dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "MM_ZORA", RequiredItems = new List<string> { "MM_MASK_ZORA" } });
-            dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "MM_bow", RequiredItems = new List<string> { "MM_BOW" } });
             dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "MM_PICTORGRAPH_BOX", RequiredItems = new List<string> { "MM_PICTOGRAPH_BOX" } });
-            dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "OOT_BOMBCHU_1", RequiredItems = new List<string> { "false" } });
-            dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "MM_EVENT_GREEN_POTION", RequiredItems = new List<string> { "false" } });
-            dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "MM_EVENT_MOUNTIAN_VILLAGE_OWL", RequiredItems = new List<string> { "MM_EVENT_MOUNTAIN_VILLAGE_OWL" } });
 
             AddSharedItemOptions("sharedNutsSticks", "Shared Nuts and Sticks", new string[] { "NUT", "NUTS_5", "NUTS_5_ALT", "NUTS_10", "STICK", "STICKS_5", "STICKS_10" }, 1);
             AddSharedItemOptions("sharedBows", "Shared Bows", new string[] { "ARROWS_5", "ARROWS_10", "ARROWS_30", "ARROWS_40", "BOW" }, 1);
@@ -924,7 +1021,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             {
                 string ReturnLogic = $"({Logic})";
                 if (!IsExit) { ReturnLogic += $" && ({GameCode} {Area})"; }
-                if (VariableDungeon) { ReturnLogic += $" && (option{{{DungeonCode}MQ, {MQ.ToString().ToLower()}}})"; }
+                if (VariableDungeon && !string.IsNullOrWhiteSpace(DungeonCode)) { ReturnLogic += $" && (option{{{DungeonCode}MQ, {MQ.ToString().ToLower()}}})"; }
                 return $"({ReturnLogic})";
             }
 
@@ -1091,30 +1188,31 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 }
                 switch (Function)
                 {
+                    case "license":
+                        line = line.Replace(FullFunction, $"true");
+                        break;
                     case "special":
                         line = line.Replace(FullFunction, $"{Game}_HAS_{Parameters}_REQUIREMENTS");
                         break;
                     case "trick":
                         line = line.Replace(FullFunction, $"trick{{TRICK_{Game}_{Parameters}}}");
                         break;
+                    case "renewable":
+                        line = line.Replace(FullFunction, $"{Function}{{{Parameters}}}");
+                        break;
                     case "has":
-                        if (RenewableItems.ContainsKey(Parameters)) { line = line.Replace(FullFunction, $"renewable{{{Game}_{Parameters}}}"); }
-                        //if (RenewableItems.ContainsKey(Parameters)) { line = line.Replace(FullFunction, $"{CurrentGame}_Has_Renewable_{RenewableItems[Parameters]}"); }
-                        else
+                        string ReplaceText = $"{Game}_{Parameters}";
+                        int Amount = 1;
+                        if (ReplaceText.Contains(", "))
                         {
-                            string ReplaceText = $"{Game}_{Parameters}";
-                            int Amount = 1;
-                            if (ReplaceText.Contains(", "))
-                            {
-                                Amount = Convert.ToInt32(ReplaceText.Split(",")[1].Trim());
-                                ReplaceText = ReplaceText.Split(",")[0].Trim();
-                            }
-                            //This might break something? but now with child wallets ammount can actually be 0 in logic meaning it's not needed
-                            //I feel like at one point if the amount was zero it was a bug and should just be one?
-                            if (Amount > 1) { ReplaceText += $", {Amount}"; }
-                            else if (Amount == 0) { ReplaceText = "true"; }
-                            line = line.Replace(FullFunction, ReplaceText);
+                            Amount = Convert.ToInt32(ReplaceText.Split(",")[1].Trim());
+                            ReplaceText = ReplaceText.Split(",")[0].Trim();
                         }
+                        //This might break something? but now with child wallets ammount can actually be 0 in logic meaning it's not needed
+                        //I feel like at one point if the amount was zero it was a bug and should just be one?
+                        if (Amount > 1) { ReplaceText += $", {Amount}"; }
+                        else if (Amount == 0) { ReplaceText = "true"; }
+                        line = line.Replace(FullFunction, ReplaceText);
                         break;
                     case "event":
                         string TempGame = Game;
@@ -1140,10 +1238,13 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         break;
                     case "has_small_keys_fire":
                         int Keys = int.Parse(Parameters);
-                        line = line.Replace(FullFunction, $"(option{{smallKeyShuffle, anywhere}} && has(SMALL_KEY_FIRE, {Keys + 1})) || (option{{smallKeyShuffle, anywhere, false}} && has(SMALL_KEY_FIRE, {Keys}))");
+                        line = line.Replace(FullFunction, $"(option{{smallKeyShuffleOot, anywhere}} && has(SMALL_KEY_FIRE, {Keys + 1})) || (option{{smallKeyShuffleOot, anywhere, false}} && has(SMALL_KEY_FIRE, {Keys}))");
                         break;
                     case "setting":
                         line = line.Replace(FullFunction, $"{Function}{{{Parameters}}}");
+                        break;
+                    case "!setting":
+                        line = line.Replace(FullFunction, $"{Function.Replace("!","")}{{{Parameters},false}}");
                         break;
                     case "age":
                         if (Parameters == "child") { line = line.Replace(FullFunction, $"option{{age_filter, adult, false}}"); }
@@ -1184,6 +1285,12 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         }
                         Debug.WriteLine($"New Cond\n{replaceLine}");
                         line = line.Replace(FullFunction, replaceLine);
+                        break;
+                    case "boss_key":
+                        line = line.Replace(FullFunction, $"setting(bossKeyShuffle{Game[..1] + Game[1..].ToLower()}, removed) || has({Parameters})");
+                        break;
+                    case "small_keys":
+                        line = line.Replace(FullFunction, $"setting(smallKeyShuffle{Game[..1] + Game[1..].ToLower()}, removed) || has({Parameters})");
                         break;
                     default:
                         line = line.Replace(FullFunction, $"ERROR UNHANDLED FUNTION {Function}");
