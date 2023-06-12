@@ -27109,6 +27109,25 @@
         "PriceDataNames": []
       }
     },
+    "SHARED_TRIFORCE": {
+      "Name": "Triforce Piece",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "SHARED_TRIFORCE",
+          "Triforce Piece"
+        ],
+        "GossipHintNames": [
+          "SHARED_TRIFORCE",
+          "Triforce Piece"
+        ],
+        "PriceDataNames": []
+      }
+    },
     "MM_NUT": {
       "Name": "1 Deku Nut (MM)",
       "MaxAmountInWorld": -1,
@@ -42817,6 +42836,34 @@
         }
       }
     },
+    "moon_triforce": {
+      "DisplayName": "Triforce Pieces",
+      "CurrentValue": "false",
+      "SubCategory": "Moon Access Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "moon_req": {
+              "action": "add",
+              "EditValue": [
+                "SHARED_TRIFORCE"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
     "majora_stones": {
       "DisplayName": "Spiritual Stones",
       "CurrentValue": "false",
@@ -43245,6 +43292,34 @@
                 "SHARED_MASK_TRUTH, 1",
                 "SHARED_MASK_GORON, 1",
                 "SHARED_MASK_ZORA, 1"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "majora_triforce": {
+      "DisplayName": "Triforce Pieces",
+      "CurrentValue": "false",
+      "SubCategory": "Majora Child Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "majora_req": {
+              "action": "add",
+              "EditValue": [
+                "SHARED_TRIFORCE"
               ]
             }
           }
@@ -43699,6 +43774,34 @@
         }
       }
     },
+    "bridge_triforce": {
+      "DisplayName": "Triforce Pieces",
+      "CurrentValue": "false",
+      "SubCategory": "Rainbow Bridge Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "bridge_req": {
+              "action": "add",
+              "EditValue": [
+                "SHARED_TRIFORCE"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
     "lacs_stones": {
       "DisplayName": "Spiritual Stones",
       "CurrentValue": "false",
@@ -44140,6 +44243,34 @@
         }
       }
     },
+    "lacs_triforce": {
+      "DisplayName": "Triforce Pieces",
+      "CurrentValue": "false",
+      "SubCategory": "Light Arrow Cutscene Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "lacs_req": {
+              "action": "add",
+              "EditValue": [
+                "SHARED_TRIFORCE"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
     "ganon_bk_stones": {
       "DisplayName": "Spiritual Stones",
       "CurrentValue": "false",
@@ -44568,6 +44699,34 @@
                 "SHARED_MASK_TRUTH, 1",
                 "SHARED_MASK_GORON, 1",
                 "SHARED_MASK_ZORA, 1"
+              ]
+            }
+          }
+        },
+        "false": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "ganon_bk_triforce": {
+      "DisplayName": "Triforce Pieces",
+      "CurrentValue": "false",
+      "SubCategory": "Ganon Boss Key Conditions",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {
+            "ganon_bk_req": {
+              "action": "add",
+              "EditValue": [
+                "SHARED_TRIFORCE"
               ]
             }
           }

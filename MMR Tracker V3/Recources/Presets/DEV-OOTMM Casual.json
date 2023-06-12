@@ -40279,7 +40279,15 @@
     {
       "Id": "OOT_is_day",
       "RequiredItems": [],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "time{day}"
+        ],
+        [
+          "OOT_OCARINA",
+          "OOT_SONG_SUN"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -40288,7 +40296,15 @@
     {
       "Id": "OOT_is_night",
       "RequiredItems": [],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "time{night}"
+        ],
+        [
+          "OOT_OCARINA",
+          "OOT_SONG_SUN"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -40296,7 +40312,10 @@
     },
     {
       "Id": "OOT_is_dusk",
-      "RequiredItems": [],
+      "RequiredItems": [
+        "time{day}",
+        "time{night}"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -40311,13 +40330,13 @@
           "OOT_EVENT_STICKS"
         ],
         [
-          "renewable{STICK}"
+          "renewable{OOT_STICK}"
         ],
         [
-          "renewable{STICKS_5}"
+          "renewable{OOT_STICKS_5}"
         ],
         [
-          "renewable{STICKS_10}"
+          "renewable{OOT_STICKS_10}"
         ],
         [
           "setting{sharedNutsSticks}",
@@ -40337,13 +40356,13 @@
           "OOT_EVENT_NUTS"
         ],
         [
-          "renewable{NUT}"
+          "renewable{OOT_NUT}"
         ],
         [
-          "renewable{NUTS_5}"
+          "renewable{OOT_NUTS_5}"
         ],
         [
-          "renewable{NUTS_10}"
+          "renewable{OOT_NUTS_10}"
         ],
         [
           "setting{sharedNutsSticks}",
@@ -40358,7 +40377,7 @@
     {
       "Id": "OOT_can_use_sticks",
       "RequiredItems": [
-        "OOT_is_child",
+        "OOT_age_sticks",
         "OOT_has_sticks"
       ],
       "ConditionalItems": [],
@@ -40377,16 +40396,16 @@
           "OOT_EVENT_BOMBS"
         ],
         [
-          "renewable{BOMBS_5}"
+          "renewable{OOT_BOMBS_5}"
         ],
         [
-          "renewable{BOMBS_10}"
+          "renewable{OOT_BOMBS_10}"
         ],
         [
-          "renewable{BOMBS_20}"
+          "renewable{OOT_BOMBS_20}"
         ],
         [
-          "renewable{BOMBS_30}"
+          "renewable{OOT_BOMBS_30}"
         ],
         [
           "setting{sharedBombBags}",
@@ -40408,16 +40427,16 @@
           "OOT_EVENT_BOMBCHUS"
         ],
         [
-          "renewable{BOMBCHU_1}"
+          "renewable{OOT_BOMBCHU_1}"
         ],
         [
-          "renewable{BOMBCHU_5}"
+          "renewable{OOT_BOMBCHU_5}"
         ],
         [
-          "renewable{BOMBCHU_10}"
+          "renewable{OOT_BOMBCHU_10}"
         ],
         [
-          "renewable{BOMBCHU_20}"
+          "renewable{OOT_BOMBCHU_20}"
         ]
       ],
       "TimeNeeded": "None",
@@ -40436,7 +40455,7 @@
           "OOT_EVENT_SEEDS"
         ],
         [
-          "renewable{DEKU_SEEDS_30}"
+          "renewable{OOT_DEKU_SEEDS_30}"
         ]
       ],
       "TimeNeeded": "None",
@@ -40455,16 +40474,16 @@
           "OOT_EVENT_ARROWS"
         ],
         [
-          "renewable{ARROWS_5}"
+          "renewable{OOT_ARROWS_5}"
         ],
         [
-          "renewable{ARROWS_10}"
+          "renewable{OOT_ARROWS_10}"
         ],
         [
-          "renewable{ARROWS_30}"
+          "renewable{OOT_ARROWS_30}"
         ],
         [
-          "renewable{ARROWS_40}"
+          "renewable{OOT_ARROWS_40}"
         ],
         [
           "setting{sharedBows}",
@@ -40503,7 +40522,7 @@
     {
       "Id": "OOT_can_boomerang",
       "RequiredItems": [
-        "OOT_is_child",
+        "OOT_age_boomerang",
         "OOT_BOOMERANG"
       ],
       "ConditionalItems": [],
@@ -40515,7 +40534,7 @@
     {
       "Id": "OOT_can_hammer",
       "RequiredItems": [
-        "OOT_is_adult",
+        "OOT_age_hammer",
         "OOT_HAMMER"
       ],
       "ConditionalItems": [],
@@ -40700,6 +40719,172 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT_has_sword_kokiri",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{progressiveSwordsOot, progressive}",
+          "OOT_SWORD"
+        ],
+        [
+          "OOT_SWORD_KOKIRI",
+          "setting{progressiveSwordsOot, progressive, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_sword_master",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{progressiveSwordsOot, progressive}",
+          "OOT_SWORD, 2"
+        ],
+        [
+          "OOT_SWORD_MASTER",
+          "setting{progressiveSwordsOot, progressive, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_sword_goron",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{progressiveSwordsOot, progressive}",
+          "OOT_SWORD, 3"
+        ],
+        [
+          "OOT_has_progressive_sword_goron",
+          "setting{progressiveSwordsOot, progressive, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_progressive_sword_goron",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{progressiveSwordsOot, goron}",
+          "OOT_SWORD_GORON"
+        ],
+        [
+          "OOT_SWORD_KNIFE"
+        ],
+        [
+          "OOT_SWORD_BIGGORON",
+          "setting{progressiveSwordsOot, goron, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_weapon",
+      "RequiredItems": [
+        "OOT_can_use_sword"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_can_use_sword",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_age_sword_child",
+          "OOT_has_sword_kokiri"
+        ],
+        [
+          "OOT_age_sword_adult",
+          "OOT_has_sword_master"
+        ],
+        [
+          "OOT_age_sword_adult",
+          "OOT_has_sword_goron"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_shield",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "renewable{OOT_SHIELD_HYLIAN}"
+        ],
+        [
+          "OOT_has_mirror_shield"
+        ],
+        [
+          "OOT_age_shield_child",
+          "renewable{OOT_SHIELD_DEKU}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_shield_for_scrubs",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_is_adult",
+          "renewable{OOT_SHIELD_HYLIAN}"
+        ],
+        [
+          "OOT_age_shield_child",
+          "renewable{OOT_SHIELD_DEKU}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_mirror_shield",
+      "RequiredItems": [
+        "OOT_age_shield_adult"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{progressiveShieldsOot, progressive}",
+          "OOT_SHIELD, 3"
+        ],
+        [
+          "OOT_SHIELD_MIRROR",
+          "setting{progressiveShieldsOot, progressive, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT_has_rupees",
       "RequiredItems": [],
       "ConditionalItems": [
@@ -40733,59 +40918,9 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT_has_sword_kokiri",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "OOT_SWORD"
-        ],
-        [
-          "OOT_SWORD_KOKIRI"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_has_sword_master",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "OOT_SWORD, 2"
-        ],
-        [
-          "OOT_SWORD_MASTER"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_has_mirror_shield",
-      "RequiredItems": [
-        "OOT_is_adult"
-      ],
-      "ConditionalItems": [
-        [
-          "OOT_SHIELD, 3"
-        ],
-        [
-          "OOT_SHIELD_MIRROR"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
       "Id": "OOT_has_tunic_goron_strict",
       "RequiredItems": [
-        "OOT_is_adult",
+        "OOT_age_tunics",
         "OOT_TUNIC_GORON"
       ],
       "ConditionalItems": [],
@@ -40797,7 +40932,7 @@
     {
       "Id": "OOT_has_tunic_zora_strict",
       "RequiredItems": [
-        "OOT_is_adult",
+        "OOT_age_tunics",
         "OOT_TUNIC_ZORA"
       ],
       "ConditionalItems": [],
@@ -40807,9 +40942,41 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT_has_tunic_goron",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_tunic_goron_strict"
+        ],
+        [
+          "trick{TRICK_OOT_TUNICS}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_tunic_zora",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_tunic_zora_strict"
+        ],
+        [
+          "trick{TRICK_OOT_TUNICS}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT_has_iron_boots",
       "RequiredItems": [
-        "OOT_is_adult",
+        "OOT_age_boots",
         "OOT_BOOTS_IRON"
       ],
       "ConditionalItems": [],
@@ -40821,7 +40988,7 @@
     {
       "Id": "OOT_has_hover_boots",
       "RequiredItems": [
-        "OOT_is_adult",
+        "OOT_age_boots",
         "OOT_BOOTS_HOVER"
       ],
       "ConditionalItems": [],
@@ -40869,15 +41036,15 @@
         ],
         [
           "OOT_has_bottle",
-          "renewable{POTION_GREEN}"
+          "renewable{OOT_POTION_GREEN}"
         ],
         [
           "OOT_has_bottle",
-          "renewable{POTION_BLUE}"
+          "renewable{OOT_POTION_BLUE}"
         ],
         [
           "OOT_has_bottle",
-          "renewable{CHATEAU}"
+          "renewable{OOT_CHATEAU}"
         ]
       ],
       "TimeNeeded": "None",
@@ -41132,61 +41299,6 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT_has_weapon",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "OOT_is_child",
-          "OOT_has_sword_kokiri"
-        ],
-        [
-          "OOT_is_adult"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_has_shield",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "renewable{SHIELD_HYLIAN}"
-        ],
-        [
-          "OOT_has_mirror_shield"
-        ],
-        [
-          "OOT_age_shield_child",
-          "renewable{SHIELD_DEKU}"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_has_shield_for_scrubs",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "OOT_is_adult",
-          "renewable{SHIELD_HYLIAN}"
-        ],
-        [
-          "OOT_age_shield_child",
-          "renewable{SHIELD_DEKU}"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
       "Id": "OOT_can_dive_small",
       "RequiredItems": [],
       "ConditionalItems": [
@@ -41277,7 +41389,7 @@
       ],
       "ConditionalItems": [
         [
-          "renewable{BUGS}"
+          "renewable{OOT_BUGS}"
         ],
         [
           "OOT_EVENT_BUGS"
@@ -41298,7 +41410,7 @@
           "OOT_EVENT_BLUE_FIRE"
         ],
         [
-          "OOT_BLUE_FIRE"
+          "renewable{OOT_BLUE_FIRE}"
         ]
       ],
       "TimeNeeded": "None",
@@ -41440,9 +41552,29 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT_has_small_key_gerudo",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{gerudoFortress, open}"
+        ],
+        [
+          "setting{gerudoFortress, single}",
+          "OOT_SMALL_KEY_GF"
+        ],
+        [
+          "OOT_SMALL_KEY_GF, 4"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT_can_rescue_carpenter",
       "RequiredItems": [
-        "OOT_SMALL_KEY_GF, 4"
+        "OOT_has_small_key_gerudo"
       ],
       "ConditionalItems": [
         [
@@ -41455,6 +41587,35 @@
         [
           "OOT_has_nuts",
           "OOT_can_use_sticks"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_carpenters_rescued",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{gerudoFortress, open}"
+        ],
+        [
+          "OOT_EVENT_CARPENTER_1",
+          "setting{gerudoFortress, single}"
+        ],
+        [
+          "OOT_EVENT_CARPENTER_1",
+          "OOT_EVENT_CARPENTER_2"
+        ],
+        [
+          "OOT_EVENT_CARPENTER_1",
+          "OOT_EVENT_CARPENTER_3"
+        ],
+        [
+          "OOT_EVENT_CARPENTER_1",
+          "OOT_EVENT_CARPENTER_4"
         ]
       ],
       "TimeNeeded": "None",
@@ -41498,38 +41659,6 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT_has_tunic_goron",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "OOT_has_tunic_goron_strict"
-        ],
-        [
-          "trick{TRICK_OOT_TUNICS}"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_has_tunic_zora",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "OOT_has_tunic_zora_strict"
-        ],
-        [
-          "trick{TRICK_OOT_TUNICS}"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
       "Id": "OOT_trick_mido",
       "RequiredItems": [
         "trick{TRICK_OOT_MIDO_SKIP}"
@@ -41546,35 +41675,6 @@
         ],
         [
           "OOT_ARROW_LIGHT"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_carpenters_rescued",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "setting{gerudoFortress, open}"
-        ],
-        [
-          "OOT_EVENT_CARPENTER_1",
-          "setting{gerudoFortress, single}"
-        ],
-        [
-          "OOT_EVENT_CARPENTER_1",
-          "OOT_EVENT_CARPENTER_2"
-        ],
-        [
-          "OOT_EVENT_CARPENTER_1",
-          "OOT_EVENT_CARPENTER_3"
-        ],
-        [
-          "OOT_EVENT_CARPENTER_1",
-          "OOT_EVENT_CARPENTER_4"
         ]
       ],
       "TimeNeeded": "None",
@@ -41631,28 +41731,28 @@
           "OOT_BOW",
           "OOT_ARROW_FIRE",
           "OOT_has_sticks",
-          "renewable{ARROWS_5}",
+          "renewable{OOT_ARROWS_5}",
           "OOT_has_explosives"
         ],
         [
           "OOT_BOW",
           "OOT_ARROW_FIRE",
           "OOT_has_sticks",
-          "renewable{ARROWS_10}",
+          "renewable{OOT_ARROWS_10}",
           "OOT_has_explosives"
         ],
         [
           "OOT_BOW",
           "OOT_ARROW_FIRE",
           "OOT_has_sticks",
-          "renewable{ARROWS_30}",
+          "renewable{OOT_ARROWS_30}",
           "OOT_has_explosives"
         ],
         [
           "OOT_BOW",
           "OOT_ARROW_FIRE",
           "OOT_has_sticks",
-          "renewable{ARROWS_40}",
+          "renewable{OOT_ARROWS_40}",
           "OOT_has_explosives"
         ],
         [
@@ -41678,28 +41778,28 @@
           "OOT_BOW",
           "OOT_ARROW_FIRE",
           "OOT_has_sticks",
-          "renewable{ARROWS_5}",
+          "renewable{OOT_ARROWS_5}",
           "setting{smallKeyShuffleOot, removed}"
         ],
         [
           "OOT_BOW",
           "OOT_ARROW_FIRE",
           "OOT_has_sticks",
-          "renewable{ARROWS_10}",
+          "renewable{OOT_ARROWS_10}",
           "setting{smallKeyShuffleOot, removed}"
         ],
         [
           "OOT_BOW",
           "OOT_ARROW_FIRE",
           "OOT_has_sticks",
-          "renewable{ARROWS_30}",
+          "renewable{OOT_ARROWS_30}",
           "setting{smallKeyShuffleOot, removed}"
         ],
         [
           "OOT_BOW",
           "OOT_ARROW_FIRE",
           "OOT_has_sticks",
-          "renewable{ARROWS_40}",
+          "renewable{OOT_ARROWS_40}",
           "setting{smallKeyShuffleOot, removed}"
         ],
         [
@@ -41725,28 +41825,28 @@
           "OOT_BOW",
           "OOT_ARROW_FIRE",
           "OOT_has_sticks",
-          "renewable{ARROWS_5}",
+          "renewable{OOT_ARROWS_5}",
           "OOT_SMALL_KEY_SPIRIT, 2"
         ],
         [
           "OOT_BOW",
           "OOT_ARROW_FIRE",
           "OOT_has_sticks",
-          "renewable{ARROWS_10}",
+          "renewable{OOT_ARROWS_10}",
           "OOT_SMALL_KEY_SPIRIT, 2"
         ],
         [
           "OOT_BOW",
           "OOT_ARROW_FIRE",
           "OOT_has_sticks",
-          "renewable{ARROWS_30}",
+          "renewable{OOT_ARROWS_30}",
           "OOT_SMALL_KEY_SPIRIT, 2"
         ],
         [
           "OOT_BOW",
           "OOT_ARROW_FIRE",
           "OOT_has_sticks",
-          "renewable{ARROWS_40}",
+          "renewable{OOT_ARROWS_40}",
           "OOT_SMALL_KEY_SPIRIT, 2"
         ],
         [
@@ -41781,7 +41881,7 @@
         ],
         [
           "OOT_SLINGSHOT",
-          "renewable{DEKU_SEEDS_30}",
+          "renewable{OOT_DEKU_SEEDS_30}",
           "OOT_HOOKSHOT"
         ],
         [
@@ -41795,7 +41895,7 @@
         ],
         [
           "OOT_SLINGSHOT",
-          "renewable{DEKU_SEEDS_30}",
+          "renewable{OOT_DEKU_SEEDS_30}",
           "OOT_BOW"
         ],
         [
@@ -41809,7 +41909,7 @@
         ],
         [
           "OOT_SLINGSHOT",
-          "renewable{DEKU_SEEDS_30}",
+          "renewable{OOT_DEKU_SEEDS_30}",
           "OOT_EVENT_ARROWS"
         ],
         [
@@ -41819,58 +41919,58 @@
         [
           "OOT_SLINGSHOT",
           "OOT_EVENT_SEEDS",
-          "renewable{ARROWS_5}"
+          "renewable{OOT_ARROWS_5}"
         ],
         [
           "OOT_SLINGSHOT",
-          "renewable{DEKU_SEEDS_30}",
-          "renewable{ARROWS_5}"
+          "renewable{OOT_DEKU_SEEDS_30}",
+          "renewable{OOT_ARROWS_5}"
         ],
         [
           "OOT_BOOMERANG",
-          "renewable{ARROWS_5}"
+          "renewable{OOT_ARROWS_5}"
         ],
         [
           "OOT_SLINGSHOT",
           "OOT_EVENT_SEEDS",
-          "renewable{ARROWS_10}"
+          "renewable{OOT_ARROWS_10}"
         ],
         [
           "OOT_SLINGSHOT",
-          "renewable{DEKU_SEEDS_30}",
-          "renewable{ARROWS_10}"
+          "renewable{OOT_DEKU_SEEDS_30}",
+          "renewable{OOT_ARROWS_10}"
         ],
         [
           "OOT_BOOMERANG",
-          "renewable{ARROWS_10}"
+          "renewable{OOT_ARROWS_10}"
         ],
         [
           "OOT_SLINGSHOT",
           "OOT_EVENT_SEEDS",
-          "renewable{ARROWS_30}"
+          "renewable{OOT_ARROWS_30}"
         ],
         [
           "OOT_SLINGSHOT",
-          "renewable{DEKU_SEEDS_30}",
-          "renewable{ARROWS_30}"
+          "renewable{OOT_DEKU_SEEDS_30}",
+          "renewable{OOT_ARROWS_30}"
         ],
         [
           "OOT_BOOMERANG",
-          "renewable{ARROWS_30}"
+          "renewable{OOT_ARROWS_30}"
         ],
         [
           "OOT_SLINGSHOT",
           "OOT_EVENT_SEEDS",
-          "renewable{ARROWS_40}"
+          "renewable{OOT_ARROWS_40}"
         ],
         [
           "OOT_SLINGSHOT",
-          "renewable{DEKU_SEEDS_30}",
-          "renewable{ARROWS_40}"
+          "renewable{OOT_DEKU_SEEDS_30}",
+          "renewable{OOT_ARROWS_40}"
         ],
         [
           "OOT_BOOMERANG",
-          "renewable{ARROWS_40}"
+          "renewable{OOT_ARROWS_40}"
         ],
         [
           "OOT_SLINGSHOT",
@@ -41880,7 +41980,7 @@
         ],
         [
           "OOT_SLINGSHOT",
-          "renewable{DEKU_SEEDS_30}",
+          "renewable{OOT_DEKU_SEEDS_30}",
           "setting{sharedBows}",
           "MM_EVENT_ARROWS"
         ],
@@ -41932,7 +42032,7 @@
       "RequiredItems": [
         "OOT_is_child",
         "OOT_has_sword_kokiri",
-        "renewable{SHIELD_DEKU}"
+        "renewable{OOT_SHIELD_DEKU}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -41946,9 +42046,6 @@
       "ConditionalItems": [
         [
           "setting{dekuTree, open}"
-        ],
-        [
-          "OOT_is_adult"
         ],
         [
           "OOT_EVENT_MIDO_MOVED"
@@ -42368,10 +42465,12 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
+          "setting{progressiveShieldsMm, progressive}",
           "MM_SHIELD, 2"
         ],
         [
-          "MM_SHIELD_MIRROR"
+          "MM_SHIELD_MIRROR",
+          "setting{progressiveShieldsMm, progressive, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -42431,16 +42530,16 @@
       ],
       "ConditionalItems": [
         [
-          "renewable{BOMBCHU}"
+          "renewable{MM_BOMBCHU}"
         ],
         [
-          "renewable{BOMBCHU_5}"
+          "renewable{MM_BOMBCHU_5}"
         ],
         [
-          "renewable{BOMBCHU_10}"
+          "renewable{MM_BOMBCHU_10}"
         ],
         [
-          "renewable{BOMBCHU_20}"
+          "renewable{MM_BOMBCHU_20}"
         ]
       ],
       "TimeNeeded": "None",
@@ -42456,7 +42555,7 @@
           "MM_EVENT_MAGIC_BEANS_PALACE"
         ],
         [
-          "renewable{MAGIC_BEAN}"
+          "renewable{MM_MAGIC_BEAN}"
         ]
       ],
       "TimeNeeded": "None",
@@ -42621,10 +42720,12 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
+          "setting{progressiveGoronLullaby, progressive}",
           "MM_SONG_GORON_HALF"
         ],
         [
-          "MM_SONG_GORON"
+          "MM_SONG_GORON",
+          "setting{progressiveGoronLullaby, progressive, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -42637,10 +42738,12 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
+          "setting{progressiveGoronLullaby, progressive}",
           "MM_SONG_GORON_HALF, 2"
         ],
         [
-          "MM_SONG_GORON"
+          "MM_SONG_GORON",
+          "setting{progressiveGoronLullaby, progressive, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -42679,7 +42782,7 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "renewable{SHIELD_HERO}"
+          "renewable{MM_SHIELD_HERO}"
         ],
         [
           "MM_has_mirror_shield"
@@ -42759,7 +42862,7 @@
     {
       "Id": "MM_has_hot_water_distance",
       "RequiredItems": [
-        "MM_SONG_SOARING"
+        "MM_can_soar"
       ],
       "ConditionalItems": [
         [
@@ -42812,11 +42915,12 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "option{shortHookshotMm, false}",
-          "MM_HOOKSHOT"
+          "setting{shortHookshotMm}",
+          "MM_HOOKSHOT, 2"
         ],
         [
-          "MM_HOOKSHOT, 2"
+          "MM_HOOKSHOT",
+          "setting{shortHookshotMm, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -42828,7 +42932,7 @@
       "Id": "MM_has_blue_potion",
       "RequiredItems": [
         "MM_has_bottle",
-        "renewable{POTION_BLUE}"
+        "renewable{MM_POTION_BLUE}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -42846,10 +42950,10 @@
           "MM_EVENT_RED_POTION"
         ],
         [
-          "renewable{POTION_RED}"
+          "renewable{MM_POTION_RED}"
         ],
         [
-          "renewable{BOTTLE_POTION_RED}"
+          "renewable{MM_BOTTLE_POTION_RED}"
         ]
       ],
       "TimeNeeded": "None",
@@ -42861,7 +42965,7 @@
       "Id": "MM_has_green_potion",
       "RequiredItems": [
         "MM_has_bottle",
-        "renewable{POTION_GREEN}"
+        "renewable{MM_POTION_GREEN}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -42872,10 +42976,16 @@
     {
       "Id": "MM_has_milk",
       "RequiredItems": [
-        "MM_has_bottle",
-        "renewable{MILK}"
+        "MM_has_bottle"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "renewable{MM_MILK}"
+        ],
+        [
+          "renewable{MM_BOTTLE_MILK}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -42966,13 +43076,13 @@
           "MM_EVENT_STICKS"
         ],
         [
-          "renewable{STICK}"
+          "renewable{MM_STICK}"
         ],
         [
-          "renewable{STICKS_5}"
+          "renewable{MM_STICKS_5}"
         ],
         [
-          "renewable{STICKS_10}"
+          "renewable{MM_STICKS_10}"
         ],
         [
           "setting{sharedNutsSticks}",
@@ -42992,13 +43102,13 @@
           "MM_EVENT_NUTS"
         ],
         [
-          "renewable{NUT}"
+          "renewable{MM_NUT}"
         ],
         [
-          "renewable{NUTS_5}"
+          "renewable{MM_NUTS_5}"
         ],
         [
-          "renewable{NUTS_10}"
+          "renewable{MM_NUTS_10}"
         ],
         [
           "setting{sharedNutsSticks}",
@@ -43020,16 +43130,16 @@
           "MM_EVENT_ARROWS"
         ],
         [
-          "renewable{ARROWS_5}"
+          "renewable{MM_ARROWS_5}"
         ],
         [
-          "renewable{ARROWS_10}"
+          "renewable{MM_ARROWS_10}"
         ],
         [
-          "renewable{ARROWS_30}"
+          "renewable{MM_ARROWS_30}"
         ],
         [
-          "renewable{ARROWS_40}"
+          "renewable{MM_ARROWS_40}"
         ]
       ],
       "TimeNeeded": "None",
@@ -43047,16 +43157,16 @@
           "MM_EVENT_BOMBS"
         ],
         [
-          "renewable{BOMBS_5}"
+          "renewable{MM_BOMBS_5}"
         ],
         [
-          "renewable{BOMBS_10}"
+          "renewable{MM_BOMBS_10}"
         ],
         [
-          "renewable{BOMBS_20}"
+          "renewable{MM_BOMBS_20}"
         ],
         [
-          "renewable{BOMBS_30}"
+          "renewable{MM_BOMBS_30}"
         ]
       ],
       "TimeNeeded": "None",
@@ -43078,6 +43188,9 @@
         ],
         [
           "MM_has_blue_potion"
+        ],
+        [
+          "MM_EVENT_CHATEAU"
         ]
       ],
       "TimeNeeded": "None",
@@ -43128,10 +43241,10 @@
       ],
       "ConditionalItems": [
         [
-          "renewable{CHATEAU}"
+          "renewable{MM_CHATEAU}"
         ],
         [
-          "renewable{BOTTLE_CHATEAU}"
+          "renewable{MM_BOTTLE_CHATEAU}"
         ]
       ],
       "TimeNeeded": "None",

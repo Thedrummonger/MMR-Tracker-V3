@@ -376,7 +376,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                 { "Stray Fairy (Clock Town)|fairyTown", new string[] { "MM_STRAY_FAIRY_TOWN" } },
                 { "Regular Masks (MM)|masksRegular", new string[] { "MM_MASK_CAPTAIN", "MM_MASK_GIANT", "MM_MASK_ALL_NIGHT", "MM_MASK_BUNNY", "MM_MASK_KEATON", "MM_MASK_GARO", "MM_MASK_ROMANI", "MM_MASK_TROUPE_LEADER", "MM_MASK_POSTMAN", "MM_MASK_COUPLE", "MM_MASK_GREAT_FAIRY", "MM_MASK_GIBDO", "MM_MASK_DON_GERO", "MM_MASK_KAMARO", "MM_MASK_TRUTH", "MM_MASK_STONE", "MM_MASK_BREMEN", "MM_MASK_BLAST", "MM_MASK_SCENTS", "MM_MASK_KAFEI", "SHARED_MASK_TRUTH", "SHARED_MASK_BUNNY", "SHARED_MASK_KEATON" } },
                 { "Transformation Masks (MM)|masksTransform", new string[] { "MM_MASK_DEKU", "MM_MASK_GORON", "MM_MASK_ZORA", "MM_MASK_FIERCE_DEITY", "SHARED_MASK_GORON", "SHARED_MASK_ZORA" } },
-                { "Masks (OoT)|masksOot", new string[] { "OOT_MASK_SKULL", "OOT_MASK_SPOOKY", "OOT_MASK_KEATON", "OOT_MASK_BUNNY", "OOT_MASK_TRUTH", "OOT_MASK_GERUDO", "OOT_MASK_GORON", "OOT_MASK_ZORA", "SHARED_MASK_KEATON", "SHARED_MASK_BUNNY", "SHARED_MASK_TRUTH", "SHARED_MASK_GORON", "SHARED_MASK_ZORA" } }
+                { "Masks (OoT)|masksOot", new string[] { "OOT_MASK_SKULL", "OOT_MASK_SPOOKY", "OOT_MASK_KEATON", "OOT_MASK_BUNNY", "OOT_MASK_TRUTH", "OOT_MASK_GERUDO", "OOT_MASK_GORON", "OOT_MASK_ZORA", "SHARED_MASK_KEATON", "SHARED_MASK_BUNNY", "SHARED_MASK_TRUTH", "SHARED_MASK_GORON", "SHARED_MASK_ZORA" } },
+                { "Triforce Pieces|triforce", new string[] { "SHARED_TRIFORCE" } },
             };
 
             void AddCondition(string ID, string Game, string Category, string DefaultValue = null, int DefaultCount = 0)
@@ -399,7 +400,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                     Requirement.Values["true"].VariableEdit.Add($"{ID.ToLower()}_req", new OptionData.VariableEditData 
                     { 
                         action = MiscData.MathOP.add, 
-                        EditValue = (namedata[1].StartsWith("fair") || namedata[1].StartsWith("skull")) ? i.Value : i.Value.Select(x => $"{x}, 1").ToArray()
+                        EditValue = (namedata[1].StartsWith("fair") || namedata[1].StartsWith("skull") || namedata[1] == "triforce") ? i.Value : i.Value.Select(x => $"{x}, 1").ToArray()
                     });
                     dictionaryFile.Options.Add(Requirement.ID, Requirement);
                 }
@@ -1198,7 +1199,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         line = line.Replace(FullFunction, $"trick{{TRICK_{Game}_{Parameters}}}");
                         break;
                     case "renewable":
-                        line = line.Replace(FullFunction, $"{Function}{{{Parameters}}}");
+                        line = line.Replace(FullFunction, $"{Function}{{{Game}_{Parameters}}}");
                         break;
                     case "has":
                         string ReplaceText = $"{Game}_{Parameters}";
@@ -1255,6 +1256,9 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         break;
                     case "after":
                         line = line.Replace(FullFunction, $"time{{After_{Parameters}}}");
+                        break;
+                    case "oot_time":
+                        line = line.Replace(FullFunction, $"time{{{Parameters}}}");
                         break;
                     case "at":
                         line = line.Replace(FullFunction, $"time{{At_{Parameters}}}");
