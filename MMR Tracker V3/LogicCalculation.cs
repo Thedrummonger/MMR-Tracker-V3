@@ -449,8 +449,9 @@ namespace MMR_Tracker_V3
 
         private static bool CheckRenewableFunction(TrackerInstance instance, string[] strings)
         {
+            
             var item = instance.GetItemByID(strings[0]);
-            if (item is null) { return false; }
+            if (item is null) { Debug.WriteLine($"{strings[0]} Was not a valid Renewable Item Entry"); return false; }
             if (item.GetTotalUsable(instance) < 1) { return false; }
             return instance.LocationPool.Values.Any(x => 
                 x.CheckState == CheckState.Checked && 
@@ -464,7 +465,8 @@ namespace MMR_Tracker_V3
             bool Inverse = strings.Length > 1 && bool.TryParse(strings[1], out bool InverseParam) && !InverseParam;
             bool IsLitteral = strings[0].IsLiteralID(out string CleanedID);
             instance.GetLocationEntryType(CleanedID, IsLitteral, out dynamic OBJ);
-            if (!Utility.DynamicPropertyExist(OBJ, "RandomizedState")) { return false; }
+            if (OBJ is null) { Debug.WriteLine($"{strings[0]} is not a valid logic Entry"); return false; }
+            if (!Utility.DynamicPropertyExist(OBJ, "RandomizedState")) { Debug.WriteLine($"{strings[0]} is not a randomizable entry"); return false; }
             RandomizedState randomizedState = OBJ.RandomizedState;
             return (randomizedState == RandomizedState.Randomized) != Inverse;
         }
@@ -472,8 +474,8 @@ namespace MMR_Tracker_V3
         private static bool CheckTrickEnabledFunction(TrackerInstance instance, string[] strings)
         {
             bool Inverse = strings.Length > 1 && bool.TryParse(strings[1], out bool InverseParam) && !InverseParam;
-            if (!instance.MacroPool.ContainsKey(strings[0])) { return false; }  
-            if (!instance.MacroPool[strings[0]].isTrick(instance)) { return false; }
+            if (!instance.MacroPool.ContainsKey(strings[0])) { Debug.WriteLine($"{strings[0]} Was not a valid Trick Macro"); return false; }  
+            if (!instance.MacroPool[strings[0]].isTrick(instance)) { Debug.WriteLine($"{strings[0]} Was a valid macro but was not a trick"); return false; }
             return instance.MacroPool[strings[0]].TrickEnabled != Inverse;
         }
 
@@ -481,6 +483,7 @@ namespace MMR_Tracker_V3
         {
             bool litteral = param.IsLiteralID(out string paramClean);
             instance.GetLocationEntryType(paramClean, litteral, out dynamic obj);
+            if (obj is null) { Debug.WriteLine($"{param} is not a valid logic Entry"); return false; }
 
             if (func == "check" && Utility.DynamicPropertyExist(obj, "RandomizedState") && obj.RandomizedState == RandomizedState.ForcedJunk) { func = "available"; }
 
