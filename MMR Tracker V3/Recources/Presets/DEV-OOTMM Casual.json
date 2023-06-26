@@ -140,8 +140,7 @@
       "RequiredItems": [
         "OOT_is_adult",
         "OOT_EVENT_MALON_COW",
-        "OOT_OCARINA",
-        "OOT_SONG_EPONA",
+        "OOT_can_play_epona",
         "OOT Link's House"
       ],
       "ConditionalItems": [],
@@ -323,7 +322,7 @@
       "Id": "OOT Lost Woods Memory Game",
       "RequiredItems": [
         "OOT_is_child",
-        "OOT_OCARINA",
+        "OOT_has_ocarina",
         "OOT Lost Woods"
       ],
       "ConditionalItems": [],
@@ -517,7 +516,7 @@
       "Id": "OOT Deku Theater Nuts Upgrade",
       "RequiredItems": [
         "OOT_is_child",
-        "OOT_MASK_TRUTH",
+        "OOT_has_mask_truth",
         "OOT Deku Theater"
       ],
       "ConditionalItems": [],
@@ -815,8 +814,7 @@
     {
       "Id": "OOT Kakariko Cow",
       "RequiredItems": [
-        "OOT_OCARINA",
-        "OOT_SONG_EPONA"
+        "OOT_can_play_epona"
       ],
       "ConditionalItems": [
         [
@@ -1048,8 +1046,7 @@
     {
       "Id": "OOT Graveyard ReDead Tomb",
       "RequiredItems": [
-        "OOT_OCARINA",
-        "OOT_SONG_SUN",
+        "OOT_can_play_sun",
         "OOT Graveyard ReDead Grave"
       ],
       "ConditionalItems": [],
@@ -1263,6 +1260,7 @@
       "Id": "OOT Death Mountain GS Above Dodongo",
       "RequiredItems": [
         "OOT_gs_night",
+        "OOT_is_adult",
         "OOT Death Mountain"
       ],
       "ConditionalItems": [
@@ -1300,8 +1298,7 @@
     {
       "Id": "OOT Death Mountain Cow",
       "RequiredItems": [
-        "OOT_OCARINA",
-        "OOT_SONG_EPONA",
+        "OOT_can_play_epona",
         "OOT Death Mountain Cow Grotto"
       ],
       "ConditionalItems": [],
@@ -1800,8 +1797,7 @@
       "Id": "OOT Zora River Frogs Storms",
       "RequiredItems": [
         "OOT_is_child",
-        "OOT_OCARINA",
-        "OOT_SONG_STORMS",
+        "OOT_can_play_storms",
         "OOT Zora River"
       ],
       "ConditionalItems": [],
@@ -1817,10 +1813,10 @@
         "OOT_OCARINA",
         "OOT_SONG_ZELDA",
         "OOT_SONG_SARIA",
-        "OOT_SONG_EPONA",
-        "OOT_SONG_SUN",
-        "OOT_SONG_TIME",
-        "OOT_SONG_STORMS",
+        "OOT_can_play_epona",
+        "OOT_can_play_sun",
+        "OOT_can_play_time",
+        "OOT_can_play_storms",
         "OOT Zora River"
       ],
       "ConditionalItems": [],
@@ -1986,6 +1982,9 @@
         ],
         [
           "OOT_MAGIC_UPGRADE"
+        ],
+        [
+          "SHARED_MAGIC_UPGRADE"
         ]
       ],
       "TimeNeeded": "None",
@@ -2385,7 +2384,7 @@
       "Id": "OOT Lon Lon Ranch Malon Song",
       "RequiredItems": [
         "OOT_is_child",
-        "OOT_OCARINA",
+        "OOT_has_ocarina",
         "OOT_EVENT_MALON",
         "OOT_is_day",
         "OOT Lon Lon Ranch"
@@ -2477,8 +2476,7 @@
     {
       "Id": "OOT Lon Lon Ranch Stables Cow Left",
       "RequiredItems": [
-        "OOT_OCARINA",
-        "OOT_SONG_EPONA",
+        "OOT_can_play_epona",
         "OOT Lon Lon Ranch Stables"
       ],
       "ConditionalItems": [],
@@ -2490,8 +2488,7 @@
     {
       "Id": "OOT Lon Lon Ranch Stables Cow Right",
       "RequiredItems": [
-        "OOT_OCARINA",
-        "OOT_SONG_EPONA",
+        "OOT_can_play_epona",
         "OOT Lon Lon Ranch Stables"
       ],
       "ConditionalItems": [],
@@ -2503,8 +2500,7 @@
     {
       "Id": "OOT Lon Lon Ranch Silo Cow Front",
       "RequiredItems": [
-        "OOT_OCARINA",
-        "OOT_SONG_EPONA",
+        "OOT_can_play_epona",
         "OOT Lon Lon Ranch Silo"
       ],
       "ConditionalItems": [],
@@ -2516,8 +2512,7 @@
     {
       "Id": "OOT Lon Lon Ranch Silo Cow Back",
       "RequiredItems": [
-        "OOT_OCARINA",
-        "OOT_SONG_EPONA",
+        "OOT_can_play_epona",
         "OOT Lon Lon Ranch Silo"
       ],
       "ConditionalItems": [],
@@ -2679,8 +2674,7 @@
       "Id": "OOT Hyrule Field Cow",
       "RequiredItems": [
         "OOT_has_fire",
-        "OOT_OCARINA",
-        "OOT_SONG_EPONA",
+        "OOT_can_play_epona",
         "OOT Hyrule Field Grotto Near GV"
       ],
       "ConditionalItems": [],
@@ -3018,7 +3012,7 @@
     {
       "Id": "OOT Bombchu Bowling Reward 1",
       "RequiredItems": [
-        "OOT_BOMB_BAG",
+        "OOT_has_bomb_bag",
         "OOT_can_use_wallet_1",
         "OOT Bombchu Bowling"
       ],
@@ -3031,7 +3025,7 @@
     {
       "Id": "OOT Bombchu Bowling Reward 2",
       "RequiredItems": [
-        "OOT_BOMB_BAG",
+        "OOT_has_bomb_bag",
         "OOT_can_use_wallet_1",
         "OOT Bombchu Bowling"
       ],
@@ -3202,7 +3196,7 @@
       "Id": "OOT Windmill Song of Storms",
       "RequiredItems": [
         "OOT_is_adult",
-        "OOT_OCARINA",
+        "OOT_has_ocarina",
         "OOT Windmill"
       ],
       "ConditionalItems": [],
@@ -3347,8 +3341,7 @@
       "Id": "OOT Gerudo Valley Cow",
       "RequiredItems": [
         "OOT_is_child",
-        "OOT_OCARINA",
-        "OOT_SONG_EPONA",
+        "OOT_can_play_epona",
         "OOT Gerudo Valley"
       ],
       "ConditionalItems": [],
@@ -3784,7 +3777,7 @@
           "OOT_can_use_din"
         ],
         [
-          "OOT_BOMB_BAG"
+          "OOT_has_bombs"
         ]
       ],
       "TimeNeeded": "None",
@@ -3887,6 +3880,9 @@
         ],
         [
           "OOT_can_hammer"
+        ],
+        [
+          "OOT_has_blue_fire_arrows_mudwall"
         ]
       ],
       "TimeNeeded": "None",
@@ -3933,11 +3929,17 @@
     {
       "Id": "OOT Dodongo Cavern Bridge Chest",
       "RequiredItems": [
-        "OOT_has_explosives_or_hammer",
         "OOT Dodongo Cavern Main Bridge",
         "option{DCMQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_explosives_or_hammer"
+        ],
+        [
+          "OOT_has_blue_fire_arrows_mudwall"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -4648,8 +4650,7 @@
         [
           "OOT_is_child",
           "trick{TRICK_OOT_TUNICS}",
-          "OOT_OCARINA",
-          "OOT_SONG_TIME"
+          "OOT_can_play_time"
         ]
       ],
       "TimeNeeded": "None",
@@ -4783,8 +4784,7 @@
           "OOT Fire Temple Pillar Ledge"
         ],
         [
-          "OOT_OCARINA",
-          "OOT_SONG_TIME",
+          "OOT_can_play_time",
           "OOT Fire Temple Before Miniboss"
         ]
       ],
@@ -4810,8 +4810,7 @@
       "RequiredItems": [
         "OOT_is_adult",
         "OOT_has_tunic_goron",
-        "OOT_OCARINA",
-        "OOT_SONG_TIME",
+        "OOT_can_play_time",
         "OOT Fire Temple Lava Room",
         "option{FireMQ, false}"
       ],
@@ -6329,8 +6328,7 @@
     {
       "Id": "OOT Spirit Temple GS Boulders",
       "RequiredItems": [
-        "OOT_OCARINA",
-        "OOT_SONG_TIME",
+        "OOT_can_play_time",
         "OOT Spirit Temple Adult Entrance",
         "option{SpiritMQ, false}"
       ],
@@ -6385,8 +6383,7 @@
           "OOT Spirit Temple",
           "OOT_SMALL_KEY_SPIRIT, 4",
           "OOT_has_explosives",
-          "OOT_OCARINA",
-          "OOT_SONG_TIME",
+          "OOT_can_play_time",
           "OOT_is_child",
           "OOT_has_weapon",
           "OOT_has_lens"
@@ -6396,8 +6393,7 @@
           "OOT Spirit Temple",
           "OOT_SMALL_KEY_SPIRIT, 4",
           "OOT_has_explosives",
-          "OOT_OCARINA",
-          "OOT_SONG_TIME",
+          "OOT_can_play_time",
           "OOT_is_child",
           "OOT_has_lens",
           "OOT_can_use_sticks"
@@ -6412,11 +6408,16 @@
           "option{SpiritMQ, false}"
         ],
         [
-          "OOT_has_explosives",
           "OOT Spirit Temple Statue",
           "option{SpiritMQ, false}",
           "OOT_SMALL_KEY_SPIRIT, 3",
           "OOT_HOOKSHOT, 2"
+        ],
+        [
+          "OOT_has_explosives",
+          "OOT Spirit Temple Statue",
+          "option{SpiritMQ, false}",
+          "SHARED_HOOKSHOT, 2"
         ]
       ],
       "TimeNeeded": "None",
@@ -6630,8 +6631,7 @@
     {
       "Id": "OOT Gerudo Training Water",
       "RequiredItems": [
-        "OOT_OCARINA",
-        "OOT_SONG_TIME",
+        "OOT_can_play_time",
         "OOT_has_tunic_zora",
         "OOT_has_iron_boots",
         "OOT Gerudo Training Grounds Water",
@@ -6938,8 +6938,7 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_OCARINA",
-          "OOT_SONG_TIME"
+          "OOT_can_play_time"
         ],
         [
           "OOT_can_hookshot"
@@ -7190,8 +7189,7 @@
     {
       "Id": "OOT MQ Deku Tree After Water Platform Chest",
       "RequiredItems": [
-        "OOT_OCARINA",
-        "OOT_SONG_TIME",
+        "OOT_can_play_time",
         "OOT Deku Tree Water Room Back",
         "option{DTMQ, true}"
       ],
@@ -7256,8 +7254,7 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_OCARINA",
-          "OOT_SONG_TIME",
+          "OOT_can_play_time",
           "OOT_can_collect_distance"
         ],
         [
@@ -7281,8 +7278,7 @@
           "OOT_has_explosives"
         ],
         [
-          "OOT_OCARINA",
-          "OOT_SONG_TIME",
+          "OOT_can_play_time",
           "OOT_can_hammer"
         ]
       ],
@@ -7303,6 +7299,9 @@
         ],
         [
           "OOT_can_hammer"
+        ],
+        [
+          "OOT_has_blue_fire_arrows_mudwall"
         ]
       ],
       "TimeNeeded": "None",
@@ -7436,8 +7435,7 @@
     {
       "Id": "OOT MQ Dodongo Cavern GS Time Blocks",
       "RequiredItems": [
-        "OOT_OCARINA",
-        "OOT_SONG_TIME",
+        "OOT_can_play_time",
         "OOT_can_damage_skull",
         "OOT Dodongo Cavern Main",
         "option{DCMQ, true}"
@@ -7666,8 +7664,7 @@
     {
       "Id": "OOT MQ Jabu-Jabu GS SoT Block",
       "RequiredItems": [
-        "OOT_OCARINA",
-        "OOT_SONG_TIME",
+        "OOT_can_play_time",
         "OOT Jabu-Jabu Main",
         "option{JJMQ, true}"
       ],
@@ -7730,8 +7727,7 @@
     {
       "Id": "OOT MQ Jabu-Jabu Cow",
       "RequiredItems": [
-        "OOT_OCARINA",
-        "OOT_SONG_EPONA",
+        "OOT_can_play_epona",
         "OOT_EVENT_JABU_BIG_OCTO",
         "OOT_is_child",
         "OOT Jabu-Jabu Main",
@@ -7822,10 +7818,9 @@
           "OOT_can_use_sticks"
         ],
         [
-          "OOT_OCARINA",
           "OOT_SMALL_KEY_BOTW, 2",
           "OOT_has_explosives",
-          "OOT_SONG_SUN"
+          "OOT_can_play_sun"
         ]
       ],
       "TimeNeeded": "None",
@@ -7975,8 +7970,7 @@
     {
       "Id": "OOT MQ Ice Cavern GS Compass Room",
       "RequiredItems": [
-        "OOT_OCARINA",
-        "OOT_SONG_TIME",
+        "OOT_can_play_time",
         "OOT Ice Cavern Compass Room",
         "option{ICMQ, true}"
       ],
@@ -8043,6 +8037,10 @@
         [
           "OOT_has_weapon",
           "OOT_MAGIC_UPGRADE"
+        ],
+        [
+          "OOT_has_weapon",
+          "SHARED_MAGIC_UPGRADE"
         ]
       ],
       "TimeNeeded": "None",
@@ -8053,8 +8051,7 @@
     {
       "Id": "OOT MQ Forest Temple Wolfos Chest",
       "RequiredItems": [
-        "OOT_OCARINA",
-        "OOT_SONG_TIME",
+        "OOT_can_play_time",
         "OOT Forest Temple Main",
         "option{ForestMQ, true}"
       ],
@@ -8469,8 +8466,7 @@
           "OOT_has_hover_boots"
         ],
         [
-          "OOT_OCARINA",
-          "OOT_SONG_TIME"
+          "OOT_can_play_time"
         ]
       ],
       "TimeNeeded": "None",
@@ -8576,8 +8572,7 @@
           "OOT_has_fire_arrows"
         ],
         [
-          "OOT_OCARINA",
-          "OOT_SONG_TIME",
+          "OOT_can_play_time",
           "OOT_can_use_din"
         ]
       ],
@@ -8707,8 +8702,7 @@
     {
       "Id": "OOT MQ Shadow Temple Hover Boots Chest",
       "RequiredItems": [
-        "OOT_OCARINA",
-        "OOT_SONG_TIME",
+        "OOT_can_play_time",
         "OOT_can_use_bow",
         "OOT Shadow Temple First Locked Door",
         "option{ShadowMQ, true}"
@@ -8758,8 +8752,7 @@
     {
       "Id": "OOT MQ Shadow Temple Second Silver Rupee Visible Chest",
       "RequiredItems": [
-        "OOT_OCARINA",
-        "OOT_SONG_TIME",
+        "OOT_can_play_time",
         "OOT Shadow Temple Upper Huge Pit",
         "option{ShadowMQ, true}"
       ],
@@ -8772,8 +8765,7 @@
     {
       "Id": "OOT MQ Shadow Temple Second Silver Rupee Invisible Chest",
       "RequiredItems": [
-        "OOT_OCARINA",
-        "OOT_SONG_TIME",
+        "OOT_can_play_time",
         "OOT Shadow Temple Upper Huge Pit",
         "option{ShadowMQ, true}"
       ],
@@ -9101,7 +9093,7 @@
         ],
         [
           "OOT_can_use_slingshot",
-          "OOT_BOW",
+          "OOT_has_bow",
           "setting{smallKeyShuffleOot, removed}",
           "OOT Spirit Temple"
         ],
@@ -9133,8 +9125,7 @@
           "OOT Spirit Temple",
           "OOT_SMALL_KEY_SPIRIT, 2",
           "OOT_has_explosives",
-          "OOT_OCARINA",
-          "OOT_SONG_TIME",
+          "OOT_can_play_time",
           "OOT_is_child"
         ]
       ],
@@ -9302,11 +9293,11 @@
         [
           "OOT_SMALL_KEY_SPIRIT, 7",
           "OOT_can_hammer",
+          "OOT_can_play_time",
+          "OOT_can_play_epona",
+          "OOT_can_play_sun",
+          "OOT_can_play_storms",
           "OOT_OCARINA",
-          "OOT_SONG_TIME",
-          "OOT_SONG_EPONA",
-          "OOT_SONG_SUN",
-          "OOT_SONG_STORMS",
           "OOT_SONG_ZELDA"
         ]
       ],
@@ -9406,11 +9397,11 @@
         [
           "OOT_SMALL_KEY_SPIRIT, 7",
           "OOT_can_hammer",
+          "OOT_can_play_time",
+          "OOT_can_play_epona",
+          "OOT_can_play_sun",
+          "OOT_can_play_storms",
           "OOT_OCARINA",
-          "OOT_SONG_TIME",
-          "OOT_SONG_EPONA",
-          "OOT_SONG_SUN",
-          "OOT_SONG_STORMS",
           "OOT_SONG_ZELDA"
         ]
       ],
@@ -10269,7 +10260,7 @@
     {
       "Id": "MM Clock Town Keaton HP",
       "RequiredItems": [
-        "MM_MASK_KEATON",
+        "MM_has_mask_keaton",
         "MM Clock Town North"
       ],
       "ConditionalItems": [],
@@ -10360,7 +10351,7 @@
     {
       "Id": "MM Clock Town Guru Guru Mask Bremen",
       "RequiredItems": [
-        "MM Clock Town Laundry Pool"
+        "MM Laundry Pool"
       ],
       "ConditionalItems": [
         [
@@ -10379,7 +10370,7 @@
       "Id": "MM Clock Town Stray Fairy",
       "RequiredItems": [
         "MM_is_day",
-        "MM Clock Town Laundry Pool"
+        "MM Laundry Pool"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -10410,10 +10401,10 @@
           "MM_MASK_DEKU"
         ],
         [
-          "MM_MASK_GORON"
+          "MM_has_mask_goron"
         ],
         [
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ]
       ],
       "TimeNeeded": "None",
@@ -10425,8 +10416,7 @@
       "Id": "MM Clock Tower Roof Skull Kid Ocarina",
       "RequiredItems": [
         "MM_has_weapon_range",
-        "MM_OCARINA",
-        "MM_SONG_TIME",
+        "MM_can_play_time",
         "MM Clock Tower Roof"
       ],
       "ConditionalItems": [],
@@ -10439,8 +10429,7 @@
       "Id": "MM Clock Tower Roof Skull Kid Song of Time",
       "RequiredItems": [
         "MM_has_weapon_range",
-        "MM_OCARINA",
-        "MM_SONG_TIME",
+        "MM_can_play_time",
         "MM Clock Tower Roof"
       ],
       "ConditionalItems": [],
@@ -10497,11 +10486,10 @@
     {
       "Id": "MM Milk Bar Troupe Leader Mask",
       "RequiredItems": [
-        "MM_MASK_ROMANI",
         "MM_has_ocarina",
         "MM_MASK_DEKU",
-        "MM_MASK_ZORA",
-        "MM_MASK_GORON",
+        "MM_has_mask_zora",
+        "MM_has_mask_goron",
         "MM Milk Bar"
       ],
       "ConditionalItems": [
@@ -10601,7 +10589,7 @@
     {
       "Id": "MM Town Archery Reward 1",
       "RequiredItems": [
-        "MM_BOW",
+        "MM_has_bow",
         "MM_can_use_wallet_1",
         "MM Town Archery"
       ],
@@ -10626,7 +10614,7 @@
     {
       "Id": "MM Town Archery Reward 2",
       "RequiredItems": [
-        "MM_BOW",
+        "MM_has_bow",
         "MM_can_use_wallet_1",
         "MM Town Archery"
       ],
@@ -10651,7 +10639,7 @@
     {
       "Id": "MM Chest Game HP",
       "RequiredItems": [
-        "MM_MASK_GORON",
+        "MM_has_mask_goron",
         "MM_can_use_wallet_1",
         "MM Chest Game"
       ],
@@ -10698,7 +10686,7 @@
       "Id": "MM Honey & Darling Reward 2",
       "RequiredItems": [
         "MM_can_use_wallet_1",
-        "MM_BOW",
+        "MM_has_bow",
         "MM_EVENT_HD_REWARD_1",
         "MM_EVENT_HD_REWARD_2",
         "MM_EVENT_HD_REWARD_3",
@@ -11036,9 +11024,9 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Curiosity Shop Back Room Pendant of Memories",
+      "Id": "MM Kafei Hideout Pendant of Memories",
       "RequiredItems": [
-        "MM Curiosity Shop Back Room"
+        "MM Kafei Hideout"
       ],
       "ConditionalItems": [
         [
@@ -11057,11 +11045,11 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Curiosity Shop Back Room Owner Reward 1",
+      "Id": "MM Kafei Hideout Owner Reward 1",
       "RequiredItems": [
         "time{After_DAY3_AM_06_00}",
         "time{Before_NIGHT3_PM_10_00}",
-        "MM Curiosity Shop Back Room"
+        "MM Kafei Hideout"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11070,11 +11058,11 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Curiosity Shop Back Room Owner Reward 2",
+      "Id": "MM Kafei Hideout Owner Reward 2",
       "RequiredItems": [
         "time{After_DAY3_AM_06_00}",
         "time{Before_NIGHT3_PM_10_00}",
-        "MM Curiosity Shop Back Room"
+        "MM Kafei Hideout"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11089,7 +11077,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_MASK_BUNNY",
+          "MM_has_mask_bunny",
           "time{After_DAY1_PM_03_00}",
           "time{Before_NIGHT1_AM_12_00}"
         ],
@@ -11099,7 +11087,7 @@
           "time{Before_NIGHT1_AM_12_00}"
         ],
         [
-          "MM_MASK_BUNNY",
+          "MM_has_mask_bunny",
           "MM_EVENT_MAIL_LETTER",
           "time{After_NIGHT2_PM_06_00}",
           "time{Before_NIGHT2_AM_12_00}"
@@ -11172,7 +11160,7 @@
     {
       "Id": "MM Termina Field Water Chest",
       "RequiredItems": [
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM Termina Field"
       ],
       "ConditionalItems": [],
@@ -11281,7 +11269,7 @@
           "MM_has_explosives"
         ],
         [
-          "MM_MASK_GORON"
+          "MM_has_mask_goron"
         ],
         [
           "MM_has_arrows"
@@ -11295,7 +11283,7 @@
     {
       "Id": "MM Termina Field Bio Baba Grotto",
       "RequiredItems": [
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM Bio Baba Grotto"
       ],
       "ConditionalItems": [],
@@ -11347,8 +11335,7 @@
     {
       "Id": "MM Termina Field Cow Front",
       "RequiredItems": [
-        "MM_OCARINA",
-        "MM_SONG_EPONA",
+        "MM_can_play_epona",
         "MM Termina Field Cow Grotto"
       ],
       "ConditionalItems": [],
@@ -11360,8 +11347,7 @@
     {
       "Id": "MM Termina Field Cow Back",
       "RequiredItems": [
-        "MM_OCARINA",
-        "MM_SONG_EPONA",
+        "MM_can_play_epona",
         "MM Termina Field Cow Grotto"
       ],
       "ConditionalItems": [],
@@ -11405,7 +11391,7 @@
         ],
         [
           "trick{TRICK_MM_SOUTHERN_SWAMP_SCRUB_HP_GORON}",
-          "MM_MASK_GORON"
+          "MM_has_mask_goron"
         ]
       ],
       "TimeNeeded": "None",
@@ -11493,7 +11479,7 @@
     {
       "Id": "MM Swamp Archery Reward 1",
       "RequiredItems": [
-        "MM_BOW",
+        "MM_has_bow",
         "MM_can_use_wallet_1",
         "MM Swamp Archery"
       ],
@@ -11518,7 +11504,7 @@
     {
       "Id": "MM Swamp Archery Reward 2",
       "RequiredItems": [
-        "MM_BOW",
+        "MM_has_bow",
         "MM_can_use_wallet_1",
         "MM Swamp Archery"
       ],
@@ -11626,7 +11612,7 @@
       "RequiredItems": [
         "MM_EVENT_KOUME",
         "MM_EVENT_CLEAN_SWAMP",
-        "MM_BOW",
+        "MM_has_bow",
         "MM Tourist Information"
       ],
       "ConditionalItems": [],
@@ -11736,7 +11722,7 @@
       "ConditionalItems": [
         [
           "MM_can_hookshot",
-          "MM Woodfall Near Great Fairy Fountain"
+          "MM Woodfall Near Fairy Fountain"
         ],
         [
           "MM_MASK_DEKU",
@@ -11804,7 +11790,7 @@
       "Id": "MM Woodfall Great Fairy",
       "RequiredItems": [
         "MM_STRAY_FAIRY_WF, 15",
-        "MM Woodfall Great Fairy Fountain"
+        "MM Woodfall Fairy Fountain"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -11834,7 +11820,7 @@
           "MM_can_hookshot_short"
         ],
         [
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ],
         [
           "MM_MASK_DEKU",
@@ -11952,7 +11938,7 @@
           "MM_can_hookshot_short"
         ],
         [
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ],
         [
           "MM_can_use_beans"
@@ -12074,7 +12060,7 @@
           "MM_can_hookshot_short"
         ],
         [
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ],
         [
           "MM_can_use_beans",
@@ -12364,7 +12350,7 @@
       "Id": "MM Twin Islands Underwater Chest 1",
       "RequiredItems": [
         "MM_EVENT_BOSS_SNOWHEAD",
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM Twin Islands"
       ],
       "ConditionalItems": [],
@@ -12377,7 +12363,7 @@
       "Id": "MM Twin Islands Underwater Chest 2",
       "RequiredItems": [
         "MM_EVENT_BOSS_SNOWHEAD",
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM Twin Islands"
       ],
       "ConditionalItems": [],
@@ -12422,7 +12408,7 @@
     {
       "Id": "MM Goron Elder",
       "RequiredItems": [
-        "MM_MASK_GORON",
+        "MM_has_mask_goron",
         "MM Twin Islands"
       ],
       "ConditionalItems": [
@@ -12459,7 +12445,7 @@
     {
       "Id": "MM Goron Baby",
       "RequiredItems": [
-        "MM_MASK_GORON",
+        "MM_has_mask_goron",
         "MM_can_lullaby_half",
         "MM Goron Shrine"
       ],
@@ -12534,7 +12520,7 @@
     {
       "Id": "MM Goron Village Scrub Bomb Bag",
       "RequiredItems": [
-        "MM_MASK_GORON",
+        "MM_has_mask_goron",
         "MM_can_use_wallet_2",
         "MM Goron Village"
       ],
@@ -12584,7 +12570,7 @@
       "Id": "MM Snowhead Great Fairy",
       "RequiredItems": [
         "MM_STRAY_FAIRY_SH, 15",
-        "MM Snowhead Great Fairy Fountain"
+        "MM Snowhead Fairy Fountain"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -12681,8 +12667,7 @@
     {
       "Id": "MM Romani Ranch Barn Cow Left",
       "RequiredItems": [
-        "MM_OCARINA",
-        "MM_SONG_EPONA",
+        "MM_can_play_epona",
         "MM Stables"
       ],
       "ConditionalItems": [
@@ -12701,8 +12686,7 @@
     {
       "Id": "MM Romani Ranch Barn Cow Right Front",
       "RequiredItems": [
-        "MM_OCARINA",
-        "MM_SONG_EPONA",
+        "MM_can_play_epona",
         "MM Stables"
       ],
       "ConditionalItems": [
@@ -12721,8 +12705,7 @@
     {
       "Id": "MM Romani Ranch Barn Cow Right Back",
       "RequiredItems": [
-        "MM_OCARINA",
-        "MM_SONG_EPONA",
+        "MM_can_play_epona",
         "MM Stables"
       ],
       "ConditionalItems": [
@@ -12775,7 +12758,7 @@
           "time{Before_NIGHT1_PM_08_00}"
         ],
         [
-          "MM_MASK_ZORA",
+          "MM_has_mask_zora",
           "time{After_DAY1_AM_06_00}",
           "time{Before_NIGHT1_PM_08_00}"
         ],
@@ -12795,7 +12778,7 @@
           "time{Before_NIGHT2_PM_08_00}"
         ],
         [
-          "MM_MASK_ZORA",
+          "MM_has_mask_zora",
           "time{After_DAY2_AM_06_00}",
           "time{Before_NIGHT2_PM_08_00}"
         ],
@@ -12815,7 +12798,7 @@
           "time{Before_NIGHT3_PM_08_00}"
         ],
         [
-          "MM_MASK_ZORA",
+          "MM_has_mask_zora",
           "time{After_DAY3_AM_06_00}",
           "time{Before_NIGHT3_PM_08_00}"
         ],
@@ -12838,7 +12821,7 @@
     {
       "Id": "MM Doggy Racetrack HP",
       "RequiredItems": [
-        "MM_MASK_TRUTH",
+        "MM_has_mask_truth",
         "MM Doggy Racetrack"
       ],
       "ConditionalItems": [
@@ -12927,8 +12910,7 @@
     {
       "Id": "MM Great Bay Coast Cow Front",
       "RequiredItems": [
-        "MM_OCARINA",
-        "MM_SONG_EPONA",
+        "MM_can_play_epona",
         "MM Great Bay Cow Grotto"
       ],
       "ConditionalItems": [],
@@ -12940,8 +12922,7 @@
     {
       "Id": "MM Great Bay Coast Cow Back",
       "RequiredItems": [
-        "MM_OCARINA",
-        "MM_SONG_EPONA",
+        "MM_can_play_epona",
         "MM Great Bay Cow Grotto"
       ],
       "ConditionalItems": [],
@@ -12995,7 +12976,7 @@
     {
       "Id": "MM Zora Cape Underwater Chest",
       "RequiredItems": [
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM Zora Cape"
       ],
       "ConditionalItems": [],
@@ -13007,7 +12988,7 @@
     {
       "Id": "MM Zora Cape Waterfall HP",
       "RequiredItems": [
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM Zora Cape"
       ],
       "ConditionalItems": [],
@@ -13061,7 +13042,7 @@
       "Id": "MM Zora Hall Scrub Deed",
       "RequiredItems": [
         "MM_DEED_MOUNTAIN",
-        "MM_MASK_GORON",
+        "MM_has_mask_goron",
         "MM Lulu's Room"
       ],
       "ConditionalItems": [],
@@ -13073,7 +13054,7 @@
     {
       "Id": "MM Zora Hall Scrub Shop",
       "RequiredItems": [
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM_can_use_wallet_1",
         "MM Lulu's Room"
       ],
@@ -13091,14 +13072,14 @@
       "ConditionalItems": [
         [
           "trick{TRICK_MM_ZORA_HALL_SCRUB_HP_NO_DEKU}",
-          "MM_MASK_GORON"
+          "MM_has_mask_goron"
         ],
         [
           "trick{TRICK_MM_ZORA_HALL_SCRUB_HP_NO_DEKU}",
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ],
         [
-          "MM_MASK_GORON",
+          "MM_has_mask_goron",
           "MM_MASK_DEKU",
           "MM_DEED_MOUNTAIN"
         ]
@@ -13171,7 +13152,7 @@
     {
       "Id": "MM Pinnacle Rock Chest 1",
       "RequiredItems": [
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM Pinnacle Rock"
       ],
       "ConditionalItems": [],
@@ -13183,7 +13164,7 @@
     {
       "Id": "MM Pinnacle Rock Chest 2",
       "RequiredItems": [
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM Pinnacle Rock"
       ],
       "ConditionalItems": [],
@@ -13195,7 +13176,7 @@
     {
       "Id": "MM Pinnacle Rock HP",
       "RequiredItems": [
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM_EVENT_SEAHORSE",
         "MM Pinnacle Rock"
       ],
@@ -13213,7 +13194,7 @@
         "MM_EVENT_ZORA_EGGS_LONE_GUARD",
         "MM_EVENT_ZORA_EGGS_TREASURE_ROOM",
         "MM_EVENT_ZORA_EGGS_PINNACLE_ROCK",
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM_has_ocarina",
         "MM Laboratory"
       ],
@@ -13301,7 +13282,7 @@
         ],
         [
           "MM_can_use_fire_arrows",
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ]
       ],
       "TimeNeeded": "None",
@@ -13319,7 +13300,7 @@
           "MM_can_hookshot_short"
         ],
         [
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ]
       ],
       "TimeNeeded": "None",
@@ -13337,7 +13318,7 @@
           "MM_can_hookshot_short"
         ],
         [
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ]
       ],
       "TimeNeeded": "None",
@@ -13411,7 +13392,7 @@
           "MM_can_hookshot_short"
         ],
         [
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ]
       ],
       "TimeNeeded": "None",
@@ -13452,7 +13433,7 @@
           "MM_can_hookshot_short"
         ],
         [
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ]
       ],
       "TimeNeeded": "None",
@@ -13470,22 +13451,22 @@
           "MM_can_hookshot_short"
         ],
         [
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ],
         [
-          "MM_MASK_GORON",
+          "MM_has_mask_goron",
           "MM_has_arrows"
         ],
         [
-          "MM_MASK_GORON",
+          "MM_has_mask_goron",
           "MM_can_use_deku_bubble"
         ],
         [
-          "MM_MASK_GORON",
+          "MM_has_mask_goron",
           "MM_has_explosives"
         ],
         [
-          "MM_MASK_GORON",
+          "MM_has_mask_goron",
           "MM_trick_keg_explosives"
         ]
       ],
@@ -13562,7 +13543,7 @@
           "MM_can_hookshot_short"
         ],
         [
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ]
       ],
       "TimeNeeded": "None",
@@ -13583,7 +13564,7 @@
           "MM_has_arrows"
         ],
         [
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ],
         [
           "MM_can_use_deku_bubble"
@@ -13626,7 +13607,7 @@
           "MM_can_hookshot_short"
         ],
         [
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ]
       ],
       "TimeNeeded": "None",
@@ -13677,14 +13658,14 @@
           "MM_can_hookshot_short"
         ],
         [
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ],
         [
-          "MM_MASK_GORON",
+          "MM_has_mask_goron",
           "MM_has_arrows"
         ],
         [
-          "MM_MASK_GORON",
+          "MM_has_mask_goron",
           "MM_can_use_deku_bubble"
         ]
       ],
@@ -13707,7 +13688,7 @@
     {
       "Id": "MM Waterfall Rapids Beaver Race 1",
       "RequiredItems": [
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM Waterfall Rapids"
       ],
       "ConditionalItems": [],
@@ -13719,7 +13700,7 @@
     {
       "Id": "MM Waterfall Rapids Beaver Race 2",
       "RequiredItems": [
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM Waterfall Rapids"
       ],
       "ConditionalItems": [],
@@ -13774,8 +13755,7 @@
     {
       "Id": "MM Gorman Track Garo Mask",
       "RequiredItems": [
-        "MM_OCARINA",
-        "MM_SONG_EPONA",
+        "MM_can_play_epona",
         "MM_can_use_wallet_1",
         "MM_is_day",
         "MM Gorman Track Front"
@@ -13917,7 +13897,7 @@
       "Id": "MM Ikana Valley Scrub Rupee",
       "RequiredItems": [
         "MM_DEED_OCEAN",
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM Ikana Valley"
       ],
       "ConditionalItems": [],
@@ -13942,7 +13922,7 @@
       "Id": "MM Ikana Valley Scrub HP",
       "RequiredItems": [
         "MM_DEED_OCEAN",
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM_MASK_DEKU",
         "MM Ikana Valley"
       ],
@@ -14146,7 +14126,7 @@
           "MM_has_explosives"
         ],
         [
-          "MM_MASK_GORON"
+          "MM_has_mask_goron"
         ]
       ],
       "TimeNeeded": "None",
@@ -14342,7 +14322,7 @@
         ],
         [
           "MM_MASK_GREAT_FAIRY",
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ],
         [
           "MM_MASK_GREAT_FAIRY",
@@ -14507,7 +14487,7 @@
     {
       "Id": "MM Snowhead Temple Central Room Bottom",
       "RequiredItems": [
-        "MM_MASK_GORON",
+        "MM_has_mask_goron",
         "MM Snowhead Temple Center Level 0"
       ],
       "ConditionalItems": [],
@@ -14598,7 +14578,7 @@
           "MM_can_break_boulders"
         ],
         [
-          "MM_MASK_ZORA",
+          "MM_has_mask_zora",
           "MM_can_break_boulders"
         ],
         [
@@ -14723,15 +14703,15 @@
         ],
         [
           "MM_can_use_fire_arrows",
-          "MM_MASK_GORON"
+          "MM_has_mask_goron"
         ],
         [
           "MM_trick_sht_fireless",
-          "MM_MASK_GORON"
+          "MM_has_mask_goron"
         ],
         [
           "MM_can_hookshot_short",
-          "MM_MASK_GORON"
+          "MM_has_mask_goron"
         ],
         [
           "MM_MASK_GREAT_FAIRY",
@@ -14831,7 +14811,7 @@
     {
       "Id": "MM Pirate Fortress Entrance Chest 1",
       "RequiredItems": [
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM Pirate Fortress Entrance"
       ],
       "ConditionalItems": [],
@@ -14843,7 +14823,7 @@
     {
       "Id": "MM Pirate Fortress Entrance Chest 2",
       "RequiredItems": [
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM Pirate Fortress Entrance"
       ],
       "ConditionalItems": [],
@@ -14855,7 +14835,7 @@
     {
       "Id": "MM Pirate Fortress Entrance Chest 3",
       "RequiredItems": [
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM Pirate Fortress Entrance"
       ],
       "ConditionalItems": [],
@@ -14867,7 +14847,7 @@
     {
       "Id": "MM Pirate Fortress Sewers Chest 1",
       "RequiredItems": [
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM Pirate Fortress Sewers"
       ],
       "ConditionalItems": [],
@@ -14879,7 +14859,7 @@
     {
       "Id": "MM Pirate Fortress Sewers Chest 2",
       "RequiredItems": [
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM Pirate Fortress Sewers"
       ],
       "ConditionalItems": [],
@@ -14891,7 +14871,7 @@
     {
       "Id": "MM Pirate Fortress Sewers Chest 3",
       "RequiredItems": [
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM Pirate Fortress Sewers"
       ],
       "ConditionalItems": [],
@@ -14903,7 +14883,7 @@
     {
       "Id": "MM Pirate Fortress Sewers HP",
       "RequiredItems": [
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM Pirate Fortress Sewers"
       ],
       "ConditionalItems": [],
@@ -14927,7 +14907,7 @@
     {
       "Id": "MM Pirate Fortress Interior Aquarium",
       "RequiredItems": [
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM_can_hookshot_short",
         "MM Pirate Fortress Lone Guard Aquarium"
       ],
@@ -15122,7 +15102,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ],
         [
           "MM_MASK_GREAT_FAIRY",
@@ -15167,7 +15147,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ],
         [
           "MM_has_arrows",
@@ -15323,8 +15303,7 @@
     {
       "Id": "MM Beneath the Well Cow",
       "RequiredItems": [
-        "MM_OCARINA",
-        "MM_SONG_EPONA",
+        "MM_can_play_epona",
         "MM Beneath the Well Cow Hall"
       ],
       "ConditionalItems": [
@@ -15452,7 +15431,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ],
         [
           "MM_MASK_DEKU"
@@ -15506,7 +15485,7 @@
     {
       "Id": "MM Stone Tower Temple Water Sun Switch Chest",
       "RequiredItems": [
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM_EVENT_STONE_TOWER_WATER_CHEST_SUN",
         "MM Stone Tower Temple Water Room"
       ],
@@ -15523,7 +15502,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_MASK_GORON",
+          "MM_has_mask_goron",
           "MM_has_mirror_shield"
         ],
         [
@@ -15542,7 +15521,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_MASK_GORON",
+          "MM_has_mask_goron",
           "MM_has_mirror_shield"
         ],
         [
@@ -15569,7 +15548,7 @@
     {
       "Id": "MM Stone Tower Temple Wind Room Jail Chest",
       "RequiredItems": [
-        "MM_MASK_GORON",
+        "MM_has_mask_goron",
         "MM Stone Tower Temple Wind Room"
       ],
       "ConditionalItems": [
@@ -15836,7 +15815,7 @@
     {
       "Id": "MM Moon Trial Zora HP",
       "RequiredItems": [
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM Moon Trial Zora"
       ],
       "ConditionalItems": [],
@@ -16147,6 +16126,16 @@
     },
     {
       "Id": "TRICK_OOT_DEAD_HAND_STICKS",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": true,
+      "TrickCategory": "Ocarina of Time"
+    },
+    {
+      "Id": "TRICK_OOT_BFA_MUDWALLS",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -17011,12 +17000,20 @@
           "option{DCMQ, true}"
         ],
         [
+          "OOT_has_blue_fire_arrows_mudwall",
+          "option{DCMQ, true}"
+        ],
+        [
           "OOT_has_bombflowers",
           "option{DCMQ, false}"
         ],
         [
           "option{DCMQ, false}",
           "OOT_can_hammer"
+        ],
+        [
+          "option{DCMQ, false}",
+          "OOT_has_blue_fire_arrows_mudwall"
         ]
       ],
       "TimeNeeded": "None",
@@ -17114,6 +17111,10 @@
         [
           "option{DCMQ, false}",
           "OOT_can_hammer"
+        ],
+        [
+          "option{DCMQ, false}",
+          "OOT_has_blue_fire_arrows_mudwall"
         ]
       ],
       "TimeNeeded": "None",
@@ -17951,8 +17952,7 @@
     {
       "Id": "OOT Fire Temple Before Miniboss => OOT Fire Temple Pillar Ledge",
       "RequiredItems": [
-        "OOT_OCARINA",
-        "OOT_SONG_TIME",
+        "OOT_can_play_time",
         "option{FireMQ, false}"
       ],
       "ConditionalItems": [],
@@ -18120,8 +18120,7 @@
     {
       "Id": "OOT Forest Temple Main => OOT Forest Temple Garden West",
       "RequiredItems": [
-        "OOT_OCARINA",
-        "OOT_SONG_TIME",
+        "OOT_can_play_time",
         "option{ForestMQ, false}"
       ],
       "ConditionalItems": [],
@@ -18951,8 +18950,7 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_OCARINA",
-          "OOT_SONG_TIME",
+          "OOT_can_play_time",
           "option{GanonMQ, true}"
         ],
         [
@@ -20234,8 +20232,7 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_OCARINA",
-          "OOT_SONG_TIME"
+          "OOT_can_play_time"
         ],
         [
           "OOT_is_child"
@@ -20260,8 +20257,7 @@
           "OOT_has_hover_boots"
         ],
         [
-          "OOT_OCARINA",
-          "OOT_SONG_TIME"
+          "OOT_can_play_time"
         ]
       ],
       "TimeNeeded": "None",
@@ -20280,8 +20276,7 @@
           "OOT_has_hover_boots"
         ],
         [
-          "OOT_OCARINA",
-          "OOT_SONG_TIME"
+          "OOT_can_play_time"
         ]
       ],
       "TimeNeeded": "None",
@@ -20553,7 +20548,7 @@
     {
       "Id": "OOT GLOBAL => OOT SONGS",
       "RequiredItems": [
-        "OOT_OCARINA"
+        "OOT_has_ocarina"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -21664,16 +21659,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Market Destroyed => OOT Hyrule Field",
-      "RequiredItems": [],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT Market Destroyed => OOT Market Pot House",
+      "Id": "OOT Market Destroyed => OOT Market Entryway",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -21894,7 +21880,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Hyrule Castle => OOT Fairy Fountain Din",
+      "Id": "OOT Hyrule Castle => OOT Near Fairy Fountain Din",
       "RequiredItems": [
         "OOT_has_explosives"
       ],
@@ -21973,7 +21959,40 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Fairy Fountain Din => OOT Hyrule Castle",
+      "Id": "OOT Near Fairy Fountain Din => OOT Hyrule Castle",
+      "RequiredItems": [
+        "OOT_is_child"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Near Fairy Fountain Din => OOT Fairy Fountain Din",
+      "RequiredItems": [
+        "OOT_is_child"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Near Fairy Fountain Din => OOT Near Fairy Fountain Defense",
+      "RequiredItems": [
+        "OOT_is_adult"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fairy Fountain Din => OOT Near Fairy Fountain Din",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -22023,7 +22042,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Ganon Castle Exterior => OOT Fairy Fountain Defense",
+      "Id": "OOT Ganon Castle Exterior => OOT Near Fairy Fountain Defense",
       "RequiredItems": [
         "OOT_can_lift_gold"
       ],
@@ -22066,7 +22085,40 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Fairy Fountain Defense => OOT Ganon Castle Exterior",
+      "Id": "OOT Near Fairy Fountain Defense => OOT Ganon Castle Exterior",
+      "RequiredItems": [
+        "OOT_is_adult"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Near Fairy Fountain Defense => OOT Fairy Fountain Defense",
+      "RequiredItems": [
+        "OOT_is_adult"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Near Fairy Fountain Defense => OOT Near Fairy Fountain Din",
+      "RequiredItems": [
+        "OOT_is_child"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fairy Fountain Defense => OOT Near Fairy Fountain Defense",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -22801,7 +22853,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Impa House Back => OOT Kakariko",
+      "Id": "OOT Impa House Back => OOT Kakariko Rooftop",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -22822,8 +22874,7 @@
       "Id": "OOT_EVENT_WELL_DRAIN",
       "RequiredItems": [
         "OOT_is_child",
-        "OOT_OCARINA",
-        "OOT_SONG_STORMS",
+        "OOT_can_play_storms",
         "OOT Windmill"
       ],
       "ConditionalItems": [],
@@ -23061,8 +23112,7 @@
       "Id": "OOT Dampe Grave => OOT Windmill",
       "RequiredItems": [
         "OOT_is_adult",
-        "OOT_OCARINA",
-        "OOT_SONG_TIME"
+        "OOT_can_play_time"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -23074,8 +23124,7 @@
       "Id": "OOT_EVENT_WINDMILL_TOP",
       "RequiredItems": [
         "OOT_is_adult",
-        "OOT_OCARINA",
-        "OOT_SONG_TIME",
+        "OOT_can_play_time",
         "OOT Dampe Grave"
       ],
       "ConditionalItems": [],
@@ -23407,8 +23456,7 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_OCARINA",
-          "OOT_SONG_TIME"
+          "OOT_can_play_time"
         ],
         [
           "OOT_can_hookshot",
@@ -23843,7 +23891,7 @@
       "Id": "OOT_EVENT_SCARECROW_CHILD",
       "RequiredItems": [
         "OOT_is_child",
-        "OOT_OCARINA",
+        "OOT_has_ocarina",
         "OOT Lake Hylia"
       ],
       "ConditionalItems": [],
@@ -24067,8 +24115,7 @@
           "setting{doorOfTime, open}"
         ],
         [
-          "OOT_OCARINA",
-          "OOT_SONG_TIME"
+          "OOT_can_play_time"
         ]
       ],
       "TimeNeeded": "None",
@@ -26195,8 +26242,7 @@
     {
       "Id": "OOT Water Temple Longshot Room => OOT Water Temple River",
       "RequiredItems": [
-        "OOT_OCARINA",
-        "OOT_SONG_TIME",
+        "OOT_can_play_time",
         "option{WaterMQ, false}"
       ],
       "ConditionalItems": [],
@@ -26573,6 +26619,10 @@
         [
           "OOT_has_fire",
           "OOT_has_explosives_or_hammer"
+        ],
+        [
+          "OOT_has_fire",
+          "OOT_has_blue_fire_arrows_mudwall"
         ]
       ],
       "TimeNeeded": "None",
@@ -26896,8 +26946,7 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_OCARINA",
-          "OOT_SONG_TIME"
+          "OOT_can_play_time"
         ],
         [
           "OOT_can_longshot"
@@ -27171,8 +27220,7 @@
         ],
         [
           "OOT_can_hookshot",
-          "OOT_OCARINA",
-          "OOT_SONG_TIME"
+          "OOT_can_play_time"
         ]
       ],
       "TimeNeeded": "None",
@@ -27235,8 +27283,7 @@
     {
       "Id": "OOT Forest Temple East Garden Ledge => OOT Forest Temple Falling Ceiling",
       "RequiredItems": [
-        "OOT_OCARINA",
-        "OOT_SONG_TIME",
+        "OOT_can_play_time",
         "option{ForestMQ, true}"
       ],
       "ConditionalItems": [],
@@ -27395,8 +27442,7 @@
       "Id": "OOT Gerudo Training Grounds Stalfos Room => OOT Gerudo Training Grounds Spinning Statue Room",
       "RequiredItems": [
         "OOT_has_blue_fire",
-        "OOT_OCARINA",
-        "OOT_SONG_TIME",
+        "OOT_can_play_time",
         "OOT_has_lens",
         "option{GTGMQ, true}"
       ],
@@ -27757,8 +27803,7 @@
       "Id": "OOT Shadow Temple Boat => OOT Shadow Temple Final Side Rooms",
       "RequiredItems": [
         "OOT_can_use_bow",
-        "OOT_OCARINA",
-        "OOT_SONG_TIME",
+        "OOT_can_play_time",
         "OOT_can_longshot",
         "option{ShadowMQ, true}"
       ],
@@ -27849,8 +27894,7 @@
           "OOT_is_adult"
         ],
         [
-          "OOT_OCARINA",
-          "OOT_SONG_TIME"
+          "OOT_can_play_time"
         ]
       ],
       "TimeNeeded": "None",
@@ -27923,8 +27967,7 @@
         [
           "OOT_SMALL_KEY_SPIRIT, 4",
           "OOT_has_lens",
-          "OOT_OCARINA",
-          "OOT_SONG_TIME"
+          "OOT_can_play_time"
         ]
       ],
       "TimeNeeded": "None",
@@ -27935,8 +27978,7 @@
     {
       "Id": "OOT Spirit Temple Adult Upper => OOT Spirit Temple Adult Hand",
       "RequiredItems": [
-        "OOT_OCARINA",
-        "OOT_SONG_TIME",
+        "OOT_can_play_time",
         "option{SpiritMQ, true}"
       ],
       "ConditionalItems": [],
@@ -28169,7 +28211,7 @@
           "MM Secret Shrine Entrance"
         ],
         [
-          "MM_MASK_GORON",
+          "MM_has_mask_goron",
           "MM Stone Tower Top"
         ],
         [
@@ -28224,7 +28266,7 @@
         ],
         [
           "MM_can_use_light_arrows",
-          "MM Snowhead Near Great Fairy Fountain",
+          "MM Snowhead Near Fairy Fountain",
           "MM_EVENT_OPEN_SNOWHEAD_TEMPLE"
         ],
         [
@@ -28253,7 +28295,7 @@
         ],
         [
           "MM_can_use_light_arrows",
-          "MM Snowhead Near Great Fairy Fountain",
+          "MM Snowhead Near Fairy Fountain",
           "MM_EVENT_BOSS_SNOWHEAD"
         ],
         [
@@ -28293,12 +28335,12 @@
           "MM_first_day"
         ],
         [
-          "MM_MASK_GORON",
+          "MM_has_mask_goron",
           "MM Stone Tower Front of Temple"
         ],
         [
           "MM Stone Tower Front of Temple",
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ],
         [
           "MM_is_night",
@@ -28840,38 +28882,63 @@
           "MM Snowhead Entrance"
         ],
         [
-          "MM Twin Islands"
+          "MM Zora Cape Grotto"
         ],
         [
           "MM Swamp Spider House Main"
         ],
         [
-          "MM Near Goron Graveyard"
+          "MM Laundry Pool"
         ],
         [
-          "MM Pinnacle Rock"
+          "MM Woodfall"
         ],
         [
-          "MM Mountain Village Path Upper"
+          "MM Lone Peak Shrine"
         ],
         [
-          "MM Woods of Mystery Grotto"
+          "MM Deku Palace Grotto"
         ],
         [
-          "MM Southern Swamp Grotto"
+          "MM Stone Tower Top"
+        ],
+        [
+          "MM Mountain Village"
+        ],
+        [
+          "MM Twin Islands Ramp Grotto"
         ],
         [
           "MM Snowhead Temple After Boss"
         ],
         [
-          "MM Stone Tower Top Inverted Upper",
-          "MM_can_use_beans"
+          "MM Goron Shrine"
+        ],
+        [
+          "MM_can_use_beans",
+          "MM Stone Tower Top Inverted Upper"
         ],
         [
           "MM Snowhead Temple Main"
         ],
         [
-          "MM Snowhead Near Great Fairy Fountain",
+          "MM_MASK_DEKU",
+          "MM Deku Palace Upper"
+        ],
+        [
+          "MM Ancient Castle of Ikana Pre-Boss"
+        ],
+        [
+          "MM Path to Snowhead Back",
+          "MM_can_break_boulders"
+        ],
+        [
+          "MM_can_break_boulders",
+          "MM_EVENT_OPEN_SNOWHEAD_TEMPLE",
+          "MM Snowhead Near Fairy Fountain"
+        ],
+        [
+          "MM Snowhead Near Fairy Fountain",
           "MM_EVENT_BOSS_SNOWHEAD"
         ],
         [
@@ -28879,105 +28946,97 @@
           "MM Mountain Village Path Lower"
         ],
         [
-          "MM Ocean Spider House Front",
-          "MM_can_warp"
-        ],
-        [
-          "MM_MASK_DEKU",
-          "MM Deku Palace Upper"
-        ],
-        [
-          "MM_can_oot_warp",
-          "MM Great Bay Temple Compass Room"
-        ],
-        [
-          "MM Great Bay Temple Compass Room",
-          "MM_can_hookshot"
-        ],
-        [
-          "MM_can_oot_warp",
-          "MM Great Bay Temple Map Room"
-        ],
-        [
-          "MM_can_hookshot",
-          "MM Great Bay Temple Map Room"
-        ],
-        [
-          "MM_can_oot_warp",
-          "MM Great Bay Temple Red Pipe 2"
-        ],
-        [
-          "MM_can_hookshot",
-          "MM Great Bay Temple Red Pipe 2"
-        ],
-        [
-          "MM_MASK_DEKU",
-          "MM_can_oot_warp",
-          "MM Great Bay Temple Ice Arrow Room"
-        ],
-        [
-          "MM_MASK_DEKU",
-          "MM_can_hookshot",
-          "MM Great Bay Temple Ice Arrow Room"
-        ],
-        [
-          "MM_can_oot_warp",
-          "MM Great Bay Temple Ice Arrow Room",
-          "MM_MASK_ZORA"
-        ],
-        [
-          "MM_can_hookshot",
-          "MM Great Bay Temple Ice Arrow Room",
-          "MM_MASK_ZORA"
+          "MM_can_play_time",
+          "MM Clock Tower Roof"
         ],
         [
           "MM Woodfall Temple Entrance"
         ],
         [
-          "MM_can_oot_warp",
-          "MM Great Bay Temple Ice Arrow Room",
-          "MM_has_explosives"
+          "MM_has_mask_goron",
+          "MM Ocean Spider House Front"
+        ],
+        [
+          "MM Ocean Spider House Front",
+          "MM_can_warp"
         ],
         [
           "MM_can_hookshot",
-          "MM Great Bay Temple Ice Arrow Room",
-          "MM_has_explosives"
+          "MM Great Bay Temple Compass Room"
         ],
         [
-          "MM_can_oot_warp",
-          "MM Great Bay Temple Ice Arrow Room",
-          "MM_has_weapon"
+          "MM Great Bay Temple Compass Room",
+          "MM_can_oot_warp"
         ],
         [
           "MM_can_hookshot",
-          "MM Great Bay Temple Ice Arrow Room",
-          "MM_has_weapon"
+          "MM Great Bay Temple Map Room"
+        ],
+        [
+          "MM_can_oot_warp",
+          "MM Great Bay Temple Map Room"
+        ],
+        [
+          "MM_can_hookshot",
+          "MM Great Bay Temple Red Pipe 2"
+        ],
+        [
+          "MM_can_oot_warp",
+          "MM Great Bay Temple Red Pipe 2"
         ],
         [
           "MM Stone Tower Temple Entrance"
         ],
         [
-          "MM Ancient Castle of Ikana Pre-Boss"
+          "MM_MASK_DEKU",
+          "MM_can_hookshot",
+          "MM Great Bay Temple Ice Arrow Room"
         ],
         [
-          "MM_SONG_TIME",
-          "MM Clock Tower Roof",
-          "MM_OCARINA"
+          "MM_MASK_DEKU",
+          "MM_can_oot_warp",
+          "MM Great Bay Temple Ice Arrow Room"
         ],
         [
-          "MM Ocean Spider House Front",
-          "MM_MASK_GORON"
+          "MM_can_hookshot",
+          "MM Great Bay Temple Ice Arrow Room",
+          "MM_has_weapon"
         ],
         [
-          "MM_MASK_ZORA",
-          "MM Stone Tower Front of Temple"
+          "MM_can_oot_warp",
+          "MM Great Bay Temple Ice Arrow Room",
+          "MM_has_weapon"
         ],
         [
-          "MM_MASK_GORON",
-          "MM Stone Tower Front of Temple"
+          "MM_can_hookshot",
+          "MM Great Bay Temple Ice Arrow Room",
+          "MM_has_explosives"
+        ],
+        [
+          "MM_can_oot_warp",
+          "MM Great Bay Temple Ice Arrow Room",
+          "MM_has_explosives"
         ],
         [
           "MM Snowhead Temple Bridge Front"
+        ],
+        [
+          "MM_can_hookshot",
+          "MM Great Bay Temple Ice Arrow Room",
+          "MM_has_mask_zora"
+        ],
+        [
+          "MM_can_oot_warp",
+          "MM Great Bay Temple Ice Arrow Room",
+          "MM_has_mask_zora"
+        ],
+        [
+          "MM_has_mask_goron",
+          "MM Stone Tower Front of Temple"
+        ],
+        [
+          "MM_has_mask_zora",
+          "MM Stone Tower Front of Temple"
         ],
         [
           "MM Stone Tower Front of Temple",
@@ -28985,22 +29044,34 @@
           "MM_can_fight"
         ],
         [
-          "MM Snowhead Near Great Fairy Fountain",
-          "MM_EVENT_OPEN_SNOWHEAD_TEMPLE",
-          "MM_can_break_boulders"
+          "MM Woods of Mystery Grotto"
         ],
         [
-          "MM_can_break_boulders",
-          "MM Path to Snowhead Back"
+          "MM Path to Snowhead Grotto"
+        ],
+        [
+          "MM Pinnacle Rock"
         ],
         [
           "MM Ikana Graveyard Grotto"
         ],
         [
-          "MM Near Ramp Grotto"
+          "MM Southern Swamp Grotto"
         ],
         [
           "MM Swamp Front"
+        ],
+        [
+          "MM Mountain Village Path Upper"
+        ],
+        [
+          "MM Goron Village"
+        ],
+        [
+          "MM Twin Islands"
+        ],
+        [
+          "MM Ikana Canyon"
         ],
         [
           "MM Road to Southern Swamp Grotto"
@@ -29009,34 +29080,34 @@
           "MM Road to Southern Swamp"
         ],
         [
-          "MM Mountain Village Grotto"
-        ],
-        [
           "MM Canyon Gossip Grotto"
-        ],
-        [
-          "MM Ocean Gossip Grotto"
-        ],
-        [
-          "MM Ikana Canyon"
-        ],
-        [
-          "MM Termina Field Cow Grotto"
-        ],
-        [
-          "MM Lone Peak Shrine"
-        ],
-        [
-          "MM Stone Tower Temple Inverted Entrance"
         ],
         [
           "MM Great Bay Grotto"
         ],
         [
+          "MM Ocean Gossip Grotto"
+        ],
+        [
+          "MM Stone Tower Temple Inverted Entrance"
+        ],
+        [
+          "MM Termina Field Cow Grotto"
+        ],
+        [
+          "MM Near Goron Graveyard"
+        ],
+        [
           "MM Pillar Grotto"
         ],
         [
+          "MM Romani Ranch"
+        ],
+        [
           "MM Road to Ikana Grotto"
+        ],
+        [
+          "MM Snowhead Temple Boss"
         ],
         [
           "MM Grass Grotto"
@@ -29045,43 +29116,22 @@
           "MM Termina Field"
         ],
         [
-          "MM Astral Observatory"
-        ],
-        [
-          "MM Romani Ranch"
-        ],
-        [
-          "MM Woodfall"
-        ],
-        [
-          "MM Snowhead Temple Boss"
-        ],
-        [
-          "MM Goron Shrine"
-        ],
-        [
-          "MM Path to Snowhead Grotto"
-        ],
-        [
           "MM Secret Shrine Entrance"
         ],
         [
-          "MM Twin Islands Ramp Grotto"
+          "MM Astral Observatory"
         ],
         [
-          "MM Clock Town Laundry Pool"
+          "MM Near Ramp Grotto"
         ],
         [
           "MM Goron Race"
         ],
         [
-          "MM Mountain Village"
+          "MM Beneath The Graveyard Night 2"
         ],
         [
           "MM Zora Cape"
-        ],
-        [
-          "MM Beneath The Graveyard Night 2"
         ],
         [
           "MM Ikana Castle Exterior"
@@ -29099,19 +29149,10 @@
           "MM Ikana Valley Grotto"
         ],
         [
-          "MM Zora Cape Grotto"
-        ],
-        [
-          "MM Stone Tower Top"
-        ],
-        [
           "MM Milk Road Front"
         ],
         [
-          "MM Deku Palace Grotto"
-        ],
-        [
-          "MM Goron Village"
+          "MM Mountain Village Grotto"
         ]
       ],
       "TimeNeeded": "None",
@@ -29123,6 +29164,9 @@
       "Id": "MM_EVENT_ARROWS",
       "RequiredItems": [],
       "ConditionalItems": [
+        [
+          "MM Ikana Castle Exterior"
+        ],
         [
           "MM Great Bay Grotto"
         ],
@@ -29136,19 +29180,19 @@
           "MM Road to Southern Swamp"
         ],
         [
-          "MM Beneath The Graveyard Night 2"
-        ],
-        [
           "MM Secret Shrine Entrance"
         ],
         [
           "MM Pirate Fortress Hookshot Room Upper"
         ],
         [
-          "MM Canyon Gossip Grotto"
+          "MM Beneath The Graveyard Night 2"
         ],
         [
           "MM Pirate Fortress Lone Guard Aquarium"
+        ],
+        [
+          "MM Canyon Gossip Grotto"
         ],
         [
           "MM Ocean Gossip Grotto"
@@ -29166,10 +29210,10 @@
           "MM Grass Grotto"
         ],
         [
-          "MM Termina Field"
+          "MM Stone Tower Temple Inverted East Bridge"
         ],
         [
-          "MM Stone Tower Temple Inverted East Bridge"
+          "MM Termina Field"
         ],
         [
           "MM Road to Ikana Grotto"
@@ -29194,11 +29238,11 @@
           "MM Snowhead Temple After Boss"
         ],
         [
-          "MM_can_hookshot",
-          "MM Great Bay Temple Entrance"
+          "MM Woodfall Temple Main"
         ],
         [
-          "MM Woodfall Temple Main"
+          "MM_can_hookshot",
+          "MM Great Bay Temple Entrance"
         ],
         [
           "MM Great Bay Temple Entrance",
@@ -29214,13 +29258,10 @@
           "MM Snowhead Entrance"
         ],
         [
-          "MM Ancient Castle of Ikana Pre-Boss"
-        ],
-        [
           "MM Snowhead Temple Main"
         ],
         [
-          "MM Path to Snowhead Grotto"
+          "MM Ancient Castle of Ikana Pre-Boss"
         ],
         [
           "MM Pirate Fortress Sewers End"
@@ -29231,15 +29272,15 @@
         ],
         [
           "MM Ocean Spider House Front",
-          "MM_MASK_GORON"
+          "MM_has_mask_goron"
         ],
         [
-          "MM_MASK_GORON",
+          "MM_has_mask_goron",
           "MM Stone Tower Front of Temple"
         ],
         [
           "MM Stone Tower Front of Temple",
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ],
         [
           "MM Stone Tower Front of Temple",
@@ -29260,6 +29301,9 @@
           "MM Stone Tower Temple Inverted Boss Key Room"
         ],
         [
+          "MM Path to Snowhead Grotto"
+        ],
+        [
           "MM Ikana Graveyard Grotto"
         ],
         [
@@ -29272,10 +29316,10 @@
           "MM Twin Islands Ramp Grotto"
         ],
         [
-          "MM Great Bay Cow Grotto"
+          "MM Stone Tower Temple Entrance"
         ],
         [
-          "MM Stone Tower Temple Entrance"
+          "MM Great Bay Cow Grotto"
         ],
         [
           "MM Mountain Village Grotto"
@@ -29294,9 +29338,6 @@
         ],
         [
           "MM Swamp Front"
-        ],
-        [
-          "MM Ikana Castle Exterior"
         ],
         [
           "MM Snowhead Temple Boss"
@@ -29375,7 +29416,7 @@
           "MM_has_explosives"
         ],
         [
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ],
         [
           "MM_trick_keg_explosives"
@@ -29399,7 +29440,7 @@
         ],
         [
           "MM_has_bottle",
-          "MM_MASK_GORON",
+          "MM_has_mask_goron",
           "MM Goron Graveyard"
         ],
         [
@@ -29726,12 +29767,12 @@
           "MM Stone Tower Temple Inverted Pre-Boss"
         ],
         [
-          "MM_MASK_GORON",
+          "MM_has_mask_goron",
           "MM Stone Tower Front of Temple"
         ],
         [
           "MM Stone Tower Front of Temple",
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ],
         [
           "MM Stone Tower Front of Temple",
@@ -29989,8 +30030,7 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_OCARINA",
-          "MM_SONG_TIME"
+          "MM_can_play_time"
         ],
         [
           "MM_can_hookshot",
@@ -30038,7 +30078,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Great Bay Temple Entrance => MM Great Bay Temple Boss",
+      "Id": "MM Great Bay Temple Entrance => MM Great Bay Temple Boss Access",
       "RequiredItems": [
         "setting{bossWarpPads, remains}",
         "MM_REMAINS_GYORG"
@@ -30061,7 +30101,7 @@
     {
       "Id": "MM Great Bay Temple Water Wheel => MM Great Bay Temple Central Room",
       "RequiredItems": [
-        "MM_MASK_ZORA"
+        "MM_has_mask_zora"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -30368,7 +30408,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss",
+      "Id": "MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss Access",
       "RequiredItems": [],
       "ConditionalItems": [
         [
@@ -30386,13 +30426,22 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Great Bay Temple Boss Access => MM Great Bay Temple Boss",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Great Bay Temple Boss => MM Great Bay Temple After Boss",
       "RequiredItems": [
         "MM_has_magic"
       ],
       "ConditionalItems": [
         [
-          "MM_MASK_ZORA",
+          "MM_has_mask_zora",
           "MM_has_arrows"
         ],
         [
@@ -30770,7 +30819,7 @@
     {
       "Id": "MM_EVENT_MOON_TRIAL_ZORA",
       "RequiredItems": [
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM Moon Trial Zora"
       ],
       "ConditionalItems": [],
@@ -30782,7 +30831,7 @@
     {
       "Id": "MM Moon Trial Zora Gossip Outer Left",
       "RequiredItems": [
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM Moon Trial Zora"
       ],
       "ConditionalItems": [],
@@ -30794,7 +30843,7 @@
     {
       "Id": "MM Moon Trial Zora Gossip Middle Left",
       "RequiredItems": [
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM Moon Trial Zora"
       ],
       "ConditionalItems": [],
@@ -30806,7 +30855,7 @@
     {
       "Id": "MM Moon Trial Zora Gossip Inner Right",
       "RequiredItems": [
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM Moon Trial Zora"
       ],
       "ConditionalItems": [],
@@ -30818,7 +30867,7 @@
     {
       "Id": "MM Moon Trial Zora Gossip Middle Right",
       "RequiredItems": [
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM Moon Trial Zora"
       ],
       "ConditionalItems": [],
@@ -30830,7 +30879,7 @@
     {
       "Id": "MM Moon Trial Zora Gossip Outer Right",
       "RequiredItems": [
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM Moon Trial Zora"
       ],
       "ConditionalItems": [],
@@ -31054,7 +31103,7 @@
           "MM_has_arrows"
         ],
         [
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ],
         [
           "MM_MASK_FIERCE_DEITY",
@@ -31078,7 +31127,7 @@
           "MM_has_weapon"
         ],
         [
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ],
         [
           "MM_MASK_FIERCE_DEITY",
@@ -31095,12 +31144,11 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_OCARINA",
-          "MM_SONG_TIME",
+          "MM_can_play_time",
           "MM_has_explosives"
         ],
         [
-          "MM_MASK_GORON",
+          "MM_has_mask_goron",
           "MM_EVENT_MAJORA",
           "trick{TRICK_MM_MAJORA_LOGIC}",
           "MM_has_explosives"
@@ -31112,12 +31160,11 @@
           "MM_has_explosives"
         ],
         [
-          "MM_OCARINA",
-          "MM_SONG_TIME",
+          "MM_can_play_time",
           "MM_trick_keg_explosives"
         ],
         [
-          "MM_MASK_GORON",
+          "MM_has_mask_goron",
           "MM_EVENT_MAJORA",
           "trick{TRICK_MM_MAJORA_LOGIC}",
           "MM_trick_keg_explosives"
@@ -31564,7 +31611,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Clock Town South => MM Clock Town Laundry Pool",
+      "Id": "MM Clock Town South => MM Laundry Pool",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -32198,13 +32245,16 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_is_day"
-        ],
-        [
           "MM_ROOM_KEY"
         ],
         [
-          "MM_is_night3"
+          "time{Between_DAY1_AM_08_00, NIGHT1_PM_08_00}"
+        ],
+        [
+          "time{Between_DAY2_AM_08_00, NIGHT2_PM_08_00}"
+        ],
+        [
+          "time{After_DAY3_AM_08_00}"
         ]
       ],
       "TimeNeeded": "None",
@@ -32322,7 +32372,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Clock Town Laundry Pool => MM Clock Town South",
+      "Id": "MM Laundry Pool => MM Clock Town South",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -32331,7 +32381,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Clock Town Laundry Pool => MM Curiosity Shop Back Room",
+      "Id": "MM Laundry Pool => MM Kafei Hideout",
       "RequiredItems": [],
       "ConditionalItems": [
         [
@@ -32354,7 +32404,7 @@
       "Id": "MM_EVENT_FROG_1",
       "RequiredItems": [
         "MM_MASK_DON_GERO",
-        "MM Clock Town Laundry Pool"
+        "MM Laundry Pool"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -32405,7 +32455,7 @@
           "MM Goron Village"
         ],
         [
-          "MM_MASK_GORON",
+          "MM_has_mask_goron",
           "MM_can_use_wallet_1",
           "MM Bomb Shop"
         ]
@@ -32452,7 +32502,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Curiosity Shop Back Room => MM Clock Town Laundry Pool",
+      "Id": "MM Kafei Hideout => MM Laundry Pool",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -32464,7 +32514,7 @@
       "Id": "MM_EVENT_MEET_KAFEI",
       "RequiredItems": [
         "time{Before_DAY3_AM_06_00}",
-        "MM Curiosity Shop Back Room"
+        "MM Kafei Hideout"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -32573,7 +32623,7 @@
     {
       "Id": "MM_EVENT_HD_REWARD_1",
       "RequiredItems": [
-        "MM_BOMB_BAG",
+        "MM_has_bomb_bag",
         "time{Before_NIGHT1_PM_10_00}",
         "MM Honey & Darling Game"
       ],
@@ -32586,7 +32636,7 @@
     {
       "Id": "MM_EVENT_HD_REWARD_2",
       "RequiredItems": [
-        "MM_BOMB_BAG",
+        "MM_has_bomb_bag",
         "time{After_DAY2_AM_06_00}",
         "time{Before_NIGHT2_PM_10_00}",
         "MM Honey & Darling Game"
@@ -32605,7 +32655,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_BOW"
+          "MM_has_bow"
         ],
         [
           "MM_can_use_deku_bubble"
@@ -32652,16 +32702,11 @@
       "Id": "MM_EVENT_MEET_ANJU",
       "RequiredItems": [
         "MM_EVENT_SETUP_MEET",
+        "time{After_NIGHT1_AM_12_00}",
+        "time{Before_DAY2_AM_06_00}",
         "MM Stock Pot Inn"
       ],
-      "ConditionalItems": [
-        [
-          "MM_MASK_DEKU"
-        ],
-        [
-          "MM_ROOM_KEY"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -32979,8 +33024,7 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_OCARINA",
-          "MM_SONG_EPONA"
+          "MM_can_play_epona"
         ],
         [
           "MM_can_goron_bomb_jump",
@@ -33258,7 +33302,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_MASK_GORON",
+          "MM_has_mask_goron",
           "MM_has_goron_song"
         ],
         [
@@ -33266,7 +33310,7 @@
           "MM_SONG_AWAKENING"
         ],
         [
-          "MM_MASK_ZORA",
+          "MM_has_mask_zora",
           "MM_SONG_ZORA"
         ]
       ],
@@ -33380,7 +33424,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_MASK_GORON",
+          "MM_has_mask_goron",
           "MM_has_goron_song"
         ],
         [
@@ -33388,7 +33432,7 @@
           "MM_SONG_AWAKENING"
         ],
         [
-          "MM_MASK_ZORA",
+          "MM_has_mask_zora",
           "MM_SONG_ZORA"
         ]
       ],
@@ -33414,7 +33458,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_MASK_GORON",
+          "MM_has_mask_goron",
           "MM_has_goron_song"
         ],
         [
@@ -33422,7 +33466,7 @@
           "MM_SONG_AWAKENING"
         ],
         [
-          "MM_MASK_ZORA",
+          "MM_has_mask_zora",
           "MM_SONG_ZORA"
         ]
       ],
@@ -33448,7 +33492,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_MASK_GORON",
+          "MM_has_mask_goron",
           "MM_has_goron_song"
         ],
         [
@@ -33456,7 +33500,7 @@
           "MM_SONG_AWAKENING"
         ],
         [
-          "MM_MASK_ZORA",
+          "MM_has_mask_zora",
           "MM_SONG_ZORA"
         ]
       ],
@@ -33579,7 +33623,7 @@
           "MM_EVENT_BOAT_RIDE"
         ],
         [
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ],
         [
           "MM_EVENT_CLEAN_SWAMP"
@@ -33699,7 +33743,7 @@
           "MM_EVENT_CLEAN_SWAMP"
         ],
         [
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ],
         [
           "MM_has_arrows",
@@ -33711,11 +33755,11 @@
         ],
         [
           "MM_has_arrows",
-          "MM_MASK_GORON"
+          "MM_has_mask_goron"
         ],
         [
           "MM_can_hookshot",
-          "MM_MASK_GORON"
+          "MM_has_mask_goron"
         ]
       ],
       "TimeNeeded": "None",
@@ -33740,7 +33784,7 @@
           "MM_MASK_DEKU"
         ],
         [
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ],
         [
           "MM_EVENT_CLEAN_SWAMP"
@@ -33786,7 +33830,7 @@
           "MM_MASK_DEKU"
         ],
         [
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ],
         [
           "MM_EVENT_CLEAN_SWAMP"
@@ -33805,7 +33849,7 @@
           "MM_MASK_DEKU"
         ],
         [
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ],
         [
           "MM_EVENT_CLEAN_SWAMP"
@@ -33819,7 +33863,7 @@
     {
       "Id": "MM Near Swamp Grotto => MM Swamp Front",
       "RequiredItems": [
-        "MM_MASK_GORON"
+        "MM_has_mask_goron"
       ],
       "ConditionalItems": [
         [
@@ -33842,7 +33886,7 @@
           "MM_MASK_DEKU"
         ],
         [
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ],
         [
           "MM_EVENT_CLEAN_SWAMP"
@@ -33865,6 +33909,26 @@
     {
       "Id": "MM Southern Swamp Grotto => MM Near Swamp Grotto",
       "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Tourist Information => MM Swamp Front",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Tourist Information => MM Swamp Back",
+      "RequiredItems": [
+        "MM_EVENT_BOAT_RIDE"
+      ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -34243,7 +34307,7 @@
           "MM_MASK_DEKU"
         ],
         [
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ],
         [
           "MM_EVENT_CLEAN_SWAMP"
@@ -34354,7 +34418,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Woodfall Shrine => MM Woodfall Near Great Fairy Fountain",
+      "Id": "MM Woodfall Shrine => MM Woodfall Near Fairy Fountain",
       "RequiredItems": [
         "MM_MASK_DEKU"
       ],
@@ -34399,7 +34463,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Woodfall Near Great Fairy Fountain => MM Woodfall",
+      "Id": "MM Woodfall Near Fairy Fountain => MM Woodfall",
       "RequiredItems": [],
       "ConditionalItems": [
         [
@@ -34415,7 +34479,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Woodfall Near Great Fairy Fountain => MM Woodfall Shrine",
+      "Id": "MM Woodfall Near Fairy Fountain => MM Woodfall Shrine",
       "RequiredItems": [
         "MM_MASK_DEKU"
       ],
@@ -34426,7 +34490,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Woodfall Near Great Fairy Fountain => MM Woodfall Great Fairy Fountain",
+      "Id": "MM Woodfall Near Fairy Fountain => MM Woodfall Fairy Fountain",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -34435,7 +34499,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Woodfall Great Fairy Fountain => MM Woodfall Near Great Fairy Fountain",
+      "Id": "MM Woodfall Fairy Fountain => MM Woodfall Near Fairy Fountain",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -34599,11 +34663,11 @@
         ],
         [
           "MM_EVENT_BOSS_SNOWHEAD",
-          "MM_MASK_GORON"
+          "MM_has_mask_goron"
         ],
         [
           "MM_EVENT_BOSS_SNOWHEAD",
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ]
       ],
       "TimeNeeded": "None",
@@ -34633,7 +34697,7 @@
       "Id": "MM Mountain Village => MM Near Village Grotto",
       "RequiredItems": [
         "MM_EVENT_BOSS_SNOWHEAD",
-        "MM_MASK_GORON"
+        "MM_has_mask_goron"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -34666,7 +34730,7 @@
       "Id": "MM Mountain Village Gossip Tunnel",
       "RequiredItems": [
         "MM_EVENT_BOSS_SNOWHEAD",
-        "MM_MASK_GORON",
+        "MM_has_mask_goron",
         "MM Mountain Village"
       ],
       "ConditionalItems": [],
@@ -34696,7 +34760,7 @@
     {
       "Id": "MM Near Village Grotto => MM Near Goron Graveyard",
       "RequiredItems": [
-        "MM_MASK_GORON"
+        "MM_has_mask_goron"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -34783,7 +34847,7 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_MASK_GORON"
+          "MM_has_mask_goron"
         ],
         [
           "MM_scarecrow_hookshot"
@@ -34797,7 +34861,7 @@
     {
       "Id": "MM Twin Islands => MM Near Ramp Grotto",
       "RequiredItems": [
-        "MM_MASK_GORON"
+        "MM_has_mask_goron"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -34957,7 +35021,7 @@
           "MM_first_day"
         ],
         [
-          "MM_MASK_GORON"
+          "MM_has_mask_goron"
         ]
       ],
       "TimeNeeded": "None",
@@ -34968,7 +35032,7 @@
     {
       "Id": "MM_EVENT_POWDER_KEG_TRIAL",
       "RequiredItems": [
-        "MM_MASK_GORON",
+        "MM_has_mask_goron",
         "MM Goron Village"
       ],
       "ConditionalItems": [
@@ -35055,7 +35119,7 @@
       "Id": "MM_EVENT_GORON_GRAVEYARD_HOT_WATER",
       "RequiredItems": [
         "MM_has_bottle",
-        "MM_MASK_GORON",
+        "MM_has_mask_goron",
         "MM Goron Graveyard"
       ],
       "ConditionalItems": [],
@@ -35214,7 +35278,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Snowhead Entrance => MM Snowhead Near Great Fairy Fountain",
+      "Id": "MM Snowhead Entrance => MM Snowhead Near Fairy Fountain",
       "RequiredItems": [
         "MM_EVENT_OPEN_SNOWHEAD_TEMPLE"
       ],
@@ -35244,7 +35308,7 @@
         ],
         [
           "MM_EVENT_BOSS_SNOWHEAD",
-          "MM_MASK_GORON"
+          "MM_has_mask_goron"
         ]
       ],
       "TimeNeeded": "None",
@@ -35271,7 +35335,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Snowhead => MM Snowhead Near Great Fairy Fountain",
+      "Id": "MM Snowhead => MM Snowhead Near Fairy Fountain",
       "RequiredItems": [
         "MM_EVENT_BOSS_SNOWHEAD"
       ],
@@ -35282,7 +35346,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Snowhead Near Great Fairy Fountain => MM Snowhead Entrance",
+      "Id": "MM Snowhead Near Fairy Fountain => MM Snowhead Entrance",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -35291,7 +35355,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Snowhead Near Great Fairy Fountain => MM Snowhead",
+      "Id": "MM Snowhead Near Fairy Fountain => MM Snowhead",
       "RequiredItems": [
         "MM_EVENT_BOSS_SNOWHEAD"
       ],
@@ -35302,7 +35366,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Snowhead Near Great Fairy Fountain => MM Snowhead Great Fairy Fountain",
+      "Id": "MM Snowhead Near Fairy Fountain => MM Snowhead Fairy Fountain",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -35311,7 +35375,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Snowhead Great Fairy Fountain => MM Snowhead Near Great Fairy Fountain",
+      "Id": "MM Snowhead Fairy Fountain => MM Snowhead Near Fairy Fountain",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -35676,8 +35740,7 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_OCARINA",
-          "MM_SONG_EPONA"
+          "MM_can_play_epona"
         ],
         [
           "MM_can_goron_bomb_jump",
@@ -35719,7 +35782,7 @@
     {
       "Id": "MM Great Bay Coast => MM Great Bay Coast Fortress",
       "RequiredItems": [
-        "MM_MASK_ZORA"
+        "MM_has_mask_zora"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -35822,7 +35885,7 @@
     {
       "Id": "MM Great Bay Coast Fortress => MM Great Bay Coast",
       "RequiredItems": [
-        "MM_MASK_ZORA"
+        "MM_has_mask_zora"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -35900,7 +35963,7 @@
     {
       "Id": "MM Pinnacle Rock Entrance => MM Pinnacle Rock",
       "RequiredItems": [
-        "MM_MASK_ZORA"
+        "MM_has_mask_zora"
       ],
       "ConditionalItems": [
         [
@@ -35936,7 +35999,7 @@
     {
       "Id": "MM_EVENT_ZORA_EGGS_PINNACLE_ROCK",
       "RequiredItems": [
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM_has_bottle",
         "MM Pinnacle Rock"
       ],
@@ -35967,7 +36030,7 @@
     {
       "Id": "MM Zora Cape => MM Zora Cape Near Hall",
       "RequiredItems": [
-        "MM_MASK_ZORA"
+        "MM_has_mask_zora"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -35980,7 +36043,7 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ],
         [
           "trick{TRICK_MM_ZORA_HALL_HUMAN}"
@@ -36113,7 +36176,7 @@
     {
       "Id": "MM Zora Cape Near Hall => MM Zora Cape",
       "RequiredItems": [
-        "MM_MASK_ZORA"
+        "MM_has_mask_zora"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -36124,7 +36187,7 @@
     {
       "Id": "MM Zora Cape Near Hall => MM Zora Hall Entrance",
       "RequiredItems": [
-        "MM_MASK_ZORA"
+        "MM_has_mask_zora"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -36135,7 +36198,7 @@
     {
       "Id": "MM Zora Hall Entrance => MM Zora Cape Near Hall",
       "RequiredItems": [
-        "MM_MASK_ZORA"
+        "MM_has_mask_zora"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -36180,9 +36243,9 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Zora Hall => MM Drummer Room",
+      "Id": "MM Zora Hall => MM Tijo's Room",
       "RequiredItems": [
-        "MM_MASK_ZORA"
+        "MM_has_mask_zora"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -36193,7 +36256,7 @@
     {
       "Id": "MM Zora Hall => MM Japas' Room",
       "RequiredItems": [
-        "MM_MASK_ZORA"
+        "MM_has_mask_zora"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -36204,7 +36267,7 @@
     {
       "Id": "MM Zora Hall => MM Evan's Room",
       "RequiredItems": [
-        "MM_MASK_ZORA"
+        "MM_has_mask_zora"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -36215,7 +36278,7 @@
     {
       "Id": "MM Zora Hall => MM Lulu's Room",
       "RequiredItems": [
-        "MM_MASK_ZORA"
+        "MM_has_mask_zora"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -36233,7 +36296,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Drummer Room => MM Zora Hall",
+      "Id": "MM Tijo's Room => MM Zora Hall",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -36273,7 +36336,7 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ],
         [
           "trick{TRICK_MM_ZORA_HALL_HUMAN}"
@@ -36296,7 +36359,7 @@
     {
       "Id": "MM Zora Cape Peninsula => MM Great Bay Temple",
       "RequiredItems": [
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM_can_hookshot",
         "MM_OCARINA",
         "MM_SONG_ZORA"
@@ -36412,7 +36475,7 @@
     {
       "Id": "MM Road to Ikana Front => MM Road to Ikana Grotto",
       "RequiredItems": [
-        "MM_MASK_GORON"
+        "MM_has_mask_goron"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -36425,8 +36488,7 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_OCARINA",
-          "MM_SONG_EPONA"
+          "MM_can_play_epona"
         ],
         [
           "MM_can_goron_bomb_jump",
@@ -36452,8 +36514,7 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_OCARINA",
-          "MM_SONG_EPONA"
+          "MM_can_play_epona"
         ],
         [
           "MM_can_goron_bomb_jump",
@@ -36709,7 +36770,7 @@
       "Id": "MM Ikana Valley Gossip Scrub",
       "RequiredItems": [
         "MM_DEED_OCEAN",
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM_MASK_DEKU",
         "MM Ikana Valley"
       ],
@@ -36889,8 +36950,7 @@
     {
       "Id": "MM_EVENT_IKANA_CURSE_LIFTED",
       "RequiredItems": [
-        "MM_OCARINA",
-        "MM_SONG_STORMS",
+        "MM_can_play_storms",
         "MM Ikana Spring Water Cave"
       ],
       "ConditionalItems": [],
@@ -37137,7 +37197,7 @@
     {
       "Id": "MM Pirate Fortress => MM Great Bay Coast Fortress",
       "RequiredItems": [
-        "MM_MASK_ZORA"
+        "MM_has_mask_zora"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -37168,8 +37228,8 @@
     {
       "Id": "MM Pirate Fortress Entrance => MM Pirate Fortress Sewers",
       "RequiredItems": [
-        "MM_MASK_ZORA",
-        "MM_MASK_GORON"
+        "MM_has_mask_zora",
+        "MM_has_mask_goron"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -37257,7 +37317,7 @@
     {
       "Id": "MM Pirate Fortress Sewers => MM Pirate Fortress Sewers End",
       "RequiredItems": [
-        "MM_MASK_ZORA"
+        "MM_has_mask_zora"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -37268,7 +37328,7 @@
     {
       "Id": "MM Pirate Fortress Sewers End => MM Pirate Fortress Entrance",
       "RequiredItems": [
-        "MM_MASK_ZORA"
+        "MM_has_mask_zora"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -37388,7 +37448,7 @@
       "Id": "MM_EVENT_ZORA_EGGS_HOOKSHOT_ROOM",
       "RequiredItems": [
         "MM_can_hookshot_short",
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM_has_bottle",
         "MM_EVENT_FORTRESS_BEEHIVE",
         "MM Pirate Fortress Hookshot Room Lower"
@@ -37490,7 +37550,7 @@
       "Id": "MM_EVENT_ZORA_EGGS_BARREL_MAZE",
       "RequiredItems": [
         "MM_can_hookshot_short",
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM_has_bottle",
         "MM Pirate Fortress Barrel Maze Aquarium"
       ],
@@ -37593,7 +37653,7 @@
       "Id": "MM_EVENT_ZORA_EGGS_LONE_GUARD",
       "RequiredItems": [
         "MM_can_hookshot_short",
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM_has_bottle",
         "MM Pirate Fortress Lone Guard Aquarium"
       ],
@@ -37687,7 +37747,7 @@
       "Id": "MM_EVENT_ZORA_EGGS_TREASURE_ROOM",
       "RequiredItems": [
         "MM_can_hookshot_short",
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM_has_bottle",
         "MM Pirate Fortress Treasure Room Aquarium"
       ],
@@ -37860,10 +37920,10 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_MASK_GORON"
+          "MM_has_mask_goron"
         ],
         [
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ]
       ],
       "TimeNeeded": "None",
@@ -37872,7 +37932,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Snowhead Temple Entrance => MM Snowhead Temple Boss",
+      "Id": "MM Snowhead Temple Entrance => MM Snowhead Temple Boss Access",
       "RequiredItems": [
         "setting{bossWarpPads, remains}",
         "MM_REMAINS_GOHT"
@@ -38065,7 +38125,7 @@
         [
           "MM_trick_sht_fireless",
           "MM_scarecrow_hookshot",
-          "MM_MASK_GORON"
+          "MM_has_mask_goron"
         ]
       ],
       "TimeNeeded": "None",
@@ -38151,7 +38211,7 @@
     {
       "Id": "MM_EVENT_SNOWHEAD_RAISE_PILLAR",
       "RequiredItems": [
-        "MM_MASK_GORON",
+        "MM_has_mask_goron",
         "MM Snowhead Temple Pillars Room"
       ],
       "ConditionalItems": [
@@ -38194,7 +38254,7 @@
         ],
         [
           "MM_EVENT_SNOWHEAD_PUSH_BLOCK",
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ]
       ],
       "TimeNeeded": "None",
@@ -38446,7 +38506,7 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_MASK_GORON"
+          "MM_has_mask_goron"
         ],
         [
           "MM_can_hookshot"
@@ -38499,10 +38559,10 @@
           "MM_has_weapon"
         ],
         [
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ],
         [
-          "MM_MASK_GORON"
+          "MM_has_mask_goron"
         ]
       ],
       "TimeNeeded": "None",
@@ -38524,7 +38584,7 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_MASK_GORON"
+          "MM_has_mask_goron"
         ],
         [
           "MM_can_hookshot"
@@ -38673,7 +38733,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss",
+      "Id": "MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss Access",
       "RequiredItems": [],
       "ConditionalItems": [
         [
@@ -38692,7 +38752,7 @@
     {
       "Id": "MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss Key Room",
       "RequiredItems": [
-        "MM_MASK_GORON"
+        "MM_has_mask_goron"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -38703,8 +38763,17 @@
     {
       "Id": "MM Snowhead Temple Center Level 4 => MM Snowhead Temple Dinolfos Room",
       "RequiredItems": [
-        "MM_MASK_GORON"
+        "MM_has_mask_goron"
       ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Snowhead Temple Boss Access => MM Snowhead Temple Boss",
+      "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -38857,7 +38926,7 @@
       "RequiredItems": [
         "MM_OCARINA",
         "MM_SONG_EMPTINESS",
-        "MM_MASK_GORON"
+        "MM_has_mask_goron"
       ],
       "ConditionalItems": [
         [
@@ -38893,7 +38962,7 @@
         ],
         [
           "MM_SMALL_KEY_ST, 3",
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ]
       ],
       "TimeNeeded": "None",
@@ -38934,14 +39003,14 @@
         ],
         [
           "MM_SMALL_KEY_ST, 3",
-          "MM_MASK_GORON",
+          "MM_has_mask_goron",
           "MM_has_explosives",
           "MM_OCARINA",
           "MM_SONG_EMPTINESS"
         ],
         [
           "MM_SMALL_KEY_ST, 3",
-          "MM_MASK_GORON",
+          "MM_has_mask_goron",
           "MM_trick_keg_explosives",
           "MM_OCARINA",
           "MM_SONG_EMPTINESS"
@@ -38964,7 +39033,7 @@
     {
       "Id": "MM Stone Tower Temple Center => MM Stone Tower Temple Water Room",
       "RequiredItems": [
-        "MM_MASK_ZORA"
+        "MM_has_mask_zora"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -38975,7 +39044,7 @@
     {
       "Id": "MM Stone Tower Temple Center => MM Stone Tower Temple Center Ledge",
       "RequiredItems": [
-        "MM_MASK_ZORA"
+        "MM_has_mask_zora"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -38998,7 +39067,7 @@
     {
       "Id": "MM Stone Tower Temple Water Room => MM Stone Tower Temple Center",
       "RequiredItems": [
-        "MM_MASK_ZORA"
+        "MM_has_mask_zora"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -39036,7 +39105,7 @@
     {
       "Id": "MM_EVENT_STONE_TOWER_WATER_CHEST_SWITCH",
       "RequiredItems": [
-        "MM_MASK_ZORA",
+        "MM_has_mask_zora",
         "MM Stone Tower Temple Water Room"
       ],
       "ConditionalItems": [],
@@ -39084,7 +39153,7 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_MASK_GORON",
+          "MM_has_mask_goron",
           "MM_has_mirror_shield"
         ],
         [
@@ -39241,7 +39310,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Stone Tower Temple Inverted Entrance => MM Stone Tower Temple Boss",
+      "Id": "MM Stone Tower Temple Inverted Entrance => MM Stone Tower Temple Boss Access",
       "RequiredItems": [
         "setting{bossWarpPads, remains}",
         "MM_REMAINS_TWINMOLD"
@@ -39318,7 +39387,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_MASK_ZORA",
+          "MM_has_mask_zora",
           "MM_has_bombs"
         ],
         [
@@ -39578,7 +39647,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_MASK_GORON"
+          "MM_has_mask_goron"
         ],
         [
           "MM_has_explosives"
@@ -39604,7 +39673,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_MASK_GORON"
+          "MM_has_mask_goron"
         ],
         [
           "MM_has_explosives"
@@ -39620,7 +39689,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Stone Tower Temple Inverted Pre-Boss => MM Stone Tower Temple Boss",
+      "Id": "MM Stone Tower Temple Inverted Pre-Boss => MM Stone Tower Temple Boss Access",
       "RequiredItems": [],
       "ConditionalItems": [
         [
@@ -39642,6 +39711,15 @@
         "MM_can_activate_crystal",
         "MM Stone Tower Temple Inverted Pre-Boss"
       ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Stone Tower Temple Boss Access => MM Stone Tower Temple Boss",
+      "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -39762,7 +39840,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Woodfall Temple Entrance => MM Woodfall Temple Boss",
+      "Id": "MM Woodfall Temple Entrance => MM Woodfall Temple Boss Access",
       "RequiredItems": [
         "setting{bossWarpPads, remains}",
         "MM_REMAINS_ODOLWA"
@@ -40117,7 +40195,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss",
+      "Id": "MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss Access",
       "RequiredItems": [],
       "ConditionalItems": [
         [
@@ -40162,6 +40240,15 @@
         "MM_has_weapon",
         "MM Woodfall Temple Princess Jail"
       ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Woodfall Temple Boss Access => MM Woodfall Temple Boss",
+      "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
@@ -40284,8 +40371,7 @@
           "time{day}"
         ],
         [
-          "OOT_OCARINA",
-          "OOT_SONG_SUN"
+          "OOT_can_play_sun"
         ]
       ],
       "TimeNeeded": "None",
@@ -40301,8 +40387,7 @@
           "time{night}"
         ],
         [
-          "OOT_OCARINA",
-          "OOT_SONG_SUN"
+          "OOT_can_play_sun"
         ]
       ],
       "TimeNeeded": "None",
@@ -40323,6 +40408,22 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT_has_ocarina",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_OCARINA"
+        ],
+        [
+          "SHARED_OCARINA"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT_has_sticks",
       "RequiredItems": [],
       "ConditionalItems": [
@@ -40337,6 +40438,15 @@
         ],
         [
           "renewable{OOT_STICKS_10}"
+        ],
+        [
+          "renewable{SHARED_STICK}"
+        ],
+        [
+          "renewable{SHARED_STICKS_5}"
+        ],
+        [
+          "renewable{SHARED_STICKS_10}"
         ],
         [
           "setting{sharedNutsSticks}",
@@ -40365,6 +40475,15 @@
           "renewable{OOT_NUTS_10}"
         ],
         [
+          "renewable{SHARED_NUT}"
+        ],
+        [
+          "renewable{SHARED_NUTS_5}"
+        ],
+        [
+          "renewable{SHARED_NUTS_10}"
+        ],
+        [
           "setting{sharedNutsSticks}",
           "MM_EVENT_NUTS"
         ]
@@ -40387,9 +40506,25 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT_has_bomb_bag",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_BOMB_BAG"
+        ],
+        [
+          "SHARED_BOMB_BAG"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT_has_bombs",
       "RequiredItems": [
-        "OOT_BOMB_BAG"
+        "OOT_has_bomb_bag"
       ],
       "ConditionalItems": [
         [
@@ -40408,6 +40543,18 @@
           "renewable{OOT_BOMBS_30}"
         ],
         [
+          "renewable{SHARED_BOMBS_5}"
+        ],
+        [
+          "renewable{SHARED_BOMBS_10}"
+        ],
+        [
+          "renewable{SHARED_BOMBS_20}"
+        ],
+        [
+          "renewable{SHARED_BOMBS_30}"
+        ],
+        [
           "setting{sharedBombBags}",
           "MM_EVENT_BOMBS"
         ]
@@ -40420,7 +40567,7 @@
     {
       "Id": "OOT_has_bombchu",
       "RequiredItems": [
-        "OOT_BOMB_BAG"
+        "OOT_has_bomb_bag"
       ],
       "ConditionalItems": [
         [
@@ -40464,10 +40611,25 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT_can_use_bow",
+      "Id": "OOT_has_bow",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_BOW"
+        ],
+        [
+          "SHARED_BOW"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_arrows",
       "RequiredItems": [
-        "OOT_is_adult",
-        "OOT_BOW"
+        "OOT_has_bow"
       ],
       "ConditionalItems": [
         [
@@ -40486,6 +40648,18 @@
           "renewable{OOT_ARROWS_40}"
         ],
         [
+          "renewable{SHARED_ARROWS_5}"
+        ],
+        [
+          "renewable{SHARED_ARROWS_10}"
+        ],
+        [
+          "renewable{SHARED_ARROWS_30}"
+        ],
+        [
+          "renewable{SHARED_ARROWS_40}"
+        ],
+        [
           "setting{sharedBows}",
           "MM_EVENT_ARROWS"
         ]
@@ -40496,10 +40670,10 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT_can_hookshot",
+      "Id": "OOT_can_use_bow",
       "RequiredItems": [
         "OOT_is_adult",
-        "OOT_HOOKSHOT"
+        "OOT_has_arrows"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -40508,12 +40682,34 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT_can_longshot",
-      "RequiredItems": [
-        "OOT_is_adult",
-        "OOT_HOOKSHOT, 2"
+      "Id": "OOT_can_hookshot",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_is_adult",
+          "OOT_HOOKSHOT"
+        ],
+        [
+          "SHARED_HOOKSHOT"
+        ]
       ],
-      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_can_longshot",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_is_adult",
+          "OOT_HOOKSHOT, 2"
+        ],
+        [
+          "SHARED_HOOKSHOT, 2"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -40567,6 +40763,54 @@
       "RequiredItems": [
         "OOT_is_child",
         "OOT_MAGIC_BEAN"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_can_play_sun",
+      "RequiredItems": [
+        "OOT_OCARINA",
+        "OOT_SONG_SUN"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_can_play_time",
+      "RequiredItems": [
+        "OOT_OCARINA",
+        "OOT_SONG_TIME"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_can_play_epona",
+      "RequiredItems": [
+        "OOT_OCARINA",
+        "OOT_SONG_EPONA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_can_play_storms",
+      "RequiredItems": [
+        "OOT_OCARINA",
+        "OOT_SONG_STORMS"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -40747,45 +40991,6 @@
         [
           "OOT_SWORD_MASTER",
           "setting{progressiveSwordsOot, progressive, false}"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_has_sword_goron",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "setting{progressiveSwordsOot, progressive}",
-          "OOT_SWORD, 3"
-        ],
-        [
-          "OOT_has_progressive_sword_goron",
-          "setting{progressiveSwordsOot, progressive, false}"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT_has_progressive_sword_goron",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "setting{progressiveSwordsOot, goron}",
-          "OOT_SWORD_GORON"
-        ],
-        [
-          "OOT_SWORD_KNIFE"
-        ],
-        [
-          "OOT_SWORD_BIGGORON",
-          "setting{progressiveSwordsOot, goron, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -41023,26 +41228,53 @@
     },
     {
       "Id": "OOT_has_magic",
-      "RequiredItems": [
-        "OOT_MAGIC_UPGRADE"
-      ],
+      "RequiredItems": [],
       "ConditionalItems": [
         [
+          "OOT_MAGIC_UPGRADE",
           "OOT_EVENT_MAGIC"
         ],
         [
+          "SHARED_MAGIC_UPGRADE",
+          "OOT_EVENT_MAGIC"
+        ],
+        [
+          "OOT_MAGIC_UPGRADE",
           "setting{sharedMagic}",
           "MM_EVENT_MAGIC"
         ],
         [
+          "SHARED_MAGIC_UPGRADE",
+          "setting{sharedMagic}",
+          "MM_EVENT_MAGIC"
+        ],
+        [
+          "OOT_MAGIC_UPGRADE",
           "OOT_has_bottle",
           "renewable{OOT_POTION_GREEN}"
         ],
         [
+          "SHARED_MAGIC_UPGRADE",
+          "OOT_has_bottle",
+          "renewable{OOT_POTION_GREEN}"
+        ],
+        [
+          "OOT_MAGIC_UPGRADE",
           "OOT_has_bottle",
           "renewable{OOT_POTION_BLUE}"
         ],
         [
+          "SHARED_MAGIC_UPGRADE",
+          "OOT_has_bottle",
+          "renewable{OOT_POTION_BLUE}"
+        ],
+        [
+          "OOT_MAGIC_UPGRADE",
+          "OOT_has_bottle",
+          "renewable{OOT_CHATEAU}"
+        ],
+        [
+          "SHARED_MAGIC_UPGRADE",
           "OOT_has_bottle",
           "renewable{OOT_CHATEAU}"
         ]
@@ -41080,8 +41312,46 @@
       "Id": "OOT_has_light_arrows",
       "RequiredItems": [
         "OOT_can_use_bow",
-        "OOT_ARROW_LIGHT",
         "OOT_has_magic"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_ARROW_LIGHT"
+        ],
+        [
+          "SHARED_ARROW_LIGHT"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_blue_fire_arrows",
+      "RequiredItems": [
+        "OOT_can_use_bow",
+        "setting{blueFireArrows}",
+        "OOT_has_magic"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_ARROW_ICE"
+        ],
+        [
+          "SHARED_ARROW_ICE"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_blue_fire_arrows_mudwall",
+      "RequiredItems": [
+        "trick{TRICK_OOT_BFA_MUDWALLS}",
+        "OOT_has_blue_fire_arrows"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -41093,10 +41363,16 @@
       "Id": "OOT_has_fire_arrows",
       "RequiredItems": [
         "OOT_can_use_bow",
-        "OOT_ARROW_FIRE",
         "OOT_has_magic"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_ARROW_FIRE"
+        ],
+        [
+          "SHARED_ARROW_FIRE"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -41105,10 +41381,16 @@
     {
       "Id": "OOT_has_lens_strict",
       "RequiredItems": [
-        "OOT_has_magic",
-        "OOT_LENS"
+        "OOT_has_magic"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_LENS"
+        ],
+        [
+          "SHARED_LENS"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -41346,8 +41628,7 @@
       "Id": "OOT_hidden_grotto_storms",
       "RequiredItems": [
         "OOT_stone_of_agony",
-        "OOT_OCARINA",
-        "OOT_SONG_STORMS"
+        "OOT_can_play_storms"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -41372,8 +41653,7 @@
       "Id": "OOT_can_ride_epona",
       "RequiredItems": [
         "OOT_is_adult",
-        "OOT_OCARINA",
-        "OOT_SONG_EPONA"
+        "OOT_can_play_epona"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -41402,14 +41682,17 @@
     },
     {
       "Id": "OOT_has_blue_fire",
-      "RequiredItems": [
-        "OOT_has_bottle"
-      ],
+      "RequiredItems": [],
       "ConditionalItems": [
         [
+          "OOT_has_blue_fire_arrows"
+        ],
+        [
+          "OOT_has_bottle",
           "OOT_EVENT_BLUE_FIRE"
         ],
         [
+          "OOT_has_bottle",
           "renewable{OOT_BLUE_FIRE}"
         ]
       ],
@@ -41563,7 +41846,8 @@
           "OOT_SMALL_KEY_GF"
         ],
         [
-          "OOT_SMALL_KEY_GF, 4"
+          "OOT_SMALL_KEY_GF, 4",
+          "setting{gerudoFortress, single, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -41633,8 +41917,7 @@
           "trick{TRICK_OOT_NIGHT_GS}"
         ],
         [
-          "OOT_OCARINA",
-          "OOT_SONG_SUN"
+          "OOT_can_play_sun"
         ]
       ],
       "TimeNeeded": "None",
@@ -41665,13 +41948,22 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_BOW"
+          "OOT_has_bow"
         ],
         [
           "OOT_HOOKSHOT"
         ],
         [
+          "SHARED_HOOKSHOT"
+        ],
+        [
+          "SHARED_ARROW_FIRE"
+        ],
+        [
           "OOT_ARROW_FIRE"
+        ],
+        [
+          "SHARED_ARROW_LIGHT"
         ],
         [
           "OOT_ARROW_LIGHT"
@@ -41721,46 +42013,15 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_BOW",
+          "OOT_has_arrows",
           "OOT_ARROW_FIRE",
           "OOT_has_sticks",
-          "OOT_EVENT_ARROWS",
           "OOT_has_explosives"
         ],
         [
-          "OOT_BOW",
-          "OOT_ARROW_FIRE",
+          "OOT_has_arrows",
+          "SHARED_ARROW_FIRE",
           "OOT_has_sticks",
-          "renewable{OOT_ARROWS_5}",
-          "OOT_has_explosives"
-        ],
-        [
-          "OOT_BOW",
-          "OOT_ARROW_FIRE",
-          "OOT_has_sticks",
-          "renewable{OOT_ARROWS_10}",
-          "OOT_has_explosives"
-        ],
-        [
-          "OOT_BOW",
-          "OOT_ARROW_FIRE",
-          "OOT_has_sticks",
-          "renewable{OOT_ARROWS_30}",
-          "OOT_has_explosives"
-        ],
-        [
-          "OOT_BOW",
-          "OOT_ARROW_FIRE",
-          "OOT_has_sticks",
-          "renewable{OOT_ARROWS_40}",
-          "OOT_has_explosives"
-        ],
-        [
-          "OOT_BOW",
-          "OOT_ARROW_FIRE",
-          "OOT_has_sticks",
-          "setting{sharedBows}",
-          "MM_EVENT_ARROWS",
           "OOT_has_explosives"
         ],
         [
@@ -41768,46 +42029,15 @@
           "OOT_has_explosives"
         ],
         [
-          "OOT_BOW",
+          "OOT_has_arrows",
           "OOT_ARROW_FIRE",
           "OOT_has_sticks",
-          "OOT_EVENT_ARROWS",
           "setting{smallKeyShuffleOot, removed}"
         ],
         [
-          "OOT_BOW",
-          "OOT_ARROW_FIRE",
+          "OOT_has_arrows",
+          "SHARED_ARROW_FIRE",
           "OOT_has_sticks",
-          "renewable{OOT_ARROWS_5}",
-          "setting{smallKeyShuffleOot, removed}"
-        ],
-        [
-          "OOT_BOW",
-          "OOT_ARROW_FIRE",
-          "OOT_has_sticks",
-          "renewable{OOT_ARROWS_10}",
-          "setting{smallKeyShuffleOot, removed}"
-        ],
-        [
-          "OOT_BOW",
-          "OOT_ARROW_FIRE",
-          "OOT_has_sticks",
-          "renewable{OOT_ARROWS_30}",
-          "setting{smallKeyShuffleOot, removed}"
-        ],
-        [
-          "OOT_BOW",
-          "OOT_ARROW_FIRE",
-          "OOT_has_sticks",
-          "renewable{OOT_ARROWS_40}",
-          "setting{smallKeyShuffleOot, removed}"
-        ],
-        [
-          "OOT_BOW",
-          "OOT_ARROW_FIRE",
-          "OOT_has_sticks",
-          "setting{sharedBows}",
-          "MM_EVENT_ARROWS",
           "setting{smallKeyShuffleOot, removed}"
         ],
         [
@@ -41815,46 +42045,15 @@
           "setting{smallKeyShuffleOot, removed}"
         ],
         [
-          "OOT_BOW",
+          "OOT_has_arrows",
           "OOT_ARROW_FIRE",
           "OOT_has_sticks",
-          "OOT_EVENT_ARROWS",
           "OOT_SMALL_KEY_SPIRIT, 2"
         ],
         [
-          "OOT_BOW",
-          "OOT_ARROW_FIRE",
+          "OOT_has_arrows",
+          "SHARED_ARROW_FIRE",
           "OOT_has_sticks",
-          "renewable{OOT_ARROWS_5}",
-          "OOT_SMALL_KEY_SPIRIT, 2"
-        ],
-        [
-          "OOT_BOW",
-          "OOT_ARROW_FIRE",
-          "OOT_has_sticks",
-          "renewable{OOT_ARROWS_10}",
-          "OOT_SMALL_KEY_SPIRIT, 2"
-        ],
-        [
-          "OOT_BOW",
-          "OOT_ARROW_FIRE",
-          "OOT_has_sticks",
-          "renewable{OOT_ARROWS_30}",
-          "OOT_SMALL_KEY_SPIRIT, 2"
-        ],
-        [
-          "OOT_BOW",
-          "OOT_ARROW_FIRE",
-          "OOT_has_sticks",
-          "renewable{OOT_ARROWS_40}",
-          "OOT_SMALL_KEY_SPIRIT, 2"
-        ],
-        [
-          "OOT_BOW",
-          "OOT_ARROW_FIRE",
-          "OOT_has_sticks",
-          "setting{sharedBows}",
-          "MM_EVENT_ARROWS",
           "OOT_SMALL_KEY_SPIRIT, 2"
         ],
         [
@@ -41891,103 +42090,30 @@
         [
           "OOT_SLINGSHOT",
           "OOT_EVENT_SEEDS",
-          "OOT_BOW"
+          "SHARED_HOOKSHOT"
         ],
         [
           "OOT_SLINGSHOT",
           "renewable{OOT_DEKU_SEEDS_30}",
-          "OOT_BOW"
+          "SHARED_HOOKSHOT"
         ],
         [
           "OOT_BOOMERANG",
-          "OOT_BOW"
+          "SHARED_HOOKSHOT"
         ],
         [
           "OOT_SLINGSHOT",
           "OOT_EVENT_SEEDS",
-          "OOT_EVENT_ARROWS"
+          "OOT_has_arrows"
         ],
         [
           "OOT_SLINGSHOT",
           "renewable{OOT_DEKU_SEEDS_30}",
-          "OOT_EVENT_ARROWS"
+          "OOT_has_arrows"
         ],
         [
           "OOT_BOOMERANG",
-          "OOT_EVENT_ARROWS"
-        ],
-        [
-          "OOT_SLINGSHOT",
-          "OOT_EVENT_SEEDS",
-          "renewable{OOT_ARROWS_5}"
-        ],
-        [
-          "OOT_SLINGSHOT",
-          "renewable{OOT_DEKU_SEEDS_30}",
-          "renewable{OOT_ARROWS_5}"
-        ],
-        [
-          "OOT_BOOMERANG",
-          "renewable{OOT_ARROWS_5}"
-        ],
-        [
-          "OOT_SLINGSHOT",
-          "OOT_EVENT_SEEDS",
-          "renewable{OOT_ARROWS_10}"
-        ],
-        [
-          "OOT_SLINGSHOT",
-          "renewable{OOT_DEKU_SEEDS_30}",
-          "renewable{OOT_ARROWS_10}"
-        ],
-        [
-          "OOT_BOOMERANG",
-          "renewable{OOT_ARROWS_10}"
-        ],
-        [
-          "OOT_SLINGSHOT",
-          "OOT_EVENT_SEEDS",
-          "renewable{OOT_ARROWS_30}"
-        ],
-        [
-          "OOT_SLINGSHOT",
-          "renewable{OOT_DEKU_SEEDS_30}",
-          "renewable{OOT_ARROWS_30}"
-        ],
-        [
-          "OOT_BOOMERANG",
-          "renewable{OOT_ARROWS_30}"
-        ],
-        [
-          "OOT_SLINGSHOT",
-          "OOT_EVENT_SEEDS",
-          "renewable{OOT_ARROWS_40}"
-        ],
-        [
-          "OOT_SLINGSHOT",
-          "renewable{OOT_DEKU_SEEDS_30}",
-          "renewable{OOT_ARROWS_40}"
-        ],
-        [
-          "OOT_BOOMERANG",
-          "renewable{OOT_ARROWS_40}"
-        ],
-        [
-          "OOT_SLINGSHOT",
-          "OOT_EVENT_SEEDS",
-          "setting{sharedBows}",
-          "MM_EVENT_ARROWS"
-        ],
-        [
-          "OOT_SLINGSHOT",
-          "renewable{OOT_DEKU_SEEDS_30}",
-          "setting{sharedBows}",
-          "MM_EVENT_ARROWS"
-        ],
-        [
-          "OOT_BOOMERANG",
-          "setting{sharedBows}",
-          "MM_EVENT_ARROWS"
+          "OOT_has_arrows"
         ]
       ],
       "TimeNeeded": "None",
@@ -41997,11 +42123,16 @@
     },
     {
       "Id": "OOT_can_collect_ageless",
-      "RequiredItems": [
-        "OOT_HOOKSHOT",
-        "OOT_BOOMERANG"
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_HOOKSHOT"
+        ],
+        [
+          "SHARED_HOOKSHOT",
+          "OOT_BOOMERANG"
+        ]
       ],
-      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -42049,6 +42180,22 @@
         ],
         [
           "OOT_EVENT_MIDO_MOVED"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_mask_truth",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_MASK_TRUTH"
+        ],
+        [
+          "SHARED_MASK_TRUTH"
         ]
       ],
       "TimeNeeded": "None",
@@ -42128,6 +42275,45 @@
         [
           "option{childWallets, false}",
           "OOT_WALLET, 3"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_sword_goron",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{progressiveSwordsOot, progressive}",
+          "OOT_SWORD, 3"
+        ],
+        [
+          "OOT_has_progressive_sword_goron",
+          "setting{progressiveSwordsOot, progressive, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_progressive_sword_goron",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{progressiveSwordsOot, goron}",
+          "OOT_SWORD_GORON"
+        ],
+        [
+          "OOT_SWORD_KNIFE"
+        ],
+        [
+          "OOT_SWORD_BIGGORON",
+          "setting{progressiveSwordsOot, goron, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -42299,6 +42485,54 @@
       "IsTrick": false
     },
     {
+      "Id": "MM_can_play_sun",
+      "RequiredItems": [
+        "MM_OCARINA",
+        "MM_SONG_SUN"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_can_play_time",
+      "RequiredItems": [
+        "MM_OCARINA",
+        "MM_SONG_TIME"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_can_play_epona",
+      "RequiredItems": [
+        "MM_OCARINA",
+        "MM_SONG_EPONA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_can_play_storms",
+      "RequiredItems": [
+        "MM_OCARINA",
+        "MM_SONG_STORMS"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM_has_bottle",
       "RequiredItems": [],
       "ConditionalItems": [
@@ -42324,30 +42558,6 @@
       "IsTrick": false
     },
     {
-      "Id": "MM_has_ocarina",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "option{sharedOcarina, true}",
-          "option{fairyOcarinaMm, true}",
-          "MM_OCARINA"
-        ],
-        [
-          "option{sharedOcarina, true}",
-          "option{fairyOcarinaMm, false}",
-          "MM_OCARINA, 2"
-        ],
-        [
-          "MM_OCARINA",
-          "option{sharedOcarina, false}"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
       "Id": "MM_can_break_boulders",
       "RequiredItems": [],
       "ConditionalItems": [
@@ -42355,7 +42565,7 @@
           "MM_has_explosives"
         ],
         [
-          "MM_MASK_GORON"
+          "MM_has_mask_goron"
         ]
       ],
       "TimeNeeded": "None",
@@ -42382,10 +42592,16 @@
     {
       "Id": "MM_can_use_lens_strict",
       "RequiredItems": [
-        "MM_has_magic",
-        "MM_LENS"
+        "MM_has_magic"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_LENS"
+        ],
+        [
+          "SHARED_LENS"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -42414,10 +42630,16 @@
       "Id": "MM_can_use_fire_arrows",
       "RequiredItems": [
         "MM_has_magic",
-        "MM_has_arrows",
-        "MM_ARROW_FIRE"
+        "MM_has_arrows"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_ARROW_FIRE"
+        ],
+        [
+          "SHARED_ARROW_FIRE"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -42427,10 +42649,16 @@
       "Id": "MM_can_use_ice_arrows",
       "RequiredItems": [
         "MM_has_magic",
-        "MM_has_arrows",
-        "MM_ARROW_ICE"
+        "MM_has_arrows"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_ARROW_ICE"
+        ],
+        [
+          "SHARED_ARROW_ICE"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -42440,10 +42668,16 @@
       "Id": "MM_can_use_light_arrows",
       "RequiredItems": [
         "MM_has_magic",
-        "MM_has_arrows",
-        "MM_ARROW_LIGHT"
+        "MM_has_arrows"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_ARROW_LIGHT"
+        ],
+        [
+          "SHARED_ARROW_LIGHT"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -42498,10 +42732,10 @@
       ],
       "ConditionalItems": [
         [
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ],
         [
-          "MM_MASK_GORON"
+          "MM_has_mask_goron"
         ]
       ],
       "TimeNeeded": "None",
@@ -42514,8 +42748,8 @@
       "RequiredItems": [
         "MM_OCARINA",
         "MM_SONG_EMPTINESS",
-        "MM_MASK_ZORA",
-        "MM_MASK_GORON"
+        "MM_has_mask_zora",
+        "MM_has_mask_goron"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -42524,9 +42758,25 @@
       "IsTrick": false
     },
     {
+      "Id": "MM_has_bomb_bag",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "MM_BOMB_BAG"
+        ],
+        [
+          "SHARED_BOMB_BAG"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM_has_bombchu",
       "RequiredItems": [
-        "MM_BOMB_BAG"
+        "MM_has_bomb_bag"
       ],
       "ConditionalItems": [
         [
@@ -42589,8 +42839,7 @@
           "MM_has_bottle"
         ],
         [
-          "MM_OCARINA",
-          "MM_SONG_STORMS"
+          "MM_can_play_storms"
         ]
       ],
       "TimeNeeded": "None",
@@ -42625,7 +42874,7 @@
     {
       "Id": "MM_goron_fast_roll",
       "RequiredItems": [
-        "MM_MASK_GORON",
+        "MM_has_mask_goron",
         "MM_has_magic"
       ],
       "ConditionalItems": [],
@@ -42657,7 +42906,7 @@
           "MM_can_hookshot_short"
         ],
         [
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ],
         [
           "MM_can_use_deku_bubble"
@@ -42704,10 +42953,10 @@
           "MM_has_weapon"
         ],
         [
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ],
         [
-          "MM_MASK_GORON"
+          "MM_has_mask_goron"
         ]
       ],
       "TimeNeeded": "None",
@@ -42756,7 +43005,7 @@
       "RequiredItems": [
         "MM_has_ocarina",
         "MM_has_goron_song_half",
-        "MM_MASK_GORON"
+        "MM_has_mask_goron"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -42769,7 +43018,7 @@
       "RequiredItems": [
         "MM_has_ocarina",
         "MM_has_goron_song",
-        "MM_MASK_GORON"
+        "MM_has_mask_goron"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -42813,7 +43062,7 @@
           "MM_MASK_DEKU"
         ],
         [
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ]
       ],
       "TimeNeeded": "None",
@@ -42832,7 +43081,7 @@
           "MM_can_hookshot_short"
         ],
         [
-          "MM_MASK_ZORA"
+          "MM_has_mask_zora"
         ],
         [
           "MM_MASK_STONE"
@@ -42884,7 +43133,7 @@
       "Id": "MM_can_goron_bomb_jump",
       "RequiredItems": [
         "trick{TRICK_MM_GORON_BOMB_JUMP}",
-        "MM_MASK_GORON"
+        "MM_has_mask_goron"
       ],
       "ConditionalItems": [
         [
@@ -42901,10 +43150,15 @@
     },
     {
       "Id": "MM_can_hookshot_short",
-      "RequiredItems": [
-        "MM_HOOKSHOT"
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "MM_HOOKSHOT"
+        ],
+        [
+          "SHARED_HOOKSHOT"
+        ]
       ],
-      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -42919,7 +43173,13 @@
           "MM_HOOKSHOT, 2"
         ],
         [
-          "MM_HOOKSHOT",
+          "SHARED_HOOKSHOT, 2"
+        ],
+        [
+          "MM_HOOKSHOT"
+        ],
+        [
+          "SHARED_HOOKSHOT",
           "setting{shortHookshotMm, false}"
         ]
       ],
@@ -43036,8 +43296,7 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_OCARINA",
-          "MM_SONG_TIME"
+          "MM_can_play_time"
         ],
         [
           "setting{majoraChild, none}",
@@ -43055,8 +43314,7 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_OCARINA",
-          "MM_SONG_TIME"
+          "MM_can_play_time"
         ],
         [
           "MM_EVENT_MAJORA",
@@ -43085,6 +43343,15 @@
           "renewable{MM_STICKS_10}"
         ],
         [
+          "renewable{SHARED_STICK}"
+        ],
+        [
+          "renewable{SHARED_STICKS_5}"
+        ],
+        [
+          "renewable{SHARED_STICKS_10}"
+        ],
+        [
           "setting{sharedNutsSticks}",
           "OOT_EVENT_STICKS"
         ]
@@ -43111,6 +43378,15 @@
           "renewable{MM_NUTS_10}"
         ],
         [
+          "renewable{SHARED_NUT}"
+        ],
+        [
+          "renewable{SHARED_NUTS_5}"
+        ],
+        [
+          "renewable{SHARED_NUTS_10}"
+        ],
+        [
           "setting{sharedNutsSticks}",
           "OOT_EVENT_NUTS"
         ]
@@ -43121,9 +43397,25 @@
       "IsTrick": false
     },
     {
+      "Id": "MM_has_bow",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "MM_BOW"
+        ],
+        [
+          "SHARED_BOW"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM_has_arrows",
       "RequiredItems": [
-        "MM_BOW"
+        "MM_has_bow"
       ],
       "ConditionalItems": [
         [
@@ -43140,6 +43432,18 @@
         ],
         [
           "renewable{MM_ARROWS_40}"
+        ],
+        [
+          "renewable{SHARED_ARROWS_5}"
+        ],
+        [
+          "renewable{SHARED_ARROWS_10}"
+        ],
+        [
+          "renewable{SHARED_ARROWS_30}"
+        ],
+        [
+          "renewable{SHARED_ARROWS_40}"
         ]
       ],
       "TimeNeeded": "None",
@@ -43150,7 +43454,7 @@
     {
       "Id": "MM_has_bombs",
       "RequiredItems": [
-        "MM_BOMB_BAG"
+        "MM_has_bomb_bag"
       ],
       "ConditionalItems": [
         [
@@ -43167,6 +43471,18 @@
         ],
         [
           "renewable{MM_BOMBS_30}"
+        ],
+        [
+          "renewable{SHARED_BOMBS_5}"
+        ],
+        [
+          "renewable{SHARED_BOMBS_10}"
+        ],
+        [
+          "renewable{SHARED_BOMBS_20}"
+        ],
+        [
+          "renewable{SHARED_BOMBS_30}"
         ]
       ],
       "TimeNeeded": "None",
@@ -43176,20 +43492,38 @@
     },
     {
       "Id": "MM_has_magic",
-      "RequiredItems": [
-        "MM_MAGIC_UPGRADE"
-      ],
+      "RequiredItems": [],
       "ConditionalItems": [
         [
+          "MM_MAGIC_UPGRADE",
           "MM_EVENT_MAGIC"
         ],
         [
+          "SHARED_MAGIC_UPGRADE",
+          "MM_EVENT_MAGIC"
+        ],
+        [
+          "MM_MAGIC_UPGRADE",
           "MM_has_green_potion"
         ],
         [
+          "SHARED_MAGIC_UPGRADE",
+          "MM_has_green_potion"
+        ],
+        [
+          "MM_MAGIC_UPGRADE",
           "MM_has_blue_potion"
         ],
         [
+          "SHARED_MAGIC_UPGRADE",
+          "MM_has_blue_potion"
+        ],
+        [
+          "MM_MAGIC_UPGRADE",
+          "MM_EVENT_CHATEAU"
+        ],
+        [
+          "SHARED_MAGIC_UPGRADE",
           "MM_EVENT_CHATEAU"
         ]
       ],
@@ -43459,6 +43793,86 @@
       "IsTrick": false
     },
     {
+      "Id": "MM_has_mask_bunny",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "MM_MASK_BUNNY"
+        ],
+        [
+          "SHARED_MASK_BUNNY"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_has_mask_truth",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "MM_MASK_TRUTH"
+        ],
+        [
+          "SHARED_MASK_TRUTH"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_has_mask_keaton",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "MM_MASK_KEATON"
+        ],
+        [
+          "SHARED_MASK_KEATON"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_has_mask_zora",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "MM_MASK_ZORA"
+        ],
+        [
+          "SHARED_MASK_ZORA"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_has_mask_goron",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "MM_MASK_GORON"
+        ],
+        [
+          "SHARED_MASK_GORON"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM_can_use_wallet_1",
       "RequiredItems": [
         "MM_EVENT_RUPEES"
@@ -43530,6 +43944,30 @@
         [
           "option{childWallets, false}",
           "MM_WALLET, 3"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_has_ocarina",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "option{sharedOcarina, true}",
+          "option{fairyOcarinaMm, true}",
+          "MM_OCARINA"
+        ],
+        [
+          "option{sharedOcarina, true}",
+          "option{fairyOcarinaMm, false}",
+          "MM_OCARINA, 2"
+        ],
+        [
+          "MM_OCARINA",
+          "option{sharedOcarina, false}"
         ]
       ],
       "TimeNeeded": "None",

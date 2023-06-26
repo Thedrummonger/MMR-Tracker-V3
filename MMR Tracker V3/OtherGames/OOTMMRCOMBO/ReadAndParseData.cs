@@ -15,6 +15,7 @@ using System.Transactions;
 using Octokit;
 using static Microsoft.FSharp.Core.ByRefKinds;
 using YamlDotNet.Core.Tokens;
+using System.Reflection.Metadata;
 
 namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 {
@@ -47,6 +48,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             public string from;
             public string type;
             public string id;
+            public string reverse;
         }
 
         public static LogicStringParser OOTMMLogicParser = new LogicStringParser();
@@ -69,7 +71,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
 
             FixAreaClearLogic(LogicFile);
 
-            CreateEntrancePairs(dictionaryFile);
+            //CreateEntrancePairs(dictionaryFile);
 
             CreateLocationProxies(dictionaryFile);
 
@@ -694,6 +696,14 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             BossKeyMM.Values["removed"].Name = "Removed";
             dictionaryFile.Options.Add(BossKeyMM.ID, BossKeyMM);
 
+            OptionData.TrackerOption blueFireArrows = new OptionData.TrackerOption();
+            blueFireArrows.ID = "blueFireArrows";
+            blueFireArrows.DisplayName = "Blue Fire Arrows";
+            blueFireArrows.CurrentValue = "false";
+            blueFireArrows.CreateSimpleValues(new string[] { "true", "false" });
+            blueFireArrows.Values["true"].ItemNameOverride.Add("OOT_ARROW_ICE", "Blue Fire Arrows");
+            dictionaryFile.Options.Add(blueFireArrows.ID, blueFireArrows);
+
             OptionData.TrackerOption agelessSwords = new OptionData.TrackerOption();
             agelessSwords.ID = "agelessSwords";
             agelessSwords.DisplayName = "Ageless Swords";
@@ -1187,6 +1197,11 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                     Parameters = Parameters.Replace("OOT_", "");
                     Game = "OOT";
                 }
+                else if (Parameters.StartsWith($"SHARED_"))
+                {
+                    Parameters = Parameters.Replace("SHARED_", "");
+                    Game = "SHARED";
+                }
                 switch (Function)
                 {
                     case "license":
@@ -1241,6 +1256,19 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         int Keys = int.Parse(Parameters);
                         line = line.Replace(FullFunction, $"(option{{smallKeyShuffleOot, anywhere}} && has(SMALL_KEY_FIRE, {Keys + 1})) || (option{{smallKeyShuffleOot, anywhere, false}} && has(SMALL_KEY_FIRE, {Keys}))");
                         break;
+                    case "has_hookshot":
+                        line = line.Replace(FullFunction, $"has(HOOKSHOT, {Parameters}) || has(SHARED_HOOKSHOT, {Parameters})");
+                        break;
+                    case "can_hookshot_n":
+                        if (Game == "MM")
+                        {
+                            line = line.Replace(FullFunction, $"has(HOOKSHOT, {Parameters}) || has(SHARED_HOOKSHOT, {Parameters})");
+                        }
+                        else
+                        {
+                            line = line.Replace(FullFunction, $"is_adult && has_hookshot({Parameters})");
+                        }
+                        break;
                     case "setting":
                         line = line.Replace(FullFunction, $"{Function}{{{Parameters}}}");
                         break;
@@ -1256,6 +1284,9 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         break;
                     case "after":
                         line = line.Replace(FullFunction, $"time{{After_{Parameters}}}");
+                        break;
+                    case "between":
+                        line = line.Replace(FullFunction, $"time{{Between_{Parameters}}}");
                         break;
                     case "oot_time":
                         line = line.Replace(FullFunction, $"time{{{Parameters}}}");
@@ -1323,8 +1354,6 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             List<MMROOTEntranceData> MMentranceData = JsonConvert.DeserializeObject<List<MMROOTEntranceData>>(ConvertCsvFileToJsonObject(File.ReadAllLines(MMEntrances)));
             List<MMROOTEntranceData> OOTentranceData = JsonConvert.DeserializeObject<List<MMROOTEntranceData>>(ConvertCsvFileToJsonObject(File.ReadAllLines(OOTEntrances)));
 
-            List<MMROOTEntranceData> RandoEntrances = MMentranceData.Concat(OOTentranceData).ToList();
-
             Dictionary<string, string> MMMacros = new CodeFileReader<Dictionary<string, string>>().ReadCodeFile(@"MMMacroOverride");
             Dictionary<string, string> OOTMacros = new CodeFileReader<Dictionary<string, string>>().ReadCodeFile(@"OOTMacroOverride");
 
@@ -1352,6 +1381,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
             void addEntranceandEventData(string Game, string[] WorldFiles)
             {
                 string OpositeGame = Game == "OOT" ? "MM" : "OOT";
+                List<MMROOTEntranceData> RandoEntrances = Game == "OOT" ? OOTentranceData : MMentranceData;
                 foreach (var i in WorldFiles)
                 {
                     var text = Utility.ConvertYamlStringToJsonString(File.ReadAllText(i));
@@ -1361,9 +1391,10 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         string TrueAreaName = $"{Game} {Area}";
                         foreach (var exit in LogicObject[Area]?.exits?.Keys?.ToList()??new List<string>())
                         {
-                            string TrueExitName = exit.StartsWith($"{OpositeGame} ") || exit.StartsWith($"{Game} ") ? $"{exit}" : $"{Game} {exit}";
+                            string TrueExitName, FullexitName;
+                            TrueExitName = exit.StartsWith($"{OpositeGame} ") || exit.StartsWith($"{Game} ") ? $"{exit}" : $"{Game} {exit}";
                             if (TrueExitName == "OOT MM SPAWN") { TrueExitName = "MM SPAWN"; }
-                            string FullexitName = $"{TrueAreaName} => {TrueExitName}";
+                            FullexitName =$"{TrueAreaName} => {TrueExitName}";
 
                             if (!LogicFile.Logic.Any(x => x.Id == FullexitName))
                             {
@@ -1383,11 +1414,15 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                                     AlwaysAccessable = false
                                 };
                                 if (FullexitName.StartsWith("OOT SPAWN => ")) { entranceEntry.AlwaysAccessable = true; }
-                                if (RandoEntrances.Any(x => x.to == exit && x.from == Area)) 
+                                if (RandoEntrances.Any(x => x.to == exit && x.from == Area))
                                 {
-                                    var EntranceCSVentry = RandoEntrances.First(x => x.to == exit && x.from == Area);
-                                    bool IsBossDoor = EntranceCSVentry.type == "boss";
                                     entranceEntry.RandomizableEntrance = true;
+                                    var EntranceCSVentry = RandoEntrances.First(x => x.to == exit && x.from == Area);
+                                    if (EntranceCSVentry.reverse != "NONE")
+                                    {
+                                        var ReverseEntranceCSVentry = RandoEntrances.First(x => x.id == EntranceCSVentry.reverse);
+                                        entranceEntry.EntrancePairID = new EntranceData.EntranceAreaPair { Area = $"{Game} {ReverseEntranceCSVentry.from}" , Exit = $"{Game} {ReverseEntranceCSVentry.to}" };
+                                    }
                                 }
 
                                 dictionaryFile.EntranceList.Add(FullexitName, entranceEntry);
@@ -1418,6 +1453,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
                         }
                     }
                 }
+
             }
 
         }

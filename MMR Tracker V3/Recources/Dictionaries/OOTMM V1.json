@@ -14427,58 +14427,58 @@
       },
       "LocationProxys": []
     },
-    "MM Curiosity Shop Back Room Pendant of Memories": {
-      "Name": "Curiosity Shop Back Room Pendant of Memories",
+    "MM Kafei Hideout Pendant of Memories": {
+      "Name": "Kafei Hideout Pendant of Memories",
       "OriginalItem": "MM_PENDANT_OF_MEMORIES",
       "WalletCurrency": "M",
-      "Area": "Laundry Pool",
+      "Area": "MM_CURIOSITY_SHOP",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM Curiosity Shop Back Room Pendant of Memories"
+          "MM Kafei Hideout Pendant of Memories"
         ],
         "GossipHintNames": [
-          "MM Curiosity Shop Back Room Pendant of Memories"
+          "MM Kafei Hideout Pendant of Memories"
         ],
         "PriceDataNames": []
       },
       "LocationProxys": []
     },
-    "MM Curiosity Shop Back Room Owner Reward 1": {
-      "Name": "Curiosity Shop Back Room Owner Reward 1",
+    "MM Kafei Hideout Owner Reward 1": {
+      "Name": "Kafei Hideout Owner Reward 1",
       "OriginalItem": "MM_MASK_KEATON",
       "WalletCurrency": "M",
-      "Area": "Laundry Pool",
+      "Area": "MM_CURIOSITY_SHOP",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM Curiosity Shop Back Room Owner Reward 1"
+          "MM Kafei Hideout Owner Reward 1"
         ],
         "GossipHintNames": [
-          "MM Curiosity Shop Back Room Owner Reward 1"
+          "MM Kafei Hideout Owner Reward 1"
         ],
         "PriceDataNames": []
       },
       "LocationProxys": []
     },
-    "MM Curiosity Shop Back Room Owner Reward 2": {
-      "Name": "Curiosity Shop Back Room Owner Reward 2",
+    "MM Kafei Hideout Owner Reward 2": {
+      "Name": "Kafei Hideout Owner Reward 2",
       "OriginalItem": "MM_LETTER_TO_MAMA",
       "WalletCurrency": "M",
-      "Area": "Laundry Pool",
+      "Area": "MM_CURIOSITY_SHOP",
       "ValidItemTypes": [
         "item"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM Curiosity Shop Back Room Owner Reward 2"
+          "MM Kafei Hideout Owner Reward 2"
         ],
         "GossipHintNames": [
-          "MM Curiosity Shop Back Room Owner Reward 2"
+          "MM Kafei Hideout Owner Reward 2"
         ],
         "PriceDataNames": []
       },
@@ -23531,6 +23531,25 @@
         "PriceDataNames": []
       }
     },
+    "OOT_BOMBCHU_1": {
+      "Name": "1 Bombchu (OoT)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_BOMBCHU_1",
+          "1 Bombchu (OoT)"
+        ],
+        "GossipHintNames": [
+          "OOT_BOMBCHU_1",
+          "1 Bombchu (OoT)"
+        ],
+        "PriceDataNames": []
+      }
+    },
     "OOT_BOMBCHU_10": {
       "Name": "10 Bombchu (OoT)",
       "MaxAmountInWorld": -1,
@@ -24326,6 +24345,25 @@
         "GossipHintNames": [
           "OOT_FISH",
           "Fish (OoT)"
+        ],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_BUGS": {
+      "Name": "Bugs (OoT)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_BUGS",
+          "Bugs (OoT)"
+        ],
+        "GossipHintNames": [
+          "OOT_BUGS",
+          "Bugs (OoT)"
         ],
         "PriceDataNames": []
       }
@@ -28986,42 +29024,66 @@
     "OOT Link's House => OOT Kokiri Forest": {
       "Area": "OOT Link's House",
       "Exit": "OOT Kokiri Forest",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Kokiri Forest",
+        "Exit": "OOT Link's House"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "OOT Kokiri Forest => OOT Link's House": {
       "Area": "OOT Kokiri Forest",
       "Exit": "OOT Link's House",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Link's House",
+        "Exit": "OOT Kokiri Forest"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "OOT Kokiri Forest => OOT Mido's House": {
       "Area": "OOT Kokiri Forest",
       "Exit": "OOT Mido's House",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Mido's House",
+        "Exit": "OOT Kokiri Forest"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "OOT Kokiri Forest => OOT Saria's House": {
       "Area": "OOT Kokiri Forest",
       "Exit": "OOT Saria's House",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Saria's House",
+        "Exit": "OOT Kokiri Forest"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "OOT Kokiri Forest => OOT House of Twins": {
       "Area": "OOT Kokiri Forest",
       "Exit": "OOT House of Twins",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT House of Twins",
+        "Exit": "OOT Kokiri Forest"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "OOT Kokiri Forest => OOT Know It All House": {
       "Area": "OOT Kokiri Forest",
       "Exit": "OOT Know It All House",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Know It All House",
+        "Exit": "OOT Kokiri Forest"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -29042,7 +29104,11 @@
     "OOT Kokiri Forest => OOT Kokiri Shop": {
       "Area": "OOT Kokiri Forest",
       "Exit": "OOT Kokiri Shop",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Kokiri Shop",
+        "Exit": "OOT Kokiri Forest"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -29081,35 +29147,55 @@
     "OOT Kokiri Shop => OOT Kokiri Forest": {
       "Area": "OOT Kokiri Shop",
       "Exit": "OOT Kokiri Forest",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Kokiri Forest",
+        "Exit": "OOT Kokiri Shop"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "OOT Mido's House => OOT Kokiri Forest": {
       "Area": "OOT Mido's House",
       "Exit": "OOT Kokiri Forest",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Kokiri Forest",
+        "Exit": "OOT Mido's House"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "OOT Saria's House => OOT Kokiri Forest": {
       "Area": "OOT Saria's House",
       "Exit": "OOT Kokiri Forest",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Kokiri Forest",
+        "Exit": "OOT Saria's House"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "OOT House of Twins => OOT Kokiri Forest": {
       "Area": "OOT House of Twins",
       "Exit": "OOT Kokiri Forest",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Kokiri Forest",
+        "Exit": "OOT House of Twins"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "OOT Know It All House => OOT Kokiri Forest": {
       "Area": "OOT Know It All House",
       "Exit": "OOT Kokiri Forest",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Kokiri Forest",
+        "Exit": "OOT Know It All House"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -29325,7 +29411,11 @@
     "OOT Market Entryway => OOT Market Pot House": {
       "Area": "OOT Market Entryway",
       "Exit": "OOT Market Pot House",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Market Pot House",
+        "Exit": "OOT Market Entryway"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -29423,7 +29513,11 @@
     "OOT Market Pot House => OOT Market Entryway": {
       "Area": "OOT Market Pot House",
       "Exit": "OOT Market Entryway",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Market Entryway",
+        "Exit": "OOT Market Pot House"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -29497,16 +29591,9 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT Market Destroyed => OOT Hyrule Field": {
+    "OOT Market Destroyed => OOT Market Entryway": {
       "Area": "OOT Market Destroyed",
-      "Exit": "OOT Hyrule Field",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
-    },
-    "OOT Market Destroyed => OOT Market Pot House": {
-      "Area": "OOT Market Destroyed",
-      "Exit": "OOT Market Pot House",
+      "Exit": "OOT Market Entryway",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -29542,7 +29629,11 @@
     "OOT Temple of Time Entryway => OOT Temple of Time": {
       "Area": "OOT Temple of Time Entryway",
       "Exit": "OOT Temple of Time",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Temple of Time",
+        "Exit": "OOT Temple of Time Entryway"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -29560,21 +29651,33 @@
     "OOT Lon Lon Ranch => OOT Lon Lon Ranch Silo": {
       "Area": "OOT Lon Lon Ranch",
       "Exit": "OOT Lon Lon Ranch Silo",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Lon Lon Ranch Silo",
+        "Exit": "OOT Lon Lon Ranch"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "OOT Lon Lon Ranch => OOT Lon Lon Ranch Stables": {
       "Area": "OOT Lon Lon Ranch",
       "Exit": "OOT Lon Lon Ranch Stables",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Lon Lon Ranch Stables",
+        "Exit": "OOT Lon Lon Ranch"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "OOT Lon Lon Ranch => OOT Lon Lon Ranch House": {
       "Area": "OOT Lon Lon Ranch",
       "Exit": "OOT Lon Lon Ranch House",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Lon Lon Ranch House",
+        "Exit": "OOT Lon Lon Ranch"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -29588,21 +29691,33 @@
     "OOT Lon Lon Ranch Stables => OOT Lon Lon Ranch": {
       "Area": "OOT Lon Lon Ranch Stables",
       "Exit": "OOT Lon Lon Ranch",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Lon Lon Ranch",
+        "Exit": "OOT Lon Lon Ranch Stables"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "OOT Lon Lon Ranch Silo => OOT Lon Lon Ranch": {
       "Area": "OOT Lon Lon Ranch Silo",
       "Exit": "OOT Lon Lon Ranch",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Lon Lon Ranch",
+        "Exit": "OOT Lon Lon Ranch Silo"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "OOT Lon Lon Ranch House => OOT Lon Lon Ranch": {
       "Area": "OOT Lon Lon Ranch House",
       "Exit": "OOT Lon Lon Ranch",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Lon Lon Ranch",
+        "Exit": "OOT Lon Lon Ranch House"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -29620,9 +29735,9 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT Hyrule Castle => OOT Fairy Fountain Din": {
+    "OOT Hyrule Castle => OOT Near Fairy Fountain Din": {
       "Area": "OOT Hyrule Castle",
-      "Exit": "OOT Fairy Fountain Din",
+      "Exit": "OOT Near Fairy Fountain Din",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -29634,10 +29749,39 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT Fairy Fountain Din => OOT Hyrule Castle": {
-      "Area": "OOT Fairy Fountain Din",
+    "OOT Near Fairy Fountain Din => OOT Hyrule Castle": {
+      "Area": "OOT Near Fairy Fountain Din",
       "Exit": "OOT Hyrule Castle",
       "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Near Fairy Fountain Din => OOT Fairy Fountain Din": {
+      "Area": "OOT Near Fairy Fountain Din",
+      "Exit": "OOT Fairy Fountain Din",
+      "EntrancePairID": {
+        "Area": "OOT Fairy Fountain Din",
+        "Exit": "OOT Near Fairy Fountain Din"
+      },
+      "RandomizableEntrance": true,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Near Fairy Fountain Din => OOT Near Fairy Fountain Defense": {
+      "Area": "OOT Near Fairy Fountain Din",
+      "Exit": "OOT Near Fairy Fountain Defense",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Fairy Fountain Din => OOT Near Fairy Fountain Din": {
+      "Area": "OOT Fairy Fountain Din",
+      "Exit": "OOT Near Fairy Fountain Din",
+      "EntrancePairID": {
+        "Area": "OOT Near Fairy Fountain Din",
+        "Exit": "OOT Fairy Fountain Din"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -29662,9 +29806,9 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT Ganon Castle Exterior => OOT Fairy Fountain Defense": {
+    "OOT Ganon Castle Exterior => OOT Near Fairy Fountain Defense": {
       "Area": "OOT Ganon Castle Exterior",
-      "Exit": "OOT Fairy Fountain Defense",
+      "Exit": "OOT Near Fairy Fountain Defense",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -29694,10 +29838,39 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT Fairy Fountain Defense => OOT Ganon Castle Exterior": {
-      "Area": "OOT Fairy Fountain Defense",
+    "OOT Near Fairy Fountain Defense => OOT Ganon Castle Exterior": {
+      "Area": "OOT Near Fairy Fountain Defense",
       "Exit": "OOT Ganon Castle Exterior",
       "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Near Fairy Fountain Defense => OOT Fairy Fountain Defense": {
+      "Area": "OOT Near Fairy Fountain Defense",
+      "Exit": "OOT Fairy Fountain Defense",
+      "EntrancePairID": {
+        "Area": "OOT Fairy Fountain Defense",
+        "Exit": "OOT Near Fairy Fountain Defense"
+      },
+      "RandomizableEntrance": true,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Near Fairy Fountain Defense => OOT Near Fairy Fountain Din": {
+      "Area": "OOT Near Fairy Fountain Defense",
+      "Exit": "OOT Near Fairy Fountain Din",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "OOT Fairy Fountain Defense => OOT Near Fairy Fountain Defense": {
+      "Area": "OOT Fairy Fountain Defense",
+      "Exit": "OOT Near Fairy Fountain Defense",
+      "EntrancePairID": {
+        "Area": "OOT Near Fairy Fountain Defense",
+        "Exit": "OOT Fairy Fountain Defense"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -29923,7 +30096,11 @@
     "OOT Kakariko => OOT Skulltula House": {
       "Area": "OOT Kakariko",
       "Exit": "OOT Skulltula House",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Skulltula House",
+        "Exit": "OOT Kakariko"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -29958,28 +30135,44 @@
     "OOT Kakariko => OOT Kakariko Potion Shop": {
       "Area": "OOT Kakariko",
       "Exit": "OOT Kakariko Potion Shop",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Kakariko Potion Shop",
+        "Exit": "OOT Kakariko"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "OOT Kakariko => OOT Windmill": {
       "Area": "OOT Kakariko",
       "Exit": "OOT Windmill",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Windmill",
+        "Exit": "OOT Kakariko"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "OOT Kakariko => OOT Kakariko Carpenter House": {
       "Area": "OOT Kakariko",
       "Exit": "OOT Kakariko Carpenter House",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Kakariko Carpenter House",
+        "Exit": "OOT Kakariko"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "OOT Kakariko => OOT Impa House Front": {
       "Area": "OOT Kakariko",
       "Exit": "OOT Impa House Front",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Impa House Front",
+        "Exit": "OOT Kakariko"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -30000,7 +30193,11 @@
     "OOT Kakariko Rooftop => OOT Impa House Back": {
       "Area": "OOT Kakariko Rooftop",
       "Exit": "OOT Impa House Back",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Impa House Back",
+        "Exit": "OOT Kakariko Rooftop"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -30028,14 +30225,22 @@
     "OOT Kakariko Back => OOT Kakariko Potion Shop Back": {
       "Area": "OOT Kakariko Back",
       "Exit": "OOT Kakariko Potion Shop Back",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Kakariko Potion Shop Back",
+        "Exit": "OOT Kakariko Back"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "OOT Kakariko Back => OOT Kakariko Granny Shop": {
       "Area": "OOT Kakariko Back",
       "Exit": "OOT Kakariko Granny Shop",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Kakariko Granny Shop",
+        "Exit": "OOT Kakariko Back"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -30056,7 +30261,11 @@
     "OOT Kakariko Potion Shop => OOT Kakariko": {
       "Area": "OOT Kakariko Potion Shop",
       "Exit": "OOT Kakariko",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Kakariko",
+        "Exit": "OOT Kakariko Potion Shop"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -30070,7 +30279,11 @@
     "OOT Kakariko Potion Shop Back => OOT Kakariko Back": {
       "Area": "OOT Kakariko Potion Shop Back",
       "Exit": "OOT Kakariko Back",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Kakariko Back",
+        "Exit": "OOT Kakariko Potion Shop Back"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -30084,7 +30297,11 @@
     "OOT Kakariko Granny Shop => OOT Kakariko Back": {
       "Area": "OOT Kakariko Granny Shop",
       "Exit": "OOT Kakariko Back",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Kakariko Back",
+        "Exit": "OOT Kakariko Granny Shop"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -30098,35 +30315,55 @@
     "OOT Impa House Front => OOT Kakariko": {
       "Area": "OOT Impa House Front",
       "Exit": "OOT Kakariko",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Kakariko",
+        "Exit": "OOT Impa House Front"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "OOT Impa House Back => OOT Kakariko": {
+    "OOT Impa House Back => OOT Kakariko Rooftop": {
       "Area": "OOT Impa House Back",
-      "Exit": "OOT Kakariko",
-      "RandomizableEntrance": false,
+      "Exit": "OOT Kakariko Rooftop",
+      "EntrancePairID": {
+        "Area": "OOT Kakariko Rooftop",
+        "Exit": "OOT Impa House Back"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "OOT Windmill => OOT Kakariko": {
       "Area": "OOT Windmill",
       "Exit": "OOT Kakariko",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Kakariko",
+        "Exit": "OOT Windmill"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "OOT Kakariko Carpenter House => OOT Kakariko": {
       "Area": "OOT Kakariko Carpenter House",
       "Exit": "OOT Kakariko",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Kakariko",
+        "Exit": "OOT Kakariko Carpenter House"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "OOT Skulltula House => OOT Kakariko": {
       "Area": "OOT Skulltula House",
       "Exit": "OOT Kakariko",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Kakariko",
+        "Exit": "OOT Skulltula House"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -30182,7 +30419,11 @@
     "OOT Graveyard => OOT Dampe House": {
       "Area": "OOT Graveyard",
       "Exit": "OOT Dampe House",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Dampe House",
+        "Exit": "OOT Graveyard"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -30242,7 +30483,11 @@
     "OOT Dampe House => OOT Graveyard": {
       "Area": "OOT Dampe House",
       "Exit": "OOT Graveyard",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Graveyard",
+        "Exit": "OOT Dampe House"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -30316,7 +30561,11 @@
     "OOT Death Mountain Summit => OOT Fairy Fountain Magic": {
       "Area": "OOT Death Mountain Summit",
       "Exit": "OOT Fairy Fountain Magic",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Fairy Fountain Magic",
+        "Exit": "OOT Death Mountain Summit"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -30337,7 +30586,11 @@
     "OOT Fairy Fountain Magic => OOT Death Mountain Summit": {
       "Area": "OOT Fairy Fountain Magic",
       "Exit": "OOT Death Mountain Summit",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Death Mountain Summit",
+        "Exit": "OOT Fairy Fountain Magic"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -30379,7 +30632,11 @@
     "OOT Goron City => OOT Goron Shop": {
       "Area": "OOT Goron City",
       "Exit": "OOT Goron Shop",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Goron Shop",
+        "Exit": "OOT Goron City"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -30393,7 +30650,11 @@
     "OOT Goron Shop => OOT Goron City": {
       "Area": "OOT Goron Shop",
       "Exit": "OOT Goron City",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Goron City",
+        "Exit": "OOT Goron Shop"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -30509,7 +30770,11 @@
     "OOT Zora Domain => OOT Zora Shop": {
       "Area": "OOT Zora Domain",
       "Exit": "OOT Zora Shop",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Zora Shop",
+        "Exit": "OOT Zora Domain"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -30537,7 +30802,11 @@
     "OOT Zora Shop => OOT Zora Domain": {
       "Area": "OOT Zora Shop",
       "Exit": "OOT Zora Domain",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Zora Domain",
+        "Exit": "OOT Zora Shop"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -30569,7 +30838,11 @@
     "OOT Lake Hylia => OOT Laboratory": {
       "Area": "OOT Lake Hylia",
       "Exit": "OOT Laboratory",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Laboratory",
+        "Exit": "OOT Lake Hylia"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -30587,7 +30860,11 @@
     "OOT Lake Hylia => OOT Fishing Pond": {
       "Area": "OOT Lake Hylia",
       "Exit": "OOT Fishing Pond",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Fishing Pond",
+        "Exit": "OOT Lake Hylia"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -30601,14 +30878,22 @@
     "OOT Laboratory => OOT Lake Hylia": {
       "Area": "OOT Laboratory",
       "Exit": "OOT Lake Hylia",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Lake Hylia",
+        "Exit": "OOT Laboratory"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "OOT Fishing Pond => OOT Lake Hylia": {
       "Area": "OOT Fishing Pond",
       "Exit": "OOT Lake Hylia",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Lake Hylia",
+        "Exit": "OOT Fishing Pond"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -30647,7 +30932,11 @@
     "OOT Zora Fountain => OOT Fairy Fountain Farore": {
       "Area": "OOT Zora Fountain",
       "Exit": "OOT Fairy Fountain Farore",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Fairy Fountain Farore",
+        "Exit": "OOT Zora Fountain"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -30672,14 +30961,22 @@
     "OOT Fairy Fountain Farore => OOT Zora Fountain": {
       "Area": "OOT Fairy Fountain Farore",
       "Exit": "OOT Zora Fountain",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Zora Fountain",
+        "Exit": "OOT Fairy Fountain Farore"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "OOT Temple of Time => OOT Temple of Time Entryway": {
       "Area": "OOT Temple of Time",
       "Exit": "OOT Temple of Time Entryway",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Temple of Time Entryway",
+        "Exit": "OOT Temple of Time"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -30749,7 +31046,11 @@
     "OOT Death Mountain Crater Bottom => OOT Fairy Fountain Double Magic": {
       "Area": "OOT Death Mountain Crater Bottom",
       "Exit": "OOT Fairy Fountain Double Magic",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Fairy Fountain Double Magic",
+        "Exit": "OOT Death Mountain Crater Bottom"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -30802,7 +31103,11 @@
     "OOT Fairy Fountain Double Magic => OOT Death Mountain Crater Bottom": {
       "Area": "OOT Fairy Fountain Double Magic",
       "Exit": "OOT Death Mountain Crater Bottom",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Death Mountain Crater Bottom",
+        "Exit": "OOT Fairy Fountain Double Magic"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -30869,7 +31174,11 @@
     "OOT Gerudo Valley After Bridge => OOT Gerudo Valley Tent": {
       "Area": "OOT Gerudo Valley After Bridge",
       "Exit": "OOT Gerudo Valley Tent",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Gerudo Valley Tent",
+        "Exit": "OOT Gerudo Valley After Bridge"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -30890,7 +31199,11 @@
     "OOT Gerudo Valley Tent => OOT Gerudo Valley After Bridge": {
       "Area": "OOT Gerudo Valley Tent",
       "Exit": "OOT Gerudo Valley After Bridge",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Gerudo Valley After Bridge",
+        "Exit": "OOT Gerudo Valley Tent"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -31238,7 +31551,11 @@
     "OOT Desert Colossus => OOT Fairy Fountain Nayru": {
       "Area": "OOT Desert Colossus",
       "Exit": "OOT Fairy Fountain Nayru",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Fairy Fountain Nayru",
+        "Exit": "OOT Desert Colossus"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -31259,7 +31576,11 @@
     "OOT Fairy Fountain Nayru => OOT Desert Colossus": {
       "Area": "OOT Fairy Fountain Nayru",
       "Exit": "OOT Desert Colossus",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "OOT Desert Colossus",
+        "Exit": "OOT Fairy Fountain Nayru"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -32747,10 +33068,10 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Great Bay Temple Entrance => MM Great Bay Temple Boss": {
+    "MM Great Bay Temple Entrance => MM Great Bay Temple Boss Access": {
       "Area": "MM Great Bay Temple Entrance",
-      "Exit": "MM Great Bay Temple Boss",
-      "RandomizableEntrance": true,
+      "Exit": "MM Great Bay Temple Boss Access",
+      "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -32922,8 +33243,15 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss": {
+    "MM Great Bay Temple Pre-Boss => MM Great Bay Temple Boss Access": {
       "Area": "MM Great Bay Temple Pre-Boss",
+      "Exit": "MM Great Bay Temple Boss Access",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Great Bay Temple Boss Access => MM Great Bay Temple Boss": {
+      "Area": "MM Great Bay Temple Boss Access",
       "Exit": "MM Great Bay Temple Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
@@ -33402,9 +33730,9 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Clock Town South => MM Clock Town Laundry Pool": {
+    "MM Clock Town South => MM Laundry Pool": {
       "Area": "MM Clock Town South",
-      "Exit": "MM Clock Town Laundry Pool",
+      "Exit": "MM Laundry Pool",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -33503,7 +33831,11 @@
     "MM Clock Town North => MM Clock Town Fairy Fountain": {
       "Area": "MM Clock Town North",
       "Exit": "MM Clock Town Fairy Fountain",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Clock Town Fairy Fountain",
+        "Exit": "MM Clock Town North"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -33545,42 +33877,66 @@
     "MM Clock Town West => MM Bomb Shop": {
       "Area": "MM Clock Town West",
       "Exit": "MM Bomb Shop",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Bomb Shop",
+        "Exit": "MM Clock Town West"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Clock Town West => MM Trading Post": {
       "Area": "MM Clock Town West",
       "Exit": "MM Trading Post",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Trading Post",
+        "Exit": "MM Clock Town West"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Clock Town West => MM Curiosity Shop": {
       "Area": "MM Clock Town West",
       "Exit": "MM Curiosity Shop",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Curiosity Shop",
+        "Exit": "MM Clock Town West"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Clock Town West => MM Post Office": {
       "Area": "MM Clock Town West",
       "Exit": "MM Post Office",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Post Office",
+        "Exit": "MM Clock Town West"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Clock Town West => MM Swordsman School": {
       "Area": "MM Clock Town West",
       "Exit": "MM Swordsman School",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Swordsman School",
+        "Exit": "MM Clock Town West"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Clock Town West => MM Lottery": {
       "Area": "MM Clock Town West",
       "Exit": "MM Lottery",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Lottery",
+        "Exit": "MM Clock Town West"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -33608,35 +33964,55 @@
     "MM Clock Town East => MM Mayor's Office": {
       "Area": "MM Clock Town East",
       "Exit": "MM Mayor's Office",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Mayor's Office",
+        "Exit": "MM Clock Town East"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Clock Town East => MM Town Archery": {
       "Area": "MM Clock Town East",
       "Exit": "MM Town Archery",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Town Archery",
+        "Exit": "MM Clock Town East"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Clock Town East => MM Chest Game": {
       "Area": "MM Clock Town East",
       "Exit": "MM Chest Game",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Chest Game",
+        "Exit": "MM Clock Town East"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Clock Town East => MM Honey & Darling Game": {
       "Area": "MM Clock Town East",
       "Exit": "MM Honey & Darling Game",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Honey & Darling Game",
+        "Exit": "MM Clock Town East"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Clock Town East => MM Stock Pot Inn": {
       "Area": "MM Clock Town East",
       "Exit": "MM Stock Pot Inn",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Stock Pot Inn",
+        "Exit": "MM Clock Town East"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -33650,35 +34026,51 @@
     "MM Clock Town East => MM Milk Bar": {
       "Area": "MM Clock Town East",
       "Exit": "MM Milk Bar",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Milk Bar",
+        "Exit": "MM Clock Town East"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Clock Town East => MM Astral Observatory": {
       "Area": "MM Clock Town East",
       "Exit": "MM Astral Observatory",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Astral Observatory",
+        "Exit": "MM Clock Town East"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Clock Town Laundry Pool => MM Clock Town South": {
-      "Area": "MM Clock Town Laundry Pool",
+    "MM Laundry Pool => MM Clock Town South": {
+      "Area": "MM Laundry Pool",
       "Exit": "MM Clock Town South",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Clock Town Laundry Pool => MM Curiosity Shop Back Room": {
-      "Area": "MM Clock Town Laundry Pool",
-      "Exit": "MM Curiosity Shop Back Room",
-      "RandomizableEntrance": false,
+    "MM Laundry Pool => MM Kafei Hideout": {
+      "Area": "MM Laundry Pool",
+      "Exit": "MM Kafei Hideout",
+      "EntrancePairID": {
+        "Area": "MM Kafei Hideout",
+        "Exit": "MM Laundry Pool"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Clock Town Fairy Fountain => MM Clock Town North": {
       "Area": "MM Clock Town Fairy Fountain",
       "Exit": "MM Clock Town North",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Clock Town North",
+        "Exit": "MM Clock Town Fairy Fountain"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -33692,98 +34084,154 @@
     "MM Bomb Shop => MM Clock Town West": {
       "Area": "MM Bomb Shop",
       "Exit": "MM Clock Town West",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Clock Town West",
+        "Exit": "MM Bomb Shop"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Trading Post => MM Clock Town West": {
       "Area": "MM Trading Post",
       "Exit": "MM Clock Town West",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Clock Town West",
+        "Exit": "MM Trading Post"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Curiosity Shop => MM Clock Town West": {
       "Area": "MM Curiosity Shop",
       "Exit": "MM Clock Town West",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Clock Town West",
+        "Exit": "MM Curiosity Shop"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Curiosity Shop Back Room => MM Clock Town Laundry Pool": {
-      "Area": "MM Curiosity Shop Back Room",
-      "Exit": "MM Clock Town Laundry Pool",
-      "RandomizableEntrance": false,
+    "MM Kafei Hideout => MM Laundry Pool": {
+      "Area": "MM Kafei Hideout",
+      "Exit": "MM Laundry Pool",
+      "EntrancePairID": {
+        "Area": "MM Laundry Pool",
+        "Exit": "MM Kafei Hideout"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Post Office => MM Clock Town West": {
       "Area": "MM Post Office",
       "Exit": "MM Clock Town West",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Clock Town West",
+        "Exit": "MM Post Office"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Swordsman School => MM Clock Town West": {
       "Area": "MM Swordsman School",
       "Exit": "MM Clock Town West",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Clock Town West",
+        "Exit": "MM Swordsman School"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Lottery => MM Clock Town West": {
       "Area": "MM Lottery",
       "Exit": "MM Clock Town West",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Clock Town West",
+        "Exit": "MM Lottery"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Mayor's Office => MM Clock Town East": {
       "Area": "MM Mayor's Office",
       "Exit": "MM Clock Town East",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Clock Town East",
+        "Exit": "MM Mayor's Office"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Milk Bar => MM Clock Town East": {
       "Area": "MM Milk Bar",
       "Exit": "MM Clock Town East",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Clock Town East",
+        "Exit": "MM Milk Bar"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Town Archery => MM Clock Town East": {
       "Area": "MM Town Archery",
       "Exit": "MM Clock Town East",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Clock Town East",
+        "Exit": "MM Town Archery"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Chest Game => MM Clock Town East": {
       "Area": "MM Chest Game",
       "Exit": "MM Clock Town East",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Clock Town East",
+        "Exit": "MM Chest Game"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Honey & Darling Game => MM Clock Town East": {
       "Area": "MM Honey & Darling Game",
       "Exit": "MM Clock Town East",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Clock Town East",
+        "Exit": "MM Honey & Darling Game"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Stock Pot Inn => MM Clock Town East": {
       "Area": "MM Stock Pot Inn",
       "Exit": "MM Clock Town East",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Clock Town East",
+        "Exit": "MM Stock Pot Inn"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Stock Pot Inn => MM Stock Pot Inn Roof": {
       "Area": "MM Stock Pot Inn",
       "Exit": "MM Stock Pot Inn Roof",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Stock Pot Inn Roof",
+        "Exit": "MM Stock Pot Inn"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -33797,7 +34245,11 @@
     "MM Stock Pot Inn Roof => MM Stock Pot Inn": {
       "Area": "MM Stock Pot Inn Roof",
       "Exit": "MM Stock Pot Inn",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Stock Pot Inn",
+        "Exit": "MM Stock Pot Inn Roof"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -33811,7 +34263,11 @@
     "MM Astral Observatory => MM Clock Town East": {
       "Area": "MM Astral Observatory",
       "Exit": "MM Clock Town East",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Clock Town East",
+        "Exit": "MM Astral Observatory"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -34127,7 +34583,11 @@
     "MM Swamp Front => MM Tourist Information": {
       "Area": "MM Swamp Front",
       "Exit": "MM Tourist Information",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Tourist Information",
+        "Exit": "MM Swamp Front"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -34141,7 +34601,11 @@
     "MM Swamp Front => MM Swamp Potion Shop": {
       "Area": "MM Swamp Front",
       "Exit": "MM Swamp Potion Shop",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Swamp Potion Shop",
+        "Exit": "MM Swamp Front"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -34240,6 +34704,24 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
+    "MM Tourist Information => MM Swamp Front": {
+      "Area": "MM Tourist Information",
+      "Exit": "MM Swamp Front",
+      "EntrancePairID": {
+        "Area": "MM Swamp Front",
+        "Exit": "MM Tourist Information"
+      },
+      "RandomizableEntrance": true,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Tourist Information => MM Swamp Back": {
+      "Area": "MM Tourist Information",
+      "Exit": "MM Swamp Back",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
     "MM Woods of Mystery => MM Swamp Front": {
       "Area": "MM Woods of Mystery",
       "Exit": "MM Swamp Front",
@@ -34264,7 +34746,11 @@
     "MM Swamp Potion Shop => MM Swamp Front": {
       "Area": "MM Swamp Potion Shop",
       "Exit": "MM Swamp Front",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Swamp Front",
+        "Exit": "MM Swamp Potion Shop"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -34306,7 +34792,11 @@
     "MM Deku Palace Main => MM Deku Palace Throne": {
       "Area": "MM Deku Palace Main",
       "Exit": "MM Deku Palace Throne",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Deku Palace Throne",
+        "Exit": "MM Deku Palace Main"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -34348,7 +34838,11 @@
     "MM Deku Palace Throne => MM Deku Palace Main": {
       "Area": "MM Deku Palace Throne",
       "Exit": "MM Deku Palace Main",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Deku Palace Main",
+        "Exit": "MM Deku Palace Throne"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -34369,14 +34863,22 @@
     "MM Deku Palace Near Cage => MM Deku Palace Cage": {
       "Area": "MM Deku Palace Near Cage",
       "Exit": "MM Deku Palace Cage",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Deku Palace Cage",
+        "Exit": "MM Deku Palace Near Cage"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Deku Palace Cage => MM Deku Palace Near Cage": {
       "Area": "MM Deku Palace Cage",
       "Exit": "MM Deku Palace Near Cage",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Deku Palace Near Cage",
+        "Exit": "MM Deku Palace Cage"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -34496,9 +34998,9 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Woodfall Shrine => MM Woodfall Near Great Fairy Fountain": {
+    "MM Woodfall Shrine => MM Woodfall Near Fairy Fountain": {
       "Area": "MM Woodfall Shrine",
-      "Exit": "MM Woodfall Near Great Fairy Fountain",
+      "Exit": "MM Woodfall Near Fairy Fountain",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -34517,31 +35019,39 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Woodfall Near Great Fairy Fountain => MM Woodfall": {
-      "Area": "MM Woodfall Near Great Fairy Fountain",
+    "MM Woodfall Near Fairy Fountain => MM Woodfall": {
+      "Area": "MM Woodfall Near Fairy Fountain",
       "Exit": "MM Woodfall",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Woodfall Near Great Fairy Fountain => MM Woodfall Shrine": {
-      "Area": "MM Woodfall Near Great Fairy Fountain",
+    "MM Woodfall Near Fairy Fountain => MM Woodfall Shrine": {
+      "Area": "MM Woodfall Near Fairy Fountain",
       "Exit": "MM Woodfall Shrine",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Woodfall Near Great Fairy Fountain => MM Woodfall Great Fairy Fountain": {
-      "Area": "MM Woodfall Near Great Fairy Fountain",
-      "Exit": "MM Woodfall Great Fairy Fountain",
-      "RandomizableEntrance": false,
+    "MM Woodfall Near Fairy Fountain => MM Woodfall Fairy Fountain": {
+      "Area": "MM Woodfall Near Fairy Fountain",
+      "Exit": "MM Woodfall Fairy Fountain",
+      "EntrancePairID": {
+        "Area": "MM Woodfall Fairy Fountain",
+        "Exit": "MM Woodfall Near Fairy Fountain"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Woodfall Great Fairy Fountain => MM Woodfall Near Great Fairy Fountain": {
-      "Area": "MM Woodfall Great Fairy Fountain",
-      "Exit": "MM Woodfall Near Great Fairy Fountain",
-      "RandomizableEntrance": false,
+    "MM Woodfall Fairy Fountain => MM Woodfall Near Fairy Fountain": {
+      "Area": "MM Woodfall Fairy Fountain",
+      "Exit": "MM Woodfall Near Fairy Fountain",
+      "EntrancePairID": {
+        "Area": "MM Woodfall Near Fairy Fountain",
+        "Exit": "MM Woodfall Fairy Fountain"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -34555,14 +35065,22 @@
     "MM Near Deku Shrine => MM Deku Shrine": {
       "Area": "MM Near Deku Shrine",
       "Exit": "MM Deku Shrine",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Deku Shrine",
+        "Exit": "MM Near Deku Shrine"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Deku Shrine => MM Near Deku Shrine": {
       "Area": "MM Deku Shrine",
       "Exit": "MM Near Deku Shrine",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Near Deku Shrine",
+        "Exit": "MM Deku Shrine"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -34647,7 +35165,11 @@
     "MM Mountain Village => MM Blacksmith": {
       "Area": "MM Mountain Village",
       "Exit": "MM Blacksmith",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Blacksmith",
+        "Exit": "MM Mountain Village"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -34696,7 +35218,11 @@
     "MM Blacksmith => MM Mountain Village": {
       "Area": "MM Blacksmith",
       "Exit": "MM Mountain Village",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Mountain Village",
+        "Exit": "MM Blacksmith"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -34843,7 +35369,11 @@
     "MM Near Goron Graveyard => MM Goron Graveyard": {
       "Area": "MM Near Goron Graveyard",
       "Exit": "MM Goron Graveyard",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Goron Graveyard",
+        "Exit": "MM Near Goron Graveyard"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -34871,14 +35401,22 @@
     "MM Goron Shrine => MM Goron Shop": {
       "Area": "MM Goron Shrine",
       "Exit": "MM Goron Shop",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Goron Shop",
+        "Exit": "MM Goron Shrine"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Goron Shop => MM Goron Shrine": {
       "Area": "MM Goron Shop",
       "Exit": "MM Goron Shrine",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Goron Shrine",
+        "Exit": "MM Goron Shop"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -34952,9 +35490,9 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Snowhead Entrance => MM Snowhead Near Great Fairy Fountain": {
+    "MM Snowhead Entrance => MM Snowhead Near Fairy Fountain": {
       "Area": "MM Snowhead Entrance",
-      "Exit": "MM Snowhead Near Great Fairy Fountain",
+      "Exit": "MM Snowhead Near Fairy Fountain",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
@@ -34984,38 +35522,46 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Snowhead => MM Snowhead Near Great Fairy Fountain": {
+    "MM Snowhead => MM Snowhead Near Fairy Fountain": {
       "Area": "MM Snowhead",
-      "Exit": "MM Snowhead Near Great Fairy Fountain",
+      "Exit": "MM Snowhead Near Fairy Fountain",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Snowhead Near Great Fairy Fountain => MM Snowhead Entrance": {
-      "Area": "MM Snowhead Near Great Fairy Fountain",
+    "MM Snowhead Near Fairy Fountain => MM Snowhead Entrance": {
+      "Area": "MM Snowhead Near Fairy Fountain",
       "Exit": "MM Snowhead Entrance",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Snowhead Near Great Fairy Fountain => MM Snowhead": {
-      "Area": "MM Snowhead Near Great Fairy Fountain",
+    "MM Snowhead Near Fairy Fountain => MM Snowhead": {
+      "Area": "MM Snowhead Near Fairy Fountain",
       "Exit": "MM Snowhead",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Snowhead Near Great Fairy Fountain => MM Snowhead Great Fairy Fountain": {
-      "Area": "MM Snowhead Near Great Fairy Fountain",
-      "Exit": "MM Snowhead Great Fairy Fountain",
-      "RandomizableEntrance": false,
+    "MM Snowhead Near Fairy Fountain => MM Snowhead Fairy Fountain": {
+      "Area": "MM Snowhead Near Fairy Fountain",
+      "Exit": "MM Snowhead Fairy Fountain",
+      "EntrancePairID": {
+        "Area": "MM Snowhead Fairy Fountain",
+        "Exit": "MM Snowhead Near Fairy Fountain"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Snowhead Great Fairy Fountain => MM Snowhead Near Great Fairy Fountain": {
-      "Area": "MM Snowhead Great Fairy Fountain",
-      "Exit": "MM Snowhead Near Great Fairy Fountain",
-      "RandomizableEntrance": false,
+    "MM Snowhead Fairy Fountain => MM Snowhead Near Fairy Fountain": {
+      "Area": "MM Snowhead Fairy Fountain",
+      "Exit": "MM Snowhead Near Fairy Fountain",
+      "EntrancePairID": {
+        "Area": "MM Snowhead Near Fairy Fountain",
+        "Exit": "MM Snowhead Fairy Fountain"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -35114,56 +35660,88 @@
     "MM Romani Ranch => MM Cucco Shack": {
       "Area": "MM Romani Ranch",
       "Exit": "MM Cucco Shack",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Cucco Shack",
+        "Exit": "MM Romani Ranch"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Romani Ranch => MM Doggy Racetrack": {
       "Area": "MM Romani Ranch",
       "Exit": "MM Doggy Racetrack",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Doggy Racetrack",
+        "Exit": "MM Romani Ranch"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Romani Ranch => MM Stables": {
       "Area": "MM Romani Ranch",
       "Exit": "MM Stables",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Stables",
+        "Exit": "MM Romani Ranch"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Romani Ranch => MM Ranch House": {
       "Area": "MM Romani Ranch",
       "Exit": "MM Ranch House",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Ranch House",
+        "Exit": "MM Romani Ranch"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Cucco Shack => MM Romani Ranch": {
       "Area": "MM Cucco Shack",
       "Exit": "MM Romani Ranch",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Romani Ranch",
+        "Exit": "MM Cucco Shack"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Doggy Racetrack => MM Romani Ranch": {
       "Area": "MM Doggy Racetrack",
       "Exit": "MM Romani Ranch",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Romani Ranch",
+        "Exit": "MM Doggy Racetrack"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Stables => MM Romani Ranch": {
       "Area": "MM Stables",
       "Exit": "MM Romani Ranch",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Romani Ranch",
+        "Exit": "MM Stables"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Ranch House => MM Romani Ranch": {
       "Area": "MM Ranch House",
       "Exit": "MM Romani Ranch",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Romani Ranch",
+        "Exit": "MM Ranch House"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -35188,7 +35766,11 @@
     "MM Great Bay Coast => MM Fisher's Hut": {
       "Area": "MM Great Bay Coast",
       "Exit": "MM Fisher's Hut",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Fisher's Hut",
+        "Exit": "MM Great Bay Coast"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -35220,7 +35802,11 @@
     "MM Great Bay Coast => MM Laboratory": {
       "Area": "MM Great Bay Coast",
       "Exit": "MM Laboratory",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Laboratory",
+        "Exit": "MM Great Bay Coast"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -35319,7 +35905,11 @@
     "MM Fisher's Hut => MM Great Bay Coast": {
       "Area": "MM Fisher's Hut",
       "Exit": "MM Great Bay Coast",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Great Bay Coast",
+        "Exit": "MM Fisher's Hut"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -35347,7 +35937,11 @@
     "MM Laboratory => MM Great Bay Coast": {
       "Area": "MM Laboratory",
       "Exit": "MM Great Bay Coast",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Great Bay Coast",
+        "Exit": "MM Laboratory"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -35410,14 +36004,22 @@
     "MM Great Bay Near Fairy Fountain => MM Great Bay Fairy Fountain": {
       "Area": "MM Great Bay Near Fairy Fountain",
       "Exit": "MM Great Bay Fairy Fountain",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Great Bay Fairy Fountain",
+        "Exit": "MM Great Bay Near Fairy Fountain"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Great Bay Fairy Fountain => MM Great Bay Near Fairy Fountain": {
       "Area": "MM Great Bay Fairy Fountain",
       "Exit": "MM Great Bay Near Fairy Fountain",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Great Bay Near Fairy Fountain",
+        "Exit": "MM Great Bay Fairy Fountain"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -35487,70 +36089,110 @@
     "MM Zora Hall => MM Zora Shop": {
       "Area": "MM Zora Hall",
       "Exit": "MM Zora Shop",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Zora Shop",
+        "Exit": "MM Zora Hall"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Zora Hall => MM Drummer Room": {
+    "MM Zora Hall => MM Tijo's Room": {
       "Area": "MM Zora Hall",
-      "Exit": "MM Drummer Room",
-      "RandomizableEntrance": false,
+      "Exit": "MM Tijo's Room",
+      "EntrancePairID": {
+        "Area": "MM Tijo's Room",
+        "Exit": "MM Zora Hall"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Zora Hall => MM Japas' Room": {
       "Area": "MM Zora Hall",
       "Exit": "MM Japas' Room",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Japas' Room",
+        "Exit": "MM Zora Hall"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Zora Hall => MM Evan's Room": {
       "Area": "MM Zora Hall",
       "Exit": "MM Evan's Room",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Evan's Room",
+        "Exit": "MM Zora Hall"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Zora Hall => MM Lulu's Room": {
       "Area": "MM Zora Hall",
       "Exit": "MM Lulu's Room",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Lulu's Room",
+        "Exit": "MM Zora Hall"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Zora Shop => MM Zora Hall": {
       "Area": "MM Zora Shop",
       "Exit": "MM Zora Hall",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Zora Hall",
+        "Exit": "MM Zora Shop"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Drummer Room => MM Zora Hall": {
-      "Area": "MM Drummer Room",
+    "MM Tijo's Room => MM Zora Hall": {
+      "Area": "MM Tijo's Room",
       "Exit": "MM Zora Hall",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Zora Hall",
+        "Exit": "MM Tijo's Room"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Japas' Room => MM Zora Hall": {
       "Area": "MM Japas' Room",
       "Exit": "MM Zora Hall",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Zora Hall",
+        "Exit": "MM Japas' Room"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Evan's Room => MM Zora Hall": {
       "Area": "MM Evan's Room",
       "Exit": "MM Zora Hall",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Zora Hall",
+        "Exit": "MM Evan's Room"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Lulu's Room => MM Zora Hall": {
       "Area": "MM Lulu's Room",
       "Exit": "MM Zora Hall",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Zora Hall",
+        "Exit": "MM Lulu's Room"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -35790,7 +36432,11 @@
     "MM Ikana Valley => MM Sakon Hideout": {
       "Area": "MM Ikana Valley",
       "Exit": "MM Sakon Hideout",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Sakon Hideout",
+        "Exit": "MM Ikana Valley"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -35818,7 +36464,11 @@
     "MM Sakon Hideout => MM Ikana Valley": {
       "Area": "MM Sakon Hideout",
       "Exit": "MM Ikana Valley",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Ikana Valley",
+        "Exit": "MM Sakon Hideout"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -35832,28 +36482,44 @@
     "MM Ikana Canyon => MM Ikana Fairy Fountain": {
       "Area": "MM Ikana Canyon",
       "Exit": "MM Ikana Fairy Fountain",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Ikana Fairy Fountain",
+        "Exit": "MM Ikana Canyon"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Ikana Canyon => MM Ikana Spring Water Cave": {
       "Area": "MM Ikana Canyon",
       "Exit": "MM Ikana Spring Water Cave",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Ikana Spring Water Cave",
+        "Exit": "MM Ikana Canyon"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Ikana Canyon => MM Music Box House": {
       "Area": "MM Ikana Canyon",
       "Exit": "MM Music Box House",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Music Box House",
+        "Exit": "MM Ikana Canyon"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Ikana Canyon => MM Ghost Hut": {
       "Area": "MM Ikana Canyon",
       "Exit": "MM Ghost Hut",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Ghost Hut",
+        "Exit": "MM Ikana Canyon"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -35899,28 +36565,44 @@
     "MM Ikana Fairy Fountain => MM Ikana Canyon": {
       "Area": "MM Ikana Fairy Fountain",
       "Exit": "MM Ikana Canyon",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Ikana Canyon",
+        "Exit": "MM Ikana Fairy Fountain"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Ikana Spring Water Cave => MM Ikana Canyon": {
       "Area": "MM Ikana Spring Water Cave",
       "Exit": "MM Ikana Canyon",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Ikana Canyon",
+        "Exit": "MM Ikana Spring Water Cave"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Music Box House => MM Ikana Canyon": {
       "Area": "MM Music Box House",
       "Exit": "MM Ikana Canyon",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Ikana Canyon",
+        "Exit": "MM Music Box House"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
     "MM Ghost Hut => MM Ikana Canyon": {
       "Area": "MM Ghost Hut",
       "Exit": "MM Ikana Canyon",
-      "RandomizableEntrance": false,
+      "EntrancePairID": {
+        "Area": "MM Ikana Canyon",
+        "Exit": "MM Ghost Hut"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -36498,10 +37180,10 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Snowhead Temple Entrance => MM Snowhead Temple Boss": {
+    "MM Snowhead Temple Entrance => MM Snowhead Temple Boss Access": {
       "Area": "MM Snowhead Temple Entrance",
-      "Exit": "MM Snowhead Temple Boss",
-      "RandomizableEntrance": true,
+      "Exit": "MM Snowhead Temple Boss Access",
+      "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -36939,10 +37621,10 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss": {
+    "MM Snowhead Temple Center Level 4 => MM Snowhead Temple Boss Access": {
       "Area": "MM Snowhead Temple Center Level 4",
-      "Exit": "MM Snowhead Temple Boss",
-      "RandomizableEntrance": true,
+      "Exit": "MM Snowhead Temple Boss Access",
+      "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -36957,6 +37639,13 @@
       "Area": "MM Snowhead Temple Center Level 4",
       "Exit": "MM Snowhead Temple Dinolfos Room",
       "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Snowhead Temple Boss Access => MM Snowhead Temple Boss": {
+      "Area": "MM Snowhead Temple Boss Access",
+      "Exit": "MM Snowhead Temple Boss",
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -37206,10 +37895,10 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Stone Tower Temple Inverted Entrance => MM Stone Tower Temple Boss": {
+    "MM Stone Tower Temple Inverted Entrance => MM Stone Tower Temple Boss Access": {
       "Area": "MM Stone Tower Temple Inverted Entrance",
-      "Exit": "MM Stone Tower Temple Boss",
-      "RandomizableEntrance": true,
+      "Exit": "MM Stone Tower Temple Boss Access",
+      "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -37395,8 +38084,15 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Stone Tower Temple Inverted Pre-Boss => MM Stone Tower Temple Boss": {
+    "MM Stone Tower Temple Inverted Pre-Boss => MM Stone Tower Temple Boss Access": {
       "Area": "MM Stone Tower Temple Inverted Pre-Boss",
+      "Exit": "MM Stone Tower Temple Boss Access",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Stone Tower Temple Boss Access => MM Stone Tower Temple Boss": {
+      "Area": "MM Stone Tower Temple Boss Access",
       "Exit": "MM Stone Tower Temple Boss",
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
@@ -37473,10 +38169,10 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Woodfall Temple Entrance => MM Woodfall Temple Boss": {
+    "MM Woodfall Temple Entrance => MM Woodfall Temple Boss Access": {
       "Area": "MM Woodfall Temple Entrance",
-      "Exit": "MM Woodfall Temple Boss",
-      "RandomizableEntrance": true,
+      "Exit": "MM Woodfall Temple Boss Access",
+      "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -37662,10 +38358,10 @@
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
-    "MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss": {
+    "MM Woodfall Temple Pre-Boss => MM Woodfall Temple Boss Access": {
       "Area": "MM Woodfall Temple Pre-Boss",
-      "Exit": "MM Woodfall Temple Boss",
-      "RandomizableEntrance": true,
+      "Exit": "MM Woodfall Temple Boss Access",
+      "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -37680,6 +38376,13 @@
       "Area": "MM Woodfall Temple Princess Jail",
       "Exit": "MM Woodfall",
       "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false
+    },
+    "MM Woodfall Temple Boss Access => MM Woodfall Temple Boss": {
+      "Area": "MM Woodfall Temple Boss Access",
+      "Exit": "MM Woodfall Temple Boss",
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false
     },
@@ -38599,6 +39302,14 @@
     },
     "TRICK_OOT_DEAD_HAND_STICKS": {
       "Name": "Child Dead Hand without Kokiri Sword",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "TRICK_OOT_BFA_MUDWALLS": {
+      "Name": "Break mud walls with blue fire arrows",
       "SpoilerData": {
         "SpoilerLogNames": [],
         "GossipHintNames": [],
@@ -40453,6 +41164,28 @@
         },
         "removed": {
           "Name": "Removed",
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "blueFireArrows": {
+      "DisplayName": "Blue Fire Arrows",
+      "CurrentValue": "false",
+      "Values": {
+        "true": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {
+            "OOT_ARROW_ICE": "Blue Fire Arrows"
+          },
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        },
+        "false": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
