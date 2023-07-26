@@ -928,6 +928,10 @@ namespace Windows_Form_Frontend
 
         public static void OOTMMCreateData()
         {
+            MMR_Tracker_V3.OtherGames.OOTMMV2.GenData.ReadData();
+        }
+        public static void OOTMMCreateDataOld()
+        {
             MMR_Tracker_V3.OtherGames.OOTMMRCOMBO.ReadAndParseData.CreateFiles(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary);
             WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(Logic), JsonConvert.SerializeObject(dictionary));
             MainInterface.InstanceContainer.Instance.StaticOptions.ShowMacroExitsPathfinder = true;

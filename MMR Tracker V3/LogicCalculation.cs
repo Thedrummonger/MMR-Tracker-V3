@@ -374,15 +374,15 @@ namespace MMR_Tracker_V3
             OutConditionals = Conditionals;
         }
 
-        public static bool IsLogicFunction(string i, out string Func, out string Param)
+        public static bool IsLogicFunction(string i, out string Func, out string Param, Tuple<char, char> functionCasing = null)
         {
+            functionCasing ??= new('{', '}');
             Func = null;
             Param = null;   
             if (i.IsLiteralID(out _)) { return false; }
-            bool squirFunc = i.EndsWith('}') && i.Contains('{');
+            bool squirFunc = i.EndsWith(functionCasing.Item2) && i.Contains(functionCasing.Item1);
 
             if (!squirFunc) { return false; }
-            Tuple<char, char> functionCasing = new('{', '}');
 
             int funcEnd = i.IndexOf(functionCasing.Item1);
             int paramStart = i.IndexOf(functionCasing.Item1) + 1;
