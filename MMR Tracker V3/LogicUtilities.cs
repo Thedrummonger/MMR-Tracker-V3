@@ -79,6 +79,17 @@ namespace MMR_Tracker_V3
                 TempConditionals = NewConditionals.ToList();
                 TempConditionals.RemoveAll(x => !x.Any());
             }
+
+            foreach (var i in TempConditionals)
+            {
+                if (i.Any(x => bool.TryParse(x, out bool TestResult) && TestResult == true) && !i.All(x => bool.TryParse(x, out bool TestResult) && TestResult == true))
+                {
+                    i.RemoveAll(x => bool.TryParse(x, out bool Result) && Result == true);
+                }
+            }
+
+            TempConditionals.RemoveAll(x => !x.Any());
+
             entry.ConditionalItems = TempConditionals;
 
             bool IsRedundant(List<string> FocusedList, List<List<string>> CheckingList)

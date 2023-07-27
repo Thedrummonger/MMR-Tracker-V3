@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static MMR_Tracker_V3.OtherGames.OOTMMV2.datamodel;
+using static MMR_Tracker_V3.OtherGames.OOTMMV2.OOTMMUtil;
+using static MMR_Tracker_V3.OtherGames.OOTMMV2.FunctionParsing;
 
 namespace MMR_Tracker_V3.OtherGames.OOTMMV2
 {
@@ -41,9 +43,15 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
             string MMPoolFile = Path.Combine(MMData, "pool.csv");
             string MMHintFile = Path.Combine(MMData, "hints.csv");
 
+            //Shared Data Files
+            string SHAREDMacroFile = Path.Combine(OOTMMCorePath, "data", "macros.yml");
+
             LogicDictionaryData.LogicDictionary logicDictionaryData = new LogicDictionaryData.LogicDictionary() { GameCode = "OOTMM", RootArea = "OOT SPAWN", LogicVersion = 2 };
 
-            MMRData.LogicFile LogicFile = ReadAndParseLogicFile(OOTWorld, OOTMQWorld, MMWorld, OOTMacroFile, MMMacroFile);
+            MMRData.LogicFile LogicFile = ReadAndParseLogicFile(OOTWorld, OOTMQWorld, MMWorld, OOTMacroFile, MMMacroFile, SHAREDMacroFile);
+
+            CreateStaticCountFunctions(LogicFile);
+            ParseLogicFunctions(LogicFile);
 
             File.WriteAllText(Path.Combine(OOTMMTestingFolder,"LogicFile.json"), JsonConvert.SerializeObject(LogicFile, Formatting.Indented));
             Debug.WriteLine("Finished");
@@ -64,7 +72,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
             Debug.WriteLine(JsonConvert.SerializeObject(Functions, Formatting.Indented));
         }
 
-        private static MMRData.LogicFile ReadAndParseLogicFile(string OOTWorld, string OOTMQWorld, string MMWorld, string OOTMacroFile, string MMMacroFile)
+        private static MMRData.LogicFile ReadAndParseLogicFile(string OOTWorld, string OOTMQWorld, string MMWorld, string OOTMacroFile, string MMMacroFile, string SHAREDMacroFile)
         {
             MMRData.LogicFile LogicFile = new MMRData.LogicFile() { GameCode = "OOTMM", Version = 2 };
             LogicFile.Logic = new List<MMRData.JsonFormatLogicItem>();
@@ -77,7 +85,30 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
             AddFileData(OOTMQWorldFiles, "OOT", true);
             AddFileData(MMWorldFiles, "MM");
 
+            AddMacroFile(OOTMacroFile, "OOT");
+            AddMacroFile(MMMacroFile, "MM");
+            AddMacroFile(SHAREDMacroFile, "OOT");
+            AddMacroFile(SHAREDMacroFile, "MM");
+
             return LogicFile;
+
+            void AddMacroFile(string MacroFile, string GameCode)
+            {
+                var FileOBJ = JsonConvert.DeserializeObject<Dictionary<string, string>>(Utility.ConvertYamlStringToJsonString(File.ReadAllText(MacroFile)));
+                foreach(var item in FileOBJ)
+                {
+                    if (LogicEditing.IsLogicFunction(item.Key, out string Func, out _, new('(', ')')))
+                    {
+                        Debug.WriteLine($"Skipping Function Macro {item.Key}");
+                        continue;
+                    }
+                    string ID = $"{GameCode}_{item.Key}";
+                    List<List<string>> ConditionalLogic = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, item.Value);
+                    MMRData.JsonFormatLogicItem NewLogic = new() { Id = ID, ConditionalItems = ConditionalLogic };
+                    LogicUtilities.RemoveRedundantConditionals(NewLogic);
+                    LogicFile.Logic.Add(NewLogic);
+                }
+            }
 
             void AddFileData(string[] files, string GameCode, bool MQ = false)
             {
@@ -88,23 +119,21 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                     {
                         foreach (var Location in Area.Value.locations)
                         {
-                            string ID = $"{GameCode} Location {Location.Key}";
+                            string ID = $"{GameCode} location {Location.Key}";
                             List<List<string>> ConditionalLogic = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, Location.Value);
                             AddLogicEntry(LogicFile, ID, ConditionalLogic, WorldFile, Area);
 
                         }
                         foreach (var Location in Area.Value.exits)
                         {
-                            string ID = $"{GameCode} Exit {Area.Key} => {Location.Key}";
+                            string ID = $"{GameCode} exit {Area.Key} => {Location.Key}";
                             List<List<string>> ConditionalLogic = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, Location.Value);
-                            foreach (var i in ConditionalLogic) { i.Add($"{GameCode} Area {Area.Key}"); }
                             AddLogicEntry(LogicFile, ID, ConditionalLogic, WorldFile, Area);
                         }
                         foreach (var Location in Area.Value.events)
                         {
-                            string ID = $"{GameCode} Event {Location.Key}";
+                            string ID = $"{GameCode} event {Location.Key}";
                             List<List<string>> ConditionalLogic = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, Location.Value);
-                            foreach (var i in ConditionalLogic) { i.Add($"{GameCode} Area {Area.Key}"); }
                             AddLogicEntry(LogicFile, ID, ConditionalLogic, WorldFile, Area);
                         }
                     }
@@ -119,23 +148,19 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                 {
                     var Duplicates = LogicFile.Logic.FirstOrDefault(x => x.Id == ID);
 
-                    foreach (var i in ConditionalLogic) { i.Add($"{GameCode} Area {Area.Key}"); }
+                    foreach (var i in ConditionalLogic) { i.Add($"{GameCode} area {Area.Key}"); }
                     if (HasMQEquivilent(WorldFile)) { foreach (var i in ConditionalLogic) { i.Add($"setting({Area.Value.dungeon}_layout, {(MQ ? "MQ" : "Vanilla")})"); } }
 
                     if (Duplicates is null) 
                     {
                         MMRData.JsonFormatLogicItem NewLogic = new() { Id = ID, ConditionalItems = ConditionalLogic };
                         LogicUtilities.RemoveRedundantConditionals(NewLogic);
-                        LogicUtilities.MakeCommonConditionalsRequirements(NewLogic);
-                        LogicUtilities.MoveRequirementsToConditionals(NewLogic);
                         LogicFile.Logic.Add(NewLogic); 
                     }
                     else 
                     { 
                         Duplicates.ConditionalItems.AddRange(ConditionalLogic);
                         LogicUtilities.RemoveRedundantConditionals(Duplicates);
-                        LogicUtilities.MakeCommonConditionalsRequirements(Duplicates);
-                        LogicUtilities.MoveRequirementsToConditionals(Duplicates);
                     }
                 }
             }

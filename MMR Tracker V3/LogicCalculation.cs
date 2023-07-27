@@ -386,7 +386,7 @@ namespace MMR_Tracker_V3
 
             int funcEnd = i.IndexOf(functionCasing.Item1);
             int paramStart = i.IndexOf(functionCasing.Item1) + 1;
-            int paramEnd = i.IndexOf(functionCasing.Item2);
+            int paramEnd = i.LastIndexOf(functionCasing.Item2);
             Func = i[..funcEnd].Trim().ToLower();
             Param = i[paramStart..paramEnd].Trim();
             return true;
