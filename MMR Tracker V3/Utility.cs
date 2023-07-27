@@ -295,6 +295,31 @@ namespace MMR_Tracker_V3
             var stringResult = serializer.Serialize(OBJ);
             return stringResult;
         }
+        public static string ConvertCsvFileToJsonObject(string[] lines)
+        {
+            var csv = new List<string[]>();
+
+            var properties = lines[0].Split(',');
+
+            foreach (string line in lines)
+            {
+                var LineData = line.Split(',');
+                csv.Add(LineData);
+            }
+
+            var listObjResult = new List<Dictionary<string, string>>();
+
+            for (int i = 1; i < lines.Length; i++)
+            {
+                var objResult = new Dictionary<string, string>();
+                for (int j = 0; j < properties.Length; j++)
+                    objResult.Add(properties[j].Trim(), csv[i][j].Trim());
+
+                listObjResult.Add(objResult);
+            }
+
+            return JsonConvert.SerializeObject(listObjResult, Testing._NewtonsoftJsonSerializerOptions);
+        }
 
     }
     public static class GenericCopier<T>

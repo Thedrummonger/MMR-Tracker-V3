@@ -15,48 +15,6 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
     internal class FunctionParsing
     {
         public static LogicStringParser OOTMMLogicStringParser = new LogicStringParser();
-        public static void CreateStaticCountFunctions(MMRData.LogicFile LogicFile)
-        {
-            List<MMRData.JsonFormatLogicItem> NewLogic = new List<MMRData.JsonFormatLogicItem> ();
-            foreach (var LogicItem in LogicFile.Logic)
-            {
-                string Gamecode = GetGamecodeFromID(LogicItem);
-                foreach(var Conditional in LogicItem.ConditionalItems.SelectMany(x => x))
-                {
-                    TestLogicItem(NewLogic, Gamecode, Conditional);
-                }
-            }
-            LogicFile.Logic.AddRange(NewLogic);
-
-            void TestLogicItem(List<MMRData.JsonFormatLogicItem> NewLogic, string Gamecode, string Conditional)
-            {
-                if (LogicEditing.IsLogicFunction(Conditional, out string Func, out string Param, new('(', ')')))
-                {
-                    string ID;
-                    string LogicLine;
-                    switch (Func)
-                    {
-                        case "has_small_keys_fire":
-                            ID = $"{Gamecode}_{Func}_{Param}";
-                            LogicLine =$"setting(smallKeyShuffleOot, removed) || cond(setting(smallKeyShuffleOot, anywhere), has(SMALL_KEY_FIRE, {int.Parse(Param) + 1}), has(SMALL_KEY_FIRE, {Param}))";
-                            AddExpandedLine(NewLogic, ID, Param, Gamecode, LogicLine);
-                            break;
-                        case "small_keys":
-                            ID = $"{Gamecode}_has_{Func}_{Param.Replace(", ", "_")}";
-                            string SmallKeySetting = Gamecode == "MM" ? "smallKeyShuffleMm" : "smallKeyShuffleOot";
-                            LogicLine =$"setting({SmallKeySetting}, removed) || has({Param})";
-                            AddExpandedLine(NewLogic, ID, Param.Replace(", ", "_"), Gamecode, LogicLine);
-                            break;
-                        case "boss_key":
-                            ID = $"{Gamecode}_has_{Func}_{Param}";
-                            string BossKeySetting = Gamecode == "MM" ? "smallKeyShuffleMm" : "smallKeyShuffleOot";
-                            LogicLine =$"setting({BossKeySetting}, removed) || has({Param})";
-                            AddExpandedLine(NewLogic, ID, Param.Replace(", ", "_"), Gamecode, LogicLine);
-                            break;
-                    }
-                }
-            }
-        }
 
         public static void AddExpandedLine(List<MMRData.JsonFormatLogicItem> NewLogic, string ID, string Param, string Gamecode, string LogicLine)
         {
@@ -123,14 +81,17 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                     switch (Func)
                     {
                         case "trick":
-                        case "event":
                         case "glitch":
-                            ParsedConditional = $"{Gamecode}_{Func}_{Param}";
+                            ParsedConditional = $"trick{{TRICK_{Gamecode}_{Param}}}";
+                            FunctionParsed = true;
+                            break;
+                        case "event":
+                            ParsedConditional = $"{Gamecode}_EVENT_{Param}";
                             FunctionParsed = true;
                             break;
                         case "soul":
                             string SoulSetting = OriginalGamecode == "MM" ? "enemySoulsMm" : "enemySoulsOot";
-                            ParsedConditional = $"({Gamecode}_{Param} || setting{{{SoulSetting}, false}})";
+                            ParsedConditional = $"({Gamecode}_{Param} || var{{{SoulSetting}, false}})";
                             FunctionParsed = true;
                             break;
                         case "has":
@@ -138,24 +99,35 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                             FunctionParsed = true;
                             break;
                         case "setting":
-                            ParsedConditional = $"setting{{{OriginalParam}}}";
+                            var SubParams = OriginalParam.Split(',').Select(x => x.Trim()).ToList();
+                            if (SubParams.Count < 2) { ParsedConditional = $"var{{{OriginalParam}}}"; }
+                            else if (int.TryParse(SubParams[1], out _) || bool.TryParse(SubParams[1], out _)) { ParsedConditional = $"var{{{OriginalParam}}}"; }
+                            else { ParsedConditional = $"setting{{{OriginalParam}}}"; }
                             FunctionParsed = true;
                             break;
                         case "!setting":
-                            ParsedConditional = $"setting{{{OriginalParam}, false}}";
+                            var NSubParams = OriginalParam.Split(',').Select(x => x.Trim()).ToList();
+                            if (NSubParams.Count < 2) { ParsedConditional = $"var{{{OriginalParam}, false}}"; }
+                            else if (int.TryParse(NSubParams[1], out _) || bool.TryParse(NSubParams[1], out _)) { ParsedConditional = $"var{{{OriginalParam}, false}}"; }
+                            else { ParsedConditional = $"setting{{{OriginalParam}, false}}"; }
                             FunctionParsed = true;
                             break;
                         case "can_play":
-                            ParsedConditional = $"({Gamecode}_has_ocarina && has({OriginalParam}))";
+                            ParsedConditional = $"({OriginalGamecode}_has_ocarina && has({OriginalParam}))";
                             FunctionParsed = true;
                             break;
                         case "small_keys":
+                            string SmallKeySetting = Gamecode == "MM" ? "smallKeyShuffleMm" : "smallKeyShuffleOot";
+                            ParsedConditional =$"(setting({SmallKeySetting}, removed) || has({Param}))";
+                            FunctionParsed = true;
+                            break;
                         case "boss_key":
-                            ParsedConditional = $"{Gamecode}_has_{Param.Replace(", ", "_")}";
+                            string BossKeySetting = Gamecode == "MM" ? "bossKeyShuffleMm" : "bossKeyShuffleOot";
+                            ParsedConditional =$"(setting({BossKeySetting}, removed) || has({Param}))";
                             FunctionParsed = true;
                             break;
                         case "has_small_keys_fire":
-                            ParsedConditional = $"{Gamecode}_{Func}_{Param}";
+                            ParsedConditional =$"(setting(smallKeyShuffleOot, removed) || cond(setting(smallKeyShuffleOot, anywhere), has(SMALL_KEY_FIRE, {int.Parse(Param) + 1}), has(SMALL_KEY_FIRE, {Param})))";
                             FunctionParsed = true;
                             break;
                         case "cond":
@@ -178,12 +150,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                         case "shop_price":
                         case "tingle_price":
                         case "shop_ex_price":
-                            ParsedConditional = "can_use_wallet(0)";
+                            ParsedConditional = $"{Gamecode}_COST_99";
                             FunctionParsed = true;
-                            break;
-                        case "special":
-                            //TODO
-                            ParsedConditional = Conditional;
                             break;
                         case "adult_trade":
                             ParsedConditional = $"is_adult && has({OriginalParam})";
@@ -195,7 +163,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                             break;
                         case "has_hookshot":
                             if (Gamecode == "OOT") { 
-                                ParsedConditional = $"is_adult && event({OriginalParam})";
+                                ParsedConditional = $"has(HOOKSHOT, {Param}) || has(SHARED_HOOKSHOT, {Param})";
                                 FunctionParsed = true;
                             }
                             break;
@@ -243,13 +211,25 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                             FunctionParsed = true;
                             break;
                         case "renewable":
-                            ParsedConditional =  $"renewable{{{Param}}}";
+                            ParsedConditional =  $"renewable{{{Gamecode}_{Param}}}";
                             FunctionParsed = true;
+                            break;
+                        case "age":
+                            if (OriginalParam == "child") { ParsedConditional = "true"; }
+                            else { ParsedConditional = "OOT_EVENT_TIME_TRAVEL"; }
+                            FunctionParsed = true;
+                            break;
+                        case "license": //Getting the item from a non renewable source give you the license
+                            ParsedConditional =  $"renewable{{{Gamecode}_{Param}, false}}";
+                            FunctionParsed = true;
+                            break;
+                        case "special":
+                            ParsedConditional = $"{Gamecode}_HAS_{Param}_REQUIREMENTS";
                             break;
 
                     }
                 }
-                NewConditionals.Add(ParsedConditional);
+                NewConditionals.Add($"({ParsedConditional})");
                 return FunctionParsed;
             }
         }

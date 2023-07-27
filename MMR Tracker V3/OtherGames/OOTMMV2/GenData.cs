@@ -16,47 +16,64 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
     public static class GenData
     {
         public static LogicStringParser OOTMMLogicStringParser = new LogicStringParser();
-        public static void ReadData()
+        public static OOTMMParserData OTTMMPaths = new OOTMMParserData();
+        public static void ReadData(out MMRData.LogicFile OutLogic, out LogicDictionaryData.LogicDictionary outDict)
         {
+            //CodePaths
+
+            OTTMMPaths.MMRTrackerCodePath = Path.Combine(References.TestingPaths.GetDevCodePath(), "MMR Tracker V3");
+            OTTMMPaths.OOTMMV2CodeFolder = Path.Combine(OTTMMPaths.MMRTrackerCodePath, "OtherGames", "OOTMMV2");
+            OTTMMPaths.SettingsFile = Path.Combine(OTTMMPaths.OOTMMV2CodeFolder, "settings.json");
+            OTTMMPaths.TricksFile = Path.Combine(OTTMMPaths.OOTMMV2CodeFolder, "tricks.json");
+            OTTMMPaths.ItemsFile = Path.Combine(OTTMMPaths.OOTMMV2CodeFolder, "items.json");
+            OTTMMPaths.ItemNamesFile = Path.Combine(OTTMMPaths.OOTMMV2CodeFolder, "ItemNames.json");
+            OTTMMPaths.RegionNamesFile = Path.Combine(OTTMMPaths.OOTMMV2CodeFolder, "RegionNames.json");
+            
             //Shared Data
-            string OOTMMCorePath = Path.Combine(References.TestingPaths.GetDevTestingPath(), "OoTMM-develop", "packages", "core");
-            string OOTMMTestingFolder = Path.Combine(References.TestingPaths.GetDevTestingPath(), "OOTMMTesting");
+            OTTMMPaths.OOTMMCorePath = Path.Combine(References.TestingPaths.GetDevTestingPath(), "OoTMM-develop", "packages", "core");
+            OTTMMPaths.OOTMMTestingFolder = Path.Combine(References.TestingPaths.GetDevTestingPath(), "OOTMMTesting");
 
             //OOT Data Paths
-            string OOTData = Path.Combine(OOTMMCorePath, "data", "oot");
-            string OOTWorld = Path.Combine(OOTData, "world");
-            string OOTMQWorld = Path.Combine(OOTData, "world_mq");
+            OTTMMPaths.OOTData = Path.Combine(OTTMMPaths.OOTMMCorePath, "data", "oot");
+            OTTMMPaths.OOTWorld = Path.Combine(OTTMMPaths.OOTData, "world");
+            OTTMMPaths.OOTMQWorld = Path.Combine(OTTMMPaths.OOTData, "world_mq");
 
             //OOT Data Files
-            string OOTEntrancesFile = Path.Combine(OOTData, "entrances.csv");
-            string OOTMacroFile = Path.Combine(OOTData, "macros.yml");
-            string OOTPoolFile = Path.Combine(OOTData, "pool.csv");
-            string OOTHintFile = Path.Combine(OOTData, "hints.csv");
+            OTTMMPaths.OOTEntrancesFile = Path.Combine(OTTMMPaths.OOTData, "entrances.csv");
+            OTTMMPaths.OOTMacroFile = Path.Combine(OTTMMPaths.OOTData, "macros.yml");
+            OTTMMPaths.OOTPoolFile = Path.Combine(OTTMMPaths.OOTData, "pool.csv");
+            OTTMMPaths.OOTHintFile = Path.Combine(OTTMMPaths.OOTData, "hints.csv");
 
             //MM Data
-            string MMData = Path.Combine(OOTMMCorePath, "data", "mm");
-            string MMWorld = Path.Combine(MMData, "world");
+            OTTMMPaths.MMData = Path.Combine(OTTMMPaths.OOTMMCorePath, "data", "mm");
+            OTTMMPaths.MMWorld = Path.Combine(OTTMMPaths.MMData, "world");
 
             //MM Data Files
-            string MMEntrancesFile = Path.Combine(MMData, "entrances.csv");
-            string MMMacroFile = Path.Combine(MMData, "macros.yml");
-            string MMPoolFile = Path.Combine(MMData, "pool.csv");
-            string MMHintFile = Path.Combine(MMData, "hints.csv");
+            OTTMMPaths.MMEntrancesFile = Path.Combine(OTTMMPaths.MMData, "entrances.csv");
+            OTTMMPaths.MMMacroFile = Path.Combine(OTTMMPaths.MMData, "macros.yml");
+            OTTMMPaths.MMPoolFile = Path.Combine(OTTMMPaths.MMData, "pool.csv");
+            OTTMMPaths.MMHintFile = Path.Combine(OTTMMPaths.MMData, "hints.csv");
 
             //Shared Data Files
-            string SHAREDMacroFile = Path.Combine(OOTMMCorePath, "data", "macros.yml");
+            OTTMMPaths.SHAREDMacroFile = Path.Combine(OTTMMPaths.OOTMMCorePath, "data", "macros.yml");
 
-            LogicDictionaryData.LogicDictionary logicDictionaryData = new LogicDictionaryData.LogicDictionary() { GameCode = "OOTMM", RootArea = "OOT SPAWN", LogicVersion = 2 };
+            MMRData.LogicFile LogicFile = LogicFileCreation.ReadAndParseLogicFile(OTTMMPaths);
+            LogicDictionaryData.LogicDictionary DictionaryFile = LogicDictionaryCreation.CreateDictionary(OTTMMPaths);
 
-            MMRData.LogicFile LogicFile = ReadAndParseLogicFile(OOTWorld, OOTMQWorld, MMWorld, OOTMacroFile, MMMacroFile, SHAREDMacroFile);
+            SettingsCreation.CreateSettings(DictionaryFile, OTTMMPaths);
 
-            CreateStaticCountFunctions(LogicFile);
+            AddWalletMactros(LogicFile, DictionaryFile);
+
+            AddAdditionalData(LogicFile, DictionaryFile, OTTMMPaths);
+
             ParseLogicFunctions(LogicFile);
 
-            File.WriteAllText(Path.Combine(OOTMMTestingFolder,"LogicFile.json"), JsonConvert.SerializeObject(LogicFile, Formatting.Indented));
-            Debug.WriteLine("Finished");
+            File.WriteAllText(Path.Combine(OTTMMPaths.OOTMMTestingFolder,"LogicFile.json"), JsonConvert.SerializeObject(LogicFile, Testing._NewtonsoftJsonSerializerOptions));
+            File.WriteAllText(Path.Combine(OTTMMPaths.OOTMMTestingFolder, "DictionaryFile.json"), JsonConvert.SerializeObject(DictionaryFile, Testing._NewtonsoftJsonSerializerOptions));
             EvalLogicEntryTypes(LogicFile);
-            Debug.WriteLine(LogicEditing.IsLogicFunction($"Test(Func)", out string Func, out _, new('(', ')')));
+
+            OutLogic = LogicFile;
+            outDict = DictionaryFile;
         }
 
         private static void EvalLogicEntryTypes(MMRData.LogicFile LogicFile)
@@ -72,98 +89,104 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
             Debug.WriteLine(JsonConvert.SerializeObject(Functions, Formatting.Indented));
         }
 
-        private static MMRData.LogicFile ReadAndParseLogicFile(string OOTWorld, string OOTMQWorld, string MMWorld, string OOTMacroFile, string MMMacroFile, string SHAREDMacroFile)
+        private static void AddWalletMactros(MMRData.LogicFile logicFile, LogicDictionaryData.LogicDictionary DictionaryFile)
         {
-            MMRData.LogicFile LogicFile = new MMRData.LogicFile() { GameCode = "OOTMM", Version = 2 };
-            LogicFile.Logic = new List<MMRData.JsonFormatLogicItem>();
-
-            string[] OOTWorldFiles = Directory.GetFiles(OOTWorld);
-            string[] OOTMQWorldFiles = Directory.GetFiles(OOTMQWorld);
-            string[] MMWorldFiles = Directory.GetFiles(MMWorld);
-
-            AddFileData(OOTWorldFiles, "OOT");
-            AddFileData(OOTMQWorldFiles, "OOT", true);
-            AddFileData(MMWorldFiles, "MM");
-
-            AddMacroFile(OOTMacroFile, "OOT");
-            AddMacroFile(MMMacroFile, "MM");
-            AddMacroFile(SHAREDMacroFile, "OOT");
-            AddMacroFile(SHAREDMacroFile, "MM");
-
-            return LogicFile;
-
-            void AddMacroFile(string MacroFile, string GameCode)
+            var Costs = new List<int> { 0, 99, 200, 500, 999, 9999 };
+            foreach (var Cost in Costs)
             {
-                var FileOBJ = JsonConvert.DeserializeObject<Dictionary<string, string>>(Utility.ConvertYamlStringToJsonString(File.ReadAllText(MacroFile)));
-                foreach(var item in FileOBJ)
-                {
-                    if (LogicEditing.IsLogicFunction(item.Key, out string Func, out _, new('(', ')')))
-                    {
-                        Debug.WriteLine($"Skipping Function Macro {item.Key}");
-                        continue;
-                    }
-                    string ID = $"{GameCode}_{item.Key}";
-                    List<List<string>> ConditionalLogic = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, item.Value);
-                    MMRData.JsonFormatLogicItem NewLogic = new() { Id = ID, ConditionalItems = ConditionalLogic };
-                    LogicUtilities.RemoveRedundantConditionals(NewLogic);
-                    LogicFile.Logic.Add(NewLogic);
-                }
+                AddCostMacro(Cost, "MM");
+                AddCostMacro(Cost, "OOT");
             }
-
-            void AddFileData(string[] files, string GameCode, bool MQ = false)
+            void AddCostMacro(int Cost, string Gamecode)
             {
-                foreach (var WorldFile in files)
+                var Logic = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, $"can_use_wallet({Costs.IndexOf(Cost)})");
+                string ID = $"{Gamecode}_COST_{Cost}";
+                logicFile.Logic.Add(new MMRData.JsonFormatLogicItem { Id = ID, ConditionalItems = Logic });
+                DictionaryFile.MacroList.Add(ID, new LogicDictionaryData.DictionaryMacroEntry
                 {
-                    var FileOBJ = JsonConvert.DeserializeObject<Dictionary<string, MMROOTLogicEntry>>(Utility.ConvertYamlStringToJsonString(File.ReadAllText(WorldFile)));
-                    foreach (var Area in FileOBJ)
-                    {
-                        foreach (var Location in Area.Value.locations)
-                        {
-                            string ID = $"{GameCode} location {Location.Key}";
-                            List<List<string>> ConditionalLogic = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, Location.Value);
-                            AddLogicEntry(LogicFile, ID, ConditionalLogic, WorldFile, Area);
-
-                        }
-                        foreach (var Location in Area.Value.exits)
-                        {
-                            string ID = $"{GameCode} exit {Area.Key} => {Location.Key}";
-                            List<List<string>> ConditionalLogic = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, Location.Value);
-                            AddLogicEntry(LogicFile, ID, ConditionalLogic, WorldFile, Area);
-                        }
-                        foreach (var Location in Area.Value.events)
-                        {
-                            string ID = $"{GameCode} event {Location.Key}";
-                            List<List<string>> ConditionalLogic = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, Location.Value);
-                            AddLogicEntry(LogicFile, ID, ConditionalLogic, WorldFile, Area);
-                        }
-                    }
-                }
-
-                bool HasMQEquivilent(string WorldFile)
-                {
-                    return OOTMQWorldFiles.Any(x => x == WorldFile.Replace(".json", "_mq.json"));
-                }
-
-                void AddLogicEntry(MMRData.LogicFile LogicFile, string ID, List<List<string>> ConditionalLogic, string WorldFile, KeyValuePair<string, MMROOTLogicEntry> Area)
-                {
-                    var Duplicates = LogicFile.Logic.FirstOrDefault(x => x.Id == ID);
-
-                    foreach (var i in ConditionalLogic) { i.Add($"{GameCode} area {Area.Key}"); }
-                    if (HasMQEquivilent(WorldFile)) { foreach (var i in ConditionalLogic) { i.Add($"setting({Area.Value.dungeon}_layout, {(MQ ? "MQ" : "Vanilla")})"); } }
-
-                    if (Duplicates is null) 
-                    {
-                        MMRData.JsonFormatLogicItem NewLogic = new() { Id = ID, ConditionalItems = ConditionalLogic };
-                        LogicUtilities.RemoveRedundantConditionals(NewLogic);
-                        LogicFile.Logic.Add(NewLogic); 
-                    }
-                    else 
-                    { 
-                        Duplicates.ConditionalItems.AddRange(ConditionalLogic);
-                        LogicUtilities.RemoveRedundantConditionals(Duplicates);
-                    }
-                }
+                    ID = ID,
+                    WalletCapacity = Cost,
+                    WalletCurrency = Gamecode[0]
+                });
             }
+        }
+
+        private static void AddAdditionalData(MMRData.LogicFile LogicFile, LogicDictionaryData.LogicDictionary DictionaryFile, OOTMMParserData OTTMMPaths)
+        {
+            //This event doesn't exist but logic for magic is asking for it. Just make it always false.
+            DictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "MM_EVENT_CHATEAU", RequiredItems = new List<string>() { "false" } });
+
+            var MASKS_REGULAR = new string[] {
+              "MM_MASK_CAPTAIN",
+              "MM_MASK_GIANT",
+              "MM_MASK_ALL_NIGHT",
+              "MM_MASK_BUNNY",
+              "MM_MASK_KEATON",
+              "MM_MASK_GARO",
+              "MM_MASK_ROMANI",
+              "MM_MASK_TROUPE_LEADER",
+              "MM_MASK_POSTMAN",
+              "MM_MASK_COUPLE",
+              "MM_MASK_GREAT_FAIRY",
+              "MM_MASK_GIBDO",
+              "MM_MASK_DON_GERO",
+              "MM_MASK_KAMARO",
+              "MM_MASK_TRUTH",
+              "MM_MASK_STONE",
+              "MM_MASK_BREMEN",
+              "MM_MASK_BLAST",
+              "MM_MASK_SCENTS",
+              "MM_MASK_KAFEI",
+              "SHARED_MASK_TRUTH",
+              "SHARED_MASK_BUNNY",
+              "SHARED_MASK_KEATON",
+            };
+            var MASKS_OOT = new string[]{
+              "OOT_MASK_SKULL",
+              "OOT_MASK_SPOOKY",
+              "OOT_MASK_KEATON",
+              "OOT_MASK_BUNNY",
+              "OOT_MASK_TRUTH",
+              "OOT_MASK_GERUDO",
+              "OOT_MASK_GORON",
+              "OOT_MASK_ZORA",
+              "SHARED_MASK_KEATON",
+              "SHARED_MASK_BUNNY",
+              "SHARED_MASK_TRUTH",
+              "SHARED_MASK_GORON",
+              "SHARED_MASK_ZORA",
+            };
+            var STONES = new string[]{
+              "OOT_STONE_EMERALD",
+              "OOT_STONE_RUBY",
+              "OOT_STONE_SAPPHIRE",
+            };
+
+            var MEDALLIONS = new string[]{
+              "OOT_MEDALLION_LIGHT",
+              "OOT_MEDALLION_FOREST",
+              "OOT_MEDALLION_FIRE",
+              "OOT_MEDALLION_WATER",
+              "OOT_MEDALLION_SPIRIT",
+              "OOT_MEDALLION_SHADOW",
+            };
+
+            var REMAINS = new string[]{
+              "MM_REMAINS_ODOLWA",
+              "MM_REMAINS_GOHT",
+              "MM_REMAINS_GYORG",
+              "MM_REMAINS_TWINMOLD",
+            };
+            var DUNGEON_REWARDS = STONES.Concat(MEDALLIONS).Concat(REMAINS).ToArray();
+
+            OptionData.TrackerVar MMMaskVar = new OptionData.TrackerVar
+            {
+                ID = "MM_MASKS",
+                Static = true,
+                Value = MASKS_REGULAR.Select(x => $"{x}, 1").ToList(),
+            };
+            DictionaryFile.Variables.Add("MM_MASKS", MMMaskVar);
+
         }
     }
 }

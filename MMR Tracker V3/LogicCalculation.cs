@@ -449,15 +449,25 @@ namespace MMR_Tracker_V3
 
         private static bool CheckRenewableFunction(TrackerInstance instance, string[] strings)
         {
+            var ShouldBeRepeatable = true;
+            if (strings.Length > 1 && bool.TryParse(strings[1], out bool Mod))
+            {
+                ShouldBeRepeatable = Mod;
+            }
             
             var item = instance.GetItemByID(strings[0]);
             if (item is null) { Debug.WriteLine($"{strings[0]} Was not a valid Renewable Item Entry"); return false; }
             if (item.GetTotalUsable(instance) < 1) { return false; }
             return instance.LocationPool.Values.Any(x => 
                 x.CheckState == CheckState.Checked && 
-                (x.GetDictEntry(instance).Repeatable is not null && (bool)x.GetDictEntry(instance).Repeatable) && 
+                IsAtProperCheck(x, ShouldBeRepeatable) && 
                 (x.Randomizeditem.OwningPlayer == -1) && 
                 x.Randomizeditem.Item == item.Id);
+            bool IsAtProperCheck(LocationObject x, bool ShouldBeRepeatable)
+            {
+                if (ShouldBeRepeatable) { return x.GetDictEntry(instance).Repeatable is not null && (bool)x.GetDictEntry(instance).Repeatable; }
+                else { return x.GetDictEntry(instance).Repeatable is not null && !(bool)x.GetDictEntry(instance).Repeatable; }
+            }
         }
 
         private static bool CheckIsRandomizedFunction(TrackerInstance instance, string[] strings)
