@@ -166,6 +166,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public bool RandomizableEntrance { get; set; }
             public bool AlwaysAccessable { get; set; } = false;
             public bool DestinationHasSingleEntrance { get; set; } = false;
+            public SpoilerlogReference SpoilerData { get; set; } = new SpoilerlogReference();
         }
     }
 }

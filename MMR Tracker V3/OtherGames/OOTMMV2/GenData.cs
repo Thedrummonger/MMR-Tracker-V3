@@ -66,6 +66,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
 
             AddAdditionalData(LogicFile, DictionaryFile, OTTMMPaths);
 
+            AddGameClearChecks(LogicFile, DictionaryFile);
+
             ParseLogicFunctions(LogicFile);
 
             File.WriteAllText(Path.Combine(OTTMMPaths.OOTMMTestingFolder,"LogicFile.json"), JsonConvert.SerializeObject(LogicFile, Testing._NewtonsoftJsonSerializerOptions));
@@ -187,6 +189,71 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
             };
             DictionaryFile.Variables.Add("MM_MASKS", MMMaskVar);
 
+        }
+        private static void AddGameClearChecks(MMRData.LogicFile logicFile, LogicDictionaryData.LogicDictionary dictionaryFile)
+        {
+            dictionaryFile.LocationList.Add("MM_BOSS_MAJORA", new LogicDictionaryData.DictionaryLocationEntries
+            {
+                ID = "MM_BOSS_MAJORA",
+                Name = "Majora",
+                Area = "The Moon",
+                OriginalItem = "MM_MASK_MAJORA",
+                ValidItemTypes = new string[] { "Majora" },
+                SpoilerData = new MMRData.SpoilerlogReference()
+            });
+            logicFile.Logic.Add(new MMRData.JsonFormatLogicItem
+            {
+                Id = "MM_BOSS_MAJORA",
+                RequiredItems = new List<string> { "MM_EVENT_MAJORA" }
+            });
+
+            dictionaryFile.ItemList.Add("MM_MASK_MAJORA", new LogicDictionaryData.DictionaryItemEntries
+            {
+                ID = "MM_MASK_MAJORA",
+                Name = "Majoras Mask",
+                ValidStartingItem = false,
+                MaxAmountInWorld = 1,
+                ItemTypes= new string[] { "Majora" },
+                SpoilerData = new MMRData.SpoilerlogReference()
+            });
+
+            dictionaryFile.LocationList.Add("OOT_BOSS_GANON", new LogicDictionaryData.DictionaryLocationEntries
+            {
+                ID = "OOT_BOSS_GANON",
+                Name = "Ganon",
+                Area = "Ganon's Castle",
+                OriginalItem = "OOT_TRIFORCE",
+                ValidItemTypes = new string[] { "Ganon" },
+                SpoilerData = new MMRData.SpoilerlogReference()
+            });
+
+            logicFile.Logic.Add(new MMRData.JsonFormatLogicItem
+            {
+                Id = "OOT_BOSS_GANON",
+                RequiredItems = new List<string> { "OOT_EVENT_GANON" }
+            });
+
+            dictionaryFile.ItemList.Add("OOT_TRIFORCE", new LogicDictionaryData.DictionaryItemEntries
+            {
+                ID = "OOT_TRIFORCE",
+                Name = "Triforce",
+                ValidStartingItem = false,
+                MaxAmountInWorld = 1,
+                ItemTypes= new string[] { "Ganon" },
+                SpoilerData = new MMRData.SpoilerlogReference()
+            });
+
+            //Game Clear
+
+            string GameClearLogic =
+                "(setting{goal, any} && (OOT_TRIFORCE || MM_MASK_MAJORA)) || " +
+                "(setting{goal, both} && OOT_TRIFORCE && MM_MASK_MAJORA) || " +
+                "(setting{goal, ganon} && OOT_TRIFORCE) || " +
+                "(setting{goal, majora} && MM_MASK_MAJORA)";
+
+            dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "Game_Clear", ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, GameClearLogic) });
+            dictionaryFile.MacroList.Add("Game_Clear", new LogicDictionaryData.DictionaryMacroEntry { ID = "Game_Clear", Name = "Both Games Cleared" });
+            dictionaryFile.WinCondition = "Game_Clear";
         }
     }
 }

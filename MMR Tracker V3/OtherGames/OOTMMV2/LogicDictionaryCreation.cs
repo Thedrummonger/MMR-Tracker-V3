@@ -101,13 +101,14 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                     {
                         Area = Connection.Value.Area,
                         Exit = Connection.Value.Exit,
-                        ID = Connection.Key
+                        ID = Connection.Key,
                     };
 
                     var OOTEntrancePoolEntry = OOTEntrances.FirstOrDefault(x => $"OOT {x.from}" == entranceEntries.Area && $"OOT {x.to}" == entranceEntries.Exit);
                     var MMEntrancePoolEntry = MMEntrances.FirstOrDefault(x => $"MM {x.from}" == entranceEntries.Area && $"MM {x.to}" == entranceEntries.Exit);
                     if (OOTEntrancePoolEntry is not null)
                     {
+                        entranceEntries.SpoilerData = new MMRData.SpoilerlogReference { SpoilerLogNames = new string[] { "OOT_" + OOTEntrancePoolEntry.id } };
                         entranceEntries.RandomizableEntrance = true;
                         if (!string.IsNullOrWhiteSpace(OOTEntrancePoolEntry.reverse) && OOTEntrancePoolEntry.reverse != "NONE")
                         {
@@ -117,6 +118,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                     }
                     else if (MMEntrancePoolEntry is not null)
                     {
+                        entranceEntries.SpoilerData = new MMRData.SpoilerlogReference { SpoilerLogNames = new string[] { "MM_" + MMEntrancePoolEntry.id } };
                         entranceEntries.RandomizableEntrance = true;
                         if (!string.IsNullOrWhiteSpace(MMEntrancePoolEntry.reverse) && MMEntrancePoolEntry.reverse != "NONE")
                         {

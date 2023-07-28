@@ -107,16 +107,16 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                         { 
                             foreach (var i in ConditionalLogic) 
                             { 
-                                i.Add($"setting({Area.Value.dungeon}_layout, MQ)"); 
-                                if (!OTTMMPaths.DungeonLayouts.Contains($"{Area.Value.dungeon}_layout")) { OTTMMPaths.DungeonLayouts.Add($"{Area.Value.dungeon}_layout"); }
+                                i.Add($"setting({Area.Value.dungeon}_MQ)"); 
+                                if (!OTTMMPaths.DungeonLayouts.Contains($"{Area.Value.dungeon}_MQ")) { OTTMMPaths.DungeonLayouts.Add($"{Area.Value.dungeon}_MQ"); }
                             } 
                         }
                         if (!MQ && HasMQEquivilent(WorldFile)) 
                         { 
                             foreach (var i in ConditionalLogic) 
                             { 
-                                i.Add($"setting({Area.Value.dungeon}_layout, Vanilla)");
-                                if (!OTTMMPaths.DungeonLayouts.Contains($"{Area.Value.dungeon}_layout")) { OTTMMPaths.DungeonLayouts.Add($"{Area.Value.dungeon}_layout"); }
+                                i.Add($"setting({Area.Value.dungeon}_MQ, false)");
+                                if (!OTTMMPaths.DungeonLayouts.Contains($"{Area.Value.dungeon}_MQ")) { OTTMMPaths.DungeonLayouts.Add($"{Area.Value.dungeon}_MQ"); }
                             } 
                         }
                     }

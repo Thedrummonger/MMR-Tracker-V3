@@ -290,9 +290,21 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMRCOMBO
         {
             foreach(var setting in settingData)
             {
-                if (!instance.UserOptions.ContainsKey(setting.Key)) { continue; }
-                else if (!instance.UserOptions[setting.Key].Values.ContainsKey(setting.Value)) { Debug.WriteLine($"Value {setting.Value} Was not Valid for setting {setting.Key}"); }
-                else { instance.UserOptions[setting.Key].CurrentValue = setting.Value; }
+                if (instance.UserOptions.ContainsKey(setting.Key) && instance.UserOptions[setting.Key].Values.ContainsKey(setting.Value))
+                {
+                    instance.UserOptions[setting.Key].CurrentValue = setting.Value;
+                }
+                else if (instance.Variables.ContainsKey(setting.Key))
+                {
+                    if (bool.TryParse(setting.Value, out bool BoolVal)) { instance.Variables[setting.Key].Value = BoolVal; }
+                    else if (Int64.TryParse(setting.Value, out Int64 IntVal)) { instance.Variables[setting.Key].Value = IntVal; }
+                    else { instance.Variables[setting.Key].Value = setting.Value; }
+                }
+                else
+                {
+                    if (instance.UserOptions.ContainsKey(setting.Key)) { Debug.WriteLine($"Setting {setting.Key} did not have option {setting.Value}"); }
+                    else { Debug.WriteLine($"Setting {setting.Key} did not exist"); }
+                }
 
                 if (setting.Key == "mapCompassShuffle" && setting.Value == "starting")
                 {

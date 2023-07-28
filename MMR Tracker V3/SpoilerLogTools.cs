@@ -64,7 +64,7 @@ namespace MMR_Tracker_V3
                 //case "PMR":
                 case "OOTMM":
                     container.Instance.SpoilerLog = new LogicObjects.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
-                    OtherGames.OOTMMRCOMBO.OOTMMSpoilerParser.readAndApplySpoilerLog(container.Instance);
+                    OtherGames.OOTMMV2.ImportSpoilerLog.readAndApplySpoilerLog(container.Instance);
                     container.Instance.EntrancePool.IsEntranceRando = container.Instance.EntrancePool.CheckForRandomEntrances(container.Instance);
                     return true;
                 case "MMR":

@@ -10,6 +10,22 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
 {
     public class datamodel
     {
+        public enum HintType
+        {
+            ItemExact,
+            ItemRegion,
+            Hero,
+            Foolish,
+            none
+        }
+        public class SpoilerHintData
+        {
+            public HintType HintType { get; set; }
+            public string PrettyLocationText { get; set; }
+            public string[] HintedLocations { get; set; }
+            public string[] HintedItemNames { get; set; }
+            public string[] HintedItems { get; set; }
+        }
         public class AreaConnections
         {
             public string Area { get; set; }
