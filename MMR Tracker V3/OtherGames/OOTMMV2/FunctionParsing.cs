@@ -150,7 +150,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                         case "shop_price":
                         case "tingle_price":
                         case "shop_ex_price":
-                            ParsedConditional = $"{Gamecode}_COST_99";
+                            ParsedConditional = $"true"; //Price will be handled by the trackers built in price tracking
                             FunctionParsed = true;
                             break;
                         case "adult_trade":

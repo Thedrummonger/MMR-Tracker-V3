@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using static MMR_Tracker_V3.OtherGames.OOTMMV2.datamodel;
 using static MMR_Tracker_V3.OtherGames.OOTMMV2.OOTMMUtil;
 using static MMR_Tracker_V3.OtherGames.OOTMMV2.FunctionParsing;
+using System.Xml.Schema;
 
 namespace MMR_Tracker_V3.OtherGames.OOTMMV2
 {
@@ -59,6 +60,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
 
             MMRData.LogicFile LogicFile = LogicFileCreation.ReadAndParseLogicFile(OTTMMPaths);
             LogicDictionaryData.LogicDictionary DictionaryFile = LogicDictionaryCreation.CreateDictionary(OTTMMPaths);
+
+            AddTingleProxies(LogicFile, DictionaryFile);
 
             SettingsCreation.CreateSettings(DictionaryFile, OTTMMPaths);
 
@@ -110,6 +113,57 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                     WalletCapacity = Cost,
                     WalletCurrency = Gamecode[0]
                 });
+            }
+        }
+
+        private static void AddTingleProxies(MMRData.LogicFile logicFile, LogicDictionaryData.LogicDictionary DictionaryFile)
+        {
+            List<Tuple<string, string>> TingleLocations = new()
+            {
+                new("Town", "Clock Town" ),
+                new("Swamp", "Woodfall" ),
+                new("Mountain", "Snowhead" ),
+                new("Ranch", "Ranch" ),
+                new("Great Bay", "Great Bay" ),
+                new("Ikana", "Ikana" )
+            };
+
+            foreach (var Location in TingleLocations)
+            {
+                int PrevIndex = TingleLocations.IndexOf(Location) - 1;
+                if (PrevIndex < 0) { PrevIndex = TingleLocations.Count - 1; }
+                Tuple<string, string> AltLocation = TingleLocations[PrevIndex];
+                MMRData.JsonFormatLogicItem TinglePurchaseMacro = new() { Id = $"MM Tingle Purchase {Location.Item1} at {Location.Item1}", 
+                    ConditionalItems = new List<List<string>> { new List<string> { $"MM Tingle {Location.Item1}" } } };
+                MMRData.JsonFormatLogicItem TinglePurchaseMacro2 = new() { Id = $"MM Tingle Purchase {Location.Item1} at {AltLocation.Item1}",
+                    ConditionalItems = new List<List<string>> { new List<string> { $"MM Tingle {AltLocation.Item1}" } }
+                };
+                logicFile.Logic.Add(TinglePurchaseMacro);
+                logicFile.Logic.Add(TinglePurchaseMacro2);
+
+                DictionaryFile.MacroList.Add(TinglePurchaseMacro.Id, new() { ID = TinglePurchaseMacro.Id, WalletCurrency = 'M' });
+                DictionaryFile.MacroList.Add(TinglePurchaseMacro2.Id, new() { ID = TinglePurchaseMacro2.Id, WalletCurrency = 'M' });
+
+                var MapLocationCheckDict = DictionaryFile.LocationList[$"MM Tingle Map {Location.Item2}"];
+                MapLocationCheckDict.LocationProxys.Add(new LogicDictionaryData.DictLocationProxy
+                {
+                    ID = $"MM Tingle Purchase {Location.Item1} at {Location.Item1} Proxy",
+                    Area = MapLocationCheckDict.Area,
+                    LogicInheritance = TinglePurchaseMacro.Id,
+                    Name = MapLocationCheckDict.Name + $" ({Location.Item1})"
+                });
+                MapLocationCheckDict.LocationProxys.Add(new LogicDictionaryData.DictLocationProxy
+                {
+                    ID = $"MM Tingle Purchase {Location.Item1} at {AltLocation.Item1} Proxy",
+                    Area = MapLocationCheckDict.Area,
+                    LogicInheritance = TinglePurchaseMacro2.Id,
+                    Name = MapLocationCheckDict.Name + $" ({AltLocation.Item1})"
+                });
+
+                var MapLocationCheckLogic = logicFile.Logic.First(x => x.Id == $"MM Tingle Map {Location.Item2}");
+                MapLocationCheckLogic.RequiredItems.Clear();
+                MapLocationCheckLogic.ConditionalItems = new List<List<string>> { new List<string>() { TinglePurchaseMacro.Id }, new List<string>() { TinglePurchaseMacro2.Id } };
+
             }
         }
 

@@ -1,6 +1,7 @@
 ﻿using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -70,7 +71,9 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
             var IDParts = ItemID.Split('_').ToList();
             string GameCode = IDParts[0];
             IDParts.RemoveAt(0);
-            string NiceName = string.Join(" ", IDParts);
+            string NiceName = string.Join(" ", IDParts).ToLower();
+            TextInfo cultInfo = new CultureInfo("en-US", false).TextInfo;
+            NiceName = cultInfo.ToTitleCase(NiceName);
             if (GameCode == "MM" || GameCode == "OOT") { NiceName = $"{NiceName} ({GameCode})"; }
             return NiceName;
         }

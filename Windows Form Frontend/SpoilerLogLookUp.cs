@@ -510,9 +510,12 @@ namespace Windows_Form_Frontend
             SeedCheckResults.Clear();
             foreach(var i in requiredItems)
             {
-                var item = _instance.GetItemByID(i);
-                string Dis = item?.GetDictEntry(_instance)?.GetName(_instance)??i;
-                bool ItemObtainable = SeedCheckPlaytrhough.FirstObtainedDict.ContainsKey(i) || (item?.AmountInStartingpool??0) > 0;
+                var type = _instance.GetItemEntryType(i, false, out dynamic RequiredItemObj);
+                string Dis = i;
+                if (RequiredItemObj is ItemData.ItemObject IO) { Dis = IO?.GetDictEntry(_instance)?.GetName(_instance)??i; }
+                else if (RequiredItemObj is MacroObject MO) { Dis = MO?.GetDictEntry(_instance)?.Name??i; }
+
+                bool ItemObtainable = SeedCheckPlaytrhough.FirstObtainedDict.ContainsKey(i) || (RequiredItemObj is ItemData.ItemObject IOS && (IOS?.AmountInStartingpool??0) > 0);
 
                 SeedCheckResults.Add(new MiscData.StandardListBoxItem { Display = Dis, tag = ItemObtainable });
             }
