@@ -79,6 +79,12 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
             public string id;
             public string reverse;
         }
+        public class MMROOTHintData
+        {
+            public string location;
+            public string type;
+            public string id;
+        }
 
         public class OOTMMParserData
         {

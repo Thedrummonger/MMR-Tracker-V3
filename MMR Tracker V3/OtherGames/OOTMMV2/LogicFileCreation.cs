@@ -88,6 +88,12 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                             List<List<string>> ConditionalLogic = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, Location.Value);
                             AddLogicEntry(LogicFile, ID, ConditionalLogic, WorldFile, Area);
                         }
+                        foreach (var Gossip in Area.Value.gossip)
+                        {
+                            string ID = $"{GameCode} {Gossip.Key}";
+                            List<List<string>> ConditionalLogic = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, Gossip.Value);
+                            AddLogicEntry(LogicFile, ID, ConditionalLogic, WorldFile, Area);
+                        }
                     }
                 }
 

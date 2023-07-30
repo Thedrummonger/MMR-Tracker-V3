@@ -36,6 +36,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
             SetStartingItems(Instance, StartingItemData);
             Debug.WriteLine("\nPlacing Items at locations");
             PlaceItemsAtLocations(Instance, LocationData);
+            Debug.WriteLine("\nApplying Hints");
+            ApplyHintData(Instance, ParseHintData(Instance, HintData));
             Debug.WriteLine("\nApplying Junk Locations");
             SetjunkedLocations(Instance, JunkLocationData);
             Debug.WriteLine("\nApplying Entrance Data");
@@ -301,6 +303,133 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                     }
                 }
             }
+        }
+        private static void ApplyHintData(LogicObjects.TrackerInstance instance, Dictionary<string, SpoilerHintData> hintData)
+        {
+            foreach (var i in hintData)
+            {
+                if (!instance.HintPool.ContainsKey(i.Key)) { Debug.WriteLine($"{i.Key} Was not a valid hint locations!"); continue; }
+                switch (i.Value.HintType)
+                {
+                    case HintType.ItemExact:
+                        instance.HintPool[i.Key].SpoilerHintText = $"{i.Value.PrettyLocationText} contains {string.Join(" and ", i.Value.HintedItemNames)}";
+                        if (i.Value.HintedLocations.Length == i.Value.HintedItems.Length)
+                        {
+                            for (var hintind = 0; hintind < i.Value.HintedLocations.Length; hintind++)
+                            {
+                                instance.HintPool[i.Key].ParsedHintData.Add(i.Value.HintedLocations[hintind], i.Value.HintedItems[hintind]);
+                            }
+                        }
+                        break;
+                    case HintType.ItemRegion:
+                        instance.HintPool[i.Key].SpoilerHintText = $"{i.Value.PrettyLocationText} contains {string.Join(" and ", i.Value.HintedItems)}";
+                        break;
+                    case HintType.Hero:
+                        instance.HintPool[i.Key].SpoilerHintText = $"{i.Value.PrettyLocationText} is Way of the Hero";
+                        break;
+                    case HintType.Foolish:
+                        instance.HintPool[i.Key].SpoilerHintText = $"{i.Value.PrettyLocationText} is Foolish";
+                        break;
+                }
+            }
+            foreach (var i in instance.HintPool)
+            {
+                if (string.IsNullOrWhiteSpace(i.Value.SpoilerHintText))
+                {
+                    Debug.WriteLine($"Hint {i.Key} has no spoiler data, assuming junk");
+                    i.Value.RandomizedState = MiscData.RandomizedState.ForcedJunk;
+                }
+            }
+        }
+        private static Dictionary<string, SpoilerHintData> ParseHintData(LogicObjects.TrackerInstance Instance, List<string> hintData)
+        {
+            HintType CurrentType = HintType.none;
+            List<string> HeroHints = new();
+            List<string> FoolishHints = new();
+            List<string> ExactHints = new();
+            List<string> RegionHints = new();
+            Dictionary<string, SpoilerHintData> Result = new();
+
+            foreach (var x in hintData)
+            {
+                if (string.IsNullOrWhiteSpace(x)) { continue; }
+                else if (x == "Way of the Hero:") { CurrentType = HintType.Hero; continue; }
+                else if (x == "Foolish:") { CurrentType = HintType.Foolish; continue; }
+                else if (x == "Specific Hints:") { CurrentType = HintType.ItemExact; continue; }
+                else if (x == "Regional Hints:") { CurrentType = HintType.ItemRegion; continue; }
+                else if (x == "Foolish Regions:") { CurrentType = HintType.none; continue; }
+                else if (CurrentType == HintType.Hero) { HeroHints.Add(x); }
+                else if (CurrentType == HintType.Foolish) { FoolishHints.Add(x); }
+                else if (CurrentType == HintType.ItemExact) { ExactHints.Add(x); }
+                else if (CurrentType == HintType.ItemRegion) { RegionHints.Add(x); }
+            }
+            string CurrentKey = "";
+            foreach (var x in HeroHints)
+            {
+                if (CurrentKey == "") { CurrentKey = x; }
+                else
+                {
+                    Result[CurrentKey] = new SpoilerHintData { HintType= HintType.Hero, PrettyLocationText = $"{x.StringSplit("    ")[0]}" };
+                    CurrentKey = "";
+                }
+            }
+            CurrentKey = "";
+            foreach (var x in FoolishHints)
+            {
+                if (CurrentKey != "")
+                {
+                    Result[CurrentKey] = new SpoilerHintData { HintType= HintType.Foolish, PrettyLocationText = $"{x}" };
+                    CurrentKey = "";
+                }
+                else { CurrentKey = x; }
+            }
+            CurrentKey = "";
+            foreach (var x in RegionHints)
+            {
+                if (CurrentKey != "")
+                {
+                    Debug.WriteLine($"Hint Data {x}");
+                    var data = x.Split(new[] { '(' }, 2);
+                    data[1] = data[1][..^1];
+                    Result[CurrentKey] = new SpoilerHintData { HintType= HintType.Hero, PrettyLocationText = data[0], HintedItems = data[1].Split(",") };
+                    CurrentKey = "";
+                }
+                else { CurrentKey = x; }
+            }
+            CurrentKey = "";
+            foreach (var x in ExactHints)
+            {
+                if (CurrentKey != "")
+                {
+                    var data = x.Split(new[] { '(' }, 2);
+                    data[1] = data[1][..^1];
+                    var Locations = data[0].Split(',').Select(x => x.Trim()).ToArray();
+                    var Items = data[1].Split(',').Select(x => x.Trim()).ToArray();
+                    List<string> ItemIDs = new List<string>();
+                    List<string> ItemNames = new List<string>();
+                    foreach (var item in Items)
+                    {
+                        var ValidItem = Instance.ItemPool.Values.FirstOrDefault(x => x.GetDictEntry(Instance).SpoilerData.SpoilerLogNames.Contains(item));
+                        ItemIDs.Add(ValidItem is null ? item : ValidItem.Id);
+                    }
+                    foreach (var item in Items)
+                    {
+                        ItemNames.Add(Instance.ItemPool.ContainsKey(item) ? Instance.ItemPool[item].GetDictEntry(Instance).GetName(Instance) : item);
+                    }
+                    Dictionary<string, string> HintedEntries = Locations.Zip(Items, (k, v) => new { k, v }).ToDictionary(x => x.k, x => x.v);
+                    Result[CurrentKey] = new SpoilerHintData
+                    {
+                        HintType= HintType.ItemExact,
+                        PrettyLocationText = $"{string.Join("and ", Locations)}",
+                        HintedLocations = Locations,
+                        HintedItemNames = ItemNames.ToArray(),
+                        HintedItems = ItemIDs.ToArray()
+                    };
+                    CurrentKey = "";
+                }
+                else { CurrentKey = x; }
+            }
+            return Result;
         }
     }
 }

@@ -20,6 +20,10 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
 
             List<MMROOTLocation> OOTPool = JsonConvert.DeserializeObject<List<MMROOTLocation>>(Utility.ConvertCsvFileToJsonObject(File.ReadAllLines(OTTMMPaths.OOTPoolFile)));
             List<MMROOTLocation> MMPool = JsonConvert.DeserializeObject<List<MMROOTLocation>>(Utility.ConvertCsvFileToJsonObject(File.ReadAllLines(OTTMMPaths.MMPoolFile)));
+
+            List<MMROOTHintData> OOTGossips = JsonConvert.DeserializeObject<List<MMROOTHintData>>(Utility.ConvertCsvFileToJsonObject(File.ReadAllLines(OTTMMPaths.OOTHintFile)));
+            List<MMROOTHintData> MMGossips = JsonConvert.DeserializeObject<List<MMROOTHintData>>(Utility.ConvertCsvFileToJsonObject(File.ReadAllLines(OTTMMPaths.MMHintFile)));
+
             Dictionary<string, string> TrickList = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(OTTMMPaths.TricksFile));
             List<string> ItemList = JsonConvert.DeserializeObject<List<string>>(File.ReadAllText(OTTMMPaths.ItemsFile));
             Dictionary<string, string> ItemNames = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(OTTMMPaths.ItemNamesFile));
@@ -29,6 +33,9 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
             AddTricks(logicDictionaryData, TrickList);
             AddItems(logicDictionaryData, ItemList, ItemNames);
             CreateEntranceConnections(OTTMMPaths, logicDictionaryData);
+
+            AddGossips(logicDictionaryData, "OOT", OOTGossips);
+            AddGossips(logicDictionaryData, "MM", MMGossips);
 
             return logicDictionaryData;
 
@@ -66,6 +73,15 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                     string TrickID = $"TRICK_{trick.Key}";
                     logicDictionaryData.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = TrickID, IsTrick = true, TrickCategory = GetGamecodeFromID(trick.Key) });
                     logicDictionaryData.MacroList.Add(TrickID, new LogicDictionaryData.DictionaryMacroEntry() { ID = TrickID, Name = trick.Value });
+                }
+            }
+
+            static void AddGossips(LogicDictionaryData.LogicDictionary logicDictionaryData, string GameCode, List<MMROOTHintData> GossipList)
+            {
+                foreach (var Gossip in GossipList)
+                {
+                    string GossipID = $"{GameCode} {Gossip.location}";
+                    logicDictionaryData.HintSpots.Add(GossipID, new LogicDictionaryData.DictionaryHintEntries() { ID = GossipID, Name = GossipID });
                 }
             }
 
