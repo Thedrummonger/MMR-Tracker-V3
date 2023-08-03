@@ -73,6 +73,15 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
 
             ParseLogicFunctions(LogicFile);
 
+            string[] SafeMMAreas = new string[] { "Clock Town", "Owl Clock Town", "Owl Milk Road", "Owl Swamp", "Owl Woodfall", "Owl Mountain", "Owl Snowhead", "Owl Great Bay", "Owl Zora Cape", "Owl Ikana", "Owl Stone Tower" };
+            foreach (var i in LogicFile.Logic)
+            {
+                if (!i.Id.StartsWith("MM ")) { continue; }
+                if (!OTTMMPaths.LocationAreas.ContainsKey(i.Id)) { continue; }
+                if (!SafeMMAreas.Contains(OTTMMPaths.LocationAreas[i.Id])) { continue; }
+                i.RequiredItems.Add("can_reset_time");
+            }
+
             File.WriteAllText(Path.Combine(OTTMMPaths.OOTMMTestingFolder,"LogicFile.json"), JsonConvert.SerializeObject(LogicFile, Testing._NewtonsoftJsonSerializerOptions));
             File.WriteAllText(Path.Combine(OTTMMPaths.OOTMMTestingFolder, "DictionaryFile.json"), JsonConvert.SerializeObject(DictionaryFile, Testing._NewtonsoftJsonSerializerOptions));
             EvalLogicEntryTypes(LogicFile);
