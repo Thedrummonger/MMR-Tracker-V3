@@ -679,6 +679,7 @@ namespace Windows_Form_Frontend
             //Add User Options
             foreach (var i in InstanceContainer.Instance.UserOptions.Values)
             {
+                if (!InstanceContainer.logicCalculation.LogicEntryAquired(i.Logic, new List<string>())) { continue; }
                 if (i.IsToggleOption())
                 {
                     ToolStripMenuItem menuItem = new() { Name = $"{i.ID}Menu", Checked = OptionData.GetToggleValues().Keys.Select(x => x.ToLower()).Contains(i.CurrentValue.ToLower()), Text = i.DisplayName };
@@ -712,6 +713,7 @@ namespace Windows_Form_Frontend
             }
             foreach(var i in InstanceContainer.Instance.Variables.Values.Where(x => !x.Static))
             {
+                if (!InstanceContainer.logicCalculation.LogicEntryAquired(i.Logic, new List<string>())) { continue; }
                 string DisplayName = i.Value is bool ? i.Name??i.ID : i.ToString();
                 ToolStripMenuItem menuItem = new() { Name = $"{i.ID}Menu", Text = DisplayName, Checked = i.Value is bool varBool && varBool };
                 menuItem.Click += delegate (object sender, EventArgs e) 

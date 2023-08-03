@@ -18,6 +18,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using YamlDotNet.Serialization.NamingConventions;
 using YamlDotNet.Serialization;
+using System.Globalization;
 
 namespace MMR_Tracker_V3
 {
@@ -319,6 +320,14 @@ namespace MMR_Tracker_V3
             }
 
             return JsonConvert.SerializeObject(listObjResult, Testing._NewtonsoftJsonSerializerOptions);
+        }
+
+        public static string ConvertToCamelCase(string Input)
+        {
+            string NiceName = Input.ToLower();
+            TextInfo cultInfo = new CultureInfo("en-US", false).TextInfo;
+            NiceName = cultInfo.ToTitleCase(NiceName);
+            return NiceName;
         }
 
     }

@@ -206,6 +206,37 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
             };
             DictionaryFile.Variables.Add("MM_MASKS", MMMaskVar);
 
+            MMRData.JsonFormatLogicItem BothGameSouls = new() { Id = "BothGameSouls", RequiredItems = new List<string> { "var{enemySoulsOot}", "var{enemySoulsMm}" } };
+            MMRData.JsonFormatLogicItem BothGameSkeletonKey = new() { Id = "BothGameSkeletonKey", RequiredItems = new List<string> { "var{skeletonKeyOot}", "var{skeletonKeyMm}" } };
+            DictionaryFile.AdditionalLogic.Add(BothGameSouls);
+            DictionaryFile.AdditionalLogic.Add(BothGameSkeletonKey);
+
+            Dictionary<string, string> SettingLogic = new()
+            {
+                { "players", "mode, multi" },
+                { "distinctWorlds", "mode, multi" },
+                { "triforceGoal", "goal, triforce" },
+                { "triforcePieces", "goal, triforce" },
+                { "ganonBossKey", "goal, triforce, false" },
+                { "majoraChild", "goal, triforce, false" },
+                { "csmcHearts", "csmc, never, false" },
+                { "bottomlessWallets", "colossalWallets" },
+                { "sharedSouls", BothGameSouls.Id },
+                { "sharedSkeletonKey", BothGameSkeletonKey.Id }
+            };
+
+            foreach(var i in SettingLogic)
+            {
+                string[] LogicParts = i.Value.Split(',').Select(x => x.Trim()).ToArray();
+                string LogicString;
+                if (DictionaryFile.Options.ContainsKey(LogicParts[0])) { LogicString = $"setting{{{i.Value}}}"; }
+                else if (DictionaryFile.Variables.ContainsKey(LogicParts[0])) { LogicString = $"var{{{i.Value}}}"; }
+                else { LogicString = i.Value; }
+                if (DictionaryFile.Options.ContainsKey(i.Key)) { DictionaryFile.Options[i.Key].Logic = LogicString; }
+                else if (DictionaryFile.Variables.ContainsKey(i.Key)) { DictionaryFile.Variables[i.Key].Logic = LogicString; }
+                else { throw new Exception($"{i.Key} is not a valid option or variable"); }
+            }
+
         }
         private static void AddGameClearChecks(MMRData.LogicFile logicFile, LogicDictionaryData.LogicDictionary dictionaryFile)
         {

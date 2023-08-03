@@ -32,6 +32,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string DisplayName { get; set; }
             public string CurrentValue { get; set; } = "";
             public string SubCategory { get; set; } = null;
+            public string Logic { get; set; } = "true";
             public Dictionary<string, actions> Values { get; set; } = new Dictionary<string, actions>();
             public actions GetActions()
             {
@@ -125,6 +126,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string Name { get; set; }
             public string SubCategory { get; set; } = null;
             public bool Static { get; set; } = true;
+            public string Logic { get; set; } = "true";
             public object Value { set { _value = ParseInput(value, Name); } get { return _value; } }
 
             public string ValueToString()

@@ -25,7 +25,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                         ID = Setting.key,
                         Name = Setting.name,
                         Static = false,
-                        SubCategory= Setting.category.Replace(".", " "),
+                        SubCategory= Utility.ConvertToCamelCase(Setting.category.Replace(".", " ")),
                         Value = IntValue
                     };
                     logicDictionaryData.Variables.Add(Setting.key, IntSettingDictEntry);
@@ -37,7 +37,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                         ID = Setting.key,
                         Name = Setting.name,
                         Static = false,
-                        SubCategory= Setting.category.Replace(".", " "),
+                        SubCategory= Utility.ConvertToCamelCase(Setting.category.Replace(".", " ")),
                         Value = BoolValue
                     };
                     logicDictionaryData.Variables.Add(Setting.key, IntSettingDictEntry);
@@ -48,7 +48,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                     {
                         ID = Setting.key,
                         DisplayName = Setting.name,
-                        SubCategory= Setting.category.Replace(".", " "),
+                        SubCategory= Utility.ConvertToCamelCase(Setting.category.Replace(".", " ")),
                         CurrentValue = StringValue,
                         Values = new Dictionary<string, OptionData.actions>()
                     };
@@ -64,7 +64,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                 {
                     ID = setting,
                     Static = false,
-                    Name = setting.Replace("_", " "),
+                    Name = Utility.ConvertToCamelCase(setting.Replace("_", " ")),
                     SubCategory= "Master Quest Dungeons",
                     Value = false,
                 };
@@ -166,12 +166,12 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
             };
 
             AddCondition("moon", "mm", "Moon Access Conditions", "Boss Remains", 4);
-            AddCondition("majora", "MM", "Majora Child Conditions");
+            AddCondition("majora", "MM", "Majora Child Conditions", Logic: "setting{majoraChild, custom}");
             AddCondition("bridge", "oot", "Rainbow Bridge Conditions", "Medallions", 6);
-            AddCondition("lacs", "oot", "Light Arrow Cutscene Conditions");
-            AddCondition("ganon_bk", "oot", "Ganon Boss Key Conditions");
+            AddCondition("lacs", "oot", "Light Arrow Cutscene Conditions", Logic: "setting{lacs, custom}");
+            AddCondition("ganon_bk", "oot", "Ganon Boss Key Conditions", Logic: "setting{ganonBossKey, custom}");
 
-            void AddCondition(string ID, string Game, string Category, string DefaultValue = null, int DefaultCount = 0)
+            void AddCondition(string ID, string Game, string Category, string DefaultValue = null, int DefaultCount = 0, string Logic = null)
             {
                 dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem
                 {
@@ -188,6 +188,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                     Requirement.SubCategory = Category;
                     Requirement.CurrentValue = DefaultValue is null ? "false" : (namedata[0] == DefaultValue).ToString().ToLower();
                     Requirement.CreateSimpleValues(new string[] { "true", "false" });
+                    Requirement.Logic = Logic is null ? "true" : Logic;
                     Requirement.Values["true"].VariableEdit.Add($"{ID.ToLower()}_req", new OptionData.VariableEditData
                     {
                         action = MiscData.MathOP.add,
@@ -208,6 +209,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                 req_count.Name = "Items Required";
                 req_count.ID = $"{ID.ToLower()}_count";
                 req_count.Value = DefaultCount;
+                req_count.Logic = Logic is null ? "true" : Logic;
                 dictionaryFile.Variables.Add(req_count.ID, req_count);
             }
 
