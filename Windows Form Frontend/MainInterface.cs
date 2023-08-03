@@ -712,8 +712,13 @@ namespace Windows_Form_Frontend
             }
             foreach(var i in InstanceContainer.Instance.Variables.Values.Where(x => !x.Static))
             {
-                ToolStripMenuItem menuItem = new() { Name = $"{i.ID}Menu", Text = i.ToString() };
-                menuItem.Click += delegate (object sender, EventArgs e) { HandleItemSelect(new List<OptionData.TrackerVar> { i }, MiscData.CheckState.Checked); };
+                string DisplayName = i.Value is bool ? i.Name??i.ID : i.ToString();
+                ToolStripMenuItem menuItem = new() { Name = $"{i.ID}Menu", Text = DisplayName, Checked = i.Value is bool varBool && varBool };
+                menuItem.Click += delegate (object sender, EventArgs e) 
+                { 
+                    HandleItemSelect(new List<OptionData.TrackerVar> { i }, MiscData.CheckState.Checked);
+                    ReopenMenu(menuItem);
+                };
                 GroupOption(menuItem, i.SubCategory);
             }
 
