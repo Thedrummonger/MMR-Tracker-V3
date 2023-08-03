@@ -75,12 +75,82 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
         }
         private static void WorldEventRequirementOptions(LogicDictionaryData.LogicDictionary dictionaryFile)
         {
+            var MASKS_REGULAR = new string[] {
+              "MM_MASK_CAPTAIN",
+              "MM_MASK_GIANT",
+              "MM_MASK_ALL_NIGHT",
+              "MM_MASK_BUNNY",
+              "MM_MASK_KEATON",
+              "MM_MASK_GARO",
+              "MM_MASK_ROMANI",
+              "MM_MASK_TROUPE_LEADER",
+              "MM_MASK_POSTMAN",
+              "MM_MASK_COUPLE",
+              "MM_MASK_GREAT_FAIRY",
+              "MM_MASK_GIBDO",
+              "MM_MASK_DON_GERO",
+              "MM_MASK_KAMARO",
+              "MM_MASK_TRUTH",
+              "MM_MASK_STONE",
+              "MM_MASK_BREMEN",
+              "MM_MASK_BLAST",
+              "MM_MASK_SCENTS",
+              "MM_MASK_KAFEI",
+              "SHARED_MASK_TRUTH",
+              "SHARED_MASK_BUNNY",
+              "SHARED_MASK_KEATON",
+            };
+            var MASKS_TRANSFORM = new string[]{ 
+                "MM_MASK_DEKU", 
+                "MM_MASK_GORON", 
+                "MM_MASK_ZORA", 
+                "MM_MASK_FIERCE_DEITY", 
+                "SHARED_MASK_GORON", 
+                "SHARED_MASK_ZORA" 
+            };
+            var MASKS_OOT = new string[]{
+              "OOT_MASK_SKULL",
+              "OOT_MASK_SPOOKY",
+              "OOT_MASK_KEATON",
+              "OOT_MASK_BUNNY",
+              "OOT_MASK_TRUTH",
+              "OOT_MASK_GERUDO",
+              "OOT_MASK_GORON",
+              "OOT_MASK_ZORA",
+              "SHARED_MASK_KEATON",
+              "SHARED_MASK_BUNNY",
+              "SHARED_MASK_TRUTH",
+              "SHARED_MASK_GORON",
+              "SHARED_MASK_ZORA",
+            };
+            var STONES = new string[]{
+              "OOT_STONE_EMERALD",
+              "OOT_STONE_RUBY",
+              "OOT_STONE_SAPPHIRE",
+            };
+
+            var MEDALLIONS = new string[]{
+              "OOT_MEDALLION_LIGHT",
+              "OOT_MEDALLION_FOREST",
+              "OOT_MEDALLION_FIRE",
+              "OOT_MEDALLION_WATER",
+              "OOT_MEDALLION_SPIRIT",
+              "OOT_MEDALLION_SHADOW",
+            };
+
+            var REMAINS = new string[]{
+              "MM_REMAINS_ODOLWA",
+              "MM_REMAINS_GOHT",
+              "MM_REMAINS_GYORG",
+              "MM_REMAINS_TWINMOLD",
+            };
+            var DUNGEON_REWARDS = STONES.Concat(MEDALLIONS).Concat(REMAINS).ToArray();
 
             Dictionary<string, string[]> PossibleReqs = new()
             {
-                { "Spiritual Stones|stones", new string[] { "OOT_STONE_EMERALD", "OOT_STONE_RUBY", "OOT_STONE_SAPPHIRE" } },
-                { "Medallions|medallions", new string[] { "OOT_MEDALLION_LIGHT", "OOT_MEDALLION_FOREST", "OOT_MEDALLION_FIRE", "OOT_MEDALLION_WATER", "OOT_MEDALLION_SPIRIT", "OOT_MEDALLION_SHADOW" } },
-                { "Boss Remains|remains", new string[] { "MM_REMAINS_ODOLWA", "MM_REMAINS_GOHT", "MM_REMAINS_GYORG", "MM_REMAINS_TWINMOLD" } },
+                { "Spiritual Stones|stones", STONES},
+                { "Medallions|medallions", MEDALLIONS },
+                { "Boss Remains|remains", REMAINS },
                 { "Gold Skulltulas Tokens|skullsGold", new string[] { "OOT_GS_TOKEN" } },
                 { "Swamp Skulltulas Tokens|skullsSwamp", new string[] { "MM_GS_TOKEN_SWAMP" } },
                 { "Ocean Skulltulas Tokens|skullsOcean", new string[] { "MM_GS_TOKEN_OCEAN" } },
@@ -89,9 +159,9 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                 { "Stray Fairies (Great Bay)|fairiesGB", new string[] { "MM_STRAY_FAIRY_GB" } },
                 { "Stray Fairies (Stone Tower)|fairiesST", new string[] { "MM_STRAY_FAIRY_ST" } },
                 { "Stray Fairy (Clock Town)|fairyTown", new string[] { "MM_STRAY_FAIRY_TOWN" } },
-                { "Regular Masks (MM)|masksRegular", new string[] { "MM_MASK_CAPTAIN", "MM_MASK_GIANT", "MM_MASK_ALL_NIGHT", "MM_MASK_BUNNY", "MM_MASK_KEATON", "MM_MASK_GARO", "MM_MASK_ROMANI", "MM_MASK_TROUPE_LEADER", "MM_MASK_POSTMAN", "MM_MASK_COUPLE", "MM_MASK_GREAT_FAIRY", "MM_MASK_GIBDO", "MM_MASK_DON_GERO", "MM_MASK_KAMARO", "MM_MASK_TRUTH", "MM_MASK_STONE", "MM_MASK_BREMEN", "MM_MASK_BLAST", "MM_MASK_SCENTS", "MM_MASK_KAFEI", "SHARED_MASK_TRUTH", "SHARED_MASK_BUNNY", "SHARED_MASK_KEATON" } },
-                { "Transformation Masks (MM)|masksTransform", new string[] { "MM_MASK_DEKU", "MM_MASK_GORON", "MM_MASK_ZORA", "MM_MASK_FIERCE_DEITY", "SHARED_MASK_GORON", "SHARED_MASK_ZORA" } },
-                { "Masks (OoT)|masksOot", new string[] { "OOT_MASK_SKULL", "OOT_MASK_SPOOKY", "OOT_MASK_KEATON", "OOT_MASK_BUNNY", "OOT_MASK_TRUTH", "OOT_MASK_GERUDO", "OOT_MASK_GORON", "OOT_MASK_ZORA", "SHARED_MASK_KEATON", "SHARED_MASK_BUNNY", "SHARED_MASK_TRUTH", "SHARED_MASK_GORON", "SHARED_MASK_ZORA" } },
+                { "Regular Masks (MM)|masksRegular", MASKS_REGULAR },
+                { "Transformation Masks (MM)|masksTransform", MASKS_TRANSFORM },
+                { "Masks (OoT)|masksOot", MASKS_OOT },
                 { "Triforce Pieces|triforce", new string[] { "SHARED_TRIFORCE" } },
             };
 

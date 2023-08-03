@@ -197,43 +197,6 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
               "SHARED_MASK_BUNNY",
               "SHARED_MASK_KEATON",
             };
-            var MASKS_OOT = new string[]{
-              "OOT_MASK_SKULL",
-              "OOT_MASK_SPOOKY",
-              "OOT_MASK_KEATON",
-              "OOT_MASK_BUNNY",
-              "OOT_MASK_TRUTH",
-              "OOT_MASK_GERUDO",
-              "OOT_MASK_GORON",
-              "OOT_MASK_ZORA",
-              "SHARED_MASK_KEATON",
-              "SHARED_MASK_BUNNY",
-              "SHARED_MASK_TRUTH",
-              "SHARED_MASK_GORON",
-              "SHARED_MASK_ZORA",
-            };
-            var STONES = new string[]{
-              "OOT_STONE_EMERALD",
-              "OOT_STONE_RUBY",
-              "OOT_STONE_SAPPHIRE",
-            };
-
-            var MEDALLIONS = new string[]{
-              "OOT_MEDALLION_LIGHT",
-              "OOT_MEDALLION_FOREST",
-              "OOT_MEDALLION_FIRE",
-              "OOT_MEDALLION_WATER",
-              "OOT_MEDALLION_SPIRIT",
-              "OOT_MEDALLION_SHADOW",
-            };
-
-            var REMAINS = new string[]{
-              "MM_REMAINS_ODOLWA",
-              "MM_REMAINS_GOHT",
-              "MM_REMAINS_GYORG",
-              "MM_REMAINS_TWINMOLD",
-            };
-            var DUNGEON_REWARDS = STONES.Concat(MEDALLIONS).Concat(REMAINS).ToArray();
 
             OptionData.TrackerVar MMMaskVar = new OptionData.TrackerVar
             {
