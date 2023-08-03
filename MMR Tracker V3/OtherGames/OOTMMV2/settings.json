@@ -418,6 +418,46 @@
     "default": "ownDungeon"
   },
   {
+    "key": "smallKeyRingOot",
+    "name": "Small Key Ring (OoT)",
+    "category": "main.shuffle",
+    "type": "enum",
+    "description": "Controls the grouping of keys into keyrings, for OoT",
+    "values": [
+      {
+        "value": "disabled",
+        "name": "Disabled",
+        "description": "Small keys are found individually, like in the base game."
+      },
+      {
+        "value": "keyRings",
+        "name": "Key Rings",
+        "description": "Small keys are grouped into key rings."
+      }
+    ],
+    "default": "disabled"
+  },
+  {
+    "key": "smallKeyRingMm",
+    "name": "Small Key Ring (MM)",
+    "category": "main.shuffle",
+    "type": "enum",
+    "description": "Controls the grouping of keys into keyrings, for MM",
+    "values": [
+      {
+        "value": "disabled",
+        "name": "Disabled",
+        "description": "Small keys are found individually, like in the base game."
+      },
+      {
+        "value": "keyRings",
+        "name": "Key Rings",
+        "description": "Small keys are grouped into key rings."
+      }
+    ],
+    "default": "disabled"
+  },
+  {
     "key": "silverRupeeShuffle",
     "name": "Silver Rupee Shuffle",
     "category": "main.shuffle",
@@ -463,21 +503,21 @@
     "default": "vanilla"
   },
   {
-    "key": "strayFairyShuffle",
-    "name": "Dungeon Stray Fairy Shuffle",
+    "key": "strayFairyChestShuffle",
+    "name": "Dungeon Chest Fairy Shuffle",
     "category": "main.shuffle",
     "type": "enum",
-    "description": "Controls where the Dungeon Stray Fairies can be",
+    "description": "Controls where the Chest Dungeon Stray Fairies can be",
     "values": [
+      {
+        "value": "starting",
+        "name": "Starting",
+        "description": "Start with the fairies"
+      },
       {
         "value": "vanilla",
         "name": "Vanilla",
         "description": "The Dungeon Stray Fairies will be at their original locations"
-      },
-      {
-        "value": "mixed",
-        "name": "Chests Own Dungeon",
-        "description": "The Dungeon Stray Fairies within bubbles are vanilla, but the ones in chests are shuffled within their own dungeon"
       },
       {
         "value": "ownDungeon",
@@ -490,7 +530,42 @@
         "description": "All Dungeon Stray Fairies are shuffled anywhere"
       }
     ],
-    "default": "mixed"
+    "default": "ownDungeon"
+  },
+  {
+    "key": "strayFairyOtherShuffle",
+    "name": "Dungeon Freestanding Fairy Shuffle",
+    "category": "main.shuffle",
+    "type": "enum",
+    "description": "Controls where the Freestanding Dungeon Stray Fairies can be",
+    "values": [
+      {
+        "value": "removed",
+        "name": "Removed",
+        "description": "Start with the fairies, and the bubbles are removed."
+      },
+      {
+        "value": "starting",
+        "name": "Starting",
+        "description": "Start with the fairies"
+      },
+      {
+        "value": "vanilla",
+        "name": "Vanilla",
+        "description": "The Dungeon Stray Fairies will be at their original locations"
+      },
+      {
+        "value": "ownDungeon",
+        "name": "Own Dungeon",
+        "description": "All Dungeon Stray Fairies are shuffled within their own dungeon"
+      },
+      {
+        "value": "anywhere",
+        "name": "Anywhere",
+        "description": "All Dungeon Stray Fairies are shuffled anywhere"
+      }
+    ],
+    "default": "vanilla"
   },
   {
     "key": "ganonBossKey",
@@ -690,7 +765,6 @@
     "default": false
   },
   {
-
     "type": "enum",
     "values": [
       {
@@ -721,7 +795,6 @@
     "description": "Sets the price of items inside OoT shops"
   },
   {
-
     "type": "enum",
     "values": [
       {
@@ -752,7 +825,6 @@
     "description": "Sets the price of items sold by OoT scrubs"
   },
   {
-
     "type": "enum",
     "values": [
       {
@@ -783,7 +855,6 @@
     "description": "Sets the price of items sold inside MM shops"
   },
   {
-
     "type": "enum",
     "values": [
       {
@@ -1348,6 +1419,22 @@
     "category": "items.extensions",
     "type": "boolean",
     "description": "Adds a Wallet that can hold up to 9999 rupees in each game",
+    "default": false,
+  },
+  {
+    "key": "skeletonKeyOot",
+    "name": "Skeleton Key (OoT)",
+    "category": "items.extensions",
+    "type": "boolean",
+    "description": "Adds a Skeleton Key that can open every small-key-locked door.",
+    "default": false
+  },
+  {
+    "key": "skeletonKeyMm",
+    "name": "Skeleton Key (MM)",
+    "category": "items.extensions",
+    "type": "boolean",
+    "description": "Adds a Skeleton Key that can open every small-key-locked door.",
     "default": false
   },
   {
@@ -1521,6 +1608,13 @@
     "default": false
   },
   {
+    "key": "sharedSkeletonKey",
+    "name": "Shared Skeleton Key",
+    "category": "items.shared",
+    "type": "boolean",
+    "default": false
+  },
+  {
     "key": "agelessSwords",
     "name": "Ageless Swords",
     "category": "items.ageless",
@@ -1574,6 +1668,14 @@
     "category": "items.ageless",
     "type": "boolean",
     "description": "Allows Link to use the hammer independently of his age",
+    "default": false
+  },
+  {
+    "key": "agelessHookshot",
+    "name": "Ageless Hookshot",
+    "category": "items.ageless",
+    "type": "boolean",
+    "description": "Allows Link to use the hookshot independently of his age",
     "default": false
   },
   {
@@ -1706,6 +1808,14 @@
     "description": "- Every entrance to Hyrule Field except Gerudo Valley and Market<br>- The entrance to Gerudo Fortress from Gerudo Valley<br>- The entrances to the four main regions in MM<br>- The entrance to Romani Ranch"
   },
   {
+    "key": "erRegionsExtra",
+    "name": "Shuffle Market Entrance",
+    "category": "entrances",
+    "type": "boolean",
+    "description": "Shuffle Hyrule Field's Market entrance among the regions.",
+    "default": false
+  },
+  {
     "key": "erIndoors",
     "name": "Shuffle Interiors",
     "category": "entrances",
@@ -1732,7 +1842,7 @@
     "name": "Shuffle Extra Interiors",
     "category": "entrances",
     "type": "boolean",
-    "description": "Shuffle additional, more complex interiors. These include:<br>- OOT: Link's House, Temple of Time, Windmill<br>- MM: Stock Pot Inn, Astral Observatory/Bombers' Hideout, Swamp Tourist Hut, Ikana Spring Cave",
+    "description": "Shuffle additional, more complex interiors. These include:<br>- OOT: Link's House, Temple of Time, Windmill, Kak Potion Shop<br>- MM: Stock Pot Inn, Astral Observatory/Bombers' Hideout, Swamp Tourist Hut, Ikana Spring Cave",
     "default": false
   }
 ]

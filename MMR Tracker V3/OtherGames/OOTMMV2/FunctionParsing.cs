@@ -118,16 +118,13 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                             break;
                         case "small_keys":
                             string SmallKeySetting = Gamecode == "MM" ? "smallKeyShuffleMm" : "smallKeyShuffleOot";
-                            ParsedConditional =$"(setting({SmallKeySetting}, removed) || has({Param}))";
+                            string[] SmallKeyParams = Param.Split(",").Select(x => x.Trim()).ToArray();
+                            ParsedConditional =$"(has_skeleton_key || setting({SmallKeySetting}, removed) || has({SmallKeyParams[1]}) || has({SmallKeyParams[0]}, {SmallKeyParams[2]}))";
                             FunctionParsed = true;
                             break;
                         case "boss_key":
                             string BossKeySetting = Gamecode == "MM" ? "bossKeyShuffleMm" : "bossKeyShuffleOot";
                             ParsedConditional =$"(setting({BossKeySetting}, removed) || has({Param}))";
-                            FunctionParsed = true;
-                            break;
-                        case "has_small_keys_fire":
-                            ParsedConditional =$"(setting(smallKeyShuffleOot, removed) || cond(setting(smallKeyShuffleOot, anywhere), has(SMALL_KEY_FIRE, {int.Parse(Param) + 1}), has(SMALL_KEY_FIRE, {Param})))";
                             FunctionParsed = true;
                             break;
                         case "cond":
@@ -150,7 +147,9 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                         case "shop_price":
                         case "tingle_price":
                         case "shop_ex_price":
-                            ParsedConditional = $"true"; //Price will be handled by the trackers built in price tracking
+                            //Price will be handled by the trackers built in price tracking, but add the child wallet (99) as default
+                            //TODO, Change this to somehow add the wallet needed for the vanilla price.
+                            ParsedConditional = $"{Gamecode}_COST_99"; 
                             FunctionParsed = true;
                             break;
                         case "adult_trade":
@@ -225,6 +224,30 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                             break;
                         case "special":
                             ParsedConditional = $"{Gamecode}_HAS_{Param}_REQUIREMENTS";
+                            break;
+                        case "small_keys_hideout":
+                        case "small_keys_fire":
+                        case "small_keys_botw":
+                        case "small_keys_forest":
+                        case "small_keys_ganon":
+                        case "small_keys_gb":
+                        case "small_keys_gtg":
+                        case "small_keys_sh":
+                        case "small_keys_shadow":
+                        case "small_keys_spirit":
+                        case "small_keys_st":
+                        case "small_keys_water":
+                        case "small_keys_wf":
+                            string KeyCode = Func.Split('_')[2].ToUpper();
+                            if (KeyCode == "HIDEOUT") { KeyCode = "GF"; }
+                            int SmallKeyCount = int.Parse(Param);
+                            ParsedConditional =  $"(small_keys(SMALL_KEY_{KeyCode}, KEY_RING_{KeyCode}, {Param}))";
+                            if (KeyCode == "FIRE")
+                            {
+                                string SmallKeySetting2 = Gamecode == "MM" ? "smallKeyShuffleMm" : "smallKeyShuffleOot";
+                                ParsedConditional =  $"(cond(setting({SmallKeySetting2}, anywhere), small_keys(SMALL_KEY_{KeyCode}, KEY_RING_{KeyCode}, {SmallKeyCount+1}), small_keys(SMALL_KEY_{KeyCode}, KEY_RING_{KeyCode}, {SmallKeyCount})))";
+                            }
+                            FunctionParsed = true;
                             break;
 
                     }
