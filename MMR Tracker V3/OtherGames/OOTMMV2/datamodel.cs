@@ -102,7 +102,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
             public string TricksFile { get; set; }
             public string ItemsFile { get; set; }
             public string ItemNamesFile { get; set; }
-            public string RegionNamesFile { get; set; } 
+            public string RegionNamesFile { get; set; }
+            public string LocationAreaFile { get; set; }
 
             //Shared Data
             public string OOTMMCorePath { get; set; }

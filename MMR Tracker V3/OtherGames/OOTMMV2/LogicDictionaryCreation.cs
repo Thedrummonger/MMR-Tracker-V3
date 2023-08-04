@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -42,17 +43,31 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
             static void Createlocations(LogicDictionaryData.LogicDictionary logicDictionaryData, List<MMROOTLocation> Pool, string GameCode, OOTMMParserData OTTMMPaths)
             {
                 var RegionNames = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(OTTMMPaths.RegionNamesFile));
+                var SpecificLocationAreas = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(OTTMMPaths.LocationAreaFile));
                 foreach (var i in Pool)
                 {
-                    string LocationAreaID = OTTMMPaths.LocationAreas[$"{GameCode} {i.location}"];
+                    string LocationID = $"{GameCode} {i.location}";
 
-                    string Region = RegionNames.ContainsKey(LocationAreaID) ? RegionNames[LocationAreaID] : LocationAreaID;
+                    string Region = OTTMMPaths.LocationAreas[LocationID];
+                    if (SpecificLocationAreas.ContainsKey(LocationID))
+                    {
+                        Region = SpecificLocationAreas[LocationID];
+                    }
+                    else if (RegionNames.ContainsKey(OTTMMPaths.LocationAreas[LocationID]))
+                    {
+                        Region = RegionNames[OTTMMPaths.LocationAreas[LocationID]];
+                        Debug.WriteLine($"{LocationID} Did not have Specific Region Data");
+                    }
+                    else
+                    {
+                        Debug.WriteLine($"{LocationID} Had no region data");
+                    }
 
                     LogicDictionaryData.DictionaryLocationEntries LocationEntry = new LogicDictionaryData.DictionaryLocationEntries()
                     {
                         Area = Region,
-                        ID = $"{GameCode} {i.location}",
-                        Name = $"{GameCode} {i.location}",
+                        ID = LocationID,
+                        Name = LocationID,
                         OriginalItem = $"{GameCode}_{i.item}",
                         Repeatable = IsLocationRenewable($"{GameCode} {i.location}", i.type),
                         ValidItemTypes = new string[] { "item" },

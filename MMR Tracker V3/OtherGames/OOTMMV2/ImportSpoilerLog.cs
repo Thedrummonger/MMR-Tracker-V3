@@ -206,6 +206,19 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                     var MapsCompasses = instance.ItemPool.Values.Where(x => x.Id.StartsWith("MM_WORLD_MAP_"));
                     foreach (var i in MapsCompasses) { i.AmountInStartingpool= 1; }
                 }
+                if (setting.Key == "strayFairyChestShuffle" && setting.Value == "starting")
+                {
+                    instance.ItemPool.Values.First(x => x.Id == "MM_STRAY_FAIRY_WF").AmountInStartingpool += 3;
+                    instance.ItemPool.Values.First(x => x.Id == "MM_STRAY_FAIRY_SH").AmountInStartingpool += 7;
+                    instance.ItemPool.Values.First(x => x.Id == "MM_STRAY_FAIRY_GB").AmountInStartingpool += 6;
+                    instance.ItemPool.Values.First(x => x.Id == "MM_STRAY_FAIRY_ST").AmountInStartingpool += 15;
+                }
+                if (setting.Key == "strayFairyOtherShuffle" && (setting.Value == "starting" || setting.Value == "removed"))
+                {
+                    instance.ItemPool.Values.First(x => x.Id == "MM_STRAY_FAIRY_WF").AmountInStartingpool += 12;
+                    instance.ItemPool.Values.First(x => x.Id == "MM_STRAY_FAIRY_SH").AmountInStartingpool += 8;
+                    instance.ItemPool.Values.First(x => x.Id == "MM_STRAY_FAIRY_GB").AmountInStartingpool += 9;
+                }
             }
         }
 

@@ -29,6 +29,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
             OTTMMPaths.ItemsFile = Path.Combine(OTTMMPaths.OOTMMV2CodeFolder, "items.json");
             OTTMMPaths.ItemNamesFile = Path.Combine(OTTMMPaths.OOTMMV2CodeFolder, "ItemNames.json");
             OTTMMPaths.RegionNamesFile = Path.Combine(OTTMMPaths.OOTMMV2CodeFolder, "RegionNames.json");
+            OTTMMPaths.LocationAreaFile = Path.Combine(OTTMMPaths.OOTMMV2CodeFolder, "LocationAreas.json");
             
             //Shared Data
             OTTMMPaths.OOTMMCorePath = Path.Combine(References.TestingPaths.GetDevTestingPath(), "OoTMM-develop", "packages", "core");
@@ -73,7 +74,9 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
 
             ParseLogicFunctions(LogicFile);
 
-            foreach(var i in LogicFile.Logic)
+            FixAreaClearLogic(LogicFile);
+
+            foreach (var i in LogicFile.Logic)
             {
                 if (!OTTMMPaths.MMLogicEntries.Contains(i.Id) || 
                     OTTMMPaths.MMSOTSafeLogicEntries.Contains(i.Id) || 
@@ -88,6 +91,43 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
 
             OutLogic = LogicFile;
             outDict = DictionaryFile;
+        }
+        public static void FixAreaClearLogic(MMRData.LogicFile Logic)
+        {
+            var MM_BOSS_GREAT_BAY = Logic.Logic.First(x => x.Id == "MM_EVENT_BOSS_GREAT_BAY");
+            var MM_BOSS_SNOWHEAD = Logic.Logic.First(x => x.Id == "MM_EVENT_BOSS_SNOWHEAD");
+            var MM_CLEAN_SWAMP = Logic.Logic.First(x => x.Id == "MM_EVENT_CLEAN_SWAMP");
+
+            string CodeFolder = References.TestingPaths.GetDevCodePath();
+
+            Dictionary<string, string> RandoAreaClear = new(){
+                  {"OOT Deku Tree Boss", "OOT Deku Tree Boss"},
+                  {"OOT Dodongo Cavern Boss", "OOT Dodongo Cavern Boss"},
+                  {"OOT Jabu-Jabu Boss", "OOT Jabu-Jabu Boss"},
+                  {"OOT Forest Temple Boss", "OOT Forest Temple Boss"},
+                  {"OOT Fire Temple Boss", "OOT Fire Temple Boss"},
+                  {"OOT Water Temple Boss", "OOT Water Temple Boss"},
+                  {"OOT Spirit Temple Boss", "OOT Spirit Temple Boss"},
+                  {"OOT Shadow Temple Boss", "OOT Shadow Temple Boss"},
+                  {"MM Woodfall Temple Boss", "MM Woodfall Temple Boss"},
+                  {"MM Great Bay Temple Boss", "MM Great Bay Temple Boss"},
+                  {"MM Snowhead Temple Boss", "MM Snowhead Temple Boss"},
+                  {"MM Stone Tower Temple Boss", "MM Stone Tower Boss"}
+            };
+
+            CreateLogic(MM_BOSS_GREAT_BAY, "MM Great Bay Temple Boss Access", "MM Great Bay Temple Boss");
+            CreateLogic(MM_BOSS_SNOWHEAD, "MM Snowhead Temple Boss Access", "MM Snowhead Temple Boss");
+            CreateLogic(MM_CLEAN_SWAMP, "MM Woodfall Temple Boss Access", "MM Woodfall Temple Boss");
+
+            void CreateLogic(MMRData.JsonFormatLogicItem Item, string DungeonArea, string BossDoor)
+            {
+                Item.RequiredItems = new List<string>();
+                Item.ConditionalItems = new List<List<string>>();
+                foreach (var i in RandoAreaClear)
+                {
+                    Item.ConditionalItems.Add(new() { $"contains{{{DungeonArea} => {BossDoor}, {i.Key}}}", $"check{{{i.Value}}}" });
+                }
+            }
         }
 
         private static void EvalLogicEntryTypes(MMRData.LogicFile LogicFile)
@@ -143,9 +183,9 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                 if (PrevIndex < 0) { PrevIndex = TingleLocations.Count - 1; }
                 Tuple<string, string> AltLocation = TingleLocations[PrevIndex];
                 MMRData.JsonFormatLogicItem TinglePurchaseMacro = new() { Id = $"MM Tingle Purchase {Location.Item1} at {Location.Item1}", 
-                    ConditionalItems = new List<List<string>> { new List<string> { $"MM Tingle {Location.Item1}" } } };
+                    ConditionalItems = new List<List<string>> { new List<string> { $"MM Tingle {Location.Item1}", $"MM_COST_99" } } };
                 MMRData.JsonFormatLogicItem TinglePurchaseMacro2 = new() { Id = $"MM Tingle Purchase {Location.Item1} at {AltLocation.Item1}",
-                    ConditionalItems = new List<List<string>> { new List<string> { $"MM Tingle {AltLocation.Item1}" } }
+                    ConditionalItems = new List<List<string>> { new List<string> { $"MM Tingle {AltLocation.Item1}", $"MM_COST_99" } }
                 };
                 logicFile.Logic.Add(TinglePurchaseMacro);
                 logicFile.Logic.Add(TinglePurchaseMacro2);
@@ -154,6 +194,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                 DictionaryFile.MacroList.Add(TinglePurchaseMacro2.Id, new() { ID = TinglePurchaseMacro2.Id, WalletCurrency = 'M' });
 
                 var MapLocationCheckDict = DictionaryFile.LocationList[$"MM Tingle Map {Location.Item2}"];
+                var MapLocationCheckDictAlt = DictionaryFile.LocationList[$"MM Tingle Map {AltLocation.Item2}"];
                 MapLocationCheckDict.LocationProxys.Add(new LogicDictionaryData.DictLocationProxy
                 {
                     ID = $"MM Tingle Purchase {Location.Item1} at {Location.Item1} Proxy",
@@ -164,7 +205,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                 MapLocationCheckDict.LocationProxys.Add(new LogicDictionaryData.DictLocationProxy
                 {
                     ID = $"MM Tingle Purchase {Location.Item1} at {AltLocation.Item1} Proxy",
-                    Area = MapLocationCheckDict.Area,
+                    Area = MapLocationCheckDictAlt.Area,
                     LogicInheritance = TinglePurchaseMacro2.Id,
                     Name = MapLocationCheckDict.Name + $" ({AltLocation.Item1})"
                 });

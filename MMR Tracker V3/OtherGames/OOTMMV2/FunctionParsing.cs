@@ -181,7 +181,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                             }
                             else if (Gamecode == "OOT")
                             {
-                                ParsedConditional = $"is_adult && has_hookshot({Param})";
+                                ParsedConditional = $"age_hookshot && has_hookshot({Param})";
                                 FunctionParsed = true;
                             }
                             break;
