@@ -73,6 +73,14 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
 
             ParseLogicFunctions(LogicFile);
 
+            foreach(var i in LogicFile.Logic)
+            {
+                if (!OTTMMPaths.MMLogicEntries.Contains(i.Id) || 
+                    OTTMMPaths.MMSOTSafeLogicEntries.Contains(i.Id) || 
+                    i.RequiredItems.Contains("MM_can_reset_time") || 
+                    i.RequiredItems.Contains("MM_can_reset_time_on_moon")) { continue; }
+                i.RequiredItems.Add("MM_can_reset_time");
+            }
 
             File.WriteAllText(Path.Combine(OTTMMPaths.OOTMMTestingFolder,"LogicFile.json"), JsonConvert.SerializeObject(LogicFile, Testing._NewtonsoftJsonSerializerOptions));
             File.WriteAllText(Path.Combine(OTTMMPaths.OOTMMTestingFolder, "DictionaryFile.json"), JsonConvert.SerializeObject(DictionaryFile, Testing._NewtonsoftJsonSerializerOptions));

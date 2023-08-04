@@ -71,29 +71,41 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                             List<List<string>> ConditionalLogic = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, Location.Value);
                             AddLogicEntry(LogicFile, ID, ConditionalLogic, WorldFile, Area);
                             TEMPlocationAreas[ID] = string.IsNullOrWhiteSpace(Area.Value.region) ? (string.IsNullOrWhiteSpace(Area.Value.dungeon) ? "Unknown" : $"{GameCode}_{Area.Value.dungeon}") : $"{GameCode}_{Area.Value.region}";
+                            ScanForSafeMMLocations(Area.Key, GameCode, ID);
                         }
                         foreach (var Location in Area.Value.exits)
                         {
                             string ID = GetExitID(Area.Key, Location.Key, GameCode);
                             List<List<string>> ConditionalLogic = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, Location.Value);
                             AddLogicEntry(LogicFile, ID, ConditionalLogic, WorldFile, Area);
-
                             var AreaConnectionData = ID.StringSplit(" => ").Select(x => x.Trim()).ToArray();
                             if (!TEMPAreaConnections.ContainsKey(ID)) { TEMPAreaConnections.Add(ID, new AreaConnections { Area = AreaConnectionData[0], Exit = AreaConnectionData[1] }); }
-                            
+                            ScanForSafeMMLocations(Area.Key, GameCode, ID);
                         }
                         foreach (var Location in Area.Value.events)
                         {
                             string ID = $"{GameCode}_EVENT_{Location.Key}";
                             List<List<string>> ConditionalLogic = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, Location.Value);
                             AddLogicEntry(LogicFile, ID, ConditionalLogic, WorldFile, Area);
+                            ScanForSafeMMLocations(Area.Key, GameCode, ID);
                         }
                         foreach (var Gossip in Area.Value.gossip)
                         {
                             string ID = $"{GameCode} {Gossip.Key}";
                             List<List<string>> ConditionalLogic = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, Gossip.Value);
                             AddLogicEntry(LogicFile, ID, ConditionalLogic, WorldFile, Area);
+                            ScanForSafeMMLocations(Area.Key, GameCode, ID);
                         }
+                    }
+                }
+
+                void ScanForSafeMMLocations(string Area, string GameCode, string ID)
+                {
+                    string[] SafeMMAreas = new string[] { "Clock Town", "Owl Clock Town", "Owl Milk Road", "Owl Swamp", "Owl Woodfall", "Owl Mountain", "Owl Snowhead", "Owl Great Bay", "Owl Zora Cape", "Owl Ikana", "Owl Stone Tower", "Ocean Spider House", "Swamp Spider House", "SOARING" };
+                    if (GameCode == "MM")
+                    {
+                        OTTMMPaths.MMLogicEntries.Add(ID);
+                        if (SafeMMAreas.Contains(Area)) { OTTMMPaths.MMSOTSafeLogicEntries.Add(ID); }
                     }
                 }
 

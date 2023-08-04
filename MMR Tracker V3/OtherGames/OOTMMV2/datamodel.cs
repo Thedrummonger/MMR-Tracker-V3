@@ -92,6 +92,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
             public Dictionary<string, AreaConnections> AreaConnections { get; set; }
             public Dictionary<string, string> LocationAreas { get; set; }
             public List<string> DungeonLayouts { get; set; } = new List<string>();
+            public List<string> MMLogicEntries { get; set; } = new List<string>();
+            public List<string> MMSOTSafeLogicEntries { get; set; } = new List<string>();
 
             //CodePaths
             public string MMRTrackerCodePath { get; set; }
