@@ -272,7 +272,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                 { "csmcHearts", "csmc, never, false" },
                 { "bottomlessWallets", "colossalWallets" },
                 { "sharedSouls", BothGameSouls.Id },
-                { "sharedSkeletonKey", BothGameSkeletonKey.Id }
+                { "sharedSkeletonKey", BothGameSkeletonKey.Id },
+                { "sharedSongSun", "sunSongMm" }
             };
 
             foreach(var i in SettingLogic)

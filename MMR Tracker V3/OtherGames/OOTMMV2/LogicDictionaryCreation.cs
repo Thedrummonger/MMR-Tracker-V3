@@ -48,6 +48,11 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                 {
                     string LocationID = $"{GameCode} {i.location}";
 
+                    string OriginalItem = $"{GameCode}_{i.item}"; 
+                    if (new string[] { "OOT_NOTHING", "OOT_FLEXIBLE", "OOT_MAGIC_JAR_SMALL", "OOT_MAGIC_JAR_LARGE" }.Contains(OriginalItem)) { OriginalItem = "OOT_RUPEE_GREEN"; }
+
+                    if (!OTTMMPaths.LocationAreas.ContainsKey(LocationID)) { Debug.WriteLine($"Location {LocationID} Was not found in logic file. Skipping."); continue; }
+
                     string Region = OTTMMPaths.LocationAreas[LocationID];
                     if (SpecificLocationAreas.ContainsKey(LocationID))
                     {
@@ -68,7 +73,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                         Area = Region,
                         ID = LocationID,
                         Name = LocationID,
-                        OriginalItem = $"{GameCode}_{i.item}",
+                        OriginalItem = OriginalItem,
                         Repeatable = IsLocationRenewable($"{GameCode} {i.location}", i.type),
                         ValidItemTypes = new string[] { "item" },
                         WalletCurrency = GameCode == "MM" ? 'M' : 'O',

@@ -725,6 +725,14 @@
     "default": "none"
   },
   {
+    "key": "shufflePotsOot",
+    "name": "Pots Shuffle (OoT)",
+    "category": "main.shuffle",
+    "type": "boolean",
+    "description": "Controls whether or not the pots are shuffled (OoT). !!!!! MQ NOT INCLUDED YET !!!!!",
+    "default": false
+  },
+  {
     "key": "shuffleOcarinasOot",
     "name": "Ocarina Shuffle (OoT)",
     "category": "main.shuffle",
@@ -1126,14 +1134,6 @@
     "default": "none"
   },
   {
-    "key": "sunSongMm",
-    "name": "Sun's Song in MM",
-    "category": "main.cross",
-    "type": "boolean",
-    "description": "Enables Sun's Song as an item in MM.",
-    "default": false
-  },
-  {
     "key": "csmc",
     "name": "Chest Size Matches Content",
     "category": "main.misc",
@@ -1374,6 +1374,14 @@
     "default": "progressive"
   },
   {
+    "key": "sunSongMm",
+    "name": "Sun's Song in MM",
+    "category": "items.extensions",
+    "type": "boolean",
+    "description": "Enables Sun's Song as an item in MM.",
+    "default": false
+  },
+  {
     "key": "fairyOcarinaMm",
     "name": "Fairy Ocarina in MM",
     "category": "items.extensions",
@@ -1419,7 +1427,7 @@
     "category": "items.extensions",
     "type": "boolean",
     "description": "Adds a Wallet that can hold up to 9999 rupees in each game",
-    "default": false,
+    "default": false
   },
   {
     "key": "skeletonKeyOot",

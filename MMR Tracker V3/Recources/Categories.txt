@@ -59,6 +59,7 @@ Graveyard
 Kakariko Graveyard
 Castle Town
 Market
+Market Pot House
 Temple of Time
 Hyrule Castle
 Outside Ganon's Castle
