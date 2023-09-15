@@ -126,7 +126,7 @@ namespace MMR_Tracker_V3
     }
     public static class LogicStringConverter
     {
-        public static List<List<string>> ConvertLogicStringToConditional(LogicStringParser Parser, string LogicLine)
+        public static List<List<string>> ConvertLogicStringToConditional(LogicStringParser Parser, string LogicLine, string LogicID)
         {
             var ParsedLogic = new List<LogicStringParser.LogicItem>();
             var MathString = "";
@@ -146,7 +146,7 @@ namespace MMR_Tracker_V3
                 Testing.PrintObjectToConsole(MathString);
                 Testing.PrintObjectToConsole(ExpandedMathString);
                 Testing.PrintObjectToConsole(MathLogicArray);
-                throw new Exception($"Error Parsing Logic Line {LogicLine}\n{e.Message}");
+                throw new Exception($"Error Parsing Logic Line for {LogicID}\n{LogicLine}\n{e.Message}");
             }
         }
 
@@ -154,11 +154,6 @@ namespace MMR_Tracker_V3
         {
             if (!Conditional.SelectMany(x => x).Any()) { return "(true)"; }
             return $"(({string.Join($") {Parser._OROP} (", Conditional.Select(x => string.Join($" {Parser._ANDOP} ", x)))}))";
-        }
-
-        public static List<List<string>> ReparseConditional(LogicStringParser Parser, List<List<string>> Conditional)
-        {
-            return ConvertLogicStringToConditional(Parser, ConvertConditionalToLogicString(Parser, Conditional));
         }
 
         private static string ConvertLogicParserObjectToMathString(List<LogicStringParser.LogicItem> Logic, out Dictionary<string, string> Ref, out Dictionary<char, string> OperatorMap)

@@ -49,7 +49,18 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                     string LocationID = $"{GameCode} {i.location}";
 
                     string OriginalItem = $"{GameCode}_{i.item}"; 
-                    if (new string[] { "OOT_NOTHING", "OOT_FLEXIBLE", "OOT_MAGIC_JAR_SMALL", "OOT_MAGIC_JAR_LARGE" }.Contains(OriginalItem)) { OriginalItem = "OOT_RUPEE_GREEN"; }
+                    if (new string[] { 
+                        "OOT_NOTHING", 
+                        "OOT_FLEXIBLE", 
+                        "OOT_MAGIC_JAR_SMALL",
+                        "OOT_MAGIC_JAR_LARGE",
+                        "OOT_RANDOM",
+                        "MM_RANDOM", 
+                        "MM_MAGIC_JAR_SMALL", 
+                        "MM_MAGIC_JAR_LARGE",
+                        "MM_ARROWS_20",
+                        "MM_NOTHING"
+                    }.Contains(OriginalItem)) { OriginalItem = "OOT_RUPEE_GREEN"; }
 
                     if (!OTTMMPaths.LocationAreas.ContainsKey(LocationID)) { Debug.WriteLine($"Location {LocationID} Was not found in logic file. Skipping."); continue; }
 

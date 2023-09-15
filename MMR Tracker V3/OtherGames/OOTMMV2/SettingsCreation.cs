@@ -163,6 +163,10 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                 { "Transformation Masks (MM)|masksTransform", MASKS_TRANSFORM },
                 { "Masks (OoT)|masksOot", MASKS_OOT },
                 { "Triforce Pieces|triforce", new string[] { "SHARED_TRIFORCE" } },
+                { "Coins (Red)|coinsRed", new string[]{ "OOT_COIN_RED" } },
+                { "Coins (Green)|coinsGreen", new string[]{ "OOT_COIN_GREEN" }  },
+                { "Coins (Blue)|coinsBlue", new string[]{ "OOT_COIN_BLUE" }  },
+                { "Coins (Yellow)|coinsYellow", new string[]{ "OOT_COIN_YELLOW" }  },
             };
 
             AddCondition("moon", "mm", "Moon Access Conditions", "Boss Remains", 4);

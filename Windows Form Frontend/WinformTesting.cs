@@ -942,14 +942,6 @@ namespace Windows_Form_Frontend
             Testing.TestLogicForInvalidItems(MainInterface.InstanceContainer);
             Testing.TestLocationsForInvalidVanillaItem(MainInterface.InstanceContainer);
         }
-        public static void OOTMMCreateDataOld()
-        {
-            MMR_Tracker_V3.OtherGames.OOTMMRCOMBO.ReadAndParseData.CreateFiles(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary);
-            WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(Logic), JsonConvert.SerializeObject(dictionary));
-            MainInterface.InstanceContainer.Instance.StaticOptions.ShowMacroExitsPathfinder = true;
-            Testing.TestLogicForInvalidItems(MainInterface.InstanceContainer);
-            Testing.TestLocationsForInvalidVanillaItem(MainInterface.InstanceContainer);
-        }
 
         internal static void WWRCreateData()
         {

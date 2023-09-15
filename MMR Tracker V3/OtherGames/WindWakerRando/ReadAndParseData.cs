@@ -92,7 +92,7 @@ namespace MMR_Tracker_V3.OtherGames.WindWakerRando
                 Logic.Logic.Add(new TrackerObjects.MMRData.JsonFormatLogicItem
                 {
                     Id = i.Key,
-                    ConditionalItems = i.Value.Need == "Nothing" ? new List<List<string>>() : LogicStringConverter.ConvertLogicStringToConditional(WWRLogicConverter, i.Value.Need)
+                    ConditionalItems = i.Value.Need == "Nothing" ? new List<List<string>>() : LogicStringConverter.ConvertLogicStringToConditional(WWRLogicConverter, i.Value.Need, i.Key)
                 });
             }
 
@@ -102,7 +102,7 @@ namespace MMR_Tracker_V3.OtherGames.WindWakerRando
                 Logic.Logic.Add(new TrackerObjects.MMRData.JsonFormatLogicItem
                 {
                     Id = macro.Key,
-                    ConditionalItems = macro.Value == "Nothing" ? new List<List<string>>() : LogicStringConverter.ConvertLogicStringToConditional(WWRLogicConverter, macro.Value)
+                    ConditionalItems = macro.Value == "Nothing" ? new List<List<string>>() : LogicStringConverter.ConvertLogicStringToConditional(WWRLogicConverter, macro.Value, macro.Key)
                 });
             }
 

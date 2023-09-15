@@ -51,7 +51,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                         continue;
                     }
                     string ID = $"{GameCode}_{item.Key}";
-                    List<List<string>> ConditionalLogic = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, item.Value);
+                    List<List<string>> ConditionalLogic = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, item.Value, ID);
                     MMRData.JsonFormatLogicItem NewLogic = new() { Id = ID, ConditionalItems = ConditionalLogic };
                     LogicUtilities.RemoveRedundantConditionals(NewLogic);
                     LogicFile.Logic.Add(NewLogic);
@@ -68,7 +68,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                         foreach (var Location in Area.Value.locations)
                         {
                             string ID = $"{GameCode} {Location.Key}";
-                            List<List<string>> ConditionalLogic = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, Location.Value);
+                            string LogicString = CheckForLogicOverride(Location.Value, ID);
+                            List<List<string>> ConditionalLogic = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, LogicString, ID);
                             AddLogicEntry(LogicFile, ID, ConditionalLogic, WorldFile, Area);
                             TEMPlocationAreas[ID] = string.IsNullOrWhiteSpace(Area.Value.region) ? (string.IsNullOrWhiteSpace(Area.Value.dungeon) ? "Unknown" : $"{GameCode}_{Area.Value.dungeon}") : $"{GameCode}_{Area.Value.region}";
                             ScanForSafeMMLocations(Area.Key, GameCode, ID);
@@ -76,7 +77,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                         foreach (var Location in Area.Value.exits)
                         {
                             string ID = GetExitID(Area.Key, Location.Key, GameCode);
-                            List<List<string>> ConditionalLogic = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, Location.Value);
+                            string LogicString = CheckForLogicOverride(Location.Value, ID);
+                            List<List<string>> ConditionalLogic = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, LogicString, ID);
                             AddLogicEntry(LogicFile, ID, ConditionalLogic, WorldFile, Area);
                             var AreaConnectionData = ID.StringSplit(" => ").Select(x => x.Trim()).ToArray();
                             if (!TEMPAreaConnections.ContainsKey(ID)) { TEMPAreaConnections.Add(ID, new AreaConnections { Area = AreaConnectionData[0], Exit = AreaConnectionData[1] }); }
@@ -85,14 +87,16 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                         foreach (var Location in Area.Value.events)
                         {
                             string ID = $"{GameCode}_EVENT_{Location.Key}";
-                            List<List<string>> ConditionalLogic = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, Location.Value);
+                            string LogicString = CheckForLogicOverride(Location.Value, ID);
+                            List<List<string>> ConditionalLogic = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, LogicString, ID);
                             AddLogicEntry(LogicFile, ID, ConditionalLogic, WorldFile, Area);
                             ScanForSafeMMLocations(Area.Key, GameCode, ID);
                         }
                         foreach (var Gossip in Area.Value.gossip)
                         {
                             string ID = $"{GameCode} {Gossip.Key}";
-                            List<List<string>> ConditionalLogic = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, Gossip.Value);
+                            string LogicString = CheckForLogicOverride(Gossip.Value, ID);
+                            List<List<string>> ConditionalLogic = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, LogicString, ID);
                             AddLogicEntry(LogicFile, ID, ConditionalLogic, WorldFile, Area);
                             ScanForSafeMMLocations(Area.Key, GameCode, ID);
                         }
@@ -152,6 +156,20 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                     }
                 }
             }
+        }
+
+        private static string CheckForLogicOverride(string value, string iD)
+        {
+            Dictionary<string, string> Override = new Dictionary<string, string>
+            {
+                { "OOT_EVENT_SPIRIT_ADULT_DOOR", "can_lift_silver && (setting(agelessBoots) || setting(agelessHookshot) || setting(climbMostSurfacesOot) && small_keys_spirit(5)) || (setting(agelessBoots, false) || setting(agelessHookshot, false) || setting(climbMostSurfacesOot, false) && small_keys_spirit(3))" }
+            };
+
+            if (Override.ContainsKey(iD))
+            {
+                return Override[iD];
+            }
+            else { return value; }  
         }
     }
 }

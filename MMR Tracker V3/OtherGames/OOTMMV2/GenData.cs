@@ -153,8 +153,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
             }
             void AddCostMacro(int Cost, string Gamecode)
             {
-                var Logic = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, $"can_use_wallet({Costs.IndexOf(Cost)})");
                 string ID = $"{Gamecode}_COST_{Cost}";
+                var Logic = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, $"can_use_wallet({Costs.IndexOf(Cost)})", ID);
                 logicFile.Logic.Add(new MMRData.JsonFormatLogicItem { Id = ID, ConditionalItems = Logic });
                 DictionaryFile.MacroList.Add(ID, new LogicDictionaryData.DictionaryMacroEntry
                 {
@@ -350,7 +350,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                 "(setting{goal, ganon} && OOT_TRIFORCE) || " +
                 "(setting{goal, majora} && MM_MASK_MAJORA)";
 
-            dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "Game_Clear", ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, GameClearLogic) });
+            dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "Game_Clear", ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, GameClearLogic, "Game_Clear") });
             dictionaryFile.MacroList.Add("Game_Clear", new LogicDictionaryData.DictionaryMacroEntry { ID = "Game_Clear", Name = "Both Games Cleared" });
             dictionaryFile.WinCondition = "Game_Clear";
         }

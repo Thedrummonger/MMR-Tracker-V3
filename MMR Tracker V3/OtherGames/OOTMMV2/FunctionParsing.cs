@@ -1,5 +1,4 @@
-﻿using MMR_Tracker_V3.OtherGames.OOTMMRCOMBO;
-using MMR_Tracker_V3.TrackerObjects;
+﻿using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -20,7 +19,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
         {
             if (NewLogic.Any(x => x.Id == ID)) { return; }
             var NewLogicItem = new MMRData.JsonFormatLogicItem { Id = ID };
-            NewLogicItem.ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, LogicLine);
+            NewLogicItem.ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, LogicLine, ID);
             NewLogic.Add(NewLogicItem);
         }
 
@@ -47,7 +46,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                         NewConditionalSet.Add(NewConditionals);
                     }
                     string ExapandedNewConditionalSet = LogicStringConverter.ConvertConditionalToLogicString(OOTMMLogicStringParser, NewConditionalSet);
-                    LogicItem.ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, ExapandedNewConditionalSet);
+                    LogicItem.ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, ExapandedNewConditionalSet, LogicItem.Id);
                     LogicUtilities.RemoveRedundantConditionals(LogicItem);
                 }
             }
@@ -128,7 +127,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                             FunctionParsed = true;
                             break;
                         case "cond":
-                            ParsedConditional = ParseCondFunc(OriginalParam);
+                            ParsedConditional = ParseCondFunc(OriginalParam, LogicItem);
                             FunctionParsed = true;
                             break;
                         case "can_use_wallet":
@@ -249,6 +248,31 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                             }
                             FunctionParsed = true;
                             break;
+                        case "can_play_cross":
+                            if (Gamecode == "MM")
+                            {
+                                ParsedConditional = $"can_play({Param}) && setting(crossWarpOot)";
+                            }
+                            else
+                            {
+                                ParsedConditional = $"can_play({Param}) && (setting(crossWarpMm, full) || (setting(crossWarpMm, childOnly) && is_child))";
+                            }
+                            break;
+                        case "ocarina_button":
+                            string[] OCButtonParams = Param.Split(",").Select(x => x.Trim()).ToArray();
+                            if (Gamecode == "MM")
+                            {
+                                ParsedConditional = $"cond(setting(ocarinaButtonsShuffleMm), cond(setting(sharedOcarinaButtons), has({OCButtonParams[1]}), has({OCButtonParams[0]})), true)";
+                            }
+                            else
+                            {
+                                ParsedConditional = $"cond(setting(ocarinaButtonsShuffleOot), cond(setting(sharedOcarinaButtons), has({OCButtonParams[1]}), has({OCButtonParams[0]})), true)";
+                            }
+                            break;
+                        case "silver_rupees":
+                            string[] SilverRuppeParams = Param.Split(",").Select(x => x.Trim()).ToArray();
+                            ParsedConditional = $"(setting(magicalRupee) && has(RUPEE_MAGICAL)) || cond(setting(silverRupeePouches), has({SilverRuppeParams[1]}), has({SilverRuppeParams[0]}, {SilverRuppeParams[2]}))";
+                            break;
 
                     }
                 }
@@ -257,7 +281,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
             }
         }
 
-        private static string ParseCondFunc(string param)
+        private static string ParseCondFunc(string param, MMRData.JsonFormatLogicItem logicItem)
         {
             string Clause = string.Empty;
             string IfTrue = string.Empty;
@@ -295,7 +319,15 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
             string FalseClause;
 
             if (Clause.StartsWith("trick") || Clause.StartsWith("setting")) { FalseClause = Clause[..^1] + ", false)"; }
-            else { throw new Exception($"Could not get false clause for {Clause}"); }
+            else if (Clause == "climb_anywhere") { FalseClause = "setting(climbMostSurfacesOot, false)"; }
+            else if (Clause == "is_adult") { FalseClause = "is_child"; }
+            else if (Clause.StartsWith("!"))
+            {
+                Clause = Clause[1..];
+                FalseClause = Clause;
+                Clause = Clause[..^1] + ", false)";
+            }
+            else { throw new Exception($"{logicItem.Id}: Could not get false clause for {Clause} | {IfTrue} | {IfFalse}"); }
 
             return $"((({Clause}) && ({IfTrue})) || (({FalseClause}) && ({IfFalse})))";
         }

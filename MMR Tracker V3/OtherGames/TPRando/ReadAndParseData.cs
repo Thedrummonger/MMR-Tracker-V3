@@ -256,7 +256,7 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
                     MMRData.JsonFormatLogicItem logicItem = new MMRData.JsonFormatLogicItem()
                     {
                         Id = loc.Key,
-                        ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(TPLogicParser, Logic)
+                        ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(TPLogicParser, Logic, loc.Key)
                     };
                     LogicDictionaryData.DictionaryLocationEntries locationEntry = new()
                     {
@@ -276,7 +276,7 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
                     MMRData.JsonFormatLogicItem logicItem = new MMRData.JsonFormatLogicItem()
                     {
                         Id = ExitID,
-                        ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(TPLogicParser, Exit.Value)
+                        ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(TPLogicParser, Exit.Value, ExitID)
                     };
                     LogicDictionaryData.DictionaryEntranceEntries exitEntry = new()
                     {
@@ -308,7 +308,7 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
                 MMRData.JsonFormatLogicItem logicItem = new MMRData.JsonFormatLogicItem()
                 {
                     Id = i.Key,
-                    ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(TPLogicParser, i.Value)
+                    ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(TPLogicParser, i.Value, i.Key)
                 };
                 TRPLogic.Logic.Add(logicItem);
             }
