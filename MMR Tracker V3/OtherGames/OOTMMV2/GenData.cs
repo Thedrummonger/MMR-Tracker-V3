@@ -221,6 +221,9 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
         {
             //This event doesn't exist but logic for magic is asking for it. Just make it always false.
             DictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "MM_EVENT_CHATEAU", RequiredItems = new List<string>() { "false" } });
+            DictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "MM_is_child", RequiredItems = new List<string>() { "OOT_is_child" } });
+            DictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "MM_!is_goal_triforce", RequiredItems = new List<string>() { "setting{goal, triforce, false}", "setting{goal, triforce3, false}" } });
+            DictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "OOT_!is_goal_triforce", RequiredItems = new List<string>() { "setting{goal, triforce, false}", "setting{goal, triforce3, false}" } });
 
             var MASKS_REGULAR = new string[] {
               "MM_MASK_CAPTAIN",

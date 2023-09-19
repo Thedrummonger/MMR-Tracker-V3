@@ -652,6 +652,7 @@ namespace MMR_Tracker_V3
                 if (i.CheckState == CheckState.Checked && i.EntrancePair != null)
                 {
                     var EntrancePair = instance.EntrancePool.GetEntrancePairOfDestination(i.DestinationExit);
+                    if (EntrancePair == null) { continue; }
                     if (EntrancePair.Available && EntrancePair.CheckState != CheckState.Checked)
                     {
                         EntrancePair.DestinationExit = i.GetDestnationFromEntrancePair();
@@ -670,6 +671,7 @@ namespace MMR_Tracker_V3
                 if (i.CheckState != CheckState.Checked && i.EntrancePair != null)
                 {
                     var EntrancePair = instance.EntrancePool.GetEntrancePairOfDestination(i.DestinationExit);
+                    if (EntrancePair == null) { continue; }
                     if (EntrancePair.CheckState == CheckState.Checked)
                     {
                         EntrancePair.DestinationExit = i.GetDestnationFromEntrancePair();

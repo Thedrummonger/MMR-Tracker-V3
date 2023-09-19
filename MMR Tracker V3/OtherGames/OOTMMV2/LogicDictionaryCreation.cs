@@ -86,7 +86,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                         Name = LocationID,
                         OriginalItem = OriginalItem,
                         Repeatable = IsLocationRenewable($"{GameCode} {i.location}", i.type),
-                        ValidItemTypes = new string[] { "item" },
+                        ValidItemTypes = new string[] { "item", i.type },
                         WalletCurrency = GameCode == "MM" ? 'M' : 'O',
                         SpoilerData = new MMRData.SpoilerlogReference()
                         {

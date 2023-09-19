@@ -196,7 +196,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                     Requirement.Values["true"].VariableEdit.Add($"{ID.ToLower()}_req", new OptionData.VariableEditData
                     {
                         action = MiscData.MathOP.add,
-                        EditValue = (namedata[1].StartsWith("fair") || namedata[1].StartsWith("skull") || namedata[1] == "triforce") ? i.Value : i.Value.Select(x => $"{x}, 1").ToArray()
+                        EditValue = (namedata[1].StartsWith("fair") || namedata[1].StartsWith("skull") || namedata[1] == "triforce" || namedata[1].StartsWith("coins")) ? i.Value : i.Value.Select(x => $"{x}, 1").ToArray()
                     });
                     dictionaryFile.Options.Add(Requirement.ID, Requirement);
                 }

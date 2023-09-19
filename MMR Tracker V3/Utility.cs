@@ -312,6 +312,7 @@ namespace MMR_Tracker_V3
 
             for (int i = 1; i < lines.Length; i++)
             {
+                if (string.IsNullOrWhiteSpace(lines[i])) { continue; }
                 var objResult = new Dictionary<string, string>();
                 for (int j = 0; j < properties.Length; j++)
                     objResult.Add(properties[j].Trim(), csv[i][j].Trim());

@@ -251,11 +251,11 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                         case "can_play_cross":
                             if (Gamecode == "MM")
                             {
-                                ParsedConditional = $"can_play({Param}) && setting(crossWarpOot)";
+                                ParsedConditional = $"can_play({OriginalParam}) && setting(crossWarpOot)";
                             }
                             else
                             {
-                                ParsedConditional = $"can_play({Param}) && (setting(crossWarpMm, full) || (setting(crossWarpMm, childOnly) && is_child))";
+                                ParsedConditional = $"can_play({OriginalParam}) && (setting(crossWarpMm, full) || (setting(crossWarpMm, childOnly) && is_child))";
                             }
                             break;
                         case "ocarina_button":

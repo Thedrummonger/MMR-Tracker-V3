@@ -53,7 +53,6 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
             var AllRandomizableExits = instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits(instance));
             foreach (var Entrance in exitData)
             {
-                Debug.WriteLine($"{Entrance.Key}: {Entrance.Value}");
                 var SpoilerEntrance = AllRandomizableExits.First(x => x.Value.GetDictEntry(instance).SpoilerData.SpoilerLogNames.Contains(Entrance.Key));
                 var SpoilerExit = AllRandomizableExits.First(x => x.Value.GetDictEntry(instance).SpoilerData.SpoilerLogNames.Contains(Entrance.Value));
                 SpoilerEntrance.Value.RandomizedState = MiscData.RandomizedState.Randomized;
@@ -218,6 +217,34 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                     instance.ItemPool.Values.First(x => x.Id == "MM_STRAY_FAIRY_WF").AmountInStartingpool += 12;
                     instance.ItemPool.Values.First(x => x.Id == "MM_STRAY_FAIRY_SH").AmountInStartingpool += 8;
                     instance.ItemPool.Values.First(x => x.Id == "MM_STRAY_FAIRY_GB").AmountInStartingpool += 9;
+                }
+                if (setting.Key == "shufflePotsOot" && setting.Value == "false")
+                {
+                    foreach (var location in instance.LocationPool.Where(x => x.Value.GetDictEntry(instance).ValidItemTypes.Contains("pot") && x.Key.StartsWith("OOT ") ))
+                    {
+                        location.Value.SetRandomizedState(MiscData.RandomizedState.Unrandomized, instance);
+                    }
+                }
+                if (setting.Key == "shufflePotsMm" && setting.Value == "false")
+                {
+                    foreach (var location in instance.LocationPool.Where(x => x.Value.GetDictEntry(instance).ValidItemTypes.Contains("pot") && x.Key.StartsWith("MM ")))
+                    {
+                        location.Value.SetRandomizedState(MiscData.RandomizedState.Unrandomized, instance);
+                    }
+                }
+                if (setting.Key == "shuffleGrassOot" && setting.Value == "false")
+                {
+                    foreach (var location in instance.LocationPool.Where(x => x.Value.GetDictEntry(instance).ValidItemTypes.Contains("grass") && x.Key.StartsWith("OOT ")))
+                    {
+                        location.Value.SetRandomizedState(MiscData.RandomizedState.Unrandomized, instance);
+                    }
+                }
+                if (setting.Key == "shuffleGrassMm" && setting.Value == "false")
+                {
+                    foreach (var location in instance.LocationPool.Where(x => x.Value.GetDictEntry(instance).ValidItemTypes.Contains("grass") && x.Key.StartsWith("MM ")))
+                    {
+                        location.Value.SetRandomizedState(MiscData.RandomizedState.Unrandomized, instance);
+                    }
                 }
             }
         }
