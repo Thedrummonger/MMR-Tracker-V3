@@ -318,6 +318,11 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
 
             string FalseClause;
 
+            if (Clause.Contains(" || ") || Clause.Contains(" && "))
+            {
+                Debug.WriteLine($"Complex Conditional At {logicItem.Id}\n[{Clause}][{IfTrue}][{IfFalse}]");
+            }
+
             if (Clause.StartsWith("trick") || Clause.StartsWith("setting")) { FalseClause = Clause[..^1] + ", false)"; }
             else if (Clause == "climb_anywhere") { FalseClause = "setting(climbMostSurfacesOot, false)"; }
             else if (Clause == "is_adult") { FalseClause = "is_child"; }

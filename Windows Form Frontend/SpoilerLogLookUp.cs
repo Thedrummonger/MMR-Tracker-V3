@@ -499,6 +499,10 @@ namespace Windows_Form_Frontend
 
         private void CheckSeed()
         {
+            lbObtainable.Items.Clear();
+            lbObtainable.Items.Add("Generating Playthrough");
+            lbObtainable.Items.Add("This may take a while");
+            lbObtainable.Update();
             var IgnoredChecks = SeedCheckIgnoredLocations.Select(x => x.tag).Select(x => x as string).ToList();
             var requiredItems = SeedCheckRequiredItems.Select(x => x.tag).Select(x => x as string).ToList();
             if (!SeedCheckRequiredItems.Any())
