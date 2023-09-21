@@ -11,7 +11,7 @@ using static MMR_Tracker_V3.OtherGames.OOTMMV2.OOTMMUtil;
 
 namespace MMR_Tracker_V3.OtherGames.OOTMMV2
 {
-    internal class FunctionParsing
+    public class FunctionParsing
     {
         public static LogicStringParser OOTMMLogicStringParser = new LogicStringParser();
 
@@ -281,7 +281,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
             }
         }
 
-        private static string ParseCondFunc(string param, MMRData.JsonFormatLogicItem logicItem)
+        public static string ParseCondFunc(string param, MMRData.JsonFormatLogicItem logicItem)
         {
             string Clause = string.Empty;
             string IfTrue = string.Empty;
@@ -318,21 +318,26 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
 
             string FalseClause;
 
-            if (Clause.Contains(" || ") || Clause.Contains(" && "))
+            var ParsedClause = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, Clause, logicItem.Id, true);
+
+            for(var i = 0; i < ParsedClause.Count; i++)
             {
-                Debug.WriteLine($"Complex Conditional At {logicItem.Id}\n[{Clause}][{IfTrue}][{IfFalse}]");
+                for(var j = 0; j < ParsedClause[i].Count; j++)
+                {
+                    string Item = ParsedClause[i][j];
+                    if (Item.StartsWith("!")) { Item = Item.Substring(1); }
+                    else if (Item.StartsWith("trick") || Item.StartsWith("setting")) { Item = Item[..^1] + ", false)"; }
+                    else if (Item == "is_adult") { Item = "is_child"; }
+                    else
+                    {
+                        string Gamecode = GetGamecodeFromID(logicItem);
+                        Item = $"available{{{Gamecode}_{Item}, false}}"; 
+                    }
+                    ParsedClause[i][j] = Item;
+                }
             }
 
-            if (Clause.StartsWith("trick") || Clause.StartsWith("setting")) { FalseClause = Clause[..^1] + ", false)"; }
-            else if (Clause == "climb_anywhere") { FalseClause = "setting(climbMostSurfacesOot, false)"; }
-            else if (Clause == "is_adult") { FalseClause = "is_child"; }
-            else if (Clause.StartsWith("!"))
-            {
-                Clause = Clause[1..];
-                FalseClause = Clause;
-                Clause = Clause[..^1] + ", false)";
-            }
-            else { throw new Exception($"{logicItem.Id}: Could not get false clause for {Clause} | {IfTrue} | {IfFalse}"); }
+            FalseClause = LogicStringConverter.ConvertConditionalToLogicString(OOTMMLogicStringParser, ParsedClause);
 
             return $"((({Clause}) && ({IfTrue})) || (({FalseClause}) && ({IfFalse})))";
         }

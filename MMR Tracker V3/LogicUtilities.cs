@@ -126,7 +126,7 @@ namespace MMR_Tracker_V3
     }
     public static class LogicStringConverter
     {
-        public static List<List<string>> ConvertLogicStringToConditional(LogicStringParser Parser, string LogicLine, string LogicID)
+        public static List<List<string>> ConvertLogicStringToConditional(LogicStringParser Parser, string LogicLine, string LogicID, bool Invert = false)
         {
             var ParsedLogic = new List<LogicStringParser.LogicItem>();
             var MathString = "";
@@ -137,7 +137,7 @@ namespace MMR_Tracker_V3
                 ParsedLogic = Parser.ParseLogicString(LogicLine);
                 MathString = ConvertLogicParserObjectToMathString(ParsedLogic, out Dictionary<string, string> RefMap, out _);
                 ExpandedMathString = ExpandMathExpressionString(MathString);
-                MathLogicArray = ConvertMathStringToArray(ExpandedMathString);
+                MathLogicArray = ConvertMathStringToArray(ExpandedMathString, Invert);
                 return RestorelogicValues(MathLogicArray, RefMap);
             }
             catch(Exception e)
@@ -228,8 +228,13 @@ namespace MMR_Tracker_V3
             return Infix.Format(Output).Replace(" ", "");
         }
 
-        private static List<List<string>> ConvertMathStringToArray(string MathString)
+        private static List<List<string>> ConvertMathStringToArray(string MathString, bool invert = false)
         {
+            if (invert) 
+            { 
+                MathString = MathString.Replace("+", "++").Replace("*", "**");
+                MathString = MathString.Replace("++", "*").Replace("**", "+");
+            }
             var MathArray = MathString.Split('+').Select(x => x.Split('*').ToList()).ToList();
             List<List<string>> CleanedArray = new List<List<string>>();
             foreach(var set in MathArray)

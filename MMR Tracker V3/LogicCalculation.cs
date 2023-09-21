@@ -489,16 +489,23 @@ namespace MMR_Tracker_V3
             return instance.MacroPool[strings[0]].TrickEnabled != Inverse;
         }
 
-        private static bool CheckAvailableFunction(TrackerInstance instance, string func, string param)
+        private static bool CheckAvailableFunction(TrackerInstance instance, string func, string paramString)
         {
-            bool litteral = param.IsLiteralID(out string paramClean);
-            instance.GetLocationEntryType(paramClean, litteral, out dynamic obj);
-            if (obj is null) { Debug.WriteLine($"{param} is not a valid logic Entry"); return false; }
+            string[] Params = paramString.Split(',').Select(x => x.Trim()).ToArray();
+            bool Inverted = Params.Length > 1 && bool.TryParse(Params[1], out bool IsInverted) && !IsInverted;
+            bool litteral = Params[0].IsLiteralID(out string paramClean);
+
+            Debug.WriteLine($"Checking {func} Func {paramString}\n{string.Join("|", Params)}\n{Inverted}");
+
+            var type = instance.GetLocationEntryType(paramClean, litteral, out dynamic obj);
+            if (obj is null) { Debug.WriteLine($"{Params[0]} is not a valid logic Entry"); return false; }
 
             if (func == "check" && Utility.DynamicPropertyExist(obj, "RandomizedState") && obj.RandomizedState == RandomizedState.ForcedJunk) { func = "available"; }
 
-            if (func == "check" && Utility.DynamicPropertyExist(obj, "CheckState")) { return obj.CheckState == CheckState.Checked; }
-            else if (func == "available" && Utility.DynamicPropertyExist(obj, "Available")) { return  obj.Available; }
+            if (func == "check" && Utility.DynamicPropertyExist(obj, "CheckState")) { return (obj.CheckState == CheckState.Checked) != Inverted; }
+            else if (func == "available" && Utility.DynamicPropertyExist(obj, "Available")) { Debug.WriteLine($"Is Available: {obj.Available}"); return  obj.Available != Inverted; }
+            else if (func == "available" && Utility.DynamicPropertyExist(obj, "Aquired")) { Debug.WriteLine($"Is Available: {obj.Aquired}"); return obj.Aquired != Inverted; }
+            else { Debug.WriteLine($"{paramClean} could not be checked. Type: {type}"); }
             return false;
         }
 

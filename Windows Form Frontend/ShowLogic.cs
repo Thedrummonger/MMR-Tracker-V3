@@ -357,14 +357,15 @@ namespace Windows_Form_Frontend
                 }
                 else if (Func == "check" || Func == "available")
                 {
-                    var ItemType = instance.GetLocationEntryType(Param, false, out object obj);
+                    var Data = Param.Split(',').Select(x => x.Trim()).ToArray();
+                    var ItemType = instance.GetLocationEntryType(Data[0], false, out object obj);
                     if (ItemType == LogicEntryType.variableList)
                     {
-                        AddFromVariable(Param);
+                        AddFromVariable(Data[0]);
                     }
-                    else if (!CurrentList.ContainsKey(Param))
+                    else if (!CurrentList.ContainsKey(Data[0]))
                     {
-                        NewList[Param] = ItemType;
+                        NewList[Data[0]] = ItemType;
                     }
                 }
             }

@@ -15,6 +15,14 @@ namespace Windows_Form_Frontend
 {
     internal class WinformTesting
     {
+        public static void DoTests()
+        {
+            //WinformTesting.TPRCreateData();
+            WinformTesting.OOTMMCreateData();
+            //WinformTesting.WWRCreateData();
+            //TestFuncParse();
+        }
+
         public static void CreateMMRItemTrackerObject()
         {
             WinFormImageUtils.ItemTrackerInstance instance = new();
@@ -949,6 +957,16 @@ namespace Windows_Form_Frontend
             WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(Logic), JsonConvert.SerializeObject(dictionary));
             Testing.TestLogicForInvalidItems(MainInterface.InstanceContainer);
             Testing.TestLocationsForInvalidVanillaItem(MainInterface.InstanceContainer);
+        }
+
+        public static void TestFuncParse()
+        {
+            MMRData.JsonFormatLogicItem logicItem = new MMRData.JsonFormatLogicItem() { Id = "Test" };
+            string Test = "setting(hookshotAnywhereOot) && !setting(ageChange, none), small_keys_forest(5), small_keys_forest(2)";
+
+            string result =  MMR_Tracker_V3.OtherGames.OOTMMV2.FunctionParsing.ParseCondFunc(Test, logicItem);
+
+            Debug.WriteLine(result);
         }
     }
 }
