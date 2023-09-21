@@ -635,6 +635,7 @@ namespace Windows_Form_Frontend
             spoilerLogToolsToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
             importSpoilerLogToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
             PathFinderToolStripMenuItem.Visible = (InstanceContainer.Instance != null && InstanceContainer.Instance.EntrancePool.IsEntranceRando);
+            pathfinderOptionsToolStripMenuItem.Visible = (InstanceContainer.Instance != null && InstanceContainer.Instance.EntrancePool.IsEntranceRando);
 
             visualItemTrackerToolStripMenuItem.Visible = Testing.Debugging();
             logicEditorToolStripMenuItem.Visible = Testing.Debugging();
@@ -644,6 +645,7 @@ namespace Windows_Form_Frontend
             SaveAsToolStripMenuItem.Visible = (File.Exists(InstanceContainer.CurrentSavePath));
             importSpoilerLogToolStripMenuItem.Text = (InstanceContainer.Instance.SpoilerLog != null) ? "Remove Spoiler Log" : "Import Spoiler Log";
             entranceRandoFeaturesToolStripMenuItem.Checked = InstanceContainer.Instance.StaticOptions.EntranceRandoFeatures;
+            showMacroExitsToolStripMenuItem.Checked = InstanceContainer.Instance.StaticOptions.ShowMacroExitsPathfinder;
             entranceRandoFeaturesToolStripMenuItem.Visible = InstanceContainer.Instance.EntrancePool.IsEntranceRando || InstanceContainer.Instance.EntrancePool.CheckForRandomEntrances(InstanceContainer.Instance);
 
 
@@ -1286,6 +1288,12 @@ namespace Windows_Form_Frontend
             if (!Utility.OBJIsThreadSafe(MainInterfaceItemDisplayThread, MainInterfaceItemDisplayForm)) { return; }
             var newState = WinFormImageUtils.CaptureTrackerState(InstanceContainer.Instance);
             await Task.Run(() => MainInterfaceItemDisplayForm.Invoke(new MethodInvoker(delegate { MainInterfaceItemDisplayForm.UpdateData(newState); })));
+        }
+
+        private void showMacroExitsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InstanceContainer.Instance.StaticOptions.ShowMacroExitsPathfinder = !InstanceContainer.Instance.StaticOptions.ShowMacroExitsPathfinder;
+            UpdateUI();
         }
     }
 }
