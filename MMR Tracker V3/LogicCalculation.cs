@@ -495,8 +495,6 @@ namespace MMR_Tracker_V3
             bool Inverted = Params.Length > 1 && bool.TryParse(Params[1], out bool IsInverted) && !IsInverted;
             bool litteral = Params[0].IsLiteralID(out string paramClean);
 
-            Debug.WriteLine($"Checking {func} Func {paramString}\n{string.Join("|", Params)}\n{Inverted}");
-
             var type = instance.GetLocationEntryType(paramClean, litteral, out dynamic obj);
             if (obj is null) { Debug.WriteLine($"{Params[0]} is not a valid logic Entry"); return false; }
 
