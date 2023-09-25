@@ -1265,12 +1265,6 @@ namespace Windows_Form_Frontend
             await Task.Run(() => MainInterfaceItemDisplayForm.Invoke(new MethodInvoker(delegate { MainInterfaceItemDisplayForm.UpdateData(newState); })));
         }
 
-        private void showMacroExitsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            InstanceContainer.Instance.StaticOptions.ShowMacroExitsPathfinder = !InstanceContainer.Instance.StaticOptions.ShowMacroExitsPathfinder;
-            UpdateUI();
-        }
-
         private void PathfinderCMB_DropDown(object sender, EventArgs e)
         {
             WinFormUtils.AdjustComboBoxWidth(sender as System.Windows.Forms.ComboBox);

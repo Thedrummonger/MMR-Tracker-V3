@@ -67,22 +67,17 @@ namespace Windows_Form_Frontend
             HashSet<string> PrintedPaths = new HashSet<string>();
             foreach (var i in pathfinder.FinalPath)
             {
-                if (FocusInd > -1 && index != FocusInd) { index++; continue; }
-                List<object> Stops = new List<object>();
+                List<Pathfinder.PathfinderPath> Stops = new List<Pathfinder.PathfinderPath>();
                 foreach (var stop in i)
                 {
-                    bool ShowMacro = instance.StaticOptions.ShowMacroExitsPathfinder;
-                    bool ExitValid = inst.EntrancePool.AreaList.ContainsKey(stop.Key) && inst.EntrancePool.AreaList[stop.Key].Exits.ContainsKey(stop.Value);
-                    bool IsRandomizedExit = ExitValid &&
-                        inst.EntrancePool.AreaList[stop.Key].Exits[stop.Value].IsRandomizableEntrance(inst) &&
-                        (inst.EntrancePool.AreaList[stop.Key].Exits[stop.Value].IsRandomized() || inst.EntrancePool.AreaList[stop.Key].Exits[stop.Value].IsUnrandomized(MiscData.UnrandState.Manual));
-                    if (IsRandomizedExit || ShowMacro || !ExitValid) { Stops.Add(new Pathfinder.PathfinderPath { Display = stop.Value == "" ? stop.Key : $"{stop.Key} => {stop.Value}", Index = index, Focused = FocusInd > -1 }); }
+                    Stops.Add(new Pathfinder.PathfinderPath { Display = stop.Value == "" ? stop.Key : $"{stop.Key} => {stop.Value}", Index = index, Focused = FocusInd > -1 });
                 }
 
-                string StopsHash = JsonConvert.SerializeObject(Stops);
-                if (PrintedPaths.Contains(StopsHash)) { continue; }
-                PrintedPaths.Add(StopsHash);
+                string PathHash = string.Join("|", Stops.Select(x => x.Display ));
+                if (PrintedPaths.Contains(PathHash)) { continue; }
+                PrintedPaths.Add(PathHash);
 
+                if (FocusInd > -1 && index != FocusInd) { index++; continue; }
                 Results.Add(WinFormUtils.CreateDivider(PathFinderLB));
                 Results.Add(new Pathfinder.PathfinderPath { Display = $"Path {index+1}: {Stops.Count - 1} Stops", Index = index });
                 Results.AddRange(Stops);

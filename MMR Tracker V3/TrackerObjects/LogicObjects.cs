@@ -174,6 +174,7 @@ namespace MMR_Tracker_V3
             public string ShowOptionsInListBox { get; set; } = OptionData.DisplayListBoxes[0];
             public bool DecoupleEntrances { get; set; } = false;
             public bool ShowMacroExitsPathfinder { get; set; } = false;
+            public bool ShowRedundantPathfinder { get; set; } = false;
             public bool AutoCheckCoupleEntrances { get { return !DecoupleEntrances && _AutoCheckCoupleEntrances; } set { _AutoCheckCoupleEntrances = value; } }
             private bool _AutoCheckCoupleEntrances = true;
             public bool EntranceRandoFeatures { get; set; } = true;

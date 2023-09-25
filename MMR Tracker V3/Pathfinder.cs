@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace MMR_Tracker_V3
 {
@@ -15,6 +16,7 @@ namespace MMR_Tracker_V3
 
         public Dictionary<string, Dictionary<string, EntranceData.EntranceRandoDestination>> EntranceMap = new Dictionary<string, Dictionary<string, EntranceData.EntranceRandoDestination>>();
         public Dictionary<string, EntranceData.EntranceRandoDestination> Warps = new Dictionary<string, EntranceData.EntranceRandoDestination>();
+        public Dictionary<string, int> SeenAreas = new Dictionary<string, int>();
 
         public void FindPath(LogicObjects.TrackerInstance instance, string Start, string Goal, List<Dictionary<string, string>> Paths = null, int RunCount = 1)
         {
@@ -23,11 +25,20 @@ namespace MMR_Tracker_V3
             if (Paths == null) 
             {
                 IsRoot = true;
+                SeenAreas.Clear();
                 BuildEntranceMap(instance);
                 Paths = new List<Dictionary<string, string>>
                 {
                     new Dictionary<string, string> { { Start, "" } }
                 };
+            }
+
+            if (!instance.StaticOptions.ShowRedundantPathfinder)
+            {
+                foreach (var i in Paths.Select(x => x.Last().Key))
+                {
+                    if (!SeenAreas.ContainsKey(i)) { SeenAreas.Add(i, RunCount); }
+                }
             }
 
             List<Dictionary<string, string>> NewPaths = new List<Dictionary<string, string>>();
@@ -44,6 +55,7 @@ namespace MMR_Tracker_V3
                 }
                 foreach (var i in ValidExits)
                 {
+                    if (SeenAreas.ContainsKey(i.Value.region)) { continue; }
                     if (Path.ContainsKey(i.Value.region)) { continue; }
                     Dictionary<string, string> NewPath = new Dictionary<string, string>();
                     foreach(var j in Path)
@@ -67,7 +79,14 @@ namespace MMR_Tracker_V3
                     {
                         string Area = stop.Key;
                         string Exit = NextInd >= GoalPath.Count ? "" : GoalPath[GoalPath.Keys.ToArray()[NextInd]];
-                        FormattedPath.Add(Area, Exit);
+
+                        bool ShowMacro = instance.StaticOptions.ShowMacroExitsPathfinder;
+                        bool ExitValid = instance.EntrancePool.AreaList.ContainsKey(Area) && instance.EntrancePool.AreaList[Area].Exits.ContainsKey(Exit);
+                        bool IsRandomizedExit = ExitValid &&
+                            instance.EntrancePool.AreaList[Area].Exits[Exit].IsRandomizableEntrance(instance) &&
+                            (instance.EntrancePool.AreaList[Area].Exits[Exit].IsRandomized() || instance.EntrancePool.AreaList[Area].Exits[Exit].IsUnrandomized(MiscData.UnrandState.Manual));
+
+                        if (IsRandomizedExit || ShowMacro || !ExitValid) { FormattedPath.Add(Area, Exit); }
                         NextInd++;
                     }
                     FinalPath.Add(FormattedPath);
