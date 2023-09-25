@@ -279,8 +279,7 @@ namespace Windows_Form_Frontend
             this.label13.Size = new System.Drawing.Size(17, 18);
             this.label13.TabIndex = 25;
             this.label13.Text = "?";
-            this.toolTip1.SetToolTip(this.label13, "Should the tracker display the Valid Location List and Checked Item List Side by " +
-        "side instead of on top of each other? ");
+            this.toolTip1.SetToolTip(this.label13, resources.GetString("label13.ToolTip"));
             // 
             // label15
             // 
@@ -293,8 +292,8 @@ namespace Windows_Form_Frontend
             this.label15.Size = new System.Drawing.Size(17, 18);
             this.label15.TabIndex = 28;
             this.label15.Text = "?";
-            this.toolTip1.SetToolTip(this.label15, "Should the tracker display the Valid Location List and Checked Item List Side by " +
-        "side instead of on top of each other? ");
+            this.toolTip1.SetToolTip(this.label15, "When checking and entrance, should the coupled entrance be automatically checked." +
+        "\r\n\r\nShould be disabled if playing with Decoupled entrances.");
             // 
             // label17
             // 
@@ -307,8 +306,8 @@ namespace Windows_Form_Frontend
             this.label17.Size = new System.Drawing.Size(17, 18);
             this.label17.TabIndex = 31;
             this.label17.Text = "?";
-            this.toolTip1.SetToolTip(this.label17, "Should the tracker display the Valid Location List and Checked Item List Side by " +
-        "side instead of on top of each other? ");
+            this.toolTip1.SetToolTip(this.label17, "Should the pathfinder show each connection when printing a path.\r\n\r\nIf disabled o" +
+        "nly randomized exits will be listed.");
             // 
             // label19
             // 
@@ -321,8 +320,7 @@ namespace Windows_Form_Frontend
             this.label19.Size = new System.Drawing.Size(17, 18);
             this.label19.TabIndex = 34;
             this.label19.Text = "?";
-            this.toolTip1.SetToolTip(this.label19, "Should the tracker display the Valid Location List and Checked Item List Side by " +
-        "side instead of on top of each other? ");
+            this.toolTip1.SetToolTip(this.label19, resources.GetString("label19.ToolTip"));
             // 
             // button3
             // 

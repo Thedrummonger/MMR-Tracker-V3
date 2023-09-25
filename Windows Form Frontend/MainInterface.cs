@@ -1170,8 +1170,7 @@ namespace Windows_Form_Frontend
             MainInterfacepathfinder = new Pathfinder();
             MainInterfacepathfinder.FindPath(InstanceContainer.Instance, (string)CMBStart.SelectedItem, (string)CMBEnd.SelectedItem);
             MainInterfacepathfinder.FinalPath = MainInterfacepathfinder.FinalPath.OrderBy(x => x.Count).ToList();
-            if (!MainInterfacepathfinder.FinalPath.Any()) { LBPathFinder.DataSource = new List<string> { "No Path Found" }; }
-            else { PopoutPathfinder.PrintPaths(InstanceContainer.Instance, MainInterfacepathfinder, LBPathFinder); }
+            PopoutPathfinder.PrintPaths(InstanceContainer.Instance, MainInterfacepathfinder, LBPathFinder);
         }
 
         private void LBPathFinder_DoubleClick(object sender, EventArgs e)

@@ -18,12 +18,17 @@ namespace MMR_Tracker_V3
         public Dictionary<string, EntranceData.EntranceRandoDestination> Warps = new Dictionary<string, EntranceData.EntranceRandoDestination>();
         public Dictionary<string, int> SeenAreas = new Dictionary<string, int>();
 
+        public bool Overloaded = false;
+
+        public int PathlistCap = 250000;
+
         public void FindPath(LogicObjects.TrackerInstance instance, string Start, string Goal, List<Dictionary<string, string>> Paths = null, int RunCount = 1)
         {
 
             bool IsRoot = false;
             if (Paths == null) 
             {
+                Overloaded = false;
                 IsRoot = true;
                 SeenAreas.Clear();
                 BuildEntranceMap(instance);
@@ -97,8 +102,8 @@ namespace MMR_Tracker_V3
 
             //Debug.WriteLine($"Layer {RunCount}\nPaths to Check: {NewPaths.Count}");
 
-            if (NewPaths.Any() && (NewPaths.Count < 250000 || !instance.StaticOptions.OptionFile.ShowRedundantPathfinder) && FinalPath.Count < 20) { FindPath(instance, Start, Goal, NewPaths, RunCount: RunCount + 1); }
-
+            if (NewPaths.Any() && (NewPaths.Count < PathlistCap || !instance.StaticOptions.OptionFile.ShowRedundantPathfinder) && FinalPath.Count < 20) { FindPath(instance, Start, Goal, NewPaths, RunCount: RunCount + 1); }
+            else if (NewPaths.Count >= PathlistCap) { Overloaded = true; }
         }
 
         private void BuildEntranceMap(LogicObjects.TrackerInstance instance)

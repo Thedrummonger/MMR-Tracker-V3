@@ -55,12 +55,31 @@ namespace Windows_Form_Frontend
             pathfinder = new Pathfinder();
             pathfinder.FindPath(_instance, (string)comboBox1.SelectedItem, (string)comboBox2.SelectedItem);
             pathfinder.FinalPath = pathfinder.FinalPath.OrderBy(x => x.Count).ToList();
-            if (!pathfinder.FinalPath.Any()) { listBox1.DataSource = new List<string> { "No Path Found" }; }
-            else { PrintPaths(_instance, pathfinder, listBox1); }
+            PrintPaths(_instance, pathfinder, listBox1);
         }
 
         public static void PrintPaths(LogicObjects.TrackerInstance instance, Pathfinder pathfinder, ListBox PathFinderLB, int FocusInd = -1)
         {
+            if (!pathfinder.FinalPath.Any())
+            {
+                List<string> Error = new List<string>();
+                Error.Add("No Paths Found");
+                if (instance.StaticOptions.OptionFile.ShowRedundantPathfinder && pathfinder.Overloaded)
+                {
+                    Error.Add(string.Empty);
+                    Error.Add("Maximum path");
+                    Error.Add("cap was reached,");
+                    Error.Add("Not all paths");
+                    Error.Add("were checked.");
+                    Error.Add("Try Disabling");
+                    Error.Add("\"Show Redundant");
+                    Error.Add("Paths Pathfinder\"");
+                    Error.Add("in options ->");
+                    Error.Add("tracker options");
+                }
+                PathFinderLB.DataSource = Error;
+                return;
+            }
             var inst = instance;
             List<object> Results = new List<object>();
             int index = 0;
