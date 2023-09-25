@@ -101,10 +101,6 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 return new EntranceRandoDestination { region = ID, from = ParentAreaID };
             }
-            public bool IsOneWay(LogicObjects.TrackerInstance instance)
-            {
-                return EntrancePair == null || instance.StaticOptions.DecoupleEntrances;
-            }
             public EntranceRandoDestination GetDestnationFromEntrancePair()
             {
                 return new EntranceRandoDestination { region = EntrancePair.Exit, from = EntrancePair.Area };

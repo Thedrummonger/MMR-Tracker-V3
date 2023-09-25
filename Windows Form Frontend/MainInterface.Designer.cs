@@ -61,7 +61,6 @@ namespace Windows_Form_Frontend
             this.RandomizerOptionsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.logicOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miscOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.entranceRandoFeaturesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logicEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importSpoilerLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -406,8 +405,7 @@ namespace Windows_Form_Frontend
             this.OptionstoolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.RandomizerOptionsToolStripMenuItem1,
             this.logicOptionsToolStripMenuItem,
-            this.miscOptionsToolStripMenuItem,
-            this.entranceRandoFeaturesToolStripMenuItem});
+            this.miscOptionsToolStripMenuItem});
             this.OptionstoolStripMenuItem.Name = "OptionstoolStripMenuItem";
             this.OptionstoolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.OptionstoolStripMenuItem.Text = "Options";
@@ -415,29 +413,22 @@ namespace Windows_Form_Frontend
             // RandomizerOptionsToolStripMenuItem1
             // 
             this.RandomizerOptionsToolStripMenuItem1.Name = "RandomizerOptionsToolStripMenuItem1";
-            this.RandomizerOptionsToolStripMenuItem1.Size = new System.Drawing.Size(204, 22);
-            this.RandomizerOptionsToolStripMenuItem1.Text = "RandomizerOptions";
+            this.RandomizerOptionsToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.RandomizerOptionsToolStripMenuItem1.Text = "Logic Options";
             // 
             // logicOptionsToolStripMenuItem
             // 
             this.logicOptionsToolStripMenuItem.Name = "logicOptionsToolStripMenuItem";
-            this.logicOptionsToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.logicOptionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logicOptionsToolStripMenuItem.Text = "Item Pool Options";
             this.logicOptionsToolStripMenuItem.Click += new System.EventHandler(this.logicOptionsToolStripMenuItem_Click);
             // 
             // miscOptionsToolStripMenuItem
             // 
             this.miscOptionsToolStripMenuItem.Name = "miscOptionsToolStripMenuItem";
-            this.miscOptionsToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
-            this.miscOptionsToolStripMenuItem.Text = "Misc Options";
+            this.miscOptionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.miscOptionsToolStripMenuItem.Text = "Tracker Options";
             this.miscOptionsToolStripMenuItem.Click += new System.EventHandler(this.miscOptionsToolStripMenuItem_Click);
-            // 
-            // entranceRandoFeaturesToolStripMenuItem
-            // 
-            this.entranceRandoFeaturesToolStripMenuItem.Name = "entranceRandoFeaturesToolStripMenuItem";
-            this.entranceRandoFeaturesToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
-            this.entranceRandoFeaturesToolStripMenuItem.Text = "Entrance Rando Features";
-            this.entranceRandoFeaturesToolStripMenuItem.Click += new System.EventHandler(this.entranceRandoFeaturesToolStripMenuItem_Click);
             // 
             // toolsToolStripMenuItem
             // 
@@ -642,7 +633,6 @@ namespace Windows_Form_Frontend
         private System.Windows.Forms.ToolStripMenuItem PathFinderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ExportCheckedToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ImportCheckedToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem entranceRandoFeaturesToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem NewToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem SaveAsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem visualItemTrackerToolStripMenuItem;

@@ -421,7 +421,7 @@ namespace Windows_Form_Frontend
 
             string CurrentStart = (string)CMBStart.SelectedItem ?? "";
             string CurrentEnd = (string)CMBEnd.SelectedItem ?? "";
-            var AccessableAreas = InstanceContainer.Instance.EntrancePool.AreaList.Values.Where(x => x.ExitsAcessibleFrom > 0 && (x.RandomizableExits(InstanceContainer.Instance).Any() || InstanceContainer.Instance.StaticOptions.ShowMacroExitsPathfinder)).Select(x => x.ID);
+            var AccessableAreas = InstanceContainer.Instance.EntrancePool.AreaList.Values.Where(x => x.ExitsAcessibleFrom > 0 && (x.RandomizableExits(InstanceContainer.Instance).Any() || InstanceContainer.Instance.StaticOptions.OptionFile.ShowMacroExitsPathfinder)).Select(x => x.ID);
             CMBStart.DataSource = AccessableAreas.OrderBy(x => x).ToList();
             CMBEnd.DataSource = AccessableAreas.OrderBy(x => x).ToList();
             if (CMBStart.Items.Contains(CurrentStart)) { CMBStart.SelectedIndex = CMBStart.Items.IndexOf(CurrentStart); }
@@ -447,7 +447,7 @@ namespace Windows_Form_Frontend
                 SetObjectVisibility(false, false);
                 return;
             }
-            else if (InstanceContainer.Instance.StaticOptions.EntranceRandoFeatures && (InstanceContainer.Instance.EntrancePool.IsEntranceRando || InstanceContainer.Instance.EntrancePool.CheckForRandomEntrances(InstanceContainer.Instance)))
+            else if (InstanceContainer.Instance.StaticOptions.OptionFile.EntranceRandoFeatures && (InstanceContainer.Instance.EntrancePool.IsEntranceRando || InstanceContainer.Instance.EntrancePool.CheckForRandomEntrances(InstanceContainer.Instance)))
             {
                 SetObjectVisibility(true, true);
                 lblAvailableLocation.Location = new Point(locX, locY + 2);
@@ -633,7 +633,6 @@ namespace Windows_Form_Frontend
             spoilerLogToolsToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
             importSpoilerLogToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
             PathFinderToolStripMenuItem.Visible = (InstanceContainer.Instance != null && InstanceContainer.Instance.EntrancePool.IsEntranceRando);
-            pathfinderOptionsToolStripMenuItem.Visible = (InstanceContainer.Instance != null && InstanceContainer.Instance.EntrancePool.IsEntranceRando);
 
             visualItemTrackerToolStripMenuItem.Visible = Testing.Debugging();
             logicEditorToolStripMenuItem.Visible = Testing.Debugging();
@@ -642,9 +641,6 @@ namespace Windows_Form_Frontend
 
             SaveAsToolStripMenuItem.Visible = (File.Exists(InstanceContainer.CurrentSavePath));
             importSpoilerLogToolStripMenuItem.Text = (InstanceContainer.Instance.SpoilerLog != null) ? "Remove Spoiler Log" : "Import Spoiler Log";
-            entranceRandoFeaturesToolStripMenuItem.Checked = InstanceContainer.Instance.StaticOptions.EntranceRandoFeatures;
-            showMacroExitsToolStripMenuItem.Checked = InstanceContainer.Instance.StaticOptions.ShowMacroExitsPathfinder;
-            entranceRandoFeaturesToolStripMenuItem.Visible = InstanceContainer.Instance.EntrancePool.IsEntranceRando || InstanceContainer.Instance.EntrancePool.CheckForRandomEntrances(InstanceContainer.Instance);
 
 
             //Manage Dev Menus
@@ -1234,7 +1230,7 @@ namespace Windows_Form_Frontend
 
         private void entranceRandoFeaturesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InstanceContainer.Instance.StaticOptions.EntranceRandoFeatures = !InstanceContainer.Instance.StaticOptions.EntranceRandoFeatures;
+            InstanceContainer.Instance.StaticOptions.OptionFile.EntranceRandoFeatures = !InstanceContainer.Instance.StaticOptions.OptionFile.EntranceRandoFeatures;
             UpdateUI();
         }
 

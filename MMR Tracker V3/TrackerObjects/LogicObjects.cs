@@ -172,12 +172,6 @@ namespace MMR_Tracker_V3
         public class Options
         {
             public string ShowOptionsInListBox { get; set; } = OptionData.DisplayListBoxes[0];
-            public bool DecoupleEntrances { get; set; } = false;
-            public bool ShowMacroExitsPathfinder { get; set; } = false;
-            public bool ShowRedundantPathfinder { get; set; } = false;
-            public bool AutoCheckCoupleEntrances { get { return !DecoupleEntrances && _AutoCheckCoupleEntrances; } set { _AutoCheckCoupleEntrances = value; } }
-            private bool _AutoCheckCoupleEntrances = true;
-            public bool EntranceRandoFeatures { get; set; } = true;
 
             public Dictionary<string, bool> MinimizedHeader { get; set; } = new Dictionary<string, bool>();
             public OptionFile OptionFile { get; set; } = new OptionFile();
@@ -189,6 +183,11 @@ namespace MMR_Tracker_V3
             public bool CheckForUpdate { get; set; } = true;
             public bool CheckHintMarkItem { get; set; } = true;
             public bool CompressSave { get; set; } = true;
+            public bool ShowMacroExitsPathfinder { get; set; } = false;
+            public bool ShowRedundantPathfinder { get; set; } = false;
+            public bool AutoCheckCoupleEntrances { get { return _AutoCheckCoupleEntrances; } set { _AutoCheckCoupleEntrances = value; } }
+            private bool _AutoCheckCoupleEntrances = true;
+            public bool EntranceRandoFeatures { get; set; } = true;
             public WinformData WinformData { get; set; } = new WinformData();
         }
 

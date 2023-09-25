@@ -215,7 +215,7 @@ namespace MMR_Tracker_V3
                 double EntrancesRandomized = Instance.EntrancePool.GetAmountOfRandomizedEntrances(Instance);
                 double Locationsrandomized = Instance.LocationPool.Where(x => x.Value.AppearsinListbox(Instance)).Count();
                 double LocationEntranceRatio = Math.Round(EntrancesRandomized / Locationsrandomized, 2);
-                Instance.StaticOptions.EntranceRandoFeatures = LocationEntranceRatio >= .1;
+                Instance.StaticOptions.OptionFile.EntranceRandoFeatures = LocationEntranceRatio >= .1;
             }
 
             if (Instance.LogicFile.GameCode == "MMR")

@@ -940,7 +940,6 @@ namespace Windows_Form_Frontend
         {
             MMR_Tracker_V3.OtherGames.OOTMMV2.GenData.ReadData(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary);
             WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(Logic), JsonConvert.SerializeObject(dictionary));
-            MainInterface.InstanceContainer.Instance.StaticOptions.ShowMacroExitsPathfinder = true;
             foreach(var i in MainInterface.InstanceContainer.Instance.EntrancePool.AreaList.Values)
             {
                 foreach(var j in i.RandomizableExits(MainInterface.InstanceContainer.Instance)) { j.Value.RandomizedState = MiscData.RandomizedState.Unrandomized; }

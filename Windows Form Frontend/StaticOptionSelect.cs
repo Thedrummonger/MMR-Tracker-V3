@@ -33,6 +33,10 @@ namespace Windows_Form_Frontend
             chkTooltips.Checked = TempOptionFile.WinformData.ShowEntryNameTooltip;
             chkUpdates.Checked = TempOptionFile.CheckForUpdate;
             chkCompressSave.Checked = TempOptionFile.CompressSave;
+            chkEntranceFeatures.Checked = TempOptionFile.EntranceRandoFeatures;
+            chkRedundantPaths.Checked = TempOptionFile.ShowRedundantPathfinder;
+            chkUnrandExits.Checked = TempOptionFile.ShowMacroExitsPathfinder;
+            chkCheckCoupled.Checked = TempOptionFile.AutoCheckCoupleEntrances;
             int counter = 0;
             var CurrentFont = WinFormUtils.GetFontFromString(TempOptionFile.WinformData.FormFont);
             foreach (FontFamily font in FontFamily.Families)
@@ -54,6 +58,11 @@ namespace Windows_Form_Frontend
             TempOptionFile.WinformData.ShowEntryNameTooltip = chkTooltips.Checked;
             TempOptionFile.CheckForUpdate = chkUpdates.Checked;
             TempOptionFile.CompressSave = chkCompressSave.Checked;
+            TempOptionFile.EntranceRandoFeatures = chkEntranceFeatures.Checked;
+            TempOptionFile.ShowRedundantPathfinder = chkRedundantPaths.Checked;
+            TempOptionFile.ShowMacroExitsPathfinder = chkUnrandExits.Checked;
+            TempOptionFile.AutoCheckCoupleEntrances = chkCheckCoupled.Checked;
+            Debug.WriteLine(JsonConvert.SerializeObject(TempOptionFile, Formatting.Indented));
         }
 
         private void nudFontSize_ValueChanged(object sender, EventArgs e)

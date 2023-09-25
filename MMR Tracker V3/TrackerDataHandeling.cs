@@ -129,7 +129,7 @@ namespace MMR_Tracker_V3
             if (ChangesMade && checkState != MiscData.CheckState.Marked)
             {
                 instanceContainer.logicCalculation.CalculateLogic(checkState);
-                if (checkState == MiscData.CheckState.Checked && instanceContainer.Instance.StaticOptions.AutoCheckCoupleEntrances && !instanceContainer.Instance.StaticOptions.DecoupleEntrances && instanceContainer.Instance.CheckEntrancePair())
+                if (checkState == MiscData.CheckState.Checked && instanceContainer.Instance.StaticOptions.OptionFile.AutoCheckCoupleEntrances && instanceContainer.Instance.CheckEntrancePair())
                 {
                     instanceContainer.logicCalculation.CalculateLogic(checkState);
                 }
@@ -443,7 +443,7 @@ namespace MMR_Tracker_V3
 
             void WriteEntrances()
             {
-                if (Instance.StaticOptions.EntranceRandoFeatures) { return; }
+                if (Instance.StaticOptions.OptionFile.EntranceRandoFeatures) { return; }
                 var Entrances = PopulateAvailableEntraceList(DataSets, Divider, Instance, Filter, ShowUnavailable, out int EntCount, out int EntCountFiltered, reverse);
                 if (Entrances.Any() && DataSource.Any()) { DataSource.Add(Divider); }
                 DataSource.AddRange(Entrances);
@@ -583,7 +583,7 @@ namespace MMR_Tracker_V3
 
         public static List<object> PopulateAvailableEntraceList(DataSets DataSets, MiscData.Divider Divider, LogicObjects.TrackerInstance Instance, string Filter, bool ShowUnavailable, out int OutItemsInListBox, out int OutItemsInListBoxFiltered, bool reverse = false)
         {
-            bool InLocationBox = !Instance.StaticOptions.EntranceRandoFeatures;
+            bool InLocationBox = !Instance.StaticOptions.OptionFile.EntranceRandoFeatures;
 
             var Groups = Utility.GetCategoriesFromFile(Instance);
             List<object> DataSource = new List<object>();

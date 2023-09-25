@@ -33,7 +33,7 @@ namespace MMR_Tracker_V3
                 };
             }
 
-            if (!instance.StaticOptions.ShowRedundantPathfinder)
+            if (!instance.StaticOptions.OptionFile.ShowRedundantPathfinder)
             {
                 foreach (var i in Paths.Select(x => x.Last().Key))
                 {
@@ -80,7 +80,7 @@ namespace MMR_Tracker_V3
                         string Area = stop.Key;
                         string Exit = NextInd >= GoalPath.Count ? "" : GoalPath[GoalPath.Keys.ToArray()[NextInd]];
 
-                        bool ShowMacro = instance.StaticOptions.ShowMacroExitsPathfinder;
+                        bool ShowMacro = instance.StaticOptions.OptionFile.ShowMacroExitsPathfinder;
                         bool ExitValid = instance.EntrancePool.AreaList.ContainsKey(Area) && instance.EntrancePool.AreaList[Area].Exits.ContainsKey(Exit);
                         bool IsRandomizedExit = ExitValid &&
                             instance.EntrancePool.AreaList[Area].Exits[Exit].IsRandomizableEntrance(instance) &&
