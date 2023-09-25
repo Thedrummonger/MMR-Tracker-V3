@@ -11,6 +11,10 @@ namespace MMR_Tracker_V3
     public class Pathfinder
     {
         public List<Dictionary<string, string>> FinalPath = new List<Dictionary<string, string>>();
+
+        public Dictionary<string, Dictionary<string, EntranceData.EntranceRandoDestination>> EntranceMap = new Dictionary<string, Dictionary<string, EntranceData.EntranceRandoDestination>>();
+        public Dictionary<string, EntranceData.EntranceRandoDestination> Warps = new Dictionary<string, EntranceData.EntranceRandoDestination>();
+
         public bool FindPath(
             LogicObjects.TrackerInstance instance,
             string CurrentArea,
@@ -22,40 +26,65 @@ namespace MMR_Tracker_V3
             bool StopAtFirstPath = false
         )
         {
-            if (Root) { FinalPath.Clear(); }
+            if (Root) 
+            { 
+                FinalPath.Clear();
+                BuildEntranceMap(instance);
+            }
             SeenAreas.Add(CurrentArea);
-            var validLoadingZoneExits = instance.EntrancePool.AreaList[CurrentArea].RandomizableExits(instance).Values.Where(x => x.CheckState == MiscData.CheckState.Checked);
-            var validMacroExits = instance.EntrancePool.AreaList[CurrentArea].NonRandomizableExits(instance).Values.Where(x => x.CheckState == MiscData.CheckState.Checked);
-            var WarpExits = instance.EntrancePool.AreaList.SelectMany(x => x.Value.RandomizableExits(instance).Values.Where(x => x.IsWarp && x.CheckState == MiscData.CheckState.Checked));
-            var validExits = validLoadingZoneExits.Concat(validMacroExits);
-            if (Root) { validExits = validExits.Concat(WarpExits); }
-            if (validExits.Any(x => x.DestinationExit.region == Goal))
+            var validExits = EntranceMap[CurrentArea];
+
+            if (Root)
             {
-                var DestinationExit = validExits.First(x => x.DestinationExit.region == Goal);
-                if (!validMacroExits.Contains(DestinationExit) || IncludeMacroExits)
+                foreach(var ex in Warps ) 
                 {
-                    if (WarpExits.Contains(DestinationExit)) { Path.Add(DestinationExit.ParentAreaID, DestinationExit.ID); }
-                    else { Path.Add(CurrentArea, DestinationExit.ID); }
+                    if (!validExits.ContainsKey(ex.Key))
+                    {
+                        validExits[ex.Key] = ex.Value;
+                    }
                 }
-                Path.Add(Goal, "");
-                FinalPath.Add(Path);
+            }
+
+            var FoundGoal = validExits.Values.Where(x => x.region == Goal);
+
+            if (FoundGoal.Any())
+            {
+                foreach(var goal in FoundGoal)
+                {
+                    Path.Add(Goal, "");
+                    FinalPath.Add(Path);
+                }
                 return true;
             }
             foreach (var i in validExits)
             {
-                if (SeenAreas.Contains(i.DestinationExit.region)) { continue; }
+                if (SeenAreas.Contains(i.Value.region)) { continue; }
                 var PathCopy = Path.ToDictionary(entry => entry.Key, entry => entry.Value);
                 var SeenAreasCopy = SeenAreas.Select(entry => entry);
-                if (!validMacroExits.Contains(i) || IncludeMacroExits) 
-                { 
-                    if (WarpExits.Contains(i)) { PathCopy.Add(i.ParentAreaID, i.ID); }
-                    else { PathCopy.Add(CurrentArea, i.ID); }
-                }
-                var PathFound = FindPath(instance, i.DestinationExit.region, Goal, SeenAreasCopy.ToList(), PathCopy, false, IncludeMacroExits, StopAtFirstPath);
+                PathCopy.Add(CurrentArea, i.Key);
+                var PathFound = FindPath(instance, i.Value.region, Goal, SeenAreasCopy.ToList(), PathCopy, false, IncludeMacroExits, StopAtFirstPath);
                 if (PathFound) { return (StopAtFirstPath || FinalPath.Count() > 100); }
             }
             return false;
         }
+
+        private void BuildEntranceMap(LogicObjects.TrackerInstance instance)
+        {
+            EntranceMap.Clear();
+            Warps.Clear();
+
+            foreach (var i in instance.EntrancePool.AreaList.Values)
+            {
+                if (!EntranceMap.ContainsKey(i.ID)) { EntranceMap[i.ID] = new Dictionary<string, EntranceData.EntranceRandoDestination>(); }
+                foreach(var j in i.Exits)
+                {
+                    if (j.Value.CheckState != MiscData.CheckState.Checked) { continue; }
+                    if (j.Value.IsWarp) { Warps[i.ID] = j.Value.DestinationExit; }
+                    EntranceMap[i.ID][j.Key] = j.Value.DestinationExit;
+                }
+            }
+        }
+
         public class PathfinderPath
         {
             public int Index { get; set; }
