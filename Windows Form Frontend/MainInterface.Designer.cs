@@ -113,6 +113,7 @@ namespace Windows_Form_Frontend
             this.LBPathFinder.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.LBPathFinder.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.LBPathFinder.FormattingEnabled = true;
+            this.LBPathFinder.HorizontalScrollbar = true;
             this.LBPathFinder.IntegralHeight = false;
             this.LBPathFinder.Location = new System.Drawing.Point(123, 408);
             this.LBPathFinder.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -189,6 +190,7 @@ namespace Windows_Form_Frontend
             this.CMBEnd.Name = "CMBEnd";
             this.CMBEnd.Size = new System.Drawing.Size(116, 23);
             this.CMBEnd.TabIndex = 36;
+            this.CMBEnd.DropDown += new System.EventHandler(this.PathfinderCMB_DropDown);
             // 
             // CMBStart
             // 
@@ -200,6 +202,7 @@ namespace Windows_Form_Frontend
             this.CMBStart.Name = "CMBStart";
             this.CMBStart.Size = new System.Drawing.Size(116, 23);
             this.CMBStart.TabIndex = 35;
+            this.CMBStart.DropDown += new System.EventHandler(this.PathfinderCMB_DropDown);
             // 
             // CHKShowAll
             // 
@@ -450,7 +453,7 @@ namespace Windows_Form_Frontend
             // showMacroExitsToolStripMenuItem
             // 
             this.showMacroExitsToolStripMenuItem.Name = "showMacroExitsToolStripMenuItem";
-            this.showMacroExitsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.showMacroExitsToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.showMacroExitsToolStripMenuItem.Text = "Show Macro Exits";
             this.showMacroExitsToolStripMenuItem.Click += new System.EventHandler(this.showMacroExitsToolStripMenuItem_Click);
             // 

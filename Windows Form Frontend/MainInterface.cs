@@ -1270,5 +1270,10 @@ namespace Windows_Form_Frontend
             InstanceContainer.Instance.StaticOptions.ShowMacroExitsPathfinder = !InstanceContainer.Instance.StaticOptions.ShowMacroExitsPathfinder;
             UpdateUI();
         }
+
+        private void PathfinderCMB_DropDown(object sender, EventArgs e)
+        {
+            WinFormUtils.AdjustComboBoxWidth(sender as System.Windows.Forms.ComboBox);
+        }
     }
 }

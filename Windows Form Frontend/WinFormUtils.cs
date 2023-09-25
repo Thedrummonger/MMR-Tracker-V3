@@ -119,5 +119,19 @@ namespace Windows_Form_Frontend
             if (!string.IsNullOrWhiteSpace(input)) { return input; }
             return null;
         }
+
+        public static void AdjustComboBoxWidth(ComboBox C)
+        {
+            Graphics g = C.CreateGraphics();
+            float longest = 0;
+            foreach (var i in C.Items)
+            {
+                SizeF textLength = g.MeasureString(i.ToString(), C.Font);
+                if (textLength.Width > longest)
+                    longest = textLength.Width;
+            }
+            if (longest > 0)
+                C.DropDownWidth = (int)longest;
+        }
     }
 }

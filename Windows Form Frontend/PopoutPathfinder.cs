@@ -29,18 +29,21 @@ namespace Windows_Form_Frontend
             var AccessableAreas = _instance.EntrancePool.AreaList.Values.Where(x => x.ExitsAcessibleFrom > 0 && (x.RandomizableExits(_instance).Any() || _instance.StaticOptions.ShowMacroExitsPathfinder)).Select(x => x.ID);
             comboBox1.DataSource = AccessableAreas.OrderBy(x => x).ToList();
             comboBox2.DataSource = AccessableAreas.OrderBy(x => x).ToList();
+            listBox1.HorizontalScrollbar = true;
         }
 
         private void comboBox1_DropDown(object sender, EventArgs e)
         {
             var AccessableAreas = _instance.EntrancePool.AreaList.Values.Where(x => x.ExitsAcessibleFrom > 0 && (x.RandomizableExits(_instance).Any() || _instance.StaticOptions.ShowMacroExitsPathfinder)).Select(x => x.ID);
             comboBox1.DataSource = AccessableAreas.OrderBy(x => x).ToList();
+            WinFormUtils.AdjustComboBoxWidth(sender as System.Windows.Forms.ComboBox);
         }
 
         private void comboBox2_DropDown(object sender, EventArgs e)
         {
             var AccessableAreas = _instance.EntrancePool.AreaList.Values.Where(x => x.ExitsAcessibleFrom > 0 && (x.RandomizableExits(_instance).Any() || _instance.StaticOptions.ShowMacroExitsPathfinder)).Select(x => x.ID);
             comboBox2.DataSource = AccessableAreas.OrderBy(x => x).ToList();
+            WinFormUtils.AdjustComboBoxWidth(sender as System.Windows.Forms.ComboBox);
         }
 
         private void btnFindpath_Click(object sender, EventArgs e)
