@@ -162,11 +162,6 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
         {
             Dictionary<string, string> Override = new Dictionary<string, string>
             {
-                { "OOT_EVENT_SPIRIT_ADULT_DOOR", "can_lift_silver && (setting(agelessBoots) || setting(agelessHookshot) || setting(climbMostSurfacesOot) && small_keys_spirit(5)) || (setting(agelessBoots, false) || setting(agelessHookshot, false) || setting(climbMostSurfacesOot, false) && small_keys_spirit(3))" },
-                { "OOT Forest Temple Maze => OOT Forest Temple Twisted 1 Normal", "(((is_adult || time_travel_at_will) && has(STRENGTH)) || climb_anywhere || hookshot_anywhere) && (setting(hookshotAnywhereOot) && setting(ageChange, none, false) && small_keys_forest(5)) || ((setting(hookshotAnywhereOot, false) || setting(ageChange, none)) && small_keys_forest(2))" },
-                { "OOT Forest Temple Twisted 1 Normal => OOT Forest Temple Poe 1", "(setting(hookshotAnywhereOot) && setting(ageChange, none, false) && small_keys_forest(5)) || ((setting(hookshotAnywhereOot, false) || setting(ageChange, none)) && small_keys_forest(2))" },
-                { "OOT Forest Temple Maze => OOT Forest Temple Twisted 1 Alt", "event(FOREST_TWISTED_HALL) && ((setting(hookshotAnywhereOot) && !setting(ageChange, none) && small_keys_forest(5)) || ((setting(hookshotAnywhereOot, false) || setting(ageChange, none)) && small_keys_forest(2)))" },
-                { "MM Zora Hall Evan HP", "can_play_evan && (setting(erDungeons, none, false) && setting(bossWarpPads, Remains) && has_mask_zora) || (setting(erDungeons, none) || setting(bossWarpPads, Remains, false))" }
             };
 
             if (Override.ContainsKey(iD))

@@ -76,6 +76,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
 
             FixAreaClearLogic(LogicFile);
 
+            AddLinkToGlobal(LogicFile, DictionaryFile);
+
             foreach (var i in LogicFile.Logic)
             {
                 if (!OTTMMPaths.MMLogicEntries.Contains(i.Id) || 
@@ -92,6 +94,13 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
             OutLogic = LogicFile;
             outDict = DictionaryFile;
         }
+
+        private static void AddLinkToGlobal(MMRData.LogicFile logicFile, LogicDictionaryData.LogicDictionary dictionaryFile)
+        {
+            dictionaryFile.EntranceList["OOT SPAWN => OOT SPAWN CHILD"].AlwaysAccessable = true;
+            dictionaryFile.EntranceList["OOT SPAWN => OOT SPAWN ADULT"].AlwaysAccessable = true;
+        }
+
         public static void FixAreaClearLogic(MMRData.LogicFile Logic)
         {
             var MM_BOSS_GREAT_BAY = Logic.Logic.First(x => x.Id == "MM_EVENT_BOSS_GREAT_BAY");
