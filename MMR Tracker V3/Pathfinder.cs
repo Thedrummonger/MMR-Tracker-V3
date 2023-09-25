@@ -97,7 +97,7 @@ namespace MMR_Tracker_V3
 
             //Debug.WriteLine($"Layer {RunCount}\nPaths to Check: {NewPaths.Count}");
 
-            if (NewPaths.Any() && NewPaths.Count < 100000 && FinalPath.Count < 20) { FindPath(instance, Start, Goal, NewPaths, RunCount: RunCount + 1); }
+            if (NewPaths.Any() && (NewPaths.Count < 250000 || !instance.StaticOptions.OptionFile.ShowRedundantPathfinder) && FinalPath.Count < 20) { FindPath(instance, Start, Goal, NewPaths, RunCount: RunCount + 1); }
 
         }
 
