@@ -1,6 +1,7 @@
 ﻿using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -15,57 +16,70 @@ namespace MMR_Tracker_V3
         public Dictionary<string, Dictionary<string, EntranceData.EntranceRandoDestination>> EntranceMap = new Dictionary<string, Dictionary<string, EntranceData.EntranceRandoDestination>>();
         public Dictionary<string, EntranceData.EntranceRandoDestination> Warps = new Dictionary<string, EntranceData.EntranceRandoDestination>();
 
-        public bool FindPath(
-            LogicObjects.TrackerInstance instance,
-            string CurrentArea,
-            string Goal,
-            List<string> SeenAreas,
-            Dictionary<string, string> Path,
-            bool Root = true,
-            bool IncludeMacroExits = false,
-            bool StopAtFirstPath = false
-        )
+        public void FindPath(LogicObjects.TrackerInstance instance, string Start, string Goal, List<Dictionary<string, string>> Paths = null, int RunCount = 1)
         {
-            if (Root) 
-            { 
-                FinalPath.Clear();
-                BuildEntranceMap(instance);
-            }
-            SeenAreas.Add(CurrentArea);
-            var validExits = EntranceMap[CurrentArea];
 
-            if (Root)
+            bool IsRoot = false;
+            if (Paths == null) 
             {
-                foreach(var ex in Warps ) 
+                IsRoot = true;
+                BuildEntranceMap(instance);
+                Paths = new List<Dictionary<string, string>>
                 {
-                    if (!validExits.ContainsKey(ex.Key))
+                    new Dictionary<string, string> { { Start, "" } }
+                };
+            }
+
+            List<Dictionary<string, string>> NewPaths = new List<Dictionary<string, string>>();
+            foreach (var Path in Paths)
+            {
+                var PathEnd = Path.Last();
+                var ValidExits = EntranceMap[PathEnd.Key];
+                if (IsRoot)
+                {
+                    foreach (var warp in Warps)
                     {
-                        validExits[ex.Key] = ex.Value;
+                        if (!ValidExits.ContainsKey(warp.Key)) { ValidExits.Add(warp.Key, warp.Value); }
                     }
                 }
-            }
-
-            var FoundGoal = validExits.Values.Where(x => x.region == Goal);
-
-            if (FoundGoal.Any())
-            {
-                foreach(var goal in FoundGoal)
+                foreach (var i in ValidExits)
                 {
-                    Path.Add(Goal, "");
-                    FinalPath.Add(Path);
+                    if (Path.ContainsKey(i.Value.region)) { continue; }
+                    Dictionary<string, string> NewPath = new Dictionary<string, string>();
+                    foreach(var j in Path)
+                    {
+                        NewPath.Add(j.Key, j.Value);
+                    }
+                    NewPath.Add(i.Value.region, i.Key);
+                    NewPaths.Add(NewPath);
                 }
-                return true;
             }
-            foreach (var i in validExits)
+
+
+            if (NewPaths.Any(x => x.Last().Key == Goal))
             {
-                if (SeenAreas.Contains(i.Value.region)) { continue; }
-                var PathCopy = Path.ToDictionary(entry => entry.Key, entry => entry.Value);
-                var SeenAreasCopy = SeenAreas.Select(entry => entry);
-                PathCopy.Add(CurrentArea, i.Key);
-                var PathFound = FindPath(instance, i.Value.region, Goal, SeenAreasCopy.ToList(), PathCopy, false, IncludeMacroExits, StopAtFirstPath);
-                if (PathFound) { return (StopAtFirstPath || FinalPath.Count() > 100); }
+                var GoalPaths = NewPaths.Where(x => x.Last().Key == Goal);
+                foreach(var GoalPath in GoalPaths)
+                {
+                    Dictionary<string, string> FormattedPath = new Dictionary<string, string>();
+                    int NextInd = 1;
+                    foreach(var stop in GoalPath)
+                    {
+                        string Area = stop.Key;
+                        string Exit = NextInd >= GoalPath.Count ? "" : GoalPath[GoalPath.Keys.ToArray()[NextInd]];
+                        FormattedPath.Add(Area, Exit);
+                        NextInd++;
+                    }
+                    FinalPath.Add(FormattedPath);
+                }
+
+                NewPaths = NewPaths.Where(x => x.Last().Key != Goal).ToList();
             }
-            return false;
+
+            //Debug.WriteLine($"Layer {RunCount}\nPaths to Check: {NewPaths.Count}");
+
+            if (NewPaths.Any() && NewPaths.Count < 100000 && FinalPath.Count < 20) { FindPath(instance, Start, Goal, NewPaths, RunCount: RunCount + 1); }
+
         }
 
         private void BuildEntranceMap(LogicObjects.TrackerInstance instance)
@@ -79,7 +93,7 @@ namespace MMR_Tracker_V3
                 foreach(var j in i.Exits)
                 {
                     if (j.Value.CheckState != MiscData.CheckState.Checked) { continue; }
-                    if (j.Value.IsWarp) { Warps[i.ID] = j.Value.DestinationExit; }
+                    if (j.Value.IsWarp) { Warps[j.Key] = j.Value.DestinationExit; }
                     EntranceMap[i.ID][j.Key] = j.Value.DestinationExit;
                 }
             }

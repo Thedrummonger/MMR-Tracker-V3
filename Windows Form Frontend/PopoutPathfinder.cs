@@ -1,4 +1,6 @@
 ﻿using MMR_Tracker_V3;
+using MMR_Tracker_V3.TrackerObjects;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -48,39 +50,49 @@ namespace Windows_Form_Frontend
             listBox1.ItemHeight = Convert.ToInt32(listBox1.Font.Size * 1.8);
             listBox1.DataSource = new List<string> { "Finding path" };
             pathfinder = new Pathfinder();
-            pathfinder.FindPath(_instance, (string)comboBox1.SelectedItem, (string)comboBox2.SelectedItem, new List<string>(), new Dictionary<string, string>(), IncludeMacroExits: _instance.StaticOptions.ShowMacroExitsPathfinder);
+            pathfinder.FindPath(_instance, (string)comboBox1.SelectedItem, (string)comboBox2.SelectedItem);
             pathfinder.FinalPath = pathfinder.FinalPath.OrderBy(x => x.Count).ToList();
             if (!pathfinder.FinalPath.Any()) { listBox1.DataSource = new List<string> { "No Path Found" }; }
-            else { PrintPaths(); }
+            else { PrintPaths(_instance, pathfinder, listBox1); }
         }
 
-        private void PrintPaths()
+        public static void PrintPaths(LogicObjects.TrackerInstance instance, Pathfinder pathfinder, ListBox PathFinderLB, int FocusInd = -1)
         {
+            var inst = instance;
             List<object> Results = new List<object>();
             int index = 0;
+            HashSet<string> PrintedPaths = new HashSet<string>();
             foreach (var i in pathfinder.FinalPath)
             {
-                Results.Add(WinFormUtils.CreateDivider(listBox1));
-                Results.Add(new Pathfinder.PathfinderPath { Display = $"Path {index + 1}: {i.Count - 1} Stops", Index = index });
-                var PathList = i.Select(x => new Pathfinder.PathfinderPath { Display = x.Value == "" ? x.Key : $"{x.Key} => {x.Value}", Index = index });
-                Results = Results.Concat(PathList).ToList();
+                if (FocusInd > -1 && index != FocusInd) { index++; continue; }
+                List<object> Stops = new List<object>();
+                foreach (var stop in i)
+                {
+                    bool ShowMacro = instance.StaticOptions.ShowMacroExitsPathfinder;
+                    bool ExitValid = inst.EntrancePool.AreaList.ContainsKey(stop.Key) && inst.EntrancePool.AreaList[stop.Key].Exits.ContainsKey(stop.Value);
+                    bool IsRandomizedExit = ExitValid &&
+                        inst.EntrancePool.AreaList[stop.Key].Exits[stop.Value].IsRandomizableEntrance(inst) &&
+                        (inst.EntrancePool.AreaList[stop.Key].Exits[stop.Value].IsRandomized() || inst.EntrancePool.AreaList[stop.Key].Exits[stop.Value].IsUnrandomized(MiscData.UnrandState.Manual));
+                    if (IsRandomizedExit || ShowMacro || !ExitValid) { Stops.Add(new Pathfinder.PathfinderPath { Display = stop.Value == "" ? stop.Key : $"{stop.Key} => {stop.Value}", Index = index, Focused = FocusInd > -1 }); }
+                }
+
+                string StopsHash = JsonConvert.SerializeObject(Stops);
+                if (PrintedPaths.Contains(StopsHash)) { continue; }
+                PrintedPaths.Add(StopsHash);
+
+                Results.Add(WinFormUtils.CreateDivider(PathFinderLB));
+                Results.Add(new Pathfinder.PathfinderPath { Display = $"Path {index+1}: {Stops.Count - 1} Stops", Index = index });
+                Results.AddRange(Stops);
                 index++;
             }
-            listBox1.DataSource = Results;
+            PathFinderLB.DataSource = Results;
         }
 
         private void LBPathFinder_DoubleClick(object sender, EventArgs e)
         {
             if (((ListBox)sender).SelectedItem is Pathfinder.PathfinderPath path)
             {
-                if (path.Focused) { PrintPaths(); }
-                else
-                {
-                    List<object> Results = new List<object>();
-                    Results.Add(new Pathfinder.PathfinderPath { Display = $"Path {path.Index + 1}: {pathfinder.FinalPath[path.Index].Count - 1} Stops", Index = path.Index });
-                    Results = Results.Concat(pathfinder.FinalPath[path.Index].Select(x => new Pathfinder.PathfinderPath { Display = x.Value == "" ? x.Key : $"{x.Key} => {x.Value}", Index = path.Index, Focused = true })).ToList();
-                    listBox1.DataSource = Results.ToList();
-                }
+                PrintPaths(_instance, pathfinder, listBox1, path.Focused ? -1 : path.Index);
             }
         }
     }

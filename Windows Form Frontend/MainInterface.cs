@@ -1172,40 +1172,17 @@ namespace Windows_Form_Frontend
             LBPathFinder.ItemHeight = Convert.ToInt32(LBPathFinder.Font.Size * 1.8);
             LBPathFinder.DataSource = new List<string> { "Finding path" };
             MainInterfacepathfinder = new Pathfinder();
-            MainInterfacepathfinder.FindPath(InstanceContainer.Instance, (string)CMBStart.SelectedItem, (string)CMBEnd.SelectedItem, new List<string>(), new Dictionary<string, string>(), IncludeMacroExits: InstanceContainer.Instance.StaticOptions.ShowMacroExitsPathfinder);
+            MainInterfacepathfinder.FindPath(InstanceContainer.Instance, (string)CMBStart.SelectedItem, (string)CMBEnd.SelectedItem);
             MainInterfacepathfinder.FinalPath = MainInterfacepathfinder.FinalPath.OrderBy(x => x.Count).ToList();
             if (!MainInterfacepathfinder.FinalPath.Any()) { LBPathFinder.DataSource = new List<string> { "No Path Found" }; }
-            else { PrintPaths(); }
-        }
-
-        private void PrintPaths()
-        {
-            List<object> Results = new List<object>();
-            int index = 0;
-            foreach (var i in MainInterfacepathfinder.FinalPath)
-            {
-                if (index >= 20) { break; }
-                Results.Add(WinFormUtils.CreateDivider(LBPathFinder));
-                Results.Add(new Pathfinder.PathfinderPath { Display = $"Path {index+1}: {i.Count - 1} Stops", Index = index });
-                var PathList = i.Select(x => new Pathfinder.PathfinderPath { Display = x.Value == "" ? x.Key : $"{x.Key} => {x.Value}", Index = index });
-                Results = Results.Concat(PathList).ToList();
-                index++;
-            }
-            LBPathFinder.DataSource = Results;
+            else { PopoutPathfinder.PrintPaths(InstanceContainer.Instance, MainInterfacepathfinder, LBPathFinder); }
         }
 
         private void LBPathFinder_DoubleClick(object sender, EventArgs e)
         {
             if (((ListBox)sender).SelectedItem is Pathfinder.PathfinderPath path)
             {
-                if (path.Focused) { PrintPaths(); }
-                else
-                {
-                    List<object> Results = new List<object>();
-                    Results.Add(new Pathfinder.PathfinderPath { Display = $"Path {path.Index + 1}: {MainInterfacepathfinder.FinalPath[path.Index].Count - 1} Stops", Index = path.Index });
-                    Results = Results.Concat(MainInterfacepathfinder.FinalPath[path.Index].Select(x => new Pathfinder.PathfinderPath { Display = x.Value == "" ? x.Key : $"{x.Key} => {x.Value}", Index = path.Index, Focused = true })).ToList();
-                    LBPathFinder.DataSource = Results.ToList();
-                }
+                PopoutPathfinder.PrintPaths(InstanceContainer.Instance, MainInterfacepathfinder, LBPathFinder, path.Focused ? -1 : path.Index);
             }
         }
 
