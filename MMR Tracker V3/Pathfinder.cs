@@ -60,6 +60,7 @@ namespace MMR_Tracker_V3
                 }
                 foreach (var i in ValidExits)
                 {
+                    if (i.Value is null) { continue; }
                     if (SeenAreas.ContainsKey(i.Value.region)) { continue; }
                     if (Path.ContainsKey(i.Value.region)) { continue; }
                     Dictionary<string, string> NewPath = new Dictionary<string, string>();
@@ -87,11 +88,12 @@ namespace MMR_Tracker_V3
 
                         bool ShowMacro = instance.StaticOptions.OptionFile.ShowMacroExitsPathfinder;
                         bool ExitValid = instance.EntrancePool.AreaList.ContainsKey(Area) && instance.EntrancePool.AreaList[Area].Exits.ContainsKey(Exit);
+                        bool IsDestination = string.IsNullOrWhiteSpace(Exit);
                         bool IsRandomizedExit = ExitValid &&
                             instance.EntrancePool.AreaList[Area].Exits[Exit].IsRandomizableEntrance(instance) &&
                             (instance.EntrancePool.AreaList[Area].Exits[Exit].IsRandomized() || instance.EntrancePool.AreaList[Area].Exits[Exit].IsUnrandomized(MiscData.UnrandState.Manual));
 
-                        if (IsRandomizedExit || ShowMacro || !ExitValid) { FormattedPath.Add(Area, Exit); }
+                        if (IsRandomizedExit || IsDestination || ShowMacro) { FormattedPath.Add(Area, Exit); }
                         NextInd++;
                     }
                     FinalPath.Add(FormattedPath);
@@ -116,7 +118,7 @@ namespace MMR_Tracker_V3
                 if (!EntranceMap.ContainsKey(i.ID)) { EntranceMap[i.ID] = new Dictionary<string, EntranceData.EntranceRandoDestination>(); }
                 foreach(var j in i.Exits)
                 {
-                    if (j.Value.CheckState != MiscData.CheckState.Checked) { continue; }
+                    if (j.Value.CheckState != MiscData.CheckState.Checked && j.Value.Available) { continue; }
                     if (j.Value.IsWarp) { Warps[j.Key] = j.Value.DestinationExit; }
                     EntranceMap[i.ID][j.Key] = j.Value.DestinationExit;
                 }
