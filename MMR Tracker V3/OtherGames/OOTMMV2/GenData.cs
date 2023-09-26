@@ -87,9 +87,10 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                 i.RequiredItems.Add("MM_can_reset_time");
             }
 
+            RemoveNonLogicAlteringSettings(LogicFile, DictionaryFile);
+
             File.WriteAllText(Path.Combine(OTTMMPaths.OOTMMTestingFolder,"LogicFile.json"), JsonConvert.SerializeObject(LogicFile, Testing._NewtonsoftJsonSerializerOptions));
             File.WriteAllText(Path.Combine(OTTMMPaths.OOTMMTestingFolder, "DictionaryFile.json"), JsonConvert.SerializeObject(DictionaryFile, Testing._NewtonsoftJsonSerializerOptions));
-            EvalLogicEntryTypes(LogicFile, DictionaryFile);
 
             OutLogic = LogicFile;
             outDict = DictionaryFile;
@@ -139,8 +140,62 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
             }
         }
 
-        private static void EvalLogicEntryTypes(MMRData.LogicFile LogicFile, LogicDictionaryData.LogicDictionary dictionaryFile)
+        private static void RemoveNonLogicAlteringSettings(MMRData.LogicFile LogicFile, LogicDictionaryData.LogicDictionary dictionaryFile)
         {
+            List<string> settingIDs = new List<string>();
+
+            var AllLogicItems = LogicFile.Logic.SelectMany(x => x.ConditionalItems.SelectMany(x => x))
+                .Concat(LogicFile.Logic.SelectMany(x => x.RequiredItems));
+            AllLogicItems = AllLogicItems.Concat(dictionaryFile.AdditionalLogic.SelectMany(x => x.ConditionalItems.SelectMany(x => x))
+                .Concat(dictionaryFile.AdditionalLogic.SelectMany(x => x.RequiredItems)));
+
+            foreach (string Entry in AllLogicItems)
+            {
+                if (LogicEditing.IsLogicFunction(Entry, out string Func, out string Param, new('{', '}')))
+                {
+                    if (Func == "setting" || Func == "var")
+                    {
+                        var Params = Param.Split(',').Select(x => x.Trim()).ToList();
+                        settingIDs.Add(Params[0]);
+                        if (Params.Count > 1 && dictionaryFile.Variables.ContainsKey(Params[1])) { settingIDs.Add(Params[1]); }
+                        if (dictionaryFile.Variables.ContainsKey(Params[0]) && dictionaryFile.Variables[Params[0]].Value is Newtonsoft.Json.Linq.JArray) { settingIDs.Add(Params[0]); }
+                    }
+                }
+                else if (Entry.Contains(','))
+                {
+                    var Params = Entry.Split(',').Select(x => x.Trim()).ToArray();
+                    if (dictionaryFile.Variables.ContainsKey(Params[0])) { settingIDs.Add(Params[0]); }
+                    if (Params.Length > 1 && dictionaryFile.Variables.ContainsKey(Params[1])) { settingIDs.Add(Params[1]); }
+                }
+                 
+            }
+
+            foreach(var i in dictionaryFile.Options)
+            {
+                foreach(var j in i.Value.Values)
+                {
+                    if (j.Value.VariableEdit.Any())
+                    {
+                        settingIDs.Add(i.Key);
+                        foreach (var k in j.Value.VariableEdit)
+                        {
+                            settingIDs.Add(k.Key);
+                        }
+                    }
+                }
+            }
+
+
+            foreach (var i in dictionaryFile.Options.Keys) 
+            { 
+                if (!settingIDs.Contains(i))
+                    dictionaryFile.Options.Remove(i);
+            }
+            foreach (var i in dictionaryFile.Variables.Keys)
+            {
+                if (!settingIDs.Contains(i))
+                    dictionaryFile.Variables.Remove(i);
+            }
 
         }
 

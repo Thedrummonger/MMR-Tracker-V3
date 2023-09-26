@@ -14,8 +14,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             {"yes", "no" },
             {"enabled", "disabled" },
             {"true", "false" },
-            {"on", "off" },
-            {"open", "closed" },
+            {"on", "off" }
         };
 
         public static Dictionary<string, string> GetToggleValues()
