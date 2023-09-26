@@ -141,31 +141,6 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
 
         private static void EvalLogicEntryTypes(MMRData.LogicFile LogicFile, LogicDictionaryData.LogicDictionary dictionaryFile)
         {
-            List<string> settingIDs = new List<string>();
-            List<string> Functions = new List<string>();
-            foreach (string Entry in LogicFile.Logic.SelectMany(x => x.ConditionalItems.SelectMany(x => x)).Concat(LogicFile.Logic.SelectMany(x => x.RequiredItems)))
-            {
-                if (LogicEditing.IsLogicFunction(Entry, out string Func, out string Param, new('{', '}')) && Func == "setting" || Func == "var")
-                {
-                    var Params = Param.Split(',').Select(x => x.Trim()).ToList();
-                    settingIDs.Add(Params[0]);
-                    if (Params.Count > 1 && dictionaryFile.Variables.ContainsKey(Params[1])) { settingIDs.Add(Params[1]); }
-                    if (dictionaryFile.Variables.ContainsKey(Params[0]) && dictionaryFile.Variables[Params[0]].Value is Newtonsoft.Json.Linq.JArray) { settingIDs.Add(Params[0]); }
-                }
-            }
-
-            foreach(var i in dictionaryFile.Options)
-            {
-                if (i.Value.DisplayName is null || !i.Value.DisplayName.StartsWith("*")) { continue; }
-                else { i.Value.DisplayName = i.Value.DisplayName[1..]; }
-                if (!settingIDs.Contains(i.Key)) { Debug.WriteLine($"{i.Key} was unused"); }
-            }
-            foreach (var i in dictionaryFile.Variables)
-            {
-                if (i.Value.Name is null || !i.Value.Name.StartsWith("*")) { continue; }
-                else { i.Value.Name = i.Value.Name[1..]; }
-                if (!settingIDs.Contains(i.Key)) { Debug.WriteLine($"{i.Key} was unused"); }
-            }
 
         }
 
