@@ -501,8 +501,8 @@ namespace MMR_Tracker_V3
             if (func == "check" && Utility.DynamicPropertyExist(obj, "RandomizedState") && obj.RandomizedState == RandomizedState.ForcedJunk) { func = "available"; }
 
             if (func == "check" && Utility.DynamicPropertyExist(obj, "CheckState")) { return (obj.CheckState == CheckState.Checked) != Inverted; }
-            else if (func == "available" && Utility.DynamicPropertyExist(obj, "Available")) { Debug.WriteLine($"Is Available: {obj.Available}"); return  obj.Available != Inverted; }
-            else if (func == "available" && Utility.DynamicPropertyExist(obj, "Aquired")) { Debug.WriteLine($"Is Available: {obj.Aquired}"); return obj.Aquired != Inverted; }
+            else if (func == "available" && Utility.DynamicPropertyExist(obj, "Available")) { return  obj.Available != Inverted; }
+            else if (func == "available" && Utility.DynamicPropertyExist(obj, "Aquired")) { return obj.Aquired != Inverted; }
             else { Debug.WriteLine($"{paramClean} could not be checked. Type: {type}"); }
             return false;
         }
