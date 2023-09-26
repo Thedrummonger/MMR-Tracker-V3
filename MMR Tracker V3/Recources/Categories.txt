@@ -48,6 +48,7 @@ Hyrule Castle
 
 //Ocarina of Time
 Egg Hatching
+Inside Eggs
 Kokiri Forest
 Lost Woods
 Sacred Forest Meadow
@@ -75,6 +76,7 @@ Zora's Fountain
 Lake Hylia
 Gerudo Valley
 Gerudo Fortress
+Gerudo's Fortress
 Thieves' Hideout
 Haunted Wasteland
 Desert Colossus
@@ -85,12 +87,14 @@ Sacred Realm
 //Child Dungeons
 Deku Tree
 Dodongo's Cavern
+Jabu-Jabu's Belly
 Jabu Jabu's Belly
 
 //Mini Dungeons
 Bottom of the Well
 Ice Cavern
 Gerudo Training Ground
+Gerudo's Training Ground
 
 //Adult Dungeons
 Forest Temple
@@ -152,6 +156,7 @@ Ikana Castle
 Stone 
 Stone Tower
 Tingle Map
+Tingle
 Bottle Catch
 Dungeon Entrance
 Owl Warp

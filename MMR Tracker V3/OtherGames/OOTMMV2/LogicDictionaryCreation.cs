@@ -42,8 +42,6 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
 
             static void Createlocations(LogicDictionaryData.LogicDictionary logicDictionaryData, List<MMROOTLocation> Pool, string GameCode, OOTMMParserData OTTMMPaths)
             {
-                var RegionNames = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(OTTMMPaths.RegionNamesFile));
-                var SpecificLocationAreas = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(OTTMMPaths.LocationAreaFile));
                 foreach (var i in Pool)
                 {
                     string LocationID = $"{GameCode} {i.location}";
@@ -60,28 +58,13 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                         "MM_MAGIC_JAR_LARGE",
                         "MM_ARROWS_20",
                         "MM_NOTHING"
-                    }.Contains(OriginalItem)) { OriginalItem = "OOT_RUPEE_GREEN"; }
+                    }.Contains(OriginalItem)) { OriginalItem = "SHARED_RECOVERY_HEART"; }
 
                     if (!OTTMMPaths.LocationAreas.ContainsKey(LocationID)) { Debug.WriteLine($"Location {LocationID} Was not found in logic file. Skipping."); continue; }
 
-                    string Region = OTTMMPaths.LocationAreas[LocationID];
-                    if (SpecificLocationAreas.ContainsKey(LocationID))
-                    {
-                        Region = SpecificLocationAreas[LocationID];
-                    }
-                    else if (RegionNames.ContainsKey(OTTMMPaths.LocationAreas[LocationID]))
-                    {
-                        Region = RegionNames[OTTMMPaths.LocationAreas[LocationID]];
-                        Debug.WriteLine($"{LocationID} Did not have Specific Region Data");
-                    }
-                    else
-                    {
-                        Debug.WriteLine($"{LocationID} Had no region data");
-                    }
-
                     LogicDictionaryData.DictionaryLocationEntries LocationEntry = new LogicDictionaryData.DictionaryLocationEntries()
                     {
-                        Area = Region,
+                        Area = "UNKNOWN",
                         ID = LocationID,
                         Name = LocationID,
                         OriginalItem = OriginalItem,

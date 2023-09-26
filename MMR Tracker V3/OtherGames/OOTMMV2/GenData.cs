@@ -28,12 +28,13 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
             OTTMMPaths.TricksFile = Path.Combine(OTTMMPaths.OOTMMV2CodeFolder, "tricks.json");
             OTTMMPaths.ItemsFile = Path.Combine(OTTMMPaths.OOTMMV2CodeFolder, "items.json");
             OTTMMPaths.ItemNamesFile = Path.Combine(OTTMMPaths.OOTMMV2CodeFolder, "ItemNames.json");
-            OTTMMPaths.RegionNamesFile = Path.Combine(OTTMMPaths.OOTMMV2CodeFolder, "RegionNames.json");
-            OTTMMPaths.LocationAreaFile = Path.Combine(OTTMMPaths.OOTMMV2CodeFolder, "LocationAreas.json");
             
             //Shared Data
             OTTMMPaths.OOTMMCorePath = Path.Combine(References.TestingPaths.GetDevTestingPath(), "OoTMM-develop", "packages", "core");
             OTTMMPaths.OOTMMTestingFolder = Path.Combine(References.TestingPaths.GetDevTestingPath(), "OOTMMTesting");
+            OTTMMPaths.ExampleSpoiler = Path.Combine(OTTMMPaths.OOTMMTestingFolder, "AreaRefSpoiler.txt");
+            OTTMMPaths.ExampleSpoilerMQ = Path.Combine(OTTMMPaths.OOTMMTestingFolder, "AreaRefSpoilerMQ.txt");
+
 
             //OOT Data Paths
             OTTMMPaths.OOTData = Path.Combine(OTTMMPaths.OOTMMCorePath, "data", "oot");
@@ -61,6 +62,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
 
             MMRData.LogicFile LogicFile = LogicFileCreation.ReadAndParseLogicFile(OTTMMPaths);
             LogicDictionaryData.LogicDictionary DictionaryFile = LogicDictionaryCreation.CreateDictionary(OTTMMPaths);
+
+            AssignLocationAreas(DictionaryFile);
 
             SettingsCreation.CreateSettings(DictionaryFile, OTTMMPaths);
 
@@ -94,6 +97,39 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
 
             OutLogic = LogicFile;
             outDict = DictionaryFile;
+        }
+
+        private static void AssignLocationAreas(LogicDictionaryData.LogicDictionary dictionaryFile)
+        {
+            Dictionary<string, string> LocationAreas = new Dictionary<string, string>();
+
+            ReadFile(OTTMMPaths.ExampleSpoiler);
+            ReadFile(OTTMMPaths.ExampleSpoilerMQ);
+            void ReadFile(string Path)
+            {
+                bool AtLocations = false;
+                string CurrentArea = "";
+                foreach (var line in File.ReadAllLines(Path))
+                {
+                    if (line.StartsWith("Location List (")) { AtLocations = true; continue; }
+                    if (!AtLocations || string.IsNullOrWhiteSpace(line)) { continue; }
+
+                    if (line.EndsWith("):")) { CurrentArea = line[..(line.IndexOf("("))].Trim(); continue; }
+
+                    string Location = line[..(line.IndexOf(":"))].Trim();
+                    if (!LocationAreas.ContainsKey(Location)) { LocationAreas.Add(Location, CurrentArea); }
+                }
+            }
+            foreach(var i in dictionaryFile.LocationList)
+            {
+                if (LocationAreas.ContainsKey(i.Key)) { i.Value.Area = LocationAreas[i.Key]; }
+            }
+
+            var UnknownAreas = dictionaryFile.LocationList.Where(x => x.Value.Area == "UNKNOWN").Select(x => x.Key);
+            if (UnknownAreas.Any()) { Debug.WriteLine($"The following checks had no area\n{string.Join('\n', UnknownAreas)}"); }
+
+            Debug.WriteLine(string.Join('\n', LocationAreas.Values.Distinct().ToList()));
+
         }
 
         private static void AddLinkToGlobal(MMRData.LogicFile logicFile, LogicDictionaryData.LogicDictionary dictionaryFile)
@@ -223,21 +259,21 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
 
         private static void AddTingleProxies(MMRData.LogicFile logicFile, LogicDictionaryData.LogicDictionary DictionaryFile)
         {
-            List<Tuple<string, string>> TingleLocations = new()
+            List<Tuple<string, string, string>> TingleLocations = new()
             {
-                new("Town", "Clock Town" ),
-                new("Swamp", "Woodfall" ),
-                new("Mountain", "Snowhead" ),
-                new("Ranch", "Ranch" ),
-                new("Great Bay", "Great Bay" ),
-                new("Ikana", "Ikana" )
+                new("Town", "Clock Town", DictionaryFile.LocationList["MM Clock Town Blast Mask"].Area ),
+                new("Swamp", "Woodfall", DictionaryFile.LocationList["MM Road to Southern Swamp Grotto Grass 01"].Area ),
+                new("Mountain", "Snowhead", DictionaryFile.LocationList["MM Twin Islands Underwater Chest 1"].Area ),
+                new("Ranch", "Ranch", DictionaryFile.LocationList["MM Milk Road Grass 1"].Area ),
+                new("Great Bay", "Great Bay", DictionaryFile.LocationList["MM Great Bay Coast Zora Mask"].Area ),
+                new("Ikana", "Ikana", DictionaryFile.LocationList["MM Ikana Canyon Grass 1"].Area )
             };
 
             foreach (var Location in TingleLocations)
             {
                 int PrevIndex = TingleLocations.IndexOf(Location) - 1;
                 if (PrevIndex < 0) { PrevIndex = TingleLocations.Count - 1; }
-                Tuple<string, string> AltLocation = TingleLocations[PrevIndex];
+                Tuple<string, string, string> AltLocation = TingleLocations[PrevIndex];
                 MMRData.JsonFormatLogicItem TinglePurchaseMacro = new() { Id = $"MM Tingle Purchase {Location.Item1} at {Location.Item1}", 
                     ConditionalItems = new List<List<string>> { new List<string> { $"MM Tingle {Location.Item1}", $"MM_COST_99" } } };
                 MMRData.JsonFormatLogicItem TinglePurchaseMacro2 = new() { Id = $"MM Tingle Purchase {Location.Item1} at {AltLocation.Item1}",
@@ -254,14 +290,14 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                 MapLocationCheckDict.LocationProxys.Add(new LogicDictionaryData.DictLocationProxy
                 {
                     ID = $"MM Tingle Purchase {Location.Item1} at {Location.Item1} Proxy",
-                    Area = MapLocationCheckDict.Area,
+                    Area = Location.Item3,
                     LogicInheritance = TinglePurchaseMacro.Id,
                     Name = MapLocationCheckDict.Name + $" ({Location.Item1})"
                 });
                 MapLocationCheckDict.LocationProxys.Add(new LogicDictionaryData.DictLocationProxy
                 {
                     ID = $"MM Tingle Purchase {Location.Item1} at {AltLocation.Item1} Proxy",
-                    Area = MapLocationCheckDictAlt.Area,
+                    Area = AltLocation.Item3,
                     LogicInheritance = TinglePurchaseMacro2.Id,
                     Name = MapLocationCheckDict.Name + $" ({AltLocation.Item1})"
                 });
