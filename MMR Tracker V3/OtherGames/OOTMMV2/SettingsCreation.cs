@@ -23,7 +23,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                     OptionData.TrackerVar IntSettingDictEntry = new OptionData.TrackerVar
                     {
                         ID = Setting.key,
-                        Name = Setting.name,
+                        Name = "*" + Setting.name,
                         Static = false,
                         SubCategory= Utility.ConvertToCamelCase(Setting.category.Replace(".", " ")),
                         Value = IntValue
@@ -35,7 +35,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                     OptionData.TrackerVar IntSettingDictEntry = new OptionData.TrackerVar
                     {
                         ID = Setting.key,
-                        Name = Setting.name,
+                        Name = "*" + Setting.name,
                         Static = false,
                         SubCategory= Utility.ConvertToCamelCase(Setting.category.Replace(".", " ")),
                         Value = BoolValue
@@ -47,7 +47,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                     OptionData.TrackerOption IntSettingDictEntry = new OptionData.TrackerOption
                     {
                         ID = Setting.key,
-                        DisplayName = Setting.name,
+                        DisplayName = "*" + Setting.name,
                         SubCategory= Utility.ConvertToCamelCase(Setting.category.Replace(".", " ")),
                         CurrentValue = StringValue,
                         Values = new Dictionary<string, OptionData.actions>()
@@ -64,7 +64,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                 {
                     ID = setting,
                     Static = false,
-                    Name = Utility.ConvertToCamelCase(setting.Replace("_", " ")),
+                    Name = "*" + Utility.ConvertToCamelCase(setting.Replace("_", " ")),
                     SubCategory= "Master Quest Dungeons",
                     Value = false,
                 };

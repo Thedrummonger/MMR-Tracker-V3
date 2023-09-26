@@ -62,9 +62,9 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
             MMRData.LogicFile LogicFile = LogicFileCreation.ReadAndParseLogicFile(OTTMMPaths);
             LogicDictionaryData.LogicDictionary DictionaryFile = LogicDictionaryCreation.CreateDictionary(OTTMMPaths);
 
-            AddTingleProxies(LogicFile, DictionaryFile);
-
             SettingsCreation.CreateSettings(DictionaryFile, OTTMMPaths);
+
+            AddTingleProxies(LogicFile, DictionaryFile);
 
             AddWalletMactros(LogicFile, DictionaryFile);
 
@@ -89,7 +89,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
 
             File.WriteAllText(Path.Combine(OTTMMPaths.OOTMMTestingFolder,"LogicFile.json"), JsonConvert.SerializeObject(LogicFile, Testing._NewtonsoftJsonSerializerOptions));
             File.WriteAllText(Path.Combine(OTTMMPaths.OOTMMTestingFolder, "DictionaryFile.json"), JsonConvert.SerializeObject(DictionaryFile, Testing._NewtonsoftJsonSerializerOptions));
-            EvalLogicEntryTypes(LogicFile);
+            EvalLogicEntryTypes(LogicFile, DictionaryFile);
 
             OutLogic = LogicFile;
             outDict = DictionaryFile;
@@ -139,17 +139,34 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
             }
         }
 
-        private static void EvalLogicEntryTypes(MMRData.LogicFile LogicFile)
+        private static void EvalLogicEntryTypes(MMRData.LogicFile LogicFile, LogicDictionaryData.LogicDictionary dictionaryFile)
         {
+            List<string> settingIDs = new List<string>();
             List<string> Functions = new List<string>();
-            foreach (string Entry in LogicFile.Logic.SelectMany(x => x.ConditionalItems.SelectMany(x => x)))
+            foreach (string Entry in LogicFile.Logic.SelectMany(x => x.ConditionalItems.SelectMany(x => x)).Concat(LogicFile.Logic.SelectMany(x => x.RequiredItems)))
             {
-                if (LogicEditing.IsLogicFunction(Entry, out string Func, out _, new('(', ')')) && !Functions.Contains(Func))
+                if (LogicEditing.IsLogicFunction(Entry, out string Func, out string Param, new('{', '}')) && Func == "setting" || Func == "var")
                 {
-                    Functions.Add(Func);
+                    var Params = Param.Split(',').Select(x => x.Trim()).ToList();
+                    settingIDs.Add(Params[0]);
+                    if (Params.Count > 1 && dictionaryFile.Variables.ContainsKey(Params[1])) { settingIDs.Add(Params[1]); }
+                    if (dictionaryFile.Variables.ContainsKey(Params[0]) && dictionaryFile.Variables[Params[0]].Value is Newtonsoft.Json.Linq.JArray) { settingIDs.Add(Params[0]); }
                 }
             }
-            Debug.WriteLine(JsonConvert.SerializeObject(Functions, Formatting.Indented));
+
+            foreach(var i in dictionaryFile.Options)
+            {
+                if (i.Value.DisplayName is null || !i.Value.DisplayName.StartsWith("*")) { continue; }
+                else { i.Value.DisplayName = i.Value.DisplayName[1..]; }
+                if (!settingIDs.Contains(i.Key)) { Debug.WriteLine($"{i.Key} was unused"); }
+            }
+            foreach (var i in dictionaryFile.Variables)
+            {
+                if (i.Value.Name is null || !i.Value.Name.StartsWith("*")) { continue; }
+                else { i.Value.Name = i.Value.Name[1..]; }
+                if (!settingIDs.Contains(i.Key)) { Debug.WriteLine($"{i.Key} was unused"); }
+            }
+
         }
 
         private static void AddWalletMactros(MMRData.LogicFile logicFile, LogicDictionaryData.LogicDictionary DictionaryFile)
@@ -229,10 +246,10 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
         private static void AddAdditionalData(MMRData.LogicFile LogicFile, LogicDictionaryData.LogicDictionary DictionaryFile, OOTMMParserData OTTMMPaths)
         {
             //This event doesn't exist but logic for magic is asking for it. Just make it always false.
-            DictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "MM_EVENT_CHATEAU", RequiredItems = new List<string>() { "false" } });
-            DictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "MM_is_child", RequiredItems = new List<string>() { "OOT_is_child" } });
-            DictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "MM_!is_goal_triforce", RequiredItems = new List<string>() { "setting{goal, triforce, false}", "setting{goal, triforce3, false}" } });
-            DictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "OOT_!is_goal_triforce", RequiredItems = new List<string>() { "setting{goal, triforce, false}", "setting{goal, triforce3, false}" } });
+            LogicFile.Logic.Add(new MMRData.JsonFormatLogicItem { Id = "MM_EVENT_CHATEAU", RequiredItems = new List<string>() { "false" } });
+            LogicFile.Logic.Add(new MMRData.JsonFormatLogicItem { Id = "MM_is_child", RequiredItems = new List<string>() { "OOT_is_child" } });
+            LogicFile.Logic.Add(new MMRData.JsonFormatLogicItem { Id = "MM_!is_goal_triforce", RequiredItems = new List<string>() { "setting{goal, triforce, false}", "setting{goal, triforce3, false}" } });
+            LogicFile.Logic.Add(new MMRData.JsonFormatLogicItem { Id = "OOT_!is_goal_triforce", RequiredItems = new List<string>() { "setting{goal, triforce, false}", "setting{goal, triforce3, false}" } });
 
             var MASKS_REGULAR = new string[] {
               "MM_MASK_CAPTAIN",
@@ -360,9 +377,11 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                 "(setting{goal, any} && (OOT_TRIFORCE || MM_MASK_MAJORA)) || " +
                 "(setting{goal, both} && OOT_TRIFORCE && MM_MASK_MAJORA) || " +
                 "(setting{goal, ganon} && OOT_TRIFORCE) || " +
-                "(setting{goal, majora} && MM_MASK_MAJORA)";
+                "(setting{goal, majora} && MM_MASK_MAJORA) || " +
+                "(setting{goal, triforce} && SHARED_TRIFORCE, triforceGoal) || " +
+                "(setting{goal, triforce3} && SHARED_TRIFORCE_POWER && SHARED_TRIFORCE_COURAGE && SHARED_TRIFORCE_WISDOM)";
 
-            dictionaryFile.AdditionalLogic.Add(new MMRData.JsonFormatLogicItem { Id = "Game_Clear", ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, GameClearLogic, "Game_Clear") });
+            logicFile.Logic.Add(new MMRData.JsonFormatLogicItem { Id = "Game_Clear", ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, GameClearLogic, "Game_Clear") });
             dictionaryFile.MacroList.Add("Game_Clear", new LogicDictionaryData.DictionaryMacroEntry { ID = "Game_Clear", Name = "Both Games Cleared" });
             dictionaryFile.WinCondition = "Game_Clear";
         }
