@@ -1,8 +1,10 @@
 ﻿using MMR_Tracker_V3.TrackerObjects;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +22,7 @@ namespace MMR_Tracker_V3
 
         public bool Overloaded = false;
 
-        public int PathlistCap = 250000;
+        public int PathlistCap = 500000;
 
         public void FindPath(LogicObjects.TrackerInstance instance, string Start, string Goal, List<Dictionary<string, string>> Paths = null, int RunCount = 1)
         {
@@ -46,7 +48,8 @@ namespace MMR_Tracker_V3
                 }
             }
 
-            List<Dictionary<string, string>> NewPaths = new List<Dictionary<string, string>>();
+            Dictionary<string, List<Dictionary<string, string>>> FoundAreas = new Dictionary<string, List<Dictionary<string, string>>>();
+
             foreach (var Path in Paths)
             {
                 var PathEnd = Path.Last();
@@ -63,28 +66,24 @@ namespace MMR_Tracker_V3
                     if (i.Value is null) { continue; }
                     if (SeenAreas.ContainsKey(i.Value.region)) { continue; }
                     if (Path.ContainsKey(i.Value.region)) { continue; }
-                    Dictionary<string, string> NewPath = new Dictionary<string, string>();
-                    foreach(var j in Path)
-                    {
-                        NewPath.Add(j.Key, j.Value);
-                    }
-                    NewPath.Add(i.Value.region, i.Key);
-                    NewPaths.Add(NewPath);
+                    Dictionary<string, string> NewPath = new(Path);
+                    NewPath[NewPath.Last().Key] = i.Key;
+                    NewPath.Add(i.Value.region, "");
+                    if (!FoundAreas.ContainsKey(i.Value.region)) { FoundAreas[i.Value.region] = new List<Dictionary<string, string>>(); }
+                    FoundAreas[i.Value.region].Add(NewPath);
                 }
             }
 
-
-            if (NewPaths.Any(x => x.Last().Key == Goal))
+            if (FoundAreas.ContainsKey(Goal))
             {
-                var GoalPaths = NewPaths.Where(x => x.Last().Key == Goal);
-                foreach(var GoalPath in GoalPaths)
+                foreach(var GoalPath in FoundAreas[Goal])
                 {
                     Dictionary<string, string> FormattedPath = new Dictionary<string, string>();
-                    int NextInd = 1;
+                    int Index = 1;
                     foreach(var stop in GoalPath)
                     {
                         string Area = stop.Key;
-                        string Exit = NextInd >= GoalPath.Count ? "" : GoalPath[GoalPath.Keys.ToArray()[NextInd]];
+                        string Exit = stop.Value;
 
                         bool ShowMacro = instance.StaticOptions.OptionFile.ShowMacroExitsPathfinder;
                         bool ExitValid = instance.EntrancePool.AreaList.ContainsKey(Area) && instance.EntrancePool.AreaList[Area].Exits.ContainsKey(Exit);
@@ -94,13 +93,14 @@ namespace MMR_Tracker_V3
                             (instance.EntrancePool.AreaList[Area].Exits[Exit].IsRandomized() || instance.EntrancePool.AreaList[Area].Exits[Exit].IsUnrandomized(MiscData.UnrandState.Manual));
 
                         if (IsRandomizedExit || IsDestination || ShowMacro) { FormattedPath.Add(Area, Exit); }
-                        NextInd++;
+                        Index++;
                     }
                     FinalPath.Add(FormattedPath);
                 }
-
-                NewPaths = NewPaths.Where(x => x.Last().Key != Goal).ToList();
+                FoundAreas.Remove(Goal);
             }
+
+            List<Dictionary<string, string>> NewPaths = FoundAreas.Values.SelectMany(x => x).ToList();
 
             //Debug.WriteLine($"Layer {RunCount}\nPaths to Check: {NewPaths.Count}");
 
