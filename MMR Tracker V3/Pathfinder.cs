@@ -118,7 +118,7 @@ namespace MMR_Tracker_V3
                 if (!EntranceMap.ContainsKey(i.ID)) { EntranceMap[i.ID] = new Dictionary<string, EntranceData.EntranceRandoDestination>(); }
                 foreach(var j in i.Exits)
                 {
-                    if (j.Value.CheckState != MiscData.CheckState.Checked && j.Value.Available) { continue; }
+                    if (j.Value.CheckState != MiscData.CheckState.Checked) { continue; }
                     if (j.Value.IsWarp) { Warps[j.Key] = j.Value.DestinationExit; }
                     EntranceMap[i.ID][j.Key] = j.Value.DestinationExit;
                 }

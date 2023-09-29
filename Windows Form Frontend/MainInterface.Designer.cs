@@ -119,6 +119,7 @@ namespace Windows_Form_Frontend
             this.LBPathFinder.TabIndex = 40;
             this.LBPathFinder.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.LBPathFinder_DrawItem);
             this.LBPathFinder.DoubleClick += new System.EventHandler(this.LBPathFinder_DoubleClick);
+            this.LBPathFinder.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateToolTip);
             // 
             // LBCheckedLocations
             // 
@@ -413,20 +414,20 @@ namespace Windows_Form_Frontend
             // RandomizerOptionsToolStripMenuItem1
             // 
             this.RandomizerOptionsToolStripMenuItem1.Name = "RandomizerOptionsToolStripMenuItem1";
-            this.RandomizerOptionsToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.RandomizerOptionsToolStripMenuItem1.Size = new System.Drawing.Size(170, 22);
             this.RandomizerOptionsToolStripMenuItem1.Text = "Logic Options";
             // 
             // logicOptionsToolStripMenuItem
             // 
             this.logicOptionsToolStripMenuItem.Name = "logicOptionsToolStripMenuItem";
-            this.logicOptionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logicOptionsToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.logicOptionsToolStripMenuItem.Text = "Item Pool Options";
             this.logicOptionsToolStripMenuItem.Click += new System.EventHandler(this.logicOptionsToolStripMenuItem_Click);
             // 
             // miscOptionsToolStripMenuItem
             // 
             this.miscOptionsToolStripMenuItem.Name = "miscOptionsToolStripMenuItem";
-            this.miscOptionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.miscOptionsToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.miscOptionsToolStripMenuItem.Text = "Tracker Options";
             this.miscOptionsToolStripMenuItem.Click += new System.EventHandler(this.miscOptionsToolStripMenuItem_Click);
             // 
