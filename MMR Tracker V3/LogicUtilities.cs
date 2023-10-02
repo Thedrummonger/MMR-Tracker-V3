@@ -132,6 +132,7 @@ namespace MMR_Tracker_V3
             var MathString = "";
             var ExpandedMathString = "";
             var MathLogicArray = new List<List<string>>();
+            if (string.IsNullOrWhiteSpace(LogicLine)) { return new List<List<string>>(); }
             try
             {
                 ParsedLogic = Parser.ParseLogicString(LogicLine);

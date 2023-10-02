@@ -21,8 +21,7 @@ namespace Windows_Form_Frontend
             //WinformTesting.OOTMMCreateData();
             //WinformTesting.WWRCreateData();
             //TestFuncParse();
-            MMR_Tracker_V3.OtherGames.PaperMarioRando.ReadData.ReadEadges();
-
+            PMRCreateData();
         }
 
         public static void CreateMMRItemTrackerObject()
@@ -916,6 +915,13 @@ namespace Windows_Form_Frontend
             File.WriteAllText(Path.Combine(References.TestingPaths.GetDevCodePath(), "Windows Form Frontend", "ItemTrackerData", "MMRItemTracker.json"), Newtonsoft.Json.JsonConvert.SerializeObject(instance, MMR_Tracker_V3.Testing._NewtonsoftJsonSerializerOptions));
             File.WriteAllText(Path.Combine("ItemTrackerData", "MMRItemTracker.json"), Newtonsoft.Json.JsonConvert.SerializeObject(instance, MMR_Tracker_V3.Testing._NewtonsoftJsonSerializerOptions));
 
+        }
+
+        public static void PMRCreateData()
+        {
+            MMR_Tracker_V3.OtherGames.PaperMarioRando.ReadData.ReadEadges(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary);
+            WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(Logic), JsonConvert.SerializeObject(dictionary));
+            Testing.TestLogicForInvalidItems(MainInterface.InstanceContainer);
         }
 
         public static void TPRCreateData()
