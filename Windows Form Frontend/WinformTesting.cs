@@ -18,9 +18,11 @@ namespace Windows_Form_Frontend
         public static void DoTests()
         {
             //WinformTesting.TPRCreateData();
-            WinformTesting.OOTMMCreateData();
+            //WinformTesting.OOTMMCreateData();
             //WinformTesting.WWRCreateData();
             //TestFuncParse();
+            MMR_Tracker_V3.OtherGames.PaperMarioRando.ReadData.ReadEadges();
+
         }
 
         public static void CreateMMRItemTrackerObject()

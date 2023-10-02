@@ -1,0 +1,86 @@
+{
+  "bc_bossrush": {
+    "additions": [
+      {"from": {"map": "HOS_20", "id": 2}, "to": {"map": "KPA_53", "id": 0}, "reqs": [], "mapchange": true},
+      {"from": {"map": "KPA_53",  "id": 0}, "to": {"map": "HOS_20", "id": 2}, "reqs": [], "mapchange": true}
+    ],
+    "removals": [
+      {"from": {"map": "HOS_20", "id": 2}, "to": {"map": "KPA_60", "id": 4}, "reqs": []},
+      {"from": {"map": "KPA_53",  "id": 0}, "to": {"map": "KPA_102", "id": 1}, "reqs": []}
+    ]
+  },
+  "bc_shorten": {
+    "additions": [
+    {"from": {"map": "KPA_32",  "id": 0}, "to": {"map": "KPA_82",  "id": 1}, "reqs": [], "mapchange": true},
+    {"from": {"map": "KPA_33",  "id": 2}, "to": {"map": "KPA_102", "id": 0}, "reqs": [], "mapchange": true},
+    {"from": {"map": "KPA_50",  "id": 1}, "to": {"map": "KPA_82",  "id": 0}, "reqs": [], "mapchange": true},
+    {"from": {"map": "KPA_51",  "id": 1}, "to": {"map": "KPA_130", "id": 0}, "reqs": [], "mapchange": true},
+    {"from": {"map": "KPA_61",  "id": 0}, "to": {"map": "KPA_112", "id": 1}, "reqs": [], "mapchange": true},
+    {"from": {"map": "KPA_62",  "id": 0}, "to": {"map": "KPA_70",  "id": 0}, "reqs": []},
+    {"from": {"map": "KPA_82",  "id": 0}, "to": {"map": "KPA_50",  "id": 1}, "reqs": [], "mapchange": true},
+    {"from": {"map": "KPA_82",  "id": 1}, "to": {"map": "KPA_32",  "id": 0}, "reqs": [], "mapchange": true},
+    {"from": {"map": "KPA_102", "id": 0}, "to": {"map": "KPA_33",  "id": 2}, "reqs": [], "mapchange": true},
+    {"from": {"map": "KPA_112", "id": 1}, "to": {"map": "KPA_61",  "id": 0}, "reqs": [], "mapchange": true},
+    {"from": {"map": "KPA_130", "id": 0}, "to": {"map": "KPA_51",  "id": 1}, "reqs": [], "mapchange": true}
+
+    ],
+    "removals": [
+    {"from": {"map": "KPA_32",  "id": 0}, "to": {"map": "KPA_81",  "id": 2}, "reqs": []},
+    {"from": {"map": "KPA_33",  "id": 2}, "to": {"map": "KPA_52",  "id": 0}, "reqs": []},
+    {"from": {"map": "KPA_50",  "id": 1}, "to": {"map": "KPA_81",  "id": 0}, "reqs": []},
+    {"from": {"map": "KPA_51",  "id": 1}, "to": {"map": "KPA_133", "id": 0}, "reqs": []},
+    {"from": {"map": "KPA_61",  "id": 0}, "to": {"map": "KPA_82",  "id": 1}, "reqs": []},
+    {"from": {"map": "KPA_62",  "id": 0}, "to": {"map": "KPA_70",  "id": 0}, "reqs": [[{"BowserCastleKey": 1}]]},
+    {"from": {"map": "KPA_82",  "id": 0}, "to": {"map": "KPA_113", "id": 1}, "reqs": []},
+    {"from": {"map": "KPA_82",  "id": 1}, "to": {"map": "KPA_61",  "id": 0}, "reqs": []},
+    {"from": {"map": "KPA_102", "id": 0}, "to": {"map": "KPA_41",  "id": 2}, "reqs": []},
+    {"from": {"map": "KPA_112", "id": 1}, "to": {"map": "KPA_113", "id": 0}, "reqs": []},
+    {"from": {"map": "KPA_130", "id": 0}, "to": {"map": "KPA_134", "id": 1}, "reqs": []}
+
+    ]
+  },
+  "gear_location_shuffle": {
+    "additions": [
+    {"from": {"map": "ISK_05", "id": 0}, "to": {"map": "ISK_05", "id": "ItemA"}, "reqs": [["SuperHammer"],["can_climb_steps"]], "mapchange": false},
+    {"from": {"map": "ISK_07", "id": 1}, "to": {"map": "ISK_07", "id": "ItemB"}, "reqs": [["SuperHammer"],["can_climb_steps"]], "mapchange": false},
+    {"from": {"map": "ISK_09", "id": 0}, "to": {"map": "ISK_09", "id": "BigChest"}, "reqs": [["can_climb_steps"]], "mapchange": false},
+    {"from": {"map": "ISK_12", "id": 1}, "to": {"map": "ISK_12", "id": "ItemA"}, "reqs": [["RF_DrainedThirdSandRoomAndCanSolvePuzzle","can_climb_steps"],["RF_DrainedThirdSandRoomAndCanSolvePuzzle","SuperHammer"]], "mapchange": false},
+    {"from": {"map": "ISK_12", "id": 2}, "to": {"map": "ISK_12", "id": "ItemA"}, "reqs": [["SuperHammer"],["can_climb_steps"]], "mapchange": false},
+    {"from": {"map": "ISK_13", "id": 0}, "to": {"map": "ISK_13", "id": "ItemA"}, "reqs": [["SuperHammer"],["can_climb_steps"]], "mapchange": false},
+    {"from": {"map": "ISK_14", "id": 0}, "to": {"map": "ISK_14", "id": "ItemA"}, "reqs": [["SuperHammer"],["can_climb_steps"]], "mapchange": false},
+    {"from": {"map": "KZN_03", "id": 2}, "to": {"map": "KZN_09", "id": 0}, "reqs": [["UltraHammer"]], "mapchange": false},
+    {"from": {"map": "KZN_06", "id": 0}, "to": {"map": "KZN_06", "id": 2}, "reqs": [["UltraHammer"]], "mapchange": false},
+    {"from": {"map": "KZN_07", "id": 0}, "to": {"map": "KZN_07", "id": "BigChest"}, "reqs": [["Parakarry","Lakilester","UltraHammer"],["can_climb_steps"]], "mapchange": false},
+    {"from": {"map": "KZN_17", "id": 1}, "to": {"map": "KZN_18", "id": 0}, "reqs": [["UltraHammer"],["can_climb_steps"]], "mapchange": false},
+    {"from": {"map": "TIK_23", "id": 1}, "to": {"map": "TIK_23", "id": 0}, "reqs": [], "mapchange": false},
+    {"from": {"map": "TIK_24", "id": 1}, "to": {"map": "TIK_24", "id": 0}, "reqs": [], "mapchange": false}
+
+    ],
+    "removals": [
+    {"from": {"map": "ISK_05", "id": 0}, "to": {"map": "ISK_05", "id": "ItemA"}, "reqs": [["RF_ISK09_OpenedHammerChest"],["can_climb_steps"]]},
+    {"from": {"map": "ISK_07", "id": 1}, "to": {"map": "ISK_07", "id": "ItemB"}, "reqs": [["RF_ISK09_OpenedHammerChest"],["can_climb_steps"]]},
+    {"from": {"map": "ISK_09", "id": 0}, "to": {"map": "ISK_09", "id": "BigChest"}, "reqs": [["can_climb_steps"]], "pseudoitems": ["RF_ISK09_OpenedHammerChest"]},
+    {"from": {"map": "ISK_12", "id": 1}, "to": {"map": "ISK_12", "id": "ItemA"}, "reqs": [["RF_DrainedThirdSandRoomAndCanSolvePuzzle","can_climb_steps"],["RF_DrainedThirdSandRoomAndCanSolvePuzzle","RF_ISK09_OpenedHammerChest"]]},
+    {"from": {"map": "ISK_12", "id": 2}, "to": {"map": "ISK_12", "id": "ItemA"}, "reqs": [["RF_ISK09_OpenedHammerChest"],["can_climb_steps"]]},
+    {"from": {"map": "ISK_13", "id": 0}, "to": {"map": "ISK_13", "id": "ItemA"}, "reqs": [["RF_ISK09_OpenedHammerChest"],["can_climb_steps"]]},
+    {"from": {"map": "ISK_14", "id": 0}, "to": {"map": "ISK_14", "id": "ItemA"}, "reqs": [["RF_ISK09_OpenedHammerChest"],["can_climb_steps"]]},
+    {"from": {"map": "KZN_03", "id": 2}, "to": {"map": "KZN_09", "id": 0}, "reqs": [["RF_KZN07_OpenedHammerChest"]]},
+    {"from": {"map": "KZN_06", "id": 0}, "to": {"map": "KZN_06", "id": 2}, "reqs": [["RF_KZN07_OpenedHammerChest"]]},
+    {"from": {"map": "KZN_07", "id": 0}, "to": {"map": "KZN_07", "id": "BigChest"}, "reqs": [["Parakarry","Lakilester"],["can_climb_steps"]], "pseudoitems": ["RF_KZN07_OpenedHammerChest"]},
+    {"from": {"map": "KZN_17", "id": 1}, "to": {"map": "KZN_18", "id": 0}, "reqs": [["RF_KZN07_OpenedHammerChest"],["can_climb_steps"]]},
+    {"from": {"map": "TIK_23", "id": 1}, "to": {"map": "TIK_23", "id": 0}, "reqs": [["SuperHammer"]]},
+    {"from": {"map": "TIK_24", "id": 1}, "to": {"map": "TIK_24", "id": 0}, "reqs": [["UltraHammer"]]}
+    ]
+  },
+  "star_hunt": {
+    "additions": [
+    {"from": {"map": "HOS_01", "id": 0}, "to": {"map": "HOS_01", "id": 1}, "reqs": [["can_climb_steps"]]},
+    {"from": {"map": "HOS_01", "id": 1}, "to": {"map": "HOS_01", "id": 1}, "reqs": [], "pseudoitems": ["YOUWIN"]}
+    ],
+    "removals": [
+    {"from": {"map": "HOS_01", "id": 0}, "to": {"map": "HOS_01", "id": 1}, "reqs": [[{"starspirits": 7}],["can_climb_steps"]]},
+    {"from": {"map": "HOS_01", "id": 1}, "to": {"map": "HOS_02", "id": 0}, "reqs": []},
+    {"from": {"map": "HOS_02", "id": 0}, "to": {"map": "HOS_01", "id": 1}, "reqs": []}
+    ]
+  }
+}
