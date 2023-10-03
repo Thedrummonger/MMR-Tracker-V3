@@ -28,6 +28,12 @@ namespace MMR_Tracker_V3
         {
             return input.Split(new string[] { Split }, options);
         }
+        public static string[] SplitOnce(this string input, char Split, bool LastOccurence = false)
+        {
+            int idx = LastOccurence ? input.LastIndexOf(Split) : input.IndexOf(Split);
+            if (idx != -1) { return new string[] { input[..idx], input[(idx + 1)..] }; }
+            else { return new string[] { input }; }
+        }
 
         public static Dictionary<string, int> GetCategoriesFromFile(LogicObjects.TrackerInstance Instance)
         {

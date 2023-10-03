@@ -74,8 +74,9 @@
   },
   "star_hunt": {
     "additions": [
-    {"from": {"map": "HOS_01", "id": 0}, "to": {"map": "HOS_01", "id": 1}, "reqs": [["can_climb_steps"]]},
-    {"from": {"map": "HOS_01", "id": 1}, "to": {"map": "HOS_01", "id": 1}, "reqs": [], "pseudoitems": ["YOUWIN"]}
+    //Custom Requirements had to be added. Checking for [setting{StarHuntEndsGame}] and [PowerStar, StarHuntRequired] is done in code I guess.
+    {"from": {"map": "HOS_01", "id": 0}, "to": {"map": "HOS_01", "id": 1}, "reqs": [["can_climb_steps"], ["PowerStar, StarHuntRequired"]]},
+    {"from": {"map": "HOS_01", "id": 1}, "to": {"map": "HOS_01", "id": 1}, "reqs": [["setting{StarHuntEndsGame}"]], "pseudoitems": ["YOUWIN"]}
     ],
     "removals": [
     {"from": {"map": "HOS_01", "id": 0}, "to": {"map": "HOS_01", "id": 1}, "reqs": [[{"starspirits": 7}],["can_climb_steps"]]},

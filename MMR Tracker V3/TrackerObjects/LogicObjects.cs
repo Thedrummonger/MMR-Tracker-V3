@@ -128,23 +128,29 @@ namespace MMR_Tracker_V3
                 return LogicEntryType.error;
             }
 
-            public ItemObject GetItemToPlace(string Item, bool SpoilerName = true, bool Starting = false)
+            public ItemObject GetItemToPlace(string Item, bool CheckSpoilerName = true, bool CheckItemName = false, bool CheckItemID = false, bool CanBeStartingItem = false)
             {
-                ItemObject ValidItem;
-                if (SpoilerName)
+                List<ItemObject> ValidItem = new List<ItemObject>();
+                if (CheckSpoilerName)
                 {
-                    ValidItem = ItemPool.Values.FirstOrDefault(x =>
+                    ValidItem = ValidItem.Concat(ItemPool.Values.Where(x =>
                         x.GetDictEntry(this)?.SpoilerData?.SpoilerLogNames != null &&
                         x.GetDictEntry(this).SpoilerData.SpoilerLogNames.Contains(Item) &&
-                        x.CanBePlaced(this) && (x.ValidStartingItem(this) || !Starting));
+                        x.CanBePlaced(this) && (x.ValidStartingItem(this) || !CanBeStartingItem))).ToList();
                 }
-                else
+                if (CheckItemName)
                 {
-                    ValidItem = ItemPool.Values.FirstOrDefault(x =>
+                    ValidItem = ValidItem.Concat(ItemPool.Values.Where(x =>
                         x.GetDictEntry(this)?.Name != null && x.GetDictEntry(this).Name == Item &&
-                        x.CanBePlaced(this) && (x.ValidStartingItem(this) || !Starting));
+                        x.CanBePlaced(this) && (x.ValidStartingItem(this) || !CanBeStartingItem))).ToList();
                 }
-                return ValidItem;
+                if(CheckItemID)
+                {
+                    ValidItem = ValidItem.Concat(ItemPool.Values.Where(x =>
+                        x.Id== Item && x.CanBePlaced(this) && (x.ValidStartingItem(this) || !CanBeStartingItem))).ToList();
+                }
+                if (!ValidItem.Any()) { return null; }
+                return ValidItem[0];
             }
 
             public void ToggleAllTricks(bool? state)

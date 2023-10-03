@@ -25,6 +25,8 @@ namespace MMR_Tracker_V3
                     return "OOT X MM Combo Rando Spoiler Log (*.txt)|*.txt";
                 case "TPR":
                     return "Twilight Princess Rando Spoiler Log|*.json";
+                case "PMR":
+                    return "Paper Mario Rando Spoiler Log|*.txt";
                 default:
                     return "Majoras Mask Randomizer Text Spoiler Log|*.txt";
             }
@@ -78,7 +80,10 @@ namespace MMR_Tracker_V3
                     container.Instance.SpoilerLog = new LogicObjects.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
                     OtherGames.TPRando.TPRSpoilerLogParser.readAndApplySpoilerLog(container.Instance);
                     return true;
-
+                case "PMR":
+                    container.Instance.SpoilerLog = new LogicObjects.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
+                    OtherGames.PaperMarioRando.SpoilerLogParser.ParseSpoiler(container.Instance);
+                    return true;
                 default:
                     return false;
             }
