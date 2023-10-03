@@ -456,7 +456,8 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
             AddOption("HiddenBlockMode", "1", new List<Tuple<string, string>> { new("0", "vanilla"), new("1", "Watt out"), new("2", "Watt acquired"), new("3", "always visible") });
             AddOption("BowsersCastleMode", "0", new List<Tuple<string, string>> { new("0", "vanilla"), new("1", "Shorten"), new("2", "BossRush")});
             AddOption("GearShuffleMode", "0", new List<Tuple<string, string>> { new("0", "vanilla"), new("1", "location shuffle"), new("2", "full shuffle") });
-
+            AddOption("MerlowRewardPricing", "1", new List<Tuple<string, string>> { new("0", "Cheap"), new("1", "Normal") });
+            
             void AddOption(string ID, string Default, List<Tuple<string, string>> Options, string Display = null)
             {
                 var option = new OptionData.TrackerOption { ID = ID, DisplayName = Display??ID, CurrentValue = Default };
@@ -478,7 +479,8 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
                 { "Gusty Gulch - Wasteland Ascent 2 - Exit Right", "Tubba's Castle - Outside Tubbas Castle - Exit Left" },
                 { "Toad Town - Residental District - Spring to Shy Guy's Toybox", "Shy Guy's Toybox - BLU Station - Spring to Toad Town" },
                 { "Shiver Region - Shiver Mountain Peaks - Exit East", "Crystal Palace - Entrance - Exit West" },
-                { "Jade Jungle - Path to the Volcano - Exit Right", "Mt Lavalava - Volcano Entrance - Exit West (Volcano Entrance)" }
+                { "Jade Jungle - Path to the Volcano - Exit Right", "Mt Lavalava - Volcano Entrance - Exit West (Volcano Entrance)" },
+                { "Toad Town - Plaza District - Flower Fields Door", "Flower Fields - Center - Tree Door" }
             };
 
             //Exit from tubbas castle to the gultch doesn't exist but needs to for entrance rando consitancy. Shouldn't break anything?
@@ -500,29 +502,18 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
                 PMRDict.EntranceList[PairID].EntrancePairID = new EntranceData.EntranceAreaPair { Area = entrance.Key, Exit = entrance.Value };
             }
 
-            foreach(var i in PRMLogic.Logic)
-            {
-                LogicUtilities.RemoveRedundantConditionals(i);
-                LogicUtilities.MakeCommonConditionalsRequirements(i);
-            }
-
-            File.WriteAllText(Path.Combine(TestingFoler, "PMR v1.json"), JsonConvert.SerializeObject(PMRDict, Testing._NewtonsoftJsonSerializerOptions));
-            File.WriteAllText(Path.Combine(TestingFoler, "PMRLogic.json"), JsonConvert.SerializeObject(PRMLogic, Testing._NewtonsoftJsonSerializerOptions));
-
-            List<Tuple<string, int>> Reqs = new List<Tuple<string, int>>();
-
             foreach (var i in ItemLocationNodes)
             {
                 var Data = i.identifier.Split("/");
                 MapPoint ItemLocation = new MapPoint { map = Data[0], id = Data[1] };
                 string AreaRequirement = ItemLocation.GetVerboseName(MapNames, MapMeta, MapNodes, out _, out string Currentmap, out string CurrentArea, out _);
                 string CheckID = $"{CurrentArea} - {Locations[ItemLocation.map][ItemLocation.StringID()]}";
-                var DictEntry = PMRDict.LocationList[CheckID.Replace("'","")];
+                var DictEntry = PMRDict.LocationList[CheckID.Replace("'", "")];
                 var Item = Items.Find(x => x.ID == i.vanilla_item_id);
 
                 string ItemID = Item.item_name;
 
-                foreach(var Replacement in ItemOverrides)
+                foreach (var Replacement in ItemOverrides)
                 {
                     if (ItemID.Contains(Replacement.Key)) { ItemID = Replacement.Value.id; break; }
                 }
@@ -531,10 +522,38 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
                 if (ItemObject is null) { throw new Exception($"{Item.item_name} is not valid"); }
                 DictEntry.OriginalItem = ItemObject.ID;
             }
-            foreach(var i in PMRDict.LocationList)
+            foreach (var i in PMRDict.LocationList)
             {
                 if (string.IsNullOrWhiteSpace(i.Value.OriginalItem)) { Debug.WriteLine($"{i.Key} Had not vanilla item"); }
             }
+
+            foreach (var i in PRMLogic.Logic)
+            {
+                LogicUtilities.RemoveRedundantConditionals(i);
+                LogicUtilities.MakeCommonConditionalsRequirements(i);
+            }
+
+            FixMerlowPrices("Shooting Star Summit - Merluvlee's House - Exit Left => Shooting Star Summit - Merluvlee's House - ShopRewardA", 1);
+            FixMerlowPrices("Shooting Star Summit - Merluvlee's House - ShopRewardA => Shooting Star Summit - Merluvlee's House - ShopRewardB", 2);
+            FixMerlowPrices("Shooting Star Summit - Merluvlee's House - ShopRewardB => Shooting Star Summit - Merluvlee's House - ShopRewardC", 3);
+            FixMerlowPrices("Shooting Star Summit - Merluvlee's House - ShopRewardC => Shooting Star Summit - Merluvlee's House - ShopRewardD", 4);
+            FixMerlowPrices("Shooting Star Summit - Merluvlee's House - ShopRewardD => Shooting Star Summit - Merluvlee's House - ShopRewardE", 5);
+            FixMerlowPrices("Shooting Star Summit - Merluvlee's House - ShopRewardE => Shooting Star Summit - Merluvlee's House - ShopRewardF", 6);
+
+            void FixMerlowPrices(string ID, int ind)
+            {
+                var Entry = PRMLogic.Logic.Find(x => x.Id == ID);
+                Entry.RequiredItems = Entry.RequiredItems.Where(x => !x.StartsWith("starpieces")).ToList();
+                if (Entry.ConditionalItems.Any()) { throw new Exception($"{ID} Already had conditionals, can't edit Merlow Reqs"); }
+                Entry.ConditionalItems.Add(new List<string> { $"starpieces, {ind*5}", "setting{MerlowRewardPricing, 0}" });
+                Entry.ConditionalItems.Add(new List<string> { $"starpieces, {ind*10}", "setting{MerlowRewardPricing, 1}" });
+            }
+
+
+            File.WriteAllText(Path.Combine(TestingFoler, "PMR v1.json"), JsonConvert.SerializeObject(PMRDict, Testing._NewtonsoftJsonSerializerOptions));
+            File.WriteAllText(Path.Combine(TestingFoler, "PMRLogic.json"), JsonConvert.SerializeObject(PRMLogic, Testing._NewtonsoftJsonSerializerOptions));
+
+            List<Tuple<string, int>> Reqs = new List<Tuple<string, int>>();
 
             outDict = PMRDict;
             OutLogic = PRMLogic;

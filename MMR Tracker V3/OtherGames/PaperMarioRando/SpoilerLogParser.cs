@@ -62,6 +62,7 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
 
                     foreach(var entrance in EntranceData)
                     {
+                        Debug.WriteLine($"Checking Entrance {entrance.entrance}");
                         var Ent = Instance.EntrancePool.AreaList.First(x => x.Key.Replace("'", "") == entrance.entrance).Value.RandomizableExits(Instance).First();
                         var Dest = Instance.EntrancePool.AreaList.First(x => x.Key.Replace("'", "") == entrance.exit).Value.RandomizableExits(Instance).First();
                         Ent.Value.SpoilerDefinedDestinationExit = Dest.Value.GetDestnationFromEntrancePair();
