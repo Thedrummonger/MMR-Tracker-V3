@@ -457,11 +457,12 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
 
             PMRDict.Variables.Add("MagicalSeedsRequired", new OptionData.TrackerVar { ID = "MagicalSeedsRequired", Static = false, Name = "Magical Seeds Required", Value = 4 });
             PMRDict.Variables.Add("StarHuntRequired", new OptionData.TrackerVar { ID = "StarHuntRequired", Static = false, Name = "Required Power Stars", Value = 0 });
+            PMRDict.Variables.Add("StarWaySpiritsNeededCnt", new OptionData.TrackerVar { ID = "StarWaySpiritsNeededCnt", Static = false, Name = "StarWay Spirits Needed", Value = 7 });
 
             AddToggleoption("BlueHouseOpen");
-            AddToggleoption("Ch7BridgeVisible");
+            AddToggleoption("Ch7BridgeVisible", "true");
             AddToggleoption("CookWithoutFryingPan");
-            AddToggleoption("ForeverForestOpen");
+            AddToggleoption("ForeverForestOpen", "true");
             AddToggleoption("MtRuggedOpen");
             AddToggleoption("PartnersAlwaysUsable");
             AddToggleoption("PrologueOpen");
@@ -578,6 +579,20 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
                 }
             }
 
+            var StarwaysLogic = PRMLogic.Logic.Find(x => x.Id == "Shooting Star Summit - Shooting Star Summit - Exit Bottom Left => Shooting Star Summit - Shooting Star Summit - Ride Up To Starway");
+            
+            List<List<string>> NewStarwayConditionals = new List<List<string>>();
+            foreach(var i in StarwaysLogic.ConditionalItems)
+            {
+                List<string> NewSubCond = new List<string>();
+                foreach (var j in i)
+                {
+                    if (j == "starspirits, 7") { NewSubCond.Add("starspirits, StarWaySpiritsNeededCnt"); }
+                    else { NewSubCond.Add(j); };
+                }
+                NewStarwayConditionals.Add(NewSubCond);
+            }
+            StarwaysLogic.ConditionalItems = NewStarwayConditionals;
 
             File.WriteAllText(Path.Combine(TestingFoler, "PMR v1.json"), JsonConvert.SerializeObject(PMRDict, Testing._NewtonsoftJsonSerializerOptions));
             File.WriteAllText(Path.Combine(TestingFoler, "PMRLogic.json"), JsonConvert.SerializeObject(PRMLogic, Testing._NewtonsoftJsonSerializerOptions));
