@@ -156,37 +156,48 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
                     Dictionary<string, string> Locations = JsonConvert.DeserializeObject<Dictionary<string, string>>(JsonConvert.SerializeObject(i.Value));
                     foreach(var Location in Locations)
                     {
+                        //Get Spoiler Location
                         if (!Instance.LocationPool.ContainsKey(Location.Key)) { throw new Exception($"{Location.Key} Is not a valid Location"); }
-
                         var Loc = Instance.LocationPool[Location.Key];
+                        //Check if the location is unrandomized
+                        bool CheckUnrand = Loc.IsUnrandomized(TrackerObjects.MiscData.UnrandState.Any);
 
                         string SpoilerGivenItem = Location.Value.ToString();
 
-                        if (SpoilerGivenItem.Contains("(") && (SpoilerGivenItem.SplitOnce('(', true)[1].Contains("coins") || SpoilerGivenItem.SplitOnce('(', true)[1].Contains(" sp)"))) { SpoilerGivenItem = SpoilerGivenItem.SplitOnce('(', true)[0].Trim(); }
-
-                        string ItemID = null;
-                        var ItemToPlace = Instance.GetItemToPlace(SpoilerGivenItem, false, true, true);
-                        var ItemToPlaceAny = Instance.GetItemToPlace(SpoilerGivenItem, false, true, true, false, true);
-                        if (ItemToPlace is null && SpoilerGivenItem.StartsWith("TRAP")) { ItemID = SpoilerGivenItem; }
-                        else if (ItemToPlace is not null) { ItemID = ItemToPlace.Id; }
-
-                        if (ItemID is null)
-                        {
-                            if (ItemToPlaceAny is null) { throw new Exception($"{SpoilerGivenItem} Is not a valid Item\n{Location.Key}: {Location.Value}"); }
-                            bool CheckUnrand = Loc.IsUnrandomized(TrackerObjects.MiscData.UnrandState.Any);
-                            bool CheckContainsVanillaItem = Loc.GetDictEntry(Instance).OriginalItem == ItemToPlaceAny.Id;
-
-                            if (CheckUnrand && CheckContainsVanillaItem) { continue; }
-                            else if (CheckUnrand && !CheckContainsVanillaItem) 
-                            { 
-                                throw new Exception($"{Loc.ID} Was unrandomized but did not contain its vanilla item\n{Location.Key}: {Location.Value}"); 
-                            }
-                            else if (ItemToPlace is null) { throw new Exception($"No More {SpoilerGivenItem} could be placed\n{Location.Key}: {Location.Value}\n"); }
-
-                            throw new Exception($"{SpoilerGivenItem} Could not be placed for unknown reasons\n{Location.Key}: {Location.Value}");
+                        //Remove coin/starpoint costs from item
+                        if (SpoilerGivenItem.Contains("(") && (SpoilerGivenItem.SplitOnce('(', true)[1].Contains("coins") || SpoilerGivenItem.SplitOnce('(', true)[1].Contains(" sp)"))) 
+                        { 
+                            SpoilerGivenItem = SpoilerGivenItem.SplitOnce('(', true)[0].Trim();
                         }
 
-                        Instance.LocationPool[Location.Key].Randomizeditem.SpoilerLogGivenItem = ItemID;
+                        //If the location is unrandomized, Ensure it contains its vanilla item in the spoiler log
+                        if (CheckUnrand)
+                        {
+                            var OriginalItem = Instance.ItemPool[Loc.GetDictEntry(Instance).OriginalItem];
+                            if (OriginalItem.Id != SpoilerGivenItem && OriginalItem.GetDictEntry(Instance).Name != SpoilerGivenItem)
+                            {
+                                throw new Exception($"{Loc.ID} Was unrandomized but did not contain its vanilla item\n{Location.Key}: {Location.Value}");
+                            }
+                            continue;
+                        }
+
+                        //Serach for the item in the item pool
+                        var ItemToPlaceAny = Instance.GetItemToPlace(SpoilerGivenItem, false, true, true, false, true);
+                        //search for an item in the item pool that can be placed
+                        var ItemToPlace = Instance.GetItemToPlace(SpoilerGivenItem, false, true, true);
+
+                        //If no item was found, check if the spoiler item is a trap
+                        if (ItemToPlace is null && SpoilerGivenItem.StartsWith("TRAP")) 
+                        { 
+                            Instance.LocationPool[Location.Key].Randomizeditem.SpoilerLogGivenItem = SpoilerGivenItem;
+                            continue;
+                        }
+
+                        //Check if the item is not valid or if no more of that item can be placed.
+                        if (ItemToPlaceAny is null) { throw new Exception($"{SpoilerGivenItem} Is not a valid Item\n{Location.Key}: {Location.Value}"); }
+                        else if (ItemToPlace is null) { throw new Exception($"No More {SpoilerGivenItem} could be placed\n{Location.Key}: {Location.Value}\n"); }
+
+                        Instance.LocationPool[Location.Key].Randomizeditem.SpoilerLogGivenItem = ItemToPlace.Id;
                     }
                 }
             }
