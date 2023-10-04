@@ -135,6 +135,7 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
             string MapNodesFile = Path.Combine(PMRFiles, "node.json");
             string MacroFile = Path.Combine(PMRFiles, "Macros.json");
             string EdgeAlterationsFile = Path.Combine(PMRFiles, "Edges_alterations.json");
+            string LocationTagsFile = Path.Combine(PMRFiles, "SettingLocationRestrictions.json");
 
             Dictionary<string, string> MapNames = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(AreaName));
             Dictionary<string, string> MapMeta = JsonConvert.DeserializeObject<List<MapMeta>>(File.ReadAllText(MapMetaFile)).ToDictionary(x => x.name, x => x.verbose_name);
@@ -144,6 +145,7 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
             Dictionary<string, string> ItemNames = JsonConvert.DeserializeObject<Dictionary<string,string>>(File.ReadAllText(ItemsNamesFile));
             Dictionary<string, string> Macros = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(MacroFile));
             List<MapNode> ItemLocationNodes = JsonConvert.DeserializeObject<List<MapNode>>(File.ReadAllText(MapNodesFile)).Where(x => x.vanilla_item_id is not null).ToList();
+            Dictionary<string, List<string>> LocationTags = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(File.ReadAllText(LocationTagsFile));
 
             string TestingFoler = Path.Combine(References.TestingPaths.GetDevTestingPath(), "PMRTesting");
 
@@ -547,6 +549,18 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
                 if (Entry.ConditionalItems.Any()) { throw new Exception($"{ID} Already had conditionals, can't edit Merlow Reqs"); }
                 Entry.ConditionalItems.Add(new List<string> { $"starpieces, {ind*5}", "setting{MerlowRewardPricing, 0}" });
                 Entry.ConditionalItems.Add(new List<string> { $"starpieces, {ind*10}", "setting{MerlowRewardPricing, 1}" });
+            }
+
+            foreach(var tag in LocationTags)
+            {
+                foreach(var i in tag.Value)
+                {
+                    var Data = i.Split("/");
+                    MapPoint ItemLocation = new MapPoint { map = Data[0], id = Data[1] };
+                    ItemLocation.GetVerboseName(MapNames, MapMeta, MapNodes, out _, out _, out string CurrentArea, out _);
+                    string CheckID = $"{CurrentArea} - {Locations[ItemLocation.map][ItemLocation.StringID()]}".Replace("'","");
+                    PMRDict.LocationList[CheckID].SpoilerData.SpoilerLogNames = PMRDict.LocationList[CheckID].SpoilerData.SpoilerLogNames.Concat(new string[] { tag.Key }).ToArray();
+                }
             }
 
 

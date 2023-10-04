@@ -128,7 +128,7 @@ namespace MMR_Tracker_V3
                 return LogicEntryType.error;
             }
 
-            public ItemObject GetItemToPlace(string Item, bool CheckSpoilerName = true, bool CheckItemName = false, bool CheckItemID = false, bool CanBeStartingItem = false)
+            public ItemObject GetItemToPlace(string Item, bool CheckSpoilerName = true, bool CheckItemName = false, bool CheckItemID = false, bool ForStartingPool = false, bool IgnoreMaxAmount = false)
             {
                 List<ItemObject> ValidItem = new List<ItemObject>();
                 if (CheckSpoilerName)
@@ -136,18 +136,18 @@ namespace MMR_Tracker_V3
                     ValidItem = ValidItem.Concat(ItemPool.Values.Where(x =>
                         x.GetDictEntry(this)?.SpoilerData?.SpoilerLogNames != null &&
                         x.GetDictEntry(this).SpoilerData.SpoilerLogNames.Contains(Item) &&
-                        x.CanBePlaced(this) && (x.ValidStartingItem(this) || !CanBeStartingItem))).ToList();
+                        (x.CanBePlaced(this) || IgnoreMaxAmount) && (x.ValidStartingItem(this) || !ForStartingPool))).ToList();
                 }
                 if (CheckItemName)
                 {
                     ValidItem = ValidItem.Concat(ItemPool.Values.Where(x =>
                         x.GetDictEntry(this)?.Name != null && x.GetDictEntry(this).Name == Item &&
-                        x.CanBePlaced(this) && (x.ValidStartingItem(this) || !CanBeStartingItem))).ToList();
+                        (x.CanBePlaced(this) || IgnoreMaxAmount) && (x.ValidStartingItem(this) || !ForStartingPool))).ToList();
                 }
                 if(CheckItemID)
                 {
                     ValidItem = ValidItem.Concat(ItemPool.Values.Where(x =>
-                        x.Id== Item && x.CanBePlaced(this) && (x.ValidStartingItem(this) || !CanBeStartingItem))).ToList();
+                        x.Id== Item && (x.CanBePlaced(this) || IgnoreMaxAmount) && (x.ValidStartingItem(this) || !ForStartingPool))).ToList();
                 }
                 if (!ValidItem.Any()) { return null; }
                 return ValidItem[0];

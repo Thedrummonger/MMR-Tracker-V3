@@ -46,6 +46,72 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
                 }
             }
 
+            var KootShuffle = int.Parse(Settings["IncludeFavorsMode"].ToString());
+            var KootCoinShuffle = bool.Parse(Settings["IncludeCoinsFavors"].ToString());
+            var LetterShuffle = int.Parse(Settings["IncludeLettersMode"].ToString());
+            var DOJOShuffle = bool.Parse(Settings["IncludeDojo"].ToString());
+            var RadioShuffle = bool.Parse(Settings["IncludeRadioTradeEvent"].ToString());
+            var OverWorldCoinShuffle = bool.Parse(Settings["IncludeCoinsOverworld"].ToString());
+            var BushTreeCoinShuffle = bool.Parse(Settings["IncludeCoinsFoliage"].ToString());
+            var BlockCoinShuffle = bool.Parse(Settings["IncludeCoinsBlocks"].ToString());
+
+            foreach (var i in Instance.LocationPool.Values)
+            {
+                var Dict = i.GetDictEntry(Instance);
+
+                if (Dict.SpoilerData.SpoilerLogNames.Contains("KootFavor") && KootShuffle < 1)
+                {
+                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized, Instance);
+                }
+                if (Dict.SpoilerData.SpoilerLogNames.Contains("KootFavorKey") && KootShuffle < 2)
+                {
+                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized, Instance);
+                }
+                if (Dict.SpoilerData.SpoilerLogNames.Contains("KootFavorCoin") && !KootCoinShuffle || KootShuffle < 1)
+                {
+                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized, Instance);
+                }
+
+                if (Dict.SpoilerData.SpoilerLogNames.Contains("LetterChain") && LetterShuffle < 3)
+                {
+                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized, Instance);
+                }
+                if (Dict.SpoilerData.SpoilerLogNames.Contains("ChainLetterFinal") && LetterShuffle < 2)
+                {
+                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized, Instance);
+                }
+                if (Dict.SpoilerData.SpoilerLogNames.Contains("SimpleLetter") && LetterShuffle < 1)
+                {
+                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized, Instance);
+                }
+
+                if (Dict.SpoilerData.SpoilerLogNames.Contains("DOJO") && !DOJOShuffle)
+                {
+                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized, Instance);
+                }
+                if (Dict.SpoilerData.SpoilerLogNames.Contains("RadioTrade") && !RadioShuffle)
+                {
+                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized, Instance);
+                }
+
+                if (Dict.SpoilerData.SpoilerLogNames.Contains("TreeBushCoin") && !BushTreeCoinShuffle)
+                {
+                    if (Dict.OriginalItem != "Coin") { throw new Exception($"Why {Dict.ID}"); }
+                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized, Instance);
+                }
+                if (Dict.SpoilerData.SpoilerLogNames.Contains("OverworldCoin") && !OverWorldCoinShuffle)
+                {
+                    if (Dict.OriginalItem != "Coin") { throw new Exception($"Why {Dict.ID}"); }
+                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized, Instance);
+                }
+                if (Dict.SpoilerData.SpoilerLogNames.Contains("BlockCoin") && !BlockCoinShuffle)
+                {
+                    if (Dict.OriginalItem != "Coin") { throw new Exception($"Why {Dict.ID}"); }
+                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized, Instance);
+                }
+
+            }
+
             Dictionary<string, object> LogObject = JsonConvert.DeserializeObject<Dictionary<string, object>>(string.Join("\r\n", SpoilerLog));
 
             foreach(var loc in Instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits(Instance)))
@@ -92,16 +158,33 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
                     {
                         if (!Instance.LocationPool.ContainsKey(Location.Key)) { throw new Exception($"{Location.Key} Is not a valid Location"); }
 
+                        var Loc = Instance.LocationPool[Location.Key];
+
                         string SpoilerGivenItem = Location.Value.ToString();
 
                         if (SpoilerGivenItem.Contains("(") && (SpoilerGivenItem.SplitOnce('(', true)[1].Contains("coins") || SpoilerGivenItem.SplitOnce('(', true)[1].Contains(" sp)"))) { SpoilerGivenItem = SpoilerGivenItem.SplitOnce('(', true)[0].Trim(); }
 
                         string ItemID = null;
                         var ItemToPlace = Instance.GetItemToPlace(SpoilerGivenItem, false, true, true);
+                        var ItemToPlaceAny = Instance.GetItemToPlace(SpoilerGivenItem, false, true, true, false, true);
                         if (ItemToPlace is null && SpoilerGivenItem.StartsWith("TRAP")) { ItemID = SpoilerGivenItem; }
                         else if (ItemToPlace is not null) { ItemID = ItemToPlace.Id; }
 
-                        if (ItemID is null) { throw new Exception($"{SpoilerGivenItem} Is not a valid Item\n{Location.Key}: {Location.Value}"); }
+                        if (ItemID is null)
+                        {
+                            if (ItemToPlaceAny is null) { throw new Exception($"{SpoilerGivenItem} Is not a valid Item\n{Location.Key}: {Location.Value}"); }
+                            bool CheckUnrand = Loc.IsUnrandomized(TrackerObjects.MiscData.UnrandState.Any);
+                            bool CheckContainsVanillaItem = Loc.GetDictEntry(Instance).OriginalItem == ItemToPlaceAny.Id;
+
+                            if (CheckUnrand && CheckContainsVanillaItem) { continue; }
+                            else if (CheckUnrand && !CheckContainsVanillaItem) 
+                            { 
+                                throw new Exception($"{Loc.ID} Was unrandomized but did not contain its vanilla item\n{Location.Key}: {Location.Value}"); 
+                            }
+                            else if (ItemToPlace is null) { throw new Exception($"No More {SpoilerGivenItem} could be placed\n{Location.Key}: {Location.Value}\n"); }
+
+                            throw new Exception($"{SpoilerGivenItem} Could not be placed for unknown reasons\n{Location.Key}: {Location.Value}");
+                        }
 
                         Instance.LocationPool[Location.Key].Randomizeditem.SpoilerLogGivenItem = ItemID;
                     }
@@ -110,7 +193,7 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
 
             foreach(var i in Instance.LocationPool)
             {
-                if (i.Value.Randomizeditem.SpoilerLogGivenItem == null && i.Value.SingleValidItem == null)
+                if (i.Value.Randomizeditem.SpoilerLogGivenItem == null && i.Value.SingleValidItem == null && i.Value.IsRandomized())
                 {
                     Debug.WriteLine($"{i.Value.GetDictEntry(Instance).Area} - {i.Key} Did not have spoiler data");
                 }
