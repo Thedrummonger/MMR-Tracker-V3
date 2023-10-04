@@ -175,6 +175,8 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
             Dictionary<string, Tuple<string, string, string>> PsuedoStarpieceLocations = new Dictionary<string, Tuple<string, string, string>>();
             //Tuple: Location Name, Location Area, Logic string
             Dictionary<string, Tuple<string, string, string>> PsuedoStarSpiritLocations = new Dictionary<string, Tuple<string, string, string>>();
+            //Tuple: Location Name, Location Area, Logic string
+            Dictionary<string, Tuple<string, string, string>> PsuedoYoshiKidLocations = new Dictionary<string, Tuple<string, string, string>>();
             //Tuple: Location Name, Location Area, Logic string, Cooked Item
             Dictionary<string, Tuple<string, string, string, string>> PsuedoSTayceTLocations = new Dictionary<string, Tuple<string, string, string, string>>();
             //ID, Area, Logic
@@ -222,7 +224,12 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
                 {
                     foreach (var item in edge.pseudoitems)
                     {
-                        if (item.StartsWith("GF") || item.StartsWith("MF") || item.StartsWith("MB") || item.StartsWith("RF") || item.StartsWith("FAVOR") || item.StartsWith("YOUWIN"))
+                        if (item.StartsWith("RF_SavedYoshiKid"))
+                        {
+                            string CheckID = $"{CurrentAreaName} - Yoshi Kid";
+                            PsuedoYoshiKidLocations.Add(item, new(CheckID, MapName, EdgeLogic));
+                        }
+                        else if (item.StartsWith("GF") || item.StartsWith("MF") || item.StartsWith("MB") || item.StartsWith("RF") || item.StartsWith("FAVOR") || item.StartsWith("YOUWIN"))
                         {
                             if (!PsuedoMacros.ContainsKey(item)) { PsuedoMacros.Add(item, EdgeLogic); }
                             else { PsuedoMacros[item] = $"{PsuedoMacros[item]} || {EdgeLogic}"; }
@@ -290,6 +297,14 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
 
             PMRDict.LocationList.Add(DryOutpostDriedpastaData.Item1, new LogicDictionaryData.DictionaryLocationEntries { ID = DryOutpostDriedpastaData.Item1, Name = DryOutpostDriedpastaData.Item1, Area = DryOutpostDriedpastaData.Item2, ValidItemTypes = new string[] { "Outpost DriedPasta" }, OriginalItem = "DriedPasta" });
             PRMLogic.Logic.Add(new MMRData.JsonFormatLogicItem { Id = DryOutpostDriedpastaData.Item1, ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(PMRParser, DryOutpostDriedpastaData.Item3, DryOutpostDriedpastaData.Item1) });
+
+            foreach (var i in PsuedoYoshiKidLocations)
+            {
+                PMRDict.LocationList.Add(i.Value.Item1, new LogicDictionaryData.DictionaryLocationEntries { ID = i.Value.Item1, Name = i.Value.Item1, Area = i.Value.Item2, ValidItemTypes = new string[] { i.Key }, OriginalItem = i.Key });
+                PRMLogic.Logic.Add(new MMRData.JsonFormatLogicItem { Id = i.Value.Item1, ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(PMRParser, i.Value.Item3, i.Value.Item1) });
+                var YoshiKidData = i.Key.Split("_");
+                PMRDict.ItemList.Add(i.Key, new LogicDictionaryData.DictionaryItemEntries { ID = i.Key, Name = $"Yoshi Kid {YoshiKidData[2]}", ItemTypes = new string[] { i.Key } });
+            }
 
             foreach (var i in PsuedoStarpieceLocations)
             {
