@@ -375,14 +375,14 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
             {
                 if (ItemOverrides.Keys.Any(x => i.Key.Contains(x))) { continue; }
                 var ItemData = Items.FirstOrDefault(x => x.item_name == i.Key);
-                int MaxCount = (ItemData is not null && ItemData.item_type == "ITEM") || i.Key == "Coin" ? -1 : 1;
+                int MaxCount = (ItemData is not null && ItemData.item_type.In("ITEM", "COIN")) ? -1 : 1;
                 string NiceName = string.IsNullOrWhiteSpace(i.Value) ? i.Key : i.Value;
-                PMRDict.ItemList.Add(i.Key, new LogicDictionaryData.DictionaryItemEntries { ID = i.Key, Name = NiceName, MaxAmountInWorld = MaxCount, ItemTypes = new string[] { "item" } });
+                PMRDict.ItemList.Add(i.Key, new LogicDictionaryData.DictionaryItemEntries { ID = i.Key, Name = NiceName, MaxAmountInWorld = MaxCount, ValidStartingItem = true, ItemTypes = new string[] { "item" } });
             }
 
             void AddItemManual(string ID, string NiceName = null, int Count = -1, string[] ItemSubTypes = null)
             {
-                var ItemEntry = new LogicDictionaryData.DictionaryItemEntries { ID = ID, Name = NiceName??ID, MaxAmountInWorld = Count, ItemTypes = new string[] { "item" } };
+                var ItemEntry = new LogicDictionaryData.DictionaryItemEntries { ID = ID, Name = NiceName??ID, MaxAmountInWorld = Count, ValidStartingItem = true, ItemTypes = new string[] { "item" } };
                 if (ItemSubTypes is not null) { ItemEntry.ItemTypes = ItemEntry.ItemTypes.Concat(ItemSubTypes).ToArray(); }
                 PMRDict.ItemList.Add(ID, ItemEntry);
             }

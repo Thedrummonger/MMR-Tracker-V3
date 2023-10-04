@@ -34,6 +34,10 @@ namespace MMR_Tracker_V3
             if (idx != -1) { return new string[] { input[..idx], input[(idx + 1)..] }; }
             else { return new string[] { input }; }
         }
+        public static bool In<T>(this T obj, params T[] args)
+        {
+            return args.Contains(obj);
+        }
 
         public static Dictionary<string, int> GetCategoriesFromFile(LogicObjects.TrackerInstance Instance)
         {
