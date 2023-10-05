@@ -384,6 +384,10 @@ namespace MMR_Tracker_V3
                             }
                         }
                     }
+                    else if (type.In(MiscData.LogicEntryType.variableBool, MiscData.LogicEntryType.variableList, MiscData.LogicEntryType.variableString, MiscData.LogicEntryType.variableInt))
+                    {
+                        //Ignore Variables for now
+                    }
                     else if (!Data.AreasAccessed.Contains(LogicItem) && !Data.OptionsUsed.Contains(LogicItem) && !Data.MacrosUsed.Contains(LogicItem) && !Data.Unknown.Contains(LogicItem))
                     {
                         Data.Unknown.Add(LogicItem);
@@ -449,7 +453,7 @@ namespace MMR_Tracker_V3
             Dictionary<string, int> TempRealItems = new Dictionary<string, int>();
             foreach (var i in ADVUnlockData.RealItemsUsed)
             {
-                if (!TempRealItems.ContainsKey(i.Key)) { TempRealItems.Add(i.Key, 1); }
+                if (!TempRealItems.ContainsKey(i.Key)) { TempRealItems.Add(i.Key, 0); }
                 TempRealItems[i.Key] += i.Value;
             }
             foreach (var i in ADVUnlockData.OptionsUsed.Where(x => x.StartsWith("renewable")))
