@@ -190,6 +190,34 @@ The Moon
 
 #GAMECODEEND:
 
+#GAMECODESTART:PMR
+
+Goomba Region
+Toad Town
+Toad Town Tunnels
+Koopa Region
+Koopa Bros Fortress
+Mt Rugged
+Dry Dry Desert
+Dry Dry Outpost
+Dry Dry Ruins
+Forever Forest
+Boo's Mansion
+Gusty Gulch
+Tubba's Castle
+Shy Guy's Toybox
+Jade Jungle
+Mt Lavalava
+Flower Fields
+Shiver Region
+Crystal Palace
+Shooting Star Summit
+Peach's Castle Grounds
+Peach's Castle
+Bowser's Castle
+
+#GAMECODEEND:
+
 Misc
 Gossip Stone
 Multiworld
