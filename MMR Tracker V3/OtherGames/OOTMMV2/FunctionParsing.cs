@@ -225,7 +225,6 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                             ParsedConditional = $"{Gamecode}_HAS_{Param}_REQUIREMENTS";
                             break;
                         case "small_keys_hideout":
-                        case "small_keys_fire":
                         case "small_keys_botw":
                         case "small_keys_forest":
                         case "small_keys_ganon":
@@ -241,12 +240,15 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                             if (KeyCode == "HIDEOUT") { KeyCode = "GF"; }
                             int SmallKeyCount = int.Parse(Param);
                             ParsedConditional =  $"(small_keys(SMALL_KEY_{KeyCode}, KEY_RING_{KeyCode}, {Param}))";
-                            if (KeyCode == "FIRE")
-                            {
-                                string SmallKeySetting2 = Gamecode == "MM" ? "smallKeyShuffleMm" : "smallKeyShuffleOot";
-                                ParsedConditional =  $"(cond(setting({SmallKeySetting2}, anywhere), small_keys(SMALL_KEY_{KeyCode}, KEY_RING_{KeyCode}, {SmallKeyCount+1}), small_keys(SMALL_KEY_{KeyCode}, KEY_RING_{KeyCode}, {SmallKeyCount})))";
-                            }
                             FunctionParsed = true;
+                            break;
+                        case "small_keys_fire":
+                            int SmallKeyFireCount = int.Parse(Param);
+                            ParsedConditional =  $"(cond(setting(smallKeyShuffleOot, anywhere), small_keys(SMALL_KEY_FIRE, KEY_RING_FIRE, {SmallKeyFireCount+1}), small_keys(SMALL_KEY_FIRE, KEY_RING_FIRE, {SmallKeyFireCount})))";
+                            break;
+                        case "small_keys_tcg":
+                            int SmallKeyTCGCount = int.Parse(Param);
+                            ParsedConditional =  $"cond(setting(smallKeyShuffleChestGame, vanilla), has_lens_strict && can_use_wallet(1), has_skeleton_key || has(KEY_RING_TCG) || has(SMALL_KEY_TCG, {SmallKeyTCGCount}))";
                             break;
                         case "can_play_cross":
                             if (Gamecode == "MM")
