@@ -143,6 +143,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
             var MM_BOSS_GREAT_BAY = Logic.Logic.First(x => x.Id == "MM_EVENT_BOSS_GREAT_BAY");
             var MM_BOSS_SNOWHEAD = Logic.Logic.First(x => x.Id == "MM_EVENT_BOSS_SNOWHEAD");
             var MM_CLEAN_SWAMP = Logic.Logic.First(x => x.Id == "MM_EVENT_CLEAN_SWAMP");
+            var OOT_EVENT_WATER_TEMPLE_CLEARED = Logic.Logic.First(x => x.Id == "OOT_EVENT_WATER_TEMPLE_CLEARED");
 
             string CodeFolder = References.TestingPaths.GetDevCodePath();
 
@@ -164,6 +165,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
             CreateLogic(MM_BOSS_GREAT_BAY, "MM Great Bay Temple Boss Access", "MM Great Bay Temple Boss");
             CreateLogic(MM_BOSS_SNOWHEAD, "MM Snowhead Temple Boss Access", "MM Snowhead Temple Boss");
             CreateLogic(MM_CLEAN_SWAMP, "MM Woodfall Temple Boss Access", "MM Woodfall Temple Boss");
+            CreateLogic(OOT_EVENT_WATER_TEMPLE_CLEARED, "OOT Water Temple Antichamber", "OOT Water Temple Boss");
 
             void CreateLogic(MMRData.JsonFormatLogicItem Item, string DungeonArea, string BossDoor)
             {

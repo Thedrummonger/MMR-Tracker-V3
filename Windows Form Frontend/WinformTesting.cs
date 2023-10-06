@@ -18,10 +18,10 @@ namespace Windows_Form_Frontend
         public static void DoTests()
         {
             //WinformTesting.TPRCreateData();
-            //WinformTesting.OOTMMCreateData();
+            OOTMMCreateData();
             //WinformTesting.WWRCreateData();
             //TestFuncParse();
-            PMRCreateData();
+            //PMRCreateData();
         }
 
         public static void CreateMMRItemTrackerObject()
