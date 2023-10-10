@@ -18,7 +18,7 @@ namespace Windows_Form_Frontend
         public static void DoTests()
         {
             //WinformTesting.TPRCreateData();
-            //OOTMMCreateData();
+            OOTMMCreateData();
             //WinformTesting.WWRCreateData();
             //TestFuncParse();
             //PMRCreateData();

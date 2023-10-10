@@ -90717,7 +90717,14 @@
     {
       "Id": "OOT_is_child",
       "RequiredItems": [],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{startingAge, child}"
+        ],
+        [
+          "OOT_EVENT_TIME_TRAVEL"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -90725,10 +90732,15 @@
     },
     {
       "Id": "OOT_is_adult",
-      "RequiredItems": [
-        "OOT_EVENT_TIME_TRAVEL"
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{startingAge, adult}"
+        ],
+        [
+          "OOT_EVENT_TIME_TRAVEL"
+        ]
       ],
-      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",

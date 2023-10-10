@@ -213,8 +213,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                             FunctionParsed = true;
                             break;
                         case "age":
-                            if (OriginalParam == "child") { ParsedConditional = "true"; }
-                            else { ParsedConditional = "OOT_EVENT_TIME_TRAVEL"; }
+                            if (OriginalParam == "child") { ParsedConditional = "setting(startingAge, child) || OOT_EVENT_TIME_TRAVEL"; }
+                            else { ParsedConditional = "setting(startingAge, adult) || OOT_EVENT_TIME_TRAVEL"; }
                             FunctionParsed = true;
                             break;
                         case "license": //Getting the item from a non renewable source give you the license
