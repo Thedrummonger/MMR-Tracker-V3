@@ -19,6 +19,7 @@ using System.Threading.Tasks;
 using YamlDotNet.Serialization.NamingConventions;
 using YamlDotNet.Serialization;
 using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace MMR_Tracker_V3
 {
@@ -37,6 +38,11 @@ namespace MMR_Tracker_V3
         public static bool In<T>(this T obj, params T[] args)
         {
             return args.Contains(obj);
+        }
+
+        public static string TrimSpaces(this string myString)
+        {
+            return Regex.Replace(myString, @"\s+", " ");
         }
 
         public static Dictionary<string, int> GetCategoriesFromFile(LogicObjects.TrackerInstance Instance)

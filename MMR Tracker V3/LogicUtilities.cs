@@ -147,7 +147,7 @@ namespace MMR_Tracker_V3
                 Testing.PrintObjectToConsole(MathString);
                 Testing.PrintObjectToConsole(ExpandedMathString);
                 Testing.PrintObjectToConsole(MathLogicArray);
-                throw new Exception($"Error Parsing Logic Line for {LogicID}\n{LogicLine}\n{e.Message}");
+                throw new Exception($"Error Parsing Logic Line for {LogicID}\n{LogicLine}\n{ParsedLogic}\n{MathString}\n{ExpandedMathString}\n{MathLogicArray}\n{e.Message}");
             }
         }
 
