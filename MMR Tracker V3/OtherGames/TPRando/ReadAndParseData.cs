@@ -111,7 +111,7 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
         {
             List<Tuple<string, string>> LogicAlterations = new List<Tuple<string, string>>()
             {
-               new("canCompleteAllDungeons", "Progressive_Mirror_Shard, 3 and Progressive_Fused_Shadow, 3"),
+               //new("canCompleteAllDungeons", "Progressive_Mirror_Shard, 3 and Progressive_Fused_Shadow, 3"),
                //new("canCompleteForestTemple", "check{Forest Temple Dungeon Reward}"),
                //new("canCompleteGoronMines", "check{Goron Mines Dungeon Reward}"),
                //new("canCompleteLakebedTemple", "check{Lakebed Temple Dungeon Reward}"),
