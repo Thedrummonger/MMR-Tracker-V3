@@ -96,6 +96,7 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
             CreateDictionaryAndLogicFile(WorldGRaph, CheckData, out TRPLogic, out TRPDictionary);
             FormatLogic(TRPLogic);
             CreateOptions(TRPDictionary);
+            CreateAdditionalData(TRPLogic, TRPDictionary);
 
             string TestFolder = Path.Combine(References.TestingPaths.GetDevCodePath(), "MMR Tracker V3", "Recources");
             string FinalDictFile = Path.Combine(TestFolder, "Dictionaries", @"TPR V1.json");
@@ -103,6 +104,22 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
             File.WriteAllText(FinalLogicFile, JsonConvert.SerializeObject(TRPLogic, Testing._NewtonsoftJsonSerializerOptions));
             File.WriteAllText(FinalDictFile, JsonConvert.SerializeObject(TRPDictionary, Testing._NewtonsoftJsonSerializerOptions));
             GetItemCOunts(CheckData);
+        }
+
+        private static void CreateAdditionalData(MMRData.LogicFile tRPLogic, LogicDictionaryData.LogicDictionary tRPDictionary)
+        {
+            string[] ItemWheelItems = new string[] { "Progressive_Clawshot", "Progressive_Dominion_Rod", "Ball_and_Chain", "Spinner", "Progressive_Bow", "Iron_Boots",
+                "Boomerang", "Lantern", "Slingshot", "Progressive_Fishing_Rod", "Hawkeye", "Filled_Bomb_Bag", "Empty_Bottle",
+                "Jovani_Bottle", "Sera_Bottle", "Coro_Bottle", "Aurus_Memo", "Renados_Letter", "Horse_Call" };
+
+            string[] Bugs = new string[] { "Female_Phasmid", "Male_Phasmid", "Female_Grasshopper", "Male_Grasshopper", "Female_Pill_Bug", "Male_Pill_Bug",
+                "Male_Ant", "Female_Ant", "Female_Beetle", "Male_Beetle", "Female_Snail", "Male_Snail", "Female_Dayfly", "Male_Dayfly", "Female_Mantis", "Male_Mantis",
+                "Female_Stag_Beetle", "Male_Stag_Beetle", "Female_Ladybug", "Male_Ladybug", "Female_Dragonfly", "Female_Butterfly", "Male_Butterfly", "Male_Dragonfly" };
+
+            tRPDictionary.Variables.Add("ItemWheelItems", new OptionData.TrackerVar { ID = "ItemWheelItems", Static = true, Value = ItemWheelItems });
+            tRPDictionary.Variables.Add("AllBugs", new OptionData.TrackerVar { ID = "AllBugs", Static = true, Value = Bugs });
+
+            tRPLogic.Logic.Add(new MMRData.JsonFormatLogicItem { Id = "HasBug", RequiredItems = new List<string> { "AllBugs, 1" } });
         }
 
         private static void CreateOptions(LogicDictionaryData.LogicDictionary tRPDictionary)
@@ -244,7 +261,6 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
         private static void CreateDictionaryAndLogicFile(Dictionary<string, WorldGraph> worldGRaph, List<CheckData> checkData, out MMRData.LogicFile TRPLogic, out LogicDictionaryData.LogicDictionary TRPDictionary)
         {
             Dictionary<string, int> ItemCounts = GetItemCOunts(checkData);
-            string Macros = Path.Combine(References.TestingPaths.GetDevCodePath(), @"MMR Tracker V3", "OtherGames", "TPRando", @"Macros.json");
             TRPLogic = new() { GameCode = "TPR", Logic = new List<MMRData.JsonFormatLogicItem>(), Version = 1 };
             TRPDictionary = new() { LogicVersion = 1, GameCode = "TPR", RootArea = "Ordon Province", WinCondition = "Triforce" };
             foreach (var graph in worldGRaph)
@@ -303,15 +319,9 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
                 itemEntry.ValidStartingItem = itemEntry.SpoilerData.SpoilerLogNames.Intersect(StartingItems).Any();
                 TRPDictionary.ItemList.Add(i, itemEntry);
             }
-            foreach(var i in JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(Macros)))
-            {
-                MMRData.JsonFormatLogicItem logicItem = new MMRData.JsonFormatLogicItem()
-                {
-                    Id = i.Key,
-                    ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(TPLogicParser, i.Value, i.Key)
-                };
-                TRPLogic.Logic.Add(logicItem);
-            }
+
+            TRPLogic.Logic.AddRange(ParseMacrosFromCodeV2.ReadLines());
+
 
             TRPLogic.Logic.Add(new MMRData.JsonFormatLogicItem()
             {

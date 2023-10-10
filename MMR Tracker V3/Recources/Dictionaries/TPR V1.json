@@ -12180,7 +12180,12 @@
       "Exit": "Arbiters Grounds Lobby",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Arbiters Grounds After Poe Gate => Arbiters Grounds Boss Room": {
       "ID": "Arbiters Grounds After Poe Gate => Arbiters Grounds Boss Room",
@@ -12188,7 +12193,12 @@
       "Exit": "Arbiters Grounds Boss Room",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Arbiters Grounds Boss Room => Mirror Chamber": {
       "ID": "Arbiters Grounds Boss Room => Mirror Chamber",
@@ -12196,7 +12206,12 @@
       "Exit": "Mirror Chamber",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Arbiters Grounds East Wing => Arbiters Grounds Lobby": {
       "ID": "Arbiters Grounds East Wing => Arbiters Grounds Lobby",
@@ -12204,7 +12219,12 @@
       "Exit": "Arbiters Grounds Lobby",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Arbiters Grounds Entrance => Outside Arbiters Grounds": {
       "ID": "Arbiters Grounds Entrance => Outside Arbiters Grounds",
@@ -12212,7 +12232,12 @@
       "Exit": "Outside Arbiters Grounds",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Arbiters Grounds Entrance => Arbiters Grounds Lobby": {
       "ID": "Arbiters Grounds Entrance => Arbiters Grounds Lobby",
@@ -12220,7 +12245,12 @@
       "Exit": "Arbiters Grounds Lobby",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Arbiters Grounds Lobby => Arbiters Grounds Entrance": {
       "ID": "Arbiters Grounds Lobby => Arbiters Grounds Entrance",
@@ -12228,7 +12258,12 @@
       "Exit": "Arbiters Grounds Entrance",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Arbiters Grounds Lobby => Arbiters Grounds East Wing": {
       "ID": "Arbiters Grounds Lobby => Arbiters Grounds East Wing",
@@ -12236,7 +12271,12 @@
       "Exit": "Arbiters Grounds East Wing",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Arbiters Grounds Lobby => Arbiters Grounds West Wing": {
       "ID": "Arbiters Grounds Lobby => Arbiters Grounds West Wing",
@@ -12244,7 +12284,12 @@
       "Exit": "Arbiters Grounds West Wing",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Arbiters Grounds Lobby => Arbiters Grounds After Poe Gate": {
       "ID": "Arbiters Grounds Lobby => Arbiters Grounds After Poe Gate",
@@ -12252,7 +12297,12 @@
       "Exit": "Arbiters Grounds After Poe Gate",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Arbiters Grounds West Wing => Arbiters Grounds Lobby": {
       "ID": "Arbiters Grounds West Wing => Arbiters Grounds Lobby",
@@ -12260,7 +12310,12 @@
       "Exit": "Arbiters Grounds Lobby",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "City in The Sky Boss Room => City in The Sky Entrance": {
       "ID": "City in The Sky Boss Room => City in The Sky Entrance",
@@ -12268,7 +12323,12 @@
       "Exit": "City in The Sky Entrance",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "City in The Sky Central Tower Second Floor => City in The Sky West Wing": {
       "ID": "City in The Sky Central Tower Second Floor => City in The Sky West Wing",
@@ -12276,7 +12336,12 @@
       "Exit": "City in The Sky West Wing",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "City in The Sky Central Tower Second Floor => City in The Sky Lobby": {
       "ID": "City in The Sky Central Tower Second Floor => City in The Sky Lobby",
@@ -12284,7 +12349,12 @@
       "Exit": "City in The Sky Lobby",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "City in The Sky East Wing => City in The Sky Lobby": {
       "ID": "City in The Sky East Wing => City in The Sky Lobby",
@@ -12292,7 +12362,12 @@
       "Exit": "City in The Sky Lobby",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "City in The Sky Entrance => Lake Hylia": {
       "ID": "City in The Sky Entrance => Lake Hylia",
@@ -12300,7 +12375,12 @@
       "Exit": "Lake Hylia",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "City in The Sky Entrance => City in The Sky Lobby": {
       "ID": "City in The Sky Entrance => City in The Sky Lobby",
@@ -12308,7 +12388,12 @@
       "Exit": "City in The Sky Lobby",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "City in The Sky Lobby => City in The Sky Entrance": {
       "ID": "City in The Sky Lobby => City in The Sky Entrance",
@@ -12316,7 +12401,12 @@
       "Exit": "City in The Sky Entrance",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "City in The Sky Lobby => City in The Sky East Wing": {
       "ID": "City in The Sky Lobby => City in The Sky East Wing",
@@ -12324,7 +12414,12 @@
       "Exit": "City in The Sky East Wing",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "City in The Sky Lobby => City in The Sky West Wing": {
       "ID": "City in The Sky Lobby => City in The Sky West Wing",
@@ -12332,7 +12427,12 @@
       "Exit": "City in The Sky West Wing",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "City in The Sky Lobby => City in The Sky North Wing": {
       "ID": "City in The Sky Lobby => City in The Sky North Wing",
@@ -12340,7 +12440,12 @@
       "Exit": "City in The Sky North Wing",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "City in The Sky North Wing => City in The Sky Lobby": {
       "ID": "City in The Sky North Wing => City in The Sky Lobby",
@@ -12348,7 +12453,12 @@
       "Exit": "City in The Sky Lobby",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "City in The Sky North Wing => City in The Sky Boss Room": {
       "ID": "City in The Sky North Wing => City in The Sky Boss Room",
@@ -12356,7 +12466,12 @@
       "Exit": "City in The Sky Boss Room",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "City in The Sky West Wing => City in The Sky Lobby": {
       "ID": "City in The Sky West Wing => City in The Sky Lobby",
@@ -12364,7 +12479,12 @@
       "Exit": "City in The Sky Lobby",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "City in The Sky West Wing => City in The Sky Central Tower Second Floor": {
       "ID": "City in The Sky West Wing => City in The Sky Central Tower Second Floor",
@@ -12372,7 +12492,12 @@
       "Exit": "City in The Sky Central Tower Second Floor",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Forest Temple Boss Room => South Faron Woods": {
       "ID": "Forest Temple Boss Room => South Faron Woods",
@@ -12380,7 +12505,12 @@
       "Exit": "South Faron Woods",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Forest Temple East Wing => Forest Temple Lobby": {
       "ID": "Forest Temple East Wing => Forest Temple Lobby",
@@ -12388,7 +12518,12 @@
       "Exit": "Forest Temple Lobby",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Forest Temple East Wing => Forest Temple North Wing": {
       "ID": "Forest Temple East Wing => Forest Temple North Wing",
@@ -12396,7 +12531,12 @@
       "Exit": "Forest Temple North Wing",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Forest Temple Entrance => North Faron Woods": {
       "ID": "Forest Temple Entrance => North Faron Woods",
@@ -12404,7 +12544,12 @@
       "Exit": "North Faron Woods",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Forest Temple Entrance => Forest Temple Lobby": {
       "ID": "Forest Temple Entrance => Forest Temple Lobby",
@@ -12412,7 +12557,12 @@
       "Exit": "Forest Temple Lobby",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Forest Temple Lobby => Forest Temple Entrance": {
       "ID": "Forest Temple Lobby => Forest Temple Entrance",
@@ -12420,7 +12570,12 @@
       "Exit": "Forest Temple Entrance",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Forest Temple Lobby => Forest Temple East Wing": {
       "ID": "Forest Temple Lobby => Forest Temple East Wing",
@@ -12428,7 +12583,12 @@
       "Exit": "Forest Temple East Wing",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Forest Temple Lobby => Forest Temple West Wing": {
       "ID": "Forest Temple Lobby => Forest Temple West Wing",
@@ -12436,7 +12596,12 @@
       "Exit": "Forest Temple West Wing",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Forest Temple Lobby => Ook": {
       "ID": "Forest Temple Lobby => Ook",
@@ -12444,7 +12609,12 @@
       "Exit": "Ook",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Forest Temple North Wing => Forest Temple East Wing": {
       "ID": "Forest Temple North Wing => Forest Temple East Wing",
@@ -12452,7 +12622,12 @@
       "Exit": "Forest Temple East Wing",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Forest Temple North Wing => Forest Temple Boss Room": {
       "ID": "Forest Temple North Wing => Forest Temple Boss Room",
@@ -12460,7 +12635,12 @@
       "Exit": "Forest Temple Boss Room",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Forest Temple West Wing => Forest Temple Lobby": {
       "ID": "Forest Temple West Wing => Forest Temple Lobby",
@@ -12468,7 +12648,12 @@
       "Exit": "Forest Temple Lobby",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Forest Temple West Wing => Ook": {
       "ID": "Forest Temple West Wing => Ook",
@@ -12476,7 +12661,12 @@
       "Exit": "Ook",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Ook => Forest Temple West Wing": {
       "ID": "Ook => Forest Temple West Wing",
@@ -12484,7 +12674,12 @@
       "Exit": "Forest Temple West Wing",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Goron Mines Boss Room => Kakariko Village": {
       "ID": "Goron Mines Boss Room => Kakariko Village",
@@ -12492,7 +12687,12 @@
       "Exit": "Kakariko Village",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Goron Mines Crystal Switch Room => Goron Mines Magnet Room": {
       "ID": "Goron Mines Crystal Switch Room => Goron Mines Magnet Room",
@@ -12500,7 +12700,12 @@
       "Exit": "Goron Mines Magnet Room",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Goron Mines Crystal Switch Room => Goron Mines North Wing": {
       "ID": "Goron Mines Crystal Switch Room => Goron Mines North Wing",
@@ -12508,7 +12713,12 @@
       "Exit": "Goron Mines North Wing",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Goron Mines Entrance => Death Mountain Interiors": {
       "ID": "Goron Mines Entrance => Death Mountain Interiors",
@@ -12516,7 +12726,12 @@
       "Exit": "Death Mountain Interiors",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Goron Mines Entrance => Goron Mines Magnet Room": {
       "ID": "Goron Mines Entrance => Goron Mines Magnet Room",
@@ -12524,7 +12739,12 @@
       "Exit": "Goron Mines Magnet Room",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Goron Mines Lower West Wing => Goron Mines Magnet Room": {
       "ID": "Goron Mines Lower West Wing => Goron Mines Magnet Room",
@@ -12532,7 +12752,12 @@
       "Exit": "Goron Mines Magnet Room",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Goron Mines Magnet Room => Goron Mines Entrance": {
       "ID": "Goron Mines Magnet Room => Goron Mines Entrance",
@@ -12540,7 +12765,12 @@
       "Exit": "Goron Mines Entrance",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Goron Mines Magnet Room => Goron Mines Lower West Wing": {
       "ID": "Goron Mines Magnet Room => Goron Mines Lower West Wing",
@@ -12548,7 +12778,12 @@
       "Exit": "Goron Mines Lower West Wing",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Goron Mines Magnet Room => Goron Mines Crystal Switch Room": {
       "ID": "Goron Mines Magnet Room => Goron Mines Crystal Switch Room",
@@ -12556,7 +12791,12 @@
       "Exit": "Goron Mines Crystal Switch Room",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Goron Mines North Wing => Goron Mines Crystal Switch Room": {
       "ID": "Goron Mines North Wing => Goron Mines Crystal Switch Room",
@@ -12564,7 +12804,12 @@
       "Exit": "Goron Mines Crystal Switch Room",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Goron Mines North Wing => Goron Mines Upper East Wing": {
       "ID": "Goron Mines North Wing => Goron Mines Upper East Wing",
@@ -12572,7 +12817,12 @@
       "Exit": "Goron Mines Upper East Wing",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Goron Mines North Wing => Goron Mines Boss Room": {
       "ID": "Goron Mines North Wing => Goron Mines Boss Room",
@@ -12580,7 +12830,12 @@
       "Exit": "Goron Mines Boss Room",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Goron Mines Upper East Wing => Goron Mines Upper East Wing": {
       "ID": "Goron Mines Upper East Wing => Goron Mines Upper East Wing",
@@ -12588,7 +12843,12 @@
       "Exit": "Goron Mines Upper East Wing",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Goron Mines Upper East Wing => Goron Mines Magnet Room": {
       "ID": "Goron Mines Upper East Wing => Goron Mines Magnet Room",
@@ -12596,7 +12856,12 @@
       "Exit": "Goron Mines Magnet Room",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Ganondorf Castle => Hyrule Castle Tower Climb": {
       "ID": "Ganondorf Castle => Hyrule Castle Tower Climb",
@@ -12604,7 +12869,12 @@
       "Exit": "Hyrule Castle Tower Climb",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Hyrule Castle Entrance => Castle Town": {
       "ID": "Hyrule Castle Entrance => Castle Town",
@@ -12612,7 +12882,12 @@
       "Exit": "Castle Town",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Hyrule Castle Entrance => Hyrule Castle Main Hall": {
       "ID": "Hyrule Castle Entrance => Hyrule Castle Main Hall",
@@ -12620,7 +12895,12 @@
       "Exit": "Hyrule Castle Main Hall",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Hyrule Castle Entrance => Hyrule Castle Outside West Wing": {
       "ID": "Hyrule Castle Entrance => Hyrule Castle Outside West Wing",
@@ -12628,7 +12908,12 @@
       "Exit": "Hyrule Castle Outside West Wing",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Hyrule Castle Entrance => Hyrule Castle Outside East Wing": {
       "ID": "Hyrule Castle Entrance => Hyrule Castle Outside East Wing",
@@ -12636,7 +12921,12 @@
       "Exit": "Hyrule Castle Outside East Wing",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Hyrule Castle Graveyard => Hyrule Castle Outside East Wing": {
       "ID": "Hyrule Castle Graveyard => Hyrule Castle Outside East Wing",
@@ -12644,7 +12934,12 @@
       "Exit": "Hyrule Castle Outside East Wing",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Hyrule Castle Inside East Wing => Hyrule Castle Main Hall": {
       "ID": "Hyrule Castle Inside East Wing => Hyrule Castle Main Hall",
@@ -12652,7 +12947,12 @@
       "Exit": "Hyrule Castle Main Hall",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Hyrule Castle Inside East Wing => Hyrule Castle Third Floor Balcony": {
       "ID": "Hyrule Castle Inside East Wing => Hyrule Castle Third Floor Balcony",
@@ -12660,7 +12960,12 @@
       "Exit": "Hyrule Castle Third Floor Balcony",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Hyrule Castle Inside West Wing => Hyrule Castle Main Hall": {
       "ID": "Hyrule Castle Inside West Wing => Hyrule Castle Main Hall",
@@ -12668,7 +12973,12 @@
       "Exit": "Hyrule Castle Main Hall",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Hyrule Castle Inside West Wing => Hyrule Castle Third Floor Balcony": {
       "ID": "Hyrule Castle Inside West Wing => Hyrule Castle Third Floor Balcony",
@@ -12676,7 +12986,12 @@
       "Exit": "Hyrule Castle Third Floor Balcony",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Hyrule Castle Main Hall => Hyrule Castle Entrance": {
       "ID": "Hyrule Castle Main Hall => Hyrule Castle Entrance",
@@ -12684,7 +12999,12 @@
       "Exit": "Hyrule Castle Entrance",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Hyrule Castle Main Hall => Hyrule Castle Inside East Wing": {
       "ID": "Hyrule Castle Main Hall => Hyrule Castle Inside East Wing",
@@ -12692,7 +13012,12 @@
       "Exit": "Hyrule Castle Inside East Wing",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Hyrule Castle Main Hall => Hyrule Castle Inside West Wing": {
       "ID": "Hyrule Castle Main Hall => Hyrule Castle Inside West Wing",
@@ -12700,7 +13025,12 @@
       "Exit": "Hyrule Castle Inside West Wing",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Hyrule Castle Outside East Wing => Hyrule Castle Entrance": {
       "ID": "Hyrule Castle Outside East Wing => Hyrule Castle Entrance",
@@ -12708,7 +13038,12 @@
       "Exit": "Hyrule Castle Entrance",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Hyrule Castle Outside East Wing => Hyrule Castle Graveyard": {
       "ID": "Hyrule Castle Outside East Wing => Hyrule Castle Graveyard",
@@ -12716,7 +13051,12 @@
       "Exit": "Hyrule Castle Graveyard",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Hyrule Castle Outside West Wing => Hyrule Castle Entrance": {
       "ID": "Hyrule Castle Outside West Wing => Hyrule Castle Entrance",
@@ -12724,7 +13064,12 @@
       "Exit": "Hyrule Castle Entrance",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Hyrule Castle Third Floor Balcony => Hyrule Castle Inside West Wing": {
       "ID": "Hyrule Castle Third Floor Balcony => Hyrule Castle Inside West Wing",
@@ -12732,7 +13077,12 @@
       "Exit": "Hyrule Castle Inside West Wing",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Hyrule Castle Third Floor Balcony => Hyrule Castle Inside East Wing": {
       "ID": "Hyrule Castle Third Floor Balcony => Hyrule Castle Inside East Wing",
@@ -12740,7 +13090,12 @@
       "Exit": "Hyrule Castle Inside East Wing",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Hyrule Castle Third Floor Balcony => Hyrule Castle Tower Climb": {
       "ID": "Hyrule Castle Third Floor Balcony => Hyrule Castle Tower Climb",
@@ -12748,7 +13103,12 @@
       "Exit": "Hyrule Castle Tower Climb",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Hyrule Castle Tower Climb => Hyrule Castle Third Floor Balcony": {
       "ID": "Hyrule Castle Tower Climb => Hyrule Castle Third Floor Balcony",
@@ -12756,7 +13116,12 @@
       "Exit": "Hyrule Castle Third Floor Balcony",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Hyrule Castle Tower Climb => Hyrule Castle Treasure Room": {
       "ID": "Hyrule Castle Tower Climb => Hyrule Castle Treasure Room",
@@ -12764,7 +13129,12 @@
       "Exit": "Hyrule Castle Treasure Room",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Hyrule Castle Tower Climb => Ganondorf Castle": {
       "ID": "Hyrule Castle Tower Climb => Ganondorf Castle",
@@ -12772,7 +13142,12 @@
       "Exit": "Ganondorf Castle",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Hyrule Castle Treasure Room => Hyrule Castle Tower Climb": {
       "ID": "Hyrule Castle Treasure Room => Hyrule Castle Tower Climb",
@@ -12780,7 +13155,12 @@
       "Exit": "Hyrule Castle Tower Climb",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lakebed Temple Boss Room => Lake Hylia": {
       "ID": "Lakebed Temple Boss Room => Lake Hylia",
@@ -12788,7 +13168,12 @@
       "Exit": "Lake Hylia",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lakebed Temple Central Room => Lakebed Temple Entrance": {
       "ID": "Lakebed Temple Central Room => Lakebed Temple Entrance",
@@ -12796,7 +13181,12 @@
       "Exit": "Lakebed Temple Entrance",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lakebed Temple Central Room => Lakebed Temple East Wing Second Floor": {
       "ID": "Lakebed Temple Central Room => Lakebed Temple East Wing Second Floor",
@@ -12804,7 +13194,12 @@
       "Exit": "Lakebed Temple East Wing Second Floor",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lakebed Temple Central Room => Lakebed Temple East Wing First Floor": {
       "ID": "Lakebed Temple Central Room => Lakebed Temple East Wing First Floor",
@@ -12812,7 +13207,12 @@
       "Exit": "Lakebed Temple East Wing First Floor",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lakebed Temple Central Room => Lakebed Temple West Wing": {
       "ID": "Lakebed Temple Central Room => Lakebed Temple West Wing",
@@ -12820,7 +13220,12 @@
       "Exit": "Lakebed Temple West Wing",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lakebed Temple Central Room => Lakebed Temple Boss Room": {
       "ID": "Lakebed Temple Central Room => Lakebed Temple Boss Room",
@@ -12828,7 +13233,12 @@
       "Exit": "Lakebed Temple Boss Room",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lakebed Temple East Wing First Floor => Lakebed Temple Central Room": {
       "ID": "Lakebed Temple East Wing First Floor => Lakebed Temple Central Room",
@@ -12836,7 +13246,12 @@
       "Exit": "Lakebed Temple Central Room",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lakebed Temple East Wing Second Floor => Lakebed Temple Central Room": {
       "ID": "Lakebed Temple East Wing Second Floor => Lakebed Temple Central Room",
@@ -12844,7 +13259,12 @@
       "Exit": "Lakebed Temple Central Room",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lakebed Temple East Wing Second Floor => Lakebed Temple East Wing First Floor": {
       "ID": "Lakebed Temple East Wing Second Floor => Lakebed Temple East Wing First Floor",
@@ -12852,7 +13272,12 @@
       "Exit": "Lakebed Temple East Wing First Floor",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lakebed Temple Entrance => Lake Hylia": {
       "ID": "Lakebed Temple Entrance => Lake Hylia",
@@ -12860,7 +13285,12 @@
       "Exit": "Lake Hylia",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lakebed Temple Entrance => Lakebed Temple Central Room": {
       "ID": "Lakebed Temple Entrance => Lakebed Temple Central Room",
@@ -12868,7 +13298,12 @@
       "Exit": "Lakebed Temple Central Room",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lakebed Temple West Wing => Lakebed Temple Central Room": {
       "ID": "Lakebed Temple West Wing => Lakebed Temple Central Room",
@@ -12876,7 +13311,12 @@
       "Exit": "Lakebed Temple Central Room",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Palace of Twilight Boss Room => Palace of Twilight Entrance": {
       "ID": "Palace of Twilight Boss Room => Palace of Twilight Entrance",
@@ -12884,7 +13324,12 @@
       "Exit": "Palace of Twilight Entrance",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Palace of Twilight East Wing => Palace of Twilight Entrance": {
       "ID": "Palace of Twilight East Wing => Palace of Twilight Entrance",
@@ -12892,7 +13337,12 @@
       "Exit": "Palace of Twilight Entrance",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Palace of Twilight Entrance => Mirror Chamber": {
       "ID": "Palace of Twilight Entrance => Mirror Chamber",
@@ -12900,7 +13350,12 @@
       "Exit": "Mirror Chamber",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Palace of Twilight Entrance => Palace of Twilight West Wing": {
       "ID": "Palace of Twilight Entrance => Palace of Twilight West Wing",
@@ -12908,7 +13363,12 @@
       "Exit": "Palace of Twilight West Wing",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Palace of Twilight Entrance => Palace of Twilight East Wing": {
       "ID": "Palace of Twilight Entrance => Palace of Twilight East Wing",
@@ -12916,7 +13376,12 @@
       "Exit": "Palace of Twilight East Wing",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Palace of Twilight Entrance => Palace of Twilight North Tower": {
       "ID": "Palace of Twilight Entrance => Palace of Twilight North Tower",
@@ -12924,7 +13389,12 @@
       "Exit": "Palace of Twilight North Tower",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Palace of Twilight North Tower => Palace of Twilight Entrance": {
       "ID": "Palace of Twilight North Tower => Palace of Twilight Entrance",
@@ -12932,7 +13402,12 @@
       "Exit": "Palace of Twilight Entrance",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Palace of Twilight North Tower => Palace of Twilight Boss Room": {
       "ID": "Palace of Twilight North Tower => Palace of Twilight Boss Room",
@@ -12940,7 +13415,12 @@
       "Exit": "Palace of Twilight Boss Room",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Palace of Twilight West Wing => Palace of Twilight Entrance": {
       "ID": "Palace of Twilight West Wing => Palace of Twilight Entrance",
@@ -12948,7 +13428,12 @@
       "Exit": "Palace of Twilight Entrance",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Ruins Boss Room => Snowpeak Summit": {
       "ID": "Snowpeak Ruins Boss Room => Snowpeak Summit",
@@ -12956,7 +13441,12 @@
       "Exit": "Snowpeak Summit",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Ruins Caged Freezard Room => Snowpeak Ruins Yeto and Yeta": {
       "ID": "Snowpeak Ruins Caged Freezard Room => Snowpeak Ruins Yeto and Yeta",
@@ -12964,7 +13454,12 @@
       "Exit": "Snowpeak Ruins Yeto and Yeta",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Ruins Caged Freezard Room => Snowpeak Ruins Second Floor Mini Freezard Room": {
       "ID": "Snowpeak Ruins Caged Freezard Room => Snowpeak Ruins Second Floor Mini Freezard Room",
@@ -12972,7 +13467,12 @@
       "Exit": "Snowpeak Ruins Second Floor Mini Freezard Room",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Ruins Caged Freezard Room => Snowpeak Ruins Wooden Beam Room": {
       "ID": "Snowpeak Ruins Caged Freezard Room => Snowpeak Ruins Wooden Beam Room",
@@ -12980,7 +13480,12 @@
       "Exit": "Snowpeak Ruins Wooden Beam Room",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Ruins Caged Freezard Room => Snowpeak Ruins West Courtyard": {
       "ID": "Snowpeak Ruins Caged Freezard Room => Snowpeak Ruins West Courtyard",
@@ -12988,7 +13493,12 @@
       "Exit": "Snowpeak Ruins West Courtyard",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Ruins Chapel => Snowpeak Ruins West Courtyard": {
       "ID": "Snowpeak Ruins Chapel => Snowpeak Ruins West Courtyard",
@@ -12996,7 +13506,12 @@
       "Exit": "Snowpeak Ruins West Courtyard",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Ruins Darkhammer Room => Snowpeak Ruins West Courtyard": {
       "ID": "Snowpeak Ruins Darkhammer Room => Snowpeak Ruins West Courtyard",
@@ -13004,7 +13519,12 @@
       "Exit": "Snowpeak Ruins West Courtyard",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Ruins East Courtyard => Snowpeak Ruins Yeto and Yeta": {
       "ID": "Snowpeak Ruins East Courtyard => Snowpeak Ruins Yeto and Yeta",
@@ -13012,7 +13532,12 @@
       "Exit": "Snowpeak Ruins Yeto and Yeta",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Ruins East Courtyard => Snowpeak Ruins West Courtyard": {
       "ID": "Snowpeak Ruins East Courtyard => Snowpeak Ruins West Courtyard",
@@ -13020,7 +13545,12 @@
       "Exit": "Snowpeak Ruins West Courtyard",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Ruins East Courtyard => Snowpeak Ruins Northeast Chilfos Room First Floor": {
       "ID": "Snowpeak Ruins East Courtyard => Snowpeak Ruins Northeast Chilfos Room First Floor",
@@ -13028,7 +13558,12 @@
       "Exit": "Snowpeak Ruins Northeast Chilfos Room First Floor",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Ruins Entrance => Snowpeak Summit": {
       "ID": "Snowpeak Ruins Entrance => Snowpeak Summit",
@@ -13036,7 +13571,12 @@
       "Exit": "Snowpeak Summit",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Ruins Entrance => Snowpeak Ruins Yeto and Yeta": {
       "ID": "Snowpeak Ruins Entrance => Snowpeak Ruins Yeto and Yeta",
@@ -13044,7 +13584,12 @@
       "Exit": "Snowpeak Ruins Yeto and Yeta",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Ruins Northeast Chilfos Room First Floor => Snowpeak Ruins East Courtyard": {
       "ID": "Snowpeak Ruins Northeast Chilfos Room First Floor => Snowpeak Ruins East Courtyard",
@@ -13052,7 +13597,12 @@
       "Exit": "Snowpeak Ruins East Courtyard",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Ruins Northeast Chilfos Room First Floor => Snowpeak Ruins Yeto and Yeta": {
       "ID": "Snowpeak Ruins Northeast Chilfos Room First Floor => Snowpeak Ruins Yeto and Yeta",
@@ -13060,7 +13610,12 @@
       "Exit": "Snowpeak Ruins Yeto and Yeta",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Ruins Northeast Chilfos Room Second Floor => Snowpeak Ruins Northeast Chilfos Room First Floor": {
       "ID": "Snowpeak Ruins Northeast Chilfos Room Second Floor => Snowpeak Ruins Northeast Chilfos Room First Floor",
@@ -13068,7 +13623,12 @@
       "Exit": "Snowpeak Ruins Northeast Chilfos Room First Floor",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Ruins Northeast Chilfos Room Second Floor => Snowpeak Ruins Yeto and Yeta": {
       "ID": "Snowpeak Ruins Northeast Chilfos Room Second Floor => Snowpeak Ruins Yeto and Yeta",
@@ -13076,7 +13636,12 @@
       "Exit": "Snowpeak Ruins Yeto and Yeta",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Ruins Second Floor Mini Freezard Room => Snowpeak Ruins Entrance": {
       "ID": "Snowpeak Ruins Second Floor Mini Freezard Room => Snowpeak Ruins Entrance",
@@ -13084,7 +13649,12 @@
       "Exit": "Snowpeak Ruins Entrance",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Ruins Second Floor Mini Freezard Room => Snowpeak Ruins East Courtyard": {
       "ID": "Snowpeak Ruins Second Floor Mini Freezard Room => Snowpeak Ruins East Courtyard",
@@ -13092,7 +13662,12 @@
       "Exit": "Snowpeak Ruins East Courtyard",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Ruins Second Floor Mini Freezard Room => Snowpeak Ruins Northeast Chilfos Room Second Floor": {
       "ID": "Snowpeak Ruins Second Floor Mini Freezard Room => Snowpeak Ruins Northeast Chilfos Room Second Floor",
@@ -13100,7 +13675,12 @@
       "Exit": "Snowpeak Ruins Northeast Chilfos Room Second Floor",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Ruins Second Floor Mini Freezard Room => Snowpeak Ruins Caged Freezard Room": {
       "ID": "Snowpeak Ruins Second Floor Mini Freezard Room => Snowpeak Ruins Caged Freezard Room",
@@ -13108,7 +13688,12 @@
       "Exit": "Snowpeak Ruins Caged Freezard Room",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Ruins West Cannon Room => Snowpeak Ruins West Courtyard": {
       "ID": "Snowpeak Ruins West Cannon Room => Snowpeak Ruins West Courtyard",
@@ -13116,7 +13701,12 @@
       "Exit": "Snowpeak Ruins West Courtyard",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Ruins West Cannon Room => Snowpeak Ruins Wooden Beam Room": {
       "ID": "Snowpeak Ruins West Cannon Room => Snowpeak Ruins Wooden Beam Room",
@@ -13124,7 +13714,12 @@
       "Exit": "Snowpeak Ruins Wooden Beam Room",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Ruins West Courtyard => Snowpeak Ruins Yeto and Yeta": {
       "ID": "Snowpeak Ruins West Courtyard => Snowpeak Ruins Yeto and Yeta",
@@ -13132,7 +13727,12 @@
       "Exit": "Snowpeak Ruins Yeto and Yeta",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Ruins West Courtyard => Snowpeak Ruins East Courtyard": {
       "ID": "Snowpeak Ruins West Courtyard => Snowpeak Ruins East Courtyard",
@@ -13140,7 +13740,12 @@
       "Exit": "Snowpeak Ruins East Courtyard",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Ruins West Courtyard => Snowpeak Ruins West Cannon Room": {
       "ID": "Snowpeak Ruins West Courtyard => Snowpeak Ruins West Cannon Room",
@@ -13148,7 +13753,12 @@
       "Exit": "Snowpeak Ruins West Cannon Room",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Ruins West Courtyard => Snowpeak Ruins Chapel": {
       "ID": "Snowpeak Ruins West Courtyard => Snowpeak Ruins Chapel",
@@ -13156,7 +13766,12 @@
       "Exit": "Snowpeak Ruins Chapel",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Ruins West Courtyard => Snowpeak Ruins Darkhammer Room": {
       "ID": "Snowpeak Ruins West Courtyard => Snowpeak Ruins Darkhammer Room",
@@ -13164,7 +13779,12 @@
       "Exit": "Snowpeak Ruins Darkhammer Room",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Ruins West Courtyard => Snowpeak Ruins Boss Room": {
       "ID": "Snowpeak Ruins West Courtyard => Snowpeak Ruins Boss Room",
@@ -13172,7 +13792,12 @@
       "Exit": "Snowpeak Ruins Boss Room",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Ruins Wooden Beam Room => Snowpeak Ruins West Cannon Room": {
       "ID": "Snowpeak Ruins Wooden Beam Room => Snowpeak Ruins West Cannon Room",
@@ -13180,7 +13805,12 @@
       "Exit": "Snowpeak Ruins West Cannon Room",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Ruins Yeto and Yeta => Snowpeak Ruins Entrance": {
       "ID": "Snowpeak Ruins Yeto and Yeta => Snowpeak Ruins Entrance",
@@ -13188,7 +13818,12 @@
       "Exit": "Snowpeak Ruins Entrance",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Ruins Yeto and Yeta => Snowpeak Ruins Caged Freezard Room": {
       "ID": "Snowpeak Ruins Yeto and Yeta => Snowpeak Ruins Caged Freezard Room",
@@ -13196,7 +13831,12 @@
       "Exit": "Snowpeak Ruins Caged Freezard Room",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Ruins Yeto and Yeta => Snowpeak Ruins West Courtyard": {
       "ID": "Snowpeak Ruins Yeto and Yeta => Snowpeak Ruins West Courtyard",
@@ -13204,7 +13844,12 @@
       "Exit": "Snowpeak Ruins West Courtyard",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Ruins Yeto and Yeta => Snowpeak Ruins East Courtyard": {
       "ID": "Snowpeak Ruins Yeto and Yeta => Snowpeak Ruins East Courtyard",
@@ -13212,7 +13857,12 @@
       "Exit": "Snowpeak Ruins East Courtyard",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Temple of Time Armos Antechamber => Temple of Time Central Mechanical Platform": {
       "ID": "Temple of Time Armos Antechamber => Temple of Time Central Mechanical Platform",
@@ -13220,7 +13870,12 @@
       "Exit": "Temple of Time Central Mechanical Platform",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Temple of Time Boss Room => Sacred Grove Temple of Time": {
       "ID": "Temple of Time Boss Room => Sacred Grove Temple of Time",
@@ -13228,7 +13883,12 @@
       "Exit": "Sacred Grove Temple of Time",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Temple of Time Central Mechanical Platform => Temple of Time Connecting Corridors": {
       "ID": "Temple of Time Central Mechanical Platform => Temple of Time Connecting Corridors",
@@ -13236,7 +13896,12 @@
       "Exit": "Temple of Time Connecting Corridors",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Temple of Time Central Mechanical Platform => Temple of Time Armos Antechamber": {
       "ID": "Temple of Time Central Mechanical Platform => Temple of Time Armos Antechamber",
@@ -13244,7 +13909,12 @@
       "Exit": "Temple of Time Armos Antechamber",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Temple of Time Central Mechanical Platform => Temple of Time Moving Wall Hallways": {
       "ID": "Temple of Time Central Mechanical Platform => Temple of Time Moving Wall Hallways",
@@ -13252,7 +13922,12 @@
       "Exit": "Temple of Time Moving Wall Hallways",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Temple of Time Connecting Corridors => Temple of Time Entrance": {
       "ID": "Temple of Time Connecting Corridors => Temple of Time Entrance",
@@ -13260,7 +13935,12 @@
       "Exit": "Temple of Time Entrance",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Temple of Time Connecting Corridors => Temple of Time Central Mechanical Platform": {
       "ID": "Temple of Time Connecting Corridors => Temple of Time Central Mechanical Platform",
@@ -13268,7 +13948,12 @@
       "Exit": "Temple of Time Central Mechanical Platform",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Temple of Time Crumbling Corridor => Temple of Time Entrance": {
       "ID": "Temple of Time Crumbling Corridor => Temple of Time Entrance",
@@ -13276,7 +13961,12 @@
       "Exit": "Temple of Time Entrance",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Temple of Time Crumbling Corridor => Temple of Time Boss Room": {
       "ID": "Temple of Time Crumbling Corridor => Temple of Time Boss Room",
@@ -13284,7 +13974,12 @@
       "Exit": "Temple of Time Boss Room",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Temple of Time Darknut Arena => Temple of Time Upper Spike Trap Corridor": {
       "ID": "Temple of Time Darknut Arena => Temple of Time Upper Spike Trap Corridor",
@@ -13292,7 +13987,12 @@
       "Exit": "Temple of Time Upper Spike Trap Corridor",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Temple of Time Entrance => Sacred Grove Temple of Time": {
       "ID": "Temple of Time Entrance => Sacred Grove Temple of Time",
@@ -13300,7 +14000,12 @@
       "Exit": "Sacred Grove Temple of Time",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Temple of Time Entrance => Temple of Time Connecting Corridors": {
       "ID": "Temple of Time Entrance => Temple of Time Connecting Corridors",
@@ -13308,7 +14013,12 @@
       "Exit": "Temple of Time Connecting Corridors",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Temple of Time Entrance => Temple of Time Crumbling Corridor": {
       "ID": "Temple of Time Entrance => Temple of Time Crumbling Corridor",
@@ -13316,7 +14026,12 @@
       "Exit": "Temple of Time Crumbling Corridor",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Temple of Time Floor Switch Puzzle Room => Temple of Time Scales of Time": {
       "ID": "Temple of Time Floor Switch Puzzle Room => Temple of Time Scales of Time",
@@ -13324,7 +14039,12 @@
       "Exit": "Temple of Time Scales of Time",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Temple of Time Moving Wall Hallways => Temple of Time Central Mechanical Platform": {
       "ID": "Temple of Time Moving Wall Hallways => Temple of Time Central Mechanical Platform",
@@ -13332,7 +14052,12 @@
       "Exit": "Temple of Time Central Mechanical Platform",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Temple of Time Moving Wall Hallways => Temple of Time Scales of Time": {
       "ID": "Temple of Time Moving Wall Hallways => Temple of Time Scales of Time",
@@ -13340,7 +14065,12 @@
       "Exit": "Temple of Time Scales of Time",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Temple of Time Scales of Time => Temple of Time Moving Wall Hallways": {
       "ID": "Temple of Time Scales of Time => Temple of Time Moving Wall Hallways",
@@ -13348,7 +14078,12 @@
       "Exit": "Temple of Time Moving Wall Hallways",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Temple of Time Scales of Time => Temple of Time Floor Switch Puzzle Room": {
       "ID": "Temple of Time Scales of Time => Temple of Time Floor Switch Puzzle Room",
@@ -13356,7 +14091,12 @@
       "Exit": "Temple of Time Floor Switch Puzzle Room",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Temple of Time Scales of Time => Temple of Time Upper Spike Trap Corridor": {
       "ID": "Temple of Time Scales of Time => Temple of Time Upper Spike Trap Corridor",
@@ -13364,7 +14104,12 @@
       "Exit": "Temple of Time Upper Spike Trap Corridor",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Temple of Time Upper Spike Trap Corridor => Temple of Time Upper Spike Trap Corridor": {
       "ID": "Temple of Time Upper Spike Trap Corridor => Temple of Time Upper Spike Trap Corridor",
@@ -13372,7 +14117,12 @@
       "Exit": "Temple of Time Upper Spike Trap Corridor",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Temple of Time Upper Spike Trap Corridor => Temple of Time Darknut Arena": {
       "ID": "Temple of Time Upper Spike Trap Corridor => Temple of Time Darknut Arena",
@@ -13380,7 +14130,12 @@
       "Exit": "Temple of Time Darknut Arena",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Hidden Village => Lanayru Field": {
       "ID": "Hidden Village => Lanayru Field",
@@ -13388,7 +14143,12 @@
       "Exit": "Lanayru Field",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Eldin Field Bomskit Grotto => Eldin Field": {
       "ID": "Eldin Field Bomskit Grotto => Eldin Field",
@@ -13396,7 +14156,12 @@
       "Exit": "Eldin Field",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Eldin Field Stalfos Grotto => Lanayru Field": {
       "ID": "Eldin Field Stalfos Grotto => Lanayru Field",
@@ -13404,7 +14169,12 @@
       "Exit": "Lanayru Field",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Eldin Field Water Bomb Fish Grotto => Eldin Field": {
       "ID": "Eldin Field Water Bomb Fish Grotto => Eldin Field",
@@ -13412,7 +14182,12 @@
       "Exit": "Eldin Field",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Eldin Field => Kakariko Gorge": {
       "ID": "Eldin Field => Kakariko Gorge",
@@ -13420,7 +14195,12 @@
       "Exit": "Kakariko Gorge",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Eldin Field => Kakariko Village": {
       "ID": "Eldin Field => Kakariko Village",
@@ -13428,7 +14208,12 @@
       "Exit": "Kakariko Village",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Eldin Field => Goron Stockcave": {
       "ID": "Eldin Field => Goron Stockcave",
@@ -13436,7 +14221,12 @@
       "Exit": "Goron Stockcave",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Eldin Field => Castle Town": {
       "ID": "Eldin Field => Castle Town",
@@ -13444,7 +14234,12 @@
       "Exit": "Castle Town",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Eldin Field => Lanayru Field": {
       "ID": "Eldin Field => Lanayru Field",
@@ -13452,7 +14247,12 @@
       "Exit": "Lanayru Field",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Eldin Field => Eldin Field Water Bomb Fish Grotto": {
       "ID": "Eldin Field => Eldin Field Water Bomb Fish Grotto",
@@ -13460,7 +14260,12 @@
       "Exit": "Eldin Field Water Bomb Fish Grotto",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Eldin Field => Eldin Field Bomskit Grotto": {
       "ID": "Eldin Field => Eldin Field Bomskit Grotto",
@@ -13468,7 +14273,12 @@
       "Exit": "Eldin Field Bomskit Grotto",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Eldin Field => Eldin Field Stalfos Grotto": {
       "ID": "Eldin Field => Eldin Field Stalfos Grotto",
@@ -13476,7 +14286,12 @@
       "Exit": "Eldin Field Stalfos Grotto",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Eldin Long Cave => Kakariko Gorge": {
       "ID": "Eldin Long Cave => Kakariko Gorge",
@@ -13484,7 +14299,12 @@
       "Exit": "Kakariko Gorge",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Goron Stockcave => Eldin Field": {
       "ID": "Goron Stockcave => Eldin Field",
@@ -13492,7 +14312,12 @@
       "Exit": "Eldin Field",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Kakariko Gorge => Eldin Field": {
       "ID": "Kakariko Gorge => Eldin Field",
@@ -13500,7 +14325,12 @@
       "Exit": "Eldin Field",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Kakariko Gorge => Faron Field": {
       "ID": "Kakariko Gorge => Faron Field",
@@ -13508,7 +14338,12 @@
       "Exit": "Faron Field",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Kakariko Gorge => Kakariko Village": {
       "ID": "Kakariko Gorge => Kakariko Village",
@@ -13516,7 +14351,12 @@
       "Exit": "Kakariko Village",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Kakariko Gorge => Eldin Long Cave": {
       "ID": "Kakariko Gorge => Eldin Long Cave",
@@ -13524,7 +14364,12 @@
       "Exit": "Eldin Long Cave",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Death Mountain Interiors => Death Mountain Volcano": {
       "ID": "Death Mountain Interiors => Death Mountain Volcano",
@@ -13532,7 +14377,12 @@
       "Exit": "Death Mountain Volcano",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Death Mountain Interiors => Goron Mines Entrance": {
       "ID": "Death Mountain Interiors => Goron Mines Entrance",
@@ -13540,7 +14390,12 @@
       "Exit": "Goron Mines Entrance",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Death Mountain Trail => Kakariko Village": {
       "ID": "Death Mountain Trail => Kakariko Village",
@@ -13548,7 +14403,12 @@
       "Exit": "Kakariko Village",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Death Mountain Trail => Death Mountain Volcano": {
       "ID": "Death Mountain Trail => Death Mountain Volcano",
@@ -13556,7 +14416,12 @@
       "Exit": "Death Mountain Volcano",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Death Mountain Volcano => Death Mountain Trail": {
       "ID": "Death Mountain Volcano => Death Mountain Trail",
@@ -13564,7 +14429,12 @@
       "Exit": "Death Mountain Trail",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Death Mountain Volcano => Death Mountain Interiors": {
       "ID": "Death Mountain Volcano => Death Mountain Interiors",
@@ -13572,7 +14442,12 @@
       "Exit": "Death Mountain Interiors",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Kakariko Village => Kakariko Gorge": {
       "ID": "Kakariko Village => Kakariko Gorge",
@@ -13580,7 +14455,12 @@
       "Exit": "Kakariko Gorge",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Kakariko Village => Eldin Field": {
       "ID": "Kakariko Village => Eldin Field",
@@ -13588,7 +14468,12 @@
       "Exit": "Eldin Field",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Kakariko Village => Death Mountain Trail": {
       "ID": "Kakariko Village => Death Mountain Trail",
@@ -13596,7 +14481,12 @@
       "Exit": "Death Mountain Trail",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Kakariko Village => Lake Hylia": {
       "ID": "Kakariko Village => Lake Hylia",
@@ -13604,7 +14494,12 @@
       "Exit": "Lake Hylia",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Faron Mist Area => South Faron Woods Cave": {
       "ID": "Faron Mist Area => South Faron Woods Cave",
@@ -13612,7 +14507,12 @@
       "Exit": "South Faron Woods Cave",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Faron Mist Area => Faron Mist Cave": {
       "ID": "Faron Mist Area => Faron Mist Cave",
@@ -13620,7 +14520,12 @@
       "Exit": "Faron Mist Cave",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Faron Mist Area => North Faron Woods": {
       "ID": "Faron Mist Area => North Faron Woods",
@@ -13628,7 +14533,12 @@
       "Exit": "North Faron Woods",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Faron Mist Cave => Faron Mist Area": {
       "ID": "Faron Mist Cave => Faron Mist Area",
@@ -13636,7 +14546,12 @@
       "Exit": "Faron Mist Area",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "North Faron Woods => Faron Mist Area": {
       "ID": "North Faron Woods => Faron Mist Area",
@@ -13644,7 +14559,12 @@
       "Exit": "Faron Mist Area",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "North Faron Woods => Forest Temple Entrance": {
       "ID": "North Faron Woods => Forest Temple Entrance",
@@ -13652,7 +14572,12 @@
       "Exit": "Forest Temple Entrance",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "North Faron Woods => Lost Woods": {
       "ID": "North Faron Woods => Lost Woods",
@@ -13660,7 +14585,12 @@
       "Exit": "Lost Woods",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "South Faron Woods Cave => South Faron Woods": {
       "ID": "South Faron Woods Cave => South Faron Woods",
@@ -13668,7 +14598,12 @@
       "Exit": "South Faron Woods",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "South Faron Woods Cave => Faron Mist Area": {
       "ID": "South Faron Woods Cave => Faron Mist Area",
@@ -13676,7 +14611,12 @@
       "Exit": "Faron Mist Area",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "South Faron Woods => Ordon Province": {
       "ID": "South Faron Woods => Ordon Province",
@@ -13684,7 +14624,12 @@
       "Exit": "Ordon Province",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "South Faron Woods => Faron Field": {
       "ID": "South Faron Woods => Faron Field",
@@ -13692,7 +14637,12 @@
       "Exit": "Faron Field",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "South Faron Woods => South Faron Woods Cave": {
       "ID": "South Faron Woods => South Faron Woods Cave",
@@ -13700,7 +14650,12 @@
       "Exit": "South Faron Woods Cave",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "South Faron Woods => Faron Mist Area": {
       "ID": "South Faron Woods => Faron Mist Area",
@@ -13708,7 +14663,12 @@
       "Exit": "Faron Mist Area",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Faron Field Corner Grotto => Faron Field": {
       "ID": "Faron Field Corner Grotto => Faron Field",
@@ -13716,7 +14676,12 @@
       "Exit": "Faron Field",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Faron Field => South Faron Woods": {
       "ID": "Faron Field => South Faron Woods",
@@ -13724,7 +14689,12 @@
       "Exit": "South Faron Woods",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Faron Field => Outside Castle Town South": {
       "ID": "Faron Field => Outside Castle Town South",
@@ -13732,7 +14702,12 @@
       "Exit": "Outside Castle Town South",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Faron Field => Kakariko Gorge": {
       "ID": "Faron Field => Kakariko Gorge",
@@ -13740,7 +14715,12 @@
       "Exit": "Kakariko Gorge",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Faron Field => Lake Hylia Bridge": {
       "ID": "Faron Field => Lake Hylia Bridge",
@@ -13748,7 +14728,12 @@
       "Exit": "Lake Hylia Bridge",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Faron Field => Faron Field Corner Grotto": {
       "ID": "Faron Field => Faron Field Corner Grotto",
@@ -13756,7 +14741,12 @@
       "Exit": "Faron Field Corner Grotto",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lost Woods => North Faron Woods": {
       "ID": "Lost Woods => North Faron Woods",
@@ -13764,7 +14754,12 @@
       "Exit": "North Faron Woods",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lost Woods => Sacred Grove Master Sword": {
       "ID": "Lost Woods => Sacred Grove Master Sword",
@@ -13772,7 +14767,12 @@
       "Exit": "Sacred Grove Master Sword",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Sacred Grove Baba Serpent Grotto => Sacred Grove Master Sword": {
       "ID": "Sacred Grove Baba Serpent Grotto => Sacred Grove Master Sword",
@@ -13780,7 +14780,12 @@
       "Exit": "Sacred Grove Master Sword",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Sacred Grove Master Sword => Lost Woods": {
       "ID": "Sacred Grove Master Sword => Lost Woods",
@@ -13788,7 +14793,12 @@
       "Exit": "Lost Woods",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Sacred Grove Master Sword => Sacred Grove Temple of Time": {
       "ID": "Sacred Grove Master Sword => Sacred Grove Temple of Time",
@@ -13796,7 +14806,12 @@
       "Exit": "Sacred Grove Temple of Time",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Sacred Grove Master Sword => Sacred Grove Baba Serpent Grotto": {
       "ID": "Sacred Grove Master Sword => Sacred Grove Baba Serpent Grotto",
@@ -13804,7 +14819,12 @@
       "Exit": "Sacred Grove Baba Serpent Grotto",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Sacred Grove Temple of Time => Sacred Grove Master Sword": {
       "ID": "Sacred Grove Temple of Time => Sacred Grove Master Sword",
@@ -13812,7 +14832,12 @@
       "Exit": "Sacred Grove Master Sword",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Sacred Grove Temple of Time => Temple of Time Entrance": {
       "ID": "Sacred Grove Temple of Time => Temple of Time Entrance",
@@ -13820,7 +14845,12 @@
       "Exit": "Temple of Time Entrance",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Cave of Ordeals Floors 01-11 => Gerudo Desert": {
       "ID": "Cave of Ordeals Floors 01-11 => Gerudo Desert",
@@ -13828,7 +14858,12 @@
       "Exit": "Gerudo Desert",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Cave of Ordeals Floors 01-11 => Cave of Ordeals Floors 12-21": {
       "ID": "Cave of Ordeals Floors 01-11 => Cave of Ordeals Floors 12-21",
@@ -13836,7 +14871,12 @@
       "Exit": "Cave of Ordeals Floors 12-21",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Cave of Ordeals Floors 12-21 => Ordon Province": {
       "ID": "Cave of Ordeals Floors 12-21 => Ordon Province",
@@ -13844,7 +14884,12 @@
       "Exit": "Ordon Province",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Cave of Ordeals Floors 12-21 => Cave of Ordeals Floors 22-31": {
       "ID": "Cave of Ordeals Floors 12-21 => Cave of Ordeals Floors 22-31",
@@ -13852,7 +14897,12 @@
       "Exit": "Cave of Ordeals Floors 22-31",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Cave of Ordeals Floors 22-31 => South Faron Woods": {
       "ID": "Cave of Ordeals Floors 22-31 => South Faron Woods",
@@ -13860,7 +14910,12 @@
       "Exit": "South Faron Woods",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Cave of Ordeals Floors 22-31 => Cave of Ordeals Floors 32-41": {
       "ID": "Cave of Ordeals Floors 22-31 => Cave of Ordeals Floors 32-41",
@@ -13868,7 +14923,12 @@
       "Exit": "Cave of Ordeals Floors 32-41",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Cave of Ordeals Floors 32-41 => Kakariko Village": {
       "ID": "Cave of Ordeals Floors 32-41 => Kakariko Village",
@@ -13876,7 +14936,12 @@
       "Exit": "Kakariko Village",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Cave of Ordeals Floors 32-41 => Cave of Ordeals Floors 42-50": {
       "ID": "Cave of Ordeals Floors 32-41 => Cave of Ordeals Floors 42-50",
@@ -13884,7 +14949,12 @@
       "Exit": "Cave of Ordeals Floors 42-50",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Cave of Ordeals Floors 42-50 => Lake Hylia": {
       "ID": "Cave of Ordeals Floors 42-50 => Lake Hylia",
@@ -13892,7 +14962,12 @@
       "Exit": "Lake Hylia",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Bulblin Camp => Gerudo Desert": {
       "ID": "Bulblin Camp => Gerudo Desert",
@@ -13900,7 +14975,12 @@
       "Exit": "Gerudo Desert",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Bulblin Camp => Outside Arbiters Grounds": {
       "ID": "Bulblin Camp => Outside Arbiters Grounds",
@@ -13908,7 +14988,12 @@
       "Exit": "Outside Arbiters Grounds",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Gerudo Desert Rock Grotto => Gerudo Desert": {
       "ID": "Gerudo Desert Rock Grotto => Gerudo Desert",
@@ -13916,7 +15001,12 @@
       "Exit": "Gerudo Desert",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Gerudo Desert Skulltula Grotto => Gerudo Desert": {
       "ID": "Gerudo Desert Skulltula Grotto => Gerudo Desert",
@@ -13924,7 +15014,12 @@
       "Exit": "Gerudo Desert",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Gerudo Desert => Cave of Ordeals Floors 01-11": {
       "ID": "Gerudo Desert => Cave of Ordeals Floors 01-11",
@@ -13932,7 +15027,12 @@
       "Exit": "Cave of Ordeals Floors 01-11",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Gerudo Desert => Bulblin Camp": {
       "ID": "Gerudo Desert => Bulblin Camp",
@@ -13940,7 +15040,12 @@
       "Exit": "Bulblin Camp",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Gerudo Desert => Gerudo Desert Rock Grotto": {
       "ID": "Gerudo Desert => Gerudo Desert Rock Grotto",
@@ -13948,7 +15053,12 @@
       "Exit": "Gerudo Desert Rock Grotto",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Gerudo Desert => Gerudo Desert Skulltula Grotto": {
       "ID": "Gerudo Desert => Gerudo Desert Skulltula Grotto",
@@ -13956,7 +15066,12 @@
       "Exit": "Gerudo Desert Skulltula Grotto",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Mirror Chamber => Arbiters Grounds Boss Room": {
       "ID": "Mirror Chamber => Arbiters Grounds Boss Room",
@@ -13964,7 +15079,12 @@
       "Exit": "Arbiters Grounds Boss Room",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Mirror Chamber => Palace of Twilight Entrance": {
       "ID": "Mirror Chamber => Palace of Twilight Entrance",
@@ -13972,7 +15092,12 @@
       "Exit": "Palace of Twilight Entrance",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Outside Arbiters Grounds => Bulblin Camp": {
       "ID": "Outside Arbiters Grounds => Bulblin Camp",
@@ -13980,7 +15105,12 @@
       "Exit": "Bulblin Camp",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Outside Arbiters Grounds => Arbiters Grounds Entrance": {
       "ID": "Outside Arbiters Grounds => Arbiters Grounds Entrance",
@@ -13988,7 +15118,12 @@
       "Exit": "Arbiters Grounds Entrance",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Castle Town => Outside Castle Town West": {
       "ID": "Castle Town => Outside Castle Town West",
@@ -13996,7 +15131,12 @@
       "Exit": "Outside Castle Town West",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Castle Town => Eldin Field": {
       "ID": "Castle Town => Eldin Field",
@@ -14004,7 +15144,12 @@
       "Exit": "Eldin Field",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Castle Town => Outside Castle Town South": {
       "ID": "Castle Town => Outside Castle Town South",
@@ -14012,7 +15157,12 @@
       "Exit": "Outside Castle Town South",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Castle Town => Hyrule Castle Entrance": {
       "ID": "Castle Town => Hyrule Castle Entrance",
@@ -14020,7 +15170,12 @@
       "Exit": "Hyrule Castle Entrance",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lake Hylia Bridge Bubble Grotto => Lake Hylia Bridge": {
       "ID": "Lake Hylia Bridge Bubble Grotto => Lake Hylia Bridge",
@@ -14028,7 +15183,12 @@
       "Exit": "Lake Hylia Bridge",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lake Hylia Bridge => Faron Field": {
       "ID": "Lake Hylia Bridge => Faron Field",
@@ -14036,7 +15196,12 @@
       "Exit": "Faron Field",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lake Hylia Bridge => Lake Hylia": {
       "ID": "Lake Hylia Bridge => Lake Hylia",
@@ -14044,7 +15209,12 @@
       "Exit": "Lake Hylia",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lake Hylia Bridge => Lanayru Field": {
       "ID": "Lake Hylia Bridge => Lanayru Field",
@@ -14052,7 +15222,12 @@
       "Exit": "Lanayru Field",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lake Hylia Bridge => Outside Castle Town West": {
       "ID": "Lake Hylia Bridge => Outside Castle Town West",
@@ -14060,7 +15235,12 @@
       "Exit": "Outside Castle Town West",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lake Hylia Bridge => Lake Hylia Bridge Bubble Grotto": {
       "ID": "Lake Hylia Bridge => Lake Hylia Bridge Bubble Grotto",
@@ -14068,7 +15248,12 @@
       "Exit": "Lake Hylia Bridge Bubble Grotto",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lanayru Field Poe Grotto => Lanayru Field": {
       "ID": "Lanayru Field Poe Grotto => Lanayru Field",
@@ -14076,7 +15261,12 @@
       "Exit": "Lanayru Field",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lanayru Field Skulltula Grotto => Lanayru Field": {
       "ID": "Lanayru Field Skulltula Grotto => Lanayru Field",
@@ -14084,7 +15274,12 @@
       "Exit": "Lanayru Field",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lanayru Field => Eldin Field": {
       "ID": "Lanayru Field => Eldin Field",
@@ -14092,7 +15287,12 @@
       "Exit": "Eldin Field",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lanayru Field => Zoras Domain": {
       "ID": "Lanayru Field => Zoras Domain",
@@ -14100,7 +15300,12 @@
       "Exit": "Zoras Domain",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lanayru Field => Outside Castle Town West": {
       "ID": "Lanayru Field => Outside Castle Town West",
@@ -14108,7 +15313,12 @@
       "Exit": "Outside Castle Town West",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lanayru Field => Lanayru Ice Puzzle Cave": {
       "ID": "Lanayru Field => Lanayru Ice Puzzle Cave",
@@ -14116,7 +15326,12 @@
       "Exit": "Lanayru Ice Puzzle Cave",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lanayru Field => Lake Hylia Bridge": {
       "ID": "Lanayru Field => Lake Hylia Bridge",
@@ -14124,7 +15339,12 @@
       "Exit": "Lake Hylia Bridge",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lanayru Field => Hidden Village": {
       "ID": "Lanayru Field => Hidden Village",
@@ -14132,7 +15352,12 @@
       "Exit": "Hidden Village",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lanayru Field => Lanayru Field Skulltula Grotto": {
       "ID": "Lanayru Field => Lanayru Field Skulltula Grotto",
@@ -14140,7 +15365,12 @@
       "Exit": "Lanayru Field Skulltula Grotto",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lanayru Field => Lanayru Field Poe Grotto": {
       "ID": "Lanayru Field => Lanayru Field Poe Grotto",
@@ -14148,7 +15378,12 @@
       "Exit": "Lanayru Field Poe Grotto",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lanayru Ice Puzzle Cave => Lanayru Field": {
       "ID": "Lanayru Ice Puzzle Cave => Lanayru Field",
@@ -14156,7 +15391,12 @@
       "Exit": "Lanayru Field",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Outside Castle Town South => Castle Town": {
       "ID": "Outside Castle Town South => Castle Town",
@@ -14164,7 +15404,12 @@
       "Exit": "Castle Town",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Outside Castle Town South => Faron Field": {
       "ID": "Outside Castle Town South => Faron Field",
@@ -14172,7 +15417,12 @@
       "Exit": "Faron Field",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Outside Castle Town South => Outside South Castle Town Tektite Grotto": {
       "ID": "Outside Castle Town South => Outside South Castle Town Tektite Grotto",
@@ -14180,7 +15430,12 @@
       "Exit": "Outside South Castle Town Tektite Grotto",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Outside Castle Town South => Lake Hylia": {
       "ID": "Outside Castle Town South => Lake Hylia",
@@ -14188,7 +15443,12 @@
       "Exit": "Lake Hylia",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Outside Castle Town West => Lake Hylia Bridge": {
       "ID": "Outside Castle Town West => Lake Hylia Bridge",
@@ -14196,7 +15456,12 @@
       "Exit": "Lake Hylia Bridge",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Outside Castle Town West => Lanayru Field": {
       "ID": "Outside Castle Town West => Lanayru Field",
@@ -14204,7 +15469,12 @@
       "Exit": "Lanayru Field",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Outside Castle Town West => Castle Town": {
       "ID": "Outside Castle Town West => Castle Town",
@@ -14212,7 +15482,12 @@
       "Exit": "Castle Town",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Outside Castle Town West => West Hyrule Field Helmasaur Grotto": {
       "ID": "Outside Castle Town West => West Hyrule Field Helmasaur Grotto",
@@ -14220,7 +15495,12 @@
       "Exit": "West Hyrule Field Helmasaur Grotto",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Outside South Castle Town Tektite Grotto => Outside Castle Town South": {
       "ID": "Outside South Castle Town Tektite Grotto => Outside Castle Town South",
@@ -14228,7 +15508,12 @@
       "Exit": "Outside Castle Town South",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "West Hyrule Field Helmasaur Grotto => Outside Castle Town West": {
       "ID": "West Hyrule Field Helmasaur Grotto => Outside Castle Town West",
@@ -14236,7 +15521,12 @@
       "Exit": "Outside Castle Town West",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lake Hylia Long Cave => Lake Hylia": {
       "ID": "Lake Hylia Long Cave => Lake Hylia",
@@ -14244,7 +15534,12 @@
       "Exit": "Lake Hylia",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lake Hylia Shell Blade Grotto => Lake Hylia": {
       "ID": "Lake Hylia Shell Blade Grotto => Lake Hylia",
@@ -14252,7 +15547,12 @@
       "Exit": "Lake Hylia",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lake Hylia Water Toadpoli Grotto => Lake Hylia": {
       "ID": "Lake Hylia Water Toadpoli Grotto => Lake Hylia",
@@ -14260,7 +15560,12 @@
       "Exit": "Lake Hylia",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lake Hylia => Gerudo Desert": {
       "ID": "Lake Hylia => Gerudo Desert",
@@ -14268,7 +15573,12 @@
       "Exit": "Gerudo Desert",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lake Hylia => Lake Hylia Long Cave": {
       "ID": "Lake Hylia => Lake Hylia Long Cave",
@@ -14276,7 +15586,12 @@
       "Exit": "Lake Hylia Long Cave",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lake Hylia => Lake Hylia Water Toadpoli Grotto": {
       "ID": "Lake Hylia => Lake Hylia Water Toadpoli Grotto",
@@ -14284,7 +15599,12 @@
       "Exit": "Lake Hylia Water Toadpoli Grotto",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lake Hylia => Lake Hylia Shell Blade Grotto": {
       "ID": "Lake Hylia => Lake Hylia Shell Blade Grotto",
@@ -14292,7 +15612,12 @@
       "Exit": "Lake Hylia Shell Blade Grotto",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lake Hylia => Lakebed Temple Entrance": {
       "ID": "Lake Hylia => Lakebed Temple Entrance",
@@ -14300,7 +15625,12 @@
       "Exit": "Lakebed Temple Entrance",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lake Hylia => City in The Sky Entrance": {
       "ID": "Lake Hylia => City in The Sky Entrance",
@@ -14308,7 +15638,12 @@
       "Exit": "City in The Sky Entrance",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lake Hylia => Lake Hylia Bridge": {
       "ID": "Lake Hylia => Lake Hylia Bridge",
@@ -14316,7 +15651,12 @@
       "Exit": "Lake Hylia Bridge",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Lake Hylia => Zoras Domain": {
       "ID": "Lake Hylia => Zoras Domain",
@@ -14324,7 +15664,12 @@
       "Exit": "Zoras Domain",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Zoras Domain => Lanayru Field": {
       "ID": "Zoras Domain => Lanayru Field",
@@ -14332,7 +15677,12 @@
       "Exit": "Lanayru Field",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Zoras Domain => Snowpeak Climb": {
       "ID": "Zoras Domain => Snowpeak Climb",
@@ -14340,7 +15690,12 @@
       "Exit": "Snowpeak Climb",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Ordon Province => South Faron Woods": {
       "ID": "Ordon Province => South Faron Woods",
@@ -14348,7 +15703,12 @@
       "Exit": "South Faron Woods",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Ordon Province => Ordon Ranch Grotto": {
       "ID": "Ordon Province => Ordon Ranch Grotto",
@@ -14356,7 +15716,12 @@
       "Exit": "Ordon Ranch Grotto",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Ordon Ranch Grotto => Ordon Province": {
       "ID": "Ordon Ranch Grotto => Ordon Province",
@@ -14364,7 +15729,12 @@
       "Exit": "Ordon Province",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Climb => Zoras Domain": {
       "ID": "Snowpeak Climb => Zoras Domain",
@@ -14372,7 +15742,12 @@
       "Exit": "Zoras Domain",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Climb => Snowpeak Summit": {
       "ID": "Snowpeak Climb => Snowpeak Summit",
@@ -14380,7 +15755,12 @@
       "Exit": "Snowpeak Summit",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Climb => Snowpeak Freezard Grotto": {
       "ID": "Snowpeak Climb => Snowpeak Freezard Grotto",
@@ -14388,7 +15768,12 @@
       "Exit": "Snowpeak Freezard Grotto",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Freezard Grotto => Snowpeak Climb": {
       "ID": "Snowpeak Freezard Grotto => Snowpeak Climb",
@@ -14396,7 +15781,12 @@
       "Exit": "Snowpeak Climb",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Summit => Snowpeak Climb": {
       "ID": "Snowpeak Summit => Snowpeak Climb",
@@ -14404,7 +15794,12 @@
       "Exit": "Snowpeak Climb",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     },
     "Snowpeak Summit => Snowpeak Ruins Entrance": {
       "ID": "Snowpeak Summit => Snowpeak Ruins Entrance",
@@ -14412,7 +15807,12 @@
       "Exit": "Snowpeak Ruins Entrance",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     }
   },
   "HintSpots": {},
@@ -14423,6 +15823,7 @@
       "DisplayName": "Hyrule Castle Requirements",
       "CurrentValue": "Vanilla",
       "SubCategory": "Access Options",
+      "Logic": "true",
       "Values": {
         "Vanilla": {
           "LogicReplacements": [],
@@ -14469,6 +15870,7 @@
       "DisplayName": "Palace of Twilight Requirements",
       "CurrentValue": "Vanilla",
       "SubCategory": "Access Options",
+      "Logic": "true",
       "Values": {
         "Vanilla": {
           "LogicReplacements": [],
@@ -14507,6 +15909,7 @@
       "DisplayName": "Open Faron Woods",
       "CurrentValue": "Closed",
       "SubCategory": "Access Options",
+      "Logic": "true",
       "Values": {
         "Closed": {
           "LogicReplacements": [],
@@ -14529,6 +15932,7 @@
       "DisplayName": "Shuffle Gifts From NPCs",
       "CurrentValue": "False",
       "SubCategory": "Misc",
+      "Logic": "true",
       "Values": {
         "False": {
           "LogicReplacements": [],
@@ -14551,6 +15955,7 @@
       "DisplayName": "Small Keys",
       "CurrentValue": "vanilla",
       "SubCategory": "Dungeon Items",
+      "Logic": "true",
       "Values": {
         "vanilla": {
           "Name": "Vanilla",
@@ -14598,6 +16003,7 @@
       "DisplayName": "Big Keys",
       "CurrentValue": "vanilla",
       "SubCategory": "Dungeon Items",
+      "Logic": "true",
       "Values": {
         "vanilla": {
           "Name": "Vanilla",
@@ -14645,6 +16051,7 @@
       "DisplayName": "Skip Prologue",
       "CurrentValue": "False",
       "SubCategory": "Timesavers",
+      "Logic": "true",
       "Values": {
         "False": {
           "LogicReplacements": [],
@@ -14667,6 +16074,7 @@
       "DisplayName": "Faron Twilight Cleared",
       "CurrentValue": "False",
       "SubCategory": "Timesavers",
+      "Logic": "true",
       "Values": {
         "False": {
           "LogicReplacements": [],
@@ -14689,6 +16097,7 @@
       "DisplayName": "Eldin Twilight Cleared",
       "CurrentValue": "False",
       "SubCategory": "Timesavers",
+      "Logic": "true",
       "Values": {
         "False": {
           "LogicReplacements": [],
@@ -14711,6 +16120,7 @@
       "DisplayName": "Lanayru Twilight Cleared",
       "CurrentValue": "False",
       "SubCategory": "Timesavers",
+      "Logic": "true",
       "Values": {
         "False": {
           "LogicReplacements": [],
@@ -14733,6 +16143,7 @@
       "DisplayName": "Skip Midna's Desperate Hour",
       "CurrentValue": "False",
       "SubCategory": "Timesavers",
+      "Logic": "true",
       "Values": {
         "False": {
           "LogicReplacements": [],
@@ -14755,6 +16166,7 @@
       "DisplayName": "Unrequired Dungeons Are Barren",
       "CurrentValue": "False",
       "SubCategory": "Timesavers",
+      "Logic": "true",
       "Values": {
         "False": {
           "LogicReplacements": [],
@@ -14777,6 +16189,7 @@
       "DisplayName": "Open Door of Time",
       "CurrentValue": "False",
       "SubCategory": "Timesavers",
+      "Logic": "true",
       "Values": {
         "False": {
           "LogicReplacements": [],
@@ -14799,6 +16212,7 @@
       "DisplayName": "Lakebed Does Not Require Water Bombs",
       "CurrentValue": "False",
       "SubCategory": "Dungeon Entrance Settings",
+      "Logic": "true",
       "Values": {
         "False": {
           "LogicReplacements": [],
@@ -14821,6 +16235,7 @@
       "DisplayName": "Arbiters Does Not Require Bulblin Camp",
       "CurrentValue": "False",
       "SubCategory": "Dungeon Entrance Settings",
+      "Logic": "true",
       "Values": {
         "False": {
           "LogicReplacements": [],
@@ -14843,6 +16258,7 @@
       "DisplayName": "Snowpeak Does Not Require Reekfish Scent",
       "CurrentValue": "False",
       "SubCategory": "Dungeon Entrance Settings",
+      "Logic": "true",
       "Values": {
         "False": {
           "LogicReplacements": [],
@@ -14865,6 +16281,7 @@
       "DisplayName": "City Does Not Require Filled Skybook",
       "CurrentValue": "False",
       "SubCategory": "Dungeon Entrance Settings",
+      "Logic": "true",
       "Values": {
         "False": {
           "LogicReplacements": [],
@@ -14887,6 +16304,7 @@
       "DisplayName": "Goron Mines Entrance",
       "CurrentValue": "Closed",
       "SubCategory": "Dungeon Entrance Settings",
+      "Logic": "true",
       "Values": {
         "Closed": {
           "LogicReplacements": [],
@@ -14917,6 +16335,7 @@
       "DisplayName": "Temple of Time Entrance",
       "CurrentValue": "Closed",
       "SubCategory": "Dungeon Entrance Settings",
+      "Logic": "true",
       "Values": {
         "Closed": {
           "LogicReplacements": [],
@@ -14947,6 +16366,7 @@
       "DisplayName": "Transform Anywhere",
       "CurrentValue": "False",
       "SubCategory": "Additional Settings",
+      "Logic": "true",
       "Values": {
         "False": {
           "LogicReplacements": [],
@@ -14969,6 +16389,7 @@
       "DisplayName": "Increase Wallet Capacity",
       "CurrentValue": "False",
       "SubCategory": "Additional Settings",
+      "Logic": "true",
       "Values": {
         "False": {
           "LogicReplacements": [],
@@ -14991,6 +16412,7 @@
       "DisplayName": "logicRules",
       "CurrentValue": "Glitchless",
       "SubCategory": "static",
+      "Logic": "true",
       "Values": {
         "Glitchless": {
           "LogicReplacements": [],
@@ -15006,6 +16428,7 @@
       "DisplayName": "",
       "CurrentValue": "False",
       "SubCategory": "Dungeon Entrance Settings",
+      "Logic": "true",
       "Values": {
         "False": {
           "LogicReplacements": [],
@@ -15017,6 +16440,64 @@
       }
     }
   },
-  "Variables": {},
+  "Variables": {
+    "ItemWheelItems": {
+      "ID": "ItemWheelItems",
+      "Static": true,
+      "Logic": "true",
+      "Value": [
+        "Progressive_Clawshot",
+        "Progressive_Dominion_Rod",
+        "Ball_and_Chain",
+        "Spinner",
+        "Progressive_Bow",
+        "Iron_Boots",
+        "Boomerang",
+        "Lantern",
+        "Slingshot",
+        "Progressive_Fishing_Rod",
+        "Hawkeye",
+        "Filled_Bomb_Bag",
+        "Empty_Bottle",
+        "Jovani_Bottle",
+        "Sera_Bottle",
+        "Coro_Bottle",
+        "Aurus_Memo",
+        "Renados_Letter",
+        "Horse_Call"
+      ]
+    },
+    "AllBugs": {
+      "ID": "AllBugs",
+      "Static": true,
+      "Logic": "true",
+      "Value": [
+        "Female_Phasmid",
+        "Male_Phasmid",
+        "Female_Grasshopper",
+        "Male_Grasshopper",
+        "Female_Pill_Bug",
+        "Male_Pill_Bug",
+        "Male_Ant",
+        "Female_Ant",
+        "Female_Beetle",
+        "Male_Beetle",
+        "Female_Snail",
+        "Male_Snail",
+        "Female_Dayfly",
+        "Male_Dayfly",
+        "Female_Mantis",
+        "Male_Mantis",
+        "Female_Stag_Beetle",
+        "Male_Stag_Beetle",
+        "Female_Ladybug",
+        "Male_Ladybug",
+        "Female_Dragonfly",
+        "Female_Butterfly",
+        "Male_Butterfly",
+        "Male_Dragonfly"
+      ]
+    }
+  },
   "AdditionalLogic": []
 }

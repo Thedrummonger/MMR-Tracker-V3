@@ -276,7 +276,11 @@ namespace Windows_Form_Frontend
 
         private List<object> CreateGotoDataFromList(Dictionary<string, LogicEntryType> GotoList)
         {
-            GotoList = GotoList.Concat(AddItemsFromFunction(GotoList)).OrderBy(x => x.Value).ThenBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
+            foreach(var i in AddItemsFromFunction(GotoList))
+            {
+                if (!GotoList.ContainsKey(i.Key)) { GotoList.Add(i.Key, i.Value); }
+            }
+            GotoList = GotoList.OrderBy(x => x.Value).ThenBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
             List<object> list = new List<object>();
             LogicEntryType CurrentType = LogicEntryType.error;
             foreach (var i in GotoList)

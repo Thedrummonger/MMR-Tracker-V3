@@ -6057,7 +6057,8 @@
       "Id": "Kakariko Village => Lake Hylia",
       "RequiredItems": [
         "CanUseWaterBombs",
-        "Iron_Boots"
+        "Iron_Boots",
+        "Gate_Keys"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -9715,14 +9716,7 @@
       "RequiredItems": [
         "'Ordon Province'"
       ],
-      "ConditionalItems": [
-        [
-          "Progressive_Fishing_Rod, 1"
-        ],
-        [
-          "option{skipPrologue, True}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -9981,7 +9975,6 @@
       "Id": "Snowpeak Freezard Grotto Chest",
       "RequiredItems": [
         "'Snowpeak Freezard Grotto'",
-        "CanDefeatIceKeese",
         "CanDefeatFreezard",
         "Ball_and_Chain"
       ],
@@ -12358,46 +12351,17 @@
     {
       "Id": "CanDefeatDeathSword",
       "RequiredItems": [
+        "HasSword",
         "Shadow_Crystal"
       ],
       "ConditionalItems": [
         [
-          "HasSword",
           "Boomerang"
         ],
         [
-          "Ball_and_Chain",
-          "Boomerang"
-        ],
-        [
-          "CanDoNicheStuff",
-          "Iron_Boots",
-          "Boomerang"
-        ],
-        [
-          "HasSword",
           "Progressive_Bow, 1"
         ],
         [
-          "Ball_and_Chain",
-          "Progressive_Bow, 1"
-        ],
-        [
-          "CanDoNicheStuff",
-          "Iron_Boots",
-          "Progressive_Bow, 1"
-        ],
-        [
-          "HasSword",
-          "Progressive_Clawshot, 1"
-        ],
-        [
-          "Ball_and_Chain",
-          "Progressive_Clawshot, 1"
-        ],
-        [
-          "CanDoNicheStuff",
-          "Iron_Boots",
           "Progressive_Clawshot, 1"
         ]
       ],
@@ -12773,6 +12737,7 @@
           "hasBombs"
         ],
         [
+          "CanDoNicheStuff",
           "HasSword",
           "Progressive_Hidden_Skill, 6"
         ],
@@ -12850,25 +12815,27 @@
     {
       "Id": "canFreeAllMonkeys",
       "RequiredItems": [
-        "canBreakMonkeyCage"
+        "canBreakMonkeyCage",
+        "canBurnWebs",
+        "Boomerang",
+        "CanDefeatBokoblin"
       ],
       "ConditionalItems": [
         [
-          "Lantern"
+          "Lantern",
+          "option{smallKeySettings, Keysy}"
         ],
         [
           "option{smallKeySettings, Keysy}",
-          "hasBombs",
-          "canBurnWebs",
-          "Boomerang",
-          "CanDefeatBokoblin"
+          "hasBombs"
         ],
         [
           "option{smallKeySettings, Keysy}",
-          "Iron_Boots",
-          "canBurnWebs",
-          "Boomerang",
-          "CanDefeatBokoblin"
+          "Iron_Boots"
+        ],
+        [
+          "Lantern",
+          "Forest_Temple_Small_Key, 4"
         ]
       ],
       "TimeNeeded": "None",
@@ -12888,6 +12855,9 @@
         ],
         [
           "Boomerang"
+        ],
+        [
+          "Slingshot"
         ]
       ],
       "TimeNeeded": "None",
@@ -12981,13 +12951,11 @@
         [
           "HasSword",
           "Slingshot",
-          "Progressive_Fishing_Rod, 1",
           "North_Faron_Woods_Gate_Key"
         ],
         [
           "HasSword",
           "Slingshot",
-          "Progressive_Fishing_Rod, 1",
           "option{smallKeySettings, Keysy}"
         ],
         [
@@ -13165,88 +13133,6 @@
       "IsTrick": false
     },
     {
-      "Id": "HasBug",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "Female_Phasmid"
-        ],
-        [
-          "Male_Phasmid"
-        ],
-        [
-          "Female_Grasshopper"
-        ],
-        [
-          "Male_Grasshopper"
-        ],
-        [
-          "Female_Pill_Bug"
-        ],
-        [
-          "Male_Pill_Bug"
-        ],
-        [
-          "Male_Ant"
-        ],
-        [
-          "Female_Ant"
-        ],
-        [
-          "Female_Beetle"
-        ],
-        [
-          "Male_Beetle"
-        ],
-        [
-          "Female_Snail"
-        ],
-        [
-          "Male_Snail"
-        ],
-        [
-          "Female_Dayfly"
-        ],
-        [
-          "Male_Dayfly"
-        ],
-        [
-          "Female_Mantis"
-        ],
-        [
-          "Male_Mantis"
-        ],
-        [
-          "Female_Stag_Beetle"
-        ],
-        [
-          "Male_Stag_Beetle"
-        ],
-        [
-          "Female_Ladybug"
-        ],
-        [
-          "Male_Ladybug"
-        ],
-        [
-          "Female_Dragonfly"
-        ],
-        [
-          "Female_Butterfly"
-        ],
-        [
-          "Male_Butterfly"
-        ],
-        [
-          "Male_Dragonfly"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
       "Id": "CanDoDifficultCombat",
       "RequiredItems": [
         "false"
@@ -13332,12 +13218,118 @@
       "IsTrick": false
     },
     {
-      "Id": "CanDoBSMoonBoots",
+      "Id": "HasHeavyMod",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "Iron_Boots"
+        ],
+        [
+          "Magic_Armor"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "HasCutsceneItem",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "Progressive_Sky_Book, 1"
+        ],
+        [
+          "HasBottle"
+        ],
+        [
+          "Horse_Call"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CanDoLJA",
       "RequiredItems": [
-        "Progressive_Hidden_Skill, 3",
-        "Magic_Armor"
+        "HasSword",
+        "Boomerang"
       ],
       "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CanDoJSLJA",
+      "RequiredItems": [
+        "HasSword",
+        "Boomerang",
+        "Progressive_Hidden_Skill, 6"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CanDoMapGlitch",
+      "RequiredItems": [
+        "Shadow_Crystal",
+        "Kakariko Gorge"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CanDoStorage",
+      "RequiredItems": [
+        "CanDoMapGlitch",
+        "HasOneHandedItem"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "HasOneHandedItem",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "HasSword"
+        ],
+        [
+          "HasBottle"
+        ],
+        [
+          "Boomerang"
+        ],
+        [
+          "Progressive_Clawshot, 1"
+        ],
+        [
+          "Lantern"
+        ],
+        [
+          "Progressive_Bow, 1"
+        ],
+        [
+          "Slingshot"
+        ],
+        [
+          "Progressive_Dominion_Rod, 1"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -13353,9 +13345,59 @@
           "Magic_Armor"
         ],
         [
-          "Iron_Boots"
+          "Iron_Boots",
+          "ItemWheelItems, 3"
         ]
       ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CanDoJSMoonBoots",
+      "RequiredItems": [
+        "CanDoMoonBoots",
+        "Progressive_Hidden_Skill, 6"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CanDoBSMoonBoots",
+      "RequiredItems": [
+        "Progressive_Hidden_Skill, 3",
+        "Magic_Armor"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CanDoEBMoonBoots",
+      "RequiredItems": [
+        "CanDoMoonBoots",
+        "Progressive_Hidden_Skill, 1",
+        "Progressive_Sword, 2"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CanDoFlyGlitch",
+      "RequiredItems": [
+        "Progressive_Fishing_Rod, 1",
+        "HasHeavyMod"
+      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -13372,16 +13414,146 @@
           "Magic_Armor"
         ],
         [
-          "Progressive_Clawshot",
+          "Progressive_Clawshot, 1",
           "Magic_Armor"
         ],
         [
           "HasSword",
+          "Iron_Boots",
+          "ItemWheelItems, 3"
+        ],
+        [
+          "Progressive_Clawshot, 1",
+          "Iron_Boots",
+          "ItemWheelItems, 3"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CanDoHiddenVillageGlitched",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "Progressive_Bow, 1"
+        ],
+        [
+          "Ball_and_Chain"
+        ],
+        [
+          "Slingshot",
+          "Shadow_Crystal"
+        ],
+        [
+          "Slingshot",
+          "HasSword"
+        ],
+        [
+          "Slingshot",
+          "hasBombs"
+        ],
+        [
+          "Slingshot",
           "Iron_Boots"
         ],
         [
-          "Progressive_Clawshot",
-          "Iron_Boots"
+          "Slingshot",
+          "Spinner"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CanDoFTWindlessBridgeRoom",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "hasBombs"
+        ],
+        [
+          "CanDoBSMoonBoots"
+        ],
+        [
+          "CanDoJSMoonBoots"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "canClearForestGlitched",
+      "RequiredItems": [
+        "canCompletePrologue"
+      ],
+      "ConditionalItems": [
+        [
+          "option{faronWoodsLogic, Open}"
+        ],
+        [
+          "canCompleteForestTemple"
+        ],
+        [
+          "CanDoLJA"
+        ],
+        [
+          "CanDoMapGlitch"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CanCompleteEldinTwilightGlitched",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "option{eldinTwilightCleared}"
+        ],
+        [
+          "canClearForestGlitched"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "CanSkipKeyToDekuToad",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "option{smallKeySettings, Keysy}"
+        ],
+        [
+          "Progressive_Hidden_Skill, 3"
+        ],
+        [
+          "CanDoBSMoonBoots"
+        ],
+        [
+          "CanDoJSMoonBoots"
+        ],
+        [
+          "CanDoLJA"
+        ],
+        [
+          "hasBombs",
+          "HasHeavyMod"
+        ],
+        [
+          "hasBombs",
+          "Progressive_Hidden_Skill, 6"
         ]
       ],
       "TimeNeeded": "None",
@@ -13393,6 +13565,17 @@
       "Id": "DefeatGanon",
       "RequiredItems": [
         "Ganondorf Castle"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "HasBug",
+      "RequiredItems": [
+        "AllBugs, 1"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",

@@ -22,7 +22,8 @@ namespace Windows_Form_Frontend
             //WinformTesting.WWRCreateData();
             //TestFuncParse();
             //PMRCreateData();
-            MMR_Tracker_V3.OtherGames.TPRV2.ReadAndParse.ReadLines();
+            //MMR_Tracker_V3.OtherGames.TPRV2.ReadAndParse.ReadLines();
+            TPRCreateData();
         }
 
         public static void CreateMMRItemTrackerObject()
@@ -930,7 +931,7 @@ namespace Windows_Form_Frontend
             MMR_Tracker_V3.OtherGames.TPRando.ReadAndParseData.CreateFiles(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary);
             WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(Logic), JsonConvert.SerializeObject(dictionary));
             Testing.TestLogicForInvalidItems(MainInterface.InstanceContainer);
-            //Testing.TestLocationsForInvalidVanillaItem(MainInterface.InstanceContainer);
+            Testing.TestLocationsForInvalidVanillaItem(MainInterface.InstanceContainer);
 
             //Testing.PrintObjectToConsole(MMR_Tracker_V3.OtherGames.TPRando.ParseMacrosFromCode.ReadMacrosFromCode());
 
