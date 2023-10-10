@@ -292,7 +292,7 @@
       "Area": "Arbiters Grounds",
       "ValidItemTypes": [
         "item",
-        "Overworld",
+        "Dungeon",
         "Poe",
         "Arbiters Grounds"
       ],
@@ -312,7 +312,7 @@
       "Area": "Arbiters Grounds",
       "ValidItemTypes": [
         "item",
-        "Overworld",
+        "Dungeon",
         "Poe",
         "Arbiters Grounds"
       ],
@@ -398,7 +398,7 @@
       "Area": "Arbiters Grounds",
       "ValidItemTypes": [
         "item",
-        "Overworld",
+        "Dungeon",
         "Poe",
         "Arbiters Grounds"
       ],
@@ -502,7 +502,7 @@
       "Area": "Arbiters Grounds",
       "ValidItemTypes": [
         "item",
-        "Overworld",
+        "Dungeon",
         "Poe",
         "Arbiters Grounds"
       ],
@@ -650,7 +650,7 @@
       "Area": "City in The Sky",
       "ValidItemTypes": [
         "item",
-        "Overworld",
+        "Dungeon",
         "Poe",
         "City in The Sky"
       ],
@@ -1095,7 +1095,7 @@
       "Area": "City in The Sky",
       "ValidItemTypes": [
         "item",
-        "Overworld",
+        "Dungeon",
         "Poe",
         "City in The Sky"
       ],
@@ -3816,7 +3816,7 @@
       "Area": "Snowpeak Ruins",
       "ValidItemTypes": [
         "item",
-        "Overworld",
+        "Dungeon",
         "Poe",
         "Snowpeak Ruins"
       ],
@@ -3836,7 +3836,7 @@
       "Area": "Snowpeak Ruins",
       "ValidItemTypes": [
         "item",
-        "Overworld",
+        "Dungeon",
         "Poe",
         "Snowpeak Ruins"
       ],
@@ -3902,7 +3902,7 @@
       "Area": "Snowpeak Ruins",
       "ValidItemTypes": [
         "item",
-        "Overworld",
+        "Dungeon",
         "Poe",
         "Snowpeak Ruins"
       ],
@@ -4203,7 +4203,7 @@
       "Area": "Temple of Time",
       "ValidItemTypes": [
         "item",
-        "Overworld",
+        "Dungeon",
         "Poe",
         "Temple of Time"
       ],
@@ -4460,7 +4460,7 @@
       "Area": "Temple of Time",
       "ValidItemTypes": [
         "item",
-        "Overworld",
+        "Dungeon",
         "Poe",
         "Temple of Time"
       ],

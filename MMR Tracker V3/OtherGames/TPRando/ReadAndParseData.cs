@@ -97,6 +97,7 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
             FormatLogic(TRPLogic);
             CreateOptions(TRPDictionary);
             CreateAdditionalData(TRPLogic, TRPDictionary);
+            AlterSpecificLogic(TRPLogic);
 
             string TestFolder = Path.Combine(References.TestingPaths.GetDevCodePath(), "MMR Tracker V3", "Recources");
             string FinalDictFile = Path.Combine(TestFolder, "Dictionaries", @"TPR V1.json");
@@ -104,6 +105,31 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
             File.WriteAllText(FinalLogicFile, JsonConvert.SerializeObject(TRPLogic, Testing._NewtonsoftJsonSerializerOptions));
             File.WriteAllText(FinalDictFile, JsonConvert.SerializeObject(TRPDictionary, Testing._NewtonsoftJsonSerializerOptions));
             GetItemCOunts(CheckData);
+        }
+
+        private static void AlterSpecificLogic(MMRData.LogicFile tRPLogic)
+        {
+            List<Tuple<string, string>> LogicAlterations = new List<Tuple<string, string>>()
+            {
+               new("canCompleteAllDungeons", "Progressive_Mirror_Shard, 3 and Progressive_Fused_Shadow, 3"),
+               //new("canCompleteForestTemple", "check{Forest Temple Dungeon Reward}"),
+               //new("canCompleteGoronMines", "check{Goron Mines Dungeon Reward}"),
+               //new("canCompleteLakebedTemple", "check{Lakebed Temple Dungeon Reward}"),
+               //new("canCompleteSnowpeakRuins", "check{Snowpeak Ruins Dungeon Reward}"),
+               //new("canCompleteArbitersGrounds", "check{Arbiters Grounds Stallord Heart Container}"),
+               //new("canCompleteTempleofTime", "check{Temple of Time Dungeon Reward}"),
+               //new("canCompleteCityinTheSky", "check{City in The Sky Dungeon Reward}"),
+               //new("canCompletePalaceofTwilight", "check{Palace of Twilight Zant Heart Container}"),
+            };
+            foreach(var item in LogicAlterations)
+            {
+                var Target = tRPLogic.Logic.First(x => x.Id == item.Item1);
+                Target.RequiredItems.Clear();
+                Target.ConditionalItems.Clear();
+                Target.ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(TPLogicParser, item.Item2, item.Item1);
+                LogicUtilities.RemoveRedundantConditionals(Target);
+                LogicUtilities.MakeCommonConditionalsRequirements(Target);
+            }
         }
 
         private static void CreateAdditionalData(MMRData.LogicFile tRPLogic, LogicDictionaryData.LogicDictionary tRPDictionary)
@@ -405,7 +431,7 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
 
         private static List<RoomData> GetRoomData()
         {
-            string WorldFiles = Path.Combine(References.TestingPaths.GetDevTestingPath(), "TPRando", "Randomizer-Web-Generator-main", "Generator", "World");
+            string WorldFiles = Path.Combine(References.TestingPaths.GetDevTestingPath(), "TPRando", "Randomizer-Web-Generator-development", "Generator", "World");
             string Rooms = Path.Combine(WorldFiles, "Rooms");
 
             List<RoomData> AllRooms = new List<RoomData>();
@@ -431,7 +457,7 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
 
         private static List<CheckData> GetCheckData()
         {
-            string WorldFiles = Path.Combine(References.TestingPaths.GetDevTestingPath(), "TPRando", "Randomizer-Web-Generator-main", "Generator", "World");
+            string WorldFiles = Path.Combine(References.TestingPaths.GetDevTestingPath(), "TPRando", "Randomizer-Web-Generator-development", "Generator", "World");
             string Checks = Path.Combine(WorldFiles, "Checks");
             string Rooms = Path.Combine(WorldFiles, "Rooms");
 

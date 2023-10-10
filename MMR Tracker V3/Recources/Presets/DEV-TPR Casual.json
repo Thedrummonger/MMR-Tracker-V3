@@ -13117,14 +13117,8 @@
     {
       "Id": "canCompleteAllDungeons",
       "RequiredItems": [
-        "canCompleteForestTemple",
-        "canCompleteGoronMines",
-        "canCompleteLakebedTemple",
-        "canCompleteArbitersGrounds",
-        "canCompleteSnowpeakRuins",
-        "canCompleteTempleofTime",
-        "canCompleteCityinTheSky",
-        "canCompletePalaceofTwilight"
+        "Progressive_Mirror_Shard, 3",
+        "Progressive_Fused_Shadow, 3"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
