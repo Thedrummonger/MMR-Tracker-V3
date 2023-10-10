@@ -583,10 +583,57 @@
     },
     {
       "Id": "OOT_EVENT_WATER_TEMPLE_CLEARED",
-      "RequiredItems": [
-        "OOT Water Temple After Boss"
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "contains{OOT Water Temple Antichamber => OOT Water Temple Boss, OOT Deku Tree Boss}",
+          "check{OOT Deku Tree Boss}"
+        ],
+        [
+          "contains{OOT Water Temple Antichamber => OOT Water Temple Boss, OOT Dodongo Cavern Boss}",
+          "check{OOT Dodongo Cavern Boss}"
+        ],
+        [
+          "contains{OOT Water Temple Antichamber => OOT Water Temple Boss, OOT Jabu-Jabu Boss}",
+          "check{OOT Jabu-Jabu Boss}"
+        ],
+        [
+          "contains{OOT Water Temple Antichamber => OOT Water Temple Boss, OOT Forest Temple Boss}",
+          "check{OOT Forest Temple Boss}"
+        ],
+        [
+          "contains{OOT Water Temple Antichamber => OOT Water Temple Boss, OOT Fire Temple Boss}",
+          "check{OOT Fire Temple Boss}"
+        ],
+        [
+          "contains{OOT Water Temple Antichamber => OOT Water Temple Boss, OOT Water Temple Boss}",
+          "check{OOT Water Temple Boss}"
+        ],
+        [
+          "contains{OOT Water Temple Antichamber => OOT Water Temple Boss, OOT Spirit Temple Boss}",
+          "check{OOT Spirit Temple Boss}"
+        ],
+        [
+          "contains{OOT Water Temple Antichamber => OOT Water Temple Boss, OOT Shadow Temple Boss}",
+          "check{OOT Shadow Temple Boss}"
+        ],
+        [
+          "contains{OOT Water Temple Antichamber => OOT Water Temple Boss, MM Woodfall Temple Boss}",
+          "check{MM Woodfall Temple Boss}"
+        ],
+        [
+          "contains{OOT Water Temple Antichamber => OOT Water Temple Boss, MM Great Bay Temple Boss}",
+          "check{MM Great Bay Temple Boss}"
+        ],
+        [
+          "contains{OOT Water Temple Antichamber => OOT Water Temple Boss, MM Snowhead Temple Boss}",
+          "check{MM Snowhead Temple Boss}"
+        ],
+        [
+          "contains{OOT Water Temple Antichamber => OOT Water Temple Boss, MM Stone Tower Temple Boss}",
+          "check{MM Stone Tower Boss}"
+        ]
       ],
-      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -8326,6 +8373,7 @@
     {
       "Id": "OOT Ganon Castle => OOT Ganon Castle Stairs",
       "RequiredItems": [
+        "OOT_ganon_barrier",
         "OOT Ganon Castle",
         "var{Ganon_MQ, false}"
       ],
@@ -16005,7 +16053,8 @@
           "OOT_hidden_grotto_bomb"
         ],
         [
-          "OOT_can_hammer"
+          "OOT_can_hammer",
+          "OOT_stone_of_agony"
         ]
       ],
       "TimeNeeded": "None",
@@ -16708,7 +16757,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Market => OOT Treasure Game",
+      "Id": "OOT Market => OOT Treasure Chest Game",
       "RequiredItems": [
         "OOT_is_night",
         "OOT_is_child",
@@ -18084,42 +18133,6 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Treasure Game HP",
-      "RequiredItems": [
-        "OOT_has_lens_strict",
-        "OOT_has_rupees",
-        "OOT Treasure Game"
-      ],
-      "ConditionalItems": [
-        [
-          "var{childWallets}",
-          "OOT_WALLET, 1"
-        ],
-        [
-          "var{childWallets}",
-          "SHARED_WALLET, 1"
-        ],
-        [
-          "var{childWallets, false}"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT Treasure Game => OOT Market",
-      "RequiredItems": [
-        "OOT Treasure Game"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
       "Id": "OOT Temple of Time Entryway => OOT Market",
       "RequiredItems": [
         "OOT Temple of Time Entryway"
@@ -18725,7 +18738,7 @@
     {
       "Id": "OOT Hyrule Castle => OOT Near Fairy Fountain Din",
       "RequiredItems": [
-        "OOT_has_explosives",
+        "OOT_has_explosives_or_hammer",
         "OOT Hyrule Castle"
       ],
       "ConditionalItems": [],
@@ -18874,6 +18887,7 @@
       "Id": "OOT Near Fairy Fountain Din => OOT Fairy Fountain Din",
       "RequiredItems": [
         "OOT_is_child",
+        "OOT_has_explosives_or_hammer",
         "OOT Near Fairy Fountain Din"
       ],
       "ConditionalItems": [],
@@ -19107,7 +19121,14 @@
         "OOT_is_adult",
         "OOT Near Fairy Fountain Defense"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_can_lift_gold"
+        ],
+        [
+          "trick{TRICK_OOT_GANON_FAIRY_TT}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -20269,7 +20290,12 @@
           "OOT_can_use_sticks"
         ],
         [
+          "OOT_climb_anywhere",
           "OOT_can_use_din"
+        ],
+        [
+          "OOT_can_use_din",
+          "OOT_time_travel_at_will"
         ]
       ],
       "TimeNeeded": "None",
@@ -25809,6 +25835,7 @@
           "OOT_can_use_sticks"
         ],
         [
+          "trick{TRICK_OOT_ENTER_JABU}",
           "OOT_time_travel_at_will"
         ]
       ],
@@ -29254,23 +29281,27 @@
           "OOT_has_skeleton_key",
           "available{OOT_climb_anywhere, false}",
           "OOT_is_adult",
+          "OOT_soul_redead_gibdo",
           "OOT_can_hookshot"
         ],
         [
           "setting{smallKeyShuffleOot, removed}",
           "available{OOT_climb_anywhere, false}",
           "OOT_is_adult",
+          "OOT_soul_redead_gibdo",
           "OOT_can_hookshot"
         ],
         [
           "OOT_KEY_RING_SHADOW",
           "available{OOT_climb_anywhere, false}",
           "OOT_is_adult",
+          "OOT_soul_redead_gibdo",
           "OOT_can_hookshot"
         ],
         [
           "available{OOT_climb_anywhere, false}",
           "OOT_is_adult",
+          "OOT_soul_redead_gibdo",
           "OOT_can_hookshot",
           "OOT_SMALL_KEY_SHADOW, 3"
         ],
@@ -33309,6 +33340,426 @@
         "OOT_has_explosives",
         "OOT Spirit Temple Adult Climb 2",
         "var{Spirit_MQ, false}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Treasure Chest Game Buy Key",
+      "RequiredItems": [
+        "OOT_has_rupees",
+        "OOT Treasure Chest Game"
+      ],
+      "ConditionalItems": [
+        [
+          "var{childWallets}",
+          "OOT_WALLET, 1"
+        ],
+        [
+          "var{childWallets}",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "var{childWallets, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Treasure Chest Game => OOT Market",
+      "RequiredItems": [
+        "OOT Treasure Chest Game"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Treasure Chest Game => OOT Treasure Chest Game Room 1",
+      "RequiredItems": [
+        "OOT Treasure Chest Game"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleChestGame, vanilla}",
+          "OOT_has_lens_strict",
+          "OOT_has_rupees",
+          "var{childWallets}",
+          "OOT_WALLET, 1"
+        ],
+        [
+          "setting{smallKeyShuffleChestGame, vanilla}",
+          "OOT_has_lens_strict",
+          "OOT_has_rupees",
+          "var{childWallets}",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "setting{smallKeyShuffleChestGame, vanilla}",
+          "OOT_has_lens_strict",
+          "OOT_has_rupees",
+          "var{childWallets, false}"
+        ],
+        [
+          "setting{smallKeyShuffleChestGame, vanilla, false}",
+          "OOT_has_skeleton_key"
+        ],
+        [
+          "setting{smallKeyShuffleChestGame, vanilla, false}",
+          "OOT_KEY_RING_TCG"
+        ],
+        [
+          "setting{smallKeyShuffleChestGame, vanilla, false}",
+          "OOT_SMALL_KEY_TCG, 1"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Treasure Chest Game Room 1 Chest Left",
+      "RequiredItems": [
+        "OOT Treasure Chest Game Room 1"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Treasure Chest Game Room 1 Chest Right",
+      "RequiredItems": [
+        "OOT Treasure Chest Game Room 1"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Treasure Chest Game Room 1 => OOT Treasure Chest Game Room 2",
+      "RequiredItems": [
+        "OOT Treasure Chest Game Room 1"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleChestGame, vanilla}",
+          "OOT_has_lens_strict",
+          "OOT_has_rupees",
+          "var{childWallets}",
+          "OOT_WALLET, 1"
+        ],
+        [
+          "setting{smallKeyShuffleChestGame, vanilla}",
+          "OOT_has_lens_strict",
+          "OOT_has_rupees",
+          "var{childWallets}",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "setting{smallKeyShuffleChestGame, vanilla}",
+          "OOT_has_lens_strict",
+          "OOT_has_rupees",
+          "var{childWallets, false}"
+        ],
+        [
+          "setting{smallKeyShuffleChestGame, vanilla, false}",
+          "OOT_has_skeleton_key"
+        ],
+        [
+          "setting{smallKeyShuffleChestGame, vanilla, false}",
+          "OOT_KEY_RING_TCG"
+        ],
+        [
+          "setting{smallKeyShuffleChestGame, vanilla, false}",
+          "OOT_SMALL_KEY_TCG, 2"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Treasure Chest Game Room 2 Chest Left",
+      "RequiredItems": [
+        "OOT Treasure Chest Game Room 2"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Treasure Chest Game Room 2 Chest Right",
+      "RequiredItems": [
+        "OOT Treasure Chest Game Room 2"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Treasure Chest Game Room 2 => OOT Treasure Chest Game Room 3",
+      "RequiredItems": [
+        "OOT Treasure Chest Game Room 2"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleChestGame, vanilla}",
+          "OOT_has_lens_strict",
+          "OOT_has_rupees",
+          "var{childWallets}",
+          "OOT_WALLET, 1"
+        ],
+        [
+          "setting{smallKeyShuffleChestGame, vanilla}",
+          "OOT_has_lens_strict",
+          "OOT_has_rupees",
+          "var{childWallets}",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "setting{smallKeyShuffleChestGame, vanilla}",
+          "OOT_has_lens_strict",
+          "OOT_has_rupees",
+          "var{childWallets, false}"
+        ],
+        [
+          "setting{smallKeyShuffleChestGame, vanilla, false}",
+          "OOT_has_skeleton_key"
+        ],
+        [
+          "setting{smallKeyShuffleChestGame, vanilla, false}",
+          "OOT_KEY_RING_TCG"
+        ],
+        [
+          "setting{smallKeyShuffleChestGame, vanilla, false}",
+          "OOT_SMALL_KEY_TCG, 3"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Treasure Chest Game Room 3 Chest Left",
+      "RequiredItems": [
+        "OOT Treasure Chest Game Room 3"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Treasure Chest Game Room 3 Chest Right",
+      "RequiredItems": [
+        "OOT Treasure Chest Game Room 3"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Treasure Chest Game Room 3 => OOT Treasure Chest Game Room 4",
+      "RequiredItems": [
+        "OOT Treasure Chest Game Room 3"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleChestGame, vanilla}",
+          "OOT_has_lens_strict",
+          "OOT_has_rupees",
+          "var{childWallets}",
+          "OOT_WALLET, 1"
+        ],
+        [
+          "setting{smallKeyShuffleChestGame, vanilla}",
+          "OOT_has_lens_strict",
+          "OOT_has_rupees",
+          "var{childWallets}",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "setting{smallKeyShuffleChestGame, vanilla}",
+          "OOT_has_lens_strict",
+          "OOT_has_rupees",
+          "var{childWallets, false}"
+        ],
+        [
+          "setting{smallKeyShuffleChestGame, vanilla, false}",
+          "OOT_has_skeleton_key"
+        ],
+        [
+          "setting{smallKeyShuffleChestGame, vanilla, false}",
+          "OOT_KEY_RING_TCG"
+        ],
+        [
+          "setting{smallKeyShuffleChestGame, vanilla, false}",
+          "OOT_SMALL_KEY_TCG, 4"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Treasure Chest Game Room 4 Chest Left",
+      "RequiredItems": [
+        "OOT Treasure Chest Game Room 4"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Treasure Chest Game Room 4 Chest Right",
+      "RequiredItems": [
+        "OOT Treasure Chest Game Room 4"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Treasure Chest Game Room 4 => OOT Treasure Chest Game Room 5",
+      "RequiredItems": [
+        "OOT Treasure Chest Game Room 4"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleChestGame, vanilla}",
+          "OOT_has_lens_strict",
+          "OOT_has_rupees",
+          "var{childWallets}",
+          "OOT_WALLET, 1"
+        ],
+        [
+          "setting{smallKeyShuffleChestGame, vanilla}",
+          "OOT_has_lens_strict",
+          "OOT_has_rupees",
+          "var{childWallets}",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "setting{smallKeyShuffleChestGame, vanilla}",
+          "OOT_has_lens_strict",
+          "OOT_has_rupees",
+          "var{childWallets, false}"
+        ],
+        [
+          "setting{smallKeyShuffleChestGame, vanilla, false}",
+          "OOT_has_skeleton_key"
+        ],
+        [
+          "setting{smallKeyShuffleChestGame, vanilla, false}",
+          "OOT_KEY_RING_TCG"
+        ],
+        [
+          "setting{smallKeyShuffleChestGame, vanilla, false}",
+          "OOT_SMALL_KEY_TCG, 5"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Treasure Chest Game Room 5 Chest Left",
+      "RequiredItems": [
+        "OOT Treasure Chest Game Room 5"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Treasure Chest Game Room 5 Chest Right",
+      "RequiredItems": [
+        "OOT Treasure Chest Game Room 5"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Treasure Chest Game Room 5 => OOT Treasure Chest Game Room 6",
+      "RequiredItems": [
+        "OOT Treasure Chest Game Room 5"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{smallKeyShuffleChestGame, vanilla}",
+          "OOT_has_lens_strict",
+          "OOT_has_rupees",
+          "var{childWallets}",
+          "OOT_WALLET, 1"
+        ],
+        [
+          "setting{smallKeyShuffleChestGame, vanilla}",
+          "OOT_has_lens_strict",
+          "OOT_has_rupees",
+          "var{childWallets}",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "setting{smallKeyShuffleChestGame, vanilla}",
+          "OOT_has_lens_strict",
+          "OOT_has_rupees",
+          "var{childWallets, false}"
+        ],
+        [
+          "setting{smallKeyShuffleChestGame, vanilla, false}",
+          "OOT_has_skeleton_key"
+        ],
+        [
+          "setting{smallKeyShuffleChestGame, vanilla, false}",
+          "OOT_KEY_RING_TCG"
+        ],
+        [
+          "setting{smallKeyShuffleChestGame, vanilla, false}",
+          "OOT_SMALL_KEY_TCG, 6"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Treasure Chest Game HP",
+      "RequiredItems": [
+        "OOT Treasure Chest Game Room 6"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -39462,6 +39913,7 @@
     {
       "Id": "OOT Ganon Castle Main => OOT Ganon Castle Stairs",
       "RequiredItems": [
+        "OOT_ganon_barrier",
         "OOT Ganon Castle Main",
         "var{Ganon_MQ}"
       ],
@@ -46960,16 +47412,22 @@
           "MM Grass Grotto"
         ],
         [
+          "MM Pinnacle Rock"
+        ],
+        [
+          "MM Great Bay Temple Red Pipe 2"
+        ],
+        [
+          "MM Zora Cape"
+        ],
+        [
           "MM Zora Cape Grotto"
         ],
         [
-          "MM Ocean Spider House Front"
+          "MM Secret Shrine Entrance"
         ],
         [
           "MM Road to Ikana Grotto"
-        ],
-        [
-          "MM Secret Shrine Entrance"
         ],
         [
           "MM Ikana Graveyard"
@@ -46999,11 +47457,11 @@
           "MM Stone Tower Top Inverted Upper"
         ],
         [
-          "MM Snowhead Temple Main"
-        ],
-        [
           "MM Ancient Castle of Ikana Interior North 2",
           "MM_short_hook_anywhere"
+        ],
+        [
+          "MM Snowhead Temple Main"
         ],
         [
           "MM Snowhead Temple Bridge Front"
@@ -47028,22 +47486,22 @@
           "MM Swamp Spider House Main"
         ],
         [
+          "MM Pillar Grotto"
+        ],
+        [
           "MM Woodfall Temple Entrance"
         ],
         [
           "MM Ancient Castle of Ikana Pre-Boss"
         ],
         [
-          "MM Pillar Grotto"
+          "MM Ocean Spider House Front"
         ],
         [
           "MM Great Bay Temple Central Room"
         ],
         [
           "MM Great Bay Temple Map Room"
-        ],
-        [
-          "MM Owl Milk Road"
         ],
         [
           "MM Great Bay Temple Compass Room"
@@ -47053,18 +47511,18 @@
           "MM_SOUL_CHUCHU"
         ],
         [
+          "MM Termina Field",
+          "var{enemySoulsMm, false}"
+        ],
+        [
           "MM_SOUL_CHUCHU",
           "MM Great Bay Temple Ice Arrow Room",
           "MM_has_weapon"
         ],
         [
-          "MM Termina Field",
-          "var{enemySoulsMm, false}"
-        ],
-        [
+          "var{enemySoulsMm, false}",
           "MM Great Bay Temple Ice Arrow Room",
-          "MM_has_weapon",
-          "var{enemySoulsMm, false}"
+          "MM_has_weapon"
         ],
         [
           "MM_SOUL_CHUCHU",
@@ -47072,8 +47530,8 @@
           "MM_has_mask_zora"
         ],
         [
-          "MM Great Bay Temple Ice Arrow Room",
           "var{enemySoulsMm, false}",
+          "MM Great Bay Temple Ice Arrow Room",
           "MM_has_mask_zora"
         ],
         [
@@ -47082,18 +47540,18 @@
           "MM_has_explosives"
         ],
         [
-          "MM Great Bay Temple Ice Arrow Room",
           "var{enemySoulsMm, false}",
+          "MM Great Bay Temple Ice Arrow Room",
           "MM_has_explosives"
         ],
         [
-          "MM Great Bay Temple Red Pipe 2"
-        ],
-        [
-          "MM Owl Mountain"
+          "MM Owl Milk Road"
         ],
         [
           "MM Termina Field Cow Grotto"
+        ],
+        [
+          "MM Owl Mountain"
         ],
         [
           "MM Owl Snowhead"
@@ -47118,6 +47576,10 @@
           "MM Clock Tower Roof"
         ],
         [
+          "MM Clock Tower Roof",
+          "MM_EVENT_MAJORA"
+        ],
+        [
           "MM Ocean Gossip Grotto"
         ],
         [
@@ -47128,9 +47590,6 @@
         ],
         [
           "MM Road to Southern Swamp Grotto"
-        ],
-        [
-          "MM Mountain Village Path Upper"
         ],
         [
           "MM Swamp Front"
@@ -47151,8 +47610,8 @@
           "MM_MASK_DEKU"
         ],
         [
-          "MM Great Bay Temple Ice Arrow Room",
           "var{enemySoulsMm, false}",
+          "MM Great Bay Temple Ice Arrow Room",
           "MM_MASK_DEKU"
         ],
         [
@@ -47176,6 +47635,9 @@
         [
           "MM_can_break_boulders",
           "MM Path to Snowhead Back"
+        ],
+        [
+          "MM Mountain Village Path Upper"
         ],
         [
           "MM Mountain Village"
@@ -47236,12 +47698,6 @@
         ],
         [
           "MM Great Bay Cow Grotto"
-        ],
-        [
-          "MM Pinnacle Rock"
-        ],
-        [
-          "MM Zora Cape"
         ]
       ],
       "TimeNeeded": "None",
@@ -51973,7 +52429,7 @@
     {
       "Id": "MM Moon Fierce Deity Mask",
       "RequiredItems": [
-        "MM_can_reset_time_on_moon",
+        "MM_can_reset_time",
         "MM_MASKS, 20",
         "MM_EVENT_MOON_TRIAL_DEKU",
         "MM_EVENT_MOON_TRIAL_GORON",
@@ -51990,7 +52446,7 @@
     {
       "Id": "MM Moon => MM Moon Trial Deku Entrance",
       "RequiredItems": [
-        "MM_can_reset_time_on_moon",
+        "MM_can_reset_time",
         "MM_MASKS, 1",
         "MM Moon"
       ],
@@ -52003,7 +52459,7 @@
     {
       "Id": "MM Moon => MM Moon Trial Goron Entrance",
       "RequiredItems": [
-        "MM_can_reset_time_on_moon",
+        "MM_can_reset_time",
         "MM_MASKS, 2",
         "MM Moon"
       ],
@@ -52016,7 +52472,7 @@
     {
       "Id": "MM Moon => MM Moon Trial Zora",
       "RequiredItems": [
-        "MM_can_reset_time_on_moon",
+        "MM_can_reset_time",
         "MM_MASKS, 3",
         "MM Moon"
       ],
@@ -52029,7 +52485,7 @@
     {
       "Id": "MM Moon => MM Moon Trial Link Entrance",
       "RequiredItems": [
-        "MM_can_reset_time_on_moon",
+        "MM_can_reset_time",
         "MM_MASKS, 4",
         "MM Moon"
       ],
@@ -53400,11 +53856,17 @@
     {
       "Id": "MM Moon Majora Pot 1",
       "RequiredItems": [
-        "MM_EVENT_MAJORA",
         "MM Moon Boss",
         "MM_can_reset_time"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_can_play_time"
+        ],
+        [
+          "MM_EVENT_MAJORA"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -53413,11 +53875,17 @@
     {
       "Id": "MM Moon Majora Pot 2",
       "RequiredItems": [
-        "MM_EVENT_MAJORA",
         "MM Moon Boss",
         "MM_can_reset_time"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_can_play_time"
+        ],
+        [
+          "MM_EVENT_MAJORA"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -56970,11 +57438,17 @@
       "Id": "MM Clock Tower Roof Skull Kid Ocarina",
       "RequiredItems": [
         "MM_has_weapon_range",
-        "MM_can_play_time",
         "MM Clock Tower Roof",
         "MM_can_reset_time"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_can_play_time"
+        ],
+        [
+          "MM_EVENT_MAJORA"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -56984,11 +57458,17 @@
       "Id": "MM Clock Tower Roof Skull Kid Song of Time",
       "RequiredItems": [
         "MM_has_weapon_range",
-        "MM_can_play_time",
         "MM Clock Tower Roof",
         "MM_can_reset_time"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_can_play_time"
+        ],
+        [
+          "MM_EVENT_MAJORA"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -56997,11 +57477,17 @@
     {
       "Id": "MM Clock Tower Roof Pot 1",
       "RequiredItems": [
-        "MM_can_play_time",
         "MM Clock Tower Roof",
         "MM_can_reset_time"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_can_play_time"
+        ],
+        [
+          "MM_EVENT_MAJORA"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -57010,11 +57496,17 @@
     {
       "Id": "MM Clock Tower Roof Pot 2",
       "RequiredItems": [
-        "MM_can_play_time",
         "MM Clock Tower Roof",
         "MM_can_reset_time"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_can_play_time"
+        ],
+        [
+          "MM_EVENT_MAJORA"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -57023,11 +57515,17 @@
     {
       "Id": "MM Clock Tower Roof Pot 3",
       "RequiredItems": [
-        "MM_can_play_time",
         "MM Clock Tower Roof",
         "MM_can_reset_time"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_can_play_time"
+        ],
+        [
+          "MM_EVENT_MAJORA"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -57036,11 +57534,17 @@
     {
       "Id": "MM Clock Tower Roof Pot 4",
       "RequiredItems": [
-        "MM_can_play_time",
         "MM Clock Tower Roof",
         "MM_can_reset_time"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_can_play_time"
+        ],
+        [
+          "MM_EVENT_MAJORA"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -58320,15 +58824,15 @@
       ],
       "ConditionalItems": [
         [
-          "setting{erIndoors, none}",
+          "var{erIndoorsExtra}"
+        ],
+        [
+          "var{erIndoorsExtra, false}",
           "MM_ROOM_KEY"
         ],
         [
-          "setting{erIndoors, none}",
+          "var{erIndoorsExtra, false}",
           "MM_MASK_DEKU"
-        ],
-        [
-          "setting{erIndoors, none, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -68880,6 +69384,7 @@
     {
       "Id": "MM Twin Islands Grass 01",
       "RequiredItems": [
+        "MM_EVENT_BOSS_SNOWHEAD",
         "MM Twin Islands",
         "MM_can_reset_time"
       ],
@@ -68892,6 +69397,7 @@
     {
       "Id": "MM Twin Islands Grass 02",
       "RequiredItems": [
+        "MM_EVENT_BOSS_SNOWHEAD",
         "MM Twin Islands",
         "MM_can_reset_time"
       ],
@@ -68904,6 +69410,7 @@
     {
       "Id": "MM Twin Islands Grass 03",
       "RequiredItems": [
+        "MM_EVENT_BOSS_SNOWHEAD",
         "MM Twin Islands",
         "MM_can_reset_time"
       ],
@@ -68916,6 +69423,7 @@
     {
       "Id": "MM Twin Islands Grass 04",
       "RequiredItems": [
+        "MM_EVENT_BOSS_SNOWHEAD",
         "MM Twin Islands",
         "MM_can_reset_time"
       ],
@@ -68928,6 +69436,7 @@
     {
       "Id": "MM Twin Islands Grass 05",
       "RequiredItems": [
+        "MM_EVENT_BOSS_SNOWHEAD",
         "MM Twin Islands",
         "MM_can_reset_time"
       ],
@@ -68940,6 +69449,7 @@
     {
       "Id": "MM Twin Islands Grass 06",
       "RequiredItems": [
+        "MM_EVENT_BOSS_SNOWHEAD",
         "MM Twin Islands",
         "MM_can_reset_time"
       ],
@@ -68952,6 +69462,7 @@
     {
       "Id": "MM Twin Islands Grass 07",
       "RequiredItems": [
+        "MM_EVENT_BOSS_SNOWHEAD",
         "MM Twin Islands",
         "MM_can_reset_time"
       ],
@@ -68964,6 +69475,7 @@
     {
       "Id": "MM Twin Islands Grass 08",
       "RequiredItems": [
+        "MM_EVENT_BOSS_SNOWHEAD",
         "MM Twin Islands",
         "MM_can_reset_time"
       ],
@@ -68976,6 +69488,7 @@
     {
       "Id": "MM Twin Islands Grass 09",
       "RequiredItems": [
+        "MM_EVENT_BOSS_SNOWHEAD",
         "MM Twin Islands",
         "MM_can_reset_time"
       ],
@@ -68988,6 +69501,7 @@
     {
       "Id": "MM Twin Islands Grass 10",
       "RequiredItems": [
+        "MM_EVENT_BOSS_SNOWHEAD",
         "MM Twin Islands",
         "MM_can_reset_time"
       ],
@@ -69000,6 +69514,7 @@
     {
       "Id": "MM Twin Islands Grass 11",
       "RequiredItems": [
+        "MM_EVENT_BOSS_SNOWHEAD",
         "MM Twin Islands",
         "MM_can_reset_time"
       ],
@@ -69012,6 +69527,7 @@
     {
       "Id": "MM Twin Islands Grass 12",
       "RequiredItems": [
+        "MM_EVENT_BOSS_SNOWHEAD",
         "MM Twin Islands",
         "MM_can_reset_time"
       ],
@@ -75523,15 +76039,30 @@
       ],
       "ConditionalItems": [
         [
-          "setting{erDungeons, none, false}",
+          "var{erMajorDungeons}",
           "setting{bossWarpPads, Remains}",
           "MM_has_mask_zora"
         ],
         [
-          "setting{erDungeons, none}"
+          "var{erMajorDungeons}",
+          "MM_has_mask_zora",
+          "trick{TRICK_MM_GBT_CENTRAL_GEYSER}",
+          "trick{TRICK_MM_GBT_WATERWHEEL_GORON}"
         ],
         [
-          "setting{bossWarpPads, Remains, false}"
+          "var{erMajorDungeons}",
+          "MM_has_mask_zora",
+          "trick{TRICK_MM_GBT_CENTRAL_GEYSER}",
+          "var{hookshotAnywhereMm}"
+        ],
+        [
+          "var{erMajorDungeons, false}"
+        ],
+        [
+          "trick{TRICK_MM_GBT_CENTRAL_GEYSER, false}"
+        ],
+        [
+          "var{hookshotAnywhereMm, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -75795,7 +76326,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Gorman Track Front => MM Gorman Track Back",
+      "Id": "MM Gorman Track Front => MM Gorman Track",
       "RequiredItems": [
         "MM Gorman Track Front",
         "MM_can_reset_time"
@@ -75819,294 +76350,6 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Gorman Track Grass Pack 1 Grass 01",
-      "RequiredItems": [
-        "MM Gorman Track Back",
-        "MM_can_reset_time"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Gorman Track Grass Pack 1 Grass 02",
-      "RequiredItems": [
-        "MM Gorman Track Back",
-        "MM_can_reset_time"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Gorman Track Grass Pack 1 Grass 03",
-      "RequiredItems": [
-        "MM Gorman Track Back",
-        "MM_can_reset_time"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Gorman Track Grass Pack 1 Grass 04",
-      "RequiredItems": [
-        "MM Gorman Track Back",
-        "MM_can_reset_time"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Gorman Track Grass Pack 1 Grass 05",
-      "RequiredItems": [
-        "MM Gorman Track Back",
-        "MM_can_reset_time"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Gorman Track Grass Pack 1 Grass 06",
-      "RequiredItems": [
-        "MM Gorman Track Back",
-        "MM_can_reset_time"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Gorman Track Grass Pack 1 Grass 07",
-      "RequiredItems": [
-        "MM Gorman Track Back",
-        "MM_can_reset_time"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Gorman Track Grass Pack 1 Grass 08",
-      "RequiredItems": [
-        "MM Gorman Track Back",
-        "MM_can_reset_time"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Gorman Track Grass Pack 1 Grass 09",
-      "RequiredItems": [
-        "MM Gorman Track Back",
-        "MM_can_reset_time"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Gorman Track Grass Pack 1 Grass 10",
-      "RequiredItems": [
-        "MM Gorman Track Back",
-        "MM_can_reset_time"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Gorman Track Grass Pack 1 Grass 11",
-      "RequiredItems": [
-        "MM Gorman Track Back",
-        "MM_can_reset_time"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Gorman Track Grass Pack 1 Grass 12",
-      "RequiredItems": [
-        "MM Gorman Track Back",
-        "MM_can_reset_time"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Gorman Track Grass Pack 2 Grass 01",
-      "RequiredItems": [
-        "MM Gorman Track Back",
-        "MM_can_reset_time"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Gorman Track Grass Pack 2 Grass 02",
-      "RequiredItems": [
-        "MM Gorman Track Back",
-        "MM_can_reset_time"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Gorman Track Grass Pack 2 Grass 03",
-      "RequiredItems": [
-        "MM Gorman Track Back",
-        "MM_can_reset_time"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Gorman Track Grass Pack 2 Grass 04",
-      "RequiredItems": [
-        "MM Gorman Track Back",
-        "MM_can_reset_time"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Gorman Track Grass Pack 2 Grass 05",
-      "RequiredItems": [
-        "MM Gorman Track Back",
-        "MM_can_reset_time"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Gorman Track Grass Pack 2 Grass 06",
-      "RequiredItems": [
-        "MM Gorman Track Back",
-        "MM_can_reset_time"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Gorman Track Grass Pack 2 Grass 07",
-      "RequiredItems": [
-        "MM Gorman Track Back",
-        "MM_can_reset_time"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Gorman Track Grass Pack 2 Grass 08",
-      "RequiredItems": [
-        "MM Gorman Track Back",
-        "MM_can_reset_time"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Gorman Track Grass Pack 2 Grass 09",
-      "RequiredItems": [
-        "MM Gorman Track Back",
-        "MM_can_reset_time"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Gorman Track Grass Pack 2 Grass 10",
-      "RequiredItems": [
-        "MM Gorman Track Back",
-        "MM_can_reset_time"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Gorman Track Grass Pack 2 Grass 11",
-      "RequiredItems": [
-        "MM Gorman Track Back",
-        "MM_can_reset_time"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Gorman Track Grass Pack 2 Grass 12",
-      "RequiredItems": [
-        "MM Gorman Track Back",
-        "MM_can_reset_time"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
       "Id": "MM Gorman Track Back => MM Behind Gorman Fence",
       "RequiredItems": [
         "MM Gorman Track Back",
@@ -76119,9 +76362,345 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Gorman Track Back => MM Gorman Track Front",
+      "Id": "MM Gorman Track Back => MM Gorman Track",
       "RequiredItems": [
         "MM Gorman Track Back",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_can_goron_bomb_jump",
+          "MM_has_bombs"
+        ],
+        [
+          "MM_is_night2",
+          "MM_EVENT_ALIENS"
+        ],
+        [
+          "MM_short_hook_anywhere"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Gorman Track Grass Pack 1 Grass 01",
+      "RequiredItems": [
+        "MM Gorman Track",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Gorman Track Grass Pack 1 Grass 02",
+      "RequiredItems": [
+        "MM Gorman Track",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Gorman Track Grass Pack 1 Grass 03",
+      "RequiredItems": [
+        "MM Gorman Track",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Gorman Track Grass Pack 1 Grass 04",
+      "RequiredItems": [
+        "MM Gorman Track",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Gorman Track Grass Pack 1 Grass 05",
+      "RequiredItems": [
+        "MM Gorman Track",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Gorman Track Grass Pack 1 Grass 06",
+      "RequiredItems": [
+        "MM Gorman Track",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Gorman Track Grass Pack 1 Grass 07",
+      "RequiredItems": [
+        "MM Gorman Track",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Gorman Track Grass Pack 1 Grass 08",
+      "RequiredItems": [
+        "MM Gorman Track",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Gorman Track Grass Pack 1 Grass 09",
+      "RequiredItems": [
+        "MM Gorman Track",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Gorman Track Grass Pack 1 Grass 10",
+      "RequiredItems": [
+        "MM Gorman Track",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Gorman Track Grass Pack 1 Grass 11",
+      "RequiredItems": [
+        "MM Gorman Track",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Gorman Track Grass Pack 1 Grass 12",
+      "RequiredItems": [
+        "MM Gorman Track",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Gorman Track Grass Pack 2 Grass 01",
+      "RequiredItems": [
+        "MM Gorman Track",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Gorman Track Grass Pack 2 Grass 02",
+      "RequiredItems": [
+        "MM Gorman Track",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Gorman Track Grass Pack 2 Grass 03",
+      "RequiredItems": [
+        "MM Gorman Track",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Gorman Track Grass Pack 2 Grass 04",
+      "RequiredItems": [
+        "MM Gorman Track",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Gorman Track Grass Pack 2 Grass 05",
+      "RequiredItems": [
+        "MM Gorman Track",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Gorman Track Grass Pack 2 Grass 06",
+      "RequiredItems": [
+        "MM Gorman Track",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Gorman Track Grass Pack 2 Grass 07",
+      "RequiredItems": [
+        "MM Gorman Track",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Gorman Track Grass Pack 2 Grass 08",
+      "RequiredItems": [
+        "MM Gorman Track",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Gorman Track Grass Pack 2 Grass 09",
+      "RequiredItems": [
+        "MM Gorman Track",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Gorman Track Grass Pack 2 Grass 10",
+      "RequiredItems": [
+        "MM Gorman Track",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Gorman Track Grass Pack 2 Grass 11",
+      "RequiredItems": [
+        "MM Gorman Track",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Gorman Track Grass Pack 2 Grass 12",
+      "RequiredItems": [
+        "MM Gorman Track",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Gorman Track => MM Gorman Track Front",
+      "RequiredItems": [
+        "MM Gorman Track",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_can_goron_bomb_jump",
+          "MM_has_bombs"
+        ],
+        [
+          "MM_is_night2",
+          "MM_EVENT_ALIENS"
+        ],
+        [
+          "MM_short_hook_anywhere"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Gorman Track => MM Gorman Track Back",
+      "RequiredItems": [
+        "MM Gorman Track",
         "MM_can_reset_time"
       ],
       "ConditionalItems": [
@@ -77193,8 +77772,9 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Beneath The Graveyard Pot Before Pit 1",
+      "Id": "MM Beneath The Graveyard Pot Night 2 Before Pit 1",
       "RequiredItems": [
+        "MM_can_use_lens",
         "MM Beneath The Graveyard Night 2",
         "MM_can_reset_time"
       ],
@@ -77205,8 +77785,9 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Beneath The Graveyard Pot Before Pit 2",
+      "Id": "MM Beneath The Graveyard Pot Night 2 Before Pit 2",
       "RequiredItems": [
+        "MM_can_use_lens",
         "MM Beneath The Graveyard Night 2",
         "MM_can_reset_time"
       ],
@@ -77217,7 +77798,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Beneath The Graveyard Pot After Pit 1",
+      "Id": "MM Beneath The Graveyard Pot Night 2 After Pit 1",
       "RequiredItems": [
         "MM Beneath The Graveyard Night 2",
         "MM_can_reset_time"
@@ -77236,7 +77817,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Beneath The Graveyard Pot After Pit 2",
+      "Id": "MM Beneath The Graveyard Pot Night 2 After Pit 2",
       "RequiredItems": [
         "MM Beneath The Graveyard Night 2",
         "MM_can_reset_time"
@@ -77255,7 +77836,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Beneath The Graveyard Pot After Pit 3",
+      "Id": "MM Beneath The Graveyard Pot Night 2 After Pit 3",
       "RequiredItems": [
         "MM Beneath The Graveyard Night 2",
         "MM_can_reset_time"
@@ -77274,7 +77855,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Beneath The Graveyard Pot After Pit 4",
+      "Id": "MM Beneath The Graveyard Pot Night 2 After Pit 4",
       "RequiredItems": [
         "MM Beneath The Graveyard Night 2",
         "MM_can_reset_time"
@@ -93576,6 +94157,27 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT_ganon_barrier",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{ganonTrials, none}"
+        ],
+        [
+          "OOT_EVENT_GANON_TRIAL_LIGHT",
+          "OOT_EVENT_GANON_TRIAL_FOREST",
+          "OOT_EVENT_GANON_TRIAL_FIRE",
+          "OOT_EVENT_GANON_TRIAL_WATER",
+          "OOT_EVENT_GANON_TRIAL_SHADOW",
+          "OOT_EVENT_GANON_TRIAL_SPIRIT"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM_is_day1",
       "RequiredItems": [
         "time{Before_NIGHT1_PM_06_00}"
@@ -95036,25 +95638,6 @@
         "trick{TRICK_MM_SHT_FIRELESS}"
       ],
       "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM_can_reset_time_on_moon",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "MM_can_play_time"
-        ],
-        [
-          "setting{majoraChild, none}",
-          "MM_EVENT_MAJORA",
-          "trick{TRICK_MM_MAJORA_LOGIC}",
-          "MM_!is_goal_triforce"
-        ]
-      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -97424,6 +98007,52 @@
       "IsTrick": false
     },
     {
+      "Id": "MM_EVENT_CHATEAU",
+      "RequiredItems": [
+        "false"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_is_child",
+      "RequiredItems": [
+        "OOT_is_child"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_!is_goal_triforce",
+      "RequiredItems": [
+        "setting{goal, triforce, false}",
+        "setting{goal, triforce3, false}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_!is_goal_triforce",
+      "RequiredItems": [
+        "setting{goal, triforce, false}",
+        "setting{goal, triforce3, false}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM_BOSS_MAJORA",
       "RequiredItems": [
         "MM_EVENT_MAJORA"
@@ -97440,6 +98069,47 @@
         "OOT_EVENT_GANON"
       ],
       "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Game_Clear",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{goal, any}",
+          "OOT_TRIFORCE"
+        ],
+        [
+          "setting{goal, any}",
+          "MM_MASK_MAJORA"
+        ],
+        [
+          "OOT_TRIFORCE",
+          "MM_MASK_MAJORA",
+          "setting{goal, both}"
+        ],
+        [
+          "OOT_TRIFORCE",
+          "setting{goal, ganon}"
+        ],
+        [
+          "MM_MASK_MAJORA",
+          "setting{goal, majora}"
+        ],
+        [
+          "setting{goal, triforce}",
+          "SHARED_TRIFORCE, triforceGoal"
+        ],
+        [
+          "setting{goal, triforce3}",
+          "SHARED_TRIFORCE_POWER",
+          "SHARED_TRIFORCE_COURAGE",
+          "SHARED_TRIFORCE_WISDOM"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",

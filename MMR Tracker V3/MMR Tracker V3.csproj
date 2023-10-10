@@ -25,10 +25,16 @@
     <None Update="Recources\Dictionaries\OOTMM V1.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Recources\Dictionaries\PMR V1.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Recources\Dictionaries\TPR V1.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Recources\Presets\DEV-OOTMM Casual.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Recources\Presets\DEV-PMR Casual.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Recources\Presets\DEV-TPR Casual.json">

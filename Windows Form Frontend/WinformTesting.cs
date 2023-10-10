@@ -23,7 +23,7 @@ namespace Windows_Form_Frontend
             //TestFuncParse();
             //PMRCreateData();
             //MMR_Tracker_V3.OtherGames.TPRV2.ReadAndParse.ReadLines();
-            TPRCreateData();
+            //TPRCreateData();
         }
 
         public static void CreateMMRItemTrackerObject()

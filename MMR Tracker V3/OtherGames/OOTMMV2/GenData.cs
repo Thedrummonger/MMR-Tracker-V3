@@ -92,8 +92,13 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
 
             RemoveNonLogicAlteringSettings(LogicFile, DictionaryFile);
 
-            File.WriteAllText(Path.Combine(OTTMMPaths.OOTMMTestingFolder,"LogicFile.json"), JsonConvert.SerializeObject(LogicFile, Testing._NewtonsoftJsonSerializerOptions));
-            File.WriteAllText(Path.Combine(OTTMMPaths.OOTMMTestingFolder, "DictionaryFile.json"), JsonConvert.SerializeObject(DictionaryFile, Testing._NewtonsoftJsonSerializerOptions));
+
+            string TestFolder = Path.Combine(References.TestingPaths.GetDevCodePath(), "MMR Tracker V3", "Recources");
+            string FinalDictFile = Path.Combine(TestFolder, "Dictionaries", @"OOTMM V1.json");
+            string FinalLogicFile = Path.Combine(TestFolder, "Presets", @"DEV-OOTMM Casual.json");
+
+            File.WriteAllText(FinalLogicFile, JsonConvert.SerializeObject(LogicFile, Testing._NewtonsoftJsonSerializerOptions));
+            File.WriteAllText(FinalDictFile, JsonConvert.SerializeObject(DictionaryFile, Testing._NewtonsoftJsonSerializerOptions));
 
             OutLogic = LogicFile;
             outDict = DictionaryFile;

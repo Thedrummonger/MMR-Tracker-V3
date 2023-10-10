@@ -594,8 +594,12 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
             }
             StarwaysLogic.ConditionalItems = NewStarwayConditionals;
 
-            File.WriteAllText(Path.Combine(TestingFoler, "PMR v1.json"), JsonConvert.SerializeObject(PMRDict, Testing._NewtonsoftJsonSerializerOptions));
-            File.WriteAllText(Path.Combine(TestingFoler, "PMRLogic.json"), JsonConvert.SerializeObject(PRMLogic, Testing._NewtonsoftJsonSerializerOptions));
+            string TestFolder = Path.Combine(References.TestingPaths.GetDevCodePath(), "MMR Tracker V3", "Recources");
+            string FinalDictFile = Path.Combine(TestFolder, "Dictionaries", @"PMR V1.json");
+            string FinalLogicFile = Path.Combine(TestFolder, "Presets", @"DEV-PMR Casual.json");
+
+            File.WriteAllText(FinalDictFile, JsonConvert.SerializeObject(PMRDict, Testing._NewtonsoftJsonSerializerOptions));
+            File.WriteAllText(FinalLogicFile, JsonConvert.SerializeObject(PRMLogic, Testing._NewtonsoftJsonSerializerOptions));
 
             List<Tuple<string, int>> Reqs = new List<Tuple<string, int>>();
 
