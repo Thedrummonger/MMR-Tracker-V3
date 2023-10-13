@@ -43,7 +43,7 @@ namespace Windows_Form_Frontend
             listBox1_SelectedValueChanged(sender, e);
             SetDefaultWinCon();
             UpdateSeedChckUI();
-            if (_instance.SpoilerLog.Playthrough is not null)
+            if (_instance.SpoilerLog?.Playthrough is not null)
             {
                 SpoilerLookupPlaythrough = _instance.SpoilerLog.Playthrough;
             }
@@ -201,7 +201,7 @@ namespace Windows_Form_Frontend
             if (string.IsNullOrWhiteSpace(dlg.FileName)) { return; }
 
             File.WriteAllLines(dlg.FileName, playthroughGenerator.CreateReadablePlaythrough(Result));
-            if (Testing.IsDevUser()) { File.WriteAllText(Testing.CretaeTestingFile("UnlockData"), JsonConvert.SerializeObject(playthroughGenerator._Instance.logicCalculation.LogicUnlockData, Testing._NewtonsoftJsonSerializerOptions)); }
+            if (Testing.IsDevUser()) { Testing.CreateTestingFile("UnlockData", playthroughGenerator._Instance.logicCalculation.LogicUnlockData); }
             
         }
         #endregion PlaythroughGenerator
@@ -550,5 +550,81 @@ namespace Windows_Form_Frontend
             UpdateSeedChckUI();
         }
         #endregion SeedChecker
+
+        private void GenerateHint(object sender, EventArgs e)
+        {
+            if (SpoilerLookupPlaythrough is null)
+            {
+                int currInd = listBox1.SelectedIndex;
+                int TopInd = listBox1.TopIndex;
+                var TempPlaythrough = new PlaythroughGenerator(_instance);
+                TempPlaythrough.GeneratePlaythrough();
+                SpoilerLookupPlaythrough = TempPlaythrough.Playthrough;
+                PopulateSpoilerLogList();
+                listBox1.TopIndex = TopInd;
+                listBox1.SelectedIndex = currInd;
+            }
+            var Source = sender as ToolStripMenuItem;
+
+            var PlaythroughLocations = SpoilerLookupPlaythrough.Where(x => x.Value.CheckType == MiscData.LogicEntryType.location);
+            var ImportantLocations = PlaythroughLocations.Where(x => x.Value.Important);
+            var AllLocationObj = PlaythroughLocations.Select(x => _instance.LocationPool[x.Key]).ToArray();
+            var ImportantLocationsObj = ImportantLocations.Select(x => _instance.LocationPool[x.Key]).ToArray();
+            var UnImportantLocations = PlaythroughLocations.Where(x => !x.Value.Important);
+            var UnImportantLocationsObj = UnImportantLocations.Select(x => _instance.LocationPool[x.Key]).ToArray();
+
+            if (Source == wayOfTheHeroToolStripMenuItem) 
+            {
+                var WOTHLocation = ImportantLocations.PickRandom();
+                var LocationOBJ = _instance.LocationPool[WOTHLocation.Key];
+                MessageBox.Show($"{LocationOBJ.GetDictEntry(_instance).Area} is Way of the Hero");
+            }
+            else if (Source == foolishToolStripMenuItem) 
+            {
+                var Areas = _instance.LocationPool.Select(x => x.Value.GetDictEntry(_instance).Area).Distinct().ToArray();
+                var ImportantAreas = ImportantLocationsObj.Select(x => x.GetDictEntry(_instance).Area).Distinct().ToArray();
+                var UnimportantAreas = Areas.Where(x => !ImportantAreas.Contains(x));
+                var FoolishArea = UnimportantAreas.PickRandom();
+                MessageBox.Show($"{FoolishArea} did not have any items used in the trackers playthough");
+            }
+            else if (Source == randomLocationToolStripMenuItem)
+            {
+                var RandomizedLocations = AllLocationObj.Where(x => x.IsRandomized() && !string.IsNullOrWhiteSpace(x.Randomizeditem.SpoilerLogGivenItem));
+                var randomLocation = RandomizedLocations.PickRandom();
+                string Item = _instance.ItemPool.ContainsKey(randomLocation.Randomizeditem.SpoilerLogGivenItem) ?
+                    _instance.ItemPool[randomLocation.Randomizeditem.SpoilerLogGivenItem].GetDictEntry(_instance).GetName(_instance) :
+                    randomLocation.Randomizeditem.SpoilerLogGivenItem;
+                MessageBox.Show($"{randomLocation.GetDictEntry(_instance).GetName(_instance)} Contained {Item}");
+            }
+            else if (Source == itemAreaToolStripMenuItem)
+            {
+                var RandomizedLocations = AllLocationObj.Where(x => x.IsRandomized() && !string.IsNullOrWhiteSpace(x.Randomizeditem.SpoilerLogGivenItem));
+                var randomLocation = RandomizedLocations.PickRandom();
+                string Item = _instance.ItemPool.ContainsKey(randomLocation.Randomizeditem.SpoilerLogGivenItem) ?
+                    _instance.ItemPool[randomLocation.Randomizeditem.SpoilerLogGivenItem].GetDictEntry(_instance).GetName(_instance) :
+                    randomLocation.Randomizeditem.SpoilerLogGivenItem;
+                MessageBox.Show($"{Item} Can be found at {randomLocation.GetDictEntry(_instance).Area}");
+            }
+            else if (Source == playthroughLocationToolStripMenuItem)
+            {
+                var RandomizedLocations = ImportantLocationsObj.Where(x => x.IsRandomized() && !string.IsNullOrWhiteSpace(x.Randomizeditem.SpoilerLogGivenItem));
+                var randomLocation = RandomizedLocations.PickRandom();
+                string Item = _instance.ItemPool.ContainsKey(randomLocation.Randomizeditem.SpoilerLogGivenItem) ?
+                    _instance.ItemPool[randomLocation.Randomizeditem.SpoilerLogGivenItem].GetDictEntry(_instance).GetName(_instance) :
+                    randomLocation.Randomizeditem.SpoilerLogGivenItem;
+                MessageBox.Show($"{randomLocation.GetDictEntry(_instance).GetName(_instance)} Contained {Item}");
+            }
+            else if (Source == playtrhoughItemAreaToolStripMenuItem)
+            {
+                var RandomizedLocations = ImportantLocationsObj.Where(x => x.IsRandomized() && !string.IsNullOrWhiteSpace(x.Randomizeditem.SpoilerLogGivenItem));
+                var randomLocation = RandomizedLocations.PickRandom();
+                string Item = _instance.ItemPool.ContainsKey(randomLocation.Randomizeditem.SpoilerLogGivenItem) ?
+                    _instance.ItemPool[randomLocation.Randomizeditem.SpoilerLogGivenItem].GetDictEntry(_instance).GetName(_instance) :
+                    randomLocation.Randomizeditem.SpoilerLogGivenItem;
+                MessageBox.Show($"{Item} Can be found at {randomLocation.GetDictEntry(_instance).Area}");
+            }
+
+
+        }
     }
 }

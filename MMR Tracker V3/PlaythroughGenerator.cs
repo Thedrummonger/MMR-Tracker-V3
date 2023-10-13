@@ -149,7 +149,7 @@ namespace MMR_Tracker_V3
             }
             else
             {
-                if (Testing.IsDevUser()) { File.WriteAllText(Testing.CretaeTestingFile("PlaythroughDEBUG"), JsonConvert.SerializeObject(Playthrough, Testing._NewtonsoftJsonSerializerOptions)); }
+                if (Testing.IsDevUser()) { File.WriteAllText(Testing.CreateTestingFile("PlaythroughDEBUG"), JsonConvert.SerializeObject(Playthrough, Testing._NewtonsoftJsonSerializerOptions)); }
                 return false;
             }
 

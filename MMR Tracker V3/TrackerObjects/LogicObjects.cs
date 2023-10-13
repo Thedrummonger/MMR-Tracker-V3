@@ -244,6 +244,7 @@ namespace MMR_Tracker_V3
                     Debug.WriteLine($"Seed Beatable: {generator.Playthrough.ContainsKey(instance.LogicDictionary.WinCondition)}");
                 }
                 Playthrough = generator.Playthrough;
+                if (Testing.IsDevUser()) { Testing.CreateTestingFile($"{instance.LogicDictionary.GameCode} {System.IO.Path.GetFileNameWithoutExtension(FileName)} Playthrough", Playthrough, "json"); }
             }
         }
 

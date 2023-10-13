@@ -55,9 +55,20 @@
             this.btnSphere = new System.Windows.Forms.Button();
             this.btnArea = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.regenerateGlobalPlaythroughToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generateHintToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.wayOfTheHeroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.foolishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.randomLocationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemAreaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.playthroughLocationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.playtrhoughItemAreaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbRequiredItems
@@ -216,7 +227,7 @@
             this.groupBox1.Controls.Add(this.btnCheckSeed);
             this.groupBox1.Controls.Add(this.LabelSeedCheckChecksIgnored);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 36);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(285, 221);
             this.groupBox1.TabIndex = 15;
@@ -286,7 +297,7 @@
             this.groupBox2.Controls.Add(this.chkOnlyImportant);
             this.groupBox2.Controls.Add(this.cmbWinCon);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox2.Location = new System.Drawing.Point(12, 239);
+            this.groupBox2.Location = new System.Drawing.Point(12, 263);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(285, 74);
             this.groupBox2.TabIndex = 22;
@@ -303,7 +314,7 @@
             this.groupBox3.Controls.Add(this.btnArea);
             this.groupBox3.Controls.Add(this.listBox1);
             this.groupBox3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox3.Location = new System.Drawing.Point(303, 12);
+            this.groupBox3.Location = new System.Drawing.Point(303, 36);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(154, 301);
             this.groupBox3.TabIndex = 23;
@@ -373,17 +384,99 @@
             this.listBox1.TabIndex = 0;
             this.listBox1.SelectedValueChanged += new System.EventHandler(this.listBox1_SelectedValueChanged);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolsToolStripMenuItem,
+            this.generateHintToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(468, 24);
+            this.menuStrip1.TabIndex = 24;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // toolsToolStripMenuItem
+            // 
+            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.regenerateGlobalPlaythroughToolStripMenuItem});
+            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
+            this.toolsToolStripMenuItem.Text = "Tools";
+            // 
+            // regenerateGlobalPlaythroughToolStripMenuItem
+            // 
+            this.regenerateGlobalPlaythroughToolStripMenuItem.Name = "regenerateGlobalPlaythroughToolStripMenuItem";
+            this.regenerateGlobalPlaythroughToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
+            this.regenerateGlobalPlaythroughToolStripMenuItem.Text = "Regenerate Global Playthrough";
+            // 
+            // generateHintToolStripMenuItem
+            // 
+            this.generateHintToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.wayOfTheHeroToolStripMenuItem,
+            this.foolishToolStripMenuItem,
+            this.randomLocationToolStripMenuItem,
+            this.itemAreaToolStripMenuItem,
+            this.playthroughLocationToolStripMenuItem,
+            this.playtrhoughItemAreaToolStripMenuItem});
+            this.generateHintToolStripMenuItem.Name = "generateHintToolStripMenuItem";
+            this.generateHintToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
+            this.generateHintToolStripMenuItem.Text = "Generate Hint";
+            // 
+            // wayOfTheHeroToolStripMenuItem
+            // 
+            this.wayOfTheHeroToolStripMenuItem.Name = "wayOfTheHeroToolStripMenuItem";
+            this.wayOfTheHeroToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.wayOfTheHeroToolStripMenuItem.Text = "Way of the Hero";
+            this.wayOfTheHeroToolStripMenuItem.Click += new System.EventHandler(this.GenerateHint);
+            // 
+            // foolishToolStripMenuItem
+            // 
+            this.foolishToolStripMenuItem.Name = "foolishToolStripMenuItem";
+            this.foolishToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.foolishToolStripMenuItem.Text = "Foolish";
+            this.foolishToolStripMenuItem.Click += new System.EventHandler(this.GenerateHint);
+            // 
+            // randomLocationToolStripMenuItem
+            // 
+            this.randomLocationToolStripMenuItem.Name = "randomLocationToolStripMenuItem";
+            this.randomLocationToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.randomLocationToolStripMenuItem.Text = "Random Location";
+            this.randomLocationToolStripMenuItem.Click += new System.EventHandler(this.GenerateHint);
+            // 
+            // itemAreaToolStripMenuItem
+            // 
+            this.itemAreaToolStripMenuItem.Name = "itemAreaToolStripMenuItem";
+            this.itemAreaToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.itemAreaToolStripMenuItem.Text = "Random Item Area";
+            this.itemAreaToolStripMenuItem.Click += new System.EventHandler(this.GenerateHint);
+            // 
+            // playthroughLocationToolStripMenuItem
+            // 
+            this.playthroughLocationToolStripMenuItem.Name = "playthroughLocationToolStripMenuItem";
+            this.playthroughLocationToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.playthroughLocationToolStripMenuItem.Text = "Playthrough Location";
+            this.playthroughLocationToolStripMenuItem.Click += new System.EventHandler(this.GenerateHint);
+            // 
+            // playtrhoughItemAreaToolStripMenuItem
+            // 
+            this.playtrhoughItemAreaToolStripMenuItem.Name = "playtrhoughItemAreaToolStripMenuItem";
+            this.playtrhoughItemAreaToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.playtrhoughItemAreaToolStripMenuItem.Text = "Playtrhough Item area";
+            this.playtrhoughItemAreaToolStripMenuItem.Click += new System.EventHandler(this.GenerateHint);
+            // 
             // SpoilerLogLookUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(468, 322);
+            this.ClientSize = new System.Drawing.Size(468, 349);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "SpoilerLogLookUp";
             this.Text = "SpoilerLogTools";
             this.Load += new System.EventHandler(this.SpoilerLogLookUp_Load);
@@ -393,7 +486,10 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -425,5 +521,15 @@
         private System.Windows.Forms.Button btnArea;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.CheckBox chkShowMacros;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem regenerateGlobalPlaythroughToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem generateHintToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem wayOfTheHeroToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem foolishToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem randomLocationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem itemAreaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem playthroughLocationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem playtrhoughItemAreaToolStripMenuItem;
     }
 }
