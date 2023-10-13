@@ -575,21 +575,24 @@ namespace Windows_Form_Frontend
 
             if (Source == wayOfTheHeroToolStripMenuItem) 
             {
+                if (!ImportantLocations.Any()) { MessageBox.Show("Hint could not be Generated!"); return; }
                 var WOTHLocation = ImportantLocations.PickRandom();
                 var LocationOBJ = _instance.LocationPool[WOTHLocation.Key];
                 MessageBox.Show($"{LocationOBJ.GetDictEntry(_instance).Area} is Way of the Hero");
             }
-            else if (Source == foolishToolStripMenuItem) 
+            else if (Source == foolishToolStripMenuItem)
             {
                 var Areas = _instance.LocationPool.Select(x => x.Value.GetDictEntry(_instance).Area).Distinct().ToArray();
                 var ImportantAreas = ImportantLocationsObj.Select(x => x.GetDictEntry(_instance).Area).Distinct().ToArray();
                 var UnimportantAreas = Areas.Where(x => !ImportantAreas.Contains(x));
+                if (!UnimportantAreas.Any()) { MessageBox.Show("Hint could not be Generated!"); return; }
                 var FoolishArea = UnimportantAreas.PickRandom();
                 MessageBox.Show($"{FoolishArea} did not have any items used in the trackers playthough");
             }
             else if (Source == randomLocationToolStripMenuItem)
             {
                 var RandomizedLocations = AllLocationObj.Where(x => x.IsRandomized() && !string.IsNullOrWhiteSpace(x.Randomizeditem.SpoilerLogGivenItem));
+                if (!RandomizedLocations.Any()) { MessageBox.Show("Hint could not be Generated!"); return; }
                 var randomLocation = RandomizedLocations.PickRandom();
                 string Item = _instance.ItemPool.ContainsKey(randomLocation.Randomizeditem.SpoilerLogGivenItem) ?
                     _instance.ItemPool[randomLocation.Randomizeditem.SpoilerLogGivenItem].GetDictEntry(_instance).GetName(_instance) :
@@ -599,6 +602,7 @@ namespace Windows_Form_Frontend
             else if (Source == itemAreaToolStripMenuItem)
             {
                 var RandomizedLocations = AllLocationObj.Where(x => x.IsRandomized() && !string.IsNullOrWhiteSpace(x.Randomizeditem.SpoilerLogGivenItem));
+                if (!RandomizedLocations.Any()) { MessageBox.Show("Hint could not be Generated!"); return; }
                 var randomLocation = RandomizedLocations.PickRandom();
                 string Item = _instance.ItemPool.ContainsKey(randomLocation.Randomizeditem.SpoilerLogGivenItem) ?
                     _instance.ItemPool[randomLocation.Randomizeditem.SpoilerLogGivenItem].GetDictEntry(_instance).GetName(_instance) :
@@ -608,6 +612,7 @@ namespace Windows_Form_Frontend
             else if (Source == playthroughLocationToolStripMenuItem)
             {
                 var RandomizedLocations = ImportantLocationsObj.Where(x => x.IsRandomized() && !string.IsNullOrWhiteSpace(x.Randomizeditem.SpoilerLogGivenItem));
+                if (!RandomizedLocations.Any()) { MessageBox.Show("Hint could not be Generated!"); return; }
                 var randomLocation = RandomizedLocations.PickRandom();
                 string Item = _instance.ItemPool.ContainsKey(randomLocation.Randomizeditem.SpoilerLogGivenItem) ?
                     _instance.ItemPool[randomLocation.Randomizeditem.SpoilerLogGivenItem].GetDictEntry(_instance).GetName(_instance) :
@@ -617,6 +622,7 @@ namespace Windows_Form_Frontend
             else if (Source == playtrhoughItemAreaToolStripMenuItem)
             {
                 var RandomizedLocations = ImportantLocationsObj.Where(x => x.IsRandomized() && !string.IsNullOrWhiteSpace(x.Randomizeditem.SpoilerLogGivenItem));
+                if (!RandomizedLocations.Any()) { MessageBox.Show("Hint could not be Generated!"); return; }
                 var randomLocation = RandomizedLocations.PickRandom();
                 string Item = _instance.ItemPool.ContainsKey(randomLocation.Randomizeditem.SpoilerLogGivenItem) ?
                     _instance.ItemPool[randomLocation.Randomizeditem.SpoilerLogGivenItem].GetDictEntry(_instance).GetName(_instance) :
