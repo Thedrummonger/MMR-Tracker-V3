@@ -48,6 +48,7 @@ namespace Windows_Form_Frontend
             Testing.doDevCheck(Modifier: ModifierKeys == Keys.Control);
             UpdateUI();
             WinFormInstanceCreation.ApplyUserPretLogic();
+            WinformTesting.AddDebugActions(CodeTestingToolStripMenuItem);
         }
 
         public void DoUpdateCheck()

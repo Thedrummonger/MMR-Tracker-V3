@@ -10,6 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Windows_Form_Frontend
 {
@@ -17,13 +18,26 @@ namespace Windows_Form_Frontend
     {
         public static void DoTests()
         {
-            //WinformTesting.TPRCreateData();
-            //OOTMMCreateData();
-            //WinformTesting.WWRCreateData();
-            //TestFuncParse();
-            //PMRCreateData();
-            //MMR_Tracker_V3.OtherGames.TPRV2.ReadAndParse.ReadLines();
-            TPRCreateData();
+
+        }
+
+        public static void AddDebugActions(ToolStripMenuItem codeTestingToolStripMenuItem)
+        {
+            Dictionary<string, Action> DevFunctions = new Dictionary<string, Action>()
+            {
+                { "Create TPR Data", TPRCreateData },
+                { "Create OOTMM Data", OOTMMCreateData },
+                { "Create WWR Data", WWRCreateData },
+                { "Create PMR Data", PMRCreateData },
+            };
+
+            foreach (var Function in DevFunctions)
+            {
+                var MenuItem = new ToolStripMenuItem { Text = Function.Key };
+                MenuItem.Click += OptionListBox_DoubleClick;
+                void OptionListBox_DoubleClick(object sender, EventArgs e) { Function.Value(); }
+                codeTestingToolStripMenuItem.DropDownItems.Add(MenuItem);
+            }
         }
 
         public static void CreateMMRItemTrackerObject()

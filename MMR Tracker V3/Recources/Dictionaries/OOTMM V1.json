@@ -105333,6 +105333,24 @@
         "PriceDataNames": []
       }
     },
+    "TRICK_MM_BANK_ONE_WALLET": {
+      "ID": "TRICK_MM_BANK_ONE_WALLET",
+      "Name": "Bank Rewards Require One Less Wallet",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "TRICK_MM_BANK_NO_WALLET": {
+      "ID": "TRICK_MM_BANK_NO_WALLET",
+      "Name": "Bank Rewards Require No Wallets",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
     "TRICK_OOT_EQUIP_SWAP": {
       "ID": "TRICK_OOT_EQUIP_SWAP",
       "Name": "Equip Swap (OoT)",
@@ -110918,6 +110936,26 @@
     },
     {
       "Id": "TRICK_MM_GBT_CENTRAL_GEYSER",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": true,
+      "TrickCategory": "MM"
+    },
+    {
+      "Id": "TRICK_MM_BANK_ONE_WALLET",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": true,
+      "TrickCategory": "MM"
+    },
+    {
+      "Id": "TRICK_MM_BANK_NO_WALLET",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",

@@ -26317,15 +26317,44 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_can_hookshot"
+          "OOT_can_hookshot",
+          "OOT_is_adult"
         ],
         [
-          "OOT_has_hover_boots",
-          "OOT_is_adult"
+          "OOT_is_adult",
+          "OOT_has_hover_boots"
+        ],
+        [
+          "OOT_can_hookshot",
+          "OOT_has_tunic_goron_strict"
         ],
         [
           "OOT_has_hover_boots",
           "OOT_has_tunic_goron_strict"
+        ],
+        [
+          "OOT_can_hookshot",
+          "OOT_can_hammer"
+        ],
+        [
+          "OOT_has_hover_boots",
+          "OOT_can_hammer"
+        ],
+        [
+          "OOT_can_hookshot",
+          "OOT_hookshot_anywhere"
+        ],
+        [
+          "OOT_has_hover_boots",
+          "OOT_hookshot_anywhere"
+        ],
+        [
+          "OOT_can_hookshot",
+          "OOT_climb_anywhere"
+        ],
+        [
+          "OOT_has_hover_boots",
+          "OOT_climb_anywhere"
         ]
       ],
       "TimeNeeded": "None",
@@ -56565,6 +56594,34 @@
         [
           "var{childWallets, false}",
           "SHARED_WALLET, 1"
+        ],
+        [
+          "var{childWallets, false}",
+          "trick{TRICK_MM_BANK_ONE_WALLET}"
+        ],
+        [
+          "var{childWallets}",
+          "MM_WALLET, 1",
+          "trick{TRICK_MM_BANK_ONE_WALLET}"
+        ],
+        [
+          "var{childWallets}",
+          "SHARED_WALLET, 1",
+          "trick{TRICK_MM_BANK_ONE_WALLET}"
+        ],
+        [
+          "var{childWallets, false}",
+          "trick{TRICK_MM_BANK_NO_WALLET}"
+        ],
+        [
+          "var{childWallets}",
+          "MM_WALLET, 1",
+          "trick{TRICK_MM_BANK_NO_WALLET}"
+        ],
+        [
+          "var{childWallets}",
+          "SHARED_WALLET, 1",
+          "trick{TRICK_MM_BANK_NO_WALLET}"
         ]
       ],
       "TimeNeeded": "None",
@@ -56595,6 +56652,40 @@
         [
           "var{childWallets, false}",
           "SHARED_WALLET, 2"
+        ],
+        [
+          "var{childWallets}",
+          "MM_WALLET, 2",
+          "trick{TRICK_MM_BANK_ONE_WALLET}"
+        ],
+        [
+          "var{childWallets}",
+          "SHARED_WALLET, 2",
+          "trick{TRICK_MM_BANK_ONE_WALLET}"
+        ],
+        [
+          "var{childWallets, false}",
+          "trick{TRICK_MM_BANK_ONE_WALLET}",
+          "MM_WALLET, 1"
+        ],
+        [
+          "var{childWallets, false}",
+          "trick{TRICK_MM_BANK_ONE_WALLET}",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "var{childWallets, false}",
+          "trick{TRICK_MM_BANK_NO_WALLET}"
+        ],
+        [
+          "var{childWallets}",
+          "MM_WALLET, 1",
+          "trick{TRICK_MM_BANK_NO_WALLET}"
+        ],
+        [
+          "var{childWallets}",
+          "SHARED_WALLET, 1",
+          "trick{TRICK_MM_BANK_NO_WALLET}"
         ]
       ],
       "TimeNeeded": "None",
