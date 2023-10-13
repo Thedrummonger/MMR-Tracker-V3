@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using YamlDotNet.Core;
 
 namespace MMR_Tracker_V3.OtherGames.WindWakerRando
 {
@@ -111,7 +112,7 @@ namespace MMR_Tracker_V3.OtherGames.WindWakerRando
                 dictionary.LocationList.Add(Entrance.Value, new LogicDictionaryData.DictionaryLocationEntries
                 {
                     ID = Entrance.Value,
-                    Area = Entrance.Value.Contains("Dungeon Entrance") ? "Dugneon Entrances" : "Cave Entrances",
+                    Area = "Entrances",
                     Name = Entrance.Value.Replace("Can Access ", ""),
                     OriginalItem = Entrance.Key,
                     ValidItemTypes = new string[] { "Entrances" }
@@ -134,7 +135,13 @@ namespace MMR_Tracker_V3.OtherGames.WindWakerRando
                     List<string> NewSet = new List<string>();
                     foreach(var condtional in Set)
                     {
-                        NewSet.Add(CleanConditional(condtional));
+                        var CleanedConditional = CleanConditional(condtional);
+                        if (dictionary.LocationList.ContainsKey(CleanedConditional))
+                        {
+                            Debug.WriteLine($"{LogicEntry.Id} | cond {CleanedConditional} parsed to available{{{CleanedConditional}}}");
+                            CleanedConditional = $"available{{{CleanedConditional}}}";
+                        }
+                        NewSet.Add(CleanedConditional);
                     }
                     NewConditional.Add(NewSet);
                 }
@@ -162,14 +169,14 @@ namespace MMR_Tracker_V3.OtherGames.WindWakerRando
                     Max = int.Parse(Data[0]);
                     ItemName = Data[1];
                 }
-                dictionary.ItemList.Add(ItemName, new TrackerObjects.LogicDictionaryData.DictionaryItemEntries
+                dictionary.ItemList.Add(ItemName, new LogicDictionaryData.DictionaryItemEntries
                 {
                     ID = ItemName,
                     Name = ItemName,
                     MaxAmountInWorld = Max,
                     ItemTypes = new string[] {"Item"},
                     ValidStartingItem = true,
-                    SpoilerData = new TrackerObjects.MMRData.SpoilerlogReference { SpoilerLogNames = new string[] {ItemName} }
+                    SpoilerData = new MMRData.SpoilerlogReference { SpoilerLogNames = new string[] {ItemName} }
                 });
             }
 
@@ -186,6 +193,36 @@ namespace MMR_Tracker_V3.OtherGames.WindWakerRando
             sword_mode.CurrentValue = "Start with Hero's Sword";
             sword_mode.CreateSimpleValues(new string[] { "Swordless", "No Starting Sword", "Start with Hero's Sword" });
             dictionary.Options.Add(sword_mode.ID, sword_mode);
+
+            OptionData.TrackerOption logic_obscurity = new OptionData.TrackerOption();
+            sword_mode.ID = "logic_obscurity";
+            sword_mode.DisplayName = "Obscure Tricks Required";
+            sword_mode.CurrentValue = "Normal";
+            sword_mode.CreateSimpleValues(new string[] { "Normal", "Hard", "Very Hard" });
+            dictionary.Options.Add(sword_mode.ID, sword_mode);
+
+            OptionData.TrackerOption logic_precision = new OptionData.TrackerOption();
+            sword_mode.ID = "logic_precision";
+            sword_mode.DisplayName = "Precise Tricks Required";
+            sword_mode.CurrentValue = "Normal";
+            sword_mode.CreateSimpleValues(new string[] { "Normal", "Hard", "Very Hard" });
+            dictionary.Options.Add(sword_mode.ID, sword_mode);
+
+            OptionData.TrackerOption required_bosses = new OptionData.TrackerOption();
+            sword_mode.ID = "required_bosses";
+            sword_mode.DisplayName = "Required Bosses Mode";
+            sword_mode.CurrentValue = "Disabled";
+            sword_mode.CreateSimpleValues(new string[] { "Enabled", "Disabled" });
+            dictionary.Options.Add(sword_mode.ID, sword_mode);
+
+            foreach(var i in Logic.Logic)
+            {
+                LogicUtilities.RemoveRedundantConditionals(i);
+                LogicUtilities.MakeCommonConditionalsRequirements(i);
+            }
+
+            File.WriteAllText(Path.Join(References.TestingPaths.GetDevTestingPath(), "WWRTesting", "Logic.json"), JsonConvert.SerializeObject(Logic, Testing._NewtonsoftJsonSerializerOptions));
+            File.WriteAllText(Path.Join(References.TestingPaths.GetDevTestingPath(), "WWRTesting", "Dict.json"), JsonConvert.SerializeObject(dictionary, Testing._NewtonsoftJsonSerializerOptions));
 
         }
 
@@ -209,7 +246,7 @@ namespace MMR_Tracker_V3.OtherGames.WindWakerRando
                     string OptionString = $"option{{{OptionName}, {OptionValue}" + (OptionMod.ToLower() == "is not" ? ", false" : "") + "}";
                     return OptionString;
                 }
-                else if (Segments[0] == "Can Access Other Location")
+                else if (Segments[0] == "Can Access Other Location" || Segments[0] == "Can Access Item Location")
                 {
                     return $"available{{{Segments[1]}}}";
                 }
