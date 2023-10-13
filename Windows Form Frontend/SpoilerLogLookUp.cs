@@ -18,7 +18,7 @@ namespace Windows_Form_Frontend
     public partial class SpoilerLogLookUp : Form
     {
         public LogicObjects.TrackerInstance _instance;
-        public PlaythroughGenerator SpoilerLookupPlaythrough = null;
+        public Dictionary<string, PlaythroughGenerator.PlaythroughObject> SpoilerLookupPlaythrough = null;
 
         SeedCheckMode seedCheckMode = SeedCheckMode.view;
         List<MiscData.StandardListBoxItem> SeedCheckResults = new List<MiscData.StandardListBoxItem>();
@@ -43,6 +43,10 @@ namespace Windows_Form_Frontend
             listBox1_SelectedValueChanged(sender, e);
             SetDefaultWinCon();
             UpdateSeedChckUI();
+            if (_instance.SpoilerLog.Playthrough is not null)
+            {
+                SpoilerLookupPlaythrough = _instance.SpoilerLog.Playthrough;
+            }
 
         }
 
@@ -288,8 +292,9 @@ namespace Windows_Form_Frontend
                     int currInd = listBox1.SelectedIndex;
                     int TopInd = listBox1.TopIndex;
                     WinFormUtils.PrintMessageToListBox(listBox1, "Generating Playthrough Data... \n \n This could take a while but will only happen once.");
-                    SpoilerLookupPlaythrough =  new PlaythroughGenerator(_instance);
-                    SpoilerLookupPlaythrough.GeneratePlaythrough();
+                    var TempPlaythrough = new PlaythroughGenerator(_instance);
+                    TempPlaythrough.GeneratePlaythrough();
+                    SpoilerLookupPlaythrough = TempPlaythrough.Playthrough;
                     PopulateSpoilerLogList();
                     listBox1.TopIndex = TopInd;
                     listBox1.SelectedIndex = currInd;
@@ -297,22 +302,22 @@ namespace Windows_Form_Frontend
 
                 if (SLI.tag is LocationData.LocationObject LO)
                 {
-                    if (SpoilerLookupPlaythrough.Playthrough.ContainsKey(LO.ID)) { MessageBox.Show($"{SLI.Display} Can be obtained sphere {SpoilerLookupPlaythrough.Playthrough[LO.ID].sphere}"); }
+                    if (SpoilerLookupPlaythrough.ContainsKey(LO.ID)) { MessageBox.Show($"{SLI.Display} Can be obtained sphere {SpoilerLookupPlaythrough[LO.ID].sphere}"); }
                     else { MessageBox.Show($"{SLI.Display} Can not be obtained with known items");}
                 }
                 else if (SLI.tag is List<LocationData.LocationObject> LLO)
                 {
                     if (LLO.Count == 1)
                     {
-                        if (SpoilerLookupPlaythrough.Playthrough.ContainsKey(LLO.First().ID)) { MessageBox.Show($"{SLI.Display} Can be obtained sphere {SpoilerLookupPlaythrough.Playthrough[LLO.First().ID].sphere}"); }
+                        if (SpoilerLookupPlaythrough.ContainsKey(LLO.First().ID)) { MessageBox.Show($"{SLI.Display} Can be obtained sphere {SpoilerLookupPlaythrough[LLO.First().ID].sphere}"); }
                         else { MessageBox.Show($"{SLI.Display} Can not be obtained with known items"); }
                     }
                     else
                     {
                         List<int> SpheresObtainable = new List<int>();
-                        foreach(var i in LLO.Where(x => SpoilerLookupPlaythrough.Playthrough.ContainsKey(x.ID)))
+                        foreach(var i in LLO.Where(x => SpoilerLookupPlaythrough.ContainsKey(x.ID)))
                         {
-                            SpheresObtainable.Add(SpoilerLookupPlaythrough.Playthrough[i.ID].sphere);
+                            SpheresObtainable.Add(SpoilerLookupPlaythrough[i.ID].sphere);
                         }
                         if (!SpheresObtainable.Any()) { MessageBox.Show($"{SLI.Display} Can not be obtained with known items"); }
                         else { MessageBox.Show($"{SLI.Display} Can be obtained sphere {SpheresObtainable.Min()}");}
@@ -320,7 +325,7 @@ namespace Windows_Form_Frontend
                 }
                 else if (SLI.tag is MacroObject MO)
                 {
-                    if (SpoilerLookupPlaythrough.Playthrough.ContainsKey(MO.ID)) { MessageBox.Show($"{SLI.Display} Can be obtained sphere {SpoilerLookupPlaythrough.Playthrough[MO.ID].sphere}"); }
+                    if (SpoilerLookupPlaythrough.ContainsKey(MO.ID)) { MessageBox.Show($"{SLI.Display} Can be obtained sphere {SpoilerLookupPlaythrough[MO.ID].sphere}"); }
                     else if (MO.isTrick(_instance) && !MO.TrickEnabled) { MessageBox.Show($"{SLI.Display} Is a trick and is not enabled"); }
                     else { MessageBox.Show($"{SLI.Display} Can not be obtained with known items"); }
                 }

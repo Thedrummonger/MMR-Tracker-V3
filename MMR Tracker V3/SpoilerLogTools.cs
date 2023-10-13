@@ -68,6 +68,7 @@ namespace MMR_Tracker_V3
                     container.Instance.SpoilerLog = new LogicObjects.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
                     OtherGames.OOTMMV2.ImportSpoilerLog.readAndApplySpoilerLog(container.Instance);
                     container.Instance.EntrancePool.IsEntranceRando = container.Instance.EntrancePool.CheckForRandomEntrances(container.Instance);
+                    container.Instance.SpoilerLog.GetStaticPlaythrough(container.Instance);
                     return true;
                 case "MMR":
                     container.Instance.SpoilerLog = new LogicObjects.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
@@ -75,14 +76,17 @@ namespace MMR_Tracker_V3
                     ApplyMMRandoSettings(container.Instance, LogData);
                     ApplyMMRandoSpoilerLog(container.Instance, LogData);
                     container.Instance.EntrancePool.IsEntranceRando = container.Instance.EntrancePool.CheckForRandomEntrances(container.Instance);
+                    container.Instance.SpoilerLog.GetStaticPlaythrough(container.Instance);
                     return true;
                 case "TPR":
                     container.Instance.SpoilerLog = new LogicObjects.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
                     OtherGames.TPRando.TPRSpoilerLogParser.readAndApplySpoilerLog(container.Instance);
+                    container.Instance.SpoilerLog.GetStaticPlaythrough(container.Instance);
                     return true;
                 case "PMR":
                     container.Instance.SpoilerLog = new LogicObjects.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
                     OtherGames.PaperMarioRando.SpoilerLogParser.ParseSpoiler(container.Instance);
+                    container.Instance.SpoilerLog.GetStaticPlaythrough(container.Instance);
                     return true;
                 default:
                     return false;
