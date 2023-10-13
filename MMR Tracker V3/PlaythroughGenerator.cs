@@ -501,10 +501,16 @@ namespace MMR_Tracker_V3
 
         public static List<string> GetMissingItems(string logicID, LogicObjects.TrackerInstance Instance)
         {
-            PlaythroughGenerator playthroughGenerator = new PlaythroughGenerator(Instance);
-            playthroughGenerator.GeneratePlaythrough();
-            if (!playthroughGenerator.Playthrough.ContainsKey(logicID)) { return null; }
-            var AdvancedUnlockData = GetAdvancedUnlockData(logicID, playthroughGenerator._Instance.logicCalculation.LogicUnlockData, playthroughGenerator._Instance.Instance, playthroughGenerator);
+            Dictionary<string, PlaythroughGenerator.PlaythroughObject> Playthrough = Instance.SpoilerLog?.Playthrough;
+            if (Playthrough is null)
+            {
+                PlaythroughGenerator playthroughGenerator = new PlaythroughGenerator(Instance);
+                playthroughGenerator.GeneratePlaythrough();
+                Playthrough = playthroughGenerator.Playthrough;
+            }
+            if (!Playthrough.ContainsKey(logicID)) { return null; }
+            var AdvancedUnlockData = Playthrough[logicID].advancedUnlockData;
+            //var AdvancedUnlockData = GetAdvancedUnlockData(logicID, playthroughGenerator._Instance.logicCalculation.LogicUnlockData, playthroughGenerator._Instance.Instance, playthroughGenerator);
             if (AdvancedUnlockData == null) { return null; }
             List<string> NeededItems = new List<string>();
             foreach (var item in AdvancedUnlockData.RealItemsUsed)
