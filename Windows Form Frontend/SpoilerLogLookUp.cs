@@ -638,5 +638,17 @@ namespace Windows_Form_Frontend
             if (_instance.SpoilerLog is null) { MessageBox.Show("Not spoiler log has been imported. A spoiler log must be imported to generate a playthrough."); return; }
             _instance.SpoilerLog.GetStaticPlaythrough(_instance);
         }
+
+        private void regenerateLocalSpoilerLogToolsPlaythroughToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int currInd = listBox1.SelectedIndex;
+            int TopInd = listBox1.TopIndex;
+            var TempPlaythrough = new PlaythroughGenerator(_instance);
+            TempPlaythrough.GeneratePlaythrough();
+            SpoilerLookupPlaythrough = TempPlaythrough.Playthrough;
+            PopulateSpoilerLogList();
+            listBox1.TopIndex = TopInd;
+            listBox1.SelectedIndex = currInd;
+        }
     }
 }

@@ -65,6 +65,7 @@
             this.itemAreaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.playthroughLocationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.playtrhoughItemAreaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.regenerateLocalSpoilerLogToolsPlaythroughToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -398,7 +399,8 @@
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.regenerateGlobalPlaythroughToolStripMenuItem});
+            this.regenerateGlobalPlaythroughToolStripMenuItem,
+            this.regenerateLocalSpoilerLogToolsPlaythroughToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
@@ -406,7 +408,7 @@
             // regenerateGlobalPlaythroughToolStripMenuItem
             // 
             this.regenerateGlobalPlaythroughToolStripMenuItem.Name = "regenerateGlobalPlaythroughToolStripMenuItem";
-            this.regenerateGlobalPlaythroughToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
+            this.regenerateGlobalPlaythroughToolStripMenuItem.Size = new System.Drawing.Size(324, 22);
             this.regenerateGlobalPlaythroughToolStripMenuItem.Text = "Regenerate Global Playthrough";
             this.regenerateGlobalPlaythroughToolStripMenuItem.Click += new System.EventHandler(this.regenerateGlobalPlaythroughToolStripMenuItem_Click);
             // 
@@ -464,6 +466,13 @@
             this.playtrhoughItemAreaToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.playtrhoughItemAreaToolStripMenuItem.Text = "Playtrhough Item area";
             this.playtrhoughItemAreaToolStripMenuItem.Click += new System.EventHandler(this.GenerateHint);
+            // 
+            // regenerateLocalSpoilerLogToolsPlaythroughToolStripMenuItem
+            // 
+            this.regenerateLocalSpoilerLogToolsPlaythroughToolStripMenuItem.Name = "regenerateLocalSpoilerLogToolsPlaythroughToolStripMenuItem";
+            this.regenerateLocalSpoilerLogToolsPlaythroughToolStripMenuItem.Size = new System.Drawing.Size(324, 22);
+            this.regenerateLocalSpoilerLogToolsPlaythroughToolStripMenuItem.Text = "Regenerate Local Spoiler Log Tools Playthrough";
+            this.regenerateLocalSpoilerLogToolsPlaythroughToolStripMenuItem.Click += new System.EventHandler(this.regenerateLocalSpoilerLogToolsPlaythroughToolStripMenuItem_Click);
             // 
             // SpoilerLogLookUp
             // 
@@ -532,5 +541,6 @@
         private System.Windows.Forms.ToolStripMenuItem itemAreaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem playthroughLocationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem playtrhoughItemAreaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem regenerateLocalSpoilerLogToolsPlaythroughToolStripMenuItem;
     }
 }
