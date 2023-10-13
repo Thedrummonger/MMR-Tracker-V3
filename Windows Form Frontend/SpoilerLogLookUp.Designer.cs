@@ -408,6 +408,7 @@
             this.regenerateGlobalPlaythroughToolStripMenuItem.Name = "regenerateGlobalPlaythroughToolStripMenuItem";
             this.regenerateGlobalPlaythroughToolStripMenuItem.Size = new System.Drawing.Size(238, 22);
             this.regenerateGlobalPlaythroughToolStripMenuItem.Text = "Regenerate Global Playthrough";
+            this.regenerateGlobalPlaythroughToolStripMenuItem.Click += new System.EventHandler(this.regenerateGlobalPlaythroughToolStripMenuItem_Click);
             // 
             // generateHintToolStripMenuItem
             // 
