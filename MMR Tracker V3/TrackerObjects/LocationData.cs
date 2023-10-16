@@ -78,10 +78,17 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
             public bool CanBeUnrandomized(LogicObjects.TrackerInstance instance)
             {
+                //If it's already unrandomized let it continue to be
                 if (IsUnrandomized()) { return true; }
                 string OriginalItem = GetDictEntry(instance).OriginalItem ?? "";
                 var OriginalItemObject = instance.GetItemByID(OriginalItem);
+                //IF the original item is not a valid item or is blank it can't be unrandomized
                 if (OriginalItemObject == null) { return false; }
+                //If the check was already given it's vanilla item through the spoiler log or manually it can be unrandomized
+                //This gets around a quirk caused by "CanBePlaced" not being smart enough to know to ignore the item 
+                //assigned to this check when checking to see if the max amount has been placed
+                if (GetItemAtCheck(instance) is not null && GetItemAtCheck(instance) == OriginalItemObject.Id) { return true; }
+                //If the max amount of this object has been placed return false, otherwise true
                 return OriginalItemObject.CanBePlaced(instance);
             }
             public bool AppearsinListbox(LogicObjects.TrackerInstance Instance, bool ShowJunkUnrand = false)
