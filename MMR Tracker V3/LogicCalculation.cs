@@ -30,7 +30,7 @@ namespace MMR_Tracker_V3
             container = _container;
         }
 
-        private bool RequirementsMet(List<string> Requirements, string ID, List<string> TempUnlockData)
+        private bool RequirementsMet(List<string> Requirements, List<string> TempUnlockData)
         {
             List<string> SubUnlockData = new();
             foreach(var Req in Requirements)
@@ -41,13 +41,13 @@ namespace MMR_Tracker_V3
             return true;
         }
 
-        private bool ConditionalsMet(List<List<string>> Conditionals, string ID, List<string> TempUnlockData)
+        private bool ConditionalsMet(List<List<string>> Conditionals, List<string> TempUnlockData)
         {
             if (!Conditionals.Any()) { return true; }
             List<string> SubUnlockData = new List<string>();
             foreach(var Set in Conditionals)
             {
-                if (RequirementsMet(Set, ID, SubUnlockData)) 
+                if (RequirementsMet(Set, SubUnlockData)) 
                 {
                     TempUnlockData.AddRange(SubUnlockData);
                     return true; 
@@ -70,22 +70,21 @@ namespace MMR_Tracker_V3
             switch (type)
             {
                 case LogicEntryType.Bool:
-                    return bool.Parse(LogicItem);
+                    return bool.Parse(i);
                 case LogicEntryType.item:
-                    SubUnlockData.Add(LogicItem);
+                    SubUnlockData.Add(i);
                     return container.Instance.GetItemByID(LogicItem).Useable(container.Instance, Amount);
                 case LogicEntryType.macro:
-                    SubUnlockData.Add(LogicItem);
+                    SubUnlockData.Add(i);
                     return container.Instance.GetMacroByID(LogicItem).Aquired; 
                 case LogicEntryType.Area:
-                    SubUnlockData.Add(LogicItem);
-                    return AreaReached(LogicItem, "");
+                    return AreaReached(LogicItem, SubUnlockData);
                 case LogicEntryType.variableString:
                     return LogicEntryAquired(container.Instance.Variables[LogicItem].GetValue(container.Instance) as string, SubUnlockData);
                 case LogicEntryType.variableList:
                     return CheckItemArray(LogicItem, Amount, SubUnlockData, out int _);
                 case LogicEntryType.variableBool:
-                    SubUnlockData.Add(LogicItem);
+                    SubUnlockData.Add(i);
                     return container.Instance.Variables[LogicItem].GetValue(container.Instance);
                 default:
                     Debug.WriteLine($"{LogicItem} Was not a valid Logic Entry");
@@ -130,7 +129,7 @@ namespace MMR_Tracker_V3
             }
         }
 
-        private bool AreaReached(string Area, string ID, List<string> TempUnlockData = null)
+        private bool AreaReached(string Area, List<string> TempUnlockData = null)
         {
             bool IsRoot = Area is null || Area == container.Instance.EntrancePool.RootArea;
             string TargetArea = Area ??container.Instance.EntrancePool.RootArea;
@@ -146,9 +145,9 @@ namespace MMR_Tracker_V3
         {
             List<string> UnlockedWith = new List<string>();
             bool Available =
-                (Area == null || AreaReached(Area, ID, UnlockedWith)) &&
-                RequirementsMet(Logic.RequiredItems, ID, UnlockedWith) &&
-                ConditionalsMet(Logic.ConditionalItems, ID, UnlockedWith);
+                (Area == null || AreaReached(Area, UnlockedWith)) &&
+                RequirementsMet(Logic.RequiredItems, UnlockedWith) &&
+                ConditionalsMet(Logic.ConditionalItems, UnlockedWith);
 
             if (!LogicUnlockData.ContainsKey(ID) && Available)
             {
