@@ -24,11 +24,11 @@ namespace MMR_Tracker_V3.TrackerObjects
                 if (EntrancePair == null) { return null; }
                 return AreaList[EntrancePair.Area].GetExit(EntrancePair.Exit);
             }
-            public bool CheckForRandomEntrances(LogicObjects.TrackerInstance Instance)
+            public bool CheckForRandomEntrances(InstanceData.TrackerInstance Instance)
             {
                 return AreaList.Any(x => x.Value.RandomizableExits(Instance).Any(x => x.Value.RandomizedState == RandomizedState.Randomized));
             }
-            public int GetAmountOfRandomizedEntrances(LogicObjects.TrackerInstance Instance)
+            public int GetAmountOfRandomizedEntrances(InstanceData.TrackerInstance Instance)
             {
                 return AreaList.SelectMany(x => x.Value.RandomizableExits(Instance).Where(y => y.Value.IsRandomized())).Count();
             }
@@ -49,11 +49,11 @@ namespace MMR_Tracker_V3.TrackerObjects
                 if (Exits.ContainsKey(ID)) { return Exits[ID]; }
                 return null;
             }
-            public Dictionary<string, EntranceRandoExit> RandomizableExits(LogicObjects.TrackerInstance Instance)
+            public Dictionary<string, EntranceRandoExit> RandomizableExits(InstanceData.TrackerInstance Instance)
             {
                 return Exits.Where(x => x.Value.IsRandomizableEntrance(Instance)).ToDictionary(x => x.Key, v => v.Value);
             }
-            public Dictionary<string, EntranceRandoExit> NonRandomizableExits(LogicObjects.TrackerInstance Instance)
+            public Dictionary<string, EntranceRandoExit> NonRandomizableExits(InstanceData.TrackerInstance Instance)
             {
                 return Exits.Where(x => !x.Value.IsRandomizableEntrance(Instance)).ToDictionary(x => x.Key, v => v.Value);
             }
@@ -71,13 +71,13 @@ namespace MMR_Tracker_V3.TrackerObjects
             public EntranceRandoDestination SpoilerDefinedDestinationExit { get; set; }
             public EntranceAreaPair EntrancePair { get; set; }
             public string DisplayName { get; set; }
-            public LogicObjects.ReferenceData referenceData { get; set; } = new LogicObjects.ReferenceData();
+            public InstanceData.ReferenceData referenceData { get; set; } = new InstanceData.ReferenceData();
 
-            public string DisplayArea(LogicObjects.TrackerInstance Instance)
+            public string DisplayArea(InstanceData.TrackerInstance Instance)
             {
                 return GetDictEntry(Instance)?.DisplayArea??ParentAreaID;
             }
-            public string DisplayExit(LogicObjects.TrackerInstance Instance)
+            public string DisplayExit(InstanceData.TrackerInstance Instance)
             {
                 return GetDictEntry(Instance)?.DisplayExit??ID;
             }
@@ -87,12 +87,12 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return DisplayName ?? ID;
             }
 
-            public bool IsRandomizableEntrance(LogicObjects.TrackerInstance currentTrackerInstance)
+            public bool IsRandomizableEntrance(InstanceData.TrackerInstance currentTrackerInstance)
             {
                 return GetDictEntry(currentTrackerInstance).RandomizableEntrance;
             }
 
-            public LogicDictionaryData.DictionaryEntranceEntries GetDictEntry(LogicObjects.TrackerInstance Instance)
+            public LogicDictionaryData.DictionaryEntranceEntries GetDictEntry(InstanceData.TrackerInstance Instance)
             {
                 return Instance.LogicDictionary.EntranceList[Instance.GetLogicNameFromExit(this)];
             }
@@ -120,7 +120,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return RandomizedState == RandomizedState.ForcedJunk;
             }
 
-            public EntranceRandoDestination GetDestinationAtExit(LogicObjects.TrackerInstance currentTrackerInstance)
+            public EntranceRandoDestination GetDestinationAtExit(InstanceData.TrackerInstance currentTrackerInstance)
             {
                 var DestinationAtCheck = DestinationExit;
                 if (SpoilerDefinedDestinationExit != null)
@@ -134,7 +134,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return DestinationAtCheck;
             }
 
-            public bool ToggleExitChecked(CheckState NewState, LogicObjects.TrackerInstance Instance)
+            public bool ToggleExitChecked(CheckState NewState, InstanceData.TrackerInstance Instance)
             {
                 CheckState CurrentState = CheckState;
                 if (CurrentState == NewState)

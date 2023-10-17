@@ -46,7 +46,7 @@ namespace Windows_Form_Frontend
 
             if (File.Exists(References.Globalpaths.OptionFile))
             {
-                MainInterface.InstanceContainer.Instance.StaticOptions.OptionFile = JsonConvert.DeserializeObject<LogicObjects.OptionFile>(File.ReadAllText(References.Globalpaths.OptionFile));
+                MainInterface.InstanceContainer.Instance.StaticOptions.OptionFile = JsonConvert.DeserializeObject<MMR_Tracker_V3.InstanceData.OptionFile>(File.ReadAllText(References.Globalpaths.OptionFile));
             }
 
             ApplyWinFormSpecificData(MainInterface.InstanceContainer.Instance);
@@ -60,7 +60,7 @@ namespace Windows_Form_Frontend
             return true;
         }
 
-        public static void ApplyWinFormSpecificData(LogicObjects.TrackerInstance instance)
+        public static void ApplyWinFormSpecificData(MMR_Tracker_V3.InstanceData.TrackerInstance instance)
         {
             if (string.IsNullOrWhiteSpace(instance.StaticOptions.OptionFile.WinformData.FormFont))
             {

@@ -17,8 +17,8 @@ namespace MMR_Tracker_V3
             TrackerVersionStatus VersionStatus = new TrackerVersionStatus();
             if (File.Exists(References.Globalpaths.OptionFile))
             {
-                LogicObjects.OptionFile options;
-                try { options = JsonConvert.DeserializeObject<LogicObjects.OptionFile>(File.ReadAllText(References.Globalpaths.OptionFile)); }
+                InstanceData.OptionFile options;
+                try { options = JsonConvert.DeserializeObject<InstanceData.OptionFile>(File.ReadAllText(References.Globalpaths.OptionFile)); }
                 catch { Debug.WriteLine("could not parse options.txt"); return VersionStatus; }
                 if (!options.CheckForUpdate) {
                     Debug.WriteLine("Checking for updates not enabled");

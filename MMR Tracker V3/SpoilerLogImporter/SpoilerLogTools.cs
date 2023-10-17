@@ -15,7 +15,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
 {
     public static class SpoilerLogTools
     {
-        public static string GetSpoilerLogFilter(LogicObjects.TrackerInstance Instance)
+        public static string GetSpoilerLogFilter(InstanceData.TrackerInstance Instance)
         {
             return Instance.LogicFile.GameCode switch
             {
@@ -60,19 +60,19 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 //case "OOTR":
                 //case "PMR":
                 case "OOTMM":
-                    container.Instance.SpoilerLog = new LogicObjects.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
+                    container.Instance.SpoilerLog = new InstanceData.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
                     SpoilerLogImporter.OOTMMSpoilerLogTools.readAndApplySpoilerLog(container.Instance);
                     container.Instance.EntrancePool.IsEntranceRando = container.Instance.EntrancePool.CheckForRandomEntrances(container.Instance);
                     container.Instance.SpoilerLog.GetStaticPlaythrough(container.Instance);
                     return true;
                 case "MMR":
-                    container.Instance.SpoilerLog = new LogicObjects.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
+                    container.Instance.SpoilerLog = new InstanceData.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
                     SpoilerLogImporter.MMRSpoilerLogTools.ReadAndApplySpoilerLog(container.Instance);
                     container.Instance.EntrancePool.IsEntranceRando = container.Instance.EntrancePool.CheckForRandomEntrances(container.Instance);
                     container.Instance.SpoilerLog.GetStaticPlaythrough(container.Instance);
                     return true;
                 case "TPR":
-                    container.Instance.SpoilerLog = new LogicObjects.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
+                    container.Instance.SpoilerLog = new InstanceData.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
 
 /* Unmerged change from project 'MMR Tracker V3 (net6.0-windows)'
 Before:
@@ -84,7 +84,7 @@ After:
                     container.Instance.SpoilerLog.GetStaticPlaythrough(container.Instance);
                     return true;
                 case "PMR":
-                    container.Instance.SpoilerLog = new LogicObjects.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
+                    container.Instance.SpoilerLog = new InstanceData.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
 
 /* Unmerged change from project 'MMR Tracker V3 (net6.0-maccatalyst)'
 Before:
@@ -100,7 +100,7 @@ After:
             }
         }
 
-        public static void RemoveSpoilerData(this LogicObjects.TrackerInstance instance)
+        public static void RemoveSpoilerData(this InstanceData.TrackerInstance instance)
         {
             foreach (var i in instance.LocationPool.Values)
             {

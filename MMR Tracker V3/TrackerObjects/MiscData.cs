@@ -62,7 +62,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 logicCalculation = new LogicCalculation(this);
             }
-            public LogicObjects.TrackerInstance Instance { get; set; }
+            public InstanceData.TrackerInstance Instance { get; set; }
             public LogicCalculation logicCalculation { get; set; }
             public LogicRecreation LogicRecreation { get; set; } = new LogicRecreation();
             public List<string> UndoStringList { get; set; } = new List<string>();
@@ -98,22 +98,22 @@ namespace MMR_Tracker_V3.TrackerObjects
                     switch (SaveCompressor.TestFileType(Save))
                     {
                         case SaveCompressor.SaveType.Standard:
-                            Instance = LogicObjects.TrackerInstance.FromJson(File.ReadAllText(Save));
+                            Instance = InstanceData.TrackerInstance.FromJson(File.ReadAllText(Save));
                             return true;
                         case SaveCompressor.SaveType.Compressed:
                             var Decomp = SaveCompressor.Decompress(File.ReadAllText(Save));
-                            Instance = LogicObjects.TrackerInstance.FromJson(Decomp);
+                            Instance = InstanceData.TrackerInstance.FromJson(Decomp);
                             return true;
                         case SaveCompressor.SaveType.CompressedByte:
                             var ByteDecomp = SaveCompressor.Decompress(File.ReadAllBytes(Save));
-                            Instance = LogicObjects.TrackerInstance.FromJson(ByteDecomp);
+                            Instance = InstanceData.TrackerInstance.FromJson(ByteDecomp);
                             return true;
                         case SaveCompressor.SaveType.error: return false;
                     }
                 }
                 else
                 {
-                    try { Instance = LogicObjects.TrackerInstance.FromJson(Save); }
+                    try { Instance = InstanceData.TrackerInstance.FromJson(Save); }
                     catch { return false; }
                 }
                 return true;

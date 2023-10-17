@@ -20,25 +20,25 @@ namespace MMR_Tracker_V3.TrackerObjects
             public Dictionary<int, int> AmountAquiredOnline { get; set; } = new Dictionary<int, int>();
             public Dictionary<int, int> AmountSentToPlayer { get; set; } = new Dictionary<int, int>();
             public string DisplayName { get; set; }
-            public LogicObjects.ReferenceData referenceData { get; set; } = new LogicObjects.ReferenceData();
+            public InstanceData.ReferenceData referenceData { get; set; } = new InstanceData.ReferenceData();
 
 
             public override string ToString()
             {
                 return DisplayName ?? Id;
             }
-            public LogicDictionaryData.DictionaryItemEntries GetDictEntry(LogicObjects.TrackerInstance Instance)
+            public LogicDictionaryData.DictionaryItemEntries GetDictEntry(InstanceData.TrackerInstance Instance)
             {
                 return Instance.LogicDictionary.ItemList[Id];
             }
-            public bool ValidStartingItem(LogicObjects.TrackerInstance Instance)
+            public bool ValidStartingItem(InstanceData.TrackerInstance Instance)
             {
                 var ItemIndex = Instance.GetItemByID(Id);
                 var DictEntry = ItemIndex.GetDictEntry(Instance);
                 return DictEntry.ValidStartingItem != null && (bool)DictEntry.ValidStartingItem;
             }
 
-            public int GetAmountPlaced(LogicObjects.TrackerInstance Instance)
+            public int GetAmountPlaced(InstanceData.TrackerInstance Instance)
             {
                 int AmountAquired = GetTotalUsable(Instance);
                 int AmountSetAtLocation = 0;
@@ -56,23 +56,23 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return AmountInStartingpool;
             }
 
-            public bool CanBePlaced(LogicObjects.TrackerInstance Instance)
+            public bool CanBePlaced(InstanceData.TrackerInstance Instance)
             {
                 if (GetDictEntry(Instance).GetMaxAmountInWorld(Instance) < 0) { return true; }
                 return GetAmountPlaced(Instance) < GetDictEntry(Instance).GetMaxAmountInWorld(Instance);
             }
 
-            public int GetTotalUsable(LogicObjects.TrackerInstance Instance)
+            public int GetTotalUsable(InstanceData.TrackerInstance Instance)
             {
                 return AmountAquiredLocally + AmountAquiredOnline.Values.Sum() + GetAmountInStartingPool();
             }
 
-            public bool Useable(LogicObjects.TrackerInstance Instance, int Amount = 1)
+            public bool Useable(InstanceData.TrackerInstance Instance, int Amount = 1)
             {
                 return GetTotalUsable(Instance) >= Amount;
             }
 
-            public void ChangeLocalItemAmounts(LogicObjects.TrackerInstance Instance, LocationData.LocationObject location, int Amount)
+            public void ChangeLocalItemAmounts(InstanceData.TrackerInstance Instance, LocationData.LocationObject location, int Amount)
             {
                 if (Amount == 0) { return; }
                 if (location.Randomizeditem.OwningPlayer != -1)

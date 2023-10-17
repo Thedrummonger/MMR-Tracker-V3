@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static MMR_Tracker_V3.LogicObjects;
+using static MMR_Tracker_V3.InstanceData;
 using static MMR_Tracker_V3.TrackerObjects.EntranceData;
 using static MMR_Tracker_V3.TrackerObjects.ItemData;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
@@ -25,22 +25,6 @@ namespace MMR_Tracker_V3
                 CleanedID = ID.Replace("'", "");
             }
             return Literal;
-        }
-        public static string GetLogicNameFromExit(this LogicObjects.TrackerInstance instance, EntranceRandoExit Exit)
-        {
-            return instance.InstanceReference.ExitLogicMap[$"{Exit.ParentAreaID} X {Exit.ID}"];
-        }
-        public static string GetLogicNameFromExit(this LogicObjects.TrackerInstance instance, EntranceAreaPair Exit)
-        {
-            return instance.InstanceReference.ExitLogicMap[$"{Exit.Area} X {Exit.Exit}"];
-        }
-        public static string GetLogicNameFromExit(this LogicObjects.TrackerInstance instance, EntranceRandoDestination Exit)
-        {
-            return instance.InstanceReference.ExitLogicMap[$"{Exit.region} X {Exit.from}"];
-        }
-        public static void AddLogicExitReference(this LogicObjects.TrackerInstance instance, EntranceAreaPair Exit, string LogicName)
-        {
-            instance.InstanceReference.ExitLogicMap.Add($"{Exit.Area} X {Exit.Exit}", LogicName);
         }
         public static MMRData.JsonFormatLogicItem GetLogic(this TrackerInstance instance, string OriginalID, bool DoEdits = true)
         {
@@ -148,7 +132,7 @@ namespace MMR_Tracker_V3
         }
 
 
-        public static bool MultipleItemEntry(this LogicObjects.TrackerInstance instance, string Entry, out string Item, out int Amount)
+        public static bool MultipleItemEntry(this InstanceData.TrackerInstance instance, string Entry, out string Item, out int Amount)
         {
             Item = Entry;
             Amount = 1;
@@ -182,7 +166,7 @@ namespace MMR_Tracker_V3
             return LocTypes.Intersect(itemTypes).Any();
         }
 
-        public static List<ItemData.ItemObject> GetValidItemsForLocation(this LogicObjects.TrackerInstance _Instance, LocationData.LocationObject Location, string Filter = "")
+        public static List<ItemData.ItemObject> GetValidItemsForLocation(this InstanceData.TrackerInstance _Instance, LocationData.LocationObject Location, string Filter = "")
         {
             var EnteredItems = new List<ItemData.ItemObject>();
             var Names = new List<string>();
@@ -202,7 +186,7 @@ namespace MMR_Tracker_V3
         }
 
 
-        public static List<EntranceData.EntranceRandoDestination> GetAllLoadingZoneDestinations(this LogicObjects.TrackerInstance _Instance, string Filter = "")
+        public static List<EntranceData.EntranceRandoDestination> GetAllLoadingZoneDestinations(this InstanceData.TrackerInstance _Instance, string Filter = "")
         {
             var Names = new List<string>();
             var EnteredItems = new List<EntranceRandoDestination>();

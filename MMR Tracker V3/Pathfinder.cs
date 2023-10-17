@@ -24,7 +24,7 @@ namespace MMR_Tracker_V3
 
         public int PathlistCap = 500000;
 
-        public void FindPath(LogicObjects.TrackerInstance instance, string Start, string Goal, List<Dictionary<string, string>> Paths = null, int RunCount = 1)
+        public void FindPath(InstanceData.TrackerInstance instance, string Start, string Goal, List<Dictionary<string, string>> Paths = null, int RunCount = 1)
         {
 
             bool IsRoot = false;
@@ -108,7 +108,7 @@ namespace MMR_Tracker_V3
             else if (NewPaths.Count >= PathlistCap) { Overloaded = true; }
         }
 
-        private void BuildEntranceMap(LogicObjects.TrackerInstance instance)
+        private void BuildEntranceMap(InstanceData.TrackerInstance instance)
         {
             EntranceMap.Clear();
             Warps.Clear();

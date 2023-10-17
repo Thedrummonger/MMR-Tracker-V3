@@ -15,9 +15,9 @@ namespace Windows_Form_Frontend
 {
     public partial class PopoutPathfinder : Form
     {
-        LogicObjects.TrackerInstance _instance;
+        InstanceData.TrackerInstance _instance;
         Pathfinder pathfinder;
-        public PopoutPathfinder(LogicObjects.TrackerInstance instance)
+        public PopoutPathfinder(InstanceData.TrackerInstance instance)
         {
             InitializeComponent();
             _instance = instance;
@@ -58,7 +58,7 @@ namespace Windows_Form_Frontend
             PrintPaths(_instance, pathfinder, listBox1);
         }
 
-        public static void PrintPaths(LogicObjects.TrackerInstance instance, Pathfinder pathfinder, ListBox PathFinderLB, int FocusInd = -1)
+        public static void PrintPaths(InstanceData.TrackerInstance instance, Pathfinder pathfinder, ListBox PathFinderLB, int FocusInd = -1)
         {
             if (!pathfinder.FinalPath.Any())
             {

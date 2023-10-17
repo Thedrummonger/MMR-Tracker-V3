@@ -158,12 +158,12 @@ namespace MMR_Tracker_V3.TrackerObjects
                 Debug.WriteLine(((object)_value).GetType());
             }
 
-            public dynamic GetValue(LogicObjects.TrackerInstance instance) 
+            public dynamic GetValue(InstanceData.TrackerInstance instance) 
             { 
                 return GetActualValue(instance);
             }
 
-            private dynamic GetActualValue(LogicObjects.TrackerInstance instance)
+            private dynamic GetActualValue(InstanceData.TrackerInstance instance)
             {
                 string ReturnString = GetType() == MiscData.VariableEntryType.varstring ? (string)_value : string.Empty;
                 bool ReturnBool = GetType() == MiscData.VariableEntryType.varbool ? (bool)_value : false;

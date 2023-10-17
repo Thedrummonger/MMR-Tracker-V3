@@ -23,7 +23,7 @@ namespace Windows_Form_Frontend
         }
 
         public string CurrentID;
-        private readonly LogicObjects.TrackerInstance instance;
+        private readonly MMR_Tracker_V3.InstanceData.TrackerInstance instance;
         private readonly ListBoxHeightData ReqLBHeightData;
         private bool Updating = false;
         private readonly List<CheckBox> TimeCheckBoxes;
@@ -31,7 +31,7 @@ namespace Windows_Form_Frontend
         private List<object> CurrentGotoData;
         private LogicCalculation LogicCalculation;
         public FormState state = FormState.showLogic;
-        public ShowLogic(string id, LogicObjects.TrackerInstance _instance)
+        public ShowLogic(string id, MMR_Tracker_V3.InstanceData.TrackerInstance _instance)
         {
             InitializeComponent();
             CurrentID = id;

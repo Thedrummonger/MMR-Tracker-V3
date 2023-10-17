@@ -16,8 +16,8 @@ namespace Windows_Form_Frontend
     public partial class CheckItemForm : Form
     {
         List<object> _CheckList;
-        LogicObjects.TrackerInstance _Instance;
-        public CheckItemForm(IEnumerable<object> ManualChecks, LogicObjects.TrackerInstance Instance)
+        MMR_Tracker_V3.InstanceData.TrackerInstance _Instance;
+        public CheckItemForm(IEnumerable<object> ManualChecks, MMR_Tracker_V3.InstanceData.TrackerInstance Instance)
         {
             InitializeComponent();
             _CheckList = ManualChecks.ToList();

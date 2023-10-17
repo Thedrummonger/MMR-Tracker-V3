@@ -59,7 +59,7 @@ namespace MMR_Tracker_V3
             return source.OrderBy(x => Guid.NewGuid());
         }
 
-        public static Dictionary<string, int> GetCategoriesFromFile(LogicObjects.TrackerInstance Instance)
+        public static Dictionary<string, int> GetCategoriesFromFile(InstanceData.TrackerInstance Instance)
         {
             Dictionary<string, int> Groups = new();
             if (File.Exists(References.Globalpaths.CategoryTextFile))
@@ -93,7 +93,7 @@ namespace MMR_Tracker_V3
             NewConditionals = Conditionals.ConvertAll(p => p.ConvertAll(o => (string)o.Clone()));
         }
 
-        public static bool CheckforSpoilerLog(LogicObjects.TrackerInstance logic)
+        public static bool CheckforSpoilerLog(InstanceData.TrackerInstance logic)
         {
             return logic.LocationPool.Values.Any(x => !string.IsNullOrWhiteSpace(x.Randomizeditem.SpoilerLogGivenItem));
         }
@@ -124,7 +124,7 @@ namespace MMR_Tracker_V3
             };
         }
 
-        public static string GetLocationDisplayName(dynamic obj, LogicObjects.TrackerInstance instance)
+        public static string GetLocationDisplayName(dynamic obj, InstanceData.TrackerInstance instance)
         {
             dynamic PriceData;
             LocationData.LocationObject Location;
@@ -164,7 +164,7 @@ namespace MMR_Tracker_V3
             };
         }
 
-        public static string GetDictNameDynamicEntry(dynamic Entry, LogicObjects.TrackerInstance instance)
+        public static string GetDictNameDynamicEntry(dynamic Entry, InstanceData.TrackerInstance instance)
         {
             if (Entry is LocationData.LocationObject LO)
             {
@@ -189,7 +189,7 @@ namespace MMR_Tracker_V3
             else { return null; }
         }
 
-        public static string GetEntranceDisplayName(EntranceData.EntranceRandoExit ExitObjectObject, LogicObjects.TrackerInstance instance)
+        public static string GetEntranceDisplayName(EntranceData.EntranceRandoExit ExitObjectObject, InstanceData.TrackerInstance instance)
         {
             var Destination = ExitObjectObject.GetDestinationAtExit(instance);
             string StarredDisplay = ExitObjectObject.Starred ? "*" : "";
@@ -204,7 +204,7 @@ namespace MMR_Tracker_V3
             };
         }
 
-        public static List<string> GetAllWalletLogicEntries(LogicObjects.TrackerInstance instance)
+        public static List<string> GetAllWalletLogicEntries(InstanceData.TrackerInstance instance)
         {
             bool CurrentInitializedState = instance.PriceData.Initialized;
             instance.PriceData.Initialized = false;
@@ -445,7 +445,7 @@ namespace MMR_Tracker_V3
             try
             {
                 Debug.WriteLine("Trying to load Standard Save");
-                var Instance = LogicObjects.TrackerInstance.FromJson(File.ReadAllText(FilePath));
+                var Instance = InstanceData.TrackerInstance.FromJson(File.ReadAllText(FilePath));
                 Debug.WriteLine("Success!");
                 return SaveType.Standard;
             }
@@ -457,7 +457,7 @@ namespace MMR_Tracker_V3
             {
                 Debug.WriteLine("Trying to load Compressed Save");
                 var DecompSave = Decompress(File.ReadAllText(FilePath));
-                var Instance = LogicObjects.TrackerInstance.FromJson(DecompSave);
+                var Instance = InstanceData.TrackerInstance.FromJson(DecompSave);
                 Debug.WriteLine("Success!");
                 return SaveType.Compressed;
             }
@@ -469,7 +469,7 @@ namespace MMR_Tracker_V3
             {
                 Debug.WriteLine("Trying to load Compressed Byte Save");
                 var DecompSave = Decompress(File.ReadAllBytes(FilePath));
-                var Instance = LogicObjects.TrackerInstance.FromJson(DecompSave);
+                var Instance = InstanceData.TrackerInstance.FromJson(DecompSave);
                 Debug.WriteLine("Success!");
                 return SaveType.CompressedByte;
             }
@@ -522,7 +522,7 @@ namespace MMR_Tracker_V3
             return BrokenString;
         }
 
-        public static bool FilterSearch(LogicObjects.TrackerInstance Instance, object InObject, string searchTerm, string NameToCompare)
+        public static bool FilterSearch(InstanceData.TrackerInstance Instance, object InObject, string searchTerm, string NameToCompare)
         {
             var searchObject = CreateSearchableObject(InObject, Instance);
             if (searchObject == null) { return false; }
@@ -635,7 +635,7 @@ namespace MMR_Tracker_V3
             return "1";
         }
 
-        public static SearchObject CreateSearchableObject(object Object, LogicObjects.TrackerInstance instance)
+        public static SearchObject CreateSearchableObject(object Object, InstanceData.TrackerInstance instance)
         {
             SearchObject OutObject = new();
             if (Object is LocationData.LocationObject locationObject)

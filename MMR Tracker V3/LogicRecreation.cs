@@ -15,7 +15,7 @@ namespace MMR_Tracker_V3
             public Dictionary<string, RecData> Locations { get; set; } = new Dictionary<string, RecData>();
             public Dictionary<string, RecData> Exits { get; set; } = new Dictionary<string, RecData>();
             public Dictionary<string, RecData> Hints { get; set; } = new Dictionary<string, RecData>();
-            public LogicObjects.SpoilerLogFileData SpoilerData { get; set; }
+            public InstanceData.SpoilerLogFileData SpoilerData { get; set; }
         }
         public class RecData
         {
@@ -29,7 +29,7 @@ namespace MMR_Tracker_V3
         public void SaveTrackerState(MiscData.InstanceContainer InstanceContainer)
         {
             SaveState state = new SaveState();
-            state.SpoilerData = InstanceContainer.Instance.SpoilerLog is null ? null : GenericCopier<LogicObjects.SpoilerLogFileData>.DeepCopy(InstanceContainer.Instance.SpoilerLog);
+            state.SpoilerData = InstanceContainer.Instance.SpoilerLog is null ? null : GenericCopier<InstanceData.SpoilerLogFileData>.DeepCopy(InstanceContainer.Instance.SpoilerLog);
             foreach (var i in InstanceContainer.Instance.LocationPool)
             {
                 i.Value.GetPrice(out int P, out char C);

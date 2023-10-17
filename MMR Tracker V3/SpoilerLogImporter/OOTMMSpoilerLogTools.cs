@@ -13,7 +13,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
 {
     internal class OOTMMSpoilerLogTools
     {
-        public static void readAndApplySpoilerLog(LogicObjects.TrackerInstance Instance)
+        public static void readAndApplySpoilerLog(InstanceData.TrackerInstance Instance)
         {
             ResetInstanceData(Instance);
             Dictionary<string, string> LocationData = GetDictionaryFromSpoiler(Instance, "Location List", true);
@@ -48,7 +48,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
 
         }
 
-        private static void ApplyEntrances(LogicObjects.TrackerInstance instance, Dictionary<string, string> exitData)
+        private static void ApplyEntrances(InstanceData.TrackerInstance instance, Dictionary<string, string> exitData)
         {
             var AllRandomizableExits = instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits(instance));
             foreach (var Entrance in exitData)
@@ -60,7 +60,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             }
         }
 
-        private static void HandleMQChecks(LogicObjects.TrackerInstance instance, List<string> mQDungeons)
+        private static void HandleMQChecks(InstanceData.TrackerInstance instance, List<string> mQDungeons)
         {
             foreach (var i in instance.Variables.Where(x => x.Value.SubCategory == "Master Quest Dungeons"))
             {
@@ -79,7 +79,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             }
         }
 
-        private static void SetjunkedLocations(LogicObjects.TrackerInstance instance, List<string> junkLocationData)
+        private static void SetjunkedLocations(InstanceData.TrackerInstance instance, List<string> junkLocationData)
         {
             foreach (var i in junkLocationData)
             {
@@ -88,7 +88,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             }
         }
 
-        private static void ToggleTricks(LogicObjects.TrackerInstance instance, List<string> trickData)
+        private static void ToggleTricks(InstanceData.TrackerInstance instance, List<string> trickData)
         {
             var allTricks = instance.MacroPool.Values.Where(x => x.isTrick(instance)).ToArray();
             foreach (var i in instance.MacroPool.Values.Where(x => x.isTrick(instance))) { i.TrickEnabled = false; }
@@ -100,7 +100,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             }
         }
 
-        private static void PlaceItemsAtLocations(LogicObjects.TrackerInstance instance, Dictionary<string, string> LocationData)
+        private static void PlaceItemsAtLocations(InstanceData.TrackerInstance instance, Dictionary<string, string> LocationData)
         {
             List<LocationData.LocationObject> LocationFilled = new List<LocationData.LocationObject>();
             foreach (var i in LocationData)
@@ -147,7 +147,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             }
         }
 
-        private static void ToggleSpecialConditions(LogicObjects.TrackerInstance instance, List<string> AccessConditions)
+        private static void ToggleSpecialConditions(InstanceData.TrackerInstance instance, List<string> AccessConditions)
         {
             string Section = "";
             foreach (var i in AccessConditions)
@@ -171,7 +171,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
 
         }
 
-        private static void ApplySettings(LogicObjects.TrackerInstance instance, Dictionary<string, string> settingData)
+        private static void ApplySettings(InstanceData.TrackerInstance instance, Dictionary<string, string> settingData)
         {
             foreach (var setting in settingData)
             {
@@ -249,7 +249,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             }
         }
 
-        private static void ResetInstanceData(LogicObjects.TrackerInstance Instance)
+        private static void ResetInstanceData(InstanceData.TrackerInstance Instance)
         {
             Instance.ToggleAllTricks(false);
             foreach (var i in Instance.EntrancePool.AreaList.SelectMany(x => x.Value.RandomizableExits(Instance)))
@@ -266,7 +266,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             }
         }
 
-        private static Dictionary<string, string> GetDictionaryFromSpoiler(LogicObjects.TrackerInstance Instance, string Start, bool Fuzzy = false)
+        private static Dictionary<string, string> GetDictionaryFromSpoiler(InstanceData.TrackerInstance Instance, string Start, bool Fuzzy = false)
         {
             var Log = Instance.SpoilerLog.Log;
             bool AtReleventData = false;
@@ -285,7 +285,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             return SpoilerData;
         }
 
-        private static Dictionary<string, string> GetEntranceListFromSpoiler(LogicObjects.TrackerInstance Instance, string Start)
+        private static Dictionary<string, string> GetEntranceListFromSpoiler(InstanceData.TrackerInstance Instance, string Start)
         {
             var Log = Instance.SpoilerLog.Log;
             bool AtReleventData = false;
@@ -304,7 +304,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             return SpoilerData;
         }
 
-        private static List<string> GetListFromSpoiler(LogicObjects.TrackerInstance Instance, string Start)
+        private static List<string> GetListFromSpoiler(InstanceData.TrackerInstance Instance, string Start)
         {
             var Log = Instance.SpoilerLog.Log;
             bool AtReleventData = false;
@@ -319,7 +319,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             return EnabledTricks;
         }
 
-        private static void SetStartingItems(LogicObjects.TrackerInstance instance, Dictionary<string, int> startingItemData)
+        private static void SetStartingItems(InstanceData.TrackerInstance instance, Dictionary<string, int> startingItemData)
         {
             foreach (var i in startingItemData)
             {
@@ -344,7 +344,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 }
             }
         }
-        private static void ApplyHintData(LogicObjects.TrackerInstance instance, Dictionary<string, SpoilerHintData> hintData)
+        private static void ApplyHintData(InstanceData.TrackerInstance instance, Dictionary<string, SpoilerHintData> hintData)
         {
             foreach (var i in hintData)
             {
@@ -381,7 +381,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 }
             }
         }
-        private static Dictionary<string, SpoilerHintData> ParseHintData(LogicObjects.TrackerInstance Instance, List<string> hintData)
+        private static Dictionary<string, SpoilerHintData> ParseHintData(InstanceData.TrackerInstance Instance, List<string> hintData)
         {
             HintType CurrentType = HintType.none;
             List<string> HeroHints = new();

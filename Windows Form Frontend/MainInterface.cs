@@ -61,10 +61,10 @@ namespace Windows_Form_Frontend
                 if (Download == DialogResult.Yes) { { System.Diagnostics.Process.Start("explorer.exe", References.TrackerVersionStatus.LatestVersion.HtmlUrl); this.Close(); return; } }
                 else if (Download == DialogResult.Cancel)
                 {
-                    LogicObjects.OptionFile options = new LogicObjects.OptionFile();
+                    MMR_Tracker_V3.InstanceData.OptionFile options = new MMR_Tracker_V3.InstanceData.OptionFile();
                     if (File.Exists(References.Globalpaths.OptionFile))
                     {
-                        try { options = JsonConvert.DeserializeObject<LogicObjects.OptionFile>(File.ReadAllText(References.Globalpaths.OptionFile)); }
+                        try { options = JsonConvert.DeserializeObject<MMR_Tracker_V3.InstanceData.OptionFile>(File.ReadAllText(References.Globalpaths.OptionFile)); }
                         catch { Debug.WriteLine("could not parse options.txt"); }
                     }
                     options.CheckForUpdate = false;
@@ -114,14 +114,14 @@ namespace Windows_Form_Frontend
             if (sender == undoToolStripMenuItem && InstanceContainer.UndoStringList.Any())
             {
                 string CurrentState = Utf8Json.JsonSerializer.ToJsonString(InstanceContainer.Instance);
-                InstanceContainer.Instance = LogicObjects.TrackerInstance.FromJson(InstanceContainer.UndoStringList[^1]);
+                InstanceContainer.Instance = MMR_Tracker_V3.InstanceData.TrackerInstance.FromJson(InstanceContainer.UndoStringList[^1]);
                 InstanceContainer.RedoStringList.Add(CurrentState);
                 InstanceContainer.UndoStringList.RemoveAt(InstanceContainer.UndoStringList.Count - 1);
             }
             else if (sender == redoToolStripMenuItem && InstanceContainer.RedoStringList.Any())
             {
                 string CurrentState = Utf8Json.JsonSerializer.ToJsonString(InstanceContainer.Instance);
-                InstanceContainer.Instance = LogicObjects.TrackerInstance.FromJson(InstanceContainer.RedoStringList[^1]);
+                InstanceContainer.Instance = MMR_Tracker_V3.InstanceData.TrackerInstance.FromJson(InstanceContainer.RedoStringList[^1]);
                 InstanceContainer.UndoStringList.Add(CurrentState);
                 InstanceContainer.RedoStringList.RemoveAt(InstanceContainer.RedoStringList.Count - 1);
             }
@@ -1021,13 +1021,13 @@ namespace Windows_Form_Frontend
             UpdateUI();
         }
 
-        private bool HandleUnassignedChecks(IEnumerable<object> Checks, LogicObjects.TrackerInstance Instance)
+        private bool HandleUnassignedChecks(IEnumerable<object> Checks, MMR_Tracker_V3.InstanceData.TrackerInstance Instance)
         {
             CheckItemForm checkItemForm = new CheckItemForm(Checks, Instance);
             checkItemForm.ShowDialog();
             return true;
         }
-        private bool HandleUnassignedVariables(IEnumerable<object> Checks, LogicObjects.TrackerInstance Instance)
+        private bool HandleUnassignedVariables(IEnumerable<object> Checks, MMR_Tracker_V3.InstanceData.TrackerInstance Instance)
         {
             VariableInputWindow variableInputWindow = new VariableInputWindow(Checks, Instance);
             variableInputWindow.ShowDialog();

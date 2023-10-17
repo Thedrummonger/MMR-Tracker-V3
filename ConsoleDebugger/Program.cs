@@ -21,7 +21,7 @@ namespace ConsoleDebugger
             "3. Preset",
             "4. Load"
         };
-        static MiscData.InstanceContainer newTrackerInstance = new MiscData.InstanceContainer() { Instance = new LogicObjects.TrackerInstance() };
+        static MiscData.InstanceContainer newTrackerInstance = new MiscData.InstanceContainer() { Instance = new InstanceData.TrackerInstance() };
 
         static void Main(string[] args)
         {
@@ -318,7 +318,7 @@ namespace ConsoleDebugger
             }
         }
 
-        private static bool HandleUnAssignedLocations(IEnumerable<object> CheckObject, LogicObjects.TrackerInstance Instance)
+        private static bool HandleUnAssignedLocations(IEnumerable<object> CheckObject, InstanceData.TrackerInstance Instance)
         {
             foreach(var i in CheckObject)
             {
@@ -334,7 +334,7 @@ namespace ConsoleDebugger
             return false;
         }
 
-        private static bool HandleUnAssignedVariables(IEnumerable<object> CheckObject, LogicObjects.TrackerInstance Instance)
+        private static bool HandleUnAssignedVariables(IEnumerable<object> CheckObject, InstanceData.TrackerInstance Instance)
         {
             foreach (var i in CheckObject)
             {
@@ -346,7 +346,7 @@ namespace ConsoleDebugger
             return false;
         }
 
-        private static bool LoopItemSelect(IEnumerable<object> CheckObject, LogicObjects.TrackerInstance Instance)
+        private static bool LoopItemSelect(IEnumerable<object> CheckObject, InstanceData.TrackerInstance Instance)
         {
             string Fiter = "";
             if (CheckObject.First() is not LocationData.LocationObject Location) { return false; }
@@ -377,7 +377,7 @@ namespace ConsoleDebugger
             return true;
         }
 
-        private static bool LoopEntranceSelect(IEnumerable<object> CheckObject, LogicObjects.TrackerInstance Instance)
+        private static bool LoopEntranceSelect(IEnumerable<object> CheckObject, InstanceData.TrackerInstance Instance)
         {
             string Fiter = "";
             if (CheckObject.First() is not EntranceData.EntranceRandoExit Exit) { return false; }
@@ -408,7 +408,7 @@ namespace ConsoleDebugger
             return true;
         }
 
-        private static bool LoopHintSelect(IEnumerable<object> CheckObject, LogicObjects.TrackerInstance Instance)
+        private static bool LoopHintSelect(IEnumerable<object> CheckObject, InstanceData.TrackerInstance Instance)
         {
             Console.Clear();
             if (CheckObject.First() is not HintData.HintObject HintSpot) { return false; }
@@ -423,7 +423,7 @@ namespace ConsoleDebugger
             if (action == "undo" && newTrackerInstance.UndoStringList.Any())
             {
                 string CurrentState = Newtonsoft.Json.JsonConvert.SerializeObject(newTrackerInstance.Instance);
-                newTrackerInstance.Instance = LogicObjects.TrackerInstance.FromJson(newTrackerInstance.UndoStringList[^1]);
+                newTrackerInstance.Instance = InstanceData.TrackerInstance.FromJson(newTrackerInstance.UndoStringList[^1]);
                 newTrackerInstance.RedoStringList.Add(CurrentState);
                 newTrackerInstance.UndoStringList.RemoveAt(newTrackerInstance.UndoStringList.Count - 1);
                 newTrackerInstance.UnsavedChanges = true;
@@ -431,7 +431,7 @@ namespace ConsoleDebugger
             else if (action == "redo" && newTrackerInstance.RedoStringList.Any())
             {
                 string CurrentState = Newtonsoft.Json.JsonConvert.SerializeObject(newTrackerInstance.Instance);
-                newTrackerInstance.Instance = LogicObjects.TrackerInstance.FromJson(newTrackerInstance.RedoStringList[^1]);
+                newTrackerInstance.Instance = InstanceData.TrackerInstance.FromJson(newTrackerInstance.RedoStringList[^1]);
                 newTrackerInstance.UndoStringList.Add(CurrentState);
                 newTrackerInstance.RedoStringList.RemoveAt(newTrackerInstance.RedoStringList.Count - 1);
                 newTrackerInstance.UnsavedChanges = true;

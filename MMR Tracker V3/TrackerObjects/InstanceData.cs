@@ -13,7 +13,7 @@ using static MMR_Tracker_V3.TrackerObjects.OptionData;
 
 namespace MMR_Tracker_V3
 {
-    public class LogicObjects
+    public class InstanceData
     {
         [Serializable]
         public class TrackerInstance
@@ -162,6 +162,22 @@ namespace MMR_Tracker_V3
             public List<char> GetAllCurrencies(bool all = false)
             {
                 return PriceData.CapacityMap.Keys.Where(x => x != '*' || all).ToList();
+            }
+            public string GetLogicNameFromExit(EntranceData.EntranceRandoExit Exit)
+            {
+                return InstanceReference.ExitLogicMap[$"{Exit.ParentAreaID} X {Exit.ID}"];
+            }
+            public string GetLogicNameFromExit(EntranceData.EntranceAreaPair Exit)
+            {
+                return InstanceReference.ExitLogicMap[$"{Exit.Area} X {Exit.Exit}"];
+            }
+            public string GetLogicNameFromExit(EntranceData.EntranceRandoDestination Exit)
+            {
+                return InstanceReference.ExitLogicMap[$"{Exit.region} X {Exit.from}"];
+            }
+            public void AddLogicExitReference(EntranceData.EntranceAreaPair Exit, string LogicName)
+            {
+                InstanceReference.ExitLogicMap.Add($"{Exit.Area} X {Exit.Exit}", LogicName);
             }
         }
 

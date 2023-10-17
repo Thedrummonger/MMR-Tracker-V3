@@ -13,13 +13,13 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
 {
     public static class MMRSpoilerLogTools
     {
-        public static void ReadAndApplySpoilerLog(LogicObjects.TrackerInstance instance)
+        public static void ReadAndApplySpoilerLog(InstanceData.TrackerInstance instance)
         {
             MMRData.SpoilerLogData LogData = ReadSpoilerLog(instance.SpoilerLog.Log);
             instance.ApplyMMRandoSettings(LogData);
             instance.ApplyMMRandoSpoilerLog(LogData);
         }
-        public static bool ApplyLocationString(string LocationString, LogicObjects.TrackerInstance Instance)
+        public static bool ApplyLocationString(string LocationString, InstanceData.TrackerInstance Instance)
         {
             var LocationPool = Instance.LocationPool.Values.Where(x => !x.GetDictEntry(Instance).IgnoreForSettingString ?? true).ToList();
 
@@ -45,7 +45,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             return true;
         }
 
-        public static bool ApplyJunkString(string LocationString, LogicObjects.TrackerInstance Instance)
+        public static bool ApplyJunkString(string LocationString, InstanceData.TrackerInstance Instance)
         {
             var LocationPool = Instance.LocationPool.Values.Where(x => !x.GetDictEntry(Instance).IgnoreForSettingString ?? true).ToList();
 
@@ -71,7 +71,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             return true;
         }
 
-        public static bool ApplyStartingItemString(string ItemString, LogicObjects.TrackerInstance Instance)
+        public static bool ApplyStartingItemString(string ItemString, InstanceData.TrackerInstance Instance)
         {
             var StartingItems = GetStartingItemList(Instance);
 
@@ -95,7 +95,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             return true;
         }
 
-        public static List<ItemData.ItemObject> GetStartingItemList(LogicObjects.TrackerInstance Instance)
+        public static List<ItemData.ItemObject> GetStartingItemList(InstanceData.TrackerInstance Instance)
         {
             List<ItemData.ItemObject> StartingItems = new List<ItemData.ItemObject>();
             foreach (var i in Instance.ItemPool.Values)
@@ -216,7 +216,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             return spoilerLog;
         }
 
-        public static void ApplyMMRandoSettings(this LogicObjects.TrackerInstance instance, MMRData.SpoilerLogData Log)
+        public static void ApplyMMRandoSettings(this InstanceData.TrackerInstance instance, MMRData.SpoilerLogData Log)
         {
             if (Log.GameplaySettings is null) { return; }
             //Apply setting strings and enable tricks
@@ -303,7 +303,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             }
         }
 
-        public static void ApplyMMRandoSpoilerLog(this LogicObjects.TrackerInstance instance, MMRData.SpoilerLogData Log)
+        public static void ApplyMMRandoSpoilerLog(this InstanceData.TrackerInstance instance, MMRData.SpoilerLogData Log)
         {
             foreach (var i in instance.LocationPool.Values)
             {
@@ -379,7 +379,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             }
         }
 
-        public static void ParseHintData(LogicObjects.TrackerInstance instance, HintObject Hint)
+        public static void ParseHintData(InstanceData.TrackerInstance instance, HintObject Hint)
         {
             if (Hint.SpoilerHintText is null) { return; }
             List<string> MessageStartSentences = new List<string>(new string[]

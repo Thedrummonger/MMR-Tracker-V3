@@ -41,7 +41,7 @@ namespace MMR_Tracker_V3
             public List<ItemData.ItemObject> OnlineObtainedItems { get; set; } = new List<ItemData.ItemObject>();
         }
 
-        public static bool CheckSelectedItems(IEnumerable<object> Items, MiscData.CheckState checkState, MiscData.InstanceContainer instanceContainer, Func<IEnumerable<object>, LogicObjects.TrackerInstance, bool> CheckUnassignedLocations, Func<IEnumerable<object>, LogicObjects.TrackerInstance, bool> CheckUnassignedVariable, bool EnforceMarkAction = false)
+        public static bool CheckSelectedItems(IEnumerable<object> Items, MiscData.CheckState checkState, MiscData.InstanceContainer instanceContainer, Func<IEnumerable<object>, InstanceData.TrackerInstance, bool> CheckUnassignedLocations, Func<IEnumerable<object>, InstanceData.TrackerInstance, bool> CheckUnassignedVariable, bool EnforceMarkAction = false)
         {
             bool ChangesMade = false;
 
@@ -153,7 +153,7 @@ namespace MMR_Tracker_V3
             return ChangesMade;
         }
 
-        public static DataSets PopulateDataSets(LogicObjects.TrackerInstance instance)
+        public static DataSets PopulateDataSets(InstanceData.TrackerInstance instance)
         {
             DataSets dataSets = new DataSets();
 
@@ -189,7 +189,7 @@ namespace MMR_Tracker_V3
             return dataSets;
         }
 
-        public static List<object> PopulateCheckedLocationList(DataSets DataSets, MiscData.Divider Divider, LogicObjects.TrackerInstance Instance, string Filter, out int OutItemsInListBox, out int OutItemsInListBoxFiltered, bool reverse = false)
+        public static List<object> PopulateCheckedLocationList(DataSets DataSets, MiscData.Divider Divider, InstanceData.TrackerInstance Instance, string Filter, out int OutItemsInListBox, out int OutItemsInListBoxFiltered, bool reverse = false)
         {
             var Groups = Utility.GetCategoriesFromFile(Instance);
 
@@ -383,14 +383,14 @@ namespace MMR_Tracker_V3
             }
         }
 
-        public static string GetLocationEntryArea(object Entry, LogicObjects.TrackerInstance Instance)
+        public static string GetLocationEntryArea(object Entry, InstanceData.TrackerInstance Instance)
         {
             if (Entry is LocationData.LocationObject l) { return l.GetDictEntry(Instance).Area; }
             else if (Entry is LocationData.LocationProxy p) { return p.Area; }
             return "Error";
         }
 
-        public static List<object> PopulateAvailableLocationList(DataSets DataSets, MiscData.Divider Divider, LogicObjects.TrackerInstance Instance, string Filter, bool ShowUnavailable, out int OutItemsInListBox, out int OutItemsInListBoxFiltered, bool reverse = false)
+        public static List<object> PopulateAvailableLocationList(DataSets DataSets, MiscData.Divider Divider, InstanceData.TrackerInstance Instance, string Filter, bool ShowUnavailable, out int OutItemsInListBox, out int OutItemsInListBoxFiltered, bool reverse = false)
         {
             bool ShowAllLocation = ShowUnavailable || (Filter.StartsWith("^") && !Filter.StartsWith("^^")) || Filter.StartsWith("^^^");
             bool ShowInvalidLocation = Filter.StartsWith("^^");
@@ -581,7 +581,7 @@ namespace MMR_Tracker_V3
             }
         }
 
-        public static List<object> PopulateAvailableEntraceList(DataSets DataSets, MiscData.Divider Divider, LogicObjects.TrackerInstance Instance, string Filter, bool ShowUnavailable, out int OutItemsInListBox, out int OutItemsInListBoxFiltered, bool reverse = false)
+        public static List<object> PopulateAvailableEntraceList(DataSets DataSets, MiscData.Divider Divider, InstanceData.TrackerInstance Instance, string Filter, bool ShowUnavailable, out int OutItemsInListBox, out int OutItemsInListBoxFiltered, bool reverse = false)
         {
             bool InLocationBox = !Instance.StaticOptions.OptionFile.EntranceRandoFeatures;
 
@@ -628,7 +628,7 @@ namespace MMR_Tracker_V3
             return DataSource;
         }
 
-        private static bool EntranceAppearsinListbox(EntranceData.EntranceRandoExit Location, LogicObjects.TrackerInstance Instance)
+        private static bool EntranceAppearsinListbox(EntranceData.EntranceRandoExit Location, InstanceData.TrackerInstance Instance)
         {
             return !Location.IsJunk() && !Location.IsUnrandomized(MiscData.UnrandState.Unrand);
         }

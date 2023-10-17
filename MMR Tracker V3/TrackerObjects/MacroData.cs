@@ -16,7 +16,7 @@ namespace MMR_Tracker_V3.TrackerObjects
         public bool TrickEnabled { get; set; } = true;
         public int? Price { get; set; } = null;
         public char? Currency { get; set; } = null;
-        public LogicObjects.ReferenceData referenceData { get; set; } = new LogicObjects.ReferenceData();
+        public InstanceData.ReferenceData referenceData { get; set; } = new InstanceData.ReferenceData();
 
 
         public void GetPrice(out int outPrice, out char outCurrency)
@@ -33,7 +33,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             return;
         }
 
-        public LogicDictionaryData.DictionaryMacroEntry GetDictEntry(LogicObjects.TrackerInstance Instance)
+        public LogicDictionaryData.DictionaryMacroEntry GetDictEntry(InstanceData.TrackerInstance Instance)
         {
             if (Instance.LogicDictionary.MacroList.ContainsKey(ID))
             {
@@ -46,7 +46,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             };
         }
 
-        public bool isTrick(LogicObjects.TrackerInstance Instance)
+        public bool isTrick(InstanceData.TrackerInstance Instance)
         {
             return Instance.GetLogic(ID, false).IsTrick;
         }

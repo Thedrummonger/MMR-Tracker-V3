@@ -16,9 +16,9 @@ namespace MMR_Tracker_V3
         public Dictionary<string, PlaythroughObject> Playthrough = new Dictionary<string, PlaythroughObject>();
         public List<string> _IngoredChecks;
         public Dictionary<string, List<Tuple<object, PlaythroughObject>>> FirstObtainedDict = new Dictionary<string, List<Tuple<object, PlaythroughObject>>>();
-        public PlaythroughGenerator(LogicObjects.TrackerInstance instance, List<string> IngoredChecks = null)
+        public PlaythroughGenerator(InstanceData.TrackerInstance instance, List<string> IngoredChecks = null)
         {
-            _Instance.Instance = Newtonsoft.Json.JsonConvert.DeserializeObject<LogicObjects.TrackerInstance>(Newtonsoft.Json.JsonConvert.SerializeObject(instance));
+            _Instance.Instance = Newtonsoft.Json.JsonConvert.DeserializeObject<InstanceData.TrackerInstance>(Newtonsoft.Json.JsonConvert.SerializeObject(instance));
             _IngoredChecks = IngoredChecks??new List<string>();
             _Instance.logicCalculation = new LogicCalculation(_Instance);
         }
@@ -225,7 +225,7 @@ namespace MMR_Tracker_V3
             }
         }
 
-        private List<EntranceData.EntranceRandoExit> getAllAvailableEntrances(LogicObjects.TrackerInstance instance, Dictionary<object, int> AutoObtainedObjects)
+        private List<EntranceData.EntranceRandoExit> getAllAvailableEntrances(InstanceData.TrackerInstance instance, Dictionary<object, int> AutoObtainedObjects)
         {
             var AvailableEntrances = instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits(instance).Values.Where(x => x.Available && x.CheckState == MiscData.CheckState.Unchecked && x.IsRandomized()));
             var AutoObtainedEntrance = AutoObtainedObjects.Keys.Where(x => x is EntranceData.EntranceRandoExit && !Playthrough.ContainsKey(_Instance.Instance.GetLogicNameFromExit(x as EntranceData.EntranceRandoExit))).Select(x => x as EntranceData.EntranceRandoExit);
@@ -333,7 +333,7 @@ namespace MMR_Tracker_V3
             public double PercentageAvailable { get; set; }
             public double PercentageAquired { get; set; }
         }
-        public static AdvancedUnlockData GetAdvancedUnlockData(string ID, Dictionary<string, List<string>> UnlockData, LogicObjects.TrackerInstance instance, PlaythroughGenerator playthroughObject = null)
+        public static AdvancedUnlockData GetAdvancedUnlockData(string ID, Dictionary<string, List<string>> UnlockData, InstanceData.TrackerInstance instance, PlaythroughGenerator playthroughObject = null)
         {
             if (playthroughObject == null)
             {
@@ -396,7 +396,7 @@ namespace MMR_Tracker_V3
             }
         }
 
-        public static void GetAreaData(string area,  PlaythroughGenerator playthroughObject, LogicObjects.TrackerInstance instance, out List<EntranceData.EntranceAreaPair> outPath, out List<string> outAreasVisited)
+        public static void GetAreaData(string area,  PlaythroughGenerator playthroughObject, InstanceData.TrackerInstance instance, out List<EntranceData.EntranceAreaPair> outPath, out List<string> outAreasVisited)
         {
             List<EntranceData.EntranceAreaPair> path = new List<EntranceData.EntranceAreaPair>();
             List<string> areasVisited = new List<string>();
@@ -424,7 +424,7 @@ namespace MMR_Tracker_V3
             outAreasVisited.Reverse();
         }
 
-        private static List<string> GetUncheckedLocations(LogicObjects.TrackerInstance instance)
+        private static List<string> GetUncheckedLocations(InstanceData.TrackerInstance instance)
         {
             List<string> Uncheckedlocations = new List<string>();
             foreach (var i in instance.LocationPool.Values)
@@ -499,7 +499,7 @@ namespace MMR_Tracker_V3
             return ReturnList;
         }
 
-        public static List<string> GetMissingItems(string logicID, LogicObjects.TrackerInstance Instance)
+        public static List<string> GetMissingItems(string logicID, InstanceData.TrackerInstance Instance)
         {
             Dictionary<string, PlaythroughGenerator.PlaythroughObject> Playthrough = Instance.SpoilerLog?.Playthrough;
             if (Playthrough is null)
@@ -531,7 +531,7 @@ namespace MMR_Tracker_V3
             return NeededItems;
         }
 
-        public static Dictionary<int, ShpereCompletionData> GetShpereCompletionData(LogicObjects.TrackerInstance Instance)
+        public static Dictionary<int, ShpereCompletionData> GetShpereCompletionData(InstanceData.TrackerInstance Instance)
         {
             Dictionary<int, ShpereCompletionData> Results = new();
             PlaythroughGenerator playthroughGenerator = new(Instance);

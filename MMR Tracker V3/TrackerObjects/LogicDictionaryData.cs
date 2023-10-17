@@ -62,7 +62,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public bool? Repeatable { get; set; } = null;
             public SpoilerlogReference SpoilerData { get; set; } = new SpoilerlogReference();
             public List<DictLocationProxy> LocationProxys { get; set; } = new List<DictLocationProxy>();
-            public string GetName(LogicObjects.TrackerInstance instance)
+            public string GetName(InstanceData.TrackerInstance instance)
             {
                 return Name ?? ID;
             }
@@ -100,14 +100,14 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string[] ItemTypes { get; set; } = Array.Empty<string>();
             public SpoilerlogReference SpoilerData { get; set; } = new SpoilerlogReference();
 
-            public string GetName(LogicObjects.TrackerInstance instance)
+            public string GetName(InstanceData.TrackerInstance instance)
             {
                 var NameReplaceOption = instance.UserOptions.Values.FirstOrDefault(x => x.GetActions().ItemNameOverride.ContainsKey(ID));
                 if (NameReplaceOption != null) { return NameReplaceOption.GetActions().ItemNameOverride[ID]; }
                 return Name ?? ID;
             }
 
-            public int GetMaxAmountInWorld(LogicObjects.TrackerInstance instance)
+            public int GetMaxAmountInWorld(InstanceData.TrackerInstance instance)
             {
                 var OptionsEffectingThisItem = instance.UserOptions.Values.Where(x => x.GetActions().ItemMaxAmountEdit.ContainsKey(ID));
                 if (!OptionsEffectingThisItem.Any()) { return MaxAmountInWorld ?? -1; }

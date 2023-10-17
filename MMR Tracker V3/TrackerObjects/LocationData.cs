@@ -27,7 +27,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string DisplayName { get; set; }
             public RandomizedState RandomizedState { get; set; } = RandomizedState.Randomized;
             public string SingleValidItem { get; set; } = null;
-            public LogicObjects.ReferenceData referenceData { get; set; } = new LogicObjects.ReferenceData();
+            public InstanceData.ReferenceData referenceData { get; set; } = new InstanceData.ReferenceData();
 
             public void GetPrice(out int outPrice, out char outCurrency)
             {
@@ -43,7 +43,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return;
             }
 
-            public bool IsRepeatable(LogicObjects.TrackerInstance Instance)
+            public bool IsRepeatable(InstanceData.TrackerInstance Instance)
             {
                 return GetDictEntry(Instance).Repeatable is not null && (bool)GetDictEntry(Instance).Repeatable;
             }
@@ -53,7 +53,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return DisplayName ?? ID;
             }
 
-            public void SetRandomizedState(RandomizedState Newstate, LogicObjects.TrackerInstance Instance)
+            public void SetRandomizedState(RandomizedState Newstate, InstanceData.TrackerInstance Instance)
             {
                 if (Newstate == RandomizedState) { return; }
                 RandomizedState = Newstate;
@@ -72,11 +72,11 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 return RandomizedState == RandomizedState.ForcedJunk;
             }
-            public LogicDictionaryData.DictionaryLocationEntries GetDictEntry(LogicObjects.TrackerInstance Instance)
+            public LogicDictionaryData.DictionaryLocationEntries GetDictEntry(InstanceData.TrackerInstance Instance)
             {
                 return Instance.LogicDictionary.LocationList[ID];
             }
-            public bool CanBeUnrandomized(LogicObjects.TrackerInstance instance)
+            public bool CanBeUnrandomized(InstanceData.TrackerInstance instance)
             {
                 //If it's already unrandomized let it continue to be
                 if (IsUnrandomized()) { return true; }
@@ -91,12 +91,12 @@ namespace MMR_Tracker_V3.TrackerObjects
                 //If the max amount of this object has been placed return false, otherwise true
                 return OriginalItemObject.CanBePlaced(instance);
             }
-            public bool AppearsinListbox(LogicObjects.TrackerInstance Instance, bool ShowJunkUnrand = false)
+            public bool AppearsinListbox(InstanceData.TrackerInstance Instance, bool ShowJunkUnrand = false)
             {
                 return (!IsJunk() || ShowJunkUnrand) && (!IsUnrandomized(MiscData.UnrandState.Unrand) || ShowJunkUnrand) && !string.IsNullOrWhiteSpace(GetDictEntry(Instance).GetName(Instance));
             }
 
-            public bool ToggleChecked(CheckState NewState, LogicObjects.TrackerInstance Instance)
+            public bool ToggleChecked(CheckState NewState, InstanceData.TrackerInstance Instance)
             {
                 CheckState CurrentState = CheckState;
                 if (CurrentState == NewState)
@@ -119,7 +119,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return true;
             }
 
-            public bool UncheckItem(CheckState NewState, LogicObjects.TrackerInstance Instance)
+            public bool UncheckItem(CheckState NewState, InstanceData.TrackerInstance Instance)
             {
                 var ItemAtCheck = Instance.GetItemByID(Randomizeditem.Item);
 
@@ -135,7 +135,7 @@ namespace MMR_Tracker_V3.TrackerObjects
 
             }
 
-            public bool CheckItem(CheckState NewState, LogicObjects.TrackerInstance Instance)
+            public bool CheckItem(CheckState NewState, InstanceData.TrackerInstance Instance)
             {
                 if (string.IsNullOrWhiteSpace(Randomizeditem.Item)) { return false; }
 
@@ -147,7 +147,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return true;
             }
 
-            public bool ToggleMarked(CheckState NewState, LogicObjects.TrackerInstance Instance)
+            public bool ToggleMarked(CheckState NewState, InstanceData.TrackerInstance Instance)
             {
                 if (NewState == CheckState.Marked && string.IsNullOrWhiteSpace(Randomizeditem.Item))
                 {
@@ -160,7 +160,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return true;
             }
 
-            public string GetItemAtCheck(LogicObjects.TrackerInstance Instance)
+            public string GetItemAtCheck(InstanceData.TrackerInstance Instance)
             {
                 var ItemAtCheck = Randomizeditem.Item;
                 if (SingleValidItem != null)
@@ -208,7 +208,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 return DisplayName??Name;
             }
-            public bool ProxyAvailable(LogicObjects.TrackerInstance instance)
+            public bool ProxyAvailable(InstanceData.TrackerInstance instance)
             {
                 var LogicId = LogicInheritance ?? ReferenceID;
                 bool Literal = LogicId.IsLiteralID(out LogicId);
@@ -220,11 +220,11 @@ namespace MMR_Tracker_V3.TrackerObjects
                     _ => false,
                 };
             }
-            public LocationObject GetReferenceLocation(LogicObjects.TrackerInstance instance)
+            public LocationObject GetReferenceLocation(InstanceData.TrackerInstance instance)
             {
                 return (instance.GetLocationByID(ReferenceID));
             }
-            public object GetLogicInheritance(LogicObjects.TrackerInstance instance)
+            public object GetLogicInheritance(InstanceData.TrackerInstance instance)
             {
                 var LogicId = LogicInheritance ?? ReferenceID;
                 bool Literal = LogicId.IsLiteralID(out LogicId);

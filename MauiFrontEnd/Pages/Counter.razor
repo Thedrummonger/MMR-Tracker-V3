@@ -22,7 +22,7 @@
 		var Dictionary = wc.DownloadString("https://raw.githubusercontent.com/Thedrummonger/MMR-Tracker-V3/master/MMR%20Tracker%20V3/Recources/Dictionaries/MMR%20V11.json");
 		System.Diagnostics.Debug.WriteLine("Downloaded Dict");
 
-		MMR_Tracker_V3.LogicObjects.TrackerInstance TempInstance = new LogicObjects.TrackerInstance();
+		MMR_Tracker_V3.InstanceData.TrackerInstance TempInstance = new InstanceData.TrackerInstance();
 		TempInstance.GenerateInstance(Logic, Dictionary);
 
 		InstanceContainer.Instance = TempInstance;

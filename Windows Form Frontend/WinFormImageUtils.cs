@@ -323,7 +323,7 @@ namespace Windows_Form_Frontend
             }
         }
 
-        public static TrackerState CaptureTrackerState(MMR_Tracker_V3.LogicObjects.TrackerInstance Instance)
+        public static TrackerState CaptureTrackerState(MMR_Tracker_V3.InstanceData.TrackerInstance Instance)
         {
             if (Instance is null) { return new TrackerState(); }
             TrackerState trackerState = new TrackerState();

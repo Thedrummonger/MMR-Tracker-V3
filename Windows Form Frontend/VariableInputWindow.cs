@@ -14,10 +14,10 @@ namespace Windows_Form_Frontend
 {
     public partial class VariableInputWindow : Form
     {
-        LogicObjects.TrackerInstance _Instance;
+        InstanceData.TrackerInstance _Instance;
         List<object> _InputItems;
         VarType varType;
-        public VariableInputWindow(IEnumerable<object> InputItems, LogicObjects.TrackerInstance Instance)
+        public VariableInputWindow(IEnumerable<object> InputItems, InstanceData.TrackerInstance Instance)
         {
             InitializeComponent();
             _InputItems = InputItems.ToList();

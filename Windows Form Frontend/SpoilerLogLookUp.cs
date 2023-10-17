@@ -17,7 +17,7 @@ namespace Windows_Form_Frontend
 {
     public partial class SpoilerLogLookUp : Form
     {
-        public LogicObjects.TrackerInstance _instance;
+        public MMR_Tracker_V3.InstanceData.TrackerInstance _instance;
         public Dictionary<string, PlaythroughGenerator.PlaythroughObject> SpoilerLookupPlaythrough = null;
 
         SeedCheckMode seedCheckMode = SeedCheckMode.view;
@@ -30,7 +30,7 @@ namespace Windows_Form_Frontend
             addIgnore,
             view
         }
-        public SpoilerLogLookUp(LogicObjects.TrackerInstance instance)
+        public SpoilerLogLookUp(MMR_Tracker_V3.InstanceData.TrackerInstance instance)
         {
             InitializeComponent();
             _instance = instance;

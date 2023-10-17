@@ -24,12 +24,12 @@ namespace MMR_Tracker_V3.TrackerObjects
             public List<string> FoolishLocations { get; set; } = new List<string>();
             public string SpoilerHintText { get; set; }
             public string DisplayName { get; set; }
-            public LogicObjects.ReferenceData referenceData { get; set; } = new LogicObjects.ReferenceData();
+            public InstanceData.ReferenceData referenceData { get; set; } = new InstanceData.ReferenceData();
             public override string ToString()
             {
                 return DisplayName ?? ID;
             }
-            public LogicDictionaryData.DictionaryHintEntries GetDictEntry(LogicObjects.TrackerInstance Instance)
+            public LogicDictionaryData.DictionaryHintEntries GetDictEntry(InstanceData.TrackerInstance Instance)
             {
                 return Instance.LogicDictionary.HintSpots[ID];
             }

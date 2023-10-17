@@ -16,13 +16,13 @@ namespace Windows_Form_Frontend
 {
     public partial class StaticOptionSelect : Form
     {
-        private LogicObjects.OptionFile TempOptionFile;
-        private LogicObjects.TrackerInstance _Instance;
-        public StaticOptionSelect(LogicObjects.TrackerInstance Instance)
+        private MMR_Tracker_V3.InstanceData.OptionFile TempOptionFile;
+        private MMR_Tracker_V3.InstanceData.TrackerInstance _Instance;
+        public StaticOptionSelect(MMR_Tracker_V3.InstanceData.TrackerInstance Instance)
         {
             InitializeComponent();
             _Instance = Instance;
-            TempOptionFile = GenericCopier<LogicObjects.OptionFile>.DeepCopy(_Instance.StaticOptions.OptionFile);
+            TempOptionFile = GenericCopier<MMR_Tracker_V3.InstanceData.OptionFile>.DeepCopy(_Instance.StaticOptions.OptionFile);
         } 
         private bool ValuesUpdating = false;
 
