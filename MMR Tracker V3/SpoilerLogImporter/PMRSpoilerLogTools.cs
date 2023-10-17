@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
+namespace MMR_Tracker_V3.SpoilerLogImporter
 {
-    internal class SpoilerLogParser
+    internal class PMRSpoilerLogTools
     {
         public class SpoilerEntrance
         {
@@ -23,21 +23,21 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
             var SpoilerLog = Instance.SpoilerLog.Log;
 
             string WebData = SettingWebPage + Path.GetFileNameWithoutExtension(Instance.SpoilerLog.FileName).Split('_')[0];
-            
+
             Debug.WriteLine($"Getting settings from [{WebData}]");
 
             System.Net.WebClient wc = new System.Net.WebClient();
             byte[] raw = wc.DownloadData(WebData);
-            string webString = System.Text.Encoding.UTF8.GetString(raw);
+            string webString = Encoding.UTF8.GetString(raw);
 
             Dictionary<string, object> Settings = JsonConvert.DeserializeObject<Dictionary<string, object>>(webString);
 
             foreach (var i in Settings)
             {
-                if (Instance.UserOptions.ContainsKey(i.Key)) 
-                { 
+                if (Instance.UserOptions.ContainsKey(i.Key))
+                {
                     Instance.UserOptions[i.Key].CurrentValue = i.Value.ToString().ToLower();
-                    Debug.WriteLine($"Option {i.Key} = {i.Value}");  
+                    Debug.WriteLine($"Option {i.Key} = {i.Value}");
                 }
                 else if (Instance.Variables.ContainsKey(i.Key))
                 {
@@ -114,19 +114,19 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
 
             Dictionary<string, object> LogObject = JsonConvert.DeserializeObject<Dictionary<string, object>>(string.Join("\r\n", SpoilerLog));
 
-            foreach(var loc in Instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits(Instance)))
+            foreach (var loc in Instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits(Instance)))
             {
                 loc.Value.SpoilerDefinedDestinationExit = loc.Value.GetVanillaDestination();
             }
 
-            foreach(var i in LogObject)
+            foreach (var i in LogObject)
             {
                 if (i.Key == "SeedHashItems" || i.Key == "difficulty" || i.Key == "move_costs" || i.Key == "superblocks") { continue; }
                 else if (i.Key == "entrances")
                 {
                     List<SpoilerEntrance> EntranceData = JsonConvert.DeserializeObject<List<SpoilerEntrance>>(JsonConvert.SerializeObject(i.Value));
 
-                    foreach(var entrance in EntranceData)
+                    foreach (var entrance in EntranceData)
                     {
                         Debug.WriteLine($"Checking Entrance {entrance.entrance}");
                         var Ent = Instance.EntrancePool.AreaList.First(x => x.Key.Replace("'", "") == entrance.entrance).Value.RandomizableExits(Instance).First();
@@ -140,7 +140,7 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
                     Dictionary<string, object> Spheres = JsonConvert.DeserializeObject<Dictionary<string, object>>(JsonConvert.SerializeObject(i.Value));
                     var StartingItems = Spheres["starting_items"];
                     List<string> StartingItemList = JsonConvert.DeserializeObject<List<string>>(JsonConvert.SerializeObject(StartingItems));
-                    foreach(var item in StartingItemList)
+                    foreach (var item in StartingItemList)
                     {
                         string StartingItem = item.Replace("*", "");
 
@@ -154,7 +154,7 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
                 else
                 {
                     Dictionary<string, string> Locations = JsonConvert.DeserializeObject<Dictionary<string, string>>(JsonConvert.SerializeObject(i.Value));
-                    foreach(var Location in Locations)
+                    foreach (var Location in Locations)
                     {
                         //Get Spoiler Location
                         if (!Instance.LocationPool.ContainsKey(Location.Key)) { throw new Exception($"{Location.Key} Is not a valid Location"); }
@@ -165,8 +165,8 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
                         string SpoilerGivenItem = Location.Value.ToString();
 
                         //Remove coin/starpoint costs from item
-                        if (SpoilerGivenItem.Contains("(") && (SpoilerGivenItem.SplitOnce('(', true)[1].Contains("coins") || SpoilerGivenItem.SplitOnce('(', true)[1].Contains(" sp)"))) 
-                        { 
+                        if (SpoilerGivenItem.Contains("(") && (SpoilerGivenItem.SplitOnce('(', true)[1].Contains("coins") || SpoilerGivenItem.SplitOnce('(', true)[1].Contains(" sp)")))
+                        {
                             SpoilerGivenItem = SpoilerGivenItem.SplitOnce('(', true)[0].Trim();
                         }
 
@@ -187,8 +187,8 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
                         var ItemToPlace = Instance.GetItemToPlace(SpoilerGivenItem, false, true, true);
 
                         //If no item was found, check if the spoiler item is a trap
-                        if (ItemToPlace is null && SpoilerGivenItem.StartsWith("TRAP")) 
-                        { 
+                        if (ItemToPlace is null && SpoilerGivenItem.StartsWith("TRAP"))
+                        {
                             Instance.LocationPool[Location.Key].Randomizeditem.SpoilerLogGivenItem = SpoilerGivenItem;
                             continue;
                         }
@@ -202,7 +202,7 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
                 }
             }
 
-            foreach(var i in Instance.LocationPool)
+            foreach (var i in Instance.LocationPool)
             {
                 if (i.Value.Randomizeditem.SpoilerLogGivenItem == null && i.Value.SingleValidItem == null && i.Value.IsRandomized())
                 {

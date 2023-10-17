@@ -9,9 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using static MMR_Tracker_V3.OtherGames.OOTMMV2.datamodel;
 
-namespace MMR_Tracker_V3.OtherGames.OOTMMV2
+namespace MMR_Tracker_V3.SpoilerLogImporter
 {
-    internal class ImportSpoilerLog
+    internal class OOTMMSpoilerLogTools
     {
         public static void readAndApplySpoilerLog(LogicObjects.TrackerInstance Instance)
         {
@@ -182,7 +182,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                 else if (instance.Variables.ContainsKey(setting.Key))
                 {
                     if (bool.TryParse(setting.Value, out bool BoolVal)) { instance.Variables[setting.Key].Value = BoolVal; }
-                    else if (Int64.TryParse(setting.Value, out Int64 IntVal)) { instance.Variables[setting.Key].Value = IntVal; }
+                    else if (long.TryParse(setting.Value, out long IntVal)) { instance.Variables[setting.Key].Value = IntVal; }
                     else { instance.Variables[setting.Key].Value = setting.Value; }
                 }
                 else
@@ -198,12 +198,12 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                     x.Id.StartsWith("OOT_MAP_") ||
                     x.Id.StartsWith("MM_COMPASS_") ||
                     x.Id.StartsWith("OOT_COMPASS_"));
-                    foreach (var i in MapsCompasses) { i.AmountInStartingpool= 1; }
+                    foreach (var i in MapsCompasses) { i.AmountInStartingpool = 1; }
                 }
                 if (setting.Key == "tingleShuffle" && setting.Value == "starting")
                 {
                     var MapsCompasses = instance.ItemPool.Values.Where(x => x.Id.StartsWith("MM_WORLD_MAP_"));
-                    foreach (var i in MapsCompasses) { i.AmountInStartingpool= 1; }
+                    foreach (var i in MapsCompasses) { i.AmountInStartingpool = 1; }
                 }
                 if (setting.Key == "strayFairyChestShuffle" && setting.Value == "starting")
                 {
@@ -220,7 +220,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                 }
                 if (setting.Key == "shufflePotsOot" && setting.Value == "false")
                 {
-                    foreach (var location in instance.LocationPool.Where(x => x.Value.GetDictEntry(instance).ValidItemTypes.Contains("pot") && x.Key.StartsWith("OOT ") ))
+                    foreach (var location in instance.LocationPool.Where(x => x.Value.GetDictEntry(instance).ValidItemTypes.Contains("pot") && x.Key.StartsWith("OOT ")))
                     {
                         location.Value.SetRandomizedState(MiscData.RandomizedState.Unrandomized, instance);
                     }
@@ -273,7 +273,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
             var SpoilerData = new Dictionary<string, string>();
             foreach (var x in Log)
             {
-                if (x.Trim() == Start || (Fuzzy && x.Trim().StartsWith(Start))) { AtReleventData = true; continue; }
+                if (x.Trim() == Start || Fuzzy && x.Trim().StartsWith(Start)) { AtReleventData = true; continue; }
                 if (AtReleventData && !x.StartsWith(" ") && !string.IsNullOrWhiteSpace(x)) { break; }
                 if (!AtReleventData || string.IsNullOrWhiteSpace(x)) { continue; }
                 var LineParts = x.Split(':').Select(x => x.Trim()).ToArray();
@@ -409,7 +409,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                 if (CurrentKey == "") { CurrentKey = x; }
                 else
                 {
-                    Result[CurrentKey] = new SpoilerHintData { HintType= HintType.Hero, PrettyLocationText = $"{x.StringSplit("    ")[0]}" };
+                    Result[CurrentKey] = new SpoilerHintData { HintType = HintType.Hero, PrettyLocationText = $"{x.StringSplit("    ")[0]}" };
                     CurrentKey = "";
                 }
             }
@@ -418,7 +418,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
             {
                 if (CurrentKey != "")
                 {
-                    Result[CurrentKey] = new SpoilerHintData { HintType= HintType.Foolish, PrettyLocationText = $"{x}" };
+                    Result[CurrentKey] = new SpoilerHintData { HintType = HintType.Foolish, PrettyLocationText = $"{x}" };
                     CurrentKey = "";
                 }
                 else { CurrentKey = x; }
@@ -431,7 +431,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                     Debug.WriteLine($"Hint Data {x}");
                     var data = x.Split(new[] { '(' }, 2);
                     data[1] = data[1][..^1];
-                    Result[CurrentKey] = new SpoilerHintData { HintType= HintType.Hero, PrettyLocationText = data[0], HintedItems = data[1].Split(",") };
+                    Result[CurrentKey] = new SpoilerHintData { HintType = HintType.Hero, PrettyLocationText = data[0], HintedItems = data[1].Split(",") };
                     CurrentKey = "";
                 }
                 else { CurrentKey = x; }
@@ -459,7 +459,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                     Dictionary<string, string> HintedEntries = Locations.Zip(Items, (k, v) => new { k, v }).ToDictionary(x => x.k, x => x.v);
                     Result[CurrentKey] = new SpoilerHintData
                     {
-                        HintType= HintType.ItemExact,
+                        HintType = HintType.ItemExact,
                         PrettyLocationText = $"{string.Join("and ", Locations)}",
                         HintedLocations = Locations,
                         HintedItemNames = ItemNames.ToArray(),

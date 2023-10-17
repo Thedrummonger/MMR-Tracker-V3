@@ -1,98 +1,24 @@
 ﻿using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
-using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
-using static FParsec.ErrorMessage;
 using static MMR_Tracker_V3.TrackerObjects.HintData;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
-namespace MMR_Tracker_V3
+namespace MMR_Tracker_V3.SpoilerLogImporter
 {
-    public static class SpoilerLogTools
+    public static class MMRSpoilerLogTools
     {
-        public static string GetSpoilerLogFilter(LogicObjects.TrackerInstance Instance)
+        public static void ReadAndApplySpoilerLog(LogicObjects.TrackerInstance instance)
         {
-            switch (Instance.LogicFile.GameCode)
-            {
-                case "OOTR":
-                    return "Ocarina of Time Rando Spoiler Log (*.json)|*.json";
-                case "OOTMM":
-                    return "OOT X MM Combo Rando Spoiler Log (*.txt)|*.txt";
-                case "TPR":
-                    return "Twilight Princess Rando Spoiler Log|*.json";
-                case "PMR":
-                    return "Paper Mario Rando Spoiler Log|*.txt";
-                default:
-                    return "Majoras Mask Randomizer Text Spoiler Log|*.txt";
-            }
+            MMRData.SpoilerLogData LogData = ReadSpoilerLog(instance.SpoilerLog.Log);
+            instance.ApplyMMRandoSettings(LogData);
+            instance.ApplyMMRandoSpoilerLog(LogData);
         }
-
-        public static bool ImportSpoilerLog(string spoilerLog, InstanceContainer container)
-        {
-            if (File.Exists(spoilerLog))
-            {
-                return ImportSpoilerLog(File.ReadLines(spoilerLog).ToArray(), spoilerLog, container);
-            }
-            else
-            {
-                string[] lines = spoilerLog.Split(new string[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
-                return ImportSpoilerLog(lines, spoilerLog, container);
-            }
-        }
-        public static bool ImportSpoilerLog(string spoilerLog, string OriginalFile, InstanceContainer container)
-        {
-            if (File.Exists(spoilerLog))
-            {
-                return ImportSpoilerLog(File.ReadLines(spoilerLog).ToArray(), OriginalFile, container);
-            }
-            else
-            {
-                string[] lines = spoilerLog.Split( new string[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
-                return ImportSpoilerLog(lines, OriginalFile, container);
-            }
-        }
-
-        public static bool ImportSpoilerLog(string[] spoilerLog, string OriginalFile, InstanceContainer container)
-        {
-            container.logicCalculation.ResetAutoObtainedItems();
-            switch (container.Instance.LogicFile.GameCode)
-            {
-                //case "OOTR":
-                //case "PMR":
-                case "OOTMM":
-                    container.Instance.SpoilerLog = new LogicObjects.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
-                    OtherGames.OOTMMV2.ImportSpoilerLog.readAndApplySpoilerLog(container.Instance);
-                    container.Instance.EntrancePool.IsEntranceRando = container.Instance.EntrancePool.CheckForRandomEntrances(container.Instance);
-                    container.Instance.SpoilerLog.GetStaticPlaythrough(container.Instance);
-                    return true;
-                case "MMR":
-                    container.Instance.SpoilerLog = new LogicObjects.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
-                    MMRData.SpoilerLogData LogData = ReadSpoilerLog(spoilerLog);
-                    ApplyMMRandoSettings(container.Instance, LogData);
-                    ApplyMMRandoSpoilerLog(container.Instance, LogData);
-                    container.Instance.EntrancePool.IsEntranceRando = container.Instance.EntrancePool.CheckForRandomEntrances(container.Instance);
-                    container.Instance.SpoilerLog.GetStaticPlaythrough(container.Instance);
-                    return true;
-                case "TPR":
-                    container.Instance.SpoilerLog = new LogicObjects.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
-                    OtherGames.TPRando.TPRSpoilerLogParser.readAndApplySpoilerLog(container.Instance);
-                    container.Instance.SpoilerLog.GetStaticPlaythrough(container.Instance);
-                    return true;
-                case "PMR":
-                    container.Instance.SpoilerLog = new LogicObjects.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
-                    OtherGames.PaperMarioRando.SpoilerLogParser.ParseSpoiler(container.Instance);
-                    container.Instance.SpoilerLog.GetStaticPlaythrough(container.Instance);
-                    return true;
-                default:
-                    return false;
-            }
-        }
-
         public static bool ApplyLocationString(string LocationString, LogicObjects.TrackerInstance Instance)
         {
             var LocationPool = Instance.LocationPool.Values.Where(x => !x.GetDictEntry(Instance).IgnoreForSettingString ?? true).ToList();
@@ -108,11 +34,11 @@ namespace MMR_Tracker_V3
                 bool IsRandomized = RandomizedItemIndexs.Contains(Index);
                 if (IsRandomized && i.IsUnrandomized())
                 {
-                    i.SetRandomizedState(MiscData.RandomizedState.Randomized, Instance);
+                    i.SetRandomizedState(RandomizedState.Randomized, Instance);
                 }
                 else if (!IsRandomized && !i.IsUnrandomized())
                 {
-                    i.SetRandomizedState(MiscData.RandomizedState.Unrandomized, Instance);
+                    i.SetRandomizedState(RandomizedState.Unrandomized, Instance);
                 }
                 Index++;
             }
@@ -134,11 +60,11 @@ namespace MMR_Tracker_V3
                 bool IsJunk = JunkItemIndexes.Contains(Index);
                 if (IsJunk && i.IsRandomized())
                 {
-                    i.SetRandomizedState(MiscData.RandomizedState.ForcedJunk, Instance);
+                    i.SetRandomizedState(RandomizedState.ForcedJunk, Instance);
                 }
                 else if (!IsJunk && i.IsJunk())
                 {
-                    i.SetRandomizedState(MiscData.RandomizedState.Randomized, Instance);
+                    i.SetRandomizedState(RandomizedState.Randomized, Instance);
                 }
                 Index++;
             }
@@ -199,7 +125,7 @@ namespace MMR_Tracker_V3
                 var i = MasterList.ToList().IndexOf(item);
                 int j = i / 32;
                 int k = i % 32;
-                n[j] |= (int)(1 << k);
+                n[j] |= 1 << k;
                 ns[j] = Convert.ToString(n[j], 16);
             }
             return string.Join("-", ns.Reverse());
@@ -219,13 +145,13 @@ namespace MMR_Tracker_V3
             {
                 for (int i = 0; i < ItemCount; i++)
                 {
-                    if (Sections[(ItemCount - 1) - i] != "") { NewSections[i] = Convert.ToInt32(Sections[(ItemCount - 1) - i], 16); }
+                    if (Sections[ItemCount - 1 - i] != "") { NewSections[i] = Convert.ToInt32(Sections[ItemCount - 1 - i], 16); }
                 }
                 for (int i = 0; i < 32 * ItemCount; i++)
                 {
                     int j = i / 32;
                     int k = i % 32;
-                    if (((NewSections[j] >> k) & 1) > 0) { result.Add(i); }
+                    if ((NewSections[j] >> k & 1) > 0) { result.Add(i); }
                 }
             }
             catch (Exception e)
@@ -241,7 +167,7 @@ namespace MMR_Tracker_V3
             MMRData.SpoilerLogData spoilerLog = new MMRData.SpoilerLogData();
             string CurrentSection = "";
             string SettingString = "{";
-            foreach(var line in File)
+            foreach (var line in File)
             {
                 if (line.Trim().StartsWith("Settings:")) { CurrentSection = "Settings"; continue; }
                 if (line.Trim().StartsWith("Seed:")) { CurrentSection = "Seed"; continue; }
@@ -258,7 +184,7 @@ namespace MMR_Tracker_V3
 
                 if (!string.IsNullOrWhiteSpace(line) && line.Contains("->"))
                 {
-                    var Entry = line.Split(new string[] { "->" }, StringSplitOptions.None).Select(x => x.Replace("*","").Replace("^", "")).ToArray();
+                    var Entry = line.Split(new string[] { "->" }, StringSplitOptions.None).Select(x => x.Replace("*", "").Replace("^", "")).ToArray();
                     if ((CurrentSection == "Location" || CurrentSection == "Dungeon") && !spoilerLog.LocationLog.ContainsKey(Entry[0].Trim()))
                     {
                         spoilerLog.LocationLog.Add(Entry[0].Trim(), Entry[1].Trim());
@@ -307,11 +233,11 @@ namespace MMR_Tracker_V3
             Debug.WriteLine($"Enabling Hints");
             foreach (var i in instance.HintPool.Where(x => x.Key.StartsWith("Gossip")))
             {
-                i.Value.RandomizedState = Log.GameplaySettings.GossipHintStyle == MMRData.GossipHintStyle.Default ? MiscData.RandomizedState.ForcedJunk : MiscData.RandomizedState.Randomized;
+                i.Value.RandomizedState = Log.GameplaySettings.GossipHintStyle == MMRData.GossipHintStyle.Default ? RandomizedState.ForcedJunk : RandomizedState.Randomized;
             }
             foreach (var i in instance.HintPool.Where(x => x.Key.StartsWith("HintGaro")))
             {
-                i.Value.RandomizedState = Log.GameplaySettings.GaroHintStyle == MMRData.GossipHintStyle.Default ? MiscData.RandomizedState.ForcedJunk : MiscData.RandomizedState.Randomized;
+                i.Value.RandomizedState = Log.GameplaySettings.GaroHintStyle == MMRData.GossipHintStyle.Default ? RandomizedState.ForcedJunk : RandomizedState.Randomized;
             }
             //If no StartingItemMode = None, starting locations should be junk. SongHealing is only junked if songs are mixed with items
             Debug.WriteLine($"Handeling MM Starting Locations");
@@ -321,12 +247,12 @@ namespace MMR_Tracker_V3
             {
                 if (Log.GameplaySettings.StartingItemMode != MMRData.StartingItemMode.None) { break; }
                 var Entry = instance.GetLocationByID(i);
-                if (!Entry.IsUnrandomized()) { Entry.SetRandomizedState(MiscData.RandomizedState.ForcedJunk, instance); }
+                if (!Entry.IsUnrandomized()) { Entry.SetRandomizedState(RandomizedState.ForcedJunk, instance); }
             }
 
             Debug.WriteLine($"Handeling Dungeon Entrances");
             //Dungeon entrances are not tracked in the CustomItemListString and should instead be randomized based on the RandomizeDungeonEntrances setting
-            var DungeoneState = Log.GameplaySettings.RandomizeDungeonEntrances ? MiscData.RandomizedState.Randomized : MiscData.RandomizedState.Unrandomized;
+            var DungeoneState = Log.GameplaySettings.RandomizeDungeonEntrances ? RandomizedState.Randomized : RandomizedState.Unrandomized;
             instance.GetLocationByID("AreaWoodFallTempleAccess").SetRandomizedState(DungeoneState, instance);
             instance.GetLocationByID("AreaSnowheadTempleAccess").SetRandomizedState(DungeoneState, instance);
             instance.GetLocationByID("AreaGreatBayTempleAccess").SetRandomizedState(DungeoneState, instance);
@@ -363,34 +289,34 @@ namespace MMR_Tracker_V3
             var AllLogicItems = instance.LogicFile.GetAllItemsUsedInLogic().ToDictionary(x => x, x => "");
             Debug.WriteLine($"Making Unrandomized Items Manual and Junking Unrandomized Starting Items");
             foreach (var i in instance.LocationPool)
-            {   
+            {
                 //Any unrandomized locations with items that effect logic should be made Manual to track obtaining the item and updating logic
                 if (i.Value.IsUnrandomized(UnrandState.Unrand) && i.Value.GetDictEntry(instance).ValidItemTypes.Contains("Dungeon Entrance") && AllLogicItems.ContainsKey(i.Value.GetDictEntry(instance).OriginalItem))
                 {
-                    i.Value.SetRandomizedState(MiscData.RandomizedState.UnrandomizedManual, instance);
+                    i.Value.SetRandomizedState(RandomizedState.UnrandomizedManual, instance);
                 }
                 //If a location is unrandomized, but it's unrandomized item is a starting item it will contain junk. This is MMR sepcific
                 if (i.Value.IsUnrandomized() && instance.GetItemByID(i.Value.GetDictEntry(instance).OriginalItem).AmountInStartingpool > 0)
                 {
-                    i.Value.SetRandomizedState(MiscData.RandomizedState.ForcedJunk, instance);
+                    i.Value.SetRandomizedState(RandomizedState.ForcedJunk, instance);
                 }
             }
         }
 
         public static void ApplyMMRandoSpoilerLog(this LogicObjects.TrackerInstance instance, MMRData.SpoilerLogData Log)
         {
-            foreach(var i in instance.LocationPool.Values)
+            foreach (var i in instance.LocationPool.Values)
             {
                 var DictEntry = i.GetDictEntry(instance);
                 var MatchingLogEntry = Log.LocationLog.Where(x => DictEntry.SpoilerData.SpoilerLogNames.Contains(x.Key));
-                if (!MatchingLogEntry.Any()) 
+                if (!MatchingLogEntry.Any())
                 {
                     if (i.IsRandomized())
                     {
                         if (Log.GameplaySettings.StrayFairyMode == MMRData.StrayFairyMode.ChestsOnly && i.ID.StartsWith("CollectibleStrayFairy")) { i.RandomizedState = RandomizedState.ForcedJunk; }
                         else { Debug.WriteLine($"{i.ID} was not found in the spoiler log and was randomized"); }
                     }
-                    continue; 
+                    continue;
                 }
                 var ItemName = MatchingLogEntry.First().Value;
                 if (ItemName.StartsWith("Ice Trap ")) { ItemName = "Ice Trap"; }
@@ -534,23 +460,6 @@ namespace MMR_Tracker_V3
                         return;
                     }
                 }
-            }
-        }
-
-        public static void RemoveSpoilerData(this LogicObjects.TrackerInstance instance)
-        {
-            foreach (var i in instance.LocationPool.Values)
-            {
-                i.Randomizeditem.SpoilerLogGivenItem = null;
-                i.SetPrice(-1);
-            }
-            foreach (var i in instance.MacroPool.Values)
-            {
-                i.SetPrice(-1);
-            }
-            foreach (var i in instance.HintPool.Values)
-            {
-                i.SpoilerHintText = null;
             }
         }
     }

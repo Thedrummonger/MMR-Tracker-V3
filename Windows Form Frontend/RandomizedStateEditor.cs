@@ -1,5 +1,6 @@
 ﻿using MathNet.Numerics;
 using MMR_Tracker_V3;
+using MMR_Tracker_V3.SpoilerLogImporter;
 using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
@@ -50,11 +51,11 @@ namespace Windows_Form_Frontend
         private void UpdatedSettingStrings()
         {
             var LocationList = _Instance.LocationPool.Values.Where(x => !x.GetDictEntry(_Instance).IgnoreForSettingString ?? true).ToList();
-            var StartingItems = SpoilerLogTools.GetStartingItemList(_Instance).ToList();
+            var StartingItems = MMRSpoilerLogTools.GetStartingItemList(_Instance).ToList();
             var TrickList = _Instance.MacroPool.Values.Where(x => x.isTrick(_Instance)).ToList();
-            txtLocString.Text = SpoilerLogTools.CreateSettingString(LocationList, LocationList.Where(x => !x.IsUnrandomized()).ToList());
-            txtjunkString.Text = SpoilerLogTools.CreateSettingString(LocationList, LocationList.Where(x => x.IsJunk()).ToList());
-            txtStartString.Text = SpoilerLogTools.CreateSettingString(StartingItems, StartingItems.Where(x => x.AmountInStartingpool > 0).ToList());
+            txtLocString.Text = MMRSpoilerLogTools.CreateSettingString(LocationList, LocationList.Where(x => !x.IsUnrandomized()).ToList());
+            txtjunkString.Text = MMRSpoilerLogTools.CreateSettingString(LocationList, LocationList.Where(x => x.IsJunk()).ToList());
+            txtStartString.Text = MMRSpoilerLogTools.CreateSettingString(StartingItems, StartingItems.Where(x => x.AmountInStartingpool > 0).ToList());
             //txtTrickString.Text = CreateSettingString(TrickList, TrickList.Where(x => x.TrickEnabled).ToList());
         }
 
@@ -368,9 +369,9 @@ namespace Windows_Form_Frontend
 
         private void btnApplySettingStrings_Click(object sender, EventArgs e)
         {
-            SpoilerLogTools.ApplyLocationString(txtLocString.Text, _Instance);
-            SpoilerLogTools.ApplyJunkString(txtjunkString.Text, _Instance);
-            SpoilerLogTools.ApplyStartingItemString(txtStartString.Text, _Instance);
+            MMRSpoilerLogTools.ApplyLocationString(txtLocString.Text, _Instance);
+            MMRSpoilerLogTools.ApplyJunkString(txtjunkString.Text, _Instance);
+            MMRSpoilerLogTools.ApplyStartingItemString(txtStartString.Text, _Instance);
 
             UpdateItemSets();
             PrintToLocationList();
@@ -390,7 +391,7 @@ namespace Windows_Form_Frontend
             try { configuration = Newtonsoft.Json.JsonConvert.DeserializeObject<MMRData.SpoilerLogData>(File.ReadAllText(fileDialog.FileName)); }
             catch
             {   //Parse as Spoiler Log File
-                try { configuration = SpoilerLogTools.ReadSpoilerLog(File.ReadAllLines(fileDialog.FileName)); }
+                try { configuration = MMRSpoilerLogTools.ReadSpoilerLog(File.ReadAllLines(fileDialog.FileName)); }
                 catch { MessageBox.Show("Setting File Invalid!"); return; }
             }
             if (configuration.GameplaySettings == null) { MessageBox.Show("Setting File Invalid!"); return; }

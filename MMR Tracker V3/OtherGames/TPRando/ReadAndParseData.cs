@@ -1,4 +1,5 @@
 ﻿using MathNet.Symbolics;
+using MMR_Tracker_V3.SpoilerLogImporter;
 using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
 using System;
@@ -378,7 +379,7 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
         {
             List<string> allSpoilerlogItems = new List<string>();
             string TestSpoilerLog = Path.Combine(References.TestingPaths.GetDevTestingPath(), "TPRando", "TestSpoiler.json");
-            var SpoilerData = JsonConvert.DeserializeObject<TPRSpoilerLogParser.TPRSpoilerLog>(File.ReadAllText(TestSpoilerLog));
+            var SpoilerData = JsonConvert.DeserializeObject<TPRSpoilerLogTools.TPRSpoilerLog>(File.ReadAllText(TestSpoilerLog));
 
             Debug.WriteLine("\nLocations in spoiler log not found in Pool");
             foreach(var i in SpoilerData.itemPlacements)

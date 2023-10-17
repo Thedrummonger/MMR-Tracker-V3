@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MMR_Tracker_V3.OtherGames.TPRando
+namespace MMR_Tracker_V3.SpoilerLogImporter
 {
-    internal class TPRSpoilerLogParser
+    internal class TPRSpoilerLogTools
     {
         public class TPRSpoilerLog
         {
@@ -20,7 +20,7 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
         public static void readAndApplySpoilerLog(LogicObjects.TrackerInstance Instance)
         {
             var SpoilerData = JsonConvert.DeserializeObject<TPRSpoilerLog>(string.Join("", Instance.SpoilerLog.Log));
-            foreach(var i in SpoilerData.settings)
+            foreach (var i in SpoilerData.settings)
             {
                 if (Instance.UserOptions.ContainsKey(i.Key))
                 {
@@ -30,7 +30,7 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
                 if (i.Key == "startingItems")
                 {
                     Debug.WriteLine(i.Value.GetType());
-                    foreach(var item in Utility.ParseJArrayToListSlow(i.Value))
+                    foreach (var item in Utility.ParseJArrayToListSlow(i.Value))
                     {
                         var ItemObj = Instance.GetItemByID(item);
                         if (ItemObj is null)
@@ -73,7 +73,7 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
                 {
                     Debug.WriteLine($"{i.Value} was placed more times than allowed!");
                 }
-                Location.Randomizeditem.SpoilerLogGivenItem = item?.Id??i.Value;
+                Location.Randomizeditem.SpoilerLogGivenItem = item?.Id ?? i.Value;
             }
             foreach (var i in Instance.LocationPool.Values)
             {

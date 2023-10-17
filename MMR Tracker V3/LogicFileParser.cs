@@ -1,4 +1,5 @@
-﻿using MMR_Tracker_V3.TrackerObjects;
+﻿using MMR_Tracker_V3.SpoilerLogImporter;
+using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -60,7 +61,7 @@ namespace MMR_Tracker_V3
         private static bool TestForSpoilerLogLogic(string[] LogFile, out string[] Logic)
         {
             Logic = null;
-            MMRData.SpoilerLogData LogData = SpoilerLogTools.ReadSpoilerLog(LogFile);
+            MMRData.SpoilerLogData LogData = MMRSpoilerLogTools.ReadSpoilerLog(LogFile);
             if ( LogData is null || LogData.GameplaySettings is null) { return false; }
             if (LogData.GameplaySettings.LogicMode == MMRData.LogicMode.UserLogic)
             {

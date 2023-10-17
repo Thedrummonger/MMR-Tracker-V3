@@ -66,7 +66,7 @@ namespace MMR_Tracker_V3
             if (CurrentSaveState is null) { return; }
             if (CurrentSaveState.SpoilerData is not null && InstanceContainer.Instance.SpoilerLog is null)
             {
-                SpoilerLogTools.ImportSpoilerLog(CurrentSaveState.SpoilerData.Log, CurrentSaveState.SpoilerData.FileName, InstanceContainer);
+                SpoilerLogImporter.SpoilerLogTools.ImportSpoilerLog(CurrentSaveState.SpoilerData.Log, CurrentSaveState.SpoilerData.FileName, InstanceContainer);
             }
             foreach(var i in CurrentSaveState.Locations)
             {
