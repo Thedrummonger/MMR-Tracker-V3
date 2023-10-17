@@ -19,19 +19,6 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             if (LocTypes is null || itemTypes is null) { return EmptyIsWildcard; }
             return LocTypes.Intersect(itemTypes).Any();
         }
-        public static void GetPrice(this LocationData.LocationObject loc, out int outPrice, out char outCurrency)
-        {
-            outPrice = loc.Price??-1;
-            outCurrency = loc.Currency??'$';
-            return;
-        }
-        public static void SetPrice(this LocationData.LocationObject loc, int inPrice, char inCurrency = '\0')
-        {
-            if (inCurrency == '\0') { inCurrency = loc.Currency??'$'; }
-            loc.Price = inPrice < 0 ? null : inPrice;
-            loc.Currency = inCurrency;
-            return;
-        }
 
         public static bool IsRepeatable(this LocationData.LocationObject loc, InstanceData.TrackerInstance Instance)
         {
@@ -56,10 +43,6 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
         public static bool IsJunk(this LocationData.LocationObject loc)
         {
             return loc.RandomizedState == RandomizedState.ForcedJunk;
-        }
-        public static LogicDictionaryData.DictionaryLocationEntries GetDictEntry(this LocationData.LocationObject loc, InstanceData.TrackerInstance Instance)
-        {
-            return Instance.LogicDictionary.LocationList[loc.ID];
         }
         public static bool CanBeUnrandomized(this LocationData.LocationObject loc, InstanceData.TrackerInstance instance)
         {

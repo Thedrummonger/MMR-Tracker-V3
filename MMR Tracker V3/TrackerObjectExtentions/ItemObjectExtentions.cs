@@ -10,10 +10,6 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
 {
     public static class ItemObjectExtentions
     {
-        public static LogicDictionaryData.DictionaryItemEntries GetDictEntry(this ItemData.ItemObject Item, InstanceData.TrackerInstance Instance)
-        {
-            return Instance.LogicDictionary.ItemList[Item.Id];
-        }
         public static bool ValidStartingItem(this ItemData.ItemObject Item, InstanceData.TrackerInstance Instance)
         {
             var ItemIndex = Instance.GetItemByID(Item.Id);

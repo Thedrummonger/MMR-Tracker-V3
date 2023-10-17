@@ -30,23 +30,30 @@ namespace MMR_Tracker_V3
             container = _container;
         }
 
-        private bool RequirementsMet(List<string> Requirements, string ID, Dictionary<string, List<string>> TempUnlockData)
+        private bool RequirementsMet(List<string> Requirements, string ID, List<string> TempUnlockData)
         {
             List<string> SubUnlockData = new();
-            bool reqMet = Requirements.All(x => LogicEntryAquired(x, SubUnlockData));
-            if (TempUnlockData != null && reqMet)
+            foreach(var Req in Requirements)
             {
-                if (!TempUnlockData.ContainsKey(ID)) { TempUnlockData.Add(ID, new List<string>()); }
-                TempUnlockData[ID] = TempUnlockData[ID].Concat(Requirements).Concat(SubUnlockData).ToList();
+                if (!LogicEntryAquired(Req, SubUnlockData)) { return false; }
             }
-            return reqMet;
+            TempUnlockData?.AddRange(SubUnlockData);
+            return true;
         }
 
-        private bool ConditionalsMet(List<List<string>> Conditionals, string ID, Dictionary<string, List<string>> TempUnlockData)
+        private bool ConditionalsMet(List<List<string>> Conditionals, string ID, List<string> TempUnlockData)
         {
             if (!Conditionals.Any()) { return true; }
-            var CondMet = Conditionals.FirstOrDefault(x => RequirementsMet(x, ID, TempUnlockData));
-            return CondMet != null;
+            List<string> SubUnlockData = new List<string>();
+            foreach(var Set in Conditionals)
+            {
+                if (RequirementsMet(Set, ID, SubUnlockData)) 
+                {
+                    TempUnlockData.AddRange(SubUnlockData);
+                    return true; 
+                }
+            }
+            return false;
         }
 
         public bool LogicEntryAquired(string i, List<string> SubUnlockData)
@@ -65,16 +72,20 @@ namespace MMR_Tracker_V3
                 case LogicEntryType.Bool:
                     return bool.Parse(LogicItem);
                 case LogicEntryType.item:
+                    SubUnlockData.Add(LogicItem);
                     return container.Instance.GetItemByID(LogicItem).Useable(container.Instance, Amount);
                 case LogicEntryType.macro:
+                    SubUnlockData.Add(LogicItem);
                     return container.Instance.GetMacroByID(LogicItem).Aquired; 
                 case LogicEntryType.Area:
+                    SubUnlockData.Add(LogicItem);
                     return AreaReached(LogicItem, "");
                 case LogicEntryType.variableString:
                     return LogicEntryAquired(container.Instance.Variables[LogicItem].GetValue(container.Instance) as string, SubUnlockData);
                 case LogicEntryType.variableList:
                     return CheckItemArray(LogicItem, Amount, SubUnlockData, out int _);
                 case LogicEntryType.variableBool:
+                    SubUnlockData.Add(LogicItem);
                     return container.Instance.Variables[LogicItem].GetValue(container.Instance);
                 default:
                     Debug.WriteLine($"{LogicItem} Was not a valid Logic Entry");
@@ -119,30 +130,29 @@ namespace MMR_Tracker_V3
             }
         }
 
-        private bool AreaReached(string Area, string ID, Dictionary<string, List<string>> TempUnlockData = null)
+        private bool AreaReached(string Area, string ID, List<string> TempUnlockData = null)
         {
             bool IsRoot = Area is null || Area == container.Instance.EntrancePool.RootArea;
             string TargetArea = Area ??container.Instance.EntrancePool.RootArea;
             bool Reachable = IsRoot || container.Instance.EntrancePool.AreaList.ContainsKey(Area) && container.Instance.EntrancePool.AreaList[Area].ExitsAcessibleFrom > 0;
             if (TempUnlockData != null && Reachable)
             {
-                if (!TempUnlockData.ContainsKey(ID)) { TempUnlockData.Add(ID, new List<string>()); }
-                TempUnlockData[ID].Add(TargetArea);
+                TempUnlockData.Add(TargetArea);
             }
             return Reachable;
         }
 
         public bool CalculatReqAndCond(MMRData.JsonFormatLogicItem Logic, string ID, string Area)
         {
-            Dictionary<string, List<string>> TempUnlockData = new();
+            List<string> UnlockedWith = new List<string>();
             bool Available =
-                (Area == null || AreaReached(Area, ID, TempUnlockData)) &&
-                RequirementsMet(Logic.RequiredItems, ID, TempUnlockData) &&
-                ConditionalsMet(Logic.ConditionalItems, ID, TempUnlockData);
+                (Area == null || AreaReached(Area, ID, UnlockedWith)) &&
+                RequirementsMet(Logic.RequiredItems, ID, UnlockedWith) &&
+                ConditionalsMet(Logic.ConditionalItems, ID, UnlockedWith);
 
             if (!LogicUnlockData.ContainsKey(ID) && Available)
             {
-                LogicUnlockData[ID] = TempUnlockData[ID].Distinct().ToList();
+                LogicUnlockData[ID] = UnlockedWith.Distinct().ToList();
             }
 
             return Available;

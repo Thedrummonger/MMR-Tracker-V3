@@ -24,11 +24,6 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             return exit.GetDictEntry(currentTrackerInstance).RandomizableEntrance;
         }
 
-        public static LogicDictionaryData.DictionaryEntranceEntries GetDictEntry(this EntranceRandoExit exit, InstanceData.TrackerInstance Instance)
-        {
-            return Instance.LogicDictionary.EntranceList[Instance.GetLogicNameFromExit(exit)];
-        }
-
         public static EntranceRandoDestination GetVanillaDestination(this EntranceRandoExit exit)
         {
             return new EntranceRandoDestination { region = exit.ID, from = exit.ParentAreaID };

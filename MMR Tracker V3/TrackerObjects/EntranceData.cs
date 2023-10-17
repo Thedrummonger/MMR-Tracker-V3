@@ -74,6 +74,10 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string DisplayName { get; set; }
             public InstanceData.ReferenceData referenceData { get; set; } = new InstanceData.ReferenceData();
 
+            public LogicDictionaryData.DictionaryEntranceEntries GetDictEntry(InstanceData.TrackerInstance Instance)
+            {
+                return Instance.LogicDictionary.EntranceList[Instance.GetLogicNameFromExit(this)];
+            }
 
             public override string ToString()
             {

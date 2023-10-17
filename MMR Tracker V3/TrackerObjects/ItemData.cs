@@ -23,7 +23,10 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string DisplayName { get; set; }
             public InstanceData.ReferenceData referenceData { get; set; } = new InstanceData.ReferenceData();
 
-
+            public LogicDictionaryData.DictionaryItemEntries GetDictEntry(InstanceData.TrackerInstance Instance)
+            {
+                return Instance.LogicDictionary.ItemList[Id];
+            }
             public override string ToString()
             {
                 return DisplayName ?? Id;

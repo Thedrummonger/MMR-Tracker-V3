@@ -29,10 +29,27 @@ namespace MMR_Tracker_V3.TrackerObjects
             public RandomizedState RandomizedState { get; set; } = RandomizedState.Randomized;
             public string SingleValidItem { get; set; } = null;
             public InstanceData.ReferenceData referenceData { get; set; } = new InstanceData.ReferenceData();
+            public LogicDictionaryData.DictionaryLocationEntries GetDictEntry(InstanceData.TrackerInstance Instance)
+            {
+                return Instance.LogicDictionary.LocationList[ID];
+            }
 
             public override string ToString()
             {
                 return DisplayName ?? ID;
+            }
+            public void GetPrice(out int outPrice, out char outCurrency)
+            {
+                outPrice = Price??-1;
+                outCurrency = Currency??'$';
+                return;
+            }
+            public void SetPrice(int inPrice, char inCurrency = '\0')
+            {
+                if (inCurrency == '\0') { inCurrency = Currency??'$'; }
+                Price = inPrice < 0 ? null : inPrice;
+                Currency = inCurrency;
+                return;
             }
 
         }

@@ -163,7 +163,6 @@ namespace MMR_Tracker_V3
             else if(Utility.DynamicPropertyExist(PriceData, "Aquired")) { Available = PriceData.Aquired; }
             else { Available = false; ; }
 
-
             PriceData.GetPrice(out int p, out char c);
             PriceDisplay = p < 0 || (!Available) ? "" : $" [{c}{p}]";
             RandomizedItemDisplay = instance.GetItemByID(Location.Randomizeditem.Item)?.GetDictEntry(instance)?.GetName(instance) ?? Location.Randomizeditem.Item;
