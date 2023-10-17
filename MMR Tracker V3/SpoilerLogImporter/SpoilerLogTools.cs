@@ -1,4 +1,5 @@
-﻿using MMR_Tracker_V3.TrackerObjects;
+﻿using MMR_Tracker_V3.TrackerObjectExtentions;
+using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -57,42 +58,26 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             container.logicCalculation.ResetAutoObtainedItems();
             switch (container.Instance.LogicFile.GameCode)
             {
-                //case "OOTR":
-                //case "PMR":
                 case "OOTMM":
                     container.Instance.SpoilerLog = new InstanceData.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
-                    SpoilerLogImporter.OOTMMSpoilerLogTools.readAndApplySpoilerLog(container.Instance);
+                    OOTMMSpoilerLogTools.readAndApplySpoilerLog(container.Instance);
                     container.Instance.EntrancePool.IsEntranceRando = container.Instance.EntrancePool.CheckForRandomEntrances(container.Instance);
                     container.Instance.SpoilerLog.GetStaticPlaythrough(container.Instance);
                     return true;
                 case "MMR":
                     container.Instance.SpoilerLog = new InstanceData.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
-                    SpoilerLogImporter.MMRSpoilerLogTools.ReadAndApplySpoilerLog(container.Instance);
+                    MMRSpoilerLogTools.ReadAndApplySpoilerLog(container.Instance);
                     container.Instance.EntrancePool.IsEntranceRando = container.Instance.EntrancePool.CheckForRandomEntrances(container.Instance);
                     container.Instance.SpoilerLog.GetStaticPlaythrough(container.Instance);
                     return true;
                 case "TPR":
                     container.Instance.SpoilerLog = new InstanceData.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
-
-/* Unmerged change from project 'MMR Tracker V3 (net6.0-windows)'
-Before:
-                    OtherGames.TPRando.TPRSpoilerLogParser.readAndApplySpoilerLog(container.Instance);
-After:
-                    TPRSpoilerLogParser.readAndApplySpoilerLog(container.Instance);
-*/
-                    SpoilerLogImporter.TPRSpoilerLogTools.readAndApplySpoilerLog(container.Instance);
+                    TPRSpoilerLogTools.readAndApplySpoilerLog(container.Instance);
                     container.Instance.SpoilerLog.GetStaticPlaythrough(container.Instance);
                     return true;
                 case "PMR":
                     container.Instance.SpoilerLog = new InstanceData.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
-
-/* Unmerged change from project 'MMR Tracker V3 (net6.0-maccatalyst)'
-Before:
-                    OtherGames.PaperMarioRando.SpoilerLogParser.ParseSpoiler(container.Instance);
-After:
-                    SpoilerLogParser.ParseSpoiler(container.Instance);
-*/
-                    SpoilerLogImporter.PMRSpoilerLogTools.ParseSpoiler(container.Instance);
+                    PMRSpoilerLogTools.ParseSpoiler(container.Instance);
                     container.Instance.SpoilerLog.GetStaticPlaythrough(container.Instance);
                     return true;
                 default:

@@ -1,4 +1,5 @@
 ﻿using MathNet.Numerics;
+using MMR_Tracker_V3.TrackerObjectExtentions;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -29,153 +30,9 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string SingleValidItem { get; set; } = null;
             public InstanceData.ReferenceData referenceData { get; set; } = new InstanceData.ReferenceData();
 
-            public void GetPrice(out int outPrice, out char outCurrency)
-            {
-                outPrice = Price??-1;
-                outCurrency = Currency??'$';
-                return;
-            }
-            public void SetPrice(int inPrice, char inCurrency = '\0')
-            {
-                if (inCurrency == '\0') { inCurrency = Currency??'$'; }
-                Price = inPrice < 0 ? null : inPrice;
-                Currency = inCurrency;
-                return;
-            }
-
-            public bool IsRepeatable(InstanceData.TrackerInstance Instance)
-            {
-                return GetDictEntry(Instance).Repeatable is not null && (bool)GetDictEntry(Instance).Repeatable;
-            }
-
             public override string ToString()
             {
                 return DisplayName ?? ID;
-            }
-
-            public void SetRandomizedState(RandomizedState Newstate, InstanceData.TrackerInstance Instance)
-            {
-                if (Newstate == RandomizedState) { return; }
-                RandomizedState = Newstate;
-            }
-            public bool IsUnrandomized(UnrandState Include = UnrandState.Any)
-            {
-                if ((Include == UnrandState.Any || Include == UnrandState.Unrand) && RandomizedState == RandomizedState.Unrandomized) { return true; }
-                if ((Include == UnrandState.Any || Include == UnrandState.Manual) && RandomizedState == RandomizedState.UnrandomizedManual) { return true; }
-                return false;
-            }
-            public bool IsRandomized()
-            {
-                return RandomizedState == RandomizedState.Randomized;
-            }
-            public bool IsJunk()
-            {
-                return RandomizedState == RandomizedState.ForcedJunk;
-            }
-            public LogicDictionaryData.DictionaryLocationEntries GetDictEntry(InstanceData.TrackerInstance Instance)
-            {
-                return Instance.LogicDictionary.LocationList[ID];
-            }
-            public bool CanBeUnrandomized(InstanceData.TrackerInstance instance)
-            {
-                //If it's already unrandomized let it continue to be
-                if (IsUnrandomized()) { return true; }
-                string OriginalItem = GetDictEntry(instance).OriginalItem ?? "";
-                var OriginalItemObject = instance.GetItemByID(OriginalItem);
-                //IF the original item is not a valid item or is blank it can't be unrandomized
-                if (OriginalItemObject == null) { return false; }
-                //If the check was already given it's vanilla item through the spoiler log or manually it can be unrandomized
-                //This gets around a quirk caused by "CanBePlaced" not being smart enough to know to ignore the item 
-                //assigned to this check when checking to see if the max amount has been placed
-                if (GetItemAtCheck(instance) is not null && GetItemAtCheck(instance) == OriginalItemObject.Id) { return true; }
-                //If the max amount of this object has been placed return false, otherwise true
-                return OriginalItemObject.CanBePlaced(instance);
-            }
-            public bool AppearsinListbox(InstanceData.TrackerInstance Instance, bool ShowJunkUnrand = false)
-            {
-                return (!IsJunk() || ShowJunkUnrand) && (!IsUnrandomized(MiscData.UnrandState.Unrand) || ShowJunkUnrand) && !string.IsNullOrWhiteSpace(GetDictEntry(Instance).GetName(Instance));
-            }
-
-            public bool ToggleChecked(CheckState NewState, InstanceData.TrackerInstance Instance)
-            {
-                CheckState CurrentState = CheckState;
-                if (CurrentState == NewState)
-                {
-                    return false;
-                }
-                else if (CurrentState == CheckState.Checked)
-                {
-                    UncheckItem(NewState, Instance);
-                }
-                else if (NewState == CheckState.Checked)
-                {
-                    if (!CheckItem(NewState, Instance)) { return false; }
-                }
-                else
-                {
-                    if (!ToggleMarked(NewState, Instance)) { return false; }
-                }
-                CheckState = NewState;
-                return true;
-            }
-
-            public bool UncheckItem(CheckState NewState, InstanceData.TrackerInstance Instance)
-            {
-                var ItemAtCheck = Instance.GetItemByID(Randomizeditem.Item);
-
-                if (ItemAtCheck != null)
-                {
-                    ItemAtCheck.ChangeLocalItemAmounts(Instance, this, -1);
-                }
-                if (NewState == CheckState.Unchecked)
-                {
-                    Randomizeditem.Item = null;
-                }
-                return true;
-
-            }
-
-            public bool CheckItem(CheckState NewState, InstanceData.TrackerInstance Instance)
-            {
-                if (string.IsNullOrWhiteSpace(Randomizeditem.Item)) { return false; }
-
-                var ItemAtCheck = Instance.GetItemByID(Randomizeditem.Item);
-                if (ItemAtCheck != null)
-                {
-                    ItemAtCheck.ChangeLocalItemAmounts(Instance, this, 1);
-                }
-                return true;
-            }
-
-            public bool ToggleMarked(CheckState NewState, InstanceData.TrackerInstance Instance)
-            {
-                if (NewState == CheckState.Marked && string.IsNullOrWhiteSpace(Randomizeditem.Item))
-                {
-                    return false;
-                }
-                else if (NewState == CheckState.Unchecked)
-                {
-                    Randomizeditem.Item = null;
-                }
-                return true;
-            }
-
-            public string GetItemAtCheck(InstanceData.TrackerInstance Instance)
-            {
-                var ItemAtCheck = Randomizeditem.Item;
-                if (SingleValidItem != null)
-                {
-                    ItemAtCheck = SingleValidItem;
-                }
-                if (Randomizeditem.SpoilerLogGivenItem != null)
-                {
-                    ItemAtCheck = Randomizeditem.SpoilerLogGivenItem;
-                }
-                if ((IsUnrandomized()) && GetDictEntry(Instance).OriginalItem != null)
-                {
-                    ItemAtCheck = GetDictEntry(Instance).OriginalItem;
-                }
-                return ItemAtCheck;
             }
 
         }

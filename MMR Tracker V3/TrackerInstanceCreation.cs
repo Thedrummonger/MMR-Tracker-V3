@@ -1,4 +1,5 @@
 ﻿using MMR_Tracker_V3.SpoilerLogImporter;
+using MMR_Tracker_V3.TrackerObjectExtentions;
 using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
 using System;

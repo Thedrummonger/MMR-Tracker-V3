@@ -20,6 +20,7 @@ using YamlDotNet.Serialization.NamingConventions;
 using YamlDotNet.Serialization;
 using System.Globalization;
 using System.Text.RegularExpressions;
+using MMR_Tracker_V3.TrackerObjectExtentions;
 
 namespace MMR_Tracker_V3
 {
@@ -57,6 +58,18 @@ namespace MMR_Tracker_V3
         public static IEnumerable<T> Shuffle<T>(this IEnumerable<T> source)
         {
             return source.OrderBy(x => Guid.NewGuid());
+        }
+
+        public static bool IsLiteralID(this string ID, out string CleanedID)
+        {
+            bool Literal = false;
+            CleanedID = ID;
+            if (ID.StartsWith("'") && ID.EndsWith("'"))
+            {
+                Literal = true;
+                CleanedID = ID.Replace("'", "");
+            }
+            return Literal;
         }
 
         public static Dictionary<string, int> GetCategoriesFromFile(InstanceData.TrackerInstance Instance)

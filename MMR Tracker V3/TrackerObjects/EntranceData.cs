@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MMR_Tracker_V3.TrackerObjectExtentions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -73,93 +74,10 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string DisplayName { get; set; }
             public InstanceData.ReferenceData referenceData { get; set; } = new InstanceData.ReferenceData();
 
-            public string DisplayArea(InstanceData.TrackerInstance Instance)
-            {
-                return GetDictEntry(Instance)?.DisplayArea??ParentAreaID;
-            }
-            public string DisplayExit(InstanceData.TrackerInstance Instance)
-            {
-                return GetDictEntry(Instance)?.DisplayExit??ID;
-            }
 
             public override string ToString()
             {
                 return DisplayName ?? ID;
-            }
-
-            public bool IsRandomizableEntrance(InstanceData.TrackerInstance currentTrackerInstance)
-            {
-                return GetDictEntry(currentTrackerInstance).RandomizableEntrance;
-            }
-
-            public LogicDictionaryData.DictionaryEntranceEntries GetDictEntry(InstanceData.TrackerInstance Instance)
-            {
-                return Instance.LogicDictionary.EntranceList[Instance.GetLogicNameFromExit(this)];
-            }
-
-            public EntranceRandoDestination GetVanillaDestination()
-            {
-                return new EntranceRandoDestination { region = ID, from = ParentAreaID };
-            }
-            public EntranceRandoDestination GetDestnationFromEntrancePair()
-            {
-                return new EntranceRandoDestination { region = EntrancePair.Exit, from = EntrancePair.Area };
-            }
-            public bool IsUnrandomized(UnrandState Include = UnrandState.Any)
-            {
-                if ((Include == UnrandState.Any || Include == UnrandState.Unrand) && RandomizedState == RandomizedState.Unrandomized) { return true; }
-                if ((Include == UnrandState.Any || Include == UnrandState.Manual) && RandomizedState == RandomizedState.UnrandomizedManual) { return true; }
-                return false;
-            }
-            public bool IsRandomized()
-            {
-                return RandomizedState == RandomizedState.Randomized;
-            }
-            public bool IsJunk()
-            {
-                return RandomizedState == RandomizedState.ForcedJunk;
-            }
-
-            public EntranceRandoDestination GetDestinationAtExit(InstanceData.TrackerInstance currentTrackerInstance)
-            {
-                var DestinationAtCheck = DestinationExit;
-                if (SpoilerDefinedDestinationExit != null)
-                {
-                    DestinationAtCheck = SpoilerDefinedDestinationExit;
-                }
-                if ((IsUnrandomized()))
-                {
-                    DestinationAtCheck = new EntranceRandoDestination { region = ID, from = ParentAreaID };
-                }
-                return DestinationAtCheck;
-            }
-
-            public bool ToggleExitChecked(CheckState NewState, InstanceData.TrackerInstance Instance)
-            {
-                CheckState CurrentState = CheckState;
-                if (CurrentState == NewState)
-                {
-                    return false;
-                }
-                else if (CurrentState == CheckState.Checked)
-                {
-                    var Destination = Instance.EntrancePool.AreaList[DestinationExit.region];
-                    Destination.ExitsAcessibleFrom--;
-                }
-                else if (NewState == CheckState.Checked)
-                {
-                    if (DestinationExit == null) { return false; }
-                    var Destination = Instance.EntrancePool.AreaList[DestinationExit.region];
-                    Destination.ExitsAcessibleFrom++;
-                }
-                else if (CurrentState == CheckState.Unchecked && NewState == CheckState.Marked)
-                {
-                    if (DestinationExit == null) { return false; }
-                }
-
-                if (NewState == CheckState.Unchecked) { DestinationExit = null; }
-                CheckState = NewState;
-                return true;
             }
         }
         public class EntranceRandoDestination
