@@ -83,5 +83,87 @@
     {"from": {"map": "HOS_01", "id": 1}, "to": {"map": "HOS_02", "id": 0}, "reqs": []},
     {"from": {"map": "HOS_02", "id": 0}, "to": {"map": "HOS_01", "id": 1}, "reqs": []}
     ]
+  },
+  "partner_upgrade_shuffle": {
+    "additions": [
+    // Wasteland Ascent 2 Exit East -> RandomBlockItemA (MultiCoinBlock)
+    {"from": {"map": "ARN_04", "id": 1}, "to": {"map": "ARN_04", "id": "RandomBlockItemA"}, "reqs": [["can_hit_floating_blocks"]], "mapchange": false},
+    // Stairs to Basement -> RandomBlockItemA (SuperBlock)
+    {"from": {"map": "DGB_04", "id": 0}, "to": {"map": "DGB_04", "id": "RandomBlockItemA"}, "reqs": [["can_hit_floating_blocks"]], "mapchange": false},
+    // (SE) Briar Platforming Exit Right -> RandomBlockItemA (SuperBlock)
+    {"from": {"map": "FLO_08", "id": 1}, "to": {"map": "FLO_08", "id": "RandomBlockItemA"}, "reqs": [["can_climb_steps"],["can_hit_floating_blocks"]], "mapchange": false},
+    // (West) Maze Exit Left -> RandomBlockItemA (MultiCoinBlock)
+    {"from": {"map": "FLO_11", "id": 1}, "to": {"map": "FLO_11", "id": "RandomBlockItemA"}, "reqs": [["can_hit_floating_blocks"]], "mapchange": false},
+    // (NE) Elevators Exit Right -> RandomBlockItemA (SuperBlock)
+    {"from": {"map": "FLO_16", "id": 1}, "to": {"map": "FLO_16", "id": "RandomBlockItemA"}, "reqs": [["can_climb_steps"],["can_hit_floating_blocks"]], "mapchange": false},
+    //Vertical Shaft Exit Bottom Right -> RandomBlockItemA (SuperBlock)
+    {"from": {"map": "ISK_10", "id": 2}, "to": {"map": "ISK_10", "id": "RandomBlockItemA"}, "reqs": [["can_hit_floating_blocks"]], "mapchange": false},
+    //Train Station -> RandomBlockItemA (SuperBlock)
+    {"from": {"map": "IWA_10", "id": 1}, "to": {"map": "IWA_10", "id": "RandomBlockItemA"}, "reqs": [["SuperHammer"],["can_hit_floating_blocks"]], "mapchange": false},
+    //SW Jungle (Super Block) Exit Top -> RandomBlockItemA (SuperBlock)
+    {"from": {"map": "JAN_08", "id": 2}, "to": {"map": "JAN_08", "id": "RandomBlockItemA"}, "reqs": [["can_hit_floating_blocks"]], "mapchange": false},
+    //Jr. Troopa's Playground -> RandomBlockItemA (MultiCoinBlock)
+    {"from": {"map": "KMR_04", "id": 0}, "to": {"map": "KMR_04", "id": "RandomBlockItemA"}, "reqs": [["can_hit_grounded_blocks"]], "mapchange": false},
+    //Fire Bar Bridge -> RandomBlockItemA (SuperBlock)
+    {"from": {"map": "KZN_04", "id": 0}, "to": {"map": "KZN_04", "id": "RandomBlockItemA"}, "reqs": [["can_hit_floating_blocks"]], "mapchange": false},
+    //Zipline Cavern Exit West Upper -> RandomBlockItemA (SuperBlock)
+    {"from": {"map": "KZN_09", "id": 0}, "to": {"map": "KZN_09", "id": "RandomBlockItemA"}, "reqs": [["can_hit_floating_blocks"]], "mapchange": false},
+    // Port District -> RandomBlockItemA (MultiCoinBlock)
+    {"from": {"map": "MAC_05", "id": 0}, "to": {"map": "MAC_05", "id": "RandomBlockItemA"}, "reqs": [["Boots"]], "mapchange": false},
+    //Pleasant Path Bridge Exit Right -> RandomBlockItemA (MultiCoinBlock)
+    {"from": {"map": "NOK_12", "id": 1}, "to": {"map": "NOK_12", "id": "RandomBlockItemA"}, "reqs": [["can_hit_floating_blocks"]], "mapchange": false},
+    // GRN Treadmills/Slot Machine -> RandomBlockItemA (MultiCoinBlock)
+    {"from": {"map": "OMO_09", "id": "ItemH"}, "to": {"map": "OMO_09", "id": "RandomBlockItemA"}, "reqs": [["Parakarry"]], "mapchange": false}, // CHAINED REQUIREMENTS
+    // RED Moving Platforms -> RandomBlockItemA (SuperBlock)
+    {"from": {"map": "OMO_11", "id": "YBlockA"}, "to": {"map": "OMO_11", "id": "RandomBlockItemA"}, "reqs": [], "mapchange": false}, // CHAINED REQUIREMENTS
+    // RED Moving Platforms -> RandomBlockItemB (MultiCoinBlock)
+    {"from": {"map": "OMO_11", "id": "YBlockA"}, "to": {"map": "OMO_11", "id": "RandomBlockItemB"}, "reqs": [], "mapchange": false}, // CHAINED REQUIREMENTS
+    // PNK Tracks Hallway -> RandomBlockItemB (MultiCoinBlock)
+    {"from": {"map": "OMO_17", "id": 0}, "to": {"map": "OMO_17", "id": "RandomBlockItemA"}, "reqs": [["can_hit_floating_blocks"]], "mapchange": false},
+    // Blue Mirror Hall 2 -> RandomBlockItem[AB] (MultiCoinBlocks)
+    {"from": {"map": "PRA_14", "id": 0}, "to": {"map": "PRA_14", "id": "RandomBlockItemA"}, "reqs": [["can_hit_floating_blocks"]], "mapchange": false},
+    {"from": {"map": "PRA_14", "id": 1}, "to": {"map": "PRA_14", "id": "RandomBlockItemA"}, "reqs": [["can_hit_floating_blocks"]], "mapchange": false},
+    {"from": {"map": "PRA_14", "id": 0}, "to": {"map": "PRA_14", "id": "RandomBlockItemB"}, "reqs": [["can_hit_floating_blocks"]], "mapchange": false},
+    {"from": {"map": "PRA_14", "id": 1}, "to": {"map": "PRA_14", "id": "RandomBlockItemB"}, "reqs": [["can_hit_floating_blocks"]], "mapchange": false},
+    // Shiver Mountain Hills Exit East -> RandomBlockItemA (SuperBlock)
+    {"from": {"map": "SAM_08", "id": 1}, "to": {"map": "SAM_08", "id": "RandomBlockItemA"}, "reqs": [["can_climb_steps"],["can_hit_floating_blocks"]], "mapchange": false},
+    // N3E3 -> RandomBlockItemA (MultiCoinBlock)
+    {"from": {"map": "SBK_06", "id": 0}, "to": {"map": "SBK_06", "id": "RandomBlockItemA"}, "reqs": [["can_hit_floating_blocks"]], "mapchange": false},
+    // N2E1 (Tweester A) -> RandomBlockItemA (MultiCoinBlock)
+    {"from": {"map": "SBK_14", "id": 0}, "to": {"map": "SBK_14", "id": "RandomBlockItemA"}, "reqs": [["can_hit_floating_blocks"]], "mapchange": false},
+    // N1E2 -> RandomBlockItem[AB] (MultiCoinBlock)
+    {"from": {"map": "SBK_25", "id": 0}, "to": {"map": "SBK_25", "id": "RandomBlockItemA"}, "reqs": [["can_hit_floating_blocks"]], "mapchange": false},
+    {"from": {"map": "SBK_25", "id": 0}, "to": {"map": "SBK_25", "id": "RandomBlockItemB"}, "reqs": [["can_hit_floating_blocks"]], "mapchange": false},
+    // S1W3 -> RandomBlockItemA (MultiCoinBlock)
+    {"from": {"map": "SBK_40", "id": 0}, "to": {"map": "SBK_40", "id": "RandomBlockItemA"}, "reqs": [["can_hit_floating_blocks"]], "mapchange": false},
+    // S2W1 -> RandomBlockItemA (MultiCoinBlock)
+    {"from": {"map": "SBK_52", "id": 0}, "to": {"map": "SBK_52", "id": "RandomBlockItemA"}, "reqs": [["can_hit_floating_blocks"]], "mapchange": false},
+    // S2E2 West of Oasis -> RandomBlockItemA (MultiCoinBlock)
+    {"from": {"map": "SBK_55", "id": 0}, "to": {"map": "SBK_55", "id": "RandomBlockItemA"}, "reqs": [["can_hit_floating_blocks"]], "mapchange": false},
+    // S2E3 Oasis -> RandomBlockItemA (SuperBlock)
+    {"from": {"map": "SBK_56", "id": 0}, "to": {"map": "SBK_56", "id": "RandomBlockItemA"}, "reqs": [["can_hit_floating_blocks"]], "mapchange": false},
+    // S3E3 South of Oasis -> RandomBlockItem[ABCDEF] (MultiCoinBlock)
+    {"from": {"map": "SBK_66", "id": 0}, "to": {"map": "SBK_66", "id": "RandomBlockItemA"}, "reqs": [["can_hit_floating_blocks"]], "mapchange": false},
+    {"from": {"map": "SBK_66", "id": 0}, "to": {"map": "SBK_66", "id": "RandomBlockItemB"}, "reqs": [["can_hit_floating_blocks"]], "mapchange": false},
+    {"from": {"map": "SBK_66", "id": 0}, "to": {"map": "SBK_66", "id": "RandomBlockItemC"}, "reqs": [["can_hit_floating_blocks"]], "mapchange": false},
+    {"from": {"map": "SBK_66", "id": 0}, "to": {"map": "SBK_66", "id": "RandomBlockItemD"}, "reqs": [["can_hit_floating_blocks"]], "mapchange": false},
+    {"from": {"map": "SBK_66", "id": 0}, "to": {"map": "SBK_66", "id": "RandomBlockItemE"}, "reqs": [["can_hit_floating_blocks"]], "mapchange": false},
+    {"from": {"map": "SBK_66", "id": 0}, "to": {"map": "SBK_66", "id": "RandomBlockItemF"}, "reqs": [["can_hit_floating_blocks"]], "mapchange": false},
+    // Elevator Attic Room (B2) -> RandomBlockItemA (SuperBlock)
+    {"from": {"map": "TIK_07", "id": 0}, "to": {"map": "TIK_07", "id": "RandomBlockItemA"}, "reqs": [["can_climb_steps"],["can_hit_floating_blocks"]], "mapchange": false},
+    // Block Puzzle Room (B2) -> RandomBlockItemA (SuperBlock)
+    {"from": {"map": "TIK_10", "id": "HiddenYBlockA"}, "to": {"map": "TIK_10", "id": "RandomBlockItemA"}, "reqs": [["can_climb_steps"],["can_hit_floating_blocks"]], "mapchange": false}, // SHARED REQUIREMENTS
+    // Metal Block Room (B3) -> RandomBlockItemA (SuperBlock)
+    {"from": {"map": "TIK_12", "id": 0}, "to": {"map": "TIK_12", "id": "RandomBlockItemA"}, "reqs": [["UltraHammer"],["can_climb_steps"],["can_hit_floating_blocks"]], "mapchange": false},
+    // Frozen Room (B3) -> RandomBlockItemA (SuperBlock)
+    {"from": {"map": "TIK_17", "id": 0}, "to": {"map": "TIK_17", "id": "RandomBlockItemA"}, "reqs": [["can_hit_floating_blocks"]], "mapchange": false},
+    // Hall to Blooper 1 (B1) -> RandomBlockItemA (MultiCoinBlock)
+    {"from": {"map": "TIK_18", "id": 0}, "to": {"map": "TIK_18", "id": "RandomBlockItemA"}, "reqs": [["can_hit_floating_blocks"]], "mapchange": false},
+    // Under the Toad Town Pond -> RandomBlockItemA (SuperBlock)
+    {"from": {"map": "TIK_19", "id": 0}, "to": {"map": "TIK_19", "id": "RandomBlockItemA"}, "reqs": [["can_climb_steps"],["can_hit_floating_blocks"]], "mapchange": false},
+
+    ],
+    "removals": [
+    ]
   }
 }

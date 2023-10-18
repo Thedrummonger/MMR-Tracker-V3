@@ -21,5 +21,8 @@
   "RF_HiddenBlocksVisible":  "setting{HiddenBlockMode, 3}",
   "RF_ClosedForest": "setting{ForeverForestOpen, false}",
   "RF_ToyboxOpen": "setting{ToyboxOpen}",
-  "RF_BrokenVeranda": "false"
+  "RF_BrokenVeranda": "false",
+
+  //Temporary until tricks are supported
+  "RF_ForeverForestBackwards": "false"
 }

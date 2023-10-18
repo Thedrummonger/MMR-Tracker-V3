@@ -1135,6 +1135,21 @@
       },
       "LocationProxys": []
     },
+    "Jr. Troopas Playground - In MultiCoinBlock": {
+      "ID": "Jr. Troopas Playground - In MultiCoinBlock",
+      "OriginalItem": "Coin",
+      "Area": "Goomba Region",
+      "ValidItemTypes": [
+        "item",
+        "MultiCoinBlock"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
     "Behind the Village - On Ledge": {
       "ID": "Behind the Village - On Ledge",
       "OriginalItem": "StarPiece",
@@ -2239,6 +2254,21 @@
       },
       "LocationProxys": []
     },
+    "Port District - In MultiCoinBlock": {
+      "ID": "Port District - In MultiCoinBlock",
+      "OriginalItem": "Coin",
+      "Area": "Toad Town",
+      "ValidItemTypes": [
+        "item",
+        "MultiCoinBlock"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
     "Blooper Boss 1 (B1) - Blooper Fight Reward": {
       "ID": "Blooper Boss 1 (B1) - Blooper Fight Reward",
       "OriginalItem": "ShrinkStomp",
@@ -2327,6 +2357,21 @@
       },
       "LocationProxys": []
     },
+    "Elevator Attic Room (B2) - In SuperBlock": {
+      "ID": "Elevator Attic Room (B2) - In SuperBlock",
+      "OriginalItem": "PartnerUp1",
+      "Area": "Toad Town Tunnels",
+      "ValidItemTypes": [
+        "item",
+        "SuperBlock"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
     "Blue Pushblock Room (B2) - Hidden Block Left": {
       "ID": "Blue Pushblock Room (B2) - Hidden Block Left",
       "OriginalItem": "Coin",
@@ -2370,6 +2415,36 @@
         "SpoilerLogNames": [
           "BlockCoin"
         ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "Blue Pushblock Room (B2) - In SuperBlock": {
+      "ID": "Blue Pushblock Room (B2) - In SuperBlock",
+      "OriginalItem": "PartnerUp1",
+      "Area": "Toad Town Tunnels",
+      "ValidItemTypes": [
+        "item",
+        "SuperBlock"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "Metal Block Room (B3) - In SuperBlock": {
+      "ID": "Metal Block Room (B3) - In SuperBlock",
+      "OriginalItem": "PartnerUp1",
+      "Area": "Toad Town Tunnels",
+      "ValidItemTypes": [
+        "item",
+        "SuperBlock"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": []
       },
@@ -2529,12 +2604,57 @@
       },
       "LocationProxys": []
     },
+    "Frozen Room (B3) - In SuperBlock": {
+      "ID": "Frozen Room (B3) - In SuperBlock",
+      "OriginalItem": "PartnerUp1",
+      "Area": "Toad Town Tunnels",
+      "ValidItemTypes": [
+        "item",
+        "SuperBlock"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
     "Hall to Blooper 1 (B1) - Hidden Block": {
       "ID": "Hall to Blooper 1 (B1) - Hidden Block",
       "OriginalItem": "SuperShroom",
       "Area": "Toad Town Tunnels",
       "ValidItemTypes": [
         "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "Hall to Blooper 1 (B1) - In MultiCoinBlock": {
+      "ID": "Hall to Blooper 1 (B1) - In MultiCoinBlock",
+      "OriginalItem": "Coin",
+      "Area": "Toad Town Tunnels",
+      "ValidItemTypes": [
+        "item",
+        "MultiCoinBlock"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "Under the Toad Town Pond - In SuperBlock": {
+      "ID": "Under the Toad Town Pond - In SuperBlock",
+      "OriginalItem": "PartnerUp1",
+      "Area": "Toad Town Tunnels",
+      "ValidItemTypes": [
+        "item",
+        "SuperBlock"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -3704,7 +3824,7 @@
     },
     "Koopa Village 2 - Koopa Koot Reward 4": {
       "ID": "Koopa Village 2 - Koopa Koot Reward 4",
-      "OriginalItem": "StarPiece",
+      "OriginalItem": "ThreeStarPieces",
       "Area": "Koopa Region",
       "ValidItemTypes": [
         "item"
@@ -3771,7 +3891,7 @@
     },
     "Koopa Village 2 - Koopa Koot Reward 8": {
       "ID": "Koopa Village 2 - Koopa Koot Reward 8",
-      "OriginalItem": "StarPiece",
+      "OriginalItem": "ThreeStarPieces",
       "Area": "Koopa Region",
       "ValidItemTypes": [
         "item"
@@ -3838,7 +3958,7 @@
     },
     "Koopa Village 2 - Koopa Koot Reward 12": {
       "ID": "Koopa Village 2 - Koopa Koot Reward 12",
-      "OriginalItem": "StarPiece",
+      "OriginalItem": "ThreeStarPieces",
       "Area": "Koopa Region",
       "ValidItemTypes": [
         "item"
@@ -3905,7 +4025,7 @@
     },
     "Koopa Village 2 - Koopa Koot Reward 16": {
       "ID": "Koopa Village 2 - Koopa Koot Reward 16",
-      "OriginalItem": "StarPiece",
+      "OriginalItem": "ThreeStarPieces",
       "Area": "Koopa Region",
       "ValidItemTypes": [
         "item"
@@ -3972,7 +4092,7 @@
     },
     "Koopa Village 2 - Koopa Koot Reward 20": {
       "ID": "Koopa Village 2 - Koopa Koot Reward 20",
-      "OriginalItem": "StarPiece",
+      "OriginalItem": "ThreeStarPieces",
       "Area": "Koopa Region",
       "ValidItemTypes": [
         "item"
@@ -4092,6 +4212,21 @@
       "Area": "Koopa Region",
       "ValidItemTypes": [
         "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "Pleasant Path Bridge - In MultiCoinBlock": {
+      "ID": "Pleasant Path Bridge - In MultiCoinBlock",
+      "OriginalItem": "Coin",
+      "Area": "Koopa Region",
+      "ValidItemTypes": [
+        "item",
+        "MultiCoinBlock"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -4868,6 +5003,21 @@
       },
       "LocationProxys": []
     },
+    "Train Station - In SuperBlock": {
+      "ID": "Train Station - In SuperBlock",
+      "OriginalItem": "PartnerUp1",
+      "Area": "Mt Rugged",
+      "ValidItemTypes": [
+        "item",
+        "SuperBlock"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
     "Outpost 1 - Composer Lyrics Reward": {
       "ID": "Outpost 1 - Composer Lyrics Reward",
       "OriginalItem": "Melody",
@@ -5122,6 +5272,21 @@
       },
       "LocationProxys": []
     },
+    "N3E3 - In MultiCoinBlock": {
+      "ID": "N3E3 - In MultiCoinBlock",
+      "OriginalItem": "Coin",
+      "Area": "Dry Dry Desert",
+      "ValidItemTypes": [
+        "item",
+        "MultiCoinBlock"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
     "N2W3 - Hidden Block": {
       "ID": "N2W3 - Hidden Block",
       "OriginalItem": "ThunderRage",
@@ -5158,6 +5323,21 @@
       "Area": "Dry Dry Desert",
       "ValidItemTypes": [
         "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "N2E1 (Tweester A) - In MultiCoinBlock": {
+      "ID": "N2E1 (Tweester A) - In MultiCoinBlock",
+      "OriginalItem": "Coin",
+      "Area": "Dry Dry Desert",
+      "ValidItemTypes": [
+        "item",
+        "MultiCoinBlock"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -5292,6 +5472,36 @@
       "Area": "Dry Dry Desert",
       "ValidItemTypes": [
         "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "N1E2 - In MultiCoinBlock Center": {
+      "ID": "N1E2 - In MultiCoinBlock Center",
+      "OriginalItem": "Coin",
+      "Area": "Dry Dry Desert",
+      "ValidItemTypes": [
+        "item",
+        "MultiCoinBlock"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "N1E2 - In MultiCoinBlock Bottom Right": {
+      "ID": "N1E2 - In MultiCoinBlock Bottom Right",
+      "OriginalItem": "Coin",
+      "Area": "Dry Dry Desert",
+      "ValidItemTypes": [
+        "item",
+        "MultiCoinBlock"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -5454,6 +5664,21 @@
       },
       "LocationProxys": []
     },
+    "S1W3 - In MultiCoinBlock Top Left": {
+      "ID": "S1W3 - In MultiCoinBlock Top Left",
+      "OriginalItem": "Coin",
+      "Area": "Dry Dry Desert",
+      "ValidItemTypes": [
+        "item",
+        "MultiCoinBlock"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
     "S1 - Yellow Block": {
       "ID": "S1 - Yellow Block",
       "OriginalItem": "Coin",
@@ -5544,6 +5769,21 @@
       },
       "LocationProxys": []
     },
+    "S2W1 - In MultiCoinBlock Top": {
+      "ID": "S2W1 - In MultiCoinBlock Top",
+      "OriginalItem": "Coin",
+      "Area": "Dry Dry Desert",
+      "ValidItemTypes": [
+        "item",
+        "MultiCoinBlock"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
     "S2E2 West of Oasis - Behind Bush": {
       "ID": "S2E2 West of Oasis - Behind Bush",
       "OriginalItem": "TastyTonic",
@@ -5569,6 +5809,21 @@
         "SpoilerLogNames": [
           "TreeBushCoin"
         ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "S2E2 West of Oasis - In MultiCoinBlock": {
+      "ID": "S2E2 West of Oasis - In MultiCoinBlock",
+      "OriginalItem": "Coin",
+      "Area": "Dry Dry Desert",
+      "ValidItemTypes": [
+        "item",
+        "MultiCoinBlock"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": []
       },
@@ -5634,6 +5889,21 @@
       },
       "LocationProxys": []
     },
+    "S2E3 Oasis - In SuperBlock": {
+      "ID": "S2E3 Oasis - In SuperBlock",
+      "OriginalItem": "PartnerUp1",
+      "Area": "Dry Dry Desert",
+      "ValidItemTypes": [
+        "item",
+        "SuperBlock"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
     "S3W2 Hidden AttackFX - Hidden Block": {
       "ID": "S3W2 Hidden AttackFX - Hidden Block",
       "OriginalItem": "AttackFXC",
@@ -5675,6 +5945,96 @@
         "SpoilerLogNames": [
           "TreeBushCoin"
         ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "S3E3 South of Oasis - In MultiCoinBlock Top Left": {
+      "ID": "S3E3 South of Oasis - In MultiCoinBlock Top Left",
+      "OriginalItem": "Coin",
+      "Area": "Dry Dry Desert",
+      "ValidItemTypes": [
+        "item",
+        "MultiCoinBlock"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "S3E3 South of Oasis - In MultiCoinBlock Top Right": {
+      "ID": "S3E3 South of Oasis - In MultiCoinBlock Top Right",
+      "OriginalItem": "Coin",
+      "Area": "Dry Dry Desert",
+      "ValidItemTypes": [
+        "item",
+        "MultiCoinBlock"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "S3E3 South of Oasis - In MultiCoinBlock Right": {
+      "ID": "S3E3 South of Oasis - In MultiCoinBlock Right",
+      "OriginalItem": "Coin",
+      "Area": "Dry Dry Desert",
+      "ValidItemTypes": [
+        "item",
+        "MultiCoinBlock"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "S3E3 South of Oasis - In MultiCoinBlock Left": {
+      "ID": "S3E3 South of Oasis - In MultiCoinBlock Left",
+      "OriginalItem": "Coin",
+      "Area": "Dry Dry Desert",
+      "ValidItemTypes": [
+        "item",
+        "MultiCoinBlock"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "S3E3 South of Oasis - In MultiCoinBlock Bottom Left": {
+      "ID": "S3E3 South of Oasis - In MultiCoinBlock Bottom Left",
+      "OriginalItem": "Coin",
+      "Area": "Dry Dry Desert",
+      "ValidItemTypes": [
+        "item",
+        "MultiCoinBlock"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "S3E3 South of Oasis - In MultiCoinBlock Bottom Right": {
+      "ID": "S3E3 South of Oasis - In MultiCoinBlock Bottom Right",
+      "OriginalItem": "Coin",
+      "Area": "Dry Dry Desert",
+      "ValidItemTypes": [
+        "item",
+        "MultiCoinBlock"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": []
       },
@@ -5798,6 +6158,21 @@
       "Area": "Dry Dry Ruins",
       "ValidItemTypes": [
         "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "Vertical Shaft - In SuperBlock": {
+      "ID": "Vertical Shaft - In SuperBlock",
+      "OriginalItem": "PartnerUp1",
+      "Area": "Dry Dry Ruins",
+      "ValidItemTypes": [
+        "item",
+        "SuperBlock"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -6410,12 +6785,42 @@
       },
       "LocationProxys": []
     },
+    "Wasteland Ascent 2 - In MultiCoinBlock": {
+      "ID": "Wasteland Ascent 2 - In MultiCoinBlock",
+      "OriginalItem": "Coin",
+      "Area": "Gusty Gulch",
+      "ValidItemTypes": [
+        "item",
+        "MultiCoinBlock"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
     "Table/Clock Room (1/2F) - On Table": {
       "ID": "Table/Clock Room (1/2F) - On Table",
       "OriginalItem": "StarPiece",
       "Area": "Tubba's Castle",
       "ValidItemTypes": [
         "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "Stairs to Basement - In SuperBlock": {
+      "ID": "Stairs to Basement - In SuperBlock",
+      "OriginalItem": "PartnerUp1",
+      "Area": "Tubba's Castle",
+      "ValidItemTypes": [
+        "item",
+        "SuperBlock"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -7496,6 +7901,21 @@
       },
       "LocationProxys": []
     },
+    "GRN Treadmills/Slot Machine - In MultiCoinBlock": {
+      "ID": "GRN Treadmills/Slot Machine - In MultiCoinBlock",
+      "OriginalItem": "Coin",
+      "Area": "Shy Guy's Toybox",
+      "ValidItemTypes": [
+        "item",
+        "MultiCoinBlock"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
     "RED Station - Hidden Panel": {
       "ID": "RED Station - Hidden Panel",
       "OriginalItem": "StarPiece",
@@ -7593,6 +8013,36 @@
         "SpoilerLogNames": [
           "BlockCoin"
         ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "RED Moving Platforms - In SuperBlock": {
+      "ID": "RED Moving Platforms - In SuperBlock",
+      "OriginalItem": "PartnerUp1",
+      "Area": "Shy Guy's Toybox",
+      "ValidItemTypes": [
+        "item",
+        "SuperBlock"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "RED Moving Platforms - In MultiCoinBlock": {
+      "ID": "RED Moving Platforms - In MultiCoinBlock",
+      "OriginalItem": "Coin",
+      "Area": "Shy Guy's Toybox",
+      "ValidItemTypes": [
+        "item",
+        "MultiCoinBlock"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": []
       },
@@ -7699,6 +8149,21 @@
         "SpoilerLogNames": [
           "BlockCoin"
         ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "PNK Tracks Hallway - In MultiCoinBlock": {
+      "ID": "PNK Tracks Hallway - In MultiCoinBlock",
+      "OriginalItem": "Coin",
+      "Area": "Shy Guy's Toybox",
+      "ValidItemTypes": [
+        "item",
+        "MultiCoinBlock"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": []
       },
@@ -8426,6 +8891,21 @@
       },
       "LocationProxys": []
     },
+    "SW Jungle (Super Block) - In SuperBlock": {
+      "ID": "SW Jungle (Super Block) - In SuperBlock",
+      "OriginalItem": "PartnerUp1",
+      "Area": "Jade Jungle",
+      "ValidItemTypes": [
+        "item",
+        "SuperBlock"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
     "NW Jungle (Large Ledge) - Bush 1": {
       "ID": "NW Jungle (Large Ledge) - Bush 1",
       "OriginalItem": "Coin",
@@ -8768,6 +9248,21 @@
       },
       "LocationProxys": []
     },
+    "Fire Bar Bridge - In SuperBlock": {
+      "ID": "Fire Bar Bridge - In SuperBlock",
+      "OriginalItem": "PartnerUp1",
+      "Area": "Mt Lavalava",
+      "ValidItemTypes": [
+        "item",
+        "SuperBlock"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
     "Flowing Lava Puzzle - Hidden Block": {
       "ID": "Flowing Lava Puzzle - Hidden Block",
       "OriginalItem": "LifeShroom",
@@ -8816,6 +9311,21 @@
       "Area": "Mt Lavalava",
       "ValidItemTypes": [
         "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "Zipline Cavern - In SuperBlock": {
+      "ID": "Zipline Cavern - In SuperBlock",
+      "OriginalItem": "PartnerUp1",
+      "Area": "Mt Lavalava",
+      "ValidItemTypes": [
+        "item",
+        "SuperBlock"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -9006,6 +9516,21 @@
       },
       "LocationProxys": []
     },
+    "(SE) Briar Platforming - In SuperBlock": {
+      "ID": "(SE) Briar Platforming - In SuperBlock",
+      "OriginalItem": "PartnerUp1",
+      "Area": "Flower Fields",
+      "ValidItemTypes": [
+        "item",
+        "SuperBlock"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
     "(East) Triple Tree Path - Tree Puzzle Reward": {
       "ID": "(East) Triple Tree Path - Tree Puzzle Reward",
       "OriginalItem": "HappyFlowerB",
@@ -9054,6 +9579,21 @@
       "Area": "Flower Fields",
       "ValidItemTypes": [
         "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "(West) Maze - In MultiCoinBlock": {
+      "ID": "(West) Maze - In MultiCoinBlock",
+      "OriginalItem": "Coin",
+      "Area": "Flower Fields",
+      "ValidItemTypes": [
+        "item",
+        "MultiCoinBlock"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -9174,6 +9714,21 @@
       },
       "LocationProxys": []
     },
+    "(NE) Elevators - In SuperBlock": {
+      "ID": "(NE) Elevators - In SuperBlock",
+      "OriginalItem": "PartnerUp1",
+      "Area": "Flower Fields",
+      "ValidItemTypes": [
+        "item",
+        "SuperBlock"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
     "(NE) Fallen Logs - Hidden Block": {
       "ID": "(NE) Fallen Logs - Hidden Block",
       "OriginalItem": "ThunderRage",
@@ -9230,8 +9785,8 @@
       },
       "LocationProxys": []
     },
-    "(West) Path to Maze - Lower Hidden Block": {
-      "ID": "(West) Path to Maze - Lower Hidden Block",
+    "(West) Path to Maze - Upper Hidden Block": {
+      "ID": "(West) Path to Maze - Upper Hidden Block",
       "OriginalItem": "ShootingStar",
       "Area": "Flower Fields",
       "ValidItemTypes": [
@@ -9244,8 +9799,8 @@
       },
       "LocationProxys": []
     },
-    "(West) Path to Maze - Upper Hidden Block": {
-      "ID": "(West) Path to Maze - Upper Hidden Block",
+    "(West) Path to Maze - Lower Hidden Block": {
+      "ID": "(West) Path to Maze - Lower Hidden Block",
       "OriginalItem": "Coin",
       "Area": "Flower Fields",
       "ValidItemTypes": [
@@ -9753,6 +10308,21 @@
       },
       "LocationProxys": []
     },
+    "Shiver Mountain Hills - In SuperBlock": {
+      "ID": "Shiver Mountain Hills - In SuperBlock",
+      "OriginalItem": "PartnerUp1",
+      "Area": "Shiver Region",
+      "ValidItemTypes": [
+        "item",
+        "SuperBlock"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
     "Shiver Mountain Tunnel - Socket 1": {
       "ID": "Shiver Mountain Tunnel - Socket 1",
       "OriginalItem": "ShootingStar",
@@ -9913,6 +10483,36 @@
       "Area": "Crystal Palace",
       "ValidItemTypes": [
         "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "Blue Mirror Hall 2 - In MultiCoinBlock Front": {
+      "ID": "Blue Mirror Hall 2 - In MultiCoinBlock Front",
+      "OriginalItem": "Coin",
+      "Area": "Crystal Palace",
+      "ValidItemTypes": [
+        "item",
+        "MultiCoinBlock"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "Blue Mirror Hall 2 - In MultiCoinBlock Back": {
+      "ID": "Blue Mirror Hall 2 - In MultiCoinBlock Back",
+      "OriginalItem": "Coin",
+      "Area": "Crystal Palace",
+      "ValidItemTypes": [
+        "item",
+        "MultiCoinBlock"
       ],
       "SpoilerData": {
         "SpoilerLogNames": [],
@@ -11904,6 +12504,230 @@
     "PouchE": {
       "ID": "PouchE",
       "Name": "ItemPouch",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "GoombarioUp1": {
+      "ID": "GoombarioUp1",
+      "Name": "Goombario Upgrade",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "KooperUp1": {
+      "ID": "KooperUp1",
+      "Name": "Kooper Upgrade",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "BombetteUp1": {
+      "ID": "BombetteUp1",
+      "Name": "Bombette Upgrade",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "ParakarryUp1": {
+      "ID": "ParakarryUp1",
+      "Name": "Parakarry Upgrade",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "WattUp1": {
+      "ID": "WattUp1",
+      "Name": "Watt Upgrade",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "SushieUp1": {
+      "ID": "SushieUp1",
+      "Name": "Sushie Upgrade",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "LakilesterUp1": {
+      "ID": "LakilesterUp1",
+      "Name": "Lakilester Upgrade",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "BowUp1": {
+      "ID": "BowUp1",
+      "Name": "Bow Upgrade",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "GoombarioUp2": {
+      "ID": "GoombarioUp2",
+      "Name": "Goombario Upgrade",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "KooperUp2": {
+      "ID": "KooperUp2",
+      "Name": "Kooper Upgrade",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "BombetteUp2": {
+      "ID": "BombetteUp2",
+      "Name": "Bombette Upgrade",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "ParakarryUp2": {
+      "ID": "ParakarryUp2",
+      "Name": "Parakarry Upgrade",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "WattUp2": {
+      "ID": "WattUp2",
+      "Name": "Watt Upgrade",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "SushieUp2": {
+      "ID": "SushieUp2",
+      "Name": "Sushie Upgrade",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "LakilesterUp2": {
+      "ID": "LakilesterUp2",
+      "Name": "Lakilester Upgrade",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "BowUp2": {
+      "ID": "BowUp2",
+      "Name": "Bow Upgrade",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -15212,6 +16036,22 @@
         "GossipHintNames": [],
         "PriceDataNames": []
       }
+    },
+    "PartnerUp1": {
+      "ID": "PartnerUp1",
+      "Name": "Partner Upgrade",
+      "MaxAmountInWorld": 16,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item",
+        "MultiCoinBlock",
+        "SuperBlock"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
     }
   },
   "EntranceList": {
@@ -15913,6 +16753,23 @@
       "Area": "Gusty Gulch - Tunnel 3 - Exit Right",
       "Exit": "Gusty Gulch - Tunnel 3 - Exit Left",
       "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Tubba's Castle - Outside Tubbas Castle - Exit Left => Gusty Gulch - Wasteland Ascent 2 - Exit Right": {
+      "ID": "Tubba's Castle - Outside Tubbas Castle - Exit Left => Gusty Gulch - Wasteland Ascent 2 - Exit Right",
+      "Area": "Tubba's Castle - Outside Tubbas Castle - Exit Left",
+      "Exit": "Gusty Gulch - Wasteland Ascent 2 - Exit Right",
+      "EntrancePairID": {
+        "Area": "Gusty Gulch - Wasteland Ascent 2 - Exit Right",
+        "Exit": "Tubba's Castle - Outside Tubbas Castle - Exit Left"
+      },
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false,
       "SpoilerData": {
@@ -33066,19 +33923,6 @@
         "PriceDataNames": []
       }
     },
-    "MGM - Playroom Lobby - Pipe to Toad Town => Toad Town - Station District - Pipe to Minigame Room": {
-      "ID": "MGM - Playroom Lobby - Pipe to Toad Town => Toad Town - Station District - Pipe to Minigame Room",
-      "Area": "MGM - Playroom Lobby - Pipe to Toad Town",
-      "Exit": "Toad Town - Station District - Pipe to Minigame Room",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false,
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
     "Forever Forest - Flower Sounds - Wrong Exit => Forever Forest - Flower Sounds - Forever Forest Entrance (Toad Town)": {
       "ID": "Forever Forest - Flower Sounds - Wrong Exit => Forever Forest - Flower Sounds - Forever Forest Entrance (Toad Town)",
       "Area": "Forever Forest - Flower Sounds - Wrong Exit",
@@ -34054,9 +34898,9 @@
         "PriceDataNames": []
       }
     },
-    "Forever Forest - Outside Boo's Mansion - Forever Forest Entrance => Forever Forest - Outside Boo's Mansion - Boo's Mansion Front Door": {
-      "ID": "Forever Forest - Outside Boo's Mansion - Forever Forest Entrance => Forever Forest - Outside Boo's Mansion - Boo's Mansion Front Door",
-      "Area": "Forever Forest - Outside Boo's Mansion - Forever Forest Entrance",
+    "Forever Forest - Outside Boo's Mansion - Entrance to Wasteland => Forever Forest - Outside Boo's Mansion - Boo's Mansion Front Door": {
+      "ID": "Forever Forest - Outside Boo's Mansion - Entrance to Wasteland => Forever Forest - Outside Boo's Mansion - Boo's Mansion Front Door",
+      "Area": "Forever Forest - Outside Boo's Mansion - Entrance to Wasteland",
       "Exit": "Forever Forest - Outside Boo's Mansion - Boo's Mansion Front Door",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
@@ -34067,10 +34911,10 @@
         "PriceDataNames": []
       }
     },
-    "Forever Forest - Outside Boo's Mansion - Boo's Mansion Front Door => Forever Forest - Outside Boo's Mansion - Forever Forest Entrance": {
-      "ID": "Forever Forest - Outside Boo's Mansion - Boo's Mansion Front Door => Forever Forest - Outside Boo's Mansion - Forever Forest Entrance",
+    "Forever Forest - Outside Boo's Mansion - Boo's Mansion Front Door => Forever Forest - Outside Boo's Mansion - Entrance to Wasteland": {
+      "ID": "Forever Forest - Outside Boo's Mansion - Boo's Mansion Front Door => Forever Forest - Outside Boo's Mansion - Entrance to Wasteland",
       "Area": "Forever Forest - Outside Boo's Mansion - Boo's Mansion Front Door",
-      "Exit": "Forever Forest - Outside Boo's Mansion - Forever Forest Entrance",
+      "Exit": "Forever Forest - Outside Boo's Mansion - Entrance to Wasteland",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false,
@@ -34080,9 +34924,9 @@
         "PriceDataNames": []
       }
     },
-    "Forever Forest - Outside Boo's Mansion - Forever Forest Entrance => Forever Forest - Outside Boo's Mansion - Pipe to Sewers": {
-      "ID": "Forever Forest - Outside Boo's Mansion - Forever Forest Entrance => Forever Forest - Outside Boo's Mansion - Pipe to Sewers",
-      "Area": "Forever Forest - Outside Boo's Mansion - Forever Forest Entrance",
+    "Forever Forest - Outside Boo's Mansion - Entrance to Wasteland => Forever Forest - Outside Boo's Mansion - Pipe to Sewers": {
+      "ID": "Forever Forest - Outside Boo's Mansion - Entrance to Wasteland => Forever Forest - Outside Boo's Mansion - Pipe to Sewers",
+      "Area": "Forever Forest - Outside Boo's Mansion - Entrance to Wasteland",
       "Exit": "Forever Forest - Outside Boo's Mansion - Pipe to Sewers",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
@@ -34093,10 +34937,10 @@
         "PriceDataNames": []
       }
     },
-    "Forever Forest - Outside Boo's Mansion - Pipe to Sewers => Forever Forest - Outside Boo's Mansion - Forever Forest Entrance": {
-      "ID": "Forever Forest - Outside Boo's Mansion - Pipe to Sewers => Forever Forest - Outside Boo's Mansion - Forever Forest Entrance",
+    "Forever Forest - Outside Boo's Mansion - Pipe to Sewers => Forever Forest - Outside Boo's Mansion - Entrance to Wasteland": {
+      "ID": "Forever Forest - Outside Boo's Mansion - Pipe to Sewers => Forever Forest - Outside Boo's Mansion - Entrance to Wasteland",
       "Area": "Forever Forest - Outside Boo's Mansion - Pipe to Sewers",
-      "Exit": "Forever Forest - Outside Boo's Mansion - Forever Forest Entrance",
+      "Exit": "Forever Forest - Outside Boo's Mansion - Entrance to Wasteland",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false,
@@ -34106,9 +34950,9 @@
         "PriceDataNames": []
       }
     },
-    "Forever Forest - Outside Boo's Mansion - Forever Forest Entrance => Forever Forest - Outside Boo's Mansion - YBlockA": {
-      "ID": "Forever Forest - Outside Boo's Mansion - Forever Forest Entrance => Forever Forest - Outside Boo's Mansion - YBlockA",
-      "Area": "Forever Forest - Outside Boo's Mansion - Forever Forest Entrance",
+    "Forever Forest - Outside Boo's Mansion - Entrance to Wasteland => Forever Forest - Outside Boo's Mansion - YBlockA": {
+      "ID": "Forever Forest - Outside Boo's Mansion - Entrance to Wasteland => Forever Forest - Outside Boo's Mansion - YBlockA",
+      "Area": "Forever Forest - Outside Boo's Mansion - Entrance to Wasteland",
       "Exit": "Forever Forest - Outside Boo's Mansion - YBlockA",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
@@ -51719,6 +52563,552 @@
         "PriceDataNames": []
       }
     },
+    "Gusty Gulch - Wasteland Ascent 2 - Exit Right => Gusty Gulch - Wasteland Ascent 2 - RandomBlockItemA": {
+      "ID": "Gusty Gulch - Wasteland Ascent 2 - Exit Right => Gusty Gulch - Wasteland Ascent 2 - RandomBlockItemA",
+      "Area": "Gusty Gulch - Wasteland Ascent 2 - Exit Right",
+      "Exit": "Gusty Gulch - Wasteland Ascent 2 - RandomBlockItemA",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Tubba's Castle - Stairs to Basement - Door Top Right => Tubba's Castle - Stairs to Basement - RandomBlockItemA": {
+      "ID": "Tubba's Castle - Stairs to Basement - Door Top Right => Tubba's Castle - Stairs to Basement - RandomBlockItemA",
+      "Area": "Tubba's Castle - Stairs to Basement - Door Top Right",
+      "Exit": "Tubba's Castle - Stairs to Basement - RandomBlockItemA",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Flower Fields - (SE) Briar Platforming - Exit Right => Flower Fields - (SE) Briar Platforming - RandomBlockItemA": {
+      "ID": "Flower Fields - (SE) Briar Platforming - Exit Right => Flower Fields - (SE) Briar Platforming - RandomBlockItemA",
+      "Area": "Flower Fields - (SE) Briar Platforming - Exit Right",
+      "Exit": "Flower Fields - (SE) Briar Platforming - RandomBlockItemA",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Flower Fields - (West) Maze - Exit Left => Flower Fields - (West) Maze - RandomBlockItemA": {
+      "ID": "Flower Fields - (West) Maze - Exit Left => Flower Fields - (West) Maze - RandomBlockItemA",
+      "Area": "Flower Fields - (West) Maze - Exit Left",
+      "Exit": "Flower Fields - (West) Maze - RandomBlockItemA",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Flower Fields - (NE) Elevators - Exit Right => Flower Fields - (NE) Elevators - RandomBlockItemA": {
+      "ID": "Flower Fields - (NE) Elevators - Exit Right => Flower Fields - (NE) Elevators - RandomBlockItemA",
+      "Area": "Flower Fields - (NE) Elevators - Exit Right",
+      "Exit": "Flower Fields - (NE) Elevators - RandomBlockItemA",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Dry Dry Ruins - Vertical Shaft - Exit Bottom Right => Dry Dry Ruins - Vertical Shaft - RandomBlockItemA": {
+      "ID": "Dry Dry Ruins - Vertical Shaft - Exit Bottom Right => Dry Dry Ruins - Vertical Shaft - RandomBlockItemA",
+      "Area": "Dry Dry Ruins - Vertical Shaft - Exit Bottom Right",
+      "Exit": "Dry Dry Ruins - Vertical Shaft - RandomBlockItemA",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Mt Rugged - Train Station - Exit Right => Mt Rugged - Train Station - RandomBlockItemA": {
+      "ID": "Mt Rugged - Train Station - Exit Right => Mt Rugged - Train Station - RandomBlockItemA",
+      "Area": "Mt Rugged - Train Station - Exit Right",
+      "Exit": "Mt Rugged - Train Station - RandomBlockItemA",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Jade Jungle - SW Jungle (Super Block) - Exit Top => Jade Jungle - SW Jungle (Super Block) - RandomBlockItemA": {
+      "ID": "Jade Jungle - SW Jungle (Super Block) - Exit Top => Jade Jungle - SW Jungle (Super Block) - RandomBlockItemA",
+      "Area": "Jade Jungle - SW Jungle (Super Block) - Exit Top",
+      "Exit": "Jade Jungle - SW Jungle (Super Block) - RandomBlockItemA",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Goomba Region - Jr. Troopa's Playground - Exit Right => Goomba Region - Jr. Troopa's Playground - RandomBlockItemA": {
+      "ID": "Goomba Region - Jr. Troopa's Playground - Exit Right => Goomba Region - Jr. Troopa's Playground - RandomBlockItemA",
+      "Area": "Goomba Region - Jr. Troopa's Playground - Exit Right",
+      "Exit": "Goomba Region - Jr. Troopa's Playground - RandomBlockItemA",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Mt Lavalava - Fire Bar Bridge - Exit West => Mt Lavalava - Fire Bar Bridge - RandomBlockItemA": {
+      "ID": "Mt Lavalava - Fire Bar Bridge - Exit West => Mt Lavalava - Fire Bar Bridge - RandomBlockItemA",
+      "Area": "Mt Lavalava - Fire Bar Bridge - Exit West",
+      "Exit": "Mt Lavalava - Fire Bar Bridge - RandomBlockItemA",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Mt Lavalava - Zipline Cavern - Exit West Upper => Mt Lavalava - Zipline Cavern - RandomBlockItemA": {
+      "ID": "Mt Lavalava - Zipline Cavern - Exit West Upper => Mt Lavalava - Zipline Cavern - RandomBlockItemA",
+      "Area": "Mt Lavalava - Zipline Cavern - Exit West Upper",
+      "Exit": "Mt Lavalava - Zipline Cavern - RandomBlockItemA",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Toad Town - Port District - Exit East => Toad Town - Port District - RandomBlockItemA": {
+      "ID": "Toad Town - Port District - Exit East => Toad Town - Port District - RandomBlockItemA",
+      "Area": "Toad Town - Port District - Exit East",
+      "Exit": "Toad Town - Port District - RandomBlockItemA",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Koopa Region - Pleasant Path Bridge - Exit East => Koopa Region - Pleasant Path Bridge - RandomBlockItemA": {
+      "ID": "Koopa Region - Pleasant Path Bridge - Exit East => Koopa Region - Pleasant Path Bridge - RandomBlockItemA",
+      "Area": "Koopa Region - Pleasant Path Bridge - Exit East",
+      "Exit": "Koopa Region - Pleasant Path Bridge - RandomBlockItemA",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Shy Guy's Toybox - GRN Treadmills/Slot Machine - ItemH => Shy Guy's Toybox - GRN Treadmills/Slot Machine - RandomBlockItemA": {
+      "ID": "Shy Guy's Toybox - GRN Treadmills/Slot Machine - ItemH => Shy Guy's Toybox - GRN Treadmills/Slot Machine - RandomBlockItemA",
+      "Area": "Shy Guy's Toybox - GRN Treadmills/Slot Machine - ItemH",
+      "Exit": "Shy Guy's Toybox - GRN Treadmills/Slot Machine - RandomBlockItemA",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Shy Guy's Toybox - RED Moving Platforms - YBlockA => Shy Guy's Toybox - RED Moving Platforms - RandomBlockItemA": {
+      "ID": "Shy Guy's Toybox - RED Moving Platforms - YBlockA => Shy Guy's Toybox - RED Moving Platforms - RandomBlockItemA",
+      "Area": "Shy Guy's Toybox - RED Moving Platforms - YBlockA",
+      "Exit": "Shy Guy's Toybox - RED Moving Platforms - RandomBlockItemA",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Shy Guy's Toybox - RED Moving Platforms - YBlockA => Shy Guy's Toybox - RED Moving Platforms - RandomBlockItemB": {
+      "ID": "Shy Guy's Toybox - RED Moving Platforms - YBlockA => Shy Guy's Toybox - RED Moving Platforms - RandomBlockItemB",
+      "Area": "Shy Guy's Toybox - RED Moving Platforms - YBlockA",
+      "Exit": "Shy Guy's Toybox - RED Moving Platforms - RandomBlockItemB",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Shy Guy's Toybox - PNK Tracks Hallway - Exit West (South) => Shy Guy's Toybox - PNK Tracks Hallway - RandomBlockItemA": {
+      "ID": "Shy Guy's Toybox - PNK Tracks Hallway - Exit West (South) => Shy Guy's Toybox - PNK Tracks Hallway - RandomBlockItemA",
+      "Area": "Shy Guy's Toybox - PNK Tracks Hallway - Exit West (South)",
+      "Exit": "Shy Guy's Toybox - PNK Tracks Hallway - RandomBlockItemA",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Crystal Palace - Blue Mirror Hall 2 - Bombable Wall => Crystal Palace - Blue Mirror Hall 2 - RandomBlockItemA": {
+      "ID": "Crystal Palace - Blue Mirror Hall 2 - Bombable Wall => Crystal Palace - Blue Mirror Hall 2 - RandomBlockItemA",
+      "Area": "Crystal Palace - Blue Mirror Hall 2 - Bombable Wall",
+      "Exit": "Crystal Palace - Blue Mirror Hall 2 - RandomBlockItemA",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Crystal Palace - Blue Mirror Hall 2 - Bombable Wall (Mirror Side) => Crystal Palace - Blue Mirror Hall 2 - RandomBlockItemA": {
+      "ID": "Crystal Palace - Blue Mirror Hall 2 - Bombable Wall (Mirror Side) => Crystal Palace - Blue Mirror Hall 2 - RandomBlockItemA",
+      "Area": "Crystal Palace - Blue Mirror Hall 2 - Bombable Wall (Mirror Side)",
+      "Exit": "Crystal Palace - Blue Mirror Hall 2 - RandomBlockItemA",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Crystal Palace - Blue Mirror Hall 2 - Bombable Wall => Crystal Palace - Blue Mirror Hall 2 - RandomBlockItemB": {
+      "ID": "Crystal Palace - Blue Mirror Hall 2 - Bombable Wall => Crystal Palace - Blue Mirror Hall 2 - RandomBlockItemB",
+      "Area": "Crystal Palace - Blue Mirror Hall 2 - Bombable Wall",
+      "Exit": "Crystal Palace - Blue Mirror Hall 2 - RandomBlockItemB",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Crystal Palace - Blue Mirror Hall 2 - Bombable Wall (Mirror Side) => Crystal Palace - Blue Mirror Hall 2 - RandomBlockItemB": {
+      "ID": "Crystal Palace - Blue Mirror Hall 2 - Bombable Wall (Mirror Side) => Crystal Palace - Blue Mirror Hall 2 - RandomBlockItemB",
+      "Area": "Crystal Palace - Blue Mirror Hall 2 - Bombable Wall (Mirror Side)",
+      "Exit": "Crystal Palace - Blue Mirror Hall 2 - RandomBlockItemB",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Shiver Region - Shiver Mountain Hills - Exit East => Shiver Region - Shiver Mountain Hills - RandomBlockItemA": {
+      "ID": "Shiver Region - Shiver Mountain Hills - Exit East => Shiver Region - Shiver Mountain Hills - RandomBlockItemA",
+      "Area": "Shiver Region - Shiver Mountain Hills - Exit East",
+      "Exit": "Shiver Region - Shiver Mountain Hills - RandomBlockItemA",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Dry Dry Desert - N3E3 - Exit West => Dry Dry Desert - N3E3 - RandomBlockItemA": {
+      "ID": "Dry Dry Desert - N3E3 - Exit West => Dry Dry Desert - N3E3 - RandomBlockItemA",
+      "Area": "Dry Dry Desert - N3E3 - Exit West",
+      "Exit": "Dry Dry Desert - N3E3 - RandomBlockItemA",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Dry Dry Desert - N2E1 (Tweester A) - Exit West => Dry Dry Desert - N2E1 (Tweester A) - RandomBlockItemA": {
+      "ID": "Dry Dry Desert - N2E1 (Tweester A) - Exit West => Dry Dry Desert - N2E1 (Tweester A) - RandomBlockItemA",
+      "Area": "Dry Dry Desert - N2E1 (Tweester A) - Exit West",
+      "Exit": "Dry Dry Desert - N2E1 (Tweester A) - RandomBlockItemA",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Dry Dry Desert - N1E2 - Exit West => Dry Dry Desert - N1E2 - RandomBlockItemA": {
+      "ID": "Dry Dry Desert - N1E2 - Exit West => Dry Dry Desert - N1E2 - RandomBlockItemA",
+      "Area": "Dry Dry Desert - N1E2 - Exit West",
+      "Exit": "Dry Dry Desert - N1E2 - RandomBlockItemA",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Dry Dry Desert - N1E2 - Exit West => Dry Dry Desert - N1E2 - RandomBlockItemB": {
+      "ID": "Dry Dry Desert - N1E2 - Exit West => Dry Dry Desert - N1E2 - RandomBlockItemB",
+      "Area": "Dry Dry Desert - N1E2 - Exit West",
+      "Exit": "Dry Dry Desert - N1E2 - RandomBlockItemB",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Dry Dry Desert - S1W3 - 0 => Dry Dry Desert - S1W3 - RandomBlockItemA": {
+      "ID": "Dry Dry Desert - S1W3 - 0 => Dry Dry Desert - S1W3 - RandomBlockItemA",
+      "Area": "Dry Dry Desert - S1W3 - 0",
+      "Exit": "Dry Dry Desert - S1W3 - RandomBlockItemA",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Dry Dry Desert - S2W1 - Exit West => Dry Dry Desert - S2W1 - RandomBlockItemA": {
+      "ID": "Dry Dry Desert - S2W1 - Exit West => Dry Dry Desert - S2W1 - RandomBlockItemA",
+      "Area": "Dry Dry Desert - S2W1 - Exit West",
+      "Exit": "Dry Dry Desert - S2W1 - RandomBlockItemA",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Dry Dry Desert - S2E2 West of Oasis - Exit West => Dry Dry Desert - S2E2 West of Oasis - RandomBlockItemA": {
+      "ID": "Dry Dry Desert - S2E2 West of Oasis - Exit West => Dry Dry Desert - S2E2 West of Oasis - RandomBlockItemA",
+      "Area": "Dry Dry Desert - S2E2 West of Oasis - Exit West",
+      "Exit": "Dry Dry Desert - S2E2 West of Oasis - RandomBlockItemA",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Dry Dry Desert - S2E3 Oasis - Exit West => Dry Dry Desert - S2E3 Oasis - RandomBlockItemA": {
+      "ID": "Dry Dry Desert - S2E3 Oasis - Exit West => Dry Dry Desert - S2E3 Oasis - RandomBlockItemA",
+      "Area": "Dry Dry Desert - S2E3 Oasis - Exit West",
+      "Exit": "Dry Dry Desert - S2E3 Oasis - RandomBlockItemA",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Dry Dry Desert - S3E3 South of Oasis - Exit West => Dry Dry Desert - S3E3 South of Oasis - RandomBlockItemA": {
+      "ID": "Dry Dry Desert - S3E3 South of Oasis - Exit West => Dry Dry Desert - S3E3 South of Oasis - RandomBlockItemA",
+      "Area": "Dry Dry Desert - S3E3 South of Oasis - Exit West",
+      "Exit": "Dry Dry Desert - S3E3 South of Oasis - RandomBlockItemA",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Dry Dry Desert - S3E3 South of Oasis - Exit West => Dry Dry Desert - S3E3 South of Oasis - RandomBlockItemB": {
+      "ID": "Dry Dry Desert - S3E3 South of Oasis - Exit West => Dry Dry Desert - S3E3 South of Oasis - RandomBlockItemB",
+      "Area": "Dry Dry Desert - S3E3 South of Oasis - Exit West",
+      "Exit": "Dry Dry Desert - S3E3 South of Oasis - RandomBlockItemB",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Dry Dry Desert - S3E3 South of Oasis - Exit West => Dry Dry Desert - S3E3 South of Oasis - RandomBlockItemC": {
+      "ID": "Dry Dry Desert - S3E3 South of Oasis - Exit West => Dry Dry Desert - S3E3 South of Oasis - RandomBlockItemC",
+      "Area": "Dry Dry Desert - S3E3 South of Oasis - Exit West",
+      "Exit": "Dry Dry Desert - S3E3 South of Oasis - RandomBlockItemC",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Dry Dry Desert - S3E3 South of Oasis - Exit West => Dry Dry Desert - S3E3 South of Oasis - RandomBlockItemD": {
+      "ID": "Dry Dry Desert - S3E3 South of Oasis - Exit West => Dry Dry Desert - S3E3 South of Oasis - RandomBlockItemD",
+      "Area": "Dry Dry Desert - S3E3 South of Oasis - Exit West",
+      "Exit": "Dry Dry Desert - S3E3 South of Oasis - RandomBlockItemD",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Dry Dry Desert - S3E3 South of Oasis - Exit West => Dry Dry Desert - S3E3 South of Oasis - RandomBlockItemE": {
+      "ID": "Dry Dry Desert - S3E3 South of Oasis - Exit West => Dry Dry Desert - S3E3 South of Oasis - RandomBlockItemE",
+      "Area": "Dry Dry Desert - S3E3 South of Oasis - Exit West",
+      "Exit": "Dry Dry Desert - S3E3 South of Oasis - RandomBlockItemE",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Dry Dry Desert - S3E3 South of Oasis - Exit West => Dry Dry Desert - S3E3 South of Oasis - RandomBlockItemF": {
+      "ID": "Dry Dry Desert - S3E3 South of Oasis - Exit West => Dry Dry Desert - S3E3 South of Oasis - RandomBlockItemF",
+      "Area": "Dry Dry Desert - S3E3 South of Oasis - Exit West",
+      "Exit": "Dry Dry Desert - S3E3 South of Oasis - RandomBlockItemF",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Toad Town Tunnels - Elevator Attic Room (B2) - Exit Left => Toad Town Tunnels - Elevator Attic Room (B2) - RandomBlockItemA": {
+      "ID": "Toad Town Tunnels - Elevator Attic Room (B2) - Exit Left => Toad Town Tunnels - Elevator Attic Room (B2) - RandomBlockItemA",
+      "Area": "Toad Town Tunnels - Elevator Attic Room (B2) - Exit Left",
+      "Exit": "Toad Town Tunnels - Elevator Attic Room (B2) - RandomBlockItemA",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Toad Town Tunnels - Blue Pushblock Room (B2) - HiddenYBlockA => Toad Town Tunnels - Blue Pushblock Room (B2) - RandomBlockItemA": {
+      "ID": "Toad Town Tunnels - Blue Pushblock Room (B2) - HiddenYBlockA => Toad Town Tunnels - Blue Pushblock Room (B2) - RandomBlockItemA",
+      "Area": "Toad Town Tunnels - Blue Pushblock Room (B2) - HiddenYBlockA",
+      "Exit": "Toad Town Tunnels - Blue Pushblock Room (B2) - RandomBlockItemA",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Toad Town Tunnels - Metal Block Room (B3) - Green Pipe Left => Toad Town Tunnels - Metal Block Room (B3) - RandomBlockItemA": {
+      "ID": "Toad Town Tunnels - Metal Block Room (B3) - Green Pipe Left => Toad Town Tunnels - Metal Block Room (B3) - RandomBlockItemA",
+      "Area": "Toad Town Tunnels - Metal Block Room (B3) - Green Pipe Left",
+      "Exit": "Toad Town Tunnels - Metal Block Room (B3) - RandomBlockItemA",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Toad Town Tunnels - Frozen Room (B3) - Green Pipe Left => Toad Town Tunnels - Frozen Room (B3) - RandomBlockItemA": {
+      "ID": "Toad Town Tunnels - Frozen Room (B3) - Green Pipe Left => Toad Town Tunnels - Frozen Room (B3) - RandomBlockItemA",
+      "Area": "Toad Town Tunnels - Frozen Room (B3) - Green Pipe Left",
+      "Exit": "Toad Town Tunnels - Frozen Room (B3) - RandomBlockItemA",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Toad Town Tunnels - Hall to Blooper 1 (B1) - Exit Left => Toad Town Tunnels - Hall to Blooper 1 (B1) - RandomBlockItemA": {
+      "ID": "Toad Town Tunnels - Hall to Blooper 1 (B1) - Exit Left => Toad Town Tunnels - Hall to Blooper 1 (B1) - RandomBlockItemA",
+      "Area": "Toad Town Tunnels - Hall to Blooper 1 (B1) - Exit Left",
+      "Exit": "Toad Town Tunnels - Hall to Blooper 1 (B1) - RandomBlockItemA",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Toad Town Tunnels - Under the Toad Town Pond - Green Pipe Left => Toad Town Tunnels - Under the Toad Town Pond - RandomBlockItemA": {
+      "ID": "Toad Town Tunnels - Under the Toad Town Pond - Green Pipe Left => Toad Town Tunnels - Under the Toad Town Pond - RandomBlockItemA",
+      "Area": "Toad Town Tunnels - Under the Toad Town Pond - Green Pipe Left",
+      "Exit": "Toad Town Tunnels - Under the Toad Town Pond - RandomBlockItemA",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
     "Spawn => Toad Town - Gate District - Pipe to Mario's House": {
       "ID": "Spawn => Toad Town - Gate District - Pipe to Mario's House",
       "Area": "Spawn",
@@ -51764,23 +53154,6 @@
       "Exit": "Jade Jungle - Village Buildings - Exit Right",
       "RandomizableEntrance": false,
       "AlwaysAccessable": true,
-      "DestinationHasSingleEntrance": false,
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "Tubba's Castle - Outside Tubbas Castle - Exit Left => Gusty Gulch - Wasteland Ascent 2 - Exit Right": {
-      "ID": "Tubba's Castle - Outside Tubbas Castle - Exit Left => Gusty Gulch - Wasteland Ascent 2 - Exit Right",
-      "Area": "Tubba's Castle - Outside Tubbas Castle - Exit Left",
-      "Exit": "Gusty Gulch - Wasteland Ascent 2 - Exit Right",
-      "EntrancePairID": {
-        "Area": "Gusty Gulch - Wasteland Ascent 2 - Exit Right",
-        "Exit": "Tubba's Castle - Outside Tubbas Castle - Exit Left"
-      },
-      "RandomizableEntrance": true,
-      "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false,
       "SpoilerData": {
         "SpoilerLogNames": [],

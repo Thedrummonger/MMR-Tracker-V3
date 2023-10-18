@@ -208,6 +208,11 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
             {
                 ScanEdge(edge, new List<List<object>> { new List<object> { "setting{StarHunt}" } });
             }
+            foreach (var edge in EdgeAlterations["partner_upgrade_shuffle"].additions)
+            {
+                //No need to lock these locations behind settings since it allows tracking upgrade blocks
+                ScanEdge(edge, new List<List<object>>());
+            }
 
             void ScanEdge(PMREdge edge, List<List<object>> AdditionalReq = null)
             {
@@ -368,7 +373,8 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
                 { "BowserCastleKey", new ItemReplacement{ id = "BowserCastleKey", name = "BowserCastleKey", maxamount = 5, Types = new List<string>{ "item" }  } },
                 { "KoopaFortressKey", new ItemReplacement{ id = "KoopaFortressKey", name = "KoopaFortressKey", maxamount = 5, Types = new List<string>{ "item" }  } },
                 { "RuinsKey", new ItemReplacement{ id = "RuinsKey", name = "RuinsKey", maxamount = 4, Types = new List<string>{ "item" }  } },
-                { "TubbaCastleKey", new ItemReplacement{ id = "TubbaCastleKey", name = "TubbaCastleKey", maxamount = 3, Types = new List<string>{ "item" }  } }
+                { "TubbaCastleKey", new ItemReplacement{ id = "TubbaCastleKey", name = "TubbaCastleKey", maxamount = 3, Types = new List<string>{ "item" }  } },
+                { "PartnerUp1", new ItemReplacement{ id = "PartnerUp1", name = "Partner Upgrade", maxamount = 16, Types = new List<string>{ "MultiCoinBlock", "SuperBlock" }  } }
             };
 
             foreach (var i in ItemNames)
@@ -501,15 +507,6 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
                 { "Toad Town - Plaza District - Flower Fields Door", "Flower Fields - Center - Tree Door" }
             };
 
-            //Exit from tubbas castle to the gultch doesn't exist but needs to for entrance rando consitancy. Shouldn't break anything?
-            PRMLogic.Logic.Add(new MMRData.JsonFormatLogicItem { Id = "Tubba's Castle - Outside Tubbas Castle - Exit Left => Gusty Gulch - Wasteland Ascent 2 - Exit Right" });
-            PMRDict.EntranceList.Add("Tubba's Castle - Outside Tubbas Castle - Exit Left => Gusty Gulch - Wasteland Ascent 2 - Exit Right", new LogicDictionaryData.DictionaryEntranceEntries
-            {
-                ID = "Tubba's Castle - Outside Tubbas Castle - Exit Left => Gusty Gulch - Wasteland Ascent 2 - Exit Right",
-                Area = "Tubba's Castle - Outside Tubbas Castle - Exit Left",
-                Exit = "Gusty Gulch - Wasteland Ascent 2 - Exit Right"
-            });
-
             foreach (var entrance in RandomizableEntrances)
             {
                 string EntranceID = $"{entrance.Key} => {entrance.Value}";
@@ -533,7 +530,19 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
 
                 foreach (var Replacement in ItemOverrides)
                 {
-                    if (ItemID.Contains(Replacement.Key)) { ItemID = Replacement.Value.id; break; }
+                    if (ItemID.StartsWith(Replacement.Key)) { ItemID = Replacement.Value.id; break; }
+                }
+
+                if (ItemID == "Nothing")
+                {
+                    if (ItemLocation.id.ToString().StartsWith("RandomBlockItem"))
+                    {
+                        ItemID = CheckID.Contains("SuperBlock") ? "PartnerUp1" : "Coin";
+                    }
+                    else
+                    {
+                        throw new Exception($"Location Had NOTHING\n{JsonConvert.SerializeObject(i, Formatting.Indented)}");
+                    }
                 }
 
                 var ItemObject = PMRDict.ItemList.Values.FirstOrDefault(x => x.ID == ItemID || x.Name == ItemID);
@@ -576,6 +585,17 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
                     ItemLocation.GetVerboseName(MapNames, MapMeta, MapNodes, out _, out _, out string CurrentArea, out _);
                     string CheckID = $"{CurrentArea} - {Locations[ItemLocation.map][ItemLocation.StringID()]}".Replace("'","");
                     PMRDict.LocationList[CheckID].SpoilerData.SpoilerLogNames = PMRDict.LocationList[CheckID].SpoilerData.SpoilerLogNames.Concat(new string[] { tag.Key }).ToArray();
+                }
+            }
+            foreach(var i in PMRDict.LocationList)
+            {
+                if (i.Key.Contains("In MultiCoinBlock"))
+                {
+                    i.Value.ValidItemTypes = i.Value.ValidItemTypes.Concat(new string[] { "MultiCoinBlock" }).ToArray();
+                }
+                else if (i.Key.Contains("In SuperBlock"))
+                {
+                    i.Value.ValidItemTypes = i.Value.ValidItemTypes.Concat(new string[] { "SuperBlock" }).ToArray();
                 }
             }
 

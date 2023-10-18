@@ -2671,6 +2671,17 @@
       "IsTrick": false
     },
     {
+      "Id": "Tubba's Castle - Outside Tubbas Castle - Exit Left => Gusty Gulch - Wasteland Ascent 2 - Exit Right",
+      "RequiredItems": [
+        "Tubba's Castle - Outside Tubbas Castle - Exit Left"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "Tubba's Castle - Outside Tubbas Castle - Door Right => Tubba's Castle - Great Hall - Door 1F Bottom",
       "RequiredItems": [
         "Tubba's Castle - Outside Tubbas Castle - Door Right"
@@ -18208,17 +18219,6 @@
       "IsTrick": false
     },
     {
-      "Id": "MGM - Playroom Lobby - Pipe to Toad Town => Toad Town - Station District - Pipe to Minigame Room",
-      "RequiredItems": [
-        "MGM - Playroom Lobby - Pipe to Toad Town"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
       "Id": "Forever Forest - Flower Sounds - Wrong Exit => Forever Forest - Flower Sounds - Forever Forest Entrance (Toad Town)",
       "RequiredItems": [
         "Forever Forest - Flower Sounds - Wrong Exit"
@@ -19051,6 +19051,7 @@
     {
       "Id": "Forever Forest - Outside Boo's Mansion - Entrance to Wasteland => Forever Forest - Outside Boo's Mansion - Forever Forest Entrance",
       "RequiredItems": [
+        "RF_ForeverForestBackwards",
         "Forever Forest - Outside Boo's Mansion - Entrance to Wasteland"
       ],
       "ConditionalItems": [],
@@ -19060,10 +19061,10 @@
       "IsTrick": false
     },
     {
-      "Id": "Forever Forest - Outside Boo's Mansion - Forever Forest Entrance => Forever Forest - Outside Boo's Mansion - Boo's Mansion Front Door",
+      "Id": "Forever Forest - Outside Boo's Mansion - Entrance to Wasteland => Forever Forest - Outside Boo's Mansion - Boo's Mansion Front Door",
       "RequiredItems": [
         "Boots",
-        "Forever Forest - Outside Boo's Mansion - Forever Forest Entrance"
+        "Forever Forest - Outside Boo's Mansion - Entrance to Wasteland"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -19072,7 +19073,7 @@
       "IsTrick": false
     },
     {
-      "Id": "Forever Forest - Outside Boo's Mansion - Boo's Mansion Front Door => Forever Forest - Outside Boo's Mansion - Forever Forest Entrance",
+      "Id": "Forever Forest - Outside Boo's Mansion - Boo's Mansion Front Door => Forever Forest - Outside Boo's Mansion - Entrance to Wasteland",
       "RequiredItems": [
         "Forever Forest - Outside Boo's Mansion - Boo's Mansion Front Door"
       ],
@@ -19083,11 +19084,11 @@
       "IsTrick": false
     },
     {
-      "Id": "Forever Forest - Outside Boo's Mansion - Forever Forest Entrance => Forever Forest - Outside Boo's Mansion - Pipe to Sewers",
+      "Id": "Forever Forest - Outside Boo's Mansion - Entrance to Wasteland => Forever Forest - Outside Boo's Mansion - Pipe to Sewers",
       "RequiredItems": [
         "GF_TIK09_WarpPipe",
         "Boots",
-        "Forever Forest - Outside Boo's Mansion - Forever Forest Entrance"
+        "Forever Forest - Outside Boo's Mansion - Entrance to Wasteland"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -19096,7 +19097,7 @@
       "IsTrick": false
     },
     {
-      "Id": "Forever Forest - Outside Boo's Mansion - Pipe to Sewers => Forever Forest - Outside Boo's Mansion - Forever Forest Entrance",
+      "Id": "Forever Forest - Outside Boo's Mansion - Pipe to Sewers => Forever Forest - Outside Boo's Mansion - Entrance to Wasteland",
       "RequiredItems": [
         "Forever Forest - Outside Boo's Mansion - Pipe to Sewers"
       ],
@@ -19107,10 +19108,10 @@
       "IsTrick": false
     },
     {
-      "Id": "Forever Forest - Outside Boo's Mansion - Forever Forest Entrance => Forever Forest - Outside Boo's Mansion - YBlockA",
+      "Id": "Forever Forest - Outside Boo's Mansion - Entrance to Wasteland => Forever Forest - Outside Boo's Mansion - YBlockA",
       "RequiredItems": [
         "can_hit_floating_blocks",
-        "Forever Forest - Outside Boo's Mansion - Forever Forest Entrance"
+        "Forever Forest - Outside Boo's Mansion - Entrance to Wasteland"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -34601,6 +34602,517 @@
       "IsTrick": false
     },
     {
+      "Id": "Gusty Gulch - Wasteland Ascent 2 - Exit Right => Gusty Gulch - Wasteland Ascent 2 - RandomBlockItemA",
+      "RequiredItems": [
+        "can_hit_floating_blocks",
+        "Gusty Gulch - Wasteland Ascent 2 - Exit Right"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Tubba's Castle - Stairs to Basement - Door Top Right => Tubba's Castle - Stairs to Basement - RandomBlockItemA",
+      "RequiredItems": [
+        "can_hit_floating_blocks",
+        "Tubba's Castle - Stairs to Basement - Door Top Right"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Flower Fields - (SE) Briar Platforming - Exit Right => Flower Fields - (SE) Briar Platforming - RandomBlockItemA",
+      "RequiredItems": [
+        "can_climb_steps",
+        "can_hit_floating_blocks",
+        "Flower Fields - (SE) Briar Platforming - Exit Right"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Flower Fields - (West) Maze - Exit Left => Flower Fields - (West) Maze - RandomBlockItemA",
+      "RequiredItems": [
+        "can_hit_floating_blocks",
+        "Flower Fields - (West) Maze - Exit Left"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Flower Fields - (NE) Elevators - Exit Right => Flower Fields - (NE) Elevators - RandomBlockItemA",
+      "RequiredItems": [
+        "can_climb_steps",
+        "can_hit_floating_blocks",
+        "Flower Fields - (NE) Elevators - Exit Right"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Dry Dry Ruins - Vertical Shaft - Exit Bottom Right => Dry Dry Ruins - Vertical Shaft - RandomBlockItemA",
+      "RequiredItems": [
+        "can_hit_floating_blocks",
+        "Dry Dry Ruins - Vertical Shaft - Exit Bottom Right"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Mt Rugged - Train Station - Exit Right => Mt Rugged - Train Station - RandomBlockItemA",
+      "RequiredItems": [
+        "SuperHammer",
+        "can_hit_floating_blocks",
+        "Mt Rugged - Train Station - Exit Right"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Jade Jungle - SW Jungle (Super Block) - Exit Top => Jade Jungle - SW Jungle (Super Block) - RandomBlockItemA",
+      "RequiredItems": [
+        "can_hit_floating_blocks",
+        "Jade Jungle - SW Jungle (Super Block) - Exit Top"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Goomba Region - Jr. Troopa's Playground - Exit Right => Goomba Region - Jr. Troopa's Playground - RandomBlockItemA",
+      "RequiredItems": [
+        "can_hit_grounded_blocks",
+        "Goomba Region - Jr. Troopa's Playground - Exit Right"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Mt Lavalava - Fire Bar Bridge - Exit West => Mt Lavalava - Fire Bar Bridge - RandomBlockItemA",
+      "RequiredItems": [
+        "can_hit_floating_blocks",
+        "Mt Lavalava - Fire Bar Bridge - Exit West"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Mt Lavalava - Zipline Cavern - Exit West Upper => Mt Lavalava - Zipline Cavern - RandomBlockItemA",
+      "RequiredItems": [
+        "can_hit_floating_blocks",
+        "Mt Lavalava - Zipline Cavern - Exit West Upper"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Toad Town - Port District - Exit East => Toad Town - Port District - RandomBlockItemA",
+      "RequiredItems": [
+        "Boots",
+        "Toad Town - Port District - Exit East"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Koopa Region - Pleasant Path Bridge - Exit East => Koopa Region - Pleasant Path Bridge - RandomBlockItemA",
+      "RequiredItems": [
+        "can_hit_floating_blocks",
+        "Koopa Region - Pleasant Path Bridge - Exit East"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Shy Guy's Toybox - GRN Treadmills/Slot Machine - ItemH => Shy Guy's Toybox - GRN Treadmills/Slot Machine - RandomBlockItemA",
+      "RequiredItems": [
+        "Parakarry",
+        "Shy Guy's Toybox - GRN Treadmills/Slot Machine - ItemH"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Shy Guy's Toybox - RED Moving Platforms - YBlockA => Shy Guy's Toybox - RED Moving Platforms - RandomBlockItemA",
+      "RequiredItems": [
+        "Shy Guy's Toybox - RED Moving Platforms - YBlockA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Shy Guy's Toybox - RED Moving Platforms - YBlockA => Shy Guy's Toybox - RED Moving Platforms - RandomBlockItemB",
+      "RequiredItems": [
+        "Shy Guy's Toybox - RED Moving Platforms - YBlockA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Shy Guy's Toybox - PNK Tracks Hallway - Exit West (South) => Shy Guy's Toybox - PNK Tracks Hallway - RandomBlockItemA",
+      "RequiredItems": [
+        "can_hit_floating_blocks",
+        "Shy Guy's Toybox - PNK Tracks Hallway - Exit West (South)"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Crystal Palace - Blue Mirror Hall 2 - Bombable Wall => Crystal Palace - Blue Mirror Hall 2 - RandomBlockItemA",
+      "RequiredItems": [
+        "can_hit_floating_blocks",
+        "Crystal Palace - Blue Mirror Hall 2 - Bombable Wall"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Crystal Palace - Blue Mirror Hall 2 - Bombable Wall (Mirror Side) => Crystal Palace - Blue Mirror Hall 2 - RandomBlockItemA",
+      "RequiredItems": [
+        "can_hit_floating_blocks",
+        "Crystal Palace - Blue Mirror Hall 2 - Bombable Wall (Mirror Side)"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Crystal Palace - Blue Mirror Hall 2 - Bombable Wall => Crystal Palace - Blue Mirror Hall 2 - RandomBlockItemB",
+      "RequiredItems": [
+        "can_hit_floating_blocks",
+        "Crystal Palace - Blue Mirror Hall 2 - Bombable Wall"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Crystal Palace - Blue Mirror Hall 2 - Bombable Wall (Mirror Side) => Crystal Palace - Blue Mirror Hall 2 - RandomBlockItemB",
+      "RequiredItems": [
+        "can_hit_floating_blocks",
+        "Crystal Palace - Blue Mirror Hall 2 - Bombable Wall (Mirror Side)"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Shiver Region - Shiver Mountain Hills - Exit East => Shiver Region - Shiver Mountain Hills - RandomBlockItemA",
+      "RequiredItems": [
+        "can_climb_steps",
+        "can_hit_floating_blocks",
+        "Shiver Region - Shiver Mountain Hills - Exit East"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Dry Dry Desert - N3E3 - Exit West => Dry Dry Desert - N3E3 - RandomBlockItemA",
+      "RequiredItems": [
+        "can_hit_floating_blocks",
+        "Dry Dry Desert - N3E3 - Exit West"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Dry Dry Desert - N2E1 (Tweester A) - Exit West => Dry Dry Desert - N2E1 (Tweester A) - RandomBlockItemA",
+      "RequiredItems": [
+        "can_hit_floating_blocks",
+        "Dry Dry Desert - N2E1 (Tweester A) - Exit West"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Dry Dry Desert - N1E2 - Exit West => Dry Dry Desert - N1E2 - RandomBlockItemA",
+      "RequiredItems": [
+        "can_hit_floating_blocks",
+        "Dry Dry Desert - N1E2 - Exit West"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Dry Dry Desert - N1E2 - Exit West => Dry Dry Desert - N1E2 - RandomBlockItemB",
+      "RequiredItems": [
+        "can_hit_floating_blocks",
+        "Dry Dry Desert - N1E2 - Exit West"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Dry Dry Desert - S1W3 - 0 => Dry Dry Desert - S1W3 - RandomBlockItemA",
+      "RequiredItems": [
+        "can_hit_floating_blocks",
+        "Dry Dry Desert - S1W3 - 0"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Dry Dry Desert - S2W1 - Exit West => Dry Dry Desert - S2W1 - RandomBlockItemA",
+      "RequiredItems": [
+        "can_hit_floating_blocks",
+        "Dry Dry Desert - S2W1 - Exit West"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Dry Dry Desert - S2E2 West of Oasis - Exit West => Dry Dry Desert - S2E2 West of Oasis - RandomBlockItemA",
+      "RequiredItems": [
+        "can_hit_floating_blocks",
+        "Dry Dry Desert - S2E2 West of Oasis - Exit West"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Dry Dry Desert - S2E3 Oasis - Exit West => Dry Dry Desert - S2E3 Oasis - RandomBlockItemA",
+      "RequiredItems": [
+        "can_hit_floating_blocks",
+        "Dry Dry Desert - S2E3 Oasis - Exit West"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Dry Dry Desert - S3E3 South of Oasis - Exit West => Dry Dry Desert - S3E3 South of Oasis - RandomBlockItemA",
+      "RequiredItems": [
+        "can_hit_floating_blocks",
+        "Dry Dry Desert - S3E3 South of Oasis - Exit West"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Dry Dry Desert - S3E3 South of Oasis - Exit West => Dry Dry Desert - S3E3 South of Oasis - RandomBlockItemB",
+      "RequiredItems": [
+        "can_hit_floating_blocks",
+        "Dry Dry Desert - S3E3 South of Oasis - Exit West"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Dry Dry Desert - S3E3 South of Oasis - Exit West => Dry Dry Desert - S3E3 South of Oasis - RandomBlockItemC",
+      "RequiredItems": [
+        "can_hit_floating_blocks",
+        "Dry Dry Desert - S3E3 South of Oasis - Exit West"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Dry Dry Desert - S3E3 South of Oasis - Exit West => Dry Dry Desert - S3E3 South of Oasis - RandomBlockItemD",
+      "RequiredItems": [
+        "can_hit_floating_blocks",
+        "Dry Dry Desert - S3E3 South of Oasis - Exit West"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Dry Dry Desert - S3E3 South of Oasis - Exit West => Dry Dry Desert - S3E3 South of Oasis - RandomBlockItemE",
+      "RequiredItems": [
+        "can_hit_floating_blocks",
+        "Dry Dry Desert - S3E3 South of Oasis - Exit West"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Dry Dry Desert - S3E3 South of Oasis - Exit West => Dry Dry Desert - S3E3 South of Oasis - RandomBlockItemF",
+      "RequiredItems": [
+        "can_hit_floating_blocks",
+        "Dry Dry Desert - S3E3 South of Oasis - Exit West"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Toad Town Tunnels - Elevator Attic Room (B2) - Exit Left => Toad Town Tunnels - Elevator Attic Room (B2) - RandomBlockItemA",
+      "RequiredItems": [
+        "can_climb_steps",
+        "can_hit_floating_blocks",
+        "Toad Town Tunnels - Elevator Attic Room (B2) - Exit Left"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Toad Town Tunnels - Blue Pushblock Room (B2) - HiddenYBlockA => Toad Town Tunnels - Blue Pushblock Room (B2) - RandomBlockItemA",
+      "RequiredItems": [
+        "can_climb_steps",
+        "can_hit_floating_blocks",
+        "Toad Town Tunnels - Blue Pushblock Room (B2) - HiddenYBlockA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Toad Town Tunnels - Metal Block Room (B3) - Green Pipe Left => Toad Town Tunnels - Metal Block Room (B3) - RandomBlockItemA",
+      "RequiredItems": [
+        "UltraHammer",
+        "can_climb_steps",
+        "can_hit_floating_blocks",
+        "Toad Town Tunnels - Metal Block Room (B3) - Green Pipe Left"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Toad Town Tunnels - Frozen Room (B3) - Green Pipe Left => Toad Town Tunnels - Frozen Room (B3) - RandomBlockItemA",
+      "RequiredItems": [
+        "can_hit_floating_blocks",
+        "Toad Town Tunnels - Frozen Room (B3) - Green Pipe Left"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Toad Town Tunnels - Hall to Blooper 1 (B1) - Exit Left => Toad Town Tunnels - Hall to Blooper 1 (B1) - RandomBlockItemA",
+      "RequiredItems": [
+        "can_hit_floating_blocks",
+        "Toad Town Tunnels - Hall to Blooper 1 (B1) - Exit Left"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Toad Town Tunnels - Under the Toad Town Pond - Green Pipe Left => Toad Town Tunnels - Under the Toad Town Pond - RandomBlockItemA",
+      "RequiredItems": [
+        "can_climb_steps",
+        "can_hit_floating_blocks",
+        "Toad Town Tunnels - Under the Toad Town Pond - Green Pipe Left"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "Forest Clearing - Hidden Panel",
       "RequiredItems": [
         "Goomba Region - Forest Clearing - HiddenPanel"
@@ -34923,6 +35435,17 @@
       "Id": "Jr. Troopas Playground - In Hammer Bush",
       "RequiredItems": [
         "Goomba Region - Jr. Troopa's Playground - Bush7_Drop1"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Jr. Troopas Playground - In MultiCoinBlock",
+      "RequiredItems": [
+        "Goomba Region - Jr. Troopa's Playground - RandomBlockItemA"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -35767,6 +36290,17 @@
       "IsTrick": false
     },
     {
+      "Id": "Port District - In MultiCoinBlock",
+      "RequiredItems": [
+        "Toad Town - Port District - RandomBlockItemA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "Blooper Boss 1 (B1) - Blooper Fight Reward",
       "RequiredItems": [
         "Toad Town Tunnels - Blooper Boss 1 (B1) - ChestA"
@@ -35833,6 +36367,17 @@
       "IsTrick": false
     },
     {
+      "Id": "Elevator Attic Room (B2) - In SuperBlock",
+      "RequiredItems": [
+        "Toad Town Tunnels - Elevator Attic Room (B2) - RandomBlockItemA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "Blue Pushblock Room (B2) - Hidden Block Left",
       "RequiredItems": [
         "Toad Town Tunnels - Blue Pushblock Room (B2) - HiddenYBlockA"
@@ -35858,6 +36403,28 @@
       "Id": "Blue Pushblock Room (B2) - Hidden Block Right",
       "RequiredItems": [
         "Toad Town Tunnels - Blue Pushblock Room (B2) - HiddenYBlockC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Blue Pushblock Room (B2) - In SuperBlock",
+      "RequiredItems": [
+        "Toad Town Tunnels - Blue Pushblock Room (B2) - RandomBlockItemA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Metal Block Room (B3) - In SuperBlock",
+      "RequiredItems": [
+        "Toad Town Tunnels - Metal Block Room (B3) - RandomBlockItemA"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -35987,9 +36554,42 @@
       "IsTrick": false
     },
     {
+      "Id": "Frozen Room (B3) - In SuperBlock",
+      "RequiredItems": [
+        "Toad Town Tunnels - Frozen Room (B3) - RandomBlockItemA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "Hall to Blooper 1 (B1) - Hidden Block",
       "RequiredItems": [
         "Toad Town Tunnels - Hall to Blooper 1 (B1) - HiddenYBlockA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Hall to Blooper 1 (B1) - In MultiCoinBlock",
+      "RequiredItems": [
+        "Toad Town Tunnels - Hall to Blooper 1 (B1) - RandomBlockItemA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Under the Toad Town Pond - In SuperBlock",
+      "RequiredItems": [
+        "Toad Town Tunnels - Under the Toad Town Pond - RandomBlockItemA"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -37142,6 +37742,17 @@
       "IsTrick": false
     },
     {
+      "Id": "Pleasant Path Bridge - In MultiCoinBlock",
+      "RequiredItems": [
+        "Koopa Region - Pleasant Path Bridge - RandomBlockItemA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "Pleasant Crossroads - Hidden Panel",
       "RequiredItems": [
         "Koopa Region - Pleasant Crossroads - HiddenPanel"
@@ -37714,6 +38325,17 @@
       "IsTrick": false
     },
     {
+      "Id": "Train Station - In SuperBlock",
+      "RequiredItems": [
+        "Mt Rugged - Train Station - RandomBlockItemA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "Outpost 1 - Composer Lyrics Reward",
       "RequiredItems": [
         "Dry Dry Outpost - Outpost 1 - GiftA"
@@ -37901,6 +38523,17 @@
       "IsTrick": false
     },
     {
+      "Id": "N3E3 - In MultiCoinBlock",
+      "RequiredItems": [
+        "Dry Dry Desert - N3E3 - RandomBlockItemA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "N2W3 - Hidden Block",
       "RequiredItems": [
         "Dry Dry Desert - N2W3 - HiddenYBlockA"
@@ -37926,6 +38559,17 @@
       "Id": "N2E1 (Tweester A) - Yellow Block Right",
       "RequiredItems": [
         "Dry Dry Desert - N2E1 (Tweester A) - YBlockB"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "N2E1 (Tweester A) - In MultiCoinBlock",
+      "RequiredItems": [
+        "Dry Dry Desert - N2E1 (Tweester A) - RandomBlockItemA"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -38025,6 +38669,28 @@
       "Id": "N1E1 Palm Trio - Hidden Block",
       "RequiredItems": [
         "Dry Dry Desert - N1E1 Palm Trio - HiddenRBlockA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "N1E2 - In MultiCoinBlock Center",
+      "RequiredItems": [
+        "Dry Dry Desert - N1E2 - RandomBlockItemA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "N1E2 - In MultiCoinBlock Bottom Right",
+      "RequiredItems": [
+        "Dry Dry Desert - N1E2 - RandomBlockItemB"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -38143,6 +38809,17 @@
       "IsTrick": false
     },
     {
+      "Id": "S1W3 - In MultiCoinBlock Top Left",
+      "RequiredItems": [
+        "Dry Dry Desert - S1W3 - RandomBlockItemA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "S1 - Yellow Block",
       "RequiredItems": [
         "Dry Dry Desert - S1 - YBlockA"
@@ -38209,6 +38886,17 @@
       "IsTrick": false
     },
     {
+      "Id": "S2W1 - In MultiCoinBlock Top",
+      "RequiredItems": [
+        "Dry Dry Desert - S2W1 - RandomBlockItemA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "S2E2 West of Oasis - Behind Bush",
       "RequiredItems": [
         "Dry Dry Desert - S2E2 West of Oasis - ItemA"
@@ -38223,6 +38911,17 @@
       "Id": "S2E2 West of Oasis - In Tree",
       "RequiredItems": [
         "Dry Dry Desert - S2E2 West of Oasis - Tree1_Drop1"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "S2E2 West of Oasis - In MultiCoinBlock",
+      "RequiredItems": [
+        "Dry Dry Desert - S2E2 West of Oasis - RandomBlockItemA"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -38275,6 +38974,17 @@
       "IsTrick": false
     },
     {
+      "Id": "S2E3 Oasis - In SuperBlock",
+      "RequiredItems": [
+        "Dry Dry Desert - S2E3 Oasis - RandomBlockItemA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "S3W2 Hidden AttackFX - Hidden Block",
       "RequiredItems": [
         "Dry Dry Desert - S3W2 Hidden AttackFX - HiddenRBlockA"
@@ -38300,6 +39010,72 @@
       "Id": "S3E3 South of Oasis - In Tree (Far Right)",
       "RequiredItems": [
         "Dry Dry Desert - S3E3 South of Oasis - Tree3_Drop1"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "S3E3 South of Oasis - In MultiCoinBlock Top Left",
+      "RequiredItems": [
+        "Dry Dry Desert - S3E3 South of Oasis - RandomBlockItemA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "S3E3 South of Oasis - In MultiCoinBlock Top Right",
+      "RequiredItems": [
+        "Dry Dry Desert - S3E3 South of Oasis - RandomBlockItemB"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "S3E3 South of Oasis - In MultiCoinBlock Right",
+      "RequiredItems": [
+        "Dry Dry Desert - S3E3 South of Oasis - RandomBlockItemC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "S3E3 South of Oasis - In MultiCoinBlock Left",
+      "RequiredItems": [
+        "Dry Dry Desert - S3E3 South of Oasis - RandomBlockItemD"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "S3E3 South of Oasis - In MultiCoinBlock Bottom Left",
+      "RequiredItems": [
+        "Dry Dry Desert - S3E3 South of Oasis - RandomBlockItemE"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "S3E3 South of Oasis - In MultiCoinBlock Bottom Right",
+      "RequiredItems": [
+        "Dry Dry Desert - S3E3 South of Oasis - RandomBlockItemF"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -38399,6 +39175,17 @@
       "Id": "Super Hammer Room - In Big Chest",
       "RequiredItems": [
         "Dry Dry Ruins - Super Hammer Room - BigChest"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Vertical Shaft - In SuperBlock",
+      "RequiredItems": [
+        "Dry Dry Ruins - Vertical Shaft - RandomBlockItemA"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -38869,9 +39656,31 @@
       "IsTrick": false
     },
     {
+      "Id": "Wasteland Ascent 2 - In MultiCoinBlock",
+      "RequiredItems": [
+        "Gusty Gulch - Wasteland Ascent 2 - RandomBlockItemA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "Table/Clock Room (1/2F) - On Table",
       "RequiredItems": [
         "Tubba's Castle - Table/Clock Room (1/2F) - ItemA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Stairs to Basement - In SuperBlock",
+      "RequiredItems": [
+        "Tubba's Castle - Stairs to Basement - RandomBlockItemA"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -39672,6 +40481,17 @@
       "IsTrick": false
     },
     {
+      "Id": "GRN Treadmills/Slot Machine - In MultiCoinBlock",
+      "RequiredItems": [
+        "Shy Guy's Toybox - GRN Treadmills/Slot Machine - RandomBlockItemA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "RED Station - Hidden Panel",
       "RequiredItems": [
         "Shy Guy's Toybox - RED Station - HiddenPanel"
@@ -39749,6 +40569,28 @@
       "IsTrick": false
     },
     {
+      "Id": "RED Moving Platforms - In SuperBlock",
+      "RequiredItems": [
+        "Shy Guy's Toybox - RED Moving Platforms - RandomBlockItemA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "RED Moving Platforms - In MultiCoinBlock",
+      "RequiredItems": [
+        "Shy Guy's Toybox - RED Moving Platforms - RandomBlockItemB"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "RED Lantern Ghost - Watt Partner",
       "RequiredItems": [
         "Shy Guy's Toybox - RED Lantern Ghost - Partner"
@@ -39818,6 +40660,17 @@
       "Id": "PNK Tracks Hallway - Yellow Block North 2",
       "RequiredItems": [
         "Shy Guy's Toybox - PNK Tracks Hallway - YBlockC"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "PNK Tracks Hallway - In MultiCoinBlock",
+      "RequiredItems": [
+        "Shy Guy's Toybox - PNK Tracks Hallway - RandomBlockItemA"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -40365,6 +41218,17 @@
       "IsTrick": false
     },
     {
+      "Id": "SW Jungle (Super Block) - In SuperBlock",
+      "RequiredItems": [
+        "Jade Jungle - SW Jungle (Super Block) - RandomBlockItemA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "NW Jungle (Large Ledge) - Bush 1",
       "RequiredItems": [
         "Jade Jungle - NW Jungle (Large Ledge) - Bush1_Drop1"
@@ -40618,6 +41482,17 @@
       "IsTrick": false
     },
     {
+      "Id": "Fire Bar Bridge - In SuperBlock",
+      "RequiredItems": [
+        "Mt Lavalava - Fire Bar Bridge - RandomBlockItemA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "Flowing Lava Puzzle - Hidden Block",
       "RequiredItems": [
         "Mt Lavalava - Flowing Lava Puzzle - HiddenYBlockA"
@@ -40654,6 +41529,17 @@
       "Id": "Zipline Cavern - Hidden Panel",
       "RequiredItems": [
         "Mt Lavalava - Zipline Cavern - HiddenPanel"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Zipline Cavern - In SuperBlock",
+      "RequiredItems": [
+        "Mt Lavalava - Zipline Cavern - RandomBlockItemA"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -40805,6 +41691,17 @@
       "IsTrick": false
     },
     {
+      "Id": "(SE) Briar Platforming - In SuperBlock",
+      "RequiredItems": [
+        "Flower Fields - (SE) Briar Platforming - RandomBlockItemA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "(East) Triple Tree Path - Tree Puzzle Reward",
       "RequiredItems": [
         "Flower Fields - (East) Triple Tree Path - Tree1_Drop1"
@@ -40841,6 +41738,17 @@
       "Id": "(SE) Lilys Fountain - In Tree",
       "RequiredItems": [
         "Flower Fields - (SE) Lily's Fountain - Tree1_Drop1A"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "(West) Maze - In MultiCoinBlock",
+      "RequiredItems": [
+        "Flower Fields - (West) Maze - RandomBlockItemA"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -40937,6 +41845,17 @@
       "IsTrick": false
     },
     {
+      "Id": "(NE) Elevators - In SuperBlock",
+      "RequiredItems": [
+        "Flower Fields - (NE) Elevators - RandomBlockItemA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "(NE) Fallen Logs - Hidden Block",
       "RequiredItems": [
         "Flower Fields - (NE) Fallen Logs - HiddenYBlockA"
@@ -40981,7 +41900,7 @@
       "IsTrick": false
     },
     {
-      "Id": "(West) Path to Maze - Lower Hidden Block",
+      "Id": "(West) Path to Maze - Upper Hidden Block",
       "RequiredItems": [
         "Flower Fields - (West) Path to Maze - HiddenYBlockA"
       ],
@@ -40992,7 +41911,7 @@
       "IsTrick": false
     },
     {
-      "Id": "(West) Path to Maze - Upper Hidden Block",
+      "Id": "(West) Path to Maze - Lower Hidden Block",
       "RequiredItems": [
         "Flower Fields - (West) Path to Maze - HiddenYBlockB"
       ],
@@ -41377,6 +42296,17 @@
       "IsTrick": false
     },
     {
+      "Id": "Shiver Mountain Hills - In SuperBlock",
+      "RequiredItems": [
+        "Shiver Region - Shiver Mountain Hills - RandomBlockItemA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "Shiver Mountain Tunnel - Socket 1",
       "RequiredItems": [
         "Shiver Region - Shiver Mountain Tunnel - ItemA"
@@ -41501,6 +42431,28 @@
       "Id": "P-Down, D-Up Room - In Chest",
       "RequiredItems": [
         "Crystal Palace - P-Down, D-Up Room - ChestA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Blue Mirror Hall 2 - In MultiCoinBlock Front",
+      "RequiredItems": [
+        "Crystal Palace - Blue Mirror Hall 2 - RandomBlockItemA"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Blue Mirror Hall 2 - In MultiCoinBlock Back",
+      "RequiredItems": [
+        "Crystal Palace - Blue Mirror Hall 2 - RandomBlockItemB"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -42250,6 +43202,17 @@
       "IsTrick": false
     },
     {
+      "Id": "RF_ForeverForestBackwards",
+      "RequiredItems": [
+        "false"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "Spawn => Toad Town - Gate District - Pipe to Mario's House",
       "RequiredItems": [
         "setting{StartingMap, 65796}"
@@ -42304,15 +43267,6 @@
     },
     {
       "Id": "RF_OutOfLogic",
-      "RequiredItems": [],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "Tubba's Castle - Outside Tubbas Castle - Exit Left => Gusty Gulch - Wasteland Ascent 2 - Exit Right",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
