@@ -88,9 +88,19 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                             ParsedConditional = $"{Gamecode}_EVENT_{Param}";
                             FunctionParsed = true;
                             break;
-                        case "soul":
-                            string SoulSetting = OriginalGamecode == "MM" ? "enemySoulsMm" : "enemySoulsOot";
-                            ParsedConditional = $"({Gamecode}_{Param} || var{{{SoulSetting}, false}})";
+                        case "soul_enemy":
+                            string EnemySoulSetting = OriginalGamecode == "MM" ? "soulsEnemyMm" : "soulsEnemyOot";
+                            ParsedConditional = $"({Gamecode}_{Param} || var{{{EnemySoulSetting}, false}})";
+                            FunctionParsed = true;
+                            break;
+                        case "soul_boss":
+                            string BossSoulSetting = OriginalGamecode == "MM" ? "soulsBossMm" : "soulsBossOot";
+                            ParsedConditional = $"({Gamecode}_{Param} || var{{{BossSoulSetting}, false}})";
+                            FunctionParsed = true;
+                            break;
+                        case "soul_npc":
+                            string NPCSoulSetting = OriginalGamecode == "MM" ? "soulsNpcMm" : "soulsNpcOot";
+                            ParsedConditional = $"({Gamecode}_{Param} || var{{{NPCSoulSetting}, false}})";
                             FunctionParsed = true;
                             break;
                         case "has":

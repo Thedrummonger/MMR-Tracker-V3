@@ -78491,8 +78491,8 @@
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_STALFOS": {
-      "ID": "OOT_SOUL_STALFOS",
+    "OOT_SOUL_ENEMY_STALFOS": {
+      "ID": "OOT_SOUL_ENEMY_STALFOS",
       "Name": "Soul of Stalfos (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -78501,15 +78501,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_STALFOS",
+          "OOT_SOUL_ENEMY_STALFOS",
           "Soul of Stalfos (OoT)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_OCTOROK": {
-      "ID": "OOT_SOUL_OCTOROK",
+    "OOT_SOUL_ENEMY_OCTOROK": {
+      "ID": "OOT_SOUL_ENEMY_OCTOROK",
       "Name": "Soul of Octoroks (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -78518,15 +78518,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_OCTOROK",
+          "OOT_SOUL_ENEMY_OCTOROK",
           "Soul of Octoroks (OoT)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_WALLMASTER": {
-      "ID": "OOT_SOUL_WALLMASTER",
+    "OOT_SOUL_ENEMY_WALLMASTER": {
+      "ID": "OOT_SOUL_ENEMY_WALLMASTER",
       "Name": "Soul of Wallmasters (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -78535,15 +78535,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_WALLMASTER",
+          "OOT_SOUL_ENEMY_WALLMASTER",
           "Soul of Wallmasters (OoT)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_DODONGO": {
-      "ID": "OOT_SOUL_DODONGO",
+    "OOT_SOUL_ENEMY_DODONGO": {
+      "ID": "OOT_SOUL_ENEMY_DODONGO",
       "Name": "Soul of Dodongos (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -78552,15 +78552,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_DODONGO",
+          "OOT_SOUL_ENEMY_DODONGO",
           "Soul of Dodongos (OoT)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_KEESE": {
-      "ID": "OOT_SOUL_KEESE",
+    "OOT_SOUL_ENEMY_KEESE": {
+      "ID": "OOT_SOUL_ENEMY_KEESE",
       "Name": "Soul of Keese (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -78569,15 +78569,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_KEESE",
+          "OOT_SOUL_ENEMY_KEESE",
           "Soul of Keese (OoT)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_TEKTITE": {
-      "ID": "OOT_SOUL_TEKTITE",
+    "OOT_SOUL_ENEMY_TEKTITE": {
+      "ID": "OOT_SOUL_ENEMY_TEKTITE",
       "Name": "Soul of Tektites (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -78586,15 +78586,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_TEKTITE",
+          "OOT_SOUL_ENEMY_TEKTITE",
           "Soul of Tektites (OoT)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_LEEVER": {
-      "ID": "OOT_SOUL_LEEVER",
+    "OOT_SOUL_ENEMY_LEEVER": {
+      "ID": "OOT_SOUL_ENEMY_LEEVER",
       "Name": "Soul of Leevers (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -78603,15 +78603,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_LEEVER",
+          "OOT_SOUL_ENEMY_LEEVER",
           "Soul of Leevers (OoT)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_PEAHAT": {
-      "ID": "OOT_SOUL_PEAHAT",
+    "OOT_SOUL_ENEMY_PEAHAT": {
+      "ID": "OOT_SOUL_ENEMY_PEAHAT",
       "Name": "Soul of Peahats (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -78620,15 +78620,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_PEAHAT",
+          "OOT_SOUL_ENEMY_PEAHAT",
           "Soul of Peahats (OoT)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_LIZALFOS_DINALFOS": {
-      "ID": "OOT_SOUL_LIZALFOS_DINALFOS",
+    "OOT_SOUL_ENEMY_LIZALFOS_DINALFOS": {
+      "ID": "OOT_SOUL_ENEMY_LIZALFOS_DINALFOS",
       "Name": "Soul of Lizalfos/Dinolfos (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -78637,15 +78637,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_LIZALFOS_DINALFOS",
+          "OOT_SOUL_ENEMY_LIZALFOS_DINALFOS",
           "Soul of Lizalfos/Dinolfos (OoT)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_GOHMA_LARVA": {
-      "ID": "OOT_SOUL_GOHMA_LARVA",
+    "OOT_SOUL_ENEMY_GOHMA_LARVA": {
+      "ID": "OOT_SOUL_ENEMY_GOHMA_LARVA",
       "Name": "Soul of Gohma Larvaes",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -78654,15 +78654,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_GOHMA_LARVA",
+          "OOT_SOUL_ENEMY_GOHMA_LARVA",
           "Soul of Gohma Larvaes"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_SHABOM": {
-      "ID": "OOT_SOUL_SHABOM",
+    "OOT_SOUL_ENEMY_SHABOM": {
+      "ID": "OOT_SOUL_ENEMY_SHABOM",
       "Name": "Soul of Shaboms",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -78671,15 +78671,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_SHABOM",
+          "OOT_SOUL_ENEMY_SHABOM",
           "Soul of Shaboms"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_BABY_DODONGO": {
-      "ID": "OOT_SOUL_BABY_DODONGO",
+    "OOT_SOUL_ENEMY_BABY_DODONGO": {
+      "ID": "OOT_SOUL_ENEMY_BABY_DODONGO",
       "Name": "Soul of Baby Dodongos",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -78688,15 +78688,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_BABY_DODONGO",
+          "OOT_SOUL_ENEMY_BABY_DODONGO",
           "Soul of Baby Dodongos"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_DARK_LINK": {
-      "ID": "OOT_SOUL_DARK_LINK",
+    "OOT_SOUL_ENEMY_DARK_LINK": {
+      "ID": "OOT_SOUL_ENEMY_DARK_LINK",
       "Name": "Soul of Dark Link",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -78705,15 +78705,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_DARK_LINK",
+          "OOT_SOUL_ENEMY_DARK_LINK",
           "Soul of Dark Link"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_BIRI_BARI": {
-      "ID": "OOT_SOUL_BIRI_BARI",
+    "OOT_SOUL_ENEMY_BIRI_BARI": {
+      "ID": "OOT_SOUL_ENEMY_BIRI_BARI",
       "Name": "Soul of Biris/Baris",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -78722,15 +78722,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_BIRI_BARI",
+          "OOT_SOUL_ENEMY_BIRI_BARI",
           "Soul of Biris/Baris"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_TAILPASARN": {
-      "ID": "OOT_SOUL_TAILPASARN",
+    "OOT_SOUL_ENEMY_TAILPASARN": {
+      "ID": "OOT_SOUL_ENEMY_TAILPASARN",
       "Name": "Soul of Tailpasarans",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -78739,15 +78739,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_TAILPASARN",
+          "OOT_SOUL_ENEMY_TAILPASARN",
           "Soul of Tailpasarans"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_PARASITE": {
-      "ID": "OOT_SOUL_PARASITE",
+    "OOT_SOUL_ENEMY_PARASITE": {
+      "ID": "OOT_SOUL_ENEMY_PARASITE",
       "Name": "Soul of Jabu-Jabu's Parasites",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -78756,15 +78756,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_PARASITE",
+          "OOT_SOUL_ENEMY_PARASITE",
           "Soul of Jabu-Jabu's Parasites"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_SKULLTULA": {
-      "ID": "OOT_SOUL_SKULLTULA",
+    "OOT_SOUL_ENEMY_SKULLTULA": {
+      "ID": "OOT_SOUL_ENEMY_SKULLTULA",
       "Name": "Soul of Skulltulas (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -78773,15 +78773,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_SKULLTULA",
+          "OOT_SOUL_ENEMY_SKULLTULA",
           "Soul of Skulltulas (OoT)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_TORCH_SLUG": {
-      "ID": "OOT_SOUL_TORCH_SLUG",
+    "OOT_SOUL_ENEMY_TORCH_SLUG": {
+      "ID": "OOT_SOUL_ENEMY_TORCH_SLUG",
       "Name": "Soul of Torch Slugs",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -78790,15 +78790,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
           "Soul of Torch Slugs"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_MOBLIN": {
-      "ID": "OOT_SOUL_MOBLIN",
+    "OOT_SOUL_ENEMY_MOBLIN": {
+      "ID": "OOT_SOUL_ENEMY_MOBLIN",
       "Name": "Soul of Moblins",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -78807,15 +78807,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_MOBLIN",
+          "OOT_SOUL_ENEMY_MOBLIN",
           "Soul of Moblins"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_ARMOS": {
-      "ID": "OOT_SOUL_ARMOS",
+    "OOT_SOUL_ENEMY_ARMOS": {
+      "ID": "OOT_SOUL_ENEMY_ARMOS",
       "Name": "Soul of Armos (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -78824,15 +78824,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_ARMOS",
+          "OOT_SOUL_ENEMY_ARMOS",
           "Soul of Armos (OoT)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_DEKU_BABA": {
-      "ID": "OOT_SOUL_DEKU_BABA",
+    "OOT_SOUL_ENEMY_DEKU_BABA": {
+      "ID": "OOT_SOUL_ENEMY_DEKU_BABA",
       "Name": "Soul of Deku Babas (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -78841,15 +78841,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_DEKU_BABA",
+          "OOT_SOUL_ENEMY_DEKU_BABA",
           "Soul of Deku Babas (OoT)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_DEKU_SCRUB": {
-      "ID": "OOT_SOUL_DEKU_SCRUB",
+    "OOT_SOUL_ENEMY_DEKU_SCRUB": {
+      "ID": "OOT_SOUL_ENEMY_DEKU_SCRUB",
       "Name": "Soul of Deku Scrubs (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -78858,15 +78858,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_DEKU_SCRUB",
+          "OOT_SOUL_ENEMY_DEKU_SCRUB",
           "Soul of Deku Scrubs (OoT)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_BUBBLE": {
-      "ID": "OOT_SOUL_BUBBLE",
+    "OOT_SOUL_ENEMY_BUBBLE": {
+      "ID": "OOT_SOUL_ENEMY_BUBBLE",
       "Name": "Soul of Bubbles (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -78875,15 +78875,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_BUBBLE",
+          "OOT_SOUL_ENEMY_BUBBLE",
           "Soul of Bubbles (OoT)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_BEAMOS": {
-      "ID": "OOT_SOUL_BEAMOS",
+    "OOT_SOUL_ENEMY_BEAMOS": {
+      "ID": "OOT_SOUL_ENEMY_BEAMOS",
       "Name": "Soul of Beamos (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -78892,15 +78892,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_BEAMOS",
+          "OOT_SOUL_ENEMY_BEAMOS",
           "Soul of Beamos (OoT)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_FLOORMASTER": {
-      "ID": "OOT_SOUL_FLOORMASTER",
+    "OOT_SOUL_ENEMY_FLOORMASTER": {
+      "ID": "OOT_SOUL_ENEMY_FLOORMASTER",
       "Name": "Soul of Floormasters (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -78909,15 +78909,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_FLOORMASTER",
+          "OOT_SOUL_ENEMY_FLOORMASTER",
           "Soul of Floormasters (OoT)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_REDEAD_GIBDO": {
-      "ID": "OOT_SOUL_REDEAD_GIBDO",
+    "OOT_SOUL_ENEMY_REDEAD_GIBDO": {
+      "ID": "OOT_SOUL_ENEMY_REDEAD_GIBDO",
       "Name": "Soul of ReDeads/Gibdos (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -78926,15 +78926,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_REDEAD_GIBDO",
+          "OOT_SOUL_ENEMY_REDEAD_GIBDO",
           "Soul of ReDeads/Gibdos (OoT)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_SKULLWALLTULA": {
-      "ID": "OOT_SOUL_SKULLWALLTULA",
+    "OOT_SOUL_ENEMY_SKULLWALLTULA": {
+      "ID": "OOT_SOUL_ENEMY_SKULLWALLTULA",
       "Name": "Soul of Skullwalltulas (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -78943,15 +78943,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_SKULLWALLTULA",
+          "OOT_SOUL_ENEMY_SKULLWALLTULA",
           "Soul of Skullwalltulas (OoT)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_FLARE_DANCER": {
-      "ID": "OOT_SOUL_FLARE_DANCER",
+    "OOT_SOUL_ENEMY_FLARE_DANCER": {
+      "ID": "OOT_SOUL_ENEMY_FLARE_DANCER",
       "Name": "Soul of Flare Dancers",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -78960,15 +78960,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_FLARE_DANCER",
+          "OOT_SOUL_ENEMY_FLARE_DANCER",
           "Soul of Flare Dancers"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_DEAD_HAND": {
-      "ID": "OOT_SOUL_DEAD_HAND",
+    "OOT_SOUL_ENEMY_DEAD_HAND": {
+      "ID": "OOT_SOUL_ENEMY_DEAD_HAND",
       "Name": "Soul of Dead Hands",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -78977,15 +78977,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_DEAD_HAND",
+          "OOT_SOUL_ENEMY_DEAD_HAND",
           "Soul of Dead Hands"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_SHELL_BLADE": {
-      "ID": "OOT_SOUL_SHELL_BLADE",
+    "OOT_SOUL_ENEMY_SHELL_BLADE": {
+      "ID": "OOT_SOUL_ENEMY_SHELL_BLADE",
       "Name": "Soul of Shell Blades (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -78994,15 +78994,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_SHELL_BLADE",
+          "OOT_SOUL_ENEMY_SHELL_BLADE",
           "Soul of Shell Blades (OoT)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_LIKE_LIKE": {
-      "ID": "OOT_SOUL_LIKE_LIKE",
+    "OOT_SOUL_ENEMY_LIKE_LIKE": {
+      "ID": "OOT_SOUL_ENEMY_LIKE_LIKE",
       "Name": "Soul of Like Likes (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79011,15 +79011,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_LIKE_LIKE",
+          "OOT_SOUL_ENEMY_LIKE_LIKE",
           "Soul of Like Likes (OoT)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_SPIKE": {
-      "ID": "OOT_SOUL_SPIKE",
+    "OOT_SOUL_ENEMY_SPIKE": {
+      "ID": "OOT_SOUL_ENEMY_SPIKE",
       "Name": "Soul of Spikes",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79028,15 +79028,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_SPIKE",
+          "OOT_SOUL_ENEMY_SPIKE",
           "Soul of Spikes"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_ANUBIS": {
-      "ID": "OOT_SOUL_ANUBIS",
+    "OOT_SOUL_ENEMY_ANUBIS": {
+      "ID": "OOT_SOUL_ENEMY_ANUBIS",
       "Name": "Soul of Anubis",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79045,15 +79045,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_ANUBIS",
+          "OOT_SOUL_ENEMY_ANUBIS",
           "Soul of Anubis"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_IRON_KNUCKLE": {
-      "ID": "OOT_SOUL_IRON_KNUCKLE",
+    "OOT_SOUL_ENEMY_IRON_KNUCKLE": {
+      "ID": "OOT_SOUL_ENEMY_IRON_KNUCKLE",
       "Name": "Soul of Iron Knuckles (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79062,15 +79062,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_IRON_KNUCKLE",
+          "OOT_SOUL_ENEMY_IRON_KNUCKLE",
           "Soul of Iron Knuckles (OoT)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_SKULL_KID": {
-      "ID": "OOT_SOUL_SKULL_KID",
+    "OOT_SOUL_ENEMY_SKULL_KID": {
+      "ID": "OOT_SOUL_ENEMY_SKULL_KID",
       "Name": "Soul of Skull Kids (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79079,15 +79079,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_SKULL_KID",
+          "OOT_SOUL_ENEMY_SKULL_KID",
           "Soul of Skull Kids (OoT)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_FLYING_POT": {
-      "ID": "OOT_SOUL_FLYING_POT",
+    "OOT_SOUL_ENEMY_FLYING_POT": {
+      "ID": "OOT_SOUL_ENEMY_FLYING_POT",
       "Name": "Soul of Flying Pots (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79096,15 +79096,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_FLYING_POT",
+          "OOT_SOUL_ENEMY_FLYING_POT",
           "Soul of Flying Pots (OoT)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_FREEZARD": {
-      "ID": "OOT_SOUL_FREEZARD",
+    "OOT_SOUL_ENEMY_FREEZARD": {
+      "ID": "OOT_SOUL_ENEMY_FREEZARD",
       "Name": "Soul of Freezards (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79113,15 +79113,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_FREEZARD",
+          "OOT_SOUL_ENEMY_FREEZARD",
           "Soul of Freezards (OoT)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_STINGER": {
-      "ID": "OOT_SOUL_STINGER",
+    "OOT_SOUL_ENEMY_STINGER": {
+      "ID": "OOT_SOUL_ENEMY_STINGER",
       "Name": "Soul of Stingers",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79130,15 +79130,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_STINGER",
+          "OOT_SOUL_ENEMY_STINGER",
           "Soul of Stingers"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_WOLFOS": {
-      "ID": "OOT_SOUL_WOLFOS",
+    "OOT_SOUL_ENEMY_WOLFOS": {
+      "ID": "OOT_SOUL_ENEMY_WOLFOS",
       "Name": "Soul of Wolfoses (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79147,15 +79147,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_WOLFOS",
+          "OOT_SOUL_ENEMY_WOLFOS",
           "Soul of Wolfoses (OoT)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_STALCHILD": {
-      "ID": "OOT_SOUL_STALCHILD",
+    "OOT_SOUL_ENEMY_STALCHILD": {
+      "ID": "OOT_SOUL_ENEMY_STALCHILD",
       "Name": "Soul of Stalchildren (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79164,15 +79164,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_STALCHILD",
+          "OOT_SOUL_ENEMY_STALCHILD",
           "Soul of Stalchildren (OoT)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_GUAY": {
-      "ID": "OOT_SOUL_GUAY",
+    "OOT_SOUL_ENEMY_GUAY": {
+      "ID": "OOT_SOUL_ENEMY_GUAY",
       "Name": "Soul of Guays (OoT)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79181,15 +79181,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_GUAY",
+          "OOT_SOUL_ENEMY_GUAY",
           "Soul of Guays (OoT)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_QUEEN_GOHMA": {
-      "ID": "OOT_SOUL_QUEEN_GOHMA",
+    "OOT_SOUL_BOSS_QUEEN_GOHMA": {
+      "ID": "OOT_SOUL_BOSS_QUEEN_GOHMA",
       "Name": "Soul of Queen Gohma",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79198,15 +79198,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_QUEEN_GOHMA",
+          "OOT_SOUL_BOSS_QUEEN_GOHMA",
           "Soul of Queen Gohma"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_KING_DODONGO": {
-      "ID": "OOT_SOUL_KING_DODONGO",
+    "OOT_SOUL_BOSS_KING_DODONGO": {
+      "ID": "OOT_SOUL_BOSS_KING_DODONGO",
       "Name": "Soul of King Dodongo",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79215,15 +79215,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_KING_DODONGO",
+          "OOT_SOUL_BOSS_KING_DODONGO",
           "Soul of King Dodongo"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_BARINADE": {
-      "ID": "OOT_SOUL_BARINADE",
+    "OOT_SOUL_BOSS_BARINADE": {
+      "ID": "OOT_SOUL_BOSS_BARINADE",
       "Name": "Soul of Barinade",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79232,15 +79232,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_BARINADE",
+          "OOT_SOUL_BOSS_BARINADE",
           "Soul of Barinade"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_PHANTOM_GANON": {
-      "ID": "OOT_SOUL_PHANTOM_GANON",
+    "OOT_SOUL_BOSS_PHANTOM_GANON": {
+      "ID": "OOT_SOUL_BOSS_PHANTOM_GANON",
       "Name": "Soul of Phantom Ganon",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79249,15 +79249,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_PHANTOM_GANON",
+          "OOT_SOUL_BOSS_PHANTOM_GANON",
           "Soul of Phantom Ganon"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_VOLVAGIA": {
-      "ID": "OOT_SOUL_VOLVAGIA",
+    "OOT_SOUL_BOSS_VOLVAGIA": {
+      "ID": "OOT_SOUL_BOSS_VOLVAGIA",
       "Name": "Soul of Volvagia",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79266,15 +79266,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_VOLVAGIA",
+          "OOT_SOUL_BOSS_VOLVAGIA",
           "Soul of Volvagia"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_MORPHA": {
-      "ID": "OOT_SOUL_MORPHA",
+    "OOT_SOUL_BOSS_MORPHA": {
+      "ID": "OOT_SOUL_BOSS_MORPHA",
       "Name": "Soul of Morpha",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79283,15 +79283,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_MORPHA",
+          "OOT_SOUL_BOSS_MORPHA",
           "Soul of Morpha"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_BONGO_BONGO": {
-      "ID": "OOT_SOUL_BONGO_BONGO",
+    "OOT_SOUL_BOSS_BONGO_BONGO": {
+      "ID": "OOT_SOUL_BOSS_BONGO_BONGO",
       "Name": "Soul of Bongo Bongo",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79300,15 +79300,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_BONGO_BONGO",
+          "OOT_SOUL_BOSS_BONGO_BONGO",
           "Soul of Bongo Bongo"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "OOT_SOUL_TWINROVA": {
-      "ID": "OOT_SOUL_TWINROVA",
+    "OOT_SOUL_BOSS_TWINROVA": {
+      "ID": "OOT_SOUL_BOSS_TWINROVA",
       "Name": "Soul of Twinrova",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79317,15 +79317,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "OOT_SOUL_TWINROVA",
+          "OOT_SOUL_BOSS_TWINROVA",
           "Soul of Twinrova"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_OCTOROK": {
-      "ID": "MM_SOUL_OCTOROK",
+    "MM_SOUL_ENEMY_OCTOROK": {
+      "ID": "MM_SOUL_ENEMY_OCTOROK",
       "Name": "Soul of Octoroks (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79334,15 +79334,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_OCTOROK",
+          "MM_SOUL_ENEMY_OCTOROK",
           "Soul of Octoroks (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_WALLMASTER": {
-      "ID": "MM_SOUL_WALLMASTER",
+    "MM_SOUL_ENEMY_WALLMASTER": {
+      "ID": "MM_SOUL_ENEMY_WALLMASTER",
       "Name": "Soul of Wallmasters (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79351,15 +79351,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_WALLMASTER",
+          "MM_SOUL_ENEMY_WALLMASTER",
           "Soul of Wallmasters (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_DODONGO": {
-      "ID": "MM_SOUL_DODONGO",
+    "MM_SOUL_ENEMY_DODONGO": {
+      "ID": "MM_SOUL_ENEMY_DODONGO",
       "Name": "Soul of Dodongos (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79368,15 +79368,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_DODONGO",
+          "MM_SOUL_ENEMY_DODONGO",
           "Soul of Dodongos (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_KEESE": {
-      "ID": "MM_SOUL_KEESE",
+    "MM_SOUL_ENEMY_KEESE": {
+      "ID": "MM_SOUL_ENEMY_KEESE",
       "Name": "Soul of Keese (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79385,15 +79385,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_KEESE",
+          "MM_SOUL_ENEMY_KEESE",
           "Soul of Keese (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_TEKTITE": {
-      "ID": "MM_SOUL_TEKTITE",
+    "MM_SOUL_ENEMY_TEKTITE": {
+      "ID": "MM_SOUL_ENEMY_TEKTITE",
       "Name": "Soul of Tektites (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79402,15 +79402,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_TEKTITE",
+          "MM_SOUL_ENEMY_TEKTITE",
           "Soul of Tektites (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_PEAHAT": {
-      "ID": "MM_SOUL_PEAHAT",
+    "MM_SOUL_ENEMY_PEAHAT": {
+      "ID": "MM_SOUL_ENEMY_PEAHAT",
       "Name": "Soul of Peahats (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79419,15 +79419,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_PEAHAT",
+          "MM_SOUL_ENEMY_PEAHAT",
           "Soul of Peahats (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_LIZALFOS_DINALFOS": {
-      "ID": "MM_SOUL_LIZALFOS_DINALFOS",
+    "MM_SOUL_ENEMY_LIZALFOS_DINALFOS": {
+      "ID": "MM_SOUL_ENEMY_LIZALFOS_DINALFOS",
       "Name": "Soul of Lizalfos/Dinolfos (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79436,15 +79436,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_LIZALFOS_DINALFOS",
+          "MM_SOUL_ENEMY_LIZALFOS_DINALFOS",
           "Soul of Lizalfos/Dinolfos (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_SKULLTULA": {
-      "ID": "MM_SOUL_SKULLTULA",
+    "MM_SOUL_ENEMY_SKULLTULA": {
+      "ID": "MM_SOUL_ENEMY_SKULLTULA",
       "Name": "Soul of Skulltulas (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79453,15 +79453,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_SKULLTULA",
+          "MM_SOUL_ENEMY_SKULLTULA",
           "Soul of Skulltulas (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_ARMOS": {
-      "ID": "MM_SOUL_ARMOS",
+    "MM_SOUL_ENEMY_ARMOS": {
+      "ID": "MM_SOUL_ENEMY_ARMOS",
       "Name": "Soul of Armos (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79470,15 +79470,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_ARMOS",
+          "MM_SOUL_ENEMY_ARMOS",
           "Soul of Armos (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_DEKU_BABA": {
-      "ID": "MM_SOUL_DEKU_BABA",
+    "MM_SOUL_ENEMY_DEKU_BABA": {
+      "ID": "MM_SOUL_ENEMY_DEKU_BABA",
       "Name": "Soul of Deku Babas (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79487,15 +79487,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_DEKU_BABA",
+          "MM_SOUL_ENEMY_DEKU_BABA",
           "Soul of Deku Babas (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_DEKU_SCRUB": {
-      "ID": "MM_SOUL_DEKU_SCRUB",
+    "MM_SOUL_ENEMY_DEKU_SCRUB": {
+      "ID": "MM_SOUL_ENEMY_DEKU_SCRUB",
       "Name": "Soul of Deku Scrubs (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79504,15 +79504,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_DEKU_SCRUB",
+          "MM_SOUL_ENEMY_DEKU_SCRUB",
           "Soul of Deku Scrubs (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_BUBBLE": {
-      "ID": "MM_SOUL_BUBBLE",
+    "MM_SOUL_ENEMY_BUBBLE": {
+      "ID": "MM_SOUL_ENEMY_BUBBLE",
       "Name": "Soul of Bubbles (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79521,15 +79521,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_BUBBLE",
+          "MM_SOUL_ENEMY_BUBBLE",
           "Soul of Bubbles (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_BEAMOS": {
-      "ID": "MM_SOUL_BEAMOS",
+    "MM_SOUL_ENEMY_BEAMOS": {
+      "ID": "MM_SOUL_ENEMY_BEAMOS",
       "Name": "Soul of Beamos (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79538,15 +79538,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_BEAMOS",
+          "MM_SOUL_ENEMY_BEAMOS",
           "Soul of Beamos (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_REDEAD_GIBDO": {
-      "ID": "MM_SOUL_REDEAD_GIBDO",
+    "MM_SOUL_ENEMY_REDEAD_GIBDO": {
+      "ID": "MM_SOUL_ENEMY_REDEAD_GIBDO",
       "Name": "Soul of ReDeads/Gibdos (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79555,15 +79555,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_REDEAD_GIBDO",
+          "MM_SOUL_ENEMY_REDEAD_GIBDO",
           "Soul of ReDeads/Gibdos (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_SKULLWALLTULA": {
-      "ID": "MM_SOUL_SKULLWALLTULA",
+    "MM_SOUL_ENEMY_SKULLWALLTULA": {
+      "ID": "MM_SOUL_ENEMY_SKULLWALLTULA",
       "Name": "Soul of Skullwalltulas (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79572,15 +79572,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_SKULLWALLTULA",
+          "MM_SOUL_ENEMY_SKULLWALLTULA",
           "Soul of Skullwalltulas (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_SHELL_BLADE": {
-      "ID": "MM_SOUL_SHELL_BLADE",
+    "MM_SOUL_ENEMY_SHELL_BLADE": {
+      "ID": "MM_SOUL_ENEMY_SHELL_BLADE",
       "Name": "Soul of Shell Blades (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79589,15 +79589,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_SHELL_BLADE",
+          "MM_SOUL_ENEMY_SHELL_BLADE",
           "Soul of Shell Blades (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_LIKE_LIKE": {
-      "ID": "MM_SOUL_LIKE_LIKE",
+    "MM_SOUL_ENEMY_LIKE_LIKE": {
+      "ID": "MM_SOUL_ENEMY_LIKE_LIKE",
       "Name": "Soul of Like Likes (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79606,15 +79606,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_LIKE_LIKE",
+          "MM_SOUL_ENEMY_LIKE_LIKE",
           "Soul of Like Likes (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_IRON_KNUCKLE": {
-      "ID": "MM_SOUL_IRON_KNUCKLE",
+    "MM_SOUL_ENEMY_IRON_KNUCKLE": {
+      "ID": "MM_SOUL_ENEMY_IRON_KNUCKLE",
       "Name": "Soul of Iron Knuckles (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79623,15 +79623,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_IRON_KNUCKLE",
+          "MM_SOUL_ENEMY_IRON_KNUCKLE",
           "Soul of Iron Knuckles (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_FREEZARD": {
-      "ID": "MM_SOUL_FREEZARD",
+    "MM_SOUL_ENEMY_FREEZARD": {
+      "ID": "MM_SOUL_ENEMY_FREEZARD",
       "Name": "Soul of Freezards (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79640,15 +79640,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_FREEZARD",
+          "MM_SOUL_ENEMY_FREEZARD",
           "Soul of Freezards (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_WOLFOS": {
-      "ID": "MM_SOUL_WOLFOS",
+    "MM_SOUL_ENEMY_WOLFOS": {
+      "ID": "MM_SOUL_ENEMY_WOLFOS",
       "Name": "Soul of Wolfos (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79657,15 +79657,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_WOLFOS",
+          "MM_SOUL_ENEMY_WOLFOS",
           "Soul of Wolfos (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_GUAY": {
-      "ID": "MM_SOUL_GUAY",
+    "MM_SOUL_ENEMY_GUAY": {
+      "ID": "MM_SOUL_ENEMY_GUAY",
       "Name": "Soul of Guays (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79674,15 +79674,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_GUAY",
+          "MM_SOUL_ENEMY_GUAY",
           "Soul of Guays (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_FLYING_POT": {
-      "ID": "MM_SOUL_FLYING_POT",
+    "MM_SOUL_ENEMY_FLYING_POT": {
+      "ID": "MM_SOUL_ENEMY_FLYING_POT",
       "Name": "Soul of Flying Pots (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79691,15 +79691,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_FLYING_POT",
+          "MM_SOUL_ENEMY_FLYING_POT",
           "Soul of Flying Pots (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_FLOORMASTER": {
-      "ID": "MM_SOUL_FLOORMASTER",
+    "MM_SOUL_ENEMY_FLOORMASTER": {
+      "ID": "MM_SOUL_ENEMY_FLOORMASTER",
       "Name": "Soul of Floormasters (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79708,15 +79708,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_FLOORMASTER",
+          "MM_SOUL_ENEMY_FLOORMASTER",
           "Soul of Floormasters (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_CHUCHU": {
-      "ID": "MM_SOUL_CHUCHU",
+    "MM_SOUL_ENEMY_CHUCHU": {
+      "ID": "MM_SOUL_ENEMY_CHUCHU",
       "Name": "Soul of Chuchus (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79725,15 +79725,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_CHUCHU",
+          "MM_SOUL_ENEMY_CHUCHU",
           "Soul of Chuchus (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_DEEP_PYTHON": {
-      "ID": "MM_SOUL_DEEP_PYTHON",
+    "MM_SOUL_ENEMY_DEEP_PYTHON": {
+      "ID": "MM_SOUL_ENEMY_DEEP_PYTHON",
       "Name": "Soul of Deep Python (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79742,15 +79742,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_DEEP_PYTHON",
+          "MM_SOUL_ENEMY_DEEP_PYTHON",
           "Soul of Deep Python (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_STALCHILD": {
-      "ID": "MM_SOUL_STALCHILD",
+    "MM_SOUL_ENEMY_STALCHILD": {
+      "ID": "MM_SOUL_ENEMY_STALCHILD",
       "Name": "Soul of Stalchildren (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79759,15 +79759,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_STALCHILD",
+          "MM_SOUL_ENEMY_STALCHILD",
           "Soul of Stalchildren (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_LEEVER": {
-      "ID": "MM_SOUL_LEEVER",
+    "MM_SOUL_ENEMY_LEEVER": {
+      "ID": "MM_SOUL_ENEMY_LEEVER",
       "Name": "Soul of Leevers (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79776,15 +79776,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_LEEVER",
+          "MM_SOUL_ENEMY_LEEVER",
           "Soul of Leevers (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_SKULLFISH": {
-      "ID": "MM_SOUL_SKULLFISH",
+    "MM_SOUL_ENEMY_SKULLFISH": {
+      "ID": "MM_SOUL_ENEMY_SKULLFISH",
       "Name": "Soul of Skullfish (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79793,15 +79793,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_SKULLFISH",
+          "MM_SOUL_ENEMY_SKULLFISH",
           "Soul of Skullfish (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_DEXIHAND": {
-      "ID": "MM_SOUL_DEXIHAND",
+    "MM_SOUL_ENEMY_DEXIHAND": {
+      "ID": "MM_SOUL_ENEMY_DEXIHAND",
       "Name": "Soul of Dexihands (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79810,15 +79810,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_DEXIHAND",
+          "MM_SOUL_ENEMY_DEXIHAND",
           "Soul of Dexihands (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_DRAGONFLY": {
-      "ID": "MM_SOUL_DRAGONFLY",
+    "MM_SOUL_ENEMY_DRAGONFLY": {
+      "ID": "MM_SOUL_ENEMY_DRAGONFLY",
       "Name": "Soul of Dragonflies (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79827,15 +79827,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_DRAGONFLY",
+          "MM_SOUL_ENEMY_DRAGONFLY",
           "Soul of Dragonflies (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_EENO": {
-      "ID": "MM_SOUL_EENO",
+    "MM_SOUL_ENEMY_EENO": {
+      "ID": "MM_SOUL_ENEMY_EENO",
       "Name": "Soul of Eenoes (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79844,15 +79844,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_EENO",
+          "MM_SOUL_ENEMY_EENO",
           "Soul of Eenoes (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_EYEGORE": {
-      "ID": "MM_SOUL_EYEGORE",
+    "MM_SOUL_ENEMY_EYEGORE": {
+      "ID": "MM_SOUL_ENEMY_EYEGORE",
       "Name": "Soul of Eyegores (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79861,15 +79861,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_EYEGORE",
+          "MM_SOUL_ENEMY_EYEGORE",
           "Soul of Eyegores (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_HIPLOOP": {
-      "ID": "MM_SOUL_HIPLOOP",
+    "MM_SOUL_ENEMY_HIPLOOP": {
+      "ID": "MM_SOUL_ENEMY_HIPLOOP",
       "Name": "Soul of Hiploops (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79878,15 +79878,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_HIPLOOP",
+          "MM_SOUL_ENEMY_HIPLOOP",
           "Soul of Hiploops (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_REAL_BOMBCHU": {
-      "ID": "MM_SOUL_REAL_BOMBCHU",
+    "MM_SOUL_ENEMY_REAL_BOMBCHU": {
+      "ID": "MM_SOUL_ENEMY_REAL_BOMBCHU",
       "Name": "Soul of Real Bombchus (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79895,15 +79895,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_REAL_BOMBCHU",
+          "MM_SOUL_ENEMY_REAL_BOMBCHU",
           "Soul of Real Bombchus (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_TAKKURI": {
-      "ID": "MM_SOUL_TAKKURI",
+    "MM_SOUL_ENEMY_TAKKURI": {
+      "ID": "MM_SOUL_ENEMY_TAKKURI",
       "Name": "Soul of Takkuri (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79912,15 +79912,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_TAKKURI",
+          "MM_SOUL_ENEMY_TAKKURI",
           "Soul of Takkuri (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_BOE": {
-      "ID": "MM_SOUL_BOE",
+    "MM_SOUL_ENEMY_BOE": {
+      "ID": "MM_SOUL_ENEMY_BOE",
       "Name": "Soul of Boes (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79929,15 +79929,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_BOE",
+          "MM_SOUL_ENEMY_BOE",
           "Soul of Boes (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_NEJIRON": {
-      "ID": "MM_SOUL_NEJIRON",
+    "MM_SOUL_ENEMY_NEJIRON": {
+      "ID": "MM_SOUL_ENEMY_NEJIRON",
       "Name": "Soul of Nejirons (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79946,15 +79946,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_NEJIRON",
+          "MM_SOUL_ENEMY_NEJIRON",
           "Soul of Nejirons (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_BIO_BABA": {
-      "ID": "MM_SOUL_BIO_BABA",
+    "MM_SOUL_ENEMY_BIO_BABA": {
+      "ID": "MM_SOUL_ENEMY_BIO_BABA",
       "Name": "Soul of Bio Babas (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79963,15 +79963,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_BIO_BABA",
+          "MM_SOUL_ENEMY_BIO_BABA",
           "Soul of Bio Babas (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_GARO": {
-      "ID": "MM_SOUL_GARO",
+    "MM_SOUL_ENEMY_GARO": {
+      "ID": "MM_SOUL_ENEMY_GARO",
       "Name": "Soul of Garo (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79980,15 +79980,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_GARO",
+          "MM_SOUL_ENEMY_GARO",
           "Soul of Garo (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_WIZZROBE": {
-      "ID": "MM_SOUL_WIZZROBE",
+    "MM_SOUL_ENEMY_WIZZROBE": {
+      "ID": "MM_SOUL_ENEMY_WIZZROBE",
       "Name": "Soul of Wizzrobes (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -79997,15 +79997,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_WIZZROBE",
+          "MM_SOUL_ENEMY_WIZZROBE",
           "Soul of Wizzrobes (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_GOMESS": {
-      "ID": "MM_SOUL_GOMESS",
+    "MM_SOUL_ENEMY_GOMESS": {
+      "ID": "MM_SOUL_ENEMY_GOMESS",
       "Name": "Soul of Gomess (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -80014,15 +80014,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_GOMESS",
+          "MM_SOUL_ENEMY_GOMESS",
           "Soul of Gomess (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_GEKKO": {
-      "ID": "MM_SOUL_GEKKO",
+    "MM_SOUL_ENEMY_GEKKO": {
+      "ID": "MM_SOUL_ENEMY_GEKKO",
       "Name": "Soul of Gekkos (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -80031,15 +80031,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_GEKKO",
+          "MM_SOUL_ENEMY_GEKKO",
           "Soul of Gekkos (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_BAD_BAT": {
-      "ID": "MM_SOUL_BAD_BAT",
+    "MM_SOUL_ENEMY_BAD_BAT": {
+      "ID": "MM_SOUL_ENEMY_BAD_BAT",
       "Name": "Soul of Bad Bats (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -80048,15 +80048,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_BAD_BAT",
+          "MM_SOUL_ENEMY_BAD_BAT",
           "Soul of Bad Bats (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_SNAPPER": {
-      "ID": "MM_SOUL_SNAPPER",
+    "MM_SOUL_ENEMY_SNAPPER": {
+      "ID": "MM_SOUL_ENEMY_SNAPPER",
       "Name": "Soul of Snappers (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -80065,15 +80065,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_SNAPPER",
+          "MM_SOUL_ENEMY_SNAPPER",
           "Soul of Snappers (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_WART": {
-      "ID": "MM_SOUL_WART",
+    "MM_SOUL_ENEMY_WART": {
+      "ID": "MM_SOUL_ENEMY_WART",
       "Name": "Soul of Warts (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -80082,15 +80082,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_WART",
+          "MM_SOUL_ENEMY_WART",
           "Soul of Warts (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_CAPTAIN_KEETA": {
-      "ID": "MM_SOUL_CAPTAIN_KEETA",
+    "MM_SOUL_ENEMY_CAPTAIN_KEETA": {
+      "ID": "MM_SOUL_ENEMY_CAPTAIN_KEETA",
       "Name": "Soul of Captain Keeta (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -80099,32 +80099,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_CAPTAIN_KEETA",
+          "MM_SOUL_ENEMY_CAPTAIN_KEETA",
           "Soul of Captain Keeta (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_IGOS": {
-      "ID": "MM_SOUL_IGOS",
-      "Name": "Soul of Igos (MM)",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "MM_SOUL_IGOS",
-          "Soul of Igos (MM)"
-        ],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "MM_SOUL_ODOLWA": {
-      "ID": "MM_SOUL_ODOLWA",
+    "MM_SOUL_BOSS_ODOLWA": {
+      "ID": "MM_SOUL_BOSS_ODOLWA",
       "Name": "Soul of Odolwa (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -80133,15 +80116,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_ODOLWA",
+          "MM_SOUL_BOSS_ODOLWA",
           "Soul of Odolwa (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_GOHT": {
-      "ID": "MM_SOUL_GOHT",
+    "MM_SOUL_BOSS_GOHT": {
+      "ID": "MM_SOUL_BOSS_GOHT",
       "Name": "Soul of Goht (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -80150,15 +80133,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_GOHT",
+          "MM_SOUL_BOSS_GOHT",
           "Soul of Goht (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_GYORG": {
-      "ID": "MM_SOUL_GYORG",
+    "MM_SOUL_BOSS_GYORG": {
+      "ID": "MM_SOUL_BOSS_GYORG",
       "Name": "Soul of Gyorg (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -80167,15 +80150,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_GYORG",
+          "MM_SOUL_BOSS_GYORG",
           "Soul of Gyorg (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "MM_SOUL_TWINMOLD": {
-      "ID": "MM_SOUL_TWINMOLD",
+    "MM_SOUL_BOSS_TWINMOLD": {
+      "ID": "MM_SOUL_BOSS_TWINMOLD",
       "Name": "Soul of Twinmold (MM)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -80184,15 +80167,32 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "MM_SOUL_TWINMOLD",
+          "MM_SOUL_BOSS_TWINMOLD",
           "Soul of Twinmold (MM)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "SHARED_SOUL_OCTOROK": {
-      "ID": "SHARED_SOUL_OCTOROK",
+    "MM_SOUL_BOSS_IGOS": {
+      "ID": "MM_SOUL_BOSS_IGOS",
+      "Name": "Soul of Igos (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_SOUL_BOSS_IGOS",
+          "Soul of Igos (MM)"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "SHARED_SOUL_ENEMY_OCTOROK": {
+      "ID": "SHARED_SOUL_ENEMY_OCTOROK",
       "Name": "Soul of Octoroks",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -80201,15 +80201,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "SHARED_SOUL_OCTOROK",
+          "SHARED_SOUL_ENEMY_OCTOROK",
           "Soul of Octoroks"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "SHARED_SOUL_WALLMASTER": {
-      "ID": "SHARED_SOUL_WALLMASTER",
+    "SHARED_SOUL_ENEMY_WALLMASTER": {
+      "ID": "SHARED_SOUL_ENEMY_WALLMASTER",
       "Name": "Soul of Wallmasters",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -80218,15 +80218,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "SHARED_SOUL_WALLMASTER",
+          "SHARED_SOUL_ENEMY_WALLMASTER",
           "Soul of Wallmasters"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "SHARED_SOUL_DODONGO": {
-      "ID": "SHARED_SOUL_DODONGO",
+    "SHARED_SOUL_ENEMY_DODONGO": {
+      "ID": "SHARED_SOUL_ENEMY_DODONGO",
       "Name": "Soul of Dodongos",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -80235,15 +80235,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "SHARED_SOUL_DODONGO",
+          "SHARED_SOUL_ENEMY_DODONGO",
           "Soul of Dodongos"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "SHARED_SOUL_KEESE": {
-      "ID": "SHARED_SOUL_KEESE",
+    "SHARED_SOUL_ENEMY_KEESE": {
+      "ID": "SHARED_SOUL_ENEMY_KEESE",
       "Name": "Soul of Keese",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -80252,15 +80252,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "SHARED_SOUL_KEESE",
+          "SHARED_SOUL_ENEMY_KEESE",
           "Soul of Keese"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "SHARED_SOUL_TEKTITE": {
-      "ID": "SHARED_SOUL_TEKTITE",
+    "SHARED_SOUL_ENEMY_TEKTITE": {
+      "ID": "SHARED_SOUL_ENEMY_TEKTITE",
       "Name": "Soul of Tektites",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -80269,15 +80269,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "SHARED_SOUL_TEKTITE",
+          "SHARED_SOUL_ENEMY_TEKTITE",
           "Soul of Tektites"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "SHARED_SOUL_PEAHAT": {
-      "ID": "SHARED_SOUL_PEAHAT",
+    "SHARED_SOUL_ENEMY_PEAHAT": {
+      "ID": "SHARED_SOUL_ENEMY_PEAHAT",
       "Name": "Soul of Peahats",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -80286,15 +80286,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "SHARED_SOUL_PEAHAT",
+          "SHARED_SOUL_ENEMY_PEAHAT",
           "Soul of Peahats"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "SHARED_SOUL_LIZALFOS_DINALFOS": {
-      "ID": "SHARED_SOUL_LIZALFOS_DINALFOS",
+    "SHARED_SOUL_ENEMY_LIZALFOS_DINALFOS": {
+      "ID": "SHARED_SOUL_ENEMY_LIZALFOS_DINALFOS",
       "Name": "Soul of Lizalfos/Dinolfos",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -80303,15 +80303,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "SHARED_SOUL_LIZALFOS_DINALFOS",
+          "SHARED_SOUL_ENEMY_LIZALFOS_DINALFOS",
           "Soul of Lizalfos/Dinolfos"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "SHARED_SOUL_SKULLTULA": {
-      "ID": "SHARED_SOUL_SKULLTULA",
+    "SHARED_SOUL_ENEMY_SKULLTULA": {
+      "ID": "SHARED_SOUL_ENEMY_SKULLTULA",
       "Name": "Soul of Skulltulas",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -80320,15 +80320,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "SHARED_SOUL_SKULLTULA",
+          "SHARED_SOUL_ENEMY_SKULLTULA",
           "Soul of Skulltulas"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "SHARED_SOUL_ARMOS": {
-      "ID": "SHARED_SOUL_ARMOS",
+    "SHARED_SOUL_ENEMY_ARMOS": {
+      "ID": "SHARED_SOUL_ENEMY_ARMOS",
       "Name": "Soul of Armos",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -80337,15 +80337,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "SHARED_SOUL_ARMOS",
+          "SHARED_SOUL_ENEMY_ARMOS",
           "Soul of Armos"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "SHARED_SOUL_DEKU_BABA": {
-      "ID": "SHARED_SOUL_DEKU_BABA",
+    "SHARED_SOUL_ENEMY_DEKU_BABA": {
+      "ID": "SHARED_SOUL_ENEMY_DEKU_BABA",
       "Name": "Soul of Deku Babas",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -80354,15 +80354,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "SHARED_SOUL_DEKU_BABA",
+          "SHARED_SOUL_ENEMY_DEKU_BABA",
           "Soul of Deku Babas"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "SHARED_SOUL_DEKU_SCRUB": {
-      "ID": "SHARED_SOUL_DEKU_SCRUB",
+    "SHARED_SOUL_ENEMY_DEKU_SCRUB": {
+      "ID": "SHARED_SOUL_ENEMY_DEKU_SCRUB",
       "Name": "Soul of Deku Scrubs",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -80371,15 +80371,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "SHARED_SOUL_DEKU_SCRUB",
+          "SHARED_SOUL_ENEMY_DEKU_SCRUB",
           "Soul of Deku Scrubs"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "SHARED_SOUL_BUBBLE": {
-      "ID": "SHARED_SOUL_BUBBLE",
+    "SHARED_SOUL_ENEMY_BUBBLE": {
+      "ID": "SHARED_SOUL_ENEMY_BUBBLE",
       "Name": "Soul of Bubbles",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -80388,15 +80388,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "SHARED_SOUL_BUBBLE",
+          "SHARED_SOUL_ENEMY_BUBBLE",
           "Soul of Bubbles"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "SHARED_SOUL_BEAMOS": {
-      "ID": "SHARED_SOUL_BEAMOS",
+    "SHARED_SOUL_ENEMY_BEAMOS": {
+      "ID": "SHARED_SOUL_ENEMY_BEAMOS",
       "Name": "Soul of Beamos",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -80405,15 +80405,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "SHARED_SOUL_BEAMOS",
+          "SHARED_SOUL_ENEMY_BEAMOS",
           "Soul of Beamos"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "SHARED_SOUL_REDEAD_GIBDO": {
-      "ID": "SHARED_SOUL_REDEAD_GIBDO",
+    "SHARED_SOUL_ENEMY_REDEAD_GIBDO": {
+      "ID": "SHARED_SOUL_ENEMY_REDEAD_GIBDO",
       "Name": "Soul of ReDeads/Gibdos",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -80422,15 +80422,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "SHARED_SOUL_REDEAD_GIBDO",
+          "SHARED_SOUL_ENEMY_REDEAD_GIBDO",
           "Soul of ReDeads/Gibdos"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "SHARED_SOUL_SKULLWALLTULA": {
-      "ID": "SHARED_SOUL_SKULLWALLTULA",
+    "SHARED_SOUL_ENEMY_SKULLWALLTULA": {
+      "ID": "SHARED_SOUL_ENEMY_SKULLWALLTULA",
       "Name": "Soul of Skullwalltulas",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -80439,15 +80439,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "SHARED_SOUL_SKULLWALLTULA",
+          "SHARED_SOUL_ENEMY_SKULLWALLTULA",
           "Soul of Skullwalltulas"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "SHARED_SOUL_SHELL_BLADE": {
-      "ID": "SHARED_SOUL_SHELL_BLADE",
+    "SHARED_SOUL_ENEMY_SHELL_BLADE": {
+      "ID": "SHARED_SOUL_ENEMY_SHELL_BLADE",
       "Name": "Soul of Shell Blades",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -80456,15 +80456,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "SHARED_SOUL_SHELL_BLADE",
+          "SHARED_SOUL_ENEMY_SHELL_BLADE",
           "Soul of Shell Blades"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "SHARED_SOUL_LIKE_LIKE": {
-      "ID": "SHARED_SOUL_LIKE_LIKE",
+    "SHARED_SOUL_ENEMY_LIKE_LIKE": {
+      "ID": "SHARED_SOUL_ENEMY_LIKE_LIKE",
       "Name": "Soul of Like Likes",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -80473,15 +80473,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "SHARED_SOUL_LIKE_LIKE",
+          "SHARED_SOUL_ENEMY_LIKE_LIKE",
           "Soul of Like Likes"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "SHARED_SOUL_IRON_KNUCKLE": {
-      "ID": "SHARED_SOUL_IRON_KNUCKLE",
+    "SHARED_SOUL_ENEMY_IRON_KNUCKLE": {
+      "ID": "SHARED_SOUL_ENEMY_IRON_KNUCKLE",
       "Name": "Soul of Iron Knuckles",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -80490,15 +80490,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "SHARED_SOUL_IRON_KNUCKLE",
+          "SHARED_SOUL_ENEMY_IRON_KNUCKLE",
           "Soul of Iron Knuckles"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "SHARED_SOUL_FREEZARD": {
-      "ID": "SHARED_SOUL_FREEZARD",
+    "SHARED_SOUL_ENEMY_FREEZARD": {
+      "ID": "SHARED_SOUL_ENEMY_FREEZARD",
       "Name": "Soul of Freezards",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -80507,15 +80507,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "SHARED_SOUL_FREEZARD",
+          "SHARED_SOUL_ENEMY_FREEZARD",
           "Soul of Freezards"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "SHARED_SOUL_WOLFOS": {
-      "ID": "SHARED_SOUL_WOLFOS",
+    "SHARED_SOUL_ENEMY_WOLFOS": {
+      "ID": "SHARED_SOUL_ENEMY_WOLFOS",
       "Name": "Soul of Wolfos",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -80524,15 +80524,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "SHARED_SOUL_WOLFOS",
+          "SHARED_SOUL_ENEMY_WOLFOS",
           "Soul of Wolfos"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "SHARED_SOUL_GUAY": {
-      "ID": "SHARED_SOUL_GUAY",
+    "SHARED_SOUL_ENEMY_GUAY": {
+      "ID": "SHARED_SOUL_ENEMY_GUAY",
       "Name": "Soul of Guays",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -80541,15 +80541,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "SHARED_SOUL_GUAY",
+          "SHARED_SOUL_ENEMY_GUAY",
           "Soul of Guays"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "SHARED_SOUL_FLYING_POT": {
-      "ID": "SHARED_SOUL_FLYING_POT",
+    "SHARED_SOUL_ENEMY_FLYING_POT": {
+      "ID": "SHARED_SOUL_ENEMY_FLYING_POT",
       "Name": "Soul of Flying Pots",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -80558,15 +80558,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "SHARED_SOUL_FLYING_POT",
+          "SHARED_SOUL_ENEMY_FLYING_POT",
           "Soul of Flying Pots"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "SHARED_SOUL_FLOORMASTER": {
-      "ID": "SHARED_SOUL_FLOORMASTER",
+    "SHARED_SOUL_ENEMY_FLOORMASTER": {
+      "ID": "SHARED_SOUL_ENEMY_FLOORMASTER",
       "Name": "Soul of Floormasters",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -80575,15 +80575,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "SHARED_SOUL_FLOORMASTER",
+          "SHARED_SOUL_ENEMY_FLOORMASTER",
           "Soul of Floormasters"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "SHARED_SOUL_LEEVER": {
-      "ID": "SHARED_SOUL_LEEVER",
+    "SHARED_SOUL_ENEMY_LEEVER": {
+      "ID": "SHARED_SOUL_ENEMY_LEEVER",
       "Name": "Soul of Leevers",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -80592,15 +80592,15 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "SHARED_SOUL_LEEVER",
+          "SHARED_SOUL_ENEMY_LEEVER",
           "Soul of Leevers"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
     },
-    "SHARED_SOUL_STALCHILD": {
-      "ID": "SHARED_SOUL_STALCHILD",
+    "SHARED_SOUL_ENEMY_STALCHILD": {
+      "ID": "SHARED_SOUL_ENEMY_STALCHILD",
       "Name": "Soul of Stalchildren",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
@@ -80609,7 +80609,7 @@
       ],
       "SpoilerData": {
         "SpoilerLogNames": [
-          "SHARED_SOUL_STALCHILD",
+          "SHARED_SOUL_ENEMY_STALCHILD",
           "Soul of Stalchildren"
         ],
         "GossipHintNames": [],
@@ -81230,7 +81230,7 @@
     },
     "OOT_SMALL_KEY_TCG": {
       "ID": "OOT_SMALL_KEY_TCG",
-      "Name": "Small Key (Treasure Chest Game)",
+      "Name": "Small Key (Chest Game)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -81239,7 +81239,7 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_SMALL_KEY_TCG",
-          "Small Key (Treasure Chest Game)"
+          "Small Key (Chest Game)"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -81247,7 +81247,7 @@
     },
     "OOT_KEY_RING_TCG": {
       "ID": "OOT_KEY_RING_TCG",
-      "Name": "Key Ring (Treasure Chest Game)",
+      "Name": "Key Ring (Chest Game)",
       "MaxAmountInWorld": -1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -81256,7 +81256,568 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT_KEY_RING_TCG",
-          "Key Ring (Treasure Chest Game)"
+          "Key Ring (Chest Game)"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_SOUL_NPC_SARIA": {
+      "ID": "OOT_SOUL_NPC_SARIA",
+      "Name": "Soul of Saria",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SOUL_NPC_SARIA",
+          "Soul of Saria"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_SOUL_NPC_DARUNIA": {
+      "ID": "OOT_SOUL_NPC_DARUNIA",
+      "Name": "Soul of Darunia",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SOUL_NPC_DARUNIA",
+          "Soul of Darunia"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_SOUL_NPC_RUTO": {
+      "ID": "OOT_SOUL_NPC_RUTO",
+      "Name": "Soul of Ruto",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SOUL_NPC_RUTO",
+          "Soul of Ruto"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_SOUL_NPC_KING_ZORA": {
+      "ID": "OOT_SOUL_NPC_KING_ZORA",
+      "Name": "Soul of King Zora",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SOUL_NPC_KING_ZORA",
+          "Soul of King Zora"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_SOUL_NPC_ZELDA": {
+      "ID": "OOT_SOUL_NPC_ZELDA",
+      "Name": "Soul of Zelda",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SOUL_NPC_ZELDA",
+          "Soul of Zelda"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_SOUL_NPC_SHEIK": {
+      "ID": "OOT_SOUL_NPC_SHEIK",
+      "Name": "Soul of Sheik",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SOUL_NPC_SHEIK",
+          "Soul of Sheik"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_SOUL_NPC_CUCCO_LADY": {
+      "ID": "OOT_SOUL_NPC_CUCCO_LADY",
+      "Name": "Soul of Cucco Lady",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SOUL_NPC_CUCCO_LADY",
+          "Soul of Cucco Lady"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_SOUL_NPC_CARPENTERS": {
+      "ID": "OOT_SOUL_NPC_CARPENTERS",
+      "Name": "Soul of Carpenters",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SOUL_NPC_CARPENTERS",
+          "Soul of Carpenters"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_SOUL_NPC_GURU_GURU": {
+      "ID": "OOT_SOUL_NPC_GURU_GURU",
+      "Name": "Soul of Guru-Guru",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SOUL_NPC_GURU_GURU",
+          "Soul of Guru-Guru"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_SOUL_NPC_MIDO": {
+      "ID": "OOT_SOUL_NPC_MIDO",
+      "Name": "Soul of Mido",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SOUL_NPC_MIDO",
+          "Soul of Mido"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_SOUL_NPC_KOKIRI": {
+      "ID": "OOT_SOUL_NPC_KOKIRI",
+      "Name": "Soul of Kokiri",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SOUL_NPC_KOKIRI",
+          "Soul of Kokiri"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_SOUL_NPC_KOKIRI_SHOPKEEPER": {
+      "ID": "OOT_SOUL_NPC_KOKIRI_SHOPKEEPER",
+      "Name": "Soul of Kokiri Shopkeeper",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SOUL_NPC_KOKIRI_SHOPKEEPER",
+          "Soul of Kokiri Shopkeeper"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_SOUL_NPC_HYLIAN_GUARD": {
+      "ID": "OOT_SOUL_NPC_HYLIAN_GUARD",
+      "Name": "Soul of Hylian Guard",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SOUL_NPC_HYLIAN_GUARD",
+          "Soul of Hylian Guard"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_SOUL_NPC_HYLIAN_CITIZEN": {
+      "ID": "OOT_SOUL_NPC_HYLIAN_CITIZEN",
+      "Name": "Soul of Hylian Citizen",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SOUL_NPC_HYLIAN_CITIZEN",
+          "Soul of Hylian Citizen"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_SOUL_NPC_MALON": {
+      "ID": "OOT_SOUL_NPC_MALON",
+      "Name": "Soul of Malon",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SOUL_NPC_MALON",
+          "Soul of Malon"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_SOUL_NPC_TALON": {
+      "ID": "OOT_SOUL_NPC_TALON",
+      "Name": "Soul of Talon",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SOUL_NPC_TALON",
+          "Soul of Talon"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_SOUL_NPC_FISHING_POND_OWNER": {
+      "ID": "OOT_SOUL_NPC_FISHING_POND_OWNER",
+      "Name": "Soul of Fishing Pond Owner",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "Soul of Fishing Pond Owner"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_SOUL_NPC_GORON": {
+      "ID": "OOT_SOUL_NPC_GORON",
+      "Name": "Soul of Goron",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SOUL_NPC_GORON",
+          "Soul of Goron"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_SOUL_NPC_MEDIGORON": {
+      "ID": "OOT_SOUL_NPC_MEDIGORON",
+      "Name": "Soul of Medigoron",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SOUL_NPC_MEDIGORON",
+          "Soul of Medigoron"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_SOUL_NPC_BIGGORON": {
+      "ID": "OOT_SOUL_NPC_BIGGORON",
+      "Name": "Soul of Biggoron",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SOUL_NPC_BIGGORON",
+          "Soul of Biggoron"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_SOUL_NPC_GORON_CHILD": {
+      "ID": "OOT_SOUL_NPC_GORON_CHILD",
+      "Name": "Soul of Goron Child",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SOUL_NPC_GORON_CHILD",
+          "Soul of Goron Child"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_SOUL_NPC_GORON_SHOPKEEPER": {
+      "ID": "OOT_SOUL_NPC_GORON_SHOPKEEPER",
+      "Name": "Soul of Goron Shopkeeper",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SOUL_NPC_GORON_SHOPKEEPER",
+          "Soul of Goron Shopkeeper"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_SOUL_NPC_ZORA": {
+      "ID": "OOT_SOUL_NPC_ZORA",
+      "Name": "Soul of Zora",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SOUL_NPC_ZORA",
+          "Soul of Zora"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_SOUL_NPC_ZORA_SHOPKEEPER": {
+      "ID": "OOT_SOUL_NPC_ZORA_SHOPKEEPER",
+      "Name": "Soul of Zora Shopkeeper",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SOUL_NPC_ZORA_SHOPKEEPER",
+          "Soul of Zora Shopkeeper"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_SOUL_NPC_BAZAAR_SHOPKEEPER": {
+      "ID": "OOT_SOUL_NPC_BAZAAR_SHOPKEEPER",
+      "Name": "Soul of Bazaar Shopkeeper",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SOUL_NPC_BAZAAR_SHOPKEEPER",
+          "Soul of Bazaar Shopkeeper"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_SOUL_NPC_BOMBCHU_SHOPKEEPER": {
+      "ID": "OOT_SOUL_NPC_BOMBCHU_SHOPKEEPER",
+      "Name": "Soul of Bombchu Shopkeeper",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SOUL_NPC_BOMBCHU_SHOPKEEPER",
+          "Soul of Bombchu Shopkeeper"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_SOUL_NPC_POTION_SHOPKEEPER": {
+      "ID": "OOT_SOUL_NPC_POTION_SHOPKEEPER",
+      "Name": "Soul of Potion Shopkeeper",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SOUL_NPC_POTION_SHOPKEEPER",
+          "Soul of Potion Shopkeeper"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_SOUL_NPC_BOMBCHU_BOWLING_LADY": {
+      "ID": "OOT_SOUL_NPC_BOMBCHU_BOWLING_LADY",
+      "Name": "Soul of Bombchu Bowling Lady",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SOUL_NPC_BOMBCHU_BOWLING_LADY",
+          "Soul of Bombchu Bowling Lady"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_SOUL_NPC_TRASURE_CHEST_GAME_OWNER": {
+      "ID": "OOT_SOUL_NPC_TRASURE_CHEST_GAME_OWNER",
+      "Name": "Soul of Treasure CHest Game Owner",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SOUL_NPC_TRASURE_CHEST_GAME_OWNER",
+          "Soul of Treasure CHest Game Owner"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_SOUL_NPC_SHOOTING_GALLERY_OWNER": {
+      "ID": "OOT_SOUL_NPC_SHOOTING_GALLERY_OWNER",
+      "Name": "Soul of Shooting Gallery Owner",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SOUL_NPC_SHOOTING_GALLERY_OWNER",
+          "Soul of Shooting Gallery Owner"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_SOUL_NPC_DAMPE": {
+      "ID": "OOT_SOUL_NPC_DAMPE",
+      "Name": "Soul of Dampe",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SOUL_NPC_DAMPE",
+          "Soul of Dampe"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_SOUL_NPC_GRAVEYARD_KID": {
+      "ID": "OOT_SOUL_NPC_GRAVEYARD_KID",
+      "Name": "Soul of Graveyard Kid",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SOUL_NPC_GRAVEYARD_KID",
+          "Soul of Graveyard Kid"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_SOUL_NPC_POE_COLLECTOR": {
+      "ID": "OOT_SOUL_NPC_POE_COLLECTOR",
+      "Name": "Soul of Poe Collector",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_SOUL_NPC_POE_COLLECTOR",
+          "Soul of Poe Collector"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -109725,17 +110286,41 @@
       "Logic": "true",
       "Value": false
     },
-    "enemySoulsOot": {
-      "ID": "enemySoulsOot",
+    "soulsEnemyOot": {
+      "ID": "soulsEnemyOot",
       "Name": "Enemy Souls (OoT)",
       "SubCategory": "Items Extensions",
       "Static": false,
       "Logic": "true",
       "Value": false
     },
-    "enemySoulsMm": {
-      "ID": "enemySoulsMm",
+    "soulsEnemyMm": {
+      "ID": "soulsEnemyMm",
       "Name": "Enemy Souls (MM)",
+      "SubCategory": "Items Extensions",
+      "Static": false,
+      "Logic": "true",
+      "Value": false
+    },
+    "soulsBossOot": {
+      "ID": "soulsBossOot",
+      "Name": "Boss Souls (OoT)",
+      "SubCategory": "Items Extensions",
+      "Static": false,
+      "Logic": "true",
+      "Value": false
+    },
+    "soulsBossMm": {
+      "ID": "soulsBossMm",
+      "Name": "Boss Souls (MM)",
+      "SubCategory": "Items Extensions",
+      "Static": false,
+      "Logic": "true",
+      "Value": false
+    },
+    "soulsNpcOot": {
+      "ID": "soulsNpcOot",
+      "Name": "NPC Souls (OoT) (EXPERIMENTAL)",
       "SubCategory": "Items Extensions",
       "Static": false,
       "Logic": "true",
@@ -109873,6 +110458,14 @@
       "ID": "agelessChildTrade",
       "Name": "Ageless Child Trade",
       "SubCategory": "Items Ageless",
+      "Static": false,
+      "Logic": "true",
+      "Value": false
+    },
+    "erMajorDungeons": {
+      "ID": "erMajorDungeons",
+      "Name": "Shuffle Major Dungeons with Dungeons",
+      "SubCategory": "Entrances",
       "Static": false,
       "Logic": "true",
       "Value": false
@@ -111052,8 +111645,8 @@
     {
       "Id": "BothGameSouls",
       "RequiredItems": [
-        "var{enemySoulsOot}",
-        "var{enemySoulsMm}"
+        "var{soulsEnemyOot}",
+        "var{soulsEnemyMm}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",

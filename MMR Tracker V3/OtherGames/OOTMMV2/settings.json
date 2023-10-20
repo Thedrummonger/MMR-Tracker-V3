@@ -25,7 +25,6 @@
     "category": "main",
     "type": "number",
     "description": "For multiworld, how many players are in the game.",
-    "min": null,
     "default": 1
   },
   {
@@ -82,7 +81,8 @@
     "category": "main",
     "type": "number",
     "description": "The amount of Triforce Pieces that are required to win.",
-    "default": 20
+    "default": 20,
+    "min": 1
   },
   {
     "key": "triforcePieces",
@@ -90,7 +90,9 @@
     "category": "main",
     "type": "number",
     "description": "The total amount of Triforce Pieces in the item pool.",
-    "default": 30
+    "default": 30,
+    "min": 1,
+    "max": 999
   },
   {
     "key": "logic",
@@ -852,27 +854,6 @@
     "default": false
   },
   {
-    "key": "ganonTrials",
-    "name": "Ganon Trials",
-    "category": "main.events",
-    "type": "enum",
-    "description": "Enables or disables the trials in Ganon's Castle",
-    "values": [
-      {
-        "value": "none",
-        "name": "None",
-        "description": "Trials are not required to enter the tower"
-      },
-      {
-        "value": "all",
-        "name": "All",
-        "description": "All trials are required to enter the tower"
-      }
-    ],
-    "default": "none"
-  },
-  {
-
     "type": "enum",
     "values": [
       {
@@ -903,7 +884,6 @@
     "description": "Sets the price of items inside OoT shops"
   },
   {
-
     "type": "enum",
     "values": [
       {
@@ -934,7 +914,6 @@
     "description": "Sets the price of items sold by OoT scrubs"
   },
   {
-
     "type": "enum",
     "values": [
       {
@@ -993,6 +972,26 @@
     "key": "priceMmTingle",
     "name": "MM Tingle Prices",
     "description": "Sets the price of items sold by Tingle"
+  },
+  {
+    "key": "ganonTrials",
+    "name": "Ganon Trials",
+    "category": "main.events",
+    "type": "enum",
+    "description": "Enables or disables the trials in Ganon's Castle",
+    "values": [
+      {
+        "value": "none",
+        "name": "None",
+        "description": "Trials are not required to enter the tower"
+      },
+      {
+        "value": "all",
+        "name": "All",
+        "description": "All trials are required to enter the tower"
+      }
+    ],
+    "default": "none"
   },
   {
     "key": "startingAge",
@@ -1695,7 +1694,7 @@
     "default": false
   },
   {
-    "key": "enemySoulsOot",
+    "key": "soulsEnemyOot",
     "name": "Enemy Souls (OoT)",
     "category": "items.extensions",
     "type": "boolean",
@@ -1703,11 +1702,35 @@
     "default": false
   },
   {
-    "key": "enemySoulsMm",
+    "key": "soulsEnemyMm",
     "name": "Enemy Souls (MM)",
     "category": "items.extensions",
     "type": "boolean",
     "description": "Add enemy souls into the item pool. Enemies won't spawn unless their soul is obtained.",
+    "default": false
+  },
+  {
+    "key": "soulsBossOot",
+    "name": "Boss Souls (OoT)",
+    "category": "items.extensions",
+    "type": "boolean",
+    "description": "Add boss souls into the item pool. Enemies won't spawn unless their soul is obtained.",
+    "default": false
+  },
+  {
+    "key": "soulsBossMm",
+    "name": "Boss Souls (MM)",
+    "category": "items.extensions",
+    "type": "boolean",
+    "description": "Add boss souls into the item pool. Enemies won't spawn unless their soul is obtained.",
+    "default": false
+  },
+  {
+    "key": "soulsNpcOot",
+    "name": "NPC Souls (OoT) (EXPERIMENTAL)",
+    "category": "items.extensions",
+    "type": "boolean",
+    "description": "Add NPC souls into the item pool. NPCs won't spawn unless their soul is obtained.",
     "default": false
   },
   {
@@ -1740,7 +1763,9 @@
     "category": "items.extensions",
     "type": "number",
     "description": "How many Red Coins to add to the item pool",
-    "default": 0
+    "default": 0,
+    "min": 0,
+    "max": 999
   },
   {
     "key": "coinsGreen",
@@ -1748,7 +1773,9 @@
     "category": "items.extensions",
     "type": "number",
     "description": "How many Green Coins to add to the item pool",
-    "default": 0
+    "default": 0,
+    "min": 0,
+    "max": 999
   },
   {
     "key": "coinsBlue",
@@ -1756,7 +1783,9 @@
     "category": "items.extensions",
     "type": "number",
     "description": "How many Blue Coins to add to the item pool",
-    "default": 0
+    "default": 0,
+    "min": 0,
+    "max": 999
   },
   {
     "key": "coinsYellow",
@@ -1764,7 +1793,9 @@
     "category": "items.extensions",
     "type": "number",
     "description": "How many Yellow Coins to add to the item pool",
-    "default": 0
+    "default": 0,
+    "min": 0,
+    "max": 999
   },
   {
     "key": "sharedNutsSticks",
@@ -1914,8 +1945,8 @@
     "default": false
   },
   {
-    "key": "sharedSouls",
-    "name": "Shared Souls",
+    "key": "sharedSoulsEnemy",
+    "name": "Shared Enemy Souls",
     "category": "items.shared",
     "type": "boolean",
     "default": false
@@ -2046,7 +2077,16 @@
         "name": "Full"
       }
     ],
+    "description": "Enable the ability to shuffle dungeons within their own game or across both.",
     "default": "none"
+  },
+  {
+    "key": "erMajorDungeons",
+    "name": "Shuffle Major Dungeons with Dungeons",
+    "category": "entrances",
+    "type": "boolean",
+    "description": "If turned on, it means the boss-containing dungeons and uninverted Stone Tower Temple will be shuffled.",
+    "default": false
   },
   {
     "key": "erMinorDungeons",
@@ -2125,7 +2165,7 @@
       }
     ],
     "default": "none",
-    "description": "- Every entrance to Hyrule Field except Gerudo Valley and Market<br>- The entrance to Gerudo Fortress from Gerudo Valley<br>- The entrance to Death Mountain from Kakariko<br>- The entrances to the four main regions in MM<br>- The entrance to Romani Ranch"
+    "description": "- Every entrance to Hyrule Field except Market<br>- The entrance to Gerudo Fortress from Gerudo Valley<br>- The entrance to Death Mountain from Kakariko<br>- The entrances to the four main regions in MM<br>- The entrance to Romani Ranch"
   },
   {
     "key": "erRegionsExtra",
@@ -2163,7 +2203,15 @@
       }
     ],
     "default": "none",
-    "description": "Shuffle most interiors with each other"
+    "description": "Enable the ability to shuffle interiors in their own game or across both games."
+  },
+  {
+    "key": "erIndoorsMajor",
+    "name": "Shuffle Most Interiors",
+    "category": "entrances",
+    "type": "boolean",
+    "description": "Shuffle most interiors with each other.",
+    "default": false
   },
   {
     "key": "erIndoorsExtra",
