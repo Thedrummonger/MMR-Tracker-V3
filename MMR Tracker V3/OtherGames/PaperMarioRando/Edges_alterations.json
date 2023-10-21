@@ -135,7 +135,7 @@
     {"from": {"map": "SBK_25", "id": 0}, "to": {"map": "SBK_25", "id": "RandomBlockItemA"}, "reqs": [["can_hit_floating_blocks"]], "mapchange": false},
     {"from": {"map": "SBK_25", "id": 0}, "to": {"map": "SBK_25", "id": "RandomBlockItemB"}, "reqs": [["can_hit_floating_blocks"]], "mapchange": false},
     // S1W3 -> RandomBlockItemA (MultiCoinBlock)
-    {"from": {"map": "SBK_40", "id": 0}, "to": {"map": "SBK_40", "id": "RandomBlockItemA"}, "reqs": [["can_hit_floating_blocks"]], "mapchange": false},
+    {"from": {"map": "SBK_40", "id": 1}, "to": {"map": "SBK_40", "id": "RandomBlockItemA"}, "reqs": [["can_hit_floating_blocks"]], "mapchange": false},
     // S2W1 -> RandomBlockItemA (MultiCoinBlock)
     {"from": {"map": "SBK_52", "id": 0}, "to": {"map": "SBK_52", "id": "RandomBlockItemA"}, "reqs": [["can_hit_floating_blocks"]], "mapchange": false},
     // S2E2 West of Oasis -> RandomBlockItemA (MultiCoinBlock)

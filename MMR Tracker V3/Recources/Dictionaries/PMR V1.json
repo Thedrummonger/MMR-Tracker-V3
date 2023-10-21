@@ -52901,9 +52901,9 @@
         "PriceDataNames": []
       }
     },
-    "Dry Dry Desert - S1W3 - 0 => Dry Dry Desert - S1W3 - RandomBlockItemA": {
-      "ID": "Dry Dry Desert - S1W3 - 0 => Dry Dry Desert - S1W3 - RandomBlockItemA",
-      "Area": "Dry Dry Desert - S1W3 - 0",
+    "Dry Dry Desert - S1W3 - Exit East => Dry Dry Desert - S1W3 - RandomBlockItemA": {
+      "ID": "Dry Dry Desert - S1W3 - Exit East => Dry Dry Desert - S1W3 - RandomBlockItemA",
+      "Area": "Dry Dry Desert - S1W3 - Exit East",
       "Exit": "Dry Dry Desert - S1W3 - RandomBlockItemA",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,

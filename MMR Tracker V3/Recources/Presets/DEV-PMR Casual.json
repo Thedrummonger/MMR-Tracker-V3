@@ -34916,10 +34916,10 @@
       "IsTrick": false
     },
     {
-      "Id": "Dry Dry Desert - S1W3 - 0 => Dry Dry Desert - S1W3 - RandomBlockItemA",
+      "Id": "Dry Dry Desert - S1W3 - Exit East => Dry Dry Desert - S1W3 - RandomBlockItemA",
       "RequiredItems": [
         "can_hit_floating_blocks",
-        "Dry Dry Desert - S1W3 - 0"
+        "Dry Dry Desert - S1W3 - Exit East"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
