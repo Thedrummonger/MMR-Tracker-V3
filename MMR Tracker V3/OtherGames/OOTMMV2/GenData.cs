@@ -358,7 +358,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
             };
             DictionaryFile.Variables.Add("MM_MASKS", MMMaskVar);
 
-            MMRData.JsonFormatLogicItem BothGameSouls = new() { Id = "BothGameSouls", RequiredItems = new List<string> { "var{enemySoulsOot}", "var{enemySoulsMm}" } };
+            MMRData.JsonFormatLogicItem BothGameSouls = new() { Id = "BothGameSouls", RequiredItems = new List<string> { "var{soulsEnemyOot}", "var{soulsEnemyMm}" } };
             MMRData.JsonFormatLogicItem BothGameSkeletonKey = new() { Id = "BothGameSkeletonKey", RequiredItems = new List<string> { "var{skeletonKeyOot}", "var{skeletonKeyMm}" } };
             DictionaryFile.AdditionalLogic.Add(BothGameSouls);
             DictionaryFile.AdditionalLogic.Add(BothGameSkeletonKey);
@@ -373,7 +373,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                 { "majoraChild", "goal, triforce, false" },
                 { "csmcHearts", "csmc, never, false" },
                 { "bottomlessWallets", "colossalWallets" },
-                { "sharedSouls", BothGameSouls.Id },
+                { "sharedSoulsEnemy", BothGameSouls.Id },
                 { "sharedSkeletonKey", BothGameSkeletonKey.Id },
                 { "sharedSongSun", "sunSongMm" }
             };

@@ -202,7 +202,7 @@ namespace Windows_Form_Frontend
             if (string.IsNullOrWhiteSpace(dlg.FileName)) { return; }
 
             File.WriteAllLines(dlg.FileName, playthroughGenerator.CreateReadablePlaythrough(Result));
-            if (Testing.IsDevUser()) { Testing.CreateTestingFile("UnlockData", playthroughGenerator._Instance.logicCalculation.LogicUnlockData); }
+            if (Testing.Debugging()) { Testing.CreateTestingFile("UnlockData", playthroughGenerator._Instance.logicCalculation.LogicUnlockData); }
             
         }
         #endregion PlaythroughGenerator

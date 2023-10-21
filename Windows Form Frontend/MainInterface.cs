@@ -411,6 +411,7 @@ namespace Windows_Form_Frontend
             AlignUIElements();
             FormatMenuItems();
             SetTrackerTitle();
+            DebugModeChanges();
 
             if (InstanceContainer is null || InstanceContainer.Instance is null) { return; }
 
@@ -434,6 +435,17 @@ namespace Windows_Form_Frontend
             PrintToListBox();
             SendDataToItemDisplay();
             this.Refresh();
+        }
+
+        private MiscData.DebugMode CurrentDebugMode = MiscData.DebugMode.Off;
+        public void DebugModeChanges()
+        {
+            if (CurrentDebugMode != Testing.DebugMode)
+            {
+                Debug.WriteLine(Testing.DebugMode);
+                CurrentDebugMode = Testing.DebugMode;
+                WinFormInstanceCreation.ApplyUserPretLogic();
+            }
         }
 
         private void AlignUIElements()
@@ -586,7 +598,7 @@ namespace Windows_Form_Frontend
 
             if (ToUpdate.Contains(LBValidLocations))
             {
-                var Entries = TrackerDataHandeling.PopulateAvailableLocationList(dataset, WinFormUtils.CreateDivider(LBValidLocations), InstanceContainer.Instance, TXTLocSearch.Text, CHKShowAll.Checked, out int x, out int y);
+                var Entries = TrackerDataHandeling.PopulateAvailableLocationList(dataset, WinFormUtils.CreateDivider(LBValidLocations), InstanceContainer, TXTLocSearch.Text, CHKShowAll.Checked, out int x, out int y);
                 lblAvailableLocation.Text = $"Available Locations: {y}" + (x != y ? $"/{x}" : "");
                 foreach (var i in Entries) 
                 { 
@@ -598,7 +610,7 @@ namespace Windows_Form_Frontend
             }
             if (ToUpdate.Contains(LBValidEntrances)) 
             {
-                var Entries = TrackerDataHandeling.PopulateAvailableEntraceList(dataset, WinFormUtils.CreateDivider(LBValidEntrances), InstanceContainer.Instance, TXTEntSearch.Text, CHKShowAll.Checked, out int x, out int y);
+                var Entries = TrackerDataHandeling.PopulateAvailableEntraceList(dataset, WinFormUtils.CreateDivider(LBValidEntrances), InstanceContainer, TXTEntSearch.Text, CHKShowAll.Checked, out int x, out int y);
                 lblAvailableEntrances.Text = $"Available Entrances: {y}" + (x != y ? $"/{x}" : "");
                 foreach (var i in Entries)
                 {
@@ -610,7 +622,7 @@ namespace Windows_Form_Frontend
             }
             if (ToUpdate.Contains(LBCheckedLocations)) 
             {
-                var Entries = TrackerDataHandeling.PopulateCheckedLocationList(dataset, WinFormUtils.CreateDivider(LBCheckedLocations), InstanceContainer.Instance, TXTCheckedSearch.Text, out int x, out int y);
+                var Entries = TrackerDataHandeling.PopulateCheckedLocationList(dataset, WinFormUtils.CreateDivider(LBCheckedLocations), InstanceContainer, TXTCheckedSearch.Text, out int x, out int y);
                 lblCheckedLocation.Text = $"Checked Locations: {y}" + (x != y ? $"/{x}" : "");
                 foreach (var i in Entries)
                 {
@@ -640,17 +652,15 @@ namespace Windows_Form_Frontend
             visualItemTrackerToolStripMenuItem.Visible = Testing.Debugging();
             logicEditorToolStripMenuItem.Visible = Testing.Debugging();
 
+            //Manage Dev Menus
+            devToolsToolStripMenuItem.Visible = Testing.DebugMode != MiscData.DebugMode.Off;
+            devToolsToolStripMenuItem.Text = (Testing.DebugMode == MiscData.DebugMode.UserView) ? "Run as Dev" : "Dev Options";
+            foreach (ToolStripDropDownItem i in devToolsToolStripMenuItem.DropDownItems) { i.Visible = Testing.Debugging(); }
+
             if (InstanceContainer.Instance == null) { return; }
 
             SaveAsToolStripMenuItem.Visible = (File.Exists(InstanceContainer.CurrentSavePath));
             importSpoilerLogToolStripMenuItem.Text = (InstanceContainer.Instance.SpoilerLog != null) ? "Remove Spoiler Log" : "Import Spoiler Log";
-
-
-            //Manage Dev Menus
-            devToolsToolStripMenuItem.Visible = Testing.IsDevUser();
-            devToolsToolStripMenuItem.Text = (Testing.UserView()) ? "Run as Dev" : "Dev Options";
-            foreach (ToolStripDropDownItem i in devToolsToolStripMenuItem.DropDownItems) { i.Visible = Testing.Debugging(); }
-            viewAsUserToolStripMenuItem.Checked = Testing.UserView();
 
         }
 
@@ -1077,8 +1087,7 @@ namespace Windows_Form_Frontend
         {
             if (TXTLocSearch.Text == "toggledev")
             {
-                if (Testing.IsDevUser()) { Testing.doDevCheck(false); }
-                else if (Testing.StandardUser()) { Testing.doDevCheck(true); }
+                Testing.doDevCheck(Testing.DebugMode == MiscData.DebugMode.Off ? MiscData.DebugMode.Debugging : MiscData.DebugMode.Off);
                 TXTLocSearch.Text = "";
                 UpdateUI();
                 return;
@@ -1219,14 +1228,14 @@ namespace Windows_Form_Frontend
 
         private void viewAsUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Testing.DebugMode = MiscData.DebugMode.UserView;
+            Testing.doDevCheck(MiscData.DebugMode.UserView);
             UpdateUI();
         }
 
         private void devToolsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(!Testing.UserView()) { return; }
-            Testing.DebugMode = MiscData.DebugMode.Debugging;
+            if(Testing.Debugging()) { return; }
+            Testing.doDevCheck(MiscData.DebugMode.Debugging);
             UpdateUI();
         }
 

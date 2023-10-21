@@ -9,42 +9,42 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_QUEEN_GOHMA",
+          "OOT_SOUL_BOSS_QUEEN_GOHMA",
           "OOT_has_nuts",
           "OOT_can_use_sticks"
         ],
         [
           "OOT_has_nuts",
           "OOT_can_use_sticks",
-          "var{enemySoulsOot, false}"
+          "var{soulsBossOot, false}"
         ],
         [
-          "OOT_SOUL_QUEEN_GOHMA",
+          "OOT_SOUL_BOSS_QUEEN_GOHMA",
           "OOT_can_use_sticks",
           "OOT_can_use_slingshot"
         ],
         [
           "OOT_can_use_sticks",
-          "var{enemySoulsOot, false}",
+          "var{soulsBossOot, false}",
           "OOT_can_use_slingshot"
         ],
         [
-          "OOT_SOUL_QUEEN_GOHMA",
+          "OOT_SOUL_BOSS_QUEEN_GOHMA",
           "OOT_has_nuts",
           "OOT_has_weapon"
         ],
         [
           "OOT_has_nuts",
-          "var{enemySoulsOot, false}",
+          "var{soulsBossOot, false}",
           "OOT_has_weapon"
         ],
         [
-          "OOT_SOUL_QUEEN_GOHMA",
+          "OOT_SOUL_BOSS_QUEEN_GOHMA",
           "OOT_can_use_slingshot",
           "OOT_has_weapon"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsBossOot, false}",
           "OOT_can_use_slingshot",
           "OOT_has_weapon"
         ]
@@ -61,42 +61,42 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_QUEEN_GOHMA",
+          "OOT_SOUL_BOSS_QUEEN_GOHMA",
           "OOT_has_nuts",
           "OOT_can_use_sticks"
         ],
         [
           "OOT_has_nuts",
           "OOT_can_use_sticks",
-          "var{enemySoulsOot, false}"
+          "var{soulsBossOot, false}"
         ],
         [
-          "OOT_SOUL_QUEEN_GOHMA",
+          "OOT_SOUL_BOSS_QUEEN_GOHMA",
           "OOT_can_use_sticks",
           "OOT_can_use_slingshot"
         ],
         [
           "OOT_can_use_sticks",
-          "var{enemySoulsOot, false}",
+          "var{soulsBossOot, false}",
           "OOT_can_use_slingshot"
         ],
         [
-          "OOT_SOUL_QUEEN_GOHMA",
+          "OOT_SOUL_BOSS_QUEEN_GOHMA",
           "OOT_has_nuts",
           "OOT_has_weapon"
         ],
         [
           "OOT_has_nuts",
-          "var{enemySoulsOot, false}",
+          "var{soulsBossOot, false}",
           "OOT_has_weapon"
         ],
         [
-          "OOT_SOUL_QUEEN_GOHMA",
+          "OOT_SOUL_BOSS_QUEEN_GOHMA",
           "OOT_can_use_slingshot",
           "OOT_has_weapon"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsBossOot, false}",
           "OOT_can_use_slingshot",
           "OOT_has_weapon"
         ]
@@ -232,42 +232,42 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_KING_DODONGO",
+          "OOT_SOUL_BOSS_KING_DODONGO",
           "OOT_has_bombs",
           "OOT_can_use_sticks"
         ],
         [
           "OOT_has_bombs",
           "OOT_can_use_sticks",
-          "var{enemySoulsOot, false}"
+          "var{soulsBossOot, false}"
         ],
         [
-          "OOT_SOUL_KING_DODONGO",
+          "OOT_SOUL_BOSS_KING_DODONGO",
           "OOT_can_use_sticks",
           "OOT_STRENGTH"
         ],
         [
           "OOT_can_use_sticks",
-          "var{enemySoulsOot, false}",
+          "var{soulsBossOot, false}",
           "OOT_STRENGTH"
         ],
         [
-          "OOT_SOUL_KING_DODONGO",
+          "OOT_SOUL_BOSS_KING_DODONGO",
           "OOT_has_bombs",
           "OOT_has_weapon"
         ],
         [
           "OOT_has_bombs",
-          "var{enemySoulsOot, false}",
+          "var{soulsBossOot, false}",
           "OOT_has_weapon"
         ],
         [
-          "OOT_SOUL_KING_DODONGO",
+          "OOT_SOUL_BOSS_KING_DODONGO",
           "OOT_STRENGTH",
           "OOT_has_weapon"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsBossOot, false}",
           "OOT_STRENGTH",
           "OOT_has_weapon"
         ]
@@ -284,42 +284,42 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_KING_DODONGO",
+          "OOT_SOUL_BOSS_KING_DODONGO",
           "OOT_has_bombs",
           "OOT_can_use_sticks"
         ],
         [
           "OOT_has_bombs",
           "OOT_can_use_sticks",
-          "var{enemySoulsOot, false}"
+          "var{soulsBossOot, false}"
         ],
         [
-          "OOT_SOUL_KING_DODONGO",
+          "OOT_SOUL_BOSS_KING_DODONGO",
           "OOT_can_use_sticks",
           "OOT_STRENGTH"
         ],
         [
           "OOT_can_use_sticks",
-          "var{enemySoulsOot, false}",
+          "var{soulsBossOot, false}",
           "OOT_STRENGTH"
         ],
         [
-          "OOT_SOUL_KING_DODONGO",
+          "OOT_SOUL_BOSS_KING_DODONGO",
           "OOT_has_bombs",
           "OOT_has_weapon"
         ],
         [
           "OOT_has_bombs",
-          "var{enemySoulsOot, false}",
+          "var{soulsBossOot, false}",
           "OOT_has_weapon"
         ],
         [
-          "OOT_SOUL_KING_DODONGO",
+          "OOT_SOUL_BOSS_KING_DODONGO",
           "OOT_STRENGTH",
           "OOT_has_weapon"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsBossOot, false}",
           "OOT_STRENGTH",
           "OOT_has_weapon"
         ]
@@ -403,19 +403,19 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_BARINADE",
+          "OOT_SOUL_BOSS_BARINADE",
           "OOT_can_use_sticks"
         ],
         [
           "OOT_can_use_sticks",
-          "var{enemySoulsOot, false}"
+          "var{soulsBossOot, false}"
         ],
         [
-          "OOT_SOUL_BARINADE",
+          "OOT_SOUL_BOSS_BARINADE",
           "OOT_has_weapon"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsBossOot, false}",
           "OOT_has_weapon"
         ]
       ],
@@ -454,19 +454,19 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_PHANTOM_GANON",
+          "OOT_SOUL_BOSS_PHANTOM_GANON",
           "OOT_has_ranged_weapon_adult"
         ],
         [
           "OOT_has_ranged_weapon_adult",
-          "var{enemySoulsOot, false}"
+          "var{soulsBossOot, false}"
         ],
         [
-          "OOT_SOUL_PHANTOM_GANON",
+          "OOT_SOUL_BOSS_PHANTOM_GANON",
           "OOT_can_use_slingshot"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsBossOot, false}",
           "OOT_can_use_slingshot"
         ]
       ],
@@ -506,10 +506,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_VOLVAGIA"
+          "OOT_SOUL_BOSS_VOLVAGIA"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsBossOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -548,10 +548,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_MORPHA"
+          "OOT_SOUL_BOSS_MORPHA"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsBossOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -649,10 +649,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_TWINROVA"
+          "OOT_SOUL_BOSS_TWINROVA"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsBossOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -691,19 +691,19 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_BONGO_BONGO",
+          "OOT_SOUL_BOSS_BONGO_BONGO",
           "OOT_can_use_bow"
         ],
         [
           "OOT_can_use_bow",
-          "var{enemySoulsOot, false}"
+          "var{soulsBossOot, false}"
         ],
         [
-          "OOT_SOUL_BONGO_BONGO",
+          "OOT_SOUL_BOSS_BONGO_BONGO",
           "OOT_can_use_slingshot"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsBossOot, false}",
           "OOT_can_use_slingshot"
         ]
       ],
@@ -1023,20 +1023,20 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_DEAD_HAND",
+          "OOT_SOUL_ENEMY_DEAD_HAND",
           "OOT_has_weapon"
         ],
         [
           "OOT_has_weapon",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "OOT_SOUL_DEAD_HAND",
+          "OOT_SOUL_ENEMY_DEAD_HAND",
           "OOT_can_use_sticks",
           "trick{TRICK_OOT_DEAD_HAND_STICKS}"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_can_use_sticks",
           "trick{TRICK_OOT_DEAD_HAND_STICKS}"
         ]
@@ -3218,19 +3218,19 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_BABY_DODONGO",
+          "OOT_SOUL_ENEMY_BABY_DODONGO",
           "OOT_has_weapon"
         ],
         [
           "OOT_has_weapon",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "OOT_SOUL_BABY_DODONGO",
+          "OOT_SOUL_ENEMY_BABY_DODONGO",
           "OOT_can_use_sticks"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_can_use_sticks"
         ],
         [
@@ -4790,10 +4790,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_TORCH_SLUG"
+          "OOT_SOUL_ENEMY_TORCH_SLUG"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -4845,27 +4845,27 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_FLARE_DANCER",
+          "OOT_SOUL_ENEMY_FLARE_DANCER",
           "OOT_is_adult"
         ],
         [
           "OOT_is_adult",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "OOT_SOUL_FLARE_DANCER",
+          "OOT_SOUL_ENEMY_FLARE_DANCER",
           "OOT_can_hookshot"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_can_hookshot"
         ],
         [
-          "OOT_SOUL_FLARE_DANCER",
+          "OOT_SOUL_ENEMY_FLARE_DANCER",
           "OOT_climb_anywhere"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_climb_anywhere"
         ]
       ],
@@ -4882,10 +4882,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_FLARE_DANCER"
+          "OOT_SOUL_ENEMY_FLARE_DANCER"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -4901,10 +4901,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_FLARE_DANCER"
+          "OOT_SOUL_ENEMY_FLARE_DANCER"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -5928,50 +5928,50 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_FLARE_DANCER",
+          "OOT_SOUL_ENEMY_FLARE_DANCER",
           "OOT_can_hammer"
         ],
         [
           "OOT_can_hammer",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "OOT_SOUL_FLARE_DANCER",
+          "OOT_SOUL_ENEMY_FLARE_DANCER",
           "OOT_has_bombs",
           "OOT_has_weapon"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_has_bombs",
           "OOT_has_weapon"
         ],
         [
-          "OOT_SOUL_FLARE_DANCER",
+          "OOT_SOUL_ENEMY_FLARE_DANCER",
           "OOT_has_weapon",
           "OOT_can_hookshot"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_has_weapon",
           "OOT_can_hookshot"
         ],
         [
-          "OOT_SOUL_FLARE_DANCER",
+          "OOT_SOUL_ENEMY_FLARE_DANCER",
           "OOT_has_bombs",
           "OOT_can_use_sticks"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_has_bombs",
           "OOT_can_use_sticks"
         ],
         [
-          "OOT_SOUL_FLARE_DANCER",
+          "OOT_SOUL_ENEMY_FLARE_DANCER",
           "OOT_can_hookshot",
           "OOT_can_use_sticks"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_can_hookshot",
           "OOT_can_use_sticks"
         ]
@@ -6520,10 +6520,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_STALFOS"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -7791,10 +7791,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_STALFOS"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -7859,10 +7859,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_STALFOS"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -7955,7 +7955,7 @@
           "var{Forest_MQ, false}"
         ],
         [
-          "OOT_SOUL_STALFOS",
+          "OOT_SOUL_ENEMY_STALFOS",
           "OOT_soul_wolfos",
           "OOT Forest Temple Bow Region",
           "var{Forest_MQ}"
@@ -7964,7 +7964,7 @@
           "OOT_soul_wolfos",
           "OOT Forest Temple Bow Region",
           "var{Forest_MQ}",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -8663,7 +8663,7 @@
         ],
         [
           "OOT_soul_lizalfos_dinalfos",
-          "OOT_SOUL_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
           "OOT_has_lens",
           "OOT_can_hookshot",
           "OOT_has_skeleton_key",
@@ -8672,7 +8672,7 @@
         ],
         [
           "OOT_soul_lizalfos_dinalfos",
-          "OOT_SOUL_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
           "OOT_has_lens",
           "OOT_can_hookshot",
           "OOT Ganon Castle Light",
@@ -8681,7 +8681,7 @@
         ],
         [
           "OOT_soul_lizalfos_dinalfos",
-          "OOT_SOUL_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
           "OOT_has_lens",
           "OOT_can_hookshot",
           "OOT Ganon Castle Light",
@@ -8690,7 +8690,7 @@
         ],
         [
           "OOT_soul_lizalfos_dinalfos",
-          "OOT_SOUL_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
           "OOT_has_lens",
           "OOT_can_hookshot",
           "OOT Ganon Castle Light",
@@ -8704,7 +8704,7 @@
           "OOT_has_skeleton_key",
           "OOT Ganon Castle Light",
           "var{Ganon_MQ}",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
           "OOT_soul_lizalfos_dinalfos",
@@ -8713,7 +8713,7 @@
           "OOT Ganon Castle Light",
           "var{Ganon_MQ}",
           "setting{smallKeyShuffleOot, removed}",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
           "OOT_soul_lizalfos_dinalfos",
@@ -8722,7 +8722,7 @@
           "OOT Ganon Castle Light",
           "var{Ganon_MQ}",
           "OOT_KEY_RING_GANON",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
           "OOT_soul_lizalfos_dinalfos",
@@ -8731,7 +8731,7 @@
           "OOT Ganon Castle Light",
           "var{Ganon_MQ}",
           "OOT_SMALL_KEY_GANON, 3",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -8910,7 +8910,7 @@
           "var{Ganon_MQ, false}"
         ],
         [
-          "OOT_SOUL_STALFOS",
+          "OOT_SOUL_ENEMY_STALFOS",
           "OOT_can_play_time",
           "OOT Ganon Castle Forest",
           "var{Ganon_MQ}"
@@ -8919,7 +8919,7 @@
           "OOT_can_play_time",
           "OOT Ganon Castle Forest",
           "var{Ganon_MQ}",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -9771,10 +9771,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_STALFOS"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -9803,10 +9803,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_STALFOS"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -10064,7 +10064,14 @@
         "OOT_has_light_arrows",
         "OOT Ganon Castle Tower Boss"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_ZELDA"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -10081,10 +10088,22 @@
         ],
         [
           "OOT_can_boomerang",
-          "OOT_can_use_sticks"
+          "OOT_can_use_sticks",
+          "OOT_SOUL_NPC_CARPENTERS"
+        ],
+        [
+          "OOT_can_boomerang",
+          "OOT_can_use_sticks",
+          "var{soulsNpcOot, false}"
         ],
         [
           "OOT_can_use_sticks",
+          "OOT_SOUL_NPC_CARPENTERS",
+          "OOT_has_nuts"
+        ],
+        [
+          "OOT_can_use_sticks",
+          "var{soulsNpcOot, false}",
           "OOT_has_nuts"
         ]
       ],
@@ -10611,10 +10630,22 @@
         ],
         [
           "OOT_can_boomerang",
-          "OOT_can_use_sticks"
+          "OOT_can_use_sticks",
+          "OOT_SOUL_NPC_CARPENTERS"
+        ],
+        [
+          "OOT_can_boomerang",
+          "OOT_can_use_sticks",
+          "var{soulsNpcOot, false}"
         ],
         [
           "OOT_can_use_sticks",
+          "OOT_SOUL_NPC_CARPENTERS",
+          "OOT_has_nuts"
+        ],
+        [
+          "OOT_can_use_sticks",
+          "var{soulsNpcOot, false}",
           "OOT_has_nuts"
         ]
       ],
@@ -10789,10 +10820,22 @@
         ],
         [
           "OOT_can_boomerang",
-          "OOT_can_use_sticks"
+          "OOT_can_use_sticks",
+          "OOT_SOUL_NPC_CARPENTERS"
+        ],
+        [
+          "OOT_can_boomerang",
+          "OOT_can_use_sticks",
+          "var{soulsNpcOot, false}"
         ],
         [
           "OOT_can_use_sticks",
+          "OOT_SOUL_NPC_CARPENTERS",
+          "OOT_has_nuts"
+        ],
+        [
+          "OOT_can_use_sticks",
+          "var{soulsNpcOot, false}",
           "OOT_has_nuts"
         ]
       ],
@@ -11102,10 +11145,22 @@
         ],
         [
           "OOT_can_boomerang",
-          "OOT_can_use_sticks"
+          "OOT_can_use_sticks",
+          "OOT_SOUL_NPC_CARPENTERS"
+        ],
+        [
+          "OOT_can_boomerang",
+          "OOT_can_use_sticks",
+          "var{soulsNpcOot, false}"
         ],
         [
           "OOT_can_use_sticks",
+          "OOT_SOUL_NPC_CARPENTERS",
+          "OOT_has_nuts"
+        ],
+        [
+          "OOT_can_use_sticks",
+          "var{soulsNpcOot, false}",
           "OOT_has_nuts"
         ]
       ],
@@ -11460,10 +11515,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_STALFOS"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -11498,10 +11553,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_STALFOS"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -11988,7 +12043,7 @@
         [
           "OOT_can_hookshot",
           "OOT_soul_keese",
-          "OOT_SOUL_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
           "OOT_has_weapon",
           "OOT Gerudo Training Grounds Hammer"
         ],
@@ -11997,12 +12052,12 @@
           "OOT_soul_keese",
           "OOT_has_weapon",
           "OOT Gerudo Training Grounds Hammer",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
           "OOT_can_hookshot",
           "OOT_soul_keese",
-          "OOT_SOUL_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
           "OOT Gerudo Training Grounds Hammer",
           "OOT_can_use_sticks"
         ],
@@ -12010,13 +12065,13 @@
           "OOT_can_hookshot",
           "OOT_soul_keese",
           "OOT Gerudo Training Grounds Hammer",
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_can_use_sticks"
         ],
         [
           "OOT_can_hookshot",
           "OOT_soul_keese",
-          "OOT_SOUL_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
           "OOT Gerudo Training Grounds Hammer",
           "OOT_can_hammer"
         ],
@@ -12024,13 +12079,13 @@
           "OOT_can_hookshot",
           "OOT_soul_keese",
           "OOT Gerudo Training Grounds Hammer",
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_can_hammer"
         ],
         [
           "OOT_can_hookshot",
           "OOT_soul_keese",
-          "OOT_SOUL_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
           "OOT Gerudo Training Grounds Hammer",
           "OOT_can_use_bow"
         ],
@@ -12038,7 +12093,7 @@
           "OOT_can_hookshot",
           "OOT_soul_keese",
           "OOT Gerudo Training Grounds Hammer",
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_can_use_bow"
         ]
       ],
@@ -12334,35 +12389,35 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
           "OOT_has_weapon"
         ],
         [
           "OOT_has_weapon",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "OOT_SOUL_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
           "OOT_can_use_sticks"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_can_use_sticks"
         ],
         [
-          "OOT_SOUL_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
           "OOT_can_hammer"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_can_hammer"
         ],
         [
-          "OOT_SOUL_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
           "OOT_can_use_bow"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_can_use_bow"
         ]
       ],
@@ -12380,35 +12435,35 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
           "OOT_has_weapon"
         ],
         [
           "OOT_has_weapon",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "OOT_SOUL_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
           "OOT_can_use_sticks"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_can_use_sticks"
         ],
         [
-          "OOT_SOUL_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
           "OOT_can_hammer"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_can_hammer"
         ],
         [
-          "OOT_SOUL_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
           "OOT_can_use_bow"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_can_use_bow"
         ]
       ],
@@ -13248,18 +13303,43 @@
       ],
       "ConditionalItems": [
         [
+          "OOT_SOUL_NPC_SHEIK",
           "OOT_has_weapon"
         ],
         [
+          "OOT_has_weapon",
+          "var{soulsNpcOot, false}"
+        ],
+        [
+          "OOT_SOUL_NPC_SHEIK",
           "OOT_can_hit_triggers_distance"
         ],
         [
+          "var{soulsNpcOot, false}",
+          "OOT_can_hit_triggers_distance"
+        ],
+        [
+          "OOT_SOUL_NPC_SHEIK",
           "OOT_has_explosives_or_hammer"
         ],
         [
+          "var{soulsNpcOot, false}",
+          "OOT_has_explosives_or_hammer"
+        ],
+        [
+          "OOT_SOUL_NPC_SHEIK",
           "OOT_can_use_din"
         ],
         [
+          "var{soulsNpcOot, false}",
+          "OOT_can_use_din"
+        ],
+        [
+          "OOT_SOUL_NPC_SHEIK",
+          "OOT_can_use_sticks"
+        ],
+        [
+          "var{soulsNpcOot, false}",
           "OOT_can_use_sticks"
         ]
       ],
@@ -13406,10 +13486,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_SHABOM"
+          "OOT_SOUL_ENEMY_SHABOM"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -13425,10 +13505,20 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STINGER"
+          "OOT_SOUL_ENEMY_STINGER",
+          "OOT_SOUL_NPC_RUTO"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "OOT_SOUL_NPC_RUTO",
+          "var{soulsEnemyOot, false}"
+        ],
+        [
+          "OOT_SOUL_ENEMY_STINGER",
+          "var{soulsNpcOot, false}"
+        ],
+        [
+          "var{soulsEnemyOot, false}",
+          "var{soulsNpcOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -13792,10 +13882,20 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_PARASITE"
+          "OOT_SOUL_ENEMY_PARASITE",
+          "OOT_SOUL_NPC_RUTO"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "OOT_SOUL_NPC_RUTO",
+          "var{soulsEnemyOot, false}"
+        ],
+        [
+          "OOT_SOUL_ENEMY_PARASITE",
+          "var{soulsNpcOot, false}"
+        ],
+        [
+          "var{soulsEnemyOot, false}",
+          "var{soulsNpcOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -14721,7 +14821,7 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_mido_moved"
+          "OOT_EVENT_MIDO_MOVED"
         ],
         [
           "OOT_is_adult"
@@ -14774,7 +14874,7 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_mido_moved"
+          "OOT_EVENT_MIDO_MOVED"
         ],
         [
           "OOT_is_adult"
@@ -14839,7 +14939,14 @@
         "OOT_COST_99",
         "OOT Kokiri Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_KOKIRI_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -14851,7 +14958,14 @@
         "OOT_COST_99",
         "OOT Kokiri Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_KOKIRI_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -14863,7 +14977,14 @@
         "OOT_COST_99",
         "OOT Kokiri Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_KOKIRI_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -14875,7 +14996,14 @@
         "OOT_COST_99",
         "OOT Kokiri Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_KOKIRI_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -14887,7 +15015,14 @@
         "OOT_COST_99",
         "OOT Kokiri Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_KOKIRI_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -14899,7 +15034,14 @@
         "OOT_COST_99",
         "OOT Kokiri Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_KOKIRI_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -14911,7 +15053,14 @@
         "OOT_COST_99",
         "OOT Kokiri Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_KOKIRI_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -14923,7 +15072,14 @@
         "OOT_COST_99",
         "OOT Kokiri Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_KOKIRI_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -16864,7 +17020,14 @@
         "OOT_COST_99",
         "OOT Market Bazaar"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_BAZAAR_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -16876,7 +17039,14 @@
         "OOT_COST_99",
         "OOT Market Bazaar"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_BAZAAR_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -16888,7 +17058,14 @@
         "OOT_COST_99",
         "OOT Market Bazaar"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_BAZAAR_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -16900,7 +17077,14 @@
         "OOT_COST_99",
         "OOT Market Bazaar"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_BAZAAR_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -16912,7 +17096,14 @@
         "OOT_COST_99",
         "OOT Market Bazaar"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_BAZAAR_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -16924,7 +17115,14 @@
         "OOT_COST_99",
         "OOT Market Bazaar"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_BAZAAR_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -16936,7 +17134,14 @@
         "OOT_COST_99",
         "OOT Market Bazaar"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_BAZAAR_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -16948,7 +17153,14 @@
         "OOT_COST_99",
         "OOT Market Bazaar"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_BAZAAR_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -16971,7 +17183,14 @@
         "OOT_COST_99",
         "OOT Market Potion Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_POTION_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -16983,7 +17202,14 @@
         "OOT_COST_99",
         "OOT Market Potion Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_POTION_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -16995,7 +17221,14 @@
         "OOT_COST_99",
         "OOT Market Potion Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_POTION_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -17007,7 +17240,14 @@
         "OOT_COST_99",
         "OOT Market Potion Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_POTION_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -17019,7 +17259,14 @@
         "OOT_COST_99",
         "OOT Market Potion Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_POTION_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -17031,7 +17278,14 @@
         "OOT_COST_99",
         "OOT Market Potion Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_POTION_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -17043,7 +17297,14 @@
         "OOT_COST_99",
         "OOT Market Potion Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_POTION_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -17055,7 +17316,14 @@
         "OOT_COST_99",
         "OOT Market Potion Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_POTION_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -17078,7 +17346,14 @@
         "OOT_COST_99",
         "OOT Market Bombchu Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_BOMBCHU_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -17090,7 +17365,14 @@
         "OOT_COST_99",
         "OOT Market Bombchu Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_BOMBCHU_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -17102,7 +17384,14 @@
         "OOT_COST_99",
         "OOT Market Bombchu Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_BOMBCHU_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -17114,7 +17403,14 @@
         "OOT_COST_99",
         "OOT Market Bombchu Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_BOMBCHU_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -17126,7 +17422,14 @@
         "OOT_COST_99",
         "OOT Market Bombchu Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_BOMBCHU_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -17138,7 +17441,14 @@
         "OOT_COST_99",
         "OOT Market Bombchu Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_BOMBCHU_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -17150,7 +17460,14 @@
         "OOT_COST_99",
         "OOT Market Bombchu Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_BOMBCHU_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -17162,7 +17479,14 @@
         "OOT_COST_99",
         "OOT Market Bombchu Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_BOMBCHU_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -17186,7 +17510,14 @@
         "OOT_EVENT_BIG_POE",
         "OOT Market Pot House"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_POE_COLLECTOR"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -17928,7 +18259,14 @@
         "OOT_is_night",
         "OOT Dog Lady House"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_HYLIAN_CITIZEN"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -17999,14 +18337,31 @@
       "ConditionalItems": [
         [
           "var{childWallets}",
-          "OOT_WALLET, 1"
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_BOMBCHU_BOWLING_LADY"
         ],
         [
           "var{childWallets}",
+          "OOT_SOUL_NPC_BOMBCHU_BOWLING_LADY",
           "SHARED_WALLET, 1"
         ],
         [
+          "OOT_SOUL_NPC_BOMBCHU_BOWLING_LADY",
           "var{childWallets, false}"
+        ],
+        [
+          "var{childWallets}",
+          "OOT_WALLET, 1",
+          "var{soulsNpcOot, false}"
+        ],
+        [
+          "var{childWallets}",
+          "SHARED_WALLET, 1",
+          "var{soulsNpcOot, false}"
+        ],
+        [
+          "var{childWallets, false}",
+          "var{soulsNpcOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -18024,14 +18379,31 @@
       "ConditionalItems": [
         [
           "var{childWallets}",
-          "OOT_WALLET, 1"
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_BOMBCHU_BOWLING_LADY"
         ],
         [
           "var{childWallets}",
+          "OOT_SOUL_NPC_BOMBCHU_BOWLING_LADY",
           "SHARED_WALLET, 1"
         ],
         [
+          "OOT_SOUL_NPC_BOMBCHU_BOWLING_LADY",
           "var{childWallets, false}"
+        ],
+        [
+          "var{childWallets}",
+          "OOT_WALLET, 1",
+          "var{soulsNpcOot, false}"
+        ],
+        [
+          "var{childWallets}",
+          "SHARED_WALLET, 1",
+          "var{soulsNpcOot, false}"
+        ],
+        [
+          "var{childWallets, false}",
+          "var{soulsNpcOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -18106,14 +18478,31 @@
       "ConditionalItems": [
         [
           "var{childWallets}",
-          "OOT_WALLET, 1"
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_SHOOTING_GALLERY_OWNER"
         ],
         [
           "var{childWallets}",
+          "OOT_SOUL_NPC_SHOOTING_GALLERY_OWNER",
           "SHARED_WALLET, 1"
         ],
         [
+          "OOT_SOUL_NPC_SHOOTING_GALLERY_OWNER",
           "var{childWallets, false}"
+        ],
+        [
+          "var{childWallets}",
+          "OOT_WALLET, 1",
+          "var{soulsNpcOot, false}"
+        ],
+        [
+          "var{childWallets}",
+          "SHARED_WALLET, 1",
+          "var{soulsNpcOot, false}"
+        ],
+        [
+          "var{childWallets, false}",
+          "var{soulsNpcOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -18464,7 +18853,14 @@
         "OOT_is_day",
         "OOT Lon Lon Ranch"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_MALON"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -18564,14 +18960,31 @@
       "ConditionalItems": [
         [
           "var{childWallets}",
-          "OOT_WALLET, 1"
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_TALON"
         ],
         [
           "var{childWallets}",
+          "OOT_SOUL_NPC_TALON",
           "SHARED_WALLET, 1"
         ],
         [
+          "OOT_SOUL_NPC_TALON",
           "var{childWallets, false}"
+        ],
+        [
+          "var{childWallets}",
+          "OOT_WALLET, 1",
+          "var{soulsNpcOot, false}"
+        ],
+        [
+          "var{childWallets}",
+          "SHARED_WALLET, 1",
+          "var{soulsNpcOot, false}"
+        ],
+        [
+          "var{childWallets, false}",
+          "var{soulsNpcOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -18785,7 +19198,14 @@
       "RequiredItems": [
         "OOT Hyrule Castle"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_MALON"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -18865,7 +19285,14 @@
       "RequiredItems": [
         "OOT Hyrule Castle Courtyard"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_ZELDA"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -19241,7 +19668,14 @@
         "OOT_ODD_POTION",
         "OOT Lost Woods"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_KOKIRI"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -19576,7 +20010,14 @@
       "RequiredItems": [
         "OOT Lost Woods Bridge from Forest"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_SARIA"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -19974,7 +20415,14 @@
         "OOT_is_child",
         "OOT Sacred Meadow"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_SARIA"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -19986,7 +20434,14 @@
         "OOT_is_adult",
         "OOT Sacred Meadow"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_SHEIK"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -20147,7 +20602,14 @@
         "OOT_is_day",
         "OOT Kakariko"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_CUCCO_LADY"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -20160,7 +20622,14 @@
         "OOT_is_day",
         "OOT Kakariko"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_CUCCO_LADY"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -20173,7 +20642,14 @@
         "OOT_is_day",
         "OOT Kakariko"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_CUCCO_LADY"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -20188,7 +20664,14 @@
         "OOT_MEDALLION_WATER",
         "OOT Kakariko"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_SHEIK"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -20201,12 +20684,27 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_can_hookshot"
+          "OOT_can_hookshot",
+          "OOT_SOUL_NPC_HYLIAN_CITIZEN"
         ],
         [
+          "OOT_can_hookshot",
+          "var{soulsNpcOot, false}"
+        ],
+        [
+          "OOT_SOUL_NPC_HYLIAN_CITIZEN",
           "trick{TRICK_OOT_MAN_ON_ROOF}"
         ],
         [
+          "var{soulsNpcOot, false}",
+          "trick{TRICK_OOT_MAN_ON_ROOF}"
+        ],
+        [
+          "OOT_SOUL_NPC_HYLIAN_CITIZEN",
+          "OOT_climb_anywhere"
+        ],
+        [
+          "var{soulsNpcOot, false}",
           "OOT_climb_anywhere"
         ]
       ],
@@ -20788,7 +21286,14 @@
         "OOT_ZELDA_LETTER",
         "OOT Kakariko"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_HYLIAN_GUARD"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -20930,7 +21435,14 @@
         "OOT_COST_99",
         "OOT Kakariko Bazaar"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_BAZAAR_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -20942,7 +21454,14 @@
         "OOT_COST_99",
         "OOT Kakariko Bazaar"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_BAZAAR_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -20954,7 +21473,14 @@
         "OOT_COST_99",
         "OOT Kakariko Bazaar"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_BAZAAR_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -20966,7 +21492,14 @@
         "OOT_COST_99",
         "OOT Kakariko Bazaar"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_BAZAAR_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -20978,7 +21511,14 @@
         "OOT_COST_99",
         "OOT Kakariko Bazaar"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_BAZAAR_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -20990,7 +21530,14 @@
         "OOT_COST_99",
         "OOT Kakariko Bazaar"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_BAZAAR_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -21002,7 +21549,14 @@
         "OOT_COST_99",
         "OOT Kakariko Bazaar"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_BAZAAR_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -21014,7 +21568,14 @@
         "OOT_COST_99",
         "OOT Kakariko Bazaar"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_BAZAAR_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -21038,7 +21599,14 @@
         "OOT_COST_99",
         "OOT Kakariko Potion Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_POTION_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -21051,7 +21619,14 @@
         "OOT_COST_99",
         "OOT Kakariko Potion Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_POTION_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -21064,7 +21639,14 @@
         "OOT_COST_99",
         "OOT Kakariko Potion Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_POTION_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -21077,7 +21659,14 @@
         "OOT_COST_99",
         "OOT Kakariko Potion Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_POTION_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -21090,7 +21679,14 @@
         "OOT_COST_99",
         "OOT Kakariko Potion Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_POTION_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -21103,7 +21699,14 @@
         "OOT_COST_99",
         "OOT Kakariko Potion Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_POTION_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -21116,7 +21719,14 @@
         "OOT_COST_99",
         "OOT Kakariko Potion Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_POTION_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -21129,7 +21739,14 @@
         "OOT_COST_99",
         "OOT Kakariko Potion Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_POTION_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -21222,14 +21839,31 @@
       "ConditionalItems": [
         [
           "var{childWallets}",
-          "OOT_WALLET, 1"
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_SHOOTING_GALLERY_OWNER"
         ],
         [
           "var{childWallets}",
+          "OOT_SOUL_NPC_SHOOTING_GALLERY_OWNER",
           "SHARED_WALLET, 1"
         ],
         [
+          "OOT_SOUL_NPC_SHOOTING_GALLERY_OWNER",
           "var{childWallets, false}"
+        ],
+        [
+          "var{childWallets}",
+          "OOT_WALLET, 1",
+          "var{soulsNpcOot, false}"
+        ],
+        [
+          "var{childWallets}",
+          "SHARED_WALLET, 1",
+          "var{soulsNpcOot, false}"
+        ],
+        [
+          "var{childWallets, false}",
+          "var{soulsNpcOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -21334,7 +21968,14 @@
         "OOT_has_ocarina",
         "OOT Windmill"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_GURU_GURU"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -21402,7 +22043,14 @@
         "OOT_POCKET_CUCCO",
         "OOT Kakariko Carpenter House"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_TALON"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -21604,14 +22252,31 @@
       "ConditionalItems": [
         [
           "var{childWallets}",
-          "OOT_WALLET, 1"
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_DAMPE"
         ],
         [
           "var{childWallets}",
+          "OOT_SOUL_NPC_DAMPE",
           "SHARED_WALLET, 1"
         ],
         [
+          "OOT_SOUL_NPC_DAMPE",
           "var{childWallets, false}"
+        ],
+        [
+          "var{childWallets}",
+          "OOT_WALLET, 1",
+          "var{soulsNpcOot, false}"
+        ],
+        [
+          "var{childWallets}",
+          "SHARED_WALLET, 1",
+          "var{soulsNpcOot, false}"
+        ],
+        [
+          "var{childWallets, false}",
+          "var{soulsNpcOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -22095,7 +22760,14 @@
       "RequiredItems": [
         "OOT Dampe Grave"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_DAMPE"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -22107,7 +22779,14 @@
         "OOT_is_adult",
         "OOT Dampe Grave"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_DAMPE"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -22197,7 +22876,14 @@
         "OOT_can_play_time",
         "OOT Dampe Grave"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_DAMPE"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -22446,7 +23132,14 @@
         "OOT_BROKEN_GORON_SWORD",
         "OOT Death Mountain Summit"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_BIGGORON"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -22459,7 +23152,14 @@
         "OOT_EYE_DROPS",
         "OOT Death Mountain Summit"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_BIGGORON"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -22472,7 +23172,14 @@
         "OOT_CLAIM_CHECK",
         "OOT Death Mountain Summit"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_BIGGORON"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -22876,12 +23583,27 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_has_explosives"
+          "OOT_has_explosives",
+          "OOT_SOUL_NPC_GORON_CHILD"
         ],
         [
+          "OOT_has_explosives",
+          "var{soulsNpcOot, false}"
+        ],
+        [
+          "OOT_SOUL_NPC_GORON_CHILD",
           "OOT_can_use_bow"
         ],
         [
+          "var{soulsNpcOot, false}",
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_SOUL_NPC_GORON_CHILD",
+          "OOT_STRENGTH"
+        ],
+        [
+          "var{soulsNpcOot, false}",
           "OOT_STRENGTH"
         ]
       ],
@@ -22897,7 +23619,14 @@
         "OOT_has_explosives",
         "OOT Goron City"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_GORON"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -22914,41 +23643,97 @@
         [
           "OOT_has_bombflowers",
           "var{childWallets}",
-          "OOT_WALLET, 2"
+          "OOT_WALLET, 2",
+          "OOT_SOUL_NPC_MEDIGORON"
         ],
         [
           "OOT_has_bombflowers",
           "var{childWallets}",
+          "OOT_SOUL_NPC_MEDIGORON",
           "SHARED_WALLET, 2"
         ],
         [
           "OOT_has_bombflowers",
+          "OOT_SOUL_NPC_MEDIGORON",
           "var{childWallets, false}",
           "OOT_WALLET, 1"
         ],
         [
           "OOT_has_bombflowers",
+          "OOT_SOUL_NPC_MEDIGORON",
           "var{childWallets, false}",
           "SHARED_WALLET, 1"
         ],
         [
+          "OOT_has_bombflowers",
           "var{childWallets}",
           "OOT_WALLET, 2",
+          "var{soulsNpcOot, false}"
+        ],
+        [
+          "OOT_has_bombflowers",
+          "var{childWallets}",
+          "SHARED_WALLET, 2",
+          "var{soulsNpcOot, false}"
+        ],
+        [
+          "OOT_has_bombflowers",
+          "var{childWallets, false}",
+          "OOT_WALLET, 1",
+          "var{soulsNpcOot, false}"
+        ],
+        [
+          "OOT_has_bombflowers",
+          "var{childWallets, false}",
+          "SHARED_WALLET, 1",
+          "var{soulsNpcOot, false}"
+        ],
+        [
+          "var{childWallets}",
+          "OOT_WALLET, 2",
+          "OOT_SOUL_NPC_MEDIGORON",
           "OOT_can_hammer"
         ],
         [
           "var{childWallets}",
+          "OOT_SOUL_NPC_MEDIGORON",
           "SHARED_WALLET, 2",
           "OOT_can_hammer"
         ],
         [
+          "OOT_SOUL_NPC_MEDIGORON",
           "var{childWallets, false}",
           "OOT_WALLET, 1",
           "OOT_can_hammer"
         ],
         [
+          "OOT_SOUL_NPC_MEDIGORON",
           "var{childWallets, false}",
           "SHARED_WALLET, 1",
+          "OOT_can_hammer"
+        ],
+        [
+          "var{childWallets}",
+          "OOT_WALLET, 2",
+          "var{soulsNpcOot, false}",
+          "OOT_can_hammer"
+        ],
+        [
+          "var{childWallets}",
+          "SHARED_WALLET, 2",
+          "var{soulsNpcOot, false}",
+          "OOT_can_hammer"
+        ],
+        [
+          "var{childWallets, false}",
+          "OOT_WALLET, 1",
+          "var{soulsNpcOot, false}",
+          "OOT_can_hammer"
+        ],
+        [
+          "var{childWallets, false}",
+          "SHARED_WALLET, 1",
+          "var{soulsNpcOot, false}",
           "OOT_can_hammer"
         ]
       ],
@@ -23105,14 +23890,32 @@
       "ConditionalItems": [
         [
           "OOT_is_adult",
-          "OOT_has_explosives"
+          "OOT_has_explosives",
+          "OOT_SOUL_NPC_GORON_CHILD"
         ],
         [
           "OOT_is_adult",
+          "OOT_has_explosives",
+          "var{soulsNpcOot, false}"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT_SOUL_NPC_GORON_CHILD",
           "OOT_can_use_bow"
         ],
         [
           "OOT_is_adult",
+          "var{soulsNpcOot, false}",
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT_SOUL_NPC_GORON_CHILD",
+          "OOT_STRENGTH"
+        ],
+        [
+          "OOT_is_adult",
+          "var{soulsNpcOot, false}",
           "OOT_STRENGTH"
         ],
         [
@@ -23240,7 +24043,14 @@
         "OOT_can_play_saria",
         "OOT Darunia Chamber"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_DARUNIA"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -23327,7 +24137,14 @@
         "OOT_COST_99",
         "OOT Goron Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_GORON_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -23339,7 +24156,14 @@
         "OOT_COST_99",
         "OOT Goron Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_GORON_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -23351,7 +24175,14 @@
         "OOT_COST_99",
         "OOT Goron Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_GORON_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -23363,7 +24194,14 @@
         "OOT_COST_99",
         "OOT Goron Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_GORON_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -23375,7 +24213,14 @@
         "OOT_COST_99",
         "OOT Goron Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_GORON_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -23387,7 +24232,14 @@
         "OOT_COST_99",
         "OOT Goron Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_GORON_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -23399,7 +24251,14 @@
         "OOT_COST_99",
         "OOT Goron Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_GORON_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -23411,7 +24270,14 @@
         "OOT_COST_99",
         "OOT Goron Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_GORON_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -24131,14 +24997,31 @@
       "ConditionalItems": [
         [
           "var{childWallets}",
-          "OOT_WALLET, 1"
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_ZORA"
         ],
         [
           "var{childWallets}",
+          "OOT_SOUL_NPC_ZORA",
           "SHARED_WALLET, 1"
         ],
         [
+          "OOT_SOUL_NPC_ZORA",
           "var{childWallets, false}"
+        ],
+        [
+          "var{childWallets}",
+          "OOT_WALLET, 1",
+          "var{soulsNpcOot, false}"
+        ],
+        [
+          "var{childWallets}",
+          "SHARED_WALLET, 1",
+          "var{soulsNpcOot, false}"
+        ],
+        [
+          "var{childWallets, false}",
+          "var{soulsNpcOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -24153,7 +25036,14 @@
         "OOT_has_blue_fire",
         "OOT Zora Domain"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_KING_ZORA"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -24167,7 +25057,14 @@
         "OOT_PRESCRIPTION",
         "OOT Zora Domain"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_KING_ZORA"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -24347,7 +25244,14 @@
         "OOT_RUTO_LETTER",
         "OOT Zora Domain"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_KING_ZORA"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -24402,7 +25306,14 @@
         "OOT_COST_99",
         "OOT Zora Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_ZORA_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -24414,7 +25325,14 @@
         "OOT_COST_99",
         "OOT Zora Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_ZORA_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -24426,7 +25344,14 @@
         "OOT_COST_99",
         "OOT Zora Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_ZORA_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -24438,7 +25363,14 @@
         "OOT_COST_99",
         "OOT Zora Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_ZORA_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -24450,7 +25382,14 @@
         "OOT_COST_99",
         "OOT Zora Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_ZORA_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -24462,7 +25401,14 @@
         "OOT_COST_99",
         "OOT Zora Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_ZORA_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -24474,7 +25420,14 @@
         "OOT_COST_99",
         "OOT Zora Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_ZORA_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -24486,7 +25439,14 @@
         "OOT_COST_99",
         "OOT Zora Shop"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_ZORA_SHOPKEEPER"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -25472,14 +26432,31 @@
       "ConditionalItems": [
         [
           "var{childWallets}",
-          "OOT_WALLET, 1"
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER"
         ],
         [
           "var{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
           "SHARED_WALLET, 1"
         ],
         [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
           "var{childWallets, false}"
+        ],
+        [
+          "var{childWallets}",
+          "OOT_WALLET, 1",
+          "var{soulsNpcOot, false}"
+        ],
+        [
+          "var{childWallets}",
+          "SHARED_WALLET, 1",
+          "var{soulsNpcOot, false}"
+        ],
+        [
+          "var{childWallets, false}",
+          "var{soulsNpcOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -25497,14 +26474,31 @@
       "ConditionalItems": [
         [
           "var{childWallets}",
-          "OOT_WALLET, 1"
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER"
         ],
         [
           "var{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
           "SHARED_WALLET, 1"
         ],
         [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
           "var{childWallets, false}"
+        ],
+        [
+          "var{childWallets}",
+          "OOT_WALLET, 1",
+          "var{soulsNpcOot, false}"
+        ],
+        [
+          "var{childWallets}",
+          "SHARED_WALLET, 1",
+          "var{soulsNpcOot, false}"
+        ],
+        [
+          "var{childWallets, false}",
+          "var{soulsNpcOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -25965,7 +26959,14 @@
         "OOT_MEDALLION_FOREST",
         "OOT Temple of Time"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_SHEIK"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -25979,11 +26980,26 @@
       ],
       "ConditionalItems": [
         [
+          "var{soulsNpcOot, false}",
           "setting{lacs, vanilla}",
           "OOT_MEDALLION_SPIRIT",
           "OOT_MEDALLION_SHADOW"
         ],
         [
+          "setting{lacs, vanilla}",
+          "OOT_MEDALLION_SPIRIT",
+          "OOT_MEDALLION_SHADOW",
+          "OOT_SOUL_NPC_SHEIK",
+          "OOT_SOUL_NPC_ZELDA"
+        ],
+        [
+          "var{soulsNpcOot, false}",
+          "setting{lacs, custom}",
+          "OOT_HAS_LACS_REQUIREMENTS"
+        ],
+        [
+          "OOT_SOUL_NPC_SHEIK",
+          "OOT_SOUL_NPC_ZELDA",
           "setting{lacs, custom}",
           "OOT_HAS_LACS_REQUIREMENTS"
         ]
@@ -26432,7 +27448,14 @@
         "OOT_is_adult",
         "OOT Death Mountain Crater Warp"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_SHEIK"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -26927,7 +27950,14 @@
         "OOT_POACHER_SAW",
         "OOT Gerudo Valley After Bridge"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_CARPENTERS"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -28245,7 +29275,14 @@
       "RequiredItems": [
         "OOT Desert Colossus Spirit Exit"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_SHEIK"
+        ],
+        [
+          "var{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -28402,20 +29439,20 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_DEAD_HAND",
+          "OOT_SOUL_ENEMY_DEAD_HAND",
           "OOT_has_weapon"
         ],
         [
           "OOT_has_weapon",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "OOT_SOUL_DEAD_HAND",
+          "OOT_SOUL_ENEMY_DEAD_HAND",
           "OOT_can_use_sticks",
           "trick{TRICK_OOT_DEAD_HAND_STICKS}"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_can_use_sticks",
           "trick{TRICK_OOT_DEAD_HAND_STICKS}"
         ]
@@ -31187,10 +32224,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_ANUBIS"
+          "OOT_SOUL_ENEMY_ANUBIS"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -31279,10 +32316,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_ANUBIS"
+          "OOT_SOUL_ENEMY_ANUBIS"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -31749,7 +32786,7 @@
           "OOT_HOOKSHOT, 2",
           "OOT_has_explosives",
           "OOT_soul_iron_knuckle",
-          "OOT_SOUL_ANUBIS",
+          "OOT_SOUL_ENEMY_ANUBIS",
           "OOT_soul_beamos",
           "OOT Spirit Temple Statue"
         ],
@@ -31758,7 +32795,7 @@
           "OOT_HOOKSHOT, 2",
           "OOT_has_explosives",
           "OOT_soul_iron_knuckle",
-          "OOT_SOUL_ANUBIS",
+          "OOT_SOUL_ENEMY_ANUBIS",
           "OOT_soul_beamos",
           "OOT Spirit Temple Statue",
           "setting{smallKeyShuffleOot, removed}"
@@ -31768,7 +32805,7 @@
           "OOT_HOOKSHOT, 2",
           "OOT_has_explosives",
           "OOT_soul_iron_knuckle",
-          "OOT_SOUL_ANUBIS",
+          "OOT_SOUL_ENEMY_ANUBIS",
           "OOT_soul_beamos",
           "OOT Spirit Temple Statue",
           "OOT_KEY_RING_SPIRIT"
@@ -31778,7 +32815,7 @@
           "OOT_HOOKSHOT, 2",
           "OOT_has_explosives",
           "OOT_soul_iron_knuckle",
-          "OOT_SOUL_ANUBIS",
+          "OOT_SOUL_ENEMY_ANUBIS",
           "OOT_soul_beamos",
           "OOT Spirit Temple Statue",
           "OOT_SMALL_KEY_SPIRIT, 3"
@@ -31788,7 +32825,7 @@
           "OOT_has_skeleton_key",
           "OOT_has_explosives",
           "OOT_soul_iron_knuckle",
-          "OOT_SOUL_ANUBIS",
+          "OOT_SOUL_ENEMY_ANUBIS",
           "OOT_soul_beamos",
           "OOT Spirit Temple Statue",
           "SHARED_HOOKSHOT, 2"
@@ -31797,7 +32834,7 @@
           "var{Spirit_MQ, false}",
           "OOT_has_explosives",
           "OOT_soul_iron_knuckle",
-          "OOT_SOUL_ANUBIS",
+          "OOT_SOUL_ENEMY_ANUBIS",
           "OOT_soul_beamos",
           "OOT Spirit Temple Statue",
           "setting{smallKeyShuffleOot, removed}",
@@ -31807,7 +32844,7 @@
           "var{Spirit_MQ, false}",
           "OOT_has_explosives",
           "OOT_soul_iron_knuckle",
-          "OOT_SOUL_ANUBIS",
+          "OOT_SOUL_ENEMY_ANUBIS",
           "OOT_soul_beamos",
           "OOT Spirit Temple Statue",
           "OOT_KEY_RING_SPIRIT",
@@ -31817,7 +32854,7 @@
           "var{Spirit_MQ, false}",
           "OOT_has_explosives",
           "OOT_soul_iron_knuckle",
-          "OOT_SOUL_ANUBIS",
+          "OOT_SOUL_ENEMY_ANUBIS",
           "OOT_soul_beamos",
           "OOT Spirit Temple Statue",
           "OOT_SMALL_KEY_SPIRIT, 3",
@@ -31831,7 +32868,7 @@
           "OOT_soul_iron_knuckle",
           "OOT_soul_beamos",
           "OOT Spirit Temple Statue",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
           "var{Spirit_MQ, false}",
@@ -31841,7 +32878,7 @@
           "OOT_soul_beamos",
           "OOT Spirit Temple Statue",
           "setting{smallKeyShuffleOot, removed}",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
           "var{Spirit_MQ, false}",
@@ -31851,7 +32888,7 @@
           "OOT_soul_beamos",
           "OOT Spirit Temple Statue",
           "OOT_KEY_RING_SPIRIT",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
           "var{Spirit_MQ, false}",
@@ -31861,7 +32898,7 @@
           "OOT_soul_beamos",
           "OOT Spirit Temple Statue",
           "OOT_SMALL_KEY_SPIRIT, 3",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
           "var{Spirit_MQ, false}",
@@ -31871,7 +32908,7 @@
           "OOT_soul_beamos",
           "OOT Spirit Temple Statue",
           "SHARED_HOOKSHOT, 2",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
           "var{Spirit_MQ, false}",
@@ -31881,7 +32918,7 @@
           "OOT Spirit Temple Statue",
           "setting{smallKeyShuffleOot, removed}",
           "SHARED_HOOKSHOT, 2",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
           "var{Spirit_MQ, false}",
@@ -31891,7 +32928,7 @@
           "OOT Spirit Temple Statue",
           "OOT_KEY_RING_SPIRIT",
           "SHARED_HOOKSHOT, 2",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
           "var{Spirit_MQ, false}",
@@ -31901,7 +32938,7 @@
           "OOT Spirit Temple Statue",
           "OOT_SMALL_KEY_SPIRIT, 3",
           "SHARED_HOOKSHOT, 2",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
           "OOT Spirit Temple Child Hand",
@@ -32923,14 +33960,14 @@
         [
           "OOT_has_explosives",
           "OOT_soul_beamos",
-          "OOT_SOUL_ANUBIS",
+          "OOT_SOUL_ENEMY_ANUBIS",
           "OOT Spirit Temple Adult Upper"
         ],
         [
           "OOT_has_explosives",
           "OOT_soul_beamos",
           "OOT Spirit Temple Adult Upper",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -32997,10 +34034,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_ANUBIS"
+          "OOT_SOUL_ENEMY_ANUBIS"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -33043,45 +34080,45 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_ANUBIS",
+          "OOT_SOUL_ENEMY_ANUBIS",
           "OOT_has_skeleton_key"
         ],
         [
-          "OOT_SOUL_ANUBIS",
+          "OOT_SOUL_ENEMY_ANUBIS",
           "setting{smallKeyShuffleOot, removed}"
         ],
         [
-          "OOT_SOUL_ANUBIS",
+          "OOT_SOUL_ENEMY_ANUBIS",
           "OOT_KEY_RING_SPIRIT"
         ],
         [
-          "OOT_SOUL_ANUBIS",
+          "OOT_SOUL_ENEMY_ANUBIS",
           "OOT_SMALL_KEY_SPIRIT, 1",
           "OOT_has_mirror_shield"
         ],
         [
           "OOT_has_skeleton_key",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
           "setting{smallKeyShuffleOot, removed}",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
           "OOT_KEY_RING_SPIRIT",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
           "OOT_SMALL_KEY_SPIRIT, 1",
           "OOT_has_mirror_shield",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "OOT_SOUL_ANUBIS",
+          "OOT_SOUL_ENEMY_ANUBIS",
           "OOT_SMALL_KEY_SPIRIT, 2"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_SMALL_KEY_SPIRIT, 2"
         ]
       ],
@@ -33385,14 +34422,31 @@
       "ConditionalItems": [
         [
           "var{childWallets}",
-          "OOT_WALLET, 1"
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_TRASURE_CHEST_GAME_OWNER"
         ],
         [
           "var{childWallets}",
+          "OOT_SOUL_NPC_TRASURE_CHEST_GAME_OWNER",
           "SHARED_WALLET, 1"
         ],
         [
+          "OOT_SOUL_NPC_TRASURE_CHEST_GAME_OWNER",
           "var{childWallets, false}"
+        ],
+        [
+          "var{childWallets}",
+          "OOT_WALLET, 1",
+          "var{soulsNpcOot, false}"
+        ],
+        [
+          "var{childWallets}",
+          "SHARED_WALLET, 1",
+          "var{soulsNpcOot, false}"
+        ],
+        [
+          "var{childWallets, false}",
+          "var{soulsNpcOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -34506,10 +35560,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_SPIKE"
+          "OOT_SOUL_ENEMY_SPIKE"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -34626,10 +35680,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_SPIKE"
+          "OOT_SOUL_ENEMY_SPIKE"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -35153,10 +36207,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_DARK_LINK"
+          "OOT_SOUL_ENEMY_DARK_LINK"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -35173,10 +36227,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_DARK_LINK"
+          "OOT_SOUL_ENEMY_DARK_LINK"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -35523,67 +36577,67 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_DEAD_HAND",
+          "OOT_SOUL_ENEMY_DEAD_HAND",
           "OOT_has_weapon",
           "OOT_has_ranged_weapon_child"
         ],
         [
           "OOT_has_weapon",
           "OOT_has_ranged_weapon_child",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "OOT_SOUL_DEAD_HAND",
+          "OOT_SOUL_ENEMY_DEAD_HAND",
           "OOT_has_ranged_weapon_child",
           "OOT_can_use_sticks",
           "trick{TRICK_OOT_DEAD_HAND_STICKS}"
         ],
         [
           "OOT_has_ranged_weapon_child",
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_can_use_sticks",
           "trick{TRICK_OOT_DEAD_HAND_STICKS}"
         ],
         [
-          "OOT_SOUL_DEAD_HAND",
+          "OOT_SOUL_ENEMY_DEAD_HAND",
           "OOT_has_weapon",
           "OOT_has_explosives"
         ],
         [
           "OOT_has_weapon",
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_has_explosives"
         ],
         [
-          "OOT_SOUL_DEAD_HAND",
+          "OOT_SOUL_ENEMY_DEAD_HAND",
           "OOT_can_use_sticks",
           "trick{TRICK_OOT_DEAD_HAND_STICKS}",
           "OOT_has_explosives"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_can_use_sticks",
           "trick{TRICK_OOT_DEAD_HAND_STICKS}",
           "OOT_has_explosives"
         ],
         [
-          "OOT_SOUL_DEAD_HAND",
+          "OOT_SOUL_ENEMY_DEAD_HAND",
           "OOT_has_weapon",
           "OOT_can_play_zelda"
         ],
         [
           "OOT_has_weapon",
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_can_play_zelda"
         ],
         [
-          "OOT_SOUL_DEAD_HAND",
+          "OOT_SOUL_ENEMY_DEAD_HAND",
           "OOT_can_use_sticks",
           "trick{TRICK_OOT_DEAD_HAND_STICKS}",
           "OOT_can_play_zelda"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_can_use_sticks",
           "trick{TRICK_OOT_DEAD_HAND_STICKS}",
           "OOT_can_play_zelda"
@@ -36055,27 +37109,27 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_GOHMA_LARVA",
+          "OOT_SOUL_ENEMY_GOHMA_LARVA",
           "OOT_has_weapon"
         ],
         [
           "OOT_has_weapon",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "OOT_SOUL_GOHMA_LARVA",
+          "OOT_SOUL_ENEMY_GOHMA_LARVA",
           "OOT_can_use_sticks"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_can_use_sticks"
         ],
         [
-          "OOT_SOUL_GOHMA_LARVA",
+          "OOT_SOUL_ENEMY_GOHMA_LARVA",
           "OOT_has_ranged_weapon_child"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_has_ranged_weapon_child"
         ]
       ],
@@ -36335,7 +37389,7 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_GOHMA_LARVA",
+          "OOT_SOUL_ENEMY_GOHMA_LARVA",
           "OOT_has_weapon",
           "OOT_is_child",
           "OOT_has_shield",
@@ -36346,10 +37400,10 @@
           "OOT_is_child",
           "OOT_has_shield",
           "OOT_can_use_sticks",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "OOT_SOUL_GOHMA_LARVA",
+          "OOT_SOUL_ENEMY_GOHMA_LARVA",
           "OOT_is_child",
           "OOT_has_shield",
           "OOT_can_use_sticks",
@@ -36359,26 +37413,26 @@
           "OOT_is_child",
           "OOT_has_shield",
           "OOT_can_use_sticks",
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_has_ranged_weapon_child"
         ],
         [
-          "OOT_SOUL_GOHMA_LARVA",
+          "OOT_SOUL_ENEMY_GOHMA_LARVA",
           "OOT_has_weapon",
           "OOT_has_fire"
         ],
         [
           "OOT_has_weapon",
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_has_fire"
         ],
         [
-          "OOT_SOUL_GOHMA_LARVA",
+          "OOT_SOUL_ENEMY_GOHMA_LARVA",
           "OOT_has_ranged_weapon_child",
           "OOT_has_fire"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_has_ranged_weapon_child",
           "OOT_has_fire"
         ]
@@ -36438,19 +37492,19 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_GOHMA_LARVA",
+          "OOT_SOUL_ENEMY_GOHMA_LARVA",
           "OOT_has_weapon"
         ],
         [
           "OOT_has_weapon",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "OOT_SOUL_GOHMA_LARVA",
+          "OOT_SOUL_ENEMY_GOHMA_LARVA",
           "OOT_has_ranged_weapon_child"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_has_ranged_weapon_child"
         ]
       ],
@@ -36859,19 +37913,19 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_GOHMA_LARVA",
+          "OOT_SOUL_ENEMY_GOHMA_LARVA",
           "OOT_can_use_sticks"
         ],
         [
           "OOT_can_use_sticks",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "OOT_SOUL_GOHMA_LARVA",
+          "OOT_SOUL_ENEMY_GOHMA_LARVA",
           "OOT_has_fire"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_has_fire"
         ]
       ],
@@ -37827,30 +38881,30 @@
       ],
       "ConditionalItems": [
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_has_bombs"
         ],
         [
           "OOT_has_bombs",
-          "OOT_SOUL_STALFOS",
-          "OOT_SOUL_FLARE_DANCER"
+          "OOT_SOUL_ENEMY_STALFOS",
+          "OOT_SOUL_ENEMY_FLARE_DANCER"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_can_hammer"
         ],
         [
-          "OOT_SOUL_STALFOS",
-          "OOT_SOUL_FLARE_DANCER",
+          "OOT_SOUL_ENEMY_STALFOS",
+          "OOT_SOUL_ENEMY_FLARE_DANCER",
           "OOT_can_hammer"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_can_hookshot"
         ],
         [
-          "OOT_SOUL_STALFOS",
-          "OOT_SOUL_FLARE_DANCER",
+          "OOT_SOUL_ENEMY_STALFOS",
+          "OOT_SOUL_ENEMY_FLARE_DANCER",
           "OOT_can_hookshot"
         ]
       ],
@@ -37871,11 +38925,11 @@
       ],
       "ConditionalItems": [
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "OOT_SOUL_STALFOS",
-          "OOT_SOUL_FLARE_DANCER"
+          "OOT_SOUL_ENEMY_STALFOS",
+          "OOT_SOUL_ENEMY_FLARE_DANCER"
         ]
       ],
       "TimeNeeded": "None",
@@ -37893,10 +38947,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_STALFOS"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -37914,10 +38968,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_STALFOS"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -37935,10 +38989,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_STALFOS"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -37956,10 +39010,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_STALFOS"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -37977,10 +39031,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_STALFOS"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -37998,10 +39052,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_STALFOS"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -38019,10 +39073,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_STALFOS"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -38040,10 +39094,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_STALFOS"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -38462,10 +39516,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_FLARE_DANCER"
+          "OOT_SOUL_ENEMY_FLARE_DANCER"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -38883,10 +39937,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_STALFOS"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -38942,10 +39996,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_STALFOS"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -39397,10 +40451,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_STALFOS"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -39478,10 +40532,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_STALFOS"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -39498,10 +40552,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_STALFOS"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -39518,10 +40572,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_STALFOS"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -39539,83 +40593,83 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STALFOS",
+          "OOT_SOUL_ENEMY_STALFOS",
           "OOT_has_skeleton_key",
           "OOT_can_use_bow"
         ],
         [
-          "OOT_SOUL_STALFOS",
+          "OOT_SOUL_ENEMY_STALFOS",
           "OOT_can_use_bow",
           "setting{smallKeyShuffleOot, removed}"
         ],
         [
-          "OOT_SOUL_STALFOS",
+          "OOT_SOUL_ENEMY_STALFOS",
           "OOT_can_use_bow",
           "OOT_KEY_RING_FOREST"
         ],
         [
-          "OOT_SOUL_STALFOS",
+          "OOT_SOUL_ENEMY_STALFOS",
           "OOT_can_use_bow",
           "OOT_SMALL_KEY_FOREST, 5"
         ],
         [
           "OOT_has_skeleton_key",
           "OOT_can_use_bow",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
           "OOT_can_use_bow",
           "setting{smallKeyShuffleOot, removed}",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
           "OOT_can_use_bow",
           "OOT_KEY_RING_FOREST",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
           "OOT_can_use_bow",
           "OOT_SMALL_KEY_FOREST, 5",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "OOT_SOUL_STALFOS",
+          "OOT_SOUL_ENEMY_STALFOS",
           "OOT_has_skeleton_key",
           "OOT_can_use_din"
         ],
         [
-          "OOT_SOUL_STALFOS",
+          "OOT_SOUL_ENEMY_STALFOS",
           "setting{smallKeyShuffleOot, removed}",
           "OOT_can_use_din"
         ],
         [
-          "OOT_SOUL_STALFOS",
+          "OOT_SOUL_ENEMY_STALFOS",
           "OOT_KEY_RING_FOREST",
           "OOT_can_use_din"
         ],
         [
-          "OOT_SOUL_STALFOS",
+          "OOT_SOUL_ENEMY_STALFOS",
           "OOT_SMALL_KEY_FOREST, 5",
           "OOT_can_use_din"
         ],
         [
           "OOT_has_skeleton_key",
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_can_use_din"
         ],
         [
           "setting{smallKeyShuffleOot, removed}",
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_can_use_din"
         ],
         [
           "OOT_KEY_RING_FOREST",
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_can_use_din"
         ],
         [
           "OOT_SMALL_KEY_FOREST, 5",
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_can_use_din"
         ]
       ],
@@ -39963,10 +41017,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_TORCH_SLUG"
+          "OOT_SOUL_ENEMY_TORCH_SLUG"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -39985,36 +41039,36 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
           "OOT_has_skeleton_key"
         ],
         [
-          "OOT_SOUL_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
           "setting{smallKeyShuffleOot, removed}"
         ],
         [
-          "OOT_SOUL_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
           "OOT_KEY_RING_GANON"
         ],
         [
-          "OOT_SOUL_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
           "OOT_SMALL_KEY_GANON, 3"
         ],
         [
           "OOT_has_skeleton_key",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
           "setting{smallKeyShuffleOot, removed}",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
           "OOT_KEY_RING_GANON",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
           "OOT_SMALL_KEY_GANON, 3",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -40033,36 +41087,36 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
           "OOT_has_skeleton_key"
         ],
         [
-          "OOT_SOUL_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
           "setting{smallKeyShuffleOot, removed}"
         ],
         [
-          "OOT_SOUL_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
           "OOT_KEY_RING_GANON"
         ],
         [
-          "OOT_SOUL_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
           "OOT_SMALL_KEY_GANON, 3"
         ],
         [
           "OOT_has_skeleton_key",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
           "setting{smallKeyShuffleOot, removed}",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
           "OOT_KEY_RING_GANON",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
           "OOT_SMALL_KEY_GANON, 3",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -40093,10 +41147,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_STALFOS"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -40114,10 +41168,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_STALFOS"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -40134,10 +41188,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_STALFOS"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -40154,10 +41208,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_STALFOS"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -41688,10 +42742,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_STALFOS"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -41709,10 +42763,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_SPIKE"
+          "OOT_SOUL_ENEMY_SPIKE"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -41758,10 +42812,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_TORCH_SLUG"
+          "OOT_SOUL_ENEMY_TORCH_SLUG"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -42108,20 +43162,20 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STALFOS",
+          "OOT_SOUL_ENEMY_STALFOS",
           "OOT_is_adult"
         ],
         [
           "OOT_is_adult",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "OOT_SOUL_STALFOS",
+          "OOT_SOUL_ENEMY_STALFOS",
           "OOT_can_play_time",
           "OOT_has_hover_boots"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_can_play_time",
           "OOT_has_hover_boots"
         ]
@@ -42140,20 +43194,46 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STALFOS",
+          "OOT_SOUL_NPC_SHEIK",
+          "OOT_SOUL_ENEMY_STALFOS",
           "OOT_is_adult"
         ],
         [
+          "OOT_SOUL_ENEMY_STALFOS",
           "OOT_is_adult",
-          "var{enemySoulsOot, false}"
+          "var{soulsNpcOot, false}"
         ],
         [
-          "OOT_SOUL_STALFOS",
+          "OOT_SOUL_NPC_SHEIK",
+          "OOT_is_adult",
+          "var{soulsEnemyOot, false}"
+        ],
+        [
+          "OOT_is_adult",
+          "var{soulsNpcOot, false}",
+          "var{soulsEnemyOot, false}"
+        ],
+        [
+          "OOT_SOUL_NPC_SHEIK",
+          "OOT_SOUL_ENEMY_STALFOS",
           "OOT_can_play_time",
           "OOT_has_hover_boots"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "OOT_SOUL_ENEMY_STALFOS",
+          "var{soulsNpcOot, false}",
+          "OOT_can_play_time",
+          "OOT_has_hover_boots"
+        ],
+        [
+          "OOT_SOUL_NPC_SHEIK",
+          "var{soulsEnemyOot, false}",
+          "OOT_can_play_time",
+          "OOT_has_hover_boots"
+        ],
+        [
+          "var{soulsNpcOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_can_play_time",
           "OOT_has_hover_boots"
         ]
@@ -42420,9 +43500,20 @@
       ],
       "ConditionalItems": [
         [
+          "OOT_SOUL_NPC_RUTO",
           "OOT_is_child"
         ],
         [
+          "OOT_is_child",
+          "var{soulsNpcOot, false}"
+        ],
+        [
+          "OOT_SOUL_NPC_RUTO",
+          "OOT_is_adult",
+          "OOT_can_dive_small"
+        ],
+        [
+          "var{soulsNpcOot, false}",
           "OOT_is_adult",
           "OOT_can_dive_small"
         ]
@@ -42442,10 +43533,20 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STINGER"
+          "OOT_SOUL_NPC_RUTO",
+          "OOT_SOUL_ENEMY_STINGER"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "OOT_SOUL_ENEMY_STINGER",
+          "var{soulsNpcOot, false}"
+        ],
+        [
+          "OOT_SOUL_NPC_RUTO",
+          "var{soulsEnemyOot, false}"
+        ],
+        [
+          "var{soulsNpcOot, false}",
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -42462,9 +43563,20 @@
       ],
       "ConditionalItems": [
         [
+          "OOT_SOUL_NPC_RUTO",
           "OOT_is_child"
         ],
         [
+          "OOT_is_child",
+          "var{soulsNpcOot, false}"
+        ],
+        [
+          "OOT_SOUL_NPC_RUTO",
+          "OOT_is_adult",
+          "OOT_can_dive_small"
+        ],
+        [
+          "var{soulsNpcOot, false}",
           "OOT_is_adult",
           "OOT_can_dive_small"
         ]
@@ -42537,9 +43649,20 @@
       ],
       "ConditionalItems": [
         [
+          "OOT_SOUL_NPC_RUTO",
           "OOT_is_child"
         ],
         [
+          "OOT_is_child",
+          "var{soulsNpcOot, false}"
+        ],
+        [
+          "OOT_SOUL_NPC_RUTO",
+          "OOT_is_adult",
+          "OOT_can_dive_small"
+        ],
+        [
+          "var{soulsNpcOot, false}",
           "OOT_is_adult",
           "OOT_can_dive_small"
         ]
@@ -42557,9 +43680,20 @@
       ],
       "ConditionalItems": [
         [
+          "OOT_SOUL_NPC_RUTO",
           "OOT_is_child"
         ],
         [
+          "OOT_is_child",
+          "var{soulsNpcOot, false}"
+        ],
+        [
+          "OOT_SOUL_NPC_RUTO",
+          "OOT_is_adult",
+          "OOT_can_dive_small"
+        ],
+        [
+          "var{soulsNpcOot, false}",
           "OOT_is_adult",
           "OOT_can_dive_small"
         ]
@@ -42606,9 +43740,19 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_can_use_sticks"
+          "OOT_can_use_sticks",
+          "OOT_SOUL_NPC_RUTO"
         ],
         [
+          "OOT_can_use_sticks",
+          "var{soulsNpcOot, false}"
+        ],
+        [
+          "OOT_SOUL_NPC_RUTO",
+          "OOT_has_weapon"
+        ],
+        [
+          "var{soulsNpcOot, false}",
           "OOT_has_weapon"
         ]
       ],
@@ -42706,20 +43850,20 @@
           "OOT_can_use_sticks",
           "OOT_soul_like_like",
           "OOT_can_use_slingshot",
-          "OOT_SOUL_PARASITE"
+          "OOT_SOUL_ENEMY_PARASITE"
         ],
         [
           "OOT_can_use_sticks",
           "OOT_soul_like_like",
           "OOT_can_use_slingshot",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "OOT_SOUL_PARASITE",
+          "OOT_SOUL_ENEMY_PARASITE",
           "OOT_has_fire"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_has_fire"
         ]
       ],
@@ -42737,10 +43881,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_PARASITE"
+          "OOT_SOUL_ENEMY_PARASITE"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -42771,12 +43915,12 @@
         [
           "OOT_has_lens",
           "OOT_soul_keese",
-          "OOT_SOUL_STINGER"
+          "OOT_SOUL_ENEMY_STINGER"
         ],
         [
           "OOT_has_lens",
           "OOT_soul_keese",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
           "OOT_has_hover_boots",
@@ -42959,20 +44103,20 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_DEAD_HAND",
+          "OOT_SOUL_ENEMY_DEAD_HAND",
           "OOT_has_weapon"
         ],
         [
           "OOT_has_weapon",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "OOT_SOUL_DEAD_HAND",
+          "OOT_SOUL_ENEMY_DEAD_HAND",
           "OOT_can_use_sticks",
           "trick{TRICK_OOT_DEAD_HAND_STICKS}"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_can_use_sticks",
           "trick{TRICK_OOT_DEAD_HAND_STICKS}"
         ]
@@ -43728,10 +44872,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_STALFOS"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -44214,10 +45358,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_DEAD_HAND"
+          "OOT_SOUL_ENEMY_DEAD_HAND"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -44614,28 +45758,28 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
           "OOT_can_use_sticks"
         ],
         [
           "OOT_can_use_sticks",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "OOT_SOUL_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
           "OOT_has_weapon"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_has_weapon"
         ],
         [
-          "OOT_SOUL_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
           "OOT_has_explosives",
           "OOT_has_nuts"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_has_explosives",
           "OOT_has_nuts"
         ]
@@ -44659,12 +45803,12 @@
       ],
       "ConditionalItems": [
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "OOT_SOUL_TORCH_SLUG",
-          "OOT_SOUL_STALFOS",
-          "OOT_SOUL_ANUBIS"
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_STALFOS",
+          "OOT_SOUL_ENEMY_ANUBIS"
         ]
       ],
       "TimeNeeded": "None",
@@ -44707,28 +45851,28 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
           "OOT_can_use_sticks"
         ],
         [
           "OOT_can_use_sticks",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "OOT_SOUL_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
           "OOT_has_weapon"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_has_weapon"
         ],
         [
-          "OOT_SOUL_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
           "OOT_has_explosives",
           "OOT_has_nuts"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_has_explosives",
           "OOT_has_nuts"
         ]
@@ -44748,28 +45892,28 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
           "OOT_can_use_sticks"
         ],
         [
           "OOT_can_use_sticks",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "OOT_SOUL_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
           "OOT_has_weapon"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_has_weapon"
         ],
         [
-          "OOT_SOUL_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
           "OOT_has_explosives",
           "OOT_has_nuts"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_has_explosives",
           "OOT_has_nuts"
         ]
@@ -44791,11 +45935,11 @@
       ],
       "ConditionalItems": [
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "OOT_SOUL_TORCH_SLUG",
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_STALFOS"
         ]
       ],
       "TimeNeeded": "None",
@@ -44815,11 +45959,11 @@
       ],
       "ConditionalItems": [
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "OOT_SOUL_TORCH_SLUG",
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_STALFOS"
         ]
       ],
       "TimeNeeded": "None",
@@ -44839,11 +45983,11 @@
       ],
       "ConditionalItems": [
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "OOT_SOUL_TORCH_SLUG",
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_STALFOS"
         ]
       ],
       "TimeNeeded": "None",
@@ -44863,11 +46007,11 @@
       ],
       "ConditionalItems": [
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "OOT_SOUL_TORCH_SLUG",
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_STALFOS"
         ]
       ],
       "TimeNeeded": "None",
@@ -44943,10 +46087,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_BABY_DODONGO"
+          "OOT_SOUL_ENEMY_BABY_DODONGO"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -45189,10 +46333,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_STALFOS"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -45866,19 +47010,19 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_SPIKE",
+          "OOT_SOUL_ENEMY_SPIKE",
           "OOT_can_use_bow"
         ],
         [
           "OOT_can_use_bow",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "OOT_SOUL_SPIKE",
+          "OOT_SOUL_ENEMY_SPIKE",
           "OOT_has_fire"
         ],
         [
-          "var{enemySoulsOot, false}",
+          "var{soulsEnemyOot, false}",
           "OOT_has_fire"
         ]
       ],
@@ -46261,11 +47405,11 @@
       ],
       "ConditionalItems": [
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "OOT_SOUL_DARK_LINK",
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_DARK_LINK",
+          "OOT_SOUL_ENEMY_STALFOS"
         ]
       ],
       "TimeNeeded": "None",
@@ -46282,11 +47426,11 @@
       ],
       "ConditionalItems": [
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "OOT_SOUL_STALFOS",
-          "OOT_SOUL_DARK_LINK"
+          "OOT_SOUL_ENEMY_STALFOS",
+          "OOT_SOUL_ENEMY_DARK_LINK"
         ]
       ],
       "TimeNeeded": "None",
@@ -46302,12 +47446,12 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STALFOS",
+          "OOT_SOUL_ENEMY_STALFOS",
           "OOT_has_weapon"
         ],
         [
           "OOT_has_weapon",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
           "OOT_has_hover_boots"
@@ -46326,12 +47470,12 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STALFOS",
+          "OOT_SOUL_ENEMY_STALFOS",
           "OOT_has_weapon"
         ],
         [
           "OOT_has_weapon",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
           "OOT_has_hover_boots"
@@ -46350,12 +47494,12 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STALFOS",
+          "OOT_SOUL_ENEMY_STALFOS",
           "OOT_has_weapon"
         ],
         [
           "OOT_has_weapon",
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
           "OOT_has_hover_boots"
@@ -46375,10 +47519,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_STALFOS"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -46395,10 +47539,10 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_STALFOS"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -46415,11 +47559,11 @@
       ],
       "ConditionalItems": [
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "OOT_SOUL_DARK_LINK",
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_DARK_LINK",
+          "OOT_SOUL_ENEMY_STALFOS"
         ]
       ],
       "TimeNeeded": "None",
@@ -46436,11 +47580,11 @@
       ],
       "ConditionalItems": [
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "OOT_SOUL_DARK_LINK",
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_DARK_LINK",
+          "OOT_SOUL_ENEMY_STALFOS"
         ]
       ],
       "TimeNeeded": "None",
@@ -46457,11 +47601,11 @@
       ],
       "ConditionalItems": [
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "OOT_SOUL_DARK_LINK",
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_DARK_LINK",
+          "OOT_SOUL_ENEMY_STALFOS"
         ]
       ],
       "TimeNeeded": "None",
@@ -46478,11 +47622,11 @@
       ],
       "ConditionalItems": [
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "OOT_SOUL_DARK_LINK",
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_DARK_LINK",
+          "OOT_SOUL_ENEMY_STALFOS"
         ]
       ],
       "TimeNeeded": "None",
@@ -46501,11 +47645,11 @@
       ],
       "ConditionalItems": [
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "OOT_SOUL_DARK_LINK",
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_DARK_LINK",
+          "OOT_SOUL_ENEMY_STALFOS"
         ]
       ],
       "TimeNeeded": "None",
@@ -46525,11 +47669,11 @@
       ],
       "ConditionalItems": [
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "OOT_SOUL_DARK_LINK",
-          "OOT_SOUL_STALFOS"
+          "OOT_SOUL_ENEMY_DARK_LINK",
+          "OOT_SOUL_ENEMY_STALFOS"
         ]
       ],
       "TimeNeeded": "None",
@@ -47073,13 +48217,13 @@
           "MM_can_break_boulders",
           "MM Twin Islands",
           "MM_can_use_light_arrows",
-          "MM_SOUL_SNAPPER"
+          "MM_SOUL_ENEMY_SNAPPER"
         ],
         [
           "MM_can_use_fire_arrows",
           "MM Twin Islands",
           "MM_can_use_light_arrows",
-          "MM_SOUL_SNAPPER"
+          "MM_SOUL_ENEMY_SNAPPER"
         ],
         [
           "MM Road to Ikana Grotto"
@@ -47088,13 +48232,13 @@
           "MM_can_break_boulders",
           "MM Twin Islands",
           "MM_can_use_light_arrows",
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
           "MM_can_use_fire_arrows",
           "MM Twin Islands",
           "MM_can_use_light_arrows",
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
           "MM_is_night",
@@ -47537,39 +48681,39 @@
         ],
         [
           "MM Termina Field",
-          "MM_SOUL_CHUCHU"
+          "MM_SOUL_ENEMY_CHUCHU"
         ],
         [
           "MM Termina Field",
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "MM_SOUL_CHUCHU",
+          "MM_SOUL_ENEMY_CHUCHU",
           "MM Great Bay Temple Ice Arrow Room",
           "MM_has_weapon"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM Great Bay Temple Ice Arrow Room",
           "MM_has_weapon"
         ],
         [
-          "MM_SOUL_CHUCHU",
+          "MM_SOUL_ENEMY_CHUCHU",
           "MM Great Bay Temple Ice Arrow Room",
           "MM_has_mask_zora"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM Great Bay Temple Ice Arrow Room",
           "MM_has_mask_zora"
         ],
         [
-          "MM_SOUL_CHUCHU",
+          "MM_SOUL_ENEMY_CHUCHU",
           "MM Great Bay Temple Ice Arrow Room",
           "MM_has_explosives"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM Great Bay Temple Ice Arrow Room",
           "MM_has_explosives"
         ],
@@ -47634,12 +48778,12 @@
           "MM_MASK_DEKU"
         ],
         [
-          "MM_SOUL_CHUCHU",
+          "MM_SOUL_ENEMY_CHUCHU",
           "MM Great Bay Temple Ice Arrow Room",
           "MM_MASK_DEKU"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM Great Bay Temple Ice Arrow Room",
           "MM_MASK_DEKU"
         ],
@@ -48242,42 +49386,42 @@
       ],
       "ConditionalItems": [
         [
-          "MM_SOUL_WIZZROBE",
+          "MM_SOUL_ENEMY_WIZZROBE",
           "MM_can_use_light_arrows",
           "MM_can_fight"
         ],
         [
           "MM_can_use_light_arrows",
           "MM_can_fight",
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "MM_SOUL_WIZZROBE",
+          "MM_SOUL_ENEMY_WIZZROBE",
           "MM_can_fight",
           "MM_short_hook_anywhere"
         ],
         [
           "MM_can_fight",
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_short_hook_anywhere"
         ],
         [
-          "MM_SOUL_WIZZROBE",
+          "MM_SOUL_ENEMY_WIZZROBE",
           "MM_can_use_light_arrows",
           "MM_has_arrows"
         ],
         [
           "MM_can_use_light_arrows",
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_has_arrows"
         ],
         [
-          "MM_SOUL_WIZZROBE",
+          "MM_SOUL_ENEMY_WIZZROBE",
           "MM_short_hook_anywhere",
           "MM_has_arrows"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_short_hook_anywhere",
           "MM_has_arrows"
         ]
@@ -48295,19 +49439,19 @@
       ],
       "ConditionalItems": [
         [
-          "MM_SOUL_WIZZROBE",
+          "MM_SOUL_ENEMY_WIZZROBE",
           "MM_can_fight"
         ],
         [
           "MM_can_fight",
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "MM_SOUL_WIZZROBE",
+          "MM_SOUL_ENEMY_WIZZROBE",
           "MM_has_arrows"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_has_arrows"
         ]
       ],
@@ -48756,10 +49900,10 @@
       ],
       "ConditionalItems": [
         [
-          "MM_SOUL_IGOS"
+          "MM_SOUL_BOSS_IGOS"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsBossMm, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -50682,28 +51826,28 @@
       ],
       "ConditionalItems": [
         [
-          "MM_SOUL_BIO_BABA",
+          "MM_SOUL_ENEMY_BIO_BABA",
           "MM_has_mask_zora"
         ],
         [
           "MM_has_mask_zora",
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "MM_SOUL_BIO_BABA",
+          "MM_SOUL_ENEMY_BIO_BABA",
           "MM_has_arrows"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_has_arrows"
         ],
         [
-          "MM_SOUL_BIO_BABA",
+          "MM_SOUL_ENEMY_BIO_BABA",
           "MM_MASK_BLAST",
           "MM_short_hook_anywhere"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_MASK_BLAST",
           "MM_short_hook_anywhere"
         ]
@@ -50733,10 +51877,10 @@
       ],
       "ConditionalItems": [
         [
-          "MM_SOUL_BIO_BABA"
+          "MM_SOUL_ENEMY_BIO_BABA"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
           "MM_can_hookshot"
@@ -50777,14 +51921,14 @@
           "MM Great Bay Temple Compass Room"
         ],
         [
-          "MM_SOUL_GEKKO",
+          "MM_SOUL_ENEMY_GEKKO",
           "MM_can_use_ice_arrows",
           "MM Great Bay Temple Boss Key Room"
         ],
         [
           "MM_can_use_ice_arrows",
           "MM Great Bay Temple Boss Key Room",
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -51129,10 +52273,10 @@
       ],
       "ConditionalItems": [
         [
-          "MM_SOUL_WART"
+          "MM_SOUL_ENEMY_WART"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -51412,12 +52556,12 @@
       ],
       "ConditionalItems": [
         [
-          "MM_SOUL_CHUCHU",
+          "MM_SOUL_ENEMY_CHUCHU",
           "MM_can_use_ice_arrows"
         ],
         [
           "MM_can_use_ice_arrows",
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
           "MM_short_hook_anywhere"
@@ -51437,10 +52581,10 @@
       ],
       "ConditionalItems": [
         [
-          "MM_SOUL_GEKKO"
+          "MM_SOUL_ENEMY_GEKKO"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -51458,10 +52602,10 @@
       ],
       "ConditionalItems": [
         [
-          "MM_SOUL_GEKKO"
+          "MM_SOUL_ENEMY_GEKKO"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -52336,21 +53480,21 @@
       ],
       "ConditionalItems": [
         [
-          "MM_SOUL_GYORG",
+          "MM_SOUL_BOSS_GYORG",
           "MM_has_mask_zora",
           "MM_has_arrows"
         ],
         [
           "MM_has_mask_zora",
           "MM_has_arrows",
-          "var{enemySoulsMm, false}"
+          "var{soulsBossMm, false}"
         ],
         [
-          "MM_SOUL_GYORG",
+          "MM_SOUL_BOSS_GYORG",
           "MM_MASK_FIERCE_DEITY"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsBossMm, false}",
           "MM_MASK_FIERCE_DEITY"
         ]
       ],
@@ -53485,35 +54629,35 @@
       ],
       "ConditionalItems": [
         [
-          "MM_SOUL_GARO",
+          "MM_SOUL_ENEMY_GARO",
           "MM_has_weapon"
         ],
         [
           "MM_has_weapon",
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "MM_SOUL_GARO",
+          "MM_SOUL_ENEMY_GARO",
           "MM_has_mask_goron"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_has_mask_goron"
         ],
         [
-          "MM_SOUL_GARO",
+          "MM_SOUL_ENEMY_GARO",
           "MM_can_use_deku_bubble"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_can_use_deku_bubble"
         ],
         [
-          "MM_SOUL_GARO",
+          "MM_SOUL_ENEMY_GARO",
           "MM_has_arrows"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_has_arrows"
         ]
       ],
@@ -53530,35 +54674,35 @@
       ],
       "ConditionalItems": [
         [
-          "MM_SOUL_GARO",
+          "MM_SOUL_ENEMY_GARO",
           "MM_has_weapon"
         ],
         [
           "MM_has_weapon",
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "MM_SOUL_GARO",
+          "MM_SOUL_ENEMY_GARO",
           "MM_has_mask_goron"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_has_mask_goron"
         ],
         [
-          "MM_SOUL_GARO",
+          "MM_SOUL_ENEMY_GARO",
           "MM_can_use_deku_bubble"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_can_use_deku_bubble"
         ],
         [
-          "MM_SOUL_GARO",
+          "MM_SOUL_ENEMY_GARO",
           "MM_has_arrows"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_has_arrows"
         ]
       ],
@@ -53576,35 +54720,35 @@
       ],
       "ConditionalItems": [
         [
-          "MM_SOUL_GARO",
+          "MM_SOUL_ENEMY_GARO",
           "MM_has_weapon"
         ],
         [
           "MM_has_weapon",
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "MM_SOUL_GARO",
+          "MM_SOUL_ENEMY_GARO",
           "MM_has_mask_goron"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_has_mask_goron"
         ],
         [
-          "MM_SOUL_GARO",
+          "MM_SOUL_ENEMY_GARO",
           "MM_can_use_deku_bubble"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_can_use_deku_bubble"
         ],
         [
-          "MM_SOUL_GARO",
+          "MM_SOUL_ENEMY_GARO",
           "MM_has_arrows"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_has_arrows"
         ]
       ],
@@ -75043,10 +76187,10 @@
       ],
       "ConditionalItems": [
         [
-          "MM_SOUL_DEEP_PYTHON"
+          "MM_SOUL_ENEMY_DEEP_PYTHON"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -77197,10 +78341,10 @@
       ],
       "ConditionalItems": [
         [
-          "MM_SOUL_CAPTAIN_KEETA"
+          "MM_SOUL_ENEMY_CAPTAIN_KEETA"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -77652,43 +78796,43 @@
       ],
       "ConditionalItems": [
         [
-          "MM_SOUL_BAD_BAT",
+          "MM_SOUL_ENEMY_BAD_BAT",
           "MM_can_fight"
         ],
         [
           "MM_can_fight",
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "MM_SOUL_BAD_BAT",
+          "MM_SOUL_ENEMY_BAD_BAT",
           "MM_has_explosives"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_has_explosives"
         ],
         [
-          "MM_SOUL_BAD_BAT",
+          "MM_SOUL_ENEMY_BAD_BAT",
           "MM_has_arrows"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_has_arrows"
         ],
         [
-          "MM_SOUL_BAD_BAT",
+          "MM_SOUL_ENEMY_BAD_BAT",
           "MM_can_hookshot_short"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_can_hookshot_short"
         ],
         [
-          "MM_SOUL_BAD_BAT",
+          "MM_SOUL_ENEMY_BAD_BAT",
           "MM_MASK_DEKU"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_MASK_DEKU"
         ]
       ],
@@ -81525,10 +82669,10 @@
       ],
       "ConditionalItems": [
         [
-          "MM_SOUL_WIZZROBE"
+          "MM_SOUL_ENEMY_WIZZROBE"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -81653,10 +82797,10 @@
       ],
       "ConditionalItems": [
         [
-          "MM_SOUL_WART"
+          "MM_SOUL_ENEMY_WART"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -81757,10 +82901,10 @@
       ],
       "ConditionalItems": [
         [
-          "MM_SOUL_GARO"
+          "MM_SOUL_ENEMY_GARO"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -83515,10 +84659,10 @@
       ],
       "ConditionalItems": [
         [
-          "MM_SOUL_WIZZROBE"
+          "MM_SOUL_ENEMY_WIZZROBE"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -83968,10 +85112,10 @@
       ],
       "ConditionalItems": [
         [
-          "MM_SOUL_WIZZROBE"
+          "MM_SOUL_ENEMY_WIZZROBE"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -84491,10 +85635,10 @@
       ],
       "ConditionalItems": [
         [
-          "MM_SOUL_GOHT"
+          "MM_SOUL_BOSS_GOHT"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsBossMm, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -85157,19 +86301,19 @@
           "MM Stone Tower Temple Center Ledge",
           "MM_can_use_ice_arrows",
           "MM_can_use_light_arrows",
-          "MM_SOUL_DEXIHAND"
+          "MM_SOUL_ENEMY_DEXIHAND"
         ],
         [
           "MM Stone Tower Temple Center Ledge",
           "MM_can_use_light_arrows",
           "MM_MASK_DEKU",
-          "MM_SOUL_DEXIHAND"
+          "MM_SOUL_ENEMY_DEXIHAND"
         ],
         [
           "MM Stone Tower Temple Center Ledge",
           "MM_can_use_light_arrows",
           "MM_has_explosives",
-          "MM_SOUL_DEXIHAND"
+          "MM_SOUL_ENEMY_DEXIHAND"
         ],
         [
           "MM Stone Tower Temple Center Ledge",
@@ -85177,37 +86321,37 @@
           "MM_has_magic",
           "MM_has_weapon",
           "MM_SPIN_UPGRADE",
-          "MM_SOUL_DEXIHAND"
+          "MM_SOUL_ENEMY_DEXIHAND"
         ],
         [
           "MM Stone Tower Temple Center Ledge",
           "MM_can_use_light_arrows",
           "MM_SWORD, 3",
-          "MM_SOUL_DEXIHAND"
+          "MM_SOUL_ENEMY_DEXIHAND"
         ],
         [
           "MM Stone Tower Temple Center Ledge",
           "MM_can_use_light_arrows",
           "MM_GREAT_FAIRY_SWORD",
-          "MM_SOUL_DEXIHAND"
+          "MM_SOUL_ENEMY_DEXIHAND"
         ],
         [
           "MM Stone Tower Temple Center Ledge",
           "MM_can_use_ice_arrows",
           "MM_can_use_light_arrows",
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
           "MM Stone Tower Temple Center Ledge",
           "MM_can_use_light_arrows",
           "MM_MASK_DEKU",
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
           "MM Stone Tower Temple Center Ledge",
           "MM_can_use_light_arrows",
           "MM_has_explosives",
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
           "MM Stone Tower Temple Center Ledge",
@@ -85215,19 +86359,19 @@
           "MM_has_magic",
           "MM_has_weapon",
           "MM_SPIN_UPGRADE",
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
           "MM Stone Tower Temple Center Ledge",
           "MM_can_use_light_arrows",
           "MM_SWORD, 3",
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
           "MM Stone Tower Temple Center Ledge",
           "MM_can_use_light_arrows",
           "MM_GREAT_FAIRY_SWORD",
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
           "MM_short_hook_anywhere",
@@ -85298,10 +86442,10 @@
           "MM_has_mask_zora"
         ],
         [
-          "MM_SOUL_DEXIHAND"
+          "MM_SOUL_ENEMY_DEXIHAND"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -85562,11 +86706,11 @@
         ],
         [
           "MM_short_hook_anywhere",
-          "MM_SOUL_DEXIHAND"
+          "MM_SOUL_ENEMY_DEXIHAND"
         ],
         [
           "MM_short_hook_anywhere",
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -85954,35 +87098,35 @@
       ],
       "ConditionalItems": [
         [
-          "MM_SOUL_GARO",
+          "MM_SOUL_ENEMY_GARO",
           "MM_has_weapon"
         ],
         [
           "MM_has_weapon",
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "MM_SOUL_GARO",
+          "MM_SOUL_ENEMY_GARO",
           "MM_has_mask_goron"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_has_mask_goron"
         ],
         [
-          "MM_SOUL_GARO",
+          "MM_SOUL_ENEMY_GARO",
           "MM_can_use_deku_bubble"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_can_use_deku_bubble"
         ],
         [
-          "MM_SOUL_GARO",
+          "MM_SOUL_ENEMY_GARO",
           "MM_has_arrows"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_has_arrows"
         ]
       ],
@@ -85999,35 +87143,35 @@
       ],
       "ConditionalItems": [
         [
-          "MM_SOUL_GARO",
+          "MM_SOUL_ENEMY_GARO",
           "MM_has_weapon"
         ],
         [
           "MM_has_weapon",
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "MM_SOUL_GARO",
+          "MM_SOUL_ENEMY_GARO",
           "MM_has_mask_goron"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_has_mask_goron"
         ],
         [
-          "MM_SOUL_GARO",
+          "MM_SOUL_ENEMY_GARO",
           "MM_can_use_deku_bubble"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_can_use_deku_bubble"
         ],
         [
-          "MM_SOUL_GARO",
+          "MM_SOUL_ENEMY_GARO",
           "MM_has_arrows"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_has_arrows"
         ]
       ],
@@ -86174,43 +87318,43 @@
       ],
       "ConditionalItems": [
         [
-          "MM_SOUL_EYEGORE",
+          "MM_SOUL_ENEMY_EYEGORE",
           "MM_has_explosives"
         ],
         [
           "MM_has_explosives",
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "MM_SOUL_EYEGORE",
+          "MM_SOUL_ENEMY_EYEGORE",
           "MM_has_arrows"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_has_arrows"
         ],
         [
-          "MM_SOUL_EYEGORE",
+          "MM_SOUL_ENEMY_EYEGORE",
           "MM_can_hookshot_short"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_can_hookshot_short"
         ],
         [
-          "MM_SOUL_EYEGORE",
+          "MM_SOUL_ENEMY_EYEGORE",
           "MM_has_mask_zora"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_has_mask_zora"
         ],
         [
-          "MM_SOUL_EYEGORE",
+          "MM_SOUL_ENEMY_EYEGORE",
           "MM_has_mask_goron"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_has_mask_goron"
         ]
       ],
@@ -86244,11 +87388,11 @@
         ],
         [
           "MM_can_goron_bomb_jump",
-          "MM_SOUL_DEXIHAND"
+          "MM_SOUL_ENEMY_DEXIHAND"
         ],
         [
           "MM_can_goron_bomb_jump",
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
           "MM_can_goron_bomb_jump",
@@ -86681,82 +87825,82 @@
       ],
       "ConditionalItems": [
         [
-          "MM_SOUL_CHUCHU",
+          "MM_SOUL_ENEMY_CHUCHU",
           "trick{TRICK_MM_ISTT_ENTRY_JUMP}",
           "MM_has_skeleton_key"
         ],
         [
-          "MM_SOUL_CHUCHU",
+          "MM_SOUL_ENEMY_CHUCHU",
           "trick{TRICK_MM_ISTT_ENTRY_JUMP}",
           "setting{smallKeyShuffleMm, removed}"
         ],
         [
-          "MM_SOUL_CHUCHU",
+          "MM_SOUL_ENEMY_CHUCHU",
           "trick{TRICK_MM_ISTT_ENTRY_JUMP}",
           "MM_KEY_RING_ST"
         ],
         [
-          "MM_SOUL_CHUCHU",
+          "MM_SOUL_ENEMY_CHUCHU",
           "trick{TRICK_MM_ISTT_ENTRY_JUMP}",
           "MM_SMALL_KEY_ST, 4"
         ],
         [
           "trick{TRICK_MM_ISTT_ENTRY_JUMP}",
           "MM_has_skeleton_key",
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
           "trick{TRICK_MM_ISTT_ENTRY_JUMP}",
           "setting{smallKeyShuffleMm, removed}",
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
           "trick{TRICK_MM_ISTT_ENTRY_JUMP}",
           "MM_KEY_RING_ST",
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
           "trick{TRICK_MM_ISTT_ENTRY_JUMP}",
           "MM_SMALL_KEY_ST, 4",
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "MM_SOUL_CHUCHU",
+          "MM_SOUL_ENEMY_CHUCHU",
           "MM_has_skeleton_key",
           "trick{TRICK_MM_ISTT_ENTRY_JUMP, false}"
         ],
         [
-          "MM_SOUL_CHUCHU",
+          "MM_SOUL_ENEMY_CHUCHU",
           "setting{smallKeyShuffleMm, removed}",
           "trick{TRICK_MM_ISTT_ENTRY_JUMP, false}"
         ],
         [
-          "MM_SOUL_CHUCHU",
+          "MM_SOUL_ENEMY_CHUCHU",
           "MM_KEY_RING_ST",
           "trick{TRICK_MM_ISTT_ENTRY_JUMP, false}"
         ],
         [
           "MM_has_skeleton_key",
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "trick{TRICK_MM_ISTT_ENTRY_JUMP, false}"
         ],
         [
           "setting{smallKeyShuffleMm, removed}",
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "trick{TRICK_MM_ISTT_ENTRY_JUMP, false}"
         ],
         [
           "MM_KEY_RING_ST",
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "trick{TRICK_MM_ISTT_ENTRY_JUMP, false}"
         ],
         [
-          "MM_SOUL_CHUCHU",
+          "MM_SOUL_ENEMY_CHUCHU",
           "trick{TRICK_MM_ISTT_ENTRY_JUMP, false}",
           "MM_SMALL_KEY_ST, 3"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "trick{TRICK_MM_ISTT_ENTRY_JUMP, false}",
           "MM_SMALL_KEY_ST, 3"
         ],
@@ -87061,23 +88205,23 @@
       ],
       "ConditionalItems": [
         [
-          "MM_SOUL_WIZZROBE",
+          "MM_SOUL_ENEMY_WIZZROBE",
           "MM_can_hookshot_short",
           "MM_can_fight"
         ],
         [
           "MM_can_hookshot_short",
           "MM_can_fight",
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "MM_SOUL_WIZZROBE",
+          "MM_SOUL_ENEMY_WIZZROBE",
           "MM_can_hookshot_short",
           "MM_has_arrows"
         ],
         [
           "MM_can_hookshot_short",
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_has_arrows"
         ],
         [
@@ -87162,19 +88306,19 @@
       ],
       "ConditionalItems": [
         [
-          "MM_SOUL_WIZZROBE",
+          "MM_SOUL_ENEMY_WIZZROBE",
           "MM_can_fight"
         ],
         [
           "MM_can_fight",
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "MM_SOUL_WIZZROBE",
+          "MM_SOUL_ENEMY_WIZZROBE",
           "MM_has_arrows"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_has_arrows"
         ]
       ],
@@ -87441,10 +88585,10 @@
       ],
       "ConditionalItems": [
         [
-          "MM_SOUL_GOMESS"
+          "MM_SOUL_ENEMY_GOMESS"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -87622,43 +88766,43 @@
       ],
       "ConditionalItems": [
         [
-          "MM_SOUL_EYEGORE",
+          "MM_SOUL_ENEMY_EYEGORE",
           "MM_has_explosives"
         ],
         [
           "MM_has_explosives",
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "MM_SOUL_EYEGORE",
+          "MM_SOUL_ENEMY_EYEGORE",
           "MM_has_arrows"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_has_arrows"
         ],
         [
-          "MM_SOUL_EYEGORE",
+          "MM_SOUL_ENEMY_EYEGORE",
           "MM_can_hookshot_short"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_can_hookshot_short"
         ],
         [
-          "MM_SOUL_EYEGORE",
+          "MM_SOUL_ENEMY_EYEGORE",
           "MM_has_mask_zora"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_has_mask_zora"
         ],
         [
-          "MM_SOUL_EYEGORE",
+          "MM_SOUL_ENEMY_EYEGORE",
           "MM_has_mask_goron"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_has_mask_goron"
         ]
       ],
@@ -87675,43 +88819,43 @@
       ],
       "ConditionalItems": [
         [
-          "MM_SOUL_EYEGORE",
+          "MM_SOUL_ENEMY_EYEGORE",
           "MM_has_explosives"
         ],
         [
           "MM_has_explosives",
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "MM_SOUL_EYEGORE",
+          "MM_SOUL_ENEMY_EYEGORE",
           "MM_has_arrows"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_has_arrows"
         ],
         [
-          "MM_SOUL_EYEGORE",
+          "MM_SOUL_ENEMY_EYEGORE",
           "MM_can_hookshot_short"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_can_hookshot_short"
         ],
         [
-          "MM_SOUL_EYEGORE",
+          "MM_SOUL_ENEMY_EYEGORE",
           "MM_has_mask_zora"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_has_mask_zora"
         ],
         [
-          "MM_SOUL_EYEGORE",
+          "MM_SOUL_ENEMY_EYEGORE",
           "MM_has_mask_goron"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_has_mask_goron"
         ]
       ],
@@ -88007,21 +89151,21 @@
       ],
       "ConditionalItems": [
         [
-          "MM_SOUL_TWINMOLD",
+          "MM_SOUL_BOSS_TWINMOLD",
           "MM_MASK_GIANT",
           "MM_SWORD"
         ],
         [
           "MM_MASK_GIANT",
           "MM_SWORD",
-          "var{enemySoulsMm, false}"
+          "var{soulsBossMm, false}"
         ],
         [
-          "MM_SOUL_TWINMOLD",
+          "MM_SOUL_BOSS_TWINMOLD",
           "MM_MASK_FIERCE_DEITY"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsBossMm, false}",
           "MM_MASK_FIERCE_DEITY"
         ]
       ],
@@ -89365,27 +90509,27 @@
       ],
       "ConditionalItems": [
         [
-          "MM_SOUL_SNAPPER",
+          "MM_SOUL_ENEMY_SNAPPER",
           "MM_MASK_DEKU"
         ],
         [
           "MM_MASK_DEKU",
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "MM_SOUL_SNAPPER",
+          "MM_SOUL_ENEMY_SNAPPER",
           "MM_has_explosives"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_has_explosives"
         ],
         [
-          "MM_SOUL_SNAPPER",
+          "MM_SOUL_ENEMY_SNAPPER",
           "MM_has_mask_goron"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_has_mask_goron"
         ]
       ],
@@ -89608,10 +90752,10 @@
       ],
       "ConditionalItems": [
         [
-          "MM_SOUL_DRAGONFLY"
+          "MM_SOUL_ENEMY_DRAGONFLY"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -89675,10 +90819,10 @@
       ],
       "ConditionalItems": [
         [
-          "MM_SOUL_BOE"
+          "MM_SOUL_ENEMY_BOE"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -90152,27 +91296,27 @@
       ],
       "ConditionalItems": [
         [
-          "MM_SOUL_GEKKO",
+          "MM_SOUL_ENEMY_GEKKO",
           "MM_MASK_DEKU"
         ],
         [
           "MM_MASK_DEKU",
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "MM_SOUL_GEKKO",
+          "MM_SOUL_ENEMY_GEKKO",
           "MM_has_mask_goron"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_has_mask_goron"
         ],
         [
-          "MM_SOUL_GEKKO",
+          "MM_SOUL_ENEMY_GEKKO",
           "MM_has_explosives"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsEnemyMm, false}",
           "MM_has_explosives"
         ]
       ],
@@ -90684,22 +91828,22 @@
       ],
       "ConditionalItems": [
         [
-          "MM_SOUL_ODOLWA",
+          "MM_SOUL_BOSS_ODOLWA",
           "MM_MASK_FIERCE_DEITY",
           "MM_has_magic"
         ],
         [
           "MM_MASK_FIERCE_DEITY",
           "MM_has_magic",
-          "var{enemySoulsMm, false}"
+          "var{soulsBossMm, false}"
         ],
         [
-          "MM_SOUL_ODOLWA",
+          "MM_SOUL_BOSS_ODOLWA",
           "MM_has_arrows",
           "MM_can_fight"
         ],
         [
-          "var{enemySoulsMm, false}",
+          "var{soulsBossMm, false}",
           "MM_has_arrows",
           "MM_can_fight"
         ]
@@ -93008,13 +94152,30 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_has_weapon"
+          "OOT_has_weapon",
+          "OOT_SOUL_NPC_CARPENTERS"
         ],
         [
+          "OOT_has_weapon",
+          "var{soulsNpcOot, false}"
+        ],
+        [
+          "OOT_SOUL_NPC_CARPENTERS",
           "OOT_can_boomerang",
           "OOT_can_use_sticks"
         ],
         [
+          "var{soulsNpcOot, false}",
+          "OOT_can_boomerang",
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_SOUL_NPC_CARPENTERS",
+          "OOT_can_use_sticks",
+          "OOT_has_nuts"
+        ],
+        [
+          "var{soulsNpcOot, false}",
           "OOT_can_use_sticks",
           "OOT_has_nuts"
         ]
@@ -93515,12 +94676,17 @@
     },
     {
       "Id": "OOT_can_move_mido",
-      "RequiredItems": [
-        "OOT_is_child",
-        "OOT_has_sword_kokiri",
-        "renewable{OOT_SHIELD_DEKU}"
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_is_child",
+          "OOT_has_sword_kokiri",
+          "renewable{OOT_SHIELD_DEKU}"
+        ],
+        [
+          "setting{dekuTree, open}"
+        ]
       ],
-      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -93534,7 +94700,12 @@
           "setting{dekuTree, open}"
         ],
         [
-          "OOT_EVENT_MIDO_MOVED"
+          "OOT_EVENT_MIDO_MOVED",
+          "OOT_SOUL_NPC_MIDO"
+        ],
+        [
+          "OOT_EVENT_MIDO_MOVED",
+          "var{soulsNpcOot, false}"
         ]
       ],
       "TimeNeeded": "None",
@@ -96672,13 +97843,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "OOT_SOUL_OCTOROK"
+          "OOT_SOUL_ENEMY_OCTOROK"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "SHARED_SOUL_OCTOROK"
+          "SHARED_SOUL_ENEMY_OCTOROK"
         ]
       ],
       "TimeNeeded": "None",
@@ -96691,13 +97862,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "OOT_SOUL_WALLMASTER"
+          "OOT_SOUL_ENEMY_WALLMASTER"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "SHARED_SOUL_WALLMASTER"
+          "SHARED_SOUL_ENEMY_WALLMASTER"
         ]
       ],
       "TimeNeeded": "None",
@@ -96710,13 +97881,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "OOT_SOUL_DODONGO"
+          "OOT_SOUL_ENEMY_DODONGO"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "SHARED_SOUL_DODONGO"
+          "SHARED_SOUL_ENEMY_DODONGO"
         ]
       ],
       "TimeNeeded": "None",
@@ -96729,13 +97900,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "OOT_SOUL_KEESE"
+          "OOT_SOUL_ENEMY_KEESE"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "SHARED_SOUL_KEESE"
+          "SHARED_SOUL_ENEMY_KEESE"
         ]
       ],
       "TimeNeeded": "None",
@@ -96748,13 +97919,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "OOT_SOUL_TEKTITE"
+          "OOT_SOUL_ENEMY_TEKTITE"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "SHARED_SOUL_TEKTITE"
+          "SHARED_SOUL_ENEMY_TEKTITE"
         ]
       ],
       "TimeNeeded": "None",
@@ -96767,13 +97938,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "OOT_SOUL_PEAHAT"
+          "OOT_SOUL_ENEMY_PEAHAT"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "SHARED_SOUL_PEAHAT"
+          "SHARED_SOUL_ENEMY_PEAHAT"
         ]
       ],
       "TimeNeeded": "None",
@@ -96786,13 +97957,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "OOT_SOUL_LIZALFOS_DINALFOS"
+          "OOT_SOUL_ENEMY_LIZALFOS_DINALFOS"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "SHARED_SOUL_LIZALFOS_DINALFOS"
+          "SHARED_SOUL_ENEMY_LIZALFOS_DINALFOS"
         ]
       ],
       "TimeNeeded": "None",
@@ -96805,13 +97976,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "OOT_SOUL_SKULLTULA"
+          "OOT_SOUL_ENEMY_SKULLTULA"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "SHARED_SOUL_SKULLTULA"
+          "SHARED_SOUL_ENEMY_SKULLTULA"
         ]
       ],
       "TimeNeeded": "None",
@@ -96824,13 +97995,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "OOT_SOUL_ARMOS"
+          "OOT_SOUL_ENEMY_ARMOS"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "SHARED_SOUL_ARMOS"
+          "SHARED_SOUL_ENEMY_ARMOS"
         ]
       ],
       "TimeNeeded": "None",
@@ -96843,13 +98014,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "OOT_SOUL_DEKU_BABA"
+          "OOT_SOUL_ENEMY_DEKU_BABA"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "SHARED_SOUL_DEKU_BABA"
+          "SHARED_SOUL_ENEMY_DEKU_BABA"
         ]
       ],
       "TimeNeeded": "None",
@@ -96862,13 +98033,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "OOT_SOUL_DEKU_SCRUB"
+          "OOT_SOUL_ENEMY_DEKU_SCRUB"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "SHARED_SOUL_DEKU_SCRUB"
+          "SHARED_SOUL_ENEMY_DEKU_SCRUB"
         ]
       ],
       "TimeNeeded": "None",
@@ -96881,13 +98052,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "OOT_SOUL_BUBBLE"
+          "OOT_SOUL_ENEMY_BUBBLE"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "SHARED_SOUL_BUBBLE"
+          "SHARED_SOUL_ENEMY_BUBBLE"
         ]
       ],
       "TimeNeeded": "None",
@@ -96900,13 +98071,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "OOT_SOUL_BEAMOS"
+          "OOT_SOUL_ENEMY_BEAMOS"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "SHARED_SOUL_BEAMOS"
+          "SHARED_SOUL_ENEMY_BEAMOS"
         ]
       ],
       "TimeNeeded": "None",
@@ -96919,13 +98090,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "OOT_SOUL_REDEAD_GIBDO"
+          "OOT_SOUL_ENEMY_REDEAD_GIBDO"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "SHARED_SOUL_REDEAD_GIBDO"
+          "SHARED_SOUL_ENEMY_REDEAD_GIBDO"
         ]
       ],
       "TimeNeeded": "None",
@@ -96938,13 +98109,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "OOT_SOUL_SKULLWALLTULA"
+          "OOT_SOUL_ENEMY_SKULLWALLTULA"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "SHARED_SOUL_SKULLWALLTULA"
+          "SHARED_SOUL_ENEMY_SKULLWALLTULA"
         ]
       ],
       "TimeNeeded": "None",
@@ -96957,13 +98128,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "OOT_SOUL_SHELL_BLADE"
+          "OOT_SOUL_ENEMY_SHELL_BLADE"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "SHARED_SOUL_SHELL_BLADE"
+          "SHARED_SOUL_ENEMY_SHELL_BLADE"
         ]
       ],
       "TimeNeeded": "None",
@@ -96976,13 +98147,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "OOT_SOUL_LIKE_LIKE"
+          "OOT_SOUL_ENEMY_LIKE_LIKE"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "SHARED_SOUL_LIKE_LIKE"
+          "SHARED_SOUL_ENEMY_LIKE_LIKE"
         ]
       ],
       "TimeNeeded": "None",
@@ -96995,13 +98166,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "OOT_SOUL_IRON_KNUCKLE"
+          "OOT_SOUL_ENEMY_IRON_KNUCKLE"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "SHARED_SOUL_IRON_KNUCKLE"
+          "SHARED_SOUL_ENEMY_IRON_KNUCKLE"
         ]
       ],
       "TimeNeeded": "None",
@@ -97014,13 +98185,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "OOT_SOUL_FREEZARD"
+          "OOT_SOUL_ENEMY_FREEZARD"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "SHARED_SOUL_FREEZARD"
+          "SHARED_SOUL_ENEMY_FREEZARD"
         ]
       ],
       "TimeNeeded": "None",
@@ -97033,13 +98204,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "OOT_SOUL_WOLFOS"
+          "OOT_SOUL_ENEMY_WOLFOS"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "SHARED_SOUL_WOLFOS"
+          "SHARED_SOUL_ENEMY_WOLFOS"
         ]
       ],
       "TimeNeeded": "None",
@@ -97052,13 +98223,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "OOT_SOUL_GUAY"
+          "OOT_SOUL_ENEMY_GUAY"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "SHARED_SOUL_GUAY"
+          "SHARED_SOUL_ENEMY_GUAY"
         ]
       ],
       "TimeNeeded": "None",
@@ -97071,13 +98242,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "OOT_SOUL_FLYING_POT"
+          "OOT_SOUL_ENEMY_FLYING_POT"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "SHARED_SOUL_FLYING_POT"
+          "SHARED_SOUL_ENEMY_FLYING_POT"
         ]
       ],
       "TimeNeeded": "None",
@@ -97090,13 +98261,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "OOT_SOUL_FLOORMASTER"
+          "OOT_SOUL_ENEMY_FLOORMASTER"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "SHARED_SOUL_FLOORMASTER"
+          "SHARED_SOUL_ENEMY_FLOORMASTER"
         ]
       ],
       "TimeNeeded": "None",
@@ -97109,13 +98280,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "OOT_SOUL_LEEVER"
+          "OOT_SOUL_ENEMY_LEEVER"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "SHARED_SOUL_LEEVER"
+          "SHARED_SOUL_ENEMY_LEEVER"
         ]
       ],
       "TimeNeeded": "None",
@@ -97128,13 +98299,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "OOT_SOUL_STALCHILD"
+          "OOT_SOUL_ENEMY_STALCHILD"
         ],
         [
-          "var{enemySoulsOot, false}"
+          "var{soulsEnemyOot, false}"
         ],
         [
-          "SHARED_SOUL_STALCHILD"
+          "SHARED_SOUL_ENEMY_STALCHILD"
         ]
       ],
       "TimeNeeded": "None",
@@ -97163,13 +98334,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_SOUL_OCTOROK"
+          "MM_SOUL_ENEMY_OCTOROK"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "SHARED_SOUL_OCTOROK"
+          "SHARED_SOUL_ENEMY_OCTOROK"
         ]
       ],
       "TimeNeeded": "None",
@@ -97182,13 +98353,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_SOUL_WALLMASTER"
+          "MM_SOUL_ENEMY_WALLMASTER"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "SHARED_SOUL_WALLMASTER"
+          "SHARED_SOUL_ENEMY_WALLMASTER"
         ]
       ],
       "TimeNeeded": "None",
@@ -97201,13 +98372,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_SOUL_DODONGO"
+          "MM_SOUL_ENEMY_DODONGO"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "SHARED_SOUL_DODONGO"
+          "SHARED_SOUL_ENEMY_DODONGO"
         ]
       ],
       "TimeNeeded": "None",
@@ -97220,13 +98391,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_SOUL_KEESE"
+          "MM_SOUL_ENEMY_KEESE"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "SHARED_SOUL_KEESE"
+          "SHARED_SOUL_ENEMY_KEESE"
         ]
       ],
       "TimeNeeded": "None",
@@ -97239,13 +98410,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_SOUL_TEKTITE"
+          "MM_SOUL_ENEMY_TEKTITE"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "SHARED_SOUL_TEKTITE"
+          "SHARED_SOUL_ENEMY_TEKTITE"
         ]
       ],
       "TimeNeeded": "None",
@@ -97258,13 +98429,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_SOUL_PEAHAT"
+          "MM_SOUL_ENEMY_PEAHAT"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "SHARED_SOUL_PEAHAT"
+          "SHARED_SOUL_ENEMY_PEAHAT"
         ]
       ],
       "TimeNeeded": "None",
@@ -97277,13 +98448,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_SOUL_LIZALFOS_DINALFOS"
+          "MM_SOUL_ENEMY_LIZALFOS_DINALFOS"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "SHARED_SOUL_LIZALFOS_DINALFOS"
+          "SHARED_SOUL_ENEMY_LIZALFOS_DINALFOS"
         ]
       ],
       "TimeNeeded": "None",
@@ -97296,13 +98467,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_SOUL_SKULLTULA"
+          "MM_SOUL_ENEMY_SKULLTULA"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "SHARED_SOUL_SKULLTULA"
+          "SHARED_SOUL_ENEMY_SKULLTULA"
         ]
       ],
       "TimeNeeded": "None",
@@ -97315,13 +98486,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_SOUL_ARMOS"
+          "MM_SOUL_ENEMY_ARMOS"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "SHARED_SOUL_ARMOS"
+          "SHARED_SOUL_ENEMY_ARMOS"
         ]
       ],
       "TimeNeeded": "None",
@@ -97334,13 +98505,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_SOUL_DEKU_BABA"
+          "MM_SOUL_ENEMY_DEKU_BABA"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "SHARED_SOUL_DEKU_BABA"
+          "SHARED_SOUL_ENEMY_DEKU_BABA"
         ]
       ],
       "TimeNeeded": "None",
@@ -97353,13 +98524,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_SOUL_DEKU_SCRUB"
+          "MM_SOUL_ENEMY_DEKU_SCRUB"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "SHARED_SOUL_DEKU_SCRUB"
+          "SHARED_SOUL_ENEMY_DEKU_SCRUB"
         ]
       ],
       "TimeNeeded": "None",
@@ -97372,13 +98543,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_SOUL_BUBBLE"
+          "MM_SOUL_ENEMY_BUBBLE"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "SHARED_SOUL_BUBBLE"
+          "SHARED_SOUL_ENEMY_BUBBLE"
         ]
       ],
       "TimeNeeded": "None",
@@ -97391,13 +98562,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_SOUL_BEAMOS"
+          "MM_SOUL_ENEMY_BEAMOS"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "SHARED_SOUL_BEAMOS"
+          "SHARED_SOUL_ENEMY_BEAMOS"
         ]
       ],
       "TimeNeeded": "None",
@@ -97410,13 +98581,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_SOUL_REDEAD_GIBDO"
+          "MM_SOUL_ENEMY_REDEAD_GIBDO"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "SHARED_SOUL_REDEAD_GIBDO"
+          "SHARED_SOUL_ENEMY_REDEAD_GIBDO"
         ]
       ],
       "TimeNeeded": "None",
@@ -97429,13 +98600,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_SOUL_SKULLWALLTULA"
+          "MM_SOUL_ENEMY_SKULLWALLTULA"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "SHARED_SOUL_SKULLWALLTULA"
+          "SHARED_SOUL_ENEMY_SKULLWALLTULA"
         ]
       ],
       "TimeNeeded": "None",
@@ -97448,13 +98619,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_SOUL_SHELL_BLADE"
+          "MM_SOUL_ENEMY_SHELL_BLADE"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "SHARED_SOUL_SHELL_BLADE"
+          "SHARED_SOUL_ENEMY_SHELL_BLADE"
         ]
       ],
       "TimeNeeded": "None",
@@ -97467,13 +98638,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_SOUL_LIKE_LIKE"
+          "MM_SOUL_ENEMY_LIKE_LIKE"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "SHARED_SOUL_LIKE_LIKE"
+          "SHARED_SOUL_ENEMY_LIKE_LIKE"
         ]
       ],
       "TimeNeeded": "None",
@@ -97486,13 +98657,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_SOUL_IRON_KNUCKLE"
+          "MM_SOUL_ENEMY_IRON_KNUCKLE"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "SHARED_SOUL_IRON_KNUCKLE"
+          "SHARED_SOUL_ENEMY_IRON_KNUCKLE"
         ]
       ],
       "TimeNeeded": "None",
@@ -97505,13 +98676,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_SOUL_FREEZARD"
+          "MM_SOUL_ENEMY_FREEZARD"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "SHARED_SOUL_FREEZARD"
+          "SHARED_SOUL_ENEMY_FREEZARD"
         ]
       ],
       "TimeNeeded": "None",
@@ -97524,13 +98695,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_SOUL_WOLFOS"
+          "MM_SOUL_ENEMY_WOLFOS"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "SHARED_SOUL_WOLFOS"
+          "SHARED_SOUL_ENEMY_WOLFOS"
         ]
       ],
       "TimeNeeded": "None",
@@ -97543,13 +98714,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_SOUL_GUAY"
+          "MM_SOUL_ENEMY_GUAY"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "SHARED_SOUL_GUAY"
+          "SHARED_SOUL_ENEMY_GUAY"
         ]
       ],
       "TimeNeeded": "None",
@@ -97562,13 +98733,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_SOUL_FLYING_POT"
+          "MM_SOUL_ENEMY_FLYING_POT"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "SHARED_SOUL_FLYING_POT"
+          "SHARED_SOUL_ENEMY_FLYING_POT"
         ]
       ],
       "TimeNeeded": "None",
@@ -97581,13 +98752,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_SOUL_FLOORMASTER"
+          "MM_SOUL_ENEMY_FLOORMASTER"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "SHARED_SOUL_FLOORMASTER"
+          "SHARED_SOUL_ENEMY_FLOORMASTER"
         ]
       ],
       "TimeNeeded": "None",
@@ -97600,13 +98771,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_SOUL_LEEVER"
+          "MM_SOUL_ENEMY_LEEVER"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "SHARED_SOUL_LEEVER"
+          "SHARED_SOUL_ENEMY_LEEVER"
         ]
       ],
       "TimeNeeded": "None",
@@ -97619,13 +98790,13 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM_SOUL_STALCHILD"
+          "MM_SOUL_ENEMY_STALCHILD"
         ],
         [
-          "var{enemySoulsMm, false}"
+          "var{soulsEnemyMm, false}"
         ],
         [
-          "SHARED_SOUL_STALCHILD"
+          "SHARED_SOUL_ENEMY_STALCHILD"
         ]
       ],
       "TimeNeeded": "None",

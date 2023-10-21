@@ -141,7 +141,6 @@ namespace MMR_Tracker_V3.TrackerObjects
         }
         public enum DebugMode
         {
-            Verbose = 0,
             Debugging = 1,
             UserView = 2,
             Off = 3

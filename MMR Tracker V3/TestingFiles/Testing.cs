@@ -15,23 +15,30 @@ namespace MMR_Tracker_V3
     {
         public static MiscData.DebugMode DebugMode = MiscData.DebugMode.Off;
 
-        public static void doDevCheck(bool? forceDevState = null, bool Modifier = false)
+        public static void doDevCheck(MiscData.DebugMode? forceDevState = null, bool Modifier = false)
         {
-            bool ForceDev = forceDevState is not null && (bool)forceDevState;
-            bool ForceUser = forceDevState is not null && !(bool)forceDevState;
-            bool isDevPC = File.Exists(References.Globalpaths.DevFile) || ForceDev;
-            bool IsDubugger = Debugger.IsAttached || ForceDev;
+            if (forceDevState is not null) 
+            { 
+                DebugMode = (MiscData.DebugMode)forceDevState;
+                return;
+            }
 
-            if (IsDubugger && !Modifier && !ForceUser)
+            bool isDevPC = File.Exists(References.Globalpaths.DevFile);
+            bool IsDubugger = Debugger.IsAttached != Modifier;
+
+            if (IsDubugger)
             {
+                //Debugging: Full access to dev features
                 Testing.DebugMode = MiscData.DebugMode.Debugging;
             }
-            else if (isDevPC && Modifier && !ForceUser)
+            else if (isDevPC)
             {
+                //Debugging: No access to dev features, but a button is available to enable dev
                 Testing.DebugMode = MiscData.DebugMode.UserView;
             }
             else
             {
+                //Debugging: No access to dev features
                 Testing.DebugMode = MiscData.DebugMode.Off;
             }
         }
@@ -39,18 +46,6 @@ namespace MMR_Tracker_V3
         public static bool Debugging()
         {
             return DebugMode == MiscData.DebugMode.Debugging;
-        }
-        public static bool UserView()
-        {
-            return DebugMode == MiscData.DebugMode.UserView;
-        }
-        public static bool IsDevUser()
-        {
-            return Debugging() || UserView();
-        }
-        public static bool StandardUser()
-        {
-            return DebugMode == MiscData.DebugMode.Off;
         }
 
         public static string CreateTestingFile(string Name, string Extention = "txt")

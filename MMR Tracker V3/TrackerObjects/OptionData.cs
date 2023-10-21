@@ -55,7 +55,8 @@ namespace MMR_Tracker_V3.TrackerObjects
 
             public override string ToString()
             {
-                return DisplayName + ": " + CurrentValue;
+                string Val = !Values.ContainsKey(CurrentValue) || string.IsNullOrWhiteSpace(Values[CurrentValue].Name) ? CurrentValue : Values[CurrentValue].Name;
+                return DisplayName + ": " + Val;
             }
         }
 
