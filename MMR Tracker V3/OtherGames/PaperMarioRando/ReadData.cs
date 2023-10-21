@@ -377,13 +377,13 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
                 { "PartnerUp1", new ItemReplacement{ id = "PartnerUp1", name = "Partner Upgrade", maxamount = 16, Types = new List<string>{ "MultiCoinBlock", "SuperBlock" }  } }
             };
 
-            foreach (var i in ItemNames)
+            foreach (var i in Items)
             {
-                if (ItemOverrides.Keys.Any(x => i.Key.Contains(x))) { continue; }
-                var ItemData = Items.FirstOrDefault(x => x.item_name == i.Key);
-                int MaxCount = (ItemData is not null && ItemData.item_type.In("ITEM", "COIN")) ? -1 : 1;
-                string NiceName = string.IsNullOrWhiteSpace(i.Value) ? i.Key : i.Value;
-                PMRDict.ItemList.Add(i.Key, new LogicDictionaryData.DictionaryItemEntries { ID = i.Key, Name = NiceName, MaxAmountInWorld = MaxCount, ValidStartingItem = true, ItemTypes = new string[] { "item" } });
+                if (ItemOverrides.Keys.Any(x => i.item_name.Contains(x))) { continue; }
+                if (i.unplaceable > 0) { continue; }
+                int MaxCount = (i.item_type.In("ITEM", "COIN")) ? -1 : 1;
+                string NiceName = ItemNames.ContainsKey(i.item_name) ? ItemNames[i.item_name] : i.item_name;
+                PMRDict.ItemList.Add(i.item_name, new LogicDictionaryData.DictionaryItemEntries { ID = i.item_name, Name = NiceName, MaxAmountInWorld = MaxCount, ValidStartingItem = true, ItemTypes = new string[] { "item" } });
             }
 
             void AddItemManual(string ID, string NiceName = null, int Count = -1, string[] ItemSubTypes = null)

@@ -1924,7 +1924,7 @@
     },
     "Southern District - Tayce T. Frying Pan Reward": {
       "ID": "Southern District - Tayce T. Frying Pan Reward",
-      "OriginalItem": "CakeProxy",
+      "OriginalItem": "Cake",
       "Area": "Toad Town",
       "ValidItemTypes": [
         "item"
@@ -11227,1507 +11227,9 @@
         "PriceDataNames": []
       }
     },
-    "BootsProxy1": {
-      "ID": "BootsProxy1",
-      "Name": "ProgressiveBoots",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "BootsProxy2": {
-      "ID": "BootsProxy2",
-      "Name": "ProgressiveBoots",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "BootsProxy3": {
-      "ID": "BootsProxy3",
-      "Name": "ProgressiveBoots",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "HammerProxy1": {
-      "ID": "HammerProxy1",
-      "Name": "ProgressiveHammer",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "HammerProxy2": {
-      "ID": "HammerProxy2",
-      "Name": "ProgressiveHammer",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "HammerProxy3": {
-      "ID": "HammerProxy3",
-      "Name": "ProgressiveHammer",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "JellyShroom1": {
-      "ID": "JellyShroom1",
-      "Name": "JellyShroom",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "Letter01": {
-      "ID": "Letter01",
-      "Name": "Letter (To Merlon)",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "Letter02": {
-      "ID": "Letter02",
-      "Name": "Letter (To Goompa)",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "Letter03": {
-      "ID": "Letter03",
-      "Name": "Letter (To Mort T.)",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "Letter04": {
-      "ID": "Letter04",
-      "Name": "Letter (To Russ T.)",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "Letter05": {
-      "ID": "Letter05",
-      "Name": "Letter (To Mayor Penguin)",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "Letter06": {
-      "ID": "Letter06",
-      "Name": "Letter (To Merlow)",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "Letter07": {
-      "ID": "Letter07",
-      "Name": "Letter (To Fice T.)",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "Letter08": {
-      "ID": "Letter08",
-      "Name": "Letter (To Nomadimouse)",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "Letter09": {
-      "ID": "Letter09",
-      "Name": "Letter (To Minh T.)",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "Letter10": {
-      "ID": "Letter10",
-      "Name": "Letter (To Goompapa)",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "Letter11": {
-      "ID": "Letter11",
-      "Name": "Letter (To Igor)",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "Letter12": {
-      "ID": "Letter12",
-      "Name": "Letter (To Franky)",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "Letter13": {
-      "ID": "Letter13",
-      "Name": "Letter (To Muss T.)",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "Letter14": {
-      "ID": "Letter14",
-      "Name": "Letter (To Koover)",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "Letter15": {
-      "ID": "Letter15",
-      "Name": "Letter (To Fishmael)",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "Letter16": {
-      "ID": "Letter16",
-      "Name": "Letter (To Koover)",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "Letter17": {
-      "ID": "Letter17",
-      "Name": "Letter (To Mr. E.)",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "Letter18": {
-      "ID": "Letter18",
-      "Name": "Letter (To Miss T.)",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "Letter19": {
-      "ID": "Letter19",
-      "Name": "Letter (To Little Mouser)",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "Letter20": {
-      "ID": "Letter20",
-      "Name": "Letter (To Dane T.)",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "Letter21": {
-      "ID": "Letter21",
-      "Name": "Letter (To Red Yoshi Kid)",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "Letter22": {
-      "ID": "Letter22",
-      "Name": "Letter (To Dane T.)",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "Letter23": {
-      "ID": "Letter23",
-      "Name": "Letter (To Frost T.)",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "Letter24": {
-      "ID": "Letter24",
-      "Name": "Letter (To Goompapa)",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "Letter25": {
-      "ID": "Letter25",
-      "Name": "Letter (To Kolorado)",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "PrisonKeyA": {
-      "ID": "PrisonKeyA",
-      "Name": "PrisonKey",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "PrisonKeyB": {
-      "ID": "PrisonKeyB",
-      "Name": "PrisonKey",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "DamageDodgeA": {
-      "ID": "DamageDodgeA",
-      "Name": "DamageDodge",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "DamageDodgeB": {
-      "ID": "DamageDodgeB",
-      "Name": "DamageDodge",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "DamageDodgeX": {
-      "ID": "DamageDodgeX",
-      "Name": "DamageDodge",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "EarthquakeJump": {
-      "ID": "EarthquakeJump",
-      "Name": "QuakeBounce",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "DeepFocus1": {
-      "ID": "DeepFocus1",
-      "Name": "DeepFocus",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "DeepFocus2": {
-      "ID": "DeepFocus2",
-      "Name": "DeepFocus",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "DeepFocus3": {
-      "ID": "DeepFocus3",
-      "Name": "DeepFocus",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "DefendPlusA": {
-      "ID": "DefendPlusA",
-      "Name": "DefendPlus",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "DefendPlusX": {
-      "ID": "DefendPlusX",
-      "Name": "DefendPlus",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "DefendPlusY": {
-      "ID": "DefendPlusY",
-      "Name": "DefendPlus",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "FlowerSaverA": {
-      "ID": "FlowerSaverA",
-      "Name": "FlowerSaver",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "FlowerSaverB": {
-      "ID": "FlowerSaverB",
-      "Name": "FlowerSaver",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "FlowerSaverX": {
-      "ID": "FlowerSaverX",
-      "Name": "FlowerSaver",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "FPPlusA": {
-      "ID": "FPPlusA",
-      "Name": "FPPlus",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "FPPlusB": {
-      "ID": "FPPlusB",
-      "Name": "FPPlus",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "FPPlusC": {
-      "ID": "FPPlusC",
-      "Name": "FPPlus",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "FPPlusX": {
-      "ID": "FPPlusX",
-      "Name": "FPPlus",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "FPPlusY": {
-      "ID": "FPPlusY",
-      "Name": "FPPlus",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "HappyFlowerA": {
-      "ID": "HappyFlowerA",
-      "Name": "HappyFlower",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "HappyFlowerB": {
-      "ID": "HappyFlowerB",
-      "Name": "HappyFlower",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "HappyFlowerX": {
-      "ID": "HappyFlowerX",
-      "Name": "HappyFlower",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "HappyHeartA": {
-      "ID": "HappyHeartA",
-      "Name": "HappyHeart",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "HappyHeartB": {
-      "ID": "HappyHeartB",
-      "Name": "HappyHeart",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "HappyHeartX": {
-      "ID": "HappyHeartX",
-      "Name": "HappyHeart",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "HPPlusA": {
-      "ID": "HPPlusA",
-      "Name": "HPPlus",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "HPPlusB": {
-      "ID": "HPPlusB",
-      "Name": "HPPlus",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "HPPlusC": {
-      "ID": "HPPlusC",
-      "Name": "HPPlus",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "HPPlusX": {
-      "ID": "HPPlusX",
-      "Name": "HPPlus",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "HPPlusY": {
-      "ID": "HPPlusY",
-      "Name": "HPPlus",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "PowerPlusA": {
-      "ID": "PowerPlusA",
-      "Name": "PowerPlus",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "PowerPlusB": {
-      "ID": "PowerPlusB",
-      "Name": "PowerPlus",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "PowerPlusX": {
-      "ID": "PowerPlusX",
-      "Name": "PowerPlus",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "PowerSmash1": {
-      "ID": "PowerSmash1",
-      "Name": "PowerSmash",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "SmashCharge0": {
-      "ID": "SmashCharge0",
-      "Name": "MiniSmashCharge",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "JumpCharge0": {
-      "ID": "JumpCharge0",
-      "Name": "MiniJumpCharge",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "SJumpChg": {
-      "ID": "SJumpChg",
-      "Name": "SJumpCharge",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "AutoMultibounce": {
-      "ID": "AutoMultibounce",
-      "Name": "Autobounce",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "SmashChargeProxy1": {
-      "ID": "SmashChargeProxy1",
-      "Name": "ProgressiveSmashCharge",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "SmashChargeProxy2": {
-      "ID": "SmashChargeProxy2",
-      "Name": "ProgressiveSmashCharge",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "SmashChargeProxy3": {
-      "ID": "SmashChargeProxy3",
-      "Name": "ProgressiveSmashCharge",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "JumpChargeProxy1": {
-      "ID": "JumpChargeProxy1",
-      "Name": "ProgressiveJumpCharge",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "JumpChargeProxy2": {
-      "ID": "JumpChargeProxy2",
-      "Name": "ProgressiveJumpCharge",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "JumpChargeProxy3": {
-      "ID": "JumpChargeProxy3",
-      "Name": "ProgressiveJumpCharge",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "PowerJumpProxy1": {
-      "ID": "PowerJumpProxy1",
-      "Name": "ProgressivePowerJump",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "PowerJumpProxy2": {
-      "ID": "PowerJumpProxy2",
-      "Name": "ProgressivePowerJump",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "PowerJumpProxy3": {
-      "ID": "PowerJumpProxy3",
-      "Name": "ProgressivePowerJump",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "PowerSmashProxy1": {
-      "ID": "PowerSmashProxy1",
-      "Name": "ProgressivePowerSmash",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "PowerSmashProxy2": {
-      "ID": "PowerSmashProxy2",
-      "Name": "ProgressivePowerSmash",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "PowerSmashProxy3": {
-      "ID": "PowerSmashProxy3",
-      "Name": "ProgressivePowerSmash",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "QuakeHammerProxy1": {
-      "ID": "QuakeHammerProxy1",
-      "Name": "ProgressiveQuakeHammer",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "QuakeHammerProxy2": {
-      "ID": "QuakeHammerProxy2",
-      "Name": "ProgressiveQuakeHammer",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "QuakeHammerProxy3": {
-      "ID": "QuakeHammerProxy3",
-      "Name": "ProgressiveQuakeHammer",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "CakeProxy": {
-      "ID": "CakeProxy",
-      "Name": "Cake",
-      "MaxAmountInWorld": -1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "PouchA": {
-      "ID": "PouchA",
-      "Name": "ItemPouch",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "PouchB": {
-      "ID": "PouchB",
-      "Name": "ItemPouch",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "PouchC": {
-      "ID": "PouchC",
-      "Name": "ItemPouch",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "PouchD": {
-      "ID": "PouchD",
-      "Name": "ItemPouch",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "PouchE": {
-      "ID": "PouchE",
-      "Name": "ItemPouch",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "GoombarioUp1": {
-      "ID": "GoombarioUp1",
-      "Name": "Goombario Upgrade",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "KooperUp1": {
-      "ID": "KooperUp1",
-      "Name": "Kooper Upgrade",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "BombetteUp1": {
-      "ID": "BombetteUp1",
-      "Name": "Bombette Upgrade",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "ParakarryUp1": {
-      "ID": "ParakarryUp1",
-      "Name": "Parakarry Upgrade",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "WattUp1": {
-      "ID": "WattUp1",
-      "Name": "Watt Upgrade",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "SushieUp1": {
-      "ID": "SushieUp1",
-      "Name": "Sushie Upgrade",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "LakilesterUp1": {
-      "ID": "LakilesterUp1",
-      "Name": "Lakilester Upgrade",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "BowUp1": {
-      "ID": "BowUp1",
-      "Name": "Bow Upgrade",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "GoombarioUp2": {
-      "ID": "GoombarioUp2",
-      "Name": "Goombario Upgrade",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "KooperUp2": {
-      "ID": "KooperUp2",
-      "Name": "Kooper Upgrade",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "BombetteUp2": {
-      "ID": "BombetteUp2",
-      "Name": "Bombette Upgrade",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "ParakarryUp2": {
-      "ID": "ParakarryUp2",
-      "Name": "Parakarry Upgrade",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "WattUp2": {
-      "ID": "WattUp2",
-      "Name": "Watt Upgrade",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "SushieUp2": {
-      "ID": "SushieUp2",
-      "Name": "Sushie Upgrade",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "LakilesterUp2": {
-      "ID": "LakilesterUp2",
-      "Name": "Lakilester Upgrade",
-      "MaxAmountInWorld": 1,
-      "ValidStartingItem": true,
-      "ItemTypes": [
-        "item"
-      ],
-      "SpoilerData": {
-        "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "BowUp2": {
-      "ID": "BowUp2",
-      "Name": "Bow Upgrade",
+    "Nothing": {
+      "ID": "Nothing",
+      "Name": "Nothing",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -13215,9 +11717,359 @@
         "PriceDataNames": []
       }
     },
+    "Letter01": {
+      "ID": "Letter01",
+      "Name": "Letter (To Merlon)",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Letter02": {
+      "ID": "Letter02",
+      "Name": "Letter (To Goompa)",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Letter03": {
+      "ID": "Letter03",
+      "Name": "Letter (To Mort T.)",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Letter04": {
+      "ID": "Letter04",
+      "Name": "Letter (To Russ T.)",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Letter05": {
+      "ID": "Letter05",
+      "Name": "Letter (To Mayor Penguin)",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Letter06": {
+      "ID": "Letter06",
+      "Name": "Letter (To Merlow)",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Letter07": {
+      "ID": "Letter07",
+      "Name": "Letter (To Fice T.)",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Letter08": {
+      "ID": "Letter08",
+      "Name": "Letter (To Nomadimouse)",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Letter09": {
+      "ID": "Letter09",
+      "Name": "Letter (To Minh T.)",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Letter10": {
+      "ID": "Letter10",
+      "Name": "Letter (To Goompapa)",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Letter11": {
+      "ID": "Letter11",
+      "Name": "Letter (To Igor)",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Letter12": {
+      "ID": "Letter12",
+      "Name": "Letter (To Franky)",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Letter13": {
+      "ID": "Letter13",
+      "Name": "Letter (To Muss T.)",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Letter14": {
+      "ID": "Letter14",
+      "Name": "Letter (To Koover)",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Letter15": {
+      "ID": "Letter15",
+      "Name": "Letter (To Fishmael)",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Letter16": {
+      "ID": "Letter16",
+      "Name": "Letter (To Koover)",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Letter17": {
+      "ID": "Letter17",
+      "Name": "Letter (To Mr. E.)",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Letter18": {
+      "ID": "Letter18",
+      "Name": "Letter (To Miss T.)",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Letter19": {
+      "ID": "Letter19",
+      "Name": "Letter (To Little Mouser)",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Letter20": {
+      "ID": "Letter20",
+      "Name": "Letter (To Dane T.)",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Letter21": {
+      "ID": "Letter21",
+      "Name": "Letter (To Red Yoshi Kid)",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Letter22": {
+      "ID": "Letter22",
+      "Name": "Letter (To Dane T.)",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Letter23": {
+      "ID": "Letter23",
+      "Name": "Letter (To Frost T.)",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Letter24": {
+      "ID": "Letter24",
+      "Name": "Letter (To Goompapa)",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
     "Artifact": {
       "ID": "Artifact",
       "Name": "Artifact",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Letter25": {
+      "ID": "Letter25",
+      "Name": "Letter (To Kolorado)",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -14751,6 +13603,20 @@
         "PriceDataNames": []
       }
     },
+    "JellyShroom1": {
+      "ID": "JellyShroom1",
+      "Name": "JellyShroom",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
     "SpinSmash": {
       "ID": "SpinSmash",
       "Name": "SpinSmash",
@@ -14768,6 +13634,20 @@
     "Multibounce": {
       "ID": "Multibounce",
       "Name": "Multibounce",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "PowerPlusA": {
+      "ID": "PowerPlusA",
+      "Name": "PowerPlus",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -14824,6 +13704,20 @@
     "FirstAttack": {
       "ID": "FirstAttack",
       "Name": "FirstAttack",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "HPPlusA": {
+      "ID": "HPPlusA",
+      "Name": "HPPlus",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -14933,6 +13827,20 @@
         "PriceDataNames": []
       }
     },
+    "SmashCharge0": {
+      "ID": "SmashCharge0",
+      "Name": "MiniSmashCharge",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
     "PrettyLucky": {
       "ID": "PrettyLucky",
       "Name": "PrettyLucky",
@@ -15003,9 +13911,37 @@
         "PriceDataNames": []
       }
     },
+    "JumpCharge0": {
+      "ID": "JumpCharge0",
+      "Name": "MiniJumpCharge",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
     "SlowGo": {
       "ID": "SlowGo",
       "Name": "SlowGo",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "FPPlusA": {
+      "ID": "FPPlusA",
+      "Name": "FPPlus",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -15034,6 +13970,20 @@
     "IcePower": {
       "ID": "IcePower",
       "Name": "IcePower",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "DefendPlusA": {
+      "ID": "DefendPlusA",
+      "Name": "DefendPlus",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -15076,6 +14026,20 @@
     "ChillOut": {
       "ID": "ChillOut",
       "Name": "ChillOut",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "HappyHeartA": {
+      "ID": "HappyHeartA",
+      "Name": "HappyHeart",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -15146,6 +14110,20 @@
     "Refund": {
       "ID": "Refund",
       "Name": "Refund",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "FlowerSaverA": {
+      "ID": "FlowerSaverA",
+      "Name": "FlowerSaver",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -15230,6 +14208,20 @@
     "SSmashChg": {
       "ID": "SSmashChg",
       "Name": "SSmashChg",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "SJumpChg": {
+      "ID": "SJumpChg",
+      "Name": "SJumpCharge",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -15395,6 +14387,20 @@
         "PriceDataNames": []
       }
     },
+    "AutoMultibounce": {
+      "ID": "AutoMultibounce",
+      "Name": "Autobounce",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
     "FlowerFanatic": {
       "ID": "FlowerFanatic",
       "Name": "FlowerFanatic",
@@ -15549,6 +14555,20 @@
         "PriceDataNames": []
       }
     },
+    "PowerSmash1": {
+      "ID": "PowerSmash1",
+      "Name": "PowerSmash",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
     "SuperSmash": {
       "ID": "SuperSmash",
       "Name": "SuperSmash",
@@ -15566,6 +14586,20 @@
     "MegaSmash": {
       "ID": "MegaSmash",
       "Name": "MegaSmash",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "DeepFocus1": {
+      "ID": "DeepFocus1",
+      "Name": "DeepFocus",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -15622,6 +14656,272 @@
     "ShrinkStomp": {
       "ID": "ShrinkStomp",
       "Name": "ShrinkStomp",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "DamageDodgeA": {
+      "ID": "DamageDodgeA",
+      "Name": "DamageDodge",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "EarthquakeJump": {
+      "ID": "EarthquakeJump",
+      "Name": "QuakeBounce",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "DeepFocus2": {
+      "ID": "DeepFocus2",
+      "Name": "DeepFocus",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "DeepFocus3": {
+      "ID": "DeepFocus3",
+      "Name": "DeepFocus",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "HPPlusB": {
+      "ID": "HPPlusB",
+      "Name": "HPPlus",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "FPPlusB": {
+      "ID": "FPPlusB",
+      "Name": "FPPlus",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "HappyHeartB": {
+      "ID": "HappyHeartB",
+      "Name": "HappyHeart",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "HappyHeartX": {
+      "ID": "HappyHeartX",
+      "Name": "HappyHeart",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "FlowerSaverB": {
+      "ID": "FlowerSaverB",
+      "Name": "FlowerSaver",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "FlowerSaverX": {
+      "ID": "FlowerSaverX",
+      "Name": "FlowerSaver",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "DamageDodgeB": {
+      "ID": "DamageDodgeB",
+      "Name": "DamageDodge",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "DamageDodgeX": {
+      "ID": "DamageDodgeX",
+      "Name": "DamageDodge",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "PowerPlusB": {
+      "ID": "PowerPlusB",
+      "Name": "PowerPlus",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "PowerPlusX": {
+      "ID": "PowerPlusX",
+      "Name": "PowerPlus",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "DefendPlusX": {
+      "ID": "DefendPlusX",
+      "Name": "DefendPlus",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "DefendPlusY": {
+      "ID": "DefendPlusY",
+      "Name": "DefendPlus",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "HappyFlowerA": {
+      "ID": "HappyFlowerA",
+      "Name": "HappyFlower",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "HappyFlowerB": {
+      "ID": "HappyFlowerB",
+      "Name": "HappyFlower",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "HappyFlowerX": {
+      "ID": "HappyFlowerX",
+      "Name": "HappyFlower",
       "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
@@ -15731,6 +15031,90 @@
         "PriceDataNames": []
       }
     },
+    "HPPlusC": {
+      "ID": "HPPlusC",
+      "Name": "HPPlus",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "HPPlusX": {
+      "ID": "HPPlusX",
+      "Name": "HPPlus",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "HPPlusY": {
+      "ID": "HPPlusY",
+      "Name": "HPPlus",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "FPPlusC": {
+      "ID": "FPPlusC",
+      "Name": "FPPlus",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "FPPlusX": {
+      "ID": "FPPlusX",
+      "Name": "FPPlus",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "FPPlusY": {
+      "ID": "FPPlusY",
+      "Name": "FPPlus",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
     "HealthyHealthy": {
       "ID": "HealthyHealthy",
       "Name": "HealthyHealthy",
@@ -15749,6 +15133,636 @@
       "ID": "Coin",
       "Name": "Coin",
       "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "PrisonKeyA": {
+      "ID": "PrisonKeyA",
+      "Name": "PrisonKey",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "PrisonKeyB": {
+      "ID": "PrisonKeyB",
+      "Name": "PrisonKey",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "CakeProxy": {
+      "ID": "CakeProxy",
+      "Name": "Cake",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "BootsProxy1": {
+      "ID": "BootsProxy1",
+      "Name": "ProgressiveBoots",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "BootsProxy2": {
+      "ID": "BootsProxy2",
+      "Name": "ProgressiveBoots",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "BootsProxy3": {
+      "ID": "BootsProxy3",
+      "Name": "ProgressiveBoots",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "HammerProxy1": {
+      "ID": "HammerProxy1",
+      "Name": "ProgressiveHammer",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "HammerProxy2": {
+      "ID": "HammerProxy2",
+      "Name": "ProgressiveHammer",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "HammerProxy3": {
+      "ID": "HammerProxy3",
+      "Name": "ProgressiveHammer",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "SmashChargeProxy1": {
+      "ID": "SmashChargeProxy1",
+      "Name": "ProgressiveSmashCharge",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "SmashChargeProxy2": {
+      "ID": "SmashChargeProxy2",
+      "Name": "ProgressiveSmashCharge",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "SmashChargeProxy3": {
+      "ID": "SmashChargeProxy3",
+      "Name": "ProgressiveSmashCharge",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "JumpChargeProxy1": {
+      "ID": "JumpChargeProxy1",
+      "Name": "ProgressiveJumpCharge",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "JumpChargeProxy2": {
+      "ID": "JumpChargeProxy2",
+      "Name": "ProgressiveJumpCharge",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "JumpChargeProxy3": {
+      "ID": "JumpChargeProxy3",
+      "Name": "ProgressiveJumpCharge",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "PowerJumpProxy1": {
+      "ID": "PowerJumpProxy1",
+      "Name": "ProgressivePowerJump",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "PowerJumpProxy2": {
+      "ID": "PowerJumpProxy2",
+      "Name": "ProgressivePowerJump",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "PowerJumpProxy3": {
+      "ID": "PowerJumpProxy3",
+      "Name": "ProgressivePowerJump",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "PowerSmashProxy1": {
+      "ID": "PowerSmashProxy1",
+      "Name": "ProgressivePowerSmash",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "PowerSmashProxy2": {
+      "ID": "PowerSmashProxy2",
+      "Name": "ProgressivePowerSmash",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "PowerSmashProxy3": {
+      "ID": "PowerSmashProxy3",
+      "Name": "ProgressivePowerSmash",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "QuakeHammerProxy1": {
+      "ID": "QuakeHammerProxy1",
+      "Name": "ProgressiveQuakeHammer",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "QuakeHammerProxy2": {
+      "ID": "QuakeHammerProxy2",
+      "Name": "ProgressiveQuakeHammer",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "QuakeHammerProxy3": {
+      "ID": "QuakeHammerProxy3",
+      "Name": "ProgressiveQuakeHammer",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "PouchA": {
+      "ID": "PouchA",
+      "Name": "ItemPouch",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "PouchB": {
+      "ID": "PouchB",
+      "Name": "ItemPouch",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "PouchC": {
+      "ID": "PouchC",
+      "Name": "ItemPouch",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "PouchD": {
+      "ID": "PouchD",
+      "Name": "ItemPouch",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "PouchE": {
+      "ID": "PouchE",
+      "Name": "ItemPouch",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "GoombarioUp1": {
+      "ID": "GoombarioUp1",
+      "Name": "Goombario Upgrade",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "KooperUp1": {
+      "ID": "KooperUp1",
+      "Name": "Kooper Upgrade",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "BombetteUp1": {
+      "ID": "BombetteUp1",
+      "Name": "Bombette Upgrade",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "ParakarryUp1": {
+      "ID": "ParakarryUp1",
+      "Name": "Parakarry Upgrade",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "WattUp1": {
+      "ID": "WattUp1",
+      "Name": "Watt Upgrade",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "SushieUp1": {
+      "ID": "SushieUp1",
+      "Name": "Sushie Upgrade",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "LakilesterUp1": {
+      "ID": "LakilesterUp1",
+      "Name": "Lakilester Upgrade",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "BowUp1": {
+      "ID": "BowUp1",
+      "Name": "Bow Upgrade",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "GoombarioUp2": {
+      "ID": "GoombarioUp2",
+      "Name": "Goombario Upgrade",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "KooperUp2": {
+      "ID": "KooperUp2",
+      "Name": "Kooper Upgrade",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "BombetteUp2": {
+      "ID": "BombetteUp2",
+      "Name": "Bombette Upgrade",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "ParakarryUp2": {
+      "ID": "ParakarryUp2",
+      "Name": "Parakarry Upgrade",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "WattUp2": {
+      "ID": "WattUp2",
+      "Name": "Watt Upgrade",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "SushieUp2": {
+      "ID": "SushieUp2",
+      "Name": "Sushie Upgrade",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "LakilesterUp2": {
+      "ID": "LakilesterUp2",
+      "Name": "Lakilester Upgrade",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "BowUp2": {
+      "ID": "BowUp2",
+      "Name": "Bow Upgrade",
+      "MaxAmountInWorld": 1,
       "ValidStartingItem": true,
       "ItemTypes": [
         "item"
