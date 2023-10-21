@@ -53221,7 +53221,7 @@
     },
     "BlueHouseOpen": {
       "ID": "BlueHouseOpen",
-      "DisplayName": "BlueHouseOpen",
+      "DisplayName": "Open Blue House",
       "CurrentValue": "false",
       "Logic": "true",
       "Values": {
@@ -53243,7 +53243,7 @@
     },
     "Ch7BridgeVisible": {
       "ID": "Ch7BridgeVisible",
-      "DisplayName": "Ch7BridgeVisible",
+      "DisplayName": "Ch.7 Bridge Visible ",
       "CurrentValue": "true",
       "Logic": "true",
       "Values": {
@@ -53265,7 +53265,7 @@
     },
     "CookWithoutFryingPan": {
       "ID": "CookWithoutFryingPan",
-      "DisplayName": "CookWithoutFryingPan",
+      "DisplayName": "Cook Without Frying Pan",
       "CurrentValue": "false",
       "Logic": "true",
       "Values": {
@@ -53287,7 +53287,7 @@
     },
     "ForeverForestOpen": {
       "ID": "ForeverForestOpen",
-      "DisplayName": "ForeverForestOpen",
+      "DisplayName": "Open Forever Forest",
       "CurrentValue": "true",
       "Logic": "true",
       "Values": {
@@ -53309,7 +53309,7 @@
     },
     "MtRuggedOpen": {
       "ID": "MtRuggedOpen",
-      "DisplayName": "MtRuggedOpen",
+      "DisplayName": "Open Mt. Rugged",
       "CurrentValue": "false",
       "Logic": "true",
       "Values": {
@@ -53331,7 +53331,7 @@
     },
     "PartnersAlwaysUsable": {
       "ID": "PartnersAlwaysUsable",
-      "DisplayName": "PartnersAlwaysUsable",
+      "DisplayName": "Partners Always Usable",
       "CurrentValue": "false",
       "Logic": "true",
       "Values": {
@@ -53353,7 +53353,7 @@
     },
     "PrologueOpen": {
       "ID": "PrologueOpen",
-      "DisplayName": "PrologueOpen",
+      "DisplayName": "Open Prologue",
       "CurrentValue": "false",
       "Logic": "true",
       "Values": {
@@ -53375,7 +53375,7 @@
     },
     "ToyboxOpen": {
       "ID": "ToyboxOpen",
-      "DisplayName": "ToyboxOpen",
+      "DisplayName": "Open Toy Box",
       "CurrentValue": "false",
       "Logic": "true",
       "Values": {
@@ -53397,7 +53397,7 @@
     },
     "WhaleOpen": {
       "ID": "WhaleOpen",
-      "DisplayName": "WhaleOpen",
+      "DisplayName": "Open Whale",
       "CurrentValue": "false",
       "Logic": "true",
       "Values": {
@@ -53419,7 +53419,7 @@
     },
     "StarHunt": {
       "ID": "StarHunt",
-      "DisplayName": "StarHunt",
+      "DisplayName": "Power Star Hunt",
       "CurrentValue": "false",
       "Logic": "true",
       "Values": {
@@ -53441,9 +53441,9 @@
     },
     "StarHuntEndsGame": {
       "ID": "StarHuntEndsGame",
-      "DisplayName": "StarHuntEndsGame",
+      "DisplayName": "Star Hunt Skips Ch.8",
       "CurrentValue": "false",
-      "Logic": "true",
+      "Logic": "setting{StarHunt, true}",
       "Values": {
         "true": {
           "LogicReplacements": [],
@@ -53463,12 +53463,12 @@
     },
     "HiddenBlockMode": {
       "ID": "HiddenBlockMode",
-      "DisplayName": "HiddenBlockMode",
+      "DisplayName": "Hidden Block Mode",
       "CurrentValue": "1",
       "Logic": "true",
       "Values": {
         "0": {
-          "Name": "vanilla",
+          "Name": "Watt's Ability",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -53476,7 +53476,7 @@
           "VariableEdit": {}
         },
         "1": {
-          "Name": "Watt out",
+          "Name": "Watt Out",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -53484,7 +53484,7 @@
           "VariableEdit": {}
         },
         "2": {
-          "Name": "Watt acquired",
+          "Name": "Watt Obtained",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -53492,7 +53492,7 @@
           "VariableEdit": {}
         },
         "3": {
-          "Name": "always visible",
+          "Name": "Always Visible",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -53503,12 +53503,12 @@
     },
     "BowsersCastleMode": {
       "ID": "BowsersCastleMode",
-      "DisplayName": "BowsersCastleMode",
+      "DisplayName": "Bowser's Castle Mode",
       "CurrentValue": "0",
       "Logic": "true",
       "Values": {
         "0": {
-          "Name": "vanilla",
+          "Name": "Vanilla",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -53516,7 +53516,7 @@
           "VariableEdit": {}
         },
         "1": {
-          "Name": "Shorten",
+          "Name": "Shortened",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -53524,7 +53524,7 @@
           "VariableEdit": {}
         },
         "2": {
-          "Name": "BossRush",
+          "Name": "Boss Rush",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -53535,12 +53535,12 @@
     },
     "GearShuffleMode": {
       "ID": "GearShuffleMode",
-      "DisplayName": "GearShuffleMode",
+      "DisplayName": "Gear Shuffle",
       "CurrentValue": "0",
       "Logic": "true",
       "Values": {
         "0": {
-          "Name": "vanilla",
+          "Name": "Vanilla",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -53548,7 +53548,7 @@
           "VariableEdit": {}
         },
         "1": {
-          "Name": "location shuffle",
+          "Name": "Gear location shuffle",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -53556,7 +53556,7 @@
           "VariableEdit": {}
         },
         "2": {
-          "Name": "full shuffle",
+          "Name": "Full Shuffle",
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -53567,7 +53567,7 @@
     },
     "MerlowRewardPricing": {
       "ID": "MerlowRewardPricing",
-      "DisplayName": "MerlowRewardPricing",
+      "DisplayName": "Merlow Rewards Pricing",
       "CurrentValue": "1",
       "Logic": "true",
       "Values": {
@@ -53685,7 +53685,7 @@
       "ID": "StarHuntRequired",
       "Name": "Required Power Stars",
       "Static": false,
-      "Logic": "true",
+      "Logic": "setting{StarHunt, true}",
       "Value": 0
     },
     "StarWaySpiritsNeededCnt": {

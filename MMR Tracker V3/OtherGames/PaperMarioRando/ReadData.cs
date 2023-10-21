@@ -456,31 +456,31 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
 
             var FlowerFieldsDoorLogic = PRMLogic.Logic.First(x => x.Id == "Toad Town - Plaza District - Exit West => Toad Town - Plaza District - Flower Fields Door");
             FlowerFieldsDoorLogic.ConditionalItems.Clear();
-            FlowerFieldsDoorLogic.RequiredItems = new List<string> { "MagicalSeeds, MagicalSeedsRequired" };
+            FlowerFieldsDoorLogic.RequiredItems = new List<string> { "MagicalSeeds, MagicalSeedsRequired", "Toad Town - Plaza District - Exit West" };
 
             PRMLogic.Logic.Add(new MMRData.JsonFormatLogicItem { Id = "RF_Missable" });
             PRMLogic.Logic.Add(new MMRData.JsonFormatLogicItem { Id = "RF_OutOfLogic" });
 
             PMRDict.Variables.Add("MagicalSeedsRequired", new OptionData.TrackerVar { ID = "MagicalSeedsRequired", Static = false, Name = "Magical Seeds Required", Value = 4 });
-            PMRDict.Variables.Add("StarHuntRequired", new OptionData.TrackerVar { ID = "StarHuntRequired", Static = false, Name = "Required Power Stars", Value = 0 });
+            PMRDict.Variables.Add("StarHuntRequired", new OptionData.TrackerVar { ID = "StarHuntRequired", Static = false, Name = "Required Power Stars", Value = 0, Logic = "setting{StarHunt, true}" });
             PMRDict.Variables.Add("StarWaySpiritsNeededCnt", new OptionData.TrackerVar { ID = "StarWaySpiritsNeededCnt", Static = false, Name = "StarWay Spirits Needed", Value = 7 });
 
-            AddToggleoption("BlueHouseOpen");
-            AddToggleoption("Ch7BridgeVisible", "true");
-            AddToggleoption("CookWithoutFryingPan");
-            AddToggleoption("ForeverForestOpen", "true");
-            AddToggleoption("MtRuggedOpen");
-            AddToggleoption("PartnersAlwaysUsable");
-            AddToggleoption("PrologueOpen");
-            AddToggleoption("ToyboxOpen");
-            AddToggleoption("WhaleOpen");
-            AddToggleoption("StarHunt");
-            AddToggleoption("StarHuntEndsGame");
+            AddToggleoption("BlueHouseOpen", Display: "Open Blue House");
+            AddToggleoption("Ch7BridgeVisible", "true", "Ch.7 Bridge Visible ");
+            AddToggleoption("CookWithoutFryingPan", Display: "Cook Without Frying Pan");
+            AddToggleoption("ForeverForestOpen", "true", "Open Forever Forest");
+            AddToggleoption("MtRuggedOpen", Display: "Open Mt. Rugged");
+            AddToggleoption("PartnersAlwaysUsable", Display: "Partners Always Usable");
+            AddToggleoption("PrologueOpen", Display: "Open Prologue");
+            AddToggleoption("ToyboxOpen", Display: "Open Toy Box");
+            AddToggleoption("WhaleOpen", Display: "Open Whale");
+            AddToggleoption("StarHunt", Display: "Power Star Hunt");
+            AddToggleoption("StarHuntEndsGame", Display: "Star Hunt Skips Ch.8", Logic: "setting{StarHunt, true}");
 
-            AddOption("HiddenBlockMode", "1", new List<Tuple<string, string>> { new("0", "vanilla"), new("1", "Watt out"), new("2", "Watt acquired"), new("3", "always visible") });
-            AddOption("BowsersCastleMode", "0", new List<Tuple<string, string>> { new("0", "vanilla"), new("1", "Shorten"), new("2", "BossRush")});
-            AddOption("GearShuffleMode", "0", new List<Tuple<string, string>> { new("0", "vanilla"), new("1", "location shuffle"), new("2", "full shuffle") });
-            AddOption("MerlowRewardPricing", "1", new List<Tuple<string, string>> { new("0", "Cheap"), new("1", "Normal") });
+            AddOption("HiddenBlockMode", "1", new List<Tuple<string, string>> { new("0", "Watt's Ability"), new("1", "Watt Out"), new("2", "Watt Obtained"), new("3", "Always Visible") }, "Hidden Block Mode");
+            AddOption("BowsersCastleMode", "0", new List<Tuple<string, string>> { new("0", "Vanilla"), new("1", "Shortened"), new("2", "Boss Rush")}, "Bowser's Castle Mode");
+            AddOption("GearShuffleMode", "0", new List<Tuple<string, string>> { new("0", "Vanilla"), new("1", "Gear location shuffle"), new("2", "Full Shuffle") }, "Gear Shuffle");
+            AddOption("MerlowRewardPricing", "1", new List<Tuple<string, string>> { new("0", "Cheap"), new("1", "Normal") }, "Merlow Rewards Pricing");
             
             void AddOption(string ID, string Default, List<Tuple<string, string>> Options, string Display = null)
             {
@@ -489,9 +489,10 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
                 PMRDict.Options.Add(ID, option);
             }
 
-            void AddToggleoption(string ID, string defval = "false", string Display = null)
+            void AddToggleoption(string ID, string defval = "false", string Display = null, string Logic = null)
             {
                 var option = new OptionData.TrackerOption { ID = ID, DisplayName = Display??ID, CurrentValue = defval };
+                if (Logic is not null) { option.Logic = Logic; }
                 option.CreateSimpleValues(new string[] {"true", "false"});
                 PMRDict.Options.Add(ID, option);
             }
