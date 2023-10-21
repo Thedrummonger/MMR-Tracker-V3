@@ -379,7 +379,7 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
 
             foreach (var i in Items)
             {
-                if (ItemOverrides.Keys.Any(x => i.item_name.Contains(x))) { continue; }
+                if (ItemOverrides.Keys.Any(x => i.item_name.StartsWith(x))) { continue; }
                 if (i.unplaceable > 0) { continue; }
                 int MaxCount = (i.item_type.In("ITEM", "COIN")) ? -1 : 1;
                 string NiceName = ItemNames.ContainsKey(i.item_name) ? ItemNames[i.item_name] : i.item_name;
