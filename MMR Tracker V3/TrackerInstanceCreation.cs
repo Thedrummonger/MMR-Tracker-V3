@@ -72,8 +72,10 @@ namespace MMR_Tracker_V3
         {
             Container.Instance ??= new();
             var Instance = Container.Instance;
-            Instance.UserOptions = Instance.LogicDictionary.Options.ToDictionary(x => x.Key, y => y.Value);
-            Instance.Variables = Instance.LogicDictionary.Variables.ToDictionary(x => x.Key, y => y.Value);
+            Instance.ChoiceOptions = Instance.LogicDictionary.ChoiceOptions.ToDictionary(x => x.Key, y => y.Value);
+            Instance.ToggleOptions = Instance.LogicDictionary.ToggleOptions.ToDictionary(x => x.Key, y => y.Value);
+            Instance.IntOptions = Instance.LogicDictionary.IntOptions.ToDictionary(x => x.Key, y => y.Value);
+            Instance.LogicEntryCollections = Instance.LogicDictionary.LogicEntryCollections.ToDictionary(x => x.Key, y => y.Value);
 
             //This value should always match the key, preferable I should leave it out of the JSON.
             foreach (var i in Instance.LogicDictionary.LocationList) { i.Value.ID = i.Key; }
@@ -81,8 +83,10 @@ namespace MMR_Tracker_V3
             foreach (var i in Instance.LogicDictionary.EntranceList) { i.Value.ID = i.Key; }
             foreach (var i in Instance.LogicDictionary.HintSpots) { i.Value.ID = i.Key; }
             foreach (var i in Instance.LogicDictionary.MacroList) { i.Value.ID = i.Key; }
-            foreach (var i in Instance.LogicDictionary.Options) { i.Value.ID = i.Key; }
-            foreach (var i in Instance.LogicDictionary.Variables) { i.Value.ID = i.Key; }
+            foreach (var i in Instance.LogicDictionary.ChoiceOptions) { i.Value.ID = i.Key; }
+            foreach (var i in Instance.LogicDictionary.ToggleOptions) { i.Value.ID = i.Key; }
+            foreach (var i in Instance.LogicDictionary.IntOptions) { i.Value.ID = i.Key; }
+            foreach (var i in Instance.LogicDictionary.LogicEntryCollections) { i.Value.ID = i.Key; }
 
             int Index = 0;
             foreach(var i in Instance.LogicDictionary.ItemList)

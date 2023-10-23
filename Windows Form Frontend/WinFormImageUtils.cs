@@ -354,9 +354,9 @@ namespace Windows_Form_Frontend
             {
                 trackerState.MacroValues[macro.ID] = macro.Aquired;
             }
-            foreach (var option in Instance.UserOptions.Values)
+            foreach (var option in Instance.ChoiceOptions.Values)
             {
-                trackerState.OptionValues[option.ID] = option.CurrentValue;
+                trackerState.OptionValues[option.ID] = option.Value;
             }
             return trackerState;
         }

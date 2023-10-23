@@ -15991,227 +15991,440 @@
   },
   "HintSpots": {},
   "MacroList": {},
-  "Options": {
+  "ChoiceOptions": {
     "castleRequirements": {
       "ID": "castleRequirements",
-      "DisplayName": "Hyrule Castle Requirements",
-      "CurrentValue": "Vanilla",
+      "Name": "Hyrule Castle Requirements",
+      "Value": "Vanilla",
       "SubCategory": "Access Options",
-      "Logic": "true",
-      "Values": {
+      "Priority": 0,
+      "Conditionals": [],
+      "ValueList": {
         "Vanilla": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
+          "ID": "Vanilla",
+          "Name": "Vanilla",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
         },
         "Open": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
+          "ID": "Open",
+          "Name": "Open",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
         },
         "Fused_Shadows": {
+          "ID": "Fused_Shadows",
           "Name": "Fused Shadows",
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
         },
         "Mirror_Shards": {
+          "ID": "Mirror_Shards",
           "Name": "Mirror Shards",
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
         },
         "All_Dungeons": {
+          "ID": "All_Dungeons",
           "Name": "All Dungeons",
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
         }
       }
     },
     "palaceRequirements": {
       "ID": "palaceRequirements",
-      "DisplayName": "Palace of Twilight Requirements",
-      "CurrentValue": "Vanilla",
+      "Name": "Palace of Twilight Requirements",
+      "Value": "Vanilla",
       "SubCategory": "Access Options",
-      "Logic": "true",
-      "Values": {
+      "Priority": 0,
+      "Conditionals": [],
+      "ValueList": {
         "Vanilla": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
+          "ID": "Vanilla",
+          "Name": "Vanilla",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
         },
         "Open": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
+          "ID": "Open",
+          "Name": "Open",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
         },
         "Fused_Shadows": {
+          "ID": "Fused_Shadows",
           "Name": "Fused Shadows",
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
         },
         "Mirror_Shards": {
+          "ID": "Mirror_Shards",
           "Name": "Mirror Shards",
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
         }
       }
     },
     "faronWoodsLogic": {
       "ID": "faronWoodsLogic",
-      "DisplayName": "Open Faron Woods",
-      "CurrentValue": "Closed",
+      "Name": "Open Faron Woods",
+      "Value": "Closed",
       "SubCategory": "Access Options",
-      "Logic": "true",
-      "Values": {
+      "Priority": 0,
+      "Conditionals": [],
+      "ValueList": {
         "Closed": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
+          "ID": "Closed",
+          "Name": "Closed",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
         },
         "Open": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
-        }
-      }
-    },
-    "shuffleNpcItems": {
-      "ID": "shuffleNpcItems",
-      "DisplayName": "Shuffle Gifts From NPCs",
-      "CurrentValue": "False",
-      "SubCategory": "Misc",
-      "Logic": "true",
-      "Values": {
-        "False": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
-        },
-        "True": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
+          "ID": "Open",
+          "Name": "Open",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
         }
       }
     },
     "smallKeySettings": {
       "ID": "smallKeySettings",
-      "DisplayName": "Small Keys",
-      "CurrentValue": "vanilla",
+      "Name": "Small Keys",
+      "Value": "vanilla",
       "SubCategory": "Dungeon Items",
-      "Logic": "true",
-      "Values": {
+      "Priority": 0,
+      "Conditionals": [],
+      "ValueList": {
         "vanilla": {
+          "ID": "vanilla",
           "Name": "Vanilla",
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
         },
         "ownDungeon": {
+          "ID": "ownDungeon",
           "Name": "Own Dungeon",
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
         },
         "anyDungeon": {
+          "ID": "anyDungeon",
           "Name": "Any Dungeon",
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
         },
         "anywhere": {
+          "ID": "anywhere",
           "Name": "Anywhere",
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
         },
         "Keysy": {
+          "ID": "Keysy",
+          "Name": "Keysy",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      }
+    },
+    "bigKeySettings": {
+      "ID": "bigKeySettings",
+      "Name": "Big Keys",
+      "Value": "vanilla",
+      "SubCategory": "Dungeon Items",
+      "Priority": 0,
+      "Conditionals": [],
+      "ValueList": {
+        "vanilla": {
+          "ID": "vanilla",
+          "Name": "Vanilla",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "ownDungeon": {
+          "ID": "ownDungeon",
+          "Name": "Own Dungeon",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "anyDungeon": {
+          "ID": "anyDungeon",
+          "Name": "Any Dungeon",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "anywhere": {
+          "ID": "anywhere",
+          "Name": "Anywhere",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "Keysy": {
+          "ID": "Keysy",
+          "Name": "Keysy",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      }
+    },
+    "goronMinesEntrance": {
+      "ID": "goronMinesEntrance",
+      "Name": "Goron Mines Entrance",
+      "Value": "Closed",
+      "SubCategory": "Dungeon Entrance Settings",
+      "Priority": 0,
+      "Conditionals": [],
+      "ValueList": {
+        "Closed": {
+          "ID": "Closed",
+          "Name": "Closed",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "NoWrestling": {
+          "ID": "NoWrestling",
+          "Name": "No Wrestling",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "Open": {
+          "ID": "Open",
+          "Name": "Open",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      }
+    },
+    "totEntrance": {
+      "ID": "totEntrance",
+      "Name": "Temple of Time Entrance",
+      "Value": "Closed",
+      "SubCategory": "Dungeon Entrance Settings",
+      "Priority": 0,
+      "Conditionals": [],
+      "ValueList": {
+        "Closed": {
+          "ID": "Closed",
+          "Name": "Closed",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "OpenGrove": {
+          "ID": "OpenGrove",
+          "Name": "Open Grove",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "Open": {
+          "ID": "Open",
+          "Name": "Open",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      }
+    },
+    "logicRules": {
+      "ID": "logicRules",
+      "Name": "logicRules",
+      "Value": "Glitchless",
+      "SubCategory": "static",
+      "Priority": 0,
+      "Conditionals": [],
+      "ValueList": {
+        "Glitchless": {
+          "ID": "Glitchless",
+          "Name": "Glitchless",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      }
+    },
+    "skipMinesEntrance": {
+      "ID": "skipMinesEntrance",
+      "Name": "",
+      "Value": "False",
+      "SubCategory": "Dungeon Entrance Settings",
+      "Priority": 0,
+      "Conditionals": [],
+      "ValueList": {
+        "False": {
+          "ID": "False",
+          "Name": "False",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      }
+    }
+  },
+  "ToggleOptions": {
+    "shuffleNpcItems": {
+      "ID": "shuffleNpcItems",
+      "Name": "Shuffle Gifts From NPCs",
+      "Value": "False",
+      "SubCategory": "Misc",
+      "Priority": 0,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {},
           "VariableEdit": {}
         }
-      }
-    },
-    "bigKeySettings": {
-      "ID": "bigKeySettings",
-      "DisplayName": "Big Keys",
-      "CurrentValue": "vanilla",
-      "SubCategory": "Dungeon Items",
-      "Logic": "true",
-      "Values": {
-        "vanilla": {
-          "Name": "Vanilla",
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
-        },
-        "ownDungeon": {
-          "Name": "Own Dungeon",
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
-        },
-        "anyDungeon": {
-          "Name": "Any Dungeon",
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
-        },
-        "anywhere": {
-          "Name": "Anywhere",
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
-        },
-        "Keysy": {
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -16222,19 +16435,26 @@
     },
     "skipPrologue": {
       "ID": "skipPrologue",
-      "DisplayName": "Skip Prologue",
-      "CurrentValue": "False",
+      "Name": "Skip Prologue",
+      "Value": "False",
       "SubCategory": "Timesavers",
-      "Logic": "true",
-      "Values": {
-        "False": {
+      "Priority": 0,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {},
           "VariableEdit": {}
-        },
-        "True": {
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -16245,19 +16465,26 @@
     },
     "faronTwilightCleared": {
       "ID": "faronTwilightCleared",
-      "DisplayName": "Faron Twilight Cleared",
-      "CurrentValue": "False",
+      "Name": "Faron Twilight Cleared",
+      "Value": "False",
       "SubCategory": "Timesavers",
-      "Logic": "true",
-      "Values": {
-        "False": {
+      "Priority": 0,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {},
           "VariableEdit": {}
-        },
-        "True": {
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -16268,19 +16495,26 @@
     },
     "eldinTwilightCleared": {
       "ID": "eldinTwilightCleared",
-      "DisplayName": "Eldin Twilight Cleared",
-      "CurrentValue": "False",
+      "Name": "Eldin Twilight Cleared",
+      "Value": "False",
       "SubCategory": "Timesavers",
-      "Logic": "true",
-      "Values": {
-        "False": {
+      "Priority": 0,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {},
           "VariableEdit": {}
-        },
-        "True": {
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -16291,19 +16525,26 @@
     },
     "lanayruTwilightCleared": {
       "ID": "lanayruTwilightCleared",
-      "DisplayName": "Lanayru Twilight Cleared",
-      "CurrentValue": "False",
+      "Name": "Lanayru Twilight Cleared",
+      "Value": "False",
       "SubCategory": "Timesavers",
-      "Logic": "true",
-      "Values": {
-        "False": {
+      "Priority": 0,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {},
           "VariableEdit": {}
-        },
-        "True": {
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -16314,19 +16555,26 @@
     },
     "skipMdh": {
       "ID": "skipMdh",
-      "DisplayName": "Skip Midna's Desperate Hour",
-      "CurrentValue": "False",
+      "Name": "Skip Midna's Desperate Hour",
+      "Value": "False",
       "SubCategory": "Timesavers",
-      "Logic": "true",
-      "Values": {
-        "False": {
+      "Priority": 0,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {},
           "VariableEdit": {}
-        },
-        "True": {
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -16337,19 +16585,26 @@
     },
     "barrenDungeons": {
       "ID": "barrenDungeons",
-      "DisplayName": "Unrequired Dungeons Are Barren",
-      "CurrentValue": "False",
+      "Name": "Unrequired Dungeons Are Barren",
+      "Value": "False",
       "SubCategory": "Timesavers",
-      "Logic": "true",
-      "Values": {
-        "False": {
+      "Priority": 0,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {},
           "VariableEdit": {}
-        },
-        "True": {
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -16360,19 +16615,26 @@
     },
     "openDot": {
       "ID": "openDot",
-      "DisplayName": "Open Door of Time",
-      "CurrentValue": "False",
+      "Name": "Open Door of Time",
+      "Value": "False",
       "SubCategory": "Timesavers",
-      "Logic": "true",
-      "Values": {
-        "False": {
+      "Priority": 0,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {},
           "VariableEdit": {}
-        },
-        "True": {
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -16383,19 +16645,26 @@
     },
     "skipLakebedEntrance": {
       "ID": "skipLakebedEntrance",
-      "DisplayName": "Lakebed Does Not Require Water Bombs",
-      "CurrentValue": "False",
+      "Name": "Lakebed Does Not Require Water Bombs",
+      "Value": "False",
       "SubCategory": "Dungeon Entrance Settings",
-      "Logic": "true",
-      "Values": {
-        "False": {
+      "Priority": 0,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {},
           "VariableEdit": {}
-        },
-        "True": {
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -16406,19 +16675,26 @@
     },
     "skipArbitersEntrance": {
       "ID": "skipArbitersEntrance",
-      "DisplayName": "Arbiters Does Not Require Bulblin Camp",
-      "CurrentValue": "False",
+      "Name": "Arbiters Does Not Require Bulblin Camp",
+      "Value": "False",
       "SubCategory": "Dungeon Entrance Settings",
-      "Logic": "true",
-      "Values": {
-        "False": {
+      "Priority": 0,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {},
           "VariableEdit": {}
-        },
-        "True": {
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -16429,19 +16705,26 @@
     },
     "skipSnowpeakEntrance": {
       "ID": "skipSnowpeakEntrance",
-      "DisplayName": "Snowpeak Does Not Require Reekfish Scent",
-      "CurrentValue": "False",
+      "Name": "Snowpeak Does Not Require Reekfish Scent",
+      "Value": "False",
       "SubCategory": "Dungeon Entrance Settings",
-      "Logic": "true",
-      "Values": {
-        "False": {
+      "Priority": 0,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {},
           "VariableEdit": {}
-        },
-        "True": {
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -16452,81 +16735,26 @@
     },
     "skipCityEntrance": {
       "ID": "skipCityEntrance",
-      "DisplayName": "City Does Not Require Filled Skybook",
-      "CurrentValue": "False",
+      "Name": "City Does Not Require Filled Skybook",
+      "Value": "False",
       "SubCategory": "Dungeon Entrance Settings",
-      "Logic": "true",
-      "Values": {
-        "False": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
-        },
-        "True": {
+      "Priority": 0,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {},
           "VariableEdit": {}
         }
-      }
-    },
-    "goronMinesEntrance": {
-      "ID": "goronMinesEntrance",
-      "DisplayName": "Goron Mines Entrance",
-      "CurrentValue": "Closed",
-      "SubCategory": "Dungeon Entrance Settings",
-      "Logic": "true",
-      "Values": {
-        "Closed": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
-        },
-        "NoWrestling": {
-          "Name": "No Wrestling",
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
-        },
-        "Open": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
-        }
-      }
-    },
-    "totEntrance": {
-      "ID": "totEntrance",
-      "DisplayName": "Temple of Time Entrance",
-      "CurrentValue": "Closed",
-      "SubCategory": "Dungeon Entrance Settings",
-      "Logic": "true",
-      "Values": {
-        "Closed": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
-        },
-        "OpenGrove": {
-          "Name": "Open Grove",
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
-        },
-        "Open": {
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -16537,19 +16765,26 @@
     },
     "transformAnywhere": {
       "ID": "transformAnywhere",
-      "DisplayName": "Transform Anywhere",
-      "CurrentValue": "False",
+      "Name": "Transform Anywhere",
+      "Value": "False",
       "SubCategory": "Additional Settings",
-      "Logic": "true",
-      "Values": {
-        "False": {
+      "Priority": 0,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {},
           "VariableEdit": {}
-        },
-        "True": {
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -16560,51 +16795,26 @@
     },
     "increaseWallet": {
       "ID": "increaseWallet",
-      "DisplayName": "Increase Wallet Capacity",
-      "CurrentValue": "False",
+      "Name": "Increase Wallet Capacity",
+      "Value": "False",
       "SubCategory": "Additional Settings",
-      "Logic": "true",
-      "Values": {
-        "False": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
-        },
-        "True": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
-        }
-      }
-    },
-    "logicRules": {
-      "ID": "logicRules",
-      "DisplayName": "logicRules",
-      "CurrentValue": "Glitchless",
-      "SubCategory": "static",
-      "Logic": "true",
-      "Values": {
-        "Glitchless": {
+      "Priority": 0,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {},
           "VariableEdit": {}
         }
-      }
-    },
-    "skipMinesEntrance": {
-      "ID": "skipMinesEntrance",
-      "DisplayName": "",
-      "CurrentValue": "False",
-      "SubCategory": "Dungeon Entrance Settings",
-      "Logic": "true",
-      "Values": {
-        "False": {
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
           "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
@@ -16614,12 +16824,11 @@
       }
     }
   },
-  "Variables": {
+  "IntOptions": {},
+  "LogicEntryCollections": {
     "ItemWheelItems": {
       "ID": "ItemWheelItems",
-      "Static": true,
-      "Logic": "true",
-      "Value": [
+      "Entries": [
         "Progressive_Clawshot",
         "Progressive_Dominion_Rod",
         "Ball_and_Chain",
@@ -16643,9 +16852,7 @@
     },
     "AllBugs": {
       "ID": "AllBugs",
-      "Static": true,
-      "Logic": "true",
-      "Value": [
+      "Entries": [
         "Female_Phasmid",
         "Male_Phasmid",
         "Female_Grasshopper",

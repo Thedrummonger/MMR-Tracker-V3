@@ -261,29 +261,29 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
 
             Debug.WriteLine($"Handeling Options");
             //These options are not hard coded to the tracker, but set them if they exist.
-            if (instance.UserOptions.ContainsKey("ProgressiveItems"))
+            if (instance.ToggleOptions.ContainsKey("ProgressiveItems"))
             {
-                instance.UserOptions["ProgressiveItems"].CurrentValue = Log.GameplaySettings.ProgressiveUpgrades ? "enabled" : "disabled";
+                instance.ToggleOptions["ProgressiveItems"].SetValue(Log.GameplaySettings.ProgressiveUpgrades);
             }
-            if (instance.UserOptions.ContainsKey("SmallKeysy"))
+            if (instance.ToggleOptions.ContainsKey("SmallKeysy"))
             {
-                instance.UserOptions["SmallKeysy"].CurrentValue = Log.GameplaySettings.SmallKeyMode == MMRData.SmallKeyMode.DoorsOpen ? "enabled" : "disabled";
+                instance.ToggleOptions["SmallKeysy"].SetValue(Log.GameplaySettings.SmallKeyMode == MMRData.SmallKeyMode.DoorsOpen);
             }
-            if (instance.UserOptions.ContainsKey("BossKeysy"))
+            if (instance.ToggleOptions.ContainsKey("BossKeysy"))
             {
-                instance.UserOptions["BossKeysy"].CurrentValue = Log.GameplaySettings.BossKeyMode == MMRData.BossKeyMode.DoorsOpen ? "enabled" : "disabled";
+                instance.ToggleOptions["BossKeysy"].SetValue(Log.GameplaySettings.BossKeyMode == MMRData.BossKeyMode.DoorsOpen);
             }
-            if (instance.UserOptions.ContainsKey("BYOA"))
+            if (instance.ToggleOptions.ContainsKey("BYOA"))
             {
-                instance.UserOptions["BYOA"].CurrentValue = Log.GameplaySettings.ByoAmmo ? "enabled" : "disabled";
+                instance.ToggleOptions["BYOA"].SetValue(Log.GameplaySettings.ByoAmmo);
             }
-            if (instance.UserOptions.ContainsKey("FreeHints"))
+            if (instance.ChoiceOptions.ContainsKey("FreeHints"))
             {
-                instance.UserOptions["FreeHints"].CurrentValue = Log.GameplaySettings.FreeHints.ToString().ToLower();
+                instance.ChoiceOptions["FreeHints"].Value = Log.GameplaySettings.FreeHints.ToString().ToLower();
             }
-            if (instance.UserOptions.ContainsKey("FreeGaroHints"))
+            if (instance.ChoiceOptions.ContainsKey("FreeGaroHints"))
             {
-                instance.UserOptions["FreeGaroHints"].CurrentValue = Log.GameplaySettings.FreeGaroHints.ToString().ToLower();
+                instance.ChoiceOptions["FreeGaroHints"].Value = Log.GameplaySettings.FreeGaroHints.ToString().ToLower();
             }
 
             Debug.WriteLine($"Getting all Logic Items");

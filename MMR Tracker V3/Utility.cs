@@ -190,9 +190,17 @@ namespace MMR_Tracker_V3
             {
                 return IO.GetDictEntry(instance)?.Name??IO.Id;
             }
-            else if (Entry is OptionData.TrackerOption TO)
+            else if (Entry is OptionData.ChoiceOption CO)
             {
-                return TO.DisplayName??TO.ID;
+                return CO.Name??CO.ID;
+            }
+            else if (Entry is OptionData.ToggleOption TO)
+            {
+                return TO.Name??TO.ID;
+            }
+            else if (Entry is OptionData.IntOption NO)
+            {
+                return NO.Name??NO.ID;
             }
             else if (Entry is HintData.HintObject HO)
             {
@@ -286,8 +294,6 @@ namespace MMR_Tracker_V3
             if (Object is null) { return false; }
             if (Object is ExpandoObject)
                 return ((IDictionary<string, object>)Object).ContainsKey(name);
-
-            if (Object.GetType() is MiscData.VariableEntryType) { return false; }
 
             return Object.GetType().GetProperty(name) != null;
         }
@@ -725,31 +731,37 @@ namespace MMR_Tracker_V3
                 if (ExitObject.EntrancePair == null) { ItemTypes.Add("One Way"); }
                 OutObject.ValidItemTypes = ItemTypes.ToArray();
             }
-            else if (Object is OptionData.TrackerOption OptionObject)
+            else if (Object is OptionData.ChoiceOption ChoiceOptionObject)
             {
-                OutObject.ID = OptionObject.ID;
+                OutObject.ID = ChoiceOptionObject.ID;
                 OutObject.Area = "Options";
-                OutObject.Name = OptionObject.DisplayName;
-                OutObject.OriginalItem = OptionObject.CurrentValue;
-                OutObject.Randomizeditem = OptionObject.CurrentValue;
-                OutObject.Starred = OptionObject.IsToggleOption();
-                List<string> ItemTypes = new() { "Option" };
-                if (OptionObject.IsToggleOption()) { ItemTypes.Add("Toggle"); }
+                OutObject.Name = ChoiceOptionObject.Name;
+                OutObject.OriginalItem = ChoiceOptionObject.Value;
+                OutObject.Randomizeditem = ChoiceOptionObject.Value;
+                OutObject.Starred = true;
+                List<string> ItemTypes = new() { "Option", "Choice" };
                 OutObject.ValidItemTypes = ItemTypes.ToArray();
             }
-            else if (Object is OptionData.TrackerVar VariableObject)
+            else if (Object is OptionData.ToggleOption ToggleOptionObject)
             {
-                OutObject.ID = VariableObject.ID;
-                OutObject.Area = "Variable";
-                OutObject.Name = VariableObject.Name;
-                OutObject.OriginalItem = VariableObject.ValueToString();
-                OutObject.Randomizeditem = VariableObject.ValueToString();
-                OutObject.Starred = !VariableObject.Static;
-                List<string> ItemTypes = new() { "Variable" };
-                if (VariableObject.GetType() == MiscData.VariableEntryType.varstring) { ItemTypes.Add("string"); }
-                if (VariableObject.GetType() == MiscData.VariableEntryType.varint) { ItemTypes.Add("Number"); }
-                if (VariableObject.GetType() == MiscData.VariableEntryType.varbool) { ItemTypes.Add("Bool"); }
-                if (VariableObject.GetType() == MiscData.VariableEntryType.varlist) { ItemTypes.Add("List"); }
+                OutObject.ID = ToggleOptionObject.ID;
+                OutObject.Area = "Options";
+                OutObject.Name = ToggleOptionObject.Name;
+                OutObject.OriginalItem = ToggleOptionObject.Value;
+                OutObject.Randomizeditem = ToggleOptionObject.Value;
+                OutObject.Starred = true;
+                List<string> ItemTypes = new() { "Option", "Toggle" };
+                OutObject.ValidItemTypes = ItemTypes.ToArray();
+            }
+            else if (Object is OptionData.IntOption IntOptionObject)
+            {
+                OutObject.ID = IntOptionObject.ID;
+                OutObject.Area = "Options";
+                OutObject.Name = IntOptionObject.Name;
+                OutObject.OriginalItem = IntOptionObject.Value.ToString();
+                OutObject.Randomizeditem = IntOptionObject.Value.ToString();
+                OutObject.Starred = true;
+                List<string> ItemTypes = new() { "Option", "int" };
                 OutObject.ValidItemTypes = ItemTypes.ToArray();
             }
             else if (Object is EntranceData.EntranceRandoDestination DestinationObject)

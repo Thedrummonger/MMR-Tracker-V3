@@ -42,56 +42,74 @@ namespace MMR_Tracker_V3
             public List<ItemData.ItemObject> OnlineObtainedItems { get; set; } = new List<ItemData.ItemObject>();
         }
 
-        public static bool CheckSelectedItems(IEnumerable<object> Items, MiscData.CheckState checkState, MiscData.InstanceContainer instanceContainer, Func<IEnumerable<object>, InstanceData.TrackerInstance, bool> CheckUnassignedLocations, Func<IEnumerable<object>, InstanceData.TrackerInstance, bool> CheckUnassignedVariable, bool EnforceMarkAction = false)
+        public static bool CheckSelectedItems(IEnumerable<object> SelectedObjects, MiscData.CheckState checkState, MiscData.InstanceContainer instanceContainer, Func<IEnumerable<object>, InstanceData.TrackerInstance, bool> CheckUnassignedLocations, Func<IEnumerable<object>, InstanceData.TrackerInstance, bool> CheckUnassignedVariable, bool EnforceMarkAction = false)
         {
             bool ChangesMade = false;
 
-            //Search for valid Object types in the list of selected Objects and sort them into lists
-            IEnumerable<LocationObject> locationObjects = Items.Where(x => x is LocationObject).Select(x => x as LocationObject);
-            locationObjects = locationObjects.Concat(Items.Where(x => x is LocationProxy).Select(x => (x as LocationProxy).GetReferenceLocation(instanceContainer.Instance)));
-            locationObjects = locationObjects.Distinct();
-            IEnumerable<EntranceData.EntranceRandoExit> ExitObjects = Items.Where(x => x is EntranceData.EntranceRandoExit).Select(x => x as EntranceData.EntranceRandoExit);
-            IEnumerable<OptionData.TrackerOption> OptionObjects = Items.Where(x => x is OptionData.TrackerOption).Select(x => x as OptionData.TrackerOption);
+            //Handle Options
+            IEnumerable<OptionData.ChoiceOption> choiceOptions = SelectedObjects.Where(x => x is OptionData.ChoiceOption).Select(x => x as OptionData.ChoiceOption);
+            IEnumerable<OptionData.IntOption> IntOptions = SelectedObjects.Where(x => x is OptionData.IntOption).Select(x => x as OptionData.IntOption);
+            IEnumerable<OptionData.ToggleOption> ToggleOptions = SelectedObjects.Where(x => x is OptionData.ToggleOption).Select(x => x as OptionData.ToggleOption);
 
+            foreach (var i in ToggleOptions) 
+            { 
+                i.ToggleValue(); 
+                ChangesMade = true; 
+            }
+            if (choiceOptions.Any()) 
+            { 
+                CheckUnassignedLocations(choiceOptions, instanceContainer.Instance);
+                ChangesMade = true;
+            }
+            if (IntOptions.Any())
+            {
+                CheckUnassignedVariable(IntOptions, instanceContainer.Instance);
+                ChangesMade = true;
+            }
+
+            //Handle Locations
+            IEnumerable<LocationObject> locationObjects = SelectedObjects.Where(x => x is LocationObject).Select(x => x as LocationObject);
+            locationObjects = locationObjects.Concat(SelectedObjects.Where(x => x is LocationProxy).Select(x => (x as LocationProxy).GetReferenceLocation(instanceContainer.Instance)));
+            locationObjects = locationObjects.Distinct();
             //If we are performing an uncheck action there should be no unchecked locations in the list and even if there are nothing will be done to them anyway
-            //This check is neccessary for the "UnMark Only" action and also provides a bit more efficiency.
+            //This check is neccessary for the "UnMark Only" action.
             IEnumerable<LocationObject> UncheckedlocationObjects = (checkState == MiscData.CheckState.Unchecked) ?
                 new List<LocationObject>() :
                 locationObjects.Where(x => x.CheckState == MiscData.CheckState.Unchecked);
-            IEnumerable<EntranceData.EntranceRandoExit> UncheckedExitObjects = (checkState == MiscData.CheckState.Unchecked) ?
-                new List<EntranceData.EntranceRandoExit>() :
-                ExitObjects.Where(x => x.CheckState == MiscData.CheckState.Unchecked);
 
-            //For any Locations with no randomized item, check if an item can be automatically assigned.
             foreach (LocationObject LocationObject in UncheckedlocationObjects)
             {
                 LocationObject.Randomizeditem.Item = LocationObject.GetItemAtCheck(instanceContainer.Instance);
             }
-            foreach (EntranceData.EntranceRandoExit ExitObject in UncheckedExitObjects)
-            {
-                ExitObject.DestinationExit = ExitObject.GetDestinationAtExit(instanceContainer.Instance);
-            }
-
             //Get Entries that need a value manually assigned and pass them to given method to be assigned.
-            IEnumerable<object> ManualChecks = UncheckedlocationObjects.Where(x => x.Randomizeditem.Item == null); //Locations with no item
-            ManualChecks = ManualChecks.Concat(UncheckedExitObjects.Where(x => x.DestinationExit == null)); //Exits With No Destination
-            ManualChecks = ManualChecks.Concat(OptionObjects.Where(x => !x.IsToggleOption())); //Non Toggle Options
-            if (ManualChecks.Any())
+            IEnumerable<object> ManualLocationChecks = UncheckedlocationObjects.Where(x => x.Randomizeditem.Item == null); //Locations with no item
+            if (ManualLocationChecks.Any())
             {
-                CheckUnassignedLocations(ManualChecks, instanceContainer.Instance);
+                CheckUnassignedLocations(ManualLocationChecks, instanceContainer.Instance);
                 ChangesMade = true;
             }
-
-            //Options======================================
-            foreach (var i in OptionObjects.Where(x => x.IsToggleOption())) { i.ToggleOption(); ChangesMade = true; }
-            //Items======================================
             foreach (LocationObject LocationObject in locationObjects)
             {
                 //When we mark a location, the action is always sent as Marked, but if the location is already marked we should instead Unchecked it unless EnforceMarkAction is true.
                 var Action = (checkState == MiscData.CheckState.Marked && LocationObject.CheckState == MiscData.CheckState.Marked) && !EnforceMarkAction ? MiscData.CheckState.Unchecked : checkState;
                 if (LocationObject.ToggleChecked(Action, instanceContainer.Instance)) { ChangesMade = true; }
             }
-            //Exits======================================
+
+            //Handle Exits
+            IEnumerable<EntranceData.EntranceRandoExit> ExitObjects = SelectedObjects.Where(x => x is EntranceData.EntranceRandoExit).Select(x => x as EntranceData.EntranceRandoExit);
+            IEnumerable<EntranceData.EntranceRandoExit> UncheckedExitObjects = (checkState == MiscData.CheckState.Unchecked) ?
+                new List<EntranceData.EntranceRandoExit>() :
+                ExitObjects.Where(x => x.CheckState == MiscData.CheckState.Unchecked);
+            foreach (EntranceData.EntranceRandoExit ExitObject in UncheckedExitObjects)
+            {
+                ExitObject.DestinationExit = ExitObject.GetDestinationAtExit(instanceContainer.Instance);
+            }
+            IEnumerable<object> ManualExitChecks = UncheckedExitObjects.Where(x => x.DestinationExit == null); //Exits With No Destination
+            if (ManualExitChecks.Any())
+            {
+                CheckUnassignedLocations(ManualExitChecks, instanceContainer.Instance);
+                ChangesMade = true;
+            }
             foreach (EntranceData.EntranceRandoExit ExitObject in ExitObjects)
             {
                 var Action = (checkState == MiscData.CheckState.Marked && ExitObject.CheckState == MiscData.CheckState.Marked) && !EnforceMarkAction ? MiscData.CheckState.Unchecked : checkState;
@@ -99,20 +117,19 @@ namespace MMR_Tracker_V3
             }
 
             //Hints======================================
-            List<HintData.HintObject> HintObjects = Items.Where(x => x is HintData.HintObject).Select(x => x as HintData.HintObject).ToList();
-            List<OptionData.TrackerVar> VariableObjects = Items.Where(x => x is OptionData.TrackerVar).Select(x => x as OptionData.TrackerVar).ToList();
+            List<HintData.HintObject> HintObjects = SelectedObjects.Where(x => x is HintData.HintObject).Select(x => x as HintData.HintObject).ToList();
 
             var UncheckedHintObjects = HintObjects.Where(x => x.CheckState == MiscData.CheckState.Unchecked);
-            foreach (var i in UncheckedHintObjects.Where(x => !string.IsNullOrWhiteSpace(x.SpoilerHintText))) { i.HintText = i.SpoilerHintText; }
-
+            foreach (var i in UncheckedHintObjects.Where(x => !string.IsNullOrWhiteSpace(x.SpoilerHintText))) 
+            { 
+                i.HintText = i.SpoilerHintText; 
+            }
             IEnumerable<object> UncheckedVariableObjects = UncheckedHintObjects.Where(x => string.IsNullOrWhiteSpace(x.HintText));
-            UncheckedVariableObjects = UncheckedVariableObjects.Concat(VariableObjects.Where(x => x.GetType() != MiscData.VariableEntryType.varbool));
             if (UncheckedVariableObjects.Any())
             {
                 CheckUnassignedVariable(UncheckedVariableObjects, instanceContainer.Instance);
                 ChangesMade = true;
             }
-            foreach (var i in VariableObjects.Where(x => x.GetType() == MiscData.VariableEntryType.varbool)) { i.Value = !i.GetValue(instanceContainer.Instance); ChangesMade = true; }
             foreach (HintData.HintObject hintObject in HintObjects)
             {
                 ChangesMade = true;
@@ -232,14 +249,15 @@ namespace MMR_Tracker_V3
             {
                 if (IC.Instance.StaticOptions.ShowOptionsInListBox == null || IC.Instance.StaticOptions.ShowOptionsInListBox != OptionData.DisplayListBoxes[2]) { return; }
 
-                List<dynamic> Options = IC.Instance.UserOptions.Values.Where(x => x.Values.Count > 1).Cast<dynamic>().ToList();
-                List<dynamic> Variables = IC.Instance.Variables.Values.Where(x => !x.Static).Cast<dynamic>().ToList();
-                List<dynamic> All = Options.Concat(Variables).ToList();
+                List<dynamic> ChoiceOptions = IC.Instance.ChoiceOptions.Values.Where(x => x.ValueList.Count > 1).Cast<dynamic>().ToList();
+                List<dynamic> ToggleOptions = IC.Instance.ToggleOptions.Values.Cast<dynamic>().ToList();
+                List<dynamic> IntOptions = IC.Instance.IntOptions.Values.Cast<dynamic>().ToList();
+                List<dynamic> All = ChoiceOptions.Concat(ToggleOptions).Concat(IntOptions).ToList();
 
                 Dictionary<string, List<dynamic>> Categorized = new Dictionary<string, List<dynamic>>();
                 foreach (var item in All)
                 {
-                    if (!IC.logicCalculation.LogicEntryAquired(item.Logic, new List<string>())) { continue; }
+                    if (!IC.logicCalculation.ConditionalsMet(item.Conditionals, new List<string>())) { continue; }
                     string Sub = item.SubCategory;
                     Sub ??= "";
                     if (!Categorized.ContainsKey(Sub)) { Categorized.Add(Sub, new List<dynamic>()); }
@@ -492,14 +510,15 @@ namespace MMR_Tracker_V3
             {
                 if (IC.Instance.StaticOptions.ShowOptionsInListBox == null || IC.Instance.StaticOptions.ShowOptionsInListBox != OptionData.DisplayListBoxes[1]) { return; }
 
-                List<dynamic> Options = IC.Instance.UserOptions.Values.Where(x => x.Values.Count > 1).Cast<dynamic>().ToList();
-                List<dynamic> Variables = IC.Instance.Variables.Values.Where(x => !x.Static).Cast<dynamic>().ToList();
-                List<dynamic> All = Options.Concat(Variables).ToList();
+                List<dynamic> ChoiceOptions = IC.Instance.ChoiceOptions.Values.Where(x => x.ValueList.Count > 1).Cast<dynamic>().ToList();
+                List<dynamic> ToggleOptions = IC.Instance.ToggleOptions.Values.Cast<dynamic>().ToList();
+                List<dynamic> IntOptions = IC.Instance.IntOptions.Values.Cast<dynamic>().ToList();
+                List<dynamic> All = ChoiceOptions.Concat(ToggleOptions).Concat(IntOptions).ToList();
 
                 Dictionary<string, List<dynamic>> Categorized = new Dictionary<string, List<dynamic>>();
                 foreach (var item in All)
                 {
-                    if (!IC.logicCalculation.LogicEntryAquired(item.Logic, new List<string>())) { continue; }
+                    if (!IC.logicCalculation.ConditionalsMet(item.Conditionals, new List<string>())) { continue; }
                     string Sub = item.SubCategory;
                     Sub ??= "";
                     if (!Categorized.ContainsKey(Sub)) { Categorized.Add(Sub, new List<dynamic>()); }

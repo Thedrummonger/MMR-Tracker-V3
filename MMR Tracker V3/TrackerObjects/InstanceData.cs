@@ -23,8 +23,10 @@ namespace MMR_Tracker_V3
             public Dictionary<string, HintObject> HintPool { get; set; } = new Dictionary<string, HintObject>();
             public Dictionary<string, MacroObject> MacroPool { get; set; } = new Dictionary<string, MacroObject>();
             public Dictionary<string, ItemObject> ItemPool { get; set; } = new Dictionary<string, ItemObject>();
-            public Dictionary<string, TrackerOption> UserOptions { get; set; } = new Dictionary<string, TrackerOption>();
-            public Dictionary<string, TrackerVar> Variables { get; set; } = new Dictionary<string, TrackerVar>();
+            public Dictionary<string, ChoiceOption> ChoiceOptions { get; set; } = new Dictionary<string, ChoiceOption>();
+            public Dictionary<string, ToggleOption> ToggleOptions { get; set; } = new Dictionary<string, ToggleOption>();
+            public Dictionary<string, IntOption> IntOptions { get; set; } = new Dictionary<string, IntOption>();
+            public Dictionary<string, LogicEntryCollection> LogicEntryCollections { get; set; } = new Dictionary<string, LogicEntryCollection>();
             public EntranceData.EntrancePool EntrancePool { get; set; } = new EntranceData.EntrancePool();
             public LogicDictionary LogicDictionary { get; set; } = new LogicDictionary();
             public LogicFile LogicFile { get; set; } = new MMRData.LogicFile();

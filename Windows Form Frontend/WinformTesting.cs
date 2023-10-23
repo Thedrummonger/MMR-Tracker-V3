@@ -28,7 +28,6 @@ namespace Windows_Form_Frontend
             {
                 { "Create TPR Data", TPRCreateData },
                 { "Create OOTMM Data", OOTMMCreateData },
-                { "Create WWR Data", WWRCreateData },
                 { "Create PMR Data", PMRCreateData },
             };
 
@@ -78,14 +77,6 @@ namespace Windows_Form_Frontend
             }
             MainInterface.InstanceContainer.logicCalculation.CalculateLogic();
             MainInterface.CurrentProgram.UpdateUI();
-            Testing.TestLogicForInvalidItems(MainInterface.InstanceContainer);
-            Testing.TestLocationsForInvalidVanillaItem(MainInterface.InstanceContainer);
-        }
-
-        internal static void WWRCreateData()
-        {
-            MMR_Tracker_V3.OtherGames.WindWakerRando.ReadAndParseData.CreateFiles(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary);
-            WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(Logic), JsonConvert.SerializeObject(dictionary));
             Testing.TestLogicForInvalidItems(MainInterface.InstanceContainer);
             Testing.TestLocationsForInvalidVanillaItem(MainInterface.InstanceContainer);
         }

@@ -194,23 +194,6 @@ namespace Windows_Form_Frontend
 
         //Menu Strip => Options
 
-        private void ToggleRandomizerOption_Click(object sender, EventArgs e, OptionData.TrackerOption Option, Object Selection = null, bool update = true)
-        {
-            if (Selection == null)
-            {
-                Option.ToggleOption();
-            }
-            else
-            {
-                Option.CurrentValue = (string)Selection;
-            }
-            if (update)
-            {
-                InstanceContainer.logicCalculation.CalculateLogic();
-                UpdateUI();
-            }
-        }
-
         private void logicOptionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InstanceContainer.logicCalculation.ResetAutoObtainedItems();
@@ -686,48 +669,52 @@ namespace Windows_Form_Frontend
             RandomizerOptionsToolStripMenuItem1.DropDownItems.Add(ListBoxDisplay);
             RandomizerOptionsToolStripMenuItem1.DropDownItems.Add(new ToolStripSeparator());
             //Add User Options
-            foreach (var i in InstanceContainer.Instance.UserOptions.Values)
+            foreach (var i in InstanceContainer.Instance.ChoiceOptions.Values)
             {
-                if (!InstanceContainer.logicCalculation.LogicEntryAquired(i.Logic, new List<string>())) { continue; }
-                if (i.IsToggleOption())
+                if (!InstanceContainer.logicCalculation.ConditionalsMet(i.Conditionals, new List<string>())) { continue; }
+                if (i.ValueList.Count < 2) { continue; }
+
+                ToolStripComboBox toolStripComboBox = new();
+                foreach (var j in i.ValueList)
                 {
-                    ToolStripMenuItem menuItem = new() { Name = $"{i.ID}Menu", Checked = OptionData.GetToggleValues().Keys.Select(x => x.ToLower()).Contains(i.CurrentValue.ToLower()), Text = i.DisplayName };
-                    menuItem.Click += delegate (object sender, EventArgs e) 
-                    { 
-                        ToggleRandomizerOption_Click(sender, e, i);
-                        ReopenMenu(menuItem);
-                    };
-                    GroupOption(menuItem, i.SubCategory);
+                    MiscData.OptionComboboxItem optionComboboxItem = new MiscData.OptionComboboxItem() { Text = i.getValueName(j.Key), Value = j.Key };
+                    toolStripComboBox.Items.Add(optionComboboxItem);
                 }
-                else if (i.Values.Keys.Count > 1)//If the option only has one value, it will always be active so no need to display it.
+                foreach (MiscData.OptionComboboxItem ind in toolStripComboBox.Items)
                 {
-                    ToolStripComboBox toolStripComboBox = new();
-                    foreach (var j in i.Values)
-                    {
-                        MiscData.OptionComboboxItem optionComboboxItem = new MiscData.OptionComboboxItem() { Text = j.Value.Name??j.Key, Value = j.Key };
-                        toolStripComboBox.Items.Add(optionComboboxItem);
-                    }
-                    foreach(MiscData.OptionComboboxItem ind in toolStripComboBox.Items) 
-                    { 
-                        if (ind.Value as string == i.CurrentValue) { toolStripComboBox.SelectedIndex = toolStripComboBox.Items.IndexOf(ind); break; }
-                    }
-                    toolStripComboBox.SelectedIndexChanged += delegate (object sender, EventArgs e)
-                    {
-                        ToggleRandomizerOption_Click(sender, e, i, (toolStripComboBox.SelectedItem as MiscData.OptionComboboxItem).Value);
-                    };
-                    ToolStripMenuItem menuItem = new() { Name = $"{i.ID}Menu", Text = i.DisplayName };
-                    menuItem.DropDownItems.Add(toolStripComboBox);
-                    GroupOption(menuItem, i.SubCategory);
+                    if (ind.Value as string == i.Value) { toolStripComboBox.SelectedIndex = toolStripComboBox.Items.IndexOf(ind); break; }
                 }
+                toolStripComboBox.SelectedIndexChanged += delegate (object sender, EventArgs e)
+                {
+                    i.SetValue((toolStripComboBox.SelectedItem as MiscData.OptionComboboxItem).Value as string);
+                    InstanceContainer.logicCalculation.CalculateLogic();
+                    UpdateUI();
+                };
+                ToolStripMenuItem menuItem = new() { Name = $"{i.ID}Menu", Text = i.getOptionName() };
+                menuItem.DropDownItems.Add(toolStripComboBox);
+                GroupOption(menuItem, i.SubCategory);
             }
-            foreach(var i in InstanceContainer.Instance.Variables.Values.Where(x => !x.Static))
+            foreach (var i in InstanceContainer.Instance.ToggleOptions.Values)
             {
-                if (!InstanceContainer.logicCalculation.LogicEntryAquired(i.Logic, new List<string>())) { continue; }
-                string DisplayName = i.Value is bool ? i.Name??i.ID : i.ToString();
-                ToolStripMenuItem menuItem = new() { Name = $"{i.ID}Menu", Text = DisplayName, Checked = i.Value is bool varBool && varBool };
+                if (!InstanceContainer.logicCalculation.ConditionalsMet(i.Conditionals, new List<string>())) { continue; }
+                ToolStripMenuItem menuItem = new() { Name = $"{i.ID}Menu", Checked = i.Enabled.ID == i.Value, Text = i.getOptionName() };
+                menuItem.Click += delegate (object sender, EventArgs e)
+                {
+                    i.ToggleValue();
+                    InstanceContainer.logicCalculation.CalculateLogic();
+                    UpdateUI();
+                };
+                GroupOption(menuItem, i.SubCategory);
+
+            }
+            foreach (var i in InstanceContainer.Instance.IntOptions.Values)
+            {
+                if (!InstanceContainer.logicCalculation.ConditionalsMet(i.Conditionals, new List<string>())) { continue; }
+                string DisplayName = i.ToString();
+                ToolStripMenuItem menuItem = new() { Name = $"{i.ID}Menu", Text = i.ToString() };
                 menuItem.Click += delegate (object sender, EventArgs e) 
                 { 
-                    HandleItemSelect(new List<OptionData.TrackerVar> { i }, MiscData.CheckState.Checked);
+                    HandleItemSelect(new List<OptionData.IntOption> { i }, MiscData.CheckState.Checked);
                     ReopenMenu(menuItem);
                 };
                 GroupOption(menuItem, i.SubCategory);
@@ -878,7 +865,7 @@ namespace Windows_Form_Frontend
             }
 
             //Variable and Option check Functions
-            if (listBox.SelectedItem is OptionData.TrackerOption || listBox.SelectedItem is OptionData.TrackerVar)
+            if (listBox.SelectedItem is OptionData.ChoiceOption || listBox.SelectedItem is OptionData.ToggleOption || listBox.SelectedItem is OptionData.IntOption)
             {
                 //UnCheck Item
                 ToolStripItem CheckContextItem = contextMenuStrip.Items.Add("Edit");
@@ -960,10 +947,10 @@ namespace Windows_Form_Frontend
         private void SetCheckPrice(dynamic Object)
         {
             var DictEntry = Object.GetDictEntry(InstanceContainer.Instance);
-            var PriceContainer = new List<OptionData.TrackerVar>() { new() { ID = DictEntry.Name ?? DictEntry.ID, Value = 0 } };
+            var PriceContainer = new List<OptionData.IntOption>() { new() { ID = DictEntry.Name ?? DictEntry.ID, Value = 0 } };
             VariableInputWindow PriceInput = new(PriceContainer, InstanceContainer.Instance);
             PriceInput.ShowDialog();
-            Object.SetPrice((int)PriceContainer.First().GetValue(InstanceContainer.Instance));
+            Object.SetPrice((int)PriceContainer.First().Value);
             InstanceContainer.logicCalculation.CalculateLogic();
             UpdateUI();
         }

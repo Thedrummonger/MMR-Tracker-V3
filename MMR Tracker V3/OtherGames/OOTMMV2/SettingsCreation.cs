@@ -16,59 +16,65 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
         public static void CreateSettings(LogicDictionaryData.LogicDictionary logicDictionaryData, OOTMMParserData ParserData)
         {
             List<OOTMMSetting> SettingsList = JsonConvert.DeserializeObject<List<OOTMMSetting>>(File.ReadAllText(ParserData.SettingsFile));
+            int Priority = 0;
             foreach (var Setting in SettingsList)
             {
                 if (Setting.defaultvalue is Int64 IntValue)
                 {
-                    OptionData.TrackerVar IntSettingDictEntry = new OptionData.TrackerVar
+                    OptionData.IntOption IntSettingDictEntry = new OptionData.IntOption
                     {
                         ID = Setting.key,
                         Name = Setting.name,
-                        Static = false,
                         SubCategory= Utility.ConvertToCamelCase(Setting.category.Replace(".", " ")),
-                        Value = IntValue
+                        Value = (int)IntValue,
+                        Priority= Priority
                     };
-                    logicDictionaryData.Variables.Add(Setting.key, IntSettingDictEntry);
+                    logicDictionaryData.IntOptions.Add(Setting.key, IntSettingDictEntry);
+                    Priority++;
                 }
                 else if (Setting.defaultvalue is bool BoolValue)
                 {
-                    OptionData.TrackerVar IntSettingDictEntry = new OptionData.TrackerVar
+                    OptionData.ToggleOption IntSettingDictEntry = new OptionData.ToggleOption
                     {
                         ID = Setting.key,
                         Name = Setting.name,
-                        Static = false,
                         SubCategory= Utility.ConvertToCamelCase(Setting.category.Replace(".", " ")),
-                        Value = BoolValue
+                        Value = BoolValue.ToString(),
+                        Priority= Priority
                     };
-                    logicDictionaryData.Variables.Add(Setting.key, IntSettingDictEntry);
+                    IntSettingDictEntry.CreateSimpleValues();
+                    logicDictionaryData.ToggleOptions.Add(Setting.key, IntSettingDictEntry);
+                    Priority++;
                 }
                 else if (Setting.defaultvalue is string StringValue)
                 {
-                    OptionData.TrackerOption IntSettingDictEntry = new OptionData.TrackerOption
+                    OptionData.ChoiceOption IntSettingDictEntry = new OptionData.ChoiceOption
                     {
                         ID = Setting.key,
-                        DisplayName = Setting.name,
+                        Name = Setting.name,
                         SubCategory= Utility.ConvertToCamelCase(Setting.category.Replace(".", " ")),
-                        CurrentValue = StringValue,
-                        Values = new Dictionary<string, OptionData.actions>()
+                        Value = StringValue,
+                        ValueList = new Dictionary<string, OptionData.OptionValue>(),
+                        Priority= Priority
                     };
                     IntSettingDictEntry.CreateSimpleValues(Setting.values.Select(x => x.value).ToArray());
-                    foreach (var i in Setting.values) { IntSettingDictEntry.Values[i.value].Name = i.name; }
-                    logicDictionaryData.Options.Add(Setting.key, IntSettingDictEntry);
+                    foreach (var i in Setting.values) { IntSettingDictEntry.ValueList[i.value].Name = i.name; }
+                    logicDictionaryData.ChoiceOptions.Add(Setting.key, IntSettingDictEntry);
+                    Priority++;
                 }
             }
             foreach (var setting in ParserData.DungeonLayouts)
             {
                 var Data = setting.Split("_").ToArray();
-                OptionData.TrackerVar IntSettingDictEntry = new OptionData.TrackerVar
+                OptionData.ToggleOption IntSettingDictEntry = new OptionData.ToggleOption
                 {
                     ID = setting,
-                    Static = false,
                     Name = Utility.ConvertToCamelCase(setting.Replace("_", " ")),
                     SubCategory= "Master Quest Dungeons",
-                    Value = false,
+                    Value = false.ToString(),
                 };
-                logicDictionaryData.Variables.Add(setting, IntSettingDictEntry);
+                IntSettingDictEntry.CreateSimpleValues();
+                logicDictionaryData.ToggleOptions.Add(setting, IntSettingDictEntry);
             }
 
             WorldEventRequirementOptions(logicDictionaryData);
@@ -186,35 +192,33 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                 {
                     var namedata = i.Key.Split('|');
 
-                    OptionData.TrackerOption Requirement = new OptionData.TrackerOption();
+                    OptionData.ToggleOption Requirement = new OptionData.ToggleOption();
                     Requirement.ID = $"{ID.ToLower()}_{namedata[1]}";
-                    Requirement.DisplayName = namedata[0];
+                    Requirement.Name = namedata[0];
                     Requirement.SubCategory = Category;
-                    Requirement.CurrentValue = DefaultValue is null ? "false" : (namedata[0] == DefaultValue).ToString().ToLower();
-                    Requirement.CreateSimpleValues(new string[] { "true", "false" });
-                    Requirement.Logic = Logic is null ? "true" : Logic;
-                    Requirement.Values["true"].VariableEdit.Add($"{ID.ToLower()}_req", new OptionData.VariableEditData
+                    Requirement.Value = DefaultValue is null ? "false" : (namedata[0] == DefaultValue).ToString().ToLower();
+                    Requirement.CreateSimpleValues(true);
+                    Requirement.Conditionals = Logic is null ? new List<List<string>>() : LogicStringConverter.ConvertLogicStringToConditional(GenData.OOTMMLogicStringParser, Logic, ID);
+                    Requirement.Enabled.Actions = new OptionData.Action();
+                    Requirement.Enabled.Actions.VariableEdit.Add($"{ID.ToLower()}_req", new OptionData.CollectionEditData
                     {
                         action = MiscData.MathOP.add,
-                        EditValue = (namedata[1].StartsWith("fair") || namedata[1].StartsWith("skull") || namedata[1] == "triforce" || namedata[1].StartsWith("coins")) ? i.Value : i.Value.Select(x => $"{x}, 1").ToArray()
+                        Values = (namedata[1].StartsWith("fair") || namedata[1].StartsWith("skull") || namedata[1] == "triforce" || namedata[1].StartsWith("coins")) ? i.Value.ToList() : i.Value.Select(x => $"{x}, 1").ToList()
                     });
-                    dictionaryFile.Options.Add(Requirement.ID, Requirement);
+                    dictionaryFile.ToggleOptions.Add(Requirement.ID, Requirement);
                 }
-                OptionData.TrackerVar ReqVar = new OptionData.TrackerVar();
-                ReqVar.Static = true;
-                ReqVar.Name = $"{ID.ToLower()}_req";
+                OptionData.LogicEntryCollection ReqVar = new OptionData.LogicEntryCollection();
                 ReqVar.ID = $"{ID.ToLower()}_req";
-                ReqVar.Value = new List<string>();
-                dictionaryFile.Variables.Add(ReqVar.ID, ReqVar);
+                ReqVar.Entries = new List<string>();
+                dictionaryFile.LogicEntryCollections.Add(ReqVar.ID, ReqVar);
 
-                OptionData.TrackerVar req_count = new OptionData.TrackerVar();
-                req_count.Static = false;
+                OptionData.IntOption req_count = new OptionData.IntOption();
                 req_count.SubCategory = Category;
                 req_count.Name = "Items Required";
                 req_count.ID = $"{ID.ToLower()}_count";
                 req_count.Value = DefaultCount;
-                req_count.Logic = Logic is null ? "true" : Logic;
-                dictionaryFile.Variables.Add(req_count.ID, req_count);
+                req_count.Conditionals = Logic is null ? new List<List<string>>() : LogicStringConverter.ConvertLogicStringToConditional(GenData.OOTMMLogicStringParser, Logic, ID);
+                dictionaryFile.IntOptions.Add(req_count.ID, req_count);
             }
 
         }

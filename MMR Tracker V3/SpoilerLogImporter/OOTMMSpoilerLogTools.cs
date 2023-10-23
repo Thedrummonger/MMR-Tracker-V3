@@ -63,10 +63,10 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
 
         private static void HandleMQChecks(InstanceData.TrackerInstance instance, List<string> mQDungeons)
         {
-            foreach (var i in instance.Variables.Where(x => x.Value.SubCategory == "Master Quest Dungeons"))
+            foreach (var i in instance.ToggleOptions.Where(x => x.Value.SubCategory == "Master Quest Dungeons"))
             {
                 bool ISMQ = mQDungeons.Any(x => i.Key.ToLower().StartsWith(x.ToLower()));
-                i.Value.Value = ISMQ;
+                i.Value.Value = ISMQ.ToString();
 
                 string DungeonCode = i.Key[..^2];
 
@@ -161,12 +161,9 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 if (string.IsNullOrWhiteSpace(i)) { return; }
                 var Data = i.Split(':').Select(x => x.Trim()).ToArray();
                 string ID = $"{Section}_{Data[0]}";
-                if (instance.UserOptions.ContainsKey(ID)) { instance.UserOptions[ID].CurrentValue = Data[1]; }
-                else if (instance.Variables.ContainsKey(ID))
-                {
-                    if (int.TryParse(Data[1], out int count)) { instance.Variables[ID].Value = count; }
-                    else { instance.Variables[ID].Value = Data[1]; }
-                }
+                if (instance.ChoiceOptions.ContainsKey(ID)) { instance.ChoiceOptions[ID].SetValue(Data[1]); }
+                else if (instance.ToggleOptions.ContainsKey(ID)) { instance.ToggleOptions[ID].SetValue(bool.Parse(Data[1])); }
+                else if (instance.IntOptions.ContainsKey(ID)) { instance.IntOptions[ID].SetValue(int.Parse(Data[1])); }
                 else { Debug.WriteLine($"{ID} was not an option or variable"); }
             }
 
@@ -176,20 +173,21 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
         {
             foreach (var setting in settingData)
             {
-                if (instance.UserOptions.ContainsKey(setting.Key) && instance.UserOptions[setting.Key].Values.ContainsKey(setting.Value))
+                if (instance.ChoiceOptions.ContainsKey(setting.Key))
                 {
-                    instance.UserOptions[setting.Key].CurrentValue = setting.Value;
+                    instance.ChoiceOptions[setting.Key].SetValue(setting.Value);
                 }
-                else if (instance.Variables.ContainsKey(setting.Key))
+                else if (instance.ToggleOptions.ContainsKey(setting.Key))
                 {
-                    if (bool.TryParse(setting.Value, out bool BoolVal)) { instance.Variables[setting.Key].Value = BoolVal; }
-                    else if (long.TryParse(setting.Value, out long IntVal)) { instance.Variables[setting.Key].Value = IntVal; }
-                    else { instance.Variables[setting.Key].Value = setting.Value; }
+                    instance.ToggleOptions[setting.Key].SetValue(bool.Parse(setting.Value));
+                }
+                else if (instance.IntOptions.ContainsKey(setting.Key))
+                {
+                    instance.IntOptions[setting.Key].SetValue(int.Parse(setting.Value));
                 }
                 else
                 {
-                    if (instance.UserOptions.ContainsKey(setting.Key)) { Debug.WriteLine($"Setting {setting.Key} did not have option {setting.Value}"); }
-                    else { Debug.WriteLine($"Setting {setting.Key} did not exist"); }
+                    Debug.WriteLine($"Setting {setting.Key} did not exist");
                 }
 
                 if (setting.Key == "mapCompassShuffle" && setting.Value == "starting")

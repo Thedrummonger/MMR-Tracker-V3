@@ -23,10 +23,17 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             var SpoilerData = JsonConvert.DeserializeObject<TPRSpoilerLog>(string.Join("", Instance.SpoilerLog.Log));
             foreach (var i in SpoilerData.settings)
             {
-                if (Instance.UserOptions.ContainsKey(i.Key))
+                if (Instance.ChoiceOptions.ContainsKey(i.Key))
                 {
-                    var SpoilerValue = Instance.UserOptions[i.Key].Values.First(x => x.Key.ToLower() == i.Value.ToString().ToLower());
-                    Instance.UserOptions[i.Key].CurrentValue = SpoilerValue.Key;
+                    Instance.ChoiceOptions[i.Key].SetValue(i.Value.ToString());
+                }
+                else if (Instance.ToggleOptions.ContainsKey(i.Key))
+                {
+                    Instance.ToggleOptions[i.Key].SetValue(bool.Parse(i.Value.ToString()));
+                }
+                else if (Instance.IntOptions.ContainsKey(i.Key))
+                {
+                    Instance.IntOptions[i.Key].SetValue(int.Parse(i.Value.ToString()));
                 }
                 if (i.Key == "startingItems")
                 {

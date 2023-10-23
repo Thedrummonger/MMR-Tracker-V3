@@ -23,6 +23,7 @@ namespace MMR_Tracker_V3
         public readonly InstanceContainer container;
         public Dictionary<string, List<string>> LogicUnlockData = new();
         public Dictionary<string, MMRData.JsonFormatLogicItem> LogicMap = new();
+        public List<OptionData.Action> ActiveOptionActions = new();
         public Dictionary<object, int> AutoObtainedObjects = new();
 
         public LogicCalculation(InstanceContainer _container)
@@ -41,7 +42,7 @@ namespace MMR_Tracker_V3
             return true;
         }
 
-        private bool ConditionalsMet(List<List<string>> Conditionals, List<string> TempUnlockData)
+        public bool ConditionalsMet(List<List<string>> Conditionals, List<string> TempUnlockData)
         {
             if (!Conditionals.Any()) { return true; }
             List<string> SubUnlockData = new List<string>();
@@ -79,13 +80,8 @@ namespace MMR_Tracker_V3
                     return container.Instance.GetMacroByID(LogicItem).Aquired; 
                 case LogicEntryType.Area:
                     return AreaReached(LogicItem, SubUnlockData);
-                case LogicEntryType.variableString:
-                    return LogicEntryAquired(container.Instance.Variables[LogicItem].GetValue(container.Instance) as string, SubUnlockData);
-                case LogicEntryType.variableList:
+                case LogicEntryType.LogicEntryCollection:
                     return CheckItemArray(LogicItem, Amount, SubUnlockData, out int _);
-                case LogicEntryType.variableBool:
-                    SubUnlockData.Add(i);
-                    return container.Instance.Variables[LogicItem].GetValue(container.Instance);
                 default:
                     Debug.WriteLine($"{LogicItem} Was not a valid Logic Entry");
                     return false;
@@ -95,8 +91,8 @@ namespace MMR_Tracker_V3
         public bool CheckItemArray(string ArrVar, int amount, List<string> SubUnlockData, out int TotalUsable)
         {
             TotalUsable = 0;
-            if (container.Instance.Variables[ArrVar].GetType() != VariableEntryType.varlist) { return false; }
-            List<string> VariableEntries = (List<string>)container.Instance.Variables[ArrVar].GetValue(container.Instance);
+            if (!container.Instance.LogicEntryCollections.ContainsKey(ArrVar)) { return false; }
+            List<string> VariableEntries = container.Instance.LogicEntryCollections[ArrVar].GetValue(ActiveOptionActions);
             List<string> UsableItems = new();
             Dictionary<string, int> ItemTracking = new();
             LoopVarEntry(VariableEntries);
@@ -118,7 +114,7 @@ namespace MMR_Tracker_V3
                     bool MultiItem = container.Instance.MultipleItemEntry(i, out string LogicItem, out int Amount);
                     bool Literal = LogicItem.IsLiteralID(out LogicItem);
                     var type = container.Instance.GetItemEntryType(LogicItem, Literal, out object ItemObj);
-                    if (type == LogicEntryType.variableList) { LoopVarEntry((ItemObj as OptionData.TrackerVar).GetValue(container.Instance) as List<string>); }
+                    if (type == LogicEntryType.LogicEntryCollection) { LoopVarEntry((ItemObj as OptionData.LogicEntryCollection).GetValue(ActiveOptionActions)); }
                     else
                     {
                         if (type == LogicEntryType.item && !MultiItem)
@@ -159,6 +155,7 @@ namespace MMR_Tracker_V3
 
         private void FillLogicMap()
         {
+            ActiveOptionActions = container.Instance.GetOptionActions();
             foreach (var i in container.Instance.MacroPool) 
             { 
                 LogicMap[i.Key] = container.Instance.GetLogic(i.Key); 
@@ -363,18 +360,18 @@ namespace MMR_Tracker_V3
             NewConditionals = Conditionals;
         }
 
-        public static void HandleOptionLogicEdits(IEnumerable<OptionData.TrackerOption> Options, string ID, List<string> InRequirements, List<List<string>> InConditionals, out List<string> OutRequirements, out List<List<string>> OutConditionals)
+        public static void HandleOptionLogicEdits(IEnumerable<OptionData.Action> Actions, string ID, List<string> InRequirements, List<List<string>> InConditionals, out List<string> OutRequirements, out List<List<string>> OutConditionals)
         {
             List<string> Requirements = InRequirements;
             List<List<string>> Conditionals = InConditionals;
-            foreach (var option in Options)
+            foreach (var action in Actions)
             {
-                foreach (var replacements in option.GetActions().LogicReplacements.Where(x => x.LocationValid(ID)))
+                foreach (var replacements in action.LogicReplacements.Where(x => x.LocationValid(ID)))
                 {
                     Requirements = Requirements.Select(x => replacements.ReplacementList.ContainsKey(x) ? replacements.ReplacementList[x] : x).ToList();
                     Conditionals = Conditionals.Select(set => set.Select(x => replacements.ReplacementList.ContainsKey(x) ? replacements.ReplacementList[x] : x).ToList()).ToList();
                 }
-                foreach (var additionalSet in option.GetActions().AdditionalLogic.Where(x => x.LocationValid(ID)))
+                foreach (var additionalSet in action.AdditionalLogic.Where(x => x.LocationValid(ID)))
                 {
                     Requirements = Requirements.Concat(additionalSet.AdditionalRequirements).ToList();
                     Conditionals = Conditionals.Concat(additionalSet.AdditionalConditionals).ToList();
@@ -427,11 +424,6 @@ namespace MMR_Tracker_V3
                 case "randomized":
                     if (!DoCheck) { return true; }
                     LogicFuntionValid = CheckIsRandomizedFunction(instance, Param.Split(",").Select(x => x.Trim()).ToArray());
-                    break;
-                case "var":
-                case "variable":
-                    if (!DoCheck) { return true; }
-                    LogicFuntionValid = CheckVarFunction(instance, Param.Split(",").Select(x => x.Trim()).ToArray());
                     break;
                 case "trick":
                     if (!DoCheck) { return true; }
@@ -517,98 +509,45 @@ namespace MMR_Tracker_V3
             return false;
         }
 
-        private static bool CheckVarFunction(TrackerInstance instance, string[] param)
-        {
-            if (param.Length < 1) { return false; } //No Values Pased
-
-            //Parse Function Values
-            string FunctionRawValue = param[0];
-            if (!instance.Variables.ContainsKey(FunctionRawValue)) { return false; }
-            VariableEntryType functype = instance.Variables[FunctionRawValue].GetType();
-            object funcValue = instance.Variables[FunctionRawValue].GetValue(instance);
-
-            //If a parameter was not passed, check if the function was a bool var
-            if (param.Length < 2)
-            {
-                if (functype == VariableEntryType.varbool) { return (bool)funcValue; }
-                else { return false; }
-            }
-
-            //Parse Parameter Values
-            string ParamRawValue = param[1];
-            OptionData.TrackerVar ParamAsVarObj = new() { Value = ParamRawValue };
-            VariableEntryType paramtype = ParamAsVarObj.GetType();
-            object paramValue = ParamAsVarObj.Value;
-
-            bool inverse = param.Length > 2 && bool.TryParse(param[2], out bool inverseValue) && !inverseValue; //If a third param is passed and its a false bool, invert the result
-
-            switch (functype)
-            {
-                case VariableEntryType.error:
-                case VariableEntryType.varstring:
-                    if (paramtype == VariableEntryType.varlist) { return GetReturnValue((paramValue as List<string>).Contains(funcValue.ToString())); }
-                    return GetReturnValue((string)funcValue == paramValue.ToString());
-                case VariableEntryType.varint:
-                    if (paramtype == VariableEntryType.varlist) { return GetReturnValue((paramValue as List<string>).Contains(funcValue.ToString())); }
-                    return GetReturnValue(int.TryParse(paramValue.ToString(), out int intresult) && (int)funcValue == intresult);
-                case VariableEntryType.varbool:
-                    if (paramtype == VariableEntryType.varlist) { return GetReturnValue((paramValue as List<string>).Contains(funcValue.ToString())); }
-                    return GetReturnValue( bool.TryParse(paramValue.ToString(), out bool BoolResult) && (bool)funcValue == BoolResult);
-                case VariableEntryType.varlist:
-                    if (paramtype == VariableEntryType.varlist) { return GetReturnValue((funcValue as List<string>).ToHashSet().SetEquals(funcValue as List<string>)); }
-                    return GetReturnValue((funcValue as List<string>).Contains(paramValue.ToString()));
-                default: return false;
-            }
-
-            bool GetReturnValue(bool expression)
-            {
-                return expression != inverse;
-            }
-        }
-
         public static bool CheckOptionFunction(TrackerInstance instance, string[] param)
         {
             if (param.Length < 1) { return false; } //No Values Pased
 
-            //Evaluate the Function Param
-            object funcValue = param[0]; //The function as an object after its variable value has been parsed
-            string funcValueString = param[0]; //The function as an strng after its variable value has been parsed
-            VariableEntryType functype = instance.Variables.ContainsKey(param[0]) ? instance.Variables[param[0]].GetType() : VariableEntryType.error;
-            if (functype != VariableEntryType.error) { funcValueString = instance.Variables[param[0]].ToString(); }
-            List<string> OptionList = functype == VariableEntryType.varlist ? (List<string>)funcValue : new() { funcValueString };
+            var OptionType = instance.GetLocationEntryType(param[0], false, out _);
+            bool Inverse = param.Length > 2 && bool.TryParse(param[2], out bool inverseValue) && !inverseValue;
 
-            //Evaluate the Value Param
-            object varValue;
-            string varValueString;
-            VariableEntryType vartype;
-            if (param.Length < 2) 
-            { 
-                varValue = OptionData.GetToggleValues().Keys.ToList(); 
-                varValueString = "true";
-                vartype = VariableEntryType.varlist;
-            }
-            else 
-            { 
-                varValue = param[1]; 
-                varValueString = param[1];
-                vartype = instance.Variables.ContainsKey(param[1]) ? instance.Variables[param[1]].GetType() : VariableEntryType.error;
-                if (vartype != VariableEntryType.error) { varValueString = instance.Variables[param[1]].ToString(); }
-            }
-            List<string> ValueList = vartype == VariableEntryType.varlist ? (List<string>)varValue : new() { varValueString };
-
-            bool inverse = param.Length > 2 && bool.TryParse(param[2], out bool inverseValue) && !inverseValue;
-
-            bool RequiremntMet = false;
-            foreach (var currentOption in OptionList)
+            if (OptionType == LogicEntryType.ToggleOption)
             {
-                foreach (var CurrentValue in ValueList)
+                var TogOpt = instance.ToggleOptions[param[0]];
+                if (param.Length < 2 || TogOpt.Enabled.ID == param[1]) { return (TogOpt.GetValue() == TogOpt.Enabled) != Inverse; }
+                else if (TogOpt.Disabled.ID == param[1]) { return (TogOpt.GetValue() == TogOpt.Disabled) != Inverse; }
+                else if (bool.TryParse(param[1], out bool ParamBool))
                 {
-                    if (instance.UserOptions.ContainsKey(currentOption) && instance.UserOptions[currentOption].CurrentValue == CurrentValue) { RequiremntMet = true; }
-                    if (!instance.UserOptions.ContainsKey(currentOption)) { Debug.WriteLine($"{currentOption} Was not a valid Option"); }
+                    if (ParamBool) { return (TogOpt.GetValue() == TogOpt.Enabled) != Inverse; }
+                    else { return (TogOpt.GetValue() == TogOpt.Disabled) != Inverse; }
+                }
+                else
+                {
+                    return false;
                 }
             }
-            return RequiremntMet != inverse;
-
+            else if (OptionType == LogicEntryType.ChoiceOption)
+            {
+                var ChoiceOpt = instance.ChoiceOptions[param[0]];
+                if (param.Length < 2) { return false; } //Not enough values passed
+                return (ChoiceOpt.GetValue().ID == param[1]) != Inverse;
+            }
+            else if (OptionType == LogicEntryType.IntOption)
+            {
+                var IntOpt = instance.IntOptions[param[0]];
+                if (param.Length < 2) { return false; } //Not enough values passed
+                if (!int.TryParse(param[1], out int ParamInt)) { return false; }
+                return (IntOpt.Value == ParamInt) != Inverse;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         private static bool CheckContainsFunction(TrackerInstance instance, string[] param)
@@ -620,16 +559,14 @@ namespace MMR_Tracker_V3
             List<string> OptionList = new() { FunctionValue };
             List<string> ValueList = new() { ParamValue };
 
-            if (instance.Variables.ContainsKey(FunctionValue))
+            if (instance.LogicEntryCollections.ContainsKey(FunctionValue))
             {
-                bool IsList = instance.Variables[FunctionValue].GetType() == MiscData.VariableEntryType.varlist;
-                OptionList = IsList ? (List<string>)instance.Variables[FunctionValue].GetValue(instance) : new() { instance.Variables[FunctionValue].GetValue(instance) };
+                OptionList = instance.LogicEntryCollections[FunctionValue].GetValue(instance.GetOptionActions());
             }
 
-            if (instance.Variables.ContainsKey(ParamValue))
+            if (instance.LogicEntryCollections.ContainsKey(ParamValue))
             {
-                bool IsList = instance.Variables[ParamValue].GetType() == MiscData.VariableEntryType.varlist;
-                ValueList = IsList ? (List<string>)instance.Variables[ParamValue].GetValue(instance) : new() { instance.Variables[ParamValue].GetValue(instance) };
+                ValueList = instance.LogicEntryCollections[ParamValue].GetValue(instance.GetOptionActions());
             }
 
             bool inverse = param.Length > 2 && bool.TryParse(param[2], out bool inverseValue) && !inverseValue; //If a third param is passed and its a false bool, invert the result

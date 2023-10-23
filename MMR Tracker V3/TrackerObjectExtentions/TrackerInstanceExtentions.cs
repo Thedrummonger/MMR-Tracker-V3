@@ -35,11 +35,29 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             return instance.MacroPool[item];
         }
 
-        public static TrackerOption GetTrackerOptionByID(this InstanceData.TrackerInstance instance, string item)
+        public static ChoiceOption GetChoiceOptionByID(this InstanceData.TrackerInstance instance, string item)
         {
             if (item is null) { return null; }
-            if (!instance.UserOptions.ContainsKey(item)) { return null; }
-            return instance.UserOptions[item];
+            if (!instance.ChoiceOptions.ContainsKey(item)) { return null; }
+            return instance.ChoiceOptions[item];
+        }
+        public static ToggleOption GetToggleOptionByID(this InstanceData.TrackerInstance instance, string item)
+        {
+            if (item is null) { return null; }
+            if (!instance.ToggleOptions.ContainsKey(item)) { return null; }
+            return instance.ToggleOptions[item];
+        }
+        public static IntOption GetIntOptionByID(this InstanceData.TrackerInstance instance, string item)
+        {
+            if (item is null) { return null; }
+            if (!instance.IntOptions.ContainsKey(item)) { return null; }
+            return instance.IntOptions[item];
+        }
+        public static LogicEntryCollection GetLogicEntryCollectionByID(this InstanceData.TrackerInstance instance, string item)
+        {
+            if (item is null) { return null; }
+            if (!instance.LogicEntryCollections.ContainsKey(item)) { return null; }
+            return instance.LogicEntryCollections[item];
         }
 
         public static LogicEntryType GetLocationEntryType(this InstanceData.TrackerInstance instance, string ID, bool literal, out object Obj)
@@ -61,15 +79,11 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
                 return LogicEntryType.Exit;
             }
             if (!literal && instance.HintPool.ContainsKey(ID)) { Obj = instance.HintPool[ID]; return LogicEntryType.Hint; }
-            //if (UserOptions.ContainsKey(ID)) { Obj = UserOptions[ID]; return LogicEntryType.Option; }
-            if (instance.Variables.ContainsKey(ID))
-            {
-                Obj = instance.Variables[ID];
-                if (instance.Variables[ID].GetType() == VariableEntryType.varstring) { return LogicEntryType.variableString; }
-                if (instance.Variables[ID].GetType() == VariableEntryType.varbool) { return LogicEntryType.variableBool; }
-                if (instance.Variables[ID].GetType() == VariableEntryType.varint) { return LogicEntryType.variableInt; }
-                if (instance.Variables[ID].GetType() == VariableEntryType.varlist) { return LogicEntryType.variableList; }
-            }
+
+            if (instance.ChoiceOptions.ContainsKey(ID)) { Obj = instance.ChoiceOptions[ID]; return LogicEntryType.ChoiceOption; }
+            if (instance.ToggleOptions.ContainsKey(ID)) { Obj = instance.ToggleOptions[ID]; return LogicEntryType.ToggleOption; }
+            if (instance.IntOptions.ContainsKey(ID)) { Obj = instance.IntOptions[ID]; return LogicEntryType.IntOption; }
+            if (instance.LogicEntryCollections.ContainsKey(ID)) { Obj = instance.LogicEntryCollections[ID]; return LogicEntryType.LogicEntryCollection; }
             Obj = null;
             return LogicEntryType.error;
         }
@@ -82,14 +96,12 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             if (instance.MacroPool.ContainsKey(ID)) { obj = instance.MacroPool[ID]; return LogicEntryType.macro; }
             if (!literal && instance.ItemPool.ContainsKey(ID)) { obj = instance.ItemPool[ID]; return LogicEntryType.item; }
             if (!literal && instance.EntrancePool.AreaList.ContainsKey(ID)) { obj = instance.EntrancePool.AreaList[ID]; return LogicEntryType.Area; }
-            if (instance.Variables.ContainsKey(ID))
-            {
-                obj = instance.Variables[ID];
-                if (instance.Variables[ID].GetType() == VariableEntryType.varstring) { return LogicEntryType.variableString; }
-                if (instance.Variables[ID].GetType() == VariableEntryType.varbool) { return LogicEntryType.variableBool; }
-                if (instance.Variables[ID].GetType() == VariableEntryType.varint) { return LogicEntryType.variableInt; }
-                if (instance.Variables[ID].GetType() == VariableEntryType.varlist) { return LogicEntryType.variableList; }
-            }
+
+            if (instance.ChoiceOptions.ContainsKey(ID)) { obj = instance.ChoiceOptions[ID]; return LogicEntryType.ChoiceOption; }
+            if (instance.ToggleOptions.ContainsKey(ID)) { obj = instance.ToggleOptions[ID]; return LogicEntryType.ToggleOption; }
+            if (instance.IntOptions.ContainsKey(ID)) { obj = instance.IntOptions[ID]; return LogicEntryType.IntOption; }
+            if (instance.LogicEntryCollections.ContainsKey(ID)) { obj = instance.LogicEntryCollections[ID]; return LogicEntryType.LogicEntryCollection; }
+
             if (bool.TryParse(ID, out bool result)) { obj = result; return LogicEntryType.Bool; }
             obj = null;
             if (LogicEditing.CheckLogicFunction(instance, OriginalID, new List<string>(), out _, false)) { return LogicEntryType.function; }
@@ -228,7 +240,11 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
                 }
             }
 
-            if (DoEdits) { LogicEditing.HandleOptionLogicEdits(instance.UserOptions.Values, ID, CopyRequirements, CopyConditionals, out CopyRequirements, out CopyConditionals); }
+            if (DoEdits) 
+            { 
+                LogicEditing.HandleOptionLogicEdits(instance.ChoiceOptions.Values.Select(x => x.GetValue().Actions), ID, CopyRequirements, CopyConditionals, out CopyRequirements, out CopyConditionals);
+                LogicEditing.HandleOptionLogicEdits(instance.ToggleOptions.Values.Select(x => x.GetValue().Actions), ID, CopyRequirements, CopyConditionals, out CopyRequirements, out CopyConditionals);
+            }
 
             return new MMRData.JsonFormatLogicItem
             {
@@ -304,9 +320,9 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             {
                 return true;
             }
-            else if (instance.Variables.ContainsKey(data[1]) && instance.Variables[data[1]].GetType() == VariableEntryType.varint)
+            else if (instance.IntOptions.ContainsKey(data[1]))
             {
-                Amount = (int)instance.Variables[data[1]].GetValue(instance);
+                Amount = instance.IntOptions[data[1]].Value;
                 return true;
             }
             else
@@ -315,6 +331,12 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
                 Amount = 1;
                 return false;
             }
+        }
+
+
+        public static List<OptionData.Action> GetOptionActions(this InstanceData.TrackerInstance Instance)
+        {
+            return Instance.ChoiceOptions.Values.Select(x => x.GetValue().Actions).Concat(Instance.ToggleOptions.Values.Select(x => x.GetValue().Actions)).ToList();
         }
     }
 }

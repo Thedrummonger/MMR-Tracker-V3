@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MMR_Tracker_V3.TrackerObjectExtentions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -24,8 +25,10 @@ namespace MMR_Tracker_V3.TrackerObjects
             public Dictionary<string, DictionaryEntranceEntries> EntranceList { get; set; } = new Dictionary<string, DictionaryEntranceEntries>();
             public Dictionary<string, DictionaryHintEntries> HintSpots { get; set; } = new Dictionary<string, DictionaryHintEntries>();
             public Dictionary<string, DictionaryMacroEntry> MacroList { get; set; } = new Dictionary<string, DictionaryMacroEntry>();
-            public Dictionary<string, TrackerOption> Options { get; set; } = new Dictionary<string, TrackerOption>();
-            public Dictionary<string, TrackerVar> Variables { get; set; } = new Dictionary<string, TrackerVar>();
+            public Dictionary<string, ChoiceOption> ChoiceOptions { get; set; } = new Dictionary<string, ChoiceOption>();
+            public Dictionary<string, ToggleOption> ToggleOptions { get; set; } = new Dictionary<string, ToggleOption>();
+            public Dictionary<string, IntOption> IntOptions { get; set; } = new Dictionary<string, IntOption>();
+            public Dictionary<string, LogicEntryCollection> LogicEntryCollections { get; set; } = new Dictionary<string, LogicEntryCollection>();
             public List<JsonFormatLogicItem> AdditionalLogic { get; set; } = new List<JsonFormatLogicItem>();
             public static LogicDictionary FromJson(string json)
             {
@@ -102,19 +105,19 @@ namespace MMR_Tracker_V3.TrackerObjects
 
             public string GetName(InstanceData.TrackerInstance instance)
             {
-                var NameReplaceOption = instance.UserOptions.Values.FirstOrDefault(x => x.GetActions().ItemNameOverride.ContainsKey(ID));
-                if (NameReplaceOption != null) { return NameReplaceOption.GetActions().ItemNameOverride[ID]; }
+                var NameReplaceOption = instance.GetOptionActions().FirstOrDefault(x => x.ItemNameOverride.ContainsKey(ID));
+                if (NameReplaceOption != null) { return NameReplaceOption.ItemNameOverride[ID]; }
                 return Name ?? ID;
             }
 
             public int GetMaxAmountInWorld(InstanceData.TrackerInstance instance)
             {
-                var OptionsEffectingThisItem = instance.UserOptions.Values.Where(x => x.GetActions().ItemMaxAmountEdit.ContainsKey(ID));
+                var OptionsEffectingThisItem = instance.GetOptionActions().Where(x => x.ItemMaxAmountEdit.ContainsKey(ID));
                 if (!OptionsEffectingThisItem.Any()) { return MaxAmountInWorld ?? -1; }
                 int FinalValue = MaxAmountInWorld is null ? -1 : (int)MaxAmountInWorld;
                 foreach(var i in OptionsEffectingThisItem)
                 {
-                    var EditData = i.GetActions().ItemMaxAmountEdit[ID];
+                    var EditData = i.ItemMaxAmountEdit[ID];
                     switch (EditData.action){
                         case MathOP.add:
                             if (FinalValue < 0) { break; }

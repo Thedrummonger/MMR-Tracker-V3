@@ -351,7 +351,7 @@ namespace Windows_Form_Frontend
                 {
                     var Data = Param.Split(',').Select(x => x.Trim()).ToArray();
                     var ItemType = instance.GetLocationEntryType(Data[0], false, out object obj);
-                    if (ItemType == LogicEntryType.variableList)
+                    if (ItemType == LogicEntryType.LogicEntryCollection)
                     {
                         AddFromVariable(Data[0]);
                     }
@@ -364,7 +364,7 @@ namespace Windows_Form_Frontend
                 {
                     var Data = Param.Split(',').Select(x => x.Trim()).ToArray();
                     var ItemType = instance.GetLocationEntryType(Data[0], false, out object obj);
-                    if (ItemType == LogicEntryType.variableList)
+                    if (ItemType == LogicEntryType.LogicEntryCollection)
                     {
                         AddFromVariable(Data[0]);
                     }
@@ -378,8 +378,8 @@ namespace Windows_Form_Frontend
             void AddFromVariable(string Entry)
             {
                 instance.MultipleItemEntry(Entry, out string LogicItem, out int Amount);
-                if (!instance.Variables.TryGetValue(LogicItem, out OptionData.TrackerVar variable)) { return; }
-                foreach (string varEntry in variable.GetValue(instance))
+                if (!instance.LogicEntryCollections.TryGetValue(LogicItem, out OptionData.LogicEntryCollection variable)) { return; }
+                foreach (string varEntry in variable.GetValue(instance.GetOptionActions()))
                 {
                     var ItemType = instance.GetItemEntryType(varEntry, false, out object obj);
                     NewList[varEntry] = ItemType;
@@ -397,7 +397,7 @@ namespace Windows_Form_Frontend
                 {
                     var Data = Param.Split(',').Select(x => x.Trim()).ToArray();
                     var ItemType = instance.GetItemEntryType(Data[1], false, out object obj);
-                    if (ItemType == LogicEntryType.variableList) 
+                    if (ItemType == LogicEntryType.LogicEntryCollection) 
                     { 
                         AddFromVariable(Data[1]); 
                     }
@@ -407,7 +407,7 @@ namespace Windows_Form_Frontend
                     }
                 }
             }
-            foreach (var i in CurrentList.Where(x => x.Value == LogicEntryType.variableList))
+            foreach (var i in CurrentList.Where(x => x.Value == LogicEntryType.LogicEntryCollection))
             {
                 AddFromVariable(i.Key);
             }
@@ -416,8 +416,8 @@ namespace Windows_Form_Frontend
             void AddFromVariable(string Entry)
             {
                 instance.MultipleItemEntry(Entry, out string LogicItem, out int Amount);
-                if (!instance.Variables.TryGetValue(LogicItem, out OptionData.TrackerVar variable)) { return; }
-                foreach (string varEntry in variable.GetValue(instance))
+                if (!instance.LogicEntryCollections.TryGetValue(LogicItem, out OptionData.LogicEntryCollection variable)) { return; }
+                foreach (string varEntry in variable.GetValue(instance.GetOptionActions()))
                 {
                     var ItemType = instance.GetItemEntryType(varEntry, false, out object obj);
                     NewList[varEntry] = ItemType;

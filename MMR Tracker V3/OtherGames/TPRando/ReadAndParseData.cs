@@ -175,8 +175,8 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
                 "Male_Ant", "Female_Ant", "Female_Beetle", "Male_Beetle", "Female_Snail", "Male_Snail", "Female_Dayfly", "Male_Dayfly", "Female_Mantis", "Male_Mantis",
                 "Female_Stag_Beetle", "Male_Stag_Beetle", "Female_Ladybug", "Male_Ladybug", "Female_Dragonfly", "Female_Butterfly", "Male_Butterfly", "Male_Dragonfly" };
 
-            tRPDictionary.Variables.Add("ItemWheelItems", new OptionData.TrackerVar { ID = "ItemWheelItems", Static = true, Value = ItemWheelItems });
-            tRPDictionary.Variables.Add("AllBugs", new OptionData.TrackerVar { ID = "AllBugs", Static = true, Value = Bugs });
+            tRPDictionary.LogicEntryCollections.Add("ItemWheelItems", new OptionData.LogicEntryCollection { ID = "ItemWheelItems", Entries = ItemWheelItems.ToList() });
+            tRPDictionary.LogicEntryCollections.Add("AllBugs", new OptionData.LogicEntryCollection { ID = "AllBugs", Entries = Bugs.ToList() });
 
             tRPLogic.Logic.Add(new MMRData.JsonFormatLogicItem { Id = "HasBug", RequiredItems = new List<string> { "AllBugs, 1" } });
         }
@@ -228,20 +228,34 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
 
             void CreateOption(string ID, string Name, string Category, string[] Values = null)
             {
-                if (Values is null) { Values = new string[] { "False", "True" }; }
-                var Option = new OptionData.TrackerOption
+                if (Values is null) 
                 {
-                    ID = ID,
-                    DisplayName= Name,
-                    CurrentValue = Values[0],
-                    SubCategory= Category,
-                };
-                Option.CreateSimpleValues(Values);
-                foreach(var Value in Option.Values)
-                {
-                    if (OptionPrettyName.ContainsKey(Value.Key)) { Value.Value.Name = OptionPrettyName[Value.Key]; }
+                    tRPDictionary.ToggleOptions.Add(ID, new OptionData.ToggleOption
+                    {
+                        Name = Name,
+                        SubCategory = Category,
+                        Enabled = new OptionData.OptionValue { ID = true.ToString(), Name = true.ToString() },
+                        Disabled = new OptionData.OptionValue { ID = false.ToString(), Name = false.ToString() },
+                        ID= ID,
+                        Value = false.ToString()
+                    });
                 }
-                tRPDictionary.Options.Add(ID, Option);
+                else
+                {
+                    var Option = new OptionData.ChoiceOption
+                    {
+                        ID = ID,
+                        Name= Name,
+                        Value = Values[0],
+                        SubCategory= Category,
+                    };
+                    Option.CreateSimpleValues(Values);
+                    foreach (var Value in Option.ValueList)
+                    {
+                        if (OptionPrettyName.ContainsKey(Value.Key)) { Value.Value.Name = OptionPrettyName[Value.Key]; }
+                    }
+                    tRPDictionary.ChoiceOptions.Add(ID, Option);
+                }
             }
         }
 

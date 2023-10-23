@@ -41,26 +41,11 @@ namespace Windows_Form_Frontend
                 SetUIElements(true, $"Enter Hint at {hintObject.GetDictEntry(_Instance).Name}", "Set Hint", hintObject.GetDictEntry(_Instance).Name );
                 varType = VarType.Gossip;
             }
-            else if (_InputItems[0] is OptionData.TrackerVar IntVariableObject)
+            else if (_InputItems[0] is OptionData.IntOption IntVariableObject)
             {
-                if (IntVariableObject.GetType() == MiscData.VariableEntryType.varint)
-                {
-                    SetUIElements(false, $"Set value for {IntVariableObject.Name??IntVariableObject.ID}", "Set Value", "Integer: " + (IntVariableObject.Name ?? IntVariableObject.ID));
-                    numericUpDown1.Value = IntVariableObject.GetValue(_Instance);
-                    varType = VarType.Number;
-                }
-                else if (IntVariableObject.GetType() == MiscData.VariableEntryType.varstring)
-                {
-                    SetUIElements(true, $"Set value for {IntVariableObject.Name ?? IntVariableObject.ID}", "Set Value", "String: " + (IntVariableObject.Name ?? IntVariableObject.ID));
-                    textBox1.Text = IntVariableObject.GetValue(_Instance);
-                    varType = VarType.String;
-                }
-                else if (IntVariableObject.GetType() == MiscData.VariableEntryType.varlist)
-                {
-                    SetUIElements(true, $"Enter values as a comman seperated List", $"Set Values", "List: " + (IntVariableObject.Name ?? IntVariableObject.ID));
-                    textBox1.Text = string.Join(",", IntVariableObject.GetValue(_Instance));
-                    varType = VarType.ListOf;
-                }
+                SetUIElements(false, $"Set value for {IntVariableObject.Name??IntVariableObject.ID}", "Set Value", "Integer: " + (IntVariableObject.Name ?? IntVariableObject.ID));
+                numericUpDown1.Value = IntVariableObject.Value;
+                varType = VarType.Number;
             }
         }
         private void button1_Click(object sender, EventArgs e)
@@ -71,13 +56,7 @@ namespace Windows_Form_Frontend
                     (_InputItems[0] as HintData.HintObject).HintText = textBox1.Text;
                     break;
                 case VarType.Number:
-                    (_InputItems[0] as OptionData.TrackerVar).Value = (int)numericUpDown1.Value;
-                    break;
-                case VarType.String:
-                    (_InputItems[0] as OptionData.TrackerVar).Value = textBox1.Text;
-                    break;
-                case VarType.ListOf:
-                    (_InputItems[0] as OptionData.TrackerVar).Value = textBox1.Text.Split(',').ToList();
+                    (_InputItems[0] as OptionData.IntOption).Value = (int)numericUpDown1.Value;
                     break;
             }
             _InputItems.RemoveAt(0);

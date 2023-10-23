@@ -69,7 +69,7 @@ namespace Windows_Form_Frontend
             {
                 writeItemObjectsAtLocation(LocationObject);
             }
-            else if (_CheckList[0] is OptionData.TrackerOption OptionObject)
+            else if (_CheckList[0] is OptionData.ChoiceOption OptionObject)
             {
                 WriteTrackerOption(OptionObject);
             }
@@ -92,12 +92,12 @@ namespace Windows_Form_Frontend
             listBox1.DataSource = EnteredItems;
         }
 
-        private void WriteTrackerOption(OptionData.TrackerOption Option)
+        private void WriteTrackerOption(OptionData.ChoiceOption Option)
         {
             FormatUIItems(false, false, "");
             var EnteredItems = new List<string>();
-            this.Text = "Select Value for Option " + Option.DisplayName;
-            foreach(var i in Option.Values.Keys)
+            this.Text = "Select Value for Option " + Option.Name??Option.ID;
+            foreach(var i in Option.ValueList.Keys)
             {
                 EnteredItems.Add(i);
             }
@@ -127,9 +127,9 @@ namespace Windows_Form_Frontend
                     LocationObject.Randomizeditem.OwningPlayer = (int)numericUpDown1.Value;
                 }
             }
-            else if (_CheckList[0] is OptionData.TrackerOption OptionObject)
+            else if (_CheckList[0] is OptionData.ChoiceOption OptionObject)
             {
-                OptionObject.CurrentValue = listBox1.SelectedItem.ToString();
+                OptionObject.SetValue(listBox1.SelectedItem.ToString());
             }
             else if (_CheckList[0] is EntranceData.EntranceRandoExit ExitObject)
             {

@@ -187,20 +187,11 @@ namespace MMR_Tracker_V3.TrackerObjects
             Bool,
             Area,
             Exit,
-            variableString,
-            variableInt,
-            variableBool,
-            variableList,
+            ChoiceOption,
+            ToggleOption,
+            IntOption,
+            LogicEntryCollection,
             function,
-            error
-        }
-        [Serializable]
-        public enum VariableEntryType
-        {
-            varstring,
-            varint,
-            varbool,
-            varlist,
             error
         }
         public static string GetDescription<T>(this T e) where T : IConvertible

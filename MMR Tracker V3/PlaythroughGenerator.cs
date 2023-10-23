@@ -387,10 +387,6 @@ namespace MMR_Tracker_V3
                             }
                         }
                     }
-                    else if (type.In(MiscData.LogicEntryType.variableBool, MiscData.LogicEntryType.variableList, MiscData.LogicEntryType.variableString, MiscData.LogicEntryType.variableInt))
-                    {
-                        //Ignore Variables for now
-                    }
                     else if (!Data.AreasAccessed.Contains(LogicItem) && !Data.OptionsUsed.Contains(LogicItem) && !Data.MacrosUsed.Contains(LogicItem) && !Data.Unknown.Contains(LogicItem))
                     {
                         Data.Unknown.Add(LogicItem);

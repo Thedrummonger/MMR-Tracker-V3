@@ -407,7 +407,7 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
             AddVariableList("MagicalSeeds", PMRDict.ItemList.Where(x => x.Key.StartsWith("MagicalSeed")).Select(x => x.Key).ToList());
             void AddVariableList(string ID, List<string> Variables)
             {
-                PMRDict.Variables.Add(ID, new OptionData.TrackerVar { ID = ID, Static = true, Value = Variables });
+                PMRDict.LogicEntryCollections.Add(ID, new OptionData.LogicEntryCollection { ID = ID, Entries = Variables });
             }
 
             var BrokenStarbornValleyPanel = PRMLogic.Logic.First(x => x.Id =="Path to Starborn Valley - Hidden Panel");
@@ -450,9 +450,9 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
             };
 
 
-            var StartingLocationSetting = new OptionData.TrackerOption { ID = "StartingMap", DisplayName = "Starting Map", CurrentValue = "65796" };
-            foreach(var map in StaringMapSetting) { StartingLocationSetting.Values.Add(map.Key, new OptionData.actions { Name = map.Value }); }
-            PMRDict.Options.Add("StartingMap", StartingLocationSetting);
+            var StartingLocationSetting = new OptionData.ChoiceOption { ID = "StartingMap", Name = "Starting Map", Value = "65796" };
+            foreach(var map in StaringMapSetting) { StartingLocationSetting.ValueList.Add(map.Key, new OptionData.OptionValue { Name = map.Value }); }
+            PMRDict.ChoiceOptions.Add("StartingMap", StartingLocationSetting);
 
             var FlowerFieldsDoorLogic = PRMLogic.Logic.First(x => x.Id == "Toad Town - Plaza District - Exit West => Toad Town - Plaza District - Flower Fields Door");
             FlowerFieldsDoorLogic.ConditionalItems.Clear();
@@ -461,9 +461,9 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
             PRMLogic.Logic.Add(new MMRData.JsonFormatLogicItem { Id = "RF_Missable" });
             PRMLogic.Logic.Add(new MMRData.JsonFormatLogicItem { Id = "RF_OutOfLogic" });
 
-            PMRDict.Variables.Add("MagicalSeedsRequired", new OptionData.TrackerVar { ID = "MagicalSeedsRequired", Static = false, Name = "Magical Seeds Required", Value = 4 });
-            PMRDict.Variables.Add("StarHuntRequired", new OptionData.TrackerVar { ID = "StarHuntRequired", Static = false, Name = "Required Power Stars", Value = 0, Logic = "setting{StarHunt, true}" });
-            PMRDict.Variables.Add("StarWaySpiritsNeededCnt", new OptionData.TrackerVar { ID = "StarWaySpiritsNeededCnt", Static = false, Name = "StarWay Spirits Needed", Value = 7 });
+            PMRDict.IntOptions.Add("MagicalSeedsRequired", new OptionData.IntOption { ID = "MagicalSeedsRequired", Name = "Magical Seeds Required", Value = 4 });
+            PMRDict.IntOptions.Add("StarHuntRequired", new OptionData.IntOption { ID = "StarHuntRequired", Name = "Required Power Stars", Value = 0, Conditionals = new List<List<string>> { new List<string> { "setting{StarHunt, true}" } } });
+            PMRDict.IntOptions.Add("StarWaySpiritsNeededCnt", new OptionData.IntOption { ID = "StarWaySpiritsNeededCnt", Name = "StarWay Spirits Needed", Value = 7 });
 
             AddToggleoption("BlueHouseOpen", Display: "Open Blue House");
             AddToggleoption("Ch7BridgeVisible", "true", "Ch.7 Bridge Visible ");
@@ -484,17 +484,17 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
             
             void AddOption(string ID, string Default, List<Tuple<string, string>> Options, string Display = null)
             {
-                var option = new OptionData.TrackerOption { ID = ID, DisplayName = Display??ID, CurrentValue = Default };
-                foreach(var item in Options) { option.Values.Add(item.Item1, new OptionData.actions { Name = item.Item2 }); }
-                PMRDict.Options.Add(ID, option);
+                var option = new OptionData.ChoiceOption { ID = ID, Name = Display??ID, Value = Default };
+                foreach(var item in Options) { option.ValueList.Add(item.Item1, new OptionData.OptionValue { Name = item.Item2 }); }
+                PMRDict.ChoiceOptions.Add(ID, option);
             }
 
             void AddToggleoption(string ID, string defval = "false", string Display = null, string Logic = null)
             {
-                var option = new OptionData.TrackerOption { ID = ID, DisplayName = Display??ID, CurrentValue = defval };
-                if (Logic is not null) { option.Logic = Logic; }
-                option.CreateSimpleValues(new string[] {"true", "false"});
-                PMRDict.Options.Add(ID, option);
+                var option = new OptionData.ToggleOption { ID = ID, Name = Display??ID, Value = defval };
+                if (Logic is not null) { option.Conditionals = LogicStringConverter.ConvertLogicStringToConditional(PMRParser, Logic, ID); }
+                option.CreateSimpleValues(true);
+                PMRDict.ToggleOptions.Add(ID, option);
             }
 
             Dictionary<string, string> RandomizableEntrances = new Dictionary<string, string>()

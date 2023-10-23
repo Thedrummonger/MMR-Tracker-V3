@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -9,66 +10,186 @@ namespace MMR_Tracker_V3.TrackerObjects
 {
     public class OptionData
     {
-        private static readonly Dictionary<string, string> ToggleValues = new()
-        {
-            {"yes", "no" },
-            {"enabled", "disabled" },
-            {"true", "false" },
-            {"on", "off" }
-        };
-
-        public static Dictionary<string, string> GetToggleValues()
-        {
-            return ToggleValues;
-        }
-
         public static readonly string[] DisplayListBoxes = { "None", "Available Locations", "Checked Locations" };
 
-        [Serializable]
-        public class TrackerOption
+        public class ChoiceOption
         {
             public string ID { get; set; }
-            public string DisplayName { get; set; }
-            public string CurrentValue { get; set; } = "";
-            public string SubCategory { get; set; } = null;
-            public string Logic { get; set; } = "true";
-            public Dictionary<string, actions> Values { get; set; } = new Dictionary<string, actions>();
-            public actions GetActions()
+            public string Name { get; set; }
+            public string Value { get; set; }
+            public string Description { get; set; }
+            public string SubCategory { get; set; }
+            public int Priority { get; set; }
+            public List<List<string>> Conditionals { get; set; } = new List<List<string>>();
+            public Dictionary<string, OptionValue> ValueList { get; set; } = new Dictionary<string, OptionValue>();
+            public OptionValue GetValue(string _Value = null)
             {
-                if (!Values.ContainsKey(CurrentValue)) { throw new Exception($"{ID} Contained no option {CurrentValue}"); }
-                return Values[CurrentValue];
+                if (!ValueList.ContainsKey(_Value??Value)) { throw new Exception($"{_Value??Value} was not a valid value for Option {ID}"); }
+                return ValueList[_Value??Value];
             }
-            public bool IsToggleOption()
+            public void SetValue(string _Value)
             {
-                return 
-                    Values.Count == 2 &&
-                    Values.Keys.Select(x => x.ToLower()).Intersect(ToggleValues.Keys).Any() && 
-                    Values.Keys.Select(x => x.ToLower()).Intersect(ToggleValues.Values).Any();
+                if (!ValueList.ContainsKey(_Value)) { throw new Exception($"{_Value} was not a valid value for Option {ID}"); }
+                Value = _Value;
             }
-            public void ToggleOption()
+            public void CreateSimpleValues(string[] Values)
             {
-                if (!this.IsToggleOption()) { return; }
-                CurrentValue = Values.Keys.First(x => x != CurrentValue);
+                ValueList = Values.ToDictionary(x => x, x => new OptionValue { ID = x, Name = x });
             }
-
-            public void CreateSimpleValues(string[] SimpleValues) { Values = SimpleValues.ToDictionary(x => x, x => new actions()); }
-
             public override string ToString()
             {
-                string Val = !Values.ContainsKey(CurrentValue) || string.IsNullOrWhiteSpace(Values[CurrentValue].Name) ? CurrentValue : Values[CurrentValue].Name;
-                return DisplayName + ": " + Val;
+                return $"{getOptionName()}: {getValueName()}";
+            }
+            public string getOptionName()
+            {
+                return string.IsNullOrWhiteSpace(Name) ? ID : Name;
+            }
+            public string getValueName(string _val = null)
+            {
+                if (!ValueList.ContainsKey(_val??Value)) { return _val; }
+                return string.IsNullOrWhiteSpace(ValueList[_val??Value].Name) ? ValueList[_val??Value].ID : ValueList[_val??Value].Name;
+            }
+        }
+        public class ToggleOption
+        {
+            public string ID { get; set; }
+            public string Name { get; set; }
+            public string Value { get; set; }
+            public string Description { get; set; }
+            public string SubCategory { get; set; }
+            public int Priority { get; set; }
+            public List<List<string>> Conditionals { get; set; } = new List<List<string>>();
+            public OptionValue Enabled { get; set; }
+            public OptionValue Disabled { get; set; }
+            public OptionValue GetValue(string _Value = null)
+            {
+                string v = _Value??Value;
+                OptionValue vo;
+                if (Enabled.ID == v) { vo = Enabled; }
+                else if (Disabled.ID == v) { vo = Disabled; }
+                else { vo = null; }
+
+                if (vo is null) { throw new Exception($"{_Value??Value} was not a valid value for Option {ID}"); }
+                return vo;
+            }
+            public void SetValue(bool _Value)
+            {
+                Value = _Value ? Enabled.ID : Disabled.ID;
+            }
+            public void SetValue(string _Value)
+            {
+                string v = _Value;
+                OptionValue vo;
+                if (Enabled.ID == v) { vo = Enabled; }
+                else if (Disabled.ID == v) { vo = Disabled; }
+                else { vo = null; }
+
+                if (vo is null) { throw new Exception($"{_Value??Value} was not a valid value for Option {ID}"); }
+                Value = vo.ID;
+            }
+            public void ToggleValue()
+            {
+                if (Value == Disabled.ID) { Value = Enabled.ID; }
+                else { Value = Disabled.ID; }
+            }
+            public void CreateSimpleValues(bool Lower = false)
+            {
+                string EID = Lower ? true.ToString().ToLower() : true.ToString();
+                string FID = Lower ? false.ToString().ToLower() : false.ToString();
+                Enabled = new OptionValue { ID = EID, Name = EID };
+                Disabled = new OptionValue { ID = FID, Name = FID };
+            }
+            public override string ToString()
+            {
+                return $"{getOptionName()}: {getValueName()}";
+            }
+            public string getOptionName()
+            {
+                return string.IsNullOrWhiteSpace(Name) ? ID : Name;
+            }
+            public string getValueName()
+            {
+                OptionValue selectedVal = Enabled.ID == Value ? Enabled : Disabled;
+                return string.IsNullOrWhiteSpace(selectedVal.Name) ? selectedVal.ID : selectedVal.Name;
+            }
+
+        }
+        public class IntOption
+        {
+            public string ID { get; set; }
+            public string Name { get; set; }
+            public int Value { get; set; }
+            public string Description { get; set; }
+            public string SubCategory { get; set; }
+            public int Priority { get; set; }
+            public List<List<string>> Conditionals { get; set; } = new List<List<string>>();
+            public int Min { get; set; } = int.MinValue;
+            public int Max { get; set; } = int.MaxValue;
+            public void SetValue(int _Value)
+            {
+                if (_Value > Max || _Value < Min) { throw new Exception($"{_Value} was not a valid value for Option {ID}"); }
+                Value = _Value;
+            }
+            public override string ToString()
+            {
+                string Dis = string.IsNullOrWhiteSpace(Name) ? ID : Name;
+                return $"{getOptionName()}: {getValueName()}";
+            }
+            public string getOptionName()
+            {
+                return string.IsNullOrWhiteSpace(Name) ? ID : Name;
+            }
+            public string getValueName()
+            {
+                return Value.ToString();
+            }
+
+        }
+
+        public class LogicEntryCollection
+        {
+            public string ID { get; set; }
+            public List<string> Entries { get; set; } = new List<string> { };
+
+            public List<string> GetValue(IEnumerable<Action> Edits) 
+            {
+                var ReturnList = new List<string>();
+                ReturnList.AddRange(Entries);
+                foreach (var edit in Edits.Select(x => x.VariableEdit))
+                {
+                    if (!edit.ContainsKey(ID)) { continue; }
+                    switch (edit[ID].action)
+                    {
+                        case MiscData.MathOP.add:
+                            ReturnList.AddRange(edit[ID].Values);
+                            break;
+                        case MiscData.MathOP.subtract:
+                            foreach(var value in edit[ID].Values) { ReturnList.Remove(value); }
+                            break;
+                        case MiscData.MathOP.set:
+                            ReturnList.Clear();
+                            ReturnList.AddRange(edit[ID].Values);
+                            break;
+                    }
+                }
+                return ReturnList;
             }
         }
 
-        [Serializable]
-        public class actions
+        public class OptionValue
         {
-            public string Name { get; set; } = null;
+            public string ID { get; set; }
+            public string Name { get; set; }
+            public Action Actions { get; set; } = new Action();
+        }
+
+        public class Action
+        {
             public LogicReplacement[] LogicReplacements { get; set; } = Array.Empty<LogicReplacement>();
             public AdditionalLogic[] AdditionalLogic { get; set; } = Array.Empty<AdditionalLogic>();
             public Dictionary<string, string> ItemNameOverride { get; set; } = new Dictionary<string, string>();
             public Dictionary<string, MaxAmountSetData> ItemMaxAmountEdit { get; set; } = new Dictionary<string, MaxAmountSetData>();
-            public Dictionary<string, VariableEditData> VariableEdit { get; set; } = new Dictionary<string, VariableEditData>();
+            public Dictionary<string, CollectionEditData> VariableEdit { get; set; } = new Dictionary<string, CollectionEditData>();
             public bool LocationValid(string ID)
             {
                 return LogicReplacements.Any(x => x.LocationValid(ID)) || AdditionalLogic.Any(x => x.LocationValid(ID));
@@ -76,7 +197,7 @@ namespace MMR_Tracker_V3.TrackerObjects
 
             public void AddMaxAmountEdit(string Item, MiscData.MathOP mathOP, int amount)
             {
-                ItemMaxAmountEdit.Add(Item, new MaxAmountSetData { action = mathOP, amount = amount});
+                ItemMaxAmountEdit.Add(Item, new MaxAmountSetData { action = mathOP, amount = amount });
             }
         }
 
@@ -86,11 +207,10 @@ namespace MMR_Tracker_V3.TrackerObjects
             public int amount { get; set; } = 0;
         }
 
-        public class VariableEditData
+        public class CollectionEditData
         {
             public MiscData.MathOP action { get; set; } = MiscData.MathOP.add;
-            private dynamic _value;
-            public dynamic EditValue { set { _value = ParseInput(value, "edit"); } get { return _value; } }
+            public List<string> Values { get; set; } = new List<string>(); 
         }
 
         [Serializable]
@@ -116,135 +236,6 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 return (!LocationWhitelist.Any() || LocationWhitelist.Contains(ID)) && !LocationBlacklist.Contains(ID);
             }
-        }
-
-
-        public class TrackerVar
-        {
-            private object _value;
-            public string ID { get; set; }
-            public string Name { get; set; }
-            public string SubCategory { get; set; } = null;
-            public bool Static { get; set; } = true;
-            public string Logic { get; set; } = "true";
-            public object Value { set { _value = ParseInput(value, Name); } get { return _value; } }
-
-            public string ValueToString()
-            {
-                string DisplayValue = null;
-                if (_value is string valString) { DisplayValue = valString; }
-                if (_value is int valint) { DisplayValue = valint.ToString(); }
-                if (_value is bool valbool) { DisplayValue = valbool.ToString(); }
-                if (_value is List<string> valListString) { DisplayValue = string.Join(", ", valListString); }
-                DisplayValue ??= $"{_value}";
-                return DisplayValue;
-            }
-
-            public override string ToString()
-            {
-                return (Name??ID) + ": " + ValueToString();
-            }
-
-            public new MiscData.VariableEntryType GetType()
-            {
-                if (_value is int || _value is Int64) { return MiscData.VariableEntryType.varint; }
-                if (_value is bool) { return MiscData.VariableEntryType.varbool; }
-                if (_value is string) { return MiscData.VariableEntryType.varstring; }
-                if (_value is List<string>) { return MiscData.VariableEntryType.varlist; }
-                return MiscData.VariableEntryType.error;
-            }
-
-            public void printType()
-            {
-                Debug.WriteLine(((object)_value).GetType());
-            }
-
-            public dynamic GetValue(InstanceData.TrackerInstance instance) 
-            { 
-                return GetActualValue(instance);
-            }
-
-            private dynamic GetActualValue(InstanceData.TrackerInstance instance)
-            {
-                string ReturnString = GetType() == MiscData.VariableEntryType.varstring ? (string)_value : string.Empty;
-                bool ReturnBool = GetType() == MiscData.VariableEntryType.varbool ? (bool)_value : false;
-                int ReturnInt = GetType() == MiscData.VariableEntryType.varint ? (int)_value : 0;
-                List<string> ReturnList = new List<string>();
-                if (GetType() == MiscData.VariableEntryType.varlist) { ReturnList.AddRange((List<string>)_value); }
-
-                foreach (var i in instance.UserOptions.Values)
-                {
-                    var edits = i.GetActions().VariableEdit;
-                    if (edits.ContainsKey(ID))
-                    {
-                        TrackerVar EditValue = new() { Value = edits[ID].EditValue };
-                        switch (GetType())
-                        {
-                            case MiscData.VariableEntryType.varlist:
-                                switch (edits[ID].action)
-                                {
-                                    case MiscData.MathOP.add:   
-                                        if (EditValue.GetType() == MiscData.VariableEntryType.varlist) { ReturnList.AddRange((List<string>)EditValue.Value); }
-                                        else { ReturnList.Add(((object)EditValue.Value).ToString()); }
-                                        break;
-                                    case MiscData.MathOP.subtract:
-                                        if (EditValue.GetType() == MiscData.VariableEntryType.varlist) { ReturnList.RemoveAll(x => ((List<string>)EditValue.Value).Contains(x)); }
-                                        else { ReturnList.Remove(((object)EditValue.Value).ToString()); }
-                                        break;
-                                    case MiscData.MathOP.set:
-                                        if (EditValue.GetType() == MiscData.VariableEntryType.varlist) { ReturnList = (List<string>)EditValue.Value; }
-                                        else { ReturnList =  new() { ((object)EditValue.Value).ToString() }; }
-                                        break;
-                                }
-                                break;
-                            case MiscData.VariableEntryType.varint:
-                                if (EditValue.GetType() != MiscData.VariableEntryType.varint) { continue; }
-                                switch (edits[ID].action)
-                                {
-                                    case MiscData.MathOP.add:
-                                        ReturnInt += (int)EditValue.Value;
-                                        break;
-                                    case MiscData.MathOP.subtract:
-                                        ReturnInt -= (int)EditValue.Value;
-                                        break;
-                                    case MiscData.MathOP.multiply:
-                                        ReturnInt *= (int)EditValue.Value;
-                                        break;
-                                    case MiscData.MathOP.divide:
-                                        ReturnInt /= (int)EditValue.Value;
-                                        break;
-                                    case MiscData.MathOP.set:
-                                        ReturnInt = (int)EditValue.Value;
-                                        break;
-                                }
-                                break;
-                        }
-                    }
-                }
-
-                return GetType() switch
-                {
-                    MiscData.VariableEntryType.varint => ReturnInt,
-                    MiscData.VariableEntryType.varbool => ReturnBool,
-                    MiscData.VariableEntryType.varstring => ReturnString,
-                    MiscData.VariableEntryType.varlist => ReturnList,
-                    _ => _value,
-                };
-            }
-        }
-
-        private static object ParseInput(dynamic value, string ID)
-        {
-            if (value is int || value is Int64) { return (int)value;  }
-            else if (value is bool boolean) { return boolean; }
-            else if (value is string s) { return s; }
-            else if (value is List<string> || value is Array || value is Newtonsoft.Json.Linq.JArray)
-            {
-                List<string> list = new();
-                foreach (object i in value) { list.Add(i.ToString()); }
-                return list;
-            }
-            throw new Exception(ID + $" Was not a valid type {((object)value).GetType()}");
         }
     }
 }

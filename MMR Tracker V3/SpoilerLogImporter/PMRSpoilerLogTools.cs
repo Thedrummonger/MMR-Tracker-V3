@@ -35,14 +35,19 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
 
             foreach (var i in Settings)
             {
-                if (Instance.UserOptions.ContainsKey(i.Key))
+                if (Instance.ToggleOptions.ContainsKey(i.Key))
                 {
-                    Instance.UserOptions[i.Key].CurrentValue = i.Value.ToString().ToLower();
+                    Instance.ToggleOptions[i.Key].SetValue(bool.Parse(i.Value.ToString()));
                     Debug.WriteLine($"Option {i.Key} = {i.Value}");
                 }
-                else if (Instance.Variables.ContainsKey(i.Key))
+                else if (Instance.ChoiceOptions.ContainsKey(i.Key))
                 {
-                    Instance.Variables[i.Key].Value = i.Value;
+                    Instance.ChoiceOptions[i.Key].SetValue(i.Value.ToString());
+                    Debug.WriteLine($"Variable {i.Key} = {i.Value}");
+                }
+                else if (Instance.IntOptions.ContainsKey(i.Key))
+                {
+                    Instance.IntOptions[i.Key].SetValue(int.Parse(i.Value.ToString()));
                     Debug.WriteLine($"Variable {i.Key} = {i.Value}");
                 }
             }
