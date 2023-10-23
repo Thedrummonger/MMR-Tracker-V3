@@ -132,7 +132,6 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
             public override string ToString()
             {
-                string Dis = string.IsNullOrWhiteSpace(Name) ? ID : Name;
                 return $"{getOptionName()}: {getValueName()}";
             }
             public string getOptionName()
@@ -181,6 +180,11 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string ID { get; set; }
             public string Name { get; set; }
             public Action Actions { get; set; } = new Action();
+            public override string ToString()
+            {
+                string Dis = string.IsNullOrWhiteSpace(Name) ? ID : Name;
+                return Dis;
+            }
         }
 
         public class Action

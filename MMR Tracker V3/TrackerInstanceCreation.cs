@@ -83,7 +83,11 @@ namespace MMR_Tracker_V3
             foreach (var i in Instance.LogicDictionary.EntranceList) { i.Value.ID = i.Key; }
             foreach (var i in Instance.LogicDictionary.HintSpots) { i.Value.ID = i.Key; }
             foreach (var i in Instance.LogicDictionary.MacroList) { i.Value.ID = i.Key; }
-            foreach (var i in Instance.LogicDictionary.ChoiceOptions) { i.Value.ID = i.Key; }
+            foreach (var i in Instance.LogicDictionary.ChoiceOptions) 
+            { 
+                i.Value.ID = i.Key; 
+                foreach(var j in i.Value.ValueList) { j.Value.ID = j.Key; }
+            }
             foreach (var i in Instance.LogicDictionary.ToggleOptions) { i.Value.ID = i.Key; }
             foreach (var i in Instance.LogicDictionary.IntOptions) { i.Value.ID = i.Key; }
             foreach (var i in Instance.LogicDictionary.LogicEntryCollections) { i.Value.ID = i.Key; }

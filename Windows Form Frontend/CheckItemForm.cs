@@ -95,11 +95,11 @@ namespace Windows_Form_Frontend
         private void WriteTrackerOption(OptionData.ChoiceOption Option)
         {
             FormatUIItems(false, false, "");
-            var EnteredItems = new List<string>();
+            var EnteredItems = new List<OptionData.OptionValue>();
             this.Text = "Select Value for Option " + Option.Name??Option.ID;
-            foreach(var i in Option.ValueList.Keys)
+            foreach(var i in Option.ValueList)
             {
-                EnteredItems.Add(i);
+                EnteredItems.Add(i.Value);
             }
             listBox1.DataSource = EnteredItems;
         }
@@ -129,7 +129,8 @@ namespace Windows_Form_Frontend
             }
             else if (_CheckList[0] is OptionData.ChoiceOption OptionObject)
             {
-                OptionObject.SetValue(listBox1.SelectedItem.ToString());
+                OptionData.OptionValue SelectedValue = listBox1.SelectedItem as OptionData.OptionValue;
+                OptionObject.SetValue(SelectedValue.ID);
             }
             else if (_CheckList[0] is EntranceData.EntranceRandoExit ExitObject)
             {

@@ -90,17 +90,17 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                             break;
                         case "soul_enemy":
                             string EnemySoulSetting = OriginalGamecode == "MM" ? "soulsEnemyMm" : "soulsEnemyOot";
-                            ParsedConditional = $"({Gamecode}_{Param} || var{{{EnemySoulSetting}, false}})";
+                            ParsedConditional = $"({Gamecode}_{Param} || setting{{{EnemySoulSetting}, false}})";
                             FunctionParsed = true;
                             break;
                         case "soul_boss":
                             string BossSoulSetting = OriginalGamecode == "MM" ? "soulsBossMm" : "soulsBossOot";
-                            ParsedConditional = $"({Gamecode}_{Param} || var{{{BossSoulSetting}, false}})";
+                            ParsedConditional = $"({Gamecode}_{Param} || setting{{{BossSoulSetting}, false}})";
                             FunctionParsed = true;
                             break;
                         case "soul_npc":
                             string NPCSoulSetting = OriginalGamecode == "MM" ? "soulsNpcMm" : "soulsNpcOot";
-                            ParsedConditional = $"({Gamecode}_{Param} || var{{{NPCSoulSetting}, false}})";
+                            ParsedConditional = $"({Gamecode}_{Param} || setting{{{NPCSoulSetting}, false}})";
                             FunctionParsed = true;
                             break;
                         case "has":
@@ -109,15 +109,15 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                             break;
                         case "setting":
                             var SubParams = OriginalParam.Split(',').Select(x => x.Trim()).ToList();
-                            if (SubParams.Count < 2) { ParsedConditional = $"var{{{OriginalParam}}}"; }
-                            else if (int.TryParse(SubParams[1], out _) || bool.TryParse(SubParams[1], out _)) { ParsedConditional = $"var{{{OriginalParam}}}"; }
+                            if (SubParams.Count < 2) { ParsedConditional = $"setting{{{OriginalParam}}}"; }
+                            else if (int.TryParse(SubParams[1], out _) || bool.TryParse(SubParams[1], out _)) { ParsedConditional = $"setting{{{OriginalParam}}}"; }
                             else { ParsedConditional = $"setting{{{OriginalParam}}}"; }
                             FunctionParsed = true;
                             break;
                         case "!setting":
                             var NSubParams = OriginalParam.Split(',').Select(x => x.Trim()).ToList();
-                            if (NSubParams.Count < 2) { ParsedConditional = $"var{{{OriginalParam}, false}}"; }
-                            else if (int.TryParse(NSubParams[1], out _) || bool.TryParse(NSubParams[1], out _)) { ParsedConditional = $"var{{{OriginalParam}, false}}"; }
+                            if (NSubParams.Count < 2) { ParsedConditional = $"setting{{{OriginalParam}, false}}"; }
+                            else if (int.TryParse(NSubParams[1], out _) || bool.TryParse(NSubParams[1], out _)) { ParsedConditional = $"setting{{{OriginalParam}, false}}"; }
                             else { ParsedConditional = $"setting{{{OriginalParam}, false}}"; }
                             FunctionParsed = true;
                             break;

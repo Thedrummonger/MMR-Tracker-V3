@@ -304,8 +304,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
             };
             DictionaryFile.LogicEntryCollections.Add("MM_MASKS", MMMaskVar);
 
-            MMRData.JsonFormatLogicItem BothGameSouls = new() { Id = "BothGameSouls", RequiredItems = new List<string> { "var{soulsEnemyOot}", "var{soulsEnemyMm}" } };
-            MMRData.JsonFormatLogicItem BothGameSkeletonKey = new() { Id = "BothGameSkeletonKey", RequiredItems = new List<string> { "var{skeletonKeyOot}", "var{skeletonKeyMm}" } };
+            MMRData.JsonFormatLogicItem BothGameSouls = new() { Id = "BothGameSouls", RequiredItems = new List<string> { "setting{soulsEnemyOot}", "setting{soulsEnemyMm}" } };
+            MMRData.JsonFormatLogicItem BothGameSkeletonKey = new() { Id = "BothGameSkeletonKey", RequiredItems = new List<string> { "setting{skeletonKeyOot}", "setting{skeletonKeyMm}" } };
             DictionaryFile.AdditionalLogic.Add(BothGameSouls);
             DictionaryFile.AdditionalLogic.Add(BothGameSkeletonKey);
 
