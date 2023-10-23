@@ -89,9 +89,10 @@ namespace MMR_Tracker_V3
 
         public bool CheckItemArray(string ArrVar, int amount, List<string> SubUnlockData, out int TotalUsable)
         {
+            var EditActions = container.Instance.GetOptionActions();
             TotalUsable = 0;
             if (!container.Instance.LogicEntryCollections.ContainsKey(ArrVar)) { return false; }
-            List<string> VariableEntries = container.Instance.LogicEntryCollections[ArrVar].GetValue(container.Instance.GetOptionActions());
+            List<string> VariableEntries = container.Instance.LogicEntryCollections[ArrVar].GetValue(EditActions);
 
             List<string> UsableItems = new();
             Dictionary<string, int> ItemTracking = new();
@@ -114,7 +115,7 @@ namespace MMR_Tracker_V3
                     bool MultiItem = container.Instance.MultipleItemEntry(i, out string LogicItem, out int Amount);
                     bool Literal = LogicItem.IsLiteralID(out LogicItem);
                     var type = container.Instance.GetItemEntryType(LogicItem, Literal, out object ItemObj);
-                    if (type == LogicEntryType.LogicEntryCollection) { LoopVarEntry((ItemObj as OptionData.LogicEntryCollection).GetValue(container.Instance.GetOptionActions())); }
+                    if (type == LogicEntryType.LogicEntryCollection) { LoopVarEntry((ItemObj as OptionData.LogicEntryCollection).GetValue(EditActions)); }
                     else
                     {
                         if (type == LogicEntryType.item && !MultiItem)
@@ -551,6 +552,7 @@ namespace MMR_Tracker_V3
 
         private static bool CheckContainsFunction(TrackerInstance instance, string[] param)
         {
+            var EditActions = instance.GetOptionActions();
             if (param.Length < 2) { return false; } //Not enough Values Pased
 
             string FunctionValue = param[0];
@@ -560,12 +562,12 @@ namespace MMR_Tracker_V3
 
             if (instance.LogicEntryCollections.ContainsKey(FunctionValue))
             {
-                OptionList = instance.LogicEntryCollections[FunctionValue].GetValue(instance.GetOptionActions());
+                OptionList = instance.LogicEntryCollections[FunctionValue].GetValue(EditActions);
             }
 
             if (instance.LogicEntryCollections.ContainsKey(ParamValue))
             {
-                ValueList = instance.LogicEntryCollections[ParamValue].GetValue(instance.GetOptionActions());
+                ValueList = instance.LogicEntryCollections[ParamValue].GetValue(EditActions);
             }
 
             bool inverse = param.Length > 2 && bool.TryParse(param[2], out bool inverseValue) && !inverseValue; //If a third param is passed and its a false bool, invert the result
