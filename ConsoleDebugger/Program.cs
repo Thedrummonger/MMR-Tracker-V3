@@ -1,5 +1,6 @@
 ﻿using MMR_Tracker_V3;
 using MMR_Tracker_V3.SpoilerLogImporter;
+using MMR_Tracker_V3.TrackerObjectExtentions;
 using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
 using System;
@@ -26,7 +27,7 @@ namespace ConsoleDebugger
         static void Main(string[] args)
         {
             Testing.doDevCheck();
-            if (Testing.IsDevUser()) { CommandList = CommandList.Append("5. Debugging").ToArray(); }
+            if (Testing.Debugging()) { CommandList = CommandList.Append("5. Debugging").ToArray(); }
             while (true)
             {
                 Console.WriteLine("Commands\n" + string.Join("\n", CommandList));
@@ -52,7 +53,7 @@ namespace ConsoleDebugger
                         break;
                     case ConsoleKey.D5:
                     case ConsoleKey.NumPad5:
-                        if (Testing.IsDevUser()) { Debugging(); }
+                        if (Testing.Debugging()) { Debugging(); }
                         break;
                 }
             }
@@ -155,16 +156,16 @@ namespace ConsoleDebugger
                 switch (EntryType)
                 {
                     case 0:
-                        Entries = TrackerDataHandeling.PopulateAvailableLocationList(dataset, CreateDivider(Console.WindowWidth), newTrackerInstance.Instance, Filter, false, out x, out y, true);
+                        Entries = TrackerDataHandeling.PopulateAvailableLocationList(dataset, CreateDivider(Console.WindowWidth), newTrackerInstance, Filter, false, out x, out y, true);
                         CurrentType = "Available Locations";
                         break;
                     case 1:
-                        Entries = TrackerDataHandeling.PopulateCheckedLocationList(dataset, CreateDivider(Console.WindowWidth), newTrackerInstance.Instance, Filter, out x, out y, true);
+                        Entries = TrackerDataHandeling.PopulateCheckedLocationList(dataset, CreateDivider(Console.WindowWidth), newTrackerInstance, Filter, out x, out y, true);
                         CurrentType = "Checked Locations";
                         CheckAction = MiscData.CheckState.Unchecked;
                         break;
                     case 2:
-                        Entries = TrackerDataHandeling.PopulateAvailableEntraceList(dataset, CreateDivider(Console.WindowWidth), newTrackerInstance.Instance, Filter, false, out x, out y, true);
+                        Entries = TrackerDataHandeling.PopulateAvailableEntraceList(dataset, CreateDivider(Console.WindowWidth), newTrackerInstance, Filter, false, out x, out y, true);
                         CurrentType = "Available Entrances";
                         break;
                 }
@@ -527,7 +528,7 @@ namespace ConsoleDebugger
             if (SpoilerLogData != null && newTrackerInstance.Instance.LogicFile.GameCode == "MMR")
             {
                 Console.WriteLine("Applying Settings File...");
-                SpoilerLogTools.ApplyMMRandoSettings(newTrackerInstance.Instance, SpoilerLogData);
+                MMRSpoilerLogTools.ApplyMMRandoSettings(newTrackerInstance.Instance, SpoilerLogData);
             }
             else
             {
