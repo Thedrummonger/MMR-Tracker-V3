@@ -10011,6 +10011,96 @@
         "PriceDataNames": []
       },
       "LocationProxys": []
+    },
+    "Snowpeak Blizzard Howling Stone": {
+      "ID": "Snowpeak Blizzard Howling Stone",
+      "Name": "Snowpeak Blizzard Howling Stone",
+      "OriginalItem": "Snowpeak Blizzard Howling Stone",
+      "Area": "Snowpeak Province",
+      "ValidItemTypes": [
+        "Snowpeak Blizzard Howling Stone"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "Lake Hylia Howling Stone": {
+      "ID": "Lake Hylia Howling Stone",
+      "Name": "Lake Hylia Howling Stone",
+      "OriginalItem": "Lake Hylia Howling Stone",
+      "Area": "Lake Hylia",
+      "ValidItemTypes": [
+        "Lake Hylia Howling Stone"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "Hidden Village Howling Stone": {
+      "ID": "Hidden Village Howling Stone",
+      "Name": "Hidden Village Howling Stone",
+      "OriginalItem": "Hidden Village Howling Stone",
+      "Area": "Hidden Village",
+      "ValidItemTypes": [
+        "Hidden Village Howling Stone"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "North Faron Woods Howling Stone": {
+      "ID": "North Faron Woods Howling Stone",
+      "Name": "North Faron Woods Howling Stone",
+      "OriginalItem": "North Faron Woods Howling Stone",
+      "Area": "Faron Woods",
+      "ValidItemTypes": [
+        "North Faron Woods Howling Stone"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "Upper Zoras River Howling Stone": {
+      "ID": "Upper Zoras River Howling Stone",
+      "Name": "Upper Zoras River Howling Stone",
+      "OriginalItem": "Upper Zoras River Howling Stone",
+      "Area": "Zoras Domain",
+      "ValidItemTypes": [
+        "Upper Zoras River Howling Stone"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "Death Mountain Howling Stone": {
+      "ID": "Death Mountain Howling Stone",
+      "Name": "Death Mountain Howling Stone",
+      "OriginalItem": "Death Mountain Howling Stone",
+      "Area": "Death Mountain",
+      "ValidItemTypes": [
+        "Death Mountain Howling Stone"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
     }
   },
   "ItemList": {
@@ -12168,6 +12258,90 @@
         "SpoilerLogNames": [
           "Triforce"
         ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Snowpeak Blizzard Howling Stone": {
+      "ID": "Snowpeak Blizzard Howling Stone",
+      "Name": "Snowpeak Blizzard Howling Stone",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": false,
+      "ItemTypes": [
+        "Snowpeak Blizzard Howling Stone"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Lake Hylia Howling Stone": {
+      "ID": "Lake Hylia Howling Stone",
+      "Name": "Lake Hylia Howling Stone",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": false,
+      "ItemTypes": [
+        "Lake Hylia Howling Stone"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Hidden Village Howling Stone": {
+      "ID": "Hidden Village Howling Stone",
+      "Name": "Hidden Village Howling Stone",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": false,
+      "ItemTypes": [
+        "Hidden Village Howling Stone"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "North Faron Woods Howling Stone": {
+      "ID": "North Faron Woods Howling Stone",
+      "Name": "North Faron Woods Howling Stone",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": false,
+      "ItemTypes": [
+        "North Faron Woods Howling Stone"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Upper Zoras River Howling Stone": {
+      "ID": "Upper Zoras River Howling Stone",
+      "Name": "Upper Zoras River Howling Stone",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": false,
+      "ItemTypes": [
+        "Upper Zoras River Howling Stone"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "Death Mountain Howling Stone": {
+      "ID": "Death Mountain Howling Stone",
+      "Name": "Death Mountain Howling Stone",
+      "MaxAmountInWorld": 1,
+      "ValidStartingItem": false,
+      "ItemTypes": [
+        "Death Mountain Howling Stone"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": []
       }

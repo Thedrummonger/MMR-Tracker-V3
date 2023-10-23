@@ -100,12 +100,44 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
             CreateAdditionalData(TRPLogic, TRPDictionary);
             AlterSpecificLogic(TRPLogic);
 
+            CreateHowlingStoneChecks(TRPLogic, TRPDictionary);
+
             string TestFolder = Path.Combine(References.TestingPaths.GetDevCodePath(), "MMR Tracker V3", "Recources");
             string FinalDictFile = Path.Combine(TestFolder, "Dictionaries", @"TPR V1.json");
             string FinalLogicFile = Path.Combine(TestFolder, "Presets", @"DEV-TPR Casual.json");
             File.WriteAllText(FinalLogicFile, JsonConvert.SerializeObject(TRPLogic, Testing._NewtonsoftJsonSerializerOptions));
             File.WriteAllText(FinalDictFile, JsonConvert.SerializeObject(TRPDictionary, Testing._NewtonsoftJsonSerializerOptions));
-            GetItemCOunts(CheckData);
+        }
+
+        private static void CreateHowlingStoneChecks(MMRData.LogicFile tRPLogic, LogicDictionaryData.LogicDictionary tRPDictionary)
+        {
+            CreateHowlingStone("Snowpeak Blizzard", "Kakariko Graveyard Golden Wolf", "Snowpeak Province");
+            CreateHowlingStone("Lake Hylia", "Gerudo Desert Golden Wolf", "Lake Hylia");
+            CreateHowlingStone("Hidden Village", "North Castle Town Golden Wolf", "Hidden Village");
+            CreateHowlingStone("North Faron Woods", "Outside South Castle Town Golden Wolf", "Faron Woods");
+            CreateHowlingStone("Upper Zoras River", "West Hyrule Field Golden Wolf", "Zoras Domain");
+            CreateHowlingStone("Death Mountain", "Ordon Spring Golden Wolf", "Death Mountain");
+
+            void CreateHowlingStone(string v, string WolfCheck, string Area)
+            {
+                string ID = $"{v} Howling Stone";
+                tRPDictionary.LocationList.Add(ID, new LogicDictionaryData.DictionaryLocationEntries { Area = Area, ID = ID, Name = ID, OriginalItem = ID, ValidItemTypes = new string[] { ID } });
+                tRPDictionary.ItemList.Add(ID, new LogicDictionaryData.DictionaryItemEntries { ID = ID, Name = ID, ItemTypes = new string[] { ID }, MaxAmountInWorld = 1, ValidStartingItem = false });
+
+                var GoldenWolfLogic = tRPLogic.Logic.Find(x => x.Id == WolfCheck);
+
+                tRPLogic.Logic.Add(new MMRData.JsonFormatLogicItem
+                {
+                    Id= ID,
+                    ConditionalItems = GoldenWolfLogic.ConditionalItems.Select(x => x).ToList(),
+                    RequiredItems = GoldenWolfLogic.RequiredItems.Where(x => !x.Contains('\'') && x != "CanCompleteMDH").ToList(),
+                });
+
+                GoldenWolfLogic.ConditionalItems.Clear();
+                GoldenWolfLogic.RequiredItems = GoldenWolfLogic.RequiredItems.Where(x => x.Contains('\'') || x == "CanCompleteMDH").ToList();
+                GoldenWolfLogic.RequiredItems.Add(ID);
+            }
+
         }
 
         private static void AlterSpecificLogic(MMRData.LogicFile tRPLogic)
@@ -295,6 +327,7 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
                 foreach(var loc in graph.Value.Locations)
                 {
                     var CheckData = checkData.Find(x => x.name == loc.Key);
+                    //graph.key is the area and needs '' around it for other hacky stuff in the logic praser
                     string Logic = $"('{graph.Key}') and ({loc.Value})";
                     MMRData.JsonFormatLogicItem logicItem = new MMRData.JsonFormatLogicItem()
                     {

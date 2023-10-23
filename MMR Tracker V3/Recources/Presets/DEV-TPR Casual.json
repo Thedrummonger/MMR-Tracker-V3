@@ -5986,17 +5986,9 @@
       "Id": "Kakariko Graveyard Golden Wolf",
       "RequiredItems": [
         "'Kakariko Village'",
-        "Shadow_Crystal",
-        "Snowpeak Climb"
+        "Snowpeak Blizzard Howling Stone"
       ],
-      "ConditionalItems": [
-        [
-          "Progressive_Fishing_Rod, 2"
-        ],
-        [
-          "option{skipSnowpeakEntrance, True}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -7475,8 +7467,7 @@
       "Id": "Gerudo Desert Golden Wolf",
       "RequiredItems": [
         "'Gerudo Desert'",
-        "Shadow_Crystal",
-        "Lake Hylia"
+        "Lake Hylia Howling Stone"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -7984,9 +7975,8 @@
       "Id": "North Castle Town Golden Wolf",
       "RequiredItems": [
         "'Castle Town'",
-        "Shadow_Crystal",
-        "Hidden Village",
-        "CanCompleteMDH"
+        "CanCompleteMDH",
+        "Hidden Village Howling Stone"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -8621,8 +8611,7 @@
       "Id": "Outside South Castle Town Golden Wolf",
       "RequiredItems": [
         "'Outside Castle Town South'",
-        "Shadow_Crystal",
-        "North Faron Woods"
+        "North Faron Woods Howling Stone"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -8737,8 +8726,7 @@
       "Id": "West Hyrule Field Golden Wolf",
       "RequiredItems": [
         "'Outside Castle Town West'",
-        "Shadow_Crystal",
-        "Zoras Domain"
+        "Upper Zoras River Howling Stone"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -9799,8 +9787,7 @@
       "Id": "Ordon Spring Golden Wolf",
       "RequiredItems": [
         "'Ordon Province'",
-        "Shadow_Crystal",
-        "Death Mountain Trail"
+        "Death Mountain Howling Stone"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -13576,6 +13563,85 @@
       "Id": "HasBug",
       "RequiredItems": [
         "AllBugs, 1"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Snowpeak Blizzard Howling Stone",
+      "RequiredItems": [
+        "Shadow_Crystal",
+        "Snowpeak Climb"
+      ],
+      "ConditionalItems": [
+        [
+          "Progressive_Fishing_Rod, 2"
+        ],
+        [
+          "option{skipSnowpeakEntrance, True}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Lake Hylia Howling Stone",
+      "RequiredItems": [
+        "Shadow_Crystal",
+        "Lake Hylia"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Hidden Village Howling Stone",
+      "RequiredItems": [
+        "Shadow_Crystal",
+        "Hidden Village"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "North Faron Woods Howling Stone",
+      "RequiredItems": [
+        "Shadow_Crystal",
+        "North Faron Woods"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Upper Zoras River Howling Stone",
+      "RequiredItems": [
+        "Shadow_Crystal",
+        "Zoras Domain"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "Death Mountain Howling Stone",
+      "RequiredItems": [
+        "Shadow_Crystal",
+        "Death Mountain Trail"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",

@@ -24,6 +24,7 @@ namespace MMR_Tracker_V3
             _Instance.logicCalculation = new LogicCalculation(_Instance);
         }
 
+        [Serializable]
         public class PlaythroughObject
         {
             public string id { get; set; }
@@ -316,6 +317,7 @@ namespace MMR_Tracker_V3
     }
     public static class PlaythroughTools
     {
+        [Serializable]
         public class AdvancedUnlockData
         {
             public string Name { get; set; }
