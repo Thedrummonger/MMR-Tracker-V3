@@ -23,7 +23,6 @@ namespace MMR_Tracker_V3
         public readonly InstanceContainer container;
         public Dictionary<string, List<string>> LogicUnlockData = new();
         public Dictionary<string, MMRData.JsonFormatLogicItem> LogicMap = new();
-        public List<OptionData.Action> ActiveOptionActions = new();
         public Dictionary<object, int> AutoObtainedObjects = new();
 
         public LogicCalculation(InstanceContainer _container)
@@ -92,7 +91,10 @@ namespace MMR_Tracker_V3
         {
             TotalUsable = 0;
             if (!container.Instance.LogicEntryCollections.ContainsKey(ArrVar)) { return false; }
-            List<string> VariableEntries = container.Instance.LogicEntryCollections[ArrVar].GetValue(ActiveOptionActions);
+            List<string> VariableEntries = container.Instance.LogicEntryCollections[ArrVar].GetValue(container.Instance.GetOptionActions());
+
+            Debug.WriteLine($"{container.Instance.LogicEntryCollections[ArrVar].ID} Looking for {amount} of {string.Join("|", VariableEntries)}");
+
             List<string> UsableItems = new();
             Dictionary<string, int> ItemTracking = new();
             LoopVarEntry(VariableEntries);
@@ -114,7 +116,7 @@ namespace MMR_Tracker_V3
                     bool MultiItem = container.Instance.MultipleItemEntry(i, out string LogicItem, out int Amount);
                     bool Literal = LogicItem.IsLiteralID(out LogicItem);
                     var type = container.Instance.GetItemEntryType(LogicItem, Literal, out object ItemObj);
-                    if (type == LogicEntryType.LogicEntryCollection) { LoopVarEntry((ItemObj as OptionData.LogicEntryCollection).GetValue(ActiveOptionActions)); }
+                    if (type == LogicEntryType.LogicEntryCollection) { LoopVarEntry((ItemObj as OptionData.LogicEntryCollection).GetValue(container.Instance.GetOptionActions())); }
                     else
                     {
                         if (type == LogicEntryType.item && !MultiItem)
@@ -155,7 +157,6 @@ namespace MMR_Tracker_V3
 
         private void FillLogicMap()
         {
-            ActiveOptionActions = container.Instance.GetOptionActions();
             foreach (var i in container.Instance.MacroPool) 
             { 
                 LogicMap[i.Key] = container.Instance.GetLogic(i.Key); 
