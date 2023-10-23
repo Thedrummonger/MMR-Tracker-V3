@@ -93,8 +93,6 @@ namespace MMR_Tracker_V3
             if (!container.Instance.LogicEntryCollections.ContainsKey(ArrVar)) { return false; }
             List<string> VariableEntries = container.Instance.LogicEntryCollections[ArrVar].GetValue(container.Instance.GetOptionActions());
 
-            Debug.WriteLine($"{container.Instance.LogicEntryCollections[ArrVar].ID} Looking for {amount} of {string.Join("|", VariableEntries)}");
-
             List<string> UsableItems = new();
             Dictionary<string, int> ItemTracking = new();
             LoopVarEntry(VariableEntries);
