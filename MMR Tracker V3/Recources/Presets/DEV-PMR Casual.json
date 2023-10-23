@@ -870,7 +870,7 @@
       "RequiredItems": [
         "can_climb_steps",
         "Dry Dry Ruins - Super Hammer Room - Exit Right",
-        "setting{BowsersCastleMode, 0}"
+        "setting{GearShuffleMode, 0}"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -1179,13 +1179,13 @@
           "Parakarry",
           "can_climb_steps",
           "Mt Lavalava - Ultra Hammer Room - Exit East",
-          "setting{BowsersCastleMode, 0}"
+          "setting{GearShuffleMode, 0}"
         ],
         [
           "Lakilester",
           "can_climb_steps",
           "Mt Lavalava - Ultra Hammer Room - Exit East",
-          "setting{BowsersCastleMode, 0}"
+          "setting{GearShuffleMode, 0}"
         ]
       ],
       "TimeNeeded": "None",
@@ -1198,7 +1198,7 @@
       "RequiredItems": [
         "can_climb_steps",
         "Mt Lavalava - Ultra Hammer Room - Exit East",
-        "setting{BowsersCastleMode, 0}"
+        "setting{GearShuffleMode, 0}"
       ],
       "ConditionalItems": [
         [
@@ -6993,7 +6993,7 @@
       "ConditionalItems": [
         [
           "RF_ISK09_OpenedHammerChest",
-          "setting{BowsersCastleMode, 0}"
+          "setting{GearShuffleMode, 0}"
         ],
         [
           "SuperHammer",
@@ -7118,7 +7118,7 @@
       "ConditionalItems": [
         [
           "RF_ISK09_OpenedHammerChest",
-          "setting{BowsersCastleMode, 0}"
+          "setting{GearShuffleMode, 0}"
         ],
         [
           "SuperHammer",
@@ -7274,7 +7274,7 @@
       ],
       "ConditionalItems": [
         [
-          "setting{BowsersCastleMode, 0}"
+          "setting{GearShuffleMode, 0}"
         ],
         [
           "setting{GearShuffleMode, 0, false}"
@@ -7561,12 +7561,12 @@
       "ConditionalItems": [
         [
           "RF_DrainedThirdSandRoomAndCanSolvePuzzle",
-          "setting{BowsersCastleMode, 0}"
+          "setting{GearShuffleMode, 0}"
         ],
         [
           "can_climb_steps",
           "RF_ISK09_OpenedHammerChest",
-          "setting{BowsersCastleMode, 0}"
+          "setting{GearShuffleMode, 0}"
         ],
         [
           "RF_DrainedThirdSandRoomAndCanSolvePuzzle",
@@ -7605,7 +7605,7 @@
       "ConditionalItems": [
         [
           "RF_ISK09_OpenedHammerChest",
-          "setting{BowsersCastleMode, 0}"
+          "setting{GearShuffleMode, 0}"
         ],
         [
           "SuperHammer",
@@ -7661,7 +7661,7 @@
       "ConditionalItems": [
         [
           "RF_ISK09_OpenedHammerChest",
-          "setting{BowsersCastleMode, 0}"
+          "setting{GearShuffleMode, 0}"
         ],
         [
           "SuperHammer",
@@ -7693,7 +7693,7 @@
       "ConditionalItems": [
         [
           "RF_ISK09_OpenedHammerChest",
-          "setting{BowsersCastleMode, 0}"
+          "setting{GearShuffleMode, 0}"
         ],
         [
           "SuperHammer",
@@ -15782,7 +15782,7 @@
       "ConditionalItems": [
         [
           "RF_KZN07_OpenedHammerChest",
-          "setting{BowsersCastleMode, 0}"
+          "setting{GearShuffleMode, 0}"
         ],
         [
           "UltraHammer",
@@ -16138,7 +16138,7 @@
       "ConditionalItems": [
         [
           "RF_KZN07_OpenedHammerChest",
-          "setting{BowsersCastleMode, 0}"
+          "setting{GearShuffleMode, 0}"
         ],
         [
           "UltraHammer",
@@ -16196,11 +16196,11 @@
       "ConditionalItems": [
         [
           "Parakarry",
-          "setting{BowsersCastleMode, 0}"
+          "setting{GearShuffleMode, 0}"
         ],
         [
           "Lakilester",
-          "setting{BowsersCastleMode, 0}"
+          "setting{GearShuffleMode, 0}"
         ],
         [
           "Parakarry",
@@ -16463,7 +16463,7 @@
       "ConditionalItems": [
         [
           "RF_KZN07_OpenedHammerChest",
-          "setting{BowsersCastleMode, 0}"
+          "setting{GearShuffleMode, 0}"
         ],
         [
           "UltraHammer",
@@ -33194,7 +33194,7 @@
       "ConditionalItems": [
         [
           "SuperHammer",
-          "setting{BowsersCastleMode, 0}"
+          "setting{GearShuffleMode, 0}"
         ],
         [
           "setting{GearShuffleMode, 0, false}"
@@ -33292,7 +33292,7 @@
       "ConditionalItems": [
         [
           "UltraHammer",
-          "setting{BowsersCastleMode, 0}"
+          "setting{GearShuffleMode, 0}"
         ],
         [
           "setting{GearShuffleMode, 0, false}"

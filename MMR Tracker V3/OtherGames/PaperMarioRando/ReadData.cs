@@ -188,7 +188,7 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
                 List<List<object>> AdditionalRequirements = new List<List<object>>();
                 if (EdgeAlterations["bc_shorten"].removals.Any(x => x.Equals(edge))) { AdditionalRequirements.Add(new List<object> { "setting{BowsersCastleMode, 1, false}" }); }
                 if (EdgeAlterations["bc_bossrush"].removals.Any(x => x.Equals(edge))) { AdditionalRequirements.Add(new List<object> { "setting{BowsersCastleMode, 2, false}" }); }
-                if (EdgeAlterations["gear_location_shuffle"].removals.Any(x => x.Equals(edge))) { AdditionalRequirements.Add(new List<object> { "setting{BowsersCastleMode, 0}" }); }
+                if (EdgeAlterations["gear_location_shuffle"].removals.Any(x => x.Equals(edge))) { AdditionalRequirements.Add(new List<object> { "setting{GearShuffleMode, 0}" }); }
                 if (EdgeAlterations["star_hunt"].removals.Any(x => x.Equals(edge))) { AdditionalRequirements.Add(new List<object> { "setting{StarHunt, false}" }); }
                 ScanEdge(edge, AdditionalRequirements);
             }
