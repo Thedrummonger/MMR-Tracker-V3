@@ -304,29 +304,35 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
             };
             DictionaryFile.LogicEntryCollections.Add("MM_MASKS", MMMaskVar);
 
-            MMRData.JsonFormatLogicItem BothGameSouls = new() { Id = "BothGameSouls", RequiredItems = new List<string> { "setting{soulsEnemyOot}", "setting{soulsEnemyMm}" } };
-            MMRData.JsonFormatLogicItem BothGameSkeletonKey = new() { Id = "BothGameSkeletonKey", RequiredItems = new List<string> { "setting{skeletonKeyOot}", "setting{skeletonKeyMm}" } };
-            DictionaryFile.AdditionalLogic.Add(BothGameSouls);
-            DictionaryFile.AdditionalLogic.Add(BothGameSkeletonKey);
-
             Dictionary<string, string> SettingLogic = new()
             {
-                { "players", "mode, multi" },
-                { "distinctWorlds", "mode, multi" },
-                { "triforceGoal", "goal, triforce" },
-                { "triforcePieces", "goal, triforce" },
-                { "ganonBossKey", "goal, triforce, false" },
-                { "majoraChild", "goal, triforce, false" },
-                { "csmcHearts", "csmc, never, false" },
-                { "bottomlessWallets", "colossalWallets" },
-                { "sharedSoulsEnemy", BothGameSouls.Id },
-                { "sharedSkeletonKey", BothGameSkeletonKey.Id },
+                { "players", "setting{mode, multi}" },
+                { "distinctWorlds", "setting{mode, multi}" },
+                { "triforceGoal", "setting{goal, triforce}" },
+                { "triforcePieces", "setting{goal, triforce}" },
+                { "ganonBossKey", "setting{goal, triforce, false}" },
+                { "majoraChild", "setting{goal, triforce, false}" },
+                { "csmcHearts", "setting{csmc, never, false}" },
+                { "bottomlessWallets", "setting{colossalWallets}" },
+                { "sharedSoulsEnemy", "setting{soulsEnemyOot} && setting{soulsEnemyMm}" },
+                { "sharedSkeletonKey", "setting{skeletonKeyOot} && setting{skeletonKeyMm}" },
                 { "sharedSongSun", "sunSongMm" }
             };
 
             foreach(var i in SettingLogic)
             {
-                //Todo Reimpliment
+                if (DictionaryFile.ChoiceOptions.ContainsKey(i.Key))
+                {
+                    DictionaryFile.ChoiceOptions[i.Key].Conditionals = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, i.Value, i.Key);
+                }
+                else if (DictionaryFile.ToggleOptions.ContainsKey(i.Key))
+                {
+                    DictionaryFile.ToggleOptions[i.Key].Conditionals = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, i.Value, i.Key);
+                }
+                else if (DictionaryFile.IntOptions.ContainsKey(i.Key))
+                {
+                    DictionaryFile.IntOptions[i.Key].Conditionals = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, i.Value, i.Key);
+                }
             }
 
         }

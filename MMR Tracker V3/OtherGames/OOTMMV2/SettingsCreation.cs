@@ -16,7 +16,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
         public static void CreateSettings(LogicDictionaryData.LogicDictionary logicDictionaryData, OOTMMParserData ParserData)
         {
             List<OOTMMSetting> SettingsList = JsonConvert.DeserializeObject<List<OOTMMSetting>>(File.ReadAllText(ParserData.SettingsFile));
-            int Priority = 0;
+            int Priority = 1;
             foreach (var Setting in SettingsList)
             {
                 if (Setting.defaultvalue is Int64 IntValue)
@@ -72,14 +72,16 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                     Name = Utility.ConvertToCamelCase(setting.Replace("_", " ")),
                     SubCategory= "Master Quest Dungeons",
                     Value = false.ToString(),
+                    Priority= Priority
                 };
                 IntSettingDictEntry.CreateSimpleValues();
                 logicDictionaryData.ToggleOptions.Add(setting, IntSettingDictEntry);
+                Priority++;
             }
 
-            WorldEventRequirementOptions(logicDictionaryData);
+            WorldEventRequirementOptions(logicDictionaryData, Priority);
         }
-        private static void WorldEventRequirementOptions(LogicDictionaryData.LogicDictionary dictionaryFile)
+        private static void WorldEventRequirementOptions(LogicDictionaryData.LogicDictionary dictionaryFile, int Priority)
         {
             var MASKS_REGULAR = new string[] {
               "MM_MASK_CAPTAIN",
@@ -205,7 +207,9 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                         action = MiscData.MathOP.add,
                         Values = (namedata[1].StartsWith("fair") || namedata[1].StartsWith("skull") || namedata[1] == "triforce" || namedata[1].StartsWith("coins")) ? i.Value.ToList() : i.Value.Select(x => $"{x}, 1").ToList()
                     });
+                    Requirement.Priority = Priority;
                     dictionaryFile.ToggleOptions.Add(Requirement.ID, Requirement);
+                    Priority++;
                 }
                 OptionData.LogicEntryCollection ReqVar = new OptionData.LogicEntryCollection();
                 ReqVar.ID = $"{ID.ToLower()}_req";
@@ -218,7 +222,9 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                 req_count.ID = $"{ID.ToLower()}_count";
                 req_count.Value = DefaultCount;
                 req_count.Conditionals = Logic is null ? new List<List<string>>() : LogicStringConverter.ConvertLogicStringToConditional(GenData.OOTMMLogicStringParser, Logic, ID);
+                req_count.Priority = Priority;
                 dictionaryFile.IntOptions.Add(req_count.ID, req_count);
+                Priority++;
             }
 
         }

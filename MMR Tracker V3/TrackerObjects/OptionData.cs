@@ -19,7 +19,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string Value { get; set; }
             public string Description { get; set; }
             public string SubCategory { get; set; }
-            public int Priority { get; set; }
+            public int Priority { get; set; } = 0;
             public List<List<string>> Conditionals { get; set; } = new List<List<string>>();
             public Dictionary<string, OptionValue> ValueList { get; set; } = new Dictionary<string, OptionValue>();
             public OptionValue GetValue(string _Value = null)
