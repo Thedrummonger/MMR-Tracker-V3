@@ -154,6 +154,13 @@ namespace MMR_Tracker_V3.TrackerObjects
             set
         }
 
+        public enum JSONType
+        {
+            Newtonsoft,
+            UTF8,
+            DotNet
+        }
+
         [Serializable]
         public enum RandomizedState
         {

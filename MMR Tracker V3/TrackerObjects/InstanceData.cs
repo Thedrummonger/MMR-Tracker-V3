@@ -44,6 +44,16 @@ namespace MMR_Tracker_V3
             {
                 return Newtonsoft.Json.JsonConvert.SerializeObject(this, _NewtonsoftJsonSerializerOptions);
             }
+            public string ToJson(JSONType type)
+            {
+                return type switch
+                {
+                    JSONType.Newtonsoft => Newtonsoft.Json.JsonConvert.SerializeObject(this, _NewtonsoftJsonSerializerOptions),
+                    JSONType.UTF8 => Utf8Json.JsonSerializer.ToJsonString(this),
+                    JSONType.DotNet => System.Text.Json.JsonSerializer.Serialize(this),
+                    _ => throw new NotImplementedException(),
+                };
+            }
             private readonly static Newtonsoft.Json.JsonSerializerSettings _NewtonsoftJsonSerializerOptions = new Newtonsoft.Json.JsonSerializerSettings
             {
                 Formatting = Newtonsoft.Json.Formatting.Indented,

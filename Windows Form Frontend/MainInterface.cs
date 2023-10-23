@@ -114,14 +114,14 @@ namespace Windows_Form_Frontend
             Utility.TimeCodeExecution(TimeTotalItemSelect, "Saving Tracker State (UTF8)", 1);
             if (sender == undoToolStripMenuItem && InstanceContainer.UndoStringList.Any())
             {
-                string CurrentState = Utf8Json.JsonSerializer.ToJsonString(InstanceContainer.Instance);
+                string CurrentState = InstanceContainer.Instance.ToJson(MiscData.JSONType.UTF8);
                 InstanceContainer.Instance = MMR_Tracker_V3.InstanceData.TrackerInstance.FromJson(InstanceContainer.UndoStringList[^1]);
                 InstanceContainer.RedoStringList.Add(CurrentState);
                 InstanceContainer.UndoStringList.RemoveAt(InstanceContainer.UndoStringList.Count - 1);
             }
             else if (sender == redoToolStripMenuItem && InstanceContainer.RedoStringList.Any())
             {
-                string CurrentState = Utf8Json.JsonSerializer.ToJsonString(InstanceContainer.Instance);
+                string CurrentState = InstanceContainer.Instance.ToJson(MiscData.JSONType.UTF8);
                 InstanceContainer.Instance = MMR_Tracker_V3.InstanceData.TrackerInstance.FromJson(InstanceContainer.RedoStringList[^1]);
                 InstanceContainer.UndoStringList.Add(CurrentState);
                 InstanceContainer.RedoStringList.RemoveAt(InstanceContainer.RedoStringList.Count - 1);
@@ -197,7 +197,7 @@ namespace Windows_Form_Frontend
         private void logicOptionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InstanceContainer.logicCalculation.ResetAutoObtainedItems();
-            string CurrentState = Utf8Json.JsonSerializer.ToJsonString(InstanceContainer.Instance);
+            string CurrentState = InstanceContainer.Instance.ToJson(MiscData.JSONType.UTF8);
             RandomizedStateEditor editor = new RandomizedStateEditor(InstanceContainer.Instance);
             editor.ShowDialog();
             if (editor.ChangesMade) { SaveTrackerState(CurrentState); }
@@ -220,7 +220,7 @@ namespace Windows_Form_Frontend
                 openFileDialog.ShowDialog();
                 if (openFileDialog.FileName != "" && File.Exists(openFileDialog.FileName))
                 {
-                    string CurrentState = Utf8Json.JsonSerializer.ToJsonString(InstanceContainer.Instance);
+                    string CurrentState = InstanceContainer.Instance.ToJson(MiscData.JSONType.UTF8);
                     var ToUpdate = new List<ListBox> { LBCheckedLocations, LBValidEntrances, LBValidLocations };
                     foreach (var i in ToUpdate) { WinFormUtils.PrintMessageToListBox(i, "Importing Spoiler Log \n Please Wait..."); }
                     if (SpoilerLogTools.ImportSpoilerLog(File.ReadAllLines(openFileDialog.FileName), openFileDialog.FileName, InstanceContainer))
@@ -1016,7 +1016,7 @@ namespace Windows_Form_Frontend
                     return;
                 }
             }
-            string CurrentState = Utf8Json.JsonSerializer.ToJsonString(InstanceContainer.Instance);
+            string CurrentState = InstanceContainer.Instance.ToJson(MiscData.JSONType.UTF8);
 
             bool ChangesMade = TrackerDataHandeling.CheckSelectedItems(Items, checkState, InstanceContainer, HandleUnassignedChecks, HandleUnassignedVariables, EnforceMarkAction);
 
@@ -1057,7 +1057,7 @@ namespace Windows_Form_Frontend
 
         private void SaveTrackerState(string PreviousState = null)
         {
-            if (PreviousState == null) { UpdateUndoList(Utf8Json.JsonSerializer.ToJsonString(InstanceContainer.Instance)); }
+            if (PreviousState == null) { UpdateUndoList(InstanceContainer.Instance.ToJson(MiscData.JSONType.UTF8)); }
             else { UpdateUndoList(PreviousState); }
             InstanceContainer.UnsavedChanges = true;
         }
