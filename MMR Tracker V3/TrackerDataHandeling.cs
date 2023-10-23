@@ -252,7 +252,7 @@ namespace MMR_Tracker_V3
                 List<dynamic> ChoiceOptions = IC.Instance.ChoiceOptions.Values.Where(x => x.ValueList.Count > 1).Cast<dynamic>().ToList();
                 List<dynamic> ToggleOptions = IC.Instance.ToggleOptions.Values.Cast<dynamic>().ToList();
                 List<dynamic> IntOptions = IC.Instance.IntOptions.Values.Cast<dynamic>().ToList();
-                List<dynamic> All = ChoiceOptions.Concat(ToggleOptions).Concat(IntOptions).ToList();
+                List<dynamic> All = ChoiceOptions.Concat(ToggleOptions).Concat(IntOptions).OrderBy(x => x.Priority).ToList();
 
                 Dictionary<string, List<dynamic>> Categorized = new Dictionary<string, List<dynamic>>();
                 foreach (var item in All)
@@ -513,7 +513,7 @@ namespace MMR_Tracker_V3
                 List<dynamic> ChoiceOptions = IC.Instance.ChoiceOptions.Values.Where(x => x.ValueList.Count > 1).Cast<dynamic>().ToList();
                 List<dynamic> ToggleOptions = IC.Instance.ToggleOptions.Values.Cast<dynamic>().ToList();
                 List<dynamic> IntOptions = IC.Instance.IntOptions.Values.Cast<dynamic>().ToList();
-                List<dynamic> All = ChoiceOptions.Concat(ToggleOptions).Concat(IntOptions).ToList();
+                List<dynamic> All = ChoiceOptions.Concat(ToggleOptions).Concat(IntOptions).OrderBy(x => x.Priority).ToList();
 
                 Dictionary<string, List<dynamic>> Categorized = new Dictionary<string, List<dynamic>>();
                 foreach (var item in All)
