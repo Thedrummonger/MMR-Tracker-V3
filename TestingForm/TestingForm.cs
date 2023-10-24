@@ -5,14 +5,21 @@ using System.Diagnostics;
 using Windows_Form_Frontend;
 using System.Windows.Forms;
 using MMR_Tracker_V3.TrackerObjectExtentions;
+using ConsoleDebugger;
+using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
+using System.Reflection.Metadata;
 
 namespace TestingForm
 {
     public partial class TestingForm : Form
     {
         public static MainInterface TestingInterface;
+        public static TestingForm CurrentForm;
         public TestingForm()
         {
+            CurrentForm = this;
+            CLITracker.HideConsole = HideCLI;
             InitializeComponent();
         }
 
@@ -20,17 +27,36 @@ namespace TestingForm
         {
             if (listBox1.SelectedItem is MiscData.StandardListBoxItem LBI) { LBI.tagAction(); }
         }
+        [DllImport("kernel32.dll")]
+        static extern IntPtr GetConsoleWindow();
+
+        [DllImport("user32.dll")]
+        static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+
+        const int SW_HIDE = 0;
+        const int SW_SHOW = 5;
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool AllocConsole();
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool FreeConsole();
 
         private void MainInterface_Load(object sender, EventArgs e)
         {
             AddDebugActions(listBox1);
+            AllocConsole();
+            ShowWindow(GetConsoleWindow(), SW_HIDE);
         }
 
         public static void AddDebugActions(ListBox codeTestingToolStripMenuItem)
         {
             Dictionary<string, Action> DevFunctions = new Dictionary<string, Action>()
             {
-                { "Open WinForm Debug", OpenWinForm },
+                { "Open WinForm Tracker Debug", OpenWinForm },
+                { "OPen CLI Tracker Debug", OpenCLITracker },
                 { "Save Tracker State", SaveTrackerState },
                 { "Load Tracker State", LoadTrackerState },
                 { "Print Selected Object to Console", PrintDevData },
@@ -44,6 +70,19 @@ namespace TestingForm
                 var MenuItem = new MiscData.StandardListBoxItem { Display = Function.Key, tagAction = Function.Value };
                 codeTestingToolStripMenuItem.Items.Add(MenuItem);
             }
+        }
+
+        private static void OpenCLITracker()
+        {
+            AllocConsole();
+            ShowWindow(GetConsoleWindow(), SW_SHOW);
+            CLITracker.Main(Environment.GetCommandLineArgs());
+        }
+
+        private static void HideCLI()
+        {
+            Debug.WriteLine("Hiding CLI");
+            ShowWindow(GetConsoleWindow(), SW_HIDE);
         }
 
         public static void PrintDevData()

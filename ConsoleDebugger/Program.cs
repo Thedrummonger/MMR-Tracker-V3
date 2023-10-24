@@ -8,26 +8,29 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Timers;
-using static MMR_Tracker_V3.TrackerObjects.LogicDictionaryData;
+using System.Runtime.InteropServices;
 
 namespace ConsoleDebugger
 {
-    class Program
+    public class CLITracker
     {
+        public static Action HideConsole;
+
         static string[] CommandList = new string[]
         {
             "1. Convert Old Dict",
             "2. New",
             "3. Preset",
-            "4. Load"
+            "4. Load",
+            "5. Exit"
         };
         static MiscData.InstanceContainer newTrackerInstance = new MiscData.InstanceContainer() { Instance = new InstanceData.TrackerInstance() };
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             while (true)
             {
+                bool Exit = false;
                 Console.WriteLine("Commands\n" + string.Join("\n", CommandList));
                 var key = Console.ReadKey();
                 Console.WriteLine();
@@ -49,14 +52,18 @@ namespace ConsoleDebugger
                     case ConsoleKey.NumPad4:
                         LoadSave();
                         break;
+                    case ConsoleKey.D5:
+                    case ConsoleKey.NumPad5:
+                        Exit = true;
+                        break;
+                }
+                if (Exit) 
+                { 
+                    break; 
                 }
             }
+            if (HideConsole is not null) { HideConsole(); }
         }
-
-        private static void Debugging()
-        {
-    
-		}
 
         private static void LoadPreset()
         {
