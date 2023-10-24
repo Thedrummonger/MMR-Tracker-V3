@@ -8,20 +8,12 @@
 //
 //You can define a custom dictionary for your logic by adding the "Dictionary" line and the link to the dictionary file
 //Example:
-//Name: Skyward Sword
-//Dictionary: https://raw.githubusercontent.com/Thedrummonger/MMR-Tracker/master/Recources/Dictionaries/Other%20Games/SSR%20V1%20json%20Logic%20Dictionary.json
-//Address: https://raw.githubusercontent.com/Thedrummonger/MMR-Tracker/master/Recources/Other%20Files/Other%20Game%20Premade%20Logic/Skyward%20Sword%20Rando%20Casual%20(Beta).txt
+//Name: TPR Casual
+//Dictionary: https://raw.githubusercontent.com/Thedrummonger/MMR-Tracker-V3/master/MMR%20Tracker%20V3/Recources/Dictionaries/TPR%20V1.json
+//Address: https://raw.githubusercontent.com/Thedrummonger/MMR-Tracker-V3/master/MMR%20Tracker%20V3/Recources/Presets/DEV-TPR%20Casual.json
 
 Name: MMR Casual
 Address: https://raw.githubusercontent.com/ZoeyZolotova/mm-rando/dev/MMR.Randomizer/Resources/REQ_CASUAL.txt
 
 Name: MMR Glitched
 Address: https://raw.githubusercontent.com/ZoeyZolotova/mm-rando/dev/MMR.Randomizer/Resources/REQ_GLITCH.txt
-
-Name: OOTMM Casual (BETA)
-Dictionary: https://raw.githubusercontent.com/Thedrummonger/MMR-Tracker-V3/master/MMR%20Tracker%20V3/Recources/Dictionaries/OOTMM%20V1.json
-Address: https://raw.githubusercontent.com/Thedrummonger/MMR-Tracker-V3/master/MMR%20Tracker%20V3/Recources/Presets/DEV-OOTMM%20Casual.json
-
-Name: TPR Casual (BETA)
-Dictionary: https://raw.githubusercontent.com/Thedrummonger/MMR-Tracker-V3/master/MMR%20Tracker%20V3/Recources/Dictionaries/TPR%20V1.json
-Address: https://raw.githubusercontent.com/Thedrummonger/MMR-Tracker-V3/master/MMR%20Tracker%20V3/Recources/Presets/DEV-TPR%20Casual.json

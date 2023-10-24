@@ -23,7 +23,6 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
         {
             //CodePaths
 
-            OTTMMPaths.MMRTrackerCodePath = Path.Combine(TestingReferences.GetTrackerLibraryDataPath());
             OTTMMPaths.OOTMMV2CodeFolder = Path.Combine(TestingReferences.GetOtherGameDataPath("OOTMMV2"));
             OTTMMPaths.SettingsFile = Path.Combine(OTTMMPaths.OOTMMV2CodeFolder, "settings.json");
             OTTMMPaths.TricksFile = Path.Combine(OTTMMPaths.OOTMMV2CodeFolder, "tricks.json");

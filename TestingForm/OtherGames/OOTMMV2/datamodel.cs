@@ -80,7 +80,6 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
             public List<string> MMSOTSafeLogicEntries { get; set; } = new List<string>();
 
             //CodePaths
-            public string MMRTrackerCodePath { get; set; }
             public string OOTMMV2CodeFolder { get; set; }
             public string SettingsFile { get; set; }
             public string TricksFile { get; set; }

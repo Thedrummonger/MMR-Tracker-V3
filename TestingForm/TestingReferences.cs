@@ -22,17 +22,13 @@ namespace TestingForm
             if (!DevINI.ContainsKey("TrackerCodePath")) { return null; }
             return DevINI["TrackerCodePath"];
         }
-        public static string GetTrackerLibraryDataPath()
-        {
-            return Path.Join(GetDevCodePath(), "MMR Tracker V3");
-        }
         public static string GetDictionaryPath()
         {
-            return Path.Join(GetTrackerLibraryDataPath(), "Recources", "Dictionaries");
+            return Path.Join(GetTestingFormDataPath(), "Recources", "Dictionaries");
         }
         public static string GetLogicPresetsPath()
         {
-            return Path.Join(GetTrackerLibraryDataPath(), "Recources", "Presets");
+            return Path.Join(GetTestingFormDataPath(), "Recources", "Presets");
         }
         public static string GetTestingFormDataPath()
         {
