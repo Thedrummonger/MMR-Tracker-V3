@@ -26,8 +26,6 @@ namespace ConsoleDebugger
 
         static void Main(string[] args)
         {
-            Testing.doDevCheck();
-            if (Testing.Debugging()) { CommandList = CommandList.Append("5. Debugging").ToArray(); }
             while (true)
             {
                 Console.WriteLine("Commands\n" + string.Join("\n", CommandList));
@@ -50,10 +48,6 @@ namespace ConsoleDebugger
                     case ConsoleKey.D4:
                     case ConsoleKey.NumPad4:
                         LoadSave();
-                        break;
-                    case ConsoleKey.D5:
-                    case ConsoleKey.NumPad5:
-                        if (Testing.Debugging()) { Debugging(); }
                         break;
                 }
             }
@@ -142,7 +136,7 @@ namespace ConsoleDebugger
             while (true)
             {
                 newTrackerInstance.Instance.EntrancePool.IsEntranceRando = newTrackerInstance.Instance.EntrancePool.CheckForRandomEntrances(newTrackerInstance.Instance);
-                bool er = newTrackerInstance.Instance.EntrancePool.IsEntranceRando;
+                bool er = newTrackerInstance.Instance.EntrancePool.IsEntranceRando && newTrackerInstance.Instance.StaticOptions.OptionFile.EntranceRandoFeatures;
                 Console.Title = newTrackerInstance.Instance.LogicFile.GameCode + " Tracker" + (newTrackerInstance.UnsavedChanges ? "*" : "");
                 Console.Clear();
                 newTrackerInstance.logicCalculation.CalculateLogic();
