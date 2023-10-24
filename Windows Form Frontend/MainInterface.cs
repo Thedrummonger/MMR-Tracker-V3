@@ -25,30 +25,30 @@ namespace Windows_Form_Frontend
         private bool FormIsMaximized = false;
         Thread MainInterfaceItemDisplayThread = null;
         ItemDisplay MainInterfaceItemDisplayForm = null;
-        public event Action WinFormClosing;
         private Dictionary<string, ToolStripMenuItem> MenuItemParentTree = new Dictionary<string, ToolStripMenuItem>();
         public MainInterface(bool _SubForm = false)
         {
             IsSubForm = _SubForm;
             InitializeComponent();
+
+            //Since only one instance of the main interface should ever be open, We can store that instance in a variable to be called from static code.
+            if (CurrentProgram != null) { Debug.WriteLine("Main interface was loaded when it already exits"); Close(); return; }
+            CurrentProgram = this;
+
+            //Ensure the current directory is always the base directory in case the application is opened from a MMRTSave file elsewhere on the system
+            System.IO.Directory.SetCurrentDirectory(AppDomain.CurrentDomain.BaseDirectory);
+            Debug.WriteLine($"Setting Current Diretory to: {AppDomain.CurrentDomain.BaseDirectory}");
+
+            if (!Directory.Exists(References.Globalpaths.BaseAppdataPath))
+            {
+                Directory.CreateDirectory(References.Globalpaths.BaseAppdataPath);
+            }
         }
 
         //MainForm Actions
 
         public void MainInterface_Load(object sender, EventArgs e)
         {
-            //Since only one instance of the main interface should ever be open, We can store that instance in a variable to be called from static code.
-            if (CurrentProgram != null) { Close(); return; }
-            CurrentProgram = this;
-            this.Text = "MMR Tracker";
-
-            //Ensure the current directory is always the base directory in case the application is opened from a MMRTSave file elsewhere on the system
-            System.IO.Directory.SetCurrentDirectory(AppDomain.CurrentDomain.BaseDirectory);
-
-            if (!Directory.Exists(References.Globalpaths.BaseAppdataPath))
-            {
-                Directory.CreateDirectory(References.Globalpaths.BaseAppdataPath);
-            }
             DoUpdateCheck();
             UpdateUI();
             WinFormInstanceCreation.ApplyUserPretLogic();
@@ -105,9 +105,6 @@ namespace Windows_Form_Frontend
             {
                 MainInterfaceItemDisplayForm.Invoke(new MethodInvoker(delegate { MainInterfaceItemDisplayForm.CloseThread(); }));
             }
-            CurrentProgram = null;
-            InstanceContainer = new MiscData.InstanceContainer();
-            WinFormClosing();
         }
 
         //Menu Strip

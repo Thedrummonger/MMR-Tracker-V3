@@ -24,15 +24,6 @@ namespace TestingForm
             File.WriteAllText(CreateTestingFile(Name, Extention), JsonConvert.SerializeObject(Data, MMR_Tracker_V3.Utility._NewtonsoftJsonSerializerOptions));
         }
 
-        public static void ActivateWinFormInterface()
-        {
-            if (!TestingForm.WinformLoaded())
-            {
-                TestingForm.TestingInterface = new MainInterface(true);
-                TestingForm.TestingInterface.WinFormClosing += TestingForm.MainInterface_FormClosing;
-            }
-            TestingForm.TestingInterface.Show();
-        }
         public static void TestLogicForInvalidItems(MiscData.InstanceContainer Container)
         {
             foreach (var i in Container.Instance.LogicFile.Logic)
