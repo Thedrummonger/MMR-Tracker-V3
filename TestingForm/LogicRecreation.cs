@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace MMR_Tracker_V3
 {
-    public class LogicRecreation
+    public static class LogicRecreation
     {
-        public SaveState CurrentSaveState { get; set; }
+        public static SaveState CurrentSaveState { get; set; }
         public class SaveState
         {
             public Dictionary<string, RecData> Locations { get; set; } = new Dictionary<string, RecData>();
@@ -27,7 +27,7 @@ namespace MMR_Tracker_V3
             public int Price { get; set; }
         }
 
-        public void SaveTrackerState(MiscData.InstanceContainer InstanceContainer)
+        public static void SaveTrackerState(MiscData.InstanceContainer InstanceContainer)
         {
             SaveState state = new SaveState();
             state.SpoilerData = InstanceContainer.Instance.SpoilerLog is null ? null : GenericCopier<InstanceData.SpoilerLogFileData>.DeepCopy(InstanceContainer.Instance.SpoilerLog);
@@ -62,7 +62,7 @@ namespace MMR_Tracker_V3
             }
             CurrentSaveState = state;
         }
-        public void LoadTrackerState(MiscData.InstanceContainer InstanceContainer)
+        public static void LoadTrackerState(MiscData.InstanceContainer InstanceContainer)
         {
             if (CurrentSaveState is null) { return; }
             if (CurrentSaveState.SpoilerData is not null && InstanceContainer.Instance.SpoilerLog is null)

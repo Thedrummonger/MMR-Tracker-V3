@@ -97,8 +97,8 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
             string FinalDictFile = Path.Combine(TestingReferences.GetDictionaryPath(), @"OOTMM V1.json");
             string FinalLogicFile = Path.Combine(TestingReferences.GetLogicPresetsPath(), @"DEV-OOTMM Casual.json");
 
-            File.WriteAllText(FinalLogicFile, JsonConvert.SerializeObject(LogicFile, Testing._NewtonsoftJsonSerializerOptions));
-            File.WriteAllText(FinalDictFile, JsonConvert.SerializeObject(DictionaryFile, Testing._NewtonsoftJsonSerializerOptions));
+            File.WriteAllText(FinalLogicFile, JsonConvert.SerializeObject(LogicFile, Utility._NewtonsoftJsonSerializerOptions));
+            File.WriteAllText(FinalDictFile, JsonConvert.SerializeObject(DictionaryFile, Utility._NewtonsoftJsonSerializerOptions));
 
             OutLogic = LogicFile;
             outDict = DictionaryFile;

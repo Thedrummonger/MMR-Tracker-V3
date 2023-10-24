@@ -105,8 +105,8 @@ namespace MMR_Tracker_V3.OtherGames.TPRando
 
             string FinalDictFile = Path.Combine(TestingReferences.GetDictionaryPath(), @"TPR V1.json");
             string FinalLogicFile = Path.Combine(TestingReferences.GetLogicPresetsPath(), @"DEV-TPR Casual.json");
-            File.WriteAllText(FinalLogicFile, JsonConvert.SerializeObject(TRPLogic, Testing._NewtonsoftJsonSerializerOptions));
-            File.WriteAllText(FinalDictFile, JsonConvert.SerializeObject(TRPDictionary, Testing._NewtonsoftJsonSerializerOptions));
+            File.WriteAllText(FinalLogicFile, JsonConvert.SerializeObject(TRPLogic, Utility._NewtonsoftJsonSerializerOptions));
+            File.WriteAllText(FinalDictFile, JsonConvert.SerializeObject(TRPDictionary, Utility._NewtonsoftJsonSerializerOptions));
         }
 
         private static void CreateHowlingStoneChecks(MMRData.LogicFile tRPLogic, LogicDictionaryData.LogicDictionary tRPDictionary)

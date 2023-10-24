@@ -60,6 +60,19 @@ namespace MMR_Tracker_V3
             return source.OrderBy(x => Guid.NewGuid());
         }
 
+        public static void PrintObjectToConsole(object o)
+        {
+            string JsonString = JsonConvert.SerializeObject(o, _NewtonsoftJsonSerializerOptions);
+            Debug.WriteLine(JsonString);
+        }
+
+        public readonly static Newtonsoft.Json.JsonSerializerSettings _NewtonsoftJsonSerializerOptions = new Newtonsoft.Json.JsonSerializerSettings
+        {
+            Formatting = Newtonsoft.Json.Formatting.Indented,
+            NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore,
+            Converters = { new Newtonsoft.Json.Converters.StringEnumConverter() }
+        };
+
         public static bool IsLiteralID(this string ID, out string CleanedID)
         {
             bool Literal = false;
@@ -335,7 +348,7 @@ namespace MMR_Tracker_V3
         {
             var deserializer = new YamlDotNet.Serialization.DeserializerBuilder().Build();
             object yamlIsDumb = deserializer.Deserialize<object>(YAML);
-            if (Format) { return JsonConvert.SerializeObject(yamlIsDumb, Testing._NewtonsoftJsonSerializerOptions); }
+            if (Format) { return JsonConvert.SerializeObject(yamlIsDumb, _NewtonsoftJsonSerializerOptions); }
             return JsonConvert.SerializeObject(yamlIsDumb);
         }
         public static string ConvertObjectToYamlString(object OBJ)
@@ -368,7 +381,7 @@ namespace MMR_Tracker_V3
                 listObjResult.Add(objResult);
             }
 
-            return JsonConvert.SerializeObject(listObjResult, Testing._NewtonsoftJsonSerializerOptions);
+            return JsonConvert.SerializeObject(listObjResult, _NewtonsoftJsonSerializerOptions);
         }
 
         public static string ConvertToCamelCase(string Input)

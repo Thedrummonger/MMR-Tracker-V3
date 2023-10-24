@@ -62,16 +62,9 @@ namespace Windows_Form_Frontend
             this.logicOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miscOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logicEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importSpoilerLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.spoilerLogToolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PathFinderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.visualItemTrackerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.devToolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewAsUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.CodeTestingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ExportCheckedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ImportCheckedToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -353,7 +346,6 @@ namespace Windows_Form_Frontend
             this.fileToolMenuStrip,
             this.OptionstoolStripMenuItem,
             this.toolsToolStripMenuItem,
-            this.devToolsToolStripMenuItem,
             this.undoToolStripMenuItem,
             this.redoToolStripMenuItem,
             this.refreshToolStripMenuItem});
@@ -414,108 +406,53 @@ namespace Windows_Form_Frontend
             // RandomizerOptionsToolStripMenuItem1
             // 
             this.RandomizerOptionsToolStripMenuItem1.Name = "RandomizerOptionsToolStripMenuItem1";
-            this.RandomizerOptionsToolStripMenuItem1.Size = new System.Drawing.Size(170, 22);
+            this.RandomizerOptionsToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.RandomizerOptionsToolStripMenuItem1.Text = "Logic Options";
             // 
             // logicOptionsToolStripMenuItem
             // 
             this.logicOptionsToolStripMenuItem.Name = "logicOptionsToolStripMenuItem";
-            this.logicOptionsToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.logicOptionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logicOptionsToolStripMenuItem.Text = "Item Pool Options";
             this.logicOptionsToolStripMenuItem.Click += new System.EventHandler(this.logicOptionsToolStripMenuItem_Click);
             // 
             // miscOptionsToolStripMenuItem
             // 
             this.miscOptionsToolStripMenuItem.Name = "miscOptionsToolStripMenuItem";
-            this.miscOptionsToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.miscOptionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.miscOptionsToolStripMenuItem.Text = "Tracker Options";
             this.miscOptionsToolStripMenuItem.Click += new System.EventHandler(this.miscOptionsToolStripMenuItem_Click);
             // 
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.logicEditorToolStripMenuItem,
             this.importSpoilerLogToolStripMenuItem,
             this.spoilerLogToolsToolStripMenuItem,
-            this.PathFinderToolStripMenuItem,
-            this.visualItemTrackerToolStripMenuItem});
+            this.PathFinderToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
             // 
-            // logicEditorToolStripMenuItem
-            // 
-            this.logicEditorToolStripMenuItem.Name = "logicEditorToolStripMenuItem";
-            this.logicEditorToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.logicEditorToolStripMenuItem.Text = "Logic Editor";
-            // 
             // importSpoilerLogToolStripMenuItem
             // 
             this.importSpoilerLogToolStripMenuItem.Name = "importSpoilerLogToolStripMenuItem";
-            this.importSpoilerLogToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.importSpoilerLogToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.importSpoilerLogToolStripMenuItem.Text = "Import Spoiler Log";
             this.importSpoilerLogToolStripMenuItem.Click += new System.EventHandler(this.importSpoilerLogToolStripMenuItem_Click);
             // 
             // spoilerLogToolsToolStripMenuItem
             // 
             this.spoilerLogToolsToolStripMenuItem.Name = "spoilerLogToolsToolStripMenuItem";
-            this.spoilerLogToolsToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.spoilerLogToolsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.spoilerLogToolsToolStripMenuItem.Text = "Spoiler Log Tools";
             this.spoilerLogToolsToolStripMenuItem.Click += new System.EventHandler(this.spoilerLogToolsToolStripMenuItem_Click);
             // 
             // PathFinderToolStripMenuItem
             // 
             this.PathFinderToolStripMenuItem.Name = "PathFinderToolStripMenuItem";
-            this.PathFinderToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.PathFinderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.PathFinderToolStripMenuItem.Text = "Path Finder";
             this.PathFinderToolStripMenuItem.Click += new System.EventHandler(this.PathFinderToolStripMenuItem_Click);
-            // 
-            // visualItemTrackerToolStripMenuItem
-            // 
-            this.visualItemTrackerToolStripMenuItem.Name = "visualItemTrackerToolStripMenuItem";
-            this.visualItemTrackerToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.visualItemTrackerToolStripMenuItem.Text = "Visual Item Tracker";
-            this.visualItemTrackerToolStripMenuItem.Click += new System.EventHandler(this.visualItemTrackerToolStripMenuItem_Click);
-            // 
-            // devToolsToolStripMenuItem
-            // 
-            this.devToolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.viewAsUserToolStripMenuItem,
-            this.CodeTestingToolStripMenuItem,
-            this.ExportCheckedToolStripMenuItem,
-            this.ImportCheckedToolStripMenuItem1});
-            this.devToolsToolStripMenuItem.Name = "devToolsToolStripMenuItem";
-            this.devToolsToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.devToolsToolStripMenuItem.Text = "DevTools";
-            this.devToolsToolStripMenuItem.Click += new System.EventHandler(this.devToolsToolStripMenuItem_Click);
-            // 
-            // viewAsUserToolStripMenuItem
-            // 
-            this.viewAsUserToolStripMenuItem.Name = "viewAsUserToolStripMenuItem";
-            this.viewAsUserToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
-            this.viewAsUserToolStripMenuItem.Text = "View as User";
-            this.viewAsUserToolStripMenuItem.Click += new System.EventHandler(this.viewAsUserToolStripMenuItem_Click);
-            // 
-            // CodeTestingToolStripMenuItem
-            // 
-            this.CodeTestingToolStripMenuItem.Name = "CodeTestingToolStripMenuItem";
-            this.CodeTestingToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
-            this.CodeTestingToolStripMenuItem.Text = "Code Testing";
-            this.CodeTestingToolStripMenuItem.Click += new System.EventHandler(this.CodeTestingToolStripMenuItem_Click);
-            // 
-            // ExportCheckedToolStripMenuItem
-            // 
-            this.ExportCheckedToolStripMenuItem.Name = "ExportCheckedToolStripMenuItem";
-            this.ExportCheckedToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
-            this.ExportCheckedToolStripMenuItem.Text = "Export Checked";
-            this.ExportCheckedToolStripMenuItem.Click += new System.EventHandler(this.ExportCheckedToolStripMenuItem_Click);
-            // 
-            // ImportCheckedToolStripMenuItem1
-            // 
-            this.ImportCheckedToolStripMenuItem1.Name = "ImportCheckedToolStripMenuItem1";
-            this.ImportCheckedToolStripMenuItem1.Size = new System.Drawing.Size(159, 22);
-            this.ImportCheckedToolStripMenuItem1.Text = "Import Checked";
-            this.ImportCheckedToolStripMenuItem1.Click += new System.EventHandler(this.ImportCheckedToolStripMenuItem1_Click);
             // 
             // undoToolStripMenuItem
             // 
@@ -621,22 +558,15 @@ namespace Windows_Form_Frontend
         private System.Windows.Forms.ToolStripMenuItem logicOptionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem miscOptionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem logicEditorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem importSpoilerLogToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem spoilerLogToolsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem devToolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem undoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem redoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewAsUserToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem CodeTestingToolStripMenuItem;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ToolStripMenuItem PathFinderToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ExportCheckedToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ImportCheckedToolStripMenuItem1;
         public System.Windows.Forms.ToolStripMenuItem NewToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem SaveAsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem visualItemTrackerToolStripMenuItem;
     }
 }
 

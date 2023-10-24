@@ -20,7 +20,6 @@ namespace Windows_Form_Frontend
     {
         public static MiscData.InstanceContainer InstanceContainer = new MiscData.InstanceContainer();
         public static MainInterface CurrentProgram;
-        public static bool IsSubForm = false;
         Pathfinder MainInterfacepathfinder = new Pathfinder();
         private bool FormIsMaximized = false;
         Thread MainInterfaceItemDisplayThread = null;
@@ -28,7 +27,7 @@ namespace Windows_Form_Frontend
         private Dictionary<string, ToolStripMenuItem> MenuItemParentTree = new Dictionary<string, ToolStripMenuItem>();
         public MainInterface(bool _SubForm = false)
         {
-            IsSubForm = _SubForm;
+            Debugging.DebugMode = _SubForm;
             InitializeComponent();
         }
 
@@ -49,7 +48,6 @@ namespace Windows_Form_Frontend
                 Directory.CreateDirectory(References.Globalpaths.BaseAppdataPath);
             }
             DoUpdateCheck();
-            Testing.doDevCheck(Modifier: ModifierKeys == Keys.Control);
             UpdateUI();
             WinFormInstanceCreation.ApplyUserPretLogic();
         }
@@ -71,7 +69,7 @@ namespace Windows_Form_Frontend
                     }
                     options.CheckForUpdate = false;
                     References.TrackerVersionStatus.DoUpdateCheck = false;
-                    try { File.WriteAllText(References.Globalpaths.OptionFile, JsonConvert.SerializeObject(options, Testing._NewtonsoftJsonSerializerOptions)); }
+                    try { File.WriteAllText(References.Globalpaths.OptionFile, JsonConvert.SerializeObject(options, Utility._NewtonsoftJsonSerializerOptions)); }
                     catch (Exception ex) { Debug.WriteLine($"could not write to options.txt {ex}"); }
                 }
             }
@@ -397,7 +395,6 @@ namespace Windows_Form_Frontend
             AlignUIElements();
             FormatMenuItems();
             SetTrackerTitle();
-            DebugModeChanges();
 
             if (InstanceContainer is null || InstanceContainer.Instance is null) { return; }
 
@@ -421,17 +418,6 @@ namespace Windows_Form_Frontend
             PrintToListBox();
             SendDataToItemDisplay();
             this.Refresh();
-        }
-
-        private MiscData.DebugMode CurrentDebugMode = MiscData.DebugMode.Off;
-        public void DebugModeChanges()
-        {
-            if (CurrentDebugMode != Testing.DebugMode)
-            {
-                Debug.WriteLine(Testing.DebugMode);
-                CurrentDebugMode = Testing.DebugMode;
-                WinFormInstanceCreation.ApplyUserPretLogic();
-            }
         }
 
         private void AlignUIElements()
@@ -634,14 +620,6 @@ namespace Windows_Form_Frontend
             spoilerLogToolsToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
             importSpoilerLogToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
             PathFinderToolStripMenuItem.Visible = (InstanceContainer.Instance != null && InstanceContainer.Instance.EntrancePool.IsEntranceRando);
-
-            visualItemTrackerToolStripMenuItem.Visible = Testing.Debugging();
-            logicEditorToolStripMenuItem.Visible = Testing.Debugging();
-
-            //Manage Dev Menus
-            devToolsToolStripMenuItem.Visible = Testing.DebugMode != MiscData.DebugMode.Off;
-            devToolsToolStripMenuItem.Text = (Testing.DebugMode == MiscData.DebugMode.UserView) ? "Run as Dev" : "Dev Options";
-            foreach (ToolStripDropDownItem i in devToolsToolStripMenuItem.DropDownItems) { i.Visible = Testing.Debugging(); }
 
             if (InstanceContainer.Instance == null) { return; }
 
@@ -910,7 +888,7 @@ namespace Windows_Form_Frontend
             }
 
             //Debug Tools
-            if (Testing.Debugging())
+            if (Debugging.DebugMode)
             {
                 //DevData
                 string RandomizedItem = null;
@@ -918,11 +896,11 @@ namespace Windows_Form_Frontend
                 ShowDevData.Click += (sender, e) =>
                 {
                     Debug.WriteLine($"Data for {listBox.SelectedItem}=========================================================");
-                    Debug.WriteLine(JsonConvert.SerializeObject(listBox.SelectedItem, Testing._NewtonsoftJsonSerializerOptions));
+                    Debug.WriteLine(JsonConvert.SerializeObject(listBox.SelectedItem, Utility._NewtonsoftJsonSerializerOptions));
                     if (listBox.SelectedItem is LocationData.LocationObject DebugLocObj)
                     {
                         Debug.WriteLine($"Dictionary Entry");
-                        Debug.WriteLine(JsonConvert.SerializeObject(DebugLocObj.GetDictEntry(InstanceContainer.Instance), Testing._NewtonsoftJsonSerializerOptions));
+                        Debug.WriteLine(JsonConvert.SerializeObject(DebugLocObj.GetDictEntry(InstanceContainer.Instance), Utility._NewtonsoftJsonSerializerOptions));
                         RandomizedItem = DebugLocObj.Randomizeditem.Item;
                         
                     }
@@ -930,9 +908,9 @@ namespace Windows_Form_Frontend
                     {
                         var ProxyRef = InstanceContainer.Instance.GetLocationByID(DebugProxyObj.ReferenceID);
                         Debug.WriteLine($"Proxied Entry");
-                        Debug.WriteLine(JsonConvert.SerializeObject(ProxyRef, Testing._NewtonsoftJsonSerializerOptions));
+                        Debug.WriteLine(JsonConvert.SerializeObject(ProxyRef, Utility._NewtonsoftJsonSerializerOptions));
                         Debug.WriteLine($"Dictionary Entry");
-                        Debug.WriteLine(JsonConvert.SerializeObject(ProxyRef?.GetDictEntry(InstanceContainer.Instance), Testing._NewtonsoftJsonSerializerOptions));
+                        Debug.WriteLine(JsonConvert.SerializeObject(ProxyRef?.GetDictEntry(InstanceContainer.Instance), Utility._NewtonsoftJsonSerializerOptions));
                         RandomizedItem = ProxyRef.Randomizeditem.Item;
                     }
                     if (RandomizedItem !=null)
@@ -941,9 +919,9 @@ namespace Windows_Form_Frontend
                         if (Item is not null)
                         {
                             Debug.WriteLine($"Randomized Item");
-                            Debug.WriteLine(JsonConvert.SerializeObject(Item, Testing._NewtonsoftJsonSerializerOptions));
+                            Debug.WriteLine(JsonConvert.SerializeObject(Item, Utility._NewtonsoftJsonSerializerOptions));
                             Debug.WriteLine($"Randomized Item Dictionary Entry");
-                            Debug.WriteLine(JsonConvert.SerializeObject(Item?.GetDictEntry(InstanceContainer.Instance), Testing._NewtonsoftJsonSerializerOptions));
+                            Debug.WriteLine(JsonConvert.SerializeObject(Item?.GetDictEntry(InstanceContainer.Instance), Utility._NewtonsoftJsonSerializerOptions));
                         }
                     }
                 };
@@ -1085,7 +1063,7 @@ namespace Windows_Form_Frontend
         {
             if (TXTLocSearch.Text == "toggledev")
             {
-                Testing.doDevCheck(Testing.DebugMode == MiscData.DebugMode.Off ? MiscData.DebugMode.Debugging : MiscData.DebugMode.Off);
+                Debugging.DebugMode = !Debugging.DebugMode;
                 TXTLocSearch.Text = "";
                 UpdateUI();
                 return;
@@ -1206,41 +1184,10 @@ namespace Windows_Form_Frontend
             CMBEnd.SelectedItem = Start;
         }
 
-        private void ExportCheckedToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            InstanceContainer.LogicRecreation.SaveTrackerState(InstanceContainer);
-            MessageBox.Show("Instance Saved");
-        }
-
-        private void ImportCheckedToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            InstanceContainer.LogicRecreation.LoadTrackerState(InstanceContainer);
-            UpdateUI();
-        }
-
         private void spoilerLogToolsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SpoilerLogLookUp spoilerLogLookUp = new SpoilerLogLookUp(InstanceContainer.Instance);
             spoilerLogLookUp.Show();
-        }
-
-        private void viewAsUserToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Testing.doDevCheck(MiscData.DebugMode.UserView);
-            UpdateUI();
-        }
-
-        private void devToolsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if(Testing.Debugging()) { return; }
-            Testing.doDevCheck(MiscData.DebugMode.Debugging);
-            UpdateUI();
-        }
-
-        private void entranceRandoFeaturesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            InstanceContainer.Instance.StaticOptions.OptionFile.EntranceRandoFeatures = !InstanceContainer.Instance.StaticOptions.OptionFile.EntranceRandoFeatures;
-            UpdateUI();
         }
 
         private void visualItemTrackerToolStripMenuItem_Click(object sender, EventArgs e)

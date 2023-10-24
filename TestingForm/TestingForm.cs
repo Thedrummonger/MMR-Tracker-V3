@@ -28,6 +28,9 @@ namespace TestingForm
         {
             Dictionary<string, Action> DevFunctions = new Dictionary<string, Action>()
             {
+                { "Open WinForm Debug", OpenWinForm },
+                { "Save Tracker State", SaveTrackerState },
+                { "Load Tracker State", LoadTrackerState },
                 { "Create TPR Data", TPRCreateData },
                 { "Create OOTMM Data", OOTMMCreateData },
                 { "Create PMR Data", PMRCreateData },
@@ -40,12 +43,36 @@ namespace TestingForm
             }
         }
 
+        public static void SaveTrackerState()
+        {
+            if (TestingInterface is null || MainInterface.CurrentProgram is null) { Debug.WriteLine($"WinForm Instance was not created"); return; }
+            if (MainInterface.InstanceContainer?.Instance is null) { Debug.WriteLine($"Tracker Instance Not Created"); return; }
+
+            LogicRecreation.SaveTrackerState(MainInterface.InstanceContainer);
+            Debug.WriteLine($"Tracker Instance Saved;");
+        }
+        public static void LoadTrackerState()
+        {
+            if (TestingInterface is null || MainInterface.CurrentProgram is null) { Debug.WriteLine($"WinForm Instance was not created"); return; }
+            if (MainInterface.InstanceContainer?.Instance is null) { Debug.WriteLine($"Tracker Instance Not Created"); return; }
+            if (LogicRecreation.CurrentSaveState is null) { Debug.WriteLine($"No tracker state was saved"); return; }
+
+            LogicRecreation.LoadTrackerState(MainInterface.InstanceContainer);
+            MainInterface.InstanceContainer.logicCalculation.CalculateLogic();
+            MainInterface.CurrentProgram.UpdateUI();
+        }
+
+        public static void OpenWinForm()
+        {
+            Utility.ActivateWinFormInterface();
+        }
+
         public static void PMRCreateData()
         {
             Utility.ActivateWinFormInterface();
             MMR_Tracker_V3.OtherGames.PaperMarioRando.ReadData.ReadEadges(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary);
             WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(Logic), JsonConvert.SerializeObject(dictionary));
-            Testing.TestLogicForInvalidItems(MainInterface.InstanceContainer);
+            Utility.TestLogicForInvalidItems(MainInterface.InstanceContainer);
         }
 
         public static void TPRCreateData()
@@ -53,13 +80,13 @@ namespace TestingForm
             Utility.ActivateWinFormInterface();
             MMR_Tracker_V3.OtherGames.TPRando.ReadAndParseData.CreateFiles(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary);
             WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(Logic), JsonConvert.SerializeObject(dictionary));
-            Testing.TestLogicForInvalidItems(MainInterface.InstanceContainer);
-            Testing.TestLocationsForInvalidVanillaItem(MainInterface.InstanceContainer);
+            Utility.TestLogicForInvalidItems(MainInterface.InstanceContainer);
+            Utility.TestLocationsForInvalidVanillaItem(MainInterface.InstanceContainer);
 
             //Testing.PrintObjectToConsole(MMR_Tracker_V3.OtherGames.TPRando.ParseMacrosFromCode.ReadMacrosFromCode());
 
             List<string> Areas = MainInterface.InstanceContainer.Instance.LocationPool.Values.Select(x => x.GetDictEntry(MainInterface.InstanceContainer.Instance).Area).Distinct().ToList();
-            Testing.PrintObjectToConsole(Areas);
+            MMR_Tracker_V3.Utility.PrintObjectToConsole(Areas);
 
             List<string> Bugs = MainInterface.InstanceContainer.Instance.ItemPool.Values.Where(x => x.Id.StartsWith("Female_") || x.Id.StartsWith("Male_")).Select(x => x.Id).ToList();
             string AnyBug = string.Join(" or ", Bugs);
@@ -80,8 +107,8 @@ namespace TestingForm
             }
             MainInterface.InstanceContainer.logicCalculation.CalculateLogic();
             MainInterface.CurrentProgram.UpdateUI();
-            Testing.TestLogicForInvalidItems(MainInterface.InstanceContainer);
-            Testing.TestLocationsForInvalidVanillaItem(MainInterface.InstanceContainer);
+            Utility.TestLogicForInvalidItems(MainInterface.InstanceContainer);
+            Utility.TestLocationsForInvalidVanillaItem(MainInterface.InstanceContainer);
         }
 
         public static void TestFuncParse()

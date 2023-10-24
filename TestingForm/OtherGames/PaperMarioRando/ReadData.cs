@@ -618,8 +618,8 @@ namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
             string FinalDictFile = Path.Combine(TestingReferences.GetLogicPresetsPath(), @"PMR V1.json");
             string FinalLogicFile = Path.Combine(TestingReferences.GetDictionaryPath(), @"DEV-PMR Casual.json");
 
-            File.WriteAllText(FinalDictFile, JsonConvert.SerializeObject(PMRDict, Testing._NewtonsoftJsonSerializerOptions));
-            File.WriteAllText(FinalLogicFile, JsonConvert.SerializeObject(PRMLogic, Testing._NewtonsoftJsonSerializerOptions));
+            File.WriteAllText(FinalDictFile, JsonConvert.SerializeObject(PMRDict, Utility._NewtonsoftJsonSerializerOptions));
+            File.WriteAllText(FinalLogicFile, JsonConvert.SerializeObject(PRMLogic, Utility._NewtonsoftJsonSerializerOptions));
 
             List<Tuple<string, int>> Reqs = new List<Tuple<string, int>>();
 

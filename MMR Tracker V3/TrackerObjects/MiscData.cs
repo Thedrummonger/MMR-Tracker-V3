@@ -64,7 +64,6 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
             public InstanceData.TrackerInstance Instance { get; set; }
             public LogicCalculation logicCalculation { get; set; }
-            public LogicRecreation LogicRecreation { get; set; } = new LogicRecreation();
             public List<string> UndoStringList { get; set; } = new List<string>();
             public List<string> RedoStringList { get; set; } = new List<string>();
             public string CurrentSavePath { get; set; } = "";
