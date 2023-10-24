@@ -48,15 +48,6 @@ namespace MMR_Tracker_V3
             return DebugMode == MiscData.DebugMode.Debugging;
         }
 
-        public static string CreateTestingFile(string Name, string Extention = "txt")
-        {
-            return Path.Combine(References.TestingPaths.GetDevTestingPath(), $"{Name}.{Extention}");
-        }
-        public static void CreateTestingFile(string Name, object Data, string Extention = "txt")
-        {
-            File.WriteAllText(CreateTestingFile(Name, Extention), JsonConvert.SerializeObject(Data, _NewtonsoftJsonSerializerOptions));
-        }
-
         public static void PrintObjectToConsole(object o)
         {
             string JsonString = JsonConvert.SerializeObject(o, _NewtonsoftJsonSerializerOptions);

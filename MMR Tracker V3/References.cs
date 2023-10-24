@@ -46,20 +46,6 @@ namespace MMR_Tracker_V3
                 Dictionary<string, string> DevFile = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(Globalpaths.DevFile));
                 return DevFile;
             }
-            public static string GetDevTestingPath()
-            {
-                var DevINI = GetDevINI();
-                if (DevINI == null) { return null; }
-                if (!DevINI.ContainsKey("TestingFolder")) { return null; }
-                return DevINI["TestingFolder"];
-            }
-            public static string GetDevCodePath()
-            {
-                var DevINI = GetDevINI();
-                if (DevINI == null) { return null; }
-                if (!DevINI.ContainsKey("TrackerCodePath")) { return null; }
-                return DevINI["TrackerCodePath"];
-            }
         }
     }
 }

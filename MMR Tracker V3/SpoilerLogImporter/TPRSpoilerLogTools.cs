@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MMR_Tracker_V3.SpoilerLogImporter
 {
-    internal class TPRSpoilerLogTools
+    public class TPRSpoilerLogTools
     {
         public class TPRSpoilerLog
         {

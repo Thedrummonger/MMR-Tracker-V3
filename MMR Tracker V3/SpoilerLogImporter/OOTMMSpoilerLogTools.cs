@@ -8,12 +8,27 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static MMR_Tracker_V3.OtherGames.OOTMMV2.datamodel;
 
 namespace MMR_Tracker_V3.SpoilerLogImporter
 {
     internal class OOTMMSpoilerLogTools
     {
+        public enum HintType
+        {
+            ItemExact,
+            ItemRegion,
+            Hero,
+            Foolish,
+            none
+        }
+        public class SpoilerHintData
+        {
+            public HintType HintType { get; set; }
+            public string PrettyLocationText { get; set; }
+            public string[] HintedLocations { get; set; }
+            public string[] HintedItemNames { get; set; }
+            public string[] HintedItems { get; set; }
+        }
         public static void readAndApplySpoilerLog(InstanceData.TrackerInstance Instance)
         {
             ResetInstanceData(Instance);

@@ -20,19 +20,21 @@ namespace Windows_Form_Frontend
     {
         public static MiscData.InstanceContainer InstanceContainer = new MiscData.InstanceContainer();
         public static MainInterface CurrentProgram;
+        public static bool IsSubForm = false;
         Pathfinder MainInterfacepathfinder = new Pathfinder();
         private bool FormIsMaximized = false;
         Thread MainInterfaceItemDisplayThread = null;
         ItemDisplay MainInterfaceItemDisplayForm = null;
         private Dictionary<string, ToolStripMenuItem> MenuItemParentTree = new Dictionary<string, ToolStripMenuItem>();
-        public MainInterface()
+        public MainInterface(bool _SubForm = false)
         {
+            IsSubForm = _SubForm;
             InitializeComponent();
         }
 
         //MainForm Actions
 
-        private void MainInterface_Load(object sender, EventArgs e)
+        public void MainInterface_Load(object sender, EventArgs e)
         {
             //Since only one instance of the main interface should ever be open, We can store that instance in a variable to be called from static code.
             if (CurrentProgram != null) { Close(); return; }
@@ -50,7 +52,6 @@ namespace Windows_Form_Frontend
             Testing.doDevCheck(Modifier: ModifierKeys == Keys.Control);
             UpdateUI();
             WinFormInstanceCreation.ApplyUserPretLogic();
-            WinformTesting.AddDebugActions(CodeTestingToolStripMenuItem);
         }
 
         public void DoUpdateCheck()
@@ -104,6 +105,8 @@ namespace Windows_Form_Frontend
             {
                 MainInterfaceItemDisplayForm.Invoke(new MethodInvoker(delegate { MainInterfaceItemDisplayForm.CloseThread(); }));
             }
+            CurrentProgram = null;
+            InstanceContainer = new MiscData.InstanceContainer();
         }
 
         //Menu Strip
@@ -244,7 +247,7 @@ namespace Windows_Form_Frontend
 
         private void CodeTestingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            WinformTesting.DoTests();
+
         }
 
         //ListBoxes
