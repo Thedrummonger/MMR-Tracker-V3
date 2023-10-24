@@ -25,6 +25,7 @@ namespace Windows_Form_Frontend
         private bool FormIsMaximized = false;
         Thread MainInterfaceItemDisplayThread = null;
         ItemDisplay MainInterfaceItemDisplayForm = null;
+        public event Action WinFormClosing;
         private Dictionary<string, ToolStripMenuItem> MenuItemParentTree = new Dictionary<string, ToolStripMenuItem>();
         public MainInterface(bool _SubForm = false)
         {
@@ -106,6 +107,7 @@ namespace Windows_Form_Frontend
             }
             CurrentProgram = null;
             InstanceContainer = new MiscData.InstanceContainer();
+            WinFormClosing();
         }
 
         //Menu Strip

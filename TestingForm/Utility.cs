@@ -26,7 +26,11 @@ namespace TestingForm
 
         public static void ActivateWinFormInterface()
         {
-            if (TestingForm.TestingInterface is null || MainInterface.CurrentProgram is null) { TestingForm.TestingInterface = new MainInterface(true); }
+            if (!TestingForm.WinformLoaded())
+            {
+                TestingForm.TestingInterface = new MainInterface(true);
+                TestingForm.TestingInterface.WinFormClosing += TestingForm.MainInterface_FormClosing;
+            }
             TestingForm.TestingInterface.Show();
         }
         public static void TestLogicForInvalidItems(MiscData.InstanceContainer Container)

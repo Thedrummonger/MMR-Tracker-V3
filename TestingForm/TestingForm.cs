@@ -9,6 +9,7 @@ using CLIFrontEnd;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 using System.Reflection.Metadata;
+using MathNet.Numerics;
 
 namespace TestingForm
 {
@@ -23,10 +24,6 @@ namespace TestingForm
             InitializeComponent();
         }
 
-        private void LB_DoubleClick(object sender, EventArgs e)
-        {
-            if (listBox1.SelectedItem is MiscData.StandardListBoxItem LBI) { LBI.tagAction(); }
-        }
         [DllImport("kernel32.dll")]
         static extern IntPtr GetConsoleWindow();
 
@@ -51,25 +48,37 @@ namespace TestingForm
             ShowWindow(GetConsoleWindow(), SW_HIDE);
         }
 
+        public static void MainInterface_FormClosing()
+        {
+            Debug.WriteLine("WinForm Closed");
+        }
+
         public static void AddDebugActions(ListBox codeTestingToolStripMenuItem)
         {
-            Dictionary<string, Action> DevFunctions = new Dictionary<string, Action>()
+            codeTestingToolStripMenuItem.Items.Clear();
+            List<Tuple<string, Action, Func<bool>?>> DevFunctions = new List<Tuple<string, Action, Func<bool>?>>
             {
-                { "Open WinForm Tracker Debug", OpenWinForm },
-                { "OPen CLI Tracker Debug", OpenCLITracker },
-                { "Save Tracker State", SaveTrackerState },
-                { "Load Tracker State", LoadTrackerState },
-                { "Print Selected Object to Console", PrintDevData },
-                { "Create TPR Data", TPRCreateData },
-                { "Create OOTMM Data", OOTMMCreateData },
-                { "Create PMR Data", PMRCreateData },
+                new ("Open WinForm Tracker Debug", OpenWinForm, null),
+                new ("OPen CLI Tracker Debug", OpenCLITracker, null),
+                new ("Save Tracker State", SaveTrackerState, CanSaveTrackerState),
+                new ("Load Tracker State", LoadTrackerState, CanLoadTrackerState),
+                new ("Print Selected Object to Console", PrintDevData, null),
+                new ("Create TPR Data", TPRCreateData, null),
+                new ("Create OOTMM Data", OOTMMCreateData, null),
+                new ("Create PMR Data", PMRCreateData, null),
             };
 
             foreach (var Function in DevFunctions)
             {
-                var MenuItem = new MiscData.StandardListBoxItem { Display = Function.Key, tagAction = Function.Value };
+                if (Function.Item3 is not null && !Function.Item3()) { continue; }
+                var MenuItem = new MiscData.StandardListBoxItem { Display = Function.Item1, tagAction = Function.Item2 };
                 codeTestingToolStripMenuItem.Items.Add(MenuItem);
             }
+        }
+        private void LB_DoubleClick(object sender, EventArgs e)
+        {
+            if (listBox1.SelectedItem is MiscData.StandardListBoxItem LBI) { LBI.tagAction(); }
+            AddDebugActions(listBox1);
         }
 
         private static void OpenCLITracker()
@@ -132,20 +141,31 @@ namespace TestingForm
             Debug.WriteLine(MainInterface.CurrentProgram.ActiveControl.Name);
         }
 
+        public static bool WinformLoaded()
+        {
+            return TestingForm.TestingInterface is not null && MainInterface.CurrentProgram is not null;
+        }
+
+        public static bool CanSaveTrackerState()
+        {
+            return WinformLoaded() && MainInterface.InstanceContainer?.Instance is not null;
+        }
         public static void SaveTrackerState()
         {
-            if (TestingInterface is null || MainInterface.CurrentProgram is null) { Debug.WriteLine($"WinForm Instance was not created"); return; }
-            if (MainInterface.InstanceContainer?.Instance is null) { Debug.WriteLine($"Tracker Instance Not Created"); return; }
-
+            if (!CanSaveTrackerState()) { return; }
             LogicRecreation.SaveTrackerState(MainInterface.InstanceContainer);
             Debug.WriteLine($"Tracker Instance Saved;");
         }
+        public static bool CanLoadTrackerState()
+        {
+            if (!WinformLoaded()) { Debug.WriteLine($"WinForm Instance was not created"); return false; }
+            if (MainInterface.InstanceContainer?.Instance is null) { Debug.WriteLine($"Tracker Instance Not Created"); return false; }
+            if (LogicRecreation.CurrentSaveState is null) { Debug.WriteLine($"No tracker state was saved"); return false; }
+            return true;
+        }
         public static void LoadTrackerState()
         {
-            if (TestingInterface is null || MainInterface.CurrentProgram is null) { Debug.WriteLine($"WinForm Instance was not created"); return; }
-            if (MainInterface.InstanceContainer?.Instance is null) { Debug.WriteLine($"Tracker Instance Not Created"); return; }
-            if (LogicRecreation.CurrentSaveState is null) { Debug.WriteLine($"No tracker state was saved"); return; }
-
+            if (!CanLoadTrackerState()) { return; }
             LogicRecreation.LoadTrackerState(MainInterface.InstanceContainer);
             MainInterface.InstanceContainer.logicCalculation.CalculateLogic();
             MainInterface.CurrentProgram.UpdateUI();
