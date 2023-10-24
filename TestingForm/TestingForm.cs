@@ -5,7 +5,7 @@ using System.Diagnostics;
 using Windows_Form_Frontend;
 using System.Windows.Forms;
 using MMR_Tracker_V3.TrackerObjectExtentions;
-using ConsoleDebugger;
+using CLIFrontEnd;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 using System.Reflection.Metadata;

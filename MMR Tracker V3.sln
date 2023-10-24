@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MMR Tracker V3", "MMR Track
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Windows Form Frontend", "Windows Form Frontend\Windows Form Frontend.csproj", "{AF5298A1-5B11-4789-8574-B298445B14CD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleDebugger", "ConsoleDebugger\ConsoleDebugger.csproj", "{8D57DD8F-3E92-471C-A955-62265B9D870C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CLI Front End", "ConsoleDebugger\CLI Front End.csproj", "{8D57DD8F-3E92-471C-A955-62265B9D870C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingForm", "TestingForm\TestingForm.csproj", "{55BBF48C-F8EA-436A-ACB3-1EAE3166ED86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestingForm", "TestingForm\TestingForm.csproj", "{55BBF48C-F8EA-436A-ACB3-1EAE3166ED86}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

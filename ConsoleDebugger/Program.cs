@@ -10,7 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 
-namespace ConsoleDebugger
+namespace CLIFrontEnd
 {
     public class CLITracker
     {
