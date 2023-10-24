@@ -313,7 +313,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                 { "bottomlessWallets", "setting{colossalWallets}" },
                 { "sharedSoulsEnemy", "setting{soulsEnemyOot} && setting{soulsEnemyMm}" },
                 { "sharedSkeletonKey", "setting{skeletonKeyOot} && setting{skeletonKeyMm}" },
-                { "sharedSongSun", "sunSongMm" }
+                { "sharedSongSun", "setting{sunSongMm}" }
             };
 
             foreach(var i in SettingLogic)

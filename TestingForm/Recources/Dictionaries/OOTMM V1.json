@@ -110589,7 +110589,7 @@
       "Priority": 127,
       "Conditionals": [
         [
-          "sunSongMm"
+          "setting{sunSongMm}"
         ]
       ],
       "Enabled": {

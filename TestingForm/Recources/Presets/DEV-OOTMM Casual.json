@@ -97545,6 +97545,18 @@
     {
       "Id": "MM_has_hot_water_mtn",
       "RequiredItems": [
+        "MM_has_bottle",
+        "MM_EVENT_GORON_GRAVEYARD_HOT_WATER"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_has_hot_water_mtn_spring",
+      "RequiredItems": [
         "MM_has_bottle"
       ],
       "ConditionalItems": [
@@ -97579,7 +97591,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_has_hot_water_mtn"
+          "MM_has_hot_water_mtn_spring"
         ],
         [
           "MM_has_hot_water_well"
@@ -97597,7 +97609,7 @@
       ],
       "ConditionalItems": [
         [
-          "MM_has_hot_water_mtn"
+          "MM_has_hot_water_mtn_spring"
         ],
         [
           "MM_has_hot_water_well"
