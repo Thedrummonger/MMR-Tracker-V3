@@ -3,6 +3,8 @@ using MMR_Tracker_V3;
 using Newtonsoft.Json;
 using System.Diagnostics;
 using Windows_Form_Frontend;
+using System.Windows.Forms;
+using MMR_Tracker_V3.TrackerObjectExtentions;
 
 namespace TestingForm
 {
@@ -31,6 +33,7 @@ namespace TestingForm
                 { "Open WinForm Debug", OpenWinForm },
                 { "Save Tracker State", SaveTrackerState },
                 { "Load Tracker State", LoadTrackerState },
+                { "Print Selected Object to Console", PrintDevData },
                 { "Create TPR Data", TPRCreateData },
                 { "Create OOTMM Data", OOTMMCreateData },
                 { "Create PMR Data", PMRCreateData },
@@ -41,6 +44,53 @@ namespace TestingForm
                 var MenuItem = new MiscData.StandardListBoxItem { Display = Function.Key, tagAction = Function.Value };
                 codeTestingToolStripMenuItem.Items.Add(MenuItem);
             }
+        }
+
+        public static void PrintDevData()
+        {
+            if (TestingInterface is null || MainInterface.CurrentProgram is null) { Debug.WriteLine($"WinForm Instance was not created"); return; }
+            if (MainInterface.InstanceContainer?.Instance is null) { Debug.WriteLine($"Tracker Instance Not Created"); return; }
+            MainInterface WFP = MainInterface.CurrentProgram;
+            ListBox ActiveListbox = null;
+            if (WFP.ActiveControl == WFP.LBValidEntrances) { ActiveListbox = WFP.LBValidEntrances; }
+            else if (WFP.ActiveControl == WFP.LBValidLocations) { ActiveListbox = WFP.LBValidLocations; }
+            else if (WFP.ActiveControl == WFP.LBCheckedLocations) { ActiveListbox = WFP.LBCheckedLocations; }
+            if (ActiveListbox is null) { Debug.WriteLine($"Active item is not a valid List Box"); return; }
+            if (ActiveListbox.SelectedItem is null) { Debug.WriteLine($"No valid item selected in {ActiveListbox.Name}"); return; }
+
+            string RandomizedItem = null;
+            Debug.WriteLine($"Data for {ActiveListbox.SelectedItem}=========================================================");
+            Debug.WriteLine(JsonConvert.SerializeObject(ActiveListbox.SelectedItem, MMR_Tracker_V3.Utility._NewtonsoftJsonSerializerOptions));
+            if (ActiveListbox.SelectedItem is LocationData.LocationObject DebugLocObj)
+            {
+                Debug.WriteLine($"Dictionary Entry");
+                Debug.WriteLine(JsonConvert.SerializeObject(DebugLocObj.GetDictEntry(MainInterface.InstanceContainer.Instance), MMR_Tracker_V3.Utility._NewtonsoftJsonSerializerOptions));
+                RandomizedItem = DebugLocObj.Randomizeditem.Item;
+
+            }
+            if (ActiveListbox.SelectedItem is LocationData.LocationProxy DebugProxyObj)
+            {
+                var ProxyRef = MainInterface.InstanceContainer.Instance.GetLocationByID(DebugProxyObj.ReferenceID);
+                Debug.WriteLine($"Proxied Entry");
+                Debug.WriteLine(JsonConvert.SerializeObject(ProxyRef, MMR_Tracker_V3.Utility._NewtonsoftJsonSerializerOptions));
+                Debug.WriteLine($"Dictionary Entry");
+                Debug.WriteLine(JsonConvert.SerializeObject(ProxyRef?.GetDictEntry(MainInterface.InstanceContainer.Instance), MMR_Tracker_V3.Utility._NewtonsoftJsonSerializerOptions));
+                RandomizedItem = ProxyRef.Randomizeditem.Item;
+            }
+            if (RandomizedItem !=null)
+            {
+                var Item = MainInterface.InstanceContainer.Instance.GetItemByID(RandomizedItem);
+                if (Item is not null)
+                {
+                    Debug.WriteLine($"Randomized Item");
+                    Debug.WriteLine(JsonConvert.SerializeObject(Item, MMR_Tracker_V3.Utility._NewtonsoftJsonSerializerOptions));
+                    Debug.WriteLine($"Randomized Item Dictionary Entry");
+                    Debug.WriteLine(JsonConvert.SerializeObject(Item?.GetDictEntry(MainInterface.InstanceContainer.Instance), MMR_Tracker_V3.Utility._NewtonsoftJsonSerializerOptions));
+                }
+            }
+
+
+            Debug.WriteLine(MainInterface.CurrentProgram.ActiveControl.Name);
         }
 
         public static void SaveTrackerState()

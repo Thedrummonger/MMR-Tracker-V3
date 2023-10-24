@@ -20,6 +20,7 @@ namespace Windows_Form_Frontend
     {
         public static MiscData.InstanceContainer InstanceContainer = new MiscData.InstanceContainer();
         public static MainInterface CurrentProgram;
+        public static bool IsSubForm = false;
         Pathfinder MainInterfacepathfinder = new Pathfinder();
         private bool FormIsMaximized = false;
         Thread MainInterfaceItemDisplayThread = null;
@@ -27,7 +28,7 @@ namespace Windows_Form_Frontend
         private Dictionary<string, ToolStripMenuItem> MenuItemParentTree = new Dictionary<string, ToolStripMenuItem>();
         public MainInterface(bool _SubForm = false)
         {
-            Debugging.DebugMode = _SubForm;
+            IsSubForm = _SubForm;
             InitializeComponent();
         }
 
@@ -887,46 +888,6 @@ namespace Windows_Form_Frontend
 
             }
 
-            //Debug Tools
-            if (Debugging.DebugMode)
-            {
-                //DevData
-                string RandomizedItem = null;
-                ToolStripItem ShowDevData = contextMenuStrip.Items.Add("Show Dev Data");
-                ShowDevData.Click += (sender, e) =>
-                {
-                    Debug.WriteLine($"Data for {listBox.SelectedItem}=========================================================");
-                    Debug.WriteLine(JsonConvert.SerializeObject(listBox.SelectedItem, Utility._NewtonsoftJsonSerializerOptions));
-                    if (listBox.SelectedItem is LocationData.LocationObject DebugLocObj)
-                    {
-                        Debug.WriteLine($"Dictionary Entry");
-                        Debug.WriteLine(JsonConvert.SerializeObject(DebugLocObj.GetDictEntry(InstanceContainer.Instance), Utility._NewtonsoftJsonSerializerOptions));
-                        RandomizedItem = DebugLocObj.Randomizeditem.Item;
-                        
-                    }
-                    if (listBox.SelectedItem is LocationData.LocationProxy DebugProxyObj)
-                    {
-                        var ProxyRef = InstanceContainer.Instance.GetLocationByID(DebugProxyObj.ReferenceID);
-                        Debug.WriteLine($"Proxied Entry");
-                        Debug.WriteLine(JsonConvert.SerializeObject(ProxyRef, Utility._NewtonsoftJsonSerializerOptions));
-                        Debug.WriteLine($"Dictionary Entry");
-                        Debug.WriteLine(JsonConvert.SerializeObject(ProxyRef?.GetDictEntry(InstanceContainer.Instance), Utility._NewtonsoftJsonSerializerOptions));
-                        RandomizedItem = ProxyRef.Randomizeditem.Item;
-                    }
-                    if (RandomizedItem !=null)
-                    {
-                        var Item = InstanceContainer.Instance.GetItemByID(RandomizedItem);
-                        if (Item is not null)
-                        {
-                            Debug.WriteLine($"Randomized Item");
-                            Debug.WriteLine(JsonConvert.SerializeObject(Item, Utility._NewtonsoftJsonSerializerOptions));
-                            Debug.WriteLine($"Randomized Item Dictionary Entry");
-                            Debug.WriteLine(JsonConvert.SerializeObject(Item?.GetDictEntry(InstanceContainer.Instance), Utility._NewtonsoftJsonSerializerOptions));
-                        }
-                    }
-                };
-            }
-
             if (contextMenuStrip.Items.Count > 0)
             {
                 contextMenuStrip.Show(Cursor.Position);
@@ -1061,13 +1022,6 @@ namespace Windows_Form_Frontend
 
         private void BTNSetItem_Click(object sender, EventArgs e)
         {
-            if (TXTLocSearch.Text == "toggledev")
-            {
-                Debugging.DebugMode = !Debugging.DebugMode;
-                TXTLocSearch.Text = "";
-                UpdateUI();
-                return;
-            }
             ListBox LB = (sender == BTNSetItem) ? LBValidLocations : LBValidEntrances;
             if (LB.SelectedItems.Count < 1) { return; }
             HandleItemSelect(LB.SelectedItems.Cast<object>().ToList(), MiscData.CheckState.Marked, LB: LB);
