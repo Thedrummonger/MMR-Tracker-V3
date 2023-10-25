@@ -97,7 +97,7 @@ namespace MMR_Tracker_V3
                 if (entDict.ContainsKey(i.Key) && EntPool.AreaList.ContainsKey(entDict[i.Key].Area) && EntPool.AreaList[entDict[i.Key].Area].RandomizableExits(InstanceContainer.Instance).ContainsKey(entDict[i.Key].Exit))
                 {
                     var loc = EntPool.AreaList[entDict[i.Key].Area].RandomizableExits(InstanceContainer.Instance)[entDict[i.Key].Exit];
-                    loc.DestinationExit = loc.GetDestinationAtExit(InstanceContainer.Instance)??i.Value.randomizedEntry;
+                    loc.DestinationExit = loc.GetDestinationAtExit()??i.Value.randomizedEntry;
                     loc.ToggleExitChecked(i.Value.CheckState, InstanceContainer.Instance);
                 }
             }

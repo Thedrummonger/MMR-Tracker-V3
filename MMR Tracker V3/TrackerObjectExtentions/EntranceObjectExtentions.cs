@@ -23,7 +23,12 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
         {
             return exit.GetDictEntry(currentTrackerInstance).RandomizableEntrance;
         }
-
+        /// <summary>
+        /// Returns true if the Entrances randomized destination is the given area.
+        /// </summary>
+        /// <param name="Entrance"></param>
+        /// <param name="Area"></param>
+        /// <returns></returns>
         public static bool LeadsToArea(this EntranceRandoExit Entrance, string Area)
         {
             if (Entrance.DestinationExit is not null && Entrance.DestinationExit.region == Area) { return true; }
@@ -48,8 +53,17 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
         {
             return exit.RandomizedState == RandomizedState.ForcedJunk;
         }
-
-        public static EntranceRandoDestination GetDestinationAtExit(this EntranceRandoExit exit, InstanceData.TrackerInstance currentTrackerInstance)
+        /// <summary>
+        /// Determines which destination should be applied to this exit when it's checked
+        /// It will get this data from one of three places in the following priority
+        /// 1. It's vanilla exit if the check is unrandomized
+        /// 2. It's Spoiler Defined Destination if one has been set by the spoiler log
+        /// 3. It's currently defined DestinationExit. If this is null the result of this function will be null
+        /// </summary>
+        /// <param name="exit"></param>
+        /// <param name="currentTrackerInstance"></param>
+        /// <returns></returns>
+        public static EntranceRandoDestination GetDestinationAtExit(this EntranceRandoExit exit)
         {
             var DestinationAtCheck = exit.DestinationExit;
             if (exit.SpoilerDefinedDestinationExit != null)
@@ -62,7 +76,13 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             }
             return DestinationAtCheck;
         }
-
+        /// <summary>
+        /// Use this function to set the new checkstate of the Exit
+        /// </summary>
+        /// <param name="exit"></param>
+        /// <param name="NewState">The new Randomized State</param>
+        /// <param name="Instance"></param>
+        /// <returns></returns>
         public static bool ToggleExitChecked(this EntranceRandoExit exit, CheckState NewState, InstanceData.TrackerInstance Instance)
         {
             CheckState CurrentState = exit.CheckState;

@@ -224,7 +224,7 @@ namespace MMR_Tracker_V3
 
         public static string GetEntranceDisplayName(EntranceData.EntranceRandoExit ExitObjectObject, InstanceData.TrackerInstance instance)
         {
-            var Destination = ExitObjectObject.GetDestinationAtExit(instance);
+            var Destination = ExitObjectObject.GetDestinationAtExit();
             string StarredDisplay = ExitObjectObject.Starred ? "*" : "";
             string RandomizedExitDisplay = Destination is null ? "" : $"{Destination.region} <- {Destination.from}";
 

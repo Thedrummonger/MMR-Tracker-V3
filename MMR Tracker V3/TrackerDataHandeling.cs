@@ -79,7 +79,7 @@ namespace MMR_Tracker_V3
             if (UpdatedExits.Any() && checkState == MiscData.CheckState.Checked)
             {
                 Dictionary<EntranceRandoExit, EntranceRandoDestination> PairedExits = GetEntrancePairsToUpdate(UpdatedExits, instanceContainer);
-                foreach (var i in PairedExits) { if (i.Key.GetDestinationAtExit(instanceContainer.Instance) is null) { i.Key.DestinationExit = i.Value; } }
+                foreach (var i in PairedExits) { if (i.Key.GetDestinationAtExit() is null) { i.Key.DestinationExit = i.Value; } }
                 IEnumerable<EntranceRandoExit> PairedExitsToMark = PairedExits.Keys.Where(x => !x.Available);
                 IEnumerable<EntranceRandoExit> PairedExitsToCheck = PairedExits.Keys.Where(x => x.Available);
                 List<EntranceRandoExit> UpdatedMarkedPairedExits = SetEntrancesCheckState(PairedExitsToMark, CheckState.Marked, instanceContainer, CheckUnassignedLocations, CheckUnassignedVariable, true);
@@ -174,7 +174,7 @@ namespace MMR_Tracker_V3
                 ExitObjects.Where(x => x.CheckState == MiscData.CheckState.Unchecked);
             foreach (EntranceData.EntranceRandoExit ExitObject in UncheckedExitObjects)
             {
-                ExitObject.DestinationExit = ExitObject.GetDestinationAtExit(instanceContainer.Instance);
+                ExitObject.DestinationExit = ExitObject.GetDestinationAtExit();
             }
             IEnumerable<object> ManualExitChecks = UncheckedExitObjects.Where(x => x.DestinationExit == null); //Exits With No Destination
             if (ManualExitChecks.Any())
@@ -252,7 +252,7 @@ namespace MMR_Tracker_V3
                 if (PairExit.CheckState == CheckAction || PairExit.CheckState == CheckState.Checked) { continue; }
                 //Get the destination of the pair exit and the destination the spoiler has has defined
                 var PairDestination = exit.EntrancePair.AsDestination();
-                var ProperDestination = PairExit.GetDestinationAtExit(instanceContainer.Instance);
+                var ProperDestination = PairExit.GetDestinationAtExit();
                 //If DefinedDestination is null the pair destination did not match the spoiler defined destination meaning the entrance is not coupled
                 EntranceData.EntranceRandoDestination DefinedDestination = null;
                 if (ProperDestination is null) { DefinedDestination = PairDestination; }

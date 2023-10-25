@@ -55,7 +55,7 @@ namespace MMR_Tracker_V3
                 foreach (var i in AvailableEntrances)
                 {
                     //Debug.WriteLine($"Checking: {$"{i.ParentAreaID} X {i.ID}"}");
-                    if (i.GetDestinationAtExit(_Instance.Instance) == null)
+                    if (i.GetDestinationAtExit() == null)
                     {
                         throw new Exception($"{$"{i.ParentAreaID} X {i.ID}"} had no item");
                     }
@@ -68,7 +68,7 @@ namespace MMR_Tracker_V3
                     PlaythroughObject playthroughObject = new PlaythroughObject
                     {
                         id = _Instance.Instance.GetLogicNameFromExit(i),
-                        ItemObtained = i.GetDestinationAtExit(_Instance.Instance).region,
+                        ItemObtained = i.GetDestinationAtExit().region,
                         UsedItems = _Instance.logicCalculation.LogicUnlockData[_Instance.Instance.GetLogicNameFromExit(i)],
                         CheckType = MiscData.LogicEntryType.Exit,
                         sphere = Sphere
@@ -264,10 +264,10 @@ namespace MMR_Tracker_V3
             {
                 i.Available = false;
                 i.CheckState = TrackerObjects.MiscData.CheckState.Unchecked;
-                if (i.GetDestinationAtExit(_Instance.Instance) == null) { i.RandomizedState = TrackerObjects.MiscData.RandomizedState.ForcedJunk; }
+                if (i.GetDestinationAtExit() == null) { i.RandomizedState = TrackerObjects.MiscData.RandomizedState.ForcedJunk; }
                 else
                 {
-                    i.DestinationExit = i.GetDestinationAtExit(_Instance.Instance);
+                    i.DestinationExit = i.GetDestinationAtExit();
                     if (i.RandomizedState == MiscData.RandomizedState.UnrandomizedManual) { i.RandomizedState = MiscData.RandomizedState.Randomized; }
                     //i.RandomizedState = TrackerObjects.MiscData.RandomizedState.Randomized;
                 }
