@@ -88,5 +88,14 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             exit.CheckState = NewState;
             return true;
         }
+
+        public static EntranceRandoExit GetAsExit(this EntranceRandoDestination destination, InstanceData.TrackerInstance Instance)
+        {
+            return Instance.EntrancePool.AreaList[destination.from].GetExit(destination.region);
+        }
+        public static EntranceRandoExit GetAsExit(this EntranceAreaPair Pair, InstanceData.TrackerInstance Instance)
+        {
+            return Instance.EntrancePool.AreaList[Pair.Area].GetExit(Pair.Exit);
+        }
     }
 }

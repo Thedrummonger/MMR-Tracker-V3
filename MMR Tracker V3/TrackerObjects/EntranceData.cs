@@ -18,13 +18,6 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string RootArea { get; set; } = "Root";
             public bool IsEntranceRando { get; set; } = false;
 
-            public EntranceRandoExit GetEntrancePairOfDestination(EntranceRandoDestination destination)
-            {
-                var DestinationAsExit = AreaList[destination.from].GetExit(destination.region);
-                var EntrancePair = DestinationAsExit.EntrancePair;
-                if (EntrancePair == null) { return null; }
-                return AreaList[EntrancePair.Area].GetExit(EntrancePair.Exit);
-            }
             public bool CheckForRandomEntrances(InstanceData.TrackerInstance Instance)
             {
                 return AreaList.Any(x => x.Value.RandomizableExits(Instance).Any(x => x.Value.RandomizedState == RandomizedState.Randomized));
@@ -33,7 +26,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 return AreaList.SelectMany(x => x.Value.RandomizableExits(Instance).Where(y => y.Value.IsRandomized())).Count();
             }
-            public bool EntranceIsValid(string Area, string Exit, bool Macros, out bool AreaValid, out bool ExitValid)
+            public bool EntranceIsValid(string Area, string Exit, out bool AreaValid, out bool ExitValid)
             {
                 AreaValid = AreaList.ContainsKey(Area); 
                 ExitValid = AreaValid && AreaList[Area].Exits.ContainsKey(Exit);

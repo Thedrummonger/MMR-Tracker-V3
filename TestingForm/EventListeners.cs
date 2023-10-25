@@ -31,6 +31,7 @@ namespace TestingForm
         {
             var ActiveControl = MainInterface.CurrentProgram.ActiveControl;
             if (ActiveControl is not ListBox ActiveLB) { return ; }
+            if (ActiveLB.SelectedItem is null) { return; }
             bool FirstSelection = WinFormTesting.LastSelectedObject is null;
             WinFormTesting.LastSelectedObject = ActiveLB.SelectedItem;
             if (FirstSelection) { TestingForm.CurrentForm.UpdateDebugActions(); }

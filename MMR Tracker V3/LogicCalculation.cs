@@ -604,13 +604,15 @@ namespace MMR_Tracker_V3
             {
                 if (i.CheckState == CheckState.Checked && i.EntrancePair != null)
                 {
-                    var EntrancePair = instance.EntrancePool.GetEntrancePairOfDestination(i.DestinationExit);
-                    if (EntrancePair == null) { continue; }
-                    if (EntrancePair.Available && EntrancePair.CheckState != CheckState.Checked)
+                    var DestAsExit = i.DestinationExit.GetAsExit(instance);
+                    var DestAsExitPair = DestAsExit.EntrancePair;
+                    if (DestAsExitPair == null) { continue; }
+                    var PairAsExit = DestAsExitPair.GetAsExit(instance);
+                    if (PairAsExit.Available && PairAsExit.CheckState != CheckState.Checked)
                     {
-                        EntrancePair.DestinationExit = i.GetDestnationFromEntrancePair();
-                        EntrancePair.ToggleExitChecked(CheckState.Checked, instance);
-                        PairsChecked.Add(EntrancePair);
+                        PairAsExit.DestinationExit = i.GetDestnationFromEntrancePair();
+                        PairAsExit.ToggleExitChecked(CheckState.Checked, instance);
+                        PairsChecked.Add(PairAsExit);
                     }
                 }
             }
@@ -624,12 +626,14 @@ namespace MMR_Tracker_V3
             {
                 if (i.CheckState != CheckState.Checked && i.EntrancePair != null)
                 {
-                    var EntrancePair = instance.EntrancePool.GetEntrancePairOfDestination(i.DestinationExit);
-                    if (EntrancePair == null) { continue; }
-                    if (EntrancePair.CheckState == CheckState.Checked)
+                    var DestAsExit = i.DestinationExit.GetAsExit(instance);
+                    var DestAsExitPair = DestAsExit.EntrancePair;
+                    if (DestAsExitPair == null) { continue; }
+                    var PairAsExit = DestAsExitPair.GetAsExit(instance);
+                    if (PairAsExit.CheckState == CheckState.Checked)
                     {
-                        EntrancePair.DestinationExit = i.GetDestnationFromEntrancePair();
-                        EntrancePair.ToggleExitChecked(CheckState.Unchecked, instance);
+                        //PairAsExit.DestinationExit = i.GetDestnationFromEntrancePair();
+                        PairAsExit.ToggleExitChecked(CheckState.Unchecked, instance);
                     }
                 }
             }
