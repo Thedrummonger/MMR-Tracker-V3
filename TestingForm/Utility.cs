@@ -1,21 +1,25 @@
-﻿using MMR_Tracker_V3.TrackerObjectExtentions;
+﻿using MMR_Tracker_V3;
+using MMR_Tracker_V3.TrackerObjectExtentions;
 using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
 using System.Diagnostics;
 using static MMR_Tracker_V3.References;
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
+#pragma warning disable CS8603 // Possible null reference return.
+#pragma warning disable CS8604 // Possible null reference argument.
 
 namespace TestingForm
 {
     internal class Utility
     {
-        public static string CreateTestingFile(string Name, string Extention = "txt")
+        public static string CreateTestingFilePath(string Name, string Extention = "txt")
         {
             return Path.Combine(TestingReferences.GetDevTestingPath(), $"{Name}.{Extention}");
         }
 
-        public static void CreateTestingFile(string Name, object Data, string Extention = "txt")
+        public static void CreateTestingFile(object Data, string Name, string Extention = "txt")
         {
-            File.WriteAllText(CreateTestingFile(Name, Extention), JsonConvert.SerializeObject(Data, MMR_Tracker_V3.Utility._NewtonsoftJsonSerializerOptions));
+            File.WriteAllText(CreateTestingFilePath(Name, Extention), JsonConvert.SerializeObject(Data, MMR_Tracker_V3.Utility._NewtonsoftJsonSerializerOptions));
         }
 
         public static void TestLogicForInvalidItems(MiscData.InstanceContainer Container)
@@ -54,11 +58,11 @@ namespace TestingForm
         public static void ValidateDevFiles()
         {
             if (!Directory.Exists(Globalpaths.BaseAppdataPath)) { Directory.CreateDirectory(Globalpaths.BaseAppdataPath); }
-            Dictionary<string, string> DevINI = new Dictionary<string, string>();
-            if (File.Exists(Globalpaths.DevFile)) { DevINI = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(Globalpaths.DevFile))??new Dictionary<string, string>(); }
+            TestingReferences.DevINI DevINI = new();
+            if (File.Exists(Globalpaths.DevFile)) { DevINI = TestingReferences.GetDevINI(); }
 
             bool PathsUpdated = false;
-            if (!DevINI.ContainsKey("TrackerCodePath") || !Directory.Exists(DevINI["TrackerCodePath"]))
+            if (DevINI?.TrackerCodePath is null || !Directory.Exists(DevINI?.TrackerCodePath))
             {
                 FolderBrowserDialog dialog = new()
                 {
@@ -66,14 +70,14 @@ namespace TestingForm
                     Description = "Select the directory containing the .sln file"
                 };
                 dialog.ShowDialog();
-                DevINI["TrackerCodePath"] = dialog.SelectedPath;
+                DevINI.TrackerCodePath = dialog.SelectedPath;
                 PathsUpdated = true;
             }
-            if (!DevINI.ContainsKey("TestingFolder") || !Directory.Exists(DevINI["TestingFolder"]))
+            if (DevINI.TestingFolder is null || !Directory.Exists(DevINI.TestingFolder))
             {
                 FolderBrowserDialog dialog = new() { Description = "Select the Testing output folder" };
                 dialog.ShowDialog();
-                DevINI["TestingFolder"] = dialog.SelectedPath;
+                DevINI.TestingFolder = dialog.SelectedPath;
                 PathsUpdated = true;
             }
             if (PathsUpdated) { File.WriteAllText(Globalpaths.DevFile, JsonConvert.SerializeObject(DevINI, MMR_Tracker_V3.Utility._NewtonsoftJsonSerializerOptions)); }

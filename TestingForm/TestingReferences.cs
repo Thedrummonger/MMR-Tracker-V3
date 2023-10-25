@@ -3,24 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static MMR_Tracker_V3.References;
 
 namespace TestingForm
 {
     internal class TestingReferences
     {
-        public static string GetDevTestingPath()
+        public static string? GetDevTestingPath()
         {
-            var DevINI = MMR_Tracker_V3.References.TestingPaths.GetDevINI();
+            var DevINI = GetDevINI();
             if (DevINI == null) { return null; }
-            if (!DevINI.ContainsKey("TestingFolder")) { return null; }
-            return DevINI["TestingFolder"];
+            return DevINI.TestingFolder;
         }
-        public static string GetDevCodePath()
+        public static string? GetDevCodePath()
         {
-            var DevINI = MMR_Tracker_V3.References.TestingPaths.GetDevINI();
+            var DevINI = GetDevINI();
             if (DevINI == null) { return null; }
-            if (!DevINI.ContainsKey("TrackerCodePath")) { return null; }
-            return DevINI["TrackerCodePath"];
+            return DevINI.TrackerCodePath;
         }
         public static string GetDictionaryPath()
         {
@@ -38,6 +37,17 @@ namespace TestingForm
         {
             if (string.IsNullOrWhiteSpace(GameFolder)) { return Path.Join(GetTestingFormDataPath(), "OtherGames"); }
             return Path.Join(GetTestingFormDataPath(), "OtherGames", GameFolder);
+        }
+        public class DevINI
+        {
+            public string? TrackerCodePath { get; set; }
+            public string? TestingFolder { get; set; }
+        }
+        public static DevINI? GetDevINI()
+        {
+            if (!File.Exists(Globalpaths.DevFile)) { return null; }
+            DevINI DevFile = Newtonsoft.Json.JsonConvert.DeserializeObject<DevINI>(File.ReadAllText(Globalpaths.DevFile));
+            return DevFile;
         }
     }
 }

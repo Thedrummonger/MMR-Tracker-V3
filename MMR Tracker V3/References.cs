@@ -38,14 +38,5 @@ namespace MMR_Tracker_V3
             public static readonly string DevFile = Path.Combine(BaseAppdataPath, "devpc.ini");
             public static readonly string UserData = Path.Combine(BaseAppdataPath, "UserData.ini");
         }
-        public static class TestingPaths
-        {
-            public static Dictionary<string, string> GetDevINI() 
-            { 
-                if (!File.Exists(Globalpaths.DevFile)) { return null; }
-                Dictionary<string, string> DevFile = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(Globalpaths.DevFile));
-                return DevFile;
-            }
-        }
     }
 }
