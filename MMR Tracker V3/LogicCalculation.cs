@@ -604,14 +604,19 @@ namespace MMR_Tracker_V3
             {
                 if (i.CheckState == CheckState.Checked && i.EntrancePair != null)
                 {
+                    Debug.WriteLine($"Checked Entrance {i.ParentAreaID} => {i.ID}");
                     var DestAsExit = i.DestinationExit.GetAsExit(instance);
+                    Debug.WriteLine($"Destination Was {DestAsExit.ParentAreaID} => {DestAsExit.ID}");
                     var DestAsExitPair = DestAsExit.EntrancePair;
                     if (DestAsExitPair == null) { continue; }
                     var PairAsExit = DestAsExitPair.GetAsExit(instance);
-                    if (PairAsExit.Available && PairAsExit.CheckState != CheckState.Checked)
+                    Debug.WriteLine($"Destination Pair Was {PairAsExit.ParentAreaID} => {PairAsExit.ID}");
+
+                    CheckState CheckAction = PairAsExit.Available ? CheckState.Checked : CheckState.Marked;
+                    if (PairAsExit.CheckState != CheckAction && PairAsExit.CheckState != CheckState.Checked)
                     {
                         PairAsExit.DestinationExit = i.GetDestnationFromEntrancePair();
-                        PairAsExit.ToggleExitChecked(CheckState.Checked, instance);
+                        PairAsExit.ToggleExitChecked(CheckAction, instance);
                         PairsChecked.Add(PairAsExit);
                     }
                 }
