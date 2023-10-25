@@ -24,6 +24,12 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             return exit.GetDictEntry(currentTrackerInstance).RandomizableEntrance;
         }
 
+        public static bool LeadsToArea(this EntranceRandoExit Entrance, string Area)
+        {
+            if (Entrance.DestinationExit is not null && Entrance.DestinationExit.region == Area) { return true; }
+            return false;
+        }
+
         public static EntranceRandoDestination GetVanillaDestination(this EntranceRandoExit exit)
         {
             return new EntranceRandoDestination { region = exit.ID, from = exit.ParentAreaID };

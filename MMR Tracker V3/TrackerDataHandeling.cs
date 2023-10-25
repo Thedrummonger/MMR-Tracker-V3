@@ -1,10 +1,14 @@
 ﻿using MMR_Tracker_V3.TrackerObjectExtentions;
 using MMR_Tracker_V3.TrackerObjects;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using static MMR_Tracker_V3.TrackerObjects.EntranceData;
+using static MMR_Tracker_V3.TrackerObjects.HintData;
 using static MMR_Tracker_V3.TrackerObjects.LocationData;
+using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
 namespace MMR_Tracker_V3
 {
@@ -48,17 +52,66 @@ namespace MMR_Tracker_V3
         {
             List<object> UpdatedObjects = new List<object>();
 
+            List<object> UpdatedOptions = SetOptionCheckState(SelectedObjects, checkState, instanceContainer, CheckUnassignedLocations, CheckUnassignedVariable, EnforceMarkAction);
+            List<LocationObject> UpdatedLocations = SetLocationsCheckState(SelectedObjects, checkState, instanceContainer, CheckUnassignedLocations, CheckUnassignedVariable, EnforceMarkAction);
+            List<EntranceRandoExit> UpdatedExits = SetEntrancesCheckState(SelectedObjects, checkState, instanceContainer, CheckUnassignedLocations, CheckUnassignedVariable, EnforceMarkAction);
+
+            UpdatedObjects.AddRange(UpdatedOptions);
+            UpdatedObjects.AddRange(UpdatedLocations);
+            UpdatedObjects.AddRange(UpdatedExits);
+
+            if (UpdatedObjects.Any() && checkState != MiscData.CheckState.Marked)
+            {
+                instanceContainer.logicCalculation.CalculateLogic(checkState);
+            }
+
+            List<HintObject> UpdatedHints = SetHintsCheckState(SelectedObjects, checkState, instanceContainer, CheckUnassignedLocations, CheckUnassignedVariable, EnforceMarkAction);
+            List<LocationObject> HintedLocationsToUpdate = GetHIntedLocationsToUpdated(UpdatedHints, instanceContainer);
+
+            Debug.WriteLine($"Updated Hints:\n{JsonConvert.SerializeObject(UpdatedHints, Formatting.Indented)}");
+            Debug.WriteLine($"HintedLocationsToUpdate:\n{JsonConvert.SerializeObject(HintedLocationsToUpdate, Formatting.Indented)}");
+
+            List<LocationObject> UpdatedHintedLocations = SetLocationsCheckState(HintedLocationsToUpdate, MiscData.CheckState.Marked, instanceContainer, CheckUnassignedLocations, CheckUnassignedVariable, EnforceMarkAction);
+
+            UpdatedObjects.AddRange(UpdatedHints);
+            UpdatedObjects.AddRange(UpdatedHintedLocations);
+
+            if (UpdatedExits.Any() && checkState == MiscData.CheckState.Checked)
+            {
+                Dictionary<EntranceRandoExit, EntranceRandoDestination> PairedExits = GetEntrancePairsToUpdate(UpdatedExits, instanceContainer);
+                foreach (var i in PairedExits) { if (i.Key.GetDestinationAtExit(instanceContainer.Instance) is null) { i.Key.DestinationExit = i.Value; } }
+                IEnumerable<EntranceRandoExit> PairedExitsToMark = PairedExits.Keys.Where(x => !x.Available);
+                IEnumerable<EntranceRandoExit> PairedExitsToCheck = PairedExits.Keys.Where(x => x.Available);
+                List<EntranceRandoExit> UpdatedMarkedPairedExits = SetEntrancesCheckState(PairedExitsToMark, CheckState.Marked, instanceContainer, CheckUnassignedLocations, CheckUnassignedVariable, true);
+                List<EntranceRandoExit> UpdatedCheckedPairedExits = SetEntrancesCheckState(PairedExitsToCheck, CheckState.Checked, instanceContainer, CheckUnassignedLocations, CheckUnassignedVariable, true);
+                if (UpdatedCheckedPairedExits.Any())
+                {
+                    instanceContainer.logicCalculation.CalculateLogic(checkState);
+                }
+                UpdatedObjects.AddRange(UpdatedMarkedPairedExits);
+                UpdatedObjects.AddRange(UpdatedCheckedPairedExits);
+            }
+
+
+            if (UpdatedObjects.Any()) { CheckedObjectsUpdate(UpdatedObjects, instanceContainer.Instance); }
+            return UpdatedObjects;
+        }
+
+        public static List<object> SetOptionCheckState(IEnumerable<object> SelectedObjects, MiscData.CheckState checkState, MiscData.InstanceContainer instanceContainer, Func<IEnumerable<object>, InstanceData.TrackerInstance, bool> CheckUnassignedLocations, Func<IEnumerable<object>, InstanceData.TrackerInstance, bool> CheckUnassignedVariable, bool EnforceMarkAction = false)
+        {
+            List<object> UpdatedObjects = new List<object>();
+
             //Handle Options
             IEnumerable<OptionData.ChoiceOption> choiceOptions = SelectedObjects.Where(x => x is OptionData.ChoiceOption).Select(x => x as OptionData.ChoiceOption);
             IEnumerable<OptionData.IntOption> IntOptions = SelectedObjects.Where(x => x is OptionData.IntOption).Select(x => x as OptionData.IntOption);
             IEnumerable<OptionData.ToggleOption> ToggleOptions = SelectedObjects.Where(x => x is OptionData.ToggleOption).Select(x => x as OptionData.ToggleOption);
 
-            foreach (var i in ToggleOptions) 
-            { 
-                i.ToggleValue(); 
+            foreach (var i in ToggleOptions)
+            {
+                i.ToggleValue();
             }
-            if (choiceOptions.Any()) 
-            { 
+            if (choiceOptions.Any())
+            {
                 var c = CheckUnassignedLocations(choiceOptions, instanceContainer.Instance);
             }
             if (IntOptions.Any())
@@ -69,6 +122,13 @@ namespace MMR_Tracker_V3
             UpdatedObjects.AddRange(choiceOptions);
             UpdatedObjects.AddRange(IntOptions);
             UpdatedObjects.AddRange(ToggleOptions);
+
+            return UpdatedObjects;
+        }
+
+        public static List<LocationObject> SetLocationsCheckState(IEnumerable<object> SelectedObjects, MiscData.CheckState checkState, MiscData.InstanceContainer instanceContainer, Func<IEnumerable<object>, InstanceData.TrackerInstance, bool> CheckUnassignedLocations, Func<IEnumerable<object>, InstanceData.TrackerInstance, bool> CheckUnassignedVariable, bool EnforceMarkAction = false)
+        {
+            List<LocationObject> UpdatedObjects = new List<LocationObject>();
 
             //Handle Locations
             IEnumerable<LocationObject> locationObjects = SelectedObjects.Where(x => x is LocationObject).Select(x => x as LocationObject);
@@ -94,11 +154,18 @@ namespace MMR_Tracker_V3
             {
                 //When we mark a location, the action is always sent as Marked, but if the location is already marked we should instead Unchecked it unless EnforceMarkAction is true.
                 var Action = (checkState == MiscData.CheckState.Marked && LocationObject.CheckState == MiscData.CheckState.Marked) && !EnforceMarkAction ? MiscData.CheckState.Unchecked : checkState;
-                if (LocationObject.ToggleChecked(Action, instanceContainer.Instance)) 
-                { 
+                if (LocationObject.ToggleChecked(Action, instanceContainer.Instance))
+                {
                     UpdatedObjects.Add(LocationObject);
                 }
             }
+
+            return UpdatedObjects;
+        }
+
+        public static List<EntranceRandoExit> SetEntrancesCheckState(IEnumerable<object> SelectedObjects, MiscData.CheckState checkState, MiscData.InstanceContainer instanceContainer, Func<IEnumerable<object>, InstanceData.TrackerInstance, bool> CheckUnassignedLocations, Func<IEnumerable<object>, InstanceData.TrackerInstance, bool> CheckUnassignedVariable, bool EnforceMarkAction = false)
+        {
+            List<EntranceRandoExit> UpdatedObjects = new List<EntranceRandoExit>();
 
             //Handle Exits
             IEnumerable<EntranceData.EntranceRandoExit> ExitObjects = SelectedObjects.Where(x => x is EntranceData.EntranceRandoExit).Select(x => x as EntranceData.EntranceRandoExit);
@@ -117,19 +184,24 @@ namespace MMR_Tracker_V3
             foreach (EntranceData.EntranceRandoExit ExitObject in ExitObjects)
             {
                 var Action = (checkState == MiscData.CheckState.Marked && ExitObject.CheckState == MiscData.CheckState.Marked) && !EnforceMarkAction ? MiscData.CheckState.Unchecked : checkState;
-                if (ExitObject.ToggleExitChecked(Action, instanceContainer.Instance)) 
-                { 
+                if (ExitObject.ToggleExitChecked(Action, instanceContainer.Instance))
+                {
                     UpdatedObjects.Add(ExitObject);
                 }
             }
+            return UpdatedObjects;
+        }
 
+        public static List<HintObject> SetHintsCheckState(IEnumerable<object> SelectedObjects, MiscData.CheckState checkState, MiscData.InstanceContainer instanceContainer, Func<IEnumerable<object>, InstanceData.TrackerInstance, bool> CheckUnassignedLocations, Func<IEnumerable<object>, InstanceData.TrackerInstance, bool> CheckUnassignedVariable, bool EnforceMarkAction = false)
+        {
+            List<HintObject> UpdatedObjects = new List<HintObject>();
             //Hints======================================
             List<HintData.HintObject> HintObjects = SelectedObjects.Where(x => x is HintData.HintObject).Select(x => x as HintData.HintObject).ToList();
 
             var UncheckedHintObjects = HintObjects.Where(x => x.CheckState == MiscData.CheckState.Unchecked);
-            foreach (var i in UncheckedHintObjects.Where(x => !string.IsNullOrWhiteSpace(x.SpoilerHintText))) 
-            { 
-                i.HintText = i.SpoilerHintText; 
+            foreach (var i in UncheckedHintObjects.Where(x => !string.IsNullOrWhiteSpace(x.SpoilerHintText)))
+            {
+                i.HintText = i.SpoilerHintText;
             }
             IEnumerable<object> UncheckedVariableObjects = UncheckedHintObjects.Where(x => string.IsNullOrWhiteSpace(x.HintText));
             if (UncheckedVariableObjects.Any())
@@ -142,52 +214,53 @@ namespace MMR_Tracker_V3
                 var CheckAction = (checkState == MiscData.CheckState.Marked && hintObject.CheckState == MiscData.CheckState.Marked) && !EnforceMarkAction ? MiscData.CheckState.Unchecked : checkState;
                 hintObject.CheckState = CheckAction;
                 hintObject.HintText = CheckAction == MiscData.CheckState.Unchecked ? null : hintObject.HintText;
-                if (instanceContainer.Instance.StaticOptions.OptionFile.CheckHintMarkItem && CheckAction == MiscData.CheckState.Checked)
-                {
-                    var HintMarkedChecks = TryMarkHintedCheck(hintObject, instanceContainer);
-                    if (HintMarkedChecks.Any()) 
-                    { 
-                        UpdatedObjects.Add(HintMarkedChecks);
-                    }
-                }
             }
-
-            //Cleanup======================================
-
-            if (UpdatedObjects.Any() && checkState != MiscData.CheckState.Marked)
-            {
-                instanceContainer.logicCalculation.CalculateLogic(checkState);
-                if (checkState == MiscData.CheckState.Checked && instanceContainer.Instance.StaticOptions.OptionFile.AutoCheckCoupleEntrances)
-                {
-                    var PairsChecked = instanceContainer.Instance.CheckEntrancePair();
-                    if (PairsChecked.Any())
-                    {
-                        instanceContainer.logicCalculation.CalculateLogic(checkState);
-                        UpdatedObjects.Add(PairsChecked);
-                    }
-                }
-            }
-            if (UpdatedObjects.Any()) { CheckedObjectsUpdate(UpdatedObjects, instanceContainer.Instance); }
             return UpdatedObjects;
         }
 
-        private static List<object> TryMarkHintedCheck(HintData.HintObject hintObject, MiscData.InstanceContainer instanceContainer)
+        public static List<LocationObject> GetHIntedLocationsToUpdated(List<HintObject> UpdatedHints, InstanceContainer instanceContainer)
         {
-            List<object> MarkedChecks = new List<object>();
-            foreach(var i in hintObject.ParsedHintData)
+            List<LocationObject> LocationsToMark = new List<LocationObject>();
+            foreach (var hint in UpdatedHints)
             {
-                var Location = instanceContainer.Instance.GetLocationByID(i.Key);
-                var Item = instanceContainer.Instance.GetItemByID(i.Value);
-                if (Location is not null && Item is not null && Location.CheckState == MiscData.CheckState.Unchecked && !string.IsNullOrWhiteSpace(Location.Randomizeditem.SpoilerLogGivenItem))
+                if (hint.CheckState != MiscData.CheckState.Checked) { continue; }
+                foreach (var i in hint.ParsedHintData)
                 {
-                    Location.Randomizeditem.Item = Location.GetItemAtCheck(instanceContainer.Instance);
-                    if (Location.ToggleChecked(MiscData.CheckState.Marked, instanceContainer.Instance)) 
-                    { 
-                        MarkedChecks.Add(Location);
-                    }
+                    var Location = instanceContainer.Instance.GetLocationByID(i.Key);
+                    var Item = instanceContainer.Instance.GetItemByID(i.Value);
+                    if (Location is null || Item is null || Location.CheckState != MiscData.CheckState.Unchecked) { continue; }
+                    string ProperCheckItem = Location.GetItemAtCheck(instanceContainer.Instance);
+                    if (string.IsNullOrWhiteSpace(ProperCheckItem) || ProperCheckItem != Item.Id) { continue; }
+                    LocationsToMark.Add(Location);
                 }
             }
-            return MarkedChecks;
+            return LocationsToMark;
+        }
+
+        public static Dictionary<EntranceRandoExit, EntranceRandoDestination> GetEntrancePairsToUpdate(List<EntranceRandoExit> UpdatedExits, InstanceContainer instanceContainer)
+        {
+            Dictionary<EntranceRandoExit, EntranceRandoDestination> PairedExits = new Dictionary<EntranceRandoExit, EntranceRandoDestination>();
+            foreach (var exit in UpdatedExits)
+            {
+                if (exit.CheckState != CheckState.Checked) { continue; } //Doesn't support unchecking pairs
+                if (!exit.IsRandomizableEntrance(instanceContainer.Instance) || exit.EntrancePair is null) { continue; }
+                //Get the Pair of the exits destination
+                var PairExit = exit.DestinationExit.AsExit(instanceContainer.Instance).EntrancePair?.AsExit(instanceContainer.Instance);
+                if (PairExit == null) { continue; }
+                //If the pair has already been checked or if it's already in the state it needs to be skip it
+                CheckState CheckAction = PairExit.Available ? CheckState.Checked : CheckState.Marked;
+                if (PairExit.CheckState == CheckAction || PairExit.CheckState == CheckState.Checked) { continue; }
+                //Get the destination of the pair exit and the destination the spoiler has has defined
+                var PairDestination = exit.EntrancePair.AsDestination();
+                var ProperDestination = PairExit.GetDestinationAtExit(instanceContainer.Instance);
+                //If DefinedDestination is null the pair destination did not match the spoiler defined destination meaning the entrance is not coupled
+                EntranceData.EntranceRandoDestination DefinedDestination = null;
+                if (ProperDestination is null) { DefinedDestination = PairDestination; }
+                else if (ProperDestination.region == PairDestination.region && ProperDestination.from == PairDestination.from) { DefinedDestination = ProperDestination; }
+                if (DefinedDestination is null) { continue; }
+                PairedExits[PairExit] = DefinedDestination;
+            }
+            return PairedExits;
         }
 
         public static DataSets PopulateDataSets(InstanceData.TrackerInstance instance)

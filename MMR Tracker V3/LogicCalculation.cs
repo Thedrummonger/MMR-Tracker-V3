@@ -583,46 +583,11 @@ namespace MMR_Tracker_V3
                     if (CurrentOptionType == LogicEntryType.location && (instance.GetLocationByID(currentOption)?.GetItemAtCheck(instance) == null)) { RequiremntMet = inverse; }
                     else if (CurrentOptionType == LogicEntryType.location && (instance.GetLocationByID(currentOption)?.GetItemAtCheck(instance) == CurrentValue)) { RequiremntMet = true; }
                     else if (CurrentOptionType == LogicEntryType.Exit && (CurrentOptionEntry as EntranceData.EntranceRandoExit)?.DestinationExit == null) { RequiremntMet = inverse; }
-                    else if (CurrentOptionType == LogicEntryType.Exit && ExitLeadsToArea(CurrentOptionEntry, CurrentValue)) { RequiremntMet = true; }
+                    else if (CurrentOptionType == LogicEntryType.Exit && (CurrentOptionEntry as EntranceData.EntranceRandoExit).LeadsToArea(CurrentValue)) { RequiremntMet = true; }
                 }
             }
             return RequiremntMet != inverse;
 
-        }
-
-        private static bool ExitLeadsToArea(object Exit, string Area)
-        {
-            EntranceData.EntranceRandoExit Entrance = Exit as EntranceData.EntranceRandoExit;
-            if (Entrance.DestinationExit is not null && Entrance.DestinationExit.region == Area) { return true; }
-            return false;
-        }
-
-        public static List<object> CheckEntrancePair(this TrackerInstance instance)
-        {
-            List<object> PairsChecked = new List<object>();
-            foreach (var i in instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits(instance).Values))
-            {   
-                if (i.EntrancePair is null || i.CheckState != CheckState.Checked) { continue; }
-                //Get the Pair of the exits destination
-                var PairExit = i.DestinationExit.AsExit(instance).EntrancePair?.AsExit(instance);
-                if (PairExit == null) { continue; }
-                //If the pair has already been checked or if it's already in the state it needs to be skip it
-                CheckState CheckAction = PairExit.Available ? CheckState.Checked : CheckState.Marked;
-                if (PairExit.CheckState == CheckAction || PairExit.CheckState == CheckState.Checked) { continue; }
-                //Get the destination of the pair exit and the destination the spoiler has has defined
-                var PairDestination = i.EntrancePair.AsDestination();
-                var ProperDestination = PairExit.GetDestinationAtExit(instance);
-                //If DefinedDestination is null the pair destination did not match the spoiler defined destination meaning the entrance is not coupled
-                EntranceData.EntranceRandoDestination DefinedDestination = null;
-                if (ProperDestination is null) { DefinedDestination = PairDestination; }
-                else if (ProperDestination.region == PairDestination.region && ProperDestination.from == PairDestination.from) { DefinedDestination = ProperDestination; }
-                if (DefinedDestination is null) { continue; }
-                //Assign the destination and Toggle the check
-                PairExit.DestinationExit = DefinedDestination;
-                PairExit.ToggleExitChecked(CheckAction, instance);
-                PairsChecked.Add(PairExit);
-            }
-            return PairsChecked;
         }
     }
 }

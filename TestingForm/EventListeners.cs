@@ -22,9 +22,7 @@ namespace TestingForm
 
         private static void TrackerDataHandeling_CheckedObjectsUpdate(List<object> obj, MMR_Tracker_V3.InstanceData.TrackerInstance instance)
         {
-            List<string> stuff = new List<string>();
-            foreach (object o in obj) { stuff.Add(MMR_Tracker_V3.Utility.GetLocationDisplayName(o, instance)); }
-            Debug.WriteLine($"Objects Updated\n{JsonConvert.SerializeObject(stuff, MMR_Tracker_V3.Utility._NewtonsoftJsonSerializerOptions)}");
+
         }
 
         private static void LBSelectedIndexChanged(object? sender, EventArgs e)
@@ -35,8 +33,6 @@ namespace TestingForm
             bool FirstSelection = WinFormTesting.LastSelectedObject is null;
             WinFormTesting.LastSelectedObject = ActiveLB.SelectedItem;
             if (FirstSelection) { TestingForm.CurrentForm.UpdateDebugActions(); }
-
-            Debug.WriteLine($"Control Focused [{ActiveLB.Name}] | [{ActiveLB.SelectedItem.ToString()}]");
         }
 
         public static void MainInterface_FormClosing(object? s, EventArgs e)
