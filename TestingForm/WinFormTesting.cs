@@ -46,10 +46,7 @@ namespace TestingForm
         }
         public static bool CanLoadWinformTrackerState()
         {
-            if (!WinformLoaded()) { Debug.WriteLine($"WinForm Instance was not created"); return false; }
-            if (MainInterface.InstanceContainer?.Instance is null) { Debug.WriteLine($"Tracker Instance Not Created"); return false; }
-            if (LogicRecreation.CurrentSaveState is null) { Debug.WriteLine($"No tracker state was saved"); return false; }
-            return true;
+            return WinformLoaded() && MainInterface.InstanceContainer?.Instance is not null && LogicRecreation.CurrentSaveState is not null;
         }
         public static void LoadWinformTrackerState()
         {
