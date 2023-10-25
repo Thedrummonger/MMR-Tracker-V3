@@ -959,9 +959,9 @@ namespace Windows_Form_Frontend
             }
             string CurrentState = InstanceContainer.Instance.ToJson(MiscData.JSONType.UTF8);
 
-            bool ChangesMade = TrackerDataHandeling.CheckSelectedItems(Items, checkState, InstanceContainer, HandleUnassignedChecks, HandleUnassignedVariables, EnforceMarkAction);
+            var UpdatedObjects = TrackerDataHandeling.CheckSelectedItems(Items, checkState, InstanceContainer, HandleUnassignedChecks, HandleUnassignedVariables, EnforceMarkAction);
 
-            if (ChangesMade) 
+            if (UpdatedObjects.Any()) 
             { 
                 SaveTrackerState(CurrentState);
             }

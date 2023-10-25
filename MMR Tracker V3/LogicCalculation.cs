@@ -597,9 +597,9 @@ namespace MMR_Tracker_V3
             return false;
         }
 
-        public static bool CheckEntrancePair(this TrackerInstance instance)
+        public static List<object> CheckEntrancePair(this TrackerInstance instance)
         {
-            bool ChangesMade = false;
+            List<object> PairsChecked = new List<object>();
             foreach (var i in instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits(instance).Values))
             {
                 if (i.CheckState == CheckState.Checked && i.EntrancePair != null)
@@ -610,10 +610,11 @@ namespace MMR_Tracker_V3
                     {
                         EntrancePair.DestinationExit = i.GetDestnationFromEntrancePair();
                         EntrancePair.ToggleExitChecked(CheckState.Checked, instance);
+                        PairsChecked.Add(EntrancePair);
                     }
                 }
             }
-            return ChangesMade;
+            return PairsChecked;
         }
 
         public static bool UnCheckEntrancePair(this TrackerInstance instance)

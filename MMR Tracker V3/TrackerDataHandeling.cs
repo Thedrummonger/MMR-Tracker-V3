@@ -10,6 +10,8 @@ namespace MMR_Tracker_V3
 {
     public class TrackerDataHandeling
     {
+
+        public static event Action<List<object>, InstanceData.TrackerInstance> CheckedObjectsUpdate;
         public class DataSets
         {
             public List<LocationData.LocationObject> UncheckedLocations { get; set; } = new List<LocationData.LocationObject>();
@@ -42,9 +44,9 @@ namespace MMR_Tracker_V3
             public List<ItemData.ItemObject> OnlineObtainedItems { get; set; } = new List<ItemData.ItemObject>();
         }
 
-        public static bool CheckSelectedItems(IEnumerable<object> SelectedObjects, MiscData.CheckState checkState, MiscData.InstanceContainer instanceContainer, Func<IEnumerable<object>, InstanceData.TrackerInstance, bool> CheckUnassignedLocations, Func<IEnumerable<object>, InstanceData.TrackerInstance, bool> CheckUnassignedVariable, bool EnforceMarkAction = false)
+        public static List<object> CheckSelectedItems(IEnumerable<object> SelectedObjects, MiscData.CheckState checkState, MiscData.InstanceContainer instanceContainer, Func<IEnumerable<object>, InstanceData.TrackerInstance, bool> CheckUnassignedLocations, Func<IEnumerable<object>, InstanceData.TrackerInstance, bool> CheckUnassignedVariable, bool EnforceMarkAction = false)
         {
-            bool ChangesMade = false;
+            List<object> UpdatedObjects = new List<object>();
 
             //Handle Options
             IEnumerable<OptionData.ChoiceOption> choiceOptions = SelectedObjects.Where(x => x is OptionData.ChoiceOption).Select(x => x as OptionData.ChoiceOption);
@@ -54,18 +56,19 @@ namespace MMR_Tracker_V3
             foreach (var i in ToggleOptions) 
             { 
                 i.ToggleValue(); 
-                ChangesMade = true; 
             }
             if (choiceOptions.Any()) 
             { 
-                CheckUnassignedLocations(choiceOptions, instanceContainer.Instance);
-                ChangesMade = true;
+                var c = CheckUnassignedLocations(choiceOptions, instanceContainer.Instance);
             }
             if (IntOptions.Any())
             {
                 CheckUnassignedVariable(IntOptions, instanceContainer.Instance);
-                ChangesMade = true;
             }
+
+            UpdatedObjects.AddRange(choiceOptions);
+            UpdatedObjects.AddRange(IntOptions);
+            UpdatedObjects.AddRange(ToggleOptions);
 
             //Handle Locations
             IEnumerable<LocationObject> locationObjects = SelectedObjects.Where(x => x is LocationObject).Select(x => x as LocationObject);
@@ -86,13 +89,15 @@ namespace MMR_Tracker_V3
             if (ManualLocationChecks.Any())
             {
                 CheckUnassignedLocations(ManualLocationChecks, instanceContainer.Instance);
-                ChangesMade = true;
             }
             foreach (LocationObject LocationObject in locationObjects)
             {
                 //When we mark a location, the action is always sent as Marked, but if the location is already marked we should instead Unchecked it unless EnforceMarkAction is true.
                 var Action = (checkState == MiscData.CheckState.Marked && LocationObject.CheckState == MiscData.CheckState.Marked) && !EnforceMarkAction ? MiscData.CheckState.Unchecked : checkState;
-                if (LocationObject.ToggleChecked(Action, instanceContainer.Instance)) { ChangesMade = true; }
+                if (LocationObject.ToggleChecked(Action, instanceContainer.Instance)) 
+                { 
+                    UpdatedObjects.Add(LocationObject);
+                }
             }
 
             //Handle Exits
@@ -108,12 +113,14 @@ namespace MMR_Tracker_V3
             if (ManualExitChecks.Any())
             {
                 CheckUnassignedLocations(ManualExitChecks, instanceContainer.Instance);
-                ChangesMade = true;
             }
             foreach (EntranceData.EntranceRandoExit ExitObject in ExitObjects)
             {
                 var Action = (checkState == MiscData.CheckState.Marked && ExitObject.CheckState == MiscData.CheckState.Marked) && !EnforceMarkAction ? MiscData.CheckState.Unchecked : checkState;
-                if (ExitObject.ToggleExitChecked(Action, instanceContainer.Instance)) { ChangesMade = true; }
+                if (ExitObject.ToggleExitChecked(Action, instanceContainer.Instance)) 
+                { 
+                    UpdatedObjects.Add(ExitObject);
+                }
             }
 
             //Hints======================================
@@ -128,36 +135,45 @@ namespace MMR_Tracker_V3
             if (UncheckedVariableObjects.Any())
             {
                 CheckUnassignedVariable(UncheckedVariableObjects, instanceContainer.Instance);
-                ChangesMade = true;
             }
             foreach (HintData.HintObject hintObject in HintObjects)
             {
-                ChangesMade = true;
+                UpdatedObjects.Add(hintObject);
                 var CheckAction = (checkState == MiscData.CheckState.Marked && hintObject.CheckState == MiscData.CheckState.Marked) && !EnforceMarkAction ? MiscData.CheckState.Unchecked : checkState;
                 hintObject.CheckState = CheckAction;
                 hintObject.HintText = CheckAction == MiscData.CheckState.Unchecked ? null : hintObject.HintText;
                 if (instanceContainer.Instance.StaticOptions.OptionFile.CheckHintMarkItem && CheckAction == MiscData.CheckState.Checked)
                 {
-                    if (TryMarkHintedCheck(hintObject, instanceContainer)) { ChangesMade = true; }
+                    var HintMarkedChecks = TryMarkHintedCheck(hintObject, instanceContainer);
+                    if (HintMarkedChecks.Any()) 
+                    { 
+                        UpdatedObjects.Add(HintMarkedChecks);
+                    }
                 }
             }
 
             //Cleanup======================================
 
-            if (ChangesMade && checkState != MiscData.CheckState.Marked)
+            if (UpdatedObjects.Any() && checkState != MiscData.CheckState.Marked)
             {
                 instanceContainer.logicCalculation.CalculateLogic(checkState);
-                if (checkState == MiscData.CheckState.Checked && instanceContainer.Instance.StaticOptions.OptionFile.AutoCheckCoupleEntrances && instanceContainer.Instance.CheckEntrancePair())
+                if (checkState == MiscData.CheckState.Checked && instanceContainer.Instance.StaticOptions.OptionFile.AutoCheckCoupleEntrances)
                 {
-                    instanceContainer.logicCalculation.CalculateLogic(checkState);
+                    var PairsChecked = instanceContainer.Instance.CheckEntrancePair();
+                    if (PairsChecked.Any())
+                    {
+                        instanceContainer.logicCalculation.CalculateLogic(checkState);
+                        UpdatedObjects.Add(PairsChecked);
+                    }
                 }
             }
-            return ChangesMade;
+            if (UpdatedObjects.Any()) { CheckedObjectsUpdate(UpdatedObjects, instanceContainer.Instance); }
+            return UpdatedObjects;
         }
 
-        private static bool TryMarkHintedCheck(HintData.HintObject hintObject, MiscData.InstanceContainer instanceContainer)
+        private static List<object> TryMarkHintedCheck(HintData.HintObject hintObject, MiscData.InstanceContainer instanceContainer)
         {
-            bool ChangesMade = false;
+            List<object> MarkedChecks = new List<object>();
             foreach(var i in hintObject.ParsedHintData)
             {
                 var Location = instanceContainer.Instance.GetLocationByID(i.Key);
@@ -165,10 +181,13 @@ namespace MMR_Tracker_V3
                 if (Location is not null && Item is not null && Location.CheckState == MiscData.CheckState.Unchecked && !string.IsNullOrWhiteSpace(Location.Randomizeditem.SpoilerLogGivenItem))
                 {
                     Location.Randomizeditem.Item = Location.GetItemAtCheck(instanceContainer.Instance);
-                    if (Location.ToggleChecked(MiscData.CheckState.Marked, instanceContainer.Instance)) { ChangesMade = true; }
+                    if (Location.ToggleChecked(MiscData.CheckState.Marked, instanceContainer.Instance)) 
+                    { 
+                        MarkedChecks.Add(Location);
+                    }
                 }
             }
-            return ChangesMade;
+            return MarkedChecks;
         }
 
         public static DataSets PopulateDataSets(InstanceData.TrackerInstance instance)
