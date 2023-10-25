@@ -1,15 +1,5 @@
 using MMR_Tracker_V3.TrackerObjects;
-using MMR_Tracker_V3;
-using Newtonsoft.Json;
-using System.Diagnostics;
-using Windows_Form_Frontend;
-using System.Windows.Forms;
-using MMR_Tracker_V3.TrackerObjectExtentions;
 using CLIFrontEnd;
-using System.Runtime.InteropServices;
-using System.Runtime.CompilerServices;
-using System.Reflection.Metadata;
-using MathNet.Numerics;
 
 namespace TestingForm
 {
@@ -25,6 +15,7 @@ namespace TestingForm
 
         private void MainInterface_Load(object sender, EventArgs e)
         {
+            Utility.ValidateDevFiles();
             UpdateDebugActions();
             DLLImport.AllocConsole();
             DLLImport.ShowWindow(DLLImport.GetConsoleWindow(), DLLImport.SW_HIDE);
