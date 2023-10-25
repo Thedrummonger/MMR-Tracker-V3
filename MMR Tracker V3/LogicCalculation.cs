@@ -601,48 +601,28 @@ namespace MMR_Tracker_V3
         {
             List<object> PairsChecked = new List<object>();
             foreach (var i in instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits(instance).Values))
-            {
-                if (i.CheckState == CheckState.Checked && i.EntrancePair != null)
-                {
-                    Debug.WriteLine($"Checked Entrance {i.ParentAreaID} => {i.ID}");
-                    var DestAsExit = i.DestinationExit.GetAsExit(instance);
-                    Debug.WriteLine($"Destination Was {DestAsExit.ParentAreaID} => {DestAsExit.ID}");
-                    var DestAsExitPair = DestAsExit.EntrancePair;
-                    if (DestAsExitPair == null) { continue; }
-                    var PairAsExit = DestAsExitPair.GetAsExit(instance);
-                    Debug.WriteLine($"Destination Pair Was {PairAsExit.ParentAreaID} => {PairAsExit.ID}");
-
-                    CheckState CheckAction = PairAsExit.Available ? CheckState.Checked : CheckState.Marked;
-                    if (PairAsExit.CheckState != CheckAction && PairAsExit.CheckState != CheckState.Checked)
-                    {
-                        PairAsExit.DestinationExit = i.GetDestnationFromEntrancePair();
-                        PairAsExit.ToggleExitChecked(CheckAction, instance);
-                        PairsChecked.Add(PairAsExit);
-                    }
-                }
+            {   
+                if (i.EntrancePair is null || i.CheckState != CheckState.Checked) { continue; }
+                //Get the Pair of the exits destination
+                var PairExit = i.DestinationExit.AsExit(instance).EntrancePair?.AsExit(instance);
+                if (PairExit == null) { continue; }
+                //If the pair has already been checked or if it's already in the state it needs to be skip it
+                CheckState CheckAction = PairExit.Available ? CheckState.Checked : CheckState.Marked;
+                if (PairExit.CheckState == CheckAction || PairExit.CheckState == CheckState.Checked) { continue; }
+                //Get the destination of the pair exit and the destination the spoiler has has defined
+                var PairDestination = i.EntrancePair.AsDestination();
+                var ProperDestination = PairExit.GetDestinationAtExit(instance);
+                //If DefinedDestination is null the pair destination did not match the spoiler defined destination meaning the entrance is not coupled
+                EntranceData.EntranceRandoDestination DefinedDestination = null;
+                if (ProperDestination is null) { DefinedDestination = PairDestination; }
+                else if (ProperDestination.region == PairDestination.region && ProperDestination.from == PairDestination.from) { DefinedDestination = ProperDestination; }
+                if (DefinedDestination is null) { continue; }
+                //Assign the destination and Toggle the check
+                PairExit.DestinationExit = DefinedDestination;
+                PairExit.ToggleExitChecked(CheckAction, instance);
+                PairsChecked.Add(PairExit);
             }
             return PairsChecked;
-        }
-
-        public static bool UnCheckEntrancePair(this TrackerInstance instance)
-        {
-            bool ChangesMade = false;
-            foreach (var i in instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits(instance).Values))
-            {
-                if (i.CheckState != CheckState.Checked && i.EntrancePair != null)
-                {
-                    var DestAsExit = i.DestinationExit.GetAsExit(instance);
-                    var DestAsExitPair = DestAsExit.EntrancePair;
-                    if (DestAsExitPair == null) { continue; }
-                    var PairAsExit = DestAsExitPair.GetAsExit(instance);
-                    if (PairAsExit.CheckState == CheckState.Checked)
-                    {
-                        //PairAsExit.DestinationExit = i.GetDestnationFromEntrancePair();
-                        PairAsExit.ToggleExitChecked(CheckState.Unchecked, instance);
-                    }
-                }
-            }
-            return ChangesMade;
         }
     }
 }

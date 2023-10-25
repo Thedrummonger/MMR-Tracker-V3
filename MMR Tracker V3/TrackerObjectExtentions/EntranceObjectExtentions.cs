@@ -28,10 +28,6 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
         {
             return new EntranceRandoDestination { region = exit.ID, from = exit.ParentAreaID };
         }
-        public static EntranceRandoDestination GetDestnationFromEntrancePair(this EntranceRandoExit exit)
-        {
-            return new EntranceRandoDestination { region = exit.EntrancePair.Exit, from = exit.EntrancePair.Area };
-        }
         public static bool IsUnrandomized(this EntranceRandoExit exit, UnrandState Include = UnrandState.Any)
         {
             if ((Include == UnrandState.Any || Include == UnrandState.Unrand) && exit.RandomizedState == RandomizedState.Unrandomized) { return true; }
@@ -89,11 +85,22 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             return true;
         }
 
-        public static EntranceRandoExit GetAsExit(this EntranceRandoDestination destination, InstanceData.TrackerInstance Instance)
+        public static EntranceRandoDestination AsDestination(this EntranceRandoExit exit)
+        {
+            return new EntranceRandoDestination { from = exit.ParentAreaID, region = exit.ID };
+        }
+
+        public static EntranceRandoDestination AsDestination(this EntranceAreaPair Pair)
+        {
+            return new EntranceRandoDestination { from = Pair.Area, region = Pair.Exit };
+        }
+
+        public static EntranceRandoExit AsExit(this EntranceRandoDestination destination, InstanceData.TrackerInstance Instance)
         {
             return Instance.EntrancePool.AreaList[destination.from].GetExit(destination.region);
         }
-        public static EntranceRandoExit GetAsExit(this EntranceAreaPair Pair, InstanceData.TrackerInstance Instance)
+
+        public static EntranceRandoExit AsExit(this EntranceAreaPair Pair, InstanceData.TrackerInstance Instance)
         {
             return Instance.EntrancePool.AreaList[Pair.Area].GetExit(Pair.Exit);
         }

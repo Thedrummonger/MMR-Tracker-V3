@@ -96,7 +96,7 @@ namespace TestingForm
             }
             if (RandomizedExit is not null)
             {
-                var Destination = RandomizedExit.GetAsExit(MainInterface.InstanceContainer.Instance);
+                var Destination = RandomizedExit.AsExit(MainInterface.InstanceContainer.Instance);
                 if (Destination is not null)
                 {
                     Debug.WriteLine($"Destination");
