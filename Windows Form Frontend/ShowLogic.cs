@@ -79,7 +79,7 @@ namespace Windows_Form_Frontend
                 bool hasTimeLogic = UnAlteredLogic.TimeAvailable != TimeOfDay.None || UnAlteredLogic.TimeSetup != TimeOfDay.None;
                 bool ShowTimeLogic = hasTimeLogic && chkShowTime.Checked;
                 //Title
-                string EntryName = Utility.GetDictNameDynamicEntry(LogicItemObject, instance)??LogicItem;
+                string EntryName = instance.GetDynamicObjName((object)LogicItemObject)??LogicItem;
                 if (EntryName != LogicItem) { EntryName = $"{EntryName} ({LogicItem})"; }
                 this.Text = $"{typeDisplay}: {EntryName}{Availablility}";
                 //Text Changes
@@ -99,7 +99,7 @@ namespace Windows_Form_Frontend
                 //Enable Items
                 textBox1.Enabled = false;
                 btnGoBack.Enabled = GoBackList.Any();
-                chkShowUnaltered.Enabled = !Utility.IsLogicEqual(AlteredLogic, UnAlteredLogic);
+                chkShowUnaltered.Enabled = !AlteredLogic.Equals(UnAlteredLogic);
                 chkShowTime.Enabled = hasTimeLogic;
                 //Resize Items
                 ReqLBHeightData.ResizeLB(false, ShowTimeLogic);

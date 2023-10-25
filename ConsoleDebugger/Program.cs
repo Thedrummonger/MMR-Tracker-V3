@@ -305,7 +305,7 @@ namespace CLIFrontEnd
 
         private static void SetPrice(dynamic entry)
         {
-            if (!Utility.DynamicPropertyExist(entry, "Price") && !Utility.TestForPriceData(entry)) { return; }
+            if (!Utility.DynamicPropertyExist(entry, "Price") && !MMR_Tracker_V3.PriceRando.TestForPriceData(entry)) { return; }
             entry.GetPrice(out int p, out char c);
             if (p > -1) { entry.SetPrice(-1); return; }
             var DictEntry = entry.GetDictEntry(newTrackerInstance.Instance);

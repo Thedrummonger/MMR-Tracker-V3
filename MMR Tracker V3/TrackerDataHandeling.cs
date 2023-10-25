@@ -402,14 +402,14 @@ namespace MMR_Tracker_V3
                 foreach (var area in IC.Instance.EntrancePool.AreaList)
                 {
                     var CheckLoadingZoneExits = area.Value.RandomizableExits(IC.Instance).Where(x => x.Value.CheckState == MiscData.CheckState.Checked && EntranceAppearsinListbox(x.Value, IC.Instance));
-                    var FilteredCheckedExits = CheckLoadingZoneExits.Where(x => SearchStringParser.FilterSearch(IC.Instance, x.Value, Filter, Utility.GetEntranceDisplayName(x.Value, IC.Instance)));
+                    var FilteredCheckedExits = CheckLoadingZoneExits.Where(x => SearchStringParser.FilterSearch(IC.Instance, x.Value, Filter, x.Value.GetEntranceDisplayName(IC.Instance)));
 
                     ItemsInListBox += CheckLoadingZoneExits.Count();
                     ItemsInListBoxFiltered += FilteredCheckedExits.Count();
                     if (!FilteredCheckedExits.Any()) { continue; }
                     foreach (var i in FilteredCheckedExits)
                     {
-                        i.Value.DisplayName = Utility.GetEntranceDisplayName(i.Value, IC.Instance);
+                        i.Value.DisplayName = i.Value.GetEntranceDisplayName(IC.Instance);
                         ValidExits.Add(i.Value);
                     }
                 }
@@ -712,7 +712,7 @@ namespace MMR_Tracker_V3
                 (x.Value.Available || x.Value.CheckState == MiscData.CheckState.Marked || ShowUnavailable || Filter.StartsWith("^")) && 
                 x.Value.CheckState != MiscData.CheckState.Checked && EntranceAppearsinListbox(x.Value, IC.Instance));
 
-                var FilteredAvailableExits = AvailableExits.Where(x => SearchStringParser.FilterSearch(IC.Instance, x.Value, Filter, Utility.GetEntranceDisplayName(x.Value, IC.Instance)));
+                var FilteredAvailableExits = AvailableExits.Where(x => SearchStringParser.FilterSearch(IC.Instance, x.Value, Filter, x.Value.GetEntranceDisplayName(IC.Instance)));
 
                 OutItemsInListBox += AvailableExits.Count();
                 OutItemsInListBoxFiltered += FilteredAvailableExits.Count();
@@ -720,7 +720,7 @@ namespace MMR_Tracker_V3
 
                 foreach(var i in FilteredAvailableExits)
                 {
-                    i.Value.DisplayName = Utility.GetEntranceDisplayName(i.Value, IC.Instance);
+                    i.Value.DisplayName = i.Value.GetEntranceDisplayName(IC.Instance);
                     ValidExits.Add(i.Value);
 
                 }

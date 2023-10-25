@@ -183,7 +183,7 @@ namespace MMR_Tracker_V3
 
             //Wallet and Price Data
 
-            Instance.PriceData.WalletEntries = Utility.GetAllWalletLogicEntries(Instance);
+            Instance.PriceData.WalletEntries = PriceRando.GetAllWalletLogicEntries(Instance);
             Dictionary<string, Tuple<char, int>> ItemWallets = Instance.LogicDictionary.ItemList.Values
                 .Where(x => x.WalletCapacity != null && (int)x.WalletCapacity > -1)
                 .ToDictionary(x => x.ID, x => new Tuple<char, int>(x.WalletCurrency??'$', (int)x.WalletCapacity ) );

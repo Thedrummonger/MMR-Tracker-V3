@@ -19,6 +19,20 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
         {
             return exit.GetDictEntry(Instance)?.DisplayExit??exit.ID;
         }
+        public static string GetEntranceDisplayName(this EntranceRandoExit ExitObjectObject, InstanceData.TrackerInstance instance)
+        {
+            var Destination = ExitObjectObject.GetDestinationAtExit();
+            string StarredDisplay = ExitObjectObject.Starred ? "*" : "";
+            string RandomizedExitDisplay = Destination is null ? "" : $"{Destination.region} <- {Destination.from}";
+
+            return ExitObjectObject.CheckState switch
+            {
+                MiscData.CheckState.Marked => $"{ExitObjectObject.DisplayExit(instance)}: {RandomizedExitDisplay}{StarredDisplay}",
+                MiscData.CheckState.Unchecked => $"{ExitObjectObject.DisplayExit(instance)}{StarredDisplay}",
+                MiscData.CheckState.Checked => $"{RandomizedExitDisplay}: {ExitObjectObject.DisplayExit(instance)}{StarredDisplay}",
+                _ => ExitObjectObject.ToString(),
+            };
+        }
         public static bool IsRandomizableEntrance(this EntranceRandoExit exit, InstanceData.TrackerInstance currentTrackerInstance)
         {
             return exit.GetDictEntry(currentTrackerInstance).RandomizableEntrance;

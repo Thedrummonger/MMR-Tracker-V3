@@ -865,7 +865,7 @@ namespace Windows_Form_Frontend
             dynamic Target = null;
             if (listBox.SelectedItem is LocationData.LocationProxy ProxyPriceSet) { Target = ProxyPriceSet.GetLogicInheritance(InstanceContainer.Instance); }
             else if (listBox.SelectedItem is LocationData.LocationObject LocPriceSet) { Target = LocPriceSet; }
-            if (Utility.DynamicPropertyExist(Target, "Price") || Utility.TestForPriceData(Target))
+            if (Utility.DynamicPropertyExist(Target, "Price") || PriceRando.TestForPriceData(Target))
             {
                 Target.GetPrice(out int p, out char c);
                 string SetPriceText = p > -1 ? "Clear Price" : "Set Price";

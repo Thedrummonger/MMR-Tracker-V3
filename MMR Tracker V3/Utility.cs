@@ -1,7 +1,6 @@
 ﻿using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
@@ -9,14 +8,9 @@ using System.Dynamic;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Runtime.Intrinsics.X86;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
-using YamlDotNet.Serialization.NamingConventions;
 using YamlDotNet.Serialization;
 using System.Globalization;
 using System.Text.RegularExpressions;
@@ -59,11 +53,13 @@ namespace MMR_Tracker_V3
         {
             return source.OrderBy(x => Guid.NewGuid());
         }
-
         public static void PrintObjectToConsole(object o)
         {
-            string JsonString = JsonConvert.SerializeObject(o, _NewtonsoftJsonSerializerOptions);
-            Debug.WriteLine(JsonString);
+            Debug.WriteLine(o.ToFormattedJson());
+        }
+        public static string ToFormattedJson(this object o)
+        {
+            return JsonConvert.SerializeObject(o, _NewtonsoftJsonSerializerOptions);
         }
 
         public readonly static Newtonsoft.Json.JsonSerializerSettings _NewtonsoftJsonSerializerOptions = new Newtonsoft.Json.JsonSerializerSettings
@@ -76,11 +72,11 @@ namespace MMR_Tracker_V3
         public static bool IsLiteralID(this string ID, out string CleanedID)
         {
             bool Literal = false;
-            CleanedID = ID;
+            CleanedID = ID.Trim();
             if (ID.StartsWith("'") && ID.EndsWith("'"))
             {
                 Literal = true;
-                CleanedID = ID.Replace("'", "");
+                CleanedID = ID[1..^1];
             }
             return Literal;
         }
@@ -115,6 +111,7 @@ namespace MMR_Tracker_V3
 
         public static void DeepCloneLogic(List<string> Requirements, List<List<string>> Conditionals, out List<string> NewRequirements, out List<List<string>> NewConditionals)
         {
+
             NewRequirements = Requirements.ConvertAll(o => (string)o.Clone());
             NewConditionals = Conditionals.ConvertAll(p => p.ConvertAll(o => (string)o.Clone()));
         }
@@ -189,119 +186,6 @@ namespace MMR_Tracker_V3
             };
         }
 
-        public static string GetDictNameDynamicEntry(dynamic Entry, InstanceData.TrackerInstance instance)
-        {
-            if (Entry is LocationData.LocationObject LO)
-            {
-                return LO.GetDictEntry(instance)?.GetName(instance)??LO.ID;
-            }
-            else if (Entry is MacroObject MO)
-            {
-                return MO.GetDictEntry(instance)?.Name??MO.ID;
-            }
-            else if (Entry is ItemData.ItemObject IO)
-            {
-                return IO.GetDictEntry(instance)?.Name??IO.Id;
-            }
-            else if (Entry is OptionData.ChoiceOption CO)
-            {
-                return CO.Name??CO.ID;
-            }
-            else if (Entry is OptionData.ToggleOption TO)
-            {
-                return TO.Name??TO.ID;
-            }
-            else if (Entry is OptionData.IntOption NO)
-            {
-                return NO.Name??NO.ID;
-            }
-            else if (Entry is HintData.HintObject HO)
-            {
-                return HO.GetDictEntry(instance)?.Name??HO.ID;
-            }
-            else { return null; }
-        }
-
-        public static string GetEntranceDisplayName(EntranceData.EntranceRandoExit ExitObjectObject, InstanceData.TrackerInstance instance)
-        {
-            var Destination = ExitObjectObject.GetDestinationAtExit();
-            string StarredDisplay = ExitObjectObject.Starred ? "*" : "";
-            string RandomizedExitDisplay = Destination is null ? "" : $"{Destination.region} <- {Destination.from}";
-
-            return ExitObjectObject.CheckState switch
-            {
-                MiscData.CheckState.Marked => $"{ExitObjectObject.DisplayExit(instance)}: {RandomizedExitDisplay}{StarredDisplay}",
-                MiscData.CheckState.Unchecked => $"{ExitObjectObject.DisplayExit(instance)}{StarredDisplay}",
-                MiscData.CheckState.Checked => $"{RandomizedExitDisplay}: {ExitObjectObject.DisplayExit(instance)}{StarredDisplay}",
-                _ => ExitObjectObject.ToString(),
-            };
-        }
-
-        public static List<string> GetAllWalletLogicEntries(InstanceData.TrackerInstance instance)
-        {
-            bool CurrentInitializedState = instance.PriceData.Initialized;
-            instance.PriceData.Initialized = false;
-
-            List<string> WalletEntries = new();
-            foreach (var i in instance.ItemPool)
-            {
-                if (i.Value.GetDictEntry(instance).WalletCapacity != null)
-                {
-                    WalletEntries.Add(i.Key);
-                }
-            }
-            foreach (var i in instance.MacroPool)
-            {
-                if (i.Value.GetDictEntry(instance).WalletCapacity != null)
-                {
-                    WalletEntries.Add(i.Key);
-                }
-            }
-
-            while (true)
-            {
-                if (!ScanMacros()) { break; }
-            }
-
-            instance.PriceData.Initialized = CurrentInitializedState;
-
-            return WalletEntries;
-
-            bool ScanMacros()
-            {
-                bool NewWalletFound = false;
-                foreach (var i in instance.MacroPool)
-                {
-                    if (WalletEntries.Contains(i.Key)) { continue; }
-                    var Logic = instance.GetLogic(i.Key);
-                    if (IsWalletmacro(Logic))
-                    {
-                        WalletEntries.Add(i.Key);
-                        NewWalletFound = true;
-                    }
-                }
-                return NewWalletFound;
-            }
-
-            bool IsWalletmacro(MMRData.JsonFormatLogicItem Logic)
-            {
-                if (!Logic.RequiredItems.Any() && !Logic.ConditionalItems.Any()) { return false; }
-                foreach (var i in Logic.RequiredItems)
-                {
-                    if (!WalletEntries.Contains(i)) { return false; }
-                }
-                foreach (var cond in Logic.ConditionalItems)
-                {
-                    foreach (var i in cond)
-                    {
-                        if (!WalletEntries.Contains(i)) { return false; }
-                    }
-                }
-                return true;
-            }
-
-        }
-
         public static bool DynamicPropertyExist(dynamic Object, string name)
         {
             if (Object is null) { return false; }
@@ -314,28 +198,6 @@ namespace MMR_Tracker_V3
         public static List<string> ParseJArrayToListSlow(object JArray)
         {
             return JsonConvert.DeserializeObject<List<string>>(JsonConvert.SerializeObject(JArray));
-        }
-
-        public static bool TestForPriceData(dynamic Object)
-        {
-            try
-            {
-                Object.GetPrice(out int p, out char c);
-                Debug.WriteLine("Had Price Function");
-                return true;
-            }
-            catch (Exception e) {
-
-                Debug.WriteLine($"NOT Had Price Function {e}"); 
-                return false; 
-            }
-        }
-
-        public static bool IsLogicEqual(MMRData.JsonFormatLogicItem logicItem1, MMRData.JsonFormatLogicItem logicItem2)
-        {
-            bool ReqEqual = logicItem1.RequiredItems.SequenceEqual(logicItem2.RequiredItems);
-            bool ConEqual = logicItem1.ConditionalItems.SelectMany(x => x).SequenceEqual(logicItem2.ConditionalItems.SelectMany(x => x));
-            return ReqEqual && ConEqual;
         }
 
         public static bool OBJIsThreadSafe(Thread thread, dynamic Obj)

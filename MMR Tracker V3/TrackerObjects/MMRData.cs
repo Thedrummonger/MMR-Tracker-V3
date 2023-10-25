@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static MMR_Tracker_V3.LogicStringParser;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
 namespace MMR_Tracker_V3.TrackerObjects
@@ -34,6 +35,13 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 get { return IsTrick ? _trickCategory : null; }
                 set { _trickCategory = value; }
+            }
+
+            public bool Equals(JsonFormatLogicItem logicItem2)
+            {
+                bool ReqEqual = this.RequiredItems.SequenceEqual(logicItem2.RequiredItems);
+                bool ConEqual = this.ConditionalItems.SelectMany(x => x).SequenceEqual(logicItem2.ConditionalItems.SelectMany(x => x));
+                return ReqEqual && ConEqual;
             }
         }
 

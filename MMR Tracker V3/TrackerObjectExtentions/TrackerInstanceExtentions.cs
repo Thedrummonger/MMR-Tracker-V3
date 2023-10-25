@@ -332,6 +332,38 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
                 return false;
             }
         }
+        public static string GetDynamicObjName(this TrackerInstance instance, object Entry)
+        {
+            if (Entry is LocationObject LO)
+            {
+                return LO.GetDictEntry(instance)?.GetName(instance)??LO.ID;
+            }
+            else if (Entry is MacroObject MO)
+            {
+                return MO.GetDictEntry(instance)?.Name??MO.ID;
+            }
+            else if (Entry is ItemObject IO)
+            {
+                return IO.GetDictEntry(instance)?.Name??IO.Id;
+            }
+            else if (Entry is ChoiceOption CO)
+            {
+                return CO.Name??CO.ID;
+            }
+            else if (Entry is ToggleOption TO)
+            {
+                return TO.Name??TO.ID;
+            }
+            else if (Entry is IntOption NO)
+            {
+                return NO.Name??NO.ID;
+            }
+            else if (Entry is HintData.HintObject HO)
+            {
+                return HO.GetDictEntry(instance)?.Name??HO.ID;
+            }
+            else { return null; }
+        }
 
 
         public static List<OptionData.Action> GetOptionActions(this InstanceData.TrackerInstance Instance)
