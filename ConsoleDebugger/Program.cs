@@ -320,29 +320,29 @@ namespace CLIFrontEnd
             }
         }
 
-        private static bool HandleUnAssignedLocations(IEnumerable<object> CheckObject, InstanceData.TrackerInstance Instance)
+        private static bool HandleUnAssignedLocations(IEnumerable<object> CheckObject, MiscData.InstanceContainer Instance)
         {
             foreach(var i in CheckObject)
             {
                 if (i is LocationData.LocationObject)
                 {
-                    LoopItemSelect(new List<object> { i }, Instance);
+                    LoopItemSelect(new List<object> { i }, Instance.Instance);
                 }
                 if (i is EntranceData.EntranceRandoExit)
                 {
-                    LoopEntranceSelect(new List<object> { i }, Instance);
+                    LoopEntranceSelect(new List<object> { i }, Instance.Instance);
                 }
             }
             return false;
         }
 
-        private static bool HandleUnAssignedVariables(IEnumerable<object> CheckObject, InstanceData.TrackerInstance Instance)
+        private static bool HandleUnAssignedVariables(IEnumerable<object> CheckObject, MiscData.InstanceContainer Instance)
         {
             foreach (var i in CheckObject)
             {
                 if (i is HintData.HintObject)
                 {
-                    LoopHintSelect(new List<object> { i }, Instance);
+                    LoopHintSelect(new List<object> { i }, Instance.Instance);
                 }
             }
             return false;

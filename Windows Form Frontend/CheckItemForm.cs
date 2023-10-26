@@ -17,8 +17,8 @@ namespace Windows_Form_Frontend
     public partial class CheckItemForm : Form
     {
         List<object> _CheckList;
-        MMR_Tracker_V3.InstanceData.TrackerInstance _Instance;
-        public CheckItemForm(IEnumerable<object> ManualChecks, MMR_Tracker_V3.InstanceData.TrackerInstance Instance)
+        MiscData.InstanceContainer _Instance;
+        public CheckItemForm(IEnumerable<object> ManualChecks, MMR_Tracker_V3.TrackerObjects.MiscData.InstanceContainer Instance)
         {
             InitializeComponent();
             _CheckList = ManualChecks.ToList();
@@ -88,7 +88,7 @@ namespace Windows_Form_Frontend
         {
             FormatUIItems(false, false, "");
             this.Text = $"Select Destination of Exit {exitObject.ParentAreaID} -> {exitObject.ID}";
-            List<EntranceData.EntranceRandoDestination> EnteredItems = _Instance.GetAllLoadingZoneDestinations(textBox1.Text);
+            List<EntranceData.EntranceRandoDestination> EnteredItems = _Instance.Instance.GetAllLoadingZoneDestinations(textBox1.Text);
             listBox1.DataSource = EnteredItems;
         }
 
@@ -106,9 +106,9 @@ namespace Windows_Form_Frontend
 
         private void writeItemObjectsAtLocation(LocationData.LocationObject Location)
         {
-            FormatUIItems(false, true, "Set Junk");
-            this.Text = "Select Item at " + Location.GetDictEntry(_Instance).GetName(_Instance);
-            List<ItemData.ItemObject> EnteredItems = _Instance.GetValidItemsForLocation(Location, textBox1.Text);
+            FormatUIItems(_Instance.OnlineMode == MiscData.OnlineMode.Multiworld, true, "Set Junk");
+            this.Text = "Select Item at " + Location.GetDictEntry(_Instance.Instance).GetName(_Instance.Instance);
+            List<ItemData.ItemObject> EnteredItems = _Instance.Instance.GetValidItemsForLocation(Location, textBox1.Text);
             listBox1.DataSource = EnteredItems;
         }
 

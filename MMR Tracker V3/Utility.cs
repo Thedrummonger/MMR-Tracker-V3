@@ -147,24 +147,24 @@ namespace MMR_Tracker_V3
             };
         }
 
-        public static string GetLocationDisplayName(dynamic obj, InstanceData.TrackerInstance instance)
+        public static string GetLocationDisplayName(dynamic obj, MiscData.InstanceContainer instance)
         {
             dynamic PriceData;
             LocationData.LocationObject Location;
-            string LocationDisplay, RandomizedItemDisplay, PriceDisplay, StarredDisplay;
+            string LocationDisplay, RandomizedItemDisplay, PriceDisplay, StarredDisplay, ForPlayer;
             bool Available;
             if (obj is LocationData.LocationObject lo) 
             {
                 Location = lo;
                 PriceData = lo;
-                LocationDisplay = Location.GetDictEntry(instance)?.GetName(instance);
+                LocationDisplay = Location.GetDictEntry(instance.Instance)?.GetName(instance.Instance);
                 StarredDisplay = lo.Starred ? "*" : "";
             }
             else if (obj is LocationData.LocationProxy po)
             {
-                Location = po.GetReferenceLocation(instance);
-                PriceData = po.GetLogicInheritance(instance);
-                LocationDisplay = po.Name ?? Location.GetDictEntry(instance)?.GetName(instance);
+                Location = po.GetReferenceLocation(instance.Instance);
+                PriceData = po.GetLogicInheritance(instance.Instance);
+                LocationDisplay = po.Name ?? Location.GetDictEntry(instance.Instance)?.GetName(instance.Instance);
                 StarredDisplay = po.Starred ? "*" : "";
             }
             else { return obj.ToString(); }
@@ -175,13 +175,15 @@ namespace MMR_Tracker_V3
 
             PriceData.GetPrice(out int p, out char c);
             PriceDisplay = p < 0 || (!Available) ? "" : $" [{c}{p}]";
-            RandomizedItemDisplay = instance.GetItemByID(Location.Randomizeditem.Item)?.GetDictEntry(instance)?.GetName(instance) ?? Location.Randomizeditem.Item;
+            RandomizedItemDisplay = instance.Instance.GetItemByID(Location.Randomizeditem.Item)?.GetDictEntry(instance.Instance)?.GetName(instance.Instance) ?? Location.Randomizeditem.Item;
+
+            ForPlayer = Location.Randomizeditem.Item is not null && Location.Randomizeditem.OwningPlayer >= 0 ? $" [Player: {Location.Randomizeditem.OwningPlayer}]" : "";
 
             return Location.CheckState switch
             {
-                MiscData.CheckState.Marked => $"{LocationDisplay}: {RandomizedItemDisplay}{StarredDisplay}{PriceDisplay}",
+                MiscData.CheckState.Marked => $"{LocationDisplay}: {RandomizedItemDisplay}{ForPlayer}{StarredDisplay}{PriceDisplay}",
                 MiscData.CheckState.Unchecked => $"{LocationDisplay}{StarredDisplay}",
-                MiscData.CheckState.Checked => $"{RandomizedItemDisplay}{PriceDisplay}: {LocationDisplay}{StarredDisplay}",
+                MiscData.CheckState.Checked => $"{RandomizedItemDisplay}{ForPlayer}{PriceDisplay}: {LocationDisplay}{StarredDisplay}",
                 _ => obj.ToString(),
             };
         }

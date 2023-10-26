@@ -64,6 +64,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
             public InstanceData.TrackerInstance Instance { get; set; }
             public LogicCalculation logicCalculation { get; set; }
+            public OnlineMode OnlineMode { get; set; } = OnlineMode.None;
             public List<string> UndoStringList { get; set; } = new List<string>();
             public List<string> RedoStringList { get; set; } = new List<string>();
             public string CurrentSavePath { get; set; } = "";
@@ -119,6 +120,17 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
         }
         [Serializable]
+        public enum OnlineMode
+        {
+            [Description("None")]
+            None = 0,
+            [Description("Co-op")]
+            Coop = 1,
+            [Description("Online (Synced)")]
+            Online = 2,
+            [Description("Multiworld")]
+            Multiworld = 3
+        }
         public enum CheckState
         {
             Checked = 0,

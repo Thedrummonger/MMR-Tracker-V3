@@ -34,6 +34,7 @@ namespace TestingForm
                 new ("Create TPR Data", GameFileCreation.TPRCreateData, null),
                 new ("Create OOTMM Data", GameFileCreation.OOTMMCreateData, null),
                 new ("Create PMR Data", GameFileCreation.PMRCreateData, null),
+                new ("OPen Net Client", OpenNetClient, null),
             };
 
             foreach (var Function in DevFunctions)
@@ -47,6 +48,12 @@ namespace TestingForm
         {
             if (listBox1.SelectedItem is MiscData.StandardListBoxItem LBI) { LBI.tagAction(); }
             UpdateDebugActions();
+        }
+
+        private void OpenNetClient()
+        {
+            NetClient netClient = new NetClient();
+            netClient.Show();
         }
     }
 }

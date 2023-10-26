@@ -48,7 +48,7 @@ namespace MMR_Tracker_V3
             public List<ItemData.ItemObject> OnlineObtainedItems { get; set; } = new List<ItemData.ItemObject>();
         }
 
-        public static List<object> CheckSelectedItems(IEnumerable<object> SelectedObjects, MiscData.CheckState checkState, MiscData.InstanceContainer instanceContainer, Func<IEnumerable<object>, InstanceData.TrackerInstance, bool> CheckUnassignedLocations, Func<IEnumerable<object>, InstanceData.TrackerInstance, bool> CheckUnassignedVariable, bool EnforceMarkAction = false)
+        public static List<object> CheckSelectedItems(IEnumerable<object> SelectedObjects, MiscData.CheckState checkState, MiscData.InstanceContainer instanceContainer, Func<IEnumerable<object>, MiscData.InstanceContainer, bool> CheckUnassignedLocations, Func<IEnumerable<object>, MiscData.InstanceContainer, bool> CheckUnassignedVariable, bool EnforceMarkAction = false)
         {
             List<object> UpdatedObjects = new List<object>();
 
@@ -97,7 +97,7 @@ namespace MMR_Tracker_V3
             return UpdatedObjects;
         }
 
-        public static List<object> SetOptionCheckState(IEnumerable<object> SelectedObjects, MiscData.CheckState checkState, MiscData.InstanceContainer instanceContainer, Func<IEnumerable<object>, InstanceData.TrackerInstance, bool> CheckUnassignedLocations, Func<IEnumerable<object>, InstanceData.TrackerInstance, bool> CheckUnassignedVariable, bool EnforceMarkAction = false)
+        public static List<object> SetOptionCheckState(IEnumerable<object> SelectedObjects, MiscData.CheckState checkState, MiscData.InstanceContainer instanceContainer, Func<IEnumerable<object>, MiscData.InstanceContainer, bool> CheckUnassignedLocations, Func<IEnumerable<object>, MiscData.InstanceContainer, bool> CheckUnassignedVariable, bool EnforceMarkAction = false)
         {
             List<object> UpdatedObjects = new List<object>();
 
@@ -112,11 +112,11 @@ namespace MMR_Tracker_V3
             }
             if (choiceOptions.Any())
             {
-                var c = CheckUnassignedLocations(choiceOptions, instanceContainer.Instance);
+                var c = CheckUnassignedLocations(choiceOptions, instanceContainer);
             }
             if (IntOptions.Any())
             {
-                CheckUnassignedVariable(IntOptions, instanceContainer.Instance);
+                CheckUnassignedVariable(IntOptions, instanceContainer);
             }
 
             UpdatedObjects.AddRange(choiceOptions);
@@ -126,7 +126,7 @@ namespace MMR_Tracker_V3
             return UpdatedObjects;
         }
 
-        public static List<LocationObject> SetLocationsCheckState(IEnumerable<object> SelectedObjects, MiscData.CheckState checkState, MiscData.InstanceContainer instanceContainer, Func<IEnumerable<object>, InstanceData.TrackerInstance, bool> CheckUnassignedLocations, Func<IEnumerable<object>, InstanceData.TrackerInstance, bool> CheckUnassignedVariable, bool EnforceMarkAction = false)
+        public static List<LocationObject> SetLocationsCheckState(IEnumerable<object> SelectedObjects, MiscData.CheckState checkState, MiscData.InstanceContainer instanceContainer, Func<IEnumerable<object>, MiscData.InstanceContainer, bool> CheckUnassignedLocations, Func<IEnumerable<object>, MiscData.InstanceContainer, bool> CheckUnassignedVariable, bool EnforceMarkAction = false)
         {
             List<LocationObject> UpdatedObjects = new List<LocationObject>();
 
@@ -148,7 +148,7 @@ namespace MMR_Tracker_V3
             IEnumerable<object> ManualLocationChecks = UncheckedlocationObjects.Where(x => x.Randomizeditem.Item == null); //Locations with no item
             if (ManualLocationChecks.Any())
             {
-                CheckUnassignedLocations(ManualLocationChecks, instanceContainer.Instance);
+                CheckUnassignedLocations(ManualLocationChecks, instanceContainer);
             }
             foreach (LocationObject LocationObject in locationObjects)
             {
@@ -163,7 +163,7 @@ namespace MMR_Tracker_V3
             return UpdatedObjects;
         }
 
-        public static List<EntranceRandoExit> SetEntrancesCheckState(IEnumerable<object> SelectedObjects, MiscData.CheckState checkState, MiscData.InstanceContainer instanceContainer, Func<IEnumerable<object>, InstanceData.TrackerInstance, bool> CheckUnassignedLocations, Func<IEnumerable<object>, InstanceData.TrackerInstance, bool> CheckUnassignedVariable, bool EnforceMarkAction = false)
+        public static List<EntranceRandoExit> SetEntrancesCheckState(IEnumerable<object> SelectedObjects, MiscData.CheckState checkState, MiscData.InstanceContainer instanceContainer, Func<IEnumerable<object>, MiscData.InstanceContainer, bool> CheckUnassignedLocations, Func<IEnumerable<object>, MiscData.InstanceContainer, bool> CheckUnassignedVariable, bool EnforceMarkAction = false)
         {
             List<EntranceRandoExit> UpdatedObjects = new List<EntranceRandoExit>();
 
@@ -179,7 +179,7 @@ namespace MMR_Tracker_V3
             IEnumerable<object> ManualExitChecks = UncheckedExitObjects.Where(x => x.DestinationExit == null); //Exits With No Destination
             if (ManualExitChecks.Any())
             {
-                CheckUnassignedLocations(ManualExitChecks, instanceContainer.Instance);
+                CheckUnassignedLocations(ManualExitChecks, instanceContainer);
             }
             foreach (EntranceData.EntranceRandoExit ExitObject in ExitObjects)
             {
@@ -192,7 +192,7 @@ namespace MMR_Tracker_V3
             return UpdatedObjects;
         }
 
-        public static List<HintObject> SetHintsCheckState(IEnumerable<object> SelectedObjects, MiscData.CheckState checkState, MiscData.InstanceContainer instanceContainer, Func<IEnumerable<object>, InstanceData.TrackerInstance, bool> CheckUnassignedLocations, Func<IEnumerable<object>, InstanceData.TrackerInstance, bool> CheckUnassignedVariable, bool EnforceMarkAction = false)
+        public static List<HintObject> SetHintsCheckState(IEnumerable<object> SelectedObjects, MiscData.CheckState checkState, MiscData.InstanceContainer instanceContainer, Func<IEnumerable<object>, MiscData.InstanceContainer, bool> CheckUnassignedLocations, Func<IEnumerable<object>, MiscData.InstanceContainer, bool> CheckUnassignedVariable, bool EnforceMarkAction = false)
         {
             List<HintObject> UpdatedObjects = new List<HintObject>();
             //Hints======================================
@@ -206,7 +206,7 @@ namespace MMR_Tracker_V3
             IEnumerable<object> UncheckedVariableObjects = UncheckedHintObjects.Where(x => string.IsNullOrWhiteSpace(x.HintText));
             if (UncheckedVariableObjects.Any())
             {
-                CheckUnassignedVariable(UncheckedVariableObjects, instanceContainer.Instance);
+                CheckUnassignedVariable(UncheckedVariableObjects, instanceContainer);
             }
             foreach (HintData.HintObject hintObject in HintObjects)
             {
@@ -309,7 +309,7 @@ namespace MMR_Tracker_V3
             CheckedLocations = CheckedLocations
                 .OrderBy(x => (Groups.ContainsKey(x.GetDictEntry(IC.Instance).Area.ToLower().Trim()) ? Groups[x.GetDictEntry(IC.Instance).Area.ToLower().Trim()] : DataSets.CheckedLocations.Count + 1))
                 .ThenBy(x => x.GetDictEntry(IC.Instance).Area)
-                .ThenBy(x => Utility.GetLocationDisplayName(x, IC.Instance)).ToList();
+                .ThenBy(x => Utility.GetLocationDisplayName(x, IC)).ToList();
 
             var ItemsInListBox = 0;
             var ItemsInListBoxFiltered = 0;
@@ -381,7 +381,7 @@ namespace MMR_Tracker_V3
                 foreach (var i in CheckedLocations)
                 {
                     if (i.IsUnrandomized(MiscData.UnrandState.Unrand) && !Filter.StartsWith("^")) { continue; }
-                    i.DisplayName = Utility.GetLocationDisplayName(i, IC.Instance);
+                    i.DisplayName = Utility.GetLocationDisplayName(i, IC);
 
                     ItemsInListBox++;
                     if (!SearchStringParser.FilterSearch(IC.Instance, i, Filter, i.DisplayName)) { continue; }
@@ -520,9 +520,9 @@ namespace MMR_Tracker_V3
             AvailableLocationsEntries = AvailableLocationsEntries.Concat(AvailableProxies);
             AvailableLocationsEntries = AvailableLocationsEntries.OrderBy(x => (Groups.ContainsKey(GetLocationEntryArea(x, IC.Instance).ToLower().Trim()) ? Groups[GetLocationEntryArea(x, IC.Instance).ToLower().Trim()] : DataSets.AvailableLocations.Count() + 1))
                 .ThenBy(x => GetLocationEntryArea(x, IC.Instance))
-                .ThenBy(x => Utility.GetLocationDisplayName(x, IC.Instance)).ToList();
+                .ThenBy(x => Utility.GetLocationDisplayName(x, IC)).ToList();
 
-            IEnumerable<object> HiddenLocations = AvailableLocationsEntries.Where(x => Utility.DynamicPropertyExist(x, "Hidden") && (x as dynamic).Hidden).OrderBy(x => Utility.GetLocationDisplayName(x, IC.Instance));
+            IEnumerable<object> HiddenLocations = AvailableLocationsEntries.Where(x => Utility.DynamicPropertyExist(x, "Hidden") && (x as dynamic).Hidden).OrderBy(x => Utility.GetLocationDisplayName(x, IC));
             AvailableLocationsEntries = AvailableLocationsEntries.Where(x => !Utility.DynamicPropertyExist(x, "Hidden") || !(x as dynamic).Hidden);
 
             var AvailableHints = DataSets.AvailableHints;
@@ -572,7 +572,7 @@ namespace MMR_Tracker_V3
                     if (obj is LocationData.LocationObject i)
                     {
                         if (!i.AppearsinListbox(IC.Instance, ShowInvalidLocation)) { continue; }
-                        i.DisplayName = Utility.GetLocationDisplayName(i, IC.Instance);
+                        i.DisplayName = Utility.GetLocationDisplayName(i, IC);
                         ItemsInListBox++;
                         if (!SearchStringParser.FilterSearch(IC.Instance, i, Filter, i.DisplayName)) { continue; }
                         ItemsInListBoxFiltered++;
@@ -581,7 +581,7 @@ namespace MMR_Tracker_V3
                     else if (obj is LocationData.LocationProxy p)
                     {
                         if (!p.GetReferenceLocation(IC.Instance).AppearsinListbox(IC.Instance, ShowInvalidLocation)) { continue; }
-                        p.DisplayName = Utility.GetLocationDisplayName(p, IC.Instance);
+                        p.DisplayName = Utility.GetLocationDisplayName(p, IC);
                         ItemsInListBox++;
                         if (!SearchStringParser.FilterSearch(IC.Instance, p, Filter, p.DisplayName)) { continue; }
                         ItemsInListBoxFiltered++;
@@ -645,7 +645,7 @@ namespace MMR_Tracker_V3
                     if (obj is LocationData.LocationObject i)
                     {
                         if (!i.AppearsinListbox(IC.Instance, ShowInvalidLocation)) { continue; }
-                        i.DisplayName = Utility.GetLocationDisplayName(i, IC.Instance);
+                        i.DisplayName = Utility.GetLocationDisplayName(i, IC);
                         ItemsInListBox++;
                         if (!SearchStringParser.FilterSearch(IC.Instance, i, Filter, i.DisplayName)) { continue; }
                         ItemsInListBoxFiltered++;
@@ -654,7 +654,7 @@ namespace MMR_Tracker_V3
                     else if (obj is LocationData.LocationProxy p)
                     {
                         if (!p.GetReferenceLocation(IC.Instance).AppearsinListbox(IC.Instance, ShowInvalidLocation)) { continue; }
-                        p.DisplayName = Utility.GetLocationDisplayName(p, IC.Instance);
+                        p.DisplayName = Utility.GetLocationDisplayName(p, IC);
                         ItemsInListBox++;
                         if (!SearchStringParser.FilterSearch(IC.Instance, p, Filter, p.DisplayName)) { continue; }
                         ItemsInListBoxFiltered++;

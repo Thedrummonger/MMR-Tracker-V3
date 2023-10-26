@@ -14,10 +14,10 @@ namespace Windows_Form_Frontend
 {
     public partial class VariableInputWindow : Form
     {
-        InstanceData.TrackerInstance _Instance;
+        MiscData.InstanceContainer _Instance;
         List<object> _InputItems;
         VarType varType;
-        public VariableInputWindow(IEnumerable<object> InputItems, InstanceData.TrackerInstance Instance)
+        public VariableInputWindow(IEnumerable<object> InputItems, MiscData.InstanceContainer Instance)
         {
             InitializeComponent();
             _InputItems = InputItems.ToList();
@@ -38,7 +38,7 @@ namespace Windows_Form_Frontend
             }
             if (_InputItems[0] is HintData.HintObject hintObject)
             {
-                SetUIElements(true, $"Enter Hint at {hintObject.GetDictEntry(_Instance).Name}", "Set Hint", hintObject.GetDictEntry(_Instance).Name );
+                SetUIElements(true, $"Enter Hint at {hintObject.GetDictEntry(_Instance.Instance).Name}", "Set Hint", hintObject.GetDictEntry(_Instance.Instance).Name );
                 varType = VarType.Gossip;
             }
             else if (_InputItems[0] is OptionData.IntOption IntVariableObject)

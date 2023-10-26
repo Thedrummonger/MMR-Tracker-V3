@@ -897,7 +897,7 @@ namespace Windows_Form_Frontend
         {
             var DictEntry = Object.GetDictEntry(InstanceContainer.Instance);
             var PriceContainer = new List<OptionData.IntOption>() { new() { ID = DictEntry.Name ?? DictEntry.ID, Value = 0 } };
-            VariableInputWindow PriceInput = new(PriceContainer, InstanceContainer.Instance);
+            VariableInputWindow PriceInput = new(PriceContainer, InstanceContainer);
             PriceInput.ShowDialog();
             Object.SetPrice((int)PriceContainer.First().Value);
             InstanceContainer.logicCalculation.CalculateLogic();
@@ -968,13 +968,13 @@ namespace Windows_Form_Frontend
             UpdateUI();
         }
 
-        private bool HandleUnassignedChecks(IEnumerable<object> Checks, MMR_Tracker_V3.InstanceData.TrackerInstance Instance)
+        private bool HandleUnassignedChecks(IEnumerable<object> Checks, MiscData.InstanceContainer Instance)
         {
             CheckItemForm checkItemForm = new CheckItemForm(Checks, Instance);
             checkItemForm.ShowDialog();
             return true;
         }
-        private bool HandleUnassignedVariables(IEnumerable<object> Checks, MMR_Tracker_V3.InstanceData.TrackerInstance Instance)
+        private bool HandleUnassignedVariables(IEnumerable<object> Checks, MiscData.InstanceContainer Instance)
         {
             VariableInputWindow variableInputWindow = new VariableInputWindow(Checks, Instance);
             variableInputWindow.ShowDialog();
