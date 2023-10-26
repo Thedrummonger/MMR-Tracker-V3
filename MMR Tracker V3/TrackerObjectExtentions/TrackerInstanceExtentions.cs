@@ -146,7 +146,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             return EnteredItems;
         }
 
-        public static ItemObject GetItemToPlace(this InstanceData.TrackerInstance instance, string Item, bool CheckSpoilerName = true, bool CheckItemName = false, bool CheckItemID = false, bool ForStartingPool = false, bool IgnoreMaxAmount = false)
+        public static ItemObject GetItemToPlace(this InstanceData.TrackerInstance instance, string Item, bool CheckSpoilerName = true, bool CheckItemName = false, bool CheckItemID = false, bool ForStartingPool = false, bool IgnoreMaxAmount = false, bool DoNameEdits = false)
         {
             List<ItemObject> ValidItem = new List<ItemObject>();
             if (CheckSpoilerName)
@@ -159,7 +159,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             if (CheckItemName)
             {
                 ValidItem = ValidItem.Concat(instance.ItemPool.Values.Where(x =>
-                    x.GetDictEntry(instance)?.Name != null && x.GetDictEntry(instance).Name == Item &&
+                    x.GetDictEntry(instance).GetName(instance, DoNameEdits) != null && x.GetDictEntry(instance).GetName(instance, DoNameEdits) == Item &&
                     (x.CanBePlaced(instance) || IgnoreMaxAmount) && (x.ValidStartingItem(instance) || !ForStartingPool))).ToList();
             }
             if (CheckItemID)

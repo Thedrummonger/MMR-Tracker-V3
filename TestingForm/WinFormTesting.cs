@@ -31,6 +31,10 @@ namespace TestingForm
         {
             return MainInterface.CurrentProgram is not null;
         }
+        public static bool WinformInstanceLoaded()
+        {
+            return WinformLoaded() && MainInterface.InstanceContainer.Instance is not null;
+        }
         public static bool CanSaveWinformTrackerState()
         {
             return WinformLoaded() && MainInterface.InstanceContainer?.Instance is not null;

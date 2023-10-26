@@ -1,5 +1,6 @@
 ﻿using MMR_Tracker_V3;
 using MMR_Tracker_V3.SpoilerLogImporter;
+using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace Windows_Form_Frontend
 {
     public class WinFormInstanceCreation
     {
+        public static event Action<MMR_Tracker_V3.InstanceData.TrackerInstance> InstanceCreated;
         public static bool CreateWinFormInstance(string Logic = null, string Dictionary = null, string SpoilerLog = null)
         {
             var NewInstance = new MMR_Tracker_V3.TrackerObjects.MiscData.InstanceContainer();
@@ -56,6 +58,8 @@ namespace Windows_Form_Frontend
             }
             MainInterface.InstanceContainer.logicCalculation.CalculateLogic();
             MainInterface.CurrentProgram.UpdateUI();
+
+            InstanceCreated(MainInterface.InstanceContainer.Instance);
 
             return true;
         }

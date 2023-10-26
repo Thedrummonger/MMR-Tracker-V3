@@ -25,20 +25,24 @@ namespace TestingForm
 
         private void TrackerDataHandeling_CheckedObjectsUpdate(List<object> arg1, MMR_Tracker_V3.InstanceData.TrackerInstance arg2)
         {
+            Debug.WriteLine($"Sending Items:\n{MMR_Tracker_V3.Utility.ToFormattedJson(GetNetItemsToSend(arg2))}");
+        }
+
+        public static Dictionary<int, Dictionary<string, int>> GetNetItemsToSend(MMR_Tracker_V3.InstanceData.TrackerInstance instance)
+        {
             Dictionary<int, Dictionary<string, int>> PlayersSentItem = new Dictionary<int, Dictionary<string, int>>();
-            foreach(var Item in arg2.ItemPool)
+            foreach (var Item in instance.ItemPool)
             {
                 if (!Item.Value.AmountSentToPlayer.Any()) { continue; }
 
-                foreach(var Player in Item.Value.AmountSentToPlayer)
+                foreach (var Player in Item.Value.AmountSentToPlayer)
                 {
                     if (Player.Value < 1) { continue; }
                     if (!PlayersSentItem.ContainsKey(Player.Key)) { PlayersSentItem[Player.Key] = new Dictionary<string, int>(); }
                     PlayersSentItem[Player.Key][Item.Key] = Player.Value;
                 }
-
             }
-            Debug.WriteLine($"Sending Items:\n{MMR_Tracker_V3.Utility.ToFormattedJson(PlayersSentItem)}");
+            return PlayersSentItem;
         }
 
         private void NetClient_Load(object sender, EventArgs e)

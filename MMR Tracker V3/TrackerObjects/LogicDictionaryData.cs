@@ -103,10 +103,10 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string[] ItemTypes { get; set; } = Array.Empty<string>();
             public SpoilerlogReference SpoilerData { get; set; } = new SpoilerlogReference();
 
-            public string GetName(InstanceData.TrackerInstance instance)
+            public string GetName(InstanceData.TrackerInstance instance, bool DoEdits = true)
             {
                 var NameReplaceOption = instance.GetOptionActions().FirstOrDefault(x => x.ItemNameOverride.ContainsKey(ID));
-                if (NameReplaceOption != null) { return NameReplaceOption.ItemNameOverride[ID]; }
+                if (NameReplaceOption != null && DoEdits) { return NameReplaceOption.ItemNameOverride[ID]; }
                 return Name ?? ID;
             }
 

@@ -18,11 +18,17 @@ namespace TestingForm
             MainInterface.CurrentProgram.LBValidEntrances.SelectedIndexChanged += LBSelectedIndexChanged;
             MainInterface.CurrentProgram.LBCheckedLocations.SelectedIndexChanged += LBSelectedIndexChanged;
             MMR_Tracker_V3.TrackerDataHandeling.CheckedObjectsUpdate += TrackerDataHandeling_CheckedObjectsUpdate;
+            WinFormInstanceCreation.InstanceCreated += WinFormInstanceCreation_InstanceCreated;
+        }
+
+        private static void WinFormInstanceCreation_InstanceCreated(MMR_Tracker_V3.InstanceData.TrackerInstance obj)
+        {
+            TestingForm.CurrentForm.UpdateDebugActions();
         }
 
         private static void TrackerDataHandeling_CheckedObjectsUpdate(List<object> obj, MMR_Tracker_V3.InstanceData.TrackerInstance instance)
         {
-
+            TestingForm.CurrentForm.UpdateDebugActions();
         }
 
         private static void LBSelectedIndexChanged(object? sender, EventArgs e)
