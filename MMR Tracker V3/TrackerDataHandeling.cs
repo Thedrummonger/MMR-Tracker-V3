@@ -112,11 +112,13 @@ namespace MMR_Tracker_V3
             }
             if (choiceOptions.Any())
             {
-                var c = Options.CheckCoiceOptions(choiceOptions, instanceContainer);
+                var Result = Options.CheckCoiceOptions(choiceOptions, instanceContainer);
+                foreach(var O in Result) { O.GetCheck<OptionData.ChoiceOption>().SetValue(O.GetItem<string>()); }
             }
             if (IntOptions.Any())
             {
-                Options.CheckIntOPtions(IntOptions, instanceContainer);
+                var Result = Options.CheckIntOPtions(IntOptions, instanceContainer);
+                foreach (var O in Result) { O.GetCheck<OptionData.IntOption>().SetValue(O.GetItem<int>()); }
             }
 
             UpdatedObjects.AddRange(choiceOptions);
@@ -145,10 +147,11 @@ namespace MMR_Tracker_V3
                 LocationObject.Randomizeditem.Item = LocationObject.GetItemAtCheck(instanceContainer.Instance);
             }
             //Get Entries that need a value manually assigned and pass them to given method to be assigned.
-            IEnumerable<object> ManualLocationChecks = UncheckedlocationObjects.Where(x => x.Randomizeditem.Item == null); //Locations with no item
+            IEnumerable<LocationObject> ManualLocationChecks = UncheckedlocationObjects.Where(x => x.Randomizeditem.Item == null); //Locations with no item
             if (ManualLocationChecks.Any())
             {
-                Options.CheckUnassignedLocations(ManualLocationChecks, instanceContainer);
+                var Result = Options.CheckUnassignedLocations(ManualLocationChecks, instanceContainer);
+                foreach (var O in Result) { O.GetCheck<LocationObject>().Randomizeditem.Item = O.GetItem<string>(); }
             }
             foreach (LocationObject LocationObject in locationObjects)
             {
@@ -168,20 +171,21 @@ namespace MMR_Tracker_V3
             List<EntranceRandoExit> UpdatedObjects = new List<EntranceRandoExit>();
 
             //Handle Exits
-            IEnumerable<EntranceData.EntranceRandoExit> ExitObjects = SelectedObjects.Where(x => x is EntranceData.EntranceRandoExit).Select(x => x as EntranceData.EntranceRandoExit);
-            IEnumerable<EntranceData.EntranceRandoExit> UncheckedExitObjects = (Options.TargetheckState == MiscData.CheckState.Unchecked) ?
-                new List<EntranceData.EntranceRandoExit>() :
+            IEnumerable<EntranceRandoExit> ExitObjects = SelectedObjects.Where(x => x is EntranceRandoExit).Select(x => x as EntranceRandoExit);
+            IEnumerable<EntranceRandoExit> UncheckedExitObjects = (Options.TargetheckState == MiscData.CheckState.Unchecked) ?
+                new List<EntranceRandoExit>() :
                 ExitObjects.Where(x => x.CheckState == MiscData.CheckState.Unchecked);
-            foreach (EntranceData.EntranceRandoExit ExitObject in UncheckedExitObjects)
+            foreach (EntranceRandoExit ExitObject in UncheckedExitObjects)
             {
                 ExitObject.DestinationExit = ExitObject.GetDestinationAtExit();
             }
-            IEnumerable<object> ManualExitChecks = UncheckedExitObjects.Where(x => x.DestinationExit == null); //Exits With No Destination
+            IEnumerable<EntranceRandoExit> ManualExitChecks = UncheckedExitObjects.Where(x => x.DestinationExit == null); //Exits With No Destination
             if (ManualExitChecks.Any())
             {
-                Options.CheckUnassignedEntrances(ManualExitChecks, instanceContainer);
+                var Result = Options.CheckUnassignedEntrances(ManualExitChecks, instanceContainer);
+                foreach (var O in Result) { O.GetCheck<EntranceRandoExit>().DestinationExit = O.GetItem<EntranceRandoDestination>(); }
             }
-            foreach (EntranceData.EntranceRandoExit ExitObject in ExitObjects)
+            foreach (EntranceRandoExit ExitObject in ExitObjects)
             {
                 var Action = (Options.TargetheckState == MiscData.CheckState.Marked && ExitObject.CheckState == MiscData.CheckState.Marked) && !Options.EnforceMarkAction ? MiscData.CheckState.Unchecked : Options.TargetheckState;
                 if (ExitObject.ToggleExitChecked(Action, instanceContainer.Instance))
@@ -196,19 +200,20 @@ namespace MMR_Tracker_V3
         {
             List<HintObject> UpdatedObjects = new List<HintObject>();
             //Hints======================================
-            List<HintData.HintObject> HintObjects = SelectedObjects.Where(x => x is HintData.HintObject).Select(x => x as HintData.HintObject).ToList();
+            List<HintObject> HintObjects = SelectedObjects.Where(x => x is HintObject).Select(x => x as HintObject).ToList();
 
             var UncheckedHintObjects = HintObjects.Where(x => x.CheckState == MiscData.CheckState.Unchecked);
             foreach (var i in UncheckedHintObjects.Where(x => !string.IsNullOrWhiteSpace(x.SpoilerHintText)))
             {
                 i.HintText = i.SpoilerHintText;
             }
-            IEnumerable<object> UncheckedVariableObjects = UncheckedHintObjects.Where(x => string.IsNullOrWhiteSpace(x.HintText));
+            IEnumerable<HintObject> UncheckedVariableObjects = UncheckedHintObjects.Where(x => string.IsNullOrWhiteSpace(x.HintText));
             if (UncheckedVariableObjects.Any())
             {
-                Options.CheckUnassignedHints(UncheckedVariableObjects, instanceContainer);
+                var Result = Options.CheckUnassignedHints(UncheckedVariableObjects, instanceContainer);
+                foreach (var O in Result) { O.GetCheck<HintObject>().HintText = O.GetItem<string>(); }
             }
-            foreach (HintData.HintObject hintObject in HintObjects)
+            foreach (HintObject hintObject in HintObjects)
             {
                 UpdatedObjects.Add(hintObject);
                 var CheckAction = (Options.TargetheckState == MiscData.CheckState.Marked && hintObject.CheckState == MiscData.CheckState.Marked) && !Options.EnforceMarkAction ? MiscData.CheckState.Unchecked : Options.TargetheckState;

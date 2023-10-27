@@ -13,6 +13,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
 namespace Windows_Form_Frontend
 {
@@ -976,17 +977,17 @@ namespace Windows_Form_Frontend
             UpdateUI();
         }
 
-        private bool HandleUnassignedChecks(IEnumerable<object> Checks, MiscData.InstanceContainer Instance)
+        private List<ManualCheckObjectResult> HandleUnassignedChecks(IEnumerable<object> Checks, MiscData.InstanceContainer Instance)
         {
             CheckItemForm checkItemForm = new CheckItemForm(Checks, Instance);
             checkItemForm.ShowDialog();
-            return true;
+            return checkItemForm._Result;
         }
-        private bool HandleUnassignedVariables(IEnumerable<object> Checks, MiscData.InstanceContainer Instance)
+        private List<ManualCheckObjectResult> HandleUnassignedVariables(IEnumerable<object> Checks, MiscData.InstanceContainer Instance)
         {
             VariableInputWindow variableInputWindow = new VariableInputWindow(Checks, Instance);
             variableInputWindow.ShowDialog();
-            return true;
+            return variableInputWindow._Result;
         }
 
         private void CHKShowAll_CheckedChanged(object sender, EventArgs e)

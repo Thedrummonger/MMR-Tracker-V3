@@ -327,38 +327,40 @@ namespace CLIFrontEnd
             }
         }
 
-        private static bool HandleUnAssignedLocations(IEnumerable<object> CheckObject, MiscData.InstanceContainer Instance)
+        private static List<ManualCheckObjectResult> HandleUnAssignedLocations(IEnumerable<object> CheckObject, MiscData.InstanceContainer Instance)
         {
-            foreach(var i in CheckObject)
+            List<ManualCheckObjectResult> Result = new List<ManualCheckObjectResult>();
+            foreach (var i in CheckObject)
             {
                 if (i is LocationData.LocationObject)
                 {
-                    LoopItemSelect(new List<object> { i }, Instance.Instance);
+                    Result.Add(LoopItemSelect(new List<object> { i }, Instance.Instance));
                 }
                 if (i is EntranceData.EntranceRandoExit)
                 {
-                    LoopEntranceSelect(new List<object> { i }, Instance.Instance);
+                    Result.Add(LoopEntranceSelect(new List<object> { i }, Instance.Instance));
                 }
             }
-            return false;
+            return Result;
         }
 
-        private static bool HandleUnAssignedVariables(IEnumerable<object> CheckObject, MiscData.InstanceContainer Instance)
+        private static List<ManualCheckObjectResult> HandleUnAssignedVariables(IEnumerable<object> CheckObject, MiscData.InstanceContainer Instance)
         {
+            List<ManualCheckObjectResult> Result = new List<ManualCheckObjectResult>();
             foreach (var i in CheckObject)
             {
                 if (i is HintData.HintObject)
                 {
-                    LoopHintSelect(new List<object> { i }, Instance.Instance);
+                    Result.Add(LoopHintSelect(new List<object> { i }, Instance.Instance));
                 }
             }
-            return false;
+            return Result;
         }
 
-        private static bool LoopItemSelect(IEnumerable<object> CheckObject, InstanceData.TrackerInstance Instance)
+        private static ManualCheckObjectResult LoopItemSelect(IEnumerable<object> CheckObject, InstanceData.TrackerInstance Instance)
         {
             string Fiter = "";
-            if (CheckObject.First() is not LocationData.LocationObject Location) { return false; }
+            if (CheckObject.First() is not LocationData.LocationObject Location) { return null; }
             while (true)
             {
                 Console.Clear();
@@ -375,21 +377,20 @@ namespace CLIFrontEnd
                 var input = Console.ReadLine();
                 if (int.TryParse(input, out int index) && EnteredItems.ContainsKey(index))
                 {
-                    Location.Randomizeditem.Item = EnteredItems[index].Id;
-                    break;
+                    //Location.Randomizeditem.Item = EnteredItems[index].Id;
+                    return new ManualCheckObjectResult(Location, EnteredItems[index].Id);
                 }
                 else if (input.StartsWith(@"\"))
                 {
                     Fiter = input[1..];
                 }
             }
-            return true;
         }
 
-        private static bool LoopEntranceSelect(IEnumerable<object> CheckObject, InstanceData.TrackerInstance Instance)
+        private static ManualCheckObjectResult LoopEntranceSelect(IEnumerable<object> CheckObject, InstanceData.TrackerInstance Instance)
         {
             string Fiter = "";
-            if (CheckObject.First() is not EntranceData.EntranceRandoExit Exit) { return false; }
+            if (CheckObject.First() is not EntranceData.EntranceRandoExit Exit) { return null; }
             while (true)
             {
                 Console.Clear();
@@ -406,25 +407,24 @@ namespace CLIFrontEnd
                 var input = Console.ReadLine();
                 if (int.TryParse(input, out int index) && EnteredItems.ContainsKey(index))
                 {
-                    Exit.DestinationExit = EnteredItems[index];
-                    break;
+                    //Exit.DestinationExit = EnteredItems[index];
+                    return new ManualCheckObjectResult(Exit, EnteredItems[index]);
                 }
                 else if (input.StartsWith(@"\"))
                 {
                     Fiter = input[1..];
                 }
             }
-            return true;
         }
 
-        private static bool LoopHintSelect(IEnumerable<object> CheckObject, InstanceData.TrackerInstance Instance)
+        private static ManualCheckObjectResult LoopHintSelect(IEnumerable<object> CheckObject, InstanceData.TrackerInstance Instance)
         {
             Console.Clear();
-            if (CheckObject.First() is not HintData.HintObject HintSpot) { return false; }
+            if (CheckObject.First() is not HintData.HintObject HintSpot) { return null; }
             Console.WriteLine($"Enter Hint at {HintSpot.ID}");
             string hint = Console.ReadLine();
-            HintSpot.HintText = hint;
-            return true;
+            //HintSpot.HintText = hint;
+            return new ManualCheckObjectResult(HintSpot, hint);
         }
 
         private static void undoredo(string action)

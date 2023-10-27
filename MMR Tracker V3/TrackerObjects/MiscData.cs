@@ -80,25 +80,35 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
             public CheckState TargetheckState;
             public bool EnforceMarkAction = false;
-            public Func<IEnumerable<object>, InstanceContainer, bool> CheckUnassignedLocations = 
+            public Func<IEnumerable<object>, InstanceContainer, List<ManualCheckObjectResult>> CheckUnassignedLocations = 
                 (IEnumerable<object> O, InstanceContainer C) => { throw new NotImplementedException("CheckUnassignedLocations was not assigned"); };
-            public Func<IEnumerable<object>, InstanceContainer, bool> CheckUnassignedEntrances =
+            public Func<IEnumerable<object>, InstanceContainer, List<ManualCheckObjectResult>> CheckUnassignedEntrances =
                 (IEnumerable<object> O, InstanceContainer C) => { throw new NotImplementedException("CheckUnassignedEntrances was not assigned"); };
-            public Func<IEnumerable<object>, InstanceContainer, bool> CheckUnassignedHints =
+            public Func<IEnumerable<object>, InstanceContainer, List<ManualCheckObjectResult>> CheckUnassignedHints =
                 (IEnumerable<object> O, InstanceContainer C) => { throw new NotImplementedException("CheckUnassignedHints was not assigned"); };
-            public Func<IEnumerable<object>, InstanceContainer, bool> CheckCoiceOptions =
+            public Func<IEnumerable<object>, InstanceContainer, List<ManualCheckObjectResult>> CheckCoiceOptions =
                 (IEnumerable<object> O, InstanceContainer C) => { throw new NotImplementedException("CheckCoiceOptions was not assigned"); };
-            public Func<IEnumerable<object>, InstanceContainer, bool> CheckIntOPtions =
+            public Func<IEnumerable<object>, InstanceContainer, List<ManualCheckObjectResult>> CheckIntOPtions =
                 (IEnumerable<object> O, InstanceContainer C) => { throw new NotImplementedException("CheckIntOPtions was not assigned"); };
             public CheckItemSetting SetTargetheckState(CheckState _TargetCheckState) { TargetheckState = _TargetCheckState; return this; }
             public CheckItemSetting SetEnforceMarkAction(bool _EnforceMarkAction) { EnforceMarkAction = _EnforceMarkAction; return this; }
-            public CheckItemSetting SetCheckUnassignedLocations(Func<IEnumerable<object>, InstanceContainer, bool> func) { CheckUnassignedLocations = func; return this; }
-            public CheckItemSetting SetCheckUnassignedEntrances(Func<IEnumerable<object>, InstanceContainer, bool> func) { CheckUnassignedEntrances = func; return this; }
-            public CheckItemSetting SetCheckUnassignedHints(Func<IEnumerable<object>, InstanceContainer, bool> func) { CheckUnassignedHints = func; return this; }
-            public CheckItemSetting SetCheckCoiceOptions(Func<IEnumerable<object>, InstanceContainer, bool> func) { CheckCoiceOptions = func; return this; }
-            public CheckItemSetting SetCheckIntOPtions(Func<IEnumerable<object>, InstanceContainer, bool> func) { CheckIntOPtions = func; return this; }
+            public CheckItemSetting SetCheckUnassignedLocations(Func<IEnumerable<object>, InstanceContainer, List<ManualCheckObjectResult>> func) { CheckUnassignedLocations = func; return this; }
+            public CheckItemSetting SetCheckUnassignedEntrances(Func<IEnumerable<object>, InstanceContainer, List<ManualCheckObjectResult>> func) { CheckUnassignedEntrances = func; return this; }
+            public CheckItemSetting SetCheckUnassignedHints(Func<IEnumerable<object>, InstanceContainer, List<ManualCheckObjectResult>> func) { CheckUnassignedHints = func; return this; }
+            public CheckItemSetting SetCheckCoiceOptions(Func<IEnumerable<object>, InstanceContainer, List<ManualCheckObjectResult>> func) { CheckCoiceOptions = func; return this; }
+            public CheckItemSetting SetCheckIntOPtions(Func<IEnumerable<object>, InstanceContainer, List<ManualCheckObjectResult>> func) { CheckIntOPtions = func; return this; }
 
         }
+        public class ManualCheckObjectResult
+        {
+            public ManualCheckObjectResult(object _Check, object _Item, int _OwningPlayer = -1) { Check = _Check; Item = _Item; OwningPlayer = _OwningPlayer; }
+            public object Check;
+            public object Item;
+            public int OwningPlayer = -1;
+            public T GetCheck<T>() { return (T)Check; }
+            public T GetItem<T>() { return (T)Item; }
+            }
+
         public class InstanceContainer
         {
             public InstanceContainer()

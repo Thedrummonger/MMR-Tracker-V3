@@ -11,18 +11,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
 namespace Windows_Form_Frontend
 {
     public partial class CheckItemForm : Form
     {
         List<object> _CheckList;
-        MiscData.InstanceContainer _Instance;
-        public CheckItemForm(IEnumerable<object> ManualChecks, MMR_Tracker_V3.TrackerObjects.MiscData.InstanceContainer Instance)
+        public List<ManualCheckObjectResult> _Result = new List<ManualCheckObjectResult>();
+        InstanceContainer _Container;
+        public CheckItemForm(IEnumerable<object> ManualChecks, InstanceContainer Container)
         {
             InitializeComponent();
             _CheckList = ManualChecks.ToList();
-            _Instance = Instance;
+            _Container = Container;
         }
 
         private void CheckItemForm_Load(object sender, EventArgs e)
@@ -88,7 +90,7 @@ namespace Windows_Form_Frontend
         {
             FormatUIItems(false, false, "");
             this.Text = $"Select Destination of Exit {exitObject.ParentAreaID} -> {exitObject.ID}";
-            List<EntranceData.EntranceRandoDestination> EnteredItems = _Instance.Instance.GetAllLoadingZoneDestinations(textBox1.Text);
+            List<EntranceData.EntranceRandoDestination> EnteredItems = _Container.Instance.GetAllLoadingZoneDestinations(textBox1.Text);
             listBox1.DataSource = EnteredItems;
         }
 
@@ -106,9 +108,9 @@ namespace Windows_Form_Frontend
 
         private void writeItemObjectsAtLocation(LocationData.LocationObject Location)
         {
-            FormatUIItems(_Instance.OnlineMode == MiscData.OnlineMode.Multiworld, true, "Set Junk");
-            this.Text = "Select Item at " + Location.GetDictEntry(_Instance.Instance).GetName(_Instance.Instance);
-            List<ItemData.ItemObject> EnteredItems = _Instance.Instance.GetValidItemsForLocation(Location, textBox1.Text);
+            FormatUIItems(_Container.OnlineMode == MiscData.OnlineMode.Multiworld, true, "Set Junk");
+            this.Text = "Select Item at " + Location.GetDictEntry(_Container.Instance).GetName(_Container.Instance);
+            List<ItemData.ItemObject> EnteredItems = _Container.Instance.GetValidItemsForLocation(Location, textBox1.Text);
             listBox1.DataSource = EnteredItems;
         }
 
@@ -119,22 +121,26 @@ namespace Windows_Form_Frontend
             {
                 if (ButtonClick)
                 {
-                    LocationObject.Randomizeditem.Item = "JUNK";
+                    _Result.Add(new(LocationObject, "JUNK"));
+                    //LocationObject.Randomizeditem.Item = "JUNK";
                 }
                 else
                 {
-                    LocationObject.Randomizeditem.Item = ((ItemData.ItemObject)listBox1.SelectedItem).Id;
-                    LocationObject.Randomizeditem.OwningPlayer = (int)numericUpDown1.Value;
+                    _Result.Add(new(LocationObject, ((ItemData.ItemObject)listBox1.SelectedItem).Id, (int)numericUpDown1.Value));
+                    //LocationObject.Randomizeditem.Item = ((ItemData.ItemObject)listBox1.SelectedItem).Id;
+                    //LocationObject.Randomizeditem.OwningPlayer = (int)numericUpDown1.Value;
                 }
             }
             else if (_CheckList[0] is OptionData.ChoiceOption OptionObject)
             {
                 OptionData.OptionValue SelectedValue = listBox1.SelectedItem as OptionData.OptionValue;
-                OptionObject.SetValue(SelectedValue.ID);
+                _Result.Add(new(OptionObject, SelectedValue.ID));
+                //OptionObject.SetValue(SelectedValue.ID);
             }
             else if (_CheckList[0] is EntranceData.EntranceRandoExit ExitObject)
             {
-                ExitObject.DestinationExit = (EntranceData.EntranceRandoDestination)listBox1.SelectedItem;
+                _Result.Add(new(ExitObject, (EntranceData.EntranceRandoDestination)listBox1.SelectedItem));
+                //ExitObject.DestinationExit = (EntranceData.EntranceRandoDestination)listBox1.SelectedItem;
             }
             _CheckList.RemoveAt(0);
             WriteNextItem();

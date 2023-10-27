@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
 namespace Windows_Form_Frontend
 {
@@ -16,6 +17,7 @@ namespace Windows_Form_Frontend
     {
         MiscData.InstanceContainer _Instance;
         List<object> _InputItems;
+        public List<ManualCheckObjectResult> _Result = new List<ManualCheckObjectResult>();
         VarType varType;
         public VariableInputWindow(IEnumerable<object> InputItems, MiscData.InstanceContainer Instance)
         {
@@ -53,10 +55,12 @@ namespace Windows_Form_Frontend
             switch (varType)
             {
                 case VarType.Gossip:
-                    (_InputItems[0] as HintData.HintObject).HintText = textBox1.Text;
+                    _Result.Add(new(_InputItems[0] as HintData.HintObject, textBox1.Text));
+                    //(_InputItems[0] as HintData.HintObject).HintText = textBox1.Text;
                     break;
                 case VarType.Number:
-                    (_InputItems[0] as OptionData.IntOption).Value = (int)numericUpDown1.Value;
+                    _Result.Add(new(_InputItems[0] as OptionData.IntOption, (int)numericUpDown1.Value));
+                    //(_InputItems[0] as OptionData.IntOption).Value = (int)numericUpDown1.Value;
                     break;
             }
             _InputItems.RemoveAt(0);
