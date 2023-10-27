@@ -678,7 +678,7 @@ namespace Windows_Form_Frontend
                     {
                         SaveTrackerState(InstanceContainer.Instance.ToJson(JSONType.UTF8));
                         ChoiceOption.SetValue((toolStripComboBox.SelectedItem as MiscData.OptionComboboxItem).Value as string);
-                        if (!InstanceContainer.logicCalculation.ReCompileLogicOnCalculation) { InstanceContainer.logicCalculation.CompileLogic(); }
+                        if (!InstanceContainer.logicCalculation.ReCompileLogicOnCalculation) { InstanceContainer.logicCalculation.CompileOptionActionEdits(); }
                         InstanceContainer.logicCalculation.CalculateLogic();
                         UpdateUI();
                     };
@@ -694,7 +694,7 @@ namespace Windows_Form_Frontend
                     {
                         SaveTrackerState(InstanceContainer.Instance.ToJson(JSONType.UTF8));
                         ToggleOption.ToggleValue();
-                        if (!InstanceContainer.logicCalculation.ReCompileLogicOnCalculation) { InstanceContainer.logicCalculation.CompileLogic(); }
+                        if (!InstanceContainer.logicCalculation.ReCompileLogicOnCalculation) { InstanceContainer.logicCalculation.CompileOptionActionEdits(); }
                         InstanceContainer.logicCalculation.CalculateLogic();
                         UpdateUI();
                     };

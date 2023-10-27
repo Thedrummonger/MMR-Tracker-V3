@@ -69,6 +69,9 @@ namespace MMR_Tracker_V3
             public Dictionary<string, EntranceData.EntranceAreaPair> EntranceLogicNameToEntryData { get; set; } = new Dictionary<string, EntranceData.EntranceAreaPair>();
             //A table Mapping an Exit to its logic name
             public Dictionary<string, string> ExitLogicMap { get; set; } = new Dictionary<string, string>();
+            //A dictionary to keep track of an Items values after they have been edited by option data
+            public Dictionary<string, ActionItemEdit> OptionActionItemEdits { get; set; } = new Dictionary<string, ActionItemEdit>();
+            public Dictionary<string, List<string>> OptionActionCollectionEdits { get; set; } = new Dictionary<string, List<string>> { };
         }
 
         [Serializable]

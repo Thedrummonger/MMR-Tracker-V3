@@ -105,14 +105,28 @@ namespace MMR_Tracker_V3.TrackerObjects
 
             public string GetName(InstanceData.TrackerInstance instance, bool DoEdits = true)
             {
-                var NameReplaceOption = instance.GetOptionActions().FirstOrDefault(x => x.ItemNameOverride.ContainsKey(ID));
-                if (NameReplaceOption != null && DoEdits) { return NameReplaceOption.ItemNameOverride[ID]; }
+                return DoEdits switch
+                {
+                    true => instance.InstanceReference.OptionActionItemEdits[ID].Name,
+                    _ => Name??ID,
+                };
+            }
+            public string GetOptionEditDefinedName(List<OptionData.Action> Actions)
+            {
+                var NameReplaceOption = Actions.FirstOrDefault(x => x.ItemNameOverride.ContainsKey(ID));
+                if (NameReplaceOption != null) { return NameReplaceOption.ItemNameOverride[ID]; }
                 return Name ?? ID;
             }
 
             public int GetMaxAmountInWorld(InstanceData.TrackerInstance instance)
             {
-                var OptionsEffectingThisItem = instance.GetOptionActions().Where(x => x.ItemMaxAmountEdit.ContainsKey(ID));
+                if (!instance.InstanceReference.OptionActionItemEdits.ContainsKey(ID)) { return -1; }
+                return instance.InstanceReference.OptionActionItemEdits[ID].MaxAmount;
+            }
+
+            public int GetOptionEditDefinedMaxAmountInWorld(List<OptionData.Action> Actions)
+            {
+                var OptionsEffectingThisItem = Actions.Where(x => x.ItemMaxAmountEdit.ContainsKey(ID));
                 if (!OptionsEffectingThisItem.Any()) { return MaxAmountInWorld ?? -1; }
                 int FinalValue = MaxAmountInWorld is null ? -1 : (int)MaxAmountInWorld;
                 foreach(var i in OptionsEffectingThisItem)

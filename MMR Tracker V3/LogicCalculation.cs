@@ -94,7 +94,7 @@ namespace MMR_Tracker_V3
             var EditActions = container.Instance.GetOptionActions();
             TotalUsable = 0;
             if (!container.Instance.LogicEntryCollections.ContainsKey(ArrVar)) { return false; }
-            List<string> VariableEntries = container.Instance.LogicEntryCollections[ArrVar].GetValue(EditActions);
+            List<string> VariableEntries = container.Instance.LogicEntryCollections[ArrVar].GetValue(container.Instance);
 
             List<string> UsableItems = new();
             Dictionary<string, int> ItemTracking = new();
@@ -117,7 +117,7 @@ namespace MMR_Tracker_V3
                     bool MultiItem = container.Instance.MultipleItemEntry(i, out string LogicItem, out int Amount);
                     bool Literal = LogicItem.IsLiteralID(out LogicItem);
                     var type = container.Instance.GetItemEntryType(LogicItem, Literal, out object ItemObj);
-                    if (type == LogicEntryType.LogicEntryCollection) { LoopVarEntry((ItemObj as OptionData.LogicEntryCollection).GetValue(EditActions)); }
+                    if (type == LogicEntryType.LogicEntryCollection) { LoopVarEntry((ItemObj as OptionData.LogicEntryCollection).GetValue(container.Instance)); }
                     else
                     {
                         if (type == LogicEntryType.item && !MultiItem)
@@ -156,7 +156,7 @@ namespace MMR_Tracker_V3
             return Available;
         }
 
-        public void CompileLogic()
+        public void CompileOptionActionEdits()
         {
             Debug.WriteLine("Recompiling Logic");
             foreach (var i in container.Instance.MacroPool) 
@@ -178,11 +178,24 @@ namespace MMR_Tracker_V3
                     LogicMap[container.Instance.GetLogicNameFromExit(i.Value)] = container.Instance.GetLogic(container.Instance.GetLogicNameFromExit(i.Value));
                 }
             }
+            var Actions = container.Instance.GetOptionActions();
+            foreach (var i in container.Instance.ItemPool)
+            {
+                container.Instance.InstanceReference.OptionActionItemEdits[i.Key] = new OptionData.ActionItemEdit
+                {
+                    Name = i.Value.GetDictEntry(container.Instance).GetOptionEditDefinedName(Actions),
+                    MaxAmount = i.Value.GetDictEntry(container.Instance).GetOptionEditDefinedMaxAmountInWorld(Actions)
+                };
+            }
+            foreach(var i in container.Instance.LogicEntryCollections)
+            {
+                container.Instance.InstanceReference.OptionActionCollectionEdits[i.Key] = i.Value.GetOptionEditDefinedValue(Actions);
+            }
         }
 
         public void CalculateLogic(CheckState checkState = CheckState.Unchecked)
         {
-            if (ReCompileLogicOnCalculation || LogicMap.Count == 0) { CompileLogic(); }
+            if (ReCompileLogicOnCalculation || LogicMap.Count == 0) { CompileOptionActionEdits(); }
             if (checkState == CheckState.Unchecked) { ResetAutoObtainedItems(); }
             AutoObtainedObjects.Clear();
 
@@ -555,7 +568,6 @@ namespace MMR_Tracker_V3
 
         private static bool CheckContainsFunction(TrackerInstance instance, string[] param)
         {
-            var EditActions = instance.GetOptionActions();
             if (param.Length < 2) { return false; } //Not enough Values Pased
 
             string FunctionValue = param[0];
@@ -565,12 +577,12 @@ namespace MMR_Tracker_V3
 
             if (instance.LogicEntryCollections.ContainsKey(FunctionValue))
             {
-                OptionList = instance.LogicEntryCollections[FunctionValue].GetValue(EditActions);
+                OptionList = instance.LogicEntryCollections[FunctionValue].GetValue(instance);
             }
 
             if (instance.LogicEntryCollections.ContainsKey(ParamValue))
             {
-                ValueList = instance.LogicEntryCollections[ParamValue].GetValue(EditActions);
+                ValueList = instance.LogicEntryCollections[ParamValue].GetValue(instance);
             }
 
             bool inverse = param.Length > 2 && bool.TryParse(param[2], out bool inverseValue) && !inverseValue; //If a third param is passed and its a false bool, invert the result

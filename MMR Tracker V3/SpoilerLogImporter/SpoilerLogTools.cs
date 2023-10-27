@@ -85,7 +85,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 default:
                     LogImported = false; break;
             }
-            container.logicCalculation.CompileLogic();
+            container.logicCalculation.CompileOptionActionEdits();
             return LogImported;
         }
 

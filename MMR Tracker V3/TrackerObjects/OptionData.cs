@@ -150,7 +150,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string ID { get; set; }
             public List<string> Entries { get; set; } = new List<string> { };
 
-            public List<string> GetValue(IEnumerable<Action> Edits) 
+            public List<string> GetOptionEditDefinedValue(IEnumerable<Action> Edits)
             {
                 var ReturnList = new List<string>();
                 ReturnList.AddRange(Entries);
@@ -163,7 +163,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                             ReturnList.AddRange(edit[ID].Values);
                             break;
                         case MiscData.MathOP.subtract:
-                            foreach(var value in edit[ID].Values) { ReturnList.Remove(value); }
+                            foreach (var value in edit[ID].Values) { ReturnList.Remove(value); }
                             break;
                         case MiscData.MathOP.set:
                             ReturnList.Clear();
@@ -172,6 +172,11 @@ namespace MMR_Tracker_V3.TrackerObjects
                     }
                 }
                 return ReturnList;
+            }
+
+            public List<string> GetValue(InstanceData.TrackerInstance instance) 
+            {
+                return instance.InstanceReference.OptionActionCollectionEdits[ID];
             }
         }
 
@@ -203,6 +208,12 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 ItemMaxAmountEdit.Add(Item, new MaxAmountSetData { action = mathOP, amount = amount });
             }
+        }
+
+        public class ActionItemEdit
+        {
+            public string Name;
+            public int MaxAmount;
         }
 
         public class MaxAmountSetData

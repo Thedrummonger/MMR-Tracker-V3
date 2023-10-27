@@ -234,7 +234,7 @@ namespace MMR_Tracker_V3
                 Instance.ApplyMMRandoSettings(new MMRData.SpoilerLogData { GameplaySettings = new MMRData.GameplaySettings() });
             }
 
-            Container.logicCalculation.CompileLogic();
+            Container.logicCalculation.CompileOptionActionEdits();
 
             //Debug.WriteLine(JsonConvert.SerializeObject(Instance.PriceData.WalletEntries, Utility._NewtonsoftJsonSerializerOptions));
             //Debug.WriteLine(JsonConvert.SerializeObject(Instance.PriceData.CapacityMap, Utility._NewtonsoftJsonSerializerOptions));
