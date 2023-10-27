@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Xml;
 using static MMR_Tracker_V3.InstanceData;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
@@ -233,8 +234,10 @@ namespace MMR_Tracker_V3
                 Instance.ApplyMMRandoSettings(new MMRData.SpoilerLogData { GameplaySettings = new MMRData.GameplaySettings() });
             }
 
-            Debug.WriteLine(JsonConvert.SerializeObject(Instance.PriceData.WalletEntries, Utility._NewtonsoftJsonSerializerOptions));
-            Debug.WriteLine(JsonConvert.SerializeObject(Instance.PriceData.CapacityMap, Utility._NewtonsoftJsonSerializerOptions));
+            Container.logicCalculation.CompileLogic();
+
+            //Debug.WriteLine(JsonConvert.SerializeObject(Instance.PriceData.WalletEntries, Utility._NewtonsoftJsonSerializerOptions));
+            //Debug.WriteLine(JsonConvert.SerializeObject(Instance.PriceData.CapacityMap, Utility._NewtonsoftJsonSerializerOptions));
 
             return true;
         }

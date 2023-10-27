@@ -24,10 +24,12 @@ namespace MMR_Tracker_V3
         public Dictionary<string, List<string>> LogicUnlockData = new();
         public Dictionary<string, MMRData.JsonFormatLogicItem> LogicMap = new();
         public Dictionary<object, int> AutoObtainedObjects = new();
+        public bool ReCompileLogicOnCalculation = true;
 
-        public LogicCalculation(InstanceContainer _container)
+        public LogicCalculation(InstanceContainer _container, bool reCompileLogicOnCalculation = true)
         {
             container = _container;
+            ReCompileLogicOnCalculation = reCompileLogicOnCalculation;
         }
 
         private bool RequirementsMet(List<string> Requirements, List<string> TempUnlockData)
@@ -154,8 +156,9 @@ namespace MMR_Tracker_V3
             return Available;
         }
 
-        private void FillLogicMap()
+        public void CompileLogic()
         {
+            Debug.WriteLine("Recompiling Logic");
             foreach (var i in container.Instance.MacroPool) 
             { 
                 LogicMap[i.Key] = container.Instance.GetLogic(i.Key); 
@@ -179,7 +182,7 @@ namespace MMR_Tracker_V3
 
         public void CalculateLogic(CheckState checkState = CheckState.Unchecked)
         {
-            FillLogicMap();
+            if (ReCompileLogicOnCalculation || LogicMap.Count == 0) { CompileLogic(); }
             if (checkState == CheckState.Unchecked) { ResetAutoObtainedItems(); }
             AutoObtainedObjects.Clear();
 

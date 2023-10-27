@@ -56,6 +56,7 @@ namespace Windows_Form_Frontend
             {
                 SpoilerLogTools.ImportSpoilerLog(File.ReadAllLines(SpoilerLog), SpoilerLog, MainInterface.InstanceContainer);
             }
+            MainInterface.InstanceContainer.logicCalculation.ReCompileLogicOnCalculation = false;
             MainInterface.InstanceContainer.logicCalculation.CalculateLogic();
             MainInterface.CurrentProgram.UpdateUI();
 

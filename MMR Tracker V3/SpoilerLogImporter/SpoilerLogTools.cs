@@ -2,6 +2,7 @@
 using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -56,6 +57,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
         public static bool ImportSpoilerLog(string[] spoilerLog, string OriginalFile, InstanceContainer container)
         {
             container.logicCalculation.ResetAutoObtainedItems();
+            bool LogImported = true;
             switch (container.Instance.LogicFile.GameCode)
             {
                 case "OOTMM":
@@ -63,26 +65,28 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                     OOTMMSpoilerLogTools.readAndApplySpoilerLog(container.Instance);
                     container.Instance.EntrancePool.IsEntranceRando = container.Instance.EntrancePool.CheckForRandomEntrances(container.Instance);
                     container.Instance.SpoilerLog.GetStaticPlaythrough(container.Instance);
-                    return true;
+                    break;
                 case "MMR":
                     container.Instance.SpoilerLog = new InstanceData.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
                     MMRSpoilerLogTools.ReadAndApplySpoilerLog(container.Instance);
                     container.Instance.EntrancePool.IsEntranceRando = container.Instance.EntrancePool.CheckForRandomEntrances(container.Instance);
                     container.Instance.SpoilerLog.GetStaticPlaythrough(container.Instance);
-                    return true;
+                    break;
                 case "TPR":
                     container.Instance.SpoilerLog = new InstanceData.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
                     TPRSpoilerLogTools.readAndApplySpoilerLog(container.Instance);
                     container.Instance.SpoilerLog.GetStaticPlaythrough(container.Instance);
-                    return true;
+                    break;
                 case "PMR":
                     container.Instance.SpoilerLog = new InstanceData.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
                     PMRSpoilerLogTools.ParseSpoiler(container.Instance);
                     container.Instance.SpoilerLog.GetStaticPlaythrough(container.Instance);
-                    return true;
+                    break;
                 default:
-                    return false;
+                    LogImported = false; break;
             }
+            container.logicCalculation.CompileLogic();
+            return LogImported;
         }
 
         public static void RemoveSpoilerData(this InstanceData.TrackerInstance instance)

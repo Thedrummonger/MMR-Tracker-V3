@@ -125,6 +125,8 @@ namespace MMR_Tracker_V3
             UpdatedObjects.AddRange(IntOptions);
             UpdatedObjects.AddRange(ToggleOptions);
 
+            if (UpdatedObjects.Any()) { instanceContainer.logicCalculation.CompileLogic(); }
+
             return UpdatedObjects;
         }
 

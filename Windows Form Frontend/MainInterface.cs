@@ -676,7 +676,9 @@ namespace Windows_Form_Frontend
                     }
                     toolStripComboBox.SelectedIndexChanged += delegate (object sender, EventArgs e)
                     {
+                        SaveTrackerState(InstanceContainer.Instance.ToJson(JSONType.UTF8));
                         ChoiceOption.SetValue((toolStripComboBox.SelectedItem as MiscData.OptionComboboxItem).Value as string);
+                        if (!InstanceContainer.logicCalculation.ReCompileLogicOnCalculation) { InstanceContainer.logicCalculation.CompileLogic(); }
                         InstanceContainer.logicCalculation.CalculateLogic();
                         UpdateUI();
                     };
@@ -690,7 +692,9 @@ namespace Windows_Form_Frontend
                     ToolStripMenuItem menuItem = new() { Name = $"{ToggleOption.ID}Menu", Checked = ToggleOption.Enabled.ID == ToggleOption.Value, Text = ToggleOption.getOptionName() };
                     menuItem.Click += delegate (object sender, EventArgs e)
                     {
+                        SaveTrackerState(InstanceContainer.Instance.ToJson(JSONType.UTF8));
                         ToggleOption.ToggleValue();
+                        if (!InstanceContainer.logicCalculation.ReCompileLogicOnCalculation) { InstanceContainer.logicCalculation.CompileLogic(); }
                         InstanceContainer.logicCalculation.CalculateLogic();
                         UpdateUI();
                     };
