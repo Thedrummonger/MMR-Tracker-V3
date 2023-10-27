@@ -13,6 +13,8 @@ using Octokit;
 using Microsoft.VisualBasic;
 using Newtonsoft.Json;
 using MathNet.Numerics;
+using System;
+using MMR_Tracker_V3;
 
 namespace TestingForm
 {
@@ -72,8 +74,9 @@ namespace TestingForm
                 new DevAction("Create PMR Data", GameFileCreation.PMRCreateData, UpdateDebugActions),
                 new DevAction("Open NetClient", OpenNetClient, UpdateDebugActions),
                 new DevAction("Test Web Server", SendServerREquest, UpdateDebugActions),
-                new DevAction("Connect To Async Web Server", ConnectToAsyncWebServer, UpdateDebugActions),
-                new DevAction("Send To Async Web Server", SendAndRecieveToAsyncWebServer, UpdateDebugActions, () => { return AsyncStream != null; } ),
+                new DevAction("Connect To Async Web Server", ConnectToAsyncWebServer, UpdateDebugActions, () => { return !(Asyncclient?.Connected??false); }),
+                new DevAction("Send To Async Web Server", SendAndRecieveToAsyncWebServer, UpdateDebugActions, () => { return Asyncclient?.Connected??false; } ),
+                new DevAction("ToggleRecieving", () => Recieving = !Recieving, UpdateDebugActions, () => { return Asyncclient?.Connected??false; } ),
             };
 
             foreach (var Function in DevFunctions)
@@ -84,25 +87,62 @@ namespace TestingForm
         }
 
         TcpClient Asyncclient = null;
-        NetworkStream AsyncStream = null;
         private async void ConnectToAsyncWebServer()
         {
-            Asyncclient = new TcpClient("127.0.0.1", 25570);
-            Asyncclient.Connect(Asyncclient.);
-            AsyncStream = Asyncclient.GetStream();
+            try
+            {
+                Asyncclient = new TcpClient("127.0.0.1", 25570);
+                NetData.NetPacket HandshakePacket = new NetData.NetPacket(1, "Password1");
+                byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(HandshakePacket.ToFormattedJson());
+                Asyncclient.GetStream().Write(bytesToSend, 0, bytesToSend.Length);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"Failed to connect to server!\n{e.Message}");
+                Asyncclient = null;
+                return;
+            }
             Debug.WriteLine($"Connected to web server");
+            await OpenListenThread();
+
+        }
+
+        bool Recieving = true;
+
+        private async Task OpenListenThread()
+        {
+            string ExitReason = "Unknown";
+            while (Asyncclient?.Connected??false && Recieving)
+            {
+                try
+                {
+                    byte[] buffer = new byte[Asyncclient.ReceiveBufferSize];
+                    int bytesRead = await Asyncclient.GetStream().ReadAsync(buffer, 0, Asyncclient.ReceiveBufferSize);
+                    if (!Recieving) { break; }
+                    string dataReceived = Encoding.ASCII.GetString(buffer, 0, bytesRead);
+                    Debug.WriteLine($"Server Says {dataReceived}");
+                    UpdateDebugActions();
+                    listBox1.Items.Add($"{dataReceived}");
+                }
+                catch (Exception e)
+                {
+                    ExitReason = e.Message;
+                    break;
+                }
+            }
+            Console.WriteLine($"Server Disconnected\n{ExitReason}");
+            Asyncclient = null;
+            UpdateDebugActions();
         }
 
         private void SendAndRecieveToAsyncWebServer()
         {
-            byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes("This is a test Message from the client");
-            AsyncStream.Write(bytesToSend, 0, bytesToSend.Length);
-            byte[] bytesToRead = new byte[Asyncclient.ReceiveBufferSize];
-            int bytesRead = AsyncStream.Read(bytesToRead, 0, Asyncclient.ReceiveBufferSize);
-
-            string ResponseText = Encoding.ASCII.GetString(bytesToRead, 0, bytesRead);
-            Debug.WriteLine(ResponseText);
+            NetData.NetPacket packet = new NetData.NetPacket(1, _ItemData: NetClient.GetNetItemsToSend(MainInterface.InstanceContainer.Instance));
+            byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(packet.ToFormattedJson());
+            Asyncclient.GetStream().Write(bytesToSend, 0, bytesToSend.Length);
         }
+
+
 
         private void SendServerREquest()
         {

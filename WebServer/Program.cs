@@ -9,6 +9,8 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using MMR_Tracker_V3.TrackerObjects;
+using FParsec;
+using MMR_Tracker_V3;
 
 namespace WebServer
 {
@@ -31,7 +33,9 @@ namespace WebServer
 
             //Create and start the server
             HttpServer server = new HttpServer(cfg);
-            server.Start();
+            //server.Start();
+
+            AsyncServerTest.test(cfg);
         }
     }
     internal class AsyncServerTest
@@ -39,18 +43,18 @@ namespace WebServer
         public class MMRTServerClient
         {
             public TcpClient NetClient;
-            public NetworkStream NetworkStream;
             public IPEndPoint EndPoint;
+            public int PlayerID;
+            public Dictionary<int, Dictionary<string, int>> ItemData = new Dictionary<int, Dictionary<string, int>>();
         }
         public static Dictionary<Guid, MMRTServerClient> Clients = new Dictionary<Guid, MMRTServerClient>();
-        public static void Main(string[] args)
-        {
-            test(IPAddress.Parse("127.0.0.1"), 25570);
-        }
 
-        public static void test(IPAddress IP, int Port)
+        public static NetData.ConfigFile serverConfig;
+
+        public static void test(NetData.ConfigFile cfg)
         {
-            var serverListenter = new TcpListener(IP, Port);
+            serverConfig = cfg;
+            var serverListenter = new TcpListener(cfg.IPAddress, cfg.Port);
             serverListenter.Start();
 
             WaitForNewClient(serverListenter);
@@ -63,9 +67,9 @@ namespace WebServer
                 {
                     foreach (var i in Clients.Values)
                     {
-                        string DataToSend = $"Server Ping!";
+                        string DataToSend = $"Server Data:\n{Clients.ToDictionary(x => x.Value.PlayerID, x => x.Value.ItemData).ToFormattedJson()}";
                         byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(DataToSend);
-                        i.NetworkStream.Write(bytesToSend, 0, bytesToSend.Length);
+                        i.NetClient.GetStream().Write(bytesToSend, 0, bytesToSend.Length);
                     }
                 }
                 else if (Stuff == "Clients")
@@ -95,20 +99,31 @@ namespace WebServer
             _ServerClient.EndPoint = _ServerClient.NetClient.Client.RemoteEndPoint as IPEndPoint;
             var localAddress = _ServerClient.EndPoint?.Address;
             var localPort = _ServerClient.EndPoint?.Port;
-            Console.WriteLine($"Client {localAddress}:{localPort} Connected");
-            _ServerClient.NetworkStream = _ServerClient.NetClient.GetStream();
+            try
+            {
+                byte[] HandshakeBuffer = new byte[_ServerClient.NetClient.ReceiveBufferSize];
+                int HandshakeBytes = _ServerClient.NetClient.GetStream().Read(HandshakeBuffer, 0, _ServerClient.NetClient.ReceiveBufferSize);
+                string HandShake = Encoding.ASCII.GetString(HandshakeBuffer, 0, HandshakeBytes);
+                NetData.NetPacket HandshakePacket = JsonConvert.DeserializeObject<NetData.NetPacket>(HandShake);
+                if (!AuthenticateUser(HandshakePacket)) { return; }
+                _ServerClient.PlayerID = HandshakePacket.PlayerID;
+            }
+            catch
+            {
+                Console.WriteLine("Failed to parse Handshake Packet");
+                return;
+            }
+
+            Console.WriteLine($"Player {_ServerClient.PlayerID} Connect from {localAddress}:{localPort}");
             Clients.Add(guid, _ServerClient);
             while (true)
             {
+                string dataReceived;
                 try
                 {
                     byte[] buffer = new byte[_ServerClient.NetClient.ReceiveBufferSize];
-                    int bytesRead = await _ServerClient.NetworkStream.ReadAsync(buffer, 0, _ServerClient.NetClient.ReceiveBufferSize);
-                    string dataReceived = Encoding.ASCII.GetString(buffer, 0, bytesRead);
-                    Console.WriteLine($"Client {localAddress}:{localPort} Sent Data {dataReceived}");
-                    string DataToSend = $"I got [{dataReceived}]";
-                    byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(DataToSend);
-                    _ServerClient.NetworkStream.Write(bytesToSend, 0, bytesToSend.Length);
+                    int bytesRead = await _ServerClient.NetClient.GetStream().ReadAsync(buffer, 0, _ServerClient.NetClient.ReceiveBufferSize);
+                    dataReceived = Encoding.ASCII.GetString(buffer, 0, bytesRead);
                 }
                 catch
                 {
@@ -116,7 +131,50 @@ namespace WebServer
                     Clients.Remove(guid);
                     break;
                 }
+
+                try
+                {
+                    NetData.NetPacket Packet = JsonConvert.DeserializeObject<NetData.NetPacket>(dataReceived);
+                    if (Packet.PlayerID != _ServerClient.PlayerID) 
+                    {
+                        Console.WriteLine($"Packet for player {Packet.PlayerID} recieved on player {_ServerClient.PlayerID} client thread");
+                        continue;
+                    }
+                    Console.WriteLine($"Recieved Packet from player {Packet.PlayerID}");
+                    _ServerClient.ItemData = Packet.ItemData;
+                }
+                catch
+                {
+                    Console.WriteLine($"Failed to parse Packet from {_ServerClient.PlayerID}");
+                }
             }
+        }
+
+        private static bool AuthenticateUser(NetData.NetPacket mMRTPacket)
+        {
+            if (mMRTPacket.PlayerID < 0 || Clients.Any(x => x.Value.PlayerID == mMRTPacket.PlayerID)) { Console.WriteLine($"{mMRTPacket.PlayerID} was Invalid"); return false; }
+            if (!serverConfig.PlayersRequirePassword) { return true; }
+            if (!serverConfig.playerPasswords.ContainsKey(mMRTPacket.PlayerID)) { Console.WriteLine($"Player {mMRTPacket.PlayerID} was not entered in user list"); return false; }
+            if (serverConfig.playerPasswords[mMRTPacket.PlayerID] != mMRTPacket.Password) { Console.WriteLine($"Incorrect Password for Player {mMRTPacket.PlayerID}"); return false; }
+            return true;
+        }
+
+        private static NetData.NetPacket GetItemsBelongingToPlayer(int PlayerID)
+        {
+            NetData.NetPacket ReturnPacket = new NetData.NetPacket(PlayerID, _ItemData: new Dictionary<int, Dictionary<string, int>>());
+            foreach (var i in Clients)
+            {
+                if (i.Value.PlayerID == PlayerID) { continue; }
+                if (i.Value.ItemData.ContainsKey(PlayerID))
+                {
+                    ReturnPacket.ItemData.Add(i.Value.PlayerID, i.Value.ItemData[PlayerID]);
+                }
+                if (i.Value.ItemData.ContainsKey(-1))
+                {
+                    ReturnPacket.ItemData.Add(-1, i.Value.ItemData[PlayerID]);
+                }
+            }
+            return ReturnPacket;
         }
     }
 }

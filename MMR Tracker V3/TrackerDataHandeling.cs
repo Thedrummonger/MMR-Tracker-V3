@@ -154,7 +154,7 @@ namespace MMR_Tracker_V3
             if (ManualLocationChecks.Any())
             {
                 var Result = Options.CheckUnassignedLocations(ManualLocationChecks, instanceContainer);
-                foreach (var O in Result) { O.GetCheck<LocationObject>().Randomizeditem.Item = O.GetItem<string>(); }
+                foreach (var O in Result) { O.GetCheck<LocationObject>().Randomizeditem.Item = O.GetItem<string>(); O.GetCheck<LocationObject>().Randomizeditem.OwningPlayer = O.OwningPlayer; }
             }
             foreach (LocationObject LocationObject in locationObjects)
             {
