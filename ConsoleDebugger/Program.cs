@@ -9,6 +9,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
+using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
 namespace CLIFrontEnd
 {
@@ -281,7 +282,13 @@ namespace CLIFrontEnd
                         CheckObjects.ForEach(x => SetPrice(x));
                         break;
                     case "check":
-                        TrackerDataHandeling.CheckSelectedItems(CheckObjects, CheckAction, newTrackerInstance, HandleUnAssignedLocations, HandleUnAssignedVariables);
+                        var CheckObjectOptions = new MiscData.CheckItemSetting(CheckAction)
+                            .SetCheckUnassignedLocations(HandleUnAssignedLocations)
+                            .SetCheckUnassignedEntrances(HandleUnAssignedLocations)
+                            .SetCheckUnassignedHints(HandleUnAssignedVariables)
+                            .SetCheckCoiceOptions(HandleUnAssignedLocations)
+                            .SetCheckIntOPtions(HandleUnAssignedVariables);
+                        TrackerDataHandeling.CheckSelectedItems(CheckObjects, newTrackerInstance, CheckObjectOptions);
                         break;
                     case "hide":
                         foreach (var co in CheckObjects)

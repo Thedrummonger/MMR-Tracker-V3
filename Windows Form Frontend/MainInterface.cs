@@ -959,7 +959,15 @@ namespace Windows_Form_Frontend
             }
             string CurrentState = InstanceContainer.Instance.ToJson(MiscData.JSONType.UTF8);
 
-            var UpdatedObjects = TrackerDataHandeling.CheckSelectedItems(Items, checkState, InstanceContainer, HandleUnassignedChecks, HandleUnassignedVariables, EnforceMarkAction);
+            var CheckObjectOptions = new MiscData.CheckItemSetting(checkState)
+                .SetEnforceMarkAction(EnforceMarkAction)
+                .SetCheckUnassignedLocations(HandleUnassignedChecks)
+                .SetCheckUnassignedEntrances(HandleUnassignedChecks)
+                .SetCheckUnassignedHints(HandleUnassignedVariables)
+                .SetCheckCoiceOptions(HandleUnassignedChecks)
+                .SetCheckIntOPtions(HandleUnassignedVariables);
+
+            var UpdatedObjects = TrackerDataHandeling.CheckSelectedItems(Items, InstanceContainer, CheckObjectOptions);
 
             if (UpdatedObjects.Any()) 
             { 

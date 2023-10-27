@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static MMR_Tracker_V3.TrackerObjects.ItemData;
+using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
 namespace MMR_Tracker_V3.TrackerObjects
 {
@@ -55,6 +57,47 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 return Display;
             }
+        }
+
+        public class CheckItemSetting
+        {
+            public CheckItemSetting(CheckItemSetting Copy)
+            {
+                TargetheckState = Copy.TargetheckState;
+                CheckUnassignedLocations = Copy.CheckUnassignedLocations;
+                CheckUnassignedEntrances = Copy.CheckUnassignedEntrances;
+                CheckUnassignedHints = Copy.CheckUnassignedHints;
+                CheckCoiceOptions = Copy.CheckCoiceOptions;
+                CheckIntOPtions = Copy.CheckIntOPtions;
+            }
+            public CheckItemSetting(CheckState _TargetCheckState) 
+            {
+                TargetheckState = _TargetCheckState;
+            }
+            public CheckItemSetting Copy()
+            {
+                return new CheckItemSetting(this);
+            }
+            public CheckState TargetheckState;
+            public bool EnforceMarkAction = false;
+            public Func<IEnumerable<object>, InstanceContainer, bool> CheckUnassignedLocations = 
+                (IEnumerable<object> O, InstanceContainer C) => { throw new NotImplementedException("CheckUnassignedLocations was not assigned"); };
+            public Func<IEnumerable<object>, InstanceContainer, bool> CheckUnassignedEntrances =
+                (IEnumerable<object> O, InstanceContainer C) => { throw new NotImplementedException("CheckUnassignedEntrances was not assigned"); };
+            public Func<IEnumerable<object>, InstanceContainer, bool> CheckUnassignedHints =
+                (IEnumerable<object> O, InstanceContainer C) => { throw new NotImplementedException("CheckUnassignedHints was not assigned"); };
+            public Func<IEnumerable<object>, InstanceContainer, bool> CheckCoiceOptions =
+                (IEnumerable<object> O, InstanceContainer C) => { throw new NotImplementedException("CheckCoiceOptions was not assigned"); };
+            public Func<IEnumerable<object>, InstanceContainer, bool> CheckIntOPtions =
+                (IEnumerable<object> O, InstanceContainer C) => { throw new NotImplementedException("CheckIntOPtions was not assigned"); };
+            public CheckItemSetting SetTargetheckState(CheckState _TargetCheckState) { TargetheckState = _TargetCheckState; return this; }
+            public CheckItemSetting SetEnforceMarkAction(bool _EnforceMarkAction) { EnforceMarkAction = _EnforceMarkAction; return this; }
+            public CheckItemSetting SetCheckUnassignedLocations(Func<IEnumerable<object>, InstanceContainer, bool> func) { CheckUnassignedLocations = func; return this; }
+            public CheckItemSetting SetCheckUnassignedEntrances(Func<IEnumerable<object>, InstanceContainer, bool> func) { CheckUnassignedEntrances = func; return this; }
+            public CheckItemSetting SetCheckUnassignedHints(Func<IEnumerable<object>, InstanceContainer, bool> func) { CheckUnassignedHints = func; return this; }
+            public CheckItemSetting SetCheckCoiceOptions(Func<IEnumerable<object>, InstanceContainer, bool> func) { CheckCoiceOptions = func; return this; }
+            public CheckItemSetting SetCheckIntOPtions(Func<IEnumerable<object>, InstanceContainer, bool> func) { CheckIntOPtions = func; return this; }
+
         }
         public class InstanceContainer
         {
