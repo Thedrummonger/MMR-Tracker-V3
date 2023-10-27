@@ -34,4 +34,89 @@ namespace WebServer
             server.Start();
         }
     }
+    internal class AsyncServerTest
+    {
+        public class MMRTServerClient
+        {
+            public TcpClient NetClient;
+            public NetworkStream NetworkStream;
+            public IPEndPoint EndPoint;
+        }
+        public static Dictionary<Guid, MMRTServerClient> Clients = new Dictionary<Guid, MMRTServerClient>();
+        public static void Main(string[] args)
+        {
+            test(IPAddress.Parse("127.0.0.1"), 25570);
+        }
+
+        public static void test(IPAddress IP, int Port)
+        {
+            var serverListenter = new TcpListener(IP, Port);
+            serverListenter.Start();
+
+            WaitForNewClient(serverListenter);
+
+            while (true)
+            {
+                Console.WriteLine($"Do Other Program Stuff");
+                string Stuff = Console.ReadLine();
+                if (Stuff == "send")
+                {
+                    foreach (var i in Clients.Values)
+                    {
+                        string DataToSend = $"Server Ping!";
+                        byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(DataToSend);
+                        i.NetworkStream.Write(bytesToSend, 0, bytesToSend.Length);
+                    }
+                }
+                else if (Stuff == "Clients")
+                {
+                    Console.WriteLine("Connected Clients:\n" + string.Join("\n", Clients.Select(x => $"{x.Key}|{x.Value.EndPoint?.Address}")));
+                }
+                else
+                {
+                    Console.WriteLine($"You ran Manual command {Stuff}");
+                }
+            }
+
+        }
+
+        public static async void WaitForNewClient(TcpListener serverListenter)
+        {
+            while (true)
+            {
+                Console.WriteLine($"Awaiting Client");
+                TcpClient client = await serverListenter.AcceptTcpClientAsync();
+                StartClientLoop(new MMRTServerClient() { NetClient = client });
+            }
+        }
+        public static async void StartClientLoop(MMRTServerClient _ServerClient)
+        {
+            Guid guid = Guid.NewGuid();
+            _ServerClient.EndPoint = _ServerClient.NetClient.Client.RemoteEndPoint as IPEndPoint;
+            var localAddress = _ServerClient.EndPoint?.Address;
+            var localPort = _ServerClient.EndPoint?.Port;
+            Console.WriteLine($"Client {localAddress}:{localPort} Connected");
+            _ServerClient.NetworkStream = _ServerClient.NetClient.GetStream();
+            Clients.Add(guid, _ServerClient);
+            while (true)
+            {
+                try
+                {
+                    byte[] buffer = new byte[_ServerClient.NetClient.ReceiveBufferSize];
+                    int bytesRead = await _ServerClient.NetworkStream.ReadAsync(buffer, 0, _ServerClient.NetClient.ReceiveBufferSize);
+                    string dataReceived = Encoding.ASCII.GetString(buffer, 0, bytesRead);
+                    Console.WriteLine($"Client {localAddress}:{localPort} Sent Data {dataReceived}");
+                    string DataToSend = $"I got [{dataReceived}]";
+                    byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(DataToSend);
+                    _ServerClient.NetworkStream.Write(bytesToSend, 0, bytesToSend.Length);
+                }
+                catch
+                {
+                    Console.WriteLine($"Client {localAddress}:{localPort} Disconnected");
+                    Clients.Remove(guid);
+                    break;
+                }
+            }
+        }
+    }
 }

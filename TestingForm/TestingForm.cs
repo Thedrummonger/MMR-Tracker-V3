@@ -12,6 +12,7 @@ using System.IO;
 using Octokit;
 using Microsoft.VisualBasic;
 using Newtonsoft.Json;
+using MathNet.Numerics;
 
 namespace TestingForm
 {
@@ -71,6 +72,8 @@ namespace TestingForm
                 new DevAction("Create PMR Data", GameFileCreation.PMRCreateData, UpdateDebugActions),
                 new DevAction("Open NetClient", OpenNetClient, UpdateDebugActions),
                 new DevAction("Test Web Server", SendServerREquest, UpdateDebugActions),
+                new DevAction("Connect To Async Web Server", ConnectToAsyncWebServer, UpdateDebugActions),
+                new DevAction("Send To Async Web Server", SendAndRecieveToAsyncWebServer, UpdateDebugActions, () => { return AsyncStream != null; } ),
             };
 
             foreach (var Function in DevFunctions)
@@ -78,6 +81,27 @@ namespace TestingForm
                 if (Function.Conitional is not null && !Function.Conitional()) { continue; }
                 listBox1.Items.Add(Function);
             }
+        }
+
+        TcpClient Asyncclient = null;
+        NetworkStream AsyncStream = null;
+        private async void ConnectToAsyncWebServer()
+        {
+            Asyncclient = new TcpClient("127.0.0.1", 25570);
+            Asyncclient.Connect(Asyncclient.);
+            AsyncStream = Asyncclient.GetStream();
+            Debug.WriteLine($"Connected to web server");
+        }
+
+        private void SendAndRecieveToAsyncWebServer()
+        {
+            byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes("This is a test Message from the client");
+            AsyncStream.Write(bytesToSend, 0, bytesToSend.Length);
+            byte[] bytesToRead = new byte[Asyncclient.ReceiveBufferSize];
+            int bytesRead = AsyncStream.Read(bytesToRead, 0, Asyncclient.ReceiveBufferSize);
+
+            string ResponseText = Encoding.ASCII.GetString(bytesToRead, 0, bytesRead);
+            Debug.WriteLine(ResponseText);
         }
 
         private void SendServerREquest()
