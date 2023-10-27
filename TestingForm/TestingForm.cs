@@ -11,6 +11,7 @@ using System.Security.Policy;
 using System.IO;
 using Octokit;
 using Microsoft.VisualBasic;
+using Newtonsoft.Json;
 
 namespace TestingForm
 {
@@ -82,25 +83,56 @@ namespace TestingForm
         private void SendServerREquest()
         {
             //---data to send to the server---
-            string textToSend = Interaction.InputBox("Send Command to Server");
+            string TestText = Interaction.InputBox("Send Command to Server");
 
-            //---create a TCPClient object at the IP and port no.---
-            TcpClient client = new TcpClient("127.0.0.1", 25568);
-            NetworkStream nwStream = client.GetStream();
-            byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(textToSend);
+            string textToSend = JsonConvert.SerializeObject(new NetData.NetPacket(2, "Password2") { TestString = TestText });
+            TcpClient client = null;
+            try
+            {
+                //---create a TCPClient object at the IP and port no.---
+                client = new TcpClient("SERVER IP", 25570);
+                NetworkStream nwStream = client.GetStream();
+                nwStream.ReadTimeout = 1000;
+                byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(textToSend);
 
-            //---send the text---
-            Debug.WriteLine("Sending : " + textToSend);
-            nwStream.Write(bytesToSend, 0, bytesToSend.Length);
+                //---send the text---
+                Debug.WriteLine("Sending : " + textToSend);
+                nwStream.Write(bytesToSend, 0, bytesToSend.Length);
 
-            //---read back the text---
-            byte[] bytesToRead = new byte[client.ReceiveBufferSize];
-            int bytesRead = nwStream.Read(bytesToRead, 0, client.ReceiveBufferSize);
+                //---read back the text---
+                byte[] bytesToRead = new byte[client.ReceiveBufferSize];
+                int bytesRead = nwStream.Read(bytesToRead, 0, client.ReceiveBufferSize);
 
-            string ResponseText = Encoding.ASCII.GetString(bytesToRead, 0, bytesRead);
-            Debug.WriteLine($"Received : {ResponseText}");
-            MessageBox.Show(ResponseText);
-            client.Close();
+                string ResponseText = Encoding.ASCII.GetString(bytesToRead, 0, bytesRead);
+
+                NetData.NetPacket ReturnPacket = new NetData.NetPacket(0);
+                try { ReturnPacket = JsonConvert.DeserializeObject<NetData.NetPacket>(ResponseText); }
+                catch (Exception e) { ReturnPacket = new NetData.NetPacket(0); ReturnPacket.TestString = e.Message; }
+
+                Debug.WriteLine($"Received: Player {ReturnPacket.PlayerID} | {ReturnPacket.TestString}");
+                MessageBox.Show($"Player {ReturnPacket.PlayerID} | {ReturnPacket.TestString}");
+                client.Close();
+            }
+            catch (ArgumentNullException ane)
+            {
+                client?.Close();
+                MessageBox.Show($"ArgumentNullException : {ane.Message}");
+            }
+            catch (SocketException se)
+            {
+                client?.Close();
+                MessageBox.Show($"SocketException : {se.Message}");
+            }
+            catch (IOException Ie)
+            {
+                client?.Close();
+                MessageBox.Show($"IOException : {Ie.Message}");
+            }
+            catch (Exception e)
+            {
+                client?.Close();
+                MessageBox.Show($"Unexpected exception : {e.Message}");
+            }
         }
 
         private void LB_DoubleClick(object sender, EventArgs e)

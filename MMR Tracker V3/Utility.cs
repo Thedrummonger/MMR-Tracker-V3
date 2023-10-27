@@ -15,6 +15,7 @@ using YamlDotNet.Serialization;
 using System.Globalization;
 using System.Text.RegularExpressions;
 using MMR_Tracker_V3.TrackerObjectExtentions;
+using System.Net;
 
 namespace MMR_Tracker_V3
 {
@@ -66,8 +67,21 @@ namespace MMR_Tracker_V3
         {
             Formatting = Newtonsoft.Json.Formatting.Indented,
             NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore,
-            Converters = { new Newtonsoft.Json.Converters.StringEnumConverter() }
+            Converters = { new Newtonsoft.Json.Converters.StringEnumConverter(), new IPConverter() }
         };
+        public class IPConverter : JsonConverter<IPAddress>
+        {
+            public override void WriteJson(JsonWriter writer, IPAddress value, JsonSerializer serializer)
+            {
+                writer.WriteValue(value.ToString());
+            }
+
+            public override IPAddress ReadJson(JsonReader reader, Type objectType, IPAddress existingValue, bool hasExistingValue, JsonSerializer serializer)
+            {
+                var s = (string)reader.Value;
+                return IPAddress.Parse(s);
+            }
+        }
 
         public static bool IsLiteralID(this string ID, out string CleanedID)
         {

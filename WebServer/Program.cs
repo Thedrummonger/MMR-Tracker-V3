@@ -1,9 +1,14 @@
-﻿using System;
+﻿using MathNet.Symbolics;
+using Newtonsoft.Json;
+using System;
+using System.Diagnostics;
 using System.IO;
 using System.Net;
+using System.Net.Http;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using MMR_Tracker_V3.TrackerObjects;
 
 namespace MMRTrackerWebServer
 {
@@ -11,56 +16,74 @@ namespace MMRTrackerWebServer
     {
         public static void Main(string[] args)
         {
-            HttpServer server = new HttpServer("127.0.0.1", 25568);
+            //The the config file values
+            NetData.ConfigFile.VerifyConfig();
+            NetData.ConfigFile cfg = JsonConvert.DeserializeObject<NetData.ConfigFile>(File.ReadAllText(NetData.ConfigFile.ConfigFilePath), MMR_Tracker_V3.Utility._NewtonsoftJsonSerializerOptions)??new NetData.ConfigFile().SetDefaultExamples();
+
+            //If the program was started with arguments, scan then for an IP and/or Port and override the config if found
+            NetData.ParseNetServerArgs(args, out IPAddress? ArgsIP, out int ArgsPort);
+            if (ArgsIP is not null) { cfg.IPAddress = ArgsIP; }
+            if (ArgsPort > -1) { cfg.Port = ArgsPort; }
+
+            //Sanitize the IPAdress and Port
+            if (cfg.IPAddress is null || cfg.IPAddress.ToString() == "0.0.0.0") { cfg.IPAddress = IPAddress.Any; }
+            if (cfg.Port < 0) { cfg.Port = NetData.DefaultProgramPort; }
+
+            //Create and start the server
+            HttpServer server = new HttpServer(cfg);
             server.Start();
         }
     }
 
     public class HttpServer
     {
-        private readonly IPAddress ipAddress;
-        private readonly int port;
         private readonly TcpListener serverListenter;
+        private readonly NetData.ConfigFile serverConfig;
 
-        public HttpServer(string ipAddress, int port)
+        public HttpServer(NetData.ConfigFile serverConfig)
         {
-            this.ipAddress = IPAddress.Parse(ipAddress);
-            this.port = port;
-
-            this.serverListenter = new TcpListener(this.ipAddress, port);
+            this.serverListenter = new TcpListener(serverConfig.IPAddress, serverConfig.Port);
+            this.serverConfig = serverConfig;
         }
 
         public void Start()
         {
             while (true)
             {
-                Console.WriteLine($"Server started on port {port}.");
+                string Status = serverConfig.IPAddress == IPAddress.Any ? "Port " : $"{serverConfig.IPAddress}:";
+                Debug.WriteLine($"Server started on {serverConfig.IPAddress}:{serverConfig.Port}.");
+                Console.WriteLine($"Server started on {Status}{serverConfig.Port}.");
                 serverListenter.Start();
 
                 //---incoming client connected---
                 TcpClient client = serverListenter.AcceptTcpClient();
+                var localEndPoint = client.Client.RemoteEndPoint as IPEndPoint;
+                var localAddress = localEndPoint?.Address;
+                var localPort = localEndPoint?.Port;
+                Console.WriteLine($"Connection Established\n{localAddress??IPAddress.None}:{localPort??0}");
 
-                //---get the incoming data through a network stream---
-                NetworkStream nwStream = client.GetStream();
-                byte[] buffer = new byte[client.ReceiveBufferSize];
+                var ConnectionResult = ConnectionAllowed(localEndPoint);
+                if (ConnectionResult == NetData.ConnectionResult.Success)
+                {
+                    ParseRequest(client);
+                }
+                else
+                {
+                    Console.WriteLine($"Server Refused Connection from {localAddress}. {ConnectionResult}");
+                }
 
-                //---read incoming stream---
-                int bytesRead = nwStream.Read(buffer, 0, client.ReceiveBufferSize);
-
-                //---convert the data received into a string---
-                string dataReceived = Encoding.ASCII.GetString(buffer, 0, bytesRead);
-                Console.WriteLine("Received : " + dataReceived);
-
-                string DataToSend = TestCommand(dataReceived);
-
-                byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(DataToSend);
-
-                //---write back the text to the client---
-                Console.WriteLine("Sending back : " + DataToSend);
-                nwStream.Write(bytesToSend, 0, bytesToSend.Length);
                 client.Close();
                 serverListenter.Stop();
             }
+        }
+
+        private NetData.ConnectionResult ConnectionAllowed(IPEndPoint? localEndPoint)
+        {
+            var localAddress = localEndPoint?.Address;
+            if (localAddress is null) { return NetData.ConnectionResult.Unknown; }
+            if (serverConfig.IPWhitelist.Any() && !serverConfig.IPWhitelist.Contains(localAddress)) { return NetData.ConnectionResult.NonWhitelisted; }
+            if (serverConfig.IPBlacklist.Any() && serverConfig.IPBlacklist.Contains(localAddress)) { return NetData.ConnectionResult.Blacklisted; }
+            return NetData.ConnectionResult.Success;
         }
 
         public static string TestCommand(string Command)
@@ -73,5 +96,80 @@ namespace MMRTrackerWebServer
             }
             return "Unknown Command!";
         }
+
+        public void ParseRequest(TcpClient client)
+        {
+            try
+            {
+                //---get the incoming data through a network stream---
+                NetworkStream nwStream = client.GetStream();
+                nwStream.ReadTimeout = 1000;
+                byte[] buffer = new byte[client.ReceiveBufferSize];
+
+                //---read incoming stream---
+                int bytesRead = nwStream.Read(buffer, 0, client.ReceiveBufferSize);
+                Console.WriteLine($"BytesRead {bytesRead}");
+
+                //---convert the data received into a string---
+                string dataReceived = Encoding.ASCII.GetString(buffer, 0, bytesRead);
+                Console.WriteLine("Received data, parsing...");
+
+                string DataToSend = ParseNetPacket(dataReceived);
+
+                if (DataToSend is not null)
+                {
+                    byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(DataToSend);
+                    //---write back the text to the client---
+                    Console.WriteLine($"Sending return data.");
+                    nwStream.Write(bytesToSend, 0, bytesToSend.Length);
+                }
+                else
+                {
+                    Console.WriteLine($"Recieved Bad Packet");
+                }
+            }
+            catch (Exception e) { Console.WriteLine(e); }
+        }
+
+        public string? ParseNetPacket(string dataReceived)
+        {
+            NetData.NetPacket MMRTPacket;
+            try { MMRTPacket = JsonConvert.DeserializeObject<NetData.NetPacket>(dataReceived); }
+            catch { return ReturnErrorPacket($"Could not Parse packet"); }
+            if (MMRTPacket is null) { return ReturnErrorPacket($"Could not Parse packet"); }
+
+            if (!AuthenticateUser(MMRTPacket)) { return ReturnErrorPacket("Authentication Failed"); } 
+            ReadAndStoreitemData(MMRTPacket);
+            return GetReturnData(MMRTPacket);
+        }
+        private string? ReturnErrorPacket(string Error)
+        {
+            Console.WriteLine(Error);
+            var ReturnPacket = new NetData.NetPacket(-1);
+            ReturnPacket.TestString = Error;
+            return JsonConvert.SerializeObject(ReturnPacket);
+        }
+
+        private string? GetReturnData(NetData.NetPacket mMRTPacket)
+        {
+            //Get the items that other players have found and return it to the player
+            var ReturnPacket = new NetData.NetPacket(mMRTPacket.PlayerID);
+            ReturnPacket.TestString = mMRTPacket.TestString;
+            return JsonConvert.SerializeObject(ReturnPacket);
+        }
+
+        private bool AuthenticateUser(NetData.NetPacket mMRTPacket)
+        {
+            if (!serverConfig.PlayersRequirePassword) { return true; }
+            if (!serverConfig.playerPasswords.ContainsKey(mMRTPacket.PlayerID)) { Console.WriteLine($"Player {mMRTPacket.PlayerID} was not entered in user list"); return false; }
+            if (serverConfig.playerPasswords[mMRTPacket.PlayerID] != mMRTPacket.Password) { Console.WriteLine($"Incorrect Password for Player {mMRTPacket.PlayerID}"); return false; }
+            return true;
+        }
+
+        private void ReadAndStoreitemData(NetData.NetPacket mMRTPacket)
+        {
+            //Store The users sent items to the server database
+        }
     }
+
 }
