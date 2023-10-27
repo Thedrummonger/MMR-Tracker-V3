@@ -613,8 +613,8 @@ namespace Windows_Form_Frontend
         {
             OptionstoolStripMenuItem.Visible = (InstanceContainer.Instance != null);
             toolsToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
-            undoToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
-            redoToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
+            undoToolStripMenuItem.Visible = (InstanceContainer.Instance != null && InstanceContainer.Instance.StaticOptions.OptionFile.MaxUndo > 0);
+            redoToolStripMenuItem.Visible = (InstanceContainer.Instance != null && InstanceContainer.Instance.StaticOptions.OptionFile.MaxUndo > 0);
             refreshToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
             SavetoolStripMenuItem.Visible = (InstanceContainer.Instance != null);
             SaveAsToolStripMenuItem.Visible = (InstanceContainer.Instance != null) && !string.IsNullOrWhiteSpace(InstanceContainer.CurrentSavePath);
@@ -1004,8 +1004,18 @@ namespace Windows_Form_Frontend
 
         private void UpdateUndoList(string State)
         {
+            int MaxUndos = InstanceContainer.Instance.StaticOptions.OptionFile.MaxUndo;
+            Debug.WriteLine(MaxUndos);
+            if (MaxUndos == 0)
+            {
+                InstanceContainer.UndoStringList.Clear();
+                InstanceContainer.RedoStringList.Clear();
+                return;
+            }
             InstanceContainer.RedoStringList.Clear();
             InstanceContainer.UndoStringList.Add(State);
+            int AmountOverMax = InstanceContainer.UndoStringList.Count - MaxUndos;
+            if (AmountOverMax > 0) { InstanceContainer.UndoStringList.RemoveRange(0, AmountOverMax); }
             redoToolStripMenuItem.Enabled = InstanceContainer.RedoStringList.Any();
             undoToolStripMenuItem.Enabled = InstanceContainer.UndoStringList.Any();
         }

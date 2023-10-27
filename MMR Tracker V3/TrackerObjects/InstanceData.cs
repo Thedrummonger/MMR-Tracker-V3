@@ -94,6 +94,7 @@ namespace MMR_Tracker_V3
             public bool AutoCheckCoupleEntrances { get { return _AutoCheckCoupleEntrances; } set { _AutoCheckCoupleEntrances = value; } }
             private bool _AutoCheckCoupleEntrances = true;
             public bool EntranceRandoFeatures { get; set; } = true;
+            public int MaxUndo { get; set; } = 10;
             public WinformData WinformData { get; set; } = new WinformData();
         }
 

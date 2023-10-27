@@ -53,6 +53,7 @@ namespace Windows_Form_Frontend
             this.label15 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -66,7 +67,10 @@ namespace Windows_Form_Frontend
             this.label18 = new System.Windows.Forms.Label();
             this.chkRedundantPaths = new System.Windows.Forms.CheckBox();
             this.label20 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.nudMaxUndo = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.nudFontSize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMaxUndo)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -139,7 +143,7 @@ namespace Windows_Form_Frontend
             // chkTooltips
             // 
             this.chkTooltips.AutoSize = true;
-            this.chkTooltips.Location = new System.Drawing.Point(257, 133);
+            this.chkTooltips.Location = new System.Drawing.Point(257, 153);
             this.chkTooltips.Name = "chkTooltips";
             this.chkTooltips.Size = new System.Drawing.Size(15, 14);
             this.chkTooltips.TabIndex = 8;
@@ -152,7 +156,7 @@ namespace Windows_Form_Frontend
             this.label5.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label5.Location = new System.Drawing.Point(15, 131);
+            this.label5.Location = new System.Drawing.Point(15, 151);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(17, 18);
             this.label5.TabIndex = 7;
@@ -164,7 +168,7 @@ namespace Windows_Form_Frontend
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(35, 131);
+            this.label6.Location = new System.Drawing.Point(35, 151);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(98, 16);
             this.label6.TabIndex = 6;
@@ -176,7 +180,7 @@ namespace Windows_Form_Frontend
             this.label7.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label7.Location = new System.Drawing.Point(15, 187);
+            this.label7.Location = new System.Drawing.Point(15, 207);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(17, 18);
             this.label7.TabIndex = 10;
@@ -187,7 +191,7 @@ namespace Windows_Form_Frontend
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(38, 179);
+            this.label8.Location = new System.Drawing.Point(38, 199);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(62, 16);
             this.label8.TabIndex = 9;
@@ -197,7 +201,7 @@ namespace Windows_Form_Frontend
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(38, 199);
+            this.label10.Location = new System.Drawing.Point(38, 219);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(66, 16);
             this.label10.TabIndex = 12;
@@ -206,7 +210,7 @@ namespace Windows_Form_Frontend
             // nudFontSize
             // 
             this.nudFontSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nudFontSize.Location = new System.Drawing.Point(221, 178);
+            this.nudFontSize.Location = new System.Drawing.Point(221, 198);
             this.nudFontSize.Minimum = new decimal(new int[] {
             1,
             0,
@@ -226,7 +230,7 @@ namespace Windows_Form_Frontend
             // 
             this.cmbFontStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbFontStyle.FormattingEnabled = true;
-            this.cmbFontStyle.Location = new System.Drawing.Point(115, 198);
+            this.cmbFontStyle.Location = new System.Drawing.Point(115, 218);
             this.cmbFontStyle.Name = "cmbFontStyle";
             this.cmbFontStyle.Size = new System.Drawing.Size(157, 21);
             this.cmbFontStyle.TabIndex = 15;
@@ -235,7 +239,7 @@ namespace Windows_Form_Frontend
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(15, 225);
+            this.button1.Location = new System.Drawing.Point(15, 245);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(159, 22);
             this.button1.TabIndex = 16;
@@ -246,7 +250,7 @@ namespace Windows_Form_Frontend
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(180, 225);
+            this.button2.Location = new System.Drawing.Point(180, 245);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(92, 22);
             this.button2.TabIndex = 17;
@@ -260,7 +264,7 @@ namespace Windows_Form_Frontend
             this.label11.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label11.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label11.Location = new System.Drawing.Point(15, 151);
+            this.label11.Location = new System.Drawing.Point(15, 171);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(17, 18);
             this.label11.TabIndex = 22;
@@ -274,7 +278,7 @@ namespace Windows_Form_Frontend
             this.label13.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label13.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label13.Location = new System.Drawing.Point(15, 51);
+            this.label13.Location = new System.Drawing.Point(15, 71);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(17, 18);
             this.label13.TabIndex = 25;
@@ -287,7 +291,7 @@ namespace Windows_Form_Frontend
             this.label15.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label15.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label15.Location = new System.Drawing.Point(15, 71);
+            this.label15.Location = new System.Drawing.Point(15, 91);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(17, 18);
             this.label15.TabIndex = 28;
@@ -301,7 +305,7 @@ namespace Windows_Form_Frontend
             this.label17.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label17.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label17.Location = new System.Drawing.Point(15, 91);
+            this.label17.Location = new System.Drawing.Point(15, 111);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(17, 18);
             this.label17.TabIndex = 31;
@@ -315,17 +319,30 @@ namespace Windows_Form_Frontend
             this.label19.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label19.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label19.Location = new System.Drawing.Point(15, 111);
+            this.label19.Location = new System.Drawing.Point(15, 131);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(17, 18);
             this.label19.TabIndex = 34;
             this.label19.Text = "?";
             this.toolTip1.SetToolTip(this.label19, resources.GetString("label19.ToolTip"));
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label21.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label21.Location = new System.Drawing.Point(15, 51);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(17, 18);
+            this.label21.TabIndex = 37;
+            this.label21.Text = "?";
+            this.toolTip1.SetToolTip(this.label21, "The maximum anount of actions that will be undoable with the undo button.");
+            // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(115, 178);
+            this.button3.Location = new System.Drawing.Point(115, 198);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(100, 20);
             this.button3.TabIndex = 18;
@@ -335,7 +352,7 @@ namespace Windows_Form_Frontend
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(115, 254);
+            this.textBox1.Location = new System.Drawing.Point(115, 274);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(157, 24);
             this.textBox1.TabIndex = 19;
@@ -344,7 +361,7 @@ namespace Windows_Form_Frontend
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(15, 259);
+            this.label9.Location = new System.Drawing.Point(15, 279);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(92, 16);
             this.label9.TabIndex = 20;
@@ -353,7 +370,7 @@ namespace Windows_Form_Frontend
             // chkCompressSave
             // 
             this.chkCompressSave.AutoSize = true;
-            this.chkCompressSave.Location = new System.Drawing.Point(257, 155);
+            this.chkCompressSave.Location = new System.Drawing.Point(257, 175);
             this.chkCompressSave.Name = "chkCompressSave";
             this.chkCompressSave.Size = new System.Drawing.Size(15, 14);
             this.chkCompressSave.TabIndex = 23;
@@ -364,7 +381,7 @@ namespace Windows_Form_Frontend
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(35, 153);
+            this.label12.Location = new System.Drawing.Point(35, 173);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(136, 16);
             this.label12.TabIndex = 21;
@@ -373,7 +390,7 @@ namespace Windows_Form_Frontend
             // chkEntranceFeatures
             // 
             this.chkEntranceFeatures.AutoSize = true;
-            this.chkEntranceFeatures.Location = new System.Drawing.Point(257, 54);
+            this.chkEntranceFeatures.Location = new System.Drawing.Point(257, 74);
             this.chkEntranceFeatures.Name = "chkEntranceFeatures";
             this.chkEntranceFeatures.Size = new System.Drawing.Size(15, 14);
             this.chkEntranceFeatures.TabIndex = 26;
@@ -384,7 +401,7 @@ namespace Windows_Form_Frontend
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(35, 51);
+            this.label14.Location = new System.Drawing.Point(35, 71);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(191, 16);
             this.label14.TabIndex = 24;
@@ -393,7 +410,7 @@ namespace Windows_Form_Frontend
             // chkCheckCoupled
             // 
             this.chkCheckCoupled.AutoSize = true;
-            this.chkCheckCoupled.Location = new System.Drawing.Point(257, 73);
+            this.chkCheckCoupled.Location = new System.Drawing.Point(257, 93);
             this.chkCheckCoupled.Name = "chkCheckCoupled";
             this.chkCheckCoupled.Size = new System.Drawing.Size(15, 14);
             this.chkCheckCoupled.TabIndex = 29;
@@ -404,7 +421,7 @@ namespace Windows_Form_Frontend
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label16.Location = new System.Drawing.Point(35, 71);
+            this.label16.Location = new System.Drawing.Point(35, 91);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(190, 16);
             this.label16.TabIndex = 27;
@@ -413,7 +430,7 @@ namespace Windows_Form_Frontend
             // chkUnrandExits
             // 
             this.chkUnrandExits.AutoSize = true;
-            this.chkUnrandExits.Location = new System.Drawing.Point(257, 93);
+            this.chkUnrandExits.Location = new System.Drawing.Point(257, 113);
             this.chkUnrandExits.Name = "chkUnrandExits";
             this.chkUnrandExits.Size = new System.Drawing.Size(15, 14);
             this.chkUnrandExits.TabIndex = 32;
@@ -424,7 +441,7 @@ namespace Windows_Form_Frontend
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label18.Location = new System.Drawing.Point(35, 91);
+            this.label18.Location = new System.Drawing.Point(35, 111);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(220, 16);
             this.label18.TabIndex = 30;
@@ -433,7 +450,7 @@ namespace Windows_Form_Frontend
             // chkRedundantPaths
             // 
             this.chkRedundantPaths.AutoSize = true;
-            this.chkRedundantPaths.Location = new System.Drawing.Point(257, 113);
+            this.chkRedundantPaths.Location = new System.Drawing.Point(257, 133);
             this.chkRedundantPaths.Name = "chkRedundantPaths";
             this.chkRedundantPaths.Size = new System.Drawing.Size(15, 14);
             this.chkRedundantPaths.TabIndex = 35;
@@ -444,17 +461,49 @@ namespace Windows_Form_Frontend
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label20.Location = new System.Drawing.Point(35, 111);
+            this.label20.Location = new System.Drawing.Point(35, 131);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(209, 16);
             this.label20.TabIndex = 33;
             this.label20.Text = "Show Redundant Paths Pathfinder";
             // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label22.Location = new System.Drawing.Point(35, 51);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(115, 16);
+            this.label22.TabIndex = 36;
+            this.label22.Text = "Max Undo Actions";
+            // 
+            // nudMaxUndo
+            // 
+            this.nudMaxUndo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.nudMaxUndo.Location = new System.Drawing.Point(221, 51);
+            this.nudMaxUndo.Maximum = new decimal(new int[] {
+            99,
+            0,
+            0,
+            0});
+            this.nudMaxUndo.Name = "nudMaxUndo";
+            this.nudMaxUndo.Size = new System.Drawing.Size(51, 20);
+            this.nudMaxUndo.TabIndex = 38;
+            this.nudMaxUndo.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.nudMaxUndo.ValueChanged += new System.EventHandler(this.chkUpdates_CheckStateChanged);
+            // 
             // StaticOptionSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(286, 290);
+            this.ClientSize = new System.Drawing.Size(286, 308);
+            this.Controls.Add(this.nudMaxUndo);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.label22);
             this.Controls.Add(this.chkRedundantPaths);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label20);
@@ -495,6 +544,7 @@ namespace Windows_Form_Frontend
             this.Text = "Options";
             this.Load += new System.EventHandler(this.StaticOptionSelect_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudFontSize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMaxUndo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -537,5 +587,8 @@ namespace Windows_Form_Frontend
         private System.Windows.Forms.CheckBox chkRedundantPaths;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.NumericUpDown nudMaxUndo;
     }
 }

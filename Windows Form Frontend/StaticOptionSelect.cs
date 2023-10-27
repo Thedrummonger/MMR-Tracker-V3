@@ -37,6 +37,7 @@ namespace Windows_Form_Frontend
             chkRedundantPaths.Checked = TempOptionFile.ShowRedundantPathfinder;
             chkUnrandExits.Checked = TempOptionFile.ShowMacroExitsPathfinder;
             chkCheckCoupled.Checked = TempOptionFile.AutoCheckCoupleEntrances;
+            nudMaxUndo.Value = TempOptionFile.MaxUndo;
             int counter = 0;
             var CurrentFont = WinFormUtils.GetFontFromString(TempOptionFile.WinformData.FormFont);
             foreach (FontFamily font in FontFamily.Families)
@@ -62,6 +63,7 @@ namespace Windows_Form_Frontend
             TempOptionFile.ShowRedundantPathfinder = chkRedundantPaths.Checked;
             TempOptionFile.ShowMacroExitsPathfinder = chkUnrandExits.Checked;
             TempOptionFile.AutoCheckCoupleEntrances = chkCheckCoupled.Checked;
+            TempOptionFile.MaxUndo = (int)nudMaxUndo.Value;
             Debug.WriteLine(JsonConvert.SerializeObject(TempOptionFile, Formatting.Indented));
         }
 
