@@ -148,7 +148,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 if (File.Exists(Save))
                 {
-                    switch (SaveCompressor.TestFileType(Save))
+                    switch (SaveCompressor.TestFileType(Save, Instance))
                     {
                         case SaveCompressor.SaveType.Standard:
                             Instance = InstanceData.TrackerInstance.FromJson(File.ReadAllText(Save));

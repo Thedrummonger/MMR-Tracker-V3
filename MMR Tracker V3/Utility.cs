@@ -16,6 +16,7 @@ using System.Globalization;
 using System.Text.RegularExpressions;
 using MMR_Tracker_V3.TrackerObjectExtentions;
 using System.Net;
+using static MMR_Tracker_V3.InstanceData;
 
 namespace MMR_Tracker_V3
 {
@@ -349,44 +350,75 @@ namespace MMR_Tracker_V3
             return Convert.ToBase64String(byteData);
         }
 
-        public static SaveType TestFileType(string FilePath)
+        public static SaveType TestFileType(string FilePath, InstanceData.TrackerInstance instance)
+        {
+            var Options = instance?.StaticOptions?.OptionFile;
+            if (Options is null && File.Exists(References.Globalpaths.OptionFile))
+            {
+                Options = JsonConvert.DeserializeObject<OptionFile>(File.ReadAllText(References.Globalpaths.OptionFile));
+            }
+            string Content = File.ReadAllText(FilePath);
+            var ByteContent = File.ReadAllBytes(FilePath);
+            if (Options?.CompressSave??false)
+            {
+                if (TestCompressedByteSave(ByteContent)) { return SaveType.CompressedByte; };
+                if (TestStandardSave(Content)) { return SaveType.Standard; };
+            }
+            else
+            {
+                if (TestStandardSave(Content)) { return SaveType.Standard; };
+                if (TestCompressedByteSave(ByteContent)) { return SaveType.CompressedByte; };
+            }
+            if (TestCompressedSave(Content)) { return SaveType.Compressed; }; //This type is never used but check for it just incase
+            return SaveType.error;
+        }
+
+        public static bool TestStandardSave(string FileContent)
         {
             try
             {
                 Debug.WriteLine("Trying to load Standard Save");
-                var Instance = InstanceData.TrackerInstance.FromJson(File.ReadAllText(FilePath));
+                var Instance = InstanceData.TrackerInstance.FromJson(FileContent);
                 Debug.WriteLine("Success!");
-                return SaveType.Standard;
+                return true;
             }
             catch (Exception e)
             {
                 Debug.WriteLine($"Failure! {e}");
             }
+            return false;
+        }
+        public static bool TestCompressedSave(string FileContent)
+        {
             try
             {
                 Debug.WriteLine("Trying to load Compressed Save");
-                var DecompSave = Decompress(File.ReadAllText(FilePath));
+                var DecompSave = Decompress(FileContent);
                 var Instance = InstanceData.TrackerInstance.FromJson(DecompSave);
                 Debug.WriteLine("Success!");
-                return SaveType.Compressed;
+                return true;
             }
             catch (Exception e)
             {
                 Debug.WriteLine($"Failure! {e}");
             }
+            return false;
+        }
+        public static bool TestCompressedByteSave(byte[] FileContent)
+        {
             try
             {
                 Debug.WriteLine("Trying to load Compressed Byte Save");
-                var DecompSave = Decompress(File.ReadAllBytes(FilePath));
+                var DecompSave = Decompress(FileContent);
                 var Instance = InstanceData.TrackerInstance.FromJson(DecompSave);
                 Debug.WriteLine("Success!");
-                return SaveType.CompressedByte;
+                return true;
             }
             catch (Exception e)
             {
                 Debug.WriteLine($"Failure! {e}");
             }
-            return SaveType.error;
+            return false;
         }
     }
 
