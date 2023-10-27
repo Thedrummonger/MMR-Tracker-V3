@@ -46,6 +46,14 @@ namespace Windows_Form_Frontend
             };
             TimeCheckBoxes = new() { ND1, NN1, ND2, NN2, ND3, NN3, SD1, SN1, SD2, SN2, SD3, SN3 };
             LogicCalculation = new LogicCalculation(new InstanceContainer { Instance = instance });
+            TrackerDataHandeling.CheckedObjectsUpdate += TrackerDataHandeling_CheckedObjectsUpdate;
+        }
+
+        private void TrackerDataHandeling_CheckedObjectsUpdate(List<object> arg1, MMR_Tracker_V3.InstanceData.TrackerInstance arg2)
+        {
+            if (state != FormState.showLogic) { return; }
+            PrintLogicToLists();
+            UpdateUI();
         }
 
         public class ListBoxHeightData

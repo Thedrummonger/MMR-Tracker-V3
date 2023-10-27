@@ -16,6 +16,7 @@ namespace MMR_Tracker_V3
     {
 
         public static event Action<List<object>, InstanceData.TrackerInstance> CheckedObjectsUpdate;
+        public static void TriggerCheckedObjectsUpdate(List<object> objs, InstanceData.TrackerInstance instance) { CheckedObjectsUpdate(objs, instance); }
         public class DataSets
         {
             public List<LocationData.LocationObject> UncheckedLocations { get; set; } = new List<LocationData.LocationObject>();
