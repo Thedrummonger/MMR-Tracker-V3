@@ -56,7 +56,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public Dictionary<string, string> LcationData = new Dictionary<string, string>();
             public Dictionary<int,Dictionary<string, int>> ItemData = null;
             public ChatMessage ChatMessage = null;
-            public HandshakeREsponse HandshakeResponse = null;
+            public HandshakeResponse HandshakeResponse = null;
 
         }
         public class ChatMessage
@@ -84,13 +84,14 @@ namespace MMR_Tracker_V3.TrackerObjects
             public IPAddress GetIP() { return EndPoint?.Address; }
             public int? GetPort() { return EndPoint?.Port; }
         }
-        public class HandshakeREsponse
+        public class HandshakeResponse
         {
             public Guid ClientID;
             public int PlayerID;
             public NetData.OnlineMode ClientMode;
             public bool ConnectionSuccess;
             public string ConnectionStatus;
+            public int[] ConnectedPlayers;
         }
         public class ConfigFile
         {

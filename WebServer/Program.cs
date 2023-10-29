@@ -78,16 +78,7 @@ namespace WebServer
             while (true)
             {
                 string Stuff = Console.ReadLine().ToLower();
-                if (Stuff == "send")
-                {
-                    foreach (var i in Clients.Values)
-                    {
-                        string DataToSend = $"PING!";
-                        byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(DataToSend);
-                        i.NetClient.GetStream().Write(bytesToSend, 0, bytesToSend.Length);
-                    }
-                }
-                else if (Stuff == "clients")
+                if (Stuff == "clients")
                 {
                     Console.WriteLine($"Connected {cfg.ServerGameMode} Clients:\n" + string.Join("\n", Clients.Select(x => $"{x.Key}|{x.Value.EndPoint?.Address}")));
                 }

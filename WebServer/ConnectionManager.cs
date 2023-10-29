@@ -68,13 +68,14 @@ namespace WebServer
 
             var confirmationPacket = new NetPacket(PlayerID, PacketType.None);
 
-            confirmationPacket.HandshakeResponse = new HandshakeREsponse 
+            confirmationPacket.HandshakeResponse = new HandshakeResponse 
             { 
                 PlayerID = PlayerID, 
                 ClientID = ClientID, 
                 ClientMode = ClientMode, 
                 ConnectionStatus = ConnectionStatus, 
-                ConnectionSuccess = !NoClient
+                ConnectionSuccess = !NoClient,
+                ConnectedPlayers = NoClient ? Array.Empty<int>() : Clients.Where(x => x.Key != ClientID).Select(x => x.Value.PlayerID).ToArray(),
             };
 
             string DataToSend = confirmationPacket.ToFormattedJson();
@@ -87,16 +88,19 @@ namespace WebServer
         {
             _ServerClient.EndPoint = _ServerClient.NetClient.Client.RemoteEndPoint as IPEndPoint;
             Console.WriteLine($"Player {_ServerClient.PlayerID} Client thread started");
-            while (true)
+            while (_ServerClient.NetClient.GetStream().CanRead && _ServerClient.NetClient.Connected)
             {
                 string Message = ListenForMessage(_ServerClient);
-                if (Message is null) { break; }
+                if (string.IsNullOrWhiteSpace(Message)) { break; } //Message is null if the read failes 
                 NetPacket? packet = ParsePacket(Message, _ServerClient);
                 if (packet is null) { continue; }
 
-                Console.WriteLine($"Got Packet from player {_ServerClient.PlayerID} on {_ServerClient.GetIP()}:{_ServerClient.GetPort()}" +
-                    $"\nItemData:{packet.ItemData is not null}" +
-                    $"\nChatMessage:{packet.ChatMessage is not null}");
+                Console.WriteLine($"Got {packet.packetType} Packet from player {_ServerClient.PlayerID} on {_ServerClient.GetIP()}:{_ServerClient.GetPort()}");
+
+                if (packet.packetType == PacketType.ChatMessage)
+                {
+                    Console.WriteLine($"P{packet.PlayerID}: {packet.ChatMessage.Message}");
+                }
 
                 UpdateClients(packet);
 
@@ -153,7 +157,6 @@ namespace WebServer
                 {
                     case PacketType.ChatMessage: 
                         PlayerChat.Add(Packet.ChatMessage.guid, Packet.ChatMessage);
-                        Console.WriteLine($"P{Packet.PlayerID}: {Packet.ChatMessage}");
                         break;
                     case PacketType.OnlineSynedLocations:
                         _ServerClient.OnlineLocationData = Packet.LcationData;
@@ -167,7 +170,7 @@ namespace WebServer
             }
             catch (Exception e)
             {
-                Console.WriteLine($"Failed to parse Packet from {_ServerClient.PlayerID} {e.Message}");
+                Console.WriteLine($"Failed to parse Packet from {_ServerClient.PlayerID} {e.Message}\n{dataReceived}");
                 return null;
             }
             return Packet;
@@ -235,10 +238,20 @@ namespace WebServer
         private static bool AuthenticateUser(NetData.ServerClient Client, ConfigFile serverConfig)
         {
             if (Client.PlayerID < 0 || Clients.Any(x => x.Value.PlayerID == Client.PlayerID)) { Console.WriteLine($"{Client.PlayerID} was Invalid"); return false; }
+            var ConnectionResult = ConnectionAllowed(Client.EndPoint, serverConfig);
+            if (ConnectionResult != ConnectionResult.Success) { Console.WriteLine($"{Client.GetIP()} was refused for reason: {ConnectionResult} IP"); return false; }
             if (!serverConfig.PlayersRequirePassword) { return true; }
             if (!serverConfig.playerPasswords.ContainsKey(Client.PlayerID)) { Console.WriteLine($"Player {Client.PlayerID} was not entered in user list"); return false; }
             if (serverConfig.playerPasswords[Client.PlayerID] != Client.Handshake.Password) { Console.WriteLine($"Incorrect Password for Player {Client.PlayerID}"); return false; }
             return true;
+        }
+        private static NetData.ConnectionResult ConnectionAllowed(IPEndPoint? localEndPoint, ConfigFile serverConfig)
+        {
+            var localAddress = localEndPoint?.Address;
+            if (localAddress is null) { return NetData.ConnectionResult.Unknown; }
+            if (serverConfig.IPWhitelist.Any() && !serverConfig.IPWhitelist.Contains(localAddress)) { return NetData.ConnectionResult.NonWhitelisted; }
+            if (serverConfig.IPBlacklist.Any() && serverConfig.IPBlacklist.Contains(localAddress)) { return NetData.ConnectionResult.Blacklisted; }
+            return NetData.ConnectionResult.Success;
         }
     }
 }

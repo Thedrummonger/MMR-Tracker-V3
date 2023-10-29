@@ -22,6 +22,7 @@ namespace TestingForm
     public partial class TestingForm : Form
     {
         public static TestingForm CurrentForm;
+        public static NetClient CurrentNetClientForm;
         public TestingForm()
         {
             CurrentForm = this;
@@ -73,10 +74,7 @@ namespace TestingForm
                 new DevAction("Create TPR Data", GameFileCreation.TPRCreateData, UpdateDebugActions),
                 new DevAction("Create OOTMM Data", GameFileCreation.OOTMMCreateData, UpdateDebugActions),
                 new DevAction("Create PMR Data", GameFileCreation.PMRCreateData, UpdateDebugActions),
-                new DevAction("Connect To Async Web Server P1", () => ConnectToAsyncWebServer(1), UpdateDebugActions, () => { return !(Asyncclient?.Connected??false); }),
-                new DevAction("Connect To Async Web Server P2", () => ConnectToAsyncWebServer(2), UpdateDebugActions, () => { return !(Asyncclient?.Connected??false); }),
-                new DevAction("Connect To Async Web Server P3", () => ConnectToAsyncWebServer(3), UpdateDebugActions, () => { return !(Asyncclient?.Connected??false); }),
-                new DevAction("Send To Async Web Server", SendDataToServer, null, () => { return Asyncclient?.Connected??false; } ),
+                new DevAction("Connect To Async Web Server P1", OpenWebClient, UpdateDebugActions, () => { return CurrentNetClientForm is null && WinFormTesting.WinformInstanceLoaded();  }),
             };
 
             foreach (var Function in DevFunctions)
@@ -86,79 +84,10 @@ namespace TestingForm
             }
         }
 
-        TcpClient Asyncclient = null;
-        int PlayerID = -1;
-        private async void ConnectToAsyncWebServer(int AsPlayer)
+        private void OpenWebClient()
         {
-            try
-            {
-                Asyncclient = new TcpClient("127.0.0.1", 25570);
-                NetData.NetPacket HandshakePacket = new NetData.NetPacket(AsPlayer, NetData.PacketType.None, $"Password{AsPlayer}");
-                byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(HandshakePacket.ToFormattedJson());
-                Asyncclient.GetStream().Write(bytesToSend, 0, bytesToSend.Length);
-                byte[] buffer = new byte[Asyncclient.ReceiveBufferSize];
-                int bytesRead = Asyncclient.GetStream().Read(buffer, 0, Asyncclient.ReceiveBufferSize);
-                string dataReceived = Encoding.ASCII.GetString(buffer, 0, bytesRead);
-                var ConfirmationHandshake = JsonConvert.DeserializeObject<NetData.NetPacket>(dataReceived);
-                if (!ConfirmationHandshake.HandshakeResponse.ConnectionSuccess)
-                {
-                    MessageBox.Show($"Failed to connect to server!\n{ConfirmationHandshake.HandshakeResponse.ConnectionStatus}");
-                    return;
-                }
-                MessageBox.Show(ConfirmationHandshake.HandshakeResponse.ConnectionStatus);
-                PlayerID = AsPlayer;
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show($"Failed to connect to server!\n{e.Message}");
-                Asyncclient = null;
-                return;
-            }
-            await OpenListenThread();
-
-        }
-
-        bool Recieving = true;
-
-        private async Task OpenListenThread()
-        {
-            string ExitReason = "Unknown";
-            while (Asyncclient?.Connected??false && Recieving)
-            {
-                try
-                {
-                    byte[] buffer = new byte[Asyncclient.ReceiveBufferSize];
-                    int bytesRead = await Asyncclient.GetStream().ReadAsync(buffer, 0, Asyncclient.ReceiveBufferSize);
-                    if (!Recieving) { break; }
-                    string dataReceived = Encoding.ASCII.GetString(buffer, 0, bytesRead);
-                    Debug.WriteLine($"Server Data: {dataReceived}");
-                    NetData.NetPacket packet = JsonConvert.DeserializeObject<NetData.NetPacket>(dataReceived);
-                    if (packet.packetType == NetData.PacketType.ChatMessage)
-                    {
-                        string Player = packet.ChatMessage.PlayerID < 0 ? "Server" : $"Player {packet.ChatMessage.PlayerID}";
-                        listBox1.Items.Add($"{Player}: {packet.ChatMessage.Message}");
-                    }
-                }
-                catch (Exception e)
-                {
-                    ExitReason = e.Message;
-                    break;
-                }
-            }
-            Console.WriteLine($"Server Disconnected\n{ExitReason}");
-            Asyncclient = null;
-            UpdateDebugActions();
-        }
-
-        private void SendDataToServer()
-        {
-            string Message = Interaction.InputBox("Send Chat");
-            NetData.NetPacket packet = new NetData.NetPacket(PlayerID, NetData.PacketType.ChatMessage);
-            packet.ChatMessage = new NetData.ChatMessage(PlayerID, Guid.NewGuid(), Message);
-            byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(packet.ToFormattedJson());
-            Asyncclient.GetStream().Write(bytesToSend, 0, bytesToSend.Length);
-
-            listBox1.Items.Add($"Player {PlayerID}: {Message}");
+            CurrentNetClientForm = new NetClient(this, MainInterface.InstanceContainer);
+            CurrentNetClientForm.Show();
         }
 
         private void LB_DoubleClick(object sender, EventArgs e)
