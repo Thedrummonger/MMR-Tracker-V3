@@ -15,6 +15,7 @@ using Newtonsoft.Json;
 using MathNet.Numerics;
 using System;
 using MMR_Tracker_V3;
+using FParsec;
 
 namespace TestingForm
 {
@@ -72,11 +73,10 @@ namespace TestingForm
                 new DevAction("Create TPR Data", GameFileCreation.TPRCreateData, UpdateDebugActions),
                 new DevAction("Create OOTMM Data", GameFileCreation.OOTMMCreateData, UpdateDebugActions),
                 new DevAction("Create PMR Data", GameFileCreation.PMRCreateData, UpdateDebugActions),
-                new DevAction("Open NetClient", OpenNetClient, UpdateDebugActions),
-                new DevAction("Test Web Server", SendServerREquest, UpdateDebugActions),
-                new DevAction("Connect To Async Web Server", ConnectToAsyncWebServer, UpdateDebugActions, () => { return !(Asyncclient?.Connected??false); }),
-                new DevAction("Send To Async Web Server", SendAndRecieveToAsyncWebServer, UpdateDebugActions, () => { return Asyncclient?.Connected??false; } ),
-                new DevAction("ToggleRecieving", () => Recieving = !Recieving, UpdateDebugActions, () => { return Asyncclient?.Connected??false; } ),
+                new DevAction("Connect To Async Web Server P1", () => ConnectToAsyncWebServer(1), UpdateDebugActions, () => { return !(Asyncclient?.Connected??false); }),
+                new DevAction("Connect To Async Web Server P2", () => ConnectToAsyncWebServer(2), UpdateDebugActions, () => { return !(Asyncclient?.Connected??false); }),
+                new DevAction("Connect To Async Web Server P3", () => ConnectToAsyncWebServer(3), UpdateDebugActions, () => { return !(Asyncclient?.Connected??false); }),
+                new DevAction("Send To Async Web Server", SendDataToServer, null, () => { return Asyncclient?.Connected??false; } ),
             };
 
             foreach (var Function in DevFunctions)
@@ -87,14 +87,26 @@ namespace TestingForm
         }
 
         TcpClient Asyncclient = null;
-        private async void ConnectToAsyncWebServer()
+        int PlayerID = -1;
+        private async void ConnectToAsyncWebServer(int AsPlayer)
         {
             try
             {
                 Asyncclient = new TcpClient("127.0.0.1", 25570);
-                NetData.NetPacket HandshakePacket = new NetData.NetPacket(1, "Password1");
+                NetData.NetPacket HandshakePacket = new NetData.NetPacket(AsPlayer, NetData.PacketType.None, $"Password{AsPlayer}");
                 byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(HandshakePacket.ToFormattedJson());
                 Asyncclient.GetStream().Write(bytesToSend, 0, bytesToSend.Length);
+                byte[] buffer = new byte[Asyncclient.ReceiveBufferSize];
+                int bytesRead = Asyncclient.GetStream().Read(buffer, 0, Asyncclient.ReceiveBufferSize);
+                string dataReceived = Encoding.ASCII.GetString(buffer, 0, bytesRead);
+                var ConfirmationHandshake = JsonConvert.DeserializeObject<NetData.NetPacket>(dataReceived);
+                if (!ConfirmationHandshake.HandshakeResponse.ConnectionSuccess)
+                {
+                    MessageBox.Show($"Failed to connect to server!\n{ConfirmationHandshake.HandshakeResponse.ConnectionStatus}");
+                    return;
+                }
+                MessageBox.Show(ConfirmationHandshake.HandshakeResponse.ConnectionStatus);
+                PlayerID = AsPlayer;
             }
             catch (Exception e)
             {
@@ -102,7 +114,6 @@ namespace TestingForm
                 Asyncclient = null;
                 return;
             }
-            Debug.WriteLine($"Connected to web server");
             await OpenListenThread();
 
         }
@@ -120,9 +131,13 @@ namespace TestingForm
                     int bytesRead = await Asyncclient.GetStream().ReadAsync(buffer, 0, Asyncclient.ReceiveBufferSize);
                     if (!Recieving) { break; }
                     string dataReceived = Encoding.ASCII.GetString(buffer, 0, bytesRead);
-                    Debug.WriteLine($"Server Says {dataReceived}");
-                    UpdateDebugActions();
-                    listBox1.Items.Add($"{dataReceived}");
+                    Debug.WriteLine($"Server Data: {dataReceived}");
+                    NetData.NetPacket packet = JsonConvert.DeserializeObject<NetData.NetPacket>(dataReceived);
+                    if (packet.packetType == NetData.PacketType.ChatMessage)
+                    {
+                        string Player = packet.ChatMessage.PlayerID < 0 ? "Server" : $"Player {packet.ChatMessage.PlayerID}";
+                        listBox1.Items.Add($"{Player}: {packet.ChatMessage.Message}");
+                    }
                 }
                 catch (Exception e)
                 {
@@ -135,68 +150,15 @@ namespace TestingForm
             UpdateDebugActions();
         }
 
-        private void SendAndRecieveToAsyncWebServer()
+        private void SendDataToServer()
         {
-            NetData.NetPacket packet = new NetData.NetPacket(1, _ItemData: NetClient.GetNetItemsToSend(MainInterface.InstanceContainer.Instance));
+            string Message = Interaction.InputBox("Send Chat");
+            NetData.NetPacket packet = new NetData.NetPacket(PlayerID, NetData.PacketType.ChatMessage);
+            packet.ChatMessage = new NetData.ChatMessage(PlayerID, Guid.NewGuid(), Message);
             byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(packet.ToFormattedJson());
             Asyncclient.GetStream().Write(bytesToSend, 0, bytesToSend.Length);
-        }
 
-
-
-        private void SendServerREquest()
-        {
-            //---data to send to the server---
-            string TestText = Interaction.InputBox("Send Command to Server");
-
-            string textToSend = JsonConvert.SerializeObject(new NetData.NetPacket(2, "Password2") { TestString = TestText });
-            TcpClient client = null;
-            try
-            {
-                //---create a TCPClient object at the IP and port no.---
-                client = new TcpClient("SERVER IP", 25570);
-                NetworkStream nwStream = client.GetStream();
-                nwStream.ReadTimeout = 1000;
-                byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(textToSend);
-
-                //---send the text---
-                Debug.WriteLine("Sending : " + textToSend);
-                nwStream.Write(bytesToSend, 0, bytesToSend.Length);
-
-                //---read back the text---
-                byte[] bytesToRead = new byte[client.ReceiveBufferSize];
-                int bytesRead = nwStream.Read(bytesToRead, 0, client.ReceiveBufferSize);
-
-                string ResponseText = Encoding.ASCII.GetString(bytesToRead, 0, bytesRead);
-
-                NetData.NetPacket ReturnPacket = new NetData.NetPacket(0);
-                try { ReturnPacket = JsonConvert.DeserializeObject<NetData.NetPacket>(ResponseText); }
-                catch (Exception e) { ReturnPacket = new NetData.NetPacket(0); ReturnPacket.TestString = e.Message; }
-
-                Debug.WriteLine($"Received: Player {ReturnPacket.PlayerID} | {ReturnPacket.TestString}");
-                MessageBox.Show($"Player {ReturnPacket.PlayerID} | {ReturnPacket.TestString}");
-                client.Close();
-            }
-            catch (ArgumentNullException ane)
-            {
-                client?.Close();
-                MessageBox.Show($"ArgumentNullException : {ane.Message}");
-            }
-            catch (SocketException se)
-            {
-                client?.Close();
-                MessageBox.Show($"SocketException : {se.Message}");
-            }
-            catch (IOException Ie)
-            {
-                client?.Close();
-                MessageBox.Show($"IOException : {Ie.Message}");
-            }
-            catch (Exception e)
-            {
-                client?.Close();
-                MessageBox.Show($"Unexpected exception : {e.Message}");
-            }
+            listBox1.Items.Add($"Player {PlayerID}: {Message}");
         }
 
         private void LB_DoubleClick(object sender, EventArgs e)
@@ -205,12 +167,6 @@ namespace TestingForm
             {
                 DevAction.Run();
             }
-        }
-
-        private void OpenNetClient()
-        {
-            NetClient netClient = new NetClient();
-            netClient.Show();
         }
     }
 }

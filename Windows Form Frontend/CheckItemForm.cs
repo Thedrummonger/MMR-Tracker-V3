@@ -108,7 +108,7 @@ namespace Windows_Form_Frontend
 
         private void writeItemObjectsAtLocation(LocationData.LocationObject Location)
         {
-            FormatUIItems(_Container.OnlineMode == MiscData.OnlineMode.Multiworld, true, "Set Junk");
+            FormatUIItems(_Container.OnlineMode == NetData.OnlineMode.Multiworld, true, "Set Junk");
             this.Text = "Select Item at " + Location.GetDictEntry(_Container.Instance).GetName(_Container.Instance);
             List<ItemData.ItemObject> EnteredItems = _Container.Instance.GetValidItemsForLocation(Location, textBox1.Text);
             listBox1.DataSource = EnteredItems;

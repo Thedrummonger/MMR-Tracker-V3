@@ -49,7 +49,7 @@ namespace TestingForm
         {
             ModeUpdating = true;
             MMR_Tracker_V3.TrackerDataHandeling.CheckedObjectsUpdate += TrackerDataHandeling_CheckedObjectsUpdate;
-            Array EnumArray = Enum.GetValues(typeof(MiscData.OnlineMode));
+            Array EnumArray = Enum.GetValues(typeof(NetData.OnlineMode));
             comboBox1.DataSource = EnumArray;
 
             comboBox1.SelectedIndex = 0;
@@ -67,7 +67,7 @@ namespace TestingForm
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ModeUpdating) { return; }
-            MainInterface.InstanceContainer.OnlineMode = (MiscData.OnlineMode)comboBox1.SelectedIndex;
+            MainInterface.InstanceContainer.OnlineMode = (NetData.OnlineMode)comboBox1.SelectedIndex;
 
             Debug.WriteLine(MainInterface.InstanceContainer.OnlineMode);
         }

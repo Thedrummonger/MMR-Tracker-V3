@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using MMR_Tracker_V3.TrackerObjects;
 using FParsec;
 using MMR_Tracker_V3;
+using MathNet.Numerics.Statistics;
 
 namespace WebServer
 {
@@ -22,6 +23,33 @@ namespace WebServer
             NetData.ConfigFile.VerifyConfig();
             NetData.ConfigFile cfg = JsonConvert.DeserializeObject<NetData.ConfigFile>(File.ReadAllText(NetData.ConfigFile.ConfigFilePath), MMR_Tracker_V3.Utility._NewtonsoftJsonSerializerOptions)??new NetData.ConfigFile().SetDefaultExamples();
 
+            if (cfg.ServerGameMode == NetData.OnlineMode.None)
+            {
+                Console.WriteLine("Select Game Mode");
+                Console.WriteLine("1. Co-Op");
+                Console.WriteLine("2. Online");
+                Console.WriteLine("3. MultiWorld");
+                selectGM:
+                var gmSelect = Console.ReadKey();
+                switch (gmSelect.Key)
+                {
+                    case ConsoleKey.NumPad1:
+                    case ConsoleKey.D1:
+                        cfg.ServerGameMode = NetData.OnlineMode.Coop; break;
+                    case ConsoleKey.NumPad2:
+                    case ConsoleKey.D2:
+                        cfg.ServerGameMode = NetData.OnlineMode.Online; break;
+                    case ConsoleKey.NumPad3:
+                    case ConsoleKey.D3:
+                        cfg.ServerGameMode = NetData.OnlineMode.Multiworld; break;
+                    default:
+                        goto selectGM;
+                }
+                Console.Clear();
+            }
+
+            Console.WriteLine($"Game mode set to {cfg.ServerGameMode}");
+
             //If the program was started with arguments, scan then for an IP and/or Port and override the config if found
             NetData.ParseNetServerArgs(args, out IPAddress? ArgsIP, out int ArgsPort);
             if (ArgsIP is not null) { cfg.IPAddress = ArgsIP; }
@@ -32,149 +60,75 @@ namespace WebServer
             if (cfg.Port < 0) { cfg.Port = NetData.DefaultProgramPort; }
 
             //Create and start the server
-            HttpServer server = new HttpServer(cfg);
-            //server.Start();
-
             AsyncServerTest.test(cfg);
         }
     }
     internal class AsyncServerTest
     {
-        public class MMRTServerClient
-        {
-            public TcpClient NetClient;
-            public IPEndPoint EndPoint;
-            public int PlayerID;
-            public Dictionary<int, Dictionary<string, int>> ItemData = new Dictionary<int, Dictionary<string, int>>();
-        }
-        public static Dictionary<Guid, MMRTServerClient> Clients = new Dictionary<Guid, MMRTServerClient>();
-
-        public static NetData.ConfigFile serverConfig;
-
+        public static Dictionary<Guid, NetData.ServerClient> Clients = new Dictionary<Guid, NetData.ServerClient>();
+        public static Dictionary<Guid, NetData.ChatMessage> PlayerChat = new Dictionary<Guid, NetData.ChatMessage>();
         public static void test(NetData.ConfigFile cfg)
         {
-            serverConfig = cfg;
             var serverListenter = new TcpListener(cfg.IPAddress, cfg.Port);
             serverListenter.Start();
 
-            WaitForNewClient(serverListenter);
+
+            ConnectionManager.WaitForNewClient(serverListenter, cfg);
 
             while (true)
             {
-                Console.WriteLine($"Do Other Program Stuff");
-                string Stuff = Console.ReadLine();
+                string Stuff = Console.ReadLine().ToLower();
                 if (Stuff == "send")
                 {
                     foreach (var i in Clients.Values)
                     {
-                        string DataToSend = $"Server Data:\n{Clients.ToDictionary(x => x.Value.PlayerID, x => x.Value.ItemData).ToFormattedJson()}";
+                        string DataToSend = $"PING!";
                         byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(DataToSend);
                         i.NetClient.GetStream().Write(bytesToSend, 0, bytesToSend.Length);
                     }
                 }
-                else if (Stuff == "Clients")
+                else if (Stuff == "clients")
                 {
-                    Console.WriteLine("Connected Clients:\n" + string.Join("\n", Clients.Select(x => $"{x.Key}|{x.Value.EndPoint?.Address}")));
+                    Console.WriteLine($"Connected {cfg.ServerGameMode} Clients:\n" + string.Join("\n", Clients.Select(x => $"{x.Key}|{x.Value.EndPoint?.Address}")));
                 }
                 else
                 {
-                    Console.WriteLine($"You ran Manual command {Stuff}");
-                }
-            }
-
-        }
-
-        public static async void WaitForNewClient(TcpListener serverListenter)
-        {
-            while (true)
-            {
-                Console.WriteLine($"Awaiting Client");
-                TcpClient client = await serverListenter.AcceptTcpClientAsync();
-                StartClientLoop(new MMRTServerClient() { NetClient = client });
-            }
-        }
-        public static async void StartClientLoop(MMRTServerClient _ServerClient)
-        {
-            Guid guid = Guid.NewGuid();
-            _ServerClient.EndPoint = _ServerClient.NetClient.Client.RemoteEndPoint as IPEndPoint;
-            var localAddress = _ServerClient.EndPoint?.Address;
-            var localPort = _ServerClient.EndPoint?.Port;
-            try
-            {
-                byte[] HandshakeBuffer = new byte[_ServerClient.NetClient.ReceiveBufferSize];
-                int HandshakeBytes = _ServerClient.NetClient.GetStream().Read(HandshakeBuffer, 0, _ServerClient.NetClient.ReceiveBufferSize);
-                string HandShake = Encoding.ASCII.GetString(HandshakeBuffer, 0, HandshakeBytes);
-                NetData.NetPacket HandshakePacket = JsonConvert.DeserializeObject<NetData.NetPacket>(HandShake);
-                if (!AuthenticateUser(HandshakePacket)) { return; }
-                _ServerClient.PlayerID = HandshakePacket.PlayerID;
-            }
-            catch
-            {
-                Console.WriteLine("Failed to parse Handshake Packet");
-                return;
-            }
-
-            Console.WriteLine($"Player {_ServerClient.PlayerID} Connect from {localAddress}:{localPort}");
-            Clients.Add(guid, _ServerClient);
-            while (true)
-            {
-                string dataReceived;
-                try
-                {
-                    byte[] buffer = new byte[_ServerClient.NetClient.ReceiveBufferSize];
-                    int bytesRead = await _ServerClient.NetClient.GetStream().ReadAsync(buffer, 0, _ServerClient.NetClient.ReceiveBufferSize);
-                    dataReceived = Encoding.ASCII.GetString(buffer, 0, bytesRead);
-                }
-                catch
-                {
-                    Console.WriteLine($"Client {localAddress}:{localPort} Disconnected");
-                    Clients.Remove(guid);
-                    break;
-                }
-
-                try
-                {
-                    NetData.NetPacket Packet = JsonConvert.DeserializeObject<NetData.NetPacket>(dataReceived);
-                    if (Packet.PlayerID != _ServerClient.PlayerID) 
-                    {
-                        Console.WriteLine($"Packet for player {Packet.PlayerID} recieved on player {_ServerClient.PlayerID} client thread");
-                        continue;
-                    }
-                    Console.WriteLine($"Recieved Packet from player {Packet.PlayerID}");
-                    _ServerClient.ItemData = Packet.ItemData;
-                }
-                catch
-                {
-                    Console.WriteLine($"Failed to parse Packet from {_ServerClient.PlayerID}");
+                    var ServerChatGuid = Guid.NewGuid();
+                    PlayerChat.Add(ServerChatGuid, new NetData.ChatMessage(-1, ServerChatGuid, Stuff));
+                    ConnectionManager.UpdateClients(new NetData.NetPacket(-1, NetData.PacketType.ChatMessage) { ChatMessage = PlayerChat.Last().Value });
                 }
             }
         }
 
-        private static bool AuthenticateUser(NetData.NetPacket mMRTPacket)
+        public static Dictionary<int, Dictionary<string, int>> GetItemsBelongingToPlayer(int PlayerID)
         {
-            if (mMRTPacket.PlayerID < 0 || Clients.Any(x => x.Value.PlayerID == mMRTPacket.PlayerID)) { Console.WriteLine($"{mMRTPacket.PlayerID} was Invalid"); return false; }
-            if (!serverConfig.PlayersRequirePassword) { return true; }
-            if (!serverConfig.playerPasswords.ContainsKey(mMRTPacket.PlayerID)) { Console.WriteLine($"Player {mMRTPacket.PlayerID} was not entered in user list"); return false; }
-            if (serverConfig.playerPasswords[mMRTPacket.PlayerID] != mMRTPacket.Password) { Console.WriteLine($"Incorrect Password for Player {mMRTPacket.PlayerID}"); return false; }
-            return true;
-        }
-
-        private static NetData.NetPacket GetItemsBelongingToPlayer(int PlayerID)
-        {
-            NetData.NetPacket ReturnPacket = new NetData.NetPacket(PlayerID, _ItemData: new Dictionary<int, Dictionary<string, int>>());
+            Dictionary<int, Dictionary<string, int>> MultiworldItemsForPlayer = new();
             foreach (var i in Clients)
             {
                 if (i.Value.PlayerID == PlayerID) { continue; }
-                if (i.Value.ItemData.ContainsKey(PlayerID))
+                if (i.Value.MultiworldItemData.ContainsKey(PlayerID))
                 {
-                    ReturnPacket.ItemData.Add(i.Value.PlayerID, i.Value.ItemData[PlayerID]);
+                    MultiworldItemsForPlayer.Add(i.Value.PlayerID, i.Value.MultiworldItemData[PlayerID]);
                 }
-                if (i.Value.ItemData.ContainsKey(-1))
+                if (i.Value.MultiworldItemData.ContainsKey(-1))
                 {
-                    ReturnPacket.ItemData.Add(-1, i.Value.ItemData[PlayerID]);
+                    MultiworldItemsForPlayer.Add(-1, i.Value.MultiworldItemData[PlayerID]);
                 }
             }
-            return ReturnPacket;
+            return MultiworldItemsForPlayer;
         }
+        public static Dictionary<string, string> GetCheckedLocations()
+        {
+            Dictionary<string, string> AllCheckedLocations = new Dictionary<string, string>();
+            foreach (var c in Clients)
+            {
+                foreach(var l in c.Value.OnlineLocationData)
+                {
+                    AllCheckedLocations[l.Key] = l.Value;
+                }
+            }
+            return AllCheckedLocations;
+        }
+
     }
 }

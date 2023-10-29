@@ -1,11 +1,14 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using static MMR_Tracker_V3.TrackerObjects.NetData;
 
 namespace MMR_Tracker_V3.TrackerObjects
 {
@@ -19,25 +22,82 @@ namespace MMR_Tracker_V3.TrackerObjects
             NonWhitelisted,
             Unknown
         }
+        public enum PacketType
+        {
+            None,
+            OnlineSynedLocations,
+            MultiWorldItems,
+            ChatMessage
+        }
+        public enum OnlineMode
+        {
+            [Description("None")]
+            None = 0,
+            [Description("Co-op")]
+            Coop = 1,
+            [Description("Online (Synced)")]
+            Online = 2,
+            [Description("Multiworld")]
+            Multiworld = 3
+        }
         public class NetPacket
         {
-            public NetPacket(int _playerID, string _Password = "", Dictionary<int, Dictionary<string, int>> _ItemData = null)
+            public NetPacket(int _playerID, PacketType _packetType, string _Password = "", Dictionary<int, Dictionary<string, int>> _ItemData = null)
             {
                 PlayerID = _playerID;
                 Password = _Password;
                 ItemData = _ItemData;
+                packetType = _packetType;
             }
             public int PlayerID;
             public string Password;
+            public PacketType packetType = PacketType.None;
             //Dictionary<PlayerID, Dictionary<ItemID, ItemAmount>>
-            public Dictionary<int,Dictionary<string, int>> ItemData;
-            public string TestString = "Hello";
+            public Dictionary<string, string> LcationData = new Dictionary<string, string>();
+            public Dictionary<int,Dictionary<string, int>> ItemData = null;
+            public ChatMessage ChatMessage = null;
+            public HandshakeREsponse HandshakeResponse = null;
+
+        }
+        public class ChatMessage
+        {
+            public ChatMessage(int _PlayerID, Guid _guid, string _Message = "")
+            {
+                PlayerID = _PlayerID;
+                guid = _guid;
+                Message = _Message;
+            }
+            public int PlayerID;
+            public Guid guid;
+            public string Message;
+        }
+        public class ServerClient
+        {
+            public Guid ClientID;
+            public TcpClient NetClient;
+            public NetPacket Handshake;
+            public IPEndPoint EndPoint;
+            public int PlayerID;
+            public NetData.OnlineMode ClientMode;
+            public Dictionary<string, string>  OnlineLocationData= new Dictionary<string, string>();
+            public Dictionary<int, Dictionary<string, int>> MultiworldItemData = new Dictionary<int, Dictionary<string, int>>();
+            public IPAddress GetIP() { return EndPoint?.Address; }
+            public int? GetPort() { return EndPoint?.Port; }
+        }
+        public class HandshakeREsponse
+        {
+            public Guid ClientID;
+            public int PlayerID;
+            public NetData.OnlineMode ClientMode;
+            public bool ConnectionSuccess;
+            public string ConnectionStatus;
         }
         public class ConfigFile
         {
             public static string ConfigFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Recources", "ServerConfig.cfg");
             public IPAddress IPAddress = IPAddress.Any;
             public int Port = DefaultProgramPort;
+            public NetData.OnlineMode ServerGameMode = NetData.OnlineMode.None;
             public List<IPAddress> IPBlacklist = new List<IPAddress>();
             public List<IPAddress> IPWhitelist = new List<IPAddress>();
             public bool PlayersRequirePassword = false;
