@@ -93,6 +93,7 @@ namespace Windows_Form_Frontend
             0,
             0,
             -2147483648});
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // label2
             // 

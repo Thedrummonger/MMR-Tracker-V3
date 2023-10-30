@@ -35,6 +35,7 @@ namespace Windows_Form_Frontend
         private void CheckItemForm_Shown(object sender, EventArgs e)
         {
             textBox1.Text = "";
+            numericUpDown1.Value = _Container.netConnection.PlayerID;
             textBox1.Focus();
         }
 
@@ -45,13 +46,8 @@ namespace Windows_Form_Frontend
                 int OldSearchLength = textBox1.Width;
                 textBox1.Width = listBox1.Width;
                 button1.Location = new Point(button1.Location.X + (textBox1.Width - OldSearchLength), button1.Location.Y);
-                numericUpDown1.Value = -1;
                 numericUpDown1.Visible = false;
                 label2.Visible = false;
-            }
-            else
-            {
-                numericUpDown1.Value = _Container.netConnection.PlayerID;
             }
             button1.Visible = Button;
             button1.Text = ButtonText;
@@ -114,7 +110,8 @@ namespace Windows_Form_Frontend
         {
             FormatUIItems(_Container.netConnection.OnlineMode == NetData.OnlineMode.Multiworld, true, "Set Junk");
             this.Text = "Select Item at " + Location.GetDictEntry(_Container.Instance).GetName(_Container.Instance);
-            List<ItemData.ItemObject> EnteredItems = _Container.Instance.GetValidItemsForLocation(Location, textBox1.Text);
+            bool FoLocalPlayer = numericUpDown1.Value < 0 || numericUpDown1.Value == _Container.netConnection.PlayerID;
+            List<ItemData.ItemObject> EnteredItems = _Container.Instance.GetValidItemsForLocation(Location, textBox1.Text, !FoLocalPlayer);
             listBox1.DataSource = EnteredItems;
         }
 
@@ -173,6 +170,11 @@ namespace Windows_Form_Frontend
             {
                 textBox1.Text = "";
             }
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            PrintItems();
         }
     }
 }

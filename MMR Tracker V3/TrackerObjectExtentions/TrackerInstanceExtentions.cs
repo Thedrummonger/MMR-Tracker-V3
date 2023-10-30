@@ -108,7 +108,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             return LogicEntryType.error;
         }
 
-        public static List<ItemObject> GetValidItemsForLocation(this InstanceData.TrackerInstance _Instance, LocationData.LocationObject Location, string Filter = "")
+        public static List<ItemObject> GetValidItemsForLocation(this InstanceData.TrackerInstance _Instance, LocationData.LocationObject Location, string Filter = "", bool ForOtherPlayer = false)
         {
             var EnteredItems = new List<ItemObject>();
             var Names = new List<string>();
@@ -117,7 +117,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
                 if (string.IsNullOrWhiteSpace(i.GetDictEntry(_Instance).GetName(_Instance))) { continue; }
                 i.DisplayName = i.GetDictEntry(_Instance).GetName(_Instance);
                 if (!SearchStringParser.FilterSearch(_Instance, i, Filter, i.DisplayName)) { continue; }
-                if (i.CanBePlaced(_Instance) && Location.CanContainItem(i, _Instance) && !EnteredItems.Contains(i) && !Names.Contains(i.ToString()))
+                if ((i.CanBePlaced(_Instance) || ForOtherPlayer) && Location.CanContainItem(i, _Instance) && !EnteredItems.Contains(i) && !Names.Contains(i.ToString()))
                 {
                     Names.Add(i.ToString());
                     EnteredItems.Add(i);

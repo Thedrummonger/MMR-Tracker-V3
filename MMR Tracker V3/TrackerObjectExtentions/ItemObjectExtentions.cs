@@ -23,8 +23,9 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             int AmountSetAtLocation = 0;
             foreach (var x in Instance.LocationPool.Where(x => x.Value.CheckState != CheckState.Checked))
             {
+                bool OwnedByLocalPlayer = x.Value.Randomizeditem.OwningPlayer < 0 || Instance.GetParentContainer().netConnection.PlayerID == x.Value.Randomizeditem.OwningPlayer;
                 var itemAtheck = x.Value.GetItemAtCheck(Instance) ?? "";
-                if (itemAtheck == Item.Id) { AmountSetAtLocation++; }
+                if (itemAtheck == Item.Id && OwnedByLocalPlayer) { AmountSetAtLocation++; }
             }
 
             return AmountAquired + AmountSetAtLocation;
@@ -54,7 +55,8 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
         public static void ChangeLocalItemAmounts(this ItemData.ItemObject Item, InstanceData.TrackerInstance Instance, LocationData.LocationObject location, int Amount)
         {
             if (Amount == 0) { return; }
-            if (location.Randomizeditem.OwningPlayer > -1)
+            bool OwnedByLocalPlayer = location.Randomizeditem.OwningPlayer < 0 || Instance.GetParentContainer().netConnection.PlayerID == location.Randomizeditem.OwningPlayer;
+            if (!OwnedByLocalPlayer)
             {
                 if (!Item.AmountSentToPlayer.ContainsKey(location.Randomizeditem.OwningPlayer))
                 {
