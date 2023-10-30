@@ -92,6 +92,8 @@ namespace MMR_Tracker_V3
             public bool CheckForUpdate { get; set; } = true;
             public bool CheckHintMarkItem { get; set; } = true;
             public bool CompressSave { get; set; } = true;
+            public bool ShowUnavailableMarkedLocations { get; set; } = true;
+            public bool SeperateUnavailableMarkedLocations { get; set; } = true;
             public bool ShowMacroExitsPathfinder { get; set; } = false;
             public bool ShowRedundantPathfinder { get; set; } = false;
             public bool AutoCheckCoupleEntrances { get { return _AutoCheckCoupleEntrances; } set { _AutoCheckCoupleEntrances = value; } }

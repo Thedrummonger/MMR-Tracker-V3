@@ -38,6 +38,8 @@ namespace Windows_Form_Frontend
             chkUnrandExits.Checked = TempOptionFile.ShowMacroExitsPathfinder;
             chkCheckCoupled.Checked = TempOptionFile.AutoCheckCoupleEntrances;
             nudMaxUndo.Value = TempOptionFile.MaxUndo;
+            chkShowUnavailableMarked.Checked = TempOptionFile.ShowUnavailableMarkedLocations;
+            chkSeperateUnavailableMarked.Checked = TempOptionFile.SeperateUnavailableMarkedLocations;
             int counter = 0;
             var CurrentFont = WinFormUtils.GetFontFromString(TempOptionFile.WinformData.FormFont);
             foreach (FontFamily font in FontFamily.Families)
@@ -64,6 +66,8 @@ namespace Windows_Form_Frontend
             TempOptionFile.ShowMacroExitsPathfinder = chkUnrandExits.Checked;
             TempOptionFile.AutoCheckCoupleEntrances = chkCheckCoupled.Checked;
             TempOptionFile.MaxUndo = (int)nudMaxUndo.Value;
+            TempOptionFile.ShowUnavailableMarkedLocations = chkShowUnavailableMarked.Checked;
+            TempOptionFile.SeperateUnavailableMarkedLocations = chkSeperateUnavailableMarked.Checked;
             Debug.WriteLine(JsonConvert.SerializeObject(TempOptionFile, Formatting.Indented));
         }
 

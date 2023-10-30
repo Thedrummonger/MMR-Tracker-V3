@@ -272,7 +272,9 @@ namespace MMR_Tracker_V3
         {
             DataSets dataSets = new DataSets();
 
-            foreach(var i in instance.LocationPool.Values)
+            bool ShowUnavailableMarkedLocations = instance.StaticOptions.OptionFile.ShowUnavailableMarkedLocations;
+
+            foreach (var i in instance.LocationPool.Values)
             {
                 switch (i.CheckState)
                 {
@@ -282,12 +284,12 @@ namespace MMR_Tracker_V3
                     case CheckState.Marked:
                         dataSets.LocationStateIsMarked.Add(i);
                         dataSets.LocationStateIsNOTChecked.Add(i);
-                        dataSets.LocationISMarkedOrISAvailableAndUnchecked.Add(i);
+                        if (ShowUnavailableMarkedLocations) { dataSets.LocationISMarkedOrISAvailableAndUnchecked.Add(i); }
                         break;
                     case CheckState.Unchecked:
                         dataSets.LocationStateIsUnchecked.Add(i);
                         dataSets.LocationStateIsNOTChecked.Add(i);
-                        switch (i.Available) { case true: dataSets.LocationISMarkedOrISAvailableAndUnchecked.Add(i); break; }
+                        if (i.Available) { dataSets.LocationISMarkedOrISAvailableAndUnchecked.Add(i); }
                         break;
                 }
             }
@@ -308,7 +310,7 @@ namespace MMR_Tracker_V3
                     case MiscData.CheckState.Marked:
                         dataSets.ProxyStateIsNOTChecked.Add(i);
                         dataSets.ProxyStateIsMarked.Add(i);
-                        dataSets.ProxyISMarkedOrISAvailableAndUnchecked.Add(i);
+                        if (ShowUnavailableMarkedLocations) { dataSets.ProxyISMarkedOrISAvailableAndUnchecked.Add(i); }
                         break;
                     case MiscData.CheckState.Unchecked:
                         dataSets.ProxyStateIsNOTChecked.Add(i);
@@ -332,12 +334,12 @@ namespace MMR_Tracker_V3
                     case CheckState.Marked:
                         dataSets.ExitStateIsMarked.Add(i);
                         dataSets.ExitStateIsNOTChecked.Add(i);
-                        dataSets.ExitISMarkedOrISAvailableAndUnchecked.Add(i);
+                        if (ShowUnavailableMarkedLocations) { dataSets.ExitISMarkedOrISAvailableAndUnchecked.Add(i); }
                         break;
                     case CheckState.Unchecked:
                         dataSets.ExitStateIsUnchecked.Add(i);
                         dataSets.ExitStateIsNOTChecked.Add(i);
-                        switch (i.Available) { case true: dataSets.ExitISMarkedOrISAvailableAndUnchecked.Add(i); break; }
+                        if(i.Available) { dataSets.ExitISMarkedOrISAvailableAndUnchecked.Add(i); }
                         break;
                 }
             }
@@ -357,12 +359,12 @@ namespace MMR_Tracker_V3
                     case CheckState.Marked:
                         dataSets.HistStateIsMarked.Add(i);
                         dataSets.HintStateIsNOTChecked.Add(i);
-                        dataSets.HIntISMarkedOrISAvailableAndUnchecked.Add(i);
+                        if (ShowUnavailableMarkedLocations) { dataSets.HIntISMarkedOrISAvailableAndUnchecked.Add(i); }
                         break;
                     case CheckState.Unchecked:
                         dataSets.HintStateIsUnchecked.Add(i);
                         dataSets.HintStateIsNOTChecked.Add(i);
-                        switch (i.Available) { case true: dataSets.HIntISMarkedOrISAvailableAndUnchecked.Add(i); break; }
+                        if (i.Available) { dataSets.HIntISMarkedOrISAvailableAndUnchecked.Add(i); }
                         break;
                 }
             }
@@ -595,6 +597,7 @@ namespace MMR_Tracker_V3
         {
             bool ShowAllLocation = ShowUnavailable || (Filter.StartsWith("^") && !Filter.StartsWith("^^")) || Filter.StartsWith("^^^");
             bool ShowInvalidLocation = Filter.StartsWith("^^");
+            bool SeperateMarked = IC.Instance.StaticOptions.OptionFile.SeperateUnavailableMarkedLocations;
 
             var Groups = Utility.GetCategoriesFromFile(IC.Instance);
             List<object> DataSource = new List<object>();
@@ -607,7 +610,7 @@ namespace MMR_Tracker_V3
 
             IEnumerable<object> AvailableLocationsEntries = AvailableLocations.Where(x => !IC.Instance.LocationProxyData.LocationsWithProxys.ContainsKey(x.ID));
             AvailableLocationsEntries = AvailableLocationsEntries.Concat(AvailableProxies);
-            AvailableLocationsEntries = AvailableLocationsEntries.OrderByDescending(x => GetLocationEntryAvailablility(x, IC.Instance))
+            AvailableLocationsEntries = AvailableLocationsEntries.OrderByDescending(x => SeperateMarked && GetLocationEntryAvailablility(x, IC.Instance))
                 .ThenBy(x => (Groups.ContainsKey(GetLocationEntryArea(x, IC.Instance).ToLower().Trim()) ? Groups[GetLocationEntryArea(x, IC.Instance).ToLower().Trim()] : DataSets.LocationISMarkedOrISAvailableAndUnchecked.Count() + 1))
                 .ThenBy(x => GetLocationEntryArea(x, IC.Instance))
                 .ThenBy(x => Utility.GetLocationDisplayName(x, IC)).ToList();
@@ -789,38 +792,28 @@ namespace MMR_Tracker_V3
         {
             bool InLocationBox = !IC.Instance.StaticOptions.OptionFile.EntranceRandoFeatures;
 
+            bool ShowAllLocation = ShowUnavailable || (Filter.StartsWith("^") && !Filter.StartsWith("^^")) || Filter.StartsWith("^^^");
+            bool ShowInvalidLocation = Filter.StartsWith("^^");
+            bool SeperateMarked = IC.Instance.StaticOptions.OptionFile.SeperateUnavailableMarkedLocations;
+
             var Groups = Utility.GetCategoriesFromFile(IC.Instance);
             List<object> DataSource = new List<object>();
             OutItemsInListBox = 0;
             OutItemsInListBoxFiltered = 0;
 
-            List<EntranceData.EntranceRandoExit> ValidExits = new List<EntranceData.EntranceRandoExit>();
+            List<EntranceRandoExit> ValidExits = DataSets.ExitISMarkedOrISAvailableAndUnchecked;
+            if (ShowAllLocation) { ValidExits = DataSets.ExitStateIsNOTChecked; }
 
-            foreach (var area in IC.Instance.EntrancePool.AreaList)
-            {
-                var AvailableExits = area.Value.RandomizableExits(IC.Instance).Where(x => 
-                (x.Value.Available || x.Value.CheckState == MiscData.CheckState.Marked || ShowUnavailable || Filter.StartsWith("^")) && 
-                x.Value.CheckState != MiscData.CheckState.Checked && EntranceAppearsinListbox(x.Value, IC.Instance));
-
-                var FilteredAvailableExits = AvailableExits.Where(x => SearchStringParser.FilterSearch(IC.Instance, x.Value, Filter, x.Value.GetEntranceDisplayName(IC.Instance)));
-
-                OutItemsInListBox += AvailableExits.Count();
-                OutItemsInListBoxFiltered += FilteredAvailableExits.Count();
-                if (!FilteredAvailableExits.Any()) { continue; }
-
-                foreach(var i in FilteredAvailableExits)
-                {
-                    i.Value.DisplayName = i.Value.GetEntranceDisplayName(IC.Instance);
-                    ValidExits.Add(i.Value);
-
-                }
-            }
-
-            ValidExits = ValidExits.OrderByDescending(x => x.Available).ThenBy(x => x.DisplayArea(IC.Instance)).ThenBy(x => x.DisplayName).ToList();
+            ValidExits = ValidExits.OrderByDescending(x => SeperateMarked && x.Available).ThenBy(x => x.DisplayArea(IC.Instance)).ThenBy(x => x.DisplayName).ToList();
             string CurrentArea = "";
             foreach(var i in ValidExits)
             {
+                if (!EntranceAppearsinListbox(i, IC.Instance) && !ShowInvalidLocation) { continue; }
+                OutItemsInListBox++;
                 string ItemArea = InLocationBox ? $"{i.DisplayArea(IC.Instance)} Entrances" : i.DisplayArea(IC.Instance);
+                i.DisplayName = i.GetEntranceDisplayName(IC.Instance);
+                if (!SearchStringParser.FilterSearch(IC.Instance, i, Filter, i.GetEntranceDisplayName(IC.Instance))) { continue; }
+                OutItemsInListBoxFiltered++;
                 if (CurrentArea != ItemArea)
                 {
                     CurrentArea = ItemArea;
