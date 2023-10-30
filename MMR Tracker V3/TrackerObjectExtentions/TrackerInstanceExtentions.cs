@@ -197,8 +197,9 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
         {
             instance.InstanceReference.ExitLogicMap.Add($"{Exit.Area} X {Exit.Exit}", LogicName);
         }
-        public static MMRData.JsonFormatLogicItem GetLogic(this TrackerInstance instance, string OriginalID, bool DoEdits = true)
+        public static MMRData.JsonFormatLogicItem GetLogic(this TrackerInstance instance, string OriginalID, bool DoEdits = true, List<OptionData.Action> actions = null)
         {
+            actions ??= instance.GetOptionActions();
             bool Literal = OriginalID.IsLiteralID(out string ID);
             LogicEntryType entryType = instance.GetLocationEntryType(ID, Literal, out dynamic Obj);
             if (entryType == LogicEntryType.error || Obj is null || !Utility.DynamicPropertyExist(Obj, "referenceData")) { return null; }
@@ -242,8 +243,8 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
 
             if (DoEdits) 
             { 
-                LogicEditing.HandleOptionLogicEdits(instance.ChoiceOptions.Values.Select(x => x.GetValue().Actions), ID, CopyRequirements, CopyConditionals, out CopyRequirements, out CopyConditionals);
-                LogicEditing.HandleOptionLogicEdits(instance.ToggleOptions.Values.Select(x => x.GetValue().Actions), ID, CopyRequirements, CopyConditionals, out CopyRequirements, out CopyConditionals);
+                LogicEditing.HandleOptionLogicEdits(actions, ID, CopyRequirements, CopyConditionals, out CopyRequirements, out CopyConditionals);
+                LogicEditing.HandleOptionLogicEdits(actions, ID, CopyRequirements, CopyConditionals, out CopyRequirements, out CopyConditionals);
             }
 
             return new MMRData.JsonFormatLogicItem

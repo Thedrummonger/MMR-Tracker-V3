@@ -129,7 +129,19 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 logicCalculation = new LogicCalculation(this);
             }
-            public InstanceData.TrackerInstance Instance { get; set; }
+            private InstanceData.TrackerInstance _Instance;
+            public InstanceData.TrackerInstance Instance {
+                get 
+                {
+                    _Instance?.SetParentContainer(this);
+                    return _Instance;
+                } 
+                set
+                {
+                    _Instance = value;
+                    _Instance?.SetParentContainer(this);
+                } 
+            }
             public LogicCalculation logicCalculation { get; set; }
             public NetConnection netConnection { get; set; } = new NetConnection();
             public List<string> UndoStringList { get; set; } = new List<string>();
@@ -166,16 +178,17 @@ namespace MMR_Tracker_V3.TrackerObjects
                     {
                         case SaveCompressor.SaveType.Standard:
                             Instance = InstanceData.TrackerInstance.FromJson(File.ReadAllText(Save));
-                            return true;
+                            break;
                         case SaveCompressor.SaveType.Compressed:
                             var Decomp = SaveCompressor.Decompress(File.ReadAllText(Save));
                             Instance = InstanceData.TrackerInstance.FromJson(Decomp);
-                            return true;
+                            break;
                         case SaveCompressor.SaveType.CompressedByte:
                             var ByteDecomp = SaveCompressor.Decompress(File.ReadAllBytes(Save));
                             Instance = InstanceData.TrackerInstance.FromJson(ByteDecomp);
-                            return true;
-                        case SaveCompressor.SaveType.error: return false;
+                            break;
+                        case SaveCompressor.SaveType.error:
+                            return false;
                     }
                 }
                 else
@@ -183,6 +196,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                     try { Instance = InstanceData.TrackerInstance.FromJson(Save); }
                     catch { return false; }
                 }
+                logicCalculation = new LogicCalculation(this);
                 return true;
             }
         }

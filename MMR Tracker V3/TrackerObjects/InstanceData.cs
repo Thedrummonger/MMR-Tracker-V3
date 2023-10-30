@@ -19,6 +19,9 @@ namespace MMR_Tracker_V3
         [Serializable]
         public class TrackerInstance
         {
+            private InstanceContainer Parent;
+            public InstanceContainer GetParentContainer() { return Parent; }
+            public void SetParentContainer(InstanceContainer P) { Parent = P; }
             public Dictionary<string, LocationObject> LocationPool { get; set; } = new Dictionary<string, LocationObject>();
             public Dictionary<string, HintObject> HintPool { get; set; } = new Dictionary<string, HintObject>();
             public Dictionary<string, MacroObject> MacroPool { get; set; } = new Dictionary<string, MacroObject>();

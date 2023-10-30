@@ -158,27 +158,31 @@ namespace MMR_Tracker_V3
 
         public void CompileOptionActionEdits()
         {
+            var Actions = container.Instance.GetOptionActions();
             Debug.WriteLine("Recompiling Logic");
             foreach (var i in container.Instance.MacroPool) 
             { 
-                LogicMap[i.Key] = container.Instance.GetLogic(i.Key); 
+                LogicMap[i.Key] = container.Instance.GetLogic(i.Key, actions: Actions); 
             }
             foreach (var i in container.Instance.LocationPool)
             {
-                LogicMap[i.Key] = container.Instance.GetLogic(i.Key); 
+                LogicMap[i.Key] = container.Instance.GetLogic(i.Key, actions: Actions); 
             }
             foreach (var i in container.Instance.HintPool)
             {
-                LogicMap[i.Key] = container.Instance.GetLogic(i.Key); 
+                LogicMap[i.Key] = container.Instance.GetLogic(i.Key, actions: Actions); 
             }
             foreach (var Area in container.Instance.EntrancePool.AreaList)
             {
                 foreach (var i in Area.Value.Exits)
                 {
-                    LogicMap[container.Instance.GetLogicNameFromExit(i.Value)] = container.Instance.GetLogic(container.Instance.GetLogicNameFromExit(i.Value));
+                    LogicMap[container.Instance.GetLogicNameFromExit(i.Value)] = container.Instance.GetLogic(container.Instance.GetLogicNameFromExit(i.Value), actions: Actions);
                 }
             }
-            var Actions = container.Instance.GetOptionActions();
+            foreach (var i in container.Instance.LogicEntryCollections)
+            {
+                container.Instance.InstanceReference.OptionActionCollectionEdits[i.Key] = i.Value.GetOptionEditDefinedValue(Actions);
+            }
             foreach (var i in container.Instance.ItemPool)
             {
                 container.Instance.InstanceReference.OptionActionItemEdits[i.Key] = new OptionData.ActionItemEdit
@@ -187,14 +191,11 @@ namespace MMR_Tracker_V3
                     MaxAmount = i.Value.GetDictEntry(container.Instance).GetOptionEditDefinedMaxAmountInWorld(Actions)
                 };
             }
-            foreach(var i in container.Instance.LogicEntryCollections)
-            {
-                container.Instance.InstanceReference.OptionActionCollectionEdits[i.Key] = i.Value.GetOptionEditDefinedValue(Actions);
-            }
         }
 
         public void CalculateLogic(CheckState checkState = CheckState.Unchecked)
         {
+            Debug.WriteLine(LogicMap.Count);
             if (ReCompileLogicOnCalculation || LogicMap.Count == 0) { CompileOptionActionEdits(); }
             if (checkState == CheckState.Unchecked) { ResetAutoObtainedItems(); }
             AutoObtainedObjects.Clear();

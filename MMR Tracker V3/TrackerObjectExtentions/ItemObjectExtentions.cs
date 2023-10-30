@@ -54,7 +54,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
         public static void ChangeLocalItemAmounts(this ItemData.ItemObject Item, InstanceData.TrackerInstance Instance, LocationData.LocationObject location, int Amount)
         {
             if (Amount == 0) { return; }
-            if (location.Randomizeditem.OwningPlayer != -1)
+            if (location.Randomizeditem.OwningPlayer > -1)
             {
                 if (!Item.AmountSentToPlayer.ContainsKey(location.Randomizeditem.OwningPlayer))
                 {
