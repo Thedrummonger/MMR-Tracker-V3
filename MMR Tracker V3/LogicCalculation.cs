@@ -24,7 +24,7 @@ namespace MMR_Tracker_V3
         public Dictionary<string, List<string>> LogicUnlockData = new();
         public Dictionary<string, MMRData.JsonFormatLogicItem> LogicMap = new();
         public Dictionary<object, int> AutoObtainedObjects = new();
-        public bool ReCompileLogicOnCalculation = true;
+        public bool ReCompileLogicOnCalculation = false;
 
         public LogicCalculation(InstanceContainer _container)
         {
@@ -157,7 +157,6 @@ namespace MMR_Tracker_V3
 
         public void CompileOptionActionEdits()
         {
-            Debug.WriteLine($"ReCompileLogicOnCalculation:{ReCompileLogicOnCalculation}");
             LogicMap.Clear();
             var Actions = container.Instance.GetOptionActions();
             Debug.WriteLine("Recompiling Logic");

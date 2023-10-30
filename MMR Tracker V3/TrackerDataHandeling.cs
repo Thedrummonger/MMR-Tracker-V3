@@ -19,27 +19,27 @@ namespace MMR_Tracker_V3
         public static void TriggerCheckedObjectsUpdate(List<object> objs, InstanceData.TrackerInstance instance) { CheckedObjectsUpdate(objs, instance); }
         public class DataSets
         {
-            public List<LocationData.LocationObject> UncheckedLocations { get; set; } = new List<LocationData.LocationObject>();
-            public List<LocationData.LocationObject> AvailableLocations { get; set; } = new List<LocationData.LocationObject>();
-            public List<LocationData.LocationObject> AllAvailableLocations { get; set; } = new List<LocationData.LocationObject>();
-            public List<LocationData.LocationObject> MarkedLocations { get; set; } = new List<LocationData.LocationObject>();
-            public List<LocationData.LocationObject> CheckedLocations { get; set; } = new List<LocationData.LocationObject>();
+            public List<LocationData.LocationObject> LocationStateIsUnchecked { get; set; } = new List<LocationData.LocationObject>();
+            public List<LocationData.LocationObject> LocationISMarkedOrISAvailableAndUnchecked { get; set; } = new List<LocationData.LocationObject>();
+            public List<LocationData.LocationObject> LocationStateIsNOTChecked { get; set; } = new List<LocationData.LocationObject>();
+            public List<LocationData.LocationObject> LocationStateIsMarked { get; set; } = new List<LocationData.LocationObject>();
+            public List<LocationData.LocationObject> LocationStateIsChecked { get; set; } = new List<LocationData.LocationObject>();
 
-            public List<LocationData.LocationProxy> AvailableProxies { get; set; } = new List<LocationData.LocationProxy>();
-            public List<LocationData.LocationProxy> AllAvailableProxies { get; set; } = new List<LocationData.LocationProxy>();
-            public List<LocationData.LocationProxy> MarkedProxies { get; set; } = new List<LocationData.LocationProxy>();
+            public List<LocationData.LocationProxy> ProxyISMarkedOrISAvailableAndUnchecked { get; set; } = new List<LocationData.LocationProxy>();
+            public List<LocationData.LocationProxy> ProxyStateIsNOTChecked { get; set; } = new List<LocationData.LocationProxy>();
+            public List<LocationData.LocationProxy> ProxyStateIsMarked { get; set; } = new List<LocationData.LocationProxy>();
 
-            public List<EntranceData.EntranceRandoExit> UncheckedEntrances { get; set; } = new List<EntranceData.EntranceRandoExit>();
-            public List<EntranceData.EntranceRandoExit> AvailableEntrances { get; set; } = new List<EntranceData.EntranceRandoExit>();
-            public List<EntranceData.EntranceRandoExit> AllAvailableEntrances { get; set; } = new List<EntranceData.EntranceRandoExit>();
-            public List<EntranceData.EntranceRandoExit> MarkedEntrances { get; set; } = new List<EntranceData.EntranceRandoExit>();
-            public List<EntranceData.EntranceRandoExit> CheckedEntrances { get; set; } = new List<EntranceData.EntranceRandoExit>();
+            public List<EntranceData.EntranceRandoExit> ExitStateIsUnchecked { get; set; } = new List<EntranceData.EntranceRandoExit>();
+            public List<EntranceData.EntranceRandoExit> ExitISMarkedOrISAvailableAndUnchecked { get; set; } = new List<EntranceData.EntranceRandoExit>();
+            public List<EntranceData.EntranceRandoExit> ExitStateIsNOTChecked { get; set; } = new List<EntranceData.EntranceRandoExit>();
+            public List<EntranceData.EntranceRandoExit> ExitStateIsChecked { get; set; } = new List<EntranceData.EntranceRandoExit>();
+            public List<EntranceData.EntranceRandoExit> ExitStateIsMarked { get; set; } = new List<EntranceData.EntranceRandoExit>();
 
-            public List<HintData.HintObject> AvailableHints { get; set; } = new List<HintData.HintObject>();
-            public List<HintData.HintObject> AllAvailableHints { get; set; } = new List<HintData.HintObject>();
-            public List<HintData.HintObject> UnheckedHints { get; set; } = new List<HintData.HintObject>();
-            public List<HintData.HintObject> CheckedHints { get; set; } = new List<HintData.HintObject>();
-            public List<HintData.HintObject> MarkedHints { get; set; } = new List<HintData.HintObject>();
+            public List<HintData.HintObject> HIntISMarkedOrISAvailableAndUnchecked { get; set; } = new List<HintData.HintObject>();
+            public List<HintData.HintObject> HintStateIsNOTChecked { get; set; } = new List<HintData.HintObject>();
+            public List<HintData.HintObject> HintStateIsUnchecked { get; set; } = new List<HintData.HintObject>();
+            public List<HintData.HintObject> HintStateIsChecked { get; set; } = new List<HintData.HintObject>();
+            public List<HintData.HintObject> HistStateIsMarked { get; set; } = new List<HintData.HintObject>();
 
             public List<MacroObject> Tricks { get; set; } = new List<MacroObject>();
             public List<ItemData.ItemObject> AvailableStartingItems { get; set; } = new List<ItemData.ItemObject>();
@@ -272,28 +272,106 @@ namespace MMR_Tracker_V3
         {
             DataSets dataSets = new DataSets();
 
-            dataSets.UncheckedLocations = instance.LocationPool.Values.Where(x => x.CheckState == MiscData.CheckState.Unchecked).ToList();
-            dataSets.MarkedLocations = instance.LocationPool.Values.Where(x => x.CheckState == MiscData.CheckState.Marked).ToList();
-            dataSets.CheckedLocations = instance.LocationPool.Values.Where(x => x.CheckState == MiscData.CheckState.Checked).ToList();
-            dataSets.AllAvailableLocations = instance.LocationPool.Values.Where(x => x.CheckState != MiscData.CheckState.Checked).ToList();
-            dataSets.AvailableLocations = dataSets.AllAvailableLocations.Where(x => x.Available || x.CheckState == MiscData.CheckState.Marked).ToList();
+            foreach(var i in instance.LocationPool.Values)
+            {
+                switch (i.CheckState)
+                {
+                    case CheckState.Checked:
+                        dataSets.LocationStateIsChecked.Add(i);
+                        break;
+                    case CheckState.Marked:
+                        dataSets.LocationStateIsMarked.Add(i);
+                        dataSets.LocationStateIsNOTChecked.Add(i);
+                        dataSets.LocationISMarkedOrISAvailableAndUnchecked.Add(i);
+                        break;
+                    case CheckState.Unchecked:
+                        dataSets.LocationStateIsUnchecked.Add(i);
+                        dataSets.LocationStateIsNOTChecked.Add(i);
+                        switch (i.Available) { case true: dataSets.LocationISMarkedOrISAvailableAndUnchecked.Add(i); break; }
+                        break;
+                }
+            }
 
-            dataSets.MarkedProxies = instance.LocationProxyData.LocationProxies.Values.Where(x => x.GetReferenceLocation(instance).CheckState == MiscData.CheckState.Marked).ToList();
-            dataSets.AllAvailableProxies = instance.LocationProxyData.LocationProxies.Values.Where(x => x.GetReferenceLocation(instance).CheckState != MiscData.CheckState.Checked).ToList();
-            dataSets.AvailableProxies = dataSets.AllAvailableProxies.Where(x => x.ProxyAvailable(instance) || x.GetReferenceLocation(instance).CheckState == MiscData.CheckState.Marked).ToList();
+            //dataSets.UncheckedLocations = instance.LocationPool.Values.Where(x => x.CheckState == MiscData.CheckState.Unchecked).ToList();
+            //dataSets.MarkedLocations = instance.LocationPool.Values.Where(x => x.CheckState == MiscData.CheckState.Marked).ToList();
+            //dataSets.CheckedLocations = instance.LocationPool.Values.Where(x => x.CheckState == MiscData.CheckState.Checked).ToList();
+            //dataSets.UncheckedOrMarkedLocations = instance.LocationPool.Values.Where(x => x.CheckState != MiscData.CheckState.Checked).ToList();
+            //dataSets.AvailableLocations = dataSets.UncheckedOrMarkedLocations.Where(x => x.Available || x.CheckState == MiscData.CheckState.Marked).ToList();
+
+            foreach(var i in instance.LocationProxyData.LocationProxies.Values)
+            {
+                var CheckState = i.GetReferenceLocation(instance).CheckState;
+                switch (CheckState)
+                {
+                    case MiscData.CheckState.Checked:
+                        break;
+                    case MiscData.CheckState.Marked:
+                        dataSets.ProxyStateIsNOTChecked.Add(i);
+                        dataSets.ProxyStateIsMarked.Add(i);
+                        dataSets.ProxyISMarkedOrISAvailableAndUnchecked.Add(i);
+                        break;
+                    case MiscData.CheckState.Unchecked:
+                        dataSets.ProxyStateIsNOTChecked.Add(i);
+                        if (i.ProxyAvailable(instance)) { dataSets.ProxyISMarkedOrISAvailableAndUnchecked.Add(i); }
+                        break;
+                }
+            }
+
+            //dataSets.ProxyStateIsMarked = instance.LocationProxyData.LocationProxies.Values.Where(x => x.GetReferenceLocation(instance).CheckState == MiscData.CheckState.Marked).ToList();
+            //dataSets.ProxyStateIsNOTChecked = instance.LocationProxyData.LocationProxies.Values.Where(x => x.GetReferenceLocation(instance).CheckState != MiscData.CheckState.Checked).ToList();
+            //dataSets.ProxyStateIsMarkedAndAvailable = dataSets.ProxyStateIsNOTChecked.Where(x => x.ProxyAvailable(instance) || x.GetReferenceLocation(instance).CheckState == MiscData.CheckState.Marked).ToList();
 
             var AllExits = instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits(instance).Values);
-            dataSets.UncheckedEntrances = AllExits.Where(x => x.CheckState == MiscData.CheckState.Unchecked).ToList();
-            dataSets.MarkedEntrances = AllExits.Where(x => x.CheckState == MiscData.CheckState.Checked).ToList();
-            dataSets.CheckedEntrances = AllExits.Where(x => x.CheckState == MiscData.CheckState.Marked).ToList();
-            dataSets.AllAvailableEntrances = AllExits.Where(x => x.CheckState != MiscData.CheckState.Checked).ToList();
-            dataSets.AvailableEntrances = AllExits.Where(x => x.Available || x.CheckState == MiscData.CheckState.Marked).ToList();
+            foreach (var i in AllExits)
+            {
+                switch (i.CheckState)
+                {
+                    case CheckState.Checked:
+                        dataSets.ExitStateIsChecked.Add(i);
+                        break;
+                    case CheckState.Marked:
+                        dataSets.ExitStateIsMarked.Add(i);
+                        dataSets.ExitStateIsNOTChecked.Add(i);
+                        dataSets.ExitISMarkedOrISAvailableAndUnchecked.Add(i);
+                        break;
+                    case CheckState.Unchecked:
+                        dataSets.ExitStateIsUnchecked.Add(i);
+                        dataSets.ExitStateIsNOTChecked.Add(i);
+                        switch (i.Available) { case true: dataSets.ExitISMarkedOrISAvailableAndUnchecked.Add(i); break; }
+                        break;
+                }
+            }
+            //dataSets.ExitStateIsUnchecked = AllExits.Where(x => x.CheckState == MiscData.CheckState.Unchecked).ToList();
+            //dataSets.ExitStateIsChecked = AllExits.Where(x => x.CheckState == MiscData.CheckState.Checked).ToList();
+            //dataSets.ExitStateIsMarked = AllExits.Where(x => x.CheckState == MiscData.CheckState.Marked).ToList();
+            //dataSets.ExitStateIsNOTChecked = AllExits.Where(x => x.CheckState != MiscData.CheckState.Checked).ToList();
+            //dataSets.ExitISMarkedOrISAvailableAndUnchecked = AllExits.Where(x => x.Available || x.CheckState == MiscData.CheckState.Marked).ToList();
 
-            dataSets.UnheckedHints = instance.HintPool.Values.Where(x => x.CheckState == MiscData.CheckState.Unchecked).ToList();
-            dataSets.MarkedHints = instance.HintPool.Values.Where(x => x.CheckState == MiscData.CheckState.Marked).ToList();
-            dataSets.CheckedHints = instance.HintPool.Values.Where(x => x.CheckState == MiscData.CheckState.Checked).ToList();
-            dataSets.AllAvailableHints = instance.HintPool.Values.Where(x => x.CheckState != MiscData.CheckState.Checked).ToList();
-            dataSets.AvailableHints = dataSets.AllAvailableHints.Where(x => x.Available || x.CheckState == MiscData.CheckState.Marked).ToList();
+            foreach (var i in instance.HintPool.Values)
+            {
+                switch (i.CheckState)
+                {
+                    case CheckState.Checked:
+                        dataSets.HintStateIsChecked.Add(i);
+                        break;
+                    case CheckState.Marked:
+                        dataSets.HistStateIsMarked.Add(i);
+                        dataSets.HintStateIsNOTChecked.Add(i);
+                        dataSets.HIntISMarkedOrISAvailableAndUnchecked.Add(i);
+                        break;
+                    case CheckState.Unchecked:
+                        dataSets.HintStateIsUnchecked.Add(i);
+                        dataSets.HintStateIsNOTChecked.Add(i);
+                        switch (i.Available) { case true: dataSets.HIntISMarkedOrISAvailableAndUnchecked.Add(i); break; }
+                        break;
+                }
+            }
+
+            //dataSets.HintStateIsUnchecked = instance.HintPool.Values.Where(x => x.CheckState == MiscData.CheckState.Unchecked).ToList();
+            //dataSets.HistStateIsMarked = instance.HintPool.Values.Where(x => x.CheckState == MiscData.CheckState.Marked).ToList();
+            //dataSets.HintStateIsChecked = instance.HintPool.Values.Where(x => x.CheckState == MiscData.CheckState.Checked).ToList();
+            //dataSets.HintStateIsNOTChecked = instance.HintPool.Values.Where(x => x.CheckState != MiscData.CheckState.Checked).ToList();
+            //dataSets.HIntISMarkedOrISAvailableAndUnchecked = dataSets.HintStateIsNOTChecked.Where(x => x.Available || x.CheckState == MiscData.CheckState.Marked).ToList();
 
             dataSets.Tricks = instance.MacroPool.Values.Where(x => x.isTrick(instance)).ToList();
             dataSets.AvailableStartingItems = instance.ItemPool.Values.Where(x => x.ValidStartingItem(instance)).ToList();
@@ -310,9 +388,9 @@ namespace MMR_Tracker_V3
 
             List<object> DataSource = new List<object>();
 
-            var CheckedLocations = DataSets.CheckedLocations;
+            var CheckedLocations = DataSets.LocationStateIsChecked;
             CheckedLocations = CheckedLocations
-                .OrderBy(x => (Groups.ContainsKey(x.GetDictEntry(IC.Instance).Area.ToLower().Trim()) ? Groups[x.GetDictEntry(IC.Instance).Area.ToLower().Trim()] : DataSets.CheckedLocations.Count + 1))
+                .OrderBy(x => (Groups.ContainsKey(x.GetDictEntry(IC.Instance).Area.ToLower().Trim()) ? Groups[x.GetDictEntry(IC.Instance).Area.ToLower().Trim()] : DataSets.LocationStateIsChecked.Count + 1))
                 .ThenBy(x => x.GetDictEntry(IC.Instance).Area)
                 .ThenBy(x => Utility.GetLocationDisplayName(x, IC)).ToList();
 
@@ -435,10 +513,10 @@ namespace MMR_Tracker_V3
 
             void WriteHints()
             {
-                if (DataSets.CheckedHints.Any())
+                if (DataSets.HintStateIsChecked.Any())
                 {
                     bool DividerCreated = false;
-                    foreach (var i in DataSets.CheckedHints)
+                    foreach (var i in DataSets.HintStateIsChecked)
                     {
                         i.DisplayName = $"{i.GetDictEntry(IC.Instance).Name}: {i.HintText}";
                         ItemsInListBox++;
@@ -506,6 +584,12 @@ namespace MMR_Tracker_V3
             else if (Entry is LocationData.LocationProxy p) { return p.Area; }
             return "Error";
         }
+        public static bool GetLocationEntryAvailablility(object Entry, InstanceData.TrackerInstance Instance)
+        {
+            if (Entry is LocationData.LocationObject l) { return l.Available; }
+            else if (Entry is LocationData.LocationProxy p) { return p.ProxyAvailable(Instance); }
+            return false;
+        }
 
         public static List<object> PopulateAvailableLocationList(DataSets DataSets, MiscData.Divider Divider, MiscData.InstanceContainer IC, string Filter, bool ShowUnavailable, out int OutItemsInListBox, out int OutItemsInListBoxFiltered, bool reverse = false)
         {
@@ -515,23 +599,24 @@ namespace MMR_Tracker_V3
             var Groups = Utility.GetCategoriesFromFile(IC.Instance);
             List<object> DataSource = new List<object>();
 
-            var AvailableProxies = DataSets.AvailableProxies;
-            if (ShowAllLocation) { AvailableProxies = DataSets.AllAvailableProxies; }
+            var AvailableProxies = DataSets.ProxyISMarkedOrISAvailableAndUnchecked;
+            if (ShowAllLocation) { AvailableProxies = DataSets.ProxyStateIsNOTChecked; }
 
-            var AvailableLocations = DataSets.AvailableLocations;
-            if (ShowAllLocation) { AvailableLocations = DataSets.AllAvailableLocations; }
+            var AvailableLocations = DataSets.LocationISMarkedOrISAvailableAndUnchecked;
+            if (ShowAllLocation) { AvailableLocations = DataSets.LocationStateIsNOTChecked; }
 
             IEnumerable<object> AvailableLocationsEntries = AvailableLocations.Where(x => !IC.Instance.LocationProxyData.LocationsWithProxys.ContainsKey(x.ID));
             AvailableLocationsEntries = AvailableLocationsEntries.Concat(AvailableProxies);
-            AvailableLocationsEntries = AvailableLocationsEntries.OrderBy(x => (Groups.ContainsKey(GetLocationEntryArea(x, IC.Instance).ToLower().Trim()) ? Groups[GetLocationEntryArea(x, IC.Instance).ToLower().Trim()] : DataSets.AvailableLocations.Count() + 1))
+            AvailableLocationsEntries = AvailableLocationsEntries.OrderByDescending(x => GetLocationEntryAvailablility(x, IC.Instance))
+                .ThenBy(x => (Groups.ContainsKey(GetLocationEntryArea(x, IC.Instance).ToLower().Trim()) ? Groups[GetLocationEntryArea(x, IC.Instance).ToLower().Trim()] : DataSets.LocationISMarkedOrISAvailableAndUnchecked.Count() + 1))
                 .ThenBy(x => GetLocationEntryArea(x, IC.Instance))
                 .ThenBy(x => Utility.GetLocationDisplayName(x, IC)).ToList();
 
             IEnumerable<object> HiddenLocations = AvailableLocationsEntries.Where(x => Utility.DynamicPropertyExist(x, "Hidden") && (x as dynamic).Hidden).OrderBy(x => Utility.GetLocationDisplayName(x, IC));
             AvailableLocationsEntries = AvailableLocationsEntries.Where(x => !Utility.DynamicPropertyExist(x, "Hidden") || !(x as dynamic).Hidden);
 
-            var AvailableHints = DataSets.AvailableHints;
-            if (ShowAllLocation) { AvailableHints = DataSets.AllAvailableHints; }
+            var AvailableHints = DataSets.HIntISMarkedOrISAvailableAndUnchecked;
+            if (ShowAllLocation) { AvailableHints = DataSets.HintStateIsNOTChecked; }
 
             var ItemsInListBox = 0;
             var ItemsInListBoxFiltered = 0;
@@ -731,7 +816,7 @@ namespace MMR_Tracker_V3
                 }
             }
 
-            ValidExits = ValidExits.OrderBy(x => x.DisplayArea(IC.Instance)).ThenBy(x => x.DisplayName).ToList();
+            ValidExits = ValidExits.OrderByDescending(x => x.Available).ThenBy(x => x.DisplayArea(IC.Instance)).ThenBy(x => x.DisplayName).ToList();
             string CurrentArea = "";
             foreach(var i in ValidExits)
             {

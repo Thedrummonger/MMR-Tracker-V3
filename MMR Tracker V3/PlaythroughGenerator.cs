@@ -23,7 +23,6 @@ namespace MMR_Tracker_V3
             _Instance.Instance = Newtonsoft.Json.JsonConvert.DeserializeObject<InstanceData.TrackerInstance>(Newtonsoft.Json.JsonConvert.SerializeObject(instance));
             _IngoredChecks = IngoredChecks??new List<string>();
             _Instance.logicCalculation = new LogicCalculation(_Instance);
-            _Instance.logicCalculation.ReCompileLogicOnCalculation = false;
         }
 
         [Serializable]
