@@ -1,4 +1,5 @@
-﻿using MMR_Tracker_V3.TrackerObjectExtentions;
+﻿using MathNet.Numerics;
+using MMR_Tracker_V3.TrackerObjectExtentions;
 using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
 using System;
@@ -22,6 +23,7 @@ namespace MMR_Tracker_V3
             _Instance.Instance = Newtonsoft.Json.JsonConvert.DeserializeObject<InstanceData.TrackerInstance>(Newtonsoft.Json.JsonConvert.SerializeObject(instance));
             _IngoredChecks = IngoredChecks??new List<string>();
             _Instance.logicCalculation = new LogicCalculation(_Instance);
+            _Instance.logicCalculation.ReCompileLogicOnCalculation = false;
         }
 
         [Serializable]
@@ -43,6 +45,7 @@ namespace MMR_Tracker_V3
             int Sphere = 0;
             PrepareInstance();
             Playthrough.Clear();
+            _Instance.logicCalculation.CompileOptionActionEdits();
             _Instance.logicCalculation.CalculateLogic(MiscData.CheckState.Checked);
 
             var AvailableLocations = _Instance.Instance.LocationPool.Values.Where(x => x.Available && x.CheckState == MiscData.CheckState.Unchecked && x.IsRandomized());

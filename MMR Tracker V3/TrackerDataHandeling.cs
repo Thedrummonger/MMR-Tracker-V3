@@ -69,9 +69,6 @@ namespace MMR_Tracker_V3
             List<HintObject> UpdatedHints = SetHintsCheckState(SelectedObjects, instanceContainer, Options);
             List<LocationObject> HintedLocationsToUpdate = GetHIntedLocationsToUpdated(UpdatedHints, instanceContainer);
 
-            Debug.WriteLine($"Updated Hints:\n{JsonConvert.SerializeObject(UpdatedHints, Formatting.Indented)}");
-            Debug.WriteLine($"HintedLocationsToUpdate:\n{JsonConvert.SerializeObject(HintedLocationsToUpdate, Formatting.Indented)}");
-
             List<LocationObject> UpdatedHintedLocations = SetLocationsCheckState(HintedLocationsToUpdate, instanceContainer, new CheckItemSetting(Options).SetTargetheckState(CheckState.Marked));
 
             UpdatedObjects.AddRange(UpdatedHints);

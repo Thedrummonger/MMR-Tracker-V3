@@ -196,7 +196,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                     try { Instance = InstanceData.TrackerInstance.FromJson(Save); }
                     catch { return false; }
                 }
-                logicCalculation = new LogicCalculation(this);
+                logicCalculation.CompileOptionActionEdits();
                 return true;
             }
         }

@@ -26,10 +26,9 @@ namespace MMR_Tracker_V3
         public Dictionary<object, int> AutoObtainedObjects = new();
         public bool ReCompileLogicOnCalculation = true;
 
-        public LogicCalculation(InstanceContainer _container, bool reCompileLogicOnCalculation = true)
+        public LogicCalculation(InstanceContainer _container)
         {
             container = _container;
-            ReCompileLogicOnCalculation = reCompileLogicOnCalculation;
         }
 
         private bool RequirementsMet(List<string> Requirements, List<string> TempUnlockData)
@@ -158,6 +157,8 @@ namespace MMR_Tracker_V3
 
         public void CompileOptionActionEdits()
         {
+            Debug.WriteLine($"ReCompileLogicOnCalculation:{ReCompileLogicOnCalculation}");
+            LogicMap.Clear();
             var Actions = container.Instance.GetOptionActions();
             Debug.WriteLine("Recompiling Logic");
             foreach (var i in container.Instance.MacroPool) 
@@ -179,6 +180,7 @@ namespace MMR_Tracker_V3
                     LogicMap[container.Instance.GetLogicNameFromExit(i.Value)] = container.Instance.GetLogic(container.Instance.GetLogicNameFromExit(i.Value), actions: Actions);
                 }
             }
+            container.Instance.InstanceReference.OptionActionItemEdits.Clear();
             foreach (var i in container.Instance.LogicEntryCollections)
             {
                 container.Instance.InstanceReference.OptionActionCollectionEdits[i.Key] = i.Value.GetOptionEditDefinedValue(Actions);
@@ -195,8 +197,8 @@ namespace MMR_Tracker_V3
 
         public void CalculateLogic(CheckState checkState = CheckState.Unchecked)
         {
-            Debug.WriteLine(LogicMap.Count);
-            if (ReCompileLogicOnCalculation || LogicMap.Count == 0) { CompileOptionActionEdits(); }
+            bool IncompleteLogicMap = container.Instance.LogicFile.Logic.Any(x => !LogicMap.ContainsKey(x.Id));
+            if (ReCompileLogicOnCalculation || IncompleteLogicMap) { CompileOptionActionEdits(); }
             if (checkState == CheckState.Unchecked) { ResetAutoObtainedItems(); }
             AutoObtainedObjects.Clear();
 
