@@ -34,7 +34,7 @@ namespace WebServer
             var NewNetClient = ReadHandshakePacket(client, serverConfig);
             if (NewNetClient is null) { SendConnectionConfirmation(client, null, "Bad Handshake Packet"); return; }
             if (NewNetClient.ClientMode != serverConfig.ServerGameMode) { SendConnectionConfirmation(client, null, $"Server is configured for {serverConfig.ServerGameMode}, your game mode is {NewNetClient.ClientMode}"); return; }
-            if (!AuthenticateUser(NewNetClient, serverConfig)) { SendConnectionConfirmation(client, null, "Autherntication Failed"); return; }
+            if (!AuthenticateUser(NewNetClient, serverConfig)) { SendConnectionConfirmation(client, null, "Authentication Failed"); return; }
             if (!AddPlayerToClientList(NewNetClient)) { SendConnectionConfirmation(client, null, "Client UUID already existed, this should not have happened!"); return; }
 
             string ConnectionSuccessMessage = $"Connected to web server\n" +
@@ -152,7 +152,6 @@ namespace WebServer
                     Console.WriteLine($"Packet for player {Packet.PlayerID} recieved on player {_ServerClient.PlayerID} client thread");
                     return null;
                 }
-                Console.WriteLine($"Recieved Packet from player {Packet.PlayerID}");
                 switch (Packet.packetType)
                 {
                     case PacketType.ChatMessage: 
@@ -237,21 +236,31 @@ namespace WebServer
 
         private static bool AuthenticateUser(NetData.ServerClient Client, ConfigFile serverConfig)
         {
-            if (Client.PlayerID < 0 || Clients.Any(x => x.Value.PlayerID == Client.PlayerID)) { Console.WriteLine($"{Client.PlayerID} was Invalid"); return false; }
-            var ConnectionResult = ConnectionAllowed(Client.EndPoint, serverConfig);
-            if (ConnectionResult != ConnectionResult.Success) { Console.WriteLine($"{Client.GetIP()} was refused for reason: {ConnectionResult} IP"); return false; }
-            if (!serverConfig.PlayersRequirePassword) { return true; }
-            if (!serverConfig.playerPasswords.ContainsKey(Client.PlayerID)) { Console.WriteLine($"Player {Client.PlayerID} was not entered in user list"); return false; }
-            if (serverConfig.playerPasswords[Client.PlayerID] != Client.Handshake.Password) { Console.WriteLine($"Incorrect Password for Player {Client.PlayerID}"); return false; }
+            if (Client.PlayerID < 0) { Console.WriteLine($"{Client.PlayerID} was Invalid"); return false; }
+            if (Clients.Any(x => x.Value.PlayerID == Client.PlayerID)) { Console.WriteLine($"A player is already connected with ID {Client.PlayerID}"); return false; }
+            if (!ConnectionAllowed(Client, serverConfig)) { return false; }
+            if (!UserLogin(Client, serverConfig)) { return false; }
             return true;
         }
-        private static NetData.ConnectionResult ConnectionAllowed(IPEndPoint? localEndPoint, ConfigFile serverConfig)
+        private static bool UserLogin(NetData.ServerClient Client, ConfigFile serverConfig)
         {
-            var localAddress = localEndPoint?.Address;
-            if (localAddress is null) { return NetData.ConnectionResult.Unknown; }
-            if (serverConfig.IPWhitelist.Any() && !serverConfig.IPWhitelist.Contains(localAddress)) { return NetData.ConnectionResult.NonWhitelisted; }
-            if (serverConfig.IPBlacklist.Any() && serverConfig.IPBlacklist.Contains(localAddress)) { return NetData.ConnectionResult.Blacklisted; }
-            return NetData.ConnectionResult.Success;
+            if (!serverConfig.RequireLogin) { return true; }
+            if (!serverConfig.UserLogins.ContainsKey(Client.PlayerID)) { Console.WriteLine($"Player {Client.PlayerID} was not entered in user list"); return false; }
+            if (serverConfig.UserLogins[Client.PlayerID] != Client.Handshake.Password) { Console.WriteLine($"Incorrect Password for Player {Client.PlayerID}"); return false; }
+            return true;
+        }
+        private static bool ConnectionAllowed(NetData.ServerClient Client, ConfigFile serverConfig)
+        {
+            bool HasWhitelist = serverConfig.IPWhitelist is not null && serverConfig.IPWhitelist.Any();
+            bool HasBalcklist = serverConfig.IPBlacklist is not null && serverConfig.IPBlacklist.Any();
+            var localAddress = Client.EndPoint?.Address;
+
+            #pragma warning disable CS8602
+            if (!HasBalcklist && !HasWhitelist) { return true; };
+            if (localAddress is null) { Console.WriteLine($"Client Connected with invalid IP (P{Client.PlayerID})"); return false; }
+            if (HasWhitelist && !serverConfig.IPWhitelist.Contains(localAddress)) { Console.WriteLine($"{localAddress} was not whitelisted (P{Client.PlayerID})."); return false; }
+            if (HasBalcklist && serverConfig.IPBlacklist.Contains(localAddress)) { Console.WriteLine($"{localAddress} was blacklisted (P{Client.PlayerID})."); return false; }
+            return true;
         }
     }
 }

@@ -75,6 +75,7 @@ namespace TestingForm
                 new DevAction("Create OOTMM Data", GameFileCreation.OOTMMCreateData, UpdateDebugActions),
                 new DevAction("Create PMR Data", GameFileCreation.PMRCreateData, UpdateDebugActions),
                 new DevAction("Connect To Async Web Server P1", OpenWebClient, UpdateDebugActions, () => { return CurrentNetClientForm is null && WinFormTesting.WinformInstanceLoaded();  }),
+                new DevAction("Create PMR Data", TestDictExtention, UpdateDebugActions),
             };
 
             foreach (var Function in DevFunctions)
@@ -82,6 +83,16 @@ namespace TestingForm
                 if (Function.Conitional is not null && !Function.Conitional()) { continue; }
                 listBox1.Items.Add(Function);
             }
+        }
+
+        private void TestDictExtention()
+        {
+            Dictionary<string, int> TestDict = new Dictionary<string, int>();
+            TestDict.Add("T1", 5);
+            TestDict.Add("T2", 5);
+            TestDict.SetIfEmpty("T1", 0);
+            TestDict.SetIfEmpty("T3", 0);
+            Debug.WriteLine(TestDict.ToFormattedJson());
         }
 
         private void OpenWebClient()

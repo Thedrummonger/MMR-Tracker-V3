@@ -5,6 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using static MMR_Tracker_V3.TrackerObjects.ItemData;
@@ -107,7 +108,20 @@ namespace MMR_Tracker_V3.TrackerObjects
             public int OwningPlayer = -1;
             public T GetCheck<T>() { return (T)Check; }
             public T GetItem<T>() { return (T)Item; }
+        }
+
+        public class NetConnection
+        {
+            public NetData.OnlineMode OnlineMode { get; set; } = NetData.OnlineMode.None;
+            public TcpClient ServerConnection { get; set; } = null;
+            public int PlayerID { get; set; } = -1;
+            public void Reset()
+            {
+                OnlineMode = NetData.OnlineMode.None;
+                ServerConnection = null;
+                PlayerID = -1;
             }
+        }
 
         public class InstanceContainer
         {
@@ -117,7 +131,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
             public InstanceData.TrackerInstance Instance { get; set; }
             public LogicCalculation logicCalculation { get; set; }
-            public NetData.OnlineMode OnlineMode { get; set; } = NetData.OnlineMode.None;
+            public NetConnection netConnection { get; set; } = new NetConnection();
             public List<string> UndoStringList { get; set; } = new List<string>();
             public List<string> RedoStringList { get; set; } = new List<string>();
             public string CurrentSavePath { get; set; } = "";

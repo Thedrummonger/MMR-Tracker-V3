@@ -46,6 +46,11 @@ namespace MMR_Tracker_V3
             return source.PickRandom(1).Single();
         }
 
+        public static void SetIfEmpty<T,V>(this Dictionary<T, V> Dict, T Value, V Default)
+        {
+            if (!Dict.ContainsKey(Value)) { Dict[Value] = Default; }
+        }
+
         public static IEnumerable<T> PickRandom<T>(this IEnumerable<T> source, int count)
         {
             return source.Shuffle().Take(count);

@@ -49,6 +49,10 @@ namespace Windows_Form_Frontend
                 numericUpDown1.Visible = false;
                 label2.Visible = false;
             }
+            else
+            {
+                numericUpDown1.Value = _Container.netConnection.PlayerID;
+            }
             button1.Visible = Button;
             button1.Text = ButtonText;
         }
@@ -108,7 +112,7 @@ namespace Windows_Form_Frontend
 
         private void writeItemObjectsAtLocation(LocationData.LocationObject Location)
         {
-            FormatUIItems(_Container.OnlineMode == NetData.OnlineMode.Multiworld, true, "Set Junk");
+            FormatUIItems(_Container.netConnection.OnlineMode == NetData.OnlineMode.Multiworld, true, "Set Junk");
             this.Text = "Select Item at " + Location.GetDictEntry(_Container.Instance).GetName(_Container.Instance);
             List<ItemData.ItemObject> EnteredItems = _Container.Instance.GetValidItemsForLocation(Location, textBox1.Text);
             listBox1.DataSource = EnteredItems;
@@ -126,7 +130,9 @@ namespace Windows_Form_Frontend
                 }
                 else
                 {
-                    _Result.Add(new(LocationObject, ((ItemData.ItemObject)listBox1.SelectedItem).Id, (int)numericUpDown1.Value));
+                    int OwnlingPlayer = (int)numericUpDown1.Value;
+                    if (_Container.netConnection.PlayerID > -1 && _Container.netConnection.PlayerID == OwnlingPlayer) { OwnlingPlayer = -1; }
+                    _Result.Add(new(LocationObject, ((ItemData.ItemObject)listBox1.SelectedItem).Id, OwnlingPlayer));
                     //LocationObject.Randomizeditem.Item = ((ItemData.ItemObject)listBox1.SelectedItem).Id;
                     //LocationObject.Randomizeditem.OwningPlayer = (int)numericUpDown1.Value;
                 }

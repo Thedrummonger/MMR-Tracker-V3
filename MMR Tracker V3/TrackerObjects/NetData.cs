@@ -15,13 +15,6 @@ namespace MMR_Tracker_V3.TrackerObjects
     public class NetData
     {
         public const int DefaultProgramPort = 25570;
-        public enum ConnectionResult
-        {
-            Success,
-            Blacklisted,
-            NonWhitelisted,
-            Unknown
-        }
         public enum PacketType
         {
             None,
@@ -101,15 +94,15 @@ namespace MMR_Tracker_V3.TrackerObjects
             public NetData.OnlineMode ServerGameMode = NetData.OnlineMode.None;
             public List<IPAddress> IPBlacklist = new List<IPAddress>();
             public List<IPAddress> IPWhitelist = new List<IPAddress>();
-            public bool PlayersRequirePassword = false;
-            public Dictionary<int, string> playerPasswords = new Dictionary<int, string>();
+            public bool RequireLogin = false;
+            public Dictionary<int, string> UserLogins = new Dictionary<int, string>();
             public ConfigFile SetDefaultExamples()
             {
                 IPBlacklist.Add(System.Net.IPAddress.Parse("8.8.8.8"));
                 IPBlacklist.Add(System.Net.IPAddress.Parse("8.8.4.4"));
                 for (var i = 1; i <= 4; i++)
                 {
-                    playerPasswords.Add(i, $"Password{i}");
+                    UserLogins.Add(i, $"Password{i}");
                 }
                 return this;
             }

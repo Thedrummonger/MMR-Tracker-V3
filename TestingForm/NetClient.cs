@@ -33,14 +33,12 @@ namespace TestingForm
             ParentForm = testingForm;
             InitializeComponent();
         }
-        public TcpClient? ServerConnection = null;
 
         bool ModeUpdating = false;
         private void NetClient_Load(object sender, EventArgs e)
         {
             ModeUpdating = true;
             MMR_Tracker_V3.TrackerDataHandeling.CheckedObjectsUpdate += TrackerDataHandeling_CheckedObjectsUpdate;
-            Array EnumArray = Enum.GetValues(typeof(NetData.OnlineMode));
 
             txtServerAddress.Text = "127.0.0.1";
             nudPort.Value = 25570;
@@ -53,29 +51,41 @@ namespace TestingForm
 
         private void NetClient_FormClosing(object sender, FormClosingEventArgs e)
         {
-            var result = MessageBox.Show($"Closing this windows will disable the we socket, are you sure?", "Close Net Socket", MessageBoxButtons.YesNo);
-            if (result != DialogResult.Yes) { e.Cancel = true; return; }
+            if(InstanceContainer.netConnection.ServerConnection is not null && InstanceContainer.netConnection.ServerConnection.Connected)
+            {
+                var result = MessageBox.Show($"Closing this windows will disable the active connection, are you sure?", "Close Net Socket", MessageBoxButtons.YesNo);
+                if (result != DialogResult.Yes) { e.Cancel = true; return; }
+            }
             MMR_Tracker_V3.TrackerDataHandeling.CheckedObjectsUpdate -= TrackerDataHandeling_CheckedObjectsUpdate;
             TestingForm.CurrentNetClientForm = null;
             CloseServer("Client Closed Manually");
             ParentForm.UpdateDebugActions();
         }
 
-        public void CloseServer(string Reason = "Unknown")
+        public void CloseServer(string Reason = "Unknown", bool WasConnected = true)
         {
-            bool ServerConnectionNull = ServerConnection is null;
-
-            if (ServerConnectionNull) { return; }
-            
-            Debug.WriteLine($"Server Disconnected\n{Reason}".Split('\n'));
-            PrintToConsole($"Server Disconnected\n{Reason}".Split('\n'));
-            MainInterface.InstanceContainer.OnlineMode = NetData.OnlineMode.None;
-            if (ServerConnection is not null && ServerConnection.Connected)
+            if (WasConnected)
             {
-                ServerConnection.GetStream().Close();
-                ServerConnection.Close();
+                Debug.WriteLine($"Server Disconnected");
+                PrintToConsole($"Server Disconnected");
             }
-            ServerConnection = null;
+            Debug.WriteLine($"{Reason}");
+            PrintToConsole($"{Reason}");
+
+            bool ServerConnectionNull = InstanceContainer.netConnection.ServerConnection is null;
+
+            if (ServerConnectionNull) 
+            {
+                InstanceContainer.netConnection.Reset();
+                return; 
+            }
+            
+            if (InstanceContainer.netConnection.ServerConnection is not null && InstanceContainer.netConnection.ServerConnection.Connected)
+            {
+                InstanceContainer.netConnection.ServerConnection.GetStream().Close();
+                InstanceContainer.netConnection.ServerConnection.Close();
+            }
+            InstanceContainer.netConnection.Reset();
         }
 
         private void PrintToConsole(IEnumerable<string> Content)
@@ -92,16 +102,16 @@ namespace TestingForm
 
         private void TrackerDataHandeling_CheckedObjectsUpdate(List<object> arg1, MMR_Tracker_V3.InstanceData.TrackerInstance arg2)
         {
-            var LocationsUpdated = arg1.Where(x => x is LocationData.LocationObject).Select(x => (LocationData.LocationObject)x);
+            var LocationsUpdated = arg1.Where(x => x is LocationData.LocationObject lo && lo.Randomizeditem.OwningPlayer > -1).Select(x => (LocationData.LocationObject)x);
             if (!LocationsUpdated.Any(x => x.CheckState == MiscData.CheckState.Checked)) { return; }
-            if (ServerConnection is null || !ServerConnection.Connected) { return; }
+            if (InstanceContainer.netConnection.ServerConnection is null || !InstanceContainer.netConnection.ServerConnection.Connected) { return; }
             if (!chkSendData.Checked) { return; }
 
-            var packet = CreateCheckedItemPacket(InstanceContainer.OnlineMode, arg2);
+            var packet = CreateCheckedItemPacket(InstanceContainer.netConnection.OnlineMode, arg2);
             if (packet == null) { return; }
 
             byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(packet.ToFormattedJson());
-            ServerConnection.GetStream().Write(bytesToSend, 0, bytesToSend.Length);
+            InstanceContainer.netConnection.ServerConnection.GetStream().Write(bytesToSend, 0, bytesToSend.Length);
         }
 
         private NetData.NetPacket? CreateCheckedItemPacket(NetData.OnlineMode onlineMode, MMR_Tracker_V3.InstanceData.TrackerInstance arg2)
@@ -144,9 +154,15 @@ namespace TestingForm
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
-            if (ServerConnection is null || !ServerConnection.Connected)
+            if (InstanceContainer.netConnection.ServerConnection is null || !InstanceContainer.netConnection.ServerConnection.Connected)
             {
-                if (!NetData.IsIpAddress(txtServerAddress.Text, out _)) { return; }
+                if (!NetData.IsIpAddress(txtServerAddress.Text, out _))
+                {
+                    PrintToConsole($"{txtServerAddress.Text} Was not a valid IP address");
+                    return; 
+                }
+                PrintToConsole($"Connecting to server {txtServerAddress.Text}:{nudPort.Value}");
+                lbConsole.Refresh();
                 ConnectToWebServer();
             }
             else
@@ -158,7 +174,7 @@ namespace TestingForm
 
         public void UpdateUI()
         {
-            bool Connected = ServerConnection is not null && ServerConnection.Connected;
+            bool Connected = InstanceContainer.netConnection.ServerConnection is not null && InstanceContainer.netConnection.ServerConnection.Connected;
             //btnConnect.Enabled = !Connected;
             btnConnect.Text = Connected ? "Disconnect" : "Connect";
             txtServerAddress.Enabled = !Connected;
@@ -174,30 +190,29 @@ namespace TestingForm
             int PlayerID = (int)nudPlayer.Value;
             try
             {
-                ServerConnection = new TcpClient(txtServerAddress.Text, (int)nudPort.Value);
-                ServerConnection.LingerState = new LingerOption(true, 0);
+                InstanceContainer.netConnection.ServerConnection = new TcpClient(txtServerAddress.Text, (int)nudPort.Value);
+                InstanceContainer.netConnection.ServerConnection.LingerState = new LingerOption(true, 0);
                 NetData.NetPacket HandshakePacket = new NetData.NetPacket(PlayerID, NetData.PacketType.None, txtPassword.Text);
                 byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(HandshakePacket.ToFormattedJson());
-                ServerConnection.GetStream().Write(bytesToSend, 0, bytesToSend.Length);
-                byte[] buffer = new byte[ServerConnection.ReceiveBufferSize];
-                int bytesRead = ServerConnection.GetStream().Read(buffer, 0, ServerConnection.ReceiveBufferSize);
+                InstanceContainer.netConnection.ServerConnection.GetStream().Write(bytesToSend, 0, bytesToSend.Length);
+                byte[] buffer = new byte[InstanceContainer.netConnection.ServerConnection.ReceiveBufferSize];
+                int bytesRead = InstanceContainer.netConnection.ServerConnection.GetStream().Read(buffer, 0, InstanceContainer.netConnection.ServerConnection.ReceiveBufferSize);
                 string dataReceived = Encoding.ASCII.GetString(buffer, 0, bytesRead);
                 var ConfirmationHandshake = JsonConvert.DeserializeObject<NetData.NetPacket>(dataReceived);
                 if (!ConfirmationHandshake.HandshakeResponse.ConnectionSuccess)
                 {
-                    PrintToConsole("Failed to connect to server!");
+                    CloseServer("Failed to connect to server!", false);
                     PrintToConsole(ConfirmationHandshake.HandshakeResponse.ConnectionStatus.Split('\n'));
-                    ServerConnection = null;
                     return;
                 }
                 PrintToConsole(ConfirmationHandshake.HandshakeResponse.ConnectionStatus.Split('\n'));
-                InstanceContainer.OnlineMode = ConfirmationHandshake.HandshakeResponse.ClientMode;
+                InstanceContainer.netConnection.OnlineMode = ConfirmationHandshake.HandshakeResponse.ClientMode;
+                InstanceContainer.netConnection.PlayerID = ConfirmationHandshake.HandshakeResponse.PlayerID;
             }
             catch (Exception e)
             {
-                PrintToConsole("Failed to connect to server!");
-                PrintToConsole(e.Message);
-                ServerConnection = null;
+                Debug.WriteLine(e.Message);
+                CloseServer(e.Message, false);
                 return;
             }
             UpdateUI();
@@ -209,14 +224,14 @@ namespace TestingForm
         private async Task<string> OpenListenThread()
         {
             string ExitReason = "Unknown";
-            while (ServerConnection is not null && ServerConnection.Connected)
+            while (InstanceContainer.netConnection.ServerConnection is not null && InstanceContainer.netConnection.ServerConnection.Connected)
             {
                 Debug.WriteLine("Listening for data");
                 string dataReceived;
                 try
                 {
-                    byte[] buffer = new byte[ServerConnection.ReceiveBufferSize];
-                    int bytesRead = await ServerConnection.GetStream().ReadAsync(buffer, 0, ServerConnection.ReceiveBufferSize);
+                    byte[] buffer = new byte[InstanceContainer.netConnection.ServerConnection.ReceiveBufferSize];
+                    int bytesRead = await InstanceContainer.netConnection.ServerConnection.GetStream().ReadAsync(buffer, 0, InstanceContainer.netConnection.ServerConnection.ReceiveBufferSize);
                     dataReceived = Encoding.ASCII.GetString(buffer, 0, bytesRead);
                 }
                 catch (Exception e) { ExitReason = "Server Closed"; break; }
@@ -254,16 +269,22 @@ namespace TestingForm
         private void btnSendChat_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtChatMessage.Text)) { return; }
-            if (ServerConnection is null || !ServerConnection.Connected) { return; }
+            if (InstanceContainer.netConnection.ServerConnection is null || !InstanceContainer.netConnection.ServerConnection.Connected) { return; }
 
             NetData.NetPacket packet = new NetData.NetPacket((int)nudPlayer.Value, PacketType.ChatMessage, txtPassword.Text);
             Guid ChatGuid = Guid.NewGuid();
             packet.ChatMessage = new ChatMessage((int)nudPlayer.Value, ChatGuid, txtChatMessage.Text);
             PrintToConsole($"Player {nudPlayer.Value} (You): {packet.ChatMessage.Message}");
             byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(packet.ToFormattedJson());
-            ServerConnection.GetStream().Write(bytesToSend, 0, bytesToSend.Length);
+            InstanceContainer.netConnection.ServerConnection.GetStream().Write(bytesToSend, 0, bytesToSend.Length);
 
             txtChatMessage.Text = string.Empty;
+        }
+
+        private void chkShowPass_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkShowPass.Checked) { txtPassword.PasswordChar = '\0'; }
+            else { txtPassword.PasswordChar = '*'; }
         }
     }
 }

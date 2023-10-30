@@ -46,6 +46,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.chkProcessData = new System.Windows.Forms.CheckBox();
             this.btnProcessData = new System.Windows.Forms.Button();
+            this.chkShowPass = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudPort)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPlayer)).BeginInit();
             this.SuspendLayout();
@@ -186,6 +187,7 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(66, 71);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(100, 23);
             this.txtPassword.TabIndex = 15;
             // 
@@ -217,11 +219,23 @@
             this.btnProcessData.Text = "Process Recieved Data";
             this.btnProcessData.UseVisualStyleBackColor = true;
             // 
+            // chkShowPass
+            // 
+            this.chkShowPass.AutoSize = true;
+            this.chkShowPass.Location = new System.Drawing.Point(111, 103);
+            this.chkShowPass.Name = "chkShowPass";
+            this.chkShowPass.Size = new System.Drawing.Size(55, 19);
+            this.chkShowPass.TabIndex = 19;
+            this.chkShowPass.Text = "Show";
+            this.chkShowPass.UseVisualStyleBackColor = true;
+            this.chkShowPass.CheckedChanged += new System.EventHandler(this.chkShowPass_CheckedChanged);
+            // 
             // NetClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(391, 232);
+            this.Controls.Add(this.chkShowPass);
             this.Controls.Add(this.btnProcessData);
             this.Controls.Add(this.chkProcessData);
             this.Controls.Add(this.label6);
@@ -268,5 +282,6 @@
         private Label label6;
         private CheckBox chkProcessData;
         private Button btnProcessData;
+        private CheckBox chkShowPass;
     }
 }

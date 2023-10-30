@@ -72,6 +72,8 @@ namespace WebServer
             var serverListenter = new TcpListener(cfg.IPAddress, cfg.Port);
             serverListenter.Start();
 
+            string IpString = cfg.IPAddress.ToString() == "0.0.0.0" ? "*:" : $"IP {cfg.IPAddress}:";
+            Console.WriteLine($"Server active on {IpString}{cfg.Port}");
 
             ConnectionManager.WaitForNewClient(serverListenter, cfg);
 
