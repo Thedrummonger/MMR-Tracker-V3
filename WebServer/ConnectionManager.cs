@@ -33,7 +33,6 @@ namespace WebServer
         {
             var NewNetClient = ReadHandshakePacket(client, serverConfig);
             if (NewNetClient is null) { SendConnectionConfirmation(client, null, "Bad Handshake Packet"); return; }
-            if (NewNetClient.ClientMode != serverConfig.ServerGameMode) { SendConnectionConfirmation(client, null, $"Server is configured for {serverConfig.ServerGameMode}, your game mode is {NewNetClient.ClientMode}"); return; }
             if (!AuthenticateUser(NewNetClient, serverConfig)) { SendConnectionConfirmation(client, null, "Authentication Failed"); return; }
             if (!AddPlayerToClientList(NewNetClient)) { SendConnectionConfirmation(client, null, "Client UUID already existed, this should not have happened!"); return; }
 
@@ -201,9 +200,9 @@ namespace WebServer
             { 
                 NetClient = client, 
                 ClientMode = serverConfig.ServerGameMode, 
-                ClientID = Guid.NewGuid()
+                ClientID = Guid.NewGuid(),
+                EndPoint = client.Client.RemoteEndPoint as IPEndPoint
             };
-            _ServerClient.EndPoint = _ServerClient.NetClient.Client.RemoteEndPoint as IPEndPoint;
             try
             {
                 _ServerClient.Handshake = JsonConvert.DeserializeObject<NetData.NetPacket>(HandShake);
