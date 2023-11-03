@@ -47,6 +47,7 @@
             this.chkProcessData = new System.Windows.Forms.CheckBox();
             this.btnProcessData = new System.Windows.Forms.Button();
             this.chkShowPass = new System.Windows.Forms.CheckBox();
+            this.chkAllowCheck = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudPort)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPlayer)).BeginInit();
             this.SuspendLayout();
@@ -103,7 +104,7 @@
             this.chkSendData.AutoSize = true;
             this.chkSendData.Checked = true;
             this.chkSendData.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkSendData.Location = new System.Drawing.Point(11, 144);
+            this.chkSendData.Location = new System.Drawing.Point(11, 128);
             this.chkSendData.Name = "chkSendData";
             this.chkSendData.Size = new System.Drawing.Size(126, 19);
             this.chkSendData.TabIndex = 7;
@@ -115,7 +116,7 @@
             this.chkRecieveData.AutoSize = true;
             this.chkRecieveData.Checked = true;
             this.chkRecieveData.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkRecieveData.Location = new System.Drawing.Point(11, 160);
+            this.chkRecieveData.Location = new System.Drawing.Point(11, 144);
             this.chkRecieveData.Name = "chkRecieveData";
             this.chkRecieveData.Size = new System.Drawing.Size(155, 19);
             this.chkRecieveData.TabIndex = 8;
@@ -203,7 +204,7 @@
             // chkProcessData
             // 
             this.chkProcessData.AutoSize = true;
-            this.chkProcessData.Location = new System.Drawing.Point(11, 176);
+            this.chkProcessData.Location = new System.Drawing.Point(11, 160);
             this.chkProcessData.Name = "chkProcessData";
             this.chkProcessData.Size = new System.Drawing.Size(169, 19);
             this.chkProcessData.TabIndex = 17;
@@ -218,6 +219,7 @@
             this.btnProcessData.TabIndex = 18;
             this.btnProcessData.Text = "Process Recieved Data";
             this.btnProcessData.UseVisualStyleBackColor = true;
+            this.btnProcessData.Click += new System.EventHandler(this.btnProcessData_Click);
             // 
             // chkShowPass
             // 
@@ -230,11 +232,22 @@
             this.chkShowPass.UseVisualStyleBackColor = true;
             this.chkShowPass.CheckedChanged += new System.EventHandler(this.chkShowPass_CheckedChanged);
             // 
+            // chkAllowCheck
+            // 
+            this.chkAllowCheck.AutoSize = true;
+            this.chkAllowCheck.Location = new System.Drawing.Point(11, 178);
+            this.chkAllowCheck.Name = "chkAllowCheck";
+            this.chkAllowCheck.Size = new System.Drawing.Size(163, 19);
+            this.chkAllowCheck.TabIndex = 20;
+            this.chkAllowCheck.Text = "Allow Checking Locations";
+            this.chkAllowCheck.UseVisualStyleBackColor = true;
+            // 
             // NetClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(391, 232);
+            this.Controls.Add(this.chkAllowCheck);
             this.Controls.Add(this.chkShowPass);
             this.Controls.Add(this.btnProcessData);
             this.Controls.Add(this.chkProcessData);
@@ -283,5 +296,6 @@
         private CheckBox chkProcessData;
         private Button btnProcessData;
         private CheckBox chkShowPass;
+        private CheckBox chkAllowCheck;
     }
 }

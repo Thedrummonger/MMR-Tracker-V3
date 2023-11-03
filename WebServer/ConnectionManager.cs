@@ -34,7 +34,7 @@ namespace WebServer
             var NewNetClient = ReadHandshakePacket(client, serverConfig);
             if (NewNetClient is null) { SendConnectionConfirmation(client, null, "Bad Handshake Packet"); return; }
             if (!AuthenticateUser(NewNetClient, serverConfig)) { SendConnectionConfirmation(client, null, "Authentication Failed"); return; }
-            if (!AddPlayerToClientList(NewNetClient)) { SendConnectionConfirmation(client, null, "Client UUID already existed, this should not have happened!"); return; }
+            if (!AddPlayerToClientList(NewNetClient)) { SendConnectionConfirmation(client, null, "Unknown Server error"); return; }
 
             string ConnectionSuccessMessage = $"Connected to web server\n" +
                 $"PlayerID: {NewNetClient.PlayerID}\n" +
@@ -100,8 +100,15 @@ namespace WebServer
                 {
                     Console.WriteLine($"P{packet.PlayerID}: {packet.ChatMessage.Message}");
                 }
-
-                UpdateClients(packet);
+                HashSet<Guid> IngoreList = new HashSet<Guid> { _ServerClient.ClientID };
+                if (packet.UpdateWhitelist is not null) 
+                { 
+                    foreach(var i in Clients)
+                    {
+                        if (!packet.UpdateWhitelist.Contains(i.Value.PlayerID) && !IngoreList.Contains(i.Key)) { IngoreList.Add(i.Key); }
+                    }
+                }
+                UpdateClients(packet, IngoreList);
 
             }
         }
@@ -118,7 +125,7 @@ namespace WebServer
                     Update.ChatMessage = MostRecentchat;
                     break;
                 case PacketType.OnlineSynedLocations:
-                    Update.LcationData = AsyncServerTest.GetCheckedLocations();
+                    Update.LocationData = AsyncServerTest.GetCheckedLocations();
                     break;
                 case PacketType.MultiWorldItems:
                     foreach(var k in Clients) { PlayerMultiworldItemData[k.Key] = AsyncServerTest.GetItemsBelongingToPlayer(k.Value.PlayerID); }
@@ -157,7 +164,7 @@ namespace WebServer
                         PlayerChat.Add(Packet.ChatMessage.guid, Packet.ChatMessage);
                         break;
                     case PacketType.OnlineSynedLocations:
-                        _ServerClient.OnlineLocationData = Packet.LcationData;
+                        _ServerClient.OnlineLocationData = Packet.LocationData;
                         break;
                     case PacketType.MultiWorldItems:
                         _ServerClient.MultiworldItemData = Packet.ItemData;
@@ -219,7 +226,11 @@ namespace WebServer
 
         public static bool AddPlayerToClientList(NetData.ServerClient client)
         {
-            if (Clients.ContainsKey(client.ClientID)) { return false; }
+            if (Clients.ContainsKey(client.ClientID)) 
+            {
+                Console.WriteLine($"Client UUID {client.ClientID} already existed, this should not have happened!");
+                return false; 
+            }
             Clients.Add(client.ClientID, client);
             return true;
         }

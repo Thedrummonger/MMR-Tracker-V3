@@ -27,8 +27,7 @@ namespace WebServer
             {
                 Console.WriteLine("Select Game Mode");
                 Console.WriteLine("1. Co-Op");
-                Console.WriteLine("2. Online");
-                Console.WriteLine("3. MultiWorld");
+                Console.WriteLine("2. MultiWorld");
                 selectGM:
                 var gmSelect = Console.ReadKey();
                 switch (gmSelect.Key)
@@ -38,9 +37,6 @@ namespace WebServer
                         cfg.ServerGameMode = NetData.OnlineMode.Coop; break;
                     case ConsoleKey.NumPad2:
                     case ConsoleKey.D2:
-                        cfg.ServerGameMode = NetData.OnlineMode.Online; break;
-                    case ConsoleKey.NumPad3:
-                    case ConsoleKey.D3:
                         cfg.ServerGameMode = NetData.OnlineMode.Multiworld; break;
                     default:
                         goto selectGM;
@@ -83,6 +79,10 @@ namespace WebServer
                 if (Stuff == "clients")
                 {
                     Console.WriteLine($"Connected {cfg.ServerGameMode} Clients:\n" + string.Join("\n", Clients.Select(x => $"{x.Key}|{x.Value.EndPoint?.Address}")));
+                }
+                else if (Stuff == "debug")
+                {
+                    Console.WriteLine(Clients.ToFormattedJson());
                 }
                 else
                 {

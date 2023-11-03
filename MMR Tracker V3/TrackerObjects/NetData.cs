@@ -28,8 +28,6 @@ namespace MMR_Tracker_V3.TrackerObjects
             None = 0,
             [Description("Co-op")]
             Coop = 1,
-            [Description("Online (Synced)")]
-            Online = 2,
             [Description("Multiworld")]
             Multiworld = 3
         }
@@ -45,8 +43,10 @@ namespace MMR_Tracker_V3.TrackerObjects
             public int PlayerID;
             public string Password;
             public PacketType packetType = PacketType.None;
+            public MiscData.CheckState ClientCheckAction;
+            public int[] UpdateWhitelist = null;
+            public Dictionary<string, string> LocationData = new Dictionary<string, string>();
             //Dictionary<PlayerID, Dictionary<ItemID, ItemAmount>>
-            public Dictionary<string, string> LcationData = new Dictionary<string, string>();
             public Dictionary<int,Dictionary<string, int>> ItemData = null;
             public ChatMessage ChatMessage = null;
             public HandshakeResponse HandshakeResponse = null;
@@ -67,8 +67,11 @@ namespace MMR_Tracker_V3.TrackerObjects
         public class ServerClient
         {
             public Guid ClientID;
+            [Newtonsoft.Json.JsonIgnore]
             public TcpClient NetClient;
+            [Newtonsoft.Json.JsonIgnore]
             public NetPacket Handshake;
+            [Newtonsoft.Json.JsonIgnore]
             public IPEndPoint EndPoint;
             public int PlayerID;
             public NetData.OnlineMode ClientMode;
