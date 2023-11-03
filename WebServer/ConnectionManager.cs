@@ -54,7 +54,7 @@ namespace WebServer
         {
             var NotifyChatMessage = Guid.NewGuid();
             PlayerChat.Add(NotifyChatMessage, new NetData.ChatMessage(-1, NotifyChatMessage, $"Player {newNetClient.PlayerID} joined the server."));
-            ConnectionManager.UpdateClients(new NetData.NetPacket(-1, NetData.PacketType.ChatMessage) { ChatMessage = PlayerChat.Last().Value }, new HashSet<Guid> { newNetClient.ClientID });
+            ConnectionManager.UpdateClients(new NetData.NetPacket(-1, NetData.PacketType.ChatMessage) { ChatMessage = PlayerChat.Last().Value }, Clients.Values.Where(x => x.PlayerID != newNetClient.PlayerID));
         }
 
         private static void SendConnectionConfirmation(TcpClient client, ServerClient? serverClient, string ConnectionStatus)
@@ -65,7 +65,7 @@ namespace WebServer
             Guid ClientID = NoClient ? Guid.Empty : serverClient.ClientID;
             NetData.OnlineMode ClientMode = NoClient ? NetData.OnlineMode.None: serverClient.ClientMode;
 
-            var confirmationPacket = new NetPacket(PlayerID, PacketType.None);
+            var confirmationPacket = new NetPacket(PlayerID, PacketType.Handshake);
 
             confirmationPacket.HandshakeResponse = new HandshakeResponse 
             { 
@@ -100,22 +100,21 @@ namespace WebServer
                 {
                     Console.WriteLine($"P{packet.PlayerID}: {packet.ChatMessage.Message}");
                 }
-                HashSet<Guid> IngoreList = new HashSet<Guid> { _ServerClient.ClientID };
-                if (packet.UpdateWhitelist is not null) 
-                { 
-                    foreach(var i in Clients)
-                    {
-                        if (!packet.UpdateWhitelist.Contains(i.Value.PlayerID) && !IngoreList.Contains(i.Key)) { IngoreList.Add(i.Key); }
-                    }
-                }
-                UpdateClients(packet, IngoreList);
+
+                UpdateClients(packet, GetPlayersToUpdate(packet));
 
             }
         }
 
-        public static void UpdateClients(NetPacket packet, HashSet<Guid>? _ingorePlayers = null)
+        public static IEnumerable<ServerClient> GetPlayersToUpdate(NetPacket ServerPacket)
         {
-            HashSet<Guid> ingorePlayers = _ingorePlayers??new HashSet<Guid>();
+            return Clients.Values.Where(x => 
+            x.PlayerID != ServerPacket.PlayerID && 
+            (ServerPacket.UpdateWhitelist is null || ServerPacket.UpdateWhitelist.Contains(x.PlayerID)));
+        }
+
+        public static void UpdateClients(NetPacket packet, IEnumerable<ServerClient> _PlayerToUpdate)
+        {
             Dictionary<Guid, Dictionary<int, Dictionary<string, int>>> PlayerMultiworldItemData = new Dictionary<Guid, Dictionary<int, Dictionary<string, int>>>();
             NetPacket Update = new NetPacket(-1, packet.packetType);
             switch (packet.packetType)
@@ -134,16 +133,15 @@ namespace WebServer
                     return;
             };
             string PacketString = Update.ToFormattedJson();
-            foreach (var Client in Clients)
+            foreach (var Client in _PlayerToUpdate)
             {
-                if (Client.Value.PlayerID == packet.PlayerID || ingorePlayers.Contains(Client.Key)) { continue; }
                 if (packet.packetType == PacketType.MultiWorldItems) 
                 {
-                    Update.ItemData = PlayerMultiworldItemData[Client.Key];
+                    Update.ItemData = PlayerMultiworldItemData[Client.ClientID];
                     PacketString = Update.ToFormattedJson();
                 }
                 byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(PacketString);
-                Client.Value.NetClient.GetStream().Write(bytesToSend, 0, bytesToSend.Length);
+                Client.NetClient.GetStream().Write(bytesToSend, 0, bytesToSend.Length);
             }
         }
 
@@ -213,6 +211,10 @@ namespace WebServer
             try
             {
                 _ServerClient.Handshake = JsonConvert.DeserializeObject<NetData.NetPacket>(HandShake);
+                if (_ServerClient.Handshake.packetType != PacketType.Handshake)
+                {
+                    Console.WriteLine($"{_ServerClient.GetIP()} Connection packet was not handshake"); 
+                    return null; }
                 _ServerClient.PlayerID = _ServerClient.Handshake.PlayerID;
                 Console.WriteLine($"Player {_ServerClient.PlayerID} Connect from {_ServerClient.GetIP()}:{_ServerClient.GetPort()}");
             }

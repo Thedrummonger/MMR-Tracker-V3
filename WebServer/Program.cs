@@ -88,7 +88,7 @@ namespace WebServer
                 {
                     var ServerChatGuid = Guid.NewGuid();
                     PlayerChat.Add(ServerChatGuid, new NetData.ChatMessage(-1, ServerChatGuid, Stuff));
-                    ConnectionManager.UpdateClients(new NetData.NetPacket(-1, NetData.PacketType.ChatMessage) { ChatMessage = PlayerChat.Last().Value });
+                    ConnectionManager.UpdateClients(new NetData.NetPacket(-1, NetData.PacketType.ChatMessage) { ChatMessage = PlayerChat.Last().Value }, Clients.Values);
                 }
             }
         }
@@ -98,14 +98,10 @@ namespace WebServer
             Dictionary<int, Dictionary<string, int>> MultiworldItemsForPlayer = new();
             foreach (var i in Clients)
             {
-                if (i.Value.PlayerID == PlayerID) { continue; }
+                if (i.Value.PlayerID == PlayerID || i.Value.MultiworldItemData is null) { continue; }
                 if (i.Value.MultiworldItemData.ContainsKey(PlayerID))
                 {
                     MultiworldItemsForPlayer.Add(i.Value.PlayerID, i.Value.MultiworldItemData[PlayerID]);
-                }
-                if (i.Value.MultiworldItemData.ContainsKey(-1))
-                {
-                    MultiworldItemsForPlayer.Add(-1, i.Value.MultiworldItemData[PlayerID]);
                 }
             }
             return MultiworldItemsForPlayer;
@@ -115,6 +111,7 @@ namespace WebServer
             Dictionary<string, string> AllCheckedLocations = new Dictionary<string, string>();
             foreach (var c in Clients)
             {
+                if (c.Value.OnlineLocationData is null) { continue; }   
                 foreach(var l in c.Value.OnlineLocationData)
                 {
                     AllCheckedLocations[l.Key] = l.Value;
