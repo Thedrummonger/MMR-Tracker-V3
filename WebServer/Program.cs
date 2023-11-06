@@ -80,47 +80,17 @@ namespace WebServer
                 {
                     Console.WriteLine($"Connected {cfg.ServerGameMode} Clients:\n" + string.Join("\n", Clients.Select(x => $"{x.Key}|{x.Value.EndPoint?.Address}")));
                 }
-                else if (Stuff == "debug")
+                else if (command == "debug")
                 {
                     Console.WriteLine(Clients.ToFormattedJson());
                 }
                 else
                 {
                     var ServerChatGuid = Guid.NewGuid();
-                    PlayerChat.Add(ServerChatGuid, new NetData.ChatMessage(-1, ServerChatGuid, Stuff));
-                    ConnectionManager.UpdateClients(new NetData.NetPacket(-1, NetData.PacketType.ChatMessage) { ChatMessage = PlayerChat.Last().Value });
+                    PlayerChat.Add(ServerChatGuid, new NetData.ChatMessage(-1, ServerChatGuid, command));
+                    ConnectionManager.UpdateClients(new NetData.NetPacket(-1, NetData.PacketType.ChatMessage) { ChatMessage = PlayerChat.Last().Value }, Utility.GetPlayersExcept(), Utility.GetPlayersExcept());
                 }
             }
-        }
-
-        public static Dictionary<int, Dictionary<string, int>> GetItemsBelongingToPlayer(int PlayerID)
-        {
-            Dictionary<int, Dictionary<string, int>> MultiworldItemsForPlayer = new();
-            foreach (var i in Clients)
-            {
-                if (i.Value.PlayerID == PlayerID) { continue; }
-                if (i.Value.MultiworldItemData.ContainsKey(PlayerID))
-                {
-                    MultiworldItemsForPlayer.Add(i.Value.PlayerID, i.Value.MultiworldItemData[PlayerID]);
-                }
-                if (i.Value.MultiworldItemData.ContainsKey(-1))
-                {
-                    MultiworldItemsForPlayer.Add(-1, i.Value.MultiworldItemData[PlayerID]);
-                }
-            }
-            return MultiworldItemsForPlayer;
-        }
-        public static Dictionary<string, string> GetCheckedLocations()
-        {
-            Dictionary<string, string> AllCheckedLocations = new Dictionary<string, string>();
-            foreach (var c in Clients)
-            {
-                foreach(var l in c.Value.OnlineLocationData)
-                {
-                    AllCheckedLocations[l.Key] = l.Value;
-                }
-            }
-            return AllCheckedLocations;
         }
 
     }
