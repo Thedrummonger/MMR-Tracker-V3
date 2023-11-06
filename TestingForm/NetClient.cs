@@ -152,7 +152,7 @@ namespace TestingForm
                 {
                     if (Player.Value < 1) { continue; }
                     if (!PlayersSentItem.ContainsKey(Player.Key)) { PlayersSentItem[Player.Key] = new Dictionary<string, int>(); }
-                    PlayersSentItem[Player.Key][Item.Key] = Player.Value;
+                    PlayersSentItem[Player.Key][Item.Value.GetDictEntry(instance).GetName(instance)] = Player.Value;
                 }
             }
             return PlayersSentItem;
@@ -195,7 +195,7 @@ namespace TestingForm
             chkShowPass.Enabled = !Connected;
             txtChatMessage.Enabled = Connected;
             btnSendChat.Enabled = Connected;
-            btnProcessData.Enabled = LocationDataToProcess.Any() && Connected && !chkProcessData.Checked;
+            btnProcessData.Enabled = (LocationDataToProcess.Any() || ItemDataToProcess.Any()) && Connected && !chkProcessData.Checked;
             chkAllowCheck.Enabled = InstanceContainer.netConnection.OnlineMode != OnlineMode.Multiworld;
             if (chkShowPass.Checked) { txtPassword.PasswordChar = '\0'; }
             else { txtPassword.PasswordChar = '*'; }
@@ -273,6 +273,7 @@ namespace TestingForm
                     ParseSharedLocationData(packet);
                     break;
                 case NetData.PacketType.MultiWorldItems:
+                    ParseMultiWorldData(packet);
                     break;
                 case NetData.PacketType.ChatMessage:
                     string PlayerName = packet.ChatMessage.PlayerID < 0 ? "Server" : $"Player {packet.ChatMessage.PlayerID}";
@@ -283,16 +284,76 @@ namespace TestingForm
             }
         }
 
+        private void btnProcessData_Click(object sender, EventArgs e)
+        {
+            if (InstanceContainer.netConnection.OnlineMode == OnlineMode.Coop)
+            {
+                ProcessSharedLocations();
+            }
+            else if (InstanceContainer.netConnection.OnlineMode == OnlineMode.Multiworld)
+            {
+                ProcessMultiworldItems();
+            }
+            UpdateUI();
+        }
+
+        private Dictionary<int, Dictionary<string, int>> ItemDataToProcess = new Dictionary<int, Dictionary<string, int>>();
+
+        private void ParseMultiWorldData(NetPacket packet)
+        {
+            foreach(var PlayerData in packet.ItemData)
+            {
+                foreach(var ItemData in PlayerData.Value)
+                {
+                    ItemDataToProcess.SetIfEmpty(PlayerData.Key, new Dictionary<string, int>());
+                    ItemDataToProcess[PlayerData.Key][ItemData.Key] = ItemData.Value;
+                }
+            }
+            if (chkProcessData.Checked)
+            {
+                ProcessMultiworldItems();
+            }
+            UpdateUI();
+        }
+
+        private void ProcessMultiworldItems()
+        {
+            foreach(var item in InstanceContainer.Instance.ItemPool)
+            {
+                foreach(var Player in ItemDataToProcess.Keys)
+                {
+                    if (item.Value.AmountAquiredOnline.ContainsKey(Player)) { item.Value.AmountAquiredOnline.Remove(Player); }
+                }
+            }
+
+            foreach(var players in ItemDataToProcess)
+            {
+                foreach(var items in players.Value)
+                {
+                    var ValidItem = InstanceContainer.Instance.GetItemToPlace(items.Key, false, true);
+                    if (ValidItem is null) { continue; }
+                    ValidItem.AmountAquiredOnline.SetIfEmpty(players.Key, 0);
+                    ValidItem.AmountAquiredOnline[players.Key]++;
+                }
+            }
+            ItemDataToProcess.Clear();
+            MainInterface.InstanceContainer.logicCalculation.CalculateLogic();
+            MainInterface.CurrentProgram.UpdateUI();
+        }
+
         private Dictionary<string, string> LocationDataToProcess = new Dictionary<string, string>();
 
         private void ParseSharedLocationData(NetPacket packet)
         {
-            LocationDataToProcess = packet.LocationData;
-            btnProcessData.Enabled = LocationDataToProcess.Any();
+            foreach(var i in packet.LocationData.Keys)
+            {
+                LocationDataToProcess[i] = packet.LocationData[i];
+            }
             if (chkProcessData.Checked)
             {
                 ProcessSharedLocations();
             }
+            UpdateUI();
         }
 
         private void ProcessSharedLocations()
@@ -308,23 +369,14 @@ namespace TestingForm
                 LocationList.Add(Location);
             }
 
-            var CheckObjectOptions = new CheckItemSetting(CheckAction).SetEnforceMarkAction(true).SetCheckUnassignedLocations(HandleUnassignedWebChecks);
+            var CheckObjectOptions = new CheckItemSetting(CheckAction).SetEnforceMarkAction(true).SetCheckUnassignedLocations(LocationDataToProcess);
 
             TrackerDataHandeling.SetLocationsCheckState(LocationList, InstanceContainer, CheckObjectOptions);
+
+            LocationDataToProcess.Clear();
             MainInterface.InstanceContainer.logicCalculation.CalculateLogic();
             MainInterface.CurrentProgram.UpdateUI();
-            btnProcessData.Enabled = false;
 
-            List<ManualCheckObjectResult> HandleUnassignedWebChecks(IEnumerable<object> objects, InstanceContainer instanceContainer)
-            {
-                List<ManualCheckObjectResult> Results = new List<ManualCheckObjectResult>();
-                foreach (var obj in objects)
-                {
-                    LocationData.LocationObject location = obj as LocationData.LocationObject;
-                    Results.Add(new ManualCheckObjectResult(location, LocationDataToProcess[location.ID]));
-                }
-                return Results;
-            }
         }
 
         private void btnSendChat_Click(object sender, EventArgs e)
@@ -345,14 +397,6 @@ namespace TestingForm
         private void chkOption_CheckedChanged(object sender, EventArgs e)
         {
             UpdateUI();
-        }
-
-        private void btnProcessData_Click(object sender, EventArgs e)
-        {
-            if (InstanceContainer.netConnection.OnlineMode == OnlineMode.Coop)
-            {
-                ProcessSharedLocations();
-            }
         }
 
         private void btnEnter_Click(object sender, EventArgs e)

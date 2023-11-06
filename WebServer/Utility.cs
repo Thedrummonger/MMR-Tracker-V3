@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static MMR_Tracker_V3.TrackerObjects.NetData;
 
 namespace WebServer
 {
@@ -56,6 +57,50 @@ namespace WebServer
                 Whitelist.Add(i.Key);
             }
             return Whitelist;
+        }
+
+        public static void SendChatToClients(ChatMessage Chat, HashSet<Guid> _PlayerToUpdate)
+        {
+            IEnumerable<ServerClient> ClientsToUpdate = AsyncServerTest.Clients.Where(x => _PlayerToUpdate.Contains(x.Key)).Select(x => x.Value);
+            NetPacket Update = new NetPacket(-1, PacketType.ChatMessage);
+            Update.ChatMessage = Chat;
+            string PacketString = Update.ToFormattedJson();
+            foreach (var Client in ClientsToUpdate)
+            {
+                byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(PacketString);
+                Client.NetClient.GetStream().Write(bytesToSend, 0, bytesToSend.Length);
+            }
+        }
+
+        public static void SendCheckedLocationsToClients(HashSet<Guid> _PlayerToUpdate, HashSet<Guid> _PlayersToGetDataFrom)
+        {
+            HashSet<Guid> PlayerToUpdate = _PlayerToUpdate??new HashSet<Guid>();
+            HashSet<Guid> PlayersToGetDataFrom = _PlayersToGetDataFrom??new HashSet<Guid>();
+            IEnumerable<ServerClient> ClientsToUpdate = AsyncServerTest.Clients.Where(x => PlayerToUpdate.Contains(x.Key)).Select(x => x.Value);
+            NetPacket Update = new NetPacket(-1, PacketType.OnlineSynedLocations);
+            Update.LocationData = Utility.GetCheckedLocations(PlayersToGetDataFrom);
+            string PacketString = Update.ToFormattedJson();
+            foreach (var Client in ClientsToUpdate)
+            {
+                byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(PacketString);
+                Client.NetClient.GetStream().Write(bytesToSend, 0, bytesToSend.Length);
+            }
+        }
+
+        public static void SendMultiworldItemsToClients(HashSet<Guid> _PlayerToUpdate, HashSet<Guid> _PlayersToGetDataFrom)
+        {
+            HashSet<Guid> PlayerToUpdate = _PlayerToUpdate??new HashSet<Guid>();
+            HashSet<Guid> PlayersToGetDataFrom = _PlayersToGetDataFrom??new HashSet<Guid>();
+            IEnumerable<ServerClient> ClientsToUpdate = AsyncServerTest.Clients.Where(x => PlayerToUpdate.Contains(x.Key)).Select(x => x.Value);
+            foreach (var Client in ClientsToUpdate)
+            {
+                NetPacket Update = new NetPacket(-1, PacketType.MultiWorldItems);
+                Update.ItemData = Utility.GetItemsBelongingToPlayer(Client.PlayerID, PlayersToGetDataFrom);
+                string PacketString = Update.ToFormattedJson();
+
+                byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(PacketString);
+                Client.NetClient.GetStream().Write(bytesToSend, 0, bytesToSend.Length);
+            }
         }
     }
 }

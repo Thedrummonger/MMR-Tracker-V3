@@ -88,7 +88,7 @@ namespace WebServer
                 {
                     var ServerChatGuid = Guid.NewGuid();
                     PlayerChat.Add(ServerChatGuid, new NetData.ChatMessage(-1, ServerChatGuid, command));
-                    ConnectionManager.UpdateClients(new NetData.NetPacket(-1, NetData.PacketType.ChatMessage) { ChatMessage = PlayerChat.Last().Value }, Utility.GetPlayersExcept(), Utility.GetPlayersExcept());
+                    Utility.SendChatToClients(PlayerChat.Last().Value, Utility.GetPlayersExcept());
                 }
             }
         }

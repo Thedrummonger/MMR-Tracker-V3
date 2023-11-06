@@ -75,7 +75,7 @@ namespace TestingForm
                 new DevAction("Create OOTMM Data", GameFileCreation.OOTMMCreateData, UpdateDebugActions),
                 new DevAction("Create PMR Data", GameFileCreation.PMRCreateData, UpdateDebugActions),
                 new DevAction("Connect To Async Web Server P1", OpenWebClient, UpdateDebugActions, () => { return CurrentNetClientForm is null && WinFormTesting.WinformInstanceLoaded();  }),
-                new DevAction("Create PMR Data", TestDictExtention, UpdateDebugActions),
+                new DevAction("Test Random Stuff", TestDictExtention, UpdateDebugActions),
             };
 
             foreach (var Function in DevFunctions)
@@ -87,12 +87,12 @@ namespace TestingForm
 
         private void TestDictExtention()
         {
-            Dictionary<string, int> TestDict = new Dictionary<string, int>();
-            TestDict.Add("T1", 5);
-            TestDict.Add("T2", 5);
-            TestDict.SetIfEmpty("T1", 0);
-            TestDict.SetIfEmpty("T3", 0);
-            Debug.WriteLine(TestDict.ToFormattedJson());
+            printInt(1, 2, 3, 5);
+            printInt(new int[] { 1, 2, 3});
+        }
+        private void printInt(params int[] ints)
+        {
+            Debug.WriteLine(ints.Length);
         }
 
         private void OpenWebClient()

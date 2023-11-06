@@ -99,6 +99,26 @@ namespace MMR_Tracker_V3.TrackerObjects
             public CheckItemSetting SetCheckCoiceOptions(Func<IEnumerable<object>, InstanceContainer, List<ManualCheckObjectResult>> func) { CheckCoiceOptions = func; return this; }
             public CheckItemSetting SetCheckIntOPtions(Func<IEnumerable<object>, InstanceContainer, List<ManualCheckObjectResult>> func) { CheckIntOPtions = func; return this; }
 
+            /// <summary>
+            /// Creates a function that assignes an unchecked location an item based on a predefined map
+            /// </summary>
+            /// <param name="StaticLocationItemMap">A dictionary of location ids and the Item ID of the item at that location</param>
+            /// <returns></returns>
+            public CheckItemSetting SetCheckUnassignedLocations(Dictionary<string, string> StaticLocationItemMap)
+            {
+                CheckUnassignedLocations = (IEnumerable<object> O, InstanceContainer C) =>
+                {
+                    List<ManualCheckObjectResult> Results = new List<ManualCheckObjectResult>();
+                    foreach (var obj in O)
+                    {
+                        LocationData.LocationObject location = obj as LocationData.LocationObject;
+                        Results.Add(new ManualCheckObjectResult(location, StaticLocationItemMap[location.ID]));
+                    }
+                    return Results;
+                };
+                return this;
+            }
+
         }
         public class ManualCheckObjectResult
         {

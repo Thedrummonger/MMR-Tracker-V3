@@ -53,8 +53,8 @@ namespace WebServer
         private static void SendPlayerJoinedMessasge(ServerClient newNetClient)
         {
             var NotifyChatMessage = Guid.NewGuid();
-            PlayerChat.Add(NotifyChatMessage, new NetData.ChatMessage(-1, NotifyChatMessage, $"Player {newNetClient.PlayerID} joined the server."));
-            ConnectionManager.UpdateClients(new NetData.NetPacket(-1, NetData.PacketType.ChatMessage) { ChatMessage = PlayerChat.Last().Value }, Utility.GetPlayersExcept(newNetClient.PlayerID), Utility.GetPlayersExcept());
+            PlayerChat.Add(NotifyChatMessage, new ChatMessage(-1, NotifyChatMessage, $"Player {newNetClient.PlayerID} joined the server."));
+            Utility.SendChatToClients(PlayerChat.Last().Value, Utility.GetPlayersExcept(newNetClient.PlayerID));
         }
 
         private static void SendConnectionConfirmation(TcpClient client, ServerClient? serverClient, string ConnectionStatus)
@@ -65,7 +65,7 @@ namespace WebServer
             Guid ClientID = NoClient ? Guid.Empty : serverClient.ClientID;
             NetData.OnlineMode ClientMode = NoClient ? NetData.OnlineMode.None: serverClient.ClientMode;
 
-            var confirmationPacket = new NetPacket(PlayerID, PacketType.Handshake);
+            var confirmationPacket = new NetPacket(-1, PacketType.Handshake);
 
             confirmationPacket.HandshakeResponse = new HandshakeResponse 
             { 
@@ -95,49 +95,30 @@ namespace WebServer
                 if (packet is null) { continue; }
 
                 Console.WriteLine($"Got {packet.packetType} Packet from player {_ServerClient.PlayerID} on {_ServerClient.GetIP()}:{_ServerClient.GetPort()}");
-
-                if (packet.packetType == PacketType.ChatMessage)
-                {
-                    Console.WriteLine($"P{packet.PlayerID}: {packet.ChatMessage.Message}");
-                }
-
-                UpdateClients(packet, Utility.GetPlayersExcept(_ServerClient.PlayerID), Utility.GetPlayers(_ServerClient.PlayerID));
-
+                SendClientResponse(_ServerClient, packet);
             }
         }
 
-        public static void UpdateClients(NetPacket packet, HashSet<Guid> _PlayerToUpdate, HashSet<Guid> _PlayersToGetDataFrom)
+        private static void SendClientResponse(NetData.ServerClient _ServerClient, NetPacket packet)
         {
-            HashSet<Guid> PlayerToUpdate = _PlayerToUpdate??new HashSet<Guid>();
-            HashSet<Guid> PlayersToGetDataFrom = _PlayersToGetDataFrom??new HashSet<Guid>();
-            Dictionary<Guid, Dictionary<int, Dictionary<string, int>>> PlayerMultiworldItemData = new Dictionary<Guid, Dictionary<int, Dictionary<string, int>>>();
-            NetPacket Update = new NetPacket(-1, packet.packetType);
+            HashSet<Guid> PlayersToUpdate = Utility.GetPlayersExcept(_ServerClient.PlayerID);
+            if (packet.UpdateWhitelist is not null)
+            {
+                PlayersToUpdate = Utility.GetPlayers(packet.UpdateWhitelist);
+            }
+
             switch (packet.packetType)
             {
-                case PacketType.ChatMessage:
-                    var MostRecentchat = PlayerChat.Last().Value;
-                    Update.ChatMessage = MostRecentchat;
-                    break;
                 case PacketType.OnlineSynedLocations:
-                    Update.LocationData = Utility.GetCheckedLocations(Utility.GetPlayers(packet.PlayerID));
+                    Utility.SendCheckedLocationsToClients(PlayersToUpdate, Utility.GetPlayers(_ServerClient.PlayerID));
                     break;
                 case PacketType.MultiWorldItems:
-                    foreach(var k in Clients) { PlayerMultiworldItemData[k.Key] = Utility.GetItemsBelongingToPlayer(k.Value.PlayerID, Utility.GetPlayers(packet.PlayerID)); }
+                    Utility.SendMultiworldItemsToClients(PlayersToUpdate, Utility.GetPlayers(_ServerClient.PlayerID));
                     break;
-                default:
-                    return;
-            };
-            string PacketString = Update.ToFormattedJson();
-            foreach (var ClientID in PlayerToUpdate)
-            {
-                var Client = Clients[ClientID];
-                if (packet.packetType == PacketType.MultiWorldItems) 
-                {
-                    Update.ItemData = PlayerMultiworldItemData[Client.ClientID];
-                    PacketString = Update.ToFormattedJson();
-                }
-                byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(PacketString);
-                Client.NetClient.GetStream().Write(bytesToSend, 0, bytesToSend.Length);
+                case PacketType.ChatMessage:
+                    Console.WriteLine($"P{packet.PlayerID}: {packet.ChatMessage.Message}");
+                    Utility.SendChatToClients(packet.ChatMessage, PlayersToUpdate);
+                    break;
             }
         }
 
