@@ -15,8 +15,8 @@ namespace MMR_Tracker_V3
     public class TrackerDataHandeling
     {
 
-        public static event Action<List<object>, InstanceData.TrackerInstance> CheckedObjectsUpdate;
-        public static void TriggerCheckedObjectsUpdate(List<object> objs, InstanceData.TrackerInstance instance) { CheckedObjectsUpdate(objs, instance); }
+        public static event Action<List<object>, InstanceData.TrackerInstance, CheckState> CheckedObjectsUpdate;
+        public static void TriggerCheckedObjectsUpdate(List<object> objs, InstanceData.TrackerInstance instance, CheckState c) { CheckedObjectsUpdate(objs, instance, c); }
         public class DataSets
         {
             public List<LocationData.LocationObject> LocationStateIsUnchecked { get; set; } = new List<LocationData.LocationObject>();
@@ -91,7 +91,7 @@ namespace MMR_Tracker_V3
             }
 
 
-            if (UpdatedObjects.Any()) { CheckedObjectsUpdate(UpdatedObjects, instanceContainer.Instance); }
+            if (UpdatedObjects.Any()) { CheckedObjectsUpdate(UpdatedObjects, instanceContainer.Instance, Options.TargetheckState); }
             return UpdatedObjects;
         }
 

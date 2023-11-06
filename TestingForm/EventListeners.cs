@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using MMR_Tracker_V3.TrackerObjects;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -26,7 +27,7 @@ namespace TestingForm
             TestingForm.CurrentForm.UpdateDebugActions();
         }
 
-        private static void TrackerDataHandeling_CheckedObjectsUpdate(List<object> obj, MMR_Tracker_V3.InstanceData.TrackerInstance instance)
+        private static void TrackerDataHandeling_CheckedObjectsUpdate(List<object> obj, MMR_Tracker_V3.InstanceData.TrackerInstance instance, MiscData.CheckState checkState)
         {
             TestingForm.CurrentForm.UpdateDebugActions();
         }

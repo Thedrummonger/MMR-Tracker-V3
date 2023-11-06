@@ -679,7 +679,7 @@ namespace Windows_Form_Frontend
                         SaveTrackerState(InstanceContainer.Instance.ToJson(JSONType.UTF8));
                         ChoiceOption.SetValue((toolStripComboBox.SelectedItem as MiscData.OptionComboboxItem).Value as string);
                         if (!InstanceContainer.logicCalculation.ReCompileLogicOnCalculation) { InstanceContainer.logicCalculation.CompileOptionActionEdits(); }
-                        TrackerDataHandeling.TriggerCheckedObjectsUpdate(new List<object> { ChoiceOption }, InstanceContainer.Instance);
+                        TrackerDataHandeling.TriggerCheckedObjectsUpdate(new List<object> { ChoiceOption }, InstanceContainer.Instance, MiscData.CheckState.Checked);
                         InstanceContainer.logicCalculation.CalculateLogic();
                         UpdateUI();
                     };
@@ -696,7 +696,7 @@ namespace Windows_Form_Frontend
                         SaveTrackerState(InstanceContainer.Instance.ToJson(JSONType.UTF8));
                         ToggleOption.ToggleValue();
                         if (!InstanceContainer.logicCalculation.ReCompileLogicOnCalculation) { InstanceContainer.logicCalculation.CompileOptionActionEdits(); }
-                        TrackerDataHandeling.TriggerCheckedObjectsUpdate(new List<object> { ToggleOption }, InstanceContainer.Instance);
+                        TrackerDataHandeling.TriggerCheckedObjectsUpdate(new List<object> { ToggleOption }, InstanceContainer.Instance, MiscData.CheckState.Checked);
                         InstanceContainer.logicCalculation.CalculateLogic();
                         UpdateUI();
                         ReopenMenu(menuItem);
@@ -952,7 +952,7 @@ namespace Windows_Form_Frontend
 
         //ListboxObject Handeling
 
-        private void HandleItemSelect(IEnumerable<object> Items, MiscData.CheckState checkState, bool EnforceMarkAction = false, object LB = null)
+        public void HandleItemSelect(IEnumerable<object> Items, MiscData.CheckState checkState, bool EnforceMarkAction = false, object LB = null)
         {
             if (Items.Count() == 1)
             {

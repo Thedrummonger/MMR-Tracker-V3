@@ -17,7 +17,7 @@ namespace MMR_Tracker_V3.TrackerObjects
         public const int DefaultProgramPort = 25570;
         public enum PacketType
         {
-            None,
+            Handshake,
             OnlineSynedLocations,
             MultiWorldItems,
             ChatMessage
@@ -28,8 +28,6 @@ namespace MMR_Tracker_V3.TrackerObjects
             None = 0,
             [Description("Co-op")]
             Coop = 1,
-            [Description("Online (Synced)")]
-            Online = 2,
             [Description("Multiworld")]
             Multiworld = 3
         }
@@ -44,9 +42,11 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
             public int PlayerID;
             public string Password;
-            public PacketType packetType = PacketType.None;
+            public PacketType packetType;
+            public MiscData.CheckState ClientCheckAction;
+            public int[] UpdateWhitelist = null;
+            public Dictionary<string, string> LocationData = new Dictionary<string, string>();
             //Dictionary<PlayerID, Dictionary<ItemID, ItemAmount>>
-            public Dictionary<string, string> LcationData = new Dictionary<string, string>();
             public Dictionary<int,Dictionary<string, int>> ItemData = null;
             public ChatMessage ChatMessage = null;
             public HandshakeResponse HandshakeResponse = null;
@@ -67,13 +67,15 @@ namespace MMR_Tracker_V3.TrackerObjects
         public class ServerClient
         {
             public Guid ClientID;
+            [Newtonsoft.Json.JsonIgnore]
             public TcpClient NetClient;
             public NetPacket Handshake;
+            [Newtonsoft.Json.JsonIgnore]
             public IPEndPoint EndPoint;
             public int PlayerID;
             public NetData.OnlineMode ClientMode;
-            public Dictionary<string, string>  OnlineLocationData= new Dictionary<string, string>();
-            public Dictionary<int, Dictionary<string, int>> MultiworldItemData = new Dictionary<int, Dictionary<string, int>>();
+            public Dictionary<string, string> OnlineLocationData;
+            public Dictionary<int, Dictionary<string, int>> MultiworldItemData;
             public IPAddress GetIP() { return EndPoint?.Address; }
             public int? GetPort() { return EndPoint?.Port; }
         }

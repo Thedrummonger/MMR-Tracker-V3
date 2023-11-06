@@ -1,5 +1,7 @@
-﻿using Microsoft.VisualBasic;
+﻿using MathNet.Numerics.Statistics;
+using Microsoft.VisualBasic;
 using MMR_Tracker_V3;
+using MMR_Tracker_V3.TrackerObjectExtentions;
 using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
 using System;
@@ -100,33 +102,42 @@ namespace TestingForm
         }
         private void PrintToConsole(string Content) { PrintToConsole(new string[] { Content }); }
 
-        private void TrackerDataHandeling_CheckedObjectsUpdate(List<object> arg1, MMR_Tracker_V3.InstanceData.TrackerInstance arg2)
+        private void TrackerDataHandeling_CheckedObjectsUpdate(List<object> arg1, MMR_Tracker_V3.InstanceData.TrackerInstance arg2, MiscData.CheckState checkState)
         {
-            var LocationsUpdated = arg1.Where(x => x is LocationData.LocationObject lo && lo.Randomizeditem.OwningPlayer > -1).Select(x => (LocationData.LocationObject)x);
-            if (!LocationsUpdated.Any(x => x.CheckState == MiscData.CheckState.Checked)) { return; }
+            var LocationsUpdated = arg1.Where(x => x is LocationData.LocationObject lo && (lo.Randomizeditem.OwningPlayer > -1) || InstanceContainer.netConnection.OnlineMode != OnlineMode.Multiworld)
+                .Select(x => (LocationData.LocationObject)x);
             if (InstanceContainer.netConnection.ServerConnection is null || !InstanceContainer.netConnection.ServerConnection.Connected) { return; }
             if (!chkSendData.Checked) { return; }
 
-            var packet = CreateCheckedItemPacket(InstanceContainer.netConnection.OnlineMode, arg2);
+            NetData.NetPacket? packet;
+            switch (InstanceContainer.netConnection.OnlineMode)
+            {
+                case OnlineMode.Multiworld:
+                    packet = CreateMultiWorldPacket(arg2, LocationsUpdated);
+                    break;
+                case OnlineMode.Coop:
+                    packet = CreateCoopPacket(arg2, LocationsUpdated);
+                    break;
+                default: return;
+            }
             if (packet == null) { return; }
 
             byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(packet.ToFormattedJson());
             InstanceContainer.netConnection.ServerConnection.GetStream().Write(bytesToSend, 0, bytesToSend.Length);
         }
 
-        private NetData.NetPacket? CreateCheckedItemPacket(NetData.OnlineMode onlineMode, MMR_Tracker_V3.InstanceData.TrackerInstance arg2)
+        private NetData.NetPacket? CreateCoopPacket(MMR_Tracker_V3.InstanceData.TrackerInstance arg2, IEnumerable<LocationData.LocationObject> locationsUpdated)
         {
-            var packetType = onlineMode switch
-            {
-                NetData.OnlineMode.Online => NetData.PacketType.OnlineSynedLocations,
-                NetData.OnlineMode.Coop => NetData.PacketType.OnlineSynedLocations,
-                NetData.OnlineMode.Multiworld => NetData.PacketType.OnlineSynedLocations,
-                _ => NetData.PacketType.None,
-            };
-            if (packetType == NetData.PacketType.None) { return null; }
-            NetData.NetPacket packet = new NetData.NetPacket((int)nudPlayer.Value, packetType, txtPassword.Text);
-            packet.ItemData = onlineMode == NetData.OnlineMode.Multiworld ? GetMultiworldItemsToSend(arg2) : new Dictionary<int, Dictionary<string, int>>();
-            packet.LcationData = onlineMode != NetData.OnlineMode.Multiworld ? getCheckedLocations(arg2) : new Dictionary<string, string>();
+            NetData.NetPacket packet = new NetData.NetPacket((int)nudPlayer.Value, NetData.PacketType.OnlineSynedLocations, txtPassword.Text);
+            packet.LocationData = getCheckedLocations(arg2);
+            packet.UpdateWhitelist = locationsUpdated.Any(x => x.CheckState == MiscData.CheckState.Checked) ? null : new int[] { -1 };
+            return packet;
+        }
+        private NetData.NetPacket? CreateMultiWorldPacket(MMR_Tracker_V3.InstanceData.TrackerInstance arg2, IEnumerable<LocationData.LocationObject> locationsUpdated)
+        {
+            NetData.NetPacket packet = new NetData.NetPacket((int)nudPlayer.Value, NetData.PacketType.MultiWorldItems, txtPassword.Text);
+            packet.ItemData = GetMultiworldItemsToSend(arg2);
+            packet.UpdateWhitelist = locationsUpdated.Select(x => x.Randomizeditem.OwningPlayer).Distinct().ToArray();
             return packet;
         }
 
@@ -181,8 +192,13 @@ namespace TestingForm
             nudPort.Enabled = !Connected;
             nudPlayer.Enabled = !Connected;
             txtPassword.Enabled = !Connected;
+            chkShowPass.Enabled = !Connected;
             txtChatMessage.Enabled = Connected;
             btnSendChat.Enabled = Connected;
+            btnProcessData.Enabled = LocationDataToProcess.Any() && Connected && !chkProcessData.Checked;
+            chkAllowCheck.Enabled = InstanceContainer.netConnection.OnlineMode != OnlineMode.Multiworld;
+            if (chkShowPass.Checked) { txtPassword.PasswordChar = '\0'; }
+            else { txtPassword.PasswordChar = '*'; }
         }
 
         private async void ConnectToWebServer()
@@ -192,7 +208,7 @@ namespace TestingForm
             {
                 InstanceContainer.netConnection.ServerConnection = new TcpClient(txtServerAddress.Text, (int)nudPort.Value);
                 InstanceContainer.netConnection.ServerConnection.LingerState = new LingerOption(true, 0);
-                NetData.NetPacket HandshakePacket = new NetData.NetPacket(PlayerID, NetData.PacketType.None, txtPassword.Text);
+                NetData.NetPacket HandshakePacket = new NetData.NetPacket(PlayerID, NetData.PacketType.Handshake, txtPassword.Text);
                 byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(HandshakePacket.ToFormattedJson());
                 InstanceContainer.netConnection.ServerConnection.GetStream().Write(bytesToSend, 0, bytesToSend.Length);
                 byte[] buffer = new byte[InstanceContainer.netConnection.ServerConnection.ReceiveBufferSize];
@@ -254,6 +270,7 @@ namespace TestingForm
             switch (packet.packetType)
             {
                 case NetData.PacketType.OnlineSynedLocations:
+                    ParseSharedLocationData(packet);
                     break;
                 case NetData.PacketType.MultiWorldItems:
                     break;
@@ -263,6 +280,50 @@ namespace TestingForm
                     break;
                 default: 
                     break;
+            }
+        }
+
+        private Dictionary<string, string> LocationDataToProcess = new Dictionary<string, string>();
+
+        private void ParseSharedLocationData(NetPacket packet)
+        {
+            LocationDataToProcess = packet.LocationData;
+            btnProcessData.Enabled = LocationDataToProcess.Any();
+            if (chkProcessData.Checked)
+            {
+                ProcessSharedLocations();
+            }
+        }
+
+        private void ProcessSharedLocations()
+        {
+            MiscData.CheckState CheckAction = chkAllowCheck.Checked ? MiscData.CheckState.Checked : MiscData.CheckState.Marked;
+
+            List<LocationData.LocationObject> LocationList = new List<LocationData.LocationObject>();
+            foreach (var i in LocationDataToProcess)
+            {
+                if (!InstanceContainer.Instance.LocationPool.ContainsKey(i.Key)) { continue; }
+                var Location = InstanceContainer.Instance.LocationPool[i.Key];
+                if (Location.CheckState == MiscData.CheckState.Checked || Location.CheckState == CheckAction) { continue; }
+                LocationList.Add(Location);
+            }
+
+            var CheckObjectOptions = new CheckItemSetting(CheckAction).SetEnforceMarkAction(true).SetCheckUnassignedLocations(HandleUnassignedWebChecks);
+
+            TrackerDataHandeling.SetLocationsCheckState(LocationList, InstanceContainer, CheckObjectOptions);
+            MainInterface.InstanceContainer.logicCalculation.CalculateLogic();
+            MainInterface.CurrentProgram.UpdateUI();
+            btnProcessData.Enabled = false;
+
+            List<ManualCheckObjectResult> HandleUnassignedWebChecks(IEnumerable<object> objects, InstanceContainer instanceContainer)
+            {
+                List<ManualCheckObjectResult> Results = new List<ManualCheckObjectResult>();
+                foreach (var obj in objects)
+                {
+                    LocationData.LocationObject location = obj as LocationData.LocationObject;
+                    Results.Add(new ManualCheckObjectResult(location, LocationDataToProcess[location.ID]));
+                }
+                return Results;
             }
         }
 
@@ -281,10 +342,40 @@ namespace TestingForm
             txtChatMessage.Text = string.Empty;
         }
 
-        private void chkShowPass_CheckedChanged(object sender, EventArgs e)
+        private void chkOption_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkShowPass.Checked) { txtPassword.PasswordChar = '\0'; }
-            else { txtPassword.PasswordChar = '*'; }
+            UpdateUI();
+        }
+
+        private void btnProcessData_Click(object sender, EventArgs e)
+        {
+            if (InstanceContainer.netConnection.OnlineMode == OnlineMode.Coop)
+            {
+                ProcessSharedLocations();
+            }
+        }
+
+        private void btnEnter_Click(object sender, EventArgs e)
+        {
+            Debug.WriteLine(this.ActiveControl.Name.ToString());
+        }
+
+        private void NetClient_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bool Connected = InstanceContainer.netConnection.ServerConnection is not null && InstanceContainer.netConnection.ServerConnection.Connected;
+                if (this.ActiveControl.In(txtServerAddress, nudPort, nudPlayer, txtPassword, chkShowPass, chkRecieveData, chkSendData, chkProcessData, chkAllowCheck) && !Connected)
+                {
+                    btnConnect_Click(sender, e);
+                    this.ActiveControl = txtChatMessage;
+                }
+                else if(this.ActiveControl.In(txtChatMessage, btnSendChat, lbConsole))
+                {
+                    btnSendChat_Click(sender, e);
+                }
+                e.Handled = true;
+            }
         }
     }
 }

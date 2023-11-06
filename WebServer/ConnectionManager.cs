@@ -33,9 +33,8 @@ namespace WebServer
         {
             var NewNetClient = ReadHandshakePacket(client, serverConfig);
             if (NewNetClient is null) { SendConnectionConfirmation(client, null, "Bad Handshake Packet"); return; }
-            if (NewNetClient.ClientMode != serverConfig.ServerGameMode) { SendConnectionConfirmation(client, null, $"Server is configured for {serverConfig.ServerGameMode}, your game mode is {NewNetClient.ClientMode}"); return; }
             if (!AuthenticateUser(NewNetClient, serverConfig)) { SendConnectionConfirmation(client, null, "Authentication Failed"); return; }
-            if (!AddPlayerToClientList(NewNetClient)) { SendConnectionConfirmation(client, null, "Client UUID already existed, this should not have happened!"); return; }
+            if (!AddPlayerToClientList(NewNetClient)) { SendConnectionConfirmation(client, null, "Unknown Server error"); return; }
 
             string ConnectionSuccessMessage = $"Connected to web server\n" +
                 $"PlayerID: {NewNetClient.PlayerID}\n" +
@@ -55,7 +54,7 @@ namespace WebServer
         {
             var NotifyChatMessage = Guid.NewGuid();
             PlayerChat.Add(NotifyChatMessage, new NetData.ChatMessage(-1, NotifyChatMessage, $"Player {newNetClient.PlayerID} joined the server."));
-            ConnectionManager.UpdateClients(new NetData.NetPacket(-1, NetData.PacketType.ChatMessage) { ChatMessage = PlayerChat.Last().Value }, newNetClient.ClientID, new HashSet<Guid> { newNetClient.ClientID });
+            ConnectionManager.UpdateClients(new NetData.NetPacket(-1, NetData.PacketType.ChatMessage) { ChatMessage = PlayerChat.Last().Value }, new HashSet<Guid> { newNetClient.ClientID });
         }
 
         private static void SendConnectionConfirmation(TcpClient client, ServerClient? serverClient, string ConnectionStatus)
@@ -66,7 +65,7 @@ namespace WebServer
             Guid ClientID = NoClient ? Guid.Empty : serverClient.ClientID;
             NetData.OnlineMode ClientMode = NoClient ? NetData.OnlineMode.None: serverClient.ClientMode;
 
-            var confirmationPacket = new NetPacket(PlayerID, PacketType.None);
+            var confirmationPacket = new NetPacket(PlayerID, PacketType.Handshake);
 
             confirmationPacket.HandshakeResponse = new HandshakeResponse 
             { 
@@ -102,15 +101,14 @@ namespace WebServer
                     Console.WriteLine($"P{packet.PlayerID}: {packet.ChatMessage.Message}");
                 }
 
-                UpdateClients(packet, _ServerClient.ClientID);
+                UpdateClients(packet);
 
             }
         }
 
-        public static void UpdateClients(NetPacket packet, HashSet<Guid>? _GetDataFrom, HashSet<Guid>? _SendDataTo)
+        public static void UpdateClients(NetPacket packet, HashSet<Guid>? _ingorePlayers = null)
         {
-            HashSet<Guid> GetDataFrom = _GetDataFrom??new HashSet<Guid>();
-            HashSet<Guid> SendDataTo = _SendDataTo??new HashSet<Guid>();
+            HashSet<Guid> ingorePlayers = _ingorePlayers??new HashSet<Guid>();
             Dictionary<Guid, Dictionary<int, Dictionary<string, int>>> PlayerMultiworldItemData = new Dictionary<Guid, Dictionary<int, Dictionary<string, int>>>();
             NetPacket Update = new NetPacket(-1, packet.packetType);
             switch (packet.packetType)
@@ -120,7 +118,7 @@ namespace WebServer
                     Update.ChatMessage = MostRecentchat;
                     break;
                 case PacketType.OnlineSynedLocations:
-                    Update.LcationData = Utility.GetCheckedLocations(SourceClient);
+                    Update.LcationData = AsyncServerTest.GetCheckedLocations();
                     break;
                 case PacketType.MultiWorldItems:
                     foreach(var k in Clients) { PlayerMultiworldItemData[k.Key] = Utility.GetItemsBelongingToPlayer(k.Value.PlayerID, SourceClient); }
@@ -129,9 +127,9 @@ namespace WebServer
                     return;
             };
             string PacketString = Update.ToFormattedJson();
-            foreach (var ClientID in SendDataTo)
+            foreach (var Client in Clients)
             {
-                var Client = Clients[ClientID];
+                if (Client.Value.PlayerID == packet.PlayerID || ingorePlayers.Contains(Client.Key)) { continue; }
                 if (packet.packetType == PacketType.MultiWorldItems) 
                 {
                     Update.ItemData = PlayerMultiworldItemData[Client.ClientID];
@@ -159,7 +157,7 @@ namespace WebServer
                         PlayerChat.Add(Packet.ChatMessage.guid, Packet.ChatMessage);
                         break;
                     case PacketType.OnlineSynedLocations:
-                        _ServerClient.OnlineLocationData = Packet.LcationData;
+                        _ServerClient.OnlineLocationData = Packet.LocationData;
                         break;
                     case PacketType.MultiWorldItems:
                         _ServerClient.MultiworldItemData = Packet.ItemData;
@@ -202,12 +200,16 @@ namespace WebServer
             { 
                 NetClient = client, 
                 ClientMode = serverConfig.ServerGameMode, 
-                ClientID = Guid.NewGuid()
+                ClientID = Guid.NewGuid(),
+                EndPoint = client.Client.RemoteEndPoint as IPEndPoint
             };
-            _ServerClient.EndPoint = _ServerClient.NetClient.Client.RemoteEndPoint as IPEndPoint;
             try
             {
                 _ServerClient.Handshake = JsonConvert.DeserializeObject<NetData.NetPacket>(HandShake);
+                if (_ServerClient.Handshake.packetType != PacketType.Handshake)
+                {
+                    Console.WriteLine($"{_ServerClient.GetIP()} Connection packet was not handshake"); 
+                    return null; }
                 _ServerClient.PlayerID = _ServerClient.Handshake.PlayerID;
                 Console.WriteLine($"Player {_ServerClient.PlayerID} Connect from {_ServerClient.GetIP()}:{_ServerClient.GetPort()}");
             }
@@ -221,7 +223,11 @@ namespace WebServer
 
         public static bool AddPlayerToClientList(NetData.ServerClient client)
         {
-            if (Clients.ContainsKey(client.ClientID)) { return false; }
+            if (Clients.ContainsKey(client.ClientID)) 
+            {
+                Console.WriteLine($"Client UUID {client.ClientID} already existed, this should not have happened!");
+                return false; 
+            }
             Clients.Add(client.ClientID, client);
             return true;
         }
