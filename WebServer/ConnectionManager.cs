@@ -55,7 +55,7 @@ namespace WebServer
         {
             var NotifyChatMessage = Guid.NewGuid();
             PlayerChat.Add(NotifyChatMessage, new NetData.ChatMessage(-1, NotifyChatMessage, $"Player {newNetClient.PlayerID} joined the server."));
-            ConnectionManager.UpdateClients(new NetData.NetPacket(-1, NetData.PacketType.ChatMessage) { ChatMessage = PlayerChat.Last().Value }, new HashSet<Guid> { newNetClient.ClientID });
+            ConnectionManager.UpdateClients(new NetData.NetPacket(-1, NetData.PacketType.ChatMessage) { ChatMessage = PlayerChat.Last().Value }, newNetClient.ClientID, new HashSet<Guid> { newNetClient.ClientID });
         }
 
         private static void SendConnectionConfirmation(TcpClient client, ServerClient? serverClient, string ConnectionStatus)
@@ -102,14 +102,15 @@ namespace WebServer
                     Console.WriteLine($"P{packet.PlayerID}: {packet.ChatMessage.Message}");
                 }
 
-                UpdateClients(packet);
+                UpdateClients(packet, _ServerClient.ClientID);
 
             }
         }
 
-        public static void UpdateClients(NetPacket packet, HashSet<Guid>? _ingorePlayers = null)
+        public static void UpdateClients(NetPacket packet, HashSet<Guid>? _GetDataFrom, HashSet<Guid>? _SendDataTo)
         {
-            HashSet<Guid> ingorePlayers = _ingorePlayers??new HashSet<Guid>();
+            HashSet<Guid> GetDataFrom = _GetDataFrom??new HashSet<Guid>();
+            HashSet<Guid> SendDataTo = _SendDataTo??new HashSet<Guid>();
             Dictionary<Guid, Dictionary<int, Dictionary<string, int>>> PlayerMultiworldItemData = new Dictionary<Guid, Dictionary<int, Dictionary<string, int>>>();
             NetPacket Update = new NetPacket(-1, packet.packetType);
             switch (packet.packetType)
@@ -119,25 +120,25 @@ namespace WebServer
                     Update.ChatMessage = MostRecentchat;
                     break;
                 case PacketType.OnlineSynedLocations:
-                    Update.LcationData = AsyncServerTest.GetCheckedLocations();
+                    Update.LcationData = Utility.GetCheckedLocations(SourceClient);
                     break;
                 case PacketType.MultiWorldItems:
-                    foreach(var k in Clients) { PlayerMultiworldItemData[k.Key] = AsyncServerTest.GetItemsBelongingToPlayer(k.Value.PlayerID); }
+                    foreach(var k in Clients) { PlayerMultiworldItemData[k.Key] = Utility.GetItemsBelongingToPlayer(k.Value.PlayerID, SourceClient); }
                     break;
                 default:
                     return;
             };
             string PacketString = Update.ToFormattedJson();
-            foreach (var Client in Clients)
+            foreach (var ClientID in SendDataTo)
             {
-                if (Client.Value.PlayerID == packet.PlayerID || ingorePlayers.Contains(Client.Key)) { continue; }
+                var Client = Clients[ClientID];
                 if (packet.packetType == PacketType.MultiWorldItems) 
                 {
-                    Update.ItemData = PlayerMultiworldItemData[Client.Key];
+                    Update.ItemData = PlayerMultiworldItemData[Client.ClientID];
                     PacketString = Update.ToFormattedJson();
                 }
                 byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(PacketString);
-                Client.Value.NetClient.GetStream().Write(bytesToSend, 0, bytesToSend.Length);
+                Client.NetClient.GetStream().Write(bytesToSend, 0, bytesToSend.Length);
             }
         }
 
