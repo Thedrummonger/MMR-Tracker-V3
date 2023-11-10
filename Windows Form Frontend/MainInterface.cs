@@ -19,6 +19,7 @@ namespace Windows_Form_Frontend
 {
     public partial class MainInterface : Form
     {
+        public static event Action<List<object>, MMR_Tracker_V3.InstanceData.TrackerInstance, MiscData.CheckState> CheckedObjectsUpdate;
         public static MiscData.InstanceContainer InstanceContainer = new MiscData.InstanceContainer();
         public static MainInterface CurrentProgram;
         public static bool IsSubForm = false;
@@ -978,7 +979,8 @@ namespace Windows_Form_Frontend
             var UpdatedObjects = TrackerDataHandeling.CheckSelectedItems(Items, InstanceContainer, CheckObjectOptions);
 
             if (UpdatedObjects.Any()) 
-            { 
+            {
+                CheckedObjectsUpdate(UpdatedObjects, InstanceContainer.Instance, checkState);
                 SaveTrackerState(CurrentState);
             }
             UpdateUI();

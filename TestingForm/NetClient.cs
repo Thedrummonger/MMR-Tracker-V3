@@ -40,7 +40,7 @@ namespace TestingForm
         private void NetClient_Load(object sender, EventArgs e)
         {
             ModeUpdating = true;
-            MMR_Tracker_V3.TrackerDataHandeling.CheckedObjectsUpdate += TrackerDataHandeling_CheckedObjectsUpdate;
+            MainInterface.CheckedObjectsUpdate += TrackerDataHandeling_CheckedObjectsUpdate;
 
             txtServerAddress.Text = "127.0.0.1";
             nudPort.Value = 25570;
