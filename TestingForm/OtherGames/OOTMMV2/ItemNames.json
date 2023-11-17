@@ -595,5 +595,10 @@
   "OOT_SOUL_NPC_SHOOTING_GALLERY_OWNER": "Soul of Shooting Gallery Owner",
   "OOT_SOUL_NPC_DAMPE": "Soul of Dampe",
   "OOT_SOUL_NPC_GRAVEYARD_KID": "Soul of Graveyard Kid",
-  "OOT_SOUL_NPC_POE_COLLECTOR": "Soul of Poe Collector"
+  "OOT_SOUL_NPC_POE_COLLECTOR": "Soul of Poe Collector",
+  "MM_BOTTLE_POTION_BLUE": "Bottle of Blue Potion (MM)",
+  "MM_BOTTLE_POTION_GREEN": "Bottle of Gree Potion (MM)",
+  "OOT_BOTTLE_POTION_BLUE": "Bottle of Blue Potion (OoT)",
+  "OOT_BOTTLE_POTION_GREEN": "Bottle of Green Potion (OoT)",
+  "OOT_BOTTLE_POTION_RED": "Bottle of Red Potion (OoT)"
 }

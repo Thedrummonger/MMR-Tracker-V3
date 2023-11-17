@@ -19,41 +19,41 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
             int Priority = 1;
             foreach (var Setting in SettingsList)
             {
-                if (Setting.defaultvalue is Int64 IntValue)
+                if (Setting.type == "number")
                 {
                     OptionData.IntOption IntSettingDictEntry = new OptionData.IntOption
                     {
                         ID = Setting.key,
                         Name = Setting.name,
                         SubCategory= Utility.ConvertToCamelCase(Setting.category.Replace(".", " ")),
-                        Value = (int)IntValue,
+                        Value = (int)Setting.defaultvalue,
                         Priority= Priority
                     };
                     logicDictionaryData.IntOptions.Add(Setting.key, IntSettingDictEntry);
                     Priority++;
                 }
-                else if (Setting.defaultvalue is bool BoolValue)
+                else if (Setting.type == "boolean")
                 {
                     OptionData.ToggleOption IntSettingDictEntry = new OptionData.ToggleOption
                     {
                         ID = Setting.key,
                         Name = Setting.name,
                         SubCategory= Utility.ConvertToCamelCase(Setting.category.Replace(".", " ")),
-                        Value = BoolValue.ToString(),
+                        Value = ((bool)Setting.defaultvalue).ToString(),
                         Priority= Priority
                     };
                     IntSettingDictEntry.CreateSimpleValues();
                     logicDictionaryData.ToggleOptions.Add(Setting.key, IntSettingDictEntry);
                     Priority++;
                 }
-                else if (Setting.defaultvalue is string StringValue)
+                else if (Setting.type == "enum")
                 {
                     OptionData.ChoiceOption IntSettingDictEntry = new OptionData.ChoiceOption
                     {
                         ID = Setting.key,
                         Name = Setting.name,
                         SubCategory= Utility.ConvertToCamelCase(Setting.category.Replace(".", " ")),
-                        Value = StringValue,
+                        Value = Setting.defaultvalue.ToString(),
                         ValueList = new Dictionary<string, OptionData.OptionValue>(),
                         Priority= Priority
                     };
@@ -61,6 +61,37 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                     foreach (var i in Setting.values) { IntSettingDictEntry.ValueList[i.value].Name = i.name; }
                     logicDictionaryData.ChoiceOptions.Add(Setting.key, IntSettingDictEntry);
                     Priority++;
+                }
+                else if (Setting.type == "set")
+                {
+                    OptionData.ChoiceOption IntSettingDictEntry = new OptionData.ChoiceOption
+                    {
+                        ID = Setting.key,
+                        Name = Setting.name,
+                        SubCategory= Utility.ConvertToCamelCase(Setting.category.Replace(".", " ")),
+                        Value = Setting.defaultvalue.ToString(),
+                        ValueList = new Dictionary<string, OptionData.OptionValue>(),
+                        Priority= Priority
+                    };
+                    IntSettingDictEntry.CreateSimpleValues(new string[] { "all", "none", "random", "specific" });
+                    logicDictionaryData.ChoiceOptions.Add(Setting.key, IntSettingDictEntry);
+                    Priority++;
+                    foreach (OOTMMSettingValue i in Setting.values)
+                    {
+                        string ID = Setting.key + i.value;
+                        OptionData.ToggleOption SetSettingDictEntry = new OptionData.ToggleOption
+                        {
+                            ID = ID,
+                            Name = i.name,
+                            SubCategory= $"{Utility.ConvertToCamelCase(Setting.category.Replace(".", " "))}/{Setting.name} Select",
+                            Value = false.ToString(),
+                            Priority= Priority,
+                            Conditionals = new List<List<string>> { new List<string> { $"setting{{{Setting.key}, specific}}" } }
+                        };
+                        SetSettingDictEntry.CreateSimpleValues();
+                        logicDictionaryData.ToggleOptions.Add(ID, SetSettingDictEntry);
+                        Priority++;
+                    }
                 }
             }
             foreach (var setting in ParserData.DungeonLayouts)

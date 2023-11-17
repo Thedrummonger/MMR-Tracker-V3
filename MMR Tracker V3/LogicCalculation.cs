@@ -553,6 +553,7 @@ namespace MMR_Tracker_V3
             {
                 var ChoiceOpt = instance.ChoiceOptions[param[0]];
                 if (param.Length < 2) { return false; } //Not enough values passed
+                if (!ChoiceOpt.ValueList.ContainsKey(param[1])) { Debug.WriteLine($"{param[1]} was not a valid Value for option {ChoiceOpt.ID}"); }
                 return (ChoiceOpt.GetValue().ID == param[1]) != Inverse;
             }
             else if (OptionType == LogicEntryType.IntOption)

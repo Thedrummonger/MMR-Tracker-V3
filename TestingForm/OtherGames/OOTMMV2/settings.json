@@ -470,41 +470,77 @@
     "key": "smallKeyRingOot",
     "name": "Small Key Ring (OoT)",
     "category": "main.shuffle",
-    "type": "enum",
+    "type": "set",
     "description": "Controls the grouping of keys into keyrings, for OoT",
     "values": [
       {
-        "value": "disabled",
-        "name": "Disabled",
-        "description": "Small keys are found individually, like in the base game."
+        "value": "Forest",
+        "name": "Forest Temple"
       },
       {
-        "value": "keyRings",
-        "name": "Key Rings",
-        "description": "Small keys are grouped into key rings."
+        "value": "Fire",
+        "name": "Fire Temple"
+      },
+      {
+        "value": "Water",
+        "name": "Water Temple"
+      },
+      {
+        "value": "Shadow",
+        "name": "Shadow Temple"
+      },
+      {
+        "value": "Spirit",
+        "name": "Spirit Temple"
+      },
+      {
+        "value": "BotW",
+        "name": "Bottom of the Well"
+      },
+      {
+        "value": "GTG",
+        "name": "Gerudo Training Grounds"
+      },
+      {
+        "value": "Ganon",
+        "name": "Ganon's Castle"
+      },
+      {
+        "value": "GF",
+        "name": "Hideout"
+      },
+      {
+        "value": "TCG",
+        "name": "Chest Game"
       }
     ],
-    "default": "disabled"
+    "default": "none"
   },
   {
     "key": "smallKeyRingMm",
     "name": "Small Key Ring (MM)",
     "category": "main.shuffle",
-    "type": "enum",
+    "type": "set",
     "description": "Controls the grouping of keys into keyrings, for MM",
     "values": [
       {
-        "value": "disabled",
-        "name": "Disabled",
-        "description": "Small keys are found individually, like in the base game."
+        "value": "WF",
+        "name": "Woodfall Temple"
       },
       {
-        "value": "keyRings",
-        "name": "Key Rings",
-        "description": "Small keys are grouped into key rings."
+        "value": "SH",
+        "name": "Snowhead Temple"
+      },
+      {
+        "value": "GB",
+        "name": "Great Bay Temple"
+      },
+      {
+        "value": "ST",
+        "name": "Stone Tower Temple"
       }
     ],
-    "default": "disabled"
+    "default": "none"
   },
   {
     "key": "silverRupeeShuffle",
@@ -786,7 +822,7 @@
     "name": "Pots Shuffle (OoT)",
     "category": "main.shuffle",
     "type": "boolean",
-    "description": "Controls whether or not the pots are shuffled (OoT). !!!!! MQ NOT INCLUDED YET !!!!!",
+    "description": "Controls whether or not the pots are shuffled (OoT).",
     "default": false
   },
   {
@@ -842,7 +878,7 @@
     "name": "Merchants Shuffle (MM)",
     "category": "main.shuffle",
     "type": "boolean",
-    "description": "Shuffle extra merchants in MM",
+    "description": "Shuffle the Milk Bar and Gorman milk purchases in MM",
     "default": false
   },
   {
@@ -977,18 +1013,32 @@
     "key": "ganonTrials",
     "name": "Ganon Trials",
     "category": "main.events",
-    "type": "enum",
+    "type": "set",
     "description": "Enables or disables the trials in Ganon's Castle",
     "values": [
       {
-        "value": "none",
-        "name": "None",
-        "description": "Trials are not required to enter the tower"
+        "value": "Light",
+        "name": "Light Trial"
       },
       {
-        "value": "all",
-        "name": "All",
-        "description": "All trials are required to enter the tower"
+        "value": "Forest",
+        "name": "Forest Trial"
+      },
+      {
+        "value": "Fire",
+        "name": "Fire Trial"
+      },
+      {
+        "value": "Water",
+        "name": "Water Trial"
+      },
+      {
+        "value": "Shadow",
+        "name": "Shadow Trial"
+      },
+      {
+        "value": "Spirit",
+        "name": "Spirit Trial"
       }
     ],
     "default": "none"
@@ -1457,7 +1507,7 @@
   },
   {
     "key": "hookshotAnywhereOot",
-    "name": "Hookshot Anywhere (OOT)",
+    "name": "Hookshot Anywhere (OoT)",
     "category": "main.misc",
     "type": "boolean",
     "description": "Modifies all surfaces to be hooked onto",
@@ -1473,10 +1523,18 @@
   },
   {
     "key": "climbMostSurfacesOot",
-    "name": "Climb Most Surfaces (OOT)",
+    "name": "Climb Most Surfaces (OoT)",
     "category": "main.misc",
     "type": "boolean",
-    "description": "Modifies most surface to be climbable in OOT",
+    "description": "Modifies most surface to be climbable",
+    "default": false
+  },
+  {
+    "key": "climbMostSurfacesMm",
+    "name": "Climb Most Surfaces (MM)",
+    "category": "main.misc",
+    "type": "boolean",
+    "description": "Modifies most surface to be climbable",
     "default": false
   },
   {
@@ -1596,6 +1654,14 @@
       }
     ],
     "default": "progressive"
+  },
+  {
+    "key": "bottleContentShuffle",
+    "name": "Random Bottle Contents",
+    "category": "items.extensions",
+    "type": "boolean",
+    "description": "Randomize the content of the bottles",
+    "default": false
   },
   {
     "key": "sunSongMm",
@@ -2180,7 +2246,7 @@
     "name": "Shuffle Regional Shortcuts",
     "category": "entrances",
     "type": "boolean",
-    "description": "Shuffles the various shortcuts between regions.<br>- Lost Woods/Goron City<br>- Lost Woods/Zora's River<br>- Lake Hylia/Zora's Domain<br>- Lake Hylia/Gerudo Valley<br>- Ikana Canyon/Southern Swamp",
+    "description": "Shuffles the various shortcuts between regions.<br>- Lost Woods/Goron City<br>- Lost Woods/Zora's River<br>- Zora's Domain/Lake Hylia",
     "default": false
   },
   {
@@ -2223,45 +2289,102 @@
   },
   {
     "key": "erWarps",
-    "name": "Shuffle Warp Destinations",
+    "name": "Shuffle Warp Songs and Soaring",
     "category": "entrances",
     "type": "enum",
     "values": [
       {
         "value": "none",
         "name": "None",
-        "description": "No Warps are shuffled."
+        "description": "Warp songs and soaring are not shuffled."
       },
       {
-        "value": "ootWarps",
-        "name": "OOT Only",
-        "description": "Only Warp Songs and Owl Flights can be shuffled between each other."
+        "value": "ootOnly",
+        "name": "OoT Only",
+        "description": "Shuffles only OoT's warp songs among each other."
       },
       {
-        "value": "mmWarps",
+        "value": "mmOnly",
         "name": "MM Only",
-        "description": "Only Owl Statues can be shuffled between each other."
+        "description": "Shuffles only MM's soaring spots among each other."
       },
       {
         "value": "ownGame",
         "name": "Own Game",
-        "description": "Warp Songs, Owl Flights, and Owl Statues are shuffled among each other within their own games."
+        "description": "Shuffles both warp songs and soaring spots within their own game."
       },
       {
         "value": "full",
         "name": "Full",
-        "description": "Warp Songs, Owl Flights, and Owl Statues are shuffled among each other."
+        "description": "Shuffles both warp songs and soaring spots together."
       }
     ],
-    "default": "none",
-    "description": "Shuffle the Warp Songs and Owl Statues among each other."
+    "description": "Allows separate shuffling of the warp songs and soaring spots. This setting is disabled if both are selected in \"Shuffle One-Way Entrances\".",
+    "default": "none"
   },
   {
-    "key": "erWarpsOwls",
+    "key": "erOneWays",
+    "name": "Shuffle One-Way Entrances",
+    "category": "entrances",
+    "type": "enum",
+    "values": [
+      {
+        "value": "none",
+        "name": "None",
+        "description": "One-Way entrances are not shuffled."
+      },
+      {
+        "value": "ownGame",
+        "name": "Own Game",
+        "description": "One-Way entrances are only shuffled among their own game."
+      },
+      {
+        "value": "full",
+        "name": "Full",
+        "description": "One-Way entrances can be shuffled among both games."
+      }
+    ],
+    "description": "Enables the option of shuffling various one-way entrances.",
+    "default": "none"
+  },
+  {
+    "key": "erOneWaysMajor",
+    "name": "Shuffle Standard One-Ways",
+    "category": "entrances",
+    "type": "boolean",
+    "description": "Shuffles the Gerudo Valley to Lake Hylia and Ikana Canyon to Southern Swamp entrances.",
+    "default": false
+  },
+  {
+    "key": "erOneWaysIkana",
+    "name": "Shuffle Ikana Castle One-Ways",
+    "category": "entrances",
+    "type": "boolean",
+    "description": "Shuffles the one-way entrances in Ikana Castle with the others. This is the keg-blocked entrance and the block moved by the switch.",
+    "default": false
+  },
+  {
+    "key": "erOneWaysSongs",
+    "name": "Shuffle One-Ways with Warp Songs",
+    "category": "entrances",
+    "type": "boolean",
+    "description": "Shuffles the warp songs from OOT among one-way entrances. This setting is disabled if the warp songs are shuffled with \"Shuffle Warp Songs and Soaring\".",
+    "default": false
+  },
+  {
+    "key": "erOneWaysStatues",
+    "name": "Shuffle One-Ways with Owl Statues",
+    "category": "entrances",
+    "type": "boolean",
+    "description": "Shuffles the owl statues from MM among one-way entrances. This setting is disabled if the soaring spots are shuffled with \"Shuffle Warp Songs and Soaring\".",
+    "default": false
+  },
+  {
+    "key": "erOneWaysOwls",
     "name": "Shuffle Child Owl Flights",
     "category": "entrances",
     "type": "boolean",
-    "description": "Shuffle the two owl flights among the other warps.",
+    "description": "Shuffle the two owl flights among one-way entrances.",
     "default": false
   }
 ]

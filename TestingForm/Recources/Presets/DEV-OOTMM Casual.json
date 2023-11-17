@@ -2226,11 +2226,17 @@
       "Id": "OOT Deku Tree Lobby => OOT Deku Tree Slingshot Room",
       "RequiredItems": [
         "OOT_soul_deku_scrub",
-        "OOT_has_shield_for_scrubs",
         "OOT Deku Tree Lobby",
         "setting{DT_MQ, false}"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_shield_for_scrubs"
+        ],
+        [
+          "OOT_can_hammer"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -3370,6 +3376,9 @@
         ],
         [
           "OOT_can_use_slingshot"
+        ],
+        [
+          "OOT_can_hammer"
         ]
       ],
       "TimeNeeded": "None",
@@ -3393,6 +3402,9 @@
         ],
         [
           "OOT_can_use_slingshot"
+        ],
+        [
+          "OOT_can_hammer"
         ]
       ],
       "TimeNeeded": "None",
@@ -3977,6 +3989,9 @@
         ],
         [
           "OOT_can_use_slingshot"
+        ],
+        [
+          "OOT_can_hammer"
         ]
       ],
       "TimeNeeded": "None",
@@ -4000,6 +4015,9 @@
         ],
         [
           "OOT_can_use_slingshot"
+        ],
+        [
+          "OOT_can_hammer"
         ]
       ],
       "TimeNeeded": "None",
@@ -10084,26 +10102,31 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_has_weapon"
-        ],
-        [
-          "OOT_can_boomerang",
-          "OOT_can_use_sticks",
+          "OOT_has_weapon",
           "OOT_SOUL_NPC_CARPENTERS"
         ],
         [
-          "OOT_can_boomerang",
-          "OOT_can_use_sticks",
+          "OOT_has_weapon",
           "setting{soulsNpcOot, false}"
         ],
         [
-          "OOT_can_use_sticks",
           "OOT_SOUL_NPC_CARPENTERS",
+          "OOT_can_boomerang",
+          "OOT_can_use_sticks"
+        ],
+        [
+          "setting{soulsNpcOot, false}",
+          "OOT_can_boomerang",
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_SOUL_NPC_CARPENTERS",
+          "OOT_can_use_sticks",
           "OOT_has_nuts"
         ],
         [
-          "OOT_can_use_sticks",
           "setting{soulsNpcOot, false}",
+          "OOT_can_use_sticks",
           "OOT_has_nuts"
         ]
       ],
@@ -10626,26 +10649,31 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_has_weapon"
-        ],
-        [
-          "OOT_can_boomerang",
-          "OOT_can_use_sticks",
+          "OOT_has_weapon",
           "OOT_SOUL_NPC_CARPENTERS"
         ],
         [
-          "OOT_can_boomerang",
-          "OOT_can_use_sticks",
+          "OOT_has_weapon",
           "setting{soulsNpcOot, false}"
         ],
         [
-          "OOT_can_use_sticks",
           "OOT_SOUL_NPC_CARPENTERS",
+          "OOT_can_boomerang",
+          "OOT_can_use_sticks"
+        ],
+        [
+          "setting{soulsNpcOot, false}",
+          "OOT_can_boomerang",
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_SOUL_NPC_CARPENTERS",
+          "OOT_can_use_sticks",
           "OOT_has_nuts"
         ],
         [
-          "OOT_can_use_sticks",
           "setting{soulsNpcOot, false}",
+          "OOT_can_use_sticks",
           "OOT_has_nuts"
         ]
       ],
@@ -10816,26 +10844,31 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_has_weapon"
-        ],
-        [
-          "OOT_can_boomerang",
-          "OOT_can_use_sticks",
+          "OOT_has_weapon",
           "OOT_SOUL_NPC_CARPENTERS"
         ],
         [
-          "OOT_can_boomerang",
-          "OOT_can_use_sticks",
+          "OOT_has_weapon",
           "setting{soulsNpcOot, false}"
         ],
         [
-          "OOT_can_use_sticks",
           "OOT_SOUL_NPC_CARPENTERS",
+          "OOT_can_boomerang",
+          "OOT_can_use_sticks"
+        ],
+        [
+          "setting{soulsNpcOot, false}",
+          "OOT_can_boomerang",
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_SOUL_NPC_CARPENTERS",
+          "OOT_can_use_sticks",
           "OOT_has_nuts"
         ],
         [
-          "OOT_can_use_sticks",
           "setting{soulsNpcOot, false}",
+          "OOT_can_use_sticks",
           "OOT_has_nuts"
         ]
       ],
@@ -11141,26 +11174,31 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_has_weapon"
-        ],
-        [
-          "OOT_can_boomerang",
-          "OOT_can_use_sticks",
+          "OOT_has_weapon",
           "OOT_SOUL_NPC_CARPENTERS"
         ],
         [
-          "OOT_can_boomerang",
-          "OOT_can_use_sticks",
+          "OOT_has_weapon",
           "setting{soulsNpcOot, false}"
         ],
         [
-          "OOT_can_use_sticks",
           "OOT_SOUL_NPC_CARPENTERS",
+          "OOT_can_boomerang",
+          "OOT_can_use_sticks"
+        ],
+        [
+          "setting{soulsNpcOot, false}",
+          "OOT_can_boomerang",
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_SOUL_NPC_CARPENTERS",
+          "OOT_can_use_sticks",
           "OOT_has_nuts"
         ],
         [
-          "OOT_can_use_sticks",
           "setting{soulsNpcOot, false}",
+          "OOT_can_use_sticks",
           "OOT_has_nuts"
         ]
       ],
@@ -19474,7 +19512,8 @@
           "OOT_HAS_BRIDGE_REQUIREMENTS"
         ],
         [
-          "OOT_longshot_anywhere"
+          "OOT_longshot_anywhere",
+          "trick{TRICK_OOT_GANON_CASTLE_ENTRY}"
         ]
       ],
       "TimeNeeded": "None",
@@ -22026,6 +22065,17 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Windmill Exit => OOT Windmill",
+      "RequiredItems": [
+        "OOT Windmill Exit"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Kakariko Carpenter House => OOT Kakariko",
       "RequiredItems": [
         "OOT Kakariko Carpenter House"
@@ -22142,6 +22192,9 @@
         ],
         [
           "OOT_can_use_din"
+        ],
+        [
+          "OOT_can_hammer"
         ]
       ],
       "TimeNeeded": "None",
@@ -22640,6 +22693,7 @@
         ],
         [
           "OOT_has_fire_arrows",
+          "trick{TRICK_OOT_SHADOW_TEMPLE_STICKS}",
           "OOT_can_use_sticks"
         ]
       ],
@@ -22870,7 +22924,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Dampe Grave => OOT Windmill",
+      "Id": "OOT Dampe Grave => OOT Windmill Exit",
       "RequiredItems": [
         "OOT_is_adult",
         "OOT_can_play_time",
@@ -23935,31 +23989,58 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_has_bombflowers"
+          "OOT_has_bombflowers",
+          "OOT_is_child"
         ],
         [
-          "OOT_can_use_bow",
-          "OOT_is_adult"
-        ],
-        [
-          "OOT_can_use_bow",
+          "OOT_has_bombflowers",
           "OOT_time_travel_at_will"
+        ],
+        [
+          "OOT_has_bombflowers",
+          "OOT_is_adult",
+          "OOT_SOUL_NPC_GORON_CHILD"
+        ],
+        [
+          "OOT_has_bombflowers",
+          "OOT_is_adult",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "OOT_time_travel_at_will",
+          "OOT_SOUL_NPC_GORON_CHILD",
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT_SOUL_NPC_GORON_CHILD",
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_time_travel_at_will",
+          "setting{soulsNpcOot, false}",
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_is_adult",
+          "setting{soulsNpcOot, false}",
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_is_child",
+          "OOT_can_use_din"
         ],
         [
           "OOT_time_travel_at_will",
           "OOT_can_use_din"
         ],
         [
-          "OOT_time_travel_at_will",
+          "OOT_is_child",
           "OOT_EVENT_DARUNIA_TORCH"
         ],
         [
-          "OOT_can_use_din",
-          "OOT_is_child"
-        ],
-        [
-          "OOT_EVENT_DARUNIA_TORCH",
-          "OOT_is_child"
+          "OOT_time_travel_at_will",
+          "OOT_EVENT_DARUNIA_TORCH"
         ]
       ],
       "TimeNeeded": "None",
@@ -26212,18 +26293,6 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Lake Hylia => OOT Gerudo Valley Falls",
-      "RequiredItems": [
-        "false",
-        "OOT Lake Hylia"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
       "Id": "OOT Lake Hylia => OOT Laboratory",
       "RequiredItems": [
         "OOT Lake Hylia"
@@ -28092,7 +28161,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Octorok Grotto Ledge => OOT Lake Hylia",
+      "Id": "OOT Octorok Grotto Ledge => OOT Gerudo Valley Falls",
       "RequiredItems": [
         "OOT Octorok Grotto Ledge"
       ],
@@ -28127,7 +28196,7 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Octorok Grotto => OOT Gerudo Valley",
+      "Id": "OOT Octorok Grotto => OOT Octorok Grotto Ledge",
       "RequiredItems": [
         "OOT Octorok Grotto"
       ],
@@ -28140,20 +28209,6 @@
     {
       "Id": "OOT Gerudo Valley Falls => OOT Lake Hylia",
       "RequiredItems": [
-        "OOT Gerudo Valley Falls"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "OOT Gerudo Valley Falls => OOT Gerudo Valley After Bridge",
-      "RequiredItems": [
-        "setting{erRegions, none, false}",
-        "setting{erRegionsShortcuts}",
-        "OOT_is_adult",
         "OOT Gerudo Valley Falls"
       ],
       "ConditionalItems": [],
@@ -37089,6 +37144,110 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT MQ Bottom of the Well Grass Dead-Hand 1",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Bottom of the Well Main",
+        "setting{BotW_MQ}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_has_ranged_weapon"
+        ],
+        [
+          "OOT_has_explosives_or_hammer"
+        ],
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_can_use_sword"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Bottom of the Well Grass Dead-Hand 2",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Bottom of the Well Main",
+        "setting{BotW_MQ}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_has_ranged_weapon"
+        ],
+        [
+          "OOT_has_explosives_or_hammer"
+        ],
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_can_use_sword"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Bottom of the Well Grass Dead-Hand 3",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Bottom of the Well Main",
+        "setting{BotW_MQ}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_has_ranged_weapon"
+        ],
+        [
+          "OOT_has_explosives_or_hammer"
+        ],
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_can_use_sword"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Bottom of the Well Grass Dead-Hand 4",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Bottom of the Well Main",
+        "setting{BotW_MQ}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_has_ranged_weapon"
+        ],
+        [
+          "OOT_has_explosives_or_hammer"
+        ],
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_can_use_sword"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT MQ Deku Tree Map Chest",
       "RequiredItems": [
         "OOT Deku Tree Lobby",
@@ -37184,6 +37343,462 @@
         "setting{DT_MQ}"
       ],
       "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Entrance Lower 1",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Lobby",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Entrance Lower 2",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Lobby",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Entrance Lower 3",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Lobby",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Entrance Lower 4",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Lobby",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Entrance Lower 5",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Lobby",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Entrance Upper 1",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Lobby",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Entrance Upper 2",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Lobby",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Slingshot Room Front 1",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Lobby",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Slingshot Room Front 2",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Lobby",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Slingshot Room Back 1",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Lobby",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Slingshot Room Back 2",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Lobby",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Room Before Compass 1",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Lobby",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_can_use_din"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Room Before Compass 2",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Lobby",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_can_use_din"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Room Before Compass 3",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Lobby",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_can_use_din"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Room Before Compass 4",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Lobby",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_can_use_din"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Room Before Compass 5",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Lobby",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_can_use_din"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Room Before Compass 6",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Lobby",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_can_use_din"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Room Before Compass 7",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Lobby",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_can_use_din"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Basement Lower 1",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Lobby",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Basement Lower 2",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Lobby",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Basement Lower 3",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Lobby",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Basement Lower 4",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Lobby",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Room Before Spike 1",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Lobby",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_can_use_slingshot",
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_can_use_slingshot",
+          "OOT_has_fire"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Room Before Spike 2",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Lobby",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_can_use_slingshot",
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_can_use_slingshot",
+          "OOT_has_fire"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Room Before Spike 3",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Lobby",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_can_use_slingshot",
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_can_use_slingshot",
+          "OOT_has_fire"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Room Before Spike 4",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Lobby",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_can_use_slingshot",
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_can_use_slingshot",
+          "OOT_has_fire"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -37301,6 +37916,58 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT MQ Deku Tree Grass Compass Room 1",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Compass Room",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Compass Room 2",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Compass Room",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Compass Room 3",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Compass Room",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Compass Room 4",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Compass Room",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Deku Tree Compass Room => OOT Deku Tree Lobby",
       "RequiredItems": [
         "OOT Deku Tree Compass Room",
@@ -37315,6 +37982,63 @@
     {
       "Id": "OOT MQ Deku Tree Before Water Platform Chest",
       "RequiredItems": [
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT Deku Tree Water Room"
+        ],
+        [
+          "OOT Deku Tree Water Room Back"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Spike Room Front 1",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT Deku Tree Water Room"
+        ],
+        [
+          "OOT Deku Tree Water Room Back"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Spike Room Front 2",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT Deku Tree Water Room"
+        ],
+        [
+          "OOT Deku Tree Water Room Back"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Spike Room Front 3",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
         "setting{DT_MQ}"
       ],
       "ConditionalItems": [
@@ -37374,6 +38098,70 @@
         "setting{DT_MQ}"
       ],
       "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Spike Room Back 1",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Water Room Back",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Spike Room Back 2",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Water Room Back",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Larvae Room 1",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT Deku Tree Water Room Back"
+        ],
+        [
+          "OOT Deku Tree Backrooms"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Larvae Room 2",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT Deku Tree Water Room Back"
+        ],
+        [
+          "OOT Deku Tree Backrooms"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -37483,6 +38271,131 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT MQ Deku Tree Grass Gravestone Room 1",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Backrooms",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Gravestone Room 2",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Backrooms",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Gravestone Room 3",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Backrooms",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Gravestone Room 4",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Backrooms",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Gravestone Room 5",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Backrooms",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Back Room 1",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Backrooms",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_has_fire"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Back Room 2",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Backrooms",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_has_fire"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Back Room 3",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Backrooms",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_sticks"
+        ],
+        [
+          "OOT_has_fire"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Deku Tree Backrooms => OOT Deku Tree Water Room Back",
       "RequiredItems": [
         "OOT_soul_keese",
@@ -37548,6 +38461,45 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT MQ Deku Tree Grass Basement Upper 1",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Basement Ledge",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Basement Upper 2",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Basement Ledge",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Basement Upper 3",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Basement Ledge",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Deku Tree Basement Ledge => OOT Deku Tree Backrooms",
       "RequiredItems": [
         "OOT_is_child",
@@ -37564,6 +38516,45 @@
       "Id": "OOT_EVENT_DEKU_BLOCK",
       "RequiredItems": [
         "OOT Deku Tree Basement Ledge",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Room Before Boss 1",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Before Boss",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Room Before Boss 2",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Before Boss",
+        "setting{DT_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Deku Tree Grass Room Before Boss 3",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Deku Tree Before Boss",
         "setting{DT_MQ}"
       ],
       "ConditionalItems": [],
@@ -37871,6 +38862,58 @@
       "Id": "OOT MQ Dodongo Cavern Compass Chest",
       "RequiredItems": [
         "OOT_soul_dodongo",
+        "OOT Dodongo Cavern After Staircase",
+        "setting{DC_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Dodongo Cavern Grass Compass Room 1",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Dodongo Cavern After Staircase",
+        "setting{DC_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Dodongo Cavern Grass Compass Room 2",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Dodongo Cavern After Staircase",
+        "setting{DC_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Dodongo Cavern Grass Compass Room 3",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Dodongo Cavern After Staircase",
+        "setting{DC_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Dodongo Cavern Grass Compass Room 4",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
         "OOT Dodongo Cavern After Staircase",
         "setting{DC_MQ}"
       ],
@@ -38367,6 +39410,52 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT MQ Dodongo Cavern Grass Green Corridor Side Room 1",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Dodongo Cavern Poe Room",
+        "setting{DC_MQ}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_has_bombflowers"
+        ],
+        [
+          "OOT_can_use_din"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Dodongo Cavern Grass Green Corridor Side Room 2",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Dodongo Cavern Poe Room",
+        "setting{DC_MQ}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_can_use_bow"
+        ],
+        [
+          "OOT_has_bombflowers"
+        ],
+        [
+          "OOT_can_use_din"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Dodongo Cavern Poe Room => OOT Dodongo Cavern Lower Lizalfos",
       "RequiredItems": [
         "OOT Dodongo Cavern Poe Room",
@@ -38535,6 +39624,32 @@
     {
       "Id": "OOT MQ Dodongo Cavern Pot Before Boss Loop Side Room 2",
       "RequiredItems": [
+        "OOT Dodongo Cavern Skull",
+        "setting{DC_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Dodongo Cavern Grass Boss Loop",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Dodongo Cavern Skull",
+        "setting{DC_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Dodongo Cavern Grass Boss Loop Side Room",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
         "OOT Dodongo Cavern Skull",
         "setting{DC_MQ}"
       ],
@@ -43382,6 +44497,32 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT MQ Jabu-Jabu Grass Entrance 1",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Jabu-Jabu",
+        "setting{JJ_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Jabu-Jabu Grass Entrance 2",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Jabu-Jabu",
+        "setting{JJ_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT_EVENT_JABU_MQ_START",
       "RequiredItems": [
         "OOT_can_use_slingshot",
@@ -43704,6 +44845,177 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT MQ Jabu-Jabu Grass Main Room Top 1",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT_has_explosives_or_hammer",
+        "OOT Jabu-Jabu Main",
+        "setting{JJ_MQ}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_is_child"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT_can_dive_small"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Jabu-Jabu Grass Main Room Top 2",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT_has_explosives_or_hammer",
+        "OOT Jabu-Jabu Main",
+        "setting{JJ_MQ}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_is_child"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT_can_dive_small"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Jabu-Jabu Grass Main Room Bottom 1",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Jabu-Jabu Main",
+        "setting{JJ_MQ}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_is_child"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT_can_dive_small"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Jabu-Jabu Grass Main Room Bottom 2",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Jabu-Jabu Main",
+        "setting{JJ_MQ}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_is_child"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT_can_dive_small"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Jabu-Jabu Grass Main Room Bottom 3",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Jabu-Jabu Main",
+        "setting{JJ_MQ}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_is_child"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT_can_dive_small"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Jabu-Jabu Grass Boomerang Room",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Jabu-Jabu Main",
+        "setting{JJ_MQ}"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_is_child"
+        ],
+        [
+          "OOT_is_adult",
+          "OOT_can_dive_small"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Jabu-Jabu Grass Big Octo Top 1",
+      "RequiredItems": [
+        "OOT_EVENT_JABU_BIG_OCTO",
+        "OOT_can_cut_grass",
+        "OOT Jabu-Jabu Main",
+        "setting{JJ_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Jabu-Jabu Grass Big Octo Top 2",
+      "RequiredItems": [
+        "OOT_EVENT_JABU_BIG_OCTO",
+        "OOT_can_cut_grass",
+        "OOT Jabu-Jabu Main",
+        "setting{JJ_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Jabu-Jabu Grass Room After Big Octo",
+      "RequiredItems": [
+        "OOT_EVENT_JABU_BIG_OCTO",
+        "OOT_can_cut_grass",
+        "OOT_can_use_slingshot",
+        "OOT Jabu-Jabu Main",
+        "setting{JJ_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Jabu-Jabu Main => OOT Jabu-Jabu Back",
       "RequiredItems": [
         "OOT_can_boomerang",
@@ -43817,6 +45129,19 @@
     {
       "Id": "OOT MQ Jabu-Jabu Pot Like-Like Room 2",
       "RequiredItems": [
+        "OOT Jabu-Jabu Back",
+        "setting{JJ_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Jabu-Jabu Grass Torch Room",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
         "OOT Jabu-Jabu Back",
         "setting{JJ_MQ}"
       ],
@@ -43977,6 +45302,32 @@
     {
       "Id": "OOT MQ Jabu-Jabu Pot Before Boss",
       "RequiredItems": [
+        "OOT Jabu-Jabu Pre-Boss",
+        "setting{JJ_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Jabu-Jabu Grass Before Boss 1",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Jabu-Jabu Pre-Boss",
+        "setting{JJ_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Jabu-Jabu Grass Before Boss 2",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
         "OOT Jabu-Jabu Pre-Boss",
         "setting{JJ_MQ}"
       ],
@@ -49152,19 +50503,7 @@
         "MM Ancient Castle of Ikana Roof Exterior",
         "MM_can_reset_time"
       ],
-      "ConditionalItems": [
-        [
-          "setting{erIkanaCastle}",
-          "MM_MASK_DEKU"
-        ],
-        [
-          "setting{erIkanaCastle}",
-          "MM_short_hook_anywhere"
-        ],
-        [
-          "setting{erIkanaCastle, false}"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -49344,7 +50683,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Ancient Castle of Ikana Interior South => MM Ancient Castle of Ikana Interior",
+      "Id": "MM Ancient Castle of Ikana Interior South => MM Ancient Castle of Ikana",
       "RequiredItems": [
         "MM Ancient Castle of Ikana Interior South",
         "MM_can_reset_time"
@@ -49358,8 +50697,8 @@
     {
       "Id": "MM Ancient Castle of Ikana Interior South => MM Ancient Castle of Ikana Wizzrobe",
       "RequiredItems": [
-        "MM Ancient Castle of Ikana Interior South",
-        "MM_can_reset_time"
+        "MM_can_reset_time",
+        "MM Ancient Castle of Ikana Interior South"
       ],
       "ConditionalItems": [
         [
@@ -49509,9 +50848,22 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Ancient Castle of Ikana Roof Interior => MM Ancient Castle of Ikana Interior",
+      "Id": "MM Ancient Castle of Ikana Roof Interior => MM Ancient Castle of Ikana",
       "RequiredItems": [
         "MM_EVENT_IKANA_CASTLE_LIGHT2",
+        "MM Ancient Castle of Ikana Roof Interior",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Ancient Castle of Ikana Roof Interior => MM Ancient Castle of Ikana Interior South",
+      "RequiredItems": [
+        "MM_EVENT_IKANA_CASTLE_LIGHT",
         "MM Ancient Castle of Ikana Roof Interior",
         "MM_can_reset_time"
       ],
@@ -50608,11 +51960,11 @@
           "MM_has_hot_water_well"
         ],
         [
-          "MM_has_hot_water_distance",
+          "MM_has_hot_water_distance_spring",
           "MM_OWL_IKANA_CANYON"
         ],
         [
-          "MM_has_hot_water_er"
+          "MM_has_hot_water_er_spring"
         ]
       ],
       "TimeNeeded": "None",
@@ -50631,11 +51983,11 @@
           "MM_has_hot_water_well"
         ],
         [
-          "MM_has_hot_water_distance",
+          "MM_has_hot_water_distance_spring",
           "MM_OWL_IKANA_CANYON"
         ],
         [
-          "MM_has_hot_water_er"
+          "MM_has_hot_water_er_spring"
         ]
       ],
       "TimeNeeded": "None",
@@ -50654,11 +52006,11 @@
           "MM_has_hot_water_well"
         ],
         [
-          "MM_has_hot_water_distance",
+          "MM_has_hot_water_distance_spring",
           "MM_OWL_IKANA_CANYON"
         ],
         [
-          "MM_has_hot_water_er"
+          "MM_has_hot_water_er_spring"
         ]
       ],
       "TimeNeeded": "None",
@@ -50677,11 +52029,11 @@
           "MM_has_hot_water_well"
         ],
         [
-          "MM_has_hot_water_distance",
+          "MM_has_hot_water_distance_spring",
           "MM_OWL_IKANA_CANYON"
         ],
         [
-          "MM_has_hot_water_er"
+          "MM_has_hot_water_er_spring"
         ]
       ],
       "TimeNeeded": "None",
@@ -66823,19 +68175,6 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Swamp Front => MM Ikana Valley",
-      "RequiredItems": [
-        "false",
-        "MM Swamp Front",
-        "MM_can_reset_time"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
       "Id": "MM Swamp Front => MM Owl Swamp",
       "RequiredItems": [
         "MM Swamp Front",
@@ -76638,7 +77977,17 @@
         "MM Zora Cape",
         "MM_can_reset_time"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "MM_has_explosives"
+        ],
+        [
+          "MM_trick_keg_explosives"
+        ],
+        [
+          "MM_short_hook_anywhere"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -76873,7 +78222,19 @@
         "MM Great Bay Near Fairy Fountain",
         "MM_can_reset_time"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{erIndoorsMajor}",
+          "MM_has_explosives"
+        ],
+        [
+          "setting{erIndoorsMajor}",
+          "MM_trick_keg_explosives"
+        ],
+        [
+          "setting{erIndoorsMajor, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -76885,17 +78246,7 @@
         "MM Great Bay Near Fairy Fountain",
         "MM_can_reset_time"
       ],
-      "ConditionalItems": [
-        [
-          "MM_has_explosives"
-        ],
-        [
-          "MM_trick_keg_explosives"
-        ],
-        [
-          "MM_short_hook_anywhere"
-        ]
-      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -92861,6 +94212,15 @@
           "OOT_BOTTLE_MILK"
         ],
         [
+          "OOT_BOTTLE_POTION_RED"
+        ],
+        [
+          "OOT_BOTTLE_POTION_GREEN"
+        ],
+        [
+          "OOT_BOTTLE_POTION_BLUE"
+        ],
+        [
           "OOT_EVENT_KING_ZORA_LETTER"
         ]
       ],
@@ -93456,6 +94816,42 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT_has_green_potion",
+      "RequiredItems": [
+        "OOT_has_bottle"
+      ],
+      "ConditionalItems": [
+        [
+          "renewable{OOT_POTION_GREEN}"
+        ],
+        [
+          "renewable{OOT_BOTTLE_POTION_GREEN}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_blue_potion",
+      "RequiredItems": [
+        "OOT_has_bottle"
+      ],
+      "ConditionalItems": [
+        [
+          "renewable{OOT_POTION_BLUE}"
+        ],
+        [
+          "renewable{OOT_BOTTLE_POTION_BLUE}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT_has_magic",
       "RequiredItems": [],
       "ConditionalItems": [
@@ -93479,23 +94875,19 @@
         ],
         [
           "OOT_MAGIC_UPGRADE",
-          "OOT_has_bottle",
-          "renewable{OOT_POTION_GREEN}"
+          "OOT_has_green_potion"
         ],
         [
           "SHARED_MAGIC_UPGRADE",
-          "OOT_has_bottle",
-          "renewable{OOT_POTION_GREEN}"
+          "OOT_has_green_potion"
         ],
         [
           "OOT_MAGIC_UPGRADE",
-          "OOT_has_bottle",
-          "renewable{OOT_POTION_BLUE}"
+          "OOT_has_blue_potion"
         ],
         [
           "SHARED_MAGIC_UPGRADE",
-          "OOT_has_bottle",
-          "renewable{OOT_POTION_BLUE}"
+          "OOT_has_blue_potion"
         ]
       ],
       "TimeNeeded": "None",
@@ -94198,14 +95590,8 @@
         ],
         [
           "OOT_EVENT_CARPENTER_1",
-          "OOT_EVENT_CARPENTER_2"
-        ],
-        [
-          "OOT_EVENT_CARPENTER_1",
-          "OOT_EVENT_CARPENTER_3"
-        ],
-        [
-          "OOT_EVENT_CARPENTER_1",
+          "OOT_EVENT_CARPENTER_2",
+          "OOT_EVENT_CARPENTER_3",
           "OOT_EVENT_CARPENTER_4"
         ]
       ],
@@ -95431,21 +96817,112 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT_ganon_barrier",
+      "Id": "OOT_ganon_trial_light",
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "setting{ganonTrials, none}"
+          "setting{ganonTrialsLight, false}"
         ],
         [
-          "OOT_EVENT_GANON_TRIAL_LIGHT",
-          "OOT_EVENT_GANON_TRIAL_FOREST",
-          "OOT_EVENT_GANON_TRIAL_FIRE",
-          "OOT_EVENT_GANON_TRIAL_WATER",
-          "OOT_EVENT_GANON_TRIAL_SHADOW",
+          "OOT_EVENT_GANON_TRIAL_LIGHT"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_ganon_trial_forest",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{ganonTrialsForest, false}"
+        ],
+        [
+          "OOT_EVENT_GANON_TRIAL_FOREST"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_ganon_trial_fire",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{ganonTrialsFire, false}"
+        ],
+        [
+          "OOT_EVENT_GANON_TRIAL_FIRE"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_ganon_trial_water",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{ganonTrialsWater, false}"
+        ],
+        [
+          "OOT_EVENT_GANON_TRIAL_WATER"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_ganon_trial_shadow",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{ganonTrialsShadow, false}"
+        ],
+        [
+          "OOT_EVENT_GANON_TRIAL_SHADOW"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_ganon_trial_spirit",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{ganonTrialsSpirit, false}"
+        ],
+        [
           "OOT_EVENT_GANON_TRIAL_SPIRIT"
         ]
       ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_ganon_barrier",
+      "RequiredItems": [
+        "OOT_ganon_trial_light",
+        "OOT_ganon_trial_forest",
+        "OOT_ganon_trial_fire",
+        "OOT_ganon_trial_water",
+        "OOT_ganon_trial_shadow",
+        "OOT_ganon_trial_spirit"
+      ],
+      "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -97370,6 +98847,12 @@
           "MM_BOTTLE_POTION_RED"
         ],
         [
+          "MM_BOTTLE_POTION_GREEN"
+        ],
+        [
+          "MM_BOTTLE_POTION_BLUE"
+        ],
+        [
           "MM_BOTTLE_MILK"
         ],
         [
@@ -97387,10 +98870,16 @@
     {
       "Id": "MM_has_blue_potion",
       "RequiredItems": [
-        "MM_has_bottle",
-        "renewable{MM_POTION_BLUE}"
+        "MM_has_bottle"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "renewable{MM_POTION_BLUE}"
+        ],
+        [
+          "renewable{MM_BOTTLE_POTION_BLUE}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -97420,10 +98909,16 @@
     {
       "Id": "MM_has_green_potion",
       "RequiredItems": [
-        "MM_has_bottle",
-        "renewable{MM_POTION_GREEN}"
+        "MM_has_bottle"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "renewable{MM_POTION_GREEN}"
+        ],
+        [
+          "renewable{MM_BOTTLE_POTION_GREEN}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -97591,6 +99086,24 @@
       ],
       "ConditionalItems": [
         [
+          "MM_has_hot_water_mtn"
+        ],
+        [
+          "MM_has_hot_water_well"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_has_hot_water_distance_spring",
+      "RequiredItems": [
+        "MM_can_play_soaring"
+      ],
+      "ConditionalItems": [
+        [
           "MM_has_hot_water_mtn_spring"
         ],
         [
@@ -97604,6 +99117,24 @@
     },
     {
       "Id": "MM_has_hot_water_er",
+      "RequiredItems": [
+        "MM_er_enabled"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_has_hot_water_mtn"
+        ],
+        [
+          "MM_has_hot_water_well"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_has_hot_water_er_spring",
       "RequiredItems": [
         "MM_er_enabled"
       ],
@@ -97809,16 +99340,61 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "setting{erDungeons, none, false}"
+          "setting{erMajorDungeons}"
         ],
         [
-          "setting{erIndoors, none, false}"
+          "setting{erMinorDungeons}"
+        ],
+        [
+          "setting{erSpiderHouses}"
+        ],
+        [
+          "setting{erGanonCastle}"
+        ],
+        [
+          "setting{erGanonTower}"
+        ],
+        [
+          "setting{erBeneathWell}"
+        ],
+        [
+          "setting{erPirateFortress}"
+        ],
+        [
+          "setting{erSecretShrine}"
+        ],
+        [
+          "setting{erIkanaCastle}"
+        ],
+        [
+          "setting{erIndoorsMajor}"
+        ],
+        [
+          "setting{erIndoorsExtra}"
         ],
         [
           "setting{erRegions, none, false}"
         ],
         [
           "setting{erBoss, none, false}"
+        ],
+        [
+          "setting{erWarps, none, false}"
+        ],
+        [
+          "setting{erOneWaysMajor}"
+        ],
+        [
+          "setting{erOneWaysIkana}"
+        ],
+        [
+          "setting{erOneWaysSongs}"
+        ],
+        [
+          "setting{erOneWaysStatues}"
+        ],
+        [
+          "setting{erOneWaysOwls}"
         ]
       ],
       "TimeNeeded": "None",

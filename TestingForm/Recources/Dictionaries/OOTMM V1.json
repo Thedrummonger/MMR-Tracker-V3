@@ -24404,6 +24404,1026 @@
       },
       "LocationProxys": []
     },
+    "OOT MQ Deku Tree Grass Entrance Lower 1": {
+      "ID": "OOT MQ Deku Tree Grass Entrance Lower 1",
+      "Name": "OOT MQ Deku Tree Grass Entrance Lower 1",
+      "OriginalItem": "OOT_DEKU_SEEDS_5",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Entrance Lower 1"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Entrance Lower 2": {
+      "ID": "OOT MQ Deku Tree Grass Entrance Lower 2",
+      "Name": "OOT MQ Deku Tree Grass Entrance Lower 2",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Entrance Lower 2"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Entrance Lower 3": {
+      "ID": "OOT MQ Deku Tree Grass Entrance Lower 3",
+      "Name": "OOT MQ Deku Tree Grass Entrance Lower 3",
+      "OriginalItem": "OOT_DEKU_SEEDS_5",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Entrance Lower 3"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Entrance Lower 4": {
+      "ID": "OOT MQ Deku Tree Grass Entrance Lower 4",
+      "Name": "OOT MQ Deku Tree Grass Entrance Lower 4",
+      "OriginalItem": "SHARED_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Entrance Lower 4"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Entrance Lower 5": {
+      "ID": "OOT MQ Deku Tree Grass Entrance Lower 5",
+      "Name": "OOT MQ Deku Tree Grass Entrance Lower 5",
+      "OriginalItem": "SHARED_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Entrance Lower 5"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Entrance Upper 1": {
+      "ID": "OOT MQ Deku Tree Grass Entrance Upper 1",
+      "Name": "OOT MQ Deku Tree Grass Entrance Upper 1",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Entrance Upper 1"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Entrance Upper 2": {
+      "ID": "OOT MQ Deku Tree Grass Entrance Upper 2",
+      "Name": "OOT MQ Deku Tree Grass Entrance Upper 2",
+      "OriginalItem": "OOT_DEKU_SEEDS_5",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Entrance Upper 2"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Room Before Compass 1": {
+      "ID": "OOT MQ Deku Tree Grass Room Before Compass 1",
+      "Name": "OOT MQ Deku Tree Grass Room Before Compass 1",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Room Before Compass 1"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Room Before Compass 2": {
+      "ID": "OOT MQ Deku Tree Grass Room Before Compass 2",
+      "Name": "OOT MQ Deku Tree Grass Room Before Compass 2",
+      "OriginalItem": "OOT_DEKU_SEEDS_5",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Room Before Compass 2"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Room Before Compass 3": {
+      "ID": "OOT MQ Deku Tree Grass Room Before Compass 3",
+      "Name": "OOT MQ Deku Tree Grass Room Before Compass 3",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Room Before Compass 3"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Room Before Compass 4": {
+      "ID": "OOT MQ Deku Tree Grass Room Before Compass 4",
+      "Name": "OOT MQ Deku Tree Grass Room Before Compass 4",
+      "OriginalItem": "SHARED_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Room Before Compass 4"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Room Before Compass 5": {
+      "ID": "OOT MQ Deku Tree Grass Room Before Compass 5",
+      "Name": "OOT MQ Deku Tree Grass Room Before Compass 5",
+      "OriginalItem": "SHARED_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Room Before Compass 5"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Room Before Compass 6": {
+      "ID": "OOT MQ Deku Tree Grass Room Before Compass 6",
+      "Name": "OOT MQ Deku Tree Grass Room Before Compass 6",
+      "OriginalItem": "SHARED_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Room Before Compass 6"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Room Before Compass 7": {
+      "ID": "OOT MQ Deku Tree Grass Room Before Compass 7",
+      "Name": "OOT MQ Deku Tree Grass Room Before Compass 7",
+      "OriginalItem": "SHARED_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Room Before Compass 7"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Compass Room 1": {
+      "ID": "OOT MQ Deku Tree Grass Compass Room 1",
+      "Name": "OOT MQ Deku Tree Grass Compass Room 1",
+      "OriginalItem": "OOT_DEKU_SEEDS_5",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Compass Room 1"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Compass Room 2": {
+      "ID": "OOT MQ Deku Tree Grass Compass Room 2",
+      "Name": "OOT MQ Deku Tree Grass Compass Room 2",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Compass Room 2"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Compass Room 3": {
+      "ID": "OOT MQ Deku Tree Grass Compass Room 3",
+      "Name": "OOT MQ Deku Tree Grass Compass Room 3",
+      "OriginalItem": "OOT_DEKU_SEEDS_5",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Compass Room 3"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Compass Room 4": {
+      "ID": "OOT MQ Deku Tree Grass Compass Room 4",
+      "Name": "OOT MQ Deku Tree Grass Compass Room 4",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Compass Room 4"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Basement Lower 1": {
+      "ID": "OOT MQ Deku Tree Grass Basement Lower 1",
+      "Name": "OOT MQ Deku Tree Grass Basement Lower 1",
+      "OriginalItem": "OOT_DEKU_SEEDS_5",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Basement Lower 1"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Basement Lower 2": {
+      "ID": "OOT MQ Deku Tree Grass Basement Lower 2",
+      "Name": "OOT MQ Deku Tree Grass Basement Lower 2",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Basement Lower 2"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Basement Lower 3": {
+      "ID": "OOT MQ Deku Tree Grass Basement Lower 3",
+      "Name": "OOT MQ Deku Tree Grass Basement Lower 3",
+      "OriginalItem": "SHARED_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Basement Lower 3"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Basement Lower 4": {
+      "ID": "OOT MQ Deku Tree Grass Basement Lower 4",
+      "Name": "OOT MQ Deku Tree Grass Basement Lower 4",
+      "OriginalItem": "SHARED_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Basement Lower 4"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Basement Upper 1": {
+      "ID": "OOT MQ Deku Tree Grass Basement Upper 1",
+      "Name": "OOT MQ Deku Tree Grass Basement Upper 1",
+      "OriginalItem": "OOT_DEKU_SEEDS_5",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Basement Upper 1"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Basement Upper 2": {
+      "ID": "OOT MQ Deku Tree Grass Basement Upper 2",
+      "Name": "OOT MQ Deku Tree Grass Basement Upper 2",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Basement Upper 2"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Basement Upper 3": {
+      "ID": "OOT MQ Deku Tree Grass Basement Upper 3",
+      "Name": "OOT MQ Deku Tree Grass Basement Upper 3",
+      "OriginalItem": "OOT_DEKU_SEEDS_5",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Basement Upper 3"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Room Before Spike 1": {
+      "ID": "OOT MQ Deku Tree Grass Room Before Spike 1",
+      "Name": "OOT MQ Deku Tree Grass Room Before Spike 1",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Room Before Spike 1"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Room Before Spike 2": {
+      "ID": "OOT MQ Deku Tree Grass Room Before Spike 2",
+      "Name": "OOT MQ Deku Tree Grass Room Before Spike 2",
+      "OriginalItem": "OOT_DEKU_SEEDS_5",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Room Before Spike 2"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Room Before Spike 3": {
+      "ID": "OOT MQ Deku Tree Grass Room Before Spike 3",
+      "Name": "OOT MQ Deku Tree Grass Room Before Spike 3",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Room Before Spike 3"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Room Before Spike 4": {
+      "ID": "OOT MQ Deku Tree Grass Room Before Spike 4",
+      "Name": "OOT MQ Deku Tree Grass Room Before Spike 4",
+      "OriginalItem": "OOT_DEKU_SEEDS_5",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Room Before Spike 4"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Spike Room Back 1": {
+      "ID": "OOT MQ Deku Tree Grass Spike Room Back 1",
+      "Name": "OOT MQ Deku Tree Grass Spike Room Back 1",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Spike Room Back 1"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Spike Room Back 2": {
+      "ID": "OOT MQ Deku Tree Grass Spike Room Back 2",
+      "Name": "OOT MQ Deku Tree Grass Spike Room Back 2",
+      "OriginalItem": "OOT_DEKU_SEEDS_5",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Spike Room Back 2"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Spike Room Front 1": {
+      "ID": "OOT MQ Deku Tree Grass Spike Room Front 1",
+      "Name": "OOT MQ Deku Tree Grass Spike Room Front 1",
+      "OriginalItem": "SHARED_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Spike Room Front 1"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Spike Room Front 2": {
+      "ID": "OOT MQ Deku Tree Grass Spike Room Front 2",
+      "Name": "OOT MQ Deku Tree Grass Spike Room Front 2",
+      "OriginalItem": "SHARED_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Spike Room Front 2"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Spike Room Front 3": {
+      "ID": "OOT MQ Deku Tree Grass Spike Room Front 3",
+      "Name": "OOT MQ Deku Tree Grass Spike Room Front 3",
+      "OriginalItem": "SHARED_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Spike Room Front 3"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Larvae Room 1": {
+      "ID": "OOT MQ Deku Tree Grass Larvae Room 1",
+      "Name": "OOT MQ Deku Tree Grass Larvae Room 1",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Larvae Room 1"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Larvae Room 2": {
+      "ID": "OOT MQ Deku Tree Grass Larvae Room 2",
+      "Name": "OOT MQ Deku Tree Grass Larvae Room 2",
+      "OriginalItem": "OOT_DEKU_SEEDS_5",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Larvae Room 2"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Gravestone Room 1": {
+      "ID": "OOT MQ Deku Tree Grass Gravestone Room 1",
+      "Name": "OOT MQ Deku Tree Grass Gravestone Room 1",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Gravestone Room 1"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Gravestone Room 2": {
+      "ID": "OOT MQ Deku Tree Grass Gravestone Room 2",
+      "Name": "OOT MQ Deku Tree Grass Gravestone Room 2",
+      "OriginalItem": "SHARED_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Gravestone Room 2"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Gravestone Room 3": {
+      "ID": "OOT MQ Deku Tree Grass Gravestone Room 3",
+      "Name": "OOT MQ Deku Tree Grass Gravestone Room 3",
+      "OriginalItem": "SHARED_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Gravestone Room 3"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Gravestone Room 4": {
+      "ID": "OOT MQ Deku Tree Grass Gravestone Room 4",
+      "Name": "OOT MQ Deku Tree Grass Gravestone Room 4",
+      "OriginalItem": "SHARED_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Gravestone Room 4"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Gravestone Room 5": {
+      "ID": "OOT MQ Deku Tree Grass Gravestone Room 5",
+      "Name": "OOT MQ Deku Tree Grass Gravestone Room 5",
+      "OriginalItem": "SHARED_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Gravestone Room 5"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Back Room 1": {
+      "ID": "OOT MQ Deku Tree Grass Back Room 1",
+      "Name": "OOT MQ Deku Tree Grass Back Room 1",
+      "OriginalItem": "SHARED_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Back Room 1"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Back Room 2": {
+      "ID": "OOT MQ Deku Tree Grass Back Room 2",
+      "Name": "OOT MQ Deku Tree Grass Back Room 2",
+      "OriginalItem": "SHARED_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Back Room 2"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Back Room 3": {
+      "ID": "OOT MQ Deku Tree Grass Back Room 3",
+      "Name": "OOT MQ Deku Tree Grass Back Room 3",
+      "OriginalItem": "SHARED_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Back Room 3"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Room Before Boss 1": {
+      "ID": "OOT MQ Deku Tree Grass Room Before Boss 1",
+      "Name": "OOT MQ Deku Tree Grass Room Before Boss 1",
+      "OriginalItem": "OOT_DEKU_SEEDS_5",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Room Before Boss 1"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Room Before Boss 2": {
+      "ID": "OOT MQ Deku Tree Grass Room Before Boss 2",
+      "Name": "OOT MQ Deku Tree Grass Room Before Boss 2",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Room Before Boss 2"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Room Before Boss 3": {
+      "ID": "OOT MQ Deku Tree Grass Room Before Boss 3",
+      "Name": "OOT MQ Deku Tree Grass Room Before Boss 3",
+      "OriginalItem": "OOT_DEKU_SEEDS_5",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Room Before Boss 3"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Slingshot Room Back 1": {
+      "ID": "OOT MQ Deku Tree Grass Slingshot Room Back 1",
+      "Name": "OOT MQ Deku Tree Grass Slingshot Room Back 1",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Slingshot Room Back 1"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Slingshot Room Back 2": {
+      "ID": "OOT MQ Deku Tree Grass Slingshot Room Back 2",
+      "Name": "OOT MQ Deku Tree Grass Slingshot Room Back 2",
+      "OriginalItem": "OOT_DEKU_SEEDS_5",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Slingshot Room Back 2"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Slingshot Room Front 1": {
+      "ID": "OOT MQ Deku Tree Grass Slingshot Room Front 1",
+      "Name": "OOT MQ Deku Tree Grass Slingshot Room Front 1",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Slingshot Room Front 1"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Deku Tree Grass Slingshot Room Front 2": {
+      "ID": "OOT MQ Deku Tree Grass Slingshot Room Front 2",
+      "Name": "OOT MQ Deku Tree Grass Slingshot Room Front 2",
+      "OriginalItem": "OOT_DEKU_SEEDS_5",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Deku Tree Grass Slingshot Room Front 2"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
     "OOT MQ Dodongo Cavern Map Chest": {
       "ID": "OOT MQ Dodongo Cavern Map Chest",
       "Name": "OOT MQ Dodongo Cavern Map Chest",
@@ -25404,6 +26424,166 @@
       },
       "LocationProxys": []
     },
+    "OOT MQ Dodongo Cavern Grass Compass Room 1": {
+      "ID": "OOT MQ Dodongo Cavern Grass Compass Room 1",
+      "Name": "OOT MQ Dodongo Cavern Grass Compass Room 1",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Dodongo Cavern Grass Compass Room 1"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Dodongo Cavern Grass Compass Room 2": {
+      "ID": "OOT MQ Dodongo Cavern Grass Compass Room 2",
+      "Name": "OOT MQ Dodongo Cavern Grass Compass Room 2",
+      "OriginalItem": "OOT_DEKU_SEEDS_5",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Dodongo Cavern Grass Compass Room 2"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Dodongo Cavern Grass Compass Room 3": {
+      "ID": "OOT MQ Dodongo Cavern Grass Compass Room 3",
+      "Name": "OOT MQ Dodongo Cavern Grass Compass Room 3",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Dodongo Cavern Grass Compass Room 3"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Dodongo Cavern Grass Compass Room 4": {
+      "ID": "OOT MQ Dodongo Cavern Grass Compass Room 4",
+      "Name": "OOT MQ Dodongo Cavern Grass Compass Room 4",
+      "OriginalItem": "OOT_DEKU_SEEDS_5",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Dodongo Cavern Grass Compass Room 4"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Dodongo Cavern Grass Boss Loop": {
+      "ID": "OOT MQ Dodongo Cavern Grass Boss Loop",
+      "Name": "OOT MQ Dodongo Cavern Grass Boss Loop",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Dodongo Cavern Grass Boss Loop"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Dodongo Cavern Grass Green Corridor Side Room 1": {
+      "ID": "OOT MQ Dodongo Cavern Grass Green Corridor Side Room 1",
+      "Name": "OOT MQ Dodongo Cavern Grass Green Corridor Side Room 1",
+      "OriginalItem": "OOT_DEKU_SEEDS_5",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Dodongo Cavern Grass Green Corridor Side Room 1"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Dodongo Cavern Grass Green Corridor Side Room 2": {
+      "ID": "OOT MQ Dodongo Cavern Grass Green Corridor Side Room 2",
+      "Name": "OOT MQ Dodongo Cavern Grass Green Corridor Side Room 2",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Dodongo Cavern Grass Green Corridor Side Room 2"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Dodongo Cavern Grass Boss Loop Side Room": {
+      "ID": "OOT MQ Dodongo Cavern Grass Boss Loop Side Room",
+      "Name": "OOT MQ Dodongo Cavern Grass Boss Loop Side Room",
+      "OriginalItem": "OOT_DEKU_SEEDS_5",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Dodongo Cavern Grass Boss Loop Side Room"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
     "OOT MQ Jabu-Jabu Map Chest": {
       "ID": "OOT MQ Jabu-Jabu Map Chest",
       "Name": "OOT MQ Jabu-Jabu Map Chest",
@@ -25904,6 +27084,286 @@
       },
       "LocationProxys": []
     },
+    "OOT MQ Jabu-Jabu Grass Entrance 1": {
+      "ID": "OOT MQ Jabu-Jabu Grass Entrance 1",
+      "Name": "OOT MQ Jabu-Jabu Grass Entrance 1",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Jabu-Jabu Grass Entrance 1"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Jabu-Jabu Grass Entrance 2": {
+      "ID": "OOT MQ Jabu-Jabu Grass Entrance 2",
+      "Name": "OOT MQ Jabu-Jabu Grass Entrance 2",
+      "OriginalItem": "OOT_DEKU_SEEDS_5",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Jabu-Jabu Grass Entrance 2"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Jabu-Jabu Grass Main Room Top 1": {
+      "ID": "OOT MQ Jabu-Jabu Grass Main Room Top 1",
+      "Name": "OOT MQ Jabu-Jabu Grass Main Room Top 1",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Jabu-Jabu Grass Main Room Top 1"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Jabu-Jabu Grass Main Room Top 2": {
+      "ID": "OOT MQ Jabu-Jabu Grass Main Room Top 2",
+      "Name": "OOT MQ Jabu-Jabu Grass Main Room Top 2",
+      "OriginalItem": "OOT_DEKU_SEEDS_5",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Jabu-Jabu Grass Main Room Top 2"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Jabu-Jabu Grass Main Room Bottom 1": {
+      "ID": "OOT MQ Jabu-Jabu Grass Main Room Bottom 1",
+      "Name": "OOT MQ Jabu-Jabu Grass Main Room Bottom 1",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Jabu-Jabu Grass Main Room Bottom 1"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Jabu-Jabu Grass Main Room Bottom 2": {
+      "ID": "OOT MQ Jabu-Jabu Grass Main Room Bottom 2",
+      "Name": "OOT MQ Jabu-Jabu Grass Main Room Bottom 2",
+      "OriginalItem": "OOT_DEKU_SEEDS_5",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Jabu-Jabu Grass Main Room Bottom 2"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Jabu-Jabu Grass Main Room Bottom 3": {
+      "ID": "OOT MQ Jabu-Jabu Grass Main Room Bottom 3",
+      "Name": "OOT MQ Jabu-Jabu Grass Main Room Bottom 3",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Jabu-Jabu Grass Main Room Bottom 3"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Jabu-Jabu Grass Room After Big Octo": {
+      "ID": "OOT MQ Jabu-Jabu Grass Room After Big Octo",
+      "Name": "OOT MQ Jabu-Jabu Grass Room After Big Octo",
+      "OriginalItem": "OOT_DEKU_SEEDS_5",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Jabu-Jabu Grass Room After Big Octo"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Jabu-Jabu Grass Before Boss 1": {
+      "ID": "OOT MQ Jabu-Jabu Grass Before Boss 1",
+      "Name": "OOT MQ Jabu-Jabu Grass Before Boss 1",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Jabu-Jabu Grass Before Boss 1"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Jabu-Jabu Grass Before Boss 2": {
+      "ID": "OOT MQ Jabu-Jabu Grass Before Boss 2",
+      "Name": "OOT MQ Jabu-Jabu Grass Before Boss 2",
+      "OriginalItem": "OOT_DEKU_SEEDS_5",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Jabu-Jabu Grass Before Boss 2"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Jabu-Jabu Grass Big Octo Top 1": {
+      "ID": "OOT MQ Jabu-Jabu Grass Big Octo Top 1",
+      "Name": "OOT MQ Jabu-Jabu Grass Big Octo Top 1",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Jabu-Jabu Grass Big Octo Top 1"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Jabu-Jabu Grass Big Octo Top 2": {
+      "ID": "OOT MQ Jabu-Jabu Grass Big Octo Top 2",
+      "Name": "OOT MQ Jabu-Jabu Grass Big Octo Top 2",
+      "OriginalItem": "OOT_DEKU_SEEDS_5",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Jabu-Jabu Grass Big Octo Top 2"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Jabu-Jabu Grass Torch Room": {
+      "ID": "OOT MQ Jabu-Jabu Grass Torch Room",
+      "Name": "OOT MQ Jabu-Jabu Grass Torch Room",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Jabu-Jabu Grass Torch Room"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Jabu-Jabu Grass Boomerang Room": {
+      "ID": "OOT MQ Jabu-Jabu Grass Boomerang Room",
+      "Name": "OOT MQ Jabu-Jabu Grass Boomerang Room",
+      "OriginalItem": "OOT_DEKU_SEEDS_5",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Jabu-Jabu Grass Boomerang Room"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
     "OOT MQ Bottom of the Well Map Chest": {
       "ID": "OOT MQ Bottom of the Well Map Chest",
       "Name": "OOT MQ Bottom of the Well Map Chest",
@@ -26198,6 +27658,86 @@
       "SpoilerData": {
         "SpoilerLogNames": [
           "OOT MQ Bottom of the Well Pot Side Room 3"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Bottom of the Well Grass Dead-Hand 1": {
+      "ID": "OOT MQ Bottom of the Well Grass Dead-Hand 1",
+      "Name": "OOT MQ Bottom of the Well Grass Dead-Hand 1",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Bottom of the Well Grass Dead-Hand 1"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Bottom of the Well Grass Dead-Hand 2": {
+      "ID": "OOT MQ Bottom of the Well Grass Dead-Hand 2",
+      "Name": "OOT MQ Bottom of the Well Grass Dead-Hand 2",
+      "OriginalItem": "OOT_DEKU_SEEDS_5",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Bottom of the Well Grass Dead-Hand 2"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Bottom of the Well Grass Dead-Hand 3": {
+      "ID": "OOT MQ Bottom of the Well Grass Dead-Hand 3",
+      "Name": "OOT MQ Bottom of the Well Grass Dead-Hand 3",
+      "OriginalItem": "OOT_RECOVERY_HEART",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Bottom of the Well Grass Dead-Hand 3"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      },
+      "LocationProxys": []
+    },
+    "OOT MQ Bottom of the Well Grass Dead-Hand 4": {
+      "ID": "OOT MQ Bottom of the Well Grass Dead-Hand 4",
+      "Name": "OOT MQ Bottom of the Well Grass Dead-Hand 4",
+      "OriginalItem": "OOT_DEKU_SEEDS_5",
+      "WalletCurrency": "O",
+      "Area": "UNKNOWN",
+      "ValidItemTypes": [
+        "item",
+        "grass"
+      ],
+      "Repeatable": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT MQ Bottom of the Well Grass Dead-Hand 4"
         ],
         "GossipHintNames": [],
         "PriceDataNames": []
@@ -81823,6 +83363,91 @@
         "PriceDataNames": []
       }
     },
+    "MM_BOTTLE_POTION_BLUE": {
+      "ID": "MM_BOTTLE_POTION_BLUE",
+      "Name": "Bottle of Blue Potion (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_BOTTLE_POTION_BLUE",
+          "Bottle of Blue Potion (MM)"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "MM_BOTTLE_POTION_GREEN": {
+      "ID": "MM_BOTTLE_POTION_GREEN",
+      "Name": "Bottle of Gree Potion (MM)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_BOTTLE_POTION_GREEN",
+          "Bottle of Gree Potion (MM)"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_BOTTLE_POTION_BLUE": {
+      "ID": "OOT_BOTTLE_POTION_BLUE",
+      "Name": "Bottle of Blue Potion (OoT)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_BOTTLE_POTION_BLUE",
+          "Bottle of Blue Potion (OoT)"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_BOTTLE_POTION_GREEN": {
+      "ID": "OOT_BOTTLE_POTION_GREEN",
+      "Name": "Bottle of Green Potion (OoT)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_BOTTLE_POTION_GREEN",
+          "Bottle of Green Potion (OoT)"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "OOT_BOTTLE_POTION_RED": {
+      "ID": "OOT_BOTTLE_POTION_RED",
+      "Name": "Bottle of Red Potion (OoT)",
+      "MaxAmountInWorld": -1,
+      "ValidStartingItem": true,
+      "ItemTypes": [
+        "item"
+      ],
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "OOT_BOTTLE_POTION_RED",
+          "Bottle of Red Potion (OoT)"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
     "MM_MASK_MAJORA": {
       "ID": "MM_MASK_MAJORA",
       "Name": "Majoras Mask",
@@ -87624,6 +89249,19 @@
         "PriceDataNames": []
       }
     },
+    "OOT Windmill Exit => OOT Windmill": {
+      "ID": "OOT Windmill Exit => OOT Windmill",
+      "Area": "OOT Windmill Exit",
+      "Exit": "OOT Windmill",
+      "RandomizableEntrance": false,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
     "OOT Kakariko Carpenter House => OOT Kakariko": {
       "ID": "OOT Kakariko Carpenter House => OOT Kakariko",
       "Area": "OOT Kakariko Carpenter House",
@@ -87911,10 +89549,10 @@
         "PriceDataNames": []
       }
     },
-    "OOT Dampe Grave => OOT Windmill": {
-      "ID": "OOT Dampe Grave => OOT Windmill",
+    "OOT Dampe Grave => OOT Windmill Exit": {
+      "ID": "OOT Dampe Grave => OOT Windmill Exit",
       "Area": "OOT Dampe Grave",
-      "Exit": "OOT Windmill",
+      "Exit": "OOT Windmill Exit",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false,
@@ -88655,25 +90293,6 @@
         "PriceDataNames": []
       }
     },
-    "OOT Lake Hylia => OOT Gerudo Valley Falls": {
-      "ID": "OOT Lake Hylia => OOT Gerudo Valley Falls",
-      "Area": "OOT Lake Hylia",
-      "Exit": "OOT Gerudo Valley Falls",
-      "EntrancePairID": {
-        "Area": "OOT Gerudo Valley Falls",
-        "Exit": "OOT Lake Hylia"
-      },
-      "RandomizableEntrance": true,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false,
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "OOT_VALLEY_FROM_LAKE_HYLIA"
-        ],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
     "OOT Lake Hylia => OOT Laboratory": {
       "ID": "OOT Lake Hylia => OOT Laboratory",
       "Area": "OOT Lake Hylia",
@@ -89316,10 +90935,10 @@
         "PriceDataNames": []
       }
     },
-    "OOT Octorok Grotto Ledge => OOT Lake Hylia": {
-      "ID": "OOT Octorok Grotto Ledge => OOT Lake Hylia",
+    "OOT Octorok Grotto Ledge => OOT Gerudo Valley Falls": {
+      "ID": "OOT Octorok Grotto Ledge => OOT Gerudo Valley Falls",
       "Area": "OOT Octorok Grotto Ledge",
-      "Exit": "OOT Lake Hylia",
+      "Exit": "OOT Gerudo Valley Falls",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false,
@@ -89355,10 +90974,10 @@
         "PriceDataNames": []
       }
     },
-    "OOT Octorok Grotto => OOT Gerudo Valley": {
-      "ID": "OOT Octorok Grotto => OOT Gerudo Valley",
+    "OOT Octorok Grotto => OOT Octorok Grotto Ledge": {
+      "ID": "OOT Octorok Grotto => OOT Octorok Grotto Ledge",
       "Area": "OOT Octorok Grotto",
-      "Exit": "OOT Gerudo Valley",
+      "Exit": "OOT Octorok Grotto Ledge",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false,
@@ -89372,10 +90991,6 @@
       "ID": "OOT Gerudo Valley Falls => OOT Lake Hylia",
       "Area": "OOT Gerudo Valley Falls",
       "Exit": "OOT Lake Hylia",
-      "EntrancePairID": {
-        "Area": "OOT Lake Hylia",
-        "Exit": "OOT Gerudo Valley Falls"
-      },
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false,
@@ -89383,19 +90998,6 @@
         "SpoilerLogNames": [
           "OOT_LAKE_HYLIA_FROM_VALLEY"
         ],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "OOT Gerudo Valley Falls => OOT Gerudo Valley After Bridge": {
-      "ID": "OOT Gerudo Valley Falls => OOT Gerudo Valley After Bridge",
-      "Area": "OOT Gerudo Valley Falls",
-      "Exit": "OOT Gerudo Valley After Bridge",
-      "RandomizableEntrance": false,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false,
-      "SpoilerData": {
-        "SpoilerLogNames": [],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
@@ -93476,10 +95078,10 @@
         "PriceDataNames": []
       }
     },
-    "MM Ancient Castle of Ikana Interior South => MM Ancient Castle of Ikana Interior": {
-      "ID": "MM Ancient Castle of Ikana Interior South => MM Ancient Castle of Ikana Interior",
+    "MM Ancient Castle of Ikana Interior South => MM Ancient Castle of Ikana": {
+      "ID": "MM Ancient Castle of Ikana Interior South => MM Ancient Castle of Ikana",
       "Area": "MM Ancient Castle of Ikana Interior South",
-      "Exit": "MM Ancient Castle of Ikana Interior",
+      "Exit": "MM Ancient Castle of Ikana",
       "RandomizableEntrance": false,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false,
@@ -93554,15 +95156,32 @@
         "PriceDataNames": []
       }
     },
-    "MM Ancient Castle of Ikana Roof Interior => MM Ancient Castle of Ikana Interior": {
-      "ID": "MM Ancient Castle of Ikana Roof Interior => MM Ancient Castle of Ikana Interior",
+    "MM Ancient Castle of Ikana Roof Interior => MM Ancient Castle of Ikana": {
+      "ID": "MM Ancient Castle of Ikana Roof Interior => MM Ancient Castle of Ikana",
       "Area": "MM Ancient Castle of Ikana Roof Interior",
-      "Exit": "MM Ancient Castle of Ikana Interior",
-      "RandomizableEntrance": false,
+      "Exit": "MM Ancient Castle of Ikana",
+      "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false,
       "SpoilerData": {
-        "SpoilerLogNames": [],
+        "SpoilerLogNames": [
+          "MM_IKANA_CASTLE_INTERIOR_KEG"
+        ],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "MM Ancient Castle of Ikana Roof Interior => MM Ancient Castle of Ikana Interior South": {
+      "ID": "MM Ancient Castle of Ikana Roof Interior => MM Ancient Castle of Ikana Interior South",
+      "Area": "MM Ancient Castle of Ikana Roof Interior",
+      "Exit": "MM Ancient Castle of Ikana Interior South",
+      "RandomizableEntrance": true,
+      "AlwaysAccessable": false,
+      "DestinationHasSingleEntrance": false,
+      "SpoilerData": {
+        "SpoilerLogNames": [
+          "MM_IKANA_CASTLE_INTERIOR_BLOCK"
+        ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
@@ -96982,25 +98601,6 @@
       "DestinationHasSingleEntrance": false,
       "SpoilerData": {
         "SpoilerLogNames": [],
-        "GossipHintNames": [],
-        "PriceDataNames": []
-      }
-    },
-    "MM Swamp Front => MM Ikana Valley": {
-      "ID": "MM Swamp Front => MM Ikana Valley",
-      "Area": "MM Swamp Front",
-      "Exit": "MM Ikana Valley",
-      "EntrancePairID": {
-        "Area": "MM Ikana Valley",
-        "Exit": "MM Swamp Front"
-      },
-      "RandomizableEntrance": true,
-      "AlwaysAccessable": false,
-      "DestinationHasSingleEntrance": false,
-      "SpoilerData": {
-        "SpoilerLogNames": [
-          "MM_IKANA_CANYON_FROM_SWAMP"
-        ],
         "GossipHintNames": [],
         "PriceDataNames": []
       }
@@ -100464,10 +102064,6 @@
       "ID": "MM Ikana Valley => MM Swamp Front",
       "Area": "MM Ikana Valley",
       "Exit": "MM Swamp Front",
-      "EntrancePairID": {
-        "Area": "MM Swamp Front",
-        "Exit": "MM Ikana Valley"
-      },
       "RandomizableEntrance": true,
       "AlwaysAccessable": false,
       "DestinationHasSingleEntrance": false,
@@ -105939,6 +107535,24 @@
         "PriceDataNames": []
       }
     },
+    "TRICK_OOT_GANON_CASTLE_ENTRY": {
+      "ID": "TRICK_OOT_GANON_CASTLE_ENTRY",
+      "Name": "Enter Ganon's Castle with Longshot Anywhere",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
+    "TRICK_OOT_SHADOW_TEMPLE_STICKS": {
+      "ID": "TRICK_OOT_SHADOW_TEMPLE_STICKS",
+      "Name": "Enter Shadow Temple with Sticks & Fire Arrows",
+      "SpoilerData": {
+        "SpoilerLogNames": [],
+        "GossipHintNames": [],
+        "PriceDataNames": []
+      }
+    },
     "MM Tingle Purchase Town at Town": {
       "ID": "MM Tingle Purchase Town at Town",
       "WalletCurrency": "M",
@@ -106881,14 +108495,14 @@
     "smallKeyRingOot": {
       "ID": "smallKeyRingOot",
       "Name": "Small Key Ring (OoT)",
-      "Value": "disabled",
+      "Value": "none",
       "SubCategory": "Main Shuffle",
       "Priority": 24,
       "Conditionals": [],
       "ValueList": {
-        "disabled": {
-          "ID": "disabled",
-          "Name": "Disabled",
+        "all": {
+          "ID": "all",
+          "Name": "all",
           "Actions": {
             "LogicReplacements": [],
             "AdditionalLogic": [],
@@ -106897,9 +108511,31 @@
             "VariableEdit": {}
           }
         },
-        "keyRings": {
-          "ID": "keyRings",
-          "Name": "Key Rings",
+        "none": {
+          "ID": "none",
+          "Name": "none",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "random": {
+          "ID": "random",
+          "Name": "random",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "specific": {
+          "ID": "specific",
+          "Name": "specific",
           "Actions": {
             "LogicReplacements": [],
             "AdditionalLogic": [],
@@ -106913,14 +108549,14 @@
     "smallKeyRingMm": {
       "ID": "smallKeyRingMm",
       "Name": "Small Key Ring (MM)",
-      "Value": "disabled",
+      "Value": "none",
       "SubCategory": "Main Shuffle",
-      "Priority": 25,
+      "Priority": 35,
       "Conditionals": [],
       "ValueList": {
-        "disabled": {
-          "ID": "disabled",
-          "Name": "Disabled",
+        "all": {
+          "ID": "all",
+          "Name": "all",
           "Actions": {
             "LogicReplacements": [],
             "AdditionalLogic": [],
@@ -106929,9 +108565,31 @@
             "VariableEdit": {}
           }
         },
-        "keyRings": {
-          "ID": "keyRings",
-          "Name": "Key Rings",
+        "none": {
+          "ID": "none",
+          "Name": "none",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "random": {
+          "ID": "random",
+          "Name": "random",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "specific": {
+          "ID": "specific",
+          "Name": "specific",
           "Actions": {
             "LogicReplacements": [],
             "AdditionalLogic": [],
@@ -106947,7 +108605,7 @@
       "Name": "Silver Rupee Shuffle",
       "Value": "vanilla",
       "SubCategory": "Main Shuffle",
-      "Priority": 26,
+      "Priority": 40,
       "Conditionals": [],
       "ValueList": {
         "vanilla": {
@@ -106990,7 +108648,7 @@
       "Name": "Town Stray Fairy Shuffle",
       "Value": "vanilla",
       "SubCategory": "Main Shuffle",
-      "Priority": 28,
+      "Priority": 42,
       "Conditionals": [],
       "ValueList": {
         "vanilla": {
@@ -107022,7 +108680,7 @@
       "Name": "Dungeon Chest Fairy Shuffle",
       "Value": "ownDungeon",
       "SubCategory": "Main Shuffle",
-      "Priority": 29,
+      "Priority": 43,
       "Conditionals": [],
       "ValueList": {
         "starting": {
@@ -107076,7 +108734,7 @@
       "Name": "Dungeon Freestanding Fairy Shuffle",
       "Value": "vanilla",
       "SubCategory": "Main Shuffle",
-      "Priority": 30,
+      "Priority": 44,
       "Conditionals": [],
       "ValueList": {
         "removed": {
@@ -107141,7 +108799,7 @@
       "Name": "Ganon Boss Key Shuffle",
       "Value": "removed",
       "SubCategory": "Main Shuffle",
-      "Priority": 31,
+      "Priority": 45,
       "Conditionals": [
         [
           "setting{goal, triforce, false}"
@@ -107210,7 +108868,7 @@
       "Name": "Dungeon Reward Shuffle",
       "Value": "dungeonBlueWarps",
       "SubCategory": "Main Shuffle",
-      "Priority": 32,
+      "Priority": 46,
       "Conditionals": [],
       "ValueList": {
         "dungeonBlueWarps": {
@@ -107264,7 +108922,7 @@
       "Name": "Shop Shuffle (OoT)",
       "Value": "none",
       "SubCategory": "Main Shuffle",
-      "Priority": 37,
+      "Priority": 51,
       "Conditionals": [],
       "ValueList": {
         "none": {
@@ -107296,7 +108954,7 @@
       "Name": "Shop Shuffle (MM)",
       "Value": "none",
       "SubCategory": "Main Shuffle",
-      "Priority": 38,
+      "Priority": 52,
       "Conditionals": [],
       "ValueList": {
         "none": {
@@ -107328,7 +108986,7 @@
       "Name": "Owl Statue Shuffle",
       "Value": "none",
       "SubCategory": "Main Shuffle",
-      "Priority": 39,
+      "Priority": 53,
       "Conditionals": [],
       "ValueList": {
         "none": {
@@ -107360,7 +109018,7 @@
       "Name": "OoT Shops Prices",
       "Value": "vanilla",
       "SubCategory": "Main Prices",
-      "Priority": 49,
+      "Priority": 63,
       "Conditionals": [],
       "ValueList": {
         "affordable": {
@@ -107414,7 +109072,7 @@
       "Name": "OoT Scrubs Prices",
       "Value": "vanilla",
       "SubCategory": "Main Prices",
-      "Priority": 50,
+      "Priority": 64,
       "Conditionals": [],
       "ValueList": {
         "affordable": {
@@ -107468,7 +109126,7 @@
       "Name": "MM Shops Prices",
       "Value": "vanilla",
       "SubCategory": "Main Prices",
-      "Priority": 51,
+      "Priority": 65,
       "Conditionals": [],
       "ValueList": {
         "affordable": {
@@ -107522,7 +109180,7 @@
       "Name": "MM Tingle Prices",
       "Value": "vanilla",
       "SubCategory": "Main Prices",
-      "Priority": 52,
+      "Priority": 66,
       "Conditionals": [],
       "ValueList": {
         "affordable": {
@@ -107576,12 +109234,12 @@
       "Name": "Ganon Trials",
       "Value": "none",
       "SubCategory": "Main Events",
-      "Priority": 53,
+      "Priority": 67,
       "Conditionals": [],
       "ValueList": {
-        "none": {
-          "ID": "none",
-          "Name": "None",
+        "all": {
+          "ID": "all",
+          "Name": "all",
           "Actions": {
             "LogicReplacements": [],
             "AdditionalLogic": [],
@@ -107590,9 +109248,31 @@
             "VariableEdit": {}
           }
         },
-        "all": {
-          "ID": "all",
-          "Name": "All",
+        "none": {
+          "ID": "none",
+          "Name": "none",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "random": {
+          "ID": "random",
+          "Name": "random",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "specific": {
+          "ID": "specific",
+          "Name": "specific",
           "Actions": {
             "LogicReplacements": [],
             "AdditionalLogic": [],
@@ -107608,7 +109288,7 @@
       "Name": "Starting Age",
       "Value": "child",
       "SubCategory": "Main Events",
-      "Priority": 54,
+      "Priority": 74,
       "Conditionals": [],
       "ValueList": {
         "child": {
@@ -107651,7 +109331,7 @@
       "Name": "Door of Time",
       "Value": "closed",
       "SubCategory": "Main Events",
-      "Priority": 55,
+      "Priority": 75,
       "Conditionals": [],
       "ValueList": {
         "closed": {
@@ -107683,7 +109363,7 @@
       "Name": "Age Change upon Song of Time",
       "Value": "none",
       "SubCategory": "Main Events",
-      "Priority": 56,
+      "Priority": 76,
       "Conditionals": [],
       "ValueList": {
         "none": {
@@ -107726,7 +109406,7 @@
       "Name": "Deku Tree",
       "Value": "open",
       "SubCategory": "Main Events",
-      "Priority": 57,
+      "Priority": 77,
       "Conditionals": [],
       "ValueList": {
         "closed": {
@@ -107758,7 +109438,7 @@
       "Name": "Kakariko Gate",
       "Value": "closed",
       "SubCategory": "Main Events",
-      "Priority": 61,
+      "Priority": 81,
       "Conditionals": [],
       "ValueList": {
         "closed": {
@@ -107790,7 +109470,7 @@
       "Name": "King Zora",
       "Value": "vanilla",
       "SubCategory": "Main Events",
-      "Priority": 62,
+      "Priority": 82,
       "Conditionals": [],
       "ValueList": {
         "vanilla": {
@@ -107833,7 +109513,7 @@
       "Name": "Gerudo Fortress",
       "Value": "vanilla",
       "SubCategory": "Main Events",
-      "Priority": 63,
+      "Priority": 83,
       "Conditionals": [],
       "ValueList": {
         "vanilla": {
@@ -107876,7 +109556,7 @@
       "Name": "Light Arrow Cutscene",
       "Value": "vanilla",
       "SubCategory": "Main Events",
-      "Priority": 65,
+      "Priority": 85,
       "Conditionals": [],
       "ValueList": {
         "vanilla": {
@@ -107908,7 +109588,7 @@
       "Name": "Majora Child Requirements",
       "Value": "none",
       "SubCategory": "Main Events",
-      "Priority": 66,
+      "Priority": 86,
       "Conditionals": [
         [
           "setting{goal, triforce, false}"
@@ -107944,7 +109624,7 @@
       "Name": "Boss Warp Pads",
       "Value": "bossBeaten",
       "SubCategory": "Main Events",
-      "Priority": 67,
+      "Priority": 87,
       "Conditionals": [],
       "ValueList": {
         "bossBeaten": {
@@ -107976,7 +109656,7 @@
       "Name": "Cross-Games MM Song of Soaring",
       "Value": "none",
       "SubCategory": "Main Cross",
-      "Priority": 75,
+      "Priority": 95,
       "Conditionals": [],
       "ValueList": {
         "none": {
@@ -108019,7 +109699,7 @@
       "Name": "Chest Size Matches Content",
       "Value": "always",
       "SubCategory": "Main Misc",
-      "Priority": 76,
+      "Priority": 96,
       "Conditionals": [],
       "ValueList": {
         "never": {
@@ -108062,7 +109742,7 @@
       "Name": "Blast Mask Cooldown",
       "Value": "default",
       "SubCategory": "Main Misc",
-      "Priority": 79,
+      "Priority": 99,
       "Conditionals": [],
       "ValueList": {
         "instant": {
@@ -108138,7 +109818,7 @@
       "Name": "Clock Speed",
       "Value": "default",
       "SubCategory": "Main Misc",
-      "Priority": 80,
+      "Priority": 100,
       "Conditionals": [],
       "ValueList": {
         "veryslow": {
@@ -108214,7 +109894,7 @@
       "Name": "OoT Shields",
       "Value": "separate",
       "SubCategory": "Items Progressive",
-      "Priority": 88,
+      "Priority": 109,
       "Conditionals": [],
       "ValueList": {
         "separate": {
@@ -108246,7 +109926,7 @@
       "Name": "OoT Swords",
       "Value": "goron",
       "SubCategory": "Items Progressive",
-      "Priority": 89,
+      "Priority": 110,
       "Conditionals": [],
       "ValueList": {
         "separate": {
@@ -108289,7 +109969,7 @@
       "Name": "MM Shields",
       "Value": "separate",
       "SubCategory": "Items Progressive",
-      "Priority": 90,
+      "Priority": 111,
       "Conditionals": [],
       "ValueList": {
         "separate": {
@@ -108321,7 +110001,7 @@
       "Name": "MM Great Fairy Sword",
       "Value": "separate",
       "SubCategory": "Items Progressive",
-      "Priority": 91,
+      "Priority": 112,
       "Conditionals": [],
       "ValueList": {
         "separate": {
@@ -108353,7 +110033,7 @@
       "Name": "MM Goron Lullaby",
       "Value": "progressive",
       "SubCategory": "Items Progressive",
-      "Priority": 92,
+      "Priority": 113,
       "Conditionals": [],
       "ValueList": {
         "single": {
@@ -108385,7 +110065,7 @@
       "Name": "Boss Entrance Shuffle",
       "Value": "none",
       "SubCategory": "Entrances",
-      "Priority": 150,
+      "Priority": 172,
       "Conditionals": [],
       "ValueList": {
         "none": {
@@ -108428,7 +110108,7 @@
       "Name": "Dungeon Entrance Shuffle",
       "Value": "none",
       "SubCategory": "Entrances",
-      "Priority": 151,
+      "Priority": 173,
       "Conditionals": [],
       "ValueList": {
         "none": {
@@ -108471,7 +110151,7 @@
       "Name": "Shuffle Major Regions",
       "Value": "none",
       "SubCategory": "Entrances",
-      "Priority": 161,
+      "Priority": 183,
       "Conditionals": [],
       "ValueList": {
         "none": {
@@ -108514,7 +110194,7 @@
       "Name": "Shuffle Interiors",
       "Value": "none",
       "SubCategory": "Entrances",
-      "Priority": 164,
+      "Priority": 186,
       "Conditionals": [],
       "ValueList": {
         "none": {
@@ -108554,10 +110234,10 @@
     },
     "erWarps": {
       "ID": "erWarps",
-      "Name": "Shuffle Warp Destinations",
+      "Name": "Shuffle Warp Songs and Soaring",
       "Value": "none",
       "SubCategory": "Entrances",
-      "Priority": 167,
+      "Priority": 189,
       "Conditionals": [],
       "ValueList": {
         "none": {
@@ -108571,9 +110251,9 @@
             "VariableEdit": {}
           }
         },
-        "ootWarps": {
-          "ID": "ootWarps",
-          "Name": "OOT Only",
+        "ootOnly": {
+          "ID": "ootOnly",
+          "Name": "OoT Only",
           "Actions": {
             "LogicReplacements": [],
             "AdditionalLogic": [],
@@ -108582,9 +110262,52 @@
             "VariableEdit": {}
           }
         },
-        "mmWarps": {
-          "ID": "mmWarps",
+        "mmOnly": {
+          "ID": "mmOnly",
           "Name": "MM Only",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "ownGame": {
+          "ID": "ownGame",
+          "Name": "Own Game",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "full": {
+          "ID": "full",
+          "Name": "Full",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      }
+    },
+    "erOneWays": {
+      "ID": "erOneWays",
+      "Name": "Shuffle One-Way Entrances",
+      "Value": "none",
+      "SubCategory": "Entrances",
+      "Priority": 190,
+      "Conditionals": [],
+      "ValueList": {
+        "none": {
+          "ID": "none",
+          "Name": "None",
           "Actions": {
             "LogicReplacements": [],
             "AdditionalLogic": [],
@@ -108773,12 +110496,488 @@
         }
       }
     },
+    "smallKeyRingOotForest": {
+      "ID": "smallKeyRingOotForest",
+      "Name": "Forest Temple",
+      "Value": "False",
+      "SubCategory": "Main Shuffle/Small Key Ring (OoT) Select",
+      "Priority": 25,
+      "Conditionals": [
+        [
+          "setting{smallKeyRingOot, specific}"
+        ]
+      ],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "smallKeyRingOotFire": {
+      "ID": "smallKeyRingOotFire",
+      "Name": "Fire Temple",
+      "Value": "False",
+      "SubCategory": "Main Shuffle/Small Key Ring (OoT) Select",
+      "Priority": 26,
+      "Conditionals": [
+        [
+          "setting{smallKeyRingOot, specific}"
+        ]
+      ],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "smallKeyRingOotWater": {
+      "ID": "smallKeyRingOotWater",
+      "Name": "Water Temple",
+      "Value": "False",
+      "SubCategory": "Main Shuffle/Small Key Ring (OoT) Select",
+      "Priority": 27,
+      "Conditionals": [
+        [
+          "setting{smallKeyRingOot, specific}"
+        ]
+      ],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "smallKeyRingOotShadow": {
+      "ID": "smallKeyRingOotShadow",
+      "Name": "Shadow Temple",
+      "Value": "False",
+      "SubCategory": "Main Shuffle/Small Key Ring (OoT) Select",
+      "Priority": 28,
+      "Conditionals": [
+        [
+          "setting{smallKeyRingOot, specific}"
+        ]
+      ],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "smallKeyRingOotSpirit": {
+      "ID": "smallKeyRingOotSpirit",
+      "Name": "Spirit Temple",
+      "Value": "False",
+      "SubCategory": "Main Shuffle/Small Key Ring (OoT) Select",
+      "Priority": 29,
+      "Conditionals": [
+        [
+          "setting{smallKeyRingOot, specific}"
+        ]
+      ],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "smallKeyRingOotBotW": {
+      "ID": "smallKeyRingOotBotW",
+      "Name": "Bottom of the Well",
+      "Value": "False",
+      "SubCategory": "Main Shuffle/Small Key Ring (OoT) Select",
+      "Priority": 30,
+      "Conditionals": [
+        [
+          "setting{smallKeyRingOot, specific}"
+        ]
+      ],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "smallKeyRingOotGTG": {
+      "ID": "smallKeyRingOotGTG",
+      "Name": "Gerudo Training Grounds",
+      "Value": "False",
+      "SubCategory": "Main Shuffle/Small Key Ring (OoT) Select",
+      "Priority": 31,
+      "Conditionals": [
+        [
+          "setting{smallKeyRingOot, specific}"
+        ]
+      ],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "smallKeyRingOotGanon": {
+      "ID": "smallKeyRingOotGanon",
+      "Name": "Ganon's Castle",
+      "Value": "False",
+      "SubCategory": "Main Shuffle/Small Key Ring (OoT) Select",
+      "Priority": 32,
+      "Conditionals": [
+        [
+          "setting{smallKeyRingOot, specific}"
+        ]
+      ],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "smallKeyRingOotGF": {
+      "ID": "smallKeyRingOotGF",
+      "Name": "Hideout",
+      "Value": "False",
+      "SubCategory": "Main Shuffle/Small Key Ring (OoT) Select",
+      "Priority": 33,
+      "Conditionals": [
+        [
+          "setting{smallKeyRingOot, specific}"
+        ]
+      ],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "smallKeyRingOotTCG": {
+      "ID": "smallKeyRingOotTCG",
+      "Name": "Chest Game",
+      "Value": "False",
+      "SubCategory": "Main Shuffle/Small Key Ring (OoT) Select",
+      "Priority": 34,
+      "Conditionals": [
+        [
+          "setting{smallKeyRingOot, specific}"
+        ]
+      ],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "smallKeyRingMmWF": {
+      "ID": "smallKeyRingMmWF",
+      "Name": "Woodfall Temple",
+      "Value": "False",
+      "SubCategory": "Main Shuffle/Small Key Ring (MM) Select",
+      "Priority": 36,
+      "Conditionals": [
+        [
+          "setting{smallKeyRingMm, specific}"
+        ]
+      ],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "smallKeyRingMmSH": {
+      "ID": "smallKeyRingMmSH",
+      "Name": "Snowhead Temple",
+      "Value": "False",
+      "SubCategory": "Main Shuffle/Small Key Ring (MM) Select",
+      "Priority": 37,
+      "Conditionals": [
+        [
+          "setting{smallKeyRingMm, specific}"
+        ]
+      ],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "smallKeyRingMmGB": {
+      "ID": "smallKeyRingMmGB",
+      "Name": "Great Bay Temple",
+      "Value": "False",
+      "SubCategory": "Main Shuffle/Small Key Ring (MM) Select",
+      "Priority": 38,
+      "Conditionals": [
+        [
+          "setting{smallKeyRingMm, specific}"
+        ]
+      ],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "smallKeyRingMmST": {
+      "ID": "smallKeyRingMmST",
+      "Name": "Stone Tower Temple",
+      "Value": "False",
+      "SubCategory": "Main Shuffle/Small Key Ring (MM) Select",
+      "Priority": 39,
+      "Conditionals": [
+        [
+          "setting{smallKeyRingMm, specific}"
+        ]
+      ],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
     "silverRupeePouches": {
       "ID": "silverRupeePouches",
       "Name": "Silver Rupee Pouches",
       "Value": "False",
       "SubCategory": "Main Shuffle",
-      "Priority": 27,
+      "Priority": 41,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -108808,7 +111007,7 @@
       "Name": "Scrub Shuffle (OoT)",
       "Value": "False",
       "SubCategory": "Main Shuffle",
-      "Priority": 33,
+      "Priority": 47,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -108838,7 +111037,7 @@
       "Name": "Scrub Shuffle (MM)",
       "Value": "False",
       "SubCategory": "Main Shuffle",
-      "Priority": 34,
+      "Priority": 48,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -108868,7 +111067,7 @@
       "Name": "Cow Shuffle (OoT)",
       "Value": "False",
       "SubCategory": "Main Shuffle",
-      "Priority": 35,
+      "Priority": 49,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -108898,7 +111097,7 @@
       "Name": "Cow Shuffle (MM)",
       "Value": "False",
       "SubCategory": "Main Shuffle",
-      "Priority": 36,
+      "Priority": 50,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -108928,7 +111127,7 @@
       "Name": "Pots Shuffle (OoT)",
       "Value": "False",
       "SubCategory": "Main Shuffle",
-      "Priority": 40,
+      "Priority": 54,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -108958,7 +111157,7 @@
       "Name": "Pots Shuffle (MM)",
       "Value": "False",
       "SubCategory": "Main Shuffle",
-      "Priority": 41,
+      "Priority": 55,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -108988,7 +111187,7 @@
       "Name": "Grass Shuffle (OoT)",
       "Value": "False",
       "SubCategory": "Main Shuffle",
-      "Priority": 42,
+      "Priority": 56,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -109018,7 +111217,7 @@
       "Name": "Grass Shuffle (MM)",
       "Value": "False",
       "SubCategory": "Main Shuffle",
-      "Priority": 43,
+      "Priority": 57,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -109048,7 +111247,7 @@
       "Name": "Ocarina Shuffle (OoT)",
       "Value": "True",
       "SubCategory": "Main Shuffle",
-      "Priority": 44,
+      "Priority": 58,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -109078,7 +111277,7 @@
       "Name": "Master Sword Shuffle",
       "Value": "True",
       "SubCategory": "Main Shuffle",
-      "Priority": 45,
+      "Priority": 59,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -109108,7 +111307,7 @@
       "Name": "Gerudo Card Shuffle",
       "Value": "True",
       "SubCategory": "Main Shuffle",
-      "Priority": 46,
+      "Priority": 60,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -109138,7 +111337,7 @@
       "Name": "Merchants Shuffle (MM)",
       "Value": "False",
       "SubCategory": "Main Shuffle",
-      "Priority": 47,
+      "Priority": 61,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -109168,8 +111367,212 @@
       "Name": "Weird / Pocket Egg Content Shuffle",
       "Value": "False",
       "SubCategory": "Main Shuffle",
-      "Priority": 48,
+      "Priority": 62,
       "Conditionals": [],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "ganonTrialsLight": {
+      "ID": "ganonTrialsLight",
+      "Name": "Light Trial",
+      "Value": "False",
+      "SubCategory": "Main Events/Ganon Trials Select",
+      "Priority": 68,
+      "Conditionals": [
+        [
+          "setting{ganonTrials, specific}"
+        ]
+      ],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "ganonTrialsForest": {
+      "ID": "ganonTrialsForest",
+      "Name": "Forest Trial",
+      "Value": "False",
+      "SubCategory": "Main Events/Ganon Trials Select",
+      "Priority": 69,
+      "Conditionals": [
+        [
+          "setting{ganonTrials, specific}"
+        ]
+      ],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "ganonTrialsFire": {
+      "ID": "ganonTrialsFire",
+      "Name": "Fire Trial",
+      "Value": "False",
+      "SubCategory": "Main Events/Ganon Trials Select",
+      "Priority": 70,
+      "Conditionals": [
+        [
+          "setting{ganonTrials, specific}"
+        ]
+      ],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "ganonTrialsWater": {
+      "ID": "ganonTrialsWater",
+      "Name": "Water Trial",
+      "Value": "False",
+      "SubCategory": "Main Events/Ganon Trials Select",
+      "Priority": 71,
+      "Conditionals": [
+        [
+          "setting{ganonTrials, specific}"
+        ]
+      ],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "ganonTrialsShadow": {
+      "ID": "ganonTrialsShadow",
+      "Name": "Shadow Trial",
+      "Value": "False",
+      "SubCategory": "Main Events/Ganon Trials Select",
+      "Priority": 72,
+      "Conditionals": [
+        [
+          "setting{ganonTrials, specific}"
+        ]
+      ],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "ganonTrialsSpirit": {
+      "ID": "ganonTrialsSpirit",
+      "Name": "Spirit Trial",
+      "Value": "False",
+      "SubCategory": "Main Events/Ganon Trials Select",
+      "Priority": 73,
+      "Conditionals": [
+        [
+          "setting{ganonTrials, specific}"
+        ]
+      ],
       "Enabled": {
         "ID": "True",
         "Name": "True",
@@ -109198,7 +111601,7 @@
       "Name": "Deku Tree as Adult",
       "Value": "False",
       "SubCategory": "Main Events",
-      "Priority": 58,
+      "Priority": 78,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -109228,7 +111631,7 @@
       "Name": "Well as Adult",
       "Value": "False",
       "SubCategory": "Main Events",
-      "Priority": 59,
+      "Priority": 79,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -109258,7 +111661,7 @@
       "Name": "Fire Temple as Child",
       "Value": "False",
       "SubCategory": "Main Events",
-      "Priority": 60,
+      "Priority": 80,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -109288,7 +111691,7 @@
       "Name": "Skip Child Zelda",
       "Value": "False",
       "SubCategory": "Main Events",
-      "Priority": 64,
+      "Priority": 84,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -109318,7 +111721,7 @@
       "Name": "Free Scarecrow (OoT)",
       "Value": "False",
       "SubCategory": "Main Events",
-      "Priority": 68,
+      "Priority": 88,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -109348,7 +111751,7 @@
       "Name": "Pre-Completed Dungeons",
       "Value": "False",
       "SubCategory": "Main Events",
-      "Priority": 69,
+      "Priority": 89,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -109378,7 +111781,7 @@
       "Name": "Cross-Games OoT Warp Songs",
       "Value": "False",
       "SubCategory": "Main Cross",
-      "Priority": 74,
+      "Priority": 94,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -109408,7 +111811,7 @@
       "Name": "CSMC for Heart Pieces/Containers",
       "Value": "True",
       "SubCategory": "Main Misc",
-      "Priority": 77,
+      "Priority": 97,
       "Conditionals": [
         [
           "setting{csmc, never, false}"
@@ -109442,7 +111845,7 @@
       "Name": "Extra CSMC",
       "Value": "False",
       "SubCategory": "Main Misc",
-      "Priority": 78,
+      "Priority": 98,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -109472,7 +111875,7 @@
       "Name": "Fierce Deity Anywhere in MM",
       "Value": "False",
       "SubCategory": "Main Misc",
-      "Priority": 81,
+      "Priority": 101,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -109499,10 +111902,10 @@
     },
     "hookshotAnywhereOot": {
       "ID": "hookshotAnywhereOot",
-      "Name": "Hookshot Anywhere (OOT)",
+      "Name": "Hookshot Anywhere (OoT)",
       "Value": "False",
       "SubCategory": "Main Misc",
-      "Priority": 82,
+      "Priority": 102,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -109532,7 +111935,7 @@
       "Name": "Hookshot Anywhere (MM)",
       "Value": "False",
       "SubCategory": "Main Misc",
-      "Priority": 83,
+      "Priority": 103,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -109559,10 +111962,40 @@
     },
     "climbMostSurfacesOot": {
       "ID": "climbMostSurfacesOot",
-      "Name": "Climb Most Surfaces (OOT)",
+      "Name": "Climb Most Surfaces (OoT)",
       "Value": "False",
       "SubCategory": "Main Misc",
-      "Priority": 84,
+      "Priority": 104,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "climbMostSurfacesMm": {
+      "ID": "climbMostSurfacesMm",
+      "Name": "Climb Most Surfaces (MM)",
+      "Value": "False",
+      "SubCategory": "Main Misc",
+      "Priority": 105,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -109592,7 +112025,7 @@
       "Name": "Fast Bunny Hood",
       "Value": "True",
       "SubCategory": "Main Misc",
-      "Priority": 85,
+      "Priority": 106,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -109622,7 +112055,7 @@
       "Name": "Default Hold Target",
       "Value": "True",
       "SubCategory": "Main Misc",
-      "Priority": 86,
+      "Priority": 107,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -109652,7 +112085,37 @@
       "Name": "Fill Wallets",
       "Value": "False",
       "SubCategory": "Items",
-      "Priority": 87,
+      "Priority": 108,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "bottleContentShuffle": {
+      "ID": "bottleContentShuffle",
+      "Name": "Random Bottle Contents",
+      "Value": "False",
+      "SubCategory": "Items Extensions",
+      "Priority": 114,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -109682,7 +112145,7 @@
       "Name": "Sun's Song in MM",
       "Value": "False",
       "SubCategory": "Items Extensions",
-      "Priority": 93,
+      "Priority": 115,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -109712,7 +112175,7 @@
       "Name": "Fairy Ocarina in MM",
       "Value": "False",
       "SubCategory": "Items Extensions",
-      "Priority": 94,
+      "Priority": 116,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -109742,7 +112205,7 @@
       "Name": "Blue Fire Arrows",
       "Value": "False",
       "SubCategory": "Items Extensions",
-      "Priority": 95,
+      "Priority": 117,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -109772,7 +112235,7 @@
       "Name": "Short Hookshot in MM",
       "Value": "False",
       "SubCategory": "Items Extensions",
-      "Priority": 96,
+      "Priority": 118,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -109802,7 +112265,7 @@
       "Name": "Child Wallets",
       "Value": "False",
       "SubCategory": "Items Extensions",
-      "Priority": 97,
+      "Priority": 119,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -109832,7 +112295,7 @@
       "Name": "Colossal Wallets",
       "Value": "False",
       "SubCategory": "Items Extensions",
-      "Priority": 98,
+      "Priority": 120,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -109862,7 +112325,7 @@
       "Name": "Bottomless Wallets",
       "Value": "False",
       "SubCategory": "Items Extensions",
-      "Priority": 99,
+      "Priority": 121,
       "Conditionals": [
         [
           "setting{colossalWallets}"
@@ -109896,7 +112359,7 @@
       "Name": "Skeleton Key (OoT)",
       "Value": "False",
       "SubCategory": "Items Extensions",
-      "Priority": 100,
+      "Priority": 122,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -109926,7 +112389,7 @@
       "Name": "Skeleton Key (MM)",
       "Value": "False",
       "SubCategory": "Items Extensions",
-      "Priority": 101,
+      "Priority": 123,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -109956,7 +112419,7 @@
       "Name": "Magical Rupee",
       "Value": "False",
       "SubCategory": "Items Extensions",
-      "Priority": 102,
+      "Priority": 124,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -109986,7 +112449,7 @@
       "Name": "Ocarina Buttons Shuffle (OoT)",
       "Value": "False",
       "SubCategory": "Items Extensions",
-      "Priority": 103,
+      "Priority": 125,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -110016,7 +112479,7 @@
       "Name": "Ocarina Buttons Shuffle (MM)",
       "Value": "False",
       "SubCategory": "Items Extensions",
-      "Priority": 104,
+      "Priority": 126,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -110046,7 +112509,7 @@
       "Name": "Enemy Souls (OoT)",
       "Value": "False",
       "SubCategory": "Items Extensions",
-      "Priority": 105,
+      "Priority": 127,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -110076,7 +112539,7 @@
       "Name": "Enemy Souls (MM)",
       "Value": "False",
       "SubCategory": "Items Extensions",
-      "Priority": 106,
+      "Priority": 128,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -110106,7 +112569,7 @@
       "Name": "Boss Souls (OoT)",
       "Value": "False",
       "SubCategory": "Items Extensions",
-      "Priority": 107,
+      "Priority": 129,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -110136,7 +112599,7 @@
       "Name": "Boss Souls (MM)",
       "Value": "False",
       "SubCategory": "Items Extensions",
-      "Priority": 108,
+      "Priority": 130,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -110166,7 +112629,7 @@
       "Name": "NPC Souls (OoT) (EXPERIMENTAL)",
       "Value": "False",
       "SubCategory": "Items Extensions",
-      "Priority": 109,
+      "Priority": 131,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -110196,7 +112659,7 @@
       "Name": "Lenient Goron Spikes",
       "Value": "True",
       "SubCategory": "Items Extensions",
-      "Priority": 110,
+      "Priority": 132,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -110226,7 +112689,7 @@
       "Name": "Bombers' Tracker",
       "Value": "False",
       "SubCategory": "Items Extensions",
-      "Priority": 111,
+      "Priority": 133,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -110256,7 +112719,7 @@
       "Name": "Coins",
       "Value": "False",
       "SubCategory": "Items Extensions",
-      "Priority": 112,
+      "Priority": 134,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -110286,7 +112749,7 @@
       "Name": "Shared Nuts & Sticks",
       "Value": "False",
       "SubCategory": "Items Shared",
-      "Priority": 117,
+      "Priority": 139,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -110316,7 +112779,7 @@
       "Name": "Shared Bows",
       "Value": "False",
       "SubCategory": "Items Shared",
-      "Priority": 118,
+      "Priority": 140,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -110346,7 +112809,7 @@
       "Name": "Shared Bomb Bags",
       "Value": "False",
       "SubCategory": "Items Shared",
-      "Priority": 119,
+      "Priority": 141,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -110376,7 +112839,7 @@
       "Name": "Shared Magic",
       "Value": "False",
       "SubCategory": "Items Shared",
-      "Priority": 120,
+      "Priority": 142,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -110406,7 +112869,7 @@
       "Name": "Shared Fire Arrow",
       "Value": "False",
       "SubCategory": "Items Shared",
-      "Priority": 121,
+      "Priority": 143,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -110436,7 +112899,7 @@
       "Name": "Shared Ice Arrow",
       "Value": "False",
       "SubCategory": "Items Shared",
-      "Priority": 122,
+      "Priority": 144,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -110466,7 +112929,7 @@
       "Name": "Shared Light Arrow",
       "Value": "False",
       "SubCategory": "Items Shared",
-      "Priority": 123,
+      "Priority": 145,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -110496,7 +112959,7 @@
       "Name": "Shared Epona's Song",
       "Value": "False",
       "SubCategory": "Items Shared",
-      "Priority": 124,
+      "Priority": 146,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -110526,7 +112989,7 @@
       "Name": "Shared Song of Storms",
       "Value": "False",
       "SubCategory": "Items Shared",
-      "Priority": 125,
+      "Priority": 147,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -110556,7 +113019,7 @@
       "Name": "Shared Song of Time",
       "Value": "False",
       "SubCategory": "Items Shared",
-      "Priority": 126,
+      "Priority": 148,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -110586,7 +113049,7 @@
       "Name": "Shared Sun's Song",
       "Value": "False",
       "SubCategory": "Items Shared",
-      "Priority": 127,
+      "Priority": 149,
       "Conditionals": [
         [
           "setting{sunSongMm}"
@@ -110620,7 +113083,7 @@
       "Name": "Shared Hookshots",
       "Value": "False",
       "SubCategory": "Items Shared",
-      "Priority": 128,
+      "Priority": 150,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -110650,7 +113113,7 @@
       "Name": "Shared Lens of Truth",
       "Value": "False",
       "SubCategory": "Items Shared",
-      "Priority": 129,
+      "Priority": 151,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -110680,7 +113143,7 @@
       "Name": "Shared Ocarina of Time",
       "Value": "False",
       "SubCategory": "Items Shared",
-      "Priority": 130,
+      "Priority": 152,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -110710,7 +113173,7 @@
       "Name": "Shared Goron Mask",
       "Value": "False",
       "SubCategory": "Items Shared",
-      "Priority": 131,
+      "Priority": 153,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -110740,7 +113203,7 @@
       "Name": "Shared Zora Mask",
       "Value": "False",
       "SubCategory": "Items Shared",
-      "Priority": 132,
+      "Priority": 154,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -110770,7 +113233,7 @@
       "Name": "Shared Bunny Hood",
       "Value": "False",
       "SubCategory": "Items Shared",
-      "Priority": 133,
+      "Priority": 155,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -110800,7 +113263,7 @@
       "Name": "Shared Keaton Mask",
       "Value": "False",
       "SubCategory": "Items Shared",
-      "Priority": 134,
+      "Priority": 156,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -110830,7 +113293,7 @@
       "Name": "Shared Mask of Truth",
       "Value": "False",
       "SubCategory": "Items Shared",
-      "Priority": 135,
+      "Priority": 157,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -110860,7 +113323,7 @@
       "Name": "Shared Wallets",
       "Value": "False",
       "SubCategory": "Items Shared",
-      "Priority": 136,
+      "Priority": 158,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -110890,7 +113353,7 @@
       "Name": "Shared Health",
       "Value": "False",
       "SubCategory": "Items Shared",
-      "Priority": 137,
+      "Priority": 159,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -110920,7 +113383,7 @@
       "Name": "Shared Enemy Souls",
       "Value": "False",
       "SubCategory": "Items Shared",
-      "Priority": 138,
+      "Priority": 160,
       "Conditionals": [
         [
           "setting{soulsEnemyOot}",
@@ -110955,7 +113418,7 @@
       "Name": "Shared Ocarina Buttons",
       "Value": "False",
       "SubCategory": "Items Shared",
-      "Priority": 139,
+      "Priority": 161,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -110985,7 +113448,7 @@
       "Name": "Shared Skeleton Key",
       "Value": "False",
       "SubCategory": "Items Shared",
-      "Priority": 140,
+      "Priority": 162,
       "Conditionals": [
         [
           "setting{skeletonKeyOot}",
@@ -111020,7 +113483,7 @@
       "Name": "Ageless Swords",
       "Value": "False",
       "SubCategory": "Items Ageless",
-      "Priority": 141,
+      "Priority": 163,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -111050,7 +113513,7 @@
       "Name": "Ageless Shields",
       "Value": "False",
       "SubCategory": "Items Ageless",
-      "Priority": 142,
+      "Priority": 164,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -111080,7 +113543,7 @@
       "Name": "Ageless Tunics",
       "Value": "False",
       "SubCategory": "Items Ageless",
-      "Priority": 143,
+      "Priority": 165,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -111110,7 +113573,7 @@
       "Name": "Ageless Boots",
       "Value": "False",
       "SubCategory": "Items Ageless",
-      "Priority": 144,
+      "Priority": 166,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -111140,7 +113603,7 @@
       "Name": "Ageless Sticks",
       "Value": "False",
       "SubCategory": "Items Ageless",
-      "Priority": 145,
+      "Priority": 167,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -111170,7 +113633,7 @@
       "Name": "Ageless Boomerang",
       "Value": "False",
       "SubCategory": "Items Ageless",
-      "Priority": 146,
+      "Priority": 168,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -111200,7 +113663,7 @@
       "Name": "Ageless Hammer",
       "Value": "False",
       "SubCategory": "Items Ageless",
-      "Priority": 147,
+      "Priority": 169,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -111230,7 +113693,7 @@
       "Name": "Ageless Hookshot",
       "Value": "False",
       "SubCategory": "Items Ageless",
-      "Priority": 148,
+      "Priority": 170,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -111260,7 +113723,7 @@
       "Name": "Ageless Child Trade",
       "Value": "False",
       "SubCategory": "Items Ageless",
-      "Priority": 149,
+      "Priority": 171,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -111290,7 +113753,7 @@
       "Name": "Shuffle Major Dungeons with Dungeons",
       "Value": "False",
       "SubCategory": "Entrances",
-      "Priority": 152,
+      "Priority": 174,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -111320,7 +113783,7 @@
       "Name": "Shuffle OoT Minor Dungeons with Dungeons",
       "Value": "False",
       "SubCategory": "Entrances",
-      "Priority": 153,
+      "Priority": 175,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -111350,7 +113813,7 @@
       "Name": "Shuffle Ganon's Castle with Dungeons",
       "Value": "False",
       "SubCategory": "Entrances",
-      "Priority": 154,
+      "Priority": 176,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -111380,7 +113843,7 @@
       "Name": "Shuffle Ganon's Tower with Dungeons",
       "Value": "False",
       "SubCategory": "Entrances",
-      "Priority": 155,
+      "Priority": 177,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -111410,7 +113873,7 @@
       "Name": "Shuffle Spider Houses with Dungeons",
       "Value": "False",
       "SubCategory": "Entrances",
-      "Priority": 156,
+      "Priority": 178,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -111440,7 +113903,7 @@
       "Name": "Shuffle Pirate Fortress with Dungeons",
       "Value": "False",
       "SubCategory": "Entrances",
-      "Priority": 157,
+      "Priority": 179,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -111470,7 +113933,7 @@
       "Name": "Shuffle Beneath The Well with Dungeons",
       "Value": "False",
       "SubCategory": "Entrances",
-      "Priority": 158,
+      "Priority": 180,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -111500,7 +113963,7 @@
       "Name": "Shuffle Ikana Castle Interior with Dungeons",
       "Value": "False",
       "SubCategory": "Entrances",
-      "Priority": 159,
+      "Priority": 181,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -111530,7 +113993,7 @@
       "Name": "Shuffle Secret Shrine with Dungeons",
       "Value": "False",
       "SubCategory": "Entrances",
-      "Priority": 160,
+      "Priority": 182,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -111560,7 +114023,7 @@
       "Name": "Shuffle Market Entrance",
       "Value": "False",
       "SubCategory": "Entrances",
-      "Priority": 162,
+      "Priority": 184,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -111590,7 +114053,7 @@
       "Name": "Shuffle Regional Shortcuts",
       "Value": "False",
       "SubCategory": "Entrances",
-      "Priority": 163,
+      "Priority": 185,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -111620,7 +114083,7 @@
       "Name": "Shuffle Most Interiors",
       "Value": "False",
       "SubCategory": "Entrances",
-      "Priority": 165,
+      "Priority": 187,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -111650,7 +114113,7 @@
       "Name": "Shuffle Extra Interiors",
       "Value": "False",
       "SubCategory": "Entrances",
-      "Priority": 166,
+      "Priority": 188,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -111675,12 +114138,132 @@
         }
       }
     },
-    "erWarpsOwls": {
-      "ID": "erWarpsOwls",
+    "erOneWaysMajor": {
+      "ID": "erOneWaysMajor",
+      "Name": "Shuffle Standard One-Ways",
+      "Value": "False",
+      "SubCategory": "Entrances",
+      "Priority": 191,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "erOneWaysIkana": {
+      "ID": "erOneWaysIkana",
+      "Name": "Shuffle Ikana Castle One-Ways",
+      "Value": "False",
+      "SubCategory": "Entrances",
+      "Priority": 192,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "erOneWaysSongs": {
+      "ID": "erOneWaysSongs",
+      "Name": "Shuffle One-Ways with Warp Songs",
+      "Value": "False",
+      "SubCategory": "Entrances",
+      "Priority": 193,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "erOneWaysStatues": {
+      "ID": "erOneWaysStatues",
+      "Name": "Shuffle One-Ways with Owl Statues",
+      "Value": "False",
+      "SubCategory": "Entrances",
+      "Priority": 194,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "True",
+        "Name": "True",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "False",
+        "Name": "False",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "erOneWaysOwls": {
+      "ID": "erOneWaysOwls",
       "Name": "Shuffle Child Owl Flights",
       "Value": "False",
       "SubCategory": "Entrances",
-      "Priority": 168,
+      "Priority": 195,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -111710,7 +114293,7 @@
       "Name": "Botw Mq",
       "Value": "False",
       "SubCategory": "Master Quest Dungeons",
-      "Priority": 169,
+      "Priority": 196,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -111740,7 +114323,7 @@
       "Name": "Dt Mq",
       "Value": "False",
       "SubCategory": "Master Quest Dungeons",
-      "Priority": 170,
+      "Priority": 197,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -111770,7 +114353,7 @@
       "Name": "Dc Mq",
       "Value": "False",
       "SubCategory": "Master Quest Dungeons",
-      "Priority": 171,
+      "Priority": 198,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -111800,7 +114383,7 @@
       "Name": "Fire Mq",
       "Value": "False",
       "SubCategory": "Master Quest Dungeons",
-      "Priority": 172,
+      "Priority": 199,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -111830,7 +114413,7 @@
       "Name": "Forest Mq",
       "Value": "False",
       "SubCategory": "Master Quest Dungeons",
-      "Priority": 173,
+      "Priority": 200,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -111860,7 +114443,7 @@
       "Name": "Ganon Mq",
       "Value": "False",
       "SubCategory": "Master Quest Dungeons",
-      "Priority": 174,
+      "Priority": 201,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -111890,7 +114473,7 @@
       "Name": "Gtg Mq",
       "Value": "False",
       "SubCategory": "Master Quest Dungeons",
-      "Priority": 175,
+      "Priority": 202,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -111920,7 +114503,7 @@
       "Name": "Ic Mq",
       "Value": "False",
       "SubCategory": "Master Quest Dungeons",
-      "Priority": 176,
+      "Priority": 203,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -111950,7 +114533,7 @@
       "Name": "Jj Mq",
       "Value": "False",
       "SubCategory": "Master Quest Dungeons",
-      "Priority": 177,
+      "Priority": 204,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -111980,7 +114563,7 @@
       "Name": "Shadow Mq",
       "Value": "False",
       "SubCategory": "Master Quest Dungeons",
-      "Priority": 178,
+      "Priority": 205,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -112010,7 +114593,7 @@
       "Name": "Spirit Mq",
       "Value": "False",
       "SubCategory": "Master Quest Dungeons",
-      "Priority": 179,
+      "Priority": 206,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -112040,7 +114623,7 @@
       "Name": "Water Mq",
       "Value": "False",
       "SubCategory": "Master Quest Dungeons",
-      "Priority": 180,
+      "Priority": 207,
       "Conditionals": [],
       "Enabled": {
         "ID": "True",
@@ -112069,8 +114652,8 @@
       "ID": "moon_stones",
       "Name": "Spiritual Stones",
       "Value": "false",
-      "SubCategory": "Special Conditions/Moon Access Conditions",
-      "Priority": 181,
+      "SubCategory": "Moon Access Conditions",
+      "Priority": 208,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -112108,8 +114691,8 @@
       "ID": "moon_medallions",
       "Name": "Medallions",
       "Value": "false",
-      "SubCategory": "Special Conditions/Moon Access Conditions",
-      "Priority": 182,
+      "SubCategory": "Moon Access Conditions",
+      "Priority": 209,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -112150,8 +114733,8 @@
       "ID": "moon_remains",
       "Name": "Boss Remains",
       "Value": "true",
-      "SubCategory": "Special Conditions/Moon Access Conditions",
-      "Priority": 183,
+      "SubCategory": "Moon Access Conditions",
+      "Priority": 210,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -112190,8 +114773,8 @@
       "ID": "moon_skullsGold",
       "Name": "Gold Skulltulas Tokens",
       "Value": "false",
-      "SubCategory": "Special Conditions/Moon Access Conditions",
-      "Priority": 184,
+      "SubCategory": "Moon Access Conditions",
+      "Priority": 211,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -112227,8 +114810,8 @@
       "ID": "moon_skullsSwamp",
       "Name": "Swamp Skulltulas Tokens",
       "Value": "false",
-      "SubCategory": "Special Conditions/Moon Access Conditions",
-      "Priority": 185,
+      "SubCategory": "Moon Access Conditions",
+      "Priority": 212,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -112264,8 +114847,8 @@
       "ID": "moon_skullsOcean",
       "Name": "Ocean Skulltulas Tokens",
       "Value": "false",
-      "SubCategory": "Special Conditions/Moon Access Conditions",
-      "Priority": 186,
+      "SubCategory": "Moon Access Conditions",
+      "Priority": 213,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -112301,8 +114884,8 @@
       "ID": "moon_fairiesWF",
       "Name": "Stray Fairies (Woodfall)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Moon Access Conditions",
-      "Priority": 187,
+      "SubCategory": "Moon Access Conditions",
+      "Priority": 214,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -112338,8 +114921,8 @@
       "ID": "moon_fairiesSH",
       "Name": "Stray Fairies (Snowhead)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Moon Access Conditions",
-      "Priority": 188,
+      "SubCategory": "Moon Access Conditions",
+      "Priority": 215,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -112375,8 +114958,8 @@
       "ID": "moon_fairiesGB",
       "Name": "Stray Fairies (Great Bay)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Moon Access Conditions",
-      "Priority": 189,
+      "SubCategory": "Moon Access Conditions",
+      "Priority": 216,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -112412,8 +114995,8 @@
       "ID": "moon_fairiesST",
       "Name": "Stray Fairies (Stone Tower)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Moon Access Conditions",
-      "Priority": 190,
+      "SubCategory": "Moon Access Conditions",
+      "Priority": 217,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -112449,8 +115032,8 @@
       "ID": "moon_fairyTown",
       "Name": "Stray Fairy (Clock Town)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Moon Access Conditions",
-      "Priority": 191,
+      "SubCategory": "Moon Access Conditions",
+      "Priority": 218,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -112486,8 +115069,8 @@
       "ID": "moon_masksRegular",
       "Name": "Regular Masks (MM)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Moon Access Conditions",
-      "Priority": 192,
+      "SubCategory": "Moon Access Conditions",
+      "Priority": 219,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -112545,8 +115128,8 @@
       "ID": "moon_masksTransform",
       "Name": "Transformation Masks (MM)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Moon Access Conditions",
-      "Priority": 193,
+      "SubCategory": "Moon Access Conditions",
+      "Priority": 220,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -112587,8 +115170,8 @@
       "ID": "moon_masksOot",
       "Name": "Masks (OoT)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Moon Access Conditions",
-      "Priority": 194,
+      "SubCategory": "Moon Access Conditions",
+      "Priority": 221,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -112636,8 +115219,8 @@
       "ID": "moon_triforce",
       "Name": "Triforce Pieces",
       "Value": "false",
-      "SubCategory": "Special Conditions/Moon Access Conditions",
-      "Priority": 195,
+      "SubCategory": "Moon Access Conditions",
+      "Priority": 222,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -112673,8 +115256,8 @@
       "ID": "moon_coinsRed",
       "Name": "Coins (Red)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Moon Access Conditions",
-      "Priority": 196,
+      "SubCategory": "Moon Access Conditions",
+      "Priority": 223,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -112710,8 +115293,8 @@
       "ID": "moon_coinsGreen",
       "Name": "Coins (Green)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Moon Access Conditions",
-      "Priority": 197,
+      "SubCategory": "Moon Access Conditions",
+      "Priority": 224,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -112747,8 +115330,8 @@
       "ID": "moon_coinsBlue",
       "Name": "Coins (Blue)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Moon Access Conditions",
-      "Priority": 198,
+      "SubCategory": "Moon Access Conditions",
+      "Priority": 225,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -112784,8 +115367,8 @@
       "ID": "moon_coinsYellow",
       "Name": "Coins (Yellow)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Moon Access Conditions",
-      "Priority": 199,
+      "SubCategory": "Moon Access Conditions",
+      "Priority": 226,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -112821,8 +115404,8 @@
       "ID": "majora_stones",
       "Name": "Spiritual Stones",
       "Value": "false",
-      "SubCategory": "Special Conditions/Majora Child Conditions",
-      "Priority": 201,
+      "SubCategory": "Majora Child Conditions",
+      "Priority": 228,
       "Conditionals": [
         [
           "setting{majoraChild, custom}"
@@ -112864,8 +115447,8 @@
       "ID": "majora_medallions",
       "Name": "Medallions",
       "Value": "false",
-      "SubCategory": "Special Conditions/Majora Child Conditions",
-      "Priority": 202,
+      "SubCategory": "Majora Child Conditions",
+      "Priority": 229,
       "Conditionals": [
         [
           "setting{majoraChild, custom}"
@@ -112910,8 +115493,8 @@
       "ID": "majora_remains",
       "Name": "Boss Remains",
       "Value": "false",
-      "SubCategory": "Special Conditions/Majora Child Conditions",
-      "Priority": 203,
+      "SubCategory": "Majora Child Conditions",
+      "Priority": 230,
       "Conditionals": [
         [
           "setting{majoraChild, custom}"
@@ -112954,8 +115537,8 @@
       "ID": "majora_skullsGold",
       "Name": "Gold Skulltulas Tokens",
       "Value": "false",
-      "SubCategory": "Special Conditions/Majora Child Conditions",
-      "Priority": 204,
+      "SubCategory": "Majora Child Conditions",
+      "Priority": 231,
       "Conditionals": [
         [
           "setting{majoraChild, custom}"
@@ -112995,8 +115578,8 @@
       "ID": "majora_skullsSwamp",
       "Name": "Swamp Skulltulas Tokens",
       "Value": "false",
-      "SubCategory": "Special Conditions/Majora Child Conditions",
-      "Priority": 205,
+      "SubCategory": "Majora Child Conditions",
+      "Priority": 232,
       "Conditionals": [
         [
           "setting{majoraChild, custom}"
@@ -113036,8 +115619,8 @@
       "ID": "majora_skullsOcean",
       "Name": "Ocean Skulltulas Tokens",
       "Value": "false",
-      "SubCategory": "Special Conditions/Majora Child Conditions",
-      "Priority": 206,
+      "SubCategory": "Majora Child Conditions",
+      "Priority": 233,
       "Conditionals": [
         [
           "setting{majoraChild, custom}"
@@ -113077,8 +115660,8 @@
       "ID": "majora_fairiesWF",
       "Name": "Stray Fairies (Woodfall)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Majora Child Conditions",
-      "Priority": 207,
+      "SubCategory": "Majora Child Conditions",
+      "Priority": 234,
       "Conditionals": [
         [
           "setting{majoraChild, custom}"
@@ -113118,8 +115701,8 @@
       "ID": "majora_fairiesSH",
       "Name": "Stray Fairies (Snowhead)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Majora Child Conditions",
-      "Priority": 208,
+      "SubCategory": "Majora Child Conditions",
+      "Priority": 235,
       "Conditionals": [
         [
           "setting{majoraChild, custom}"
@@ -113159,8 +115742,8 @@
       "ID": "majora_fairiesGB",
       "Name": "Stray Fairies (Great Bay)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Majora Child Conditions",
-      "Priority": 209,
+      "SubCategory": "Majora Child Conditions",
+      "Priority": 236,
       "Conditionals": [
         [
           "setting{majoraChild, custom}"
@@ -113200,8 +115783,8 @@
       "ID": "majora_fairiesST",
       "Name": "Stray Fairies (Stone Tower)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Majora Child Conditions",
-      "Priority": 210,
+      "SubCategory": "Majora Child Conditions",
+      "Priority": 237,
       "Conditionals": [
         [
           "setting{majoraChild, custom}"
@@ -113241,8 +115824,8 @@
       "ID": "majora_fairyTown",
       "Name": "Stray Fairy (Clock Town)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Majora Child Conditions",
-      "Priority": 211,
+      "SubCategory": "Majora Child Conditions",
+      "Priority": 238,
       "Conditionals": [
         [
           "setting{majoraChild, custom}"
@@ -113282,8 +115865,8 @@
       "ID": "majora_masksRegular",
       "Name": "Regular Masks (MM)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Majora Child Conditions",
-      "Priority": 212,
+      "SubCategory": "Majora Child Conditions",
+      "Priority": 239,
       "Conditionals": [
         [
           "setting{majoraChild, custom}"
@@ -113345,8 +115928,8 @@
       "ID": "majora_masksTransform",
       "Name": "Transformation Masks (MM)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Majora Child Conditions",
-      "Priority": 213,
+      "SubCategory": "Majora Child Conditions",
+      "Priority": 240,
       "Conditionals": [
         [
           "setting{majoraChild, custom}"
@@ -113391,8 +115974,8 @@
       "ID": "majora_masksOot",
       "Name": "Masks (OoT)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Majora Child Conditions",
-      "Priority": 214,
+      "SubCategory": "Majora Child Conditions",
+      "Priority": 241,
       "Conditionals": [
         [
           "setting{majoraChild, custom}"
@@ -113444,8 +116027,8 @@
       "ID": "majora_triforce",
       "Name": "Triforce Pieces",
       "Value": "false",
-      "SubCategory": "Special Conditions/Majora Child Conditions",
-      "Priority": 215,
+      "SubCategory": "Majora Child Conditions",
+      "Priority": 242,
       "Conditionals": [
         [
           "setting{majoraChild, custom}"
@@ -113485,8 +116068,8 @@
       "ID": "majora_coinsRed",
       "Name": "Coins (Red)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Majora Child Conditions",
-      "Priority": 216,
+      "SubCategory": "Majora Child Conditions",
+      "Priority": 243,
       "Conditionals": [
         [
           "setting{majoraChild, custom}"
@@ -113526,8 +116109,8 @@
       "ID": "majora_coinsGreen",
       "Name": "Coins (Green)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Majora Child Conditions",
-      "Priority": 217,
+      "SubCategory": "Majora Child Conditions",
+      "Priority": 244,
       "Conditionals": [
         [
           "setting{majoraChild, custom}"
@@ -113567,8 +116150,8 @@
       "ID": "majora_coinsBlue",
       "Name": "Coins (Blue)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Majora Child Conditions",
-      "Priority": 218,
+      "SubCategory": "Majora Child Conditions",
+      "Priority": 245,
       "Conditionals": [
         [
           "setting{majoraChild, custom}"
@@ -113608,8 +116191,8 @@
       "ID": "majora_coinsYellow",
       "Name": "Coins (Yellow)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Majora Child Conditions",
-      "Priority": 219,
+      "SubCategory": "Majora Child Conditions",
+      "Priority": 246,
       "Conditionals": [
         [
           "setting{majoraChild, custom}"
@@ -113649,8 +116232,8 @@
       "ID": "bridge_stones",
       "Name": "Spiritual Stones",
       "Value": "false",
-      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
-      "Priority": 221,
+      "SubCategory": "Rainbow Bridge Conditions",
+      "Priority": 248,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -113688,8 +116271,8 @@
       "ID": "bridge_medallions",
       "Name": "Medallions",
       "Value": "true",
-      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
-      "Priority": 222,
+      "SubCategory": "Rainbow Bridge Conditions",
+      "Priority": 249,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -113730,8 +116313,8 @@
       "ID": "bridge_remains",
       "Name": "Boss Remains",
       "Value": "false",
-      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
-      "Priority": 223,
+      "SubCategory": "Rainbow Bridge Conditions",
+      "Priority": 250,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -113770,8 +116353,8 @@
       "ID": "bridge_skullsGold",
       "Name": "Gold Skulltulas Tokens",
       "Value": "false",
-      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
-      "Priority": 224,
+      "SubCategory": "Rainbow Bridge Conditions",
+      "Priority": 251,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -113807,8 +116390,8 @@
       "ID": "bridge_skullsSwamp",
       "Name": "Swamp Skulltulas Tokens",
       "Value": "false",
-      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
-      "Priority": 225,
+      "SubCategory": "Rainbow Bridge Conditions",
+      "Priority": 252,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -113844,8 +116427,8 @@
       "ID": "bridge_skullsOcean",
       "Name": "Ocean Skulltulas Tokens",
       "Value": "false",
-      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
-      "Priority": 226,
+      "SubCategory": "Rainbow Bridge Conditions",
+      "Priority": 253,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -113881,8 +116464,8 @@
       "ID": "bridge_fairiesWF",
       "Name": "Stray Fairies (Woodfall)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
-      "Priority": 227,
+      "SubCategory": "Rainbow Bridge Conditions",
+      "Priority": 254,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -113918,8 +116501,8 @@
       "ID": "bridge_fairiesSH",
       "Name": "Stray Fairies (Snowhead)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
-      "Priority": 228,
+      "SubCategory": "Rainbow Bridge Conditions",
+      "Priority": 255,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -113955,8 +116538,8 @@
       "ID": "bridge_fairiesGB",
       "Name": "Stray Fairies (Great Bay)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
-      "Priority": 229,
+      "SubCategory": "Rainbow Bridge Conditions",
+      "Priority": 256,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -113992,8 +116575,8 @@
       "ID": "bridge_fairiesST",
       "Name": "Stray Fairies (Stone Tower)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
-      "Priority": 230,
+      "SubCategory": "Rainbow Bridge Conditions",
+      "Priority": 257,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -114029,8 +116612,8 @@
       "ID": "bridge_fairyTown",
       "Name": "Stray Fairy (Clock Town)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
-      "Priority": 231,
+      "SubCategory": "Rainbow Bridge Conditions",
+      "Priority": 258,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -114066,8 +116649,8 @@
       "ID": "bridge_masksRegular",
       "Name": "Regular Masks (MM)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
-      "Priority": 232,
+      "SubCategory": "Rainbow Bridge Conditions",
+      "Priority": 259,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -114125,8 +116708,8 @@
       "ID": "bridge_masksTransform",
       "Name": "Transformation Masks (MM)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
-      "Priority": 233,
+      "SubCategory": "Rainbow Bridge Conditions",
+      "Priority": 260,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -114167,8 +116750,8 @@
       "ID": "bridge_masksOot",
       "Name": "Masks (OoT)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
-      "Priority": 234,
+      "SubCategory": "Rainbow Bridge Conditions",
+      "Priority": 261,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -114216,8 +116799,8 @@
       "ID": "bridge_triforce",
       "Name": "Triforce Pieces",
       "Value": "false",
-      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
-      "Priority": 235,
+      "SubCategory": "Rainbow Bridge Conditions",
+      "Priority": 262,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -114253,8 +116836,8 @@
       "ID": "bridge_coinsRed",
       "Name": "Coins (Red)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
-      "Priority": 236,
+      "SubCategory": "Rainbow Bridge Conditions",
+      "Priority": 263,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -114290,8 +116873,8 @@
       "ID": "bridge_coinsGreen",
       "Name": "Coins (Green)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
-      "Priority": 237,
+      "SubCategory": "Rainbow Bridge Conditions",
+      "Priority": 264,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -114327,8 +116910,8 @@
       "ID": "bridge_coinsBlue",
       "Name": "Coins (Blue)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
-      "Priority": 238,
+      "SubCategory": "Rainbow Bridge Conditions",
+      "Priority": 265,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -114364,8 +116947,8 @@
       "ID": "bridge_coinsYellow",
       "Name": "Coins (Yellow)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
-      "Priority": 239,
+      "SubCategory": "Rainbow Bridge Conditions",
+      "Priority": 266,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -114401,8 +116984,8 @@
       "ID": "lacs_stones",
       "Name": "Spiritual Stones",
       "Value": "false",
-      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
-      "Priority": 241,
+      "SubCategory": "Light Arrow Cutscene Conditions",
+      "Priority": 268,
       "Conditionals": [
         [
           "setting{lacs, custom}"
@@ -114444,8 +117027,8 @@
       "ID": "lacs_medallions",
       "Name": "Medallions",
       "Value": "false",
-      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
-      "Priority": 242,
+      "SubCategory": "Light Arrow Cutscene Conditions",
+      "Priority": 269,
       "Conditionals": [
         [
           "setting{lacs, custom}"
@@ -114490,8 +117073,8 @@
       "ID": "lacs_remains",
       "Name": "Boss Remains",
       "Value": "false",
-      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
-      "Priority": 243,
+      "SubCategory": "Light Arrow Cutscene Conditions",
+      "Priority": 270,
       "Conditionals": [
         [
           "setting{lacs, custom}"
@@ -114534,8 +117117,8 @@
       "ID": "lacs_skullsGold",
       "Name": "Gold Skulltulas Tokens",
       "Value": "false",
-      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
-      "Priority": 244,
+      "SubCategory": "Light Arrow Cutscene Conditions",
+      "Priority": 271,
       "Conditionals": [
         [
           "setting{lacs, custom}"
@@ -114575,8 +117158,8 @@
       "ID": "lacs_skullsSwamp",
       "Name": "Swamp Skulltulas Tokens",
       "Value": "false",
-      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
-      "Priority": 245,
+      "SubCategory": "Light Arrow Cutscene Conditions",
+      "Priority": 272,
       "Conditionals": [
         [
           "setting{lacs, custom}"
@@ -114616,8 +117199,8 @@
       "ID": "lacs_skullsOcean",
       "Name": "Ocean Skulltulas Tokens",
       "Value": "false",
-      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
-      "Priority": 246,
+      "SubCategory": "Light Arrow Cutscene Conditions",
+      "Priority": 273,
       "Conditionals": [
         [
           "setting{lacs, custom}"
@@ -114657,8 +117240,8 @@
       "ID": "lacs_fairiesWF",
       "Name": "Stray Fairies (Woodfall)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
-      "Priority": 247,
+      "SubCategory": "Light Arrow Cutscene Conditions",
+      "Priority": 274,
       "Conditionals": [
         [
           "setting{lacs, custom}"
@@ -114698,8 +117281,8 @@
       "ID": "lacs_fairiesSH",
       "Name": "Stray Fairies (Snowhead)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
-      "Priority": 248,
+      "SubCategory": "Light Arrow Cutscene Conditions",
+      "Priority": 275,
       "Conditionals": [
         [
           "setting{lacs, custom}"
@@ -114739,8 +117322,8 @@
       "ID": "lacs_fairiesGB",
       "Name": "Stray Fairies (Great Bay)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
-      "Priority": 249,
+      "SubCategory": "Light Arrow Cutscene Conditions",
+      "Priority": 276,
       "Conditionals": [
         [
           "setting{lacs, custom}"
@@ -114780,8 +117363,8 @@
       "ID": "lacs_fairiesST",
       "Name": "Stray Fairies (Stone Tower)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
-      "Priority": 250,
+      "SubCategory": "Light Arrow Cutscene Conditions",
+      "Priority": 277,
       "Conditionals": [
         [
           "setting{lacs, custom}"
@@ -114821,8 +117404,8 @@
       "ID": "lacs_fairyTown",
       "Name": "Stray Fairy (Clock Town)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
-      "Priority": 251,
+      "SubCategory": "Light Arrow Cutscene Conditions",
+      "Priority": 278,
       "Conditionals": [
         [
           "setting{lacs, custom}"
@@ -114862,8 +117445,8 @@
       "ID": "lacs_masksRegular",
       "Name": "Regular Masks (MM)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
-      "Priority": 252,
+      "SubCategory": "Light Arrow Cutscene Conditions",
+      "Priority": 279,
       "Conditionals": [
         [
           "setting{lacs, custom}"
@@ -114925,8 +117508,8 @@
       "ID": "lacs_masksTransform",
       "Name": "Transformation Masks (MM)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
-      "Priority": 253,
+      "SubCategory": "Light Arrow Cutscene Conditions",
+      "Priority": 280,
       "Conditionals": [
         [
           "setting{lacs, custom}"
@@ -114971,8 +117554,8 @@
       "ID": "lacs_masksOot",
       "Name": "Masks (OoT)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
-      "Priority": 254,
+      "SubCategory": "Light Arrow Cutscene Conditions",
+      "Priority": 281,
       "Conditionals": [
         [
           "setting{lacs, custom}"
@@ -115024,8 +117607,8 @@
       "ID": "lacs_triforce",
       "Name": "Triforce Pieces",
       "Value": "false",
-      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
-      "Priority": 255,
+      "SubCategory": "Light Arrow Cutscene Conditions",
+      "Priority": 282,
       "Conditionals": [
         [
           "setting{lacs, custom}"
@@ -115065,8 +117648,8 @@
       "ID": "lacs_coinsRed",
       "Name": "Coins (Red)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
-      "Priority": 256,
+      "SubCategory": "Light Arrow Cutscene Conditions",
+      "Priority": 283,
       "Conditionals": [
         [
           "setting{lacs, custom}"
@@ -115106,8 +117689,8 @@
       "ID": "lacs_coinsGreen",
       "Name": "Coins (Green)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
-      "Priority": 257,
+      "SubCategory": "Light Arrow Cutscene Conditions",
+      "Priority": 284,
       "Conditionals": [
         [
           "setting{lacs, custom}"
@@ -115147,8 +117730,8 @@
       "ID": "lacs_coinsBlue",
       "Name": "Coins (Blue)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
-      "Priority": 258,
+      "SubCategory": "Light Arrow Cutscene Conditions",
+      "Priority": 285,
       "Conditionals": [
         [
           "setting{lacs, custom}"
@@ -115188,8 +117771,8 @@
       "ID": "lacs_coinsYellow",
       "Name": "Coins (Yellow)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
-      "Priority": 259,
+      "SubCategory": "Light Arrow Cutscene Conditions",
+      "Priority": 286,
       "Conditionals": [
         [
           "setting{lacs, custom}"
@@ -115229,8 +117812,8 @@
       "ID": "ganon_bk_stones",
       "Name": "Spiritual Stones",
       "Value": "false",
-      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
-      "Priority": 261,
+      "SubCategory": "Ganon Boss Key Conditions",
+      "Priority": 288,
       "Conditionals": [
         [
           "setting{ganonBossKey, custom}"
@@ -115272,8 +117855,8 @@
       "ID": "ganon_bk_medallions",
       "Name": "Medallions",
       "Value": "false",
-      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
-      "Priority": 262,
+      "SubCategory": "Ganon Boss Key Conditions",
+      "Priority": 289,
       "Conditionals": [
         [
           "setting{ganonBossKey, custom}"
@@ -115318,8 +117901,8 @@
       "ID": "ganon_bk_remains",
       "Name": "Boss Remains",
       "Value": "false",
-      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
-      "Priority": 263,
+      "SubCategory": "Ganon Boss Key Conditions",
+      "Priority": 290,
       "Conditionals": [
         [
           "setting{ganonBossKey, custom}"
@@ -115362,8 +117945,8 @@
       "ID": "ganon_bk_skullsGold",
       "Name": "Gold Skulltulas Tokens",
       "Value": "false",
-      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
-      "Priority": 264,
+      "SubCategory": "Ganon Boss Key Conditions",
+      "Priority": 291,
       "Conditionals": [
         [
           "setting{ganonBossKey, custom}"
@@ -115403,8 +117986,8 @@
       "ID": "ganon_bk_skullsSwamp",
       "Name": "Swamp Skulltulas Tokens",
       "Value": "false",
-      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
-      "Priority": 265,
+      "SubCategory": "Ganon Boss Key Conditions",
+      "Priority": 292,
       "Conditionals": [
         [
           "setting{ganonBossKey, custom}"
@@ -115444,8 +118027,8 @@
       "ID": "ganon_bk_skullsOcean",
       "Name": "Ocean Skulltulas Tokens",
       "Value": "false",
-      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
-      "Priority": 266,
+      "SubCategory": "Ganon Boss Key Conditions",
+      "Priority": 293,
       "Conditionals": [
         [
           "setting{ganonBossKey, custom}"
@@ -115485,8 +118068,8 @@
       "ID": "ganon_bk_fairiesWF",
       "Name": "Stray Fairies (Woodfall)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
-      "Priority": 267,
+      "SubCategory": "Ganon Boss Key Conditions",
+      "Priority": 294,
       "Conditionals": [
         [
           "setting{ganonBossKey, custom}"
@@ -115526,8 +118109,8 @@
       "ID": "ganon_bk_fairiesSH",
       "Name": "Stray Fairies (Snowhead)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
-      "Priority": 268,
+      "SubCategory": "Ganon Boss Key Conditions",
+      "Priority": 295,
       "Conditionals": [
         [
           "setting{ganonBossKey, custom}"
@@ -115567,8 +118150,8 @@
       "ID": "ganon_bk_fairiesGB",
       "Name": "Stray Fairies (Great Bay)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
-      "Priority": 269,
+      "SubCategory": "Ganon Boss Key Conditions",
+      "Priority": 296,
       "Conditionals": [
         [
           "setting{ganonBossKey, custom}"
@@ -115608,8 +118191,8 @@
       "ID": "ganon_bk_fairiesST",
       "Name": "Stray Fairies (Stone Tower)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
-      "Priority": 270,
+      "SubCategory": "Ganon Boss Key Conditions",
+      "Priority": 297,
       "Conditionals": [
         [
           "setting{ganonBossKey, custom}"
@@ -115649,8 +118232,8 @@
       "ID": "ganon_bk_fairyTown",
       "Name": "Stray Fairy (Clock Town)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
-      "Priority": 271,
+      "SubCategory": "Ganon Boss Key Conditions",
+      "Priority": 298,
       "Conditionals": [
         [
           "setting{ganonBossKey, custom}"
@@ -115690,8 +118273,8 @@
       "ID": "ganon_bk_masksRegular",
       "Name": "Regular Masks (MM)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
-      "Priority": 272,
+      "SubCategory": "Ganon Boss Key Conditions",
+      "Priority": 299,
       "Conditionals": [
         [
           "setting{ganonBossKey, custom}"
@@ -115753,8 +118336,8 @@
       "ID": "ganon_bk_masksTransform",
       "Name": "Transformation Masks (MM)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
-      "Priority": 273,
+      "SubCategory": "Ganon Boss Key Conditions",
+      "Priority": 300,
       "Conditionals": [
         [
           "setting{ganonBossKey, custom}"
@@ -115799,8 +118382,8 @@
       "ID": "ganon_bk_masksOot",
       "Name": "Masks (OoT)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
-      "Priority": 274,
+      "SubCategory": "Ganon Boss Key Conditions",
+      "Priority": 301,
       "Conditionals": [
         [
           "setting{ganonBossKey, custom}"
@@ -115852,8 +118435,8 @@
       "ID": "ganon_bk_triforce",
       "Name": "Triforce Pieces",
       "Value": "false",
-      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
-      "Priority": 275,
+      "SubCategory": "Ganon Boss Key Conditions",
+      "Priority": 302,
       "Conditionals": [
         [
           "setting{ganonBossKey, custom}"
@@ -115893,8 +118476,8 @@
       "ID": "ganon_bk_coinsRed",
       "Name": "Coins (Red)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
-      "Priority": 276,
+      "SubCategory": "Ganon Boss Key Conditions",
+      "Priority": 303,
       "Conditionals": [
         [
           "setting{ganonBossKey, custom}"
@@ -115934,8 +118517,8 @@
       "ID": "ganon_bk_coinsGreen",
       "Name": "Coins (Green)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
-      "Priority": 277,
+      "SubCategory": "Ganon Boss Key Conditions",
+      "Priority": 304,
       "Conditionals": [
         [
           "setting{ganonBossKey, custom}"
@@ -115975,8 +118558,8 @@
       "ID": "ganon_bk_coinsBlue",
       "Name": "Coins (Blue)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
-      "Priority": 278,
+      "SubCategory": "Ganon Boss Key Conditions",
+      "Priority": 305,
       "Conditionals": [
         [
           "setting{ganonBossKey, custom}"
@@ -116016,8 +118599,8 @@
       "ID": "ganon_bk_coinsYellow",
       "Name": "Coins (Yellow)",
       "Value": "false",
-      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
-      "Priority": 279,
+      "SubCategory": "Ganon Boss Key Conditions",
+      "Priority": 306,
       "Conditionals": [
         [
           "setting{ganonBossKey, custom}"
@@ -116102,7 +118685,7 @@
       "Name": "Pre-Completed Dungeons (Major)",
       "Value": 0,
       "SubCategory": "Main Events",
-      "Priority": 70,
+      "Priority": 90,
       "Conditionals": [],
       "Min": -2147483648,
       "Max": 2147483647
@@ -116112,7 +118695,7 @@
       "Name": "Pre-Completed Dungeons (Stones)",
       "Value": 0,
       "SubCategory": "Main Events",
-      "Priority": 71,
+      "Priority": 91,
       "Conditionals": [],
       "Min": -2147483648,
       "Max": 2147483647
@@ -116122,7 +118705,7 @@
       "Name": "Pre-Completed Dungeons (Medallions)",
       "Value": 0,
       "SubCategory": "Main Events",
-      "Priority": 72,
+      "Priority": 92,
       "Conditionals": [],
       "Min": -2147483648,
       "Max": 2147483647
@@ -116132,7 +118715,7 @@
       "Name": "Pre-Completed Dungeons (Remains)",
       "Value": 0,
       "SubCategory": "Main Events",
-      "Priority": 73,
+      "Priority": 93,
       "Conditionals": [],
       "Min": -2147483648,
       "Max": 2147483647
@@ -116142,7 +118725,7 @@
       "Name": "Red Coins",
       "Value": 0,
       "SubCategory": "Items Extensions",
-      "Priority": 113,
+      "Priority": 135,
       "Conditionals": [],
       "Min": -2147483648,
       "Max": 2147483647
@@ -116152,7 +118735,7 @@
       "Name": "Green Coins",
       "Value": 0,
       "SubCategory": "Items Extensions",
-      "Priority": 114,
+      "Priority": 136,
       "Conditionals": [],
       "Min": -2147483648,
       "Max": 2147483647
@@ -116162,7 +118745,7 @@
       "Name": "Blue Coins",
       "Value": 0,
       "SubCategory": "Items Extensions",
-      "Priority": 115,
+      "Priority": 137,
       "Conditionals": [],
       "Min": -2147483648,
       "Max": 2147483647
@@ -116172,7 +118755,7 @@
       "Name": "Yellow Coins",
       "Value": 0,
       "SubCategory": "Items Extensions",
-      "Priority": 116,
+      "Priority": 138,
       "Conditionals": [],
       "Min": -2147483648,
       "Max": 2147483647
@@ -116181,8 +118764,8 @@
       "ID": "moon_count",
       "Name": "Items Required",
       "Value": 4,
-      "SubCategory": "Special Conditions/Moon Access Conditions",
-      "Priority": 200,
+      "SubCategory": "Moon Access Conditions",
+      "Priority": 227,
       "Conditionals": [],
       "Min": -2147483648,
       "Max": 2147483647
@@ -116191,8 +118774,8 @@
       "ID": "majora_count",
       "Name": "Items Required",
       "Value": 0,
-      "SubCategory": "Special Conditions/Majora Child Conditions",
-      "Priority": 220,
+      "SubCategory": "Majora Child Conditions",
+      "Priority": 247,
       "Conditionals": [
         [
           "setting{majoraChild, custom}"
@@ -116205,8 +118788,8 @@
       "ID": "bridge_count",
       "Name": "Items Required",
       "Value": 6,
-      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
-      "Priority": 240,
+      "SubCategory": "Rainbow Bridge Conditions",
+      "Priority": 267,
       "Conditionals": [],
       "Min": -2147483648,
       "Max": 2147483647
@@ -116215,8 +118798,8 @@
       "ID": "lacs_count",
       "Name": "Items Required",
       "Value": 0,
-      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
-      "Priority": 260,
+      "SubCategory": "Light Arrow Cutscene Conditions",
+      "Priority": 287,
       "Conditionals": [
         [
           "setting{lacs, custom}"
@@ -116229,8 +118812,8 @@
       "ID": "ganon_bk_count",
       "Name": "Items Required",
       "Value": 0,
-      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
-      "Priority": 280,
+      "SubCategory": "Ganon Boss Key Conditions",
+      "Priority": 307,
       "Conditionals": [
         [
           "setting{ganonBossKey, custom}"
@@ -117173,6 +119756,26 @@
     },
     {
       "Id": "TRICK_OOT_MEGAFLIP",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": true,
+      "TrickCategory": "OOT"
+    },
+    {
+      "Id": "TRICK_OOT_GANON_CASTLE_ENTRY",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": true,
+      "TrickCategory": "OOT"
+    },
+    {
+      "Id": "TRICK_OOT_SHADOW_TEMPLE_STICKS",
       "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
