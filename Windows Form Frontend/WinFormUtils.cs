@@ -15,13 +15,10 @@ namespace Windows_Form_Frontend
     {
         public class DropDownOptionTree
         {
-            public DropDownOptionTree(ToolStripMenuItem _MenuItem)
-            {
-                MenuItem = _MenuItem;
-            }
             public DropDownOptionTree Parent { get; set; } = null;
             public ToolStripMenuItem MenuItem { get; set; }
             public string GroupID { get; set; } = "Root";
+            public List<ToolStripMenuItem> MenuItems { get; set; } = new List<ToolStripMenuItem>();
             public Dictionary<string, DropDownOptionTree> SubGroups { get; set; } = new Dictionary<string, DropDownOptionTree>();
         }
 

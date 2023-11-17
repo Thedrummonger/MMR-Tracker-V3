@@ -630,11 +630,11 @@ namespace Windows_Form_Frontend
 
         }
 
-        WinFormUtils.DropDownOptionTree RootTree = new WinFormUtils.DropDownOptionTree(null);
+        WinFormUtils.DropDownOptionTree RootTree = new WinFormUtils.DropDownOptionTree();
         private void UpdateDynamicUserOptions()
         {
             RandomizerOptionsToolStripMenuItem1.DropDownItems.Clear();
-            RootTree = new WinFormUtils.DropDownOptionTree(RandomizerOptionsToolStripMenuItem1);
+            RootTree = new WinFormUtils.DropDownOptionTree() { MenuItem = RandomizerOptionsToolStripMenuItem1 };
 
             //Create List Box Toggle
             ToolStripComboBox ListBoxDisplayOptions = new();
@@ -665,12 +665,7 @@ namespace Windows_Form_Frontend
                 var CurrentTree = RootTree;
                 foreach (var c in CategoryTree)
                 {
-                    if (!CurrentTree.SubGroups.ContainsKey(c))
-                    {
-                        ToolStripMenuItem NewItem = new ToolStripMenuItem() { Name = $"OptionSubMenu{c}", Text = c };
-                        CurrentTree.SubGroups[c] = new WinFormUtils.DropDownOptionTree(NewItem) { GroupID = c, Parent = CurrentTree };
-                        CurrentTree.MenuItem.DropDownItems.Add(NewItem);
-                    }
+                    CurrentTree.SubGroups.SetIfEmpty(c, new WinFormUtils.DropDownOptionTree() { GroupID = c, Parent = CurrentTree });
                     CurrentTree = CurrentTree.SubGroups[c];
                 }
             }
@@ -705,7 +700,7 @@ namespace Windows_Form_Frontend
                     };
                     ToolStripMenuItem menuItem = new() { Name = $"{ChoiceOption.ID}Menu", Text = ChoiceOption.getOptionName() };
                     menuItem.DropDownItems.Add(toolStripComboBox);
-                    OptionTree.MenuItem.DropDownItems.Add(menuItem);
+                    OptionTree.MenuItems.Add(menuItem);
                 }
                 else if (o is OptionData.ToggleOption ToggleOption)
                 {
@@ -721,7 +716,7 @@ namespace Windows_Form_Frontend
                         InstanceContainer.logicCalculation.CalculateLogic();
                         UpdateUI();
                     };
-                    OptionTree.MenuItem.DropDownItems.Add(menuItem);
+                    OptionTree.MenuItems.Add(menuItem);
                 }
                 else if (o is OptionData.IntOption IntOption)
                 {
@@ -733,7 +728,25 @@ namespace Windows_Form_Frontend
                     {
                         HandleItemSelect(new List<OptionData.IntOption> { IntOption }, MiscData.CheckState.Checked);
                     };
-                    OptionTree.MenuItem.DropDownItems.Add(menuItem);
+                    OptionTree.MenuItems.Add(menuItem);
+                }
+            }
+
+            ApplyMenuItems(RootTree);
+
+            void ApplyMenuItems(WinFormUtils.DropDownOptionTree Tree)
+            {
+                foreach (var i in Tree.MenuItems)
+                {
+                    Tree.MenuItem.DropDownItems.Add(i);
+                }
+                foreach(var i in Tree.SubGroups)
+                {
+                    if (!i.Value.MenuItems.Any() && !i.Value.SubGroups.Any()) { continue; }
+                    ToolStripMenuItem SubMenu = new ToolStripMenuItem() { Text = i.Key };
+                    Tree.MenuItem.DropDownItems.Add(SubMenu);
+                    i.Value.MenuItem = SubMenu;
+                    ApplyMenuItems(i.Value);
                 }
             }
 
