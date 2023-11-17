@@ -112069,7 +112069,7 @@
       "ID": "moon_stones",
       "Name": "Spiritual Stones",
       "Value": "false",
-      "SubCategory": "Moon Access Conditions",
+      "SubCategory": "Special Conditions/Moon Access Conditions",
       "Priority": 181,
       "Conditionals": [],
       "Enabled": {
@@ -112108,7 +112108,7 @@
       "ID": "moon_medallions",
       "Name": "Medallions",
       "Value": "false",
-      "SubCategory": "Moon Access Conditions",
+      "SubCategory": "Special Conditions/Moon Access Conditions",
       "Priority": 182,
       "Conditionals": [],
       "Enabled": {
@@ -112150,7 +112150,7 @@
       "ID": "moon_remains",
       "Name": "Boss Remains",
       "Value": "true",
-      "SubCategory": "Moon Access Conditions",
+      "SubCategory": "Special Conditions/Moon Access Conditions",
       "Priority": 183,
       "Conditionals": [],
       "Enabled": {
@@ -112190,7 +112190,7 @@
       "ID": "moon_skullsGold",
       "Name": "Gold Skulltulas Tokens",
       "Value": "false",
-      "SubCategory": "Moon Access Conditions",
+      "SubCategory": "Special Conditions/Moon Access Conditions",
       "Priority": 184,
       "Conditionals": [],
       "Enabled": {
@@ -112227,7 +112227,7 @@
       "ID": "moon_skullsSwamp",
       "Name": "Swamp Skulltulas Tokens",
       "Value": "false",
-      "SubCategory": "Moon Access Conditions",
+      "SubCategory": "Special Conditions/Moon Access Conditions",
       "Priority": 185,
       "Conditionals": [],
       "Enabled": {
@@ -112264,7 +112264,7 @@
       "ID": "moon_skullsOcean",
       "Name": "Ocean Skulltulas Tokens",
       "Value": "false",
-      "SubCategory": "Moon Access Conditions",
+      "SubCategory": "Special Conditions/Moon Access Conditions",
       "Priority": 186,
       "Conditionals": [],
       "Enabled": {
@@ -112301,7 +112301,7 @@
       "ID": "moon_fairiesWF",
       "Name": "Stray Fairies (Woodfall)",
       "Value": "false",
-      "SubCategory": "Moon Access Conditions",
+      "SubCategory": "Special Conditions/Moon Access Conditions",
       "Priority": 187,
       "Conditionals": [],
       "Enabled": {
@@ -112338,7 +112338,7 @@
       "ID": "moon_fairiesSH",
       "Name": "Stray Fairies (Snowhead)",
       "Value": "false",
-      "SubCategory": "Moon Access Conditions",
+      "SubCategory": "Special Conditions/Moon Access Conditions",
       "Priority": 188,
       "Conditionals": [],
       "Enabled": {
@@ -112375,7 +112375,7 @@
       "ID": "moon_fairiesGB",
       "Name": "Stray Fairies (Great Bay)",
       "Value": "false",
-      "SubCategory": "Moon Access Conditions",
+      "SubCategory": "Special Conditions/Moon Access Conditions",
       "Priority": 189,
       "Conditionals": [],
       "Enabled": {
@@ -112412,7 +112412,7 @@
       "ID": "moon_fairiesST",
       "Name": "Stray Fairies (Stone Tower)",
       "Value": "false",
-      "SubCategory": "Moon Access Conditions",
+      "SubCategory": "Special Conditions/Moon Access Conditions",
       "Priority": 190,
       "Conditionals": [],
       "Enabled": {
@@ -112449,7 +112449,7 @@
       "ID": "moon_fairyTown",
       "Name": "Stray Fairy (Clock Town)",
       "Value": "false",
-      "SubCategory": "Moon Access Conditions",
+      "SubCategory": "Special Conditions/Moon Access Conditions",
       "Priority": 191,
       "Conditionals": [],
       "Enabled": {
@@ -112486,7 +112486,7 @@
       "ID": "moon_masksRegular",
       "Name": "Regular Masks (MM)",
       "Value": "false",
-      "SubCategory": "Moon Access Conditions",
+      "SubCategory": "Special Conditions/Moon Access Conditions",
       "Priority": 192,
       "Conditionals": [],
       "Enabled": {
@@ -112545,7 +112545,7 @@
       "ID": "moon_masksTransform",
       "Name": "Transformation Masks (MM)",
       "Value": "false",
-      "SubCategory": "Moon Access Conditions",
+      "SubCategory": "Special Conditions/Moon Access Conditions",
       "Priority": 193,
       "Conditionals": [],
       "Enabled": {
@@ -112587,7 +112587,7 @@
       "ID": "moon_masksOot",
       "Name": "Masks (OoT)",
       "Value": "false",
-      "SubCategory": "Moon Access Conditions",
+      "SubCategory": "Special Conditions/Moon Access Conditions",
       "Priority": 194,
       "Conditionals": [],
       "Enabled": {
@@ -112636,7 +112636,7 @@
       "ID": "moon_triforce",
       "Name": "Triforce Pieces",
       "Value": "false",
-      "SubCategory": "Moon Access Conditions",
+      "SubCategory": "Special Conditions/Moon Access Conditions",
       "Priority": 195,
       "Conditionals": [],
       "Enabled": {
@@ -112673,7 +112673,7 @@
       "ID": "moon_coinsRed",
       "Name": "Coins (Red)",
       "Value": "false",
-      "SubCategory": "Moon Access Conditions",
+      "SubCategory": "Special Conditions/Moon Access Conditions",
       "Priority": 196,
       "Conditionals": [],
       "Enabled": {
@@ -112710,7 +112710,7 @@
       "ID": "moon_coinsGreen",
       "Name": "Coins (Green)",
       "Value": "false",
-      "SubCategory": "Moon Access Conditions",
+      "SubCategory": "Special Conditions/Moon Access Conditions",
       "Priority": 197,
       "Conditionals": [],
       "Enabled": {
@@ -112747,7 +112747,7 @@
       "ID": "moon_coinsBlue",
       "Name": "Coins (Blue)",
       "Value": "false",
-      "SubCategory": "Moon Access Conditions",
+      "SubCategory": "Special Conditions/Moon Access Conditions",
       "Priority": 198,
       "Conditionals": [],
       "Enabled": {
@@ -112784,7 +112784,7 @@
       "ID": "moon_coinsYellow",
       "Name": "Coins (Yellow)",
       "Value": "false",
-      "SubCategory": "Moon Access Conditions",
+      "SubCategory": "Special Conditions/Moon Access Conditions",
       "Priority": 199,
       "Conditionals": [],
       "Enabled": {
@@ -112821,7 +112821,7 @@
       "ID": "majora_stones",
       "Name": "Spiritual Stones",
       "Value": "false",
-      "SubCategory": "Majora Child Conditions",
+      "SubCategory": "Special Conditions/Majora Child Conditions",
       "Priority": 201,
       "Conditionals": [
         [
@@ -112864,7 +112864,7 @@
       "ID": "majora_medallions",
       "Name": "Medallions",
       "Value": "false",
-      "SubCategory": "Majora Child Conditions",
+      "SubCategory": "Special Conditions/Majora Child Conditions",
       "Priority": 202,
       "Conditionals": [
         [
@@ -112910,7 +112910,7 @@
       "ID": "majora_remains",
       "Name": "Boss Remains",
       "Value": "false",
-      "SubCategory": "Majora Child Conditions",
+      "SubCategory": "Special Conditions/Majora Child Conditions",
       "Priority": 203,
       "Conditionals": [
         [
@@ -112954,7 +112954,7 @@
       "ID": "majora_skullsGold",
       "Name": "Gold Skulltulas Tokens",
       "Value": "false",
-      "SubCategory": "Majora Child Conditions",
+      "SubCategory": "Special Conditions/Majora Child Conditions",
       "Priority": 204,
       "Conditionals": [
         [
@@ -112995,7 +112995,7 @@
       "ID": "majora_skullsSwamp",
       "Name": "Swamp Skulltulas Tokens",
       "Value": "false",
-      "SubCategory": "Majora Child Conditions",
+      "SubCategory": "Special Conditions/Majora Child Conditions",
       "Priority": 205,
       "Conditionals": [
         [
@@ -113036,7 +113036,7 @@
       "ID": "majora_skullsOcean",
       "Name": "Ocean Skulltulas Tokens",
       "Value": "false",
-      "SubCategory": "Majora Child Conditions",
+      "SubCategory": "Special Conditions/Majora Child Conditions",
       "Priority": 206,
       "Conditionals": [
         [
@@ -113077,7 +113077,7 @@
       "ID": "majora_fairiesWF",
       "Name": "Stray Fairies (Woodfall)",
       "Value": "false",
-      "SubCategory": "Majora Child Conditions",
+      "SubCategory": "Special Conditions/Majora Child Conditions",
       "Priority": 207,
       "Conditionals": [
         [
@@ -113118,7 +113118,7 @@
       "ID": "majora_fairiesSH",
       "Name": "Stray Fairies (Snowhead)",
       "Value": "false",
-      "SubCategory": "Majora Child Conditions",
+      "SubCategory": "Special Conditions/Majora Child Conditions",
       "Priority": 208,
       "Conditionals": [
         [
@@ -113159,7 +113159,7 @@
       "ID": "majora_fairiesGB",
       "Name": "Stray Fairies (Great Bay)",
       "Value": "false",
-      "SubCategory": "Majora Child Conditions",
+      "SubCategory": "Special Conditions/Majora Child Conditions",
       "Priority": 209,
       "Conditionals": [
         [
@@ -113200,7 +113200,7 @@
       "ID": "majora_fairiesST",
       "Name": "Stray Fairies (Stone Tower)",
       "Value": "false",
-      "SubCategory": "Majora Child Conditions",
+      "SubCategory": "Special Conditions/Majora Child Conditions",
       "Priority": 210,
       "Conditionals": [
         [
@@ -113241,7 +113241,7 @@
       "ID": "majora_fairyTown",
       "Name": "Stray Fairy (Clock Town)",
       "Value": "false",
-      "SubCategory": "Majora Child Conditions",
+      "SubCategory": "Special Conditions/Majora Child Conditions",
       "Priority": 211,
       "Conditionals": [
         [
@@ -113282,7 +113282,7 @@
       "ID": "majora_masksRegular",
       "Name": "Regular Masks (MM)",
       "Value": "false",
-      "SubCategory": "Majora Child Conditions",
+      "SubCategory": "Special Conditions/Majora Child Conditions",
       "Priority": 212,
       "Conditionals": [
         [
@@ -113345,7 +113345,7 @@
       "ID": "majora_masksTransform",
       "Name": "Transformation Masks (MM)",
       "Value": "false",
-      "SubCategory": "Majora Child Conditions",
+      "SubCategory": "Special Conditions/Majora Child Conditions",
       "Priority": 213,
       "Conditionals": [
         [
@@ -113391,7 +113391,7 @@
       "ID": "majora_masksOot",
       "Name": "Masks (OoT)",
       "Value": "false",
-      "SubCategory": "Majora Child Conditions",
+      "SubCategory": "Special Conditions/Majora Child Conditions",
       "Priority": 214,
       "Conditionals": [
         [
@@ -113444,7 +113444,7 @@
       "ID": "majora_triforce",
       "Name": "Triforce Pieces",
       "Value": "false",
-      "SubCategory": "Majora Child Conditions",
+      "SubCategory": "Special Conditions/Majora Child Conditions",
       "Priority": 215,
       "Conditionals": [
         [
@@ -113485,7 +113485,7 @@
       "ID": "majora_coinsRed",
       "Name": "Coins (Red)",
       "Value": "false",
-      "SubCategory": "Majora Child Conditions",
+      "SubCategory": "Special Conditions/Majora Child Conditions",
       "Priority": 216,
       "Conditionals": [
         [
@@ -113526,7 +113526,7 @@
       "ID": "majora_coinsGreen",
       "Name": "Coins (Green)",
       "Value": "false",
-      "SubCategory": "Majora Child Conditions",
+      "SubCategory": "Special Conditions/Majora Child Conditions",
       "Priority": 217,
       "Conditionals": [
         [
@@ -113567,7 +113567,7 @@
       "ID": "majora_coinsBlue",
       "Name": "Coins (Blue)",
       "Value": "false",
-      "SubCategory": "Majora Child Conditions",
+      "SubCategory": "Special Conditions/Majora Child Conditions",
       "Priority": 218,
       "Conditionals": [
         [
@@ -113608,7 +113608,7 @@
       "ID": "majora_coinsYellow",
       "Name": "Coins (Yellow)",
       "Value": "false",
-      "SubCategory": "Majora Child Conditions",
+      "SubCategory": "Special Conditions/Majora Child Conditions",
       "Priority": 219,
       "Conditionals": [
         [
@@ -113649,7 +113649,7 @@
       "ID": "bridge_stones",
       "Name": "Spiritual Stones",
       "Value": "false",
-      "SubCategory": "Rainbow Bridge Conditions",
+      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
       "Priority": 221,
       "Conditionals": [],
       "Enabled": {
@@ -113688,7 +113688,7 @@
       "ID": "bridge_medallions",
       "Name": "Medallions",
       "Value": "true",
-      "SubCategory": "Rainbow Bridge Conditions",
+      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
       "Priority": 222,
       "Conditionals": [],
       "Enabled": {
@@ -113730,7 +113730,7 @@
       "ID": "bridge_remains",
       "Name": "Boss Remains",
       "Value": "false",
-      "SubCategory": "Rainbow Bridge Conditions",
+      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
       "Priority": 223,
       "Conditionals": [],
       "Enabled": {
@@ -113770,7 +113770,7 @@
       "ID": "bridge_skullsGold",
       "Name": "Gold Skulltulas Tokens",
       "Value": "false",
-      "SubCategory": "Rainbow Bridge Conditions",
+      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
       "Priority": 224,
       "Conditionals": [],
       "Enabled": {
@@ -113807,7 +113807,7 @@
       "ID": "bridge_skullsSwamp",
       "Name": "Swamp Skulltulas Tokens",
       "Value": "false",
-      "SubCategory": "Rainbow Bridge Conditions",
+      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
       "Priority": 225,
       "Conditionals": [],
       "Enabled": {
@@ -113844,7 +113844,7 @@
       "ID": "bridge_skullsOcean",
       "Name": "Ocean Skulltulas Tokens",
       "Value": "false",
-      "SubCategory": "Rainbow Bridge Conditions",
+      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
       "Priority": 226,
       "Conditionals": [],
       "Enabled": {
@@ -113881,7 +113881,7 @@
       "ID": "bridge_fairiesWF",
       "Name": "Stray Fairies (Woodfall)",
       "Value": "false",
-      "SubCategory": "Rainbow Bridge Conditions",
+      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
       "Priority": 227,
       "Conditionals": [],
       "Enabled": {
@@ -113918,7 +113918,7 @@
       "ID": "bridge_fairiesSH",
       "Name": "Stray Fairies (Snowhead)",
       "Value": "false",
-      "SubCategory": "Rainbow Bridge Conditions",
+      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
       "Priority": 228,
       "Conditionals": [],
       "Enabled": {
@@ -113955,7 +113955,7 @@
       "ID": "bridge_fairiesGB",
       "Name": "Stray Fairies (Great Bay)",
       "Value": "false",
-      "SubCategory": "Rainbow Bridge Conditions",
+      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
       "Priority": 229,
       "Conditionals": [],
       "Enabled": {
@@ -113992,7 +113992,7 @@
       "ID": "bridge_fairiesST",
       "Name": "Stray Fairies (Stone Tower)",
       "Value": "false",
-      "SubCategory": "Rainbow Bridge Conditions",
+      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
       "Priority": 230,
       "Conditionals": [],
       "Enabled": {
@@ -114029,7 +114029,7 @@
       "ID": "bridge_fairyTown",
       "Name": "Stray Fairy (Clock Town)",
       "Value": "false",
-      "SubCategory": "Rainbow Bridge Conditions",
+      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
       "Priority": 231,
       "Conditionals": [],
       "Enabled": {
@@ -114066,7 +114066,7 @@
       "ID": "bridge_masksRegular",
       "Name": "Regular Masks (MM)",
       "Value": "false",
-      "SubCategory": "Rainbow Bridge Conditions",
+      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
       "Priority": 232,
       "Conditionals": [],
       "Enabled": {
@@ -114125,7 +114125,7 @@
       "ID": "bridge_masksTransform",
       "Name": "Transformation Masks (MM)",
       "Value": "false",
-      "SubCategory": "Rainbow Bridge Conditions",
+      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
       "Priority": 233,
       "Conditionals": [],
       "Enabled": {
@@ -114167,7 +114167,7 @@
       "ID": "bridge_masksOot",
       "Name": "Masks (OoT)",
       "Value": "false",
-      "SubCategory": "Rainbow Bridge Conditions",
+      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
       "Priority": 234,
       "Conditionals": [],
       "Enabled": {
@@ -114216,7 +114216,7 @@
       "ID": "bridge_triforce",
       "Name": "Triforce Pieces",
       "Value": "false",
-      "SubCategory": "Rainbow Bridge Conditions",
+      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
       "Priority": 235,
       "Conditionals": [],
       "Enabled": {
@@ -114253,7 +114253,7 @@
       "ID": "bridge_coinsRed",
       "Name": "Coins (Red)",
       "Value": "false",
-      "SubCategory": "Rainbow Bridge Conditions",
+      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
       "Priority": 236,
       "Conditionals": [],
       "Enabled": {
@@ -114290,7 +114290,7 @@
       "ID": "bridge_coinsGreen",
       "Name": "Coins (Green)",
       "Value": "false",
-      "SubCategory": "Rainbow Bridge Conditions",
+      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
       "Priority": 237,
       "Conditionals": [],
       "Enabled": {
@@ -114327,7 +114327,7 @@
       "ID": "bridge_coinsBlue",
       "Name": "Coins (Blue)",
       "Value": "false",
-      "SubCategory": "Rainbow Bridge Conditions",
+      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
       "Priority": 238,
       "Conditionals": [],
       "Enabled": {
@@ -114364,7 +114364,7 @@
       "ID": "bridge_coinsYellow",
       "Name": "Coins (Yellow)",
       "Value": "false",
-      "SubCategory": "Rainbow Bridge Conditions",
+      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
       "Priority": 239,
       "Conditionals": [],
       "Enabled": {
@@ -114401,7 +114401,7 @@
       "ID": "lacs_stones",
       "Name": "Spiritual Stones",
       "Value": "false",
-      "SubCategory": "Light Arrow Cutscene Conditions",
+      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
       "Priority": 241,
       "Conditionals": [
         [
@@ -114444,7 +114444,7 @@
       "ID": "lacs_medallions",
       "Name": "Medallions",
       "Value": "false",
-      "SubCategory": "Light Arrow Cutscene Conditions",
+      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
       "Priority": 242,
       "Conditionals": [
         [
@@ -114490,7 +114490,7 @@
       "ID": "lacs_remains",
       "Name": "Boss Remains",
       "Value": "false",
-      "SubCategory": "Light Arrow Cutscene Conditions",
+      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
       "Priority": 243,
       "Conditionals": [
         [
@@ -114534,7 +114534,7 @@
       "ID": "lacs_skullsGold",
       "Name": "Gold Skulltulas Tokens",
       "Value": "false",
-      "SubCategory": "Light Arrow Cutscene Conditions",
+      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
       "Priority": 244,
       "Conditionals": [
         [
@@ -114575,7 +114575,7 @@
       "ID": "lacs_skullsSwamp",
       "Name": "Swamp Skulltulas Tokens",
       "Value": "false",
-      "SubCategory": "Light Arrow Cutscene Conditions",
+      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
       "Priority": 245,
       "Conditionals": [
         [
@@ -114616,7 +114616,7 @@
       "ID": "lacs_skullsOcean",
       "Name": "Ocean Skulltulas Tokens",
       "Value": "false",
-      "SubCategory": "Light Arrow Cutscene Conditions",
+      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
       "Priority": 246,
       "Conditionals": [
         [
@@ -114657,7 +114657,7 @@
       "ID": "lacs_fairiesWF",
       "Name": "Stray Fairies (Woodfall)",
       "Value": "false",
-      "SubCategory": "Light Arrow Cutscene Conditions",
+      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
       "Priority": 247,
       "Conditionals": [
         [
@@ -114698,7 +114698,7 @@
       "ID": "lacs_fairiesSH",
       "Name": "Stray Fairies (Snowhead)",
       "Value": "false",
-      "SubCategory": "Light Arrow Cutscene Conditions",
+      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
       "Priority": 248,
       "Conditionals": [
         [
@@ -114739,7 +114739,7 @@
       "ID": "lacs_fairiesGB",
       "Name": "Stray Fairies (Great Bay)",
       "Value": "false",
-      "SubCategory": "Light Arrow Cutscene Conditions",
+      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
       "Priority": 249,
       "Conditionals": [
         [
@@ -114780,7 +114780,7 @@
       "ID": "lacs_fairiesST",
       "Name": "Stray Fairies (Stone Tower)",
       "Value": "false",
-      "SubCategory": "Light Arrow Cutscene Conditions",
+      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
       "Priority": 250,
       "Conditionals": [
         [
@@ -114821,7 +114821,7 @@
       "ID": "lacs_fairyTown",
       "Name": "Stray Fairy (Clock Town)",
       "Value": "false",
-      "SubCategory": "Light Arrow Cutscene Conditions",
+      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
       "Priority": 251,
       "Conditionals": [
         [
@@ -114862,7 +114862,7 @@
       "ID": "lacs_masksRegular",
       "Name": "Regular Masks (MM)",
       "Value": "false",
-      "SubCategory": "Light Arrow Cutscene Conditions",
+      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
       "Priority": 252,
       "Conditionals": [
         [
@@ -114925,7 +114925,7 @@
       "ID": "lacs_masksTransform",
       "Name": "Transformation Masks (MM)",
       "Value": "false",
-      "SubCategory": "Light Arrow Cutscene Conditions",
+      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
       "Priority": 253,
       "Conditionals": [
         [
@@ -114971,7 +114971,7 @@
       "ID": "lacs_masksOot",
       "Name": "Masks (OoT)",
       "Value": "false",
-      "SubCategory": "Light Arrow Cutscene Conditions",
+      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
       "Priority": 254,
       "Conditionals": [
         [
@@ -115024,7 +115024,7 @@
       "ID": "lacs_triforce",
       "Name": "Triforce Pieces",
       "Value": "false",
-      "SubCategory": "Light Arrow Cutscene Conditions",
+      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
       "Priority": 255,
       "Conditionals": [
         [
@@ -115065,7 +115065,7 @@
       "ID": "lacs_coinsRed",
       "Name": "Coins (Red)",
       "Value": "false",
-      "SubCategory": "Light Arrow Cutscene Conditions",
+      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
       "Priority": 256,
       "Conditionals": [
         [
@@ -115106,7 +115106,7 @@
       "ID": "lacs_coinsGreen",
       "Name": "Coins (Green)",
       "Value": "false",
-      "SubCategory": "Light Arrow Cutscene Conditions",
+      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
       "Priority": 257,
       "Conditionals": [
         [
@@ -115147,7 +115147,7 @@
       "ID": "lacs_coinsBlue",
       "Name": "Coins (Blue)",
       "Value": "false",
-      "SubCategory": "Light Arrow Cutscene Conditions",
+      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
       "Priority": 258,
       "Conditionals": [
         [
@@ -115188,7 +115188,7 @@
       "ID": "lacs_coinsYellow",
       "Name": "Coins (Yellow)",
       "Value": "false",
-      "SubCategory": "Light Arrow Cutscene Conditions",
+      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
       "Priority": 259,
       "Conditionals": [
         [
@@ -115229,7 +115229,7 @@
       "ID": "ganon_bk_stones",
       "Name": "Spiritual Stones",
       "Value": "false",
-      "SubCategory": "Ganon Boss Key Conditions",
+      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
       "Priority": 261,
       "Conditionals": [
         [
@@ -115272,7 +115272,7 @@
       "ID": "ganon_bk_medallions",
       "Name": "Medallions",
       "Value": "false",
-      "SubCategory": "Ganon Boss Key Conditions",
+      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
       "Priority": 262,
       "Conditionals": [
         [
@@ -115318,7 +115318,7 @@
       "ID": "ganon_bk_remains",
       "Name": "Boss Remains",
       "Value": "false",
-      "SubCategory": "Ganon Boss Key Conditions",
+      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
       "Priority": 263,
       "Conditionals": [
         [
@@ -115362,7 +115362,7 @@
       "ID": "ganon_bk_skullsGold",
       "Name": "Gold Skulltulas Tokens",
       "Value": "false",
-      "SubCategory": "Ganon Boss Key Conditions",
+      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
       "Priority": 264,
       "Conditionals": [
         [
@@ -115403,7 +115403,7 @@
       "ID": "ganon_bk_skullsSwamp",
       "Name": "Swamp Skulltulas Tokens",
       "Value": "false",
-      "SubCategory": "Ganon Boss Key Conditions",
+      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
       "Priority": 265,
       "Conditionals": [
         [
@@ -115444,7 +115444,7 @@
       "ID": "ganon_bk_skullsOcean",
       "Name": "Ocean Skulltulas Tokens",
       "Value": "false",
-      "SubCategory": "Ganon Boss Key Conditions",
+      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
       "Priority": 266,
       "Conditionals": [
         [
@@ -115485,7 +115485,7 @@
       "ID": "ganon_bk_fairiesWF",
       "Name": "Stray Fairies (Woodfall)",
       "Value": "false",
-      "SubCategory": "Ganon Boss Key Conditions",
+      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
       "Priority": 267,
       "Conditionals": [
         [
@@ -115526,7 +115526,7 @@
       "ID": "ganon_bk_fairiesSH",
       "Name": "Stray Fairies (Snowhead)",
       "Value": "false",
-      "SubCategory": "Ganon Boss Key Conditions",
+      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
       "Priority": 268,
       "Conditionals": [
         [
@@ -115567,7 +115567,7 @@
       "ID": "ganon_bk_fairiesGB",
       "Name": "Stray Fairies (Great Bay)",
       "Value": "false",
-      "SubCategory": "Ganon Boss Key Conditions",
+      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
       "Priority": 269,
       "Conditionals": [
         [
@@ -115608,7 +115608,7 @@
       "ID": "ganon_bk_fairiesST",
       "Name": "Stray Fairies (Stone Tower)",
       "Value": "false",
-      "SubCategory": "Ganon Boss Key Conditions",
+      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
       "Priority": 270,
       "Conditionals": [
         [
@@ -115649,7 +115649,7 @@
       "ID": "ganon_bk_fairyTown",
       "Name": "Stray Fairy (Clock Town)",
       "Value": "false",
-      "SubCategory": "Ganon Boss Key Conditions",
+      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
       "Priority": 271,
       "Conditionals": [
         [
@@ -115690,7 +115690,7 @@
       "ID": "ganon_bk_masksRegular",
       "Name": "Regular Masks (MM)",
       "Value": "false",
-      "SubCategory": "Ganon Boss Key Conditions",
+      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
       "Priority": 272,
       "Conditionals": [
         [
@@ -115753,7 +115753,7 @@
       "ID": "ganon_bk_masksTransform",
       "Name": "Transformation Masks (MM)",
       "Value": "false",
-      "SubCategory": "Ganon Boss Key Conditions",
+      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
       "Priority": 273,
       "Conditionals": [
         [
@@ -115799,7 +115799,7 @@
       "ID": "ganon_bk_masksOot",
       "Name": "Masks (OoT)",
       "Value": "false",
-      "SubCategory": "Ganon Boss Key Conditions",
+      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
       "Priority": 274,
       "Conditionals": [
         [
@@ -115852,7 +115852,7 @@
       "ID": "ganon_bk_triforce",
       "Name": "Triforce Pieces",
       "Value": "false",
-      "SubCategory": "Ganon Boss Key Conditions",
+      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
       "Priority": 275,
       "Conditionals": [
         [
@@ -115893,7 +115893,7 @@
       "ID": "ganon_bk_coinsRed",
       "Name": "Coins (Red)",
       "Value": "false",
-      "SubCategory": "Ganon Boss Key Conditions",
+      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
       "Priority": 276,
       "Conditionals": [
         [
@@ -115934,7 +115934,7 @@
       "ID": "ganon_bk_coinsGreen",
       "Name": "Coins (Green)",
       "Value": "false",
-      "SubCategory": "Ganon Boss Key Conditions",
+      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
       "Priority": 277,
       "Conditionals": [
         [
@@ -115975,7 +115975,7 @@
       "ID": "ganon_bk_coinsBlue",
       "Name": "Coins (Blue)",
       "Value": "false",
-      "SubCategory": "Ganon Boss Key Conditions",
+      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
       "Priority": 278,
       "Conditionals": [
         [
@@ -116016,7 +116016,7 @@
       "ID": "ganon_bk_coinsYellow",
       "Name": "Coins (Yellow)",
       "Value": "false",
-      "SubCategory": "Ganon Boss Key Conditions",
+      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
       "Priority": 279,
       "Conditionals": [
         [
@@ -116181,7 +116181,7 @@
       "ID": "moon_count",
       "Name": "Items Required",
       "Value": 4,
-      "SubCategory": "Moon Access Conditions",
+      "SubCategory": "Special Conditions/Moon Access Conditions",
       "Priority": 200,
       "Conditionals": [],
       "Min": -2147483648,
@@ -116191,7 +116191,7 @@
       "ID": "majora_count",
       "Name": "Items Required",
       "Value": 0,
-      "SubCategory": "Majora Child Conditions",
+      "SubCategory": "Special Conditions/Majora Child Conditions",
       "Priority": 220,
       "Conditionals": [
         [
@@ -116205,7 +116205,7 @@
       "ID": "bridge_count",
       "Name": "Items Required",
       "Value": 6,
-      "SubCategory": "Rainbow Bridge Conditions",
+      "SubCategory": "Special Conditions/Rainbow Bridge Conditions",
       "Priority": 240,
       "Conditionals": [],
       "Min": -2147483648,
@@ -116215,7 +116215,7 @@
       "ID": "lacs_count",
       "Name": "Items Required",
       "Value": 0,
-      "SubCategory": "Light Arrow Cutscene Conditions",
+      "SubCategory": "Special Conditions/Light Arrow Cutscene Conditions",
       "Priority": 260,
       "Conditionals": [
         [
@@ -116229,7 +116229,7 @@
       "ID": "ganon_bk_count",
       "Name": "Items Required",
       "Value": 0,
-      "SubCategory": "Ganon Boss Key Conditions",
+      "SubCategory": "Special Conditions/Ganon Boss Key Conditions",
       "Priority": 280,
       "Conditionals": [
         [

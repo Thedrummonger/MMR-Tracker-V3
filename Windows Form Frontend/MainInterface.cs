@@ -630,13 +630,11 @@ namespace Windows_Form_Frontend
 
         }
 
+        WinFormUtils.DropDownOptionTree RootTree = new WinFormUtils.DropDownOptionTree(null);
         private void UpdateDynamicUserOptions()
         {
             RandomizerOptionsToolStripMenuItem1.DropDownItems.Clear();
-            MenuItemParentTree.Clear();
-            MenuItemParentTree.Add(RandomizerOptionsToolStripMenuItem1.Name, OptionstoolStripMenuItem);
-
-            Dictionary<string, List<ToolStripMenuItem>> MenuItemGroups = new Dictionary<string, List<ToolStripMenuItem>>();
+            RootTree = new WinFormUtils.DropDownOptionTree(RandomizerOptionsToolStripMenuItem1);
 
             //Create List Box Toggle
             ToolStripComboBox ListBoxDisplayOptions = new();
@@ -658,10 +656,31 @@ namespace Windows_Form_Frontend
             AllOptions.AddRange(InstanceContainer.Instance.IntOptions.Values);
             IEnumerable<object> OrderedOptions = AllOptions.OrderBy(x => x.Priority);
 
-            foreach(object o in OrderedOptions)
+            //Create the option subgroup trees
+            foreach(dynamic i in OrderedOptions)
+            {
+                string Category = i.SubCategory;
+                if (string.IsNullOrWhiteSpace(Category)) { continue; }
+                string[] CategoryTree = Category.Split('/');
+                var CurrentTree = RootTree;
+                foreach (var c in CategoryTree)
+                {
+                    if (!CurrentTree.SubGroups.ContainsKey(c))
+                    {
+                        ToolStripMenuItem NewItem = new ToolStripMenuItem() { Name = $"OptionSubMenu{c}", Text = c };
+                        CurrentTree.SubGroups[c] = new WinFormUtils.DropDownOptionTree(NewItem) { GroupID = c, Parent = CurrentTree };
+                        CurrentTree.MenuItem.DropDownItems.Add(NewItem);
+                    }
+                    CurrentTree = CurrentTree.SubGroups[c];
+                }
+            }
+
+            //Create options and add them to their subgroup
+            foreach(dynamic o in AllOptions)
             {
                 if (o is OptionData.ChoiceOption ChoiceOption)
                 {
+                    var OptionTree = GetOptionTree(o);
                     if (!InstanceContainer.logicCalculation.ConditionalsMet(ChoiceOption.Conditionals, new List<string>())) { continue; }
                     if (ChoiceOption.ValueList.Count < 2) { continue; }
 
@@ -686,10 +705,11 @@ namespace Windows_Form_Frontend
                     };
                     ToolStripMenuItem menuItem = new() { Name = $"{ChoiceOption.ID}Menu", Text = ChoiceOption.getOptionName() };
                     menuItem.DropDownItems.Add(toolStripComboBox);
-                    GroupOption(menuItem, ChoiceOption.SubCategory);
+                    OptionTree.MenuItem.DropDownItems.Add(menuItem);
                 }
                 else if (o is OptionData.ToggleOption ToggleOption)
                 {
+                    var OptionTree = GetOptionTree(o);
                     if (!InstanceContainer.logicCalculation.ConditionalsMet(ToggleOption.Conditionals, new List<string>())) { continue; }
                     ToolStripMenuItem menuItem = new() { Name = $"{ToggleOption.ID}Menu", Checked = ToggleOption.Enabled.ID == ToggleOption.Value, Text = ToggleOption.getOptionName() };
                     menuItem.Click += delegate (object sender, EventArgs e)
@@ -700,58 +720,36 @@ namespace Windows_Form_Frontend
                         TrackerDataHandeling.TriggerCheckedObjectsUpdate(new List<object> { ToggleOption }, InstanceContainer.Instance, MiscData.CheckState.Checked);
                         InstanceContainer.logicCalculation.CalculateLogic();
                         UpdateUI();
-                        ReopenMenu(menuItem);
                     };
-                    GroupOption(menuItem, ToggleOption.SubCategory);
+                    OptionTree.MenuItem.DropDownItems.Add(menuItem);
                 }
                 else if (o is OptionData.IntOption IntOption)
                 {
+                    var OptionTree = GetOptionTree(o);
                     if (!InstanceContainer.logicCalculation.ConditionalsMet(IntOption.Conditionals, new List<string>())) { continue; }
                     string DisplayName = IntOption.ToString();
                     ToolStripMenuItem menuItem = new() { Name = $"{IntOption.ID}Menu", Text = IntOption.ToString() };
                     menuItem.Click += delegate (object sender, EventArgs e)
                     {
                         HandleItemSelect(new List<OptionData.IntOption> { IntOption }, MiscData.CheckState.Checked);
-                        ReopenMenu(menuItem);
                     };
-                    GroupOption(menuItem, IntOption.SubCategory);
+                    OptionTree.MenuItem.DropDownItems.Add(menuItem);
                 }
             }
 
-            foreach(var i in MenuItemGroups.Keys)
+            WinFormUtils.DropDownOptionTree GetOptionTree(dynamic option)
             {
-                var Parent = RandomizerOptionsToolStripMenuItem1;
-                if (i != "MMRTROOTMENU")
+                string Category = option.SubCategory;
+                if (string.IsNullOrWhiteSpace(Category)) { return RootTree; }
+                string[] CategoryTree = Category.Split('/');
+                var CurrentTree = RootTree;
+                foreach (var c in CategoryTree)
                 {
-                    ToolStripMenuItem SubCategory = new() { Name = $"{i}SubMenu", Text = i.ToString() };
-                    RandomizerOptionsToolStripMenuItem1.DropDownItems.Add(SubCategory);
-                    MenuItemParentTree.Add(SubCategory.Name, RandomizerOptionsToolStripMenuItem1);
-                    Parent = SubCategory;
+                    CurrentTree = CurrentTree.SubGroups[c];
                 }
-                foreach(var j in MenuItemGroups[i])
-                {
-                    Parent.DropDownItems.Add(j);
-                    MenuItemParentTree.Add(j.Name, Parent);
-                }
+                return CurrentTree;
             }
 
-            RandomizerOptionsToolStripMenuItem1.Visible = RandomizerOptionsToolStripMenuItem1.DropDownItems.Count > 1;
-
-            void GroupOption(ToolStripMenuItem menuItem, string SubCategory = null)
-            {
-                string SubCategoryName = SubCategory ?? "MMRTROOTMENU";
-                if (!MenuItemGroups.ContainsKey(SubCategoryName)) { MenuItemGroups[SubCategoryName] = new List<ToolStripMenuItem>(); }
-                MenuItemGroups[SubCategoryName].Add(menuItem);
-            }
-        }
-
-        private void ReopenMenu(ToolStripMenuItem menuItem)
-        {
-            if (MenuItemParentTree.ContainsKey(menuItem.Name))
-            {
-                ReopenMenu(MenuItemParentTree[menuItem.Name]);
-            }
-            menuItem.ShowDropDown();
         }
 
         //Context Menus

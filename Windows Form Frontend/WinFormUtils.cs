@@ -11,8 +11,20 @@ using System.Windows.Forms;
 
 namespace Windows_Form_Frontend
 {
-    class WinFormUtils
+    public class WinFormUtils
     {
+        public class DropDownOptionTree
+        {
+            public DropDownOptionTree(ToolStripMenuItem _MenuItem)
+            {
+                MenuItem = _MenuItem;
+            }
+            public DropDownOptionTree Parent { get; set; } = null;
+            public ToolStripMenuItem MenuItem { get; set; }
+            public string GroupID { get; set; } = "Root";
+            public Dictionary<string, DropDownOptionTree> SubGroups { get; set; } = new Dictionary<string, DropDownOptionTree>();
+        }
+
         public static MMR_Tracker_V3.TrackerObjects.MiscData.Divider CreateDivider(object containerObject, string DividerText = "")
         {
             Font font;
