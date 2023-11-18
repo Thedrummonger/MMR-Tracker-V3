@@ -366,6 +366,7 @@ namespace Windows_Form_Frontend
             this.MinimumSize = new System.Drawing.Size(530, 500);
             this.Name = "ShowLogic";
             this.Text = "ShowLogic";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ShowLogic_FormClosed);
             this.Load += new System.EventHandler(this.ShowLogic_Load);
             this.ResizeEnd += new System.EventHandler(this.ShowLogic_ResizeEnd);
             this.ResumeLayout(false);

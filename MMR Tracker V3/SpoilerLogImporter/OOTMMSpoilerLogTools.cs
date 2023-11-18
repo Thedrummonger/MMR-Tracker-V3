@@ -37,6 +37,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             Dictionary<string, int> StartingItemData = GetDictionaryFromSpoiler(Instance, "Starting Items").ToDictionary(x => x.Key, x => int.TryParse(x.Value, out int SIC) ? SIC : -1);
             Dictionary<string, string> ExitData = GetEntranceListFromSpoiler(Instance, "Entrances");
             List<string> HintData = GetListFromSpoiler(Instance, "Hints");
+            List<string> WorldFlagData = GetListFromSpoiler(Instance, "World Flags");
             List<string> TrickData = GetListFromSpoiler(Instance, "Tricks").Concat(GetListFromSpoiler(Instance, "Glitches")).ToList();
             List<string> JunkLocationData = GetListFromSpoiler(Instance, "Junk Locations");
             List<string> MQDungeons = GetListFromSpoiler(Instance, "MQ Dungeons");
@@ -44,6 +45,8 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
 
             Debug.WriteLine("\nApplying Settings");
             ApplySettings(Instance, SettingData);
+            Debug.WriteLine("\nApplying World Flag Settings");
+            ApplyWorldFlagSettings(Instance, WorldFlagData);
             Debug.WriteLine("\nApplying Master Quest Data");
             HandleMQChecks(Instance, MQDungeons);
             Debug.WriteLine("\nToggling Tricks");
@@ -61,6 +64,43 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
 
             Debug.WriteLine("\nSetting Special Conditions");
             ToggleSpecialConditions(Instance, AccessConditions);
+
+            Debug.WriteLine(WorldFlagData.ToFormattedJson());
+
+        }
+
+        private static void ApplyWorldFlagSettings(InstanceData.TrackerInstance instance, List<string> worldFlagData)
+        {
+            Dictionary<string, List<string>> SetOptions = new Dictionary<string, List<string>>();
+            string CurrentSet = "";
+            foreach (string key in worldFlagData)
+            {
+                if (key.EndsWith(':')) { 
+                    string BaseSetOption = key.TrimEnd(':');
+                    CurrentSet = BaseSetOption;
+                    SetOptions.SetIfEmpty(CurrentSet, new List<string>());
+                }
+                else if (key.StartsWith("- ")) {
+                    SetOptions[CurrentSet].Add(CurrentSet + key[2..]);
+                }
+                else if (key.Contains(':'))
+                {
+                    string[] Data = key.Split(':').Select(x => x.Trim()).ToArray();
+                    instance.ChoiceOptions[Data[0]].Value = Data[1];
+                    Debug.WriteLine($"{Data[0]}: {Data[1]}");
+                }
+            }
+            foreach (var SetOption in SetOptions)
+            {
+                instance.ChoiceOptions[SetOption.Key].Value = "specific";
+                var Sets = instance.ToggleOptions.Where(x => x.Key.StartsWith(SetOption.Key) && x.Key != SetOption.Key).Select(x => x.Value);
+                Debug.WriteLine($"OPtion {SetOption.Key} had child options");
+                foreach(var i in Sets)
+                {
+                    i.SetValue(SetOption.Value.Contains(i.ID));
+                    Debug.WriteLine($"{i.ID}: {i.Value}");
+                }
+            }
 
         }
 

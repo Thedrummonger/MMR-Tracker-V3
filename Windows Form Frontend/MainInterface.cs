@@ -991,7 +991,7 @@ namespace Windows_Form_Frontend
 
             if (UpdatedObjects.Any()) 
             {
-                CheckedObjectsUpdate(UpdatedObjects, InstanceContainer.Instance, checkState);
+                if (CheckedObjectsUpdate is not null) { CheckedObjectsUpdate(UpdatedObjects, InstanceContainer.Instance, checkState); }
                 SaveTrackerState(CurrentState);
             }
             UpdateUI();

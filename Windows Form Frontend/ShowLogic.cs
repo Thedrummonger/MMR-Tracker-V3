@@ -49,8 +49,18 @@ namespace Windows_Form_Frontend
             TrackerDataHandeling.CheckedObjectsUpdate += TrackerDataHandeling_CheckedObjectsUpdate;
         }
 
+        private void ShowLogic_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            TrackerDataHandeling.CheckedObjectsUpdate -= TrackerDataHandeling_CheckedObjectsUpdate;
+        }
+
         private void TrackerDataHandeling_CheckedObjectsUpdate(List<object> arg1, MMR_Tracker_V3.InstanceData.TrackerInstance arg2, MiscData.CheckState checkState)
         {
+            if (this.IsDisposed) 
+            {
+                Debug.WriteLine("Show logic form was still listening for events after being disposed");
+                return; 
+            }
             if (state != FormState.showLogic) { return; }
             PrintLogicToLists();
             UpdateUI();
@@ -584,5 +594,6 @@ namespace Windows_Form_Frontend
             UpdateUI();
             PrintLogicToLists();
         }
+
     }
 }
