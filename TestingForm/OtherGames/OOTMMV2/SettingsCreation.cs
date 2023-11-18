@@ -64,18 +64,6 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                 }
                 else if (Setting.type == "set")
                 {
-                    OptionData.ChoiceOption IntSettingDictEntry = new OptionData.ChoiceOption
-                    {
-                        ID = Setting.key,
-                        Name = Setting.name,
-                        SubCategory= Utility.ConvertToCamelCase(Setting.category.Replace(".", " ")),
-                        Value = Setting.defaultvalue.ToString(),
-                        ValueList = new Dictionary<string, OptionData.OptionValue>(),
-                        Priority= Priority
-                    };
-                    IntSettingDictEntry.CreateSimpleValues(new string[] { "all", "none", "random", "specific" });
-                    logicDictionaryData.ChoiceOptions.Add(Setting.key, IntSettingDictEntry);
-                    Priority++;
                     foreach (OOTMMSettingValue i in Setting.values)
                     {
                         string ID = Setting.key + i.value;
@@ -83,10 +71,9 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                         {
                             ID = ID,
                             Name = i.name,
-                            SubCategory= $"{Utility.ConvertToCamelCase(Setting.category.Replace(".", " "))}/{Setting.name} Select",
+                            SubCategory= $"{Utility.ConvertToCamelCase(Setting.category.Replace(".", " "))}/{Setting.name}",
                             Value = false.ToString(),
-                            Priority= Priority,
-                            Conditionals = new List<List<string>> { new List<string> { $"setting{{{Setting.key}, specific}}" } }
+                            Priority= Priority
                         };
                         SetSettingDictEntry.CreateSimpleValues();
                         logicDictionaryData.ToggleOptions.Add(ID, SetSettingDictEntry);

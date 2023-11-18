@@ -112,14 +112,34 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
             {
                 logicItem.RequiredItems = logicItem.RequiredItems.Select(x => CorrectSetSetting(x)).ToList();
                 logicItem.ConditionalItems = logicItem.ConditionalItems.Select(x => x.Select(y => CorrectSetSetting(y)).ToList()).ToList();
+
+                logicItem.RequiredItems = logicItem.RequiredItems.Select(x => CorrectBossWarpValueMisspelling(x)).ToList();
+                logicItem.ConditionalItems = logicItem.ConditionalItems.Select(x => x.Select(y => CorrectBossWarpValueMisspelling(y)).ToList()).ToList();
+            }
+
+            string CorrectBossWarpValueMisspelling(string x)
+            {
+                if (!LogicEditing.IsLogicFunction(x, out string func, out string Param)) { return x; }
+                string[] Parameters = Param.Split(',').Select(x => x.Trim()).ToArray();
+                if (Parameters[0] != "bossWarpPads") { return x; }
+                if (Parameters[1] != "Remains") { return x; }
+
+                List<string> NewParams = new List<string>();
+                NewParams.AddRange(Parameters);
+                NewParams[1] = "remains";
+
+                string CorrectedFunction = $"{func}{{{string.Join(", ", NewParams)}}}";
+                Debug.WriteLine($"Correcting BossWarpPad Setting\n{x}\nto\n{CorrectedFunction}");
+                return CorrectedFunction;
+
             }
 
             string CorrectSetSetting(string x)
             {
                 if (!LogicEditing.IsLogicFunction(x, out string func, out string Param)) { return x; }
                 string[] Parameters = Param.Split(',').Select(x => x.Trim()).ToArray();
-                if (!dictionaryFile.ChoiceOptions.ContainsKey(Parameters[0])) { return x; }
-                if (dictionaryFile.ChoiceOptions[Parameters[0]].ValueList.ContainsKey(Parameters[1])) { return x; }
+                if (Parameters.Length < 2) { return x; }
+                if (dictionaryFile.ChoiceOptions.ContainsKey(Parameters[0]) || dictionaryFile.ToggleOptions.ContainsKey(Parameters[0]) || dictionaryFile.IntOptions.ContainsKey(Parameters[0])) { return x; }
                 if (!dictionaryFile.ToggleOptions.ContainsKey(Parameters[0] + Parameters[1])) { return x; }
 
                 List<string> NewParams = new List<string>();

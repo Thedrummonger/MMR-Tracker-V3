@@ -1,13 +1,9 @@
 ﻿using MMR_Tracker_V3.TrackerObjectExtentions;
 using MMR_Tracker_V3.TrackerObjects;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MMR_Tracker_V3.SpoilerLogImporter
 {
@@ -86,15 +82,22 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 else if (key.Contains(':'))
                 {
                     string[] Data = key.Split(':').Select(x => x.Trim()).ToArray();
-                    instance.ChoiceOptions[Data[0]].Value = Data[1];
-                    Debug.WriteLine($"{Data[0]}: {Data[1]}");
+                    switch (Data[1])
+                    {
+                        case "all":
+                            SetOptions.SetIfEmpty(Data[0], instance.ToggleOptions.Where(x => x.Key.StartsWith(Data[0]) && x.Key != Data[0]).Select(x => x.Key).ToList());
+                            break;
+                        case "none":
+                        case "random":
+                            SetOptions.SetIfEmpty(Data[0], new List<string>());
+                            break;
+                    }
                 }
             }
             foreach (var SetOption in SetOptions)
             {
-                instance.ChoiceOptions[SetOption.Key].Value = "specific";
                 var Sets = instance.ToggleOptions.Where(x => x.Key.StartsWith(SetOption.Key) && x.Key != SetOption.Key).Select(x => x.Value);
-                Debug.WriteLine($"OPtion {SetOption.Key} had child options");
+                Debug.WriteLine($"Option {SetOption.Key} had child options");
                 foreach(var i in Sets)
                 {
                     i.SetValue(SetOption.Value.Contains(i.ID));

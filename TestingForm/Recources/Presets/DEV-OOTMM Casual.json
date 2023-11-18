@@ -78626,7 +78626,7 @@
       "ConditionalItems": [
         [
           "setting{erMajorDungeons}",
-          "setting{bossWarpPads, Remains}",
+          "setting{bossWarpPads, remains}",
           "MM_has_mask_zora"
         ],
         [
