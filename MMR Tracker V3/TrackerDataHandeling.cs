@@ -107,6 +107,7 @@ namespace MMR_Tracker_V3
             IEnumerable<OptionData.ChoiceOption> choiceOptions = SelectedObjects.Where(x => x is OptionData.ChoiceOption).Select(x => x as OptionData.ChoiceOption);
             IEnumerable<OptionData.IntOption> IntOptions = SelectedObjects.Where(x => x is OptionData.IntOption).Select(x => x as OptionData.IntOption);
             IEnumerable<OptionData.ToggleOption> ToggleOptions = SelectedObjects.Where(x => x is OptionData.ToggleOption).Select(x => x as OptionData.ToggleOption);
+            IEnumerable<OptionData.MultiSelectOption> MultiSelectOptions = SelectedObjects.Where(x => x is OptionData.MultiSelectOption).Select(x => x as OptionData.MultiSelectOption);
 
             foreach (var i in ToggleOptions)
             {

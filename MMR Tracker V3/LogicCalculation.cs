@@ -556,6 +556,13 @@ namespace MMR_Tracker_V3
                 if (!ChoiceOpt.ValueList.ContainsKey(param[1])) { Debug.WriteLine($"{param[1]} was not a valid Value for option {ChoiceOpt.ID}"); }
                 return (ChoiceOpt.GetValue().ID == param[1]) != Inverse;
             }
+            else if (OptionType == LogicEntryType.MultiSelectOption)
+            {
+                var ChoiceOpt = instance.MultiSelectOptions[param[0]];
+                if (param.Length < 2) { return false; } //Not enough values passed
+                if (!ChoiceOpt.ValueList.ContainsKey(param[1])) { Debug.WriteLine($"{param[1]} was not a valid Value for option {ChoiceOpt.ID}"); }
+                return (ChoiceOpt.EnabledValues.Contains(param[1])) != Inverse;
+            }
             else if (OptionType == LogicEntryType.IntOption)
             {
                 var IntOpt = instance.IntOptions[param[0]];

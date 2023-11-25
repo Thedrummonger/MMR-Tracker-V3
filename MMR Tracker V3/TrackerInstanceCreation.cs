@@ -74,6 +74,7 @@ namespace MMR_Tracker_V3
             Container.Instance ??= new();
             var Instance = Container.Instance;
             Instance.ChoiceOptions = Instance.LogicDictionary.ChoiceOptions.ToDictionary(x => x.Key, y => y.Value);
+            Instance.MultiSelectOptions = Instance.LogicDictionary.MultiSelectOptions.ToDictionary(x => x.Key, y => y.Value);
             Instance.ToggleOptions = Instance.LogicDictionary.ToggleOptions.ToDictionary(x => x.Key, y => y.Value);
             Instance.IntOptions = Instance.LogicDictionary.IntOptions.ToDictionary(x => x.Key, y => y.Value);
             Instance.LogicEntryCollections = Instance.LogicDictionary.LogicEntryCollections.ToDictionary(x => x.Key, y => y.Value);

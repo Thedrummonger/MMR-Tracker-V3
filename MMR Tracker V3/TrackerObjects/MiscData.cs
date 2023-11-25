@@ -296,6 +296,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             Area,
             Exit,
             ChoiceOption,
+            MultiSelectOption,
             ToggleOption,
             IntOption,
             LogicEntryCollection,

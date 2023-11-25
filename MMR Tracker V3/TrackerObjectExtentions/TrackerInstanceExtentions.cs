@@ -81,6 +81,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             if (!literal && instance.HintPool.ContainsKey(ID)) { Obj = instance.HintPool[ID]; return LogicEntryType.Hint; }
 
             if (instance.ChoiceOptions.ContainsKey(ID)) { Obj = instance.ChoiceOptions[ID]; return LogicEntryType.ChoiceOption; }
+            if (instance.MultiSelectOptions.ContainsKey(ID)) { Obj = instance.MultiSelectOptions[ID]; return LogicEntryType.MultiSelectOption; }
             if (instance.ToggleOptions.ContainsKey(ID)) { Obj = instance.ToggleOptions[ID]; return LogicEntryType.ToggleOption; }
             if (instance.IntOptions.ContainsKey(ID)) { Obj = instance.IntOptions[ID]; return LogicEntryType.IntOption; }
             if (instance.LogicEntryCollections.ContainsKey(ID)) { Obj = instance.LogicEntryCollections[ID]; return LogicEntryType.LogicEntryCollection; }
@@ -98,6 +99,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             if (!literal && instance.EntrancePool.AreaList.ContainsKey(ID)) { obj = instance.EntrancePool.AreaList[ID]; return LogicEntryType.Area; }
 
             if (instance.ChoiceOptions.ContainsKey(ID)) { obj = instance.ChoiceOptions[ID]; return LogicEntryType.ChoiceOption; }
+            if (instance.MultiSelectOptions.ContainsKey(ID)) { obj = instance.MultiSelectOptions[ID]; return LogicEntryType.MultiSelectOption; }
             if (instance.ToggleOptions.ContainsKey(ID)) { obj = instance.ToggleOptions[ID]; return LogicEntryType.ToggleOption; }
             if (instance.IntOptions.ContainsKey(ID)) { obj = instance.IntOptions[ID]; return LogicEntryType.IntOption; }
             if (instance.LogicEntryCollections.ContainsKey(ID)) { obj = instance.LogicEntryCollections[ID]; return LogicEntryType.LogicEntryCollection; }
@@ -369,7 +371,10 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
 
         public static List<OptionData.Action> GetOptionActions(this InstanceData.TrackerInstance Instance)
         {
-            return Instance.ChoiceOptions.Values.Select(x => x.GetValue().Actions).Concat(Instance.ToggleOptions.Values.Select(x => x.GetValue().Actions)).ToList();
+            return Instance.ChoiceOptions.Values.Select(x => x.GetValue().Actions)
+                .Concat(Instance.ToggleOptions.Values.Select(x => x.GetValue().Actions))
+                .Concat(Instance.MultiSelectOptions.Values.SelectMany(x => x.GetEnabledValues()).Select(x => x.Actions))
+                .ToList();
         }
     }
 }

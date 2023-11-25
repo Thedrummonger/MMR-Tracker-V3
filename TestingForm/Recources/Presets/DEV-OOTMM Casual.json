@@ -96821,7 +96821,7 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "setting{ganonTrialsLight, false}"
+          "setting{ganonTrials, Light, false}"
         ],
         [
           "OOT_EVENT_GANON_TRIAL_LIGHT"
@@ -96837,7 +96837,7 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "setting{ganonTrialsForest, false}"
+          "setting{ganonTrials, Forest, false}"
         ],
         [
           "OOT_EVENT_GANON_TRIAL_FOREST"
@@ -96853,7 +96853,7 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "setting{ganonTrialsFire, false}"
+          "setting{ganonTrials, Fire, false}"
         ],
         [
           "OOT_EVENT_GANON_TRIAL_FIRE"
@@ -96869,7 +96869,7 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "setting{ganonTrialsWater, false}"
+          "setting{ganonTrials, Water, false}"
         ],
         [
           "OOT_EVENT_GANON_TRIAL_WATER"
@@ -96885,7 +96885,7 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "setting{ganonTrialsShadow, false}"
+          "setting{ganonTrials, Shadow, false}"
         ],
         [
           "OOT_EVENT_GANON_TRIAL_SHADOW"
@@ -96901,7 +96901,7 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "setting{ganonTrialsSpirit, false}"
+          "setting{ganonTrials, Spirit, false}"
         ],
         [
           "OOT_EVENT_GANON_TRIAL_SPIRIT"

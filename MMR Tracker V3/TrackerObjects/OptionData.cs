@@ -50,6 +50,55 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return string.IsNullOrWhiteSpace(ValueList[_val??Value].Name) ? ValueList[_val??Value].ID : ValueList[_val??Value].Name;
             }
         }
+
+        public class MultiSelectOption
+        {
+            public string ID { get; set; }
+            public string Name { get; set; }
+            public HashSet<string> EnabledValues { get; set; }
+            public string Description { get; set; }
+            public string SubCategory { get; set; }
+            public int Priority { get; set; } = 0;
+            public List<List<string>> Conditionals { get; set; } = new List<List<string>>();
+            public Dictionary<string, OptionValue> ValueList { get; set; } = new Dictionary<string, OptionValue>();
+            public OptionValue GetValue(string _Value)
+            {
+                if (!ValueList.ContainsKey(_Value)) { throw new Exception($"{_Value} was not a valid value for Option {ID}"); }
+                return ValueList[_Value];
+            }
+            public OptionValue[] GetEnabledValues()
+            {
+                return ValueList.Where(x => EnabledValues.Contains(x.Key)).Select(x => x.Value).ToArray();
+            }
+            public OptionValue[] GetDisabledValues()
+            {
+                return ValueList.Where(x => !EnabledValues.Contains(x.Key)).Select(x => x.Value).ToArray();
+            }
+            public void SetValue(string _Value, bool Enable)
+            {
+                if (!ValueList.ContainsKey(_Value)) { throw new Exception($"{_Value} was not a valid value for Option {ID}"); }
+
+                if (Enable && !EnabledValues.Contains(_Value)) { EnabledValues.Add(_Value); }
+                else if (!Enable && EnabledValues.Contains(_Value)) { EnabledValues.Remove(_Value); }
+            }
+            public void CreateSimpleValues(string[] Values)
+            {
+                ValueList = Values.ToDictionary(x => x, x => new OptionValue { ID = x, Name = x });
+            }
+            public override string ToString()
+            {
+                return $"{getOptionName()}";
+            }
+            public string getOptionName()
+            {
+                return string.IsNullOrWhiteSpace(Name) ? ID : Name;
+            }
+            public string getValueName(string _val)
+            {
+                if (!ValueList.ContainsKey(_val)) { return _val; }
+                return string.IsNullOrWhiteSpace(ValueList[_val].Name) ? ValueList[_val].ID : ValueList[_val].Name;
+            }
+        }
         public class ToggleOption
         {
             public string ID { get; set; }

@@ -652,6 +652,7 @@ namespace Windows_Form_Frontend
 
             List<dynamic> AllOptions = new List<object>();
             AllOptions.AddRange(InstanceContainer.Instance.ChoiceOptions.Values);
+            AllOptions.AddRange(InstanceContainer.Instance.MultiSelectOptions.Values);
             AllOptions.AddRange(InstanceContainer.Instance.ToggleOptions.Values);
             AllOptions.AddRange(InstanceContainer.Instance.IntOptions.Values);
             IEnumerable<object> OrderedOptions = AllOptions.OrderBy(x => x.Priority);
@@ -700,6 +701,27 @@ namespace Windows_Form_Frontend
                     };
                     ToolStripMenuItem menuItem = new() { Name = $"{ChoiceOption.ID}Menu", Text = ChoiceOption.getOptionName() };
                     menuItem.DropDownItems.Add(toolStripComboBox);
+                    OptionTree.MenuItems.Add(menuItem);
+                }
+                else if (o is OptionData.MultiSelectOption MultiSelectOption)
+                {
+                    var OptionTree = GetOptionTree(o);
+                    if (!InstanceContainer.logicCalculation.ConditionalsMet(MultiSelectOption.Conditionals, new List<string>())) { continue; }
+                    ToolStripMenuItem menuItem = new() { Name = $"{MultiSelectOption.ID}Menu", Text = MultiSelectOption.getOptionName() };
+                    foreach(var i in MultiSelectOption.ValueList)
+                    {
+                        ToolStripMenuItem SubMenuItem = new() { Name = $"{MultiSelectOption.ID}{i.Key}Menu", Checked = MultiSelectOption.EnabledValues.Contains(i.Key), Text = i.Value.Name };
+                        SubMenuItem.Click += delegate (object sender, EventArgs e)
+                        {
+                            SaveTrackerState(InstanceContainer.Instance.ToJson(JSONType.UTF8));
+                            MultiSelectOption.SetValue(i.Key, !MultiSelectOption.EnabledValues.Contains(i.Key));
+                            if (!InstanceContainer.logicCalculation.ReCompileLogicOnCalculation) { InstanceContainer.logicCalculation.CompileOptionActionEdits(); }
+                            TrackerDataHandeling.TriggerCheckedObjectsUpdate(new List<object> { MultiSelectOption }, InstanceContainer.Instance, MiscData.CheckState.Checked);
+                            InstanceContainer.logicCalculation.CalculateLogic();
+                            UpdateUI();
+                        };
+                        menuItem.DropDownItems.Add(SubMenuItem);
+                    }
                     OptionTree.MenuItems.Add(menuItem);
                 }
                 else if (o is OptionData.ToggleOption ToggleOption)

@@ -64,21 +64,27 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                 }
                 else if (Setting.type == "set")
                 {
+                    OptionData.MultiSelectOption multiSelectSettingDictEntry = new OptionData.MultiSelectOption
+                    {
+                        ID = Setting.key,
+                        Name = Setting.name,
+                        SubCategory= Utility.ConvertToCamelCase(Setting.category.Replace(".", " ")),
+                        EnabledValues = new HashSet<string>(),
+                        ValueList = new Dictionary<string, OptionData.OptionValue>(),
+                        Priority= Priority
+                    };
+
                     foreach (OOTMMSettingValue i in Setting.values)
                     {
-                        string ID = Setting.key + i.value;
-                        OptionData.ToggleOption SetSettingDictEntry = new OptionData.ToggleOption
+                        OptionData.OptionValue optionValue = new OptionData.OptionValue
                         {
-                            ID = ID,
-                            Name = i.name,
-                            SubCategory= $"{Utility.ConvertToCamelCase(Setting.category.Replace(".", " "))}/{Setting.name}",
-                            Value = false.ToString(),
-                            Priority= Priority
+                            ID = i.value,
+                            Name = i.name
                         };
-                        SetSettingDictEntry.CreateSimpleValues();
-                        logicDictionaryData.ToggleOptions.Add(ID, SetSettingDictEntry);
-                        Priority++;
+                        multiSelectSettingDictEntry.ValueList.Add(i.value, optionValue);
                     }
+                    logicDictionaryData.MultiSelectOptions.Add(Setting.key, multiSelectSettingDictEntry);
+                    Priority++;
                 }
             }
             foreach (var setting in ParserData.DungeonLayouts)

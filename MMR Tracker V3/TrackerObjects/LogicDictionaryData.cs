@@ -26,6 +26,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public Dictionary<string, DictionaryHintEntries> HintSpots { get; set; } = new Dictionary<string, DictionaryHintEntries>();
             public Dictionary<string, DictionaryMacroEntry> MacroList { get; set; } = new Dictionary<string, DictionaryMacroEntry>();
             public Dictionary<string, ChoiceOption> ChoiceOptions { get; set; } = new Dictionary<string, ChoiceOption>();
+            public Dictionary<string, MultiSelectOption> MultiSelectOptions { get; set; } = new Dictionary<string, MultiSelectOption>();
             public Dictionary<string, ToggleOption> ToggleOptions { get; set; } = new Dictionary<string, ToggleOption>();
             public Dictionary<string, IntOption> IntOptions { get; set; } = new Dictionary<string, IntOption>();
             public Dictionary<string, LogicEntryCollection> LogicEntryCollections { get; set; } = new Dictionary<string, LogicEntryCollection>();

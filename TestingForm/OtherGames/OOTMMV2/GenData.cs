@@ -82,7 +82,7 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
 
             AddLinkToGlobal(LogicFile, DictionaryFile);
 
-            CorrectSetOptions(LogicFile, DictionaryFile);
+            CorrectLogicMistakes(LogicFile, DictionaryFile);
 
             foreach (var i in LogicFile.Logic)
             {
@@ -106,13 +106,10 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
             outDict = DictionaryFile;
         }
 
-        private static void CorrectSetOptions(MMRData.LogicFile logicFile, LogicDictionaryData.LogicDictionary dictionaryFile)
+        private static void CorrectLogicMistakes(MMRData.LogicFile logicFile, LogicDictionaryData.LogicDictionary dictionaryFile)
         {
             foreach(var logicItem in logicFile.Logic)
             {
-                logicItem.RequiredItems = logicItem.RequiredItems.Select(x => CorrectSetSetting(x)).ToList();
-                logicItem.ConditionalItems = logicItem.ConditionalItems.Select(x => x.Select(y => CorrectSetSetting(y)).ToList()).ToList();
-
                 logicItem.RequiredItems = logicItem.RequiredItems.Select(x => CorrectBossWarpValueMisspelling(x)).ToList();
                 logicItem.ConditionalItems = logicItem.ConditionalItems.Select(x => x.Select(y => CorrectBossWarpValueMisspelling(y)).ToList()).ToList();
             }
@@ -132,26 +129,6 @@ namespace MMR_Tracker_V3.OtherGames.OOTMMV2
                 Debug.WriteLine($"Correcting BossWarpPad Setting\n{x}\nto\n{CorrectedFunction}");
                 return CorrectedFunction;
 
-            }
-
-            string CorrectSetSetting(string x)
-            {
-                if (!LogicEditing.IsLogicFunction(x, out string func, out string Param)) { return x; }
-                string[] Parameters = Param.Split(',').Select(x => x.Trim()).ToArray();
-                if (Parameters.Length < 2) { return x; }
-                if (dictionaryFile.ChoiceOptions.ContainsKey(Parameters[0]) || dictionaryFile.ToggleOptions.ContainsKey(Parameters[0]) || dictionaryFile.IntOptions.ContainsKey(Parameters[0])) { return x; }
-                if (!dictionaryFile.ToggleOptions.ContainsKey(Parameters[0] + Parameters[1])) { return x; }
-
-                List<string> NewParams = new List<string>();
-                NewParams.AddRange(Parameters);
-                NewParams.RemoveRange(0, 2);
-                NewParams.Insert(0, Parameters[0] + Parameters[1]);
-
-                string CorrectedFunction = $"{func}{{{string.Join(", ", NewParams)}}}";
-
-                Debug.WriteLine($"Correcting Set Setting\n{x}\nto\n{CorrectedFunction}");
-
-                return CorrectedFunction;
             }
         }
 
