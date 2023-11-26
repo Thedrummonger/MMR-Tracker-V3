@@ -1,13 +1,6 @@
-﻿using MathNet.Symbolics;
-using MMR_Tracker_V3;
+﻿using MMR_Tracker_V3;
 using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using YamlDotNet.Core;
 using static MMR_Tracker_V3.TrackerObjects.MMRData;
 
 namespace TestingForm.GameDataCreation.MMR
@@ -18,6 +11,7 @@ namespace TestingForm.GameDataCreation.MMR
         public static LogicDictionaryData.LogicDictionary CreateMMRFiles()
         {
             MMRExportClass.MMRData ExportData = JsonConvert.DeserializeObject<MMRExportClass.MMRData>(File.ReadAllText(Path.Combine(TestingReferences.GetOtherGameDataPath("MMR"), "MMRDataExport.json")));
+            ExportData.AdjustedAreaClear = new List<string> { "CanClearDungeonAtWoodfall", "CanClearDungeonAtSnowhead", "CanClearDungeonAtGreatBay", "CanClearDungeonAtStoneTower" };
             LogicDictionaryData.LogicDictionary MMRDictV16 = new LogicDictionaryData.LogicDictionary
             {
                 GameCode = "MMR",
@@ -28,14 +22,39 @@ namespace TestingForm.GameDataCreation.MMR
             ReadItemData(ExportData, MMRDictV16);
             ReadMacroData(ExportData, MMRDictV16);
             ReadHintData(ExportData, MMRDictV16);
-            ReadEntranceData(ExportData);
+            ReadEntranceData(ExportData, MMRDictV16);
             AddTrackerLogic(MMRDictV16);
             AddLogicCollections(MMRDictV16);
             CreateLogicSettings(ExportData, MMRDictV16);
+            HandleAreaClearLogic(ExportData, MMRDictV16);
 
             return MMRDictV16;
+        }
 
+        private static void HandleAreaClearLogic(MMRExportClass.MMRData ExportData, LogicDictionaryData.LogicDictionary MMRDictV16)
+        {
+            var DungeonEntrances = ExportData.Entrances.Where(x => !x.ID.Contains("Lair")).Select(x => x.ID).ToArray();
+            var BossDoorEntrances = ExportData.Entrances.Where(x => x.ID.Contains("Lair")).Select(x => x.ID).ToArray();
+            var AreaClearMacros = ExportData.AreaClear.Select(x => x.ID).ToArray();
+            var RemainsChecks = MMRDictV16.LocationList.Keys.Where(x => x.StartsWith("Remains")).ToArray();
 
+            foreach (var AAC in ExportData.AdjustedAreaClear)
+            {
+                List<string> Logic = new List<string>();
+                var DungeonAtArea = DungeonEntrances[ExportData.AdjustedAreaClear.IndexOf(AAC)];
+                foreach (var DEDest in DungeonEntrances)
+                {
+                    var BossDoorInDungeon = BossDoorEntrances[Array.IndexOf(DungeonEntrances, DEDest)];
+                    foreach (var BE in BossDoorEntrances)
+                    {
+                        var ACFromBoss = AreaClearMacros[Array.IndexOf(BossDoorEntrances, BE)];
+                        string LogicLine = $"(contains{{{DungeonAtArea}, {DEDest}}} && contains{{{BossDoorInDungeon}, {BE}}} && {ACFromBoss} && check{{{RemainsChecks[Array.IndexOf(BossDoorEntrances, BE)]}}})";
+                        Logic.Add(LogicLine);
+                    }
+                }
+
+                MMRDictV16.AdditionalLogic.Add(new JsonFormatLogicItem { Id = AAC, ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(MMRLogicStringParser, string.Join(" || ", Logic), AAC) });
+            }
         }
 
         private static void CreateLogicSettings(MMRExportClass.MMRData exportData, LogicDictionaryData.LogicDictionary MMRDictV16)
@@ -180,6 +199,15 @@ namespace TestingForm.GameDataCreation.MMR
             var StaticLogicBeanReplacements = CreateLogicReplacement(MMRDictV16.ChoiceOptions["StaticEdits"].ValueList["Static"]);
             StaticLogicBeanReplacements.LocationWhitelist = new string[] { "ShopItemBusinessScrubMagicBeanInSwamp", "ShopItemBusinessScrubMagicBeanInTown" };
             AddLogicReplacement(StaticLogicBeanReplacements, "OtherMagicBean|MMRTCanBuyFromBeanScrub");
+
+            var AreaClearMacros = exportData.AreaClear.Select(x => x.ID).ToArray();
+
+            var StaticLogicAreaClearReplacements = CreateLogicReplacement(MMRDictV16.ChoiceOptions["StaticEdits"].ValueList["Static"]);
+            StaticLogicAreaClearReplacements.LocationBlacklist = exportData.AdjustedAreaClear.ToArray();
+            for (var i = 0; i < AreaClearMacros.Length; i++)
+            {
+                AddLogicReplacement(StaticLogicAreaClearReplacements, $"{AreaClearMacros[i]}|{exportData.AdjustedAreaClear[i]}");
+            }
         }
 
         private static void AddLogicCollections(LogicDictionaryData.LogicDictionary MMRDictV16)
@@ -270,7 +298,7 @@ namespace TestingForm.GameDataCreation.MMR
 
         }
 
-        private static void ReadEntranceData(MMRExportClass.MMRData ExportData)
+        private static void ReadEntranceData(MMRExportClass.MMRData ExportData, LogicDictionaryData.LogicDictionary mMRDictV16)
         {
             foreach (var Entrance in ExportData.Entrances)
             {
@@ -288,6 +316,20 @@ namespace TestingForm.GameDataCreation.MMR
                         SpoilerLogNames = new string[] { Entrance.ID }
                     }
                 };
+                mMRDictV16.LocationList.Add(Entrance.ID, NewLocation);
+                LogicDictionaryData.DictionaryItemEntries NewItem = new LogicDictionaryData.DictionaryItemEntries
+                {
+                    ID = Entrance.ID,
+                    Name = Entrance.Name,
+                    ItemTypes = new string[] { EntranceType.Replace(" ", "") },
+                    MaxAmountInWorld = 1,
+                    ValidStartingItem = false,
+                    SpoilerData = new MMRData.SpoilerlogReference
+                    {
+                        SpoilerLogNames = new string[] { Entrance.ID }
+                    }
+                };
+                mMRDictV16.ItemList.Add(Entrance.ID, NewItem);
             }
         }
 

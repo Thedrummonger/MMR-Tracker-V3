@@ -17,6 +17,7 @@ namespace TestingForm.GameDataCreation.MMR
             public List<MMRItem> Items { get; set; } = new List<MMRItem>();
             public List<MMREntrance> Entrances { get; set; } = new List<MMREntrance>();
             public List<MMRAreaClear> AreaClear { get; set; } = new List<MMRAreaClear>();
+            public List<string> AdjustedAreaClear { get; set; } = new List<string>();
         }
 
         public class MMREntrance
