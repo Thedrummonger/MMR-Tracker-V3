@@ -386,8 +386,8 @@ namespace MMR_Tracker_V3
             {
                 foreach (var replacements in action.LogicReplacements.Where(x => x.LocationValid(ID)))
                 {
-                    Requirements = Requirements.Select(x => replacements.ReplacementList.ContainsKey(x) ? replacements.ReplacementList[x] : x).ToList();
-                    Conditionals = Conditionals.Select(set => set.Select(x => replacements.ReplacementList.ContainsKey(x) ? replacements.ReplacementList[x] : x).ToList()).ToList();
+                    Requirements = Requirements.Select(x => replacements.ReplacementList.ContainsKey(x) && ID != replacements.ReplacementList[x] ? replacements.ReplacementList[x] : x).ToList();
+                    Conditionals = Conditionals.Select(set => set.Select(x => replacements.ReplacementList.ContainsKey(x) && ID != replacements.ReplacementList[x] ? replacements.ReplacementList[x] : x).ToList()).ToList();
                 }
                 foreach (var additionalSet in action.AdditionalLogic.Where(x => x.LocationValid(ID)))
                 {
