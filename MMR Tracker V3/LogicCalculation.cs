@@ -364,13 +364,10 @@ namespace MMR_Tracker_V3
             var FlattenedLogic = Requirements.Concat(Conditionals.SelectMany(x => x));
             if (FlattenedLogic.Any(x => instance.PriceData.WalletEntries.Contains(x)))
             {
-                foreach (var i in instance.PriceData.WalletEntries)
+                foreach (var Wallet in instance.PriceData.WalletEntries)
                 {
-                    Requirements = Requirements.Select(x => x == i ? x.Replace(i, NewWallet) : x.Replace(" ", " ")).ToList();
-                    for (var p = 0; p < Conditionals.Count; p++)
-                    {
-                        Conditionals[p] = Conditionals[p].Select(x => x == i ? x.Replace(i, NewWallet) : x.Replace(" ", " ")).ToList();
-                    }
+                    Requirements = Requirements.Select(x => x == Wallet ? NewWallet : x).ToList();
+                    Conditionals = Conditionals.Select(set => set.Select(x => x == Wallet ? NewWallet : x).ToList()).ToList();
                 }
             }
             else { Requirements.Add(NewWallet); }

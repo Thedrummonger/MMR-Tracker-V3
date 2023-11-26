@@ -1,0 +1,144 @@
+Logic Overrides
+
+-OtherCredits =
+(setting{VictoryMode, DirectToCredits} || (AreaMoonAccess && OtherKillMajora)) &&
+(setting{VictoryMode, Fairies, false} || (SwampFairies, 15 && MountainFairies, 15 && OceanFairies, 15 && CanyonFairies, 15)) &&
+(setting{VictoryMode, SkullTokens, false} || (SwampSkulls, 30 && OceanSkulls, 30)) &&
+(setting{VictoryMode, NonTransformationMasks, false} || (NonTransformationMasks, 20)) &&
+(setting{VictoryMode, TransformationMasks, false} || (MaskDeku && MaskGoron && MaskZora && MaskFierceDeity)) &&
+(setting{VictoryMode, Notebook, false} || NotebookEntries, 50) &&
+(setting{VictoryMode, Hearts, false} || (HeartPieces, 52 && HeartContainers, 6)) &&
+(setting{VictoryMode, BossRemains, false} || BossRemains, 4)
+
+-AreaMoonAccess = setting{BossRemains, RequiredBossRemains} && Play Oath to Order
+
+-OtherInaccessible = false
+
+
+NewLogic
+
+-MMRTCanBuyFromBeanScrub = randomized{ShopItemBusinessScrubMagicBean} || OtherMagicBean
+
+-MMRTArrows40 = UpgradeBigQuiver || UpgradeBiggestQuiver
+-MMRTArrows50 = UpgradeBiggestQuiver
+-MMRTbombchu10 = ChestInvertedStoneTowerBombchu10 || ChestLinkTrialBombchu10 || ShopItemBombsBombchu10
+
+-MMRTEscortCremia = OtherArrow || MaskCircusLeader
+
+-MMRTProgressiveBow1 = ItemBow || UpgradeBigQuiver || UpgradeBiggestQuiver
+-MMRTProgressiveBow2 = (ItemBow && UpgradeBigQuiver) || (ItemBow && UpgradeBiggestQuiver) || (UpgradeBigQuiver && UpgradeBigQuiver)
+-MMRTProgressiveBow3 = ItemBow && UpgradeBigQuiver && UpgradeBiggestQuiver
+
+-MMRTProgressiveBombs1 = ItemBombBag || UpgradeBigBombBag || UpgradeBiggestBombBag
+-MMRTProgressiveBombs2 = (ItemBombBag && UpgradeBigBombBag) || (ItemBombBag && UpgradeBiggestBombBag) || (UpgradeBigBombBag && UpgradeBiggestBombBag)
+-MMRTProgressiveBombs3 = ItemBombBag && UpgradeBigBombBag && UpgradeBiggestBombBag
+
+-MMRTProgressiveMagic1 = FairyMagic || FairyDoubleMagic
+-MMRTProgressiveMagic2 = FairyMagic && FairyDoubleMagic
+
+-MMRTProgressiveSword1 = StartingSword || UpgradeRazorSword || UpgradeGildedSword
+-MMRTProgressiveSword2 = (StartingSword && UpgradeRazorSword) || (StartingSword && UpgradeGildedSword) || (UpgradeRazorSword && UpgradeGildedSword)
+-MMRTProgressiveSword3 = StartingSword && UpgradeRazorSword && UpgradeGildedSword
+
+-MMRTProgressiveLullaby1 = SongLullabyIntro || SongLullaby
+-MMRTProgressiveLullaby2 = SongLullabyIntro && SongLullaby
+
+-MMRTProgressiveWallet1 = UpgradeAdultWallet || UpgradeGiantWallet || UpgradeRoyalWallet
+-MMRTProgressiveWallet2 = (UpgradeAdultWallet && UpgradeGiantWallet) || (UpgradeAdultWallet && UpgradeRoyalWallet) || (UpgradeGiantWallet && UpgradeRoyalWallet)
+-MMRTProgressiveWallet3 = UpgradeAdultWallet && UpgradeGiantWallet && UpgradeRoyalWallet
+
+-MMRTWallet99 = true
+-MMRTWallet200 = UpgradeAdultWallet || UpgradeGiantWallet || UpgradeRoyalWallet
+-MMRTWallet500 = UpgradeGiantWallet || UpgradeRoyalWallet
+-MMRTWallet999 = UpgradeRoyalWallet
+
+
+Variables
+
+-SwampFairies
+-MountainFairies
+-OceanFairies
+-CanyonFairies
+A list of all 15 of each fairy
+
+-NonTransformationMasks
+All mask exculding the 4 transformation masks
+
+-NotebookEntries
+All Notebook Entries
+
+-HeartPieces
+All 50 HeartPieces
+
+-HeartContainers
+All 6 Heart Containers
+
+-BossRemains
+All 4 boss remains
+
+
+Used Settings
+
+-SmallKeyMode
+Replace all Small Keys with true
+
+-BossKeyMode
+Replace all Boss Keys with true
+
+-VictoryMode
+Used to calculate game clear requirements
+
+-FreeHints/FreeGaroHints
+Removes Mask of Truth from Gossip Checks
+
+-RequiredBossRemains
+Used in new AreaMoonAccess Logic
+
+-ByoAmmo
+Add MMRTArrows40 to UpgradeBigQuiver
+Add MMRTArrows40 to UpgradeBiggestQuiver
+Add MMRTArrows40 to HeartPieceSwampArchery
+Add MMRTArrows50 to HeartPieceTownArchery
+Add MMRTbombchu10 to HeartPieceHoneyAndDarling
+Add MMRTEscortCremia to MaskRomani
+
+-ProgressiveUpgrades
+Replace SongLullabyIntro with MMRTProgressiveLullaby1
+Replace SongLullaby with MMRTProgressiveLullaby2
+Replace FairyMagic with MMRTProgressiveMagic1
+Replace FairyDoubleMagic with MMRTProgressiveMagic2
+Replace UpgradeAdultWallet with MMRTProgressiveWallet1
+Replace UpgradeGiantWallet with MMRTProgressiveWallet2
+Replace UpgradeRoyalWallet with MMRTProgressiveWallet3
+Replace StartingSword with MMRTProgressiveSword1
+Replace UpgradeRazorSword with MMRTProgressiveSword2
+Replace UpgradeGildedSword with MMRTProgressiveSword3
+Replace ItemBombBag with MMRTProgressiveBombs1
+Replace UpgradeBigBombBag with MMRTProgressiveBombs2
+Replace UpgradeBiggestBombBag with MMRTProgressiveBombs3
+Replace ItemBow with MMRTProgressiveBow1
+Replace UpgradeBigQuiver with MMRTProgressiveBow2
+Replace UpgradeBiggestQuiver with MMRTProgressiveBow3
+
+-BombchuDrops
+Add All Bombchu Items to MMRTbombchu10
+Add All Bombchu Items to Any Bombchu Pack (Only exists in stock casual logic)
+
+-CloseCows
+-IronGoron
+-ClimbMostSurfaces
+-GiantMaskAnywhere
+-RandomizeEnemies
+-DamageMode
+-EnableSunsSong
+-AllowFierceDeityAnywhere
+-DeathMoonCrash
+-Character
+-PriceMode
+-BlastMaskCooldown
+All Used in Logic
+
+-StaticEdits (Custom Option that is always true)
+In ShopItemBusinessScrubMagicBeanInSwamp Replace OtherMagicBean With MMRTCanBuyFromBeanScrub
+In ShopItemBusinessScrubMagicBeanInTown Replace OtherMagicBean With MMRTCanBuyFromBeanScrub
+Handle Dungeon stuff
