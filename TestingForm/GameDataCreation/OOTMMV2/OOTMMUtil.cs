@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using YamlDotNet.Core.Tokens;
 
-namespace MMR_Tracker_V3.OtherGames.OOTMMV2
+namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
 {
     internal class OOTMMUtil
     {

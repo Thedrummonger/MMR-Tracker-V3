@@ -33,6 +33,8 @@ namespace Windows_Form_Frontend
 
         private void showNextItem()
         {
+            numericUpDown1.Maximum = decimal.MaxValue;
+            numericUpDown1.Minimum = decimal.MinValue;
             if (!_InputItems.Any())
             {
                 this.Close();
@@ -47,6 +49,8 @@ namespace Windows_Form_Frontend
             {
                 SetUIElements(false, $"Set value for {IntVariableObject.Name??IntVariableObject.ID}", "Set Value", "Integer: " + (IntVariableObject.Name ?? IntVariableObject.ID));
                 numericUpDown1.Value = IntVariableObject.Value;
+                numericUpDown1.Maximum = IntVariableObject.Max;
+                numericUpDown1.Minimum = IntVariableObject.Min;
                 varType = VarType.Number;
             }
         }

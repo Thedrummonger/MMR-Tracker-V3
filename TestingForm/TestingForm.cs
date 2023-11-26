@@ -71,6 +71,7 @@ namespace TestingForm
                 new DevAction("Save Tracker State", WinFormTesting.SaveWinformTrackerState, UpdateDebugActions, WinFormTesting.CanSaveWinformTrackerState),
                 new DevAction("Load Tracker State", WinFormTesting.LoadWinformTrackerState, UpdateDebugActions, WinFormTesting.CanLoadWinformTrackerState),
                 new DevAction("Print Selected Object to Console", WinFormTesting.PrintWinformSelectedObject, UpdateDebugActions, () => WinFormTesting.LastSelectedObject is not null),
+                new DevAction("Create MMR Data", GameFileCreation.MMRCreateData, UpdateDebugActions),
                 new DevAction("Create TPR Data", GameFileCreation.TPRCreateData, UpdateDebugActions),
                 new DevAction("Create OOTMM Data", GameFileCreation.OOTMMCreateData, UpdateDebugActions),
                 new DevAction("Create PMR Data", GameFileCreation.PMRCreateData, UpdateDebugActions),

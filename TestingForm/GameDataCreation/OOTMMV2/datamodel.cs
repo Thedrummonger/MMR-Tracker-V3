@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MMR_Tracker_V3.OtherGames.OOTMMV2
+namespace TestingForm.GameDataCreation.OOTMMV2
 {
     public class datamodel
     {

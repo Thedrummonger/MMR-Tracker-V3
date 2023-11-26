@@ -389,17 +389,6 @@ namespace Windows_Form_Frontend
             var Result = fileDialog.ShowDialog();
             if (Result == DialogResult.Cancel || !File.Exists(fileDialog.FileName)) { return; }
             //Parse as MMR Settings File
-            try { configuration = Newtonsoft.Json.JsonConvert.DeserializeObject<MMRData.SpoilerLogData>(File.ReadAllText(fileDialog.FileName)); }
-            catch
-            {   //Parse as Spoiler Log File
-                try { configuration = MMRSpoilerLogTools.ReadSpoilerLog(File.ReadAllLines(fileDialog.FileName)); }
-                catch { MessageBox.Show("Setting File Invalid!"); return; }
-            }
-            if (configuration.GameplaySettings == null) { MessageBox.Show("Setting File Invalid!"); return; }
-            txtLocString.Text = configuration.GameplaySettings.CustomItemListString;
-            txtjunkString.Text = configuration.GameplaySettings.CustomJunkLocationsString;
-            txtStartString.Text = configuration.GameplaySettings.CustomStartingItemListString;
-            _Instance.ApplyMMRandoSettings(configuration);
 
             UpdateItemSets();
             PrintToLocationList();

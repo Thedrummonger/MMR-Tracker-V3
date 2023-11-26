@@ -6,10 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
-using static MMR_Tracker_V3.OtherGames.OOTMMV2.datamodel;
-using static MMR_Tracker_V3.OtherGames.OOTMMV2.OOTMMUtil;
+using static MMR_Tracker_V3.GameDataCreation.OOTMMV2.OOTMMUtil;
 
-namespace MMR_Tracker_V3.OtherGames.OOTMMV2
+namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
 {
     public class FunctionParsing
     {

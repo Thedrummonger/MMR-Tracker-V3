@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 using TestingForm;
 using static MathNet.Symbolics.Linq;
 
-namespace MMR_Tracker_V3.OtherGames.PaperMarioRando
+namespace MMR_Tracker_V3.GameDataCreation.PaperMarioRando
 {
     public class PMREdge
     {

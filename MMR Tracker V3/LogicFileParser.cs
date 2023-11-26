@@ -19,9 +19,9 @@ namespace MMR_Tracker_V3
         /// <param name="File">The lines of the spoiler log as an array</param>
         /// <param name="WasSpoilerLog">returns true if the file was a spoiler log and conatined spoiler data</param>
         /// <returns>The Logic data as a string array</returns>
-        public static string[] GetLogicData(string[] File, out bool WasSpoilerLog)
+        public static string[] GetLogicData(string[] File)
         {
-            return ParseFile(File, out WasSpoilerLog);
+            return ParseFile(File);
         }
         /// <summary>
         /// Reads the logic data from a logic file or spoiler log.
@@ -29,73 +29,29 @@ namespace MMR_Tracker_V3
         /// <param name="LogicFile">Either the file path to the logicfile/spoiler log or the contents of the file as a string.</param>
         /// <param name="WasSpoilerLog">returns true if the file was a spoiler log and conatined spoiler data</param>
         /// <returns>The Logic data as a string array</returns>
-        public static string[] GetLogicData(string LogicFile, out bool WasSpoilerLog)
+        public static string[] GetLogicData(string LogicFile)
         {
             if (File.Exists(LogicFile))
             {
-                return ParseFile(File.ReadAllLines(LogicFile), out WasSpoilerLog);
+                return ParseFile(File.ReadAllLines(LogicFile));
             }
             else
             {
                 string[] lines = LogicFile.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
-                return ParseFile(lines, out WasSpoilerLog);
+                return ParseFile(lines);
             }
         }
 
-        private static string[] ParseFile(string[] File, out bool WasSpoilerLog)
+        private static string[] ParseFile(string[] File)
         {
-            WasSpoilerLog = false;
-            if (TestForSpoilerLogLogic(File, out string[] Logic))
-            {
-                Debug.WriteLine("Entry Was Spoiler Log");
-                WasSpoilerLog = true;
-                return Logic;
-            }
-            else if (TestLogicFileValid(File))
+            if (TestLogicFileValid(File))
             {
                 Debug.WriteLine("Entry Was Logic File");
                 return File;
             }
             return null;
         }
-        private static bool TestForSpoilerLogLogic(string[] LogFile, out string[] Logic)
-        {
-            Logic = null;
-            MMRData.SpoilerLogData LogData = MMRSpoilerLogTools.ReadSpoilerLog(LogFile);
-            if ( LogData is null || LogData.GameplaySettings is null) { return false; }
-            if (LogData.GameplaySettings.LogicMode == MMRData.LogicMode.UserLogic)
-            {
-                if (!File.Exists(LogData.GameplaySettings.UserLogicFileName)) { return false; }
-                var UserLogicFile = File.ReadAllLines(LogData.GameplaySettings.UserLogicFileName);
-                if (TestLogicFileValid(UserLogicFile)) { Logic = UserLogicFile; return true; }
-                return false;
-            }
-            else if (LogData.GameplaySettings.LogicMode == MMRData.LogicMode.Casual)
-            {
-                WebClient wc = new WebClient();
-                try
-                {
-                    string Paste = wc.DownloadString("https://raw.githubusercontent.com/ZoeyZolotova/mm-rando/dev/MMR.Randomizer/Resources/REQ_CASUAL.txt");
-                    var UserLogicFile = Paste.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
-                    if (TestLogicFileValid(UserLogicFile)) { Logic = UserLogicFile; return true; }
-                    return false;
-                }
-                catch { return false; }
-            }
-            else if (LogData.GameplaySettings.LogicMode == MMRData.LogicMode.Glitched)
-            {
-                WebClient wc = new WebClient();
-                try
-                {
-                    string Paste = wc.DownloadString("https://raw.githubusercontent.com/ZoeyZolotova/mm-rando/dev/MMR.Randomizer/Resources/REQ_GLITCH.txt");
-                    var UserLogicFile = Paste.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
-                    if (TestLogicFileValid(UserLogicFile)) { Logic = UserLogicFile; return true; }
-                    return false;
-                }
-                catch { return false; }
-            }
-            return false;
-        }
+
         private static bool TestLogicFileValid(string[] LogFile)
         {
             try

@@ -17,7 +17,7 @@ namespace Windows_Form_Frontend
     public class WinFormInstanceCreation
     {
         public static event Action<MMR_Tracker_V3.InstanceData.TrackerInstance> InstanceCreated;
-        public static bool CreateWinFormInstance(string Logic = null, string Dictionary = null, string SpoilerLog = null)
+        public static bool CreateWinFormInstance(string Logic = null, string Dictionary = null)
         {
             var NewInstance = new MMR_Tracker_V3.TrackerObjects.MiscData.InstanceContainer();
             if (Logic == null)
@@ -52,10 +52,7 @@ namespace Windows_Form_Frontend
             }
 
             ApplyWinFormSpecificData(MainInterface.InstanceContainer.Instance);
-            if (MainInterface.InstanceContainer.Instance.LogicFile.GameCode == "MMR" && SpoilerLog is not null)
-            {
-                SpoilerLogTools.ImportSpoilerLog(File.ReadAllLines(SpoilerLog), SpoilerLog, MainInterface.InstanceContainer);
-            }
+
             MainInterface.InstanceContainer.logicCalculation.CalculateLogic();
             MainInterface.CurrentProgram.UpdateUI();
 

@@ -32,9 +32,10 @@ namespace MMR_Tracker_V3.TrackerObjects
                 if (!ValueList.ContainsKey(_Value)) { throw new Exception($"{_Value} was not a valid value for Option {ID}"); }
                 Value = _Value;
             }
-            public void CreateSimpleValues(string[] Values)
+            public ChoiceOption CreateSimpleValues(params string[] Values)
             {
                 ValueList = Values.ToDictionary(x => x, x => new OptionValue { ID = x, Name = x });
+                return this;
             }
             public override string ToString()
             {
@@ -74,16 +75,17 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 return ValueList.Where(x => !EnabledValues.Contains(x.Key)).Select(x => x.Value).ToArray();
             }
-            public void SetValue(string _Value, bool Enable)
+            public void ToggleValue(string _Value)
             {
                 if (!ValueList.ContainsKey(_Value)) { throw new Exception($"{_Value} was not a valid value for Option {ID}"); }
 
-                if (Enable && !EnabledValues.Contains(_Value)) { EnabledValues.Add(_Value); }
-                else if (!Enable && EnabledValues.Contains(_Value)) { EnabledValues.Remove(_Value); }
+                if (!EnabledValues.Contains(_Value)) { EnabledValues.Add(_Value); }
+                else if (EnabledValues.Contains(_Value)) { EnabledValues.Remove(_Value); }
             }
-            public void CreateSimpleValues(string[] Values)
+            public MultiSelectOption CreateSimpleValues(params string[] Values)
             {
                 ValueList = Values.ToDictionary(x => x, x => new OptionValue { ID = x, Name = x });
+                return this;
             }
             public override string ToString()
             {
@@ -97,6 +99,15 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 if (!ValueList.ContainsKey(_val)) { return _val; }
                 return string.IsNullOrWhiteSpace(ValueList[_val].Name) ? ValueList[_val].ID : ValueList[_val].Name;
+            }
+        }
+        public class MultiSelectValueListDisplay
+        {
+            public MultiSelectOption Parent { get; set; }
+            public OptionValue Value { get; set; }
+            public override string ToString()
+            {
+                return $"-{Value}: {Parent.EnabledValues.Contains(Value.ID)}";
             }
         }
         public class ToggleOption
@@ -141,12 +152,13 @@ namespace MMR_Tracker_V3.TrackerObjects
                 if (Value == Disabled.ID) { Value = Enabled.ID; }
                 else { Value = Disabled.ID; }
             }
-            public void CreateSimpleValues(bool Lower = false)
+            public ToggleOption CreateSimpleValues(bool Lower = false)
             {
                 string EID = Lower ? true.ToString().ToLower() : true.ToString();
                 string FID = Lower ? false.ToString().ToLower() : false.ToString();
                 Enabled = new OptionValue { ID = EID, Name = EID };
                 Disabled = new OptionValue { ID = FID, Name = FID };
+                return this;
             }
             public override string ToString()
             {

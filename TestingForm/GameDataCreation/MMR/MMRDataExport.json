@@ -288,13 +288,13 @@
         {
           "ID": "UpgradeBiggestBombBagInMountainPROXY",
           "Name": "Biggest Bomb Bag Purchase (InMountain)",
-          "Area": "GoronVillage",
+          "Area": "Goron Village",
           "Logic": "UpgradeBiggestBombBagInMountain"
         },
         {
           "ID": "UpgradeBiggestBombBagInSwampPROXY",
           "Name": "Biggest Bomb Bag Purchase (InSwamp)",
-          "Area": "SouthernSwamp",
+          "Area": "Southern Swamp",
           "Logic": "UpgradeBiggestBombBagInSwamp"
         }
       ]
@@ -473,19 +473,19 @@
         {
           "ID": "HeartPieceKeatonQuizInNCTPROXY",
           "Name": "Keaton Quiz (InNCT)",
-          "Area": "NorthClockTown",
+          "Area": "North Clock Town",
           "Logic": "HeartPieceKeatonQuizInNCT"
         },
         {
           "ID": "HeartPieceKeatonQuizInMilkRoadPROXY",
           "Name": "Keaton Quiz (InMilkRoad)",
-          "Area": "MilkRoad",
+          "Area": "Milk Road",
           "Logic": "HeartPieceKeatonQuizInMilkRoad"
         },
         {
           "ID": "HeartPieceKeatonQuizInMountainVillagePROXY",
           "Name": "Keaton Quiz (InMountainVillage)",
-          "Area": "MountainVillage",
+          "Area": "Mountain Village",
           "Logic": "HeartPieceKeatonQuizInMountainVillage"
         }
       ]
@@ -547,19 +547,19 @@
         {
           "ID": "HeartPiecePostBoxInECTPROXY",
           "Name": "Postbox (InECT)",
-          "Area": "EastClockTown",
+          "Area": "East Clock Town",
           "Logic": "HeartPiecePostBoxInECT"
         },
         {
           "ID": "HeartPiecePostBoxInNCTPROXY",
           "Name": "Postbox (InNCT)",
-          "Area": "NorthClockTown",
+          "Area": "North Clock Town",
           "Logic": "HeartPiecePostBoxInNCT"
         },
         {
           "ID": "HeartPiecePostBoxInSCTPROXY",
           "Name": "Postbox (InSCT)",
-          "Area": "SouthClockTown",
+          "Area": "South Clock Town",
           "Logic": "HeartPiecePostBoxInSCT"
         }
       ]
@@ -1060,25 +1060,25 @@
         {
           "ID": "SongOathInWFTPROXY",
           "Name": "Boss Blue Warp (InWFT)",
-          "Area": "WoodfallTemple",
+          "Area": "Woodfall Temple",
           "Logic": "SongOathInWFT"
         },
         {
           "ID": "SongOathInSHTPROXY",
           "Name": "Boss Blue Warp (InSHT)",
-          "Area": "SnowheadTemple",
+          "Area": "Snowhead Temple",
           "Logic": "SongOathInSHT"
         },
         {
           "ID": "SongOathInGBTPROXY",
           "Name": "Boss Blue Warp (InGBT)",
-          "Area": "GreatBayTemple",
+          "Area": "Great Bay Temple",
           "Logic": "SongOathInGBT"
         },
         {
           "ID": "SongOathInISTTPROXY",
           "Name": "Boss Blue Warp (InISTT)",
-          "Area": "StoneTowerTemple",
+          "Area": "Stone Tower Temple",
           "Logic": "SongOathInISTT"
         }
       ]
@@ -1445,13 +1445,13 @@
         {
           "ID": "ShopItemGoronBomb10InWinterPROXY",
           "Name": "Goron Shop 10 Bombs (InWinter)",
-          "Area": "GoronVillage",
+          "Area": "Goron Village",
           "Logic": "ShopItemGoronBomb10InWinter"
         },
         {
           "ID": "ShopItemGoronBomb10InSpringPROXY",
           "Name": "Goron Shop 10 Bombs (InSpring)",
-          "Area": "GoronVillage",
+          "Area": "Goron Village",
           "Logic": "ShopItemGoronBomb10InSpring"
         }
       ]
@@ -1468,13 +1468,13 @@
         {
           "ID": "ShopItemGoronArrow10InWinterPROXY",
           "Name": "Goron Shop 10 Arrows (InWinter)",
-          "Area": "GoronVillage",
+          "Area": "Goron Village",
           "Logic": "ShopItemGoronArrow10InWinter"
         },
         {
           "ID": "ShopItemGoronArrow10InSpringPROXY",
           "Name": "Goron Shop 10 Arrows (InSpring)",
-          "Area": "GoronVillage",
+          "Area": "Goron Village",
           "Logic": "ShopItemGoronArrow10InSpring"
         }
       ]
@@ -1491,13 +1491,13 @@
         {
           "ID": "ShopItemGoronRedPotionInWinterPROXY",
           "Name": "Goron Shop Red Potion (InWinter)",
-          "Area": "GoronVillage",
+          "Area": "Goron Village",
           "Logic": "ShopItemGoronRedPotionInWinter"
         },
         {
           "ID": "ShopItemGoronRedPotionInSpringPROXY",
           "Name": "Goron Shop Red Potion (InSpring)",
-          "Area": "GoronVillage",
+          "Area": "Goron Village",
           "Logic": "ShopItemGoronRedPotionInSpring"
         }
       ]
@@ -2333,13 +2333,13 @@
         {
           "ID": "ItemTingleMapTownInTownPROXY",
           "Name": "Clock Town Map Purchase (InTown)",
-          "Area": "NorthClockTown",
+          "Area": "North Clock Town",
           "Logic": "ItemTingleMapTownInTown"
         },
         {
           "ID": "ItemTingleMapTownInCanyonPROXY",
           "Name": "Clock Town Map Purchase (InCanyon)",
-          "Area": "IkanaCanyon",
+          "Area": "Ikana Canyon",
           "Logic": "ItemTingleMapTownInCanyon"
         }
       ]
@@ -2356,13 +2356,13 @@
         {
           "ID": "ItemTingleMapWoodfallInSwampPROXY",
           "Name": "Woodfall Map Purchase (InSwamp)",
-          "Area": "RoadToSouthernSwamp",
+          "Area": "Road to Southern Swamp",
           "Logic": "ItemTingleMapWoodfallInSwamp"
         },
         {
           "ID": "ItemTingleMapWoodfallInTownPROXY",
           "Name": "Woodfall Map Purchase (InTown)",
-          "Area": "NorthClockTown",
+          "Area": "North Clock Town",
           "Logic": "ItemTingleMapWoodfallInTown"
         }
       ]
@@ -2379,13 +2379,13 @@
         {
           "ID": "ItemTingleMapSnowheadInMountainPROXY",
           "Name": "Snowhead Map Purchase (InMountain)",
-          "Area": "TwinIslands",
+          "Area": "Twin Islands",
           "Logic": "ItemTingleMapSnowheadInMountain"
         },
         {
           "ID": "ItemTingleMapSnowheadInSwampPROXY",
           "Name": "Snowhead Map Purchase (InSwamp)",
-          "Area": "RoadToSouthernSwamp",
+          "Area": "Road to Southern Swamp",
           "Logic": "ItemTingleMapSnowheadInSwamp"
         }
       ]
@@ -2402,13 +2402,13 @@
         {
           "ID": "ItemTingleMapRanchInRanchPROXY",
           "Name": "Romani Ranch Map Purchase (InRanch)",
-          "Area": "MilkRoad",
+          "Area": "Milk Road",
           "Logic": "ItemTingleMapRanchInRanch"
         },
         {
           "ID": "ItemTingleMapRanchInMountainPROXY",
           "Name": "Romani Ranch Map Purchase (InMountain)",
-          "Area": "TwinIslands",
+          "Area": "Twin Islands",
           "Logic": "ItemTingleMapRanchInMountain"
         }
       ]
@@ -2425,13 +2425,13 @@
         {
           "ID": "ItemTingleMapGreatBayInOceanPROXY",
           "Name": "Great Bay Map Purchase (InOcean)",
-          "Area": "GreatBayCoast",
+          "Area": "Great Bay Coast",
           "Logic": "ItemTingleMapGreatBayInOcean"
         },
         {
           "ID": "ItemTingleMapGreatBayInRanchPROXY",
           "Name": "Great Bay Map Purchase (InRanch)",
-          "Area": "MilkRoad",
+          "Area": "Milk Road",
           "Logic": "ItemTingleMapGreatBayInRanch"
         }
       ]
@@ -2448,13 +2448,13 @@
         {
           "ID": "ItemTingleMapStoneTowerInCanyonPROXY",
           "Name": "Stone Tower Map Purchase (InCanyon)",
-          "Area": "IkanaCanyon",
+          "Area": "Ikana Canyon",
           "Logic": "ItemTingleMapStoneTowerInCanyon"
         },
         {
           "ID": "ItemTingleMapStoneTowerInOceanPROXY",
           "Name": "Stone Tower Map Purchase (InOcean)",
-          "Area": "GreatBayCoast",
+          "Area": "Great Bay Coast",
           "Logic": "ItemTingleMapStoneTowerInOcean"
         }
       ]
@@ -3201,13 +3201,13 @@
         {
           "ID": "CollectibleStrayFairyClockTownInLaundryPoolPROXY",
           "Name": "Clock Town Stray Fairy (InLaundryPool)",
-          "Area": "LaundryPool",
+          "Area": "Laundry Pool",
           "Logic": "CollectibleStrayFairyClockTownInLaundryPool"
         },
         {
           "ID": "CollectibleStrayFairyClockTownInECTPROXY",
           "Name": "Clock Town Stray Fairy (InECT)",
-          "Area": "EastClockTown",
+          "Area": "East Clock Town",
           "Logic": "CollectibleStrayFairyClockTownInECT"
         }
       ]
@@ -3857,13 +3857,13 @@
         {
           "ID": "ShopItemBusinessScrubMagicBeanInSwampPROXY",
           "Name": "Swamp Scrub Purchase (InSwamp)",
-          "Area": "SouthernSwamp",
+          "Area": "Southern Swamp",
           "Logic": "ShopItemBusinessScrubMagicBeanInSwamp"
         },
         {
           "ID": "ShopItemBusinessScrubMagicBeanInTownPROXY",
           "Name": "Swamp Scrub Purchase (InTown)",
-          "Area": "SouthClockTown",
+          "Area": "South Clock Town",
           "Logic": "ShopItemBusinessScrubMagicBeanInTown"
         }
       ]
@@ -3880,13 +3880,13 @@
         {
           "ID": "ShopItemBusinessScrubGreenPotionInOceanPROXY",
           "Name": "Ocean Scrub Purchase (InOcean)",
-          "Area": "ZoraHall",
+          "Area": "Zora Hall",
           "Logic": "ShopItemBusinessScrubGreenPotionInOcean"
         },
         {
           "ID": "ShopItemBusinessScrubGreenPotionInMountainPROXY",
           "Name": "Ocean Scrub Purchase (InMountain)",
-          "Area": "GoronVillage",
+          "Area": "Goron Village",
           "Logic": "ShopItemBusinessScrubGreenPotionInMountain"
         }
       ]
@@ -3903,13 +3903,13 @@
         {
           "ID": "ShopItemBusinessScrubBluePotionInCanyonPROXY",
           "Name": "Canyon Scrub Purchase (InCanyon)",
-          "Area": "IkanaCanyon",
+          "Area": "Ikana Canyon",
           "Logic": "ShopItemBusinessScrubBluePotionInCanyon"
         },
         {
           "ID": "ShopItemBusinessScrubBluePotionInOceanPROXY",
           "Name": "Canyon Scrub Purchase (InOcean)",
-          "Area": "ZoraHall",
+          "Area": "Zora Hall",
           "Logic": "ShopItemBusinessScrubBluePotionInOcean"
         }
       ]
@@ -9808,13 +9808,13 @@
         {
           "ID": "SongLullabyIntroInMountainVillagePROXY",
           "Name": "Goron Elder (InMountainVillage)",
-          "Area": "MountainVillage",
+          "Area": "Mountain Village",
           "Logic": "SongLullabyIntroInMountainVillage"
         },
         {
           "ID": "SongLullabyIntroInTwinIslandsPROXY",
           "Name": "Goron Elder (InTwinIslands)",
-          "Area": "TwinIslands",
+          "Area": "Twin Islands",
           "Logic": "SongLullabyIntroInTwinIslands"
         }
       ]
@@ -9830,13 +9830,13 @@
         {
           "ID": "NotebookMeetBombersInNCTPROXY",
           "Name": "Notebook Meeting: The Bombers (InNCT)",
-          "Area": "NorthClockTown",
+          "Area": "North Clock Town",
           "Logic": "NotebookMeetBombersInNCT"
         },
         {
           "ID": "NotebookMeetBombersInECTPROXY",
           "Name": "Notebook Meeting: The Bombers (InECT)",
-          "Area": "EastClockTown",
+          "Area": "East Clock Town",
           "Logic": "NotebookMeetBombersInECT"
         }
       ]
@@ -9852,19 +9852,19 @@
         {
           "ID": "NotebookMeetAnjuInInnPROXY",
           "Name": "Notebook Meeting: Anju (InInn)",
-          "Area": "StockPotInn",
+          "Area": "Stock Pot Inn",
           "Logic": "NotebookMeetAnjuInInn"
         },
         {
           "ID": "NotebookMeetAnjuInLaundryPoolPROXY",
           "Name": "Notebook Meeting: Anju (InLaundryPool)",
-          "Area": "LaundryPool",
+          "Area": "Laundry Pool",
           "Logic": "NotebookMeetAnjuInLaundryPool"
         },
         {
           "ID": "NotebookMeetAnjuInRanchPROXY",
           "Name": "Notebook Meeting: Anju (InRanch)",
-          "Area": "RomaniRanch",
+          "Area": "Romani Ranch",
           "Logic": "NotebookMeetAnjuInRanch"
         }
       ]
@@ -9880,19 +9880,19 @@
         {
           "ID": "NotebookMeetKafeiInLaundryPoolPROXY",
           "Name": "Notebook Meeting: Kafei (InLaundryPool)",
-          "Area": "LaundryPool",
+          "Area": "Laundry Pool",
           "Logic": "NotebookMeetKafeiInLaundryPool"
         },
         {
           "ID": "NotebookMeetKafeiInIkanaCanyonPROXY",
           "Name": "Notebook Meeting: Kafei (InIkanaCanyon)",
-          "Area": "IkanaCanyon",
+          "Area": "Ikana Canyon",
           "Logic": "NotebookMeetKafeiInIkanaCanyon"
         },
         {
           "ID": "NotebookMeetKafeiInInnPROXY",
           "Name": "Notebook Meeting: Kafei (InInn)",
-          "Area": "StockPotInn",
+          "Area": "Stock Pot Inn",
           "Logic": "NotebookMeetKafeiInInn"
         }
       ]
@@ -9908,13 +9908,13 @@
         {
           "ID": "NotebookMeetCuriosityShopManInWCTPROXY",
           "Name": "Notebook Meeting: The Curiosity Shop Man (InWCT)",
-          "Area": "WestClockTown",
+          "Area": "West Clock Town",
           "Logic": "NotebookMeetCuriosityShopManInWCT"
         },
         {
           "ID": "NotebookMeetCuriosityShopManInLaundryPoolPROXY",
           "Name": "Notebook Meeting: The Curiosity Shop Man (InLaundryPool)",
-          "Area": "LaundryPool",
+          "Area": "Laundry Pool",
           "Logic": "NotebookMeetCuriosityShopManInLaundryPool"
         }
       ]
@@ -9930,13 +9930,13 @@
         {
           "ID": "NotebookMeetOldLadyInNCTPROXY",
           "Name": "Notebook Meeting: The Old Lady (InNCT)",
-          "Area": "NorthClockTown",
+          "Area": "North Clock Town",
           "Logic": "NotebookMeetOldLadyInNCT"
         },
         {
           "ID": "NotebookMeetOldLadyInWCTPROXY",
           "Name": "Notebook Meeting: The Old Lady (InWCT)",
-          "Area": "WestClockTown",
+          "Area": "West Clock Town",
           "Logic": "NotebookMeetOldLadyInWCT"
         }
       ]
@@ -9992,13 +9992,13 @@
         {
           "ID": "NotebookMeetGormanInECTPROXY",
           "Name": "Notebook Meeting: Gorman (InECT)",
-          "Area": "EastClockTown",
+          "Area": "East Clock Town",
           "Logic": "NotebookMeetGormanInECT"
         },
         {
           "ID": "NotebookMeetGormanInInnPROXY",
           "Name": "Notebook Meeting: Gorman (InInn)",
-          "Area": "StockPotInn",
+          "Area": "Stock Pot Inn",
           "Logic": "NotebookMeetGormanInInn"
         }
       ]
@@ -10014,37 +10014,37 @@
         {
           "ID": "NotebookMeetPostmanInWCTPROXY",
           "Name": "Notebook Meeting: The Postman (InWCT)",
-          "Area": "WestClockTown",
+          "Area": "West Clock Town",
           "Logic": "NotebookMeetPostmanInWCT"
         },
         {
           "ID": "NotebookMeetPostmanInSCTPROXY",
           "Name": "Notebook Meeting: The Postman (InSCT)",
-          "Area": "SouthClockTown",
+          "Area": "South Clock Town",
           "Logic": "NotebookMeetPostmanInSCT"
         },
         {
           "ID": "NotebookMeetPostmanInNCTPROXY",
           "Name": "Notebook Meeting: The Postman (InNCT)",
-          "Area": "NorthClockTown",
+          "Area": "North Clock Town",
           "Logic": "NotebookMeetPostmanInNCT"
         },
         {
           "ID": "NotebookMeetPostmanInECTPROXY",
           "Name": "Notebook Meeting: The Postman (InECT)",
-          "Area": "EastClockTown",
+          "Area": "East Clock Town",
           "Logic": "NotebookMeetPostmanInECT"
         },
         {
           "ID": "NotebookMeetPostmanInInnPROXY",
           "Name": "Notebook Meeting: The Postman (InInn)",
-          "Area": "StockPotInn",
+          "Area": "Stock Pot Inn",
           "Logic": "NotebookMeetPostmanInInn"
         },
         {
           "ID": "NotebookMeetPostmanInLaundryPoolPROXY",
           "Name": "Notebook Meeting: The Postman (InLaundryPool)",
-          "Area": "LaundryPool",
+          "Area": "Laundry Pool",
           "Logic": "NotebookMeetPostmanInLaundryPool"
         }
       ]
@@ -10060,13 +10060,13 @@
         {
           "ID": "NotebookMeetRosaSistersInWCTPROXY",
           "Name": "Notebook Meeting: The Rosa Sisters (InWCT)",
-          "Area": "WestClockTown",
+          "Area": "West Clock Town",
           "Logic": "NotebookMeetRosaSistersInWCT"
         },
         {
           "ID": "NotebookMeetRosaSistersInInnPROXY",
           "Name": "Notebook Meeting: The Rosa Sisters (InInn)",
-          "Area": "StockPotInn",
+          "Area": "Stock Pot Inn",
           "Logic": "NotebookMeetRosaSistersInInn"
         }
       ]
@@ -10090,13 +10090,13 @@
         {
           "ID": "NotebookMeetAnjusGrandmotherInInnPROXY",
           "Name": "Notebook Meeting: Anju's Grandmother (InInn)",
-          "Area": "StockPotInn",
+          "Area": "Stock Pot Inn",
           "Logic": "NotebookMeetAnjusGrandmotherInInn"
         },
         {
           "ID": "NotebookMeetAnjusGrandmotherInRanchPROXY",
           "Name": "Notebook Meeting: Anju's Grandmother (InRanch)",
-          "Area": "RomaniRanch",
+          "Area": "Romani Ranch",
           "Logic": "NotebookMeetAnjusGrandmotherInRanch"
         }
       ]
@@ -10144,13 +10144,13 @@
         {
           "ID": "NotebookMeetGuruGuruInInnPROXY",
           "Name": "Notebook Meeting: Guru-Guru (InInn)",
-          "Area": "StockPotInn",
+          "Area": "Stock Pot Inn",
           "Logic": "NotebookMeetGuruGuruInInn"
         },
         {
           "ID": "NotebookMeetGuruGuruInLaundryPoolPROXY",
           "Name": "Notebook Meeting: Guru-Guru (InLaundryPool)",
-          "Area": "LaundryPool",
+          "Area": "Laundry Pool",
           "Logic": "NotebookMeetGuruGuruInLaundryPool"
         }
       ]
@@ -10190,19 +10190,19 @@
         {
           "ID": "NotebookDepositLetterToKafeiInSCTPROXY",
           "Name": "Depositing the Letter to Kafei (InSCT)",
-          "Area": "SouthClockTown",
+          "Area": "South Clock Town",
           "Logic": "NotebookDepositLetterToKafeiInSCT"
         },
         {
           "ID": "NotebookDepositLetterToKafeiInNCTPROXY",
           "Name": "Depositing the Letter to Kafei (InNCT)",
-          "Area": "NorthClockTown",
+          "Area": "North Clock Town",
           "Logic": "NotebookDepositLetterToKafeiInNCT"
         },
         {
           "ID": "NotebookDepositLetterToKafeiInECTPROXY",
           "Name": "Depositing the Letter to Kafei (InECT)",
-          "Area": "EastClockTown",
+          "Area": "East Clock Town",
           "Logic": "NotebookDepositLetterToKafeiInECT"
         }
       ]
@@ -10290,13 +10290,13 @@
         {
           "ID": "NotebookLearnBombersCodeInNCTPROXY",
           "Name": "Bombers' Hide and Seek (InNCT)",
-          "Area": "NorthClockTown",
+          "Area": "North Clock Town",
           "Logic": "NotebookLearnBombersCodeInNCT"
         },
         {
           "ID": "NotebookLearnBombersCodeInECTPROXY",
           "Name": "Bombers' Hide and Seek (InECT)",
-          "Area": "EastClockTown",
+          "Area": "East Clock Town",
           "Logic": "NotebookLearnBombersCodeInECT"
         }
       ]

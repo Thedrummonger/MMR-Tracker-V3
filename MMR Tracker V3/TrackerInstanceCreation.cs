@@ -109,6 +109,7 @@ namespace MMR_Tracker_V3
             Index = 0;
             foreach (var i in Instance.LogicFile.Logic)
             {
+                if (!string.IsNullOrWhiteSpace(i.SettingExpression)) { MMRSettingExpressionParser.ConvertSettingExpressionToLogic(i, Instance.LogicDictionary); }
                 if (Instance.LogicDictionary.AdditionalLogic.Any(x => x.Id == i.Id)) { Index++; continue; }
                 ParseLogicItem(i, Index, LogicFileType.Logic);
                 Index++;
@@ -228,11 +229,6 @@ namespace MMR_Tracker_V3
                 double Locationsrandomized = Instance.LocationPool.Where(x => x.Value.AppearsinListbox(Instance)).Count();
                 double LocationEntranceRatio = Math.Round(EntrancesRandomized / Locationsrandomized, 2);
                 Instance.StaticOptions.OptionFile.EntranceRandoFeatures = LocationEntranceRatio >= .1;
-            }
-
-            if (Instance.LogicFile.GameCode == "MMR")
-            {
-                Instance.ApplyMMRandoSettings(new MMRData.SpoilerLogData { GameplaySettings = new MMRData.GameplaySettings() });
             }
 
             Container.logicCalculation = new LogicCalculation(Container);

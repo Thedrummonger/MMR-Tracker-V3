@@ -107,11 +107,15 @@ namespace MMR_Tracker_V3
             IEnumerable<OptionData.ChoiceOption> choiceOptions = SelectedObjects.Where(x => x is OptionData.ChoiceOption).Select(x => x as OptionData.ChoiceOption);
             IEnumerable<OptionData.IntOption> IntOptions = SelectedObjects.Where(x => x is OptionData.IntOption).Select(x => x as OptionData.IntOption);
             IEnumerable<OptionData.ToggleOption> ToggleOptions = SelectedObjects.Where(x => x is OptionData.ToggleOption).Select(x => x as OptionData.ToggleOption);
-            IEnumerable<OptionData.MultiSelectOption> MultiSelectOptions = SelectedObjects.Where(x => x is OptionData.MultiSelectOption).Select(x => x as OptionData.MultiSelectOption);
+            IEnumerable<OptionData.MultiSelectValueListDisplay> MultiSelectOptions = SelectedObjects.Where(x => x is OptionData.MultiSelectValueListDisplay).Select(x => x as OptionData.MultiSelectValueListDisplay);
 
             foreach (var i in ToggleOptions)
             {
                 i.ToggleValue();
+            }
+            foreach(var i in MultiSelectOptions)
+            {
+                i.Parent.ToggleValue(i.Value.ID);
             }
             if (choiceOptions.Any())
             {
@@ -432,9 +436,10 @@ namespace MMR_Tracker_V3
                 if (IC.Instance.StaticOptions.ShowOptionsInListBox == null || IC.Instance.StaticOptions.ShowOptionsInListBox != OptionData.DisplayListBoxes[2]) { return; }
 
                 List<dynamic> ChoiceOptions = IC.Instance.ChoiceOptions.Values.Where(x => x.ValueList.Count > 1).Cast<dynamic>().ToList();
+                List<dynamic> MultiSelectOptions = IC.Instance.MultiSelectOptions.Values.Cast<dynamic>().ToList();
                 List<dynamic> ToggleOptions = IC.Instance.ToggleOptions.Values.Cast<dynamic>().ToList();
                 List<dynamic> IntOptions = IC.Instance.IntOptions.Values.Cast<dynamic>().ToList();
-                List<dynamic> All = ChoiceOptions.Concat(ToggleOptions).Concat(IntOptions).OrderBy(x => x.Priority).ToList();
+                List<dynamic> All = ChoiceOptions.Concat(ToggleOptions).Concat(IntOptions).Concat(MultiSelectOptions).OrderBy(x => x.Priority).ToList();
 
                 Dictionary<string, List<dynamic>> Categorized = new Dictionary<string, List<dynamic>>();
                 foreach (var item in All)
@@ -461,6 +466,13 @@ namespace MMR_Tracker_V3
                         }
                         ItemsInListBoxFiltered++;
                         DataSource.Add(c);
+                        if (c is OptionData.MultiSelectOption MSO)
+                        {
+                            foreach(var op in MSO.ValueList.Values)
+                            {
+                                DataSource.Add(new OptionData.MultiSelectValueListDisplay { Parent = MSO, Value = op});
+                            }
+                        }
                     }
                 }
             }
@@ -701,9 +713,10 @@ namespace MMR_Tracker_V3
                 if (IC.Instance.StaticOptions.ShowOptionsInListBox == null || IC.Instance.StaticOptions.ShowOptionsInListBox != OptionData.DisplayListBoxes[1]) { return; }
 
                 List<dynamic> ChoiceOptions = IC.Instance.ChoiceOptions.Values.Where(x => x.ValueList.Count > 1).Cast<dynamic>().ToList();
+                List<dynamic> MultiSelectOptions = IC.Instance.MultiSelectOptions.Values.Cast<dynamic>().ToList();
                 List<dynamic> ToggleOptions = IC.Instance.ToggleOptions.Values.Cast<dynamic>().ToList();
                 List<dynamic> IntOptions = IC.Instance.IntOptions.Values.Cast<dynamic>().ToList();
-                List<dynamic> All = ChoiceOptions.Concat(ToggleOptions).Concat(IntOptions).OrderBy(x => x.Priority).ToList();
+                List<dynamic> All = ChoiceOptions.Concat(ToggleOptions).Concat(IntOptions).Concat(MultiSelectOptions).OrderBy(x => x.Priority).ToList();
 
                 Dictionary<string, List<dynamic>> Categorized = new Dictionary<string, List<dynamic>>();
                 foreach (var item in All)
@@ -730,6 +743,13 @@ namespace MMR_Tracker_V3
                         }
                         ItemsInListBoxFiltered++;
                         DataSource.Add(c);
+                        if (c is OptionData.MultiSelectOption MSO)
+                        {
+                            foreach (var op in MSO.ValueList.Values)
+                            {
+                                DataSource.Add(new OptionData.MultiSelectValueListDisplay { Parent = MSO, Value = op });
+                            }
+                        }
                     }
                 }
             }

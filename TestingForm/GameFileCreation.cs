@@ -1,4 +1,5 @@
-﻿using MMR_Tracker_V3.TrackerObjects;
+﻿using MMR_Tracker_V3;
+using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -12,11 +13,22 @@ namespace TestingForm
 {
     internal class GameFileCreation
     {
+        public static void MMRCreateData()
+        {
+            MMRData.LogicFile CasualLogic = JsonConvert.DeserializeObject<MMRData.LogicFile>(File.ReadAllText(Path.Combine(TestingReferences.GetDevTestingPath(), "MMR 116", "REQ_CASUAL.txt")));
+            var MMRDictV16 = GameDataCreation.MMR.GenData.CreateMMRFiles();
+
+            Utility.CreateTestingFile(MMRDictV16, @"MMR 116\MMRV16Dict", "json");
+
+            WinFormTesting.ActivateWinFormInterface();
+            WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(CasualLogic), JsonConvert.SerializeObject(MMRDictV16));
+
+        }
 
         public static void PMRCreateData()
         {
             WinFormTesting.ActivateWinFormInterface();
-            MMR_Tracker_V3.OtherGames.PaperMarioRando.ReadData.ReadEadges(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary);
+            MMR_Tracker_V3.GameDataCreation.PaperMarioRando.ReadData.ReadEadges(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary);
             WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(Logic), JsonConvert.SerializeObject(dictionary));
             Utility.TestLogicForInvalidItems(MainInterface.InstanceContainer);
         }
@@ -24,7 +36,7 @@ namespace TestingForm
         public static void TPRCreateData()
         {
             WinFormTesting.ActivateWinFormInterface();
-            MMR_Tracker_V3.OtherGames.TPRando.ReadAndParseData.CreateFiles(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary);
+            MMR_Tracker_V3.GameDataCreation.TPRando.ReadAndParseData.CreateFiles(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary);
             WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(Logic), JsonConvert.SerializeObject(dictionary));
             Utility.TestLogicForInvalidItems(MainInterface.InstanceContainer);
             Utility.TestLocationsForInvalidVanillaItem(MainInterface.InstanceContainer);
@@ -45,7 +57,7 @@ namespace TestingForm
         public static void OOTMMCreateData()
         {
             WinFormTesting.ActivateWinFormInterface();
-            MMR_Tracker_V3.OtherGames.OOTMMV2.GenData.ReadData(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary);
+            MMR_Tracker_V3.GameDataCreation.OOTMMV2.GenData.ReadData(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary);
             WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(Logic), JsonConvert.SerializeObject(dictionary));
             foreach (var i in MainInterface.InstanceContainer.Instance.EntrancePool.AreaList.Values)
             {

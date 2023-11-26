@@ -144,10 +144,10 @@ namespace Windows_Form_Frontend
             OpenFileDialog fileDialog = new OpenFileDialog();
             var Result = fileDialog.ShowDialog();
             if (Result == DialogResult.Cancel || !File.Exists(fileDialog.FileName)) { return; }
-            var LogicData = LogicFileParser.GetLogicData(fileDialog.FileName, out bool WasSpoilerLog);
+            var LogicData = LogicFileParser.GetLogicData(fileDialog.FileName);
             if (LogicData is null) { MessageBox.Show("Invalid File\nPlease select either a logic file or MMR spoiler log"); return; }
             string Logic = string.Join("", LogicData);
-            WinFormInstanceCreation.CreateWinFormInstance(Logic, SpoilerLog: (WasSpoilerLog ? fileDialog.FileName : null) );
+            WinFormInstanceCreation.CreateWinFormInstance(Logic);
         }
 
         private void SavetoolStripMenuItem1_Click(object sender, EventArgs e)
@@ -714,7 +714,7 @@ namespace Windows_Form_Frontend
                         SubMenuItem.Click += delegate (object sender, EventArgs e)
                         {
                             SaveTrackerState(InstanceContainer.Instance.ToJson(JSONType.UTF8));
-                            MultiSelectOption.SetValue(i.Key, !MultiSelectOption.EnabledValues.Contains(i.Key));
+                            MultiSelectOption.ToggleValue(i.Key);
                             if (!InstanceContainer.logicCalculation.ReCompileLogicOnCalculation) { InstanceContainer.logicCalculation.CompileOptionActionEdits(); }
                             TrackerDataHandeling.TriggerCheckedObjectsUpdate(new List<object> { MultiSelectOption }, InstanceContainer.Instance, MiscData.CheckState.Checked);
                             InstanceContainer.logicCalculation.CalculateLogic();

@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TestingForm;
 
-namespace MMR_Tracker_V3.OtherGames.TPRando
+namespace MMR_Tracker_V3.GameDataCreation.TPRando
 {
     public class ReadAndParseData
     {

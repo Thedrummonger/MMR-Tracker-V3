@@ -35,8 +35,8 @@ namespace TestingForm
         }
         public static string GetOtherGameDataPath(string GameFolder = "")
         {
-            if (string.IsNullOrWhiteSpace(GameFolder)) { return Path.Join(GetTestingFormDataPath(), "OtherGames"); }
-            return Path.Join(GetTestingFormDataPath(), "OtherGames", GameFolder);
+            if (string.IsNullOrWhiteSpace(GameFolder)) { return Path.Join(GetTestingFormDataPath(), "GameDataCreation"); }
+            return Path.Join(GetTestingFormDataPath(), "GameDataCreation", GameFolder);
         }
         public class DevINI
         {

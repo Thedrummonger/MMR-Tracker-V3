@@ -124,14 +124,10 @@ namespace CLIFrontEnd
 
             if (!File.Exists(path)) { Console.WriteLine("Path Invalid!"); goto getpath; }
 
-            string[] LogicData = LogicFileParser.GetLogicData(path, out bool WasSpoilerLog);
+            string[] LogicData = LogicFileParser.GetLogicData(path);
 
             newTrackerInstance.GenerateInstance(LogicData);
 
-            if (newTrackerInstance.Instance.LogicFile.GameCode == "MMR" && WasSpoilerLog)
-            {
-                SpoilerLogTools.ImportSpoilerLog(path, newTrackerInstance);
-            }
             LoopLocationList();
         }
 
