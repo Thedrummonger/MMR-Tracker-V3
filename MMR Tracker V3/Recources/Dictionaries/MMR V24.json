@@ -2,6 +2,42 @@
   "LogicVersion": 24,
   "GameCode": "MMR",
   "WinCondition": "OtherCredits",
+  "DefaultSettings": {
+    "CustomItemListString": "-------------------------40c-80000000----21ffff-ffffffff-ffffffff-f0000000-7bbeeffa-7fffffff-e6f1fffe-ffffffff",
+    "CustomStartingItemListString": "--1fbfc-5800000-",
+    "CustomJunkLocationsString": "------------------------------200000-----400000--f000",
+    "ManualRandomizationState": {
+      "AreaWoodFallTempleAccess": "Unrandomized",
+      "AreaSnowheadTempleAccess": "Unrandomized",
+      "AreaGreatBayTempleAccess": "Unrandomized",
+      "AreaInvertedStoneTowerTempleAccess": "Unrandomized",
+      "HintGaroCanyonLower1": "Unrandomized",
+      "HintGaroCanyonLower2": "Unrandomized",
+      "HintGaroWithIgosDefeated": "Unrandomized",
+      "HintGaroCanyonUpper1": "Unrandomized",
+      "HintGaroCanyonUpper2": "Unrandomized",
+      "HintGaroCanyonUpper3": "Unrandomized",
+      "HintGaroCanyonUpper4": "Unrandomized",
+      "HintGaroCanyonUpper1WithStorms": "Unrandomized",
+      "HintGaroCanyonUpper2WithStorms": "Unrandomized",
+      "HintGaroCanyonUpper3WithStorms": "Unrandomized",
+      "HintGaroCanyonUpper4WithStorms": "Unrandomized",
+      "HintGaroCastleLower1": "Unrandomized",
+      "HintGaroCastleLower2": "Unrandomized",
+      "HintGaroCastleLower3": "Unrandomized",
+      "HintGaroCastleUpper": "Unrandomized",
+      "HintGaroMaster": "Unrandomized"
+    },
+    "EnabledTricks": [
+      "Exit OSH Without Goron",
+      "Lensless Chests",
+      "Day 2 Grave Without Lens of Truth",
+      "SHT Lensless Walls/Ceilings",
+      "Pinnacle Rock without Seahorse",
+      "Run Through Poisoned Water",
+      "WFT 2nd Floor Skip"
+    ]
+  },
   "LocationList": {
     "MaskDeku": {
       "ID": "MaskDeku",

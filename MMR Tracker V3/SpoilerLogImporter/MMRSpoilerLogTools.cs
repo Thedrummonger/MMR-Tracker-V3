@@ -104,7 +104,8 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 var DictEntry = i.GetDictEntry(Instance);
                 bool ValidStartingItem = DictEntry.ValidStartingItem ?? true;
                 if (!ValidStartingItem) { continue; }
-                int MaxInWorld = DictEntry.GetMaxAmountInWorld(Instance);
+                //This has to be the unedited max amount in world since the setting string should stay consistance even if an option changes this value
+                int MaxInWorld = DictEntry.MaxAmountInWorld??-1; 
                 if (MaxInWorld > 5 || MaxInWorld < 0) { MaxInWorld = 5; }
 
                 for (var j = 0; j < MaxInWorld; j++)
@@ -135,12 +136,12 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
         public static List<int> ParseMMRSettingString(string SettingString, int ItemCount)
         {
             var result = new List<int>();
-            if (string.IsNullOrWhiteSpace(SettingString)) { return result; }
+            if (string.IsNullOrWhiteSpace(SettingString)) { Debug.WriteLine("String Empty"); return result; }
 
             result.Clear();
             string[] Sections = SettingString.Split('-');
             int[] NewSections = new int[ItemCount];
-            if (Sections.Length != NewSections.Length) { return null; }
+            if (Sections.Length != NewSections.Length) { Debug.WriteLine($"{Sections.Length} != {NewSections.Length}"); return null; }
 
             try
             {

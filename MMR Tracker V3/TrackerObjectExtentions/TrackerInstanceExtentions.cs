@@ -35,6 +35,23 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             return instance.MacroPool[item];
         }
 
+        public static HintData.HintObject GetHintByID(this InstanceData.TrackerInstance instance, string item)
+        {
+            if (item is null) { return null; }
+            if (!instance.HintPool.ContainsKey(item)) { return null; }
+            return instance.HintPool[item];
+        }
+
+        public static EntranceRandoExit GetExitByLogicID(this InstanceData.TrackerInstance instance, string item)
+        {
+            if (item is null) { return null; }
+            if (!instance.InstanceReference.EntranceLogicNameToEntryData.ContainsKey(item)) { return null; }
+            var EntranceData = instance.InstanceReference.EntranceLogicNameToEntryData[item];
+            if (!instance.EntrancePool.AreaList.ContainsKey(EntranceData.Area)) { return null; }
+            if (!instance.EntrancePool.AreaList[EntranceData.Area].Exits.ContainsKey(EntranceData.Exit)) { return null; }
+            return instance.EntrancePool.AreaList[EntranceData.Area].Exits[EntranceData.Exit];
+        }
+
         public static ChoiceOption GetChoiceOptionByID(this InstanceData.TrackerInstance instance, string item)
         {
             if (item is null) { return null; }
@@ -63,21 +80,11 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
         public static LogicEntryType GetLocationEntryType(this InstanceData.TrackerInstance instance, string ID, bool literal, out object Obj)
         {
             if (literal && instance.LocationPool.ContainsKey(ID)) { Obj = instance.LocationPool[ID]; return LogicEntryType.location; }
-            if (literal && instance.InstanceReference.EntranceLogicNameToEntryData.ContainsKey(ID))
-            {
-                var EA = instance.InstanceReference.EntranceLogicNameToEntryData[ID];
-                Obj = instance.EntrancePool.AreaList[EA.Area].Exits[EA.Exit];
-                return LogicEntryType.Exit;
-            }
+            if (literal && instance.InstanceReference.EntranceLogicNameToEntryData.ContainsKey(ID)) { Obj = instance.GetExitByLogicID(ID);  return LogicEntryType.Exit; }
             if (literal && instance.HintPool.ContainsKey(ID)) { Obj = instance.HintPool[ID]; return LogicEntryType.Hint; }
             if (instance.MacroPool.ContainsKey(ID)) { Obj = instance.MacroPool[ID]; return LogicEntryType.macro; }
             if (!literal && instance.LocationPool.ContainsKey(ID)) { Obj = instance.LocationPool[ID]; return LogicEntryType.location; }
-            if (!literal && instance.InstanceReference.EntranceLogicNameToEntryData.ContainsKey(ID))
-            {
-                var EA = instance.InstanceReference.EntranceLogicNameToEntryData[ID];
-                Obj = instance.EntrancePool.AreaList[EA.Area].Exits[EA.Exit];
-                return LogicEntryType.Exit;
-            }
+            if (!literal && instance.InstanceReference.EntranceLogicNameToEntryData.ContainsKey(ID)) { Obj = instance.GetExitByLogicID(ID); return LogicEntryType.Exit; }
             if (!literal && instance.HintPool.ContainsKey(ID)) { Obj = instance.HintPool[ID]; return LogicEntryType.Hint; }
 
             if (instance.ChoiceOptions.ContainsKey(ID)) { Obj = instance.ChoiceOptions[ID]; return LogicEntryType.ChoiceOption; }

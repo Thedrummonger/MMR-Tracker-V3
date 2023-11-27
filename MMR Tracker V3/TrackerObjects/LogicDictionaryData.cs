@@ -20,6 +20,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string GameCode { get; set; }
             public string RootArea { get; set; }
             public string WinCondition { get; set; }
+            public DefaultSettings DefaultSettings { get; set; }
             public Dictionary<string, DictionaryLocationEntries> LocationList { get; set; } = new Dictionary<string, DictionaryLocationEntries>();
             public Dictionary<string, DictionaryItemEntries> ItemList { get; set; } = new Dictionary<string, DictionaryItemEntries>();
             public Dictionary<string, DictionaryEntranceEntries> EntranceList { get; set; } = new Dictionary<string, DictionaryEntranceEntries>();
@@ -51,6 +52,15 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 return EntranceList.Values.Select(x => x.Area).Concat(EntranceList.Values.Select(x => x.Exit)).Distinct().ToList();
             }
+        }
+
+        public class DefaultSettings
+        {
+            public string CustomItemListString { get; set; }
+            public string CustomStartingItemListString { get; set; }
+            public string CustomJunkLocationsString { get; set; }
+            public Dictionary<string, RandomizedState> ManualRandomizationState { get; set; }
+            public List<string> EnabledTricks { get; set; }
         }
 
         [Serializable]

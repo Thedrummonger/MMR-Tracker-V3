@@ -1,4 +1,5 @@
-﻿using MMR_Tracker_V3.SpoilerLogImporter;
+﻿using MathNet.Numerics;
+using MMR_Tracker_V3.SpoilerLogImporter;
 using MMR_Tracker_V3.TrackerObjectExtentions;
 using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
@@ -231,6 +232,11 @@ namespace MMR_Tracker_V3
                 Instance.StaticOptions.OptionFile.EntranceRandoFeatures = LocationEntranceRatio >= .1;
             }
 
+            if (Instance.LogicDictionary.DefaultSettings is not null)
+            {
+                LoadDefaultSetting(Instance);
+            }
+
             Container.logicCalculation = new LogicCalculation(Container);
 
             Container.logicCalculation.CompileOptionActionEdits();
@@ -239,6 +245,54 @@ namespace MMR_Tracker_V3
             //Debug.WriteLine(JsonConvert.SerializeObject(Instance.PriceData.CapacityMap, Utility._NewtonsoftJsonSerializerOptions));
 
             return true;
+        }
+
+        public static void LoadDefaultSetting(TrackerInstance instance)
+        {
+            var DefSet = instance.LogicDictionary.DefaultSettings;
+            if (!string.IsNullOrWhiteSpace(DefSet.CustomItemListString))
+            {
+                MMRSpoilerLogTools.ApplyLocationString(DefSet.CustomItemListString, instance);
+            }
+            if (!string.IsNullOrWhiteSpace(DefSet.CustomJunkLocationsString))
+            {
+                MMRSpoilerLogTools.ApplyJunkString(DefSet.CustomJunkLocationsString, instance);
+            }
+            if (!string.IsNullOrWhiteSpace(DefSet.CustomStartingItemListString))
+            {
+                Debug.WriteLine($"Applying starting item string {DefSet.CustomStartingItemListString}");
+                MMRSpoilerLogTools.ApplyStartingItemString(DefSet.CustomStartingItemListString, instance);
+            }
+            if (DefSet.ManualRandomizationState is not null)
+            {
+                foreach(var Manual in DefSet.ManualRandomizationState)
+                {
+                    bool Litteral = Manual.Key.IsLiteralID(out string LocationObjectID);
+                    var EntryType = instance.GetLocationEntryType(LocationObjectID, Litteral, out _);
+                    switch (EntryType)
+                    {
+                        case LogicEntryType.location:
+                            instance.GetLocationByID(LocationObjectID).SetRandomizedState(Manual.Value, instance);
+                            break;
+                        case LogicEntryType.Hint:
+                            instance.GetHintByID(LocationObjectID).RandomizedState = Manual.Value;
+                            break;
+                        case LogicEntryType.Exit:
+                            instance.GetExitByLogicID(LocationObjectID).RandomizedState = Manual.Value;
+                            break;
+                    }
+                }
+            }
+            if (DefSet.EnabledTricks is not null)
+            {
+                instance.ToggleAllTricks(false);
+                foreach (var trick in DefSet.EnabledTricks)
+                {
+                    MacroObject Trick = instance.GetMacroByID(trick);
+                    if (Trick is null || !Trick.isTrick(instance)) { continue; }
+                    Trick.TrickEnabled = true;
+                }
+            }
         }
 
         public static List<string> GetAllItemsUsedInLogic(MMRData.LogicFile logicFile)

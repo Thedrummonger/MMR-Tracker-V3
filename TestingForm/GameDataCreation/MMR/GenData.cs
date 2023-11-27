@@ -1,6 +1,7 @@
 ﻿using MMR_Tracker_V3;
 using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
+using static MMR_Tracker_V3.TrackerObjects.LogicDictionaryData;
 using static MMR_Tracker_V3.TrackerObjects.MMRData;
 
 namespace TestingForm.GameDataCreation.MMR
@@ -16,8 +17,31 @@ namespace TestingForm.GameDataCreation.MMR
             {
                 GameCode = "MMR",
                 LogicVersion = 24,
-                WinCondition = "OtherCredits"
+                WinCondition = "OtherCredits",
+                DefaultSettings = new LogicDictionaryData.DefaultSettings()
             };
+            MMRDictV16.DefaultSettings.CustomItemListString = "-------------------------40c-80000000----21ffff-ffffffff-ffffffff-f0000000-7bbeeffa-7fffffff-e6f1fffe-ffffffff";
+            MMRDictV16.DefaultSettings.CustomJunkLocationsString = "------------------------------200000-----400000--f000";
+            MMRDictV16.DefaultSettings.CustomStartingItemListString = "--1fbfc-5800000-";
+            MMRDictV16.DefaultSettings.ManualRandomizationState = new Dictionary<string, MiscData.RandomizedState>
+            {
+                { "AreaWoodFallTempleAccess", MiscData.RandomizedState.Unrandomized },
+                { "AreaSnowheadTempleAccess", MiscData.RandomizedState.Unrandomized },
+                { "AreaGreatBayTempleAccess", MiscData.RandomizedState.Unrandomized },
+                { "AreaInvertedStoneTowerTempleAccess", MiscData.RandomizedState.Unrandomized },
+            };
+            foreach(var GaroHint in ExportData.Hints.Where(x => x.ID.StartsWith("HintGaro"))) { MMRDictV16.DefaultSettings.ManualRandomizationState.Add(GaroHint.ID, MiscData.RandomizedState.Unrandomized); }
+            MMRDictV16.DefaultSettings.EnabledTricks = new List<string>
+            {
+                "Exit OSH Without Goron",
+                "Lensless Chests",
+                "Day 2 Grave Without Lens of Truth",
+                "SHT Lensless Walls/Ceilings",
+                "Pinnacle Rock without Seahorse",
+                "Run Through Poisoned Water",
+                "WFT 2nd Floor Skip",
+            };
+
             ReadLocationData(ExportData, MMRDictV16);
             ReadItemData(ExportData, MMRDictV16);
             ReadMacroData(ExportData, MMRDictV16);
