@@ -52188,11 +52188,142 @@
     }
   },
   "ChoiceOptions": {
+    "MovementMode": {
+      "ID": "MovementMode",
+      "Name": "Gravity/Speed",
+      "Value": "Default",
+      "SubCategory": "Gimmicks",
+      "Priority": 8,
+      "Conditionals": [],
+      "ValueList": {
+        "Default": {
+          "ID": "Default",
+          "Name": "Default",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "HighSpeed": {
+          "ID": "HighSpeed",
+          "Name": "HighSpeed",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "SuperLowGravity": {
+          "ID": "SuperLowGravity",
+          "Name": "SuperLowGravity",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "LowGravity": {
+          "ID": "LowGravity",
+          "Name": "LowGravity",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "HighGravity": {
+          "ID": "HighGravity",
+          "Name": "HighGravity",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      }
+    },
+    "FloorType": {
+      "ID": "FloorType",
+      "Name": "Floor Types",
+      "Value": "Default",
+      "SubCategory": "Gimmicks",
+      "Priority": 9,
+      "Conditionals": [],
+      "ValueList": {
+        "Default": {
+          "ID": "Default",
+          "Name": "Default",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "Sand": {
+          "ID": "Sand",
+          "Name": "Sand",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "Ice": {
+          "ID": "Ice",
+          "Name": "Ice",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "Snow": {
+          "ID": "Snow",
+          "Name": "Snow",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "Random": {
+          "ID": "Random",
+          "Name": "Random",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      }
+    },
     "DamageMode": {
       "ID": "DamageMode",
       "Name": "Damage Mode",
       "Value": "Default",
-      "Priority": 0,
+      "SubCategory": "Gimmicks",
+      "Priority": 14,
       "Conditionals": [],
       "ValueList": {
         "Default": {
@@ -52252,16 +52383,17 @@
         }
       }
     },
-    "Character": {
-      "ID": "Character",
-      "Name": "Character Model",
-      "Value": "LinkMM",
-      "Priority": 0,
+    "DamageEffect": {
+      "ID": "DamageEffect",
+      "Name": "Damage Effects",
+      "Value": "Default",
+      "SubCategory": "Gimmicks",
+      "Priority": 15,
       "Conditionals": [],
       "ValueList": {
-        "LinkMM": {
-          "ID": "LinkMM",
-          "Name": "LinkMM",
+        "Default": {
+          "ID": "Default",
+          "Name": "Default",
           "Actions": {
             "LogicReplacements": [],
             "AdditionalLogic": [],
@@ -52270,9 +52402,9 @@
             "VariableEdit": {}
           }
         },
-        "LinkOOT": {
-          "ID": "LinkOOT",
-          "Name": "LinkOOT",
+        "Fire": {
+          "ID": "Fire",
+          "Name": "Fire",
           "Actions": {
             "LogicReplacements": [],
             "AdditionalLogic": [],
@@ -52281,9 +52413,9 @@
             "VariableEdit": {}
           }
         },
-        "AdultLink": {
-          "ID": "AdultLink",
-          "Name": "AdultLink",
+        "Ice": {
+          "ID": "Ice",
+          "Name": "Ice",
           "Actions": {
             "LogicReplacements": [],
             "AdditionalLogic": [],
@@ -52292,9 +52424,31 @@
             "VariableEdit": {}
           }
         },
-        "Kafei": {
-          "ID": "Kafei",
-          "Name": "Kafei",
+        "Shock": {
+          "ID": "Shock",
+          "Name": "Shock",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "Knockdown": {
+          "ID": "Knockdown",
+          "Name": "Knockdown",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "Random": {
+          "ID": "Random",
+          "Name": "Random",
           "Actions": {
             "LogicReplacements": [],
             "AdditionalLogic": [],
@@ -52309,7 +52463,8 @@
       "ID": "BlastMaskCooldown",
       "Name": "Blast Mask Cooldown",
       "Value": "Default",
-      "Priority": 0,
+      "SubCategory": "Gimmicks",
+      "Priority": 19,
       "Conditionals": [],
       "ValueList": {
         "Default": {
@@ -52380,11 +52535,131 @@
         }
       }
     },
+    "NutAndStickDrops": {
+      "ID": "NutAndStickDrops",
+      "Name": "Nut and Stick Drops",
+      "Value": "Default",
+      "SubCategory": "Gimmicks",
+      "Priority": 20,
+      "Conditionals": [],
+      "ValueList": {
+        "Default": {
+          "ID": "Default",
+          "Name": "Default",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "Light": {
+          "ID": "Light",
+          "Name": "Light",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "Medium": {
+          "ID": "Medium",
+          "Name": "Medium",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "Extra": {
+          "ID": "Extra",
+          "Name": "Extra",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "Mayhem": {
+          "ID": "Mayhem",
+          "Name": "Mayhem",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      }
+    },
+    "Character": {
+      "ID": "Character",
+      "Name": "Character Model",
+      "Value": "LinkMM",
+      "SubCategory": "Comfort",
+      "Priority": 31,
+      "Conditionals": [],
+      "ValueList": {
+        "LinkMM": {
+          "ID": "LinkMM",
+          "Name": "LinkMM",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "LinkOOT": {
+          "ID": "LinkOOT",
+          "Name": "LinkOOT",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "AdultLink": {
+          "ID": "AdultLink",
+          "Name": "AdultLink",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "Kafei": {
+          "ID": "Kafei",
+          "Name": "Kafei",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      }
+    },
     "StaticEdits": {
       "ID": "StaticEdits",
       "Name": "Do Static Edits",
       "Value": "Static",
-      "Priority": 0,
+      "SubCategory": "Static",
+      "Priority": 42,
       "Conditionals": [],
       "ValueList": {
         "Static": {
@@ -52428,177 +52703,12 @@
     }
   },
   "MultiSelectOptions": {
-    "SmallKeyMode": {
-      "ID": "SmallKeyMode",
-      "Name": "Small Key Mode",
-      "EnabledValues": [],
-      "Priority": 0,
-      "Conditionals": [],
-      "ValueList": {
-        "DoorsOpen": {
-          "ID": "DoorsOpen",
-          "Name": "DoorsOpen",
-          "Actions": {
-            "LogicReplacements": [
-              {
-                "LocationWhitelist": [],
-                "LocationBlacklist": [],
-                "ReplacementList": {
-                  "ItemWoodfallKey1": "true",
-                  "ItemSnowheadKey1": "true",
-                  "ItemSnowheadKey2": "true",
-                  "ItemSnowheadKey3": "true",
-                  "ItemGreatBayKey1": "true",
-                  "ItemStoneTowerKey1": "true",
-                  "ItemStoneTowerKey2": "true",
-                  "ItemStoneTowerKey3": "true",
-                  "ItemStoneTowerKey4": "true"
-                }
-              }
-            ],
-            "AdditionalLogic": [],
-            "ItemNameOverride": {},
-            "ItemMaxAmountEdit": {},
-            "VariableEdit": {}
-          }
-        },
-        "KeepWithinTemples": {
-          "ID": "KeepWithinTemples",
-          "Name": "KeepWithinTemples",
-          "Actions": {
-            "LogicReplacements": [],
-            "AdditionalLogic": [],
-            "ItemNameOverride": {},
-            "ItemMaxAmountEdit": {},
-            "VariableEdit": {}
-          }
-        },
-        "KeepWithinArea": {
-          "ID": "KeepWithinArea",
-          "Name": "KeepWithinArea",
-          "Actions": {
-            "LogicReplacements": [],
-            "AdditionalLogic": [],
-            "ItemNameOverride": {},
-            "ItemMaxAmountEdit": {},
-            "VariableEdit": {}
-          }
-        },
-        "KeepWithinOverworld": {
-          "ID": "KeepWithinOverworld",
-          "Name": "KeepWithinOverworld",
-          "Actions": {
-            "LogicReplacements": [],
-            "AdditionalLogic": [],
-            "ItemNameOverride": {},
-            "ItemMaxAmountEdit": {},
-            "VariableEdit": {}
-          }
-        },
-        "KeepThroughTime": {
-          "ID": "KeepThroughTime",
-          "Name": "KeepThroughTime",
-          "Actions": {
-            "LogicReplacements": [],
-            "AdditionalLogic": [],
-            "ItemNameOverride": {},
-            "ItemMaxAmountEdit": {},
-            "VariableEdit": {}
-          }
-        }
-      }
-    },
-    "BossKeyMode": {
-      "ID": "BossKeyMode",
-      "Name": "Boss Key Mode",
-      "EnabledValues": [],
-      "Priority": 0,
-      "Conditionals": [],
-      "ValueList": {
-        "DoorsOpen": {
-          "ID": "DoorsOpen",
-          "Name": "DoorsOpen",
-          "Actions": {
-            "LogicReplacements": [
-              {
-                "LocationWhitelist": [],
-                "LocationBlacklist": [],
-                "ReplacementList": {
-                  "ItemWoodfallBossKey": "true",
-                  "ItemSnowheadBossKey": "true",
-                  "ItemGreatBayBossKey": "true",
-                  "ItemStoneTowerBossKey": "true"
-                }
-              }
-            ],
-            "AdditionalLogic": [],
-            "ItemNameOverride": {},
-            "ItemMaxAmountEdit": {},
-            "VariableEdit": {}
-          }
-        },
-        "GreatFairyRewards": {
-          "ID": "GreatFairyRewards",
-          "Name": "GreatFairyRewards",
-          "Actions": {
-            "LogicReplacements": [],
-            "AdditionalLogic": [],
-            "ItemNameOverride": {},
-            "ItemMaxAmountEdit": {},
-            "VariableEdit": {}
-          }
-        },
-        "KeepWithinTemples": {
-          "ID": "KeepWithinTemples",
-          "Name": "KeepWithinTemples",
-          "Actions": {
-            "LogicReplacements": [],
-            "AdditionalLogic": [],
-            "ItemNameOverride": {},
-            "ItemMaxAmountEdit": {},
-            "VariableEdit": {}
-          }
-        },
-        "KeepWithinArea": {
-          "ID": "KeepWithinArea",
-          "Name": "KeepWithinArea",
-          "Actions": {
-            "LogicReplacements": [],
-            "AdditionalLogic": [],
-            "ItemNameOverride": {},
-            "ItemMaxAmountEdit": {},
-            "VariableEdit": {}
-          }
-        },
-        "KeepWithinOverworld": {
-          "ID": "KeepWithinOverworld",
-          "Name": "KeepWithinOverworld",
-          "Actions": {
-            "LogicReplacements": [],
-            "AdditionalLogic": [],
-            "ItemNameOverride": {},
-            "ItemMaxAmountEdit": {},
-            "VariableEdit": {}
-          }
-        },
-        "KeepThroughTime": {
-          "ID": "KeepThroughTime",
-          "Name": "KeepThroughTime",
-          "Actions": {
-            "LogicReplacements": [],
-            "AdditionalLogic": [],
-            "ItemNameOverride": {},
-            "ItemMaxAmountEdit": {},
-            "VariableEdit": {}
-          }
-        }
-      }
-    },
     "VictoryMode": {
       "ID": "VictoryMode",
       "Name": "Victory Mode",
       "EnabledValues": [],
-      "Priority": 0,
+      "SubCategory": "Main Settings",
+      "Priority": 4,
       "Conditionals": [],
       "ValueList": {
         "DirectToCredits": {
@@ -52706,7 +52816,8 @@
       "ID": "PriceMode",
       "Name": "Price Mode",
       "EnabledValues": [],
-      "Priority": 0,
+      "SubCategory": "Main Settings",
+      "Priority": 5,
       "Conditionals": [],
       "ValueList": {
         "Purchases": {
@@ -52754,14 +52865,183 @@
           }
         }
       }
+    },
+    "SmallKeyMode": {
+      "ID": "SmallKeyMode",
+      "Name": "Small Key Mode",
+      "EnabledValues": [],
+      "SubCategory": "Main Settings",
+      "Priority": 6,
+      "Conditionals": [],
+      "ValueList": {
+        "DoorsOpen": {
+          "ID": "DoorsOpen",
+          "Name": "DoorsOpen",
+          "Actions": {
+            "LogicReplacements": [
+              {
+                "LocationWhitelist": [],
+                "LocationBlacklist": [],
+                "ReplacementList": {
+                  "ItemWoodfallKey1": "true",
+                  "ItemSnowheadKey1": "true",
+                  "ItemSnowheadKey2": "true",
+                  "ItemSnowheadKey3": "true",
+                  "ItemGreatBayKey1": "true",
+                  "ItemStoneTowerKey1": "true",
+                  "ItemStoneTowerKey2": "true",
+                  "ItemStoneTowerKey3": "true",
+                  "ItemStoneTowerKey4": "true"
+                }
+              }
+            ],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "KeepWithinTemples": {
+          "ID": "KeepWithinTemples",
+          "Name": "KeepWithinTemples",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "KeepWithinArea": {
+          "ID": "KeepWithinArea",
+          "Name": "KeepWithinArea",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "KeepWithinOverworld": {
+          "ID": "KeepWithinOverworld",
+          "Name": "KeepWithinOverworld",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "KeepThroughTime": {
+          "ID": "KeepThroughTime",
+          "Name": "KeepThroughTime",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      }
+    },
+    "BossKeyMode": {
+      "ID": "BossKeyMode",
+      "Name": "Boss Key Mode",
+      "EnabledValues": [],
+      "SubCategory": "Main Settings",
+      "Priority": 7,
+      "Conditionals": [],
+      "ValueList": {
+        "DoorsOpen": {
+          "ID": "DoorsOpen",
+          "Name": "DoorsOpen",
+          "Actions": {
+            "LogicReplacements": [
+              {
+                "LocationWhitelist": [],
+                "LocationBlacklist": [],
+                "ReplacementList": {
+                  "ItemWoodfallBossKey": "true",
+                  "ItemSnowheadBossKey": "true",
+                  "ItemGreatBayBossKey": "true",
+                  "ItemStoneTowerBossKey": "true"
+                }
+              }
+            ],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "GreatFairyRewards": {
+          "ID": "GreatFairyRewards",
+          "Name": "GreatFairyRewards",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "KeepWithinTemples": {
+          "ID": "KeepWithinTemples",
+          "Name": "KeepWithinTemples",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "KeepWithinArea": {
+          "ID": "KeepWithinArea",
+          "Name": "KeepWithinArea",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "KeepWithinOverworld": {
+          "ID": "KeepWithinOverworld",
+          "Name": "KeepWithinOverworld",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "KeepThroughTime": {
+          "ID": "KeepThroughTime",
+          "Name": "KeepThroughTime",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        }
+      }
     }
   },
   "ToggleOptions": {
-    "FreeHints": {
-      "ID": "FreeHints",
-      "Name": "Free Hints",
-      "Value": "true",
-      "Priority": 0,
+    "ProgressiveUpgrades": {
+      "ID": "ProgressiveUpgrades",
+      "Name": "Progressive Upgrades",
+      "Value": "false",
+      "SubCategory": "Main Settings",
+      "Priority": 1,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -52769,42 +53049,92 @@
         "Actions": {
           "LogicReplacements": [
             {
-              "LocationWhitelist": [
-                "GossipTerminaSouth",
-                "GossipSwampPotionShop",
-                "GossipMountainSpringPath",
-                "GossipMountainPath",
-                "GossipOceanZoraGame",
-                "GossipCanyonRoad",
-                "GossipCanyonDock",
-                "GossipCanyonSpiritHouse",
-                "GossipTerminaMilk",
-                "GossipTerminaWest",
-                "GossipTerminaNorth",
-                "GossipTerminaEast",
-                "GossipRanchTree",
-                "GossipRanchBarn",
-                "GossipMilkRoad",
-                "GossipOceanFortress",
-                "GossipSwampRoad",
-                "GossipTerminaObservatory",
-                "GossipRanchCuccoShack",
-                "GossipRanchRacetrack",
-                "GossipRanchEntrance",
-                "GossipCanyonRavine",
-                "GossipMountainSpringFrog",
-                "GossipSwampSpiderHouse",
-                "GossipTerminaGossipLarge",
-                "GossipTerminaGossipGuitar",
-                "GossipTerminaGossipPipes",
-                "GossipTerminaGossipDrums"
+              "LocationWhitelist": [],
+              "LocationBlacklist": [
+                "MMRTProgressiveItemBow",
+                "MMRTProgressiveItemBombBag",
+                "MMRTProgressiveFairyMagic",
+                "MMRTProgressiveFairyDoubleMagic",
+                "MMRTProgressiveUpgradeRazorSword",
+                "MMRTProgressiveUpgradeGildedSword",
+                "MMRTProgressiveUpgradeBigQuiver",
+                "MMRTProgressiveUpgradeBiggestQuiver",
+                "MMRTProgressiveUpgradeBigBombBag",
+                "MMRTProgressiveUpgradeBiggestBombBag",
+                "MMRTProgressiveUpgradeAdultWallet",
+                "MMRTProgressiveUpgradeGiantWallet",
+                "MMRTProgressiveUpgradeRoyalWallet",
+                "MMRTProgressiveSongLullaby",
+                "MMRTProgressiveStartingSword",
+                "MMRTProgressiveSongLullabyIntro"
               ],
-              "LocationBlacklist": [],
               "ReplacementList": {
-                "MaskTruth": "true"
+                "ItemBow": "MMRTProgressiveItemBow",
+                "ItemBombBag": "MMRTProgressiveItemBombBag",
+                "FairyMagic": "MMRTProgressiveFairyMagic",
+                "FairyDoubleMagic": "MMRTProgressiveFairyDoubleMagic",
+                "UpgradeRazorSword": "MMRTProgressiveUpgradeRazorSword",
+                "UpgradeGildedSword": "MMRTProgressiveUpgradeGildedSword",
+                "UpgradeBigQuiver": "MMRTProgressiveUpgradeBigQuiver",
+                "UpgradeBiggestQuiver": "MMRTProgressiveUpgradeBiggestQuiver",
+                "UpgradeBigBombBag": "MMRTProgressiveUpgradeBigBombBag",
+                "UpgradeBiggestBombBag": "MMRTProgressiveUpgradeBiggestBombBag",
+                "UpgradeAdultWallet": "MMRTProgressiveUpgradeAdultWallet",
+                "UpgradeGiantWallet": "MMRTProgressiveUpgradeGiantWallet",
+                "UpgradeRoyalWallet": "MMRTProgressiveUpgradeRoyalWallet",
+                "SongLullaby": "MMRTProgressiveSongLullaby",
+                "StartingSword": "MMRTProgressiveStartingSword",
+                "SongLullabyIntro": "MMRTProgressiveSongLullabyIntro"
               }
             }
           ],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {
+            "ItemBow": "Bow Upgrade",
+            "ItemBombBag": "Bomb Bag Upgrade",
+            "FairyMagic": "Magic Power Upgrade",
+            "FairyDoubleMagic": "Magic Power Upgrade",
+            "UpgradeRazorSword": "Sword Upgrade",
+            "UpgradeGildedSword": "Sword Upgrade",
+            "UpgradeBigQuiver": "Bow Upgrade",
+            "UpgradeBiggestQuiver": "Bow Upgrade",
+            "UpgradeBigBombBag": "Bomb Bag Upgrade",
+            "UpgradeBiggestBombBag": "Bomb Bag Upgrade",
+            "UpgradeAdultWallet": "Wallet Upgrade",
+            "UpgradeGiantWallet": "Wallet Upgrade",
+            "UpgradeRoyalWallet": "Wallet Upgrade",
+            "SongLullaby": "Goron Lullaby Upgrade",
+            "StartingSword": "Sword Upgrade",
+            "SongLullabyIntro": "Goron Lullaby Upgrade"
+          },
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "false",
+        "Name": "false",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "RandomizeEnemies": {
+      "ID": "RandomizeEnemies",
+      "Name": "Randomize Enemies",
+      "Value": "false",
+      "SubCategory": "Main Settings",
+      "Priority": 2,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "true",
+        "Name": "true",
+        "Actions": {
+          "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {},
@@ -52823,42 +53153,138 @@
         }
       }
     },
-    "FreeGaroHints": {
-      "ID": "FreeGaroHints",
-      "Name": "Free Garo Hints",
+    "ContinuousDekuHopping": {
+      "ID": "ContinuousDekuHopping",
+      "Name": "Continuous Deku Hopping",
       "Value": "false",
-      "Priority": 0,
+      "SubCategory": "Gimmicks",
+      "Priority": 10,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
         "Name": "true",
         "Actions": {
-          "LogicReplacements": [
-            {
-              "LocationWhitelist": [
-                "HintGaroCanyonLower1",
-                "HintGaroCanyonLower2",
-                "HintGaroWithIgosDefeated",
-                "HintGaroCanyonUpper1",
-                "HintGaroCanyonUpper2",
-                "HintGaroCanyonUpper3",
-                "HintGaroCanyonUpper4",
-                "HintGaroCanyonUpper1WithStorms",
-                "HintGaroCanyonUpper2WithStorms",
-                "HintGaroCanyonUpper3WithStorms",
-                "HintGaroCanyonUpper4WithStorms",
-                "HintGaroCastleLower1",
-                "HintGaroCastleLower2",
-                "HintGaroCastleLower3",
-                "HintGaroCastleUpper",
-                "HintGaroMaster"
-              ],
-              "LocationBlacklist": [],
-              "ReplacementList": {
-                "MaskTruth": "true"
-              }
-            }
-          ],
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "false",
+        "Name": "false",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "HookshotAnySurface": {
+      "ID": "HookshotAnySurface",
+      "Name": "Hookshot Any Surface",
+      "Value": "false",
+      "SubCategory": "Gimmicks",
+      "Priority": 11,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "true",
+        "Name": "true",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "false",
+        "Name": "false",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "ClimbMostSurfaces": {
+      "ID": "ClimbMostSurfaces",
+      "Name": "Climb Most Surfaces",
+      "Value": "false",
+      "SubCategory": "Gimmicks",
+      "Priority": 12,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "true",
+        "Name": "true",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "false",
+        "Name": "false",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "IronGoron": {
+      "ID": "IronGoron",
+      "Name": "Iron Goron",
+      "Value": "false",
+      "SubCategory": "Gimmicks",
+      "Priority": 13,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "true",
+        "Name": "true",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "false",
+        "Name": "false",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "DeathMoonCrash": {
+      "ID": "DeathMoonCrash",
+      "Name": "Death is Moon Crash",
+      "Value": "false",
+      "SubCategory": "Gimmicks",
+      "Priority": 16,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "true",
+        "Name": "true",
+        "Actions": {
+          "LogicReplacements": [],
           "AdditionalLogic": [],
           "ItemNameOverride": {},
           "ItemMaxAmountEdit": {},
@@ -52881,7 +53307,8 @@
       "ID": "ByoAmmo",
       "Name": "Bring Your Own Ammo",
       "Value": "false",
-      "Priority": 0,
+      "SubCategory": "Gimmicks",
+      "Priority": 17,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -52967,11 +53394,282 @@
         }
       }
     },
-    "ProgressiveUpgrades": {
-      "ID": "ProgressiveUpgrades",
-      "Name": "Progressive Upgrades",
+    "FewerHealthDrops": {
+      "ID": "FewerHealthDrops",
+      "Name": "Fewer Health Drops",
       "Value": "false",
-      "Priority": 0,
+      "SubCategory": "Gimmicks",
+      "Priority": 18,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "true",
+        "Name": "true",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "false",
+        "Name": "false",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "OcarinaUnderwater": {
+      "ID": "OcarinaUnderwater",
+      "Name": "Ocarina Underwater",
+      "Value": "false",
+      "SubCategory": "Gimmicks",
+      "Priority": 21,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "true",
+        "Name": "true",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "false",
+        "Name": "false",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "EnableSunsSong": {
+      "ID": "EnableSunsSong",
+      "Name": "Enable Suns Song",
+      "Value": "false",
+      "SubCategory": "Gimmicks",
+      "Priority": 22,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "true",
+        "Name": "true",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "false",
+        "Name": "false",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "FreeScarecrow": {
+      "ID": "FreeScarecrow",
+      "Name": "Free Scarecrow's Song",
+      "Value": "false",
+      "SubCategory": "Gimmicks",
+      "Priority": 23,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "true",
+        "Name": "true",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "false",
+        "Name": "false",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "AllowFierceDeityAnywhere": {
+      "ID": "AllowFierceDeityAnywhere",
+      "Name": "Fierce Deity Anywhere",
+      "Value": "false",
+      "SubCategory": "Gimmicks",
+      "Priority": 24,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "true",
+        "Name": "true",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "false",
+        "Name": "false",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "GiantMaskAnywhere": {
+      "ID": "GiantMaskAnywhere",
+      "Name": "Giant Mask Anywhere",
+      "Value": "false",
+      "SubCategory": "Gimmicks",
+      "Priority": 25,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "true",
+        "Name": "true",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "false",
+        "Name": "false",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "InstantTransform": {
+      "ID": "InstantTransform",
+      "Name": "Instant Transform",
+      "Value": "false",
+      "SubCategory": "Gimmicks",
+      "Priority": 26,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "true",
+        "Name": "true",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "false",
+        "Name": "false",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "BombArrows": {
+      "ID": "BombArrows",
+      "Name": "Bomb Arrows",
+      "Value": "false",
+      "SubCategory": "Gimmicks",
+      "Priority": 27,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "true",
+        "Name": "true",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "false",
+        "Name": "false",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "VanillaMoonTrialAccess": {
+      "ID": "VanillaMoonTrialAccess",
+      "Name": "Vanilla Moon Trial Access",
+      "Value": "false",
+      "SubCategory": "Gimmicks",
+      "Priority": 28,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "true",
+        "Name": "true",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "false",
+        "Name": "false",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "FreeHints": {
+      "ID": "FreeHints",
+      "Name": "Free Hints",
+      "Value": "true",
+      "SubCategory": "Comfort",
+      "Priority": 29,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -52979,64 +53677,369 @@
         "Actions": {
           "LogicReplacements": [
             {
-              "LocationWhitelist": [],
-              "LocationBlacklist": [
-                "MMRTProgressiveItemBow",
-                "MMRTProgressiveItemBombBag",
-                "MMRTProgressiveFairyMagic",
-                "MMRTProgressiveFairyDoubleMagic",
-                "MMRTProgressiveUpgradeRazorSword",
-                "MMRTProgressiveUpgradeGildedSword",
-                "MMRTProgressiveUpgradeBigQuiver",
-                "MMRTProgressiveUpgradeBiggestQuiver",
-                "MMRTProgressiveUpgradeBigBombBag",
-                "MMRTProgressiveUpgradeBiggestBombBag",
-                "MMRTProgressiveUpgradeAdultWallet",
-                "MMRTProgressiveUpgradeGiantWallet",
-                "MMRTProgressiveUpgradeRoyalWallet",
-                "MMRTProgressiveSongLullaby",
-                "MMRTProgressiveStartingSword",
-                "MMRTProgressiveSongLullabyIntro"
+              "LocationWhitelist": [
+                "GossipTerminaSouth",
+                "GossipSwampPotionShop",
+                "GossipMountainSpringPath",
+                "GossipMountainPath",
+                "GossipOceanZoraGame",
+                "GossipCanyonRoad",
+                "GossipCanyonDock",
+                "GossipCanyonSpiritHouse",
+                "GossipTerminaMilk",
+                "GossipTerminaWest",
+                "GossipTerminaNorth",
+                "GossipTerminaEast",
+                "GossipRanchTree",
+                "GossipRanchBarn",
+                "GossipMilkRoad",
+                "GossipOceanFortress",
+                "GossipSwampRoad",
+                "GossipTerminaObservatory",
+                "GossipRanchCuccoShack",
+                "GossipRanchRacetrack",
+                "GossipRanchEntrance",
+                "GossipCanyonRavine",
+                "GossipMountainSpringFrog",
+                "GossipSwampSpiderHouse",
+                "GossipTerminaGossipLarge",
+                "GossipTerminaGossipGuitar",
+                "GossipTerminaGossipPipes",
+                "GossipTerminaGossipDrums"
               ],
+              "LocationBlacklist": [],
               "ReplacementList": {
-                "ItemBow": "MMRTProgressiveItemBow",
-                "ItemBombBag": "MMRTProgressiveItemBombBag",
-                "FairyMagic": "MMRTProgressiveFairyMagic",
-                "FairyDoubleMagic": "MMRTProgressiveFairyDoubleMagic",
-                "UpgradeRazorSword": "MMRTProgressiveUpgradeRazorSword",
-                "UpgradeGildedSword": "MMRTProgressiveUpgradeGildedSword",
-                "UpgradeBigQuiver": "MMRTProgressiveUpgradeBigQuiver",
-                "UpgradeBiggestQuiver": "MMRTProgressiveUpgradeBiggestQuiver",
-                "UpgradeBigBombBag": "MMRTProgressiveUpgradeBigBombBag",
-                "UpgradeBiggestBombBag": "MMRTProgressiveUpgradeBiggestBombBag",
-                "UpgradeAdultWallet": "MMRTProgressiveUpgradeAdultWallet",
-                "UpgradeGiantWallet": "MMRTProgressiveUpgradeGiantWallet",
-                "UpgradeRoyalWallet": "MMRTProgressiveUpgradeRoyalWallet",
-                "SongLullaby": "MMRTProgressiveSongLullaby",
-                "StartingSword": "MMRTProgressiveStartingSword",
-                "SongLullabyIntro": "MMRTProgressiveSongLullabyIntro"
+                "MaskTruth": "true"
               }
             }
           ],
           "AdditionalLogic": [],
-          "ItemNameOverride": {
-            "ItemBow": "Bow Upgrade",
-            "ItemBombBag": "Bomb Bag Upgrade",
-            "FairyMagic": "Magic Power Upgrade",
-            "FairyDoubleMagic": "Magic Power Upgrade",
-            "UpgradeRazorSword": "Sword Upgrade",
-            "UpgradeGildedSword": "Sword Upgrade",
-            "UpgradeBigQuiver": "Bow Upgrade",
-            "UpgradeBiggestQuiver": "Bow Upgrade",
-            "UpgradeBigBombBag": "Bomb Bag Upgrade",
-            "UpgradeBiggestBombBag": "Bomb Bag Upgrade",
-            "UpgradeAdultWallet": "Wallet Upgrade",
-            "UpgradeGiantWallet": "Wallet Upgrade",
-            "UpgradeRoyalWallet": "Wallet Upgrade",
-            "SongLullaby": "Goron Lullaby Upgrade",
-            "StartingSword": "Sword Upgrade",
-            "SongLullabyIntro": "Goron Lullaby Upgrade"
-          },
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "false",
+        "Name": "false",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "FreeGaroHints": {
+      "ID": "FreeGaroHints",
+      "Name": "Free Garo Hints",
+      "Value": "false",
+      "SubCategory": "Comfort",
+      "Priority": 30,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "true",
+        "Name": "true",
+        "Actions": {
+          "LogicReplacements": [
+            {
+              "LocationWhitelist": [
+                "HintGaroCanyonLower1",
+                "HintGaroCanyonLower2",
+                "HintGaroWithIgosDefeated",
+                "HintGaroCanyonUpper1",
+                "HintGaroCanyonUpper2",
+                "HintGaroCanyonUpper3",
+                "HintGaroCanyonUpper4",
+                "HintGaroCanyonUpper1WithStorms",
+                "HintGaroCanyonUpper2WithStorms",
+                "HintGaroCanyonUpper3WithStorms",
+                "HintGaroCanyonUpper4WithStorms",
+                "HintGaroCastleLower1",
+                "HintGaroCastleLower2",
+                "HintGaroCastleLower3",
+                "HintGaroCastleUpper",
+                "HintGaroMaster"
+              ],
+              "LocationBlacklist": [],
+              "ReplacementList": {
+                "MaskTruth": "true"
+              }
+            }
+          ],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "false",
+        "Name": "false",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "CritWiggleDisable": {
+      "ID": "CritWiggleDisable",
+      "Name": "Disable Crit Wiggle",
+      "Value": "false",
+      "SubCategory": "Comfort",
+      "Priority": 32,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "true",
+        "Name": "true",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "false",
+        "Name": "false",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "QuickTextEnabled": {
+      "ID": "QuickTextEnabled",
+      "Name": "Quick Text",
+      "Value": "false",
+      "SubCategory": "Comfort",
+      "Priority": 33,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "true",
+        "Name": "true",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "false",
+        "Name": "false",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "FastPush": {
+      "ID": "FastPush",
+      "Name": "Increase Push Speed",
+      "Value": "false",
+      "SubCategory": "Comfort",
+      "Priority": 34,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "true",
+        "Name": "true",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "false",
+        "Name": "false",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "CloseCows": {
+      "ID": "CloseCows",
+      "Name": "Close Cows",
+      "Value": "false",
+      "SubCategory": "Comfort",
+      "Priority": 35,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "true",
+        "Name": "true",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "false",
+        "Name": "false",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "LenientGoronSpikes": {
+      "ID": "LenientGoronSpikes",
+      "Name": "Lenient Goron Spikes",
+      "Value": "false",
+      "SubCategory": "Comfort",
+      "Priority": 36,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "true",
+        "Name": "true",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "false",
+        "Name": "false",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "SaferGlitches": {
+      "ID": "SaferGlitches",
+      "Name": "Safer Glitches",
+      "Value": "false",
+      "SubCategory": "Comfort",
+      "Priority": 37,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "true",
+        "Name": "true",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "false",
+        "Name": "false",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "UpdateChests": {
+      "ID": "UpdateChests",
+      "Name": "Update Chests",
+      "Value": "false",
+      "SubCategory": "Comfort",
+      "Priority": 38,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "true",
+        "Name": "true",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "false",
+        "Name": "false",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "FixEponaSword": {
+      "ID": "FixEponaSword",
+      "Name": "Fix Epona Sword",
+      "Value": "false",
+      "SubCategory": "Comfort",
+      "Priority": 39,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "true",
+        "Name": "true",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      },
+      "Disabled": {
+        "ID": "false",
+        "Name": "false",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
+          "ItemMaxAmountEdit": {},
+          "VariableEdit": {}
+        }
+      }
+    },
+    "QuestItemStorage": {
+      "ID": "QuestItemStorage",
+      "Name": "Quest Item Storage",
+      "Value": "false",
+      "SubCategory": "Comfort",
+      "Priority": 40,
+      "Conditionals": [],
+      "Enabled": {
+        "ID": "true",
+        "Name": "true",
+        "Actions": {
+          "LogicReplacements": [],
+          "AdditionalLogic": [],
+          "ItemNameOverride": {},
           "ItemMaxAmountEdit": {},
           "VariableEdit": {}
         }
@@ -53057,7 +54060,8 @@
       "ID": "BombchuDrops",
       "Name": "Bombchu Drops",
       "Value": "false",
-      "Priority": 0,
+      "SubCategory": "Comfort",
+      "Priority": 41,
       "Conditionals": [],
       "Enabled": {
         "ID": "true",
@@ -53110,267 +54114,6 @@
           "VariableEdit": {}
         }
       }
-    },
-    "CloseCows": {
-      "ID": "CloseCows",
-      "Name": "Close Cows",
-      "Value": "false",
-      "Priority": 0,
-      "Conditionals": [],
-      "Enabled": {
-        "ID": "true",
-        "Name": "true",
-        "Actions": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
-        }
-      },
-      "Disabled": {
-        "ID": "false",
-        "Name": "false",
-        "Actions": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
-        }
-      }
-    },
-    "IronGoron": {
-      "ID": "IronGoron",
-      "Name": "Iron Goron",
-      "Value": "false",
-      "Priority": 0,
-      "Conditionals": [],
-      "Enabled": {
-        "ID": "true",
-        "Name": "true",
-        "Actions": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
-        }
-      },
-      "Disabled": {
-        "ID": "false",
-        "Name": "false",
-        "Actions": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
-        }
-      }
-    },
-    "ClimbMostSurfaces": {
-      "ID": "ClimbMostSurfaces",
-      "Name": "Climb Most Surfaces",
-      "Value": "false",
-      "Priority": 0,
-      "Conditionals": [],
-      "Enabled": {
-        "ID": "true",
-        "Name": "true",
-        "Actions": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
-        }
-      },
-      "Disabled": {
-        "ID": "false",
-        "Name": "false",
-        "Actions": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
-        }
-      }
-    },
-    "HookshotAnySurface": {
-      "ID": "HookshotAnySurface",
-      "Name": "Hookshot Any Surface",
-      "Value": "false",
-      "Priority": 0,
-      "Conditionals": [],
-      "Enabled": {
-        "ID": "true",
-        "Name": "true",
-        "Actions": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
-        }
-      },
-      "Disabled": {
-        "ID": "false",
-        "Name": "false",
-        "Actions": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
-        }
-      }
-    },
-    "GiantMaskAnywhere": {
-      "ID": "GiantMaskAnywhere",
-      "Name": "Giant Mask Anywhere",
-      "Value": "false",
-      "Priority": 0,
-      "Conditionals": [],
-      "Enabled": {
-        "ID": "true",
-        "Name": "true",
-        "Actions": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
-        }
-      },
-      "Disabled": {
-        "ID": "false",
-        "Name": "false",
-        "Actions": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
-        }
-      }
-    },
-    "RandomizeEnemies": {
-      "ID": "RandomizeEnemies",
-      "Name": "Randomize Enemies",
-      "Value": "false",
-      "Priority": 0,
-      "Conditionals": [],
-      "Enabled": {
-        "ID": "true",
-        "Name": "true",
-        "Actions": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
-        }
-      },
-      "Disabled": {
-        "ID": "false",
-        "Name": "false",
-        "Actions": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
-        }
-      }
-    },
-    "EnableSunsSong": {
-      "ID": "EnableSunsSong",
-      "Name": "Enable Suns Song",
-      "Value": "false",
-      "Priority": 0,
-      "Conditionals": [],
-      "Enabled": {
-        "ID": "true",
-        "Name": "true",
-        "Actions": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
-        }
-      },
-      "Disabled": {
-        "ID": "false",
-        "Name": "false",
-        "Actions": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
-        }
-      }
-    },
-    "AllowFierceDeityAnywhere": {
-      "ID": "AllowFierceDeityAnywhere",
-      "Name": "Fierce Deity Anywhere",
-      "Value": "false",
-      "Priority": 0,
-      "Conditionals": [],
-      "Enabled": {
-        "ID": "true",
-        "Name": "true",
-        "Actions": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
-        }
-      },
-      "Disabled": {
-        "ID": "false",
-        "Name": "false",
-        "Actions": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
-        }
-      }
-    },
-    "DeathMoonCrash": {
-      "ID": "DeathMoonCrash",
-      "Name": "Death is Moon Crash",
-      "Value": "false",
-      "Priority": 0,
-      "Conditionals": [],
-      "Enabled": {
-        "ID": "true",
-        "Name": "true",
-        "Actions": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
-        }
-      },
-      "Disabled": {
-        "ID": "false",
-        "Name": "false",
-        "Actions": {
-          "LogicReplacements": [],
-          "AdditionalLogic": [],
-          "ItemNameOverride": {},
-          "ItemMaxAmountEdit": {},
-          "VariableEdit": {}
-        }
-      }
     }
   },
   "IntOptions": {
@@ -53378,7 +54121,8 @@
       "ID": "RequiredBossRemains",
       "Name": "Required Boss Remains",
       "Value": 4,
-      "Priority": 0,
+      "SubCategory": "Main Settings",
+      "Priority": 3,
       "Conditionals": [],
       "Min": 0,
       "Max": 4

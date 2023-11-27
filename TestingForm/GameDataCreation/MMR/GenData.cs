@@ -59,17 +59,21 @@ namespace TestingForm.GameDataCreation.MMR
 
         private static void CreateLogicSettings(MMRExportClass.MMRData exportData, LogicDictionaryData.LogicDictionary MMRDictV16)
         {
-            void AddSimpleToggle(string ID, string Name, bool Default)
+            int SettingPriority = 0;
+            void AddSimpleToggle(string ID, string Name, string Category, bool Default)
             {
-                MMRDictV16.ToggleOptions.Add(ID, new OptionData.ToggleOption { ID = ID, Value = Default.ToString().ToLower(), Name = Name }.CreateSimpleValues(true));
+                SettingPriority++;
+                MMRDictV16.ToggleOptions.Add(ID, new OptionData.ToggleOption { ID = ID, Value = Default.ToString().ToLower(), Name = Name, SubCategory = Category, Priority = SettingPriority }.CreateSimpleValues(true));
             }
-            void AddSimpleMultiSelect(string ID, string Name, params string[] Values)
+            void AddSimpleMultiSelect(string ID, string Name, string Category, params string[] Values)
             {
-                MMRDictV16.MultiSelectOptions.Add(ID, new OptionData.MultiSelectOption { ID = ID, Name = Name, EnabledValues = new HashSet<string>() }.CreateSimpleValues(Values));
+                SettingPriority++;
+                MMRDictV16.MultiSelectOptions.Add(ID, new OptionData.MultiSelectOption { ID = ID, Name = Name, EnabledValues = new HashSet<string>(), SubCategory = Category, Priority = SettingPriority }.CreateSimpleValues(Values));
             }
-            void AddSimpleChoice(string ID, string Name, string Default, params string[] Values)
+            void AddSimpleChoice(string ID, string Name, string Category, string Default, params string[] Values)
             {
-                MMRDictV16.ChoiceOptions.Add(ID, new OptionData.ChoiceOption { ID = ID, Name = Name, Value = Default }.CreateSimpleValues(Values));
+                SettingPriority++;
+                MMRDictV16.ChoiceOptions.Add(ID, new OptionData.ChoiceOption { ID = ID, Name = Name, Value = Default, SubCategory = Category, Priority = SettingPriority }.CreateSimpleValues(Values));
             }
             OptionData.AdditionalLogic CreateAdditionalLogic(OptionData.OptionValue Value)
             {
@@ -98,42 +102,71 @@ namespace TestingForm.GameDataCreation.MMR
                     entry.ReplacementList.Add(Segments[0], Segments[1]);
                 };
             }
-            //==========================================================================================================================================================================
-            //Keysy Options
-            AddSimpleMultiSelect("SmallKeyMode", "Small Key Mode", "DoorsOpen", "KeepWithinTemples", "KeepWithinArea", "KeepWithinOverworld", "KeepThroughTime");
-            string[] AllSmallKeys = MMRDictV16.ItemList.Values.Where(x => x.Name.EndsWith("Small Key")).Select(x => x.ID + "|true").ToArray();
-            AddLogicReplacement(CreateLogicReplacement(MMRDictV16.MultiSelectOptions["SmallKeyMode"].ValueList["DoorsOpen"]), AllSmallKeys);
-
-            AddSimpleMultiSelect("BossKeyMode", "Boss Key Mode", "DoorsOpen", "GreatFairyRewards", "KeepWithinTemples", "KeepWithinArea", "KeepWithinOverworld", "KeepThroughTime");
-            string[] AllBossKeys = MMRDictV16.ItemList.Values.Where(x => x.Name.EndsWith("Boss Key")).Select(x => x.ID + "|true").ToArray();
-            AddLogicReplacement(CreateLogicReplacement(MMRDictV16.MultiSelectOptions["BossKeyMode"].ValueList["DoorsOpen"]), AllBossKeys);
 
             //==========================================================================================================================================================================
-            //Victory Mode Options
-            AddSimpleMultiSelect("VictoryMode", "Victory Mode", "DirectToCredits", "CantFightMajora", "Fairies", "SkullTokens", "NonTransformationMasks", "TransformationMasks", "Notebook", "Hearts", "BossRemains");
-            
-            //==========================================================================================================================================================================
-            //Hint Options
-            AddSimpleToggle("FreeHints", "Free Hints", true);
-            AddSimpleToggle("FreeGaroHints", "Free Garo Hints", false);
-            var RemoveMaskTruthGossipEdit = CreateLogicReplacement(MMRDictV16.ToggleOptions["FreeHints"].Enabled);
-            var RemoveMaskTruthGaroEdit = CreateLogicReplacement(MMRDictV16.ToggleOptions["FreeGaroHints"].Enabled);
-            AddLogicReplacement(RemoveMaskTruthGossipEdit, "MaskTruth|true");
-            AddLogicReplacement(RemoveMaskTruthGaroEdit, "MaskTruth|true");
-            RemoveMaskTruthGossipEdit.LocationWhitelist = MMRDictV16.HintSpots.Keys.Where(x => x.StartsWith("Gossip")).ToArray();
-            RemoveMaskTruthGaroEdit.LocationWhitelist = MMRDictV16.HintSpots.Keys.Where(x => x.StartsWith("HintGaro")).ToArray();
+            //Progressive Item Options
+            Dictionary<string, string> ProgressiveItemData = new Dictionary<string, string>();
+            foreach (var i in exportData.Items)
+            {
+                if (string.IsNullOrWhiteSpace(i.ProgressiveGroup)) { continue; }
+                ProgressiveItemData[i.ID] = $"{i.ProgressiveGroup}|MMRTProgressive{i.ID}";
+            }
+
+            AddSimpleToggle("ProgressiveUpgrades", "Progressive Upgrades", "Main Settings", false);
+            var ProgressiveUpgradesReplacements = CreateLogicReplacement(MMRDictV16.ToggleOptions["ProgressiveUpgrades"].Enabled);
+            AddLogicReplacement(ProgressiveUpgradesReplacements, ProgressiveItemData.Select(x => $"{x.Key}|{x.Value.Split('|')[1]}").ToArray());
+            ProgressiveUpgradesReplacements.LocationBlacklist = ProgressiveItemData.Values.Select(x => x.Split('|')[1]).ToArray();
+            MMRDictV16.ToggleOptions["ProgressiveUpgrades"].Enabled.Actions.ItemNameOverride = ProgressiveItemData.ToDictionary(x => x.Key, x => x.Value.Split('|')[0]);
+
+            //Randomized Enemies
+            AddSimpleToggle("RandomizeEnemies", "Randomize Enemies", "Main Settings", false);
 
             //==========================================================================================================================================================================
             //Boss Remian Moon Requirement
+            SettingPriority++;
             MMRDictV16.IntOptions.Add("RequiredBossRemains", new OptionData.IntOption
             {
                 ID = "RequiredBossRemains",
                 Name = "Required Boss Remains",
                 Max = 4,
                 Min = 0,
-                Value = 4
+                Value = 4,
+                SubCategory = "Main Settings",
+                Priority = SettingPriority
             });
 
+            //==========================================================================================================================================================================
+            //Victory Mode Options
+            AddSimpleMultiSelect("VictoryMode", "Victory Mode", "Main Settings", "DirectToCredits", "CantFightMajora", "Fairies", "SkullTokens", "NonTransformationMasks", "TransformationMasks", "Notebook", "Hearts", "BossRemains");
+
+            //Price Mode
+            AddSimpleMultiSelect("PriceMode", "Price Mode", "Main Settings", "Purchases", "Minigames", "Misc", "AccountForRoyalWallet");
+
+            //==========================================================================================================================================================================
+            //Keysy Options
+            AddSimpleMultiSelect("SmallKeyMode", "Small Key Mode", "Main Settings", "DoorsOpen", "KeepWithinTemples", "KeepWithinArea", "KeepWithinOverworld", "KeepThroughTime");
+            string[] AllSmallKeys = MMRDictV16.ItemList.Values.Where(x => x.Name.EndsWith("Small Key")).Select(x => x.ID + "|true").ToArray();
+            AddLogicReplacement(CreateLogicReplacement(MMRDictV16.MultiSelectOptions["SmallKeyMode"].ValueList["DoorsOpen"]), AllSmallKeys);
+
+            AddSimpleMultiSelect("BossKeyMode", "Boss Key Mode", "Main Settings", "DoorsOpen", "GreatFairyRewards", "KeepWithinTemples", "KeepWithinArea", "KeepWithinOverworld", "KeepThroughTime");
+            string[] AllBossKeys = MMRDictV16.ItemList.Values.Where(x => x.Name.EndsWith("Boss Key")).Select(x => x.ID + "|true").ToArray();
+            AddLogicReplacement(CreateLogicReplacement(MMRDictV16.MultiSelectOptions["BossKeyMode"].ValueList["DoorsOpen"]), AllBossKeys);
+
+            //Movement Gimicks
+
+            AddSimpleChoice("MovementMode", "Gravity/Speed", "Gimmicks", "Default", "Default", "HighSpeed", "SuperLowGravity", "LowGravity", "HighGravity");
+            AddSimpleChoice("FloorType", "Floor Types", "Gimmicks", "Default", "Default", "Sand", "Ice", "Snow", "Random");
+
+            AddSimpleToggle("ContinuousDekuHopping", "Continuous Deku Hopping", "Gimmicks", false);
+
+            AddSimpleToggle("HookshotAnySurface", "Hookshot Any Surface", "Gimmicks", false);
+            AddSimpleToggle("ClimbMostSurfaces", "Climb Most Surfaces", "Gimmicks", false);
+            AddSimpleToggle("IronGoron", "Iron Goron", "Gimmicks", false);
+
+            AddSimpleChoice("DamageMode", "Damage Mode", "Gimmicks", "Default", "Default", "Double", "Quadruple", "OHKO", "Doom");
+            AddSimpleChoice("DamageEffect", "Damage Effects", "Gimmicks", "Default", "Default", "Fire", "Ice", "Shock", "Knockdown", "Random");
+
+            AddSimpleToggle("DeathMoonCrash", "Death is Moon Crash", "Gimmicks", false);
             //==========================================================================================================================================================================
             //BYOAmmo Options
             void AddBYOAAdditionalLogic(string Location, string NewLogic)
@@ -142,8 +175,7 @@ namespace TestingForm.GameDataCreation.MMR
                 AddAdditionalRequirement(LogicAddition, NewLogic);
                 LogicAddition.LocationWhitelist = new string[] { Location };
             }
-
-            AddSimpleToggle("ByoAmmo", "Bring Your Own Ammo", false);
+            AddSimpleToggle("ByoAmmo", "Bring Your Own Ammo", "Gimmicks", false);
             AddBYOAAdditionalLogic("UpgradeBigQuiver", "MMRTArrows40");
             AddBYOAAdditionalLogic("UpgradeBiggestQuiver", "MMRTArrows40");
             AddBYOAAdditionalLogic("HeartPieceSwampArchery", "MMRTArrows40");
@@ -151,51 +183,78 @@ namespace TestingForm.GameDataCreation.MMR
             AddBYOAAdditionalLogic("HeartPieceHoneyAndDarling", "MMRTbombchu10");
             AddBYOAAdditionalLogic("MaskRomani", "MMRTEscortCremia");
 
+            AddSimpleToggle("FewerHealthDrops", "Fewer Health Drops", "Gimmicks", false);
+
+
+            AddSimpleChoice("BlastMaskCooldown", "Blast Mask Cooldown", "Gimmicks", "Default", "Default", "Instant", "VeryShort", "Short", "Long", "VeryLong");
+            AddSimpleChoice("NutAndStickDrops", "Nut and Stick Drops", "Gimmicks", "Default", "Default", "Light", "Medium", "Extra", "Mayhem");
+            AddSimpleToggle("OcarinaUnderwater", "Ocarina Underwater", "Gimmicks", false);
+            AddSimpleToggle("EnableSunsSong", "Enable Suns Song", "Gimmicks", false);
+            AddSimpleToggle("FreeScarecrow", "Free Scarecrow's Song", "Gimmicks", false);
+            AddSimpleToggle("AllowFierceDeityAnywhere", "Fierce Deity Anywhere", "Gimmicks", false);
+            AddSimpleToggle("GiantMaskAnywhere", "Giant Mask Anywhere", "Gimmicks", false);
+            AddSimpleToggle("InstantTransform", "Instant Transform", "Gimmicks", false);
+            AddSimpleToggle("BombArrows", "Bomb Arrows", "Gimmicks", false);
+            AddSimpleToggle("VanillaMoonTrialAccess", "Vanilla Moon Trial Access", "Gimmicks", false);
+
 
             //==========================================================================================================================================================================
-            //Progressive Item Options
-            Dictionary<string, string> ProgressiveItemData = new Dictionary<string, string>();
-            foreach(var i in exportData.Items)
-            {
-                if (string.IsNullOrWhiteSpace(i.ProgressiveGroup)) { continue; }
-                ProgressiveItemData[i.ID] = $"{i.ProgressiveGroup}|MMRTProgressive{i.ID}" ;
-            }
+            //Hint Options
+            AddSimpleToggle("FreeHints", "Free Hints", "Comfort", true);
+            AddSimpleToggle("FreeGaroHints", "Free Garo Hints", "Comfort", false);
+            var RemoveMaskTruthGossipEdit = CreateLogicReplacement(MMRDictV16.ToggleOptions["FreeHints"].Enabled);
+            var RemoveMaskTruthGaroEdit = CreateLogicReplacement(MMRDictV16.ToggleOptions["FreeGaroHints"].Enabled);
+            AddLogicReplacement(RemoveMaskTruthGossipEdit, "MaskTruth|true");
+            AddLogicReplacement(RemoveMaskTruthGaroEdit, "MaskTruth|true");
+            RemoveMaskTruthGossipEdit.LocationWhitelist = MMRDictV16.HintSpots.Keys.Where(x => x.StartsWith("Gossip")).ToArray();
+            RemoveMaskTruthGaroEdit.LocationWhitelist = MMRDictV16.HintSpots.Keys.Where(x => x.StartsWith("HintGaro")).ToArray();
 
-            AddSimpleToggle("ProgressiveUpgrades", "Progressive Upgrades", false);
-            var ProgressiveUpgradesReplacements = CreateLogicReplacement(MMRDictV16.ToggleOptions["ProgressiveUpgrades"].Enabled);
-            AddLogicReplacement(ProgressiveUpgradesReplacements, ProgressiveItemData.Select(x => $"{x.Key}|{x.Value.Split('|')[1]}").ToArray());
-            ProgressiveUpgradesReplacements.LocationBlacklist = ProgressiveItemData.Values.Select(x => x.Split('|')[1]).ToArray();
-            MMRDictV16.ToggleOptions["ProgressiveUpgrades"].Enabled.Actions.ItemNameOverride = ProgressiveItemData.ToDictionary(x => x.Key, x => x.Value.Split('|')[0]);
+
+            //==========================================================================================================================================================================
+            //Comforts
+
+            AddSimpleChoice("Character", "Character Model", "Comfort", "LinkMM", "LinkMM", "LinkOOT", "AdultLink", "Kafei");
+
+            AddSimpleToggle("CritWiggleDisable", "Disable Crit Wiggle", "Comfort", false);
+            AddSimpleToggle("QuickTextEnabled", "Quick Text", "Comfort", false);
+            AddSimpleToggle("FastPush", "Increase Push Speed", "Comfort", false);
+            AddSimpleToggle("CloseCows", "Close Cows", "Comfort", false);
+            //Imporived Picture Box
+            AddSimpleToggle("LenientGoronSpikes", "Lenient Goron Spikes", "Comfort", false);
+            //Target Health Bar
+            //Fill Wallet
+            //Hidden Ruppe Sparkle
+            AddSimpleToggle("SaferGlitches", "Safer Glitches", "Comfort", false);
+            //Improved Cmaera
+            //Easy Frame By Frame
+            //Treasure Game Spoilers
+            //Update Shops
+            AddSimpleToggle("UpdateChests", "Update Chests", "Comfort", false);
+            //Update World Models
+            //Update NPC Text
+            //No Downgrades
+            AddSimpleToggle("FixEponaSword", "Fix Epona Sword", "Comfort", false);
+            AddSimpleToggle("QuestItemStorage", "Quest Item Storage", "Comfort", false);
+            //Quest Items through Time
+            //Arrow Cycling
+            //Elegy Speedup
 
             //==========================================================================================================================================================================
             //Bombchu Drops Option
 
-            AddSimpleToggle("BombchuDrops", "Bombchu Drops", false);
+            AddSimpleToggle("BombchuDrops", "Bombchu Drops", "Comfort", false);
             var BombchuDropMMRTbombchu10 = CreateAdditionalLogic(MMRDictV16.ToggleOptions["BombchuDrops"].Enabled);
             AddAdditionalConditional(BombchuDropMMRTbombchu10, "ChestIkanaSecretShrineGrotto", "ChestTerminaGrottoBombchu", "ChestGreatBayCapeGrotto", "ChestGraveyardGrotto", "ChestToIkanaGrotto", "ChestToGoronRaceGrotto");
             BombchuDropMMRTbombchu10.LocationWhitelist = new string[] { "MMRTbombchu10", "Any Bombchu Pack" };
 
-            //==========================================================================================================================================================================
-            //Simple Options
-
-            AddSimpleToggle("CloseCows", "Close Cows", false);
-            AddSimpleToggle("IronGoron", "Iron Goron", false);
-            AddSimpleToggle("ClimbMostSurfaces", "Climb Most Surfaces", false);
-            AddSimpleToggle("HookshotAnySurface", "Hookshot Any Surface", false);
-            AddSimpleToggle("GiantMaskAnywhere", "Giant Mask Anywhere", false);
-            AddSimpleToggle("RandomizeEnemies", "Randomize Enemies", false);
-            AddSimpleChoice("DamageMode", "Damage Mode", "Default", "Default", "Double", "Quadruple", "OHKO", "Doom");
-            AddSimpleToggle("EnableSunsSong", "Enable Suns Song", false);
-            AddSimpleToggle("AllowFierceDeityAnywhere", "Fierce Deity Anywhere", false);
-            AddSimpleToggle("DeathMoonCrash", "Death is Moon Crash", false);
-            AddSimpleChoice("Character", "Character Model", "LinkMM", "LinkMM", "LinkOOT", "AdultLink", "Kafei");
-            AddSimpleMultiSelect("PriceMode", "Price Mode", "Purchases", "Minigames", "Misc", "AccountForRoyalWallet");
-            AddSimpleChoice("BlastMaskCooldown", "Blast Mask Cooldown", "Default", "Default", "Instant", "VeryShort", "Short", "Long", "VeryLong");
+            //Tollerant Gossip Angle
+            //Detect Stray Fairy
+            //Detect Skulltulla
 
             //==========================================================================================================================================================================
             //Static Edits
 
-            AddSimpleChoice("StaticEdits", "Do Static Edits", "Static", "Static");
+            AddSimpleChoice("StaticEdits", "Do Static Edits", "Static", "Static", "Static");
             var StaticLogicBeanReplacements = CreateLogicReplacement(MMRDictV16.ChoiceOptions["StaticEdits"].ValueList["Static"]);
             StaticLogicBeanReplacements.LocationWhitelist = new string[] { "ShopItemBusinessScrubMagicBeanInSwamp", "ShopItemBusinessScrubMagicBeanInTown" };
             AddLogicReplacement(StaticLogicBeanReplacements, "OtherMagicBean|MMRTCanBuyFromBeanScrub");
