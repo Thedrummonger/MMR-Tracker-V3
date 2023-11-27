@@ -48,7 +48,7 @@ namespace TestingForm.GameDataCreation.MMR
                     foreach (var BE in BossDoorEntrances)
                     {
                         var ACFromBoss = AreaClearMacros[Array.IndexOf(BossDoorEntrances, BE)];
-                        string LogicLine = $"(contains{{{DungeonAtArea}, {DEDest}}} && contains{{{BossDoorInDungeon}, {BE}}} && {ACFromBoss} && check{{{RemainsChecks[Array.IndexOf(BossDoorEntrances, BE)]}}})";
+                        string LogicLine = $"(contains{{{DungeonAtArea}, {DEDest}}} && contains{{{BossDoorInDungeon}, {BE}}} && {ACFromBoss} && check{{{BossDoorInDungeon}}})";
                         Logic.Add(LogicLine);
                     }
                 }

@@ -96,8 +96,8 @@ namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
             RemoveNonLogicAlteringSettings(LogicFile, DictionaryFile);
 
 
-            string FinalDictFile = Path.Combine(TestingReferences.GetDictionaryPath(), @"OOTMM V1.json");
-            string FinalLogicFile = Path.Combine(TestingReferences.GetLogicPresetsPath(), @"DEV-OOTMM Casual.json");
+            string FinalDictFile = Path.Combine(TestingReferences.GetTestingDictionaryPath(), @"OOTMM V1.json");
+            string FinalLogicFile = Path.Combine(TestingReferences.GetTestingLogicPresetsPath(), @"DEV-OOTMM Casual.json");
 
             File.WriteAllText(FinalLogicFile, JsonConvert.SerializeObject(LogicFile, Utility._NewtonsoftJsonSerializerOptions));
             File.WriteAllText(FinalDictFile, JsonConvert.SerializeObject(DictionaryFile, Utility._NewtonsoftJsonSerializerOptions));

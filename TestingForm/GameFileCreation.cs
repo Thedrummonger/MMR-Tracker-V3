@@ -18,6 +18,8 @@ namespace TestingForm
             MMRData.LogicFile CasualLogic = JsonConvert.DeserializeObject<MMRData.LogicFile>(File.ReadAllText(Path.Combine(TestingReferences.GetDevTestingPath(), "MMR 116", "REQ_CASUAL.txt")));
             var MMRDictV16 = GameDataCreation.MMR.GenData.CreateMMRFiles();
 
+            File.WriteAllText(Path.Combine(TestingReferences.GetLibraryDictionaryPath(), "MMR V24.json"), JsonConvert.SerializeObject(MMRDictV16, MMR_Tracker_V3.Utility._NewtonsoftJsonSerializerOptions));
+
             Utility.CreateTestingFile(MMRDictV16, @"MMR 116\MMRV16Dict", "json");
 
             WinFormTesting.ActivateWinFormInterface();

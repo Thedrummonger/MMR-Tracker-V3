@@ -103,8 +103,8 @@ namespace MMR_Tracker_V3.GameDataCreation.TPRando
 
             CreateHowlingStoneChecks(TRPLogic, TRPDictionary);
 
-            string FinalDictFile = Path.Combine(TestingReferences.GetDictionaryPath(), @"TPR V1.json");
-            string FinalLogicFile = Path.Combine(TestingReferences.GetLogicPresetsPath(), @"DEV-TPR Casual.json");
+            string FinalDictFile = Path.Combine(TestingReferences.GetTestingDictionaryPath(), @"TPR V1.json");
+            string FinalLogicFile = Path.Combine(TestingReferences.GetTestingLogicPresetsPath(), @"DEV-TPR Casual.json");
             File.WriteAllText(FinalLogicFile, JsonConvert.SerializeObject(TRPLogic, Utility._NewtonsoftJsonSerializerOptions));
             File.WriteAllText(FinalDictFile, JsonConvert.SerializeObject(TRPDictionary, Utility._NewtonsoftJsonSerializerOptions));
         }

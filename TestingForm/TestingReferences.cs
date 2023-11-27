@@ -21,17 +21,29 @@ namespace TestingForm
             if (DevINI == null) { return null; }
             return DevINI.TrackerCodePath;
         }
-        public static string GetDictionaryPath()
+        public static string GetTestingDictionaryPath()
         {
             return Path.Join(GetTestingFormDataPath(), "Recources", "Dictionaries");
         }
-        public static string GetLogicPresetsPath()
+        public static string GetTestingLogicPresetsPath()
         {
             return Path.Join(GetTestingFormDataPath(), "Recources", "Presets");
         }
         public static string GetTestingFormDataPath()
         {
             return Path.Join(GetDevCodePath(), "TestingForm");
+        }
+        public static string GetTrackerLibraryDataPath()
+        {
+            return Path.Join(GetDevCodePath(), "MMR Tracker V3");
+        }
+        public static string GetLibraryDictionaryPath()
+        {
+            return Path.Join(GetTrackerLibraryDataPath(), "Recources", "Dictionaries");
+        }
+        public static string GetLibraryLogicPresetsPath()
+        {
+            return Path.Join(GetTrackerLibraryDataPath(), "Recources", "Presets");
         }
         public static string GetOtherGameDataPath(string GameFolder = "")
         {
