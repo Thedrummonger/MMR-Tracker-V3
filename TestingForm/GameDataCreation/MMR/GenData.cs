@@ -292,6 +292,18 @@ namespace TestingForm.GameDataCreation.MMR
             StaticLogicBeanReplacements.LocationWhitelist = new string[] { "ShopItemBusinessScrubMagicBeanInSwamp", "ShopItemBusinessScrubMagicBeanInTown" };
             AddLogicReplacement(StaticLogicBeanReplacements, "OtherMagicBean|MMRTCanBuyFromBeanScrub");
 
+            var StaticLogicTradeItemSaftey = CreateLogicReplacement(MMRDictV16.ChoiceOptions["StaticEdits"].ValueList["Static"]);
+            AddLogicReplacement(StaticLogicTradeItemSaftey, "TradeItemKafeiLetter|true", "TradeItemPendant|true");
+            StaticLogicTradeItemSaftey.LocationWhitelist = new string[] { "UpgradeBigBombBag", "MaskBlast", "NotebookSaveOldLady", "UpgradeMirrorShield" };
+
+            var StaticLogicBottleCatchSaftey1 = CreateLogicReplacement(MMRDictV16.ChoiceOptions["StaticEdits"].ValueList["Static"]);
+            AddLogicReplacement(StaticLogicBottleCatchSaftey1, "BottleCatchEgg|true", "BottleCatchBug|true", "BottleCatchFish|true");
+            StaticLogicBottleCatchSaftey1.LocationWhitelist = new string[] { "BottleCatchPrincess", "BottleCatchBigPoe" };
+
+            var StaticLogicBottleCatchSaftey2 = CreateLogicReplacement(MMRDictV16.ChoiceOptions["StaticEdits"].ValueList["Static"]);
+            AddLogicReplacement(StaticLogicBottleCatchSaftey2, "BottleCatchFish|true");
+            StaticLogicBottleCatchSaftey2.LocationWhitelist = new string[] { "BottleCatchEgg" };
+
             var AreaClearMacros = exportData.AreaClear.Select(x => x.ID).ToArray();
 
             var StaticLogicAreaClearReplacements = CreateLogicReplacement(MMRDictV16.ChoiceOptions["StaticEdits"].ValueList["Static"]);

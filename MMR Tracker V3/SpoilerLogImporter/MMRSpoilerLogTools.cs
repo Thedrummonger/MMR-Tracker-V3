@@ -68,6 +68,35 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 BlitzStartingItems = Container.Instance.SpoilerLog.Log.ToList().GetRange((BlitzStartingItemsIndex+1)..(BlitzStartingItemsEnd)).Where(x => !string.IsNullOrWhiteSpace(x)).ToList();
             }
 
+            /* The randomizer will rename these locations based on boss door rando, since the tracker can't really support live location renaming based
+             * on what item is where, I'll just manually swap them when reading the spoiler log.
+             * 
+             * TODO hopefully find a better way to do this mess
+             * 
+            HeartContainerWoodfall gets renamed based on AreaOdolwasLair
+            HeartContainerSnowhead gets renamed based on AreaGohtsLair
+            HeartContainerGreatBay gets renamed based on AreaGyorgsLair
+            HeartContainerStoneTower gets renamed based on AreaTwinmoldsLair
+            RemainsOdolwa gets renamed based on AreaOdolwasLair
+            RemainsGoht gets renamed based on AreaGohtsLair
+            RemainsGyorg gets renamed based on AreaGyorgsLair
+            RemainsTwinmold gets renamed based on AreaTwinmoldsLair
+            */
+            Dictionary<string, string> RenamedHeartContainerChecks = new Dictionary<string, string>()
+            {
+                { "HeartContainerWoodfall", "AreaOdolwasLair" },
+                { "HeartContainerSnowhead", "AreaGohtsLair" },
+                { "HeartContainerGreatBay", "AreaGyorgsLair" },
+                { "HeartContainerStoneTower", "AreaTwinmoldsLair" }
+            };
+            Dictionary<string, string> RenamedRemainsChecks = new Dictionary<string, string>()
+            {
+                { "RemainsOdolwa", "AreaOdolwasLair" },
+                { "RemainsGoht", "AreaGohtsLair" },
+                { "RemainsGyorg", "AreaGyorgsLair" },
+                { "RemainsTwinmold", "AreaTwinmoldsLair" }
+            };
+
             ResetInstance(Container.Instance);
 
             ApplySettings(Container.Instance, Settings);
@@ -77,6 +106,15 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             SettingStringHandler.ApplyLocationString(Settings.GetValueAs<string, string>("CustomItemListString"), Container.Instance);
             SettingStringHandler.ApplyJunkString(Settings.GetValueAs<string, string>("CustomJunkLocationsString"), Container.Instance);
             SettingStringHandler.ApplyStartingItemString(Settings.GetValueAs<string, string>("CustomStartingItemListString"), Container.Instance);
+
+            //Keep track of boss door locations even if they aren't randomized
+            Dictionary<string, string> BossDoorMapping = new Dictionary<string, string>()
+            {
+                { "AreaOdolwasLair", "AreaOdolwasLair" },
+                { "AreaGohtsLair", "AreaGohtsLair" },
+                { "AreaGyorgsLair", "AreaGyorgsLair" },
+                { "AreaTwinmoldsLair", "AreaTwinmoldsLair" }
+            };
             foreach(var E in EntranceLocationDict)
             {
                 var Entrance = Container.Instance.LocationPool.First(x => x.Value.GetDictEntry(Container.Instance).SpoilerData.SpoilerLogNames.Contains(E.Key)).Value;
@@ -84,6 +122,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
 
                 Entrance.SetRandomizedState(RandomizedState.Randomized, Container.Instance);
                 Entrance.Randomizeditem.SpoilerLogGivenItem = Destination.Id;
+                if (BossDoorMapping.ContainsKey(Entrance.ID)) { BossDoorMapping[Entrance.ID] = Destination.Id; }
             }
 
             foreach(var i in Container.Instance.LocationPool.Values)
@@ -110,6 +149,24 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 }
                 var SpoilerLocation = PossibleLocations.First().Value;
                 var Item = Container.Instance.GetItemToPlace(i.Item2, DoNameEdits: true);
+
+                if (RenamedHeartContainerChecks.ContainsKey(SpoilerLocation.ID))
+                {
+                    var BossDoorAtCheck = RenamedHeartContainerChecks[SpoilerLocation.ID];
+                    var NewBossDoor = BossDoorMapping[BossDoorAtCheck];
+                    var NewLocation = RenamedHeartContainerChecks.First(x => x.Value == NewBossDoor);
+                    Debug.WriteLine($"Location {SpoilerLocation.ID} Was changed to {NewLocation.Key}");
+                    SpoilerLocation = Container.Instance.GetLocationByID(NewLocation.Key);
+                }
+                else if (RenamedRemainsChecks.ContainsKey(SpoilerLocation.ID))
+                {
+                    var BossDoorAtCheck = RenamedRemainsChecks[SpoilerLocation.ID];
+                    var NewBossDoor = BossDoorMapping[BossDoorAtCheck];
+                    var NewLocation = RenamedRemainsChecks.First(x => x.Value == NewBossDoor);
+                    Debug.WriteLine($"Location {SpoilerLocation.ID} Was changed to {NewLocation.Key}");
+                    SpoilerLocation = Container.Instance.GetLocationByID(NewLocation.Key);
+                }
+
                 if (Item is null)
                 {
                     Debug.WriteLine($"No more {i.Item2} Could Be Placed. Assuming Junk?");
@@ -178,7 +235,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 var item = instance.GetItemByID(Item);
                 if (item.AmountInStartingpool > 0)
                 {
-                    //throw new Exception($"{item.Id} Was already a starting item?");
+                    throw new Exception($"{item.Id} Was already a starting item?");
                 }
                 item.AmountInStartingpool = 1;
             }
@@ -249,6 +306,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 {
                     string RandomizedItem = i.Value.GetItemAtCheck(instance);
                     var OriginalItemObj = instance.GetItemByID(RandomizedItem);
+
                     InaccessableItems.Add(OriginalItemObj.Id);
                 }
             }
@@ -277,12 +335,12 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             {
                 if (LogicEditing.IsLogicFunction(Item, out string Func, out string Param))
                 {
-                    Debug.WriteLine($"Item Was Function {Func}");
+                    //Debug.WriteLine($"Item Was Function {Func}");
                     if (Func.In("contains", "trick", "setting", "option", "rand", "randomized")) 
                     {
-                        Debug.WriteLine($"Parsing {Func} Function");
+                        //Debug.WriteLine($"Parsing {Func} Function");
                         LogicEditing.CheckLogicFunction(instance, Item, new List<string>(), out bool FunctionEntryValid);
-                        Debug.WriteLine($"Valid? {FunctionEntryValid}");
+                        //Debug.WriteLine($"Valid? {FunctionEntryValid}");
                         return !FunctionEntryValid;
                     }
                     else { return false; }
@@ -377,7 +435,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 string[] Data = ItemLocation.Split("->");
                 string Location = Data[0].Trim();
                 if (Location.StartsWith("- ")) { continue; }
-                string Item = Data[1].Replace("*", "").Trim();
+                string Item = Data[1].Replace("*", "").Replace("^", "").Trim();
                 ItemLocationDict.Add(new(Location, Item));
             }
             return ItemLocationDict;

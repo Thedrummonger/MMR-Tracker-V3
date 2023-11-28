@@ -53912,6 +53912,40 @@
                 }
               },
               {
+                "LocationWhitelist": [
+                  "UpgradeBigBombBag",
+                  "MaskBlast",
+                  "NotebookSaveOldLady",
+                  "UpgradeMirrorShield"
+                ],
+                "LocationBlacklist": [],
+                "ReplacementList": {
+                  "TradeItemKafeiLetter": "true",
+                  "TradeItemPendant": "true"
+                }
+              },
+              {
+                "LocationWhitelist": [
+                  "BottleCatchPrincess",
+                  "BottleCatchBigPoe"
+                ],
+                "LocationBlacklist": [],
+                "ReplacementList": {
+                  "BottleCatchEgg": "true",
+                  "BottleCatchBug": "true",
+                  "BottleCatchFish": "true"
+                }
+              },
+              {
+                "LocationWhitelist": [
+                  "BottleCatchEgg"
+                ],
+                "LocationBlacklist": [],
+                "ReplacementList": {
+                  "BottleCatchFish": "true"
+                }
+              },
+              {
                 "LocationWhitelist": [],
                 "LocationBlacklist": [
                   "CanClearDungeonAtWoodfall",
