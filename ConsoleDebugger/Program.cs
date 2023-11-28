@@ -525,20 +525,9 @@ namespace CLIFrontEnd
 
             newTrackerInstance.logicCalculation.ResetAutoObtainedItems();
 
-            MMRData.SpoilerLogData SpoilerLogData = null;
-            try { SpoilerLogData = Newtonsoft.Json.JsonConvert.DeserializeObject<MMRData.SpoilerLogData>(File.ReadAllText(path)); }
-            catch { }
+            Console.WriteLine("Importing Spoiler Log...");
+            SpoilerLogTools.ImportSpoilerLog(File.ReadAllLines(path), path, newTrackerInstance);
 
-            if (SpoilerLogData != null && newTrackerInstance.Instance.LogicFile.GameCode == "MMR")
-            {
-                Console.WriteLine("Applying Settings File...");
-                MMRSpoilerLogTools.ApplyMMRandoSettings(newTrackerInstance.Instance, SpoilerLogData);
-            }
-            else
-            {
-                Console.WriteLine("Importing Spoiler Log...");
-                SpoilerLogTools.ImportSpoilerLog(File.ReadAllLines(path), path, newTrackerInstance);
-            }
             newTrackerInstance.logicCalculation.CalculateLogic();
         }
 

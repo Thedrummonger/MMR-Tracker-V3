@@ -252,16 +252,15 @@ namespace MMR_Tracker_V3
             var DefSet = instance.LogicDictionary.DefaultSettings;
             if (!string.IsNullOrWhiteSpace(DefSet.CustomItemListString))
             {
-                MMRSpoilerLogTools.ApplyLocationString(DefSet.CustomItemListString, instance);
+                SettingStringHandler.ApplyLocationString(DefSet.CustomItemListString, instance);
             }
             if (!string.IsNullOrWhiteSpace(DefSet.CustomJunkLocationsString))
             {
-                MMRSpoilerLogTools.ApplyJunkString(DefSet.CustomJunkLocationsString, instance);
+                SettingStringHandler.ApplyJunkString(DefSet.CustomJunkLocationsString, instance);
             }
             if (!string.IsNullOrWhiteSpace(DefSet.CustomStartingItemListString))
             {
-                Debug.WriteLine($"Applying starting item string {DefSet.CustomStartingItemListString}");
-                MMRSpoilerLogTools.ApplyStartingItemString(DefSet.CustomStartingItemListString, instance);
+                SettingStringHandler.ApplyStartingItemString(DefSet.CustomStartingItemListString, instance);
             }
             if (DefSet.ManualRandomizationState is not null)
             {

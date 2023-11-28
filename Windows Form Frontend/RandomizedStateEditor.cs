@@ -52,11 +52,11 @@ namespace Windows_Form_Frontend
         private void UpdatedSettingStrings()
         {
             var LocationList = _Instance.LocationPool.Values.Where(x => !x.GetDictEntry(_Instance).IgnoreForSettingString ?? true).ToList();
-            var StartingItems = MMRSpoilerLogTools.GetStartingItemList(_Instance).ToList();
+            var StartingItems = SettingStringHandler.GetStartingItemList(_Instance).ToList();
             var TrickList = _Instance.MacroPool.Values.Where(x => x.isTrick(_Instance)).ToList();
-            txtLocString.Text = MMRSpoilerLogTools.CreateSettingString(LocationList, LocationList.Where(x => !x.IsUnrandomized()).ToList());
-            txtjunkString.Text = MMRSpoilerLogTools.CreateSettingString(LocationList, LocationList.Where(x => x.IsJunk()).ToList());
-            txtStartString.Text = MMRSpoilerLogTools.CreateSettingString(StartingItems, StartingItems.Where(x => x.AmountInStartingpool > 0).ToList());
+            txtLocString.Text = SettingStringHandler.CreateSettingString(LocationList, LocationList.Where(x => !x.IsUnrandomized()).ToList());
+            txtjunkString.Text = SettingStringHandler.CreateSettingString(LocationList, LocationList.Where(x => x.IsJunk()).ToList());
+            txtStartString.Text = SettingStringHandler.CreateSettingString(StartingItems, StartingItems.Where(x => x.AmountInStartingpool > 0).ToList());
             //txtTrickString.Text = CreateSettingString(TrickList, TrickList.Where(x => x.TrickEnabled).ToList());
         }
 
@@ -370,9 +370,9 @@ namespace Windows_Form_Frontend
 
         private void btnApplySettingStrings_Click(object sender, EventArgs e)
         {
-            MMRSpoilerLogTools.ApplyLocationString(txtLocString.Text, _Instance);
-            MMRSpoilerLogTools.ApplyJunkString(txtjunkString.Text, _Instance);
-            MMRSpoilerLogTools.ApplyStartingItemString(txtStartString.Text, _Instance);
+            SettingStringHandler.ApplyLocationString(txtLocString.Text, _Instance);
+            SettingStringHandler.ApplyJunkString(txtjunkString.Text, _Instance);
+            SettingStringHandler.ApplyStartingItemString(txtStartString.Text, _Instance);
 
             UpdateItemSets();
             PrintToLocationList();
@@ -384,7 +384,6 @@ namespace Windows_Form_Frontend
 
         private void btnLoadSettingFile_Click(object sender, EventArgs e)
         {
-            MMRData.SpoilerLogData configuration;
             OpenFileDialog fileDialog = new OpenFileDialog();
             var Result = fileDialog.ShowDialog();
             if (Result == DialogResult.Cancel || !File.Exists(fileDialog.FileName)) { return; }

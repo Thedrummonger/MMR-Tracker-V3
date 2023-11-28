@@ -12118,7 +12118,7 @@
     {
       "ID": "HeartPieceNotebookMayor",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "BaseItemPool"
@@ -12127,7 +12127,7 @@
     {
       "ID": "HeartPieceNotebookPostman",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "BaseItemPool"
@@ -12136,7 +12136,7 @@
     {
       "ID": "HeartPieceNotebookRosa",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "BaseItemPool"
@@ -12145,7 +12145,7 @@
     {
       "ID": "HeartPieceNotebookHand",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "BaseItemPool"
@@ -12154,7 +12154,7 @@
     {
       "ID": "HeartPieceNotebookGran1",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "BaseItemPool"
@@ -12163,7 +12163,7 @@
     {
       "ID": "HeartPieceNotebookGran2",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "BaseItemPool"
@@ -12172,7 +12172,7 @@
     {
       "ID": "HeartPieceKeatonQuiz",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "BaseItemPool"
@@ -12181,7 +12181,7 @@
     {
       "ID": "HeartPieceDekuPlayground",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "BaseItemPool"
@@ -12190,7 +12190,7 @@
     {
       "ID": "HeartPieceTownArchery",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "BaseItemPool"
@@ -12199,7 +12199,7 @@
     {
       "ID": "HeartPieceHoneyAndDarling",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "BaseItemPool"
@@ -12208,7 +12208,7 @@
     {
       "ID": "HeartPieceSwordsmanSchool",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "BaseItemPool"
@@ -12217,7 +12217,7 @@
     {
       "ID": "HeartPiecePostBox",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "BaseItemPool"
@@ -12226,7 +12226,7 @@
     {
       "ID": "HeartPieceTerminaGossipStones",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "BaseItemPool"
@@ -12235,7 +12235,7 @@
     {
       "ID": "HeartPieceTerminaBusinessScrub",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "BaseItemPool"
@@ -12244,7 +12244,7 @@
     {
       "ID": "HeartPieceSwampArchery",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "BaseItemPool"
@@ -12253,7 +12253,7 @@
     {
       "ID": "HeartPiecePictobox",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "BaseItemPool"
@@ -12262,7 +12262,7 @@
     {
       "ID": "HeartPieceBoatArchery",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "BaseItemPool"
@@ -12271,7 +12271,7 @@
     {
       "ID": "HeartPieceChoir",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "BaseItemPool"
@@ -12280,7 +12280,7 @@
     {
       "ID": "HeartPieceBeaverRace",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "BaseItemPool"
@@ -12289,7 +12289,7 @@
     {
       "ID": "HeartPieceSeaHorse",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "BaseItemPool"
@@ -12298,7 +12298,7 @@
     {
       "ID": "HeartPieceFishermanGame",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "BaseItemPool"
@@ -12307,7 +12307,7 @@
     {
       "ID": "HeartPieceEvan",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "BaseItemPool"
@@ -12316,7 +12316,7 @@
     {
       "ID": "HeartPieceDogRace",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "BaseItemPool"
@@ -12325,7 +12325,7 @@
     {
       "ID": "HeartPiecePoeHut",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "BaseItemPool"
@@ -12334,7 +12334,7 @@
     {
       "ID": "HeartPieceTreasureChestGame",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "BaseItemPool"
@@ -12343,7 +12343,7 @@
     {
       "ID": "HeartPiecePeahat",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "BaseItemPool"
@@ -12352,7 +12352,7 @@
     {
       "ID": "HeartPieceDodong",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "BaseItemPool"
@@ -12361,7 +12361,7 @@
     {
       "ID": "HeartPieceWoodFallChest",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "BaseItemPool"
@@ -12370,7 +12370,7 @@
     {
       "ID": "HeartPieceTwinIslandsChest",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "BaseItemPool"
@@ -12379,7 +12379,7 @@
     {
       "ID": "HeartPieceOceanSpiderHouse",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "BaseItemPool"
@@ -12388,7 +12388,7 @@
     {
       "ID": "HeartPieceKnuckle",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "BaseItemPool"
@@ -13558,7 +13558,7 @@
     {
       "ID": "ChestSecretShrineHeartPiece",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "EverythingElse"
@@ -13657,7 +13657,7 @@
     {
       "ID": "HeartPieceBank",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "EverythingElse"
@@ -13666,7 +13666,7 @@
     {
       "ID": "HeartPieceSouthClockTown",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "EverythingElse"
@@ -13675,7 +13675,7 @@
     {
       "ID": "HeartPieceNorthClockTown",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "EverythingElse"
@@ -13684,7 +13684,7 @@
     {
       "ID": "HeartPieceToSwamp",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "EverythingElse"
@@ -13693,7 +13693,7 @@
     {
       "ID": "HeartPieceSwampScrub",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "EverythingElse"
@@ -13702,7 +13702,7 @@
     {
       "ID": "HeartPieceDekuPalace",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "EverythingElse"
@@ -13711,7 +13711,7 @@
     {
       "ID": "HeartPieceGoronVillageScrub",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "EverythingElse"
@@ -13720,7 +13720,7 @@
     {
       "ID": "HeartPieceZoraGrotto",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "EverythingElse"
@@ -13729,7 +13729,7 @@
     {
       "ID": "HeartPieceLabFish",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "EverythingElse"
@@ -13738,7 +13738,7 @@
     {
       "ID": "HeartPieceGreatBayCapeLikeLike",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "EverythingElse"
@@ -13747,7 +13747,7 @@
     {
       "ID": "HeartPiecePiratesFortress",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "EverythingElse"
@@ -13756,7 +13756,7 @@
     {
       "ID": "HeartPieceZoraHallScrub",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "EverythingElse"
@@ -13765,7 +13765,7 @@
     {
       "ID": "HeartPieceToSnowhead",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "EverythingElse"
@@ -13774,7 +13774,7 @@
     {
       "ID": "HeartPieceGreatBayCoast",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "EverythingElse"
@@ -13783,7 +13783,7 @@
     {
       "ID": "HeartPieceIkana",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "EverythingElse"
@@ -13792,7 +13792,7 @@
     {
       "ID": "HeartPieceCastle",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "EverythingElse"
@@ -13801,7 +13801,7 @@
     {
       "ID": "HeartContainerWoodfall",
       "Name": "Heart Container",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "HeartContainers",
         "EverythingElse"
@@ -13810,7 +13810,7 @@
     {
       "ID": "HeartContainerSnowhead",
       "Name": "Heart Container",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "HeartContainers",
         "EverythingElse"
@@ -13819,7 +13819,7 @@
     {
       "ID": "HeartContainerGreatBay",
       "Name": "Heart Container",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "HeartContainers",
         "EverythingElse"
@@ -13828,7 +13828,7 @@
     {
       "ID": "HeartContainerStoneTower",
       "Name": "Heart Container",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "HeartContainers",
         "EverythingElse"
@@ -13909,7 +13909,7 @@
     {
       "ID": "HeartPieceDekuTrial",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "MoonItems"
@@ -13918,7 +13918,7 @@
     {
       "ID": "HeartPieceGoronTrial",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "MoonItems"
@@ -13927,7 +13927,7 @@
     {
       "ID": "HeartPieceZoraTrial",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "MoonItems"
@@ -13936,7 +13936,7 @@
     {
       "ID": "HeartPieceLinkTrial",
       "Name": "Piece of Heart",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "PiecesOfHeart",
         "MoonItems"
@@ -14000,7 +14000,7 @@
     {
       "ID": "StartingHeartContainer1",
       "Name": "Heart Container",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "HeartContainers",
         "CrazyStartingItems"
@@ -14009,7 +14009,7 @@
     {
       "ID": "StartingHeartContainer2",
       "Name": "Heart Container",
-      "StartingItem": false,
+      "StartingItem": true,
       "Tags": [
         "HeartContainers",
         "CrazyStartingItems"

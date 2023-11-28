@@ -22,6 +22,16 @@ namespace MMR_Tracker_V3
 {
     public static class Utility
     {
+        public static T GetValueAs<Y, T>(this Dictionary<Y, object> source, Y Key)
+        {
+            if (!source.ContainsKey(Key)) { return default; }
+            return source[Key].SerializeConvert<T>();
+        }
+        public static T SerializeConvert<T>(this object source)
+        {
+            string Serialized = JsonConvert.SerializeObject(source);
+            return JsonConvert.DeserializeObject<T>(Serialized);
+        }
         public static string[] StringSplit(this string input, string Split, StringSplitOptions options = StringSplitOptions.None)
         {
             return input.Split(new string[] { Split }, options);
@@ -35,6 +45,11 @@ namespace MMR_Tracker_V3
         public static bool In<T>(this T obj, params T[] args)
         {
             return args.Contains(obj);
+        }
+        public static List<T> GetRange<T>(this List<T> list, Range range)
+        {
+            var (start, length) = range.GetOffsetAndLength(list.Count);
+            return list.GetRange(start, length);
         }
 
         public static string TrimSpaces(this string myString)

@@ -53,21 +53,6 @@ namespace MMR_Tracker_V3.TrackerObjects
         }
 
         [Serializable]
-        public class SpoilerLogData
-        {
-            public GameplaySettings GameplaySettings { get; set; }
-            public Dictionary<string, string> LocationLog { get; set; } = new Dictionary<string, string>();
-            public Dictionary<string, string> GossipLog { get; set; } = new Dictionary<string, string>();
-            public Dictionary<string, int> PriceLog { get; set; } = new Dictionary<string, int>();
-        }
-
-        [Serializable]
-        public class GameplaySettings
-        {
-
-        }
-
-        [Serializable]
         public class LogicFile
         {
             public int Version { get; set; } = -1;

@@ -176,6 +176,15 @@ namespace TestingForm.GameDataCreation.MMR
             string[] AllBossKeys = MMRDictV16.ItemList.Values.Where(x => x.Name.EndsWith("Boss Key")).Select(x => x.ID + "|true").ToArray();
             AddLogicReplacement(CreateLogicReplacement(MMRDictV16.MultiSelectOptions["BossKeyMode"].ValueList["DoorsOpen"]), AllBossKeys);
 
+
+            AddSimpleMultiSelect("StrayFairyMode", "Stray Fairy Mode", "Main Settings", "ChestsOnly", "KeepWithinTemples", "KeepWithinArea", "KeepWithinOverworld");
+            var AllSwampFairies = MMRDictV16.ItemList.Keys.Where(x => x.StartsWith("CollectibleStrayFairyWoodfall"));
+            var AllMountainFairies = MMRDictV16.ItemList.Keys.Where(x => x.StartsWith("CollectibleStrayFairySnowhead"));
+            var AllOceanFairies = MMRDictV16.ItemList.Keys.Where(x => x.StartsWith("CollectibleStrayFairyGreatBay"));
+            var AllCanyonFairies = MMRDictV16.ItemList.Keys.Where(x => x.StartsWith("CollectibleStrayFairyStoneTower"));
+            string[] AllFairies = AllSwampFairies.Concat(AllMountainFairies).Concat(AllOceanFairies).Concat(AllCanyonFairies).Select(x => x + "|true").ToArray();
+            AddLogicReplacement(CreateLogicReplacement(MMRDictV16.MultiSelectOptions["StrayFairyMode"].ValueList["ChestsOnly"]), AllFairies);
+
             //Movement Gimicks
 
             AddSimpleChoice("MovementMode", "Gravity/Speed", "Gimmicks", "Default", "Default", "HighSpeed", "SuperLowGravity", "LowGravity", "HighGravity");
@@ -211,7 +220,7 @@ namespace TestingForm.GameDataCreation.MMR
 
 
             AddSimpleChoice("BlastMaskCooldown", "Blast Mask Cooldown", "Gimmicks", "Default", "Default", "Instant", "VeryShort", "Short", "Long", "VeryLong");
-            AddSimpleChoice("NutAndStickDrops", "Nut and Stick Drops", "Gimmicks", "Default", "Default", "Light", "Medium", "Extra", "Mayhem");
+            AddSimpleChoice("NutandStickDrops", "Nut and Stick Drops", "Gimmicks", "Default", "Default", "Light", "Medium", "Extra", "Mayhem");
             AddSimpleToggle("OcarinaUnderwater", "Ocarina Underwater", "Gimmicks", false);
             AddSimpleToggle("EnableSunsSong", "Enable Suns Song", "Gimmicks", false);
             AddSimpleToggle("FreeScarecrow", "Free Scarecrow's Song", "Gimmicks", false);
@@ -396,7 +405,7 @@ namespace TestingForm.GameDataCreation.MMR
                     ValidItemTypes = new string[] { EntranceType.Replace(" ", "") },
                     SpoilerData = new MMRData.SpoilerlogReference
                     {
-                        SpoilerLogNames = new string[] { Entrance.ID }
+                        SpoilerLogNames = new string[] { Entrance.Name }
                     }
                 };
                 mMRDictV16.LocationList.Add(Entrance.ID, NewLocation);
@@ -409,7 +418,7 @@ namespace TestingForm.GameDataCreation.MMR
                     ValidStartingItem = false,
                     SpoilerData = new MMRData.SpoilerlogReference
                     {
-                        SpoilerLogNames = new string[] { Entrance.ID }
+                        SpoilerLogNames = new string[] { Entrance.Name }
                     }
                 };
                 mMRDictV16.ItemList.Add(Entrance.ID, NewItem);
@@ -464,6 +473,7 @@ namespace TestingForm.GameDataCreation.MMR
                     ItemTypes = new string[] { item.ID.StartsWith("BottleCatch") ? "BottleCatch" : "Default" },
                     Name = item.Name,
                     ValidStartingItem = item.StartingItem,
+                    IgnoreForSettingString = item.Name.Contains("Heart"),
                     WalletCapacity = item.ID.StartsWith("Upgrade") && item.ID.EndsWith("Wallet") ? -1 : null,
                     SpoilerData = new MMRData.SpoilerlogReference
                     {
