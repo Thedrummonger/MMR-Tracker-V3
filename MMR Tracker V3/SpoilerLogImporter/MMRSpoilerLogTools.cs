@@ -101,6 +101,14 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
 
             ApplySettings(Container.Instance, Settings);
 
+            foreach(var trick in Settings.GetValueAs<string, string[]>("EnabledTricks"))
+            {
+                var Trick = Container.Instance.GetMacroByID(trick);
+                if (Trick is null) { Debug.WriteLine($"trick {trick} was not valid"); continue; }
+                if (!Trick.isTrick(Container.Instance)) { Debug.WriteLine($"macro {trick} was not a trick"); continue; }
+                Trick.TrickEnabled = true;
+            }
+
             Container.logicCalculation.CompileOptionActionEdits();
 
             SettingStringHandler.ApplyLocationString(Settings.GetValueAs<string, string>("CustomItemListString"), Container.Instance);
@@ -235,7 +243,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 var item = instance.GetItemByID(Item);
                 if (item.AmountInStartingpool > 0)
                 {
-                    throw new Exception($"{item.Id} Was already a starting item?");
+                    //throw new Exception($"{item.Id} Was already a starting item?");
                 }
                 item.AmountInStartingpool = 1;
             }
@@ -408,7 +416,8 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
 
         private static void ResetInstance(InstanceData.TrackerInstance instance)
         {
-            foreach(var i in instance.LocationPool)
+            instance.ToggleAllTricks(false);
+            foreach (var i in instance.LocationPool)
             {
                 i.Value.SetRandomizedState(RandomizedState.Randomized, instance);
                 if (i.Value.GetDictEntry(instance).ValidItemTypes.Contains("DungeonEntrance") || i.Value.GetDictEntry(instance).ValidItemTypes.Contains("BossDoorEntrance"))
@@ -419,10 +428,6 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             foreach (var i in instance.ItemPool)
             {
                 i.Value.AmountInStartingpool = 0;
-            }
-            foreach (var i in instance.MacroPool.Where(x => x.Value.isTrick(instance)))
-            {
-                i.Value.TrickEnabled = false;
             }
         }
 
