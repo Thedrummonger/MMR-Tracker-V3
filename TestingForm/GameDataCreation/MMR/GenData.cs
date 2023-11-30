@@ -61,6 +61,13 @@ namespace TestingForm.GameDataCreation.MMR
             var BossDoorEntrances = ExportData.Entrances.Where(x => x.ID.Contains("Lair")).Select(x => x.ID).ToArray();
             var AreaClearMacros = ExportData.AreaClear.Select(x => x.ID).ToArray();
             var RemainsChecks = MMRDictV16.LocationList.Keys.Where(x => x.StartsWith("Remains")).ToArray();
+            string[] BossShortcutRemainsMacros = new string[]
+            {
+                "MMRTWoodfallRemains",
+                "MMRTSnowheadRemains",
+                "MMRTGreatBaylRemains",
+                "MMRTStoneTowerRemains"
+            };
 
             foreach (var AAC in ExportData.AdjustedAreaClear)
             {
@@ -78,6 +85,17 @@ namespace TestingForm.GameDataCreation.MMR
                 }
 
                 MMRDictV16.AdditionalLogic.Add(new JsonFormatLogicItem { Id = AAC, ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(MMRLogicStringParser, string.Join(" || ", Logic), AAC) });
+            }
+            foreach (var ShortcutMacro in BossShortcutRemainsMacros)
+            {
+                int MacroInd = Array.IndexOf(BossShortcutRemainsMacros, ShortcutMacro);
+                List<List<string>> Logic = new() { new List<string> { $"randomized{{{BossDoorEntrances[MacroInd]}, false}}", RemainsChecks[MacroInd] } };
+                foreach (var i in BossDoorEntrances)
+                {
+                    int BDInd = Array.IndexOf(BossDoorEntrances, i);
+                    Logic.Add(new List<string> { $"contains{{{BossDoorEntrances[MacroInd]}, {i}}}", RemainsChecks[BDInd] });
+                }
+                MMRDictV16.AdditionalLogic.Add(new JsonFormatLogicItem { Id = ShortcutMacro, ConditionalItems = Logic });
             }
         }
 
@@ -304,6 +322,14 @@ namespace TestingForm.GameDataCreation.MMR
             AddLogicReplacement(StaticLogicBottleCatchSaftey2, "BottleCatchFish|true");
             StaticLogicBottleCatchSaftey2.LocationWhitelist = new string[] { "BottleCatchEgg" };
 
+            var StaticLogicBoosWarpRemainLogic = CreateLogicReplacement(MMRDictV16.ChoiceOptions["StaticEdits"].ValueList["Static"]);
+            AddLogicReplacement(StaticLogicBoosWarpRemainLogic, "RemainsOdolwa|MMRTWoodfallRemains", "RemainsGoht|MMRTSnowheadRemains", "RemainsGyorg|MMRTGreatBaylRemains", "RemainsTwinmold|MMRTStoneTowerRemains");
+            StaticLogicBoosWarpRemainLogic.LocationBlacklist = new string[] { "AreaMoonAccess", "MMRTWoodfallRemains", "MMRTSnowheadRemains", "MMRTGreatBaylRemains", "MMRTStoneTowerRemains" };
+
+            var StaticLogicBossRemainWinCon = CreateLogicReplacement(MMRDictV16.ChoiceOptions["StaticEdits"].ValueList["Static"]);
+            AddLogicReplacement(StaticLogicBossRemainWinCon, "RemainsOdolwa|BossRemains, RequiredBossRemains", "RemainsGoht|true", "RemainsGyorg|true", "RemainsTwinmold|true");
+            StaticLogicBossRemainWinCon.LocationWhitelist = new string[] { "AreaMoonAccess" };
+
             var AreaClearMacros = exportData.AreaClear.Select(x => x.ID).ToArray();
 
             var StaticLogicAreaClearReplacements = CreateLogicReplacement(MMRDictV16.ChoiceOptions["StaticEdits"].ValueList["Static"]);
@@ -351,7 +377,6 @@ namespace TestingForm.GameDataCreation.MMR
 
             //Logic Overrides
             AddAdditionalLogic("OtherInaccessible", "false");
-            AddAdditionalLogic("AreaMoonAccess", "BossRemains, RequiredBossRemains && Play Oath to Order");
             AddAdditionalLogic("OtherCredits", "(setting{VictoryMode, DirectToCredits} || (AreaMoonAccess && OtherKillMajora)) && " +
                 "HasVictoryModeFairies && HasVictoryModeSkulls && HasVictoryModeNonTransformationMask && HasVictoryModeTransformationMask && " +
                 "HasVictoryModeNotebook && HasVictoryModeHearts && HasVictoryModeRemains");
@@ -399,6 +424,7 @@ namespace TestingForm.GameDataCreation.MMR
             MMRDictV16.MacroList.Add("MMRTWallet200", new LogicDictionaryData.DictionaryMacroEntry { ID = "MMRTWallet200", WalletCapacity = 200 });
             MMRDictV16.MacroList.Add("MMRTWallet500", new LogicDictionaryData.DictionaryMacroEntry { ID = "MMRTWallet500", WalletCapacity = 500 });
             MMRDictV16.MacroList.Add("MMRTWallet999", new LogicDictionaryData.DictionaryMacroEntry { ID = "MMRTWallet999", WalletCapacity = 999 });
+
 
         }
 

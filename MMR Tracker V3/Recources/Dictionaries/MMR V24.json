@@ -53948,6 +53948,34 @@
               {
                 "LocationWhitelist": [],
                 "LocationBlacklist": [
+                  "AreaMoonAccess",
+                  "MMRTWoodfallRemains",
+                  "MMRTSnowheadRemains",
+                  "MMRTGreatBaylRemains",
+                  "MMRTStoneTowerRemains"
+                ],
+                "ReplacementList": {
+                  "RemainsOdolwa": "MMRTWoodfallRemains",
+                  "RemainsGoht": "MMRTSnowheadRemains",
+                  "RemainsGyorg": "MMRTGreatBaylRemains",
+                  "RemainsTwinmold": "MMRTStoneTowerRemains"
+                }
+              },
+              {
+                "LocationWhitelist": [
+                  "AreaMoonAccess"
+                ],
+                "LocationBlacklist": [],
+                "ReplacementList": {
+                  "RemainsOdolwa": "BossRemains, RequiredBossRemains",
+                  "RemainsGoht": "true",
+                  "RemainsGyorg": "true",
+                  "RemainsTwinmold": "true"
+                }
+              },
+              {
+                "LocationWhitelist": [],
+                "LocationBlacklist": [
                   "CanClearDungeonAtWoodfall",
                   "CanClearDungeonAtSnowhead",
                   "CanClearDungeonAtGreatBay",
@@ -55849,18 +55877,6 @@
       "IsTrick": false
     },
     {
-      "Id": "AreaMoonAccess",
-      "RequiredItems": [
-        "BossRemains, RequiredBossRemains",
-        "Play Oath to Order"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
       "Id": "OtherCredits",
       "RequiredItems": [
         "HasVictoryModeFairies",
@@ -56822,6 +56838,126 @@
           "contains{AreaInvertedStoneTowerTempleAccess, AreaInvertedStoneTowerTempleAccess}",
           "check{AreaTwinmoldsLair}",
           "contains{AreaTwinmoldsLair, AreaGohtsLair}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MMRTWoodfallRemains",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "randomized{AreaOdolwasLair, false}",
+          "RemainsOdolwa"
+        ],
+        [
+          "contains{AreaOdolwasLair, AreaOdolwasLair}",
+          "RemainsOdolwa"
+        ],
+        [
+          "contains{AreaOdolwasLair, AreaGohtsLair}",
+          "RemainsGoht"
+        ],
+        [
+          "contains{AreaOdolwasLair, AreaGyorgsLair}",
+          "RemainsGyorg"
+        ],
+        [
+          "contains{AreaOdolwasLair, AreaTwinmoldsLair}",
+          "RemainsTwinmold"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MMRTSnowheadRemains",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "randomized{AreaGohtsLair, false}",
+          "RemainsGoht"
+        ],
+        [
+          "contains{AreaGohtsLair, AreaOdolwasLair}",
+          "RemainsOdolwa"
+        ],
+        [
+          "contains{AreaGohtsLair, AreaGohtsLair}",
+          "RemainsGoht"
+        ],
+        [
+          "contains{AreaGohtsLair, AreaGyorgsLair}",
+          "RemainsGyorg"
+        ],
+        [
+          "contains{AreaGohtsLair, AreaTwinmoldsLair}",
+          "RemainsTwinmold"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MMRTGreatBaylRemains",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "randomized{AreaGyorgsLair, false}",
+          "RemainsGyorg"
+        ],
+        [
+          "contains{AreaGyorgsLair, AreaOdolwasLair}",
+          "RemainsOdolwa"
+        ],
+        [
+          "contains{AreaGyorgsLair, AreaGohtsLair}",
+          "RemainsGoht"
+        ],
+        [
+          "contains{AreaGyorgsLair, AreaGyorgsLair}",
+          "RemainsGyorg"
+        ],
+        [
+          "contains{AreaGyorgsLair, AreaTwinmoldsLair}",
+          "RemainsTwinmold"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MMRTStoneTowerRemains",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "randomized{AreaTwinmoldsLair, false}",
+          "RemainsTwinmold"
+        ],
+        [
+          "contains{AreaTwinmoldsLair, AreaOdolwasLair}",
+          "RemainsOdolwa"
+        ],
+        [
+          "contains{AreaTwinmoldsLair, AreaGohtsLair}",
+          "RemainsGoht"
+        ],
+        [
+          "contains{AreaTwinmoldsLair, AreaGyorgsLair}",
+          "RemainsGyorg"
+        ],
+        [
+          "contains{AreaTwinmoldsLair, AreaTwinmoldsLair}",
+          "RemainsTwinmold"
         ]
       ],
       "TimeNeeded": "None",
