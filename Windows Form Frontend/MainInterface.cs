@@ -572,9 +572,10 @@ namespace Windows_Form_Frontend
 
             if (ToUpdate.Contains(LBValidLocations))
             {
-                var Entries = TrackerDataHandeling.PopulateAvailableLocationList(dataset, WinFormUtils.CreateDivider(LBValidLocations), InstanceContainer, TXTLocSearch.Text, CHKShowAll.Checked, out int x, out int y);
-                lblAvailableLocation.Text = $"Available Locations: {y}" + (x != y ? $"/{x}" : "");
-                foreach (var i in Entries) 
+                var Data = new TrackerLocationDataList(WinFormUtils.CreateDivider(LBValidLocations), InstanceContainer, TXTLocSearch.Text, dataset).ShowUnavailable(CHKShowAll.Checked);
+                TrackerDataHandeling.PopulateAvailableLocationList(Data);
+                lblAvailableLocation.Text = $"Available Locations: {Data.ItemsDisplayed}" + (Data.LocationsFiltered ? $"/{Data.ItemsFound}" : "");
+                foreach (var i in Data.FinalData) 
                 { 
                     if (i is MiscData.Areaheader area){ InMinimized = InstanceContainer.Instance.StaticOptions.MinimizedHeader.ContainsKey(area.Area+ ":::" + (LBValidLocations).Name); }
                     if (InMinimized && i is not MiscData.Areaheader) { continue; }
@@ -582,11 +583,12 @@ namespace Windows_Form_Frontend
                 }
                 LBValidLocations.TopIndex = lbLocTop;
             }
-            if (ToUpdate.Contains(LBValidEntrances)) 
+            if (ToUpdate.Contains(LBValidEntrances))
             {
-                var Entries = TrackerDataHandeling.PopulateAvailableEntraceList(dataset, WinFormUtils.CreateDivider(LBValidEntrances), InstanceContainer, TXTEntSearch.Text, CHKShowAll.Checked, out int x, out int y);
-                lblAvailableEntrances.Text = $"Available Entrances: {y}" + (x != y ? $"/{x}" : "");
-                foreach (var i in Entries)
+                var Data = new TrackerLocationDataList(WinFormUtils.CreateDivider(LBValidEntrances), InstanceContainer, TXTEntSearch.Text, dataset).ShowUnavailable(CHKShowAll.Checked);
+                TrackerDataHandeling.PopulateAvailableEntraceList(Data);
+                lblAvailableEntrances.Text = $"Available Entrances: {Data.ItemsDisplayed}" + (Data.LocationsFiltered ? $"/{Data.ItemsFound}" : "");
+                foreach (var i in Data.FinalData)
                 {
                     if (i is MiscData.Areaheader area) { InMinimized = InstanceContainer.Instance.StaticOptions.MinimizedHeader.ContainsKey(area.Area+ ":::" + (LBValidEntrances).Name); }
                     if (InMinimized && i is not MiscData.Areaheader) { continue; }
@@ -596,9 +598,10 @@ namespace Windows_Form_Frontend
             }
             if (ToUpdate.Contains(LBCheckedLocations)) 
             {
-                var Entries = TrackerDataHandeling.PopulateCheckedLocationList(dataset, WinFormUtils.CreateDivider(LBCheckedLocations), InstanceContainer, TXTCheckedSearch.Text, out int x, out int y);
-                lblCheckedLocation.Text = $"Checked Locations: {y}" + (x != y ? $"/{x}" : "");
-                foreach (var i in Entries)
+                TrackerLocationDataList Data = new(WinFormUtils.CreateDivider(LBCheckedLocations), InstanceContainer, TXTCheckedSearch.Text, dataset);
+                TrackerDataHandeling.PopulateCheckedLocationList(Data);
+                lblCheckedLocation.Text = $"Checked Locations: {Data.ItemsDisplayed}" + (Data.LocationsFiltered ? $"/{Data.ItemsFound}" : "");
+                foreach (var i in Data.FinalData)
                 {
                     if (i is MiscData.Areaheader area) { InMinimized = InstanceContainer.Instance.StaticOptions.MinimizedHeader.ContainsKey(area.Area+ ":::" + (LBCheckedLocations).Name); }
                     if (InMinimized && i is not MiscData.Areaheader) { continue; }

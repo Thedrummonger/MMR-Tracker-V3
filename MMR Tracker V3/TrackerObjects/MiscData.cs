@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using static MMR_Tracker_V3.TrackerDataHandeling;
 using static MMR_Tracker_V3.TrackerObjects.ItemData;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
@@ -141,6 +142,32 @@ namespace MMR_Tracker_V3.TrackerObjects
                 ServerConnection = null;
                 PlayerID = -1;
             }
+        }
+
+        public class TrackerLocationDataList
+        {
+            public InstanceContainer InstanceContainer;
+            public InstanceData.TrackerInstance Instance { get { return InstanceContainer.Instance; } }
+            public Divider Divider;
+            public string Filter;
+            public DataSets DataSets;
+            public bool Reverse = false;
+            public int ItemsFound = 0;
+            public int ItemsDisplayed = 0;
+            public List<object> FinalData = new List<object>();
+            private bool _ShowAll = false;
+            public bool LocationsFiltered { get { return ItemsFound != ItemsDisplayed; } }
+            public bool ShowUnavailableEntries { get { return _ShowAll || (Filter.StartsWith("^") && !Filter.StartsWith("^^")) || Filter.StartsWith("^^^"); } }
+            public bool ShowInvalidEntries { get { return Filter.StartsWith("^^"); } }
+            public TrackerLocationDataList(Divider _Divider, InstanceContainer _InstanceContainer, string _Filter, DataSets _DataSets = null) 
+            {
+                Divider = _Divider;
+                InstanceContainer = _InstanceContainer;
+                Filter = _Filter;
+                DataSets = _DataSets is null ? PopulateDataSets(Instance) : _DataSets;
+            }  
+            public TrackerLocationDataList PrintReverse(bool reverse = true) { Reverse = reverse; return this; }
+            public TrackerLocationDataList ShowUnavailable(bool showall = true) { _ShowAll = showall; return this; }
         }
 
         public class InstanceContainer

@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Text.RegularExpressions;
 using static MMR_Tracker_V3.TrackerObjects.EntranceData;
 using static MMR_Tracker_V3.TrackerObjects.HintData;
 using static MMR_Tracker_V3.TrackerObjects.LocationData;
@@ -32,6 +33,7 @@ namespace MMR_Tracker_V3
             public List<LocationData.LocationProxy> ProxyISMarkedOrISAvailableAndUnchecked { get; set; } = new List<LocationData.LocationProxy>();
             public List<LocationData.LocationProxy> ProxyStateIsNOTChecked { get; set; } = new List<LocationData.LocationProxy>();
             public List<LocationData.LocationProxy> ProxyStateIsMarked { get; set; } = new List<LocationData.LocationProxy>();
+            public List<LocationData.LocationProxy> ProxyStateIsChecked { get; set; } = new List<LocationData.LocationProxy>();
 
             public List<EntranceData.EntranceRandoExit> ExitStateIsUnchecked { get; set; } = new List<EntranceData.EntranceRandoExit>();
             public List<EntranceData.EntranceRandoExit> ExitISMarkedOrISAvailableAndUnchecked { get; set; } = new List<EntranceData.EntranceRandoExit>();
@@ -53,6 +55,7 @@ namespace MMR_Tracker_V3
             public List<ItemData.ItemObject> OnlineObtainedItems { get; set; } = new List<ItemData.ItemObject>();
         }
 
+        //Check Sets of items
         public static List<object> CheckSelectedItems(IEnumerable<object> SelectedObjects, MiscData.InstanceContainer instanceContainer, CheckItemSetting Options)
         {
             List<object> UpdatedObjects = new List<object>();
@@ -232,6 +235,7 @@ namespace MMR_Tracker_V3
             return UpdatedObjects;
         }
 
+        //Utility
         public static List<LocationObject> GetHIntedLocationsToUpdated(List<HintObject> UpdatedHints, InstanceContainer instanceContainer)
         {
             List<LocationObject> LocationsToMark = new List<LocationObject>();
@@ -315,6 +319,7 @@ namespace MMR_Tracker_V3
                 switch (CheckState)
                 {
                     case MiscData.CheckState.Checked:
+                        dataSets.ProxyStateIsChecked.Add(i);
                         break;
                     case MiscData.CheckState.Marked:
                         dataSets.ProxyStateIsNOTChecked.Add(i);
@@ -393,216 +398,19 @@ namespace MMR_Tracker_V3
             return dataSets;
         }
 
-        public static List<object> PopulateCheckedLocationList(DataSets DataSets, MiscData.Divider Divider, MiscData.InstanceContainer IC, string Filter, out int OutItemsInListBox, out int OutItemsInListBoxFiltered, bool reverse = false)
-        {
-            var Groups = Utility.GetCategoriesFromFile(IC.Instance);
-
-            List<object> DataSource = new List<object>();
-
-            var CheckedLocations = DataSets.LocationStateIsChecked;
-            CheckedLocations = CheckedLocations
-                .OrderBy(x => (Groups.ContainsKey(x.GetDictEntry(IC.Instance).Area.ToLower().Trim()) ? Groups[x.GetDictEntry(IC.Instance).Area.ToLower().Trim()] : DataSets.LocationStateIsChecked.Count + 1))
-                .ThenBy(x => x.GetDictEntry(IC.Instance).Area)
-                .ThenBy(x => Utility.GetLocationDisplayName(x, IC)).ToList();
-
-            var ItemsInListBox = 0;
-            var ItemsInListBoxFiltered = 0;
-
-            if (reverse)
-            {
-                CheckedLocations.Reverse();
-                WriteStartingAndOnlineItems();
-                WriteOptions();
-                WriteHints();
-                WriteEntrances();
-                WriteLocations();
-            }
-            else
-            {
-                WriteLocations();
-                WriteEntrances();
-                WriteHints();
-                WriteOptions();
-                WriteStartingAndOnlineItems();
-            }
-
-
-            OutItemsInListBox = ItemsInListBox;
-            OutItemsInListBoxFiltered = ItemsInListBoxFiltered;
-            return DataSource;
-
-            void WriteOptions()
-            {
-                if (IC.Instance.StaticOptions.ShowOptionsInListBox == null || IC.Instance.StaticOptions.ShowOptionsInListBox != OptionData.DisplayListBoxes[2]) { return; }
-
-                List<dynamic> ChoiceOptions = IC.Instance.ChoiceOptions.Values.Where(x => x.ValueList.Count > 1).Cast<dynamic>().ToList();
-                List<dynamic> MultiSelectOptions = IC.Instance.MultiSelectOptions.Values.Cast<dynamic>().ToList();
-                List<dynamic> ToggleOptions = IC.Instance.ToggleOptions.Values.Cast<dynamic>().ToList();
-                List<dynamic> IntOptions = IC.Instance.IntOptions.Values.Cast<dynamic>().ToList();
-                List<dynamic> All = ChoiceOptions.Concat(ToggleOptions).Concat(IntOptions).Concat(MultiSelectOptions).OrderBy(x => x.Priority).ToList();
-
-                Dictionary<string, List<dynamic>> Categorized = new Dictionary<string, List<dynamic>>();
-                foreach (var item in All)
-                {
-                    if (!IC.logicCalculation.ConditionalsMet(item.Conditionals, new List<string>())) { continue; }
-                    string Sub = item.SubCategory;
-                    Sub ??= "";
-                    if (!Categorized.ContainsKey(Sub)) { Categorized.Add(Sub, new List<dynamic>()); }
-                    Categorized[Sub].Add(item);
-                }
-
-                string CurrentCategory = null;
-                foreach(var i in Categorized)
-                {
-                    foreach(var c in i.Value)
-                    {
-                        ItemsInListBox++;
-                        if (!SearchStringParser.FilterSearch(IC.Instance, c, Filter, c.ToString())) { continue; }
-                        if (CurrentCategory is null || CurrentCategory != i.Key)
-                        {
-                            if (DataSource.Count > 0) { DataSource.Add(Divider); }
-                            DataSource.Add(new MiscData.Areaheader { Area = i.Key == "" ? "Options" : $"Options: {i.Key}" });
-                            CurrentCategory = i.Key;
-                        }
-                        ItemsInListBoxFiltered++;
-                        DataSource.Add(c);
-                        if (c is OptionData.MultiSelectOption MSO)
-                        {
-                            foreach(var op in MSO.ValueList.Values)
-                            {
-                                DataSource.Add(new OptionData.MultiSelectValueListDisplay { Parent = MSO, Value = op});
-                            }
-                        }
-                    }
-                }
-            }
-
-            void WriteLocations()
-            {
-                string CurrentLocation = "";
-                foreach (var i in CheckedLocations)
-                {
-                    if (i.IsUnrandomized(MiscData.UnrandState.Unrand) && !Filter.StartsWith("^")) { continue; }
-                    i.DisplayName = Utility.GetLocationDisplayName(i, IC);
-
-                    ItemsInListBox++;
-                    if (!SearchStringParser.FilterSearch(IC.Instance, i, Filter, i.DisplayName)) { continue; }
-                    ItemsInListBoxFiltered++;
-                    if (CurrentLocation != i.GetDictEntry(IC.Instance).Area)
-                    {
-                        if (DataSource.Count > 0) { DataSource.Add(Divider); }
-                        DataSource.Add(new MiscData.Areaheader { Area = i.GetDictEntry(IC.Instance).Area });
-                        CurrentLocation = i.GetDictEntry(IC.Instance).Area;
-                    }
-                    DataSource.Add(i);
-                }
-            }
-
-            void WriteEntrances()
-            {
-                List<EntranceData.EntranceRandoExit> ValidExits = new List<EntranceData.EntranceRandoExit>();
-                foreach (var area in IC.Instance.EntrancePool.AreaList)
-                {
-                    var CheckLoadingZoneExits = area.Value.RandomizableExits(IC.Instance).Where(x => x.Value.CheckState == MiscData.CheckState.Checked && EntranceAppearsinListbox(x.Value, IC.Instance));
-                    var FilteredCheckedExits = CheckLoadingZoneExits.Where(x => SearchStringParser.FilterSearch(IC.Instance, x.Value, Filter, x.Value.GetEntranceDisplayName(IC.Instance)));
-
-                    ItemsInListBox += CheckLoadingZoneExits.Count();
-                    ItemsInListBoxFiltered += FilteredCheckedExits.Count();
-                    if (!FilteredCheckedExits.Any()) { continue; }
-                    foreach (var i in FilteredCheckedExits)
-                    {
-                        i.Value.DisplayName = i.Value.GetEntranceDisplayName(IC.Instance);
-                        ValidExits.Add(i.Value);
-                    }
-                }
-                ValidExits = ValidExits.OrderBy(x => x.DisplayArea(IC.Instance)).ThenBy(x => x.DisplayName).ToList();
-                string CurrentArea = "";
-                foreach (var i in ValidExits)
-                {
-                    string ItemArea =  $"{i.DisplayArea(IC.Instance)} Exits";
-                    if (CurrentArea != ItemArea)
-                    {
-                        CurrentArea = ItemArea;
-                        if (DataSource.Count > 0) { DataSource.Add(Divider); }
-                        DataSource.Add(new MiscData.Areaheader { Area = CurrentArea });
-                    }
-                    DataSource.Add(i);
-                }
-            }
-
-            void WriteHints()
-            {
-                if (DataSets.HintStateIsChecked.Any())
-                {
-                    bool DividerCreated = false;
-                    foreach (var i in DataSets.HintStateIsChecked)
-                    {
-                        i.DisplayName = $"{i.GetDictEntry(IC.Instance).Name}: {i.HintText}";
-                        ItemsInListBox++;
-                        if (!SearchStringParser.FilterSearch(IC.Instance, i, Filter, i.DisplayName)) { continue; }
-                        ItemsInListBoxFiltered++;
-                        if (!DividerCreated)
-                        {
-                            if (DataSource.Count > 0) { DataSource.Add(Divider); }
-                            DataSource.Add("HINTS:");
-                            DividerCreated = true;
-                        }
-                        DataSource.Add(i);
-                    }
-                }
-            }
-
-            void WriteStartingAndOnlineItems()
-            {
-                if (DataSets.CurrentStartingItems.Any())
-                {
-                    bool DividerCreated = false;
-                    foreach (var i in DataSets.CurrentStartingItems)
-                    {
-                        string Display = $"{i.GetDictEntry(IC.Instance).GetName(IC.Instance)} X{i.AmountInStartingpool}";
-                        ItemsInListBox++;
-                        if (!SearchStringParser.FilterSearch(IC.Instance, i, Filter, Display)) { continue; }
-                        if (!DividerCreated)
-                        {
-                            if (DataSource.Count > 0) { DataSource.Add(Divider); }
-                            DataSource.Add(new MiscData.Areaheader { Area = "Starting Items" });
-                            DividerCreated = true;
-                        }
-                        ItemsInListBoxFiltered++;
-                        DataSource.Add(Display);
-                    }
-                }
-
-                if (DataSets.OnlineObtainedItems.Any())
-                {
-                    bool DividerCreated = false;
-                    foreach (var i in DataSets.OnlineObtainedItems)
-                    {
-                        foreach (var j in i.AmountAquiredOnline)
-                        {
-                            string Display = $"{i.GetDictEntry(IC.Instance).GetName(IC.Instance)} X{j.Value}: Player {j.Key}";
-                            ItemsInListBox++;
-                            if (!SearchStringParser.FilterSearch(IC.Instance, i, Filter, Display)) { continue; }
-                            if (!DividerCreated)
-                            {
-                                if (DataSource.Count > 0) { DataSource.Add(Divider); }
-                                DataSource.Add(new MiscData.Areaheader { Area = "MultiWorld Items" });
-                                DividerCreated = true;
-                            }
-                            ItemsInListBoxFiltered++;
-                            DataSource.Add(Display);
-                        }
-                    }
-                }
-            }
-        }
-
         public static string GetLocationEntryArea(object Entry, InstanceData.TrackerInstance Instance)
         {
             if (Entry is LocationData.LocationObject l) { return l.GetDictEntry(Instance).Area; }
             else if (Entry is LocationData.LocationProxy p) { return p.Area; }
             return "Error";
         }
+
+        private static bool EntranceAppearsinListbox(EntranceData.EntranceRandoExit Location, InstanceData.TrackerInstance Instance)
+        {
+            return !Location.IsJunk() && !Location.IsUnrandomized(MiscData.UnrandState.Unrand);
+        }
+
+        //GetData To Print
         public static bool GetLocationEntryAvailablility(object Entry, InstanceData.TrackerInstance Instance)
         {
             if (Entry is LocationData.LocationObject l) { return l.Available; }
@@ -610,249 +418,328 @@ namespace MMR_Tracker_V3
             return false;
         }
 
-        public static List<object> PopulateAvailableLocationList(DataSets DataSets, MiscData.Divider Divider, MiscData.InstanceContainer IC, string Filter, bool ShowUnavailable, out int OutItemsInListBox, out int OutItemsInListBoxFiltered, bool reverse = false)
+        public static void PopulateAvailableLocationList(TrackerLocationDataList Data)
         {
-            bool ShowAllLocation = ShowUnavailable || (Filter.StartsWith("^") && !Filter.StartsWith("^^")) || Filter.StartsWith("^^^");
-            bool ShowInvalidLocation = Filter.StartsWith("^^");
-            bool SeperateMarked = IC.Instance.StaticOptions.OptionFile.SeperateUnavailableMarkedLocations;
+            bool SeperateMarked = Data.Instance.StaticOptions.OptionFile.SeperateUnavailableMarkedLocations;
 
-            var Groups = Utility.GetCategoriesFromFile(IC.Instance);
-            List<object> DataSource = new List<object>();
+            var Groups = Utility.GetCategoriesFromFile(Data.Instance);
 
-            var AvailableProxies = DataSets.ProxyISMarkedOrISAvailableAndUnchecked;
-            if (ShowAllLocation) { AvailableProxies = DataSets.ProxyStateIsNOTChecked; }
+            var AvailableProxies = Data.DataSets.ProxyISMarkedOrISAvailableAndUnchecked;
+            if (Data.ShowUnavailableEntries) { AvailableProxies = Data.DataSets.ProxyStateIsNOTChecked; }
 
-            var AvailableLocations = DataSets.LocationISMarkedOrISAvailableAndUnchecked;
-            if (ShowAllLocation) { AvailableLocations = DataSets.LocationStateIsNOTChecked; }
+            var AvailableLocations = Data.DataSets.LocationISMarkedOrISAvailableAndUnchecked;
+            if (Data.ShowUnavailableEntries) { AvailableLocations = Data.DataSets.LocationStateIsNOTChecked; }
 
-            IEnumerable<object> AvailableLocationsEntries = AvailableLocations.Where(x => !IC.Instance.LocationProxyData.LocationsWithProxys.ContainsKey(x.ID));
+            IEnumerable<object> AvailableLocationsEntries = AvailableLocations.Where(x => !Data.Instance.LocationProxyData.LocationsWithProxys.ContainsKey(x.ID));
             AvailableLocationsEntries = AvailableLocationsEntries.Concat(AvailableProxies);
-            AvailableLocationsEntries = AvailableLocationsEntries.OrderByDescending(x => SeperateMarked && GetLocationEntryAvailablility(x, IC.Instance))
-                .ThenBy(x => (Groups.ContainsKey(GetLocationEntryArea(x, IC.Instance).ToLower().Trim()) ? Groups[GetLocationEntryArea(x, IC.Instance).ToLower().Trim()] : DataSets.LocationISMarkedOrISAvailableAndUnchecked.Count() + 1))
-                .ThenBy(x => GetLocationEntryArea(x, IC.Instance))
-                .ThenBy(x => Utility.GetLocationDisplayName(x, IC)).ToList();
+            AvailableLocationsEntries = AvailableLocationsEntries.OrderByDescending(x => SeperateMarked && GetLocationEntryAvailablility(x, Data.Instance))
+                .ThenBy(x => (Groups.ContainsKey(GetLocationEntryArea(x, Data.Instance).ToLower().Trim()) ? Groups[GetLocationEntryArea(x, Data.Instance).ToLower().Trim()] : Data.DataSets.LocationISMarkedOrISAvailableAndUnchecked.Count() + 1))
+                .ThenBy(x => GetLocationEntryArea(x, Data.Instance))
+                .ThenBy(x => Utility.GetLocationDisplayName(x, Data.InstanceContainer)).ToList();
 
-            IEnumerable<object> HiddenLocations = AvailableLocationsEntries.Where(x => Utility.DynamicPropertyExist(x, "Hidden") && (x as dynamic).Hidden).OrderBy(x => Utility.GetLocationDisplayName(x, IC));
+            IEnumerable<object> HiddenLocations = AvailableLocationsEntries.Where(x => Utility.DynamicPropertyExist(x, "Hidden") && (x as dynamic).Hidden).OrderBy(x => Utility.GetLocationDisplayName(x, Data.InstanceContainer));
             AvailableLocationsEntries = AvailableLocationsEntries.Where(x => !Utility.DynamicPropertyExist(x, "Hidden") || !(x as dynamic).Hidden);
 
-            var AvailableHints = DataSets.HIntISMarkedOrISAvailableAndUnchecked;
-            if (ShowAllLocation) { AvailableHints = DataSets.HintStateIsNOTChecked; }
+            var AvailableHints = Data.DataSets.HIntISMarkedOrISAvailableAndUnchecked;
+            if (Data.ShowUnavailableEntries) { AvailableHints = Data.DataSets.HintStateIsNOTChecked; }
 
-            var ItemsInListBox = 0;
-            var ItemsInListBoxFiltered = 0;
 
-            if (reverse)
+            if (Data.Reverse)
             {
                 AvailableLocations.Reverse();
-                WriteHiddenLocations();
-                WriteOptions();
-                WriteHints();
+                WriteHiddenLocations(Data, HiddenLocations);
+                WriteOptions(Data, 1);
+                WriteHints(Data, AvailableHints);
                 WriteEntrances();
-                WriteLocations();
+                WriteLocations(Data, AvailableLocationsEntries);
             }
             else
             {
-                WriteLocations();
+                WriteLocations(Data, AvailableLocationsEntries);
                 WriteEntrances();
-                WriteHints();
-                WriteOptions();
-                WriteHiddenLocations();
+                WriteHints(Data, AvailableHints);
+                WriteOptions(Data, 1);
+                WriteHiddenLocations(Data, HiddenLocations);
             }
 
-            OutItemsInListBox = ItemsInListBox;
-            OutItemsInListBoxFiltered = ItemsInListBoxFiltered;
-            return DataSource;
+            return;
 
             void WriteEntrances()
             {
-                if (IC.Instance.StaticOptions.OptionFile.EntranceRandoFeatures) { return; }
-                var Entrances = PopulateAvailableEntraceList(DataSets, Divider, IC, Filter, ShowUnavailable, out int EntCount, out int EntCountFiltered, reverse);
-                if (Entrances.Any() && DataSource.Any()) { DataSource.Add(Divider); }
-                DataSource.AddRange(Entrances);
-                ItemsInListBox += EntCount;
-                ItemsInListBoxFiltered += EntCountFiltered;
-            }
-
-            void WriteHiddenLocations()
-            {
-                List<object> TempDataSource = new List<object>();
-                foreach (var obj in HiddenLocations)
-                {
-                    var CurrentArea = "";
-                    if (obj is LocationData.LocationObject i)
-                    {
-                        if (!i.AppearsinListbox(IC.Instance, ShowInvalidLocation)) { continue; }
-                        i.DisplayName = Utility.GetLocationDisplayName(i, IC);
-                        ItemsInListBox++;
-                        if (!SearchStringParser.FilterSearch(IC.Instance, i, Filter, i.DisplayName)) { continue; }
-                        ItemsInListBoxFiltered++;
-                        CurrentArea = i.GetDictEntry(IC.Instance).Area;
-                    }
-                    else if (obj is LocationData.LocationProxy p)
-                    {
-                        if (!p.GetReferenceLocation(IC.Instance).AppearsinListbox(IC.Instance, ShowInvalidLocation)) { continue; }
-                        p.DisplayName = Utility.GetLocationDisplayName(p, IC);
-                        ItemsInListBox++;
-                        if (!SearchStringParser.FilterSearch(IC.Instance, p, Filter, p.DisplayName)) { continue; }
-                        ItemsInListBoxFiltered++;
-                        CurrentArea = p.Area;
-                    }
-                    else { continue; }
-                    TempDataSource.Add(obj);
-                }
-                if (TempDataSource.Any())
-                {
-                    if (DataSource.Count > 0) { DataSource.Add(Divider); }
-                    DataSource.Add(new MiscData.Areaheader { Area = "Hidden Locations" });
-                    DataSource.AddRange(TempDataSource);
-                }
-            }
-
-            void WriteOptions()
-            {
-                if (IC.Instance.StaticOptions.ShowOptionsInListBox == null || IC.Instance.StaticOptions.ShowOptionsInListBox != OptionData.DisplayListBoxes[1]) { return; }
-
-                List<dynamic> ChoiceOptions = IC.Instance.ChoiceOptions.Values.Where(x => x.ValueList.Count > 1).Cast<dynamic>().ToList();
-                List<dynamic> MultiSelectOptions = IC.Instance.MultiSelectOptions.Values.Cast<dynamic>().ToList();
-                List<dynamic> ToggleOptions = IC.Instance.ToggleOptions.Values.Cast<dynamic>().ToList();
-                List<dynamic> IntOptions = IC.Instance.IntOptions.Values.Cast<dynamic>().ToList();
-                List<dynamic> All = ChoiceOptions.Concat(ToggleOptions).Concat(IntOptions).Concat(MultiSelectOptions).OrderBy(x => x.Priority).ToList();
-
-                Dictionary<string, List<dynamic>> Categorized = new Dictionary<string, List<dynamic>>();
-                foreach (var item in All)
-                {
-                    if (!IC.logicCalculation.ConditionalsMet(item.Conditionals, new List<string>())) { continue; }
-                    string Sub = item.SubCategory;
-                    Sub ??= "";
-                    if (!Categorized.ContainsKey(Sub)) { Categorized.Add(Sub, new List<dynamic>()); }
-                    Categorized[Sub].Add(item);
-                }
-
-                string CurrentCategory = null;
-                foreach (var i in Categorized)
-                {
-                    foreach (var c in i.Value)
-                    {
-                        ItemsInListBox++;
-                        if (!SearchStringParser.FilterSearch(IC.Instance, c, Filter, c.ToString())) { continue; }
-                        if (CurrentCategory is null || CurrentCategory != i.Key)
-                        {
-                            if (DataSource.Count > 0) { DataSource.Add(Divider); }
-                            DataSource.Add(new MiscData.Areaheader { Area = i.Key == "" ? "Options" : $"Options: {i.Key}" });
-                            CurrentCategory = i.Key;
-                        }
-                        ItemsInListBoxFiltered++;
-                        DataSource.Add(c);
-                        if (c is OptionData.MultiSelectOption MSO)
-                        {
-                            foreach (var op in MSO.ValueList.Values)
-                            {
-                                DataSource.Add(new OptionData.MultiSelectValueListDisplay { Parent = MSO, Value = op });
-                            }
-                        }
-                    }
-                }
-            }
-
-            void WriteLocations()
-            {
-                string CurrentLocation = "";
-                foreach (var obj in AvailableLocationsEntries)
-                {
-                    var CurrentArea = "";
-                    if (obj is LocationData.LocationObject i)
-                    {
-                        if (!i.AppearsinListbox(IC.Instance, ShowInvalidLocation)) { continue; }
-                        i.DisplayName = Utility.GetLocationDisplayName(i, IC);
-                        ItemsInListBox++;
-                        if (!SearchStringParser.FilterSearch(IC.Instance, i, Filter, i.DisplayName)) { continue; }
-                        ItemsInListBoxFiltered++;
-                        CurrentArea = i.GetDictEntry(IC.Instance).Area;
-                    }
-                    else if (obj is LocationData.LocationProxy p)
-                    {
-                        if (!p.GetReferenceLocation(IC.Instance).AppearsinListbox(IC.Instance, ShowInvalidLocation)) { continue; }
-                        p.DisplayName = Utility.GetLocationDisplayName(p, IC);
-                        ItemsInListBox++;
-                        if (!SearchStringParser.FilterSearch(IC.Instance, p, Filter, p.DisplayName)) { continue; }
-                        ItemsInListBoxFiltered++;
-                        CurrentArea = p.Area;
-                    }
-                    else { continue; }
-                    if (CurrentLocation != CurrentArea)
-                    {
-                        if (DataSource.Count > 0) { DataSource.Add(Divider); }
-                        DataSource.Add(new MiscData.Areaheader { Area = CurrentArea });
-                        CurrentLocation = CurrentArea;
-                    }
-                    DataSource.Add(obj);
-                }
-            }
-
-            void WriteHints()
-            {
-                if (AvailableHints.Any())
-                {
-                    bool DividerCreated = false;
-                    foreach (var i in AvailableHints)
-                    {
-                        if (i.RandomizedState == MiscData.RandomizedState.ForcedJunk && !ShowInvalidLocation) { continue; }
-                        i.DisplayName = (i.CheckState == MiscData.CheckState.Marked) ? $"{i.GetDictEntry(IC.Instance).Name}: {i.HintText}" : i.GetDictEntry(IC.Instance).Name;
-                        ItemsInListBox++;
-                        if (!SearchStringParser.FilterSearch(IC.Instance, i, Filter, i.DisplayName)) { continue; }
-                        ItemsInListBoxFiltered++;
-                        if (!DividerCreated)
-                        {
-                            if (DataSource.Count > 0) { DataSource.Add(Divider); }
-                            DataSource.Add(new MiscData.Areaheader { Area = "HINTS" });
-                            DividerCreated = true;
-                        }
-                        DataSource.Add(i);
-                    }
-                }
+                if (Data.InstanceContainer.Instance.StaticOptions.OptionFile.EntranceRandoFeatures) { return; }
+                PopulateAvailableEntraceList(Data);
             }
         }
 
-        public static List<object> PopulateAvailableEntraceList(DataSets DataSets, MiscData.Divider Divider, MiscData.InstanceContainer IC, string Filter, bool ShowUnavailable, out int OutItemsInListBox, out int OutItemsInListBoxFiltered, bool reverse = false)
+        public static void PopulateAvailableEntraceList(TrackerLocationDataList Data)
         {
-            bool InLocationBox = !IC.Instance.StaticOptions.OptionFile.EntranceRandoFeatures;
+            bool InLocationBox = !Data.Instance.StaticOptions.OptionFile.EntranceRandoFeatures;
 
-            bool ShowAllLocation = ShowUnavailable || (Filter.StartsWith("^") && !Filter.StartsWith("^^")) || Filter.StartsWith("^^^");
-            bool ShowInvalidLocation = Filter.StartsWith("^^");
-            bool SeperateMarked = IC.Instance.StaticOptions.OptionFile.SeperateUnavailableMarkedLocations;
+            bool SeperateMarked = Data.Instance.StaticOptions.OptionFile.SeperateUnavailableMarkedLocations;
 
-            var Groups = Utility.GetCategoriesFromFile(IC.Instance);
-            List<object> DataSource = new List<object>();
-            OutItemsInListBox = 0;
-            OutItemsInListBoxFiltered = 0;
+            var Groups = Utility.GetCategoriesFromFile(Data.Instance);
 
-            List<EntranceRandoExit> ValidExits = DataSets.ExitISMarkedOrISAvailableAndUnchecked;
-            if (ShowAllLocation) { ValidExits = DataSets.ExitStateIsNOTChecked; }
+            List<EntranceRandoExit> ValidExits = Data.DataSets.ExitISMarkedOrISAvailableAndUnchecked;
+            if (Data.ShowUnavailableEntries) { ValidExits = Data.DataSets.ExitStateIsNOTChecked; }
 
-            ValidExits = ValidExits.OrderByDescending(x => SeperateMarked && x.Available).ThenBy(x => x.DisplayArea(IC.Instance)).ThenBy(x => x.DisplayName).ToList();
+            ValidExits = ValidExits.OrderByDescending(x => SeperateMarked && x.Available).ThenBy(x => x.DisplayArea(Data.Instance)).ThenBy(x => x.DisplayName).ToList();
             string CurrentArea = "";
             foreach(var i in ValidExits)
             {
-                if (!EntranceAppearsinListbox(i, IC.Instance) && !ShowInvalidLocation) { continue; }
-                OutItemsInListBox++;
-                string ItemArea = InLocationBox ? $"{i.DisplayArea(IC.Instance)} Entrances" : i.DisplayArea(IC.Instance);
-                i.DisplayName = i.GetEntranceDisplayName(IC.Instance);
-                if (!SearchStringParser.FilterSearch(IC.Instance, i, Filter, i.GetEntranceDisplayName(IC.Instance))) { continue; }
-                OutItemsInListBoxFiltered++;
+                if (!EntranceAppearsinListbox(i, Data.Instance) && !Data.ShowInvalidEntries) { continue; }
+                Data.ItemsFound++;
+                string ItemArea = InLocationBox ? $"{i.DisplayArea(Data.Instance)} Entrances" : i.DisplayArea(Data.Instance);
+                i.DisplayName = i.GetEntranceDisplayName(Data.Instance);
+                if (!SearchStringParser.FilterSearch(Data.Instance, i, Data.Filter, i.GetEntranceDisplayName(Data.Instance))) { continue; }
+                Data.ItemsDisplayed++;
                 if (CurrentArea != ItemArea)
                 {
                     CurrentArea = ItemArea;
-                    if (DataSource.Count > 0) { DataSource.Add(Divider); }
-                    DataSource.Add(new MiscData.Areaheader { Area = CurrentArea });
+                    if (Data.FinalData.Count > 0) { Data.FinalData.Add(Data.Divider); }
+                    Data.FinalData.Add(new MiscData.Areaheader { Area = CurrentArea });
                 }
-                DataSource.Add(i);
+                Data.FinalData.Add(i);
             }
-            return DataSource;
         }
 
-        private static bool EntranceAppearsinListbox(EntranceData.EntranceRandoExit Location, InstanceData.TrackerInstance Instance)
+        public static void PopulateCheckedLocationList(TrackerLocationDataList Data)
         {
-            return !Location.IsJunk() && !Location.IsUnrandomized(MiscData.UnrandState.Unrand);
+            var Groups = Utility.GetCategoriesFromFile(Data.Instance);
+            IEnumerable<object> CheckedLocations = Data.DataSets.LocationStateIsChecked.Where(x => !Data.Instance.LocationProxyData.LocationsWithProxys.ContainsKey(x.ID));
+            CheckedLocations = CheckedLocations.Concat(Data.DataSets.ProxyStateIsChecked);
+            CheckedLocations = CheckedLocations
+                .OrderBy(x => (Groups.ContainsKey(GetLocationEntryArea(x, Data.Instance).ToLower().Trim()) ? Groups[GetLocationEntryArea(x, Data.Instance).ToLower().Trim()] : Data.DataSets.LocationISMarkedOrISAvailableAndUnchecked.Count() + 1))
+                .ThenBy(x => GetLocationEntryArea(x, Data.Instance))
+                .ThenBy(x => Utility.GetLocationDisplayName(x, Data.InstanceContainer)).ToList();
+
+            if (Data.Reverse)
+            {
+                CheckedLocations.Reverse();
+                WriteStartingAndOnlineItems(Data);
+                WriteOptions(Data, 2);
+                WriteHints(Data, Data.DataSets.HintStateIsChecked);
+                WriteCheckedEntrances(Data);
+                WriteLocations(Data, CheckedLocations);
+            }
+            else
+            {
+                WriteLocations(Data, CheckedLocations);
+                WriteCheckedEntrances(Data);
+                WriteHints(Data, Data.DataSets.HintStateIsChecked);
+                WriteOptions(Data, 2);
+                WriteStartingAndOnlineItems(Data);
+            }
+        }
+
+        //
+        private static void WriteOptions(TrackerLocationDataList Data, int DisplayListBoxesIndex)
+        {
+            if (Data.Instance.StaticOptions.ShowOptionsInListBox == null || Data.Instance.StaticOptions.ShowOptionsInListBox != OptionData.DisplayListBoxes[DisplayListBoxesIndex]) { return; }
+
+            List<dynamic> ChoiceOptions = Data.Instance.ChoiceOptions.Values.Where(x => x.ValueList.Count > 1).Cast<dynamic>().ToList();
+            List<dynamic> MultiSelectOptions = Data.Instance.MultiSelectOptions.Values.Cast<dynamic>().ToList();
+            List<dynamic> ToggleOptions = Data.Instance.ToggleOptions.Values.Cast<dynamic>().ToList();
+            List<dynamic> IntOptions = Data.Instance.IntOptions.Values.Cast<dynamic>().ToList();
+            List<dynamic> All = ChoiceOptions.Concat(ToggleOptions).Concat(IntOptions).Concat(MultiSelectOptions).OrderBy(x => x.Priority).ToList();
+
+            Dictionary<string, List<dynamic>> Categorized = new Dictionary<string, List<dynamic>>();
+            foreach (var item in All)
+            {
+                if (!Data.InstanceContainer.logicCalculation.ConditionalsMet(item.Conditionals, new List<string>())) { continue; }
+                string Sub = item.SubCategory;
+                Sub ??= "";
+                if (!Categorized.ContainsKey(Sub)) { Categorized.Add(Sub, new List<dynamic>()); }
+                Categorized[Sub].Add(item);
+            }
+
+            string CurrentCategory = null;
+            foreach (var i in Categorized)
+            {
+                foreach (var c in i.Value)
+                {
+                    Data.ItemsFound++;
+                    if (!SearchStringParser.FilterSearch(Data.Instance, c, Data.Filter, c.ToString())) { continue; }
+                    if (CurrentCategory is null || CurrentCategory != i.Key)
+                    {
+                        if (Data.FinalData.Count > 0) { Data.FinalData.Add(Data.Divider); }
+                        Data.FinalData.Add(new MiscData.Areaheader { Area = i.Key == "" ? "Options" : $"Options: {i.Key}" });
+                        CurrentCategory = i.Key;
+                    }
+                    Data.ItemsDisplayed++;
+                    Data.FinalData.Add(c);
+                    if (c is OptionData.MultiSelectOption MSO)
+                    {
+                        foreach (var op in MSO.ValueList.Values)
+                        {
+                            Data.FinalData.Add(new OptionData.MultiSelectValueListDisplay { Parent = MSO, Value = op });
+                        }
+                    }
+                }
+            }
+        }
+        private static void WriteHints(TrackerLocationDataList Data, IEnumerable<HintObject> HintList)
+        {
+            if (HintList.Any())
+            {
+                bool DividerCreated = false;
+                foreach (var i in HintList)
+                {
+                    if (i.RandomizedState == MiscData.RandomizedState.ForcedJunk && !Data.ShowInvalidEntries) { continue; }
+                    i.DisplayName = (i.CheckState != MiscData.CheckState.Unchecked) ? $"{i.GetDictEntry(Data.Instance).Name}: {i.HintText}" : i.GetDictEntry(Data.Instance).Name;
+                    Data.ItemsFound++;
+                    if (!SearchStringParser.FilterSearch(Data.Instance, i, Data.Filter, i.DisplayName)) { continue; }
+                    Data.ItemsDisplayed++;
+                    if (!DividerCreated)
+                    {
+                        if (Data.FinalData.Count > 0) { Data.FinalData.Add(Data.Divider); }
+                        Data.FinalData.Add(new MiscData.Areaheader { Area = "HINTS" });
+                        DividerCreated = true;
+                    }
+                    Data.FinalData.Add(i);
+                }
+            }
+        }
+        private static void WriteStartingAndOnlineItems(TrackerLocationDataList Data)
+        {
+            if (Data.DataSets.CurrentStartingItems.Any())
+            {
+                bool DividerCreated = false;
+                foreach (var i in Data.DataSets.CurrentStartingItems)
+                {
+                    string Display = $"{i.GetDictEntry(Data.Instance).GetName(Data.Instance)} X{i.AmountInStartingpool}";
+                    Data.ItemsFound++;
+                    if (!SearchStringParser.FilterSearch(Data.Instance, i, Data.Filter, Display)) { continue; }
+                    if (!DividerCreated)
+                    {
+                        if (Data.FinalData.Count > 0) { Data.FinalData.Add(Data.Divider); }
+                        Data.FinalData.Add(new MiscData.Areaheader { Area = "Starting Items" });
+                        DividerCreated = true;
+                    }
+                    Data.ItemsDisplayed++;
+                    Data.FinalData.Add(Display);
+                }
+            }
+
+            if (Data.DataSets.OnlineObtainedItems.Any())
+            {
+                bool DividerCreated = false;
+                foreach (var i in Data.DataSets.OnlineObtainedItems)
+                {
+                    foreach (var j in i.AmountAquiredOnline)
+                    {
+                        string Display = $"{i.GetDictEntry(Data.Instance).GetName(Data.Instance)} X{j.Value}: Player {j.Key}";
+                        Data.ItemsFound++;
+                        if (!SearchStringParser.FilterSearch(Data.Instance, i, Data.Filter, Display)) { continue; }
+                        if (!DividerCreated)
+                        {
+                            if (Data.FinalData.Count > 0) { Data.FinalData.Add(Data.Divider); }
+                            Data.FinalData.Add(new MiscData.Areaheader { Area = "MultiWorld Items" });
+                            DividerCreated = true;
+                        }
+                        Data.ItemsDisplayed++;
+                        Data.FinalData.Add(Display);
+                    }
+                }
+            }
+        }
+        private static void WriteCheckedEntrances(TrackerLocationDataList Data)
+        {
+            List<EntranceData.EntranceRandoExit> ValidExits = new List<EntranceData.EntranceRandoExit>();
+            foreach (var area in Data.Instance.EntrancePool.AreaList)
+            {
+                var CheckLoadingZoneExits = area.Value.RandomizableExits(Data.Instance).Where(x => x.Value.CheckState == MiscData.CheckState.Checked && EntranceAppearsinListbox(x.Value, Data.Instance));
+                var FilteredCheckedExits = CheckLoadingZoneExits.Where(x => SearchStringParser.FilterSearch(Data.Instance, x.Value, Data.Filter, x.Value.GetEntranceDisplayName(Data.Instance)));
+
+                Data.ItemsFound += CheckLoadingZoneExits.Count();
+                Data.ItemsDisplayed += FilteredCheckedExits.Count();
+                if (!FilteredCheckedExits.Any()) { continue; }
+                foreach (var i in FilteredCheckedExits)
+                {
+                    i.Value.DisplayName = i.Value.GetEntranceDisplayName(Data.Instance);
+                    ValidExits.Add(i.Value);
+                }
+            }
+            ValidExits = ValidExits.OrderBy(x => x.DisplayArea(Data.Instance)).ThenBy(x => x.DisplayName).ToList();
+            string CurrentArea = "";
+            foreach (var i in ValidExits)
+            {
+                string ItemArea = $"{i.DisplayArea(Data.Instance)} Exits";
+                if (CurrentArea != ItemArea)
+                {
+                    CurrentArea = ItemArea;
+                    if (Data.FinalData.Count > 0) { Data.FinalData.Add(Data.Divider); }
+                    Data.FinalData.Add(new MiscData.Areaheader { Area = CurrentArea });
+                }
+                Data.FinalData.Add(i);
+            }
+        }
+        private static void WriteHiddenLocations(TrackerLocationDataList Data, IEnumerable<object> HiddenLocations)
+        {
+            List<object> TempDataSource = new List<object>();
+            foreach (var obj in HiddenLocations)
+            {
+                var CurrentArea = "";
+                if (obj is LocationData.LocationObject i)
+                {
+                    if (!i.AppearsinListbox(Data.InstanceContainer.Instance, Data.ShowInvalidEntries)) { continue; }
+                    i.DisplayName = Utility.GetLocationDisplayName(i, Data.InstanceContainer);
+                    Data.ItemsFound++;
+                    if (!SearchStringParser.FilterSearch(Data.Instance, i, Data.Filter, i.DisplayName)) { continue; }
+                    Data.ItemsDisplayed++;
+                    CurrentArea = i.GetDictEntry(Data.Instance).Area;
+                }
+                else if (obj is LocationData.LocationProxy p)
+                {
+                    if (!p.GetReferenceLocation(Data.Instance).AppearsinListbox(Data.Instance, Data.ShowInvalidEntries)) { continue; }
+                    p.DisplayName = Utility.GetLocationDisplayName(p, Data.InstanceContainer);
+                    Data.ItemsFound++;
+                    if (!SearchStringParser.FilterSearch(Data.Instance, p, Data.Filter, p.DisplayName)) { continue; }
+                    Data.ItemsDisplayed++;
+                    CurrentArea = p.Area;
+                }
+                else { continue; }
+                TempDataSource.Add(obj);
+            }
+            if (TempDataSource.Any())
+            {
+                if (Data.FinalData.Count > 0) { Data.FinalData.Add(Data.Divider); }
+                Data.FinalData.Add(new MiscData.Areaheader { Area = "Hidden Locations" });
+                Data.FinalData.AddRange(TempDataSource);
+            }
+        }
+        private static void WriteLocations(TrackerLocationDataList Data, IEnumerable<object> AvailableLocationsEntries)
+        {
+            string CurrentLocation = "";
+            foreach (var obj in AvailableLocationsEntries)
+            {
+                var CurrentArea = "";
+                if (obj is LocationData.LocationObject i)
+                {
+                    if (!i.AppearsinListbox(Data.Instance, Data.ShowInvalidEntries)) { continue; }
+                    i.DisplayName = Utility.GetLocationDisplayName(i, Data.InstanceContainer);
+                    Data.ItemsFound++;
+                    if (!SearchStringParser.FilterSearch(Data.Instance, i, Data.Filter, i.DisplayName)) { continue; }
+                    Data.ItemsDisplayed++;
+                    CurrentArea = i.GetDictEntry(Data.Instance).Area;
+                }
+                else if (obj is LocationData.LocationProxy p)
+                {
+                    if (!p.GetReferenceLocation(Data.Instance).AppearsinListbox(Data.Instance, Data.ShowInvalidEntries)) { continue; }
+                    p.DisplayName = Utility.GetLocationDisplayName(p, Data.InstanceContainer);
+                    Data.ItemsFound++;
+                    if (!SearchStringParser.FilterSearch(Data.Instance, p, Data.Filter, p.DisplayName)) { continue; }
+                    Data.ItemsDisplayed++;
+                    CurrentArea = p.Area;
+                }
+                else { continue; }
+                if (CurrentLocation != CurrentArea)
+                {
+                    if (Data.FinalData.Count > 0) { Data.FinalData.Add(Data.Divider); }
+                    Data.FinalData.Add(new MiscData.Areaheader { Area = CurrentArea });
+                    CurrentLocation = CurrentArea;
+                }
+                Data.FinalData.Add(obj);
+            }
         }
     }
 }

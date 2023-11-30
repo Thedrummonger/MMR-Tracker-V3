@@ -151,19 +151,26 @@ namespace CLIFrontEnd
                 MiscData.CheckState CheckAction = MiscData.CheckState.Checked;
                 string Action = null;
                 var dataset = TrackerDataHandeling.PopulateDataSets(newTrackerInstance.Instance);
+                TrackerLocationDataList Data;
                 switch (EntryType)
                 {
                     case 0:
-                        Entries = TrackerDataHandeling.PopulateAvailableLocationList(dataset, CreateDivider(Console.WindowWidth), newTrackerInstance, Filter, false, out x, out y, true);
+                        Data = new TrackerLocationDataList(CreateDivider(Console.WindowWidth), newTrackerInstance, Filter, dataset).PrintReverse();
+                        TrackerDataHandeling.PopulateAvailableLocationList(Data);
+                        Entries = Data.FinalData;
                         CurrentType = "Available Locations";
                         break;
                     case 1:
-                        Entries = TrackerDataHandeling.PopulateCheckedLocationList(dataset, CreateDivider(Console.WindowWidth), newTrackerInstance, Filter, out x, out y, true);
+                        Data = new TrackerLocationDataList(CreateDivider(Console.WindowWidth), newTrackerInstance, Filter, dataset).PrintReverse();
+                        TrackerDataHandeling.PopulateCheckedLocationList(Data);
+                        Entries = Data.FinalData;
                         CurrentType = "Checked Locations";
                         CheckAction = MiscData.CheckState.Unchecked;
                         break;
                     case 2:
-                        Entries = TrackerDataHandeling.PopulateAvailableEntraceList(dataset, CreateDivider(Console.WindowWidth), newTrackerInstance, Filter, false, out x, out y, true);
+                        Data = new TrackerLocationDataList(CreateDivider(Console.WindowWidth), newTrackerInstance, Filter, dataset).PrintReverse();
+                        TrackerDataHandeling.PopulateAvailableEntraceList(Data);
+                        Entries = Data.FinalData;
                         CurrentType = "Available Entrances";
                         break;
                 }
