@@ -5265,7 +5265,7 @@
     },
     "HeartContainerWoodfall": {
       "ID": "HeartContainerWoodfall",
-      "Name": "Woodfall Heart Container",
+      "Name": "Odolwa's Lair Heart Container",
       "OriginalItem": "HeartContainerWoodfall",
       "Area": "Woodfall Temple",
       "ValidItemTypes": [
@@ -5287,7 +5287,7 @@
     },
     "HeartContainerSnowhead": {
       "ID": "HeartContainerSnowhead",
-      "Name": "Snowhead Heart Container",
+      "Name": "Goht's Lair Heart Container",
       "OriginalItem": "HeartContainerSnowhead",
       "Area": "Snowhead Temple",
       "ValidItemTypes": [
@@ -5309,7 +5309,7 @@
     },
     "HeartContainerGreatBay": {
       "ID": "HeartContainerGreatBay",
-      "Name": "Great Bay Heart Container",
+      "Name": "Gyorg's Lair Heart Container",
       "OriginalItem": "HeartContainerGreatBay",
       "Area": "Great Bay Temple",
       "ValidItemTypes": [
@@ -5331,7 +5331,7 @@
     },
     "HeartContainerStoneTower": {
       "ID": "HeartContainerStoneTower",
-      "Name": "Stone Tower Heart Container",
+      "Name": "Twinmold's Lair Heart Container",
       "OriginalItem": "HeartContainerStoneTower",
       "Area": "Stone Tower Temple",
       "ValidItemTypes": [
@@ -23317,7 +23317,7 @@
     },
     "RemainsOdolwa": {
       "ID": "RemainsOdolwa",
-      "Name": "Woodfall Boss Warp",
+      "Name": "Odolwa's Lair Boss Warp",
       "OriginalItem": "RemainsOdolwa",
       "Area": "Woodfall Temple",
       "ValidItemTypes": [
@@ -23339,7 +23339,7 @@
     },
     "RemainsGoht": {
       "ID": "RemainsGoht",
-      "Name": "Snowhead Boss Warp",
+      "Name": "Goht's Lair Boss Warp",
       "OriginalItem": "RemainsGoht",
       "Area": "Snowhead Temple",
       "ValidItemTypes": [
@@ -23361,7 +23361,7 @@
     },
     "RemainsGyorg": {
       "ID": "RemainsGyorg",
-      "Name": "Great Bay Boss Warp",
+      "Name": "Gyorg's Lair Boss Warp",
       "OriginalItem": "RemainsGyorg",
       "Area": "Great Bay Temple",
       "ValidItemTypes": [
@@ -23383,7 +23383,7 @@
     },
     "RemainsTwinmold": {
       "ID": "RemainsTwinmold",
-      "Name": "Stone Tower Boss Warp",
+      "Name": "Twinmold's Lair Boss Warp",
       "OriginalItem": "RemainsTwinmold",
       "Area": "Stone Tower Temple",
       "ValidItemTypes": [

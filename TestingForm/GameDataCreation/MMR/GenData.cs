@@ -30,7 +30,7 @@ namespace TestingForm.GameDataCreation.MMR
                 { "AreaGreatBayTempleAccess", MiscData.RandomizedState.Unrandomized },
                 { "AreaInvertedStoneTowerTempleAccess", MiscData.RandomizedState.Unrandomized },
             };
-            foreach(var GaroHint in ExportData.Hints.Where(x => x.ID.StartsWith("HintGaro"))) { MMRDictV16.DefaultSettings.ManualRandomizationState.Add(GaroHint.ID, MiscData.RandomizedState.Unrandomized); }
+            foreach (var GaroHint in ExportData.Hints.Where(x => x.ID.StartsWith("HintGaro"))) { MMRDictV16.DefaultSettings.ManualRandomizationState.Add(GaroHint.ID, MiscData.RandomizedState.Unrandomized); }
             MMRDictV16.DefaultSettings.EnabledTricks = new List<string>
             {
                 "Exit OSH Without Goron",
@@ -51,8 +51,22 @@ namespace TestingForm.GameDataCreation.MMR
             AddLogicCollections(MMRDictV16);
             CreateLogicSettings(ExportData, MMRDictV16);
             HandleAreaClearLogic(ExportData, MMRDictV16);
+            ManualTweaking(MMRDictV16);
 
             return MMRDictV16;
+        }
+
+        private static void ManualTweaking(LogicDictionary MMRDictV16)
+        {
+            MMRDictV16.LocationList["HeartContainerWoodfall"].Name = "Odolwa's Lair Heart Container";
+            MMRDictV16.LocationList["HeartContainerSnowhead"].Name = "Goht's Lair Heart Container";
+            MMRDictV16.LocationList["HeartContainerGreatBay"].Name = "Gyorg's Lair Heart Container";
+            MMRDictV16.LocationList["HeartContainerStoneTower"].Name = "Twinmold's Lair Heart Container";
+
+            MMRDictV16.LocationList["RemainsOdolwa"].Name = "Odolwa's Lair Boss Warp";
+            MMRDictV16.LocationList["RemainsGoht"].Name = "Goht's Lair Boss Warp";
+            MMRDictV16.LocationList["RemainsGyorg"].Name = "Gyorg's Lair Boss Warp";
+            MMRDictV16.LocationList["RemainsTwinmold"].Name = "Twinmold's Lair Boss Warp";
         }
 
         private static void HandleAreaClearLogic(MMRExportClass.MMRData ExportData, LogicDictionaryData.LogicDictionary MMRDictV16)

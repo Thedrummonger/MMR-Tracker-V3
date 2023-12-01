@@ -13,6 +13,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml;
 using static MMR_Tracker_V3.InstanceData;
+using static MMR_Tracker_V3.LogicStringParser;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
 namespace MMR_Tracker_V3
@@ -110,14 +111,15 @@ namespace MMR_Tracker_V3
             Index = 0;
             foreach (var i in Instance.LogicFile.Logic)
             {
-                if (!string.IsNullOrWhiteSpace(i.SettingExpression)) { MMRSettingExpressionParser.ConvertSettingExpressionToLogic(i, Instance.LogicDictionary); }
                 if (Instance.LogicDictionary.AdditionalLogic.Any(x => x.Id == i.Id)) { Index++; continue; }
+                DoLogicCreationEdits(i, Instance);
                 ParseLogicItem(i, Index, LogicFileType.Logic);
                 Index++;
             }
             Index = 0;
             foreach (var i in Instance.LogicDictionary.AdditionalLogic)
             {
+                DoLogicCreationEdits(i, Instance);
                 ParseLogicItem(i, Index, LogicFileType.Additional);
                 Index++;
             }
@@ -291,6 +293,50 @@ namespace MMR_Tracker_V3
                     if (Trick is null || !Trick.isTrick(instance)) { continue; }
                     Trick.TrickEnabled = true;
                 }
+            }
+        }
+
+        public static void DoLogicCreationEdits(MMRData.JsonFormatLogicItem LogicItem, TrackerInstance Instance)
+        {
+            if (!string.IsNullOrWhiteSpace(LogicItem.SettingExpression)) { MMRSettingExpressionParser.ConvertSettingExpressionToLogic(LogicItem, Instance.LogicDictionary); }
+            if (!string.IsNullOrWhiteSpace(LogicItem.LogicInheritance)) { AddLogicInheritance(LogicItem, Instance); }
+        }
+
+        public static void AddLogicInheritance(MMRData.JsonFormatLogicItem LogicItem, TrackerInstance Instance)
+        {
+            LogicStringParser logicStringParser = new LogicStringParser();
+
+            string Operator = logicStringParser._ANDOP;
+            string InheritID = LogicItem.LogicInheritance;
+            if (InheritID.StartsWith('&'))
+            {
+                InheritID = InheritID[1..];
+                Operator = logicStringParser._ANDOP;
+            }
+            else if (InheritID.StartsWith('|'))
+            {
+                InheritID = InheritID[1..];
+                Operator = logicStringParser._OROP;
+            }
+            if (Instance.LogicFile.Logic.Any(x => x.Id == InheritID)) { return; }
+            var InheritedLogic = Instance.LogicFile.Logic.First(x => x.Id == InheritID).SerializeConvert<MMRData.JsonFormatLogicItem>();
+            DoLogicCreationEdits(InheritedLogic, Instance);
+
+            if (!LogicItem.RequiredItems.Any() && !LogicItem.ConditionalItems.Any())
+            {
+                LogicItem.RequiredItems = InheritedLogic.RequiredItems;
+                LogicItem.ConditionalItems = InheritedLogic.ConditionalItems;
+            }
+            else
+            {
+                LogicUtilities.MoveRequirementsToConditionals(LogicItem);
+                LogicUtilities.MoveRequirementsToConditionals(InheritedLogic);
+                string CurrentLogicstring = $"({LogicStringConverter.ConvertConditionalToLogicString(logicStringParser, LogicItem.ConditionalItems)})";
+                string InheritedLogicstring = $"({LogicStringConverter.ConvertConditionalToLogicString(logicStringParser, InheritedLogic.ConditionalItems)})";
+                string CombinedLogicString = $"{CurrentLogicstring} {Operator} {InheritedLogicstring}";
+                LogicItem.ConditionalItems = LogicStringConverter.ConvertLogicStringToConditional(logicStringParser, CombinedLogicString, LogicItem.Id);
+                LogicUtilities.RemoveRedundantConditionals(LogicItem);
+                LogicUtilities.MakeCommonConditionalsRequirements(LogicItem);
             }
         }
 

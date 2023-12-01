@@ -24,6 +24,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public TimeOfDay TimeSetup { get; set; }
             public bool IsTrick { get; set; }
             public string SettingExpression { get; set; }
+            public string LogicInheritance { get; set; }
 
             private string _trickTooltip;
             private string _trickCategory;
