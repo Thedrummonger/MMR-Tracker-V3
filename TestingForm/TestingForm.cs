@@ -76,7 +76,7 @@ namespace TestingForm
                 new DevAction("Create OOTMM Data", GameFileCreation.OOTMMCreateData, UpdateDebugActions),
                 new DevAction("Create PMR Data", GameFileCreation.PMRCreateData, UpdateDebugActions),
                 new DevAction("Connect To Async Web Server P1", OpenWebClient, UpdateDebugActions, () => { return CurrentNetClientForm is null && WinFormTesting.WinformInstanceLoaded();  }),
-                new DevAction("Test Random Stuff", TestDictExtention, UpdateDebugActions),
+                new DevAction("Test Random Stuff", TestDynamicMethodLookup, UpdateDebugActions),
             };
 
             foreach (var Function in DevFunctions)
@@ -86,6 +86,17 @@ namespace TestingForm
             }
         }
 
+        private void TestDynamicMethodLookup()
+        {
+            dynamic ChoiceOption = new OptionData.ChoiceOption();
+            dynamic MultiOption = new OptionData.MultiSelectOption();
+
+            bool t1 = MMR_Tracker_V3.Utility.DynamicMethodExists(ChoiceOption, "SetValue");
+            bool t2 = MMR_Tracker_V3.Utility.DynamicMethodExists(MultiOption, "SetValue");
+            Debug.WriteLine(t1);
+            Debug.WriteLine(t2);
+
+        }
         private void TestDictExtention()
         {
             printInt(1, 2, 3, 5);

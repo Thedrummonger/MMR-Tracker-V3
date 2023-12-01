@@ -38,7 +38,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 if (i.Key == "startingItems")
                 {
                     Debug.WriteLine(i.Value.GetType());
-                    foreach (var item in Utility.ParseJArrayToListSlow(i.Value))
+                    foreach (var item in Utility.SerializeConvert<List<string>>(i.Value))
                     {
                         var ItemObj = Instance.GetItemByID(item);
                         if (ItemObj is null)
@@ -51,7 +51,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 }
                 if (i.Key == "excludedChecks")
                 {
-                    foreach (var Location in Utility.ParseJArrayToListSlow(i.Value))
+                    foreach (var Location in Utility.SerializeConvert<List<string>>(i.Value))
                     {
                         var LocationObj = Instance.GetLocationByID(Location);
                         if (LocationObj is null)

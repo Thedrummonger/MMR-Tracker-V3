@@ -53,6 +53,8 @@ namespace Windows_Form_Frontend
             this.chkShowTime = new System.Windows.Forms.CheckBox();
             this.BTNGotTo = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // LBReq
@@ -331,6 +333,24 @@ namespace Windows_Form_Frontend
             this.textBox1.TabIndex = 31;
             this.textBox1.TextChanged += new System.EventHandler(this.lbReq_TextChanged);
             // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(427, 5);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(75, 23);
+            this.numericUpDown1.TabIndex = 32;
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
             // ShowLogic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -338,6 +358,7 @@ namespace Windows_Form_Frontend
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(514, 461);
+            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.BTNGotTo);
             this.Controls.Add(this.chkShowTime);
@@ -369,6 +390,7 @@ namespace Windows_Form_Frontend
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ShowLogic_FormClosed);
             this.Load += new System.EventHandler(this.ShowLogic_Load);
             this.ResizeEnd += new System.EventHandler(this.ShowLogic_ResizeEnd);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -399,5 +421,6 @@ namespace Windows_Form_Frontend
         private System.Windows.Forms.CheckBox chkShowTime;
         private System.Windows.Forms.Button BTNGotTo;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }

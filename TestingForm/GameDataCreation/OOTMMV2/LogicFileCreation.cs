@@ -80,7 +80,7 @@ namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
                             string LogicString = CheckForLogicOverride(Location.Value, ID);
                             List<List<string>> ConditionalLogic = LogicStringConverter.ConvertLogicStringToConditional(OOTMMLogicStringParser, LogicString, ID);
                             AddLogicEntry(LogicFile, ID, ConditionalLogic, WorldFile, Area);
-                            var AreaConnectionData = ID.StringSplit(" => ").Select(x => x.Trim()).ToArray();
+                            var AreaConnectionData = ID.Split(" => ").Select(x => x.Trim()).ToArray();
                             if (!TEMPAreaConnections.ContainsKey(ID)) { TEMPAreaConnections.Add(ID, new AreaConnections { Area = AreaConnectionData[0], Exit = AreaConnectionData[1] }); }
                             ScanForSafeMMLocations(Area.Key, GameCode, ID);
                         }

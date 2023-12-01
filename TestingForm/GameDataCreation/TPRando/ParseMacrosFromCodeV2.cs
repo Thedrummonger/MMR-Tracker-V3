@@ -119,7 +119,7 @@ namespace MMR_Tracker_V3.GameDataCreation.TPRando
             if (FormattedItem.StartsWith("Randomizer.SSettings."))
             {
                 FormattedItem = FormattedItem["Randomizer.SSettings.".Length..];
-                var Settingparams = FormattedItem.StringSplit(" == ");
+                var Settingparams = FormattedItem.Split(" == ");
                 string Settingname = Settingparams[0];
                 if (Settingparams.Length == 1)
                 {

@@ -271,7 +271,7 @@ namespace Windows_Form_Frontend
         }
         private static bool ParseImageDisplayLogic(TrackerState trackerState, string logicReferenceEntry)
         {
-            return ConditionalValid(logicReferenceEntry.StringSplit("||").Select(x => x.StringSplit("&&").Select(x => x.Trim()).ToArray()));
+            return ConditionalValid(logicReferenceEntry.Split("||").Select(x => x.Split("&&").Select(x => x.Trim()).ToArray()));
 
             bool ConditionalValid(IEnumerable<string[]> Cond)
             {

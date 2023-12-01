@@ -32,15 +32,13 @@ namespace MMR_Tracker_V3
             string Serialized = JsonConvert.SerializeObject(source);
             return JsonConvert.DeserializeObject<T>(Serialized);
         }
-        public static string[] StringSplit(this string input, string Split, StringSplitOptions options = StringSplitOptions.None)
-        {
-            return input.Split(new string[] { Split }, options);
-        }
-        public static string[] SplitOnce(this string input, char Split, bool LastOccurence = false)
+        public static Tuple<string, string> SplitOnce(this string input, char Split, bool LastOccurence = false)
         {
             int idx = LastOccurence ? input.LastIndexOf(Split) : input.IndexOf(Split);
-            if (idx != -1) { return new string[] { input[..idx], input[(idx + 1)..] }; }
-            else { return new string[] { input }; }
+            Tuple<string, string> Output;
+            if (idx != -1) { Output = new ( input[..idx], input[(idx + 1)..] ); }
+            else { Output = new ( input, string.Empty ); }
+            return Output;
         }
         public static bool In<T>(this T obj, params T[] args)
         {
@@ -229,12 +227,14 @@ namespace MMR_Tracker_V3
             if (Object is ExpandoObject)
                 return ((IDictionary<string, object>)Object).ContainsKey(name);
 
-            return Object.GetType().GetProperty(name) != null;
+            var type = Object.GetType();
+            return type.GetProperty(name) != null;
         }
-
-        public static List<string> ParseJArrayToListSlow(object JArray)
+        public static bool DynamicMethodExists(dynamic Object, string methodName)
         {
-            return JsonConvert.DeserializeObject<List<string>>(JsonConvert.SerializeObject(JArray));
+            if (Object is null) { return false; }
+            var type = Object.GetType();
+            return type.GetMethod(methodName) != null;
         }
 
         public static bool OBJIsThreadSafe(Thread thread, dynamic Obj)

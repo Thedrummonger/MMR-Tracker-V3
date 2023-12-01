@@ -190,9 +190,9 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                         string SpoilerGivenItem = Location.Value.ToString();
 
                         //Remove coin/starpoint costs from item
-                        if (SpoilerGivenItem.Contains("(") && (SpoilerGivenItem.SplitOnce('(', true)[1].Contains("coins") || SpoilerGivenItem.SplitOnce('(', true)[1].Contains(" sp)")))
+                        if (SpoilerGivenItem.Contains('(') && (SpoilerGivenItem.SplitOnce('(', true).Item2.Contains("coins") || SpoilerGivenItem.SplitOnce('(', true).Item2.Contains(" sp)")))
                         {
-                            SpoilerGivenItem = SpoilerGivenItem.SplitOnce('(', true)[0].Trim();
+                            SpoilerGivenItem = SpoilerGivenItem.SplitOnce('(', true).Item1.Trim();
                         }
 
                         //If the location is unrandomized, Ensure it contains its vanilla item in the spoiler log

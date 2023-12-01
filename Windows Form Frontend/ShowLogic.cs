@@ -32,6 +32,7 @@ namespace Windows_Form_Frontend
         private List<object> CurrentGotoData;
         private LogicCalculation LogicCalculation;
         public FormState state = FormState.showLogic;
+        public HashSet<string> AllLogicIDs;
         public ShowLogic(string id, MMR_Tracker_V3.InstanceData.TrackerInstance _instance)
         {
             InitializeComponent();
@@ -158,6 +159,7 @@ namespace Windows_Form_Frontend
 
         private void ShowLogic_Load(object sender, EventArgs e)
         {
+            AllLogicIDs = GetAllLogicIDs();
             if (CurrentID is not null && instance.GetLogic(CurrentID) is not null)
             {
                 state = FormState.showLogic;
@@ -205,13 +207,15 @@ namespace Windows_Form_Frontend
 
         private void PrintLogicToLists()
         {
-
+            Updating = true;
             LBReq.Items.Clear();
             lbCond.Items.Clear();
             var Logic = instance.GetLogic(CurrentID, !chkShowUnaltered.Checked);
             bool Literal = CurrentID.IsLiteralID(out string LogicItem);
             var type = instance.GetLocationEntryType(LogicItem, Literal, out object LocationObject);
             UpdateTimeCheckboxes(Logic);
+
+            numericUpDown1.Value = AllLogicIDs.ToList().IndexOf(CurrentID);
 
             foreach (var i in Logic.RequiredItems.Where(x => !bool.TryParse(x, out bool bout) || !bout))
             {
@@ -228,38 +232,40 @@ namespace Windows_Form_Frontend
                 StandardListBoxItem boxItem = new StandardListBoxItem() { Display = string.Join(" | ", cond.Select(x => GetDisplayName(x))), tag = cond };
                 lbCond.Items.Add(boxItem);
             }
+            Updating = false;
+        }
+
+        private HashSet<string> GetAllLogicIDs()
+        {
+            HashSet<string> LogicIds = new HashSet<string>();
+            foreach (var i in instance.LogicFile.Logic)
+            {
+                LogicIds.Add(i.Id);
+            }
+            foreach (var i in instance.LogicDictionary.AdditionalLogic)
+            {
+                if (LogicIds.Contains(i.Id)) { continue; }
+                LogicIds.Add(i.Id);
+            }
+            foreach (var i in instance.RuntimeLogic.Values)
+            {
+                if (LogicIds.Contains(i.Id)) { continue; }
+                LogicIds.Add(i.Id);
+            }
+            return LogicIds;
         }
 
         private void PrintGotoData(List<object> GotoData, bool SearchGotoData = false)
         {
             LBReq.Items.Clear();
-            foreach (var i in instance.LocationPool.Values)
+
+            foreach(var i in AllLogicIDs)
             {
-                if (!SearchStringParser.FilterSearch(instance, i, textBox1.Text, i.ID)) { continue; }
-                LBReq.Items.Add(i.ID);
+                instance.GetLocationEntryType(i, false, out object entry);
+                if (!SearchStringParser.FilterSearch(instance, entry, textBox1.Text, i)) { continue; }
+                LBReq.Items.Add(i);
             }
-            foreach (var i in instance.EntrancePool.AreaList.SelectMany(x => x.Value.RandomizableExits(instance)))
-            {
-                var ID = instance.GetLogicNameFromExit(i.Value);
-                if (!SearchStringParser.FilterSearch(instance, i, textBox1.Text, ID)) { continue; }
-                LBReq.Items.Add(ID);
-            }
-            foreach (var i in instance.EntrancePool.AreaList.SelectMany(x => x.Value.NonRandomizableExits(instance)))
-            {
-                var ID = instance.GetLogicNameFromExit(i.Value);
-                if (!SearchStringParser.FilterSearch(instance, i, textBox1.Text, ID)) { continue; }
-                LBReq.Items.Add(ID);
-            }
-            foreach (var i in instance.HintPool.Values)
-            {
-                if (!SearchStringParser.FilterSearch(instance, i, textBox1.Text, i.ID)) { continue; }
-                LBReq.Items.Add(i.ID);
-            }
-            foreach (var i in instance.MacroPool.Values)
-            {
-                if (!SearchStringParser.FilterSearch(instance, i, textBox1.Text, i.ID)) { continue; }
-                LBReq.Items.Add(i.ID);
-            }
+
             if (GotoData != null)
             {
                 lbCond.Items.Clear();
@@ -445,7 +451,6 @@ namespace Windows_Form_Frontend
 
         private void UpdateTimeCheckboxes(MMR_Tracker_V3.TrackerObjects.MMRData.JsonFormatLogicItem OriginalLogic)
         {
-            Updating = true;
             int Index = 0;
             foreach (var i in TimeCheckBoxes)
             {
@@ -453,7 +458,6 @@ namespace Windows_Form_Frontend
                 else { i.Checked = ((((int)OriginalLogic.TimeSetup >> Index - 6) & 1) == 1); }
                 Index++;
             }
-            Updating = false;
         }
         private List<string> GetChecksContainingSelectedID(string ID, out LogicEntryType Type, out string OutCleanedID)
         {
@@ -595,5 +599,14 @@ namespace Windows_Form_Frontend
             PrintLogicToLists();
         }
 
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            if (Updating) { return; }
+            if (numericUpDown1.Value < 0) { numericUpDown1.Value = 0; }
+            else if (numericUpDown1.Value >= AllLogicIDs.Count) { numericUpDown1.Value = AllLogicIDs.Count - 1; }
+            CurrentID = AllLogicIDs.ToList()[(int)numericUpDown1.Value];
+            PrintLogicToLists();
+            UpdateUI();
+        }
     }
 }

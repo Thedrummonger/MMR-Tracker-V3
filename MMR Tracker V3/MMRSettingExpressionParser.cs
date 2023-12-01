@@ -38,7 +38,7 @@ namespace MMR_Tracker_V3
                 Segment = Segment[1..];
             }
 
-            Segment = string.Join(".", Segment.Split(".").Skip(1));
+            Segment = Segment.SplitOnce('.').Item2;
 
             if (LogicDict.ToggleOptions.ContainsKey(Segment))
             {
@@ -54,7 +54,7 @@ namespace MMR_Tracker_V3
 
             if (Segment.Contains(".HasFlag"))
             {
-                string[] Data = Segment.StringSplit(".HasFlag");
+                string[] Data = Segment.Split(".HasFlag");
                 string Option = Data[0];
                 string Value = Data[1][1..^1].Split('.').Last();
                 return $"setting{{{Option}, {Value}, {(!Inverse).ToString().ToLower()}}}";
@@ -62,7 +62,7 @@ namespace MMR_Tracker_V3
 
             if (Segment.Contains(" == "))
             {
-                string[] Data = Segment.StringSplit(" == ");
+                string[] Data = Segment.Split(" == ");
                 string Option = Data[0];
                 string Value = Data[1].Split('.').Last();
                 return $"setting{{{Option}, {Value}}}";
@@ -70,7 +70,7 @@ namespace MMR_Tracker_V3
 
             if (Segment.Contains(" != "))
             {
-                string[] Data = Segment.StringSplit(" != ");
+                string[] Data = Segment.Split(" != ");
                 string Option = Data[0];
                 string Value = Data[1].Split('.').Last();
                 return $"setting{{{Option}, {Value}, false}}";

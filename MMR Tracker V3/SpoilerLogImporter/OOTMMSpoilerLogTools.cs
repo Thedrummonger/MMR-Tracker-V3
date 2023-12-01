@@ -352,7 +352,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 if (x.Trim() == Start) { AtReleventData = true; continue; }
                 if (AtReleventData && !x.StartsWith(" ") && !string.IsNullOrWhiteSpace(x)) { break; }
                 if (!AtReleventData || string.IsNullOrWhiteSpace(x)) { continue; }
-                var LineParts = x.StringSplit("->").Select(x => x.Trim()).ToArray();
+                var LineParts = x.Split("->").Select(x => x.Trim()).ToArray();
                 if (LineParts.Count() > 1 && !string.IsNullOrWhiteSpace(LineParts[1]))
                 {
                     SpoilerData[LineParts[0]] = LineParts[1];
@@ -466,7 +466,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 if (CurrentKey == "") { CurrentKey = x; }
                 else
                 {
-                    Result[CurrentKey] = new SpoilerHintData { HintType = HintType.Hero, PrettyLocationText = $"{x.StringSplit("    ")[0]}" };
+                    Result[CurrentKey] = new SpoilerHintData { HintType = HintType.Hero, PrettyLocationText = $"{x.Split("    ")[0]}" };
                     CurrentKey = "";
                 }
             }
