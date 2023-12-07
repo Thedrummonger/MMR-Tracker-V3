@@ -17,6 +17,18 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
 {
     public static class MMRSpoilerLogTools
     {
+        public class MMRSpoilerLogItemLocation
+        {
+            public List<string> Locations = new List<string>();
+            public List<MMRSpoilerLogItemData> Item = new List<MMRSpoilerLogItemData>();
+            public Dictionary<string, string> Result = new Dictionary<string, string>();
+        }
+        public class MMRSpoilerLogItemData
+        {
+            public string Item;
+            public string Area;
+            public bool IsJunk = false;
+        }
         public static void ReadAndApplySpoilerLog(InstanceContainer Container)
         {
             int SettingLineIndex = -1;
@@ -38,22 +50,40 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 else if (i.Trim().StartsWith("Location") && i.Contains("Item")) { ItemLocationIndex = CurInd; }
                 else if (i.Trim().StartsWith("Name") && i.Contains("Cost")) { CostIndex = CurInd; }
                 else if (i.Trim().StartsWith("Gossip Stone ") && i.Contains("Message")) { GossipIndex = CurInd; }
-                else if (i.Trim().StartsWith("Playthrough")) { GossipIndex = CurInd; }
+                else if (i.Trim().StartsWith("Playthrough")) { PlaythroughIndex = CurInd; }
                 CurInd++;
             }
             int SettingIndexEnd = SeedIndex - 1;
             int BlitzStartingItemsEnd = EntranceIndex < 0 ? ItemLocationIndex -1 : EntranceIndex;
             int EntranceIndexEnd = ItemLocationIndex - 1;
-            int ItemLocationIndexEnd = CostIndex < 0 ? GossipIndex -1 : CostIndex - 1;
+            int ItemLocationIndexEnd = CostIndex > -1 ? CostIndex -1 : GossipIndex - 1;
+            int CostIndexEnd = GossipIndex -1;
             int GossipIndexEnd = PlaythroughIndex -1;
+
+            ResetInstance(Container.Instance);
 
             var SettingLines = Container.Instance.SpoilerLog.Log.ToList().GetRange((SettingLineIndex+1)..(SettingIndexEnd-1));
             var SettingString = $"{{{string.Join(" ", SettingLines)}}}";
             Dictionary<string, object> Settings = JsonConvert.DeserializeObject<Dictionary<string, object>>(SettingString);
 
-            List<string> ItemLocations = Container.Instance.SpoilerLog.Log.ToList().GetRange((ItemLocationIndex+1)..(ItemLocationIndexEnd));
-            List<string> JunkLocations = GetJunkLocations(ItemLocations);
-            List<Tuple<string, string>> ItemLocationDict = GetItemLocationData(ItemLocations);
+            ApplySettings(Container.Instance, Settings);
+
+            Container.logicCalculation.CompileOptionActionEdits();
+
+            SettingStringHandler.ApplyLocationString(Settings.GetValueAs<string, string>("CustomItemListString"), Container.Instance);
+            SettingStringHandler.ApplyJunkString(Settings.GetValueAs<string, string>("CustomJunkLocationsString"), Container.Instance);
+            SettingStringHandler.ApplyStartingItemString(Settings.GetValueAs<string, string>("CustomStartingItemListString"), Container.Instance);
+
+            List<string> ItemLocations = Container.Instance.SpoilerLog.Log.ToList().GetRange((ItemLocationIndex+1)..(ItemLocationIndexEnd)).Select(x => x.Trim()).Where(x => !string.IsNullOrWhiteSpace(x)).ToList();
+            
+            var ItemLocationDict = GetItemLocationData(ItemLocations, Container.Instance);
+
+            if (CostIndex > -1)
+            {
+                var PriceData = Container.Instance.SpoilerLog.Log.ToList().GetRange((CostIndex+1)..(CostIndexEnd-1));
+                Debug.WriteLine($"CostData:\n{PriceData.ToFormattedJson()}");
+            }
+
 
             Dictionary<string, string> EntranceLocationDict = new Dictionary<string, string>();
             if (EntranceIndex > -1)
@@ -97,10 +127,6 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 { "RemainsTwinmold", "AreaTwinmoldsLair" }
             };
 
-            ResetInstance(Container.Instance);
-
-            ApplySettings(Container.Instance, Settings);
-
             foreach(var trick in Settings.GetValueAs<string, string[]>("EnabledTricks"))
             {
                 var Trick = Container.Instance.GetMacroByID(trick);
@@ -108,12 +134,6 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 if (!Trick.isTrick()) { Debug.WriteLine($"macro {trick} was not a trick"); continue; }
                 Trick.TrickEnabled = true;
             }
-
-            Container.logicCalculation.CompileOptionActionEdits();
-
-            SettingStringHandler.ApplyLocationString(Settings.GetValueAs<string, string>("CustomItemListString"), Container.Instance);
-            SettingStringHandler.ApplyJunkString(Settings.GetValueAs<string, string>("CustomJunkLocationsString"), Container.Instance);
-            SettingStringHandler.ApplyStartingItemString(Settings.GetValueAs<string, string>("CustomStartingItemListString"), Container.Instance);
 
             //Keep track of boss door locations even if they aren't randomized
             Dictionary<string, string> BossDoorMapping = new Dictionary<string, string>()
@@ -146,17 +166,13 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 }
             }
 
-            foreach (var i in ItemLocationDict)
+            foreach (var data in ItemLocationDict)
             {
-                var PossibleLocations = Container.Instance.LocationPool.Where(x => x.Value.GetDictEntry().GetName() == i.Item1);
-                PossibleLocations = PossibleLocations.Where(x => string.IsNullOrWhiteSpace(x.Value.Randomizeditem.SpoilerLogGivenItem));
-                if (!PossibleLocations.Any())
-                {
-                    Debug.WriteLine($"No Location {i.Item1} has not been placed. Assuming Duplicate?");
-                    continue;
-                }
-                var SpoilerLocation = PossibleLocations.First().Value;
-                var Item = Container.Instance.GetItemToPlace(i.Item2, DoNameEdits: true);
+                string RawLocation = data.Key;
+                string RawItem = data.Value;
+
+                var SpoilerLocation = Container.Instance.GetLocationByID(RawLocation);
+                var Item = Container.Instance.GetItemToPlace(RawItem, DoNameEdits: true);
 
                 if (RenamedHeartContainerChecks.ContainsKey(SpoilerLocation.ID))
                 {
@@ -177,15 +193,14 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
 
                 if (Item is null)
                 {
-                    Debug.WriteLine($"No more {i.Item2} Could Be Placed. Assuming Junk?");
-                    SpoilerLocation.Randomizeditem.SpoilerLogGivenItem = $"FAKE: {i.Item2}";
+                    Debug.WriteLine($"No more {RawItem} Could Be Placed. Assuming Junk?");
+                    SpoilerLocation.Randomizeditem.SpoilerLogGivenItem = $"FAKE: {RawItem}";
                 }
                 else
                 {
                     SpoilerLocation.Randomizeditem.SpoilerLogGivenItem = Item.ID;
                 }
             }
-
 
             if (BlitzStartingItems.Any())
             {
@@ -202,7 +217,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
 
             foreach (var item in BlitzStartingItems)
             {
-                var Item = Container.Instance.GetItemToPlace(item, DoNameEdits: true);
+                //var Item = Container.Instance.GetItemToPlace(item, DoNameEdits: true);
                 //Item.AmountInStartingpool = 1;
             }
 
@@ -431,32 +446,88 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             }
         }
 
-        private static List<Tuple<string, string>> GetItemLocationData(List<string> itemLocations)
+        private static Dictionary<string, string> GetItemLocationData(List<string> itemLocations, TrackerInstance instance)
         {
-            List<Tuple<string, string>> ItemLocationDict = new List<Tuple<string, string>>();
+            Dictionary<string, MMRSpoilerLogItemLocation> ItemLocationDict = new Dictionary<string, MMRSpoilerLogItemLocation>();
+            string CurrentArea = "";
             foreach (var ItemLocation in itemLocations)
             {
-                if (!ItemLocation.Contains("->")) { continue; }
-                string[] Data = ItemLocation.Split("->");
-                string Location = Data[0].Trim();
-                if (Location.StartsWith("- ")) { continue; }
-                string Item = Data[1].Replace("*", "").Replace("^", "").Trim();
-                ItemLocationDict.Add(new(Location, Item));
-            }
-            return ItemLocationDict;
-        }
+                if (string.IsNullOrWhiteSpace(ItemLocation)) { continue; }
+                if (!ItemLocation.Contains("->")) 
+                {
+                    CurrentArea = ItemLocation.Trim();
+                    continue; 
+                }
 
-        private static List<string> GetJunkLocations(List<string> itemLocations)
-        {
-            List<string> locations = new List<string>();
-            foreach (var ItemLocation in itemLocations)
-            {
-                if (!ItemLocation.Contains("->")) { continue; }
                 string[] Data = ItemLocation.Split("->");
                 string Location = Data[0].Trim();
-                if (Location.StartsWith("- ")) { locations.Add(Location[2..]); }
+                bool IsJunk = false;
+                if (Location.StartsWith("- ")) 
+                {
+                    IsJunk = true;
+                    Location = Location[2..];
+                }
+                ItemLocationDict.SetIfEmpty(Location, new MMRSpoilerLogItemLocation());
+
+                string Item = Data[1].Replace("*", "").Replace("^", "").Trim();
+                if (Item.StartsWith("Ice Trap")) { Item = "Ice Trap"; }
+                if (Item.StartsWith("Bomb Trap")) { Item = "Bomb Trap"; }
+                if (Item.StartsWith("Nothing")) { Item = "Nothing"; }
+                if (Item.StartsWith("Rupoor")) { Item = "Rupoor"; }
+
+                ItemLocationDict[Location].Item.Add(new MMRSpoilerLogItemData
+                {
+                    Item = Item,
+                    Area = CurrentArea,
+                    IsJunk = IsJunk,
+                });
             }
-            return locations;
+
+            foreach(var i in ItemLocationDict)
+            {
+                i.Value.Locations = instance.LocationPool.Values.Where(x => !x.IsUnrandomized() && x.GetDictEntry().SpoilerData.SpoilerLogNames.Contains(i.Key)).Select(x => x.ID).ToList();
+
+                TryCreateResult(i.Value, i.Value.Item);
+                if (!i.Value.Result.Any())
+                {
+                    List<MMRSpoilerLogItemData> DistinctItems = new List<MMRSpoilerLogItemData>();
+                    foreach (var j in i.Value.Item)
+                    {
+                        if (!DistinctItems.Any(x => x.Item == j.Item && x.Area != j.Area)) { DistinctItems.Add(j); }
+                    }
+                    TryCreateResult(i.Value, DistinctItems);
+                }
+            }
+
+            //Debug.WriteLine($"ItemLocationDict:\n{ItemLocationDict.Where(x => x.Value.Locations.Count() > 1 || x.Value.Item.Count() > 1).ToFormattedJson()}");
+
+            Dictionary<string, string> Result = new Dictionary<string, string>();
+            foreach (var i in ItemLocationDict)
+            {
+                if (!i.Value.Result.Any()) { throw new Exception($"Could not parse line data\n{i.ToFormattedJson()}"); }
+                foreach(var r in i.Value.Result)
+                {
+                    Result.Add(r.Key, r.Value);
+                }
+            }
+
+            return Result;
+
+            void TryCreateResult(MMRSpoilerLogItemLocation itemLoc, List<MMRSpoilerLogItemData> Items)
+            {
+                if (itemLoc.Locations.Count == Items.Count)
+                {
+                    foreach (var x in itemLoc.Locations)
+                    {
+                        int Index = itemLoc.Locations.IndexOf(x);
+                        itemLoc.Result.Add(x, Items[Index].Item);
+                    }
+                }
+                else if (itemLoc.Locations.Count == 1)
+                {
+                    itemLoc.Result.Add(itemLoc.Locations.First(), Items.First().Item);
+                }
+            }
         }
 
         private static void ApplySettings(InstanceData.TrackerInstance instance, Dictionary<string, object> Settings)
