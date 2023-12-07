@@ -24,20 +24,19 @@ namespace Windows_Form_Frontend
         }
 
         public string CurrentID;
-        private readonly MMR_Tracker_V3.InstanceData.TrackerInstance instance;
         private readonly ListBoxHeightData ReqLBHeightData;
+        private readonly InstanceContainer IC;
         private bool Updating = false;
         private readonly List<CheckBox> TimeCheckBoxes;
         private readonly List<string> GoBackList = new();
         private List<object> CurrentGotoData;
-        private LogicCalculation LogicCalculation;
         public FormState state = FormState.showLogic;
         public HashSet<string> AllLogicIDs;
-        public ShowLogic(string id, MMR_Tracker_V3.InstanceData.TrackerInstance _instance)
+        public ShowLogic(string id, MiscData.InstanceContainer _instanceContainer)
         {
             InitializeComponent();
             CurrentID = id;
-            instance = _instance;
+            IC = _instanceContainer;
             ReqLBHeightData = new ListBoxHeightData() { 
                 Main = LBReq,
                 TopPosFull = lbCond.Location.Y,
@@ -46,7 +45,6 @@ namespace Windows_Form_Frontend
                 BottomPosCut = LBReq.Location.Y + LBReq.Height,
             };
             TimeCheckBoxes = new() { ND1, NN1, ND2, NN2, ND3, NN3, SD1, SN1, SD2, SN2, SD3, SN3 };
-            LogicCalculation = new LogicCalculation(new InstanceContainer { Instance = instance });
             TrackerDataHandeling.CheckedObjectsUpdate += TrackerDataHandeling_CheckedObjectsUpdate;
         }
 
@@ -89,16 +87,16 @@ namespace Windows_Form_Frontend
             Updating = true;
             if (state == FormState.showLogic)
             {
-                var AlteredLogic = instance.GetLogic(CurrentID, true);
-                var UnAlteredLogic = instance.GetLogic(CurrentID, false);
+                var AlteredLogic = IC.Instance.GetLogic(CurrentID, true);
+                var UnAlteredLogic = IC.Instance.GetLogic(CurrentID, false);
                 bool Literal = CurrentID.IsLiteralID(out string LogicItem);
-                var type = instance.GetLocationEntryType(LogicItem, Literal, out dynamic LogicItemObject);
+                var type = IC.Instance.GetLocationEntryType(LogicItem, Literal, out dynamic LogicItemObject);
                 string Availablility = GetAvailable(AlteredLogic, type, LogicItem) ? "*" : "";
                 string typeDisplay = type == LogicEntryType.macro && UnAlteredLogic.IsTrick ? "Trick" : type.ToString();
                 bool hasTimeLogic = UnAlteredLogic.TimeAvailable != TimeOfDay.None || UnAlteredLogic.TimeSetup != TimeOfDay.None;
                 bool ShowTimeLogic = hasTimeLogic && chkShowTime.Checked;
                 //Title
-                string EntryName = instance.GetDynamicObjName((object)LogicItemObject)??LogicItem;
+                string EntryName = IC.Instance.GetDynamicObjName((object)LogicItemObject)??LogicItem;
                 if (EntryName != LogicItem) { EntryName = $"{EntryName} ({LogicItem})"; }
                 this.Text = $"{typeDisplay}: {EntryName}{Availablility}";
                 //Text Changes
@@ -153,14 +151,14 @@ namespace Windows_Form_Frontend
 
         public bool GetAvailable(MMR_Tracker_V3.TrackerObjects.MMRData.JsonFormatLogicItem Logic, LogicEntryType type, string id)
         {
-            string Area = type == LogicEntryType.Exit ? instance.InstanceReference.EntranceLogicNameToEntryData[id].Area : null;
-            return LogicCalculation.CalculatReqAndCond(Logic, id, Area);
+            string Area = type == LogicEntryType.Exit ? IC.Instance.InstanceReference.EntranceLogicNameToEntryData[id].Area : null;
+            return IC.logicCalculation.CalculatReqAndCond(Logic, id, Area);
         }
 
         private void ShowLogic_Load(object sender, EventArgs e)
         {
             AllLogicIDs = GetAllLogicIDs();
-            if (CurrentID is not null && instance.GetLogic(CurrentID) is not null)
+            if (CurrentID is not null && IC.Instance.GetLogic(CurrentID) is not null)
             {
                 state = FormState.showLogic;
                 PrintLogicToLists();
@@ -168,9 +166,9 @@ namespace Windows_Form_Frontend
             else
             {
                 state = FormState.GoTo;
-                List<string> ItemIds = instance.ItemPool.Keys.ToList();
-                List<string> MacroIds = instance.MacroPool.Keys.ToList();
-                List<string> AreaIds = instance.EntrancePool.AreaList.Keys.ToList();
+                List<string> ItemIds = IC.Instance.ItemPool.Keys.ToList();
+                List<string> MacroIds = IC.Instance.MacroPool.Keys.ToList();
+                List<string> AreaIds = IC.Instance.EntrancePool.AreaList.Keys.ToList();
                 PrintGotoData(CreatGotoList(ItemIds.Concat(MacroIds).Concat(AreaIds).ToList(), out _));
             }
             UpdateUI();
@@ -183,8 +181,8 @@ namespace Windows_Form_Frontend
 
         public List<string> GetAllLogicItemsByFromID(string ID)
         {
-            var OriginalLogic = instance.GetLogic(ID, false);
-            var AlteredLogic = instance.GetLogic(ID);
+            var OriginalLogic = IC.Instance.GetLogic(ID, false);
+            var AlteredLogic = IC.Instance.GetLogic(ID);
             var Logic = chkShowUnaltered.Checked ? OriginalLogic : AlteredLogic;
 
             List<string> LogicItems = new List<string>();
@@ -210,9 +208,9 @@ namespace Windows_Form_Frontend
             Updating = true;
             LBReq.Items.Clear();
             lbCond.Items.Clear();
-            var Logic = instance.GetLogic(CurrentID, !chkShowUnaltered.Checked);
+            var Logic = IC.Instance.GetLogic(CurrentID, !chkShowUnaltered.Checked);
             bool Literal = CurrentID.IsLiteralID(out string LogicItem);
-            var type = instance.GetLocationEntryType(LogicItem, Literal, out object LocationObject);
+            var type = IC.Instance.GetLocationEntryType(LogicItem, Literal, out object LocationObject);
             UpdateTimeCheckboxes(Logic);
 
             numericUpDown1.Value = AllLogicIDs.ToList().IndexOf(CurrentID);
@@ -238,16 +236,16 @@ namespace Windows_Form_Frontend
         private HashSet<string> GetAllLogicIDs()
         {
             HashSet<string> LogicIds = new HashSet<string>();
-            foreach (var i in instance.LogicFile.Logic)
+            foreach (var i in IC.Instance.LogicFile.Logic)
             {
                 LogicIds.Add(i.Id);
             }
-            foreach (var i in instance.LogicDictionary.AdditionalLogic)
+            foreach (var i in IC.Instance.LogicDictionary.AdditionalLogic)
             {
                 if (LogicIds.Contains(i.Id)) { continue; }
                 LogicIds.Add(i.Id);
             }
-            foreach (var i in instance.RuntimeLogic.Values)
+            foreach (var i in IC.Instance.RuntimeLogic.Values)
             {
                 if (LogicIds.Contains(i.Id)) { continue; }
                 LogicIds.Add(i.Id);
@@ -261,8 +259,8 @@ namespace Windows_Form_Frontend
 
             foreach(var i in AllLogicIDs)
             {
-                instance.GetLocationEntryType(i, false, out object entry);
-                if (!SearchStringParser.FilterSearch(instance, entry, textBox1.Text, i)) { continue; }
+                IC.Instance.GetLocationEntryType(i, false, out object entry);
+                if (!SearchStringParser.FilterSearch(IC.Instance, entry, textBox1.Text, i)) { continue; }
                 LBReq.Items.Add(i);
             }
 
@@ -292,7 +290,7 @@ namespace Windows_Form_Frontend
             foreach (var i in set)
             {
                 bool ReqItemIsLitteral = i.IsLiteralID(out string ReqLogicItem);
-                LogicItems[i] = instance.GetItemEntryType(ReqLogicItem, ReqItemIsLitteral, out _);
+                LogicItems[i] = IC.Instance.GetItemEntryType(ReqLogicItem, ReqItemIsLitteral, out _);
             }
             var GotoData = CreateGotoDataFromList(LogicItems);
             DataEntriesOnly = GotoData.Where(x => x is StandardListBoxItem).ToList();
@@ -328,7 +326,7 @@ namespace Windows_Form_Frontend
                             break;
                         case LogicEntryType.item:
                             LitEntry.tag = c;
-                            LitEntry.Display = $"{instance.GetItemByID(CleanedID)?.GetDictEntry(instance)?.GetName(instance)??CleanedID}: {instance.GetLocationByID(c)?.GetDictEntry(instance)?.GetName(instance)??c}";
+                            LitEntry.Display = $"{IC.Instance.GetItemByID(CleanedID)?.GetDictEntry(IC.Instance)?.GetName(IC.Instance)??CleanedID}: {IC.Instance.GetLocationByID(c)?.GetDictEntry(IC.Instance)?.GetName(IC.Instance)??c}";
                             break;
                         case LogicEntryType.macro:
                         default:
@@ -352,7 +350,7 @@ namespace Windows_Form_Frontend
                 {
                     case LogicEntryType.location:
                         LitEntry.tag = i.Key;
-                        LitEntry.Display = instance.GetLocationByID(i.Key)?.GetDictEntry(instance)?.GetName(instance)??i.Key;
+                        LitEntry.Display = IC.Instance.GetLocationByID(i.Key)?.GetDictEntry(IC.Instance)?.GetName(IC.Instance)??i.Key;
                         break;
                     case LogicEntryType.Exit:
                     default:
@@ -374,7 +372,7 @@ namespace Windows_Form_Frontend
                 if (Func == "contains")
                 {
                     var Data = Param.Split(',').Select(x => x.Trim()).ToArray();
-                    var ItemType = instance.GetLocationEntryType(Data[0], false, out object obj);
+                    var ItemType = IC.Instance.GetLocationEntryType(Data[0], false, out object obj);
                     if (ItemType == LogicEntryType.LogicEntryCollection)
                     {
                         AddFromVariable(Data[0]);
@@ -387,7 +385,7 @@ namespace Windows_Form_Frontend
                 else if (Func == "check" || Func == "available")
                 {
                     var Data = Param.Split(',').Select(x => x.Trim()).ToArray();
-                    var ItemType = instance.GetLocationEntryType(Data[0], false, out object obj);
+                    var ItemType = IC.Instance.GetLocationEntryType(Data[0], false, out object obj);
                     if (ItemType == LogicEntryType.LogicEntryCollection)
                     {
                         AddFromVariable(Data[0]);
@@ -401,11 +399,11 @@ namespace Windows_Form_Frontend
             return NewList;
             void AddFromVariable(string Entry)
             {
-                instance.MultipleItemEntry(Entry, out string LogicItem, out int Amount);
-                if (!instance.LogicEntryCollections.TryGetValue(LogicItem, out OptionData.LogicEntryCollection variable)) { return; }
-                foreach (string varEntry in variable.GetValue(instance))
+                IC.Instance.MultipleItemEntry(Entry, out string LogicItem, out int Amount);
+                if (!IC.Instance.LogicEntryCollections.TryGetValue(LogicItem, out OptionData.LogicEntryCollection variable)) { return; }
+                foreach (string varEntry in variable.GetValue(IC.Instance))
                 {
-                    var ItemType = instance.GetItemEntryType(varEntry, false, out object obj);
+                    var ItemType = IC.Instance.GetItemEntryType(varEntry, false, out object obj);
                     NewList[varEntry] = ItemType;
                 }
             }
@@ -420,7 +418,7 @@ namespace Windows_Form_Frontend
                 if (Func == "contains")
                 {
                     var Data = Param.Split(',').Select(x => x.Trim()).ToArray();
-                    var ItemType = instance.GetItemEntryType(Data[1], false, out object obj);
+                    var ItemType = IC.Instance.GetItemEntryType(Data[1], false, out object obj);
                     if (ItemType == LogicEntryType.LogicEntryCollection) 
                     { 
                         AddFromVariable(Data[1]); 
@@ -439,11 +437,11 @@ namespace Windows_Form_Frontend
 
             void AddFromVariable(string Entry)
             {
-                instance.MultipleItemEntry(Entry, out string LogicItem, out int Amount);
-                if (!instance.LogicEntryCollections.TryGetValue(LogicItem, out OptionData.LogicEntryCollection variable)) { return; }
-                foreach (string varEntry in variable.GetValue(instance))
+                IC.Instance.MultipleItemEntry(Entry, out string LogicItem, out int Amount);
+                if (!IC.Instance.LogicEntryCollections.TryGetValue(LogicItem, out OptionData.LogicEntryCollection variable)) { return; }
+                foreach (string varEntry in variable.GetValue(IC.Instance))
                 {
-                    var ItemType = instance.GetItemEntryType(varEntry, false, out object obj);
+                    var ItemType = IC.Instance.GetItemEntryType(varEntry, false, out object obj);
                     NewList[varEntry] = ItemType;
                 }
             }
@@ -461,25 +459,25 @@ namespace Windows_Form_Frontend
         }
         private List<string> GetChecksContainingSelectedID(string ID, out LogicEntryType Type, out string OutCleanedID)
         {
-            instance.MultipleItemEntry(ID, out string CleanedID, out int Amount);
+            IC.Instance.MultipleItemEntry(ID, out string CleanedID, out int Amount);
             bool ItemIsLitteral = CleanedID.IsLiteralID(out CleanedID);
-            Type = instance.GetItemEntryType(CleanedID, ItemIsLitteral, out _);
+            Type = IC.Instance.GetItemEntryType(CleanedID, ItemIsLitteral, out _);
             OutCleanedID = CleanedID;
             switch (Type)
             {
                 case LogicEntryType.Area:
-                    var ValidLoadingZoneExits = instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits(instance).Values.Where(x => 
+                    var ValidLoadingZoneExits = IC.Instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits(IC.Instance).Values.Where(x => 
                         (x.DestinationExit is not null  && x.DestinationExit.region == CleanedID && x.CheckState != MiscData.CheckState.Unchecked) ||
                         (x.IsUnrandomized() && x.GetVanillaDestination().region == CleanedID)));
-                    var ValidMacroExits = instance.EntrancePool.AreaList.Values.SelectMany(x => x.NonRandomizableExits(instance).Values.Where(x => 
+                    var ValidMacroExits = IC.Instance.EntrancePool.AreaList.Values.SelectMany(x => x.NonRandomizableExits(IC.Instance).Values.Where(x => 
                         (x.DestinationExit is not null  && x.DestinationExit.region == CleanedID) || 
                         x.GetVanillaDestination().region == CleanedID));
                     var ValidExits = ValidLoadingZoneExits.Concat(ValidMacroExits);
-                    return ValidExits.Select(x => instance.GetLogicNameFromExit(x)).ToList();
+                    return ValidExits.Select(x => IC.Instance.GetLogicNameFromExit(x)).ToList();
                 case LogicEntryType.item:
-                    var ValidLocations = instance.LocationPool.Values.Where(x => 
+                    var ValidLocations = IC.Instance.LocationPool.Values.Where(x => 
                         (x.Randomizeditem.Item is not null && x.Randomizeditem.Item == CleanedID && x.CheckState != MiscData.CheckState.Unchecked) || 
-                        ((x.IsUnrandomized() || x.SingleValidItem is not null) && x.GetItemAtCheck(instance) == CleanedID));
+                        ((x.IsUnrandomized() || x.SingleValidItem is not null) && x.GetItemAtCheck(IC.Instance) == CleanedID));
                     return ValidLocations.Select(x => x.ID).ToList();
                 case LogicEntryType.macro:
                     return new List<string> { CleanedID };
@@ -489,7 +487,7 @@ namespace Windows_Form_Frontend
         }
         private string GetDisplayName(string i)
         {
-            return i + (LogicCalculation.LogicEntryAquired( i, new List<string>()) ? "*" : "");
+            return i + (IC.logicCalculation.LogicEntryAquired( i, new List<string>()) ? "*" : "");
         }
 
         private void btnGoTo_Click(object sender, EventArgs e)

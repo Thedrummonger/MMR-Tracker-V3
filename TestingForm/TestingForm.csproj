@@ -9,7 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ConsoleDebugger\CLI Front End.csproj" />
     <ProjectReference Include="..\MMR Tracker V3\MMR Tracker V3.csproj" />
     <ProjectReference Include="..\Windows Form Frontend\Windows Form Frontend.csproj" />
   </ItemGroup>

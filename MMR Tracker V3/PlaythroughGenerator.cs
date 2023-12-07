@@ -14,15 +14,15 @@ namespace MMR_Tracker_V3
 {
     public class PlaythroughGenerator
     {
-        public MiscData.InstanceContainer _Instance = new MiscData.InstanceContainer();
+        public MiscData.InstanceContainer Container = new MiscData.InstanceContainer();
         public Dictionary<string, PlaythroughObject> Playthrough = new Dictionary<string, PlaythroughObject>();
         public List<string> _IngoredChecks;
         public Dictionary<string, List<Tuple<object, PlaythroughObject>>> FirstObtainedDict = new Dictionary<string, List<Tuple<object, PlaythroughObject>>>();
         public PlaythroughGenerator(InstanceData.TrackerInstance instance, List<string> IngoredChecks = null)
         {
-            _Instance.Instance = Newtonsoft.Json.JsonConvert.DeserializeObject<InstanceData.TrackerInstance>(Newtonsoft.Json.JsonConvert.SerializeObject(instance));
+            Container.ApplyInstance(JsonConvert.SerializeObject(instance));
             _IngoredChecks = IngoredChecks??new List<string>();
-            _Instance.logicCalculation = new LogicCalculation(_Instance);
+            Container.logicCalculation = new LogicCalculation(Container);
         }
 
         [Serializable]
@@ -44,12 +44,12 @@ namespace MMR_Tracker_V3
             int Sphere = 0;
             PrepareInstance();
             Playthrough.Clear();
-            _Instance.logicCalculation.CompileOptionActionEdits();
-            _Instance.logicCalculation.CalculateLogic(MiscData.CheckState.Checked);
+            Container.logicCalculation.CompileOptionActionEdits();
+            Container.logicCalculation.CalculateLogic(MiscData.CheckState.Checked);
 
-            var AvailableLocations = _Instance.Instance.LocationPool.Values.Where(x => x.Available && x.CheckState == MiscData.CheckState.Unchecked && x.IsRandomized());
-            var AvailableEntrances = getAllAvailableEntrances(_Instance.Instance, _Instance.logicCalculation.AutoObtainedObjects);
-            var AquiredMacros = _Instance.Instance.MacroPool.Values.Where(x => x.Aquired && !Playthrough.ContainsKey(x.ID));
+            var AvailableLocations = Container.Instance.LocationPool.Values.Where(x => x.Available && x.CheckState == MiscData.CheckState.Unchecked && x.IsRandomized());
+            var AvailableEntrances = getAllAvailableEntrances(Container.Instance, Container.logicCalculation.AutoObtainedObjects);
+            var AquiredMacros = Container.Instance.MacroPool.Values.Where(x => x.Aquired && !Playthrough.ContainsKey(x.ID));
 
             while (AvailableLocations.Any() || AvailableEntrances.Any() || AquiredMacros.Any())
             {
@@ -61,38 +61,38 @@ namespace MMR_Tracker_V3
                     {
                         throw new Exception($"{$"{i.ParentAreaID} X {i.ID}"} had no item");
                     }
-                    var RandomizableExits = _Instance.Instance.EntrancePool.AreaList[i.ParentAreaID].RandomizableExits(_Instance.Instance);
+                    var RandomizableExits = Container.Instance.EntrancePool.AreaList[i.ParentAreaID].RandomizableExits(Container.Instance);
                     if (RandomizableExits.ContainsKey(i.ID) && RandomizableExits[i.ID].IsRandomized())
                     {
-                        i.ToggleExitChecked(MiscData.CheckState.Checked, _Instance.Instance);
+                        i.ToggleExitChecked(MiscData.CheckState.Checked, Container.Instance);
                     }
                     i.CheckState = MiscData.CheckState.Checked;
                     PlaythroughObject playthroughObject = new PlaythroughObject
                     {
-                        id = _Instance.Instance.GetLogicNameFromExit(i),
+                        id = Container.Instance.GetLogicNameFromExit(i),
                         ItemObtained = i.GetDestinationAtExit().region,
-                        UsedItems = _Instance.logicCalculation.LogicUnlockData[_Instance.Instance.GetLogicNameFromExit(i)],
+                        UsedItems = Container.logicCalculation.LogicUnlockData[Container.Instance.GetLogicNameFromExit(i)],
                         CheckType = MiscData.LogicEntryType.Exit,
                         sphere = Sphere
                     };
                     if (!FirstObtainedDict.ContainsKey(playthroughObject.ItemObtained)) { FirstObtainedDict.Add(playthroughObject.ItemObtained, new List<Tuple<object, PlaythroughObject>>()); }
                     FirstObtainedDict[playthroughObject.ItemObtained].Add(new Tuple<object, PlaythroughObject>(i, playthroughObject));
-                    Playthrough.Add(_Instance.Instance.GetLogicNameFromExit(i), playthroughObject);
+                    Playthrough.Add(Container.Instance.GetLogicNameFromExit(i), playthroughObject);
                 }
                 foreach (var i in AvailableLocations)
                 {
                     //Debug.WriteLine($"Checking: {i.ID}");
-                    i.ToggleChecked(MiscData.CheckState.Checked, _Instance.Instance);
+                    i.ToggleChecked(MiscData.CheckState.Checked, Container.Instance);
                     i.CheckState = MiscData.CheckState.Checked;
-                    if (i.GetItemAtCheck(_Instance.Instance) == null)
+                    if (i.GetItemAtCheck(Container.Instance) == null)
                     {
                         throw new Exception($"{i.ID} had no item");
                     }
                     PlaythroughObject playthroughObject = new PlaythroughObject
                     {
                         id = i.ID,
-                        ItemObtained = i.GetItemAtCheck(_Instance.Instance),
-                        UsedItems = _Instance.logicCalculation.LogicUnlockData[i.ID],
+                        ItemObtained = i.GetItemAtCheck(Container.Instance),
+                        UsedItems = Container.logicCalculation.LogicUnlockData[i.ID],
                         CheckType = MiscData.LogicEntryType.location,
                         sphere = Sphere
                     };
@@ -106,7 +106,7 @@ namespace MMR_Tracker_V3
                     {
                         id = i.ID,
                         ItemObtained = i.ID,
-                        UsedItems = _Instance.logicCalculation.LogicUnlockData[i.ID],
+                        UsedItems = Container.logicCalculation.LogicUnlockData[i.ID],
                         CheckType = MiscData.LogicEntryType.macro,
                         sphere = Sphere
                     };
@@ -115,10 +115,10 @@ namespace MMR_Tracker_V3
                     Playthrough.Add(i.ID, playthroughObject);
                 }
 
-                _Instance.logicCalculation.CalculateLogic(MiscData.CheckState.Checked);
-                AvailableLocations = _Instance.Instance.LocationPool.Values.Where(x => x.Available && x.CheckState == MiscData.CheckState.Unchecked && x.IsRandomized());
-                AvailableEntrances = getAllAvailableEntrances(_Instance.Instance, _Instance.logicCalculation.AutoObtainedObjects);
-                AquiredMacros = _Instance.Instance.MacroPool.Values.Where(x => x.Aquired && !Playthrough.ContainsKey(x.ID));
+                Container.logicCalculation.CalculateLogic(MiscData.CheckState.Checked);
+                AvailableLocations = Container.Instance.LocationPool.Values.Where(x => x.Available && x.CheckState == MiscData.CheckState.Unchecked && x.IsRandomized());
+                AvailableEntrances = getAllAvailableEntrances(Container.Instance, Container.logicCalculation.AutoObtainedObjects);
+                AquiredMacros = Container.Instance.MacroPool.Values.Where(x => x.Aquired && !Playthrough.ContainsKey(x.ID));
 
 
                 Sphere++;
@@ -181,7 +181,7 @@ namespace MMR_Tracker_V3
             {
                 foreach(var i in ImportantCheck.advancedUnlockData.RealItemsUsed)
                 {
-                    int StartingAmount = _Instance.Instance.GetItemByID(i.Key)?.AmountInStartingpool??0;
+                    int StartingAmount = Container.Instance.GetItemByID(i.Key)?.AmountInStartingpool??0;
                     if (FirstObtainedDict.ContainsKey(i.Key))
                     {
                         for(var j = 0; j < i.Value; j++)
@@ -193,7 +193,7 @@ namespace MMR_Tracker_V3
                 }
                 foreach (var i in ImportantCheck.advancedUnlockData.AreasAccessed)
                 {
-                    if (FirstObtainedDict.ContainsKey(i) && FirstObtainedDict[i].First().Item1 is EntranceData.EntranceRandoExit ere && ere.IsRandomizableEntrance(_Instance.Instance) && (ere.IsRandomized() || ere.IsUnrandomized(MiscData.UnrandState.Manual)))
+                    if (FirstObtainedDict.ContainsKey(i) && FirstObtainedDict[i].First().Item1 is EntranceData.EntranceRandoExit ere && ere.IsRandomizableEntrance(Container.Instance) && (ere.IsRandomized() || ere.IsUnrandomized(MiscData.UnrandState.Manual)))
                     {
                         FirstObtainedDict[i].First().Item2.Important = true;
                     }
@@ -205,7 +205,7 @@ namespace MMR_Tracker_V3
                     {
                         foreach(var j in FirstObtainedDict[item])
                         {
-                            if (j.Item1 is LocationData.LocationObject Loc && Loc.IsRepeatable(_Instance.Instance))
+                            if (j.Item1 is LocationData.LocationObject Loc && Loc.IsRepeatable(Container.Instance))
                             {
                                 j.Item2.Important = true;
                                 break;
@@ -224,14 +224,14 @@ namespace MMR_Tracker_V3
         {
             foreach(var i in Playthrough)
             {
-                i.Value.advancedUnlockData = PlaythroughTools.GetAdvancedUnlockData(i.Key, _Instance.logicCalculation.LogicUnlockData, _Instance.Instance, this);
+                i.Value.advancedUnlockData = PlaythroughTools.GetAdvancedUnlockData(i.Key, Container.logicCalculation.LogicUnlockData, Container.Instance, this);
             }
         }
 
         private List<EntranceData.EntranceRandoExit> getAllAvailableEntrances(InstanceData.TrackerInstance instance, Dictionary<object, int> AutoObtainedObjects)
         {
             var AvailableEntrances = instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits(instance).Values.Where(x => x.Available && x.CheckState == MiscData.CheckState.Unchecked && x.IsRandomized()));
-            var AutoObtainedEntrance = AutoObtainedObjects.Keys.Where(x => x is EntranceData.EntranceRandoExit && !Playthrough.ContainsKey(_Instance.Instance.GetLogicNameFromExit(x as EntranceData.EntranceRandoExit))).Select(x => x as EntranceData.EntranceRandoExit);
+            var AutoObtainedEntrance = AutoObtainedObjects.Keys.Where(x => x is EntranceData.EntranceRandoExit && !Playthrough.ContainsKey(Container.Instance.GetLogicNameFromExit(x as EntranceData.EntranceRandoExit))).Select(x => x as EntranceData.EntranceRandoExit);
             //var AquiredEntranceMacros = instance.EntrancePool.AreaList.Values.SelectMany(x => x.MacroExits.Values.Where(x => x.CheckState == MiscData.CheckState.Checked && !Playthrough.ContainsKey(GetEntId(x))));
             //var UnrandEntranceMacros = instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values.Where(x => x.CheckState == MiscData.CheckState.Checked && !Playthrough.ContainsKey(GetEntId(x)) && x.IsUnrandomized()));
             //var AllEntrances = AvailableEntrances.Concat(AquiredEntranceMacros).Concat(UnrandEntranceMacros).ToList();
@@ -242,27 +242,27 @@ namespace MMR_Tracker_V3
 
         public void PrepareInstance()
         {
-            foreach(var i in _Instance.Instance.ItemPool.Values)
+            foreach(var i in Container.Instance.ItemPool.Values)
             {
                 i.AmountAquiredLocally = 0;
             }
-            foreach (var i in _Instance.Instance.EntrancePool.AreaList)
+            foreach (var i in Container.Instance.EntrancePool.AreaList)
             {
                 i.Value.ExitsAcessibleFrom = 0;
             }
-            foreach (var i in _Instance.Instance.LocationPool.Values)
+            foreach (var i in Container.Instance.LocationPool.Values)
             {
                 i.Available = false;
                 i.CheckState = TrackerObjects.MiscData.CheckState.Unchecked;
-                if (i.GetItemAtCheck(_Instance.Instance) == null) { i.RandomizedState = TrackerObjects.MiscData.RandomizedState.ForcedJunk; }
+                if (i.GetItemAtCheck(Container.Instance) == null) { i.RandomizedState = TrackerObjects.MiscData.RandomizedState.ForcedJunk; }
                 else
                 {
-                    i.Randomizeditem.Item = i.GetItemAtCheck(_Instance.Instance);
+                    i.Randomizeditem.Item = i.GetItemAtCheck(Container.Instance);
                     i.RandomizedState = TrackerObjects.MiscData.RandomizedState.Randomized;
                 }
                 if (_IngoredChecks.Contains(i.ID)) { i.RandomizedState = TrackerObjects.MiscData.RandomizedState.ForcedJunk; }
             }
-            foreach (var i in _Instance.Instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits(_Instance.Instance).Values))
+            foreach (var i in Container.Instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits(Container.Instance).Values))
             {
                 i.Available = false;
                 i.CheckState = TrackerObjects.MiscData.CheckState.Unchecked;
@@ -273,14 +273,14 @@ namespace MMR_Tracker_V3
                     if (i.RandomizedState == MiscData.RandomizedState.UnrandomizedManual) { i.RandomizedState = MiscData.RandomizedState.Randomized; }
                     //i.RandomizedState = TrackerObjects.MiscData.RandomizedState.Randomized;
                 }
-                if (_IngoredChecks.Contains(_Instance.Instance.GetLogicNameFromExit(i))) { i.RandomizedState = TrackerObjects.MiscData.RandomizedState.ForcedJunk; }
+                if (_IngoredChecks.Contains(Container.Instance.GetLogicNameFromExit(i))) { i.RandomizedState = TrackerObjects.MiscData.RandomizedState.ForcedJunk; }
             }
-            foreach (var i in _Instance.Instance.EntrancePool.AreaList.Values.SelectMany(x => x.NonRandomizableExits(_Instance.Instance).Values))
+            foreach (var i in Container.Instance.EntrancePool.AreaList.Values.SelectMany(x => x.NonRandomizableExits(Container.Instance).Values))
             {
                 i.Available = false;
                 i.CheckState = TrackerObjects.MiscData.CheckState.Unchecked;
             }
-            foreach (var i in _Instance.Instance.MacroPool.Values)
+            foreach (var i in Container.Instance.MacroPool.Values)
             {
                 i.Aquired = false;
             }
@@ -297,15 +297,15 @@ namespace MMR_Tracker_V3
                     readablePlaythrough.Add($"SPHERE: {p.Value.sphere}");
                     sphere = p.Value.sphere;
                 }
-                string AreaName = (_Instance.Instance.GetLocationByID(p.Key)?.GetDictEntry(_Instance.Instance)?.Area);
-                string LocationName = _Instance.Instance.GetLocationByID(p.Key)?.GetDictEntry(_Instance.Instance)?.GetName(_Instance.Instance)??p.Key;
+                string AreaName = (Container.Instance.GetLocationByID(p.Key)?.GetDictEntry(Container.Instance)?.Area);
+                string LocationName = Container.Instance.GetLocationByID(p.Key)?.GetDictEntry(Container.Instance)?.GetName(Container.Instance)??p.Key;
                 string LocationDisplay = AreaName is null ? LocationName : $"{AreaName} - {LocationName}";
-                string ItemName = _Instance.Instance.GetItemByID(p.Value.ItemObtained)?.GetDictEntry(_Instance.Instance)?.GetName(_Instance.Instance)??p.Value.ItemObtained;
+                string ItemName = Container.Instance.GetItemByID(p.Value.ItemObtained)?.GetDictEntry(Container.Instance)?.GetName(Container.Instance)??p.Value.ItemObtained;
                 List<string> RealItems = new List<string>();
 
                 foreach(var i in p.Value.advancedUnlockData.RealItemsUsed)
                 {
-                    string display = _Instance.Instance.GetItemByID(i.Key)?.GetDictEntry(_Instance.Instance)?.GetName(_Instance.Instance)??i.Key;
+                    string display = Container.Instance.GetItemByID(i.Key)?.GetDictEntry(Container.Instance)?.GetName(Container.Instance)??i.Key;
                     if (i.Value > 1) { display += $" X{i.Value}"; }
                     RealItems.Add(display);
                 }

@@ -114,6 +114,19 @@ namespace MMR_Tracker_V3
             return Literal;
         }
 
+        public static bool isJsonTypeOf<T>(string Json)
+        {
+            try
+            {
+                T test = JsonConvert.DeserializeObject<T>(Json, _NewtonsoftJsonSerializerOptions);
+                return test != null;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public static Dictionary<string, int> GetCategoriesFromFile(InstanceData.TrackerInstance Instance)
         {
             Dictionary<string, int> Groups = new();
@@ -370,7 +383,7 @@ namespace MMR_Tracker_V3
             return Convert.ToBase64String(byteData);
         }
 
-        public static SaveType TestFileType(string FilePath, InstanceData.TrackerInstance instance)
+        public static SaveType TestSaveFileType(string FilePath, InstanceData.TrackerInstance instance)
         {
             var Options = instance?.StaticOptions?.OptionFile;
             if (Options is null && File.Exists(References.Globalpaths.OptionFile))
@@ -395,50 +408,31 @@ namespace MMR_Tracker_V3
 
         public static bool TestStandardSave(string FileContent)
         {
-            try
-            {
-                Debug.WriteLine("Trying to load Standard Save");
-                var Instance = InstanceData.TrackerInstance.FromJson(FileContent);
-                Debug.WriteLine("Success!");
-                return true;
-            }
-            catch (Exception e)
-            {
-                Debug.WriteLine($"Failure! {e}");
-            }
-            return false;
+            return Utility.isJsonTypeOf<InstanceData.TrackerInstance>(FileContent);
         }
         public static bool TestCompressedSave(string FileContent)
         {
             try
             {
-                Debug.WriteLine("Trying to load Compressed Save");
                 var DecompSave = Decompress(FileContent);
-                var Instance = InstanceData.TrackerInstance.FromJson(DecompSave);
-                Debug.WriteLine("Success!");
-                return true;
+                return Utility.isJsonTypeOf<InstanceData.TrackerInstance>(DecompSave);
             }
-            catch (Exception e)
+            catch
             {
-                Debug.WriteLine($"Failure! {e}");
+                return false;
             }
-            return false;
         }
         public static bool TestCompressedByteSave(byte[] FileContent)
         {
             try
             {
-                Debug.WriteLine("Trying to load Compressed Byte Save");
                 var DecompSave = Decompress(FileContent);
-                var Instance = InstanceData.TrackerInstance.FromJson(DecompSave);
-                Debug.WriteLine("Success!");
-                return true;
+                return Utility.isJsonTypeOf<InstanceData.TrackerInstance>(DecompSave);
             }
-            catch (Exception e)
+            catch
             {
-                Debug.WriteLine($"Failure! {e}");
+                return false;
             }
-            return false;
         }
     }
 

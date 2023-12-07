@@ -1,5 +1,4 @@
 using MMR_Tracker_V3.TrackerObjects;
-using CLIFrontEnd;
 using Windows_Form_Frontend;
 using System.Diagnostics;
 using MMR_Tracker_V3.TrackerObjectExtentions;
@@ -26,7 +25,7 @@ namespace TestingForm
         public TestingForm()
         {
             CurrentForm = this;
-            CLITracker.HideConsole = CLITrackerTesting.HideCLI;
+            //CLITracker.HideConsole = CLITrackerTesting.HideCLI;
             InitializeComponent();
         }
 

@@ -41,7 +41,7 @@ namespace Windows_Form_Frontend
             }
 
             //If all checks pass overrite the current instance
-            MainInterface.InstanceContainer.Instance = NewInstance.Instance;
+            MainInterface.InstanceContainer.ApplyInstance(NewInstance.Instance.ToJson(MiscData.JSONType.Newtonsoft));
 
             MainInterface.InstanceContainer.CurrentSavePath = "";
             MainInterface.InstanceContainer.GenerateInstance();

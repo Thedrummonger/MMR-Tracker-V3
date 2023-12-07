@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
@@ -182,12 +183,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                 {
                     _Instance?.SetParentContainer(this);
                     return _Instance;
-                } 
-                set
-                {
-                    _Instance = value;
-                    _Instance?.SetParentContainer(this);
-                } 
+                }
             }
             public LogicCalculation logicCalculation { get; set; }
             public NetConnection netConnection { get; set; } = new NetConnection();
@@ -221,18 +217,18 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 if (File.Exists(Save))
                 {
-                    switch (SaveCompressor.TestFileType(Save, Instance))
+                    switch (SaveCompressor.TestSaveFileType(Save, Instance))
                     {
                         case SaveCompressor.SaveType.Standard:
-                            Instance = InstanceData.TrackerInstance.FromJson(File.ReadAllText(Save));
+                            ApplyInstance(File.ReadAllText(Save));
                             break;
                         case SaveCompressor.SaveType.Compressed:
                             var Decomp = SaveCompressor.Decompress(File.ReadAllText(Save));
-                            Instance = InstanceData.TrackerInstance.FromJson(Decomp);
+                            ApplyInstance(File.ReadAllText(Decomp));
                             break;
                         case SaveCompressor.SaveType.CompressedByte:
                             var ByteDecomp = SaveCompressor.Decompress(File.ReadAllBytes(Save));
-                            Instance = InstanceData.TrackerInstance.FromJson(ByteDecomp);
+                            ApplyInstance(File.ReadAllText(ByteDecomp));
                             break;
                         case SaveCompressor.SaveType.error:
                             return false;
@@ -240,11 +236,21 @@ namespace MMR_Tracker_V3.TrackerObjects
                 }
                 else
                 {
-                    try { Instance = InstanceData.TrackerInstance.FromJson(Save); }
+                    try { ApplyInstance(Save); }
                     catch { return false; }
                 }
                 logicCalculation.CompileOptionActionEdits();
                 return true;
+            }
+
+            public void ApplyInstance(string JsonString)
+            {
+                ApplyInstance(JsonConvert.DeserializeObject<InstanceData.TrackerInstance>(JsonString));
+            }
+            public void ApplyInstance(InstanceData.TrackerInstance Instance)
+            {
+                _Instance = Instance;
+                _Instance.SetParentContainer(this);
             }
         }
         [Serializable]

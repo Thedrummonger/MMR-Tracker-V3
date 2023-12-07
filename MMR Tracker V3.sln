@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MMR Tracker V3", "MMR Track
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Windows Form Frontend", "Windows Form Frontend\Windows Form Frontend.csproj", "{AF5298A1-5B11-4789-8574-B298445B14CD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CLI Front End", "ConsoleDebugger\CLI Front End.csproj", "{8D57DD8F-3E92-471C-A955-62265B9D870C}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestingForm", "TestingForm\TestingForm.csproj", "{55BBF48C-F8EA-436A-ACB3-1EAE3166ED86}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DD5A9DDB-40F9-44D4-9A3A-985D1164D86E}"
@@ -16,7 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServer", "WebServer\WebServer.csproj", "{D9C8B16C-C1DD-46AF-9F93-C89A49D1F881}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebServer", "WebServer\WebServer.csproj", "{D9C8B16C-C1DD-46AF-9F93-C89A49D1F881}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,10 +30,6 @@ Global
 		{AF5298A1-5B11-4789-8574-B298445B14CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF5298A1-5B11-4789-8574-B298445B14CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF5298A1-5B11-4789-8574-B298445B14CD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8D57DD8F-3E92-471C-A955-62265B9D870C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8D57DD8F-3E92-471C-A955-62265B9D870C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8D57DD8F-3E92-471C-A955-62265B9D870C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8D57DD8F-3E92-471C-A955-62265B9D870C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{55BBF48C-F8EA-436A-ACB3-1EAE3166ED86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{55BBF48C-F8EA-436A-ACB3-1EAE3166ED86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55BBF48C-F8EA-436A-ACB3-1EAE3166ED86}.Release|Any CPU.ActiveCfg = Release|Any CPU

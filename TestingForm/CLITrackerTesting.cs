@@ -1,4 +1,4 @@
-﻿using CLIFrontEnd;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -15,7 +15,7 @@ namespace TestingForm
         {
             DLLImport.AllocConsole();
             DLLImport.ShowWindow(DLLImport.GetConsoleWindow(), DLLImport.SW_SHOW);
-            CLITracker.Main(Environment.GetCommandLineArgs());
+            //CLITracker.Main(Environment.GetCommandLineArgs());
         }
 
         public static void HideCLI()

@@ -35,7 +35,6 @@ namespace MMR_Tracker_V3
         }
         public static InstanceState ApplyLogicAndDict(this InstanceContainer Container, string LogicData, string DictionaryData = null)
         {
-            Container.Instance ??= new();
             try { Container.Instance.LogicFile = MMRData.LogicFile.FromJson(LogicData); }
             catch { return InstanceState.LogicFailure; }
             if (DictionaryData is null)
@@ -73,7 +72,6 @@ namespace MMR_Tracker_V3
 
         public static bool GenerateInstance(this InstanceContainer Container)
         {
-            Container.Instance ??= new();
             var Instance = Container.Instance;
             Instance.ChoiceOptions = Instance.LogicDictionary.ChoiceOptions.ToDictionary(x => x.Key, y => y.Value);
             Instance.MultiSelectOptions = Instance.LogicDictionary.MultiSelectOptions.ToDictionary(x => x.Key, y => y.Value);

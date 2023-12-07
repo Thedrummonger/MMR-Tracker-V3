@@ -14,6 +14,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
+using static System.Windows.Forms.AxHost;
 
 namespace Windows_Form_Frontend
 {
@@ -117,17 +118,11 @@ namespace Windows_Form_Frontend
             Utility.TimeCodeExecution(TimeTotalItemSelect, "Saving Tracker State (UTF8)", 1);
             if (sender == undoToolStripMenuItem && InstanceContainer.UndoStringList.Any())
             {
-                string CurrentState = InstanceContainer.Instance.ToJson(MiscData.JSONType.UTF8);
-                InstanceContainer.Instance = MMR_Tracker_V3.InstanceData.TrackerInstance.FromJson(InstanceContainer.UndoStringList[^1]);
-                InstanceContainer.RedoStringList.Add(CurrentState);
-                InstanceContainer.UndoStringList.RemoveAt(InstanceContainer.UndoStringList.Count - 1);
+                InstanceContainer.DoUndo();
             }
             else if (sender == redoToolStripMenuItem && InstanceContainer.RedoStringList.Any())
             {
-                string CurrentState = InstanceContainer.Instance.ToJson(MiscData.JSONType.UTF8);
-                InstanceContainer.Instance = MMR_Tracker_V3.InstanceData.TrackerInstance.FromJson(InstanceContainer.RedoStringList[^1]);
-                InstanceContainer.UndoStringList.Add(CurrentState);
-                InstanceContainer.RedoStringList.RemoveAt(InstanceContainer.RedoStringList.Count - 1);
+                InstanceContainer.DoRedo();
             }
             Utility.TimeCodeExecution(TimeTotalItemSelect, "Undo/Redo Action", -1);
 
@@ -849,7 +844,7 @@ namespace Windows_Form_Frontend
             if (LogicID is not null && InstanceContainer.Instance.GetLogic(LogicID) is not null)
             {
                 ToolStripItem ShowLogicFunction = contextMenuStrip.Items.Add("Show Logic");
-                ShowLogicFunction.Click += (sender, e) => { new ShowLogic(LogicID, InstanceContainer.Instance).Show(); };
+                ShowLogicFunction.Click += (sender, e) => { new ShowLogic(LogicID, InstanceContainer).Show(); };
             }
 
             //Show Unlock Data
@@ -1041,30 +1036,13 @@ namespace Windows_Form_Frontend
             PrintToListBox();
         }
 
-        private void UpdateUndoList(string State)
-        {
-            int MaxUndos = InstanceContainer.Instance.StaticOptions.OptionFile.MaxUndo;
-            Debug.WriteLine(MaxUndos);
-            if (MaxUndos == 0)
-            {
-                InstanceContainer.UndoStringList.Clear();
-                InstanceContainer.RedoStringList.Clear();
-                return;
-            }
-            InstanceContainer.RedoStringList.Clear();
-            InstanceContainer.UndoStringList.Add(State);
-            int AmountOverMax = InstanceContainer.UndoStringList.Count - MaxUndos;
-            if (AmountOverMax > 0) { InstanceContainer.UndoStringList.RemoveRange(0, AmountOverMax); }
-            redoToolStripMenuItem.Enabled = InstanceContainer.RedoStringList.Any();
-            undoToolStripMenuItem.Enabled = InstanceContainer.UndoStringList.Any();
-        }
-
         //Other
 
         private void SaveTrackerState(string PreviousState = null)
         {
-            if (PreviousState == null) { UpdateUndoList(InstanceContainer.Instance.ToJson(MiscData.JSONType.UTF8)); }
-            else { UpdateUndoList(PreviousState); }
+            InstanceContainer.SaveState(PreviousState);
+            redoToolStripMenuItem.Enabled = InstanceContainer.RedoStringList.Any();
+            undoToolStripMenuItem.Enabled = InstanceContainer.UndoStringList.Any();
             InstanceContainer.UnsavedChanges = true;
         }
 
