@@ -48,7 +48,7 @@ namespace TestingForm
             List<string> Areas = MainInterface.InstanceContainer.Instance.LocationPool.Values.Select(x => x.GetDictEntry(MainInterface.InstanceContainer.Instance).Area).Distinct().ToList();
             MMR_Tracker_V3.Utility.PrintObjectToConsole(Areas);
 
-            List<string> Bugs = MainInterface.InstanceContainer.Instance.ItemPool.Values.Where(x => x.Id.StartsWith("Female_") || x.Id.StartsWith("Male_")).Select(x => x.Id).ToList();
+            List<string> Bugs = MainInterface.InstanceContainer.Instance.ItemPool.Values.Where(x => x.ID.StartsWith("Female_") || x.ID.StartsWith("Male_")).Select(x => x.ID).ToList();
             string AnyBug = string.Join(" or ", Bugs);
             Debug.WriteLine(AnyBug);
 

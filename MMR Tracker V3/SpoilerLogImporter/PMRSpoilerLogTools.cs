@@ -199,7 +199,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                         if (CheckUnrand)
                         {
                             var OriginalItem = Instance.ItemPool[Loc.GetDictEntry(Instance).OriginalItem];
-                            if (OriginalItem.Id != SpoilerGivenItem && OriginalItem.GetDictEntry(Instance).Name != SpoilerGivenItem)
+                            if (OriginalItem.ID != SpoilerGivenItem && OriginalItem.GetDictEntry(Instance).Name != SpoilerGivenItem)
                             {
                                 throw new Exception($"{Loc.ID} Was unrandomized but did not contain its vanilla item\n{Location.Key}: {Location.Value}\n{JsonConvert.SerializeObject(Loc, Utility._NewtonsoftJsonSerializerOptions)}");
                             }
@@ -222,7 +222,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                         if (ItemToPlaceAny is null) { throw new Exception($"{SpoilerGivenItem} Is not a valid Item\n{Location.Key}: {Location.Value}"); }
                         else if (ItemToPlace is null) { throw new Exception($"No More {SpoilerGivenItem} could be placed\n{Location.Key}: {Location.Value}\n"); }
 
-                        Instance.LocationPool[Location.Key].Randomizeditem.SpoilerLogGivenItem = ItemToPlace.Id;
+                        Instance.LocationPool[Location.Key].Randomizeditem.SpoilerLogGivenItem = ItemToPlace.ID;
                     }
                 }
             }

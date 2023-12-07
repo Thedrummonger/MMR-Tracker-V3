@@ -99,7 +99,7 @@ namespace MMR_Tracker_V3
             int Index = 0;
             foreach(var i in Instance.LogicDictionary.ItemList)
             {
-                Instance.ItemPool.Add(i.Key, new() { Id = i.Key });
+                Instance.ItemPool.Add(i.Key, new() { ID = i.Key });
                 Index++;
             }
 

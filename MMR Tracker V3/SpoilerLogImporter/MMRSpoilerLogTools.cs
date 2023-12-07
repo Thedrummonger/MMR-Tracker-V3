@@ -129,8 +129,8 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 var Destination = Container.Instance.ItemPool.First(x => x.Value.GetDictEntry(Container.Instance).SpoilerData.SpoilerLogNames.Contains(E.Value)).Value;
 
                 Entrance.SetRandomizedState(RandomizedState.Randomized, Container.Instance);
-                Entrance.Randomizeditem.SpoilerLogGivenItem = Destination.Id;
-                if (BossDoorMapping.ContainsKey(Entrance.ID)) { BossDoorMapping[Entrance.ID] = Destination.Id; }
+                Entrance.Randomizeditem.SpoilerLogGivenItem = Destination.ID;
+                if (BossDoorMapping.ContainsKey(Entrance.ID)) { BossDoorMapping[Entrance.ID] = Destination.ID; }
             }
 
             foreach(var i in Container.Instance.LocationPool.Values)
@@ -140,7 +140,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                     var OriginalItem = Container.Instance.GetItemByID(i.GetDictEntry(Container.Instance).OriginalItem);
                     if (OriginalItem.AmountInStartingpool > 0)
                     {
-                        Debug.WriteLine($"{i.ID}: {OriginalItem.Id} Was unrandomized but Item was starting item. Forcing Junk");
+                        Debug.WriteLine($"{i.ID}: {OriginalItem.ID} Was unrandomized but Item was starting item. Forcing Junk");
                         i.SetRandomizedState(RandomizedState.ForcedJunk, Container.Instance);
                     }
                 }
@@ -182,7 +182,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 }
                 else
                 {
-                    SpoilerLocation.Randomizeditem.SpoilerLogGivenItem = Item.Id;
+                    SpoilerLocation.Randomizeditem.SpoilerLogGivenItem = Item.ID;
                 }
             }
 
@@ -308,14 +308,14 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 {
                     string RandomizedItem = i.Value.GetItemAtCheck(instance);
                     var OriginalItemObj = instance.GetItemByID(RandomizedItem);
-                    InaccessableItems.Add(OriginalItemObj.Id);
+                    InaccessableItems.Add(OriginalItemObj.ID);
                 }
                 else if (i.Value.GetDictEntry(instance).ValidItemTypes.Contains("DungeonEntrance") || i.Value.GetDictEntry(instance).ValidItemTypes.Contains("BossDoorEntrance"))
                 {
                     string RandomizedItem = i.Value.GetItemAtCheck(instance);
                     var OriginalItemObj = instance.GetItemByID(RandomizedItem);
 
-                    InaccessableItems.Add(OriginalItemObj.Id);
+                    InaccessableItems.Add(OriginalItemObj.ID);
                 }
             }
 
@@ -386,9 +386,9 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             foreach(string item in blitzStartingItems)
             {
                 var BlitzStartingItem = instance.GetItemToPlace(item, IgnoreMaxAmount: true);
-                if (!remainsInLairs.ContainsKey(BlitzStartingItem.Id)) { continue; }
-                BlitzStartingItems.Add(BlitzStartingItem.Id);
-                string Lair = remainsInLairs[BlitzStartingItem.Id];
+                if (!remainsInLairs.ContainsKey(BlitzStartingItem.ID)) { continue; }
+                BlitzStartingItems.Add(BlitzStartingItem.ID);
+                string Lair = remainsInLairs[BlitzStartingItem.ID];
 
                 var NewLairLocation = instance.LocationPool.Values.FirstOrDefault(x => (x.Randomizeditem.SpoilerLogGivenItem??"") == Lair);
                 Lair = NewLairLocation is null ? Lair : NewLairLocation.ID;

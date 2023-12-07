@@ -381,7 +381,7 @@ namespace CLIFrontEnd
                 if (int.TryParse(input, out int index) && EnteredItems.ContainsKey(index))
                 {
                     //Location.Randomizeditem.Item = EnteredItems[index].Id;
-                    return new ManualCheckObjectResult(Location, EnteredItems[index].Id);
+                    return new ManualCheckObjectResult(Location, EnteredItems[index].ID);
                 }
                 else if (input.StartsWith(@"\"))
                 {

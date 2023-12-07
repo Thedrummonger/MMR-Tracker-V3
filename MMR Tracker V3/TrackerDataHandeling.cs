@@ -248,7 +248,7 @@ namespace MMR_Tracker_V3
                     var Item = instanceContainer.Instance.GetItemByID(i.Value);
                     if (Location is null || Item is null || Location.CheckState != MiscData.CheckState.Unchecked) { continue; }
                     string ProperCheckItem = Location.GetItemAtCheck(instanceContainer.Instance);
-                    if (string.IsNullOrWhiteSpace(ProperCheckItem) || ProperCheckItem != Item.Id) { continue; }
+                    if (string.IsNullOrWhiteSpace(ProperCheckItem) || ProperCheckItem != Item.ID) { continue; }
                     LocationsToMark.Add(Location);
                 }
             }

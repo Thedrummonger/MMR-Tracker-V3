@@ -12,7 +12,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
     {
         public static bool ValidStartingItem(this ItemData.ItemObject Item, InstanceData.TrackerInstance Instance)
         {
-            var ItemIndex = Instance.GetItemByID(Item.Id);
+            var ItemIndex = Instance.GetItemByID(Item.ID);
             var DictEntry = ItemIndex.GetDictEntry(Instance);
             return DictEntry.ValidStartingItem != null && (bool)DictEntry.ValidStartingItem;
         }
@@ -25,7 +25,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             {
                 bool OwnedByLocalPlayer = x.Value.Randomizeditem.OwningPlayer < 0 || Instance.GetParentContainer().netConnection.PlayerID == x.Value.Randomizeditem.OwningPlayer;
                 var itemAtheck = x.Value.GetItemAtCheck(Instance) ?? "";
-                if (itemAtheck == Item.Id && OwnedByLocalPlayer) { AmountSetAtLocation++; }
+                if (itemAtheck == Item.ID && OwnedByLocalPlayer) { AmountSetAtLocation++; }
             }
 
             return AmountAquired + AmountSetAtLocation;

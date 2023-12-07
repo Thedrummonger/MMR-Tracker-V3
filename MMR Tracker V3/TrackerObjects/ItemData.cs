@@ -15,7 +15,7 @@ namespace MMR_Tracker_V3.TrackerObjects
         [Serializable]
         public class ItemObject
         {
-            public string Id { get; set; }
+            public string ID { get; set; }
             public int AmountAquiredLocally { get; set; } = 0;
             public int AmountInStartingpool { get; set; } = 0;
             public Dictionary<int, int> AmountAquiredOnline { get; set; } = new Dictionary<int, int>();
@@ -25,11 +25,11 @@ namespace MMR_Tracker_V3.TrackerObjects
 
             public LogicDictionaryData.DictionaryItemEntries GetDictEntry(InstanceData.TrackerInstance Instance)
             {
-                return Instance.LogicDictionary.ItemList[Id];
+                return Instance.LogicDictionary.ItemList[ID];
             }
             public override string ToString()
             {
-                return DisplayName ?? Id;
+                return DisplayName ?? ID;
             }
         }
     }

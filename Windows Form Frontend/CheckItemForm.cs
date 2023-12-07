@@ -129,7 +129,7 @@ namespace Windows_Form_Frontend
                 {
                     int OwnlingPlayer = (int)numericUpDown1.Value;
                     if (_Container.netConnection.PlayerID > -1 && _Container.netConnection.PlayerID == OwnlingPlayer) { OwnlingPlayer = -1; }
-                    _Result.Add(new(LocationObject, ((ItemData.ItemObject)listBox1.SelectedItem).Id, OwnlingPlayer));
+                    _Result.Add(new(LocationObject, ((ItemData.ItemObject)listBox1.SelectedItem).ID, OwnlingPlayer));
                     //LocationObject.Randomizeditem.Item = ((ItemData.ItemObject)listBox1.SelectedItem).Id;
                     //LocationObject.Randomizeditem.OwningPlayer = (int)numericUpDown1.Value;
                 }

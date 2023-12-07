@@ -330,8 +330,8 @@ namespace Windows_Form_Frontend
             TrackerState trackerState = new TrackerState();
             foreach (var item in Instance.ItemPool.Values)
             {
-                if (!trackerState.ItemValues.ContainsKey(item.Id)) { trackerState.ItemValues[item.Id] = new ItemCounts(); }
-                trackerState.ItemValues[item.Id].Obtained += item.GetTotalUsable(Instance);
+                if (!trackerState.ItemValues.ContainsKey(item.ID)) { trackerState.ItemValues[item.ID] = new ItemCounts(); }
+                trackerState.ItemValues[item.ID].Obtained += item.GetTotalUsable(Instance);
 
                 string ItemName = item.GetDictEntry(Instance).GetName(Instance);
                 if (!trackerState.ItemValues.ContainsKey(ItemName)) { trackerState.ItemValues[ItemName] = new ItemCounts(); }

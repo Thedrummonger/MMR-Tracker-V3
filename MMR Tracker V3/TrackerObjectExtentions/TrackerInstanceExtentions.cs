@@ -174,7 +174,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             if (CheckItemID)
             {
                 ValidItem = ValidItem.Concat(instance.ItemPool.Values.Where(x =>
-                    x.Id== Item && (x.CanBePlaced(instance) || IgnoreMaxAmount) && (x.ValidStartingItem(instance) || !ForStartingPool))).ToList();
+                    x.ID== Item && (x.CanBePlaced(instance) || IgnoreMaxAmount) && (x.ValidStartingItem(instance) || !ForStartingPool))).ToList();
             }
             if (!ValidItem.Any()) { return null; }
             return ValidItem[0];
@@ -354,7 +354,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             }
             else if (Entry is ItemObject IO)
             {
-                return IO.GetDictEntry(instance)?.Name??IO.Id;
+                return IO.GetDictEntry(instance)?.Name??IO.ID;
             }
             else if (Entry is ChoiceOption CO)
             {

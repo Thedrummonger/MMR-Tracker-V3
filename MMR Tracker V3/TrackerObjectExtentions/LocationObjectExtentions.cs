@@ -55,7 +55,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             //If the check was already given it's vanilla item through the spoiler log or manually it can be unrandomized
             //This gets around a quirk caused by "CanBePlaced" not being smart enough to know to ignore the item 
             //assigned to this check when checking to see if the max amount has been placed
-            if (loc.GetItemAtCheck(instance) is not null && loc.GetItemAtCheck(instance) == OriginalItemObject.Id) { return true; }
+            if (loc.GetItemAtCheck(instance) is not null && loc.GetItemAtCheck(instance) == OriginalItemObject.ID) { return true; }
             //If the max amount of this object has been placed return false, otherwise true
             return OriginalItemObject.CanBePlaced(instance);
         }

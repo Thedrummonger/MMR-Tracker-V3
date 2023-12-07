@@ -479,7 +479,7 @@ namespace MMR_Tracker_V3
                 x.CheckState == CheckState.Checked && 
                 IsAtProperCheck(x, ShouldBeRepeatable) && 
                 (x.Randomizeditem.OwningPlayer == -1) && 
-                x.Randomizeditem.Item == item.Id);
+                x.Randomizeditem.Item == item.ID);
             bool IsAtProperCheck(LocationObject x, bool ShouldBeRepeatable)
             {
                 if (ShouldBeRepeatable) { return x.GetDictEntry(instance).Repeatable is not null && (bool)x.GetDictEntry(instance).Repeatable; }

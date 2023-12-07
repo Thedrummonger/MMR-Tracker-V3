@@ -625,7 +625,7 @@ namespace MMR_Tracker_V3
             else if (Object is ItemData.ItemObject ItemObject)
             {
                 var DictData = ItemObject.GetDictEntry(instance);
-                OutObject.ID = ItemObject.Id;
+                OutObject.ID = ItemObject.ID;
                 OutObject.Area = "";
                 if (ItemObject.AmountInStartingpool > 0) { OutObject.Area += "starting "; }
                 if (ItemObject.AmountAquiredOnline.Any(x => x.Value > 0)) { OutObject.Area += "online "; }

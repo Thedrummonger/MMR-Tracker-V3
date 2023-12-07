@@ -143,9 +143,9 @@ namespace MMR_Tracker_V3
             {
                 WinCon = Playthrough[MacroWin.ID];
             }
-            else if (WinObj is ItemData.ItemObject itemWin && FirstObtainedDict.ContainsKey(itemWin.Id))
+            else if (WinObj is ItemData.ItemObject itemWin && FirstObtainedDict.ContainsKey(itemWin.ID))
             {
-                WinCon = FirstObtainedDict[itemWin.Id].First().Item2;
+                WinCon = FirstObtainedDict[itemWin.ID].First().Item2;
             }
             else if (WinObj is EntranceData.EntranceRandoArea AreaWin && FirstObtainedDict.ContainsKey(AreaWin.ID))
             {

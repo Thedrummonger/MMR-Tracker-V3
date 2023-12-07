@@ -81,7 +81,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 {
                     Debug.WriteLine($"{i.Value} was placed more times than allowed!");
                 }
-                Location.Randomizeditem.SpoilerLogGivenItem = item?.Id ?? i.Value;
+                Location.Randomizeditem.SpoilerLogGivenItem = item?.ID ?? i.Value;
             }
             foreach (var i in Instance.LocationPool.Values)
             {

@@ -65,7 +65,7 @@ namespace Windows_Form_Frontend
                 {
                     if (i is MiscData.StandardListBoxItem LBI && outitem is not null)
                     {
-                        if (outitem is ItemData.ItemObject && LBI.tag is ItemData.ItemObject IO && IO.Id == ParsedWinCon)
+                        if (outitem is ItemData.ItemObject && LBI.tag is ItemData.ItemObject IO && IO.ID == ParsedWinCon)
                         {
                             cmbWinCon.SelectedItem = i;
                             break;
@@ -90,8 +90,8 @@ namespace Windows_Form_Frontend
 
                 if (ItemOut != null && ItemOut is ItemData.ItemObject ItemObject)
                 {
-                    string displayName = ItemObject.GetDictEntry(_instance).Name??ItemObject.Id;
-                    SeedCheckRequiredItems.Add(new MiscData.StandardListBoxItem { Display = displayName, tag = ItemObject.Id });
+                    string displayName = ItemObject.GetDictEntry(_instance).Name??ItemObject.ID;
+                    SeedCheckRequiredItems.Add(new MiscData.StandardListBoxItem { Display = displayName, tag = ItemObject.ID });
                 }
                 else if (ItemOut != null && ItemOut is MacroObject MacroObject)
                 {
@@ -132,7 +132,7 @@ namespace Windows_Form_Frontend
                 foreach (var i in Items)
                 {
                     string Dis = i.GetDictEntry(_instance).GetName(_instance);
-                    if (DisplayCounts.ContainsKey(Dis) && DisplayCounts[Dis] > 1) { Dis = $"{Dis} [{i.Id}]"; }
+                    if (DisplayCounts.ContainsKey(Dis) && DisplayCounts[Dis] > 1) { Dis = $"{Dis} [{i.ID}]"; }
                     cmbWinCon.Items.Add(new MiscData.StandardListBoxItem { Display = Dis, tag = i });
                     if (Graphic.MeasureString(Dis, cmbWinCon.Font).Width > CMBWidth) { CMBWidth = (int)Graphic.MeasureString(Dis, cmbWinCon.Font).Width; }
                 }
@@ -396,9 +396,9 @@ namespace Windows_Form_Frontend
                 foreach (var i in _instance.ItemPool.Values.OrderBy(x => x.GetDictEntry(_instance).GetName(_instance)))
                 {
                     string displayName = i.GetDictEntry(_instance).GetName(_instance);
-                    if (DisplayCounts.ContainsKey(displayName) && DisplayCounts[displayName] > 1) { displayName = $"{displayName} [{i.Id}]"; }
+                    if (DisplayCounts.ContainsKey(displayName) && DisplayCounts[displayName] > 1) { displayName = $"{displayName} [{i.ID}]"; }
                     if (SearchStringParser.FilterSearch(_instance, i, txtSeedCheckFilter.Text, displayName))
-                        lbObtainable.Items.Add(new MiscData.StandardListBoxItem { Display = displayName, tag = i.Id });
+                        lbObtainable.Items.Add(new MiscData.StandardListBoxItem { Display = displayName, tag = i.ID });
                 }
                 foreach (var i in _instance.MacroPool.Values.OrderBy(x => x.GetDictEntry(_instance).Name??x.ID))
                 {
@@ -512,7 +512,7 @@ namespace Windows_Form_Frontend
             var requiredItems = SeedCheckRequiredItems.Select(x => x.tag).Select(x => x as string).ToList();
             if (!SeedCheckRequiredItems.Any())
             {
-                requiredItems = _instance.ItemPool.Values.Select(x => x.Id).ToList();
+                requiredItems = _instance.ItemPool.Values.Select(x => x.ID).ToList();
             }
             PlaythroughGenerator SeedCheckPlaytrhough = new PlaythroughGenerator(_instance, IgnoredChecks);
             SeedCheckPlaytrhough.GeneratePlaythrough();

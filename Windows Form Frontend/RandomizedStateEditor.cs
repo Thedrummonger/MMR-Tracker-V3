@@ -199,13 +199,13 @@ namespace Windows_Form_Frontend
 
             foreach(var i in _DataSets.AvailableStartingItems.Where(x => x.CanBePlaced(_Instance)))
             {
-                i.DisplayName = i.GetDictEntry(_Instance).GetName(_Instance) ?? i.Id;
+                i.DisplayName = i.GetDictEntry(_Instance).GetName(_Instance) ?? i.ID;
                 if (!SearchStringParser.FilterSearch(_Instance, i, txtSearchAvailableStarting.Text, i.DisplayName)) { continue; }
                 lbAvailableStarting.Items.Add(i);
             }
             foreach (var i in _DataSets.CurrentStartingItems)
             {
-                i.DisplayName = (i.GetDictEntry(_Instance).GetName(_Instance) ?? i.Id) + $": X{i.AmountInStartingpool}";
+                i.DisplayName = (i.GetDictEntry(_Instance).GetName(_Instance) ?? i.ID) + $": X{i.AmountInStartingpool}";
                 if (!SearchStringParser.FilterSearch(_Instance, i, txtSearchCurrentStarting.Text, i.DisplayName)) { continue; }
                 lbCurrentStarting.Items.Add(i);
             }

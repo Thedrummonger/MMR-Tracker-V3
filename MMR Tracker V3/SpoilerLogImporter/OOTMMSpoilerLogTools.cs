@@ -179,7 +179,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                     if (ValidItems.Any())
                     {
                         Debug.WriteLine($"Item {i.Value} has been placed more times than is allowed!");
-                        ItemID = ValidItems.First().Id;
+                        ItemID = ValidItems.First().ID;
                     }
                     else
                     {
@@ -190,7 +190,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 }
                 else
                 {
-                    ItemID = Item.Id;
+                    ItemID = Item.ID;
                 }
                 location.Randomizeditem.SpoilerLogGivenItem = ItemID;
                 LocationFilled.Add(location);
@@ -251,29 +251,29 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 if (setting.Key == "mapCompassShuffle" && setting.Value == "starting")
                 {
                     var MapsCompasses = instance.ItemPool.Values.Where(x =>
-                    x.Id.StartsWith("MM_MAP_") ||
-                    x.Id.StartsWith("OOT_MAP_") ||
-                    x.Id.StartsWith("MM_COMPASS_") ||
-                    x.Id.StartsWith("OOT_COMPASS_"));
+                    x.ID.StartsWith("MM_MAP_") ||
+                    x.ID.StartsWith("OOT_MAP_") ||
+                    x.ID.StartsWith("MM_COMPASS_") ||
+                    x.ID.StartsWith("OOT_COMPASS_"));
                     foreach (var i in MapsCompasses) { i.AmountInStartingpool = 1; }
                 }
                 if (setting.Key == "tingleShuffle" && setting.Value == "starting")
                 {
-                    var MapsCompasses = instance.ItemPool.Values.Where(x => x.Id.StartsWith("MM_WORLD_MAP_"));
+                    var MapsCompasses = instance.ItemPool.Values.Where(x => x.ID.StartsWith("MM_WORLD_MAP_"));
                     foreach (var i in MapsCompasses) { i.AmountInStartingpool = 1; }
                 }
                 if (setting.Key == "strayFairyChestShuffle" && setting.Value == "starting")
                 {
-                    instance.ItemPool.Values.First(x => x.Id == "MM_STRAY_FAIRY_WF").AmountInStartingpool += 3;
-                    instance.ItemPool.Values.First(x => x.Id == "MM_STRAY_FAIRY_SH").AmountInStartingpool += 7;
-                    instance.ItemPool.Values.First(x => x.Id == "MM_STRAY_FAIRY_GB").AmountInStartingpool += 6;
-                    instance.ItemPool.Values.First(x => x.Id == "MM_STRAY_FAIRY_ST").AmountInStartingpool += 15;
+                    instance.ItemPool.Values.First(x => x.ID == "MM_STRAY_FAIRY_WF").AmountInStartingpool += 3;
+                    instance.ItemPool.Values.First(x => x.ID == "MM_STRAY_FAIRY_SH").AmountInStartingpool += 7;
+                    instance.ItemPool.Values.First(x => x.ID == "MM_STRAY_FAIRY_GB").AmountInStartingpool += 6;
+                    instance.ItemPool.Values.First(x => x.ID == "MM_STRAY_FAIRY_ST").AmountInStartingpool += 15;
                 }
                 if (setting.Key == "strayFairyOtherShuffle" && (setting.Value == "starting" || setting.Value == "removed"))
                 {
-                    instance.ItemPool.Values.First(x => x.Id == "MM_STRAY_FAIRY_WF").AmountInStartingpool += 12;
-                    instance.ItemPool.Values.First(x => x.Id == "MM_STRAY_FAIRY_SH").AmountInStartingpool += 8;
-                    instance.ItemPool.Values.First(x => x.Id == "MM_STRAY_FAIRY_GB").AmountInStartingpool += 9;
+                    instance.ItemPool.Values.First(x => x.ID == "MM_STRAY_FAIRY_WF").AmountInStartingpool += 12;
+                    instance.ItemPool.Values.First(x => x.ID == "MM_STRAY_FAIRY_SH").AmountInStartingpool += 8;
+                    instance.ItemPool.Values.First(x => x.ID == "MM_STRAY_FAIRY_GB").AmountInStartingpool += 9;
                 }
                 if (setting.Key == "shufflePotsOot" && setting.Value == "false")
                 {
@@ -381,7 +381,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             foreach (var i in startingItemData)
             {
                 if (i.Value < 1) { continue; }
-                var item = instance.ItemPool.Values.FirstOrDefault(x => x.Id == i.Key || x.GetDictEntry(instance).SpoilerData.SpoilerLogNames.Contains(i.Key));
+                var item = instance.ItemPool.Values.FirstOrDefault(x => x.ID == i.Key || x.GetDictEntry(instance).SpoilerData.SpoilerLogNames.Contains(i.Key));
                 if (item is null)
                 {
                     Debug.WriteLine($"{i.Key} is not a valid item");
@@ -389,7 +389,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 }
                 for (var c = 0; c < i.Value; c++)
                 {
-                    if (instance.GetItemToPlace(item.Id) is not null)
+                    if (instance.GetItemToPlace(item.ID) is not null)
                     {
                         item.AmountInStartingpool++;
                     }
@@ -507,7 +507,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                     foreach (var item in Items)
                     {
                         var ValidItem = Instance.ItemPool.Values.FirstOrDefault(x => x.GetDictEntry(Instance).SpoilerData.SpoilerLogNames.Contains(item));
-                        ItemIDs.Add(ValidItem is null ? item : ValidItem.Id);
+                        ItemIDs.Add(ValidItem is null ? item : ValidItem.ID);
                     }
                     foreach (var item in Items)
                     {
