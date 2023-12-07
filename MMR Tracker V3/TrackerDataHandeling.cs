@@ -10,6 +10,7 @@ using static MMR_Tracker_V3.TrackerObjects.EntranceData;
 using static MMR_Tracker_V3.TrackerObjects.HintData;
 using static MMR_Tracker_V3.TrackerObjects.LocationData;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
+using static MMR_Tracker_V3.InstanceData;
 
 namespace MMR_Tracker_V3
 {
@@ -56,7 +57,7 @@ namespace MMR_Tracker_V3
         }
 
         //Check Sets of items
-        public static List<object> CheckSelectedItems(IEnumerable<object> SelectedObjects, MiscData.InstanceContainer instanceContainer, CheckItemSetting Options)
+        public static List<object> CheckSelectedItems(IEnumerable<object> SelectedObjects, InstanceData.InstanceContainer instanceContainer, CheckItemSetting Options)
         {
             List<object> UpdatedObjects = new List<object>();
 
@@ -102,7 +103,7 @@ namespace MMR_Tracker_V3
             return UpdatedObjects;
         }
 
-        public static List<object> SetOptionCheckState(IEnumerable<object> SelectedObjects, MiscData.InstanceContainer instanceContainer, CheckItemSetting Options)
+        public static List<object> SetOptionCheckState(IEnumerable<object> SelectedObjects, InstanceData.InstanceContainer instanceContainer, CheckItemSetting Options)
         {
             List<object> UpdatedObjects = new List<object>();
 
@@ -140,7 +141,7 @@ namespace MMR_Tracker_V3
             return UpdatedObjects;
         }
 
-        public static List<LocationObject> SetLocationsCheckState(IEnumerable<object> SelectedObjects, MiscData.InstanceContainer instanceContainer, CheckItemSetting Options)
+        public static List<LocationObject> SetLocationsCheckState(IEnumerable<object> SelectedObjects, InstanceData.InstanceContainer instanceContainer, CheckItemSetting Options)
         {
             List<LocationObject> UpdatedObjects = new List<LocationObject>();
 
@@ -178,7 +179,7 @@ namespace MMR_Tracker_V3
             return UpdatedObjects;
         }
 
-        public static List<EntranceRandoExit> SetEntrancesCheckState(IEnumerable<object> SelectedObjects, MiscData.InstanceContainer instanceContainer, CheckItemSetting Options)
+        public static List<EntranceRandoExit> SetEntrancesCheckState(IEnumerable<object> SelectedObjects, InstanceData.InstanceContainer instanceContainer, CheckItemSetting Options)
         {
             List<EntranceRandoExit> UpdatedObjects = new List<EntranceRandoExit>();
 
@@ -208,7 +209,7 @@ namespace MMR_Tracker_V3
             return UpdatedObjects;
         }
 
-        public static List<HintObject> SetHintsCheckState(IEnumerable<object> SelectedObjects, MiscData.InstanceContainer instanceContainer, CheckItemSetting Options)
+        public static List<HintObject> SetHintsCheckState(IEnumerable<object> SelectedObjects, InstanceData.InstanceContainer instanceContainer, CheckItemSetting Options)
         {
             List<HintObject> UpdatedObjects = new List<HintObject>();
             //Hints======================================

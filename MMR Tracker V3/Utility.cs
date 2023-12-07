@@ -193,7 +193,7 @@ namespace MMR_Tracker_V3
             };
         }
 
-        public static string GetLocationDisplayName(dynamic obj, MiscData.InstanceContainer instance)
+        public static string GetLocationDisplayName(dynamic obj, InstanceData.InstanceContainer instance)
         {
             dynamic PriceData;
             LocationData.LocationObject Location;

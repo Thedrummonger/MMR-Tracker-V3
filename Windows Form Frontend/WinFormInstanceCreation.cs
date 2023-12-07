@@ -11,6 +11,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static MMR_Tracker_V3.InstanceData;
 
 namespace Windows_Form_Frontend
 {
@@ -19,7 +20,7 @@ namespace Windows_Form_Frontend
         public static event Action<MMR_Tracker_V3.InstanceData.TrackerInstance> InstanceCreated;
         public static bool CreateWinFormInstance(string Logic = null, string Dictionary = null)
         {
-            var NewInstance = new MMR_Tracker_V3.TrackerObjects.MiscData.InstanceContainer();
+            var NewInstance = new InstanceContainer();
             if (Logic == null)
             {
                 OpenFileDialog fileDialog = new OpenFileDialog();

@@ -14,14 +14,15 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
+using static MMR_Tracker_V3.InstanceData;
 using static System.Windows.Forms.AxHost;
 
 namespace Windows_Form_Frontend
 {
     public partial class MainInterface : Form
     {
-        public static event Action<List<object>, MMR_Tracker_V3.InstanceData.TrackerInstance, MiscData.CheckState> CheckedObjectsUpdate;
-        public static MiscData.InstanceContainer InstanceContainer = new MiscData.InstanceContainer();
+        public static event Action<List<object>, TrackerInstance, MiscData.CheckState> CheckedObjectsUpdate;
+        public static InstanceContainer InstanceContainer = new InstanceContainer();
         public static MainInterface CurrentProgram;
         public static bool IsSubForm = false;
         Pathfinder MainInterfacepathfinder = new Pathfinder();
@@ -1018,13 +1019,13 @@ namespace Windows_Form_Frontend
             UpdateUI();
         }
 
-        private List<ManualCheckObjectResult> HandleUnassignedChecks(IEnumerable<object> Checks, MiscData.InstanceContainer Instance)
+        private List<ManualCheckObjectResult> HandleUnassignedChecks(IEnumerable<object> Checks, MMR_Tracker_V3.InstanceData.InstanceContainer Instance)
         {
             CheckItemForm checkItemForm = new CheckItemForm(Checks, Instance);
             checkItemForm.ShowDialog();
             return checkItemForm._Result;
         }
-        private List<ManualCheckObjectResult> HandleUnassignedVariables(IEnumerable<object> Checks, MiscData.InstanceContainer Instance)
+        private List<ManualCheckObjectResult> HandleUnassignedVariables(IEnumerable<object> Checks, MMR_Tracker_V3.InstanceData.InstanceContainer Instance)
         {
             VariableInputWindow variableInputWindow = new VariableInputWindow(Checks, Instance);
             variableInputWindow.ShowDialog();

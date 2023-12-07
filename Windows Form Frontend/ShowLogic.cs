@@ -25,14 +25,14 @@ namespace Windows_Form_Frontend
 
         public string CurrentID;
         private readonly ListBoxHeightData ReqLBHeightData;
-        private readonly InstanceContainer IC;
+        private readonly MMR_Tracker_V3.InstanceData.InstanceContainer IC;
         private bool Updating = false;
         private readonly List<CheckBox> TimeCheckBoxes;
         private readonly List<string> GoBackList = new();
         private List<object> CurrentGotoData;
         public FormState state = FormState.showLogic;
         public HashSet<string> AllLogicIDs;
-        public ShowLogic(string id, MiscData.InstanceContainer _instanceContainer)
+        public ShowLogic(string id, MMR_Tracker_V3.InstanceData.InstanceContainer _instanceContainer)
         {
             InitializeComponent();
             CurrentID = id;

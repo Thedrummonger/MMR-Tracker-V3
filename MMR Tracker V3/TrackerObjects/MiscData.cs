@@ -2,16 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
-using System.IO;
 using System.Linq;
 using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
 using static MMR_Tracker_V3.TrackerDataHandeling;
-using static MMR_Tracker_V3.TrackerObjects.ItemData;
-using static MMR_Tracker_V3.TrackerObjects.MiscData;
+using static MMR_Tracker_V3.InstanceData;
 
 namespace MMR_Tracker_V3.TrackerObjects
 {
@@ -171,88 +166,6 @@ namespace MMR_Tracker_V3.TrackerObjects
             public TrackerLocationDataList ShowUnavailable(bool showall = true) { _ShowAll = showall; return this; }
         }
 
-        public class InstanceContainer
-        {
-            public InstanceContainer()
-            {
-                logicCalculation = new LogicCalculation(this);
-            }
-            private InstanceData.TrackerInstance _Instance;
-            public InstanceData.TrackerInstance Instance {
-                get 
-                {
-                    _Instance?.SetParentContainer(this);
-                    return _Instance;
-                }
-            }
-            public LogicCalculation logicCalculation { get; set; }
-            public NetConnection netConnection { get; set; } = new NetConnection();
-            public List<string> UndoStringList { get; set; } = new List<string>();
-            public List<string> RedoStringList { get; set; } = new List<string>();
-            public string CurrentSavePath { get; set; } = "";
-            public bool UnsavedChanges { get; set; } = false;
-
-            public bool SaveInstance(string SavePath)
-            {
-                try
-                {
-                    if (Instance.StaticOptions.OptionFile.CompressSave)
-                    {
-                        var CompressedSave = new SaveCompressor.CompressedSave(Instance.ToString());
-                        File.WriteAllBytes(SavePath, CompressedSave.Bytes);
-                    }
-                    else
-                    {
-                        File.WriteAllText(SavePath, Instance.ToString());
-                    }
-                    return true;
-                }
-                catch
-                {
-                    return false;
-                }
-            }
-            public bool LoadSave(string[] Save) { return LoadSave(string.Join("", Save)); }
-            public bool LoadSave(string Save)
-            {
-                if (File.Exists(Save))
-                {
-                    switch (SaveCompressor.TestSaveFileType(Save, Instance))
-                    {
-                        case SaveCompressor.SaveType.Standard:
-                            ApplyInstance(File.ReadAllText(Save));
-                            break;
-                        case SaveCompressor.SaveType.Compressed:
-                            var Decomp = SaveCompressor.Decompress(File.ReadAllText(Save));
-                            ApplyInstance(File.ReadAllText(Decomp));
-                            break;
-                        case SaveCompressor.SaveType.CompressedByte:
-                            var ByteDecomp = SaveCompressor.Decompress(File.ReadAllBytes(Save));
-                            ApplyInstance(File.ReadAllText(ByteDecomp));
-                            break;
-                        case SaveCompressor.SaveType.error:
-                            return false;
-                    }
-                }
-                else
-                {
-                    try { ApplyInstance(Save); }
-                    catch { return false; }
-                }
-                logicCalculation.CompileOptionActionEdits();
-                return true;
-            }
-
-            public void ApplyInstance(string JsonString)
-            {
-                ApplyInstance(JsonConvert.DeserializeObject<InstanceData.TrackerInstance>(JsonString));
-            }
-            public void ApplyInstance(InstanceData.TrackerInstance Instance)
-            {
-                _Instance = Instance;
-                _Instance.SetParentContainer(this);
-            }
-        }
         [Serializable]
         public enum CheckState
         {

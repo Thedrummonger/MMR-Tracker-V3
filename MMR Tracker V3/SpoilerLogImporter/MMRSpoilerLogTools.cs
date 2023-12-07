@@ -10,7 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static MMR_Tracker_V3.TrackerObjects.HintData;
+using static MMR_Tracker_V3.InstanceData;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
 namespace MMR_Tracker_V3.SpoilerLogImporter

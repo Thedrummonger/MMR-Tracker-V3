@@ -14,7 +14,7 @@ namespace MMR_Tracker_V3
 {
     public class PlaythroughGenerator
     {
-        public MiscData.InstanceContainer Container = new MiscData.InstanceContainer();
+        public InstanceData.InstanceContainer Container = new InstanceData.InstanceContainer();
         public Dictionary<string, PlaythroughObject> Playthrough = new Dictionary<string, PlaythroughObject>();
         public List<string> _IngoredChecks;
         public Dictionary<string, List<Tuple<object, PlaythroughObject>>> FirstObtainedDict = new Dictionary<string, List<Tuple<object, PlaythroughObject>>>();
