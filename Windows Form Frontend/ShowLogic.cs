@@ -326,7 +326,7 @@ namespace Windows_Form_Frontend
                             break;
                         case LogicEntryType.item:
                             LitEntry.tag = c;
-                            LitEntry.Display = $"{IC.Instance.GetItemByID(CleanedID)?.GetDictEntry()?.GetName(IC.Instance)??CleanedID}: {IC.Instance.GetLocationByID(c)?.GetDictEntry()?.GetName(IC.Instance)??c}";
+                            LitEntry.Display = $"{IC.Instance.GetItemByID(CleanedID)?.GetDictEntry()?.GetName()??CleanedID}: {IC.Instance.GetLocationByID(c)?.GetDictEntry()?.GetName()??c}";
                             break;
                         case LogicEntryType.macro:
                         default:
@@ -350,7 +350,7 @@ namespace Windows_Form_Frontend
                 {
                     case LogicEntryType.location:
                         LitEntry.tag = i.Key;
-                        LitEntry.Display = IC.Instance.GetLocationByID(i.Key)?.GetDictEntry()?.GetName(IC.Instance)??i.Key;
+                        LitEntry.Display = IC.Instance.GetLocationByID(i.Key)?.GetDictEntry()?.GetName()??i.Key;
                         break;
                     case LogicEntryType.Exit:
                     default:

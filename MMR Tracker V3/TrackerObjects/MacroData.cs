@@ -47,7 +47,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 return GetParent().LogicDictionary.MacroList[ID];
             }
-            return new LogicDictionaryData.DictionaryMacroEntry
+            return new LogicDictionaryData.DictionaryMacroEntry()
             {
                 ID = ID,
                 Name = null,

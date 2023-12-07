@@ -152,7 +152,7 @@ namespace TestingForm
                 {
                     if (Player.Value < 1) { continue; }
                     if (!PlayersSentItem.ContainsKey(Player.Key)) { PlayersSentItem[Player.Key] = new Dictionary<string, int>(); }
-                    PlayersSentItem[Player.Key][Item.Value.GetDictEntry().GetName(instance)] = Player.Value;
+                    PlayersSentItem[Player.Key][Item.Value.GetDictEntry().GetName()] = Player.Value;
                 }
             }
             return PlayersSentItem;

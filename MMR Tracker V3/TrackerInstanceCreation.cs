@@ -79,16 +79,16 @@ namespace MMR_Tracker_V3
             Instance.IntOptions = Instance.LogicDictionary.IntOptions.ToDictionary(x => x.Key, y => y.Value);
             Instance.LogicEntryCollections = Instance.LogicDictionary.LogicEntryCollections.ToDictionary(x => x.Key, y => y.Value);
 
-            //This value should always match the key, preferable I should leave it out of the JSON.
-            foreach (var i in Instance.LogicDictionary.LocationList) { i.Value.ID = i.Key; }
-            foreach (var i in Instance.LogicDictionary.ItemList) { i.Value.ID = i.Key; }
-            foreach (var i in Instance.LogicDictionary.EntranceList) { i.Value.ID = i.Key; }
-            foreach (var i in Instance.LogicDictionary.HintSpots) { i.Value.ID = i.Key; }
-            foreach (var i in Instance.LogicDictionary.MacroList) { i.Value.ID = i.Key; }
+            Instance.LogicDictionary.SetParentContainer(Instance);
+            foreach (var i in Instance.LogicDictionary.LocationList) { i.Value.ID = i.Key; i.Value.SetParent(Instance.LogicDictionary); }
+            foreach (var i in Instance.LogicDictionary.ItemList) { i.Value.ID = i.Key; i.Value.SetParent(Instance.LogicDictionary); }
+            foreach (var i in Instance.LogicDictionary.EntranceList) { i.Value.ID = i.Key; i.Value.SetParent(Instance.LogicDictionary); }
+            foreach (var i in Instance.LogicDictionary.HintSpots) { i.Value.ID = i.Key; i.Value.SetParent(Instance.LogicDictionary); }
+            foreach (var i in Instance.LogicDictionary.MacroList) { i.Value.ID = i.Key; i.Value.SetParent(Instance.LogicDictionary); }
             foreach (var i in Instance.LogicDictionary.ChoiceOptions) 
             { 
-                i.Value.ID = i.Key; 
-                foreach(var j in i.Value.ValueList) { j.Value.ID = j.Key; }
+                i.Value.ID = i.Key;
+                foreach (var j in i.Value.ValueList) { j.Value.ID = j.Key; }
             }
             foreach (var i in Instance.LogicDictionary.ToggleOptions) { i.Value.ID = i.Key; }
             foreach (var i in Instance.LogicDictionary.IntOptions) { i.Value.ID = i.Key; }

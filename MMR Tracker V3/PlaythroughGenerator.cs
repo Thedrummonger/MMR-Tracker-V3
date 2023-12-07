@@ -298,14 +298,14 @@ namespace MMR_Tracker_V3
                     sphere = p.Value.sphere;
                 }
                 string AreaName = (Container.Instance.GetLocationByID(p.Key)?.GetDictEntry()?.Area);
-                string LocationName = Container.Instance.GetLocationByID(p.Key)?.GetDictEntry()?.GetName(Container.Instance)??p.Key;
+                string LocationName = Container.Instance.GetLocationByID(p.Key)?.GetDictEntry()?.GetName()??p.Key;
                 string LocationDisplay = AreaName is null ? LocationName : $"{AreaName} - {LocationName}";
-                string ItemName = Container.Instance.GetItemByID(p.Value.ItemObtained)?.GetDictEntry()?.GetName(Container.Instance)??p.Value.ItemObtained;
+                string ItemName = Container.Instance.GetItemByID(p.Value.ItemObtained)?.GetDictEntry()?.GetName()??p.Value.ItemObtained;
                 List<string> RealItems = new List<string>();
 
                 foreach(var i in p.Value.advancedUnlockData.RealItemsUsed)
                 {
-                    string display = Container.Instance.GetItemByID(i.Key)?.GetDictEntry()?.GetName(Container.Instance)??i.Key;
+                    string display = Container.Instance.GetItemByID(i.Key)?.GetDictEntry()?.GetName()??i.Key;
                     if (i.Value > 1) { display += $" X{i.Value}"; }
                     RealItems.Add(display);
                 }
@@ -518,7 +518,7 @@ namespace MMR_Tracker_V3
                 var ItemObj = Instance.GetItemByID(item.Key);
                 if (ItemObj is null || ItemObj.Useable(item.Value)) { continue; }
                 int MissingAmunt = item.Value - ItemObj.GetTotalUsable();
-                NeededItems.Add($"{ItemObj.GetDictEntry().GetName(Instance)} x{MissingAmunt}");
+                NeededItems.Add($"{ItemObj.GetDictEntry().GetName()} x{MissingAmunt}");
             }
             foreach (var item in AdvancedUnlockData.Rootareas)
             {

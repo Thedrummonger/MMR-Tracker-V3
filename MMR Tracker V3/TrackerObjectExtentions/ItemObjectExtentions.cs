@@ -38,8 +38,8 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
 
         public static bool CanBePlaced(this ItemData.ItemObject Item)
         {
-            if (Item.GetDictEntry().GetMaxAmountInWorld(Item.GetParent()) < 0) { return true; }
-            return Item.GetAmountPlaced() < Item.GetDictEntry().GetMaxAmountInWorld(Item.GetParent());
+            if (Item.GetDictEntry().GetMaxAmountInWorld() < 0) { return true; }
+            return Item.GetAmountPlaced() < Item.GetDictEntry().GetMaxAmountInWorld();
         }
 
         public static int GetTotalUsable(this ItemData.ItemObject Item)

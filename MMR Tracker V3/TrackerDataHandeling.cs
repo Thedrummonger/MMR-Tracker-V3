@@ -607,7 +607,7 @@ namespace MMR_Tracker_V3
                 bool DividerCreated = false;
                 foreach (var i in Data.DataSets.CurrentStartingItems)
                 {
-                    string Display = $"{i.GetDictEntry().GetName(Data.Instance)} X{i.AmountInStartingpool}";
+                    string Display = $"{i.GetDictEntry().GetName()} X{i.AmountInStartingpool}";
                     Data.ItemsFound++;
                     if (!SearchStringParser.FilterSearch(Data.Instance, i, Data.Filter, Display)) { continue; }
                     if (!DividerCreated)
@@ -628,7 +628,7 @@ namespace MMR_Tracker_V3
                 {
                     foreach (var j in i.AmountAquiredOnline)
                     {
-                        string Display = $"{i.GetDictEntry().GetName(Data.Instance)} X{j.Value}: Player {j.Key}";
+                        string Display = $"{i.GetDictEntry().GetName()} X{j.Value}: Player {j.Key}";
                         Data.ItemsFound++;
                         if (!SearchStringParser.FilterSearch(Data.Instance, i, Data.Filter, Display)) { continue; }
                         if (!DividerCreated)

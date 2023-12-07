@@ -131,7 +131,7 @@ namespace Windows_Form_Frontend
                 if (i.Value.IsUnrandomized(MiscData.UnrandState.Unrand) && !chkShowUnrand.Checked) { continue; }
                 if (i.Value.IsUnrandomized(MiscData.UnrandState.Manual) && !chkShowManual.Checked) { continue; }
                 if (i.Value.IsJunk() && !chkShowJunk.Checked) { continue; }
-                i.Value.DisplayName = i.Value.GetDictEntry().GetName(_Instance);
+                i.Value.DisplayName = i.Value.GetDictEntry().GetName();
                 if (!SearchStringParser.FilterSearch(_Instance, i.Value, TxtLocationSearch.Text, i.Value.DisplayName)) { continue; }
                 string VanillaItemText = "";
                 if (i.Value.GetDictEntry().OriginalItem != null)
@@ -140,7 +140,7 @@ namespace Windows_Form_Frontend
                     if (_Instance.GetItemByID(VanillaItem) != null)
                     {
                         var VanillaItemObject = _Instance.GetItemByID(VanillaItem).GetDictEntry();
-                        VanillaItemText  = $"{VanillaItemObject.GetName(_Instance)} [{VanillaItem}]";
+                        VanillaItemText  = $"{VanillaItemObject.GetName()} [{VanillaItem}]";
                     }
                     else
                     {
@@ -199,13 +199,13 @@ namespace Windows_Form_Frontend
 
             foreach(var i in _DataSets.AvailableStartingItems.Where(x => x.CanBePlaced()))
             {
-                i.DisplayName = i.GetDictEntry().GetName(_Instance) ?? i.ID;
+                i.DisplayName = i.GetDictEntry().GetName() ?? i.ID;
                 if (!SearchStringParser.FilterSearch(_Instance, i, txtSearchAvailableStarting.Text, i.DisplayName)) { continue; }
                 lbAvailableStarting.Items.Add(i);
             }
             foreach (var i in _DataSets.CurrentStartingItems)
             {
-                i.DisplayName = (i.GetDictEntry().GetName(_Instance) ?? i.ID) + $": X{i.AmountInStartingpool}";
+                i.DisplayName = (i.GetDictEntry().GetName() ?? i.ID) + $": X{i.AmountInStartingpool}";
                 if (!SearchStringParser.FilterSearch(_Instance, i, txtSearchCurrentStarting.Text, i.DisplayName)) { continue; }
                 lbCurrentStarting.Items.Add(i);
             }

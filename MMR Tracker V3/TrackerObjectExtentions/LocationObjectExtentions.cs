@@ -61,7 +61,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
         }
         public static bool AppearsinListbox(this LocationData.LocationObject loc, bool ShowJunkUnrand = false)
         {
-            return (!loc.IsJunk() || ShowJunkUnrand) && (!loc.IsUnrandomized(MiscData.UnrandState.Unrand) || ShowJunkUnrand) && !string.IsNullOrWhiteSpace(loc.GetDictEntry().GetName(loc.GetParent()));
+            return (!loc.IsJunk() || ShowJunkUnrand) && (!loc.IsUnrandomized(MiscData.UnrandState.Unrand) || ShowJunkUnrand) && !string.IsNullOrWhiteSpace(loc.GetDictEntry().GetName());
         }
 
         public static bool ToggleChecked(this LocationData.LocationObject loc, CheckState NewState)

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using static MMR_Tracker_V3.InstanceData;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
 using static MMR_Tracker_V3.TrackerObjects.MMRData;
 using static MMR_Tracker_V3.TrackerObjects.OptionData;
@@ -16,6 +17,9 @@ namespace MMR_Tracker_V3.TrackerObjects
         [Serializable]
         public class LogicDictionary
         {
+            private TrackerInstance Parent;
+            public TrackerInstance GetParentInstancer() { return Parent; }
+            public void SetParentContainer(TrackerInstance P) { Parent = P; }
             public int LogicVersion { get; set; }
             public string GameCode { get; set; }
             public string RootArea { get; set; }
@@ -66,6 +70,9 @@ namespace MMR_Tracker_V3.TrackerObjects
         [Serializable]
         public class DictionaryLocationEntries
         {
+            private LogicDictionary _parent;
+            public LogicDictionary GetParent() { return _parent; }
+            public void SetParent(LogicDictionary parent) { _parent = parent; }
             public string ID { get; set; }
             public string Name { get; set; }
             public string OriginalItem { get; set; }
@@ -76,7 +83,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public bool? Repeatable { get; set; } = null;
             public SpoilerlogReference SpoilerData { get; set; } = new SpoilerlogReference();
             public List<DictLocationProxy> LocationProxys { get; set; } = new List<DictLocationProxy>();
-            public string GetName(InstanceData.TrackerInstance instance)
+            public string GetName()
             {
                 return Name ?? ID;
             }
@@ -105,6 +112,9 @@ namespace MMR_Tracker_V3.TrackerObjects
         [Serializable]
         public class DictionaryItemEntries
         {
+            private LogicDictionary _parent;
+            public LogicDictionary GetParent() { return _parent; }
+            public void SetParent(LogicDictionary parent) { _parent = parent; }
             public string ID { get; set; }
             public string Name { get; set; }
             public int? WalletCapacity { get; set; } = null;
@@ -115,11 +125,11 @@ namespace MMR_Tracker_V3.TrackerObjects
             public bool? IgnoreForSettingString { get; set; } = null;
             public SpoilerlogReference SpoilerData { get; set; } = new SpoilerlogReference();
 
-            public string GetName(InstanceData.TrackerInstance instance, bool DoEdits = true)
+            public string GetName(bool DoEdits = true)
             {
                 return DoEdits switch
                 {
-                    true => instance.InstanceReference.OptionActionItemEdits[ID].Name,
+                    true => _parent.GetParentInstancer().InstanceReference.OptionActionItemEdits[ID].Name,
                     _ => Name??ID,
                 };
             }
@@ -130,10 +140,10 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return Name ?? ID;
             }
 
-            public int GetMaxAmountInWorld(InstanceData.TrackerInstance instance)
+            public int GetMaxAmountInWorld()
             {
-                if (!instance.InstanceReference.OptionActionItemEdits.ContainsKey(ID)) { return -1; }
-                return instance.InstanceReference.OptionActionItemEdits[ID].MaxAmount;
+                if (!_parent.GetParentInstancer().InstanceReference.OptionActionItemEdits.ContainsKey(ID)) { return -1; }
+                return _parent.GetParentInstancer().InstanceReference.OptionActionItemEdits[ID].MaxAmount;
             }
 
             public int GetOptionEditDefinedMaxAmountInWorld(List<OptionData.Action> Actions)
@@ -167,6 +177,9 @@ namespace MMR_Tracker_V3.TrackerObjects
         [Serializable]
         public class DictionaryMacroEntry
         {
+            private LogicDictionary _parent;
+            public LogicDictionary GetParent() { return _parent; }
+            public void SetParent(LogicDictionary parent) { _parent = parent; }
             public string ID { get; set; }
             public string Name { get; set; }
             public int? WalletCapacity { get; set; } = null;
@@ -177,6 +190,9 @@ namespace MMR_Tracker_V3.TrackerObjects
         [Serializable]
         public class DictionaryHintEntries
         {
+            private LogicDictionary _parent;
+            public LogicDictionary GetParent() { return _parent; }
+            public void SetParent(LogicDictionary parent) { _parent = parent; }
             public string ID { get; set; }
             public string Name { get; set; }
             public SpoilerlogReference SpoilerData { get; set; } = new SpoilerlogReference();
@@ -186,6 +202,9 @@ namespace MMR_Tracker_V3.TrackerObjects
         [Serializable]
         public class DictionaryEntranceEntries
         {
+            private LogicDictionary _parent;
+            public LogicDictionary GetParent() { return _parent; }
+            public void SetParent(LogicDictionary parent) { _parent = parent; }
             public string ID { get; set; }
             public string Area { get; set; }
             public string Exit { get; set; }

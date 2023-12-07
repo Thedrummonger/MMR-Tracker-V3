@@ -148,7 +148,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
 
             foreach (var i in ItemLocationDict)
             {
-                var PossibleLocations = Container.Instance.LocationPool.Where(x => x.Value.GetDictEntry().GetName(Container.Instance) == i.Item1);
+                var PossibleLocations = Container.Instance.LocationPool.Where(x => x.Value.GetDictEntry().GetName() == i.Item1);
                 PossibleLocations = PossibleLocations.Where(x => string.IsNullOrWhiteSpace(x.Value.Randomizeditem.SpoilerLogGivenItem));
                 if (!PossibleLocations.Any())
                 {

@@ -203,14 +203,14 @@ namespace MMR_Tracker_V3
             {
                 Location = lo;
                 PriceData = lo;
-                LocationDisplay = Location.GetDictEntry()?.GetName(instance.Instance);
+                LocationDisplay = Location.GetDictEntry()?.GetName();
                 StarredDisplay = lo.Starred ? "*" : "";
             }
             else if (obj is LocationData.LocationProxy po)
             {
                 Location = po.GetReferenceLocation();
                 PriceData = po.GetLogicInheritance();
-                LocationDisplay = po.Name ?? Location.GetDictEntry()?.GetName(instance.Instance);
+                LocationDisplay = po.Name ?? Location.GetDictEntry()?.GetName();
                 StarredDisplay = po.Starred ? "*" : "";
             }
             else { return obj.ToString(); }
@@ -221,7 +221,7 @@ namespace MMR_Tracker_V3
 
             PriceData.GetPrice(out int p, out char c);
             PriceDisplay = p < 0 || (!Available) ? "" : $" [{c}{p}]";
-            RandomizedItemDisplay = instance.Instance.GetItemByID(Location.Randomizeditem.Item)?.GetDictEntry()?.GetName(instance.Instance) ?? Location.Randomizeditem.Item;
+            RandomizedItemDisplay = instance.Instance.GetItemByID(Location.Randomizeditem.Item)?.GetDictEntry()?.GetName() ?? Location.Randomizeditem.Item;
 
             ForPlayer = Location.Randomizeditem.Item is not null && Location.Randomizeditem.OwningPlayer >= 0 ? $" [Player: {Location.Randomizeditem.OwningPlayer}]" : "";
 
@@ -598,7 +598,7 @@ namespace MMR_Tracker_V3
                 var DictData = locationObject.GetDictEntry();
                 OutObject.ID = locationObject.ID;
                 OutObject.Area = DictData.Area;
-                OutObject.Name = DictData.GetName(instance);
+                OutObject.Name = DictData.GetName();
                 OutObject.OriginalItem = DictData.OriginalItem;
                 OutObject.Randomizeditem = locationObject.Randomizeditem.Item;
                 OutObject.Starred = locationObject.Starred;
@@ -624,9 +624,9 @@ namespace MMR_Tracker_V3
                 if (ItemObject.AmountInStartingpool > 0) { OutObject.Area += "starting "; }
                 if (ItemObject.AmountAquiredOnline.Any(x => x.Value > 0)) { OutObject.Area += "online "; }
                 OutObject.Area += "item";
-                OutObject.Name = DictData.GetName(instance);
-                OutObject.OriginalItem = DictData.GetName(instance);
-                OutObject.Randomizeditem = DictData.GetName(instance);
+                OutObject.Name = DictData.GetName();
+                OutObject.OriginalItem = DictData.GetName();
+                OutObject.Randomizeditem = DictData.GetName();
                 OutObject.Starred = false;
                 OutObject.ValidItemTypes = DictData.ItemTypes;
             }

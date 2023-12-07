@@ -333,7 +333,7 @@ namespace Windows_Form_Frontend
                 if (!trackerState.ItemValues.ContainsKey(item.ID)) { trackerState.ItemValues[item.ID] = new ItemCounts(); }
                 trackerState.ItemValues[item.ID].Obtained += item.GetTotalUsable();
 
-                string ItemName = item.GetDictEntry().GetName(Instance);
+                string ItemName = item.GetDictEntry().GetName();
                 if (!trackerState.ItemValues.ContainsKey(ItemName)) { trackerState.ItemValues[ItemName] = new ItemCounts(); }
                 trackerState.ItemValues[ItemName].Obtained += item.GetTotalUsable();
             }
@@ -343,7 +343,7 @@ namespace Windows_Form_Frontend
                 if (!trackerState.ItemValues.ContainsKey(MarkedItem)) { trackerState.ItemValues[MarkedItem] = new ItemCounts(); }
                 trackerState.ItemValues[MarkedItem].Marked += 1;
 
-                string ItemName = Instance.GetItemByID(MarkedItem)?.GetDictEntry()?.GetName(Instance);
+                string ItemName = Instance.GetItemByID(MarkedItem)?.GetDictEntry()?.GetName();
                 if (ItemName is not null)
                 {
                     if (!trackerState.ItemValues.ContainsKey(ItemName)) { trackerState.ItemValues[ItemName] = new ItemCounts(); }

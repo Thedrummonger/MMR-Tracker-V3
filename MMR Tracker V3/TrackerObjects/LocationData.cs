@@ -20,10 +20,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             private InstanceData.TrackerInstance _parent;
             public InstanceData.TrackerInstance GetParent() { return _parent; }
             public void SetParent(InstanceData.TrackerInstance parent) { _parent = parent; }
-            public LocationObject(InstanceData.TrackerInstance Parent)
-            {
-                _parent = Parent;
-            }
+            public LocationObject(InstanceData.TrackerInstance Parent) { _parent = Parent; }
             public string ID { get; set; }
             public RandomizeditemData Randomizeditem { get; set; } = new RandomizeditemData();
             public bool Available { get; set; } = false;

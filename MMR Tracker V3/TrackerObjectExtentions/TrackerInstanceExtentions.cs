@@ -123,8 +123,8 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             var Names = new List<string>();
             foreach (var i in _Instance.ItemPool.Values)
             {
-                if (string.IsNullOrWhiteSpace(i.GetDictEntry().GetName(_Instance))) { continue; }
-                i.DisplayName = i.GetDictEntry().GetName(_Instance);
+                if (string.IsNullOrWhiteSpace(i.GetDictEntry().GetName())) { continue; }
+                i.DisplayName = i.GetDictEntry().GetName();
                 if (!SearchStringParser.FilterSearch(_Instance, i, Filter, i.DisplayName)) { continue; }
                 if ((i.CanBePlaced() || ForOtherPlayer) && Location.CanContainItem(i) && !EnteredItems.Contains(i) && !Names.Contains(i.ToString()))
                 {
@@ -133,7 +133,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
                 }
             }
 
-            return EnteredItems.OrderBy(x => x.GetDictEntry().GetName(_Instance)).ToList();
+            return EnteredItems.OrderBy(x => x.GetDictEntry().GetName()).ToList();
         }
 
 
@@ -168,7 +168,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             if (CheckItemName)
             {
                 ValidItem = ValidItem.Concat(instance.ItemPool.Values.Where(x =>
-                    x.GetDictEntry().GetName(instance, DoNameEdits) != null && x.GetDictEntry().GetName(instance, DoNameEdits) == Item &&
+                    x.GetDictEntry().GetName(DoNameEdits) != null && x.GetDictEntry().GetName(DoNameEdits) == Item &&
                     (x.CanBePlaced() || IgnoreMaxAmount) && (x.ValidStartingItem() || !ForStartingPool))).ToList();
             }
             if (CheckItemID)
@@ -346,7 +346,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
         {
             if (Entry is LocationObject LO)
             {
-                return LO.GetDictEntry()?.GetName(instance)??LO.ID;
+                return LO.GetDictEntry()?.GetName()??LO.ID;
             }
             else if (Entry is MacroObject MO)
             {

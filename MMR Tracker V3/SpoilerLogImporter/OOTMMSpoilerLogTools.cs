@@ -511,7 +511,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                     }
                     foreach (var item in Items)
                     {
-                        ItemNames.Add(Instance.ItemPool.ContainsKey(item) ? Instance.ItemPool[item].GetDictEntry().GetName(Instance) : item);
+                        ItemNames.Add(Instance.ItemPool.ContainsKey(item) ? Instance.ItemPool[item].GetDictEntry().GetName() : item);
                     }
                     Dictionary<string, string> HintedEntries = Locations.Zip(Items, (k, v) => new { k, v }).ToDictionary(x => x.k, x => x.v);
                     Result[CurrentKey] = new SpoilerHintData
