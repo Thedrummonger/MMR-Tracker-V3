@@ -109,11 +109,11 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
 
         private static void ApplyEntrances(InstanceData.TrackerInstance instance, Dictionary<string, string> exitData)
         {
-            var AllRandomizableExits = instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits(instance));
+            var AllRandomizableExits = instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits());
             foreach (var Entrance in exitData)
             {
-                var SpoilerEntrance = AllRandomizableExits.First(x => x.Value.GetDictEntry(instance).SpoilerData.SpoilerLogNames.Contains(Entrance.Key));
-                var SpoilerExit = AllRandomizableExits.First(x => x.Value.GetDictEntry(instance).SpoilerData.SpoilerLogNames.Contains(Entrance.Value));
+                var SpoilerEntrance = AllRandomizableExits.First(x => x.Value.GetDictEntry().SpoilerData.SpoilerLogNames.Contains(Entrance.Key));
+                var SpoilerExit = AllRandomizableExits.First(x => x.Value.GetDictEntry().SpoilerData.SpoilerLogNames.Contains(Entrance.Value));
                 SpoilerEntrance.Value.RandomizedState = MiscData.RandomizedState.Randomized;
                 SpoilerEntrance.Value.SpoilerDefinedDestinationExit = new EntranceData.EntranceRandoDestination { region = SpoilerExit.Value.ID, from = SpoilerExit.Value.ParentAreaID };
             }
@@ -133,7 +133,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 var JunkChecks = instance.LocationPool.Values.Where(x => instance.GetLogic(x.ID).RequiredItems.Contains(OppositeLogic));
                 foreach (var Check in JunkChecks)
                 {
-                    Check.SetRandomizedState(MiscData.RandomizedState.ForcedJunk, instance);
+                    Check.SetRandomizedState(MiscData.RandomizedState.ForcedJunk);
                 }
             }
         }
@@ -143,17 +143,17 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             foreach (var i in junkLocationData)
             {
                 if (!instance.LocationPool.ContainsKey(i)) { Debug.WriteLine($"{i} Was not a valid Location"); continue; }
-                instance.LocationPool[i].SetRandomizedState(MiscData.RandomizedState.ForcedJunk, instance);
+                instance.LocationPool[i].SetRandomizedState(MiscData.RandomizedState.ForcedJunk);
             }
         }
 
         private static void ToggleTricks(InstanceData.TrackerInstance instance, List<string> trickData)
         {
-            var allTricks = instance.MacroPool.Values.Where(x => x.isTrick(instance)).ToArray();
-            foreach (var i in instance.MacroPool.Values.Where(x => x.isTrick(instance))) { i.TrickEnabled = false; }
+            var allTricks = instance.MacroPool.Values.Where(x => x.isTrick()).ToArray();
+            foreach (var i in instance.MacroPool.Values.Where(x => x.isTrick())) { i.TrickEnabled = false; }
             foreach (var i in trickData)
             {
-                var CurrentTrick = allTricks.FirstOrDefault(x => x.GetDictEntry(instance).Name == i);
+                var CurrentTrick = allTricks.FirstOrDefault(x => x.GetDictEntry().Name == i);
                 if (CurrentTrick is null) { Debug.WriteLine($"{i} is not a valid trick"); }
                 else { CurrentTrick.TrickEnabled = true; }
             }
@@ -165,7 +165,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             foreach (var i in LocationData)
             {
                 var location = instance.GetLocationByID(i.Key);
-                string ItemName = instance.ItemPool.ContainsKey(i.Value) ? instance.ItemPool[i.Value].GetDictEntry(instance).SpoilerData.SpoilerLogNames.First() : i.Value;
+                string ItemName = instance.ItemPool.ContainsKey(i.Value) ? instance.ItemPool[i.Value].GetDictEntry().SpoilerData.SpoilerLogNames.First() : i.Value;
                 var Item = instance.GetItemToPlace(ItemName);
                 string ItemID;
                 if (location is null)
@@ -175,7 +175,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 }
                 else if (Item is null)
                 {
-                    var ValidItems = instance.ItemPool.Values.Where(x => x.GetDictEntry(instance).SpoilerData.SpoilerLogNames.Contains(ItemName));
+                    var ValidItems = instance.ItemPool.Values.Where(x => x.GetDictEntry().SpoilerData.SpoilerLogNames.Contains(ItemName));
                     if (ValidItems.Any())
                     {
                         Debug.WriteLine($"Item {i.Value} has been placed more times than is allowed!");
@@ -200,8 +200,8 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 if (string.IsNullOrWhiteSpace(i.Randomizeditem.SpoilerLogGivenItem) && i.RandomizedState == MiscData.RandomizedState.Randomized)
                 {
                     Debug.WriteLine($"{i.ID} was randomized but had no spoiler data. Assuming it's unrandomized");
-                    if (i.SingleValidItem is not null) { i.SetRandomizedState(MiscData.RandomizedState.UnrandomizedManual, instance); }
-                    else { i.SetRandomizedState(MiscData.RandomizedState.Unrandomized, instance); }
+                    if (i.SingleValidItem is not null) { i.SetRandomizedState(MiscData.RandomizedState.UnrandomizedManual); }
+                    else { i.SetRandomizedState(MiscData.RandomizedState.Unrandomized); }
                 }
             }
         }
@@ -277,30 +277,30 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 }
                 if (setting.Key == "shufflePotsOot" && setting.Value == "false")
                 {
-                    foreach (var location in instance.LocationPool.Where(x => x.Value.GetDictEntry(instance).ValidItemTypes.Contains("pot") && x.Key.StartsWith("OOT ")))
+                    foreach (var location in instance.LocationPool.Where(x => x.Value.GetDictEntry().ValidItemTypes.Contains("pot") && x.Key.StartsWith("OOT ")))
                     {
-                        location.Value.SetRandomizedState(MiscData.RandomizedState.Unrandomized, instance);
+                        location.Value.SetRandomizedState(MiscData.RandomizedState.Unrandomized);
                     }
                 }
                 if (setting.Key == "shufflePotsMm" && setting.Value == "false")
                 {
-                    foreach (var location in instance.LocationPool.Where(x => x.Value.GetDictEntry(instance).ValidItemTypes.Contains("pot") && x.Key.StartsWith("MM ")))
+                    foreach (var location in instance.LocationPool.Where(x => x.Value.GetDictEntry().ValidItemTypes.Contains("pot") && x.Key.StartsWith("MM ")))
                     {
-                        location.Value.SetRandomizedState(MiscData.RandomizedState.Unrandomized, instance);
+                        location.Value.SetRandomizedState(MiscData.RandomizedState.Unrandomized);
                     }
                 }
                 if (setting.Key == "shuffleGrassOot" && setting.Value == "false")
                 {
-                    foreach (var location in instance.LocationPool.Where(x => x.Value.GetDictEntry(instance).ValidItemTypes.Contains("grass") && x.Key.StartsWith("OOT ")))
+                    foreach (var location in instance.LocationPool.Where(x => x.Value.GetDictEntry().ValidItemTypes.Contains("grass") && x.Key.StartsWith("OOT ")))
                     {
-                        location.Value.SetRandomizedState(MiscData.RandomizedState.Unrandomized, instance);
+                        location.Value.SetRandomizedState(MiscData.RandomizedState.Unrandomized);
                     }
                 }
                 if (setting.Key == "shuffleGrassMm" && setting.Value == "false")
                 {
-                    foreach (var location in instance.LocationPool.Where(x => x.Value.GetDictEntry(instance).ValidItemTypes.Contains("grass") && x.Key.StartsWith("MM ")))
+                    foreach (var location in instance.LocationPool.Where(x => x.Value.GetDictEntry().ValidItemTypes.Contains("grass") && x.Key.StartsWith("MM ")))
                     {
-                        location.Value.SetRandomizedState(MiscData.RandomizedState.Unrandomized, instance);
+                        location.Value.SetRandomizedState(MiscData.RandomizedState.Unrandomized);
                     }
                 }
             }
@@ -309,13 +309,13 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
         private static void ResetInstanceData(InstanceData.TrackerInstance Instance)
         {
             Instance.ToggleAllTricks(false);
-            foreach (var i in Instance.EntrancePool.AreaList.SelectMany(x => x.Value.RandomizableExits(Instance)))
+            foreach (var i in Instance.EntrancePool.AreaList.SelectMany(x => x.Value.RandomizableExits()))
             {
                 i.Value.RandomizedState = MiscData.RandomizedState.Unrandomized;
             }
             foreach (var i in Instance.LocationPool.Values)
             {
-                i.SetRandomizedState(MiscData.RandomizedState.Randomized, Instance);
+                i.SetRandomizedState(MiscData.RandomizedState.Randomized);
             }
             foreach (var i in Instance.ItemPool.Values)
             {
@@ -381,7 +381,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             foreach (var i in startingItemData)
             {
                 if (i.Value < 1) { continue; }
-                var item = instance.ItemPool.Values.FirstOrDefault(x => x.ID == i.Key || x.GetDictEntry(instance).SpoilerData.SpoilerLogNames.Contains(i.Key));
+                var item = instance.ItemPool.Values.FirstOrDefault(x => x.ID == i.Key || x.GetDictEntry().SpoilerData.SpoilerLogNames.Contains(i.Key));
                 if (item is null)
                 {
                     Debug.WriteLine($"{i.Key} is not a valid item");
@@ -506,12 +506,12 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                     List<string> ItemNames = new List<string>();
                     foreach (var item in Items)
                     {
-                        var ValidItem = Instance.ItemPool.Values.FirstOrDefault(x => x.GetDictEntry(Instance).SpoilerData.SpoilerLogNames.Contains(item));
+                        var ValidItem = Instance.ItemPool.Values.FirstOrDefault(x => x.GetDictEntry().SpoilerData.SpoilerLogNames.Contains(item));
                         ItemIDs.Add(ValidItem is null ? item : ValidItem.ID);
                     }
                     foreach (var item in Items)
                     {
-                        ItemNames.Add(Instance.ItemPool.ContainsKey(item) ? Instance.ItemPool[item].GetDictEntry(Instance).GetName(Instance) : item);
+                        ItemNames.Add(Instance.ItemPool.ContainsKey(item) ? Instance.ItemPool[item].GetDictEntry().GetName(Instance) : item);
                     }
                     Dictionary<string, string> HintedEntries = Locations.Zip(Items, (k, v) => new { k, v }).ToDictionary(x => x.k, x => x.v);
                     Result[CurrentKey] = new SpoilerHintData

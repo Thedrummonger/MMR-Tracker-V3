@@ -51,9 +51,9 @@ namespace Windows_Form_Frontend
 
         private void UpdatedSettingStrings()
         {
-            var LocationList = _Instance.LocationPool.Values.Where(x => !x.GetDictEntry(_Instance).IgnoreForSettingString ?? true).ToList();
+            var LocationList = _Instance.LocationPool.Values.Where(x => !x.GetDictEntry().IgnoreForSettingString ?? true).ToList();
             var StartingItems = SettingStringHandler.GetStartingItemList(_Instance).ToList();
-            var TrickList = _Instance.MacroPool.Values.Where(x => x.isTrick(_Instance)).ToList();
+            var TrickList = _Instance.MacroPool.Values.Where(x => x.isTrick()).ToList();
             txtLocString.Text = SettingStringHandler.CreateSettingString(LocationList, LocationList.Where(x => !x.IsUnrandomized()).ToList());
             txtjunkString.Text = SettingStringHandler.CreateSettingString(LocationList, LocationList.Where(x => x.IsJunk()).ToList());
             txtStartString.Text = SettingStringHandler.CreateSettingString(StartingItems, StartingItems.Where(x => x.AmountInStartingpool > 0).ToList());
@@ -100,7 +100,7 @@ namespace Windows_Form_Frontend
             {
                 if (i.Value.RandomizedState == MiscData.RandomizedState.Randomized && !chkShowRand.Checked) { continue; }
                 if (i.Value.RandomizedState == MiscData.RandomizedState.ForcedJunk && !chkShowJunk.Checked) { continue; }
-                i.Value.DisplayName = i.Value.GetDictEntry(_Instance).Name;
+                i.Value.DisplayName = i.Value.GetDictEntry().Name;
                 if (!SearchStringParser.FilterSearch(_Instance, i.Value, TxtLocationSearch.Text, i.Value.DisplayName)) { continue; }
 
                 string[] row = { i.Value.DisplayName, "", i.Value.RandomizedState.GetDescription() };
@@ -131,15 +131,15 @@ namespace Windows_Form_Frontend
                 if (i.Value.IsUnrandomized(MiscData.UnrandState.Unrand) && !chkShowUnrand.Checked) { continue; }
                 if (i.Value.IsUnrandomized(MiscData.UnrandState.Manual) && !chkShowManual.Checked) { continue; }
                 if (i.Value.IsJunk() && !chkShowJunk.Checked) { continue; }
-                i.Value.DisplayName = i.Value.GetDictEntry(_Instance).GetName(_Instance);
+                i.Value.DisplayName = i.Value.GetDictEntry().GetName(_Instance);
                 if (!SearchStringParser.FilterSearch(_Instance, i.Value, TxtLocationSearch.Text, i.Value.DisplayName)) { continue; }
                 string VanillaItemText = "";
-                if (i.Value.GetDictEntry(_Instance).OriginalItem != null)
+                if (i.Value.GetDictEntry().OriginalItem != null)
                 {
-                    var VanillaItem = i.Value.GetDictEntry(_Instance).OriginalItem;
+                    var VanillaItem = i.Value.GetDictEntry().OriginalItem;
                     if (_Instance.GetItemByID(VanillaItem) != null)
                     {
-                        var VanillaItemObject = _Instance.GetItemByID(VanillaItem).GetDictEntry(_Instance);
+                        var VanillaItemObject = _Instance.GetItemByID(VanillaItem).GetDictEntry();
                         VanillaItemText  = $"{VanillaItemObject.GetName(_Instance)} [{VanillaItem}]";
                     }
                     else
@@ -167,7 +167,7 @@ namespace Windows_Form_Frontend
             List<ListViewItem> TempList = new List<ListViewItem>();
             foreach (var area in _Instance.EntrancePool.AreaList)
             {
-                foreach(var i in area.Value.RandomizableExits(_Instance))
+                foreach(var i in area.Value.RandomizableExits())
                 {
                     if (i.Value.IsRandomized() && !chkShowRand.Checked) { continue; }
                     if (i.Value.IsUnrandomized(MiscData.UnrandState.Unrand) && !chkShowUnrand.Checked) { continue; }
@@ -197,15 +197,15 @@ namespace Windows_Form_Frontend
             lbAvailableStarting.Items.Clear();
             lbCurrentStarting.Items.Clear();
 
-            foreach(var i in _DataSets.AvailableStartingItems.Where(x => x.CanBePlaced(_Instance)))
+            foreach(var i in _DataSets.AvailableStartingItems.Where(x => x.CanBePlaced()))
             {
-                i.DisplayName = i.GetDictEntry(_Instance).GetName(_Instance) ?? i.ID;
+                i.DisplayName = i.GetDictEntry().GetName(_Instance) ?? i.ID;
                 if (!SearchStringParser.FilterSearch(_Instance, i, txtSearchAvailableStarting.Text, i.DisplayName)) { continue; }
                 lbAvailableStarting.Items.Add(i);
             }
             foreach (var i in _DataSets.CurrentStartingItems)
             {
-                i.DisplayName = (i.GetDictEntry(_Instance).GetName(_Instance) ?? i.ID) + $": X{i.AmountInStartingpool}";
+                i.DisplayName = (i.GetDictEntry().GetName(_Instance) ?? i.ID) + $": X{i.AmountInStartingpool}";
                 if (!SearchStringParser.FilterSearch(_Instance, i, txtSearchCurrentStarting.Text, i.DisplayName)) { continue; }
                 lbCurrentStarting.Items.Add(i);
             }
@@ -222,7 +222,7 @@ namespace Windows_Form_Frontend
             var TrickList = _DataSets.Tricks.OrderBy(x => _DataSets.Tricks.IndexOf(_DataSets.Tricks.First(y => _Instance.GetLogic(y.ID, false).TrickCategory == _Instance.GetLogic(x.ID, false).TrickCategory)));
             foreach (var i in TrickList)
             {
-                var DictEntry = i.GetDictEntry(_Instance);
+                var DictEntry = i.GetDictEntry();
                 string DisplayName = DictEntry.Name ?? i.ID;
                 if (!SearchStringParser.FilterSearch(_Instance, i, txtTrickSearch.Text, DisplayName)) { continue; }
                 if (CurrentCategory != (_Instance.GetLogic(i.ID, false).TrickCategory??""))
@@ -312,18 +312,18 @@ namespace Windows_Form_Frontend
             Button button = (Button)sender;
             foreach (var i in CheckedLocationItems)
             {
-                if (button == btnSetRandomized) { i.SetRandomizedState(MiscData.RandomizedState.Randomized, _Instance); }
+                if (button == btnSetRandomized) { i.SetRandomizedState(MiscData.RandomizedState.Randomized); }
                 if (button == btnSetUnRandomized) 
                 { 
-                    if (!i.CanBeUnrandomized(_Instance)) { Debug.WriteLine($"{i.ID} Could not be unrandomized"); continue; }
-                    i.SetRandomizedState(MiscData.RandomizedState.Unrandomized, _Instance);
+                    if (!i.CanBeUnrandomized()) { Debug.WriteLine($"{i.ID} Could not be unrandomized"); continue; }
+                    i.SetRandomizedState(MiscData.RandomizedState.Unrandomized);
                 }
                 if (button == btnSetManual)
                 {
-                    if (!i.CanBeUnrandomized(_Instance)) { Debug.WriteLine($"{i.ID} Could not be unrandomized"); continue; }
-                    i.SetRandomizedState(MiscData.RandomizedState.UnrandomizedManual, _Instance);
+                    if (!i.CanBeUnrandomized()) { Debug.WriteLine($"{i.ID} Could not be unrandomized"); continue; }
+                    i.SetRandomizedState(MiscData.RandomizedState.UnrandomizedManual);
                 }
-                if (button == btnSetJunk) { i.SetRandomizedState(MiscData.RandomizedState.ForcedJunk, _Instance); }
+                if (button == btnSetJunk) { i.SetRandomizedState(MiscData.RandomizedState.ForcedJunk); }
             }
             CheckedLocationItems.Clear();
             foreach (var i in CheckedExitItems)

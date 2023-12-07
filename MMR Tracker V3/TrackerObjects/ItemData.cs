@@ -15,6 +15,10 @@ namespace MMR_Tracker_V3.TrackerObjects
         [Serializable]
         public class ItemObject
         {
+            private InstanceData.TrackerInstance _parent;
+            public InstanceData.TrackerInstance GetParent() { return _parent; }
+            public void SetParent(InstanceData.TrackerInstance parent) { _parent = parent; }
+            public ItemObject(InstanceData.TrackerInstance Parent) { _parent = Parent; }
             public string ID { get; set; }
             public int AmountAquiredLocally { get; set; } = 0;
             public int AmountInStartingpool { get; set; } = 0;
@@ -23,9 +27,9 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string DisplayName { get; set; }
             public InstanceData.ReferenceData referenceData { get; set; } = new InstanceData.ReferenceData();
 
-            public LogicDictionaryData.DictionaryItemEntries GetDictEntry(InstanceData.TrackerInstance Instance)
+            public LogicDictionaryData.DictionaryItemEntries GetDictEntry()
             {
-                return Instance.LogicDictionary.ItemList[ID];
+                return GetParent().LogicDictionary.ItemList[ID];
             }
             public override string ToString()
             {

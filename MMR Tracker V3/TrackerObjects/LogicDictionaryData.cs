@@ -88,9 +88,9 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string Name { get; set; }
             public string Area { get; set; }
             public string LogicInheritance { get; set; } = null;
-            public LocationData.LocationProxy ToInstanceData(DictionaryLocationEntries Parent)
+            public LocationData.LocationProxy ToInstanceData(DictionaryLocationEntries Parent, InstanceData.TrackerInstance instance)
             {
-                return new LocationData.LocationProxy
+                return new LocationData.LocationProxy(instance)
                 {
                     ID = ID,
                     ReferenceID = Parent.ID,

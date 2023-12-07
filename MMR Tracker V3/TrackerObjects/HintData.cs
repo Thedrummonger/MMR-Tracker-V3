@@ -14,6 +14,13 @@ namespace MMR_Tracker_V3.TrackerObjects
         [Serializable]
         public class HintObject
         {
+            private InstanceData.TrackerInstance _parent;
+            public InstanceData.TrackerInstance GetParent() { return _parent; }
+            public void SetParent(InstanceData.TrackerInstance parent) { _parent = parent; }
+            public HintObject(InstanceData.TrackerInstance Parent)
+            {
+                _parent = Parent;
+            }
             public string ID { get; set; }
             public CheckState CheckState { get; set; } = CheckState.Unchecked;
             public RandomizedState RandomizedState { 
@@ -33,9 +40,9 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 return DisplayName ?? ID;
             }
-            public LogicDictionaryData.DictionaryHintEntries GetDictEntry(InstanceData.TrackerInstance Instance)
+            public LogicDictionaryData.DictionaryHintEntries GetDictEntry()
             {
-                return Instance.LogicDictionary.HintSpots[ID];
+                return GetParent().LogicDictionary.HintSpots[ID];
             }
         }
     }

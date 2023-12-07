@@ -326,7 +326,7 @@ namespace Windows_Form_Frontend
                             break;
                         case LogicEntryType.item:
                             LitEntry.tag = c;
-                            LitEntry.Display = $"{IC.Instance.GetItemByID(CleanedID)?.GetDictEntry(IC.Instance)?.GetName(IC.Instance)??CleanedID}: {IC.Instance.GetLocationByID(c)?.GetDictEntry(IC.Instance)?.GetName(IC.Instance)??c}";
+                            LitEntry.Display = $"{IC.Instance.GetItemByID(CleanedID)?.GetDictEntry()?.GetName(IC.Instance)??CleanedID}: {IC.Instance.GetLocationByID(c)?.GetDictEntry()?.GetName(IC.Instance)??c}";
                             break;
                         case LogicEntryType.macro:
                         default:
@@ -350,7 +350,7 @@ namespace Windows_Form_Frontend
                 {
                     case LogicEntryType.location:
                         LitEntry.tag = i.Key;
-                        LitEntry.Display = IC.Instance.GetLocationByID(i.Key)?.GetDictEntry(IC.Instance)?.GetName(IC.Instance)??i.Key;
+                        LitEntry.Display = IC.Instance.GetLocationByID(i.Key)?.GetDictEntry()?.GetName(IC.Instance)??i.Key;
                         break;
                     case LogicEntryType.Exit:
                     default:
@@ -466,10 +466,10 @@ namespace Windows_Form_Frontend
             switch (Type)
             {
                 case LogicEntryType.Area:
-                    var ValidLoadingZoneExits = IC.Instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits(IC.Instance).Values.Where(x => 
+                    var ValidLoadingZoneExits = IC.Instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits().Values.Where(x => 
                         (x.DestinationExit is not null  && x.DestinationExit.region == CleanedID && x.CheckState != MiscData.CheckState.Unchecked) ||
                         (x.IsUnrandomized() && x.GetVanillaDestination().region == CleanedID)));
-                    var ValidMacroExits = IC.Instance.EntrancePool.AreaList.Values.SelectMany(x => x.NonRandomizableExits(IC.Instance).Values.Where(x => 
+                    var ValidMacroExits = IC.Instance.EntrancePool.AreaList.Values.SelectMany(x => x.NonRandomizableExits().Values.Where(x => 
                         (x.DestinationExit is not null  && x.DestinationExit.region == CleanedID) || 
                         x.GetVanillaDestination().region == CleanedID));
                     var ValidExits = ValidLoadingZoneExits.Concat(ValidMacroExits);
@@ -477,7 +477,7 @@ namespace Windows_Form_Frontend
                 case LogicEntryType.item:
                     var ValidLocations = IC.Instance.LocationPool.Values.Where(x => 
                         (x.Randomizeditem.Item is not null && x.Randomizeditem.Item == CleanedID && x.CheckState != MiscData.CheckState.Unchecked) || 
-                        ((x.IsUnrandomized() || x.SingleValidItem is not null) && x.GetItemAtCheck(IC.Instance) == CleanedID));
+                        ((x.IsUnrandomized() || x.SingleValidItem is not null) && x.GetItemAtCheck() == CleanedID));
                     return ValidLocations.Select(x => x.ID).ToList();
                 case LogicEntryType.macro:
                     return new List<string> { CleanedID };

@@ -10,21 +10,21 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
 {
     public static class ItemObjectExtentions
     {
-        public static bool ValidStartingItem(this ItemData.ItemObject Item, InstanceData.TrackerInstance Instance)
+        public static bool ValidStartingItem(this ItemData.ItemObject Item)
         {
-            var ItemIndex = Instance.GetItemByID(Item.ID);
-            var DictEntry = ItemIndex.GetDictEntry(Instance);
+            var ItemIndex = Item.GetParent().GetItemByID(Item.ID);
+            var DictEntry = ItemIndex.GetDictEntry();
             return DictEntry.ValidStartingItem != null && (bool)DictEntry.ValidStartingItem;
         }
 
-        public static int GetAmountPlaced(this ItemData.ItemObject Item, InstanceData.TrackerInstance Instance)
+        public static int GetAmountPlaced(this ItemData.ItemObject Item)
         {
-            int AmountAquired = Item.GetTotalUsable(Instance);
+            int AmountAquired = Item.GetTotalUsable();
             int AmountSetAtLocation = 0;
-            foreach (var x in Instance.LocationPool.Where(x => x.Value.CheckState != CheckState.Checked))
+            foreach (var x in Item.GetParent().LocationPool.Where(x => x.Value.CheckState != CheckState.Checked))
             {
-                bool OwnedByLocalPlayer = x.Value.Randomizeditem.OwningPlayer < 0 || Instance.GetParentContainer().netConnection.PlayerID == x.Value.Randomizeditem.OwningPlayer;
-                var itemAtheck = x.Value.GetItemAtCheck(Instance) ?? "";
+                bool OwnedByLocalPlayer = x.Value.Randomizeditem.OwningPlayer < 0 || Item.GetParent().GetParentContainer().netConnection.PlayerID == x.Value.Randomizeditem.OwningPlayer;
+                var itemAtheck = x.Value.GetItemAtCheck() ?? "";
                 if (itemAtheck == Item.ID && OwnedByLocalPlayer) { AmountSetAtLocation++; }
             }
 
@@ -36,26 +36,26 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             return Item.AmountInStartingpool;
         }
 
-        public static bool CanBePlaced(this ItemData.ItemObject Item, InstanceData.TrackerInstance Instance)
+        public static bool CanBePlaced(this ItemData.ItemObject Item)
         {
-            if (Item.GetDictEntry(Instance).GetMaxAmountInWorld(Instance) < 0) { return true; }
-            return Item.GetAmountPlaced(Instance) < Item.GetDictEntry(Instance).GetMaxAmountInWorld(Instance);
+            if (Item.GetDictEntry().GetMaxAmountInWorld(Item.GetParent()) < 0) { return true; }
+            return Item.GetAmountPlaced() < Item.GetDictEntry().GetMaxAmountInWorld(Item.GetParent());
         }
 
-        public static int GetTotalUsable(this ItemData.ItemObject Item, InstanceData.TrackerInstance Instance)
+        public static int GetTotalUsable(this ItemData.ItemObject Item)
         {
             return Item.AmountAquiredLocally + Item.AmountAquiredOnline.Values.Sum() + Item.GetAmountInStartingPool();
         }
 
-        public static bool Useable(this ItemData.ItemObject Item, InstanceData.TrackerInstance Instance, int Amount = 1)
+        public static bool Useable(this ItemData.ItemObject Item, int Amount = 1)
         {
-            return Item.GetTotalUsable(Instance) >= Amount;
+            return Item.GetTotalUsable() >= Amount;
         }
 
-        public static void ChangeLocalItemAmounts(this ItemData.ItemObject Item, InstanceData.TrackerInstance Instance, LocationData.LocationObject location, int Amount)
+        public static void ChangeLocalItemAmounts(this ItemData.ItemObject Item, LocationData.LocationObject location, int Amount)
         {
             if (Amount == 0) { return; }
-            bool OwnedByLocalPlayer = location.Randomizeditem.OwningPlayer < 0 || Instance.GetParentContainer().netConnection.PlayerID == location.Randomizeditem.OwningPlayer;
+            bool OwnedByLocalPlayer = location.Randomizeditem.OwningPlayer < 0 || Item.GetParent().GetParentContainer().netConnection.PlayerID == location.Randomizeditem.OwningPlayer;
             if (!OwnedByLocalPlayer)
             {
                 if (!Item.AmountSentToPlayer.ContainsKey(location.Randomizeditem.OwningPlayer))

@@ -397,7 +397,7 @@ namespace Windows_Form_Frontend
             if (InstanceContainer is null || InstanceContainer.Instance is null) { return; }
 
 
-            InstanceContainer.Instance.EntrancePool.IsEntranceRando = InstanceContainer.Instance.EntrancePool.CheckForRandomEntrances(InstanceContainer.Instance);
+            InstanceContainer.Instance.EntrancePool.IsEntranceRando = InstanceContainer.Instance.EntrancePool.CheckForRandomEntrances();
 
             PathFinderToolStripMenuItem.Visible = InstanceContainer.Instance.EntrancePool.IsEntranceRando;
 
@@ -406,7 +406,7 @@ namespace Windows_Form_Frontend
 
             string CurrentStart = (string)CMBStart.SelectedItem ?? "";
             string CurrentEnd = (string)CMBEnd.SelectedItem ?? "";
-            var AccessableAreas = InstanceContainer.Instance.EntrancePool.AreaList.Values.Where(x => x.ExitsAcessibleFrom > 0 && (x.RandomizableExits(InstanceContainer.Instance).Any() || InstanceContainer.Instance.StaticOptions.OptionFile.ShowMacroExitsPathfinder)).Select(x => x.ID);
+            var AccessableAreas = InstanceContainer.Instance.EntrancePool.AreaList.Values.Where(x => x.ExitsAcessibleFrom > 0 && (x.RandomizableExits().Any() || InstanceContainer.Instance.StaticOptions.OptionFile.ShowMacroExitsPathfinder)).Select(x => x.ID);
             CMBStart.DataSource = AccessableAreas.OrderBy(x => x).ToList();
             CMBEnd.DataSource = AccessableAreas.OrderBy(x => x).ToList();
             if (CMBStart.Items.Contains(CurrentStart)) { CMBStart.SelectedIndex = CMBStart.Items.IndexOf(CurrentStart); }
@@ -432,7 +432,7 @@ namespace Windows_Form_Frontend
                 SetObjectVisibility(false, false);
                 return;
             }
-            else if (InstanceContainer.Instance.StaticOptions.OptionFile.EntranceRandoFeatures && (InstanceContainer.Instance.EntrancePool.IsEntranceRando || InstanceContainer.Instance.EntrancePool.CheckForRandomEntrances(InstanceContainer.Instance)))
+            else if (InstanceContainer.Instance.StaticOptions.OptionFile.EntranceRandoFeatures && (InstanceContainer.Instance.EntrancePool.IsEntranceRando || InstanceContainer.Instance.EntrancePool.CheckForRandomEntrances()))
             {
                 SetObjectVisibility(true, true);
                 lblAvailableLocation.Location = new Point(locX, locY + 2);
@@ -904,7 +904,7 @@ namespace Windows_Form_Frontend
 
             //Object Price Edit
             dynamic Target = null;
-            if (listBox.SelectedItem is LocationData.LocationProxy ProxyPriceSet) { Target = ProxyPriceSet.GetLogicInheritance(InstanceContainer.Instance); }
+            if (listBox.SelectedItem is LocationData.LocationProxy ProxyPriceSet) { Target = ProxyPriceSet.GetLogicInheritance(); }
             else if (listBox.SelectedItem is LocationData.LocationObject LocPriceSet) { Target = LocPriceSet; }
             if (Utility.DynamicPropertyExist(Target, "Price") || PriceRando.TestForPriceData(Target))
             {

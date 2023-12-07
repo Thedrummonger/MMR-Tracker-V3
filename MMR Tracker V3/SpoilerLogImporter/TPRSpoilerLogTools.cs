@@ -59,7 +59,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                             Debug.WriteLine($"{i.Value} was not a valid Junk Location!");
                             continue;
                         }
-                        LocationObj.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.ForcedJunk, Instance);
+                        LocationObj.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.ForcedJunk);
                     }
                 }
             }
@@ -67,7 +67,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             {
                 var Location = Instance.GetLocationByID(i.Key);
                 var item = Instance.GetItemByID(i.Value);
-                if (i.Value == "Vanilla" && Location is not null) { Location.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.ForcedJunk, Instance); continue; }
+                if (i.Value == "Vanilla" && Location is not null) { Location.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.ForcedJunk); continue; }
                 if (Location is null)
                 {
                     Debug.WriteLine($"{i.Key} was not a valid location!");

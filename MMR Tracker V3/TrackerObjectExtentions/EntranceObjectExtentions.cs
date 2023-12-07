@@ -11,15 +11,15 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
 {
     public static class EntranceObjectExtentions
     {
-        public static string DisplayArea(this EntranceRandoExit exit, InstanceData.TrackerInstance Instance)
+        public static string DisplayArea(this EntranceRandoExit exit)
         {
-            return exit.GetDictEntry(Instance)?.DisplayArea??exit.ParentAreaID;
+            return exit.GetDictEntry()?.DisplayArea??exit.ParentAreaID;
         }
-        public static string DisplayExit(this EntranceRandoExit exit, InstanceData.TrackerInstance Instance)
+        public static string DisplayExit(this EntranceRandoExit exit)
         {
-            return exit.GetDictEntry(Instance)?.DisplayExit??exit.ID;
+            return exit.GetDictEntry()?.DisplayExit??exit.ID;
         }
-        public static string GetEntranceDisplayName(this EntranceRandoExit ExitObjectObject, InstanceData.TrackerInstance instance)
+        public static string GetEntranceDisplayName(this EntranceRandoExit ExitObjectObject)
         {
             var Destination = ExitObjectObject.GetDestinationAtExit();
             string StarredDisplay = ExitObjectObject.Starred ? "*" : "";
@@ -27,15 +27,15 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
 
             return ExitObjectObject.CheckState switch
             {
-                MiscData.CheckState.Marked => $"{ExitObjectObject.DisplayExit(instance)}: {RandomizedExitDisplay}{StarredDisplay}",
-                MiscData.CheckState.Unchecked => $"{ExitObjectObject.DisplayExit(instance)}{StarredDisplay}",
-                MiscData.CheckState.Checked => $"{RandomizedExitDisplay}: {ExitObjectObject.DisplayExit(instance)}{StarredDisplay}",
+                MiscData.CheckState.Marked => $"{ExitObjectObject.DisplayExit()}: {RandomizedExitDisplay}{StarredDisplay}",
+                MiscData.CheckState.Unchecked => $"{ExitObjectObject.DisplayExit()}{StarredDisplay}",
+                MiscData.CheckState.Checked => $"{RandomizedExitDisplay}: {ExitObjectObject.DisplayExit()}{StarredDisplay}",
                 _ => ExitObjectObject.ToString(),
             };
         }
-        public static bool IsRandomizableEntrance(this EntranceRandoExit exit, InstanceData.TrackerInstance currentTrackerInstance)
+        public static bool IsRandomizableEntrance(this EntranceRandoExit exit)
         {
-            return exit.GetDictEntry(currentTrackerInstance).RandomizableEntrance;
+            return exit.GetDictEntry().RandomizableEntrance;
         }
         /// <summary>
         /// Returns true if the Entrances randomized destination is the given area.
@@ -97,7 +97,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
         /// <param name="NewState">The new Randomized State</param>
         /// <param name="Instance"></param>
         /// <returns></returns>
-        public static bool ToggleExitChecked(this EntranceRandoExit exit, CheckState NewState, InstanceData.TrackerInstance Instance)
+        public static bool ToggleExitChecked(this EntranceRandoExit exit, CheckState NewState)
         {
             CheckState CurrentState = exit.CheckState;
             if (CurrentState == NewState)
@@ -106,13 +106,13 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             }
             else if (CurrentState == CheckState.Checked)
             {
-                var Destination = Instance.EntrancePool.AreaList[exit.DestinationExit.region];
+                var Destination = exit.GetParent().EntrancePool.AreaList[exit.DestinationExit.region];
                 Destination.ExitsAcessibleFrom--;
             }
             else if (NewState == CheckState.Checked)
             {
                 if (exit.DestinationExit == null) { return false; }
-                var Destination = Instance.EntrancePool.AreaList[exit.DestinationExit.region];
+                var Destination = exit.GetParent().EntrancePool.AreaList[exit.DestinationExit.region];
                 Destination.ExitsAcessibleFrom++;
             }
             else if (CurrentState == CheckState.Unchecked && NewState == CheckState.Marked)
@@ -135,14 +135,14 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             return new EntranceRandoDestination { from = Pair.Area, region = Pair.Exit };
         }
 
-        public static EntranceRandoExit AsExit(this EntranceRandoDestination destination, InstanceData.TrackerInstance Instance)
+        public static EntranceRandoExit AsExit(this EntranceRandoDestination destination, InstanceData.TrackerInstance ParentInstance)
         {
-            return Instance.EntrancePool.AreaList[destination.from].GetExit(destination.region);
+            return ParentInstance.EntrancePool.AreaList[destination.from].GetExit(destination.region);
         }
 
-        public static EntranceRandoExit AsExit(this EntranceAreaPair Pair, InstanceData.TrackerInstance Instance)
+        public static EntranceRandoExit AsExit(this EntranceAreaPair Pair, InstanceData.TrackerInstance ParentInstance)
         {
-            return Instance.EntrancePool.AreaList[Pair.Area].GetExit(Pair.Exit);
+            return ParentInstance.EntrancePool.AreaList[Pair.Area].GetExit(Pair.Exit);
         }
     }
 }

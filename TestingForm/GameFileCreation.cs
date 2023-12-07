@@ -45,7 +45,7 @@ namespace TestingForm
 
             //Testing.PrintObjectToConsole(MMR_Tracker_V3.OtherGames.TPRando.ParseMacrosFromCode.ReadMacrosFromCode());
 
-            List<string> Areas = MainInterface.InstanceContainer.Instance.LocationPool.Values.Select(x => x.GetDictEntry(MainInterface.InstanceContainer.Instance).Area).Distinct().ToList();
+            List<string> Areas = MainInterface.InstanceContainer.Instance.LocationPool.Values.Select(x => x.GetDictEntry().Area).Distinct().ToList();
             MMR_Tracker_V3.Utility.PrintObjectToConsole(Areas);
 
             List<string> Bugs = MainInterface.InstanceContainer.Instance.ItemPool.Values.Where(x => x.ID.StartsWith("Female_") || x.ID.StartsWith("Male_")).Select(x => x.ID).ToList();
@@ -63,7 +63,7 @@ namespace TestingForm
             WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(Logic), JsonConvert.SerializeObject(dictionary));
             foreach (var i in MainInterface.InstanceContainer.Instance.EntrancePool.AreaList.Values)
             {
-                foreach (var j in i.RandomizableExits(MainInterface.InstanceContainer.Instance)) { j.Value.RandomizedState = MiscData.RandomizedState.Unrandomized; }
+                foreach (var j in i.RandomizableExits()) { j.Value.RandomizedState = MiscData.RandomizedState.Unrandomized; }
             }
             MainInterface.InstanceContainer.logicCalculation.CalculateLogic();
             MainInterface.CurrentProgram.UpdateUI();

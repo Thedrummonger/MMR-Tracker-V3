@@ -12,20 +12,20 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
 {
     public static class LocationObjectExtentions
     {
-        public static bool CanContainItem(this LocationData.LocationObject loc, ItemData.ItemObject item, TrackerInstance instance, bool EmptyIsWildcard = true)
+        public static bool CanContainItem(this LocationData.LocationObject loc, ItemData.ItemObject item, bool EmptyIsWildcard = true)
         {
-            var LocTypes = loc?.GetDictEntry(instance)?.ValidItemTypes;
-            var itemTypes = item?.GetDictEntry(instance)?.ItemTypes;
+            var LocTypes = loc?.GetDictEntry()?.ValidItemTypes;
+            var itemTypes = item?.GetDictEntry()?.ItemTypes;
             if (LocTypes is null || itemTypes is null) { return EmptyIsWildcard; }
             return LocTypes.Intersect(itemTypes).Any();
         }
 
-        public static bool IsRepeatable(this LocationData.LocationObject loc, InstanceData.TrackerInstance Instance)
+        public static bool IsRepeatable(this LocationData.LocationObject loc)
         {
-            return loc.GetDictEntry(Instance).Repeatable is not null && (bool)loc.GetDictEntry(Instance).Repeatable;
+            return loc.GetDictEntry().Repeatable is not null && (bool)loc.GetDictEntry().Repeatable;
         }
 
-        public static void SetRandomizedState(this LocationData.LocationObject loc, RandomizedState Newstate, InstanceData.TrackerInstance Instance)
+        public static void SetRandomizedState(this LocationData.LocationObject loc, RandomizedState Newstate)
         {
             if (Newstate == loc.RandomizedState) { return; }
             loc.RandomizedState = Newstate;
@@ -44,27 +44,27 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
         {
             return loc.RandomizedState == RandomizedState.ForcedJunk;
         }
-        public static bool CanBeUnrandomized(this LocationData.LocationObject loc, InstanceData.TrackerInstance instance)
+        public static bool CanBeUnrandomized(this LocationData.LocationObject loc)
         {
             //If it's already unrandomized let it continue to be
             if (loc.IsUnrandomized()) { return true; }
-            string OriginalItem = loc.GetDictEntry(instance).OriginalItem ?? "";
-            var OriginalItemObject = instance.GetItemByID(OriginalItem);
+            string OriginalItem = loc.GetDictEntry().OriginalItem ?? "";
+            var OriginalItemObject = loc.GetParent().GetItemByID(OriginalItem);
             //IF the original item is not a valid item or is blank it can't be unrandomized
             if (OriginalItemObject == null) { return false; }
             //If the check was already given it's vanilla item through the spoiler log or manually it can be unrandomized
             //This gets around a quirk caused by "CanBePlaced" not being smart enough to know to ignore the item 
             //assigned to this check when checking to see if the max amount has been placed
-            if (loc.GetItemAtCheck(instance) is not null && loc.GetItemAtCheck(instance) == OriginalItemObject.ID) { return true; }
+            if (loc.GetItemAtCheck() is not null && loc.GetItemAtCheck() == OriginalItemObject.ID) { return true; }
             //If the max amount of this object has been placed return false, otherwise true
-            return OriginalItemObject.CanBePlaced(instance);
+            return OriginalItemObject.CanBePlaced();
         }
-        public static bool AppearsinListbox(this LocationData.LocationObject loc, InstanceData.TrackerInstance Instance, bool ShowJunkUnrand = false)
+        public static bool AppearsinListbox(this LocationData.LocationObject loc, bool ShowJunkUnrand = false)
         {
-            return (!loc.IsJunk() || ShowJunkUnrand) && (!loc.IsUnrandomized(MiscData.UnrandState.Unrand) || ShowJunkUnrand) && !string.IsNullOrWhiteSpace(loc.GetDictEntry(Instance).GetName(Instance));
+            return (!loc.IsJunk() || ShowJunkUnrand) && (!loc.IsUnrandomized(MiscData.UnrandState.Unrand) || ShowJunkUnrand) && !string.IsNullOrWhiteSpace(loc.GetDictEntry().GetName(loc.GetParent()));
         }
 
-        public static bool ToggleChecked(this LocationData.LocationObject loc, CheckState NewState, InstanceData.TrackerInstance Instance)
+        public static bool ToggleChecked(this LocationData.LocationObject loc, CheckState NewState)
         {
             CheckState CurrentState = loc.CheckState;
             if (CurrentState == NewState)
@@ -73,27 +73,27 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             }
             else if (CurrentState == CheckState.Checked)
             {
-                loc.UncheckItem(NewState, Instance);
+                loc.UncheckItem(NewState);
             }
             else if (NewState == CheckState.Checked)
             {
-                if (!loc.CheckItem(NewState, Instance)) { return false; }
+                if (!loc.CheckItem(NewState)) { return false; }
             }
             else
             {
-                if (!loc.ToggleMarked(NewState, Instance)) { return false; }
+                if (!loc.ToggleMarked(NewState)) { return false; }
             }
             loc.CheckState = NewState;
             return true;
         }
 
-        public static bool UncheckItem(this LocationData.LocationObject loc, CheckState NewState, InstanceData.TrackerInstance Instance)
+        public static bool UncheckItem(this LocationData.LocationObject loc, CheckState NewState)
         {
-            var ItemAtCheck = Instance.GetItemByID(loc.Randomizeditem.Item);
+            var ItemAtCheck = loc.GetParent().GetItemByID(loc.Randomizeditem.Item);
 
             if (ItemAtCheck != null)
             {
-                ItemAtCheck.ChangeLocalItemAmounts(Instance, loc, -1);
+                ItemAtCheck.ChangeLocalItemAmounts(loc, -1);
             }
             if (NewState == CheckState.Unchecked)
             {
@@ -103,19 +103,19 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
 
         }
 
-        public static bool CheckItem(this LocationData.LocationObject loc, CheckState NewState, InstanceData.TrackerInstance Instance)
+        public static bool CheckItem(this LocationData.LocationObject loc, CheckState NewState)
         {
             if (string.IsNullOrWhiteSpace(loc.Randomizeditem.Item)) { return false; }
 
-            var ItemAtCheck = Instance.GetItemByID(loc.Randomizeditem.Item);
+            var ItemAtCheck = loc.GetParent().GetItemByID(loc.Randomizeditem.Item);
             if (ItemAtCheck != null)
             {
-                ItemAtCheck.ChangeLocalItemAmounts(Instance, loc, 1);
+                ItemAtCheck.ChangeLocalItemAmounts(loc, 1);
             }
             return true;
         }
 
-        public static bool ToggleMarked(this LocationData.LocationObject loc, CheckState NewState, InstanceData.TrackerInstance Instance)
+        public static bool ToggleMarked(this LocationData.LocationObject loc, CheckState NewState)
         {
             if (NewState == CheckState.Marked && string.IsNullOrWhiteSpace(loc.Randomizeditem.Item))
             {
@@ -128,7 +128,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             return true;
         }
 
-        public static string GetItemAtCheck(this LocationData.LocationObject loc, InstanceData.TrackerInstance Instance)
+        public static string GetItemAtCheck(this LocationData.LocationObject loc)
         {
             var ItemAtCheck = loc.Randomizeditem.Item;
             if (loc.SingleValidItem != null)
@@ -139,9 +139,9 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             {
                 ItemAtCheck = loc.Randomizeditem.SpoilerLogGivenItem;
             }
-            if ((loc.IsUnrandomized()) && loc.GetDictEntry(Instance).OriginalItem != null)
+            if ((loc.IsUnrandomized()) && loc.GetDictEntry().OriginalItem != null)
             {
-                ItemAtCheck = loc.GetDictEntry(Instance).OriginalItem;
+                ItemAtCheck = loc.GetDictEntry().OriginalItem;
             }
             return ItemAtCheck;
         }

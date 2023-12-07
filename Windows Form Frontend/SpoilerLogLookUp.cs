@@ -90,12 +90,12 @@ namespace Windows_Form_Frontend
 
                 if (ItemOut != null && ItemOut is ItemData.ItemObject ItemObject)
                 {
-                    string displayName = ItemObject.GetDictEntry(_instance).Name??ItemObject.ID;
+                    string displayName = ItemObject.GetDictEntry().Name??ItemObject.ID;
                     SeedCheckRequiredItems.Add(new MiscData.StandardListBoxItem { Display = displayName, tag = ItemObject.ID });
                 }
                 else if (ItemOut != null && ItemOut is MacroObject MacroObject)
                 {
-                    string displayName = MacroObject.GetDictEntry(_instance).Name??MacroObject.ID;
+                    string displayName = MacroObject.GetDictEntry().Name??MacroObject.ID;
                     SeedCheckRequiredItems.Add(new MiscData.StandardListBoxItem { Display = displayName, tag = MacroObject.ID });
                 }
             }
@@ -106,7 +106,7 @@ namespace Windows_Form_Frontend
             Dictionary<string, int> DisplayCounts = new Dictionary<string, int>();
             foreach (var i in Items)
             {
-                string Dis = i.GetDictEntry(_instance).GetName(_instance);
+                string Dis = i.GetDictEntry().GetName(_instance);
                 if (!DisplayCounts.ContainsKey(Dis)) { DisplayCounts[Dis] = 0; }
                 DisplayCounts[Dis]++;
             }
@@ -117,9 +117,9 @@ namespace Windows_Form_Frontend
         private void PopulateWinConCMB()
         {
             cmbWinCon.Items.Clear();
-            var Items = _instance.ItemPool.Values.Where(x => SearchStringParser.FilterSearch(_instance, x, txtWinConFilter.Text, x.GetDictEntry(_instance).GetName(_instance))).OrderBy(x => x.GetDictEntry(_instance).GetName(_instance));
-            var Locations = _instance.LocationPool.Values.Where(x => SearchStringParser.FilterSearch(_instance, x, txtWinConFilter.Text, x.GetDictEntry(_instance).GetName(_instance))).OrderBy(x => x.GetDictEntry(_instance).GetName(_instance));
-            var Macros = _instance.MacroPool.Values.Where(x => SearchStringParser.FilterSearch(_instance, x, txtWinConFilter.Text, x.GetDictEntry(_instance).Name??x.ID)).OrderBy(x => x.GetDictEntry(_instance).Name??x.ID);
+            var Items = _instance.ItemPool.Values.Where(x => SearchStringParser.FilterSearch(_instance, x, txtWinConFilter.Text, x.GetDictEntry().GetName(_instance))).OrderBy(x => x.GetDictEntry().GetName(_instance));
+            var Locations = _instance.LocationPool.Values.Where(x => SearchStringParser.FilterSearch(_instance, x, txtWinConFilter.Text, x.GetDictEntry().GetName(_instance))).OrderBy(x => x.GetDictEntry().GetName(_instance));
+            var Macros = _instance.MacroPool.Values.Where(x => SearchStringParser.FilterSearch(_instance, x, txtWinConFilter.Text, x.GetDictEntry().Name??x.ID)).OrderBy(x => x.GetDictEntry().Name??x.ID);
             var Areas = _instance.EntrancePool.AreaList.Values.Where(x => SearchStringParser.FilterSearch(_instance, x, txtWinConFilter.Text, x.ID)).OrderBy(x => x.ID);
 
             int CMBWidth = cmbWinCon.DropDownWidth;
@@ -131,7 +131,7 @@ namespace Windows_Form_Frontend
                 Dictionary<string, int> DisplayCounts = GetDuplicateItemNames(_instance.ItemPool.Values);
                 foreach (var i in Items)
                 {
-                    string Dis = i.GetDictEntry(_instance).GetName(_instance);
+                    string Dis = i.GetDictEntry().GetName(_instance);
                     if (DisplayCounts.ContainsKey(Dis) && DisplayCounts[Dis] > 1) { Dis = $"{Dis} [{i.ID}]"; }
                     cmbWinCon.Items.Add(new MiscData.StandardListBoxItem { Display = Dis, tag = i });
                     if (Graphic.MeasureString(Dis, cmbWinCon.Font).Width > CMBWidth) { CMBWidth = (int)Graphic.MeasureString(Dis, cmbWinCon.Font).Width; }
@@ -143,7 +143,7 @@ namespace Windows_Form_Frontend
                 cmbWinCon.Items.Add(WinFormUtils.CreateDivider(cmbWinCon, "Locations"));
                 foreach (var i in Locations)
                 {
-                    string Dis = i.GetDictEntry(_instance).GetName(_instance);
+                    string Dis = i.GetDictEntry().GetName(_instance);
                     cmbWinCon.Items.Add(new MiscData.StandardListBoxItem { Display = Dis, tag = i });
                     if (Graphic.MeasureString(Dis, cmbWinCon.Font).Width > CMBWidth) { CMBWidth = (int)Graphic.MeasureString(Dis, cmbWinCon.Font).Width; }
                 }
@@ -154,7 +154,7 @@ namespace Windows_Form_Frontend
                 cmbWinCon.Items.Add(WinFormUtils.CreateDivider(cmbWinCon, "Macros"));
                 foreach (var i in Macros)
                 {
-                    string Dis = i.GetDictEntry(_instance).Name??i.ID;
+                    string Dis = i.GetDictEntry().Name??i.ID;
                     cmbWinCon.Items.Add(new MiscData.StandardListBoxItem { Display = Dis, tag = i });
                     if (Graphic.MeasureString(Dis, cmbWinCon.Font).Width > CMBWidth) { CMBWidth = (int)Graphic.MeasureString(Dis, cmbWinCon.Font).Width; }
                 }
@@ -210,22 +210,23 @@ namespace Windows_Form_Frontend
         private void PopulateSpoilerLogList()
         {
             listBox1.Items.Clear();
-            var SpoilerChecks = _instance.LocationPool.Values.Where(x => x.GetItemAtCheck(_instance) != null);
+            var SpoilerChecks = _instance.LocationPool.Values.Where(x => x.GetItemAtCheck() != null);
             List<MiscData.StandardListBoxItem> SpoilerList = new List<MiscData.StandardListBoxItem>();
             foreach (var check in SpoilerChecks) 
             {
                 MiscData.StandardListBoxItem LBI = new MiscData.StandardListBoxItem() { tag = check };
-                dynamic Item = _instance.GetItemByID(check.GetItemAtCheck(_instance));
+                ItemData.ItemObject Item = _instance.GetItemByID(check.GetItemAtCheck());
                 if (Item == null)
                 {
-                    Item = check.GetItemAtCheck(_instance);
-                    LBI.Display = check.GetItemAtCheck(_instance);
+                    var fakeItem = check.GetItemAtCheck();
+                    LBI.Display = check.GetItemAtCheck();
+                    if (SearchStringParser.FilterSearch(_instance, fakeItem, textBox2.Text, LBI.Display)) { SpoilerList.Add(LBI); }
                 }
                 else
                 {
-                    LBI.Display = Item.GetDictEntry(_instance).GetName(_instance);
+                    LBI.Display = Item.GetDictEntry().GetName(_instance);
+                    if (SearchStringParser.FilterSearch(_instance, Item, textBox2.Text, LBI.Display)) { SpoilerList.Add(LBI); }
                 }
-                if (SearchStringParser.FilterSearch(_instance, Item, textBox2.Text, LBI.Display)) { SpoilerList.Add(LBI); }
                 
             }
 
@@ -247,7 +248,7 @@ namespace Windows_Form_Frontend
             {
                 foreach (var check in _instance.MacroPool.Values)
                 {
-                    MiscData.StandardListBoxItem LBI = new MiscData.StandardListBoxItem() { tag = check, Display = check.GetDictEntry(_instance).Name??check.ID };
+                    MiscData.StandardListBoxItem LBI = new MiscData.StandardListBoxItem() { tag = check, Display = check.GetDictEntry().Name??check.ID };
                     if (SearchStringParser.FilterSearch(_instance, check, textBox2.Text, LBI.Display)) { MacroList.Add(LBI); }
                 }
                 if (MacroList.Any()) { listBox1.Items.Add(WinFormUtils.CreateDivider(listBox1, "Macros")); }
@@ -267,17 +268,17 @@ namespace Windows_Form_Frontend
             {
                 if (SLI.tag is LocationData.LocationObject LO)
                 {
-                    MessageBox.Show($"{SLI.Display} Can be found in\n\n-{LO.GetDictEntry(_instance).Area}");
+                    MessageBox.Show($"{SLI.Display} Can be found in\n\n-{LO.GetDictEntry().Area}");
                 }
                 else if (SLI.tag is List<LocationData.LocationObject> LLO)
                 {
                     if (LLO.Count == 1)
                     {
-                        MessageBox.Show($"{SLI.Display} Can be found in\n\n-{LLO.First().GetDictEntry(_instance).Area}");
+                        MessageBox.Show($"{SLI.Display} Can be found in\n\n-{LLO.First().GetDictEntry().Area}");
                     }
                     else
                     {
-                        MessageBox.Show($"{SLI.Display} Can be found in these areas:\n\n-{string.Join("\n-", LLO.Select(x => x.GetDictEntry(_instance).Area).Distinct().OrderBy(x => x))}");
+                        MessageBox.Show($"{SLI.Display} Can be found in these areas:\n\n-{string.Join("\n-", LLO.Select(x => x.GetDictEntry().Area).Distinct().OrderBy(x => x))}");
                     }
                 }
             }
@@ -326,7 +327,7 @@ namespace Windows_Form_Frontend
                 else if (SLI.tag is MacroObject MO)
                 {
                     if (SpoilerLookupPlaythrough.ContainsKey(MO.ID)) { MessageBox.Show($"{SLI.Display} Can be obtained sphere {SpoilerLookupPlaythrough[MO.ID].sphere}"); }
-                    else if (MO.isTrick(_instance) && !MO.TrickEnabled) { MessageBox.Show($"{SLI.Display} Is a trick and is not enabled"); }
+                    else if (MO.isTrick() && !MO.TrickEnabled) { MessageBox.Show($"{SLI.Display} Is a trick and is not enabled"); }
                     else { MessageBox.Show($"{SLI.Display} Can not be obtained with known items"); }
                 }
             }
@@ -338,17 +339,17 @@ namespace Windows_Form_Frontend
             {
                 if (SLI.tag is LocationData.LocationObject LO)
                 {
-                    MessageBox.Show($"{SLI.Display} Can be found at\n\n-{LO.GetDictEntry(_instance).GetName(_instance)}");
+                    MessageBox.Show($"{SLI.Display} Can be found at\n\n-{LO.GetDictEntry().GetName(_instance)}");
                 }
                 else if (SLI.tag is List<LocationData.LocationObject> LLO)
                 {
                     if (LLO.Count == 1)
                     {
-                        MessageBox.Show($"{SLI.Display} Can be found at\n\n-{LLO.First().GetDictEntry(_instance).GetName(_instance)}");
+                        MessageBox.Show($"{SLI.Display} Can be found at\n\n-{LLO.First().GetDictEntry().GetName(_instance)}");
                     }
                     else
                     {
-                        MessageBox.Show($"{SLI.Display} Can be found at these locations:\n\n-{string.Join("\n-", LLO.Select(x => x.GetDictEntry(_instance).GetName(_instance)).Distinct().OrderBy(x => x))}");
+                        MessageBox.Show($"{SLI.Display} Can be found at these locations:\n\n-{string.Join("\n-", LLO.Select(x => x.GetDictEntry().GetName(_instance)).Distinct().OrderBy(x => x))}");
                     }
                 }
             }
@@ -393,16 +394,16 @@ namespace Windows_Form_Frontend
                 LabelSeedCheckChecksIgnored.Text = "Adding Needed Items";
                 WinFormUtils.PrintMessageToListBox(LBIgnoredItems, "Select Items Needed for seed Completion \n ----->");
                 Dictionary<string, int> DisplayCounts = GetDuplicateItemNames(_instance.ItemPool.Values);
-                foreach (var i in _instance.ItemPool.Values.OrderBy(x => x.GetDictEntry(_instance).GetName(_instance)))
+                foreach (var i in _instance.ItemPool.Values.OrderBy(x => x.GetDictEntry().GetName(_instance)))
                 {
-                    string displayName = i.GetDictEntry(_instance).GetName(_instance);
+                    string displayName = i.GetDictEntry().GetName(_instance);
                     if (DisplayCounts.ContainsKey(displayName) && DisplayCounts[displayName] > 1) { displayName = $"{displayName} [{i.ID}]"; }
                     if (SearchStringParser.FilterSearch(_instance, i, txtSeedCheckFilter.Text, displayName))
                         lbObtainable.Items.Add(new MiscData.StandardListBoxItem { Display = displayName, tag = i.ID });
                 }
-                foreach (var i in _instance.MacroPool.Values.OrderBy(x => x.GetDictEntry(_instance).Name??x.ID))
+                foreach (var i in _instance.MacroPool.Values.OrderBy(x => x.GetDictEntry().Name??x.ID))
                 {
-                    string displayName = i.GetDictEntry(_instance).Name??i.ID;
+                    string displayName = i.GetDictEntry().Name??i.ID;
                     if (SearchStringParser.FilterSearch(_instance, i, txtSeedCheckFilter.Text, displayName))
                         lbObtainable.Items.Add(new MiscData.StandardListBoxItem { Display = displayName, tag = i.ID });
                 }
@@ -418,9 +419,9 @@ namespace Windows_Form_Frontend
                 LabelSeedCheckItemsNeeded.Text = "Adding Ignored checks";
                 LabelSeedCheckChecksIgnored.Text = "Ignored checks";
                 WinFormUtils.PrintMessageToListBox(lbRequiredItems, "Select checks that should be ignored when checking seed \n ----->");
-                foreach (var i in _instance.LocationPool.Values.OrderBy(x => x.GetDictEntry(_instance).GetName(_instance)))
+                foreach (var i in _instance.LocationPool.Values.OrderBy(x => x.GetDictEntry().GetName(_instance)))
                 {
-                    string displayName = i.GetDictEntry(_instance).GetName(_instance);
+                    string displayName = i.GetDictEntry().GetName(_instance);
                     if (SearchStringParser.FilterSearch(_instance, i, txtSeedCheckFilter.Text, displayName))
                         lbObtainable.Items.Add(new MiscData.StandardListBoxItem { Display = displayName, tag = i.ID });
                 }
@@ -521,8 +522,8 @@ namespace Windows_Form_Frontend
             {
                 var type = _instance.GetItemEntryType(i, false, out dynamic RequiredItemObj);
                 string Dis = i;
-                if (RequiredItemObj is ItemData.ItemObject IO) { Dis = IO?.GetDictEntry(_instance)?.GetName(_instance)??i; }
-                else if (RequiredItemObj is MacroObject MO) { Dis = MO?.GetDictEntry(_instance)?.Name??i; }
+                if (RequiredItemObj is ItemData.ItemObject IO) { Dis = IO?.GetDictEntry()?.GetName(_instance)??i; }
+                else if (RequiredItemObj is MacroObject MO) { Dis = MO?.GetDictEntry()?.Name??i; }
 
                 bool ItemObtainable = SeedCheckPlaytrhough.FirstObtainedDict.ContainsKey(i) || (RequiredItemObj is ItemData.ItemObject IOS && (IOS?.AmountInStartingpool??0) > 0);
 
@@ -578,12 +579,12 @@ namespace Windows_Form_Frontend
                 if (!ImportantLocations.Any()) { MessageBox.Show("Hint could not be Generated!"); return; }
                 var WOTHLocation = ImportantLocations.PickRandom();
                 var LocationOBJ = _instance.LocationPool[WOTHLocation.Key];
-                MessageBox.Show($"{LocationOBJ.GetDictEntry(_instance).Area} is Way of the Hero");
+                MessageBox.Show($"{LocationOBJ.GetDictEntry().Area} is Way of the Hero");
             }
             else if (Source == foolishToolStripMenuItem)
             {
-                var Areas = _instance.LocationPool.Select(x => x.Value.GetDictEntry(_instance).Area).Distinct().ToArray();
-                var ImportantAreas = ImportantLocationsObj.Select(x => x.GetDictEntry(_instance).Area).Distinct().ToArray();
+                var Areas = _instance.LocationPool.Select(x => x.Value.GetDictEntry().Area).Distinct().ToArray();
+                var ImportantAreas = ImportantLocationsObj.Select(x => x.GetDictEntry().Area).Distinct().ToArray();
                 var UnimportantAreas = Areas.Where(x => !ImportantAreas.Contains(x));
                 if (!UnimportantAreas.Any()) { MessageBox.Show("Hint could not be Generated!"); return; }
                 var FoolishArea = UnimportantAreas.PickRandom();
@@ -595,9 +596,9 @@ namespace Windows_Form_Frontend
                 if (!RandomizedLocations.Any()) { MessageBox.Show("Hint could not be Generated!"); return; }
                 var randomLocation = RandomizedLocations.PickRandom();
                 string Item = _instance.ItemPool.ContainsKey(randomLocation.Randomizeditem.SpoilerLogGivenItem) ?
-                    _instance.ItemPool[randomLocation.Randomizeditem.SpoilerLogGivenItem].GetDictEntry(_instance).GetName(_instance) :
+                    _instance.ItemPool[randomLocation.Randomizeditem.SpoilerLogGivenItem].GetDictEntry().GetName(_instance) :
                     randomLocation.Randomizeditem.SpoilerLogGivenItem;
-                MessageBox.Show($"{randomLocation.GetDictEntry(_instance).GetName(_instance)} Contained {Item}");
+                MessageBox.Show($"{randomLocation.GetDictEntry().GetName(_instance)} Contained {Item}");
             }
             else if (Source == itemAreaToolStripMenuItem)
             {
@@ -605,9 +606,9 @@ namespace Windows_Form_Frontend
                 if (!RandomizedLocations.Any()) { MessageBox.Show("Hint could not be Generated!"); return; }
                 var randomLocation = RandomizedLocations.PickRandom();
                 string Item = _instance.ItemPool.ContainsKey(randomLocation.Randomizeditem.SpoilerLogGivenItem) ?
-                    _instance.ItemPool[randomLocation.Randomizeditem.SpoilerLogGivenItem].GetDictEntry(_instance).GetName(_instance) :
+                    _instance.ItemPool[randomLocation.Randomizeditem.SpoilerLogGivenItem].GetDictEntry().GetName(_instance) :
                     randomLocation.Randomizeditem.SpoilerLogGivenItem;
-                MessageBox.Show($"{Item} Can be found at {randomLocation.GetDictEntry(_instance).Area}");
+                MessageBox.Show($"{Item} Can be found at {randomLocation.GetDictEntry().Area}");
             }
             else if (Source == playthroughLocationToolStripMenuItem)
             {
@@ -615,9 +616,9 @@ namespace Windows_Form_Frontend
                 if (!RandomizedLocations.Any()) { MessageBox.Show("Hint could not be Generated!"); return; }
                 var randomLocation = RandomizedLocations.PickRandom();
                 string Item = _instance.ItemPool.ContainsKey(randomLocation.Randomizeditem.SpoilerLogGivenItem) ?
-                    _instance.ItemPool[randomLocation.Randomizeditem.SpoilerLogGivenItem].GetDictEntry(_instance).GetName(_instance) :
+                    _instance.ItemPool[randomLocation.Randomizeditem.SpoilerLogGivenItem].GetDictEntry().GetName(_instance) :
                     randomLocation.Randomizeditem.SpoilerLogGivenItem;
-                MessageBox.Show($"{randomLocation.GetDictEntry(_instance).GetName(_instance)} Contained {Item}");
+                MessageBox.Show($"{randomLocation.GetDictEntry().GetName(_instance)} Contained {Item}");
             }
             else if (Source == playtrhoughItemAreaToolStripMenuItem)
             {
@@ -625,9 +626,9 @@ namespace Windows_Form_Frontend
                 if (!RandomizedLocations.Any()) { MessageBox.Show("Hint could not be Generated!"); return; }
                 var randomLocation = RandomizedLocations.PickRandom();
                 string Item = _instance.ItemPool.ContainsKey(randomLocation.Randomizeditem.SpoilerLogGivenItem) ?
-                    _instance.ItemPool[randomLocation.Randomizeditem.SpoilerLogGivenItem].GetDictEntry(_instance).GetName(_instance) :
+                    _instance.ItemPool[randomLocation.Randomizeditem.SpoilerLogGivenItem].GetDictEntry().GetName(_instance) :
                     randomLocation.Randomizeditem.SpoilerLogGivenItem;
-                MessageBox.Show($"{Item} Can be found at {randomLocation.GetDictEntry(_instance).Area}");
+                MessageBox.Show($"{Item} Can be found at {randomLocation.GetDictEntry().Area}");
             }
 
 

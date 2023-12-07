@@ -203,14 +203,14 @@ namespace MMR_Tracker_V3
             {
                 Location = lo;
                 PriceData = lo;
-                LocationDisplay = Location.GetDictEntry(instance.Instance)?.GetName(instance.Instance);
+                LocationDisplay = Location.GetDictEntry()?.GetName(instance.Instance);
                 StarredDisplay = lo.Starred ? "*" : "";
             }
             else if (obj is LocationData.LocationProxy po)
             {
-                Location = po.GetReferenceLocation(instance.Instance);
-                PriceData = po.GetLogicInheritance(instance.Instance);
-                LocationDisplay = po.Name ?? Location.GetDictEntry(instance.Instance)?.GetName(instance.Instance);
+                Location = po.GetReferenceLocation();
+                PriceData = po.GetLogicInheritance();
+                LocationDisplay = po.Name ?? Location.GetDictEntry()?.GetName(instance.Instance);
                 StarredDisplay = po.Starred ? "*" : "";
             }
             else { return obj.ToString(); }
@@ -221,7 +221,7 @@ namespace MMR_Tracker_V3
 
             PriceData.GetPrice(out int p, out char c);
             PriceDisplay = p < 0 || (!Available) ? "" : $" [{c}{p}]";
-            RandomizedItemDisplay = instance.Instance.GetItemByID(Location.Randomizeditem.Item)?.GetDictEntry(instance.Instance)?.GetName(instance.Instance) ?? Location.Randomizeditem.Item;
+            RandomizedItemDisplay = instance.Instance.GetItemByID(Location.Randomizeditem.Item)?.GetDictEntry()?.GetName(instance.Instance) ?? Location.Randomizeditem.Item;
 
             ForPlayer = Location.Randomizeditem.Item is not null && Location.Randomizeditem.OwningPlayer >= 0 ? $" [Player: {Location.Randomizeditem.OwningPlayer}]" : "";
 
@@ -595,7 +595,7 @@ namespace MMR_Tracker_V3
             SearchObject OutObject = new();
             if (Object is LocationData.LocationObject locationObject)
             {
-                var DictData = locationObject.GetDictEntry(instance);
+                var DictData = locationObject.GetDictEntry();
                 OutObject.ID = locationObject.ID;
                 OutObject.Area = DictData.Area;
                 OutObject.Name = DictData.GetName(instance);
@@ -607,7 +607,7 @@ namespace MMR_Tracker_V3
             else if (Object is LocationData.LocationProxy locationProxy)
             {
                 var LocReference = instance.GetLocationByID(locationProxy.ReferenceID);
-                var DictData = LocReference.GetDictEntry(instance);
+                var DictData = LocReference.GetDictEntry();
                 OutObject.ID = locationProxy.ID;
                 OutObject.Area = locationProxy.Area;
                 OutObject.Name = locationProxy.Name;
@@ -618,7 +618,7 @@ namespace MMR_Tracker_V3
             }
             else if (Object is ItemData.ItemObject ItemObject)
             {
-                var DictData = ItemObject.GetDictEntry(instance);
+                var DictData = ItemObject.GetDictEntry();
                 OutObject.ID = ItemObject.ID;
                 OutObject.Area = "";
                 if (ItemObject.AmountInStartingpool > 0) { OutObject.Area += "starting "; }
@@ -632,7 +632,7 @@ namespace MMR_Tracker_V3
             }
             else if (Object is HintData.HintObject HintObject)
             {
-                var DictData = HintObject.GetDictEntry(instance);
+                var DictData = HintObject.GetDictEntry();
                 OutObject.ID = HintObject.ID;
                 OutObject.Area = "hints";
                 OutObject.Name = DictData.Name;
@@ -643,8 +643,8 @@ namespace MMR_Tracker_V3
             }
             else if (Object is MacroObject MacroObject)
             {
-                bool Istrick = MacroObject.isTrick(instance);
-                var DictData = MacroObject.GetDictEntry(instance);
+                bool Istrick = MacroObject.isTrick();
+                var DictData = MacroObject.GetDictEntry();
                 var LogicData = instance.GetLogic(MacroObject.ID, false);
                 OutObject.ID = MacroObject.ID;
                 OutObject.Area = Istrick ? (LogicData.TrickCategory??"misc") : "macro";
@@ -659,7 +659,7 @@ namespace MMR_Tracker_V3
             else if (Object is EntranceData.EntranceRandoExit ExitObject)
             {
                 OutObject.ID = instance.GetLogicNameFromExit(ExitObject);
-                OutObject.Area = ExitObject.DisplayArea(instance);
+                OutObject.Area = ExitObject.DisplayArea();
                 OutObject.Name = ExitObject.ID;
                 OutObject.OriginalItem = ExitObject.EntrancePair == null ? "One Way" : $"{ExitObject.EntrancePair.Area} To {ExitObject.EntrancePair.Exit}";
                 OutObject.Randomizeditem = ExitObject.DestinationExit == null ? null : $"{ExitObject.DestinationExit.region} From {ExitObject.DestinationExit.from}";

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using static MMR_Tracker_V3.InstanceData;
 using static MMR_Tracker_V3.TrackerObjects.HintData;
 using static MMR_Tracker_V3.TrackerObjects.ItemData;
 using static MMR_Tracker_V3.TrackerObjects.LocationData;
@@ -21,6 +22,10 @@ namespace MMR_Tracker_V3
         [Serializable]
         public class TrackerInstance
         {
+            public TrackerInstance(InstanceContainer instanceContainer)
+            {
+                Parent = instanceContainer;
+            }
             private InstanceContainer Parent;
             public InstanceContainer GetParentContainer() { return Parent; }
             public void SetParentContainer(InstanceContainer P) { Parent = P; }
@@ -33,7 +38,7 @@ namespace MMR_Tracker_V3
             public Dictionary<string, ToggleOption> ToggleOptions { get; set; } = new Dictionary<string, ToggleOption>();
             public Dictionary<string, IntOption> IntOptions { get; set; } = new Dictionary<string, IntOption>();
             public Dictionary<string, LogicEntryCollection> LogicEntryCollections { get; set; } = new Dictionary<string, LogicEntryCollection>();
-            public EntranceData.EntrancePool EntrancePool { get; set; } = new EntranceData.EntrancePool();
+            public EntranceData.EntrancePool EntrancePool { get; set; } = new EntranceData.EntrancePool(null);
             public LogicDictionary LogicDictionary { get; set; } = new LogicDictionary();
             public LogicFile LogicFile { get; set; } = new MMRData.LogicFile();
             public SpoilerLogFileData SpoilerLog { get; set; } = null;
@@ -157,6 +162,7 @@ namespace MMR_Tracker_V3
             public InstanceContainer()
             {
                 logicCalculation = new LogicCalculation(this);
+                _Instance = new TrackerInstance(this);
             }
             private InstanceData.TrackerInstance _Instance;
             public InstanceData.TrackerInstance Instance
@@ -233,6 +239,17 @@ namespace MMR_Tracker_V3
             {
                 _Instance = Instance;
                 _Instance.SetParentContainer(this);
+                foreach (var i in _Instance.LocationPool.Values) { i.SetParent(_Instance); }
+                foreach (var i in _Instance.LocationProxyData.LocationProxies.Values) { i.SetParent(_Instance); }
+                foreach (var i in _Instance.MacroPool.Values) { i.SetParent(_Instance); }
+                foreach (var i in _Instance.HintPool.Values) { i.SetParent(_Instance); }
+                foreach (var i in _Instance.ItemPool.Values) { i.SetParent(_Instance); }
+                _Instance.EntrancePool.SetParent(_Instance);
+                foreach (var i in _Instance.EntrancePool.AreaList.Values) 
+                { 
+                    i.SetParent(_Instance); 
+                    foreach(var j in i.Exits.Values) { j.SetParent(_Instance); }
+                }
             }
         }
 

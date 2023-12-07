@@ -97,13 +97,13 @@ namespace MMR_Tracker_V3
             int Index = 0;
             foreach(var i in Instance.LogicDictionary.ItemList)
             {
-                Instance.ItemPool.Add(i.Key, new() { ID = i.Key });
+                Instance.ItemPool.Add(i.Key, new(Instance) { ID = i.Key });
                 Index++;
             }
 
             foreach (var i in Instance.LogicDictionary.GetAreas())
             {
-                if (!Instance.EntrancePool.AreaList.ContainsKey(i)) { Instance.EntrancePool.AreaList.Add(i, new EntranceData.EntranceRandoArea() { ID = i }); }
+                if (!Instance.EntrancePool.AreaList.ContainsKey(i)) { Instance.EntrancePool.AreaList.Add(i, new EntranceData.EntranceRandoArea(Instance) { ID = i }); }
             }
 
             Index = 0;
@@ -137,7 +137,7 @@ namespace MMR_Tracker_V3
                 {
                     var DictEntry = Instance.LogicDictionary.LocationList.First(x => x.Key == i.Id);
                     var ValidItems = Instance.LogicDictionary.ItemList.Where(x => x.Value.ItemTypes.Intersect(DictEntry.Value.ValidItemTypes).Any());
-                    Instance.LocationPool.Add(i.Id, new()
+                    Instance.LocationPool.Add(i.Id, new(Instance)
                     {
                         ID = i.Id,
                         Currency = DictEntry.Value.WalletCurrency,
@@ -149,13 +149,13 @@ namespace MMR_Tracker_V3
                     {
                         if (!Instance.LocationProxyData.LocationsWithProxys.ContainsKey(i.Id)) { Instance.LocationProxyData.LocationsWithProxys.Add(i.Id, new List<string>()); }
                         Instance.LocationProxyData.LocationsWithProxys[i.Id].AddRange(DictEntry.Value.LocationProxys.Select(x => x.Name));
-                        foreach(var proxy in DictEntry.Value.LocationProxys) { Instance.LocationProxyData.LocationProxies.Add(proxy.ID, proxy.ToInstanceData(DictEntry.Value)); }
+                        foreach(var proxy in DictEntry.Value.LocationProxys) { Instance.LocationProxyData.LocationProxies.Add(proxy.ID, proxy.ToInstanceData(DictEntry.Value, Instance)); }
                     }
                 }
                 else if (Instance.LogicDictionary.HintSpots.Any(x => x.Key == i.Id))
                 {
                     var DictEntry = Instance.LogicDictionary.HintSpots.First(x => x.Key == i.Id);
-                    Instance.HintPool.Add(i.Id, new() 
+                    Instance.HintPool.Add(i.Id, new(Instance) 
                     { 
                         ID = i.Id,
                         referenceData = new ReferenceData { LogicIndex = Index, LogicList = Source }
@@ -166,7 +166,7 @@ namespace MMR_Tracker_V3
                     var DictEntry = Instance.LogicDictionary.EntranceList.First(x => x.Key == i.Id);
                     Instance.InstanceReference.EntranceLogicNameToEntryData.Add(i.Id, new EntranceData.EntranceAreaPair { Area = DictEntry.Value.Area, Exit = DictEntry.Value.Exit });
                     Instance.AddLogicExitReference(new EntranceData.EntranceAreaPair { Area = DictEntry.Value.Area, Exit = DictEntry.Value.Exit }, i.Id);
-                    Instance.EntrancePool.AreaList[DictEntry.Value.Area].Exits.Add(DictEntry.Value.Exit, new EntranceData.EntranceRandoExit
+                    Instance.EntrancePool.AreaList[DictEntry.Value.Area].Exits.Add(DictEntry.Value.Exit, new EntranceData.EntranceRandoExit(Instance)
                     {
                         ParentAreaID = DictEntry.Value.Area,
                         ID = DictEntry.Value.Exit,
@@ -177,7 +177,7 @@ namespace MMR_Tracker_V3
                 }
                 else
                 {
-                    Instance.MacroPool.Add(i.Id, new() 
+                    Instance.MacroPool.Add(i.Id, new(Instance) 
                     { 
                         ID = i.Id,
                         referenceData = new ReferenceData { LogicIndex = Index, LogicList = Source }
@@ -200,7 +200,7 @@ namespace MMR_Tracker_V3
             {
                 string CanAffordString = $"MMRTCanAfford{i.Value.Item1}{i.Value.Item2}";
                 Debug.WriteLine($"Adding Wallet {CanAffordString}");
-                Instance.MacroPool.Add(CanAffordString, new() { 
+                Instance.MacroPool.Add(CanAffordString, new(Instance) { 
                     ID = CanAffordString,
                     referenceData = new ReferenceData { LogicIndex = Index, LogicList = LogicFileType.Runtime }
                 });
@@ -215,7 +215,7 @@ namespace MMR_Tracker_V3
                 });
             }
 
-            Instance.EntrancePool.IsEntranceRando = Instance.EntrancePool.CheckForRandomEntrances(Instance);
+            Instance.EntrancePool.IsEntranceRando = Instance.EntrancePool.CheckForRandomEntrances();
 
             Instance.PriceData.Initialized = true;
 
@@ -226,8 +226,8 @@ namespace MMR_Tracker_V3
             //If the number of randomized entrances is less than 10% of the number of randomized locations, show the entrances in the location box
             if (Instance.EntrancePool.IsEntranceRando)
             {
-                double EntrancesRandomized = Instance.EntrancePool.GetAmountOfRandomizedEntrances(Instance);
-                double Locationsrandomized = Instance.LocationPool.Where(x => x.Value.AppearsinListbox(Instance)).Count();
+                double EntrancesRandomized = Instance.EntrancePool.GetAmountOfRandomizedEntrances();
+                double Locationsrandomized = Instance.LocationPool.Where(x => x.Value.AppearsinListbox()).Count();
                 double LocationEntranceRatio = Math.Round(EntrancesRandomized / Locationsrandomized, 2);
                 Instance.StaticOptions.OptionFile.EntranceRandoFeatures = LocationEntranceRatio >= .1;
             }
@@ -271,7 +271,7 @@ namespace MMR_Tracker_V3
                     switch (EntryType)
                     {
                         case LogicEntryType.location:
-                            instance.GetLocationByID(LocationObjectID).SetRandomizedState(Manual.Value, instance);
+                            instance.GetLocationByID(LocationObjectID).SetRandomizedState(Manual.Value);
                             break;
                         case LogicEntryType.Hint:
                             instance.GetHintByID(LocationObjectID).RandomizedState = Manual.Value;
@@ -288,7 +288,7 @@ namespace MMR_Tracker_V3
                 foreach (var trick in DefSet.EnabledTricks)
                 {
                     MacroObject Trick = instance.GetMacroByID(trick);
-                    if (Trick is null || !Trick.isTrick(instance)) { continue; }
+                    if (Trick is null || !Trick.isTrick()) { continue; }
                     Trick.TrickEnabled = true;
                 }
             }

@@ -17,6 +17,13 @@ namespace MMR_Tracker_V3.TrackerObjects
         [Serializable]
         public class LocationObject
         {
+            private InstanceData.TrackerInstance _parent;
+            public InstanceData.TrackerInstance GetParent() { return _parent; }
+            public void SetParent(InstanceData.TrackerInstance parent) { _parent = parent; }
+            public LocationObject(InstanceData.TrackerInstance Parent)
+            {
+                _parent = Parent;
+            }
             public string ID { get; set; }
             public RandomizeditemData Randomizeditem { get; set; } = new RandomizeditemData();
             public bool Available { get; set; } = false;
@@ -29,9 +36,9 @@ namespace MMR_Tracker_V3.TrackerObjects
             public RandomizedState RandomizedState { get; set; } = RandomizedState.Randomized;
             public string SingleValidItem { get; set; } = null;
             public InstanceData.ReferenceData referenceData { get; set; } = new InstanceData.ReferenceData();
-            public LogicDictionaryData.DictionaryLocationEntries GetDictEntry(InstanceData.TrackerInstance Instance)
+            public LogicDictionaryData.DictionaryLocationEntries GetDictEntry()
             {
-                return Instance.LogicDictionary.LocationList[ID];
+                return GetParent().LogicDictionary.LocationList[ID];
             }
 
             public override string ToString()
@@ -70,6 +77,13 @@ namespace MMR_Tracker_V3.TrackerObjects
 
         public class LocationProxy
         {
+            private InstanceData.TrackerInstance _parent;
+            public InstanceData.TrackerInstance GetParent() { return _parent; }
+            public void SetParent(InstanceData.TrackerInstance parent) { _parent = parent; }
+            public LocationProxy(InstanceData.TrackerInstance Parent)
+            {
+                _parent = Parent;
+            }
             public string ReferenceID { get; set; }
             public string ID { get; set; }
             public string Name { get; set; }
@@ -94,15 +108,15 @@ namespace MMR_Tracker_V3.TrackerObjects
                     _ => false,
                 };
             }
-            public LocationObject GetReferenceLocation(InstanceData.TrackerInstance instance)
+            public LocationObject GetReferenceLocation()
             {
-                return (instance.GetLocationByID(ReferenceID));
+                return (_parent.GetLocationByID(ReferenceID));
             }
-            public object GetLogicInheritance(InstanceData.TrackerInstance instance)
+            public object GetLogicInheritance()
             {
                 var LogicId = LogicInheritance ?? ReferenceID;
                 bool Literal = LogicId.IsLiteralID(out LogicId);
-                instance.GetLocationEntryType(LogicId, Literal, out object Result);
+                _parent.GetLocationEntryType(LogicId, Literal, out object Result);
                 return Result;
             }
         }

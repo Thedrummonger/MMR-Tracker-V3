@@ -42,7 +42,7 @@ namespace Windows_Form_Frontend
             }
             if (_InputItems[0] is HintData.HintObject hintObject)
             {
-                SetUIElements(true, $"Enter Hint at {hintObject.GetDictEntry(_Instance.Instance).Name}", "Set Hint", hintObject.GetDictEntry(_Instance.Instance).Name );
+                SetUIElements(true, $"Enter Hint at {hintObject.GetDictEntry().Name}", "Set Hint", hintObject.GetDictEntry().Name );
                 varType = VarType.Gossip;
             }
             else if (_InputItems[0] is OptionData.IntOption IntVariableObject)

@@ -12,6 +12,13 @@ namespace MMR_Tracker_V3.TrackerObjects
     [Serializable]
     public class MacroObject
     {
+        private InstanceData.TrackerInstance _parent;
+        public InstanceData.TrackerInstance GetParent() { return _parent; }
+        public void SetParent(InstanceData.TrackerInstance parent) { _parent = parent; }
+        public MacroObject(InstanceData.TrackerInstance Parent)
+        {
+            _parent = Parent;
+        }
         public string ID { get; set; }
         public bool Aquired { get; set; } = false;
         public bool TrickEnabled { get; set; } = true;
@@ -34,11 +41,11 @@ namespace MMR_Tracker_V3.TrackerObjects
             return;
         }
 
-        public LogicDictionaryData.DictionaryMacroEntry GetDictEntry(InstanceData.TrackerInstance Instance)
+        public LogicDictionaryData.DictionaryMacroEntry GetDictEntry()
         {
-            if (Instance.LogicDictionary.MacroList.ContainsKey(ID))
+            if (GetParent().LogicDictionary.MacroList.ContainsKey(ID))
             {
-                return Instance.LogicDictionary.MacroList[ID];
+                return GetParent().LogicDictionary.MacroList[ID];
             }
             return new LogicDictionaryData.DictionaryMacroEntry
             {
@@ -47,9 +54,9 @@ namespace MMR_Tracker_V3.TrackerObjects
             };
         }
 
-        public bool isTrick(InstanceData.TrackerInstance Instance)
+        public bool isTrick()
         {
-            return Instance.GetLogic(ID, false).IsTrick;
+            return _parent.GetLogic(ID, false).IsTrick;
         }
     }
 }

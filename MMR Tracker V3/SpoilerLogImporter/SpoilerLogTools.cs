@@ -58,7 +58,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 case "OOTMM":
                     container.Instance.SpoilerLog = new InstanceData.SpoilerLogFileData { FileName = OriginalFile, Log = spoilerLog };
                     OOTMMSpoilerLogTools.readAndApplySpoilerLog(container.Instance);
-                    container.Instance.EntrancePool.IsEntranceRando = container.Instance.EntrancePool.CheckForRandomEntrances(container.Instance);
+                    container.Instance.EntrancePool.IsEntranceRando = container.Instance.EntrancePool.CheckForRandomEntrances();
                     container.Instance.SpoilerLog.GetStaticPlaythrough(container.Instance);
                     break;
                 case "MMR":

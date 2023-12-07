@@ -105,7 +105,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             {
                 var Trick = Container.Instance.GetMacroByID(trick);
                 if (Trick is null) { Debug.WriteLine($"trick {trick} was not valid"); continue; }
-                if (!Trick.isTrick(Container.Instance)) { Debug.WriteLine($"macro {trick} was not a trick"); continue; }
+                if (!Trick.isTrick()) { Debug.WriteLine($"macro {trick} was not a trick"); continue; }
                 Trick.TrickEnabled = true;
             }
 
@@ -125,10 +125,10 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             };
             foreach(var E in EntranceLocationDict)
             {
-                var Entrance = Container.Instance.LocationPool.First(x => x.Value.GetDictEntry(Container.Instance).SpoilerData.SpoilerLogNames.Contains(E.Key)).Value;
-                var Destination = Container.Instance.ItemPool.First(x => x.Value.GetDictEntry(Container.Instance).SpoilerData.SpoilerLogNames.Contains(E.Value)).Value;
+                var Entrance = Container.Instance.LocationPool.First(x => x.Value.GetDictEntry().SpoilerData.SpoilerLogNames.Contains(E.Key)).Value;
+                var Destination = Container.Instance.ItemPool.First(x => x.Value.GetDictEntry().SpoilerData.SpoilerLogNames.Contains(E.Value)).Value;
 
-                Entrance.SetRandomizedState(RandomizedState.Randomized, Container.Instance);
+                Entrance.SetRandomizedState(RandomizedState.Randomized);
                 Entrance.Randomizeditem.SpoilerLogGivenItem = Destination.ID;
                 if (BossDoorMapping.ContainsKey(Entrance.ID)) { BossDoorMapping[Entrance.ID] = Destination.ID; }
             }
@@ -137,18 +137,18 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             {
                 if (i.IsUnrandomized(UnrandState.Any))
                 {
-                    var OriginalItem = Container.Instance.GetItemByID(i.GetDictEntry(Container.Instance).OriginalItem);
+                    var OriginalItem = Container.Instance.GetItemByID(i.GetDictEntry().OriginalItem);
                     if (OriginalItem.AmountInStartingpool > 0)
                     {
                         Debug.WriteLine($"{i.ID}: {OriginalItem.ID} Was unrandomized but Item was starting item. Forcing Junk");
-                        i.SetRandomizedState(RandomizedState.ForcedJunk, Container.Instance);
+                        i.SetRandomizedState(RandomizedState.ForcedJunk);
                     }
                 }
             }
 
             foreach (var i in ItemLocationDict)
             {
-                var PossibleLocations = Container.Instance.LocationPool.Where(x => x.Value.GetDictEntry(Container.Instance).GetName(Container.Instance) == i.Item1);
+                var PossibleLocations = Container.Instance.LocationPool.Where(x => x.Value.GetDictEntry().GetName(Container.Instance) == i.Item1);
                 PossibleLocations = PossibleLocations.Where(x => string.IsNullOrWhiteSpace(x.Value.Randomizeditem.SpoilerLogGivenItem));
                 if (!PossibleLocations.Any())
                 {
@@ -236,7 +236,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 {
                     throw new Exception($"{Loc.ID} Was randomized and given {Loc.Randomizeditem.SpoilerLogGivenItem}");
                 }
-                Loc.SetRandomizedState(RandomizedState.ForcedJunk, instance);
+                Loc.SetRandomizedState(RandomizedState.ForcedJunk);
             }
             foreach(var Item in BlitzStartingItems)
             {
@@ -299,20 +299,20 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             {
                 if (i.Value.IsUnrandomized())
                 {
-                    string OriginalItem = i.Value.GetItemAtCheck(instance);
+                    string OriginalItem = i.Value.GetItemAtCheck();
                     var OriginalItemObj = instance.GetItemByID(OriginalItem);
-                    if (OriginalItemObj.ValidStartingItem(instance)) { BlitzStartingItems.Add(OriginalItem); }
+                    if (OriginalItemObj.ValidStartingItem()) { BlitzStartingItems.Add(OriginalItem); }
                     else { InaccessableItems.Add(OriginalItem); }
                 }
                 else if (i.Key.StartsWith("BottleCatch"))
                 {
-                    string RandomizedItem = i.Value.GetItemAtCheck(instance);
+                    string RandomizedItem = i.Value.GetItemAtCheck();
                     var OriginalItemObj = instance.GetItemByID(RandomizedItem);
                     InaccessableItems.Add(OriginalItemObj.ID);
                 }
-                else if (i.Value.GetDictEntry(instance).ValidItemTypes.Contains("DungeonEntrance") || i.Value.GetDictEntry(instance).ValidItemTypes.Contains("BossDoorEntrance"))
+                else if (i.Value.GetDictEntry().ValidItemTypes.Contains("DungeonEntrance") || i.Value.GetDictEntry().ValidItemTypes.Contains("BossDoorEntrance"))
                 {
-                    string RandomizedItem = i.Value.GetItemAtCheck(instance);
+                    string RandomizedItem = i.Value.GetItemAtCheck();
                     var OriginalItemObj = instance.GetItemByID(RandomizedItem);
 
                     InaccessableItems.Add(OriginalItemObj.ID);
@@ -356,7 +356,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 instance.MultipleItemEntry(Item, out string LogicItem, out int Amount);
                 bool Literal = LogicItem.IsLiteralID(out LogicItem);
                 var type = instance.GetItemEntryType(LogicItem, Literal, out object obj);
-                if (type == LogicEntryType.macro && ((MacroObject)obj).isTrick(instance) && !((MacroObject)obj).TrickEnabled) { return true; }
+                if (type == LogicEntryType.macro && ((MacroObject)obj).isTrick() && !((MacroObject)obj).TrickEnabled) { return true; }
                 if (type == LogicEntryType.Bool && !bool.Parse(LogicItem)) { return true; }
                 return false;
             }
@@ -419,10 +419,10 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             instance.ToggleAllTricks(false);
             foreach (var i in instance.LocationPool)
             {
-                i.Value.SetRandomizedState(RandomizedState.Randomized, instance);
-                if (i.Value.GetDictEntry(instance).ValidItemTypes.Contains("DungeonEntrance") || i.Value.GetDictEntry(instance).ValidItemTypes.Contains("BossDoorEntrance"))
+                i.Value.SetRandomizedState(RandomizedState.Randomized);
+                if (i.Value.GetDictEntry().ValidItemTypes.Contains("DungeonEntrance") || i.Value.GetDictEntry().ValidItemTypes.Contains("BossDoorEntrance"))
                 {
-                    i.Value.SetRandomizedState(RandomizedState.Unrandomized, instance);
+                    i.Value.SetRandomizedState(RandomizedState.Unrandomized);
                 }
             }
             foreach (var i in instance.ItemPool)
@@ -512,7 +512,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
     {
         public static bool ApplyLocationString(string LocationString, InstanceData.TrackerInstance Instance)
         {
-            var LocationPool = Instance.LocationPool.Values.Where(x => !x.GetDictEntry(Instance).IgnoreForSettingString ?? true).ToList();
+            var LocationPool = Instance.LocationPool.Values.Where(x => !x.GetDictEntry().IgnoreForSettingString ?? true).ToList();
 
             var ItemGroupCount = (int)Math.Ceiling(LocationPool.Count / 32.0);
 
@@ -525,11 +525,11 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 bool IsRandomized = RandomizedItemIndexs.Contains(Index);
                 if (IsRandomized && i.IsUnrandomized())
                 {
-                    i.SetRandomizedState(RandomizedState.Randomized, Instance);
+                    i.SetRandomizedState(RandomizedState.Randomized);
                 }
                 else if (!IsRandomized && !i.IsUnrandomized())
                 {
-                    i.SetRandomizedState(RandomizedState.Unrandomized, Instance);
+                    i.SetRandomizedState(RandomizedState.Unrandomized);
                 }
                 Index++;
             }
@@ -538,7 +538,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
 
         public static bool ApplyJunkString(string LocationString, InstanceData.TrackerInstance Instance)
         {
-            var LocationPool = Instance.LocationPool.Values.Where(x => !x.GetDictEntry(Instance).IgnoreForSettingString ?? true).ToList();
+            var LocationPool = Instance.LocationPool.Values.Where(x => !x.GetDictEntry().IgnoreForSettingString ?? true).ToList();
 
             var ItemGroupCount = (int)Math.Ceiling(LocationPool.Count / 32.0);
 
@@ -551,11 +551,11 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 bool IsJunk = JunkItemIndexes.Contains(Index);
                 if (IsJunk && i.IsRandomized())
                 {
-                    i.SetRandomizedState(RandomizedState.ForcedJunk, Instance);
+                    i.SetRandomizedState(RandomizedState.ForcedJunk);
                 }
                 else if (!IsJunk && i.IsJunk())
                 {
-                    i.SetRandomizedState(RandomizedState.Randomized, Instance);
+                    i.SetRandomizedState(RandomizedState.Randomized);
                 }
                 Index++;
             }
@@ -591,10 +591,10 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             List<ItemData.ItemObject> StartingItems = new List<ItemData.ItemObject>();
             foreach (var i in Instance.ItemPool.Values)
             {
-                var DictEntry = i.GetDictEntry(Instance);
+                var DictEntry = i.GetDictEntry();
                 bool ValidStartingItem = DictEntry.ValidStartingItem ?? true;
                 if (!ValidStartingItem) { continue; }
-                if (i.GetDictEntry(Instance).IgnoreForSettingString ?? false) { continue; }
+                if (i.GetDictEntry().IgnoreForSettingString ?? false) { continue; }
                 //This has to be the unedited max amount in world since the setting string should stay consistance even if an option changes this value
                 int MaxInWorld = DictEntry.MaxAmountInWorld??-1;
                 if (MaxInWorld > 5 || MaxInWorld < 0) { MaxInWorld = 5; }

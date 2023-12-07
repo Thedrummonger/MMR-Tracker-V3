@@ -331,11 +331,11 @@ namespace Windows_Form_Frontend
             foreach (var item in Instance.ItemPool.Values)
             {
                 if (!trackerState.ItemValues.ContainsKey(item.ID)) { trackerState.ItemValues[item.ID] = new ItemCounts(); }
-                trackerState.ItemValues[item.ID].Obtained += item.GetTotalUsable(Instance);
+                trackerState.ItemValues[item.ID].Obtained += item.GetTotalUsable();
 
-                string ItemName = item.GetDictEntry(Instance).GetName(Instance);
+                string ItemName = item.GetDictEntry().GetName(Instance);
                 if (!trackerState.ItemValues.ContainsKey(ItemName)) { trackerState.ItemValues[ItemName] = new ItemCounts(); }
-                trackerState.ItemValues[ItemName].Obtained += item.GetTotalUsable(Instance);
+                trackerState.ItemValues[ItemName].Obtained += item.GetTotalUsable();
             }
             foreach (var location in Instance.LocationPool.Values.Where(x => x.CheckState == MMR_Tracker_V3.TrackerObjects.MiscData.CheckState.Marked))
             {
@@ -343,7 +343,7 @@ namespace Windows_Form_Frontend
                 if (!trackerState.ItemValues.ContainsKey(MarkedItem)) { trackerState.ItemValues[MarkedItem] = new ItemCounts(); }
                 trackerState.ItemValues[MarkedItem].Marked += 1;
 
-                string ItemName = Instance.GetItemByID(MarkedItem)?.GetDictEntry(Instance)?.GetName(Instance);
+                string ItemName = Instance.GetItemByID(MarkedItem)?.GetDictEntry()?.GetName(Instance);
                 if (ItemName is not null)
                 {
                     if (!trackerState.ItemValues.ContainsKey(ItemName)) { trackerState.ItemValues[ItemName] = new ItemCounts(); }

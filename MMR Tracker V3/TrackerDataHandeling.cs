@@ -147,7 +147,7 @@ namespace MMR_Tracker_V3
 
             //Handle Locations
             IEnumerable<LocationObject> locationObjects = SelectedObjects.Where(x => x is LocationObject).Select(x => x as LocationObject);
-            locationObjects = locationObjects.Concat(SelectedObjects.Where(x => x is LocationProxy).Select(x => (x as LocationProxy).GetReferenceLocation(instanceContainer.Instance)));
+            locationObjects = locationObjects.Concat(SelectedObjects.Where(x => x is LocationProxy).Select(x => (x as LocationProxy).GetReferenceLocation()));
             locationObjects = locationObjects.Distinct();
             //If we are performing an uncheck action there should be no unchecked locations in the list and even if there are nothing will be done to them anyway
             //This check is neccessary for the "UnMark Only" action.
@@ -157,7 +157,7 @@ namespace MMR_Tracker_V3
 
             foreach (LocationObject LocationObject in UncheckedlocationObjects)
             {
-                LocationObject.Randomizeditem.Item = LocationObject.GetItemAtCheck(instanceContainer.Instance);
+                LocationObject.Randomizeditem.Item = LocationObject.GetItemAtCheck();
             }
             //Get Entries that need a value manually assigned and pass them to given method to be assigned.
             IEnumerable<LocationObject> ManualLocationChecks = UncheckedlocationObjects.Where(x => x.Randomizeditem.Item == null); //Locations with no item
@@ -170,7 +170,7 @@ namespace MMR_Tracker_V3
             {
                 //When we mark a location, the action is always sent as Marked, but if the location is already marked we should instead Unchecked it unless EnforceMarkAction is true.
                 var Action = (Options.TargetheckState == MiscData.CheckState.Marked && LocationObject.CheckState == MiscData.CheckState.Marked) && !Options.EnforceMarkAction ? MiscData.CheckState.Unchecked : Options.TargetheckState;
-                if (LocationObject.ToggleChecked(Action, instanceContainer.Instance))
+                if (LocationObject.ToggleChecked(Action))
                 {
                     UpdatedObjects.Add(LocationObject);
                 }
@@ -201,7 +201,7 @@ namespace MMR_Tracker_V3
             foreach (EntranceRandoExit ExitObject in ExitObjects)
             {
                 var Action = (Options.TargetheckState == MiscData.CheckState.Marked && ExitObject.CheckState == MiscData.CheckState.Marked) && !Options.EnforceMarkAction ? MiscData.CheckState.Unchecked : Options.TargetheckState;
-                if (ExitObject.ToggleExitChecked(Action, instanceContainer.Instance))
+                if (ExitObject.ToggleExitChecked(Action))
                 {
                     UpdatedObjects.Add(ExitObject);
                 }
@@ -248,7 +248,7 @@ namespace MMR_Tracker_V3
                     var Location = instanceContainer.Instance.GetLocationByID(i.Key);
                     var Item = instanceContainer.Instance.GetItemByID(i.Value);
                     if (Location is null || Item is null || Location.CheckState != MiscData.CheckState.Unchecked) { continue; }
-                    string ProperCheckItem = Location.GetItemAtCheck(instanceContainer.Instance);
+                    string ProperCheckItem = Location.GetItemAtCheck();
                     if (string.IsNullOrWhiteSpace(ProperCheckItem) || ProperCheckItem != Item.ID) { continue; }
                     LocationsToMark.Add(Location);
                 }
@@ -262,7 +262,7 @@ namespace MMR_Tracker_V3
             foreach (var exit in UpdatedExits)
             {
                 if (exit.CheckState != CheckState.Checked) { continue; } //Doesn't support unchecking pairs
-                if (!exit.IsRandomizableEntrance(instanceContainer.Instance) || exit.EntrancePair is null) { continue; }
+                if (!exit.IsRandomizableEntrance() || exit.EntrancePair is null) { continue; }
                 //Get the Pair of the exits destination
                 var PairExit = exit.DestinationExit.AsExit(instanceContainer.Instance).EntrancePair?.AsExit(instanceContainer.Instance);
                 if (PairExit == null) { continue; }
@@ -316,7 +316,7 @@ namespace MMR_Tracker_V3
 
             foreach(var i in instance.LocationProxyData.LocationProxies.Values)
             {
-                var CheckState = i.GetReferenceLocation(instance).CheckState;
+                var CheckState = i.GetReferenceLocation().CheckState;
                 switch (CheckState)
                 {
                     case MiscData.CheckState.Checked:
@@ -338,7 +338,7 @@ namespace MMR_Tracker_V3
             //dataSets.ProxyStateIsNOTChecked = instance.LocationProxyData.LocationProxies.Values.Where(x => x.GetReferenceLocation(instance).CheckState != MiscData.CheckState.Checked).ToList();
             //dataSets.ProxyStateIsMarkedAndAvailable = dataSets.ProxyStateIsNOTChecked.Where(x => x.ProxyAvailable(instance) || x.GetReferenceLocation(instance).CheckState == MiscData.CheckState.Marked).ToList();
 
-            var AllExits = instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits(instance).Values);
+            var AllExits = instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits().Values);
             foreach (var i in AllExits)
             {
                 switch (i.CheckState)
@@ -390,8 +390,8 @@ namespace MMR_Tracker_V3
             //dataSets.HintStateIsNOTChecked = instance.HintPool.Values.Where(x => x.CheckState != MiscData.CheckState.Checked).ToList();
             //dataSets.HIntISMarkedOrISAvailableAndUnchecked = dataSets.HintStateIsNOTChecked.Where(x => x.Available || x.CheckState == MiscData.CheckState.Marked).ToList();
 
-            dataSets.Tricks = instance.MacroPool.Values.Where(x => x.isTrick(instance)).ToList();
-            dataSets.AvailableStartingItems = instance.ItemPool.Values.Where(x => x.ValidStartingItem(instance)).ToList();
+            dataSets.Tricks = instance.MacroPool.Values.Where(x => x.isTrick()).ToList();
+            dataSets.AvailableStartingItems = instance.ItemPool.Values.Where(x => x.ValidStartingItem()).ToList();
 
             dataSets.LocalObtainedItems = instance.ItemPool.Values.Where(x => x.AmountAquiredLocally > 0).ToList();
             dataSets.CurrentStartingItems = instance.ItemPool.Values.Where(x => x.AmountInStartingpool > 0).ToList();
@@ -401,7 +401,7 @@ namespace MMR_Tracker_V3
 
         public static string GetLocationEntryArea(object Entry, InstanceData.TrackerInstance Instance)
         {
-            if (Entry is LocationData.LocationObject l) { return l.GetDictEntry(Instance).Area; }
+            if (Entry is LocationData.LocationObject l) { return l.GetDictEntry().Area; }
             else if (Entry is LocationData.LocationProxy p) { return p.Area; }
             return "Error";
         }
@@ -483,15 +483,15 @@ namespace MMR_Tracker_V3
             List<EntranceRandoExit> ValidExits = Data.DataSets.ExitISMarkedOrISAvailableAndUnchecked;
             if (Data.ShowUnavailableEntries) { ValidExits = Data.DataSets.ExitStateIsNOTChecked; }
 
-            ValidExits = ValidExits.OrderByDescending(x => SeperateMarked && x.Available).ThenBy(x => x.DisplayArea(Data.Instance)).ThenBy(x => x.DisplayName).ToList();
+            ValidExits = ValidExits.OrderByDescending(x => SeperateMarked && x.Available).ThenBy(x => x.DisplayArea()).ThenBy(x => x.DisplayName).ToList();
             string CurrentArea = "";
             foreach(var i in ValidExits)
             {
                 if (!EntranceAppearsinListbox(i, Data.Instance) && !Data.ShowInvalidEntries) { continue; }
                 Data.ItemsFound++;
-                string ItemArea = InLocationBox ? $"{i.DisplayArea(Data.Instance)} Entrances" : i.DisplayArea(Data.Instance);
-                i.DisplayName = i.GetEntranceDisplayName(Data.Instance);
-                if (!SearchStringParser.FilterSearch(Data.Instance, i, Data.Filter, i.GetEntranceDisplayName(Data.Instance))) { continue; }
+                string ItemArea = InLocationBox ? $"{i.DisplayArea()} Entrances" : i.DisplayArea();
+                i.DisplayName = i.GetEntranceDisplayName();
+                if (!SearchStringParser.FilterSearch(Data.Instance, i, Data.Filter, i.GetEntranceDisplayName())) { continue; }
                 Data.ItemsDisplayed++;
                 if (CurrentArea != ItemArea)
                 {
@@ -586,7 +586,7 @@ namespace MMR_Tracker_V3
                 foreach (var i in HintList)
                 {
                     if (i.RandomizedState == MiscData.RandomizedState.ForcedJunk && !Data.ShowInvalidEntries) { continue; }
-                    i.DisplayName = (i.CheckState != MiscData.CheckState.Unchecked) ? $"{i.GetDictEntry(Data.Instance).Name}: {i.HintText}" : i.GetDictEntry(Data.Instance).Name;
+                    i.DisplayName = (i.CheckState != MiscData.CheckState.Unchecked) ? $"{i.GetDictEntry().Name}: {i.HintText}" : i.GetDictEntry().Name;
                     Data.ItemsFound++;
                     if (!SearchStringParser.FilterSearch(Data.Instance, i, Data.Filter, i.DisplayName)) { continue; }
                     Data.ItemsDisplayed++;
@@ -607,7 +607,7 @@ namespace MMR_Tracker_V3
                 bool DividerCreated = false;
                 foreach (var i in Data.DataSets.CurrentStartingItems)
                 {
-                    string Display = $"{i.GetDictEntry(Data.Instance).GetName(Data.Instance)} X{i.AmountInStartingpool}";
+                    string Display = $"{i.GetDictEntry().GetName(Data.Instance)} X{i.AmountInStartingpool}";
                     Data.ItemsFound++;
                     if (!SearchStringParser.FilterSearch(Data.Instance, i, Data.Filter, Display)) { continue; }
                     if (!DividerCreated)
@@ -628,7 +628,7 @@ namespace MMR_Tracker_V3
                 {
                     foreach (var j in i.AmountAquiredOnline)
                     {
-                        string Display = $"{i.GetDictEntry(Data.Instance).GetName(Data.Instance)} X{j.Value}: Player {j.Key}";
+                        string Display = $"{i.GetDictEntry().GetName(Data.Instance)} X{j.Value}: Player {j.Key}";
                         Data.ItemsFound++;
                         if (!SearchStringParser.FilterSearch(Data.Instance, i, Data.Filter, Display)) { continue; }
                         if (!DividerCreated)
@@ -648,23 +648,23 @@ namespace MMR_Tracker_V3
             List<EntranceData.EntranceRandoExit> ValidExits = new List<EntranceData.EntranceRandoExit>();
             foreach (var area in Data.Instance.EntrancePool.AreaList)
             {
-                var CheckLoadingZoneExits = area.Value.RandomizableExits(Data.Instance).Where(x => x.Value.CheckState == MiscData.CheckState.Checked && EntranceAppearsinListbox(x.Value, Data.Instance));
-                var FilteredCheckedExits = CheckLoadingZoneExits.Where(x => SearchStringParser.FilterSearch(Data.Instance, x.Value, Data.Filter, x.Value.GetEntranceDisplayName(Data.Instance)));
+                var CheckLoadingZoneExits = area.Value.RandomizableExits().Where(x => x.Value.CheckState == MiscData.CheckState.Checked && EntranceAppearsinListbox(x.Value, Data.Instance));
+                var FilteredCheckedExits = CheckLoadingZoneExits.Where(x => SearchStringParser.FilterSearch(Data.Instance, x.Value, Data.Filter, x.Value.GetEntranceDisplayName()));
 
                 Data.ItemsFound += CheckLoadingZoneExits.Count();
                 Data.ItemsDisplayed += FilteredCheckedExits.Count();
                 if (!FilteredCheckedExits.Any()) { continue; }
                 foreach (var i in FilteredCheckedExits)
                 {
-                    i.Value.DisplayName = i.Value.GetEntranceDisplayName(Data.Instance);
+                    i.Value.DisplayName = i.Value.GetEntranceDisplayName();
                     ValidExits.Add(i.Value);
                 }
             }
-            ValidExits = ValidExits.OrderBy(x => x.DisplayArea(Data.Instance)).ThenBy(x => x.DisplayName).ToList();
+            ValidExits = ValidExits.OrderBy(x => x.DisplayArea()).ThenBy(x => x.DisplayName).ToList();
             string CurrentArea = "";
             foreach (var i in ValidExits)
             {
-                string ItemArea = $"{i.DisplayArea(Data.Instance)} Exits";
+                string ItemArea = $"{i.DisplayArea()} Exits";
                 if (CurrentArea != ItemArea)
                 {
                     CurrentArea = ItemArea;
@@ -682,16 +682,16 @@ namespace MMR_Tracker_V3
                 var CurrentArea = "";
                 if (obj is LocationData.LocationObject i)
                 {
-                    if (!i.AppearsinListbox(Data.InstanceContainer.Instance, Data.ShowInvalidEntries)) { continue; }
+                    if (!i.AppearsinListbox(Data.ShowInvalidEntries)) { continue; }
                     i.DisplayName = Utility.GetLocationDisplayName(i, Data.InstanceContainer);
                     Data.ItemsFound++;
                     if (!SearchStringParser.FilterSearch(Data.Instance, i, Data.Filter, i.DisplayName)) { continue; }
                     Data.ItemsDisplayed++;
-                    CurrentArea = i.GetDictEntry(Data.Instance).Area;
+                    CurrentArea = i.GetDictEntry().Area;
                 }
                 else if (obj is LocationData.LocationProxy p)
                 {
-                    if (!p.GetReferenceLocation(Data.Instance).AppearsinListbox(Data.Instance, Data.ShowInvalidEntries)) { continue; }
+                    if (!p.GetReferenceLocation().AppearsinListbox(Data.ShowInvalidEntries)) { continue; }
                     p.DisplayName = Utility.GetLocationDisplayName(p, Data.InstanceContainer);
                     Data.ItemsFound++;
                     if (!SearchStringParser.FilterSearch(Data.Instance, p, Data.Filter, p.DisplayName)) { continue; }
@@ -716,16 +716,16 @@ namespace MMR_Tracker_V3
                 var CurrentArea = "";
                 if (obj is LocationData.LocationObject i)
                 {
-                    if (!i.AppearsinListbox(Data.Instance, Data.ShowInvalidEntries)) { continue; }
+                    if (!i.AppearsinListbox(Data.ShowInvalidEntries)) { continue; }
                     i.DisplayName = Utility.GetLocationDisplayName(i, Data.InstanceContainer);
                     Data.ItemsFound++;
                     if (!SearchStringParser.FilterSearch(Data.Instance, i, Data.Filter, i.DisplayName)) { continue; }
                     Data.ItemsDisplayed++;
-                    CurrentArea = i.GetDictEntry(Data.Instance).Area;
+                    CurrentArea = i.GetDictEntry().Area;
                 }
                 else if (obj is LocationData.LocationProxy p)
                 {
-                    if (!p.GetReferenceLocation(Data.Instance).AppearsinListbox(Data.Instance, Data.ShowInvalidEntries)) { continue; }
+                    if (!p.GetReferenceLocation().AppearsinListbox(Data.ShowInvalidEntries)) { continue; }
                     p.DisplayName = Utility.GetLocationDisplayName(p, Data.InstanceContainer);
                     Data.ItemsFound++;
                     if (!SearchStringParser.FilterSearch(Data.Instance, p, Data.Filter, p.DisplayName)) { continue; }

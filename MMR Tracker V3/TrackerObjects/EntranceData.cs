@@ -12,19 +12,26 @@ namespace MMR_Tracker_V3.TrackerObjects
     {
         public class EntrancePool
         {
+            private InstanceData.TrackerInstance _parent;
+            public InstanceData.TrackerInstance GetParent() { return _parent; }
+            public void SetParent(InstanceData.TrackerInstance parent) { _parent = parent; }
+            public EntrancePool(InstanceData.TrackerInstance Parent)
+            {
+                _parent = Parent;
+            }
             //All Areas in the game and the exits they contain
             public Dictionary<string, EntranceRandoArea> AreaList { get; set; } = new Dictionary<string, EntranceRandoArea>();
             //The area accessable from the beggining of the game
             public string RootArea { get; set; } = "Root";
             public bool IsEntranceRando { get; set; } = false;
 
-            public bool CheckForRandomEntrances(InstanceData.TrackerInstance Instance)
+            public bool CheckForRandomEntrances()
             {
-                return AreaList.Any(x => x.Value.RandomizableExits(Instance).Any(x => x.Value.RandomizedState == RandomizedState.Randomized));
+                return AreaList.Any(x => x.Value.RandomizableExits().Any(x => x.Value.RandomizedState == RandomizedState.Randomized));
             }
-            public int GetAmountOfRandomizedEntrances(InstanceData.TrackerInstance Instance)
+            public int GetAmountOfRandomizedEntrances()
             {
-                return AreaList.SelectMany(x => x.Value.RandomizableExits(Instance).Where(y => y.Value.IsRandomized())).Count();
+                return AreaList.SelectMany(x => x.Value.RandomizableExits().Where(y => y.Value.IsRandomized())).Count();
             }
             public bool EntranceIsValid(string Area, string Exit, out bool AreaValid, out bool ExitValid)
             {
@@ -35,6 +42,13 @@ namespace MMR_Tracker_V3.TrackerObjects
         }
         public class EntranceRandoArea
         {
+            private InstanceData.TrackerInstance _parent;
+            public InstanceData.TrackerInstance GetParent() { return _parent; }
+            public void SetParent(InstanceData.TrackerInstance parent) { _parent = parent; }
+            public EntranceRandoArea(InstanceData.TrackerInstance Parent)
+            {
+                _parent = Parent;
+            }
             public string ID { get; set; }
             public int ExitsAcessibleFrom { get; set; } = 0;
             public Dictionary<string, EntranceRandoExit> Exits { get; set; } = new Dictionary<string, EntranceRandoExit>();
@@ -43,17 +57,24 @@ namespace MMR_Tracker_V3.TrackerObjects
                 if (Exits.ContainsKey(ID)) { return Exits[ID]; }
                 return null;
             }
-            public Dictionary<string, EntranceRandoExit> RandomizableExits(InstanceData.TrackerInstance Instance)
+            public Dictionary<string, EntranceRandoExit> RandomizableExits()
             {
-                return Exits.Where(x => x.Value.IsRandomizableEntrance(Instance)).ToDictionary(x => x.Key, v => v.Value);
+                return Exits.Where(x => x.Value.IsRandomizableEntrance()).ToDictionary(x => x.Key, v => v.Value);
             }
-            public Dictionary<string, EntranceRandoExit> NonRandomizableExits(InstanceData.TrackerInstance Instance)
+            public Dictionary<string, EntranceRandoExit> NonRandomizableExits()
             {
-                return Exits.Where(x => !x.Value.IsRandomizableEntrance(Instance)).ToDictionary(x => x.Key, v => v.Value);
+                return Exits.Where(x => !x.Value.IsRandomizableEntrance()).ToDictionary(x => x.Key, v => v.Value);
             }
         }
         public class EntranceRandoExit
         {
+            private InstanceData.TrackerInstance _parent;
+            public InstanceData.TrackerInstance GetParent() { return _parent; }
+            public void SetParent(InstanceData.TrackerInstance parent) { _parent = parent; }
+            public EntranceRandoExit(InstanceData.TrackerInstance Parent)
+            {
+                _parent = Parent;
+            }
             public string ParentAreaID { get; set; }
             public string ID { get; set; }
             public bool Available { get; set; } = false;
@@ -67,9 +88,9 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string DisplayName { get; set; }
             public InstanceData.ReferenceData referenceData { get; set; } = new InstanceData.ReferenceData();
 
-            public LogicDictionaryData.DictionaryEntranceEntries GetDictEntry(InstanceData.TrackerInstance Instance)
+            public LogicDictionaryData.DictionaryEntranceEntries GetDictEntry()
             {
-                return Instance.LogicDictionary.EntranceList[Instance.GetLogicNameFromExit(this)];
+                return _parent.LogicDictionary.EntranceList[_parent.GetLogicNameFromExit(this)];
             }
 
             public override string ToString()

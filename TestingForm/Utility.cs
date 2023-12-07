@@ -37,7 +37,7 @@ namespace TestingForm
         {
             foreach (var i in Container.Instance.LocationPool)
             {
-                string OriginalItem = i.Value.GetDictEntry(Container.Instance).OriginalItem;
+                string OriginalItem = i.Value.GetDictEntry().OriginalItem;
                 if (Container.Instance.GetItemByID(OriginalItem) is null)
                 {
                     Debug.WriteLine($"{OriginalItem} at loc {i.Key} is not a valid item");

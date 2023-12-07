@@ -123,17 +123,17 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             var Names = new List<string>();
             foreach (var i in _Instance.ItemPool.Values)
             {
-                if (string.IsNullOrWhiteSpace(i.GetDictEntry(_Instance).GetName(_Instance))) { continue; }
-                i.DisplayName = i.GetDictEntry(_Instance).GetName(_Instance);
+                if (string.IsNullOrWhiteSpace(i.GetDictEntry().GetName(_Instance))) { continue; }
+                i.DisplayName = i.GetDictEntry().GetName(_Instance);
                 if (!SearchStringParser.FilterSearch(_Instance, i, Filter, i.DisplayName)) { continue; }
-                if ((i.CanBePlaced(_Instance) || ForOtherPlayer) && Location.CanContainItem(i, _Instance) && !EnteredItems.Contains(i) && !Names.Contains(i.ToString()))
+                if ((i.CanBePlaced() || ForOtherPlayer) && Location.CanContainItem(i) && !EnteredItems.Contains(i) && !Names.Contains(i.ToString()))
                 {
                     Names.Add(i.ToString());
                     EnteredItems.Add(i);
                 }
             }
 
-            return EnteredItems.OrderBy(x => x.GetDictEntry(_Instance).GetName(_Instance)).ToList();
+            return EnteredItems.OrderBy(x => x.GetDictEntry().GetName(_Instance)).ToList();
         }
 
 
@@ -141,7 +141,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
         {
             var Names = new List<string>();
             var EnteredItems = new List<EntranceRandoDestination>();
-            foreach (var area in _Instance.EntrancePool.AreaList.Values.Where(x => x.RandomizableExits(_Instance).Any()).ToList().SelectMany(x => x.RandomizableExits(_Instance)).OrderBy(x => x.Value.ID))
+            foreach (var area in _Instance.EntrancePool.AreaList.Values.Where(x => x.RandomizableExits().Any()).ToList().SelectMany(x => x.RandomizableExits()).OrderBy(x => x.Value.ID))
             {
                 var Entry = new EntranceRandoDestination
                 {
@@ -161,20 +161,20 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             if (CheckSpoilerName)
             {
                 ValidItem = ValidItem.Concat(instance.ItemPool.Values.Where(x =>
-                    x.GetDictEntry(instance)?.SpoilerData?.SpoilerLogNames != null &&
-                    x.GetDictEntry(instance).SpoilerData.SpoilerLogNames.Contains(Item) &&
-                    (x.CanBePlaced(instance) || IgnoreMaxAmount) && (x.ValidStartingItem(instance) || !ForStartingPool))).ToList();
+                    x.GetDictEntry()?.SpoilerData?.SpoilerLogNames != null &&
+                    x.GetDictEntry().SpoilerData.SpoilerLogNames.Contains(Item) &&
+                    (x.CanBePlaced() || IgnoreMaxAmount) && (x.ValidStartingItem() || !ForStartingPool))).ToList();
             }
             if (CheckItemName)
             {
                 ValidItem = ValidItem.Concat(instance.ItemPool.Values.Where(x =>
-                    x.GetDictEntry(instance).GetName(instance, DoNameEdits) != null && x.GetDictEntry(instance).GetName(instance, DoNameEdits) == Item &&
-                    (x.CanBePlaced(instance) || IgnoreMaxAmount) && (x.ValidStartingItem(instance) || !ForStartingPool))).ToList();
+                    x.GetDictEntry().GetName(instance, DoNameEdits) != null && x.GetDictEntry().GetName(instance, DoNameEdits) == Item &&
+                    (x.CanBePlaced() || IgnoreMaxAmount) && (x.ValidStartingItem() || !ForStartingPool))).ToList();
             }
             if (CheckItemID)
             {
                 ValidItem = ValidItem.Concat(instance.ItemPool.Values.Where(x =>
-                    x.ID== Item && (x.CanBePlaced(instance) || IgnoreMaxAmount) && (x.ValidStartingItem(instance) || !ForStartingPool))).ToList();
+                    x.ID== Item && (x.CanBePlaced() || IgnoreMaxAmount) && (x.ValidStartingItem() || !ForStartingPool))).ToList();
             }
             if (!ValidItem.Any()) { return null; }
             return ValidItem[0];
@@ -182,8 +182,8 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
 
         public static void ToggleAllTricks(this InstanceData.TrackerInstance instance, bool? state)
         {
-            if (state is null) { foreach (var i in instance.MacroPool.Values.Where(x => x.isTrick(instance))) { i.TrickEnabled = !i.TrickEnabled; } }
-            else { foreach (var i in instance.MacroPool.Values.Where(x => x.isTrick(instance))) { i.TrickEnabled = (bool)state; } }
+            if (state is null) { foreach (var i in instance.MacroPool.Values.Where(x => x.isTrick())) { i.TrickEnabled = !i.TrickEnabled; } }
+            else { foreach (var i in instance.MacroPool.Values.Where(x => x.isTrick())) { i.TrickEnabled = (bool)state; } }
         }
 
         public static List<char> GetAllCurrencies(this InstanceData.TrackerInstance instance, bool all = false)
@@ -346,15 +346,15 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
         {
             if (Entry is LocationObject LO)
             {
-                return LO.GetDictEntry(instance)?.GetName(instance)??LO.ID;
+                return LO.GetDictEntry()?.GetName(instance)??LO.ID;
             }
             else if (Entry is MacroObject MO)
             {
-                return MO.GetDictEntry(instance)?.Name??MO.ID;
+                return MO.GetDictEntry()?.Name??MO.ID;
             }
             else if (Entry is ItemObject IO)
             {
-                return IO.GetDictEntry(instance)?.Name??IO.ID;
+                return IO.GetDictEntry()?.Name??IO.ID;
             }
             else if (Entry is ChoiceOption CO)
             {
@@ -370,7 +370,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             }
             else if (Entry is HintData.HintObject HO)
             {
-                return HO.GetDictEntry(instance)?.Name??HO.ID;
+                return HO.GetDictEntry()?.Name??HO.ID;
             }
             else { return null; }
         }

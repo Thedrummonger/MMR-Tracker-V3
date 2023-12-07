@@ -65,68 +65,68 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
 
             foreach (var i in Instance.LocationPool.Values)
             {
-                var Dict = i.GetDictEntry(Instance);
+                var Dict = i.GetDictEntry();
 
-                i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Randomized, Instance);
+                i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Randomized);
 
                 if (Dict.ValidItemTypes.Contains("MultiCoinBlock") && !ShuffleSuperMulti)
                 {
-                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized, Instance);
+                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized);
                 }
                 if (Dict.ValidItemTypes.Contains("SuperBlock") && !ShuffleSuperMulti && PartnerUpgradeShuffle == 0)
                 {
-                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.UnrandomizedManual, Instance);
+                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.UnrandomizedManual);
                 }
 
                 if (Dict.SpoilerData.SpoilerLogNames.Contains("KootFavor") && KootShuffle < 1)
                 {
-                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized, Instance);
+                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized);
                 }
                 if (Dict.SpoilerData.SpoilerLogNames.Contains("KootFavorKey") && KootShuffle < 2)
                 {
-                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized, Instance);
+                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized);
                 }
                 if (Dict.SpoilerData.SpoilerLogNames.Contains("KootFavorCoin") && (!KootCoinShuffle || KootShuffle < 1))
                 {
-                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized, Instance);
+                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized);
                 }
 
                 if (Dict.SpoilerData.SpoilerLogNames.Contains("LetterChain") && LetterShuffle < 3)
                 {
-                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized, Instance);
+                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized);
                 }
                 if (Dict.SpoilerData.SpoilerLogNames.Contains("ChainLetterFinal") && LetterShuffle < 2)
                 {
-                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized, Instance);
+                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized);
                 }
                 if (Dict.SpoilerData.SpoilerLogNames.Contains("SimpleLetter") && LetterShuffle < 1)
                 {
-                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized, Instance);
+                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized);
                 }
 
                 if (Dict.SpoilerData.SpoilerLogNames.Contains("DOJO") && !DOJOShuffle)
                 {
-                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized, Instance);
+                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized);
                 }
                 if (Dict.SpoilerData.SpoilerLogNames.Contains("RadioTrade") && !RadioShuffle)
                 {
-                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized, Instance);
+                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized);
                 }
 
                 if (Dict.SpoilerData.SpoilerLogNames.Contains("TreeBushCoin") && !BushTreeCoinShuffle)
                 {
                     if (Dict.OriginalItem != "Coin") { throw new Exception($"Why {Dict.ID}"); }
-                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized, Instance);
+                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized);
                 }
                 if (Dict.SpoilerData.SpoilerLogNames.Contains("OverworldCoin") && !OverWorldCoinShuffle)
                 {
                     if (Dict.OriginalItem != "Coin") { throw new Exception($"Why {Dict.ID}"); }
-                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized, Instance);
+                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized);
                 }
                 if (Dict.SpoilerData.SpoilerLogNames.Contains("BlockCoin") && !BlockCoinShuffle)
                 {
                     if (Dict.OriginalItem != "Coin") { throw new Exception($"Why {Dict.ID}"); }
-                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized, Instance);
+                    i.SetRandomizedState(TrackerObjects.MiscData.RandomizedState.Unrandomized);
                 }
 
             }
@@ -135,7 +135,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
 
             Dictionary<string, string[]> SuperBlocksLocations = new Dictionary<string, string[]>();
 
-            foreach (var loc in Instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits(Instance)))
+            foreach (var loc in Instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits()))
             {
                 loc.Value.SpoilerDefinedDestinationExit = loc.Value.GetVanillaDestination();
             }
@@ -154,8 +154,8 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                     foreach (var entrance in EntranceData)
                     {
                         Debug.WriteLine($"Checking Entrance {entrance.entrance}");
-                        var Ent = Instance.EntrancePool.AreaList.First(x => x.Key.Replace("'", "") == entrance.entrance).Value.RandomizableExits(Instance).First();
-                        var Dest = Instance.EntrancePool.AreaList.First(x => x.Key.Replace("'", "") == entrance.exit).Value.RandomizableExits(Instance).First();
+                        var Ent = Instance.EntrancePool.AreaList.First(x => x.Key.Replace("'", "") == entrance.entrance).Value.RandomizableExits().First();
+                        var Dest = Instance.EntrancePool.AreaList.First(x => x.Key.Replace("'", "") == entrance.exit).Value.RandomizableExits().First();
                         Ent.Value.SpoilerDefinedDestinationExit = Dest.Value.EntrancePair.AsDestination();
                         Dest.Value.SpoilerDefinedDestinationExit = Ent.Value.EntrancePair.AsDestination();
                     }
@@ -198,8 +198,8 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                         //If the location is unrandomized, Ensure it contains its vanilla item in the spoiler log
                         if (CheckUnrand)
                         {
-                            var OriginalItem = Instance.ItemPool[Loc.GetDictEntry(Instance).OriginalItem];
-                            if (OriginalItem.ID != SpoilerGivenItem && OriginalItem.GetDictEntry(Instance).Name != SpoilerGivenItem)
+                            var OriginalItem = Instance.ItemPool[Loc.GetDictEntry().OriginalItem];
+                            if (OriginalItem.ID != SpoilerGivenItem && OriginalItem.GetDictEntry().Name != SpoilerGivenItem)
                             {
                                 throw new Exception($"{Loc.ID} Was unrandomized but did not contain its vanilla item\n{Location.Key}: {Location.Value}\n{JsonConvert.SerializeObject(Loc, Utility._NewtonsoftJsonSerializerOptions)}");
                             }
@@ -233,16 +233,16 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             {
                 if (i.Value.Randomizeditem.SpoilerLogGivenItem == null && i.Value.SingleValidItem == null && i.Value.IsRandomized())
                 {
-                    if (i.Value.GetDictEntry(Instance).ValidItemTypes.Any(x => x.In("MultiCoinBlock", "SuperBlock")))
+                    if (i.Value.GetDictEntry().ValidItemTypes.Any(x => x.In("MultiCoinBlock", "SuperBlock")))
                     {
                         bool ContainedSuperBlock =
-                            SuperBlocksLocations.ContainsKey(i.Value.GetDictEntry(Instance).Area) &&
-                            SuperBlocksLocations[i.Value.GetDictEntry(Instance).Area].Any(x => i.Key.StartsWith(x));
+                            SuperBlocksLocations.ContainsKey(i.Value.GetDictEntry().Area) &&
+                            SuperBlocksLocations[i.Value.GetDictEntry().Area].Any(x => i.Key.StartsWith(x));
                         i.Value.Randomizeditem.SpoilerLogGivenItem = ContainedSuperBlock ? "PartnerUp1" : "Coin";
                     }
                     else
                     {
-                        Debug.WriteLine($"{i.Value.GetDictEntry(Instance).Area} - {i.Key} Did not have spoiler data");
+                        Debug.WriteLine($"{i.Value.GetDictEntry().Area} - {i.Key} Did not have spoiler data");
                     }
                 }
             }

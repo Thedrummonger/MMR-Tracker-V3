@@ -19,14 +19,14 @@ namespace MMR_Tracker_V3
             List<string> WalletEntries = new();
             foreach (var i in instance.ItemPool)
             {
-                if (i.Value.GetDictEntry(instance).WalletCapacity != null)
+                if (i.Value.GetDictEntry().WalletCapacity != null)
                 {
                     WalletEntries.Add(i.Key);
                 }
             }
             foreach (var i in instance.MacroPool)
             {
-                if (i.Value.GetDictEntry(instance).WalletCapacity != null)
+                if (i.Value.GetDictEntry().WalletCapacity != null)
                 {
                     WalletEntries.Add(i.Key);
                 }

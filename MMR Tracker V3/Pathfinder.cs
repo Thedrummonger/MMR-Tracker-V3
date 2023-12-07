@@ -90,7 +90,7 @@ namespace MMR_Tracker_V3
                         bool ExitValid = instance.EntrancePool.AreaList.ContainsKey(Area) && instance.EntrancePool.AreaList[Area].Exits.ContainsKey(Exit);
                         bool IsDestination = string.IsNullOrWhiteSpace(Exit);
                         bool IsRandomizedExit = ExitValid &&
-                            instance.EntrancePool.AreaList[Area].Exits[Exit].IsRandomizableEntrance(instance) &&
+                            instance.EntrancePool.AreaList[Area].Exits[Exit].IsRandomizableEntrance() &&
                             (instance.EntrancePool.AreaList[Area].Exits[Exit].IsRandomized() || instance.EntrancePool.AreaList[Area].Exits[Exit].IsUnrandomized(MiscData.UnrandState.Manual));
 
                         if (IsRandomizedExit || IsDestination || ShowMacro) { FormattedPath.Add(Area, Exit); }

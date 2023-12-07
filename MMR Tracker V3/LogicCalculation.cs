@@ -74,7 +74,7 @@ namespace MMR_Tracker_V3
                     return bool.Parse(i);
                 case LogicEntryType.item:
                     SubUnlockData.Add(i);
-                    return container.Instance.GetItemByID(LogicItem).Useable(container.Instance, Amount);
+                    return container.Instance.GetItemByID(LogicItem).Useable(Amount);
                 case LogicEntryType.macro:
                     SubUnlockData.Add(i);
                     return container.Instance.GetMacroByID(LogicItem).Aquired; 
@@ -120,7 +120,7 @@ namespace MMR_Tracker_V3
                     else
                     {
                         if (type == LogicEntryType.item && !MultiItem)
-                        { UsableItems.AddRange(Enumerable.Repeat(LogicItem, (ItemObj as ItemObject).GetTotalUsable(container.Instance))); }
+                        { UsableItems.AddRange(Enumerable.Repeat(LogicItem, (ItemObj as ItemObject).GetTotalUsable())); }
                         else if (LogicEntryAquired(i, SubUnlockData)) { UsableItems.Add(i); }
                     }
                 }
@@ -188,8 +188,8 @@ namespace MMR_Tracker_V3
             {
                 container.Instance.InstanceReference.OptionActionItemEdits[i.Key] = new OptionData.ActionItemEdit
                 {
-                    Name = i.Value.GetDictEntry(container.Instance).GetOptionEditDefinedName(Actions),
-                    MaxAmount = i.Value.GetDictEntry(container.Instance).GetOptionEditDefinedMaxAmountInWorld(Actions)
+                    Name = i.Value.GetDictEntry().GetOptionEditDefinedName(Actions),
+                    MaxAmount = i.Value.GetDictEntry().GetOptionEditDefinedMaxAmountInWorld(Actions)
                 };
             }
         }
@@ -217,7 +217,7 @@ namespace MMR_Tracker_V3
             }
             foreach (var Area in container.Instance.EntrancePool.AreaList)
             {
-                foreach (var i in Area.Value.RandomizableExits(container.Instance).Where(x => !x.Value.IsUnrandomized(UnrandState.Unrand)))
+                foreach (var i in Area.Value.RandomizableExits().Where(x => !x.Value.IsUnrandomized(UnrandState.Unrand)))
                 {
                     var Logic = LogicMap[container.Instance.GetLogicNameFromExit(i.Value)];
                     i.Value.Available = CalculatReqAndCond(Logic, container.Instance.GetLogicNameFromExit(i.Value), Area.Key);
@@ -263,14 +263,14 @@ namespace MMR_Tracker_V3
         {
             foreach (var Area in container.Instance.EntrancePool.AreaList)
             {
-                foreach (var i in Area.Value.Exits.Where(x => x.Value.IsUnrandomized(UnrandState.Unrand) || !x.Value.IsRandomizableEntrance(container.Instance)))
+                foreach (var i in Area.Value.Exits.Where(x => x.Value.IsUnrandomized(UnrandState.Unrand) || !x.Value.IsRandomizableEntrance()))
                 {
-                    i.Value.ToggleExitChecked(CheckState.Unchecked, container.Instance);
+                    i.Value.ToggleExitChecked(CheckState.Unchecked);
                 }
             }
             foreach (var i in container.Instance.LocationPool.Where(x => x.Value.IsUnrandomized(UnrandState.Unrand)))
             {
-                i.Value.ToggleChecked(CheckState.Unchecked, container.Instance);
+                i.Value.ToggleChecked(CheckState.Unchecked);
             }
         }
 
@@ -279,7 +279,7 @@ namespace MMR_Tracker_V3
             bool ItemStateChanged = false;
             foreach (var Area in container.Instance.EntrancePool.AreaList)
             {
-                foreach (var i in Area.Value.Exits.Where(x => x.Value.IsUnrandomized(UnrandState.Unrand) || !x.Value.IsRandomizableEntrance(container.Instance)))
+                foreach (var i in Area.Value.Exits.Where(x => x.Value.IsUnrandomized(UnrandState.Unrand) || !x.Value.IsRandomizableEntrance()))
                 {
                     var Logic = LogicMap[container.Instance.GetLogicNameFromExit(i.Value)];
                     var Available = CalculatReqAndCond(Logic, container.Instance.GetLogicNameFromExit(i.Value), Area.Key);
@@ -291,7 +291,7 @@ namespace MMR_Tracker_V3
                         i.Value.Available = Available;
                         CheckState checkState = i.Value.Available ? CheckState.Checked : CheckState.Unchecked;
                         if (checkState == CheckState.Checked) { i.Value.DestinationExit = i.Value.GetVanillaDestination(); }
-                        i.Value.ToggleExitChecked(checkState, container.Instance);
+                        i.Value.ToggleExitChecked(checkState);
                         if (Available) { AutoObtainedObjects[i.Value] = itterations; }
                     }
                 }
@@ -327,7 +327,7 @@ namespace MMR_Tracker_V3
             bool ItemStateChanged = false;
             foreach (var i in container.Instance.LocationPool.Where(x => x.Value.IsUnrandomized(MiscData.UnrandState.Unrand)))
             {
-                if (string.IsNullOrWhiteSpace(i.Value.GetDictEntry(container.Instance).OriginalItem)) { continue; }
+                if (string.IsNullOrWhiteSpace(i.Value.GetDictEntry().OriginalItem)) { continue; }
                 var Logic = LogicMap[i.Key];
                 var Available = CalculatReqAndCond(Logic, i.Key, null);
                 bool ShouldBeChecked = Available && i.Value.CheckState != CheckState.Checked;
@@ -337,8 +337,8 @@ namespace MMR_Tracker_V3
                     ItemStateChanged = true;
                     i.Value.Available = Available;
                     CheckState checkState = i.Value.Available ? CheckState.Checked : CheckState.Unchecked;
-                    if (checkState == CheckState.Checked) { i.Value.Randomizeditem.Item = i.Value.GetDictEntry(container.Instance).OriginalItem; }
-                    i.Value.ToggleChecked(checkState, container.Instance);
+                    if (checkState == CheckState.Checked) { i.Value.Randomizeditem.Item = i.Value.GetDictEntry().OriginalItem; }
+                    i.Value.ToggleChecked(checkState);
                     if (Available) { AutoObtainedObjects[i.Value] = itterations; }
                 }
             }
@@ -474,7 +474,7 @@ namespace MMR_Tracker_V3
             
             var item = instance.GetItemByID(strings[0]);
             if (item is null) { Debug.WriteLine($"{strings[0]} Was not a valid Renewable Item Entry"); return false; }
-            if (item.GetTotalUsable(instance) < 1) { return false; }
+            if (item.GetTotalUsable() < 1) { return false; }
             return instance.LocationPool.Values.Any(x => 
                 x.CheckState == CheckState.Checked && 
                 IsAtProperCheck(x, ShouldBeRepeatable) && 
@@ -482,8 +482,8 @@ namespace MMR_Tracker_V3
                 x.Randomizeditem.Item == item.ID);
             bool IsAtProperCheck(LocationObject x, bool ShouldBeRepeatable)
             {
-                if (ShouldBeRepeatable) { return x.GetDictEntry(instance).Repeatable is not null && (bool)x.GetDictEntry(instance).Repeatable; }
-                else { return x.GetDictEntry(instance).Repeatable is not null && !(bool)x.GetDictEntry(instance).Repeatable; }
+                if (ShouldBeRepeatable) { return x.GetDictEntry().Repeatable is not null && (bool)x.GetDictEntry().Repeatable; }
+                else { return x.GetDictEntry().Repeatable is not null && !(bool)x.GetDictEntry().Repeatable; }
             }
         }
 
@@ -502,7 +502,7 @@ namespace MMR_Tracker_V3
         {
             bool Inverse = strings.Length > 1 && bool.TryParse(strings[1], out bool InverseParam) && !InverseParam;
             if (!instance.MacroPool.ContainsKey(strings[0])) { Debug.WriteLine($"{strings[0]} Was not a valid Trick Macro"); return false; }  
-            if (!instance.MacroPool[strings[0]].isTrick(instance)) { Debug.WriteLine($"{strings[0]} Was a valid macro but was not a trick"); return false; }
+            if (!instance.MacroPool[strings[0]].isTrick()) { Debug.WriteLine($"{strings[0]} Was a valid macro but was not a trick"); return false; }
             return instance.MacroPool[strings[0]].TrickEnabled != Inverse;
         }
 
@@ -602,8 +602,8 @@ namespace MMR_Tracker_V3
                 {
                     //This should always return whatever value will result in false if the item is unknown. This is because checking a location should never 
                     //result in another location becoming unavilable otherwise we could enter an infinite loop if both those location are checked automatically
-                    if (CurrentOptionType == LogicEntryType.location && (instance.GetLocationByID(currentOption)?.GetItemAtCheck(instance) == null)) { RequiremntMet = inverse; }
-                    else if (CurrentOptionType == LogicEntryType.location && (instance.GetLocationByID(currentOption)?.GetItemAtCheck(instance) == CurrentValue)) { RequiremntMet = true; }
+                    if (CurrentOptionType == LogicEntryType.location && (instance.GetLocationByID(currentOption)?.GetItemAtCheck() == null)) { RequiremntMet = inverse; }
+                    else if (CurrentOptionType == LogicEntryType.location && (instance.GetLocationByID(currentOption)?.GetItemAtCheck() == CurrentValue)) { RequiremntMet = true; }
                     else if (CurrentOptionType == LogicEntryType.Exit && (CurrentOptionEntry as EntranceData.EntranceRandoExit)?.DestinationExit == null) { RequiremntMet = inverse; }
                     else if (CurrentOptionType == LogicEntryType.Exit && (CurrentOptionEntry as EntranceData.EntranceRandoExit).LeadsToArea(CurrentValue)) { RequiremntMet = true; }
                 }
