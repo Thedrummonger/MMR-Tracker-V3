@@ -96,7 +96,7 @@ namespace MMR_Tracker_V3
                         break;
                     case MiscData.CheckState.Unchecked:
                         dataSets.ProxyStateIsNOTChecked.Add(i);
-                        if (i.ProxyAvailable(instance)) { dataSets.ProxyISMarkedOrISAvailableAndUnchecked.Add(i); }
+                        if (i.ProxyAvailable()) { dataSets.ProxyISMarkedOrISAvailableAndUnchecked.Add(i); }
                         break;
                 }
             }
@@ -179,17 +179,17 @@ namespace MMR_Tracker_V3
         }
 
         //GetData To Print
-        public static bool GetLocationEntryAvailablility(object Entry, InstanceData.TrackerInstance Instance)
+        public static bool SortByAvailability(object Entry, TrackerLocationDataList Data)
         {
+            if (Data.ShowUnavailableEntries) { return true; }
+            if (!Data.Instance.StaticOptions.OptionFile.SeperateUnavailableMarkedLocations) { return true; }
             if (Entry is LocationData.LocationObject l) { return l.Available; }
-            else if (Entry is LocationData.LocationProxy p) { return p.ProxyAvailable(Instance); }
+            else if (Entry is LocationData.LocationProxy p) { return p.ProxyAvailable(); }
             return false;
         }
 
         public static void PopulateAvailableLocationList(TrackerLocationDataList Data)
         {
-            bool SeperateMarked = Data.Instance.StaticOptions.OptionFile.SeperateUnavailableMarkedLocations;
-
             var Groups = Utility.GetCategoriesFromFile(Data.Instance);
 
             var AvailableProxies = Data.DataSets.ProxyISMarkedOrISAvailableAndUnchecked;
@@ -200,7 +200,7 @@ namespace MMR_Tracker_V3
 
             IEnumerable<object> AvailableLocationsEntries = AvailableLocations.Where(x => !Data.Instance.LocationProxyData.LocationsWithProxys.ContainsKey(x.ID));
             AvailableLocationsEntries = AvailableLocationsEntries.Concat(AvailableProxies);
-            AvailableLocationsEntries = AvailableLocationsEntries.OrderByDescending(x => SeperateMarked && GetLocationEntryAvailablility(x, Data.Instance))
+            AvailableLocationsEntries = AvailableLocationsEntries.OrderByDescending(x => SortByAvailability(x, Data))
                 .ThenBy(x => (Groups.ContainsKey(GetLocationEntryArea(x, Data.Instance).ToLower().Trim()) ? Groups[GetLocationEntryArea(x, Data.Instance).ToLower().Trim()] : Data.DataSets.LocationISMarkedOrISAvailableAndUnchecked.Count() + 1))
                 .ThenBy(x => GetLocationEntryArea(x, Data.Instance))
                 .ThenBy(x => Utility.GetLocationDisplayName(x, Data.InstanceContainer)).ToList();

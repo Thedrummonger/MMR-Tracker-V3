@@ -1,6 +1,8 @@
-﻿using MMR_Tracker_V3.Logic;
+﻿using MMR_Tracker_V3;
+using MMR_Tracker_V3.Logic;
 using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
+using System.Diagnostics;
 using static MMR_Tracker_V3.TrackerObjects.LogicDictionaryData;
 using static MMR_Tracker_V3.TrackerObjects.MMRData;
 
@@ -29,6 +31,10 @@ namespace TestingForm.GameDataCreation.MMR
                 { "AreaSnowheadTempleAccess", MiscData.RandomizedState.Unrandomized },
                 { "AreaGreatBayTempleAccess", MiscData.RandomizedState.Unrandomized },
                 { "AreaInvertedStoneTowerTempleAccess", MiscData.RandomizedState.Unrandomized },
+                { "AreaOdolwasLair", MiscData.RandomizedState.Unrandomized },
+                { "AreaGohtsLair", MiscData.RandomizedState.Unrandomized },
+                { "AreaGyorgsLair", MiscData.RandomizedState.Unrandomized },
+                { "AreaTwinmoldsLair", MiscData.RandomizedState.Unrandomized },
             };
             foreach (var GaroHint in ExportData.Hints.Where(x => x.ID.StartsWith("HintGaro"))) { MMRDictV16.DefaultSettings.ManualRandomizationState.Add(GaroHint.ID, MiscData.RandomizedState.Unrandomized); }
             MMRDictV16.DefaultSettings.EnabledTricks = new List<string>
@@ -52,6 +58,18 @@ namespace TestingForm.GameDataCreation.MMR
             CreateLogicSettings(ExportData, MMRDictV16);
             HandleAreaClearLogic(ExportData, MMRDictV16);
             ManualTweaking(MMRDictV16);
+
+            List<string> Areas = new List<string>();
+            foreach(var i in MMRDictV16.LocationList)
+            {
+                if (!Areas.Contains(i.Value.Area)) { Areas.Add(i.Value.Area); }
+                if (!i.Value.LocationProxys.Any()) { continue; }
+                foreach(var j in i.Value.LocationProxys)
+                {
+                    if (!Areas.Contains(j.Area)) { Areas.Add(j.Area); }
+                }
+            }
+            Debug.WriteLine(Areas.ToFormattedJson());
 
             return MMRDictV16;
         }

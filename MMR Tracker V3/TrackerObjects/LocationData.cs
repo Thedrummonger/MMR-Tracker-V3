@@ -93,15 +93,15 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 return DisplayName??Name;
             }
-            public bool ProxyAvailable(InstanceData.TrackerInstance instance)
+            public bool ProxyAvailable()
             {
                 var LogicId = LogicInheritance ?? ReferenceID;
                 bool Literal = LogicId.IsLiteralID(out LogicId);
-                var type = instance.GetLocationEntryType(LogicId, Literal, out _);
+                var type = _parent.GetLocationEntryType(LogicId, Literal, out _);
                 return type switch
                 {
-                    LogicEntryType.location => instance.GetLocationByID(LogicId).Available,
-                    LogicEntryType.macro => instance.GetMacroByID(LogicId).Aquired,
+                    LogicEntryType.location => _parent.GetLocationByID(LogicId).Available,
+                    LogicEntryType.macro => _parent.GetMacroByID(LogicId).Aquired,
                     _ => false,
                 };
             }

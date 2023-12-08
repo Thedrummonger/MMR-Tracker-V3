@@ -254,7 +254,7 @@ namespace Windows_Form_Frontend
             if (entry is LocationData.LocationProxy po) { 
                 checkState = InstanceContainer.Instance.GetLocationByID(po.ReferenceID)?.CheckState ?? MiscData.CheckState.Checked; 
                 starred = po.Starred;
-                Available = po.ProxyAvailable(InstanceContainer.Instance);
+                Available = po.ProxyAvailable();
             }
             else if (entry is MiscData.Areaheader ah)
             {

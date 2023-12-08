@@ -106,7 +106,9 @@ Ganon's Castle
 
 //Majoras Mask
 Clock Town
+Beneath Clocktown
 North Clock Town
+Deku Playground Items
 East Clock Town
 South Clock Town
 West Clock Town
@@ -122,18 +124,22 @@ Romani Ranch
 Swamp
 Road to Southern Swamp
 Southern Swamp
+Swamp Spider House Items
 Deku Palace
+Butler Race Items
 Woodfall
 Mountains
 Path to Mountain Village
 Mountain Village
 Twin Islands
+Goron Race Items
 Goron Village
 Path to Snowhead
 Snowhead
 Bay
 Great Bay
 Great Bay Coast
+Ocean Spider House Items
 Great Bay Cape
 Zora Cape
 Zora Hall
@@ -159,6 +165,9 @@ Tingle Map
 Tingle
 Bottle Catch
 Dungeon Entrance
+Dungeon Entrances
+BossDoor Entrance
+BossDoor Entrances
 Owl Warp
 Interior
 Grottos
@@ -219,6 +228,7 @@ Bowser's Castle
 #GAMECODEEND:
 
 Misc
+MULTIREGION
 Gossip Stone
 Multiworld
 Starting Items
