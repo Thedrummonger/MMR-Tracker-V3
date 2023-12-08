@@ -37,20 +37,19 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
         };
         public static string[] GossipJunkMessages = new string[]
         {
-                "\x1E\x69\x4FThey say that Jimmie1717's mod\x11lottery is \x01RIGGED!\x00\xBF",
-                "\x1E\x69\x4FReal ZELDA players use HOLD targeting!\xBF",
-                "\x1E\x69\x4FThey say items are random...\xBF",
-                "\x1E\x69\x4FThey say the \x05" + "blue dog\x00 shall prevail...\xBF",
-                "\x1E\x69\x4FMy body craves for the touch of\x11\x01mashed potatoes\x00...\xBF",
-                "\x1E\x69\x2B" + "Dear Mario, please come to the \x11" + "castle. I've baked a cake for you.\x11Yours truly, Princess Toadstool\x11\x06Peach\x00\xBF",
-                "\x1E\x69\x56I overheard something useful:\x11\xDF\xBF",
-                "\x1E\x69\x56I overheard something useful:\x11\xD6\xBF",
-                "\x1E\x69\x4FThey say the best button for bombchus\x11is \x04\xB7\x00...\xBF",
-                "\x1E\x69\x4FThey say the key to victory is\x11" + "beating the game...\xBF",
-                "\x1E\x38\x0BThey say a certain player once stole\x11their items back from Takkuri...\xBF",
-                "\x1E\x69\x4FThey say wearing the \x01" + "Bremen Mask\x00\x11increases your chances of beating the\x11Gorman bros...\xBF",
-                "\x1E\x69\x6FUse the boost to get through!\xBF",
-                "\x1E\x69\x4FThey say the \x04gold dog\x00 cheats...\xBF"
+                "They say that Jimmie1717's mod lottery is RIGGED!",
+                "Real ZELDA players use HOLD targeting!",
+                "They say items are random...",
+                "They say the blue dog shall prevail...",
+                "My body craves for the touch of mashed potatoes...",
+                "Dear Mario, please come to the castle. I've baked a cake for you. Yours truly, Princess Toadstool -Peach",
+                "I overheard something useful...",
+                "They say the best button for bombchus is...",
+                "They say the key to victory is beating the game...",
+                "They say a certain player once stole their items back from Takkuri...",
+                "They say wearing the Bremen Mask increases your chances of beating the Gorman bros...",
+                "Use the boost to get through!",
+                "They say the gold dog cheats..."
         };
         public class MMRSpoilerLogItemLocation
         {
@@ -58,8 +57,37 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             public List<string> Items = new List<string>();
             public Dictionary<string, string> Result = new Dictionary<string, string>();
         }
+        /* The randomizer will rename these locations based on boss door rando, since the tracker can't really support live location renaming based
+         * on what item is where, I'll just manually swap them when reading the spoiler log.
+         * 
+         * TODO hopefully find a better way to do this mess
+         * 
+        HeartContainerWoodfall gets renamed based on AreaOdolwasLair
+        HeartContainerSnowhead gets renamed based on AreaGohtsLair
+        HeartContainerGreatBay gets renamed based on AreaGyorgsLair
+        HeartContainerStoneTower gets renamed based on AreaTwinmoldsLair
+        RemainsOdolwa gets renamed based on AreaOdolwasLair
+        RemainsGoht gets renamed based on AreaGohtsLair
+        RemainsGyorg gets renamed based on AreaGyorgsLair
+        RemainsTwinmold gets renamed based on AreaTwinmoldsLair
+        */
+        public static Dictionary<string, string> RenamedHeartContainerChecks = new Dictionary<string, string>()
+            {
+                { "HeartContainerWoodfall", "AreaOdolwasLair" },
+                { "HeartContainerSnowhead", "AreaGohtsLair" },
+                { "HeartContainerGreatBay", "AreaGyorgsLair" },
+                { "HeartContainerStoneTower", "AreaTwinmoldsLair" }
+            };
+        public static Dictionary<string, string> RenamedRemainsChecks = new Dictionary<string, string>()
+            {
+                { "RemainsOdolwa", "AreaOdolwasLair" },
+                { "RemainsGoht", "AreaGohtsLair" },
+                { "RemainsGyorg", "AreaGyorgsLair" },
+                { "RemainsTwinmold", "AreaTwinmoldsLair" }
+            };
         public static void ReadAndApplySpoilerLog(InstanceContainer Container)
         {
+            Debug.WriteLine("Parsing Spoiler Log");
             int SettingLineIndex = -1;
             int SeedIndex = -1;
             int BlitzStartingItemsIndex = -1;
@@ -89,98 +117,26 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             int CostIndexEnd = GossipIndex -1;
             int GossipIndexEnd = PlaythroughIndex -1;
 
+            Debug.WriteLine("Preparing Instance");
             ResetInstance(Container.Instance);
 
+            Debug.WriteLine("Applying Settings");
             var SettingLines = Container.Instance.SpoilerLog.Log.ToList().GetRange((SettingLineIndex+1)..(SettingIndexEnd-1));
             var SettingString = $"{{{string.Join(" ", SettingLines)}}}";
             Dictionary<string, object> Settings = JsonConvert.DeserializeObject<Dictionary<string, object>>(SettingString);
 
             ApplySettings(Container.Instance, Settings);
 
+            Debug.WriteLine("Compiling Logic");
             Container.logicCalculation.CompileOptionActionEdits();
 
+            Debug.WriteLine("Applying Setting Strings");
             SettingStringHandler.ApplyLocationString(Settings.GetValueAs<string, string>("CustomItemListString"), Container.Instance);
             SettingStringHandler.ApplyJunkString(Settings.GetValueAs<string, string>("CustomJunkLocationsString"), Container.Instance);
             SettingStringHandler.ApplyStartingItemString(Settings.GetValueAs<string, string>("CustomStartingItemListString"), Container.Instance);
 
-            List<string> ItemLocations = Container.Instance.SpoilerLog.Log.ToList().GetRange((ItemLocationIndex+1)..(ItemLocationIndexEnd)).Select(x => x.Trim()).Where(x => !string.IsNullOrWhiteSpace(x)).ToList();
-            
-            var ItemLocationDict = GetItemLocationData(ItemLocations, Container.Instance);
-
-            if (CostIndex > -1)
-            {
-                var PriceData = Container.Instance.SpoilerLog.Log.ToList().GetRange((CostIndex+1)..(CostIndexEnd-1));
-                foreach(var line in PriceData)
-                {
-                    if (string.IsNullOrWhiteSpace(line) || !line.Contains("->")) { continue; }
-                    var pricedata = line.Split("->");
-                    string Location = pricedata[0].Trim();
-                    int Price = int.Parse(pricedata[1]);
-
-                    object LocationObj = Container.Instance.LocationPool.FirstOrDefault(x => x.Value.GetDictEntry().SpoilerData.PriceDataNames.Contains(Location)).Value;
-                    LocationObj ??= Container.Instance.LocationPool.FirstOrDefault(x => x.Value.GetDictEntry().Name == Location).Value;
-                    LocationObj ??= Container.Instance.MacroPool.FirstOrDefault(x => x.Value.GetDictEntry().SpoilerData.PriceDataNames.Contains(Location)).Value;
-                    LocationObj ??= Container.Instance.MacroPool.FirstOrDefault(x => x.Value.GetDictEntry().ID == Location).Value;
-                    if (LocationObj is MacroObject MO && (MO.Price is null || MO.Price < 0 || Price < MO.Price))
-                    {
-                        MO.Price = Price;
-                    }
-                    else if (LocationObj is LocationData.LocationObject LO && (LO.Price is null || LO.Price < 0 || Price < LO.Price))
-                    {
-                        LO.Price = Price;
-                    }
-                    else
-                    {
-                        Debug.WriteLine($"Price line {Location}|{Price} was not assigned");
-                    }
-                }
-
-            }
-
-
-            Dictionary<string, string> EntranceLocationDict = new Dictionary<string, string>();
-            if (EntranceIndex > -1)
-            {
-                List<string> EntrancesList = Container.Instance.SpoilerLog.Log.ToList().GetRange((EntranceIndex+1)..(EntranceIndexEnd));
-                EntranceLocationDict = GetEntranceLocationData(EntrancesList);
-            }
-
-            List<string> BlitzStartingItems = new List<string>();
-            if (BlitzStartingItemsIndex > -1)
-            {
-                BlitzStartingItems = Container.Instance.SpoilerLog.Log.ToList().GetRange((BlitzStartingItemsIndex+1)..(BlitzStartingItemsEnd)).Where(x => !string.IsNullOrWhiteSpace(x)).ToList();
-            }
-
-            /* The randomizer will rename these locations based on boss door rando, since the tracker can't really support live location renaming based
-             * on what item is where, I'll just manually swap them when reading the spoiler log.
-             * 
-             * TODO hopefully find a better way to do this mess
-             * 
-            HeartContainerWoodfall gets renamed based on AreaOdolwasLair
-            HeartContainerSnowhead gets renamed based on AreaGohtsLair
-            HeartContainerGreatBay gets renamed based on AreaGyorgsLair
-            HeartContainerStoneTower gets renamed based on AreaTwinmoldsLair
-            RemainsOdolwa gets renamed based on AreaOdolwasLair
-            RemainsGoht gets renamed based on AreaGohtsLair
-            RemainsGyorg gets renamed based on AreaGyorgsLair
-            RemainsTwinmold gets renamed based on AreaTwinmoldsLair
-            */
-            Dictionary<string, string> RenamedHeartContainerChecks = new Dictionary<string, string>()
-            {
-                { "HeartContainerWoodfall", "AreaOdolwasLair" },
-                { "HeartContainerSnowhead", "AreaGohtsLair" },
-                { "HeartContainerGreatBay", "AreaGyorgsLair" },
-                { "HeartContainerStoneTower", "AreaTwinmoldsLair" }
-            };
-            Dictionary<string, string> RenamedRemainsChecks = new Dictionary<string, string>()
-            {
-                { "RemainsOdolwa", "AreaOdolwasLair" },
-                { "RemainsGoht", "AreaGohtsLair" },
-                { "RemainsGyorg", "AreaGyorgsLair" },
-                { "RemainsTwinmold", "AreaTwinmoldsLair" }
-            };
-
-            foreach(var trick in Settings.GetValueAs<string, string[]>("EnabledTricks"))
+            Debug.WriteLine("Toggling Tricks");
+            foreach (var trick in Settings.GetValueAs<string, string[]>("EnabledTricks"))
             {
                 var Trick = Container.Instance.GetMacroByID(trick);
                 if (Trick is null) { Debug.WriteLine($"trick {trick} was not valid"); continue; }
@@ -188,25 +144,8 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 Trick.TrickEnabled = true;
             }
 
-            //Keep track of boss door locations even if they aren't randomized
-            Dictionary<string, string> BossDoorMapping = new Dictionary<string, string>()
-            {
-                { "AreaOdolwasLair", "AreaOdolwasLair" },
-                { "AreaGohtsLair", "AreaGohtsLair" },
-                { "AreaGyorgsLair", "AreaGyorgsLair" },
-                { "AreaTwinmoldsLair", "AreaTwinmoldsLair" }
-            };
-            foreach(var E in EntranceLocationDict)
-            {
-                var Entrance = Container.Instance.LocationPool.First(x => x.Value.GetDictEntry().SpoilerData.SpoilerLogNames.Contains(E.Key)).Value;
-                var Destination = Container.Instance.ItemPool.First(x => x.Value.GetDictEntry().SpoilerData.SpoilerLogNames.Contains(E.Value)).Value;
-
-                Entrance.SetRandomizedState(RandomizedState.Randomized);
-                Entrance.Randomizeditem.SpoilerLogGivenItem = Destination.ID;
-                if (BossDoorMapping.ContainsKey(Entrance.ID)) { BossDoorMapping[Entrance.ID] = Destination.ID; }
-            }
-
-            foreach(var i in Container.Instance.LocationPool.Values)
+            Debug.WriteLine("Setting Unrandomized starting items to Junk");
+            foreach (var i in Container.Instance.LocationPool.Values)
             {
                 if (i.IsUnrandomized(UnrandState.Any))
                 {
@@ -219,6 +158,38 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 }
             }
 
+
+            Debug.WriteLine("Handle Entrances");
+            //Keep track of boss door locations even if they aren't randomized
+            Dictionary<string, string> BossDoorMapping = new Dictionary<string, string>()
+            {
+                { "AreaOdolwasLair", "AreaOdolwasLair" },
+                { "AreaGohtsLair", "AreaGohtsLair" },
+                { "AreaGyorgsLair", "AreaGyorgsLair" },
+                { "AreaTwinmoldsLair", "AreaTwinmoldsLair" }
+            };
+            Dictionary<string, string> EntranceLocationDict = new Dictionary<string, string>();
+            if (EntranceIndex > -1)
+            {
+                List<string> EntrancesList = Container.Instance.SpoilerLog.Log.ToList().GetRange((EntranceIndex+1)..(EntranceIndexEnd));
+                EntranceLocationDict = GetEntranceLocationData(EntrancesList);
+            }
+            foreach (var E in EntranceLocationDict)
+            {
+                var Entrance = Container.Instance.LocationPool.First(x => x.Value.GetDictEntry().SpoilerData.SpoilerLogNames.Contains(E.Key)).Value;
+                var Destination = Container.Instance.ItemPool.First(x => x.Value.GetDictEntry().SpoilerData.SpoilerLogNames.Contains(E.Value)).Value;
+
+                Entrance.SetRandomizedState(RandomizedState.Randomized);
+                Entrance.Randomizeditem.SpoilerLogGivenItem = Destination.ID;
+                if (BossDoorMapping.ContainsKey(Entrance.ID)) { BossDoorMapping[Entrance.ID] = Destination.ID; }
+            }
+
+
+            Debug.WriteLine("Parsing Item Locations");
+            List<string> ItemLocations = Container.Instance.SpoilerLog.Log.ToList().GetRange((ItemLocationIndex+1)..(ItemLocationIndexEnd)).Select(x => x.Trim()).Where(x => !string.IsNullOrWhiteSpace(x)).ToList();
+            var ItemLocationDict = GetItemLocationData(ItemLocations, Container.Instance);
+
+            Debug.WriteLine("Handle Item Locations");
             foreach (var data in ItemLocationDict)
             {
                 string RawLocation = data.Key;
@@ -247,7 +218,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 if (Item is null)
                 {
                     Debug.WriteLine($"No more {RawItem} Could Be Placed. Assuming Junk?");
-                    SpoilerLocation.Randomizeditem.SpoilerLogGivenItem = $"FAKE: {RawItem}";
+                    SpoilerLocation.Randomizeditem.SpoilerLogGivenItem = $"{RawItem}";
                 }
                 else
                 {
@@ -255,6 +226,38 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 }
             }
 
+            Debug.WriteLine("Handle Prices");
+            if (CostIndex > -1)
+            {
+                var PriceData = Container.Instance.SpoilerLog.Log.ToList().GetRange((CostIndex+1)..(CostIndexEnd-1));
+                foreach (var line in PriceData)
+                {
+                    if (string.IsNullOrWhiteSpace(line) || !line.Contains("->")) { continue; }
+                    var pricedata = line.Split("->");
+                    string Location = pricedata[0].Trim();
+                    int Price = int.Parse(pricedata[1]);
+
+                    object LocationObj = Container.Instance.LocationPool.FirstOrDefault(x => x.Value.GetDictEntry().SpoilerData.PriceDataNames.Contains(Location)).Value;
+                    LocationObj ??= Container.Instance.LocationPool.FirstOrDefault(x => x.Value.GetDictEntry().Name == Location).Value;
+                    LocationObj ??= Container.Instance.MacroPool.FirstOrDefault(x => x.Value.GetDictEntry().SpoilerData.PriceDataNames.Contains(Location)).Value;
+                    LocationObj ??= Container.Instance.MacroPool.FirstOrDefault(x => x.Value.GetDictEntry().ID == Location).Value;
+                    if (LocationObj is MacroObject MO && (MO.Price is null || MO.Price < 0 || Price < MO.Price))
+                    {
+                        MO.Price = Price;
+                    }
+                    else if (LocationObj is LocationData.LocationObject LO && (LO.Price is null || LO.Price < 0 || Price < LO.Price))
+                    {
+                        LO.Price = Price;
+                    }
+                    else
+                    {
+                        Debug.WriteLine($"Price line {Location}|{Price} was not assigned");
+                    }
+                }
+
+            }
+
+            Debug.WriteLine("Handle Gossip Hints");
             if (GossipIndex > -1)
             {
                 List<string> HintLocations = Container.Instance.SpoilerLog.Log.ToList().GetRange((GossipIndex+1)..(GossipIndexEnd)).Select(x => x.Trim()).Where(x => !string.IsNullOrWhiteSpace(x)).ToList();
@@ -291,11 +294,18 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             }
 
 
+            Debug.WriteLine("Handle Blitz");
+            List<string> BlitzStartingItems = new List<string>();
+            if (BlitzStartingItemsIndex > -1)
+            {
+                BlitzStartingItems = Container.Instance.SpoilerLog.Log.ToList().GetRange((BlitzStartingItemsIndex+1)..(BlitzStartingItemsEnd)).Where(x => !string.IsNullOrWhiteSpace(x)).ToList();
+            }
             if (BlitzStartingItems.Any())
             {
-                HandleBlitzJunkedDungeons(Container.Instance, EntranceLocationDict, BlitzStartingItems);
+                HandleBlitzJunkedDungeons(Container.Instance, BlitzStartingItems);
             }
 
+            Debug.WriteLine("Check for Missed locations");
             foreach (var i in Container.Instance.LocationPool.Values)
             {
                 if (i.RandomizedState != RandomizedState.Randomized) { continue; }
@@ -304,16 +314,10 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 Debug.WriteLine($"{i.ID} Was Randomized with no Spoiler Data and Could not be Unrandomized");
             }
 
-            foreach (var item in BlitzStartingItems)
-            {
-                //var Item = Container.Instance.GetItemToPlace(item, DoNameEdits: true);
-                //Item.AmountInStartingpool = 1;
-            }
-
-
+            Debug.WriteLine("Done!");
         }
 
-        private static void HandleBlitzJunkedDungeons(InstanceData.TrackerInstance instance, Dictionary<string, string> entranceLocationDict, List<string> blitzStartingItems)
+        private static void HandleBlitzJunkedDungeons(InstanceData.TrackerInstance instance, List<string> blitzStartingItems)
         {
             HashSet<string> LockedByBlitzCache = new HashSet<string>();
             HashSet<string> InaccessableItems = GetBlitzDungeons(instance, blitzStartingItems, out HashSet<string> BlitzStartingItems);
@@ -565,6 +569,15 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
         {
             List<string> AllOptions = instance.ChoiceOptions.Keys.Concat(instance.MultiSelectOptions.Keys).Concat(instance.ToggleOptions.Keys).Concat(instance.IntOptions.Keys).ToList();
             List<string> ValidSpoilerOptions = new List<string>();
+
+            bool GaroHints = Settings.GetValueAs<string, string>("GaroHintStyle") != "Default";
+            bool GossipHints = Settings.GetValueAs<string, string>("GossipHintStyle") != "Default";
+
+            foreach(var i in instance.HintPool)
+            {
+                if (i.Key.StartsWith("Gossip")) { i.Value.RandomizedState = GossipHints ? RandomizedState.Randomized : RandomizedState.ForcedJunk; }
+                if (i.Key.StartsWith("HintGaro")) { i.Value.RandomizedState = GaroHints ? RandomizedState.Randomized : RandomizedState.ForcedJunk; }
+            }
 
             foreach (var i in Settings)
             {
