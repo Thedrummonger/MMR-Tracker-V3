@@ -20,14 +20,8 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
         public class MMRSpoilerLogItemLocation
         {
             public List<string> Locations = new List<string>();
-            public List<MMRSpoilerLogItemData> Item = new List<MMRSpoilerLogItemData>();
+            public List<string> Items = new List<string>();
             public Dictionary<string, string> Result = new Dictionary<string, string>();
-        }
-        public class MMRSpoilerLogItemData
-        {
-            public string Item;
-            public string Area;
-            public bool IsJunk = false;
         }
         public static void ReadAndApplySpoilerLog(InstanceContainer Container)
         {
@@ -449,24 +443,14 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
         private static Dictionary<string, string> GetItemLocationData(List<string> itemLocations, TrackerInstance instance)
         {
             Dictionary<string, MMRSpoilerLogItemLocation> ItemLocationDict = new Dictionary<string, MMRSpoilerLogItemLocation>();
-            string CurrentArea = "";
             foreach (var ItemLocation in itemLocations)
             {
                 if (string.IsNullOrWhiteSpace(ItemLocation)) { continue; }
-                if (!ItemLocation.Contains("->")) 
-                {
-                    CurrentArea = ItemLocation.Trim();
-                    continue; 
-                }
+                if (!ItemLocation.Contains("->")) { continue; }
 
                 string[] Data = ItemLocation.Split("->");
                 string Location = Data[0].Trim();
-                bool IsJunk = false;
-                if (Location.StartsWith("- ")) 
-                {
-                    IsJunk = true;
-                    Location = Location[2..];
-                }
+                if (Location.StartsWith("- ")) { Location = Location[2..]; }
                 ItemLocationDict.SetIfEmpty(Location, new MMRSpoilerLogItemLocation());
 
                 string Item = Data[1].Replace("*", "").Replace("^", "").Trim();
@@ -475,36 +459,32 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 if (Item.StartsWith("Nothing")) { Item = "Nothing"; }
                 if (Item.StartsWith("Rupoor")) { Item = "Rupoor"; }
 
-                ItemLocationDict[Location].Item.Add(new MMRSpoilerLogItemData
-                {
-                    Item = Item,
-                    Area = CurrentArea,
-                    IsJunk = IsJunk,
-                });
+                ItemLocationDict[Location].Items.Add(Item);
             }
 
             foreach(var i in ItemLocationDict)
             {
                 i.Value.Locations = instance.LocationPool.Values.Where(x => !x.IsUnrandomized() && x.GetDictEntry().SpoilerData.SpoilerLogNames.Contains(i.Key)).Select(x => x.ID).ToList();
 
-                TryCreateResult(i.Value, i.Value.Item);
-                if (!i.Value.Result.Any())
+                var DistinctItems = i.Value.Items.Distinct().ToList();
+
+                if (i.Value.Locations.Count < 1) { throw new Exception($"No Valid Locations Found\n{i.ToFormattedJson()}"); }
+                if (i.Value.Locations.Count > 2) { throw new Exception($"{i.Value.Locations.Count} valid locations found, this should never be more than 2\n{i.ToFormattedJson()}"); }
+                if (DistinctItems.Count < 1) { throw new Exception($"No items found? This should be impossible\n{i.ToFormattedJson()}"); }
+                if (DistinctItems.Count > 2) { throw new Exception($"{i.Value.Locations.Count} Distinct Items found, this should never be more than 2\n{i.ToFormattedJson()}"); }
+                if (i.Value.Locations.Count < DistinctItems.Count) { throw new Exception($"More distinct items than locations to place them\n{i.ToFormattedJson()}"); }
+                if (i.Value.Locations.Count > DistinctItems.Count) { DistinctItems.Add(DistinctItems.First()); }
+                foreach (var j in i.Value.Locations)
                 {
-                    List<MMRSpoilerLogItemData> DistinctItems = new List<MMRSpoilerLogItemData>();
-                    foreach (var j in i.Value.Item)
-                    {
-                        if (!DistinctItems.Any(x => x.Item == j.Item && x.Area != j.Area)) { DistinctItems.Add(j); }
-                    }
-                    TryCreateResult(i.Value, DistinctItems);
+                    int Index = i.Value.Locations.IndexOf(j);
+                    i.Value.Result.Add(j, DistinctItems[Index]);
                 }
             }
-
-            //Debug.WriteLine($"ItemLocationDict:\n{ItemLocationDict.Where(x => x.Value.Locations.Count() > 1 || x.Value.Item.Count() > 1).ToFormattedJson()}");
 
             Dictionary<string, string> Result = new Dictionary<string, string>();
             foreach (var i in ItemLocationDict)
             {
-                if (!i.Value.Result.Any()) { throw new Exception($"Could not parse line data\n{i.ToFormattedJson()}"); }
+                if (!i.Value.Result.Any()) { throw new Exception($"Could not parse spoiler location/item data\n{i.ToFormattedJson()}"); }
                 foreach(var r in i.Value.Result)
                 {
                     Result.Add(r.Key, r.Value);
@@ -512,22 +492,6 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             }
 
             return Result;
-
-            void TryCreateResult(MMRSpoilerLogItemLocation itemLoc, List<MMRSpoilerLogItemData> Items)
-            {
-                if (itemLoc.Locations.Count == Items.Count)
-                {
-                    foreach (var x in itemLoc.Locations)
-                    {
-                        int Index = itemLoc.Locations.IndexOf(x);
-                        itemLoc.Result.Add(x, Items[Index].Item);
-                    }
-                }
-                else if (itemLoc.Locations.Count == 1)
-                {
-                    itemLoc.Result.Add(itemLoc.Locations.First(), Items.First().Item);
-                }
-            }
         }
 
         private static void ApplySettings(InstanceData.TrackerInstance instance, Dictionary<string, object> Settings)
