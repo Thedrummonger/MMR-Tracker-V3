@@ -18,7 +18,7 @@ namespace TestingForm
             MainInterface.CurrentProgram.LBValidLocations.SelectedIndexChanged += LBSelectedIndexChanged;
             MainInterface.CurrentProgram.LBValidEntrances.SelectedIndexChanged += LBSelectedIndexChanged;
             MainInterface.CurrentProgram.LBCheckedLocations.SelectedIndexChanged += LBSelectedIndexChanged;
-            MMR_Tracker_V3.TrackerDataHandeling.CheckedObjectsUpdate += TrackerDataHandeling_CheckedObjectsUpdate;
+            MMR_Tracker_V3.LocationChecker.CheckedObjectsUpdate += TrackerDataHandeling_CheckedObjectsUpdate;
             WinFormInstanceCreation.InstanceCreated += WinFormInstanceCreation_InstanceCreated;
         }
 

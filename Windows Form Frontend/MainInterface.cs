@@ -16,6 +16,7 @@ using System.Windows.Forms;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
 using static MMR_Tracker_V3.InstanceData;
 using static System.Windows.Forms.AxHost;
+using MMR_Tracker_V3.Logic;
 
 namespace Windows_Form_Frontend
 {
@@ -694,7 +695,7 @@ namespace Windows_Form_Frontend
                         SaveTrackerState(InstanceContainer.Instance.ToJson(JSONType.UTF8));
                         ChoiceOption.SetValue((toolStripComboBox.SelectedItem as MiscData.OptionComboboxItem).Value as string);
                         if (!InstanceContainer.logicCalculation.ReCompileLogicOnCalculation) { InstanceContainer.logicCalculation.CompileOptionActionEdits(); }
-                        TrackerDataHandeling.TriggerCheckedObjectsUpdate(new List<object> { ChoiceOption }, InstanceContainer.Instance, MiscData.CheckState.Checked);
+                        LocationChecker.TriggerCheckedObjectsUpdate(new List<object> { ChoiceOption }, InstanceContainer.Instance, MiscData.CheckState.Checked);
                         InstanceContainer.logicCalculation.CalculateLogic();
                         UpdateUI();
                     };
@@ -715,7 +716,7 @@ namespace Windows_Form_Frontend
                             SaveTrackerState(InstanceContainer.Instance.ToJson(JSONType.UTF8));
                             MultiSelectOption.ToggleValue(i.Key);
                             if (!InstanceContainer.logicCalculation.ReCompileLogicOnCalculation) { InstanceContainer.logicCalculation.CompileOptionActionEdits(); }
-                            TrackerDataHandeling.TriggerCheckedObjectsUpdate(new List<object> { MultiSelectOption }, InstanceContainer.Instance, MiscData.CheckState.Checked);
+                            LocationChecker.TriggerCheckedObjectsUpdate(new List<object> { MultiSelectOption }, InstanceContainer.Instance, MiscData.CheckState.Checked);
                             InstanceContainer.logicCalculation.CalculateLogic();
                             UpdateUI();
                         };
@@ -733,7 +734,7 @@ namespace Windows_Form_Frontend
                         SaveTrackerState(InstanceContainer.Instance.ToJson(JSONType.UTF8));
                         ToggleOption.ToggleValue();
                         if (!InstanceContainer.logicCalculation.ReCompileLogicOnCalculation) { InstanceContainer.logicCalculation.CompileOptionActionEdits(); }
-                        TrackerDataHandeling.TriggerCheckedObjectsUpdate(new List<object> { ToggleOption }, InstanceContainer.Instance, MiscData.CheckState.Checked);
+                        LocationChecker.TriggerCheckedObjectsUpdate(new List<object> { ToggleOption }, InstanceContainer.Instance, MiscData.CheckState.Checked);
                         InstanceContainer.logicCalculation.CalculateLogic();
                         UpdateUI();
                     };
@@ -1009,7 +1010,7 @@ namespace Windows_Form_Frontend
                 .SetCheckCoiceOptions(HandleUnassignedChecks)
                 .SetCheckIntOPtions(HandleUnassignedVariables);
 
-            var UpdatedObjects = TrackerDataHandeling.CheckSelectedItems(Items, InstanceContainer, CheckObjectOptions);
+            var UpdatedObjects = LocationChecker.CheckSelectedItems(Items, InstanceContainer, CheckObjectOptions);
 
             if (UpdatedObjects.Any()) 
             {

@@ -9,12 +9,12 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MMR_Tracker_V3
+namespace MMR_Tracker_V3.Logic
 {
     public class LogicFileParser
     {
         /// <summary>
-        /// Reads the logic data from a logic file or spoiler log.
+        /// Reads the logic data from a logic file.
         /// </summary>
         /// <param name="File">The lines of the spoiler log as an array</param>
         /// <param name="WasSpoilerLog">returns true if the file was a spoiler log and conatined spoiler data</param>
@@ -24,7 +24,7 @@ namespace MMR_Tracker_V3
             return ParseFile(File);
         }
         /// <summary>
-        /// Reads the logic data from a logic file or spoiler log.
+        /// Reads the logic data from a logic file.
         /// </summary>
         /// <param name="LogicFile">Either the file path to the logicfile/spoiler log or the contents of the file as a string.</param>
         /// <param name="WasSpoilerLog">returns true if the file was a spoiler log and conatined spoiler data</param>
@@ -56,8 +56,8 @@ namespace MMR_Tracker_V3
         {
             try
             {
-                var LogicFile = MMRData.LogicFile.FromJson(String.Join("", LogFile));
-                return true;
+                var LogicFile = MMRData.LogicFile.FromJson(string.Join("", LogFile));
+                return LogicFile is not null;
             }
             catch { return false; }
         }

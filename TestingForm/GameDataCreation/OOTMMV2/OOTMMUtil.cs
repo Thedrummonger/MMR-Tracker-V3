@@ -1,4 +1,5 @@
-﻿using MMR_Tracker_V3.TrackerObjects;
+﻿using MMR_Tracker_V3.Logic;
+using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -29,8 +30,8 @@ namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
         public static bool LogicEntryHasGamecode(string LogicItem)
         {
             if (bool.TryParse(LogicItem, out _)) { return true; }
-            if (LogicEditing.IsLogicFunction(LogicItem, out _, out _, new('(', ')'))) { return true; }
-            if (LogicEditing.IsLogicFunction(LogicItem, out _, out _)) { return true; }
+            if (LogicFunctions.IsLogicFunction(LogicItem, out _, out _, new('(', ')'))) { return true; }
+            if (LogicFunctions.IsLogicFunction(LogicItem, out _, out _)) { return true; }
             if (LogicItem.StartsWith("OOT_")) { return true; }
             if (LogicItem.StartsWith("MM_")) { return true; }
             if (LogicItem.StartsWith("SHARED_")) { return true; }

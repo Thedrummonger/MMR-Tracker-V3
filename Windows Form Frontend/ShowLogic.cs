@@ -1,4 +1,5 @@
 ﻿using MMR_Tracker_V3;
+using MMR_Tracker_V3.Logic;
 using MMR_Tracker_V3.TrackerObjectExtentions;
 using MMR_Tracker_V3.TrackerObjects;
 using System;
@@ -45,12 +46,12 @@ namespace Windows_Form_Frontend
                 BottomPosCut = LBReq.Location.Y + LBReq.Height,
             };
             TimeCheckBoxes = new() { ND1, NN1, ND2, NN2, ND3, NN3, SD1, SN1, SD2, SN2, SD3, SN3 };
-            TrackerDataHandeling.CheckedObjectsUpdate += TrackerDataHandeling_CheckedObjectsUpdate;
+            LocationChecker.CheckedObjectsUpdate += TrackerDataHandeling_CheckedObjectsUpdate;
         }
 
         private void ShowLogic_FormClosed(object sender, FormClosedEventArgs e)
         {
-            TrackerDataHandeling.CheckedObjectsUpdate -= TrackerDataHandeling_CheckedObjectsUpdate;
+            LocationChecker.CheckedObjectsUpdate -= TrackerDataHandeling_CheckedObjectsUpdate;
         }
 
         private void TrackerDataHandeling_CheckedObjectsUpdate(List<object> arg1, MMR_Tracker_V3.InstanceData.TrackerInstance arg2, MiscData.CheckState checkState)
@@ -368,7 +369,7 @@ namespace Windows_Form_Frontend
             Dictionary<string, LogicEntryType> NewList = new Dictionary<string, LogicEntryType>();
             foreach (var i in CurrentList.Where(x => x.Value == LogicEntryType.function))
             {
-                LogicEditing.IsLogicFunction(i.Key, out string Func, out string Param);
+                LogicFunctions.IsLogicFunction(i.Key, out string Func, out string Param);
                 if (Func == "contains")
                 {
                     var Data = Param.Split(',').Select(x => x.Trim()).ToArray();
@@ -414,7 +415,7 @@ namespace Windows_Form_Frontend
             Dictionary<string, LogicEntryType> NewList = new Dictionary<string, LogicEntryType>();
             foreach (var i in CurrentList.Where(x => x.Value == LogicEntryType.function))
             {
-                LogicEditing.IsLogicFunction(i.Key, out string Func, out string Param);
+                LogicFunctions.IsLogicFunction(i.Key, out string Func, out string Param);
                 if (Func == "contains")
                 {
                     var Data = Param.Split(',').Select(x => x.Trim()).ToArray();

@@ -1,4 +1,5 @@
 ﻿using MathNet.Numerics;
+using MMR_Tracker_V3.Logic;
 using MMR_Tracker_V3.TrackerObjectExtentions;
 using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
@@ -363,7 +364,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                     }
                     if (Logic.ConditionalItems.Any())
                     {
-                        var NewConditionals = Logic.ConditionalItems.Where(x => !x.Any(x => LockedByDefault(x)));
+                        var NewConditionals = Logic.ConditionalItems.Where(x => !x.Any(x => instance.ISLogicItemNeverObtainable(x)));
                         if (NewConditionals.Any() && NewConditionals.All(set => set.Any(x => LockedByBlitz(x))))
                         {
                             InaccessableLocations.Add(i.Key);
@@ -383,7 +384,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                     }
                     if (Logic.ConditionalItems.Any())
                     {
-                        var NewConditionals = Logic.ConditionalItems.Where(x => !x.Any(x => LockedByDefault(x)));
+                        var NewConditionals = Logic.ConditionalItems.Where(x => !x.Any(x => instance.ISLogicItemNeverObtainable(x)));
                         if (NewConditionals.Any() && NewConditionals.All(set => set.Any(x => LockedByBlitz(x))))
                         {
                             InaccessableMacros.Add(i.Key);
@@ -421,7 +422,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             bool LockedByBlitz(string Item)
             {
                 if (LockedByBlitzCache.Contains(Item)) { return true; }
-                if (LogicEditing.IsLogicFunction(Item, out string Func, out string Param))
+                if (LogicFunctions.IsLogicFunction(Item, out string Func, out string Param))
                 {
                     var Params = Param.Split(",").Select(x => x.Trim()).ToArray();
                     if (Func.In("check", "available") && (InaccessableLocations.Contains(Params[0]) || InaccessableMacros.Contains(Params[0]))) {
@@ -435,28 +436,6 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 var type = instance.GetItemEntryType(LogicItem, Literal, out _);
                 if (InaccessableMacros.Contains(LogicItem)) { LockedByBlitzCache.Add(Item); return true; }
                 if (InaccessableItems.Contains(LogicItem)) { LockedByBlitzCache.Add(Item); return true; }
-                return false;
-            }
-
-            bool LockedByDefault(string Item)
-            {
-                if (LogicEditing.IsLogicFunction(Item, out string Func, out string Param))
-                {
-                    //Debug.WriteLine($"Item Was Function {Func}");
-                    if (Func.In("contains", "trick", "setting", "option", "rand", "randomized")) 
-                    {
-                        //Debug.WriteLine($"Parsing {Func} Function");
-                        LogicEditing.CheckLogicFunction(instance, Item, new List<string>(), out bool FunctionEntryValid);
-                        //Debug.WriteLine($"Valid? {FunctionEntryValid}");
-                        return !FunctionEntryValid;
-                    }
-                    else { return false; }
-                }
-                instance.MultipleItemEntry(Item, out string LogicItem, out int Amount);
-                bool Literal = LogicItem.IsLiteralID(out LogicItem);
-                var type = instance.GetItemEntryType(LogicItem, Literal, out object obj);
-                if (type == LogicEntryType.macro && ((MacroObject)obj).isTrick() && !((MacroObject)obj).TrickEnabled) { return true; }
-                if (type == LogicEntryType.Bool && !bool.Parse(LogicItem)) { return true; }
                 return false;
             }
 

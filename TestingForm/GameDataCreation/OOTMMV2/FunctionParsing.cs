@@ -1,4 +1,5 @@
-﻿using MMR_Tracker_V3.TrackerObjects;
+﻿using MMR_Tracker_V3.Logic;
+using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -66,7 +67,7 @@ namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
                     ParsedConditional = $"{Gamecode}_{ParsedConditional}";
                     FunctionParsed = true;
                 }
-                if (LogicEditing.IsLogicFunction(Conditional, out string Func, out string Param, new('(', ')')))
+                if (LogicFunctions.IsLogicFunction(Conditional, out string Func, out string Param, new('(', ')')))
                 {
                     string OriginalParam = Param;
                     if (LogicEntryHasGamecode(Param))

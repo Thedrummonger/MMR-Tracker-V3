@@ -11,8 +11,9 @@ using static MMR_Tracker_V3.GameDataCreation.OOTMMV2.OOTMMUtil;
 using static MMR_Tracker_V3.GameDataCreation.OOTMMV2.FunctionParsing;
 using System.Xml.Schema;
 using TestingForm;
-using static MMR_Tracker_V3.LogicUtilities;
+using static MMR_Tracker_V3.Logic.LogicUtilities;
 using static TestingForm.GameDataCreation.OOTMMV2.datamodel;
+using MMR_Tracker_V3.Logic;
 
 namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
 {
@@ -116,7 +117,7 @@ namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
 
             string CorrectBossWarpValueMisspelling(string x)
             {
-                if (!LogicEditing.IsLogicFunction(x, out string func, out string Param)) { return x; }
+                if (!LogicFunctions.IsLogicFunction(x, out string func, out string Param)) { return x; }
                 string[] Parameters = Param.Split(',').Select(x => x.Trim()).ToArray();
                 if (Parameters[0] != "bossWarpPads") { return x; }
                 if (Parameters[1] != "Remains") { return x; }

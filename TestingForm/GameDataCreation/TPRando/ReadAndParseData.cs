@@ -1,4 +1,5 @@
 ﻿using MathNet.Symbolics;
+using MMR_Tracker_V3.Logic;
 using MMR_Tracker_V3.SpoilerLogImporter;
 using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;

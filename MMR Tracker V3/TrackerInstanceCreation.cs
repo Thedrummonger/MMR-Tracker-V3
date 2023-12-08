@@ -1,4 +1,5 @@
 ﻿using MathNet.Numerics;
+using MMR_Tracker_V3.Logic;
 using MMR_Tracker_V3.SpoilerLogImporter;
 using MMR_Tracker_V3.TrackerObjectExtentions;
 using MMR_Tracker_V3.TrackerObjects;
@@ -13,7 +14,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml;
 using static MMR_Tracker_V3.InstanceData;
-using static MMR_Tracker_V3.LogicStringParser;
+using static MMR_Tracker_V3.Logic.LogicStringParser;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
 namespace MMR_Tracker_V3

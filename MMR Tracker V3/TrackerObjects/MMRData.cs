@@ -5,7 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static MMR_Tracker_V3.LogicStringParser;
+using static MMR_Tracker_V3.Logic.LogicStringParser;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
 namespace MMR_Tracker_V3.TrackerObjects

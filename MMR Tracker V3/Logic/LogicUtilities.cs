@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 
-namespace MMR_Tracker_V3
+namespace MMR_Tracker_V3.Logic
 {
     public static class LogicUtilities
     {
@@ -141,7 +141,7 @@ namespace MMR_Tracker_V3
                 MathLogicArray = ConvertMathStringToArray(ExpandedMathString, Invert);
                 return RestorelogicValues(MathLogicArray, RefMap);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Utility.PrintObjectToConsole(ParsedLogic);
                 Utility.PrintObjectToConsole(MathString);
@@ -224,24 +224,24 @@ namespace MMR_Tracker_V3
 
         private static string ExpandMathExpressionString(string MathLogic)
         {
-            MathNet.Symbolics.Expression LogicSet = Infix.ParseOrThrow(MathLogic);
+            Expression LogicSet = Infix.ParseOrThrow(MathLogic);
             var Output = Algebraic.Expand(LogicSet);
             return Infix.Format(Output).Replace(" ", "");
         }
 
         private static List<List<string>> ConvertMathStringToArray(string MathString, bool invert = false)
         {
-            if (invert) 
-            { 
+            if (invert)
+            {
                 MathString = MathString.Replace("+", "++").Replace("*", "**");
                 MathString = MathString.Replace("++", "*").Replace("**", "+");
             }
             var MathArray = MathString.Split('+').Select(x => x.Split('*').ToList()).ToList();
             List<List<string>> CleanedArray = new List<List<string>>();
-            foreach(var set in MathArray)
+            foreach (var set in MathArray)
             {
                 List<string> CleanedSet = new List<string>();
-                foreach(var item in set)
+                foreach (var item in set)
                 {
                     if (int.TryParse(item, out _)) { continue; }
                     CleanedSet.Add(item);
@@ -254,10 +254,10 @@ namespace MMR_Tracker_V3
         private static List<List<string>> RestorelogicValues(List<List<string>> MathLogicArray, Dictionary<string, string> logicObjectMap)
         {
             return MathLogicArray.Select(x => x.Select(y => Convert(y)).ToList()).ToList();
-            string Convert(string entry) 
-            { 
+            string Convert(string entry)
+            {
                 if (entry.Contains('^')) { entry = entry[..entry.IndexOf("^")]; }
-                return logicObjectMap[entry]; 
+                return logicObjectMap[entry];
             }
         }
 

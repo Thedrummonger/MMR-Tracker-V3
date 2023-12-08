@@ -1,4 +1,5 @@
-﻿using MMR_Tracker_V3.TrackerObjects;
+﻿using MMR_Tracker_V3.Logic;
+using MMR_Tracker_V3.TrackerObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -113,7 +114,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
 
             if (bool.TryParse(ID, out bool result)) { obj = result; return LogicEntryType.Bool; }
             obj = null;
-            if (LogicEditing.CheckLogicFunction(instance, OriginalID, new List<string>(), out _, false)) { return LogicEntryType.function; }
+            if (LogicFunctions.CheckLogicFunction(instance, OriginalID, new List<string>(), out _, false)) { return LogicEntryType.function; }
             return LogicEntryType.error;
         }
 
@@ -253,7 +254,6 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             if (DoEdits) 
             { 
                 LogicEditing.HandleOptionLogicEdits(actions, ID, CopyRequirements, CopyConditionals, out CopyRequirements, out CopyConditionals);
-                LogicEditing.HandleOptionLogicEdits(actions, ID, CopyRequirements, CopyConditionals, out CopyRequirements, out CopyConditionals);
             }
 
             return new MMRData.JsonFormatLogicItem
@@ -270,50 +270,26 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             };
         }
 
-        public static List<string> GetAllInaccessableLogic(this TrackerInstance instance)
+        public static bool ISLogicItemNeverObtainable(this TrackerInstance instance, string LogicItem)
         {
-            List<string> InaccessableLogic = new List<string>();
-            bool InaccessableFound = true;
-            while (InaccessableFound)
+            if (LogicFunctions.IsLogicFunction(LogicItem, out string Func, out string Param))
             {
-                InaccessableFound = false;
-                foreach (var i in instance.LogicFile.Logic)
+                //Debug.WriteLine($"Item Was Function {Func}");
+                if (Func.In("contains", "trick", "setting", "option", "rand", "randomized"))
                 {
-                    if (InaccessableLogic.Contains(i.Id)) { continue; }
-                    if (instance.IsLogicInaccessable(i.Id, InaccessableLogic))
-                    {
-                        InaccessableLogic.Add(i.Id);
-                        InaccessableFound = true;
-                    }
+                    //Debug.WriteLine($"Parsing {Func} Function");
+                    LogicFunctions.CheckLogicFunction(instance, LogicItem, new List<string>(), out bool FunctionEntryValid);
+                    //Debug.WriteLine($"Valid? {FunctionEntryValid}");
+                    return !FunctionEntryValid;
                 }
+                else { return false; }
             }
-            return InaccessableLogic;
-        }
-
-        public static bool IsLogicInaccessable(this TrackerInstance instance, string OriginalID, List<string> KnownInaccessable = null)
-        {
-            var Logic = instance.GetLogic(OriginalID);
-            if (RequirementInaccessable(Logic.RequiredItems)) { return true; }
-            if (Logic.ConditionalItems.Any() && Logic.ConditionalItems.All(c => RequirementInaccessable(c))) { return true; }
+            instance.MultipleItemEntry(LogicItem, out string CleanedItem, out int Amount);
+            bool Literal = CleanedItem.IsLiteralID(out CleanedItem);
+            var type = instance.GetItemEntryType(CleanedItem, Literal, out object obj);
+            if (type == LogicEntryType.macro && ((MacroObject)obj).isTrick() && !((MacroObject)obj).TrickEnabled) { return true; }
+            if (type == LogicEntryType.Bool && !bool.Parse(CleanedItem)) { return true; }
             return false;
-
-            bool RequirementInaccessable(List<string> Req)
-            {
-                return Req.Any(x => IsInacceableEntry(x));
-            }
-
-            bool IsInacceableEntry(string x)
-            {
-                if (KnownInaccessable is not null && KnownInaccessable.Contains(x)) { return true; }
-                if (bool.TryParse(x, out bool FoundBool) && !FoundBool) { return true; }
-                if (LogicEditing.IsLogicFunction(x, out string func, out string Param) && func == "option" && !LogicEditing.CheckOptionFunction(instance, Param.Split(",").Select(x => x.Trim()).ToArray()))
-                {
-                    return true;
-                }
-                var SubLogic = instance.GetLogic(x);
-                if (SubLogic is not null && SubLogic.IsTrick && instance.MacroPool.ContainsKey(x) && !instance.MacroPool[x].TrickEnabled) { return true; }
-                return false;
-            }
         }
 
 
@@ -322,7 +298,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             Item = Entry;
             Amount = 1;
             if (!Entry.Contains(",")) { return false; }
-            if (LogicEditing.CheckLogicFunction(instance, Entry, new List<string>(), out _, false)) { return false; }
+            if (LogicFunctions.CheckLogicFunction(instance, Entry, new List<string>(), out _, false)) { return false; }
             var data = Entry.Split(',').Select(x => x.Trim()).ToArray();
             Item = data[0];
             if (data.Length != 2) { return false; }

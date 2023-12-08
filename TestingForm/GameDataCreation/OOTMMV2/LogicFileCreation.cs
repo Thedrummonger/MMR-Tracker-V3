@@ -1,4 +1,5 @@
-﻿using MMR_Tracker_V3.TrackerObjects;
+﻿using MMR_Tracker_V3.Logic;
+using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -45,7 +46,7 @@ namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
                 var FileOBJ = JsonConvert.DeserializeObject<Dictionary<string, string>>(Utility.ConvertYamlStringToJsonString(File.ReadAllText(MacroFile)));
                 foreach (var item in FileOBJ)
                 {
-                    if (LogicEditing.IsLogicFunction(item.Key, out string Func, out _, new('(', ')')))
+                    if (LogicFunctions.IsLogicFunction(item.Key, out string Func, out _, new('(', ')')))
                     {
                         Debug.WriteLine($"Skipping Function Macro {item.Key}");
                         continue;

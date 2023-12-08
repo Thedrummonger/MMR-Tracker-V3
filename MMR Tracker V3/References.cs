@@ -10,7 +10,7 @@ namespace MMR_Tracker_V3
 {
     public static class References
     {
-        public static string trackerVersion = "V1.3.0";
+        public static string trackerVersion = "V2.0.0";
         public static UpdateManager.TrackerVersionStatus TrackerVersionStatus = new UpdateManager.TrackerVersionStatus();
 
         public static OSPlatform? CurrentOS = 
@@ -25,12 +25,9 @@ namespace MMR_Tracker_V3
 
             public static readonly string RecourcesFolder = Path.Combine(BaseProgramPath, "Recources");
             public static readonly string PresetFolder = Path.Combine(RecourcesFolder, "Presets");
-            public static readonly string OtherFilesFolder = Path.Combine(RecourcesFolder, "Presets");
 
             public static readonly string BaseDictionaryPath = Path.Combine(RecourcesFolder, "Dictionaries");
             public static readonly string CategoryTextFile = Path.Combine(RecourcesFolder, "Categories.txt");
-            public static readonly string BaseLogicPresetPath = Path.Combine(OtherFilesFolder, "Custom Logic Presets");
-            public static readonly string BaseOtherGameLogic = Path.Combine(OtherFilesFolder, "Other Game Premade Logic");
             public static readonly string WebPresets = Path.Combine(PresetFolder, "WebPresets.txt");
 
             public static readonly string BaseAppdataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "MMRTracker");
