@@ -162,7 +162,6 @@ namespace MMR_Tracker_V3
             public InstanceContainer()
             {
                 logicCalculation = new LogicCalculation(this);
-                _Instance = new TrackerInstance(this);
             }
             private InstanceData.TrackerInstance _Instance;
             public InstanceData.TrackerInstance Instance
@@ -171,6 +170,10 @@ namespace MMR_Tracker_V3
                 {
                     _Instance?.SetParentContainer(this);
                     return _Instance;
+                }
+                set
+                {
+                    ApplyInstance(value);
                 }
             }
             public LogicCalculation logicCalculation { get; set; }

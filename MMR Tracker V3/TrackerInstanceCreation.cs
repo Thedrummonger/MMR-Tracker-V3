@@ -35,6 +35,7 @@ namespace MMR_Tracker_V3
         }
         public static InstanceState ApplyLogicAndDict(this InstanceContainer Container, string LogicData, string DictionaryData = null)
         {
+            Container.Instance ??= new TrackerInstance(Container);
             try { Container.Instance.LogicFile = MMRData.LogicFile.FromJson(LogicData); }
             catch { return InstanceState.LogicFailure; }
             if (DictionaryData is null)
