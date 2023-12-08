@@ -17,6 +17,40 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
 {
     public static class MMRSpoilerLogTools
     {
+        public static string[] GossipMessageStartSentences = new string[]
+        {
+                "They say",
+                "I hear",
+                "It seems",
+                "Apparently,",
+                "It appears"
+        };
+        public static string[] GossipMessageMidSentences = new string[]
+        {
+                "leads to",
+                "yields",
+                "brings",
+                "holds",
+                "conceals",
+                "possesses"
+        };
+        public static string[] GossipJunkMessages = new string[]
+        {
+                "\x1E\x69\x4FThey say that Jimmie1717's mod\x11lottery is \x01RIGGED!\x00\xBF",
+                "\x1E\x69\x4FReal ZELDA players use HOLD targeting!\xBF",
+                "\x1E\x69\x4FThey say items are random...\xBF",
+                "\x1E\x69\x4FThey say the \x05" + "blue dog\x00 shall prevail...\xBF",
+                "\x1E\x69\x4FMy body craves for the touch of\x11\x01mashed potatoes\x00...\xBF",
+                "\x1E\x69\x2B" + "Dear Mario, please come to the \x11" + "castle. I've baked a cake for you.\x11Yours truly, Princess Toadstool\x11\x06Peach\x00\xBF",
+                "\x1E\x69\x56I overheard something useful:\x11\xDF\xBF",
+                "\x1E\x69\x56I overheard something useful:\x11\xD6\xBF",
+                "\x1E\x69\x4FThey say the best button for bombchus\x11is \x04\xB7\x00...\xBF",
+                "\x1E\x69\x4FThey say the key to victory is\x11" + "beating the game...\xBF",
+                "\x1E\x38\x0BThey say a certain player once stole\x11their items back from Takkuri...\xBF",
+                "\x1E\x69\x4FThey say wearing the \x01" + "Bremen Mask\x00\x11increases your chances of beating the\x11Gorman bros...\xBF",
+                "\x1E\x69\x6FUse the boost to get through!\xBF",
+                "\x1E\x69\x4FThey say the \x04gold dog\x00 cheats...\xBF"
+        };
         public class MMRSpoilerLogItemLocation
         {
             public List<string> Locations = new List<string>();
@@ -219,6 +253,42 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                     SpoilerLocation.Randomizeditem.SpoilerLogGivenItem = Item.ID;
                 }
             }
+
+            if (GossipIndex > -1)
+            {
+                List<string> HintLocations = Container.Instance.SpoilerLog.Log.ToList().GetRange((GossipIndex+1)..(GossipIndexEnd)).Select(x => x.Trim()).Where(x => !string.IsNullOrWhiteSpace(x)).ToList();
+                foreach(var HintLocation in HintLocations)
+                {
+                    if (!HintLocation.Contains("->")) { continue; }
+                    var data = HintLocation.Split("->").Select(x => x.Trim()).ToArray();
+                    string GossipStone = data[0];
+                    string GossipTextOriginal = data[1];
+                    string GossipText = data[1];
+
+                    var GossipLocaiton = Container.Instance.GetHintByID(GossipStone);
+                    GossipLocaiton ??= Container.Instance.GetHintByID($"Gossip{GossipStone}");
+                    GossipLocaiton ??= Container.Instance.GetHintByID($"HintGaro{GossipStone}");
+                    if (GossipLocaiton is null) { continue; }
+                    GossipLocaiton.SpoilerHintText = GossipTextOriginal;
+
+                    foreach (var i in GossipMessageStartSentences) { GossipText = GossipText.Replace(i, string.Empty).Trim(); }
+                    foreach (var i in GossipMessageMidSentences) { GossipText = GossipText.Replace(i, "|").Trim(); }
+                    var GossipTextData = GossipText.Split("|").Select(x => x.Trim()).ToArray();
+                    if (GossipTextData.Length < 2) { continue; }
+                    var GossipTextLocation = GossipTextData[0];
+                    var GossipTextItem = GossipTextData[1];
+
+                    //TODO assign spoiler item data for tracker auto marking
+                    //I need to fill Gossip hint names in the MMR Data sheet from MMR.Randomizer.Utils.ItemUtils.CombinableHints
+                }
+
+                foreach(var i in Container.Instance.HintPool.Values)
+                {
+                    if (string.IsNullOrWhiteSpace(i.SpoilerHintText)) { Debug.WriteLine($"No hint given for {i.GetDictEntry().Name}"); }
+                    i.SpoilerHintText = Utility.PickRandom(GossipJunkMessages);
+                }
+            }
+
 
             if (BlitzStartingItems.Any())
             {
