@@ -59,31 +59,26 @@ namespace MMR_Tracker_V3.Logic
 
         public bool LogicEntryAquired(string i, List<string> SubUnlockData)
         {
-            if (LogicFunctions.IsLogicFunction(i))
-            {
-                return LogicFunctions.LogicFunctionAquired(container.Instance, i, SubUnlockData);
-            }
+            var LogicItem = container.Instance.GetLogicItemData(i);
 
-            container.Instance.MultipleItemEntry(i, out string LogicItem, out int Amount);
-            bool Literal = LogicItem.IsLiteralID(out LogicItem);
-            var type = container.Instance.GetItemEntryType(LogicItem, Literal, out _);
-
-            switch (type)
+            switch (LogicItem.Type)
             {
                 case LogicEntryType.Bool:
-                    return bool.Parse(i);
+                    return bool.Parse(LogicItem.RawID);
                 case LogicEntryType.item:
-                    SubUnlockData.Add(i);
-                    return container.Instance.GetItemByID(LogicItem).Useable(Amount);
+                    SubUnlockData.Add(LogicItem.RawID);
+                    return container.Instance.GetItemByID(LogicItem.CleanID).Useable(LogicItem.Amount);
                 case LogicEntryType.macro:
-                    SubUnlockData.Add(i);
-                    return container.Instance.GetMacroByID(LogicItem).Aquired;
+                    SubUnlockData.Add(LogicItem.RawID);
+                    return container.Instance.GetMacroByID(LogicItem.CleanID).Aquired;
                 case LogicEntryType.Area:
-                    return AreaReached(LogicItem, SubUnlockData);
+                    return AreaReached(LogicItem.CleanID, SubUnlockData);
                 case LogicEntryType.LogicEntryCollection:
-                    return CheckItemArray(LogicItem, Amount, SubUnlockData, out int _);
+                    return CheckItemArray(LogicItem.CleanID, LogicItem.Amount, SubUnlockData, out int _);
+                case LogicEntryType.function:
+                    return LogicFunctions.LogicFunctionAquired(container.Instance, LogicItem.RawID, SubUnlockData);
                 default:
-                    Debug.WriteLine($"{LogicItem} Was not a valid Logic Entry");
+                    Debug.WriteLine($"{LogicItem.RawID} Was not a valid Logic Entry");
                     return false;
             }
         }
@@ -113,14 +108,13 @@ namespace MMR_Tracker_V3.Logic
             {
                 foreach (var i in VarList)
                 {
-                    bool MultiItem = container.Instance.MultipleItemEntry(i, out string LogicItem, out int Amount);
-                    bool Literal = LogicItem.IsLiteralID(out LogicItem);
-                    var type = container.Instance.GetItemEntryType(LogicItem, Literal, out object ItemObj);
-                    if (type == LogicEntryType.LogicEntryCollection) { LoopVarEntry((ItemObj as OptionData.LogicEntryCollection).GetValue(container.Instance)); }
+                    var LogicItem = container.Instance.GetLogicItemData(i);
+
+                    if (LogicItem.Type == LogicEntryType.LogicEntryCollection) { LoopVarEntry((LogicItem.Object as OptionData.LogicEntryCollection).GetValue(container.Instance)); }
                     else
                     {
-                        if (type == LogicEntryType.item && !MultiItem)
-                        { UsableItems.AddRange(Enumerable.Repeat(LogicItem, (ItemObj as ItemObject).GetTotalUsable())); }
+                        if (LogicItem.Type == LogicEntryType.item && !LogicItem.HadItemCount)
+                        { UsableItems.AddRange(Enumerable.Repeat(LogicItem.CleanID, (LogicItem.Object as ItemObject).GetTotalUsable())); }
                         else if (LogicEntryAquired(i, SubUnlockData)) { UsableItems.Add(i); }
                     }
                 }

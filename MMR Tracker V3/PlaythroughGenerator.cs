@@ -358,26 +358,25 @@ namespace MMR_Tracker_V3
                 if (!UnlockData.ContainsKey(SubID)) { return; }
                 foreach (var i in UnlockData[SubID])
                 {
-                    instance.MultipleItemEntry(i, out string LogicItem, out int Amount);
-                    bool Literal = LogicItem.IsLiteralID(out LogicItem);
-                    var type = instance.GetItemEntryType(LogicItem, Literal, out _);
-                    if (type == MiscData.LogicEntryType.macro && !Data.MacrosUsed.Contains(LogicItem))
+                    var logicItem = instance.GetLogicItemData(i);
+
+                    if (logicItem.Type == MiscData.LogicEntryType.macro && !Data.MacrosUsed.Contains(logicItem.CleanID))
                     {
-                        Data.MacrosUsed.Add(LogicItem);
-                        ParseRequirements(LogicItem);
+                        Data.MacrosUsed.Add(logicItem.CleanID);
+                        ParseRequirements(logicItem.CleanID);
                     }
-                    else if (type == MiscData.LogicEntryType.function && !Data.OptionsUsed.Contains(LogicItem))
+                    else if (logicItem.Type == MiscData.LogicEntryType.function && !Data.OptionsUsed.Contains(logicItem.CleanID))
                     {
-                        Data.OptionsUsed.Add(LogicItem);
+                        Data.OptionsUsed.Add(logicItem.CleanID);
                     }
-                    else if (type == MiscData.LogicEntryType.item)
+                    else if (logicItem.Type == MiscData.LogicEntryType.item)
                     {
-                        if (Data.RealItemsUsed.ContainsKey(LogicItem)) { if (Amount > Data.RealItemsUsed[LogicItem]) { Data.RealItemsUsed[LogicItem] = Amount; } }
-                        else { Data.RealItemsUsed.Add(LogicItem, Amount); }
+                        if (Data.RealItemsUsed.ContainsKey(logicItem.CleanID)) { if (logicItem.Amount > Data.RealItemsUsed[logicItem.CleanID]) { Data.RealItemsUsed[logicItem.CleanID] = logicItem.Amount; } }
+                        else { Data.RealItemsUsed.Add(logicItem.CleanID, logicItem.Amount); }
                     }
-                    else if (type == MiscData.LogicEntryType.Area && !Data.AreasAccessed.Contains(LogicItem))
+                    else if (logicItem.Type == MiscData.LogicEntryType.Area && !Data.AreasAccessed.Contains(logicItem.CleanID))
                     {
-                        GetAreaData(LogicItem, playthroughObject, instance, out List<EntranceData.EntranceAreaPair> path, out List<string> areasVisited);
+                        GetAreaData(logicItem.CleanID, playthroughObject, instance, out List<EntranceData.EntranceAreaPair> path, out List<string> areasVisited);
                         Data.AreasAccessed.AddRange(areasVisited);
                         foreach(var p in path)
                         {
@@ -389,9 +388,9 @@ namespace MMR_Tracker_V3
                             }
                         }
                     }
-                    else if (!Data.AreasAccessed.Contains(LogicItem) && !Data.OptionsUsed.Contains(LogicItem) && !Data.MacrosUsed.Contains(LogicItem) && !Data.Unknown.Contains(LogicItem))
+                    else if (!Data.AreasAccessed.Contains(logicItem.CleanID) && !Data.OptionsUsed.Contains(logicItem.CleanID) && !Data.MacrosUsed.Contains(logicItem.CleanID) && !Data.Unknown.Contains(logicItem.CleanID))
                     {
-                        Data.Unknown.Add(LogicItem);
+                        Data.Unknown.Add(logicItem.CleanID);
                     }
                 }
             }

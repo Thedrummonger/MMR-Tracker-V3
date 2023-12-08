@@ -16,6 +16,13 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
 {
     public static class TrackerInstanceExtentions
     {
+        public static LogicItemData GetLogicItemData(this InstanceData.TrackerInstance Instance, string LogicItem)
+        {
+            bool MultiItem = Instance.MultipleItemEntry(LogicItem, out string _LogicItem, out int Amount);
+            bool Literal = _LogicItem.IsLiteralID(out _LogicItem);
+            var type = Instance.GetItemEntryType(_LogicItem, Literal, out object obj);
+            return new LogicItemData { CleanID = _LogicItem, Literal = Literal, RawID = LogicItem, Type = type, Amount = Amount, Object = obj, HadItemCount = MultiItem };
+        }
         public static ItemObject GetItemByID(this InstanceData.TrackerInstance instance, string item)
         {
             if (item is null) { return null; }
@@ -284,11 +291,9 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
                 }
                 else { return false; }
             }
-            instance.MultipleItemEntry(LogicItem, out string CleanedItem, out int Amount);
-            bool Literal = CleanedItem.IsLiteralID(out CleanedItem);
-            var type = instance.GetItemEntryType(CleanedItem, Literal, out object obj);
-            if (type == LogicEntryType.macro && ((MacroObject)obj).isTrick() && !((MacroObject)obj).TrickEnabled) { return true; }
-            if (type == LogicEntryType.Bool && !bool.Parse(CleanedItem)) { return true; }
+            var LogicItemData = instance.GetLogicItemData(LogicItem);
+            if (LogicItemData.Type == LogicEntryType.macro && ((MacroObject)LogicItemData.Object).isTrick() && !((MacroObject)LogicItemData.Object).TrickEnabled) { return true; }
+            if (LogicItemData.Type == LogicEntryType.Bool && !bool.Parse(LogicItemData.CleanID)) { return true; }
             return false;
         }
 

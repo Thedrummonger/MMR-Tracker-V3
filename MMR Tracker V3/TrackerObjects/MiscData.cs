@@ -166,6 +166,17 @@ namespace MMR_Tracker_V3.TrackerObjects
             public TrackerLocationDataList ShowUnavailable(bool showall = true) { _ShowAll = showall; return this; }
         }
 
+        public class LogicItemData
+        {
+            public string RawID;
+            public string CleanID;
+            public object Object;
+            public int Amount;
+            public bool Literal;
+            public bool HadItemCount;
+            public LogicEntryType Type;
+        }
+
         [Serializable]
         public enum CheckState
         {

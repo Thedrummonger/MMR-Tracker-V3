@@ -1,6 +1,8 @@
 ﻿using MathNet.Symbolics;
+using MMR_Tracker_V3.TrackerObjectExtentions;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;

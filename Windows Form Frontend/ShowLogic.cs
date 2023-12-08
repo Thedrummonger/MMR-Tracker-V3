@@ -460,28 +460,27 @@ namespace Windows_Form_Frontend
         }
         private List<string> GetChecksContainingSelectedID(string ID, out LogicEntryType Type, out string OutCleanedID)
         {
-            IC.Instance.MultipleItemEntry(ID, out string CleanedID, out int Amount);
-            bool ItemIsLitteral = CleanedID.IsLiteralID(out CleanedID);
-            Type = IC.Instance.GetItemEntryType(CleanedID, ItemIsLitteral, out _);
-            OutCleanedID = CleanedID;
-            switch (Type)
+            var LogicItem = IC.Instance.GetLogicItemData(ID);
+            OutCleanedID = LogicItem.CleanID;
+            Type = LogicItem.Type;
+            switch (LogicItem.Type)
             {
                 case LogicEntryType.Area:
                     var ValidLoadingZoneExits = IC.Instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits().Values.Where(x => 
-                        (x.DestinationExit is not null  && x.DestinationExit.region == CleanedID && x.CheckState != MiscData.CheckState.Unchecked) ||
-                        (x.IsUnrandomized() && x.GetVanillaDestination().region == CleanedID)));
+                        (x.DestinationExit is not null  && x.DestinationExit.region == LogicItem.CleanID && x.CheckState != MiscData.CheckState.Unchecked) ||
+                        (x.IsUnrandomized() && x.GetVanillaDestination().region == LogicItem.CleanID)));
                     var ValidMacroExits = IC.Instance.EntrancePool.AreaList.Values.SelectMany(x => x.NonRandomizableExits().Values.Where(x => 
-                        (x.DestinationExit is not null  && x.DestinationExit.region == CleanedID) || 
-                        x.GetVanillaDestination().region == CleanedID));
+                        (x.DestinationExit is not null  && x.DestinationExit.region == LogicItem.CleanID) || 
+                        x.GetVanillaDestination().region == LogicItem.CleanID));
                     var ValidExits = ValidLoadingZoneExits.Concat(ValidMacroExits);
                     return ValidExits.Select(x => IC.Instance.GetLogicNameFromExit(x)).ToList();
                 case LogicEntryType.item:
                     var ValidLocations = IC.Instance.LocationPool.Values.Where(x => 
-                        (x.Randomizeditem.Item is not null && x.Randomizeditem.Item == CleanedID && x.CheckState != MiscData.CheckState.Unchecked) || 
-                        ((x.IsUnrandomized() || x.SingleValidItem is not null) && x.GetItemAtCheck() == CleanedID));
+                        (x.Randomizeditem.Item is not null && x.Randomizeditem.Item == LogicItem.CleanID && x.CheckState != MiscData.CheckState.Unchecked) || 
+                        ((x.IsUnrandomized() || x.SingleValidItem is not null) && x.GetItemAtCheck() == LogicItem.CleanID));
                     return ValidLocations.Select(x => x.ID).ToList();
                 case LogicEntryType.macro:
-                    return new List<string> { CleanedID };
+                    return new List<string> { LogicItem.CleanID };
                 default:
                     return new List<string>();
             }

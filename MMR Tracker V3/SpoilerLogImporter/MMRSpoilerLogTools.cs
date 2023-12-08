@@ -431,11 +431,9 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                     }
                     else { return false; }
                 }
-                instance.MultipleItemEntry(Item, out string LogicItem, out int Amount);
-                bool Literal = LogicItem.IsLiteralID(out LogicItem);
-                var type = instance.GetItemEntryType(LogicItem, Literal, out _);
-                if (InaccessableMacros.Contains(LogicItem)) { LockedByBlitzCache.Add(Item); return true; }
-                if (InaccessableItems.Contains(LogicItem)) { LockedByBlitzCache.Add(Item); return true; }
+                var LogicItem = instance.GetLogicItemData(Item);
+                if (InaccessableMacros.Contains(LogicItem.CleanID)) { LockedByBlitzCache.Add(Item); return true; }
+                if (InaccessableItems.Contains(LogicItem.CleanID)) { LockedByBlitzCache.Add(Item); return true; }
                 return false;
             }
 
