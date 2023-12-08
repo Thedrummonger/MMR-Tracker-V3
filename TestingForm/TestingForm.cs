@@ -15,6 +15,7 @@ using MathNet.Numerics;
 using System;
 using MMR_Tracker_V3;
 using FParsec;
+using MMR_Tracker_V3.Logic;
 
 namespace TestingForm
 {
@@ -74,8 +75,8 @@ namespace TestingForm
                 new DevAction("Create TPR Data", GameFileCreation.TPRCreateData, UpdateDebugActions),
                 new DevAction("Create OOTMM Data", GameFileCreation.OOTMMCreateData, UpdateDebugActions),
                 new DevAction("Create PMR Data", GameFileCreation.PMRCreateData, UpdateDebugActions),
-                new DevAction("Connect To Async Web Server P1", OpenWebClient, UpdateDebugActions, () => { return CurrentNetClientForm is null && WinFormTesting.WinformInstanceLoaded();  }),
-                new DevAction("Test Random Stuff", TestDynamicMethodLookup, UpdateDebugActions),
+                new DevAction("Open Web Client", OpenWebClient, UpdateDebugActions, () => { return CurrentNetClientForm is null && WinFormTesting.WinformInstanceLoaded();  }),
+                new DevAction("Test Random Stuff", RandomTests, UpdateDebugActions),
             };
 
             foreach (var Function in DevFunctions)
@@ -83,6 +84,14 @@ namespace TestingForm
                 if (Function.Conitional is not null && !Function.Conitional()) { continue; }
                 listBox1.Items.Add(Function);
             }
+        }
+
+        private void RandomTests()
+        {
+            string LogicFunction = "rand{test, false}";
+
+            var t = LogicFunctions.IsLogicFunction(LogicFunction, out string Func, out string Param);
+            Debug.WriteLine($"{Func}:[{string.Join('|', LogicFunctions.GetParamList(Param))}]");
         }
 
         private void TestDynamicMethodLookup()

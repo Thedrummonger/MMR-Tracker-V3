@@ -114,7 +114,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
 
             if (bool.TryParse(ID, out bool result)) { obj = result; return LogicEntryType.Bool; }
             obj = null;
-            if (LogicFunctions.CheckLogicFunction(instance, OriginalID, new List<string>(), out _, false)) { return LogicEntryType.function; }
+            if (LogicFunctions.IsLogicFunction(OriginalID)) { return LogicEntryType.function; }
             return LogicEntryType.error;
         }
 
@@ -278,7 +278,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
                 if (Func.In("contains", "trick", "setting", "option", "rand", "randomized"))
                 {
                     //Debug.WriteLine($"Parsing {Func} Function");
-                    LogicFunctions.CheckLogicFunction(instance, LogicItem, new List<string>(), out bool FunctionEntryValid);
+                    bool FunctionEntryValid = LogicFunctions.LogicFunctionAquired(instance, LogicItem, new List<string>());
                     //Debug.WriteLine($"Valid? {FunctionEntryValid}");
                     return !FunctionEntryValid;
                 }
@@ -298,7 +298,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             Item = Entry;
             Amount = 1;
             if (!Entry.Contains(",")) { return false; }
-            if (LogicFunctions.CheckLogicFunction(instance, Entry, new List<string>(), out _, false)) { return false; }
+            if (LogicFunctions.IsLogicFunction(Entry)) { return false; }
             var data = Entry.Split(',').Select(x => x.Trim()).ToArray();
             Item = data[0];
             if (data.Length != 2) { return false; }

@@ -59,9 +59,9 @@ namespace MMR_Tracker_V3.Logic
 
         public bool LogicEntryAquired(string i, List<string> SubUnlockData)
         {
-            if (LogicFunctions.CheckLogicFunction(container.Instance, i, SubUnlockData, out bool FunctionEntryValid))
+            if (LogicFunctions.IsLogicFunction(i))
             {
-                return FunctionEntryValid;
+                return LogicFunctions.LogicFunctionAquired(container.Instance, i, SubUnlockData);
             }
 
             container.Instance.MultipleItemEntry(i, out string LogicItem, out int Amount);
