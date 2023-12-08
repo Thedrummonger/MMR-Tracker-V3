@@ -592,7 +592,7 @@ namespace Windows_Form_Frontend
             }
             else if (Source == randomLocationToolStripMenuItem)
             {
-                var RandomizedLocations = AllLocationObj.Where(x => x.IsRandomized() && !string.IsNullOrWhiteSpace(x.Randomizeditem.SpoilerLogGivenItem));
+                var RandomizedLocations = AllLocationObj.Where(x => x.CheckState == MiscData.CheckState.Unchecked && x.IsRandomized() && !string.IsNullOrWhiteSpace(x.Randomizeditem.SpoilerLogGivenItem));
                 if (!RandomizedLocations.Any()) { MessageBox.Show("Hint could not be Generated!"); return; }
                 var randomLocation = RandomizedLocations.PickRandom();
                 string Item = _instance.ItemPool.ContainsKey(randomLocation.Randomizeditem.SpoilerLogGivenItem) ?
@@ -602,7 +602,7 @@ namespace Windows_Form_Frontend
             }
             else if (Source == itemAreaToolStripMenuItem)
             {
-                var RandomizedLocations = AllLocationObj.Where(x => x.IsRandomized() && !string.IsNullOrWhiteSpace(x.Randomizeditem.SpoilerLogGivenItem));
+                var RandomizedLocations = AllLocationObj.Where(x => x.CheckState == MiscData.CheckState.Unchecked && x.IsRandomized() && !string.IsNullOrWhiteSpace(x.Randomizeditem.SpoilerLogGivenItem));
                 if (!RandomizedLocations.Any()) { MessageBox.Show("Hint could not be Generated!"); return; }
                 var randomLocation = RandomizedLocations.PickRandom();
                 string Item = _instance.ItemPool.ContainsKey(randomLocation.Randomizeditem.SpoilerLogGivenItem) ?
@@ -612,7 +612,7 @@ namespace Windows_Form_Frontend
             }
             else if (Source == playthroughLocationToolStripMenuItem)
             {
-                var RandomizedLocations = ImportantLocationsObj.Where(x => x.IsRandomized() && !string.IsNullOrWhiteSpace(x.Randomizeditem.SpoilerLogGivenItem));
+                var RandomizedLocations = ImportantLocationsObj.Where(x => x.CheckState == MiscData.CheckState.Unchecked && x.IsRandomized() && !string.IsNullOrWhiteSpace(x.Randomizeditem.SpoilerLogGivenItem));
                 if (!RandomizedLocations.Any()) { MessageBox.Show("Hint could not be Generated!"); return; }
                 var randomLocation = RandomizedLocations.PickRandom();
                 string Item = _instance.ItemPool.ContainsKey(randomLocation.Randomizeditem.SpoilerLogGivenItem) ?
@@ -622,7 +622,7 @@ namespace Windows_Form_Frontend
             }
             else if (Source == playtrhoughItemAreaToolStripMenuItem)
             {
-                var RandomizedLocations = ImportantLocationsObj.Where(x => x.IsRandomized() && !string.IsNullOrWhiteSpace(x.Randomizeditem.SpoilerLogGivenItem));
+                var RandomizedLocations = ImportantLocationsObj.Where(x => x.CheckState == MiscData.CheckState.Unchecked && x.IsRandomized() && !string.IsNullOrWhiteSpace(x.Randomizeditem.SpoilerLogGivenItem));
                 if (!RandomizedLocations.Any()) { MessageBox.Show("Hint could not be Generated!"); return; }
                 var randomLocation = RandomizedLocations.PickRandom();
                 string Item = _instance.ItemPool.ContainsKey(randomLocation.Randomizeditem.SpoilerLogGivenItem) ?
