@@ -31,7 +31,7 @@ namespace MMR_Tracker_V3
             {
                 var client = new GitHubClient(new ProductHeaderValue("MMR-Tracker-V3"));
                 VersionStatus.LatestVersion = client.Repository.Release.GetLatest("Thedrummonger", "MMR-Tracker-V3").Result;
-                var VersionSatus = CompareVersions(VersionStatus.LatestVersion.TagName, References.trackerVersion);
+                var VersionSatus = VersionStatus.LatestVersion.TagName.AsVersion().CompareTo(References.trackerVersion);
 
                 Debug.WriteLine($"Latest Version: { VersionStatus.LatestVersion.TagName } Current Version { References.trackerVersion }");
                 if (VersionSatus < 0) { Debug.WriteLine($"Using Unreleased Dev Version"); VersionStatus.VersionStatus = versionStatus.dev; }
@@ -61,13 +61,5 @@ namespace MMR_Tracker_V3
             current
         }
 
-        public static int CompareVersions(string V1, string V2)
-        {
-            if (!V1.Contains(".")) { V1 += ".0"; }
-            if (!V2.Contains(".")) { V2 += ".0"; }
-            var CleanedV1 = new Version(string.Join("", V1.Where(x => char.IsDigit(x) || x == '.')));
-            var CleanedV2 = new Version(string.Join("", V2.Where(x => char.IsDigit(x) || x == '.')));
-            return CleanedV1.CompareTo(CleanedV2);
-        }
     }
 }

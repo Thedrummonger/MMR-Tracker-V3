@@ -54,6 +54,14 @@ namespace MMR_Tracker_V3
         {
             return Regex.Replace(myString, @"\s+", " ");
         }
+
+        public static Version AsVersion(this string version)
+        {
+            if (!version.Any(x => char.IsDigit(x))) { version = "0"; }
+            if (!version.Contains('.')) { version += ".0"; }
+            return new Version(string.Join("", version.Where(x => char.IsDigit(x) || x == '.')));
+        }
+
         public static T PickRandom<T>(this IEnumerable<T> source)
         {
             return source.PickRandom(1).Single();
