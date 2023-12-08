@@ -75,7 +75,31 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             if (CostIndex > -1)
             {
                 var PriceData = Container.Instance.SpoilerLog.Log.ToList().GetRange((CostIndex+1)..(CostIndexEnd-1));
-                Debug.WriteLine($"CostData:\n{PriceData.ToFormattedJson()}");
+                foreach(var line in PriceData)
+                {
+                    if (string.IsNullOrWhiteSpace(line) || !line.Contains("->")) { continue; }
+                    var pricedata = line.Split("->");
+                    string Location = pricedata[0].Trim();
+                    int Price = int.Parse(pricedata[1]);
+
+                    object LocationObj = Container.Instance.LocationPool.FirstOrDefault(x => x.Value.GetDictEntry().SpoilerData.PriceDataNames.Contains(Location)).Value;
+                    LocationObj ??= Container.Instance.LocationPool.FirstOrDefault(x => x.Value.GetDictEntry().Name == Location).Value;
+                    LocationObj ??= Container.Instance.MacroPool.FirstOrDefault(x => x.Value.GetDictEntry().SpoilerData.PriceDataNames.Contains(Location)).Value;
+                    LocationObj ??= Container.Instance.MacroPool.FirstOrDefault(x => x.Value.GetDictEntry().ID == Location).Value;
+                    if (LocationObj is MacroObject MO && (MO.Price is null || MO.Price < 0 || Price < MO.Price))
+                    {
+                        MO.Price = Price;
+                    }
+                    else if (LocationObj is LocationData.LocationObject LO && (LO.Price is null || LO.Price < 0 || Price < LO.Price))
+                    {
+                        LO.Price = Price;
+                    }
+                    else
+                    {
+                        Debug.WriteLine($"Price line {Location}|{Price} was not assigned");
+                    }
+                }
+
             }
 
 
@@ -241,10 +265,6 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             foreach (var Location in InaccessableLocations)
             {
                 var Loc = instance.GetLocationByID(Location);
-                if (Loc.IsRandomized() && !string.IsNullOrWhiteSpace(Loc.Randomizeditem.SpoilerLogGivenItem) && !Loc.ID.EndsWith("Lair"))
-                {
-                    throw new Exception($"{Loc.ID} Was randomized and given {Loc.Randomizeditem.SpoilerLogGivenItem}");
-                }
                 Loc.SetRandomizedState(RandomizedState.ForcedJunk);
             }
             foreach(var Item in BlitzStartingItems)
