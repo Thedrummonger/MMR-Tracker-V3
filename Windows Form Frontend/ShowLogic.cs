@@ -26,14 +26,14 @@ namespace Windows_Form_Frontend
 
         public string CurrentID;
         private readonly ListBoxHeightData ReqLBHeightData;
-        private readonly MMR_Tracker_V3.InstanceData.InstanceContainer IC;
+        private readonly MMR_Tracker_V3.TrackerObjects.InstanceData.InstanceContainer IC;
         private bool Updating = false;
         private readonly List<CheckBox> TimeCheckBoxes;
         private readonly List<string> GoBackList = new();
         private List<object> CurrentGotoData;
         public FormState state = FormState.showLogic;
         public HashSet<string> AllLogicIDs;
-        public ShowLogic(string id, MMR_Tracker_V3.InstanceData.InstanceContainer _instanceContainer)
+        public ShowLogic(string id, MMR_Tracker_V3.TrackerObjects.InstanceData.InstanceContainer _instanceContainer)
         {
             InitializeComponent();
             CurrentID = id;
@@ -54,7 +54,7 @@ namespace Windows_Form_Frontend
             LocationChecker.CheckedObjectsUpdate -= TrackerDataHandeling_CheckedObjectsUpdate;
         }
 
-        private void TrackerDataHandeling_CheckedObjectsUpdate(List<object> arg1, MMR_Tracker_V3.InstanceData.TrackerInstance arg2, MiscData.CheckState checkState)
+        private void TrackerDataHandeling_CheckedObjectsUpdate(List<object> arg1, MMR_Tracker_V3.TrackerObjects.InstanceData.TrackerInstance arg2, MiscData.CheckState checkState)
         {
             if (this.IsDisposed) 
             {

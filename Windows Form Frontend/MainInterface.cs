@@ -14,7 +14,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
-using static MMR_Tracker_V3.InstanceData;
+using static MMR_Tracker_V3.TrackerObjects.InstanceData;
 using static System.Windows.Forms.AxHost;
 using MMR_Tracker_V3.Logic;
 
@@ -68,10 +68,10 @@ namespace Windows_Form_Frontend
                 if (Download == DialogResult.Yes) { { System.Diagnostics.Process.Start("explorer.exe", References.TrackerVersionStatus.LatestVersion.HtmlUrl); this.Close(); return; } }
                 else if (Download == DialogResult.Cancel)
                 {
-                    MMR_Tracker_V3.InstanceData.OptionFile options = new MMR_Tracker_V3.InstanceData.OptionFile();
+                    MMR_Tracker_V3.TrackerObjects.InstanceData.OptionFile options = new MMR_Tracker_V3.TrackerObjects.InstanceData.OptionFile();
                     if (File.Exists(References.Globalpaths.OptionFile))
                     {
-                        try { options = JsonConvert.DeserializeObject<MMR_Tracker_V3.InstanceData.OptionFile>(File.ReadAllText(References.Globalpaths.OptionFile)); }
+                        try { options = JsonConvert.DeserializeObject<MMR_Tracker_V3.TrackerObjects.InstanceData.OptionFile>(File.ReadAllText(References.Globalpaths.OptionFile)); }
                         catch { Debug.WriteLine("could not parse options.txt"); }
                     }
                     options.CheckForUpdate = false;
@@ -1020,13 +1020,13 @@ namespace Windows_Form_Frontend
             UpdateUI();
         }
 
-        private List<ManualCheckObjectResult> HandleUnassignedChecks(IEnumerable<object> Checks, MMR_Tracker_V3.InstanceData.InstanceContainer Instance)
+        private List<ManualCheckObjectResult> HandleUnassignedChecks(IEnumerable<object> Checks, MMR_Tracker_V3.TrackerObjects.InstanceData.InstanceContainer Instance)
         {
             CheckItemForm checkItemForm = new CheckItemForm(Checks, Instance);
             checkItemForm.ShowDialog();
             return checkItemForm._Result;
         }
-        private List<ManualCheckObjectResult> HandleUnassignedVariables(IEnumerable<object> Checks, MMR_Tracker_V3.InstanceData.InstanceContainer Instance)
+        private List<ManualCheckObjectResult> HandleUnassignedVariables(IEnumerable<object> Checks, MMR_Tracker_V3.TrackerObjects.InstanceData.InstanceContainer Instance)
         {
             VariableInputWindow variableInputWindow = new VariableInputWindow(Checks, Instance);
             variableInputWindow.ShowDialog();

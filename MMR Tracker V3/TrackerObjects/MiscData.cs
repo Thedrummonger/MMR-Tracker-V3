@@ -6,7 +6,7 @@ using System.Globalization;
 using System.Linq;
 using System.Net.Sockets;
 using static MMR_Tracker_V3.TrackerDataHandeling;
-using static MMR_Tracker_V3.InstanceData;
+using static MMR_Tracker_V3.TrackerObjects.InstanceData;
 
 namespace MMR_Tracker_V3.TrackerObjects
 {

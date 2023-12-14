@@ -15,11 +15,11 @@ namespace Windows_Form_Frontend
 {
     public partial class VariableInputWindow : Form
     {
-        MMR_Tracker_V3.InstanceData.InstanceContainer _Instance;
+        MMR_Tracker_V3.TrackerObjects.InstanceData.InstanceContainer _Instance;
         List<object> _InputItems;
         public List<ManualCheckObjectResult> _Result = new List<ManualCheckObjectResult>();
         VarType varType;
-        public VariableInputWindow(IEnumerable<object> InputItems, MMR_Tracker_V3.InstanceData.InstanceContainer Instance)
+        public VariableInputWindow(IEnumerable<object> InputItems, MMR_Tracker_V3.TrackerObjects.InstanceData.InstanceContainer Instance)
         {
             InitializeComponent();
             _InputItems = InputItems.ToList();

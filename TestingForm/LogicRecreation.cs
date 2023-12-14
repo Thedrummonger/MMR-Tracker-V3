@@ -27,7 +27,7 @@ namespace MMR_Tracker_V3
             public int Price { get; set; }
         }
 
-        public static void SaveTrackerState(MMR_Tracker_V3.InstanceData.InstanceContainer InstanceContainer)
+        public static void SaveTrackerState(MMR_Tracker_V3.TrackerObjects.InstanceData.InstanceContainer InstanceContainer)
         {
             SaveState state = new SaveState();
             state.SpoilerData = InstanceContainer.Instance.SpoilerLog is null ? null : GenericCopier<InstanceData.SpoilerLogFileData>.DeepCopy(InstanceContainer.Instance.SpoilerLog);
@@ -62,7 +62,7 @@ namespace MMR_Tracker_V3
             }
             CurrentSaveState = state;
         }
-        public static void LoadTrackerState(MMR_Tracker_V3.InstanceData.InstanceContainer InstanceContainer)
+        public static void LoadTrackerState(MMR_Tracker_V3.TrackerObjects.InstanceData.InstanceContainer InstanceContainer)
         {
             if (CurrentSaveState is null) { return; }
             if (CurrentSaveState.SpoilerData is not null && InstanceContainer.Instance.SpoilerLog is null)

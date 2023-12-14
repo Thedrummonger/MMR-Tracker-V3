@@ -19,11 +19,11 @@ namespace Windows_Form_Frontend
 {
     public partial class RandomizedStateEditor : Form
     {
-        MMR_Tracker_V3.InstanceData.TrackerInstance _Instance;
+        MMR_Tracker_V3.TrackerObjects.InstanceData.TrackerInstance _Instance;
         private TrackerDataHandeling.DataSets _DataSets;
         private bool Updating = false;
         public bool ChangesMade = false;
-        public RandomizedStateEditor(MMR_Tracker_V3.InstanceData.TrackerInstance instance)
+        public RandomizedStateEditor(MMR_Tracker_V3.TrackerObjects.InstanceData.TrackerInstance instance)
         {
             InitializeComponent();
             _Instance = instance;

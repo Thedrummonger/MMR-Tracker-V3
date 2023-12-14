@@ -18,7 +18,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             public Dictionary<string, string> itemPlacements { get; set; }
             public Dictionary<string, object> settings { get; set; }
         }
-        public static void readAndApplySpoilerLog(InstanceData.TrackerInstance Instance)
+        public static void readAndApplySpoilerLog(TrackerObjects.InstanceData.TrackerInstance Instance)
         {
             var SpoilerData = JsonConvert.DeserializeObject<TPRSpoilerLog>(string.Join("", Instance.SpoilerLog.Log));
             foreach (var i in SpoilerData.settings)

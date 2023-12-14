@@ -115,7 +115,7 @@ namespace TestingForm
         internal static void CleanUpWinForm()
         {
             MainInterface.CurrentProgram = null;
-            MainInterface.InstanceContainer = new MMR_Tracker_V3.InstanceData.InstanceContainer();
+            MainInterface.InstanceContainer = new MMR_Tracker_V3.TrackerObjects.InstanceData.InstanceContainer();
             LastSelectedObject = null;
         }
     }

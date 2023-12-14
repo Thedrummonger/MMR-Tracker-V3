@@ -18,7 +18,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Windows_Form_Frontend;
-using static MMR_Tracker_V3.InstanceData;
+using static MMR_Tracker_V3.TrackerObjects.InstanceData;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
 using static MMR_Tracker_V3.TrackerObjects.NetData;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -102,7 +102,7 @@ namespace TestingForm
         }
         private void PrintToConsole(string Content) { PrintToConsole(new string[] { Content }); }
 
-        private void TrackerDataHandeling_CheckedObjectsUpdate(List<object> arg1, MMR_Tracker_V3.InstanceData.TrackerInstance arg2, MiscData.CheckState checkState)
+        private void TrackerDataHandeling_CheckedObjectsUpdate(List<object> arg1, MMR_Tracker_V3.TrackerObjects.InstanceData.TrackerInstance arg2, MiscData.CheckState checkState)
         {
             var LocationsUpdated = arg1.Where(x => x is LocationData.LocationObject lo && (lo.Randomizeditem.OwningPlayer > -1) || InstanceContainer.netConnection.OnlineMode != OnlineMode.Multiworld)
                 .Select(x => (LocationData.LocationObject)x);
@@ -126,14 +126,14 @@ namespace TestingForm
             InstanceContainer.netConnection.ServerConnection.GetStream().Write(bytesToSend, 0, bytesToSend.Length);
         }
 
-        private NetData.NetPacket? CreateCoopPacket(MMR_Tracker_V3.InstanceData.TrackerInstance arg2, IEnumerable<LocationData.LocationObject> locationsUpdated)
+        private NetData.NetPacket? CreateCoopPacket(MMR_Tracker_V3.TrackerObjects.InstanceData.TrackerInstance arg2, IEnumerable<LocationData.LocationObject> locationsUpdated)
         {
             NetData.NetPacket packet = new NetData.NetPacket((int)nudPlayer.Value, NetData.PacketType.OnlineSynedLocations, txtPassword.Text);
             packet.LocationData = getCheckedLocations(arg2);
             packet.UpdateWhitelist = locationsUpdated.Any(x => x.CheckState == MiscData.CheckState.Checked) ? null : new int[] { -1 };
             return packet;
         }
-        private NetData.NetPacket? CreateMultiWorldPacket(MMR_Tracker_V3.InstanceData.TrackerInstance arg2, IEnumerable<LocationData.LocationObject> locationsUpdated)
+        private NetData.NetPacket? CreateMultiWorldPacket(MMR_Tracker_V3.TrackerObjects.InstanceData.TrackerInstance arg2, IEnumerable<LocationData.LocationObject> locationsUpdated)
         {
             NetData.NetPacket packet = new NetData.NetPacket((int)nudPlayer.Value, NetData.PacketType.MultiWorldItems, txtPassword.Text);
             packet.ItemData = GetMultiworldItemsToSend(arg2);
@@ -141,7 +141,7 @@ namespace TestingForm
             return packet;
         }
 
-        public static Dictionary<int, Dictionary<string, int>> GetMultiworldItemsToSend(MMR_Tracker_V3.InstanceData.TrackerInstance instance)
+        public static Dictionary<int, Dictionary<string, int>> GetMultiworldItemsToSend(MMR_Tracker_V3.TrackerObjects.InstanceData.TrackerInstance instance)
         {
             Dictionary<int, Dictionary<string, int>> PlayersSentItem = new Dictionary<int, Dictionary<string, int>>();
             foreach (var Item in instance.ItemPool)
@@ -158,7 +158,7 @@ namespace TestingForm
             return PlayersSentItem;
         }
 
-        public static Dictionary<string, string> getCheckedLocations(MMR_Tracker_V3.InstanceData.TrackerInstance instance)
+        public static Dictionary<string, string> getCheckedLocations(MMR_Tracker_V3.TrackerObjects.InstanceData.TrackerInstance instance)
         {
             return instance.LocationPool.Values.Where(x => x.CheckState == MiscData.CheckState.Checked).ToDictionary(x => x.ID, x => x.Randomizeditem.Item);
         }

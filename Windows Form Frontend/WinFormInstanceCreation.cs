@@ -11,13 +11,13 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static MMR_Tracker_V3.InstanceData;
+using static MMR_Tracker_V3.TrackerObjects.InstanceData;
 
 namespace Windows_Form_Frontend
 {
     public class WinFormInstanceCreation
     {
-        public static event Action<MMR_Tracker_V3.InstanceData.TrackerInstance> InstanceCreated;
+        public static event Action<MMR_Tracker_V3.TrackerObjects.InstanceData.TrackerInstance> InstanceCreated;
         public static bool CreateWinFormInstance(string Logic = null, string Dictionary = null)
         {
             var NewInstance = new InstanceContainer();
@@ -49,7 +49,7 @@ namespace Windows_Form_Frontend
 
             if (File.Exists(References.Globalpaths.OptionFile))
             {
-                MainInterface.InstanceContainer.Instance.StaticOptions.OptionFile = JsonConvert.DeserializeObject<MMR_Tracker_V3.InstanceData.OptionFile>(File.ReadAllText(References.Globalpaths.OptionFile));
+                MainInterface.InstanceContainer.Instance.StaticOptions.OptionFile = JsonConvert.DeserializeObject<MMR_Tracker_V3.TrackerObjects.InstanceData.OptionFile>(File.ReadAllText(References.Globalpaths.OptionFile));
             }
 
             ApplyWinFormSpecificData(MainInterface.InstanceContainer.Instance);
@@ -62,7 +62,7 @@ namespace Windows_Form_Frontend
             return true;
         }
 
-        public static void ApplyWinFormSpecificData(MMR_Tracker_V3.InstanceData.TrackerInstance instance)
+        public static void ApplyWinFormSpecificData(MMR_Tracker_V3.TrackerObjects.InstanceData.TrackerInstance instance)
         {
             if (string.IsNullOrWhiteSpace(instance.StaticOptions.OptionFile.WinformData.FormFont))
             {

@@ -22,7 +22,7 @@ namespace TestingForm
             File.WriteAllText(CreateTestingFilePath(Name, Extention), JsonConvert.SerializeObject(Data, MMR_Tracker_V3.Utility._NewtonsoftJsonSerializerOptions));
         }
 
-        public static void TestLogicForInvalidItems(MMR_Tracker_V3.InstanceData.InstanceContainer Container)
+        public static void TestLogicForInvalidItems(MMR_Tracker_V3.TrackerObjects.InstanceData.InstanceContainer Container)
         {
             foreach (var i in Container.Instance.LogicFile.Logic)
             {
@@ -33,7 +33,7 @@ namespace TestingForm
                 }
             }
         }
-        public static void TestLocationsForInvalidVanillaItem(MMR_Tracker_V3.InstanceData.InstanceContainer Container)
+        public static void TestLocationsForInvalidVanillaItem(MMR_Tracker_V3.TrackerObjects.InstanceData.InstanceContainer Container)
         {
             foreach (var i in Container.Instance.LocationPool)
             {

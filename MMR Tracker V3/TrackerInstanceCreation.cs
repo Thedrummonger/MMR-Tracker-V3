@@ -13,7 +13,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml;
-using static MMR_Tracker_V3.InstanceData;
+using static MMR_Tracker_V3.TrackerObjects.InstanceData;
 using static MMR_Tracker_V3.Logic.LogicStringParser;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
 

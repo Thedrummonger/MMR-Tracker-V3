@@ -19,7 +19,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
             public string direction;
         }
         public static string SettingWebPage = "https://paper-mario-randomizer-server.ue.r.appspot.com/randomizer_settings/";
-        public static void ParseSpoiler(InstanceData.TrackerInstance Instance)
+        public static void ParseSpoiler(TrackerObjects.InstanceData.TrackerInstance Instance)
         {
             var SpoilerLog = Instance.SpoilerLog.Log;
 

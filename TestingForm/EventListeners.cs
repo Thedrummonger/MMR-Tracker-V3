@@ -22,12 +22,12 @@ namespace TestingForm
             WinFormInstanceCreation.InstanceCreated += WinFormInstanceCreation_InstanceCreated;
         }
 
-        private static void WinFormInstanceCreation_InstanceCreated(MMR_Tracker_V3.InstanceData.TrackerInstance obj)
+        private static void WinFormInstanceCreation_InstanceCreated(MMR_Tracker_V3.TrackerObjects.InstanceData.TrackerInstance obj)
         {
             TestingForm.CurrentForm.UpdateDebugActions();
         }
 
-        private static void TrackerDataHandeling_CheckedObjectsUpdate(List<object> obj, MMR_Tracker_V3.InstanceData.TrackerInstance instance, MiscData.CheckState checkState)
+        private static void TrackerDataHandeling_CheckedObjectsUpdate(List<object> obj, MMR_Tracker_V3.TrackerObjects.InstanceData.TrackerInstance instance, MiscData.CheckState checkState)
         {
             TestingForm.CurrentForm.UpdateDebugActions();
         }
