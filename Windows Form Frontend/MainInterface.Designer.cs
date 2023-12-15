@@ -102,7 +102,7 @@ namespace Windows_Form_Frontend
             this.BTNFindPath.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.BTNFindPath.Dock = System.Windows.Forms.DockStyle.Right;
             this.BTNFindPath.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTNFindPath.Location = new System.Drawing.Point(426, 1);
+            this.BTNFindPath.Location = new System.Drawing.Point(153, 1);
             this.BTNFindPath.Margin = new System.Windows.Forms.Padding(0, 1, 3, 0);
             this.BTNFindPath.Name = "BTNFindPath";
             this.BTNFindPath.Size = new System.Drawing.Size(93, 24);
@@ -123,7 +123,7 @@ namespace Windows_Form_Frontend
             this.LBPathFinder.Location = new System.Drawing.Point(4, 78);
             this.LBPathFinder.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.LBPathFinder.Name = "LBPathFinder";
-            this.LBPathFinder.Size = new System.Drawing.Size(514, 203);
+            this.LBPathFinder.Size = new System.Drawing.Size(241, 180);
             this.LBPathFinder.TabIndex = 40;
             this.LBPathFinder.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.LBPathFinder_DrawItem);
             this.LBPathFinder.DoubleClick += new System.EventHandler(this.LBPathFinder_DoubleClick);
@@ -141,7 +141,7 @@ namespace Windows_Form_Frontend
             this.LBCheckedLocations.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.LBCheckedLocations.Name = "LBCheckedLocations";
             this.LBCheckedLocations.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.LBCheckedLocations.Size = new System.Drawing.Size(514, 228);
+            this.LBCheckedLocations.Size = new System.Drawing.Size(241, 205);
             this.LBCheckedLocations.TabIndex = 39;
             this.LBCheckedLocations.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.LBValidLocations_DrawItem);
             this.LBCheckedLocations.DoubleClick += new System.EventHandler(this.LBValidEntrances_DoubleClick);
@@ -162,7 +162,7 @@ namespace Windows_Form_Frontend
             this.LBValidEntrances.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.LBValidEntrances.Name = "LBValidEntrances";
             this.LBValidEntrances.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.LBValidEntrances.Size = new System.Drawing.Size(514, 227);
+            this.LBValidEntrances.Size = new System.Drawing.Size(241, 205);
             this.LBValidEntrances.TabIndex = 38;
             this.LBValidEntrances.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.LBValidLocations_DrawItem);
             this.LBValidEntrances.DoubleClick += new System.EventHandler(this.LBValidEntrances_DoubleClick);
@@ -183,7 +183,7 @@ namespace Windows_Form_Frontend
             this.LBValidLocations.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.LBValidLocations.Name = "LBValidLocations";
             this.LBValidLocations.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.LBValidLocations.Size = new System.Drawing.Size(514, 227);
+            this.LBValidLocations.Size = new System.Drawing.Size(241, 205);
             this.LBValidLocations.TabIndex = 37;
             this.LBValidLocations.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.LBValidLocations_DrawItem);
             this.LBValidLocations.DoubleClick += new System.EventHandler(this.LBValidEntrances_DoubleClick);
@@ -202,7 +202,7 @@ namespace Windows_Form_Frontend
             this.CMBEnd.Location = new System.Drawing.Point(84, 53);
             this.CMBEnd.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.CMBEnd.Name = "CMBEnd";
-            this.CMBEnd.Size = new System.Drawing.Size(434, 23);
+            this.CMBEnd.Size = new System.Drawing.Size(161, 23);
             this.CMBEnd.TabIndex = 36;
             this.CMBEnd.DropDown += new System.EventHandler(this.PathfinderCMB_DropDown);
             // 
@@ -216,7 +216,7 @@ namespace Windows_Form_Frontend
             this.CMBStart.Location = new System.Drawing.Point(84, 28);
             this.CMBStart.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.CMBStart.Name = "CMBStart";
-            this.CMBStart.Size = new System.Drawing.Size(434, 23);
+            this.CMBStart.Size = new System.Drawing.Size(161, 23);
             this.CMBStart.TabIndex = 35;
             this.CMBStart.DropDown += new System.EventHandler(this.PathfinderCMB_DropDown);
             // 
@@ -227,7 +227,7 @@ namespace Windows_Form_Frontend
             this.CHKShowAll.Dock = System.Windows.Forms.DockStyle.Right;
             this.CHKShowAll.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CHKShowAll.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.CHKShowAll.Location = new System.Drawing.Point(447, 3);
+            this.CHKShowAll.Location = new System.Drawing.Point(174, 3);
             this.CHKShowAll.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.CHKShowAll.Name = "CHKShowAll";
             this.CHKShowAll.Size = new System.Drawing.Size(71, 19);
@@ -241,7 +241,7 @@ namespace Windows_Form_Frontend
             this.BTNSetEntrance.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.BTNSetEntrance.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BTNSetEntrance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTNSetEntrance.Location = new System.Drawing.Point(422, 1);
+            this.BTNSetEntrance.Location = new System.Drawing.Point(149, 1);
             this.BTNSetEntrance.Margin = new System.Windows.Forms.Padding(0, 1, 3, 0);
             this.BTNSetEntrance.Name = "BTNSetEntrance";
             this.BTNSetEntrance.Size = new System.Drawing.Size(97, 24);
@@ -256,7 +256,7 @@ namespace Windows_Form_Frontend
             this.BTNSetItem.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.BTNSetItem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BTNSetItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTNSetItem.Location = new System.Drawing.Point(422, 1);
+            this.BTNSetItem.Location = new System.Drawing.Point(149, 1);
             this.BTNSetItem.Margin = new System.Windows.Forms.Padding(0, 1, 3, 0);
             this.BTNSetItem.Name = "BTNSetItem";
             this.BTNSetItem.Size = new System.Drawing.Size(97, 24);
@@ -316,7 +316,7 @@ namespace Windows_Form_Frontend
             this.lblAvailableEntrances.Location = new System.Drawing.Point(5, 5);
             this.lblAvailableEntrances.Margin = new System.Windows.Forms.Padding(5);
             this.lblAvailableEntrances.Name = "lblAvailableEntrances";
-            this.lblAvailableEntrances.Size = new System.Drawing.Size(412, 15);
+            this.lblAvailableEntrances.Size = new System.Drawing.Size(139, 15);
             this.lblAvailableEntrances.TabIndex = 28;
             this.lblAvailableEntrances.Text = "Available Entrances";
             // 
@@ -329,7 +329,7 @@ namespace Windows_Form_Frontend
             this.lblCheckedLocation.Location = new System.Drawing.Point(5, 5);
             this.lblCheckedLocation.Margin = new System.Windows.Forms.Padding(5);
             this.lblCheckedLocation.Name = "lblCheckedLocation";
-            this.lblCheckedLocation.Size = new System.Drawing.Size(412, 15);
+            this.lblCheckedLocation.Size = new System.Drawing.Size(139, 15);
             this.lblCheckedLocation.TabIndex = 27;
             this.lblCheckedLocation.Text = "Checked locations";
             // 
@@ -342,7 +342,7 @@ namespace Windows_Form_Frontend
             this.lblAvailableLocation.Location = new System.Drawing.Point(5, 5);
             this.lblAvailableLocation.Margin = new System.Windows.Forms.Padding(5);
             this.lblAvailableLocation.Name = "lblAvailableLocation";
-            this.lblAvailableLocation.Size = new System.Drawing.Size(412, 15);
+            this.lblAvailableLocation.Size = new System.Drawing.Size(139, 15);
             this.lblAvailableLocation.TabIndex = 26;
             this.lblAvailableLocation.Text = "Available Locations";
             // 
@@ -354,7 +354,7 @@ namespace Windows_Form_Frontend
             this.TXTCheckedSearch.Location = new System.Drawing.Point(4, 28);
             this.TXTCheckedSearch.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TXTCheckedSearch.Name = "TXTCheckedSearch";
-            this.TXTCheckedSearch.Size = new System.Drawing.Size(514, 23);
+            this.TXTCheckedSearch.Size = new System.Drawing.Size(241, 23);
             this.TXTCheckedSearch.TabIndex = 25;
             this.TXTCheckedSearch.TextChanged += new System.EventHandler(this.TXTLocSearch_TextChanged);
             this.TXTCheckedSearch.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TXTLocSearch_MouseUp);
@@ -367,7 +367,7 @@ namespace Windows_Form_Frontend
             this.TXTEntSearch.Location = new System.Drawing.Point(4, 28);
             this.TXTEntSearch.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TXTEntSearch.Name = "TXTEntSearch";
-            this.TXTEntSearch.Size = new System.Drawing.Size(514, 23);
+            this.TXTEntSearch.Size = new System.Drawing.Size(241, 23);
             this.TXTEntSearch.TabIndex = 24;
             this.TXTEntSearch.TextChanged += new System.EventHandler(this.TXTLocSearch_TextChanged);
             this.TXTEntSearch.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TXTLocSearch_MouseUp);
@@ -380,7 +380,7 @@ namespace Windows_Form_Frontend
             this.TXTLocSearch.Location = new System.Drawing.Point(4, 28);
             this.TXTLocSearch.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TXTLocSearch.Name = "TXTLocSearch";
-            this.TXTLocSearch.Size = new System.Drawing.Size(514, 23);
+            this.TXTLocSearch.Size = new System.Drawing.Size(241, 23);
             this.TXTLocSearch.TabIndex = 23;
             this.TXTLocSearch.TextChanged += new System.EventHandler(this.TXTLocSearch_TextChanged);
             this.TXTLocSearch.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TXTLocSearch_MouseUp);
@@ -397,7 +397,7 @@ namespace Windows_Form_Frontend
             this.refreshToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1044, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(498, 24);
             this.menuStrip1.TabIndex = 43;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -543,7 +543,7 @@ namespace Windows_Form_Frontend
             this.tlpMaster.RowCount = 2;
             this.tlpMaster.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpMaster.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpMaster.Size = new System.Drawing.Size(1044, 567);
+            this.tlpMaster.Size = new System.Drawing.Size(498, 522);
             this.tlpMaster.TabIndex = 44;
             // 
             // tlpLocations
@@ -563,7 +563,7 @@ namespace Windows_Form_Frontend
             this.tlpLocations.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tlpLocations.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tlpLocations.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpLocations.Size = new System.Drawing.Size(522, 283);
+            this.tlpLocations.Size = new System.Drawing.Size(249, 261);
             this.tlpLocations.TabIndex = 0;
             // 
             // tlpEntrances
@@ -576,14 +576,14 @@ namespace Windows_Form_Frontend
             this.tlpEntrances.Controls.Add(this.TXTEntSearch, 0, 1);
             this.tlpEntrances.Controls.Add(this.LBValidEntrances, 0, 2);
             this.tlpEntrances.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpEntrances.Location = new System.Drawing.Point(522, 0);
+            this.tlpEntrances.Location = new System.Drawing.Point(249, 0);
             this.tlpEntrances.Margin = new System.Windows.Forms.Padding(0);
             this.tlpEntrances.Name = "tlpEntrances";
             this.tlpEntrances.RowCount = 3;
             this.tlpEntrances.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tlpEntrances.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tlpEntrances.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpEntrances.Size = new System.Drawing.Size(522, 283);
+            this.tlpEntrances.Size = new System.Drawing.Size(249, 261);
             this.tlpEntrances.TabIndex = 1;
             // 
             // tlpChecked
@@ -596,14 +596,14 @@ namespace Windows_Form_Frontend
             this.tlpChecked.Controls.Add(this.TXTCheckedSearch, 0, 1);
             this.tlpChecked.Controls.Add(this.LBCheckedLocations, 0, 2);
             this.tlpChecked.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpChecked.Location = new System.Drawing.Point(0, 283);
+            this.tlpChecked.Location = new System.Drawing.Point(0, 261);
             this.tlpChecked.Margin = new System.Windows.Forms.Padding(0);
             this.tlpChecked.Name = "tlpChecked";
             this.tlpChecked.RowCount = 3;
             this.tlpChecked.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tlpChecked.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tlpChecked.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpChecked.Size = new System.Drawing.Size(522, 284);
+            this.tlpChecked.Size = new System.Drawing.Size(249, 261);
             this.tlpChecked.TabIndex = 2;
             // 
             // tlpPathFinder
@@ -621,7 +621,7 @@ namespace Windows_Form_Frontend
             this.tlpPathFinder.Controls.Add(this.LBPathFinder, 0, 3);
             this.tlpPathFinder.Controls.Add(this.label6, 0, 2);
             this.tlpPathFinder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpPathFinder.Location = new System.Drawing.Point(522, 283);
+            this.tlpPathFinder.Location = new System.Drawing.Point(249, 261);
             this.tlpPathFinder.Margin = new System.Windows.Forms.Padding(0);
             this.tlpPathFinder.Name = "tlpPathFinder";
             this.tlpPathFinder.RowCount = 4;
@@ -629,7 +629,7 @@ namespace Windows_Form_Frontend
             this.tlpPathFinder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tlpPathFinder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tlpPathFinder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpPathFinder.Size = new System.Drawing.Size(522, 284);
+            this.tlpPathFinder.Size = new System.Drawing.Size(249, 261);
             this.tlpPathFinder.TabIndex = 3;
             // 
             // MainInterface
@@ -638,7 +638,7 @@ namespace Windows_Form_Frontend
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1044, 591);
+            this.ClientSize = new System.Drawing.Size(498, 546);
             this.Controls.Add(this.tlpMaster);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
@@ -650,6 +650,7 @@ namespace Windows_Form_Frontend
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainInterface_FormClosing);
             this.Load += new System.EventHandler(this.MainInterface_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainInterface_KeyDown);
+            this.Resize += new System.EventHandler(this.MainInterface_Resize);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tlpMaster.ResumeLayout(false);

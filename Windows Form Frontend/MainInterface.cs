@@ -1174,5 +1174,13 @@ namespace Windows_Form_Frontend
         {
             WinFormUtils.AdjustComboBoxWidth(sender as System.Windows.Forms.ComboBox);
         }
+
+        private void MainInterface_Resize(object sender, EventArgs e)
+        {
+            LBValidLocations.Refresh();
+            LBValidEntrances.Refresh();
+            LBCheckedLocations.Refresh();
+            LBPathFinder.Refresh();
+        }
     }
 }
