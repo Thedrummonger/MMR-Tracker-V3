@@ -110,9 +110,8 @@ namespace Windows_Form_Frontend
                 chkShowTime.Visible = true;
                 chkShowUnaltered.Visible = true;
                 btnGoBack.Visible = true;
-                TimeCheckBoxes.ForEach(x => x.Visible = ShowTimeLogic);
-                label5.Visible = ShowTimeLogic;
-                label6.Visible = ShowTimeLogic;
+                groupBox1.Visible = ShowTimeLogic;
+                groupBox2.Visible = ShowTimeLogic;
                 BTNGotTo.Visible = true;
                 //Enable Items
                 textBox1.Enabled = false;
@@ -120,7 +119,8 @@ namespace Windows_Form_Frontend
                 chkShowUnaltered.Enabled = !AlteredLogic.Equals(UnAlteredLogic);
                 chkShowTime.Enabled = hasTimeLogic;
                 //Resize Items
-                ReqLBHeightData.ResizeLB(false, ShowTimeLogic);
+                tlbReq.RowStyles[3] = ShowTimeLogic ? new RowStyle(SizeType.Absolute, 80F) : new RowStyle(SizeType.Absolute, 0F);
+                tlbReq.RowStyles[1] = new RowStyle(SizeType.Absolute, 0F);
             }
             else if (state == FormState.GoTo)
             {
@@ -132,11 +132,10 @@ namespace Windows_Form_Frontend
                 BTNGotTo.Text = "Cancel";
                 //Hide/Show Items
                 textBox1.Visible = true;
-                TimeCheckBoxes.ForEach(x => x.Visible = false);
+                groupBox1.Visible = false;
+                groupBox2.Visible = false;
                 chkShowTime.Visible = false;
                 chkShowUnaltered.Visible = false;
-                label5.Visible = false;
-                label6.Visible = false;
                 btnGoBack.Visible = false;
                 BTNGotTo.Visible = CurrentID is not null;
                 //Enable Items
@@ -144,8 +143,9 @@ namespace Windows_Form_Frontend
                 btnGoBack.Enabled = false;
                 chkShowUnaltered.Enabled = false;
                 chkShowTime.Enabled = false;
+                tlbReq.RowStyles[3] = new RowStyle(SizeType.Absolute, 0F);
                 //Resize Items
-                ReqLBHeightData.ResizeLB(true, false);
+                tlbReq.RowStyles[1] = new RowStyle(SizeType.Absolute, 25F);
             }
             Updating = false;
         }

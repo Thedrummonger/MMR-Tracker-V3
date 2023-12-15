@@ -42,14 +42,9 @@ namespace Windows_Form_Frontend
 
         private void FormatUIItems(bool Multiworld, bool Button, string ButtonText)
         {
-            if (!Multiworld)
-            {
-                int OldSearchLength = textBox1.Width;
-                textBox1.Width = listBox1.Width;
-                button1.Location = new Point(button1.Location.X + (textBox1.Width - OldSearchLength), button1.Location.Y);
-                numericUpDown1.Visible = false;
-                label2.Visible = false;
-            }
+            numericUpDown1.Visible = Multiworld;
+            label2.Visible = Multiworld;
+            tableLayoutPanel1.ColumnStyles[2] = Multiworld ? new ColumnStyle(SizeType.Absolute, 55F) : new ColumnStyle(SizeType.Absolute, 0F);
             button1.Visible = Button;
             button1.Text = ButtonText;
         }
