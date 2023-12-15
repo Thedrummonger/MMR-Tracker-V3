@@ -39,16 +39,18 @@ namespace Windows_Form_Frontend
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.button1.Location = new System.Drawing.Point(221, 33);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(70, 23);
             this.button1.TabIndex = 0;
             this.button1.Text = "Apply";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // numericUpDown1
             // 
+            this.numericUpDown1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.numericUpDown1.Location = new System.Drawing.Point(12, 33);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             -2147483648,
@@ -66,6 +68,7 @@ namespace Windows_Form_Frontend
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.textBox1.Location = new System.Drawing.Point(101, 33);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(58, 23);
@@ -74,6 +77,8 @@ namespace Windows_Form_Frontend
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 15);
@@ -84,6 +89,8 @@ namespace Windows_Form_Frontend
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(303, 65);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
