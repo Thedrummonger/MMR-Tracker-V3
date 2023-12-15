@@ -529,7 +529,7 @@ namespace Windows_Form_Frontend
             // 
             // tlpMaster
             // 
-            this.tlpMaster.BackColor = System.Drawing.SystemColors.Desktop;
+            this.tlpMaster.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.tlpMaster.ColumnCount = 2;
             this.tlpMaster.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpMaster.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
