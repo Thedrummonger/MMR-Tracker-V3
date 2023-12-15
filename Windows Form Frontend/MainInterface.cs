@@ -15,7 +15,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
 using static MMR_Tracker_V3.TrackerObjects.InstanceData;
-using static System.Windows.Forms.AxHost;
 using MMR_Tracker_V3.Logic;
 
 namespace Windows_Form_Frontend
@@ -31,6 +30,12 @@ namespace Windows_Form_Frontend
         Thread MainInterfaceItemDisplayThread = null;
         ItemDisplay MainInterfaceItemDisplayForm = null;
         private Dictionary<string, ToolStripMenuItem> MenuItemParentTree = new Dictionary<string, ToolStripMenuItem>();
+
+        List<Control> TLPLocationsControls = new List<Control>();
+        List<Control> TLPCheckedControls = new List<Control>();
+        List<Control> TLPEntranceControls = new List<Control>();
+        List<Control> TLPPathfinderControls = new List<Control>();
+
         public MainInterface(bool _SubForm = false)
         {
             IsSubForm = _SubForm;
@@ -48,6 +53,11 @@ namespace Windows_Form_Frontend
             {
                 Directory.CreateDirectory(References.Globalpaths.BaseAppdataPath);
             }
+
+            foreach (var i in tlpLocations.Controls) { TLPLocationsControls.Add((Control)i); }
+            foreach (var i in tlpChecked.Controls) { TLPCheckedControls.Add((Control)i); }
+            foreach (var i in tlpEntrances.Controls) { TLPEntranceControls.Add((Control)i); }
+            foreach (var i in tlpPathFinder.Controls) { TLPPathfinderControls.Add((Control)i); }
         }
 
         //MainForm Actions
@@ -56,6 +66,7 @@ namespace Windows_Form_Frontend
         {
             DoUpdateCheck();
             UpdateUI();
+            AlignUIElements();
             WinFormInstanceCreation.ApplyUserPretLogic();
         }
 
@@ -79,27 +90,6 @@ namespace Windows_Form_Frontend
                     try { File.WriteAllText(References.Globalpaths.OptionFile, JsonConvert.SerializeObject(options, Utility._NewtonsoftJsonSerializerOptions)); }
                     catch (Exception ex) { Debug.WriteLine($"could not write to options.txt {ex}"); }
                 }
-            }
-        }
-
-        private void MainInterface_ResizeEnd(object sender, EventArgs e)
-        {
-            UpdateUI();
-        }
-
-        private void MainInterface_Resize(object sender, EventArgs e)
-        {
-            //Maximizing and unmaximizing does not trigger ResizeEnd which should be used normally since it doesn't constantly run while resizing.
-            //so run this code only if the form becomes maximized or becomes un maximized.
-            if (WindowState == FormWindowState.Maximized)
-            {
-                UpdateUI();
-                FormIsMaximized = true;
-            }
-            else if (FormIsMaximized)
-            {
-                UpdateUI();
-                FormIsMaximized = false;
             }
         }
 
@@ -130,6 +120,7 @@ namespace Windows_Form_Frontend
 
             InstanceContainer.logicCalculation.CalculateLogic();
             UpdateUI();
+            AlignUIElements();
         }
 
         //Menu Strip => File
@@ -189,6 +180,7 @@ namespace Windows_Form_Frontend
                 InstanceContainer.logicCalculation.CalculateLogic();
                 UpdateUI();
                 UpdateDynamicUserOptions();
+                AlignUIElements();
             }
         }
 
@@ -204,6 +196,7 @@ namespace Windows_Form_Frontend
 
             InstanceContainer.logicCalculation.CalculateLogic();
             UpdateUI();
+            AlignUIElements();
         }
 
         //Menu Strip => Tools
@@ -237,6 +230,7 @@ namespace Windows_Form_Frontend
             }
             InstanceContainer.logicCalculation.CalculateLogic();
             UpdateUI();
+            AlignUIElements();
         }
 
         //Menu Strip => Dev
@@ -391,12 +385,11 @@ namespace Windows_Form_Frontend
 
         public void UpdateUI()
         {
-            AlignUIElements();
             FormatMenuItems();
             SetTrackerTitle();
 
-            if (InstanceContainer is null || InstanceContainer.Instance is null) { return; }
-
+            if (InstanceContainer is null || InstanceContainer.Instance is null) { tlpMaster.Visible = false; return; }
+            tlpMaster.Visible = true;
 
             InstanceContainer.Instance.EntrancePool.IsEntranceRando = InstanceContainer.Instance.EntrancePool.CheckForRandomEntrances();
 
@@ -419,15 +412,12 @@ namespace Windows_Form_Frontend
             this.Refresh();
         }
 
-        private void AlignUIElements()
+        public void AlignUIElements()
         {
-            var MenuHeight = menuStrip1.Height;
-            var FormHeight = this.Height - 40 - MenuHeight;
-            var FormWidth = this.Width - 18;
-            var FormHalfHeight = FormHeight / 2;
-            var FormHalfWidth = FormWidth / 2;
-            var locX = 2;
-            var locY = 2 + MenuHeight;
+            tlpLocations.Controls.Clear();
+            tlpEntrances.Controls.Clear();
+            tlpChecked.Controls.Clear();
+            tlpPathFinder.Controls.Clear();
             if (InstanceContainer == null || InstanceContainer.Instance == null)
             {
                 SetObjectVisibility(false, false);
@@ -436,81 +426,45 @@ namespace Windows_Form_Frontend
             else if (InstanceContainer.Instance.StaticOptions.OptionFile.EntranceRandoFeatures && (InstanceContainer.Instance.EntrancePool.IsEntranceRando || InstanceContainer.Instance.EntrancePool.CheckForRandomEntrances()))
             {
                 SetObjectVisibility(true, true);
-                lblAvailableLocation.Location = new Point(locX, locY + 2);
-                BTNSetItem.Location = new Point(FormHalfWidth - BTNSetItem.Width, MenuHeight + 1);
-                TXTLocSearch.Location = new Point(locX, locY + lblAvailableLocation.Height + 6);
-                TXTLocSearch.Width = FormHalfWidth - 2;
-                LBValidLocations.Location = new Point(locX, locY + lblAvailableLocation.Height + TXTLocSearch.Height + 8);
-                LBValidLocations.Width = FormHalfWidth - 2;
-                LBValidLocations.Height = FormHalfHeight - lblAvailableLocation.Height - TXTLocSearch.Height - 14;
-
-                lblAvailableEntrances.Location = new Point(FormHalfWidth + locX, locY + 2);
-                BTNSetEntrance.Location = new Point(FormWidth - BTNSetEntrance.Width, MenuHeight + 1);
-                TXTEntSearch.Location = new Point(FormHalfWidth + locX, locY + lblAvailableEntrances.Height + 6);
-                TXTEntSearch.Width = FormHalfWidth - 2;
-                LBValidEntrances.Location = new Point(FormHalfWidth + locX, locY + lblAvailableEntrances.Height + TXTEntSearch.Height + 8);
-                LBValidEntrances.Width = FormHalfWidth - 2;
-                LBValidEntrances.Height = FormHalfHeight - lblAvailableEntrances.Height - TXTEntSearch.Height - 14;
-
-                lblCheckedLocation.Location = new Point(locX, FormHalfHeight + locY - 2);
-                CHKShowAll.Location = new Point(FormHalfWidth - CHKShowAll.Width, MenuHeight + FormHalfHeight - 2);
-                TXTCheckedSearch.Location = new Point(locX, locY + lblAvailableLocation.Height + 2 + FormHalfHeight);
-                TXTCheckedSearch.Width = FormHalfWidth - 2;
-                LBCheckedLocations.Location = new Point(locX, locY + lblAvailableLocation.Height + TXTCheckedSearch.Height + 4 + FormHalfHeight);
-                LBCheckedLocations.Width = FormHalfWidth - 2;
-                LBCheckedLocations.Height = FormHalfHeight - lblAvailableLocation.Height - TXTCheckedSearch.Height - 8;
-
-                label4.Location = new Point(FormHalfWidth + locX, FormHalfHeight + locY - 2);
-                BTNFindPath.Location = new Point(FormWidth - BTNFindPath.Width, MenuHeight + FormHalfHeight - 3);
-                label5.Location = new Point(FormHalfWidth + locX, FormHalfHeight + locY + label4.Height + 6);
-                lblSwapPathfinder.Location = new Point(label5.Location.X + label5.Width + 4, label5.Location.Y - 3);
-                label6.Location = new Point(FormHalfWidth + locX, FormHalfHeight + locY + label4.Height + 7 + CMBStart.Height);
-                CMBStart.Location = new Point(FormHalfWidth + locX + label6.Width + 2, FormHalfHeight + locY + label4.Height + 2);
-                CMBEnd.Location = new Point(FormHalfWidth + locX + label6.Width + 2, FormHalfHeight + locY + label4.Height + CMBStart.Height + 5);
-                CMBStart.Width = FormHalfWidth - label6.Width - 4;
-                CMBEnd.Width = FormHalfWidth - label6.Width - 4;
-                LBPathFinder.Location = new Point(locX + FormHalfWidth, FormHalfHeight + locY + 8 + label4.Height + CMBStart.Height + CMBEnd.Height);
-                LBPathFinder.Width = FormHalfWidth - 2;
-                LBPathFinder.Height = LBCheckedLocations.Height - CMBEnd.Height - 5;
+                tlpMaster.RowStyles[0] = new RowStyle(SizeType.Percent, 50F);
+                tlpMaster.RowStyles[1] = new RowStyle(SizeType.Percent, 50F);
+                tlpMaster.ColumnStyles[0] = new ColumnStyle(SizeType.Percent, 50F);
+                tlpMaster.ColumnStyles[1] = new ColumnStyle(SizeType.Percent, 50F);
+                if (InstanceContainer.Instance.StaticOptions.OptionFile.WinformData.HorizontalLayout)
+                {
+                    tlpLocations.Controls.AddRange(TLPLocationsControls.ToArray());
+                    tlpChecked.Controls.AddRange(TLPEntranceControls.ToArray());
+                    tlpEntrances.Controls.AddRange(TLPCheckedControls.ToArray());
+                    tlpPathFinder.Controls.AddRange(TLPPathfinderControls.ToArray());
+                }
+                else
+                {
+                    tlpLocations.Controls.AddRange(TLPLocationsControls.ToArray());
+                    tlpChecked.Controls.AddRange(TLPCheckedControls.ToArray());
+                    tlpEntrances.Controls.AddRange(TLPEntranceControls.ToArray());
+                    tlpPathFinder.Controls.AddRange(TLPPathfinderControls.ToArray());
+                }
             }
             else
             {
                 SetObjectVisibility(true, false);
                 if (InstanceContainer.Instance.StaticOptions.OptionFile.WinformData.HorizontalLayout)
                 {
-                    lblAvailableLocation.Location = new Point(locX, locY + 2);
-                    BTNSetItem.Location = new Point(FormHalfWidth - BTNSetItem.Width, MenuHeight + 1);
-                    TXTLocSearch.Location = new Point(locX, locY + lblAvailableLocation.Height + 6);
-                    TXTLocSearch.Width = FormHalfWidth - 2;
-                    LBValidLocations.Location = new Point(locX, locY + lblAvailableLocation.Height + TXTLocSearch.Height + 8);
-                    LBValidLocations.Width = FormHalfWidth - 2;
-                    LBValidLocations.Height = FormHeight - lblAvailableLocation.Height - TXTLocSearch.Height - 14;
-
-                    lblCheckedLocation.Location = new Point(FormHalfWidth + locX, locY + 2);
-                    CHKShowAll.Location = new Point(FormWidth - CHKShowAll.Width, MenuHeight + 3);
-                    TXTCheckedSearch.Location = new Point(FormHalfWidth + locX, locY + lblAvailableEntrances.Height + 6);
-                    TXTCheckedSearch.Width = FormHalfWidth - 2;
-                    LBCheckedLocations.Location = new Point(FormHalfWidth + locX, locY + lblAvailableEntrances.Height + TXTEntSearch.Height + 8);
-                    LBCheckedLocations.Width = FormHalfWidth - 2;
-                    LBCheckedLocations.Height = FormHeight - lblAvailableEntrances.Height - TXTEntSearch.Height - 14;
+                    tlpMaster.ColumnStyles[0] = new ColumnStyle(SizeType.Percent, 50F);
+                    tlpMaster.ColumnStyles[1] = new ColumnStyle(SizeType.Percent, 50F);
+                    tlpMaster.RowStyles[0] = new RowStyle(SizeType.Percent, 100F);
+                    tlpMaster.RowStyles[1] = new RowStyle(SizeType.Percent, 0F);
+                    tlpLocations.Controls.AddRange(TLPLocationsControls.ToArray());
+                    tlpEntrances.Controls.AddRange(TLPCheckedControls.ToArray());
                 }
                 else
                 {
-                    lblAvailableLocation.Location = new Point(locX, locY + 2);
-                    BTNSetItem.Location = new Point(FormWidth - BTNSetItem.Width, MenuHeight + 1);
-                    TXTLocSearch.Location = new Point(locX, locY + lblAvailableLocation.Height + 6);
-                    TXTLocSearch.Width = FormWidth - 2;
-                    LBValidLocations.Location = new Point(locX, locY + lblAvailableLocation.Height + TXTLocSearch.Height + 8);
-                    LBValidLocations.Width = FormWidth - 2;
-                    LBValidLocations.Height = FormHalfHeight - lblAvailableLocation.Height - TXTLocSearch.Height - 14;
-
-                    lblCheckedLocation.Location = new Point(locX, FormHalfHeight + locY - 2);
-                    CHKShowAll.Location = new Point(FormWidth - CHKShowAll.Width, MenuHeight + FormHalfHeight - 2);
-                    TXTCheckedSearch.Location = new Point(locX, locY + lblAvailableLocation.Height + 2 + FormHalfHeight);
-                    TXTCheckedSearch.Width = FormWidth - 2;
-                    LBCheckedLocations.Location = new Point(locX, locY + lblAvailableLocation.Height + TXTCheckedSearch.Height + 4 + FormHalfHeight);
-                    LBCheckedLocations.Width = FormWidth - 2;
-                    LBCheckedLocations.Height = FormHalfHeight - lblAvailableLocation.Height - TXTCheckedSearch.Height - 8;
+                    tlpMaster.ColumnStyles[0] = new ColumnStyle(SizeType.Percent, 100F);
+                    tlpMaster.ColumnStyles[1] = new ColumnStyle(SizeType.Percent, 0F);
+                    tlpMaster.RowStyles[0] = new RowStyle(SizeType.Percent, 50F);
+                    tlpMaster.RowStyles[1] = new RowStyle(SizeType.Percent, 50F);
+                    tlpLocations.Controls.AddRange(TLPLocationsControls.ToArray());
+                    tlpChecked.Controls.AddRange(TLPCheckedControls.ToArray());
                 }
             }
         }
@@ -1145,6 +1099,7 @@ namespace Windows_Form_Frontend
             StaticOptionSelect staticOptionSelect = new StaticOptionSelect(InstanceContainer.Instance);
             staticOptionSelect.ShowDialog();
             UpdateUI();
+            AlignUIElements();
         }
 
         private void BTNFindPath_Click(object sender, EventArgs e)

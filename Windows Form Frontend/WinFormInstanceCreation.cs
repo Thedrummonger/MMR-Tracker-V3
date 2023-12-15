@@ -56,6 +56,7 @@ namespace Windows_Form_Frontend
 
             MainInterface.InstanceContainer.logicCalculation.CalculateLogic();
             MainInterface.CurrentProgram.UpdateUI();
+            MainInterface.CurrentProgram.AlignUIElements();
 
             if (InstanceCreated is not null) { InstanceCreated(MainInterface.InstanceContainer.Instance); }
 
