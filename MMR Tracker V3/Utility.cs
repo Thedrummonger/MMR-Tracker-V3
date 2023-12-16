@@ -22,6 +22,14 @@ namespace MMR_Tracker_V3
 {
     public static class Utility
     {
+        public static string Replace(this string s, int index, int length, string replacement)
+        {
+            var builder = new StringBuilder();
+            builder.Append(s[..index]);
+            builder.Append(replacement);
+            builder.Append(s[(index + length)..]);
+            return builder.ToString();
+        }
         public static T GetValueAs<Y, T>(this Dictionary<Y, object> source, Y Key)
         {
             if (!source.ContainsKey(Key)) { return default; }
