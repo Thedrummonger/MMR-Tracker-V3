@@ -54183,15 +54183,15 @@
                 "LocationWhitelist": [],
                 "LocationBlacklist": [],
                 "ReplacementList": {
-                  "ItemWoodfallKey1": "true",
-                  "ItemSnowheadKey1": "true",
-                  "ItemSnowheadKey2": "true",
-                  "ItemSnowheadKey3": "true",
-                  "ItemGreatBayKey1": "true",
-                  "ItemStoneTowerKey1": "true",
-                  "ItemStoneTowerKey2": "true",
-                  "ItemStoneTowerKey3": "true",
-                  "ItemStoneTowerKey4": "true"
+                  "ItemWoodfallKey1": "MMRTSmallKeysy",
+                  "ItemSnowheadKey1": "MMRTSmallKeysy",
+                  "ItemSnowheadKey2": "MMRTSmallKeysy",
+                  "ItemSnowheadKey3": "MMRTSmallKeysy",
+                  "ItemGreatBayKey1": "MMRTSmallKeysy",
+                  "ItemStoneTowerKey1": "MMRTSmallKeysy",
+                  "ItemStoneTowerKey2": "MMRTSmallKeysy",
+                  "ItemStoneTowerKey3": "MMRTSmallKeysy",
+                  "ItemStoneTowerKey4": "MMRTSmallKeysy"
                 }
               }
             ],
@@ -54264,10 +54264,10 @@
                 "LocationWhitelist": [],
                 "LocationBlacklist": [],
                 "ReplacementList": {
-                  "ItemWoodfallBossKey": "true",
-                  "ItemSnowheadBossKey": "true",
-                  "ItemGreatBayBossKey": "true",
-                  "ItemStoneTowerBossKey": "true"
+                  "ItemWoodfallBossKey": "MMRTBossKeysy",
+                  "ItemSnowheadBossKey": "MMRTBossKeysy",
+                  "ItemGreatBayBossKey": "MMRTBossKeysy",
+                  "ItemStoneTowerBossKey": "MMRTBossKeysy"
                 }
               }
             ],
@@ -56127,10 +56127,15 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
+          "ItemBow",
           "UpgradeBigQuiver"
         ],
         [
           "ItemBow",
+          "UpgradeBiggestQuiver"
+        ],
+        [
+          "UpgradeBigQuiver",
           "UpgradeBiggestQuiver"
         ]
       ],
@@ -56419,6 +56424,24 @@
       "RequiredItems": [
         "UpgradeRoyalWallet"
       ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MMRTSmallKeysy",
+      "RequiredItems": [],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MMRTBossKeysy",
+      "RequiredItems": [],
       "ConditionalItems": [],
       "TimeNeeded": "None",
       "TimeAvailable": "None",

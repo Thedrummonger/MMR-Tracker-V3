@@ -219,11 +219,11 @@ namespace TestingForm.GameDataCreation.MMR
             //==========================================================================================================================================================================
             //Keysy Options
             AddSimpleMultiSelect("SmallKeyMode", "Small Key Mode", "Main Settings", "DoorsOpen", "KeepWithinTemples", "KeepWithinArea", "KeepWithinOverworld", "KeepThroughTime");
-            string[] AllSmallKeys = MMRDictV16.ItemList.Values.Where(x => x.Name.EndsWith("Small Key")).Select(x => x.ID + "|true").ToArray();
+            string[] AllSmallKeys = MMRDictV16.ItemList.Values.Where(x => x.Name.EndsWith("Small Key")).Select(x => x.ID + "|MMRTSmallKeysy").ToArray();
             AddLogicReplacement(CreateLogicReplacement(MMRDictV16.MultiSelectOptions["SmallKeyMode"].ValueList["DoorsOpen"]), AllSmallKeys);
 
             AddSimpleMultiSelect("BossKeyMode", "Boss Key Mode", "Main Settings", "DoorsOpen", "GreatFairyRewards", "KeepWithinTemples", "KeepWithinArea", "KeepWithinOverworld", "KeepThroughTime");
-            string[] AllBossKeys = MMRDictV16.ItemList.Values.Where(x => x.Name.EndsWith("Boss Key")).Select(x => x.ID + "|true").ToArray();
+            string[] AllBossKeys = MMRDictV16.ItemList.Values.Where(x => x.Name.EndsWith("Boss Key")).Select(x => x.ID + "|MMRTBossKeysy").ToArray();
             AddLogicReplacement(CreateLogicReplacement(MMRDictV16.MultiSelectOptions["BossKeyMode"].ValueList["DoorsOpen"]), AllBossKeys);
 
 
@@ -430,7 +430,7 @@ namespace TestingForm.GameDataCreation.MMR
 
             //Progressive Logic
             AddAdditionalLogic("MMRTProgressiveItemBow", "ItemBow || UpgradeBigQuiver || UpgradeBiggestQuiver");
-            AddAdditionalLogic("MMRTProgressiveUpgradeBigQuiver", "(ItemBow && UpgradeBigQuiver) || (ItemBow && UpgradeBiggestQuiver) || (UpgradeBigQuiver && UpgradeBigQuiver)");
+            AddAdditionalLogic("MMRTProgressiveUpgradeBigQuiver", "(ItemBow && UpgradeBigQuiver) || (ItemBow && UpgradeBiggestQuiver) || (UpgradeBigQuiver && UpgradeBiggestQuiver)");
             AddAdditionalLogic("MMRTProgressiveUpgradeBiggestQuiver", "ItemBow && UpgradeBigQuiver && UpgradeBiggestQuiver");
             AddAdditionalLogic("MMRTProgressiveItemBombBag", "ItemBombBag || UpgradeBigBombBag || UpgradeBiggestBombBag");
             AddAdditionalLogic("MMRTProgressiveUpgradeBigBombBag", "(ItemBombBag && UpgradeBigBombBag) || (ItemBombBag && UpgradeBiggestBombBag) || (UpgradeBigBombBag && UpgradeBiggestBombBag)");
@@ -451,6 +451,9 @@ namespace TestingForm.GameDataCreation.MMR
             AddAdditionalLogic("MMRTWallet200", "UpgradeAdultWallet || UpgradeGiantWallet || UpgradeRoyalWallet");
             AddAdditionalLogic("MMRTWallet500", "UpgradeGiantWallet || UpgradeRoyalWallet");
             AddAdditionalLogic("MMRTWallet999", "UpgradeRoyalWallet");
+
+            AddAdditionalLogic("MMRTSmallKeysy", "true");
+            AddAdditionalLogic("MMRTBossKeysy", "true");
 
             MMRDictV16.MacroList.Add("MMRTWallet99", new LogicDictionaryData.DictionaryMacroEntry { ID = "MMRTWallet99", WalletCapacity = 99 });
             MMRDictV16.MacroList.Add("MMRTWallet200", new LogicDictionaryData.DictionaryMacroEntry { ID = "MMRTWallet200", WalletCapacity = 200 });
