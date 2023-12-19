@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static MMR_Tracker_V3.TrackerObjects.InstanceData;
 
 namespace Windows_Form_Frontend
 {
-    public class WinFormUtils
+    public static class WinFormUtils
     {
         public class DropDownOptionTree
         {
@@ -105,6 +107,11 @@ namespace Windows_Form_Frontend
             }
             container.Items.Add(CurrentMessage.Trim());
             container.Refresh();
+        }
+
+        public static Font GetFont(this OptionFile optionFile)
+        {
+            return GetFontFromString(optionFile.WinformData.FormFont);
         }
 
         public static Font GetFontFromString(string Font)

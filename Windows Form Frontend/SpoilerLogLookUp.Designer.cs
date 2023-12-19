@@ -54,8 +54,8 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.gbSpoilerLogLookup = new System.Windows.Forms.GroupBox();
             this.tlpSpoilerLogLookup = new System.Windows.Forms.TableLayoutPanel();
+            this.lbSpoilerLookupItems = new System.Windows.Forms.ListBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.chkShowMacros = new System.Windows.Forms.CheckBox();
             this.btnArea = new System.Windows.Forms.Button();
             this.btnSphere = new System.Windows.Forms.Button();
@@ -466,7 +466,7 @@
             this.tlpSpoilerLogLookup.ColumnCount = 2;
             this.tlpSpoilerLogLookup.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpSpoilerLogLookup.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpSpoilerLogLookup.Controls.Add(this.listBox1, 0, 3);
+            this.tlpSpoilerLogLookup.Controls.Add(this.lbSpoilerLookupItems, 0, 3);
             this.tlpSpoilerLogLookup.Controls.Add(this.textBox2, 0, 2);
             this.tlpSpoilerLogLookup.Controls.Add(this.chkShowMacros, 1, 1);
             this.tlpSpoilerLogLookup.Controls.Add(this.btnArea, 0, 0);
@@ -483,6 +483,20 @@
             this.tlpSpoilerLogLookup.Size = new System.Drawing.Size(132, 264);
             this.tlpSpoilerLogLookup.TabIndex = 25;
             // 
+            // lbSpoilerLookupItems
+            // 
+            this.lbSpoilerLookupItems.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.tlpSpoilerLogLookup.SetColumnSpan(this.lbSpoilerLookupItems, 2);
+            this.lbSpoilerLookupItems.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSpoilerLookupItems.FormattingEnabled = true;
+            this.lbSpoilerLookupItems.HorizontalScrollbar = true;
+            this.lbSpoilerLookupItems.ItemHeight = 15;
+            this.lbSpoilerLookupItems.Location = new System.Drawing.Point(3, 84);
+            this.lbSpoilerLookupItems.Name = "lbSpoilerLookupItems";
+            this.lbSpoilerLookupItems.Size = new System.Drawing.Size(126, 177);
+            this.lbSpoilerLookupItems.TabIndex = 0;
+            this.lbSpoilerLookupItems.SelectedValueChanged += new System.EventHandler(this.listBox1_SelectedValueChanged);
+            // 
             // textBox2
             // 
             this.textBox2.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -493,20 +507,6 @@
             this.textBox2.Size = new System.Drawing.Size(126, 23);
             this.textBox2.TabIndex = 4;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // listBox1
-            // 
-            this.listBox1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.tlpSpoilerLogLookup.SetColumnSpan(this.listBox1, 2);
-            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.HorizontalScrollbar = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(3, 84);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(126, 177);
-            this.listBox1.TabIndex = 0;
-            this.listBox1.SelectedValueChanged += new System.EventHandler(this.listBox1_SelectedValueChanged);
             // 
             // chkShowMacros
             // 
@@ -734,7 +734,7 @@
         private System.Windows.Forms.Button btnLocation;
         private System.Windows.Forms.Button btnSphere;
         private System.Windows.Forms.Button btnArea;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lbSpoilerLookupItems;
         private System.Windows.Forms.CheckBox chkShowMacros;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;

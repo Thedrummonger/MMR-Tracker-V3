@@ -1,4 +1,5 @@
-﻿using MMR_Tracker_V3;
+﻿using MathNet.Numerics;
+using MMR_Tracker_V3;
 using MMR_Tracker_V3.Logic;
 using MMR_Tracker_V3.TrackerObjectExtentions;
 using MMR_Tracker_V3.TrackerObjects;
@@ -86,6 +87,8 @@ namespace Windows_Form_Frontend
         private void UpdateUI()
         {
             Updating = true;
+            LBReq.Font = IC.Instance.StaticOptions.OptionFile.GetFont();
+            lbCond.Font = IC.Instance.StaticOptions.OptionFile.GetFont();
             if (state == FormState.showLogic)
             {
                 var AlteredLogic = IC.Instance.GetLogic(CurrentID, true);

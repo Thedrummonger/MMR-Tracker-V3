@@ -41,7 +41,7 @@ namespace Windows_Form_Frontend
             chkShowUnavailableMarked.Checked = TempOptionFile.ShowUnavailableMarkedLocations;
             chkSeperateUnavailableMarked.Checked = TempOptionFile.SeperateUnavailableMarkedLocations;
             int counter = 0;
-            var CurrentFont = WinFormUtils.GetFontFromString(TempOptionFile.WinformData.FormFont);
+            var CurrentFont = TempOptionFile.GetFont();
             foreach (FontFamily font in FontFamily.Families)
             {
                 cmbFontStyle.Items.Add(font.Name);

@@ -69,6 +69,7 @@ namespace Windows_Form_Frontend
             chkShowManual.Enabled = true;
             chkShowUnrand.Enabled = true;
 
+            lvLocationList.Font = _Instance.StaticOptions.OptionFile.GetFont();
             lvLocationList.ShowItemToolTips = true;
             lvLocationList.Items.Clear();
             if (cmbLocationType.SelectedItem is string selection)
@@ -196,8 +197,10 @@ namespace Windows_Form_Frontend
             Updating = true;
             lbAvailableStarting.Items.Clear();
             lbCurrentStarting.Items.Clear();
+            lbAvailableStarting.Font = _Instance.StaticOptions.OptionFile.GetFont();
+            lbCurrentStarting.Font = _Instance.StaticOptions.OptionFile.GetFont();
 
-            foreach(var i in _DataSets.AvailableStartingItems.Where(x => x.CanBePlaced()))
+            foreach (var i in _DataSets.AvailableStartingItems.Where(x => x.CanBePlaced()))
             {
                 i.DisplayName = i.GetDictEntry().GetName() ?? i.ID;
                 if (!SearchStringParser.FilterSearch(_Instance, i, txtSearchAvailableStarting.Text, i.DisplayName)) { continue; }
@@ -218,6 +221,7 @@ namespace Windows_Form_Frontend
             lvTricks.Items.Clear();
             lvTricks.CheckBoxes = true;
             lvTricks.ShowItemToolTips = true;
+            lvTricks.Font = _Instance.StaticOptions.OptionFile.GetFont();
             string CurrentCategory = string.Empty;
             var TrickList = _DataSets.Tricks.OrderBy(x => _DataSets.Tricks.IndexOf(_DataSets.Tricks.First(y => _Instance.GetLogic(y.ID, false).TrickCategory == _Instance.GetLogic(x.ID, false).TrickCategory)));
             foreach (var i in TrickList)

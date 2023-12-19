@@ -49,7 +49,7 @@ namespace Windows_Form_Frontend
         private void btnFindpath_Click(object sender, EventArgs e)
         {
             if (comboBox1.SelectedIndex < 0 || comboBox2.SelectedIndex < 0 || comboBox1.SelectedItem.ToString() == comboBox2.SelectedItem.ToString()) { return; }
-            listBox1.Font = WinFormUtils.GetFontFromString(_instance.StaticOptions.OptionFile.WinformData.FormFont);
+            listBox1.Font = _instance.StaticOptions.OptionFile.GetFont();
             listBox1.ItemHeight = Convert.ToInt32(listBox1.Font.Size * 1.8);
             listBox1.DataSource = new List<string> { "Finding path" };
             pathfinder = new Pathfinder();

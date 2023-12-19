@@ -269,7 +269,7 @@ namespace Windows_Form_Frontend
             var LB = sender as ListBox;
             if (e.Index < 0) { return; }
             e.DrawBackground();
-            Font F = WinFormUtils.GetFontFromString(InstanceContainer.Instance.StaticOptions.OptionFile.WinformData.FormFont);
+            Font F = InstanceContainer.Instance.StaticOptions.OptionFile.GetFont();
             Brush brush = ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? Brushes.White : Brushes.Black;
 
             GetListObjectData(LB, LB.Items[e.Index], out MiscData.CheckState checkState, out bool starred, out bool available);
@@ -290,7 +290,7 @@ namespace Windows_Form_Frontend
             var LB = sender as ListBox;
             if (e.Index < 0) { return; }
             e.DrawBackground();
-            Font F = WinFormUtils.GetFontFromString(InstanceContainer.Instance.StaticOptions.OptionFile.WinformData.FormFont);
+            Font F = InstanceContainer.Instance.StaticOptions.OptionFile.GetFont();
             Brush brush = ((e.State & DrawItemState.Selected) == DrawItemState.Selected) ? Brushes.White : Brushes.Black;
 
             e.Graphics.DrawString(LB.Items[e.Index].ToString(), F, brush, e.Bounds);
@@ -512,7 +512,7 @@ namespace Windows_Form_Frontend
             foreach (var i in ToUpdate)
             {
                 i.Items.Clear();
-                i.Font = WinFormUtils.GetFontFromString(InstanceContainer.Instance.StaticOptions.OptionFile.WinformData.FormFont);
+                i.Font = InstanceContainer.Instance.StaticOptions.OptionFile.GetFont();
                 i.ItemHeight = Convert.ToInt32(i.Font.Size * 1.8);
                 i.BeginUpdate();
             }
@@ -1105,7 +1105,7 @@ namespace Windows_Form_Frontend
         private void BTNFindPath_Click(object sender, EventArgs e)
         {
             if (CMBStart.SelectedIndex < 0 || CMBEnd.SelectedIndex < 0 || CMBStart.SelectedItem.ToString() == CMBEnd.SelectedItem.ToString()) { return; }
-            LBPathFinder.Font = WinFormUtils.GetFontFromString(InstanceContainer.Instance.StaticOptions.OptionFile.WinformData.FormFont);
+            LBPathFinder.Font = InstanceContainer.Instance.StaticOptions.OptionFile.GetFont();
             LBPathFinder.ItemHeight = Convert.ToInt32(LBPathFinder.Font.Size * 1.8);
             LBPathFinder.DataSource = new List<string> { "Finding path" };
             MainInterfacepathfinder = new Pathfinder();

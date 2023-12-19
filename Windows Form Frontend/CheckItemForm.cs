@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
 using static MMR_Tracker_V3.TrackerObjects.InstanceData;
+using static Windows_Form_Frontend.WinFormUtils;
 
 namespace Windows_Form_Frontend
 {
@@ -42,6 +43,7 @@ namespace Windows_Form_Frontend
 
         private void FormatUIItems(bool Multiworld, bool Button, string ButtonText)
         {
+            listBox1.Font = _Container.Instance.StaticOptions.OptionFile.GetFont();
             numericUpDown1.Visible = Multiworld;
             label2.Visible = Multiworld;
             tableLayoutPanel1.ColumnStyles[2] = Multiworld ? new ColumnStyle(SizeType.Absolute, 55F) : new ColumnStyle(SizeType.Absolute, 0F);

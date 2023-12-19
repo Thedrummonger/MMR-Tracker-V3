@@ -48,6 +48,10 @@ namespace Windows_Form_Frontend
             {
                 SpoilerLookupPlaythrough = _instance.SpoilerLog.Playthrough;
             }
+            lbRequiredItems.Font = _instance.StaticOptions.OptionFile.GetFont();
+            LBIgnoredItems.Font = _instance.StaticOptions.OptionFile.GetFont();
+            lbObtainable.Font = _instance.StaticOptions.OptionFile.GetFont();
+            lbSpoilerLookupItems.Font = _instance.StaticOptions.OptionFile.GetFont();
 
         }
 
@@ -209,7 +213,7 @@ namespace Windows_Form_Frontend
         #region SpoilerLogLookup
         private void PopulateSpoilerLogList()
         {
-            listBox1.Items.Clear();
+            lbSpoilerLookupItems.Items.Clear();
             var SpoilerChecks = _instance.LocationPool.Values.Where(x => x.GetItemAtCheck() != null);
             List<MiscData.StandardListBoxItem> SpoilerList = new List<MiscData.StandardListBoxItem>();
             foreach (var check in SpoilerChecks) 
@@ -237,10 +241,10 @@ namespace Windows_Form_Frontend
                 CleanedEntries[spoiler.Display].Add(spoiler.tag as LocationData.LocationObject);
             }
             CleanedEntries = CleanedEntries.OrderBy(x => x.Key).ToDictionary(x => x.Key, x => x.Value);
-            if (CleanedEntries.Any() && chkShowMacros.Checked) { listBox1.Items.Add(WinFormUtils.CreateDivider(listBox1, "Locations")); }
+            if (CleanedEntries.Any() && chkShowMacros.Checked) { lbSpoilerLookupItems.Items.Add(WinFormUtils.CreateDivider(lbSpoilerLookupItems, "Locations")); }
             foreach(var i in CleanedEntries)
             {
-                listBox1.Items.Add(new MiscData.StandardListBoxItem { Display = i.Key, tag = i.Value });
+                lbSpoilerLookupItems.Items.Add(new MiscData.StandardListBoxItem { Display = i.Key, tag = i.Value });
             }
 
             List<MiscData.StandardListBoxItem> MacroList = new List<MiscData.StandardListBoxItem>();
@@ -251,8 +255,8 @@ namespace Windows_Form_Frontend
                     MiscData.StandardListBoxItem LBI = new MiscData.StandardListBoxItem() { tag = check, Display = check.GetDictEntry().Name??check.ID };
                     if (SearchStringParser.FilterSearch(_instance, check, textBox2.Text, LBI.Display)) { MacroList.Add(LBI); }
                 }
-                if (MacroList.Any()) { listBox1.Items.Add(WinFormUtils.CreateDivider(listBox1, "Macros")); }
-                foreach(var i in MacroList.OrderBy(x => x.Display)) { listBox1.Items.Add(i); }
+                if (MacroList.Any()) { lbSpoilerLookupItems.Items.Add(WinFormUtils.CreateDivider(lbSpoilerLookupItems, "Macros")); }
+                foreach(var i in MacroList.OrderBy(x => x.Display)) { lbSpoilerLookupItems.Items.Add(i); }
             }
         }
 
@@ -264,7 +268,7 @@ namespace Windows_Form_Frontend
 
         private void btnArea_Click(object sender, EventArgs e)
         {
-            if (listBox1.SelectedItem is MiscData.StandardListBoxItem SLI)
+            if (lbSpoilerLookupItems.SelectedItem is MiscData.StandardListBoxItem SLI)
             {
                 if (SLI.tag is LocationData.LocationObject LO)
                 {
@@ -286,19 +290,19 @@ namespace Windows_Form_Frontend
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (listBox1.SelectedItem is MiscData.StandardListBoxItem SLI)
+            if (lbSpoilerLookupItems.SelectedItem is MiscData.StandardListBoxItem SLI)
             {
                 if (SpoilerLookupPlaythrough is null)
                 {
-                    int currInd = listBox1.SelectedIndex;
-                    int TopInd = listBox1.TopIndex;
-                    WinFormUtils.PrintMessageToListBox(listBox1, "Generating Playthrough Data... \n \n This could take a while but will only happen once.");
+                    int currInd = lbSpoilerLookupItems.SelectedIndex;
+                    int TopInd = lbSpoilerLookupItems.TopIndex;
+                    WinFormUtils.PrintMessageToListBox(lbSpoilerLookupItems, "Generating Playthrough Data... \n \n This could take a while but will only happen once.");
                     var TempPlaythrough = new PlaythroughGenerator(_instance);
                     TempPlaythrough.GeneratePlaythrough();
                     SpoilerLookupPlaythrough = TempPlaythrough.Playthrough;
                     PopulateSpoilerLogList();
-                    listBox1.TopIndex = TopInd;
-                    listBox1.SelectedIndex = currInd;
+                    lbSpoilerLookupItems.TopIndex = TopInd;
+                    lbSpoilerLookupItems.SelectedIndex = currInd;
                 }
 
                 if (SLI.tag is LocationData.LocationObject LO)
@@ -335,7 +339,7 @@ namespace Windows_Form_Frontend
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (listBox1.SelectedItem is MiscData.StandardListBoxItem SLI)
+            if (lbSpoilerLookupItems.SelectedItem is MiscData.StandardListBoxItem SLI)
             {
                 if (SLI.tag is LocationData.LocationObject LO)
                 {
@@ -357,7 +361,7 @@ namespace Windows_Form_Frontend
 
         private void listBox1_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (listBox1.SelectedItem is MiscData.StandardListBoxItem SLI)
+            if (lbSpoilerLookupItems.SelectedItem is MiscData.StandardListBoxItem SLI)
             {
                 bool EnableLocation = SLI.tag is LocationData.LocationObject || SLI.tag is List<LocationData.LocationObject>;
                 bool EnableSphere = SLI.tag is MacroObject || SLI.tag is List<MacroObject>;
@@ -556,14 +560,14 @@ namespace Windows_Form_Frontend
         {
             if (SpoilerLookupPlaythrough is null)
             {
-                int currInd = listBox1.SelectedIndex;
-                int TopInd = listBox1.TopIndex;
+                int currInd = lbSpoilerLookupItems.SelectedIndex;
+                int TopInd = lbSpoilerLookupItems.TopIndex;
                 var TempPlaythrough = new PlaythroughGenerator(_instance);
                 TempPlaythrough.GeneratePlaythrough();
                 SpoilerLookupPlaythrough = TempPlaythrough.Playthrough;
                 PopulateSpoilerLogList();
-                listBox1.TopIndex = TopInd;
-                listBox1.SelectedIndex = currInd;
+                lbSpoilerLookupItems.TopIndex = TopInd;
+                lbSpoilerLookupItems.SelectedIndex = currInd;
             }
             var Source = sender as ToolStripMenuItem;
 
@@ -642,14 +646,14 @@ namespace Windows_Form_Frontend
 
         private void regenerateLocalSpoilerLogToolsPlaythroughToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int currInd = listBox1.SelectedIndex;
-            int TopInd = listBox1.TopIndex;
+            int currInd = lbSpoilerLookupItems.SelectedIndex;
+            int TopInd = lbSpoilerLookupItems.TopIndex;
             var TempPlaythrough = new PlaythroughGenerator(_instance);
             TempPlaythrough.GeneratePlaythrough();
             SpoilerLookupPlaythrough = TempPlaythrough.Playthrough;
             PopulateSpoilerLogList();
-            listBox1.TopIndex = TopInd;
-            listBox1.SelectedIndex = currInd;
+            lbSpoilerLookupItems.TopIndex = TopInd;
+            lbSpoilerLookupItems.SelectedIndex = currInd;
         }
 
         private void tableLayoutPanel5_Paint(object sender, PaintEventArgs e)
