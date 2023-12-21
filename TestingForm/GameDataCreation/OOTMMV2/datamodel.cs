@@ -16,6 +16,11 @@ namespace TestingForm.GameDataCreation.OOTMMV2
             public string Exit { get; set; }
 
         }
+        public class FuncMacro
+        {
+            public string[] Params;
+            public string Logic;
+        }
 
         public class OOTMMSetting
         {

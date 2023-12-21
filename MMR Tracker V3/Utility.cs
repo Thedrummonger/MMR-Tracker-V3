@@ -30,6 +30,10 @@ namespace MMR_Tracker_V3
             builder.Append(s[(index + length)..]);
             return builder.ToString();
         }
+        public static string[] TrimSplit(this string s, string Val)
+        {
+            return s.Split(Val).Select(x => x.Trim()).ToArray();
+        }
         public static T GetValueAs<Y, T>(this Dictionary<Y, object> source, Y Key)
         {
             if (!source.ContainsKey(Key)) { return default; }

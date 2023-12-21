@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using YamlDotNet.Core.Tokens;
+using static MMR_Tracker_V3.Logic.LogicStringParser;
 
 namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
 {
@@ -14,10 +15,7 @@ namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
     {
         public static string GetGamecodeFromID(MMRData.JsonFormatLogicItem LogicItem)
         {
-            if (LogicItem.Id.StartsWith("OOT_")) { return "OOT"; }
-            if (LogicItem.Id.StartsWith("MM_")) { return "MM"; }
-            var Segments = LogicItem.Id.Split(' ');
-            return Segments[0];
+            return GetGamecodeFromID(LogicItem.Id);
         }
         public static string GetGamecodeFromID(string LogicItem)
         {
@@ -25,6 +23,16 @@ namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
             if (LogicItem.StartsWith("MM_")) { return "MM"; }
             var Segments = LogicItem.Split(' ');
             return Segments[0];
+        }
+        public static Tuple<string, string> SplitGamecodeFromID(MMRData.JsonFormatLogicItem LogicItem)
+        {
+            return SplitGamecodeFromID(LogicItem.Id);
+        }
+        public static Tuple<string, string> SplitGamecodeFromID(string LogicItem)
+        {
+
+            var Segments = LogicItem.Split('_');
+            return new(Segments[0], string.Join("_",Segments.Skip(1)));
         }
 
         public static bool LogicEntryHasGamecode(string LogicItem)

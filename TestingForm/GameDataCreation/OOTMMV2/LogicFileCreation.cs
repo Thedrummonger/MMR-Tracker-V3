@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestingForm.GameDataCreation.OOTMMV2;
 using static MMR_Tracker_V3.GameDataCreation.OOTMMV2.OOTMMUtil;
 using static TestingForm.GameDataCreation.OOTMMV2.datamodel;
 
@@ -46,8 +47,9 @@ namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
                 var FileOBJ = JsonConvert.DeserializeObject<Dictionary<string, string>>(Utility.ConvertYamlStringToJsonString(File.ReadAllText(MacroFile)));
                 foreach (var item in FileOBJ)
                 {
-                    if (IsOOTMMLogicFunction(item.Key, out string Func, out _, new('(', ')')))
+                    if (IsOOTMMLogicFunction(item.Key, out string Func, out string Params, new('(', ')')))
                     {
+                        FunctionParsing.LogicMAcroFunctions[$"{GameCode}_{Func}"] = new datamodel.FuncMacro { Params = Params.Split(",").Select(x => x.Trim()).ToArray(), Logic = item.Value };
                         Debug.WriteLine($"Skipping Function Macro {item.Key}");
                         continue;
                     }

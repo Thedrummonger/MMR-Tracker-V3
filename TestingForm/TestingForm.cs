@@ -16,6 +16,7 @@ using System;
 using MMR_Tracker_V3;
 using FParsec;
 using MMR_Tracker_V3.Logic;
+using System.Text.RegularExpressions;
 
 namespace TestingForm
 {
@@ -88,11 +89,31 @@ namespace TestingForm
 
         private void RandomTests()
         {
-            string LogicFunction = "rand{test, false}";
+            string Test = "(setting(magicalRupee) && has(RUPEE_MAGICAL)) || cond(setting(silverRupeePouches), has(pouch), has(rupee, count))";
 
-            var t = LogicFunctions.IsLogicFunction(LogicFunction, out string Func, out string Param);
-            Debug.WriteLine($"{Func}:[{string.Join('|', LogicFunctions.GetParamList(Param))}]");
+            Dictionary<string, string> Replacements = new Dictionary<string, string>()
+            {
+                { "rupee", "RUPEE_SILVER_GANON_SHADOW" },
+                { "pouch", "POUCH_SILVER_GANON_SHADOW" },
+                { "count", "5" },
+            };
+
+            foreach(var r in Replacements)
+            {
+                Test = ReplaceParam(Test, r.Key, r.Value);
+            }
+
+            Debug.WriteLine(Test);
+
         }
+
+        private string ReplaceParam(string Logic, string Param, string Value)
+        {
+            string pattern = @$"\b{Param}\b";
+            string result = Regex.Replace(Logic, pattern, Value);
+            return result;
+        }
+
 
         private void TestDynamicMethodLookup()
         {
