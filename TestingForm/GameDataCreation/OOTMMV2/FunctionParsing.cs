@@ -261,14 +261,15 @@ namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
             {
                 for(var j = 0; j < ParsedClause[i].Count; j++)
                 {
+                    string Inverse = "false";
                     string Item = ParsedClause[i][j];
-                    if (Item.StartsWith("!")) { Item = Item.Substring(1); }
-                    else if (Item.StartsWith("trick") || Item.StartsWith("setting")) { Item = Item[..^1] + ", false)"; }
+                    if (Item.StartsWith("!")) { Item = Item.Substring(1); Inverse = "true"; }
+                    else if (Item.StartsWith("trick") || Item.StartsWith("setting")) { Item = Item[..^1] + $", {Inverse})"; }
                     else if (Item == "is_adult") { Item = "is_child"; }
                     else
                     {
                         string Gamecode = GetGamecodeFromID(logicItem);
-                        Item = $"available{{{Gamecode}_{Item}, false}}"; 
+                        Item = $"available{{{Gamecode}_{Item}, {Inverse}}}"; 
                     }
                     ParsedClause[i][j] = Item;
                 }
