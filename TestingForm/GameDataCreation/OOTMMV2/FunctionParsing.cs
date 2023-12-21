@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using static Microsoft.FSharp.Core.ByRefKinds;
 using static MMR_Tracker_V3.GameDataCreation.OOTMMV2.OOTMMUtil;
 
 namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
@@ -67,7 +68,7 @@ namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
                     ParsedConditional = $"{Gamecode}_{ParsedConditional}";
                     FunctionParsed = true;
                 }
-                if (LogicFunctions.IsLogicFunction(Conditional, out string Func, out string Param, new('(', ')')))
+                if (IsOOTMMLogicFunction(Conditional, out string Func, out string Param, new('(', ')')))
                 {
                     string OriginalParam = Param;
                     if (LogicEntryHasGamecode(Param))
@@ -284,6 +285,13 @@ namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
                         case "silver_rupees":
                             string[] SilverRuppeParams = Param.Split(",").Select(x => x.Trim()).ToArray();
                             ParsedConditional = $"(setting(magicalRupee) && has(RUPEE_MAGICAL)) || cond(setting(silverRupeePouches), has({SilverRuppeParams[1]}), has({SilverRuppeParams[0]}, {SilverRuppeParams[2]}))";
+                            break;
+                        case "has_pond_fish":
+                            string[] PondFistParams = Param.Split(",").Select(x => x.Trim()).ToArray();
+                            string PondFishType = PondFistParams[0];
+                            int PondFishMin = int.Parse(PondFistParams[1]);
+                            int PondFishMax = int.Parse(PondFistParams[2]);
+                            ParsedConditional = $"OOT_HAS_{PondFishType}_{PondFishMin}_TO_{PondFishMax}";
                             break;
 
                     }

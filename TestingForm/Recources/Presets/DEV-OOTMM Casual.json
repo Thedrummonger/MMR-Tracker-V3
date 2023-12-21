@@ -3277,6 +3277,19 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Dodongo Cavern Grass East Corridor Side Room",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Dodongo Cavern Side Room",
+        "setting{DC_MQ, false}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Dodongo Cavern Side Room => OOT Dodongo Cavern Right Corridor",
       "RequiredItems": [
         "OOT Dodongo Cavern Side Room",
@@ -3619,9 +3632,6 @@
         ],
         [
           "OOT_can_use_din"
-        ],
-        [
-          "OOT_has_blue_fire_arrows_mudwall"
         ],
         [
           "OOT_climb_anywhere"
@@ -9428,7 +9438,7 @@
     {
       "Id": "OOT Ganon Castle Spirit 2 => OOT Ganon Castle Spirit End",
       "RequiredItems": [
-        "OOT_has_mirror_shield",
+        "OOT_can_reflect_light",
         "OOT_can_use_bow",
         "OOT Ganon Castle Spirit 2",
         "setting{Ganon_MQ, false}"
@@ -9485,7 +9495,7 @@
         ],
         [
           "OOT_has_fire_arrows",
-          "OOT_has_mirror_shield",
+          "OOT_can_reflect_light",
           "OOT_can_hammer",
           "OOT_has_bombchu",
           "OOT_soul_iron_knuckle",
@@ -9494,7 +9504,7 @@
         ],
         [
           "OOT_has_fire_arrows",
-          "OOT_has_mirror_shield",
+          "OOT_can_reflect_light",
           "OOT_can_hammer",
           "OOT_has_bombchu",
           "OOT Ganon Castle Spirit",
@@ -17545,7 +17555,7 @@
       "Id": "OOT Market Pot House Big Poes",
       "RequiredItems": [
         "OOT_is_adult",
-        "OOT_EVENT_BIG_POE",
+        "OOT_has_big_poe",
         "OOT Market Pot House"
       ],
       "ConditionalItems": [
@@ -19176,6 +19186,28 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Hyrule Castle Pot 1",
+      "RequiredItems": [
+        "OOT Hyrule Castle"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Hyrule Castle Pot 2",
+      "RequiredItems": [
+        "OOT Hyrule Castle"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Hyrule Castle => OOT Market Castle Entry",
       "RequiredItems": [
         "OOT Hyrule Castle"
@@ -19208,10 +19240,22 @@
           "OOT_woke_talon_child"
         ],
         [
-          "OOT_has_hover_boots"
+          "OOT_has_hover_boots",
+          "OOT_SOUL_NPC_TALON"
+        ],
+        [
+          "OOT_has_hover_boots",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "OOT_has_hover_boots",
+          "setting{skipZelda}"
         ],
         [
           "OOT_climb_anywhere"
+        ],
+        [
+          "OOT_hookshot_anywhere"
         ]
       ],
       "TimeNeeded": "None",
@@ -19255,7 +19299,14 @@
         "OOT_CHICKEN",
         "OOT Hyrule Castle"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_SOUL_NPC_TALON"
+        ],
+        [
+          "setting{soulsNpcOot, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -20817,6 +20868,9 @@
         ],
         [
           "OOT_has_bombchu"
+        ],
+        [
+          "OOT_can_longshot"
         ],
         [
           "OOT_climb_anywhere",
@@ -25739,6 +25793,30 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT Lake Hylia Pot 1",
+      "RequiredItems": [
+        "OOT_is_child",
+        "OOT Lake Hylia"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Lake Hylia Pot 2",
+      "RequiredItems": [
+        "OOT_is_child",
+        "OOT Lake Hylia"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Lake Hylia Grass 1",
       "RequiredItems": [
         "OOT_can_cut_grass",
@@ -25803,6 +25881,19 @@
     },
     {
       "Id": "OOT Lake Hylia Grass Child 4",
+      "RequiredItems": [
+        "OOT_is_child",
+        "OOT_can_cut_grass",
+        "OOT Lake Hylia"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Lake Hylia Grass Child 5",
       "RequiredItems": [
         "OOT_is_child",
         "OOT_can_cut_grass",
@@ -26502,6 +26593,238 @@
         [
           "setting{childWallets}",
           "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{pondFishShuffle, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{pondFishShuffle, false}",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{pondFishShuffle, false}",
+          "setting{childWallets, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "setting{pondFishShuffle, false}",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "setting{pondFishShuffle, false}",
+          "SHARED_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{pondFishShuffle, false}",
+          "setting{childWallets, false}",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "OOT_HAS_CHILD_FISH_7_TO_14"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "SHARED_WALLET, 1",
+          "OOT_HAS_CHILD_FISH_7_TO_14"
+        ],
+        [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{childWallets, false}",
+          "OOT_HAS_CHILD_FISH_7_TO_14"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "setting{soulsNpcOot, false}",
+          "OOT_HAS_CHILD_FISH_7_TO_14"
+        ],
+        [
+          "setting{childWallets}",
+          "SHARED_WALLET, 1",
+          "setting{soulsNpcOot, false}",
+          "OOT_HAS_CHILD_FISH_7_TO_14"
+        ],
+        [
+          "setting{childWallets, false}",
+          "setting{soulsNpcOot, false}",
+          "OOT_HAS_CHILD_FISH_7_TO_14"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "OOT_HAS_CHILD_LOACH_14_TO_19"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "SHARED_WALLET, 1",
+          "OOT_HAS_CHILD_LOACH_14_TO_19"
+        ],
+        [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{childWallets, false}",
+          "OOT_HAS_CHILD_LOACH_14_TO_19"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "setting{soulsNpcOot, false}",
+          "OOT_HAS_CHILD_LOACH_14_TO_19"
+        ],
+        [
+          "setting{childWallets}",
+          "SHARED_WALLET, 1",
+          "setting{soulsNpcOot, false}",
+          "OOT_HAS_CHILD_LOACH_14_TO_19"
+        ],
+        [
+          "setting{childWallets, false}",
+          "setting{soulsNpcOot, false}",
+          "OOT_HAS_CHILD_LOACH_14_TO_19"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fishing Pond Adult",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT_has_rupees",
+        "OOT Fishing Pond"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{pondFishShuffle, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{pondFishShuffle, false}",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{pondFishShuffle, false}",
+          "setting{childWallets, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "setting{pondFishShuffle, false}",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "setting{pondFishShuffle, false}",
+          "SHARED_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{pondFishShuffle, false}",
+          "setting{childWallets, false}",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "OOT_HAS_ADULT_FISH_8_TO_25"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "SHARED_WALLET, 1",
+          "OOT_HAS_ADULT_FISH_8_TO_25"
+        ],
+        [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{childWallets, false}",
+          "OOT_HAS_ADULT_FISH_8_TO_25"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "setting{soulsNpcOot, false}",
+          "OOT_HAS_ADULT_FISH_8_TO_25"
+        ],
+        [
+          "setting{childWallets}",
+          "SHARED_WALLET, 1",
+          "setting{soulsNpcOot, false}",
+          "OOT_HAS_ADULT_FISH_8_TO_25"
+        ],
+        [
+          "setting{childWallets, false}",
+          "setting{soulsNpcOot, false}",
+          "OOT_HAS_ADULT_FISH_8_TO_25"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "OOT_HAS_ADULT_LOACH_29_TO_36"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "SHARED_WALLET, 1",
+          "OOT_HAS_ADULT_LOACH_29_TO_36"
+        ],
+        [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{childWallets, false}",
+          "OOT_HAS_ADULT_LOACH_29_TO_36"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "setting{soulsNpcOot, false}",
+          "OOT_HAS_ADULT_LOACH_29_TO_36"
+        ],
+        [
+          "setting{childWallets}",
+          "SHARED_WALLET, 1",
+          "setting{soulsNpcOot, false}",
+          "OOT_HAS_ADULT_LOACH_29_TO_36"
+        ],
+        [
+          "setting{childWallets, false}",
+          "setting{soulsNpcOot, false}",
+          "OOT_HAS_ADULT_LOACH_29_TO_36"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fishing Pond Child Fish 1",
+      "RequiredItems": [
+        "OOT_is_child",
+        "OOT_has_rupees",
+        "OOT Fishing Pond"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
           "OOT_SOUL_NPC_FISHING_POND_OWNER"
         ],
         [
@@ -26534,7 +26857,1309 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT Fishing Pond Adult",
+      "Id": "OOT Fishing Pond Child Fish 2",
+      "RequiredItems": [
+        "OOT_is_child",
+        "OOT_has_rupees",
+        "OOT Fishing Pond"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{childWallets, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "SHARED_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets, false}",
+          "setting{soulsNpcOot, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fishing Pond Child Fish 3",
+      "RequiredItems": [
+        "OOT_is_child",
+        "OOT_has_rupees",
+        "OOT Fishing Pond"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{childWallets, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "SHARED_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets, false}",
+          "setting{soulsNpcOot, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fishing Pond Child Fish 4",
+      "RequiredItems": [
+        "OOT_is_child",
+        "OOT_has_rupees",
+        "OOT Fishing Pond"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{childWallets, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "SHARED_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets, false}",
+          "setting{soulsNpcOot, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fishing Pond Child Fish 5",
+      "RequiredItems": [
+        "OOT_is_child",
+        "OOT_has_rupees",
+        "OOT Fishing Pond"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{childWallets, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "SHARED_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets, false}",
+          "setting{soulsNpcOot, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fishing Pond Child Fish 6",
+      "RequiredItems": [
+        "OOT_is_child",
+        "OOT_has_rupees",
+        "OOT Fishing Pond"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{childWallets, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "SHARED_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets, false}",
+          "setting{soulsNpcOot, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fishing Pond Child Fish 7",
+      "RequiredItems": [
+        "OOT_is_child",
+        "OOT_has_rupees",
+        "OOT Fishing Pond"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{childWallets, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "SHARED_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets, false}",
+          "setting{soulsNpcOot, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fishing Pond Child Fish 8",
+      "RequiredItems": [
+        "OOT_is_child",
+        "OOT_has_rupees",
+        "OOT Fishing Pond"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{childWallets, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "SHARED_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets, false}",
+          "setting{soulsNpcOot, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fishing Pond Child Fish 9",
+      "RequiredItems": [
+        "OOT_is_child",
+        "OOT_has_rupees",
+        "OOT Fishing Pond"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{childWallets, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "SHARED_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets, false}",
+          "setting{soulsNpcOot, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fishing Pond Child Fish 10",
+      "RequiredItems": [
+        "OOT_is_child",
+        "OOT_has_rupees",
+        "OOT Fishing Pond"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{childWallets, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "SHARED_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets, false}",
+          "setting{soulsNpcOot, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fishing Pond Child Fish 11",
+      "RequiredItems": [
+        "OOT_is_child",
+        "OOT_has_rupees",
+        "OOT Fishing Pond"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{childWallets, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "SHARED_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets, false}",
+          "setting{soulsNpcOot, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fishing Pond Child Fish 12",
+      "RequiredItems": [
+        "OOT_is_child",
+        "OOT_has_rupees",
+        "OOT Fishing Pond"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{childWallets, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "SHARED_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets, false}",
+          "setting{soulsNpcOot, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fishing Pond Child Fish 13",
+      "RequiredItems": [
+        "OOT_is_child",
+        "OOT_has_rupees",
+        "OOT Fishing Pond"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{childWallets, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "SHARED_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets, false}",
+          "setting{soulsNpcOot, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fishing Pond Child Fish 14",
+      "RequiredItems": [
+        "OOT_is_child",
+        "OOT_has_rupees",
+        "OOT Fishing Pond"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{childWallets, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "SHARED_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets, false}",
+          "setting{soulsNpcOot, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fishing Pond Child Fish 15",
+      "RequiredItems": [
+        "OOT_is_child",
+        "OOT_has_rupees",
+        "OOT Fishing Pond"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{childWallets, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "SHARED_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets, false}",
+          "setting{soulsNpcOot, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fishing Pond Child Loach 1",
+      "RequiredItems": [
+        "OOT_is_child",
+        "OOT_has_rupees",
+        "OOT Fishing Pond"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{childWallets, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "SHARED_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets, false}",
+          "setting{soulsNpcOot, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fishing Pond Child Loach 2",
+      "RequiredItems": [
+        "OOT_is_child",
+        "OOT_has_rupees",
+        "OOT Fishing Pond"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{childWallets, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "SHARED_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets, false}",
+          "setting{soulsNpcOot, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fishing Pond Adult Fish 1",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT_has_rupees",
+        "OOT Fishing Pond"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{childWallets, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "SHARED_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets, false}",
+          "setting{soulsNpcOot, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fishing Pond Adult Fish 2",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT_has_rupees",
+        "OOT Fishing Pond"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{childWallets, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "SHARED_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets, false}",
+          "setting{soulsNpcOot, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fishing Pond Adult Fish 3",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT_has_rupees",
+        "OOT Fishing Pond"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{childWallets, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "SHARED_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets, false}",
+          "setting{soulsNpcOot, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fishing Pond Adult Fish 4",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT_has_rupees",
+        "OOT Fishing Pond"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{childWallets, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "SHARED_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets, false}",
+          "setting{soulsNpcOot, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fishing Pond Adult Fish 5",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT_has_rupees",
+        "OOT Fishing Pond"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{childWallets, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "SHARED_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets, false}",
+          "setting{soulsNpcOot, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fishing Pond Adult Fish 6",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT_has_rupees",
+        "OOT Fishing Pond"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{childWallets, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "SHARED_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets, false}",
+          "setting{soulsNpcOot, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fishing Pond Adult Fish 7",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT_has_rupees",
+        "OOT Fishing Pond"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{childWallets, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "SHARED_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets, false}",
+          "setting{soulsNpcOot, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fishing Pond Adult Fish 8",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT_has_rupees",
+        "OOT Fishing Pond"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{childWallets, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "SHARED_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets, false}",
+          "setting{soulsNpcOot, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fishing Pond Adult Fish 9",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT_has_rupees",
+        "OOT Fishing Pond"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{childWallets, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "SHARED_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets, false}",
+          "setting{soulsNpcOot, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fishing Pond Adult Fish 10",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT_has_rupees",
+        "OOT Fishing Pond"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{childWallets, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "SHARED_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets, false}",
+          "setting{soulsNpcOot, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fishing Pond Adult Fish 11",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT_has_rupees",
+        "OOT Fishing Pond"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{childWallets, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "SHARED_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets, false}",
+          "setting{soulsNpcOot, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fishing Pond Adult Fish 12",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT_has_rupees",
+        "OOT Fishing Pond"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{childWallets, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "SHARED_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets, false}",
+          "setting{soulsNpcOot, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fishing Pond Adult Fish 13",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT_has_rupees",
+        "OOT Fishing Pond"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{childWallets, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "SHARED_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets, false}",
+          "setting{soulsNpcOot, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fishing Pond Adult Fish 14",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT_has_rupees",
+        "OOT Fishing Pond"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{childWallets, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "SHARED_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets, false}",
+          "setting{soulsNpcOot, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fishing Pond Adult Fish 15",
+      "RequiredItems": [
+        "OOT_is_adult",
+        "OOT_has_rupees",
+        "OOT Fishing Pond"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "SHARED_WALLET, 1"
+        ],
+        [
+          "OOT_SOUL_NPC_FISHING_POND_OWNER",
+          "setting{childWallets, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "OOT_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets}",
+          "SHARED_WALLET, 1",
+          "setting{soulsNpcOot, false}"
+        ],
+        [
+          "setting{childWallets, false}",
+          "setting{soulsNpcOot, false}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT Fishing Pond Adult Loach",
       "RequiredItems": [
         "OOT_is_adult",
         "OOT_has_rupees",
@@ -31911,7 +33536,7 @@
         [
           "OOT_climb_anywhere",
           "OOT_SMALL_KEY_SPIRIT, 1",
-          "OOT_has_mirror_shield",
+          "OOT_can_reflect_light",
           "OOT_has_explosives"
         ],
         [
@@ -32662,7 +34287,7 @@
         [
           "OOT_has_explosives",
           "OOT_climb_anywhere",
-          "OOT_has_mirror_shield",
+          "OOT_can_reflect_light",
           "OOT_SMALL_KEY_SPIRIT, 1"
         ],
         [
@@ -33115,7 +34740,7 @@
         [
           "OOT_climb_anywhere",
           "OOT_has_explosives",
-          "OOT_has_mirror_shield",
+          "OOT_can_reflect_light",
           "OOT_SMALL_KEY_SPIRIT, 1"
         ],
         [
@@ -33229,7 +34854,7 @@
         [
           "OOT_climb_anywhere",
           "OOT_has_explosives",
-          "OOT_has_mirror_shield",
+          "OOT_can_reflect_light",
           "OOT_SMALL_KEY_SPIRIT, 1"
         ],
         [
@@ -34149,7 +35774,7 @@
         [
           "OOT_SOUL_ENEMY_ANUBIS",
           "OOT_SMALL_KEY_SPIRIT, 1",
-          "OOT_has_mirror_shield"
+          "OOT_can_reflect_light"
         ],
         [
           "OOT_has_skeleton_key",
@@ -34165,7 +35790,7 @@
         ],
         [
           "OOT_SMALL_KEY_SPIRIT, 1",
-          "OOT_has_mirror_shield",
+          "OOT_can_reflect_light",
           "setting{soulsEnemyOot, false}"
         ],
         [
@@ -34185,7 +35810,7 @@
     {
       "Id": "OOT Spirit Temple Adult Late Sun on Wall",
       "RequiredItems": [
-        "OOT_has_mirror_shield",
+        "OOT_can_reflect_light",
         "OOT Spirit Temple Adult Upper 2",
         "setting{Spirit_MQ, false}"
       ],
@@ -34366,7 +35991,7 @@
     {
       "Id": "OOT Spirit Temple Adult Topmost Sun on Wall",
       "RequiredItems": [
-        "OOT_has_mirror_shield",
+        "OOT_can_reflect_light",
         "OOT Spirit Temple Adult Climb 2",
         "setting{Spirit_MQ, false}"
       ],
@@ -39171,6 +40796,19 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT MQ Dodongo Cavern Grass Vanilla Bomb Bag Room",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
+        "OOT Dodongo Cavern Upper Ledges",
+        "setting{DC_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT Dodongo Cavern Upper Ledges => OOT Dodongo Cavern Room After Upper Lizalfos",
       "RequiredItems": [
         "OOT Dodongo Cavern Upper Ledges",
@@ -39674,6 +41312,19 @@
     {
       "Id": "OOT MQ Dodongo Cavern Pot Before Miniboss 2",
       "RequiredItems": [
+        "OOT Dodongo Cavern Room Before Upper Lizalfos",
+        "setting{DC_MQ}"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT MQ Dodongo Cavern Grass Room Before Miniboss",
+      "RequiredItems": [
+        "OOT_can_cut_grass",
         "OOT Dodongo Cavern Room Before Upper Lizalfos",
         "setting{DC_MQ}"
       ],
@@ -42617,7 +44268,7 @@
       "RequiredItems": [
         "OOT_can_hammer",
         "OOT_has_fire_arrows",
-        "OOT_has_mirror_shield",
+        "OOT_can_reflect_light",
         "OOT_has_bombchu",
         "OOT Ganon Castle Spirit",
         "setting{Ganon_MQ}"
@@ -42640,7 +44291,7 @@
       "RequiredItems": [
         "OOT_can_hammer",
         "OOT_has_fire_arrows",
-        "OOT_has_mirror_shield",
+        "OOT_can_reflect_light",
         "OOT_has_bombchu",
         "OOT Ganon Castle Spirit",
         "setting{Ganon_MQ}"
@@ -42663,7 +44314,7 @@
       "RequiredItems": [
         "OOT_can_hammer",
         "OOT_has_fire_arrows",
-        "OOT_has_mirror_shield",
+        "OOT_can_reflect_light",
         "OOT_has_bombchu",
         "OOT Ganon Castle Spirit",
         "setting{Ganon_MQ}"
@@ -42686,7 +44337,7 @@
       "RequiredItems": [
         "OOT_can_hammer",
         "OOT_has_fire_arrows",
-        "OOT_has_mirror_shield",
+        "OOT_can_reflect_light",
         "OOT_has_bombchu",
         "OOT Ganon Castle Spirit",
         "setting{Ganon_MQ}"
@@ -42708,7 +44359,7 @@
       "Id": "OOT MQ Ganon Pot Spirit End 1",
       "RequiredItems": [
         "OOT_has_fire_arrows",
-        "OOT_has_mirror_shield",
+        "OOT_can_reflect_light",
         "OOT_can_hammer",
         "OOT_has_bombchu",
         "OOT Ganon Castle Spirit",
@@ -42731,7 +44382,7 @@
       "Id": "OOT MQ Ganon Pot Spirit End 2",
       "RequiredItems": [
         "OOT_has_fire_arrows",
-        "OOT_has_mirror_shield",
+        "OOT_can_reflect_light",
         "OOT_can_hammer",
         "OOT_has_bombchu",
         "OOT Ganon Castle Spirit",
@@ -47109,16 +48760,18 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_ENEMY_TORCH_SLUG",
+          "setting{soulsEnemyOot, false}",
           "OOT_can_use_sticks"
         ],
         [
           "OOT_can_use_sticks",
-          "setting{soulsEnemyOot, false}"
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
+          "setting{restoreBrokenActors, false}"
         ],
         [
+          "OOT_can_use_sticks",
           "OOT_SOUL_ENEMY_TORCH_SLUG",
-          "OOT_has_weapon"
+          "OOT_SOUL_ENEMY_KEESE"
         ],
         [
           "setting{soulsEnemyOot, false}",
@@ -47126,11 +48779,28 @@
         ],
         [
           "OOT_SOUL_ENEMY_TORCH_SLUG",
+          "setting{restoreBrokenActors, false}",
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_KEESE",
+          "OOT_has_weapon"
+        ],
+        [
+          "setting{soulsEnemyOot, false}",
           "OOT_has_explosives",
           "OOT_has_nuts"
         ],
         [
-          "setting{soulsEnemyOot, false}",
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
+          "setting{restoreBrokenActors, false}",
+          "OOT_has_explosives",
+          "OOT_has_nuts"
+        ],
+        [
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_KEESE",
           "OOT_has_explosives",
           "OOT_has_nuts"
         ]
@@ -47158,8 +48828,15 @@
         ],
         [
           "OOT_SOUL_ENEMY_TORCH_SLUG",
+          "setting{restoreBrokenActors, false}",
           "OOT_SOUL_ENEMY_STALFOS",
           "OOT_SOUL_ENEMY_ANUBIS"
+        ],
+        [
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_STALFOS",
+          "OOT_SOUL_ENEMY_ANUBIS",
+          "OOT_SOUL_ENEMY_KEESE"
         ]
       ],
       "TimeNeeded": "None",
@@ -47202,16 +48879,18 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_ENEMY_TORCH_SLUG",
+          "setting{soulsEnemyOot, false}",
           "OOT_can_use_sticks"
         ],
         [
           "OOT_can_use_sticks",
-          "setting{soulsEnemyOot, false}"
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
+          "setting{restoreBrokenActors, false}"
         ],
         [
+          "OOT_can_use_sticks",
           "OOT_SOUL_ENEMY_TORCH_SLUG",
-          "OOT_has_weapon"
+          "OOT_SOUL_ENEMY_KEESE"
         ],
         [
           "setting{soulsEnemyOot, false}",
@@ -47219,11 +48898,28 @@
         ],
         [
           "OOT_SOUL_ENEMY_TORCH_SLUG",
+          "setting{restoreBrokenActors, false}",
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_KEESE",
+          "OOT_has_weapon"
+        ],
+        [
+          "setting{soulsEnemyOot, false}",
           "OOT_has_explosives",
           "OOT_has_nuts"
         ],
         [
-          "setting{soulsEnemyOot, false}",
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
+          "setting{restoreBrokenActors, false}",
+          "OOT_has_explosives",
+          "OOT_has_nuts"
+        ],
+        [
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_KEESE",
           "OOT_has_explosives",
           "OOT_has_nuts"
         ]
@@ -47243,16 +48939,18 @@
       ],
       "ConditionalItems": [
         [
-          "OOT_SOUL_ENEMY_TORCH_SLUG",
+          "setting{soulsEnemyOot, false}",
           "OOT_can_use_sticks"
         ],
         [
           "OOT_can_use_sticks",
-          "setting{soulsEnemyOot, false}"
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
+          "setting{restoreBrokenActors, false}"
         ],
         [
+          "OOT_can_use_sticks",
           "OOT_SOUL_ENEMY_TORCH_SLUG",
-          "OOT_has_weapon"
+          "OOT_SOUL_ENEMY_KEESE"
         ],
         [
           "setting{soulsEnemyOot, false}",
@@ -47260,11 +48958,28 @@
         ],
         [
           "OOT_SOUL_ENEMY_TORCH_SLUG",
+          "setting{restoreBrokenActors, false}",
+          "OOT_has_weapon"
+        ],
+        [
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_KEESE",
+          "OOT_has_weapon"
+        ],
+        [
+          "setting{soulsEnemyOot, false}",
           "OOT_has_explosives",
           "OOT_has_nuts"
         ],
         [
-          "setting{soulsEnemyOot, false}",
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
+          "setting{restoreBrokenActors, false}",
+          "OOT_has_explosives",
+          "OOT_has_nuts"
+        ],
+        [
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_KEESE",
           "OOT_has_explosives",
           "OOT_has_nuts"
         ]
@@ -47290,7 +49005,13 @@
         ],
         [
           "OOT_SOUL_ENEMY_TORCH_SLUG",
+          "setting{restoreBrokenActors, false}",
           "OOT_SOUL_ENEMY_STALFOS"
+        ],
+        [
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_STALFOS",
+          "OOT_SOUL_ENEMY_KEESE"
         ]
       ],
       "TimeNeeded": "None",
@@ -47314,7 +49035,13 @@
         ],
         [
           "OOT_SOUL_ENEMY_TORCH_SLUG",
+          "setting{restoreBrokenActors, false}",
           "OOT_SOUL_ENEMY_STALFOS"
+        ],
+        [
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_STALFOS",
+          "OOT_SOUL_ENEMY_KEESE"
         ]
       ],
       "TimeNeeded": "None",
@@ -47338,7 +49065,13 @@
         ],
         [
           "OOT_SOUL_ENEMY_TORCH_SLUG",
+          "setting{restoreBrokenActors, false}",
           "OOT_SOUL_ENEMY_STALFOS"
+        ],
+        [
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_STALFOS",
+          "OOT_SOUL_ENEMY_KEESE"
         ]
       ],
       "TimeNeeded": "None",
@@ -47362,7 +49095,13 @@
         ],
         [
           "OOT_SOUL_ENEMY_TORCH_SLUG",
+          "setting{restoreBrokenActors, false}",
           "OOT_SOUL_ENEMY_STALFOS"
+        ],
+        [
+          "OOT_SOUL_ENEMY_TORCH_SLUG",
+          "OOT_SOUL_ENEMY_STALFOS",
+          "OOT_SOUL_ENEMY_KEESE"
         ]
       ],
       "TimeNeeded": "None",
@@ -47676,7 +49415,7 @@
       "Id": "OOT Spirit Temple Statue => OOT Spirit Temple Adult Lower",
       "RequiredItems": [
         "OOT_has_fire_arrows",
-        "OOT_has_mirror_shield",
+        "OOT_can_reflect_light",
         "OOT_soul_wallmaster",
         "OOT_has_weapon",
         "OOT Spirit Temple Statue",
@@ -48068,7 +49807,7 @@
     {
       "Id": "OOT MQ Spirit Temple Boss Key Chest",
       "RequiredItems": [
-        "OOT_has_mirror_shield",
+        "OOT_can_reflect_light",
         "OOT Spirit Temple Adult Hand",
         "setting{Spirit_MQ}"
       ],
@@ -49262,10 +51001,30 @@
     {
       "Id": "MM Ancient Castle of Ikana => MM Ancient Castle of Ikana Interior",
       "RequiredItems": [
-        "MM_can_reset_time",
-        "MM Ancient Castle of Ikana"
+        "MM Ancient Castle of Ikana",
+        "MM_can_reset_time"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{erMoon}",
+          "trick{TRICK_MM_MAJORA_LOGIC}",
+          "MM_EVENT_MAJORA",
+          "time{Before_NIGHT3_AM_12_00}"
+        ],
+        [
+          "setting{erMoon}",
+          "trick{TRICK_MM_MAJORA_LOGIC}",
+          "MM_can_play_time"
+        ],
+        [
+          "setting{erMoon, false}",
+          "MM_can_reset_time"
+        ],
+        [
+          "MM_can_reset_time",
+          "trick{TRICK_MM_MAJORA_LOGIC, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -49933,40 +51692,14 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "MM Grass Grotto"
-        ],
-        [
-          "MM Pinnacle Rock"
-        ],
-        [
-          "MM Great Bay Temple Red Pipe 2"
-        ],
-        [
-          "MM Zora Cape"
-        ],
-        [
-          "MM Zora Cape Grotto"
-        ],
-        [
-          "MM Secret Shrine Entrance"
-        ],
-        [
-          "MM Road to Ikana Grotto"
-        ],
-        [
-          "MM Ikana Graveyard"
-        ],
-        [
-          "MM Ikana Graveyard Grotto"
-        ],
-        [
-          "MM Beneath The Graveyard Night 2"
-        ],
-        [
-          "MM Ikana Valley Grotto"
+          "MM Pillar Grotto"
         ],
         [
           "MM Ikana Canyon"
+        ],
+        [
+          "MM Ancient Castle of Ikana Interior North 2",
+          "MM_short_hook_anywhere"
         ],
         [
           "MM Ikana Castle Exterior"
@@ -49981,8 +51714,10 @@
           "MM Stone Tower Top Inverted Upper"
         ],
         [
-          "MM Ancient Castle of Ikana Interior North 2",
-          "MM_short_hook_anywhere"
+          "MM Secret Shrine Entrance"
+        ],
+        [
+          "MM Termina Field Cow Grotto"
         ],
         [
           "MM Snowhead Temple Main"
@@ -50010,16 +51745,10 @@
           "MM Swamp Spider House Main"
         ],
         [
-          "MM Pillar Grotto"
-        ],
-        [
           "MM Woodfall Temple Entrance"
         ],
         [
           "MM Ancient Castle of Ikana Pre-Boss"
-        ],
-        [
-          "MM Ocean Spider House Front"
         ],
         [
           "MM Great Bay Temple Central Room"
@@ -50035,27 +51764,33 @@
           "MM_SOUL_ENEMY_CHUCHU"
         ],
         [
+          "MM Twin Islands"
+        ],
+        [
+          "MM_SOUL_ENEMY_CHUCHU",
+          "MM Great Bay Temple Ice Arrow Room",
+          "MM_has_weapon"
+        ],
+        [
+          "MM Path to Snowhead Grotto"
+        ],
+        [
           "MM Termina Field",
+          "setting{soulsEnemyMm, false}"
+        ],
+        [
+          "MM Great Bay Temple Ice Arrow Room",
+          "MM_has_weapon",
           "setting{soulsEnemyMm, false}"
         ],
         [
           "MM_SOUL_ENEMY_CHUCHU",
           "MM Great Bay Temple Ice Arrow Room",
-          "MM_has_weapon"
-        ],
-        [
-          "setting{soulsEnemyMm, false}",
-          "MM Great Bay Temple Ice Arrow Room",
-          "MM_has_weapon"
-        ],
-        [
-          "MM_SOUL_ENEMY_CHUCHU",
-          "MM Great Bay Temple Ice Arrow Room",
           "MM_has_mask_zora"
         ],
         [
-          "setting{soulsEnemyMm, false}",
           "MM Great Bay Temple Ice Arrow Room",
+          "setting{soulsEnemyMm, false}",
           "MM_has_mask_zora"
         ],
         [
@@ -50064,15 +51799,21 @@
           "MM_has_explosives"
         ],
         [
-          "setting{soulsEnemyMm, false}",
           "MM Great Bay Temple Ice Arrow Room",
+          "setting{soulsEnemyMm, false}",
           "MM_has_explosives"
+        ],
+        [
+          "MM Great Bay Temple Red Pipe 2"
+        ],
+        [
+          "MM Clock Tower Roof"
+        ],
+        [
+          "MM Ocean Spider House Front"
         ],
         [
           "MM Owl Milk Road"
-        ],
-        [
-          "MM Termina Field Cow Grotto"
         ],
         [
           "MM Owl Mountain"
@@ -50096,15 +51837,7 @@
           "MM Laundry Pool"
         ],
         [
-          "MM_can_play_time",
-          "MM Clock Tower Roof"
-        ],
-        [
-          "MM Clock Tower Roof",
-          "MM_EVENT_MAJORA"
-        ],
-        [
-          "MM Ocean Gossip Grotto"
+          "MM Grass Grotto"
         ],
         [
           "MM Canyon Gossip Grotto"
@@ -50134,8 +51867,8 @@
           "MM_MASK_DEKU"
         ],
         [
-          "setting{soulsEnemyMm, false}",
           "MM Great Bay Temple Ice Arrow Room",
+          "setting{soulsEnemyMm, false}",
           "MM_MASK_DEKU"
         ],
         [
@@ -50150,15 +51883,18 @@
           "MM Deku Palace Grotto"
         ],
         [
+          "MM Twin Islands Ramp Grotto"
+        ],
+        [
           "MM Woodfall"
+        ],
+        [
+          "MM Snowhead Near Fairy Fountain",
+          "MM_EVENT_BOSS_SNOWHEAD"
         ],
         [
           "MM_EVENT_BOSS_SNOWHEAD",
           "MM Mountain Village Path Lower"
-        ],
-        [
-          "MM_can_break_boulders",
-          "MM Path to Snowhead Back"
         ],
         [
           "MM Mountain Village Path Upper"
@@ -50170,10 +51906,7 @@
           "MM Mountain Village Grotto"
         ],
         [
-          "MM Twin Islands"
-        ],
-        [
-          "MM Twin Islands Ramp Grotto"
+          "MM Snowhead Entrance"
         ],
         [
           "MM Near Ramp Grotto"
@@ -50191,19 +51924,13 @@
           "MM Goron Shrine"
         ],
         [
-          "MM Path to Snowhead Grotto"
-        ],
-        [
-          "MM Snowhead Entrance"
-        ],
-        [
-          "MM_EVENT_BOSS_SNOWHEAD",
-          "MM Snowhead Near Fairy Fountain"
-        ],
-        [
-          "MM_can_break_boulders",
+          "MM_EVENT_OPEN_SNOWHEAD_TEMPLE",
           "MM Snowhead Near Fairy Fountain",
-          "MM_EVENT_OPEN_SNOWHEAD_TEMPLE"
+          "MM_can_break_boulders"
+        ],
+        [
+          "MM Path to Snowhead Back",
+          "MM_can_break_boulders"
         ],
         [
           "MM Goron Race"
@@ -50222,6 +51949,33 @@
         ],
         [
           "MM Great Bay Cow Grotto"
+        ],
+        [
+          "MM Pinnacle Rock"
+        ],
+        [
+          "MM Zora Cape"
+        ],
+        [
+          "MM Zora Cape Grotto"
+        ],
+        [
+          "MM Road to Ikana Grotto"
+        ],
+        [
+          "MM Ikana Graveyard"
+        ],
+        [
+          "MM Ikana Graveyard Grotto"
+        ],
+        [
+          "MM Beneath The Graveyard Night 2"
+        ],
+        [
+          "MM Ikana Valley Grotto"
+        ],
+        [
+          "MM Ocean Gossip Grotto"
         ]
       ],
       "TimeNeeded": "None",
@@ -51302,12 +53056,32 @@
     {
       "Id": "MM Beneath The Well Entrance => MM Beneath The Well North Section",
       "RequiredItems": [
-        "MM_can_reset_time",
         "MM_can_pass_gibdo",
         "MM_has_blue_potion",
-        "MM Beneath The Well Entrance"
+        "MM Beneath The Well Entrance",
+        "MM_can_reset_time"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{erMoon}",
+          "trick{TRICK_MM_MAJORA_LOGIC}",
+          "MM_EVENT_MAJORA",
+          "time{Before_NIGHT3_AM_12_00}"
+        ],
+        [
+          "setting{erMoon}",
+          "trick{TRICK_MM_MAJORA_LOGIC}",
+          "MM_can_play_time"
+        ],
+        [
+          "setting{erMoon, false}",
+          "MM_can_reset_time"
+        ],
+        [
+          "MM_can_reset_time",
+          "trick{TRICK_MM_MAJORA_LOGIC, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -51316,12 +53090,32 @@
     {
       "Id": "MM Beneath The Well Entrance => MM Beneath The Well East Section",
       "RequiredItems": [
-        "MM_can_reset_time",
         "MM_can_pass_gibdo",
         "MM_has_beans",
-        "MM Beneath The Well Entrance"
+        "MM Beneath The Well Entrance",
+        "MM_can_reset_time"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{erMoon}",
+          "trick{TRICK_MM_MAJORA_LOGIC}",
+          "MM_EVENT_MAJORA",
+          "time{Before_NIGHT3_AM_12_00}"
+        ],
+        [
+          "setting{erMoon}",
+          "trick{TRICK_MM_MAJORA_LOGIC}",
+          "MM_can_play_time"
+        ],
+        [
+          "setting{erMoon, false}",
+          "MM_can_reset_time"
+        ],
+        [
+          "MM_can_reset_time",
+          "trick{TRICK_MM_MAJORA_LOGIC, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -52457,11 +54251,31 @@
     {
       "Id": "MM Beneath The Well End => MM Beneath The Well Sun Block",
       "RequiredItems": [
-        "MM_can_reset_time",
         "MM_can_use_light_arrows",
-        "MM Beneath The Well End"
+        "MM Beneath The Well End",
+        "MM_can_reset_time"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{erMoon}",
+          "trick{TRICK_MM_MAJORA_LOGIC}",
+          "MM_EVENT_MAJORA",
+          "time{Before_NIGHT3_AM_12_00}"
+        ],
+        [
+          "setting{erMoon}",
+          "trick{TRICK_MM_MAJORA_LOGIC}",
+          "MM_can_play_time"
+        ],
+        [
+          "setting{erMoon, false}",
+          "MM_can_reset_time"
+        ],
+        [
+          "MM_can_reset_time",
+          "trick{TRICK_MM_MAJORA_LOGIC, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -52482,10 +54296,30 @@
     {
       "Id": "MM Great Bay Temple => MM Great Bay Temple Entrance",
       "RequiredItems": [
-        "MM_can_reset_time",
-        "MM Great Bay Temple"
+        "MM Great Bay Temple",
+        "MM_can_reset_time"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{erMoon}",
+          "trick{TRICK_MM_MAJORA_LOGIC}",
+          "MM_EVENT_MAJORA",
+          "time{Before_NIGHT3_AM_12_00}"
+        ],
+        [
+          "setting{erMoon}",
+          "trick{TRICK_MM_MAJORA_LOGIC}",
+          "MM_can_play_time"
+        ],
+        [
+          "setting{erMoon, false}",
+          "MM_can_reset_time"
+        ],
+        [
+          "MM_can_reset_time",
+          "trick{TRICK_MM_MAJORA_LOGIC, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -54952,6 +56786,297 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Clock Tower Roof Skull Kid Ocarina",
+      "RequiredItems": [
+        "MM Clock Tower Roof",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{shufflePotsMm, false}",
+          "MM_MASK_DEKU",
+          "MM_MAGIC_UPGRADE",
+          "MM_can_play_time"
+        ],
+        [
+          "setting{shufflePotsMm, false}",
+          "MM_MASK_DEKU",
+          "MM_can_play_time",
+          "SHARED_MAGIC_UPGRADE"
+        ],
+        [
+          "setting{shufflePotsMm, false}",
+          "MM_can_play_time",
+          "MM_has_weapon_range"
+        ],
+        [
+          "MM_can_play_time",
+          "MM_has_weapon_range",
+          "setting{shufflePotsMm}"
+        ],
+        [
+          "setting{shufflePotsMm, false}",
+          "MM_MASK_DEKU",
+          "MM_MAGIC_UPGRADE",
+          "MM_EVENT_MAJORA"
+        ],
+        [
+          "setting{shufflePotsMm, false}",
+          "MM_MASK_DEKU",
+          "SHARED_MAGIC_UPGRADE",
+          "MM_EVENT_MAJORA"
+        ],
+        [
+          "setting{shufflePotsMm, false}",
+          "MM_has_weapon_range",
+          "MM_EVENT_MAJORA"
+        ],
+        [
+          "MM_has_weapon_range",
+          "setting{shufflePotsMm}",
+          "MM_EVENT_MAJORA"
+        ],
+        [
+          "setting{shufflePotsMm, false}",
+          "MM_MASK_DEKU",
+          "MM_MAGIC_UPGRADE",
+          "setting{erMoon}",
+          "MM_dungeon_er"
+        ],
+        [
+          "setting{shufflePotsMm, false}",
+          "MM_MASK_DEKU",
+          "SHARED_MAGIC_UPGRADE",
+          "setting{erMoon}",
+          "MM_dungeon_er"
+        ],
+        [
+          "setting{shufflePotsMm, false}",
+          "MM_has_weapon_range",
+          "setting{erMoon}",
+          "MM_dungeon_er"
+        ],
+        [
+          "MM_has_weapon_range",
+          "setting{shufflePotsMm}",
+          "setting{erMoon}",
+          "MM_dungeon_er"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Clock Tower Roof Skull Kid Song of Time",
+      "RequiredItems": [
+        "MM Clock Tower Roof",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{shufflePotsMm, false}",
+          "MM_MASK_DEKU",
+          "MM_MAGIC_UPGRADE",
+          "MM_can_play_time"
+        ],
+        [
+          "setting{shufflePotsMm, false}",
+          "MM_MASK_DEKU",
+          "MM_can_play_time",
+          "SHARED_MAGIC_UPGRADE"
+        ],
+        [
+          "setting{shufflePotsMm, false}",
+          "MM_can_play_time",
+          "MM_has_weapon_range"
+        ],
+        [
+          "MM_can_play_time",
+          "MM_has_weapon_range",
+          "setting{shufflePotsMm}"
+        ],
+        [
+          "setting{shufflePotsMm, false}",
+          "MM_MASK_DEKU",
+          "MM_MAGIC_UPGRADE",
+          "MM_EVENT_MAJORA"
+        ],
+        [
+          "setting{shufflePotsMm, false}",
+          "MM_MASK_DEKU",
+          "SHARED_MAGIC_UPGRADE",
+          "MM_EVENT_MAJORA"
+        ],
+        [
+          "setting{shufflePotsMm, false}",
+          "MM_has_weapon_range",
+          "MM_EVENT_MAJORA"
+        ],
+        [
+          "MM_has_weapon_range",
+          "setting{shufflePotsMm}",
+          "MM_EVENT_MAJORA"
+        ],
+        [
+          "setting{shufflePotsMm, false}",
+          "MM_MASK_DEKU",
+          "MM_MAGIC_UPGRADE",
+          "setting{erMoon}",
+          "MM_dungeon_er"
+        ],
+        [
+          "setting{shufflePotsMm, false}",
+          "MM_MASK_DEKU",
+          "SHARED_MAGIC_UPGRADE",
+          "setting{erMoon}",
+          "MM_dungeon_er"
+        ],
+        [
+          "setting{shufflePotsMm, false}",
+          "MM_has_weapon_range",
+          "setting{erMoon}",
+          "MM_dungeon_er"
+        ],
+        [
+          "MM_has_weapon_range",
+          "setting{shufflePotsMm}",
+          "setting{erMoon}",
+          "MM_dungeon_er"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Clock Tower Roof Pot 1",
+      "RequiredItems": [
+        "MM Clock Tower Roof",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_can_play_time"
+        ],
+        [
+          "MM_EVENT_MAJORA"
+        ],
+        [
+          "setting{erMoon}",
+          "MM_dungeon_er"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Clock Tower Roof Pot 2",
+      "RequiredItems": [
+        "MM Clock Tower Roof",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_can_play_time"
+        ],
+        [
+          "MM_EVENT_MAJORA"
+        ],
+        [
+          "setting{erMoon}",
+          "MM_dungeon_er"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Clock Tower Roof Pot 3",
+      "RequiredItems": [
+        "MM Clock Tower Roof",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_can_play_time"
+        ],
+        [
+          "MM_EVENT_MAJORA"
+        ],
+        [
+          "setting{erMoon}",
+          "MM_dungeon_er"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Clock Tower Roof Pot 4",
+      "RequiredItems": [
+        "MM Clock Tower Roof",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_can_play_time"
+        ],
+        [
+          "MM_EVENT_MAJORA"
+        ],
+        [
+          "setting{erMoon}",
+          "MM_dungeon_er"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Clock Tower Roof => MM Moon",
+      "RequiredItems": [
+        "MM_HAS_MOON_REQUIREMENTS",
+        "MM Clock Tower Roof",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [
+        [
+          "MM_can_play_order"
+        ],
+        [
+          "setting{openMoon}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Clock Tower Roof => MM Clock Tower Platform",
+      "RequiredItems": [
+        "false",
+        "MM Clock Tower Roof",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Moon Fierce Deity Mask",
       "RequiredItems": [
         "MM_can_reset_time",
@@ -56479,14 +58604,53 @@
     {
       "Id": "MM Ocean Spider House => MM Ocean Spider House Front",
       "RequiredItems": [
-        "MM_can_reset_time",
         "MM Ocean Spider House"
       ],
       "ConditionalItems": [
         [
-          "MM_has_explosives"
+          "MM_has_explosives",
+          "setting{erMoon}",
+          "trick{TRICK_MM_MAJORA_LOGIC}",
+          "MM_EVENT_MAJORA",
+          "time{Before_NIGHT3_AM_12_00}"
         ],
         [
+          "MM_has_explosives",
+          "setting{erMoon}",
+          "trick{TRICK_MM_MAJORA_LOGIC}",
+          "MM_can_play_time"
+        ],
+        [
+          "MM_has_explosives",
+          "setting{erMoon, false}",
+          "MM_can_reset_time"
+        ],
+        [
+          "MM_has_explosives",
+          "MM_can_reset_time",
+          "trick{TRICK_MM_MAJORA_LOGIC, false}"
+        ],
+        [
+          "setting{erMoon}",
+          "trick{TRICK_MM_MAJORA_LOGIC}",
+          "MM_EVENT_MAJORA",
+          "time{Before_NIGHT3_AM_12_00}",
+          "MM_trick_keg_explosives"
+        ],
+        [
+          "setting{erMoon}",
+          "trick{TRICK_MM_MAJORA_LOGIC}",
+          "MM_can_play_time",
+          "MM_trick_keg_explosives"
+        ],
+        [
+          "setting{erMoon, false}",
+          "MM_can_reset_time",
+          "MM_trick_keg_explosives"
+        ],
+        [
+          "MM_can_reset_time",
+          "trick{TRICK_MM_MAJORA_LOGIC, false}",
           "MM_trick_keg_explosives"
         ]
       ],
@@ -57664,9 +59828,8 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Owl Clock Town => MM Clock Tower Roof",
+      "Id": "MM Owl Clock Town => MM Clock Tower Platform",
       "RequiredItems": [
-        "time{After_NIGHT3_AM_12_00}",
         "MM Owl Clock Town"
       ],
       "ConditionalItems": [],
@@ -58261,22 +60424,6 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Clock Town Platform HP",
-      "RequiredItems": [],
-      "ConditionalItems": [
-        [
-          "MM Clock Town"
-        ],
-        [
-          "MM Clock Town South"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
       "Id": "MM Clock Town => MM GLOBAL",
       "RequiredItems": [
         "MM Clock Town"
@@ -58300,9 +60447,8 @@
       "IsTrick": false
     },
     {
-      "Id": "MM Clock Town => MM Clock Tower Roof",
+      "Id": "MM Clock Town => MM Clock Tower Platform",
       "RequiredItems": [
-        "time{After_NIGHT3_AM_12_00}",
         "MM Clock Town"
       ],
       "ConditionalItems": [],
@@ -58315,6 +60461,67 @@
       "Id": "MM Clock Town => MM Owl Clock Town",
       "RequiredItems": [
         "MM Clock Town"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Clock Town Platform HP",
+      "RequiredItems": [
+        "MM Clock Tower Platform",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Clock Tower Platform => MM Clock Town South",
+      "RequiredItems": [
+        "MM_can_reset_time",
+        "MM Clock Tower Platform"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Clock Tower Platform => MM Clock Tower Roof",
+      "RequiredItems": [
+        "time{After_NIGHT3_AM_12_00}",
+        "MM Clock Tower Platform",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Clock Tower Platform => MM Owl Clock Town",
+      "RequiredItems": [
+        "MM Clock Tower Platform",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM Clock Tower Platform => OOT Market",
+      "RequiredItems": [
+        "MM Clock Tower Platform",
+        "MM_can_reset_time"
       ],
       "ConditionalItems": [],
       "TimeNeeded": "None",
@@ -58418,6 +60625,18 @@
       "IsTrick": false
     },
     {
+      "Id": "MM Clock Town South => MM Clock Tower Platform",
+      "RequiredItems": [
+        "MM Clock Town South",
+        "MM_can_reset_time"
+      ],
+      "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "MM Clock Town South => MM Termina Field",
       "RequiredItems": [
         "MM Clock Town South",
@@ -58492,19 +60711,6 @@
     {
       "Id": "MM Clock Town South => MM Laundry Pool",
       "RequiredItems": [
-        "MM Clock Town South",
-        "MM_can_reset_time"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Clock Town South => MM Clock Tower Roof",
-      "RequiredItems": [
-        "time{After_NIGHT3_AM_12_00}",
         "MM Clock Town South",
         "MM_can_reset_time"
       ],
@@ -60013,136 +62219,6 @@
       "Id": "MM Clock Town Fairy Fountain => MM Clock Town North",
       "RequiredItems": [
         "MM Clock Town Fairy Fountain",
-        "MM_can_reset_time"
-      ],
-      "ConditionalItems": [],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Clock Tower Roof Skull Kid Ocarina",
-      "RequiredItems": [
-        "MM_has_weapon_range",
-        "MM Clock Tower Roof",
-        "MM_can_reset_time"
-      ],
-      "ConditionalItems": [
-        [
-          "MM_can_play_time"
-        ],
-        [
-          "MM_EVENT_MAJORA"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Clock Tower Roof Skull Kid Song of Time",
-      "RequiredItems": [
-        "MM_has_weapon_range",
-        "MM Clock Tower Roof",
-        "MM_can_reset_time"
-      ],
-      "ConditionalItems": [
-        [
-          "MM_can_play_time"
-        ],
-        [
-          "MM_EVENT_MAJORA"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Clock Tower Roof Pot 1",
-      "RequiredItems": [
-        "MM Clock Tower Roof",
-        "MM_can_reset_time"
-      ],
-      "ConditionalItems": [
-        [
-          "MM_can_play_time"
-        ],
-        [
-          "MM_EVENT_MAJORA"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Clock Tower Roof Pot 2",
-      "RequiredItems": [
-        "MM Clock Tower Roof",
-        "MM_can_reset_time"
-      ],
-      "ConditionalItems": [
-        [
-          "MM_can_play_time"
-        ],
-        [
-          "MM_EVENT_MAJORA"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Clock Tower Roof Pot 3",
-      "RequiredItems": [
-        "MM Clock Tower Roof",
-        "MM_can_reset_time"
-      ],
-      "ConditionalItems": [
-        [
-          "MM_can_play_time"
-        ],
-        [
-          "MM_EVENT_MAJORA"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Clock Tower Roof Pot 4",
-      "RequiredItems": [
-        "MM Clock Tower Roof",
-        "MM_can_reset_time"
-      ],
-      "ConditionalItems": [
-        [
-          "MM_can_play_time"
-        ],
-        [
-          "MM_EVENT_MAJORA"
-        ]
-      ],
-      "TimeNeeded": "None",
-      "TimeAvailable": "None",
-      "TimeSetup": "None",
-      "IsTrick": false
-    },
-    {
-      "Id": "MM Clock Tower Roof => MM Moon",
-      "RequiredItems": [
-        "MM_can_play_order",
-        "MM_HAS_MOON_REQUIREMENTS",
-        "MM Clock Tower Roof",
         "MM_can_reset_time"
       ],
       "ConditionalItems": [],
@@ -82474,10 +84550,30 @@
     {
       "Id": "MM Pirate Fortress => MM Pirate Fortress Entrance",
       "RequiredItems": [
-        "MM_can_reset_time",
-        "MM Pirate Fortress"
+        "MM Pirate Fortress",
+        "MM_can_reset_time"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{erMoon}",
+          "trick{TRICK_MM_MAJORA_LOGIC}",
+          "MM_EVENT_MAJORA",
+          "time{Before_NIGHT3_AM_12_00}"
+        ],
+        [
+          "setting{erMoon}",
+          "trick{TRICK_MM_MAJORA_LOGIC}",
+          "MM_can_play_time"
+        ],
+        [
+          "setting{erMoon, false}",
+          "MM_can_reset_time"
+        ],
+        [
+          "MM_can_reset_time",
+          "trick{TRICK_MM_MAJORA_LOGIC, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -83599,10 +85695,30 @@
     {
       "Id": "MM Secret Shrine => MM Secret Shrine Entrance",
       "RequiredItems": [
-        "MM_can_reset_time",
-        "MM Secret Shrine"
+        "MM Secret Shrine",
+        "MM_can_reset_time"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{erMoon}",
+          "trick{TRICK_MM_MAJORA_LOGIC}",
+          "MM_EVENT_MAJORA",
+          "time{Before_NIGHT3_AM_12_00}"
+        ],
+        [
+          "setting{erMoon}",
+          "trick{TRICK_MM_MAJORA_LOGIC}",
+          "MM_can_play_time"
+        ],
+        [
+          "setting{erMoon, false}",
+          "MM_can_reset_time"
+        ],
+        [
+          "MM_can_reset_time",
+          "trick{TRICK_MM_MAJORA_LOGIC, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -84269,7 +86385,15 @@
         "MM_can_reset_time",
         "MM Snowhead Temple"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{erMoon}",
+          "time{Before_NIGHT3_AM_12_00}"
+        ],
+        [
+          "setting{erMoon, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -87096,10 +89220,30 @@
     {
       "Id": "MM Stone Tower Temple => MM Stone Tower Temple Entrance",
       "RequiredItems": [
-        "MM_can_reset_time",
-        "MM Stone Tower Temple"
+        "MM Stone Tower Temple",
+        "MM_can_reset_time"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{erMoon}",
+          "trick{TRICK_MM_MAJORA_LOGIC}",
+          "MM_EVENT_MAJORA",
+          "time{Before_NIGHT3_AM_12_00}"
+        ],
+        [
+          "setting{erMoon}",
+          "trick{TRICK_MM_MAJORA_LOGIC}",
+          "MM_can_play_time"
+        ],
+        [
+          "setting{erMoon, false}",
+          "MM_can_reset_time"
+        ],
+        [
+          "MM_can_reset_time",
+          "trick{TRICK_MM_MAJORA_LOGIC, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -88785,10 +90929,30 @@
     {
       "Id": "MM Stone Tower Temple Inverted => MM Stone Tower Temple Inverted Entrance",
       "RequiredItems": [
-        "MM_can_reset_time",
-        "MM Stone Tower Temple Inverted"
+        "MM Stone Tower Temple Inverted",
+        "MM_can_reset_time"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{erMoon}",
+          "trick{TRICK_MM_MAJORA_LOGIC}",
+          "MM_EVENT_MAJORA",
+          "time{Before_NIGHT3_AM_12_00}"
+        ],
+        [
+          "setting{erMoon}",
+          "trick{TRICK_MM_MAJORA_LOGIC}",
+          "MM_can_play_time"
+        ],
+        [
+          "setting{erMoon, false}",
+          "MM_can_reset_time"
+        ],
+        [
+          "MM_can_reset_time",
+          "trick{TRICK_MM_MAJORA_LOGIC, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -90587,10 +92751,29 @@
     {
       "Id": "MM Swamp Spider House => MM Swamp Spider House Main",
       "RequiredItems": [
-        "MM_can_reset_time",
         "MM Swamp Spider House"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{erMoon}",
+          "trick{TRICK_MM_MAJORA_LOGIC}",
+          "MM_EVENT_MAJORA",
+          "time{Before_NIGHT3_AM_12_00}"
+        ],
+        [
+          "setting{erMoon}",
+          "trick{TRICK_MM_MAJORA_LOGIC}",
+          "MM_can_play_time"
+        ],
+        [
+          "setting{erMoon, false}",
+          "MM_can_reset_time"
+        ],
+        [
+          "MM_can_reset_time",
+          "trick{TRICK_MM_MAJORA_LOGIC, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -91315,10 +93498,30 @@
     {
       "Id": "MM Woodfall Temple => MM Woodfall Temple Entrance",
       "RequiredItems": [
-        "MM_can_reset_time",
-        "MM Woodfall Temple"
+        "MM Woodfall Temple",
+        "MM_can_reset_time"
       ],
-      "ConditionalItems": [],
+      "ConditionalItems": [
+        [
+          "setting{erMoon}",
+          "trick{TRICK_MM_MAJORA_LOGIC}",
+          "MM_EVENT_MAJORA",
+          "time{Before_NIGHT3_AM_12_00}"
+        ],
+        [
+          "setting{erMoon}",
+          "trick{TRICK_MM_MAJORA_LOGIC}",
+          "MM_can_play_time"
+        ],
+        [
+          "setting{erMoon, false}",
+          "MM_can_reset_time"
+        ],
+        [
+          "MM_can_reset_time",
+          "trick{TRICK_MM_MAJORA_LOGIC, false}"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -94222,6 +96425,36 @@
         ],
         [
           "OOT_EVENT_KING_ZORA_LETTER"
+        ],
+        [
+          "OOT_BOTTLE_FAIRY"
+        ],
+        [
+          "OOT_BOTTLE_POE"
+        ],
+        [
+          "OOT_BOTTLE_BIG_POE"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_big_poe",
+      "RequiredItems": [
+        "OOT_has_bottle"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_EVENT_BIG_POE"
+        ],
+        [
+          "renewable{OOT_BOTTLE_BIG_POE}"
+        ],
+        [
+          "renewable{OOT_BIG_POE}"
         ]
       ],
       "TimeNeeded": "None",
@@ -94605,11 +96838,29 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT_has_shield_hylian",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{sharedShields}",
+          "renewable{SHARED_SHIELD_HYLIAN}"
+        ],
+        [
+          "setting{sharedShields, false}",
+          "renewable{OOT_SHIELD_HYLIAN}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT_has_shield",
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "renewable{OOT_SHIELD_HYLIAN}"
+          "OOT_has_shield_hylian"
         ],
         [
           "OOT_has_mirror_shield"
@@ -94630,7 +96881,7 @@
       "ConditionalItems": [
         [
           "OOT_is_adult",
-          "renewable{OOT_SHIELD_HYLIAN}"
+          "OOT_has_shield_hylian"
         ],
         [
           "OOT_age_shield_child",
@@ -94643,10 +96894,8 @@
       "IsTrick": false
     },
     {
-      "Id": "OOT_has_mirror_shield",
-      "RequiredItems": [
-        "OOT_age_shield_adult"
-      ],
+      "Id": "OOT_has_mirror_shield_raw_nonshared",
+      "RequiredItems": [],
       "ConditionalItems": [
         [
           "setting{progressiveShieldsOot, progressive}",
@@ -94663,11 +96912,65 @@
       "IsTrick": false
     },
     {
+      "Id": "OOT_has_mirror_shield_raw_shared",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{progressiveShieldsOot, progressive}",
+          "SHARED_SHIELD, 3"
+        ],
+        [
+          "setting{progressiveShieldsOot, progressive, false}",
+          "SHARED_SHIELD_MIRROR"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_mirror_shield",
+      "RequiredItems": [
+        "OOT_age_shield_adult"
+      ],
+      "ConditionalItems": [
+        [
+          "setting{sharedShields}",
+          "OOT_has_mirror_shield_raw_shared"
+        ],
+        [
+          "setting{sharedShields, false}",
+          "OOT_has_mirror_shield_raw_nonshared"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
       "Id": "OOT_has_one_hand_shield",
       "RequiredItems": [],
       "ConditionalItems": [
         [
           "OOT_has_shield_for_scrubs"
+        ],
+        [
+          "OOT_has_mirror_shield"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_can_reflect_light",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_has_sunlight_arrows"
         ],
         [
           "OOT_has_mirror_shield"
@@ -94965,6 +97268,26 @@
         "OOT_has_blue_fire_arrows"
       ],
       "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_has_sunlight_arrows",
+      "RequiredItems": [
+        "OOT_can_use_bow",
+        "setting{sunlightArrows}",
+        "OOT_has_magic"
+      ],
+      "ConditionalItems": [
+        [
+          "OOT_ARROW_LIGHT"
+        ],
+        [
+          "SHARED_ARROW_LIGHT"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",
@@ -95711,7 +98034,7 @@
           "OOT_has_sticks",
           "OOT_climb_anywhere",
           "OOT_has_explosives",
-          "OOT_has_mirror_shield"
+          "OOT_can_reflect_light"
         ],
         [
           "OOT_has_arrows",
@@ -95781,7 +98104,7 @@
           "OOT_has_sticks",
           "OOT_climb_anywhere",
           "OOT_has_explosives",
-          "OOT_has_mirror_shield",
+          "OOT_can_reflect_light",
           "SHARED_ARROW_FIRE"
         ],
         [
@@ -95850,7 +98173,7 @@
         [
           "OOT_climb_anywhere",
           "OOT_has_explosives",
-          "OOT_has_mirror_shield",
+          "OOT_can_reflect_light",
           "OOT_SPELL_FIRE"
         ],
         [
@@ -97897,7 +100220,7 @@
       "IsTrick": false
     },
     {
-      "Id": "MM_has_mirror_shield",
+      "Id": "MM_has_mirror_shield_nonshared",
       "RequiredItems": [],
       "ConditionalItems": [
         [
@@ -97907,6 +100230,42 @@
         [
           "setting{progressiveShieldsMm, progressive, false}",
           "MM_SHIELD_MIRROR"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_has_mirror_shield_shared",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{progressiveShieldsMm, progressive}",
+          "SHARED_SHIELD, 3"
+        ],
+        [
+          "setting{progressiveShieldsMm, progressive, false}",
+          "SHARED_SHIELD_MIRROR"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_has_mirror_shield",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{sharedShields}",
+          "MM_has_mirror_shield_shared"
+        ],
+        [
+          "setting{sharedShields, false}",
+          "MM_has_mirror_shield_nonshared"
         ]
       ],
       "TimeNeeded": "None",
@@ -98229,6 +100588,11 @@
       "RequiredItems": [],
       "ConditionalItems": [
         [
+          "setting{sharedShields}",
+          "renewable{SHARED_SHIELD_HYLIAN}"
+        ],
+        [
+          "setting{sharedShields, false}",
           "renewable{MM_SHIELD_HERO}"
         ],
         [
@@ -98860,6 +101224,15 @@
         ],
         [
           "MM_BOTTLE_CHATEAU"
+        ],
+        [
+          "MM_BOTTLE_FAIRY"
+        ],
+        [
+          "MM_BOTTLE_POE"
+        ],
+        [
+          "MM_BOTTLE_BIG_POE"
         ]
       ],
       "TimeNeeded": "None",
@@ -99030,6 +101403,12 @@
         ],
         [
           "MM_EVENT_DAMPE_BIG_POE"
+        ],
+        [
+          "renewable{MM_BOTTLE_BIG_POE}"
+        ],
+        [
+          "renewable{MM_BIG_POE}"
         ]
       ],
       "TimeNeeded": "None",
@@ -99367,6 +101746,9 @@
           "setting{erIkanaCastle}"
         ],
         [
+          "setting{erMoon}"
+        ],
+        [
           "setting{erIndoorsMajor}"
         ],
         [
@@ -99395,6 +101777,46 @@
         ],
         [
           "setting{erOneWaysOwls}"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "MM_dungeon_er",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{erMajorDungeons}"
+        ],
+        [
+          "setting{erSpiderHouses}"
+        ],
+        [
+          "setting{erBeneathWell}"
+        ],
+        [
+          "setting{erPirateFortress}"
+        ],
+        [
+          "setting{erSecretShrine}"
+        ],
+        [
+          "setting{erIkanaCastle}"
+        ],
+        [
+          "setting{erDungeons, full}",
+          "setting{erMinorDungeons}"
+        ],
+        [
+          "setting{erDungeons, full}",
+          "setting{erGanonCastle}"
+        ],
+        [
+          "setting{erDungeons, full}",
+          "setting{erGanonTower}"
         ]
       ],
       "TimeNeeded": "None",
@@ -100909,6 +103331,166 @@
         "setting{goal, triforce3, false}"
       ],
       "ConditionalItems": [],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_HAS_CHILD_FISH_7_TO_14",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_FISHING_POND_CHILD_FISH_7LBS"
+        ],
+        [
+          "OOT_FISHING_POND_CHILD_FISH_8LBS"
+        ],
+        [
+          "OOT_FISHING_POND_CHILD_FISH_9LBS"
+        ],
+        [
+          "OOT_FISHING_POND_CHILD_FISH_10LBS"
+        ],
+        [
+          "OOT_FISHING_POND_CHILD_FISH_11LBS"
+        ],
+        [
+          "OOT_FISHING_POND_CHILD_FISH_12LBS"
+        ],
+        [
+          "OOT_FISHING_POND_CHILD_FISH_13LBS"
+        ],
+        [
+          "OOT_FISHING_POND_CHILD_FISH_14LBS"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_HAS_CHILD_LOACH_14_TO_19",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_FISHING_POND_CHILD_LOACH_14LBS"
+        ],
+        [
+          "OOT_FISHING_POND_CHILD_LOACH_15LBS"
+        ],
+        [
+          "OOT_FISHING_POND_CHILD_LOACH_16LBS"
+        ],
+        [
+          "OOT_FISHING_POND_CHILD_LOACH_17LBS"
+        ],
+        [
+          "OOT_FISHING_POND_CHILD_LOACH_18LBS"
+        ],
+        [
+          "OOT_FISHING_POND_CHILD_LOACH_19LBS"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_HAS_ADULT_FISH_8_TO_25",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_FISHING_POND_ADULT_FISH_8LBS"
+        ],
+        [
+          "OOT_FISHING_POND_ADULT_FISH_9LBS"
+        ],
+        [
+          "OOT_FISHING_POND_ADULT_FISH_10LBS"
+        ],
+        [
+          "OOT_FISHING_POND_ADULT_FISH_11LBS"
+        ],
+        [
+          "OOT_FISHING_POND_ADULT_FISH_12LBS"
+        ],
+        [
+          "OOT_FISHING_POND_ADULT_FISH_13LBS"
+        ],
+        [
+          "OOT_FISHING_POND_ADULT_FISH_14LBS"
+        ],
+        [
+          "OOT_FISHING_POND_ADULT_FISH_15LBS"
+        ],
+        [
+          "OOT_FISHING_POND_ADULT_FISH_16LBS"
+        ],
+        [
+          "OOT_FISHING_POND_ADULT_FISH_17LBS"
+        ],
+        [
+          "OOT_FISHING_POND_ADULT_FISH_18LBS"
+        ],
+        [
+          "OOT_FISHING_POND_ADULT_FISH_19LBS"
+        ],
+        [
+          "OOT_FISHING_POND_ADULT_FISH_20LBS"
+        ],
+        [
+          "OOT_FISHING_POND_ADULT_FISH_21LBS"
+        ],
+        [
+          "OOT_FISHING_POND_ADULT_FISH_22LBS"
+        ],
+        [
+          "OOT_FISHING_POND_ADULT_FISH_23LBS"
+        ],
+        [
+          "OOT_FISHING_POND_ADULT_FISH_24LBS"
+        ],
+        [
+          "OOT_FISHING_POND_ADULT_FISH_25LBS"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "OOT_HAS_ADULT_LOACH_29_TO_36",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "OOT_FISHING_POND_ADULT_LOACH_29LBS"
+        ],
+        [
+          "OOT_FISHING_POND_ADULT_LOACH_30LBS"
+        ],
+        [
+          "OOT_FISHING_POND_ADULT_LOACH_31LBS"
+        ],
+        [
+          "OOT_FISHING_POND_ADULT_LOACH_32LBS"
+        ],
+        [
+          "OOT_FISHING_POND_ADULT_LOACH_33LBS"
+        ],
+        [
+          "OOT_FISHING_POND_ADULT_LOACH_34LBS"
+        ],
+        [
+          "OOT_FISHING_POND_ADULT_LOACH_35LBS"
+        ],
+        [
+          "OOT_FISHING_POND_ADULT_LOACH_36LBS"
+        ]
+      ],
       "TimeNeeded": "None",
       "TimeAvailable": "None",
       "TimeSetup": "None",

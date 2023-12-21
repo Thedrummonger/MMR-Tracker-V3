@@ -30,8 +30,8 @@ namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
         public static bool LogicEntryHasGamecode(string LogicItem)
         {
             if (bool.TryParse(LogicItem, out _)) { return true; }
-            if (LogicFunctions.IsLogicFunction(LogicItem, out _, out _, new('(', ')'))) { return true; }
-            if (LogicFunctions.IsLogicFunction(LogicItem, out _, out _)) { return true; }
+            if (IsOOTMMLogicFunction(LogicItem, out _, out _, new('(', ')'))) { return true; }
+            if (IsOOTMMLogicFunction(LogicItem, out _, out _)) { return true; }
             if (LogicItem.StartsWith("OOT_")) { return true; }
             if (LogicItem.StartsWith("MM_")) { return true; }
             if (LogicItem.StartsWith("SHARED_")) { return true; }
@@ -40,6 +40,25 @@ namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
             if (Segments[0].Trim() == "MM") { return true; }
             if (Segments[0].Trim() == "SHARED") { return true; }
             return false;
+        }
+
+        public static bool IsOOTMMLogicFunction(string i, out string Func, out string Param, Tuple<char, char> functionCasing = null)
+        {
+            functionCasing ??= new('{', '}');
+            Func = null;
+            Param = null;
+            if (i.IsLiteralID(out _)) { return false; }
+            bool squirFunc = i.EndsWith(functionCasing.Item2) && i.Contains(functionCasing.Item1);
+
+            if (!squirFunc) { return false; }
+
+            int funcEnd = i.IndexOf(functionCasing.Item1);
+            int paramStart = i.IndexOf(functionCasing.Item1) + 1;
+            int paramEnd = i.LastIndexOf(functionCasing.Item2);
+            Func = i[..funcEnd].Trim().ToLower();
+            Param = i[paramStart..paramEnd].Trim();
+
+            return true;
         }
 
         public static string GetExitID(string Area, string Exit, string GameCode)

@@ -290,6 +290,18 @@ namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
             }
         }
 
+        private static void AddPondFishPrize(MMRData.LogicFile LogicFile, string Fish, int Min, int Max)
+        {
+            var LogicItem = new MMRData.JsonFormatLogicItem();
+            LogicItem.Id = $"OOT_HAS_{Fish}_{Min}_TO_{Max}";
+            LogicItem.ConditionalItems = new List<List<string>>();
+            for (var i = Min; i <= Max; i++)
+            {
+                LogicItem.ConditionalItems.Add(new List<string> { $"OOT_FISHING_POND_{Fish}_{i}LBS" });
+            }
+            LogicFile.Logic.Add(LogicItem);
+        }
+
         private static void AddAdditionalData(MMRData.LogicFile LogicFile, LogicDictionaryData.LogicDictionary DictionaryFile, OOTMMParserData OTTMMPaths)
         {
             //This event doesn't exist but logic for magic is asking for it. Just make it always false.
@@ -297,6 +309,12 @@ namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
             LogicFile.Logic.Add(new MMRData.JsonFormatLogicItem { Id = "MM_is_child", RequiredItems = new List<string>() { "OOT_is_child" } });
             LogicFile.Logic.Add(new MMRData.JsonFormatLogicItem { Id = "MM_!is_goal_triforce", RequiredItems = new List<string>() { "setting{goal, triforce, false}", "setting{goal, triforce3, false}" } });
             LogicFile.Logic.Add(new MMRData.JsonFormatLogicItem { Id = "OOT_!is_goal_triforce", RequiredItems = new List<string>() { "setting{goal, triforce, false}", "setting{goal, triforce3, false}" } });
+
+            AddPondFishPrize(LogicFile, "CHILD_FISH", 7, 14);
+            AddPondFishPrize(LogicFile, "CHILD_LOACH", 14, 19);
+            AddPondFishPrize(LogicFile, "ADULT_FISH", 8, 25);
+            AddPondFishPrize(LogicFile, "ADULT_LOACH", 29, 36);
+
 
             var MASKS_REGULAR = new string[] {
               "MM_MASK_CAPTAIN",

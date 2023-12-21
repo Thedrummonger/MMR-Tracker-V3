@@ -12,6 +12,8 @@ using MMR_Tracker_V3.Logic;
 
 namespace MMR_Tracker_V3.GameDataCreation.OOTMMV2
 {
+    //Settings Parser www.typescriptlang.org
+    //Add to the end of the code "console.log(JSON.stringify(SETTINGS))"
     internal class SettingsCreation
     {
         public static void CreateSettings(LogicDictionaryData.LogicDictionary logicDictionaryData, OOTMMParserData ParserData)

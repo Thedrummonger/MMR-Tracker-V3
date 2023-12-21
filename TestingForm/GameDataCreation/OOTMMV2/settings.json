@@ -882,6 +882,14 @@
     "default": false
   },
   {
+    "key": "pondFishShuffle",
+    "name": "Fishing Pond Fish Shuffle",
+    "category": "main.shuffle",
+    "type": "boolean",
+    "description": "Controls whether or not the Fish (and the Loach) in the Fishing Pond are shuffled amongst all the items.",
+    "default": false
+  },
+  {
     "key": "eggShuffle",
     "name": "Weird / Pocket Egg Content Shuffle",
     "category": "main.shuffle",
@@ -1234,6 +1242,14 @@
     "default": false
   },
   {
+    "key": "openMoon",
+    "name": "Skip Oath to Order",
+    "category": "main.events",
+    "type": "boolean",
+    "description": "Skip playing Oath to Order to reach the Moon.",
+    "default": false
+  },
+  {
     "key": "lacs",
     "name": "Light Arrow Cutscene",
     "category": "main.events",
@@ -1554,6 +1570,14 @@
     "default": true
   },
   {
+    "key": "restoreBrokenActors",
+    "name": "Restore Broken Actors",
+    "category": "main.misc",
+    "type": "boolean",
+    "description": "In vanilla OoT, some actors fails to load properly in some rooms due to errors in the room files. When this is on, these actors will load.",
+    "default": false
+  },
+  {
     "key": "fillWallets",
     "name": "Fill Wallets",
     "category": "items",
@@ -1685,6 +1709,14 @@
     "category": "items.extensions",
     "type": "boolean",
     "description": "Changes the OoT Ice Arrows to have Blue Fire properties",
+    "default": false
+  },
+  {
+    "key": "sunlightArrows",
+    "name": "Sunlight Arrows",
+    "category": "items.extensions",
+    "type": "boolean",
+    "description": "Changes the OoT Light Arrows to have \"beams of light\" properties",
     "default": false
   },
   {
@@ -2011,6 +2043,13 @@
     "default": false
   },
   {
+    "key": "sharedShields",
+    "name": "Shared Shields",
+    "category": "items.shared",
+    "type": "boolean",
+    "default": false
+  },
+  {
     "key": "sharedSoulsEnemy",
     "name": "Shared Enemy Souls",
     "category": "items.shared",
@@ -2172,6 +2211,13 @@
   {
     "key": "erGanonTower",
     "name": "Shuffle Ganon's Tower with Dungeons",
+    "category": "entrances",
+    "type": "boolean",
+    "default": false
+  },
+  {
+    "key": "erMoon",
+    "name": "Shuffle Clock Tower with Dungeons",
     "category": "entrances",
     "type": "boolean",
     "default": false
