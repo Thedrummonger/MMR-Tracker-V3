@@ -870,6 +870,7 @@ namespace Windows_Form_Frontend
                 {
                     if (p > -1) { Target.SetPrice(-1); }
                     else { SetCheckPrice(Target); }
+                    InstanceContainer.logicCalculation.CompileOptionActionEdits();
                     InstanceContainer.logicCalculation.CalculateLogic();
                     UpdateUI();
                 };
@@ -893,7 +894,7 @@ namespace Windows_Form_Frontend
 
         private void SetCheckPrice(dynamic Object)
         {
-            var DictEntry = Object.GetDictEntry(InstanceContainer.Instance);
+            var DictEntry = Object.GetDictEntry();
             var PriceContainer = new List<OptionData.IntOption>() { new() { ID = DictEntry.Name ?? DictEntry.ID, Value = 0 } };
             VariableInputWindow PriceInput = new(PriceContainer, InstanceContainer);
             PriceInput.ShowDialog();
