@@ -23,92 +23,190 @@ namespace Windows_Form_Frontend
             InitializeComponent();
             _Instance = Instance;
             TempOptionFile = GenericCopier<MMR_Tracker_V3.TrackerObjects.InstanceData.OptionFile>.DeepCopy(_Instance.StaticOptions.OptionFile);
-        } 
-        private bool ValuesUpdating = false;
+            PopulateOptions();
+        }
+
+        private class OptionLine
+        {
+            public string ToolTip;
+            public string Description;
+            public object Value;
+            public object ValidValues;
+            public Action<object> OnChange;
+            public OptionLine(string _Desc, object _value, Action<object> _OnChange, string _ToolTip = null, object _ValidValues = null) 
+            {
+                ToolTip = _ToolTip;
+                Description = _Desc;
+                Value = _value;
+                ValidValues = _ValidValues;
+                OnChange= _OnChange;
+            }
+        }
+
+        private List<OptionLine> OptionLines = new List<OptionLine>();
+        private void PopulateOptions()
+        {
+            OptionLines.Clear();
+            OptionLines.Add(new OptionLine("Check for Updates", TempOptionFile.CheckForUpdate, (val) => { TempOptionFile.CheckForUpdate = (bool)val; }, 
+                "Should the tracker check for updates and notify you when a new one is available?"));
+            OptionLines.Add(new OptionLine("Horizontal Layout", TempOptionFile.WinformData.HorizontalLayout, (val) => { TempOptionFile.WinformData.HorizontalLayout = (bool)val; }, 
+                "Should the tracker display the Valid Location List and Checked Item List Side by side instead of on top of each other?"));
+            OptionLines.Add(new OptionLine("Max Undo Actions", TempOptionFile.MaxUndo, (val) => { TempOptionFile.MaxUndo = (int)val; }, 
+                "Max amount of undo states the tracker should store\nThese can get quite large and eat up a lot of memory."));
+            OptionLines.Add(new OptionLine("Show Unavailable Marked", TempOptionFile.ShowUnavailableMarkedLocations, (val) => { TempOptionFile.ShowUnavailableMarkedLocations = (bool)val; }, 
+                "Should available locations that have been marked manually or through hints be displayed in the available locations list?"));
+            OptionLines.Add(new OptionLine("Seperate Unavailable Marked", TempOptionFile.SeperateUnavailableMarkedLocations, (val) => { TempOptionFile.SeperateUnavailableMarkedLocations = (bool)val; }, 
+                "If the above option is true, should those locations be seperated at the bottom of the list box?"));
+            OptionLines.Add(new OptionLine("Show Entrance List", TempOptionFile.EntranceRandoFeatures, (val) => { TempOptionFile.EntranceRandoFeatures = (bool)val; },
+                "Should an additional list box be added to show entrances?\nIf this is disable entrances will be shown in the valid locations list"));
+            OptionLines.Add(new OptionLine("Couple Entrances", TempOptionFile.AutoCheckCoupleEntrances, (val) => { TempOptionFile.AutoCheckCoupleEntrances = (bool)val; },
+                "When an entrace is checked, should the paired entrance be checked automatically?\nShould be disabled if playing with decoupled entrances"));
+            OptionLines.Add(new OptionLine("Pathfinder Unradmonized Exits", TempOptionFile.ShowMacroExitsPathfinder, (val) => { TempOptionFile.ShowMacroExitsPathfinder = (bool)val; },
+                "By default pathfinder will only show links between randomized exits, Should all links be shown instead?"));
+            OptionLines.Add(new OptionLine("Pathfinder Redundant Paths", TempOptionFile.ShowRedundantPathfinder, (val) => { TempOptionFile.ShowRedundantPathfinder = (bool)val; },
+                "Should longer paths be listed as an option in the pathfinder.\r\n\r\n" +
+                "For example if the following path is available\r\n" +
+                "A > B > C > D\r\n" +
+                "The following path may also be shown as an option\r\n" +
+                "A > X > Y > C > D\r\n\r\n" +
+                "This can be usefull if the path with less \"stops\" is actually longer to traverse in game.\r\n\r\n" +
+                "WARNING: Enabling this option will exponentially increase the number of paths checked.\r\n" +
+                "To prevent program instability, a cap is implimented which may prevent exceptionally long \r\n" +
+                "paths from being found. if the only available path exceeds this cap, no path will be found."));
+            OptionLines.Add(new OptionLine("ToolTips", TempOptionFile.WinformData.ShowEntryNameTooltip, (val) => { TempOptionFile.WinformData.ShowEntryNameTooltip = (bool)val; },
+                "Should the tracker display tooltips that show the full text of an entry when you mouse over it?"));
+            OptionLines.Add(new OptionLine("Compressed Save File", TempOptionFile.CompressSave, (val) => { TempOptionFile.CompressSave = (bool)val; },
+                "Shoul the tracker compress it's save files to save space?\nThe save file will no longer be human readable and can't be edited manually."));
+            OptionLines.Add(new OptionLine("Font Size", TempOptionFile.GetFont().Size, (val) => { TempOptionFile.WinformData.FormFont = UpdateFont(null, (float)val); },
+                "The font size the tracker should use"));
+            OptionLines.Add(new OptionLine("Font Family", TempOptionFile.GetFont().FontFamily.Name, (val) => { TempOptionFile.WinformData.FormFont = UpdateFont((string)val, null); },
+                "The font Family the tracker should use", FontFamily.Families.Select(x => x.Name).ToList()));
+        }
+
+        private string UpdateFont(string FontFamily, float? FontSize)
+        {
+            Font CurrentFont = TempOptionFile.GetFont();
+            FontFamily??= CurrentFont.FontFamily.Name;
+            FontSize??= CurrentFont.Size;
+            Font NewFont = new(FontFamily, (float)FontSize, FontStyle.Regular);
+
+            richTextBox1.Font = NewFont;
+            return WinFormUtils.ConvertFontToString(NewFont);
+        }
+
+        private Label GetToolTipLable(string ToolTip)
+        {
+            Label label = new Label();
+            label.AutoSize = true;
+            label.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label.ForeColor = System.Drawing.SystemColors.ControlText;
+            label.Location = new System.Drawing.Point(3, 180);
+            label.Name = "label5";
+            label.Size = new System.Drawing.Size(14, 18);
+            label.TabIndex = 7;
+            label.Text = "?";
+            this.toolTip1.SetToolTip(label, ToolTip);
+            return label;
+        }
+        static int ControlPadding = 3;
+
+        private int XOffset(Control c, int width = -1)
+        {
+            if (width < 0) { width = c.Width; }
+            return c.Location.X + width + ControlPadding;
+        }
+
+        private void PopulateListView()
+        {
+            var y = 9;
+            var deltaY = 23;
+            int MaxDescLength = 10;
+
+            foreach ( var line in OptionLines )
+            {
+                panel1.Controls.Clear();
+                Label Test = new Label();
+                Test.Text = line.Description;
+                Test.AutoSize = true;
+                Panel TestPanel = new Panel();
+                TestPanel.Controls.Add(Test);
+                if (MaxDescLength < Test.Width) { MaxDescLength = Test.Width; }
+            }
+
+            foreach (var item in OptionLines)
+            {
+                Label ToolTip = GetToolTipLable(item.ToolTip);
+                ToolTip.Location = new Point(ControlPadding, y);
+
+                Label Description = new Label() { Text = item.Description, Location = new Point(XOffset(ToolTip), y), Width = MaxDescLength };
+
+                if (item.Value is bool BoolVal)
+                {
+                    CheckBox toggle = new() { Location = Location = new Point(XOffset(Description), y), Checked = BoolVal };
+                    toggle.CheckStateChanged += (sender, ee) => { item.OnChange(toggle.Checked); Utility.PrintObjectToConsole(TempOptionFile); };
+                    panel1.Controls.Add(toggle);
+                }
+                else if (item.Value is float FloatVal)
+                {
+                    NumericUpDown nud = new NumericUpDown() { Location = new Point(XOffset(Description), y), Value = (decimal)FloatVal, Width = 40 };
+                    nud.ValueChanged += (sender, e) => { item.OnChange((float)nud.Value); Utility.PrintObjectToConsole(TempOptionFile); };
+                    panel1.Controls.Add(nud);
+                }
+                else if (item.Value is int intVal)
+                {
+                    NumericUpDown nud = new NumericUpDown() { Location = new Point(XOffset(Description), y), Value = intVal, Width = 40 };
+                    nud.ValueChanged += (sender, e) => { item.OnChange((int)nud.Value); Utility.PrintObjectToConsole(TempOptionFile); };
+                    panel1.Controls.Add(nud);
+                }
+                else if (item.Value is string StringValD && item.ValidValues is List<string> ListVal)
+                {
+                    ComboBox comboBox = new ComboBox() { Location = new Point(XOffset(Description), y), Width = 100 };
+                    int Ind = 0;
+                    foreach(string i in ListVal)
+                    {
+                        comboBox.Items.Add(i);
+                        if (i == StringValD) { comboBox.SelectedIndex = Ind; }
+                        Ind++;
+                    }
+                    comboBox.SelectedValueChanged += (sender, e) => { item.OnChange(comboBox.SelectedItem); Utility.PrintObjectToConsole(TempOptionFile); };
+                    panel1.Controls.Add(comboBox);
+                }
+                else
+                {
+                    continue;
+                }
+
+                panel1.Controls.Add(ToolTip);
+                panel1.Controls.Add(Description);
+
+                y += deltaY;
+            }
+            richTextBox1.Font = TempOptionFile.GetFont();
+            richTextBox1.Text = "Example 123";
+        }
 
         private void StaticOptionSelect_Load(object sender, EventArgs e)
         {
-            ValuesUpdating = true;
-            chkHorizontal.Checked = TempOptionFile.WinformData.HorizontalLayout;
-            chkTooltips.Checked = TempOptionFile.WinformData.ShowEntryNameTooltip;
-            chkUpdates.Checked = TempOptionFile.CheckForUpdate;
-            chkCompressSave.Checked = TempOptionFile.CompressSave;
-            chkEntranceFeatures.Checked = TempOptionFile.EntranceRandoFeatures;
-            chkRedundantPaths.Checked = TempOptionFile.ShowRedundantPathfinder;
-            chkUnrandExits.Checked = TempOptionFile.ShowMacroExitsPathfinder;
-            chkCheckCoupled.Checked = TempOptionFile.AutoCheckCoupleEntrances;
-            nudMaxUndo.Value = TempOptionFile.MaxUndo;
-            chkShowUnavailableMarked.Checked = TempOptionFile.ShowUnavailableMarkedLocations;
-            chkSeperateUnavailableMarked.Checked = TempOptionFile.SeperateUnavailableMarkedLocations;
-            int counter = 0;
-            var CurrentFont = TempOptionFile.GetFont();
-            foreach (FontFamily font in FontFamily.Families)
-            {
-                cmbFontStyle.Items.Add(font.Name);
-                if (font.Name == CurrentFont.FontFamily.Name) { cmbFontStyle.SelectedIndex = counter; }
-                counter++;
-            }
-            nudFontSize.Value = (decimal)CurrentFont.Size;
-            richTextBox1.Text = "Example";
-            richTextBox1.Font = CurrentFont;
-            ValuesUpdating = false;
+            PopulateListView();
         }
 
-        private void chkUpdates_CheckStateChanged(object sender, EventArgs e)
-        {
-            if (ValuesUpdating) { return; }
-            TempOptionFile.WinformData.HorizontalLayout = chkHorizontal.Checked;
-            TempOptionFile.WinformData.ShowEntryNameTooltip = chkTooltips.Checked;
-            TempOptionFile.CheckForUpdate = chkUpdates.Checked;
-            TempOptionFile.CompressSave = chkCompressSave.Checked;
-            TempOptionFile.EntranceRandoFeatures = chkEntranceFeatures.Checked;
-            TempOptionFile.ShowRedundantPathfinder = chkRedundantPaths.Checked;
-            TempOptionFile.ShowMacroExitsPathfinder = chkUnrandExits.Checked;
-            TempOptionFile.AutoCheckCoupleEntrances = chkCheckCoupled.Checked;
-            TempOptionFile.MaxUndo = (int)nudMaxUndo.Value;
-            TempOptionFile.ShowUnavailableMarkedLocations = chkShowUnavailableMarked.Checked;
-            TempOptionFile.SeperateUnavailableMarkedLocations = chkSeperateUnavailableMarked.Checked;
-            Debug.WriteLine(JsonConvert.SerializeObject(TempOptionFile, Formatting.Indented));
-        }
-
-        private void nudFontSize_ValueChanged(object sender, EventArgs e)
-        {
-            if (ValuesUpdating) { return; }
-            UpdateFont();
-        }
-
-        private void cmbFontStyle_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if (ValuesUpdating) { return; }
-            UpdateFont();
-        }
-
-        private void UpdateFont()
-        {
-            TempOptionFile.WinformData.FormFont = WinFormUtils.ConvertFontToString(new Font(familyName: cmbFontStyle.SelectedItem.ToString(), (float)nudFontSize.Value, FontStyle.Regular));
-            richTextBox1.Font = new Font(familyName: cmbFontStyle.SelectedItem.ToString(), (float)nudFontSize.Value, FontStyle.Regular);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void Button_Apply_To_Current(object sender, EventArgs e)
         {
             _Instance.StaticOptions.OptionFile = TempOptionFile;
             this.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button_Set_Default(object sender, EventArgs e)
         {
             File.WriteAllText(References.Globalpaths.OptionFile, JsonConvert.SerializeObject(TempOptionFile, Utility._NewtonsoftJsonSerializerOptions));
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Button_ResetFont(object sender, EventArgs e)
         {
-            ValuesUpdating = true;
-            nudFontSize.Value = (decimal)SystemFonts.DefaultFont.Size;
-            int SelectedFont = cmbFontStyle.Items.IndexOf(SystemFonts.DefaultFont.FontFamily.Name);
-            cmbFontStyle.SelectedIndex = SelectedFont > -1 ? SelectedFont : cmbFontStyle.SelectedIndex;
             TempOptionFile.WinformData.FormFont = WinFormUtils.ConvertFontToString(SystemFonts.DefaultFont);
-            ValuesUpdating = false;
-            UpdateFont();
+            PopulateOptions();
+            PopulateListView();
         }
     }
 }
