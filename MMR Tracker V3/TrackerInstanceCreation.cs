@@ -150,7 +150,7 @@ namespace MMR_Tracker_V3
                     if (DictEntry.Value.LocationProxys.Any())
                     {
                         if (!Instance.LocationProxyData.LocationsWithProxys.ContainsKey(i.Id)) { Instance.LocationProxyData.LocationsWithProxys.Add(i.Id, new List<string>()); }
-                        Instance.LocationProxyData.LocationsWithProxys[i.Id].AddRange(DictEntry.Value.LocationProxys.Select(x => x.Name));
+                        Instance.LocationProxyData.LocationsWithProxys[i.Id].AddRange(DictEntry.Value.LocationProxys.Select(x => x.ID));
                         foreach(var proxy in DictEntry.Value.LocationProxys) { Instance.LocationProxyData.LocationProxies.Add(proxy.ID, proxy.ToInstanceData(DictEntry.Value, Instance)); }
                     }
                 }

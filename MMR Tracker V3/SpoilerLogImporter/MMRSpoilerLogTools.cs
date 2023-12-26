@@ -236,7 +236,11 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                     var pricedata = line.Split("->");
                     string Location = pricedata[0].Trim();
                     int Price = int.Parse(pricedata[1]);
+                    SetPrice(Location, Price);
+                }
 
+                void SetPrice(string Location, int Price)
+                {
                     object LocationObj = Container.Instance.LocationPool.FirstOrDefault(x => x.Value.GetDictEntry().SpoilerData.PriceDataNames.Contains(Location)).Value;
                     LocationObj ??= Container.Instance.LocationPool.FirstOrDefault(x => x.Value.GetDictEntry().Name == Location).Value;
                     LocationObj ??= Container.Instance.MacroPool.FirstOrDefault(x => x.Value.GetDictEntry().SpoilerData.PriceDataNames.Contains(Location)).Value;
@@ -244,10 +248,28 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                     if (LocationObj is MacroObject MO && (MO.Price is null || MO.Price < 0 || Price < MO.Price))
                     {
                         MO.Price = Price;
+                        Debug.WriteLine($"Assigned Price {Price} to Macro {MO.ID}");
                     }
-                    else if (LocationObj is LocationData.LocationObject LO && (LO.Price is null || LO.Price < 0 || Price < LO.Price))
+                    else if (LocationObj is LocationData.LocationObject LO)
                     {
-                        LO.Price = Price;
+                        if (Container.Instance.LocationProxyData.LocationsWithProxys.ContainsKey(LO.ID))
+                        {
+                            Debug.WriteLine($"Price Location was proxied {LO.ID}, Assigning to proxies instead\n{string.Join(",", Container.Instance.LocationProxyData.LocationsWithProxys[LO.ID])}");
+                            foreach (var i in Container.Instance.LocationProxyData.LocationsWithProxys[LO.ID])
+                            {
+                                var Proxy = Container.Instance.LocationProxyData.LocationProxies[i];
+                                SetPrice(Proxy.LogicInheritance, Price);
+                            }
+                        }
+                        else if (LO.Price is null || LO.Price < 0 || Price < LO.Price)
+                        {
+                            Debug.WriteLine($"Assigned Price {Price} to Macro {LO.ID}");
+                            LO.Price = Price;
+                        }
+                        else
+                        {
+                            Debug.WriteLine($"Price line {Location}|{Price} was not assigned");
+                        }
                     }
                     else
                     {
@@ -271,7 +293,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
 
                     var GossipLocaiton = Container.Instance.GetHintByID(GossipStone);
                     GossipLocaiton ??= Container.Instance.GetHintByID($"Gossip{GossipStone}");
-                    GossipLocaiton ??= Container.Instance.GetHintByID($"HintGaro{GossipStone}");
+                    GossipLocaiton ??= Container.Instance.GetHintByID($"Hint{GossipStone}");
                     if (GossipLocaiton is null) { continue; }
                     GossipLocaiton.SpoilerHintText = GossipTextOriginal;
 
@@ -288,8 +310,11 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
 
                 foreach(var i in Container.Instance.HintPool.Values)
                 {
-                    if (string.IsNullOrWhiteSpace(i.SpoilerHintText)) { Debug.WriteLine($"No hint given for {i.GetDictEntry().Name}"); }
-                    i.SpoilerHintText = Utility.PickRandom(GossipJunkMessages);
+                    if (string.IsNullOrWhiteSpace(i.SpoilerHintText)) 
+                    {
+                        Debug.WriteLine($"No hint given for {i.GetDictEntry().Name}");
+                        i.SpoilerHintText = Utility.PickRandom(GossipJunkMessages);
+                    }
                 }
             }
 

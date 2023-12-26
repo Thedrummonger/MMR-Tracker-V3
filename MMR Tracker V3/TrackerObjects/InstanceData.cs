@@ -215,11 +215,11 @@ namespace MMR_Tracker_V3.TrackerObjects
                             break;
                         case SaveCompressor.SaveType.Compressed:
                             var Decomp = SaveCompressor.Decompress(File.ReadAllText(Save));
-                            ApplyInstance(File.ReadAllText(Decomp));
+                            ApplyInstance(Decomp);
                             break;
                         case SaveCompressor.SaveType.CompressedByte:
                             var ByteDecomp = SaveCompressor.Decompress(File.ReadAllBytes(Save));
-                            ApplyInstance(File.ReadAllText(ByteDecomp));
+                            ApplyInstance(ByteDecomp);
                             break;
                         case SaveCompressor.SaveType.error:
                             return false;
