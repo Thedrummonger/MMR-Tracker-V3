@@ -329,11 +329,8 @@ namespace MMR_Tracker_V3
     {
         public static T DeepCopy(object objectToCopy)
         {
-            using MemoryStream memoryStream = new();
-            BinaryFormatter binaryFormatter = new();
-            binaryFormatter.Serialize(memoryStream, objectToCopy);
-            memoryStream.Seek(0, SeekOrigin.Begin);
-            return (T)binaryFormatter.Deserialize(memoryStream);
+            string Serialized = JsonConvert.SerializeObject(objectToCopy);
+            return JsonConvert.DeserializeObject<T>(Serialized);
         }
     }
 
