@@ -87,7 +87,7 @@ namespace Windows_Form_Frontend
                     }
                     options.CheckForUpdate = false;
                     References.TrackerVersionStatus.DoUpdateCheck = false;
-                    try { File.WriteAllText(References.Globalpaths.OptionFile, JsonConvert.SerializeObject(options, Utility._NewtonsoftJsonSerializerOptions)); }
+                    try { File.WriteAllText(References.Globalpaths.OptionFile, JsonConvert.SerializeObject(options, Utility.DefaultSerializerSettings)); }
                     catch (Exception ex) { Debug.WriteLine($"could not write to options.txt {ex}"); }
                 }
             }

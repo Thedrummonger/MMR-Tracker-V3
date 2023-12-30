@@ -21,7 +21,7 @@ namespace WebServer
         {
             //The the config file values
             NetData.ConfigFile.VerifyConfig();
-            NetData.ConfigFile cfg = JsonConvert.DeserializeObject<NetData.ConfigFile>(File.ReadAllText(NetData.ConfigFile.ConfigFilePath), MMR_Tracker_V3.Utility._NewtonsoftJsonSerializerOptions)??new NetData.ConfigFile().SetDefaultExamples();
+            NetData.ConfigFile cfg = JsonConvert.DeserializeObject<NetData.ConfigFile>(File.ReadAllText(NetData.ConfigFile.ConfigFilePath), MMR_Tracker_V3.Utility.DefaultSerializerSettings)??new NetData.ConfigFile().SetDefaultExamples();
 
             if (cfg.ServerGameMode == NetData.OnlineMode.None)
             {

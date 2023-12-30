@@ -10,7 +10,7 @@ using static MMR_Tracker_V3.References;
 
 namespace TestingForm
 {
-    internal class Utility
+    internal class TestingUtility
     {
         public static string CreateTestingFilePath(string Name, string Extention = "txt")
         {
@@ -19,7 +19,7 @@ namespace TestingForm
 
         public static void CreateTestingFile(object Data, string Name, string Extention = "txt")
         {
-            File.WriteAllText(CreateTestingFilePath(Name, Extention), JsonConvert.SerializeObject(Data, MMR_Tracker_V3.Utility._NewtonsoftJsonSerializerOptions));
+            File.WriteAllText(CreateTestingFilePath(Name, Extention), JsonConvert.SerializeObject(Data, MMR_Tracker_V3.Utility.DefaultSerializerSettings));
         }
 
         public static void TestLogicForInvalidItems(MMR_Tracker_V3.TrackerObjects.InstanceData.InstanceContainer Container)
@@ -66,7 +66,7 @@ namespace TestingForm
             {
                 FolderBrowserDialog dialog = new()
                 {
-                    InitialDirectory = Utility.TryGetSolutionDirectoryInfo().FullName,
+                    InitialDirectory = TestingUtility.TryGetSolutionDirectoryInfo().FullName,
                     Description = "Select the directory containing the .sln file"
                 };
                 dialog.ShowDialog();
@@ -80,7 +80,7 @@ namespace TestingForm
                 DevINI.TestingFolder = dialog.SelectedPath;
                 PathsUpdated = true;
             }
-            if (PathsUpdated) { File.WriteAllText(Globalpaths.DevFile, JsonConvert.SerializeObject(DevINI, MMR_Tracker_V3.Utility._NewtonsoftJsonSerializerOptions)); }
+            if (PathsUpdated) { File.WriteAllText(Globalpaths.DevFile, JsonConvert.SerializeObject(DevINI, MMR_Tracker_V3.Utility.DefaultSerializerSettings)); }
         }
     }
 }

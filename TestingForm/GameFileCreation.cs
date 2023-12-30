@@ -18,9 +18,9 @@ namespace TestingForm
             MMRData.LogicFile CasualLogic = JsonConvert.DeserializeObject<MMRData.LogicFile>(File.ReadAllText(Path.Combine(TestingReferences.GetDevTestingPath(), "MMR 116", "REQ_CASUAL.txt")));
             var MMRDictV16 = GameDataCreation.MMR.GenData.CreateMMRFiles();
 
-            File.WriteAllText(Path.Combine(TestingReferences.GetLibraryDictionaryPath(), "MMR V24.json"), JsonConvert.SerializeObject(MMRDictV16, MMR_Tracker_V3.Utility._NewtonsoftJsonSerializerOptions));
+            File.WriteAllText(Path.Combine(TestingReferences.GetLibraryDictionaryPath(), "MMR V24.json"), JsonConvert.SerializeObject(MMRDictV16, MMR_Tracker_V3.Utility.DefaultSerializerSettings));
 
-            Utility.CreateTestingFile(MMRDictV16, @"MMR 116\MMRV16Dict", "json");
+            TestingUtility.CreateTestingFile(MMRDictV16, @"MMR 116\MMRV16Dict", "json");
 
             WinFormTesting.ActivateWinFormInterface();
             WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(CasualLogic), JsonConvert.SerializeObject(MMRDictV16));
@@ -32,7 +32,7 @@ namespace TestingForm
             WinFormTesting.ActivateWinFormInterface();
             MMR_Tracker_V3.GameDataCreation.PaperMarioRando.ReadData.ReadEadges(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary);
             WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(Logic), JsonConvert.SerializeObject(dictionary));
-            Utility.TestLogicForInvalidItems(MainInterface.InstanceContainer);
+            TestingUtility.TestLogicForInvalidItems(MainInterface.InstanceContainer);
         }
 
         public static void TPRCreateData()
@@ -40,8 +40,8 @@ namespace TestingForm
             WinFormTesting.ActivateWinFormInterface();
             MMR_Tracker_V3.GameDataCreation.TPRando.ReadAndParseData.CreateFiles(out MMRData.LogicFile Logic, out LogicDictionaryData.LogicDictionary dictionary);
             WinFormInstanceCreation.CreateWinFormInstance(JsonConvert.SerializeObject(Logic), JsonConvert.SerializeObject(dictionary));
-            Utility.TestLogicForInvalidItems(MainInterface.InstanceContainer);
-            Utility.TestLocationsForInvalidVanillaItem(MainInterface.InstanceContainer);
+            TestingUtility.TestLogicForInvalidItems(MainInterface.InstanceContainer);
+            TestingUtility.TestLocationsForInvalidVanillaItem(MainInterface.InstanceContainer);
 
             //Testing.PrintObjectToConsole(MMR_Tracker_V3.OtherGames.TPRando.ParseMacrosFromCode.ReadMacrosFromCode());
 
@@ -67,8 +67,8 @@ namespace TestingForm
             }
             MainInterface.InstanceContainer.logicCalculation.CalculateLogic();
             MainInterface.CurrentProgram.UpdateUI();
-            Utility.TestLogicForInvalidItems(MainInterface.InstanceContainer);
-            Utility.TestLocationsForInvalidVanillaItem(MainInterface.InstanceContainer);
+            TestingUtility.TestLogicForInvalidItems(MainInterface.InstanceContainer);
+            TestingUtility.TestLocationsForInvalidVanillaItem(MainInterface.InstanceContainer);
         }
     }
 }

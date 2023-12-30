@@ -33,7 +33,7 @@ namespace TestingForm
 
         private void MainInterface_Load(object sender, EventArgs e)
         {
-            Utility.ValidateDevFiles();
+            TestingUtility.ValidateDevFiles();
             UpdateDebugActions();
             DLLImport.AllocConsole();
             DLLImport.ShowWindow(DLLImport.GetConsoleWindow(), DLLImport.SW_HIDE);

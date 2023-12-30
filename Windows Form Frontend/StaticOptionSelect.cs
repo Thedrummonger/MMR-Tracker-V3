@@ -47,39 +47,52 @@ namespace Windows_Form_Frontend
         private void PopulateOptions()
         {
             OptionLines.Clear();
-            OptionLines.Add(new OptionLine("Check for Updates", TempOptionFile.CheckForUpdate, (val) => { TempOptionFile.CheckForUpdate = (bool)val; }, 
+            OptionLines.Add(new OptionLine("Check for Updates", 
+                TempOptionFile.CheckForUpdate, (val) => { TempOptionFile.CheckForUpdate = (bool)val; }, 
                 "Should the tracker check for updates and notify you when a new one is available?"));
-            OptionLines.Add(new OptionLine("Horizontal Layout", TempOptionFile.WinformData.HorizontalLayout, (val) => { TempOptionFile.WinformData.HorizontalLayout = (bool)val; }, 
+            OptionLines.Add(new OptionLine("Horizontal Layout", 
+                TempOptionFile.WinformData.HorizontalLayout, (val) => { TempOptionFile.WinformData.HorizontalLayout = (bool)val; }, 
                 "Should the tracker display the Valid Location List and Checked Item List Side by side instead of on top of each other?"));
-            OptionLines.Add(new OptionLine("Max Undo Actions", TempOptionFile.MaxUndo, (val) => { TempOptionFile.MaxUndo = (int)val; }, 
+            OptionLines.Add(new OptionLine("Max Undo Actions", 
+                TempOptionFile.MaxUndo, (val) => { TempOptionFile.MaxUndo = (int)val; }, 
                 "Max amount of undo states the tracker should store\nThese can get quite large and eat up a lot of memory."));
-            OptionLines.Add(new OptionLine("Show Unavailable Marked", TempOptionFile.ShowUnavailableMarkedLocations, (val) => { TempOptionFile.ShowUnavailableMarkedLocations = (bool)val; }, 
+            OptionLines.Add(new OptionLine("Show Unavailable Marked", 
+                TempOptionFile.ShowUnavailableMarkedLocations, (val) => { TempOptionFile.ShowUnavailableMarkedLocations = (bool)val; }, 
                 "Should available locations that have been marked manually or through hints be displayed in the available locations list?"));
-            OptionLines.Add(new OptionLine("Seperate Unavailable Marked", TempOptionFile.SeperateUnavailableMarkedLocations, (val) => { TempOptionFile.SeperateUnavailableMarkedLocations = (bool)val; }, 
-                "If the above option is true, should those locations be seperated at the bottom of the list box?"));
-            OptionLines.Add(new OptionLine("Show Entrance List", TempOptionFile.EntranceRandoFeatures, (val) => { TempOptionFile.EntranceRandoFeatures = (bool)val; },
+            OptionLines.Add(new OptionLine("Separate Unavailable Marked", 
+                TempOptionFile.SeperateUnavailableMarkedLocations, (val) => { TempOptionFile.SeperateUnavailableMarkedLocations = (bool)val; }, 
+                "If the above option is true, should those locations be separated at the bottom of the list box?"));
+            OptionLines.Add(new OptionLine("Show Entrance List", 
+                TempOptionFile.EntranceRandoFeatures, (val) => { TempOptionFile.EntranceRandoFeatures = (bool)val; },
                 "Should an additional list box be added to show entrances?\nIf this is disable entrances will be shown in the valid locations list"));
-            OptionLines.Add(new OptionLine("Couple Entrances", TempOptionFile.AutoCheckCoupleEntrances, (val) => { TempOptionFile.AutoCheckCoupleEntrances = (bool)val; },
-                "When an entrace is checked, should the paired entrance be checked automatically?\nShould be disabled if playing with decoupled entrances"));
-            OptionLines.Add(new OptionLine("Pathfinder Unradmonized Exits", TempOptionFile.ShowMacroExitsPathfinder, (val) => { TempOptionFile.ShowMacroExitsPathfinder = (bool)val; },
+            OptionLines.Add(new OptionLine("Couple Entrances", 
+                TempOptionFile.AutoCheckCoupleEntrances, (val) => { TempOptionFile.AutoCheckCoupleEntrances = (bool)val; },
+                "When an entrance is checked, should the paired entrance be checked automatically?\nShould be disabled if playing with decoupled entrances"));
+            OptionLines.Add(new OptionLine("Pathfinder Unrandomized Exits", 
+                TempOptionFile.ShowMacroExitsPathfinder, (val) => { TempOptionFile.ShowMacroExitsPathfinder = (bool)val; },
                 "By default pathfinder will only show links between randomized exits, Should all links be shown instead?"));
-            OptionLines.Add(new OptionLine("Pathfinder Redundant Paths", TempOptionFile.ShowRedundantPathfinder, (val) => { TempOptionFile.ShowRedundantPathfinder = (bool)val; },
+            OptionLines.Add(new OptionLine("Pathfinder Redundant Paths", 
+                TempOptionFile.ShowRedundantPathfinder, (val) => { TempOptionFile.ShowRedundantPathfinder = (bool)val; },
                 "Should longer paths be listed as an option in the pathfinder.\r\n\r\n" +
                 "For example if the following path is available\r\n" +
                 "A > B > C > D\r\n" +
                 "The following path may also be shown as an option\r\n" +
                 "A > X > Y > C > D\r\n\r\n" +
-                "This can be usefull if the path with less \"stops\" is actually longer to traverse in game.\r\n\r\n" +
+                "This can be useful if the path with less \"stops\" is actually longer to traverse in game.\r\n\r\n" +
                 "WARNING: Enabling this option will exponentially increase the number of paths checked.\r\n" +
-                "To prevent program instability, a cap is implimented which may prevent exceptionally long \r\n" +
+                "To prevent program instability, a cap is implemented which may prevent exceptionally long \r\n" +
                 "paths from being found. if the only available path exceeds this cap, no path will be found."));
-            OptionLines.Add(new OptionLine("ToolTips", TempOptionFile.WinformData.ShowEntryNameTooltip, (val) => { TempOptionFile.WinformData.ShowEntryNameTooltip = (bool)val; },
+            OptionLines.Add(new OptionLine("ToolTips", 
+                TempOptionFile.WinformData.ShowEntryNameTooltip, (val) => { TempOptionFile.WinformData.ShowEntryNameTooltip = (bool)val; },
                 "Should the tracker display tooltips that show the full text of an entry when you mouse over it?"));
-            OptionLines.Add(new OptionLine("Compressed Save File", TempOptionFile.CompressSave, (val) => { TempOptionFile.CompressSave = (bool)val; },
-                "Shoul the tracker compress it's save files to save space?\nThe save file will no longer be human readable and can't be edited manually."));
-            OptionLines.Add(new OptionLine("Font Size", TempOptionFile.GetFont().Size, (val) => { TempOptionFile.WinformData.FormFont = UpdateFont(null, (float)val); },
+            OptionLines.Add(new OptionLine("Compressed Save File", 
+                TempOptionFile.CompressSave, (val) => { TempOptionFile.CompressSave = (bool)val; },
+                "Should the tracker compress it's save files to save space?\nThe save file will no longer be human readable and can't be edited manually."));
+            OptionLines.Add(new OptionLine("Font Size", 
+                TempOptionFile.GetFont().Size, (val) => { TempOptionFile.WinformData.FormFont = UpdateFont(null, (float)val); },
                 "The font size the tracker should use"));
-            OptionLines.Add(new OptionLine("Font Family", TempOptionFile.GetFont().FontFamily.Name, (val) => { TempOptionFile.WinformData.FormFont = UpdateFont((string)val, null); },
+            OptionLines.Add(new OptionLine("Font Family", 
+                TempOptionFile.GetFont().FontFamily.Name, (val) => { TempOptionFile.WinformData.FormFont = UpdateFont((string)val, null); },
                 "The font Family the tracker should use", FontFamily.Families.Select(x => x.Name).ToList()));
         }
 
@@ -199,7 +212,7 @@ namespace Windows_Form_Frontend
 
         private void Button_Set_Default(object sender, EventArgs e)
         {
-            File.WriteAllText(References.Globalpaths.OptionFile, JsonConvert.SerializeObject(TempOptionFile, Utility._NewtonsoftJsonSerializerOptions));
+            File.WriteAllText(References.Globalpaths.OptionFile, JsonConvert.SerializeObject(TempOptionFile, Utility.DefaultSerializerSettings));
         }
 
         private void Button_ResetFont(object sender, EventArgs e)

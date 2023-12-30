@@ -36,17 +36,17 @@ namespace MMR_Tracker_V3
         }
         public static T GetValueAs<Y, T>(this Dictionary<Y, object> source, Y Key)
         {
-            if (!source.ContainsKey(Key)) { return default; }
-            return source[Key].SerializeConvert<T>();
+            if (!source.TryGetValue(Key, out object value)) { return default; }
+            return value.SerializeConvert<T>();
         }
         public static T SerializeConvert<T>(this object source)
         {
             string Serialized = JsonConvert.SerializeObject(source);
             return JsonConvert.DeserializeObject<T>(Serialized);
         }
-        public static Tuple<string, string> SplitOnce(this string input, char Split, bool LastOccurence = false)
+        public static Tuple<string, string> SplitOnce(this string input, char Split, bool LastOccurrence = false)
         {
-            int idx = LastOccurence ? input.LastIndexOf(Split) : input.IndexOf(Split);
+            int idx = LastOccurrence ? input.LastIndexOf(Split) : input.IndexOf(Split);
             Tuple<string, string> Output;
             if (idx != -1) { Output = new ( input[..idx], input[(idx + 1)..] ); }
             else { Output = new ( input, string.Empty ); }
@@ -99,10 +99,10 @@ namespace MMR_Tracker_V3
         }
         public static string ToFormattedJson(this object o)
         {
-            return JsonConvert.SerializeObject(o, _NewtonsoftJsonSerializerOptions);
+            return JsonConvert.SerializeObject(o, DefaultSerializerSettings);
         }
 
-        public readonly static Newtonsoft.Json.JsonSerializerSettings _NewtonsoftJsonSerializerOptions = new Newtonsoft.Json.JsonSerializerSettings
+        public readonly static Newtonsoft.Json.JsonSerializerSettings DefaultSerializerSettings = new()
         {
             Formatting = Newtonsoft.Json.Formatting.Indented,
             NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore,
@@ -138,7 +138,7 @@ namespace MMR_Tracker_V3
         {
             try
             {
-                T test = JsonConvert.DeserializeObject<T>(Json, _NewtonsoftJsonSerializerOptions);
+                T test = JsonConvert.DeserializeObject<T>(Json, DefaultSerializerSettings);
                 return test != null;
             }
             catch
@@ -149,7 +149,7 @@ namespace MMR_Tracker_V3
 
         public static Dictionary<string, int> GetCategoriesFromFile(InstanceData.TrackerInstance Instance)
         {
-            Dictionary<string, int> Groups = new();
+            Dictionary<string, int> Groups = [];
             if (File.Exists(References.Globalpaths.CategoryTextFile))
             {
                 bool AtGame = true;
@@ -182,7 +182,7 @@ namespace MMR_Tracker_V3
             NewConditionals = Conditionals.ConvertAll(p => p.ConvertAll(o => (string)o.Clone()));
         }
 
-        public static bool CheckforSpoilerLog(InstanceData.TrackerInstance logic)
+        public static bool CheckForSpoilerLog(InstanceData.TrackerInstance logic)
         {
             return logic.LocationPool.Values.Any(x => !string.IsNullOrWhiteSpace(x.Randomizeditem.SpoilerLogGivenItem));
         }
@@ -202,16 +202,13 @@ namespace MMR_Tracker_V3
             }
         }
 
-        public static MMRData.JsonFormatLogicItem CreateInaccessableLogic(string ID)
+        public static MMRData.JsonFormatLogicItem CreateInaccessibleLogic(string ID) => new()
         {
-            return new MMRData.JsonFormatLogicItem()
-            {
-                Id = ID,
-                RequiredItems = new List<string> { "false" },
-                ConditionalItems = new List<List<string>>(),
-                IsTrick = false
-            };
-        }
+            Id = ID,
+            RequiredItems = new List<string> { "false" },
+            ConditionalItems = new List<List<string>>(),
+            IsTrick = false
+        };
 
         public static string GetLocationDisplayName(dynamic obj, InstanceData.InstanceContainer instance)
         {
@@ -280,7 +277,7 @@ namespace MMR_Tracker_V3
         {
             var deserializer = new YamlDotNet.Serialization.DeserializerBuilder().Build();
             object yamlIsDumb = deserializer.Deserialize<object>(YAML);
-            if (Format) { return JsonConvert.SerializeObject(yamlIsDumb, _NewtonsoftJsonSerializerOptions); }
+            if (Format) { return JsonConvert.SerializeObject(yamlIsDumb, DefaultSerializerSettings); }
             return JsonConvert.SerializeObject(yamlIsDumb);
         }
         public static string ConvertObjectToYamlString(object OBJ)
@@ -313,7 +310,7 @@ namespace MMR_Tracker_V3
                 listObjResult.Add(objResult);
             }
 
-            return JsonConvert.SerializeObject(listObjResult, _NewtonsoftJsonSerializerOptions);
+            return JsonConvert.SerializeObject(listObjResult, DefaultSerializerSettings);
         }
 
         public static string ConvertToCamelCase(string Input)
@@ -343,13 +340,10 @@ namespace MMR_Tracker_V3
             CompressedByte,
             error
         }
-        public class CompressedSave
+        public class CompressedSave(string Save)
         {
-            public byte[] Bytes { get; }
-            public CompressedSave(string Save)
-            {
-                Bytes = Compress(Save);
-            }
+            public byte[] Bytes { get; } = Compress(Save);
+
             public override string ToString()
             {
                 return GetBytesAsString(Bytes);
@@ -469,11 +463,11 @@ namespace MMR_Tracker_V3
             public string[] ValidItemTypes { get; set; } = null;
         }
 
-        public static readonly char[] LogicChars = new char[] { '&', '|', '+', '*', '(', ')' };
+        public static readonly char[] LogicChars = ['&', '|', '+', '*', '(', ')'];
 
         public static List<string> GetEntriesFromLogicString(string input)
         {
-            List<string> BrokenString = new();
+            List<string> BrokenString = [];
             string currentItem = "";
             foreach (var i in input)
             {
@@ -572,36 +566,36 @@ namespace MMR_Tracker_V3
                 case '#'://Search By Location Area
                     if (subterm[1..] == "") { return "1"; }
                     if (logic.Area == null) { return "0"; }
-                    if (Perfect && logic.Area.ToLower() == subterm[1..].ToLower() == Inverse) { return "0"; }
-                    else if (!Perfect && logic.Area.ToLower().Contains(subterm[1..].ToLower()) == Inverse) { return "0"; }
+                    if (Perfect && logic.Area.Equals(subterm[1..], StringComparison.CurrentCultureIgnoreCase) == Inverse) { return "0"; }
+                    else if (!Perfect && logic.Area.Contains(subterm[1..], StringComparison.CurrentCultureIgnoreCase) == Inverse) { return "0"; }
                     break;
                 case '@'://Search By Item Type
                     if (subterm[1..] == "") { return "1"; }
                     if (logic.ValidItemTypes == null) { return "0"; }
                     if (Perfect && logic.ValidItemTypes.Select(x => x.ToLower()).Contains(subterm[1..].ToLower()) == Inverse) { return "0"; }
-                    else if ((!Perfect && logic.ValidItemTypes.Select(x => x.ToLower()).Any(x => x.Contains(subterm[1..].ToLower()))) == Inverse) { return "0"; }
+                    else if ((!Perfect && logic.ValidItemTypes.Select(x => x.ToLower()).Any(x => x.Contains(subterm[1..], StringComparison.CurrentCultureIgnoreCase))) == Inverse) { return "0"; }
                     break;
                 case '~'://Search By Dictionary Name
                     if (subterm[1..] == "") { return "1"; }
                     if (logic.ID == null) { return "0"; }
-                    if (Perfect && logic.ID.ToLower() == subterm[1..].ToLower() == Inverse) { return "0"; }
-                    else if ((!Perfect && logic.ID.ToLower().Contains(subterm[1..].ToLower())) == Inverse) { return "0"; }
+                    if (Perfect && logic.ID.Equals(subterm[1..], StringComparison.CurrentCultureIgnoreCase) == Inverse) { return "0"; }
+                    else if ((!Perfect && logic.ID.Contains(subterm[1..], StringComparison.CurrentCultureIgnoreCase)) == Inverse) { return "0"; }
                     break;
                 case '$'://Search By Original Item Name
                     if (subterm[1..] == "") { return "1"; }
                     if (logic.OriginalItem == null) { return "0"; }
-                    if (Perfect && logic.OriginalItem.ToLower() == subterm[1..].ToLower() == Inverse) { return "0"; }
-                    else if (!Perfect && logic.OriginalItem.ToLower().Contains(subterm[1..].ToLower()) == Inverse) { return "0"; }
+                    if (Perfect && logic.OriginalItem.Equals(subterm[1..], StringComparison.CurrentCultureIgnoreCase) == Inverse) { return "0"; }
+                    else if (!Perfect && logic.OriginalItem.Contains(subterm[1..], StringComparison.CurrentCultureIgnoreCase) == Inverse) { return "0"; }
                     break;
                 case '%'://Search By Location Name
                     if (subterm[1..] == "") { return "1"; }
                     if (logic.Name == null) { return "0"; }
-                    if (Perfect && logic.Name.ToLower() == subterm[1..].ToLower() == Inverse) { return "0"; }
-                    else if (!Perfect && logic.Name.ToLower().Contains(subterm[1..].ToLower()) == Inverse) { return "0"; }
+                    if (Perfect && logic.Name.Equals(subterm[1..], StringComparison.CurrentCultureIgnoreCase) == Inverse) { return "0"; }
+                    else if (!Perfect && logic.Name.Contains(subterm[1..], StringComparison.CurrentCultureIgnoreCase) == Inverse) { return "0"; }
                     break;
                 default: //Search By "NameToCompare" variable
-                    if (Perfect && NameToCompare.ToLower() == subterm.ToLower() == Inverse) { return "0"; }
-                    else if (!Perfect && (NameToCompare.ToLower().Contains(subterm.ToLower()) == Inverse)) { return "0"; }
+                    if (Perfect && NameToCompare.Equals(subterm, StringComparison.CurrentCultureIgnoreCase) == Inverse) { return "0"; }
+                    else if (!Perfect && (NameToCompare.Contains(subterm, StringComparison.CurrentCultureIgnoreCase) == Inverse)) { return "0"; }
                     break;
             }
             return "1";
@@ -656,7 +650,7 @@ namespace MMR_Tracker_V3
                 OutObject.OriginalItem = DictData.Name;
                 OutObject.Randomizeditem = DictData.Name;
                 OutObject.Starred = false;
-                OutObject.ValidItemTypes = new string[] { "hint" };
+                OutObject.ValidItemTypes = ["hint"];
             }
             else if (Object is MacroObject MacroObject)
             {
@@ -669,9 +663,9 @@ namespace MMR_Tracker_V3
                 OutObject.OriginalItem = MacroObject.ID;
                 OutObject.Randomizeditem = MacroObject.ID;
                 OutObject.Starred = Istrick;
-                List<string> ItemTypes = new() { "macro" };
+                List<string> ItemTypes = ["macro"];
                 if (Istrick) { ItemTypes.Add("trick"); }
-                OutObject.ValidItemTypes = ItemTypes.ToArray();
+                OutObject.ValidItemTypes = [.. ItemTypes];
             }
             else if (Object is EntranceData.EntranceRandoExit ExitObject)
             {
@@ -681,9 +675,9 @@ namespace MMR_Tracker_V3
                 OutObject.OriginalItem = ExitObject.EntrancePair == null ? "One Way" : $"{ExitObject.EntrancePair.Area} To {ExitObject.EntrancePair.Exit}";
                 OutObject.Randomizeditem = ExitObject.DestinationExit == null ? null : $"{ExitObject.DestinationExit.region} From {ExitObject.DestinationExit.from}";
                 OutObject.Starred = ExitObject.Starred;
-                List<string> ItemTypes = new() { "exit" };
+                List<string> ItemTypes = ["exit"];
                 if (ExitObject.EntrancePair == null) { ItemTypes.Add("One Way"); }
-                OutObject.ValidItemTypes = ItemTypes.ToArray();
+                OutObject.ValidItemTypes = [.. ItemTypes];
             }
             else if (Object is OptionData.ChoiceOption ChoiceOptionObject)
             {
@@ -693,8 +687,8 @@ namespace MMR_Tracker_V3
                 OutObject.OriginalItem = ChoiceOptionObject.Value;
                 OutObject.Randomizeditem = ChoiceOptionObject.Value;
                 OutObject.Starred = true;
-                List<string> ItemTypes = new() { "Option", "Choice" };
-                OutObject.ValidItemTypes = ItemTypes.ToArray();
+                List<string> ItemTypes = ["Option", "Choice"];
+                OutObject.ValidItemTypes = [.. ItemTypes];
             }
             else if (Object is OptionData.ToggleOption ToggleOptionObject)
             {
@@ -704,8 +698,8 @@ namespace MMR_Tracker_V3
                 OutObject.OriginalItem = ToggleOptionObject.Value;
                 OutObject.Randomizeditem = ToggleOptionObject.Value;
                 OutObject.Starred = true;
-                List<string> ItemTypes = new() { "Option", "Toggle" };
-                OutObject.ValidItemTypes = ItemTypes.ToArray();
+                List<string> ItemTypes = ["Option", "Toggle"];
+                OutObject.ValidItemTypes = [.. ItemTypes];
             }
             else if (Object is OptionData.IntOption IntOptionObject)
             {
@@ -715,8 +709,8 @@ namespace MMR_Tracker_V3
                 OutObject.OriginalItem = IntOptionObject.Value.ToString();
                 OutObject.Randomizeditem = IntOptionObject.Value.ToString();
                 OutObject.Starred = true;
-                List<string> ItemTypes = new() { "Option", "int" };
-                OutObject.ValidItemTypes = ItemTypes.ToArray();
+                List<string> ItemTypes = ["Option", "int"];
+                OutObject.ValidItemTypes = [.. ItemTypes];
             }
             else if (Object is EntranceData.EntranceRandoDestination DestinationObject)
             {
@@ -726,8 +720,8 @@ namespace MMR_Tracker_V3
                 OutObject.OriginalItem = DestinationObject.from;
                 OutObject.Randomizeditem = DestinationObject.from;
                 OutObject.Starred = true;
-                List<string> ItemTypes = new() { "Destination" };
-                OutObject.ValidItemTypes = ItemTypes.ToArray();
+                List<string> ItemTypes = ["Destination"];
+                OutObject.ValidItemTypes = [.. ItemTypes];
             }
             else
             {
@@ -738,7 +732,7 @@ namespace MMR_Tracker_V3
                 OutObject.OriginalItem = ObjectString;
                 OutObject.Randomizeditem = ObjectString;
                 OutObject.Starred = true;
-                OutObject.ValidItemTypes = new string[] { ObjectString };
+                OutObject.ValidItemTypes = [ObjectString];
             }
             return OutObject;
         }

@@ -64,11 +64,11 @@ namespace TestingForm
             string RandomizedItem = null;
             EntranceData.EntranceRandoDestination RandomizedExit = null;
             Debug.WriteLine($"Data for {LastSelectedObject}=========================================================");
-            Debug.WriteLine(JsonConvert.SerializeObject(LastSelectedObject, MMR_Tracker_V3.Utility._NewtonsoftJsonSerializerOptions));
+            Debug.WriteLine(JsonConvert.SerializeObject(LastSelectedObject, MMR_Tracker_V3.Utility.DefaultSerializerSettings));
             if (LastSelectedObject is LocationData.LocationObject DebugLocObj)
             {
                 Debug.WriteLine($"Dictionary Entry");
-                Debug.WriteLine(JsonConvert.SerializeObject(DebugLocObj.GetDictEntry(), MMR_Tracker_V3.Utility._NewtonsoftJsonSerializerOptions));
+                Debug.WriteLine(JsonConvert.SerializeObject(DebugLocObj.GetDictEntry(), MMR_Tracker_V3.Utility.DefaultSerializerSettings));
                 RandomizedItem = DebugLocObj.Randomizeditem.Item;
 
             }
@@ -76,15 +76,15 @@ namespace TestingForm
             {
                 var ProxyRef = MainInterface.InstanceContainer.Instance.GetLocationByID(DebugProxyObj.ReferenceID);
                 Debug.WriteLine($"Proxied Entry");
-                Debug.WriteLine(JsonConvert.SerializeObject(ProxyRef, MMR_Tracker_V3.Utility._NewtonsoftJsonSerializerOptions));
+                Debug.WriteLine(JsonConvert.SerializeObject(ProxyRef, MMR_Tracker_V3.Utility.DefaultSerializerSettings));
                 Debug.WriteLine($"Dictionary Entry");
-                Debug.WriteLine(JsonConvert.SerializeObject(ProxyRef?.GetDictEntry(), MMR_Tracker_V3.Utility._NewtonsoftJsonSerializerOptions));
+                Debug.WriteLine(JsonConvert.SerializeObject(ProxyRef?.GetDictEntry(), MMR_Tracker_V3.Utility.DefaultSerializerSettings));
                 RandomizedItem = ProxyRef.Randomizeditem.Item;
             }
             if (LastSelectedObject is EntranceData.EntranceRandoExit DebugEntObj)
             {
                 Debug.WriteLine($"Dictionary Entry");
-                Debug.WriteLine(JsonConvert.SerializeObject(DebugEntObj.GetDictEntry(), MMR_Tracker_V3.Utility._NewtonsoftJsonSerializerOptions));
+                Debug.WriteLine(JsonConvert.SerializeObject(DebugEntObj.GetDictEntry(), MMR_Tracker_V3.Utility.DefaultSerializerSettings));
                 RandomizedExit = DebugEntObj.DestinationExit;
             }
             if (RandomizedItem !=null)
@@ -93,9 +93,9 @@ namespace TestingForm
                 if (Item is not null)
                 {
                     Debug.WriteLine($"Randomized Item");
-                    Debug.WriteLine(JsonConvert.SerializeObject(Item, MMR_Tracker_V3.Utility._NewtonsoftJsonSerializerOptions));
+                    Debug.WriteLine(JsonConvert.SerializeObject(Item, MMR_Tracker_V3.Utility.DefaultSerializerSettings));
                     Debug.WriteLine($"Randomized Item Dictionary Entry");
-                    Debug.WriteLine(JsonConvert.SerializeObject(Item?.GetDictEntry(), MMR_Tracker_V3.Utility._NewtonsoftJsonSerializerOptions));
+                    Debug.WriteLine(JsonConvert.SerializeObject(Item?.GetDictEntry(), MMR_Tracker_V3.Utility.DefaultSerializerSettings));
                 }
             }
             if (RandomizedExit is not null)
@@ -104,9 +104,9 @@ namespace TestingForm
                 if (Destination is not null)
                 {
                     Debug.WriteLine($"Destination");
-                    Debug.WriteLine(JsonConvert.SerializeObject(Destination, MMR_Tracker_V3.Utility._NewtonsoftJsonSerializerOptions));
+                    Debug.WriteLine(JsonConvert.SerializeObject(Destination, MMR_Tracker_V3.Utility.DefaultSerializerSettings));
                     Debug.WriteLine($"Destination Dictionary Entry");
-                    Debug.WriteLine(JsonConvert.SerializeObject(Destination?.GetDictEntry(), MMR_Tracker_V3.Utility._NewtonsoftJsonSerializerOptions));
+                    Debug.WriteLine(JsonConvert.SerializeObject(Destination?.GetDictEntry(), MMR_Tracker_V3.Utility.DefaultSerializerSettings));
                 }
             }
             Debug.WriteLine(MainInterface.CurrentProgram.ActiveControl.Name);

@@ -113,7 +113,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                 if (!File.Exists(ConfigFilePath)) { WriteNewConfig(); }
                 else
                 {
-                    try { _ = JsonConvert.DeserializeObject<ConfigFile>(File.ReadAllText(ConfigFilePath), MMR_Tracker_V3.Utility._NewtonsoftJsonSerializerOptions); }
+                    try { _ = JsonConvert.DeserializeObject<ConfigFile>(File.ReadAllText(ConfigFilePath), MMR_Tracker_V3.Utility.DefaultSerializerSettings); }
                     catch { WriteNewConfig(); }
                 }
             }

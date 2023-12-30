@@ -201,7 +201,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                             var OriginalItem = Instance.ItemPool[Loc.GetDictEntry().OriginalItem];
                             if (OriginalItem.ID != SpoilerGivenItem && OriginalItem.GetDictEntry().Name != SpoilerGivenItem)
                             {
-                                throw new Exception($"{Loc.ID} Was unrandomized but did not contain its vanilla item\n{Location.Key}: {Location.Value}\n{JsonConvert.SerializeObject(Loc, Utility._NewtonsoftJsonSerializerOptions)}");
+                                throw new Exception($"{Loc.ID} Was unrandomized but did not contain its vanilla item\n{Location.Key}: {Location.Value}\n{JsonConvert.SerializeObject(Loc, Utility.DefaultSerializerSettings)}");
                             }
                             continue;
                         }
