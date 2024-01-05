@@ -29,642 +29,625 @@ namespace Windows_Form_Frontend
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainInterface));
-            this.lblSwapPathfinder = new System.Windows.Forms.Label();
-            this.BTNFindPath = new System.Windows.Forms.Button();
-            this.LBPathFinder = new System.Windows.Forms.ListBox();
-            this.LBCheckedLocations = new System.Windows.Forms.ListBox();
-            this.LBValidEntrances = new System.Windows.Forms.ListBox();
-            this.LBValidLocations = new System.Windows.Forms.ListBox();
-            this.CMBEnd = new System.Windows.Forms.ComboBox();
-            this.CMBStart = new System.Windows.Forms.ComboBox();
-            this.CHKShowAll = new System.Windows.Forms.CheckBox();
-            this.BTNSetEntrance = new System.Windows.Forms.Button();
-            this.BTNSetItem = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblAvailableEntrances = new System.Windows.Forms.Label();
-            this.lblCheckedLocation = new System.Windows.Forms.Label();
-            this.lblAvailableLocation = new System.Windows.Forms.Label();
-            this.TXTCheckedSearch = new System.Windows.Forms.TextBox();
-            this.TXTEntSearch = new System.Windows.Forms.TextBox();
-            this.TXTLocSearch = new System.Windows.Forms.TextBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolMenuStrip = new System.Windows.Forms.ToolStripMenuItem();
-            this.NewToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.LoadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SavetoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SaveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.OptionstoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.RandomizerOptionsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.logicOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.miscOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importSpoilerLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.spoilerLogToolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.PathFinderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.tlpMaster = new System.Windows.Forms.TableLayoutPanel();
-            this.tlpLocations = new System.Windows.Forms.TableLayoutPanel();
-            this.tlpEntrances = new System.Windows.Forms.TableLayoutPanel();
-            this.tlpChecked = new System.Windows.Forms.TableLayoutPanel();
-            this.tlpPathFinder = new System.Windows.Forms.TableLayoutPanel();
-            this.menuStrip1.SuspendLayout();
-            this.tlpMaster.SuspendLayout();
-            this.tlpLocations.SuspendLayout();
-            this.tlpEntrances.SuspendLayout();
-            this.tlpChecked.SuspendLayout();
-            this.tlpPathFinder.SuspendLayout();
-            this.SuspendLayout();
+            lblSwapPathfinder = new System.Windows.Forms.Label();
+            BTNFindPath = new System.Windows.Forms.Button();
+            LBPathFinder = new System.Windows.Forms.ListBox();
+            LBCheckedLocations = new System.Windows.Forms.ListBox();
+            LBValidEntrances = new System.Windows.Forms.ListBox();
+            LBValidLocations = new System.Windows.Forms.ListBox();
+            CMBEnd = new System.Windows.Forms.ComboBox();
+            CMBStart = new System.Windows.Forms.ComboBox();
+            CHKShowAll = new System.Windows.Forms.CheckBox();
+            BTNSetEntrance = new System.Windows.Forms.Button();
+            BTNSetItem = new System.Windows.Forms.Button();
+            label6 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
+            lblAvailableEntrances = new System.Windows.Forms.Label();
+            lblCheckedLocation = new System.Windows.Forms.Label();
+            lblAvailableLocation = new System.Windows.Forms.Label();
+            TXTCheckedSearch = new System.Windows.Forms.TextBox();
+            TXTEntSearch = new System.Windows.Forms.TextBox();
+            TXTLocSearch = new System.Windows.Forms.TextBox();
+            menuStrip1 = new System.Windows.Forms.MenuStrip();
+            fileToolMenuStrip = new System.Windows.Forms.ToolStripMenuItem();
+            NewToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            LoadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            SavetoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            SaveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            OptionstoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            RandomizerOptionsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            logicOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            miscOptionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            importSpoilerLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            spoilerLogToolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            PathFinderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            toolTip1 = new System.Windows.Forms.ToolTip(components);
+            tlpMaster = new System.Windows.Forms.TableLayoutPanel();
+            tlpLocations = new System.Windows.Forms.TableLayoutPanel();
+            tlpEntrances = new System.Windows.Forms.TableLayoutPanel();
+            tlpChecked = new System.Windows.Forms.TableLayoutPanel();
+            tlpPathFinder = new System.Windows.Forms.TableLayoutPanel();
+            menuStrip1.SuspendLayout();
+            tlpMaster.SuspendLayout();
+            tlpLocations.SuspendLayout();
+            tlpEntrances.SuspendLayout();
+            tlpChecked.SuspendLayout();
+            tlpPathFinder.SuspendLayout();
+            SuspendLayout();
             // 
             // lblSwapPathfinder
             // 
-            this.lblSwapPathfinder.AutoSize = true;
-            this.lblSwapPathfinder.BackColor = System.Drawing.Color.Transparent;
-            this.lblSwapPathfinder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSwapPathfinder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblSwapPathfinder.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lblSwapPathfinder.Location = new System.Drawing.Point(50, 29);
-            this.lblSwapPathfinder.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.lblSwapPathfinder.Name = "lblSwapPathfinder";
-            this.lblSwapPathfinder.Size = new System.Drawing.Size(25, 17);
-            this.lblSwapPathfinder.TabIndex = 42;
-            this.lblSwapPathfinder.Text = "↑↓";
-            this.lblSwapPathfinder.Click += new System.EventHandler(this.lblSwapPathfinder_Click);
+            lblSwapPathfinder.AutoSize = true;
+            lblSwapPathfinder.BackColor = System.Drawing.Color.Transparent;
+            lblSwapPathfinder.Dock = System.Windows.Forms.DockStyle.Fill;
+            lblSwapPathfinder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            lblSwapPathfinder.ForeColor = System.Drawing.SystemColors.ControlDark;
+            lblSwapPathfinder.Location = new System.Drawing.Point(50, 29);
+            lblSwapPathfinder.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            lblSwapPathfinder.Name = "lblSwapPathfinder";
+            lblSwapPathfinder.Size = new System.Drawing.Size(25, 17);
+            lblSwapPathfinder.TabIndex = 42;
+            lblSwapPathfinder.Text = "↑↓";
+            lblSwapPathfinder.Click += lblSwapPathfinder_Click;
             // 
             // BTNFindPath
             // 
-            this.BTNFindPath.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.BTNFindPath.Dock = System.Windows.Forms.DockStyle.Right;
-            this.BTNFindPath.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTNFindPath.Location = new System.Drawing.Point(153, 1);
-            this.BTNFindPath.Margin = new System.Windows.Forms.Padding(0, 1, 3, 0);
-            this.BTNFindPath.Name = "BTNFindPath";
-            this.BTNFindPath.Size = new System.Drawing.Size(93, 24);
-            this.BTNFindPath.TabIndex = 41;
-            this.BTNFindPath.Text = "Find Path";
-            this.BTNFindPath.UseVisualStyleBackColor = false;
-            this.BTNFindPath.Click += new System.EventHandler(this.BTNFindPath_Click);
+            BTNFindPath.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            BTNFindPath.Dock = System.Windows.Forms.DockStyle.Right;
+            BTNFindPath.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            BTNFindPath.Location = new System.Drawing.Point(153, 1);
+            BTNFindPath.Margin = new System.Windows.Forms.Padding(0, 1, 3, 0);
+            BTNFindPath.Name = "BTNFindPath";
+            BTNFindPath.Size = new System.Drawing.Size(93, 24);
+            BTNFindPath.TabIndex = 41;
+            BTNFindPath.Text = "Find Path";
+            BTNFindPath.UseVisualStyleBackColor = false;
+            BTNFindPath.Click += BTNFindPath_Click;
             // 
             // LBPathFinder
             // 
-            this.LBPathFinder.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.tlpPathFinder.SetColumnSpan(this.LBPathFinder, 3);
-            this.LBPathFinder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LBPathFinder.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.LBPathFinder.FormattingEnabled = true;
-            this.LBPathFinder.HorizontalScrollbar = true;
-            this.LBPathFinder.IntegralHeight = false;
-            this.LBPathFinder.Location = new System.Drawing.Point(4, 78);
-            this.LBPathFinder.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.LBPathFinder.Name = "LBPathFinder";
-            this.LBPathFinder.Size = new System.Drawing.Size(241, 180);
-            this.LBPathFinder.TabIndex = 40;
-            this.LBPathFinder.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.LBPathFinder_DrawItem);
-            this.LBPathFinder.DoubleClick += new System.EventHandler(this.LBPathFinder_DoubleClick);
-            this.LBPathFinder.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateToolTip);
+            LBPathFinder.BackColor = System.Drawing.SystemColors.ControlDark;
+            tlpPathFinder.SetColumnSpan(LBPathFinder, 3);
+            LBPathFinder.Dock = System.Windows.Forms.DockStyle.Fill;
+            LBPathFinder.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            LBPathFinder.FormattingEnabled = true;
+            LBPathFinder.HorizontalScrollbar = true;
+            LBPathFinder.IntegralHeight = false;
+            LBPathFinder.Location = new System.Drawing.Point(4, 78);
+            LBPathFinder.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            LBPathFinder.Name = "LBPathFinder";
+            LBPathFinder.Size = new System.Drawing.Size(241, 180);
+            LBPathFinder.TabIndex = 40;
+            LBPathFinder.DrawItem += LBPathFinder_DrawItem;
+            LBPathFinder.DoubleClick += LBPathFinder_DoubleClick;
+            LBPathFinder.MouseMove += UpdateToolTip;
             // 
             // LBCheckedLocations
             // 
-            this.LBCheckedLocations.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.tlpChecked.SetColumnSpan(this.LBCheckedLocations, 2);
-            this.LBCheckedLocations.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LBCheckedLocations.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.LBCheckedLocations.FormattingEnabled = true;
-            this.LBCheckedLocations.IntegralHeight = false;
-            this.LBCheckedLocations.Location = new System.Drawing.Point(4, 53);
-            this.LBCheckedLocations.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.LBCheckedLocations.Name = "LBCheckedLocations";
-            this.LBCheckedLocations.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.LBCheckedLocations.Size = new System.Drawing.Size(241, 205);
-            this.LBCheckedLocations.TabIndex = 39;
-            this.LBCheckedLocations.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.LBValidLocations_DrawItem);
-            this.LBCheckedLocations.DoubleClick += new System.EventHandler(this.LBValidEntrances_DoubleClick);
-            this.LBCheckedLocations.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LB_KeyDown);
-            this.LBCheckedLocations.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.preventKeyShortcuts);
-            this.LBCheckedLocations.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateToolTip);
-            this.LBCheckedLocations.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LBValidLocations_MouseUp);
+            LBCheckedLocations.BackColor = System.Drawing.SystemColors.ControlDark;
+            tlpChecked.SetColumnSpan(LBCheckedLocations, 2);
+            LBCheckedLocations.Dock = System.Windows.Forms.DockStyle.Fill;
+            LBCheckedLocations.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            LBCheckedLocations.FormattingEnabled = true;
+            LBCheckedLocations.IntegralHeight = false;
+            LBCheckedLocations.Location = new System.Drawing.Point(4, 53);
+            LBCheckedLocations.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            LBCheckedLocations.Name = "LBCheckedLocations";
+            LBCheckedLocations.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            LBCheckedLocations.Size = new System.Drawing.Size(241, 205);
+            LBCheckedLocations.TabIndex = 39;
+            LBCheckedLocations.DrawItem += LBValidLocations_DrawItem;
+            LBCheckedLocations.DoubleClick += LBValidEntrances_DoubleClick;
+            LBCheckedLocations.KeyDown += LB_KeyDown;
+            LBCheckedLocations.KeyPress += preventKeyShortcuts;
+            LBCheckedLocations.MouseMove += UpdateToolTip;
+            LBCheckedLocations.MouseUp += LBValidLocations_MouseUp;
             // 
             // LBValidEntrances
             // 
-            this.LBValidEntrances.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.tlpEntrances.SetColumnSpan(this.LBValidEntrances, 2);
-            this.LBValidEntrances.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LBValidEntrances.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.LBValidEntrances.FormattingEnabled = true;
-            this.LBValidEntrances.IntegralHeight = false;
-            this.LBValidEntrances.Location = new System.Drawing.Point(4, 53);
-            this.LBValidEntrances.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.LBValidEntrances.Name = "LBValidEntrances";
-            this.LBValidEntrances.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.LBValidEntrances.Size = new System.Drawing.Size(241, 205);
-            this.LBValidEntrances.TabIndex = 38;
-            this.LBValidEntrances.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.LBValidLocations_DrawItem);
-            this.LBValidEntrances.DoubleClick += new System.EventHandler(this.LBValidEntrances_DoubleClick);
-            this.LBValidEntrances.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LB_KeyDown);
-            this.LBValidEntrances.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.preventKeyShortcuts);
-            this.LBValidEntrances.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateToolTip);
-            this.LBValidEntrances.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LBValidLocations_MouseUp);
+            LBValidEntrances.BackColor = System.Drawing.SystemColors.ControlDark;
+            tlpEntrances.SetColumnSpan(LBValidEntrances, 2);
+            LBValidEntrances.Dock = System.Windows.Forms.DockStyle.Fill;
+            LBValidEntrances.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            LBValidEntrances.FormattingEnabled = true;
+            LBValidEntrances.IntegralHeight = false;
+            LBValidEntrances.Location = new System.Drawing.Point(4, 53);
+            LBValidEntrances.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            LBValidEntrances.Name = "LBValidEntrances";
+            LBValidEntrances.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            LBValidEntrances.Size = new System.Drawing.Size(241, 205);
+            LBValidEntrances.TabIndex = 38;
+            LBValidEntrances.DrawItem += LBValidLocations_DrawItem;
+            LBValidEntrances.DoubleClick += LBValidEntrances_DoubleClick;
+            LBValidEntrances.KeyDown += LB_KeyDown;
+            LBValidEntrances.KeyPress += preventKeyShortcuts;
+            LBValidEntrances.MouseMove += UpdateToolTip;
+            LBValidEntrances.MouseUp += LBValidLocations_MouseUp;
             // 
             // LBValidLocations
             // 
-            this.LBValidLocations.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.tlpLocations.SetColumnSpan(this.LBValidLocations, 2);
-            this.LBValidLocations.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LBValidLocations.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.LBValidLocations.FormattingEnabled = true;
-            this.LBValidLocations.IntegralHeight = false;
-            this.LBValidLocations.Location = new System.Drawing.Point(4, 53);
-            this.LBValidLocations.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.LBValidLocations.Name = "LBValidLocations";
-            this.LBValidLocations.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.LBValidLocations.Size = new System.Drawing.Size(241, 205);
-            this.LBValidLocations.TabIndex = 37;
-            this.LBValidLocations.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.LBValidLocations_DrawItem);
-            this.LBValidLocations.DoubleClick += new System.EventHandler(this.LBValidEntrances_DoubleClick);
-            this.LBValidLocations.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LB_KeyDown);
-            this.LBValidLocations.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.preventKeyShortcuts);
-            this.LBValidLocations.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UpdateToolTip);
-            this.LBValidLocations.MouseUp += new System.Windows.Forms.MouseEventHandler(this.LBValidLocations_MouseUp);
+            LBValidLocations.BackColor = System.Drawing.SystemColors.ControlDark;
+            tlpLocations.SetColumnSpan(LBValidLocations, 2);
+            LBValidLocations.Dock = System.Windows.Forms.DockStyle.Fill;
+            LBValidLocations.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            LBValidLocations.FormattingEnabled = true;
+            LBValidLocations.IntegralHeight = false;
+            LBValidLocations.Location = new System.Drawing.Point(4, 53);
+            LBValidLocations.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            LBValidLocations.Name = "LBValidLocations";
+            LBValidLocations.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
+            LBValidLocations.Size = new System.Drawing.Size(241, 205);
+            LBValidLocations.TabIndex = 37;
+            LBValidLocations.DrawItem += LBValidLocations_DrawItem;
+            LBValidLocations.DoubleClick += LBValidEntrances_DoubleClick;
+            LBValidLocations.KeyDown += LB_KeyDown;
+            LBValidLocations.KeyPress += preventKeyShortcuts;
+            LBValidLocations.MouseMove += UpdateToolTip;
+            LBValidLocations.MouseUp += LBValidLocations_MouseUp;
             // 
             // CMBEnd
             // 
-            this.CMBEnd.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.CMBEnd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CMBEnd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CMBEnd.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.CMBEnd.FormattingEnabled = true;
-            this.CMBEnd.Location = new System.Drawing.Point(84, 53);
-            this.CMBEnd.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.CMBEnd.Name = "CMBEnd";
-            this.CMBEnd.Size = new System.Drawing.Size(161, 23);
-            this.CMBEnd.TabIndex = 36;
-            this.CMBEnd.DropDown += new System.EventHandler(this.PathfinderCMB_DropDown);
+            CMBEnd.BackColor = System.Drawing.SystemColors.ControlDark;
+            CMBEnd.Dock = System.Windows.Forms.DockStyle.Fill;
+            CMBEnd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            CMBEnd.ForeColor = System.Drawing.SystemColors.InfoText;
+            CMBEnd.FormattingEnabled = true;
+            CMBEnd.Location = new System.Drawing.Point(84, 53);
+            CMBEnd.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            CMBEnd.Name = "CMBEnd";
+            CMBEnd.Size = new System.Drawing.Size(161, 23);
+            CMBEnd.TabIndex = 36;
+            CMBEnd.DropDown += PathfinderCMB_DropDown;
             // 
             // CMBStart
             // 
-            this.CMBStart.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.CMBStart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CMBStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CMBStart.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.CMBStart.FormattingEnabled = true;
-            this.CMBStart.Location = new System.Drawing.Point(84, 28);
-            this.CMBStart.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.CMBStart.Name = "CMBStart";
-            this.CMBStart.Size = new System.Drawing.Size(161, 23);
-            this.CMBStart.TabIndex = 35;
-            this.CMBStart.DropDown += new System.EventHandler(this.PathfinderCMB_DropDown);
+            CMBStart.BackColor = System.Drawing.SystemColors.ControlDark;
+            CMBStart.Dock = System.Windows.Forms.DockStyle.Fill;
+            CMBStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            CMBStart.ForeColor = System.Drawing.SystemColors.InfoText;
+            CMBStart.FormattingEnabled = true;
+            CMBStart.Location = new System.Drawing.Point(84, 28);
+            CMBStart.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            CMBStart.Name = "CMBStart";
+            CMBStart.Size = new System.Drawing.Size(161, 23);
+            CMBStart.TabIndex = 35;
+            CMBStart.DropDown += PathfinderCMB_DropDown;
             // 
             // CHKShowAll
             // 
-            this.CHKShowAll.AutoSize = true;
-            this.CHKShowAll.BackColor = System.Drawing.Color.Transparent;
-            this.CHKShowAll.Dock = System.Windows.Forms.DockStyle.Right;
-            this.CHKShowAll.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CHKShowAll.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.CHKShowAll.Location = new System.Drawing.Point(174, 3);
-            this.CHKShowAll.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.CHKShowAll.Name = "CHKShowAll";
-            this.CHKShowAll.Size = new System.Drawing.Size(71, 19);
-            this.CHKShowAll.TabIndex = 34;
-            this.CHKShowAll.Text = "Show All";
-            this.CHKShowAll.UseVisualStyleBackColor = false;
-            this.CHKShowAll.CheckedChanged += new System.EventHandler(this.CHKShowAll_CheckedChanged);
+            CHKShowAll.AutoSize = true;
+            CHKShowAll.BackColor = System.Drawing.Color.Transparent;
+            CHKShowAll.Dock = System.Windows.Forms.DockStyle.Right;
+            CHKShowAll.Font = new System.Drawing.Font("Segoe UI", 8F);
+            CHKShowAll.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            CHKShowAll.Location = new System.Drawing.Point(174, 3);
+            CHKShowAll.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            CHKShowAll.Name = "CHKShowAll";
+            CHKShowAll.Size = new System.Drawing.Size(71, 19);
+            CHKShowAll.TabIndex = 34;
+            CHKShowAll.Text = "Show All";
+            CHKShowAll.UseVisualStyleBackColor = false;
+            CHKShowAll.CheckedChanged += CHKShowAll_CheckedChanged;
             // 
             // BTNSetEntrance
             // 
-            this.BTNSetEntrance.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.BTNSetEntrance.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BTNSetEntrance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTNSetEntrance.Location = new System.Drawing.Point(149, 1);
-            this.BTNSetEntrance.Margin = new System.Windows.Forms.Padding(0, 1, 3, 0);
-            this.BTNSetEntrance.Name = "BTNSetEntrance";
-            this.BTNSetEntrance.Size = new System.Drawing.Size(97, 24);
-            this.BTNSetEntrance.TabIndex = 33;
-            this.BTNSetEntrance.Text = "Mark Entrance";
-            this.BTNSetEntrance.UseVisualStyleBackColor = false;
-            this.BTNSetEntrance.Click += new System.EventHandler(this.BTNSetItem_Click);
-            this.BTNSetEntrance.MouseUp += new System.Windows.Forms.MouseEventHandler(this.BTNSetEntrance_MouseUp);
+            BTNSetEntrance.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            BTNSetEntrance.Dock = System.Windows.Forms.DockStyle.Fill;
+            BTNSetEntrance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            BTNSetEntrance.Location = new System.Drawing.Point(149, 1);
+            BTNSetEntrance.Margin = new System.Windows.Forms.Padding(0, 1, 3, 0);
+            BTNSetEntrance.Name = "BTNSetEntrance";
+            BTNSetEntrance.Size = new System.Drawing.Size(97, 24);
+            BTNSetEntrance.TabIndex = 33;
+            BTNSetEntrance.Text = "Mark Entrance";
+            BTNSetEntrance.UseVisualStyleBackColor = false;
+            BTNSetEntrance.Click += BTNSetItem_Click;
+            BTNSetEntrance.MouseUp += BTNSetEntrance_MouseUp;
             // 
             // BTNSetItem
             // 
-            this.BTNSetItem.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.BTNSetItem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BTNSetItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTNSetItem.Location = new System.Drawing.Point(149, 1);
-            this.BTNSetItem.Margin = new System.Windows.Forms.Padding(0, 1, 3, 0);
-            this.BTNSetItem.Name = "BTNSetItem";
-            this.BTNSetItem.Size = new System.Drawing.Size(97, 24);
-            this.BTNSetItem.TabIndex = 32;
-            this.BTNSetItem.Text = "Mark Item";
-            this.BTNSetItem.UseVisualStyleBackColor = false;
-            this.BTNSetItem.Click += new System.EventHandler(this.BTNSetItem_Click);
-            this.BTNSetItem.MouseUp += new System.Windows.Forms.MouseEventHandler(this.BTNSetEntrance_MouseUp);
+            BTNSetItem.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            BTNSetItem.Dock = System.Windows.Forms.DockStyle.Fill;
+            BTNSetItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            BTNSetItem.Location = new System.Drawing.Point(149, 1);
+            BTNSetItem.Margin = new System.Windows.Forms.Padding(0, 1, 3, 0);
+            BTNSetItem.Name = "BTNSetItem";
+            BTNSetItem.Size = new System.Drawing.Size(97, 24);
+            BTNSetItem.TabIndex = 32;
+            BTNSetItem.Text = "Mark Item";
+            BTNSetItem.UseVisualStyleBackColor = false;
+            BTNSetItem.Click += BTNSetItem_Click;
+            BTNSetItem.MouseUp += BTNSetEntrance_MouseUp;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.tlpPathFinder.SetColumnSpan(this.label6, 2);
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label6.Location = new System.Drawing.Point(5, 55);
-            this.label6.Margin = new System.Windows.Forms.Padding(5);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 15);
-            this.label6.TabIndex = 31;
-            this.label6.Text = "Destination";
+            label6.AutoSize = true;
+            label6.BackColor = System.Drawing.Color.Transparent;
+            tlpPathFinder.SetColumnSpan(label6, 2);
+            label6.Dock = System.Windows.Forms.DockStyle.Fill;
+            label6.ForeColor = System.Drawing.SystemColors.ControlDark;
+            label6.Location = new System.Drawing.Point(5, 55);
+            label6.Margin = new System.Windows.Forms.Padding(5);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(70, 15);
+            label6.TabIndex = 31;
+            label6.Text = "Destination";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label5.Location = new System.Drawing.Point(5, 30);
-            this.label5.Margin = new System.Windows.Forms.Padding(5);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(31, 15);
-            this.label5.TabIndex = 30;
-            this.label5.Text = "Start";
+            label5.AutoSize = true;
+            label5.BackColor = System.Drawing.Color.Transparent;
+            label5.Dock = System.Windows.Forms.DockStyle.Left;
+            label5.ForeColor = System.Drawing.SystemColors.ControlDark;
+            label5.Location = new System.Drawing.Point(5, 30);
+            label5.Margin = new System.Windows.Forms.Padding(5);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(31, 15);
+            label5.TabIndex = 30;
+            label5.Text = "Start";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.tlpPathFinder.SetColumnSpan(this.label4, 2);
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label4.Location = new System.Drawing.Point(5, 5);
-            this.label4.Margin = new System.Windows.Forms.Padding(5);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 15);
-            this.label4.TabIndex = 29;
-            this.label4.Text = "Path Finder";
+            label4.AutoSize = true;
+            label4.BackColor = System.Drawing.Color.Transparent;
+            tlpPathFinder.SetColumnSpan(label4, 2);
+            label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            label4.ForeColor = System.Drawing.SystemColors.ControlDark;
+            label4.Location = new System.Drawing.Point(5, 5);
+            label4.Margin = new System.Windows.Forms.Padding(5);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(70, 15);
+            label4.TabIndex = 29;
+            label4.Text = "Path Finder";
             // 
             // lblAvailableEntrances
             // 
-            this.lblAvailableEntrances.AutoSize = true;
-            this.lblAvailableEntrances.BackColor = System.Drawing.Color.Transparent;
-            this.lblAvailableEntrances.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblAvailableEntrances.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lblAvailableEntrances.Location = new System.Drawing.Point(5, 5);
-            this.lblAvailableEntrances.Margin = new System.Windows.Forms.Padding(5);
-            this.lblAvailableEntrances.Name = "lblAvailableEntrances";
-            this.lblAvailableEntrances.Size = new System.Drawing.Size(139, 15);
-            this.lblAvailableEntrances.TabIndex = 28;
-            this.lblAvailableEntrances.Text = "Available Entrances";
+            lblAvailableEntrances.AutoSize = true;
+            lblAvailableEntrances.BackColor = System.Drawing.Color.Transparent;
+            lblAvailableEntrances.Dock = System.Windows.Forms.DockStyle.Fill;
+            lblAvailableEntrances.ForeColor = System.Drawing.SystemColors.ControlDark;
+            lblAvailableEntrances.Location = new System.Drawing.Point(5, 5);
+            lblAvailableEntrances.Margin = new System.Windows.Forms.Padding(5);
+            lblAvailableEntrances.Name = "lblAvailableEntrances";
+            lblAvailableEntrances.Size = new System.Drawing.Size(139, 15);
+            lblAvailableEntrances.TabIndex = 28;
+            lblAvailableEntrances.Text = "Available Entrances";
             // 
             // lblCheckedLocation
             // 
-            this.lblCheckedLocation.AutoSize = true;
-            this.lblCheckedLocation.BackColor = System.Drawing.Color.Transparent;
-            this.lblCheckedLocation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCheckedLocation.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lblCheckedLocation.Location = new System.Drawing.Point(5, 5);
-            this.lblCheckedLocation.Margin = new System.Windows.Forms.Padding(5);
-            this.lblCheckedLocation.Name = "lblCheckedLocation";
-            this.lblCheckedLocation.Size = new System.Drawing.Size(139, 15);
-            this.lblCheckedLocation.TabIndex = 27;
-            this.lblCheckedLocation.Text = "Checked locations";
+            lblCheckedLocation.AutoSize = true;
+            lblCheckedLocation.BackColor = System.Drawing.Color.Transparent;
+            lblCheckedLocation.Dock = System.Windows.Forms.DockStyle.Fill;
+            lblCheckedLocation.ForeColor = System.Drawing.SystemColors.ControlDark;
+            lblCheckedLocation.Location = new System.Drawing.Point(5, 5);
+            lblCheckedLocation.Margin = new System.Windows.Forms.Padding(5);
+            lblCheckedLocation.Name = "lblCheckedLocation";
+            lblCheckedLocation.Size = new System.Drawing.Size(139, 15);
+            lblCheckedLocation.TabIndex = 27;
+            lblCheckedLocation.Text = "Checked locations";
             // 
             // lblAvailableLocation
             // 
-            this.lblAvailableLocation.AutoSize = true;
-            this.lblAvailableLocation.BackColor = System.Drawing.Color.Transparent;
-            this.lblAvailableLocation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblAvailableLocation.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lblAvailableLocation.Location = new System.Drawing.Point(5, 5);
-            this.lblAvailableLocation.Margin = new System.Windows.Forms.Padding(5);
-            this.lblAvailableLocation.Name = "lblAvailableLocation";
-            this.lblAvailableLocation.Size = new System.Drawing.Size(139, 15);
-            this.lblAvailableLocation.TabIndex = 26;
-            this.lblAvailableLocation.Text = "Available Locations";
+            lblAvailableLocation.AutoSize = true;
+            lblAvailableLocation.BackColor = System.Drawing.Color.Transparent;
+            lblAvailableLocation.Dock = System.Windows.Forms.DockStyle.Fill;
+            lblAvailableLocation.ForeColor = System.Drawing.SystemColors.ControlDark;
+            lblAvailableLocation.Location = new System.Drawing.Point(5, 5);
+            lblAvailableLocation.Margin = new System.Windows.Forms.Padding(5);
+            lblAvailableLocation.Name = "lblAvailableLocation";
+            lblAvailableLocation.Size = new System.Drawing.Size(139, 15);
+            lblAvailableLocation.TabIndex = 26;
+            lblAvailableLocation.Text = "Available Locations";
             // 
             // TXTCheckedSearch
             // 
-            this.TXTCheckedSearch.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.tlpChecked.SetColumnSpan(this.TXTCheckedSearch, 2);
-            this.TXTCheckedSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TXTCheckedSearch.Location = new System.Drawing.Point(4, 28);
-            this.TXTCheckedSearch.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.TXTCheckedSearch.Name = "TXTCheckedSearch";
-            this.TXTCheckedSearch.Size = new System.Drawing.Size(241, 23);
-            this.TXTCheckedSearch.TabIndex = 25;
-            this.TXTCheckedSearch.TextChanged += new System.EventHandler(this.TXTLocSearch_TextChanged);
-            this.TXTCheckedSearch.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TXTLocSearch_MouseUp);
+            TXTCheckedSearch.BackColor = System.Drawing.SystemColors.ControlDark;
+            tlpChecked.SetColumnSpan(TXTCheckedSearch, 2);
+            TXTCheckedSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            TXTCheckedSearch.Location = new System.Drawing.Point(4, 28);
+            TXTCheckedSearch.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            TXTCheckedSearch.Name = "TXTCheckedSearch";
+            TXTCheckedSearch.Size = new System.Drawing.Size(241, 23);
+            TXTCheckedSearch.TabIndex = 25;
+            TXTCheckedSearch.TextChanged += TXTLocSearch_TextChanged;
+            TXTCheckedSearch.MouseUp += TXTLocSearch_MouseUp;
             // 
             // TXTEntSearch
             // 
-            this.TXTEntSearch.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.tlpEntrances.SetColumnSpan(this.TXTEntSearch, 2);
-            this.TXTEntSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TXTEntSearch.Location = new System.Drawing.Point(4, 28);
-            this.TXTEntSearch.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.TXTEntSearch.Name = "TXTEntSearch";
-            this.TXTEntSearch.Size = new System.Drawing.Size(241, 23);
-            this.TXTEntSearch.TabIndex = 24;
-            this.TXTEntSearch.TextChanged += new System.EventHandler(this.TXTLocSearch_TextChanged);
-            this.TXTEntSearch.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TXTLocSearch_MouseUp);
+            TXTEntSearch.BackColor = System.Drawing.SystemColors.ControlDark;
+            tlpEntrances.SetColumnSpan(TXTEntSearch, 2);
+            TXTEntSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            TXTEntSearch.Location = new System.Drawing.Point(4, 28);
+            TXTEntSearch.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            TXTEntSearch.Name = "TXTEntSearch";
+            TXTEntSearch.Size = new System.Drawing.Size(241, 23);
+            TXTEntSearch.TabIndex = 24;
+            TXTEntSearch.TextChanged += TXTLocSearch_TextChanged;
+            TXTEntSearch.MouseUp += TXTLocSearch_MouseUp;
             // 
             // TXTLocSearch
             // 
-            this.TXTLocSearch.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.tlpLocations.SetColumnSpan(this.TXTLocSearch, 2);
-            this.TXTLocSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TXTLocSearch.Location = new System.Drawing.Point(4, 28);
-            this.TXTLocSearch.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.TXTLocSearch.Name = "TXTLocSearch";
-            this.TXTLocSearch.Size = new System.Drawing.Size(241, 23);
-            this.TXTLocSearch.TabIndex = 23;
-            this.TXTLocSearch.TextChanged += new System.EventHandler(this.TXTLocSearch_TextChanged);
-            this.TXTLocSearch.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TXTLocSearch_MouseUp);
+            TXTLocSearch.BackColor = System.Drawing.SystemColors.ControlDark;
+            tlpLocations.SetColumnSpan(TXTLocSearch, 2);
+            TXTLocSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            TXTLocSearch.Location = new System.Drawing.Point(4, 28);
+            TXTLocSearch.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            TXTLocSearch.Name = "TXTLocSearch";
+            TXTLocSearch.Size = new System.Drawing.Size(241, 23);
+            TXTLocSearch.TabIndex = 23;
+            TXTLocSearch.TextChanged += TXTLocSearch_TextChanged;
+            TXTLocSearch.MouseUp += TXTLocSearch_MouseUp;
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolMenuStrip,
-            this.OptionstoolStripMenuItem,
-            this.toolsToolStripMenuItem,
-            this.undoToolStripMenuItem,
-            this.redoToolStripMenuItem,
-            this.refreshToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(498, 24);
-            this.menuStrip1.TabIndex = 43;
-            this.menuStrip1.Text = "menuStrip1";
+            menuStrip1.BackColor = System.Drawing.SystemColors.ControlDark;
+            menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { fileToolMenuStrip, OptionstoolStripMenuItem, toolsToolStripMenuItem, undoToolStripMenuItem, redoToolStripMenuItem, refreshToolStripMenuItem });
+            menuStrip1.Location = new System.Drawing.Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new System.Drawing.Size(498, 24);
+            menuStrip1.TabIndex = 43;
+            menuStrip1.Text = "menuStrip1";
             // 
             // fileToolMenuStrip
             // 
-            this.fileToolMenuStrip.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.NewToolStripMenuItem1,
-            this.LoadToolStripMenuItem,
-            this.SavetoolStripMenuItem,
-            this.SaveAsToolStripMenuItem});
-            this.fileToolMenuStrip.Name = "fileToolMenuStrip";
-            this.fileToolMenuStrip.Size = new System.Drawing.Size(37, 20);
-            this.fileToolMenuStrip.Text = "File";
+            fileToolMenuStrip.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { NewToolStripMenuItem1, LoadToolStripMenuItem, SavetoolStripMenuItem, SaveAsToolStripMenuItem });
+            fileToolMenuStrip.Name = "fileToolMenuStrip";
+            fileToolMenuStrip.Size = new System.Drawing.Size(37, 20);
+            fileToolMenuStrip.Text = "File";
             // 
             // NewToolStripMenuItem1
             // 
-            this.NewToolStripMenuItem1.Name = "NewToolStripMenuItem1";
-            this.NewToolStripMenuItem1.Size = new System.Drawing.Size(112, 22);
-            this.NewToolStripMenuItem1.Text = "New";
-            this.NewToolStripMenuItem1.Click += new System.EventHandler(this.NewToolStripMenuItem1_Click);
+            NewToolStripMenuItem1.Name = "NewToolStripMenuItem1";
+            NewToolStripMenuItem1.Size = new System.Drawing.Size(112, 22);
+            NewToolStripMenuItem1.Text = "New";
+            NewToolStripMenuItem1.Click += NewToolStripMenuItem1_Click;
             // 
             // LoadToolStripMenuItem
             // 
-            this.LoadToolStripMenuItem.Name = "LoadToolStripMenuItem";
-            this.LoadToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
-            this.LoadToolStripMenuItem.Text = "Load";
-            this.LoadToolStripMenuItem.Click += new System.EventHandler(this.LoadToolStripMenuItem_Click);
+            LoadToolStripMenuItem.Name = "LoadToolStripMenuItem";
+            LoadToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            LoadToolStripMenuItem.Text = "Load";
+            LoadToolStripMenuItem.Click += LoadToolStripMenuItem_Click;
             // 
             // SavetoolStripMenuItem
             // 
-            this.SavetoolStripMenuItem.Name = "SavetoolStripMenuItem";
-            this.SavetoolStripMenuItem.Size = new System.Drawing.Size(112, 22);
-            this.SavetoolStripMenuItem.Text = "Save";
-            this.SavetoolStripMenuItem.Click += new System.EventHandler(this.SavetoolStripMenuItem1_Click);
+            SavetoolStripMenuItem.Name = "SavetoolStripMenuItem";
+            SavetoolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            SavetoolStripMenuItem.Text = "Save";
+            SavetoolStripMenuItem.Click += SavetoolStripMenuItem1_Click;
             // 
             // SaveAsToolStripMenuItem
             // 
-            this.SaveAsToolStripMenuItem.Name = "SaveAsToolStripMenuItem";
-            this.SaveAsToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
-            this.SaveAsToolStripMenuItem.Text = "Save as";
+            SaveAsToolStripMenuItem.Name = "SaveAsToolStripMenuItem";
+            SaveAsToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            SaveAsToolStripMenuItem.Text = "Save as";
             // 
             // OptionstoolStripMenuItem
             // 
-            this.OptionstoolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.RandomizerOptionsToolStripMenuItem1,
-            this.logicOptionsToolStripMenuItem,
-            this.miscOptionsToolStripMenuItem});
-            this.OptionstoolStripMenuItem.Name = "OptionstoolStripMenuItem";
-            this.OptionstoolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.OptionstoolStripMenuItem.Text = "Options";
+            OptionstoolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { RandomizerOptionsToolStripMenuItem1, logicOptionsToolStripMenuItem, miscOptionsToolStripMenuItem });
+            OptionstoolStripMenuItem.Name = "OptionstoolStripMenuItem";
+            OptionstoolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            OptionstoolStripMenuItem.Text = "Options";
             // 
             // RandomizerOptionsToolStripMenuItem1
             // 
-            this.RandomizerOptionsToolStripMenuItem1.Name = "RandomizerOptionsToolStripMenuItem1";
-            this.RandomizerOptionsToolStripMenuItem1.Size = new System.Drawing.Size(170, 22);
-            this.RandomizerOptionsToolStripMenuItem1.Text = "Logic Options";
+            RandomizerOptionsToolStripMenuItem1.Name = "RandomizerOptionsToolStripMenuItem1";
+            RandomizerOptionsToolStripMenuItem1.Size = new System.Drawing.Size(170, 22);
+            RandomizerOptionsToolStripMenuItem1.Text = "Logic Options";
             // 
             // logicOptionsToolStripMenuItem
             // 
-            this.logicOptionsToolStripMenuItem.Name = "logicOptionsToolStripMenuItem";
-            this.logicOptionsToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.logicOptionsToolStripMenuItem.Text = "Item Pool Options";
-            this.logicOptionsToolStripMenuItem.Click += new System.EventHandler(this.logicOptionsToolStripMenuItem_Click);
+            logicOptionsToolStripMenuItem.Name = "logicOptionsToolStripMenuItem";
+            logicOptionsToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            logicOptionsToolStripMenuItem.Text = "Item Pool Options";
+            logicOptionsToolStripMenuItem.Click += logicOptionsToolStripMenuItem_Click;
             // 
             // miscOptionsToolStripMenuItem
             // 
-            this.miscOptionsToolStripMenuItem.Name = "miscOptionsToolStripMenuItem";
-            this.miscOptionsToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.miscOptionsToolStripMenuItem.Text = "Tracker Options";
-            this.miscOptionsToolStripMenuItem.Click += new System.EventHandler(this.miscOptionsToolStripMenuItem_Click);
+            miscOptionsToolStripMenuItem.Name = "miscOptionsToolStripMenuItem";
+            miscOptionsToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            miscOptionsToolStripMenuItem.Text = "Tracker Options";
+            miscOptionsToolStripMenuItem.Click += miscOptionsToolStripMenuItem_Click;
             // 
             // toolsToolStripMenuItem
             // 
-            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.importSpoilerLogToolStripMenuItem,
-            this.spoilerLogToolsToolStripMenuItem,
-            this.PathFinderToolStripMenuItem});
-            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
-            this.toolsToolStripMenuItem.Text = "Tools";
+            toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { importSpoilerLogToolStripMenuItem, spoilerLogToolsToolStripMenuItem, PathFinderToolStripMenuItem });
+            toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
+            toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
+            toolsToolStripMenuItem.Text = "Tools";
             // 
             // importSpoilerLogToolStripMenuItem
             // 
-            this.importSpoilerLogToolStripMenuItem.Name = "importSpoilerLogToolStripMenuItem";
-            this.importSpoilerLogToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.importSpoilerLogToolStripMenuItem.Text = "Import Spoiler Log";
-            this.importSpoilerLogToolStripMenuItem.Click += new System.EventHandler(this.importSpoilerLogToolStripMenuItem_Click);
+            importSpoilerLogToolStripMenuItem.Name = "importSpoilerLogToolStripMenuItem";
+            importSpoilerLogToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            importSpoilerLogToolStripMenuItem.Text = "Import Spoiler Log";
+            importSpoilerLogToolStripMenuItem.Click += importSpoilerLogToolStripMenuItem_Click;
             // 
             // spoilerLogToolsToolStripMenuItem
             // 
-            this.spoilerLogToolsToolStripMenuItem.Name = "spoilerLogToolsToolStripMenuItem";
-            this.spoilerLogToolsToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.spoilerLogToolsToolStripMenuItem.Text = "Spoiler Log Tools";
-            this.spoilerLogToolsToolStripMenuItem.Click += new System.EventHandler(this.spoilerLogToolsToolStripMenuItem_Click);
+            spoilerLogToolsToolStripMenuItem.Name = "spoilerLogToolsToolStripMenuItem";
+            spoilerLogToolsToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            spoilerLogToolsToolStripMenuItem.Text = "Spoiler Log Tools";
+            spoilerLogToolsToolStripMenuItem.Click += spoilerLogToolsToolStripMenuItem_Click;
             // 
             // PathFinderToolStripMenuItem
             // 
-            this.PathFinderToolStripMenuItem.Name = "PathFinderToolStripMenuItem";
-            this.PathFinderToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.PathFinderToolStripMenuItem.Text = "Path Finder";
-            this.PathFinderToolStripMenuItem.Click += new System.EventHandler(this.PathFinderToolStripMenuItem_Click);
+            PathFinderToolStripMenuItem.Name = "PathFinderToolStripMenuItem";
+            PathFinderToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
+            PathFinderToolStripMenuItem.Text = "Path Finder";
+            PathFinderToolStripMenuItem.Click += PathFinderToolStripMenuItem_Click;
             // 
             // undoToolStripMenuItem
             // 
-            this.undoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("undoToolStripMenuItem.Image")));
-            this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
-            this.undoToolStripMenuItem.Click += new System.EventHandler(this.UndoRedo_Click);
+            undoToolStripMenuItem.Image = (System.Drawing.Image)resources.GetObject("undoToolStripMenuItem.Image");
+            undoToolStripMenuItem.Name = "undoToolStripMenuItem";
+            undoToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
+            undoToolStripMenuItem.Click += UndoRedo_Click;
             // 
             // redoToolStripMenuItem
             // 
-            this.redoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("redoToolStripMenuItem.Image")));
-            this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
-            this.redoToolStripMenuItem.Click += new System.EventHandler(this.UndoRedo_Click);
+            redoToolStripMenuItem.Image = (System.Drawing.Image)resources.GetObject("redoToolStripMenuItem.Image");
+            redoToolStripMenuItem.Name = "redoToolStripMenuItem";
+            redoToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
+            redoToolStripMenuItem.Click += UndoRedo_Click;
             // 
             // refreshToolStripMenuItem
             // 
-            this.refreshToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("refreshToolStripMenuItem.Image")));
-            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
-            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.UndoRedo_Click);
+            refreshToolStripMenuItem.Image = (System.Drawing.Image)resources.GetObject("refreshToolStripMenuItem.Image");
+            refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
+            refreshToolStripMenuItem.Size = new System.Drawing.Size(28, 20);
+            refreshToolStripMenuItem.Click += UndoRedo_Click;
             // 
             // toolTip1
             // 
-            this.toolTip1.AutoPopDelay = 50000;
-            this.toolTip1.InitialDelay = 10;
-            this.toolTip1.ReshowDelay = 100;
+            toolTip1.AutoPopDelay = 50000;
+            toolTip1.InitialDelay = 10;
+            toolTip1.ReshowDelay = 100;
             // 
             // tlpMaster
             // 
-            this.tlpMaster.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.tlpMaster.ColumnCount = 2;
-            this.tlpMaster.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpMaster.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpMaster.Controls.Add(this.tlpLocations, 0, 0);
-            this.tlpMaster.Controls.Add(this.tlpEntrances, 1, 0);
-            this.tlpMaster.Controls.Add(this.tlpChecked, 0, 1);
-            this.tlpMaster.Controls.Add(this.tlpPathFinder, 1, 1);
-            this.tlpMaster.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpMaster.Location = new System.Drawing.Point(0, 24);
-            this.tlpMaster.Name = "tlpMaster";
-            this.tlpMaster.RowCount = 2;
-            this.tlpMaster.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpMaster.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpMaster.Size = new System.Drawing.Size(498, 522);
-            this.tlpMaster.TabIndex = 44;
+            tlpMaster.BackColor = System.Drawing.Color.FromArgb(0, 0, 64);
+            tlpMaster.ColumnCount = 2;
+            tlpMaster.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            tlpMaster.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            tlpMaster.Controls.Add(tlpLocations, 0, 0);
+            tlpMaster.Controls.Add(tlpEntrances, 1, 0);
+            tlpMaster.Controls.Add(tlpChecked, 0, 1);
+            tlpMaster.Controls.Add(tlpPathFinder, 1, 1);
+            tlpMaster.Dock = System.Windows.Forms.DockStyle.Fill;
+            tlpMaster.Location = new System.Drawing.Point(0, 24);
+            tlpMaster.Name = "tlpMaster";
+            tlpMaster.RowCount = 2;
+            tlpMaster.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            tlpMaster.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            tlpMaster.Size = new System.Drawing.Size(498, 522);
+            tlpMaster.TabIndex = 44;
             // 
             // tlpLocations
             // 
-            this.tlpLocations.ColumnCount = 2;
-            this.tlpLocations.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpLocations.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tlpLocations.Controls.Add(this.lblAvailableLocation, 0, 0);
-            this.tlpLocations.Controls.Add(this.BTNSetItem, 1, 0);
-            this.tlpLocations.Controls.Add(this.TXTLocSearch, 0, 1);
-            this.tlpLocations.Controls.Add(this.LBValidLocations, 0, 2);
-            this.tlpLocations.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpLocations.Location = new System.Drawing.Point(0, 0);
-            this.tlpLocations.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpLocations.Name = "tlpLocations";
-            this.tlpLocations.RowCount = 3;
-            this.tlpLocations.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tlpLocations.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tlpLocations.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpLocations.Size = new System.Drawing.Size(249, 261);
-            this.tlpLocations.TabIndex = 0;
+            tlpLocations.ColumnCount = 2;
+            tlpLocations.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tlpLocations.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            tlpLocations.Controls.Add(lblAvailableLocation, 0, 0);
+            tlpLocations.Controls.Add(BTNSetItem, 1, 0);
+            tlpLocations.Controls.Add(TXTLocSearch, 0, 1);
+            tlpLocations.Controls.Add(LBValidLocations, 0, 2);
+            tlpLocations.Dock = System.Windows.Forms.DockStyle.Fill;
+            tlpLocations.Location = new System.Drawing.Point(0, 0);
+            tlpLocations.Margin = new System.Windows.Forms.Padding(0);
+            tlpLocations.Name = "tlpLocations";
+            tlpLocations.RowCount = 3;
+            tlpLocations.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            tlpLocations.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            tlpLocations.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tlpLocations.Size = new System.Drawing.Size(249, 261);
+            tlpLocations.TabIndex = 0;
             // 
             // tlpEntrances
             // 
-            this.tlpEntrances.ColumnCount = 2;
-            this.tlpEntrances.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpEntrances.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tlpEntrances.Controls.Add(this.BTNSetEntrance, 1, 0);
-            this.tlpEntrances.Controls.Add(this.lblAvailableEntrances, 0, 0);
-            this.tlpEntrances.Controls.Add(this.TXTEntSearch, 0, 1);
-            this.tlpEntrances.Controls.Add(this.LBValidEntrances, 0, 2);
-            this.tlpEntrances.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpEntrances.Location = new System.Drawing.Point(249, 0);
-            this.tlpEntrances.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpEntrances.Name = "tlpEntrances";
-            this.tlpEntrances.RowCount = 3;
-            this.tlpEntrances.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tlpEntrances.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tlpEntrances.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpEntrances.Size = new System.Drawing.Size(249, 261);
-            this.tlpEntrances.TabIndex = 1;
+            tlpEntrances.ColumnCount = 2;
+            tlpEntrances.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tlpEntrances.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            tlpEntrances.Controls.Add(BTNSetEntrance, 1, 0);
+            tlpEntrances.Controls.Add(lblAvailableEntrances, 0, 0);
+            tlpEntrances.Controls.Add(TXTEntSearch, 0, 1);
+            tlpEntrances.Controls.Add(LBValidEntrances, 0, 2);
+            tlpEntrances.Dock = System.Windows.Forms.DockStyle.Fill;
+            tlpEntrances.Location = new System.Drawing.Point(249, 0);
+            tlpEntrances.Margin = new System.Windows.Forms.Padding(0);
+            tlpEntrances.Name = "tlpEntrances";
+            tlpEntrances.RowCount = 3;
+            tlpEntrances.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            tlpEntrances.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            tlpEntrances.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tlpEntrances.Size = new System.Drawing.Size(249, 261);
+            tlpEntrances.TabIndex = 1;
             // 
             // tlpChecked
             // 
-            this.tlpChecked.ColumnCount = 2;
-            this.tlpChecked.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpChecked.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tlpChecked.Controls.Add(this.CHKShowAll, 1, 0);
-            this.tlpChecked.Controls.Add(this.lblCheckedLocation, 0, 0);
-            this.tlpChecked.Controls.Add(this.TXTCheckedSearch, 0, 1);
-            this.tlpChecked.Controls.Add(this.LBCheckedLocations, 0, 2);
-            this.tlpChecked.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpChecked.Location = new System.Drawing.Point(0, 261);
-            this.tlpChecked.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpChecked.Name = "tlpChecked";
-            this.tlpChecked.RowCount = 3;
-            this.tlpChecked.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tlpChecked.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tlpChecked.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpChecked.Size = new System.Drawing.Size(249, 261);
-            this.tlpChecked.TabIndex = 2;
+            tlpChecked.ColumnCount = 2;
+            tlpChecked.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tlpChecked.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            tlpChecked.Controls.Add(CHKShowAll, 1, 0);
+            tlpChecked.Controls.Add(lblCheckedLocation, 0, 0);
+            tlpChecked.Controls.Add(TXTCheckedSearch, 0, 1);
+            tlpChecked.Controls.Add(LBCheckedLocations, 0, 2);
+            tlpChecked.Dock = System.Windows.Forms.DockStyle.Fill;
+            tlpChecked.Location = new System.Drawing.Point(0, 261);
+            tlpChecked.Margin = new System.Windows.Forms.Padding(0);
+            tlpChecked.Name = "tlpChecked";
+            tlpChecked.RowCount = 3;
+            tlpChecked.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            tlpChecked.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            tlpChecked.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tlpChecked.Size = new System.Drawing.Size(249, 261);
+            tlpChecked.TabIndex = 2;
             // 
             // tlpPathFinder
             // 
-            this.tlpPathFinder.ColumnCount = 3;
-            this.tlpPathFinder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
-            this.tlpPathFinder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
-            this.tlpPathFinder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpPathFinder.Controls.Add(this.label4, 0, 0);
-            this.tlpPathFinder.Controls.Add(this.CMBEnd, 2, 2);
-            this.tlpPathFinder.Controls.Add(this.lblSwapPathfinder, 1, 1);
-            this.tlpPathFinder.Controls.Add(this.CMBStart, 2, 1);
-            this.tlpPathFinder.Controls.Add(this.BTNFindPath, 2, 0);
-            this.tlpPathFinder.Controls.Add(this.label5, 0, 1);
-            this.tlpPathFinder.Controls.Add(this.LBPathFinder, 0, 3);
-            this.tlpPathFinder.Controls.Add(this.label6, 0, 2);
-            this.tlpPathFinder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpPathFinder.Location = new System.Drawing.Point(249, 261);
-            this.tlpPathFinder.Margin = new System.Windows.Forms.Padding(0);
-            this.tlpPathFinder.Name = "tlpPathFinder";
-            this.tlpPathFinder.RowCount = 4;
-            this.tlpPathFinder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tlpPathFinder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tlpPathFinder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tlpPathFinder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpPathFinder.Size = new System.Drawing.Size(249, 261);
-            this.tlpPathFinder.TabIndex = 3;
+            tlpPathFinder.ColumnCount = 3;
+            tlpPathFinder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            tlpPathFinder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            tlpPathFinder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tlpPathFinder.Controls.Add(label4, 0, 0);
+            tlpPathFinder.Controls.Add(CMBEnd, 2, 2);
+            tlpPathFinder.Controls.Add(lblSwapPathfinder, 1, 1);
+            tlpPathFinder.Controls.Add(CMBStart, 2, 1);
+            tlpPathFinder.Controls.Add(BTNFindPath, 2, 0);
+            tlpPathFinder.Controls.Add(label5, 0, 1);
+            tlpPathFinder.Controls.Add(LBPathFinder, 0, 3);
+            tlpPathFinder.Controls.Add(label6, 0, 2);
+            tlpPathFinder.Dock = System.Windows.Forms.DockStyle.Fill;
+            tlpPathFinder.Location = new System.Drawing.Point(249, 261);
+            tlpPathFinder.Margin = new System.Windows.Forms.Padding(0);
+            tlpPathFinder.Name = "tlpPathFinder";
+            tlpPathFinder.RowCount = 4;
+            tlpPathFinder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            tlpPathFinder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            tlpPathFinder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            tlpPathFinder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            tlpPathFinder.Size = new System.Drawing.Size(249, 261);
+            tlpPathFinder.TabIndex = 3;
             // 
             // MainInterface
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(498, 546);
-            this.Controls.Add(this.tlpMaster);
-            this.Controls.Add(this.menuStrip1);
-            this.DoubleBuffered = true;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.KeyPreview = true;
-            this.MainMenuStrip = this.menuStrip1;
-            this.Name = "MainInterface";
-            this.Text = "Form1";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainInterface_FormClosing);
-            this.Load += new System.EventHandler(this.MainInterface_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainInterface_KeyDown);
-            this.Resize += new System.EventHandler(this.MainInterface_Resize);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.tlpMaster.ResumeLayout(false);
-            this.tlpLocations.ResumeLayout(false);
-            this.tlpLocations.PerformLayout();
-            this.tlpEntrances.ResumeLayout(false);
-            this.tlpEntrances.PerformLayout();
-            this.tlpChecked.ResumeLayout(false);
-            this.tlpChecked.PerformLayout();
-            this.tlpPathFinder.ResumeLayout(false);
-            this.tlpPathFinder.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackgroundImage = (System.Drawing.Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            ClientSize = new System.Drawing.Size(498, 546);
+            Controls.Add(tlpMaster);
+            Controls.Add(menuStrip1);
+            DoubleBuffered = true;
+            Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+            KeyPreview = true;
+            MainMenuStrip = menuStrip1;
+            Name = "MainInterface";
+            Text = "Form1";
+            FormClosing += MainInterface_FormClosing;
+            Load += MainInterface_Load;
+            KeyDown += MainInterface_KeyDown;
+            Resize += MainInterface_Resize;
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
+            tlpMaster.ResumeLayout(false);
+            tlpLocations.ResumeLayout(false);
+            tlpLocations.PerformLayout();
+            tlpEntrances.ResumeLayout(false);
+            tlpEntrances.PerformLayout();
+            tlpChecked.ResumeLayout(false);
+            tlpChecked.PerformLayout();
+            tlpPathFinder.ResumeLayout(false);
+            tlpPathFinder.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
