@@ -117,12 +117,11 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
 
         }
-        public class ManualCheckObjectResult
+        public class ManualCheckObjectResult(object _Check, object _Item, int _OwningPlayer = -1)
         {
-            public ManualCheckObjectResult(object _Check, object _Item, int _OwningPlayer = -1) { Check = _Check; Item = _Item; OwningPlayer = _OwningPlayer; }
-            public object Check;
-            public object Item;
-            public int OwningPlayer = -1;
+            public object Check = _Check;
+            public object Item = _Item;
+            public int OwningPlayer = _OwningPlayer;
             public T GetCheck<T>() { return (T)Check; }
             public T GetItem<T>() { return (T)Item; }
         }

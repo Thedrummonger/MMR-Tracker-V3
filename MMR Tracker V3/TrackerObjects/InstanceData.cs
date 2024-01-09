@@ -20,13 +20,9 @@ namespace MMR_Tracker_V3.TrackerObjects
     public class InstanceData
     {
         [Serializable]
-        public class TrackerInstance
+        public class TrackerInstance(InstanceData.InstanceContainer instanceContainer)
         {
-            public TrackerInstance(InstanceContainer instanceContainer)
-            {
-                Parent = instanceContainer;
-            }
-            private InstanceContainer Parent;
+            private InstanceContainer Parent = instanceContainer;
             public InstanceContainer GetParentContainer() { return Parent; }
             public void SetParentContainer(InstanceContainer P) { Parent = P; }
             public Dictionary<string, LocationObject> LocationPool { get; set; } = new Dictionary<string, LocationObject>();
