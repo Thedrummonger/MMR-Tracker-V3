@@ -211,10 +211,10 @@ namespace TestingForm.GameDataCreation.MMR
 
             //==========================================================================================================================================================================
             //Victory Mode Options
-            AddSimpleMultiSelect("VictoryMode", "Victory Mode", "Main Settings", "DirectToCredits", "CantFightMajora", "Fairies", "SkullTokens", "NonTransformationMasks", "TransformationMasks", "Notebook", "Hearts", "BossRemains");
+            AddSimpleMultiSelect("VictoryMode", "Victory Mode", "Main Settings", "DirectToCredits", "CantFightMajora", "Fairies", "SkullTokens", "NonTransformationMasks", "TransformationMasks", "Notebook", "Hearts", "OneBossRemains", "TwoBossRemains", "ThreeBossRemains", "FourBossRemains");
 
             //Price Mode
-            AddSimpleMultiSelect("PriceMode", "Price Mode", "Main Settings", "Purchases", "Minigames", "Misc", "AccountForRoyalWallet");
+            AddSimpleMultiSelect("PriceMode", "Price Mode", "Main Settings", "Purchases", "Minigames", "Misc", "AccountForRoyalWallet", "ShuffleOnly");
 
             //==========================================================================================================================================================================
             //Keysy Options
@@ -411,7 +411,7 @@ namespace TestingForm.GameDataCreation.MMR
             AddAdditionalLogic("OtherInaccessible", "false");
             AddAdditionalLogic("OtherCredits", "(setting{VictoryMode, DirectToCredits} || (AreaMoonAccess && OtherKillMajora)) && " +
                 "HasVictoryModeFairies && HasVictoryModeSkulls && HasVictoryModeNonTransformationMask && HasVictoryModeTransformationMask && " +
-                "HasVictoryModeNotebook && HasVictoryModeHearts && HasVictoryModeRemains");
+                "HasVictoryModeNotebook && HasVictoryModeHearts && HasVictoryModeRemains1 && HasVictoryModeRemains2 && HasVictoryModeRemains3 && HasVictoryModeRemains4");
 
             AddAdditionalLogic("HasVictoryModeFairies", "(setting{VictoryMode, Fairies, false} || (SwampFairies, 15 && MountainFairies, 15 && OceanFairies, 15 && CanyonFairies, 15))");
             AddAdditionalLogic("HasVictoryModeSkulls", "(setting{VictoryMode, SkullTokens, false} || (SwampSkulls, 30 && OceanSkulls, 30))");
@@ -419,7 +419,10 @@ namespace TestingForm.GameDataCreation.MMR
             AddAdditionalLogic("HasVictoryModeTransformationMask", "(setting{VictoryMode, TransformationMasks, false} || (MaskDeku && MaskGoron && MaskZora && MaskFierceDeity))");
             AddAdditionalLogic("HasVictoryModeNotebook", "(setting{VictoryMode, Notebook, false} || NotebookEntries, 51)");
             AddAdditionalLogic("HasVictoryModeHearts", "(setting{VictoryMode, Hearts, false} || (HeartPieces, 52 && HeartContainers, 6))");
-            AddAdditionalLogic("HasVictoryModeRemains", "(setting{VictoryMode, BossRemains, false} || BossRemains, 4)");
+            AddAdditionalLogic("HasVictoryModeRemains1", "(setting{VictoryMode, OneBossRemains, false} || BossRemains, 1)");
+            AddAdditionalLogic("HasVictoryModeRemains2", "(setting{VictoryMode, TwoBossRemains, false} || BossRemains, 2)");
+            AddAdditionalLogic("HasVictoryModeRemains3", "(setting{VictoryMode, ThreeBossRemains, false} || BossRemains, 3)");
+            AddAdditionalLogic("HasVictoryModeRemains4", "(setting{VictoryMode, FourBossRemains, false} || BossRemains, 4)");
 
             //Tracker Specific Logic
             AddAdditionalLogic("MMRTCanBuyFromBeanScrub", "randomized{ShopItemBusinessScrubMagicBean} || OtherMagicBean");

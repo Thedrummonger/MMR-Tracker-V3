@@ -54099,9 +54099,42 @@
             "VariableEdit": {}
           }
         },
-        "BossRemains": {
-          "ID": "BossRemains",
-          "Name": "BossRemains",
+        "OneBossRemains": {
+          "ID": "OneBossRemains",
+          "Name": "OneBossRemains",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "TwoBossRemains": {
+          "ID": "TwoBossRemains",
+          "Name": "TwoBossRemains",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "ThreeBossRemains": {
+          "ID": "ThreeBossRemains",
+          "Name": "ThreeBossRemains",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "FourBossRemains": {
+          "ID": "FourBossRemains",
+          "Name": "FourBossRemains",
           "Actions": {
             "LogicReplacements": [],
             "AdditionalLogic": [],
@@ -54156,6 +54189,17 @@
         "AccountForRoyalWallet": {
           "ID": "AccountForRoyalWallet",
           "Name": "AccountForRoyalWallet",
+          "Actions": {
+            "LogicReplacements": [],
+            "AdditionalLogic": [],
+            "ItemNameOverride": {},
+            "ItemMaxAmountEdit": {},
+            "VariableEdit": {}
+          }
+        },
+        "ShuffleOnly": {
+          "ID": "ShuffleOnly",
+          "Name": "ShuffleOnly",
           "Actions": {
             "LogicReplacements": [],
             "AdditionalLogic": [],
@@ -55889,7 +55933,10 @@
         "HasVictoryModeTransformationMask",
         "HasVictoryModeNotebook",
         "HasVictoryModeHearts",
-        "HasVictoryModeRemains"
+        "HasVictoryModeRemains1",
+        "HasVictoryModeRemains2",
+        "HasVictoryModeRemains3",
+        "HasVictoryModeRemains4"
       ],
       "ConditionalItems": [
         [
@@ -56010,11 +56057,59 @@
       "IsTrick": false
     },
     {
-      "Id": "HasVictoryModeRemains",
+      "Id": "HasVictoryModeRemains1",
       "RequiredItems": [],
       "ConditionalItems": [
         [
-          "setting{VictoryMode, BossRemains, false}"
+          "setting{VictoryMode, OneBossRemains, false}"
+        ],
+        [
+          "BossRemains, 1"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "HasVictoryModeRemains2",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{VictoryMode, TwoBossRemains, false}"
+        ],
+        [
+          "BossRemains, 2"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "HasVictoryModeRemains3",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{VictoryMode, ThreeBossRemains, false}"
+        ],
+        [
+          "BossRemains, 3"
+        ]
+      ],
+      "TimeNeeded": "None",
+      "TimeAvailable": "None",
+      "TimeSetup": "None",
+      "IsTrick": false
+    },
+    {
+      "Id": "HasVictoryModeRemains4",
+      "RequiredItems": [],
+      "ConditionalItems": [
+        [
+          "setting{VictoryMode, FourBossRemains, false}"
         ],
         [
           "BossRemains, 4"
