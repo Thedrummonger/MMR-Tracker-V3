@@ -87,7 +87,33 @@ namespace TestingForm
             }
         }
 
+        [Flags]
+        public enum settingTest
+        {
+            option1 = 1,
+            option2 = 1 << 1,
+            option3 = 1 << 2,
+            option4 = 1 << 3,
+            option5 = 1 << 4,
+        }
+
+        settingTest Settings = new();
+
         private void RandomTests()
+        {
+            Settings |= settingTest.option1;
+            Debug.WriteLine(Settings.ToFormattedJson());
+            Settings |= settingTest.option2;
+            Debug.WriteLine(Settings.ToFormattedJson());
+            Settings |= settingTest.option3;
+            Debug.WriteLine(Settings.ToFormattedJson());
+            Settings &= ~settingTest.option1;
+            Debug.WriteLine(Settings.ToFormattedJson());
+            Settings &= ~settingTest.option3;
+            Debug.WriteLine(Settings.ToFormattedJson());
+        }
+
+        private void RegexTesting()
         {
             string Test = "(setting(magicalRupee) && has(RUPEE_MAGICAL)) || cond(setting(silverRupeePouches), has(pouch), has(rupee, count))";
 
