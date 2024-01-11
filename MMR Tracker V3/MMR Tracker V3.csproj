@@ -15,18 +15,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Recources\Categories.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Recources\Dictionaries\MMR V12.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Recources\Dictionaries\MMR V24.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Recources\Presets\WebPresets.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+	<Content Include="Recources\**">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</Content>
   </ItemGroup>
 
 </Project>
