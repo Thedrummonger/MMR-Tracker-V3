@@ -12,15 +12,12 @@ namespace MMR_Tracker_V3.TrackerObjects
     {
 
         [Serializable]
-        public class HintObject
+        public class HintObject(InstanceData.TrackerInstance Parent)
         {
-            private InstanceData.TrackerInstance _parent;
+            private InstanceData.TrackerInstance _parent = Parent;
             public InstanceData.TrackerInstance GetParent() { return _parent; }
             public void SetParent(InstanceData.TrackerInstance parent) { _parent = parent; }
-            public HintObject(InstanceData.TrackerInstance Parent)
-            {
-                _parent = Parent;
-            }
+
             public string ID { get; set; }
             public CheckState CheckState { get; set; } = CheckState.Unchecked;
             public RandomizedState RandomizedState { 
@@ -31,8 +28,8 @@ namespace MMR_Tracker_V3.TrackerObjects
             public bool Available { get; set; }
             public bool Starred { get; set; }
             public string HintText { get; set; }
-            public Dictionary<string, string> ParsedHintData { get; set; } = new Dictionary<string, string>();
-            public List<string> FoolishLocations { get; set; } = new List<string>();
+            public Dictionary<string, string> ParsedHintData { get; set; } = [];
+            public List<string> FoolishLocations { get; set; } = [];
             public string SpoilerHintText { get; set; }
             public string DisplayName { get; set; }
             public InstanceData.ReferenceData referenceData { get; set; } = new InstanceData.ReferenceData();

@@ -25,17 +25,17 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string RootArea { get; set; }
             public string WinCondition { get; set; }
             public DefaultSettings DefaultSettings { get; set; }
-            public Dictionary<string, DictionaryLocationEntries> LocationList { get; set; } = new Dictionary<string, DictionaryLocationEntries>();
-            public Dictionary<string, DictionaryItemEntries> ItemList { get; set; } = new Dictionary<string, DictionaryItemEntries>();
-            public Dictionary<string, DictionaryEntranceEntries> EntranceList { get; set; } = new Dictionary<string, DictionaryEntranceEntries>();
-            public Dictionary<string, DictionaryHintEntries> HintSpots { get; set; } = new Dictionary<string, DictionaryHintEntries>();
-            public Dictionary<string, DictionaryMacroEntry> MacroList { get; set; } = new Dictionary<string, DictionaryMacroEntry>();
-            public Dictionary<string, ChoiceOption> ChoiceOptions { get; set; } = new Dictionary<string, ChoiceOption>();
-            public Dictionary<string, MultiSelectOption> MultiSelectOptions { get; set; } = new Dictionary<string, MultiSelectOption>();
-            public Dictionary<string, ToggleOption> ToggleOptions { get; set; } = new Dictionary<string, ToggleOption>();
-            public Dictionary<string, IntOption> IntOptions { get; set; } = new Dictionary<string, IntOption>();
-            public Dictionary<string, LogicEntryCollection> LogicEntryCollections { get; set; } = new Dictionary<string, LogicEntryCollection>();
-            public List<JsonFormatLogicItem> AdditionalLogic { get; set; } = new List<JsonFormatLogicItem>();
+            public Dictionary<string, DictionaryLocationEntries> LocationList { get; set; } = [];
+            public Dictionary<string, DictionaryItemEntries> ItemList { get; set; } = [];
+            public Dictionary<string, DictionaryEntranceEntries> EntranceList { get; set; } = [];
+            public Dictionary<string, DictionaryHintEntries> HintSpots { get; set; } = [];
+            public Dictionary<string, DictionaryMacroEntry> MacroList { get; set; } = [];
+            public Dictionary<string, ChoiceOption> ChoiceOptions { get; set; } = [];
+            public Dictionary<string, MultiSelectOption> MultiSelectOptions { get; set; } = [];
+            public Dictionary<string, ToggleOption> ToggleOptions { get; set; } = [];
+            public Dictionary<string, IntOption> IntOptions { get; set; } = [];
+            public Dictionary<string, LogicEntryCollection> LogicEntryCollections { get; set; } = [];
+            public List<JsonFormatLogicItem> AdditionalLogic { get; set; } = [];
             public static LogicDictionary FromJson(string json)
             {
                 return Newtonsoft.Json.JsonConvert.DeserializeObject<LogicDictionary>(json, _NewtonsoftJsonSerializerOptions);
@@ -46,7 +46,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return Newtonsoft.Json.JsonConvert.SerializeObject(this, _NewtonsoftJsonSerializerOptions);
                 //return JsonSerializer.Serialize(this, _jsonSerializerOptions);
             }
-            private readonly static Newtonsoft.Json.JsonSerializerSettings _NewtonsoftJsonSerializerOptions = new Newtonsoft.Json.JsonSerializerSettings
+            private readonly static Newtonsoft.Json.JsonSerializerSettings _NewtonsoftJsonSerializerOptions = new()
             {
                 Formatting = Newtonsoft.Json.Formatting.Indented,
                 NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore,
@@ -78,11 +78,11 @@ namespace MMR_Tracker_V3.TrackerObjects
             public string OriginalItem { get; set; }
             public char? WalletCurrency { get; set; } = null;
             public string Area { get; set; }
-            public string[] ValidItemTypes { get; set; } = Array.Empty<string>();
+            public string[] ValidItemTypes { get; set; } = [];
             public bool? IgnoreForSettingString { get; set; } = null;
             public bool? Repeatable { get; set; } = null;
             public SpoilerlogReference SpoilerData { get; set; } = new SpoilerlogReference();
-            public List<DictLocationProxy> LocationProxys { get; set; } = new List<DictLocationProxy>();
+            public List<DictLocationProxy> LocationProxys { get; set; } = [];
             public string GetName()
             {
                 return Name ?? ID;
@@ -121,7 +121,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public char? WalletCurrency { get; set; } = null;
             public int? MaxAmountInWorld { get; set; } = null;
             public bool? ValidStartingItem { get; set; } = null;
-            public string[] ItemTypes { get; set; } = Array.Empty<string>();
+            public string[] ItemTypes { get; set; } = [];
             public bool? IgnoreForSettingString { get; set; } = null;
             public SpoilerlogReference SpoilerData { get; set; } = new SpoilerlogReference();
 
@@ -142,8 +142,8 @@ namespace MMR_Tracker_V3.TrackerObjects
 
             public int GetMaxAmountInWorld()
             {
-                if (!_parent.GetParentInstancer().InstanceReference.OptionActionItemEdits.ContainsKey(ID)) { return -1; }
-                return _parent.GetParentInstancer().InstanceReference.OptionActionItemEdits[ID].MaxAmount;
+                if (!_parent.GetParentInstancer().InstanceReference.OptionActionItemEdits.TryGetValue(ID, out ActionItemEdit value)) { return -1; }
+                return value.MaxAmount;
             }
 
             public int GetOptionEditDefinedMaxAmountInWorld(List<OptionData.Action> Actions)

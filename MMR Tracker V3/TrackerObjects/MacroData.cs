@@ -10,15 +10,12 @@ using static MMR_Tracker_V3.TrackerObjects.MMRData;
 namespace MMR_Tracker_V3.TrackerObjects
 {
     [Serializable]
-    public class MacroObject
+    public class MacroObject(InstanceData.TrackerInstance Parent)
     {
-        private InstanceData.TrackerInstance _parent;
+        private InstanceData.TrackerInstance _parent = Parent;
         public InstanceData.TrackerInstance GetParent() { return _parent; }
         public void SetParent(InstanceData.TrackerInstance parent) { _parent = parent; }
-        public MacroObject(InstanceData.TrackerInstance Parent)
-        {
-            _parent = Parent;
-        }
+
         public string ID { get; set; }
         public bool Aquired { get; set; } = false;
         public bool TrickEnabled { get; set; } = true;

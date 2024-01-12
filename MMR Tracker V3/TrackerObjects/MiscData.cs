@@ -105,7 +105,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 CheckUnassignedLocations = (IEnumerable<object> O, InstanceContainer C) =>
                 {
-                    List<ManualCheckObjectResult> Results = new List<ManualCheckObjectResult>();
+                    List<ManualCheckObjectResult> Results = [];
                     foreach (var obj in O)
                     {
                         LocationData.LocationObject location = obj as LocationData.LocationObject;
@@ -149,7 +149,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             public bool Reverse = false;
             public int ItemsFound = 0;
             public int ItemsDisplayed = 0;
-            public List<object> FinalData = new List<object>();
+            public List<object> FinalData = [];
             private bool _ShowAll = false;
             public bool LocationsFiltered { get { return ItemsFound != ItemsDisplayed; } }
             public bool ShowUnavailableEntries { get { return _ShowAll || (Filter.StartsWith("^") && !Filter.StartsWith("^^")) || Filter.StartsWith("^^^"); } }
@@ -271,11 +271,8 @@ namespace MMR_Tracker_V3.TrackerObjects
                     if (val == e.ToInt32(CultureInfo.InvariantCulture))
                     {
                         var memInfo = type.GetMember(type.GetEnumName(val));
-                        var descriptionAttribute = memInfo[0]
-                            .GetCustomAttributes(typeof(DescriptionAttribute), false)
-                            .FirstOrDefault() as DescriptionAttribute;
 
-                        if (descriptionAttribute != null)
+                        if (memInfo[0].GetCustomAttributes(typeof(DescriptionAttribute), false).FirstOrDefault() is DescriptionAttribute descriptionAttribute)
                         {
                             return descriptionAttribute.Description;
                         }
@@ -283,7 +280,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                 }
             }
 
-            return null; // could also return string.Empty
+            return string.Empty;
         }
     }
 }

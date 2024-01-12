@@ -13,17 +13,17 @@ namespace MMR_Tracker_V3.TrackerObjects
     public class ItemData
     {
         [Serializable]
-        public class ItemObject
+        public class ItemObject(InstanceData.TrackerInstance Parent)
         {
-            private InstanceData.TrackerInstance _parent;
+            private InstanceData.TrackerInstance _parent = Parent;
             public InstanceData.TrackerInstance GetParent() { return _parent; }
             public void SetParent(InstanceData.TrackerInstance parent) { _parent = parent; }
-            public ItemObject(InstanceData.TrackerInstance Parent) { _parent = Parent; }
+
             public string ID { get; set; }
             public int AmountAquiredLocally { get; set; } = 0;
             public int AmountInStartingpool { get; set; } = 0;
-            public Dictionary<int, int> AmountAquiredOnline { get; set; } = new Dictionary<int, int>();
-            public Dictionary<int, int> AmountSentToPlayer { get; set; } = new Dictionary<int, int>();
+            public Dictionary<int, int> AmountAquiredOnline { get; set; } = [];
+            public Dictionary<int, int> AmountSentToPlayer { get; set; } = [];
             public string DisplayName { get; set; }
             public InstanceData.ReferenceData referenceData { get; set; } = new InstanceData.ReferenceData();
 

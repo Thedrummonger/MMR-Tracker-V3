@@ -31,23 +31,16 @@ namespace MMR_Tracker_V3.TrackerObjects
             [Description("Multiworld")]
             Multiworld = 3
         }
-        public class NetPacket
+        public class NetPacket(int _playerID, NetData.PacketType _packetType, string _Password = "", Dictionary<int, Dictionary<string, int>> _ItemData = null)
         {
-            public NetPacket(int _playerID, PacketType _packetType, string _Password = "", Dictionary<int, Dictionary<string, int>> _ItemData = null)
-            {
-                PlayerID = _playerID;
-                Password = _Password;
-                ItemData = _ItemData;
-                packetType = _packetType;
-            }
-            public int PlayerID;
-            public string Password;
-            public PacketType packetType;
+            public int PlayerID = _playerID;
+            public string Password = _Password;
+            public PacketType packetType = _packetType;
             public MiscData.CheckState ClientCheckAction;
             public int[] UpdateWhitelist = null;
             public Dictionary<string, string> LocationData = new Dictionary<string, string>();
             //Dictionary<PlayerID, Dictionary<ItemID, ItemAmount>>
-            public Dictionary<int,Dictionary<string, int>> ItemData = null;
+            public Dictionary<int,Dictionary<string, int>> ItemData = _ItemData;
             public ChatMessage ChatMessage = null;
             public HandshakeResponse HandshakeResponse = null;
 

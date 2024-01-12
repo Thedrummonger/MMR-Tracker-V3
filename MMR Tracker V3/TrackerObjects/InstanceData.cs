@@ -25,20 +25,20 @@ namespace MMR_Tracker_V3.TrackerObjects
             private InstanceContainer Parent = instanceContainer;
             public InstanceContainer GetParentContainer() { return Parent; }
             public void SetParentContainer(InstanceContainer P) { Parent = P; }
-            public Dictionary<string, LocationObject> LocationPool { get; set; } = new Dictionary<string, LocationObject>();
-            public Dictionary<string, HintObject> HintPool { get; set; } = new Dictionary<string, HintObject>();
-            public Dictionary<string, MacroObject> MacroPool { get; set; } = new Dictionary<string, MacroObject>();
-            public Dictionary<string, ItemObject> ItemPool { get; set; } = new Dictionary<string, ItemObject>();
-            public Dictionary<string, ChoiceOption> ChoiceOptions { get; set; } = new Dictionary<string, ChoiceOption>();
-            public Dictionary<string, MultiSelectOption> MultiSelectOptions { get; set; } = new Dictionary<string, MultiSelectOption>();
-            public Dictionary<string, ToggleOption> ToggleOptions { get; set; } = new Dictionary<string, ToggleOption>();
-            public Dictionary<string, IntOption> IntOptions { get; set; } = new Dictionary<string, IntOption>();
-            public Dictionary<string, LogicEntryCollection> LogicEntryCollections { get; set; } = new Dictionary<string, LogicEntryCollection>();
+            public Dictionary<string, LocationObject> LocationPool { get; set; } = [];
+            public Dictionary<string, HintObject> HintPool { get; set; } = [];
+            public Dictionary<string, MacroObject> MacroPool { get; set; } = [];
+            public Dictionary<string, ItemObject> ItemPool { get; set; } = [];
+            public Dictionary<string, ChoiceOption> ChoiceOptions { get; set; } = [];
+            public Dictionary<string, MultiSelectOption> MultiSelectOptions { get; set; } = [];
+            public Dictionary<string, ToggleOption> ToggleOptions { get; set; } = [];
+            public Dictionary<string, IntOption> IntOptions { get; set; } = [];
+            public Dictionary<string, LogicEntryCollection> LogicEntryCollections { get; set; } = [];
             public EntranceData.EntrancePool EntrancePool { get; set; } = new EntranceData.EntrancePool(null);
             public LogicDictionary LogicDictionary { get; set; } = new LogicDictionary();
-            public LogicFile LogicFile { get; set; } = new MMRData.LogicFile();
+            public LogicFile LogicFile { get; set; } = new LogicFile();
             public SpoilerLogFileData SpoilerLog { get; set; } = null;
-            public Dictionary<string, JsonFormatLogicItem> RuntimeLogic { get; set; } = new Dictionary<string, JsonFormatLogicItem>();
+            public Dictionary<string, JsonFormatLogicItem> RuntimeLogic { get; set; } = [];
             public LocationProxyData LocationProxyData { get; set; } = new LocationProxyData();
             public Options StaticOptions { get; set; } = new Options();
             public PriceData PriceData { get; set; } = new PriceData();
@@ -51,16 +51,16 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 return type switch
                 {
-                    JSONType.Newtonsoft => Newtonsoft.Json.JsonConvert.SerializeObject(this, _NewtonsoftJsonSerializerOptions),
+                    JSONType.Newtonsoft => JsonConvert.SerializeObject(this, _NewtonsoftJsonSerializerOptions),
                     JSONType.UTF8 => Utf8Json.JsonSerializer.ToJsonString(this),
                     JSONType.DotNet => System.Text.Json.JsonSerializer.Serialize(this),
                     _ => throw new NotImplementedException(),
                 };
             }
-            private readonly static Newtonsoft.Json.JsonSerializerSettings _NewtonsoftJsonSerializerOptions = new Newtonsoft.Json.JsonSerializerSettings
+            private readonly static JsonSerializerSettings _NewtonsoftJsonSerializerOptions = new()
             {
-                Formatting = Newtonsoft.Json.Formatting.Indented,
-                NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore,
+                Formatting = Formatting.Indented,
+                NullValueHandling = NullValueHandling.Ignore,
                 Converters = { new Newtonsoft.Json.Converters.StringEnumConverter() }
             };
         }
@@ -69,12 +69,12 @@ namespace MMR_Tracker_V3.TrackerObjects
         public class InstanceReference
         {
             //A table mapping Logic names to an entrance area pair
-            public Dictionary<string, EntranceData.EntranceAreaPair> EntranceLogicNameToEntryData { get; set; } = new Dictionary<string, EntranceData.EntranceAreaPair>();
+            public Dictionary<string, EntranceData.EntranceAreaPair> EntranceLogicNameToEntryData { get; set; } = [];
             //A table Mapping an Exit to its logic name
-            public Dictionary<string, string> ExitLogicMap { get; set; } = new Dictionary<string, string>();
+            public Dictionary<string, string> ExitLogicMap { get; set; } = [];
             //A dictionary to keep track of an Items values after they have been edited by option data
-            public Dictionary<string, ActionItemEdit> OptionActionItemEdits { get; set; } = new Dictionary<string, ActionItemEdit>();
-            public Dictionary<string, List<string>> OptionActionCollectionEdits { get; set; } = new Dictionary<string, List<string>> { };
+            public Dictionary<string, ActionItemEdit> OptionActionItemEdits { get; set; } = [];
+            public Dictionary<string, List<string>> OptionActionCollectionEdits { get; set; } = [];
         }
 
         [Serializable]
@@ -82,7 +82,7 @@ namespace MMR_Tracker_V3.TrackerObjects
         {
             public string ShowOptionsInListBox { get; set; } = OptionData.DisplayListBoxes[0];
 
-            public Dictionary<string, bool> MinimizedHeader { get; set; } = new Dictionary<string, bool>();
+            public Dictionary<string, bool> MinimizedHeader { get; set; } = [];
             public OptionFile OptionFile { get; set; } = new OptionFile();
         }
 
@@ -115,12 +115,12 @@ namespace MMR_Tracker_V3.TrackerObjects
         public class PriceData
         {
             public bool Initialized { get; set; } = false;
-            public List<string> WalletEntries { get; set; } = new List<string>();
-            public Dictionary<char, Dictionary<int, string>>  CapacityMap { get; set; } = new Dictionary<char, Dictionary<int, string>>();
+            public List<string> WalletEntries { get; set; } = [];
+            public Dictionary<char, Dictionary<int, string>> CapacityMap { get; set; } = [];
             public Dictionary<int, string> GetCapacityMap(char Currency)
             {
-                if (CapacityMap.ContainsKey(Currency)) { return CapacityMap[Currency]; }
-                return new Dictionary<int, string>();
+                if (CapacityMap.TryGetValue(Currency, out Dictionary<int, string> value)) { return value; }
+                return [];
             }
         }
 
@@ -174,8 +174,8 @@ namespace MMR_Tracker_V3.TrackerObjects
             }
             public LogicCalculation logicCalculation { get; set; }
             public NetConnection netConnection { get; set; } = new NetConnection();
-            public List<string> UndoStringList { get; set; } = new List<string>();
-            public List<string> RedoStringList { get; set; } = new List<string>();
+            public List<string> UndoStringList { get; set; } = [];
+            public List<string> RedoStringList { get; set; } = [];
             public string CurrentSavePath { get; set; } = "";
             public bool UnsavedChanges { get; set; } = false;
 

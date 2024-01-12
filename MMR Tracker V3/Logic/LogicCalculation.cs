@@ -18,22 +18,17 @@ using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
 namespace MMR_Tracker_V3.Logic
 {
-    public class LogicCalculation
+    public class LogicCalculation(InstanceData.InstanceContainer _container)
     {
-        public readonly InstanceContainer container;
-        public Dictionary<string, List<string>> LogicUnlockData = new();
-        public Dictionary<string, MMRData.JsonFormatLogicItem> LogicMap = new();
-        public Dictionary<object, int> AutoObtainedObjects = new();
+        public readonly InstanceContainer container = _container;
+        public Dictionary<string, List<string>> LogicUnlockData = [];
+        public Dictionary<string, MMRData.JsonFormatLogicItem> LogicMap = [];
+        public Dictionary<object, int> AutoObtainedObjects = [];
         public bool ReCompileLogicOnCalculation = false;
-
-        public LogicCalculation(InstanceContainer _container)
-        {
-            container = _container;
-        }
 
         private bool RequirementsMet(List<string> Requirements, List<string> TempUnlockData)
         {
-            List<string> SubUnlockData = new();
+            List<string> SubUnlockData = [];
             foreach (var Req in Requirements)
             {
                 if (!LogicEntryAquired(Req, SubUnlockData)) { return false; }
@@ -44,8 +39,8 @@ namespace MMR_Tracker_V3.Logic
 
         public bool ConditionalsMet(List<List<string>> Conditionals, List<string> TempUnlockData)
         {
-            if (!Conditionals.Any()) { return true; }
-            List<string> SubUnlockData = new List<string>();
+            if (Conditionals.Count == 0) { return true; }
+            List<string> SubUnlockData = [];
             foreach (var Set in Conditionals)
             {
                 if (RequirementsMet(Set, SubUnlockData))
@@ -87,18 +82,18 @@ namespace MMR_Tracker_V3.Logic
         {
             var EditActions = container.Instance.GetOptionActions();
             TotalUsable = 0;
-            if (!container.Instance.LogicEntryCollections.ContainsKey(ArrVar)) { return false; }
-            List<string> VariableEntries = container.Instance.LogicEntryCollections[ArrVar].GetValue(container.Instance);
+            if (!container.Instance.LogicEntryCollections.TryGetValue(ArrVar, out OptionData.LogicEntryCollection value)) { return false; }
+            List<string> VariableEntries = value.GetValue(container.Instance);
 
-            List<string> UsableItems = new();
-            Dictionary<string, int> ItemTracking = new();
+            List<string> UsableItems = [];
+            Dictionary<string, int> ItemTracking = [];
             LoopVarEntry(VariableEntries);
             bool CountMet = UsableItems.Count >= amount;
             TotalUsable = UsableItems.Count;
 
             foreach (var i in UsableItems.Take(amount))
             {
-                if (!ItemTracking.ContainsKey(i)) { ItemTracking.Add(i, 0); }
+                ItemTracking.SetIfEmpty(i, 0);
                 ItemTracking[i]++;
             }
             if (CountMet) { foreach (var x in ItemTracking) { SubUnlockData.Add($"{x.Key}, {x.Value}"); } }
@@ -135,7 +130,7 @@ namespace MMR_Tracker_V3.Logic
 
         public bool CalculatReqAndCond(MMRData.JsonFormatLogicItem Logic, string ID, string Area)
         {
-            List<string> UnlockedWith = new List<string>();
+            List<string> UnlockedWith = [];
             bool Available =
                 (Area == null || AreaReached(Area, UnlockedWith)) &&
                 RequirementsMet(Logic.RequiredItems, UnlockedWith) &&
