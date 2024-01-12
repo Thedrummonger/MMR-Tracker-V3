@@ -15,7 +15,7 @@ namespace WebServer
             Dictionary<int, Dictionary<string, int>> MultiworldItemsForPlayer = new();
             foreach (var ClientID in FromPlayers)
             {
-                var Client = AsyncServerTest.Clients[ClientID];
+                var Client = ServerThread.Clients[ClientID];
                 if (Client.MultiworldItemData.ContainsKey(PlayerID))
                 {
                     MultiworldItemsForPlayer.Add(Client.PlayerID, Client.MultiworldItemData[PlayerID]);
@@ -28,7 +28,7 @@ namespace WebServer
             Dictionary<string, string> AllCheckedLocations = new Dictionary<string, string>();
             foreach (var ClientID in FromPlayers)
             {
-                var Client = AsyncServerTest.Clients[ClientID];
+                var Client = ServerThread.Clients[ClientID];
                 foreach (var l in Client.OnlineLocationData)
                 {
                     AllCheckedLocations[l.Key] = l.Value;
@@ -39,7 +39,7 @@ namespace WebServer
         public static HashSet<Guid> GetPlayers(params int[] PlayerIDs)
         {
             HashSet<Guid> Whitelist = new HashSet<Guid>();
-            foreach (var i in AsyncServerTest.Clients)
+            foreach (var i in ServerThread.Clients)
             {
                 if (PlayerIDs.Contains(i.Value.PlayerID))
                 {
@@ -51,7 +51,7 @@ namespace WebServer
         public static HashSet<Guid> GetPlayersExcept(params int[] PlayerIDs)
         {
             HashSet<Guid> Whitelist = new HashSet<Guid>();
-            foreach (var i in AsyncServerTest.Clients)
+            foreach (var i in ServerThread.Clients)
             {
                 if (PlayerIDs.Contains(i.Value.PlayerID)) { continue; }
                 Whitelist.Add(i.Key);
@@ -61,7 +61,7 @@ namespace WebServer
 
         public static void SendChatToClients(ChatMessage Chat, HashSet<Guid> _PlayerToUpdate)
         {
-            IEnumerable<ServerClient> ClientsToUpdate = AsyncServerTest.Clients.Where(x => _PlayerToUpdate.Contains(x.Key)).Select(x => x.Value);
+            IEnumerable<ServerClient> ClientsToUpdate = ServerThread.Clients.Where(x => _PlayerToUpdate.Contains(x.Key)).Select(x => x.Value);
             NetPacket Update = new NetPacket(-1, PacketType.ChatMessage);
             Update.ChatMessage = Chat;
             string PacketString = Update.ToFormattedJson();
@@ -76,7 +76,7 @@ namespace WebServer
         {
             HashSet<Guid> PlayerToUpdate = _PlayerToUpdate??new HashSet<Guid>();
             HashSet<Guid> PlayersToGetDataFrom = _PlayersToGetDataFrom??new HashSet<Guid>();
-            IEnumerable<ServerClient> ClientsToUpdate = AsyncServerTest.Clients.Where(x => PlayerToUpdate.Contains(x.Key)).Select(x => x.Value);
+            IEnumerable<ServerClient> ClientsToUpdate = ServerThread.Clients.Where(x => PlayerToUpdate.Contains(x.Key)).Select(x => x.Value);
             NetPacket Update = new NetPacket(-1, PacketType.OnlineSynedLocations);
             Update.LocationData = Utility.GetCheckedLocations(PlayersToGetDataFrom);
             string PacketString = Update.ToFormattedJson();
@@ -91,7 +91,7 @@ namespace WebServer
         {
             HashSet<Guid> PlayerToUpdate = _PlayerToUpdate??new HashSet<Guid>();
             HashSet<Guid> PlayersToGetDataFrom = _PlayersToGetDataFrom??new HashSet<Guid>();
-            IEnumerable<ServerClient> ClientsToUpdate = AsyncServerTest.Clients.Where(x => PlayerToUpdate.Contains(x.Key)).Select(x => x.Value);
+            IEnumerable<ServerClient> ClientsToUpdate = ServerThread.Clients.Where(x => PlayerToUpdate.Contains(x.Key)).Select(x => x.Value);
             foreach (var Client in ClientsToUpdate)
             {
                 NetPacket Update = new NetPacket(-1, PacketType.MultiWorldItems);

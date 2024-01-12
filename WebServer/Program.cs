@@ -51,31 +51,33 @@ namespace WebServer
             if (ArgsIP is not null) { cfg.IPAddress = ArgsIP; }
             if (ArgsPort > -1) { cfg.Port = ArgsPort; }
 
-            //Sanitize the IPAdress and Port
+            //Sanitize the IPAddress and Port
             if (cfg.IPAddress is null || cfg.IPAddress.ToString() == "0.0.0.0") { cfg.IPAddress = IPAddress.Any; }
             if (cfg.Port < 0) { cfg.Port = NetData.DefaultProgramPort; }
 
             //Create and start the server
-            AsyncServerTest.test(cfg);
+            ServerThread.StartServer(cfg);
         }
     }
-    internal class AsyncServerTest
+    internal class ServerThread
     {
-        public static Dictionary<Guid, NetData.ServerClient> Clients = new Dictionary<Guid, NetData.ServerClient>();
-        public static Dictionary<Guid, NetData.ChatMessage> PlayerChat = new Dictionary<Guid, NetData.ChatMessage>();
-        public static void test(NetData.ConfigFile cfg)
+        public static Dictionary<Guid, NetData.ServerClient> Clients = [];
+        public static Dictionary<Guid, NetData.ChatMessage> PlayerChat = [];
+        public static void StartServer(NetData.ConfigFile cfg)
         {
-            var serverListenter = new TcpListener(cfg.IPAddress, cfg.Port);
-            serverListenter.Start();
+            var serverListener = new TcpListener(cfg.IPAddress, cfg.Port);
+            serverListener.Start();
 
             string IpString = cfg.IPAddress.ToString() == "0.0.0.0" ? "*:" : $"IP {cfg.IPAddress}:";
             Console.WriteLine($"Server active on {IpString}{cfg.Port}");
 
-            ConnectionManager.WaitForNewClient(serverListenter, cfg);
+            //Start a new thread to listen for new clients
+            ClientListener.WaitForNewClient(serverListener, cfg);
 
+            //Main loop for server commands
             while (true)
             {
-                string command = Console.ReadLine().ToLower();
+                string command = Console.ReadLine()?.ToLower()??String.Empty;
                 if (command == "clients")
                 {
                     Console.WriteLine($"Connected {cfg.ServerGameMode} Clients:\n" + string.Join("\n", Clients.Select(x => $"{x.Key}|{x.Value.EndPoint?.Address}")));
@@ -84,7 +86,7 @@ namespace WebServer
                 {
                     Console.WriteLine(Clients.ToFormattedJson());
                 }
-                else
+                else if (!String.IsNullOrWhiteSpace(command))
                 {
                     var ServerChatGuid = Guid.NewGuid();
                     PlayerChat.Add(ServerChatGuid, new NetData.ChatMessage(-1, ServerChatGuid, command));
