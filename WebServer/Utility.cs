@@ -12,20 +12,20 @@ namespace WebServer
     {
         public static Dictionary<int, Dictionary<string, int>> GetItemsBelongingToPlayer(int PlayerID, HashSet<Guid> FromPlayers)
         {
-            Dictionary<int, Dictionary<string, int>> MultiworldItemsForPlayer = new();
+            Dictionary<int, Dictionary<string, int>> MultiworldItemsForPlayer = [];
             foreach (var ClientID in FromPlayers)
             {
                 var Client = ServerThread.Clients[ClientID];
-                if (Client.MultiworldItemData.ContainsKey(PlayerID))
+                if (Client.MultiworldItemData.TryGetValue(PlayerID, out Dictionary<string, int> PlayerItems))
                 {
-                    MultiworldItemsForPlayer.Add(Client.PlayerID, Client.MultiworldItemData[PlayerID]);
+                    MultiworldItemsForPlayer.Add(Client.PlayerID, PlayerItems);
                 }
             }
             return MultiworldItemsForPlayer;
         }
         public static Dictionary<string, string> GetCheckedLocations(HashSet<Guid> FromPlayers)
         {
-            Dictionary<string, string> AllCheckedLocations = new Dictionary<string, string>();
+            Dictionary<string, string> AllCheckedLocations = [];
             foreach (var ClientID in FromPlayers)
             {
                 var Client = ServerThread.Clients[ClientID];
@@ -38,7 +38,7 @@ namespace WebServer
         }
         public static HashSet<Guid> GetPlayers(params int[] PlayerIDs)
         {
-            HashSet<Guid> Whitelist = new HashSet<Guid>();
+            HashSet<Guid> Whitelist = [];
             foreach (var i in ServerThread.Clients)
             {
                 if (PlayerIDs.Contains(i.Value.PlayerID))
@@ -50,7 +50,7 @@ namespace WebServer
         }
         public static HashSet<Guid> GetPlayersExcept(params int[] PlayerIDs)
         {
-            HashSet<Guid> Whitelist = new HashSet<Guid>();
+            HashSet<Guid> Whitelist = [];
             foreach (var i in ServerThread.Clients)
             {
                 if (PlayerIDs.Contains(i.Value.PlayerID)) { continue; }
@@ -62,8 +62,10 @@ namespace WebServer
         public static void SendChatToClients(ChatMessage Chat, HashSet<Guid> _PlayerToUpdate)
         {
             IEnumerable<ServerClient> ClientsToUpdate = ServerThread.Clients.Where(x => _PlayerToUpdate.Contains(x.Key)).Select(x => x.Value);
-            NetPacket Update = new NetPacket(-1, PacketType.ChatMessage);
-            Update.ChatMessage = Chat;
+            NetPacket Update = new(-1, PacketType.ChatMessage)
+            {
+                ChatMessage = Chat
+            };
             string PacketString = Update.ToFormattedJson();
             foreach (var Client in ClientsToUpdate)
             {
@@ -74,11 +76,13 @@ namespace WebServer
 
         public static void SendCheckedLocationsToClients(HashSet<Guid> _PlayerToUpdate, HashSet<Guid> _PlayersToGetDataFrom)
         {
-            HashSet<Guid> PlayerToUpdate = _PlayerToUpdate??new HashSet<Guid>();
-            HashSet<Guid> PlayersToGetDataFrom = _PlayersToGetDataFrom??new HashSet<Guid>();
+            HashSet<Guid> PlayerToUpdate = _PlayerToUpdate ?? [];
+            HashSet<Guid> PlayersToGetDataFrom = _PlayersToGetDataFrom ?? [];
             IEnumerable<ServerClient> ClientsToUpdate = ServerThread.Clients.Where(x => PlayerToUpdate.Contains(x.Key)).Select(x => x.Value);
-            NetPacket Update = new NetPacket(-1, PacketType.OnlineSynedLocations);
-            Update.LocationData = Utility.GetCheckedLocations(PlayersToGetDataFrom);
+            NetPacket Update = new(-1, PacketType.OnlineSynedLocations)
+            {
+                LocationData = Utility.GetCheckedLocations(PlayersToGetDataFrom)
+            };
             string PacketString = Update.ToFormattedJson();
             foreach (var Client in ClientsToUpdate)
             {
@@ -89,13 +93,15 @@ namespace WebServer
 
         public static void SendMultiworldItemsToClients(HashSet<Guid> _PlayerToUpdate, HashSet<Guid> _PlayersToGetDataFrom)
         {
-            HashSet<Guid> PlayerToUpdate = _PlayerToUpdate??new HashSet<Guid>();
-            HashSet<Guid> PlayersToGetDataFrom = _PlayersToGetDataFrom??new HashSet<Guid>();
+            HashSet<Guid> PlayerToUpdate = _PlayerToUpdate ?? [];
+            HashSet<Guid> PlayersToGetDataFrom = _PlayersToGetDataFrom ?? [];
             IEnumerable<ServerClient> ClientsToUpdate = ServerThread.Clients.Where(x => PlayerToUpdate.Contains(x.Key)).Select(x => x.Value);
             foreach (var Client in ClientsToUpdate)
             {
-                NetPacket Update = new NetPacket(-1, PacketType.MultiWorldItems);
-                Update.ItemData = Utility.GetItemsBelongingToPlayer(Client.PlayerID, PlayersToGetDataFrom);
+                NetPacket Update = new(-1, PacketType.MultiWorldItems)
+                {
+                    ItemData = Utility.GetItemsBelongingToPlayer(Client.PlayerID, PlayersToGetDataFrom)
+                };
                 string PacketString = Update.ToFormattedJson();
 
                 byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(PacketString);

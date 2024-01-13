@@ -22,14 +22,14 @@ namespace WebServer
         private static bool UserLogin(NetData.ServerClient Client, ConfigFile serverConfig)
         {
             if (!serverConfig.RequireLogin) { return true; }
-            if (!serverConfig.UserLogins.ContainsKey(Client.PlayerID)) { Console.WriteLine($"Player {Client.PlayerID} was not entered in user list"); return false; }
-            if (serverConfig.UserLogins[Client.PlayerID] != Client.Handshake.Password) { Console.WriteLine($"Incorrect Password for Player {Client.PlayerID}"); return false; }
+            if (!serverConfig.UserLogins.TryGetValue(Client.PlayerID, out string? Password)) { Console.WriteLine($"Player {Client.PlayerID} was not entered in user list"); return false; }
+            if (Password != Client.Handshake.Password) { Console.WriteLine($"Incorrect Password for Player {Client.PlayerID}"); return false; }
             return true;
         }
         private static bool ConnectionAllowed(NetData.ServerClient Client, ConfigFile serverConfig)
         {
-            bool HasWhitelist = serverConfig.IPWhitelist is not null && serverConfig.IPWhitelist.Any();
-            bool HasBacklist = serverConfig.IPBlacklist is not null && serverConfig.IPBlacklist.Any();
+            bool HasWhitelist = serverConfig.IPWhitelist is not null && serverConfig.IPWhitelist.Count != 0;
+            bool HasBacklist = serverConfig.IPBlacklist is not null && serverConfig.IPBlacklist.Count != 0;
             var localAddress = Client.EndPoint?.Address;
 
             #pragma warning disable CS8602

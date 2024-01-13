@@ -99,7 +99,7 @@ namespace WebServer
         {
             Console.WriteLine($"Client {client.GetIP()}:{client.GetPort()} Disconnected");
             if (client.NetClient.Connected) { client.NetClient.Close(); }
-            if (!Clients.ContainsKey(client.ClientID)) { throw new Exception($"Could not remove player {client.PlayerID} [{client.ClientID}] from client list. Something bad happend!"); }
+            if (!Clients.ContainsKey(client.ClientID)) { throw new Exception($"Could not remove player {client.PlayerID} [{client.ClientID}] from client list. Something bad happened!"); }
             Clients.Remove(client.ClientID);
             return true;
         }
