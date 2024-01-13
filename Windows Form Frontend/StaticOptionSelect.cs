@@ -1,4 +1,5 @@
 ﻿using MMR_Tracker_V3;
+using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -43,6 +44,8 @@ namespace Windows_Form_Frontend
             }
         }
 
+        private List<string> UILayouts = Enum.GetValues(typeof(MiscData.UILayout)).Cast<MiscData.UILayout>().Select(x => x.ToString()).ToList();
+
         private List<OptionLine> OptionLines = new List<OptionLine>();
         private void PopulateOptions()
         {
@@ -50,9 +53,14 @@ namespace Windows_Form_Frontend
             OptionLines.Add(new OptionLine("Check for Updates", 
                 TempOptionFile.CheckForUpdate, (val) => { TempOptionFile.CheckForUpdate = (bool)val; }, 
                 "Should the tracker check for updates and notify you when a new one is available?"));
-            OptionLines.Add(new OptionLine("Horizontal Layout", 
-                TempOptionFile.WinformData.HorizontalLayout, (val) => { TempOptionFile.WinformData.HorizontalLayout = (bool)val; }, 
-                "Should the tracker display the Valid Location List and Checked Item List Side by side instead of on top of each other?"));
+            OptionLines.Add(new OptionLine("UI Layout",
+                UILayouts[(int)TempOptionFile.WinformData.UILayout], (val) => { UpdateUILayout((string)val); }, 
+                "How should the tracker arrange the list boxes.\n\n" +
+                "L = Available Locations\nE = Available Entrances\nC = Checked Locations\nP = Pathfinder\n\n" +
+                "With Entrances Enabled\nVertical:\nLE\nCP\n\nHorizontal\nLC\nEP\n\n" +
+                "With Entrances Disabled\nVertical:\nL\nC\n\nHorizontal\nLC\n\n" +
+                "Compact will only show one list box at a time.\nYou can select which list box is show in the \"View\" tab",
+                UILayouts));
             OptionLines.Add(new OptionLine("Max Undo Actions", 
                 TempOptionFile.MaxUndo, (val) => { TempOptionFile.MaxUndo = (int)val; }, 
                 "Max amount of undo states the tracker should store\nThese can get quite large and eat up a lot of memory."));
@@ -94,6 +102,22 @@ namespace Windows_Form_Frontend
             OptionLines.Add(new OptionLine("Font Family", 
                 TempOptionFile.GetFont().FontFamily.Name, (val) => { TempOptionFile.WinformData.FormFont = UpdateFont((string)val, null); },
                 "The font Family the tracker should use", FontFamily.Families.Select(x => x.Name).ToList()));
+        }
+
+        private void UpdateUILayout(string val)
+        {
+            switch (UILayouts.IndexOf(val))
+            {
+                case 0:
+                    TempOptionFile.WinformData.UILayout = MMR_Tracker_V3.TrackerObjects.MiscData.UILayout.Vertical;
+                    break;
+                case 1:
+                    TempOptionFile.WinformData.UILayout = MMR_Tracker_V3.TrackerObjects.MiscData.UILayout.Horizontal;
+                    break;
+                case 2:
+                    TempOptionFile.WinformData.UILayout = MMR_Tracker_V3.TrackerObjects.MiscData.UILayout.Compact;
+                    break;
+            }
         }
 
         private string UpdateFont(string FontFamily, float? FontSize)

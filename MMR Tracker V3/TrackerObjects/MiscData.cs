@@ -211,6 +211,20 @@ namespace MMR_Tracker_V3.TrackerObjects
             set
         }
 
+        public enum CompactViewFocus
+        {
+            Locations,
+            Checked,
+            Entrances
+        }
+
+        public enum UILayout
+        {
+            Vertical = 0,
+            Horizontal = 1,
+            Compact = 2
+        }
+
         public enum JSONType
         {
             Newtonsoft,

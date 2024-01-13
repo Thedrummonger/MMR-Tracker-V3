@@ -65,6 +65,10 @@ namespace Windows_Form_Frontend
             importSpoilerLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             spoilerLogToolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             PathFinderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            locationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            entrancesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            checkedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -388,7 +392,7 @@ namespace Windows_Form_Frontend
             // menuStrip1
             // 
             menuStrip1.BackColor = System.Drawing.SystemColors.ControlDark;
-            menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { fileToolMenuStrip, OptionstoolStripMenuItem, toolsToolStripMenuItem, undoToolStripMenuItem, redoToolStripMenuItem, refreshToolStripMenuItem });
+            menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { fileToolMenuStrip, OptionstoolStripMenuItem, toolsToolStripMenuItem, viewToolStripMenuItem, undoToolStripMenuItem, redoToolStripMenuItem, refreshToolStripMenuItem });
             menuStrip1.Location = new System.Drawing.Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new System.Drawing.Size(498, 24);
@@ -483,6 +487,34 @@ namespace Windows_Form_Frontend
             PathFinderToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             PathFinderToolStripMenuItem.Text = "Path Finder";
             PathFinderToolStripMenuItem.Click += PathFinderToolStripMenuItem_Click;
+            // 
+            // viewToolStripMenuItem
+            // 
+            viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { locationsToolStripMenuItem, entrancesToolStripMenuItem, checkedToolStripMenuItem });
+            viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            viewToolStripMenuItem.Text = "View";
+            // 
+            // locationsToolStripMenuItem
+            // 
+            locationsToolStripMenuItem.Name = "locationsToolStripMenuItem";
+            locationsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            locationsToolStripMenuItem.Text = "Locations";
+            locationsToolStripMenuItem.Click += ViewToolStripMenuItem_Click;
+            // 
+            // entrancesToolStripMenuItem
+            // 
+            entrancesToolStripMenuItem.Name = "entrancesToolStripMenuItem";
+            entrancesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            entrancesToolStripMenuItem.Text = "Entrances";
+            entrancesToolStripMenuItem.Click += ViewToolStripMenuItem_Click;
+            // 
+            // checkedToolStripMenuItem
+            // 
+            checkedToolStripMenuItem.Name = "checkedToolStripMenuItem";
+            checkedToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            checkedToolStripMenuItem.Text = "Checked";
+            checkedToolStripMenuItem.Click += ViewToolStripMenuItem_Click;
             // 
             // undoToolStripMenuItem
             // 
@@ -695,6 +727,10 @@ namespace Windows_Form_Frontend
         private System.Windows.Forms.TableLayoutPanel tlpChecked;
         private System.Windows.Forms.TableLayoutPanel tlpEntrances;
         private System.Windows.Forms.TableLayoutPanel tlpPathFinder;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem locationsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem entrancesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem checkedToolStripMenuItem;
     }
 }
 

@@ -107,7 +107,7 @@ namespace MMR_Tracker_V3.TrackerObjects
         public class WinformData
         {
             public string FormFont { get; set; } = string.Empty;
-            public bool HorizontalLayout { get; set; } = false;
+            public UILayout UILayout { get; set; } = UILayout.Vertical;
             public bool ShowEntryNameTooltip { get; set; } = true;
         }
 

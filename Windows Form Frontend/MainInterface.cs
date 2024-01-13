@@ -36,6 +36,8 @@ namespace Windows_Form_Frontend
         List<Control> TLPEntranceControls = new List<Control>();
         List<Control> TLPPathfinderControls = new List<Control>();
 
+        MiscData.CompactViewFocus ViewFocus = CompactViewFocus.Locations;
+
         public MainInterface(bool _SubForm = false)
         {
             IsSubForm = _SubForm;
@@ -75,7 +77,7 @@ namespace Windows_Form_Frontend
             References.TrackerVersionStatus = UpdateManager.GetTrackerVersionStatus();
             if (References.TrackerVersionStatus.VersionStatus == UpdateManager.versionStatus.outdated)
             {
-                var Download = MessageBox.Show($"Your tracker version { References.trackerVersion } is out of Date. Would you like to download the latest version { References.TrackerVersionStatus.LatestVersion.TagName }?\n\nTo disable this message click \"cancel\" or disable \"Check for Updates\" in the options file", "Tracker Out of Date", MessageBoxButtons.YesNoCancel);
+                var Download = MessageBox.Show($"Your tracker version {References.trackerVersion} is out of Date. Would you like to download the latest version {References.TrackerVersionStatus.LatestVersion.TagName}?\n\nTo disable this message click \"cancel\" or disable \"Check for Updates\" in the options file", "Tracker Out of Date", MessageBoxButtons.YesNoCancel);
                 if (Download == DialogResult.Yes) { { System.Diagnostics.Process.Start("explorer.exe", References.TrackerVersionStatus.LatestVersion.HtmlUrl); this.Close(); return; } }
                 else if (Download == DialogResult.Cancel)
                 {
@@ -173,7 +175,7 @@ namespace Windows_Form_Frontend
             {
                 if (!InstanceContainer.LoadSave(openFileDialog.FileName))
                 {
-                    MessageBox.Show("Save File Not Valid"); 
+                    MessageBox.Show("Save File Not Valid");
                     return;
                 }
                 InstanceContainer.CurrentSavePath = openFileDialog.FileName;
@@ -245,8 +247,9 @@ namespace Windows_Form_Frontend
 
         public void GetListObjectData(ListBox LB, dynamic entry, out MiscData.CheckState checkState, out bool starred, out bool Available)
         {
-            if (entry is LocationData.LocationProxy po) { 
-                checkState = InstanceContainer.Instance.GetLocationByID(po.ReferenceID)?.CheckState ?? MiscData.CheckState.Checked; 
+            if (entry is LocationData.LocationProxy po)
+            {
+                checkState = InstanceContainer.Instance.GetLocationByID(po.ReferenceID)?.CheckState ?? MiscData.CheckState.Checked;
                 starred = po.Starred;
                 Available = po.ProxyAvailable();
             }
@@ -257,10 +260,11 @@ namespace Windows_Form_Frontend
                 starred = IsMinimizedArea;
                 Available = !IsMinimizedArea;
             }
-            else {
-                checkState = Utility.DynamicPropertyExist(entry, "CheckState") ? entry.CheckState : MiscData.CheckState.Checked; 
-                starred = Utility.DynamicPropertyExist(entry, "Starred") ? entry.Starred : false; 
-                Available = Utility.DynamicPropertyExist(entry, "Available") ? entry.Available : true; 
+            else
+            {
+                checkState = Utility.DynamicPropertyExist(entry, "CheckState") ? entry.CheckState : MiscData.CheckState.Checked;
+                starred = Utility.DynamicPropertyExist(entry, "Starred") ? entry.Starred : false;
+                Available = Utility.DynamicPropertyExist(entry, "Available") ? entry.Available : true;
             }
         }
 
@@ -375,7 +379,7 @@ namespace Windows_Form_Frontend
         public void SetTrackerTitle()
         {
             string GameCode = InstanceContainer?.Instance?.LogicFile?.GameCode is null ? "MMR" : InstanceContainer.Instance.LogicFile.GameCode;
-            string UsavedChanges = InstanceContainer?.UnsavedChanges is not null &&  InstanceContainer.UnsavedChanges ? "*" : "";
+            string UsavedChanges = InstanceContainer?.UnsavedChanges is not null && InstanceContainer.UnsavedChanges ? "*" : "";
             string TrackerStatus = "";
             if (References.TrackerVersionStatus.VersionStatus == UpdateManager.versionStatus.outdated) { TrackerStatus = " (outdated)"; }
             else if (References.TrackerVersionStatus.VersionStatus == UpdateManager.versionStatus.dev) { TrackerStatus = " (dev)"; }
@@ -420,17 +424,39 @@ namespace Windows_Form_Frontend
             tlpPathFinder.Controls.Clear();
             if (InstanceContainer == null || InstanceContainer.Instance == null)
             {
-                SetObjectVisibility(false, false);
+                SetObjectVisibility(false, false, false, false);
                 return;
             }
-            else if (InstanceContainer.Instance.StaticOptions.OptionFile.EntranceRandoFeatures && (InstanceContainer.Instance.EntrancePool.IsEntranceRando || InstanceContainer.Instance.EntrancePool.CheckForRandomEntrances()))
+            else if (InstanceContainer.Instance.StaticOptions.OptionFile.WinformData.UILayout == UILayout.Compact)
             {
-                SetObjectVisibility(true, true);
+                if (!WinFormUtils.ShouldShowEntranceListBoxes(InstanceContainer) && ViewFocus == CompactViewFocus.Entrances) { ViewFocus = CompactViewFocus.Locations; }
+
+                SetObjectVisibility(ViewFocus == CompactViewFocus.Locations, ViewFocus == CompactViewFocus.Checked, ViewFocus == CompactViewFocus.Entrances, false);
+                tlpMaster.ColumnStyles[0] = new ColumnStyle(SizeType.Percent, 100F);
+                tlpMaster.ColumnStyles[1] = new ColumnStyle(SizeType.Percent, 0F);
+                tlpMaster.RowStyles[0] = new RowStyle(SizeType.Percent, 100F);
+                tlpMaster.RowStyles[1] = new RowStyle(SizeType.Percent, 0F);
+                switch (ViewFocus)
+                {
+                    case CompactViewFocus.Locations:
+                        tlpLocations.Controls.AddRange(TLPLocationsControls.ToArray());
+                        break;
+                    case CompactViewFocus.Checked:
+                        tlpLocations.Controls.AddRange(TLPCheckedControls.ToArray());
+                        break;
+                    case CompactViewFocus.Entrances:
+                        tlpLocations.Controls.AddRange(TLPEntranceControls.ToArray());
+                        break;
+                }
+            }
+            else if (WinFormUtils.ShouldShowEntranceListBoxes(InstanceContainer))
+            {
+                SetObjectVisibility(true, true, true, true);
                 tlpMaster.RowStyles[0] = new RowStyle(SizeType.Percent, 50F);
                 tlpMaster.RowStyles[1] = new RowStyle(SizeType.Percent, 50F);
                 tlpMaster.ColumnStyles[0] = new ColumnStyle(SizeType.Percent, 50F);
                 tlpMaster.ColumnStyles[1] = new ColumnStyle(SizeType.Percent, 50F);
-                if (InstanceContainer.Instance.StaticOptions.OptionFile.WinformData.HorizontalLayout)
+                if (InstanceContainer.Instance.StaticOptions.OptionFile.WinformData.UILayout == UILayout.Horizontal)
                 {
                     tlpLocations.Controls.AddRange(TLPLocationsControls.ToArray());
                     tlpChecked.Controls.AddRange(TLPEntranceControls.ToArray());
@@ -447,8 +473,8 @@ namespace Windows_Form_Frontend
             }
             else
             {
-                SetObjectVisibility(true, false);
-                if (InstanceContainer.Instance.StaticOptions.OptionFile.WinformData.HorizontalLayout)
+                SetObjectVisibility(true, true, false, false);
+                if (InstanceContainer.Instance.StaticOptions.OptionFile.WinformData.UILayout == UILayout.Horizontal)
                 {
                     tlpMaster.ColumnStyles[0] = new ColumnStyle(SizeType.Percent, 50F);
                     tlpMaster.ColumnStyles[1] = new ColumnStyle(SizeType.Percent, 50F);
@@ -469,7 +495,7 @@ namespace Windows_Form_Frontend
             }
         }
 
-        public void SetObjectVisibility(bool item, bool location)
+        public void SetObjectVisibility(bool Available, bool Checked, bool Entrance, bool Pathfinder)
         {
             var UpperLeftLBL = lblAvailableLocation;
             var UpperRightLBL = lblAvailableEntrances;
@@ -478,27 +504,29 @@ namespace Windows_Form_Frontend
             var LowerRight2LBL = label5;
             var LowerRight3LBL = label6;
 
-            UpperLeftLBL.Visible = item;
-            BTNSetItem.Visible = item;
-            TXTLocSearch.Visible = item;
-            LBValidLocations.Visible = item;
-            LowerLeftLBL.Visible = item;
-            CHKShowAll.Visible = item;
-            TXTCheckedSearch.Visible = item;
-            LBCheckedLocations.Visible = item;
+            UpperLeftLBL.Visible = Available;
+            BTNSetItem.Visible = Available;
+            TXTLocSearch.Visible = Available;
+            LBValidLocations.Visible = Available;
 
-            UpperRightLBL.Visible = location;
-            BTNSetEntrance.Visible = location;
-            TXTEntSearch.Visible = location;
-            LBValidEntrances.Visible = location;
-            LowerRightLBL.Visible = location;
-            BTNFindPath.Visible = location;
-            LowerRight2LBL.Visible = location;
-            LowerRight3LBL.Visible = location;
-            CMBStart.Visible = location;
-            CMBEnd.Visible = location;
-            LBPathFinder.Visible = location;
-            lblSwapPathfinder.Visible = location;
+            LowerLeftLBL.Visible = Checked;
+            CHKShowAll.Visible = Checked;
+            TXTCheckedSearch.Visible = Checked;
+            LBCheckedLocations.Visible = Checked;
+
+            UpperRightLBL.Visible = Entrance;
+            BTNSetEntrance.Visible = Entrance;
+            TXTEntSearch.Visible = Entrance;
+            LBValidEntrances.Visible = Entrance;
+            LowerRightLBL.Visible = Entrance;
+            BTNFindPath.Visible = Entrance;
+
+            LowerRight2LBL.Visible = Pathfinder;
+            LowerRight3LBL.Visible = Pathfinder;
+            CMBStart.Visible = Pathfinder;
+            CMBEnd.Visible = Pathfinder;
+            LBPathFinder.Visible = Pathfinder;
+            lblSwapPathfinder.Visible = Pathfinder;
         }
 
         private void PrintToListBox(List<ListBox> ToUpdate = null)
@@ -526,9 +554,9 @@ namespace Windows_Form_Frontend
                 var Data = new TrackerLocationDataList(WinFormUtils.CreateDivider(LBValidLocations), InstanceContainer, TXTLocSearch.Text, dataset).ShowUnavailable(CHKShowAll.Checked);
                 TrackerDataHandeling.PopulateAvailableLocationList(Data);
                 lblAvailableLocation.Text = $"Available Locations: {Data.ItemsDisplayed}" + (Data.LocationsFiltered ? $"/{Data.ItemsFound}" : "");
-                foreach (var i in Data.FinalData) 
-                { 
-                    if (i is MiscData.Areaheader area){ InMinimized = InstanceContainer.Instance.StaticOptions.MinimizedHeader.ContainsKey(area.Area+ ":::" + (LBValidLocations).Name); }
+                foreach (var i in Data.FinalData)
+                {
+                    if (i is MiscData.Areaheader area) { InMinimized = InstanceContainer.Instance.StaticOptions.MinimizedHeader.ContainsKey(area.Area + ":::" + (LBValidLocations).Name); }
                     if (InMinimized && i is not MiscData.Areaheader) { continue; }
                     LBValidLocations.Items.Add(i);
                 }
@@ -541,24 +569,24 @@ namespace Windows_Form_Frontend
                 lblAvailableEntrances.Text = $"Available Entrances: {Data.ItemsDisplayed}" + (Data.LocationsFiltered ? $"/{Data.ItemsFound}" : "");
                 foreach (var i in Data.FinalData)
                 {
-                    if (i is MiscData.Areaheader area) { InMinimized = InstanceContainer.Instance.StaticOptions.MinimizedHeader.ContainsKey(area.Area+ ":::" + (LBValidEntrances).Name); }
+                    if (i is MiscData.Areaheader area) { InMinimized = InstanceContainer.Instance.StaticOptions.MinimizedHeader.ContainsKey(area.Area + ":::" + (LBValidEntrances).Name); }
                     if (InMinimized && i is not MiscData.Areaheader) { continue; }
-                    LBValidEntrances.Items.Add(i); 
+                    LBValidEntrances.Items.Add(i);
                 }
-                LBValidEntrances.TopIndex = lbEntTop; 
+                LBValidEntrances.TopIndex = lbEntTop;
             }
-            if (ToUpdate.Contains(LBCheckedLocations)) 
+            if (ToUpdate.Contains(LBCheckedLocations))
             {
                 TrackerLocationDataList Data = new(WinFormUtils.CreateDivider(LBCheckedLocations), InstanceContainer, TXTCheckedSearch.Text, dataset);
                 TrackerDataHandeling.PopulateCheckedLocationList(Data);
                 lblCheckedLocation.Text = $"Checked Locations: {Data.ItemsDisplayed}" + (Data.LocationsFiltered ? $"/{Data.ItemsFound}" : "");
                 foreach (var i in Data.FinalData)
                 {
-                    if (i is MiscData.Areaheader area) { InMinimized = InstanceContainer.Instance.StaticOptions.MinimizedHeader.ContainsKey(area.Area+ ":::" + (LBCheckedLocations).Name); }
+                    if (i is MiscData.Areaheader area) { InMinimized = InstanceContainer.Instance.StaticOptions.MinimizedHeader.ContainsKey(area.Area + ":::" + (LBCheckedLocations).Name); }
                     if (InMinimized && i is not MiscData.Areaheader) { continue; }
-                    LBCheckedLocations.Items.Add(i); 
+                    LBCheckedLocations.Items.Add(i);
                 }
-                LBCheckedLocations.TopIndex = lbCheckTop; 
+                LBCheckedLocations.TopIndex = lbCheckTop;
             }
 
             foreach (var i in ToUpdate) { i.EndUpdate(); }
@@ -576,6 +604,9 @@ namespace Windows_Form_Frontend
             spoilerLogToolsToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
             importSpoilerLogToolStripMenuItem.Visible = (InstanceContainer.Instance != null);
             PathFinderToolStripMenuItem.Visible = (InstanceContainer.Instance != null && InstanceContainer.Instance.EntrancePool.IsEntranceRando);
+
+            viewToolStripMenuItem.Visible = (InstanceContainer.Instance != null && InstanceContainer.Instance.StaticOptions.OptionFile.WinformData.UILayout == UILayout.Compact);
+            entrancesToolStripMenuItem.Visible = WinFormUtils.ShouldShowEntranceListBoxes(InstanceContainer);
 
             if (InstanceContainer.Instance == null) { return; }
 
@@ -612,7 +643,7 @@ namespace Windows_Form_Frontend
             IEnumerable<object> OrderedOptions = AllOptions.OrderBy(x => x.Priority);
 
             //Create the option subgroup trees
-            foreach(dynamic i in OrderedOptions)
+            foreach (dynamic i in OrderedOptions)
             {
                 string Category = i.SubCategory;
                 if (string.IsNullOrWhiteSpace(Category)) { continue; }
@@ -626,7 +657,7 @@ namespace Windows_Form_Frontend
             }
 
             //Create options and add them to their subgroup
-            foreach(dynamic o in AllOptions)
+            foreach (dynamic o in AllOptions)
             {
                 if (o is OptionData.ChoiceOption ChoiceOption)
                 {
@@ -662,7 +693,7 @@ namespace Windows_Form_Frontend
                     var OptionTree = GetOptionTree(o);
                     if (!InstanceContainer.logicCalculation.ConditionalsMet(MultiSelectOption.Conditionals, new List<string>())) { continue; }
                     ToolStripMenuItem menuItem = new() { Name = $"{MultiSelectOption.ID}Menu", Text = MultiSelectOption.getOptionName() };
-                    foreach(var i in MultiSelectOption.ValueList)
+                    foreach (var i in MultiSelectOption.ValueList)
                     {
                         ToolStripMenuItem SubMenuItem = new() { Name = $"{MultiSelectOption.ID}{i.Key}Menu", Checked = MultiSelectOption.EnabledValues.Contains(i.Key), Text = i.Value.Name };
                         SubMenuItem.Click += delegate (object sender, EventArgs e)
@@ -716,7 +747,7 @@ namespace Windows_Form_Frontend
                 {
                     Tree.MenuItem.DropDownItems.Add(i);
                 }
-                foreach(var i in Tree.SubGroups)
+                foreach (var i in Tree.SubGroups)
                 {
                     if (!i.Value.MenuItems.Any() && !i.Value.SubGroups.Any()) { continue; }
                     ToolStripMenuItem SubMenu = new ToolStripMenuItem() { Text = i.Key };
@@ -814,7 +845,7 @@ namespace Windows_Form_Frontend
             if (LogicID is not null && !InstanceContainer.logicCalculation.LogicUnlockData.ContainsKey(LogicID) && InstanceContainer.Instance.SpoilerLog is not null)
             {
                 ToolStripItem WhatsMissing = contextMenuStrip.Items.Add("Show Missing Items");
-                WhatsMissing.Click += (sender, e) => 
+                WhatsMissing.Click += (sender, e) =>
                 {
                     var missingitems = PlaythroughTools.GetMissingItems(LogicID, InstanceContainer.Instance);
                     if (missingitems == null) { MessageBox.Show($"{LogicID} Can not be obtained"); return; }
@@ -909,7 +940,7 @@ namespace Windows_Form_Frontend
             var DataDisplay = PlaythroughTools.FormatAdvancedUnlockData(AdvancedUnlockData, InstanceContainer.logicCalculation.LogicUnlockData);
 
             List<dynamic> Items = new List<dynamic>();
-            foreach(var i in DataDisplay)
+            foreach (var i in DataDisplay)
             {
                 var FLI = new MiscData.StandardListBoxItem
                 {
@@ -967,7 +998,7 @@ namespace Windows_Form_Frontend
 
             var UpdatedObjects = LocationChecker.CheckSelectedItems(Items, InstanceContainer, CheckObjectOptions);
 
-            if (UpdatedObjects.Any()) 
+            if (UpdatedObjects.Any())
             {
                 if (CheckedObjectsUpdate is not null) { CheckedObjectsUpdate(UpdatedObjects, InstanceContainer.Instance, checkState); }
                 SaveTrackerState(CurrentState);
@@ -1033,7 +1064,7 @@ namespace Windows_Form_Frontend
             {
                 ContextMenuStrip contextMenuStrip = new();
                 ToolStripItem MarkOnly = contextMenuStrip.Items.Add("Mark Only");
-                MarkOnly.Click += (sender, e) => 
+                MarkOnly.Click += (sender, e) =>
                 {
                     HandleItemSelect(LB.SelectedItems.Cast<object>().ToList(), MiscData.CheckState.Marked, true, LB);
                 };
@@ -1157,7 +1188,8 @@ namespace Windows_Form_Frontend
             }
             else
             {
-                MainInterfaceItemDisplayForm.Invoke(new Action(delegate {
+                MainInterfaceItemDisplayForm.Invoke(new Action(delegate
+                {
                     MainInterfaceItemDisplayForm.Activate();
                 }));
                 SendDataToItemDisplay();
@@ -1182,6 +1214,15 @@ namespace Windows_Form_Frontend
             LBValidEntrances.Refresh();
             LBCheckedLocations.Refresh();
             LBPathFinder.Refresh();
+        }
+
+        private void ViewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (sender == entrancesToolStripMenuItem) { ViewFocus = CompactViewFocus.Entrances; }
+            else if (sender == locationsToolStripMenuItem) { ViewFocus = CompactViewFocus.Locations; }
+            else if (sender == checkedToolStripMenuItem) { ViewFocus = CompactViewFocus.Checked; }
+            UpdateUI();
+            AlignUIElements();
         }
     }
 }
