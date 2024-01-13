@@ -610,6 +610,10 @@ namespace Windows_Form_Frontend
 
             if (InstanceContainer.Instance == null) { return; }
 
+            locationsToolStripMenuItem.Checked = ViewFocus == CompactViewFocus.Locations;
+            entrancesToolStripMenuItem.Checked = ViewFocus == CompactViewFocus.Entrances;
+            checkedToolStripMenuItem.Checked = ViewFocus == CompactViewFocus.Checked;
+
             SaveAsToolStripMenuItem.Visible = (File.Exists(InstanceContainer.CurrentSavePath));
             importSpoilerLogToolStripMenuItem.Text = (InstanceContainer.Instance.SpoilerLog != null) ? "Remove Spoiler Log" : "Import Spoiler Log";
 
@@ -1218,8 +1222,8 @@ namespace Windows_Form_Frontend
 
         private void ViewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (sender == entrancesToolStripMenuItem) { ViewFocus = CompactViewFocus.Entrances; }
-            else if (sender == locationsToolStripMenuItem) { ViewFocus = CompactViewFocus.Locations; }
+            if (sender == locationsToolStripMenuItem) { ViewFocus = CompactViewFocus.Locations; }
+            else if (sender == entrancesToolStripMenuItem) { ViewFocus = CompactViewFocus.Entrances; }
             else if (sender == checkedToolStripMenuItem) { ViewFocus = CompactViewFocus.Checked; }
             UpdateUI();
             AlignUIElements();

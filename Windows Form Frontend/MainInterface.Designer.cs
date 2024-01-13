@@ -494,6 +494,7 @@ namespace Windows_Form_Frontend
             viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             viewToolStripMenuItem.Text = "View";
+            viewToolStripMenuItem.Click += ViewToolStripMenuItem_Click;
             // 
             // locationsToolStripMenuItem
             // 
