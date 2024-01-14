@@ -106,13 +106,13 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             }
             else if (CurrentState == CheckState.Checked)
             {
-                var Destination = exit.GetParent().EntrancePool.AreaList[exit.DestinationExit.region];
+                var Destination = exit.GetParentEntrancePool().AreaList[exit.DestinationExit.region];
                 Destination.ExitsAcessibleFrom--;
             }
             else if (NewState == CheckState.Checked)
             {
                 if (exit.DestinationExit == null) { return false; }
-                var Destination = exit.GetParent().EntrancePool.AreaList[exit.DestinationExit.region];
+                var Destination = exit.GetParentEntrancePool().AreaList[exit.DestinationExit.region];
                 Destination.ExitsAcessibleFrom++;
             }
             else if (CurrentState == CheckState.Unchecked && NewState == CheckState.Marked)

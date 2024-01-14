@@ -37,11 +37,12 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return AreaValid && ExitValid;
             }
         }
-        public class EntranceRandoArea(InstanceData.TrackerInstance Parent)
+        public class EntranceRandoArea(EntrancePool Parent)
         {
-            private InstanceData.TrackerInstance _parent = Parent;
-            public InstanceData.TrackerInstance GetParent() { return _parent; }
-            public void SetParent(InstanceData.TrackerInstance parent) { _parent = parent; }
+            private EntrancePool _parent = Parent;
+            public EntrancePool GetParent() { return _parent; }
+            public InstanceData.TrackerInstance GetParentInstance() { return _parent.GetParent(); }
+            public void SetParent(EntrancePool parent) { _parent = parent; }
 
             public string ID { get; set; }
             public int ExitsAcessibleFrom { get; set; } = 0;
@@ -60,11 +61,13 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return Exits.Where(x => !x.Value.IsRandomizableEntrance()).ToDictionary(x => x.Key, v => v.Value);
             }
         }
-        public class EntranceRandoExit(InstanceData.TrackerInstance Parent)
+        public class EntranceRandoExit(EntranceRandoArea Parent)
         {
-            private InstanceData.TrackerInstance _parent = Parent;
-            public InstanceData.TrackerInstance GetParent() { return _parent; }
-            public void SetParent(InstanceData.TrackerInstance parent) { _parent = parent; }
+            private EntranceRandoArea _parent = Parent;
+            public EntranceRandoArea GetParent() { return _parent; }
+            public void SetParent(EntranceRandoArea parent) { _parent = parent; }
+            public InstanceData.TrackerInstance GetParentInstance() { return _parent.GetParent().GetParent(); }
+            public EntrancePool GetParentEntrancePool() { return _parent.GetParent(); }
 
             public string ParentAreaID { get; set; }
             public string ID { get; set; }
@@ -81,7 +84,7 @@ namespace MMR_Tracker_V3.TrackerObjects
 
             public LogicDictionaryData.DictionaryEntranceEntries GetDictEntry()
             {
-                return _parent.LogicDictionary.EntranceList[_parent.GetLogicNameFromExit(this)];
+                return GetParentInstance().LogicDictionary.EntranceList[GetParentInstance().GetLogicNameFromExit(this)];
             }
 
             public override string ToString()
@@ -109,10 +112,10 @@ namespace MMR_Tracker_V3.TrackerObjects
      * Each entrance (Example "EntranceClockTowerRooftopFromSouthClockTown") Will be both an area and an exit
      * as an area, it will have no exits.
      * as an exit, it will be in root area
-     * This will mean when the entrance is reffered to in logic it will look to see if the area version of that entrance is avalable
+     * This will mean when the entrance is referred to in logic it will look to see if the area version of that entrance is available
      * 
      * For path finder, I will use the method from the old tracker of finding entrance connections to populate exits into each area.
-     * Essentially mark all areas unobtained and exits unavalable and then one by one mark each area as obtained see what exits become available.
+     * Essentially mark all areas unobtained and exits unavailable and then one by one mark each area as obtained see what exits become available.
      * The ones that become available will be added to that area as an exit.
      * This will then allow pathfinder to be used normally.
      */
