@@ -58,7 +58,7 @@ namespace Windows_Form_Frontend
             MainInterface.CurrentProgram.UpdateUI();
             MainInterface.CurrentProgram.AlignUIElements();
 
-            if (InstanceCreated is not null) { InstanceCreated(MainInterface.InstanceContainer.Instance); }
+            InstanceCreated?.Invoke(MainInterface.InstanceContainer.Instance);
 
             return true;
         }

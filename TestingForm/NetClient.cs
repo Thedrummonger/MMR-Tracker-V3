@@ -40,7 +40,7 @@ namespace TestingForm
         private void NetClient_Load(object sender, EventArgs e)
         {
             ModeUpdating = true;
-            MainInterface.CheckedObjectsUpdate += TrackerDataHandeling_CheckedObjectsUpdate;
+            MainInterface.UpdateNetData += TrackerDataHandeling_CheckedObjectsUpdate;
 
             txtServerAddress.Text = "127.0.0.1";
             nudPort.Value = 25570;
@@ -58,7 +58,7 @@ namespace TestingForm
                 var result = MessageBox.Show($"Closing this windows will disable the active connection, are you sure?", "Close Net Socket", MessageBoxButtons.YesNo);
                 if (result != DialogResult.Yes) { e.Cancel = true; return; }
             }
-            MMR_Tracker_V3.LocationChecker.CheckedObjectsUpdate -= TrackerDataHandeling_CheckedObjectsUpdate;
+            MainInterface.UpdateNetData -= TrackerDataHandeling_CheckedObjectsUpdate;
             TestingForm.CurrentNetClientForm = null;
             CloseServer("Client Closed Manually");
             ParentForm.UpdateDebugActions();

@@ -21,7 +21,7 @@ namespace Windows_Form_Frontend
 {
     public partial class MainInterface : Form
     {
-        public static event Action<List<object>, TrackerInstance, MiscData.CheckState> CheckedObjectsUpdate;
+        public static event Action<List<object>, TrackerInstance, MiscData.CheckState> UpdateNetData;
         public static InstanceContainer InstanceContainer = new InstanceContainer();
         public static MainInterface CurrentProgram;
         public static bool IsSubForm = false;
@@ -684,7 +684,7 @@ namespace Windows_Form_Frontend
                         SaveTrackerState(InstanceContainer.Instance.ToJson(JSONType.UTF8));
                         ChoiceOption.SetValue((toolStripComboBox.SelectedItem as MiscData.OptionComboboxItem).Value as string);
                         if (!InstanceContainer.logicCalculation.ReCompileLogicOnCalculation) { InstanceContainer.logicCalculation.CompileOptionActionEdits(); }
-                        LocationChecker.TriggerCheckedObjectsUpdate(new List<object> { ChoiceOption }, InstanceContainer.Instance, MiscData.CheckState.Checked);
+                        LocationChecker.TriggerCheckedObjectsUpdate([ChoiceOption], InstanceContainer.Instance, MiscData.CheckState.Checked);
                         InstanceContainer.logicCalculation.CalculateLogic();
                         UpdateUI();
                     };
@@ -705,7 +705,7 @@ namespace Windows_Form_Frontend
                             SaveTrackerState(InstanceContainer.Instance.ToJson(JSONType.UTF8));
                             MultiSelectOption.ToggleValue(i.Key);
                             if (!InstanceContainer.logicCalculation.ReCompileLogicOnCalculation) { InstanceContainer.logicCalculation.CompileOptionActionEdits(); }
-                            LocationChecker.TriggerCheckedObjectsUpdate(new List<object> { MultiSelectOption }, InstanceContainer.Instance, MiscData.CheckState.Checked);
+                            LocationChecker.TriggerCheckedObjectsUpdate([MultiSelectOption], InstanceContainer.Instance, MiscData.CheckState.Checked);
                             InstanceContainer.logicCalculation.CalculateLogic();
                             UpdateUI();
                         };
@@ -723,7 +723,7 @@ namespace Windows_Form_Frontend
                         SaveTrackerState(InstanceContainer.Instance.ToJson(JSONType.UTF8));
                         ToggleOption.ToggleValue();
                         if (!InstanceContainer.logicCalculation.ReCompileLogicOnCalculation) { InstanceContainer.logicCalculation.CompileOptionActionEdits(); }
-                        LocationChecker.TriggerCheckedObjectsUpdate(new List<object> { ToggleOption }, InstanceContainer.Instance, MiscData.CheckState.Checked);
+                        LocationChecker.TriggerCheckedObjectsUpdate([ToggleOption], InstanceContainer.Instance, MiscData.CheckState.Checked);
                         InstanceContainer.logicCalculation.CalculateLogic();
                         UpdateUI();
                     };
@@ -1004,7 +1004,7 @@ namespace Windows_Form_Frontend
 
             if (UpdatedObjects.Any())
             {
-                if (CheckedObjectsUpdate is not null) { CheckedObjectsUpdate(UpdatedObjects, InstanceContainer.Instance, checkState); }
+                UpdateNetData?.Invoke(UpdatedObjects, InstanceContainer.Instance, checkState);
                 SaveTrackerState(CurrentState);
             }
             UpdateUI();

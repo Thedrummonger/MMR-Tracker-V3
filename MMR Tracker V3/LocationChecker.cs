@@ -18,8 +18,7 @@ namespace MMR_Tracker_V3
         public static event Action<List<object>, InstanceData.TrackerInstance, CheckState> CheckedObjectsUpdate;
         public static void TriggerCheckedObjectsUpdate(List<object> objs, InstanceData.TrackerInstance instance, CheckState c)
         {
-            if (CheckedObjectsUpdate is null) { return; }
-            CheckedObjectsUpdate(objs, instance, c);
+            CheckedObjectsUpdate?.Invoke(objs, instance, c);
         }
         //Check Sets of items
         public static List<object> CheckSelectedItems(IEnumerable<object> SelectedObjects, InstanceData.InstanceContainer instanceContainer, CheckItemSetting Options)
@@ -64,7 +63,7 @@ namespace MMR_Tracker_V3
             }
 
 
-            if (UpdatedObjects.Any() && CheckedObjectsUpdate is not null) { CheckedObjectsUpdate(UpdatedObjects, instanceContainer.Instance, Options.TargetheckState); }
+            if (UpdatedObjects.Count != 0) { TriggerCheckedObjectsUpdate(UpdatedObjects, instanceContainer.Instance, Options.TargetheckState); }
             return UpdatedObjects;
         }
 
