@@ -45,7 +45,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                 set { _trickUrl = value; }
             }
 
-            public bool Equals(JsonFormatLogicItem logicItem2)
+            public bool HasIdenticalLogic(JsonFormatLogicItem logicItem2)
             {
                 bool ReqEqual = this.RequiredItems.SequenceEqual(logicItem2.RequiredItems);
                 bool ConEqual = this.ConditionalItems.SelectMany(x => x).SequenceEqual(logicItem2.ConditionalItems.SelectMany(x => x));

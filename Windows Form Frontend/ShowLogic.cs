@@ -118,8 +118,8 @@ namespace Windows_Form_Frontend
                 BTNGotTo.Visible = true;
                 //Enable Items
                 textBox1.Enabled = false;
-                btnGoBack.Enabled = GoBackList.Any();
-                chkShowUnaltered.Enabled = !AlteredLogic.Equals(UnAlteredLogic);
+                btnGoBack.Enabled = GoBackList.Count != 0;
+                chkShowUnaltered.Enabled = AlteredLogic.HasIdenticalLogic(UnAlteredLogic);
                 chkShowTime.Enabled = hasTimeLogic;
                 //Resize Items
                 tlbReq.RowStyles[3] = ShowTimeLogic ? new RowStyle(SizeType.Absolute, 80F) : new RowStyle(SizeType.Absolute, 0F);

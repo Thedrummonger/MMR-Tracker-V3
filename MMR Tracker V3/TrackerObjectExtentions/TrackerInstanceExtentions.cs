@@ -266,12 +266,12 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             return new MMRData.JsonFormatLogicItem
             {
                 Id = ID,
-                IsTrick = LogicFileEntry != null && LogicFileEntry.IsTrick,
+                IsTrick = LogicFileEntry is not null && LogicFileEntry.IsTrick,
                 RequiredItems = CopyRequirements,
                 ConditionalItems = CopyConditionals,
-                TimeAvailable = LogicFileEntry == null ? TimeOfDay.None : LogicFileEntry.TimeAvailable,
-                TimeNeeded = LogicFileEntry == null ? TimeOfDay.None : LogicFileEntry.TimeNeeded,
-                TimeSetup = LogicFileEntry == null ? TimeOfDay.None : LogicFileEntry.TimeSetup,
+                TimeAvailable = LogicFileEntry is null ? TimeOfDay.None : LogicFileEntry.TimeAvailable,
+                TimeNeeded = LogicFileEntry is null ? TimeOfDay.None : LogicFileEntry.TimeNeeded,
+                TimeSetup = LogicFileEntry is null ? TimeOfDay.None : LogicFileEntry.TimeSetup,
                 TrickCategory = LogicFileEntry?.TrickCategory,
                 TrickTooltip = LogicFileEntry?.TrickTooltip
             };
