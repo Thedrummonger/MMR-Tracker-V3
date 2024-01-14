@@ -167,10 +167,6 @@ namespace MMR_Tracker_V3.TrackerObjects
                     _Instance?.SetParentContainer(this);
                     return _Instance;
                 }
-                set
-                {
-                    ApplyInstance(value);
-                }
             }
             public LogicCalculation logicCalculation { get; set; }
             public NetConnection netConnection { get; set; } = new NetConnection();
@@ -199,42 +195,41 @@ namespace MMR_Tracker_V3.TrackerObjects
                     return false;
                 }
             }
-            public bool LoadSave(string[] Save) { return LoadSave(string.Join("", Save)); }
-            public bool LoadSave(string Save)
+            public bool LoadSerializedInstance(string Json)
             {
-                if (File.Exists(Save))
-                {
-                    switch (SaveCompressor.TestSaveFileType(Save, Instance))
-                    {
-                        case SaveCompressor.SaveType.Standard:
-                            ApplyInstance(File.ReadAllText(Save));
-                            break;
-                        case SaveCompressor.SaveType.Compressed:
-                            var Decomp = SaveCompressor.Decompress(File.ReadAllText(Save));
-                            ApplyInstance(Decomp);
-                            break;
-                        case SaveCompressor.SaveType.CompressedByte:
-                            var ByteDecomp = SaveCompressor.Decompress(File.ReadAllBytes(Save));
-                            ApplyInstance(ByteDecomp);
-                            break;
-                        case SaveCompressor.SaveType.error:
-                            return false;
-                    }
-                }
-                else
-                {
-                    try { ApplyInstance(Save); }
-                    catch { return false; }
-                }
+                return LoadSave(Json);
+            }
+            public bool LoadInsanceFromFile(string Path)
+            {
+                if (!File.Exists(Path)) { return false; }
+                string SerializedSave = SaveCompressor.GetSaveStringFromFile(Path, this._Instance);
+                if (SerializedSave == string.Empty) { return false; }
+                return LoadSave(SerializedSave);
+            }
+            public bool CopyAndLoadInstance(TrackerInstance ToCopy)
+            {
+                return LoadSerializedInstance(ToCopy.ToString());
+            }
+            private bool LoadSave(string Save)
+            {
+                try { ApplyInstance(Save); }
+                catch { return false; }
+
                 logicCalculation.CompileOptionActionEdits();
+                TrackerInstanceCreation.TriggerInstanceCreatedEvent(this);
                 return true;
             }
 
-            public void ApplyInstance(string JsonString)
+            public void CreateEmptyInstance()
+            {
+                ApplyInstance(new TrackerInstance(this));
+            }
+
+            private void ApplyInstance(string JsonString)
             {
                 ApplyInstance(JsonConvert.DeserializeObject<InstanceData.TrackerInstance>(JsonString));
             }
-            public void ApplyInstance(InstanceData.TrackerInstance Instance)
+            private void ApplyInstance(InstanceData.TrackerInstance Instance)
             {
                 _Instance = Instance;
                 _Instance.SetParentContainer(this);

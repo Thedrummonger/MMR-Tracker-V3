@@ -40,7 +40,7 @@ namespace TestingForm
         private void NetClient_Load(object sender, EventArgs e)
         {
             ModeUpdating = true;
-            MainInterface.UpdateNetData += TrackerDataHandeling_CheckedObjectsUpdate;
+            LocationChecker.CheckStateChanged += TrackerDataHandeling_CheckedObjectsUpdate;
 
             txtServerAddress.Text = "127.0.0.1";
             nudPort.Value = 25570;
@@ -58,7 +58,7 @@ namespace TestingForm
                 var result = MessageBox.Show($"Closing this windows will disable the active connection, are you sure?", "Close Net Socket", MessageBoxButtons.YesNo);
                 if (result != DialogResult.Yes) { e.Cancel = true; return; }
             }
-            MainInterface.UpdateNetData -= TrackerDataHandeling_CheckedObjectsUpdate;
+            LocationChecker.CheckStateChanged -= TrackerDataHandeling_CheckedObjectsUpdate;
             TestingForm.CurrentNetClientForm = null;
             CloseServer("Client Closed Manually");
             ParentForm.UpdateDebugActions();
@@ -102,9 +102,9 @@ namespace TestingForm
         }
         private void PrintToConsole(string Content) { PrintToConsole(new string[] { Content }); }
 
-        private void TrackerDataHandeling_CheckedObjectsUpdate(List<object> arg1, MMR_Tracker_V3.TrackerObjects.InstanceData.TrackerInstance arg2, MiscData.CheckState checkState)
+        private void TrackerDataHandeling_CheckedObjectsUpdate(List<object> ObjectsUpdated, MMR_Tracker_V3.TrackerObjects.InstanceData.TrackerInstance Instance)
         {
-            var LocationsUpdated = arg1.Where(x => x is LocationData.LocationObject lo && (lo.Randomizeditem.OwningPlayer > -1) || InstanceContainer.netConnection.OnlineMode != OnlineMode.Multiworld)
+            var LocationsUpdated = ObjectsUpdated.Where(x => x is LocationData.LocationObject lo && (lo.Randomizeditem.OwningPlayer > -1) || InstanceContainer.netConnection.OnlineMode != OnlineMode.Multiworld)
                 .Select(x => (LocationData.LocationObject)x);
             if (InstanceContainer.netConnection.ServerConnection is null || !InstanceContainer.netConnection.ServerConnection.Connected) { return; }
             if (!chkSendData.Checked) { return; }
@@ -113,10 +113,10 @@ namespace TestingForm
             switch (InstanceContainer.netConnection.OnlineMode)
             {
                 case OnlineMode.Multiworld:
-                    packet = CreateMultiWorldPacket(arg2, LocationsUpdated);
+                    packet = CreateMultiWorldPacket(Instance, LocationsUpdated);
                     break;
                 case OnlineMode.Coop:
-                    packet = CreateCoopPacket(arg2, LocationsUpdated);
+                    packet = CreateCoopPacket(Instance, LocationsUpdated);
                     break;
                 default: return;
             }

@@ -1,4 +1,5 @@
-﻿using MMR_Tracker_V3.TrackerObjects;
+﻿using MMR_Tracker_V3;
+using MMR_Tracker_V3.TrackerObjects;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -18,16 +19,10 @@ namespace TestingForm
             MainInterface.CurrentProgram.LBValidLocations.SelectedIndexChanged += LBSelectedIndexChanged;
             MainInterface.CurrentProgram.LBValidEntrances.SelectedIndexChanged += LBSelectedIndexChanged;
             MainInterface.CurrentProgram.LBCheckedLocations.SelectedIndexChanged += LBSelectedIndexChanged;
-            MMR_Tracker_V3.LocationChecker.CheckedObjectsUpdate += TrackerDataHandeling_CheckedObjectsUpdate;
-            WinFormInstanceCreation.InstanceCreated += WinFormInstanceCreation_InstanceCreated;
+            TrackerInstanceCreation.InstanceCreated += WinFormInstanceCreation_InstanceCreated;
         }
 
-        private static void WinFormInstanceCreation_InstanceCreated(MMR_Tracker_V3.TrackerObjects.InstanceData.TrackerInstance obj)
-        {
-            TestingForm.CurrentForm.UpdateDebugActions();
-        }
-
-        private static void TrackerDataHandeling_CheckedObjectsUpdate(List<object> obj, MMR_Tracker_V3.TrackerObjects.InstanceData.TrackerInstance instance, MiscData.CheckState checkState)
+        private static void WinFormInstanceCreation_InstanceCreated(MMR_Tracker_V3.TrackerObjects.InstanceData.InstanceContainer obj)
         {
             TestingForm.CurrentForm.UpdateDebugActions();
         }

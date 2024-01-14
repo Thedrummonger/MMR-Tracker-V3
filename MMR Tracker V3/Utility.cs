@@ -17,6 +17,7 @@ using System.Text.RegularExpressions;
 using MMR_Tracker_V3.TrackerObjectExtentions;
 using System.Net;
 using static MMR_Tracker_V3.TrackerObjects.InstanceData;
+using MathNet.Numerics;
 
 namespace MMR_Tracker_V3
 {
@@ -444,6 +445,22 @@ namespace MMR_Tracker_V3
             {
                 return false;
             }
+        }
+
+        public static string GetSaveStringFromFile(string FilePath, InstanceData.TrackerInstance instance)
+        {
+            switch (SaveCompressor.TestSaveFileType(FilePath, instance))
+            {
+                case SaveCompressor.SaveType.Standard:
+                    return File.ReadAllText(FilePath);
+                case SaveCompressor.SaveType.Compressed:
+                    var Decomp = SaveCompressor.Decompress(File.ReadAllText(FilePath));
+                    return (Decomp);
+                case SaveCompressor.SaveType.CompressedByte:
+                    var ByteDecomp = SaveCompressor.Decompress(File.ReadAllBytes(FilePath));
+                    return (ByteDecomp);
+            }
+            return string.Empty;
         }
     }
 

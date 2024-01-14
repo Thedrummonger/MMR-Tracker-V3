@@ -46,21 +46,33 @@ namespace Windows_Form_Frontend
                 BottomPosFull = ND3.Location.Y + ND3.Height,
                 BottomPosCut = LBReq.Location.Y + LBReq.Height,
             };
-            TimeCheckBoxes = new() { ND1, NN1, ND2, NN2, ND3, NN3, SD1, SN1, SD2, SN2, SD3, SN3 };
-            LocationChecker.CheckedObjectsUpdate += TrackerDataHandeling_CheckedObjectsUpdate;
+            TimeCheckBoxes = [ND1, NN1, ND2, NN2, ND3, NN3, SD1, SN1, SD2, SN2, SD3, SN3];
+            LocationChecker.CheckStateChanged += TrackerDataHandeling_CheckedObjectsUpdate;
+            LocationChecker.UserOptionUpdated += TrackerDataHandeling_UserOptionUpdated;
         }
 
         private void ShowLogic_FormClosed(object sender, FormClosedEventArgs e)
         {
-            LocationChecker.CheckedObjectsUpdate -= TrackerDataHandeling_CheckedObjectsUpdate;
+            LocationChecker.CheckStateChanged -= TrackerDataHandeling_CheckedObjectsUpdate;
+            LocationChecker.UserOptionUpdated -= TrackerDataHandeling_UserOptionUpdated;
         }
 
-        private void TrackerDataHandeling_CheckedObjectsUpdate(List<object> arg1, MMR_Tracker_V3.TrackerObjects.InstanceData.TrackerInstance arg2, MiscData.CheckState checkState)
+        private void TrackerDataHandeling_UserOptionUpdated(List<object> list, MMR_Tracker_V3.TrackerObjects.InstanceData.TrackerInstance instance)
         {
-            if (this.IsDisposed) 
+            TrackerDataUpdated();
+        }
+
+        private void TrackerDataHandeling_CheckedObjectsUpdate(List<object> arg1, MMR_Tracker_V3.TrackerObjects.InstanceData.TrackerInstance arg2)
+        {
+            TrackerDataUpdated();
+        }
+
+        private void TrackerDataUpdated()
+        {
+            if (this.IsDisposed)
             {
                 Debug.WriteLine("Show logic form was still listening for events after being disposed");
-                return; 
+                return;
             }
             if (state != FormState.showLogic) { return; }
             PrintLogicToLists();

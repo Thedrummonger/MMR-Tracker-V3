@@ -21,7 +21,7 @@ namespace MMR_Tracker_V3
         public Dictionary<string, List<Tuple<object, PlaythroughObject>>> FirstObtainedDict = new Dictionary<string, List<Tuple<object, PlaythroughObject>>>();
         public PlaythroughGenerator(InstanceData.TrackerInstance instance, List<string> IngoredChecks = null)
         {
-            Container.ApplyInstance(JsonConvert.SerializeObject(instance));
+            Container.CopyAndLoadInstance(instance);
             _IngoredChecks = IngoredChecks??new List<string>();
             Container.logicCalculation = new LogicCalculation(Container);
         }

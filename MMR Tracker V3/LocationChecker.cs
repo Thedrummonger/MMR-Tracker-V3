@@ -15,25 +15,32 @@ namespace MMR_Tracker_V3
 {
     public class LocationChecker
     {
-        public static event Action<List<object>, InstanceData.TrackerInstance, CheckState> CheckedObjectsUpdate;
-        public static void TriggerCheckedObjectsUpdate(List<object> objs, InstanceData.TrackerInstance instance, CheckState c)
+        public static event Action<List<object>, InstanceData.TrackerInstance> UserOptionUpdated;
+        public static event Action<List<object>, InstanceData.TrackerInstance> CheckStateChanged;
+        public static void TriggerCheckStateChangedEvent(List<object> UpdatedObjects, InstanceData.TrackerInstance instance)
         {
-            CheckedObjectsUpdate?.Invoke(objs, instance, c);
+            CheckStateChanged?.Invoke(UpdatedObjects, instance);
+        }
+        public static void TriggerUserOptionUpdatedEvent(List<object> UpdatedOptions, InstanceData.TrackerInstance instance)
+        {
+            UserOptionUpdated?.Invoke(UpdatedOptions, instance);
         }
         //Check Sets of items
         public static List<object> CheckSelectedItems(IEnumerable<object> SelectedObjects, InstanceData.InstanceContainer instanceContainer, CheckItemSetting Options)
         {
-            List<object> UpdatedObjects = new List<object>();
+            List<object> UpdatedLogicObjects = new List<object>();
+            List<object> UpdatedHintObjects = new List<object>();
+            List<object> UpdatedSettingObjects = new List<object>();
 
             List<object> UpdatedOptions = SetOptionCheckState(SelectedObjects, instanceContainer, Options);
             List<LocationObject> UpdatedLocations = SetLocationsCheckState(SelectedObjects, instanceContainer, Options);
             List<EntranceRandoExit> UpdatedExits = SetEntrancesCheckState(SelectedObjects, instanceContainer, Options);
 
-            UpdatedObjects.AddRange(UpdatedOptions);
-            UpdatedObjects.AddRange(UpdatedLocations);
-            UpdatedObjects.AddRange(UpdatedExits);
+            UpdatedSettingObjects.AddRange(UpdatedOptions);
+            UpdatedLogicObjects.AddRange(UpdatedLocations);
+            UpdatedLogicObjects.AddRange(UpdatedExits);
 
-            if (UpdatedObjects.Any() && Options.TargetheckState != MiscData.CheckState.Marked)
+            if ((UpdatedLogicObjects.Count != 0 || UpdatedSettingObjects.Count != 0) && Options.TargetheckState != MiscData.CheckState.Marked)
             {
                 instanceContainer.logicCalculation.CalculateLogic(Options.TargetheckState);
             }
@@ -43,8 +50,8 @@ namespace MMR_Tracker_V3
 
             List<LocationObject> UpdatedHintedLocations = SetLocationsCheckState(HintedLocationsToUpdate, instanceContainer, new CheckItemSetting(Options).SetTargetheckState(CheckState.Marked));
 
-            UpdatedObjects.AddRange(UpdatedHints);
-            UpdatedObjects.AddRange(UpdatedHintedLocations);
+            UpdatedHintObjects.AddRange(UpdatedHints);
+            UpdatedLogicObjects.AddRange(UpdatedHintedLocations);
 
             if (UpdatedExits.Any() && Options.TargetheckState == MiscData.CheckState.Checked)
             {
@@ -58,13 +65,16 @@ namespace MMR_Tracker_V3
                 {
                     instanceContainer.logicCalculation.CalculateLogic(Options.TargetheckState);
                 }
-                UpdatedObjects.AddRange(UpdatedMarkedPairedExits);
-                UpdatedObjects.AddRange(UpdatedCheckedPairedExits);
+                UpdatedLogicObjects.AddRange(UpdatedMarkedPairedExits);
+                UpdatedLogicObjects.AddRange(UpdatedCheckedPairedExits);
             }
 
+            List<object> AllUpdatedObjects = [.. UpdatedLogicObjects, .. UpdatedHintObjects, .. UpdatedSettingObjects];
 
-            if (UpdatedObjects.Count != 0) { TriggerCheckedObjectsUpdate(UpdatedObjects, instanceContainer.Instance, Options.TargetheckState); }
-            return UpdatedObjects;
+            if (UpdatedLogicObjects.Count != 0) { TriggerCheckStateChangedEvent(UpdatedLogicObjects, instanceContainer.Instance); }
+            if (UpdatedSettingObjects.Count != 0) { TriggerUserOptionUpdatedEvent(UpdatedLogicObjects, instanceContainer.Instance); }
+
+            return AllUpdatedObjects;
         }
 
         public static List<object> SetOptionCheckState(IEnumerable<object> SelectedObjects, InstanceData.InstanceContainer instanceContainer, CheckItemSetting Options)

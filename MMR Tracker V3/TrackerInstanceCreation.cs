@@ -21,7 +21,7 @@ namespace MMR_Tracker_V3
 {
     public static class TrackerInstanceCreation
     {
-
+        public static event Action<MMR_Tracker_V3.TrackerObjects.InstanceData.InstanceContainer> InstanceCreated;
         public static InstanceState ApplyLogicAndDict(this InstanceContainer Container, string[] LogicData, string DictionaryData = null)
         {
             return Container.ApplyLogicAndDict(string.Join("", LogicData), DictionaryData);
@@ -36,7 +36,7 @@ namespace MMR_Tracker_V3
         }
         public static InstanceState ApplyLogicAndDict(this InstanceContainer Container, string LogicData, string DictionaryData = null)
         {
-            Container.Instance ??= new TrackerInstance(Container);
+            if (Container.Instance is null) { Container.CreateEmptyInstance(); }
             try { Container.Instance.LogicFile = MMRData.LogicFile.FromJson(LogicData); }
             catch { return InstanceState.LogicFailure; }
             if (DictionaryData is null)
@@ -243,6 +243,8 @@ namespace MMR_Tracker_V3
 
             Container.logicCalculation.CompileOptionActionEdits();
 
+            InstanceCreated?.Invoke(Container);
+
             //Debug.WriteLine(JsonConvert.SerializeObject(Instance.PriceData.WalletEntries, Utility._NewtonsoftJsonSerializerOptions));
             //Debug.WriteLine(JsonConvert.SerializeObject(Instance.PriceData.CapacityMap, Utility._NewtonsoftJsonSerializerOptions));
 
@@ -358,6 +360,11 @@ namespace MMR_Tracker_V3
                 }
             }
             return FlattenedList.Distinct().ToList();
+        }
+
+        public static void TriggerInstanceCreatedEvent(InstanceContainer Container)
+        {
+            InstanceCreated?.Invoke(Container);
         }
 
         public enum InstanceState

@@ -17,10 +17,9 @@ namespace Windows_Form_Frontend
 {
     public class WinFormInstanceCreation
     {
-        public static event Action<MMR_Tracker_V3.TrackerObjects.InstanceData.TrackerInstance> InstanceCreated;
         public static bool CreateWinFormInstance(string Logic = null, string Dictionary = null)
         {
-            var NewInstance = new InstanceContainer();
+            var TempContainer = new InstanceContainer();
             if (Logic == null)
             {
                 OpenFileDialog fileDialog = new OpenFileDialog();
@@ -28,21 +27,21 @@ namespace Windows_Form_Frontend
                 Logic = File.ReadAllText(fileDialog.FileName);
             }
 
-            var Result = NewInstance.ApplyLogicAndDict(Logic, Dictionary);
+            var Result = TempContainer.ApplyLogicAndDict(Logic, Dictionary);
 
-            if (Result == TrackerInstanceCreation.InstanceState.LogicFailure || NewInstance.Instance.LogicFile.Logic == null)
+            if (Result == TrackerInstanceCreation.InstanceState.LogicFailure || TempContainer.Instance.LogicFile.Logic == null)
             {
                 MessageBox.Show("Failed To Load Logic");
                 return false;
             }
-            if (Result == TrackerInstanceCreation.InstanceState.DictionaryFailure || NewInstance.Instance.LogicDictionary == null)
+            if (Result == TrackerInstanceCreation.InstanceState.DictionaryFailure || TempContainer.Instance.LogicDictionary == null)
             {
                 MessageBox.Show("Failed To Load Dict");
                 return false;
             }
 
             //If all checks pass overrite the current instance
-            MainInterface.InstanceContainer.ApplyInstance(NewInstance.Instance.ToJson(MiscData.JSONType.Newtonsoft));
+            MainInterface.InstanceContainer.CopyAndLoadInstance(TempContainer.Instance);
 
             MainInterface.InstanceContainer.CurrentSavePath = "";
             MainInterface.InstanceContainer.GenerateInstance();
@@ -57,8 +56,6 @@ namespace Windows_Form_Frontend
             MainInterface.InstanceContainer.logicCalculation.CalculateLogic();
             MainInterface.CurrentProgram.UpdateUI();
             MainInterface.CurrentProgram.AlignUIElements();
-
-            InstanceCreated?.Invoke(MainInterface.InstanceContainer.Instance);
 
             return true;
         }
