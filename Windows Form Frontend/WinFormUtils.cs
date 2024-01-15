@@ -49,7 +49,7 @@ namespace Windows_Form_Frontend
             }
             else
             {
-                return new MMR_Tracker_V3.TrackerObjects.MiscData.Divider { Display = DividerText };
+                return new MMR_Tracker_V3.TrackerObjects.MiscData.Divider(DividerText);
             }
 
             string Divider = DividerText;
@@ -61,7 +61,7 @@ namespace Windows_Form_Frontend
                 if ((int)g.MeasureString(newDivider, font).Width < width) { Divider = newDivider; }
                 else { break; }
             }
-            return new MMR_Tracker_V3.TrackerObjects.MiscData.Divider { Display = Divider };
+            return new MMR_Tracker_V3.TrackerObjects.MiscData.Divider(Divider);
         }
 
         public static void PrintMessageToListBox(object containerObject, string Text = "")

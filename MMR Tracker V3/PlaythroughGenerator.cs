@@ -442,15 +442,15 @@ namespace MMR_Tracker_V3
         {
             List<dynamic> ReturnList = new List<dynamic>();
             ReturnList.Add(ADVUnlockData.Name);
-            ReturnList.Add(new MiscData.Divider() { Display = Divider });
-            ReturnList.Add(new MiscData.Divider(){ Display = "LOGIC USED:" });
+            ReturnList.Add(new MiscData.Divider(Divider));
+            ReturnList.Add(new MiscData.Divider("LOGIC USED:"));
             foreach (var i in ADVUnlockData.LogicUsed)
             {
                 ReturnList.Add(i);
             }
-            ReturnList.Add(new MiscData.Divider() { Display = Divider });
-            ReturnList.Add(new MiscData.Divider() { Display = "REAL ITEMS USED:" });
-            Dictionary<string, int> TempRealItems = new Dictionary<string, int>();
+            ReturnList.Add(new MiscData.Divider(Divider) );
+            ReturnList.Add(new MiscData.Divider("REAL ITEMS USED:"));
+            Dictionary<string, int> TempRealItems = [];
             foreach (var i in ADVUnlockData.RealItemsUsed)
             {
                 if (!TempRealItems.ContainsKey(i.Key)) { TempRealItems.Add(i.Key, 0); }
@@ -465,32 +465,32 @@ namespace MMR_Tracker_V3
             {
                 ReturnList.Add(i);
             }
-            ReturnList.Add(new MiscData.Divider() { Display = Divider });
-            ReturnList.Add(new MiscData.Divider() { Display = "MACROS USED:" });
+            ReturnList.Add(new MiscData.Divider(Divider));
+            ReturnList.Add(new MiscData.Divider("MACROS USED:"));
             foreach (var i in ADVUnlockData.MacrosUsed)
             {
                 ReturnList.Add(i);
-                if (!UnlockData.ContainsKey(i) || !UnlockData[i].Any()) { continue; }
+                if (!UnlockData.ContainsKey(i) || UnlockData[i].Count == 0) { continue; }
                 ReturnList.Add($"    Unlocked With: {string.Join(" | ", UnlockData[i])}");
             }
-            ReturnList.Add(new MiscData.Divider() { Display = Divider });
-            ReturnList.Add(new MiscData.Divider() { Display = "FUNCTIONS USED:" });
+            ReturnList.Add(new MiscData.Divider(Divider));
+            ReturnList.Add(new MiscData.Divider("FUNCTIONS USED:"));
             foreach (var i in ADVUnlockData.OptionsUsed)
             {
                 ReturnList.Add(i);
             }
-            ReturnList.Add(new MiscData.Divider() { Display = Divider });
-            ReturnList.Add(new MiscData.Divider() { Display = "EXITS TAKEN:" });
+            ReturnList.Add(new MiscData.Divider(Divider));
+            ReturnList.Add(new MiscData.Divider("EXITS TAKEN:"));
             foreach (var i in ADVUnlockData.ExitsTaken)
             {
                 ReturnList.Add(i);
-                if (!UnlockData.ContainsKey(i) || !UnlockData[i].Any()) { continue; }
+                if (!UnlockData.ContainsKey(i) || UnlockData[i].Count == 0) { continue; }
                 ReturnList.Add($"    Unlocked With: {string.Join(" | ", UnlockData[i])}");
             }
-            if (ADVUnlockData.Unknown.Any())
+            if (ADVUnlockData.Unknown.Count != 0)
             {
-                ReturnList.Add(new MiscData.Divider() { Display = Divider });
-                ReturnList.Add(new MiscData.Divider() { Display = "UNKNOWN:" });
+                ReturnList.Add(new MiscData.Divider(Divider));
+                ReturnList.Add(new MiscData.Divider("UNKNOWN:"));
                 foreach (var i in ADVUnlockData.Unknown)
                 {
                     ReturnList.Add(i);

@@ -37,9 +37,9 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return Text;
             }
         }
-        public class Divider
+        public class Divider(string DividerString)
         {
-            public string Display { get; set; }
+            public string Display { get; set; } = DividerString;
             public override string ToString()
             {
                 return Display;
@@ -161,6 +161,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                 Filter = _Filter;
                 DataSets = _DataSets is null ? PopulateDataSets(Instance) : _DataSets;
             }  
+            public TrackerLocationDataList Reset() { FinalData = []; ItemsFound = 0; ItemsDisplayed = 0; return this; }
             public TrackerLocationDataList PrintReverse(bool reverse = true) { Reverse = reverse; return this; }
             public TrackerLocationDataList ShowUnavailable(bool showall = true) { _ShowAll = showall; return this; }
         }

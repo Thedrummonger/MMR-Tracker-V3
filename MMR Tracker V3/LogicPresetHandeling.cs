@@ -15,6 +15,10 @@ namespace MMR_Tracker_V3
             public string Name { get; set; } = null;
             public string DictionaryString { get; set; } = null;
             public string LogicString { get; set; } = null;
+            public override string ToString()
+            {
+                return Name;
+            }
         }
         public static List<PresetlogicData> GetLogicPresets()
         {
