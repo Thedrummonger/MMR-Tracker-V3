@@ -14,7 +14,7 @@ using static MMR_Tracker_V3.TrackerObjects.InstanceData;
 
 namespace MMR_Tracker_V3
 {
-    public class TrackerDataHandeling
+    public static class TrackerDataHandling
     {
         public class DataSets
         {
@@ -49,7 +49,7 @@ namespace MMR_Tracker_V3
             public List<ItemData.ItemObject> OnlineObtainedItems { get; set; } = new List<ItemData.ItemObject>();
         }
 
-        public static DataSets PopulateDataSets(InstanceData.TrackerInstance instance)
+        public static DataSets CreateDataSets(InstanceData.TrackerInstance instance)
         {
             DataSets dataSets = new DataSets();
 
@@ -166,20 +166,20 @@ namespace MMR_Tracker_V3
             return dataSets;
         }
 
-        public static string GetLocationEntryArea(object Entry, InstanceData.TrackerInstance Instance)
+        private static string GetLocationEntryArea(object Entry, InstanceData.TrackerInstance Instance)
         {
             if (Entry is LocationData.LocationObject l) { return l.GetDictEntry().Area; }
             else if (Entry is LocationData.LocationProxy p) { return p.Area; }
             return "Error";
         }
 
-        private static bool EntranceAppearsinListbox(EntranceData.EntranceRandoExit Location, InstanceData.TrackerInstance Instance)
+        private static bool EntranceAppearsInListbox(EntranceData.EntranceRandoExit Location, InstanceData.TrackerInstance Instance)
         {
             return !Location.IsJunk() && !Location.IsUnrandomized(MiscData.UnrandState.Unrand);
         }
 
         //GetData To Print
-        public static bool SortByAvailability(object Entry, TrackerLocationDataList Data)
+        private static bool SortByAvailability(object Entry, TrackerLocationDataList Data)
         {
             if (Data.ShowUnavailableEntries) { return true; }
             if (!Data.Instance.StaticOptions.OptionFile.SeperateUnavailableMarkedLocations) { return true; }
@@ -188,7 +188,7 @@ namespace MMR_Tracker_V3
             return false;
         }
 
-        public static void PopulateAvailableLocationList(TrackerLocationDataList Data)
+        public static void PopulateAvailableLocationList(this TrackerLocationDataList Data)
         {
             var Groups = Utility.GetCategoriesFromFile(Data.Instance);
 
@@ -235,11 +235,11 @@ namespace MMR_Tracker_V3
             void WriteEntrances()
             {
                 if (Data.InstanceContainer.Instance.StaticOptions.OptionFile.EntranceRandoFeatures) { return; }
-                PopulateAvailableEntraceList(Data);
+                PopulateAvailableEntranceList(Data);
             }
         }
 
-        public static void PopulateAvailableEntraceList(TrackerLocationDataList Data)
+        public static void PopulateAvailableEntranceList(this TrackerLocationDataList Data)
         {
             bool InLocationBox = !Data.Instance.StaticOptions.OptionFile.EntranceRandoFeatures;
 
@@ -254,7 +254,7 @@ namespace MMR_Tracker_V3
             string CurrentArea = "";
             foreach(var i in ValidExits)
             {
-                if (!EntranceAppearsinListbox(i, Data.Instance) && !Data.ShowInvalidEntries) { continue; }
+                if (!EntranceAppearsInListbox(i, Data.Instance) && !Data.ShowInvalidEntries) { continue; }
                 Data.ItemsFound++;
                 string ItemArea = InLocationBox ? $"{i.DisplayArea()} Entrances" : i.DisplayArea();
                 i.DisplayName = i.GetEntranceDisplayName();
@@ -270,7 +270,7 @@ namespace MMR_Tracker_V3
             }
         }
 
-        public static void PopulateCheckedLocationList(TrackerLocationDataList Data)
+        public static void PopulateCheckedLocationList(this TrackerLocationDataList Data)
         {
             var Groups = Utility.GetCategoriesFromFile(Data.Instance);
             IEnumerable<object> CheckedLocations = Data.DataSets.LocationStateIsChecked.Where(x => !Data.Instance.LocationProxyData.LocationsWithProxys.ContainsKey(x.ID));
@@ -415,7 +415,7 @@ namespace MMR_Tracker_V3
             List<EntranceData.EntranceRandoExit> ValidExits = new List<EntranceData.EntranceRandoExit>();
             foreach (var area in Data.Instance.EntrancePool.AreaList)
             {
-                var CheckLoadingZoneExits = area.Value.RandomizableExits().Where(x => x.Value.CheckState == MiscData.CheckState.Checked && EntranceAppearsinListbox(x.Value, Data.Instance));
+                var CheckLoadingZoneExits = area.Value.RandomizableExits().Where(x => x.Value.CheckState == MiscData.CheckState.Checked && EntranceAppearsInListbox(x.Value, Data.Instance));
                 var FilteredCheckedExits = CheckLoadingZoneExits.Where(x => SearchStringParser.FilterSearch(Data.Instance, x.Value, Data.Filter, x.Value.GetEntranceDisplayName()));
 
                 Data.ItemsFound += CheckLoadingZoneExits.Count();

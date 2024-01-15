@@ -1,11 +1,7 @@
-﻿using static System.Net.Mime.MediaTypeNames;
+﻿using MMR_Tracker_V3;
 using MMR_Tracker_V3.TrackerObjects;
-using MMR_Tracker_V3;
-using static MMR_Tracker_V3.TrackerObjects.InstanceData;
-using static MMR_Tracker_V3.TrackerObjects.MiscData;
 using System.Data;
-using System.ComponentModel;
-using System.Diagnostics;
+using static CLIFrontEnd.InputParser;
 
 namespace CLIFrontEnd
 {
@@ -15,55 +11,77 @@ namespace CLIFrontEnd
         {
             object[] MainMenu = ["New (From File)", "New (From Preset)", "Load"];
             var MenuSelect = new CLISelectMenu(MainMenu);
-            MenuSelect.Run();
 
-            InstanceContainer container = new();
+            InstanceData.InstanceContainer container = new();
 
-            switch(MenuSelect.selectedLineIndex)
+            bool Success = false;
+            string Error = null;
+            while (!Success)
             {
-                case 0:
-                    LoadFromLogicFile(container);
-                    break;
-                case 1:
-                    LoadFromTemplate(container);
-                    break;
-                case 3:
-                    //LoadFromSaveFile(container);
-                    break;
-            }
-            ShowLocations(container);
-
-        }
-
-        private static void LoadFromLogicFile(InstanceContainer container)
-        {
-            var Result = FileSelectDialog.ShowDialog("Logic Files (*.json)\0*.json\0All Files (*.*)\0*.*\0");
-            container.GenerateInstance(File.ReadAllText(Result));
-        }
-
-        public static void ShowLocations(InstanceContainer container)
-        {
-            Console.Clear();
-            container.logicCalculation.CalculateLogic();
-            var Data = new TrackerLocationDataList(new Divider("==========="), container, "");
-            TrackerDataHandeling.PopulateAvailableLocationList(Data);
-            Dictionary<int, object> Locations = Data.FinalData.Select((s, index) => new { s, index }).ToDictionary(x => x.index+1, x => x.s);
-            int Padding = Locations.Keys.Max().ToString().Length;
-            foreach (var LocationObject in Locations)
-            {
-                Console.WriteLine($"{LocationObject.Key.ToString($"D{Padding}")}: {LocationObject.Value}");
+                MenuSelect.Run(string.IsNullOrWhiteSpace(Error) ? [] : [Error]);
+                switch (MenuSelect.selectedLineIndex)
+                {
+                    case 0:
+                        (Success, Error) = LoadFromLogicFile(container);
+                        break;
+                    case 1:
+                        (Success, Error) = LoadFromTemplate(container);
+                        break;
+                    case 3:
+                        (Success, Error) = LoadFromSaveFile(container);
+                        break;
+                }
             }
 
         }
 
-        private static void LoadFromTemplate(InstanceContainer container)
+        private static (bool, string) LoadFromSaveFile(InstanceData.InstanceContainer container)
+        {
+            var Result = NativeFileDialogSharp.Dialog.FileOpen("mmrtsav");
+            if (Result.IsCancelled) { return (false, ""); }
+            if (Result.IsError) { return (false, Result.ErrorMessage); }
+            if (!Path.Exists(Result.Path)) { return (false, $"{Result.Path} was not a valid path"); }
+            var Applied = container.GenerateInstance(File.ReadAllText(Result.Path));
+            return Applied switch
+            {
+                TrackerInstanceCreation.InstanceState.Success => (true, "success"),
+                TrackerInstanceCreation.InstanceState.LogicFailure => (false, "Logic File was invalid"),
+                TrackerInstanceCreation.InstanceState.DictionaryFailure => (false, "Could not find a valid dictionary for logic file"),
+                _ => (false, "Failed to create Instance"),
+            };
+        }
+        private static (bool, string) LoadFromLogicFile(InstanceData.InstanceContainer container)
+        {
+            var Result = NativeFileDialogSharp.Dialog.FileOpen("txt,json");
+            if (Result.IsCancelled) { return (false, ""); }
+            if (Result.IsError) { return (false, Result.ErrorMessage); }
+            if (!Path.Exists(Result.Path)) { return (false, $"{Result.Path} was not a valid path"); }
+            var Applied = container.GenerateInstance(File.ReadAllText(Result.Path));
+            return Applied switch
+            {
+                TrackerInstanceCreation.InstanceState.Success => (true, "success"),
+                TrackerInstanceCreation.InstanceState.LogicFailure => (false, "Logic File was invalid"),
+                TrackerInstanceCreation.InstanceState.DictionaryFailure => (false, "Could not find a valid dictionary for logic file"),
+                _ => (false, "Failed to create Instance"),
+            };
+        }
+
+        private static (bool, string) LoadFromTemplate(InstanceData.InstanceContainer container)
         {
             Console.Clear();
             Console.WriteLine("Getting Presets...");
             var Templates = LogicPresetHandeling.GetLogicPresets();
+            if (Templates.Count < 1) { return (false, "No Presets Available"); }
             var MenuSelect = new CLISelectMenu(Templates);
             var SelectedTemplate = (LogicPresetHandeling.PresetlogicData)MenuSelect.Run();
-            container.GenerateInstance(SelectedTemplate.LogicString, SelectedTemplate.DictionaryString);
+            var Applied = container.GenerateInstance(SelectedTemplate.LogicString, SelectedTemplate.DictionaryString);
+            return Applied switch
+            {
+                TrackerInstanceCreation.InstanceState.Success => (true, "success"),
+                TrackerInstanceCreation.InstanceState.LogicFailure => (false, "Logic File was invalid"),
+                TrackerInstanceCreation.InstanceState.DictionaryFailure => (false, "Could not find a valid dictionary for logic file"),
+                _ => (false, "Failed to create Instance"),
+            };
         }
     }
 }

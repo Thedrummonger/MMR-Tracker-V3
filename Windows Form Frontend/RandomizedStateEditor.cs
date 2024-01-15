@@ -20,14 +20,14 @@ namespace Windows_Form_Frontend
     public partial class RandomizedStateEditor : Form
     {
         MMR_Tracker_V3.TrackerObjects.InstanceData.TrackerInstance _Instance;
-        private TrackerDataHandeling.DataSets _DataSets;
+        private TrackerDataHandling.DataSets _DataSets;
         private bool Updating = false;
         public bool ChangesMade = false;
         public RandomizedStateEditor(MMR_Tracker_V3.TrackerObjects.InstanceData.TrackerInstance instance)
         {
             InitializeComponent();
             _Instance = instance;
-            _DataSets = TrackerDataHandeling.PopulateDataSets(instance);
+            _DataSets = TrackerDataHandling.CreateDataSets(instance);
         }
 
         private void RandomizedStateEditor_Load(object sender, EventArgs e)
@@ -119,7 +119,7 @@ namespace Windows_Form_Frontend
 
         private void UpdateItemSets()
         {
-            _DataSets = TrackerDataHandeling.PopulateDataSets(_Instance);
+            _DataSets = TrackerDataHandling.CreateDataSets(_Instance);
         }
 
         private List<LocationData.LocationObject> CheckedLocationItems = new List<LocationData.LocationObject>();

@@ -544,14 +544,14 @@ namespace Windows_Form_Frontend
                 i.BeginUpdate();
             }
 
-            var dataset = TrackerDataHandeling.PopulateDataSets(InstanceContainer.Instance);
+            var dataset = TrackerDataHandling.CreateDataSets(InstanceContainer.Instance);
 
             bool InMinimized = false;
 
             if (ToUpdate.Contains(LBValidLocations))
             {
                 var Data = new TrackerLocationDataList(WinFormUtils.CreateDivider(LBValidLocations), InstanceContainer, TXTLocSearch.Text, dataset).ShowUnavailable(CHKShowAll.Checked);
-                TrackerDataHandeling.PopulateAvailableLocationList(Data);
+                Data.PopulateAvailableLocationList();
                 lblAvailableLocation.Text = $"Available Locations: {Data.ItemsDisplayed}" + (Data.LocationsFiltered ? $"/{Data.ItemsFound}" : "");
                 foreach (var i in Data.FinalData)
                 {
@@ -564,7 +564,7 @@ namespace Windows_Form_Frontend
             if (ToUpdate.Contains(LBValidEntrances))
             {
                 var Data = new TrackerLocationDataList(WinFormUtils.CreateDivider(LBValidEntrances), InstanceContainer, TXTEntSearch.Text, dataset).ShowUnavailable(CHKShowAll.Checked);
-                TrackerDataHandeling.PopulateAvailableEntraceList(Data);
+                Data.PopulateAvailableEntranceList();
                 lblAvailableEntrances.Text = $"Available Entrances: {Data.ItemsDisplayed}" + (Data.LocationsFiltered ? $"/{Data.ItemsFound}" : "");
                 foreach (var i in Data.FinalData)
                 {
@@ -577,7 +577,7 @@ namespace Windows_Form_Frontend
             if (ToUpdate.Contains(LBCheckedLocations))
             {
                 TrackerLocationDataList Data = new(WinFormUtils.CreateDivider(LBCheckedLocations), InstanceContainer, TXTCheckedSearch.Text, dataset);
-                TrackerDataHandeling.PopulateCheckedLocationList(Data);
+                Data.PopulateCheckedLocationList();
                 lblCheckedLocation.Text = $"Checked Locations: {Data.ItemsDisplayed}" + (Data.LocationsFiltered ? $"/{Data.ItemsFound}" : "");
                 foreach (var i in Data.FinalData)
                 {

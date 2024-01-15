@@ -63,6 +63,18 @@ namespace MMR_Tracker_V3
             return list.GetRange(start, length);
         }
 
+        public static bool IsIntegerRange(this string x, out Tuple<int, int> Values)
+        {
+            Values = new(-1, -1);
+            if (!x.Contains('-')) { return false; }
+            var Segments = x.Split('-');
+            if (Segments.Length != 2) { return false; }
+            if (!int.TryParse(Segments[0], out int RawInt1)) { return false; }
+            if (!int.TryParse(Segments[1], out int RawInt2)) { return false; }
+            Values = new(Math.Min(RawInt1, RawInt2), Math.Max(RawInt1, RawInt2));
+            return true;
+        }
+
         public static string TrimSpaces(this string myString)
         {
             return Regex.Replace(myString, @"\s+", " ");

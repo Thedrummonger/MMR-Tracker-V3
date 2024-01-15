@@ -1,21 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CLIFrontEnd
 {
-    public class CLISelectMenu(IEnumerable<object> Source, IEnumerable<string>? Headers = null)
+    public class CLISelectMenu(IEnumerable<object> Source)
     {
         public object SelectedObject;
         public int selectedLineIndex = 0;
-        public string[] HeaderList = Headers?.ToArray()??[];
+        public string[] HeaderList;
 
         object[] items = Source.ToArray();
-        int previousLineIndex = -1;
-        public object Run()
+        public object Run(IEnumerable<string>? Headers = null)
         {
+            int previousLineIndex = -1;
+            HeaderList = Headers?.ToArray() ?? [];
             ConsoleKey pressedKey;
             do
             {
@@ -32,7 +34,8 @@ namespace CLIFrontEnd
                 else if (pressedKey == ConsoleKey.UpArrow && selectedLineIndex - 1 >= 0)
                     selectedLineIndex--;
 
-            } while (pressedKey != ConsoleKey.Enter);
+            } 
+            while (pressedKey != ConsoleKey.Enter);
             SelectedObject = items[selectedLineIndex];
             return SelectedObject;
         }
@@ -40,11 +43,11 @@ namespace CLIFrontEnd
         {
             Console.Clear();
             foreach (var header in HeaderList) { Console.WriteLine(header); }
-            foreach (var city in items)
+            foreach (var i in items)
             {
-                bool isSelected = city == items[index];
-                //ChangeLineColor(isSelected);
-                Console.WriteLine($"{(isSelected ? "> " : "  ")}{city}");
+                bool isSelected = i == items[index];
+                //ChangeLineColor(isSelected); //For some reason this changes the entire console background to white sometimes
+                Console.WriteLine($"{(isSelected ? "> " : "  ")}{i}");
             }
         }
 

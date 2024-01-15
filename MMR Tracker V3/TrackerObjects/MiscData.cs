@@ -5,7 +5,7 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 using System.Net.Sockets;
-using static MMR_Tracker_V3.TrackerDataHandeling;
+using static MMR_Tracker_V3.TrackerDataHandling;
 using static MMR_Tracker_V3.TrackerObjects.InstanceData;
 
 namespace MMR_Tracker_V3.TrackerObjects
@@ -159,7 +159,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                 Divider = _Divider;
                 InstanceContainer = _InstanceContainer;
                 Filter = _Filter;
-                DataSets = _DataSets is null ? PopulateDataSets(Instance) : _DataSets;
+                DataSets = _DataSets is null ? CreateDataSets(Instance) : _DataSets;
             }  
             public TrackerLocationDataList Reset() { FinalData = []; ItemsFound = 0; ItemsDisplayed = 0; return this; }
             public TrackerLocationDataList PrintReverse(bool reverse = true) { Reverse = reverse; return this; }
