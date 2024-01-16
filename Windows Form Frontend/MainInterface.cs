@@ -560,7 +560,10 @@ namespace Windows_Form_Frontend
             if (ToUpdate.Contains(LBValidLocations))
             {
                 var Data = new TrackerLocationDataList(WinFormUtils.CreateDivider(LBValidLocations), InstanceContainer, TXTLocSearch.Text, dataset).ShowUnavailable(CHKShowAll.Checked);
-                Data.PopulateAvailableLocationList();
+                Data.WriteLocations(MiscData.CheckState.Unchecked, false).WriteLocations(MiscData.CheckState.Unchecked, true);
+                if (InstanceContainer.Instance.CombineEntrancesWithLocations()) { Data.WriteEntrances(MiscData.CheckState.Unchecked, true); }
+                Data.WriteHints(MiscData.CheckState.Unchecked);
+                if (InstanceContainer.Instance.StaticOptions.ShowOptionsInListBox == DisplayListType.Locations) { Data.WriteOptions(); }
                 lblAvailableLocation.Text = $"Available Locations: {Data.ItemsDisplayed}" + (Data.LocationsFiltered ? $"/{Data.ItemsFound}" : "");
                 foreach (var i in Data.FinalData)
                 {
@@ -570,10 +573,11 @@ namespace Windows_Form_Frontend
                 }
                 LBValidLocations.TopIndex = lbLocTop;
             }
-            if (ToUpdate.Contains(LBValidEntrances))
+            if (ToUpdate.Contains(LBValidEntrances) && !InstanceContainer.Instance.CombineEntrancesWithLocations())
             {
                 var Data = new TrackerLocationDataList(WinFormUtils.CreateDivider(LBValidEntrances), InstanceContainer, TXTEntSearch.Text, dataset).ShowUnavailable(CHKShowAll.Checked);
-                Data.PopulateAvailableEntranceList();
+                Data.WriteEntrances(MiscData.CheckState.Unchecked, false);
+                if (InstanceContainer.Instance.StaticOptions.ShowOptionsInListBox == DisplayListType.Entrances) { Data.WriteOptions(); }
                 lblAvailableEntrances.Text = $"Available Entrances: {Data.ItemsDisplayed}" + (Data.LocationsFiltered ? $"/{Data.ItemsFound}" : "");
                 foreach (var i in Data.FinalData)
                 {
@@ -586,7 +590,9 @@ namespace Windows_Form_Frontend
             if (ToUpdate.Contains(LBCheckedLocations))
             {
                 TrackerLocationDataList Data = new(WinFormUtils.CreateDivider(LBCheckedLocations), InstanceContainer, TXTCheckedSearch.Text, dataset);
-                Data.PopulateCheckedLocationList();
+                Data.WriteLocations(MiscData.CheckState.Checked, false).WriteLocations(MiscData.CheckState.Checked, true)
+                    .WriteEntrances(MiscData.CheckState.Checked, true).WriteHints(MiscData.CheckState.Checked).WriteStartingItems().WriteOnlineItems();
+                if (InstanceContainer.Instance.StaticOptions.ShowOptionsInListBox == DisplayListType.Checked) { Data.WriteOptions(); }
                 lblCheckedLocation.Text = $"Checked Locations: {Data.ItemsDisplayed}" + (Data.LocationsFiltered ? $"/{Data.ItemsFound}" : "");
                 foreach (var i in Data.FinalData)
                 {
@@ -634,13 +640,19 @@ namespace Windows_Form_Frontend
             RandomizerOptionsToolStripMenuItem1.DropDownItems.Clear();
             RootTree = new WinFormUtils.DropDownOptionTree() { MenuItem = RandomizerOptionsToolStripMenuItem1 };
 
+            List<DisplayListType?> EnumList = Enum.GetValues(typeof(MiscData.DisplayListType)).Cast<MiscData.DisplayListType?>().ToList();
+            List<DisplayListType?> DisplayListEnumList = [null, .. EnumList];
+            List<string> DisplayListStringList = ["None", .. Enum.GetValues(typeof(MiscData.DisplayListType)).Cast<MiscData.DisplayListType?>().Select(x => x.ToString())];
+
             //Create List Box Toggle
             ToolStripComboBox ListBoxDisplayOptions = new();
-            ListBoxDisplayOptions.Items.AddRange(OptionData.DisplayListBoxes);
-            ListBoxDisplayOptions.SelectedIndex = OptionData.DisplayListBoxes.ToList().IndexOf(InstanceContainer.Instance.StaticOptions.ShowOptionsInListBox);
+            ListBoxDisplayOptions.Items.AddRange(DisplayListStringList.ToArray());
+            if (InstanceContainer.Instance.StaticOptions.ShowOptionsInListBox is null) { ListBoxDisplayOptions.SelectedIndex = 0; }
+            else { ListBoxDisplayOptions.SelectedIndex = EnumList.IndexOf(InstanceContainer.Instance.StaticOptions.ShowOptionsInListBox)+1; }
+            ListBoxDisplayOptions.SelectedIndex = DisplayListEnumList.IndexOf(InstanceContainer.Instance.StaticOptions.ShowOptionsInListBox);
             ListBoxDisplayOptions.SelectedIndexChanged += delegate (object sender, EventArgs e)
             {
-                InstanceContainer.Instance.StaticOptions.ShowOptionsInListBox = ((ToolStripComboBox)sender).SelectedItem.ToString();
+                InstanceContainer.Instance.StaticOptions.ShowOptionsInListBox = DisplayListEnumList[((ToolStripComboBox)sender).SelectedIndex];
                 PrintToListBox();
             };
             ToolStripMenuItem ListBoxDisplay = new() { Text = "Display In List Box" };

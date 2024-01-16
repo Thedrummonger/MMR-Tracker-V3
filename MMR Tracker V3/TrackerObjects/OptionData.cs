@@ -10,8 +10,6 @@ namespace MMR_Tracker_V3.TrackerObjects
 {
     public class OptionData
     {
-        public static readonly string[] DisplayListBoxes = { "None", "Available Locations", "Checked Locations" };
-
         public class ChoiceOption
         {
             public string ID { get; set; }

@@ -159,6 +159,7 @@ namespace MMR_Tracker_V3.TrackerObjects
         {
             public InstanceContainer InstanceContainer;
             public InstanceData.TrackerInstance Instance { get { return InstanceContainer.Instance; } }
+            public Dictionary<string, int> Categories;
             public Divider Divider;
             public string Filter;
             public DataSets DataSets;
@@ -170,12 +171,13 @@ namespace MMR_Tracker_V3.TrackerObjects
             public bool LocationsFiltered { get { return ItemsFound != ItemsDisplayed; } }
             public bool ShowUnavailableEntries { get { return _ShowAll || (Filter.StartsWith("^") && !Filter.StartsWith("^^")) || Filter.StartsWith("^^^"); } }
             public bool ShowInvalidEntries { get { return Filter.StartsWith("^^"); } }
-            public TrackerLocationDataList(Divider _Divider, InstanceContainer _InstanceContainer, string _Filter, DataSets _DataSets = null) 
+            public TrackerLocationDataList(Divider _Divider, InstanceContainer _InstanceContainer, string _Filter, DataSets _DataSets = null, Dictionary<string, int> _Categories = null) 
             {
                 Divider = _Divider;
                 InstanceContainer = _InstanceContainer;
                 Filter = _Filter;
                 DataSets = _DataSets is null ? CreateDataSets(Instance) : _DataSets;
+                Categories = _Categories is null ? Utility.GetCategoriesFromFile(Instance) : _Categories;
             }  
             public TrackerLocationDataList Reset() { FinalData = []; ItemsFound = 0; ItemsDisplayed = 0; return this; }
             public TrackerLocationDataList PrintReverse(bool reverse = true) { Reverse = reverse; return this; }

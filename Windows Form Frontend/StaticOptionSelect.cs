@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static MMR_Tracker_V3.TrackerObjects.MiscData;
 
 namespace Windows_Form_Frontend
 {
@@ -44,7 +45,8 @@ namespace Windows_Form_Frontend
             }
         }
 
-        private List<string> UILayouts = Enum.GetValues(typeof(MiscData.UILayout)).Cast<MiscData.UILayout>().Select(x => x.ToString()).ToList();
+        private List<MiscData.UILayout> UILayoutsENUM = Enum.GetValues(typeof(MiscData.UILayout)).Cast<MiscData.UILayout>().ToList();
+        private List<string> UILayoutsSTRING = Enum.GetValues(typeof(MiscData.UILayout)).Cast<MiscData.UILayout>().Select(x => x.ToString()).ToList();
 
         private List<OptionLine> OptionLines = new List<OptionLine>();
         private void PopulateOptions()
@@ -54,13 +56,13 @@ namespace Windows_Form_Frontend
                 TempOptionFile.CheckForUpdate, (val) => { TempOptionFile.CheckForUpdate = (bool)val; }, 
                 "Should the tracker check for updates and notify you when a new one is available?"));
             OptionLines.Add(new OptionLine("UI Layout",
-                UILayouts[(int)TempOptionFile.WinformData.UILayout], (val) => { UpdateUILayout((string)val); }, 
+                UILayoutsSTRING[(int)TempOptionFile.WinformData.UILayout], (val) => { UpdateUILayout((string)val); }, 
                 "How should the tracker arrange the list boxes.\n\n" +
                 "L = Available Locations\nE = Available Entrances\nC = Checked Locations\nP = Pathfinder\n\n" +
                 "With Entrances Enabled\nVertical:\nLE\nCP\n\nHorizontal\nLC\nEP\n\n" +
                 "With Entrances Disabled\nVertical:\nL\nC\n\nHorizontal\nLC\n\n" +
                 "Compact will only show one list box at a time.\nYou can select which list box is show in the \"View\" tab",
-                UILayouts));
+                UILayoutsSTRING));
             OptionLines.Add(new OptionLine("Max Undo Actions", 
                 TempOptionFile.MaxUndo, (val) => { TempOptionFile.MaxUndo = (int)val; }, 
                 "Max amount of undo states the tracker should store\nThese can get quite large and eat up a lot of memory."));
@@ -106,18 +108,7 @@ namespace Windows_Form_Frontend
 
         private void UpdateUILayout(string val)
         {
-            switch (UILayouts.IndexOf(val))
-            {
-                case 0:
-                    TempOptionFile.WinformData.UILayout = MMR_Tracker_V3.TrackerObjects.MiscData.UILayout.Vertical;
-                    break;
-                case 1:
-                    TempOptionFile.WinformData.UILayout = MMR_Tracker_V3.TrackerObjects.MiscData.UILayout.Horizontal;
-                    break;
-                case 2:
-                    TempOptionFile.WinformData.UILayout = MMR_Tracker_V3.TrackerObjects.MiscData.UILayout.Compact;
-                    break;
-            }
+            TempOptionFile.WinformData.UILayout = UILayoutsENUM[UILayoutsSTRING.IndexOf(val)];
         }
 
         private string UpdateFont(string FontFamily, float? FontSize)

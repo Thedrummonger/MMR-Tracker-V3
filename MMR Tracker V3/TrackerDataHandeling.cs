@@ -166,144 +166,93 @@ namespace MMR_Tracker_V3
             return dataSets;
         }
 
-        private static string GetLocationEntryArea(object Entry, InstanceData.TrackerInstance Instance)
+        private static string GetLocationEntryArea(object Entry)
         {
             if (Entry is LocationData.LocationObject l) { return l.GetDictEntry().Area; }
             else if (Entry is LocationData.LocationProxy p) { return p.Area; }
             return "Error";
         }
 
-        private static bool EntranceAppearsInListbox(EntranceData.EntranceRandoExit Location, InstanceData.TrackerInstance Instance)
+        private static bool EntranceAppearsInListbox(EntranceData.EntranceRandoExit Location)
         {
             return !Location.IsJunk() && !Location.IsUnrandomized(MiscData.UnrandState.Unrand);
         }
 
-        //GetData To Print
         private static bool SortByAvailability(object Entry, TrackerLocationDataList Data)
         {
             if (Data.ShowUnavailableEntries) { return true; }
             if (!Data.Instance.StaticOptions.OptionFile.SeperateUnavailableMarkedLocations) { return true; }
             if (Entry is LocationData.LocationObject l) { return l.Available; }
             else if (Entry is LocationData.LocationProxy p) { return p.ProxyAvailable(); }
+            else if (Entry is EntranceData.EntranceRandoExit e) { return e.Available; }
             return false;
         }
 
-        public static void PopulateAvailableLocationList(this TrackerLocationDataList Data)
+        static bool IsHidden(object obj) { return Utility.DynamicPropertyExist(obj, "Hidden") && (obj as dynamic).Hidden; }
+        
+        
+        //ListBoxBuilder
+        public static TrackerLocationDataList WriteLocations(this TrackerLocationDataList Data, CheckState checkState, bool Hidden)
         {
-            var Groups = Utility.GetCategoriesFromFile(Data.Instance);
-
-            var AvailableProxies = Data.DataSets.ProxyISMarkedOrISAvailableAndUnchecked;
-            if (Data.ShowUnavailableEntries) { AvailableProxies = Data.DataSets.ProxyStateIsNOTChecked; }
-
-            var AvailableLocations = Data.DataSets.LocationISMarkedOrISAvailableAndUnchecked;
-            if (Data.ShowUnavailableEntries) { AvailableLocations = Data.DataSets.LocationStateIsNOTChecked; }
-
-            IEnumerable<object> AvailableLocationsEntries = AvailableLocations.Where(x => !Data.Instance.LocationProxyData.LocationsWithProxys.ContainsKey(x.ID));
-            AvailableLocationsEntries = AvailableLocationsEntries.Concat(AvailableProxies);
-            AvailableLocationsEntries = AvailableLocationsEntries.OrderByDescending(x => SortByAvailability(x, Data))
-                .ThenBy(x => (Groups.ContainsKey(GetLocationEntryArea(x, Data.Instance).ToLower().Trim()) ? Groups[GetLocationEntryArea(x, Data.Instance).ToLower().Trim()] : Data.DataSets.LocationISMarkedOrISAvailableAndUnchecked.Count() + 1))
-                .ThenBy(x => GetLocationEntryArea(x, Data.Instance))
-                .ThenBy(x => Utility.GetLocationDisplayName(x, Data.InstanceContainer)).ToList();
-
-            IEnumerable<object> HiddenLocations = AvailableLocationsEntries.Where(x => Utility.DynamicPropertyExist(x, "Hidden") && (x as dynamic).Hidden).OrderBy(x => Utility.GetLocationDisplayName(x, Data.InstanceContainer));
-            AvailableLocationsEntries = AvailableLocationsEntries.Where(x => !Utility.DynamicPropertyExist(x, "Hidden") || !(x as dynamic).Hidden);
-
-            var AvailableHints = Data.DataSets.HIntISMarkedOrISAvailableAndUnchecked;
-            if (Data.ShowUnavailableEntries) { AvailableHints = Data.DataSets.HintStateIsNOTChecked; }
-
-
-            if (Data.Reverse)
+            List<LocationProxy> Proxies;
+            List<LocationObject> Locations;
+            if (checkState == CheckState.Checked)
             {
-                AvailableLocations.Reverse();
-                WriteHiddenLocations(Data, HiddenLocations);
-                WriteOptions(Data, 1);
-                WriteHints(Data, AvailableHints);
-                WriteEntrances();
-                WriteLocations(Data, AvailableLocationsEntries);
+                Locations = Data.DataSets.LocationStateIsChecked;
+                Proxies = Data.DataSets.ProxyStateIsChecked;
             }
             else
             {
-                WriteLocations(Data, AvailableLocationsEntries);
-                WriteEntrances();
-                WriteHints(Data, AvailableHints);
-                WriteOptions(Data, 1);
-                WriteHiddenLocations(Data, HiddenLocations);
+                Proxies = Data.ShowUnavailableEntries ? Data.DataSets.ProxyStateIsNOTChecked : Data.DataSets.ProxyISMarkedOrISAvailableAndUnchecked;
+                Locations = Data.ShowUnavailableEntries ? Data.DataSets.LocationStateIsNOTChecked : Data.DataSets.LocationISMarkedOrISAvailableAndUnchecked;
             }
 
-            return;
+            IEnumerable<object> LocationsEntries = Locations.Where(x => !Data.Instance.LocationProxyData.LocationsWithProxys.ContainsKey(x.ID));
+            LocationsEntries = LocationsEntries.Concat(Proxies);
+            LocationsEntries = LocationsEntries.OrderByDescending(x => SortByAvailability(x, Data))
+                .ThenBy(x => (Data.Categories.ContainsKey(GetLocationEntryArea(x).ToLower().Trim()) ? Data.Categories[GetLocationEntryArea(x).ToLower().Trim()] : LocationsEntries.Count() + 1))
+                .ThenBy(x => GetLocationEntryArea(x))
+                .ThenBy(x => Utility.GetLocationDisplayName(x, Data.InstanceContainer)).ToList();
 
-            void WriteEntrances()
+            LocationsEntries = LocationsEntries.Where(x => Hidden ? IsHidden(x) : !IsHidden(x));
+
+
+            string CurrentLocation = "";
+            foreach (var obj in LocationsEntries)
             {
-                if (Data.InstanceContainer.Instance.StaticOptions.OptionFile.EntranceRandoFeatures) { return; }
-                PopulateAvailableEntranceList(Data);
-            }
-        }
-
-        public static void PopulateAvailableEntranceList(this TrackerLocationDataList Data)
-        {
-            bool InLocationBox = !Data.Instance.StaticOptions.OptionFile.EntranceRandoFeatures;
-
-            bool SeperateMarked = Data.Instance.StaticOptions.OptionFile.SeperateUnavailableMarkedLocations;
-
-            var Groups = Utility.GetCategoriesFromFile(Data.Instance);
-
-            List<EntranceRandoExit> ValidExits = Data.DataSets.ExitISMarkedOrISAvailableAndUnchecked;
-            if (Data.ShowUnavailableEntries) { ValidExits = Data.DataSets.ExitStateIsNOTChecked; }
-
-            ValidExits = ValidExits.OrderByDescending(x => SeperateMarked && x.Available).ThenBy(x => x.DisplayArea()).ThenBy(x => x.DisplayName).ToList();
-            string CurrentArea = "";
-            foreach(var i in ValidExits)
-            {
-                if (!EntranceAppearsInListbox(i, Data.Instance) && !Data.ShowInvalidEntries) { continue; }
-                Data.ItemsFound++;
-                string ItemArea = InLocationBox ? $"{i.DisplayArea()} Entrances" : i.DisplayArea();
-                i.DisplayName = i.GetEntranceDisplayName();
-                if (!SearchStringParser.FilterSearch(Data.Instance, i, Data.Filter, i.GetEntranceDisplayName())) { continue; }
-                Data.ItemsDisplayed++;
-                if (CurrentArea != ItemArea)
+                var CurrentArea = "";
+                if (obj is LocationData.LocationObject i)
                 {
-                    CurrentArea = ItemArea;
+                    if (!i.AppearsinListbox(Data.ShowInvalidEntries)) { continue; }
+                    i.DisplayName = Utility.GetLocationDisplayName(i, Data.InstanceContainer);
+                    Data.ItemsFound++;
+                    if (!SearchStringParser.FilterSearch(Data.Instance, i, Data.Filter, i.DisplayName)) { continue; }
+                    Data.ItemsDisplayed++;
+                    CurrentArea = i.GetDictEntry().Area;
+                }
+                else if (obj is LocationData.LocationProxy p)
+                {
+                    if (!p.GetReferenceLocation().AppearsinListbox(Data.ShowInvalidEntries)) { continue; }
+                    p.DisplayName = Utility.GetLocationDisplayName(p, Data.InstanceContainer);
+                    Data.ItemsFound++;
+                    if (!SearchStringParser.FilterSearch(Data.Instance, p, Data.Filter, p.DisplayName)) { continue; }
+                    Data.ItemsDisplayed++;
+                    CurrentArea = p.Area;
+                }
+                else { continue; }
+                if (Hidden) { CurrentArea = "Hidden Locations"; }
+                if (CurrentLocation != CurrentArea)
+                {
                     if (Data.FinalData.Count > 0) { Data.FinalData.Add(Data.Divider); }
                     Data.FinalData.Add(new MiscData.Areaheader { Area = CurrentArea });
+                    CurrentLocation = CurrentArea;
                 }
-                Data.FinalData.Add(i);
+                Data.FinalData.Add(obj);
             }
+            return Data;
         }
-
-        public static void PopulateCheckedLocationList(this TrackerLocationDataList Data)
+        public static TrackerLocationDataList WriteOptions(this TrackerLocationDataList Data)
         {
-            var Groups = Utility.GetCategoriesFromFile(Data.Instance);
-            IEnumerable<object> CheckedLocations = Data.DataSets.LocationStateIsChecked.Where(x => !Data.Instance.LocationProxyData.LocationsWithProxys.ContainsKey(x.ID));
-            CheckedLocations = CheckedLocations.Concat(Data.DataSets.ProxyStateIsChecked);
-            CheckedLocations = CheckedLocations
-                .OrderBy(x => (Groups.ContainsKey(GetLocationEntryArea(x, Data.Instance).ToLower().Trim()) ? Groups[GetLocationEntryArea(x, Data.Instance).ToLower().Trim()] : Data.DataSets.LocationISMarkedOrISAvailableAndUnchecked.Count() + 1))
-                .ThenBy(x => GetLocationEntryArea(x, Data.Instance))
-                .ThenBy(x => Utility.GetLocationDisplayName(x, Data.InstanceContainer)).ToList();
-
-            if (Data.Reverse)
-            {
-                CheckedLocations.Reverse();
-                WriteStartingAndOnlineItems(Data);
-                WriteOptions(Data, 2);
-                WriteHints(Data, Data.DataSets.HintStateIsChecked);
-                WriteCheckedEntrances(Data);
-                WriteLocations(Data, CheckedLocations);
-            }
-            else
-            {
-                WriteLocations(Data, CheckedLocations);
-                WriteCheckedEntrances(Data);
-                WriteHints(Data, Data.DataSets.HintStateIsChecked);
-                WriteOptions(Data, 2);
-                WriteStartingAndOnlineItems(Data);
-            }
-        }
-
-        //
-        private static void WriteOptions(TrackerLocationDataList Data, int DisplayListBoxesIndex)
-        {
-            if (Data.Instance.StaticOptions.ShowOptionsInListBox == null || Data.Instance.StaticOptions.ShowOptionsInListBox != OptionData.DisplayListBoxes[DisplayListBoxesIndex]) { return; }
-
             List<dynamic> ChoiceOptions = Data.Instance.ChoiceOptions.Values.Where(x => x.ValueList.Count > 1).Cast<dynamic>().ToList();
             List<dynamic> MultiSelectOptions = Data.Instance.MultiSelectOptions.Values.Cast<dynamic>().ToList();
             List<dynamic> ToggleOptions = Data.Instance.ToggleOptions.Values.Cast<dynamic>().ToList();
@@ -344,9 +293,19 @@ namespace MMR_Tracker_V3
                     }
                 }
             }
+            return Data;
         }
-        private static void WriteHints(TrackerLocationDataList Data, IEnumerable<HintObject> HintList)
+        public static TrackerLocationDataList WriteHints(this TrackerLocationDataList Data, CheckState checkState)
         {
+            List<HintObject> HintList;
+            if (checkState == CheckState.Checked)
+            {
+                HintList = Data.DataSets.HintStateIsChecked;
+            }
+            else
+            {
+                HintList = Data.ShowUnavailableEntries ? Data.DataSets.HintStateIsNOTChecked : Data.DataSets.HIntISMarkedOrISAvailableAndUnchecked;
+            }
             if (HintList.Any())
             {
                 bool DividerCreated = false;
@@ -366,8 +325,42 @@ namespace MMR_Tracker_V3
                     Data.FinalData.Add(i);
                 }
             }
+            return Data;
         }
-        private static void WriteStartingAndOnlineItems(TrackerLocationDataList Data)
+        public static TrackerLocationDataList WriteEntrances(this TrackerLocationDataList Data, CheckState checkState, bool AddAreaEntranceHeader)
+        {
+            List<EntranceRandoExit> ValidExits;
+            if (checkState == CheckState.Checked)
+            {
+                ValidExits = Data.DataSets.ExitStateIsChecked;
+            }
+            else
+            {
+                ValidExits = Data.ShowUnavailableEntries ? Data.DataSets.ExitStateIsNOTChecked : Data.DataSets.ExitISMarkedOrISAvailableAndUnchecked;
+            }
+            ValidExits = ValidExits.OrderByDescending(x => SortByAvailability(x, Data) && x.Available)
+                .ThenBy(x => x.DisplayArea())
+                .ThenBy(x => x.DisplayName).ToList();
+            string CurrentArea = "";
+            foreach (var i in ValidExits)
+            {
+                if (!EntranceAppearsInListbox(i) && !Data.ShowInvalidEntries) { continue; }
+                Data.ItemsFound++;
+                string ItemArea = AddAreaEntranceHeader ? $"{i.DisplayArea()} Entrances" : i.DisplayArea();
+                i.DisplayName = i.GetEntranceDisplayName();
+                if (!SearchStringParser.FilterSearch(Data.Instance, i, Data.Filter, i.GetEntranceDisplayName())) { continue; }
+                Data.ItemsDisplayed++;
+                if (CurrentArea != ItemArea)
+                {
+                    CurrentArea = ItemArea;
+                    if (Data.FinalData.Count > 0) { Data.FinalData.Add(Data.Divider); }
+                    Data.FinalData.Add(new MiscData.Areaheader { Area = CurrentArea });
+                }
+                Data.FinalData.Add(i);
+            }
+            return Data;
+        }
+        public static TrackerLocationDataList WriteStartingItems(this TrackerLocationDataList Data)
         {
             if (Data.DataSets.CurrentStartingItems.Any())
             {
@@ -387,7 +380,10 @@ namespace MMR_Tracker_V3
                     Data.FinalData.Add(Display);
                 }
             }
-
+            return Data;
+        }
+        public static TrackerLocationDataList WriteOnlineItems(this TrackerLocationDataList Data)
+        {
             if (Data.DataSets.OnlineObtainedItems.Any())
             {
                 bool DividerCreated = false;
@@ -409,105 +405,8 @@ namespace MMR_Tracker_V3
                     }
                 }
             }
+            return Data;
         }
-        private static void WriteCheckedEntrances(TrackerLocationDataList Data)
-        {
-            List<EntranceData.EntranceRandoExit> ValidExits = new List<EntranceData.EntranceRandoExit>();
-            foreach (var area in Data.Instance.EntrancePool.AreaList)
-            {
-                var CheckLoadingZoneExits = area.Value.RandomizableExits().Where(x => x.Value.CheckState == MiscData.CheckState.Checked && EntranceAppearsInListbox(x.Value, Data.Instance));
-                var FilteredCheckedExits = CheckLoadingZoneExits.Where(x => SearchStringParser.FilterSearch(Data.Instance, x.Value, Data.Filter, x.Value.GetEntranceDisplayName()));
 
-                Data.ItemsFound += CheckLoadingZoneExits.Count();
-                Data.ItemsDisplayed += FilteredCheckedExits.Count();
-                if (!FilteredCheckedExits.Any()) { continue; }
-                foreach (var i in FilteredCheckedExits)
-                {
-                    i.Value.DisplayName = i.Value.GetEntranceDisplayName();
-                    ValidExits.Add(i.Value);
-                }
-            }
-            ValidExits = ValidExits.OrderBy(x => x.DisplayArea()).ThenBy(x => x.DisplayName).ToList();
-            string CurrentArea = "";
-            foreach (var i in ValidExits)
-            {
-                string ItemArea = $"{i.DisplayArea()} Exits";
-                if (CurrentArea != ItemArea)
-                {
-                    CurrentArea = ItemArea;
-                    if (Data.FinalData.Count > 0) { Data.FinalData.Add(Data.Divider); }
-                    Data.FinalData.Add(new MiscData.Areaheader { Area = CurrentArea });
-                }
-                Data.FinalData.Add(i);
-            }
-        }
-        private static void WriteHiddenLocations(TrackerLocationDataList Data, IEnumerable<object> HiddenLocations)
-        {
-            List<object> TempDataSource = new List<object>();
-            foreach (var obj in HiddenLocations)
-            {
-                var CurrentArea = "";
-                if (obj is LocationData.LocationObject i)
-                {
-                    if (!i.AppearsinListbox(Data.ShowInvalidEntries)) { continue; }
-                    i.DisplayName = Utility.GetLocationDisplayName(i, Data.InstanceContainer);
-                    Data.ItemsFound++;
-                    if (!SearchStringParser.FilterSearch(Data.Instance, i, Data.Filter, i.DisplayName)) { continue; }
-                    Data.ItemsDisplayed++;
-                    CurrentArea = i.GetDictEntry().Area;
-                }
-                else if (obj is LocationData.LocationProxy p)
-                {
-                    if (!p.GetReferenceLocation().AppearsinListbox(Data.ShowInvalidEntries)) { continue; }
-                    p.DisplayName = Utility.GetLocationDisplayName(p, Data.InstanceContainer);
-                    Data.ItemsFound++;
-                    if (!SearchStringParser.FilterSearch(Data.Instance, p, Data.Filter, p.DisplayName)) { continue; }
-                    Data.ItemsDisplayed++;
-                    CurrentArea = p.Area;
-                }
-                else { continue; }
-                TempDataSource.Add(obj);
-            }
-            if (TempDataSource.Any())
-            {
-                if (Data.FinalData.Count > 0) { Data.FinalData.Add(Data.Divider); }
-                Data.FinalData.Add(new MiscData.Areaheader { Area = "Hidden Locations" });
-                Data.FinalData.AddRange(TempDataSource);
-            }
-        }
-        private static void WriteLocations(TrackerLocationDataList Data, IEnumerable<object> AvailableLocationsEntries)
-        {
-            string CurrentLocation = "";
-            foreach (var obj in AvailableLocationsEntries)
-            {
-                var CurrentArea = "";
-                if (obj is LocationData.LocationObject i)
-                {
-                    if (!i.AppearsinListbox(Data.ShowInvalidEntries)) { continue; }
-                    i.DisplayName = Utility.GetLocationDisplayName(i, Data.InstanceContainer);
-                    Data.ItemsFound++;
-                    if (!SearchStringParser.FilterSearch(Data.Instance, i, Data.Filter, i.DisplayName)) { continue; }
-                    Data.ItemsDisplayed++;
-                    CurrentArea = i.GetDictEntry().Area;
-                }
-                else if (obj is LocationData.LocationProxy p)
-                {
-                    if (!p.GetReferenceLocation().AppearsinListbox(Data.ShowInvalidEntries)) { continue; }
-                    p.DisplayName = Utility.GetLocationDisplayName(p, Data.InstanceContainer);
-                    Data.ItemsFound++;
-                    if (!SearchStringParser.FilterSearch(Data.Instance, p, Data.Filter, p.DisplayName)) { continue; }
-                    Data.ItemsDisplayed++;
-                    CurrentArea = p.Area;
-                }
-                else { continue; }
-                if (CurrentLocation != CurrentArea)
-                {
-                    if (Data.FinalData.Count > 0) { Data.FinalData.Add(Data.Divider); }
-                    Data.FinalData.Add(new MiscData.Areaheader { Area = CurrentArea });
-                    CurrentLocation = CurrentArea;
-                }
-                Data.FinalData.Add(obj);
-            }
-        }
     }
 }

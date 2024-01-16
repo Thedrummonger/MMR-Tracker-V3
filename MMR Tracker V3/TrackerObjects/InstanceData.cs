@@ -80,7 +80,7 @@ namespace MMR_Tracker_V3.TrackerObjects
         [Serializable]
         public class Options
         {
-            public string ShowOptionsInListBox { get; set; } = OptionData.DisplayListBoxes[0];
+            public DisplayListType? ShowOptionsInListBox { get; set; } = null;
 
             public HashSet<string> MinimizedHeaders { get; set; } = [];
             public OptionFile OptionFile { get; set; } = new OptionFile();
