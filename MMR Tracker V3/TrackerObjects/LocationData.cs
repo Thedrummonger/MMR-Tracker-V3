@@ -56,6 +56,11 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return;
             }
 
+            public List<ItemData.ItemObject> GetValidItems(string Filter = "", bool ForOtherPlayers = false)
+            {
+                return _parent.GetValidItemsForLocation(this, Filter, ForOtherPlayers);
+            }
+
         }
         [Serializable]
         public class RandomizeditemData

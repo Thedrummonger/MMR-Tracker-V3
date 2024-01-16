@@ -224,7 +224,7 @@ namespace MMR_Tracker_V3
 
             Instance.EntrancePool.RootArea = Instance.LogicDictionary.RootArea??"Root";
 
-            Instance.StaticOptions.MinimizedHeader.Add("Hidden Locations:::LBValidLocations", true);
+            new Areaheader { Area = "Hidden Locations" }.SetMinimized(DisplayListType.Locations, Instance.StaticOptions);
 
             //If the number of randomized entrances is less than 10% of the number of randomized locations, show the entrances in the location box
             if (Instance.EntrancePool.IsEntranceRando)

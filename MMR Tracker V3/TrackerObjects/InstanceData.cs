@@ -82,7 +82,7 @@ namespace MMR_Tracker_V3.TrackerObjects
         {
             public string ShowOptionsInListBox { get; set; } = OptionData.DisplayListBoxes[0];
 
-            public Dictionary<string, bool> MinimizedHeader { get; set; } = [];
+            public HashSet<string> MinimizedHeaders { get; set; } = [];
             public OptionFile OptionFile { get; set; } = new OptionFile();
         }
 

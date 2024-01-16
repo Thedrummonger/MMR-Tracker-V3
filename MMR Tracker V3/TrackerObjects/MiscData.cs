@@ -26,6 +26,22 @@ namespace MMR_Tracker_V3.TrackerObjects
                 if (AddColon) { Display += ":"; }
                 return Display;
             }
+            public string GetHideID(DisplayListType InList)
+            {
+                return Area + ":::" + InList.ToString();
+            }
+            public bool IsMinimized(DisplayListType InList, Options OptionFile)
+            {
+                return OptionFile.MinimizedHeaders.Contains(GetHideID(InList));
+            }
+            public bool SetMinimized(DisplayListType InList, Options OptionFile)
+            {
+                return OptionFile.MinimizedHeaders.Add(GetHideID(InList));
+            }
+            public bool RemoveMinimized(DisplayListType InList, Options OptionFile)
+            {
+                return OptionFile.MinimizedHeaders.Remove(GetHideID(InList));
+            }
         }
         public class OptionComboboxItem
         {
@@ -212,7 +228,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             set
         }
 
-        public enum CompactViewFocus
+        public enum DisplayListType
         {
             Locations,
             Checked,

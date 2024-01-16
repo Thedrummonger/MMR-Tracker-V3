@@ -149,11 +149,5 @@ namespace Windows_Form_Frontend
             if (longest > 0)
                 C.DropDownWidth = (int)longest;
         }
-
-        public static bool ShouldShowEntranceListBoxes(InstanceContainer InstanceContainer)
-        {
-            if (InstanceContainer == null || InstanceContainer.Instance == null) { return false; }
-            return InstanceContainer.Instance.StaticOptions.OptionFile.EntranceRandoFeatures && (InstanceContainer.Instance.EntrancePool.IsEntranceRando || InstanceContainer.Instance.EntrancePool.CheckForRandomEntrances());
-        }
     }
 }

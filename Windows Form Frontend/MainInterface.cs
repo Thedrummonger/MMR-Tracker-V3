@@ -16,6 +16,7 @@ using System.Windows.Forms;
 using static MMR_Tracker_V3.TrackerObjects.MiscData;
 using static MMR_Tracker_V3.TrackerObjects.InstanceData;
 using MMR_Tracker_V3.Logic;
+using Microsoft.VisualBasic;
 
 namespace Windows_Form_Frontend
 {
@@ -35,7 +36,7 @@ namespace Windows_Form_Frontend
         List<Control> TLPEntranceControls = new List<Control>();
         List<Control> TLPPathfinderControls = new List<Control>();
 
-        MiscData.CompactViewFocus ViewFocus = CompactViewFocus.Locations;
+        MiscData.DisplayListType ViewFocus = DisplayListType.Locations;
 
         public MainInterface(bool _SubForm = false)
         {
@@ -109,11 +110,11 @@ namespace Windows_Form_Frontend
         {
             Stopwatch TimeTotalItemSelect = new Stopwatch();
             Utility.TimeCodeExecution(TimeTotalItemSelect, "Saving Tracker State (UTF8)", 1);
-            if (sender == undoToolStripMenuItem && InstanceContainer.UndoStringList.Any())
+            if (sender == undoToolStripMenuItem)
             {
                 InstanceContainer.DoUndo();
             }
-            else if (sender == redoToolStripMenuItem && InstanceContainer.RedoStringList.Any())
+            else if (sender == redoToolStripMenuItem)
             {
                 InstanceContainer.DoRedo();
             }
@@ -254,7 +255,11 @@ namespace Windows_Form_Frontend
             }
             else if (entry is MiscData.Areaheader ah)
             {
-                bool IsMinimizedArea = InstanceContainer.Instance.StaticOptions.MinimizedHeader.ContainsKey(ah.Area + ":::" + LB.Name);
+                DisplayListType? displayList = null;
+                if (LB == LBValidLocations) { displayList = DisplayListType.Locations; }
+                if (LB == LBValidEntrances) { displayList = DisplayListType.Entrances; }
+                if (LB == LBCheckedLocations) { displayList = DisplayListType.Checked; }
+                bool IsMinimizedArea = displayList is not null && ah.IsMinimized((DisplayListType)displayList, InstanceContainer.Instance.StaticOptions);
                 checkState = MiscData.CheckState.Marked;
                 starred = IsMinimizedArea;
                 Available = !IsMinimizedArea;
@@ -313,15 +318,19 @@ namespace Windows_Form_Frontend
         private void LBValidLocations_MouseUp(object sender, MouseEventArgs e)
         {
             var LB = sender as ListBox;
+            DisplayListType? displayList = null;
+            if (LB == LBValidLocations) { displayList = DisplayListType.Locations; }
+            if (LB == LBValidEntrances) { displayList = DisplayListType.Entrances; }
+            if (LB == LBCheckedLocations) { displayList = DisplayListType.Checked; }
             int index = LB.IndexFromPoint(e.Location);
             if (index < 0) { return; }
             if (e.Button == MouseButtons.Middle)
             {
-                if (LB.Items[index] is MiscData.Areaheader ah)
+                if (LB.Items[index] is MiscData.Areaheader ah && displayList is not null)
                 {
-                    string Area = ah.Area + ":::" + (sender as ListBox).Name;
-                    if (InstanceContainer.Instance.StaticOptions.MinimizedHeader.ContainsKey(Area)) { InstanceContainer.Instance.StaticOptions.MinimizedHeader.Remove(Area); }
-                    else { InstanceContainer.Instance.StaticOptions.MinimizedHeader[Area] = true; Debug.WriteLine($"Minimizing Area[{Area}]"); }
+                    bool IsMinimized = ah.IsMinimized((DisplayListType)displayList, InstanceContainer.Instance.StaticOptions);
+                    if (IsMinimized) { ah.RemoveMinimized((DisplayListType)displayList, InstanceContainer.Instance.StaticOptions); }
+                    else { ah.SetMinimized((DisplayListType)displayList, InstanceContainer.Instance.StaticOptions); }
                     PrintToListBox();
                     return;
                 }
@@ -428,27 +437,27 @@ namespace Windows_Form_Frontend
             }
             else if (InstanceContainer.Instance.StaticOptions.OptionFile.WinformData.UILayout == UILayout.Compact)
             {
-                if (!WinFormUtils.ShouldShowEntranceListBoxes(InstanceContainer) && ViewFocus == CompactViewFocus.Entrances) { ViewFocus = CompactViewFocus.Locations; }
+                if (InstanceContainer.Instance.CombineEntrancesWithLocations() && ViewFocus == DisplayListType.Entrances) { ViewFocus = DisplayListType.Locations; }
 
-                SetObjectVisibility(ViewFocus == CompactViewFocus.Locations, ViewFocus == CompactViewFocus.Checked, ViewFocus == CompactViewFocus.Entrances, false);
+                SetObjectVisibility(ViewFocus == DisplayListType.Locations, ViewFocus == DisplayListType.Checked, ViewFocus == DisplayListType.Entrances, false);
                 tlpMaster.ColumnStyles[0] = new ColumnStyle(SizeType.Percent, 100F);
                 tlpMaster.ColumnStyles[1] = new ColumnStyle(SizeType.Percent, 0F);
                 tlpMaster.RowStyles[0] = new RowStyle(SizeType.Percent, 100F);
                 tlpMaster.RowStyles[1] = new RowStyle(SizeType.Percent, 0F);
                 switch (ViewFocus)
                 {
-                    case CompactViewFocus.Locations:
+                    case DisplayListType.Locations:
                         tlpLocations.Controls.AddRange(TLPLocationsControls.ToArray());
                         break;
-                    case CompactViewFocus.Checked:
+                    case DisplayListType.Checked:
                         tlpLocations.Controls.AddRange(TLPCheckedControls.ToArray());
                         break;
-                    case CompactViewFocus.Entrances:
+                    case DisplayListType.Entrances:
                         tlpLocations.Controls.AddRange(TLPEntranceControls.ToArray());
                         break;
                 }
             }
-            else if (WinFormUtils.ShouldShowEntranceListBoxes(InstanceContainer))
+            else if (!InstanceContainer.Instance.CombineEntrancesWithLocations())
             {
                 SetObjectVisibility(true, true, true, true);
                 tlpMaster.RowStyles[0] = new RowStyle(SizeType.Percent, 50F);
@@ -555,8 +564,8 @@ namespace Windows_Form_Frontend
                 lblAvailableLocation.Text = $"Available Locations: {Data.ItemsDisplayed}" + (Data.LocationsFiltered ? $"/{Data.ItemsFound}" : "");
                 foreach (var i in Data.FinalData)
                 {
-                    if (i is MiscData.Areaheader area) { InMinimized = InstanceContainer.Instance.StaticOptions.MinimizedHeader.ContainsKey(area.Area + ":::" + (LBValidLocations).Name); }
-                    if (InMinimized && i is not MiscData.Areaheader) { continue; }
+                    if (i is MiscData.Areaheader area) { InMinimized = area.IsMinimized(DisplayListType.Locations, InstanceContainer.Instance.StaticOptions); }
+                    else if (InMinimized) { continue; }
                     LBValidLocations.Items.Add(i);
                 }
                 LBValidLocations.TopIndex = lbLocTop;
@@ -568,8 +577,8 @@ namespace Windows_Form_Frontend
                 lblAvailableEntrances.Text = $"Available Entrances: {Data.ItemsDisplayed}" + (Data.LocationsFiltered ? $"/{Data.ItemsFound}" : "");
                 foreach (var i in Data.FinalData)
                 {
-                    if (i is MiscData.Areaheader area) { InMinimized = InstanceContainer.Instance.StaticOptions.MinimizedHeader.ContainsKey(area.Area + ":::" + (LBValidEntrances).Name); }
-                    if (InMinimized && i is not MiscData.Areaheader) { continue; }
+                    if (i is MiscData.Areaheader area) { InMinimized = area.IsMinimized(DisplayListType.Entrances, InstanceContainer.Instance.StaticOptions); }
+                    else if (InMinimized) { continue; }
                     LBValidEntrances.Items.Add(i);
                 }
                 LBValidEntrances.TopIndex = lbEntTop;
@@ -581,8 +590,8 @@ namespace Windows_Form_Frontend
                 lblCheckedLocation.Text = $"Checked Locations: {Data.ItemsDisplayed}" + (Data.LocationsFiltered ? $"/{Data.ItemsFound}" : "");
                 foreach (var i in Data.FinalData)
                 {
-                    if (i is MiscData.Areaheader area) { InMinimized = InstanceContainer.Instance.StaticOptions.MinimizedHeader.ContainsKey(area.Area + ":::" + (LBCheckedLocations).Name); }
-                    if (InMinimized && i is not MiscData.Areaheader) { continue; }
+                    if (i is MiscData.Areaheader area) { InMinimized = area.IsMinimized(DisplayListType.Checked, InstanceContainer.Instance.StaticOptions); }
+                    else if (InMinimized) { continue; }
                     LBCheckedLocations.Items.Add(i);
                 }
                 LBCheckedLocations.TopIndex = lbCheckTop;
@@ -605,13 +614,14 @@ namespace Windows_Form_Frontend
             PathFinderToolStripMenuItem.Visible = (InstanceContainer.Instance != null && InstanceContainer.Instance.EntrancePool.IsEntranceRando);
 
             viewToolStripMenuItem.Visible = (InstanceContainer.Instance != null && InstanceContainer.Instance.StaticOptions.OptionFile.WinformData.UILayout == UILayout.Compact);
-            entrancesToolStripMenuItem.Visible = WinFormUtils.ShouldShowEntranceListBoxes(InstanceContainer);
-
+            
             if (InstanceContainer.Instance == null) { return; }
 
-            locationsToolStripMenuItem.Checked = ViewFocus == CompactViewFocus.Locations;
-            entrancesToolStripMenuItem.Checked = ViewFocus == CompactViewFocus.Entrances;
-            checkedToolStripMenuItem.Checked = ViewFocus == CompactViewFocus.Checked;
+            entrancesToolStripMenuItem.Visible = !InstanceContainer.Instance.CombineEntrancesWithLocations();
+
+            locationsToolStripMenuItem.Checked = ViewFocus == DisplayListType.Locations;
+            entrancesToolStripMenuItem.Checked = ViewFocus == DisplayListType.Entrances;
+            checkedToolStripMenuItem.Checked = ViewFocus == DisplayListType.Checked;
 
             SaveAsToolStripMenuItem.Visible = (File.Exists(InstanceContainer.CurrentSavePath));
             importSpoilerLogToolStripMenuItem.Text = (InstanceContainer.Instance.SpoilerLog != null) ? "Remove Spoiler Log" : "Import Spoiler Log";
@@ -780,10 +790,16 @@ namespace Windows_Form_Frontend
         private void ShowContextMenu(ListBox listBox)
         {
             string LogicID = null;
+            DisplayListType? displayList = null;
             if (listBox.SelectedItem is EntranceData.EntranceRandoExit LogicexitObject) { LogicID = InstanceContainer.Instance.GetLogicNameFromExit(LogicexitObject); }
             if (listBox.SelectedItem is LocationData.LocationObject LogicLocationObject) { LogicID = LogicLocationObject.ID; }
             if (listBox.SelectedItem is HintData.HintObject LogicHintObject) { LogicID = LogicHintObject.ID; }
             if (listBox.SelectedItem is LocationData.LocationProxy LogicProxyObject) { LogicID = LogicProxyObject.LogicInheritance ?? LogicProxyObject.ReferenceID; }
+
+            if (listBox == LBValidLocations) { displayList = DisplayListType.Locations; }
+            if (listBox == LBValidEntrances) { displayList = DisplayListType.Entrances; }
+            if (listBox == LBCheckedLocations) { displayList = DisplayListType.Checked; }
+
 
             ContextMenuStrip contextMenuStrip = new();
 
@@ -801,7 +817,7 @@ namespace Windows_Form_Frontend
             }
 
             //Area Object Functions
-            if (listBox.SelectedItem is MiscData.Areaheader AreaObject)
+            if (listBox.SelectedItem is MiscData.Areaheader AreaObject && displayList is not null)
             {
                 //Filter By Area
                 var TagetTextBox = listBox == LBValidLocations ? TXTLocSearch : (listBox == LBValidEntrances ? TXTEntSearch : (listBox == LBCheckedLocations ? TXTCheckedSearch : null));
@@ -810,13 +826,13 @@ namespace Windows_Form_Frontend
                 {
                     TagetTextBox.Text = "#" + AreaObject.Area;
                 };
-                string Area = AreaObject.Area + ":::" + listBox.Name;
-                string HideAction = InstanceContainer.Instance.StaticOptions.MinimizedHeader.ContainsKey(Area) ? "Expand Area" : "Minimize Area";
+                bool IsMinimized = AreaObject.IsMinimized((DisplayListType)displayList, InstanceContainer.Instance.StaticOptions);
+                string HideAction = IsMinimized ? "Expand Area" : "Minimize Area";
                 ToolStripItem HideAreaContextItem = contextMenuStrip.Items.Add(HideAction);
                 HideAreaContextItem.Click += (sender, e) =>
                 {
-                    if (InstanceContainer.Instance.StaticOptions.MinimizedHeader.ContainsKey(Area)) { InstanceContainer.Instance.StaticOptions.MinimizedHeader.Remove(Area); }
-                    else { InstanceContainer.Instance.StaticOptions.MinimizedHeader[Area] = true; }
+                    if (IsMinimized) { AreaObject.RemoveMinimized((DisplayListType)displayList, InstanceContainer.Instance.StaticOptions); }
+                    else { AreaObject.SetMinimized((DisplayListType)displayList, InstanceContainer.Instance.StaticOptions); }
                     PrintToListBox();
                 };
             }
@@ -1220,9 +1236,9 @@ namespace Windows_Form_Frontend
 
         private void ViewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (sender == locationsToolStripMenuItem) { ViewFocus = CompactViewFocus.Locations; }
-            else if (sender == entrancesToolStripMenuItem) { ViewFocus = CompactViewFocus.Entrances; }
-            else if (sender == checkedToolStripMenuItem) { ViewFocus = CompactViewFocus.Checked; }
+            if (sender == locationsToolStripMenuItem) { ViewFocus = DisplayListType.Locations; }
+            else if (sender == entrancesToolStripMenuItem) { ViewFocus = DisplayListType.Entrances; }
+            else if (sender == checkedToolStripMenuItem) { ViewFocus = DisplayListType.Checked; }
             UpdateUI();
             AlignUIElements();
         }

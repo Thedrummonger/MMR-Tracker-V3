@@ -364,5 +364,11 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
                 .Concat(Instance.MultiSelectOptions.Values.SelectMany(x => x.GetEnabledValues()).Select(x => x.Actions))
                 .ToList();
         }
+
+        public static bool CombineEntrancesWithLocations(this InstanceData.TrackerInstance Instance)
+        {
+            if (Instance == null) { return true; }
+            return !Instance.StaticOptions.OptionFile.EntranceRandoFeatures || !Instance.EntrancePool.IsEntranceRando || !Instance.EntrancePool.CheckForRandomEntrances();
+        }
     }
 }

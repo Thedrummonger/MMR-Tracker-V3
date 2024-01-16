@@ -29,6 +29,7 @@ namespace MMR_Tracker_V3
 
         public static void DoUndo(this InstanceContainer Container)
         {
+            if (Container.UndoStringList.Count == 0) { return; }
             string CurrentState = Container.Instance.ToJson(JSONType.UTF8);
             Container.LoadSerializedInstance(Container.UndoStringList[^1]);
             Container.RedoStringList.Add(CurrentState);
@@ -36,6 +37,7 @@ namespace MMR_Tracker_V3
         }
         public static void DoRedo(this InstanceContainer Container)
         {
+            if (Container.RedoStringList.Count == 0) { return; }
             string CurrentState = Container.Instance.ToJson(JSONType.UTF8);
             Container.LoadSerializedInstance(Container.RedoStringList[^1]);
             Container.UndoStringList.Add(CurrentState);
