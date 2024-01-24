@@ -1,6 +1,7 @@
 ﻿using MMR_Tracker_V3.TrackerObjectExtentions;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -101,9 +102,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                 {
                     ID = ID,
                     ReferenceID = Parent.ID,
-                    Area = Area,
-                    LogicInheritance = LogicInheritance,
-                    Name = Name
+                    DictInd = Parent.LocationProxys.IndexOf(this)
                 };
             }
 

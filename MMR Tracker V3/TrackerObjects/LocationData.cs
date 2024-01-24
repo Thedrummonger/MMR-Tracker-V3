@@ -15,24 +15,10 @@ namespace MMR_Tracker_V3.TrackerObjects
     public class LocationData
     {
         [Serializable]
-        public class LocationObject(InstanceData.TrackerInstance Parent)
+        public class LocationObject(InstanceData.TrackerInstance Parent) : CheckableLocation(Parent)
         {
-            private InstanceData.TrackerInstance _parent = Parent;
-            public InstanceData.TrackerInstance GetParent() { return _parent; }
-            public void SetParent(InstanceData.TrackerInstance parent) { _parent = parent; }
-
-            public string ID { get; set; }
             public RandomizeditemData Randomizeditem { get; set; } = new RandomizeditemData();
-            public bool Available { get; set; } = false;
-            public CheckState CheckState { get; set; } = CheckState.Unchecked;
-            public bool Starred { get; set; }
-            public bool Hidden { get; set; } = false;
-            public int? Price { get; set; } = null;
-            public char? Currency { get; set; } = null;
-            public string DisplayName { get; set; }
-            public RandomizedState RandomizedState { get; set; } = RandomizedState.Randomized;
             public string SingleValidItem { get; set; } = null;
-            public InstanceData.ReferenceData referenceData { get; set; } = new InstanceData.ReferenceData();
             public LogicDictionaryData.DictionaryLocationEntries GetDictEntry()
             {
                 return GetParent().LogicDictionary.LocationList[ID];
@@ -42,23 +28,10 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 return DisplayName ?? ID;
             }
-            public void GetPrice(out int outPrice, out char outCurrency)
-            {
-                outPrice = Price??-1;
-                outCurrency = Currency??'$';
-                return;
-            }
-            public void SetPrice(int inPrice, char inCurrency = '\0')
-            {
-                if (inCurrency == '\0') { inCurrency = Currency??'$'; }
-                Price = inPrice < 0 ? null : inPrice;
-                Currency = inCurrency;
-                return;
-            }
 
             public List<ItemData.ItemObject> GetValidItems(string Filter = "", bool ForOtherPlayers = false)
             {
-                return _parent.GetValidItemsForLocation(this, Filter, ForOtherPlayers);
+                return GetParent().GetValidItemsForLocation(this, Filter, ForOtherPlayers);
             }
 
         }
@@ -77,46 +50,53 @@ namespace MMR_Tracker_V3.TrackerObjects
 
         }
 
-        public class LocationProxy(InstanceData.TrackerInstance Parent)
+        public class LocationProxy(InstanceData.TrackerInstance Parent) : CheckableLocation(Parent)
         {
-            private InstanceData.TrackerInstance _parent = Parent;
-            public InstanceData.TrackerInstance GetParent() { return _parent; }
-            public void SetParent(InstanceData.TrackerInstance parent) { _parent = parent; }
-
             public string ReferenceID { get; set; }
-            public string ID { get; set; }
-            public string Name { get; set; }
-            public bool Starred { get; set; }
-            public bool Hidden { get; set; } = false;
-            public string Area { get; set; }
-            public string LogicInheritance { get; set; } = null;
-            public string DisplayName { get; set; }
+            public int DictInd { get; set; } = -1;
             public override string ToString()
             {
-                return DisplayName??Name;
+                return DisplayName??GetDictEntry().Name??ID;
             }
             public bool ProxyAvailable()
             {
-                var LogicId = LogicInheritance ?? ReferenceID;
+                var LogicId = GetDictEntry().LogicInheritance ?? ReferenceID;
                 bool Literal = LogicId.IsLiteralID(out LogicId);
-                var type = _parent.GetLocationEntryType(LogicId, Literal, out _);
+                var type = GetParent().GetLocationEntryType(LogicId, Literal, out _);
                 return type switch
                 {
-                    LogicEntryType.location => _parent.GetLocationByID(LogicId).Available,
-                    LogicEntryType.macro => _parent.GetMacroByID(LogicId).Aquired,
+                    LogicEntryType.location => GetParent().GetLocationByID(LogicId).Available,
+                    LogicEntryType.macro => GetParent().GetMacroByID(LogicId).Aquired,
                     _ => false,
                 };
             }
             public LocationObject GetReferenceLocation()
             {
-                return (_parent.GetLocationByID(ReferenceID));
+                return (GetParent().GetLocationByID(ReferenceID));
             }
             public object GetLogicInheritance()
             {
-                var LogicId = LogicInheritance ?? ReferenceID;
+                var LogicId = GetDictEntry().LogicInheritance ?? ReferenceID;
                 bool Literal = LogicId.IsLiteralID(out LogicId);
-                _parent.GetLocationEntryType(LogicId, Literal, out object Result);
+                GetParent().GetLocationEntryType(LogicId, Literal, out object Result);
                 return Result;
+            }
+            public LogicDictionaryData.DictLocationProxy GetDictEntry()
+            {
+                var RefLocDict = GetReferenceLocation().GetDictEntry();
+                if (DictInd > -1) { return RefLocDict.LocationProxys[DictInd]; }
+                var Entry = RefLocDict.LocationProxys.First(x => x.ID == this.ID);
+                return Entry;
+            }
+            public new void GetPrice(out int outPrice, out char outCurrency)
+            {
+                dynamic Target = GetLogicInheritance();
+                Target.GetPrice(out outPrice, out outCurrency);
+            }
+            public new void SetPrice(int inPrice, char inCurrency = '\0')
+            {
+                dynamic Target = GetLogicInheritance();
+                Target.SetPrice(inPrice, inCurrency);
             }
         }
     }

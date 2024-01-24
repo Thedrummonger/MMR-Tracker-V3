@@ -223,47 +223,6 @@ namespace MMR_Tracker_V3
             IsTrick = false
         };
 
-        public static string GetLocationDisplayName(dynamic obj, InstanceData.InstanceContainer instance)
-        {
-            dynamic PriceData;
-            LocationData.LocationObject Location;
-            string LocationDisplay, RandomizedItemDisplay, PriceDisplay, StarredDisplay, ForPlayer;
-            bool Available;
-            if (obj is LocationData.LocationObject lo) 
-            {
-                Location = lo;
-                PriceData = lo;
-                LocationDisplay = Location.GetDictEntry()?.GetName();
-                StarredDisplay = lo.Starred ? "*" : "";
-            }
-            else if (obj is LocationData.LocationProxy po)
-            {
-                Location = po.GetReferenceLocation();
-                PriceData = po.GetLogicInheritance();
-                LocationDisplay = po.Name ?? Location.GetDictEntry()?.GetName();
-                StarredDisplay = po.Starred ? "*" : "";
-            }
-            else { return obj.ToString(); }
-
-            if (Utility.DynamicPropertyExist(PriceData, "Available")) { Available = PriceData.Available; }
-            else if(Utility.DynamicPropertyExist(PriceData, "Aquired")) { Available = PriceData.Aquired; }
-            else { Available = false; ; }
-
-            PriceData.GetPrice(out int p, out char c);
-            PriceDisplay = p < 0 || (!Available) ? "" : $" [{c}{p}]";
-            RandomizedItemDisplay = instance.Instance.GetItemByID(Location.Randomizeditem.Item)?.GetDictEntry()?.GetName() ?? Location.Randomizeditem.Item;
-
-            ForPlayer = Location.Randomizeditem.Item is not null && Location.Randomizeditem.OwningPlayer >= 0 ? $" [Player: {Location.Randomizeditem.OwningPlayer}]" : "";
-
-            return Location.CheckState switch
-            {
-                MiscData.CheckState.Marked => $"{LocationDisplay}: {RandomizedItemDisplay}{ForPlayer}{StarredDisplay}{PriceDisplay}",
-                MiscData.CheckState.Unchecked => $"{LocationDisplay}{StarredDisplay}",
-                MiscData.CheckState.Checked => $"{RandomizedItemDisplay}{ForPlayer}{PriceDisplay}: {LocationDisplay}{StarredDisplay}",
-                _ => obj.ToString(),
-            };
-        }
-
         public static bool DynamicPropertyExist(dynamic Object, string name)
         {
             if (Object is null) { return false; }
@@ -649,8 +608,8 @@ namespace MMR_Tracker_V3
                 var LocReference = instance.GetLocationByID(locationProxy.ReferenceID);
                 var DictData = LocReference.GetDictEntry();
                 OutObject.ID = locationProxy.ID;
-                OutObject.Area = locationProxy.Area;
-                OutObject.Name = locationProxy.Name;
+                OutObject.Area = locationProxy.GetDictEntry().Area;
+                OutObject.Name = locationProxy.GetDictEntry().Name;
                 OutObject.OriginalItem = DictData.OriginalItem;
                 OutObject.Randomizeditem = LocReference?.Randomizeditem.Item;
                 OutObject.Starred = LocReference?.Starred??false;
@@ -698,7 +657,7 @@ namespace MMR_Tracker_V3
             }
             else if (Object is EntranceData.EntranceRandoExit ExitObject)
             {
-                OutObject.ID = instance.GetLogicNameFromExit(ExitObject);
+                OutObject.ID = ExitObject.GetLogicID();
                 OutObject.Area = ExitObject.DisplayArea();
                 OutObject.Name = ExitObject.ID;
                 OutObject.OriginalItem = ExitObject.EntrancePair == null ? "One Way" : $"{ExitObject.EntrancePair.Area} To {ExitObject.EntrancePair.Exit}";

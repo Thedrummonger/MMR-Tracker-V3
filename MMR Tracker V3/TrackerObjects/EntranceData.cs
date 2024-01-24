@@ -37,12 +37,11 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return AreaValid && ExitValid;
             }
         }
-        public class EntranceRandoArea(EntrancePool Parent)
+        public class EntranceRandoArea(InstanceData.TrackerInstance Parent)
         {
-            private EntrancePool _parent = Parent;
-            public EntrancePool GetParent() { return _parent; }
-            public InstanceData.TrackerInstance GetParentInstance() { return _parent.GetParent(); }
-            public void SetParent(EntrancePool parent) { _parent = parent; }
+            private InstanceData.TrackerInstance _parent = Parent;
+            public InstanceData.TrackerInstance GetParent() { return _parent; }
+            public void SetParent(InstanceData.TrackerInstance parent) { _parent = parent; }
 
             public string ID { get; set; }
             public int ExitsAcessibleFrom { get; set; } = 0;
@@ -61,35 +60,38 @@ namespace MMR_Tracker_V3.TrackerObjects
                 return Exits.Where(x => !x.Value.IsRandomizableEntrance()).ToDictionary(x => x.Key, v => v.Value);
             }
         }
-        public class EntranceRandoExit(EntranceRandoArea Parent)
+        public class EntranceRandoExit(InstanceData.TrackerInstance Parent, EntranceRandoArea ParentArea) : CheckableLocation(Parent)
         {
-            private EntranceRandoArea _parent = Parent;
-            public EntranceRandoArea GetParent() { return _parent; }
-            public void SetParent(EntranceRandoArea parent) { _parent = parent; }
-            public InstanceData.TrackerInstance GetParentInstance() { return _parent.GetParent().GetParent(); }
-            public EntrancePool GetParentEntrancePool() { return _parent.GetParent(); }
+            private EntranceRandoArea _parentArea = ParentArea;
+            public EntranceRandoArea GetParentArea() { return _parentArea; }
+            public void SetParent(EntranceRandoArea parent) 
+            {
+                SetParent(parent.GetParent());
+                _parentArea = parent; 
+            }
 
             public string ParentAreaID { get; set; }
-            public string ID { get; set; }
-            public bool Available { get; set; } = false;
-            public bool Starred { get; set; } = false;
             public bool IsWarp { get; set; } = false;
-            public CheckState CheckState { get; set; } = CheckState.Unchecked;
-            public RandomizedState RandomizedState { get; set; } = RandomizedState.Randomized;
             public EntranceRandoDestination DestinationExit { get; set; }
             public EntranceRandoDestination SpoilerDefinedDestinationExit { get; set; }
             public EntranceAreaPair EntrancePair { get; set; }
-            public string DisplayName { get; set; }
-            public InstanceData.ReferenceData referenceData { get; set; } = new InstanceData.ReferenceData();
 
             public LogicDictionaryData.DictionaryEntranceEntries GetDictEntry()
             {
-                return GetParentInstance().LogicDictionary.EntranceList[GetParentInstance().GetLogicNameFromExit(this)];
+                return GetParent().LogicDictionary.EntranceList[GetLogicID()];
             }
 
             public override string ToString()
             {
                 return DisplayName ?? ID;
+            }
+            public string GetLogicID()
+            {
+                return GetParent().InstanceReference.EntranceStringIDToLogicID[GetStringID()];
+            }
+            public string GetStringID()
+            {
+                return $"{this.ParentAreaID} X {this.ID}";
             }
         }
         public class EntranceRandoDestination
@@ -100,11 +102,27 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 return $"{region} <= {from}";
             }
+            public string GetLogicID(InstanceData.TrackerInstance instance)
+            {
+                return instance.InstanceReference.EntranceStringIDToLogicID[GetStringID()];
+            }
+            public string GetStringID()
+            {
+                return $"{region} X {from}";
+            }
         }
         public class EntranceAreaPair
         {
             public string Area { get; set; }
             public string Exit { get; set; }
+            public string GetLogicID(InstanceData.TrackerInstance instance)
+            {
+                return instance.InstanceReference.EntranceStringIDToLogicID[GetStringID()];
+            }
+            public string GetStringID()
+            {
+                return $"{Area} X {Exit}";
+            }
         }
     }
 

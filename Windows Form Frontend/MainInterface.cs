@@ -543,7 +543,7 @@ namespace Windows_Form_Frontend
             var lbEntTop = LBValidEntrances.TopIndex;
             var lbCheckTop = LBCheckedLocations.TopIndex;
 
-            if (ToUpdate == null) { ToUpdate = new List<ListBox> { LBCheckedLocations, LBValidEntrances, LBValidLocations }; }
+            ToUpdate ??= [LBCheckedLocations, LBValidEntrances, LBValidLocations];
 
             foreach (var i in ToUpdate)
             {
@@ -803,10 +803,10 @@ namespace Windows_Form_Frontend
         {
             string LogicID = null;
             DisplayListType? displayList = null;
-            if (listBox.SelectedItem is EntranceData.EntranceRandoExit LogicexitObject) { LogicID = InstanceContainer.Instance.GetLogicNameFromExit(LogicexitObject); }
+            if (listBox.SelectedItem is EntranceData.EntranceRandoExit LogicexitObject) { LogicID = LogicexitObject.GetLogicID(); }
             if (listBox.SelectedItem is LocationData.LocationObject LogicLocationObject) { LogicID = LogicLocationObject.ID; }
             if (listBox.SelectedItem is HintData.HintObject LogicHintObject) { LogicID = LogicHintObject.ID; }
-            if (listBox.SelectedItem is LocationData.LocationProxy LogicProxyObject) { LogicID = LogicProxyObject.LogicInheritance ?? LogicProxyObject.ReferenceID; }
+            if (listBox.SelectedItem is LocationData.LocationProxy LogicProxyObject) { LogicID = LogicProxyObject.GetDictEntry().LogicInheritance ?? LogicProxyObject.ReferenceID; }
 
             if (listBox == LBValidLocations) { displayList = DisplayListType.Locations; }
             if (listBox == LBValidEntrances) { displayList = DisplayListType.Entrances; }
@@ -920,9 +920,7 @@ namespace Windows_Form_Frontend
             }
 
             //Object Price Edit
-            dynamic Target = null;
-            if (listBox.SelectedItem is LocationData.LocationProxy ProxyPriceSet) { Target = ProxyPriceSet.GetLogicInheritance(); }
-            else if (listBox.SelectedItem is LocationData.LocationObject LocPriceSet) { Target = LocPriceSet; }
+            dynamic Target = listBox.SelectedItem;
             if (Utility.DynamicPropertyExist(Target, "Price") || PriceRando.TestForPriceData(Target))
             {
                 Target.GetPrice(out int p, out char c);

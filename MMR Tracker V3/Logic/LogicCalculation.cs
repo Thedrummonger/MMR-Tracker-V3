@@ -165,7 +165,7 @@ namespace MMR_Tracker_V3.Logic
             {
                 foreach (var i in Area.Value.Exits)
                 {
-                    LogicMap[container.Instance.GetLogicNameFromExit(i.Value)] = container.Instance.GetLogic(container.Instance.GetLogicNameFromExit(i.Value), actions: Actions);
+                    LogicMap[i.Value.GetLogicID()] = container.Instance.GetLogic(i.Value.GetLogicID(), actions: Actions);
                 }
             }
             container.Instance.InstanceReference.OptionActionItemEdits.Clear();
@@ -208,8 +208,8 @@ namespace MMR_Tracker_V3.Logic
             {
                 foreach (var i in Area.Value.RandomizableExits().Where(x => !x.Value.IsUnrandomized(UnrandState.Unrand)))
                 {
-                    var Logic = LogicMap[container.Instance.GetLogicNameFromExit(i.Value)];
-                    i.Value.Available = CalculatReqAndCond(Logic, container.Instance.GetLogicNameFromExit(i.Value), Area.Key);
+                    var Logic = LogicMap[i.Value.GetLogicID()];
+                    i.Value.Available = CalculatReqAndCond(Logic, i.Value.GetLogicID(), Area.Key);
                 }
             }
             foreach (var i in container.Instance.HintPool)
@@ -234,7 +234,7 @@ namespace MMR_Tracker_V3.Logic
             {
                 foreach (var i in Area.Value.Exits.Values)
                 {
-                    var ID = container.Instance.GetLogicNameFromExit(i);
+                    var ID = i.GetLogicID();
                     if (!i.Available && LogicUnlockData.ContainsKey(ID)) { LogicUnlockData.Remove(ID); }
                 }
             }
@@ -270,8 +270,8 @@ namespace MMR_Tracker_V3.Logic
             {
                 foreach (var i in Area.Value.Exits.Where(x => x.Value.IsUnrandomized(UnrandState.Unrand) || !x.Value.IsRandomizableEntrance()))
                 {
-                    var Logic = LogicMap[container.Instance.GetLogicNameFromExit(i.Value)];
-                    var Available = CalculatReqAndCond(Logic, container.Instance.GetLogicNameFromExit(i.Value), Area.Key);
+                    var Logic = LogicMap[i.Value.GetLogicID()];
+                    var Available = CalculatReqAndCond(Logic, i.Value.GetLogicID(), Area.Key);
                     bool ShouldBeChecked = Available && i.Value.CheckState != CheckState.Checked;
                     bool ShouldBeUnChecked = !Available && i.Value.CheckState == CheckState.Checked;
                     if (ShouldBeChecked || ShouldBeUnChecked)

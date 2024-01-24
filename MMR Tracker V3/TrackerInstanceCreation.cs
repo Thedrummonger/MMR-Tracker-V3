@@ -105,7 +105,7 @@ namespace MMR_Tracker_V3
 
             foreach (var i in Instance.LogicDictionary.GetAreas())
             {
-                if (!Instance.EntrancePool.AreaList.ContainsKey(i)) { Instance.EntrancePool.AreaList.Add(i, new EntranceData.EntranceRandoArea(Instance.EntrancePool) { ID = i }); }
+                if (!Instance.EntrancePool.AreaList.ContainsKey(i)) { Instance.EntrancePool.AreaList.Add(i, new EntranceData.EntranceRandoArea(Instance) { ID = i }); }
             }
 
             Index = 0;
@@ -151,7 +151,10 @@ namespace MMR_Tracker_V3
                     {
                         if (!Instance.LocationProxyData.LocationsWithProxys.ContainsKey(i.Id)) { Instance.LocationProxyData.LocationsWithProxys.Add(i.Id, new List<string>()); }
                         Instance.LocationProxyData.LocationsWithProxys[i.Id].AddRange(DictEntry.Value.LocationProxys.Select(x => x.ID));
-                        foreach(var proxy in DictEntry.Value.LocationProxys) { Instance.LocationProxyData.LocationProxies.Add(proxy.ID, proxy.ToInstanceData(DictEntry.Value, Instance)); }
+                        foreach(var proxy in DictEntry.Value.LocationProxys) 
+                        { 
+                            Instance.LocationProxyData.LocationProxies.Add(proxy.ID, proxy.ToInstanceData(DictEntry.Value, Instance)); 
+                        }
                     }
                 }
                 else if (Instance.LogicDictionary.HintSpots.Any(x => x.Key == i.Id))
@@ -167,16 +170,17 @@ namespace MMR_Tracker_V3
                 {
                     var DictEntry = Instance.LogicDictionary.EntranceList.First(x => x.Key == i.Id);
                     Instance.InstanceReference.EntranceLogicNameToEntryData.Add(i.Id, new EntranceData.EntranceAreaPair { Area = DictEntry.Value.Area, Exit = DictEntry.Value.Exit });
-                    Instance.AddLogicExitReference(new EntranceData.EntranceAreaPair { Area = DictEntry.Value.Area, Exit = DictEntry.Value.Exit }, i.Id);
                     var ParentArea = Instance.EntrancePool.AreaList[DictEntry.Value.Area];
-                    ParentArea.Exits.Add(DictEntry.Value.Exit, new EntranceData.EntranceRandoExit(ParentArea)
+                    var ExitObject = new EntranceData.EntranceRandoExit(Instance, ParentArea)
                     {
                         ParentAreaID = DictEntry.Value.Area,
                         ID = DictEntry.Value.Exit,
                         EntrancePair = DictEntry.Value.RandomizableEntrance ? DictEntry.Value.EntrancePairID : null,
                         IsWarp = DictEntry.Value.AlwaysAccessable,
                         referenceData = new ReferenceData { LogicIndex = Index, LogicList = Source }
-                    });
+                    };
+                    Instance.InstanceReference.EntranceStringIDToLogicID.Add(ExitObject.GetStringID(), i.Id);
+                    ParentArea.Exits.Add(ExitObject.ID, ExitObject);
                 }
                 else
                 {

@@ -70,15 +70,15 @@ namespace MMR_Tracker_V3
                     i.CheckState = MiscData.CheckState.Checked;
                     PlaythroughObject playthroughObject = new PlaythroughObject
                     {
-                        id = Container.Instance.GetLogicNameFromExit(i),
+                        id = i.GetLogicID(),
                         ItemObtained = i.GetDestinationAtExit().region,
-                        UsedItems = Container.logicCalculation.LogicUnlockData[Container.Instance.GetLogicNameFromExit(i)],
+                        UsedItems = Container.logicCalculation.LogicUnlockData[i.GetLogicID()],
                         CheckType = MiscData.LogicEntryType.Exit,
                         sphere = Sphere
                     };
                     if (!FirstObtainedDict.ContainsKey(playthroughObject.ItemObtained)) { FirstObtainedDict.Add(playthroughObject.ItemObtained, new List<Tuple<object, PlaythroughObject>>()); }
                     FirstObtainedDict[playthroughObject.ItemObtained].Add(new Tuple<object, PlaythroughObject>(i, playthroughObject));
-                    Playthrough.Add(Container.Instance.GetLogicNameFromExit(i), playthroughObject);
+                    Playthrough.Add(i.GetLogicID(), playthroughObject);
                 }
                 foreach (var i in AvailableLocations)
                 {
@@ -232,7 +232,7 @@ namespace MMR_Tracker_V3
         private List<EntranceData.EntranceRandoExit> getAllAvailableEntrances(InstanceData.TrackerInstance instance, Dictionary<object, int> AutoObtainedObjects)
         {
             var AvailableEntrances = instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits().Values.Where(x => x.Available && x.CheckState == MiscData.CheckState.Unchecked && x.IsRandomized()));
-            var AutoObtainedEntrance = AutoObtainedObjects.Keys.Where(x => x is EntranceData.EntranceRandoExit && !Playthrough.ContainsKey(Container.Instance.GetLogicNameFromExit(x as EntranceData.EntranceRandoExit))).Select(x => x as EntranceData.EntranceRandoExit);
+            var AutoObtainedEntrance = AutoObtainedObjects.Keys.Where(x => x is EntranceData.EntranceRandoExit && !Playthrough.ContainsKey((x as EntranceData.EntranceRandoExit).GetLogicID())).Select(x => x as EntranceData.EntranceRandoExit);
             //var AquiredEntranceMacros = instance.EntrancePool.AreaList.Values.SelectMany(x => x.MacroExits.Values.Where(x => x.CheckState == MiscData.CheckState.Checked && !Playthrough.ContainsKey(GetEntId(x))));
             //var UnrandEntranceMacros = instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values.Where(x => x.CheckState == MiscData.CheckState.Checked && !Playthrough.ContainsKey(GetEntId(x)) && x.IsUnrandomized()));
             //var AllEntrances = AvailableEntrances.Concat(AquiredEntranceMacros).Concat(UnrandEntranceMacros).ToList();
@@ -274,7 +274,7 @@ namespace MMR_Tracker_V3
                     if (i.RandomizedState == MiscData.RandomizedState.UnrandomizedManual) { i.RandomizedState = MiscData.RandomizedState.Randomized; }
                     //i.RandomizedState = TrackerObjects.MiscData.RandomizedState.Randomized;
                 }
-                if (_IngoredChecks.Contains(Container.Instance.GetLogicNameFromExit(i))) { i.RandomizedState = TrackerObjects.MiscData.RandomizedState.ForcedJunk; }
+                if (_IngoredChecks.Contains(i.GetLogicID())) { i.RandomizedState = TrackerObjects.MiscData.RandomizedState.ForcedJunk; }
             }
             foreach (var i in Container.Instance.EntrancePool.AreaList.Values.SelectMany(x => x.NonRandomizableExits().Values))
             {
@@ -380,7 +380,7 @@ namespace MMR_Tracker_V3
                         Data.AreasAccessed.AddRange(areasVisited);
                         foreach(var p in path)
                         {
-                            string PathID = instance.GetLogicNameFromExit(p);
+                            string PathID = p.GetLogicID(instance);
                             if (!Data.ExitsTaken.Contains(PathID))
                             {
                                 Data.ExitsTaken.Add(PathID);
@@ -433,7 +433,7 @@ namespace MMR_Tracker_V3
             }
             foreach (var i in instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits().Values))
             {
-                if (i.CheckState != MiscData.CheckState.Checked) { Uncheckedlocations.Add(instance.GetLogicNameFromExit(i)); }
+                if (i.CheckState != MiscData.CheckState.Checked) { Uncheckedlocations.Add(i.GetLogicID()); }
             }
             return Uncheckedlocations;
         }

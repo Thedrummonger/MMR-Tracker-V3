@@ -88,7 +88,7 @@ namespace CLIFrontEnd
         }
         private static ManualCheckObjectResult LoopEntranceSelect(EntranceData.EntranceRandoExit Exit)
         {
-            var Instance = Exit.GetParentInstance();
+            var Instance = Exit.GetParent();
             string Filter = "";
             while (true)
             {

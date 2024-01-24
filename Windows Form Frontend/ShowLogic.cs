@@ -488,7 +488,7 @@ namespace Windows_Form_Frontend
                         (x.DestinationExit is not null  && x.DestinationExit.region == LogicItem.CleanID) || 
                         x.GetVanillaDestination().region == LogicItem.CleanID));
                     var ValidExits = ValidLoadingZoneExits.Concat(ValidMacroExits);
-                    return ValidExits.Select(x => IC.Instance.GetLogicNameFromExit(x)).ToList();
+                    return ValidExits.Select(x => x.GetLogicID()).ToList();
                 case LogicEntryType.item:
                     var ValidLocations = IC.Instance.LocationPool.Values.Where(x => 
                         (x.Randomizeditem.Item is not null && x.Randomizeditem.Item == LogicItem.CleanID && x.CheckState != MiscData.CheckState.Unchecked) || 

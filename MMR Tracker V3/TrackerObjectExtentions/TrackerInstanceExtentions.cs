@@ -198,22 +198,6 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
         {
             return instance.PriceData.CapacityMap.Keys.Where(x => x != '*' || all).ToList();
         }
-        public static string GetLogicNameFromExit(this InstanceData.TrackerInstance instance, EntranceData.EntranceRandoExit Exit)
-        {
-            return instance.InstanceReference.ExitLogicMap[$"{Exit.ParentAreaID} X {Exit.ID}"];
-        }
-        public static string GetLogicNameFromExit(this InstanceData.TrackerInstance instance, EntranceData.EntranceAreaPair Exit)
-        {
-            return instance.InstanceReference.ExitLogicMap[$"{Exit.Area} X {Exit.Exit}"];
-        }
-        public static string GetLogicNameFromExit(this InstanceData.TrackerInstance instance, EntranceData.EntranceRandoDestination Exit)
-        {
-            return instance.InstanceReference.ExitLogicMap[$"{Exit.region} X {Exit.from}"];
-        }
-        public static void AddLogicExitReference(this InstanceData.TrackerInstance instance, EntranceData.EntranceAreaPair Exit, string LogicName)
-        {
-            instance.InstanceReference.ExitLogicMap.Add($"{Exit.Area} X {Exit.Exit}", LogicName);
-        }
         public static MMRData.JsonFormatLogicItem GetLogic(this TrackerInstance instance, string OriginalID, bool DoEdits = true, List<OptionData.Action> actions = null)
         {
             actions ??= instance.GetOptionActions();

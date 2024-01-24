@@ -44,7 +44,7 @@ namespace MMR_Tracker_V3
             }
             foreach (var i in InstanceContainer.Instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits().Values))
             {
-                state.Exits.Add(InstanceContainer.Instance.GetLogicNameFromExit(i), new RecData()
+                state.Exits.Add(i.GetLogicID(), new RecData()
                 {
                     CheckState = i.CheckState,
                     randomizedEntry = i.DestinationExit,

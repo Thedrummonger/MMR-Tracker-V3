@@ -258,7 +258,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                             foreach (var i in Container.Instance.LocationProxyData.LocationsWithProxys[LO.ID])
                             {
                                 var Proxy = Container.Instance.LocationProxyData.LocationProxies[i];
-                                SetPrice(Proxy.LogicInheritance, Price);
+                                SetPrice(Proxy.GetDictEntry().LogicInheritance, Price);
                             }
                         }
                         else if (LO.Price is null || LO.Price < 0 || Price < LO.Price)

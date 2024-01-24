@@ -169,7 +169,7 @@ namespace MMR_Tracker_V3
         private static string GetLocationEntryArea(object Entry)
         {
             if (Entry is LocationData.LocationObject l) { return l.GetDictEntry().Area; }
-            else if (Entry is LocationData.LocationProxy p) { return p.Area; }
+            else if (Entry is LocationData.LocationProxy p) { return p.GetDictEntry().Area; }
             return "Error";
         }
 
@@ -189,8 +189,42 @@ namespace MMR_Tracker_V3
         }
 
         static bool IsHidden(object obj) { return Utility.DynamicPropertyExist(obj, "Hidden") && (obj as dynamic).Hidden; }
-        
-        
+
+        public static string GetLocationDisplayName(dynamic obj, InstanceData.InstanceContainer instance)
+        {
+            LocationData.LocationObject Location;
+            string LocationDisplay, RandomizedItemDisplay, PriceDisplay, StarredDisplay, ForPlayer;
+            if (obj is LocationData.LocationObject lo)
+            {
+                Location = lo;
+                LocationDisplay = Location.GetDictEntry()?.GetName();
+                StarredDisplay = lo.Starred ? "*" : "";
+            }
+            else if (obj is LocationData.LocationProxy po)
+            {
+                Location = po.GetReferenceLocation();
+                LocationDisplay = po.GetDictEntry().Name ?? Location.GetDictEntry()?.GetName();
+                StarredDisplay = po.Starred ? "*" : "";
+            }
+            else { return obj.ToString(); }
+            bool Available = Location.Available;
+
+            obj.GetPrice(out int p, out char c);
+            PriceDisplay = p < 0 || (!Available) ? "" : $" [{c}{p}]";
+            RandomizedItemDisplay = instance.Instance.GetItemByID(Location.Randomizeditem.Item)?.GetDictEntry()?.GetName() ?? Location.Randomizeditem.Item;
+
+            ForPlayer = Location.Randomizeditem.Item is not null && Location.Randomizeditem.OwningPlayer >= 0 ? $" [Player: {Location.Randomizeditem.OwningPlayer}]" : "";
+
+            return Location.CheckState switch
+            {
+                MiscData.CheckState.Marked => $"{LocationDisplay}: {RandomizedItemDisplay}{ForPlayer}{StarredDisplay}{PriceDisplay}",
+                MiscData.CheckState.Unchecked => $"{LocationDisplay}{StarredDisplay}",
+                MiscData.CheckState.Checked => $"{RandomizedItemDisplay}{ForPlayer}{PriceDisplay}: {LocationDisplay}{StarredDisplay}",
+                _ => obj.ToString(),
+            };
+        }
+
+
         //ListBoxBuilder
         public static TrackerLocationDataList WriteLocations(this TrackerLocationDataList Data, CheckState checkState, bool Hidden)
         {
@@ -212,7 +246,7 @@ namespace MMR_Tracker_V3
             LocationsEntries = LocationsEntries.OrderByDescending(x => SortByAvailability(x, Data))
                 .ThenBy(x => (Data.Categories.ContainsKey(GetLocationEntryArea(x).ToLower().Trim()) ? Data.Categories[GetLocationEntryArea(x).ToLower().Trim()] : LocationsEntries.Count() + 1))
                 .ThenBy(x => GetLocationEntryArea(x))
-                .ThenBy(x => Utility.GetLocationDisplayName(x, Data.InstanceContainer)).ToList();
+                .ThenBy(x => GetLocationDisplayName(x, Data.InstanceContainer)).ToList();
 
             LocationsEntries = LocationsEntries.Where(x => Hidden ? IsHidden(x) : !IsHidden(x));
 
@@ -224,7 +258,7 @@ namespace MMR_Tracker_V3
                 if (obj is LocationData.LocationObject i)
                 {
                     if (!i.AppearsinListbox(Data.ShowInvalidEntries)) { continue; }
-                    i.DisplayName = Utility.GetLocationDisplayName(i, Data.InstanceContainer);
+                    i.DisplayName = GetLocationDisplayName(i, Data.InstanceContainer);
                     Data.ItemsFound++;
                     if (!SearchStringParser.FilterSearch(Data.Instance, i, Data.Filter, i.DisplayName)) { continue; }
                     Data.ItemsDisplayed++;
@@ -233,11 +267,11 @@ namespace MMR_Tracker_V3
                 else if (obj is LocationData.LocationProxy p)
                 {
                     if (!p.GetReferenceLocation().AppearsinListbox(Data.ShowInvalidEntries)) { continue; }
-                    p.DisplayName = Utility.GetLocationDisplayName(p, Data.InstanceContainer);
+                    p.DisplayName = GetLocationDisplayName(p, Data.InstanceContainer);
                     Data.ItemsFound++;
                     if (!SearchStringParser.FilterSearch(Data.Instance, p, Data.Filter, p.DisplayName)) { continue; }
                     Data.ItemsDisplayed++;
-                    CurrentArea = p.Area;
+                    CurrentArea = p.GetDictEntry().Area;
                 }
                 else { continue; }
                 if (Hidden) { CurrentArea = "Hidden Locations"; }

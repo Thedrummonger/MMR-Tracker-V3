@@ -71,7 +71,7 @@ namespace MMR_Tracker_V3.TrackerObjects
             //A table mapping Logic names to an entrance area pair
             public Dictionary<string, EntranceData.EntranceAreaPair> EntranceLogicNameToEntryData { get; set; } = [];
             //A table Mapping an Exit to its logic name
-            public Dictionary<string, string> ExitLogicMap { get; set; } = [];
+            public Dictionary<string, string> EntranceStringIDToLogicID { get; set; } = [];
             //A dictionary to keep track of an Items values after they have been edited by option data
             public Dictionary<string, ActionItemEdit> OptionActionItemEdits { get; set; } = [];
             public Dictionary<string, List<string>> OptionActionCollectionEdits { get; set; } = [];
@@ -241,7 +241,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                 _Instance.EntrancePool.SetParent(_Instance);
                 foreach (var i in _Instance.EntrancePool.AreaList.Values) 
                 { 
-                    i.SetParent(_Instance.EntrancePool); 
+                    i.SetParent(_Instance); 
                     foreach(var j in i.Exits.Values) { j.SetParent(i); }
                 }
                 Instance.LogicDictionary.SetParentContainer(Instance);
