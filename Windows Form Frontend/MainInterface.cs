@@ -803,7 +803,7 @@ namespace Windows_Form_Frontend
         {
             string LogicID = null;
             DisplayListType? displayList = null;
-            if (listBox.SelectedItem is EntranceData.EntranceRandoExit LogicexitObject) { LogicID = LogicexitObject.GetLogicID(); }
+            if (listBox.SelectedItem is EntranceData.EntranceRandoExit LogicexitObject) { LogicID = LogicexitObject.ID; }
             if (listBox.SelectedItem is LocationData.LocationObject LogicLocationObject) { LogicID = LogicLocationObject.ID; }
             if (listBox.SelectedItem is HintData.HintObject LogicHintObject) { LogicID = LogicHintObject.ID; }
             if (listBox.SelectedItem is LocationData.LocationProxy LogicProxyObject) { LogicID = LogicProxyObject.GetDictEntry().LogicInheritance ?? LogicProxyObject.ReferenceID; }

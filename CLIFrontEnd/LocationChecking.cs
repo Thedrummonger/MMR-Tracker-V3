@@ -102,7 +102,7 @@ namespace CLIFrontEnd
                     Console.WriteLine($"{Entry.Key.ToString($"D{Padding}")}: {Entry.Value}");
                 }
                 Console.WriteLine(CLIUtility.CreateDivider());
-                Console.WriteLine("Select Destination at Exit " + Exit.ParentAreaID + " -> " + Exit.ID);
+                Console.WriteLine("Select Destination at Exit " + Exit.GetParentArea().ID + " -> " + Exit.ExitID);
                 var input = Console.ReadLine();
                 if (int.TryParse(input, out int index) && EnteredItems.TryGetValue(index, out EntranceData.EntranceRandoDestination? value))
                 {

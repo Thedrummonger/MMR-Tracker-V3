@@ -165,9 +165,9 @@ namespace Windows_Form_Frontend
             Updating = false;
         }
 
-        public bool GetAvailable(MMR_Tracker_V3.TrackerObjects.MMRData.JsonFormatLogicItem Logic, LogicEntryType type, string id)
+        public bool GetAvailable(MMRData.JsonFormatLogicItem Logic, LogicEntryType type, string id)
         {
-            string Area = type == LogicEntryType.Exit ? IC.Instance.InstanceReference.EntranceLogicNameToEntryData[id].Area : null;
+            string Area = type == LogicEntryType.Exit ? IC.Instance.GetExitByLogicID(id).GetParentArea().ID : null;
             return IC.logicCalculation.CalculatReqAndCond(Logic, id, Area);
         }
 
@@ -236,9 +236,9 @@ namespace Windows_Form_Frontend
                 StandardListBoxItem boxItem = new StandardListBoxItem() { Display = GetDisplayName(i), tag = i };
                 LBReq.Items.Add(boxItem);
             }
-            if (LocationObject is EntranceData.EntranceRandoExit EO && !Logic.RequiredItems.Contains(EO.ParentAreaID))
+            if (LocationObject is EntranceData.EntranceRandoExit EO && !Logic.RequiredItems.Contains(EO.GetParentArea().ID))
             {
-                StandardListBoxItem boxItem = new StandardListBoxItem() { Display = GetDisplayName(EO.ParentAreaID), tag = EO.ParentAreaID };
+                StandardListBoxItem boxItem = new StandardListBoxItem() { Display = GetDisplayName(EO.GetParentArea().ID), tag = EO.GetParentArea().ID };
                 LBReq.Items.Add(boxItem);
             }
             foreach (var cond in Logic.ConditionalItems)
@@ -488,7 +488,7 @@ namespace Windows_Form_Frontend
                         (x.DestinationExit is not null  && x.DestinationExit.region == LogicItem.CleanID) || 
                         x.GetVanillaDestination().region == LogicItem.CleanID));
                     var ValidExits = ValidLoadingZoneExits.Concat(ValidMacroExits);
-                    return ValidExits.Select(x => x.GetLogicID()).ToList();
+                    return ValidExits.Select(x => x.ID).ToList();
                 case LogicEntryType.item:
                     var ValidLocations = IC.Instance.LocationPool.Values.Where(x => 
                         (x.Randomizeditem.Item is not null && x.Randomizeditem.Item == LogicItem.CleanID && x.CheckState != MiscData.CheckState.Unchecked) || 

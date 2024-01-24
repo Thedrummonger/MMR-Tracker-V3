@@ -69,8 +69,7 @@ namespace MMR_Tracker_V3.TrackerObjects
                 SetParent(parent.GetParent());
                 _parentArea = parent; 
             }
-
-            public string ParentAreaID { get; set; }
+            public string ExitID { get; set; }
             public bool IsWarp { get; set; } = false;
             public EntranceRandoDestination DestinationExit { get; set; }
             public EntranceRandoDestination SpoilerDefinedDestinationExit { get; set; }
@@ -78,20 +77,16 @@ namespace MMR_Tracker_V3.TrackerObjects
 
             public LogicDictionaryData.DictionaryEntranceEntries GetDictEntry()
             {
-                return GetParent().LogicDictionary.EntranceList[GetLogicID()];
+                return GetParent().LogicDictionary.EntranceList[ID];
             }
 
             public override string ToString()
             {
-                return DisplayName ?? ID;
-            }
-            public string GetLogicID()
-            {
-                return GetParent().InstanceReference.EntranceStringIDToLogicID[GetStringID()];
+                return DisplayName ?? ExitID;
             }
             public string GetStringID()
             {
-                return $"{this.ParentAreaID} X {this.ID}";
+                return $"{GetParentArea().ID} X {this.ExitID}";
             }
         }
         public class EntranceRandoDestination
@@ -102,23 +97,11 @@ namespace MMR_Tracker_V3.TrackerObjects
             {
                 return $"{region} <= {from}";
             }
-            public string GetLogicID(InstanceData.TrackerInstance instance)
-            {
-                return instance.InstanceReference.EntranceStringIDToLogicID[GetStringID()];
-            }
-            public string GetStringID()
-            {
-                return $"{region} X {from}";
-            }
         }
         public class EntranceAreaPair
         {
             public string Area { get; set; }
             public string Exit { get; set; }
-            public string GetLogicID(InstanceData.TrackerInstance instance)
-            {
-                return instance.InstanceReference.EntranceStringIDToLogicID[GetStringID()];
-            }
             public string GetStringID()
             {
                 return $"{Area} X {Exit}";

@@ -657,9 +657,9 @@ namespace MMR_Tracker_V3
             }
             else if (Object is EntranceData.EntranceRandoExit ExitObject)
             {
-                OutObject.ID = ExitObject.GetLogicID();
+                OutObject.ID = ExitObject.ID;
                 OutObject.Area = ExitObject.DisplayArea();
-                OutObject.Name = ExitObject.ID;
+                OutObject.Name = ExitObject.ExitID;
                 OutObject.OriginalItem = ExitObject.EntrancePair == null ? "One Way" : $"{ExitObject.EntrancePair.Area} To {ExitObject.EntrancePair.Exit}";
                 OutObject.Randomizeditem = ExitObject.DestinationExit == null ? null : $"{ExitObject.DestinationExit.region} From {ExitObject.DestinationExit.from}";
                 OutObject.Starred = ExitObject.Starred;

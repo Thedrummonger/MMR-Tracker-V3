@@ -44,7 +44,7 @@ namespace MMR_Tracker_V3
             }
             foreach (var i in InstanceContainer.Instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits().Values))
             {
-                state.Exits.Add(i.GetLogicID(), new RecData()
+                state.Exits.Add(i.ID, new RecData()
                 {
                     CheckState = i.CheckState,
                     randomizedEntry = i.DestinationExit,
@@ -92,14 +92,13 @@ namespace MMR_Tracker_V3
             }
             foreach (var i in CurrentSaveState.Exits)
             {
-                var EntPool = InstanceContainer.Instance.EntrancePool;
-                var entDict = InstanceContainer.Instance.InstanceReference.EntranceLogicNameToEntryData;
-                if (entDict.ContainsKey(i.Key) && EntPool.AreaList.ContainsKey(entDict[i.Key].Area) && EntPool.AreaList[entDict[i.Key].Area].RandomizableExits().ContainsKey(entDict[i.Key].Exit))
+                if (InstanceContainer.Instance.GetExitByLogicID(i.Key) is not null)
                 {
-                    var loc = EntPool.AreaList[entDict[i.Key].Area].RandomizableExits()[entDict[i.Key].Exit];
-                    loc.DestinationExit = loc.GetDestinationAtExit()??i.Value.randomizedEntry;
+                    var loc = InstanceContainer.Instance.GetExitByLogicID(i.Key);
+                    loc.DestinationExit = loc.GetDestinationAtExit() ?? i.Value.randomizedEntry;
                     loc.ToggleExitChecked(i.Value.CheckState);
                 }
+
             }
             InstanceContainer.logicCalculation.CalculateLogic(MiscData.CheckState.Checked);
         }

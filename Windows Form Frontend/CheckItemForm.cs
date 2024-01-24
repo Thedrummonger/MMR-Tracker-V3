@@ -87,7 +87,7 @@ namespace Windows_Form_Frontend
         private void WriteTrackerExits(EntranceData.EntranceRandoExit exitObject)
         {
             FormatUIItems(false, false, "");
-            this.Text = $"Select Destination of Exit {exitObject.ParentAreaID} -> {exitObject.ID}";
+            this.Text = $"Select Destination of Exit {exitObject.GetParentArea().ID} -> {exitObject.ExitID}";
             List<EntranceData.EntranceRandoDestination> EnteredItems = _Container.Instance.GetAllLoadingZoneDestinations(textBox1.Text);
             listBox1.DataSource = EnteredItems;
         }

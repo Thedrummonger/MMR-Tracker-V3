@@ -13,11 +13,11 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
     {
         public static string DisplayArea(this EntranceRandoExit exit)
         {
-            return exit.GetDictEntry()?.DisplayArea??exit.ParentAreaID;
+            return exit.GetDictEntry()?.DisplayArea??exit.GetParentArea().ID;
         }
         public static string DisplayExit(this EntranceRandoExit exit)
         {
-            return exit.GetDictEntry()?.DisplayExit??exit.ID;
+            return exit.GetDictEntry()?.DisplayExit??exit.ExitID;
         }
         public static string GetEntranceDisplayName(this EntranceRandoExit ExitObjectObject)
         {
@@ -51,7 +51,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
 
         public static EntranceRandoDestination GetVanillaDestination(this EntranceRandoExit exit)
         {
-            return new EntranceRandoDestination { region = exit.ID, from = exit.ParentAreaID };
+            return new EntranceRandoDestination { region = exit.ExitID, from = exit.GetParentArea().ID };
         }
         public static bool IsUnrandomized(this EntranceRandoExit exit, UnrandState Include = UnrandState.Any)
         {
@@ -86,7 +86,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
             }
             if ((exit.IsUnrandomized()))
             {
-                DestinationAtCheck = new EntranceRandoDestination { region = exit.ID, from = exit.ParentAreaID };
+                DestinationAtCheck = new EntranceRandoDestination { region = exit.ExitID, from = exit.GetParentArea().ID };
             }
             return DestinationAtCheck;
         }
@@ -127,7 +127,7 @@ namespace MMR_Tracker_V3.TrackerObjectExtentions
 
         public static EntranceRandoDestination AsDestination(this EntranceRandoExit exit)
         {
-            return new EntranceRandoDestination { from = exit.ParentAreaID, region = exit.ID };
+            return new EntranceRandoDestination { from = exit.GetParentArea().ID, region = exit.ExitID };
         }
 
         public static EntranceRandoDestination AsDestination(this EntranceAreaPair Pair)

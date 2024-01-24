@@ -174,9 +174,9 @@ namespace Windows_Form_Frontend
                     if (i.Value.IsUnrandomized(MiscData.UnrandState.Unrand) && !chkShowUnrand.Checked) { continue; }
                     if (i.Value.IsUnrandomized(MiscData.UnrandState.Manual) && !chkShowManual.Checked) { continue; }
                     if (i.Value.IsJunk() && !chkShowJunk.Checked) { continue; }
-                    i.Value.DisplayName = i.Value.ParentAreaID + " => " + i.Value.ID;
+                    i.Value.DisplayName = i.Value.GetParentArea().ID + " => " + i.Value.ExitID;
                     if (!SearchStringParser.FilterSearch(_Instance, i.Value, TxtLocationSearch.Text, i.Value.DisplayName)) { continue; }
-                    string VanillaItemText = i.Value.ID + " <= " + i.Value.ParentAreaID;
+                    string VanillaItemText = i.Value.ExitID + " <= " + i.Value.GetParentArea().ID;
 
                     string[] row = { i.Value.DisplayName, VanillaItemText, i.Value.RandomizedState.GetDescription() };
                     ListViewItem listViewItem = new(row)

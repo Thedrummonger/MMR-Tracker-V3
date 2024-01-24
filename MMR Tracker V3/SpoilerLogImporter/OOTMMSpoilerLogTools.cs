@@ -115,7 +115,7 @@ namespace MMR_Tracker_V3.SpoilerLogImporter
                 var SpoilerEntrance = AllRandomizableExits.First(x => x.Value.GetDictEntry().SpoilerData.SpoilerLogNames.Contains(Entrance.Key));
                 var SpoilerExit = AllRandomizableExits.First(x => x.Value.GetDictEntry().SpoilerData.SpoilerLogNames.Contains(Entrance.Value));
                 SpoilerEntrance.Value.RandomizedState = MiscData.RandomizedState.Randomized;
-                SpoilerEntrance.Value.SpoilerDefinedDestinationExit = new EntranceData.EntranceRandoDestination { region = SpoilerExit.Value.ID, from = SpoilerExit.Value.ParentAreaID };
+                SpoilerEntrance.Value.SpoilerDefinedDestinationExit = new EntranceData.EntranceRandoDestination { region = SpoilerExit.Value.ExitID, from = SpoilerExit.Value.GetParentArea().ID };
             }
         }
 

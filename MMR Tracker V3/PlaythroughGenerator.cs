@@ -60,25 +60,25 @@ namespace MMR_Tracker_V3
                     //Debug.WriteLine($"Checking: {$"{i.ParentAreaID} X {i.ID}"}");
                     if (i.GetDestinationAtExit() == null)
                     {
-                        throw new Exception($"{$"{i.ParentAreaID} X {i.ID}"} had no item");
+                        throw new Exception($"{i.GetStringID()} had no item");
                     }
-                    var RandomizableExits = Container.Instance.EntrancePool.AreaList[i.ParentAreaID].RandomizableExits();
-                    if (RandomizableExits.ContainsKey(i.ID) && RandomizableExits[i.ID].IsRandomized())
+                    var RandomizableExits = Container.Instance.EntrancePool.AreaList[i.GetParentArea().ID].RandomizableExits();
+                    if (RandomizableExits.ContainsKey(i.ExitID) && RandomizableExits[i.ExitID].IsRandomized())
                     {
                         i.ToggleExitChecked(MiscData.CheckState.Checked);
                     }
                     i.CheckState = MiscData.CheckState.Checked;
                     PlaythroughObject playthroughObject = new PlaythroughObject
                     {
-                        id = i.GetLogicID(),
+                        id = i.ID,
                         ItemObtained = i.GetDestinationAtExit().region,
-                        UsedItems = Container.logicCalculation.LogicUnlockData[i.GetLogicID()],
+                        UsedItems = Container.logicCalculation.LogicUnlockData[i.ID],
                         CheckType = MiscData.LogicEntryType.Exit,
                         sphere = Sphere
                     };
                     if (!FirstObtainedDict.ContainsKey(playthroughObject.ItemObtained)) { FirstObtainedDict.Add(playthroughObject.ItemObtained, new List<Tuple<object, PlaythroughObject>>()); }
                     FirstObtainedDict[playthroughObject.ItemObtained].Add(new Tuple<object, PlaythroughObject>(i, playthroughObject));
-                    Playthrough.Add(i.GetLogicID(), playthroughObject);
+                    Playthrough.Add(i.ID, playthroughObject);
                 }
                 foreach (var i in AvailableLocations)
                 {
@@ -232,7 +232,7 @@ namespace MMR_Tracker_V3
         private List<EntranceData.EntranceRandoExit> getAllAvailableEntrances(InstanceData.TrackerInstance instance, Dictionary<object, int> AutoObtainedObjects)
         {
             var AvailableEntrances = instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits().Values.Where(x => x.Available && x.CheckState == MiscData.CheckState.Unchecked && x.IsRandomized()));
-            var AutoObtainedEntrance = AutoObtainedObjects.Keys.Where(x => x is EntranceData.EntranceRandoExit && !Playthrough.ContainsKey((x as EntranceData.EntranceRandoExit).GetLogicID())).Select(x => x as EntranceData.EntranceRandoExit);
+            var AutoObtainedEntrance = AutoObtainedObjects.Keys.Where(x => x is EntranceData.EntranceRandoExit && !Playthrough.ContainsKey((x as EntranceData.EntranceRandoExit).ID)).Select(x => x as EntranceData.EntranceRandoExit);
             //var AquiredEntranceMacros = instance.EntrancePool.AreaList.Values.SelectMany(x => x.MacroExits.Values.Where(x => x.CheckState == MiscData.CheckState.Checked && !Playthrough.ContainsKey(GetEntId(x))));
             //var UnrandEntranceMacros = instance.EntrancePool.AreaList.Values.SelectMany(x => x.LoadingZoneExits.Values.Where(x => x.CheckState == MiscData.CheckState.Checked && !Playthrough.ContainsKey(GetEntId(x)) && x.IsUnrandomized()));
             //var AllEntrances = AvailableEntrances.Concat(AquiredEntranceMacros).Concat(UnrandEntranceMacros).ToList();
@@ -274,7 +274,7 @@ namespace MMR_Tracker_V3
                     if (i.RandomizedState == MiscData.RandomizedState.UnrandomizedManual) { i.RandomizedState = MiscData.RandomizedState.Randomized; }
                     //i.RandomizedState = TrackerObjects.MiscData.RandomizedState.Randomized;
                 }
-                if (_IngoredChecks.Contains(i.GetLogicID())) { i.RandomizedState = TrackerObjects.MiscData.RandomizedState.ForcedJunk; }
+                if (_IngoredChecks.Contains(i.ID)) { i.RandomizedState = TrackerObjects.MiscData.RandomizedState.ForcedJunk; }
             }
             foreach (var i in Container.Instance.EntrancePool.AreaList.Values.SelectMany(x => x.NonRandomizableExits().Values))
             {
@@ -380,7 +380,7 @@ namespace MMR_Tracker_V3
                         Data.AreasAccessed.AddRange(areasVisited);
                         foreach(var p in path)
                         {
-                            string PathID = p.GetLogicID(instance);
+                            string PathID = p.GetStringID();
                             if (!Data.ExitsTaken.Contains(PathID))
                             {
                                 Data.ExitsTaken.Add(PathID);
@@ -408,13 +408,13 @@ namespace MMR_Tracker_V3
                 if (!playthroughObject.FirstObtainedDict.ContainsKey(area) || instance.EntrancePool.RootArea == area) { return; }
                 foreach (var i in playthroughObject.FirstObtainedDict[area])
                 {
-                    if (i.Item1 is not EntranceData.EntranceRandoExit eo || areasVisited.Contains(eo.ParentAreaID) || !instance.EntrancePool.AreaList.ContainsKey(eo.ParentAreaID)) { continue; }
+                    if (i.Item1 is not EntranceData.EntranceRandoExit eo || areasVisited.Contains(eo.GetParentArea().ID) || !instance.EntrancePool.AreaList.ContainsKey(eo.GetParentArea().ID)) { continue; }
 
-                    var RandomizableExits = instance.EntrancePool.AreaList[eo.ParentAreaID].RandomizableExits();
-                    bool ExitIsRandom = RandomizableExits.ContainsKey(eo.ID) && RandomizableExits[eo.ID].IsRandomized();
+                    var RandomizableExits = eo.GetParentArea().RandomizableExits();
+                    bool ExitIsRandom = RandomizableExits.ContainsKey(eo.ExitID) && RandomizableExits[eo.ExitID].IsRandomized();
                     if (ExitIsRandom) { return; }
-                    path.Add(new EntranceData.EntranceAreaPair() { Area = eo.ParentAreaID, Exit = eo.ID });
-                    CheckArea(eo.ParentAreaID);
+                    path.Add(new EntranceData.EntranceAreaPair() { Area = eo.GetParentArea().ID, Exit = eo.ExitID });
+                    CheckArea(eo.GetParentArea().ID);
                     break;
                 }
             }
@@ -433,7 +433,7 @@ namespace MMR_Tracker_V3
             }
             foreach (var i in instance.EntrancePool.AreaList.Values.SelectMany(x => x.RandomizableExits().Values))
             {
-                if (i.CheckState != MiscData.CheckState.Checked) { Uncheckedlocations.Add(i.GetLogicID()); }
+                if (i.CheckState != MiscData.CheckState.Checked) { Uncheckedlocations.Add(i.ID); }
             }
             return Uncheckedlocations;
         }

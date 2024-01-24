@@ -169,18 +169,17 @@ namespace MMR_Tracker_V3
                 else if (Instance.LogicDictionary.EntranceList.Any(x => x.Key == i.Id))
                 {
                     var DictEntry = Instance.LogicDictionary.EntranceList.First(x => x.Key == i.Id);
-                    Instance.InstanceReference.EntranceLogicNameToEntryData.Add(i.Id, new EntranceData.EntranceAreaPair { Area = DictEntry.Value.Area, Exit = DictEntry.Value.Exit });
                     var ParentArea = Instance.EntrancePool.AreaList[DictEntry.Value.Area];
                     var ExitObject = new EntranceData.EntranceRandoExit(Instance, ParentArea)
                     {
-                        ParentAreaID = DictEntry.Value.Area,
-                        ID = DictEntry.Value.Exit,
+                        ID = i.Id,
+                        ExitID = DictEntry.Value.Exit,
                         EntrancePair = DictEntry.Value.RandomizableEntrance ? DictEntry.Value.EntrancePairID : null,
                         IsWarp = DictEntry.Value.AlwaysAccessable,
                         referenceData = new ReferenceData { LogicIndex = Index, LogicList = Source }
                     };
-                    Instance.InstanceReference.EntranceStringIDToLogicID.Add(ExitObject.GetStringID(), i.Id);
-                    ParentArea.Exits.Add(ExitObject.ID, ExitObject);
+                    Instance.InstanceReference.ExitLookupByID[i.Id] = ExitObject;
+                    ParentArea.Exits.Add(ExitObject.ExitID, ExitObject);
                 }
                 else
                 {
