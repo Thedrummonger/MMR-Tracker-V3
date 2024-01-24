@@ -16,6 +16,8 @@ namespace MMR_Tracker_V3.TrackerObjects
             public InstanceData.TrackerInstance GetParent() { return _parent; }
             public void SetParent(InstanceData.TrackerInstance parent) { _parent = parent; }
 
+            public Dictionary<string, EntranceData.EntranceRandoExit> ExitLookupByID { get; set; } = [];
+
             //All Areas in the game and the exits they contain
             public Dictionary<string, EntranceRandoArea> AreaList { get; set; } = [];
             //The area accessable from the beggining of the game
@@ -29,12 +31,6 @@ namespace MMR_Tracker_V3.TrackerObjects
             public int GetAmountOfRandomizedEntrances()
             {
                 return AreaList.SelectMany(x => x.Value.RandomizableExits().Where(y => y.Value.IsRandomized())).Count();
-            }
-            public bool EntranceIsValid(string Area, string Exit, out bool AreaValid, out bool ExitValid)
-            {
-                AreaValid = AreaList.ContainsKey(Area); 
-                ExitValid = AreaValid && AreaList[Area].Exits.ContainsKey(Exit);
-                return AreaValid && ExitValid;
             }
         }
         public class EntranceRandoArea(InstanceData.TrackerInstance Parent)

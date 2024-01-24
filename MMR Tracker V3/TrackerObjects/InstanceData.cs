@@ -68,12 +68,6 @@ namespace MMR_Tracker_V3.TrackerObjects
         [Serializable]
         public class InstanceReference
         {
-            //A table mapping Logic names to an entrance area pair
-            //public Dictionary<string, EntranceData.EntranceAreaPair> EntranceLogicNameToEntryData { get; set; } = [];
-            //A table Mapping an Exit to its logic name
-            //public Dictionary<string, string> EntranceStringIDToLogicID { get; set; } = [];
-            //A dictionary to keep track of an Items values after they have been edited by option data
-            public Dictionary<string, EntranceData.EntranceRandoExit> ExitLookupByID { get; set; } = [];
             public Dictionary<string, ActionItemEdit> OptionActionItemEdits { get; set; } = [];
             public Dictionary<string, List<string>> OptionActionCollectionEdits { get; set; } = [];
         }

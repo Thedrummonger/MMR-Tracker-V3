@@ -27,7 +27,7 @@ namespace MMR_Tracker_V3
 
         public void FindPath(InstanceData.TrackerInstance instance, string Start, string Goal, List<Dictionary<string, string>> Paths = null, int RunCount = 1)
         {
-
+            bool ShowMacro = instance.StaticOptions.OptionFile.ShowMacroExitsPathfinder;
             bool IsRoot = false;
             if (Paths == null) 
             {
@@ -35,10 +35,7 @@ namespace MMR_Tracker_V3
                 IsRoot = true;
                 SeenAreas.Clear();
                 BuildEntranceMap(instance);
-                Paths = new List<Dictionary<string, string>>
-                {
-                    new Dictionary<string, string> { { Start, "" } }
-                };
+                Paths = [ new Dictionary<string, string> { { Start, "" } } ];
             }
 
             if (!instance.StaticOptions.OptionFile.ShowRedundantPathfinder)
@@ -79,14 +76,13 @@ namespace MMR_Tracker_V3
             {
                 foreach(var GoalPath in FoundAreas[Goal])
                 {
-                    Dictionary<string, string> FormattedPath = new Dictionary<string, string>();
+                    Dictionary<string, string> FormattedPath = [];
                     int Index = 1;
                     foreach(var stop in GoalPath)
                     {
                         string Area = stop.Key;
                         string Exit = stop.Value;
 
-                        bool ShowMacro = instance.StaticOptions.OptionFile.ShowMacroExitsPathfinder;
                         bool ExitValid = instance.EntrancePool.AreaList.ContainsKey(Area) && instance.EntrancePool.AreaList[Area].Exits.ContainsKey(Exit);
                         bool IsDestination = string.IsNullOrWhiteSpace(Exit);
                         bool IsRandomizedExit = ExitValid &&
